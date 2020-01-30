@@ -29,7 +29,7 @@ pygmentsStyle = "tango"
 
 # Configure how URLs look like per section.
 [permalinks]
-blog = "/:section/:year/:month/:day/:slug/"
+articles = "/:section/:year/:month/:day/:slug/"
 
 ## Configuration for BlackFriday markdown parser: https://github.com/russross/blackfriday
 [blackfriday]
@@ -58,7 +58,7 @@ description = "One stop shop for iXsystems™ documentation."
 languageName ="English"
 # Weight used for sorting.
 weight = 1
-[languages.no]
+#[languages.no]
 #title = "Goldydocs"
 #description = "Docsy er operativsystem for skyen"
 #languageName ="Norsk"
@@ -87,19 +87,19 @@ version_menu = "Releases"
 # Repository configuration (URLs for in-page links to opening issues and suggesting changes)
 github_repo = "https://github.com/freenas/documentation"
 # An optional link to a related project repo. For example, the sibling repository where your product code lives.
-#github_project_repo = "https://github.com/google/docsy"
+#github_project_repo = ""
 
 # Specify a value here if your content directory is not in your repo's root directory
 # github_subdir = ""
 
 # Google Custom Search Engine ID. Remove or comment out to disable search.
-gcs_engine_id = "011737558837375720776:fsdu1nryfng"
+#gcs_engine_id = "011737558837375720776:fsdu1nryfng"
 
 # Enable Algolia DocSearch
-algolia_docsearch = false
+#algolia_docsearch = true
 
 # Enable Lunr.js offline search
-offlineSearch = false
+#offlineSearch = false
 
 # User interface configuration
 [params.ui]
@@ -121,8 +121,8 @@ footer_about_disable = true
 [params.ui.feedback]
 enable = true
 # The responses that the user sees after clicking "yes" (the page was helpful) or "no" (the page was not helpful).
-yes = 'Glad to hear it! Please <a href="https://github.com/USERNAME/REPOSITORY/issues/new">tell us how we can improve</a>.'
-no = 'Sorry to hear that. Please <a href="https://github.com/USERNAME/REPOSITORY/issues/new">tell us how we can improve</a>.'
+yes = 'Glad to hear it! Please <a href="https://github.com/freenas/documentation/issues/new">tell us how we can improve</a>.'
+no = 'Sorry to hear that. Please <a href="https://github.com/freenas/documentation/issues/new">tell us how we can improve</a>.'
 
 [params.links]
 # End user relevant links. These will show up on left side of footer and in the community page if you have one.
