@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
     - uses: actions/checkout@v1
+      run: sudo npm install -D --save autoprefixer && sudo npm install -D --save postcss-cli
       with:
         submodules: true
 
@@ -18,9 +19,6 @@ jobs:
       with:
         hugo-version: 'latest'
         extended: true
-
-    - name: npm install stuff
-      run: sudo npm install -D --save autoprefixer && sudo npm install -D --save postcss-cli
 
     - name: Build
       run: hugo --minify
