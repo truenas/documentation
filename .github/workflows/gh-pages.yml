@@ -10,9 +10,9 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
     - uses: actions/checkout@v1
-      run: sudo npm install -D --save autoprefixer && sudo npm install -D --save postcss-cli
       with:
         submodules: true
+      fetch-depth: 0
 
     - name: Setup Hugo
       uses: peaceiris/actions-hugo@v2
