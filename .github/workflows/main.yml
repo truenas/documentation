@@ -1,2 +1,1 @@
-- name: Hugo setup
-  uses: peaceiris/actions-hugo@v2.4.4
+ssh-keygen -t rsa -b 4096 -C "$(git config user.email)" -f gh-pages -N ""
