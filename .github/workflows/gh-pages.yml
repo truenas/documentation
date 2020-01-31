@@ -22,10 +22,9 @@ jobs:
       with:
         hugo-version: 'latest'
         extended: true
-        run: sudo npm install -D --save autoprefixer && sudo npm install -D --save postcss-cli
 
     - name: Build
-      run: hugo --minify
+      run: sudo npm install -D --save autoprefixer && sudo npm install -D --save postcss-cli && hugo --minify
 
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v2
