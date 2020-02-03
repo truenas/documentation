@@ -36,9 +36,6 @@ jobs:
       - name: Build
         run: hugo -t docsy -d public --gc --minify --cleanDestinationDir
         
-      - name: add nojekyll
-        run: touch ./docs/public/.nojekyll
-        
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v2.4.0
         with:
