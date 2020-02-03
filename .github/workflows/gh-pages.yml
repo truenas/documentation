@@ -10,24 +10,28 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
 
       - name: Checkout Master
         uses: actions/setup-node@v1
         with:
           node-version: 10.x
-      - run: npm install -D --save autoprefixer
-      - run: npm install -D --save postcss-cli
+
+      - name: Checkout submodules
+        shell: bash
+        run: |
+          auth_header="$(git config --local --get http.https://github.com/.extraheader)"
+          git submodule sync --recursive
+          git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=1
+
+      - name: Install npm stuff
+        run: npm install -D --save autoprefixer && npm install -D --save postcss-cli
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2.2.1
         with:
           hugo-version: 'latest'
           extended: true
-
-      - name: Prepare Hugo
-        run: |
-          git submodule sync && git submodule update -f --init
           
       - name: Build
         run: hugo -t docsy -d public --gc --minify --cleanDestinationDir
