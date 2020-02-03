@@ -1,58 +1,51 @@
-# Docsy Example
+# How To: Hugo Local Build
 
-[Docsy](https://github.com/google/docsy) is a Hugo theme for technical documentation sites, providing easy site navigation, structure, and more. This **Docsy Example Project** uses the Docsy theme, as well as providing a skeleton documentation structure for you to use. You can either copy this project and edit it with your own content, or use the theme in your projects like any other [Hugo theme](https://gohugo.io/themes/installing-and-using-themes/).
+The documentation repository can be downloaded locally. This may be
+desired if you prefer using a specific text editor other than the
+in-browser Github editor to develop content.
 
 This Docsy Example Project is hosted at [https://example.docsy.dev/](https://example.docsy.dev/).
 
-You can find detailed theme instructions in the Docsy user guide: https://docsy.dev/docs/
-
-This is not an officially supported Google product. This project is currently maintained.
-
-## Cloning the Docsy Example Project
-
-The following will give you a project that is set up and ready to use (don't forget to use `--recurse-submodules` or you won't pull down some of the code you need to generate a working site). The `hugo server` command builds and serves the site. If you just want to build the site, run `hugo` instead.
-
-```bash
-git clone --recurse-submodules --depth 1 https://github.com/google/docsy-example.git
-cd docsy-example
-hugo server
-```
-
-The theme is included as a Git submodule:
+Part of the theme requires
+<code><a href="https://postcss.org/"> PostCSS</a></code>. To install
+`PostCSS`, a recent version of
+<code><a href="https://nodejs.org/en/"> NodeJS</a></code> must be
+installed on your machine so that you can use `npm`. Once installed,
+type
 
 ```bash
-▶ git submodule
- a053131a4ebf6a59e4e8834a42368e248d98c01d themes/docsy (heads/master)
+sudo npm install -D --save autoprefixer
+sudo npm install -D --save postcss-cli
 ```
+in the CLI.
 
-If you want to do SCSS edits and want to publish these, you need to install `PostCSS` (not needed for `hugo server`):
+## Download Hugo
+
+First, download the extended version of Hugo. Follow the
+[Hugo install instructions](https://gohugo.io/getting-started/installing/ "Install Hugo")
+for the appropriate operating system.
+
+## Clone Documentation Repo
+
+The next step is to clone this repo. To clone the repo in your current
+directory, type
 
 ```bash
-npm install
+git clone --recurse-submodules https://github.com/freenas/documentation.git
 ```
 
-<!--### Cloning the Example from the Theme Project
+in the CLI.
 
+## Build Locally
+
+Finally, the documentation website is ready to be built locally. To
+build the website locally, type
 
 ```bash
-git clone --recurse-submodules --depth 1 https://github.com/docsy.git
-cd tech-doc-hugo-theme/exampleSite
-HUGO_THEMESDIR="../.." hugo server
+hugo serve
 ```
 
+in the CLI.
 
-Note that the Hugo Theme Site requires the `exampleSite` to live in a subfolder of the theme itself. To avoid recursive duplication, the example site is added as a Git subtree:
-
-```bash
-git subtree add --prefix exampleSite https://github.com/google/docsy.git  master --squash
-```
-
-To pull in changes, see `pull-deps.sh` script in the theme.-->
-
-## Running the website locally
-
-Once you've cloned the site repo, from the repo root folder, run:
-
-```
-hugo server
-```
+After building the wesbite with `hugo serve`, access it by entering
+`localhost:1313` in a browser address bar.
