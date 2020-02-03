@@ -12,7 +12,13 @@ jobs:
   spelling:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
+    - name: Checkout submodules
+      shell: bash
+      run: |
+        auth_header="$(git config --local --get http.https://github.com/.extraheader)"
+        git submodule sync --recursive
+        git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive
     - name: Set up Python 3.7
       uses: actions/setup-python@v1
       with:
@@ -22,9 +28,9 @@ jobs:
         python -m pip install --upgrade pip setuptools
         python -m pip install pyspelling
         # Install any additional libraries required: additional plugins, documentation building libraries, etc.
-    - name: Install Aspell
+    - name: Install Hunspell
       run: |
-        sudo apt-get install aspell aspell-en
+        sudo apt-get install hunspell hunspell-en-us
     - name: Spell check
       run: |
          python -m pyspelling
