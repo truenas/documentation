@@ -9,8 +9,9 @@ on:
     - master
 
 jobs:
-  setup-linux:
-    name: setup-linux
+  spell-checking:
     runs-on: ubuntu-latest
+
+    steps:
     - name: Spellcheck Action
       uses: rojopolis/spellcheck-github-actions@0.2.0
