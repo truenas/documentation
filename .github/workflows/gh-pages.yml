@@ -22,7 +22,7 @@ jobs:
           extended: true
       - name: Prepare Hugo
         run: |
-          git submodule sync && git submodule update --init
+          git submodule sync && git submodule update -f --init
       - name: Build
         run: sudo npm install -D --save autoprefixer && sudo npm install -D --save postcss-cli && hugo -t docsy -d public --gc --minify --cleanDestinationDir
       - name: add nojekyll
