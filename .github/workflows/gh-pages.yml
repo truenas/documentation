@@ -24,7 +24,7 @@ jobs:
         run: |
           git submodule sync && git submodule update --init
       - name: Build
-        run: hugo -t docsy -d public --gc --minify --cleanDestinationDir
+        run: sudo npm install -D --save autoprefixer && sudo npm install -D --save postcss-cli && hugo -t docsy -d public --gc --minify --cleanDestinationDir
       - name: add nojekyll
         run: touch ./docs/public/.nojekyll
       - name: Deploy
