@@ -158,3 +158,9 @@ no = 'Sorry to hear that. Please <a href="https://github.com/freenas/documentati
 #	icon = "fa fa-envelope"
 #        desc = "Discuss development issues around the project"
 
+# Add dates to content pages
+[frontmatter]
+date = ["date", "publishDate", "lastmod"]
+lastmod = ["lastmod", ":fileModTime", ":default"]
+publishDate = ["publishDate", "date"]
+expiryDate = ["expiryDate"]
