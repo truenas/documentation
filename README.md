@@ -47,5 +47,5 @@ hugo serve
 
 in the CLI.
 
-After building the wesbite with `hugo serve`, access it by entering
+After building the website with `hugo serve`, access it by entering
 `localhost:1313` in a browser address bar.
