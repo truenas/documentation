@@ -1,38 +1,37 @@
-name: github pages
+name: Publish Docs
 
 on:
   push:
     branches:
-    - master
+      - master
 
 jobs:
-  build-deploy:
-    runs-on: ubuntu-18.04
+  build:
+    runs-on: ubuntu-latest
+
     steps:
-    - uses: actions/checkout@v2
-      with:
-        fetch-depth: 0
-    - name: Checkout submodules
-      shell: bash
-      run: |
-        auth_header="$(git config --local --get http.https://github.com/.extraheader)"
-        git submodule sync --recursive
-        git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive
-
-    - name: Setup Hugo
-      uses: peaceiris/actions-hugo@v2
-      with:
-        hugo-version: 'latest'
-        extended: true
-
-    - name: Build
-      run: sudo npm install -D --save autoprefixer && sudo npm install -D --save postcss-cli && hugo
-
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v2
-      env:
-        ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-        PUBLISH_BRANCH: gh-pages
-        PUBLISH_DIR: ./public
-      with:
-        keepFiles: true
+      - uses: actions/checkout@v1
+      - name: Checkout Master
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10.x
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2.2.1
+        with:
+          hugo-version: 'latest'
+          extended: true
+      - name: Prepare Hugo
+        run: |
+          git submodule sync && git submodule update --init
+      - name: Build
+        run: hugo -t docsy -d public --gc --minify --cleanDestinationDir
+      - name: add nojekyll
+        run: touch ./docs/public/.nojekyll
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v2.4.0
+        with:
+          emptyCommits: false
+        env:
+          ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: ./public
