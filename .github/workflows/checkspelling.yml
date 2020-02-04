@@ -31,6 +31,6 @@ jobs:
     - name: Install Hunspell
       run: |
         sudo apt-get install hunspell hunspell-en-us
-         
-    - name: Spellcheck Action
-      uses: rojopolis/spellcheck-github-actions@0.2.0
+    - name: Spell check
+      run: |
+        python -m pyspelling
