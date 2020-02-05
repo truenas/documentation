@@ -4,8 +4,6 @@ The documentation repository can be downloaded locally. This may be
 desired if you prefer using a specific text editor other than the
 in-browser Github editor to develop content.
 
-This Docsy Example Project is hosted at [https://example.docsy.dev/](https://example.docsy.dev/).
-
 Part of the theme requires
 <code><a href="https://postcss.org/"> PostCSS</a></code>. To install
 `PostCSS`, a recent version of
