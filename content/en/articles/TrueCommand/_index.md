@@ -1,6 +1,6 @@
 ---
 title: "TrueCommand™ Articles"
 linkTitle: "TrueCommand™"
-weight: 20
+weight: 15
 ---
 

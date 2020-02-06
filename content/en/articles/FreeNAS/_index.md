@@ -1,6 +1,6 @@
 ---
 title: "FreeNAS™ Articles"
-linkTitle: "FreeNAS™"
+linkTitle: "FreeNAS™ Articles"
 weight: 20
 ---
 
