@@ -1,7 +1,7 @@
 ---
 title: "Getting Started With FreeNAS™"
 linkTitle: "Getting Started with FreeNAS™"
-date: 2020-02-06
+date: 2020-02-10
 description: >
   "A how-to guide on getting started with FreeNAS™"
 weight: 1
