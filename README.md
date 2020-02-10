@@ -1,3 +1,4 @@
+[![Actions Status](https://github.com/freenas/documentation/workflows/Publish%20Docs/badge.svg)](https://github.com/freenas/documentation/actions)
 # How To: Hugo Local Build
 
 The documentation repository can be downloaded locally. This may be
