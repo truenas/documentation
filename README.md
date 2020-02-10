@@ -35,6 +35,10 @@ git clone --recurse-submodules https://github.com/freenas/documentation.git
 
 in the CLI.
 
+> **Note**: To update your local copy with any changes that have been merged into master, run\
+`git submodule foreach git pull origin master`
+
+
 ## Build Locally
 
 Finally, the documentation website is ready to be built locally. To
