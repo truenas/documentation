@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "/public/"
 title = "iXsystems™ Documentation"
 
 enableRobotsTXT = true
