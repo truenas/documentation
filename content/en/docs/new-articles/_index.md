@@ -9,7 +9,7 @@ To contribute new articles, you need to have a [GitHub account](https://github.c
 {{% /pageinfo %}}
 
 Thanks for your interest in submitting documentation articles!
-This article shows you how to create your own documentation how-tos and get them published on the iXsystems [documentation website](docs.ixsystems.com).
+This article shows you how to contribute documentation for publication on the iXsystems [documentation website](docs.ixsystems.com).
 
 ## Find a Spot for a New Article
 
