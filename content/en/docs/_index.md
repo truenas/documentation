@@ -4,10 +4,8 @@ linkTitle: "Contributing"
 menu: main
 ---
 
-{{% pageinfo %}}
-This is a work in progress for a top level page containing articles on making documentation changes and any documentation or website standards.
-{{% /pageinfo %}}
-
-
 The FreeNAS project welcomes all documentation contributions!
-We're using Hugo to create our documentation website and the Docsy theme for styling and structure.
+We're using [Hugo](https://gohugo.io/) to create this documentation website and the [Docsy theme](https://www.docsy.dev/) for styling and structure.
+
+The tutorials in this section are designed to guide you with different kinds of documentation contributions.
+Please feel free to propose changes and add new content here to help others learn how to contribute to project documentation!
