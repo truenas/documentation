@@ -1,0 +1,8 @@
+#!/bin/sh
+USER=aaron
+HOST=docs1.tn.ixsystems.com
+DIR=/var/www/html/docs1
+
+hugo && rsync -avz --delete public/ ${USER}@${HOST}:${DIR}
+
+exit 0
