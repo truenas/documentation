@@ -1,7 +1,8 @@
 ---
 title: "Make a Quick Change"
 linkTitle: "Quick Contributions"
-weight: 10
+weight: 1
+type: docs
 ---
 {{% pageinfo %}}
 To make a quick change to the documentation, you need to have a [GitHub account](https://github.com)!

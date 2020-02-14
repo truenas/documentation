@@ -1,7 +1,7 @@
 ---
 title: "Previous FreeNAS™ Guides"
 linkTitle: "Previous FreeNAS™Guides"
-weight: 12
+weight: 3
 ---
 
 Documentation for FreeNAS 11.3 and earlier was collected into a large book and made available on the [iXsystems Information Library](https://www.ixsystems.com/blog/knowledgebase_category/freenas/).
