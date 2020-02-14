@@ -1,7 +1,8 @@
 ---
 title: "Adding a New Article"
 linkTitle: "New Articles"
-weight: 20
+weight: 2
+type: docs
 ---
 
 {{% pageinfo %}}
