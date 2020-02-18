@@ -1,6 +1,6 @@
 ---
-title: "Previous FreeNAS™ Guides"
-linkTitle: "Previous FreeNAS™Guides"
+title: "Previous FreeNAS Guides"
+linkTitle: "Previous FreeNAS Guides"
 weight: 3
 ---
 
