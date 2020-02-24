@@ -4,9 +4,18 @@ Add styles or override variables from the theme here.
 
 */
 
+// css to center the landing page features
 .text-center {
     margin: auto;
 }
 
+// change some colors to ix-blue
 $primary: #0095D5;
 $secondary: #666666;
+
+// Some css to go modify the pageinfo shortcode
+.pageinfo-version {
+    font-weight: bold;
+    text-align: center;
+    text-decoration: underline;
+}
