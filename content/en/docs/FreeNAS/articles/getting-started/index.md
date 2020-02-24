@@ -1,8 +1,7 @@
 ---
 title: "Getting Started With FreeNAS™"
 linkTitle: "Getting Started with FreeNAS™"
-description: >
-  "A how-to guide on getting started with FreeNAS™"
+description: "A how-to guide on getting started with FreeNAS™"
 weight: 1
 ---
 
