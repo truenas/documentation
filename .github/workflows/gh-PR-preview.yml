@@ -1,0 +1,46 @@
+name: Preview Build
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Checkout Master
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10.x
+
+      - name: Checkout submodules
+        shell: bash
+        run: |
+          auth_header="$(git config --local --get http.https://github.com/.extraheader)"
+          git submodule sync --recursive
+          git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=1
+      - name: Install npm stuff
+        run: npm install -D --save autoprefixer && npm install -D --save postcss-cli
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2.4.5
+        with:
+          hugo-version: '0.62.2'
+          extended: true
+
+      - name: Build
+        run: hugo -t docsy -d public --gc --minify --cleanDestinationDir
+
+      - name: Deploy to Server
+        uses: easingthemes/ssh-deploy@v2.0.7
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
+          ARGS: "-avz --delete"
+          SOURCE: "public/"
+          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+          REMOTE_USER: ${{ secrets.REMOTE_USER }}
+          TARGET: ${{ secrets.REMOTE_TARGET }}
