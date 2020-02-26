@@ -32,15 +32,16 @@ jobs:
         with:
           hugo-version: '0.62.2'
           extended: true
-          
+
       - name: Build
         run: env HUGO_ENV="production" hugo -t docsy -d public --gc --minify --cleanDestinationDir
-        
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v2.4.0
-        with:
-          emptyCommits: false
+
+      - name: Deploy to Server
+        uses: easingthemes/ssh-deploy@v2.0.7
         env:
-          ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          PUBLISH_BRANCH: gh-pages
-          PUBLISH_DIR: ./public
+          SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
+          ARGS: "-avz --delete"
+          SOURCE: "public/"
+          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+          REMOTE_USER: ${{ secrets.REMOTE_USER }}
+          TARGET: ${{ secrets.REMOTE_TARGET_PUBLISH }}
