@@ -39,10 +39,8 @@ jobs:
 
       - name: SSH key
         run: |
-          mkdir ~/.ssh
-          touch ~/.ssh/id_rsa
-          echo "${{ secrets.SERVER_SSH_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-
-      - name: Run rsync
-        run: ssh -vvv ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }}
+          mkdir /home/runner/.ssh
+          touch /home/runner/.ssh/id_rsa
+          echo "${{ secrets.SERVER_SSH_KEY }}" > /home/runner/.ssh/id_rsa
+          chmod 600 /home/runner/.ssh/id_rsa
+          ssh -vvv ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }}
