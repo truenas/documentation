@@ -45,4 +45,4 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
 
       - name: Run rsync
-        run: ssh -vvv $${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }}
+        run: ssh -vvv ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }}
