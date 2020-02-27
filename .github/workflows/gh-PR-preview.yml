@@ -34,17 +34,13 @@ jobs:
           hugo-version: '0.62.2'
           extended: true
 
-      - name: SSH output
-        run: |
-          ssh -vvv ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }}
-
       - name: Build Site
         run: hugo -t docsy -d public --gc --minify --cleanDestinationDir
 
       - name: Rsync to Server
         uses: easingthemes/ssh-deploy@v2.0.8
         env:
-          SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
+          SSH_PRIVATE_KEY: ${{ secrets.DOCSBUILD_PRIVATE_KEY }}
           ARGS: "-ravz --delete"
           SOURCE: "public/"
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
