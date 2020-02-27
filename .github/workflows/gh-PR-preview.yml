@@ -34,6 +34,10 @@ jobs:
           hugo-version: '0.62.2'
           extended: true
 
+      - name: SSH output
+        run: |
+          ssh -vvv ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }}
+
       - name: Build Site
         run: hugo -t docsy -d public --gc --minify --cleanDestinationDir
 
