@@ -37,6 +37,9 @@ jobs:
       - name: Build
         run: hugo -t docsy -d public --gc --minify --cleanDestinationDir
 
+      - name: Make dir for branch
+        run: ssh ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }} mkdir -p ${{ secrets.REMOTE_TARGET }}/${{ github.head_ref }}/
+
       - name: Deploy to Server
         uses: easingthemes/ssh-deploy@v2.0.7
         env:
