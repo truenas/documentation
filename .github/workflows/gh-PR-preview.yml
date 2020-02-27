@@ -37,12 +37,14 @@ jobs:
       - name: Build
         run: hugo -t docsy -d public --gc --minify --cleanDestinationDir
 
-      - name: Deploy to Server
+      - name: SSH key
         run: |
           mkdir ~/.ssh
           touch ~/.ssh/id_rsa
           echo "${{ secrets.SERVER_SSH_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
+
+      - name: Deploy to Server
         uses: easingthemes/ssh-deploy@v2.0.7
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
