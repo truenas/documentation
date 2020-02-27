@@ -42,7 +42,9 @@ jobs:
           mkdir ~/.ssh
           touch ~/.ssh/id_rsa
           echo "${{ secrets.SERVER_SSH_KEY }}" > ~/.ssh/id_rsa
+          echo "" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
 
       - name: SSH
-        run: ssh -vvv -o StrictHostKeyChecking=no ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }}
+        run: |
+          ssh -vvv -o StrictHostKeyChecking=no ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }}
