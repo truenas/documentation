@@ -19,7 +19,7 @@ jobs:
         with:
           node-version: 10.x
 
-      - name: Checkout submodules
+      - name: Checkout Submodules
         shell: bash
         run: |
           auth_header="$(git config --local --get http.https://github.com/.extraheader)"
@@ -34,14 +34,15 @@ jobs:
           hugo-version: '0.62.2'
           extended: true
 
-      - name: Build
+      - name: Build Site
         run: hugo -t docsy -d public --gc --minify --cleanDestinationDir
 
-      - name: SSH key
-        run: |
-          mkdir /home/runner/.ssh
-          touch /home/runner/.ssh/id_rsa
-          echo "${{ secrets.SERVER_SSH_KEY }}" > /home/runner/.ssh/id_rsa
-          ls -lh /home/runner/.ssh/
-          chmod 600 /home/runner/.ssh/id_rsa
-          ssh -vvv ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }}
+      - name: Rsync to Server
+        uses: easingthemes/ssh-deploy@v2.0.8
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
+          ARGS: "-ravz --delete"
+          SOURCE: "public/"
+          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+          REMOTE_USER: ${{ secrets.REMOTE_USER }}
+          TARGET: ${{ secrets.REMOTE_TARGET }}${{ github.head_ref }}
