@@ -38,6 +38,11 @@ jobs:
         run: hugo -t docsy -d public --gc --minify --cleanDestinationDir
 
       - name: Deploy to Server
+        run: |
+          mkdir ~/.ssh
+          touch ~/.ssh/id_rsa
+          echo "${{ secrets.SERVER_SSH_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
         uses: easingthemes/ssh-deploy@v2.0.7
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
@@ -45,4 +50,4 @@ jobs:
           SOURCE: "public/"
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
-          TARGET: ${{ secrets.REMOTE_TARGET }}/${{ github.head_ref }}/
+          TARGET: ${{ secrets.REMOTE_TARGET }}
