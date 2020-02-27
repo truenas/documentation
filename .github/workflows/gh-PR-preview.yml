@@ -41,8 +41,8 @@ jobs:
         run: |
           mkdir ~/.ssh
           touch ~/.ssh/id_rsa
-          echo "${{ secrets.SERVER_SSH_KEY }}" > ~/.ssh/id_rsa
-          echo "" > ~/.ssh/id_rsa
+          echo "${{ secrets.DOCSBUILD_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          sed -i -e "s#\\\\n#\n#g" ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
 
       - name: SSH
