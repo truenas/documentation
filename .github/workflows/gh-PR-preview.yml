@@ -37,24 +37,11 @@ jobs:
       - name: Build
         run: hugo -t docsy -d public --gc --minify --cleanDestinationDir
 
-      - name: Create remote dir for branch
-        uses: garygrossgarten/github-action-ssh@v0.4.3
-        with:
-          # Command to execute on the remote server.
-          command: mkdir -p ${{ secrets.REMOTE_TARGET }}/${{ github.head_ref }}/
-          # Hostname or IP address of the server.
-          host: ${{ secrets.REMOTE_HOST }}
-          # Username for authentication.
-          username: ${{ secrets.REMOTE_USER }}
-          # File Location or string that contains a private key for either key-based or hostbased user authentication (OpenSSH format)
-          privateKey: ${{ secrets.SERVER_SSH_KEY }}
-
-
       - name: Deploy to Server
         uses: easingthemes/ssh-deploy@v2.0.7
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
-          ARGS: "-avz --delete"
+          ARGS: "-ravz --delete"
           SOURCE: "public/"
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
