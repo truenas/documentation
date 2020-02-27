@@ -37,7 +37,7 @@ jobs:
       - name: Build Site
         run: hugo -t docsy -d public --gc --minify --cleanDestinationDir
 
-      - name: SSH key
+      - name: Create SSH Key
         run: |
           mkdir ~/.ssh
           touch ~/.ssh/id_rsa
@@ -45,6 +45,6 @@ jobs:
           sed -i -e "s#\\\\n#\n#g" ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
 
-      - name: SSH
+      - name: Rsync Push
         run: |
-          ssh -vvv -o StrictHostKeyChecking=no ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }}
+          rsync -rvza -e "ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no" public ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }}:${{ secrets.REMOTE_TARGET }}${{ github.head_ref }}
