@@ -37,11 +37,11 @@ jobs:
       - name: Build
         run: hugo -t docsy -d public --gc --minify --cleanDestinationDir
 
-      - name: Run SSH command
+      - name: Create remote dir for branch
         uses: garygrossgarten/github-action-ssh@v0.4.3
         with:
           # Command to execute on the remote server.
-          command: ssh @ mkdir -p ${{ secrets.REMOTE_TARGET }}/${{ github.head_ref }}/
+          command: mkdir -p ${{ secrets.REMOTE_TARGET }}/${{ github.head_ref }}/
           # Hostname or IP address of the server.
           host: ${{ secrets.REMOTE_HOST }}
           # Username for authentication.
