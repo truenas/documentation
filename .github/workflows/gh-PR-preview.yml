@@ -46,4 +46,4 @@ jobs:
 
       - name: SSH
         run: |
-            ssh -vvv ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }}
+            ssh -vvv -o StrictHostKeyChecking=no ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }}
