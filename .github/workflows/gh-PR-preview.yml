@@ -45,5 +45,5 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
 
       - name: SSH
-          run: |
+        run: |
             ssh -vvv ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }}
