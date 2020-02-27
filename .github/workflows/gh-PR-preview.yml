@@ -37,12 +37,13 @@ jobs:
       - name: Build Site
         run: hugo -t docsy -d public --gc --minify --cleanDestinationDir
 
-      - name: Rsync to Server
-        uses: easingthemes/ssh-deploy@v2.0.8
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.DOCSBUILD_PRIVATE_KEY }}
-          ARGS: "-ravz --delete"
-          SOURCE: "public/"
-          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
-          REMOTE_USER: ${{ secrets.REMOTE_USER }}
-          TARGET: ${{ secrets.REMOTE_TARGET }}${{ github.head_ref }}
+      - name: SSH key
+        run: |
+          mkdir ~/.ssh
+          touch ~/.ssh/id_rsa
+          echo "${{ secrets.SERVER_SSH_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+
+      - name: SSH
+          run: |
+            ssh -vvv ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }}
