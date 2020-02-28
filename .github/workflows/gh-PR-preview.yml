@@ -14,7 +14,7 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
 
-      - name: Checkout Master
+      - name: Checkout Branch
         uses: actions/setup-node@v1
         with:
           node-version: 10.x
