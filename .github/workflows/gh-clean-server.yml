@@ -10,6 +10,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    steps:
       - name: Remove Dir on Server
         run: |
           ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }} 'rm -rf ${{ secrets.REMOTE_TARGET}}${{ github.head_ref }}'
