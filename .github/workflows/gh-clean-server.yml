@@ -1,9 +1,7 @@
 name: Clean Server
 
 on:
-  delete:
-    branches:
-      - ${{ github.head_ref }}
+  delete
 
 
 jobs:
