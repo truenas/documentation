@@ -42,7 +42,7 @@ in the CLI.
 
 ## Build Locally
 
-Finally, the documentation website is ready to be built locally. To
+Finally, the documentation website is ready to be built locally. `cd` into the cloned repo. To
 build the website locally, type
 
 ```bash
