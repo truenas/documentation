@@ -35,7 +35,7 @@ jobs:
           extended: true
 
       - name: Build Site
-        run: hugo -t docsy -d public --gc --minify --cleanDestinationDir
+        run: env HUGO_ENV="production" hugo -t docsy -d public --gc --minify --cleanDestinationDir
 
       - name: Create SSH Key
         run: |
