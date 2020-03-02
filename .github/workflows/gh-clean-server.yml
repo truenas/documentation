@@ -3,7 +3,6 @@ name: Clean Server
 on:
   delete
 
-
 jobs:
   build:
     runs-on: ubuntu-latest
