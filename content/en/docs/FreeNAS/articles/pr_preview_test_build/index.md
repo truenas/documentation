@@ -7,4 +7,5 @@ weight: 1
 
 ## This is a h2 heading
 
-This is another test. Adding content here to make a PR merge and delete it.
+This is another test. Changing up the content to test deleting PR branch for
+the workflow.
