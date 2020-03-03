@@ -94,7 +94,7 @@ github_repo = "https://github.com/freenas/documentation"
 # github_subdir = ""
 
 # Google Custom Search Engine ID. Remove or comment out to disable search.
-gcs_engine_id = "017685261477472164873:k0nt3bphaqi"
+#gcs_engine_id = "011737558837375720776:fsdu1nryfng"
 
 # Enable Algolia DocSearch
 #algolia_docsearch = true
