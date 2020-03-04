@@ -1,13 +1,10 @@
 #!/usr/bin/env python3
+#### THIS FILE IS OUTDATED ###
+
 import subprocess
 
-# Get Username
-username = input('Enter your username: ')
-
-allowed_users = ['aaron', 'tim', 'jt']
-
-web_server_host = "docs1.tn.ixsystems.com"
-web_server_dir = "/var/www/html/docs1"
+web_server_host = "cdn1.tn.ixsystems.com"
+web_server_dir = "/zdata/docs"
 
 rsync_target = username + "@" + web_server_host + ":" + web_server_dir
 
