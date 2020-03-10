@@ -1,6 +1,6 @@
 ---
-title: "Software Documentation"
-linkTitle: "Software Documentation"
+title: "Documentation"
+linkTitle: "Documentation"
 menu: main
 weight: 1
 type: docs
