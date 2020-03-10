@@ -1,8 +1,8 @@
 ---
-title: "Getting Started With FreeNAS™"
-linkTitle: "Getting Started with FreeNAS™"
-description: "A how-to guide on getting started with FreeNAS™"
-weight: 1
+title: "Getting Started With TrueNAS CORE"
+linkTitle: "Installing TrueNAS CORE"
+description: "A how-to guide for getting started with TrueNAS"
+weight: 2
 ---
 
 {{< imgproc hardware-image Fill "1700x400" >}}
