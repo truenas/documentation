@@ -1,3 +1,1 @@
-Thanks for contributing to FreeNAS documentation! Please set this checkbox for your Pull Request:
-
-- [] I understand that my changes will be distributed under the [Creative Commons 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) license.
+Thanks for contributing to FreeNAS documentation! By opening a Pull Request, you're acknowledging that your changes will be distributed under the [Creative Commons 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) license.
