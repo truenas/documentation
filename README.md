@@ -25,6 +25,8 @@ First, download the extended version of Hugo. Follow the
 [Hugo install instructions](https://gohugo.io/getting-started/installing/ "Install Hugo")
 for the appropriate operating system.
 
+See these instructions for manually installing the Hugo extended version in WSL: https://sal.as/post/install-hugo-on-wsl/
+
 ## Clone Documentation Repo
 
 The next step is to clone this repo. To clone the repo in your current
