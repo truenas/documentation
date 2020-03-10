@@ -1,5 +1,5 @@
 ---
-title: "TrueCommand™ Documentation"
-linkTitle: "TrueCommand™"
-weight: 3
+title: "TrueCommand"
+linkTitle: "TrueCommand"
+weight: 4
 ---

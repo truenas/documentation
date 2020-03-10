@@ -1,4 +1,9 @@
-# ZFS Primer
+---
+Title: "ZFS Primer"
+linkTitle: "ZFS Primer"
+weight: 4
+type: docs
+---
 
 ZFS is an advanced, modern filesystem that was specifically designed
 to provide features not available in traditional UNIX filesystems. It

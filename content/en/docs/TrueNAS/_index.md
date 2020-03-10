@@ -1,5 +1,5 @@
 ---
-title: "TrueNAS™ Documentation"
-linkTitle: "TrueNAS™"
-weight: 2
+title: "TrueNAS"
+linkTitle: "TrueNAS"
+weight: 1
 ---
