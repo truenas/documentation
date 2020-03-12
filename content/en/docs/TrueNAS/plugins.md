@@ -5,8 +5,9 @@ description: "How to use plugins in TrueNAS CORE and TrueNAS Enterprise"
 ---
 
 {{% alert title="Notice" color="info" %}}
-This feature is available in TrueNAS CORE and specially licensed versions of TrueNAS Enterprise.
-For assistance, please contact iX Support:
+The Plugins feature is generally available in TrueNAS CORE and is supported by the open source TrueNAS community.
+TrueNAS Enterprise does not show or support this feature unless it has been added to a TrueNAS Enterprise license.
+For more details or to request plugin support in TrueNAS Enterprise, please contact iX Support:
 
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;}
