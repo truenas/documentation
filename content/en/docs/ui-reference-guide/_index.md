@@ -1,5 +1,5 @@
 ---
-title: "TrueNAS Component Guides"
-linkTitle: "TrueNAS Component Guides"
+title: "TrueNAS Reference Materials"
+linkTitle: "TrueNAS Reference Materials"
 weight: 2
 ---
