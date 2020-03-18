@@ -2,6 +2,7 @@
 title: "Replicating Snapshots"
 linkTitle: "Replicating Snapshots"
 description: "How to back up dataset snapshots to another system"
+type: docs
 ---
 
 # Process Summary
