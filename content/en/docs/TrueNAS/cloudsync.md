@@ -1,6 +1,6 @@
 ---
 title: "Transferring Data to the Cloud"
-linkTitle: "Transferring Data to the Cloud"
+linkTitle: "Cloud Data Transfers"
 description: "How to configure Cloud Credentials and Cloud Sync tasks to send or receive data from the Cloud"
 ---
 
