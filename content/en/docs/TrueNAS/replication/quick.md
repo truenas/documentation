@@ -1,11 +1,11 @@
 ---
-title: "Quick Local Replication"
-linkTitle: "Quick"
+title: "Local Replication"
+linkTitle: "Local Replication"
 description: "How to use the TrueNAS Wizard to quickly back up new snapshots within the local system"
 weight: 1
 ---
 
-# Process Summary
+## Process Summary
 
 * Requirements: Storage pools and datasets created in **Storage > Pools**.
 
@@ -22,7 +22,7 @@ weight: 1
     * Dialog might ask to delete existing snapshots from the Destination. Be sure that all important important data is protected before deleting anything.
 * Clicking the task "State" shows the logs for that replication task.
 
-# Quick Backups with the Replication Wizard
+## Quick Backups with the Replication Wizard
 
 TrueNAS provides a wizard that is useful to quickly configure different simple replication scenarios.
 
