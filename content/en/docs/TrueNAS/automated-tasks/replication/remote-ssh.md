@@ -89,7 +89,6 @@ TrueNAS suggests a name based off the selected sources and destination, but this
 
 ### Schedule and Lifetime
 
-
 Adding a schedule automates the task to run according to your chosen times.
 You can choose between a number of preset schedules or create a custom schedule for when the replication will run.
 Choosing to run the replication once will run the replication immediately after saving the task, but any additional replications must be triggered manually.
