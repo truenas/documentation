@@ -54,8 +54,8 @@ Each replication task name needs to be unique.
 ### Transport Options
 
 The transport selector determines the method to use for the replication.
-SSH is the standard option for sending or receiving snapshots from a remote system, but SSH+NETCAT is available for replications that take place within completely secure networks.
-Local is only used for replicating snapshots within the same system.
+*SSH* is the standard option for sending or receiving snapshots from a remote system, but *SSH+NETCAT* is available for replications that take place within completely secure networks.
+*Local* is only used for replicating snapshots within the same system.
 
 With remote replications, configure the transport method by selecting the SSH connection to the remote system that will send or receive snapshots.
 Options for compressing data, adding a bandwidth limit, or other data stream customizations are available.
