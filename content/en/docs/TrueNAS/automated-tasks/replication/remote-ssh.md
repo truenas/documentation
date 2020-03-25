@@ -13,7 +13,7 @@ To streamline creating simple replication configurations, the replication wizard
 
 * **Tasks > Replication Tasks**
   * Choose sources for snapshot replication.
-    * Remote sources requires an SSH connection.
+    * Remote sources require an SSH connection.
     * TrueNAS shows how many snapshots will be replicated.
   * Define the snapshot destination
     * A remote destination requires an SSH connection.
