@@ -23,7 +23,7 @@ weight: 1
   * Define how long the snapshots will be stored in the Destination
   * Clicking "START REPLICATION" immediately snapshots the chosen Sources and copies those snapshots to the Destination
     * Dialog might ask to delete existing snapshots from the Destination. Be sure that all important important data is protected before deleting anything.
-* Clicking the task "State" shows the logs for that replication task.
+* Clicking the task *State* shows the logs for that replication task.
 
 ## Quick Backups with the Replication Wizard
 

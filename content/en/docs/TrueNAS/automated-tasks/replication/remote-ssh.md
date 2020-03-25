@@ -16,7 +16,7 @@ To streamline creating simple replication configurations, the replication wizard
 
 * **Tasks > Replication Tasks**
   * Choose sources for snapshot replication.
-    * Remote sources requires an SSH connection.
+    * Remote sources require an SSH connection.
     * TrueNAS shows how many snapshots will be replicated.
   * Define the snapshot destination
     * A remote destination requires an SSH connection.
@@ -91,7 +91,6 @@ NETCAT uses common port settings, but these can be overriden by switching to the
 TrueNAS suggests a name based off the selected sources and destination, but this can be overwritten with a custom name.
 
 ### Schedule and Lifetime
-
 
 Adding a schedule automates the task to run according to your chosen times.
 You can choose between a number of preset schedules or create a custom schedule for when the replication will run.
