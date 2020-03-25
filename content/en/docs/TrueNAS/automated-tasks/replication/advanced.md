@@ -48,7 +48,7 @@ Options are grouped together by category.
 Options can appear, disappear, or be disabled depending on the configuration choices you make.
 It's best to start by configuring the general options first, then the transport options before configuring replication sources and destination.
 
-Name the task, choose whether the local system is sending or receiving snapshots, and decide what method to use for the replication.
+Name the task. Choose whether the local system is sending or receiving snapshots, and decide what method to use for the replication.
 Each replication task name needs to be unique.
 
 ### Transport Options
