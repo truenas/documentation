@@ -4,6 +4,10 @@ linkTitle: "Automated Snapshots"
 description: "How to set up automated dataset snapshotting"
 ---
 
+{{% pageinfo version="FreeNAS 11.2" %}}
+
+{{% /pageinfo %}}
+
 A periodic snapshot task allows scheduling the creation of read-only versions of pools and datasets at a given point in time.
 Snapshots can be created quickly and, if little data changes, new snapshots take up very little space.
 For example, a snapshot where no files have changed takes 0 MB of storage, but as changes are made to files, the snapshot size changes to reflect the size of the changes.

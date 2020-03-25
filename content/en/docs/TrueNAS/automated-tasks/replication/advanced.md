@@ -5,6 +5,9 @@ description: "How to create a replication task using the advanced options"
 weight: 3
 ---
 
+{{% pageinfo version="FreeNAS 11.3" %}}
+{{% /pageinfo %}}
+
 Requirements:
 * Storage pools with datasets and data to snapshot.
 * SSH configured with a connection to the remote system saved in **System > SSH Connections**.
@@ -96,9 +99,12 @@ Adding a name to the end of the path creates a new dataset in that location.
 By default, the destination dataset is reset to be **read-only** after the replication is complete.
 You can change the read-only policy to only start replication when the destination is read-only or to disable checking the dataset's read-only state.
 
+{{% alert title="Warning" color="warning" %}}
 Synchronizing the destination snapshots with the sources **destroys** any snapshots in the destination that do not match the source snapshots.
 TrueNAS also does a full replication of the source snapshots, as if the replication task had never been run before.
 This can be a very destructive option, so be sure that any snapshots that will be deleted from the destination are obsolete or otherwise backed up in a different location.
+{{% /alert %}}
+
 
 Defining a snapshot lifetime is generally recommended to prevent cluttering the system with obsolete snapshots.
 

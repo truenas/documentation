@@ -5,6 +5,9 @@ description: "How to use the TrueNAS Wizard to create a replication task that wo
 weight: 2
 ---
 
+{{% pageinfo version="FreeNAS 11.3" %}}
+{{% /pageinfo %}}
+
 It is recommended to configure SSH and automatic dataset snapshots in TrueNAS before creating a remote replication task.
 This ensures that both systems can connect to each other and new snapshots are regularly available for replication.
 To streamline creating simple replication configurations, the replication wizard can assist with creating a new SSH connection and automatically creates a periodic snapshot task for sources that have no existing snapshots.

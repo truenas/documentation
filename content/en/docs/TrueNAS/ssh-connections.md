@@ -4,6 +4,9 @@ linkTitle: "SSH Connections"
 description: "How to configure various SSH features in TrueNAS"
 ---
 
+{{% pageinfo version="FreeNAS 11.3" %}}
+{{% /pageinfo %}}
+
 [Secure Socket Shell (SSH)](https://searchsecurity.techtarget.com/definition/Secure-Shell) is a network protocol that provides a secure method to access and transfer files between two hosts while using an unsecure network.
 SSH can use user account credentials to establish secure connections, but often uses key pairs shared between host systems for authentication.
 
@@ -87,7 +90,10 @@ Don't forget to re-enable the SSH service on the **Services** page when all the 
 This only works for users that use command line versions of *scp* and *sftp*.
 When SSH is configured, authenticated users with a user account can use *ssh* to log into the TrueNAS system over the network.
 User accounts are created by going to **Accounts > Users** and clicking ADD.
-While the SSH login defaults to the user home directory, users are able to navigate outside their home directory, which can pose a security risk.
+
+By default, the user will see their home directory after logging in with SSH.
+However, the user can still navigate to system locations outside their home directory, so take security precautions before granting users SSH access to the system.
+One method to increase security is to change a user's shell to only allow file transfers.
 
 To allow users to use *scp* and *sftp* to transfer files between their local computer and their home directory on the TrueNAS system, while restricting them from logging into the system using *ssh*.
 To configure this scenario, go to **Accounts > Users** and edit the desired user account.
@@ -151,7 +157,7 @@ Open the keypair to use for the SSH connection and copy the text of the public S
 <img src="/images/system-sshkeypairs-copypublic.png">
 <br><br>
 
-Log in to the TrueNAS system and go to **Accounts > Users**.
+Log in to the TrueNAS system that needs to register the public key and go to **Accounts > Users**.
 Edit the *root* account.
 Paste the SSH public key text into the **SSH Public Key** field.
 

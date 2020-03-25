@@ -5,6 +5,9 @@ description: "How to use the TrueNAS Wizard to quickly back up new snapshots wit
 weight: 1
 ---
 
+{{% pageinfo version="FreeNAS 11.3" %}}
+{{% /pageinfo %}}
+
 ## Process Summary
 
 * Requirements: Storage pools and datasets created in **Storage > Pools**.
