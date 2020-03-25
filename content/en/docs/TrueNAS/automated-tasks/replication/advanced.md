@@ -63,7 +63,7 @@ Options for compressing data, adding a bandwidth limit, or other data stream cus
 <img src="/images/replication-advanced-ssh.png">
 <br><br>
 
-For the SSH+NETCAT method, you also need to define the addresses and ports to use for the Netcat connection.
+For the *SSH+NETCAT* method, you also need to define the addresses and ports to use for the Netcat connection.
 
 ### Sources
 
