@@ -1,6 +1,6 @@
 ---
-title: "Remote Replications"
-linkTitle: "Remote Replications"
+title: "Remote"
+linkTitle: "Remote"
 description: "How to use the TrueNAS Wizard to create a replication task that works with a remote system to send or receive ZFS snapshots"
 weight: 2
 ---
@@ -56,7 +56,7 @@ However, when the sources are on the local system and don't have any existing sn
 <br><br>
 
 
-Remote sources require entering a snapshot naming schema to identify the snapshots to replication.
+Remote sources require entering a snapshot naming schema to identify the snapshots to replicate.
 A naming schema is a collection of [strftime](https://www.freebsd.org/cgi/man.cgi?query=strftime) time and date strings and any identifiers that a user might have added to the snapshot name.
 
 <img src="/images/replication-wizard-remotesources.png">

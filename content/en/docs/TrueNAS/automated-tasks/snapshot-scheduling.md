@@ -1,6 +1,6 @@
 ---
-title: "ZFS Snapshot Schedules"
-linkTitle: "Snapshot Scheduling"
+title: "Automated Snapshots"
+linkTitle: "Automated Snapshots"
 description: "How to set up automated dataset snapshotting"
 ---
 

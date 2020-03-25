@@ -1,6 +1,6 @@
 ---
-title: "Local Replication"
-linkTitle: "Local Replication"
+title: "Local"
+linkTitle: "Local"
 description: "How to use the TrueNAS Wizard to quickly back up new snapshots within the local system"
 weight: 1
 ---
