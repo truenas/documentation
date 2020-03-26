@@ -1,10 +1,13 @@
 ---
-title: "Updating: TrueNAS Enterprise with HA"
-linkTitle: "Updating: TrueNAS Enterprise with HA"
+title: "Updating an HA system"
+linkTitle: "Updating an HA system"
 description: "How to update a High Availability TrueNAS Enterprise system"
 ---
 
-# Process Summary
+{{% pageinfo version="TrueNAS 11.3" %}}
+{{% /pageinfo %}}
+
+## Process Summary
 
 Go to **System > Update**
 
@@ -40,6 +43,6 @@ Go to **System > Update**
      * UI alert appears if the update fails.
      * Details are written to */data/update.failed*.
 
-# Updating a TrueNAS Enterprise system that has High Availability (HA)
+## Updating a TrueNAS Enterprise system that has High Availability (HA)
 
 Detailed article about update process.
