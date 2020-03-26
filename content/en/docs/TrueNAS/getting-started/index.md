@@ -1,6 +1,6 @@
 ---
 title: "Getting Started With TrueNAS CORE"
-linkTitle: "Installing TrueNAS CORE"
+linkTitle: "Getting Started With TrueNAS CORE"
 description: "A how-to guide for getting started with TrueNAS"
 weight: 2
 ---
