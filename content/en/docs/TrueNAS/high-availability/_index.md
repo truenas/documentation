@@ -1,11 +1,11 @@
 ---
-title: "Configuring High Availability"
-linkTitle: "Configuring High Availability"
-description: "How to set up and manage High Availability (HA) in TrueNAS Enterprise"
+title: "High Availablity"
+linkTitle: "High Availablity"
+description: "How to update a High Availability TrueNAS Enterprise system"
 ---
 
-{{% alert title="Notice" color="info" %}}
-This is a TrueNAS Enterprise licensed feature only.
+{{% alert title="Licensed Feature" color="warning" %}}
+High Availability is a TrueNAS Enterprise licensed feature only.
 For assistance, please contact iX Support:
 
 <style type="text/css">
@@ -38,38 +38,23 @@ For assistance, please contact iX Support:
 </table>
 {{% /alert %}}
 
-# Process Summary
-
-* Redundant controller with dual-ported disk drives designed to maximize storage availability time.
-  * Adds options or new screens throughout the UI
-    * **System > Failover**
-      * Contains options for controlling failovers
-        * Disable failover checkbox
-        * Designating the primary TrueNAS controller
-        * Determining how long to wait after a network interruption to trigger a failover
-        * Buttons to sync to or from the other TrueNAS controller (Warning: Use only when directed by iXsystems Support Engineers)
-          * Synchronization is typically automatic.
-          * Buttons are only used for troubleshooting HA.
-      * Both controllers booting as “standby”  shows an option to force the current controller to become “active”.
-      * **ifconfig** shows additional fields for failover troubleshooting.
-      * Rebooting both controllers simultaneously requires entering the passphrase for any encrypted pools at the UI login screen.
-    * **Network > Global Configuration**
-      * Allows setting the hostname of either TrueNAS controller.
-      * Allows setting a virtual hostname.
-        * This is also used as the Kerberos principal name.
-    * **Network > Interfaces**
-      * Interfaces cannot be edited when HA is enabled.
-      * Interface form is used to set the Failover Group, VHID, and set the Failover IP address
-    * HA Status icon (upper-right corner)
-
-# Configuring High Availability (HA)
-
 TrueNAS Enterprise uses an active/standby configuration of dual TrueNAS controllers for HA.
 Dual-ported disk drives are connected to both TrueNAS controllers simultaneously.
 One TrueNAS controller is active, the other standby.
+
+<img src="/images/ha-dashboard.png">
+<br><br>
 
 The active TrueNAS controller sends periodic announcements to the network.
 If a fault occurs and the active TrueNAS controller stops sending the announcements, the standby TrueNAS controller detects this and initiates a failover.
 Storage and cache devices are imported on the standby TrueNAS controller, then I/O operations switch over to it.
 The standby TrueNAS controller then becomes the active TrueNAS controller.
 This failover operation can happen in seconds rather than the minutes of other configurations, significantly reducing the chance of a client timeout.
+
+The Common Address Redundancy Protocol ([CARP](https://www.openbsd.org/faq/pf/carp.html)) is used to provide high availability and failover.
+CARP was originally developed by the OpenBSD project and provides an open source, non patent-encumbered alternative to the VRRP and HSRP protocols.
+Failover is not allowed if both TrueNAS controllers have the same CARP state.
+
+{{% alert title="Service Interruptions" color="warning" %}}
+Seamless failover is only available with iSCSI or NFSv4. Other protocols can failover, but connections are disrupted by the failover event.
+{{% /alert %}}
