@@ -27,14 +27,24 @@ explanations.
 
 After changing the desired settings, click **SAVE**.
 
-## Create Users for the Share
+## Users for the Share
 
-Each user connecting to the share must have a user profile that exists on the
-TrueNAS.
+Users connecting to the SMB share must have user accounts on the TrueNAS before
+they can connect. Add user accounts by going to **Accounts > Users > ADD**.
+
+If LDAP has been configured and you want users from the LDAP server to be
+allowed to access the SMB share, check the setting **Samba Schema** in
+**Directory Services > LDAP > ADVANCED MODE**.
+
+{{% alert color="warning" %}}
+If the LDAP setting **Samba Schema** is enabled, then the local TrueNAS user
+accounts cannot be used to connect to the share. Only user accounts configured
+on the LDAP server can connect to the share.
+{{% /alert %}}
 
 ## Edit ACLs
 
-The next step for setting up a general purpose SMB share is to control the
+The final step for setting up a general purpose SMB share is to control the
 permissions of the users accessing the share. After an SMB share has been
 created, it appears in the **Sharing > Windows Shares (SMB)** list. Go to the
 list and click
