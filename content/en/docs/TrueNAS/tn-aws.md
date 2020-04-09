@@ -107,7 +107,7 @@ All of these elements are required for the upload to start.
 The upload can take as long as an hour, depending on connection speeds and other factors.
 
 When the S3 bucket upload is complete, the script will create a snapshot, register the AMI, and copy the AMI to all regions for mirrors.
-The upload command fails if the image doesn't work for some reason.
+The upload command will fail if the image doesn't work for some reason.
 For example, using a name that already exists will cause the upload command to fail.
 If this happens, fix the error and rerun the command.
 When successful, the upload simply finishes.
