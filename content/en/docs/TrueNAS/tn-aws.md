@@ -30,7 +30,7 @@ description: "How to create a TrueNAS image and use it with Amazon Web Services"
   * Reset configuration to default
   * Power off device
 * Upload image to EC2
-  * description and region name are required
+  * Description and region name are required
 * Launch EC2 instance
   * Select name created with image
   * t2.medium is the recommended instance type
