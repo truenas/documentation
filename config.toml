@@ -54,7 +54,7 @@ id = "UA-2174408-20"
 
 [languages]
 [languages.en]
-title = "TrueNAS Documentation"
+title = ""
 description = "One stop shop for TrueNAS documentation."
 languageName ="English"
 # Weight used for sorting.
@@ -79,7 +79,7 @@ copyright = "iXsystems™"
 privacy_policy = "https://policies.google.com/privacy"
 
 # First one is picked as the Twitter card image if not set on page.
-# images = ["images/project-illustration.png"]
+images = ["images/TrueNAS_favicon.png"]
 
 # Menu title if your navbar has a versions selector to access old versions of your site.
 # This menu appears only if you have at least one [params.versions] set.
@@ -111,7 +111,7 @@ breadcrumb_disable = false
 #  Set to true to hide the sidebar search box (the top nav search box will still be displayed if search is enabled)
 sidebar_search_disable = false
 #  Set to false if you don't want to display a logo (/assets/icons/logo.svg) in the top nav bar
-navbar_logo = true
+navbar_logo = false
 # Set to true to disable the About link in the site footer
 footer_about_disable = true
 

@@ -1,60 +1,55 @@
 +++
 title = "TrueNAS Documentation"
 linkTitle = "TrueNAS Docs"
-
 +++
 
 <!-------------------------cover block--------------------------------->
-{{< blocks/cover title="TrueNAS Documentation: A One Stop Shop for TrueNAS Docs!" image_anchor="smart" height="min" color="blue" >}}
+{{< blocks/cover title="TrueNAS Documentation" image_anchor="top" height="full" color="secondary" >}}
+<p style="text-shadow: 2px 2px 4px #000000;"><b>Welcome to the TrueNAS Documentation Hub!</b></p>
 
+<p style="text-shadow: 2px 2px 4px #000000;"><b>This is the one-stop shop for usage guides about TrueNAS.</b></p>
 {{< /blocks/cover >}}
 
-{{< inprog >}}
 
 <!-------------------------1 section block----------------------------->
-{{< blocks/section color="primary" title="TrueNAS Enterprise" type="section" url="/docs/truenas/articles">}}
-TrueNAS Enterprise comes in a Flash-Assisted Hybrid or All-Flash Array to meet the
-needs of any enterprise workload and are powered by flash to turbocharge
-application I/O. Both products are flash-powered, based on the world’s
-#1 software-defined storage, TrueNAS CORE, and use OpenZFS. TrueNAS unifies
-SAN, NAS, and object protocols into one easy-to-use product. It reduces
-TCO with its easy-to-use management interface, award winning support, a
-self-healing file system, non-disruptive capacity and non-disruptive
-firmware upgrades, and includes cloud-ready enterprise-grade storage
-services that let you build a private cloud instead of using expensive
-cloud storage.
+{{< blocks/section color="primary" title="TrueNAS: The Open Storage Solution" type="section" url="/docs/">}}
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg .tg-wp8o{border-color:#009505;text-align:center;vertical-align:top}
+.tg .tg-73oq{border-color:#009505;text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+  <tr>
+    <th class="tg-wp8o" colspan="2">TrueNAS is a storage operating system that is designed to be the most effective and time-efficient solution for handling and sharing data over a network. It is the simplest way to create a safe, centralized, and easily accessible place for your data. The operating system can be installed on virtually any hardware platform and is suitable for home, small business, and enterprise applications.<br><br></th>
+  </tr>
+  <tr>
+    <td class="tg-73oq"><h2>OpenZFS for Maximum Protection and Performance</h2>TrueNAS leverages the enterprise-grade OpenZFS file system to provide an all-inclusive data management solution that is designed for decades of continual use. To provide the perfect balance between total storage size and data redundancy, data storage pools can be configured in a variety of RAID or Mirrored configurations. Pools can even be expanded later when new disks are added to the system, allowing your storage environment to grow with your storage solutions.<br>ZFS focuses on protecting your data with features like Copy-on-Write and 2-Copy Metadata. Automated data replication can keep your most valuable information safe in a remote storage location and fast resilvering times mean that if a disk fails, a replacement disk can be quickly integrated into the degraded data storage pool. ZFS uses an innovative snapshot and cloning system to maximize available space, as well as in-line data compression, thin provisioning, and deduplication.</td>
+    <td class="tg-73oq"><h2>Security-focused for Your Peace of Mind</h2> TrueNAS supports a variety of security solutions. You can configure self-encrypted drives (SEDs) or use ZFS native encryption to secure your data. Access control lists are fully customizable and provide another layer of protection for sensitive data. TrueNAS is FIPS 140-2 Level 2 certified and installs with secure defaults in place, like using encryption for file transfers and disabling SSH. Local users and groups can be managed, along with integrating TrueNAS with LDAP, Active Directory, Kerberos, and NIS.</td>
+  </tr>
+  <tr>
+    <td class="tg-73oq"><h2>Sharing Your Data has Never Been Easier</h2> TrueNAS supports all the prominent network file sharing and remote backup options, and can even be expanded with applications from FreeBSD or Linux. Supported sharing protocols include NFS versions 3 and 4, SMB versions 1,2,3, and 4, AFP, FTP, WebDAV, and rsync. TrueNAS fully supports Block sharing and has been certified for use with vSphere, Citrix, and Veeam. Want to securely import or back up data with a Cloud Storage Provider? No problem! TrueNAS can even automate these tasks according to your ideal schedule.</td>
+    <td class="tg-73oq"><h2>TrueCommand Provides Scaled Management</h2> Scaling up with several TrueNAS systems or looking to fine-tune system access? TrueCommand takes the guesswork out of multi-TrueNAS management by centralizing system alerts, reports, and analytics in one easy to use interface. It include users and teams with role-based access control and a robust auditing system so that you can control who has access to a system, what can be changed on that system, and a full log of every TrueNAS configuration change.</td>
+  </tr>
+</table>
 {{< /blocks/section >}}
 
 <!-------------------------2 section block----------------------------->
-{{< blocks/section color="dark" title="TrueCommand™" type="section" url="/docs/truecommand/articles">}}
-TrueCommand™ is a powerful “single pane of glass” iXsystems™ NAS
-management application that controls an entire fleet of TrueNAS Core and TrueNAS Enterprise systems from a single location. Manage your NAS systems and
-datasets 24/7 and with enterprise-grade security.
-{{< /blocks/section >}}
+{{< blocks/section color="gray">}}
 
-<!-------------------------3 section block----------------------------->
-{{< blocks/section color="info" title="TrueNAS CORE" type="section" url="/docs/freenas/articles">}}
-For the home and small office we created a desktop solution powered by
-TrueNAS that is powerful enough to support your file, block, and object
-needs in a compact and affordable form factor. iXsystems™ provides the
-ready-to-deploy FreeNAS™ Mini, which is unmatched by anything in its
-class. There’s nothing even close.
-{{< /blocks/section >}}
-
-
-<!-------------------------4 section block----------------------------->
-{{< blocks/section >}}
-
+<!--feature 1-->
+{{% blocks/feature icon="" title="Ask the Community!" url="https://www.ixsystems.com/community/" url_text="Engage" %}}
+Have questions? Want to discuss the newest features? The friendly and knowledgeable open source community is always ready to talk TrueNAS!
+{{% /blocks/feature %}}
 <!--feature 2-->
 {{% blocks/feature icon="fab fa-github" title="Contributions welcome!" url="https://github.com/freenas/documentation" url_text="Contribute" %}}
-We do a
-[Pull Request](https://github.com/freenas/documentation/pulls "Documentation Pull Requests")
-contributions workflow on **GitHub**. Contributions are always welcome!
+Users are welcome to add or improve all TrueNAS documentation!
+See the [Contributing](/contributing-docs/) section of this website to learn how you can share your TrueNAS experience with the world!
 {{% /blocks/feature %}}
 
 <!--feature 3-->
-{{% blocks/feature icon="fab fa-twitter" title="Follow us on Twitter!" url="https://twitter.com/iXsystems" %}}
-For announcement of latest features etc.
+{{% blocks/feature icon="fab fa-twitter" title="Follow us on Twitter!" url="https://twitter.com/iXsystems" url_text="Stay Informed" %}}
+Be the first to learn about the latest TrueNAS news and releases!<br><br>
 {{% /blocks/feature %}}
 
 {{< /blocks/section >}}
