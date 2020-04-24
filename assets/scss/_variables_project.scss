@@ -27,3 +27,19 @@ $secondary: #666666;
     text-align: center;
     text-decoration: underline;
 }
+
+// Adjustments for font elegant icons used within content
+.inline-svg {
+  display: inline-block;
+  height: 1.15rem;
+  width: 1.15rem;
+  top: 0.15rem;
+  position: relative;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
