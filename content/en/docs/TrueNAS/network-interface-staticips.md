@@ -41,7 +41,7 @@ Using the web interface is recommended as that option has an additional safety f
 
 ### Adding Static IP Addresses Using the Web Interface
 
-Log in to the web interface and go to *Network > Interfaces* contains creation and configuration options for physical and virtual network interfaces
+Log in to the web interface and go to *Network > Interfaces*. This contains creation and configuration options for physical and virtual network interfaces.
 
 <img src="/images/network-interfaces.png">
 <br><br>
