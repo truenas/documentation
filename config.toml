@@ -1,5 +1,5 @@
 # Commenting your code is very useful.
-baseURL = "./"
+# baseURL = "./"
 title = "TrueNAS Documentation"
 enableRobotsTXT = true
 relativeURLs = true
