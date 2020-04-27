@@ -6,6 +6,7 @@ description: "A how-to guide on configuring basic reports."
 
 ## Reporting General Settings
 
+testing relative paths
 TrueNAS has a built in reporting engine that gives helpful graphs and
 information about the system. Under the hood TrueNAS is using
 [Graphite](http://graphiteapp.org/ "Graphite Homepage") for metric gathering
