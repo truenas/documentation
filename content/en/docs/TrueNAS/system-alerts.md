@@ -8,7 +8,6 @@ TrueNAS provides the benefit of customizing alerts and alert services.
 
 ## Alert Services
 
-testing relative paths
 To add additional alert services, go to **System > Alert Services > ADD**.
 Enter a name for the alert service and select the type. Next, decide on the
 severity of the alert and select an alert *Level* from the drop-down. Finally,
