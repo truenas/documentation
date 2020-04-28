@@ -2,9 +2,10 @@
 title: "TrueNAS Software Development Life Cycle"
 linkTitle: "TrueNAS Software Development Life Cycle"
 description: "TrueNAS Software Development Life Cycle"
+weight: 1
 ---
 
-# TrueNAS Software Development Life Cycle
+## TrueNAS Software Development Life Cycle
  
 The TrueNAS (and FreeNAS) software development life cycle (SDLC) is the process for planning, creating, testing, deploying, and maintaining FreeNAS and TrueNAS releases.
 
