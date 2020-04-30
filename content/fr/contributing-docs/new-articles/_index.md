@@ -6,7 +6,7 @@ type: docs
 ---
 
 {{% pageinfo %}}
-Pour contribuer à de nouveaux articles, vous devez avoir un [Compte GitHub] (https://github.com) !
+Pour contribuer à de nouveaux articles, vous devez avoir un [Compte GitHub](https://github.com) !
 {{% /pageinfo %}}
 
 Merci de votre intérêt pour la soumission d'articles de documentation !
@@ -82,4 +82,4 @@ Faites glisser et déposez vos fichiers supplémentaires dans le navigateur ou c
 
 {{< figure src="pagebundle-article-files.png" title="Ajout de fichiers à une branche de demande de retrait" >}}
 
-Ajoutez toutes les notes concernant ces fichiers à la description, assurez-vous que l'option **Commit directly** est activée et qu'elle pointe vers votre branche Pull Request, puis cliquez sur **Commit changes*. Votre PR sera mis à jour pour inclure tous les fichiers supplémentaires dont vous avez besoin pour votre article !
+Ajoutez toutes les notes concernant ces fichiers à la description, assurez-vous que l'option **Commit directly** est activée et qu'elle pointe vers votre branche Pull Request, puis cliquez sur **Commit changes**. Votre PR sera mis à jour pour inclure tous les fichiers supplémentaires dont vous avez besoin pour votre article !
