@@ -27,7 +27,7 @@ jobs:
           git submodule sync --recursive
           git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=1
 
-      - name: Install npm stuff
+      - name: Install npm Stuff
         run: npm install -D --save autoprefixer && npm install -D --save postcss-cli
 
       - name: Setup Hugo
