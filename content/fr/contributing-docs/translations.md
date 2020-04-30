@@ -19,19 +19,20 @@ contentDir = "content/fr"
 languageName = "Français"
 weight = 20
 ```
-Reference the [Make a Quick Change](https://docs.ixsystems.com/contributing-docs/basic/) guide for instructions to complete this.
+Consultez le guide [Make a Quick Change] (https://docs.ixsystems.com/contributing-docs/basic/) pour savoir comment procéder.
 
 
 Une fois que le site est configuré pour une autre langue, les fichiers de l'arborescence initiale doivent être créés dans ce répertoire de langue.  Naviguez vers  `documentation/content/` et créez un sous-répertoire pour la langue à ajouter.  Veuillez utiliser les codes de langue appropriés il8n.
 
-The following files need to be translated and added
-documentation/content/fr/_index.html
-documentation/content/fr/docs/_index.md
-documentation/content/fr/docs/TrueNAS/_index.md
-documentation/content/fr/docs/TrueNAS/software-guides/_index.md
-documentation/content/fr/docs/TrueNAS/hardware-guides/_index.md
-documentation/content/fr/contributing-docs/_index.md
-documentation/content/fr/contributing-docs/basic.md
+Les fichiers suivants doivent être traduits et ajoutés:
+
++ documentation/content/fr/_index.html
++ documentation/content/fr/docs/_index.md
++ documentation/content/fr/docs/TrueNAS/_index.md
++ documentation/content/fr/docs/TrueNAS/software-guides/_index.md
++ documentation/content/fr/docs/TrueNAS/hardware-guides/_index.md
++ documentation/content/fr/contributing-docs/_index.md
++ documentation/content/fr/contributing-docs/basic.md
 
 Une fois ces fichiers créés, validez-les et déposez une demande d'extraction.  Si une assistance est nécessaire dans ce domaine, déposez un ticket dans le [Issues Tracker](https://github.com/freenas/documentation/issues/new?title=Adding%20a%20New%20Langauge)
 

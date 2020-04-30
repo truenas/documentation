@@ -24,14 +24,15 @@ Reference the [Make a Quick Change](https://docs.ixsystems.com/contributing-docs
 
 Once the site is configured for another language, the initial tree files needs to be created within that language directory.  Navigate to `documentation/content/` and create a subdirectory for the language to be added.  Please use proper il8n language codes.
 
-The following files need to be translated and added
-documentation/content/fr/_index.html
-documentation/content/fr/docs/_index.md
-documentation/content/fr/docs/TrueNAS/_index.md
-documentation/content/fr/docs/TrueNAS/software-guides/_index.md
-documentation/content/fr/docs/TrueNAS/hardware-guides/_index.md
-documentation/content/fr/contributing-docs/_index.md
-documentation/content/fr/contributing-docs/basic.md
+The following files need to be translated and added:
+
++ documentation/content/fr/_index.html
++ documentation/content/fr/docs/_index.md
++ documentation/content/fr/docs/TrueNAS/_index.md
++ documentation/content/fr/docs/TrueNAS/software-guides/_index.md 
++ documentation/content/fr/docs/TrueNAS/hardware-guides/_index.md
++ documentation/content/fr/contributing-docs/_index.md
++ documentation/content/fr/contributing-docs/basic.md
 
 Once these files are create, commit these files and file a pull request.  If assistance is needed in this area, file a ticket in the [Issues Tracker](https://github.com/freenas/documentation/issues/new?title=Adding%20a%20New%20Langauge)
 
