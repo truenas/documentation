@@ -46,4 +46,4 @@ jobs:
 
       - name: Rsync Push
         run: |
-          rsync -rvza -e "ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no" public ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }}:${{ secrets.PUBLISH_REMOTE_TARGET }}
+          rsync -rvza -e "ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no" public/ ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }}:${{ secrets.PUBLISH_REMOTE_TARGET }}
