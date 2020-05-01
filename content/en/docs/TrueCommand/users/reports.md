@@ -1,46 +1,74 @@
 ---
 title: "System Reporting"
 linkTitle: "Reporting"
-description: "How to configure system reports in TrueCommand"
+description: "How to create and view system reports in TrueCommand"
 ---
 
 {{% pageinfo version="TrueCommand 1.2" %}}
 {{% /pageinfo %}}
 
-The **Reports** page has a list of reporting configurations that are shared with the current user.
-These configurations are used to generate reports for connected systems that the user has permission to access.
+The **Reports** page is used to customize charts of system metrics for data analysis.
 
 <img src="/images/tc-reports.png">
 <br><br>
 
-There are default reporting configurations that are designed to generate a basic system overview report.
+These reports are created by or shared with the current TrueCommand user.
+There are default reports that are designed to generate a basic system overview chart.
 These show details like network traffic, storage, and memory utilization for the chosen system.
 
-## Create Report Configuration
+Viewing a report requires that the user has access to the systems that are being analyzed.
 
-Click CREATE REPORT to create a customizable report. Enter a report name and an optional description for the report. Click BROWSE WIDGETS or WIDGET to add charts to the report. Most charts are already configured to report certain settings. To create a custom chart with custom settings, add Custom Area Chart, Custom Bar Chart, or Custom Line Chart. Fill in these options when adding a custom chart:
+## Creating a Report
+
+Click **+ CREATE REPORT** to create a customizable report.
+Enter a report name and an optional description for the report.
+Click BROWSE WIDGETS or WIDGET to add charts to the report.
 
 <img src="/images/tc-reports-widgets.png">
 <br><br>
 
-    General Settings: Enter a Title, Subtitle (optional), Axis label (optional), Point size, Line size, Y min (optional), and Y max (optional) for the chart. Stack the values can be set to bring data points on the chart closer together. This setting is useful for charts that have many different data points at the max Y value. Click NEXT.
-    Data sources: Add data sources to the chart by clicking expand and selecting appropriate sources. Multiple data sources can be added to one chart. Click NEXT.
-    Summary: This step shows the values set in General Settings and the data sources selected. Click SAVE to continue. Click BACK to go back and change a setting or data source.
+### Custom Charts
 
-After adding charts to the report, click SAVE to create a report specific to that user.
+Most charts are already configured to report certain settings.
+To create a custom chart with custom settings, add a *Custom Area Chart*, *Custom Bar Chart*, or *Custom Line Chart*.
+Fill in these options when adding a custom chart:
 
-## Generating a System Report
+* General settings: Enter a Title, Subtitle (optional), Axis label (optional), Point size, Line size, Y min (optional), and Y max (optional) for the chart.
+  `Stack the values` can be set to bring data points on the chart closer together.
+  This setting is useful for charts that have many different data points at the max Y value.
+* Data sources: Add data sources to the chart by expanding a category and selecting appropriate sources.
+  Multiple data sources can be added to one chart.
+* Summary: This step shows the all of the chosen values.
+  Click **SAVE** to add the custom chart to the report or **BACK** to go back and change a setting or data source.
 
-Go to User Menu ‣ Reports and click show on the appropriate report. Select the systems to be used for the report. Select the time period for the report. 1D generates a report with data going back one day, 1W generates a report with data going back one week, and 1MO generates a report with data going back one month. Click GENERATE to view the report.
+After adding charts to the report, click **SAVE** to make this report available for use.
+
+## Share Report
+
+By default, the reports created by a user are available only to that user.
+To share a report with other users or teams, open the **User Menu ‣ Reports** screen and click the **Share** button for a report.
+Reports can also be shared after clicking **Generate report (Eye)**.
+
+<img src="/images/tc-reports-share-users.png">
+<br><br>
+
+Reports can be shared with individual users or entire teams.
+Set either **OWNER** or **SHARED WITH** for the desired user.
+Users with the **SHARED WITH** status can view the report, while the **OWNER** status allows that user to edit the report.
+Clicking the **OWNER** or **SHARED WITH** text toggles every name in the list.
+
+## Viewing a System Report
+
+Open the **User Menu ‣ Reports** page and click **Generate report (Eye)** on the appropriate report.
+Click **GENERATE** to select the systems and time frame for the report
+
+<img src="/images/tc-reports-generate.png">
+<br><br>
+
+A non-administrative user must have the appropriate permissions to view data from specific systems.
+
+Clicking **Confirm** shows the saved charts from the report, populated with system data according to the selected amount of time.
 
 <img src="/images/tc-reports-view.png">
 <br><br>
 
-## Share Report
-
-Reports can be shared by going to User Menu ‣ Reports and clicking report share on the report to be shared. Reports can also be shared by going to User Menu ‣ Reports ‣ show and clicking SHARE REPORT.
-
-Reports can be shared with individual users or entire teams. Set either OWNER or SHARED WITH for the desired user. Every user can be by clicking OWNER or SHARED WITH. Users with OWNER staus can edit the report. Users with SHARED WITH status can only view the report. Click SAVE to confirm the sharing settings.
-
-<img src="/images/tc-reports-share-users.png">
-<br><br>
