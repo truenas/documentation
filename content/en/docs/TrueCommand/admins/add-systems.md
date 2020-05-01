@@ -1,5 +1,5 @@
 ---
-title: "Connecting Systems to TrueCommand™"
+title: "Connecting Systems to TrueCommand"
 linkTitle: "Connecting Systems"
 description: "How to connect and organize systems in TrueCommand"
 weight: 3
