@@ -125,13 +125,13 @@ announcement_message = "The TrueNAS Documentation team hopes you have a great da
 fullversion = "Current"
 version = "Current"
 githubbranch = "master"
-url = "https://docs.ixsystems.com"
+url = "./"
 
 [[params.versions]]
 fullversion = "TrueNAS 11-3"
 version = "TrueNAS 11-3"
 githubbranch = "TN11-3"
-url = "https://TN11-3.docs.ixsystems.com"
+url = "./archive/11.3/"
 
 # User interface configuration
 [params.ui]
