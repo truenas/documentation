@@ -1,0 +1,57 @@
+FreeNAS® is © 2011-2020 iXsystems
+
+FreeNAS® and the FreeNAS® logo are registered trademarks of iXsystems
+
+FreeBSD® is a registered trademark of the FreeBSD Foundation
+
+Written by users of the FreeNAS® network-attached storage operating system.
+
+Version 11.3
+
+Copyright © 2011-2020 iXsystems
+
+This Guide covers the installation and use of FreeNAS® 11.3.
+
+The FreeNAS® User Guide is a work in progress and relies on the contributions of many individuals. If you are interested in helping us to improve the Guide, read the instructions in the README. IRC Freenode users are welcome to join the #freenas channel where you will find other FreeNAS® users.
+
+The FreeNAS® User Guide is freely available for sharing and redistribution under the terms of the Creative Commons Attribution License. This means that you have permission to copy, distribute, translate, and adapt the work as long as you attribute iXsystems as the original source of the Guide.
+
+FreeNAS® and the FreeNAS® logo are registered trademarks of iXsystems.
+
+Active Directory® is a registered trademark or trademark of Microsoft Corporation in the United States and/or other countries.
+
+Apple, Mac and Mac OS are trademarks of Apple Inc., registered in the U.S. and other countries.
+
+Asigra Inc. Asigra, the Asigra logo, Asigra Cloud Backup, Recovery is Everything, Recovery Tracker and Attack-Loop are trademarks of Asigra Inc.
+
+Broadcom is a trademark of Broadcom Corporation.
+
+Chelsio® is a registered trademark of Chelsio Communications.
+
+Cisco® is a registered trademark or trademark of Cisco Systems, Inc. and/or its affiliates in the United States and certain other countries.
+
+Django® is a registered trademark of Django Software Foundation.
+
+Facebook® is a registered trademark of Facebook Inc.
+
+FreeBSD® and the FreeBSD® logo are registered trademarks of the FreeBSD Foundation®.
+
+Intel, the Intel logo, Pentium Inside, and Pentium are trademarks of Intel Corporation in the U.S. and/or other countries.
+
+LinkedIn® is a registered trademark of LinkedIn Corporation.
+
+Linux® is a registered trademark of Linus Torvalds.
+
+Oracle is a registered trademark of Oracle Corporation and/or its affiliates.
+
+Twitter is a trademark of Twitter, Inc. in the United States and other countries.
+
+UNIX® is a registered trademark of The Open Group.
+
+VirtualBox® is a registered trademark of Oracle.
+
+VMware® is a registered trademark of VMware, Inc.
+
+Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+Windows® is a registered trademark of Microsoft Corporation in the United States and other countries.

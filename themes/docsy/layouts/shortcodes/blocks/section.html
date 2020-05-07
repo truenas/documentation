@@ -1,0 +1,15 @@
+{{ $_hugo_config := `{ "version": 1 }` }}
+{{ $col_id := .Get "color" | default .Ordinal }}
+{{ $height := .Get "height" | default "auto"  }}
+{{ $type   := .Get "type" | default "" }}
+{{ $url_text := .Get "url_text" }}
+<a id="td-block-{{ .Ordinal }}" class="td-offset-anchor"></a>
+<section class="row td-box td-box--{{ $col_id }} td-box--gradient td-box--height-{{ $height }}">
+	<div class="col container text-center">
+		<h1 class="h1" style="font-weight: bold;">{{ .Get "title" | markdownify }}</h1>
+		<div class="row {{ $type }}">
+			{{ .Inner | markdownify}}
+		</div>
+		{{ with .Get "url" }}<p><a href="{{ . }}">{{ with $url_text }}{{ $url_text }}{{ else }}{{ T "ui_read_more" }}{{ end }} …</a></p>{{ end }}
+	</div>
+</section>
