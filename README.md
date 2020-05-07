@@ -38,7 +38,7 @@ git clone https://github.com/freenas/documentation.git
 
 in the CLI.
 
-> **Note**: To update your local copy with any changes that have been merged into master, run\
+> **Note**: To update your current local branch with any changes that have been merged into the master branch, run\
 `git pull origin master
 
 
