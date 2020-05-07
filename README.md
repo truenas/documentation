@@ -33,13 +33,13 @@ The next step is to clone this repo. To clone the repo in your current
 directory, type
 
 ```bash
-git clone --recurse-submodules https://github.com/freenas/documentation.git
+git clone https://github.com/freenas/documentation.git
 ```
 
 in the CLI.
 
-> **Note**: To update your local copy with any changes that have been merged into master, run\
-`git pull origin master && git submodule update`
+> **Note**: To update your current local branch with any changes that have been merged into the master branch, run\
+`git pull origin master
 
 
 ## Build Locally
