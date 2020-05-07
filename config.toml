@@ -121,6 +121,9 @@ announcement = false
 # announcement_message is only displayed when announcement = true; update with your specific message
 announcement_message = "The TrueNAS Documentation team hopes you have a great day!"
 
+[taxonomies]
+products = "products"
+
 [[params.versions]]
 fullversion = "Current"
 version = "Current"
@@ -130,8 +133,12 @@ url = "./"
 [[params.versions]]
 fullversion = "TrueNAS 11-3"
 version = "TrueNAS 11-3"
-githubbranch = "TN11-3"
-url = "./archive/11.3/"
+url = "/docs/previous-version-documentation/tn-11.3/"
+
+[[params.versions]]
+fullversion = "TrueCommand 1.2"
+version = "TrueCommand 1.2"
+url = "/docs/previous-version-documentation/tc-1.2/"
 
 # User interface configuration
 [params.ui]
