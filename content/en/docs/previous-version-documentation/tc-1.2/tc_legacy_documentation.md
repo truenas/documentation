@@ -1,7 +1,6 @@
 ---
-title: "TrueCommand"
-linkTitle: "TrueCommand"
-weight: 3
+title: "TrueCommand 1.2 Legacy Docs"
+linkTitle: "TrueCommand 1.2 Legacy Docs"
 ---
 
 Documentation for TrueCommand 1.2 and earlier was collected into a large book and made available on the [iXsystems Information Library](https://www.ixsystems.com/blog/knowledgebase_category/truecommand/).

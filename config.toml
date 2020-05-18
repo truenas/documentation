@@ -107,6 +107,39 @@ github_repo = "https://github.com/freenas/documentation"
 # Enable Lunr.js offline search
 offlineSearch = true
 
+latest = "master"
+fullversion = "Current"
+version = "Current"
+githubbranch = "master"
+deprecated = false
+currentUrl = "https://docs.ixsystems.com"
+githubWebsiteRepo = "github.com/freenas/documentation"
+githubWebsiteRaw = "raw.githubusercontent.com/freenas/documentation"
+
+# param for displaying an announcement block on every page; see PR #16210
+announcement = false
+# announcement_message is only displayed when announcement = true; update with your specific message
+announcement_message = "The TrueNAS Documentation team hopes you have a great day!"
+
+[taxonomies]
+products = "products"
+
+[[params.versions]]
+fullversion = "Current"
+version = "Current"
+githubbranch = "master"
+url = "./"
+
+[[params.versions]]
+fullversion = "TrueNAS 11-3"
+version = "TrueNAS 11-3"
+url = "/docs/previous-version-documentation/tn-11.3/"
+
+[[params.versions]]
+fullversion = "TrueCommand 1.2"
+version = "TrueCommand 1.2"
+url = "/docs/previous-version-documentation/tc-1.2/"
+
 # User interface configuration
 [params.ui]
 # Enable to show the side bar menu in its compact state.
@@ -130,39 +163,6 @@ enable = true
 yes = 'Glad to hear it! Please <a href="https://github.com/freenas/documentation/issues/new">tell us how we can improve</a>.'
 no = 'Sorry to hear that. Please <a href="https://github.com/freenas/documentation/issues/new">tell us how we can improve</a>.'
 
-[params.links]
-# End user relevant links. These will show up on left side of footer and in the community page if you have one.
-#[[params.links.user]]
-#	name = "User mailing list"
-#	url = "https://example.org/mail"
-#	icon = "fa fa-envelope"
-#        desc = "Discussion and help from your fellow users"
-#[[params.links.user]]
-#	name ="Twitter"
-#	url = "https://example.org/twitter"
-#	icon = "fab fa-twitter"
-#        desc = "Follow us on Twitter to get the latest news!"
-#[[params.links.user]]
-#	name = "Stack Overflow"
-#	url = "https://example.org/stack"
-#	icon = "fab fa-stack-overflow"
-#        desc = "Practical questions and curated answers"
-# Developer relevant links. These will show up on right side of footer and in the community page if you have one.
-#[[params.links.developer]]
-#	name = "GitHub"
-#	url = "https://github.com/google/docsy"
-#	icon = "fab fa-github"
-#        desc = "Development takes place here!"
-#[[params.links.developer]]
-#	name = "Slack"
-#	url = "https://example.org/slack"
-#	icon = "fab fa-slack"
-#        desc = "Chat with other project developers"
-#[[params.links.developer]]
-#	name = "Developer mailing list"
-#	url = "https://example.org/mail"
-#	icon = "fa fa-envelope"
-#        desc = "Discuss development issues around the project"
 
 # Add dates to content pages
 [frontmatter]
