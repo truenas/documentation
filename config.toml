@@ -55,8 +55,8 @@ anchor = "smart"
 
 [languages]
 [languages.en]
-title = "Documentation Hub"
-description = "One stop shop for TrueNAS documentation."
+title = "TrueNAS Documentation"
+description = "Information and how-to Articles about TrueNAS products"
 languageName ="English"
 # Weight used for sorting.
 weight = 1
