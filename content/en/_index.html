@@ -13,6 +13,7 @@ linkTitle = "TrueNAS Docs"
       <li class="li-links"><a href="https://www.ixsystems.com/library/">LIBRARY</a></li>
       <li class="li-links"><a href="https://www.ixsystems.com/community/">COMMUNITY</a></li>
       <li class="li-links"><a href="https://security.ixsystems.com/">SECURITY</a></li>
+      <li class="li-links"><a href="https://www.ixsystems.com/blog/">BLOG</a></li>
   </div>
 </header>
 
@@ -28,28 +29,101 @@ linkTitle = "TrueNAS Docs"
   <div class="grid-container">
     <div class="whatis">
       <h3>Learn About TrueNAS</h3>
-      Background information and general overview of the software.<br><br>
-      <a class="lightlink" href="/intro/whatis/">What is TrueNAS?</a><br>
-      <a class="lightlink" href="https://api.ixsystems.com/freenas/">TrueNAS API</a><br>
-      <a class="linkbutton" href="/intro/">Learn More</a>
-    </div>
-    <div class="tryit">
-      <b>test2</b><br>
-      Background information and general overview of the software.<br><br>
-      link1<br>
-      link2<br>
+      <p>Background information and general overview of the software.</p>
+      <p>
+        <a class="lightlink" href="/intro/whatis/">What is TrueNAS?</a><br>
+        <a class="lightlink" href="/intro/lifecycle/">Version Lifecycles</a><br>
+        <a class="lightlink" href="/intro/truenas-roadmap/">Release Schedule</a><br>
+        <a class="lightlink" href="https://api.ixsystems.com/freenas/">TrueNAS API</a><br>
+      </p>  
+      <p><a class="linkbutton" href="/intro/">Overview</a></p>
     </div>
     <div class="initialsetup">
-      <b>test3</b><br>
-      Background information and general overview of the software.<br><br>
-      link1<br>
-      link2<br>
+      <h3>Getting Started With TrueNAS</h3>
+      <p>Installation and initial setup instructions.</p>
+      <p>
+        <a class="lightlink" href="/initial-setup/getting-started/">Installing TrueNAS on physical hardware</a><br>
+        <a class="lightlink" href="/initial-setup/tn-aws">Adding TrueNAS to an Amazon Web Services (AWS) instance</a><br>
+        <a class="lightlink" href="/initial-setup/networking/">Configuring TrueNAS Networking</a><br>
+        <a class="lightlink" href="/initial-setup/storage/">Configuring TrueNAS Data Storage</a><br>
+      </p>
+      <p><a class="linkbutton" href="/initial-setup/">Getting Started</a></p>
     </div>
-    <div class="basic-sharing"></div>
-    <div class="advanced"></div>
-    <div class="references"></div>
-    <div class="truecommand"></div>
-    <div class="hardware"></div>
-    <div class="docs-contribute"></div>
+    <div class="tasks">
+      <h3>Tasks</h3>
+      <p>Articles describing how to setup up file sharing, data backups, automated schedules, and other advanced topics.</p>
+      <p>
+        <a class="lightlink" href="/tasks/backups/">Backing Up Data</a><br>
+        <a class="lightlink" href="/tasks/automating-tasks/">Automating Tasks</a><br>
+        <a class="lightlink" href="/tasks/sharing/">Sharing Files on the Network</a><br>
+        <a class="lightlink" href="/tasks/ssh-connections/">Creating SSH Connections</a><br>
+      </p>
+      <p><a class="linkbutton" href="/tasks/">Tasks</a></p>
+    </div>
+    <div class="advanced">
+      <h3>Advanced</h3>
+      <p>Advanced TrueNAS Procedures and Troubleshooting</p>
+      <p>
+        <a class="lightlink" href="/tasks/advanced/editingacls/">Managing Access Control Lists (ACLs)</a><br>
+        <a class="lightlink" href="/tasks/advanced/disk-replace/">Replacing Failed Disks</a><br>
+        <a class="lightlink" href="/tasks/advanced/plugins/">Using Plugins</a><br>
+      </p>
+      <p><a class="linkbutton" href="/tasks/advanced/">Advanced Tasks</a></p>
+    </div>
+    <div class="references">
+      <h3>References</h3>
+      <p>TrueNAS reference materials and legacy documentation links.</p>
+      <p>
+        <a class="lightlink" href="/reference/zfs-references/">ZFS Primer</a><br>
+        <a class="lightlink" href="/reference/smb-references">Server Message Block (SMB) Overview</a><br>
+        <a class="lightlink" href="/reference/legacy-docs">Legacy Documentation</a><br>
+      </p>
+      </p>
+      <p><a class="linkbutton" href="/reference/">Reference</a></p>
+    </div>
+    <div class="vcenter-plugin">
+      <h3>TrueNAS Plugin for vCenter</h3>
+      <p>Installation and general usage articles for the TrueNAS vCenter Plugin.</p>
+      <p>
+        <a class="lightlink" href="/reference/"></a><br>
+        <a class="lightlink" href="/reference/"></a><br>
+        <a class="lightlink" href="/reference/"></a><br>
+        <a class="lightlink" href="/reference/"></a><br>
+      </p>
+      <p><a class="linkbutton" href="/vcenter-plugin/">vCenter Plugin</a></p>
+    </div>
+    <div class="truecommand">
+      <h3>Scaling TrueNAS with TrueCommand</h3>
+      <p>How to use the TrueCommand Docker Container to fine-tune user groups and permissions as part of overseeing multiple TrueNAS installations.</p>
+      <p>
+        <a class="lightlink" href="/truecommand/admins/install">Installing TrueCommand</a><br>
+        <a class="lightlink" href="/truecommand/admins/">Administrating TrueCommand</a><br>
+        <a class="lightlink" href="/truecommand/users">Using TrueCommand</a><br>
+      </p>
+      <p><a class="linkbutton" href="/truecommand/">TrueCommand Documentation</a></p>
+    </div>
+    <div class="hardware">
+      <h3>TrueNAS Hardware</h3>
+      <p>Articles describing how to use or maintain TrueNAS hardware products.</p>
+      <p>
+        <a class="lightlink" href="/hardware-docs/fn-mini/">FreeNAS Mini</a><br>
+        <a class="lightlink" href="/hardware-docs/fn-certified/">FreeNAS Certified</a><br>
+        <a class="lightlink" href="/hardware-docs/x-series/">X-Series</a><br>
+        <a class="lightlink" href="/hardware-docs/m-series/">M-Series</a><br>
+        <a class="lightlink" href="/hardware-docs/expansion-shelves/">Expansion Shelves</a><br>
+        <a class="lightlink" href="https://www.ixsystems.com/blog/hardware-guide/">Hardware Recommendations for Building Your Own TrueNAS System</a><br>
+      </p>
+      <p><a class="linkbutton" href="/hardware-docs/">Hardware Documentation</a></p>
+    </div>
+    <div class="docs-contribute">
+      <h3>Contributing to TrueNAS Documentation</h3>
+      <p>Step-by-step instructions for people interested in contributing to TrueNAS documentation.</p>
+      <p>
+        <a class="lightlink" href="/contributing-docs/basic/">Updating an Existing Article</a><br>
+        <a class="lightlink" href="/contributing-docs/new-articles/">Writing a New Article</a><br>
+        <a class="lightlink" href="/contributing-docs/translations/">Translating the Documentation</a><br>
+      </p>
+      <p><a class="linkbutton" href="/contributing-docs/">Contributing</a></p>
+    </div>
   </div>
 </section>

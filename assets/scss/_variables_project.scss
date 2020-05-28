@@ -103,20 +103,20 @@ $secondary: #666666;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   gap: 5em 5%;
-  grid-template-areas: "whatis tryit initialsetup" "basic-sharing advanced references" "truecommand hardware docs-contribute";
+  grid-template-areas: "whatis initialsetup tasks" "advanced references vcenter-plugin" "truecommand hardware docs-contribute";
 }
 
 .whatis { grid-area: whatis; }
 
-.tryit { grid-area: tryit; }
-
 .initialsetup { grid-area: initialsetup; }
 
-.basic-sharing { grid-area: basic-sharing; }
+.tasks { grid-area: tasks; }
 
 .advanced { grid-area: advanced; }
 
 .references { grid-area: references; }
+
+.vcenter-plugin { grid-area: vcenter-plugin; }
 
 .truecommand { grid-area: truecommand; }
 
