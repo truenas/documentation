@@ -170,3 +170,33 @@ date = ["date", "publishDate", "lastmod"]
 lastmod = ["lastmod", ":fileModTime", ":default"]
 publishDate = ["publishDate", "date"]
 expiryDate = ["expiryDate"]
+
+[[params.topics]]
+	name = "Home"
+	url = "/"
+[[params.topics]]
+	name = "Overview"
+	url = "/intro/"
+[[params.topics]]
+	name = "Getting Started"
+	url = "/initial-setup/"
+[[params.topics]]
+	name = "Tasks"
+	url = "/tasks/"
+[[params.topics]]
+	name = "Reference"
+	url = "/reference/"
+[[params.topics]]
+	name = "vCenter Plugin"
+	url = "/vcenter-plugin/"
+[[params.topics]]
+	name = "TrueCommand"
+	url = "/truecommand/"
+[[params.topics]]
+	name = "Hardware"
+	url = "/hardware-docs/"
+[[params.topics]]
+	name = "Contributing"
+	url = "/contributing-docs/"
+
+

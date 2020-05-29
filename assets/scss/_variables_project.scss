@@ -68,7 +68,6 @@ $secondary: #666666;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: $primary;
 }
 
 .li-links {
@@ -79,7 +78,7 @@ $secondary: #666666;
   display: block;
   color: white;
   text-align: center;
-  padding: 16px;
+  padding: 20px;
   text-decoration: none;
   font-weight: bold;
 }
@@ -127,6 +126,7 @@ $secondary: #666666;
 // Links styled as buttons
 .linkbutton {
   display: block;
+  border-radius: 50px;
   margin-left: 25%;
   margin-right: 25%;
   background-color: $primary;

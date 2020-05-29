@@ -1,8 +1,6 @@
 ---
 title: "Contributing"
 linkTitle: "Contributing"
-menu: main
-weight: 9
 type: docs
 ---
 
