@@ -44,20 +44,11 @@ $secondary: #666666;
   width: 50%;
 }
 
-// homepage topbar styling
+// bottom links styling
 
-.home-hero {
-  background: $primary;
-  margin-left: -15px;
-  margin-right: -15px;
-}
-.top-spacer {
-  padding-top: 5em;
-}
 .links-row {
-  line-height: 44px;
   max-width: 100%;
-  position: relative;
+  position: absolute;
   padding-left: 1%;
   padding-right: 1%;
   color: white;
@@ -70,17 +61,20 @@ $secondary: #666666;
   overflow: hidden;
 }
 
+.li-icons {
+  float: right;
+}
 .li-links {
   float: left;
 }
 
 .li-links a {
-  display: block;
+  display: flex;
   color: white;
   text-align: center;
-  padding: 20px;
   text-decoration: none;
   font-weight: bold;
+  padding: 5px;
 }
 
 .li-links a:hover {
@@ -91,18 +85,14 @@ $secondary: #666666;
 .docscategories {
   background: $secondary;
   color: white;
-  margin-left: -15px;
-  margin-right: -15px;
-  padding-top: 1% !important;
-  padding-left: 1%;
-  padding-right: 1%;
+  max-width: 100%;
 }
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  gap: 5em 5%;
   grid-template-areas: "whatis initialsetup tasks" "advanced references vcenter-plugin" "truecommand hardware docs-contribute";
+  max-width: 100%;
 }
 
 .whatis { grid-area: whatis; }
