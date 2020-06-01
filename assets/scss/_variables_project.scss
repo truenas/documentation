@@ -44,16 +44,134 @@ $secondary: #666666;
   width: 50%;
 }
 
-.tg
-.tg .tg-wp8o {
-	text-align: center;
-	vertical-align: top;
+// bottom links styling
+
+.links-row {
+  max-width: 100%;
+  position: absolute;
+  padding-left: 1%;
+  padding-right: 1%;
+  color: white;
 }
-.tg .tg-73oq {
-	border-top:transparent !important;
-	text-align:left;
-	vertical-align:top;
+// link list styling
+.ul-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
+
+.li-icons {
+  float: right;
+}
+.li-links {
+  float: left;
+}
+
+.li-links a {
+  display: flex;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px;
+}
+
+.li-links a:hover {
+  color: #d9d9d9;
+  text-shadow: 1px 1px black;
+}
+// Front page body layout
+.docscategories {
+  background: $secondary;
+  color: white;
+  max-width: 100%;
+}
+.heading, .grid-container {
+  max-width: 1400px !important;
+  padding: 0 30px;
+  margin: 0 auto;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 375px 375px 375px;
+  grid-template-areas: "whatis initialsetup tasks" "advanced references vcenter-plugin" "truecommand hardware docs-contribute";
+  max-width: 100%;
+  grid-column-gap: 10px;
+  grid-row-gap: 20px;
+  
+}
+
+.whatis { grid-area: whatis; }
+
+.initialsetup { grid-area: initialsetup; }
+
+.tasks { grid-area: tasks; }
+
+.advanced { grid-area: advanced; }
+
+.references { grid-area: references; }
+
+.vcenter-plugin { grid-area: vcenter-plugin; }
+
+.truecommand { grid-area: truecommand; }
+
+.hardware { grid-area: hardware; }
+
+.docs-contribute { grid-area: docs-contribute; }
+
+.block {
+  position: relative;
+  background: lighten($color: #000000, $amount: 30);
+  padding: 10px;
+}
+
+.button-wrapper {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+// Links styled as buttons
+.linkbutton {
+  display: block !important;
+  border-radius: 50px;
+  margin-left: 25%;
+  margin-right: 25%;
+  background-color: $primary;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+// Links styled for grey background
+.lightlink {
+  color: #66b3ff;
+}
+
+.lightlink:visited {
+  color: pink;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.lightlink:hover {
+  color: #3399ff;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+.lightlink:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+
 
 .h2 .frontcenter {
 	text-align: center;
@@ -63,4 +181,40 @@ $secondary: #666666;
 	margin-left: auto;
 	margin-right: auto;
 	width: 50%;
+}
+
+@media (max-width: 999px) {
+  .grid-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(5, 375px);
+    grid-template-areas: "whatis initialsetup"  "tasks advanced" "references vcenter-plugin" "truecommand hardware" "docs-contribute .";
+  }
+  #main_navbar {
+    width: 65%;
+    position: relative;
+    margin-top: -10px;
+  }
+}
+
+@media (max-width: 766px) {
+  .grid-container {
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas: "whatis" "initialsetup"  "tasks" "advanced" "references" "vcenter-plugin" "truecommand" "hardware" "docs-contribute";
+    
+    .button-wrapper {
+      position: unset;
+    }
+  }
+  #main_navbar {
+    width: unset;
+  }
+}
+
+@media (min-width: 760px) {
+  .linkbutton.long-text {
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+  }
 }
