@@ -2,6 +2,7 @@
 title: "Creating a new Zvol"
 description: "A quick how-to on creating a Zvol."
 type: docs
+weight: 3
 ---
 
 {{% pageinfo color="primary" %}}

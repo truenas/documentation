@@ -2,6 +2,7 @@
 title: "Creating a new ZFS Dataset"
 description: "A quick how-to on creating a ZFS dataset."
 type: docs
+weight: 2
 ---
 
 {{% pageinfo color="primary" %}}

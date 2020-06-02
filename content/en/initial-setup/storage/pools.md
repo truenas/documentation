@@ -2,6 +2,7 @@
 title: "Creating a new ZFS Pool"
 description: "A quick how-to on creating a ZFS pool."
 type: docs
+weight: 1
 ---
 
 Perhaps, the most important part about TrueNAS is the ability to efficiently
