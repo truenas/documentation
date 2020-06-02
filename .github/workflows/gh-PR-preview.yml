@@ -49,7 +49,7 @@ jobs:
 
       - name: Rsync Push
         run: |
-          rsync -rvza -e "ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no" public/ ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }}:${{ secrets.REMOTE_TARGET }}pull-request-${{ github.event.number }}
+          rsync -rvza -e "ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no" public/ ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }}:${{ secrets.PR_REMOTE_TARGET }}pull-request-${{ github.event.number }}
 
       - name: Comment on PR
         uses: unsplash/comment-on-pr@master
