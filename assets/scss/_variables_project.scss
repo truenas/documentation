@@ -183,16 +183,32 @@ $secondary: #666666;
 	width: 50%;
 }
 
+nav a {
+  outline: none;
+}
+
 @media (max-width: 999px) {
   .grid-container {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(5, 375px);
     grid-template-areas: "whatis initialsetup"  "tasks advanced" "references vcenter-plugin" "truecommand hardware" "docs-contribute .";
   }
+
   #main_navbar {
     width: 65%;
     position: relative;
     margin-top: -10px;
+    overflow: visible;
+    margin-left: 20px !important;
+  }
+
+  .dropdown {
+    width: 100px;
+  }
+
+  .dropdown-menu {
+    position: sticky !important;
+    width: 190px;
   }
 }
 
@@ -206,8 +222,15 @@ $secondary: #666666;
       position: unset;
     }
   }
+
   #main_navbar {
-    width: unset;
+    width: 400px;
+    position: relative;
+    left: 8%;
+  }
+
+  .td-search-input {
+    z-index: 10;
   }
 }
 
