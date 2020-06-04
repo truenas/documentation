@@ -3,7 +3,6 @@
 import subprocess
 import git
 import sys
-import os
 
 # This is to be determined by meeting with Jaron and team on 06/05.
 # WEB_SERVER_HOST =
@@ -51,7 +50,7 @@ proc = subprocess.run(
     HUGO_COMMAND,
     cwd=LOCAL_DIR_FOR_REPO,
     stdout=subprocess.PIPE,
-    stderr=subprocess.PIPE,
+    stderr=subprocess.STDOUT,
     shell=True)
 
 if proc.stdout:
