@@ -1,6 +1,7 @@
 ---
-title: "Advanced Tasks and Troubleshooting"
+title: "Advanced Procedures"
 linkTitle: "Advanced"
-description: "Articles describing advanced procedures and other troubleshooting how-tos."
+description: "Articles describing advanced procedures."
 type: docs
+weight: 3
 ---

@@ -3,7 +3,6 @@ title = "TrueNAS Documentation"
 linkTitle = "TrueNAS Docs"
 +++
 
-<!-------------------------Docs Sections------------------------------->
 <section id="docscategories" class="docscategories">
   <div class="heading">
     <h1>
@@ -25,14 +24,13 @@ linkTitle = "TrueNAS Docs"
     It is the simplest way to create a safe, centralized, and easily accessible place for your data.</p>
     <p>&nbsp;</p>
   </div>
-
+<!-------------------------Topics------------------------------->
   <div class="grid-container">
     <div class="whatis block">
       <h3>Learn About TrueNAS</h3>
       <p>Background information and general overview of the software.</p>
       <p>
         <a class="lightlink" href="/intro/whatis/">What is TrueNAS?</a><br>
-        <a class="lightlink" href="/intro/lifecycle/">Version Lifecycles</a><br>
         <a class="lightlink" href="/intro/truenas-roadmap/">Release Schedule</a><br>
         <a class="lightlink" href="/intro/release-notes/">Release Notes</a><br>
       </p>  
@@ -43,14 +41,15 @@ linkTitle = "TrueNAS Docs"
       <p>Installation and initial setup instructions.</p>
       <p>
         <a class="lightlink" href="/initial-setup/install/">Installing TrueNAS</a><br>
-        <a class="lightlink" href="/initial-setup/networking/">Configuring TrueNAS Networking</a><br>
-        <a class="lightlink" href="/initial-setup/storage/">Configuring TrueNAS Data Storage</a><br>
+        <a class="lightlink" href="/initial-setup/networking/">Configuring Networking</a><br>
+        <a class="lightlink" href="/initial-setup/storage/">Setting up Storage</a><br>
+        <a class="lightlink" href="/initial-setup/directory-services/">Directory Services</a><br>
       </p>
       <p class="button-wrapper"><a class="linkbutton long-text" href="/initial-setup/">Getting Started</a></p>
     </div>
     <div class="tasks block">
       <h3>Sharing</h3>
-      <p>Articles describing how to setup up file sharing with the different supported protocols built into TrueNAS.</p>
+      <p>Setting up file sharing with the different protocols built into TrueNAS.</p>
       <p>
         <a class="lightlink" href="/sharing/smb/">Server Message Block (SMB)</a><br>
         <a class="lightlink" href="/sharing/nfs/">Network File System (NFS)</a><br>
@@ -64,30 +63,30 @@ linkTitle = "TrueNAS Docs"
       <h3>Tasks</h3>
       <p>Additional TrueNAS procedures and troubleshooting, including automated data backup and system administration topics.</p>
       <p>
-        <a class="lightlink" href="/tasks/">Automated Tasks</a><br>
-        <a class="lightlink" href="/tasks/">Administrative Tasks</a><br>
+        <a class="lightlink" href="/tasks/scheduled/">Automated Tasks</a><br>
+        <a class="lightlink" href="/tasks/administrative/">Administrative Tasks</a><br>
         <a class="lightlink" href="/tasks/advanced/">Advanced Procedures</a><br>
-        <a class="lightlink" href="/tasks/troubleshooting/">Troubleshooting Articles</a><br>
+        <a class="lightlink" href="/tasks/troubleshooting/">Troubleshooting</a><br>
       </p>
       <p class="button-wrapper"><a class="linkbutton long-text" href="/tasks/">Tasks</a></p>
     </div>
     <div class="vcenter-plugin block">
       <h3>TrueNAS Solutions</h3>
-      <p>Installation and general usage articles for the TrueNAS vCenter Plugin.</p>
+      <p>Cross-platform integrations with TrueNAS</p>
       <p>
-        <a class="lightlink" href="/vcenter-plugin/">vCenter Plugin</a><br>
-        <a class="lightlink" href="/veeam/">Veeam</a><br>
-        <a class="lightlink" href="/openstack/">OpenStack</a><br>
+        <a class="lightlink" href="/solutions/vcenter-plugin/">vCenter Plugin</a><br>
+        <a class="lightlink" href="/solutions/veeam/">Veeam</a><br>
+        <a class="lightlink" href="/solutions/openstack/">OpenStack</a><br>
       </p>
-      <p class="button-wrapper"><a class="linkbutton long-text" href="/vcenter-plugin/">TrueNAS Solutions</a></p>
+      <p class="button-wrapper"><a class="linkbutton long-text" href="/solutions/">TrueNAS Solutions</a></p>
     </div>
     <div class="truecommand block">
       <h3>TrueCommand</h3>
-      <p>Using TrueCommand to oversee multiple TrueNAS installations.</p>
+      <p>TrueCommand is a "single pane of glass" application to simplify the scaling of data, drive management, and administration of iXsystems NAS platforms.</p>
       <p>
-        <a class="lightlink" href="/truecommand/admins/install">Installing TrueCommand</a><br>
+        <a class="lightlink" href="/truecommand/install/">Installing TrueCommand</a><br>
         <a class="lightlink" href="/truecommand/admins/">Administrating TrueCommand</a><br>
-        <a class="lightlink" href="/truecommand/users">Using TrueCommand</a><br>
+        <a class="lightlink" href="/truecommand/users/">Using TrueCommand</a><br>
       </p>
       <p class="button-wrapper"><a class="linkbutton" href="/truecommand/">TrueCommand</a></p>
     </div>
@@ -100,21 +99,21 @@ linkTitle = "TrueNAS Docs"
         <a class="lightlink" href="/hardware-docs/x-series/">X-Series</a><br>
         <a class="lightlink" href="/hardware-docs/m-series/">M-Series</a><br>
         <a class="lightlink" href="/hardware-docs/expansion-shelves/">Expansion Shelves</a><br>
-        <a class="lightlink" href="https://www.ixsystems.com/blog/hardware-guide/">Hardware Recommendations for Building Your Own TrueNAS System</a><br>
+        <a class="lightlink" href="https://www.ixsystems.com/blog/hardware-guide/">TrueNAS Hardware Recommendations</a><br>
       </p>
       <p class="button-wrapper"><a class="linkbutton block" href="/hardware-docs/">Hardware</a></p>
     </div>
     <div class="references block">
       <h3>Additional Topics</h3>
-      <p>TrueNAS reference articles, legacy documentation links, and various articles authored by the extended TrueNAS community</p>
+      <p>TrueNAS reference articles, legacy documentation links, and various articles authored by the extended user community.</p>
       <p>
         <a class="lightlink" href="https://api.ixsystems.com/freenas/">API Documentation</a><br>
-        <a class="lightlink" href="/reference/">Reference Articles</a><br>
-        <a class="lightlink" href="/reference/legacy-docs">Legacy Documentation</a><br>
-        <a class="lightlink" href="/reference/legacy-docs">Community Documentation</a><br>
+        <a class="lightlink" href="/additional-topics/reference/">Reference Articles</a><br>
+        <a class="lightlink" href="/additional-topics/legacy-docs/">Legacy Documentation</a><br>
+        <a class="lightlink" href="/additional-topics/community-docs/">Community Documentation</a><br>
       </p>
       </p>
-      <p class="button-wrapper"><a class="linkbutton" href="/reference/">Additional Topics</a></p>
+      <p class="button-wrapper"><a class="linkbutton" href="/additional-topics/">Additional Topics</a></p>
     </div>
     <div class="docs-contribute block">
       <h3>Contributing to TrueNAS Documentation</h3>
