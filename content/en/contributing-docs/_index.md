@@ -2,6 +2,7 @@
 title: "Contributing"
 linkTitle: "Contributing"
 type: docs
+weight: 10
 ---
 
 The FreeNAS project welcomes all documentation contributions!

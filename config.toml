@@ -189,6 +189,9 @@ expiryDate = ["expiryDate"]
 [[params.topics]]
 	name = "Solutions"
 	url = "/solutions/"
+#[[params.topics]]
+#	name = "SCALE"
+#	url = "/scale/"
 [[params.topics]]
 	name = "TrueCommand"
 	url = "/truecommand/"
@@ -197,7 +200,7 @@ expiryDate = ["expiryDate"]
 	url = "/hardware-docs/"
 [[params.topics]]
 	name = "Additional Topics"
-	url = "/reference/"
+	url = "/additional-topics/"
 [[params.topics]]
 	name = "Contributing"
 	url = "/contributing-docs/"

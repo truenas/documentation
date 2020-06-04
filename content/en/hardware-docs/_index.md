@@ -3,5 +3,5 @@ title: "Hardware Documentation"
 linkTitle: "Hardware"
 description: "TrueNAS Hardware documentation, including Basic Setup Guides."
 type: docs
-weight: 7
+weight: 8
 ---
