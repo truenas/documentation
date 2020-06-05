@@ -176,33 +176,33 @@ expiryDate = ["expiryDate"]
 	url = "/"
 [[params.topics]]
 	name = "Overview"
-	url = "/intro/"
+	url = "/docs/intro/"
 [[params.topics]]
 	name = "Getting Started"
-	url = "/initial-setup/"
+	url = "/docs/initial-setup/"
 [[params.topics]]
 	name = "Sharing"
-	url = "/sharing/"
+	url = "/docs/sharing/"
 [[params.topics]]
 	name = "Tasks"
-	url = "/tasks/"
+	url = "/docs/tasks/"
 [[params.topics]]
 	name = "Solutions"
-	url = "/solutions/"
+	url = "/docs/solutions/"
 #[[params.topics]]
 #	name = "SCALE"
-#	url = "/scale/"
+#	url = "/docs/scale/"
 [[params.topics]]
 	name = "TrueCommand"
-	url = "/truecommand/"
+	url = "/docs/truecommand/"
 [[params.topics]]
 	name = "Hardware"
-	url = "/hardware-docs/"
+	url = "/docs/hardware-docs/"
 [[params.topics]]
 	name = "Additional Topics"
-	url = "/additional-topics/"
+	url = "/docs/additional-topics/"
 [[params.topics]]
 	name = "Contributing"
-	url = "/contributing-docs/"
+	url = "/docs/contributing-docs/"
 
 
