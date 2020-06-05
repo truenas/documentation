@@ -1,7 +1,7 @@
 ---
 title: "Administration Guides"
 linkTitle: "Administrators"
-weight: 1
+weight: 3
 description: "Installation, initial configuration, and general TrueCommand administration guides"
 type: docs
 ---

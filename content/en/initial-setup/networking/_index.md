@@ -1,6 +1,6 @@
 ---
-title: "Configuring TrueNAS Networking"
+title: "Configuring Networking"
 description: "Initial networking configuration procedures"
 type: docs
-weight: 4
+weight: 2
 ---

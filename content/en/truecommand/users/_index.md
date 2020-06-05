@@ -1,7 +1,7 @@
 ---
 title: "User Guides"
 linkTitle: "Users"
-weight: 2
+weight: 4
 description: "Articles about general TrueCommand usage"
 type: docs
 ---

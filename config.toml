@@ -181,20 +181,26 @@ expiryDate = ["expiryDate"]
 	name = "Getting Started"
 	url = "/initial-setup/"
 [[params.topics]]
+	name = "Sharing"
+	url = "/sharing/"
+[[params.topics]]
 	name = "Tasks"
 	url = "/tasks/"
 [[params.topics]]
-	name = "Reference"
-	url = "/reference/"
-[[params.topics]]
-	name = "vCenter Plugin"
-	url = "/vcenter-plugin/"
+	name = "Solutions"
+	url = "/solutions/"
+#[[params.topics]]
+#	name = "SCALE"
+#	url = "/scale/"
 [[params.topics]]
 	name = "TrueCommand"
 	url = "/truecommand/"
 [[params.topics]]
 	name = "Hardware"
 	url = "/hardware-docs/"
+[[params.topics]]
+	name = "Additional Topics"
+	url = "/additional-topics/"
 [[params.topics]]
 	name = "Contributing"
 	url = "/contributing-docs/"

@@ -1,6 +1,7 @@
 ---
 title: "Hardware Documentation"
 linkTitle: "Hardware"
-description: "Articles describing how to use or maintain TrueNAS hardware products."
+description: "TrueNAS Hardware documentation, including Basic Setup Guides."
 type: docs
+weight: 8
 ---
