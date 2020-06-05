@@ -209,8 +209,15 @@ nav a {
   .dropdown-menu {
     position: sticky !important;
     width: 190px;
+    
   }
 }
+
+// remove language dropdown in side TOC on mobile view
+.td-sidebar-nav .dropdown .nav-link {
+  display: none;
+}
+//
 
 @media (max-width: 766px) {
   .grid-container {
@@ -241,3 +248,4 @@ nav a {
     margin-right: 20%;
   }
 }
+

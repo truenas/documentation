@@ -99,6 +99,7 @@
         line-height: 1;
         color: $gray-900;
         margin: 1rem;
+
     }
 
     &__search {
@@ -116,6 +117,7 @@
                 top: 4rem;
                 z-index: 10;
                 height: calc(100vh - 6rem);
+                overflow: visible;
             }
         }
 
@@ -127,6 +129,7 @@
 
         .td-search-box {
             width: 100%;
+            display: none !important;
         }
     }
 }
