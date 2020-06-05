@@ -60,6 +60,10 @@
 
     .td-search-input {
         border: none;
+        
+        @media (max-width: 766px) {
+            display: none;
+        }
 
         @include placeholder {
             color: $navbar-dark-color;

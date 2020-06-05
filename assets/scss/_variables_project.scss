@@ -97,7 +97,7 @@ $secondary: #666666;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 375px 375px 375px;
-  grid-template-areas: "whatis initialsetup tasks" "advanced references vcenter-plugin" "truecommand hardware docs-contribute";
+  grid-template-areas: "whatis initialsetup tasks" "advanced vcenter-plugin truecommand" "hardware references docs-contribute";
   max-width: 100%;
   grid-column-gap: 10px;
   grid-row-gap: 20px;
@@ -209,8 +209,15 @@ nav a {
   .dropdown-menu {
     position: sticky !important;
     width: 190px;
+    
   }
 }
+
+// remove language dropdown in side TOC on mobile view
+.td-sidebar-nav .dropdown .nav-link {
+  display: none;
+}
+//
 
 @media (max-width: 766px) {
   .grid-container {
@@ -241,3 +248,4 @@ nav a {
     margin-right: 20%;
   }
 }
+
