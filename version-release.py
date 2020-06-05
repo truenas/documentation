@@ -4,13 +4,12 @@ import subprocess
 import git
 import sys
 
-# This is to be determined by meeting with Jaron and team on 06/05.
-# WEB_SERVER_HOST =
-# WEB_SERVER_DIR =
-
+WEB_SERVER_HOST = "docs.ixsystems.com"
+WEB_SERVER_DIR = "/var/www/html/docs1/archive/"
+WEB_SERVER_USER = "docs"
 REPO_CLONE_URL = "https://github.com/freenas/documentation.git"
 LOCAL_DIR_FOR_REPO = "/tmp/documentation-repo"
-DEFAULT_BRANCH = "master"
+#DEFAULT_BRANCH = "master"
 
 # Check to see if repo has already been downloaded.
 try:
@@ -39,31 +38,37 @@ except git.exc.GitCommandError:
 
 print('Building docs with hugo...')
 
-# try:
-#     os.chdir(LOCAL_DIR_FOR_REPO)
-# except Exception as e:
-#     print(f'Failed to chdir() into {LOCAL_DIR_FOR_REPO} with error: {e}')
+# declare hugo build dir based off branch name.
+if existing_release_branch:
+    HUGO_DIR = existing_release_branch
+elif new_release_branch:
+    HUGO_DIR = new_release_branch
 
 # Build docs with Hugo and check for hugo errors.
-HUGO_COMMAND = ['hugo', '-t', 'docsy', '-d', 'public', '--gc', '--minify', '--cleanDestinationDir']
-proc = subprocess.run(
+HUGO_COMMAND = ['hugo', '-t', 'docsy', '-d', f'{HUGO_DIR}', '--gc', '--minify', '--cleanDestinationDir']
+hugo_proc = subprocess.run(
     HUGO_COMMAND,
     cwd=LOCAL_DIR_FOR_REPO,
     stdout=subprocess.PIPE,
     stderr=subprocess.STDOUT,
     shell=True)
 
-if proc.stdout:
-    msg = proc.stdout.decode()
+if hugo_proc.stdout:
+    msg = hugo_proc.stdout.decode()
     if 'POSTCSS: failed to transform' in msg:
         print(f'Build failed with error: {msg}\
         The correct npm packages may not be installed.\n\
-        Ensure npm is installed and run:\n\
-        \t sudo npm install -D --save autoprefixer\n\
-        \t sudo npm install -D --save postcss-cli')
-    elif 'pages paginator pages non-page files' in msg:
+        cd into {LOCAL_DIR_FOR_REPO},\
+        ensure npm is installed, and run:\n\
+        \tsudo npm install -D --save autoprefixer\n\
+        \tsudo npm install -D --save postcss-cli')
+    elif 'pages' or 'paginator pages' in msg:
         print(msg)
-        BUILT_FILES_DIR = LOCAL_DIR_FOR_REPO + '/public'
+        BUILT_FILES_DIR = LOCAL_DIR_FOR_REPO + '/' + HUGO_DIR
         print(f'Success. The built files can be found in {BUILT_FILES_DIR}')
     else:
         print(msg)
+
+# rsync the directory to docs.ixsystems.com
+# RYSYNC_COMMAND = ['rsync', '-r', '-v', '-z', '-a', f'{BUILT_FILES_DIR}', WEB_SERVER_USER, '@', WEB_SERVER_HOST, ':', f'{WEB_SERVER_DIR}/{HUGO_DIR}']
+# rsync_proc = subprocess.run(RYSYNC_COMMAND)
