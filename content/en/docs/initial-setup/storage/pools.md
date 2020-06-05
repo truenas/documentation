@@ -1,6 +1,6 @@
 ---
-title: "Creating a new ZFS Pool"
-description: "A quick how-to on creating a ZFS pool."
+title: "ZFS Pools"
+description: "How to create a ZFS data storage pool."
 weight: 1
 ---
 

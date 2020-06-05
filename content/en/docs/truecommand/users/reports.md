@@ -1,11 +1,8 @@
 ---
 title: "System Reporting"
 linkTitle: "Reporting"
-description: "How to create and view system reports in TrueCommand"
+description: "How to create and view system reports."
 ---
-
-{{% pageinfo version="TrueCommand 1.2" %}}
-{{% /pageinfo %}}
 
 The **Reports** page is used to customize charts of system metrics for data analysis.
 

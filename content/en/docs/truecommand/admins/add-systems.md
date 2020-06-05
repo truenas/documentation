@@ -1,12 +1,8 @@
 ---
-title: "Connecting Systems to TrueCommand"
-linkTitle: "Connecting Systems"
-description: "How to connect and organize systems in TrueCommand"
+title: "Connecting Systems"
+description: "How to connect to and organize systems in TrueCommand."
 weight: 3
 ---
-
-{{% pageinfo version="TrueCommand 1.2" %}}
-{{% /pageinfo %}}
 
 ## Connecting Systems to TrueCommand
 

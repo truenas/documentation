@@ -1,12 +1,8 @@
 ---
-title: "TrueNAS on Amazon Web Services (AWS)"
-linkTitle: "TrueNAS on AWS"
-description: "How to create a TrueNAS image and use it with Amazon Web Services"
+title: "Amazon Web Services (AWS) Deployment"
+description: "How to create a TrueNAS image and deploy it on Amazon Web Services."
 weight: 2
 ---
-
-{{% pageinfo version="FreeNAS 11.2" %}}
-{{% /pageinfo %}}
 
 ## Process Summary
 

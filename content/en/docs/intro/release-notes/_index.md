@@ -1,5 +1,4 @@
 ---
-title: "TrueNAS Version Release Notes"
-linkTitle: "Release Notes"
+title: "Release Notes"
 weight: 4
 ---

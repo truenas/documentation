@@ -1,5 +1,5 @@
 ---
-title: "TrueCommand 1.2 Legacy Docs"
+title: "TrueCommand Legacy Docs"
 linkTitle: "TrueCommand"
 weight: 3
 ---

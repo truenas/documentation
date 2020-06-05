@@ -1,7 +1,6 @@
 ---
-title: "Installing TrueNAS"
-linkTitle: "Installing TrueNAS"
-description: "How to install TrueNAS"
+title: "Installing on Physical Hardware"
+description: "How to obtain and install TrueNAS on physical hardware."
 weight: 1
 ---
 

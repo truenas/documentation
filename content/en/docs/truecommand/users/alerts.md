@@ -1,7 +1,7 @@
 ---
-title: "TrueCommand Alerting"
-linkTitle: "Viewing and Configuring Alerts"
-description: "How to manage alerts in TrueCommand and configure services to send alerts beyond the TrueCommand interface"
+title: "Viewing and Configuring Alerts"
+linkTitle: "Alert System"
+description: "How to manage alerts and configure services to send alerts beyond the TrueCommand interface."
 ---
 
 TrueCommand alerts provide visual warnings for monitored systems that require attention.

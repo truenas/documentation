@@ -1,12 +1,9 @@
 ---
-title: "Remote"
+title: "Remote Replication"
 linkTitle: "Remote"
 description: "How to use the TrueNAS Wizard to create a replication task that works with a remote system to send or receive ZFS snapshots."
 weight: 2
 ---
-
-{{% pageinfo version="FreeNAS 11.3" %}}
-{{% /pageinfo %}}
 
 It is recommended to configure SSH and automatic dataset snapshots in TrueNAS before creating a remote replication task.
 This ensures that both systems can connect to each other and new snapshots are regularly available for replication.

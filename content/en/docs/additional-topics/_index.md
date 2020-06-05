@@ -1,6 +1,6 @@
 ---
 title: "Additional Topics"
 linkTitle: "Additional Topics"
-description: "TrueNAS reference articles, legacy documentation links, and various articles authored by the user community."
+description: "Reference articles, legacy documentation links, and various articles authored by the user community."
 weight: 9
 ---

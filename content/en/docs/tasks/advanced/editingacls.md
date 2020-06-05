@@ -1,7 +1,6 @@
 ---
 title: "Managing Access Control Lists"
-linkTitle: "Managing Access Control Lists"
-description: "How to open an Access Control List (ACL) and add or remove Access Control Entries (ACEs)"
+description: "How to open an Access Control List (ACL) and add or remove Access Control Entries (ACEs)."
 ---
 
 ## Process Summary

@@ -1,7 +1,7 @@
 ---
 title: "Using Plugins"
 linkTitle: "Using Plugins"
-description: "How to use plugins in TrueNAS CORE and TrueNAS Enterprise"
+description: "How to use application plugins."
 ---
 
 {{% alert title="Notice" color="info" %}}

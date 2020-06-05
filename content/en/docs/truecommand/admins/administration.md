@@ -1,12 +1,9 @@
 ---
 title: "TrueCommand Administration"
 linkTitle: "Administration"
-description: "How to find or adjust various TrueCommand system settings, including the License, Certificates, LDAP, SSL, Alerts, and other options for connected systems"
+description: "How to find or adjust various system settings, including the License, Certificates, LDAP, SSL, Alerts, and other options for connected systems."
 weight: 4
 ---
-
-{{% pageinfo version="TrueCommand 1.2" %}}
-{{% /pageinfo %}}
 
 The **Administration** page shows additional system details and offers a variety of TrueCommand configuration options.
 This page is available to users with administrator permissions by opening the **Configure (Gear)** menu and clicking **Administration**.

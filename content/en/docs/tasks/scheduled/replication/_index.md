@@ -1,5 +1,5 @@
 ---
-title: "ZFS Replication in TrueNAS"
+title: "ZFS Snapshot Replication"
 linkTitle: "Replication"
-description: "Articles about the ZFS replication feature in TrueNAS"
+description: "Articles about ZFS snapshot replication."
 ---
