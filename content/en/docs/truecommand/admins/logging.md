@@ -1,11 +1,8 @@
 ---
 title: "Monitoring TrueCommand Activity"
 linkTitle: "Activity Logging"
-description: "How to monitor user activity in TrueCommand"
+description: "How to monitor TrueCommand user activity."
 ---
-
-{{% pageinfo version="TrueCommand 1.2" %}}
-{{% /pageinfo %}}
 
 TrueCommand records all user account activity in a system log.
 For example, if a user deletes a system from TrueCommand, the log records which user deleted it along with other information associated with the deleted system.

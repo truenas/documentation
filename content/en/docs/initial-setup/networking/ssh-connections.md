@@ -1,11 +1,7 @@
 ---
-title: "Configuring SSH Connections"
-linkTitle: "SSH Connections"
-description: "How to configure various SSH features in TrueNAS"
+title: "SSH Connections"
+description: "How to create and save SSH connections."
 ---
-
-{{% pageinfo version="FreeNAS 11.3" %}}
-{{% /pageinfo %}}
 
 [Secure Socket Shell (SSH)](https://searchsecurity.techtarget.com/definition/Secure-Shell) is a network protocol that provides a secure method to access and transfer files between two hosts while using an unsecure network.
 SSH can use user account credentials to establish secure connections, but often uses key pairs shared between host systems for authentication.

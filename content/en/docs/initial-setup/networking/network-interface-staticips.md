@@ -1,11 +1,7 @@
 ---
-title: "Setting a Static IP Address for a TrueNAS Network Interface"
-linkTitle: "Static IP Addresses for Network Interfaces"
-description: "How to set a static IP address in either the TrueNAS console or web interface"
+title: "Setting a Static IP Address"
+description: "How to set a static IP address in either the web interface or system console."
 ---
-
-{{% pageinfo version="TrueNAS 12.0" %}}
-{{% /pageinfo %}}
 
 {{% alert title="Warning" color="warning" %}}
 Making changes to the network interface the web interface uses can result in losing connection to the TrueNAS system!

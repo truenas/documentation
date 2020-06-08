@@ -1,11 +1,7 @@
 ---
-title: "Updating an HA system"
-linkTitle: "Updating an HA system"
-description: "How to update a High Availability TrueNAS Enterprise system"
+title: "Updating a High Availability System"
+description: "How to update a High Availability (HA) TrueNAS Enterprise system"
 ---
-
-{{% pageinfo version="TrueNAS 11.3" %}}
-{{% /pageinfo %}}
 
 ## Process Summary
 

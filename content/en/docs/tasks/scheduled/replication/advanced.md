@@ -1,12 +1,9 @@
 ---
-title: "Advanced"
+title: "Advanced Replication"
 linkTitle: "Advanced"
-description: "How to create a replication task using the advanced options"
+description: "How to create a replication task using the advanced options."
 weight: 3
 ---
-
-{{% pageinfo version="FreeNAS 11.3" %}}
-{{% /pageinfo %}}
 
 Requirements:
 * Storage pools with datasets and data to snapshot.

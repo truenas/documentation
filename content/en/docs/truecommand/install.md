@@ -1,12 +1,9 @@
 ---
-title: "Installing and Accessing the TrueCommand™ Interface"
-linkTitle: "Installing and First-Time UI Access"
-description: "A how-to guide for installing TrueCommand and accessing the web interface for the first time"
+title: "Installing and Accessing the TrueCommand Interface"
+linkTitle: "Installing TrueCommand"
+description: "A how-to guide for installing TrueCommand and accessing the web interface for the first time."
 weight: 2
 ---
-
-{{% pageinfo version="TrueCommand 1.2" %}}
-{{% /pageinfo %}}
 
 ## Installing the TrueCommand Container
 

@@ -1,5 +1,5 @@
 ---
 title: "Getting Started"
-description: "Installing and Initial Setup Tasks with TrueNAS"
+description: "Installing and Initial Setup Tasks."
 weight: 2
 ---

@@ -1,6 +1,5 @@
 ---
-title: "TrueNAS Software Development Life Cycle"
-linkTitle: "TrueNAS Software Development Life Cycle"
+title: "Software Development Life Cycle"
 weight: 2
 ---
 

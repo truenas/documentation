@@ -1,7 +1,7 @@
 ---
-title: "Legacy Engine (11.3)"
+title: "Legacy Engine (11.3) Replication"
 linkTitle: "Legacy Engine (11.3)"
-description: "How to create a replication task using the previous FreeNAS/TrueNAS 11.2 replication engine"
+description: "How to create a replication task using the previous FreeNAS/TrueNAS 11.2 replication engine."
 weight: 4
 ---
 

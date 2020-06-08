@@ -1,6 +1,6 @@
 ---
-title: "Creating a new Zvol"
-description: "A quick how-to on creating a Zvol."
+title: "Zvols"
+description: "How to create a Zvol."
 weight: 3
 ---
 

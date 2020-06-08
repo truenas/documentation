@@ -1,7 +1,6 @@
 ---
-title: "Mirror the Boot Pool"
-linkTitle: "Mirror the Boot Pool"
-description: "A how-to on mirroring a TrueNAS boot pool."
+title: "Mirroring the Boot Pool"
+description: "How to add a second drive and mirror the system boot pool."
 ---
 
 TrueNAS supports mirroring a boot pool by adding a second device to the original

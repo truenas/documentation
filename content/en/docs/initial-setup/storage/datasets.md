@@ -1,5 +1,5 @@
 ---
-title: "Creating a new ZFS Dataset"
+title: "ZFS Datasets"
 description: "A quick how-to on creating a ZFS dataset."
 weight: 2
 ---

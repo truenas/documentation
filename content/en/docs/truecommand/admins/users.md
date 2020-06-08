@@ -1,11 +1,8 @@
 ---
-title: "Adding and Organizing Users in TrueCommand"
+title: "Adding and Organizing Users"
 linkTitle: "User Management"
-description: "How to add, configure, and organize users in TrueCommand"
+description: "How to add, configure, and organize users."
 ---
-
-{{% pageinfo version="TrueCommand 1.2" %}}
-{{% /pageinfo %}}
 
 TrueCommand has a robust user management system designed to allow TrueCommand administrators to personalize the TrueCommand experience for each user account.
 User accounts can be created within the TrueCommand interface or you can configure [LDAP]({{< relref "administration.md#ldap" >}}) to automatically create a new user account when someone logs into TrueCommand with their LDAP credentials.

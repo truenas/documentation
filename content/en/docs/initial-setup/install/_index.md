@@ -1,5 +1,5 @@
 ---
 title: "Installing TrueNAS"
-description: "How to install TrueNAS on different platforms"
+description: "Procedures to install TrueNAS on various platforms."
 weight: 1
 ---

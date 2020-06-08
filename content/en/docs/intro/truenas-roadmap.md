@@ -1,6 +1,5 @@
 ---
-title: "TrueNAS Release Schedule"
-linkTitle: "TrueNAS Release Schedule"
+title: "Release Schedule"
 weight: 3
 ---
 

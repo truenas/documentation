@@ -1,11 +1,7 @@
 ---
 title: "Configuring High Availability"
-linkTitle: "Configuring High Availability"
 description: "How to set up and manage High Availability (HA) in TrueNAS Enterprise"
 ---
-
-{{% pageinfo version="TrueNAS 11.3" %}}
-{{% /pageinfo %}}
 
 ## Process Summary
 

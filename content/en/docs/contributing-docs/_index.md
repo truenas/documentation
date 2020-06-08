@@ -4,7 +4,7 @@ description: "Step-by-step instructions for contributing to TrueNAS documentatio
 weight: 10
 ---
 
-The FreeNAS project welcomes all documentation contributions!
+The TrueNAS project welcomes all documentation contributions!
 We're using [Hugo](https://gohugo.io/) to create this documentation website and the [Docsy theme](https://www.docsy.dev/) for general styling.
 
 The tutorials in this section are designed to guide you with different kinds of documentation contributions.

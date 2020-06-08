@@ -1,12 +1,9 @@
 ---
-title: "Local"
+title: "Local Replication"
 linkTitle: "Local"
-description: "How to use the TrueNAS Wizard to quickly back up new snapshots within the local system"
+description: "How to use the TrueNAS Wizard to quickly back up new snapshots to another location on the local system."
 weight: 1
 ---
-
-{{% pageinfo version="FreeNAS 11.3" %}}
-{{% /pageinfo %}}
 
 ## Process Summary
 
