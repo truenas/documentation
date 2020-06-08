@@ -13,6 +13,7 @@ LOCAL_DIR_FOR_REPO = "/tmp/documentation-repo"
 
 # Check to see if repo has already been downloaded.
 try:
+    print(f'Cloning {REPO_CLONE_URL} into {LOCAL_DIR_FOR_REPO} ...')
     repo = git.Repo.clone_from(REPO_CLONE_URL, LOCAL_DIR_FOR_REPO)
 except git.exc.GitCommandError:
     print(f'{LOCAL_DIR_FOR_REPO} already exists. Skipping clone.')
@@ -56,12 +57,12 @@ hugo_proc = subprocess.run(
 if hugo_proc.stdout:
     msg = hugo_proc.stdout.decode()
     if 'POSTCSS: failed to transform' in msg:
-        print(f'Build failed with error: {msg}\
-        The correct npm packages may not be installed.\n\
-        cd into {LOCAL_DIR_FOR_REPO},\
-        ensure npm is installed, and run:\n\
-        \tsudo npm install -D --save autoprefixer\n\
-        \tsudo npm install -D --save postcss-cli')
+        print(f'Build failed with error: {msg}',
+        f'The correct npm packages may not be installed.\n',
+        f'cd into {LOCAL_DIR_FOR_REPO},',
+        f'ensure npm is installed, and run:\n',
+        f'\tsudo npm install -D --save autoprefixer\n',
+        f'\tsudo npm install -D --save postcss-cli')
     elif 'pages' or 'paginator pages' in msg:
         print(msg)
         BUILT_FILES_DIR = LOCAL_DIR_FOR_REPO + '/' + HUGO_DIR
