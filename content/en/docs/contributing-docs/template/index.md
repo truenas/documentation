@@ -68,7 +68,9 @@ em0: flags=8943<UP,BROADCAST,RUNNING,PROMISC,SIMPLEX,MULTICAST> metric 0 mtu 150
 Make sure to include any final steps the user can take to confirm the procedure was done correctly.
 Be specific!
 Using vague terms can be misleading and result in confusion.
-Instead, directly say what happens: "Clicking *Generate Debug* compiles system information into a *.tar* file. A dialog opens to download the file to your local system."
+Instead, directly say what happens:
+"Clicking *Generate Debug* compiles system information into a *.tar* file.
+A dialog opens to download the file to your local system."
 
 This is also a good place to put any troubleshooting tips, in case the user isn't seeing the expected result.
 ```
