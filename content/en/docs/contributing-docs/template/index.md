@@ -36,7 +36,7 @@ Including a screenshot is a good way for the reader to confirm they're in the co
 {{\< imgproc example-image Fit "960x695" />}}
 
 {{\% alert title="Warning" color="warning" %}}
-Warnings about negative consequences or common errors that are made during the procedure are best placed before listing out any specific changes to make to the system.
+Warnings about common errors that are made during the procedure are best placed before listing out any specific changes to make to the system.
 This can help prevent mistakes and educate the reader about common troubleshooting steps.
 {{\% /alert %}}
 
