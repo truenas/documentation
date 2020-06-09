@@ -1,15 +1,15 @@
-#!/usr/bin/env python3
-
 import subprocess
 import git
 import sys
 
-WEB_SERVER_HOST = "docs.ixsystems.com"
-WEB_SERVER_DIR = "/var/www/html/docs1/archive/"
-WEB_SERVER_USER = "docs"
-REPO_CLONE_URL = "https://github.com/freenas/documentation.git"
-LOCAL_DIR_FOR_REPO = "/tmp/documentation-repo"
-#DEFAULT_BRANCH = "master"
+#WEB_SERVER_HOST = 'docs.ixsystems.com'
+WEB_SERVER_DIR = '/var/www/html/docs1/archive'
+WEB_SERVER_USER = 'docs'
+REPO_CLONE_URL = 'https://github.com/freenas/documentation.git'
+USER_HOME_DIR = '/home/docs'
+LOCAL_DIR_FOR_REPO = f'{USER_HOME_DIR}/documentation-repo'
+DEFAULT_REPO_BRANCH = 'master'
+
 
 # Check to see if repo has already been downloaded.
 try:
@@ -21,39 +21,33 @@ except git.exc.GitCommandError:
 
 existing_release_branch = input(f'Enter the name of the release version branch: ')
 
-# Check to see if branch exists, create one if not.
+# pull master, checkout branch if it exist, and pull origin master 
 try:
     print(f'Checking out branch...')
+    repo.git.checkout(DEFAULT_REPO_BRANCH)
+    repo.git.pull()
     repo.git.checkout(existing_release_branch)
+    repo.git.pull('origin', 'master')
 except git.exc.GitCommandError:
-    create_branch = ''
-    while create_branch not in ['y', 'n']:
-        create_branch = input('Branch does not exist. Would you like to create a new release branch? (y/n): ')
-        if create_branch.lower() == 'y':
-            new_release_branch = input('Name the new release branch?: ')
-            repo.git.checkout('-b', new_release_branch)
-        elif create_branch.lower() == 'n':
-            sys.exit(1)
-        else:
-            print('Invalid choice. Try again.')
+    print(f'"{existing_release_branch}" does not exist.')
+    print(f'Please create the release branch at',
+    f'https://github.com/freenas/documentation first.')
+    sys.exit(1)
+
+# declare hugo build dir based off branch name.
+HUGO_DIR = f'/tmp/{existing_release_branch}'
 
 print('Building docs with hugo...')
 
-# declare hugo build dir based off branch name.
-if existing_release_branch:
-    HUGO_DIR = existing_release_branch
-elif new_release_branch:
-    HUGO_DIR = new_release_branch
-
-# Build docs with Hugo and check for hugo errors.
-HUGO_COMMAND = ['hugo', '-t', 'docsy', '-d', f'{HUGO_DIR}', '--gc', '--minify', '--cleanDestinationDir']
+# Build docs with Hugo.
+HUGO_COMMAND = ['hugo', '-d', HUGO_DIR]
 hugo_proc = subprocess.run(
     HUGO_COMMAND,
     cwd=LOCAL_DIR_FOR_REPO,
     stdout=subprocess.PIPE,
-    stderr=subprocess.STDOUT,
-    shell=True)
+    stderr=subprocess.STDOUT)
 
+# Check for hugo errors.
 if hugo_proc.stdout:
     msg = hugo_proc.stdout.decode()
     if 'POSTCSS: failed to transform' in msg:
@@ -63,13 +57,26 @@ if hugo_proc.stdout:
         f'ensure npm is installed, and run:\n',
         f'\tsudo npm install -D --save autoprefixer\n',
         f'\tsudo npm install -D --save postcss-cli')
+        sys.exit(1)
     elif 'pages' or 'paginator pages' in msg:
         print(msg)
-        BUILT_FILES_DIR = LOCAL_DIR_FOR_REPO + '/' + HUGO_DIR
+        BUILT_FILES_DIR = HUGO_DIR
         print(f'Success. The built files can be found in {BUILT_FILES_DIR}')
     else:
         print(msg)
+        sys.exit(1)
 
-# rsync the directory to docs.ixsystems.com
-# RYSYNC_COMMAND = ['rsync', '-r', '-v', '-z', '-a', f'{BUILT_FILES_DIR}', WEB_SERVER_USER, '@', WEB_SERVER_HOST, ':', f'{WEB_SERVER_DIR}/{HUGO_DIR}']
-# rsync_proc = subprocess.run(RYSYNC_COMMAND)
+
+print(f'Copying {BUILT_FILES_DIR} to {WEB_SERVER_DIR}.')
+
+# Copy files from hugo output to the hosting dir on server.
+CP_COMMAND = ['cp', '-r', '-u', BUILT_FILES_DIR, f'{WEB_SERVER_DIR}/']
+cp_proc = subprocess.run(
+        CP_COMMAND,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE)
+
+if cp_proc.stdout:
+    print(cp_proc.stdout.decode())
+elif cp_proc.stderr:
+    print(cp_proc.stderr.decode())
