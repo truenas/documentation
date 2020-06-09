@@ -19,7 +19,7 @@ except git.exc.GitCommandError:
     print(f'{LOCAL_DIR_FOR_REPO} already exists. Skipping clone.')
     repo = git.Repo(LOCAL_DIR_FOR_REPO)
 
-existing_release_branch = input(f'Enter the name of the release version branch: ')
+existing_release_branch = sys.argv[1]
 
 # pull master, checkout branch if it exist, and pull origin master 
 try:
