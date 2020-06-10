@@ -9,7 +9,19 @@ REPO_CLONE_URL = 'https://github.com/freenas/documentation.git'
 USER_HOME_DIR = '/home/docs'
 LOCAL_DIR_FOR_REPO = f'{USER_HOME_DIR}/documentation-repo'
 DEFAULT_REPO_BRANCH = 'master'
-EXISTING_RELEASE_BRANCH = '/tmp/{sys.argv[1]}'
+
+
+def verify_argv():
+
+    """
+    Make sure sys.argv[1] is provided
+    """
+
+    branch = None
+    if sys.argv[1]:
+        branch = sys.argv[1]
+
+    return branch
 
 
 def check_existing_repo():
@@ -29,7 +41,7 @@ def check_existing_repo():
     return repo
 
 
-def check_out_release_branch(repo):
+def check_out_release_branch(repo, branch):
 
     """
     pull master branch
@@ -41,10 +53,10 @@ def check_out_release_branch(repo):
         print('Checking out branch...')
         repo.git.checkout(DEFAULT_REPO_BRANCH)
         repo.git.pull()
-        repo.git.checkout(EXISTING_RELEASE_BRANCH)
+        repo.git.checkout(branch)
         repo.git.pull('origin', 'master')
     except git.exc.GitCommandError:
-        print(f'"{EXISTING_RELEASE_BRANCH}" does not exist.')
+        print(f'"{branch}" does not exist.')
         print(
             'Please create the release branch at',
             'https://github.com/freenas/documentation first.'
@@ -52,7 +64,7 @@ def check_out_release_branch(repo):
         sys.exit(1)
 
 
-def hugo_build():
+def hugo_build(branch):
 
     """
     Build site with Hugo
@@ -61,7 +73,7 @@ def hugo_build():
     print('Building docs with hugo...')
 
     # Build docs with Hugo.
-    hugo_cmd = ['hugo', '-d', EXISTING_RELEASE_BRANCH]
+    hugo_cmd = ['hugo', '-d', branch]
     hugo_proc = subprocess.run(
         hugo_cmd,
         cwd=LOCAL_DIR_FOR_REPO,
@@ -86,24 +98,24 @@ def hugo_build():
             print(msg)
             print(
                 'Success.'
-                f'The built files can be found in {EXISTING_RELEASE_BRANCH}'
+                f'The built files can be found in {branch}'
             )
         else:
             print(msg)
             sys.exit(1)
 
 
-def copy_built_files():
+def copy_built_files(branch):
 
     """
     This function copies the built files to the
     NGINX configured directory.
     """
 
-    print(f'Copying {EXISTING_RELEASE_BRANCH} to {WEB_SERVER_DIR}.')
+    print(f'Copying {branch} to {WEB_SERVER_DIR}.')
 
     # Copy files from hugo output to the hosting dir on server.
-    cp_cmd = ['cp', '-r', '-u', EXISTING_RELEASE_BRANCH, f'{WEB_SERVER_DIR}/']
+    cp_cmd = ['cp', '-r', '-u', branch, f'{WEB_SERVER_DIR}/']
     cp_proc = subprocess.run(
         cp_cmd,
         stdout=subprocess.PIPE,
@@ -118,12 +130,17 @@ def copy_built_files():
 
 if __name__ == '__main__':
 
+    branch = verify_argv()
     repo = check_existing_repo()
+
+    if branch is None:
+        print('FATAL: Branch not provided!')
+        sys.exit(1)
 
     if repo is None:
         print('FATAL: Repository not found!')
         sys.exit(1)
 
-    check_out_release_branch(repo)
-    hugo_build()
-    copy_built_files()
+    check_out_release_branch(repo, branch)
+    hugo_build(branch)
+    copy_built_files(branch)
