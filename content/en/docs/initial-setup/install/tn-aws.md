@@ -1,7 +1,7 @@
 ---
 title: "Amazon Web Services (AWS) Deployment"
 description: "How to create a TrueNAS image and deploy it on Amazon Web Services."
-weight: 2
+weight: 3
 ---
 
 ## Process Summary
