@@ -18,8 +18,12 @@ def verify_argv():
     """
 
     branch = None
-    if sys.argv[1]:
-        branch = sys.argv[1]
+    try:
+        if sys.argv[1]:
+            branch = sys.argv[1]
+    except IndexError:
+        # no arg specified
+        pass
 
     return branch
 
