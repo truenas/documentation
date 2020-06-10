@@ -77,7 +77,7 @@ def hugo_build(branch):
     print('Building docs with hugo...')
 
     # Build docs with Hugo.
-    hugo_cmd = ['hugo', '-d', branch]
+    hugo_cmd = ['hugo', '-d', f'/tmp/{branch}']
     hugo_proc = subprocess.run(
         hugo_cmd,
         cwd=LOCAL_DIR_FOR_REPO,
@@ -98,11 +98,11 @@ def hugo_build(branch):
                 '\tsudo npm install -D --save postcss-cli'
             )
             sys.exit(1)
-        elif 'pages' and 'paginator pages' in msg:
+        elif 'pages' or 'paginator pages' in msg:
             print(msg)
             print(
                 'Success.'
-                f'The built files can be found in {branch}'
+                f' The built files can be found in /tmp/{branch}'
             )
         else:
             print(msg)
@@ -116,10 +116,10 @@ def copy_built_files(branch):
     NGINX configured directory.
     """
 
-    print(f'Copying {branch} to {WEB_SERVER_DIR}.')
+    print(f'Copying /tmp/{branch} to {WEB_SERVER_DIR}.')
 
     # Copy files from hugo output to the hosting dir on server.
-    cp_cmd = ['cp', '-r', '-u', branch, f'{WEB_SERVER_DIR}/']
+    cp_cmd = ['cp', '-r', '-u', f'/tmp/{branch}', f'{WEB_SERVER_DIR}/']
     cp_proc = subprocess.run(
         cp_cmd,
         stdout=subprocess.PIPE,
