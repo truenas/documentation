@@ -135,11 +135,12 @@ def copy_built_files(branch):
 if __name__ == '__main__':
 
     branch = verify_argv()
-    repo = check_existing_repo()
-
+    
     if branch is None:
         print('FATAL: Branch not provided!')
         sys.exit(1)
+
+    repo = check_existing_repo()
 
     if repo is None:
         print('FATAL: Repository not found!')
