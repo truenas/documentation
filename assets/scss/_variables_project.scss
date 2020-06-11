@@ -4,6 +4,11 @@ Add styles or override variables from the theme here.
 
 */
 
+// Switch to Inter for body
+
+$google_font_name: "Inter";
+$google_font_family: "Inter:300,300i,400,400i,700,700i";
+
 // Resize navbar logo SVG
 
 svg {
@@ -83,14 +88,15 @@ $secondary: #666666;
 }
 // Front page body layout
 .docscategories {
-  background: $secondary;
-  color: white;
+  background: #ffffff;
+  color: black;
   max-width: 100%;
 }
 .heading, .grid-container {
-  max-width: 1400px !important;
+  max-width: 95% !important;
   padding: 0 30px;
   margin: 0 auto;
+  font: DIN 2014;
 }
 
 .grid-container {
@@ -98,9 +104,9 @@ $secondary: #666666;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 375px 375px 375px;
   grid-template-areas: "whatis initialsetup tasks" "advanced vcenter-plugin truecommand" "hardware references docs-contribute";
-  max-width: 100%;
-  grid-column-gap: 10px;
-  grid-row-gap: 20px;
+  max-width: 90%;
+  grid-column-gap: 100px;
+  grid-row-gap: 75px;
   
 }
 
@@ -124,7 +130,7 @@ $secondary: #666666;
 
 .block {
   position: relative;
-  background: lighten($color: #000000, $amount: 30);
+  background: lighten($color: #ffffff, $amount: 30);
   padding: 10px;
 }
 
@@ -136,10 +142,11 @@ $secondary: #666666;
 
 // Links styled as buttons
 .linkbutton {
+  width: 35%;
   display: block !important;
-  border-radius: 50px;
-  margin-left: 25%;
-  margin-right: 25%;
+  border-radius: 5px;
+  margin-left: 20%;
+  margin-right: 20%;
   background-color: $primary;
   color: white;
   padding: 14px 25px;
@@ -243,7 +250,7 @@ nav a {
 
 @media (min-width: 760px) {
   .linkbutton.long-text {
-    width: 60%;
+    width: 35%;
     margin-left: 20%;
     margin-right: 20%;
   }
