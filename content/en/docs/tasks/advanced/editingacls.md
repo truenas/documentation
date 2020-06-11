@@ -26,12 +26,9 @@ To view an ACL, go to *Storage > Pools* and click the *Edit ACL* option for a ne
 
 ### ACL Inheritance
 
-The ACL for a new file or directory is typically inherited from the parent directory.
+The ACL for a new file or directory is typically inherited from the parent directory and is preserved when it is moved or renamed within the same dataset.
 An exception is when there are no *File Inherit* or *Directory Inherit* flags in the parent ACL *owner@*, *group@*, or *everyone@* entries.
 These non-inheriting entries are added to the ACL of the newly created file or directory based on the [Samba](https://wiki.samba.org/index.php/Main_Page) create and directory masks or the [umask](https://www.freebsd.org/cgi/man.cgi?query=umask&sektion=2) value.
-
-By default, a file ACL is preserved when it is moved or renamed within the same dataset.
-<REPLACE WITH OPTION IN 12: VFS modules don't exist in 12> To override this behavior to force an ACL to be recalculated whenever the file moves, even within the same dataset, set the <option> in *location*.
 
 ## Editing an ACL
 
