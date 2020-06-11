@@ -5,9 +5,6 @@ description: "How to configure Cloud Credentials and Cloud Sync tasks to send or
 
 ## Process Summary
 
-* Configuring data synchronization to or from the TrueNAS system with a Cloud Storage Provider.
-  * Can involve configuring access to a third party commercial vendor that is not affiliated with iXsystems. iXsystems is not responsible for any additional charges incurred when using Cloud Sync with a third party vendor.
-  * Requires configuring a Cloud Service credential, then scheduling an automated task.
 * **System > Cloud Credentials**
   * Uses [rclone](https://rclone.org/) to configure access to Cloud Storage Providers.
     * Credentials are encrypted for storage.
@@ -55,6 +52,49 @@ description: "How to configure Cloud Credentials and Cloud Sync tasks to send or
     * Can be manually interrupted by expanding the task and clicking STOP.
     * Clicking the sync Status shows task logs.
 
-## Sending or Receiving Data from a Cloud Storage Provider
+You can configure TrueNAS to send, receive, or synchronize data with a Cloud Storage provider.
+Configuring a Cloud Sync task allows you to transfer data a single time or set up a recurring schedule to periodically transfer data.
+This can be an effective method to back up your data to a remote location.
 
-Detailed article goes here.
+You will need an account with the Cloud Storage provider and a storage location created with the provider, like an Amazon S3 bucket.
+Major providers like Amazon S3, Google Cloud, and Microsoft Azure are supported, along with a variety of other vendors.
+To see the full list of supported vendors, log in to the TrueNAS UI and go to *System > Cloud Credentials > Add* and open the *Provider* dropdown.
+
+{{\% alert title="Warning" color="warning" %}}
+Using the Cloud means that data can go to a third party commercial vendor not directly affiliated with iXsystems.
+Please investigate and fully understand that vendor’s pricing policies and services before creating any Cloud Sync task.
+iXsystems is not responsible for any charges incurred from the use of third party vendors with the Cloud Sync feature.
+{{\% /alert %}}
+
+To start using Cloud storage, save cloud storage provider credentials on the system and create a new *Cloud Sync* task.
+
+## Cloud Storage Credentials
+
+Transferring data from TrueNAS to the Cloud requires saving Cloud Storage Provider credentials on the system.
+To maximize security, these credentials are encrypted when saved.
+However, this means that to restore any cloud credentials from a TrueNAS configuration file, you must enable *Export Password Secret Seed* when generating that configuration backup.
+
+It is recommended to have another browser tab open and logged in to the Cloud Storage Provider account you intend to link to TrueNAS.
+Some providers can require additional information that is generated on the storage provider account page.
+For example, saving an Amazon S3 credential on TrueNAS could require logging in to the S3 account and generating an access key pair on the *Security Credentials > Access Keys* page.
+
+To save cloud storage provider credentials, go to *System > Cloud Credentials* and click *Add*.
+
+<figure>
+  <img src="/images/cloud-credentials-add.png">
+  <figcaption>New Cloud Credential</figcaption>
+</figure>
+
+Enter a name for the credential and choose a *Provider*.
+The rest of the options change according to the chosen *Provider*.
+Enter the required *Authentication* strings to enable saving the credential.
+
+Some providers can automatically populate the required *Authentication* strings by logging in to the account.
+To automatically configure the credential, click *Login to Provider* and entering your account username and password.
+
+<figure>
+  <img src="/images/cloud-credentials-box-login.png">
+  <figcaption>Box Authentication Example</figcaption>
+</figure>
+
+It is recommended to verify the credential before saving it.
