@@ -14,7 +14,7 @@ When creating a dataset, you can choose how the ACL can be modified by selecting
 
 * *Passthrough* only updates ACL entries (ACEs) that are related to the file or directory mode.
 
-* *Restricted* does not allow chmod to make changes to files or directories with a non-trivial ACL.
+* *Restricted* does not allow `chmod` to make changes to files or directories with a non-trivial ACL.
   An ACL is trivial if it can be fully expressed as a file mode without losing any access rules.
   Setting the ACL Mode to Restricted is typically used to optimize a dataset for SMB sharing, but can require further optimizations.
   For example, configuring an rsync task with this dataset could require adding `--no-perms` as an extra option for the task.
