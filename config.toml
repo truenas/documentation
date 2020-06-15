@@ -1,6 +1,6 @@
 # Commenting your code is very useful.
 # baseURL = "./"
-title = "TrueNAS Documentation"
+title = "TrueNAS Documentation Hub"
 enableRobotsTXT = true
 relativeURLs = true
 
@@ -55,8 +55,8 @@ anchor = "smart"
 
 [languages]
 [languages.en]
-title = "TrueNAS Documentation"
-description = "Information and how-to Articles about TrueNAS products"
+title = " TrueNAS® Documentation Hub"
+description = "Information and how-to articles about TrueNAS software and products."
 languageName ="English"
 # Weight used for sorting.
 weight = 1
@@ -81,14 +81,14 @@ weight = 20
 
 [params]
 copyright = "iXsystems™"
-privacy_policy = "https://policies.google.com/privacy"
+privacy_policy = "https://www.ixsystems.com/privacy-policy/"
 
 # First one is picked as the Twitter card image if not set on page.
 images = ["images/TrueNAS_favicon.png"]
 
 # Menu title if your navbar has a versions selector to access old versions of your site.
 # This menu appears only if you have at least one [params.versions] set.
-version_menu = "Releases"
+version_menu = "Version"
 
 # Repository configuration (URLs for in-page links to opening issues and suggesting changes)
 github_repo = "https://github.com/freenas/documentation"
@@ -125,8 +125,8 @@ announcement_message = "The TrueNAS Documentation team hopes you have a great da
 products = "products"
 
 [[params.versions]]
-fullversion = "Current"
-version = "Current"
+fullversion = "TrueNAS 12.0-BETA1"
+version = "TN 12.0-BETA1"
 githubbranch = "master"
 url = "./"
 
@@ -171,6 +171,7 @@ lastmod = ["lastmod", ":fileModTime", ":default"]
 publishDate = ["publishDate", "date"]
 expiryDate = ["expiryDate"]
 
+# Add Topics menu entries
 [[params.topics]]
 	name = "Home"
 	url = "/"
