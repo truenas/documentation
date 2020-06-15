@@ -46,10 +46,43 @@ settings, select *No presets* for the *Purpose*. Unless a specific
 purpose for the share is required, it is recommended to select
 *Default share parameters* as the *Purpose*.
 
+See <a href="/docs/sharing/smb/smb-share/"> Configuring a Windows SMB
+Share</a> to create a share.
+
 ## NFS
 
 Like SMB, NFS is a sharing protocol to enable other users to
 connect to the TrueNAS to share data. To see the NFS service settings,
 go to **Services** and click <i class="fas fa-pen"></i>. By default,
-all settings are unset. Unless needed for a specific use case, leave
+all settings are unset. Unless needed for a specific use case, keep
 the default NFS service settings.
+
+When <a href="">creating a NFS share</a>, some things can be done to
+ensure a safer sharing experience. In the advanced options, authorized
+networks and authorized hosts and IP addresses can be specified. If
+authorized networks are specified, any system that is not on the
+authorized networks cannot connect to the share. Likewise, if specific
+hosts or IP addresses are specified, then those are the only
+systems that can connect to the share. When *Authorized Networks* or
+*Authorized Hosts and IP addresses* are left blank, it allows all to
+connect. Allowing any system to connect to the NFS share raises some
+security concern.
+
+See <a href="">Configuring a Unix NFS Share</a> to create a share.
+
+## iSCSI
+
+The last sharing service is iSCSI. The best practice for setting up
+iSCSI sharing on TrueNAS is to follow the creation wizard unless a
+specific configuration is required. To create an iSCSI share, go to
+**Sharing > Block Shares (iSCSI)** and click *WIZARD*. During the iSCSI
+wizard there are a couple of settings to consider for extra security.
+When creating a new portal, consider adding a *Discovery Authentication
+Method*. This adds an authentication between the initiator and the
+extent based on the chosen authentication method. Next, a list of
+*Initiators* and *Authorized Networks* allowed to connect
+to the extent can be added. This is useful when choosing a select few
+system to be able to connect to the extent. If left blank all
+initiators and all networks are allowed to connect to the extent.
+
+See <a href="">Configuring a Block Share (iSCSI)</a> to create a share.
