@@ -9,8 +9,8 @@ Contributing changes to the TrueNAS documentation has never been easier.
 The Documentation Hub has been specifically built to allow users to quickly propose changes to the content without having to install any special applications.
 All that is required is to have a [GitHub account](https://github.com) and a basic understanding of [Markdown](https://daringfireball.net/projects/markdown/).
 
-The repository automatically builds a site preview for each open Pull Request (PR).
-The link to this preview is added to the PR as a comment.
+The repository automatically builds a preview site for each open Pull Request (PR).
+The link to this preview site is added to the PR as a comment.
 The preview updates with any changes to the pull request, so you can always see an accurate preview of the changes you're making to the website.
 
 ## Making Quick Changes to an Article
