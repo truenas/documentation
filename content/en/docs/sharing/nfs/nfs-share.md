@@ -1,6 +1,6 @@
 ---
 title: "Configuring a NFS Share"
-description: "A how-to guide on how to create a general purpose NFS share."
+description: "A how-to guide on creating a general purpose NFS share."
 ---
 
 Creating a Network File System (NFS) share on TrueNAS gives the benefit
