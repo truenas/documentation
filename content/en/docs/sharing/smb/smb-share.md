@@ -12,25 +12,44 @@ of large or small pools of data. The brilliant design of the TrueNAS web
 interface makes it easy to create and configure an SMB share. SMB shares can be
 connected to any major operating systems including Windows, MacOS, and Linux.
 
-## Create SMB Share
+To get started, make sure a
+<a href="/docs/initial-setup/storage/datasets/">dataset has been created</a>.
+This dataset serves as the storage for the data that is going to be
+shared. If a dataset already exists, proceed to turning the SMB service
+on.
+
+## SMB Service
+
+To turn the SMB service on, go to **Services** and click the slider for
+*SMB*. If you wish to turn the service on automatically when the TrueNAS
+system is rebooted, check the *Start Automatically* box.
+
+> NOTE: The SMB share will not work if the service is not turned on.
+
+The SMB service settings can be configured by clicking
+<i class="fas fa-pen"></i>. Don't forget to click *SAVE* when changing
+the settings. Unless a specific setting is needed, it is recommended to
+use the default settings for the SMB service.
+
+## SMB Share
 
 First thing is first, set up the Windows SMB share on the TrueNAS system. This
 is done by going to **Sharing > Windows Shares (SMB) > ADD**. The only required
 field to continue is the *Path*. Set the path to the pool or dataset you want
-to share. If a pool or dataset has not been created for sharing, do so by going
-to **Storage > Pools > ADD**. Give the share a custom name in the *Name* field.
-Otherwise, TrueNAS automatically assigns the name of the pool or dataset shared
-to the name of the SMB share. An optional *Description* can be specified
-to help explain the purpose of the share. For a more granular configuration,
-click **ADVANCED MODE**. See the web interface help text for detailed
-explanations.
+to share. Give the share a custom name in the *Name* field.
+Otherwise, TrueNAS automatically assigns the name of the pool or dataset
+shared to the name of the SMB share. An optional *Description* can be
+specified to help explain the purpose of the share. For a more granular
+configuration, click **ADVANCED MODE**. See the web interface help text
+for detailed explanations.
 
 After changing the desired settings, click **SAVE**.
 
 ## Users for the Share
 
-Users connecting to the SMB share must have user accounts on the TrueNAS before
-they can connect. Add user accounts by going to **Accounts > Users > ADD**.
+Users connecting to the SMB share must have user accounts on the TrueNAS
+before they can connect. Add user accounts by going to
+**Accounts > Users > ADD**. <!-- Can insert links here to "How to create users/groups when they're complete. -->
 
 If LDAP has been configured and you want users from the LDAP server to be
 allowed to access the SMB share, check the setting **Samba Schema** in
