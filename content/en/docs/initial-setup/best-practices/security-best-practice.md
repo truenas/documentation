@@ -81,8 +81,8 @@ When creating a new portal, consider adding a *Discovery Authentication
 Method*. This adds an authentication between the initiator and the
 extent based on the chosen authentication method. Next, a list of
 *Initiators* and *Authorized Networks* allowed to connect
-to the extent can be added. This is useful when choosing a select few
-system to be able to connect to the extent. If left blank all
+to the extent can be added. This is useful when choosing a few
+systems to be able to connect to the extent. If left blank, all
 initiators and all networks are allowed to connect to the extent.
 
 See <a href="">Configuring a Block Share (iSCSI)</a> to create a share.
