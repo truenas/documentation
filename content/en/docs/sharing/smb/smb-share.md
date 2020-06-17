@@ -51,7 +51,7 @@ before they can connect. Add user accounts by going to
 **Accounts > Users > ADD**. <!-- Can insert links here to "How to create users/groups when they're complete. -->
 
 If LDAP has been configured and you want users from the LDAP server to be
-allowed to access the SMB share, check the setting **Samba Schema** in
+allowed to access the SMB share, set **Samba Schema** in
 **Directory Services > LDAP > ADVANCED MODE**.
 
 {{% alert color="warning" %}}
