@@ -116,3 +116,88 @@ or all networks to use the share.
 
 ## Using the iSCSI Share
 
+iSCSI shares can be accessed from various operating systems. The
+following instructions are for connecting to iSCSI shares from a Linux
+system.
+
+### iSCSI Utilities and Service
+
+First, ensure the command line utility *open-iscsi* is installed. To
+install the utility on an Ubuntu/Debian distribution, type
+`sudo apt update && sudo apt install open-iscsi`. After that has
+finished installing, make sure the *iscsid* service is running. Type
+`sudo service iscsid start` to start the service. After the service is
+started, you can now run the `iscsiadm` command with the discovery
+arguments and get the necessary information to connect to the share.
+
+### Discover and Login to the iSCSI Share
+
+Run the command
+<code>sudo iscsiadm --mode discovery --type sendtargets --portal <i>IPofTrueNASsystem</i></code>.
+The output gives the basename and target name that was configured on
+the TrueNAS. See the image directly below as an example.
+
+<img src="/images/iscsiadm-discovery-output.png">
+<br><br>
+
+Alternatively, you can enter
+<code>sudo iscsiadm -m discovery -t st -p <i>IPofTrueNASsystem</i></code>
+and get the same output. Take note of the basename and target name
+given in the output. It will be needed to login to the iSCSI share.
+
+Next, run the command
+<code>sudo iscsiadm --mode node --targetname <i>basename</i>:<i>targetname</i> --portal <i>IPofTrueNASsystem</i> --login</code>
+where *basename* and *targetname* is the information given from the
+discovery command. See the images directly below as an example.
+
+<img src="/images/iscsiadm-login-output.png">
+<br><br>
+
+### Partition iSCSI Disk
+
+If the login to the iSCSI share was successful, the device shared
+through iSCSI should now show up on the Linux system as an *iSCSI Disk*.
+To view a list of connected disks in Linux, run the command
+`sudo fdisk -l`. Since the iSCSI disk connected is raw it has to be
+partitioned for it to be used. Identify the iSCSI device in the list and
+run the command <code>sudo fdisk <i>/part/to/iSCSIdevice</i></code>. The
+path for the iSCSI device is listed in the output of `sudo fdisk -l`.
+The image directly below shows an example of listing the disks.
+
+<img src="/images/fdisk-list-output.png">
+<br><br>
+
+When partitioning the disk it is recommended to use the defaults of
+the `fdisk` command. The image directly below shows an example of
+partitioning the iSCSI disk for use.
+
+> NOTE: It is important to enter the letter *w* when finished
+> partitioning the disk. This tells `fdisk` to save the changes before
+> quitting the utility.
+
+<img src="/images/fdisk-partition-output.png">
+<br><br>
+
+After creating the partition on the iSCSI disk, a partition slice shows
+up on the device name. For example, `/dev/sdb1`. Run `fdisk -l` to see
+the new partition slice.
+
+### Make Filesystem on iSCSI Disk
+
+Finally, make a filesystem on the new partition slice of the device.
+This can be done by using the command `mkfs`. To create the default
+filesystem (ext2), run the command
+<code>sudo mkfs <i>/path/to/iSCSIdevicePartitionSlice</i></code>. The image
+directly below shows an example of creating a filesystem on the
+partition slice of the iSCSI device.
+
+<img src="/images/mkfs-output.png">
+<br><br>
+
+### Mount the iSCSI Device
+
+The iSCSI device can finally be mounted to share data. To mount the
+iSCSI device run the command
+<code>sudo mount <i>/path/to/iSCSIdevicePartitionSlice</i>. For example,
+`sudo mount /dev/sdb1 /mnt` mounts the iSCSI device *sdb1* to the 
+`/mnt` directory.
