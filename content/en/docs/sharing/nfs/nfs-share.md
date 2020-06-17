@@ -48,7 +48,7 @@ Existing NFS shares can be edited by going to
 Although you can connect to an NFS share with various operating systems,
 it is recommended to use a Linux/Unix operating system. First, download
 the *nfs-common* kernel module. This can be done using the package
-manager of the installed distribution. For example, on Ubuntu/Debian
+manager of the installed distribution. For example, on Ubuntu/Debian,
 type `sudo apt-get install nfs-common` in the terminal. To connect to a
 NFS share, type the command
 <code>
