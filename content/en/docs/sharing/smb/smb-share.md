@@ -36,7 +36,7 @@ use the default settings for the SMB service.
 Now create the Windows SMB share. Go to
 **Sharing > Windows Shares (SMB)** and click **ADD**. The only required
 field to continue is the *Path*. Set the path to the pool or dataset you want
-to share. Give the share a custom name in the *Name* field.
+to share by entering a path in the field or clicking a directory in the file browser. A descriptive *Name* helps identify the share.
 Otherwise, TrueNAS automatically assigns the name of the pool or dataset
 shared to the name of the SMB share. An optional *Description* can be
 specified to help explain the purpose of the share. For a more granular
