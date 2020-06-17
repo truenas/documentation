@@ -44,7 +44,7 @@ configuration, click **ADVANCED MODE**.
 
 After changing the desired settings, click **SAVE**.
 
-## Users for the Share
+## Define Share Access
 
 Users connecting to the SMB share must have user accounts on the TrueNAS
 before they can connect. Add user accounts by going to
