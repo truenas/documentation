@@ -4,8 +4,8 @@ description: "A how-to guide on creating a general purpose NFS share."
 ---
 
 Creating a Network File System (NFS) share on TrueNAS gives the benefit
-of making lots of data easily accessible for anyone with the information
-to the share. Depending on how the share is setup, users accessing the
+of making lots of data easily available for anyone with share access.
+Depending how the share is setup, users accessing the
 share can be restricted to read or write privileges.
 
 To get started, make sure a
