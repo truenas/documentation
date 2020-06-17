@@ -40,8 +40,7 @@ to share by entering a path in the field or clicking a directory in the file bro
 Otherwise, TrueNAS automatically assigns the name of the pool or dataset
 shared to the name of the SMB share. An optional *Description* can be
 specified to help explain the purpose of the share. For a more granular
-configuration, click **ADVANCED MODE**. See the web interface help text
-for detailed explanations.
+configuration, click **ADVANCED MODE**.
 
 After changing the desired settings, click **SAVE**.
 
