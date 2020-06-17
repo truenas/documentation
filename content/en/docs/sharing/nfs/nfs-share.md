@@ -30,7 +30,7 @@ use the default settings for the NFS service.
 ## NFS Share
 
 Now it is time to create the NFS share. Go to
-**Sharing > Unix Shares (NFS)** and click *ADD*. Use the browser to
+**Sharing > Unix Shares (NFS)** and click *ADD*. Use the file browser to
 select the dataset to be shared. An optional *Description* can be set to
 help identify the share. At the time of creation, the NFS share is
 enabled by default. If you wish to create the share but not enable it
