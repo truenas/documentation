@@ -10,8 +10,8 @@ share can be restricted to read or write privileges.
 
 To get started, make sure a
 <a href="/docs/initial-setup/storage/datasets">dataset has been created</a>.
-This dataset serves as the storage for the data that is going to be
-shared. If a dataset already exists, proceed to turning the NFS service
+This dataset serves as share data storage.
+If a dataset already exists, proceed to turning the NFS service
 on.
 
 ## NFS Service
