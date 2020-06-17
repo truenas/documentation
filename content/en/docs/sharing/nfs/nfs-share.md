@@ -36,8 +36,8 @@ help identify the share. At the time of creation, the NFS share is
 enabled by default. If you wish to create the share but not immediately enable it,
 unset the *Enable* checkbox. Clicking *SUBMIT* creates the share.
 
-To configure more advanced options for the share, click
-*ADVANCED OPTIONS*.
+Opening the *ADVANCED OPTIONS* allows tuning the share access
+permissions and defining authorized networks.
 
 Existing NFS shares can be edited by going to
 **Sharing > Unix Shares (NFS)** and clicking
