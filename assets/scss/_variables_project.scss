@@ -142,12 +142,14 @@ $secondary: #666666;
 
 // Links styled as buttons
 .linkbutton {
-  width: 35%;
+  min-width: 180px;
+  max-width: 30%;
   display: block !important;
   border-radius: 5px;
   margin-left: 20%;
   margin-right: 20%;
   background-color: $primary;
+  box-shadow: 3px 3px #D1D1D1;
   color: white;
   padding: 14px 25px;
   text-align: center;
@@ -245,12 +247,17 @@ nav a {
 
   .td-search-input {
     z-index: 10;
+
+    @media (min-width: 999px) {
+    width: 400px;
+    position: relative;
+    left: 8%;
+    }
   }
 }
 
 @media (min-width: 760px) {
   .linkbutton.long-text {
-    width: 35%;
     margin-left: 20%;
     margin-right: 20%;
   }

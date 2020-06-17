@@ -26,6 +26,7 @@
 
 .td-navbar {
     background: $primary;
+    box-shadow: 5px 5px 5px #D1D1D1;
     min-height: 4rem;
     margin: 0;
     z-index: 32;
@@ -60,6 +61,7 @@
 
     .td-search-input {
         border: none;
+        min-width: 100px;
         
         @media (max-width: 766px) {
             display: none;
