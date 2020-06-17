@@ -21,8 +21,8 @@ on.
 ## SMB Service
 
 To turn the SMB service on, go to **Services** and click the slider for
-*SMB*. If you wish to turn the service on automatically when the TrueNAS
-system is rebooted, check the *Start Automatically* box.
+*SMB*. If you wish to turn the service to activate whenever TrueNAS
+boots, check the *Start Automatically* box.
 
 > NOTE: The SMB share will not work if the service is not turned on.
 
