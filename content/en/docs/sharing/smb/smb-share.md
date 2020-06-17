@@ -33,8 +33,8 @@ use the default settings for the SMB service.
 
 ## SMB Share
 
-First thing is first, set up the Windows SMB share on the TrueNAS system. This
-is done by going to **Sharing > Windows Shares (SMB) > ADD**. The only required
+Now create the Windows SMB share. Go to
+**Sharing > Windows Shares (SMB)** and click **ADD**. The only required
 field to continue is the *Path*. Set the path to the pool or dataset you want
 to share. Give the share a custom name in the *Name* field.
 Otherwise, TrueNAS automatically assigns the name of the pool or dataset
