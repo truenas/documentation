@@ -1,7 +1,6 @@
 ---
 title: "Using Plugins"
-linkTitle: "Using Plugins"
-description: "How to use application plugins."
+description: "How to install or configure application plugins."
 ---
 
 {{% alert title="Notice" color="info" %}}
@@ -37,8 +36,39 @@ For more details or to request plugin support in TrueNAS Enterprise, please cont
     <td class="tg-0pky">After Hours (24x7 Gold Level Support only):<br><br>US-only toll-free: 855-499-5131<br>International: 408-878-3140 (international calling<br>rates will apply)<br></td>
   </tr>
 </table>
-
 {{% /alert %}}
+
+Plugins allow you to extend the built-in NAS services by installing additional software.
+A plugin is a pre-packaged application that is installed into a [FreeBSD Jail](https://en.wikipedia.org/wiki/FreeBSD_jail).
+The plugin jail is limited to installing and using only the plugin software.
+
+To begin using plugins, you need to have a data pool available for plugin storage and the system needs to be connected to the Internet.
+It is also recommended to go to **Network > Interfaces** and set *Disable Hardware Offloading* for the interface that you want to use for plugins.
+
+## Installing a Plugin
+
+Open the **Plugins** menu to find the plugins that are available to download.
+If no options appear, verify the system can `ping` an Internet address and confirm the default gateway address and DNS server address are correct in **Network > Global Configuration**.
+
+<img src="/images/plugins-available.png">
+<br><br>
+
+Plugins are organized by those supported by [iXsystems](https://www.ixsystems.com/) and open source plugins created and maintained by the TrueNAS community.
+By default, the iXsystems-supported plugins are shown.
+To view the community-supported plugins, open *Browse a Collection* and select *Community*.
+
+To install a plugin, click the plugin icon then *Install*.
+
+<img src="/images/plugins-install.png">
+<br><br>
+
+Enter a name for the plugin jail and adjust the networking settings as needed.
+Most plugins default to using Network Address Translation (NAT) for their Internet connection.
+This is recommended as it does not require manual configuration of multiple available IP addresses and prevents addressing conflicts on the network.
+
+## Plugin Configuration
+
+## Asigra Plugin
 
 ## Process Summary
 
