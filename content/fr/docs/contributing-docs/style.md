@@ -3,157 +3,156 @@ title: "Style Guide"
 weight: 3
 ---
 
-This guide has many examples of how to style your documentation contributions.
-TrueNAS documentation uses standardized Markdown, HTML, and Hugo syntax to transform text, add images, and link to other locations.
-The guide is not exhaustive, but contains examples of the elements that are most commonly used when writing TrueNAS documentation.
-To learn more about each markup language, see these resources:
+Ce guide contient de nombreux exemples sur la manière de styliser vos contributions documentaires.
+La documentation TrueNAS utilise la syntaxe standardisée Markdown, HTML et Hugo pour transformer le texte, ajouter des images et créer des liens vers d'autres sites.
+Le guide n'est pas exhaustif, mais contient des exemples des éléments les plus couramment utilisés lors de la rédaction de la documentation TrueNAS.
+Pour en savoir plus sur chaque langage de balisage, consultez ces ressources:
 
 * Markdown: https://daringfireball.net/projects/markdown
 * HTML: https://www.w3schools.com/html/default.asp
 * Hugo: https://gohugo.io/documentation/
 
-## Markdown Examples
+## Exemples de Markdown
 
-### Headers
+### Têtes
 
-Use hashes (#) to designate a section of content:
+Utilisez les hashs (#) pour désigner une section de contenu:
 ```
-# Level 1
-## Level 2
-### Level 3
+# Niveau 1
+## Niveau 2
+### Niveau 3
 ```
 
-On this website, the title of the article is designated as a level 1 heading.
-The rest of the content should be organized with level 2 and greater headings.
-This allows the article navigation sidebar to populate with links to the different sections of your article.
+Sur ce site, le titre de l'article est désigné comme titre de niveau 1.
+Le reste du contenu doit être organisé avec des titres de niveau 2 et plus.
+Cela permet à la barre latérale de navigation de l'article de se remplir de liens vers les différentes sections de votre article.
 
-### Inline Text Decoration
+### Décoration du texte en ligne
 
-* Italics:		`*text*`
-* Bold:			`**text**`
-* Preformatted/Code: 	\`text\`
+* Italique:		`*texte*`
+* Gras:			`**texte**`
+* Préformaté/Code: 	\`texte\`
 
-You can also use standard HTML tags to transform text:
+Vous pouvez également utiliser des balises HTML standard pour transformer le texte :
 
-* Marked/Highlighted:		`<mark>text</mark>`
-* Insert/Underlined:		`<ins>text</ins>`
-* Subscripted:			`<sub>text</sub>`
-* Superscripted:		`<sup>TM</sup>`
-* Deleted/Strikethrough:	`<del>text</del>`
+* Marqué / mis en évidence:		`<mark>texte</mark>`
+* Insert/Souligné:		`<ins>texte</ins>`
+* Souscrité:			`<sub>texte</sub>`
+* Superscripté:		`<sup>TM</sup>`
+* Supprimé/Traverser:	`<del>texte</del>`
 
-### Escape Characters
+### Personnages d'évasion
 
-To escape a syntax character so that the character is displayed without transformation, use a backslash (`\`).
-You can also use HTML escapes to add comments: `<!-- this text will not be displayed in the rendered article -->`
+Pour échapper à un caractère syntaxique de sorte que le caractère soit affiché sans transformation, utilisez une barre oblique inversée (`\`).
+Vous pouvez également utiliser des échappements HTML pour ajouter des commentaires : `<!-- ce texte ne sera pas affiché dans l'article rendu -->`
 
-### Linking
+### Lien
 
-Linking to a site that is outside docs.truenas.com is done with square brackets and parentheses:
+La création de liens vers un site extérieur à docs.truenas.com se fait à l'aide de crochets et de parenthèses :
 
 `[example link text](www.example.com)`
 
-You can also link directly just by typing the URL with no additional markup: `www.example.com`
-HTML linking syntax is also allowed: `<a href="www.example.com">Example Site</a>`
+Vous pouvez également créer un lien direct en tapant simplement l'URL sans aucune balise supplémentaire: `www.example.com`
+La syntaxe de liaison HTML est également autorisée: `<a href="www.example.com">Example Site</a>`
 
-To link to another section of the same article, use an anchor to refer to that section header: `[Linking](#linking)`
-The header title needs to be in lower case and spaces replaced with dashes (-): `[Escape Characters](#escape-characters)`
+Pour créer un lien vers une autre section du même article, utilisez une ancre pour vous référer à l'en-tête de cette section: `[Linking](#linking)`
+Le titre de l'en-tête doit être en minuscules et les espaces doivent être remplacés par des tirets (-): `[Escape Characters](#escape-characters)`
 
-### Lists
+### Listes
 
-Lists can be ordered or unordered:
-
-```
-1. First
-2. Second
-3. Third
-
-* Who
-* What
-* When
-```
-
-### Code Blocks
-
-A backtick (\`) starts or stops an inline code-block: Enter `ls` to list directory contents.
-Using three \` backticks on a line starts or stops a multi-line block:
+Les listes peuvent être commandées ou non:
 
 ```
-This is a multi-line code block.
+1. D'abord
+2. Deuxième
+3. Troisième
+
+* Qui
+* Quoi
+* Quand
+```
+
+### Blocs de code
+
+Un backtick (\`) démarre ou arrête un bloc de code en ligne : Entrez `ls` pour lister le contenu du répertoire.
+L'utilisation de trois \`stick sur une ligne démarre ou arrête un bloc multi-lignes:
+
+```
+Il s'agit d'un bloc de code à plusieurs lignes.
 foo
 bar
 baz
 ```
 
-### Block Quotes
+### Citations en bloc
 
-Use the right carat (>) to designate a block quote:
+Utilisez le bon carat (>) pour désigner une citation en bloc :
 
 ```
-> The entire paragraph is formatted as the quote.
+> Le paragraphe entier est formaté comme la citation.
 >
-> You can use a > for every line of the quote or at the beginning of each paragraph of text.
+> Vous pouvez utiliser un > pour chaque ligne de la citation ou au début de chaque paragraphe du texte.
 ```
 
-## Hugo Style Elements
+## Éléments de style Hugo
 
-There are a number of style elements you can use that are built into the Hugo static site generator.
-This site uses Hugo shortcode syntax for images, internal references, and admonition boxes.
+Il existe un certain nombre d'éléments de style que vous pouvez utiliser et qui sont intégrés dans le générateur de site statique Hugo.
+Ce site utilise la syntaxe de raccourci Hugo pour les images, les références internes et les boîtes d'avertissement.
 
-The documentation website also uses the [Docsy](https://github.com/google/docsy) theme.
-This theme has some additional styling elements that can be used to enhance your article.
-See the [Docsy shortcodes guide](https://www.docsy.dev/docs/adding-content/shortcodes/) for a list of built-in reusable content snippets.
+Le site de documentation utilise également le thème [Docsy](https://github.com/google/docsy). Ce thème comporte des éléments de style supplémentaires qui peuvent être utilisés pour améliorer votre article. Consultez le [Docsy shortcodes guide](https://www.docsy.dev/docs/adding-content/shortcodes/) pour obtenir une liste des extraits de contenu réutilisables intégrés.
 
-### Linking to Other Articles on this Website
+### Lien vers d'autres articles sur ce site
 
-Internal references use the Hugo `ref` shortcode to look up a file by name:
+Les références internes utilisent le shortcode Hugo `ref` pour rechercher un fichier par son nom :
 ```
 [Creating a new ZFS Pool]({{\< ref "pools.md" >}})
-(remove the escaping backslash \)
+(supprimer la barre oblique inversée qui s'échappe \)
 ```
 
-Linking to the index file of an article bundle requires using the generic [linking](#linking) syntax to point to the article location:
+L'établissement d'un lien vers le fichier d'index d'un lot d'articles nécessite l'utilisation de la syntaxe générique [linking](#linking) pour pointer vers l'emplacement de l'article :
 ```
-You can copy the [article template](/docs/contributing-docs/template/).
+Vous pouvez copier le [article template](/docs/contributing-docs/template/).
 ```
 
 
-You can also use an anchor to link to a specific section within an article:
+Vous pouvez également utiliser une ancre pour créer un lien vers une section spécifique d'un article :
 ```
 [Section Level 3]({{\< ref "example.md#section-level-3" >}})
-(remove the escaping backslash \)
+(supprimer la barre oblique inversée qui s'échappe \)
 ```
 
 ### Images
 
-To add an image to your article, you need to add the image file to your article bundle.
-Then use the `figure` shortcode in your article to link to the image and define any additional parameters:
+Pour ajouter une image à votre article, vous devez ajouter le fichier image à votre lot d'articles.
+Ensuite, utilisez le raccourci `figure` dans votre article pour faire un lien vers l'image et définir les paramètres supplémentaires :
 
 ```
-{{\< figure src="hardware-image" title="Example Image" />}}
-(remove the escaping backslash \)
+{{\< figure src="hardware-image" title="Exemple d'image" />}}
+(supprimer la barre oblique inversée qui s'échappe \)
 ```
 
-You can also use HTML to link to an image file that is relative to the site `/static/` directory:
+Vous pouvez également utiliser le HTML pour créer un lien vers un fichier image relatif au répertoire `/static/` du site :
 
 ```
 <img src="/images/network-interfaces.png">
 ```
 
-### Admonition Boxes
+### Boîtes d'admonestation
 
-A simple note box is created with the `pageinfo` shortcode:
+Une simple boîte de notes est créée avec le shortcode "pageinfo" :
 
 ```
 {{\% pageinfo %}}
-This is a simple note box that has a gray background and blue border
+Il s'agit d'une simple boîte de notes à fond gris et à bordure bleue
 {{\% /pageinfo %}}
-(remove the escaping backslash \)
+(supprimer la barre oblique inversée qui s'échappe \)
 ```
 
-Alert boxes can be given any title and use `info` and `warning` to define the color:
+Les boîtes d'alerte peuvent avoir n'importe quel titre et utiliser des `info` et des `warning` pour définir la couleur :
+
 ```
-{{\% alert title="Warning" color="warning" %}}
-This is an alert that is titled Warning and uses a red coloration.
+{{\% alert title="Avertissement" color="warning" %}}
+Il s'agit d'une alerte qui s'intitule Avertissement et qui utilise une coloration rouge.
 {{\% /alert %}}
-(remove the escaping backslash \)
+(supprimer la barre oblique inversée qui s'échappe \)
 ```

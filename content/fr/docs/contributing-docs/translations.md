@@ -5,30 +5,30 @@ description: "How to add a new translation to the Documentation Hub and begin tr
 weight: 3
 ---
 
-TrueNAS is used around the world, but the majority of the documentation is only available in English. If you are fluent in another language, you can help fellow TrueNAS users by providing native translations for our guides and articles. 
+TrueNAS est utilisé dans le monde entier, mais la majorité de la documentation n'est disponible qu'en anglais. Si vous parlez couramment une autre langue, vous pouvez aider les autres utilisateurs de TrueNAS en fournissant des traductions natives pour nos guides et articles. 
 
-This guide explains how to translate an existing English article and open a Pull Request to add the new file to the Documentation Hub.
+Ce guide explique comment traduire un article anglais existant et ouvrir une demande d'extraction pour ajouter le nouveau fichier au centre de documentation.
 
-## Request a New Language for the Documentation Hub
+## Demander une nouvelle langue pour le centre de documentation
 
-Before translated content can be proposed, the site must be adjusted to incorporate that language into the structure.
-To request adding a new language, open an issue at https://github.com/freenas/documentation/issues.
+Avant de pouvoir proposer un contenu traduit, le site doit être ajusté pour intégrer cette langue dans la structure.
+Pour demander l'ajout d'une nouvelle langue, ouvrez un numéro à l'adresse https://github.com/freenas/documentation/issues.
 
-The iXsystems Documentation Team will respond to the issue and make the necessary adjustments to the site structure to make that language available.
+L'équipe de documentation d'iXsystems répondra au problème et apportera les ajustements nécessaires à la structure du site pour rendre cette langue disponible.
 
-## Translating Articles
+## Traduction d'articles
 
-Once the site is configured for translating articles into your language, all that is needed is to download the English article, translate it, then upload the translated file to the same location in the new language directory tree.
+Une fois que le site est configuré pour la traduction d'articles dans votre langue, il suffit de télécharger l'article en anglais, de le traduire, puis de télécharger le fichier traduit au même endroit dans l'arborescence du nouveau répertoire linguistique.
 
-For example, to begin translating this article into French, go to https://github.com/freenas/documentation/blob/master/content/en/docs/contributing-docs/translations.md and click **Raw**. Right-click, select *Save Page As...*, and click **Save**.
-You don't need to rename the file.
+Par exemple, pour commencer la traduction de cet article en français, allez à https://github.com/freenas/documentation/blob/master/content/fr/docs/contributing-docs/translations.md et cliquez sur **Raw**. Faites un clic droit, sélectionnez *Save Page As...*, et cliquez sur **Save**.
+Vous n'avez pas besoin de renommer le fichier.
 
-Now open `translations.md` in your preferred editor and replace the English text with your translations.
-The Markdown and HTML syntax won't need to be changed at all and can be ignored.
-See the [Updating Content](/docs/contributing-docs/basic/#replacing-an-image) how-to for details about replacing an existing image.
+Ouvrez maintenant `translations.md` dans votre éditeur préféré et remplacez le texte anglais par vos traductions.
+La syntaxe du Markdown et du HTML n'aura pas besoin d'être modifiée du tout et peut être ignorée.
+Voir le [Updating Content](/docs/contributing-docs/basic/#replacing-an-image) comment obtenir des détails sur le remplacement d'une image existante.
 
-When you're done translating, go to https://github.com/freenas/documentation/blob/master/content/fr/docs/contributing-docs and click **Upload files**.
-Drag the translated file into the upload area and enter a brief description of the translated file.
-Make sure `Create a new branch for this commit` is selected, click **Propose changes**, then open your Pull Request (PR).
+Quand vous aurez fini de traduire, allez à https://github.com/freenas/documentation/blob/master/content/fr/docs/contributing-docs et cliquez sur **Upload files**.
+Faites glisser le fichier traduit dans la zone de téléchargement et entrez une brève description du fichier traduit.
+Assurez-vous que l'option `Create a new branch for this commit` est sélectionnée, cliquez sur **Propose changes**, puis ouvrez votre demande d'extraction (PR).
 
-That's it! Other contributors will review and merge your contribution!
+C'est tout ! D'autres contributeurs examineront et fusionneront votre contribution !

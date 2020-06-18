@@ -1,49 +1,49 @@
 ---
-title: "Updating Existing Content"
-linkTitle: "Updating Content"
+title: "Mise à jour du contenu existant"
+linkTitle: "Mise à jour du contenu"
 weight: 1
 ---
 
-Changes wanted!
-Contributing changes to the TrueNAS documentation has never been easier.
-The Documentation Hub has been specifically built to allow users to quickly propose changes to the content without having to install any special applications.
-All that is required is to have a [GitHub account](https://github.com) and a basic understanding of [Markdown](https://daringfireball.net/projects/markdown/).
+Changements souhaités !
+Il n'a jamais été aussi facile d'apporter des modifications à la documentation TrueNAS.
+Le centre de documentation a été spécialement conçu pour permettre aux utilisateurs de proposer rapidement des modifications au contenu sans avoir à installer d'applications spéciales.
+Il suffit d'avoir un [GitHub account](https://github.com) et une compréhension de base de [Markdown](https://daringfireball.net/projects/markdown/).
 
-The repository automatically builds a preview site for each open Pull Request (PR).
-The link to this preview site is added to the PR as a comment.
-The preview updates with any changes to the pull request, so you can always see an accurate preview of the changes you're making to the website.
+Le référentiel construit automatiquement un site de prévisualisation pour chaque demande d'extraction (Pull Request, PR) ouverte.
+Le lien vers ce site de prévisualisation est ajouté à la PR en tant que commentaire.
+L'aperçu se met à jour en fonction des modifications apportées à la demande d'extraction, de sorte que vous pouvez toujours voir un aperçu précis des modifications que vous apportez au site web.
 
-## Making Quick Changes to an Article
+## Apporter des modifications rapides à un article
 
-If you find text that needs to be fixed or improved in an article, click **Edit this page** to view the article source text in a new browser tab.
-You'll need to log in to your GitHub account to propose any changes.
+Si vous trouvez du texte qui doit être corrigé ou amélioré dans un article, cliquez sur **Edit this page** pour afficher le texte source de l'article dans un nouvel onglet du navigateur.
+Vous devrez vous connecter à votre compte GitHub pour proposer des modifications.
 
 <img src="/images/article-source.png"><br><br>
 
-Make any text changes as needed.
-To check your changes for bugs in the Markdown or HTML syntax, switch to the **Preview changes** tab.
-The preview won't render the Hugo-specific syntax.
+Apportez les modifications nécessaires au texte.
+Pour vérifier que vos modifications ne présentent pas de bogues dans la syntaxe Markdown ou HTML, passez à l'écran **Preview changes** onglet.
+L'aperçu ne rendra pas la syntaxe propre à Hugo.
 
-### Replacing an Image
+### Remplacement d'une image
 
-To update an existing image, click **Edit this page** and find the image location and name in the article source text.
-Make sure your replacement image has the same name as the image to be replaced.
+Pour mettre à jour une image existante, cliquez sur **Edit this page** et trouvez l'emplacement et le nom de l'image dans le texte source de l'article.
+Assurez-vous que votre image de remplacement porte le même nom que l'image à remplacer.
 
-In the repository, click **Code** and navigate to the image location in the repository.
-Images are located in either the */static/images/* directory or are in the same location as the article text file as part of an article bundle.
+Dans le dépôt, cliquez sur **Code** et naviguez jusqu'à l'emplacement de l'image dans le dépôt.
+Les images se trouvent soit dans le répertoire */static/images/*, soit au même endroit que le fichier texte de l'article faisant partie d'un ensemble d'articles.
 
 <img src="/images/image-location.png"><br><br>
 
-Click **Upload files** and either drag and drop your image or open the file browser to select your image.
-As long as the new image name is the same as the old image, the old image will be replaced and the article will automatically use the new image.
+Cliquez sur **Upload files** et soit faites glisser votre image, soit ouvrez le navigateur de fichiers pour sélectionner votre image.
+Tant que le nom de la nouvelle image est le même que celui de l'ancienne, l'ancienne image sera remplacée et l'article utilisera automatiquement la nouvelle image.
 
-## Opening a Pull Request
+## Ouverture d'une demande de retrait
 
-When finished with your changes, scroll down to the **Commit changes** section and write a summary and description of your changes.
-Select **Create a new branch for this commit and start a pull request.** and click **Propose file change**.
-Make sure you're happy with your summary and description, then click **Create pull request**.
+Lorsque vous avez terminé vos modifications, faites défiler la page jusqu'à la section **Commit changes** et rédigez un résumé et une description de vos modifications.
+Sélectionnez **Create a new branch for this commit and start a pull request.** and click **Propose file change**.
+Assurez-vous que vous êtes satisfait de votre résumé et de votre description, puis cliquez sur **Create pull request**.
 
-After the pull request is created, the repository automatically builds a preview of the documentation site that has your changes included.
-The link to this preview is added to the Pull Request after the build completes.
+Après la création de la demande d'extraction, le dépôt construit automatiquement un aperçu du site de documentation qui contient vos modifications.
+Le lien vers cet aperçu est ajouté à la demande d'extraction une fois que la construction est terminée.
 
-That's it! Other contributors will review and merge your contribution!
+C'est tout ! Les autres contributeurs examineront et fusionneront votre contribution !
