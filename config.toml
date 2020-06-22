@@ -55,7 +55,7 @@ anchor = "smart"
 
 [languages]
 [languages.en]
-title = " TrueNAS® Documentation Hub"
+title = ""
 description = "Information and how-to articles about TrueNAS software and products."
 languageName ="English"
 # Weight used for sorting.
@@ -170,6 +170,27 @@ date = ["date", "publishDate", "lastmod"]
 lastmod = ["lastmod", ":fileModTime", ":default"]
 publishDate = ["publishDate", "date"]
 expiryDate = ["expiryDate"]
+
+# Add Website Links
+# Uncomment truenas.com entry when that site is ready
+#[[params.websites]]
+#	name = "TrueNAS.com"
+#	url = "https://www.truenas.com"
+[[params.websites]]
+	name = "iXsystems"
+	url = "https://www.ixsystems.com"
+[[params.websites]]
+	name = "Library"
+	url = "https://www.ixsystems.com/library/"
+[[params.websites]]
+	name = "Community"
+	url = "https://www.ixsystems.com/community/"
+[[params.websites]]
+	name = "Security"
+	url = "https://security.ixsystems.com/"
+[[params.websites]]
+	name = "Blog"
+	url = "https://www.ixsystems.com/blog/"
 
 # Add Topics menu entries
 [[params.topics]]
