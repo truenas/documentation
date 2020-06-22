@@ -18,7 +18,7 @@ on.
 
 To turn the NFS service on, go to **Services** and click the slider for
 *NFS*. If you wish to turn the service on automatically when the TrueNAS
-system is rebooted, check the *Start Automatically* box.
+system is turned on, check the *Start Automatically* box.
 
 > NOTE: The NFS share will not work if the service is not turned on.
 
