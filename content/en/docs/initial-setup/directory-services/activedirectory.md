@@ -4,6 +4,9 @@ linkTitle: "Configuring Active Directory"
 description: "How to configure Active Directory connections"
 ---
 
+<img src="/images/webui-ad.JPG">
+<br><br>
+
 ## Process Summary
 
 * Directory Services > Active Directory
