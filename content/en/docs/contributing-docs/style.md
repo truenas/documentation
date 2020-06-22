@@ -99,6 +99,10 @@ Use the right carat (>) to designate a block quote:
 There are a number of style elements you can use that are built into the Hugo static site generator.
 This site uses Hugo shortcode syntax for images, internal references, and admonition boxes.
 
+The documentation website also uses the [Docsy](https://github.com/google/docsy) theme.
+This theme has some additional styling elements that can be used to enhance your article.
+See the [Docsy shortcodes guide](https://www.docsy.dev/docs/adding-content/shortcodes/) for a list of built-in reusable content snippets.
+
 ### Linking to Other Articles on this Website
 
 Internal references use the Hugo `ref` shortcode to look up a file by name:
@@ -106,6 +110,13 @@ Internal references use the Hugo `ref` shortcode to look up a file by name:
 [Creating a new ZFS Pool]({{\< ref "pools.md" >}})
 (remove the escaping backslash \)
 ```
+
+Linking to the index file of an article bundle requires using the generic [linking](#linking) syntax to point to the article location:
+```
+You can copy the [article template](/docs/contributing-docs/template/).
+```
+
+
 You can also use an anchor to link to a specific section within an article:
 ```
 [Section Level 3]({{\< ref "example.md#section-level-3" >}})
@@ -115,13 +126,12 @@ You can also use an anchor to link to a specific section within an article:
 ### Images
 
 To add an image to your article, you need to add the image file to your article bundle.
-Then use the `imgproc` shortcode in your article to link to the image and define any additional parameters:
+Then use the `figure` shortcode in your article to link to the image and define any additional parameters:
 
 ```
-{{\< imgproc hardware-image Fit "100x100" />}}
+{{\< figure src="hardware-image" title="Example Image" />}}
 (remove the escaping backslash \)
 ```
-See https://gohugo.io/content-management/image-processing/#image-processing-examples for more details.
 
 You can also use HTML to link to an image file that is relative to the site `/static/` directory:
 

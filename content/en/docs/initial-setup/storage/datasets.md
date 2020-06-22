@@ -9,6 +9,9 @@ A ZFS pool must be created first to create a ZFS dataset. See
 [Creating a new ZFS Pool]({{< ref "pools.md" >}}).
 {{% /pageinfo %}}
 
+<img src="/images/pools-dataset.JPG">
+<br><br>
+
 To create a dataset in the desired pool, go to **Storage > Pools**, click
 <i class="fas fa-ellipsis-v"></i>. Next, click *Add Dataset*.
 

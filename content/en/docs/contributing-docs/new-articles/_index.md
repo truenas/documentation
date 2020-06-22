@@ -1,85 +1,79 @@
 ---
 title: "Adding a New Article"
 linkTitle: "New Articles"
+description: "How to add a new article to the Documentation Hub."
 weight: 2
 ---
 
-{{% pageinfo %}}
-To contribute new articles, you need to have a [GitHub account](https://github.com)!
-{{% /pageinfo %}}
-
 Thanks for your interest in submitting documentation articles!
-This article shows you how to contribute documentation for publication on the iXsystems [documentation website](docs.ixsystems.com).
+This article shows you how to add a new article to the TrueNAS Documentation Hub.
+All that is required is a [GitHub account](https://github.com) and your favorite text editor.
+Taking screenshots for your article is also recommended.
 
-## Find a Spot for a New Article
+To add an article, construct a bundle that contains your text file and any images, then open a pull request on the repository.
+There is an [Article Template](/docs/contributing-docs/template/) available that can simplify creating your article.
 
-Go to https://github.com/freenas/documentation find the location within the **content/** directory to place the new article.
+## Creating an Article Bundle
 
-{{< figure src="docrepo-truenas-articles-location.png" title="Picking an Article Location" >}}
+Find a place on your local system to create a directory for your article.
+Name the directory according to the title of your article.
 
-Click **Create new file** to open the GitHub editor for a new file within the directory.
-Enter a descriptive name for the file. For content files, make sure to add `.md` to the end!
+<img src="/images/new-article-bundle.png"><br><br>
 
-{{< figure src="newarticle-github.png" title="GitHub File Editor" >}}
+Open the directory and create a new file called *index.md*.
+This file will contain all the text for your article.
 
+### Writing the Article
 
-## Writing an Article
-
-The first few lines are reserved for an intro "block" that contains the document title and link information.
-For example, this article uses a simple intro block:
+The first few lines of the *index.md* are reserved for an intro block called the "front matter" that contains the document title and other information.
+For example, this article uses basic front matter:
 
 ```
 ---
 title: "Adding a New Article"
 linkTitle: "New Articles"
-weight: 40
+description: "How to add a new article to the Documentation Hub."
+weight: 2
 ---
 ```
 
-After the intro block, continue writing your article.
+After setting the front matter, continue writing your article.
 Raw text is supported, or you can add [Markdown](https://daringfireball.net/projects/markdown/) syntax.
 Markdown is designed to be easy to write and read, but also supports directly adding HTML elements.
-You can style your article however you like, but please be aware that there are a few standard practices that apply to all articles.
-Other contributors might review the article later and edit it to add new content or style elements.
+See the [Style Guide]({{< ref "style.md" >}}) for syntax help and other suggestions for writing the article.
+You can generally style the article however you like, but please be aware that other contributors might review the article and change the styling.
 
-The documentation website also uses the [Docsy](https://github.com/google/docsy) theme.
-This theme has some additional styling elements that can be used to enhance your article.
-See the [Docsy shortcodes guide](https://www.docsy.dev/docs/adding-content/shortcodes/) for a list of built-in reusable content snippets.
+### Adding Images
 
-You can click the **Preview** to see a rough estimate of what the article will look like on the website.
-This is useful for simple build testing to make sure you don't have any Markdown syntax errors.
+If you want to include screenshots of the TrueNAS User Interface with your article, add these files to your article bundle.
+Be sure to have unique names for each image file.
 
-{{< figure src="preview-newarticle-github.png" title="GitHub File Preview" >}}
+<img src="/images/example-article-bundle.png"><br><br>
 
-## Publishing an Article
 
-When all the article content is complete, commit your changes to a new branch and open a GitHub Pull Request.
-Using the default commit title is fine, but be sure to add some notes about the article to the description box.
-Set the **Create a new branch** option and click **Propose new file** to continue.
+## Uploading the Article Bundle
 
-{{< figure src="commit-newarticle-github.png" title="Committing a New Article" >}}
+Open the Community Docs section of the repository at https://github.com/freenas/documentation/tree/master/content/en/docs/additional-topics/community-docs.
+When submitting an article in a language other than English, change the `/en/` to the language directory that matches the language of your article.
 
-Type an *x* in the box to acknowledge the documentation license and click **Create pull request**.
-Another documentation contributor will review and merge your commits into the repository.
-The website will rebuild and make your article immediately viewable!
+{{< figure src="docrepo-truenas-articles-location.png" title="Community Articles" >}}
 
-### Uploading a Page Bundle Article
+Click **Upload files** and drag and drop the article bundle directory into the repository.
+GitHub shows all the files that will be uploaded.
 
-Instead of adding a single file, you can contribute a [Page Bundle](https://gohugo.io/content-management/page-bundles/) consisting of a directory with additional files to enhance your article (images, additional content files, videos, etc). To see a simple example of a page bundle, see the [FreeNAS Getting Started](https://github.com/freenas/documentation/tree/master/content/en/articles/FreeNAS) directory in the documentation repository.
+{{< figure src="newarticle-github.png" title="Uploading an Article Bundle" >}}
 
-To contribute a new Page Bundle, go to the relevent [repository content section](https://github.com/freenas/documentation/tree/master/content/en) for your article and click **Create new file**.
-To add a new directory to the file path, type the name of the directory and `/`.
-Use the directory name as the name for your article, then name the new file `_index.md`.
+## Opening a Pull Request
 
-{{% pageinfo %}}
-You can also [use the command line to add files](https://help.github.com/en/github/managing-files-in-a-repository/adding-a-file-to-a-repository-using-the-command-line) to the repository.
-{{% /pageinfo %}}
+Make sure all your files have been uploaded then scroll down to the **Commit changes** section and write a summary and description of your changes.
+Select **Create a new branch for this commit and start a pull request.** and click **Propose changes**.
+GitHub can take a few moments to process the files.
 
-When finished adding content to `_index.md`, create a new repository branch and open a Pull Request.
-Next, open the **Branch** drop down menu and switch the repository to show the branch you created for your Pull Request.
-Open the directory you created for the Pull Request and click **Upload files**.
-Drag and drop your additional files into the browser or click **choose your files** to use a file browser to select files stored on your local system.
+Make sure you're happy with the summary and description of your article, then click **Create pull request**.
 
-{{< figure src="pagebundle-article-files.png" title="Adding Files to a Pull Request Branch" >}}
+After the pull request is created, the repository automatically builds a preview of the documentation site that has your changes included.
+The link to this preview is added to the Pull Request after the build completes.
 
-Add any notes about these files to the description, make sure the **Commit directly** option is set and pointed to your Pull Request branch, then click **Commit changes*. Your PR will update to include all the additional files you needed for your article!
+{{< figure src="preview-example.png" title="New Article Preview" >}}
+
+Other contributors will review and merge your article!
