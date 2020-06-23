@@ -1,6 +1,6 @@
 # Commenting your code is very useful.
 # baseURL = "./"
-title = "TrueNAS Documentation Hub"
+#title = "TrueNAS Documentation Hub"
 enableRobotsTXT = true
 relativeURLs = true
 
