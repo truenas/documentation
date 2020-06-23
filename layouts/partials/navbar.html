@@ -18,6 +18,9 @@
 			</li>
 			{{ end }}
 			<li class="nav-item dropdown d-lg-block">
+				{{ partial "navbar-websites-selector.html" . }}
+			</li>
+			<li class="nav-item dropdown d-lg-block">
 				{{ partial "navbar-topics-selector.html" . }}
 			</li>
 			{{ if  .Site.Params.versions }}
