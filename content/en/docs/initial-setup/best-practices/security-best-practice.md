@@ -17,8 +17,13 @@ the system as `root` and potentially harm the system, ensure the
 *Log in as Root with Password* setting is not set. It is off by default.
 Unless it is required, ensure *Allow TCP Port Forwarding* is not set.
 Finally, it is not safe to enable any additional weak ciphers for SSH.
-Many of the ciphers are outdated and have vulnerabilities. The default
-values *None, AES128-CBC* for *Weak Ciphers* are sufficient.
+Many of the ciphers are outdated and have vulnerabilities. It is 
+recommended to block both CBC and Arcfour ciphers.
+Go to **Services** -> **SSH** -> **Edit** -> **Extra options** and enter 
+the following line in the Extra Options field:
+
+`Ciphers chacha20-poly1305@openssh.com,aes128-ctr,aes192-ctr,aes256-ctr,aes128-gcm@openssh.com,aes256-gcm@openssh.com` 
+
 
 ## SMB
 
@@ -45,6 +50,13 @@ the share is set up for private use. To fully customize the share
 settings, select *No presets* for the *Purpose*. Unless a specific
 purpose for the share is required, it is recommended to select
 *Default share parameters* as the *Purpose*.
+
+SMB Server Signing is a recommended configuration. To enable Server Signing
+go to **Services** -> **SMB** -> **Edit** -> **Auxiliary Parameters** and 
+add the following string to the Auxilary Parameters field:
+`server signing = mandatory`
+
+Then save, stop, and restart the SMB service.
 
 See <a href="/docs/sharing/smb/smb-share/"> Configuring a Windows SMB
 Share</a> to create a share.
