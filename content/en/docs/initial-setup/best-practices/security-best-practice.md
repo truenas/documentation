@@ -56,7 +56,7 @@ go to **Services** -> **SMB** -> **Edit** -> **Auxiliary Parameters** and
 add the following string to the Auxilary Parameters field:
 `server signing = mandatory`
 
-Then save, and stop and restart SMB.
+Then save, stop, and restart the SMB service.
 
 See <a href="/docs/sharing/smb/smb-share/"> Configuring a Windows SMB
 Share</a> to create a share.
