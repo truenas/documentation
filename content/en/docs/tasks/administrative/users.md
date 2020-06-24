@@ -3,7 +3,7 @@ title: "Creating Users"
 description: "A how-to for creating users in TrueNAS."
 ---
 
-Users can be created or added to the TrueNAS system allowing flexibility in
+Users can be created or added to the TrueNAS system, allowing flexibility in
 configuring which users have access to the data stored on the system. A common
 practice is to create users and assign them to a
 <a href="/docs/tasks/administrative/group/">group</a>. This practice allows for
