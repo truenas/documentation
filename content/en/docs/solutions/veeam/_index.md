@@ -1,5 +1,4 @@
 ---
 title: "Veeam®"
-linkTitle: "Veeam"
-description: "Articles about TrueNAS integrations with Veeam®."
+description: "Articles about TrueNAS integrations with Veeam."
 ---
