@@ -19,7 +19,6 @@ TrueNAS 12.0 marks the first release of the re-branded FreeNAS software under th
     <li>ZFS User Quota Support</li>
 </ul>
 
-
 Below is a summary of some of the 190 combined bug fixes, updates, and improvements. To view a full list of issues
 worked on, see the
 <a href="https://jira.ixsystems.com/issues/?filter=-4&jql=fixVersion%20IN%20(12006)">FreeNAS/TrueNAS 12.0-BETA1 Roadmap</a>.
@@ -27,7 +26,7 @@ worked on, see the
 
 <h2>New Features and Improvements</h2>
 <ul>
-    <li>[<a href='https://jira.ixsystems.com/browse/NAS-100871'>NAS-100871</a>] - In the new GUI: When deleting a VM device the confirmation screen doesn&#39;t identify the device about to be deleted</li>
+    <li>[<a href='https://jira.ixsystems.com/browse/NAS-100871'>NAS-100871</a>] - In the new GUI: When deleting a VM device the confirmation screen doesn't identify the device about to be deleted</li>
     <li>[<a href='https://jira.ixsystems.com/browse/NAS-104364'>NAS-104364</a>] - Make UI aware of TrueNAS Scale</li>
     <li>[<a href='https://jira.ixsystems.com/browse/NAS-100405'>NAS-100405</a>] - Native ZFS Encryption</li>
     <li>[<a href='https://jira.ixsystems.com/browse/NAS-100652'>NAS-100652</a>] - Apply fieldsets to system section</li>
@@ -38,7 +37,7 @@ worked on, see the
     <li>[<a href='https://jira.ixsystems.com/browse/NAS-102345'>NAS-102345</a>] - Add ability to over-provision ssds on platforms as needed</li>
     <li>[<a href='https://jira.ixsystems.com/browse/NAS-102356'>NAS-102356</a>] - Standardize on Active/Standby description of controllers</li>
     <li>[<a href='https://jira.ixsystems.com/browse/NAS-102414'>NAS-102414</a>] - Unifying FreeNAS and TrueNAS</li>
-    <li>[<a href='https://jira.ixsystems.com/browse/NAS-102517'>NAS-102517</a>] - Add &quot;ManagedBy&quot; field to ZFS datasets and Shares</li>
+    <li>[<a href='https://jira.ixsystems.com/browse/NAS-102517'>NAS-102517</a>] - Add "ManagedBy" field to ZFS datasets and Shares</li>
     <li>[<a href='https://jira.ixsystems.com/browse/NAS-102519'>NAS-102519</a>] - Root API Keys</li>
     <li>[<a href='https://jira.ixsystems.com/browse/NAS-102806'>NAS-102806</a>] - Add ZFS user quota support </li>
     <li>[<a href='https://jira.ixsystems.com/browse/NAS-102819'>NAS-102819</a>] - Installer improvements</li>
