@@ -3,9 +3,9 @@ title: "TrueNAS 12.0-BETA1 Release Notes"
 linkTitle: "TrueNAS 12.0-BETA1"
 ---
 
-TrueNAS 12.0-BETA1 is the first major testing release which kicks-off the start of the TrueNAS 12.0 release cycle.
+TrueNAS 12.0-BETA1 is the first major testing release which kicks-off the TrueNAS 12.0 release cycle.
 
-TrueNAS 12.0 (CORE) marks the first release of the re-branded FreeNAS software under the TrueNAS Open Storage family name, and improves upon the FreeNAS 11.3 series in many ways. Some of the notable features include:
+TrueNAS 12.0 marks the first release of the re-branded FreeNAS software under the TrueNAS Open Storage family name. It improves upon the FreeNAS 11.3 series in many ways. Some of the notable features include:
 
 <ul>
     <li>Major ZFS upgrade to the upcoming OpenZFS 2.0 release (Formerly ZFS on Linux)</li>
