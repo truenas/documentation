@@ -5,7 +5,7 @@ description: "A how-to for managing users in TrueNAS."
 
 Users can be created or added to the TrueNAS system, allowing flexibility in
 configuring which users have access to the data stored on the system. A common
-practice is to create users and assign them to a
+practice is to create users and assign them to
 <a href="/docs/tasks/administrative/groups/">groups</a>. This practice allows for
 easy and efficient permission tuning. If the network uses a directory service,
 import the existing account information using the instructions in
@@ -45,7 +45,7 @@ Directly under the file browser, the home directory permissions can be set.
 
 A public SSH key can be assigned to a user for key based authentication. Just
 paste the **public** key into the *SSH Public Key* field. If you are using an
-SSH public key, it is always a good idea to keep a backup to key.
+SSH public key, it is always a good idea to keep a backup of the key.
 Click *DOWNLOAD SSH PUBLIC KEY* to download the pasted key as a `.txt` file.
 If *Disable Password* is set to *Yes*, it disables the *Password* field and
 removes the password from the account. The account cannot use password-based
