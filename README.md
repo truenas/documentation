@@ -22,7 +22,7 @@ in the CLI.
 ## Download Hugo
 
 First, download the **extended** version of Hugo from
-https://github.com/gohugoio/hugo/releases/download/. Follow the
+https://github.com/gohugoio/hugo/releases/. Follow the
 [Hugo install instructions](https://gohugo.io/getting-started/installing/ "Install Hugo")
 for the appropriate operating system.
 
