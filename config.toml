@@ -133,12 +133,12 @@ url = "./"
 [[params.versions]]
 fullversion = "TrueNAS 11-3"
 version = "TrueNAS 11-3"
-url = "/docs/previous-version-documentation/tn-11.3/"
+url = "/hub/previous-version-documentation/tn-11.3/"
 
 [[params.versions]]
 fullversion = "TrueCommand 1.2"
 version = "TrueCommand 1.2"
-url = "/docs/previous-version-documentation/tc-1.2/"
+url = "/hub/previous-version-documentation/tc-1.2/"
 
 # User interface configuration
 [params.ui]
@@ -198,33 +198,33 @@ expiryDate = ["expiryDate"]
 	url = "/"
 [[params.topics]]
 	name = "Overview"
-	url = "/docs/intro/"
+	url = "/hub/intro/"
 [[params.topics]]
 	name = "Getting Started"
-	url = "/docs/initial-setup/"
+	url = "/hub/initial-setup/"
 [[params.topics]]
 	name = "Sharing"
-	url = "/docs/sharing/"
+	url = "/hub/sharing/"
 [[params.topics]]
 	name = "Tasks"
-	url = "/docs/tasks/"
+	url = "/hub/tasks/"
 [[params.topics]]
 	name = "Solutions"
-	url = "/docs/solutions/"
+	url = "/hub/solutions/"
 #[[params.topics]]
 #	name = "SCALE"
-#	url = "/docs/scale/"
+#	url = "/hub/scale/"
 [[params.topics]]
 	name = "TrueCommand"
-	url = "/docs/truecommand/"
+	url = "/hub/truecommand/"
 [[params.topics]]
 	name = "Hardware"
-	url = "/docs/hardware-docs/"
+	url = "/hub/hardware/"
 [[params.topics]]
 	name = "Additional Topics"
-	url = "/docs/additional-topics/"
+	url = "/hub/additional-topics/"
 [[params.topics]]
 	name = "Contributing"
-	url = "/docs/contributing-docs/"
+	url = "/hub/contributing/"
 
 

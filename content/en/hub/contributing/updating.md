@@ -1,6 +1,5 @@
 ---
-title: "Updating Existing Content"
-linkTitle: "Updating Content"
+title: "Updating Content"
 weight: 1
 ---
 
