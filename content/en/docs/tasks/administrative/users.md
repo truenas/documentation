@@ -1,5 +1,5 @@
 ---
-title: "Creating Users"
+title: "Managing Users"
 description: "A how-to for creating users in TrueNAS."
 ---
 
