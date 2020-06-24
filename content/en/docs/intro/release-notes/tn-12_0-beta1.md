@@ -8,7 +8,7 @@ TrueNAS 12.0-BETA1 is the first major testing release which kicks-off the TrueNA
 TrueNAS 12.0 marks the first release of the re-branded FreeNAS software under the TrueNAS Open Storage family name. It improves upon the FreeNAS 11.3 series in many ways. Some of the notable features include:
 
 <ul>
-    <li>Major ZFS upgrade to the upcoming OpenZFS 2.0 release (Formerly ZFS on Linux)</li>
+    <li>Major ZFS upgrade to the upcoming OpenZFS 2.0</li>
     <li>Support for ZFS <a href="https://jira.ixsystems.com/browse/NAS-101647">Async Copy on Write</a></li>
     <li>Improved hardware support for AMD Ryzen CPUs and a variety of network cards</li>
     <li>Performance Improvements across many areas of the software stack, including CPU, Samba, ZFS and more</li>
@@ -27,7 +27,6 @@ worked on, see the
 <h2>New Features and Improvements</h2>
 <ul>
     <li>[<a href='https://jira.ixsystems.com/browse/NAS-100871'>NAS-100871</a>] - In the new GUI: When deleting a VM device the confirmation screen doesn't identify the device about to be deleted</li>
-    <li>[<a href='https://jira.ixsystems.com/browse/NAS-104364'>NAS-104364</a>] - Make UI aware of TrueNAS Scale</li>
     <li>[<a href='https://jira.ixsystems.com/browse/NAS-100405'>NAS-100405</a>] - Native ZFS Encryption</li>
     <li>[<a href='https://jira.ixsystems.com/browse/NAS-100652'>NAS-100652</a>] - Apply fieldsets to system section</li>
     <li>[<a href='https://jira.ixsystems.com/browse/NAS-100658'>NAS-100658</a>] - Apply fieldsets to services section</li>
