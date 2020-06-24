@@ -1,5 +1,5 @@
 ---
-title: "Installing into a Virtual Machine"
+title: "Virtual Machine (VM)"
 description: "A how-to on the process of installing TrueNAS into a VM."
 weight: 2
 ---
@@ -29,7 +29,12 @@ at least 4GB to be used as data storage.
 configuration.
 {{% /alert %}}
 
+When installing TrueNAS in a VMware VM, double check the virtual switch and VMware port group.
+Network connection errors for plugins or jails inside the TrueNAS VM can be caused by a misconfigured virtual switch or VMware port group.
+Make sure *MAC spoofing* and *promiscuous mode* are enabled on the switch first, and then the port group the VM is using.
+
 ## Installing
+
 
 > NOTE: VMware Player 15.5 for Windows is being used in this example.
 
@@ -99,5 +104,13 @@ Select *\<Boot via BIOS>*.
 <img src="/images/installer-bios.png">
 <br><br>
 
-After the installation of TrueNAS has completed, reboot they system.
+After the installation of TrueNAS has completed, reboot the system.
 Congratulations, TrueNAS is now installed in a virtual machine.
+
+{{% alert title="TrueNAS post-install for VMware" color="info" %}}
+After installing TrueNAS in a VMware VM, it is recommended to configure and use the [vmx(4)](https://www.freebsd.org/cgi/man.cgi?query=vmx) drivers on TrueNAS.
+To load the VMX driver when TrueNAS boots, log in to the web interface and go to the **Shell**.
+Open `/boot/loader.conf` in a text editor and add `if_vmx_load="YES"` to that file:
+
+<img src="/images/shell-loaderconf-vmx.png">
+{{% /alert %}}
