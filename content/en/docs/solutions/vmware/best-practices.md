@@ -6,15 +6,6 @@ description: "General recommendations when using TrueNAS and VMware together."
 
 There are several configuration recommendations and troubleshooting tips when using TrueNAS with a [VMware](https://www.vmware.com/) hypervisor.
 
-## TrueNAS as a VMware Guest <move to vmware install article>
-
-When [installing TrueNAS as a Virtual Machine (VM) in VMware]():
-
-* Be sure to configure and use the [vmx(4)]() drivers on TrueNAS.
-
-* Network connection errors for plugins or jails inside the TrueNAS VM can be caused by a misconfigured virtual switch or VMware port group.
-  Make sure *MAC spoofing* and *promiscuous mode* are enabled on the switch first, and then the port group the VM is using.
-
 ## Hosting VMware Storage with TrueNAS
 
 When using TrueNAS as a VMware datastore:

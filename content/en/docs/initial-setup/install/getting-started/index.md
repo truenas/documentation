@@ -1,5 +1,5 @@
 ---
-title: "Installing on Physical Hardware"
+title: "Physical Hardware"
 description: "How to obtain and install TrueNAS on physical hardware."
 weight: 1
 ---
