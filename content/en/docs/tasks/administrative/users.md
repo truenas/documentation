@@ -28,8 +28,8 @@ Next, a user ID must be set. TrueNAS automatically sets the user ID starting at
 1000 or more for non-builtin users. By default, TrueNAS creates a new primary
 group with the same name as the user. To add the user to an existing primary
 group, unset *New Primary Group* and select an existing group from the
-*Primary Group* drop-down. Multiple auxillary groups can also be selected in the
-*Auxillary Groups* drop-down for the user to be a member of.
+*Primary Group* drop-down. The user can be added to additional groups using the
+*Auxillary Groups* drop-down.
 
 ## Directories and Permissions
 
