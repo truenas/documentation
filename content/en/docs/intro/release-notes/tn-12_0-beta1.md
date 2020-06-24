@@ -3,30 +3,27 @@ title: "TrueNAS 12.0-BETA1 Release Notes"
 linkTitle: "TrueNAS 12.0-BETA1"
 ---
 
-TrueNAS 12.0-BETA1 is the next big version release. This version has many visual
-improvements, fixes, and features. Below is a summary of some of the 190
-combined bug fixes, updates, and improvements. To view a full list of issues
+TrueNAS 12.0-BETA1 is the first major testing release which kicks-off the start of the TrueNAS 12.0 release cycle.
+
+TrueNAS 12.0 (CORE) marks the first release of the re-branded FreeNAS software under the TrueNAS Open Storage family name, and improves upon the FreeNAS 11.3 series in many ways. Some of the notable features include:
+
+<ul>
+    <li>Major ZFS upgrade to the upcoming OpenZFS 2.0 release (Formerly ZFS on Linux)</li>
+    <li>Support for ZFS <a href="https://jira.ixsystems.com/browse/NAS-101647">Async Copy on Write</a></li>
+    <li>Improved hardware support for AMD Ryzen CPUs and a variety of network cards</li>
+    <li>Performance Improvements across many areas of the software stack, including CPU, Samba, ZFS and more</li>
+    <li>Native ZFS dataset encryption</li>
+    <li>Support for upcoming TrueCommand Cloud Connections</li>
+    <li>Support for meta-data only vdevs (AKA: Fusion Pools)</li>
+    <li>API Keys for scripted control of TrueNAS</li>
+    <li>ZFS User Quota Support</li>
+</ul>
+
+
+Below is a summary of some of the 190 combined bug fixes, updates, and improvements. To view a full list of issues
 worked on, see the
 <a href="https://jira.ixsystems.com/issues/?filter=-4&jql=fixVersion%20IN%20(12006)">FreeNAS/TrueNAS 12.0-BETA1 Roadmap</a>.
 
-<h2>Bug Fixes</h2>
-<ul>
-    <li>[<a href='https://jira.ixsystems.com/browse/NAS-105531'>NAS-105531</a>] - static usage of FreeNAS when upgrading zpool</li>
-    <li>[<a href='https://jira.ixsystems.com/browse/NAS-105565'>NAS-105565</a>] - Unable to Access TN Scale UI</li>
-    <li>[<a href='https://jira.ixsystems.com/browse/NAS-105622'>NAS-105622</a>] - UI should update VM state if the VM shuts down</li>
-    <li>[<a href='https://jira.ixsystems.com/browse/NAS-105904'>NAS-105904</a>] - Fix broken link in New Pool Encryption help text</li>
-    <li>[<a href='https://jira.ixsystems.com/browse/NAS-105927'>NAS-105927</a>] - Replace all helptext Guide links</li>
-    <li>[<a href='https://jira.ixsystems.com/browse/NAS-105607'>NAS-105607</a>] - Logotype logo missing for TN Enterprise</li>
-    <li>[<a href='https://jira.ixsystems.com/browse/NAS-105610'>NAS-105610</a>] - Kerberos Settings don&#39;t load into form</li>
-    <li>[<a href='https://jira.ixsystems.com/browse/NAS-105626'>NAS-105626</a>] - Two-factor QA button doesn&#39;t enable on first setup</li>
-    <li>[<a href='https://jira.ixsystems.com/browse/NAS-105634'>NAS-105634</a>] - Time format examples do not match selected timezone</li>
-    <li>[<a href='https://jira.ixsystems.com/browse/NAS-105651'>NAS-105651</a>] - Date-picker list does not match timezone</li>
-    <li>[<a href='https://jira.ixsystems.com/browse/NAS-105674'>NAS-105674</a>] - Fix error handling for Save/Upload config</li>
-    <li>[<a href='https://jira.ixsystems.com/browse/NAS-105713'>NAS-105713</a>] - zvol form shows error by default</li>
-    <li>[<a href='https://jira.ixsystems.com/browse/NAS-105744'>NAS-105744</a>] - Need welcome dialog and modified About dialog</li>
-    <li>[<a href='https://jira.ixsystems.com/browse/NAS-105769'>NAS-105769</a>] - Min and max length errors are not accurate</li>
-    <li>[<a href='https://jira.ixsystems.com/browse/NAS-105803'>NAS-105803</a>] - Fix label / logic issues on dataset form</li>
-</ul>
 
 <h2>New Features and Improvements</h2>
 <ul>
@@ -57,4 +54,23 @@ worked on, see the
     <li>[<a href='https://jira.ixsystems.com/browse/NAS-104671'>NAS-104671</a>] - 12.0 Documentation</li>
     <li>[<a href='https://jira.ixsystems.com/browse/NAS-105074'>NAS-105074</a>] - Enclosure support for Mini 3.0</li>
     <li>[<a href='https://jira.ixsystems.com/browse/NAS-105220'>NAS-105220</a>] - Add support for dedicated metadata devices to ZFS</li>
+</ul>
+
+<h2>Bug Fixes</h2>
+<ul>
+    <li>[<a href='https://jira.ixsystems.com/browse/NAS-105531'>NAS-105531</a>] - static usage of FreeNAS when upgrading zpool</li>
+    <li>[<a href='https://jira.ixsystems.com/browse/NAS-105565'>NAS-105565</a>] - Unable to Access TN Scale UI</li>
+    <li>[<a href='https://jira.ixsystems.com/browse/NAS-105622'>NAS-105622</a>] - UI should update VM state if the VM shuts down</li>
+    <li>[<a href='https://jira.ixsystems.com/browse/NAS-105904'>NAS-105904</a>] - Fix broken link in New Pool Encryption help text</li>
+    <li>[<a href='https://jira.ixsystems.com/browse/NAS-105927'>NAS-105927</a>] - Replace all helptext Guide links</li>
+    <li>[<a href='https://jira.ixsystems.com/browse/NAS-105607'>NAS-105607</a>] - Logotype logo missing for TN Enterprise</li>
+    <li>[<a href='https://jira.ixsystems.com/browse/NAS-105610'>NAS-105610</a>] - Kerberos Settings don&#39;t load into form</li>
+    <li>[<a href='https://jira.ixsystems.com/browse/NAS-105626'>NAS-105626</a>] - Two-factor QA button doesn&#39;t enable on first setup</li>
+    <li>[<a href='https://jira.ixsystems.com/browse/NAS-105634'>NAS-105634</a>] - Time format examples do not match selected timezone</li>
+    <li>[<a href='https://jira.ixsystems.com/browse/NAS-105651'>NAS-105651</a>] - Date-picker list does not match timezone</li>
+    <li>[<a href='https://jira.ixsystems.com/browse/NAS-105674'>NAS-105674</a>] - Fix error handling for Save/Upload config</li>
+    <li>[<a href='https://jira.ixsystems.com/browse/NAS-105713'>NAS-105713</a>] - zvol form shows error by default</li>
+    <li>[<a href='https://jira.ixsystems.com/browse/NAS-105744'>NAS-105744</a>] - Need welcome dialog and modified About dialog</li>
+    <li>[<a href='https://jira.ixsystems.com/browse/NAS-105769'>NAS-105769</a>] - Min and max length errors are not accurate</li>
+    <li>[<a href='https://jira.ixsystems.com/browse/NAS-105803'>NAS-105803</a>] - Fix label / logic issues on dataset form</li>
 </ul>
