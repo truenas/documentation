@@ -1,6 +1,6 @@
 ---
 title: "Managing Users"
-description: "A how-to for creating users in TrueNAS."
+description: "A how-to for managing users in TrueNAS."
 ---
 
 Users can be created or added to the TrueNAS system, allowing flexibility in
