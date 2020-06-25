@@ -24,7 +24,7 @@ enter a descriptive name for the group. Group names cannot begin with a hyphen
 username. By default, the *Permit Sudo* option is unset. When set, it allows
 group members to act as the root account by using `sudo`. It is recommended to
 leave this unset. The option *Samba Authentication* is set by default. This
-options allows the group to be used for Samba permissions and authentication.
+option allows the group to be used for Samba permissions and authentication.
 Finally, the *Allow Duplicate GIDs* option is unset by default. This setting
 allows groups to have duplicate group IDs. Leaving this option unset is
 recommended.
