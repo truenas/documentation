@@ -124,21 +124,12 @@ announcement_message = "The TrueNAS Documentation team hopes you have a great da
 [taxonomies]
 products = "products"
 
+# Entries for the "Version" dropdown
 [[params.versions]]
 fullversion = "TrueNAS 12.0-BETA1"
 version = "TN 12.0-BETA1"
 githubbranch = "master"
 url = "./"
-
-[[params.versions]]
-fullversion = "TrueNAS 11-3"
-version = "TrueNAS 11-3"
-url = "/hub/previous-version-documentation/tn-11.3/"
-
-[[params.versions]]
-fullversion = "TrueCommand 1.2"
-version = "TrueCommand 1.2"
-url = "/hub/previous-version-documentation/tc-1.2/"
 
 # User interface configuration
 [params.ui]
