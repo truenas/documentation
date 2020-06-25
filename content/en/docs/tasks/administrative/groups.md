@@ -22,7 +22,7 @@ enter a descriptive name for the group. Group names cannot begin with a hyphen
 (-) or contain a space, tab, or these characters: *, : + & # % ^ ( ) ! @ ~ \* ?
 < > =*. The dollar sign ($) can only be used as the last character of the
 username. By default, the *Permit Sudo* option is unset. When set, it allows
-members of the group to use the commands with `sudo`. It is recommended to
+group members to act as the root account by using `sudo`. It is recommended to
 leave this unset. The option *Samba Authentication* is set by default. This
 options allows the group to be used for Samba permissions and authentication.
 Finally, the *Allow Duplicate GIDs* option is unset by default. This setting
