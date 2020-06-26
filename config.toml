@@ -1,5 +1,5 @@
 # Commenting your code is very useful.
-# baseURL = "./"
+#baseURL = "https://www.truenas.com/docs/"
 #title = "TrueNAS Documentation Hub"
 enableRobotsTXT = true
 relativeURLs = true
@@ -49,7 +49,7 @@ anchor = "smart"
 [services]
 [services.googleAnalytics]
 # Comment out the next line to disable GA tracking. Also disables the feature described in [params.ui.feedback].
-# id = "UA-2174408-20"
+id = "UA-2174408-20"
 
 # Language configuration
 
@@ -124,21 +124,12 @@ announcement_message = "The TrueNAS Documentation team hopes you have a great da
 [taxonomies]
 products = "products"
 
+# Entries for the "Version" dropdown
 [[params.versions]]
 fullversion = "TrueNAS 12.0-BETA1"
 version = "TN 12.0-BETA1"
 githubbranch = "master"
 url = "./"
-
-[[params.versions]]
-fullversion = "TrueNAS 11-3"
-version = "TrueNAS 11-3"
-url = "/docs/previous-version-documentation/tn-11.3/"
-
-[[params.versions]]
-fullversion = "TrueCommand 1.2"
-version = "TrueCommand 1.2"
-url = "/docs/previous-version-documentation/tc-1.2/"
 
 # User interface configuration
 [params.ui]
@@ -172,15 +163,14 @@ publishDate = ["publishDate", "date"]
 expiryDate = ["expiryDate"]
 
 # Add Website Links
-# Uncomment truenas.com entry when that site is ready
-#[[params.websites]]
-#	name = "TrueNAS.com"
-#	url = "https://www.truenas.com"
+[[params.websites]]
+	name = "TrueNAS"
+	url = "https://www.truenas.com"
 [[params.websites]]
 	name = "iXsystems"
 	url = "https://www.ixsystems.com"
 [[params.websites]]
-	name = "Library"
+	name = "iX Library"
 	url = "https://www.ixsystems.com/library/"
 [[params.websites]]
 	name = "Community"
@@ -198,33 +188,33 @@ expiryDate = ["expiryDate"]
 	url = "/"
 [[params.topics]]
 	name = "Overview"
-	url = "/docs/intro/"
+	url = "/hub/intro/"
 [[params.topics]]
 	name = "Getting Started"
-	url = "/docs/initial-setup/"
+	url = "/hub/initial-setup/"
 [[params.topics]]
 	name = "Sharing"
-	url = "/docs/sharing/"
+	url = "/hub/sharing/"
 [[params.topics]]
 	name = "Tasks"
-	url = "/docs/tasks/"
+	url = "/hub/tasks/"
 [[params.topics]]
 	name = "Solutions"
-	url = "/docs/solutions/"
+	url = "/hub/solutions/"
 #[[params.topics]]
 #	name = "SCALE"
-#	url = "/docs/scale/"
+#	url = "/hub/scale/"
 [[params.topics]]
 	name = "TrueCommand"
-	url = "/docs/truecommand/"
+	url = "/hub/truecommand/"
 [[params.topics]]
 	name = "Hardware"
-	url = "/docs/hardware-docs/"
+	url = "/hub/hardware/"
 [[params.topics]]
 	name = "Additional Topics"
-	url = "/docs/additional-topics/"
+	url = "/hub/additional-topics/"
 [[params.topics]]
 	name = "Contributing"
-	url = "/docs/contributing-docs/"
+	url = "/hub/contributing/"
 
 
