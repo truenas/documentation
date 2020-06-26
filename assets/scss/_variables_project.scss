@@ -156,6 +156,12 @@ $secondary: #666666;
   text-decoration: none;
   display: inline-block;
 }
+.linkbutton:hover {
+  color: #FFFFFF;
+  background-color: #1EAEDB;
+  border-color: #1EAEDB;
+}
+
 
 // Links styled for grey background
 .lightlink {

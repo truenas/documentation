@@ -13,7 +13,7 @@ interface makes it easy to create and configure an SMB share. SMB shares can be
 connected to any major operating systems including Windows, MacOS, and Linux.
 
 To get started, make sure a
-<a href="/docs/initial-setup/storage/datasets/">dataset has been created</a>.
+<a href="/hub/initial-setup/storage/datasets/">dataset has been created</a>.
 This dataset serves as the storage for the data that is going to be
 shared. Next, activate the SMB service, create the share, and configure
 permissions for the share.
@@ -81,4 +81,4 @@ list and click
 desired share. Here you can change permissions for *owner@*, *group@*, and
 *everyone@*. New permissions for specific users or groups can also be defined
 by clicking *ADD ACL ITEM*. For more information on configuring ACLs, see
-<a href="/docs/tasks/advanced/editingacls/">Managing Access Control Lists</a>.
+<a href="/hub/tasks/advanced/editingacls/">Managing Access Control Lists</a>.

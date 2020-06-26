@@ -9,7 +9,7 @@ Depending how the share is setup, users accessing the
 share can be restricted to read or write privileges.
 
 To get started, make sure a
-<a href="/docs/initial-setup/storage/datasets">dataset has been created</a>.
+<a href="/hub/initial-setup/storage/datasets">dataset has been created</a>.
 This dataset serves as share data storage.
 If a dataset already exists, proceed to turning the NFS service
 on.

@@ -20,14 +20,14 @@ L'équipe de documentation d'iXsystems répondra au problème et apportera les a
 
 Une fois que le site est configuré pour la traduction d'articles dans votre langue, il suffit de télécharger l'article en anglais, de le traduire, puis de télécharger le fichier traduit au même endroit dans l'arborescence du nouveau répertoire linguistique.
 
-Par exemple, pour commencer la traduction de cet article en français, allez à https://github.com/freenas/documentation/blob/master/content/fr/docs/contributing-docs/translations.md et cliquez sur **Raw**. Faites un clic droit, sélectionnez *Save Page As...*, et cliquez sur **Save**.
+Par exemple, pour commencer la traduction de cet article en français, allez à https://github.com/freenas/documentation/blob/master/content/fr/hub/contributing/translations.md et cliquez sur **Raw**. Faites un clic droit, sélectionnez *Save Page As...*, et cliquez sur **Save**.
 Vous n'avez pas besoin de renommer le fichier.
 
 Ouvrez maintenant `translations.md` dans votre éditeur préféré et remplacez le texte anglais par vos traductions.
 La syntaxe du Markdown et du HTML n'aura pas besoin d'être modifiée du tout et peut être ignorée.
-Voir le [Updating Content](/docs/contributing-docs/basic/#replacing-an-image) comment obtenir des détails sur le remplacement d'une image existante.
+Voir le [Updating Content](/hub/contributing/basic/#replacing-an-image) comment obtenir des détails sur le remplacement d'une image existante.
 
-Quand vous aurez fini de traduire, allez à https://github.com/freenas/documentation/blob/master/content/fr/docs/contributing-docs et cliquez sur **Upload files**.
+Quand vous aurez fini de traduire, allez à https://github.com/freenas/documentation/blob/master/content/fr/hub/contributing et cliquez sur **Upload files**.
 Faites glisser le fichier traduit dans la zone de téléchargement et entrez une brève description du fichier traduit.
 Assurez-vous que l'option `Create a new branch for this commit` est sélectionnée, cliquez sur **Propose changes**, puis ouvrez votre demande d'extraction (PR).
 

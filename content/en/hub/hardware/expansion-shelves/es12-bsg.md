@@ -5,6 +5,6 @@ description: "Guide included with ES12 expansion shelves purchased from iXsystem
 ---
 
 <object data="/pdf/ES12-2020-06-25.pdf" type="application/pdf" width="95%" height="1000">
-  Your browser does not support pdfs, <a href="/pdf/ES12-2020-06-25.pdf">click here to
-  download the file.</a>
+  There was an error displaying this PDF, <a href="/pdf/ES12-2020-06-25.pdf">please click
+  here to download the file.</a>
 </object>
