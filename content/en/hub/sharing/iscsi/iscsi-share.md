@@ -68,9 +68,9 @@ enabled on both the client and server.
 
 
 To get started, make sure a
-<a href="/docs/intitial-setup/storage/datasets/">dataset has been created</a>
+<a href="/hub/intitial-setup/storage/datasets/">dataset has been created</a>
 with at least one file to share, or a
-<a href="/docs/initial-setup/storage/zvols/">zvol has been created</a>.
+<a href="/hub/initial-setup/storage/zvols/">zvol has been created</a>.
 If the desired file or zvol already exists, proceed to turning on the
 iSCSI service.
 

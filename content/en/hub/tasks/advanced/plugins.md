@@ -101,7 +101,7 @@ Expand the `iocage` and `jails` datasets to find the plugin jail storage dataset
 <img src="/images/storage-jail-datasets.png">
 <br><br>
 
-One option to back up this stored data is to create a [local replication](/docs/tasks/scheduled/replication/local/).
+One option to back up this stored data is to create a [local replication](/hub/tasks/scheduled/replication/local/).
 The replication task can even be configured to run periodically and automatically back up new changes to the jail dataset.
 
 To convert a jail snapshot into a new storage dataset, go to **Storage > Snapshots** and find a snapshot of the jail dataset.

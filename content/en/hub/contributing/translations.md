@@ -20,14 +20,14 @@ The iXsystems Documentation Team will respond to the issue and make the necessar
 
 Once the site is configured for translating articles into your language, all that is needed is to download the English article, translate it, then upload the translated file to the same location in the new language directory tree.
 
-For example, to begin translating this article into French, go to https://github.com/freenas/documentation/blob/master/content/en/docs/contributing-docs/translations.md and click **Raw**. Right-click, select *Save Page As...*, and click **Save**.
+For example, to begin translating this article into French, go to https://github.com/freenas/documentation/blob/master/content/en/hub/contributing/translations.md and click **Raw**. Right-click, select *Save Page As...*, and click **Save**.
 You don't need to rename the file.
 
 Now open `translations.md` in your preferred editor and replace the English text with your translations.
 The Markdown and HTML syntax won't need to be changed at all and can be ignored.
-See the [Updating Content](/docs/contributing-docs/basic/#replacing-an-image) how-to for details about replacing an existing image.
+See the [Updating Content](/hub/contributing/basic/#replacing-an-image) how-to for details about replacing an existing image.
 
-When you're done translating, go to https://github.com/freenas/documentation/blob/master/content/fr/docs/contributing-docs and click **Upload files**.
+When you're done translating, go to https://github.com/freenas/documentation/blob/master/content/fr/hub/contributing and click **Upload files**.
 Drag the translated file into the upload area and enter a brief description of the translated file.
 Make sure `Create a new branch for this commit` is selected, click **Propose changes**, then open your Pull Request (PR).
 

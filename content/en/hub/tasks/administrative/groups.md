@@ -4,11 +4,11 @@ description: "A how-to for managing Groups in TrueNAS."
 ---
 
 Using groups in TrueNAS can be an efficient way of managing permissions for
-users. See <a href="/docs/tasks/administrative/users/">users</a> for managing
+users. See <a href="/hub/tasks/administrative/users/">users</a> for managing
 users. The interface provides management of UNIX-style groups. If the network
 uses a directory service, import the existing account information using the
 instructions in
-<a href="/docs/initial-setup/directory-services/">Directory Services</a>.
+<a href="/hub/initial-setup/directory-services/">Directory Services</a>.
 
 > NOTE: TrueNAS hides all builtin groups by default. To show all builtin groups,
 > go to **Accounts > Groups** and click <i class="fas fa-cog"></i>.

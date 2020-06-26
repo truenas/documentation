@@ -61,7 +61,7 @@ Advanced options are available for fine-tuning the AD configuration, but the pre
 It can take a few minutes after configuring the Active Directory service for the AD information to be populated to TrueNAS.
 To check the AD join progress, open the <i class="fas fa-clipboard"></i> **Task Manager** in the upper-right corner.
 Any errors during the join process are also displayed in the **Task Manager**.
-When the import is complete and the TrueNAS cache is enabled (advanced setting, enabled by default), AD users and groups become available when configuring basic dataset permissions or an [Access Control List (ACL)](/docs/tasks/advanced/editingacls/).
+When the import is complete and the TrueNAS cache is enabled (advanced setting, enabled by default), AD users and groups become available when configuring basic dataset permissions or an [Access Control List (ACL)](/hub/tasks/advanced/editingacls/).
 
 Joining AD also adds default [Kerberos](https://web.mit.edu/kerberos/) realms and generates a default `AD_MACHINE_ACCOUNT` keytab.
 TrueNAS automatically begins using this default keytab and removes any administrator credentials that were stored in the TrueNAS configuration file.

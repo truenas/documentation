@@ -113,7 +113,7 @@ Internal references use the Hugo `ref` shortcode to look up a file by name:
 
 Linking to the index file of an article bundle requires using the generic [linking](#linking) syntax to point to the article location:
 ```
-You can copy the [article template](/docs/contributing-docs/template/).
+You can copy the [article template](/hub/contributing/template/).
 ```
 
 

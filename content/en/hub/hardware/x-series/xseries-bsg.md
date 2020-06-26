@@ -5,6 +5,6 @@ description: "Guide included with TrueNAS X-Series Unified Storage Arrays purcha
 ---
 
 <object data="/pdf/Xseries-2020-06-25.pdf" type="application/pdf" width="95%" height="1000">
-  Your browser does not support pdfs, <a href="/pdf/Xseries-2020-06-25.pdf">click here to
-  download the file.</a>
+  There was an error displaying this PDF, <a href="/pdf/Xseries-2020-06-25.pdf">please click
+  here to download the file.</a>
 </object>

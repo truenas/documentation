@@ -42,7 +42,7 @@ an *Administrators Group*, make sure the members of the group are
 correct. Members of the administration group have full permissions and
 can cause destruction on the share.
 
-When <a href="/docs/sharing/smb/smb-share/">creating a SMB share</a>, a
+When <a href="/hub/sharing/smb/smb-share/">creating a SMB share</a>, a
 *Purpose* can be selected. This changes the share configuration with
 one click. For example, when selecting *Private SMB Datasets and Shares*
 from the list, TrueNAS automatically tunes some of the settings so that
@@ -58,7 +58,7 @@ add the following string to the Auxilary Parameters field:
 
 Then save, stop, and restart the SMB service.
 
-See <a href="/docs/sharing/smb/smb-share/"> Configuring a Windows SMB
+See <a href="/hub/sharing/smb/smb-share/"> Configuring a Windows SMB
 Share</a> to create a share.
 
 ## NFS
@@ -69,7 +69,7 @@ go to **Services** and click <i class="fas fa-pen"></i>. By default,
 all settings are unset. Unless needed for a specific use case, keep
 the default NFS service settings.
 
-When <a href="/docs/sharing/nfs/nfs-share/">creating a NFS share</a>, some things can be done to
+When <a href="/hub/sharing/nfs/nfs-share/">creating a NFS share</a>, some things can be done to
 ensure a safer sharing experience. In the advanced options, authorized
 networks and authorized hosts and IP addresses can be specified. If
 authorized networks are specified, any system that is not on the
@@ -80,7 +80,7 @@ systems that can connect to the share. When *Authorized Networks* or
 connect. Allowing any system to connect to the NFS share raises some
 security concern.
 
-See <a href="/docs/sharing/nfs/nfs-share/">Configuring a Unix NFS Share</a> to create a share.
+See <a href="/hub/sharing/nfs/nfs-share/">Configuring a Unix NFS Share</a> to create a share.
 
 ## iSCSI
 
@@ -97,4 +97,4 @@ to the extent can be added. This is useful when choosing a few
 systems to be able to connect to the extent. If left blank, all
 initiators and all networks are allowed to connect to the extent.
 
-See <a href="/docs/sharing/iscsi/iscsi-share/">Configuring a Block Share (iSCSI)</a> to create a share.
+See <a href="/hub/sharing/iscsi/iscsi-share/">Configuring a Block Share (iSCSI)</a> to create a share.

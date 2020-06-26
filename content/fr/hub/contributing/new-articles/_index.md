@@ -11,7 +11,7 @@ All that is required is a [GitHub account](https://github.com) and your favorite
 Taking screenshots for your article is also recommended.
 
 To add an article, construct a bundle that contains your text file and any images, then open a pull request on the repository.
-There is an [Article Template](/docs/contributing-docs/template/) available that can simplify creating your article.
+There is an [Article Template](/hub/contributing/template/) available that can simplify creating your article.
 
 ## Creating an Article Bundle
 
@@ -53,7 +53,7 @@ Be sure to have unique names for each image file.
 
 ## Uploading the Article Bundle
 
-Open the Community Docs section of the repository at https://github.com/freenas/documentation/tree/master/content/en/docs/additional-topics/community-docs.
+Open the Community Docs section of the repository at https://github.com/freenas/documentation/tree/master/content/en/hub/additional-topics/community-docs.
 When submitting an article in a language other than English, change the `/en/` to the language directory that matches the language of your article.
 
 {{< figure src="docrepo-truenas-articles-location.png" title="Community Articles" >}}

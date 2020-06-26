@@ -111,7 +111,7 @@ Les références internes utilisent le shortcode Hugo `ref` pour rechercher un f
 
 L'établissement d'un lien vers le fichier d'index d'un lot d'articles nécessite l'utilisation de la syntaxe générique [linking](#linking) pour pointer vers l'emplacement de l'article :
 ```
-Vous pouvez copier le [article template](/docs/contributing-docs/template/).
+Vous pouvez copier le [article template](/hub/contributing/template/).
 ```
 
 

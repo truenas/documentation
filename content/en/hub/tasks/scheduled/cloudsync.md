@@ -7,7 +7,7 @@ You can configure TrueNAS to send, receive, or synchronize data with a Cloud Sto
 Configuring a Cloud Sync task allows you to transfer data a single time or set up a recurring schedule to periodically transfer data.
 This can be an effective method to back up your data to a remote location.
 
-You should already have your <a href="/docs/initial-setup/storage/">TrueNAS Storage</a> configured.
+You should already have your <a href="/hub/initial-setup/storage/">TrueNAS Storage</a> configured.
 You will also need an account with the Cloud Storage provider and a storage location created with the provider, like an Amazon S3 bucket.
 Major providers like Amazon S3, Google Cloud, and Microsoft Azure are supported, along with a variety of other vendors.
 To see the full list of supported vendors, log in to the TrueNAS UI and go to *System > Cloud Credentials > Add* and open the *Provider* dropdown.
