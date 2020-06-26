@@ -17,7 +17,7 @@ file. For example, a script written for `sh` should be specified as
 `sh /mnt/pool1/helloWorld.sh`. Select a user to run the command or script. The
 user must have the necessary permissions to run it. Next, select a schedule
 for the script to run on. If a custom schedule is desired, select *Custom* and
-fill out the custom scheduler to meet your needs. The custom scheduler and can
+fill out the custom scheduler to meet your needs. The custom scheduler can
 accept standard [cron input strings](https://www.freebsd.org/cgi/man.cgi?query=crontab&sektion=5)
 for the *Minutes*, *Hours*, and *Days*. When *Hide standard output* (stdout) is
 unset, any standard output is mailed to the user account used to run the
