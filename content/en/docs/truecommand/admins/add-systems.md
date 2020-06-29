@@ -49,7 +49,7 @@ Groups are created by clicking **Configure (Gear) ‣ Systems ‣ + NEW GROUP**.
 Enter a name for the new group and click **ADD SYSTEM** to add a system to the group.
 When all the desired systems are added to the group, click **CREATE GROUP**.
 
-<img src="/images/tc-1.3-new-group>JPG">
+<img src="/images/tc-1.3-new-group.JPG">
 <br><br>
 
 Editing a group allows updating the group name or changing which systems are members of that group.
