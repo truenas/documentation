@@ -1,10 +1,18 @@
 ---
-title: "TrueNAS Enterprise Support"
-linktitle: "Support (TN Enterprise)"
-description: "Describing the various support options in TrueNAS Enterprise."
+title: "Getting Support"
+linktitle: "Support"
+description: "How to find help or contact iXsystems for support."
 ---
 
-## Article Goes Here
+Intro text
+
+## Support in TrueNAS CORE
+
+## Support in TrueNAS Enterprise
+
+TrueNAS Enterprise customers have a few additional options in addition to all the support options built into TrueNAS CORE.
+
+
 
 
 ## Contacting iXsystems Support
@@ -37,3 +45,26 @@ description: "Describing the various support options in TrueNAS Enterprise."
     <td class="tg-0pky">After Hours (24x7 Gold Level Support only):<br><br>US-only toll-free: 855-499-5131<br>International: 408-878-3140 (international calling<br>rates will apply)<br></td>
   </tr>
 </table>
+
+Outline:
+
+Support
+  Intro
+  CORE
+    System > Support
+      view license info
+      report bugs
+    Forums
+    IRC (verify if this is still active or recommended) (do not add)
+    3rd party commercial support (https://www.ixsystems.com/freenas-commercial-support/) (verify this is still recommended, possibly CORE users with custom hardware only) (do not add)
+    Jira NAS project
+      Reporting Bugs
+        required fields
+        attaching files (debug/screenshots)
+      Feature Suggestions
+        voting on suggestions
+  Enterprise
+    System > Support
+      proactive support
+    Contacting iXsystems Support
+      Support purchase options link? (overview: https://www.ixsystems.com/support/ , portal: https://support.ixsystems.com/ , purchase: use standard Sales GREP4IX number for purchasing support.)
