@@ -28,7 +28,7 @@ To manually connect a new system, open the **Systems** tab and click **+ NEW SYS
 Enter the system IP address or DNS hostname, nickname, and password.
 If a mistake is made, the contents of the fields can be reset by clicking **RESET FORM**.
 
-<img src="/images/tc-systems-new.png">
+<img src="/images/tc-1.3-systems.JPG">
 <br><br>
 
 ### Adjusting Systems
@@ -49,7 +49,7 @@ Groups are created by clicking **Configure (Gear) ‣ Systems ‣ + NEW GROUP**.
 Enter a name for the new group and click **ADD SYSTEM** to add a system to the group.
 When all the desired systems are added to the group, click **CREATE GROUP**.
 
-<img src="/images/tc-system-groups-add.png">
+<img src="/images/tc-1.3-new-group>JPG">
 <br><br>
 
 Editing a group allows updating the group name or changing which systems are members of that group.
