@@ -23,7 +23,7 @@ This means a user can log in with an LDAP or AD account without creating a separ
 The LDAP server IP address or DNS hostname and Domain are required to use LDAP/AD.
 The LDAP or AD Username (optional) is required when the TrueCommand user name does not match the LDAP or AD credentials.
 
-<img src="/images/tc-users-create.png">
+<img src="/images/tc-1.3-new-user.JPG">
 <br><br>
 
 Users can also be assigned to existing Teams.
@@ -38,7 +38,7 @@ Deleting a user account permanently removes the user and cannot be undone.
 
 To configure account details and permissions, open the **Configure (Gear)** menu, click **Users** and **Edit user (Pencil)**.
 
-<img src="/images/tc-users-edit.png">
+<img src="/images/tc-1.3-edit-user.JPG">
 <br><br>
 
 There are several different elements that can be configured for a user, including the user's avatar, personal details, Team membership, and system permissions.
@@ -79,7 +79,7 @@ For example, changing the permissions of a *Metrics* team that has 20 joined use
 
 To create a team, open the **Configure (Gear)** menu and click **TEAMS** > **+ NEW TEAM**.
 
-<img src="/images/tc-teams-create.png">
+<img src="/images/tc-1.3-new-team.JPG">
 <br><br>
 
 Enter a name and select an avatar for the new team.
@@ -89,8 +89,9 @@ You can edit the permissions for a team after creating it.
 
 To adjust the team members or permissions, open the **Configure (Gear)** menu and click **Teams** > **Edit team (Pencil)**.
 
-<img src="/images/tc-teams-edit.png">
+<img src="/images/tc-1.3-edit-team.JPG">
 <br><br>
+
 
 You can adjust the team profile with a new avatar, change the team name, or grant team members permission to create new TrueCommand Alert Rules.
 
