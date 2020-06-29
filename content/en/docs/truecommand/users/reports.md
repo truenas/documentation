@@ -6,7 +6,7 @@ description: "How to create and view system reports."
 
 The **Reports** page is used to customize charts of system metrics for data analysis.
 
-<img src="/images/tc-reports.png">
+<img src="/images/tc-1.3-reports.JPG">
 <br><br>
 
 These reports are created by or shared with the current TrueCommand user.
@@ -19,9 +19,13 @@ Viewing a report requires that the user has access to the systems that are being
 
 Click **+ CREATE REPORT** to create a customizable report.
 Enter a report name and an optional description for the report.
+
+<img src="/images/tc-1.3-reports-new-1.JPG">
+<br><br>
+
 Click BROWSE WIDGETS or WIDGET to add charts to the report.
 
-<img src="/images/tc-reports-widgets.png">
+<img src="/images/tc-1.3-reports-new-2.JPG">
 <br><br>
 
 ### Custom Charts
@@ -39,6 +43,19 @@ Fill in these options when adding a custom chart:
   Click **SAVE** to add the custom chart to the report or **BACK** to go back and change a setting or data source.
 
 After adding charts to the report, click **SAVE** to make this report available for use.
+
+After creating a report, click **GENERATE** to generate the report.
+<img src="/images/tc-1.3-reports-new-3.JPG">
+<br><br>
+
+Next add in the range and systems to be included in the report, and click the **GENERATE** button.
+<img src="/images/tc-1.3-reports-new-4.JPG">
+<br><br>
+
+The report will be generated and displayed.
+<img src="/images/tc-1.3-reports-new-5.JPG">
+<br><br>
+
 
 ## Share Report
 
@@ -68,4 +85,3 @@ Clicking **Confirm** shows the saved charts from the report, populated with syst
 
 <img src="/images/tc-reports-view.png">
 <br><br>
-
