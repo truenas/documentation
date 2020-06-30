@@ -205,7 +205,7 @@ any files on the *host* dataset that do not existing on the *remote* module.
 Alternatively, if the task is set to *push*, this option will delete any files
 on the *remote* module that are not in the *host* dataset. This is a
 **destructive** option. Use with caution as data can be deleted permanently.
-Set the *Quite* option to suppress informational messages from the *remote*
+Set the *Quiet* option to suppress informational messages from the *remote*
 system. Set the option *Preserve Permissions* to preserve original file
 permissions. This is useful when the user is set to root. Set
 *Preserve Extended Attributes* to preserve
