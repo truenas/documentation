@@ -112,7 +112,7 @@ run it manually.
 
 ### Rsync Mode: SSH
 
-When using the rsync mode *SSH*, it requires the SSH service to be enabled
+Using the *SSH* rsync mode requires the SSH service to be enabled
 on the *remote* system. To enable SSH, go to **Services** and click the slider
 for SSH. SSH settings can be configured by clicking <i class="fas fa-pen"></i>.
 Take note of the TCP port set on the *remote* system. The default port for the
