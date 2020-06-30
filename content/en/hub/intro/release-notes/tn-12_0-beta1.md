@@ -23,8 +23,15 @@ Below is a summary of some of the 190 combined bug fixes, updates, and improveme
 worked on, see the
 <a href="https://jira.ixsystems.com/issues/?filter=-4&jql=fixVersion%20IN%20(12006)">FreeNAS/TrueNAS 12.0-BETA1 Roadmap</a>.
 
+{{% alert title="Plugin Upgrades" color="info" %}}
+Installed plugins also require an upgrade to function with TrueNAS 12.0-Beta1.
+However, this upgrade is one-way; reverting the system to an earlier version of TrueNAS means any upgraded plugins will cease to function.
+If you wish to irreversibly upgrade your plugins after updating TrueNAS, log in to the web interface, open the Shell, and type `iocage upgrade <plugin-jail-name>`.
+For example, to upgrade a weechat plugin that was named "weechattest", enter `iocage upgrade weechattest`
+{{% /alert %}}
 
-<h2>New Features and Improvements</h2>
+## New Features and Improvements
+
 <ul>
     <li>[<a href='https://jira.ixsystems.com/browse/NAS-100871'>NAS-100871</a>] - In the new GUI: When deleting a VM device the confirmation screen doesn't identify the device about to be deleted</li>
     <li>[<a href='https://jira.ixsystems.com/browse/NAS-100405'>NAS-100405</a>] - Native ZFS Encryption</li>
@@ -54,7 +61,7 @@ worked on, see the
     <li>[<a href='https://jira.ixsystems.com/browse/NAS-105220'>NAS-105220</a>] - Add support for dedicated metadata devices to ZFS</li>
 </ul>
 
-<h2>Bug Fixes</h2>
+## Bug Fixes
 <ul>
     <li>[<a href='https://jira.ixsystems.com/browse/NAS-105531'>NAS-105531</a>] - static usage of FreeNAS when upgrading zpool</li>
     <li>[<a href='https://jira.ixsystems.com/browse/NAS-105565'>NAS-105565</a>] - Unable to Access TN Scale UI</li>
