@@ -25,7 +25,7 @@ system is turned on, check the *Start Automatically* box.
 
 The rsync service settings can be configured by clicking
 <i class="fas fa-pen"></i>. The default TCP port that rsync listens on can be
-changed, and additional auxillary parameters from
+changed, and additional auxiliary parameters from
 <a href="https://www.samba.org/ftp/rsync/rsyncd.conf.html">rsyncd.conf(5)</a>
 can be added. Don't forget to click *SAVE* when changing the settings. Unless a
 specific setting is needed, it is recommended to use the default settings for
@@ -104,7 +104,7 @@ Extended attributes must be supported by both systems. Set *Delay Updates* to
 save the temporary files from updated files to a holding directory until the
 end of the transfer when all transferred files are renamed into place.
 Additional <a href="https://rsync.samba.org/ftp/rsync/rsync.html">rsync(1)</a>
-options can be included in *Auxillary Parameters*. Separate entries by pressing
+options can be included in *Auxiliary Parameters*. Separate entries by pressing
 <kbd>Enter</kbd>. The *\** character must be escaped with a backslash
 (\\*.txt) or used inside single quotes ('\*.txt'). Unsetting *Enabled* only
 keeps the task from automatically running. You can still save the rsync task and
@@ -214,7 +214,7 @@ Extended attributes must be supported by both systems. Set *Delay Updates* to
 save the temporary files from updated files to a holding directory until the
 end of the transfer when all transferred files are renamed into place.
 Additional <a href="https://rsync.samba.org/ftp/rsync/rsync.html">rsync(1)</a>
-options can be included in *Auxillary Parameters*. Separate entries by pressing
+options can be included in *Auxiliary Parameters*. Separate entries by pressing
 <kbd>Enter</kbd>. The *\** character must be escaped with a backslash
 (\\*.txt) or used inside single quotes ('\*.txt'). Unsetting *Enabled* only
 keeps the task from automatically running. You can still save the rsync task and
