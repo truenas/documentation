@@ -25,15 +25,13 @@ recommended to have at least 16GB.
 
 * **Storage disks and controllers**: FreeNAS supports hot-pluggable
   SATA drives when AHCI is enabled in the BIOS. We recommend using
-  [Western Digital Red](https://www.westerndigital.com/products/internal-drives/wd-red-hdd "Western Digital Red")
-  NAS disk drives as storage drives. A list of supported disk
-  controllers is found
-  [here](https://www.freebsd.org/releases/11.3R/hardware.html#disk).
-
+  [Western Digital](https://www.westerndigital.com/products/internal-drives#enterprise "Western Digital")
+  NAS disk drives as storage drives. Always make sure to use a hard drive with conventional magnetic recording 
+  (CMR) techology and avoid drives with shingled magnetic recording (SMR) technology for best results with TrueNAS and OpenZFS. 
+  A list of supported disk controllers is found [here](https://www.freebsd.org/releases/11.3R/hardware.html#disk).
 * **Network Interfaces**: The [Ethernet section](https://www.freebsd.org/releases/11.3R/hardware.html#ethernet)
-  of the FreeBSD Hardware Notes indicates which interfaces are supported
-  by each driver. We recommend using Intel or Chelsio interfaces for
-  best performance.
+  of the FreeBSD Hardware Notes indicates which interfaces are supported by each driver. 
+  We recommend using Intel or Chelsio interfaces for best performance.
 
 ## Preparing the Install Media
 
