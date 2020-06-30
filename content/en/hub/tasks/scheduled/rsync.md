@@ -208,8 +208,8 @@ on the *remote* module that are not in the *host* dataset. This is a
 Set the *Quiet* option to suppress informational messages from the *remote*
 system. Set the option *Preserve Permissions* to preserve original file
 permissions. This is useful when the user is set to root. Set
-*Preserve Extended Attributes* to preserve
-<a href="https://en.wikipedia.org/wiki/Extended_file_attributes">Extended attributes</a>.
+*Preserve Extended Attributes* to keep the advanced file system features and file metadata through the transfer
+(see <a href="https://en.wikipedia.org/wiki/Extended_file_attributes">Extended attributes</a>).
 Extended attributes must be supported by both systems. Set *Delay Updates* to
 save the temporary files from updated files to a holding directory until the
 end of the transfer when all transferred files are renamed into place.
