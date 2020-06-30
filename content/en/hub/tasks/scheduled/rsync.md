@@ -195,7 +195,7 @@ to automatically create the defined *Remote Path* if it does not exist on the
 
 Setting the *Times* option preserves modification times of the files. Set
 *Compress* to reduce the size of data to transmit. This is recommended for slow
-connections. *Archives* can be set to run recursively preserving symlinks,
+connections. *Archives* can be set to run recursively, preserving symlinks,
 permissions, modification times, group, and special files. When run as root, the
 owner, device files, and special files are also preserved. This is equivalent to
 passing the flags `-rlptgoD` to rsync. When *Delete* is set, the rsync task
