@@ -176,7 +176,7 @@ path. Select the user to run the rsync task. Make sure this is the same user
 the ssh key pair was created for. In the example given, the user is root. Choose
 a direction for the rsync task. When *push* is selected, data from the *host*
 dataset copies to the *remote* dataset. When *pull* is selected,
-data form the *remote* dataset is copied into the *host* dataset. An optional
+data from the *remote* dataset is copied into the *host* dataset. An optional
 description can be specified. Select a schedule for the rsync task to run on.
 If a custom schedule is desired, select *Custom* and fill out the custom
 scheduler to meet your needs. The custom scheduler can accept standard
