@@ -75,7 +75,7 @@ If a custom schedule is desired, select *Custom* and fill out the custom
 scheduler to meet your needs. The custom scheduler can accept standard
 [cron input strings](https://www.freebsd.org/cgi/man.cgi?query=crontab&sektion=5)
 for the *Minutes*, *Hours*, and *Days*. By default, the *Recursive* option is
-set. If unset, the rsync task will not copy an subdirectories in the *host*
+set. If unset, the rsync task will not copy any subdirectories in the *host*
 dataset.
 
 Next, enter the *remote* host IP address or hostname.
