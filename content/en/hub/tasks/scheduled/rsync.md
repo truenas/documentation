@@ -83,7 +83,7 @@ Use the format *username@remote_host* if the username differs on the *remote*
 host. Select *Module* in the *Rsync Mode* dropdown. Enter the
 *Remote Module Name* exactly.
 
-Setting the *Times* option, preserves modification times of the files. Set
+Setting the *Times* option preserves the modification times of files. Set
 *Compress* to reduce the size of data to transmit. This is recommended for slow
 connections. *Archives* can be set to run recursively preserving symlinks,
 permissions, modification times, group, and special files. When run as root, the
