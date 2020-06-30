@@ -26,8 +26,8 @@ worked on, see the
 {{% alert title="Plugin Upgrades" color="info" %}}
 Installed plugins also require an upgrade to function with TrueNAS 12.0-Beta1.
 However, this upgrade is one-way; reverting the system to an earlier version of TrueNAS means any upgraded plugins will cease to function.
-If you wish to irreversibly upgrade your plugins after updating TrueNAS, log in to the web interface, open the Shell, and type `iocage upgrade <plugin-jail-name>`.
-For example, to upgrade a weechat plugin that was named "weechattest", enter `iocage upgrade weechattest`
+If you wish to irreversibly upgrade your plugins after updating TrueNAS, open the shell and enter `iocage upgrade <plugin-jail-name>`.
+For example, to upgrade a weechat plugin that was named "weechattest", enter `iocage upgrade weechattest`.
 {{% /alert %}}
 
 ## New Features and Improvements
@@ -79,3 +79,7 @@ For example, to upgrade a weechat plugin that was named "weechattest", enter `io
     <li>[<a href='https://jira.ixsystems.com/browse/NAS-105769'>NAS-105769</a>] - Min and max length errors are not accurate</li>
     <li>[<a href='https://jira.ixsystems.com/browse/NAS-105803'>NAS-105803</a>] - Fix label / logic issues on dataset form</li>
 </ul>
+
+## Known Issues
+
+Systems that have a large number of plugins installed can take longer to populate the plugin list ([NAS-106637](https://jira.ixsystems.com/browse/NAS-106637)).
