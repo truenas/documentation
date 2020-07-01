@@ -77,8 +77,8 @@ Open the **Configure Menu ‣ Reports** page and click **Generate report (Eye)**
 Click **GENERATE** to select the systems and time frame for the report
 
 <img src="/images/tc-1.3-generate-report.PNG">
+<br>
 <img src="/images/tc-1.3-generate-report-2.PNG">
-
 <br><br>
 
 A non-administrative user must have the appropriate permissions to view data from specific systems.
