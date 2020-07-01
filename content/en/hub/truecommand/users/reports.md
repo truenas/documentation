@@ -6,7 +6,7 @@ description: "How to create and view system reports."
 
 The **Reports** page is used to customize charts of system metrics for data analysis.
 
-<img src="/images/tc-1.3-reports.JPG">
+<img src="/images/tc-1.3-reporting.PNG">
 <br><br>
 
 These reports are created by or shared with the current TrueCommand user.
@@ -20,12 +20,12 @@ Viewing a report requires that the user has access to the systems that are being
 Click **+ CREATE REPORT** to create a customizable report.
 Enter a report name and an optional description for the report.
 
-<img src="/images/tc-1.3-reports-new-1.JPG">
+<img src="/images/tc-1.3-reports-new-1.PNG">
 <br><br>
 
 Click BROWSE WIDGETS or WIDGET to add charts to the report.
 
-<img src="/images/tc-1.3-reports-new-2.JPG">
+<img src="/images/tc-1.3-reports-new-2.PNG">
 <br><br>
 
 ### Custom Charts
@@ -45,15 +45,15 @@ Fill in these options when adding a custom chart:
 After adding charts to the report, click **SAVE** to make this report available for use.
 
 After creating a report, click **GENERATE** to generate the report.
-<img src="/images/tc-1.3-reports-new-3.JPG">
+<img src="/images/tc-1.3-reports-new-3.PNG">
 <br><br>
 
 Next add in the range and systems to be included in the report, and click the **GENERATE** button.
-<img src="/images/tc-1.3-reports-new-4.JPG">
+<img src="/images/tc-1.3-reports-new-4.PNG">
 <br><br>
 
 The report will be generated and displayed.
-<img src="/images/tc-1.3-reports-new-5.JPG">
+<img src="/images/tc-1.3-reports-new-5.PNG">
 <br><br>
 
 
@@ -76,12 +76,14 @@ Clicking the **OWNER** or **SHARED WITH** text toggles every name in the list.
 Open the **User Menu ‣ Reports** page and click **Generate report (Eye)** on the appropriate report.
 Click **GENERATE** to select the systems and time frame for the report
 
-<img src="/images/tc-reports-generate.png">
+<img src="/images/tc-1.3-generate-report.PNG">
+<img src="/images/tc-1.3-generate-report-2.PNG">
+
 <br><br>
 
 A non-administrative user must have the appropriate permissions to view data from specific systems.
 
 Clicking **Confirm** shows the saved charts from the report, populated with system data according to the selected amount of time.
 
-<img src="/images/tc-reports-view.png">
+<img src="/images/tc-1.3-reports-new-5.PNG">
 <br><br>
