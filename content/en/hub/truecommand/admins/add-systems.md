@@ -11,16 +11,6 @@ This menu is organized into three tabs: **Systems**, **System Groups**, and **Di
 These tabs contain all the options to connect and organize systems in TrueCommand.
 All added systems are listed in the **Systems** tab with the current connection status.
 
-### Adding an Automatically Detected System
-
-The **Discovered Systems** tab has a list of all the systems TrueCommand has detected on the local network.
-
-<img src="/images/tc-systems-discovered.png">
-<br><br>
-
-Click the *plus* to connect that system to TrueCommand.
-This requires entering a nickname and password for the system.
-
 ### Adding a System Manually
 
 To manually connect a new system, open the **Systems** tab and click **+ NEW SYSTEM**.
