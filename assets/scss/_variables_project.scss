@@ -102,8 +102,8 @@ $secondary: #666666;
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 375px 375px 375px;
-  grid-template-areas: "whatis initialsetup tasks" "advanced vcenter-plugin truecommand" "hardware references docs-contribute";
+  grid-template-rows: 375px 375px 375px 375px;
+  grid-template-areas: "whatis initialsetup tasks" "advanced vcenter-plugin scale" "truecommand hardware references" "docs-contribute . .";
   max-width: 90%;
   grid-column-gap: 100px;
   grid-row-gap: 75px;
@@ -121,6 +121,8 @@ $secondary: #666666;
 .references { grid-area: references; }
 
 .vcenter-plugin { grid-area: vcenter-plugin; }
+
+.scale { grid-area: scale; }
 
 .truecommand { grid-area: truecommand; }
 
