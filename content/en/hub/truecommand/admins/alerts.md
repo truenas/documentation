@@ -13,7 +13,7 @@ To see all alerts that TrueCommand has discovered, open the **Configure (Gear)**
 Administrator accounts can see all generated alerts.
 A non-administrator account can only view alerts according to their team and user account permissions.
 
-<img src="/images/tc-1.3-alerts-notices.JPG">
+<img src="/images/tc-1.3-alerts-notices.PNG">
 <br><br>
 
 The **Active Alerts** tab shows all unresolved alerts.
@@ -45,7 +45,7 @@ TrueCommand administrators and [team members]({{< relref "../admins/users.md#con
 
 To view all TrueCommand alert rules, open the **Configure (Gear)** and click **Alert Rules**.
 
-<img src="/images/tc-1.3-alert-rules.JPG">
+<img src="/images/tc-1.3-alert-rules.PNG">
 <br><br>
 
 Details about each TrueCommand alert rule are shown on this page, including which user account created the rule.
@@ -54,7 +54,7 @@ Alert rules can be activated, suspended, edited, or deleted by either an adminis
 New TrueCommand alert rules can be created to monitor a wide variety of system information and generate a TrueCommand alert if specific conditions occur.
 To create a new alert rule, click **+ NEW ALERT RULE** and follow the creation wizard:
 
-<img src="/images/tc-1.3-mew-alert-rule.JPG">
+<img src="/images/tc-1.3-alert-rulew-new.PNG">
 <br><br>
 
 * Select a System: The rule will apply to these systems.
@@ -78,7 +78,7 @@ TrueCommand uses different services to expand how alerts are communicated to ind
 Individual user accounts can use these services to manage how that account is notified of an alert.
 To configure an alert service plugin, open the **Configure (Gear)** and click **Alert Services**.
 
-<img src="/images/tc-1.3-alert-services.JPG">
+<img src="/images/tc-1.3-alert-services.PNG">
 <br><br>
 
 Each service has different configuration options, but each can be tested to ensure your settings are working correctly.
