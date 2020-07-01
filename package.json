@@ -16,7 +16,9 @@
     "url": "https://github.com/bep/tech-doc-hugo/issues"
   },
   "homepage": "https://github.com/bep/tech-doc-hugo#readme",
-  "dependencies": {},
+  "dependencies": {
+    "material-design-icons": "^3.0.1"
+  },
   "devDependencies": {
     "autoprefixer": "^9.8.4",
     "postcss-cli": "^7.1.1"
