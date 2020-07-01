@@ -101,3 +101,12 @@ To remove users from the team, click **- (minus)** on the desired user.
 
 The system permissions are configured exactly the same way as described above for individual user accounts.
 Note that individual user account permissions can override team permissions.
+
+
+## Resetting a User password from the command line
+
+The user password can be reset using the command line when using the Docker version of True Command.  Open the shell on the system running the True Command Container and use the following command, replacing the values in brackets with their appropiate values. 
+```
+docker exec -it [docker instance ID] resetpw [username]
+```
+
