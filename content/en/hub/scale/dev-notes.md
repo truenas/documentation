@@ -5,4 +5,39 @@ description: "Running updates about TrueNAS SCALE Nightly status and current iss
 
 ## Nightly Status
 
+Nightly images for TrueNAS SCALE are built every 24 hours, at around 2AM Eastern (EDT/EST) time. Online updates are created every 2 hours and can be used via the UI's online updating page.
+
+ISO's can be downloaded here:
+
+[https://www.truenas.com/download-truenas-scale/](http://https://www.truenas.com/download-truenas-scale/ "https://www.truenas.com/download-truenas-scale/")
+
+
 ## Current Issues
+
+The nightly images are very much a WIP until we get farther along in our development process. They should be suitable for very adventerous users and developers who are not afraid to use the command-line in some instances.
+
+
+**Supported via the UI:**
+- Pool creation
+- Pool Management
+- Samba Shares
+- iSCSI Shares
+- AFP Shares
+- AD / LDAP Directory Services
+- Online / Offline updating
+
+**Supported via the CLI (Currently)**
+- Docker
+- Docker with NVIDIA --gpu passthrough flags
+- KVM / Libvirt
+- Gluster
+- Wireguard
+
+**TODO**
+- NFS Shares
+- Posix NFSv4 ACLs
+- Docker UI
+- Gluster (Clustered Datasets) support for TrueCommand
+- KVM UI
+
+
