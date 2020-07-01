@@ -60,7 +60,7 @@ The report will be generated and displayed.
 ## Share Report
 
 By default, the reports created by a user are available only to that user.
-To share a report with other users or teams, open the **Configure Menu ‣ Reports** screen and click the **Share** button for a report.
+To share a report with other users or teams, open the **Configure (Gear) Menu ‣ Reports** screen and click the **Share** button for a report.
 Reports can also be shared after clicking **Generate report (Eye)**.
 
 <img src="/images/tc-1.3-reports-share.PNG">
@@ -73,7 +73,7 @@ Clicking the **OWNER** or **SHARED WITH** text toggles every name in the list.
 
 ## Viewing a System Report
 
-Open the **Configure Menu ‣ Reports** page and click **Generate report (Eye)** on the appropriate report.
+Open the **Configure (Gear) Menu ‣ Reports** page and click **Generate report (Eye)** on the appropriate report.
 Click **GENERATE** to select the systems and time frame for the report
 
 <img src="/images/tc-1.3-generate-report.PNG">
