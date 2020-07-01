@@ -3,6 +3,13 @@ title: "Developer's Notes"
 description: "Running updates about TrueNAS SCALE Nightly status and current issues."
 ---
 
+## System Requirements
+
+- Any x86_64 compatible (Intel or AMD) processor
+- 8GB of RAM (More is better)
+- 20Gb Boot Device
+
+
 ## Nightly Status
 
 Nightly images for TrueNAS SCALE are built every 24 hours, at around 2AM Eastern (EDT/EST) time. Online updates are created every 2 hours and can be used via the UI's online updating page.
@@ -12,7 +19,7 @@ ISO's can be downloaded here:
 [https://www.truenas.com/download-truenas-scale/](http://https://www.truenas.com/download-truenas-scale/ "https://www.truenas.com/download-truenas-scale/")
 
 
-## Current Issues
+## Current Feature Status
 
 The nightly images are very much a WIP until we get farther along in our development process. They should be suitable for very adventerous users and developers who are not afraid to use the command-line in some instances.
 
@@ -37,7 +44,9 @@ The nightly images are very much a WIP until we get farther along in our develop
 - NFS Shares
 - Posix NFSv4 ACLs
 - Docker UI
-- Gluster (Clustered Datasets) support for TrueCommand
 - KVM UI
+- Clustered Datasets API support for TrueCommand
+- TrueCommand Clustering UI for SCALE
+
 
 
