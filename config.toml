@@ -201,9 +201,9 @@ expiryDate = ["expiryDate"]
 [[params.topics]]
 	name = "Solutions"
 	url = "/hub/solutions/"
-#[[params.topics]]
-#	name = "SCALE"
-#	url = "/hub/scale/"
+[[params.topics]]
+	name = "TrueNAS SCALE"
+	url = "/hub/scale/"
 [[params.topics]]
 	name = "TrueCommand"
 	url = "/hub/truecommand/"
