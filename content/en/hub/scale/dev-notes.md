@@ -7,7 +7,7 @@ description: "Running updates about TrueNAS SCALE Nightly status and current iss
 
 - Any x86_64 compatible (Intel or AMD) processor
 - 8GB of RAM (More is better)
-- 20Gb Boot Device
+- 20GB Boot Device
 
 
 ## Nightly Status
