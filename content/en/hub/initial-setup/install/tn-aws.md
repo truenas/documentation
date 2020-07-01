@@ -43,19 +43,65 @@ weight: 3
 
 These instructions demonstrate how to create a virtualized TrueNAS image on FreeBSD, configure it with Amazon Elastic Compute Cloud (EC2), and access the TrueNAS web interface.
 There are a few things that must be prepared before building the image.
-Create an [AWS account](https://portal.aws.amazon.com/billing/signup?nc2=h_ct&src=default&redirect_url=https%3A%2F%2Faws.amazon.com%2Fregistration-confirmation#/start),
-[S3 bucket](https://docs.aws.amazon.com/quickstarts/latest/s3backup/step-1-create-bucket.html),
-and a [user with permissions to EC2](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html).
-After creating the IAM user, download an [Access Key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html)
-to the working directory on the FreeBSD system.
 The FreeBSD system needs two applications to create, configure, and upload the virtual machine image:
 [bhyve](https://bhyve.org/)
-and [bsdec2-image-upload](https://www.freshports.org/net/bsdec2-image-upload/).
+and [bsdec2-image-upload](https://www.freshports.org/net/bsdec2-image-upload/). The most recent version (>=1.3.1) of bsdec2-image-upload is required, otherwise an SSL error will occur when attempting to upload the image.
+
+**NOTE**: Currently bsdec2-image-upload will fail on images whose file size is not 10GB. An issue has been created, but in the meantime a patch may be needed to correct this error, which involves cloning the [project on GitHub](https://github.com/cperciva/bsdec2-image-upload) and editing main.c, replacing:
+
+```
+"BlockDeviceMapping.1.Ebs.VolumeSize=10&"
+```
+
+with
+
+```
+"BlockDeviceMapping.1.Ebs.VolumeSize=16&"
+```
+
+Following the size required for TrueNAS. To build, ensure either libressl-devel or openssl-devel is installed and run "make install".
+
+Create an [AWS account](https://portal.aws.amazon.com/billing/signup?nc2=h_ct&src=default&redirect_url=https%3A%2F%2Faws.amazon.com%2Fregistration-confirmation#/start),
+[S3 bucket](https://docs.aws.amazon.com/quickstarts/latest/s3backup/step-1-create-bucket.html). Record the region associated with the S3 bucket. It is also recommened the bucket have a lifetime policy which deletes data after 1 day, as bsdec2-image-upload will not delete files from S3 and the files are no longer needed after the AMI is registered.
+A [user with permissions to EC2 and S3](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html) will also be required with the following permissions:
+
+```
+s3:PutObject
+s3:GetObject
+ec2:RegisterImage
+ec2:DescribeImages
+s3:DeleteObject
+ec2:ImportVolume
+ec2:DescribeConverstionTasks
+ec2:CreateSnapshot
+ec2:DescribeSnapshots
+ec2:DeleteVolume
+ec2:DescribeRegions
+ec2:CopyImage
+ec2:ModifyImageAttribute
+```
+
+Alternativly you can just give full access to S3 and EC2.
+
+After creating the IAM user, download an [Access Key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html)
+to the working directory on the FreeBSD system. The file should look like this:
+
+```
+Access key ID,Secret access key
+{ACCESS_KEY},{SECRET}
+```
+
+Open a new file called KEY.pem and copy the information contained in the csv file as such:
+
+```
+ACCESS_KEY_ID={ACCESS_KEY}
+ACCESS_KEY_SECRET={SECRET}
+```
 
 ### Create TrueNAS Image
 
 When all the prerequisites are ready, [download a TrueNAS .iso file](https://www.freenas.org/download-freenas-release/).
-Any version from FreeNAS 11.2 and newer will work.
+Any version from FreeNAS/TrueNAS 11.2 and later will work.
 Open a shell and go to your local working directory.
 Create an empty image file with `truncate -s 16G {TRUENAS}.img`.
 Replace {TRUENAS} with your name for the new image file.
@@ -75,6 +121,14 @@ ifconfig bridge0 up
 Use `bhyveload -m 4GB -d truenas.img vm0` to load the image into the hypervisor and create virtual machine *vm0* with four gigabytes of memory.
 To install TrueNAS into the image, load both the image and TrueNAS *.iso* file into bhyve: `bhyve -c 2 -m 4G -H -A -P -g 0 -s 0,hostbridge -s 1,lpc -s 2,virtio-net,tap0 -s 3,virtio-blk,{TRUENAS}.img -s 31,ahci-cd,{TRUENAS-VERSION}.iso -l com1,stdio vm0`.
 Replace {TRUENAS} with the name of the image file and {TRUENAS-VERSION} with the TrueNAS *.iso* file name.
+
+**NOTE**:
+If the following commands fail, for instance an error concerning "boot.lua", then try the following command which uses a shell script included in the bhyve installation combining the two pervious commands:
+
+```
+sh /usr/share/examples/bhyve/vmrun.sh -c 2 -m 4GB -t tap0 -d {TRUENAS}.img -i -I {TRUENAS-VERSION}.iso vm0
+```
+
 When the TrueNAS installer opens, make sure booting with BIOS is chosen and start the installation.
 Power off the device when the installation is done.
 
@@ -87,9 +141,21 @@ bhyveload -m 4G -d {TRUENAS}.img vm0
 bhyve -c 2 -m 4G -H -A -P -g 0 -s 0,hostbridge -s 1,lpc -s 2,virtio-net,tap0 -s 3,virtio-blk, {TRUENAS}.img -l com1,stdio vm0
 ```
 
-To make sure the virtual machine's network settings are compatible with EC2, reset the network interface.
-Create a new DHCP interface named `xn0`, then reset configurations to default.
-Power off the device.
+**NOTE**:
+If the following commands fail, for instance an error concerning "boot.lua", then try the following command which uses a shell script included in the bhyve installation combining the two pervious commands:
+
+```
+sh /usr/share/examples/bhyve/vmrun.sh -c 2 -m 4GB -t tap0 -d {TRUENAS}.img vm0
+```
+
+Once booted, execute the following commands to ensure network compatability with EC2:
+
+```
+Reset the network interface.
+Create a new DHCP interface named `xn0`.
+```
+
+Once completed, power off the device.
 
 ### Upload Image to EC2
 
