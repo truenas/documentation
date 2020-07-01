@@ -20,7 +20,7 @@ creating a new scrub task.
 
 To create a scrub task for a pool, go to **Tasks > Scrub Tasks** and click
 *ADD*. First, select a pool for the scrub task. Enter a number for the
-*Threshhold days*. The *Threshhold days* are the number days before a completed
+*Threshhold days*. The *Threshhold days* are the number of days before a completed
 scrub is allowed to run again. This controls the task schedule. For example,
 scheduling a scrub to run daily and setting *Threshold days* to 7 means the
 scrub attempts to run daily. When the scrub is successful, it continues to
