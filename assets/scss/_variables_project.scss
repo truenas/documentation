@@ -102,8 +102,8 @@ $secondary: #666666;
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 375px 375px 375px;
-  grid-template-areas: "whatis initialsetup tasks" "advanced vcenter-plugin truecommand" "hardware references docs-contribute";
+  grid-template-rows: 375px 375px 375px 375px;
+  grid-template-areas: "whatis initialsetup tasks" "advanced vcenter-plugin scale" "truecommand hardware references" "docs-contribute . .";
   max-width: 90%;
   grid-column-gap: 100px;
   grid-row-gap: 75px;
@@ -121,6 +121,8 @@ $secondary: #666666;
 .references { grid-area: references; }
 
 .vcenter-plugin { grid-area: vcenter-plugin; }
+
+.scale { grid-area: scale; }
 
 .truecommand { grid-area: truecommand; }
 
@@ -274,3 +276,28 @@ nav a {
 .footer-darkblue {
   background-color: #00597F;
 }
+
+// hardware grid for TrueNAS WhatIs article
+.hw-grid-container {
+  display: grid;
+  grid-template-columns: 15% 1fr;
+  grid-template-rows: repeat(4, 1fr);
+  gap: 25px 25px;
+ grid-template-areas: "hw-mimage hw-mtext" "hw-ximage hw-xtext" "hw-miniimage hw-minitext" "hw-certifiedimage hw-certifiedtext"
+}
+
+.hw-mimage { grid-area: hw-mimage; }
+
+.hw-mtext { grid-area: hw-mtext; }
+
+.hw-ximage { grid-area: hw-ximage; }
+
+.hw-xtext { grid-area: hw-xtext; }
+
+.hw-miniimage { grid-area: hw-miniimage; }
+
+.hw-minitext { grid-area: hw-minitext; }
+
+.hw-certifiedimage { grid-area: hw-certifiedimage; }
+
+.hw-certifiedtext { grid-area: hw-certifiedtext; }
