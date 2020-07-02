@@ -1,6 +1,5 @@
 ---
-title: "TrueCommand"
-linkTitle: "TrueCommand"
-description: "Using TrueCommand to oversee multiple TrueNAS installations."
-weight: 7
+title: "TrueCommand 1.2"
+description: "Articles about installing, administrating, and using TrueCommand 1.2."
+weight: 2
 ---
