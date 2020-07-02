@@ -92,7 +92,6 @@ To adjust the team members or permissions, open the **Configure (Gear)** menu an
 <img src="/images/tc-1.3-teams-edit.PNG">
 <br><br>
 
-
 You can adjust the team profile with a new avatar, change the team name, or grant team members permission to create new TrueCommand Alert Rules.
 
 The **Members** section shows which user accounts are included in the team.
@@ -109,4 +108,3 @@ The user password can be reset using the command line when using the Docker vers
 ```
 docker exec -it [docker instance ID] resetpw [username]
 ```
-
