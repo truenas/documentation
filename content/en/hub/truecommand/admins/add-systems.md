@@ -7,7 +7,7 @@ weight: 3
 ## Connecting Systems to TrueCommand
 
 To connect a system to TrueCommand, open the **Configure (Gear)** menu and click **Systems**.
-This menu is organized into three tabs: **Systems**, **System Groups**, and **Discovered Systems**.
+This menu is organized into two tabs: **Systems** and **System Groups**.
 These tabs contain all the options to connect and organize systems in TrueCommand.
 All added systems are listed in the **Systems** tab with the current connection status.
 
