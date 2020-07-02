@@ -56,7 +56,6 @@ The report will be generated and displayed.
 <img src="/images/tc-1.3-reports-new-5.PNG">
 <br><br>
 
-
 ## Share Report
 
 By default, the reports created by a user are available only to that user.
