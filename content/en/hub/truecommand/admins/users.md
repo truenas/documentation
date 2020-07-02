@@ -102,7 +102,7 @@ The system permissions are configured exactly the same way as described above fo
 Note that individual user account permissions can override team permissions.
 
 
-## Resetting a User password from the command line
+## Resetting a User Password from the Command Line
 
 The user password can be reset using the command line when using the Docker version of True Command.  Open the shell on the system running the True Command Container and use the following command, replacing the values in brackets with their appropiate values. 
 ```
