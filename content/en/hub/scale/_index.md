@@ -1,6 +1,7 @@
 ---
 title: "TrueNAS SCALE"
 linkTitle: "SCALE"
-description: "SCALE content will be added soon!"
+description: "Articles about the in-development TrueNAS SCALE project"
 weight: 6
 ---
+
