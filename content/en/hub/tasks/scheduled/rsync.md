@@ -24,7 +24,7 @@ system is turned on, check the *Start Automatically* box.
 > NOTE: The rsync task will not work if the service is not turned on.
 
 The rsync service settings can be configured by clicking
-<i class="fas fa-pen"></i>. The default TCP port that rsync listens on can be
+<i class="fas fa-pen"> aria-hidden="true" title="pencil"</i>. The default TCP port that rsync listens on can be
 changed, and additional auxiliary parameters from
 <a href="https://www.samba.org/ftp/rsync/rsyncd.conf.html">rsyncd.conf(5)</a>
 can be added. Don't forget to click *SAVE* when changing the settings. Unless a
@@ -43,7 +43,7 @@ mode.
 First, turn on the rsync service on the *remote* system.
 Before creating an rsync task on the *host* system, a module on the *remote*
 system must be created. Create a module by going to **Services** and clicking
-<i class="fas fa-pen"></i> for the rsync service. Then, click **Rsync Module >
+<i class="fas fa-pen"> aria-hidden="true" title="pencil"</i> for the rsync service. Then, click **Rsync Module >
 ADD**. Give a descriptive name for the rsync module. Use the file browser to
 select the path of the dataset. This is the dataset used when pushing and
 pulling data from the *host* system. Select the permissions for the module by
