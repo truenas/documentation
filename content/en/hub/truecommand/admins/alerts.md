@@ -17,8 +17,8 @@ A non-administrator account can only view alerts according to their team and use
 <br><br>
 
 The **Active Alerts** tab shows all unresolved alerts.
-Alerts are moved to the **Resolved Alerts** tab by clicking **Resolve (Check)**.
-To resolve multiple alerts, select each alert and click **Resolve (Check)**.
+Alerts are moved to the **Resolved Alerts** tab by clicking **Resolve** <i class="fa fa-check" aria-hidden="true" title="check"></i>.
+To resolve multiple alerts, select each alert and click **Resolve** <i class="fa fa-check" aria-hidden="true" title="check"></i>.
 
 Click **View alert notice details (`i`)** to view any user comments about an alert.
 
