@@ -43,7 +43,7 @@ Alerts in TrueCommand are generated from alert rules.
 Several default rules are built into TrueCommand.
 TrueCommand administrators and [team members]({{< relref "../admins/users.md#configuring-teams" >}}) with the appropriate permissions can create new alert rules.
 
-To view all TrueCommand alert rules, open the **Configure** <i class="fa fa-cog" aria-hidden="true" title="gear"></i> menu* and click **Alert Rules**.
+To view all TrueCommand alert rules, open the **Configure** <i class="fa fa-cog" aria-hidden="true" title="gear"></i> menu and click **Alert Rules**.
 
 <img src="/images/tc-1.3-alert-rules.PNG">
 <br><br>
