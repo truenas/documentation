@@ -48,7 +48,7 @@ After creating a report, click **GENERATE** to generate the report.
 <img src="/images/tc-1.3-reports-new-3.PNG">
 <br><br>
 
-Next add in the range and systems to be included in the report, and click the **GENERATE** button.
+Next, add in the range and systems to be included in the report, and click the **GENERATE** button.
 <img src="/images/tc-1.3-reports-new-4.PNG">
 <br><br>
 
