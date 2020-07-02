@@ -30,6 +30,19 @@ If you wish to irreversibly upgrade your plugins after updating TrueNAS, open th
 For example, to upgrade a weechat plugin that was named "weechattest", enter `iocage upgrade weechattest`.
 {{% /alert %}}
 
+## Updating from 12.0-Nightlies
+
+If you are already running a version of 12.0-Nightlies from before 7/1/2020, it is possible to upgrade to 12.0-BETA and then onto release. There are two ways to do this.
+
+1. Roll back to the previous 11.3-UX boot-environment, and switch to the new 12.0-BETA train
+2. Manually install the update file from the CLI using the following commands:
+
+```
+# fetch https://download.FreeNAS.org/12.0/STABLE/BETA/TrueNAS-12.0-BETA-manual-update.tar
+# freenas-update ./TrueNAS-12.0-BETA-manual-update.tar
+# reboot
+```
+
 ## New Features and Improvements
 
 <ul>
