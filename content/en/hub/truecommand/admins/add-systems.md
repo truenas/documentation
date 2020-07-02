@@ -13,7 +13,7 @@ All added systems are listed in the **Systems** tab with the current connection 
 
 ### Adding a System Manually
 
-To manually connect a new system, open the **Systems** tab and click **+ NEW SYSTEM**.
+To connect a new system, click **+ NEW SYSTEM**.
 
 Enter the system IP address or DNS hostname, nickname, and password.
 If a mistake is made, the contents of the fields can be reset by clicking **RESET FORM**.
