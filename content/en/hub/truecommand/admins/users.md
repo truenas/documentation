@@ -5,23 +5,17 @@ description: "How to add, configure, and organize users."
 ---
 
 TrueCommand has a robust user management system designed to allow TrueCommand administrators to personalize the TrueCommand experience for each user account.
-User accounts can be created within the TrueCommand interface or you can configure [LDAP]({{< relref "administration.md#ldap" >}}) to automatically create a new user account when someone logs into TrueCommand with their LDAP credentials.
+User accounts can be created within the TrueCommand interface or you can configure LDAP to automatically create a new user account when someone logs into TrueCommand with their LDAP credentials.
 
 User accounts can also be organized into Teams for simultaneous management of large numbers or related user accounts.
 
-## Adding User Accounts
+## Adding Local User Accounts
 
 To create a new user account, open the **Configure (Gear)** menu and click **Users > + NEW USER**.
 Enter a descriptive user name and an authentication method for the user.
 
 The *DEFAULT* authentication method is used to create unique credentials for logging in to the TrueCommand web interface.
 The administrator has to provide these credentials to the intended user.
-
-*LDAP/AD* allows using single sign-on credentials from the [Lightweight Directory Access Protocol (LDAP)](https://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol) or [Active Directory (AD)](https://en.wikipedia.org/wiki/Active_Directory).
-This means a user can log in with an LDAP or AD account without creating a separate TrueCommand login.
-
-The LDAP server IP address or DNS hostname and Domain are required to use LDAP/AD.
-The LDAP or AD Username (optional) is required when the TrueCommand user name does not match the LDAP or AD credentials.
 
 <img src="/images/tc-1.3-users-new.PNG">
 <br><br>
@@ -33,6 +27,17 @@ Users can be members of multiple teams.
 {{% alert title="Permanent Action" color="warning" %}}
 Deleting a user account permanently removes the user and cannot be undone.
 {{% /alert %}}
+
+## Using LDAP to Add User Accounts
+
+LDAP can be utilized for user accounts.  See the [TrueCommand Administration]({{< relref "administration.md#ldap" >}}) guide for details on LDAP configuration.
+
+*LDAP/AD* allows using single sign-on credentials from the [Lightweight Directory Access Protocol (LDAP)](https://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol) or [Active Directory (AD)](https://en.wikipedia.org/wiki/Active_Directory).
+This means a user can log in with an LDAP or AD account without creating a separate TrueCommand login.
+
+The LDAP server IP address or DNS hostname and Domain are required to use LDAP/AD.
+The LDAP or AD Username (optional) is required when the TrueCommand user name does not match the LDAP or AD credentials.
+
 
 ## Configuring User Accounts
 
