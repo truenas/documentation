@@ -23,5 +23,5 @@ The list of backups will be shown with the time and date of their creation.
 
 To create a new backup, click **Create Backup**
 
-To restore a backup click the History <i class="fas fa-history" aria-hidden="true" title="history"></i>  icon.
+To restore a backup click the History <i class="fas fa-history" aria-hidden="true" title="history"></i>&nbsp; icon.
 
