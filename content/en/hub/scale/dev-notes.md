@@ -16,7 +16,7 @@ Nightly images for TrueNAS SCALE are built every 24 hours, at around 2AM Eastern
 
 ISO's can be downloaded here:
 
-[https://www.truenas.com/download-truenas-scale/](http://https://www.truenas.com/download-truenas-scale/ "https://www.truenas.com/download-truenas-scale/")
+[https://www.truenas.com/download-truenas-scale/](https://www.truenas.com/download-truenas-scale/ "https://www.truenas.com/download-truenas-scale/")
 
 
 ## Current Feature Status
