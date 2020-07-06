@@ -16,7 +16,8 @@ To view the current location of the system dataset, go to
 existing pool from the *System Dataset Pool* dropdown. The system dataset can
 be moved to unencrypted pools or encrypted pools which do not have
 passphrases. If the system dataset is moved to an encrypted pool, that
-volume is no longer allowed to be locked or have a passphrase set.
+volume is no longer allowed to have a passphrase set. If the encrypted pool
+already has a passphrase set, the system dataset cannot be moved to the pool.
 
 {{% alert title="TrueNAS Enterprise" %}}
 Moving the system dataset also requires rebooting the standby TrueNAS
