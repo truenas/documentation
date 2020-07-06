@@ -109,7 +109,7 @@ Note that individual user account permissions can override team permissions.
 
 ## Resetting a User Password from the Command Line
 
-The Docker version of TrueCommand allows resetting user passwords from the command line.  Open the shell on the system running the True Command Container and use the following command, replacing the values in brackets with their appropiate values. 
+The Docker version of TrueCommand allows resetting user passwords from the command line.  Open the shell on the system running the TrueCommand Container and use the following command, replacing the values in brackets with their appropiate values. 
 ```
 docker exec -it [docker instance ID] resetpw [username]
 ```
