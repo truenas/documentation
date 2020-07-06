@@ -16,7 +16,7 @@ Nightly images for TrueNAS SCALE are built every 24 hours, at around 2AM Eastern
 
 ISO's can be downloaded here:
 
-[https://www.truenas.com/download-truenas-scale/](http://https://www.truenas.com/download-truenas-scale/ "https://www.truenas.com/download-truenas-scale/")
+[https://www.truenas.com/download-truenas-scale/](https://www.truenas.com/download-truenas-scale/ "https://www.truenas.com/download-truenas-scale/")
 
 
 ## Current Feature Status
@@ -30,6 +30,7 @@ The nightly images are very much a WIP until we get farther along in our develop
 - Samba Shares
 - iSCSI Shares
 - AFP Shares
+- NFS Shares
 - AD / LDAP Directory Services
 - Online / Offline updating
 
@@ -41,7 +42,7 @@ The nightly images are very much a WIP until we get farther along in our develop
 - Wireguard
 
 **TODO**
-- NFS Shares
+
 - Posix NFSv4 ACLs
 - Docker UI
 - KVM UI
