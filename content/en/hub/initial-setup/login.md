@@ -1,7 +1,7 @@
 ---
 title: "Accessing the Web Interface"
 Description: "How to access or configure access to the web interface."
-weight: 2
+weight: 20
 ---
 
 After installing TrueNAS, configuring and using the system is all managed through the web interface.

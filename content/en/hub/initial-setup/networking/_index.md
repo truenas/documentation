@@ -1,5 +1,5 @@
 ---
 title: "Configuring Networking"
 description: "Initial networking configuration procedures"
-weight: 3
+weight: 40
 ---
