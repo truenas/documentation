@@ -1,6 +1,7 @@
 ---
 title: "Console Setup Menu"
 description: "How to access and use the console setup menu"
+weight: 30
 ---
 
 The Console Setup menu appears at the end of the boot process. If the TrueNAS® system has a keyboard and monitor, this Console Setup menu can be used to administer the system.
