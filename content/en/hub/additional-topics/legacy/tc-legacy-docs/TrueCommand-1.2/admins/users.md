@@ -5,19 +5,25 @@ description: "How to add, configure, and organize users."
 ---
 
 TrueCommand has a robust user management system designed to allow TrueCommand administrators to personalize the TrueCommand experience for each user account.
-User accounts can be created within the TrueCommand interface or you can configure LDAP to automatically create a new user account when someone logs into TrueCommand with their LDAP credentials.
+User accounts can be created within the TrueCommand interface or you can configure [LDAP]({{< relref "administration.md#ldap" >}}) to automatically create a new user account when someone logs into TrueCommand with their LDAP credentials.
 
 User accounts can also be organized into Teams for simultaneous management of large numbers or related user accounts.
 
-## Adding Local User Accounts
+## Adding User Accounts
 
-To create a new user account, open the **Configure** <i class="fa fa-cog" aria-hidden="true" title="gear"></i> menu and click **Users > + NEW USER**.
+To create a new user account, open the **Configure (Gear)** menu and click **Users > + NEW USER**.
 Enter a descriptive user name and an authentication method for the user.
 
 The *DEFAULT* authentication method is used to create unique credentials for logging in to the TrueCommand web interface.
 The administrator has to provide these credentials to the intended user.
 
-<img src="/images/tc-1.3-users-new.PNG">
+*LDAP/AD* allows using single sign-on credentials from the [Lightweight Directory Access Protocol (LDAP)](https://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol) or [Active Directory (AD)](https://en.wikipedia.org/wiki/Active_Directory).
+This means a user can log in with an LDAP or AD account without creating a separate TrueCommand login.
+
+The LDAP server IP address or DNS hostname and Domain are required to use LDAP/AD.
+The LDAP or AD Username (optional) is required when the TrueCommand user name does not match the LDAP or AD credentials.
+
+<img src="/images/tc-users-create.png">
 <br><br>
 
 Users can also be assigned to existing Teams.
@@ -28,22 +34,11 @@ Users can be members of multiple teams.
 Deleting a user account permanently removes the user and cannot be undone.
 {{% /alert %}}
 
-## Using LDAP to Add User Accounts
-
-LDAP can be utilized for user accounts.  See the [TrueCommand Administration]({{< relref "administration.md#ldap" >}}) guide for details on LDAP configuration.
-
-*LDAP/AD* allows using single sign-on credentials from the [Lightweight Directory Access Protocol (LDAP)](https://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol) or [Active Directory (AD)](https://en.wikipedia.org/wiki/Active_Directory).
-This means a user can log in with an LDAP or AD account without creating a separate TrueCommand login.
-
-The LDAP server IP address or DNS hostname and Domain are required to use LDAP/AD.
-The LDAP or AD Username (optional) is required when the TrueCommand user name does not match the LDAP or AD credentials.
-
-
 ## Configuring User Accounts
 
-To configure account details and permissions, open the **Configure** <i class="fa fa-cog" aria-hidden="true" title="gear"></i> menu, click **Users** and **Edit user** <i class="fas fa-pen" aria-hidden="true" title="pencil"></i>.
+To configure account details and permissions, open the **Configure (Gear)** menu, click **Users** and **Edit user (Pencil)**.
 
-<img src="/images/tc-1.3-users-edit.PNG">
+<img src="/images/tc-users-edit.png">
 <br><br>
 
 There are several different elements that can be configured for a user, including the user's avatar, personal details, Team membership, and system permissions.
@@ -82,9 +77,9 @@ Teams are a collection of users with permissions that are applied to all the joi
 They provide a more efficient way of managing large numbers of or related user accounts.
 For example, changing the permissions of a *Metrics* team that has 20 joined user accounts is much faster than changing the permissions for each account.
 
-To create a team, open the **Configure** <i class="fa fa-cog" aria-hidden="true" title="gear"></i> menu and click **TEAMS** > **+ NEW TEAM**.
+To create a team, open the **Configure (Gear)** menu and click **TEAMS** > **+ NEW TEAM**.
 
-<img src="/images/tc-1.3-teams-new.PNG">
+<img src="/images/tc-teams-create.png">
 <br><br>
 
 Enter a name and select an avatar for the new team.
@@ -92,9 +87,9 @@ You can edit the permissions for a team after creating it.
 
 ### Configuring Teams
 
-To adjust the team members or permissions, open the **Configure** <i class="fa fa-cog" aria-hidden="true" title="gear"></i> menu and click **Teams** > **Edit team** <i class="fas fa-pen" aria-hidden="true" title="pencil"></i>.
+To adjust the team members or permissions, open the **Configure (Gear)** menu and click **Teams** > **Edit team (Pencil)**.
 
-<img src="/images/tc-1.3-teams-edit.PNG">
+<img src="/images/tc-teams-edit.png">
 <br><br>
 
 You can adjust the team profile with a new avatar, change the team name, or grant team members permission to create new TrueCommand Alert Rules.
@@ -105,11 +100,3 @@ To remove users from the team, click **- (minus)** on the desired user.
 
 The system permissions are configured exactly the same way as described above for individual user accounts.
 Note that individual user account permissions can override team permissions.
-
-
-## Resetting a User Password from the Command Line
-
-The Docker version of TrueCommand allows resetting user passwords from the command line.  Open the shell on the system running the TrueCommand Container and use the following command, replacing the values in brackets with their appropiate values. 
-```
-docker exec -it [docker instance ID] resetpw [username]
-```

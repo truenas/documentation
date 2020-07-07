@@ -6,14 +6,14 @@ weight: 4
 ---
 
 The **Administration** page shows additional system details and offers a variety of TrueCommand configuration options.
-This page is available to users with administrator permissions by opening the **Configure** <i class="fa fa-cog" aria-hidden="true" title="gear"></i> menu and clicking **Administration**.
+This page is available to users with administrator permissions by opening the **Configure (Gear)** menu and clicking **Administration**.
 The page is organized into **About**, **Certificates**, and **Configuration** tabs.
 
 ## About TrueCommand
 
 The **About** tab contains the current TrueCommand system ID and version, license details, and contact information for iXsystems.
 
-<img src="/images/tc-1.3-administration.PNG">
+<img src="/images/tc-administration-about.png">
 <br><br>
 
 ### Updating the License
@@ -31,7 +31,7 @@ Select the new license file to upload and click **UPLOAD LICENSE** to apply the 
 
 The **Certificates** tab shows the certificates and Certificate Authorities (CAs) used by TrueCommand and has options to upload or import a certificate or CA.
 
-<img src="/images/tc-1.3-certificates.PNG">
+<img src="/images/tc-administration-certificates.png">
 <br><br>
 
 Clicking **Browse...** opens a dialog to upload a file from the local system.
@@ -42,7 +42,7 @@ Selecting **Plain text** allows copying and pasting the file raw text instead of
 
 The Configuration tab contains options to configure various features of TrueCommand.
 
-<img src="/images/tc-1.3-configuration.PNG">
+<img src="/images/tc-administration-configuration.png">
 <br><br>
 
 Changing any options requires clicking **SAVE** to save the new system configuration.
@@ -71,5 +71,5 @@ TrueCommand supports using [LDAP](https://en.wikipedia.org/wiki/Lightweight_Dire
 To configure LDAP, add an LDAP server IP address or DNS hostname, fill in the Domain, and click **ADD SERVER**.
 Multiple LDAP servers and Domains can be added.
 
-By enabling the "Allow LDAP user creation" option, TrueCommand will create user accounts when someone logs in to the User Interface with their LDAP credentials.
+By default, TrueCommand creates user accounts when someone logs in to the User Interface with their LDAP credentials.
 You can also use **JOIN TEAM** to have LDAP users automatically added to specific TrueCommand teams.
