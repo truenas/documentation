@@ -5,6 +5,7 @@ description: "Update the version of TrueNAS on your system"
 ---
 
 TrueNAS® has an integrated update system to make it easy to keep up to date.
+For Updating HA systems refer to the [Updating a High Availability System]({{< relref "/ha-update-enterprise/" >}}) guide.
 
 ## Preparing for Updates
 It is best to perform updates at times the TrueNAS® system is idle, with no clients connected and no scrubs or other disk activity going on. Most updates require a system reboot. Plan updates around scheduled maintenance times to avoid disrupting user activities.
@@ -64,5 +65,3 @@ Select the manual update file with the **Browse** button. Set `Reboot After Upda
 
 ## Update in Progress
 Starting an update shows a progress dialog. When an update is in progress, the web interface shows an  icon in the top row. Dialogs also appear in every active web interface session to warn that a system update is in progress. **Do not** interrupt a system update.
-
-For Updating HA systems refer to the [Updating a High Availability System]({{< relref "/ha-update-enterprise/" >}}) guide.
