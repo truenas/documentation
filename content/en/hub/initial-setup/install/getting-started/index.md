@@ -19,9 +19,10 @@ requirements must be met to use FreeNAS optimally.
 
 * **Operating system device**: The FreeNAS operating system is installed
 to at least one device that is separate from the storage disks. The
-device can be an SSD, a small hard drive, or a USB stick. The minimum
-space required to install FreeNAS is 8GB. However, it is highly
-recommended to have at least 16GB.
+device can be an SSD or a small hard drive. Using a USB as a boot device is not
+recommended. The are poor quality and usually wear out quicker than an SSD or
+hard drive. The minimum space required to install FreeNAS is 8GB. However, it
+is highly recommended to have at least 16GB.
 
 * **Storage disks and controllers**: FreeNAS supports hot-pluggable
   SATA drives when AHCI is enabled in the BIOS. We recommend using
