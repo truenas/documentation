@@ -5,7 +5,7 @@ description: "Update the version of TrueNAS on your system"
 ---
 
 TrueNAS® has an integrated update system to make it easy to keep up to date.
-For Updating HA systems refer to the [Updating a High Availability System]({{< relref "/ha-update-enterprise/" >}}) guide.
+For Updating HA systems refer to the [Updating a High Availability System](https://docs.ixsystems.com/hub/tasks/administrative/update/ha-update-enterprise/) guide.
 
 ## Preparing for Updates
 It is best to perform updates at times the TrueNAS® system is idle, with no clients connected and no scrubs or other disk activity going on. Most updates require a system reboot. Plan updates around scheduled maintenance times to avoid disrupting user activities.
