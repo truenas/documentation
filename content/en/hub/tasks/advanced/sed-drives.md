@@ -151,8 +151,11 @@ Reset the password without losing data: `sedutil-cli --revertNoErase *oldpasswor
 
 Use **both** of these commands to change the password without destroying data:
 
-`sedutil-cli --setSIDPassword *oldpassword* *newpassword* */dev/device*`
-`sedutil-cli --setPassword *oldpassword* Admin1 *newpassword* */dev/device*`
+```
+sedutil-cli --setSIDPassword *oldpassword* *newpassword* */dev/device*
+sedutil-cli --setPassword *oldpassword* Admin1 *newpassword* */dev/device*
+```
+
 Wipe data and reset password to default MSID: `sedutil-cli --revertPer *oldpassword* */dev/device*`
 
 Wipe data and reset password using the PSID: `sedutil-cli --yesIreallywanttoERASEALLmydatausingthePSID *PSINODASHED* */dev/device*` where *PSINODASHED* is the PSID located on the pysical drive with no dashes (-).
