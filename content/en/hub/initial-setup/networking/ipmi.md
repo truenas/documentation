@@ -10,7 +10,7 @@ The TrueNAS® Storage Array provides a built-in out-of-band management port whic
 
 *Note*: Some IPMI implementations require updates to work with newer versions of Java. See [PSA: Java 8 Update 131 breaks ASRock’s IPMI Virtual console](https://forums.freenas.org/index.php?threads/psa-java-8-update-131-breaks-asrocks-ipmi-virtual-console.53911/) for more information.
 
-<img src="/images/network-ipmi.png">
+<img src="/images/TN-network-ipmi.png">
 <br><br>
 
 IPMI is configured from **Network** ➞ **IPMI**. The IPMI configuration screen  provides a shortcut to the most basic IPMI configuration. Those already familiar with IPMI management tools can use them instead. 
