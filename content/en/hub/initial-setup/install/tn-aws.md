@@ -11,8 +11,9 @@ weight: 3
   * AWS Account
   * S3 Bucket
   * User with permissions for EC2
-    * Download the user key to the local working directory
+    * Download the user key to the local working directory and modify
   * Install bhyve and bsdec2-image-upload
+  * Patch bsdec2-image-upload if needed
 * Create TrueNAS image file
   * Download TrueNAS .iso
   * Create blank image file
@@ -20,24 +21,17 @@ weight: 3
   * Create tap and bridge interface
   * Load image and iso into bhyve
   * Install TrueNAS
-  * Reload image into bhyve
-* Configure image networking
-  * Reset network interface
-  * Create DHCP interface `xn0`
-  * Reset configuration to default
-  * Power off device
 * Upload image to EC2
   * Description and region name are required
 * Launch EC2 instance
   * Select name created with image
-  * t2.medium is the recommended instance type
-  * Add volumes as needed
+  * t2.large is the recommended instance type
+  * Add HDD/SSD volumes as needed
   * Step 6: add new rule
     * Type: `http`
-    * Source: `Custom, 0.0.0.0/0`
   * Launch the instance
 * Wait for AWS to finish status checks
-* Paste public DNS link in browser to access TrueNAS web interface
+* Paste Public DNS or Public IP link in browser to access TrueNAS web interface
 
 ## Using Virtualized TrueNAS with Amazon Web Services (AWS)
 
