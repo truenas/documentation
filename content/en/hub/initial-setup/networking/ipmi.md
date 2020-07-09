@@ -1,19 +1,21 @@
 ---
-title: "IMPI"
+title: "IPMI"
 description: "Out of Band Management"
 ---
 
 
 ## IPMI
 
-The TrueNAS® Storage Array provides a built-in out-of-band management port which can be used to provide side-band management should the system become unavailable through the graphical administrative interface. This allows for a few vital functions, such as checking the log, accessing the BIOS setup, and powering on the system without requiring physical access to the system. It can also be used to allow another person remote access to the system to assist with a configuration or troubleshooting issue.
+Many TrueNAS Storage Arrays provide a built-in out-of-band management port which can be used to provide side-band management should the system become unavailable through the web interface. This allows for a few vital functions, such as checking the log, accessing the BIOS setup, and powering on the system without requiring physical access to the system. It can also be used to allow another person remote access to the system to assist with a configuration or troubleshooting issue.
 
-*Note*: Some IPMI implementations require updates to work with newer versions of Java. See [PSA: Java 8 Update 131 breaks ASRock’s IPMI Virtual console](https://forums.freenas.org/index.php?threads/psa-java-8-update-131-breaks-asrocks-ipmi-virtual-console.53911/) for more information.
+{{% pageinfo %}}
+Some IPMI implementations require updates to work with newer versions of Java. See [PSA: Java 8 Update 131 breaks ASRock’s IPMI Virtual console](https://forums.freenas.org/index.php?threads/psa-java-8-update-131-breaks-asrocks-ipmi-virtual-console.53911/) for more information.
+{{% /pageinfo %}}
 
 <img src="/images/TN-network-ipmi.png">
 <br><br>
 
-IPMI is configured from **Network** ➞ **IPMI**. The IPMI configuration screen  provides a shortcut to the most basic IPMI configuration. Those already familiar with IPMI management tools can use them instead. 
+IPMI is configured from **Network ➞ IPMI**. The IPMI configuration screen  provides a shortcut to the most basic IPMI configuration. Those already familiar with IPMI management tools can use them instead.
 
 ## IPMI Configuration
 
