@@ -4,7 +4,7 @@ description: "Configuring TrueNAS"
 ---
 
 ## General
-System ➞ General contains options for configuring the web interface and other basic system settings.
+**System ➞ General** contains options for configuring the web interface and other basic system settings.
 
 <img src="/images/12.0-system-general.PNG">
 <br><br>
@@ -12,8 +12,8 @@ System ➞ General contains options for configuring the web interface and other 
 | Setting                       | Value          | Description                                                                                                                                                                                                                                                                                                                                                        |
 |-------------------------------|----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | GUI SSL Certificate           | drop-down menu | The system uses a self-signed certificate to enable encrypted web interface connections. To change the default certificate, select a different created or imported certificate.                                                                                                                                                                                    |
-| WebGUI IPv4 Address           | drop-down menu | Choose a recent IP addresses to limit the usage when accessing the web interface. The built-in HTTP server binds to the wildcard address of 0.0.0.0 (any address) and issues an alert if the specified address becomes unavailable.                                                                                                                                |
-| WebGUI IPv6 Address           | drop-down menu | Choose a recent IPv6 addresses to limit the usage when accessing the web interface. The built-in HTTP server binds to the wildcard address of 0.0.0.0 (any address) and issues an alert if the specified address becomes unavailable.                                                                                                                              |
+| WebGUI IPv4 Address           | drop-down menu | Choose recent IP addresses to limit the usage when accessing the web interface. The built-in HTTP server binds to the wildcard address of 0.0.0.0 (any address) and issues an alert if the specified address becomes unavailable.                                                                                                                                  |
+| WebGUI IPv6 Address           | drop-down menu | Choose recent IPv6 addresses to limit the usage when accessing the web interface. The built-in HTTP server binds to the wildcard address of 0.0.0.0 (any address) and issues an alert if the specified address becomes unavailable.                                                                                                                                |
 | WebGUI HTTP Port              | integer        | Allow configuring a non-standard port for accessing the web interface over HTTP. Changing this setting might require changing a [Firefox configuration setting](https://www.redbrick.dcu.ie/~d_fens/articles/Firefox:_This_Address_is_Restricted).                                                                                                                                                                                                     |
 | WebGUI HTTPS Port             | integer        | Allow configuring a non-standard port to access the web interface over HTTPS.                                                                                                                                                                                                                                                                                      |
 | HTTPS Protocols | drop-down menu | Choose which HTTPS protocols to allow |
@@ -32,13 +32,17 @@ This screen also contains these buttons:
 
 **SAVE CONFIG**: save a backup copy of the current configuration database in the format hostname-version-architecture to the computer accessing the web interface. Saving the configuration after making any configuration changes is highly recommended. TrueNAS® automatically backs up the configuration database to the system dataset every morning at 3:45. However, this backup does not occur if the system is shut down at that time. If the system dataset is stored on the boot pool and the boot pool becomes unavailable, the backup will also not be available. The location of the system dataset can be viewed or set using System ➞ System Dataset.
 
-*Note*: SSH keys are not stored in the configuration database and must be backed up separately. System host keys are files with names beginning with ssh_host_ in /usr/local/etc/ssh/. The root user keys are stored in /root/.ssh.
+{{% pageinfo %}}
+SSH keys are not stored in the configuration database and must be backed up separately. System host keys are files with names beginning with `ssh_host_` in `/usr/local/etc/ssh/`. The root user keys are stored in `/root/.ssh`.
+{{% /pageinfo %}}
 
-There are two types of passwords. User account passwords for the base operating system are stored as hashed values, do not need to be encrypted to be secure, and are saved in the system configuration backup. Other passwords, like iSCSI CHAP passwords, Active Directory bind credentials, and cloud credentials are stored in an encrypted form to prevent them from being visible as plain text in the saved system configuration. The key or seed for this encryption is normally stored only on the operating system device. When Save Config is chosen, a dialog gives two options. Export Password Secret Seed includes passwords in the configuration file which allows the configuration file to be restored to a different operating system device where the decryption seed is not already present. Configuration backups containing the seed must be physically secured to prevent decryption of passwords and unauthorized access.
+There are two types of passwords. User account passwords for the base operating system are stored as hashed values, do not need to be encrypted to be secure, and are saved in the system configuration backup. Other passwords, like iSCSI CHAP passwords, Active Directory bind credentials, and cloud credentials are stored in an encrypted form to prevent them from being visible as plain text in the saved system configuration. The key or seed for this encryption is normally stored only on the operating system device. When **Save Config** is chosen, a dialog gives two options. *Export Password Secret Seed* includes passwords in the configuration file which allows the configuration file to be restored to a different operating system device where the decryption seed is not already present. Configuration backups containing the seed must be physically secured to prevent decryption of passwords and unauthorized access.
 
-*Warning*:The Export Password Secret Seed option is off by default and should only be used when making a configuration backup that will be stored securely. After moving a configuration to new hardware, media containing a configuration backup with a decryption seed should be securely erased before reuse.
+{{% alert title="Warning" color="warning" %}}
+The **Export Password Secret Seed** option is off by default and should only be used when making a configuration backup that will be stored securely. After moving a configuration to new hardware, media containing a configuration backup with a decryption seed should be securely erased before reuse.
+{{% /alert %}}
 
-**Export Pool Encryption Keys** includes the encryption keys of encrypted pools in the configuration file. The encyrption keys are restored if the configuration file is uploaded to the system using UPLOAD CONFIG.
+**Export Pool Encryption Keys** includes the encryption keys of encrypted pools in the configuration file. The encryption keys are restored if the configuration file is uploaded to a system with **UPLOAD CONFIG**.
 
 **UPLOAD CONFIG**: allows browsing to the location of a previously saved configuration file to restore that configuration.
 
@@ -47,7 +51,7 @@ There are two types of passwords. User account passwords for the base operating 
 
 ## Advanced
 
-System ➞ Advanced contains more advanced options for configuring system settings.
+**System ➞ Advanced** contains more advanced options for configuring system settings.
 
 
 <img src="/images/12.0-system-advanced.PNG">
@@ -64,14 +68,14 @@ System ➞ Advanced contains more advanced options for configuring system settin
 | Enable Debug Kernel                       | checkbox       | Use a debug version of the kernel on the next boot.                                                                                                                                                                                                                                                                                                                      |
 | Show console messages                     | checkbox       | Display console messages from `/var/log/console.log` in real time at bottom of browser window. Click the console to bring up a scrollable screen. Set the `Stop refresh` option in the scrollable screen to pause updates. Unset to continue watching messages as they occur. When this option is set, a button to show the console log appears on busy spinner dialogs. |
 | MOTD banner                               | string         | This message is shown when a user logs in with SSH.                                                                                                                                                                                                                                                                                                                      |
-| Show advanced fields by default           | checkbox       | `Show Advanced` Mode fields by default.                                                                                                                                                                                                                                                                                                                                  |
+| Show advanced fields by default           | checkbox       | Show all advanced fields by default.                                                                                                                                                                                                                                                                                                                                     |
 | Use FQDN for logging                      | checkbox       | Include the Fully-Qualified Domain Name (FQDN) in logs to precisely identify systems with similar hostnames.                                                                                                                                                                                                                                                             |
 | ATA Security User                         | drop-down menu | User passed to **camcontrol security -u** for unlocking SEDs. Values are *User* or *Master*.                                                                                                                                                                                                                                                                             |
 | SED Password                              | string         | Global password used to unlock Self-Encrypting Drives.                                                                                                                                                                                                                                                                                                                   |
-| Reset SED Password                        | checkbox       | Select to clear the `Password for SED` column of **Storage** ➞ **Disks**.                                                                                                                                                                                                                                                                                                |
+| Reset SED Password                        | checkbox       | Select to clear the *Password for SED* column of **Storage ➞ Disks**.                                                                                                                                                                                                                                                                                                    |
 
 Click the **SAVE** button after making any changes.
 
-This tab also contains this button:
+There is also an option to:
 
-**SAVE DEBUG**: used to generate text files that contain diagnostic information. After the debug data is collected, the system prompts for a location to save the compressed .tar file.
+**SAVE DEBUG**: generate text files that contain diagnostic information. After the debug data is collected, the system prompts for a location to save the compressed `.tar` file.
