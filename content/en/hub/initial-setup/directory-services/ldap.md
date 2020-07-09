@@ -22,9 +22,9 @@ LDAP failover priority list. If a host does not respond, the next host in the
 list is tried until a new connection is established. Enter the *Base DN*. This
 is the top level of the LDAP directory tree to be used when searching for
 resources. For Example, `dc=test,dc=org`. Enter the *Bind DN*. This is the
-administrative account name on the LDAP server. For Example,
-`cn=Manager,dc=test,dc=org`. Next enter the *Bind Password*. This is the password
-associated with the *Bind DN* account. Last of the basic options is *Enable*.
+administrative account name on the LDAP server. For example,
+`cn=Manager,dc=test,dc=org`. Next, enter the *Bind Password*. This is the password
+associated with the *Bind DN* account. The final basic option is *Enable*.
 Unsetting *Enable* disables the LDAP configuration without deleting it. It can
 be enabled at a later time.
 
