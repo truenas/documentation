@@ -3,15 +3,15 @@ title: "The GUI Shell"
 description: "Using the GUI Shell in TrueNAS."
 ---
 
-The TrueNAS® web interface provides a web shell, making it convenient to run command line tools from the web browser as the root user.
+The web interface has a web shell that makes it convenient to run command line tools from the web browser as the root user.
 
 <img src="/images/12.0-gui-shell.PNG">
 <br><br>
 
-The prompt shows that the current user is root, the hostname is truenas, and the current working directory is ~, the home directory of the logged-in user.
+The prompt shows that the current user is `root`, the hostname is `freenas`, and the current working directory is `~`, the home directory of the logged-in user.
 
 The default shell for a new installations is `zsh`.
-The default shell can be changed in 'Accounts' ➞ 'Users'.
+The default shell can be changed in **Accounts ➞ Users**.
 Click the three dot menu (Options) and **Edit** for the root user.
 Choose the desired shell from the *Shell* drop-down and click **SAVE**.
 
