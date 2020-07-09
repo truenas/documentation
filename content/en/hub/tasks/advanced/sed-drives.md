@@ -1,12 +1,11 @@
 ---
 title: "Self-Encrypting Drives"
-description: "Self-Encrypted Drives in TrueNAS."
+description: "Configuring Self-Encrypted Drives."
 ---
-
 
 ## Self-Encrypting Drives
 
-TrueNAS® version 11.1-U5 introduced Self-Encrypting Drive (SED) support.
+TrueNAS version 11.1-U5 introduced Self-Encrypting Drive (SED) support.
 
 These SED specifications are supported:
 
@@ -30,20 +29,20 @@ TrueNAS® implements the security capabilities of [camcontrol](https://www.freeb
 
 A SED can be configured before or after assigning the device to a pool.
 
-By default, SEDs are not locked until the administrator takes ownership of them. Ownership is taken by explicitly configuring a global or per-device password in the TrueNAS® web interface and adding the password to the SEDs. Adding SED passwords to TrueNAS® also allows TrueNAS® to automatically unlock SEDs.
+By default, SEDs are not locked until the administrator takes ownership of them. Ownership is taken by explicitly configuring a global or per-device password in the web interface and adding the password to the SEDs. Adding SED passwords in the web interface also allows TrueNAS to automatically unlock SEDs.
 
-A password-protected SED protects the data stored on the device when the device is physically removed from the TrueNAS® system. This allows secure disposal of the device without having to first wipe the contents. Repurposing a SED on another system requires the SED password.
+A password-protected SED protects the data stored on the device when the device is physically removed from the system. This allows secure disposal of the device without having to first wipe the contents. Repurposing a SED on another system requires the SED password.
 
 ## Deploying SEDs
-Run sedutil-cli --scan in the Shell to detect and list devices. The second column of the results identifies the drive type:
+Enter `sedutil-cli --scan` in the **Shell** to detect and list devices. The second column of the results identifies the drive type:
 
-no indicates a non-SED device
-1 indicates a legacy TCG OPAL 1 device
-2 indicates a modern TCG OPAL 2 device
-L indicates a TCG Opalite device
-p indicates a TCG Pyrite 1 device
-P indicates a TCG Pyrite 2 device
-E indicates a TCG Enterprise device
+`no` indicates a non-SED device
+`1` indicates a legacy TCG OPAL 1 device
+`2` indicates a modern TCG OPAL 2 device
+`L` indicates a TCG Opalite device
+`p` indicates a TCG Pyrite 1 device
+`P` indicates a TCG Pyrite 2 device
+`E` indicates a TCG Enterprise device
 Example:
 
 ```
@@ -57,13 +56,13 @@ Scanning for Opal compliant disks
 /dev/da11    E WDC     WUSTR1519ASS201  B925
 ```
 
-TrueNAS® supports setting a global password for all detected SEDs or setting individual passwords for each SED. Using a global password for all SEDs is strongly recommended to simplify deployment and avoid maintaining separate passwords for each SED.
+TrueNAS supports setting a global password for all detected SEDs or setting individual passwords for each SED. Using a global password for all SEDs is strongly recommended to simplify deployment and avoid maintaining separate passwords for each SED.
 
-## Setting a global password for SEDs
+### Setting a global password for SEDs
 
-Go to **System** ➞ **Advanced** ➞ **SED Password** and enter the password. **Record this password and store it in a safe place!**
+Go to **System ➞ Advanced ➞ SED Password** and enter the password. **Record this password and store it in a safe place!**
 
-Now the SEDs must be configured with this password. Go to the Shell and enter `sedhelper setup *password*`, where *password* is the global password entered in **System** ➞ **Advanced** ➞ **SED Password**.
+Now the SEDs must be configured with this password. Go to the **Shell** and enter `sedhelper setup <password>`, where `<password>` is the global password entered in **System ➞ Advanced ➞ SED Password**.
 
 `sedhelper` ensures that all detected SEDs are properly configured to use the provided password:
 
@@ -74,27 +73,29 @@ da10                 [OK]
 da11                 [OK]
 ```
 
-Rerun `sedhelper setup *password*` every time a new SED is placed in the system to apply the global password to the new SED.
+Rerun `sedhelper setup <password>` every time a new SED is placed in the system to apply the global password to the new SED.
 
-## Creating separate passwords for each SED
+### Creating separate passwords for each SED
 
-Go to **Storage** ➞ **Disks**. Click the three dot menu (Options) for the confirmed SED, then **Edit**. Enter and confirm the password in the `SED Password` and `Confirm SED Password fields`.
+Go to **Storage ➞ Disks**. Click the three dot menu (Options) for the confirmed SED, then **Edit**. Enter and confirm the password in the `SED Password` and `Confirm SED Password fields`.
 
-The **Storage** ➞ **Disks** screen shows which disks have a configured SED password. The `SED Password` column shows a mark when the disk has a password. Disks that are not a SED or are unlocked using the global password are not marked in this column.
+The **Storage ➞ Disks** screen shows which disks have a configured SED password. The `SED Password` column shows a mark when the disk has a password. Disks that are not a SED or are unlocked using the global password are not marked in this column.
 
-The SED must be configured to use the new password. Go to the Shell and enter `sedhelper setup --disk *da1* *password*`, where `*da1*` is the SED to configure and `*password*` is the created password from **Storage** ➞ **Disks** ➞ **Edit Disks** ➞ **SED Password**.
+The SED must be configured to use the new password. Go to the **Shell** and enter `sedhelper setup --disk <da1> <password>`, where `<da1>` is the SED to configure and `<password>` is the created password from **Storage ➞ Disks ➞ Edit Disks ➞ SED Password**.
 
 This process must be repeated for each SED and any SEDs added to the system in the future.
 
-*Danger*: Remember SED passwords! If the SED password is lost, SEDs cannot be unlocked and their data is unavailable. Always record SED passwords whenever they are configured or modified and store them in a secure place!
+{{% alert title="Danger!" color="warning" %}}
+Remember SED passwords! If the SED password is lost, SEDs cannot be unlocked and their data is unavailable. Always record SED passwords whenever they are configured or modified and store them in a secure place!
+{{% /alert %}}
 
 ## Check SED Functionality
 
-When SED devices are detected during system boot, TrueNAS® checks for configured global and device-specific passwords.
+When SED devices are detected during system boot, TrueNAS checks for configured global and device-specific passwords.
 
 Unlocking SEDs allows a pool to contain a mix of SED and non-SED devices. Devices with individual passwords are unlocked with their password. Devices without a device-specific password are unlocked using the global password.
 
-To verify SED locking is working correctly, go to the Shell. Enter `sedutil-cli --listLockingRange 0 *password* *dev/da1*`, where `*dev/da1*` is the SED and `*password*` is the global or individual password for that SED. The command returns ReadLockEnabled: 1, WriteLockEnabled: 1, and LockOnReset: 1 for drives with locking enabled:
+To verify SED locking is working correctly, go to the **Shell**. Enter `sedutil-cli --listLockingRange 0 <password> <dev/da1>`, where `<dev/da1>` is the SED and `<password>` is the global or individual password for that SED. The command returns `ReadLockEnabled: 1`, `WriteLockEnabled: 1`, and `LockOnReset: 1` for drives with locking enabled:
 
 ```
 root@truenas1:~ # sedutil-cli --listLockingRange 0 abcd1234 /dev/da9
@@ -114,7 +115,9 @@ Band[0]:
 
 This section contains command line instructions to manage SED passwords and data. The command used is [sedutil-cli(8)](https://www.mankier.com/8/sedutil-cli. Most SEDs are TCG-E (Enterprise) or TCG-Opal ([Opal v2.0](https://trustedcomputinggroup.org/wp-content/uploads/TCG_Storage-Opal_SSC_v2.01_rev1.00.pdf)). Commands are different for the different drive types, so the first step is identifying which type is being used.
 
-*Warning*:These commands can be destructive to data and passwords. Keep backups and use the commands with caution.
+{{% alert title="Warning" color="warning" %}}
+These commands can be destructive to data and passwords. Keep backups and use the commands with caution.
+{{% /alert %}}
 
 Check SED version on a single drive, */dev/da0* in this example:
 
