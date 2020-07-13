@@ -1,6 +1,6 @@
 ---
-title: "Creating Certificates"
-description: "A how-to for creating certificates in TrueNAS."
+title: "Setting up Certificates"
+description: "A how-to for creating and importing certificates in TrueNAS."
 ---
 
 ## Introduction
@@ -9,16 +9,16 @@ By default TrueNAS comes equipped with an internal, self-signed certificate.
 This enables encrypted access to the web interface. If desired, a new
 certificate can be created or an existing certificate can be imported. To
 add or import a certificate, go to **System > Certificates** and click *ADD*.
-First, enter the name of the certificate. Next, choose the *Type*. The four
+First, enter the name for the certificate. Next, choose the *Type*. The four
 options are *Internal Certificate*, *Certificate Signing Request* (CSR),
 *Import Certificate*, and *Import Certificate Signing Request*. The process for
-each type is slightly different. Choose the appropriate section below
+each type is slightly different. Follow the appropriate section below
 based on your desired type.
 
 ## Internal Certificate
 
 Select the *Internal Certificate* type when creating a new internal certificate.
-Before setting any options, ensure a <a href="/hub/tasks/CAs/">Certificate
+Before setting any options, ensure a <a href="/hub/tasks/administrative/certificate-authorities/">Certificate
 Authority (CA)</a> has been created. A CA is used to sign the new certificate.
 
 If desired, a profile can be selected for the certificate. Selecting a profile
