@@ -26,7 +26,7 @@ select a profile from the *Profiles* dropdown. Select a *Key Type* from the
 dropdown. The recommended key type is *RSA*. Next, select the *Key Length*. A
 minimum of *2048* is recommended for security reasons. Select a *Digest
 Algorithm*. The recommended is *SHA256*. Enter the *Lifetime* of the CA
-in days. This is how long the CA will remain valid.
+in days, this is how long the CA will remain valid.
 
 Next, fill out the geographic information of the certificate. This includes 
 *Country*, *Locality*, *Organizational Unit* (optional), *Common Name*, *State*,
