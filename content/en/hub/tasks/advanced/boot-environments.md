@@ -60,7 +60,7 @@ Click *ACTIONS* to:
   system device (boot-pool), including any read, write, or checksum errors.
 - **Scrub Boot Pool**: perform a manual scrub of the operating system device.
 
-## Rolling Back Boot Environment
+## Changing Boot Environment in the Web Interface
 
 Sometimes, rolling back to an older boot environment can be useful. For example,
 if an update process doesn't go as planned, it is easy to roll back to a
@@ -73,3 +73,33 @@ that the boot environment will become active on the next reboot.
 
 > NOTE: When changing the boot environment, the system configuration also
 > changes to the state it was in when the boot environment was created.
+
+## Changing Boot Environment in the Welcome CLI
+
+If for some reason the web interface is unaccessible but physical access to the
+system is not, the boot environment can be changed at the welcome screen of the CLI.
+Reboot the system. When the welcome screen appears press the key that
+corresponds with the option *Boot Environments*. In the picture below, the key
+to select the *Boot Environments* option is <kbd>7</kbd>.
+
+> NOTE: The *Boot Environments* options doesn't appear when there are no extra
+> boot environments on the system.
+
+<img src="/images/truenas-welcome.png">
+<br><br>
+
+After selecting the *Boot Environment* option, choose the new boot environment
+to activate. Press the corresponding key for the *Active:* option. In the picture
+below, the key is <kbd>2</kbd>.
+
+<img src="/images/truenas-welcome-BE.png">
+<br><br>
+
+Press the key to cycle through existing boot
+environments. When the desired boot environment is selected, press
+<kbd>Backspace</kbd> to return to the welcome menu. Then, press <kbd>4</kbd> to
+reboot the system. When the system reboots, it will boot into the boot
+environment selected earlier.
+
+> NOTE: The *Boot Environments* options doesn't appear when there are no extra
+> boot environments on the system.
