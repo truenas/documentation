@@ -57,7 +57,8 @@ the TrueNAS installer successfully, but is unable to write to a USB stick that a
 TrueNAS installer.
 
 The USB stick will not be recognized by Windows after the TrueNAS installer has been written to it.
-You can use Rufus to write a "Non bootable" image, then remove and reinsert the USB stick. Alternatively,
+If you wish to reclaim the USB stick after you are done with the installation of TrueNAS, 
+you can use Rufus to write a "Non bootable" image, then remove and reinsert the USB stick. Alternatively,
 "diskpart" can be used to clean the USB stick. Take great care with diskpart, as choosing the wrong disk
 can wipe your Windows data.
 
@@ -92,8 +93,8 @@ and reboot or boot the system. Follow the necessary procedure to boot
 into the UEFI/BIOS of the motherboard. 
 
 Choose whether to boot in UEFI mode or legacy CSM/BIOS mode. When installing TrueNAS,
-make the matching choice for the installation. Intel plans to [remove legacy BIOS/CSM support]
-[remove legacy BIOS/CSM support](https://www.zdnet.com/article/intel-were-ending-all-legacy-bios-support-by-2020/) in
+make the matching choice for the installation. Intel plans to
+[remove legacy CSM/BIOS support](https://www.zdnet.com/article/intel-were-ending-all-legacy-bios-support-by-2020/) in
 reference code for new chipsets by 2020.
 
 If your system supports SecureBoot, you will need to turn it off or set
