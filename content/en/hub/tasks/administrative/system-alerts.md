@@ -35,7 +35,7 @@ An automatic script sends a nightly email to the root user account containing im
 
 The administrator typically does not read emails directly on the TrueNAS® system. Instead, these emails are usually sent to an external email address where they can be read more conveniently. It is important to configure the system so it can send these emails to the administrator’s remote email account so they are aware of problems or status changes.
 
-The first step is to set the remote address where email will be sent. Go to **Accounts** ➞ **Users**, click the three dot menu (Options) and **Edit** for the root user. In the `Email` field, enter the email address on the remote system where email is to be sent, like *admin@example.com*. Click **SAVE** to save the settings.
+The first step is to set the remote address where emails will be sent. Go to **Accounts** ➞ **Users**, click <i class="fas fa-ellipsis-v"></i> and **Edit** for the root user. In the `Email` field, enter the email address on the remote system where email is to be sent, like *admin@example.com*. Click **SAVE** to save the settings.
 
 Additional configuration is performed with **System** ➞ **Email**.
 
