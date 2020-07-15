@@ -35,3 +35,12 @@ or [rc.conf](https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/config-t
 An optional description can be given. If you wish to create the system tunable
 but not immediately enable it, unset the *Enable* checkbox. Configured tunables
 remain in effect until deleted or *Enabled* is unset.
+
+Restarting the TrueNAS system after making sysctl changes is recommended.
+Some sysctls only take effect at system startup, and restarting the system
+guarantees that the setting values correspond with what is being used by the
+running system.
+
+Be careful when adding or editing the default tunables. Changing the default
+tunables can make the system unusable.
+
