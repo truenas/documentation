@@ -51,7 +51,7 @@ your system and boot from the CD.
 ### Windows
 
 To write the TrueNAS installer to a USB stick on Windows, plug the USB stick into
-the system and use [Rufus](http://rufus.akeo.ie/) or [Balena Etcher](https://www.balena.io/etcher/). 
+the system and use [Rufus](http://rufus.akeo.ie/). 
 [Win32 Image Writer](https://launchpad.net/win32-image-writer/) has been tested as well and will write
 the TrueNAS installer successfully, but is unable to write to a USB stick that already contains a 
 TrueNAS installer.
