@@ -120,6 +120,12 @@ version = "TN 12.0-BETA1"
 githubbranch = "master"
 url = "./"
 
+[[params.versions]]
+fullversion = "TrueNAS 11.3"
+version = "TN 11.3"
+githubbranch = "TN11-3"
+url = "https://docs.ixsystems.com/hub/additional-topics/legacy/tn-legacy/"
+
 # User interface configuration
 [params.ui]
 # Enable to show the side bar menu in its compact state.
