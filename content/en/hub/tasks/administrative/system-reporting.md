@@ -1,6 +1,5 @@
 ---
-title: "Configuring System Reporting"
-linkTitle: "Configuring System Reporting"
+title: "System Reporting"
 description: "A how-to guide on configuring basic reports."
 ---
 
@@ -31,8 +30,61 @@ changed.
 
 ## Graphs
 
-A comprehensive list of graphs and reporting are found in **Reporting**. Change
-the category of reporting by selecting an option of the drop-down. Graphs can
-be interacted with by clicking and dragging on a certain range, or by clicking
+TrueNAS uses [collectd](https://collectd.org/ "collectd Start Page") to provide
+reporting statistics. A comprehensive list of graphs and reporting are found
+in **Reporting**. Change the category of reporting by selecting an option of
+the drop-down. Graphs can be interacted with by clicking and dragging on a
+certain range, or by clicking
 <i class="fas fa-search-plus"></i>, <i class="fas fa-search-minus"></i>,
 <i class="fas fa-forward"></i>, or <i class="fas fa-backward"></i>.
+
+Below is a summary of what each page of graphs displays:
+
+- [CPU](https://collectd.org/wiki/index.php/Plugin:CPU) shows the amount of time
+  spent by the CPU in various states such as executing user code, executing
+  system code, and being idle. Graphs of short-, mid-, and long-term load are
+  shown, along with CPU temperature graphs.
+
+- [Disk](https://collectd.org/wiki/index.php/Plugin:Disk) shows read and write
+  statistics on I/O, percent busy, latency, operations per second, pending I/O
+  requests, and disk temperature. Choose the DEVICES and METRICS to view the
+  selected metrics for the chosen devices.
+> NOTE: Temperature monitoring for the disk is disabled if *HDD Standby* is enabled on the disk.
+
+- [Memory](https://collectd.org/wiki/index.php/Plugin:Memory) displays memory usage.\
+  [Swap](https://collectd.org/wiki/index.php/Plugin:Swap) displays the amount of
+  free and used swap space.
+
+- [Network](https://collectd.org/wiki/index.php/Plugin:Interface) shows received 
+  and transmitted traffic in megabytes per second for each configured interface.
+
+- [NFS](https://collectd.org/wiki/index.php/Plugin:NFS) shows information about
+  the number of procedure calls for each procedure and whether the system is a
+  server or client.
+
+- [Partition](https://collectd.org/wiki/index.php/Plugin:DF) displays free, used,
+  and reserved space for each pool and dataset. However, the disk space used by an
+  individual zvol is not displayed as it is a block device.
+
+- [System](https://collectd.org/wiki/index.php/Plugin:Processes) displays the
+  number of processes. It is grouped by state.
+
+- *Target* shows bandwidth statistics for iSCSI ports.
+
+- [UPS](https://collectd.org/wiki/index.php/Plugin:NUT) displays statistics about
+  an uninterruptible power supply (UPS) using
+  [Network UPS tools](https://networkupstools.org/). Statistics include voltages,
+  currents, power, frequencies, load, and temperatures.
+
+- [ZFS](https://collectd.org/wiki/index.php/Plugin:ZFS_ARC) shows compressed
+  physical ARC size, hit ratio, demand data, demand metadata, and prefetch data.
+
+Reporting data is saved to permit viewing and monitoring usage trends over
+time. This data is preserved across system upgrades and restarts.
+
+Data files are saved in `/var/db/collectd/rrd/`.
+
+{{% alert title=Warning color=warning %}}
+Reporting data is frequently written and should not be stored on the boot pool
+or operating system device.
+{{% /alert %}}
