@@ -39,6 +39,10 @@ The first step is to set the remote address where email will be sent. Go to **Ac
 
 Additional configuration is performed with **System** ➞ **Email**.
 
+<img src="/images/TN-12.0-email.PNG">
+<br><br>
+
+
 | Setting              | Value                | Description                                                                                                                                                                  |
 |----------------------|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | From E-mail          | string               | The envelope From address shown in the email. This can be set to make filtering mail on the receiving system easier.                                                         |
