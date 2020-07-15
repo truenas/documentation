@@ -14,7 +14,7 @@ TrueNAS API Documentation has both websocket and RESTful information: https://ap
 Here is the example RESTful script with an explanation of the line numbers below it.  Piping your output through the program `jq` can make things eaiser to read. Example:
 `python script.py | jq .`
 
-```
+{{< highlight python "linenos=true" >}}
 import json
 import requests
 
@@ -35,7 +35,7 @@ r = requests.post(
     }),
 )
 print r.text
-```
+{{< /highlight >}}
 
 Lines 1-2: import the Python modules used to make HTTP requests and handle data in JSON format.
 
