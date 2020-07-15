@@ -93,7 +93,7 @@ into the UEFI/BIOS of the motherboard.
 
 Choose whether to boot in UEFI mode or legacy CSM/BIOS mode. When installing TrueNAS,
 make the matching choice for the installation. Intel plans to [remove legacy BIOS/CSM support]
-(https://www.zdnet.com/article/intel-were-ending-all-legacy-bios-support-by-2020/)in
+[remove legacy BIOS/CSM support](https://www.zdnet.com/article/intel-were-ending-all-legacy-bios-support-by-2020/) in
 reference code for new chipsets by 2020.
 
 If your system supports SecureBoot, you will need to turn it off or set
