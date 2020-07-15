@@ -63,9 +63,9 @@ connected is correct. There are
 to do this. Type
 
 <pre>
-lsblk -po +vendor,+model
+lsblk -po +vendor,model
 </pre>
-and take note of the path to the USB.
+and take note of the path to the USB, shown in the NAME column of lsblk.
 
 Next, use [dd](https://en.wikipedia.org/wiki/Dd_(Unix)) to write
 the installer to the USB. Type
@@ -73,7 +73,7 @@ the installer to the USB. Type
 <pre>
 dd status=progress if=<i>path/to/.iso</i> of=<i>path/to/USB</i>
 </pre>
-in the CLI.
+in the CLI. If this results in a "permission denied" error, use "sudo dd" with the same parameters.
 
 ## Installing FreeNAS
 
