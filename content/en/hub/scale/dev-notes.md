@@ -3,6 +3,9 @@ title: "Developer's Notes"
 description: "Running updates about TrueNAS SCALE Nightly status and current issues."
 ---
 
+> #### Recent Updates
+> 7/15/2020 - VM support using KVM as the backend has arrived, including support for PCI passthrough and nested virtualization.
+
 ## System Requirements
 
 - Any x86_64 compatible (Intel or AMD) processor
