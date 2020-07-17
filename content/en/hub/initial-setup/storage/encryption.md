@@ -14,7 +14,7 @@ If desired, the encryption cypher can be changed.
 <img src="/images/TN-12.0-encryption-2.PNG">
 <br><br>
 
-# Keyfiles
+## Keyfiles
 
 Always back up the keyfile to a safe and secure location
 <img src="/images/TN-12.0-encryption-3.PNG">
@@ -37,7 +37,7 @@ To change from a Keyfile to a PassPhrase, click on the three dot menu (Options) 
 <img src="/images/TN-12.0-encryption-6.PNG">
 <br><br>
 
-# Passphrase
+## Passphrase
 
 <img src="/images/TN-12.0-encryption-7.PNG">
 <br><br>
@@ -54,3 +54,39 @@ If you change the ZFS encryption type from Key to Passphrase, you are still able
 If there is a way to disable this option when using a passphrase, it would probably be a good idea.  I can see in a large organization, different admin not being aware and not realizing that the downloads they made of the keyfile are blank (except for curly braces)
 I'm not sure how aware the UI is of the method, but if this is possible we should disable it.
 
+## Locking and Unlocking Datasets
+
+Datasets can only be locked and unlocked if they are secured with a passphrase instead of a keyfile.
+Before locking a  dataset, verify that it is not currently in use.  Then click the three dot option menu and click **Lock**.
+<img src="/images/TN-12.0-encryption-10.PNG">
+<br><br>
+Confirm the popup to lock the dataset.  Force unmount only if you are certain that no one is currently accessing the dataset.
+<img src="/images/TN-12.0-encryption-11.PNG">
+<br><br>
+A dialog window will remain visible while the dataset is locked.
+<img src="/images/TN-12.0-encryption-12.PNG">
+<br><br>
+
+Once the dataset has been successfully locked, the unlock icon will change to a locked icon.  While the dataset is locked, it is not available for use.
+
+To Unlock a dataset click the three dot menu and click **Unlock**
+<img src="/images/TN-12.0-encryption-13.PNG">
+<br><br>
+
+Enter the passphrase and click **Submit**.  If there are child datasets that are locked with the same passphrase you can unlock them all at the same time by checking the *Unlock Children* checkbox.
+<img src="/images/TN-12.0-encryption-14.PNG">
+<br><br>
+
+Confirm that you wish to unlock the datasets.
+<img src="/images/TN-12.0-encryption-15.PNG">
+<br><br>
+
+When the datasets have been successfully unlocked a dialog box will appear stating success.  
+<img src="/images/TN-12.0-encryption-16.PNG">
+<br><br>
+
+The dataset listing will now show the unlocked icon.
+
+## Conversion from GELI
+
+It is not possible to convert an existing pool from GELI to Native ZFS Encryption, however data can be migrated from a GELI encrypted Pool. A new pool of the same size must be created and encrypted with the new Native ZFS Encryption.  Once a pool of the same size exists, the data can the data can be migrated with ZFS send.  
