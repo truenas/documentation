@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Checkout Master
+      - name: Setup Node
         uses: actions/setup-node@v1
         with:
           node-version: 10.x
