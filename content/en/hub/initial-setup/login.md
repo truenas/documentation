@@ -1,7 +1,7 @@
 ---
 title: "Accessing the Web Interface"
 Description: "How to access or configure access to the web interface."
-weight: 2
+weight: 20
 ---
 
 After installing TrueNAS, configuring and using the system is all managed through the web interface.
@@ -94,5 +94,10 @@ If the user interface is not accessible by IP address from a browser, check thes
   If so, disable the settings and try connecting again.
 * If the page does not load, make sure that a `ping` reaches the TrueNAS system’s IP address.
   If the address is in a private IP address range, it is only accessible from within that private network.
+
+If the web interface is shown but seems unresponsive or incomplete:
+
+* Make sure the browser allows cookies, Javascript, and custom fonts from the TrueNAS® system.
+* Try a different browser. Firefox is recommended.
 
 If the UI becomes unresponsive after an upgrade or other system operation, clear the site data and refresh the browser (<kbd>Shift</kbd>+<kbd>F5</kbd>).
