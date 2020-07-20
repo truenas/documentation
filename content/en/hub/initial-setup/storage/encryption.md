@@ -6,25 +6,25 @@ description: "Native ZFS Encryption in TrueNAS"
 
 # Encryption
 
-Encrtypting a pool, follow the same process as creating a new pool, however you will need to check the **Encryption** option at the top of the page.
+To Encrtypt a pool follow the same process as creating a new pool.  In addition to the standard process, you will need to check the **Encryption** option at the top of the page.
 <img src="/images/TN-12.0-encryption-1.PNG">
 <br><br>
 
-If desired, the encryption cypher can be changed.
+Tthe encryption cypher can be changed if desired.
 <img src="/images/TN-12.0-encryption-2.PNG">
 <br><br>
 
 ## Keyfiles
 
-Always back up the keyfile to a safe and secure location
+Always back up the keyfile to a safe and secure location.
 <img src="/images/TN-12.0-encryption-3.PNG">
 <br><br>
 
-To manually back up the pool keyfile, click the gear menu and select **Export Dataset Keys** 
+Manually back up the pool keyfile by clicking the gear menu and selecting **Export Dataset Keys**. 
 <img src="/images/TN-12.0-encryption-8.PNG">
 <br><br>
 
-To change or update a Keyfile, click on the three dot menu (Options) and select **Encryption Options**.  
+Changing or updating the Keyfile is accomplished by clicking on the three dot menu (Options) and selecting **Encryption Options**.  
 <img src="/images/TN-12.0-encryption-4.PNG">
 <br><br>
 
@@ -32,12 +32,13 @@ Manually enter the key you wish to use or click **Generate Key**  for an autogen
 <img src="/images/TN-12.0-encryption-5.PNG">
 <br><br>
 
-To change from a Keyfile to a PassPhrase, click on the three dot menu (Options) and select **Encryption Options**.  Change the *Encryption Type* from `Key` to `Passphrase`
+
+## Passphrase
+
+Changing from a Keyfile to a PassPhrase is accomplished by clicking on the three dot menu (Options) and selecting **Encryption Options**.  Change the *Encryption Type* from `Key` to `Passphrase`
 
 <img src="/images/TN-12.0-encryption-6.PNG">
 <br><br>
-
-## Passphrase
 
 <img src="/images/TN-12.0-encryption-7.PNG">
 <br><br>
@@ -50,9 +51,6 @@ Must be longer than 8 characters
 
 **pbkdf2iters**: Number of password-based key derivation function 2 (PBKDF2) iterations to use for reducing vulnerability to brute-force attacks. Entering a number larger than 100000 is required. See PBKDF2 for more details.
 
-If you change the ZFS encryption type from Key to Passphrase, you are still able to download the `dataset key` in the gear menu, however it will be blank.
-If there is a way to disable this option when using a passphrase, it would probably be a good idea.  I can see in a large organization, different admin not being aware and not realizing that the downloads they made of the keyfile are blank (except for curly braces)
-I'm not sure how aware the UI is of the method, but if this is possible we should disable it.
 
 ## Locking and Unlocking Datasets
 
@@ -89,4 +87,4 @@ The dataset listing will now show the unlocked icon.
 
 ## Conversion from GELI
 
-It is not possible to convert an existing pool from GELI to Native ZFS Encryption, however data can be migrated from a GELI encrypted Pool. A new pool of the same size must be created and encrypted with the new Native ZFS Encryption.  Once a pool of the same size exists, the data can the data can be migrated with ZFS send.  
+It is not possible to convert an existing GELI encrypted pool to use Native ZFS Encryption, however data can be migrated from the GELI encrypted Pool. A new pool of the same size must be created and encrypted with the new Native ZFS Encryption.  Once a pool of the same size exists, the data can the data can be migrated with ZFS send.  
