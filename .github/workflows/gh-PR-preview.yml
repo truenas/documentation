@@ -33,13 +33,11 @@ jobs:
       - name: Build Site
         run: hugo -t docsy -d public --gc --minify --cleanDestinationDir
 
-      - name: Create SSH Key
-        run: |
-          mkdir ~/.ssh
-          touch ~/.ssh/id_rsa
-          echo "${{ secrets.DOCSBUILD_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          sed -i -e "s#\\\\n#\n#g" ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: public-dir
+          path: public/
 
       - name: Rsync Push
         run: |
