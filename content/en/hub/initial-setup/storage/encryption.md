@@ -6,7 +6,7 @@ description: "Native ZFS Encryption in TrueNAS"
 
 # Encryption
 
-To Encrtypt a pool follow the same process as creating a new pool.  In addition to the standard process, you will need to check the **Encryption** option at the top of the page.
+During the creation of a pool, the root dataset can be encrypted. Follow the same process as creating a new pool.  In addition to the standard process, you will need to check the **Encryption** option at the top of the page.
 
 <img src="/images/TN-12.0-encryption-1.PNG">
 <br><br>
@@ -23,7 +23,7 @@ Always back up the keyfile to a safe and secure location.
 <img src="/images/TN-12.0-encryption-3.PNG">
 <br><br>
 
-Manually back up the pool keyfile by clicking the gear menu and selecting **Export Dataset Keys**. 
+Manually back up the root dataset keyfile by clicking the gear menu and selecting **Export Dataset Keys**. 
 
 <img src="/images/TN-12.0-encryption-8.PNG">
 <br><br>
