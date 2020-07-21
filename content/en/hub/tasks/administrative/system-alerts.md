@@ -20,7 +20,7 @@ service. After all information has been filled out correctly, click
 
 To modify alerts that TrueNAS provides, go to **System > Alert Settings**.
 The alerts are grouped into sections based on the alert type. For example, alerts that are related to pools appear in the alert section *Storage*.
-Each alert warning level and frequency can be changed.  To customize alert importance, use the Warning Level drop-down. To adjust how often alert notifications are sent, use the Frequency drop-down. Setting the Frequency to NEVER prevents that alert from being added to alert notifications, but the alert can still show in the web interface if it is triggered.
+Each alert warning level and frequency can be changed.  To customize alert importance, use the Warning Level drop-down. To adjust how often alert notifications are sent, use the Frequency drop-down. Setting the Frequency to NEVER prevents that alert from being added to alert notifications, but the alert will still show in the web interface if it is triggered.
 To configure where alert notifications are sent, use Alert Services.
 
 ## TrueNAS System Alerts
