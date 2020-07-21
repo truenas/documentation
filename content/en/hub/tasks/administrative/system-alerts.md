@@ -19,12 +19,27 @@ service. After all information has been filled out correctly, click
 ## Alert Settings
 
 To modify alerts that TrueNAS provides, go to **System > Alert Settings**.
-Each alert warning level and frequency can be changed. The warning level
-represents the severity of the alert when it occurs. The frequency of the alert
-is how often the alert appears after the alert has been triggered.
+The alerts are grouped into sections based on the alert type. For example, alerts that are related to pools appear in the alert section *Storage*.
+Each alert warning level and frequency can be changed.  To customize alert importance, use the Warning Level drop-down. To adjust how often alert notifications are sent, use the Frequency drop-down. Setting the Frequency to NEVER prevents that alert from being added to alert notifications, but the alert can still show in the web interface if it is triggered.
+To configure where alert notifications are sent, use Alert Services.
 
-The alerts are grouped into sections based on the alert type. For example,
-alerts that are related to pools appear in the alert section *Storage*.
+## TrueNAS System Alerts
+
+The TrueNAS® alert system provides a visual warning of any conditions that require administrative attention. The Alert icon in the upper right corner has a notification badge that displays the total number of unread alerts.
+
+<img src="/images/TN-12.0-NTP-1.PNG">
+<br><br>
+
+## Alert Levels
+
+Alert icons indicate notification, warning, critical, and one-shot critical alerts. Critical messages are also emailed to the root account. One-shot critical alerts must be dismissed by the user.
+
+| Alert Level       | Icon |   |
+|-------------------|------|---|
+| Notification      | <i class="fa fa-info-circle" aria-hidden="true"></i>    |   |
+| Warning           | <i class="fas fa-clock" aria-hidden="true"></i>  |   |
+| Critical          | <i class="fa fa-exclamation-circle" aria-hidden="true"></i>    |   |
+| One-shot Critical | <i class="fa fa-bell" aria-hidden="true"></i>   |   |
 
 
 ## Email
