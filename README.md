@@ -4,7 +4,7 @@
 
 The documentation repository can be downloaded locally. This may be
 desired if you prefer using a specific text editor other than the
-in-browser GitHub editor to develop content.
+in browser GitHub editor to develop content.
 
 Part of the theme requires
 <code><a href="https://postcss.org/"> PostCSS</a></code>. To install
