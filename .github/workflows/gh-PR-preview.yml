@@ -36,12 +36,8 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@v2
         with:
-          name: public-dir
+          name: pull-request-${{ github.event.number }}-artifacts
           path: public/
-
-      - name: Rsync Push
-        run: |
-          rsync -rvza -e "ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no" public/ ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }}:${{ secrets.PR_REMOTE_TARGET }}pull-request-${{ github.event.number }}
 
       - name: Comment on PR
         uses: unsplash/comment-on-pr@master
