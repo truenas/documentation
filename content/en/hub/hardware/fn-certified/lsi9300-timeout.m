@@ -16,4 +16,4 @@ only available from iXsystems.”
 Please Note: This problem only applies to firmware versions below 16.00.12.00 and only affects SATA drives.
 SAS drives are not affected.
 
-[LSI 9300-xx Firmware Update Guide]()
+[LSI 9300-xx Firmware Update Guide](/pdf/Certified-Firmware-Update-2020-07-20.pdf)
