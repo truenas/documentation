@@ -26,7 +26,7 @@ consider these caveats:
 <img src="/images/boot-pool-status.png">
 <br><br>
 
-Click <i class="fas fa-ellipsis-v"></i> on a device entry to access actions
+Click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp on a device entry to access actions
 specific to that device:
 
 * **Attach**: Use this option to add a second device to create a mirrored boot
