@@ -135,3 +135,23 @@ After following the steps to install, reboot the system and remove the
 install media.
 
 Congratulations! TrueNAS is now installed.
+
+## Bios Settings for AMD Ryzen processors
+
+### First Generation "Zen" Processors
+
+Community members have reported a stability issue on 1st Generation AMD Ryzen processors, that dooes not seem to exist with later generation processors.
+
+Fixes reported by the Community are:
+ + Updating the motherboard BIOS according to the Manufactures Recommendations
+ + Disabling *CoolNQuiet*
+ + Disabling *C-States* in the BIOS
+
+### Second Generation Zen+ Processors
+
+Community members have reported a stability issue on 2nd Generation AMD Ryzen "Zen+" processors, that dooes not seem to exist with later generation processors.
+
+Fixes reported by the Community are:
+ + Updating the motherboard BIOS according to the Manufactures Recommendations
+ + Disabling *C6* in the BIOS
+
