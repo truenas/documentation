@@ -34,6 +34,28 @@ is highly recommended to have at least 16GB.
   of the FreeBSD Hardware Notes indicates which interfaces are supported by each driver. 
   We recommend using Intel or Chelsio interfaces for best performance.
 
+## BIOS Settings for AMD Ryzen processors
+
+If the system that will have TrueNAS installed uses an AMD "Zen" processer, you might want to update your motherboard BIOS or change a few settings before starting the installation process.
+See these notes for more details.
+
+### First Generation Zen Processors
+
+Community members have reported a stability issue on 1st Generation AMD Ryzen processors that does not seem to exist with later generation processors.
+
+Fixes reported by the Community are:
+ + Updating the motherboard BIOS according to the manufacturer recommendations
+ + Disabling *CoolNQuiet*
+ + Disabling *C-States* in the BIOS
+
+### Second Generation Zen+ Processors
+
+Community members have reported a stability issue on 2nd Generation AMD Ryzen "Zen+" processors that does not seem to exist with later generation processors.
+
+Fixes reported by the Community are:
+ + Updating the motherboard BIOS according to the manufacturer recommendations
+ + Disabling *C6* in the BIOS
+
 ## Preparing the Install Media
 
 The latest STABLE version of TrueNAS can be downloaded from
