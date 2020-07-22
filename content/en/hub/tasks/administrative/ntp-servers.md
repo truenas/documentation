@@ -3,19 +3,20 @@ title: "NTP Servers"
 description: "Managing NTP Servers"
 ---
 
+Network Time Protocol (NTP) servers are used to sync the local system time with an accurate reference.
+By default, several entries for NTP servers are created for new installations, but you can connect with custom NTP servers as needed.
+
 ## NTP Server
 
-Go to the **System** ➞ **NTP Servers** page to view, edit, or remove NTP Servers.
+Go to **System ➞ NTP Servers** to view, edit, or remove NTP Servers.
 
 <img src="/images/TN-12.0-NTP-1.PNG">
 <br><br>
-
 
 ## NTP Server Options
 
 <img src="/images/TN-12.0-NTP-2.PNG">
 <br><br>
-
 
 | Setting  | Value    | Description                                                                                                                                      |
 |----------|----------|--------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -27,12 +28,11 @@ Go to the **System** ➞ **NTP Servers** page to view, edit, or remove NTP Serve
 | Max Poll | integer  | The maximum polling interval, in seconds, as a power of 2. For example, 10 means 2^10, or 1,024 seconds. The default is 10, maximum value is 17. |
 | Force    | checkbox | Force the addition of the NTP server, even if it is currently unreachable.                                                                       |
 
-
 ## Editing a NTP Server
 
-Click on the Options Menu <i class="fa fa-ellipsis-v" aria-hidden="true"></i>&nbsp and select **Edit**.  Edit as required and click **Save**.
+Click <i class="fa fa-ellipsis-v" aria-hidden="true"></i> (Options) and select **Edit**.
+Edit as needed and click **Save**.
 
 ## Deleting a NTP Server
 
-
-Click on the Options Menu <i class="fa fa-ellipsis-v" aria-hidden="true"></i>&nbsp and select **Delete**.
+Click <i class="fa fa-ellipsis-v" aria-hidden="true"></i> (Options) and select **Delete**.
