@@ -116,7 +116,7 @@ products = "products"
 # Entries for the "Version" dropdown
 [[params.versions]]
 fullversion = "TrueNAS 12.0-BETA1"
-version = "TN 12.0-BETA1"
+version = "Current"
 githubbranch = "master"
 url = "/"
 
