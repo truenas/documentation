@@ -4,24 +4,44 @@ description: "How to create a ZFS data storage pool."
 weight: 1
 ---
 
-Perhaps, the most important part about TrueNAS is the ability to efficiently store lots of content that's readily accessible. The way this is accomplished is through setting up [ZFS Pools](https://en.wikipedia.org/wiki/ZFS#Data_structures:_Pools,_datasets_and_volumes "ZFS Pools Wikipedia").
-To setup a pool in TrueNAS, go to **Storage > Pools** and click *ADD*.
+Perhaps the most important part about TrueNAS is the ability to efficiently store and share large amounts of data.
+The way this is accomplished is by creating [ZFS Pools](https://en.wikipedia.org/wiki/ZFS#Data_structures:_Pools,_datasets_and_volumes "ZFS Pools Wikipedia").
+To set up a pool in TrueNAS, go to **Storage > Pools** and click *ADD*.
 
 <img src="/images/pools-list.png">
 <br><br>
 
-Ensure *Create a new pool* is selected and click *CREATE POOL*.
+Set *Create a new pool* and click *CREATE POOL*.
 
-In step two of the wizard is where to configure the virtual devices (vdevs) that make up the pool. The TrueNAS web interface makes this easy by recommending the vdev layout based on the number of disks available. First, enter a name for the pool. If encrypting the pool is desired, ensure *Encryption* is set. Refer to the [Encryption]({{< ref "encryption.md" >}} article for further information about encrypting the root dataset.  To quickly setup a pool using all available, same sized disks, click *SUGGEST LAYOUT*. To manually add disks in a vdev, select the amount of disks you want to add and click <i class="fas fa-arrow-right"></i>. TrueNAS helpfully suggests a vdev layout based off the number of disks added. For example, if two disks are added, TrueNAS automatically configures it as a mirror. To change the recommended layout, click the drop down under the *Data VDevs* list and select the desired layout.
+First, enter a name for the pool.
+If you want to encrypt the data for additional security, set the *Encryption* option.
+Be aware that this can also complicate how data is retrieved and has some risks.
+Refer to the [Encryption]({{< ref "encryption.md" >}} article for further information about encrypting the root dataset.
 
-After the desired vdev layout has been made, it can be duplicated by clicking *REPEAT*. If more disks are available and equal in size, the *REPEAT* button takes the current vdev layout and makes another. Thus, it creates a mirror of vdevs. Otherwise, another vdev can be added by clicking *ADD DATA* and adding disks as was done in the first vdev.
+Now configure the virtual devices (vdevs) that make up the pool.
+The TrueNAS web interface can simplify this by recommending a vdev layout based on the number of available disks.
+Click *SUGGEST LAYOUT* to add all same-sized disks in an ideal configuration for data redundancy and performance.
+
+To manually add disks in a vdev, select the disks to add and click <i class="fas fa-arrow-right"></i>.
+TrueNAS helpfully suggests a vdev layout based on the number of disks added to the vdev.
+For example, if two disks are added, TrueNAS automatically configures the VDEV as a mirror (one redundant disk).
+To change the vdev layout, open the *Data VDevs* list and select the desired layout.
+Note that a stripe is never recommended for storing critical data, as a single disk failure can result in losing all data in that vdev.
+
+A vdev layout can be duplicated by clicking *REPEAT*.
+If more disks are available and equal in size, the *REPEAT* button creates another vdev with an identical configuration.
+Thus, it creates a mirror of vdevs.
+Otherwise, another vdev can be added by clicking *ADD DATA* and adding disks as was done in the first vdev.
 
 {{% alert title="Warning" color=warning %}}
-Adding data vdevs with different numbers of disks is not recommended.
-Adding data vdevs of different layouts is not supported.
+It is not recommended to have multiple data vdevs with different numbers of disks.
+Adding multiple vdevs with different layouts to a pool is not supported.
+Create a new pool for the different layout.
+For example, "pool1" has a data vdev in a *mirror* layout, so create "pool2" for any *raid-z* vdevs.
 {{% /alert %}}
 
-If desired, a cache, log, and spare vdev can be added by clicking *ADD CACHE*, *ADD LOG*, and *ADD SPARE*, respectively. When ready to proceed with the desired vdevs, click *CREATE*.
+If desired, a cache, log, and spare vdev can be added by clicking *ADD CACHE*, *ADD LOG*, and *ADD SPARE*, respectively.
+When ready to proceed with the desired vdevs, click *CREATE*.
 
 <img src="/images/pools-vdevs.png">
 <br><br>
