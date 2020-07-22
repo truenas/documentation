@@ -24,7 +24,7 @@ Before upgrading an existing pool, be aware of these caveats:
   it will not be possible to import that pool into another operating system
   that does not yet support those feature flags.
 
-To upgrade a pool, go to **Storage > Pools** and click <i class="fas fa-cog"></i>.
+To upgrade a pool, go to **Storage > Pools** and click <i class="fas fa-cog" aria-hidden="true" title="Settings"></i>.
 Click *Upgrade Pool*.
 > NOTE: If the *Upgrade Pool* button does not appear, the pool is already at the
 > latest feature flags and does not need to be upgraded.
