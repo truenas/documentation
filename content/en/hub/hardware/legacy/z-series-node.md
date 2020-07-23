@@ -21,7 +21,7 @@ A node on the TrueNAS system has failed and needs to be replaced.
 Verify Serial Number
 Identify the node to be replaced by verifying the serial number. The serial number is on a label on the back of the node, or can be determined from the console with the dmidecode -t1 command. Please contact Support if the serial number cannot be identified.
 
-<img src="/images/z-series-node-1.PNG">
+<img src="/images/z-series-node-1.png">
 <br><br>
 
 > Note:  Node A is the upper node, with Node B on the bottom. Some systems only have a single node.
@@ -43,7 +43,7 @@ Press and release the power button of the node to be replaced. This starts a cle
 
 Press the metal latch to unlock the node handle. Rotate the handle down until the node releases from the bay.
 
-<img src="/images/z-series-node-3.PNG">
+<img src="/images/z-series-node-3.png">
 <br><br>
 
 
@@ -53,7 +53,7 @@ Use the handle to pull the node straight out. Set the old node aside. Place the 
 
 Align the new replacement node with the bay and slide it into the chassis until it stops. Lift the handle to latch the node into place.
 
-<img src="/images/z-series-node-4.PNG">
+<img src="/images/z-series-node-4.png">
 <br><br>
 
 Reconnect the cables, referring to notes, labels, or photos for correct connection. Turn on the new node with the front power button. Use the console or web GUI to verify successful startup. On an HA system, select System –> Failover –> Sync to Peer. This forces a configuration sync from the active node to the standby node. The standby node will then reboot to load the new configuration.  Pack the old node into the shipping box from the new node for return to iXsystems.
