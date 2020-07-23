@@ -1,6 +1,6 @@
 ---
-title: "M-Seires Basic Set up Guide"
-description: "The M-Series BSG in downloadable PDF format."
+title: "M-Series Basic Set up Guide"
+description: "The TrueNAS M-Series BSG in downloadable PDF format."
 ---
 
 <div class="container-image-download">
