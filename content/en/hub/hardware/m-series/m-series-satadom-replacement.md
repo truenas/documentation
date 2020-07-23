@@ -1,6 +1,6 @@
 ---
 title: "M-Series SATADOM Replacement Guide"
-description: "The M-Series SATADOM replacement guide in downloadable PDF format."
+description: "The TrueNAS M-Series SATADOM replacement guide in downloadable PDF format."
 ---
 
 <div class="container-image-download">

@@ -1,10 +1,13 @@
 ---
-title: "TrueNAS X-Series Basic Setup Guide"
-linktitle: "X-Series BSG"
-description: "Guide included with TrueNAS X-Series Unified Storage Arrays purchased from iXsystems."
+title: "X-Series Basic Setup Guide"
+description: "The TrueNAS X-Series BSG in downloadable PDF format."
 ---
 
-<object data="https://www.truenas.com/docs/pdf/Xseries-2020-06-25.pdf" type="application/pdf" width="95%" height="1000">
-  There was an error displaying this PDF, <a href="/pdf/Xseries-2020-06-25.pdf">please click
-  here to download the file.</a>
-</object>
+<div class="container-image-download">
+    <img src="/images/x-series-bsg.png" alt="X-Series BSG" class="image" style="width:100%">
+    <div class="middle">
+        <div class="image-download-text,button-wrapper">
+            <a class="linkbutton" href="/pdf/x-series-bsg.pdf">Download</i></a>
+        </div>
+    </div>
+</div>
