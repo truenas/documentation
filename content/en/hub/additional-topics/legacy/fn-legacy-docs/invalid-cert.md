@@ -27,24 +27,24 @@ This will configure the FreeNAS® system to boot without using a certificate.
 
 4.) To delete the 9.3 CA and certificates, go to:  System -> CAs.
 
-<img src="/images/fn-9.1-cert-1.PNG">
+<img src="/images/fn-9.1-cert-1.png">
 <br><br>
 
 4.1 Select the old CA by clicking on it.
 
-<img src="/images/fn-9.1-cert-2.PNG">
+<img src="/images/fn-9.1-cert-2.png">
 <br><br>
 
 4.2 Click Delete at the bottom of the screen to remove the internal CA and its certificates.
 
 5.) To create the new internal CA, click Create Internal CA.
 
-<img src="/images/fn-9.1-cert-3.PNG">
+<img src="/images/fn-9.1-cert-3.png">
 <br><br>
 
 5.1 From the configuration screen, enter the information for the internal CA.
 
-<img src="/images/fn-9.1-cert-4.PNG">
+<img src="/images/fn-9.1-cert-4.png">
 <br><br>
 
 5.2 Click OK to save.
@@ -58,19 +58,19 @@ This will configure the FreeNAS® system to boot without using a certificate.
 
 6.2 From the configuration screen, use the Signing Certificate Authority drop-down menu to select the new internal CA.
 
-<img src="/images/fn-9.1-cert-6.PNG">
+<img src="/images/fn-9.1-cert-6.png">
 <br><br>
 
 6.3 Fill in the fields that apply. The domain name or hostname of the system must be used in the Common Name field. Click OK to save.
 
 7.) To enable HTTPS with the new certificate, go to System -> General.
 
-<img src="/images/fn-9.1-cert-7.PNG">
+<img src="/images/fn-9.1-cert-7.png">
 <br><br>
 
 7.1 Select HTTPS from the Protocol drop-down menu.
 
-<img src="/images/fn-9.1-cert-8.PNG">
+<img src="/images/fn-9.1-cert-8.png">
 <br><br>
 
 7.2 Select the new certificate from the drop-down menu. Click Save.
@@ -79,7 +79,7 @@ This will configure the FreeNAS® system to boot without using a certificate.
 
 8.) To save the updated 9.10 configuration, go to System -> General.
 
-<img src="/images/fn-9.1-cert-9.PNG">
+<img src="/images/fn-9.1-cert-9.png">
 <br><br>
 
 8.1 Click Save Config.
