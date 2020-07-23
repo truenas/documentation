@@ -23,7 +23,7 @@ Right-click in the console window. Choose `Export visible messages to clipboard`
 
 Open an editor, paste the clipboard, and save to a file called `console.log`.
 
-After saving the file, go back to the console with <i class="fa fa-bars" aria-hidden="true" title="Menu"></i>&nbsp **Web Developer ➞ **Web Console** or by pressing Ctrl-Shift-K.
+After saving the file, go back to the console with <i class="fa fa-bars" aria-hidden="true" title="Menu"></i>&nbsp **Web Developer** ➞ **Web Console** or by pressing Ctrl-Shift-K.
 
 In the upper right, unset `Persist Logs`.
 
