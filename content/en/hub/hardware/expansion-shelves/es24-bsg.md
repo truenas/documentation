@@ -1,10 +1,14 @@
 ---
 title: "ES24 Basic Setup Guide"
 linktitle: "ES24 BSG"
-description: "Guide included with ES24 expansion shelves purchased from iXsystems."
+description: "The ES24 expansion shelf BSG in downloadable PDF format."
 ---
 
-<object data="https://www.truenas.com/docs/pdf/ES24-2020-06-25.pdf" type="application/pdf" width="95%" height="1000">
-  There was an error displaying this PDF, <a href="/pdf/ES24-2020-06-25.pdf">please click
-  here to download the file.</a>
-</object>
+<div class="container-image-download">
+    <img src="/images/es24-bsg.png" alt="ES24 Basic Setup Guide" class="image" style="width:100%">
+    <div class="middle">
+        <div class="image-download-text,button-wrapper">
+            <a class="linkbutton" href="/pdf/es24-bsg.pdf">Download</i></a>
+        </div>
+    </div>
+</div>
