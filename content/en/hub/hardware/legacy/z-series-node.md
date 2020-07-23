@@ -3,9 +3,6 @@ title: "How to Replace a Z Series Node"
 description: "How to Replace a Z Series Node"
 ---
 
-<img src="/images/z-series-node-1.PNG">
-<br><br>
-
 **DESCRIPTION**
 
 This article demonstrates how to replace one of the TrueNAS® Z Series removable computing modules called a node.
