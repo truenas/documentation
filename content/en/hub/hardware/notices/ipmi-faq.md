@@ -11,7 +11,7 @@ iXsystems servers provide two modes for connecting the Remote Management (IPMI) 
 
 The second method is a shared connection with the first LAN port, which is the port on the lower left on the rear I/O panel. By default, Remote Management chooses which port to use by searching for a link when the server is initially plugged in. If there is an Ethernet link on the dedicated port, it will choose dedicated mode. If no link is detected, shared mode is chosen. The connection mode does not change while the server continues to receive power unless the LAN port mode is changed to force one port or the other in the web interface.
 
-Remote Management uses an Ethernet MAC address for communications, regardless of which port it uses, and by default will obtain its own IP address via DHCP.
+Remote Management uses an Ethernet MAC address for communications, regardless of which port it uses, and by default will obtain its own IP address using DHCP.
 
 **What are the advantages and disadvantages of dedicated mode?**
 
@@ -23,11 +23,11 @@ Shared mode is the easiest way to get connected and requires no additional cabli
 
 **How do I configure IP of Remote Management?**
 
-Network configuration for Remote Management can happen in a number of ways. By default, Remote Management obtains an IP address via DHCP. The obtained address is available via standard IPMI tools or in the BIOS Setup under *Advanced/IPMI Configuration/IPMI LAN Configuration*. If a static address is desired, the following configuration methods are available:
+Network configuration for Remote Management can happen in a number of ways. By default, Remote Management obtains an IP address using DHCP. The obtained address is available to standard IPMI tools or in the BIOS Setup under **Advanced/IPMI Configuration/IPMI LAN Configuration**. If a static address is desired, the following configuration methods are available:
 
-1. The  easiest method is to set the IP in the BIOS Setup at server deployment time. The IPMI LAN configuration is found under *Advanced/IPMI Configuration/IPMI LAN Configuration*.
+1. The easiest method is to set the IP in the BIOS Setup at server deployment time. The IPMI LAN configuration is found under **Advanced/IPMI Configuration/IPMI LAN Configuration**.
 
-2. If an operating system is already installed, an IPMI-compliant local configuration tool, such as `ipmitool` for UNIX-style platforms, can be used to configure the network parameters. Some operating systems may require IPMI drivers to be loaded before using tools like **ipmitool** and the tool may need to be configured to use the system interface instead of a network connection. When using **ipmitool**, the ipmitool lan feature set provides subcommands to set and view the current configuration.
+2. If an operating system is already installed, an IPMI-compliant local configuration tool, such as `ipmitool` for UNIX-style platforms, can be used to configure the network parameters. Some operating systems may require IPMI drivers to be loaded before using tools like `ipmitool` and the tool might need to be configured to use the system interface instead of a network connection. When using `ipmitool`, the ipmitool lan feature set provides subcommands to set and view the current configuration.
 
 **How do I perform firmware updates?**
 
