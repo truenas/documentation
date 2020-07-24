@@ -45,10 +45,10 @@ You can view the post-install notes later by expanding the entry for the install
 
 ### Troubleshooting
 
-If downloading a plugin fails with an error about being unable to fetch an artifact or download a package, you might need to investigate your networking environment.
+If a plugin download or update fails with an error about being unable to fetch an artifact or download a package, you might need to investigate your networking environment.
 Some home routers can have a security feature that prevent DHCP enabled plugins (or bridged devices with virtual MAC addresses) from resolving addresses.
 Also, sometimes additional DNS validation is required that is not supported by the router or the router has a caching resolver that is holding on to a stale record.
-A couple of possible solutions are to hard reset your router to clear any stale records or try using alternate DNS servers for the TrueNAS system.
+A couple of possible solutions are to hard reset your router to clear any stale records or try using an alternate DNS server for the plugin.
 
 ## Plugin Configuration
 
