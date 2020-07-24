@@ -37,7 +37,7 @@ Remote Management’s firmware can be upgraded using two methods: the Firmware U
 
 ipmitool is the industry standard Open Source CLI tool for viewing and configuring IPMI systems. It was originally written by Sun Microsystems, but has grown independently to support any IPMI-compliant system. iXsystems Remote Management is IPMI v2.0 compliant and `ipmitool` can make use of most of its capabilities.
 
-For most operating systems, `ipmitool` is generally available in third-party package repositories. It can also be downloaded from http://ipmitool.sourceforge.net/. For local use on Linux operating systems, ipmitool requires the ipmi-si and ipmi-devintf kernel modules. On FreeBSD, the ipmi kernel module is required to provide access to the Remote Management hardware. No kernel modules are necessary for access to a remote server.
+For most operating systems, `ipmitool` is generally available in third-party package repositories. It can also be downloaded from [http://ipmitool.sourceforge.net/](http://ipmitool.sourceforge.net/). For local use on Linux operating systems, ipmitool requires the ipmi-si and ipmi-devintf kernel modules. On FreeBSD, the ipmi kernel module is required to provide access to the Remote Management hardware. No kernel modules are necessary for access to a remote server.
 
 `ipmitool` is designed for CLI environments where simple management commands and a scriptable interface are needed. It supports both local (System Interface) connections and LAN connections via the lanplus interface. `ipmitool` also supports Serial over LAN (SOL) connections. `ipmitool` can be incorporated into monitoring frameworks to provide monitoring, trending, and alerting features.
 Some common `ipmitool` commands are:
@@ -56,7 +56,7 @@ When opening a support ticket with iXsystems in regards to troubleshooting Remot
 
 **What is IPMICFG?**
 
-`IPMICFG`, for DOS, Linux, and Windows platforms, provides network configuration options as well as some hardware-specific commands, such as factory settings reset. `IPMICFG` can be downloaded from: ftp://ftp.supermicro.com/utility/IPMICFG/.
+`IPMICFG`, for DOS, Linux, and Windows platforms, provides network configuration options as well as some hardware-specific commands, such as factory settings reset. `IPMICFG` can be downloaded from: [ftp://ftp.supermicro.com/utility/IPMICFG/](ftp://ftp.supermicro.com/utility/IPMICFG/).
 
 **How do I reset Remote Management?**
 
