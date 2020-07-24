@@ -3,10 +3,7 @@ title: "RMA Policy"
 description: "iXsystems TrueNAS RMA Policy"
 ---
 
-
-
 ## RMA Policy
-
 
 All warranted systems inherit the iXsystems RMA policy. The details of the policy vary depending upon the type of system and whether or not it is located in the continental US.
 
@@ -16,6 +13,4 @@ All warranted systems inherit the iXsystems RMA policy. The details of the polic
 
 **FreeNAS/Server International RMA Policy**: Advanced Replacement; customer responsible for returning failed component (no shipping label). Parts must be received by iXsystems within 30 days to avoid an automated invoice for the full cost of the replacement part.
 
-For additional info, please contact the iXsystems Support team at any time!
-1-408-943-4100 — Option 3
-or 1-855-GREP-4-iX (toll-free)
+For additional info, please [contact the iXsystems Support team](https://www.truenas.com/docs/hub/additional-topics/support/#contacting-ixsystems-support) at any time!
