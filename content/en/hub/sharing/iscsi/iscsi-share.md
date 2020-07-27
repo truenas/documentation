@@ -133,7 +133,7 @@ arguments and get the necessary information to connect to the share.
 ### Discover and Login to the iSCSI Share
 
 Run the command
-<code>sudo iscsiadm --mode discovery --type sendtargets --portal <i>IPofTrueNASsystem</i></code>.
+<code>sudo iscsiadm \--mode discovery \--type sendtargets \--portal <i>IPofTrueNASsystem</i></code>.
 The output gives the basename and target name that was configured on
 the TrueNAS. See the image directly below as an example.
 
@@ -146,7 +146,7 @@ and get the same output. Take note of the basename and target name
 given in the output. It will be needed to login to the iSCSI share.
 
 Next, run the command
-<code>sudo iscsiadm --mode node --targetname <i>basename</i>:<i>targetname</i> --portal <i>IPofTrueNASsystem</i> --login</code>
+<code>sudo iscsiadm \--mode node \--targetname <i>basename</i>:<i>targetname</i> \--portal <i>IPofTrueNASsystem</i> \--login</code>
 where *basename* and *targetname* is the information given from the
 discovery command. See the images directly below as an example.
 
