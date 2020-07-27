@@ -1,13 +1,7 @@
 ---
-title: "M-Series Statement of Volatility"
-description: "The TrueNAS M-Series SOV in downloadable PDF format."
+title: "Statement of Volatility"
 ---
 
-<div class="container-image-download">
-    <img src="/images/m-series-sov.png" alt="M-Series SOV" class="image" style="width:100%">
-    <div class="middle">
-        <div class="image-download-text,button-wrapper">
-            <a class="linkbutton" href="/pdf/m-series-sov.pdf">Download</i></a>
-        </div>
-    </div>
-</div>
+<object data="https://www.truenas.com/docs/pdf/m-series-sov.pdf" type="application/pdf" width="95%" height="1000">
+  There was an error displaying this PDF, <a href="/pdf/m-series-sov.pdf">please click here to download the file.</a>
+</object>

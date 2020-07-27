@@ -1,13 +1,7 @@
 ---
-title: "M-Series SATADOM Replacement Guide"
-description: "The TrueNAS M-Series SATADOM replacement guide in downloadable PDF format."
+title: "SATADOM Replacement Guide"
 ---
 
-<div class="container-image-download">
-    <img src="/images/m-series-satadom-replacement-guide.png" alt="M-Series SATADOM Replacement Guide" class="image" style="width:100%">
-    <div class="middle">
-        <div class="image-download-text,button-wrapper">
-            <a class="linkbutton" href="/pdf/m-series-satadom-replacement-guide.pdf">Download</i></a>
-        </div>
-    </div>
-</div>
+<object data="https://www.truenas.com/docs/pdf/m-series-satadom-replacement-guide.pdf" type="application/pdf" width="95%" height="1000">
+  There was an error displaying this PDF, <a href="/pdf/m-series-satadom-replacement-guide.pdf">please click here to download the file.</a>
+</object>
