@@ -16,15 +16,15 @@ The legacy scrub algorithm can be enabled by setting this **sysctl** tunable in 
 `sysctl -w vfs.zfs.zfs_scan_legacy=1`
 
 > If a scrub is already in progress, it can be paused, the tunable set, and the scrub resumed with these commands:
-> `zpool scrub -p poolname`
-> `sysctl -w vfs.zfs.zfs_scan_legacy=1`
+> `zpool scrub -p poolname`,
+> `sysctl -w vfs.zfs.zfs_scan_legacy=1`, and
 > `zpool scrub poolname`
 
-## Issue: System Load During Scrubs or Resilvers**
+## Issue: System Load During Scrubs or Resilvers
 
 In FreeNAS 11.1 and 11.1-U1, resilver and scrub delays were both set to *0*. This can keep the system too busy to do other work when a scrub or resilver is active.
 
-### Fix: Adjust Scrub and Silver Delay Settings**
+### Fix: Adjust Scrub and Silver Delay Settings
 
 Two **sysctl** tunables affect scrub and resilver speed and system availability:
 
