@@ -1,6 +1,5 @@
 ---
 title: "Z-Series Boot Device Replacement Guide"
-description: "Z-Series Boot Device Replacement Guide"
 ---
 
 ## Z-Series Boot Device Replacement Guide
