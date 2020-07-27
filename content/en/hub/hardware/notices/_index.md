@@ -1,5 +1,5 @@
 ---
-title: "Hardware Notices"
-description: "Hardware Notices and Errata"
+title: "Notices"
+description: "Hardware notices and errata."
 weight: 4
 ---
