@@ -1,13 +1,7 @@
 ---
-title: "FreeNAS Certified Basic Set up Guide"
-description: "The FreeNAS certified BSG in downloadable PDF format."
+title: "Basic Setup Guide"
 ---
 
-<div class="container-image-download">
-    <img src="/images/fn-certified-bsg.png" alt="FreeNAS Certified BSG" class="image" style="width:100%">
-    <div class="middle">
-        <div class="image-download-text,button-wrapper">
-            <a class="linkbutton" href="/pdf/FreeNAS-certified-17JUN20.pdf">Download</i></a>
-        </div>
-    </div>
-</div>
+<object data="https://www.truenas.com/docs/pdf/FreeNAS-certified-17JUN20.pdf" type="application/pdf" width="95%" height="1000">
+  There was an error displaying this PDF, <a href="/pdf/FreeNAS-certified-17JUN20.pdf">please click here to download the file.</a>
+</object>
