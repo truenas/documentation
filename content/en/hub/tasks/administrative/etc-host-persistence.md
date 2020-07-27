@@ -7,6 +7,7 @@ description: "How to have IP addresses added to /etc/hosts persist across reboot
 
 Domain Name resolution, the process of mapping host or domain names, such as `mytruenas` or `truenas1.mycompany.com`, to their associated IP addresses can be achieved through a variety of methods. 
 The quickest method is to read entries in the <file>hosts</file> file, which is a local text file containing a list of IP addresses mapped to domain/host names. Every operating system (OS) that communicates through the TCP/IP protocol has a <file>hosts</file> file.
+
 The hosts file can be used to speed up name resolution if a DNS server is not available on the local network. A DNS server runs networking software that allows it to join the Domain Name System, which is the standard service used on the Internet for name resolution.
 When adding entries to the <file>hosts</file> file of a TrueNAS system, use the TrueNAS web interface to save the entries directly to the configuration database. Do *not* edit the <file>hosts</file> file directly, as it will be overwritten by the configuration database during reboot.
 
