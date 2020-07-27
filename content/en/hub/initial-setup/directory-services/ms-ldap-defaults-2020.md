@@ -1,6 +1,5 @@
 ---
 title: "Microsoft LDAP defaults 2020"
-description: "Microsoft LDAP defaults 2020"
 ---
 
 ## Microsoft LDAP defaults 2020
@@ -34,6 +33,6 @@ This change impacts LDAP communication between the FreeNAS or TrueNAS server and
 
 For more details about this change to Windows, please see [Microsoft’s article about LDAP Channel Binding and LDAP Signing Requirements](https://techcommunity.microsoft.com/t5/core-infrastructure-and-security/ldap-channel-binding-and-ldap-signing-requirements-march-update/ba-p/921536).
 
-This Microsoft change to the default behavior has been addressed in the upcoming 11.2-U8 release, and has already been addressed in the FreeNAS 11.3-Release. The methods of communicating with the Domain Controller now use strong authentication. The strong authentication methods are either SSL-encrypted transport or signed sasl_gssapi bind (Kerberos).
+This Microsoft change to the default behavior has been addressed in the FreeNAS/TrueNAS 11.2-U8 and newer releases. The methods of communicating with the Domain Controller now use strong authentication. The strong authentication methods are either SSL-encrypted transport or signed sasl_gssapi bind (Kerberos).
 
-It is strongly recommended that all TrueNAS and FreeNAS systems that use LDAP and/or Active Directory are updated to 11.3-RELEASE or 11.2-U8. This will prevent the new Windows security defaults from disrupting your Active Directory connectivity.
+It is strongly recommended to update all TrueNAS and FreeNAS systems that use LDAP and/or Active Directory to 11.2-U8, 11.3, or newer versions of FreeNAS/TrueNAS. This will prevent the new Windows security defaults from disrupting your Active Directory connectivity.
