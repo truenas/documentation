@@ -6,36 +6,7 @@ description: "How to install or configure application plugins."
 {{% alert title="Notice" color="info" %}}
 The Plugins feature is generally available in TrueNAS CORE and is supported by the open source TrueNAS community.
 TrueNAS Enterprise does not show or support this feature unless it has been added to a TrueNAS Enterprise license.
-For more details or to request plugin support in TrueNAS Enterprise, please contact iX Support:
-
-<style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;}
-.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
-.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
-.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
-</style>
-<table class="tg">
-  <tr>
-    <th class="tg-0pky"><b>Contact Method</b></th>
-    <th class="tg-0pky"><b>Contact Options</b></th>
-  </tr>
-  <tr>
-    <td class="tg-0pky">Web</td>
-    <td class="tg-0pky"><a href="https://support.ixsystems.com" target="_blank">https://support.ixsystems.com</a></td>
-  </tr>
-  <tr>
-    <td class="tg-0pky">Email</td>
-    <td class="tg-0pky"><a href="mailto://support.ixsystems.com" target="_blank">support@ixsystems.com</a></td>
-  </tr>
-  <tr>
-    <td class="tg-0pky">Telephone</td>
-    <td class="tg-0pky">Monday - Friday, 6:00AM to 6:00PM Pacific Standard Time:<br><br>US-only toll-free: 855-473-7449 option 2<br>Local and international: 408-943-4100 option 2<br></td>
-  </tr>
-  <tr>
-    <td class="tg-0pky">Telephone</td>
-    <td class="tg-0pky">After Hours (24x7 Gold Level Support only):<br><br>US-only toll-free: 855-499-5131<br>International: 408-878-3140 (international calling<br>rates will apply)<br></td>
-  </tr>
-</table>
+For more details or to request plugin support in TrueNAS Enterprise, please [contact iX Support](/docs/hub/additional-topics/support/#contacting-ixsystems-support)
 {{% /alert %}}
 
 Plugins allow you to extend the built-in NAS services by installing additional software.
@@ -141,3 +112,7 @@ Refer to the Asigra documentation for details about using the Asigra platform:
 * [DS-Client Installation Guide](https://s3.amazonaws.com/asigra-documentation/Guides/Cloud%20Backup/v14.1/Client_Software_Installation_Guide.pdf): How to install the DS-Client system.
   DS-Client aggregates backup content from endpoints and transmits it to the DS-System service.
 * [DS-Client Management Guide](https://s3.amazonaws.com/asigra-documentation/Help/v14.1/DS-Client%20Help/index.html): Managing the DS-Client system after it has been successfully installed at one or more locations.
+
+## Creating a New Plugin
+
+TrueNAS community members are welcome to develop and contribute their own plugins to the project! See the [contributing plugins article]() for more details.
