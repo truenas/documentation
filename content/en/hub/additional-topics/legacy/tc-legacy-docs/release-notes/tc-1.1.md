@@ -1,11 +1,8 @@
 ---
-title: "TrueCommand 1.1 Release Notes"
-description: "TrueCommand 1.1 Release Notes"
+title: "TrueCommand 1.1"
 ---
 
-## TrueCommand 1.1
-
-### November 12, 2019
+**November 12, 2019**
 
 The TrueCommand team is pleased to announce the general availability of TrueCommand version 1.1.
 
@@ -23,8 +20,7 @@ System audit logs have been added for connected FreeNAS 11.3+ systems. These log
 
 TrueCommand has added NAS configuration backup and restore functionality. By default, the configuration backup is triggered any time a NAS audit log change is detected (FreeNAS 11.3+), or can manually be requested (FreeNAS 11.2+). This feature requires a valid, non-expired license from iXsystems.
 
- 
-### CHANGELOG
+## Changelog
 
 Each of these are top-level “epic” tickets on the TrueCommand bug tracker with collections of changes contained within them. See the ticket for the detailed breakdown of all the changes contained within.
 

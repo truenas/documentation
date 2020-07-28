@@ -1,11 +1,8 @@
 ---
-title: "TrueCommand 1.2.1 Release Notes"
-description: "TrueCommand 1.2.1 Release Notes"
+title: "TrueCommand 1.2.1"
 ---
 
-## TrueCommand 1.2.1
-
-### February 21, 2020
+**February 21, 2020**
 
 The TrueCommand team has released revision 1 of the 1.2 release (version 1.2.1).
 
@@ -13,5 +10,6 @@ This revision contains a minor fix to ensure that custom certificate authorities
 
 To update to this release:
 
-Docker: Simply re-run “docker pull ixsystems/truecommand” to fetch the latest version of the container, then restart the container.
-VM image: Simply reboot the VM to have it re-check and pull the latest version.
+* Docker: Simply re-run `docker pull ixsystems/truecommand` to fetch the latest version of the container, then restart the container.
+
+* VM image: Simply reboot the VM to have it re-check and pull the latest version.

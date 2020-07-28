@@ -1,31 +1,26 @@
 ---
-title: "TrueCommand 1.0 Release Notes"
-description: "TrueCommand 1.0 Release Notes"
+title: "TrueCommand 1.0"
 ---
 
-## TrueCommand 1.0
-
-+ June 11, 2019
+**June 11, 2019**
 
 The TrueCommand development team is pleased to announce the general availability of TrueCommand 1.0-RELEASE.
 
 This is a brand-new product from iXsystems that streamlines multi-system administration for teams of system administrators and large deployments of FreeNAS and TrueNAS systems. Beta testers are encouraged to upgrade to the official release as soon as possible to enable new capabilities including handling SSL settings and connection procedures.
 
- 
-
-### Known Issues
+## Known Issues
  
 
 When updating from the 1.0-Beta version of TrueCommand, the updater must be run twice to complete the process:
 
-From the web interface: go to the Dashboard, then go back to the Administration/Updates page. Restart the update procedure. If the web interface does not show an option to start the update again, press F5 to refresh the browser.
-When updating via the command line: run sysup -update to restart the update procedure. Then run shutdown -r now to reboot the system after the update has completed.
- 
+From the web interface: go to the Dashboard, then go back to the Administration/Updates page. Restart the update procedure. If the web interface does not show an option to start the update again, press <kbd>F5</kbd> to refresh the browser.
 
-### Changelog
- 
+When updating via the command line: run `sysup -update` to restart the update procedure. Then run `shutdown -r now` to reboot the system after the update has completed.
 
-New Features
+## Changelog
+
+### New Features
+
 + [TC-879] – TC system configuration
 + [TC-881] – TTY Config: SSHD configuration
 + [TC-882] – Setup update train configuration

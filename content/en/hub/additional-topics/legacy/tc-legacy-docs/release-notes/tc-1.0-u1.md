@@ -1,6 +1,5 @@
 ---
-title: "TrueCommand 1.0-U1 Release Notes"
-description: "TrueCommand 1.0-U1 Release Notes"
+title: "TrueCommand 1.0-U1"
 ---
 
 ## TrueCommand 1.0-U1
@@ -12,7 +11,8 @@ The TrueCommand team is pleased to announce a minor update to TrueCommand 1.0.
 This update is primarily for LDAP server connection handling to ensure the options work properly with a wider variety of LDAP server configurations.
 
 ### Changelog
-Improvements
+
+**Improvements**
 
 + [TC-1038] – Expand LDAP settings: allow long-form domains and fix SSL connections to LDAP server
 + [TC-1040] – Dashboard Cards: Auto-adjust network stats units

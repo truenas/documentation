@@ -1,11 +1,9 @@
 ---
-title: "TrueCommand 1.2.3 Release Notes"
-description: "TrueCommand 1.2.3 Release Notes"
+title: "TrueCommand 1.2.3"
 ---
 
-## TrueCommand 1.2.3
+**May 22, 2020**
 
-### May 22, 2020
 The TrueCommand team is pleased to make revision 3 of the 1.2 release (version 1.2.3) available!
 
 This revision contains these fixes:
@@ -15,5 +13,5 @@ This revision contains these fixes:
 
 To update to this release:
 
-+ Docker: Re-run “docker pull ixsystems/truecommand” to fetch the latest version of the container, then restart the container.
++ Docker: Re-run `docker pull ixsystems/truecommand` to fetch the latest version of the container, then restart the container.
 + VM image: Reboot the VM. During boot, the VM will check for updates and pull the latest version.

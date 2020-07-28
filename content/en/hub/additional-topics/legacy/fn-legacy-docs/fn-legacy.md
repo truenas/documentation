@@ -1,6 +1,5 @@
 ---
-title: "FreeNAS Legacy User Guides"
-linkTitle: "FreeNAS"
+title: "User Guides"
 weight: 1
 ---
 
