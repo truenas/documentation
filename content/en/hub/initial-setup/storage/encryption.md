@@ -103,6 +103,19 @@ The dataset listing changes to show the unlocked icon.
 ## Conversion from GELI
 
 It is not possible to convert an existing FreeNAS/TrueNAS 11.3 or earlier GELI encrypted pool to use native ZFS encryption.
-However, data can be migrated from the GELI-encrypted pool to a new ZFS-encrypted pool.
-The new ZFS-encrypted pool must be at least the same size as the previous GELI-encrypted pool.
-Use `zfs send` to transfer the data to the ZFS-encrypted pool.  
+However, data can be migrated from the GELI-encrypted pool to a new ZFS-encrypted pool.  The new ZFS-encrypted pool must be at least the same size as the previous GELI-encrypted pool.  Two options exist to migrate data from a GELI-encrypted pool to a new ZFS-encrypted pool.  The first method is to use rsync to copy the data between the pools. The second method is to utilize ZFS send/receive.  The following is an overview and not a guide.  Research ZFS send/receive before attempting this.  There are many edge cases that cannot be covered by a simple example.
+
+Legend:
+```
+GELI Pool = pool_a 
+latest snapshot of GELI Pool = snapshot_name
+ZFS Native Encrypted Pool = pool_b 
+receieving dataset = dataset_1
+```
+
++ Create a new encrypted pool using the **Storage** ➞ **Pools** as described at the beginning of this article.
++ Open the CLI.  Make a new snapshot of the GELI pool with the data to be migrated: `zfs snapshot -r pool_a@snapshot_name`
++ Create a passphrase: `echo passphrase > /tmp/pass`
++ Use ZFS send/receive to transfer the data between pools: `zfs send -Rv pool_a@snapshot_name | zfs recv -o encryption=on -o keyformat=passphrase -o keylocation=file:///tmp/pass pool_b/dataset_1`
++ Once the transfer has completed, open the **Storage** ➞ **Pools** page and lock the new data set.  Once the dataset has been locked, unlock it.  TrueNAS will prompt for the passphrase.  Once you enter the passphrase and the pool is successfully unlocked you can delete the /tmp/pass file used for the transfer.
++ At this point you can convert the dataset to use a keyfile instead of a passphrase.  To use a passphrase instead of a keyfile, click <i class="fas fa-ellipsis-v"></i>&nbsp (Options) and select Encryption Options. Change the Encryption Type from Passphrase to Key.
