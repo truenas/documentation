@@ -115,4 +115,4 @@ Refer to the Asigra documentation for details about using the Asigra platform:
 
 ## Creating a New Plugin
 
-TrueNAS community members are welcome to develop and contribute their own plugins to the project! See the [contributing plugins article]() for more details.
+TrueNAS community members are welcome to develop and contribute their own plugins to the project! See the [contributing plugins article](/hub/contributing/creating-plugins/) for more details.
