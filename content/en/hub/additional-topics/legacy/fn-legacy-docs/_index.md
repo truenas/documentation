@@ -1,4 +1,4 @@
 ---
-title: FreeNAS Legacy Documentation
-linktitle: FreeNAS
+title: "FreeNAS"
+weight: 10
 ---
