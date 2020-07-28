@@ -6,7 +6,7 @@ description: "How to install or configure application plugins."
 {{% alert title="Notice" color="info" %}}
 The Plugins feature is generally available in TrueNAS CORE and is supported by the open source TrueNAS community.
 TrueNAS Enterprise does not show or support this feature unless it has been added to a TrueNAS Enterprise license.
-For more details or to request plugin support in TrueNAS Enterprise, please [contact iX Support](/docs/hub/additional-topics/support/#contacting-ixsystems-support)
+For more details or to request plugin support in TrueNAS Enterprise, please [contact iX Support](/hub/additional-topics/support/#contacting-ixsystems-support):
 {{% /alert %}}
 
 Plugins allow you to extend the built-in NAS services by installing additional software.
@@ -42,6 +42,13 @@ Keep these plugins set to *DHCP* unless a manually configured IP address is pref
 Plugins can take several minutes to download and install.
 A dialog confirms when the installation is complete and shows any post-install notes.
 You can view the post-install notes later by expanding the entry for the installed plugin in **Plugins** and clicking <i class="fas fa-file-alt"></i> **Post Install Notes**.
+
+### Troubleshooting
+
+If a plugin download or update fails with an error about being unable to fetch an artifact or download a package, you might need to investigate your networking environment.
+Some home routers can have a security feature that prevent DHCP enabled plugins (or bridged devices with virtual MAC addresses) from resolving addresses.
+Also, sometimes additional DNS validation is required that is not supported by the router or the router has a caching resolver that is holding on to a stale record.
+A couple of possible solutions are to hard reset your router to clear any stale records or try using an alternate DNS server for the plugin.
 
 ## Plugin Configuration
 
