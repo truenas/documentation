@@ -1,4 +1,4 @@
 ---
-title: TrueCommand Legacy Documentation
-linktitle: TrueCommand
+title: "TrueCommand"
+weight: 30
 ---
