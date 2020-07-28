@@ -1,4 +1,4 @@
 ---
-title: "TrueCommand Legacy Release Notes"
-description: "TrueCommand Legacy Release Notes"
+title: "Release Notes"
+description: "Historical release notes for previous versions of TrueCommand."
 ---

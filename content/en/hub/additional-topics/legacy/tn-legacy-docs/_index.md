@@ -1,5 +1,4 @@
 ---
-title: TrueNAS Legacy Documentation
-linktitle: TrueNAS
+title: "TrueNAS"
 weight: 20
 ---

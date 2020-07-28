@@ -1,11 +1,8 @@
 ---
-title: "TrueCommand 1.2.2 Release Notes"
-description: "TrueCommand 1.2.2 Release Notes"
+title: "TrueCommand 1.2.2"
 ---
 
-## TrueCommand 1.2.2
-
-### March 11, 2020
+**March 11, 2020**
 
 The TrueCommand team is pleased to make revision 2 of the 1.2 release (version 1.2.2) available!
 
@@ -16,7 +13,7 @@ This revision contains these fixes:
 
 To update to this release:
 
-+ Docker: Re-run “docker pull ixsystems/truecommand” to fetch the latest version of the container, then restart the container.
++ Docker: Re-run `docker pull ixsystems/truecommand` to fetch the latest version of the container, then restart the container.
 + VM image: Reboot the VM. During boot, the VM will check for updates and pull the latest version.
 
 Tickets can be viewed at https://jira.ixsystems.com/projects/TC/issues/

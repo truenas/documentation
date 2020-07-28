@@ -1,4 +1,4 @@
 ---
-title: "FreeNAS Legacy Release Notes"
-description: "FreeNAS Legacy Release Notes"
+title: "Release Notes"
+description: "Historical release notes for previous versions of FreeNAS."
 ---
