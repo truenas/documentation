@@ -16,6 +16,6 @@ only available from iXsystems.”
 Please Note: This problem only applies to firmware versions below 16.00.12.00 and only affects SATA drives.
 SAS drives are not affected.
 
-<object data="https://www.truenas.com/docs/pdf/Certified-Firmware-Update-2020-07-20.pdf" type="application/pdf" width="95%" height="1000">
-  There was an error displaying this PDF, <a href="/pdf/Certified-Firmware-Update-2020-07-20.pdf">please click here to download the file.</a>
+<object data="https://www.truenas.com/docs/files/LSI9300xxFirmwareUpdatev1_0.pdf" type="application/pdf" width="95%" height="1000">
+  There was an error displaying this PDF, <a href="https://www.truenas.com/docs/files/LSI9300xxFirmwareUpdatev1_0.pdf">please click here to download the file.</a>
 </object>
