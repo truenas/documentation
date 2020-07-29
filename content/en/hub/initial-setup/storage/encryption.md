@@ -108,9 +108,9 @@ However, data can be migrated from the GELI-encrypted pool to a new ZFS-encrypte
 Legend:
 ```
 GELI Pool = pool_a 
-latest snapshot of GELI Pool = snapshot_name
+Latest Snapshot of GELI Pool = snapshot_name
 ZFS Native Encrypted Pool = pool_b 
-receieving dataset = dataset_1
+Receieving Dataset = dataset_1
 ```
 
 1. Create a new encrypted pool using the **Storage** ➞ **Pools** as described at the beginning of this article.
