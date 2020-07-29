@@ -14,9 +14,9 @@ To get started, make sure a <a href="/hub/initial-setup/storage/datasets/">datas
 
 To turn the SMB service on, go to **Services** and click the slider for *SMB*. If you wish to turn the service to activate whenever TrueNAS boots, check the *Start Automatically* box.
 
-{{\% pageinfo %}}
+{{% pageinfo %}}
 NOTE: The SMB share will not work if the service is not turned on.
-{{\% /pageinfo %}}
+{{% /pageinfo %}}
 
 The SMB service settings can be configured by clicking <i class="fas fa-pen" aria-hidden="true" title="Pen"></i>. Don't forget to click *SAVE* when changing the settings. Unless a specific setting is needed, it is recommended to use the default settings for the SMB service.
 
