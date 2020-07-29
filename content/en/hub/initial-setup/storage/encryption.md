@@ -60,7 +60,7 @@ Must be longer than 8 characters
 ## Locking and Unlocking Datasets
 
 Encrypted datasets can only be locked and unlocked if they are secured with a passphrase instead of a keyfile.
-Before locking a dataset, verify that it is not currently in use, then click <i class="fas fa-ellipsis-v"></i> (Options) and **Lock**.
+Before locking a dataset, verify that it is not currently in use, then click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp (Options) and **Lock**.
 
 <img src="/images/TN-12.0-encryption-10.PNG">
 <br><br>
@@ -78,7 +78,7 @@ A dialog window remains visible while the dataset is locked.
 After locking a dataset, the unlock icon changes to a locked icon.
 While the dataset is locked, it is not available for use.
 
-To unlock a dataset, click <i class="fas fa-ellipsis-v"></i> (Options) and **Unlock**.
+To unlock a dataset, click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp (Options) and **Unlock**.
 
 <img src="/images/TN-12.0-encryption-13.PNG">
 <br><br>
@@ -113,9 +113,9 @@ ZFS Native Encrypted Pool = pool_b
 Receieving Dataset = dataset_1
 ```
 
-1. Create a new encrypted pool using the **Storage** ➞ **Pools** as described at the beginning of this article.
+1. Create a new encrypted pool using the **Storage > Pools** as described at the beginning of this article.
 2. Open the CLI.  Make a new snapshot of the GELI pool with the data to be migrated: `zfs snapshot -r pool_a@snapshot_name`
 3. Create a passphrase: `echo passphrase > /tmp/pass`
 4. Use ZFS send/receive to transfer the data between pools: `zfs send -Rv pool_a@snapshot_name | zfs recv -o encryption=on -o keyformat=passphrase -o keylocation=file:///tmp/pass pool_b/dataset_1`
-5. Once the transfer has completed, open the **Storage** ➞ **Pools** page and lock the new data set.  Once the dataset has been locked, unlock it.  TrueNAS will prompt for the passphrase.  Once you enter the passphrase and the pool is successfully unlocked you can delete the /tmp/pass file used for the transfer.
-6. At this point you can convert the dataset to use a keyfile instead of a passphrase.  To use a passphrase instead of a keyfile, click <i class="fas fa-ellipsis-v"></i>&nbsp (Options) and select Encryption Options. Change the Encryption Type from Passphrase to Key.
+5. Once the transfer has completed, open the **Storage > Pools** page and lock the new data set.  Once the dataset has been locked, unlock it.  TrueNAS will prompt for the passphrase.  Once you enter the passphrase and the pool is successfully unlocked you can delete the /tmp/pass file used for the transfer.
+6. At this point you can convert the dataset to use a keyfile instead of a passphrase.  To use a passphrase instead of a keyfile, click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp (Options) and select Encryption Options. Change the Encryption Type from Passphrase to Key and save.  Remember to back up your keyfile immediately!
