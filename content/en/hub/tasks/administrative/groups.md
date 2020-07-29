@@ -7,7 +7,7 @@ Using groups in TrueNAS can be an efficient way of managing permissions for user
 <a href="/hub/initial-setup/directory-services/">Directory Services</a>.
 
 {{\% pageinfo %}}
-NOTE: TrueNAS hides all builtin groups by default. To show all builtin groups, go to **Accounts > Groups** and click <i class="fas fa-cog"></i>.
+NOTE: TrueNAS hides all builtin groups by default. To show all builtin groups, go to **Accounts > Groups** and click <i class="fas fa-cog" aria-hidden="true" title="Settings"></i>.
 {{\% /pageinfo %}}
 
 ## Group Configuration
