@@ -11,7 +11,7 @@ User accounts can also be organized into Teams for simultaneous management of la
 
 ## Adding Local User Accounts
 
-To create a new user account, open the **Configure** <i class="fa fa-cog" aria-hidden="true" title="gear"></i> menu and click **Users > + NEW USER**.
+To create a new user account, open the **Configure** <i class="fa fa-cog" aria-hidden="true" title="Settings"></i>&nbsp menu and click **Users > + NEW USER**.
 Enter a descriptive user name and an authentication method for the user.
 
 The *DEFAULT* authentication method is used to create unique credentials for logging in to the TrueCommand web interface.
@@ -41,7 +41,7 @@ The LDAP or AD Username (optional) is required when the TrueCommand user name do
 
 ## Configuring User Accounts
 
-To configure account details and permissions, open the **Configure** <i class="fa fa-cog" aria-hidden="true" title="gear"></i> menu, click **Users** and **Edit user** <i class="fas fa-pen" aria-hidden="true" title="pencil"></i>.
+To configure account details and permissions, open the **Configure** <i class="fa fa-cog" aria-hidden="true" title="Settings"></i>&nbsp menu, click **Users** and **Edit user** <i class="fas fa-pen" aria-hidden="true" title="Edit"></i>.
 
 <img src="/images/tc-1.3-users-edit.PNG">
 <br><br>
@@ -82,7 +82,7 @@ Teams are a collection of users with permissions that are applied to all the joi
 They provide a more efficient way of managing large numbers of or related user accounts.
 For example, changing the permissions of a *Metrics* team that has 20 joined user accounts is much faster than changing the permissions for each account.
 
-To create a team, open the **Configure** <i class="fa fa-cog" aria-hidden="true" title="gear"></i> menu and click **TEAMS** > **+ NEW TEAM**.
+To create a team, open the **Configure** <i class="fa fa-cog" aria-hidden="true" title="Settings"></i>&nbsp menu and click **TEAMS > + NEW TEAM**.
 
 <img src="/images/tc-1.3-teams-new.PNG">
 <br><br>
@@ -92,7 +92,7 @@ You can edit the permissions for a team after creating it.
 
 ### Configuring Teams
 
-To adjust the team members or permissions, open the **Configure** <i class="fa fa-cog" aria-hidden="true" title="gear"></i> menu and click **Teams** > **Edit team** <i class="fas fa-pen" aria-hidden="true" title="pencil"></i>.
+To adjust the team members or permissions, open the **Configure** <i class="fa fa-cog" aria-hidden="true" title="Settings"></i>&nbsp menu and click **Teams > Edit team** <i class="fas fa-pen" aria-hidden="true" title="Edit"></i>.
 
 <img src="/images/tc-1.3-teams-edit.PNG">
 <br><br>
