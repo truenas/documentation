@@ -62,11 +62,11 @@ The procedure varies slightly depending on the web browser you are using.
 
 ##### Firefox
 
-Open the web console by clicking <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> **Web Developer ➞ Web Console** or by pressing <kbd>Ctrl+Shift+K</kbd>.
+Open the web console by clicking <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp **Web Developer > Web Console** or by pressing <kbd>Ctrl+Shift+K</kbd>.
 
 In the upper right, set `Persist Logs`.
 
-Click  <i class="fa fa-ellipsis-h" aria-hidden="true" title="Options"></i> (Settings). In the `Web Console` section, set `Enable timestamps`. Click the `Console` tab or press <kbd>Ctrl+Shift+K</kbd> to switch to the console window.
+Click  <i class="fa fa-ellipsis-h" aria-hidden="true" title="Options"></i>&nbsp (Settings). In the `Web Console` section, set `Enable timestamps`. Click the `Console` tab or press <kbd>Ctrl+Shift+K</kbd> to switch to the console window.
 
 Leave the console open and perform the action that encounters problems.
 
@@ -74,23 +74,23 @@ Right-click in the console window. Choose `Export visible messages to clipboard`
 
 Open an editor, paste the clipboard, and save to a file called `console.log`.
 
-After saving the file, go back to the console with <i class="fa fa-bars" aria-hidden="true" title="Menu"></i> **Web Developer ➞ Web Console** or by pressing <kbd>Ctrl+Shift+K</kbd>.
+After saving the file, go back to the console with <i class="fa fa-bars" aria-hidden="true" title="Menu"></i>&nbsp **Web Developer > Web Console** or by pressing <kbd>Ctrl+Shift+K</kbd>.
 
 In the upper right, unset `Persist Logs`.
 
 ##### Chrome
 
-Open the console by clicking  <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> **More Tools ➞ Developer tools** or by pressing <kbd>Ctrl+Shift+I</kbd>.
+Open the console by clicking  <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp **More Tools > Developer tools** or by pressing <kbd>Ctrl+Shift+I</kbd>.
 
-Click <i class="fa fa-cog" aria-hidden="true" title="settings"></i> and set `Preserve log`.
+Click <i class="fa fa-cog" aria-hidden="true" title="settings"></i>&nbsp and set `Preserve log`.
 
-Click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> **Settings ➞ Preferences**. In the `Console` section, set `Show timestamps`. Close the Preferences window.
+Click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp **Settings > Preferences**. In the `Console` section, set `Show timestamps`. Close the Preferences window.
 
 Leave the console open and perform the action that encounters problems.
 
 Right-click in the console window. Choose `Save as…` and save to a file called `console.log`.
 
-After saving the file, go back to the console with <i class="fa fa-cog" aria-hidden="true" title="settings"></i> **More Tools ➞ Developer tools** or by pressing <kbd>Ctrl+Shift+I</kbd>. Click <i class="fa fa-cog" aria-hidden="true" title="settings"></i> and unset `Preserve log`.
+After saving the file, go back to the console with <i class="fa fa-cog" aria-hidden="true" title="settings"></i>&nbsp **More Tools > Developer tools** or by pressing <kbd>Ctrl+Shift+I</kbd>. Click <i class="fa fa-cog" aria-hidden="true" title="settings"></i>&nbsp and unset `Preserve log`.
 
 ### New Features
 
