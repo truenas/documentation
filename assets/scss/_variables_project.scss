@@ -4,17 +4,54 @@ Add styles or override variables from the theme here.
 
 */
 
-// Switch to Inter for body
+// Add Material Design icons
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://www.truenas.com/docs/files/MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: local('Material Icons'),
+    local('MaterialIcons-Regular'),
+    url(https://www.truenas.com/docs/files/MaterialIcons-Regular.woff2) format('woff2'),
+    url(https://www.truenas.com/docs/files/MaterialIcons-Regular.woff) format('woff'),
+    url(https://www.truenas.com/docs/files/MaterialIcons-Regular.ttf) format('truetype');
+}
 
+// Switch to Inter for body
 $google_font_name: "Inter";
 $google_font_family: "Inter:300,300i,400,400i,700,700i";
 
 // Resize navbar logo SVG
-
 svg {
     display: inline-block;
     margin: 0 10px;
     height: 50px;
+}
+
+// Style Material Design icons
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
 }
 
 // css to center the landing page features
@@ -31,15 +68,6 @@ $secondary: #666666;
     font-weight: bold;
     text-align: center;
     text-decoration: underline;
-}
-
-// Adjustments for font elegant icons used within content
-.inline-svg {
-  display: inline-block;
-  height: 1.15rem;
-  width: 1.15rem;
-  top: 0.15rem;
-  position: relative;
 }
 
 .center {
