@@ -9,10 +9,10 @@ The S.M.A.R.T. service must be turned on in order for a S.M.A.R.T. test to work.
 
 The S.M.A.R.T. service settings can be configured by clicking <i class="fas fa-pen" aria-hidden="true" title="Pen"></i>. Don't forget to click *SAVE* when changing the settings. *Check Interval* is the amount of time, in minutes, the <a href="https://www.freebsd.org/cgi/man.cgi?query=smartd&manpath=FreeBSD+11.1-RELEASE+and+Ports">smartd</a> service checks for S.M.A.R.T. tests to run on the system. Enter a number of degrees in Celsius for the *Difference*. S.M.A.R.T. reports if the temperature of a drive has changed by the number of degrees Celsius specified since the last report. Enter a threshold temperature in Celsius for *Informational*. S.M.A.R.T. will message with a log level of LOG_INFO if the temperature is higher than the threshold specified. Enter a threshold temperature in Celsius for *Critical*. S.M.A.R.T. will message with a log level of LOG_CRIT if the temperature is higher than the threshold.
 
-{{\% pageinfo %}}
+{{% pageinfo %}}
 NOTE: If you would like to exclude a disk from being tested by S.M.A.R.T., go to **Storage > Disks**, select a disk, and click *EDIT DISK(S)*.
 Unset *Enable S.M.A.R.T.*.
-{{\% /pageinfo %}}
+{{% /pageinfo %}}
 
 ## Automatic S.M.A.R.T. Test
 
