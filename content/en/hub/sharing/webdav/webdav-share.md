@@ -11,9 +11,9 @@ To get started, make sure a <a href="/hub/initial-setup/storage/datasets">datase
 
 To turn on the WebDAV service, go to **Services** and click the slider for *WebDAV*. If you wish to turn the service on automatically when the TrueNAS system is turned on, check the *Start Automatically* box.
 
-{{\% pageinfo %}}
+{{% pageinfo %}}
 NOTE: The WebDAV share will not work if the service is not turned on.
-{{\% /pageinfo %}}
+{{% /pageinfo %}}
 
 The WebDAV service settings can be configured by clicking <i class="fas fa-pen" aria-hidden="true" title="Pen"></i>. It is recommended to set a new WebDAV password and use the HTTPS protocol. Using *HTTPS* as the protocol requires an SSL certificate. The *freenas_default* certificate can be used. The HTTP and HTTPS ports can be changed if desired. Make sure that the port assigned to the WebDAV share isn't already in use on the network. Don't forget to click *SAVE* when changing the settings.
 
