@@ -15,7 +15,7 @@ Some IPMI implementations require updates to work with newer versions of Java. S
 <img src="/images/TN-network-ipmi.png">
 <br><br>
 
-IPMI is configured from **Network ➞ IPMI**. The IPMI configuration screen  provides a shortcut to the most basic IPMI configuration. Those already familiar with IPMI management tools can use them instead.
+IPMI is configured from **Network > IPMI**. The IPMI configuration screen  provides a shortcut to the most basic IPMI configuration. Those already familiar with IPMI management tools can use them instead.
 
 ## IPMI Configuration
 
