@@ -11,7 +11,9 @@ To get started, make sure a <a href="/hub/initial-setup/storage/datasets">datase
 
 To turn the AFP service on, go to **Services** and click the slider for *AFP*. If you wish to turn the service on automatically when the TrueNAS system turns on, check the *Start Automatically* box.
 
-> NOTE: The AFP share will not work if the service is not turned on.
+{{\% pageinfo %}}
+NOTE: The AFP share will not work if the service is not turned on.
+{{\% /pageinfo %}}
 
 The AFP service settings can be configured by clicking <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>. Don't forget to click *SAVE* when changing the settings. Unless a specific setting is needed, it is recommended to use the default settings for the AFP service.
 
