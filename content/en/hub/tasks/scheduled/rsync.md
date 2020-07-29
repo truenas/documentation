@@ -21,9 +21,9 @@ To create an rsync task, go to **Tasks > Rsync Tasks** and click *ADD*. There ar
 
 First, turn on the rsync service on the *remote* system. Before creating an rsync task on the *host* system, a module on the *remote* system must be created. Create a module by going to **Services** and clicking <i class="fas fa-pen" aria-hidden="true" title="Pen"></i>&nbsp for the rsync service. Then, click **Rsync Module > ADD**. Give a descriptive name for the rsync module. Use the file browser to select the path of the dataset. This is the dataset used when pushing and pulling data from the *host* system. Select the permissions for the module by selecting an option from the *Access Mode* dropdown. Set the *Max Connections*. Entering *0* sets the amount of connections to unlimited. If running as a specific user or group during data transfers to and from the module, select them from the dropdowns. A list of hosts can also be allowed or denied from the rsync module if desired.
 
-{{\% pageinfo %}}
+{{% pageinfo %}}
 NOTE: If a *Hosts Allow* list is specified, **only** the IPs and hostnames on the list will be able to connect to the module.
-{{\% /pageinfo %}}
+{{% /pageinfo %}}
 
 Other options include specifying a comment for the rsync module and any additional parameters from <a href="https://www.samba.org/ftp/rsync/rsyncd.conf.html">rsyncd.conf(5)</a>.
 
