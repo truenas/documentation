@@ -60,9 +60,9 @@ TrueNAS supports setting a global password for all detected SEDs or setting indi
 
 ### Setting a global password for SEDs
 
-Go to **System ➞ Advanced ➞ SED Password** and enter the password. **Record this password and store it in a safe place!**
+Go to **System > Advanced > SED Password** and enter the password. **Record this password and store it in a safe place!**
 
-Now the SEDs must be configured with this password. Go to the **Shell** and enter `sedhelper setup <password>`, where `<password>` is the global password entered in **System ➞ Advanced ➞ SED Password**.
+Now the SEDs must be configured with this password. Go to the **Shell** and enter `sedhelper setup <password>`, where `<password>` is the global password entered in **System > Advanced > SED Password**.
 
 `sedhelper` ensures that all detected SEDs are properly configured to use the provided password:
 
@@ -77,11 +77,11 @@ Rerun `sedhelper setup <password>` every time a new SED is placed in the system 
 
 ### Creating separate passwords for each SED
 
-Go to **Storage ➞ Disks**. Click the three dot menu (Options) for the confirmed SED, then **Edit**. Enter and confirm the password in the `SED Password` and `Confirm SED Password fields`.
+Go to **Storage > Disks**. Click the three dot menu (Options) for the confirmed SED, then **Edit**. Enter and confirm the password in the `SED Password` and `Confirm SED Password fields`.
 
-The **Storage ➞ Disks** screen shows which disks have a configured SED password. The `SED Password` column shows a mark when the disk has a password. Disks that are not a SED or are unlocked using the global password are not marked in this column.
+The **Storage > Disks** screen shows which disks have a configured SED password. The `SED Password` column shows a mark when the disk has a password. Disks that are not a SED or are unlocked using the global password are not marked in this column.
 
-The SED must be configured to use the new password. Go to the **Shell** and enter `sedhelper setup --disk <da1> <password>`, where `<da1>` is the SED to configure and `<password>` is the created password from **Storage ➞ Disks ➞ Edit Disks ➞ SED Password**.
+The SED must be configured to use the new password. Go to the **Shell** and enter `sedhelper setup --disk <da1> <password>`, where `<da1>` is the SED to configure and `<password>` is the created password from **Storage > Disks > Edit Disks > SED Password**.
 
 This process must be repeated for each SED and any SEDs added to the system in the future.
 
