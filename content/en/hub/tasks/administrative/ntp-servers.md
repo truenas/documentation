@@ -30,9 +30,9 @@ Go to **System > NTP Servers** to view, edit, or remove NTP Servers.
 
 ## Editing a NTP Server
 
-Click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i> (Options) and select **Edit**.
+Click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i> &nbsp (Options) and select **Edit**.
 Edit as needed and click **Save**.
 
 ## Deleting a NTP Server
 
-Click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i> (Options) and select **Delete**.
+Click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp (Options) and select **Delete**.
