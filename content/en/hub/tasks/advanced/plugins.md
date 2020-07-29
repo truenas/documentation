@@ -41,7 +41,7 @@ Keep these plugins set to *DHCP* unless a manually configured IP address is pref
 
 Plugins can take several minutes to download and install.
 A dialog confirms when the installation is complete and shows any post-install notes.
-You can view the post-install notes later by expanding the entry for the installed plugin in **Plugins** and clicking <i class="fas fa-file-alt"></i> **Post Install Notes**.
+You can view the post-install notes later by expanding the entry for the installed plugin in **Plugins** and clicking <i class="fas fa-file-alt" aria-hidden="true" title="File"></i>&nbsp **Post Install Notes**.
 
 ### Troubleshooting
 
@@ -61,7 +61,7 @@ You can manage the plugin state, update the plugin application, configure the pl
 
 Plugin jails are preconfigured and typically require very little tuning, but you can reconfigure the jail properties in the event that a setting needs to change (updating the network configuration, for example).
 To update or reconfigure the plugin jail, go to the **Jails** screen and expand the entry for one of the plugin jails.
-You need to <i class="fas fa-stop"></i> **Stop** the jail before you can edit it.
+You need to <i class="fas fa-stop" aria-hidden="true" title="Stop">&nbsp **Stop** the jail before you can edit it.
 
 <img src="/images/plugin-jail-installed.png">
 <br><br>
@@ -87,12 +87,12 @@ To convert a jail snapshot into a new storage dataset, go to **Storage > Snapsho
 <img src="/images/jail-snapshot-options.png">
 <br><br>
 
-Expand the snapshot entry, click <i class="fas fa-clone"></i> **Clone to New Dataset**, and define the path and name of the new dataset to create from the snapshot.
-Then go to **Storage > Pools**, open the <i class="fas fa-ellipsis-v"></i> options for the new dataset, and click *Promote Dataset*.
+Expand the snapshot entry, click <i class="fas fa-clone" aria-hidden="true" title="Clone"></i>&nbsp **Clone to New Dataset**, and define the path and name of the new dataset to create from the snapshot.
+Then go to **Storage > Pools**, open the <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp options for the new dataset, and click *Promote Dataset*.
 
 ### Uninstall a Plugin
 
-To remove a plugin, go to **Plugins**, expand the installed plugin entry, and click <i class="fas fa-trash"></i> **Uninstall**.
+To remove a plugin, go to **Plugins**, expand the installed plugin entry, and click <i class="fas fa-trash" aria-hidden="true" title="Delete"></i>&nbsp **Uninstall**.
 Confirm the plugin removal by typing in the name of the plugin jail and setting *Confirm*.
 
 <img src="/images/plugin-uninstall.png">
