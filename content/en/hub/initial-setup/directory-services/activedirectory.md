@@ -25,19 +25,15 @@ Press <kbd>Ctrl + C</kbd> to cancel the `ping`.
 
 You can also use `host -t srv _ldap._tcp.domainname.com` to check the SRV records of the network and verify DNS resolution.
 
-If the ping fails, go to **Network > Global Configuration** and update the *DNS Servers* and *Default Gateway* settings so that the connection to your Active Directory Domain Controller can be established.
-It is recommended to use more than one *Nameserver* for the AD domain controllers or that DNS queries for requisite SRV records can succeed.
-This helps maintain the AD connection whenever a domain controller becomes unavailable.
+If the ping fails, go to **Network > Global Configuration** and update the *DNS Servers* and *Default Gateway* settings so that the connection to your Active Directory Domain Controller can be established. It is recommended to use more than one *Nameserver* for the AD domain controllers or that DNS queries for requisite SRV records can succeed. This helps maintain the AD connection whenever a domain controller becomes unavailable.
 
 ### Time Synchronization
 
 Active Directory relies on Kerberos, a time-sensitive protocol.
-During the domain join process, the AD domain controller with the [PDC Emulator FSMO Role](https://support.microsoft.com/en-us/help/197132/active-directory-fsmo-roles-in-windows) is added as the preferred NTP server.
+During the domain join process, the AD domain controller with the [PDC Emulator FSMO Role](https://support.microsoft.com/en-us/help/197132/active-directory-fsmo-roles-in-windows) is added as the preferred NTP server. 
 You can change this in **System > NTP Servers** if your environment requires something different.
 
-The time on the system and the AD domain controller cannot be out of sync by more than **five minutes** in a default AD environment.
-It is recommended to use an external time source when configuring a virtualized domain controller.
-If the time gets out of sync between TrueNAS and the AD domain controller, the system generates an Alert.
+The time on the system and the AD domain controller cannot be out of sync by more than **five minutes** in a default AD environment. It is recommended to use an external time source when configuring a virtualized domain controller. If the time gets out of sync between TrueNAS and the AD domain controller, the system generates an Alert.
 
 There are a few changes you can make in TrueNAS to ensure both systems are set to the same time:
 
@@ -59,7 +55,7 @@ Set **Enable** to attempt to join the AD domain immediately after saving the con
 Advanced options are available for fine-tuning the AD configuration, but the preconfigured defaults are generally suitable.
 
 It can take a few minutes after configuring the Active Directory service for the AD information to be populated to TrueNAS.
-To check the AD join progress, open the <i class="fas fa-clipboard"></i> **Task Manager** in the upper-right corner.
+To check the AD join progress, open the <i class="fas fa-clipboard" aria-hidden="true" title="Clipboard"></i> **Task Manager** in the upper-right corner.
 Any errors during the join process are also displayed in the **Task Manager**.
 When the import is complete and the TrueNAS cache is enabled (advanced setting, enabled by default), AD users and groups become available when configuring basic dataset permissions or an [Access Control List (ACL)](/hub/tasks/advanced/editingacls/).
 
