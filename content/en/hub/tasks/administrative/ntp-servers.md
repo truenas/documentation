@@ -8,7 +8,7 @@ By default, several entries for NTP servers are created for new installations, b
 
 ## NTP Server
 
-Go to **System ➞ NTP Servers** to view, edit, or remove NTP Servers.
+Go to **System > NTP Servers** to view, edit, or remove NTP Servers.
 
 <img src="/images/TN-12.0-NTP-1.PNG">
 <br><br>
@@ -30,9 +30,9 @@ Go to **System ➞ NTP Servers** to view, edit, or remove NTP Servers.
 
 ## Editing a NTP Server
 
-Click <i class="fa fa-ellipsis-v" aria-hidden="true"></i> (Options) and select **Edit**.
+Click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i> (Options) and select **Edit**.
 Edit as needed and click **Save**.
 
 ## Deleting a NTP Server
 
-Click <i class="fa fa-ellipsis-v" aria-hidden="true"></i> (Options) and select **Delete**.
+Click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i> (Options) and select **Delete**.
