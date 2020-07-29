@@ -5,9 +5,9 @@ description: "A how-to for connecting TrueNAS to an LDAP server."
 
 TrueNAS includes an [Open LDAP](http://www.openldap.org/) client for accessing information from an LDAP server. An LDAP server provides directory services for finding network resources such as users and their associated permissions.
 
-{{\% pageinfo %}}
+{{% pageinfo %}}
 NOTE: LDAP authentication for SMB shares is disabled unless the LDAP directory has been configured for and populated with Samba attributes. The most popular script for performing this task is `smbldap-tools`. The LDAP server must support SSL/TLS and the certificate for the LDAP server CA must be imported. Non-CA certificates are not currently supported.
-{{\% /pageinfo %}}
+{{% /pageinfo %}}
 
 ## Server Credentials
 
