@@ -8,7 +8,7 @@ The Console Setup menu appears at the end of the boot process. If the TrueNAS® 
 
 When connecting to a TrueNAS® system with SSH or the web shell, the Console Setup menu is not shown by default. It can be started by the root user or another user with root permissions by typing `/etc/netcli`.
 
-The Console Setup menu can be disabled by unchecking Enable Console Menu in **System** ➞ **Advanced**.
+The Console Setup menu can be disabled by unchecking Enable Console Menu in **System > Advanced**.
 
 <img src="/images/console-menu.png">
 <br><br>
