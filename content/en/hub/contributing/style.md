@@ -165,13 +165,13 @@ Below are samples that we are currently using along with the exact code to add t
 
 Please ensure that `aria-hidden` and `title` are included if you are using an icon not listed here.  This allows users that require accessibility assistance like screen readers to be able to know what icon is being used.
 
-{{\% pageinfo %}}
+{{% pageinfo %}}
 Note: If the icon is followed by a word, add a non-breaking space `&nbsp` to prevent formatting issues.  This is not needed if the icon is immediately followed by puncuation. 
 
 Without nonbreaking space: Click the <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i> Options Menu.
 
 With non-breaking space: Click the <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp Options Menu.
-{{\% /pageinfo %}}
+{{% /pageinfo %}}
 
 **Samples**: 
 
