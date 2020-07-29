@@ -3,16 +3,9 @@ title: "Mirroring the Boot Pool"
 description: "How to add a second drive and mirror the system boot pool."
 ---
 
-TrueNAS supports mirroring a boot pool by adding a second device to the original
-pool. This is especially helpful as one device can fail and the system will
-still boot. If a device were to fail in a mirror, it can be easily detached and
-replaced with a new device.
+TrueNAS supports mirroring a boot pool by adding a second device to the original pool. This is especially helpful as one device can fail and the system will still boot. If a device were to fail in a mirror, it can be easily detached and replaced with a new device.
 
-View the current boot pool status by going to
-**System > Boot > ACTIONS > Boot Pool Status**. On this page you will find the
-list and status of each boot pool on the system. The default boot pool is named
-*truenas-boot*. If adding a second device to create a mirrored boot pool,
-consider these caveats:
+View the current boot pool status by going to **System > Boot > ACTIONS > Boot Pool Status**. On this page you will find the list and status of each boot pool on the system. The default boot pool is named *truenas-boot*. If adding a second device to create a mirrored boot pool, consider these caveats:
 
 * The new device must have at least the same capacity as the existing device.
   Larger capacity devices can be added, but the mirror will only have the
@@ -26,8 +19,7 @@ consider these caveats:
 <img src="/images/boot-pool-status.png">
 <br><br>
 
-Click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp on a device entry to access actions
-specific to that device:
+Click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp on a device entry to access actions specific to that device:
 
 * **Attach**: Use this option to add a second device to create a mirrored boot
   pool. If another device is available, it appears in the *Member Disk*
