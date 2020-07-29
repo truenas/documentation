@@ -1,22 +1,19 @@
 ---
-title: "vCenter 3.1.0 Release Notes"
-description: "vCenter 3.1.0 Release Notes"
+title: "vCenter Plugin 3.1.0"
 ---
 
-## vCenter 3.1.0
-
-### July 16, 2019
+**July 16, 2019**
 
 iXsystems is pleased to announce the availability of vCenter 3.1.0, a standalone plugin for managing TrueNAS systems within VMware vSphere.
 
 For more information about obtaining, installing, and using the vCenter plugin, or to ask questions regarding VMware integration, contact iXsystems Technical Support. You can contact Support by calling 1-855-GREP-4-iX or emailing support@ixsystems.com.
  
-### New Features
+## New Features
 
 + [NAS-100574] – Use standalone application for automatic deployment of vCenter plugin
 + [NAS-100839] – Add VMFS6 support
 
-### Improvements
+## Improvements
 
 + [NAS-100070] – Provide an indication when user times out for inactivity
 + [NAS-100075] – Add ability to remove user and role from RBAC
@@ -24,7 +21,7 @@ For more information about obtaining, installing, and using the vCenter plugin, 
 + [NAS-101600] – Add ability to select cluster for VMFS datastore
 + [NAS-102360] – Store deployment and support logs in log folder
 
-### Bugs
+## Bug Fixes
 
 + [NAS-101355] – Fix issue that prevented readding a removed host
 + [NAS-101356] – Remove spurious “Other Action” from Actions menu
@@ -40,4 +37,4 @@ For more information about obtaining, installing, and using the vCenter plugin, 
 + [NAS-102429] – Ensure text box for Hostname is read-only
 + [NAS-102455] – Warn user in documentation of maximum supported volumes limit
 
-Ticket can be viewed at https://jira.ixsystems.com/projects/NAS/issues/
+Tickets can be viewed at https://jira.ixsystems.com/projects/NAS/issues/

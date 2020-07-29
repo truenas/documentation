@@ -1,11 +1,8 @@
 ---
-title: "vCenter 3.2.0 Release Notes"
-description: "vCenter 3.2.0 Release Notes"
+title: "vCenter Plugin 3.2.0"
 ---
 
-## vCenter 3.2.0
-
-### March 24, 2020
+**March 24, 2020**
 
 iXsystems is pleased to release version 3.2.0 of the TrueNAS vCenter plugin! This is the newest release of the plugin, designed to allow managing TrueNAS systems from within VMware vCenter. You’ll find numerous improvements in the 3.2.0 plugin, like iSCSI fixes, communication support, and new vCenter 7.0 support. Here are a few other highlights of this release:
 
@@ -19,4 +16,4 @@ iXsystems is pleased to release version 3.2.0 of the TrueNAS vCenter plugin! Thi
 
 For a detailed list of all vCenter plugin 3.2.0 changes, please see the completed [vCenter plugin 3.2.0 Jira tickets](https://jira.ixsystems.com/issues/?filter=-4&jql=fixVersion%20IN%20(10808)).
 
-Ticket can be viewed at https://jira.ixsystems.com/projects/NAS/issues/
+Tickets can be viewed at https://jira.ixsystems.com/projects/NAS/issues/
