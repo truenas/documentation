@@ -116,15 +116,24 @@ products = "products"
 # Entries for the "Version" dropdown
 [[params.versions]]
 fullversion = "TrueNAS 12.0-BETA1"
-version = "TN 12.0-BETA1"
+version = "Current"
 githubbranch = "master"
-url = "./"
+url = "/"
 
 [[params.versions]]
 fullversion = "TrueNAS 11.3"
 version = "TN 11.3"
-githubbranch = "TN11-3"
-url = "https://docs.ixsystems.com/hub/additional-topics/legacy/tn-legacy/"
+url = "https://www.ixsystems.com/documentation/truenas/11.3-U3.2/truenas.html"
+
+[[params.versions]]
+fullversion = "FreeNAS 11.3"
+version = "FN 11.3"
+url = "https://www.ixsystems.com/documentation/freenas/11.3-U4/freenas.html"
+
+[[params.versions]]
+fullversion = "TrueCommand 1.2"
+version = "TC 1.2"
+url = "/hub/additional-topics/legacy/tc-legacy-docs/truecommand-1.2/"
 
 # User interface configuration
 [params.ui]

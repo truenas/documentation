@@ -11,7 +11,7 @@ TrueNAS API Documentation has both websocket and RESTful information: https://ap
 
 # A Simple API Example
 
-Here is the example RESTful script with an explanation of the line numbers below it.  Piping your output through the program `jq` can make things eaiser to read. Example:
+Here is the example RESTful script with an explanation of the line numbers below it.  Piping your output through the program `jq` can make things easier to read. Example:
 `python script.py | jq .`
 
 {{< highlight python "linenos=true" >}}
