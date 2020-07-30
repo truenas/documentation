@@ -103,7 +103,11 @@ The dataset listing changes to show the unlocked icon.
 ## Conversion from GELI
 
 It is not possible to convert an existing FreeNAS/TrueNAS 11.3 or earlier GELI encrypted pool to use native ZFS encryption.
-However, data can be migrated from the GELI-encrypted pool to a new ZFS-encrypted pool.  The new ZFS-encrypted pool must be at least the same size as the previous GELI-encrypted pool.  Two options exist to migrate data from a GELI-encrypted pool to a new ZFS-encrypted pool.  The first method is to use rsync to copy the data between the pools. The second method is to utilize ZFS send/receive.  The following is an overview and not a guide.  Research ZFS send/receive before attempting this.  There are many edge cases that cannot be covered by a simple example.
+However, data can be migrated from the GELI-encrypted pool to a new ZFS-encrypted pool.  The new ZFS-encrypted pool must be at least the same size as the previous GELI-encrypted pool.  Two options exist to migrate data from a GELI-encrypted pool to a new ZFS-encrypted pool.  The first method is to use rsync to copy the data between the pools. The second method is to utilize ZFS send/receive.  
+
+{{% alert title=Warning color=warning %}}
+The following is an example walkthrough. It is not an exact step by step a guide for all situations. Research ZFS send/receive before attempting this. There are many edge cases that cannot be covered by a simple example.
+{{% /alert %}}
 
 Legend:
 ```
