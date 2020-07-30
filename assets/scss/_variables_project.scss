@@ -9,7 +9,7 @@ Add styles or override variables from the theme here.
   font-family: 'Material Icons';
   font-style: normal;
   font-weight: 400;
-  src: url(MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: url(/materialicons/MaterialIcons-Regular.eot); /* For IE6-8 */
   src: local('/materialicons/Material Icons'),
        local('/materialicons/MaterialIcons-Regular'),
        url(/materialicons/MaterialIcons-Regular.woff2) format('woff2'),
