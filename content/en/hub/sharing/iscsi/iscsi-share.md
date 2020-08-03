@@ -114,10 +114,9 @@ or all networks to use the share.
 * STEP 4: Review the settings. If the settings look correct, click
 *SUBMIT*.
 
-## Using the iSCSI Share
+## Using the iSCSI Share on Linux
 
-iSCSI shares can be accessed from various operating systems. The
-following instructions are for connecting to iSCSI shares from a Linux
+The following instructions are for connecting to an iSCSI share from a Linux
 system.
 
 ### iSCSI Utilities and Service
@@ -133,7 +132,7 @@ arguments and get the necessary information to connect to the share.
 ### Discover and Login to the iSCSI Share
 
 Run the command
-<code>sudo iscsiadm --mode discovery --type sendtargets --portal <i>IPofTrueNASsystem</i></code>.
+<code>sudo iscsiadm \--mode discovery \--type sendtargets \--portal <i>IPofTrueNASsystem</i></code>.
 The output gives the basename and target name that was configured on
 the TrueNAS. See the image directly below as an example.
 
@@ -146,7 +145,7 @@ and get the same output. Take note of the basename and target name
 given in the output. It will be needed to login to the iSCSI share.
 
 Next, run the command
-<code>sudo iscsiadm --mode node --targetname <i>basename</i>:<i>targetname</i> --portal <i>IPofTrueNASsystem</i> --login</code>
+<code>sudo iscsiadm \--mode node \--targetname <i>basename</i>:<i>targetname</i> \--portal <i>IPofTrueNASsystem</i> \--login</code>
 where *basename* and *targetname* is the information given from the
 discovery command. See the images directly below as an example.
 
@@ -198,6 +197,73 @@ partition slice of the iSCSI device.
 
 The iSCSI device can finally be mounted to share data. To mount the
 iSCSI device run the command
-<code>sudo mount <i>/path/to/iSCSIdevicePartitionSlice</i>. For example,
-`sudo mount /dev/sdb1 /mnt` mounts the iSCSI device *sdb1* to the 
+<code>sudo mount <i>/path/to/iSCSIdevicePartitionSlice</i></code>. For example,
+`sudo mount /dev/sdb1 /mnt` mounts the iSCSI device *sdb1* to the
 `/mnt` directory.
+
+## Using the iSCSI Share on Windows
+
+The following instructions are for connecting to an iSCSI share from a Windows
+system.
+
+In order to access the data on the iSCSI share, clients will need to use iSCSI
+Initiator software. An iSCSI Initiator client is pre-installed in Windows 7 to
+10 Pro, and Windows Server 2008, 2012, and 2019. Please note that Windows
+Professional Edition is typically required.
+
+<img src="/images/iscsi-initiator-app.png">
+<br><br>
+
+Click the Start Menu and search for the *iSCSI Initiator* application. Go to
+the **Configuration** tab and click **Change** to change the iSCSI initiator
+to the same name you created earlier.
+
+<img src="/images/iscsi-initiator-name.png">
+<br><br>
+
+Go to the **Discovery Tab**, proceed to **Discover Portal**, and type in your
+TrueNAS IP address. If the port number was changed from the default of *3260*,
+enter the new port number.
+
+<img src="/images/iscsi-discover-portal.png">
+<br><br>
+
+<img src="/images/iscsi-portal-ip.png">
+<br><br>
+
+If CHAP was set up when creating the iSCSI share, click **Advanced Settings**,
+set *Enable CHAP log on*, and enter the initiator name and the
+same target/secret you set earlier on TrueNAS. Go back to **Targets** and click
+**Connect** on your iSCSI target. Click **OK**.
+
+<img src="/images/iscsi-target-list.png">
+<br><br>
+
+Search for and open the *Disk Management* app. A new window will ask you to
+format the drive. Your drive should currently be *unallocated*. Complete the
+Wizard to format it and assign it a drive letter and name.
+
+<img src="/images/iscsi-disk-management-app.png">
+<br><br>
+
+<img src="/images/iscsi-disk-format.png">
+<br><br>
+
+<img src="/images/iscsi-disk-new-volume.png">
+<br><br>
+
+<img src="/images/iscsi-disk-volume-label.png">
+<br><br>
+
+<img src="/images/iscsi-volume-created.png">
+<br><br>
+
+Go to *This PC* or *My Computer* in File Explorer and your new iSCSI volume
+should show up under the list of drives. You should now be able to add,
+delete, and modify files and folders on your iSCSI drive.
+
+<img src="/images/iscsi-windows-disk.png">
+<br><br>
+
+<img src="/images/iscsi-windows-disk-contents.png">
+<br><br>
