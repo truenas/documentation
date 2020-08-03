@@ -101,7 +101,7 @@ fullversion = "Current"
 version = "Current"
 githubbranch = "master"
 deprecated = false
-currentUrl = "https://docs.ixsystems.com"
+currentUrl = "https://truenas.com/docs/"
 githubWebsiteRepo = "github.com/freenas/documentation"
 githubWebsiteRaw = "raw.githubusercontent.com/freenas/documentation"
 
@@ -115,8 +115,8 @@ products = "products"
 
 # Entries for the "Version" dropdown
 [[params.versions]]
-fullversion = "TrueNAS 12.0-BETA1"
-version = "Current"
+fullversion = "TrueNAS 12.0"
+version = "Current (TN 12.0)"
 githubbranch = "master"
 url = "/"
 
