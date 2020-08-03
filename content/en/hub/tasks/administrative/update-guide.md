@@ -58,16 +58,16 @@ A confirmation window appears before the update is installed. When `Apply update
 
 `APPLY PENDING UPDATE` is visible when an update is downloaded and ready to install. Click the button to see a confirmation window. Setting `Confirm` and clicking **CONTINUE** installs the update and reboots the system.
 
-*Warning*: Each update creates a boot environment. If the update process needs more space, it attempts to remove old boot environments. Boot environments marked with the Keep attribute as shown in Boot are not removed. If space for a new boot environment is not available, the upgrade fails. Space on the operating system device can be manually freed using `System` ➞ `Boot`. Review the boot environments and remove the Keep attribute or delete any boot environments that are no longer needed.
+*Warning*: Each update creates a boot environment. If the update process needs more space, it attempts to remove old boot environments. Boot environments marked with the Keep attribute as shown in Boot are not removed. If space for a new boot environment is not available, the upgrade fails. Space on the operating system device can be manually freed using `System` > `Boot`. Review the boot environments and remove the Keep attribute or delete any boot environments that are no longer needed.
 
 ## Manual Updates
-Updates can also be manually downloaded and applied in `System` ➞ `Update`.
+Updates can also be manually downloaded and applied in `System` > `Update`.
 
 *Note:* Manual updates cannot be used to upgrade from older major versions.
 
 Go to https://download.FreeNAS.org/ and find an update file of the desired version. Manual update file names end with -manual-update-unsigned.tar.
 
-Download the file to a desktop or laptop computer. Connect to TrueNAS® with a browser and go to `System` ➞ `Update`. **Click INSTALL MANUAL UPDATE FILE**.
+Download the file to a desktop or laptop computer. Connect to TrueNAS® with a browser and go to `System` > `Update`. **Click INSTALL MANUAL UPDATE FILE**.
 
 The Save Configuration dialog opens. This makes it possible to save a copy of the current configuration to external media for backup in case of an update problem.
 

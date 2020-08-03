@@ -4,15 +4,14 @@ description: "How to access and use the console setup menu"
 weight: 30
 ---
 
-The Console Setup menu appears at the end of the boot process. If the TrueNAS® system has a keyboard and monitor, this Console Setup menu can be used to administer the system.
+The Console Setup menu appears at the end of the boot process. If the TrueNAS system has a keyboard and monitor, this Console Setup menu can be used to administer the system.
 
-When connecting to a TrueNAS® system with SSH or the web shell, the Console Setup menu is not shown by default. It can be started by the root user or another user with root permissions by typing `/etc/netcli`.
+When connecting to a TrueNAS system with SSH or the web shell, the Console Setup menu is not shown by default. It can be started by the `root` user or another user with root permissions by typing `/etc/netcli`.
 
-The Console Setup menu can be disabled by unchecking Enable Console Menu in **System** ➞ **Advanced**.
+To disable the Console Setup menu, go to **System > Advanced** and unset *Enable Console Menu*.
 
 <img src="/images/console-menu.png">
 <br><br>
-
 
 On HA systems, some of these menu options are not available unless HA has been administratively disabled.
 

@@ -5,7 +5,8 @@ weight: 1
 ---
 
 Perhaps the most important part about TrueNAS is the ability to efficiently store and share large amounts of data.
-The way this is accomplished is by creating [ZFS Pools](https://en.wikipedia.org/wiki/ZFS#Data_structures:_Pools,_datasets_and_volumes "ZFS Pools Wikipedia").
+The way this is accomplished is through setting up [ZFS Pools](https://en.wikipedia.org/wiki/ZFS#Data_structures:_Pools,_datasets_and_volumes "ZFS Pools Wikipedia").
+
 To set up a pool in TrueNAS, go to **Storage > Pools** and click *ADD*.
 
 <img src="/images/pools-list.png">
@@ -16,13 +17,14 @@ Set *Create a new pool* and click *CREATE POOL*.
 First, enter a name for the pool.
 If you want to encrypt the data for additional security, set the *Encryption* option.
 Be aware that this can also complicate how data is retrieved and has some risks.
-Refer to the [Encryption]({{< ref "encryption.md" >}} article for further information about encrypting the root dataset.
+Refer to the [Encryption article]({{< ref "encryption.md" >}}) for more details.
 
 Now configure the virtual devices (vdevs) that make up the pool.
 The TrueNAS web interface can simplify this by recommending a vdev layout based on the number of available disks.
 Click *SUGGEST LAYOUT* to add all same-sized disks in an ideal configuration for data redundancy and performance.
 
-To manually add disks in a vdev, select the disks to add and click <i class="fas fa-arrow-right"></i>.
+To manually add disks in a vdev, select the disks to add and click <i class="fas fa-arrow-right" aria-hidden="true" title="Right Arrow"></i>.
+
 TrueNAS helpfully suggests a vdev layout based on the number of disks added to the vdev.
 For example, if two disks are added, TrueNAS automatically configures the VDEV as a mirror (one redundant disk).
 To change the vdev layout, open the *Data VDevs* list and select the desired layout.

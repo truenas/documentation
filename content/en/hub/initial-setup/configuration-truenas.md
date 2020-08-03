@@ -1,10 +1,11 @@
 ---
 title: "System Configuration"
-description: "Configuring TrueNAS"
+description: "How to change the various system level options in TrueNAS."
 ---
 
 ## General
-**System ➞ General** contains options for configuring the web interface and other basic system settings.
+
+**System > General** contains options for configuring the web interface and other basic system settings.
 
 <img src="/images/12.0-system-general.PNG">
 <br><br>
@@ -51,7 +52,7 @@ The **Export Password Secret Seed** option is off by default and should only be 
 
 ## Advanced
 
-**System ➞ Advanced** contains more advanced options for configuring system settings.
+**System > Advanced** contains more advanced options for configuring system settings.
 
 
 <img src="/images/12.0-system-advanced.PNG">
@@ -70,9 +71,9 @@ The **Export Password Secret Seed** option is off by default and should only be 
 | MOTD banner                               | string         | This message is shown when a user logs in with SSH.                                                                                                                                                                                                                                                                                                                      |
 | Show advanced fields by default           | checkbox       | Show all advanced fields by default.                                                                                                                                                                                                                                                                                                                                     |
 | Use FQDN for logging                      | checkbox       | Include the Fully-Qualified Domain Name (FQDN) in logs to precisely identify systems with similar hostnames.                                                                                                                                                                                                                                                             |
-| ATA Security User                         | drop-down menu | User passed to **camcontrol security -u** for unlocking SEDs. Values are *User* or *Master*.                                                                                                                                                                                                                                                                             |
+| ATA Security User                         | drop-down menu | User passed to `camcontrol security -u` for unlocking SEDs. Values are *User* or *Master*.                                                                                                                                                                                                                                                                             |
 | SED Password                              | string         | Global password used to unlock Self-Encrypting Drives.                                                                                                                                                                                                                                                                                                                   |
-| Reset SED Password                        | checkbox       | Select to clear the *Password for SED* column of **Storage ➞ Disks**.                                                                                                                                                                                                                                                                                                    |
+| Reset SED Password                        | checkbox       | Select to clear the *Password for SED* column of **Storage > Disks**.                                                                                                                                                                                                                                                                                                    |
 
 Click the **SAVE** button after making any changes.
 

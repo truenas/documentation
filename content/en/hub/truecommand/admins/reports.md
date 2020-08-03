@@ -59,7 +59,7 @@ The report will be generated and displayed.
 ## Share Report
 
 By default, the reports created by a user are available only to that user.
-To share a report with other users or teams, open the **Configure** <i class="fa fa-cog" aria-hidden="true" title="gear"></i> menu ‣ **Reports** screen and click the **Share** button for a report.
+To share a report with other users or teams, open the **Configure** <i class="fa fa-cog" aria-hidden="true" title="Settings"></i>&nbsp; menu > **Reports** screen and click the **Share** button for a report.
 Reports can also be shared after clicking **Generate report**<i class="fa fa-eye" aria-hidden="true" title="eye"></i>.
 
 <img src="/images/tc-1.3-reports-share.PNG">
@@ -72,7 +72,7 @@ Clicking the **OWNER** or **SHARED WITH** text toggles every name in the list.
 
 ## Viewing a System Report
 
-Open the **Configure** <i class="fa fa-cog" aria-hidden="true" title="gear"></i> menu ‣ **Reports** page and click **Generate report**<i class="fa fa-eye" aria-hidden="true" title="eye"></i> on the appropriate report.
+Open the **Configure** <i class="fa fa-cog" aria-hidden="true" title="Settings"></i>&nbsp; menu > **Reports** page and click **Generate report**<i class="fa fa-eye" aria-hidden="true" title="eye"></i>&nbsp; on the appropriate report.
 Click **GENERATE** to select the systems and time frame for the report
 
 <img src="/images/tc-1.3-generate-report.PNG">

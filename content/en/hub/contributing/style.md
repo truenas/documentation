@@ -157,3 +157,50 @@ This is an alert that is titled Warning and uses a red coloration.
 {{\% /alert %}}
 (remove the escaping backslash \)
 ```
+
+### Graphical Fonts and Icons
+
+You can call either the Font Awesome or Material Design graphical fonts in your text to be more precise about what buttons or icons to click in the TrueNAS web interface.
+Below are examples of icons that are already being used on the Docs website, along with the exact code you would add to the Markdown file to call that icon.
+
+To find icons that you can include with your text, please refer to the [Material Design](https://material.io/resources/icons/?style=baseline) or [Font Awesome](https://fontawesome.com/icons?d=gallery&s=solid&m=free) Icon Libraries. Note that only the *Free* and *Solid* Font Awesome icons are supported.
+
+To improve accessibility assistance, please be sure to use the `aria-hidden` and `title` fields with your icon.
+This allows users that require accessibility assistance like screen readers to be able to know what icon is being used.
+
+{{% pageinfo %}}
+To prevent formatting issues, you can add a non-breaking space `&nbsp;` after the icon.
+This is not usually needed if the icon is immediately followed by puncuation. 
+
+Without nonbreaking space: Click the <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i> Options Menu.
+
+With non-breaking space: Click the <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; Options Menu.
+{{% /pageinfo %}}
+
+#### Icon Examples
+
+<i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i> = `<i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>`
+
+<i class="fas fa-cog" aria-hidden="true" title="Settings"></i> = `<i class="fas fa-cog" aria-hidden="true" title="Settings"></i>`
+
+<i class="fas fa-pen" aria-hidden="true" title="Pen"></i> = `<i class="fas fa-pen" aria-hidden="true" title="Pen"></i>`
+
+<i class="fa fa-bell" aria-hidden="true" title="Alert"></i> = `<i class="fa fa-bell" aria-hidden="true" title="Alert"></i>`
+
+<i class="fas fa-trash" aria-hidden="true" title="Delete"></i> = `<i class="fas fa-trash" aria-hidden="true" title="Delete"></i>`
+
+<i class="fa fa-eye" aria-hidden="true" title="eye"></i> = `<i class="fa fa-eye" aria-hidden="true" title="eye"></i>`
+
+<i class="fa fa-bars" aria-hidden="true" title="Menu"></i> = `<i class="fa fa-bars" aria-hidden="true" title="Menu"></i>`
+
+### Key Strokes
+
+When a specific key or key combination is to be used, use the `<kbd>` HTML code to highlight the keystrokes.  Here are a few examples:
+
+<kbd>Ctrl + C</kbd> = `<kbd>Ctrl + C</kbd>`
+
+<kbd>Delete</kbd> = `<kbd>Delete</kbd>`
+
+<kbd>Command+c</kbd> = `<kbd>Command+c</kbd>`
+
+<kbd>Shift+Insert</kbd> = `<kbd>Shift+Insert</kbd>`

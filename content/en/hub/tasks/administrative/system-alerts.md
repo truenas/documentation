@@ -3,9 +3,11 @@ title: "Configuring System Alerts"
 description: "How to configure basic system alerts"
 ---
 
-TrueNAS provides the benefit of customizing alerts and alert services.
+You can customizing both how alerts are reported and which alerts are displayed or prioritized.
 
 ## Alert Services
+
+Alert Services are the various methods built into to TrueNAS that can notify you of a system alert. Note that some of these services are third-party services that might charge for message or data usage.
 
 To add a new alert service, go to **System > Alert Services > ADD**.
 Enter a name for the alert service and select the type.
@@ -55,9 +57,9 @@ An automatic script sends a nightly email to the root user account containing im
 
 The administrator typically does not read emails directly on the system. Instead, these emails are usually sent to an external email address where they can be read more conveniently. It is important to configure the system so it can send these emails to the administrator’s remote email account so they are aware of problems or status changes.
 
-The first step is to set the remote address where emails will be sent. Go to **Accounts ➞ Users**, click <i class="fas fa-ellipsis-v"></i> (Options) and **Edit** for the root user. In the *Email* field, enter the email address on the remote system where email is to be sent, like `admin@example.com`. Click **SAVE** to save the settings.
+The first step is to set the remote address where emails will be sent. Go to **Accounts > Users**, click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; (Options) and **Edit** for the root user. In the *Email* field, enter the email address on the remote system where email is to be sent, like `admin@example.com`. Click **SAVE** to save the settings.
 
-Additional configuration is performed with **System ➞ Email**.
+Additional configuration is performed with **System > Email**.
 
 <img src="/images/TN-12.0-email.PNG">
 <br><br>
@@ -75,6 +77,6 @@ Additional configuration is performed with **System ➞ Email**.
 
 ## Email Configuration Settings
 
-Click the **SEND TEST MAIL** button to verify that the configured email settings are working. If the test email fails, double-check that the *Email* field of the root user is correctly configured by clicking the **Edit** button for the root account in **Accounts ➞ Users**.
+Click the **SEND TEST MAIL** button to verify that the configured email settings are working. If the test email fails, double-check that the *Email* field of the root user is correctly configured by clicking the **Edit** button for the root account in **Accounts > Users**.
 
 Configuring email for TLS/SSL email providers is described in [Are you having trouble getting FreeNAS to email you in Gmail?](https://forums.freenas.org/index.php?threads/are-you-having-trouble-getting-freenas-to-email-you-in-gmail.22517/).
