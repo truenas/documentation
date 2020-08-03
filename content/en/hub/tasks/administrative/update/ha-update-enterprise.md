@@ -1,6 +1,6 @@
 ---
 title: "Updating a High Availability System"
-description: "How to update a High Availability (HA) TrueNAS Enterprise system"
+description: "How to update a High Availability (HA) TrueNAS Enterprise system."
 ---
 
 Updating a TrueNAS Enterprise system that is configured for High Availability (HA) has a slightly different flow from non-HA systems or TrueNAS Core.
@@ -23,7 +23,7 @@ Operating system updates only modify the operating system devices and do not aff
 
 {{% alert title="ZFS Upgrades" color="info" %}}
 An update could involve upgrading the version of ZFS that is installed on the storage drives.
-When a ZFS version upgrade is available, an <i class="fas fa-bell"> aria-hidden="true" title="Alert"</i>&nbsp **Alert** appears in the web interface.
+When a ZFS version upgrade is available, an <i class="fas fa-bell"> aria-hidden="true" title="Alert"</i>&nbsp; **Alert** appears in the web interface.
 Upgrading the ZFS version on storage drives is not recommended until it has been verified that rolling back to previous versions of the operating system is not necessary and that swapping the storage drives with another system that has an earlier ZFS version is not needed.
 After a ZFS version upgrade, the storage devices will not be accessible by earlier TrueNAS versions.
 {{% /alert %}}
@@ -48,7 +48,7 @@ This will start the process to update and reboot the TrueNAS controllers.
 HA and other system services will be briefly unavailable.
 
 Other users that are logged in to the web interface will see a warning dialog.
-A <i class="fas fa-arrow-alt-square-down" aria-hidden="true" title="Down Arrow"></i>&nbsp **System Updating** icon is shown in the top bar of the web interface while the update is in progress.
+A <i class="fas fa-arrow-alt-square-down" aria-hidden="true" title="Down Arrow"></i>&nbsp; **System Updating** icon is shown in the top bar of the web interface while the update is in progress.
 
 Update progress is shown for both TrueNAS controllers.
 
@@ -74,7 +74,7 @@ The web interface login screen reappears when the standby TrueNAS controller fin
 <img src="/images/failover-login.png">
 <br><br>
 
-Log in to the web interface and check the <i class="fas fa-cloud" aria-hidden="true" title="Cloud"></i>&nbsp HA status in the top toolbar.
+Log in to the web interface and check the <i class="fas fa-cloud" aria-hidden="true" title="Cloud"></i>&nbsp; HA status in the top toolbar.
 This icon shows that HA is unavailable while the previously active TrueNAS controller reboots.
 When HA is available, a dialog asks to finish the update.
 Click **CONTINUE** to finish updating the previously active TrueNAS controller.

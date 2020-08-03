@@ -20,11 +20,11 @@ The TrueNAS **Dashboard** shows when a pool has been degraded from a failed disk
 <img src="/images/pool-degraded.png">
 <br><br>
 
-Click the <i class="fas fa-cog" aria-hidden="true" title="Settings"></i>&nbsp on the pool's card to go to the status screen for the pool and locate the failed disk.
+Click the <i class="fas fa-cog" aria-hidden="true" title="Settings"></i>&nbsp; on the pool's card to go to the status screen for the pool and locate the failed disk.
 
 ### Offline the Failed Disk
 
-Clicking <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp for the failed disk shows additional operations.
+Clicking <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; for the failed disk shows additional operations.
 
 <img src="/images/failed-drive-options.png">
 <br><br>
@@ -38,7 +38,7 @@ This is not recommended unless the exact condition of the failing disk is known.
 Attempting to replace a heavily degraded disk without offlining it first can result in a significantly slower replacement process.
 {{% /alert %}}
 
-If the *Offline* operation fails with a "Disk offline failed - no valid replicas" message, go to **Storage > Pools**, click the <i class="fas fa-cog" aria-hidden="true" title="Settings"></i>&nbsp for the degraded pool, and select *Scrub Pool*.
+If the *Offline* operation fails with a "Disk offline failed - no valid replicas" message, go to **Storage > Pools**, click the <i class="fas fa-cog" aria-hidden="true" title="Settings"></i>&nbsp; for the degraded pool, and select *Scrub Pool*.
 When the scrub operation is finished, reopen the pool *Status* and try to *Offline* the disk again.
 
 <img src="/images/disk-offline.png">

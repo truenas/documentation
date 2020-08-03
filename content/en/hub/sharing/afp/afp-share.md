@@ -1,6 +1,6 @@
 ---
 title: "Configuring an AFP Share"
-description: "A how-to guide on creating a general purpose AFP share"
+description: "How to create an Apple Filing Protocol share."
 ---
 
 Apple Filing Protocol (AFP) is a a network protocol that allows file sharing over a network. It's similar to SMB and NFS. However, it was made to work flawlessly on Apple systems. In this document, you will learn how to create and connect to a general purpose AFP share.
@@ -10,10 +10,7 @@ To get started, make sure a <a href="/hub/initial-setup/storage/datasets">datase
 ## AFP Service
 
 To turn the AFP service on, go to **Services** and click the slider for *AFP*. If you wish to turn the service on automatically when the TrueNAS system turns on, check the *Start Automatically* box.
-
-{{% pageinfo %}}
-NOTE: The AFP share will not work if the service is not turned on.
-{{% /pageinfo %}}
+The AFP share does not work if the service is not turned on.
 
 The AFP service settings can be configured by clicking <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>. Don't forget to click *SAVE* when changing the settings. Unless a specific setting is needed, it is recommended to use the default settings for the AFP service.
 

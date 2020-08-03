@@ -7,7 +7,7 @@ description: "How to monitor TrueCommand user activity."
 TrueCommand records all user account activity in a system log.
 For example, if a user deletes a system from TrueCommand, the log records which user deleted it along with other information associated with the deleted system.
 
-To view the system log, open the **Configure** <i class="fa fa-cog" aria-hidden="true" title="Settings"></i>&nbsp menu and click **Logs**.
+To view the system log, open the **Configure** <i class="fa fa-cog" aria-hidden="true" title="Settings"></i>&nbsp; menu and click **Logs**.
 
 <img src="/images/tc-1.3-logs.PNG">
 <br><br>

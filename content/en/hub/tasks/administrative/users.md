@@ -1,12 +1,12 @@
 ---
 title: "Managing Users"
-description: "A how-to for managing users in TrueNAS."
+description: "How to add or manage user accounts."
 ---
 
-Users can be created or added to the TrueNAS system, allowing flexibility in configuring which users have access to the data stored on the system. A common practice is to create users and assign them to <a href="/hub/tasks/administrative/groups/">groups</a>. This practice allows for easy and efficient permission tuning. If the network uses a directory service, import the existing account information using the instructions in <a href="/hub/initial-setup/directory-services/">Directory Services</a>. 
+User accounts can be added to the TrueNAS system to allow flexibility for user permissions to access shared data. A common practice is to create users and assign them to <a href="/hub/tasks/administrative/groups/">groups</a>. This practice allows for easy and efficient permission tuning. If the network uses a directory service, import the existing account information using the instructions in <a href="/hub/initial-setup/directory-services/">Directory Services</a>. 
 
 {{% pageinfo %}}
-NOTE: TrueNAS hides all builtin users by default. To show all builtin users, go to **Accounts > Users** and click <i class="fas fa-cog" aria-hidden="true" title="Settings"></i>.
+TrueNAS hides all built-in users by default. To show all built-in users, go to **Accounts > Users** and click <i class="fas fa-cog" aria-hidden="true" title="Settings"></i>.
 {{% /pageinfo %}}
 
 ## Identification

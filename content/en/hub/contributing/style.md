@@ -158,92 +158,49 @@ This is an alert that is titled Warning and uses a red coloration.
 (remove the escaping backslash \)
 ```
 
-### Graphical Fonts
+### Graphical Fonts and Icons
 
-In an effort to make documentation more effective, an effort is being placed at showing the exact iconography as used in the TrueNAS UI.  These elements can be added to articles.  We are utiling Font Awesome Font Assets to accomplish this.  
-Below are samples that we are currently using along with the exact code to add to the markdown file to utilize them.
+You can call either the Font Awesome or Material Design graphical fonts in your text to be more precise about what buttons or icons to click in the TrueNAS web interface.
+Below are examples of icons that are already being used on the Docs website, along with the exact code you would add to the Markdown file to call that icon.
 
-Please ensure that `aria-hidden` and `title` are included if you are using an icon not listed here.  This allows users that require accessibility assistance like screen readers to be able to know what icon is being used.
+To find icons that you can include with your text, please refer to the [Material Design](https://material.io/resources/icons/?style=baseline) or [Font Awesome](https://fontawesome.com/icons?d=gallery&s=solid&m=free) Icon Libraries. Note that only the *Free* and *Solid* Font Awesome icons are supported.
+
+To improve accessibility assistance, please be sure to use the `aria-hidden` and `title` fields with your icon.
+This allows users that require accessibility assistance like screen readers to be able to know what icon is being used.
 
 {{% pageinfo %}}
-Note: If the icon is followed by a word, add a non-breaking space `&nbsp;` to prevent formatting issues.  This is not needed if the icon is immediately followed by puncuation. 
+To prevent formatting issues, you can add a non-breaking space `&nbsp;` after the icon.
+This is not usually needed if the icon is immediately followed by puncuation. 
 
 Without nonbreaking space: Click the <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i> Options Menu.
 
-With non-breaking space: Click the <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp Options Menu.
+With non-breaking space: Click the <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; Options Menu.
 {{% /pageinfo %}}
 
-**Samples**: 
+#### Icon Examples
 
 <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i> = `<i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>`
 
-<i class="fas fa-arrow-right" aria-hidden="true" title="Right Arrow"></i> = `<i class="fas fa-arrow-right" aria-hidden="true" title="Right Arrow"></i>`
-
 <i class="fas fa-cog" aria-hidden="true" title="Settings"></i> = `<i class="fas fa-cog" aria-hidden="true" title="Settings"></i>`
-
-<i class="fas fa-clipboard" aria-hidden="true" title="Clipboard"></i> = `<i class="fas fa-clipboard" aria-hidden="true" title="Clipboard"></i>`
 
 <i class="fas fa-pen" aria-hidden="true" title="Pen"></i> = `<i class="fas fa-pen" aria-hidden="true" title="Pen"></i>`
 
-<i class="fa fa-info-circle" aria-hidden="true" title="Notification"></i> = `<i class="fa fa-info-circle" aria-hidden="true" title="Notification"></i>`
-
-<i class="fas fa-clock" aria-hidden="true" title="Warning"></i> = `<i class="fas fa-clock" aria-hidden="true" title="Warning"></i>`
-
-<i class="fa fa-exclamation-circle" aria-hidden="true" title="Critical"></i> = `<i class="fa fa-exclamation-circle" aria-hidden="true" title="Critical"></i>`
-
 <i class="fa fa-bell" aria-hidden="true" title="Alert"></i> = `<i class="fa fa-bell" aria-hidden="true" title="Alert"></i>`
-
-<i class="fas fa-arrow-alt-square-down" aria-hidden="true" title="Down Arrow"></i> = `<i class="fas fa-arrow-alt-square-down" aria-hidden="true" title="Down Arrow"></i>`
-
-<i class="fas fa-search-plus" aria-hidden="true" title="Search Plus"></i> = `<i class="fas fa-search-plus" aria-hidden="true" title="Search Plus"></i>`
-
-<i class="fas fa-search-minus" aria-hidden="true" title="Search Minus"></i> = `<i class="fas fa-search-minus" aria-hidden="true" title="Search Minux"></i>`
-
-<i class="fas fa-forward" aria-hidden="true" title="Forward"></i> = `<i class="fas fa-forward" aria-hidden="true" title="Forward"></i> `
-
-<i class="fas fa-backward" aria-hidden="true" title="Backward"></i> = `<i class="fas fa-backward" aria-hidden="true" title="Backward"></i>`
-
-<i class="fas fa-cloud" aria-hidden="true" title="Cloud"></i> = `<i class="fas fa-cloud" aria-hidden="true" title="Cloud"></i>`
-
-<i class="fas fa-file-alt" aria-hidden="true" title="File"></i> = `<i class="fas fa-file-alt" aria-hidden="true" title="File"></i>`
-
-<i class="fas fa-clone" aria-hidden="true" title="Clone"></i> = `<i class="fas fa-clone" aria-hidden="true" title="Clone"></i>`
-
-<i class="fas fa-stop" aria-hidden="true" title="Stop"> = `<i class="fas fa-stop" aria-hidden="true" title="Stop">`
 
 <i class="fas fa-trash" aria-hidden="true" title="Delete"></i> = `<i class="fas fa-trash" aria-hidden="true" title="Delete"></i>`
 
-<i class="fa fa-check" aria-hidden="true" title="check"></i> = `<i class="fa fa-check" aria-hidden="true" title="check"></i>`
-
 <i class="fa fa-eye" aria-hidden="true" title="eye"></i> = `<i class="fa fa-eye" aria-hidden="true" title="eye"></i>`
-
-<i class="fas fa-history" aria-hidden="true" title="history"></i> = `<i class="fas fa-history" aria-hidden="true" title="history"></i>`
 
 <i class="fa fa-bars" aria-hidden="true" title="Menu"></i> = `<i class="fa fa-bars" aria-hidden="true" title="Menu"></i>`
 
-<i class="fas fa-bell"> aria-hidden="true" title="Alert"</i> = `<i class="fas fa-bell"> aria-hidden="true" title="Alert"</i>`
+### Key Strokes
 
-
-### KeyStrokes
-
-When a specific key or key combination is to be used. use the <kbd> code to highlight the keystroke.  Here are a few examples:
+When a specific key or key combination is to be used, use the `<kbd>` HTML code to highlight the keystrokes.  Here are a few examples:
 
 <kbd>Ctrl + C</kbd> = `<kbd>Ctrl + C</kbd>`
 
-<kbd>Ctrl + V</kbd> = `<kbd>Ctrl + V</kbd>`
-
-<kbd>Home</kbd> = `<kbd>Home</kbd>`
-
-<kbd>End</kbd> = `<kbd>End</kbd>`
-
 <kbd>Delete</kbd> = `<kbd>Delete</kbd>`
 
-<kbd>Tab</kbd> = `<kbd>Tab</kbd>`
-
 <kbd>Command+c</kbd> = `<kbd>Command+c</kbd>`
-
-<kbd>Command+v</kbd> = `<kbd>Command+v</kbd>`
-
-<kbd>Ctrl+Insert</kbd> = `<kbd>Ctrl+Insert</kbd>`
 
 <kbd>Shift+Insert</kbd> = `<kbd>Shift+Insert</kbd>`

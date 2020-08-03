@@ -19,23 +19,18 @@ View the current boot pool status by going to **System > Boot > ACTIONS > Boot P
 <img src="/images/boot-pool-status.png">
 <br><br>
 
-Click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp on a device entry to access actions specific to that device:
+Click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; on a device entry to access actions specific to that device:
 
-* **Attach**: Use this option to add a second device to create a mirrored boot
-  pool. If another device is available, it appears in the *Member Disk*
-  drop-down menu. Select the desired device. The *Use all disk space* option
-  controls the capacity made available to the device. By default, the new device
-  is partitioned to the same size as the existing device. When
-  *Use all disk space* is enabled, the entire capacity of the new device is
-  used. If the original operating system device fails and is detached, the boot
-  mirror will consist of just the newer device, and will grow to whatever
-  capacity it provides. However, new devices added to this mirror must now be
-  as large as the new capacity. Click *SAVE* to attach the new device to the
-  mirror.
+* **Attach**: Use this option to add a second device to create a mirrored boot pool.
+  If another device is available, it appears in the *Member Disk* drop-down menu.
+  Select the desired device.
+  The *Use all disk space* option controls the capacity made available to the device.
+  By default, the new device is partitioned to the same size as the existing device.
+  When *Use all disk space* is enabled, the entire capacity of the new device is used.
+  If the original operating system device fails and is detached, the boot mirror will consist of just the newer device, and will grow to whatever capacity it provides.
+  However, new devices added to this mirror must now be as large as the new capacity.
+  Click *SAVE* to attach the new device to the mirror.
 
-* **Detach**: remove the failed device from the mirror so that it can be
-  replaced.
+* **Detach**: remove the failed device from the mirror so that it can be replaced.
 
-* **Replace**: once the failed device has been detached, select the new
-  replacement device from the *Member Disk* drop-down menu to rebuild the
-  mirror.
+* **Replace**: once the failed device has been detached, select the new replacement device from the *Member Disk* drop-down menu to rebuild the mirror.

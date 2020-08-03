@@ -12,6 +12,6 @@ A ZFS pool must be created first to create a Zvol. See
 <img src="/images/pools-zvol.JPG">
 <br><br>
 
-To create a Zvol in the desired pool, go to **Storage > Pools**, click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>. Next, click *Add Zvol*.
+To create a Zvol in the desired pool, go to **Storage > Pools** then click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i> and *Add Zvol*.
 
-To quickly create a Zvol with the default options, enter a name for the Zvol, a size, and click *SAVE*. To modify more advanced settings of the Zvol click *ADVANCED MODE*. Zvol options can also be edited after creation. To edit a Zvol, click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>. Then, click *Edit Options*.
+To quickly create a Zvol with the default options, enter a name for the Zvol, a size, and click *SAVE*. To modify more advanced settings of the Zvol click *ADVANCED MODE*. Zvol options can also be edited after creation. To edit a Zvol, click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i> and *Edit Options*.

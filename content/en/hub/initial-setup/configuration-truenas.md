@@ -1,9 +1,10 @@
 ---
 title: "System Configuration"
-description: "Configuring TrueNAS"
+description: "How to change the various system level options in TrueNAS."
 ---
 
 ## General
+
 **System > General** contains options for configuring the web interface and other basic system settings.
 
 <img src="/images/12.0-system-general.PNG">
