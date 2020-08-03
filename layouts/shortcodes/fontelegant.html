@@ -1,8 +1,0 @@
-<!-- Add call to use .svg files registered in fontelegant/ with shortcode {fontelegant icon_name} -->
-
-<span class="inline-svg" >
-{{- $fname:=print "fontelegant/" ( .Get 0 ) ".svg" -}}
-{{- $path:="<path" -}}
-{{- $fill:="<path fill=\"currentColor\"" -}}
-{{ replace (readFile $fname) $path $fill | safeHTML }}
-</span>
