@@ -8,5 +8,5 @@ weight: 3
     title="Inline Frame Example"
     width="1000"
     height="800"
-    src="./rest_api.html">
+    src="../rest_api.html">
 </iframe>
