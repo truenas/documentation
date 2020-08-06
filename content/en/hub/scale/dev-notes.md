@@ -4,6 +4,8 @@ description: "Running updates about TrueNAS SCALE Nightly status and current iss
 ---
 
 #### Recent Updates
+> 8/6/2020 - Updated list of services / features that are functional in SCALE nightly images
+
 > 7/16/2020 - [Slack Instance](https://www.ixsystems.com/community/threads/collaborator-community-slack-instance.85717/) is available for community contributors
 
 > 7/15/2020 - VM support using KVM as the backend has arrived, including support for PCI passthrough and nested virtualization.
@@ -29,16 +31,19 @@ ISO's can be downloaded here:
 The nightly images are very much a WIP until we get farther along in our development process. They should be suitable for very adventerous users and developers who are not afraid to use the command-line in some instances.
 
 
-**Supported via the UI:**
+**Fully Functional via the UI:**
 - Pool creation
 - Pool Management
-- Samba Shares
+- SMB Shares
 - iSCSI Shares
 - AFP Shares
 - NFS Shares
+- S3 Shares
 - AD / LDAP Directory Services
 - Online / Offline updating
-- Virtual Machines
+- Virtual Machines (Using KVM)
+- WebDAV
+- Monitoring, Alerting and Reporting
 
 **Supported via the CLI (Currently)**
 - Docker
