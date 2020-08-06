@@ -23,7 +23,7 @@ To create an API key click the <i class="fas fa-cog" aria-hidden="true" title="S
 <img src="/images/tn-12.0-apikeys.PNG">
 <br><br>
 
-Click **Add** and enter a name for the API key to be generated, and click **Add** in the popup.  The API Key will be created, click **Copy to Clipboard** to use the API Key locally.
+Click **Add** and enter a name for the API key to be generated, and click **Add** in the popup.  The API Key will be created, click **Copy to Clipboard** to use the API Key locally.  The API Key can **only** be copied when it is created. Once the window is closed, the API key cannot be copied again.  Create additional API Keys as needed. 
 
 
 Once an api key has been created, it can be used as a bearer token. Add the following to headers while making a request:
