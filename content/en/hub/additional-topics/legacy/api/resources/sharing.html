@@ -1,0 +1,945 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Sharing &#8212; FreeNAS API 1.0 documentation</title>
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Storage" href="storage.html" />
+    <link rel="prev" title="iSCSI Resources" href="iscsi/index.html" /> 
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../http-routingtable.html" title="HTTP Routing Table"
+             >routing table</a> |</li>
+        <li class="right" >
+          <a href="storage.html" title="Storage"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="iscsi/index.html" title="iSCSI Resources"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">FreeNAS API 1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Resources</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="sharing">
+<h1>Sharing<a class="headerlink" href="#sharing" title="Permalink to this headline">¶</a></h1>
+<p>Resources related to sharing.</p>
+<div class="section" id="cifs">
+<h2>CIFS<a class="headerlink" href="#cifs" title="Permalink to this headline">¶</a></h2>
+<p>The CIFS resource represents CIFS shares using samba.</p>
+<div class="section" id="list-resource">
+<h3>List resource<a class="headerlink" href="#list-resource" title="Permalink to this headline">¶</a></h3>
+<dl class="get">
+<dt id="get--api-v1.0-sharing-cifs-">
+<code class="descname">GET </code><code class="descname">/api/v1.0/sharing/cifs/</code><a class="headerlink" href="#get--api-v1.0-sharing-cifs-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of all CIFS shares.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/v1.0/sharing/cifs/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Vary</span><span class="o">:</span> <span class="l">Accept</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">[</span>
+  <span class="p">{</span>
+          <span class="nt">&quot;cifs_hostsallow&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;cifs_name&quot;</span><span class="p">:</span> <span class="s2">&quot;My Test Share&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;cifs_home&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nt">&quot;cifs_default_permissions&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;cifs_guestok&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nt">&quot;cifs_showhiddenfiles&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nt">&quot;cifs_hostsdeny&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;cifs_recyclebin&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nt">&quot;cifs_auxsmbconf&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;cifs_comment&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;cifs_path&quot;</span><span class="p">:</span> <span class="s2">&quot;/mnt/tank/MyShare&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;cifs_ro&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nt">&quot;cifs_guestonly&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;cifs_storage_task&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="nt">&quot;cifs_browsable&quot;</span><span class="p">:</span> <span class="kc">true</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Query Parameters:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>offset</strong> – offset number. default is 0</li>
+<li><strong>limit</strong> – limit number. default is 20</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Response Headers:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>Content-Type</strong> – content type of the response</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>200</strong> – no error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="create-resource">
+<h3>Create resource<a class="headerlink" href="#create-resource" title="Permalink to this headline">¶</a></h3>
+<dl class="post">
+<dt id="post--api-v1.0-sharing-cifs-">
+<code class="descname">POST </code><code class="descname">/api/v1.0/sharing/cifs/</code><a class="headerlink" href="#post--api-v1.0-sharing-cifs-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new CIFS share and returns the new CIFS share object.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/v1.0/sharing/cifs/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+  <span class="p">{</span>
+          <span class="nt">&quot;cifs_name&quot;</span><span class="p">:</span> <span class="s2">&quot;My Test Share&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;cifs_path&quot;</span><span class="p">:</span> <span class="s2">&quot;/mnt/tank/MyShare&quot;</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">201</span> <span class="ne">Created</span>
+<span class="na">Vary</span><span class="o">:</span> <span class="l">Accept</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+  <span class="p">{</span>
+          <span class="nt">&quot;cifs_hostsallow&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;cifs_name&quot;</span><span class="p">:</span> <span class="s2">&quot;My Test Share&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;cifs_home&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nt">&quot;cifs_default_permissions&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;cifs_guestok&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nt">&quot;cifs_showhiddenfiles&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nt">&quot;cifs_hostsdeny&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;cifs_recyclebin&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nt">&quot;cifs_auxsmbconf&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;cifs_comment&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;cifs_path&quot;</span><span class="p">:</span> <span class="s2">&quot;/mnt/tank/MyShare&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;cifs_ro&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nt">&quot;cifs_guestonly&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;cifs_storage_task&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">JSON Parameters:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>cifs_name</strong> (<em>string</em>) – name of the share</li>
+<li><strong>cifs_home</strong> (<em>string</em>) – use this share as a special users home directory</li>
+<li><strong>cifs_path</strong> (<em>string</em>) – path to share</li>
+<li><strong>cifs_comment</strong> (<em>string</em>) – user comment</li>
+<li><strong>cifs_hostsallow</strong> (<em>string</em>) – explictly allowed hosts</li>
+<li><strong>cifs_hostsdeny</strong> (<em>string</em>) – explicitly denied hosts</li>
+<li><strong>cifs_auxsmbconf</strong> (<em>string</em>) – auxiliar parameters to append to smb.conf</li>
+<li><strong>cifs_default_permissions</strong> (<em>string</em>) – recursively set sane default windows permissions on share</li>
+<li><strong>cifs_guestok</strong> (<em>boolean</em>) – allow guests</li>
+<li><strong>cifs_guestonly</strong> (<em>boolean</em>) – only guests are allowed</li>
+<li><strong>cifs_showhiddenfiles</strong> (<em>boolean</em>) – show hidden files</li>
+<li><strong>cifs_storage_task</strong> (<em>integer</em>) – id of periodic snapshot task</li>
+<li><strong>cifs_recyclebin</strong> (<em>boolean</em>) – enable recycle bin</li>
+<li><strong>cifs_ro</strong> (<em>boolean</em>) – readonly share</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Request Headers:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>Content-Type</strong> – the request content type</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Response Headers:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>Content-Type</strong> – the response content type</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>201</strong> – no error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="update-resource">
+<h3>Update resource<a class="headerlink" href="#update-resource" title="Permalink to this headline">¶</a></h3>
+<dl class="put">
+<dt id="put--api-v1.0-sharing-cifs-(int-id)-">
+<code class="descname">PUT </code><code class="descname">/api/v1.0/sharing/cifs/</code><span class="sig-paren">(</span><em class="property">int: </em><em>id</em><span class="sig-paren">)</span><code class="descname">/</code><a class="headerlink" href="#put--api-v1.0-sharing-cifs-(int-id)-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update CIFS share <cite>id</cite>.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">PUT</span> <span class="nn">/api/v1.0/sharing/cifs/1/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+  <span class="p">{</span>
+          <span class="nt">&quot;cifs_guestok&quot;</span><span class="p">:</span> <span class="kc">true</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Vary</span><span class="o">:</span> <span class="l">Accept</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+  <span class="p">{</span>
+          <span class="nt">&quot;cifs_hostsallow&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;cifs_name&quot;</span><span class="p">:</span> <span class="s2">&quot;My Test Share&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;cifs_home&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nt">&quot;cifs_default_permissions&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;cifs_guestok&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;cifs_showhiddenfiles&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nt">&quot;cifs_hostsdeny&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;cifs_recyclebin&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nt">&quot;cifs_auxsmbconf&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;cifs_comment&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;cifs_path&quot;</span><span class="p">:</span> <span class="s2">&quot;/mnt/tank/MyShare&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;cifs_ro&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nt">&quot;cifs_guestonly&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;cifs_storage_task&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">JSON Parameters:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>cifs_name</strong> (<em>string</em>) – name of the share</li>
+<li><strong>cifs_home</strong> (<em>string</em>) – use this share as a special users home directory</li>
+<li><strong>cifs_path</strong> (<em>string</em>) – path to share</li>
+<li><strong>cifs_comment</strong> (<em>string</em>) – user comment</li>
+<li><strong>cifs_hostsallow</strong> (<em>string</em>) – explictly allowed hosts</li>
+<li><strong>cifs_hostsdeny</strong> (<em>string</em>) – explicitly denied hosts</li>
+<li><strong>cifs_auxsmbconf</strong> (<em>string</em>) – auxiliar parameters to append to smb.conf</li>
+<li><strong>cifs_default_permissions</strong> (<em>string</em>) – recursively set sane default windows permissions on share</li>
+<li><strong>cifs_guestok</strong> (<em>boolean</em>) – allow guests</li>
+<li><strong>cifs_guestonly</strong> (<em>boolean</em>) – only guests are allowed</li>
+<li><strong>cifs_showhiddenfiles</strong> (<em>boolean</em>) – show hidden files</li>
+<li><strong>cifs_storage_task</strong> (<em>integer</em>) – id of periodic snapshot task</li>
+<li><strong>cifs_recyclebin</strong> (<em>boolean</em>) – enable recycle bin</li>
+<li><strong>cifs_ro</strong> (<em>boolean</em>) – readonly share</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Request Headers:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>Content-Type</strong> – the request content type</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Response Headers:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>Content-Type</strong> – the response content type</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>200</strong> – no error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="delete-resource">
+<h3>Delete resource<a class="headerlink" href="#delete-resource" title="Permalink to this headline">¶</a></h3>
+<dl class="delete">
+<dt id="delete--api-v1.0-sharing-cifs-(int-id)-">
+<code class="descname">DELETE </code><code class="descname">/api/v1.0/sharing/cifs/</code><span class="sig-paren">(</span><em class="property">int: </em><em>id</em><span class="sig-paren">)</span><code class="descname">/</code><a class="headerlink" href="#delete--api-v1.0-sharing-cifs-(int-id)-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete CIFS share <cite>id</cite>.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">DELETE</span> <span class="nn">/api/v1.0/sharing/cifs/1/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">204</span> <span class="ne">No Response</span>
+<span class="na">Vary</span><span class="o">:</span> <span class="l">Accept</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>204</strong> – no error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="nfs">
+<h2>NFS<a class="headerlink" href="#nfs" title="Permalink to this headline">¶</a></h2>
+<p>The NFS resource represents NFS shares.</p>
+<div class="section" id="id1">
+<h3>List resource<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<dl class="get">
+<dt id="get--api-v1.0-sharing-nfs-">
+<code class="descname">GET </code><code class="descname">/api/v1.0/sharing/nfs/</code><a class="headerlink" href="#get--api-v1.0-sharing-nfs-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of all NFS shares.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/v1.0/sharing/nfs/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span>HTTP/1.1 200 OK
+Vary: Accept
+Content-Type: application/json
+
+[
+  {
+          &quot;nfs_alldirs&quot;: false,
+          &quot;nfs_comment&quot;: &quot;&quot;,
+          &quot;nfs_hosts&quot;: &quot;&quot;,
+          &quot;nfs_mapall_group&quot;: &quot;Group1&quot;,
+          &quot;nfs_mapall_user&quot;: &quot;User1&quot;,
+          &quot;nfs_maproot_group&#39;: &quot;&quot;,
+          &quot;nfs_maproot_user&quot;: &quot;&quot;,
+          &quot;nfs_network&quot;: &quot;192.168.1.0/24&quot;,
+          &quot;nfs_paths&quot;: [&quot;/mnt/tank/shares&quot;],
+          &quot;nfs_quiet&quot;: false,
+          &quot;nfs_ro&quot;: false,
+          &quot;nfs_security&#39;: []
+  }
+]
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Query Parameters:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>offset</strong> – offset number. default is 0</li>
+<li><strong>limit</strong> – limit number. default is 20</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Response Headers:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>Content-Type</strong> – content type of the response</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>200</strong> – no error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id2">
+<h3>Create resource<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<dl class="post">
+<dt id="post--api-v1.0-sharing-nfs-">
+<code class="descname">POST </code><code class="descname">/api/v1.0/sharing/nfs/</code><a class="headerlink" href="#post--api-v1.0-sharing-nfs-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new NFS share and returns the new NFS share object.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/v1.0/sharing/nfs/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+  <span class="p">{</span>
+          <span class="nt">&quot;nfs_comment&quot;</span><span class="p">:</span> <span class="s2">&quot;My Test Share&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;nfs_paths&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;/mnt/tank&quot;</span><span class="p">],</span>
+          <span class="nt">&quot;nfs_security&quot;</span><span class="p">:</span> <span class="s2">&quot;sys&quot;</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">201</span> <span class="ne">Created</span>
+<span class="na">Vary</span><span class="o">:</span> <span class="l">Accept</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+  <span class="p">{</span>
+          <span class="nt">&quot;nfs_mapall_user&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;nfs_maproot_group&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;nfs_maproot_user&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;nfs_network&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;nfs_ro&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nt">&quot;nfs_hosts&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;nfs_alldirs&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nt">&quot;nfs_mapall_group&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;nfs_comment&quot;</span><span class="p">:</span> <span class="s2">&quot;My Test Share&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;nfs_paths&quot;</span><span class="p">:</span> <span class="p">[</span>
+                  <span class="s2">&quot;/mnt/tank&quot;</span>
+          <span class="p">],</span>
+          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="nt">&quot;nfs_quiet&quot;</span><span class="p">:</span> <span class="kc">false</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">JSON Parameters:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>nfs_paths</strong> (<em>list(string)</em>) – paths to share</li>
+<li><strong>nfs_comment</strong> (<em>string</em>) – user comment</li>
+<li><strong>nfs_hosts</strong> (<em>string</em>) – allowed hosts or ip addresses</li>
+<li><strong>nfs_network</strong> (<em>string</em>) – allowed networks</li>
+<li><strong>nfs_maproot_user</strong> (<em>string</em>) – limit root to this user permissions</li>
+<li><strong>nfs_maproot_group</strong> (<em>string</em>) – limit root to this group permissions</li>
+<li><strong>nfs_mapall_user</strong> (<em>string</em>) – user used by all clients</li>
+<li><strong>nfs_mapall_group</strong> (<em>string</em>) – group used by all clients</li>
+<li><strong>nfs_alldirs</strong> (<em>boolean</em>) – allow mounting of any subdirectory</li>
+<li><strong>nfs_ro</strong> (<em>boolean</em>) – readonly share</li>
+<li><strong>nfs_quiet</strong> (<em>boolean</em>) – inhibit syslog warnings</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Request Headers:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>Content-Type</strong> – the request content type</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Response Headers:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>Content-Type</strong> – the response content type</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>201</strong> – no error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id3">
+<h3>Update resource<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<dl class="put">
+<dt id="put--api-v1.0-sharing-nfs-(int-id)-">
+<code class="descname">PUT </code><code class="descname">/api/v1.0/sharing/nfs/</code><span class="sig-paren">(</span><em class="property">int: </em><em>id</em><span class="sig-paren">)</span><code class="descname">/</code><a class="headerlink" href="#put--api-v1.0-sharing-nfs-(int-id)-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update NFS share <cite>id</cite>.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">PUT</span> <span class="nn">/api/v1.0/sharing/nfs/1/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+  <span class="p">{</span>
+          <span class="nt">&quot;nfs_ro&quot;</span><span class="p">:</span> <span class="kc">true</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Vary</span><span class="o">:</span> <span class="l">Accept</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+  <span class="p">{</span>
+          <span class="nt">&quot;nfs_mapall_user&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;nfs_maproot_group&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;nfs_maproot_user&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;nfs_network&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;nfs_ro&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;nfs_hosts&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;nfs_alldirs&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nt">&quot;nfs_mapall_group&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;nfs_comment&quot;</span><span class="p">:</span> <span class="s2">&quot;My Test Share&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;nfs_paths&quot;</span><span class="p">:</span> <span class="p">[</span>
+                  <span class="s2">&quot;/mnt/tank&quot;</span>
+          <span class="p">],</span>
+          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="nt">&quot;nfs_quiet&quot;</span><span class="p">:</span> <span class="kc">false</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">JSON Parameters:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>nfs_paths</strong> (<em>list(string)</em>) – paths to share</li>
+<li><strong>nfs_comment</strong> (<em>string</em>) – user comment</li>
+<li><strong>nfs_hosts</strong> (<em>string</em>) – allowed hosts or ip addresses</li>
+<li><strong>nfs_network</strong> (<em>string</em>) – allowed networks</li>
+<li><strong>nfs_maproot_user</strong> (<em>string</em>) – limit root to this user permissions</li>
+<li><strong>nfs_maproot_group</strong> (<em>string</em>) – limit root to this group permissions</li>
+<li><strong>nfs_mapall_user</strong> (<em>string</em>) – user used by all clients</li>
+<li><strong>nfs_mapall_group</strong> (<em>string</em>) – group used by all clients</li>
+<li><strong>nfs_alldirs</strong> (<em>boolean</em>) – allow mounting of any subdirectory</li>
+<li><strong>nfs_ro</strong> (<em>boolean</em>) – readonly share</li>
+<li><strong>nfs_quiet</strong> (<em>boolean</em>) – inhibit syslog warnings</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Request Headers:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>Content-Type</strong> – the request content type</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Response Headers:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>Content-Type</strong> – the response content type</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>200</strong> – no error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id4">
+<h3>Delete resource<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<dl class="delete">
+<dt id="delete--api-v1.0-sharing-nfs-(int-id)-">
+<code class="descname">DELETE </code><code class="descname">/api/v1.0/sharing/nfs/</code><span class="sig-paren">(</span><em class="property">int: </em><em>id</em><span class="sig-paren">)</span><code class="descname">/</code><a class="headerlink" href="#delete--api-v1.0-sharing-nfs-(int-id)-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete NFS share <cite>id</cite>.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">DELETE</span> <span class="nn">/api/v1.0/sharing/nfs/1/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">204</span> <span class="ne">No Response</span>
+<span class="na">Vary</span><span class="o">:</span> <span class="l">Accept</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>204</strong> – no error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="afp">
+<h2>AFP<a class="headerlink" href="#afp" title="Permalink to this headline">¶</a></h2>
+<p>The AFP resource represents AFP shares.</p>
+<div class="section" id="id5">
+<h3>List resource<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<dl class="get">
+<dt id="get--api-v1.0-sharing-afp-">
+<code class="descname">GET </code><code class="descname">/api/v1.0/sharing/afp/</code><a class="headerlink" href="#get--api-v1.0-sharing-afp-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of all AFP shares.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/v1.0/sharing/afp/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Vary</span><span class="o">:</span> <span class="l">Accept</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">[</span>
+  <span class="p">{</span>
+          <span class="nt">&quot;afp_upriv&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="nt">&quot;afp_comment&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;afp_fperm&quot;</span><span class="p">:</span> <span class="s2">&quot;644&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;afp_deny&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;afp_nostat&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nt">&quot;afp_name&quot;</span><span class="p">:</span> <span class="s2">&quot;test share&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;afp_nodev&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nt">&quot;afp_rw&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;afp_allow&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;afp_dperm&quot;</span><span class="p">:</span> <span class="s2">&quot;755&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;afp_ro&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;afp_sharepw&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;afp_path&quot;</span><span class="p">:</span> <span class="s2">&quot;/mnt/tank&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;afp_timemachine&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nt">&quot;afp_umask&quot;</span><span class="p">:</span> <span class="s2">&quot;000&quot;</span><span class="p">,</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Query Parameters:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>offset</strong> – offset number. default is 0</li>
+<li><strong>limit</strong> – limit number. default is 20</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Response Headers:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>Content-Type</strong> – content type of the response</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>200</strong> – no error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id6">
+<h3>Create resource<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<dl class="post">
+<dt id="post--api-v1.0-sharing-afp-">
+<code class="descname">POST </code><code class="descname">/api/v1.0/sharing/afp/</code><a class="headerlink" href="#post--api-v1.0-sharing-afp-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new AFP share and returns the new AFP share object.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/v1.0/sharing/afp/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+  <span class="p">{</span>
+          <span class="nt">&quot;afp_name&quot;</span><span class="p">:</span> <span class="s2">&quot;My Test Share&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;afp_path&quot;</span><span class="p">:</span> <span class="s2">&quot;/mnt/tank&quot;</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">201</span> <span class="ne">Created</span>
+<span class="na">Vary</span><span class="o">:</span> <span class="l">Accept</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+  <span class="p">{</span>
+          <span class="nt">&quot;afp_upriv&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="nt">&quot;afp_comment&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;afp_fperm&quot;</span><span class="p">:</span> <span class="s2">&quot;644&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;afp_deny&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;afp_nostat&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nt">&quot;afp_name&quot;</span><span class="p">:</span> <span class="s2">&quot;test share&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;afp_nodev&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nt">&quot;afp_rw&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;afp_allow&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;afp_dperm&quot;</span><span class="p">:</span> <span class="s2">&quot;755&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;afp_ro&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;afp_sharepw&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;afp_path&quot;</span><span class="p">:</span> <span class="s2">&quot;/mnt/tank&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;afp_timemachine&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nt">&quot;afp_umask&quot;</span><span class="p">:</span> <span class="s2">&quot;000&quot;</span><span class="p">,</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">JSON Parameters:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>afp_path</strong> (<em>string</em>) – paths to share</li>
+<li><strong>afp_name</strong> (<em>string</em>) – share name</li>
+<li><strong>afp_comment</strong> (<em>string</em>) – user comment</li>
+<li><strong>afp_fperm</strong> (<em>string</em>) – default file permission</li>
+<li><strong>afp_dperm</strong> (<em>string</em>) – default file permission</li>
+<li><strong>afp_allow</strong> (<em>string</em>) – users and groups allowed to access</li>
+<li><strong>afp_deny</strong> (<em>string</em>) – users or groups not allowed to access</li>
+<li><strong>afp_rw</strong> (<em>string</em>) – users and groups allowed to read and write</li>
+<li><strong>afp_ro</strong> (<em>string</em>) – users and groups allowed to read only</li>
+<li><strong>afp_sharepw</strong> (<em>string</em>) – password for the share</li>
+<li><strong>afp_umask</strong> (<em>string</em>) – default umask</li>
+<li><strong>afp_upriv</strong> (<em>boolean</em>) – use AFP3 unix privileges</li>
+<li><strong>afp_nostat</strong> (<em>boolean</em>) – don’t stat volume path when enumerating volumes list</li>
+<li><strong>afp_nodev</strong> (<em>boolean</em>) – always use 0 for device number</li>
+<li><strong>afp_timemachine</strong> (<em>boolean</em>) – enable Time Machine backups on this share</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Request Headers:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>Content-Type</strong> – the request content type</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Response Headers:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>Content-Type</strong> – the response content type</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>201</strong> – no error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id7">
+<h3>Update resource<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<dl class="put">
+<dt id="put--api-v1.0-sharing-afp-(int-id)-">
+<code class="descname">PUT </code><code class="descname">/api/v1.0/sharing/afp/</code><span class="sig-paren">(</span><em class="property">int: </em><em>id</em><span class="sig-paren">)</span><code class="descname">/</code><a class="headerlink" href="#put--api-v1.0-sharing-afp-(int-id)-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update AFP share <cite>id</cite>.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">PUT</span> <span class="nn">/api/v1.0/sharing/afp/1/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+  <span class="p">{</span>
+          <span class="nt">&quot;afp_timemachine&quot;</span><span class="p">:</span> <span class="kc">true</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Vary</span><span class="o">:</span> <span class="l">Accept</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+  <span class="p">{</span>
+          <span class="nt">&quot;afp_upriv&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="nt">&quot;afp_comment&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;afp_fperm&quot;</span><span class="p">:</span> <span class="s2">&quot;755&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;afp_deny&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;afp_nostat&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nt">&quot;afp_name&quot;</span><span class="p">:</span> <span class="s2">&quot;test share&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;afp_nodev&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nt">&quot;afp_rw&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;afp_allow&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;afp_dperm&quot;</span><span class="p">:</span> <span class="s2">&quot;644&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;afp_ro&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;afp_sharepw&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;afp_path&quot;</span><span class="p">:</span> <span class="s2">&quot;/mnt/tank&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;afp_timemachine&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;afp_umask&quot;</span><span class="p">:</span> <span class="s2">&quot;000&quot;</span><span class="p">,</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">JSON Parameters:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>afp_path</strong> (<em>string</em>) – paths to share</li>
+<li><strong>afp_name</strong> (<em>string</em>) – share name</li>
+<li><strong>afp_comment</strong> (<em>string</em>) – user comment</li>
+<li><strong>afp_fperm</strong> (<em>string</em>) – default file permission</li>
+<li><strong>afp_dperm</strong> (<em>string</em>) – default file permission</li>
+<li><strong>afp_allow</strong> (<em>string</em>) – users and groups allowed to access</li>
+<li><strong>afp_deny</strong> (<em>string</em>) – users or groups not allowed to access</li>
+<li><strong>afp_rw</strong> (<em>string</em>) – users and groups allowed to read and write</li>
+<li><strong>afp_ro</strong> (<em>string</em>) – users and groups allowed to read only</li>
+<li><strong>afp_sharepw</strong> (<em>string</em>) – password for the share</li>
+<li><strong>afp_umask</strong> (<em>string</em>) – default umask</li>
+<li><strong>afp_upriv</strong> (<em>boolean</em>) – use AFP3 unix privileges</li>
+<li><strong>afp_nostat</strong> (<em>boolean</em>) – don’t stat volume path when enumerating volumes list</li>
+<li><strong>afp_nodev</strong> (<em>boolean</em>) – always use 0 for device number</li>
+<li><strong>afp_timemachine</strong> (<em>boolean</em>) – enable Time Machine backups on this share</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Request Headers:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>Content-Type</strong> – the request content type</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Response Headers:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>Content-Type</strong> – the response content type</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>200</strong> – no error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id8">
+<h3>Delete resource<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<dl class="delete">
+<dt id="delete--api-v1.0-sharing-afp-(int-id)-">
+<code class="descname">DELETE </code><code class="descname">/api/v1.0/sharing/afp/</code><span class="sig-paren">(</span><em class="property">int: </em><em>id</em><span class="sig-paren">)</span><code class="descname">/</code><a class="headerlink" href="#delete--api-v1.0-sharing-afp-(int-id)-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete AFP share <cite>id</cite>.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">DELETE</span> <span class="nn">/api/v1.0/sharing/afp/1/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">204</span> <span class="ne">No Response</span>
+<span class="na">Vary</span><span class="o">:</span> <span class="l">Accept</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>204</strong> – no error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Sharing</a><ul>
+<li><a class="reference internal" href="#cifs">CIFS</a><ul>
+<li><a class="reference internal" href="#list-resource">List resource</a></li>
+<li><a class="reference internal" href="#create-resource">Create resource</a></li>
+<li><a class="reference internal" href="#update-resource">Update resource</a></li>
+<li><a class="reference internal" href="#delete-resource">Delete resource</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#nfs">NFS</a><ul>
+<li><a class="reference internal" href="#id1">List resource</a></li>
+<li><a class="reference internal" href="#id2">Create resource</a></li>
+<li><a class="reference internal" href="#id3">Update resource</a></li>
+<li><a class="reference internal" href="#id4">Delete resource</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#afp">AFP</a><ul>
+<li><a class="reference internal" href="#id5">List resource</a></li>
+<li><a class="reference internal" href="#id6">Create resource</a></li>
+<li><a class="reference internal" href="#id7">Update resource</a></li>
+<li><a class="reference internal" href="#id8">Delete resource</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="iscsi/index.html"
+                        title="previous chapter">iSCSI Resources</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="storage.html"
+                        title="next chapter">Storage</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/resources/sharing.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../http-routingtable.html" title="HTTP Routing Table"
+             >routing table</a> |</li>
+        <li class="right" >
+          <a href="storage.html" title="Storage"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="iscsi/index.html" title="iSCSI Resources"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">FreeNAS API 1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Resources</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2013, iXsystems.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,242 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Release Notes &#8212; FreeNAS API 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Authentication" href="authentication.html" />
+    <link rel="prev" title="Welcome to FreeNAS API’s documentation!" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="http-routingtable.html" title="HTTP Routing Table"
+             >routing table</a> |</li>
+        <li class="right" >
+          <a href="authentication.html" title="Authentication"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to FreeNAS API’s documentation!"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FreeNAS API 1.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="release-notes">
+<h1>Release Notes<a class="headerlink" href="#release-notes" title="Permalink to this headline">¶</a></h1>
+<p>Release notes for the FreeNAS 9.10 API.</p>
+<div class="section" id="resources">
+<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Resources removed</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>SSL: /api/v1.0/system/ssl/</li>
+</ul>
+</div></blockquote>
+<p>Release notes for the FreeNAS 9.3 API.</p>
+</div>
+<div class="section" id="id1">
+<h2>Resources<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Resources added</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Jails: /api/v1.0/jails/jails/</li>
+<li>Jails Configuration: /api/v1.0/jails/configuration/</li>
+<li>Jails Mountpoints: /api/v1.0/jails/mountpoints/</li>
+<li>Jails Templates: /api/v1.0/jails/templates/</li>
+<li>Services Domain Controller: /api/v1.0/services/domaincontroller/</li>
+<li>Services LLDP: /api/v1.0/services/lldp/</li>
+<li>Storage Permission: /api/v1.0/storage/permission/</li>
+<li>System Reboot: /api/v1.0/system/reboot/ (existed since 9.2.1 but undocumented)</li>
+<li>System Shutdown: /api/v1.0/system/shutdown/ (existed since 9.2.1 but undocumented)</li>
+<li>System Version: /api/v1.0/system/version/</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Endpoints added to existing resources</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Volume resource to upgrade zpool version: /api/v1.0/storage/volume/(string:name)/upgrade/</li>
+<li>CronJob resource to run a job on demand: /api/v1.0/tasks/cronjob/(int:id)/run/</li>
+<li>Rsync resource to run a job on demand: /api/v1.0/tasks/rsync/(int:id)/run/</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="fields">
+<h2>Fields<a class="headerlink" href="#fields" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Fields added</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>account User resource: bsdusr_sshpubkey</li>
+<li>network Global Configuration resource: gc_httpproxy</li>
+<li>service AFP resource: afp_srv_bindip, afp_srv_global_aux</li>
+<li>service CIFS resource: cifs_srv_domain_logons, cifs_srv_obey_pam_restrictions, cifs_SID</li>
+<li>service Dynamic DNS resource: ddns_ipserver</li>
+<li>service NFS resource: nfs_srv_v4</li>
+<li>service iSCSI extent resource: iscsi_target_extent_insecure_tpc, iscsi_target_extent_naa</li>
+<li>sharing CIFS: cifs_home</li>
+<li>sharing NFS: nfs_security</li>
+<li>storage Replication resource: repl_compression, repl_remote_cipher</li>
+<li>system Settings resource: stg_guihttpsredirect, stg_wizardshown</li>
+<li>system Tunable resource: tun_type</li>
+<li>directory service ActiveDirectory resource: ad_certfile, ad_enable, ad_keytab, ad_ssl, ad_use_keytab</li>
+<li>directory service LDAP resource: ldap_binddn, ldap_enable, ldap_sudosuffix, ldap_use_default_domain, ldap_idmap_backend</li>
+<li>directory service NIS resource: nis_enable</li>
+<li>directory service NT4 resource: nt4_enable, nt4_idmap_backend, nt4_use_default_domain</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="backwardly-incompatible-changes">
+<h2>Backwardly incompatible changes<a class="headerlink" href="#backwardly-incompatible-changes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Resources removed</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Admin Password resource has been removed: /api/v1.0/system/adminpassword/ . It has been replaced by users passwords in 9.2.</li>
+<li>Admin User resource has been removed: /api/v1.0/system/adminuser/ . Since 9.2 the “root” user is the admin.</li>
+<li>Sysctl resource has been removed: /api/v1.0/system/sysctl/ . Sysctl has been merged into /api/v1.0/system/tunable/</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Fields removed</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Active Directory resource: ad_workgroup</li>
+<li>CIFS service resource: cifs_srv_homedir, cifs_srv_homedir_browseable_enable, cifs_srv_homedir_enable, cifs_srv_homedir_aux</li>
+<li>Settings resource: stg_directoryservice</li>
+<li>Replication resource: repl_remote_fast_cipher</li>
+<li>iSCST Target resource: iscsi_target_flags, iscsi_target_type</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Fields renamed</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>directory service LDAP resource: ldap_rootbasedn -&gt; ldap_basedn, ldap_rootbindpw -&gt; ldap_bindpw, ldap_tls_cacertfile -&gt; ldap_certfile</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Resources renamed</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>CronJob resource moved from /api/v1.0/system/cronjob/ to /api/v1.0/tasks/cronjob/</li>
+<li>InitShutdown resource moved from /api/v1.0/system/initshutdown/ to /api/v1.0/tasks/initshutdown/</li>
+<li>Rsync resource moved from /api/v1.0/system/rsync/ to /api/v1.0/tasks/rsync/</li>
+<li>SMARTTest resource moved from /api/v1.0/system/smarttest/ to /api/v1.0/tasks/smarttest/</li>
+<li>ActiveDirectory resourced move from /api/v1.0/services/activedirectory/ to /api/v1.0/directoryservice/activedirectory/</li>
+<li>LDAP resourced move from /api/v1.0/services/ldap/ to /api/v1.0/directoryservice/ldap/</li>
+<li>NIS resourced move from /api/v1.0/services/nis/ to /api/v1.0/directoryservice/nis/</li>
+<li>NT4 resourced move from /api/v1.0/services/nt4/ to /api/v1.0/directoryservice/nt4/</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Release Notes</a><ul>
+<li><a class="reference internal" href="#resources">Resources</a></li>
+<li><a class="reference internal" href="#id1">Resources</a></li>
+<li><a class="reference internal" href="#fields">Fields</a></li>
+<li><a class="reference internal" href="#backwardly-incompatible-changes">Backwardly incompatible changes</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Welcome to FreeNAS API’s documentation!</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="authentication.html"
+                        title="next chapter">Authentication</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/releasenotes.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="http-routingtable.html" title="HTTP Routing Table"
+             >routing table</a> |</li>
+        <li class="right" >
+          <a href="authentication.html" title="Authentication"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to FreeNAS API’s documentation!"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FreeNAS API 1.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2013, iXsystems.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.
+    </div>
+  </body>
+</html>

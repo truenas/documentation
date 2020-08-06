@@ -1,0 +1,1468 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>HTTP Routing Table &#8212; FreeNAS API 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+
+    <script type="text/javascript">
+      DOCUMENTATION_OPTIONS.COLLAPSE_INDEX = true;
+    </script>
+
+
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="#" title="HTTP Routing Table"
+             >routing table</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FreeNAS API 1.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+
+   <h1>HTTP Routing Table</h1>
+
+   <div class="modindex-jumpbox">
+   <a href="#cap-/api"><strong>/api</strong></a>
+   </div>
+
+   <table class="indextable modindextable">
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-/api"><td></td><td>
+       <strong>/api</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/account.html#get--api-v1.0-account-all_groups-"><code class="xref">GET /api/v1.0/account/all_groups/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/account.html#get--api-v1.0-account-all_users-"><code class="xref">GET /api/v1.0/account/all_users/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/account.html#get--api-v1.0-account-groups-"><code class="xref">GET /api/v1.0/account/groups/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/account.html#post--api-v1.0-account-groups-"><code class="xref">POST /api/v1.0/account/groups/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/account.html#put--api-v1.0-account-groups-(int-id)-"><code class="xref">PUT /api/v1.0/account/groups/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/account.html#delete--api-v1.0-account-groups-(int-id)-"><code class="xref">DELETE /api/v1.0/account/groups/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/account.html#get--api-v1.0-account-users-"><code class="xref">GET /api/v1.0/account/users/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/account.html#post--api-v1.0-account-users-"><code class="xref">POST /api/v1.0/account/users/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/account.html#put--api-v1.0-account-users-(int-id)-"><code class="xref">PUT /api/v1.0/account/users/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/account.html#delete--api-v1.0-account-users-(int-id)-"><code class="xref">DELETE /api/v1.0/account/users/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/account.html#get--api-v1.0-account-users-(int-id)-groups-"><code class="xref">GET /api/v1.0/account/users/(int:id)/groups/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/account.html#post--api-v1.0-account-users-(int-id)-groups-"><code class="xref">POST /api/v1.0/account/users/(int:id)/groups/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/account.html#post--api-v1.0-account-users-(int-id)-password-"><code class="xref">POST /api/v1.0/account/users/(int:id)/password/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/directoryservice.html#get--api-v1.0-directoryservice-activedirectory-"><code class="xref">GET /api/v1.0/directoryservice/activedirectory/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/directoryservice.html#put--api-v1.0-directoryservice-activedirectory-"><code class="xref">PUT /api/v1.0/directoryservice/activedirectory/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/directoryservice/idmap.html#get--api-v1.0-directoryservice-idmap-ad-"><code class="xref">GET /api/v1.0/directoryservice/idmap/ad/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/directoryservice/idmap.html#post--api-v1.0-directoryservice-idmap-ad-"><code class="xref">POST /api/v1.0/directoryservice/idmap/ad/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/directoryservice/idmap.html#put--api-v1.0-directoryservice-idmap-ad-(int-id)-"><code class="xref">PUT /api/v1.0/directoryservice/idmap/ad/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/directoryservice/idmap.html#delete--api-v1.0-directoryservice-idmap-ad-(int-id)-"><code class="xref">DELETE /api/v1.0/directoryservice/idmap/ad/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/directoryservice/idmap.html#get--api-v1.0-directoryservice-idmap-adex-"><code class="xref">GET /api/v1.0/directoryservice/idmap/adex/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/directoryservice/idmap.html#post--api-v1.0-directoryservice-idmap-adex-"><code class="xref">POST /api/v1.0/directoryservice/idmap/adex/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/directoryservice/idmap.html#put--api-v1.0-directoryservice-idmap-adex-(int-id)-"><code class="xref">PUT /api/v1.0/directoryservice/idmap/adex/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/directoryservice/idmap.html#delete--api-v1.0-directoryservice-idmap-adex-(int-id)-"><code class="xref">DELETE /api/v1.0/directoryservice/idmap/adex/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/directoryservice/idmap.html#get--api-v1.0-directoryservice-idmap-hash-"><code class="xref">GET /api/v1.0/directoryservice/idmap/hash/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/directoryservice/idmap.html#post--api-v1.0-directoryservice-idmap-hash-"><code class="xref">POST /api/v1.0/directoryservice/idmap/hash/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/directoryservice/idmap.html#put--api-v1.0-directoryservice-idmap-hash-(int-id)-"><code class="xref">PUT /api/v1.0/directoryservice/idmap/hash/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/directoryservice/idmap.html#delete--api-v1.0-directoryservice-idmap-hash-(int-id)-"><code class="xref">DELETE /api/v1.0/directoryservice/idmap/hash/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/directoryservice/idmap.html#get--api-v1.0-directoryservice-idmap-ldap-"><code class="xref">GET /api/v1.0/directoryservice/idmap/ldap/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/directoryservice/idmap.html#post--api-v1.0-directoryservice-idmap-ldap-"><code class="xref">POST /api/v1.0/directoryservice/idmap/ldap/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/directoryservice/idmap.html#put--api-v1.0-directoryservice-idmap-ldap-(int-id)-"><code class="xref">PUT /api/v1.0/directoryservice/idmap/ldap/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/directoryservice/idmap.html#delete--api-v1.0-directoryservice-idmap-ldap-(int-id)-"><code class="xref">DELETE /api/v1.0/directoryservice/idmap/ldap/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/directoryservice/idmap.html#get--api-v1.0-directoryservice-idmap-nss-"><code class="xref">GET /api/v1.0/directoryservice/idmap/nss/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/directoryservice/idmap.html#post--api-v1.0-directoryservice-idmap-nss-"><code class="xref">POST /api/v1.0/directoryservice/idmap/nss/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/directoryservice/idmap.html#put--api-v1.0-directoryservice-idmap-nss-(int-id)-"><code class="xref">PUT /api/v1.0/directoryservice/idmap/nss/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/directoryservice/idmap.html#delete--api-v1.0-directoryservice-idmap-nss-(int-id)-"><code class="xref">DELETE /api/v1.0/directoryservice/idmap/nss/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/directoryservice/idmap.html#get--api-v1.0-directoryservice-idmap-rfc2307-"><code class="xref">GET /api/v1.0/directoryservice/idmap/rfc2307/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/directoryservice/idmap.html#post--api-v1.0-directoryservice-idmap-rfc2307-"><code class="xref">POST /api/v1.0/directoryservice/idmap/rfc2307/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/directoryservice/idmap.html#put--api-v1.0-directoryservice-idmap-rfc2307-(int-id)-"><code class="xref">PUT /api/v1.0/directoryservice/idmap/rfc2307/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/directoryservice/idmap.html#delete--api-v1.0-directoryservice-idmap-rfc2307-(int-id)-"><code class="xref">DELETE /api/v1.0/directoryservice/idmap/rfc2307/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/directoryservice/idmap.html#get--api-v1.0-directoryservice-idmap-tdb-"><code class="xref">GET /api/v1.0/directoryservice/idmap/tdb/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/directoryservice/idmap.html#post--api-v1.0-directoryservice-idmap-tdb-"><code class="xref">POST /api/v1.0/directoryservice/idmap/tdb/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/directoryservice/idmap.html#put--api-v1.0-directoryservice-idmap-tdb-(int-id)-"><code class="xref">PUT /api/v1.0/directoryservice/idmap/tdb/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/directoryservice/idmap.html#delete--api-v1.0-directoryservice-idmap-tdb-(int-id)-"><code class="xref">DELETE /api/v1.0/directoryservice/idmap/tdb/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/directoryservice/idmap.html#get--api-v1.0-directoryservice-idmap-tdb2-"><code class="xref">GET /api/v1.0/directoryservice/idmap/tdb2/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/directoryservice/idmap.html#post--api-v1.0-directoryservice-idmap-tdb2-"><code class="xref">POST /api/v1.0/directoryservice/idmap/tdb2/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/directoryservice/idmap.html#put--api-v1.0-directoryservice-idmap-tdb2-(int-id)-"><code class="xref">PUT /api/v1.0/directoryservice/idmap/tdb2/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/directoryservice/idmap.html#delete--api-v1.0-directoryservice-idmap-tdb2-(int-id)-"><code class="xref">DELETE /api/v1.0/directoryservice/idmap/tdb2/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/directoryservice.html#get--api-v1.0-directoryservice-ldap-"><code class="xref">GET /api/v1.0/directoryservice/ldap/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/directoryservice.html#put--api-v1.0-directoryservice-ldap-"><code class="xref">PUT /api/v1.0/directoryservice/ldap/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/directoryservice.html#get--api-v1.0-directoryservice-nis-"><code class="xref">GET /api/v1.0/directoryservice/nis/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/directoryservice.html#put--api-v1.0-directoryservice-nis-"><code class="xref">PUT /api/v1.0/directoryservice/nis/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/jails.html#get--api-v1.0-jails-configuration-"><code class="xref">GET /api/v1.0/jails/configuration/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/jails.html#put--api-v1.0-jails-configuration-"><code class="xref">PUT /api/v1.0/jails/configuration/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/jails.html#get--api-v1.0-jails-jails-"><code class="xref">GET /api/v1.0/jails/jails/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/jails.html#post--api-v1.0-jails-jails-"><code class="xref">POST /api/v1.0/jails/jails/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/jails.html#delete--api-v1.0-jails-jails-(int-id)-"><code class="xref">DELETE /api/v1.0/jails/jails/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/jails.html#post--api-v1.0-jails-jails-(int-id)-restart-"><code class="xref">POST /api/v1.0/jails/jails/(int:id)/restart/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/jails.html#post--api-v1.0-jails-jails-(int-id)-start-"><code class="xref">POST /api/v1.0/jails/jails/(int:id)/start/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/jails.html#post--api-v1.0-jails-jails-(int-id)-stop-"><code class="xref">POST /api/v1.0/jails/jails/(int:id)/stop/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/jails.html#get--api-v1.0-jails-mountpoints-"><code class="xref">GET /api/v1.0/jails/mountpoints/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/jails.html#post--api-v1.0-jails-mountpoints-"><code class="xref">POST /api/v1.0/jails/mountpoints/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/jails.html#put--api-v1.0-jails-mountpoints-(int-id)-"><code class="xref">PUT /api/v1.0/jails/mountpoints/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/jails.html#delete--api-v1.0-jails-mountpoints-(int-id)-"><code class="xref">DELETE /api/v1.0/jails/mountpoints/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/jails.html#get--api-v1.0-jails-templates-"><code class="xref">GET /api/v1.0/jails/templates/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/jails.html#post--api-v1.0-jails-templates-"><code class="xref">POST /api/v1.0/jails/templates/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/jails.html#put--api-v1.0-jails-templates-(int-id)-"><code class="xref">PUT /api/v1.0/jails/templates/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/jails.html#delete--api-v1.0-jails-templates-(int-id)-"><code class="xref">DELETE /api/v1.0/jails/templates/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/network.html#get--api-v1.0-network-globalconfiguration-"><code class="xref">GET /api/v1.0/network/globalconfiguration/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/network.html#put--api-v1.0-network-globalconfiguration-"><code class="xref">PUT /api/v1.0/network/globalconfiguration/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/network.html#get--api-v1.0-network-interface-"><code class="xref">GET /api/v1.0/network/interface/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/network.html#post--api-v1.0-network-interface-"><code class="xref">POST /api/v1.0/network/interface/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/network.html#put--api-v1.0-network-interface-(int-id)-"><code class="xref">PUT /api/v1.0/network/interface/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/network.html#delete--api-v1.0-network-interface-(int-id)-"><code class="xref">DELETE /api/v1.0/network/interface/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/network.html#get--api-v1.0-network-lagg-"><code class="xref">GET /api/v1.0/network/lagg/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/network.html#post--api-v1.0-network-lagg-"><code class="xref">POST /api/v1.0/network/lagg/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/network.html#delete--api-v1.0-network-lagg-(int-id)-"><code class="xref">DELETE /api/v1.0/network/lagg/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/network.html#get--api-v1.0-network-lagginterfacemembers-"><code class="xref">GET /api/v1.0/network/lagginterfacemembers/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/network.html#post--api-v1.0-network-lagginterfacemembers-"><code class="xref">POST /api/v1.0/network/lagginterfacemembers/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/network.html#put--api-v1.0-network-lagginterfacemembers-(int-id)-"><code class="xref">PUT /api/v1.0/network/lagginterfacemembers/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/network.html#delete--api-v1.0-network-lagginterfacemembers-(int-id)-"><code class="xref">DELETE /api/v1.0/network/lagginterfacemembers/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/network.html#get--api-v1.0-network-staticroute-"><code class="xref">GET /api/v1.0/network/staticroute/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/network.html#post--api-v1.0-network-staticroute-"><code class="xref">POST /api/v1.0/network/staticroute/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/network.html#put--api-v1.0-network-staticroute-(int-id)-"><code class="xref">PUT /api/v1.0/network/staticroute/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/network.html#delete--api-v1.0-network-staticroute-(int-id)-"><code class="xref">DELETE /api/v1.0/network/staticroute/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/network.html#get--api-v1.0-network-vlan-"><code class="xref">GET /api/v1.0/network/vlan/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/network.html#post--api-v1.0-network-vlan-"><code class="xref">POST /api/v1.0/network/vlan/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/network.html#put--api-v1.0-network-vlan-(int-id)-"><code class="xref">PUT /api/v1.0/network/vlan/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/network.html#delete--api-v1.0-network-vlan-(int-id)-"><code class="xref">DELETE /api/v1.0/network/vlan/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/plugins.html#get--api-v1.0-plugins-plugins-"><code class="xref">GET /api/v1.0/plugins/plugins/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/plugins.html#delete--api-v1.0-plugins-plugins-(int-id)-"><code class="xref">DELETE /api/v1.0/plugins/plugins/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/plugins.html#post--api-v1.0-plugins-plugins-(int-id)-start-"><code class="xref">POST /api/v1.0/plugins/plugins/(int:id)/start/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/plugins.html#post--api-v1.0-plugins-plugins-(int-id)-stop-"><code class="xref">POST /api/v1.0/plugins/plugins/(int:id)/stop/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/services.html#get--api-v1.0-services-afp-"><code class="xref">GET /api/v1.0/services/afp/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/services.html#put--api-v1.0-services-afp-"><code class="xref">PUT /api/v1.0/services/afp/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/services.html#get--api-v1.0-services-cifs-"><code class="xref">GET /api/v1.0/services/cifs/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/services.html#put--api-v1.0-services-cifs-"><code class="xref">PUT /api/v1.0/services/cifs/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/services.html#get--api-v1.0-services-domaincontroller-"><code class="xref">GET /api/v1.0/services/domaincontroller/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/services.html#put--api-v1.0-services-domaincontroller-"><code class="xref">PUT /api/v1.0/services/domaincontroller/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/services.html#get--api-v1.0-services-dynamicdns-"><code class="xref">GET /api/v1.0/services/dynamicdns/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/services.html#put--api-v1.0-services-dynamicdns-"><code class="xref">PUT /api/v1.0/services/dynamicdns/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/services.html#get--api-v1.0-services-ftp-"><code class="xref">GET /api/v1.0/services/ftp/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/services.html#put--api-v1.0-services-ftp-"><code class="xref">PUT /api/v1.0/services/ftp/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/iscsi/index.html#get--api-v1.0-services-iscsi-authcredential-"><code class="xref">GET /api/v1.0/services/iscsi/authcredential/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/iscsi/index.html#post--api-v1.0-services-iscsi-authcredential-"><code class="xref">POST /api/v1.0/services/iscsi/authcredential/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/iscsi/index.html#put--api-v1.0-services-iscsi-authcredential-(int-id)-"><code class="xref">PUT /api/v1.0/services/iscsi/authcredential/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/iscsi/index.html#delete--api-v1.0-services-iscsi-authcredential-(int-id)-"><code class="xref">DELETE /api/v1.0/services/iscsi/authcredential/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/iscsi/index.html#get--api-v1.0-services-iscsi-authorizedinitiator-"><code class="xref">GET /api/v1.0/services/iscsi/authorizedinitiator/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/iscsi/index.html#post--api-v1.0-services-iscsi-authorizedinitiator-"><code class="xref">POST /api/v1.0/services/iscsi/authorizedinitiator/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/iscsi/index.html#put--api-v1.0-services-iscsi-authorizedinitiator-(int-id)-"><code class="xref">PUT /api/v1.0/services/iscsi/authorizedinitiator/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/iscsi/index.html#delete--api-v1.0-services-iscsi-authorizedinitiator-(int-id)-"><code class="xref">DELETE /api/v1.0/services/iscsi/authorizedinitiator/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/iscsi/index.html#get--api-v1.0-services-iscsi-extent-"><code class="xref">GET /api/v1.0/services/iscsi/extent/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/iscsi/index.html#post--api-v1.0-services-iscsi-extent-"><code class="xref">POST /api/v1.0/services/iscsi/extent/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/iscsi/index.html#put--api-v1.0-services-iscsi-extent-(int-id)-"><code class="xref">PUT /api/v1.0/services/iscsi/extent/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/iscsi/index.html#delete--api-v1.0-services-iscsi-extent-(int-id)-"><code class="xref">DELETE /api/v1.0/services/iscsi/extent/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/iscsi/index.html#get--api-v1.0-services-iscsi-globalconfiguration-"><code class="xref">GET /api/v1.0/services/iscsi/globalconfiguration/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/iscsi/index.html#put--api-v1.0-services-iscsi-globalconfiguration-"><code class="xref">PUT /api/v1.0/services/iscsi/globalconfiguration/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/iscsi/index.html#get--api-v1.0-services-iscsi-portal-"><code class="xref">GET /api/v1.0/services/iscsi/portal/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/iscsi/index.html#post--api-v1.0-services-iscsi-portal-"><code class="xref">POST /api/v1.0/services/iscsi/portal/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/iscsi/index.html#put--api-v1.0-services-iscsi-portal-(int-id)-"><code class="xref">PUT /api/v1.0/services/iscsi/portal/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/iscsi/index.html#delete--api-v1.0-services-iscsi-portal-(int-id)-"><code class="xref">DELETE /api/v1.0/services/iscsi/portal/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/iscsi/index.html#get--api-v1.0-services-iscsi-target-"><code class="xref">GET /api/v1.0/services/iscsi/target/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/iscsi/index.html#post--api-v1.0-services-iscsi-target-"><code class="xref">POST /api/v1.0/services/iscsi/target/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/iscsi/index.html#put--api-v1.0-services-iscsi-target-(int-id)-"><code class="xref">PUT /api/v1.0/services/iscsi/target/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/iscsi/index.html#delete--api-v1.0-services-iscsi-target-(int-id)-"><code class="xref">DELETE /api/v1.0/services/iscsi/target/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/iscsi/index.html#get--api-v1.0-services-iscsi-targetgroup-"><code class="xref">GET /api/v1.0/services/iscsi/targetgroup/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/iscsi/index.html#post--api-v1.0-services-iscsi-targetgroup-"><code class="xref">POST /api/v1.0/services/iscsi/targetgroup/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/iscsi/index.html#put--api-v1.0-services-iscsi-targetgroup-(int-id)-"><code class="xref">PUT /api/v1.0/services/iscsi/targetgroup/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/iscsi/index.html#delete--api-v1.0-services-iscsi-targetgroup-(int-id)-"><code class="xref">DELETE /api/v1.0/services/iscsi/targetgroup/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/iscsi/index.html#get--api-v1.0-services-iscsi-targettoextent-"><code class="xref">GET /api/v1.0/services/iscsi/targettoextent/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/iscsi/index.html#post--api-v1.0-services-iscsi-targettoextent-"><code class="xref">POST /api/v1.0/services/iscsi/targettoextent/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/iscsi/index.html#put--api-v1.0-services-iscsi-targettoextent-(int-id)-"><code class="xref">PUT /api/v1.0/services/iscsi/targettoextent/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/iscsi/index.html#delete--api-v1.0-services-iscsi-targettoextent-(int-id)-"><code class="xref">DELETE /api/v1.0/services/iscsi/targettoextent/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/services.html#get--api-v1.0-services-lldp-"><code class="xref">GET /api/v1.0/services/lldp/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/services.html#put--api-v1.0-services-lldp-"><code class="xref">PUT /api/v1.0/services/lldp/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/services.html#get--api-v1.0-services-nfs-"><code class="xref">GET /api/v1.0/services/nfs/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/services.html#put--api-v1.0-services-nfs-"><code class="xref">PUT /api/v1.0/services/nfs/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/services.html#get--api-v1.0-services-rsyncd-"><code class="xref">GET /api/v1.0/services/rsyncd/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/services.html#put--api-v1.0-services-rsyncd-"><code class="xref">PUT /api/v1.0/services/rsyncd/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/services.html#get--api-v1.0-services-rsyncmod-"><code class="xref">GET /api/v1.0/services/rsyncmod/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/services.html#post--api-v1.0-services-rsyncmod-"><code class="xref">POST /api/v1.0/services/rsyncmod/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/services.html#put--api-v1.0-services-rsyncmod-(int-id)-"><code class="xref">PUT /api/v1.0/services/rsyncmod/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/services.html#delete--api-v1.0-services-rsyncmod-(int-id)-"><code class="xref">DELETE /api/v1.0/services/rsyncmod/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/services.html#get--api-v1.0-services-services-"><code class="xref">GET /api/v1.0/services/services/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/services.html#put--api-v1.0-services-services-(int-id|string-srv_service)-"><code class="xref">PUT /api/v1.0/services/services/(int:id|string:srv_service)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/services.html#get--api-v1.0-services-smart-"><code class="xref">GET /api/v1.0/services/smart/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/services.html#put--api-v1.0-services-smart-"><code class="xref">PUT /api/v1.0/services/smart/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/services.html#get--api-v1.0-services-snmp-"><code class="xref">GET /api/v1.0/services/snmp/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/services.html#put--api-v1.0-services-snmp-"><code class="xref">PUT /api/v1.0/services/snmp/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/services.html#get--api-v1.0-services-ssh-"><code class="xref">GET /api/v1.0/services/ssh/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/services.html#put--api-v1.0-services-ssh-"><code class="xref">PUT /api/v1.0/services/ssh/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/services.html#get--api-v1.0-services-tftp-"><code class="xref">GET /api/v1.0/services/tftp/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/services.html#put--api-v1.0-services-tftp-"><code class="xref">PUT /api/v1.0/services/tftp/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/services.html#get--api-v1.0-services-ups-"><code class="xref">GET /api/v1.0/services/ups/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/services.html#put--api-v1.0-services-ups-"><code class="xref">PUT /api/v1.0/services/ups/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/sharing.html#get--api-v1.0-sharing-afp-"><code class="xref">GET /api/v1.0/sharing/afp/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/sharing.html#post--api-v1.0-sharing-afp-"><code class="xref">POST /api/v1.0/sharing/afp/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/sharing.html#put--api-v1.0-sharing-afp-(int-id)-"><code class="xref">PUT /api/v1.0/sharing/afp/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/sharing.html#delete--api-v1.0-sharing-afp-(int-id)-"><code class="xref">DELETE /api/v1.0/sharing/afp/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/sharing.html#get--api-v1.0-sharing-cifs-"><code class="xref">GET /api/v1.0/sharing/cifs/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/sharing.html#post--api-v1.0-sharing-cifs-"><code class="xref">POST /api/v1.0/sharing/cifs/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/sharing.html#put--api-v1.0-sharing-cifs-(int-id)-"><code class="xref">PUT /api/v1.0/sharing/cifs/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/sharing.html#delete--api-v1.0-sharing-cifs-(int-id)-"><code class="xref">DELETE /api/v1.0/sharing/cifs/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/sharing.html#get--api-v1.0-sharing-nfs-"><code class="xref">GET /api/v1.0/sharing/nfs/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/sharing.html#post--api-v1.0-sharing-nfs-"><code class="xref">POST /api/v1.0/sharing/nfs/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/sharing.html#put--api-v1.0-sharing-nfs-(int-id)-"><code class="xref">PUT /api/v1.0/sharing/nfs/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/sharing.html#delete--api-v1.0-sharing-nfs-(int-id)-"><code class="xref">DELETE /api/v1.0/sharing/nfs/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/storage.html#get--api-v1.0-storage-dataset-"><code class="xref">GET /api/v1.0/storage/dataset/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/storage.html#delete--api-v1.0-storage-dataset-(string-name)-"><code class="xref">DELETE /api/v1.0/storage/dataset/(string:name)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/storage.html#post--api-v1.0-storage-dataset-(string-parent)-"><code class="xref">POST /api/v1.0/storage/dataset/(string:parent)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/storage.html#get--api-v1.0-storage-disk-"><code class="xref">GET /api/v1.0/storage/disk/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/storage.html#put--api-v1.0-storage-disk-(str-disk_identifier)-"><code class="xref">PUT /api/v1.0/storage/disk/(str:disk_identifier)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/storage.html#put--api-v1.0-storage-permission-"><code class="xref">PUT /api/v1.0/storage/permission/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/storage.html#get--api-v1.0-storage-replication-"><code class="xref">GET /api/v1.0/storage/replication/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/storage.html#post--api-v1.0-storage-replication-"><code class="xref">POST /api/v1.0/storage/replication/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/storage.html#put--api-v1.0-storage-replication-(int-id)-"><code class="xref">PUT /api/v1.0/storage/replication/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/storage.html#delete--api-v1.0-storage-replication-(int-id)-"><code class="xref">DELETE /api/v1.0/storage/replication/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/storage.html#get--api-v1.0-storage-scrub-"><code class="xref">GET /api/v1.0/storage/scrub/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/storage.html#post--api-v1.0-storage-scrub-"><code class="xref">POST /api/v1.0/storage/scrub/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/storage.html#put--api-v1.0-storage-scrub-(int-id)-"><code class="xref">PUT /api/v1.0/storage/scrub/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/storage.html#delete--api-v1.0-storage-scrub-(int-id)-"><code class="xref">DELETE /api/v1.0/storage/scrub/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/storage.html#get--api-v1.0-storage-snapshot-"><code class="xref">GET /api/v1.0/storage/snapshot/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/storage.html#post--api-v1.0-storage-snapshot-"><code class="xref">POST /api/v1.0/storage/snapshot/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/storage.html#delete--api-v1.0-storage-snapshot-(string-id)-"><code class="xref">DELETE /api/v1.0/storage/snapshot/(string:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/storage.html#post--api-v1.0-storage-snapshot-tank%40test-clone-"><code class="xref">POST /api/v1.0/storage/snapshot/tank%40test/clone/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/storage.html#post--api-v1.0-storage-snapshot-tank%40test-rollback-"><code class="xref">POST /api/v1.0/storage/snapshot/tank%40test/rollback/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/storage.html#get--api-v1.0-storage-task-"><code class="xref">GET /api/v1.0/storage/task/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/storage.html#post--api-v1.0-storage-task-"><code class="xref">POST /api/v1.0/storage/task/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/storage.html#put--api-v1.0-storage-task-(int-id)-"><code class="xref">PUT /api/v1.0/storage/task/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/storage.html#delete--api-v1.0-storage-task-(int-id)-"><code class="xref">DELETE /api/v1.0/storage/task/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/storage.html#get--api-v1.0-storage-volume-"><code class="xref">GET /api/v1.0/storage/volume/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/storage.html#post--api-v1.0-storage-volume-"><code class="xref">POST /api/v1.0/storage/volume/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/storage.html#delete--api-v1.0-storage-volume-(int-id)-"><code class="xref">DELETE /api/v1.0/storage/volume/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/storage.html#get--api-v1.0-storage-volume-(int-id|string-name)-datasets-"><code class="xref">GET /api/v1.0/storage/volume/(int:id|string:name)/datasets/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/storage.html#post--api-v1.0-storage-volume-(int-id|string-name)-datasets-"><code class="xref">POST /api/v1.0/storage/volume/(int:id|string:name)/datasets/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/storage.html#delete--api-v1.0-storage-volume-(int-id|string-name)-datasets-(string-dsname)-"><code class="xref">DELETE /api/v1.0/storage/volume/(int:id|string:name)/datasets/(string:dsname)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/storage.html#put--api-v1.0-storage-volume-(int-id|string-name)-datasets-myds-"><code class="xref">PUT /api/v1.0/storage/volume/(int:id|string:name)/datasets/myds/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/storage.html#post--api-v1.0-storage-volume-(int-id|string-name)-detach-"><code class="xref">POST /api/v1.0/storage/volume/(int:id|string:name)/detach/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/storage.html#put--api-v1.0-storage-volume-(int-id|string-name)-keypassphrase-"><code class="xref">PUT /api/v1.0/storage/volume/(int:id|string:name)/keypassphrase/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/storage.html#post--api-v1.0-storage-volume-(int-id|string-name)-keypassphrase-"><code class="xref">POST /api/v1.0/storage/volume/(int:id|string:name)/keypassphrase/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/storage.html#post--api-v1.0-storage-volume-(int-id|string-name)-lock-"><code class="xref">POST /api/v1.0/storage/volume/(int:id|string:name)/lock/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/storage.html#post--api-v1.0-storage-volume-(int-id|string-name)-offline-"><code class="xref">POST /api/v1.0/storage/volume/(int:id|string:name)/offline/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/storage.html#post--api-v1.0-storage-volume-(int-id|string-name)-online-"><code class="xref">POST /api/v1.0/storage/volume/(int:id|string:name)/online/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/storage.html#post--api-v1.0-storage-volume-(int-id|string-name)-recoverykey-"><code class="xref">POST /api/v1.0/storage/volume/(int:id|string:name)/recoverykey/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/storage.html#delete--api-v1.0-storage-volume-(int-id|string-name)-recoverykey-"><code class="xref">DELETE /api/v1.0/storage/volume/(int:id|string:name)/recoverykey/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/storage.html#post--api-v1.0-storage-volume-(int-id|string-name)-rekey-"><code class="xref">POST /api/v1.0/storage/volume/(int:id|string:name)/rekey/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/storage.html#post--api-v1.0-storage-volume-(int-id|string-name)-remove-"><code class="xref">POST /api/v1.0/storage/volume/(int:id|string:name)/remove/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/storage.html#post--api-v1.0-storage-volume-(int-id|string-name)-replace-"><code class="xref">POST /api/v1.0/storage/volume/(int:id|string:name)/replace/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/storage.html#post--api-v1.0-storage-volume-(int-id|string-name)-scrub-"><code class="xref">POST /api/v1.0/storage/volume/(int:id|string:name)/scrub/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/storage.html#delete--api-v1.0-storage-volume-(int-id|string-name)-scrub-"><code class="xref">DELETE /api/v1.0/storage/volume/(int:id|string:name)/scrub/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/storage.html#get--api-v1.0-storage-volume-(int-id|string-name)-status-"><code class="xref">GET /api/v1.0/storage/volume/(int:id|string:name)/status/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/storage.html#post--api-v1.0-storage-volume-(int-id|string-name)-unlock-"><code class="xref">POST /api/v1.0/storage/volume/(int:id|string:name)/unlock/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/storage.html#post--api-v1.0-storage-volume-(int-id|string-name)-upgrade-"><code class="xref">POST /api/v1.0/storage/volume/(int:id|string:name)/upgrade/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/storage.html#get--api-v1.0-storage-volume-(int-id|string-name)-zvols-"><code class="xref">GET /api/v1.0/storage/volume/(int:id|string:name)/zvols/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/storage.html#post--api-v1.0-storage-volume-(int-id|string-name)-zvols-"><code class="xref">POST /api/v1.0/storage/volume/(int:id|string:name)/zvols/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/storage.html#put--api-v1.0-storage-volume-(int-id|string-name)-zvols-(string-name)-"><code class="xref">PUT /api/v1.0/storage/volume/(int:id|string:name)/zvols/(string:name)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/storage.html#delete--api-v1.0-storage-volume-(int-id|string-name)-zvols-(string-name)-"><code class="xref">DELETE /api/v1.0/storage/volume/(int:id|string:name)/zvols/(string:name)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/storage.html#get--api-v1.0-storage-volume_import-"><code class="xref">GET /api/v1.0/storage/volume_import/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/storage.html#post--api-v1.0-storage-volume_import-"><code class="xref">POST /api/v1.0/storage/volume_import/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/system.html#get--api-v1.0-system-advanced-"><code class="xref">GET /api/v1.0/system/advanced/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/system.html#put--api-v1.0-system-advanced-"><code class="xref">PUT /api/v1.0/system/advanced/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/system.html#get--api-v1.0-system-alert-"><code class="xref">GET /api/v1.0/system/alert/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/system.html#get--api-v1.0-system-alert-(string-id)-dismiss-"><code class="xref">GET /api/v1.0/system/alert/(string:id)/dismiss/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/system.html#get--api-v1.0-system-bootenv-"><code class="xref">GET /api/v1.0/system/bootenv/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/system.html#post--api-v1.0-system-bootenv-"><code class="xref">POST /api/v1.0/system/bootenv/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/system.html#delete--api-v1.0-system-bootenv-(int-id)-"><code class="xref">DELETE /api/v1.0/system/bootenv/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/system.html#post--api-v1.0-system-bootenv-rename-"><code class="xref">POST /api/v1.0/system/bootenv/rename/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/system.html#get--api-v1.0-system-certificate-"><code class="xref">GET /api/v1.0/system/certificate/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/system.html#delete--api-v1.0-system-certificate-(int-id)-"><code class="xref">DELETE /api/v1.0/system/certificate/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/system.html#post--api-v1.0-system-certificate-csr-"><code class="xref">POST /api/v1.0/system/certificate/csr/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/system.html#post--api-v1.0-system-certificate-import-"><code class="xref">POST /api/v1.0/system/certificate/import/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/system.html#post--api-v1.0-system-certificate-internal-"><code class="xref">POST /api/v1.0/system/certificate/internal/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/system.html#get--api-v1.0-system-certificateauthority-"><code class="xref">GET /api/v1.0/system/certificateauthority/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/system.html#delete--api-v1.0-system-certificateauthority-(int-id)-"><code class="xref">DELETE /api/v1.0/system/certificateauthority/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/system.html#post--api-v1.0-system-certificateauthority-import-"><code class="xref">POST /api/v1.0/system/certificateauthority/import/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/system.html#post--api-v1.0-system-certificateauthority-intermediate-"><code class="xref">POST /api/v1.0/system/certificateauthority/intermediate/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/system.html#post--api-v1.0-system-certificateauthority-internal-"><code class="xref">POST /api/v1.0/system/certificateauthority/internal/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/system.html#post--api-v1.0-system-config-factory_restore-"><code class="xref">POST /api/v1.0/system/config/factory_restore/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/system.html#post--api-v1.0-system-debug-"><code class="xref">POST /api/v1.0/system/debug/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/system.html#get--api-v1.0-system-email-"><code class="xref">GET /api/v1.0/system/email/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/system.html#put--api-v1.0-system-email-"><code class="xref">PUT /api/v1.0/system/email/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/system.html#get--api-v1.0-system-ntpserver-"><code class="xref">GET /api/v1.0/system/ntpserver/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/system.html#post--api-v1.0-system-ntpserver-"><code class="xref">POST /api/v1.0/system/ntpserver/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/system.html#put--api-v1.0-system-ntpserver-(int-id)-"><code class="xref">PUT /api/v1.0/system/ntpserver/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/system.html#delete--api-v1.0-system-ntpserver-(int-id)-"><code class="xref">DELETE /api/v1.0/system/ntpserver/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/system.html#post--api-v1.0-system-reboot-"><code class="xref">POST /api/v1.0/system/reboot/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/system.html#get--api-v1.0-system-settings-"><code class="xref">GET /api/v1.0/system/settings/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/system.html#put--api-v1.0-system-settings-"><code class="xref">PUT /api/v1.0/system/settings/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/system.html#post--api-v1.0-system-shutdown-"><code class="xref">POST /api/v1.0/system/shutdown/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/system.html#get--api-v1.0-system-tunable-"><code class="xref">GET /api/v1.0/system/tunable/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/system.html#post--api-v1.0-system-tunable-"><code class="xref">POST /api/v1.0/system/tunable/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/system.html#put--api-v1.0-system-tunable-(int-id)-"><code class="xref">PUT /api/v1.0/system/tunable/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/system.html#delete--api-v1.0-system-tunable-(int-id)-"><code class="xref">DELETE /api/v1.0/system/tunable/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/system.html#get--api-v1.0-system-update-check-"><code class="xref">GET /api/v1.0/system/update/check/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/system.html#post--api-v1.0-system-update-update-"><code class="xref">POST /api/v1.0/system/update/update/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/system.html#get--api-v1.0-system-version-"><code class="xref">GET /api/v1.0/system/version/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/tasks.html#get--api-v1.0-tasks-cronjob-"><code class="xref">GET /api/v1.0/tasks/cronjob/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/tasks.html#post--api-v1.0-tasks-cronjob-"><code class="xref">POST /api/v1.0/tasks/cronjob/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/tasks.html#put--api-v1.0-tasks-cronjob-(int-id)-"><code class="xref">PUT /api/v1.0/tasks/cronjob/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/tasks.html#delete--api-v1.0-tasks-cronjob-(int-id)-"><code class="xref">DELETE /api/v1.0/tasks/cronjob/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/tasks.html#post--api-v1.0-tasks-cronjob-(int-id)-run-"><code class="xref">POST /api/v1.0/tasks/cronjob/(int:id)/run/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/tasks.html#get--api-v1.0-tasks-initshutdown-"><code class="xref">GET /api/v1.0/tasks/initshutdown/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/tasks.html#post--api-v1.0-tasks-initshutdown-"><code class="xref">POST /api/v1.0/tasks/initshutdown/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/tasks.html#put--api-v1.0-tasks-initshutdown-(int-id)-"><code class="xref">PUT /api/v1.0/tasks/initshutdown/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/tasks.html#delete--api-v1.0-tasks-initshutdown-(int-id)-"><code class="xref">DELETE /api/v1.0/tasks/initshutdown/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/tasks.html#get--api-v1.0-tasks-rsync-"><code class="xref">GET /api/v1.0/tasks/rsync/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/tasks.html#post--api-v1.0-tasks-rsync-"><code class="xref">POST /api/v1.0/tasks/rsync/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/tasks.html#put--api-v1.0-tasks-rsync-(int-id)-"><code class="xref">PUT /api/v1.0/tasks/rsync/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/tasks.html#delete--api-v1.0-tasks-rsync-(int-id)-"><code class="xref">DELETE /api/v1.0/tasks/rsync/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/tasks.html#post--api-v1.0-tasks-rsync-(int-id)-run-"><code class="xref">POST /api/v1.0/tasks/rsync/(int:id)/run/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/tasks.html#get--api-v1.0-tasks-smarttest-"><code class="xref">GET /api/v1.0/tasks/smarttest/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/tasks.html#post--api-v1.0-tasks-smarttest-"><code class="xref">POST /api/v1.0/tasks/smarttest/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/tasks.html#put--api-v1.0-tasks-smarttest-(int-id)-"><code class="xref">PUT /api/v1.0/tasks/smarttest/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="resources/tasks.html#delete--api-v1.0-tasks-smarttest-(int-id)-"><code class="xref">DELETE /api/v1.0/tasks/smarttest/(int:id)/</code></a></td><td>
+       <em></em></td></tr>
+   </table>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="#" title="HTTP Routing Table"
+             >routing table</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FreeNAS API 1.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2013, iXsystems.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.
+    </div>
+  </body>
+</html>
