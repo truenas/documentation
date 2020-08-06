@@ -1,5 +1,5 @@
 ---
-title: "Websocket API"
+title: "The TrueNAS v2 Websocket API"
 weight: 3
 ---
 
