@@ -1,5 +1,5 @@
 ---
-title: "Rest API"
+title: "The TrueNAS v2 Rest API"
 weight: 3
 ---
 
