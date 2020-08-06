@@ -1,5 +1,5 @@
 ---
-title: "API Docs"
-linkTitle: "API Docs"
-description: "API Documetnation"
+title: "The TrueNAS API"
+linkTitle: "TrueNAS v2 API Documentation"
+description: "Documetnation for the TrueNAS API"
 ---
