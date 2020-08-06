@@ -8,5 +8,5 @@ title: "Legacy TrueNAS API"
     title="Inline"
     width="1000"
     height="800"
-    src="../index.html">
+    src="../v1-api.html">
 </iframe>
