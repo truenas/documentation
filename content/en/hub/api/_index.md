@@ -20,7 +20,7 @@ TrueNAS 12.0 and newer have the ability to use API Keys instead of login credent
 
 To create an API key click the <i class="fas fa-cog" aria-hidden="true" title="Settings"></i>&nbsp Settings menu at the right of the Top Bar and select, **API KEY**.
 
-<img src="/images/TN-12.0-custom-scheduler.png">
+<img src="/images/tn-12.0-apikeys.PNG">
 <br><br>
 
 Click **Add** and enter a name for the API key to be generated, and click **Add** in the popup.  The API Key will be created, click **Copy to Clipboard** to use the API Key locally.
