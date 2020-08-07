@@ -15,7 +15,7 @@ Go to the **System** ➞ **General** page:
 <br><br>
 
 Click on *HTTPS Protocols* to open a dropdown menu with the various cipher suites.
-Unsetting a cipher restricts its use in TrueNAS.
+Unsetting a cipher restricts its use in TrueNAS.  After enabling or disabling cyphers, the TrueNAS system will need to be rebooted.
 
 <img src="/images/TN-12.0-TLS-2.PNG">
 <br><br>
