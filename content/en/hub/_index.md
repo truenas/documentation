@@ -1,3 +1,4 @@
 ---
-title: "Documentation Hub"
+title: "TrueNAS Documentation Hub"
+linkTitle = "TrueNAS Docs"
 ---
