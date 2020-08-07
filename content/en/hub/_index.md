@@ -1,4 +1,4 @@
 ---
 title: "TrueNAS Documentation Hub"
-linkTitle = "TrueNAS Docs"
+linkTitle: "TrueNAS Docs"
 ---
