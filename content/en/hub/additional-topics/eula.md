@@ -1,6 +1,6 @@
 ---
-title: "TrueNAS EULA"
-description: "The TrueNAS End User License Agreement"
+title: "EULA"
+description: "TrueNAS End User License Agreement"
 ---
 
 <p><h1>TrueNAS Software End User License Agreement</h1></p>

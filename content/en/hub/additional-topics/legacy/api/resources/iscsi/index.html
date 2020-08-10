@@ -1,0 +1,1917 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>iSCSI Resources &#8212; FreeNAS API 1.0 documentation</title>
+    <link rel="stylesheet" href="../../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Sharing" href="../sharing.html" />
+    <link rel="prev" title="Services" href="../services.html" /> 
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../http-routingtable.html" title="HTTP Routing Table"
+             >routing table</a> |</li>
+        <li class="right" >
+          <a href="../sharing.html" title="Sharing"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../services.html" title="Services"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">FreeNAS API 1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >Resources</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../services.html" accesskey="U">Services</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="iscsi-resources">
+<h1>iSCSI Resources<a class="headerlink" href="#iscsi-resources" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="globalconfiguration">
+<h2>GlobalConfiguration<a class="headerlink" href="#globalconfiguration" title="Permalink to this headline">¶</a></h2>
+<p>The Global Configuration resource represents the configuration settings for
+iSCSI.</p>
+<div class="section" id="list-resource">
+<h3>List resource<a class="headerlink" href="#list-resource" title="Permalink to this headline">¶</a></h3>
+<dl class="get">
+<dt id="get--api-v1.0-services-iscsi-globalconfiguration-">
+<code class="descname">GET </code><code class="descname">/api/v1.0/services/iscsi/globalconfiguration/</code><a class="headerlink" href="#get--api-v1.0-services-iscsi-globalconfiguration-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the iSCSI Global Configuration settings dictionary.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/v1.0/services/iscsi/globalconfiguration/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Vary</span><span class="o">:</span> <span class="l">Accept</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+  <span class="p">{</span>
+          <span class="nt">&quot;iscsi_basename&quot;</span><span class="p">:</span> <span class="s2">&quot;iqn.2011-03.org.example.istgt&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_isns_servers&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_pool_avail_threshold&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Response Headers:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>Content-Type</strong> – content type of the response</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>200</strong> – no error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="update-resource">
+<h3>Update resource<a class="headerlink" href="#update-resource" title="Permalink to this headline">¶</a></h3>
+<dl class="put">
+<dt id="put--api-v1.0-services-iscsi-globalconfiguration-">
+<code class="descname">PUT </code><code class="descname">/api/v1.0/services/iscsi/globalconfiguration/</code><a class="headerlink" href="#put--api-v1.0-services-iscsi-globalconfiguration-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update Global Configuration.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">PUT</span> <span class="nn">/api/v1.0/services/iscsi/globalconfiguration/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+  <span class="p">{</span>
+          <span class="nt">&quot;iscsi_maxconnect&quot;</span><span class="p">:</span> <span class="mi">16</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Vary</span><span class="o">:</span> <span class="l">Accept</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+  <span class="p">{</span>
+          <span class="nt">&quot;iscsi_basename&quot;</span><span class="p">:</span> <span class="s2">&quot;iqn.2011-03.org.example.istgt&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">JSON Parameters:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>iscsi_basename</strong> (<em>string</em>) – base name (e.g. iqn.2007-09.jp.ne.peach.istgt, see RFC 3720 and 3721 for details)</li>
+<li><strong>iscsi_isns_servers</strong> (<em>string</em>) – List of Internet Storage Name Service (iSNS) Servers</li>
+<li><strong>iscsi_pool_avail_threshold</strong> (<em>integer</em>) – pool capacity warning threshold when using zvol extents</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Request Headers:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>Content-Type</strong> – the request content type</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Response Headers:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>Content-Type</strong> – the response content type</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>202</strong> – no error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="extent">
+<h2>Extent<a class="headerlink" href="#extent" title="Permalink to this headline">¶</a></h2>
+<p>The Extent resource represents extents for the iSCSI targets.</p>
+<div class="section" id="id1">
+<h3>List resource<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<dl class="get">
+<dt id="get--api-v1.0-services-iscsi-extent-">
+<code class="descname">GET </code><code class="descname">/api/v1.0/services/iscsi/extent/</code><a class="headerlink" href="#get--api-v1.0-services-iscsi-extent-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of all extents.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/v1.0/services/iscsi/extent/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Vary</span><span class="o">:</span> <span class="l">Accept</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">[</span>
+  <span class="p">{</span>
+          <span class="nt">&quot;iscsi_target_extent_comment&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_extent_type&quot;</span><span class="p">:</span> <span class="s2">&quot;File&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_extent_name&quot;</span><span class="p">:</span> <span class="s2">&quot;extent&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_extent_filesize&quot;</span><span class="p">:</span> <span class="s2">&quot;10MB&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_extent_insecure_tpc&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_extent_naa&quot;</span><span class="p">:</span> <span class="s2">&quot;0x3822690834aae6c5&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_extent_path&quot;</span><span class="p">:</span> <span class="s2">&quot;/mnt/tank/iscsi&quot;</span>
+          <span class="s2">&quot;iscsi_target_extent_xen&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_extent_avail_threshold&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_extent_blocksize&quot;</span><span class="p">:</span> <span class="mi">512</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_extent_pblocksize&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_extent_rpm&quot;</span><span class="p">:</span> <span class="s2">&quot;SSD&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_extent_ro&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_extent_serial&quot;</span><span class="p">:</span> <span class="s2">&quot;08002724ab5601&quot;</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Query Parameters:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>offset</strong> – offset number. default is 0</li>
+<li><strong>limit</strong> – limit number. default is 20</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Response Headers:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>Content-Type</strong> – content type of the response</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>200</strong> – no error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="create-resource">
+<h3>Create resource<a class="headerlink" href="#create-resource" title="Permalink to this headline">¶</a></h3>
+<dl class="post">
+<dt id="post--api-v1.0-services-iscsi-extent-">
+<code class="descname">POST </code><code class="descname">/api/v1.0/services/iscsi/extent/</code><a class="headerlink" href="#post--api-v1.0-services-iscsi-extent-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new extent and returns the new extent object.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/v1.0/services/iscsi/extent/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+  <span class="p">{</span>
+          <span class="nt">&quot;iscsi_target_extent_type&quot;</span><span class="p">:</span> <span class="s2">&quot;File&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_extent_name&quot;</span><span class="p">:</span> <span class="s2">&quot;extent&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_extent_filesize&quot;</span><span class="p">:</span> <span class="s2">&quot;10MB&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_extent_path&quot;</span><span class="p">:</span> <span class="s2">&quot;/mnt/tank/iscsi&quot;</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">201</span> <span class="ne">Created</span>
+<span class="na">Vary</span><span class="o">:</span> <span class="l">Accept</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+  <span class="p">{</span>
+          <span class="nt">&quot;iscsi_target_extent_comment&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_extent_type&quot;</span><span class="p">:</span> <span class="s2">&quot;File&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_extent_name&quot;</span><span class="p">:</span> <span class="s2">&quot;extent&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_extent_filesize&quot;</span><span class="p">:</span> <span class="s2">&quot;10MB&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_extent_insecure_tpc&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_extent_naa&quot;</span><span class="p">:</span> <span class="s2">&quot;0x3822690834aae6c5&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_extent_path&quot;</span><span class="p">:</span> <span class="s2">&quot;/mnt/tank/iscsi&quot;</span>
+          <span class="s2">&quot;iscsi_target_extent_xen&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_extent_avail_threshold&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_extent_blocksize&quot;</span><span class="p">:</span> <span class="mi">512</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_extent_pblocksize&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_extent_rpm&quot;</span><span class="p">:</span> <span class="s2">&quot;SSD&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_extent_ro&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_extent_serial&quot;</span><span class="p">:</span> <span class="s2">&quot;08002724ab5601&quot;</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">JSON Parameters:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>iscsi_target_extent_name</strong> (<em>string</em>) – identifier of the extent</li>
+<li><strong>iscsi_target_extent_type</strong> (<em>string</em>) – File, Disk</li>
+<li><strong>iscsi_target_extent_path</strong> (<em>string</em>) – path to the extent (for File type)</li>
+<li><strong>iscsi_target_extent_disk</strong> (<em>string</em>) – path to the disk or zvol (for Disk type)  e.g. “zvol/tank/zvol1”, “ada1”</li>
+<li><strong>iscsi_target_extent_filesize</strong> (<em>string</em>) – size of extent, 0 means auto, a raw number is bytes, or suffix with KB, MB, TB for convenience</li>
+<li><strong>iscsi_target_extent_insecure_tpc</strong> (<em>boolean</em>) – allow initiators to xcopy without authenticating to foreign targets</li>
+<li><strong>iscsi_target_extent_xen</strong> (<em>boolean</em>) – Xen initiator compat mode</li>
+<li><strong>iscsi_target_extent_comment</strong> (<em>string</em>) – user description</li>
+<li><strong>iscsi_target_extent_avail_threshold</strong> (<em>integer</em>) – Remaining dataset/zvol capacity warning threshold</li>
+<li><strong>iscsi_target_extent_blocksize</strong> (<em>integer</em>) – Logical Block Size</li>
+<li><strong>iscsi_target_extent_pblocksize</strong> (<em>boolean</em>) – Disable Physical Block Size Reporting</li>
+<li><strong>iscsi_target_extent_rpm</strong> (<em>string</em>) – Unknown, SSD, 5400, 7200, 10000, 15000</li>
+<li><strong>iscsi_target_extent_serial</strong> (<em>string</em>) – Serial number for the logical unit</li>
+<li><strong>iscsi_target_extent_ro</strong> (<em>boolean</em>) – Read-only extent</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Request Headers:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>Content-Type</strong> – the request content type</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Response Headers:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>Content-Type</strong> – the response content type</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>201</strong> – no error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p>Create extent using zvol.</p>
+<dl class="post">
+<dt id="post--api-v1.0-services-iscsi-extent-">
+<code class="descname">POST </code><code class="descname">/api/v1.0/services/iscsi/extent/</code><a class="headerlink" href="#post--api-v1.0-services-iscsi-extent-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new extent using zvol and returns the new extent object.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/v1.0/services/iscsi/extent/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+  <span class="p">{</span>
+          <span class="nt">&quot;iscsi_target_extent_type&quot;</span><span class="p">:</span> <span class="s2">&quot;Disk&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_extent_name&quot;</span><span class="p">:</span> <span class="s2">&quot;zvolextent&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_extent_disk&quot;</span><span class="p">:</span> <span class="s2">&quot;zvol/tank/zvolextent&quot;</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">201</span> <span class="ne">Created</span>
+<span class="na">Vary</span><span class="o">:</span> <span class="l">Accept</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+  <span class="p">{</span>
+          <span class="nt">&quot;iscsi_target_extent_comment&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_extent_type&quot;</span><span class="p">:</span> <span class="s2">&quot;ZVOL&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_extent_name&quot;</span><span class="p">:</span> <span class="s2">&quot;zvolextent&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_extent_filesize&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_extent_insecure_tpc&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_extent_naa&quot;</span><span class="p">:</span> <span class="s2">&quot;0x3822690834aae6c5&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_extent_path&quot;</span><span class="p">:</span> <span class="s2">&quot;/dev/zvol/tank/zvolextent&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_extent_xen&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_extent_avail_threshold&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_extent_blocksize&quot;</span><span class="p">:</span> <span class="mi">512</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_extent_pblocksize&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_extent_rpm&quot;</span><span class="p">:</span> <span class="s2">&quot;SSD&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_extent_ro&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_extent_serial&quot;</span><span class="p">:</span> <span class="s2">&quot;08002724ab5601&quot;</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="id2">
+<h3>Update resource<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<dl class="put">
+<dt id="put--api-v1.0-services-iscsi-extent-(int-id)-">
+<code class="descname">PUT </code><code class="descname">/api/v1.0/services/iscsi/extent/</code><span class="sig-paren">(</span><em class="property">int: </em><em>id</em><span class="sig-paren">)</span><code class="descname">/</code><a class="headerlink" href="#put--api-v1.0-services-iscsi-extent-(int-id)-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update extent <cite>id</cite>.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">PUT</span> <span class="nn">/api/v1.0/services/iscsi/extent/1/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+  <span class="p">{</span>
+          <span class="nt">&quot;iscsi_target_extent_filesize&quot;</span><span class="p">:</span> <span class="s2">&quot;20MB&quot;</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Vary</span><span class="o">:</span> <span class="l">Accept</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+  <span class="p">{</span>
+          <span class="nt">&quot;iscsi_target_extent_comment&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_extent_type&quot;</span><span class="p">:</span> <span class="s2">&quot;File&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_extent_name&quot;</span><span class="p">:</span> <span class="s2">&quot;extent&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_extent_filesize&quot;</span><span class="p">:</span> <span class="s2">&quot;20MB&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_extent_insecure_tpc&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_extent_naa&quot;</span><span class="p">:</span> <span class="s2">&quot;0x3822690834aae6c5&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_extent_path&quot;</span><span class="p">:</span> <span class="s2">&quot;/mnt/tank/iscsi&quot;</span>
+          <span class="s2">&quot;iscsi_target_extent_xen&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_extent_avail_threshold&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_extent_blocksize&quot;</span><span class="p">:</span> <span class="mi">512</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_extent_pblocksize&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_extent_rpm&quot;</span><span class="p">:</span> <span class="s2">&quot;SSD&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_extent_serial&quot;</span><span class="p">:</span> <span class="s2">&quot;08002724ab5601&quot;</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">JSON Parameters:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>iscsi_target_extent_name</strong> (<em>string</em>) – identifier of the extent</li>
+<li><strong>iscsi_target_extent_type</strong> (<em>string</em>) – File, Disk</li>
+<li><strong>iscsi_target_extent_path</strong> (<em>string</em>) – path to the extent (for File type)</li>
+<li><strong>iscsi_target_extent_disk</strong> (<em>string</em>) – path to the disk or zvol (for Disk type)  e.g. “zvol/tank/zvol1”, “ada1”</li>
+<li><strong>iscsi_target_extent_filesize</strong> (<em>string</em>) – size of extent, 0 means auto, a raw number is bytes, or suffix with KB, MB, TB for convenience</li>
+<li><strong>iscsi_target_extent_insecure_tpc</strong> (<em>boolean</em>) – allow initiators to xcopy without authenticating to foreign targets</li>
+<li><strong>iscsi_target_extent_xen</strong> (<em>boolean</em>) – Xen initiator compat mode</li>
+<li><strong>iscsi_target_extent_comment</strong> (<em>string</em>) – user description</li>
+<li><strong>iscsi_target_extent_avail_threshold</strong> (<em>integer</em>) – Remaining dataset/zvol capacity warning threshold</li>
+<li><strong>iscsi_target_extent_blocksize</strong> (<em>integer</em>) – Logical Block Size</li>
+<li><strong>iscsi_target_extent_pblocksize</strong> (<em>boolean</em>) – Disable Physical Block Size Reporting</li>
+<li><strong>iscsi_target_extent_rpm</strong> (<em>string</em>) – Unknown, SSD, 5400, 7200, 10000, 15000</li>
+<li><strong>iscsi_target_extent_serial</strong> (<em>string</em>) – Serial number for the logical unit</li>
+<li><strong>iscsi_target_extent_ro</strong> (<em>boolean</em>) – Read-only extent</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Request Headers:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>Content-Type</strong> – the request content type</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Response Headers:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>Content-Type</strong> – the response content type</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>202</strong> – no error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="delete-resource">
+<h3>Delete resource<a class="headerlink" href="#delete-resource" title="Permalink to this headline">¶</a></h3>
+<dl class="delete">
+<dt id="delete--api-v1.0-services-iscsi-extent-(int-id)-">
+<code class="descname">DELETE </code><code class="descname">/api/v1.0/services/iscsi/extent/</code><span class="sig-paren">(</span><em class="property">int: </em><em>id</em><span class="sig-paren">)</span><code class="descname">/</code><a class="headerlink" href="#delete--api-v1.0-services-iscsi-extent-(int-id)-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete extent <cite>id</cite>.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">DELETE</span> <span class="nn">/api/v1.0/services/iscsi/extent/1/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">204</span> <span class="ne">No Response</span>
+<span class="na">Vary</span><span class="o">:</span> <span class="l">Accept</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>204</strong> – no error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="authorized-initiator">
+<h2>Authorized Initiator<a class="headerlink" href="#authorized-initiator" title="Permalink to this headline">¶</a></h2>
+<p>The Authorized Initiator resource represents network authorized to access to the iSCSI target.</p>
+<div class="section" id="id3">
+<h3>List resource<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<dl class="get">
+<dt id="get--api-v1.0-services-iscsi-authorizedinitiator-">
+<code class="descname">GET </code><code class="descname">/api/v1.0/services/iscsi/authorizedinitiator/</code><a class="headerlink" href="#get--api-v1.0-services-iscsi-authorizedinitiator-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of all authorized initiators.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/v1.0/services/iscsi/authorizedinitiator/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Vary</span><span class="o">:</span> <span class="l">Accept</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">[</span>
+  <span class="p">{</span>
+          <span class="nt">&quot;iscsi_target_initiator_initiators&quot;</span><span class="p">:</span> <span class="s2">&quot;ALL&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_initiator_comment&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_initiator_auth_network&quot;</span><span class="p">:</span> <span class="s2">&quot;ALL&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_initiator_tag&quot;</span><span class="p">:</span> <span class="mi">1</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Query Parameters:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>offset</strong> – offset number. default is 0</li>
+<li><strong>limit</strong> – limit number. default is 20</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Response Headers:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>Content-Type</strong> – content type of the response</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>200</strong> – no error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id4">
+<h3>Create resource<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<dl class="post">
+<dt id="post--api-v1.0-services-iscsi-authorizedinitiator-">
+<code class="descname">POST </code><code class="descname">/api/v1.0/services/iscsi/authorizedinitiator/</code><a class="headerlink" href="#post--api-v1.0-services-iscsi-authorizedinitiator-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new authorized initiator and returns the new object.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/v1.0/services/iscsi/authorizedinitiator/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+  <span class="p">{</span>
+          <span class="nt">&quot;iscsi_target_initiator_initiators&quot;</span><span class="p">:</span> <span class="s2">&quot;ALL&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_initiator_auth_network&quot;</span><span class="p">:</span> <span class="s2">&quot;ALL&quot;</span><span class="p">,</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">201</span> <span class="ne">Created</span>
+<span class="na">Vary</span><span class="o">:</span> <span class="l">Accept</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+  <span class="p">{</span>
+          <span class="nt">&quot;iscsi_target_initiator_initiators&quot;</span><span class="p">:</span> <span class="s2">&quot;ALL&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_initiator_comment&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_initiator_auth_network&quot;</span><span class="p">:</span> <span class="s2">&quot;ALL&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_initiator_tag&quot;</span><span class="p">:</span> <span class="mi">1</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">JSON Parameters:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>iscsi_target_initiator_initiators</strong> (<em>string</em>) – initiator authorized to access to the iSCSI target</li>
+<li><strong>iscsi_target_initiator_auth_network</strong> (<em>string</em>) – network authorized to access to the iSCSI target, it takes IP or CIDR addresses or “ALL” for any IPs</li>
+<li><strong>scsi_target_initiator_comment</strong> (<em>string</em>) – description for your reference</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Request Headers:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>Content-Type</strong> – the request content type</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Response Headers:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>Content-Type</strong> – the response content type</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>201</strong> – no error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id5">
+<h3>Update resource<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<dl class="put">
+<dt id="put--api-v1.0-services-iscsi-authorizedinitiator-(int-id)-">
+<code class="descname">PUT </code><code class="descname">/api/v1.0/services/iscsi/authorizedinitiator/</code><span class="sig-paren">(</span><em class="property">int: </em><em>id</em><span class="sig-paren">)</span><code class="descname">/</code><a class="headerlink" href="#put--api-v1.0-services-iscsi-authorizedinitiator-(int-id)-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update authorized initiator <cite>id</cite>.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">PUT</span> <span class="nn">/api/v1.0/services/iscsi/authorizedinitiator/1/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+  <span class="p">{</span>
+          <span class="nt">&quot;iscsi_target_initiator_auth_network&quot;</span><span class="p">:</span> <span class="s2">&quot;192.168.3.0/24&quot;</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Vary</span><span class="o">:</span> <span class="l">Accept</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+  <span class="p">{</span>
+          <span class="nt">&quot;iscsi_target_initiator_initiators&quot;</span><span class="p">:</span> <span class="s2">&quot;ALL&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_initiator_comment&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_initiator_auth_network&quot;</span><span class="p">:</span> <span class="s2">&quot;192.168.3.0/24&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_initiator_tag&quot;</span><span class="p">:</span> <span class="mi">1</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">JSON Parameters:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>iscsi_target_initiator_initiators</strong> (<em>string</em>) – initiator authorized to access to the iSCSI target</li>
+<li><strong>iscsi_target_initiator_auth_network</strong> (<em>string</em>) – network authorized to access to the iSCSI target, it takes IP or CIDR addresses or “ALL” for any IPs</li>
+<li><strong>scsi_target_initiator_comment</strong> (<em>string</em>) – description for your reference</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Request Headers:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>Content-Type</strong> – the request content type</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Response Headers:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>Content-Type</strong> – the response content type</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>202</strong> – no error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id6">
+<h3>Delete resource<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<dl class="delete">
+<dt id="delete--api-v1.0-services-iscsi-authorizedinitiator-(int-id)-">
+<code class="descname">DELETE </code><code class="descname">/api/v1.0/services/iscsi/authorizedinitiator/</code><span class="sig-paren">(</span><em class="property">int: </em><em>id</em><span class="sig-paren">)</span><code class="descname">/</code><a class="headerlink" href="#delete--api-v1.0-services-iscsi-authorizedinitiator-(int-id)-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete authorized initiator <cite>id</cite>.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">DELETE</span> <span class="nn">/api/v1.0/services/iscsi/authorizedinitiator/1/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">204</span> <span class="ne">No Response</span>
+<span class="na">Vary</span><span class="o">:</span> <span class="l">Accept</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>204</strong> – no error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="auth-credential">
+<h2>Auth Credential<a class="headerlink" href="#auth-credential" title="Permalink to this headline">¶</a></h2>
+<p>The Auth Credential resource represents user credentials to access the iSCSI target.</p>
+<div class="section" id="id7">
+<h3>List resource<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<dl class="get">
+<dt id="get--api-v1.0-services-iscsi-authcredential-">
+<code class="descname">GET </code><code class="descname">/api/v1.0/services/iscsi/authcredential/</code><a class="headerlink" href="#get--api-v1.0-services-iscsi-authcredential-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of all auth credentials.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/v1.0/services/iscsi/authcredential/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Vary</span><span class="o">:</span> <span class="l">Accept</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">[</span>
+  <span class="p">{</span>
+          <span class="nt">&quot;iscsi_target_auth_secret&quot;</span><span class="p">:</span> <span class="s2">&quot;secret&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_auth_peeruser&quot;</span><span class="p">:</span> <span class="s2">&quot;peeruser&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_auth_peersecret&quot;</span><span class="p">:</span> <span class="s2">&quot;peersecret&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_auth_user&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_auth_tag&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Query Parameters:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>offset</strong> – offset number. default is 0</li>
+<li><strong>limit</strong> – limit number. default is 20</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Response Headers:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>Content-Type</strong> – content type of the response</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>200</strong> – no error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id8">
+<h3>Create resource<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<dl class="post">
+<dt id="post--api-v1.0-services-iscsi-authcredential-">
+<code class="descname">POST </code><code class="descname">/api/v1.0/services/iscsi/authcredential/</code><a class="headerlink" href="#post--api-v1.0-services-iscsi-authcredential-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new auth credential and returns the new object.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/v1.0/services/iscsi/authcredential/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+  <span class="p">{</span>
+          <span class="nt">&quot;iscsi_target_auth_secret&quot;</span><span class="p">:</span> <span class="s2">&quot;secret&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_auth_peeruser&quot;</span><span class="p">:</span> <span class="s2">&quot;peeruser&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_auth_peersecret&quot;</span><span class="p">:</span> <span class="s2">&quot;peersecret&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_auth_user&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_auth_tag&quot;</span><span class="p">:</span> <span class="mi">1</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">201</span> <span class="ne">Created</span>
+<span class="na">Vary</span><span class="o">:</span> <span class="l">Accept</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+  <span class="p">{</span>
+          <span class="nt">&quot;iscsi_target_auth_secret&quot;</span><span class="p">:</span> <span class="s2">&quot;secret&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_auth_peeruser&quot;</span><span class="p">:</span> <span class="s2">&quot;peeruser&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_auth_peersecret&quot;</span><span class="p">:</span> <span class="s2">&quot;peersecret&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_auth_user&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_auth_tag&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">JSON Parameters:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>iscsi_target_auth_tag</strong> (<em>string</em>) – group id</li>
+<li><strong>iscsi_target_auth_user</strong> (<em>string</em>) – target side user name</li>
+<li><strong>iscsi_target_auth_secret</strong> (<em>string</em>) – target side secret</li>
+<li><strong>iscsi_target_auth_peeruser</strong> (<em>string</em>) – initiator side user name</li>
+<li><strong>iscsi_target_auth_peersecret</strong> (<em>string</em>) – initiator side secret</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Request Headers:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>Content-Type</strong> – the request content type</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Response Headers:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>Content-Type</strong> – the response content type</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>201</strong> – no error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id9">
+<h3>Update resource<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<dl class="put">
+<dt id="put--api-v1.0-services-iscsi-authcredential-(int-id)-">
+<code class="descname">PUT </code><code class="descname">/api/v1.0/services/iscsi/authcredential/</code><span class="sig-paren">(</span><em class="property">int: </em><em>id</em><span class="sig-paren">)</span><code class="descname">/</code><a class="headerlink" href="#put--api-v1.0-services-iscsi-authcredential-(int-id)-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update auth credential <cite>id</cite>.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">PUT</span> <span class="nn">/api/v1.0/services/iscsi/authcredential/1/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+  <span class="p">{</span>
+          <span class="nt">&quot;iscsi_target_auth_peeruser&quot;</span><span class="p">:</span> <span class="s2">&quot;myuser&quot;</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Vary</span><span class="o">:</span> <span class="l">Accept</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+  <span class="p">{</span>
+          <span class="nt">&quot;iscsi_target_auth_secret&quot;</span><span class="p">:</span> <span class="s2">&quot;secret&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_auth_peeruser&quot;</span><span class="p">:</span> <span class="s2">&quot;myuser&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_auth_peersecret&quot;</span><span class="p">:</span> <span class="s2">&quot;peersecret&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_auth_user&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_auth_tag&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">JSON Parameters:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>iscsi_target_auth_tag</strong> (<em>string</em>) – group id</li>
+<li><strong>iscsi_target_auth_user</strong> (<em>string</em>) – target side user name</li>
+<li><strong>iscsi_target_auth_secret</strong> (<em>string</em>) – target side secret</li>
+<li><strong>iscsi_target_auth_peeruser</strong> (<em>string</em>) – initiator side user name</li>
+<li><strong>iscsi_target_auth_peersecret</strong> (<em>string</em>) – initiator side secret</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Request Headers:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>Content-Type</strong> – the request content type</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Response Headers:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>Content-Type</strong> – the response content type</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>202</strong> – no error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id10">
+<h3>Delete resource<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<dl class="delete">
+<dt id="delete--api-v1.0-services-iscsi-authcredential-(int-id)-">
+<code class="descname">DELETE </code><code class="descname">/api/v1.0/services/iscsi/authcredential/</code><span class="sig-paren">(</span><em class="property">int: </em><em>id</em><span class="sig-paren">)</span><code class="descname">/</code><a class="headerlink" href="#delete--api-v1.0-services-iscsi-authcredential-(int-id)-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete auth credential <cite>id</cite>.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">DELETE</span> <span class="nn">/api/v1.0/services/iscsi/authcredential/1/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">204</span> <span class="ne">No Response</span>
+<span class="na">Vary</span><span class="o">:</span> <span class="l">Accept</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>204</strong> – no error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="target">
+<h2>Target<a class="headerlink" href="#target" title="Permalink to this headline">¶</a></h2>
+<p>The Target resource represents user credentials to access the iSCSI target.</p>
+<div class="section" id="id11">
+<h3>List resource<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<dl class="get">
+<dt id="get--api-v1.0-services-iscsi-target-">
+<code class="descname">GET </code><code class="descname">/api/v1.0/services/iscsi/target/</code><a class="headerlink" href="#get--api-v1.0-services-iscsi-target-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of all targets.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/v1.0/services/iscsi/target/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Vary</span><span class="o">:</span> <span class="l">Accept</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">[</span>
+  <span class="p">{</span>
+          <span class="nt">&quot;iscsi_target_name&quot;</span><span class="p">:</span> <span class="s2">&quot;target&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_alias&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Query Parameters:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>offset</strong> – offset number. default is 0</li>
+<li><strong>limit</strong> – limit number. default is 20</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Response Headers:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>Content-Type</strong> – content type of the response</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>200</strong> – no error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id12">
+<h3>Create resource<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<dl class="post">
+<dt id="post--api-v1.0-services-iscsi-target-">
+<code class="descname">POST </code><code class="descname">/api/v1.0/services/iscsi/target/</code><a class="headerlink" href="#post--api-v1.0-services-iscsi-target-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new target and returns the new object.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/v1.0/services/iscsi/target/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+  <span class="p">{</span>
+          <span class="nt">&quot;iscsi_target_name&quot;</span><span class="p">:</span> <span class="s2">&quot;target&quot;</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">201</span> <span class="ne">Created</span>
+<span class="na">Vary</span><span class="o">:</span> <span class="l">Accept</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+  <span class="p">{</span>
+          <span class="nt">&quot;iscsi_target_name&quot;</span><span class="p">:</span> <span class="s2">&quot;target&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_alias&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">JSON Parameters:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>iscsi_target_name</strong> (<em>string</em>) – Base Name will be appended automatically when starting without “iqn.”.</li>
+<li><strong>iscsi_target_alias</strong> (<em>string</em>) – optional user-friendly string of the target</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Request Headers:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>Content-Type</strong> – the request content type</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Response Headers:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>Content-Type</strong> – the response content type</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>201</strong> – no error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id13">
+<h3>Update resource<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<dl class="put">
+<dt id="put--api-v1.0-services-iscsi-target-(int-id)-">
+<code class="descname">PUT </code><code class="descname">/api/v1.0/services/iscsi/target/</code><span class="sig-paren">(</span><em class="property">int: </em><em>id</em><span class="sig-paren">)</span><code class="descname">/</code><a class="headerlink" href="#put--api-v1.0-services-iscsi-target-(int-id)-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update target <cite>id</cite>.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">PUT</span> <span class="nn">/api/v1.0/services/iscsi/target/1/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+  <span class="p">{</span>
+          <span class="nt">&quot;iscsi_target_alias&quot;</span><span class="p">:</span> <span class="s2">&quot;test&quot;</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Vary</span><span class="o">:</span> <span class="l">Accept</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+  <span class="p">{</span>
+          <span class="nt">&quot;iscsi_target_name&quot;</span><span class="p">:</span> <span class="s2">&quot;target&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_alias&quot;</span><span class="p">:</span> <span class="s2">&quot;test&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">JSON Parameters:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>iscsi_target_name</strong> (<em>string</em>) – Base Name will be appended automatically when starting without “iqn.”.</li>
+<li><strong>iscsi_target_alias</strong> (<em>string</em>) – optional user-friendly string of the target</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Request Headers:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>Content-Type</strong> – the request content type</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Response Headers:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>Content-Type</strong> – the response content type</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>202</strong> – no error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id14">
+<h3>Delete resource<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<dl class="delete">
+<dt id="delete--api-v1.0-services-iscsi-target-(int-id)-">
+<code class="descname">DELETE </code><code class="descname">/api/v1.0/services/iscsi/target/</code><span class="sig-paren">(</span><em class="property">int: </em><em>id</em><span class="sig-paren">)</span><code class="descname">/</code><a class="headerlink" href="#delete--api-v1.0-services-iscsi-target-(int-id)-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete target <cite>id</cite>.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">DELETE</span> <span class="nn">/api/v1.0/services/iscsi/target/1/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">204</span> <span class="ne">No Response</span>
+<span class="na">Vary</span><span class="o">:</span> <span class="l">Accept</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>204</strong> – no error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="targetgroup">
+<h2>TargetGroup<a class="headerlink" href="#targetgroup" title="Permalink to this headline">¶</a></h2>
+<p>The TargetGroup resource represents groups associated to iSCSI target.</p>
+<div class="section" id="id15">
+<h3>List resource<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<dl class="get">
+<dt id="get--api-v1.0-services-iscsi-targetgroup-">
+<code class="descname">GET </code><code class="descname">/api/v1.0/services/iscsi/targetgroup/</code><a class="headerlink" href="#get--api-v1.0-services-iscsi-targetgroup-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of all targets.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/v1.0/services/iscsi/targetgroup/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Vary</span><span class="o">:</span> <span class="l">Accept</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">[</span>
+  <span class="p">{</span>
+    <span class="nt">&quot;iscsi_target&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nt">&quot;iscsi_target_authgroup&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="nt">&quot;iscsi_target_portalgroup&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nt">&quot;iscsi_target_initiatorgroup&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="nt">&quot;iscsi_target_authtype&quot;</span><span class="p">:</span> <span class="s2">&quot;None&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;iscsi_target_initialdigest&quot;</span><span class="p">:</span> <span class="s2">&quot;Auto&quot;</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Query Parameters:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>offset</strong> – offset number. default is 0</li>
+<li><strong>limit</strong> – limit number. default is 20</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Response Headers:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>Content-Type</strong> – content type of the response</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>200</strong> – no error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id16">
+<h3>Create resource<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<dl class="post">
+<dt id="post--api-v1.0-services-iscsi-targetgroup-">
+<code class="descname">POST </code><code class="descname">/api/v1.0/services/iscsi/targetgroup/</code><a class="headerlink" href="#post--api-v1.0-services-iscsi-targetgroup-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new target group and returns the new object.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/v1.0/services/iscsi/targetgroup/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+  <span class="p">{</span>
+          <span class="nt">&quot;iscsi_target&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_authgroup&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_authtype&quot;</span><span class="p">:</span> <span class="s2">&quot;None&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_portalgroup&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_initiatorgroup&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_initialdigest&quot;</span><span class="p">:</span> <span class="s2">&quot;Auto&quot;</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">201</span> <span class="ne">Created</span>
+<span class="na">Vary</span><span class="o">:</span> <span class="l">Accept</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+  <span class="p">{</span>
+          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_authgroup&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_authtype&quot;</span><span class="p">:</span> <span class="s2">&quot;None&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_portalgroup&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_initiatorgroup&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_initialdigest&quot;</span><span class="p">:</span> <span class="s2">&quot;Auto&quot;</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">JSON Parameters:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>iscsi_target</strong> (<em>integer</em>) – id of the target object</li>
+<li><strong>iscsi_target_initiatorgroup</strong> (<em>integer</em>) – id of the initiator object</li>
+<li><strong>iscsi_target_portalgroup</strong> (<em>integer</em>) – id of the portal object</li>
+<li><strong>iscsi_target_authgroup</strong> (<em>integer</em>) – number of the authentication group</li>
+<li><strong>iscsi_target_initialdigest</strong> (<em>string</em>) – defaults to Auto</li>
+<li><strong>iscsi_target_authtype</strong> (<em>string</em>) – None, CHAP, CHAP Mutual</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Request Headers:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>Content-Type</strong> – the request content type</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Response Headers:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>Content-Type</strong> – the response content type</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>201</strong> – no error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id17">
+<h3>Update resource<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<dl class="put">
+<dt id="put--api-v1.0-services-iscsi-targetgroup-(int-id)-">
+<code class="descname">PUT </code><code class="descname">/api/v1.0/services/iscsi/targetgroup/</code><span class="sig-paren">(</span><em class="property">int: </em><em>id</em><span class="sig-paren">)</span><code class="descname">/</code><a class="headerlink" href="#put--api-v1.0-services-iscsi-targetgroup-(int-id)-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update target group <cite>id</cite>.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">PUT</span> <span class="nn">/api/v1.0/services/iscsi/targetgroup/1/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+  <span class="p">{</span>
+          <span class="nt">&quot;iscsi_target_initialdigest&quot;</span><span class="p">:</span> <span class="s2">&quot;CHAP&quot;</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Vary</span><span class="o">:</span> <span class="l">Accept</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+  <span class="p">{</span>
+          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_authgroup&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_authtype&quot;</span><span class="p">:</span> <span class="s2">&quot;None&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_portalgroup&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_initiatorgroup&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_initialdigest&quot;</span><span class="p">:</span> <span class="s2">&quot;CHAP&quot;</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">JSON Parameters:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>iscsi_target</strong> (<em>integer</em>) – id of the target object</li>
+<li><strong>iscsi_target_initiatorgroup</strong> (<em>integer</em>) – id of the initiator object</li>
+<li><strong>iscsi_target_portalgroup</strong> (<em>integer</em>) – id of the portal object</li>
+<li><strong>iscsi_target_authgroup</strong> (<em>integer</em>) – number of the authentication group</li>
+<li><strong>iscsi_target_initialdigest</strong> (<em>string</em>) – defaults to Auto</li>
+<li><strong>iscsi_target_authtype</strong> (<em>string</em>) – None, CHAP, CHAP Mutual</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Request Headers:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>Content-Type</strong> – the request content type</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Response Headers:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>Content-Type</strong> – the response content type</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>202</strong> – no error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id18">
+<h3>Delete resource<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<dl class="delete">
+<dt id="delete--api-v1.0-services-iscsi-targetgroup-(int-id)-">
+<code class="descname">DELETE </code><code class="descname">/api/v1.0/services/iscsi/targetgroup/</code><span class="sig-paren">(</span><em class="property">int: </em><em>id</em><span class="sig-paren">)</span><code class="descname">/</code><a class="headerlink" href="#delete--api-v1.0-services-iscsi-targetgroup-(int-id)-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete target group <cite>id</cite>.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">DELETE</span> <span class="nn">/api/v1.0/services/iscsi/targetgroup/1/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">204</span> <span class="ne">No Response</span>
+<span class="na">Vary</span><span class="o">:</span> <span class="l">Accept</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>204</strong> – no error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="target-to-extent">
+<h2>Target To Extent<a class="headerlink" href="#target-to-extent" title="Permalink to this headline">¶</a></h2>
+<p>The Target To Extent resource represents association between targets and extents.</p>
+<div class="section" id="id19">
+<h3>List resource<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<dl class="get">
+<dt id="get--api-v1.0-services-iscsi-targettoextent-">
+<code class="descname">GET </code><code class="descname">/api/v1.0/services/iscsi/targettoextent/</code><a class="headerlink" href="#get--api-v1.0-services-iscsi-targettoextent-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of all target to extent.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/v1.0/services/iscsi/targettoextent/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Vary</span><span class="o">:</span> <span class="l">Accept</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">[</span>
+  <span class="p">{</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Query Parameters:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>offset</strong> – offset number. default is 0</li>
+<li><strong>limit</strong> – limit number. default is 20</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Response Headers:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>Content-Type</strong> – content type of the response</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>200</strong> – no error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id20">
+<h3>Create resource<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
+<dl class="post">
+<dt id="post--api-v1.0-services-iscsi-targettoextent-">
+<code class="descname">POST </code><code class="descname">/api/v1.0/services/iscsi/targettoextent/</code><a class="headerlink" href="#post--api-v1.0-services-iscsi-targettoextent-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new target to extent and returns the new object.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/v1.0/services/iscsi/targettoextent/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+  <span class="p">{</span>
+          <span class="nt">&quot;iscsi_target&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_extent&quot;</span><span class="p">:</span> <span class="mi">1</span>
+          <span class="s2">&quot;iscsi_lunid&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">201</span> <span class="ne">Created</span>
+<span class="na">Vary</span><span class="o">:</span> <span class="l">Accept</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+  <span class="p">{</span>
+          <span class="nt">&quot;iscsi_target&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_extent&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_lunid&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">JSON Parameters:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>iscsi_target</strong> (<em>integer</em>) – id of the target object</li>
+<li><strong>iscsi_extent</strong> (<em>integer</em>) – id of the extent object</li>
+<li><strong>iscsi_lunid</strong> (<em>integer</em>) – id of the LUN</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Request Headers:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>Content-Type</strong> – the request content type</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Response Headers:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>Content-Type</strong> – the response content type</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>201</strong> – no error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id21">
+<h3>Update resource<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
+<dl class="put">
+<dt id="put--api-v1.0-services-iscsi-targettoextent-(int-id)-">
+<code class="descname">PUT </code><code class="descname">/api/v1.0/services/iscsi/targettoextent/</code><span class="sig-paren">(</span><em class="property">int: </em><em>id</em><span class="sig-paren">)</span><code class="descname">/</code><a class="headerlink" href="#put--api-v1.0-services-iscsi-targettoextent-(int-id)-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update target to extent <cite>id</cite>.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">PUT</span> <span class="nn">/api/v1.0/services/iscsi/targettoextent/1/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+  <span class="p">{</span>
+          <span class="nt">&quot;iscsi_extent&quot;</span><span class="p">:</span> <span class="mi">2</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Vary</span><span class="o">:</span> <span class="l">Accept</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+  <span class="p">{</span>
+          <span class="nt">&quot;iscsi_target&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_extent&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">JSON Parameters:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>iscsi_target</strong> (<em>integer</em>) – id of the target object</li>
+<li><strong>iscsi_extent</strong> (<em>integer</em>) – id of the extent object</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Request Headers:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>Content-Type</strong> – the request content type</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Response Headers:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>Content-Type</strong> – the response content type</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>202</strong> – no error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id22">
+<h3>Delete resource<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h3>
+<dl class="delete">
+<dt id="delete--api-v1.0-services-iscsi-targettoextent-(int-id)-">
+<code class="descname">DELETE </code><code class="descname">/api/v1.0/services/iscsi/targettoextent/</code><span class="sig-paren">(</span><em class="property">int: </em><em>id</em><span class="sig-paren">)</span><code class="descname">/</code><a class="headerlink" href="#delete--api-v1.0-services-iscsi-targettoextent-(int-id)-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete target to extent <cite>id</cite>.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">DELETE</span> <span class="nn">/api/v1.0/services/iscsi/targettoextent/1/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">204</span> <span class="ne">No Response</span>
+<span class="na">Vary</span><span class="o">:</span> <span class="l">Accept</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>204</strong> – no error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="portal">
+<h2>Portal<a class="headerlink" href="#portal" title="Permalink to this headline">¶</a></h2>
+<p>The Portal resource represents IPs and ports which the daemon will listen to.</p>
+<div class="section" id="id23">
+<h3>List resource<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h3>
+<dl class="get">
+<dt id="get--api-v1.0-services-iscsi-portal-">
+<code class="descname">GET </code><code class="descname">/api/v1.0/services/iscsi/portal/</code><a class="headerlink" href="#get--api-v1.0-services-iscsi-portal-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of all portals.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/v1.0/services/iscsi/portal/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Vary</span><span class="o">:</span> <span class="l">Accept</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">[</span>
+  <span class="p">{</span>
+          <span class="nt">&quot;iscsi_target_portal_tag&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_portal_discoveryauthmethod&quot;</span><span class="p">:</span> <span class="s2">&quot;None&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_portal_discoveryauthgroup&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_portal_ips&quot;</span><span class="p">:</span> <span class="p">[</span>
+                  <span class="s2">&quot;0.0.0.0:3260&quot;</span>
+          <span class="p">],</span>
+          <span class="nt">&quot;iscsi_target_portal_comment&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Query Parameters:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>offset</strong> – offset number. default is 0</li>
+<li><strong>limit</strong> – limit number. default is 20</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Response Headers:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>Content-Type</strong> – content type of the response</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>200</strong> – no error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id24">
+<h3>Create resource<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h3>
+<dl class="post">
+<dt id="post--api-v1.0-services-iscsi-portal-">
+<code class="descname">POST </code><code class="descname">/api/v1.0/services/iscsi/portal/</code><a class="headerlink" href="#post--api-v1.0-services-iscsi-portal-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new portal and returns the new object.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/v1.0/services/iscsi/portal/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+  <span class="p">{</span>
+          <span class="nt">&quot;iscsi_target_portal_ips&quot;</span><span class="p">:</span> <span class="p">[</span>
+                  <span class="s2">&quot;0.0.0.0:3260&quot;</span>
+          <span class="p">]</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">201</span> <span class="ne">Created</span>
+<span class="na">Vary</span><span class="o">:</span> <span class="l">Accept</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+  <span class="p">{</span>
+          <span class="nt">&quot;iscsi_target_portal_tag&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_portal_discoveryauthmethod&quot;</span><span class="p">:</span> <span class="s2">&quot;None&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_portal_discoveryauthgroup&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_portal_ips&quot;</span><span class="p">:</span> <span class="p">[</span>
+                  <span class="s2">&quot;0.0.0.0:3260&quot;</span>
+          <span class="p">],</span>
+          <span class="nt">&quot;iscsi_target_portal_comment&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">JSON Parameters:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>iscsi_target_portal_comment</strong> (<em>string</em>) – user description</li>
+<li><strong>iscsi_target_portal_ips</strong> (<em>list(string)</em>) – IP:PORT to listen to</li>
+<li><strong>iscsi_target_portal_discoveryauthmethod</strong> (<em>string</em>) – None, Auto, CHAP, CHAP Mutual</li>
+<li><strong>iscsi_target_portal_discoveryauthgroup</strong> (<em>string</em>) – id of auth group</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Request Headers:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>Content-Type</strong> – the request content type</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Response Headers:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>Content-Type</strong> – the response content type</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>201</strong> – no error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id25">
+<h3>Update resource<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h3>
+<dl class="put">
+<dt id="put--api-v1.0-services-iscsi-portal-(int-id)-">
+<code class="descname">PUT </code><code class="descname">/api/v1.0/services/iscsi/portal/</code><span class="sig-paren">(</span><em class="property">int: </em><em>id</em><span class="sig-paren">)</span><code class="descname">/</code><a class="headerlink" href="#put--api-v1.0-services-iscsi-portal-(int-id)-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update portal <cite>id</cite>.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">PUT</span> <span class="nn">/api/v1.0/services/iscsi/portal/1/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+  <span class="p">{</span>
+          <span class="nt">&quot;iscsi_target_portal_ips&quot;</span><span class="p">:</span> <span class="p">[</span>
+                  <span class="s2">&quot;192.168.3.20:3260&quot;</span>
+          <span class="p">]</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Vary</span><span class="o">:</span> <span class="l">Accept</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+  <span class="p">{</span>
+          <span class="nt">&quot;iscsi_target_portal_tag&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_portal_discoveryauthmethod&quot;</span><span class="p">:</span> <span class="s2">&quot;None&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_portal_discoveryauthgroup&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+          <span class="nt">&quot;iscsi_target_portal_ips&quot;</span><span class="p">:</span> <span class="p">[</span>
+                  <span class="s2">&quot;192.168.3.20:3260&quot;</span>
+          <span class="p">],</span>
+          <span class="nt">&quot;iscsi_target_portal_comment&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">JSON Parameters:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>iscsi_target_portal_comment</strong> (<em>string</em>) – user description</li>
+<li><strong>iscsi_target_portal_ips</strong> (<em>list(string)</em>) – IP:PORT to listen to</li>
+<li><strong>iscsi_target_portal_discoveryauthmethod</strong> (<em>string</em>) – None, Auto, CHAP, CHAP Mutual</li>
+<li><strong>iscsi_target_portal_discoveryauthgroup</strong> (<em>string</em>) – id of auth group</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Request Headers:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>Content-Type</strong> – the request content type</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Response Headers:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>Content-Type</strong> – the response content type</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>202</strong> – no error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id26">
+<h3>Delete resource<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h3>
+<dl class="delete">
+<dt id="delete--api-v1.0-services-iscsi-portal-(int-id)-">
+<code class="descname">DELETE </code><code class="descname">/api/v1.0/services/iscsi/portal/</code><span class="sig-paren">(</span><em class="property">int: </em><em>id</em><span class="sig-paren">)</span><code class="descname">/</code><a class="headerlink" href="#delete--api-v1.0-services-iscsi-portal-(int-id)-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete portal <cite>id</cite>.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">DELETE</span> <span class="nn">/api/v1.0/services/iscsi/portal/1/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">204</span> <span class="ne">No Response</span>
+<span class="na">Vary</span><span class="o">:</span> <span class="l">Accept</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>204</strong> – no error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">iSCSI Resources</a><ul>
+<li><a class="reference internal" href="#globalconfiguration">GlobalConfiguration</a><ul>
+<li><a class="reference internal" href="#list-resource">List resource</a></li>
+<li><a class="reference internal" href="#update-resource">Update resource</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#extent">Extent</a><ul>
+<li><a class="reference internal" href="#id1">List resource</a></li>
+<li><a class="reference internal" href="#create-resource">Create resource</a></li>
+<li><a class="reference internal" href="#id2">Update resource</a></li>
+<li><a class="reference internal" href="#delete-resource">Delete resource</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#authorized-initiator">Authorized Initiator</a><ul>
+<li><a class="reference internal" href="#id3">List resource</a></li>
+<li><a class="reference internal" href="#id4">Create resource</a></li>
+<li><a class="reference internal" href="#id5">Update resource</a></li>
+<li><a class="reference internal" href="#id6">Delete resource</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#auth-credential">Auth Credential</a><ul>
+<li><a class="reference internal" href="#id7">List resource</a></li>
+<li><a class="reference internal" href="#id8">Create resource</a></li>
+<li><a class="reference internal" href="#id9">Update resource</a></li>
+<li><a class="reference internal" href="#id10">Delete resource</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#target">Target</a><ul>
+<li><a class="reference internal" href="#id11">List resource</a></li>
+<li><a class="reference internal" href="#id12">Create resource</a></li>
+<li><a class="reference internal" href="#id13">Update resource</a></li>
+<li><a class="reference internal" href="#id14">Delete resource</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#targetgroup">TargetGroup</a><ul>
+<li><a class="reference internal" href="#id15">List resource</a></li>
+<li><a class="reference internal" href="#id16">Create resource</a></li>
+<li><a class="reference internal" href="#id17">Update resource</a></li>
+<li><a class="reference internal" href="#id18">Delete resource</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#target-to-extent">Target To Extent</a><ul>
+<li><a class="reference internal" href="#id19">List resource</a></li>
+<li><a class="reference internal" href="#id20">Create resource</a></li>
+<li><a class="reference internal" href="#id21">Update resource</a></li>
+<li><a class="reference internal" href="#id22">Delete resource</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#portal">Portal</a><ul>
+<li><a class="reference internal" href="#id23">List resource</a></li>
+<li><a class="reference internal" href="#id24">Create resource</a></li>
+<li><a class="reference internal" href="#id25">Update resource</a></li>
+<li><a class="reference internal" href="#id26">Delete resource</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../services.html"
+                        title="previous chapter">Services</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../sharing.html"
+                        title="next chapter">Sharing</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/resources/iscsi/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../http-routingtable.html" title="HTTP Routing Table"
+             >routing table</a> |</li>
+        <li class="right" >
+          <a href="../sharing.html" title="Sharing"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../services.html" title="Services"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">FreeNAS API 1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >Resources</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../services.html" >Services</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2013, iXsystems.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.
+    </div>
+  </body>
+</html>
