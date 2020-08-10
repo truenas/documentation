@@ -1,8 +1,9 @@
 ---
-title: "Legacy TrueNAS API"
+title: "Legacy API"
 ---
 
-## TrueNAS API v1 has been deprecated. For versions of TrueNAS 11.3 and newer, refer to the [current API documentation]({{< ref "../../../api/_index.md" >}}).
+**The v1 TrueNAS API has been deprecated.**
+Please refer to the [v2 API documentation]({{< ref "../api/_index.md" >}}) for TrueNAS 11.3 and later versions.
 
 <iframe id="inline"
     title="Inline"

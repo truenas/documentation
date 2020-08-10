@@ -1,5 +1,6 @@
 ---
-title: "The TrueNAS v2 Websocket API"
+title: "V2 Websocket API"
+description: "Websocket API documentation for TrueNAS 11.3 and later."
 weight: 3
 ---
 
