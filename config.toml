@@ -1,6 +1,6 @@
 # Commenting your code is very useful.
 #baseURL = "https://www.truenas.com/docs/"
-#title = "TrueNAS Documentation Hub"
+title = "TrueNAS Documentation Hub"
 enableRobotsTXT = true
 relativeURLs = true
 
@@ -55,7 +55,6 @@ id = "UA-2174408-20"
 
 [languages]
 [languages.en]
-title = ""
 description = "Information and how-to articles about TrueNAS software and products."
 languageName ="English"
 # Weight used for sorting.
