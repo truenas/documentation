@@ -113,6 +113,9 @@ announcement_message = "The TrueNAS Documentation team hopes you have a great da
 [taxonomies]
 products = "products"
 
+[params.ui.readingtime]
+enable = true
+
 # Entries for the "Version" dropdown
 [[params.versions]]
 fullversion = "TrueNAS 12.0"
