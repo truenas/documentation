@@ -110,9 +110,6 @@ announcement = false
 # announcement_message is only displayed when announcement = true; update with your specific message
 announcement_message = "The TrueNAS Documentation team hopes you have a great day!"
 
-[taxonomies]
-products = "products"
-
 [params.ui.readingtime]
 enable = true
 
