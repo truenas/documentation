@@ -11,7 +11,9 @@ TrueCommand 1.3.1 introduced the ability to customize the alert colors to user p
 <img src="/images/TC-1.3.1-theme-1.PNG">
 <br><br>
 
-To change a color click on the color to open the selection menu and select the desired or enter its HEX color value.
+To change a color click on the color to open the selection menu and select the desired color or enter its HEX color value.
 
 <img src="/images/TC-1.3.1-theme-2.PNG">
 <br><br>
+
+To reset all colors to their default colors click **Defaults**.  **Reset** will undo any current changes and utilize the previous user configured theme.
