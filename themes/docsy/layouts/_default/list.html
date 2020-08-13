@@ -1,5 +1,7 @@
 {{ define "main" }}
 {{ with .Content }}
+{{ range .Pages }}
 {{ . }}
+{{ end }}
 {{ end }}
 {{ end }}

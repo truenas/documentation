@@ -18,7 +18,7 @@ defaultContentLanguageInSubdir = false
 # Useful when translating.
 enableMissingTranslationPlaceholders = true
 
-disableKinds = ["taxonomy", "taxonomyTerm", "RSS"]
+disableKinds = ["RSS"]
 
 # Highlighting config
 pygmentsCodeFences = true
@@ -111,7 +111,10 @@ announcement = false
 announcement_message = "The TrueNAS Documentation team hopes you have a great day!"
 
 [taxonomies]
-products = "products"
+tags = "tags"
+
+[params.ui.readingtime]
+enable = true
 
 # Entries for the "Version" dropdown
 [[params.versions]]
@@ -223,5 +226,3 @@ expiryDate = ["expiryDate"]
 [[params.topics]]
 	name = "Contributing"
 	url = "/hub/contributing/"
-
-

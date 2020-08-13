@@ -1,6 +1,7 @@
 ---
 title: "Changing User Preferences"
 description: "A how-to for changing user preferences."
+tags: ["preferences"]
 ---
 
 To access user preferences, click <i class="fas fa-cog" aria-hidden="true" title="Settings"></i> **> Preferences**.
