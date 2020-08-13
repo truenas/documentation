@@ -1,6 +1,7 @@
 ---
 title: "Getting Support"
 description: "How to find help or contact iXsystems for support."
+tags: ["support"]
 ---
 
 There are a number of options to get support for your TrueNAS installation.

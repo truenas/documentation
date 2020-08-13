@@ -18,7 +18,7 @@ defaultContentLanguageInSubdir = false
 # Useful when translating.
 enableMissingTranslationPlaceholders = true
 
-disableKinds = ["taxonomy", "taxonomyTerm", "RSS"]
+disableKinds = ["RSS"]
 
 # Highlighting config
 pygmentsCodeFences = true
@@ -110,6 +110,9 @@ githubWebsiteRaw = "raw.githubusercontent.com/freenas/documentation"
 announcement = false
 # announcement_message is only displayed when announcement = true; update with your specific message
 announcement_message = "The TrueNAS Documentation team hopes you have a great day!"
+
+[taxonomies]
+tags = "tags"
 
 [params.ui.readingtime]
 enable = true
@@ -224,5 +227,3 @@ expiryDate = ["expiryDate"]
 [[params.topics]]
 	name = "Contributing"
 	url = "/hub/contributing/"
-
-
