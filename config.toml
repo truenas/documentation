@@ -1,6 +1,6 @@
 # Commenting your code is very useful.
 #baseURL = "https://www.truenas.com/docs/"
-#title = "TrueNAS Documentation Hub"
+title = "TrueNAS Documentation Hub"
 enableRobotsTXT = true
 relativeURLs = true
 
@@ -48,14 +48,15 @@ anchor = "smart"
 
 [services]
 [services.googleAnalytics]
-# Comment out the next line to disable GA tracking. Also disables the feature described in [params.ui.feedback].
+# Google Analytics replaced by Google Tag Manager, which is added directly to the baseof.html files in themes/docsy/layouts/ _default/ and hub/.
+# GA disabled by commenting out shortcode in themes/docsy/layouts/partials/head.html.
+# Commenting id line only disables the feature described in [params.ui.feedback].
 id = "UA-2174408-20"
 
 # Language configuration
 
 [languages]
 [languages.en]
-title = ""
 description = "Information and how-to articles about TrueNAS software and products."
 languageName ="English"
 # Weight used for sorting.
