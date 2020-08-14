@@ -1,6 +1,7 @@
 ---
 title: "Security Best Practices"
 description: "Best practices when using various system services."
+tags: ["security","ssh","samba","nfs","iscsi"]
 ---
 
 When using services on TrueNAS, especially services that allow outside connections, there are some best practices to follow to ensure your system is safe and secure. The main services that will be discussed in this article are SSH, SMB, NFS, and iSCSI.
