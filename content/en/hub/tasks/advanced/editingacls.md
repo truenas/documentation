@@ -2,6 +2,7 @@
 title: "Managing Access Control Lists"
 linktitle: "ACL Management"
 description: "How to open an Access Control List (ACL) and add or remove Access Control Entries (ACEs)."
+tags: ["security","acls"]
 ---
 
 An Access Control List (ACL) is a set of account permissions associated with a dataset and applied to directories or files within that dataset.
