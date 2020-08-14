@@ -1,6 +1,7 @@
 ---
 title: "Configuring a WebDAV Share"
 description: "How to create a general purpose WevDAV share."
+tags: ["networking","webdav"]
 ---
 
 A Web-based Distributed Authoring and Versioning (WebDAV) share makes it easy to share a TrueNAS dataset and its contents over the web.
