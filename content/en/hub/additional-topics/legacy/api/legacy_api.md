@@ -1,5 +1,6 @@
 ---
 title: "Legacy API"
+tags: ["api"]
 ---
 
 **The v1 TrueNAS API has been deprecated.**
