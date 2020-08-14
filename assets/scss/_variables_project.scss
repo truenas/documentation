@@ -344,6 +344,47 @@ nav a {
   padding: 16px 32px;
 }
 
+/* taglist */
+
+.tagslist {
+	margin:1em 0 0;
+}
+
+@media only screen and (min-width: 768px) {
+	.tagslist {
+		width:45%;
+		float:left;
+		margin:0 5% 0 0;
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+	.tagslist {
+		width:100%;
+		float:none;
+		margin:1em 0 0;
+	}
+}
+
+.tagslist ul {
+	padding:.5em 0;
+}
+
+.tagslist ul li {
+	float:left;
+}
+
+.tagslist ul li a {
+	display:block;
+	margin:.3125em;
+	padding:.125em .3125em;
+	background:#dbdbdb;
+}
+
+.tagslist ul li a:hover {
+	color:var(--ixblue-color);
+	background:#e6e6e6;
+}
 // Styling for Release Notes tables imported from Jira
 .ql-container {
     box-sizing: border-box;
