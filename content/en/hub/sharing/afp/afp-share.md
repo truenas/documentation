@@ -1,6 +1,7 @@
 ---
 title: "Configuring an AFP Share"
 description: "How to create an Apple Filing Protocol share."
+tags: ["networking","afp"]
 ---
 
 Apple Filing Protocol (AFP) is a a network protocol that allows file sharing over a network. It's similar to SMB and NFS. However, it was made to work flawlessly on Apple systems. In this document, you will learn how to create and connect to a general purpose AFP share.
