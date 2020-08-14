@@ -1,5 +1,6 @@
 ---
 title: "SATADOM Replacement Guide"
+tags: ["TrueNAS Hardware"]
 ---
 
 <object data="https://www.truenas.com/docs/files/m-series-satadom-replacement-guide.pdf" type="application/pdf" width="95%" height="1000">
