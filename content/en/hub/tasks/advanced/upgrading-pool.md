@@ -1,6 +1,7 @@
 ---
 title: "Upgrading a Pool"
 description: "How to upgrade a storage pool."
+tags: ["zfs"]
 ---
 
 Pools are upgraded using the TrueNAS web interface.
