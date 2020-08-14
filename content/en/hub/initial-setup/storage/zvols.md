@@ -2,6 +2,7 @@
 title: "Zvols"
 description: "How to create a Zvol."
 weight: 3
+tags: ["zfs"]
 ---
 
 {{% pageinfo color="primary" %}}
