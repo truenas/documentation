@@ -1,6 +1,7 @@
 ---
 title: "RMA Policy"
 description: "iXsystems TrueNAS RMA Policy"
+tags: ["TrueNAS Hardware","support"]
 ---
 
 ## RMA Policy

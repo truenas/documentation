@@ -2,6 +2,7 @@
 title: "TrueCommand EULA"
 description: "The TrueCommand End User License Agreement"
 weight: 1
+tags: ["eula"]
 ---
 iXsystems Software End User License Agreement
 Important - Please Read This EULA Carefully

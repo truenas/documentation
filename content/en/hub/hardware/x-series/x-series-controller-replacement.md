@@ -1,5 +1,6 @@
 ---
 title: "Controller Replacement Guide"
+tags: ["TrueNAS Hardware"]
 ---
 
 <object data="https://www.truenas.com/docs/files/x-series-controller-replacement.pdf" type="application/pdf" width="95%" height="1000">

@@ -1,6 +1,7 @@
 ---
 title: "Managing TLS Ciphers"
 description: "Controlling which TLS Ciphers are enabled for TrueNAS"
+tags: ["security"]
 ---
 
 > This feature was introduced in TrueNAS 12.0

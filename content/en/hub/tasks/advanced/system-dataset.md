@@ -1,6 +1,7 @@
 ---
 title: "Changing the System Dataset"
 description: "A how-to on changing the system dataset."
+tags: ["zfs"]
 ---
 
 The system dataset stores debugging core files, encryption keys for encrypted

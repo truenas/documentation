@@ -1,6 +1,7 @@
 ---
 title: "Configuring an iSCSI Share"
 description: "A how-to guide on creating a general purpose iSCSI share."
+tags: ["networking","iscsi"]
 ---
 
 Unlike other sharing protocols on TrueNAS, setting up an iSCSI share

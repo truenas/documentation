@@ -1,6 +1,7 @@
 ---
 title: "Snapshots"
 description: "How to set up automated dataset snapshotting."
+tags: ["zfs"]
 ---
 
 A periodic snapshot task allows scheduling the creation of read-only versions of pools and datasets at a given point in time.

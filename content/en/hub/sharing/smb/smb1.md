@@ -1,6 +1,7 @@
 ---
 title: "Do not use SMB1"
 description: "SMB1 Security Advisory"
+tags: ["networking","samba","errata","security"]
 ---
 
 ## Do not use SBM1

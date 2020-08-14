@@ -1,6 +1,7 @@
 ---
 Title: "GELI Encryption in Legacy FreeNAS/TrueNAS"
 linkTitle: "GELI Encryption in Legacy FreeNAS/TrueNAS"
+tags: ["encryption","security"]
 ---
 
 {{% alert title="Notice" color="info" %}}

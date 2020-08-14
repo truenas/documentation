@@ -1,6 +1,7 @@
 ---
 title: "Configuring a Windows SMB share"
 description: "How to set up a general purpose Server Message Block share."
+tags: ["networking","samba"]
 ---
 
 If sharing a lot of data securely with many users is the goal, then setting up an SMB share can help. SMB shares allow the management and administration of large or small pools of data. SMB shares can be connected to any major operating systems including Windows, MacOS, and Linux.
