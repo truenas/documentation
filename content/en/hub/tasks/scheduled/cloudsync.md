@@ -99,12 +99,39 @@ You can still save the cloud sync task and run it manually.
 There are a variety of advanced options that allow you to fine-tune the cloud sync.
 These include:
 
-* copying symlinked items
-* excluding specific files from the transfer
-* limiting the transfer to prevent going over any bandwidth caps
-* Adding encryption to the data that will be transferred
+* including symlinked files in the transfer
+* a list of files to **Exclude** from the transfer
+* defining transfer limitations to prevent going over any bandwidth caps
+* adding encryption to the data that will be transferred
+  
+#### Scripting and Environment Variables
 
-These options are not required for every cloud sync and are configured according to your specific security and data needs.
+Advanced users can write scripts that run immediately *before* or *after* the Cloud Sync task.
+The **Post-script** field is only run when the Cloud Sync task successfully completes.
+You can pass a variety of task environment variables into the **Pre-** and **Post-** script fields:
+
+* CLOUD_SYNC_ID
+* CLOUD_SYNC_DESCRIPTION
+* CLOUD_SYNC_DIRECTION
+* CLOUD_SYNC_TRANSFER_MODE
+* CLOUD_SYNC_ENCRYPTION
+* CLOUD_SYNC_FILENAME_ENCRYPTION
+* CLOUD_SYNC_ENCRYPTION_PASSWORD
+* CLOUD_SYNC_ENCRYPTION_SALT
+* CLOUD_SYNC_SNAPSHOT
+
+There also are provider-specific variables like CLOUD_SYNC_CLIENT_ID or CLOUD_SYNC_TOKEN or CLOUD_SYNC_CHUNK_SIZE
+
+Remote storage settings:
+* CLOUD_SYNC_BUCKET
+* CLOUD_SYNC_FOLDER
+
+Local storage settings:
+* CLOUD_SYNC_PATH
+
+Advanced options are not required for every cloud sync and are configured according to your specific security and data needs.
+
+### Testing Settings
 
 It is recommended to test your settings before saving the cloud sync task by clicking *Dry Run*.
 A connection to the Cloud Storage Provider is established and a file transfer is simulated.
