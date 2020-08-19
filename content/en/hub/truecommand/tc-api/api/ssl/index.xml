@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ssl on TrueCommand Documentation</title>
+    <link>https://www.truenas.com/hub/truecommand/tc-api/api/ssl/</link>
+    <description>Recent content in ssl on TrueCommand Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>3-Clause BSD License</copyright>
+    
+	<atom:link href="https://www.truenas.com/hub/truecommand/tc-api/api/ssl/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ssl/ca_import</title>
+      <link>https://www.truenas.com/hub/truecommand/tc-api/api/ssl/ca_import/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/ssl/ca_import/</guid>
+      <description>Namespace Name Admin Only Log Summary Generates Event Version Added     ssl ca_import yes no no 1    Description Import a custom certificate authority (CA) certificate which will be accepted for all NAS connections.
+If the &amp;ldquo;name&amp;rdquo; matches an already existing custom CA, then that CA file will be overwritten with the new contents.
+Input Arguments  Required:  &amp;ldquo;name&amp;rdquo; : (string) internal name for the CA certificate &amp;ldquo;pem&amp;rdquo; : (string) Certificate contents (must be in PEM format)   Optional:  &amp;ldquo;pem_as_base64&amp;rdquo; : (boolean) The &amp;ldquo;pem&amp;rdquo; string is provided in base64-encoded format (default: false).</description>
+    </item>
+    
+    <item>
+      <title>ssl/ca_list</title>
+      <link>https://www.truenas.com/hub/truecommand/tc-api/api/ssl/ca_list/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/ssl/ca_list/</guid>
+      <description>Namespace Name Admin Only Log Summary Generates Event Version Added     ssl ca_list yes no no 1    Description List the internal names of all custom CA files that have been imported.
+Input Arguments  Required:  none ({})   Optional:  none ({})    Reply Example Arguments ARGUMENTS ONLY: See the basics  of API requests for additional formatting information.</description>
+    </item>
+    
+    <item>
+      <title>ssl/ca_remove</title>
+      <link>https://www.truenas.com/hub/truecommand/tc-api/api/ssl/ca_remove/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/ssl/ca_remove/</guid>
+      <description>Namespace Name Admin Only Log Summary Generates Event Version Added     ssl ca_remove yes no no 1    Description Remove custom certificate authority file(s).
+Input Arguments  Required:  &amp;ldquo;ca_certs&amp;rdquo; : (string or JSON array of strings) Name of the certificate to remove.   Optional:  none ({})    Request Example Arguments ARGUMENTS ONLY: See the basics  of API requests for additional formatting information.</description>
+    </item>
+    
+    <item>
+      <title>ssl/cert_import</title>
+      <link>https://www.truenas.com/hub/truecommand/tc-api/api/ssl/cert_import/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/ssl/cert_import/</guid>
+      <description>Namespace Name Admin Only Log Summary Generates Event Version Added     ssl cert_import yes no no 1    Description Import a custom SSL certificate to be used for the TrueCommand web interface.
+Input Arguments  Required:  &amp;ldquo;pem&amp;rdquo; : (string) Certificate contents (must be in PEM format) &amp;ldquo;key&amp;rdquo; : (string) Key contents (must be in RSA/PEM format without a passphrase).   Optional:  &amp;ldquo;pem_as_base64&amp;rdquo; : (boolean) The &amp;ldquo;pem&amp;rdquo; string is provided in base64-encoded format (default: false).</description>
+    </item>
+    
+    <item>
+      <title>ssl/cert_info</title>
+      <link>https://www.truenas.com/hub/truecommand/tc-api/api/ssl/cert_info/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/ssl/cert_info/</guid>
+      <description>Namespace Name Admin Only Log Summary Generates Event Version Added     ssl cert_info yes no no 1    Description View information about the current TrueCommand SSL certificate
+Input Arguments  Required:  Optional:   Request Example Arguments ARGUMENTS ONLY: See the basics  of API requests for additional formatting information.
+&amp;quot;args&amp;quot; : {} Reply Example Arguments ARGUMENTS ONLY: See the basics  of API requests for additional formatting information.</description>
+    </item>
+    
+    <item>
+      <title>ssl/cert_reset</title>
+      <link>https://www.truenas.com/hub/truecommand/tc-api/api/ssl/cert_reset/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/ssl/cert_reset/</guid>
+      <description>Namespace Name Admin Only Log Summary Generates Event Version Added     ssl cert_reset yes no no 1    Description Remove any custom SSL certificate for TrueCommand itself and replace it with the automatically-generated self-signed certificate.
+Note that this API call will return an error if there is currently no custom SSL certificate being used.
+Input Arguments  Required:  Optional:   Request Example Arguments ARGUMENTS ONLY: See the basics  of API requests for additional formatting information.</description>
+    </item>
+    
+  </channel>
+</rss>
