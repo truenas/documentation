@@ -13,7 +13,7 @@ SMB shares allow a wide range of permissions and security settings, and can supp
 TrueNAS uses Samba to provide SMB services. SMB has multiple versions. Version 1 (SMB1) is strongly discouraged for security reasons - please see the separate advisory.  Modern computers will usually use SMB versions 2.0 up to 3.1.1. 
 
 {{% alert color="warning" %}}
-SMB1 and another old protocol, NetBIOS ("NetBIOS over TCP/IP"), are not required for discovery of shares, and in most cases they can - and should - be safely disabled. A newer protocol called WS-Discovery is used instead in all modern versions of Windows to discover and list file shares. By default, TrueNAS will start a WS-Discovery service when required.
+SMB1 and another old protocol, NetBIOS ("NetBIOS over TCP/IP"), are not required for discovery of SMB shares, and in most cases they can - and should - be safely disabled. A newer protocol called WS-Discovery is used instead in all modern versions of Windows to discover and list file shares. By default, TrueNAS will start a WS-Discovery service when required.
 {{% /alert %}}
 
 To get started, make sure a <a href="/hub/initial-setup/storage/datasets/">dataset has been created</a>. This dataset stores the data that is going to be shared. Next, activate the SMB service, create the share, and configure permissions for the share.
