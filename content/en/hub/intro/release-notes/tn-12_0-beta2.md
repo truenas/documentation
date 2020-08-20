@@ -3,7 +3,7 @@ title: "TrueNAS 12.0-BETA2 Release Notes"
 linkTitle: "TrueNAS 12.0-BETA2"
 ---
 
-iXsystems is pleased to announce the general availability of TrueNAS 12.0-BETA2!
+iXsystems is pleased to announce the [general availability](https://www.truenas.com/download-tn-core/) of TrueNAS 12.0-BETA2!
 This is the second beta version of the unified FreeNAS and TrueNAS release, renamed to TrueNAS CORE and TrueNAS Enterprise, respectively.
 More than 175 bugs have been fixed in this release, representing a significant step toward the full TrueNAS 12.0-Release.
 
