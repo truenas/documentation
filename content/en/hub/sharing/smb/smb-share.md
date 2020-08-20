@@ -4,7 +4,13 @@ description: "How to set up a general purpose Server Message Block share."
 tags: ["networking","samba"]
 ---
 
-If sharing a lot of data securely with many users is the goal, then setting up an SMB share can help. SMB shares allow the management and administration of large or small pools of data. SMB shares can be connected to any major operating systems including Windows, MacOS, and Linux.
+## SMB Overview
+
+SMB (also known as CIFS) is the native file sharing system in Windows. Computers on a local network that offer SMB shares to other devices will appear by default listed in the Navigation Panel of Windows File Explorer. SMB shares can be connected to any major operating systems including Windows, MacOS, and Linux. SMB can be used in TrueNAS to share files with one user or device, or many. 
+
+SMB shares allow a wide range of permissions and security settings, and can support advanced permissions (ACLs) on Windows and other systems, as well as Windows Alternate Streams and Extended Metadata. SMB is suitable for the management and administration of large or small pools of data.
+
+TrueNAS uses Samba to provide SMB services. SMB has multiple versions - version 1 (SMB1) is strongly discouraged for security reasons - please see the separate advisory. Modern computers will usually use SMB versions 2.0 up to 3.1.1.
 
 To get started, make sure a <a href="/hub/initial-setup/storage/datasets/">dataset has been created</a>. This dataset stores the data that is going to be shared. Next, activate the SMB service, create the share, and configure permissions for the share.
 
