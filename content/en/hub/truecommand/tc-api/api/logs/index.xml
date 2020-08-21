@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>logs on TrueCommand Documentation</title>
+    <link>https://www.truenas.com/hub/truecommand/tc-api/api/logs/</link>
+    <description>Recent content in logs on TrueCommand Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>3-Clause BSD License</copyright>
+    
+	<atom:link href="https://www.truenas.com/hub/truecommand/tc-api/api/logs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>logs/search</title>
+      <link>https://www.truenas.com/hub/truecommand/tc-api/api/logs/search/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/logs/search/</guid>
+      <description>Namespace Name Admin Only Log Summary Generates Event Version Added     logs search no no no 1    Description Search through the logs and return results
+Input Arguments  Required Arguments: none ({}) Optional Arguments:  &amp;ldquo;time_end&amp;rdquo; (string - if not supplied it defaults to the current time) &amp;ldquo;time_start&amp;rdquo; (string - if not supplied it defaults to one month prior to the end time) &amp;ldquo;user_id&amp;rdquo; (string - only return log entries associated with this user) &amp;ldquo;api_header&amp;rdquo; (string - only return log entries associed with a particular API call: such as &amp;ldquo;users/add&amp;rdquo; or &amp;ldquo;servers/edit&amp;rdquo;)    For information about the time formats, please look at the Input Time Codes section for details.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>external on TrueCommand Documentation</title>
+    <link>https://www.truenas.com/hub/truecommand/tc-api/api/external/</link>
+    <description>Recent content in external on TrueCommand Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>3-Clause BSD License</copyright>
+    
+	<atom:link href="https://www.truenas.com/hub/truecommand/tc-api/api/external/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>external/submit_alerts</title>
+      <link>https://www.truenas.com/hub/truecommand/tc-api/api/external/submit_alerts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/external/submit_alerts/</guid>
+      <description>Namespace Name Admin Only Log Summary Generates Event Version Added     external submit_alerts N/A N/A yes 1.1    Description API hook for external systems to submit alert notices to TrueCommand. This requires that the external system use a valid system auth token to submit the API call over HTTP.
+Note: This works for both &amp;ldquo;external&amp;rdquo; types of systems as well as FreeNAS/TrueNAS systems.</description>
+    </item>
+    
+    <item>
+      <title>external/submit_stats</title>
+      <link>https://www.truenas.com/hub/truecommand/tc-api/api/external/submit_stats/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/external/submit_stats/</guid>
+      <description>Namespace Name Admin Only Log Summary Generates Event Version Added     external submit_stats N/A N/A yes 1.1    Description API hook for external systems to submit statistics to TrueCommand. This requires that the external system use a valid system auth token to submit the API call over HTTP.
+Note: This works for both &amp;ldquo;external&amp;rdquo; types of systems as well as FreeNAS/TrueNAS systems. It just needs a valid auth token which associates the API request with a currently-registered system.</description>
+    </item>
+    
+  </channel>
+</rss>

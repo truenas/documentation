@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>email on TrueCommand Documentation</title>
+    <link>https://www.truenas.com/hub/truecommand/tc-api/api/email/</link>
+    <description>Recent content in email on TrueCommand Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>3-Clause BSD License</copyright>
+    
+	<atom:link href="https://www.truenas.com/hub/truecommand/tc-api/api/email/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>email/deleteconfig</title>
+      <link>https://www.truenas.com/hub/truecommand/tc-api/api/email/deleteconfig/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/email/deleteconfig/</guid>
+      <description>   Namespace Name Admin Only Log Summary Generates Event Version Added     email deleteconfig yes yes yes 1 (Removed in 1.2)    Description Delete SSMTP Configuration
+Input Arguments  Required:  none ({})    Request Example Arguments { &amp;quot;namespace&amp;quot; : &amp;quot;email&amp;quot;, &amp;quot;name&amp;quot; : &amp;quot;deleteconfig&amp;quot;, &amp;quot;id&amp;quot; : &amp;quot;some_id&amp;quot;, &amp;quot;args&amp;quot; : { } } Reply Example { &amp;quot;namespace&amp;quot; : &amp;quot;email&amp;quot;, &amp;quot;name&amp;quot; : &amp;quot;response&amp;quot;, &amp;quot;id&amp;quot; : &amp;quot;some_id&amp;quot;, &amp;quot;args&amp;quot; : { &amp;quot;result&amp;quot; : &amp;quot;success&amp;quot; } } </description>
+    </item>
+    
+    <item>
+      <title>email/editconfig</title>
+      <link>https://www.truenas.com/hub/truecommand/tc-api/api/email/editconfig/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/email/editconfig/</guid>
+      <description>Namespace Name Admin Only Log Summary Generates Event Version Added     email editconfig yes yes yes 1 (Removed in 1.2)    Description Configure SSMTP
+Input Arguments  Required:  &amp;ldquo;rootaddress&amp;rdquo; (String) &amp;ldquo;mailserver&amp;rdquo; (String) &amp;ldquo;port&amp;rdquo; (String) &amp;ldquo;security&amp;rdquo; (String) (&amp;ldquo;TLS&amp;rdquo; or &amp;ldquo;STARTTLS&amp;rdquo; or &amp;ldquo;TLS+STARTTLS&amp;rdquo;) &amp;ldquo;AuthUser&amp;rdquo; (String) &amp;ldquo;AuthPass&amp;rdquo; (String) &amp;ldquo;AuthMethod&amp;rdquo; (String)    Configuration of SSMTP { &amp;quot;namespace&amp;quot; : &amp;quot;email&amp;quot;, &amp;quot;name&amp;quot; : &amp;quot;writeconfig&amp;quot;, &amp;quot;id&amp;quot; : &amp;quot;some_id&amp;quot;, &amp;quot;args&amp;quot; : { &amp;quot;rootaddress&amp;quot; : &amp;quot;email@domain.</description>
+    </item>
+    
+    <item>
+      <title>email/send_test</title>
+      <link>https://www.truenas.com/hub/truecommand/tc-api/api/email/send_test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/email/send_test/</guid>
+      <description>Namespace Name Admin Only Log Summary Generates Event Version Added     email send_test Yes No No 1 (Removed in 1.2)    Description Send a test email to a designated address. This can be used for verifying that the system email configuration is setup properly and functional.
+Input Arguments  Required:  &amp;ldquo;to&amp;rdquo; (String) or (JsonArray) : Email address(es) to send the test email to.</description>
+    </item>
+    
+    <item>
+      <title>email/writeconfig</title>
+      <link>https://www.truenas.com/hub/truecommand/tc-api/api/email/writeconfig/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/email/writeconfig/</guid>
+      <description>Namespace Name Admin Only Log Summary Generates Event Version Added     email writeconfig yes yes yes 1 (Removed in 1.2)    Description Write SSMTP Configuration
+Input Arguments  Required:  &amp;ldquo;rootaddress&amp;rdquo; (String) : This email address will appear in the &amp;ldquo;From&amp;rdquo; field of email alerts &amp;ldquo;mailserver&amp;rdquo; (String) : Address to contact for email submissions (Example: &amp;ldquo;smtp.gmail.com&amp;rdquo;) &amp;ldquo;port&amp;rdquo; (String) : Port number to use when contacting the mail server (Example: &amp;ldquo;587&amp;rdquo;); &amp;ldquo;security&amp;rdquo; (String) (&amp;ldquo;TLS&amp;rdquo; or &amp;ldquo;STARTTLS&amp;rdquo; or &amp;ldquo;TLS+STARTTLS&amp;rdquo;) &amp;ldquo;AuthUser&amp;rdquo; (String) : Username to use when connecting to the mailserver &amp;ldquo;AuthPass&amp;rdquo; (String) : Password to use when connecting to the mailserver &amp;ldquo;AuthMethod&amp;rdquo; (String) : Type of authentication to mailserver (&amp;ldquo;LOGIN&amp;rdquo; is standard username/password).</description>
+    </item>
+    
+  </channel>
+</rss>
