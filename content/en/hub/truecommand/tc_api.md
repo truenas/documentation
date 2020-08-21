@@ -2,7 +2,7 @@
 title: "TrueCommand API"
 description: "The TrueCommand API"
 weight: 3
-tags: ["api"]
+tags: ["api","truecommand"]
 ---
 
 
