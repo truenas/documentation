@@ -12,19 +12,19 @@
     <title>sys/set_config :: TrueCommand Documentation</title>
 
     
-    <link href="/docs/hub/truecommand/tc-api/css/nucleus.css?1598022046" rel="stylesheet">
-    <link href="/docs/hub/truecommand/tc-api/css/fontawesome-all.min.css?1598022046" rel="stylesheet">
-    <link href="/docs/hub/truecommand/tc-api/css/hybrid.css?1598022046" rel="stylesheet">
-    <link href="/docs/hub/truecommand/tc-api/css/featherlight.min.css?1598022046" rel="stylesheet">
-    <link href="/docs/hub/truecommand/tc-api/css/perfect-scrollbar.min.css?1598022046" rel="stylesheet">
-    <link href="/docs/hub/truecommand/tc-api/css/auto-complete.css?1598022046" rel="stylesheet">
-    <link href="/docs/hub/truecommand/tc-api/css/theme.css?1598022046" rel="stylesheet">
-    <link href="/docs/hub/truecommand/tc-api/css/hugo-theme.css?1598022046" rel="stylesheet">
+    <link href="/docs/hub/truecommand/tc-api/css/nucleus.css?1598023813" rel="stylesheet">
+    <link href="/docs/hub/truecommand/tc-api/css/fontawesome-all.min.css?1598023813" rel="stylesheet">
+    <link href="/docs/hub/truecommand/tc-api/css/hybrid.css?1598023813" rel="stylesheet">
+    <link href="/docs/hub/truecommand/tc-api/css/featherlight.min.css?1598023813" rel="stylesheet">
+    <link href="/docs/hub/truecommand/tc-api/css/perfect-scrollbar.min.css?1598023813" rel="stylesheet">
+    <link href="/docs/hub/truecommand/tc-api/css/auto-complete.css?1598023813" rel="stylesheet">
+    <link href="/docs/hub/truecommand/tc-api/css/theme.css?1598023813" rel="stylesheet">
+    <link href="/docs/hub/truecommand/tc-api/css/hugo-theme.css?1598023813" rel="stylesheet">
     
-      <link href="/docs/hub/truecommand/tc-api/css/theme-trident.css?1598022046" rel="stylesheet">
+      <link href="/docs/hub/truecommand/tc-api/css/theme-trident.css?1598023813" rel="stylesheet">
     
 
-    <script src="/docs/hub/truecommand/tc-api/js/jquery-2.x.min.js?1598022046"></script>
+    <script src="/docs/hub/truecommand/tc-api/js/jquery-2.x.min.js?1598023813"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -41,8 +41,8 @@
 
   <div id="header-wrapper">
     <div id="header">
-      <a id="logo" href="/">
-  <img src="/images/logo-tc.png" alt="iXsystems">
+      <a id="logo" href="/docs/">
+  <img src="/docs/images/logo-tc.png" alt="iXsystems">
 </a>
 
     </div>
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/docs/hub/truecommand/tc-api/js/lunr.min.js?1598022046"></script>
-<script type="text/javascript" src="/docs/hub/truecommand/tc-api/js/auto-complete.js?1598022046"></script>
+<script type="text/javascript" src="/docs/hub/truecommand/tc-api/js/lunr.min.js?1598023813"></script>
+<script type="text/javascript" src="/docs/hub/truecommand/tc-api/js/auto-complete.js?1598023813"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/www.truenas.com\/docs\/hub\/truecommand\/tc-api\/";
     
 </script>
-<script type="text/javascript" src="/docs/hub/truecommand/tc-api/js/search.js?1598022046"></script>
+<script type="text/javascript" src="/docs/hub/truecommand/tc-api/js/search.js?1598023813"></script>
 
     
   </div>
@@ -2953,7 +2953,7 @@
 <li>&ldquo;nas_ignore_alerts&rdquo; : (string or JsonArray of strings) Ignore passthrough alerts of the listed type(s) for all NAS connections.
 <ul>
 <li>Valid types: &ldquo;information&rdquo;, &ldquo;warning&rdquo;, &ldquo;critical&rdquo;, or &ldquo;all&rdquo;</li>
-<li>NOTE: These defaults are only respected if the custom ignore rules for the individual NAS is empty. See the <a href="/api/servers/edit/" > servers/edit </a>
+<li>NOTE: These defaults are only respected if the custom ignore rules for the individual NAS is empty. See the <a href="/docs/api/servers/edit/" > servers/edit </a>
  API call for setting custom ignore rules for specific NAS connections.</li>
 </ul>
 </li>
@@ -2961,21 +2961,21 @@
 <li>&ldquo;ldap_create_users&rdquo; : (boolean) Allow valid LDAP authentication to dynamically create user accounts as needed. See the &ldquo;ldap_default_teams&rdquo; value to determine which teams/permissions these dynamically-created user accounts are allowed.</li>
 <li>&ldquo;ldap_default_teams&rdquo; : (JsonArray of strings) List of team ID&rsquo;s that a new user should be added to.</li>
 <li>&ldquo;ldap_servers&rdquo; (JsonArray of objects) : List of LDAP settings objects
-* See the <a href="/api/ldap/" > ldap </a>
+* See the <a href="/docs/api/ldap/" > ldap </a>
  settings page for details</li>
 </ul>
 </li>
 </ul>
 <p>NOTE: If an optional argument is not provided or the type of value is not valid (such as a null value), then that setting will not be changed.</p>
 <h3 id="request-example-arguments">Request Example Arguments</h3>
-<p><strong>ARGUMENTS ONLY</strong>: See the <a href="/api/basics/" > basics </a>
+<p><strong>ARGUMENTS ONLY</strong>: See the <a href="/docs/api/basics/" > basics </a>
  of API requests for additional formatting information.</p>
 <pre><code>&quot;args&quot; : {
   &quot;stats_keep_months&quot; : 12,
   &quot;ssl_accept_hostmismatch&quot; : false
 }
 </code></pre><h3 id="reply-example-arguments">Reply Example Arguments</h3>
-<p><strong>ARGUMENTS ONLY</strong>: See the <a href="/api/basics/" > basics </a>
+<p><strong>ARGUMENTS ONLY</strong>: See the <a href="/docs/api/basics/" > basics </a>
  of API requests for additional formatting information.</p>
 <pre><code>&quot;args&quot; : {
   &quot;result&quot; : &quot;success&quot;
@@ -2986,7 +2986,7 @@
 <p>This API call does not emit any middleware events.</p>
 <h4 id="see-also">See Also</h4>
 <ul>
-<li><a href="/api/sys/list_config/" > sys/list_config </a>
+<li><a href="/docs/api/sys/list_config/" > sys/list_config </a>
 </li>
 </ul>
 
@@ -5122,20 +5122,20 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/docs/hub/truecommand/tc-api/js/clipboard.min.js?1598022046"></script>
-    <script src="/docs/hub/truecommand/tc-api/js/perfect-scrollbar.min.js?1598022046"></script>
-    <script src="/docs/hub/truecommand/tc-api/js/perfect-scrollbar.jquery.min.js?1598022046"></script>
-    <script src="/docs/hub/truecommand/tc-api/js/jquery.sticky.js?1598022046"></script>
-    <script src="/docs/hub/truecommand/tc-api/js/featherlight.min.js?1598022046"></script>
-    <script src="/docs/hub/truecommand/tc-api/js/html5shiv-printshiv.min.js?1598022046"></script>
-    <script src="/docs/hub/truecommand/tc-api/js/highlight.pack.js?1598022046"></script>
+    <script src="/docs/hub/truecommand/tc-api/js/clipboard.min.js?1598023813"></script>
+    <script src="/docs/hub/truecommand/tc-api/js/perfect-scrollbar.min.js?1598023813"></script>
+    <script src="/docs/hub/truecommand/tc-api/js/perfect-scrollbar.jquery.min.js?1598023813"></script>
+    <script src="/docs/hub/truecommand/tc-api/js/jquery.sticky.js?1598023813"></script>
+    <script src="/docs/hub/truecommand/tc-api/js/featherlight.min.js?1598023813"></script>
+    <script src="/docs/hub/truecommand/tc-api/js/html5shiv-printshiv.min.js?1598023813"></script>
+    <script src="/docs/hub/truecommand/tc-api/js/highlight.pack.js?1598023813"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/docs/hub/truecommand/tc-api/js/modernizr.custom.71422.js?1598022046"></script>
-    <script src="/docs/hub/truecommand/tc-api/js/learn.js?1598022046"></script>
-    <script src="/docs/hub/truecommand/tc-api/js/hugo-learn.js?1598022046"></script>
+    <script src="/docs/hub/truecommand/tc-api/js/modernizr.custom.71422.js?1598023813"></script>
+    <script src="/docs/hub/truecommand/tc-api/js/learn.js?1598023813"></script>
+    <script src="/docs/hub/truecommand/tc-api/js/hugo-learn.js?1598023813"></script>
 
-    <link href="/docs/hub/truecommand/tc-api/mermaid/mermaid.css?1598022046" type="text/css" rel="stylesheet" />
-    <script src="/docs/hub/truecommand/tc-api/mermaid/mermaid.js?1598022046"></script>
+    <link href="/docs/hub/truecommand/tc-api/mermaid/mermaid.css?1598023813" type="text/css" rel="stylesheet" />
+    <script src="/docs/hub/truecommand/tc-api/mermaid/mermaid.js?1598023813"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

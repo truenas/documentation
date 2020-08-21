@@ -12,19 +12,19 @@
     <title>Connection Management :: TrueCommand Documentation</title>
 
     
-    <link href="/docs/hub/truecommand/tc-api/css/nucleus.css?1598022047" rel="stylesheet">
-    <link href="/docs/hub/truecommand/tc-api/css/fontawesome-all.min.css?1598022047" rel="stylesheet">
-    <link href="/docs/hub/truecommand/tc-api/css/hybrid.css?1598022047" rel="stylesheet">
-    <link href="/docs/hub/truecommand/tc-api/css/featherlight.min.css?1598022047" rel="stylesheet">
-    <link href="/docs/hub/truecommand/tc-api/css/perfect-scrollbar.min.css?1598022047" rel="stylesheet">
-    <link href="/docs/hub/truecommand/tc-api/css/auto-complete.css?1598022047" rel="stylesheet">
-    <link href="/docs/hub/truecommand/tc-api/css/theme.css?1598022047" rel="stylesheet">
-    <link href="/docs/hub/truecommand/tc-api/css/hugo-theme.css?1598022047" rel="stylesheet">
+    <link href="/docs/hub/truecommand/tc-api/css/nucleus.css?1598023814" rel="stylesheet">
+    <link href="/docs/hub/truecommand/tc-api/css/fontawesome-all.min.css?1598023814" rel="stylesheet">
+    <link href="/docs/hub/truecommand/tc-api/css/hybrid.css?1598023814" rel="stylesheet">
+    <link href="/docs/hub/truecommand/tc-api/css/featherlight.min.css?1598023814" rel="stylesheet">
+    <link href="/docs/hub/truecommand/tc-api/css/perfect-scrollbar.min.css?1598023814" rel="stylesheet">
+    <link href="/docs/hub/truecommand/tc-api/css/auto-complete.css?1598023814" rel="stylesheet">
+    <link href="/docs/hub/truecommand/tc-api/css/theme.css?1598023814" rel="stylesheet">
+    <link href="/docs/hub/truecommand/tc-api/css/hugo-theme.css?1598023814" rel="stylesheet">
     
-      <link href="/docs/hub/truecommand/tc-api/css/theme-trident.css?1598022047" rel="stylesheet">
+      <link href="/docs/hub/truecommand/tc-api/css/theme-trident.css?1598023814" rel="stylesheet">
     
 
-    <script src="/docs/hub/truecommand/tc-api/js/jquery-2.x.min.js?1598022047"></script>
+    <script src="/docs/hub/truecommand/tc-api/js/jquery-2.x.min.js?1598023814"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -41,8 +41,8 @@
 
   <div id="header-wrapper">
     <div id="header">
-      <a id="logo" href="/">
-  <img src="/images/logo-tc.png" alt="iXsystems">
+      <a id="logo" href="/docs/">
+  <img src="/docs/images/logo-tc.png" alt="iXsystems">
 </a>
 
     </div>
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/docs/hub/truecommand/tc-api/js/lunr.min.js?1598022047"></script>
-<script type="text/javascript" src="/docs/hub/truecommand/tc-api/js/auto-complete.js?1598022047"></script>
+<script type="text/javascript" src="/docs/hub/truecommand/tc-api/js/lunr.min.js?1598023814"></script>
+<script type="text/javascript" src="/docs/hub/truecommand/tc-api/js/auto-complete.js?1598023814"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/www.truenas.com\/docs\/hub\/truecommand\/tc-api\/";
     
 </script>
-<script type="text/javascript" src="/docs/hub/truecommand/tc-api/js/search.js?1598022047"></script>
+<script type="text/javascript" src="/docs/hub/truecommand/tc-api/js/search.js?1598023814"></script>
 
     
   </div>
@@ -2897,10 +2897,10 @@
 
 <h1 id="nas-connections">NAS Connections</h1>
 <p>TrueCommand automatically connects to any registered NAS using a secure websocket connection (wss). If wss is unavailable, it will attempt a non-secure websocket connection (ws). TrueCommand can be configured to require secure connections to each registered NAS. Refer to the SSL error list when configuring TrueCommand to require secure connections.</p>
-<p>The state of a NAS connection and any errors that prevent connection are seen as a tooltip on the system badge of the TrueCommand dashboard. Hover the mouse cursor over the badge to see the error. Alternatively, the connection status is viewed by running the <a href="/api/servers/list/" > servers/list </a>
+<p>The state of a NAS connection and any errors that prevent connection are seen as a tooltip on the system badge of the TrueCommand dashboard. Hover the mouse cursor over the badge to see the error. Alternatively, the connection status is viewed by running the <a href="/docs/api/servers/list/" > servers/list </a>
  API call directly.</p>
-<p>TrueCommand SSL configuration options are viewed with the <a href="/api/sys/list_config/" > sys/list_config </a>
- API call and changed with the <a href="/api/sys/set_config/" > sys/set_config </a>
+<p>TrueCommand SSL configuration options are viewed with the <a href="/docs/api/sys/list_config/" > sys/list_config </a>
+ API call and changed with the <a href="/docs/api/sys/set_config/" > sys/set_config </a>
  API call. Please see the API reference documentation for more details.</p>
 <h2 id="important-terminology">Important Terminology</h2>
 <ul>
@@ -2926,9 +2926,9 @@
 <li>Import the &ldquo;full-chain&rdquo; version of the certificate into the NAS instead of just the top-level certificate. The full-chain version of the certificate includes any certificate authority (CA) references which are required for certificate chain verification. This allows TrueCommand to properly verify the CA.</li>
 <li>Disable SSL certificate verification in the TrueCommand system configuration settings:
 <ul>
-<li>Use the <a href="/api/sys/list_config/" > sys/list_config </a>
+<li>Use the <a href="/docs/api/sys/list_config/" > sys/list_config </a>
  API call to view the configuration</li>
-<li>Use the <a href="/api/sys/set_config/" > sys/set_config </a>
+<li>Use the <a href="/docs/api/sys/set_config/" > sys/set_config </a>
  API call to change the configuration</li>
 <li><strong>WARNING</strong> This is inherently insecure and can allow attackers to misidentify themselves as a NAS on the network to gain access to genuine login credentials.</li>
 </ul>
@@ -2941,9 +2941,9 @@
 <li>Generate a new certificate for the NAS that is created and signed by an outside certificate authority.</li>
 <li>Configure TrueCommand to accept self-signed certificates.
 <ul>
-<li>Use the <a href="/api/sys/list_config/" > sys/list_config </a>
+<li>Use the <a href="/docs/api/sys/list_config/" > sys/list_config </a>
  API call to view the configuration</li>
-<li>Use the <a href="/api/sys/set_config/" > sys/set_config </a>
+<li>Use the <a href="/docs/api/sys/set_config/" > sys/set_config </a>
  API call to change the configuration</li>
 <li><strong>WARNING</strong> This is inherently insecure and can allow attackers to misidentify themselves as a NAS on the network to gain access to genuine login credentials.</li>
 </ul>
@@ -2956,9 +2956,9 @@
 <li>Generate a new certificate for the NAS that is created and signed by an outside certificate authority.</li>
 <li>Configure TrueCommand to accept self-signed certificates.
 <ul>
-<li>Use the <a href="/api/sys/list_config/" > sys/list_config </a>
+<li>Use the <a href="/docs/api/sys/list_config/" > sys/list_config </a>
  API call to view the configuration</li>
-<li>Use the <a href="/api/sys/set_config/" > sys/set_config </a>
+<li>Use the <a href="/docs/api/sys/set_config/" > sys/set_config </a>
  API call to change the configuration</li>
 <li><strong>WARNING</strong> This is inherently insecure and can allow attackers to misidentify themselves as a NAS on the network to gain access to genuine login credentials.</li>
 </ul>
@@ -2971,9 +2971,9 @@
 <li>Update the NAS SSL certificate to include all variations of the system name where the certificate will be used.</li>
 <li>Configure TrueCommand to ignore hostname mismatch errors in the SSL certificate.
 <ul>
-<li>Use the <a href="/api/sys/list_config/" > sys/list_config </a>
+<li>Use the <a href="/docs/api/sys/list_config/" > sys/list_config </a>
  API call to view the configuration</li>
-<li>Use the <a href="/api/sys/set_config/" > sys/set_config </a>
+<li>Use the <a href="/docs/api/sys/set_config/" > sys/set_config </a>
  API call to change the configuration</li>
 <li><strong>WARNING</strong> This is inherently insecure and can allow attackers to misidentify themselves as a NAS on the network to gain access to genuine login credentials.</li>
 </ul>
@@ -5103,20 +5103,20 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/docs/hub/truecommand/tc-api/js/clipboard.min.js?1598022047"></script>
-    <script src="/docs/hub/truecommand/tc-api/js/perfect-scrollbar.min.js?1598022047"></script>
-    <script src="/docs/hub/truecommand/tc-api/js/perfect-scrollbar.jquery.min.js?1598022047"></script>
-    <script src="/docs/hub/truecommand/tc-api/js/jquery.sticky.js?1598022047"></script>
-    <script src="/docs/hub/truecommand/tc-api/js/featherlight.min.js?1598022047"></script>
-    <script src="/docs/hub/truecommand/tc-api/js/html5shiv-printshiv.min.js?1598022047"></script>
-    <script src="/docs/hub/truecommand/tc-api/js/highlight.pack.js?1598022047"></script>
+    <script src="/docs/hub/truecommand/tc-api/js/clipboard.min.js?1598023814"></script>
+    <script src="/docs/hub/truecommand/tc-api/js/perfect-scrollbar.min.js?1598023814"></script>
+    <script src="/docs/hub/truecommand/tc-api/js/perfect-scrollbar.jquery.min.js?1598023814"></script>
+    <script src="/docs/hub/truecommand/tc-api/js/jquery.sticky.js?1598023814"></script>
+    <script src="/docs/hub/truecommand/tc-api/js/featherlight.min.js?1598023814"></script>
+    <script src="/docs/hub/truecommand/tc-api/js/html5shiv-printshiv.min.js?1598023814"></script>
+    <script src="/docs/hub/truecommand/tc-api/js/highlight.pack.js?1598023814"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/docs/hub/truecommand/tc-api/js/modernizr.custom.71422.js?1598022047"></script>
-    <script src="/docs/hub/truecommand/tc-api/js/learn.js?1598022047"></script>
-    <script src="/docs/hub/truecommand/tc-api/js/hugo-learn.js?1598022047"></script>
+    <script src="/docs/hub/truecommand/tc-api/js/modernizr.custom.71422.js?1598023814"></script>
+    <script src="/docs/hub/truecommand/tc-api/js/learn.js?1598023814"></script>
+    <script src="/docs/hub/truecommand/tc-api/js/hugo-learn.js?1598023814"></script>
 
-    <link href="/docs/hub/truecommand/tc-api/mermaid/mermaid.css?1598022047" type="text/css" rel="stylesheet" />
-    <script src="/docs/hub/truecommand/tc-api/mermaid/mermaid.js?1598022047"></script>
+    <link href="/docs/hub/truecommand/tc-api/mermaid/mermaid.css?1598023814" type="text/css" rel="stylesheet" />
+    <script src="/docs/hub/truecommand/tc-api/mermaid/mermaid.js?1598023814"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
