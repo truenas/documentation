@@ -2,13 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on TrueCommand Documentation</title>
-    <link>https://www.truenas.com/hub/truecommand/tc-api/categories/</link>
+    <link>https://www.truenas.com/docs/hub/truecommand/tc-api/categories/</link>
     <description>Recent content in Categories on TrueCommand Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>3-Clause BSD License</copyright>
     
-	<atom:link href="https://www.truenas.com/hub/truecommand/tc-api/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.truenas.com/docs/hub/truecommand/tc-api/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

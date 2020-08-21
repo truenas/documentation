@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>uilogs on TrueCommand Documentation</title>
-    <link>https://www.truenas.com/hub/truecommand/tc-api/api/uilogs/</link>
+    <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/uilogs/</link>
     <description>Recent content in uilogs on TrueCommand Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>3-Clause BSD License</copyright>
     
-	<atom:link href="https://www.truenas.com/hub/truecommand/tc-api/api/uilogs/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.truenas.com/docs/hub/truecommand/tc-api/api/uilogs/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>uilogs/add</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/uilogs/add/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/uilogs/add/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/uilogs/add/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/uilogs/add/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     uilogs add no no no 1    Description Create a new log entry
 Input Arguments  Required Inputs:  &amp;ldquo;log_entry&amp;rdquo; : (JSON object) The data to be saved in the log entry.    Request Example Arguments ARGUMENTS ONLY: See the basics  of API requests for additional formatting information.</description>
     </item>
     
     <item>
       <title>uilogs/clear</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/uilogs/clear/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/uilogs/clear/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/uilogs/clear/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/uilogs/clear/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     uilogs clear no no no 1    Description Remove all UI log records from the database.
 Input Arguments  Required Arguments: none ({})  Reply Example { &amp;quot;result&amp;quot; : &amp;quot;success&amp;quot;, &amp;quot;total_removed&amp;quot; : 12 } Events This API call does not generate events.
 Log Summary This API call does not generate a detailed log summary item.</description>
@@ -34,10 +34,10 @@ Log Summary This API call does not generate a detailed log summary item.</descri
     
     <item>
       <title>uilogs/list</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/uilogs/list/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/uilogs/list/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/uilogs/list/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/uilogs/list/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     uilogs list no no no 1    Description Requests a list of all UI log entries.
 Input Arguments  Required Arguments: none ({})  Reply Example { &amp;quot;result&amp;quot; : &amp;quot;success&amp;quot;, &amp;quot;entries&amp;quot; : [ { &amp;quot;log_id&amp;quot; : &amp;quot;f7d4c622-f432-4431-9506-4cbf68b0082d&amp;quot;, &amp;quot;time_t&amp;quot; : 1554996212, &amp;quot;log_entry&amp;quot;: { &amp;quot;error_info&amp;quot;: &amp;quot;A problem occurred...&amp;quot; } }, { &amp;quot;log_id&amp;quot; : &amp;quot;6043af9c-fdbd-42c7-a820-ab4a5568e092&amp;quot;, &amp;quot;time_t&amp;quot; : 1554996673, &amp;quot;log_entry&amp;quot;: { &amp;quot;dashboard&amp;quot;: &amp;quot;Failed to load.</description>
     </item>

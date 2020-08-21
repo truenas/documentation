@@ -2,51 +2,51 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Home on TrueCommand Documentation</title>
-    <link>https://www.truenas.com/hub/truecommand/tc-api/</link>
+    <link>https://www.truenas.com/docs/hub/truecommand/tc-api/</link>
     <description>Recent content in Home on TrueCommand Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>3-Clause BSD License</copyright>
     
-	<atom:link href="https://www.truenas.com/hub/truecommand/tc-api/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.truenas.com/docs/hub/truecommand/tc-api/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Basic Formatting</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/basics/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/basics/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/basics/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/basics/</guid>
       <description>There are 4 basic pieces of an API request:
  Namespace: Top-level subsystem to access Name: Lower-level subsystem to access ID: (Websocket only) Used for correlating a request with a reply (Websocket connections are asynchronous - replies may come back in a different order than they were requested) Arguments: JSON Object containing additional information for the request/reply  HTTP Connections  Default port number: 5183 (http) or 5185 (https) Simple access URL: [system_IP]/api (will automatically use the proper port) Supported Verbs: &amp;ldquo;PUT&amp;rdquo;, &amp;ldquo;POST&amp;rdquo;, &amp;ldquo;GET&amp;rdquo;, &amp;ldquo;HEAD&amp;rdquo;, and &amp;ldquo;OPTIONS&amp;rdquo;  Standard Syntax Example:</description>
     </item>
     
     <item>
       <title>Event Formatting</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/events/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/events/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/events/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/events/</guid>
       <description>Event Messages For websocket connections, spontaneous events will be periodically sent to clients which announce changes which happen within the middleware itself. These events will always have the following form:
 { &amp;quot;namespace&amp;quot; : &amp;quot;event&amp;quot;, &amp;quot;name&amp;quot; : &amp;quot;api_class_or_subsystem&amp;quot;, &amp;quot;id&amp;quot; : &amp;quot;&amp;quot;, &amp;quot;args&amp;quot; : {} } Where the contents of the arguments object is determined by the type of event (the &amp;ldquo;name&amp;rdquo; field). See the documentation on the individual API calls for details on the events that each call may generate or be impacted by.</description>
     </item>
     
     <item>
       <title>Time Formatting</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/timecodes/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/timecodes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/timecodes/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/timecodes/</guid>
       <description>Input Time Codes  Typical name for arguments that use this format: &amp;ldquo;time_start&amp;rdquo;, &amp;ldquo;time_end&amp;rdquo;  Some API calls may take relative time codes as inputs. The format for these types of time codes are &amp;quot;[number][unit]&amp;quot;, with the following units that are supported:
  &amp;ldquo;m&amp;rdquo; : Minutes &amp;ldquo;h&amp;rdquo; : Hours &amp;ldquo;d&amp;rdquo; : Days &amp;ldquo;M&amp;rdquo; : Months &amp;ldquo;y&amp;rdquo; : Years  A timecode can also be supplied in the time_t (unix time code) format by not placing any units on the end of the input field.</description>
     </item>
     
     <item>
       <title>LDAP</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/ldap/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/ldap/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/ldap/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/ldap/</guid>
       <description>TrueCommand provides the ability to use an external LDAP authentication server for managing user logins permissions.
 LDAP Settings Object Each LDAP server definition can use provide several options to ensure
  &amp;ldquo;server&amp;rdquo; (string, Required) : IP or DNS name of the LDAP server &amp;ldquo;require_tls&amp;rdquo; (boolean, default: true) : Require a fully-verified TLS connection to the LDAP server before submitting user details. If false, this will attempt and use a TLS connection if one is available, but failover to trying a non-TLS connection as needed.</description>
@@ -54,20 +54,20 @@ LDAP Settings Object Each LDAP server definition can use provide several options
     
     <item>
       <title>Reporting Formats</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/reporting/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/reporting/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/reporting/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/reporting/</guid>
       <description>The reports objects used by all of the &amp;ldquo;reports/*&amp;rdquo; API calls include a generic &amp;ldquo;widgets&amp;rdquo; object which defines all the various appearance-related options and charting selections for a report. This document details all the various formatting options for that widgets object which are supported by the TrueCommand middleware. Everything outside the scope of this format is simply ignored by the middleware.
 The &amp;ldquo;widgets&amp;rdquo; object and item placement The top-level of the &amp;ldquo;widgets&amp;rdquo; object contains the information necessary for creating the layout of the items on the screen.</description>
     </item>
     
     <item>
       <title>cluster/db_backup</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/cluster/db_backup/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/cluster/db_backup/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/cluster/db_backup/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/cluster/db_backup/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     cluster db_backup No Yes No 1.1    Description This API call will return a list of all the NAS database backups that are stored on TrueCommand.
 WARNING:
  This can only be performed for systems that the user has write access to. All other systems will be ignored. NAS backup functionality requires a valid, non-expired license from iXsystems.</description>
@@ -75,10 +75,10 @@ WARNING:
     
     <item>
       <title>cluster/db_delete</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/cluster/db_delete/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/cluster/db_delete/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/cluster/db_delete/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/cluster/db_delete/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     cluster db_delete No Yes No 1.1    Description This API call will return a list of all the NAS database backups that are stored on TrueCommand.
 WARNING:
  This can only be performed for systems that the user has write access to. All other systems will be ignored.  Input Arguments  Required:  &amp;ldquo;db_id&amp;rdquo; (string or JSON array of strings) : ID of the database backup(s) that should be deleted.</description>
@@ -86,10 +86,10 @@ WARNING:
     
     <item>
       <title>cluster/db_list</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/cluster/db_list/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/cluster/db_list/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/cluster/db_list/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/cluster/db_list/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     cluster db_list No No No 1.1    Description This API call will return a list of all the NAS database backups that are stored on TrueCommand.
 WARNING:
  This can only be performed for systems that the user has write access to. All other systems will be ignored.  Input Arguments  Required:  none ({})   Optional:  &amp;ldquo;tvid&amp;rdquo; (string or JSON array of strings) : Only return backups of these system(s).</description>
@@ -97,10 +97,10 @@ WARNING:
     
     <item>
       <title>cluster/db_restore</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/cluster/db_restore/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/cluster/db_restore/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/cluster/db_restore/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/cluster/db_restore/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     cluster db_restore No Yes No 1.1    Description Restore a saved configuration database to a specific system or group of systems.
 WARNING:
  This can only be performed for systems that the user has write access to. All other systems will be ignored.  Input Arguments  Required:  &amp;ldquo;db_id&amp;rdquo; (string) : ID of the configuration backup that you wish to restore.</description>
@@ -108,97 +108,97 @@ WARNING:
     
     <item>
       <title>current_stats</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/data/current_stats/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/data/current_stats/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/data/current_stats/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/data/current_stats/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     data current_stats no no yes 1    Description This will return the latest data for the designated systems (or all systems user has read permission for if particular systems are not specified). The data object for each system is identical to the format used by the data/retrieve  API call, but only contains the most recent data point.</description>
     </item>
     
     <item>
       <title>external/submit_alerts</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/external/submit_alerts/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/external/submit_alerts/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/external/submit_alerts/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/external/submit_alerts/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     external submit_alerts N/A N/A yes 1.1    Description API hook for external systems to submit alert notices to TrueCommand. This requires that the external system use a valid system auth token to submit the API call over HTTP.
 Note: This works for both &amp;ldquo;external&amp;rdquo; types of systems as well as FreeNAS/TrueNAS systems.</description>
     </item>
     
     <item>
       <title>external/submit_stats</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/external/submit_stats/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/external/submit_stats/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/external/submit_stats/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/external/submit_stats/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     external submit_stats N/A N/A yes 1.1    Description API hook for external systems to submit statistics to TrueCommand. This requires that the external system use a valid system auth token to submit the API call over HTTP.
 Note: This works for both &amp;ldquo;external&amp;rdquo; types of systems as well as FreeNAS/TrueNAS systems. It just needs a valid auth token which associates the API request with a currently-registered system.</description>
     </item>
     
     <item>
       <title>reports/add</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/reports/add/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/reports/add/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/reports/add/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/reports/add/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     reports add No No Yes 1.1    Description Create a new report. The user who creates the report is always included in the &amp;ldquo;owners&amp;rdquo; list for the report, and is granted full edit/delete permissions for the report in the future. In addition, the owner of a report is able to share the report with other users/teams on a read-only basis, or grant ownership of a report to other users for edit capabilities as well.</description>
     </item>
     
     <item>
       <title>reports/edit</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/reports/edit/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/reports/edit/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/reports/edit/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/reports/edit/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     reports edit No Yes Yes 1.1    Description Modify an existing report. Any user included in the &amp;ldquo;owners&amp;rdquo; list has permission to modify a report, including granting edit access to other users.
 TrueCommand Administrators have permission to edit all reports, even if they are not explicitly included in the &amp;ldquo;owners&amp;rdquo; list.</description>
     </item>
     
     <item>
       <title>reports/generate</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/reports/generate/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/reports/generate/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/reports/generate/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/reports/generate/</guid>
       <description>Namespace Name Admin Only Log Summary Has Event Version Added     reports generate No No No 1.1    Description This will take a designated report object with a time range and system list and return a complete report structure with all data associated with the systems pre-populated and formatted for display in the UI.This will return JSON data structures formatted for use with the &amp;ldquo;chart.</description>
     </item>
     
     <item>
       <title>reports/list</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/reports/list/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/reports/list/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/reports/list/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/reports/list/</guid>
       <description>Namespace Name Admin Only Log Summary Has Event Version Added     reports list No No Yes 1.1    Description This will list all the reports where the current user is tagged as an &amp;ldquo;owner&amp;rdquo; of the repo, or any reports that are shared with the current user. For specific details about the formatting of the report &amp;ldquo;widgets&amp;rdquo; object, please view the
 Input Arguments  Required:  none ({})   Optional:  none ({})    Request Example Arguments ARGUMENTS ONLY: See the basics  of API requests for additional formatting information.</description>
     </item>
     
     <item>
       <title>reports/list_templates</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/reports/list_templates/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/reports/list_templates/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/reports/list_templates/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/reports/list_templates/</guid>
       <description>Namespace Name Admin Only Log Summary Has Event Version Added     reports list_templates No No Yes 1.1    Description This will return all the known report item template objects by the current version of TrueCommand. These can be inserted into the &amp;ldquo;widgets&amp;rdquo; object within a report into order to enable that type of item in the report.
 For details about the &amp;ldquo;widgets&amp;rdquo; object formatting, please look at the Reporting section for details.</description>
     </item>
     
     <item>
       <title>reports/remove</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/reports/remove/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/reports/remove/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/reports/remove/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/reports/remove/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     reports remove No Yes reports/list 1.1    Description Remove a custom report. You must be listed as either an &amp;ldquo;owner&amp;rdquo; on the report or a TrueCommand administrator otherwise this action will return a &amp;ldquo;FORBIDDEN&amp;rdquo; error code.
 Input Arguments  Required:  &amp;ldquo;roid&amp;rdquo; (string or array of strings) : Report Object ID (roid) corresponding to the report(s) that need to be removed.</description>
     </item>
     
     <item>
       <title>ssl/ca_import</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/ssl/ca_import/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/ssl/ca_import/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/ssl/ca_import/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/ssl/ca_import/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     ssl ca_import yes no no 1    Description Import a custom certificate authority (CA) certificate which will be accepted for all NAS connections.
 If the &amp;ldquo;name&amp;rdquo; matches an already existing custom CA, then that CA file will be overwritten with the new contents.
 Input Arguments  Required:  &amp;ldquo;name&amp;rdquo; : (string) internal name for the CA certificate &amp;ldquo;pem&amp;rdquo; : (string) Certificate contents (must be in PEM format)   Optional:  &amp;ldquo;pem_as_base64&amp;rdquo; : (boolean) The &amp;ldquo;pem&amp;rdquo; string is provided in base64-encoded format (default: false).</description>
@@ -206,40 +206,40 @@ Input Arguments  Required:  &amp;ldquo;name&amp;rdquo; : (string) internal name 
     
     <item>
       <title>ssl/ca_list</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/ssl/ca_list/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/ssl/ca_list/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/ssl/ca_list/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/ssl/ca_list/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     ssl ca_list yes no no 1    Description List the internal names of all custom CA files that have been imported.
 Input Arguments  Required:  none ({})   Optional:  none ({})    Reply Example Arguments ARGUMENTS ONLY: See the basics  of API requests for additional formatting information.</description>
     </item>
     
     <item>
       <title>ssl/ca_remove</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/ssl/ca_remove/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/ssl/ca_remove/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/ssl/ca_remove/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/ssl/ca_remove/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     ssl ca_remove yes no no 1    Description Remove custom certificate authority file(s).
 Input Arguments  Required:  &amp;ldquo;ca_certs&amp;rdquo; : (string or JSON array of strings) Name of the certificate to remove.   Optional:  none ({})    Request Example Arguments ARGUMENTS ONLY: See the basics  of API requests for additional formatting information.</description>
     </item>
     
     <item>
       <title>ssl/cert_import</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/ssl/cert_import/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/ssl/cert_import/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/ssl/cert_import/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/ssl/cert_import/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     ssl cert_import yes no no 1    Description Import a custom SSL certificate to be used for the TrueCommand web interface.
 Input Arguments  Required:  &amp;ldquo;pem&amp;rdquo; : (string) Certificate contents (must be in PEM format) &amp;ldquo;key&amp;rdquo; : (string) Key contents (must be in RSA/PEM format without a passphrase).   Optional:  &amp;ldquo;pem_as_base64&amp;rdquo; : (boolean) The &amp;ldquo;pem&amp;rdquo; string is provided in base64-encoded format (default: false).</description>
     </item>
     
     <item>
       <title>ssl/cert_info</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/ssl/cert_info/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/ssl/cert_info/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/ssl/cert_info/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/ssl/cert_info/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     ssl cert_info yes no no 1    Description View information about the current TrueCommand SSL certificate
 Input Arguments  Required:  Optional:   Request Example Arguments ARGUMENTS ONLY: See the basics  of API requests for additional formatting information.
 &amp;quot;args&amp;quot; : {} Reply Example Arguments ARGUMENTS ONLY: See the basics  of API requests for additional formatting information.</description>
@@ -247,10 +247,10 @@ Input Arguments  Required:  Optional:   Request Example Arguments ARGUMENTS ONLY
     
     <item>
       <title>ssl/cert_reset</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/ssl/cert_reset/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/ssl/cert_reset/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/ssl/cert_reset/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/ssl/cert_reset/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     ssl cert_reset yes no no 1    Description Remove any custom SSL certificate for TrueCommand itself and replace it with the automatically-generated self-signed certificate.
 Note that this API call will return an error if there is currently no custom SSL certificate being used.
 Input Arguments  Required:  Optional:   Request Example Arguments ARGUMENTS ONLY: See the basics  of API requests for additional formatting information.</description>
@@ -258,30 +258,30 @@ Input Arguments  Required:  Optional:   Request Example Arguments ARGUMENTS ONLY
     
     <item>
       <title>sys/list_config</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/sys/list_config/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/sys/list_config/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/sys/list_config/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/sys/list_config/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     sys list_config yes no no 1    Description View the current system configuration settings. See the sys/set_config  API for all the possible settings.
 Input Arguments  Required:  none ({})   Optional:  none ({})    Reply Example Arguments ARGUMENTS ONLY: See the basics  of API requests for additional formatting information.</description>
     </item>
     
     <item>
       <title>sys/reboot</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/sys/reboot/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/sys/reboot/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/sys/reboot/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/sys/reboot/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added Version Removed     sys reboot yes no yes 1 1.2    Description API Call Obsolete : Removed in version 1.2
 Schedule a system reboot for the TrueCommand appliance. There is a 5 minute delay by default in order to allow other logged-in users enough time to finish up whatever they are doing before the system goes down.</description>
     </item>
     
     <item>
       <title>sys/reboot_stop</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/sys/reboot_stop/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/sys/reboot_stop/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/sys/reboot_stop/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/sys/reboot_stop/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added Version Removed     sys reboot_stop Yes no Yes 1.1 1.2    Description API Call Obsolete : Removed in version 1.2
 Cancel any pending reboot or shudown procedure. Requires administrator permissions.
 Input Arguments  Required:  none ({})   Optional:  none ({})    Reply Example Arguments ARGUMENTS ONLY: See the basics  of API requests for additional formatting information.</description>
@@ -289,10 +289,10 @@ Input Arguments  Required:  none ({})   Optional:  none ({})    Reply Example Ar
     
     <item>
       <title>sys/reboot_time</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/sys/reboot_time/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/sys/reboot_time/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/sys/reboot_time/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/sys/reboot_time/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added Version Removed     sys reboot_time no no no 1 1.2    Description API Call Obsolete : Removed in version 1.2
 See if there is a scheduled reboot of the TrueCommand system, and the time remaining before the system reboot occurs.
 Input Arguments  Required:  none ({})   Optional:  none ({})    Reply Example Arguments ARGUMENTS ONLY: See the basics  of API requests for additional formatting information.</description>
@@ -300,40 +300,40 @@ Input Arguments  Required:  none ({})   Optional:  none ({})    Reply Example Ar
     
     <item>
       <title>sys/set_config</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/sys/set_config/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/sys/set_config/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/sys/set_config/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/sys/set_config/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     sys set_config yes no no 1    Description Change various system-configuration options for TrueCommand.
 Input Arguments  Required:  At least one of the optional arguments   Optional:  &amp;ldquo;server_polling_seconds&amp;rdquo; : (integer) Number of seconds between data collection probes for a NAS (minimum 10)  [WARNING] Changing this value will automatically trigger a close/restart of the NAS connection.</description>
     </item>
     
     <item>
       <title>sys/update_check</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/sys/update_check/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/sys/update_check/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/sys/update_check/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/sys/update_check/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added Version Removed     sys update_check yes no no 1 1.2    Description This API has been removed and is no longer available on version 1.2 and later
 Have TrueCommand perform a check for whether system updates are available. This is a manual probe to start the update check only. TrueCommand automatically checks for system updates every 24 hours or whenever the middleware is restarted otherwise.</description>
     </item>
     
     <item>
       <title>sys/update_now</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/sys/update_now/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/sys/update_now/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/sys/update_now/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/sys/update_now/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added Version Removed     sys update_now yes no yes 1 1.2    Description This API has been removed and is no longer available on version 1.2 and later
 Perform TrueCommand system updates and reboot the system. Note that for offline updates, this process generally takes less than 10 seconds before the system will reboot to finish the update.</description>
     </item>
     
     <item>
       <title>sys/update_status</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/sys/update_status/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/sys/update_status/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/sys/update_status/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/sys/update_status/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added Version Removed     sys update_status no no no 1 1.2    Description This API has been removed and is no longer available on version 1.2 and later
 View the log file for the current update procedure, and report whether the system is waiting to reboot to finish performing updates.
 Input Arguments  Required:  none ({})   Optional:  none ({})    Reply Example Arguments ARGUMENTS ONLY: See the basics  of API requests for additional formatting information.</description>
@@ -341,10 +341,10 @@ Input Arguments  Required:  none ({})   Optional:  none ({})    Reply Example Ar
     
     <item>
       <title>sys/updates_available</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/sys/updates_available/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/sys/updates_available/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/sys/updates_available/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/sys/updates_available/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added Version Removed     sys updates_available no no no 1 1.2    Description This API has been removed and is no longer available on version 1.2 and later
 Check for available updates to the TrueCommand appliance.
  NOTE This requires the ability to connect to the iXsystems update server. Offline update files may be provided using the sys/update_now  API call.</description>
@@ -352,217 +352,217 @@ Check for available updates to the TrueCommand appliance.
     
     <item>
       <title>sys/upload_file</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/sys/upload_file/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/sys/upload_file/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/sys/upload_file/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/sys/upload_file/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     sys upload_file yes no no 1    Description Request a temporary authentication token for uploading a file to the TrueCommand system. Access credentials are only valid for 10 minutes after the request, and can be used to send a POST request to the &amp;ldquo;[TrueCommand system IP]/upload&amp;rdquo; URL to upload the file. Files that are uploaded are temporary.</description>
     </item>
     
     <item>
       <title>rpc/auth</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/rpc/auth/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/rpc/auth/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/rpc/auth/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/rpc/auth/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event     rpc auth N/A N/A N/A    Description Login to TrueCommand with a username and password. This needs to be performed within a few seconds of establishing the websocket connection, otherwise the server will close down the connection.
 Input Arguments  Required:  &amp;ldquo;username&amp;rdquo; (string) : Name of the user to login &amp;ldquo;password&amp;rdquo; (string) : Password associated with the specified user   Optional:  none ({})    Request Example Arguments { &amp;quot;namespace&amp;quot; : &amp;quot;rpc&amp;quot;, &amp;quot;name&amp;quot; : &amp;quot;auth&amp;quot;, &amp;quot;id&amp;quot; : &amp;quot;some_id&amp;quot;, &amp;quot;args&amp;quot; : { &amp;quot;username&amp;quot;:&amp;quot;myuser&amp;quot;, &amp;quot;password&amp;quot;:&amp;quot;mypassword&amp;quot; } } Reply Example { &amp;quot;namespace&amp;quot; : &amp;quot;response&amp;quot;, &amp;quot;name&amp;quot; : &amp;quot;auth&amp;quot;, &amp;quot;id&amp;quot; : &amp;quot;some_id&amp;quot;, &amp;quot;args&amp;quot; : { &amp;quot;args&amp;quot; : [&amp;quot;long_random_auth_token&amp;quot;, 900, &amp;quot;user_uuid&amp;quot;] } } The arguments returned are:</description>
     </item>
     
     <item>
       <title>rpc/auth_token</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/rpc/auth_token/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/rpc/auth_token/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/rpc/auth_token/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/rpc/auth_token/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event     rpc auth_token N/A N/A N/A    Description Login to TrueCommand with a previously-provided login token. This needs to be performed within a few seconds of establishing the websocket connection, otherwise the server will close down the connection. A successful login with an auth token will automatically invalidate that token and a new token will be returned for future use again.</description>
     </item>
     
     <item>
       <title>rpc/auth_clear</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/rpc/auth_clear/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/rpc/auth_clear/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/rpc/auth_clear/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/rpc/auth_clear/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event     rpc auth_clear N/A N/A N/A    Description Logout of an existing session. This will invalidate any existing auth tokens for the user session and close down the websocket connection.
 Input Arguments  Required:  none ({})   Optional:  none ({})    Request Example Arguments { &amp;quot;namespace&amp;quot; : &amp;quot;rpc&amp;quot;, &amp;quot;name&amp;quot; : &amp;quot;auth_clear&amp;quot;, &amp;quot;id&amp;quot; : &amp;quot;some_id&amp;quot;, &amp;quot;args&amp;quot; : {} } Reply Example There is no reply.</description>
     </item>
     
     <item>
       <title>rpc/query</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/rpc/query/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/rpc/query/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/rpc/query/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/rpc/query/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event     rpc query N/A N/A N/A    Description List all the available systems/subsystems that the user can interact with.
 Input Arguments  Required:  none ({})   Optional:  none ({})    Request Example Arguments { &amp;quot;namespace&amp;quot; : &amp;quot;rpc&amp;quot;, &amp;quot;name&amp;quot; : &amp;quot;query&amp;quot;, &amp;quot;id&amp;quot; : &amp;quot;some_id&amp;quot;, &amp;quot;args&amp;quot; : {} } Reply Example { &amp;quot;namespace&amp;quot; : &amp;quot;response&amp;quot;, &amp;quot;name&amp;quot; : &amp;quot;query&amp;quot;, &amp;quot;id&amp;quot; : &amp;quot;some_id&amp;quot;, &amp;quot;args&amp;quot; : { &amp;quot;rpc&amp;quot;: [&amp;quot;auth&amp;quot;,&amp;quot;auth_token&amp;quot;,&amp;quot;auth_clear&amp;quot;,&amp;quot;query&amp;quot;] } } Log Summary This API call does not generate a detailed log summary item</description>
     </item>
     
     <item>
       <title>users/add</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/users/add/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/users/add/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/users/add/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/users/add/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     users add yes yes yes 1    Description Add a new user account to TrueCommand (Administrator Access Only - others will get a 403/Forbidden error code)
 Input Arguments  Required:  &amp;ldquo;username&amp;rdquo; (string) &amp;ldquo;isAdministrator&amp;rdquo; (bool) Exactly one of the following options:  &amp;ldquo;password&amp;rdquo; (string) : Provide a local-system password for this user &amp;ldquo;ldap_servers&amp;rdquo; (JsonArray of objects) : Authenticate with an LDAP server.</description>
     </item>
     
     <item>
       <title>users/edit</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/users/edit/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/users/edit/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/users/edit/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/users/edit/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     users edit no yes yes 1    Description Modify an existing user account
 Note: Non-administrators only have access to change their own password only if LDAP authentication is not being used. Non-admins also have permission to change some of the extra_info fields. Administrator status and allowed servers/groups will not be touched.</description>
     </item>
     
     <item>
       <title>users/get_data</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/users/get_data/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/users/get_data/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/users/get_data/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/users/get_data/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     users get_data no no no 1    Description Fetch any data associated with the currently logged-in user. This is useful to save/restore a cache of user settings that might be needed by the Web UI for instance.
 Input Arguments  Required:  none ({})   Optional:  &amp;ldquo;key_path&amp;rdquo; : [Depricated in v2.</description>
     </item>
     
     <item>
       <title>email/deleteconfig</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/email/deleteconfig/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/email/deleteconfig/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/email/deleteconfig/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/email/deleteconfig/</guid>
       <description>   Namespace Name Admin Only Log Summary Generates Event Version Added     email deleteconfig yes yes yes 1 (Removed in 1.2)    Description Delete SSMTP Configuration
 Input Arguments  Required:  none ({})    Request Example Arguments { &amp;quot;namespace&amp;quot; : &amp;quot;email&amp;quot;, &amp;quot;name&amp;quot; : &amp;quot;deleteconfig&amp;quot;, &amp;quot;id&amp;quot; : &amp;quot;some_id&amp;quot;, &amp;quot;args&amp;quot; : { } } Reply Example { &amp;quot;namespace&amp;quot; : &amp;quot;email&amp;quot;, &amp;quot;name&amp;quot; : &amp;quot;response&amp;quot;, &amp;quot;id&amp;quot; : &amp;quot;some_id&amp;quot;, &amp;quot;args&amp;quot; : { &amp;quot;result&amp;quot; : &amp;quot;success&amp;quot; } } </description>
     </item>
     
     <item>
       <title>email/editconfig</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/email/editconfig/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/email/editconfig/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/email/editconfig/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/email/editconfig/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     email editconfig yes yes yes 1 (Removed in 1.2)    Description Configure SSMTP
 Input Arguments  Required:  &amp;ldquo;rootaddress&amp;rdquo; (String) &amp;ldquo;mailserver&amp;rdquo; (String) &amp;ldquo;port&amp;rdquo; (String) &amp;ldquo;security&amp;rdquo; (String) (&amp;ldquo;TLS&amp;rdquo; or &amp;ldquo;STARTTLS&amp;rdquo; or &amp;ldquo;TLS+STARTTLS&amp;rdquo;) &amp;ldquo;AuthUser&amp;rdquo; (String) &amp;ldquo;AuthPass&amp;rdquo; (String) &amp;ldquo;AuthMethod&amp;rdquo; (String)    Configuration of SSMTP { &amp;quot;namespace&amp;quot; : &amp;quot;email&amp;quot;, &amp;quot;name&amp;quot; : &amp;quot;writeconfig&amp;quot;, &amp;quot;id&amp;quot; : &amp;quot;some_id&amp;quot;, &amp;quot;args&amp;quot; : { &amp;quot;rootaddress&amp;quot; : &amp;quot;email@domain.</description>
     </item>
     
     <item>
       <title>email/send_test</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/email/send_test/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/email/send_test/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/email/send_test/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/email/send_test/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     email send_test Yes No No 1 (Removed in 1.2)    Description Send a test email to a designated address. This can be used for verifying that the system email configuration is setup properly and functional.
 Input Arguments  Required:  &amp;ldquo;to&amp;rdquo; (String) or (JsonArray) : Email address(es) to send the test email to.</description>
     </item>
     
     <item>
       <title>email/writeconfig</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/email/writeconfig/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/email/writeconfig/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/email/writeconfig/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/email/writeconfig/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     email writeconfig yes yes yes 1 (Removed in 1.2)    Description Write SSMTP Configuration
 Input Arguments  Required:  &amp;ldquo;rootaddress&amp;rdquo; (String) : This email address will appear in the &amp;ldquo;From&amp;rdquo; field of email alerts &amp;ldquo;mailserver&amp;rdquo; (String) : Address to contact for email submissions (Example: &amp;ldquo;smtp.gmail.com&amp;rdquo;) &amp;ldquo;port&amp;rdquo; (String) : Port number to use when contacting the mail server (Example: &amp;ldquo;587&amp;rdquo;); &amp;ldquo;security&amp;rdquo; (String) (&amp;ldquo;TLS&amp;rdquo; or &amp;ldquo;STARTTLS&amp;rdquo; or &amp;ldquo;TLS+STARTTLS&amp;rdquo;) &amp;ldquo;AuthUser&amp;rdquo; (String) : Username to use when connecting to the mailserver &amp;ldquo;AuthPass&amp;rdquo; (String) : Password to use when connecting to the mailserver &amp;ldquo;AuthMethod&amp;rdquo; (String) : Type of authentication to mailserver (&amp;ldquo;LOGIN&amp;rdquo; is standard username/password).</description>
     </item>
     
     <item>
       <title>users/insert_data_value</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/users/insert_data_value/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/users/insert_data_value/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/users/insert_data_value/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/users/insert_data_value/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added Version Removed     users insert_data_value no no no 1 2.0    Description Save any random data to be associated with the currently logged-in user. This is useful to save/restore a cache of user settings that might be needed by the Web UI for instance.
 This is different from the &amp;ldquo;set_data&amp;rdquo; API call in that the fields within the input arguments will be added to the current user data rather than replace it.</description>
     </item>
     
     <item>
       <title>users/insert_data</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/users/insert_data/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/users/insert_data/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/users/insert_data/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/users/insert_data/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added Version Removed     users insert_data no no no 1 2.0    Description Save any random data to be associated with the currently logged-in user. This is useful to save/restore a cache of user settings that might be needed by the Web UI for instance.
 This is different from the users/set_data  API call in that the fields within the input arguments will be added to the current user data rather than replace it.</description>
     </item>
     
     <item>
       <title>users/list_active</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/users/list_active/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/users/list_active/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/users/list_active/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/users/list_active/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     users list_active yes no no 1    Description List all currently-active user sessions (Administrator Access Only - others will get a 403/Forbidden error code) The output reply contains all users with active sessions, as well as the number of active sessions for each user
 Input Arguments  Required:  none ({})   Optional:  none ({})    Request Example Arguments ARGUMENTS ONLY: See the basics  of API requests for additional formatting information.</description>
     </item>
     
     <item>
       <title>users/list</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/users/list/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/users/list/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/users/list/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/users/list/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     users list no yes no 1    Description List user information. If currently logged-in with an administrator account, this will show all info about all users, otherwise only the basic info about the current user account will be returned
 Input Arguments  Required:  none ({})   Optional:  &amp;ldquo;users&amp;rdquo; (string or array of strings) : If the &amp;ldquo;users&amp;rdquo; argument is supplied by an administrator account, it will limit the return list of information to the users specified.</description>
     </item>
     
     <item>
       <title>users/remove</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/users/remove/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/users/remove/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/users/remove/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/users/remove/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     users remove yes yes yes 1    Description Removes a user account from TrueCommand (Administrator Access Only - others will get a 403/Forbidden error code)
 Input Arguments  Required:  &amp;ldquo;uuid&amp;rdquo; (string) : User ID of the account to remove   Optional:  none ({})    Request Example Arguments ARGUMENTS ONLY: See the basics  of API requests for additional formatting information.</description>
     </item>
     
     <item>
       <title>users</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/users/set_data/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/users/set_data/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/users/set_data/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/users/set_data/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     users set_data no no no 1    Description Save any random data to be associated with the currently logged-in user. This is useful to save/restore a cache of user settings that might be needed by the Web UI for instance.
 WARNING: This API call with overwrite the entire data object for the user with the given arguments.</description>
     </item>
     
     <item>
       <title>alertplugins/add</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/alertplugins/add/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/alertplugins/add/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/alertplugins/add/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/alertplugins/add/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     alertplugins add yes no yes 1.1    Description Create a new alert rule
 Input Arguments  Required Inputs:  &amp;ldquo;plugins&amp;rdquo; : (string or JsonArray of strings) Name of the plugin(s) to install.    Request Example Arguments ARGUMENTS ONLY: See the basics  of API requests for additional formatting information.</description>
     </item>
     
     <item>
       <title>alerts/add</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/alerts/add/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/alerts/add/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/alerts/add/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/alerts/add/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     alerts add no no yes 1    Description Create a new alert rule. The user making the request must either be an administrator, or be granted alert-creation permission via the user or team settings. The creator of an alert rule is also automatically tagged as the owner of the rule. This grants permission to edit/delete the rule even if the user is not an administrator.</description>
     </item>
     
     <item>
       <title>uilogs/add</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/uilogs/add/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/uilogs/add/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/uilogs/add/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/uilogs/add/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     uilogs add no no no 1    Description Create a new log entry
 Input Arguments  Required Inputs:  &amp;ldquo;log_entry&amp;rdquo; : (JSON object) The data to be saved in the log entry.    Request Example Arguments ARGUMENTS ONLY: See the basics  of API requests for additional formatting information.</description>
     </item>
     
     <item>
       <title>uilogs/clear</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/uilogs/clear/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/uilogs/clear/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/uilogs/clear/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/uilogs/clear/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     uilogs clear no no no 1    Description Remove all UI log records from the database.
 Input Arguments  Required Arguments: none ({})  Reply Example { &amp;quot;result&amp;quot; : &amp;quot;success&amp;quot;, &amp;quot;total_removed&amp;quot; : 12 } Events This API call does not generate events.
 Log Summary This API call does not generate a detailed log summary item.</description>
@@ -570,20 +570,20 @@ Log Summary This API call does not generate a detailed log summary item.</descri
     
     <item>
       <title>uilogs/list</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/uilogs/list/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/uilogs/list/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/uilogs/list/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/uilogs/list/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     uilogs list no no no 1    Description Requests a list of all UI log entries.
 Input Arguments  Required Arguments: none ({})  Reply Example { &amp;quot;result&amp;quot; : &amp;quot;success&amp;quot;, &amp;quot;entries&amp;quot; : [ { &amp;quot;log_id&amp;quot; : &amp;quot;f7d4c622-f432-4431-9506-4cbf68b0082d&amp;quot;, &amp;quot;time_t&amp;quot; : 1554996212, &amp;quot;log_entry&amp;quot;: { &amp;quot;error_info&amp;quot;: &amp;quot;A problem occurred...&amp;quot; } }, { &amp;quot;log_id&amp;quot; : &amp;quot;6043af9c-fdbd-42c7-a820-ab4a5568e092&amp;quot;, &amp;quot;time_t&amp;quot; : 1554996673, &amp;quot;log_entry&amp;quot;: { &amp;quot;dashboard&amp;quot;: &amp;quot;Failed to load.</description>
     </item>
     
     <item>
       <title>alerts/edit</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/alerts/edit/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/alerts/edit/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/alerts/edit/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/alerts/edit/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     alerts edit no no no 1    Description Modify a custom alert rule. The user making the request must either be an administrator, or be listed as the &amp;ldquo;owner&amp;rdquo; of the designated alert rule, otherwise the middleware will return a FORBIDDEN error code.
 Input Arguments   Required Inputs:
  &amp;ldquo;caid&amp;rdquo; : (string) ID of the custom alert At least one of the optional inputs listed below    Optional Inputs:</description>
@@ -591,20 +591,20 @@ Input Arguments   Required Inputs:
     
     <item>
       <title>alertplugins/check_updates</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/alertplugins/check_updates/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/alertplugins/check_updates/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/alertplugins/check_updates/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/alertplugins/check_updates/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     alertplugins check_updates no no no 1.1    Description Scan all the installed notification plugins and see if any updates are available. This returns an object of plugins where the remote version is newer than the locally-installed version.
 Input Arguments  Required Inputs: none ({}) Optional Inputs: none ({})  Request Example Arguments ARGUMENTS ONLY: See the basics  of API requests for additional formatting information.</description>
     </item>
     
     <item>
       <title>alertplugins/list</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/alertplugins/list/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/alertplugins/list/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/alertplugins/list/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/alertplugins/list/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     alertplugins list no no no 1.1    Description List all the alert provider plugins that are currently installed.
 Input Arguments  Required Inputs: none ({}) Optional Inputs: none ({})  Request Example Arguments ARGUMENTS ONLY: See the basics  of API requests for additional formatting information.
 {} Reply Example { &amp;quot;smtp-email&amp;quot;:{ &amp;quot;name&amp;quot;:&amp;quot;smtp-email&amp;quot;, &amp;quot;summary&amp;quot;:&amp;quot;Email alerts&amp;quot;, &amp;quot;description&amp;quot;:&amp;quot;Send email alerts via SMTP.</description>
@@ -612,10 +612,10 @@ Input Arguments  Required Inputs: none ({}) Optional Inputs: none ({})  Request 
     
     <item>
       <title>alertplugins/list</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/alertplugins/search/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/alertplugins/search/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/alertplugins/search/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/alertplugins/search/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     alertplugins search no no no 1.1    Description Search for plugins that are available to install
 Input Arguments  Required Inputs: none ({}) Optional Inputs: none ({})  Request Example Arguments ARGUMENTS ONLY: See the basics  of API requests for additional formatting information.
 {} Reply Example { &amp;quot;smtp-email&amp;quot;: { &amp;quot;name&amp;quot;:&amp;quot;smtp-email&amp;quot;, &amp;quot;summary&amp;quot;:&amp;quot;Email alerts&amp;quot;, &amp;quot;description&amp;quot;:&amp;quot;Send email alerts via SMTP.</description>
@@ -623,127 +623,127 @@ Input Arguments  Required Inputs: none ({}) Optional Inputs: none ({})  Request 
     
     <item>
       <title>alertplugins/test</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/alertplugins/test/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/alertplugins/test/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/alertplugins/test/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/alertplugins/test/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     alertplugins test no no no 1.1    Description This will send a test alert to the current user. An individual plugin can be specified or the test can be sent through all configured plugins for the current user.
 Input Arguments  Required Inputs:  None ({})   Optional Inputs:  &amp;ldquo;plugin&amp;rdquo; (string) : Name of a single plugin to test.</description>
     </item>
     
     <item>
       <title>alerts/list</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/alerts/list/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/alerts/list/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/alerts/list/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/alerts/list/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     alerts list no no no 1    Description List all the alert rules that are currently defined.
 Input Arguments  Required Inputs: none ({}) Optional Inputs:  &amp;ldquo;tvid&amp;rdquo; : (string or array of strings) Only show the alert rules that impact the designated system(s) &amp;ldquo;active_only&amp;rdquo; : (boolian - &amp;ldquo;false&amp;rdquo; by default) Only return alerts which are active.</description>
     </item>
     
     <item>
       <title>alertplugins/change_settings</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/alertplugins/change_settings/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/alertplugins/change_settings/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/alertplugins/change_settings/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/alertplugins/change_settings/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     alertplugins change_settings no no no 1.1    Description Modify the settings for alert plugins. Note that each plugin&amp;rsquo;s settings are managed independently of each other, but must be updated in bulk (all of the settings for a single plugin must be submitted at the same time, even of some of those settings are unchanged from previous).</description>
     </item>
     
     <item>
       <title>alertplugins/current_settings</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/alertplugins/current_settings/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/alertplugins/current_settings/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/alertplugins/current_settings/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/alertplugins/current_settings/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     alertplugins current_settings no no no 1.1    Description Return all the current settings for alert plugins for the current user. Any plugin settings with sensitive information (such as passwords or authentication tokens) will return &amp;ldquo;&amp;mdash;-&amp;rdquo; as the value for that sensitive information when the option is currently defined in the settings.</description>
     </item>
     
     <item>
       <title>alertplugins/remove</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/alertplugins/remove/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/alertplugins/remove/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/alertplugins/remove/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/alertplugins/remove/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     alertplugins remove yes no yes 1.1    Description Delete an existing alert rule
 Input Arguments  Required:  &amp;ldquo;plugins&amp;rdquo; : (string or Json Array of strings) Name of the plugin(s) to remove.   Optional:  none ({})    Request Example Arguments ARGUMENTS ONLY: See the basics  of API requests for additional formatting information.</description>
     </item>
     
     <item>
       <title>alertplugins/update</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/alertplugins/update/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/alertplugins/update/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/alertplugins/update/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/alertplugins/update/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     alertplugins update yes no yes 1.1    Description Update an existing alert notification plugin.
 Input Arguments  Required:  &amp;ldquo;plugins&amp;rdquo; : (string or Json Array of strings) Name of the plugin(s) to remove.   Optional:  none ({})    Request Example Arguments ARGUMENTS ONLY: See the basics  of API requests for additional formatting information.</description>
     </item>
     
     <item>
       <title>alerts/remove</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/alerts/remove/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/alerts/remove/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/alerts/remove/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/alerts/remove/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     alerts remove no no yes 1    Description Delete an existing alert rule. The user making the request must either be an administrator, or be listed as the &amp;ldquo;owner&amp;rdquo; of the designated alert rule, otherwise the middleware will return a FORBIDDEN error code.
 Input Arguments  Required:  &amp;ldquo;caid&amp;rdquo; : (string) ID of the custom alert to remove   Optional:  none ({})    Request Example Arguments ARGUMENTS ONLY: See the basics  of API requests for additional formatting information.</description>
     </item>
     
     <item>
       <title>data/list_fields</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/data/list_fields/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/data/list_fields/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/data/list_fields/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/data/list_fields/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     data list_fields no no no 1    Description List all the types of data which are available for particular server(s). The types of data are returned in a &amp;ldquo;path&amp;rdquo; format where the &amp;ldquo;%&amp;rdquo; symbol is used to separate field names. Example: the &amp;ldquo;cpu%num_cpus&amp;rdquo; path corresponds to the &amp;ldquo;cpu&amp;rdquo; object, and the value of the &amp;ldquo;num_cpus&amp;rdquo; field within that object.</description>
     </item>
     
     <item>
       <title>data/curve_fit</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/data/curve_fit/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/data/curve_fit/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/data/curve_fit/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/data/curve_fit/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     data curve_fit no no no 1    Description Calculate a line or point from real data, and perform interpolations or extrapolations as desired.
 Input Arguments  Required Arguments:  &amp;ldquo;x-data&amp;rdquo; (JsonArray of numbers) : X-axis coordinate points for real data (must be same length as &amp;ldquo;y-data&amp;rdquo; list). &amp;ldquo;y-data&amp;rdquo; (JsonArray of numbers) : Y-axis coordinate points for real data (must be same length as &amp;ldquo;x-data&amp;rdquo; list).</description>
     </item>
     
     <item>
       <title>data/retrieve</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/data/retrieve/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/data/retrieve/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/data/retrieve/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/data/retrieve/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     data retrieve no no yes 1    Description Retrieve data from specified servers/fields
 Input Arguments  Required Arguments:  &amp;ldquo;tvid&amp;rdquo; (string or JsonArray of strings) &amp;ldquo;time_start&amp;rdquo; (string)   Optional Arguments:  &amp;ldquo;time_end&amp;rdquo; (string - if not supplied it defaults to the current time) &amp;ldquo;raw_objects&amp;rdquo; (bool) : Show raw system information rather than the compressed system summary (false by default) &amp;ldquo;data_list&amp;rdquo; (string, JsonArray of strings, or null)  Path(s) to the data from the stats tree that you would like returned (using the &amp;ldquo;%&amp;quot;-delimiter for object names).</description>
     </item>
     
     <item>
       <title>freenas/available_methods</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/freenas/available_methods/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/freenas/available_methods/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/freenas/available_methods/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/freenas/available_methods/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     freenas available_methods N/A N/A N/A 1    Description Returns a list of all the supported FreeNAS API methods which can be used for the &amp;ldquo;freenas/send_method&amp;rdquo; API call. This will return all the known/supported methods as well as the permission level required in order to use it.
 Input Arguments  Required:  none ({})   Optional:  none ({})    Request Example Arguments ARGUMENTS ONLY: See the basics  of API requests for additional formatting information.</description>
     </item>
     
     <item>
       <title>freenas/send_method</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/freenas/send_method/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/freenas/send_method/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/freenas/send_method/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/freenas/send_method/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     freenas send_method N/A N/A N/A 1    Description This is only available for Websocket connections Call a designated FreeNAS method API.
 Input Arguments  Required Arguments:  &amp;ldquo;tvid&amp;rdquo; : (string or array of strings) ID of the system(s) to send the API request to &amp;ldquo;method&amp;rdquo; : (string) API method to call (example: &amp;ldquo;disk.</description>
     </item>
     
     <item>
       <title>license/check</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/license/check/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/license/check/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/license/check/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/license/check/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     license check no no yes 1    Description Check whether the current license is expired or already reached.
 Input Arguments  Required:  none ({})   Optional:  none ({})    Request Example Arguments ARGUMENTS ONLY: See the basics  of API requests for additional formatting information.
 {} Reply Example { &amp;quot;disks_over_limit&amp;quot; : false, &amp;quot;license_expired&amp;quot; : false } Events Any licensing changes will generate a &amp;ldquo;license/check&amp;rdquo; event which will be sent out to all connected users.</description>
@@ -751,10 +751,10 @@ Input Arguments  Required:  none ({})   Optional:  none ({})    Request Example 
     
     <item>
       <title>license/info</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/license/info/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/license/info/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/license/info/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/license/info/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     license info yes no no 1    Description Return the information contained within the current license
 Input Arguments  Required:  none ({})   Optional:  none ({})    NOTE: The full license info will probably be more expansive than the example here (vendor/licensee info, etc).
 Request Example Arguments ARGUMENTS ONLY: See the basics  of API requests for additional formatting information.</description>
@@ -762,30 +762,30 @@ Request Example Arguments ARGUMENTS ONLY: See the basics  of API requests for ad
     
     <item>
       <title>license/register</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/license/register/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/license/register/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/license/register/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/license/register/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     license register yes no yes 1    Description Register a new license with TrueCommand (administrator only)
 Input Arguments  Required:    &amp;ldquo;license_file_contents&amp;rdquo; : (string) Contents of the license file encapsulated as a string (file contents should already be base64-encoded can just just be read/passed through as text)      Request Example Arguments ARGUMENTS ONLY: See the basics  of API requests for additional formatting information.</description>
     </item>
     
     <item>
       <title>logs/search</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/logs/search/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/logs/search/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/logs/search/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/logs/search/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     logs search no no no 1    Description Search through the logs and return results
 Input Arguments  Required Arguments: none ({}) Optional Arguments:  &amp;ldquo;time_end&amp;rdquo; (string - if not supplied it defaults to the current time) &amp;ldquo;time_start&amp;rdquo; (string - if not supplied it defaults to one month prior to the end time) &amp;ldquo;user_id&amp;rdquo; (string - only return log entries associated with this user) &amp;ldquo;api_header&amp;rdquo; (string - only return log entries associed with a particular API call: such as &amp;ldquo;users/add&amp;rdquo; or &amp;ldquo;servers/edit&amp;rdquo;)    For information about the time formats, please look at the Input Time Codes section for details.</description>
     </item>
     
     <item>
       <title>notices/add_comment</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/notices/add_comment/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/notices/add_comment/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/notices/add_comment/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/notices/add_comment/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     notices add_comment no no yes 1    Description Add a comment to an alert notice. This can be done for any notice, even ones that have been marked as resolved.
 Input Arguments   Required inputs:
  &amp;ldquo;aid&amp;rdquo; : (string) ID for the alert notice to comment on &amp;ldquo;comment&amp;rdquo; : (string) Text to add as a comment    Optional:</description>
@@ -793,20 +793,20 @@ Input Arguments   Required inputs:
     
     <item>
       <title>notices/create_fake</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/notices/create_fake/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/notices/create_fake/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/notices/create_fake/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/notices/create_fake/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     notices create_fake yes no no 1    Description This is a way to automatically create a &amp;ldquo;fake&amp;rdquo; alert notice for testing.
 Input Arguments  Required Arguments:  &amp;ldquo;tvid&amp;rdquo; : (string) ID of the system which &amp;ldquo;triggered&amp;rdquo; the fake alert &amp;ldquo;caid&amp;rdquo; : (string) ID of the alert rule that will be used as the trigger for the notice.</description>
     </item>
     
     <item>
       <title>notices/delete_comment</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/notices/delete_comment/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/notices/delete_comment/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/notices/delete_comment/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/notices/delete_comment/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     notices delete yes no yes 1    Description Delete a comment from an alert notice. This can be done for any notice, even ones that have been marked as resolved.
 Administrator Access Only : This change is permanent and cannot be undone.
 Input Arguments  Required inputs:  &amp;ldquo;aid&amp;rdquo; : (string) ID for the alert notice to comment on &amp;ldquo;comment&amp;rdquo; : (JSON array of strings) Each item in the array should contain the preamble to the comment which needs to be deleted.</description>
@@ -814,69 +814,69 @@ Input Arguments  Required inputs:  &amp;ldquo;aid&amp;rdquo; : (string) ID for t
     
     <item>
       <title>notices/delete</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/notices/delete/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/notices/delete/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/notices/delete/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/notices/delete/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     notices delete yes yes yes 1    Description Delete an alert notice in its entirety. There is no way to recover an alert notice that has been deleted, so this should be handled with extreme care. Administrator Access Only
 Input Arguments  Required Arguments:  &amp;ldquo;aid&amp;rdquo; : (string or JSON array of strings) Notice ID(s) to delete.</description>
     </item>
     
     <item>
       <title>notices/list</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/notices/list/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/notices/list/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/notices/list/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/notices/list/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     notices list no no no 1    Description List alert notices for systems that the user can view:
 Input Arguments  Required inputs: none ({}) Optional inputs:  &amp;ldquo;tvid&amp;rdquo; : (string or array of strings) Restrict the search to notices about the specified systems. Default value is to search for notices from all systems the current user can view (read access).</description>
     </item>
     
     <item>
       <title>notices/set_resolved</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/notices/set_resolved/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/notices/set_resolved/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/notices/set_resolved/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/notices/set_resolved/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     notices set_resolved no no yes 1    Description Mark an alert notice as resolved, and optionally add a comment about why.
 Input Arguments  Required inputs:  &amp;ldquo;aid&amp;rdquo; : (string or JSON Array of strings) ID(s) for the alert notice to resolve   Optional inputs:  &amp;ldquo;comment&amp;rdquo; : (string) Text to add as a comment about why the alert was resolved    Request Example Arguments ARGUMENTS ONLY: See the basics  of API requests for additional formatting information.</description>
     </item>
     
     <item>
       <title>servers/add</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/servers/add/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/servers/add/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/servers/add/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/servers/add/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     server add yes yes yes 1    Description Add a new FreeNAS/TrueNAS server to the TrueCommand administration framework.
 Input Arguments  Required Arguments:  &amp;ldquo;ip&amp;rdquo; (string) : DNS name or IP address of the system on the network. &amp;ldquo;login_user&amp;rdquo; (string) : Name of the user to login to the system  NOTE: Not needed/used if the &amp;ldquo;is_external&amp;rdquo; flag is enabled   &amp;ldquo;login_password&amp;rdquo; (string) : Password for the user to login to the system  NOTE: Not needed/used if the &amp;ldquo;is_external&amp;rdquo; flag is enabled     Optional Arguments:  &amp;ldquo;nickname&amp;rdquo; (string) : User-visible name for this system  NOTE: This field is required if the &amp;ldquo;is_external&amp;rdquo; flag is enabled   &amp;ldquo;groups&amp;rdquo; (JsonArray of strings) &amp;ldquo;tags&amp;rdquo; (JsonArray) : Search tags, Format - [&amp;ldquo;tag_1&amp;rdquo;, &amp;ldquo;tag_2&amp;rdquo;] &amp;ldquo;ignore_alerts&amp;rdquo; (string or JsonArray of strings) : Types of passthrough alerts to ignore from the NAS  Added in TrueCommand 1.</description>
     </item>
     
     <item>
       <title>servers/current_stats</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/servers/current_stats/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/servers/current_stats/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/servers/current_stats/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/servers/current_stats/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     servers current_stats no no yes 1    Description Ask for any information about the servers. NOTE: This will only return information about servers that the current user has read access to. By default this will return the information about all the servers the user is aware of, but the &amp;ldquo;tvid&amp;rdquo; input can be used to restrict the output information as needed.</description>
     </item>
     
     <item>
       <title>servers/direct_auth</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/servers/direct_auth/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/servers/direct_auth/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/servers/direct_auth/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/servers/direct_auth/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     servers direct_auth no no no 1    Description Request direct access to a server (requires user write permissions for server) This will return all the necessary information to directly connect to the server for advanced configuration
 NOTE: The authentication token returned is only temporary - any significant delay in using it to login to the server may result in the token becoming invalid.</description>
     </item>
     
     <item>
       <title>servers/reconnect</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/servers/reconnect/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/servers/reconnect/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/servers/reconnect/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/servers/reconnect/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     servers reconnect no no no 1.3    Description Trigger TrueCommand to attempt to restart the connection to designated NAS&amp;rsquo;s. This can be run for any NAS that the user has write-access to.
 Update status is reported via the servers/list  API output.
 Input Arguments  Required: &amp;ldquo;id&amp;rdquo; (string or JSON Array of strings) : System ID&amp;rsquo;s for which systems to queue up reconnections Optional:  none ({})    Request Example Arguments ARGUMENTS ONLY: See the basics  of API requests for additional formatting information.</description>
@@ -884,20 +884,20 @@ Input Arguments  Required: &amp;ldquo;id&amp;rdquo; (string or JSON Array of str
     
     <item>
       <title>servers/update</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/servers/update/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/servers/update/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/servers/update/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/servers/update/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     servers update no no no 1.1    Description Have a NAS start performing updates. The system will automatically reboot to finish the update procedures. These updates will only occur on the currently-selected update train. Switching update trains must be performed on the NAS itself.
 Update status is reported via the servers/list  API output.</description>
     </item>
     
     <item>
       <title>servers/edit</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/servers/edit/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/servers/edit/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/servers/edit/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/servers/edit/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     servers edit yes yes yes 1    Description Modify an existing server settings
 NOTE: Administrator access only - non-administrators will receive a 403/Forbidden error
 Input Arguments  Required Arguments: &amp;ldquo;id&amp;rdquo; (string) Optional Arguments (at least one):  &amp;ldquo;ip&amp;rdquo; (string) &amp;ldquo;login_user&amp;rdquo; (string) &amp;ldquo;login_password&amp;rdquo; (string) &amp;ldquo;nickname&amp;rdquo; (string) &amp;ldquo;groups&amp;rdquo; (JsonArray of strings) &amp;ldquo;tags&amp;rdquo; (JsonArray) : Search tags, Format - [&amp;ldquo;tag_1&amp;rdquo;, &amp;ldquo;tag_2&amp;rdquo;], &amp;ldquo;connection_paused&amp;rdquo; (boolean) : Pause the connection.</description>
@@ -905,19 +905,19 @@ Input Arguments  Required Arguments: &amp;ldquo;id&amp;rdquo; (string) Optional 
     
     <item>
       <title>servers/available</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/servers/available/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/servers/available/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/servers/available/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/servers/available/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added Version Removed     servers available yes no no 1.3     Description [Cloud-instance only] Display the list of NAS&amp;rsquo;s that are currently available within the wireguard network. This only displays the nicknames and internal wireguard IP&amp;rsquo;s of the systems as generated by the cloud-instance account portal. It does not verify the availability of the systems in any way.</description>
     </item>
     
     <item>
       <title>servers/find_available</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/servers/find_available/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/servers/find_available/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/servers/find_available/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/servers/find_available/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added Version Removed     servers find_available yes no no 1 1.2    Description This API call has been removed in version 1.2
 Ask for a list of all non-associcated servers on the local network which are discoverable via MDNS.
 NOTE: Administrator access only - all others will get a 403/Forbidden error
@@ -926,10 +926,10 @@ Input Arguments  Required:  none ({})   Optional:  none ({})    Request Example 
     
     <item>
       <title>servers/add_tokens</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/servers/add_tokens/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/servers/add_tokens/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/servers/add_tokens/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/servers/add_tokens/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     servers add_tokens yes no yes 1.1    Description Create authentication tokens that are associated with a specific system. These tokens may be used to submit information to TrueCommand via the &amp;ldquo;external&amp;rdquo; namespace of API calls.
 NOTE: Administrator access only - all others will get a 403/Forbidden error
 Input Arguments  Required:  &amp;ldquo;tvid&amp;rdquo; (string) : System ID for where to generate auth tokens &amp;ldquo;name&amp;rdquo; (string or Json Array of strings) : Nickname(s) for the tokens to create.</description>
@@ -937,10 +937,10 @@ Input Arguments  Required:  &amp;ldquo;tvid&amp;rdquo; (string) : System ID for 
     
     <item>
       <title>servers/groups_add</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/servers/groups_add/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/servers/groups_add/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/servers/groups_add/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/servers/groups_add/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     servers groups_add yes no yes 1    Description Simplification for adding existing servers to new or existing groups
 NOTE: Administrator access only - all others will get a 403/Forbidden error
 Input Arguments  Required:  &amp;ldquo;[server_id]&amp;rdquo; : String or array of strings for groups which need to include this server    Request Example Arguments ARGUMENTS ONLY: See the basics  of API requests for additional formatting information.</description>
@@ -948,10 +948,10 @@ Input Arguments  Required:  &amp;ldquo;[server_id]&amp;rdquo; : String or array 
     
     <item>
       <title>servers/groups_remove</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/servers/groups_remove/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/servers/groups_remove/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/servers/groups_remove/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/servers/groups_remove/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     servers groups_remove yes no no 1    Description Simplification for removing existing servers from existing groups
 NOTE: Administrator access only - all others will get a 403/Forbidden error
 Input Arguments  Required:  &amp;ldquo;[server_id]&amp;rdquo; : String or array of strings for groups which need to be removed from this server   Optional:  none ({})    Request Example Arguments ARGUMENTS ONLY: See the basics  of API requests for additional formatting information.</description>
@@ -959,10 +959,10 @@ Input Arguments  Required:  &amp;ldquo;[server_id]&amp;rdquo; : String or array 
     
     <item>
       <title>servers/groups_rename</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/servers/groups_rename/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/servers/groups_rename/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/servers/groups_rename/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/servers/groups_rename/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     servers groups_rename yes yes yes 1    Description Simplification for renaming a server group to a different name. If a group with the new name exists, then this will effectively &amp;ldquo;merge&amp;rdquo; the old group into the new one.
 NOTE: Administrator access only - all others will get a 403/Forbidden error
 Input Arguments  Required:  &amp;ldquo;groupname_old&amp;rdquo; : (String) Existing name for the group.</description>
@@ -970,10 +970,10 @@ Input Arguments  Required:  &amp;ldquo;groupname_old&amp;rdquo; : (String) Exist
     
     <item>
       <title>servers/remove_tokens</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/servers/remove_tokens/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/servers/remove_tokens/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/servers/remove_tokens/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/servers/remove_tokens/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     servers remove_tokens yes no yes 1.1    Description Remove special access tokens from server registrations.
 NOTE: Administrator access only - all others will get a 403/Forbidden error
 Input Arguments  Required:  &amp;ldquo;tvid&amp;rdquo; (string) : System ID where the auth token needs to be removed &amp;ldquo;name&amp;rdquo; (string or Json Array of strings) : Name(s) of the tokens to remove   Optional:  none ({})    Request Example Arguments ARGUMENTS ONLY: See the basics  of API requests for additional formatting information.</description>
@@ -981,10 +981,10 @@ Input Arguments  Required:  &amp;ldquo;tvid&amp;rdquo; (string) : System ID wher
     
     <item>
       <title>servers/groups_replace</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/servers/groups_replace/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/servers/groups_replace/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/servers/groups_replace/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/servers/groups_replace/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     servers groups_replace yes no yes 1    Description Simplification for replacing the group assignments for existing servers
 NOTE: Administrator access only - all others will get a 403/Forbidden error
 Input Arguments  Required:  &amp;ldquo;[server_id]&amp;rdquo; : String or array of strings for groups which need to include this server   Optional:  none ({})    Request Example Arguments ARGUMENTS ONLY: See the basics  of API requests for additional formatting information.</description>
@@ -992,50 +992,50 @@ Input Arguments  Required:  &amp;ldquo;[server_id]&amp;rdquo; : String or array 
     
     <item>
       <title>servers/list_groups</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/servers/list_groups/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/servers/list_groups/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/servers/list_groups/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/servers/list_groups/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     servers list_groups no no Yes 1    Description List all the current groups and which servers are associated with each group. If a non-administrator makes this API call, it will only return information about the groups that the user currently has access to see.
 NOTE: Administrator access requirement removed in version 1.</description>
     </item>
     
     <item>
       <title>servers/list_tokens</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/servers/list_tokens/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/servers/list_tokens/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/servers/list_tokens/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/servers/list_tokens/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     servers list_tokens yes no no 1.1    Description List all the current authentication tokens which are associated with a specific system. These are tokens that may be used to submit system information via the &amp;ldquo;external&amp;rdquo; namespace of API calls, and are associated with a specific system registration.
 NOTE: Administrator access only - non-administrators will receive a 403/Forbidden error</description>
     </item>
     
     <item>
       <title>servers/list_writable</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/servers/list_writable/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/servers/list_writable/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/servers/list_writable/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/servers/list_writable/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     servers list_writable no no no 1    Description List all the servers that the current user has write access to. This is useful for determining which servers the current user can directly access for administration purposes.
 Input Arguments  Required:  none ({})   Optional:  none ({})    Request Example Arguments ARGUMENTS ONLY: See the basics  of API requests for additional formatting information.</description>
     </item>
     
     <item>
       <title>servers/list</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/servers/list/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/servers/list/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/servers/list/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/servers/list/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     servers list no no no 1    Description List basic information about the associated servers
 Input Arguments  Required Arguments: none ({}) Optional Arguments:  &amp;ldquo;with_details&amp;rdquo; : (true/false) - Also include the information from the &amp;ldquo;servers/current_stats&amp;rdquo; API call.    Request Example Arguments ARGUMENTS ONLY: See the basics  of API requests for additional formatting information.</description>
     </item>
     
     <item>
       <title>servers/remove</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/servers/remove/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/servers/remove/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/servers/remove/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/servers/remove/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     servers remove yes yes yes 1    Description Remove a FreeNAS/TrueNAS server from the administration framework
 NOTE: Administrator access only - non-administrators will receive a 403/Forbidden error
 NOTE 2: This will not remove the data previously collected from the server - just the connection/management of the server.
@@ -1044,10 +1044,10 @@ Input Arguments  Required Arguments: &amp;ldquo;id&amp;rdquo; (string) ID string
     
     <item>
       <title>license/getvuid</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/license/gettvuid/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/license/gettvuid/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/license/gettvuid/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/license/gettvuid/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     license gettvid no no no 1    Description Return general the TV ID for the system itself
 Input Arguments  Required:  none ({})   Optional:  none ({})    Request Example Arguments ARGUMENTS ONLY: See the basics  of API requests for additional formatting information.
 {} Reply Example { &amp;quot;system_id&amp;quot; : &amp;quot;my_unique_system_id&amp;quot;, } Events This API call does not emit any middleware events.</description>
@@ -1055,10 +1055,10 @@ Input Arguments  Required:  none ({})   Optional:  none ({})    Request Example 
     
     <item>
       <title>sys/info</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/sys/info/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/sys/info/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/sys/info/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/sys/info/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     sys info no no no 1    Description Return general information about the system itself
 Input Arguments  Required:  none ({})   Optional:  none ({})    Request Example Arguments ARGUMENTS ONLY: See the basics  of API requests for additional formatting information.
 {} Reply Example { &amp;quot;system_id&amp;quot; : &amp;quot;my_unique_system_id&amp;quot;, &amp;quot;system_version&amp;quot; : &amp;quot;0.</description>
@@ -1066,20 +1066,20 @@ Input Arguments  Required:  none ({})   Optional:  none ({})    Request Example 
     
     <item>
       <title>sys/version_info</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/sys/version_info/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/sys/version_info/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/sys/version_info/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/sys/version_info/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     sys version_info no no no 1.3    Description Return general information about the current system version and other versions.
 Input Arguments  Required:  none ({})   Optional:  none ({})    Request Example Arguments ARGUMENTS ONLY: See the basics  of API requests for additional formatting information.</description>
     </item>
     
     <item>
       <title>sys/middleware_log</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/sys/middleware_log/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/sys/middleware_log/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/sys/middleware_log/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/sys/middleware_log/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     sys middleware_log N/A N/A N/A 1    Description Return the contents of the middleware log file (typically used for system debugging).
 NOTE: The contents of the log file will use the html &amp;ldquo;&amp;rdquo; tag for line breaks.
 Input Arguments  Required:  none ({})   Optional:  none ({})    Request Example Arguments ARGUMENTS ONLY: See the basics  of API requests for additional formatting information.</description>
@@ -1087,50 +1087,50 @@ Input Arguments  Required:  none ({})   Optional:  none ({})    Request Example 
     
     <item>
       <title>teams/add</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/teams/add/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/teams/add/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/teams/add/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/teams/add/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     teams add yes yes yes 1    Description Create a new team (Administrator Access Only - others will get a 403/Forbidden error code).
 Input Arguments  Required Arguments:  &amp;ldquo;name&amp;rdquo; (string) : Name of the team (must be unique - will return an error if a team with that name already exists).</description>
     </item>
     
     <item>
       <title>teams/edit</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/teams/edit/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/teams/edit/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/teams/edit/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/teams/edit/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     teams edit yes yes yes 1    Description Modify an existing team. Any user accounts associated with this team will automatically transition to the modified permissions or team name without any further action in the user account settings. (Administrator Access Only - others will get a 403/Forbidden error code).
 Input Arguments  Required Arguments:  &amp;ldquo;ugid&amp;rdquo; (string) : ID of the team (user group) to be modified.</description>
     </item>
     
     <item>
       <title>teams/list</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/teams/list/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/teams/list/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/teams/list/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/teams/list/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     teams list no no no 1    teams/list List all the currently-defined teams and the associated permission sets.
 Input Arguments  Required:  none ({})   Optional:  none ({})    Note: The &amp;ldquo;allowed_servers&amp;rdquo;, &amp;ldquo;allowed_groups&amp;rdquo;, and &amp;ldquo;team_members&amp;rdquo; fields will only be visible when this API is used by an administrator.</description>
     </item>
     
     <item>
       <title>teams/remove</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/teams/remove/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/teams/remove/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/teams/remove/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/teams/remove/</guid>
       <description>Namespace Name Admin Only Log Summary Generates Event Version Added     team remove yes yes yes 1    Description Remove a team. (Administrator Access Only - others will get a 403/Forbidden error code).
 Input Arguments  &amp;ldquo;ugid&amp;rdquo; (string) : ID of the team (user group) to be removed.  Request Example Arguments ARGUMENTS ONLY: See the basics  of API requests for additional formatting information.</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/404/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/404/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/404/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/404/</guid>
       <description>Error 404: Page Not Found  It seems that the page that you&amp;rsquo;re trying to access doesn&amp;rsquo;t exist. :worried: If you&amp;rsquo;re sure that it exists, chances are it might have been moved to a new link! You may search for it on the home page. </description>
     </item>
     
