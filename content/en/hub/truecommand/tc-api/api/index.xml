@@ -2,51 +2,51 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Middleware API on TrueCommand Documentation</title>
-    <link>https://www.truenas.com/hub/truecommand/tc-api/api/</link>
+    <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/</link>
     <description>Recent content in Middleware API on TrueCommand Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>3-Clause BSD License</copyright>
     
-	<atom:link href="https://www.truenas.com/hub/truecommand/tc-api/api/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.truenas.com/docs/hub/truecommand/tc-api/api/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Basic Formatting</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/basics/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/basics/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/basics/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/basics/</guid>
       <description>There are 4 basic pieces of an API request:
  Namespace: Top-level subsystem to access Name: Lower-level subsystem to access ID: (Websocket only) Used for correlating a request with a reply (Websocket connections are asynchronous - replies may come back in a different order than they were requested) Arguments: JSON Object containing additional information for the request/reply  HTTP Connections  Default port number: 5183 (http) or 5185 (https) Simple access URL: [system_IP]/api (will automatically use the proper port) Supported Verbs: &amp;ldquo;PUT&amp;rdquo;, &amp;ldquo;POST&amp;rdquo;, &amp;ldquo;GET&amp;rdquo;, &amp;ldquo;HEAD&amp;rdquo;, and &amp;ldquo;OPTIONS&amp;rdquo;  Standard Syntax Example:</description>
     </item>
     
     <item>
       <title>Event Formatting</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/events/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/events/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/events/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/events/</guid>
       <description>Event Messages For websocket connections, spontaneous events will be periodically sent to clients which announce changes which happen within the middleware itself. These events will always have the following form:
 { &amp;quot;namespace&amp;quot; : &amp;quot;event&amp;quot;, &amp;quot;name&amp;quot; : &amp;quot;api_class_or_subsystem&amp;quot;, &amp;quot;id&amp;quot; : &amp;quot;&amp;quot;, &amp;quot;args&amp;quot; : {} } Where the contents of the arguments object is determined by the type of event (the &amp;ldquo;name&amp;rdquo; field). See the documentation on the individual API calls for details on the events that each call may generate or be impacted by.</description>
     </item>
     
     <item>
       <title>Time Formatting</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/timecodes/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/timecodes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/timecodes/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/timecodes/</guid>
       <description>Input Time Codes  Typical name for arguments that use this format: &amp;ldquo;time_start&amp;rdquo;, &amp;ldquo;time_end&amp;rdquo;  Some API calls may take relative time codes as inputs. The format for these types of time codes are &amp;quot;[number][unit]&amp;quot;, with the following units that are supported:
  &amp;ldquo;m&amp;rdquo; : Minutes &amp;ldquo;h&amp;rdquo; : Hours &amp;ldquo;d&amp;rdquo; : Days &amp;ldquo;M&amp;rdquo; : Months &amp;ldquo;y&amp;rdquo; : Years  A timecode can also be supplied in the time_t (unix time code) format by not placing any units on the end of the input field.</description>
     </item>
     
     <item>
       <title>LDAP</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/ldap/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/ldap/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/ldap/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/ldap/</guid>
       <description>TrueCommand provides the ability to use an external LDAP authentication server for managing user logins permissions.
 LDAP Settings Object Each LDAP server definition can use provide several options to ensure
  &amp;ldquo;server&amp;rdquo; (string, Required) : IP or DNS name of the LDAP server &amp;ldquo;require_tls&amp;rdquo; (boolean, default: true) : Require a fully-verified TLS connection to the LDAP server before submitting user details. If false, this will attempt and use a TLS connection if one is available, but failover to trying a non-TLS connection as needed.</description>
@@ -54,10 +54,10 @@ LDAP Settings Object Each LDAP server definition can use provide several options
     
     <item>
       <title>Reporting Formats</title>
-      <link>https://www.truenas.com/hub/truecommand/tc-api/api/reporting/</link>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/reporting/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.truenas.com/hub/truecommand/tc-api/api/reporting/</guid>
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/reporting/</guid>
       <description>The reports objects used by all of the &amp;ldquo;reports/*&amp;rdquo; API calls include a generic &amp;ldquo;widgets&amp;rdquo; object which defines all the various appearance-related options and charting selections for a report. This document details all the various formatting options for that widgets object which are supported by the TrueCommand middleware. Everything outside the scope of this format is simply ignored by the middleware.
 The &amp;ldquo;widgets&amp;rdquo; object and item placement The top-level of the &amp;ldquo;widgets&amp;rdquo; object contains the information necessary for creating the layout of the items on the screen.</description>
     </item>

@@ -3,536 +3,536 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/basics/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/basics/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/cluster/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/cluster/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/events/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/events/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/timecodes/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/timecodes/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/ldap/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/ldap/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/reporting/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/reporting/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/cluster/db_backup/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/cluster/db_backup/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/cluster/db_delete/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/cluster/db_delete/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/cluster/db_list/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/cluster/db_list/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/cluster/db_restore/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/cluster/db_restore/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/faq/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/faq/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/data/current_stats/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/data/current_stats/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/external/submit_alerts/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/external/submit_alerts/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/external/submit_stats/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/external/submit_stats/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/reports/add/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/reports/add/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/reports/edit/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/reports/edit/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/reports/generate/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/reports/generate/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/reports/list/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/reports/list/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/reports/list_templates/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/reports/list_templates/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/reports/remove/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/reports/remove/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/rpc/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/rpc/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/ssl/ca_import/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/ssl/ca_import/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/ssl/ca_list/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/ssl/ca_list/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/ssl/ca_remove/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/ssl/ca_remove/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/ssl/cert_import/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/ssl/cert_import/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/ssl/cert_info/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/ssl/cert_info/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/ssl/cert_reset/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/ssl/cert_reset/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/sys/list_config/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/sys/list_config/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/sys/reboot/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/sys/reboot/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/sys/reboot_stop/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/sys/reboot_stop/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/sys/reboot_time/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/sys/reboot_time/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/sys/set_config/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/sys/set_config/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/sys/update_check/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/sys/update_check/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/sys/update_now/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/sys/update_now/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/sys/update_status/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/sys/update_status/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/sys/updates_available/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/sys/updates_available/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/sys/upload_file/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/sys/upload_file/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/rpc/auth/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/rpc/auth/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/rpc/auth_token/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/rpc/auth_token/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/rpc/auth_clear/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/rpc/auth_clear/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/rpc/query/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/rpc/query/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/email/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/email/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/reports/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/reports/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/users/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/users/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/users/add/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/users/add/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/users/edit/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/users/edit/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/users/get_data/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/users/get_data/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/email/deleteconfig/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/email/deleteconfig/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/email/editconfig/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/email/editconfig/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/email/send_test/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/email/send_test/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/email/writeconfig/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/email/writeconfig/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/users/insert_data_value/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/users/insert_data_value/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/users/insert_data/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/users/insert_data/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/users/list_active/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/users/list_active/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/users/list/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/users/list/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/users/remove/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/users/remove/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/users/set_data/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/users/set_data/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/alertplugins/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/alertplugins/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/alerts/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/alerts/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/alertplugins/add/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/alertplugins/add/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/alerts/add/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/alerts/add/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/uilogs/add/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/uilogs/add/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/uilogs/clear/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/uilogs/clear/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/uilogs/list/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/uilogs/list/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/alerts/edit/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/alerts/edit/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/alertplugins/check_updates/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/alertplugins/check_updates/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/alertplugins/list/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/alertplugins/list/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/alertplugins/search/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/alertplugins/search/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/alertplugins/test/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/alertplugins/test/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/alerts/list/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/alerts/list/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/alertplugins/change_settings/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/alertplugins/change_settings/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/alertplugins/current_settings/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/alertplugins/current_settings/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/alertplugins/remove/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/alertplugins/remove/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/alertplugins/update/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/alertplugins/update/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/alerts/remove/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/alerts/remove/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/data/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/data/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/data/list_fields/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/data/list_fields/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/data/curve_fit/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/data/curve_fit/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/data/retrieve/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/data/retrieve/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/freenas/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/freenas/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/freenas/available_methods/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/freenas/available_methods/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/freenas/send_method/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/freenas/send_method/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/license/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/license/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/license/check/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/license/check/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/license/info/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/license/info/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/license/register/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/license/register/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/logs/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/logs/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/logs/search/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/logs/search/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/notices/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/notices/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/uilogs/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/uilogs/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/notices/add_comment/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/notices/add_comment/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/notices/create_fake/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/notices/create_fake/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/notices/delete_comment/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/notices/delete_comment/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/notices/delete/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/notices/delete/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/notices/list/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/notices/list/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/notices/set_resolved/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/notices/set_resolved/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/servers/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/servers/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/servers/add/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/servers/add/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/servers/current_stats/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/servers/current_stats/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/servers/direct_auth/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/servers/direct_auth/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/servers/reconnect/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/servers/reconnect/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/servers/update/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/servers/update/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/servers/edit/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/servers/edit/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/servers/available/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/servers/available/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/servers/find_available/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/servers/find_available/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/servers/add_tokens/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/servers/add_tokens/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/servers/groups_add/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/servers/groups_add/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/servers/groups_remove/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/servers/groups_remove/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/servers/groups_rename/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/servers/groups_rename/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/servers/remove_tokens/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/servers/remove_tokens/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/servers/groups_replace/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/servers/groups_replace/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/servers/list_groups/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/servers/list_groups/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/servers/list_tokens/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/servers/list_tokens/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/servers/list_writable/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/servers/list_writable/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/servers/list/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/servers/list/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/servers/remove/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/servers/remove/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/external/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/external/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/ssl/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/ssl/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/sys/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/sys/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/license/gettvuid/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/license/gettvuid/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/sys/info/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/sys/info/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/sys/version_info/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/sys/version_info/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/sys/middleware_log/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/sys/middleware_log/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/teams/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/teams/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/teams/add/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/teams/add/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/teams/edit/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/teams/edit/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/teams/list/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/teams/list/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/api/teams/remove/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/api/teams/remove/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/404/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/404/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/categories/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/categories/</loc>
   </url>
   
   <url>
-    <loc>https://www.truenas.com/hub/truecommand/tc-api/tags/</loc>
+    <loc>https://www.truenas.com/docs/hub/truecommand/tc-api/tags/</loc>
   </url>
   
 </urlset>
