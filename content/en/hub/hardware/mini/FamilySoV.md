@@ -1,7 +1,7 @@
 ---
 title: "Mini Family Statement of Volatility"
 linktitle: "Statement of Volatility"
-weight: 9
+weight: 100
 tags: ["TrueNAS Hardware"]
 ---
 
