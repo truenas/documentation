@@ -13,14 +13,16 @@ The following is a list of minimum hardware requirements to install and run True
 It is recommended to examine your specific storage and sharing requirements and install TrueNAS on hardware that exceeds these requirements, to best meet your performance needs.
 
 * **RAM**: An absolute minimum of 8GB of RAM is required to run TrueNAS.
-  Generally, you'll want to have as much RAM as possible to maximize performance and allow using additional features like Virtual Machines (VMs).
+  When your system will have more than *8* storage drives, add an additional *1 Gb of RAM for each additional drive*.
+  For example, a TrueNAS system that has 12 storage drives will need 12 Gb of RAM, at minimum.
 
 * **Operating system device**: The TrueNAS operating system requires 8 GB of space on a device that is separate from the storage disks.
   It is strongly recommended to use a 16 GB or greater SSD or hard drive for the operating system.
   Using a USB stick as a boot device is not recommended, because the build quality or device lifetime varies too much to reliably use as the operating system device.
 
 * **Storage disks and controllers**: TrueNAS supports hot-pluggable SATA drives when AHCI is enabled in the BIOS.
-  We recommend using [Western Digital](https://www.westerndigital.com/products/internal-drives#enterprise "Western Digital") NAS disk drives as storage drives.
+  TrueNAS is predominantly tested using [Western Digital](https://www.westerndigital.com/products/internal-drives#enterprise "Western Digital") hard drives.
+  Therefore, we recommend **WD Red Plus** drives when the system has *fewer than 8* storage drives, **WD Red Pro** drives when the system has *8-16* drives, and **WD Ultrastar** drives for systems with *more than 16* storage drives.
   Always make sure to use a hard drive with conventional magnetic recording (CMR) techology and avoid drives with shingled magnetic recording (SMR) technology for best results with TrueNAS and OpenZFS. 
   A list of supported disk controllers is found in the [FreeBSD Hardware Notes](https://www.freebsd.org/releases/12.1R/hardware.html#support).
 * **Network Interfaces**: The *Ethernet* section of the [FreeBSD Hardware Notes](https://www.freebsd.org/releases/12.1R/hardware.html#support) indicates which interfaces are supported by each driver.
