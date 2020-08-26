@@ -4,6 +4,8 @@ description: "Running updates about TrueNAS SCALE Nightly status and current iss
 ---
 
 #### Recent Updates
+> 8/26/2020 - UI/ UX Layout Changes - New left-menu style added, and pages re-organized in preperation for creation of some new Dashboard-style sections.
+
 > 8/6/2020 - Updated list of services / features that are functional in SCALE nightly images
 
 > 7/16/2020 - [Slack Instance](https://www.ixsystems.com/community/threads/collaborator-community-slack-instance.85717/) is available for community contributors
