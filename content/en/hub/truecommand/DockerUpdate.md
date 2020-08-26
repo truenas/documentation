@@ -6,9 +6,9 @@ tags: ["truecommand docker"]
 weight: 4
 ---
 
-Updating TrueCommand installed in a Docker container requires obtaining the latest software image from the ixsystems/truecommand hub.
-You can either update the image in the existing TrueCommand container or delete the container entirely and rebuild using the latest TrueCommand image.
+Updating TrueCommand installed in a Docker container requires obtaining the latest software image from the *ixsystems/truecommand* hub, removing the existing container, and starting the updated container using the TrueCommand storage volume.
 
+This article shows how to do this using the command line, but different container management applications can be used to accomplish the same task.
 Log in to the Docker host system to run all the container upgrade commands.
 
 > On Linux systems, `docker` commands need to be run as the *root* account. You might need to add `sudo` in front of the example command to run the command as *root*: `sudo docker image pull ixsystems/truecommand`.
@@ -28,7 +28,7 @@ Be sure to replace this with your TrueCommand container name.
 
 ## Docker Container Commands
 
-There are a few Docker commands to remember when interacting with a TrueCommand container:
+There are a few general Docker commands to remember when interacting with a TrueCommand container:
 
 To start or stop the TrueCommand container, enter `docker container start <container name>` or `docker container stop <container name>` on the Docker host system. 
 
@@ -36,23 +36,9 @@ To have the container automatically start when the Docker host system boots, ens
 
 	docker run --name=<the name to call the container> -v=”<local directory>:/data” -p <host port>:80 sslport <host port>:443 --detach --restart ixsystems/truecommand:latest
 
-## Quick Update
+## Update and Rebuild the Container
 
-Issue the `stop` command to the TrueCommand container and wait for it to fully shut down:
-
-`docker stop TrueCmd_contained`
-
-Update the container with the latest TrueCommand image available from iXsystems:
-
-`docker pull ixsystems/truecommand:latest`
-
-Start the container again to start using the latest release of TrueCommand!
-
-`docker start TrueCmd_contained`
-
-## Rebuilding the Container
-
-You can also update by deleting the existing TrueCommand container, rebuilding it with the latest TrueCommand image, and pointing the existing TrueCommand volume to the rebuilt container.
+To update, download the latest TrueCommand image and remove the existing TrueCommand container. Then restart the container with the latest TrueCommand image with the existing TrueCommand storage volume pointed to the rebuilt container.
 
 First, run `docker image pull ixsystems/truecommand`.
 By default, the latest image of TrueCommand is pulled to the Docker host.
