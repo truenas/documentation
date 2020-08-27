@@ -1,7 +1,16 @@
 ---
-title: "TrueNAS 12.0-BETA2 Release Notes"
-linkTitle: "TrueNAS 12.0-BETA2"
+title: "TrueNAS 12.0-BETA2 Releases"
+linkTitle: "TrueNAS 12.0-BETA2 and Hotpatches"
 ---
+
+## 12.0-BETA2.1
+
+*August 27, 2020*
+
+TrueNAS 12.0-BETA2.1 is a hotpatch release to fix a ZFS permissions issue that affects the base FreeBSD OS ([NAS-107270](https://jira.ixsystems.com/browse/NAS-107270)).
+12.0-BETA2 users are encouraged to update to BETA2.1 as soon as possible.
+
+## 12.0-BETA2
 
 iXsystems is pleased to announce the [general availability](https://www.truenas.com/download-tn-core/) of TrueNAS 12.0-BETA2!
 This is the second beta version of the unified FreeNAS and TrueNAS release, renamed to TrueNAS CORE and TrueNAS Enterprise, respectively.
