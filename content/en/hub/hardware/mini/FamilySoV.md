@@ -1,7 +1,7 @@
 ---
 title: "Mini Family Statement of Volatility"
 linktitle: "Statement of Volatility"
-tags: ["TrueNAS Hardware"]
+tags: ["TrueNAS Products"]
 ---
 
 <object data="https://www.truenas.com/docs/files/MiniFamilySoV1.0.pdf" type="application/pdf" width="95%" height="1000">

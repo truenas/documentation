@@ -1,7 +1,7 @@
 ---
 title: "LSI 9300-xx Firmware Update"
 description: "Updating the LSI 9300-xx Firmware."
-tags: ["TrueNAS Hardware", "errata"]
+tags: ["TrueNAS Products", "components", "errata"]
 ---
 
 ## Firmware Information

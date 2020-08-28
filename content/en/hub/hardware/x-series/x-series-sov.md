@@ -1,6 +1,6 @@
 ---
 title: "Statement of Volatility"
-tags: ["TrueNAS Hardware"]
+tags: ["TrueNAS Products"]
 ---
 
 <object data="https://www.truenas.com/docs/files/x-series-sov.pdf" type="application/pdf" width="95%" height="1000">

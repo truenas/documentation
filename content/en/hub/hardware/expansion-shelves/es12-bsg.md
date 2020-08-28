@@ -1,6 +1,6 @@
 ---
 title: "ES12 Basic Setup Guide"
-tags: ["TrueNAS Hardware"]
+tags: ["TrueNAS Products"]
 ---
 
 <object data="https://www.truenas.com/docs/files/ES12BSGv1_7.pdf" type="application/pdf" width="95%" height="1000">
