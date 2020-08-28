@@ -2,7 +2,7 @@
 title: "Updating a TrueCommand Docker Container"
 linkTitle: "Updating: Docker"
 description: "How to update TrueCommand within a Docker container."
-tags: ["TrueCommand Cocker", "TrueCommand"]
+tags: ["TrueCommand Docker", "TrueCommand"]
 weight: 4
 ---
 
