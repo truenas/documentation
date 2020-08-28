@@ -1,7 +1,7 @@
 ---
 title: "ZFS Pool Corruption Issue"
 description: "Description of a ZFS pool corruption issue with resolutions."
-tags: ["zfs","errata"]
+tags: ["ZFS","errata"]
 ---
 
 A problem was found in 2018 regarding ACL loss during replication and was filed with [Redmine Ticket 57888](https://redmine.ixsystems.com/issues/57888). This issue was fixed in 11.1-U8/11.2-U2 with this commit: https://github.com/freenas/os/commit/f1e4c4db88dddaa575066e3f3e7efa849df36efe.
