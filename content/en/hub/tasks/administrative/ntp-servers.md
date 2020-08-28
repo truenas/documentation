@@ -1,6 +1,7 @@
 ---
 title: "NTP Servers"
 description: "Managing NTP Servers"
+tags: ["NTP"]
 ---
 
 Network Time Protocol (NTP) servers are used to sync the local system time with an accurate reference.
