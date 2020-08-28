@@ -1,7 +1,7 @@
 ---
 title: "Replacing Disks"
 description: "How to replace a failed disk."
-tags: ["zfs"]
+tags: ["ZFS"]
 ---
 
 Hard drives or solid-state drives (SSDs) have a finite lifetime and can fail unexpectedly.
