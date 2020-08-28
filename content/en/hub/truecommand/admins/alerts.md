@@ -2,6 +2,7 @@
 title: "Viewing and Configuring Alerts"
 linkTitle: "Alert System"
 description: "How to manage alerts and configure services to send alerts beyond the TrueCommand interface."
+tags: ["TrueCommand"]
 ---
 
 TrueCommand alerts provide visual warnings for monitored systems that require attention.
