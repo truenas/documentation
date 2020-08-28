@@ -2,6 +2,7 @@
 title: "Connecting Systems"
 description: "How to connect to and organize systems in TrueCommand."
 weight: 3
+tags: ["TrueCommand"]
 ---
 
 ## Connecting Systems to TrueCommand
