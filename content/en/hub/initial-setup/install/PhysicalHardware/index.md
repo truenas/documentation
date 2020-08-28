@@ -2,6 +2,7 @@
 title: "Physical Hardware"
 description: "How to obtain and install TrueNAS on physical hardware."
 weight: 1
+tags: ["components"]
 ---
 
 {{< imgproc hardware-image Fill "1700x400" >}}
