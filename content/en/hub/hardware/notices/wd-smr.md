@@ -1,7 +1,7 @@
 ---
 title: "WD Red SMR Drive Compatibility with ZFS"
 description: "WD Red SMR Drive Compatibility with ZFS"
-tags: ["errata"]
+tags: ["components", "errata"]
 ---
 
 ## WD Red SMR Drive Compatibility with ZFS
