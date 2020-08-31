@@ -2,6 +2,7 @@
 title: "Monitoring TrueCommand Activity"
 linkTitle: "Activity Logging"
 description: "How to monitor TrueCommand user activity."
+tags: ["TrueCommand"]
 ---
 
 TrueCommand records all user account activity in a system log.

@@ -2,7 +2,7 @@
 title: "V2 REST API"
 description: "RESTful API documentation for TrueNAS 11.3 and later."
 weight: 3
-tags: ["api"]
+tags: ["API"]
 ---
 
 

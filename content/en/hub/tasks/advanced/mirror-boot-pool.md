@@ -1,7 +1,7 @@
 ---
 title: "Mirroring the Boot Pool"
 description: "How to add a second drive and mirror the system boot pool."
-tags: ["zfs"]
+tags: ["ZFS"]
 ---
 
 TrueNAS supports mirroring a boot pool by adding a second device to the original pool. This is especially helpful as one device can fail and the system will still boot. If a device were to fail in a mirror, it can be easily detached and replaced with a new device.

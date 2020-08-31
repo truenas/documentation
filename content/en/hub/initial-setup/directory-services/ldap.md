@@ -1,7 +1,7 @@
 ---
 title: "Connecting to LDAP"
 description: "How to configure an LDAP server connection."
-tags: ["security","ldap","networking"]
+tags: ["security","LDAP","networking"]
 ---
 
 TrueNAS includes an [Open LDAP](http://www.openldap.org/) client for accessing information from an LDAP server. An LDAP server provides directory services for finding network resources such as users and their associated permissions.

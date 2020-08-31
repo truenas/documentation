@@ -2,7 +2,7 @@
 Title: "Server Message Block (SMB)"
 linkTitle: "Server Message Block (SMB)"
 weight: 1
-tags: ["samba"]
+tags: ["Samba"]
 ---
 
 Server Message Block shares, also known as Common Internet File System

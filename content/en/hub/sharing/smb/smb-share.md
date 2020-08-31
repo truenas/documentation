@@ -1,7 +1,7 @@
 ---
 title: "Configuring a Windows SMB share"
 description: "How to set up a general purpose Server Message Block share."
-tags: ["networking","samba"]
+tags: ["networking","Samba"]
 ---
 
 ## SMB Overview

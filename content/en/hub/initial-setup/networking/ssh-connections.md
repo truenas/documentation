@@ -1,7 +1,7 @@
 ---
 title: "SSH Connections"
 description: "How to create and save SSH connections."
-tags: ["security","ssh","networking"]
+tags: ["security","SSH","networking"]
 ---
 
 [Secure Socket Shell (SSH)](https://searchsecurity.techtarget.com/definition/Secure-Shell) is a network protocol that provides a secure method to access and transfer files between two hosts while using an unsecure network.

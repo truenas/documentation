@@ -1,6 +1,6 @@
 ---
 title: "Microsoft LDAP defaults 2020"
-tags: ["security","ldap","networking","ad"]
+tags: ["security","LDAP","networking","AD"]
 ---
 
 ## Microsoft LDAP defaults 2020

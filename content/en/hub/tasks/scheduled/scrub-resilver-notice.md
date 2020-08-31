@@ -1,7 +1,7 @@
 ---
 title: "Sequential Scrub and Resilver Adjustments"
 description: "How to adjust the scrub and resilver settings or revert to a legacy algorithm."
-tags: ["zfs"]
+tags: ["ZFS"]
 ---
 
 Beginning with the release of FreeNAS 11.1, the algorithm used for scrubs and resilvers received many performance improvements, most noticeably on fragmented pools.
