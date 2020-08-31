@@ -10,7 +10,7 @@ linkTitle: "TrueNAS 12.0-BETA2 and Hotpatches"
 TrueNAS 12.0-BETA2.1 is a hotpatch release to fix a ZFS permissions issue that affects the base FreeBSD OS ([NAS-107270](https://jira.ixsystems.com/browse/NAS-107270)).
 12.0-BETA2 users are encouraged to update to BETA2.1 as soon as possible.
 
-[CVE-2020-24717](https://security.ixsystems.com/cves/2020-08-27-cve-2020-24717/)
+[CVE-2020-24716](https://security.ixsystems.com/cves/2020-08-27-cve-2020-24716/) and [CVE-2020-24717](https://security.ixsystems.com/cves/2020-08-27-cve-2020-24717/)
 
 ## 12.0-BETA2
 
