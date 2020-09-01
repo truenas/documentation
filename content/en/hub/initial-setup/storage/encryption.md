@@ -114,7 +114,13 @@ The dataset listing changes to show the unlocked icon.
 ## Conversion from GELI
 
 It is not possible to convert an existing FreeNAS/TrueNAS 11.3 or earlier GELI-encrypted pool to use native ZFS encryption.
-However, data can be migrated from the GELI-encrypted pool to a new ZFS-encrypted pool. The new ZFS-encrypted pool must be at least the same size as the previous GELI-encrypted pool. Two options exist to migrate data from a GELI-encrypted pool to a new ZFS-encrypted pool. The first method is to use `rsync` to copy the data between the pools. The second method is to use ZFS send/receive commands.
+
+## Migration from GELI
+
+Data can be migrated from the GELI-encrypted pool to a new ZFS-encrypted pool. If you have a support contract with iXsystems, contact support for assitance.  Otherwise you can speak with other TrueNAS users in the [TrueNAS Community Forums](https://www.ixsystems.com/community/)
+The new ZFS-encrypted pool must be at least the same size as the previous GELI-encrypted pool. Two options exist to migrate data from a GELI-encrypted pool to a new ZFS-encrypted pool. 
+The first method is to use `rsync` or other file transfer mechanism to copy the data between the pools, `scp`, `cp`, `sftp`, `ftp`, `rdiff-backup`, etc.  Transfering your ACLs can be done with `getfacl` and `setfacl` if the chosen transfer method does not preserve ACLs.
+The second method is to use ZFS send/receive commands.  
 
 {{% alert title=Warning color=warning %}}
 The following is an example walkthrough. It is not an exact step-by-step guide for all situations. Research ZFS [send](https://openzfs.github.io/openzfs-docs/man/8/zfs-send.8.html)/[receive](https://openzfs.github.io/openzfs-docs/man/8/zfs-receive.8.html) before attempting this. There are many edge cases that cannot be covered by a simple example.
@@ -122,15 +128,18 @@ The following is an example walkthrough. It is not an exact step-by-step guide f
 
 Legend:
 ```
-GELI Pool = pool_a 
+GELI Pool = pool_a
+Origin Dataset = dataset_1
 Latest Snapshot of GELI Pool = snapshot_name
 ZFS Native Encrypted Pool = pool_b
-Receieving Dataset = dataset_1
+Receieving Dataset = dataset_2
 ```
 
 1. Create a new encrypted pool in **Storage > Pools**, as described at the [beginning of this article](#encrypting-a-storage-pool).
-2. Open the **Shell**. Make a new snapshot of the GELI pool with the data to be migrated: `zfs snapshot -r pool_a@snapshot_name`.
+2. Open the **Shell**. Make a new snapshot of the GELI pool and dataset with the data to be migrated: `zfs snapshot -r pool_a/dataset_1@snapshot_name`.
 3. Create a passphrase: `echo passphrase > /tmp/pass`.
-4. Use ZFS send/receive to transfer the data between pools: `zfs send -Rv pool_a@snapshot_name | zfs recv -o encryption=on -o keyformat=passphrase -o keylocation=file:///tmp/pass pool_b/dataset_1`.
+4. Use ZFS send/receive to transfer the data between pools: `zfs send -Rv pool_a/dataset_1@snapshot_name | zfs recv -o encryption=on -o keyformat=passphrase -o keylocation=file:///tmp/pass pool_b/dataset_2`.
 5. When the transfer is complete, go to **Storage > Pools** and lock the new dataset. After locking the dataset, immediately unlock it. TrueNAS prompts for the passphrase. After entering the passphrase and the pool is unlocked, you can delete the `/tmp/pass` file used for the transfer.
 6. If desired, you can convert the dataset to use a keyfile instead of a passphrase. To use a passphrase instead of a keyfile, open the dataset <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i> (Options) and click **Encryption Options**. Change the *Encryption Type* from **Passphrase** to **Key** and save. Remember to back up your keyfile immediately!
+7. Repeat this process for every dataset in the Pool that needs to be migrated.
+
