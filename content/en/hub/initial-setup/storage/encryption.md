@@ -113,14 +113,26 @@ The dataset listing changes to show the unlocked icon.
 
 ## Conversion from GELI
 
-It is not possible to convert an existing FreeNAS/TrueNAS 11.3 or earlier GELI-encrypted pool to use native ZFS encryption.
+It is not possible to *convert* an existing FreeNAS/TrueNAS 11.3 or earlier GELI-encrypted pool to use native ZFS encryption.
 
 ## Migration from GELI
 
-Data can be migrated from the GELI-encrypted pool to a new ZFS-encrypted pool. If you have a support contract with iXsystems, contact support for assitance.  Otherwise you can speak with other TrueNAS users in the [TrueNAS Community Forums](https://www.ixsystems.com/community/)
-The new ZFS-encrypted pool must be at least the same size as the previous GELI-encrypted pool. Two options exist to migrate data from a GELI-encrypted pool to a new ZFS-encrypted pool. 
-The first method is to use `rsync` or other file transfer mechanism to copy the data between the pools, `scp`, `cp`, `sftp`, `ftp`, `rdiff-backup`, etc.  Transfering your ACLs can be done with `getfacl` and `setfacl` if the chosen transfer method does not preserve ACLs.
-The second method is to use ZFS send/receive commands.  
+Data can be *migrated* from the GELI-encrypted pool to a new ZFS-encrypted pool.
+Be sure to unlock the GELI-encrypted pool before attempting any data migrations.
+The new ZFS-encrypted pool must be at least the same size as the previous GELI-encrypted pool.
+Two options exist to migrate data from a GELI-encrypted pool to a new ZFS-encrypted pool: file transfer or ZFS send/receive.
+
+ZFS data migration can be a complicated process.
+You can ask for assistance in the [TrueNAS Community Forums](https://www.ixsystems.com/community/) or, if you have a support contract with iXsystems, [contact iX Support](/hub/additional-topics/support/#support-in-truenas-enterprise) for assistance.
+
+### File Transfer
+
+The first method is to use `rsync` or other file transfer mechanisms (`scp`, `cp`, `sftp`, `ftp`, `rdiff-backup`) to copy the data between the pools.
+Transferring your ACLs can be done with `getfacl` and `setfacl` if the chosen transfer method does not preserve ACLs.
+
+### ZFS Send and Receive
+
+The second method is to use ZFS send/receive commands.
 
 {{% alert title=Warning color=warning %}}
 The following is an example walkthrough. It is not an exact step-by-step guide for all situations. Research ZFS [send](https://openzfs.github.io/openzfs-docs/man/8/zfs-send.8.html)/[receive](https://openzfs.github.io/openzfs-docs/man/8/zfs-receive.8.html) before attempting this. There are many edge cases that cannot be covered by a simple example.
