@@ -37,7 +37,7 @@ Start the service and select whether to start automatically (on system boot).
 
 <img src="enables3service.png" width="640px">
 
-Test access to the Minio Browser by opening a web browser and typing the FreeNAS IP address with the TCP port. For example: http://192.168.0.3:9000
+Test access to the Minio Browser by opening a web browser and typing the TrueNAS IP address with the TCP port. For example: http://192.168.0.3:9000
 
 Buckets can be created and files uploaded using the Minio Browser.
 
