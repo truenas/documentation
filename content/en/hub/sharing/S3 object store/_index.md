@@ -1,3 +1,9 @@
+---
+title: "S3 Object Sharing"
+description: "How to set up and connect to Simple Storage Service (S3) object storage."
+tags: ["networking","S3"]
+---
+
 This tutorial describes how to start a local S3 service on TrueNAS and connect to it from a networked client system with the Minio Browser, s3cmd, and S3 Browser. The images show the latest TrueNAS Core web interface and feature set. S3 support available on TrueNAS 11.1-U5 and later versions.
 
 ## Background
@@ -47,8 +53,7 @@ Ubuntu can access the configuration by running s3cmd --configure to walk through
 
 Enter the specified access key and the secret key. Under the S3 Endpoint enter the TrueNAS IP address followed by TCP port, and reply N to the DNS-style bucket+hostname. 
 
-Save the file. On Linux the default is in the home directory ~/.s3cfg.
-
+Save the file. On Linux the default is in the home directory `~/.s3cfg`.
 
 If the connection has any issues, open the config file again to clean it up. In Ubuntu use nano .s3cfg or vi .s3cfg or gedit .s3cfg depending on the preferred text editor. For other operating systems, .s3cfg file location and editing tools may vary. 
 
@@ -62,7 +67,7 @@ host_bucket = 192.168.123.207:9000
 host_base = 192.168.123.207
 host_bucket = %(bucket)s.192.168.123.207
 
-Poll the buckets using s3cmd ls. The buckets created with the Minio Browser should be visible. 
+Poll the buckets using `s3cmd ls`. The buckets created with the Minio Browser should be visible.
 
 For more information on using Minio with s3cmd, see: https://docs.minio.io/docs/s3cmd-with-minio.html 
 https://s3tools.org/s3cmd 
