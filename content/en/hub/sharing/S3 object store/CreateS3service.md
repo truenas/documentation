@@ -7,6 +7,7 @@ S3 is an object storage protocol used by many major cloud providers including Am
 ## Setting up the S3 service
 
 Go to Services -> S3 and click on the pencil icon to edit.
+
 <img src="/selectconfigures3.png">
 
 Set up the configuration inside this window.
@@ -47,7 +48,7 @@ Ubuntu can access the configuration by running s3cmd --configure to walk through
 Enter the specified access key and the secret key. Under the S3 Endpoint enter the TrueNAS IP address followed by TCP port, and reply N to the DNS-style bucket+hostname. 
 
 Save the file. On Linux the default is in the home directory ~/.s3cfg.
-<need image>
+
 
 If the connection has any issues, open the config file again to clean it up. In Ubuntu use nano .s3cfg or vi .s3cfg or gedit .s3cfg depending on the preferred text editor. For other operating systems, .s3cfg file location and editing tools may vary. 
 
@@ -71,12 +72,15 @@ https://s3tools.org/s3cmd
 On Windows PCs, the S3 Browser is another convenient way to connect to the Minio S3 on a TrueNAS system. To set it up, first install the S3 Browser. 
 
 After installation completes, add a new account. 
+
 <img src="/S3explore.png">
 
 In the settings, select S3 Compatible Storage as the Account Type, then enter the Minio access point similar to the S3cmd setup (TrueNAS_IP_address:9000 or other port if set differently).  
 
 Select the SSL settings appropriate for the particular setup. The default assumes SSL in S3 Browser, but for a LAN attached session, this may or may not have been set.
+
 <img src="/S3explore_account.png">
 
 It is possible to access, create new buckets, or upload files to created buckets.
+
 <img src="/S3explore_browse.png">
