@@ -26,7 +26,7 @@ Using a browser or FTP client, such as FileZilla, connect to the TrueNAS FTP sha
 
 ## SFTP on TrueNAS
 
-SFTP or SSH File Transfer Protocol, is available by enabling SSH remote access to the TrueNAS system. SFTP is more secure than standard FTP as it applies SSL encryption on allow transfers by default.
+SFTP or SSH File Transfer Protocol, is available by enabling SSH remote access to the TrueNAS system. SFTP is more secure than standard FTP as it applies SSL encryption on all transfers by default.
 
 Go to **Services** -> **SSH** and on the **Configure** icon.
 
