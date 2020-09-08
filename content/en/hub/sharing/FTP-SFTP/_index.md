@@ -1,3 +1,9 @@
+---
+title: "FTP and SFTP"
+description: "How to set up and use the File Transfer Protocol (FTP) and Secure File Transfer Protocol (SFTP)."
+tags: ["networking","FTP/SFTP"]
+---
+
 ## FTP on TrueNAS
 
 FTP is available in the services section of TrueNAS. 
