@@ -52,7 +52,7 @@ Similar to the initial FTP setup, create a user in the jail, type **adduser** an
 
 <img src='adduser_jail.png'>
 
-Enable SSH by editing the /etc/rc.conf file. Type **vi /etc/rc.conf** or **ee /etc/rc.conf** depending on preference and add **sshd_enable = "YES"** to the file, save and exit. Type service sshd enabled to enable the service (enabled vs start indicates whether sshd will start once or on every reboot). 
+Enable SSH by editing the /etc/rc.conf file. Type **vi /etc/rc.conf** or **ee /etc/rc.conf** depending on preference and add **sshd_enable = "YES"** to the file, save and exit. Type **service sshd enabled** to enable the service (enabled vs start indicates whether sshd will start once or on every reboot). 
 
 <img src='edit_rcconf.png'>
 
