@@ -128,14 +128,21 @@ You can ask for assistance in the [TrueNAS Community Forums](https://www.ixsyste
 ### File Transfer
 
 The first method is to use `rsync` or other file transfer mechanisms (`scp`, `cp`, `sftp`, `ftp`, `rdiff-backup`) to copy the data between the pools.
-Transferring your ACLs can be done with `getfacl` and `setfacl` if the chosen transfer method does not preserve ACLs.
+
+{{% alert title=Warning color=warning %}}
+Transfering your files in this method will not preserve file ACLs.
+{{% /alert %}}
 
 ### ZFS Send and Receive
 
 The second method is to use ZFS send/receive commands.
 
 {{% alert title=Warning color=warning %}}
-The following is an example walkthrough. It is not an exact step-by-step guide for all situations. Research ZFS [send](https://openzfs.github.io/openzfs-docs/man/8/zfs-send.8.html)/[receive](https://openzfs.github.io/openzfs-docs/man/8/zfs-receive.8.html) before attempting this. There are many edge cases that cannot be covered by a simple example.
+The following is an example walkthrough. It is not an exact step-by-step guide for all situations. Research ZFS [send](https://openzfs.github.io/openzfs-docs/man/8/zfs-send.8.html)/[receive](https://openzfs.github.io/openzfs-docs/man/8/zfs-receive.8.html) before attempting this.  There are many edge cases that cannot be covered by a simple example.
+{{% /alert %}}
+
+{{% alert title=Warning color=warning %}}
+Do not delete your GELI dataset until you have verified you have successfully migrated the data.  Failure to do so may result in data loss.
 {{% /alert %}}
 
 Legend:
