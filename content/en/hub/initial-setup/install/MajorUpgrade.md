@@ -160,4 +160,4 @@ For a rebootless http workaround please do the following:
 
 **I'm having authentication issues with SMB and AD / LDAP / ... after upgrading - Why?**
 
-TLSv1 has finally been deprecated as insecure. Try switching to TLSv1.2.
+TLSv1 has been deprecated as insecure. Switch to TLSv1.2.
