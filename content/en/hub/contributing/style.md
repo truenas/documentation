@@ -193,6 +193,8 @@ With non-breaking space: Click the <i class="fas fa-ellipsis-v" aria-hidden="tru
 
 <i class="fa fa-bars" aria-hidden="true" title="Menu"></i> = `<i class="fa fa-bars" aria-hidden="true" title="Menu"></i>`
 
+<i class="material-icons" aria-hidden="true" title="System Update">system_update_alt</i> = `<i class="material-icons" aria-hidden="true" title="System Update">system_update_alt</i>`
+
 ### Key Strokes
 
 When a specific key or key combination is to be used, use the `<kbd>` HTML code to highlight the keystrokes.  Here are a few examples:

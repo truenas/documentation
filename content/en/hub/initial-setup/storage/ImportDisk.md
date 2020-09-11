@@ -8,8 +8,7 @@ The **Storage > Import Disk** options are used to import disks that are formatte
 This is a designed to be used as a one-time import, copying the data from that disk into a TrueNAS dataset.
 Only one disk can be imported at a time.
 
-> *Note*:
-  Importing an EXT3 or EXT4 filesystem is possible in some cases, although neither is fully supported.
+> Importing an EXT3 or EXT4 filesystem is possible in some cases, although neither is fully supported.
   EXT3 journaling is not supported, so those filesystems must have an external `fsck` utility, like the one provided by [E2fsprogs utilities](http://e2fsprogs.sourceforge.net/), run on them before import.
   EXT4 filesystems with extended attributes or inodes greater than 128 bytes are not supported.
   EXT4 filesystems with EXT3 journaling must have an `fsck` run on them before import, as described above.
