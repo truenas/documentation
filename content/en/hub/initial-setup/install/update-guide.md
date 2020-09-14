@@ -1,10 +1,10 @@
 ---
 title: "Updating TrueNAS"
-description: "Using the web interface to update TrueNAS."
+description: "Update the version of TrueNAS on your system"
 ---
 
 TrueNAS has an integrated update system to make it easy to keep up to date.
-For Updating HA systems refer to the [Updating a High Availability System](/hub/initial-setup/install/update/ha-update-enterprise/) guide.
+For Updating HA systems refer to the [Updating a High Availability System](https://truenas.com/docs/hub/tasks/administrative/update/ha-update-enterprise/) guide.
 
 ## Preparing for Updates
 
@@ -27,7 +27,7 @@ There are several trains available for updates, but the web interface only displ
 Update trains are labeled with a numeric version followed by a short description.
 The current version receives regular bug fixes and new features.
 Supported older versions of TrueNAS only receive maintenance updates.
-See the [Software Development Life Cycle](/hub/intro/lifecycle/#sdlc-application) for more details about the development and support timeline for TrueNAS versions.
+See the [Software Development Life Cycle](https://www.truenas.com/docs/hub/intro/lifecycle/#sdlc-application) for more details about the development and support timeline for TrueNAS versions.
 
 Several specific words are used to describe the type of train:
 
