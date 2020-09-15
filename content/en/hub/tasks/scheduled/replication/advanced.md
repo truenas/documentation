@@ -119,3 +119,9 @@ There is also an option to use this schedule instead of also defining a schedule
 
 <img src="/images/replication-advanced-schedule.png">
 <br><br>
+
+## Advanced Option Notes
+
+The **Allow Blocks Larger than 128KB** option is a one-way toggle. Replication tasks using large block replication will only continue to work as long as this option remains enabled.
+
+
