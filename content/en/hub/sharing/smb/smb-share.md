@@ -62,7 +62,7 @@ After changing the desired settings, click **SAVE**.
 
 ## Define Share Access
 
-Users connecting to the SMB share must have [user accounts](/hub/tasks/administrative/users/) on the TrueNAS system before they can connect. You can also [create groups of users](/hub/tasks/administrative/groups/) to simplify assigning permissions to large numbers of users.
+Users connecting to the SMB share must have [user accounts](/hub/tasks/administrative/users/) on the TrueNAS system before they can connect. You can also [create groups of users](/hub/tasks/administrative/groups/) to simplify assigning permissions to large numbers of users. User accounts that are built-in to TrueNAS should not be used for the share.
 
 When LDAP has been configured and you want users from the LDAP server to have access the SMB share, set **Samba Schema** in **Directory Services > LDAP > ADVANCED MODE**.
 
