@@ -122,6 +122,12 @@ Be sure to unlock the GELI-encrypted pool before attempting any data migrations.
 The new ZFS-encrypted pool must be at least the same size as the previous GELI-encrypted pool.
 Two options exist to migrate data from a GELI-encrypted pool to a new ZFS-encrypted pool: file transfer or ZFS send/receive.
 
+{{% pageinfo %}}
+In future TrueNAS versions, a decrypted GELI pool will be able to migrate data to a new ZFS encrypted pool using an advanced Replication Task ([NAS-107463](https://jira.ixsystems.com/browse/NAS-107463)).
+Until this time, GELI encrypted pools will continue to be detected and supported in the TrueNAS web interface, so you are not required to immediately migrate data away from GELI pools.
+Before using the command line to migrate data, it is recommended to consider the benefits and drawbacks of immediately migrating from GELI to ZFS.
+{{% /pageinfo %}}
+
 ZFS data migration can be a complicated process.
 You can ask for assistance in the [TrueNAS Community Forums](https://www.ixsystems.com/community/) or, if you have a support contract with iXsystems, [contact iX Support](/hub/additional-topics/support/#support-in-truenas-enterprise) for assistance.
 
