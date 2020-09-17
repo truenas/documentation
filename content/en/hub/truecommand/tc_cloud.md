@@ -23,6 +23,7 @@ Log in to your verified account and click **New Subscription**.  Select the True
 ### Managing Your TrueCommand Cloud Account
 
 From the account home page, click **Manage**.  Add a client for your desktop or laptop so that you can obtain a TrueCommand WireGuard Config file. Download the config file and load the file into WireGuard on your machine and activate the tunnel.
+
 Further information on WireGuard and WireGuard clients can be found on the [WireGuard home page](https://www.wireguard.com). The IP of your TrueCommand Cloud instance is displayed in the iXsystems Account Portal page.  
 
 After WireGuard has been activated, you can log in to the TrueCommand Cloud Interface by  clicking the TrueCommand IP address listed on the portal, or manually entering the TrueCommand Cloud IP in a browser. 
@@ -30,7 +31,9 @@ After WireGuard has been activated, you can log in to the TrueCommand Cloud Inte
 ### Connecting Systems to a TrueCommand Cloud Instance
 
 Log into your ixSystems cloud account and click **Manage**, Under *Service Details* copy the *API Key* that is displayed.
-Log into your TrueNAS system and click the TrueCommand icon in the upper right. [insert TC logo] 
+
+Log into your TrueNAS system and click the TrueCommand icon in the upper right.
+
 Paste the API key copied from the iXsystems Account Portal into the TrueNAS dialog.  When the True Command logo starts bouncing left and right, check the email account registered for the TrueCommand Cloud Account for a verification message.  The email contains a link to the Portal account home to confirm the connection and activate the TrueNAS system.
 
 It may take 10 to 15 minutes for your TrueNAS instance to fully sync up with the TrueCommand Cloud instance. When systems are connected to the TrueCommand Cloud instance, refer to the [TrueCommand documentation](/hub/truecommand/) for more articles about setting up configuration backups, alerts, reports, and role-based access control.
