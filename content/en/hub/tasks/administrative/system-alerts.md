@@ -89,7 +89,7 @@ SNMP (Simple Network Management Protocol) is used to monitor network-attached de
 
 Available MIBS are located in `/usr/local/share/snmp/mibs`.
 
-<img src="/images/services-snmp.png" width='700px'>
+<img src="/images/TN-12.0-services-snmp.png" width='700px'>
 <br><br>
 
 
