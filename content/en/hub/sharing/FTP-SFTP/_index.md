@@ -80,7 +80,7 @@ Trivial File Transfer Protocol (TFTP) is a light-weight version of FTP typically
 If the TrueNAS® system will be used to store images and configuration files for network devices, configure and start the TFTP service. Starting the TFTP service opens UDP port 69.
 
 The TFTP configuration screen 
-<img src="/images/services-tftp.png" width='700px'>
+<img src="/images/TN-12.0-services-tftp.png" width='700px'>
 <br><br>
 
 TFTP Configuration available options
