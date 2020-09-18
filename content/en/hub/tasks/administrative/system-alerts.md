@@ -1,6 +1,7 @@
 ---
 title: "Configuring System Alerts"
 description: "How to configure basic system alerts"
+tags: ["SNMP"]
 ---
 
 You can customizing both how alerts are reported and which alerts are displayed or prioritized.
