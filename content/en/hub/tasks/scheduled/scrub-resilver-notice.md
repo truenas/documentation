@@ -38,3 +38,10 @@ Setting the resilver delay to *2* and the scrub delay to *4* limits the IOPS use
 `sysctl vfs.zfs.resilver_delay=2`
 
 `sysctl vfs.zfs.scrub_delay=4`
+
+| Setting          | Value      | Description                                                                                                              |
+|------------------|------------|--------------------------------------------------------------------------------------------------------------------------|
+| Enabled          | checkbox   | Set to run resilver tasks between the configured times.                                                                  |
+| Begin Time       | drop-down  | Choose the hour and minute when resilver tasks can be started.                                                           |
+| End Time         | drop-down  | Choose the hour and minute when new resilver tasks can no longer be started. This does not affect active resilver tasks. |
+| Days of the Week | checkboxes | Select the days to run resilver tasks.           
