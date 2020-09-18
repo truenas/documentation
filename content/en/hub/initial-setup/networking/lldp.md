@@ -1,6 +1,7 @@
 ---
 title: "LLDP"
 description: "Link Layer Discovery Protocol"
+tags: ["LLDP"]
 ---
 
 
