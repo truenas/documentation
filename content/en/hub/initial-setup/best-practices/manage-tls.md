@@ -6,11 +6,13 @@ tags: ["security"]
 
 > This feature was introduced in TrueNAS 12.0
 
-You can adjust which TLS cipher suites TrueNAS accepts for secure connections to the web interface. By default, all TLS cipher suites are allowed, but you might need to adjust this setting to match your particular network environment or security concerns.
+You can adjust which Transport Layer Security (TLS) cipher suites TrueNAS accepts for secure connections to the web interface.
+For best security, only use [TLS 1.2](https://tools.ietf.org/html/rfc5246) or newer versions.
+By default, all options are available if you need to adjust this setting to match your particular network environment or security concerns.
 
 ## Allowing or Restricting TLS Ciphers
 
-Go to the **System** ➞ **General** page:
+Log in to the web interface and go to **System > General**:
 
 <img src="/images/TN-12.0-TLS-1.PNG">
 <br><br>
@@ -19,5 +21,5 @@ Click on *HTTPS Protocols* to open a dropdown menu with the various cipher suite
 Unsetting a cipher restricts its use in TrueNAS.
 After enabling or disabling a cipher, the TrueNAS system must be rebooted.
 
-<img src="/images/TN-12.0-TLS-2.PNG">
+<img src="/images/SystemGeneralHTTPSProtocols.png">
 <br><br>
