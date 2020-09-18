@@ -1,7 +1,7 @@
 ---
 title: "FTP and SFTP"
-description: "How to set up and use the File Transfer Protocol (FTP) and Secure File Transfer Protocol (SFTP)."
-tags: ["networking","FTP/SFTP"]
+description: "How to set up and use the File Transfer Protocol (FTP), Secure File Transfer Protocol (SFTP), and Trivial File Transfer Protocol (TFTP)."
+tags: ["networking","FTP/SFTP/TFTP"]
 ---
 
 ## FTP on TrueNAS
