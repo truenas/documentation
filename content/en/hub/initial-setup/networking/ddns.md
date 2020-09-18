@@ -1,7 +1,7 @@
 ---
 title: "Dynamic DNS"
 description: "Dynamic DNS on TrueNAS"
-tags: ["DDNS"]
+tags: ["DDNS", "networking"]
 ---
 
 
