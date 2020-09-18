@@ -1,6 +1,7 @@
 ---
 title: "Configuring System Alerts"
 description: "How to configure basic system alerts"
+tags: ["SNMP"]
 ---
 
 You can customizing both how alerts are reported and which alerts are displayed or prioritized.
@@ -80,3 +81,34 @@ Additional configuration is performed with **System > Email**.
 Click the **SEND TEST MAIL** button to verify that the configured email settings are working. If the test email fails, double-check that the *Email* field of the root user is correctly configured by clicking the **Edit** button for the root account in **Accounts > Users**.
 
 Configuring email for TLS/SSL email providers is described in [Are you having trouble getting FreeNAS to email you in Gmail?](https://forums.freenas.org/index.php?threads/are-you-having-trouble-getting-freenas-to-email-you-in-gmail.22517/).
+
+## SNMP
+
+[SNMP (Simple Network Management Protocol)](https://tools.ietf.org/html/rfc1157) is used to monitor network-attached devices for conditions that warrant administrative attention.
+TrueNAS uses [Net-SNMP](http://net-snmp.sourceforge.net/) to provide SNMP.
+Go to **Services > SNMP** to configure SNMP.
+When starting the SNMP service, this port will be enabled on the TrueNAS system:
+
++ `UDP 161` (listens here for SNMP requests)
+
+Available Management Information Bases (MIBs) are located in `/usr/local/share/snmp/mibs`.
+
+<img src="/images/TN-12.0-services-snmp.png" width='700px'>
+<br><br>
+
+### SNMP Service Options
+
+| Setting                 | Value          | Description                                                                                                                                                                                     |
+|-------------------------|----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Location                | string         | Enter the location of the system.                                                                                                                                                               |
+| Contact                 | string         | Enter an email address to receive messages from the SNMP service.                                                                                                                               |
+| Community               | string         | Change from *public* to increase system security. Can only contain alphanumeric characters, underscores, dashes, periods, and spaces. This can be left empty for SNMPv3 networks.                 |
+| SNMP v3 Support         | checkbox       | Set to enable support for [SNMP version 3](https://tools.ietf.org/html/rfc3410). See [snmpd.conf(5)](http://net-snmp.sourceforge.net/docs/man/snmpd.conf.html) for more information about configuring this and the `Authentication Type`, `Password`, `Privacy Protocol`, and `Privacy Passphrase` fields. |
+| Username                | string         | Only applies if `SNMP v3 Support` is set. Enter a username to register with this service.                                                                                                         |
+| Authentication Type     | drop-down menu | Only applies if `SNMP v3 Support` is enabled. Choices are *MD5* or *SHA*.                                                                                                                             |
+| Password                | string         | Only applies if `SNMP v3 Support` is enabled. Enter and confirm a password of at least eight characters.                                                                                          |
+| Privacy Protocol        | drop-down menu | Only applies if `SNMP v3 Support` is enabled. Choices are *AES* or *DES*.                                                                                                                             |
+| Privacy Passphrase      | string         | Enter a separate privacy passphrase. `Password` is used when this is left empty.                                                                                                                  |
+| Auxiliary Parameters    | string         | Enter additional [snmpd.conf(5)](https://www.freebsd.org/cgi/man.cgi?query=snmpd.conf) options. Add one option for each line.                                                                                                                           |
+| Expose zilstat via SNMP | checkbox       | Enabling this option may have pool performance implications.                                                                                                                                    |
+| Log Level               | drop-down menu | Choose how many log entries to create. Choices range from the least log entries (Emergency) to the most (Debug).                                                                                |
