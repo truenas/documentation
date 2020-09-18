@@ -8,7 +8,7 @@ description: "Link Layer Discovery Protocol"
 
 The Link Layer Discovery Protocol (LLDP) is used by network devices to advertise their identity, capabilities, and neighbors on an Ethernet network. TrueNAS® uses the [ladvd](https://github.com/sspans/ladvd) LLDP implementation. If the network contains managed switches, configuring and starting the LLDP service will tell the TrueNAS® system to advertise itself on the network.
 
-<img src="/images/services-lldp.png" width='700px'>
+<img src="/images/TN-12.0-services-lldp.png" width='700px'>
 <br><br>
 
 
