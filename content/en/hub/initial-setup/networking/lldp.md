@@ -1,22 +1,24 @@
 ---
 title: "LLDP"
-description: "Link Layer Discovery Protocol"
+description: "Advertising TrueNAS on a network with the Link Layer Discovery Protocol."
 tags: ["LLDP", "networking"]
 ---
 
+The [Link Layer Discovery Protocol (LLDP)](https://tools.ietf.org/html/rfc4957) is used by network devices to advertise their identity, capabilities, and neighbors on an Ethernet network.
+TrueNAS uses the [ladvd](https://github.com/sspans/ladvd) LLDP implementation.
+When the local network contains managed switches, configuring and starting the LLDP service will tell the TrueNAS system to advertise itself on the network.
 
-### LLDP
-
-The Link Layer Discovery Protocol (LLDP) is used by network devices to advertise their identity, capabilities, and neighbors on an Ethernet network. TrueNAS® uses the [ladvd](https://github.com/sspans/ladvd) LLDP implementation. If the network contains managed switches, configuring and starting the LLDP service will tell the TrueNAS® system to advertise itself on the network.
+To configure LLDP, log in to the web interface and go to **Services > LLDP**
 
 <img src="/images/TN-12.0-services-lldp.png" width='700px'>
 <br><br>
 
+Set an **Interface Description** and enter a **Country Code** before turning the LLDP service on.
 
-### LLDP onfiguration options
+## LLDP Configuration options
 
 | Setting               | Value    | Description                                                                                     |
 |-----------------------|----------|-------------------------------------------------------------------------------------------------|
-| Interface Description | checkbox | Set to enable receive mode and to save and received peer information in interface descriptions. |
-| Country Code          | string   | Required for LLDP location support. Enter a two-letter ISO 3166 country code.                   |
-| Location              | string   | Optional. Specify the physical location of the host.  
+| Interface Description | checkbox | Enables *receive* mode. Any received peer information is saved in interface descriptions.       |
+| Country Code          | string   | Two-letter [ISO 3166-1 alpha-2](https://www.iso.org/obp/ui/#search) code used to enable LLDP location support.                        |
+| Location              | string   | The physical location of the host.  
