@@ -72,3 +72,26 @@ Enable SSH by editing the /etc/rc.conf file. Type **vi /etc/rc.conf** or **ee /e
 Using an FTP client, such as FileZilla, log in with the jail IP address and user credentials. Like with SSH on TrueNAS, browsing to other folders and locations beyond the user's home directory is possible, but unlike running on TrueNAS directly, only the components of the jail are available.
 
 <img src='jailSFTP_FZ.png' width='700px'>
+
+### TFTP on TrueNAS
+
+Trivial File Transfer Protocol (TFTP) is a light-weight version of FTP typically used to transfer configuration or boot files between machines, such as routers, in a local environment. TFTP provides an extremely limited set of commands and provides no authentication.
+
+If the TrueNAS® system will be used to store images and configuration files for network devices, configure and start the TFTP service. Starting the TFTP service opens UDP port 69.
+
+The TFTP configuration screen 
+<img src="/images/services-tftp.png" width='700px'>
+<br><br>
+
+TFTP Configuration available options
+
+| Setting          | Value          | Description                                                                                                                                            |
+|------------------|----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Directory        | Browse button  | Browse to an existing directory to be used for storage. Some devices require a specific directory name, refer to the device documentation for details. |
+| Allow New Files  | checkbox       | Set when network devices need to send files to the system. For example, to back up their configuration.                                                |
+| Host             | IP address     | The default host to use for TFTP transfers. Enter an IP address. Example: 192.0.2.1.                                                                   |
+| Port             | integer        | The UDP port number that listens for TFTP requests. Example: 8050.                                                                                     |
+| Username         | drop-down menu | Select the account to use for TFTP requests. This account must have permission to the `Directory`.                                                       |
+| File Permissions | checkboxes     | Set permissions for newly created files. The default is everyone can read and only the owner can write. Some devices require less strict permissions.  |
+| Extra options    | string         | Add more options from [tftpd(8)](https://www.freebsd.org/cgi/man.cgi?query=tftpd) Add one option on each line.                             
+
