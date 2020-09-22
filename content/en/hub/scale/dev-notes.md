@@ -4,6 +4,8 @@ description: "Running updates about TrueNAS SCALE Nightly status and current iss
 ---
 
 #### Recent Updates
+> 9/21/2020 - UX Refresh - New Networking section added
+
 > 9/21/2020 - OpenZFS 2.0-RC (With Async CoW) merged into nightly images
 
 > 9/18/2020 - UX Refresh - New System Settings -> General page updated
