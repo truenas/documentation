@@ -7,6 +7,13 @@ tags: ["ZFS","encryption","security"]
 You can encrypt the root dataset of a new storage pool to further increase data security.
 Please note that you will be responsible to remember or otherwise back up passphrases or other access methods to your encrypted data.
 
+Data-at-rest encryption can be provided via:
+
++ [Self Encrypting Drives (SEDs)]({{< ref "storage/sed-drives.md" >}}) using OPAL or FIPS 140.2 (Both AES 256)
++ Encryption of specific datasets (AES-256-GCM in version 12.0)
+
+Keys for data-at-rest are managed locally in each system. The user is responsible for storing them. Key Management Interface Protocol (KMIP) is included in version 12.0.
+
 ## Encrypting a Storage Pool
 
 To begin encrypting data, follow the same process as creating a new pool and set the **Encryption** option at the top of the page.
