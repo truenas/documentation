@@ -339,6 +339,22 @@ The “Network” in “Network Attached Storage” is obviously just as importa
 * Only consider a “jumbo frames” [MTU](https://en.wikipedia.org/wiki/Maximum_transmission_unit) with dedicated connections such as between servers or video editors and TrueNAS that are not likely to experience packet fragmentation.
 * Interfaces with [LRO](https://en.wikipedia.org/wiki/Large_receive_offload) and [LSO](https://en.wikipedia.org/wiki/Large_send_offload) offload features will generally alleviate the need for jumbo frames and their use can result in lower CPU overhead.
 
+### High speed interconnects
+
+As the pace of hardware developement increases and enterprises upgrade at a faster pace, higher bandwidth hardware is becoming more and more accessible.
+It's now realistic for home labs to employ 40GB and higher networking components.  Home Admins are now facing the complications that have been faced by enterprise customers with these speeds. 
+
+iXsystems highly recommends using Optical Fiber over Direct Attached Copper (DAC) cables for the high speed interconnects listed below:
+
+* SFP+ connectors are used 10Gb NICs
+* SFP28 connectors are used on 25Gb NICs. 
+* QSFP+ connectors are used on 40Gb NICs. 
+* QSFP28 connectors are used on 100Gb NICs.
+* QSFP56 connectors are used on 200Gb NICs.
+* QSFP-DD connectors are used on 400Gb NICs.
+
+iXsystems also recommends using Optical fiber for any of the aforementioned transceiver form factors when using Fibre Channel. Direct Attached Copper (DAC) cables can potentially introduce interoperability issues between NIC, cable and switch.
+
 ## Virtualized TrueNAS CORE
 
 Finally, the ultimate TrueNAS hardware question is whether to use actual hardware at all or go with a virtualization solution.
