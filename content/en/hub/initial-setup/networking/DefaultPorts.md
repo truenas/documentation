@@ -15,7 +15,7 @@ TCP ports and services that listen for external connections:
 |   Inbound Port  | Protocol | Service Name |                Description of Service                | Encrypted | Defaults |
 |:---------------:|:--------:|:------------:|:----------------------------------------------------:|:---------:|:--------:|
 |      80/443     |    TCP   |  HTTP/HTTPS  |         Web interface <br> REST API <br> WebSockets API        |  Optional |   Open   |
-|        22       |    TCP   |   SSH/SFTP   | Secure ShellSecure FTP <br> ZFS Replication <br> Rsync over SSH  |    Yes    |  Closed  |
+|        22       |    TCP   |   SSH/SFTP   | Secure Shell Secure FTP <br> ZFS Replication <br> Rsync over SSH  |    Yes    |  Closed  |
 |     111/2049    |  TCP/UDP |    NFS v3    |                 Network File Service                 |     No    |  Closed  |
 | 137/138/139/445 |  TCP/UDP |      SMB     |                 Windows File Service                 |  Optional |  Closed  |
 |       548       |    TCP   |      AFP     |                  Apple File Service                  |     No    |  Closed  |
