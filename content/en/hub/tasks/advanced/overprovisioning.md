@@ -18,3 +18,22 @@ The command to overprovision an SSD is **disk_resize** device size**, where *dev
 {{% pageinfo %}}
 Some SATA devices may be limited to one resize per power cycle. Some BIOS may block resize during boot and require a live power cycle.
 {{% /pageinfo %}}
+
+
+### SLOG Overprovisioning
+
+To over provision a SLOG device open the page **System** > **Advanced**.
+Enter the value coosponding to the size in GB to be set.
+
+<img src="/images/TN-12.0-slog-overprovision.png" width='700px'>
+<br><br>
+
+This setting only applies to SLOG devices during pool creation.  
+
+{{% pageinfo %}}
+Only one overprovision/underprovision operation may occur per power cycle
+{{% /pageinfo %}}
+
+Once this value is applied, a pool is created with a SLOG device; it is impossible to restore an overprovisioned SLOG device back to original capacity without running disk_resizel after first destroying the pool it was part of and issuing a full power cycle.  
+
+The value of overprovision setting can be erased, and set to none to prevent future SLOG devices from being overprovisioned.
