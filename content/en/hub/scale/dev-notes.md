@@ -81,3 +81,29 @@ In order to use PCI passthrough devices with VM's, following steps should be fol
 
 The above steps should be performed when there has been at least 1 VM created via UI.
 Please ensure that the device an be safely used with the guest as if it's for example part of a CPU and we try to pass it through to the guest, that might result in a crash and the system will only recover after a reboot.
+
+## Containerisation
+
+**Configuring Kubernetes**
+
+In order to leverage containers, SCALE is using a single node kubernetes cluster powered by k3s. In order to configure kubernetes, please type the following command:
+
+```
+midclt call -job kubernetes.update '{"pool": "pool_name_here"}'
+``` 
+
+This will setup kubernetes on the defined pool. For the first time, it may take a few minutes for the k8s cluster to properly initialise itself. Moving on, if you have a pool configured for kubernetes, kubernetes will start automatically on boot.
+
+**Using Kubernetes**
+
+SCALE does not support deploying workloads to kubernetes cluster officially yet, however users interested in using k8s can do so manually via shell. SCALE has helm3 pre-installed, so users can leverage helm to deploy their workloads.
+
+A tip for users is to add following lines to `~/.zshrc`
+```
+alias kubectl="k3s kubectl"
+export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
+```
+
+Setting `KUBECONFIG` is required for using helm and the `kubectl` alias helps use `kubectl` directly instead of prefixing it with `k3s` each time.
+
+A word of caution: Support for kubernetes is still considered experimental, so please use it at your own risk. However if you come across any bugs, please feel free to create tickets at https://jira.ixsystems.com.
