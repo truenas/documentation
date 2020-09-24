@@ -84,7 +84,7 @@ In order to use PCI passthrough devices with VM's, following steps should be fol
 The above steps should be performed when there has been at least 1 VM created via UI.
 Please ensure that the device an be safely used with the guest as if it's for example part of a CPU and we try to pass it through to the guest, that might result in a crash and the system will only recover after a reboot.
 
-## [Containerisation](#containerisation)
+## Containerisation
 
 **Configuring Kubernetes**
 
