@@ -76,9 +76,17 @@ Once the client account has been created, click the <i class="fas fa-download ac
 <br><br>
 
 Load the configuration file into WireGuard on your machine and activate the tunnel.
+
+<img src="/images/wg-01.png" width='700px'>
+<br>
+<img src="/images/wg-02.png" width='700px'>
+<br>
+<img src="/images/wg-03.png" width='700px'>
+<br>
+
 Further information on WireGuard and WireGuard clients can be found on the [WireGuard home page](https://www.wireguard.com). The IP of your TrueCommand Cloud instance is displayed in the iXsystems Account Portal page.  
 
-After WireGuard has been activated, you can log in to the TrueCommand Cloud Interface by  clicking the TrueCommand IP address listed on the portal, or manually entering the TrueCommand Cloud IP in a browser. 
+After WireGuard has been activated, you can log in to the TrueCommand Cloud Interface by clicking the TrueCommand IP address listed on the portal, or manually entering the TrueCommand Cloud IP in a browser. 
 
 ### Connecting Systems to a TrueCommand Cloud Instance
 
