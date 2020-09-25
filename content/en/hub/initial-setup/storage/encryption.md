@@ -7,12 +7,14 @@ tags: ["ZFS","encryption","security"]
 You can encrypt the root dataset of a new storage pool to further increase data security.
 Please note that you will be responsible to remember or otherwise back up passphrases or other access methods to your encrypted data.
 
-Data-at-rest encryption can be provided via:
+Data-at-rest encryption is available with:
 
-+ [Self Encrypting Drives (SEDs)]({{< ref "sed-drives.md" >}}) using OPAL or FIPS 140.2 (Both AES 256)
-+ Encryption of specific datasets (AES-256-GCM in version 12.0)
++ [Self Encrypting Drives (SEDs)]({{< ref "sed-drives.md" >}}) using OPAL or FIPS 140.2 (Both [AES 256](https://csrc.nist.gov/projects/cryptographic-standards-and-guidelines/archived-crypto-projects/aes-development))
++ Encryption of specific datasets (AES-256-GCM in TrueNAS 12.0)
 
-Keys for data-at-rest are managed locally in each system. The user is responsible for storing them. Key Management Interface Protocol (KMIP) is included in version 12.0.
+Keys for data-at-rest are managed on the local TrueNAS system.
+The user is responsible for storing and securing their keys.
+The [Key Management Interface Protocol (KMIP)](https://docs.oasis-open.org/kmip/spec/v1.1/os/kmip-spec-v1.1-os.html) is included in TrueNAS 12.0.
 
 ## Encrypting a Storage Pool
 
