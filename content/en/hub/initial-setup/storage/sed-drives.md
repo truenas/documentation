@@ -37,13 +37,17 @@ A password-protected SED protects the data stored on the device when the device 
 ## Deploying SEDs
 Enter `sedutil-cli --scan` in the **Shell** to detect and list devices. The second column of the results identifies the drive type:
 
-`no` indicates a non-SED device
-`1` indicates a legacy TCG OPAL 1 device
-`2` indicates a modern TCG OPAL 2 device
-`L` indicates a TCG Opalite device
-`p` indicates a TCG Pyrite 1 device
-`P` indicates a TCG Pyrite 2 device
-`E` indicates a TCG Enterprise device
+| Character | Standard   |
+|-----------|------------|
+| no        | non-SED device |
+| 1         | Opal V1    |
+| 2         | Opal V2    |
+| E         | Enterprise |
+| L         | Opalite    |
+| p         | Pyrite V1  |
+| P         | Pyrite V2  |
+| r         | Ruby       |
+
 Example:
 
 ```
@@ -192,4 +196,10 @@ sedutil-cli --setSIDPassword <oldpassword> "" </dev/device>
 sedutil-cli --setPassword <oldpassword> EraseMaster "" </dev/device>
 ```
 
-Wipe data and reset password using the PSID: `sedutil-cli --yesIreallywanttoERASEALLmydatausingthePSID <PSINODASHED> </dev/device>` where <PSINODASHED> is the PSID located on the physical drive with no dashes (-).
+Wipe data and reset password using the PSID: 
+
+`sedutil-cli --PSIDrevertAdminSP <PSIDNODASHS> /dev/<device>`
+
+If it fails use:
+
+`sedutil-cli --PSIDrevert <PSIDNODASHS>  /dev/<device>`
