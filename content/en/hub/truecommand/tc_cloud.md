@@ -70,7 +70,7 @@ From the account home page, click **Manage**.  Add a client for your desktop or 
 <img src="/images/tcc-10.png" width='700px'>
 <br><br>
 
-Once the client account has been created, click <i class="fas fa-download action-icon clickable" aria-hidden="true" title="Download WireGuard configuration file"></i>&nbsp download to download the config file.
+Once the client account has been created, click the <i class="fas fa-download action-icon clickable" aria-hidden="true" title="Download WireGuard configuration file"></i>&nbsp download icon to download the config file.
 
 <img src="/images/tcc-11.png" width='700px'>
 <br><br>
