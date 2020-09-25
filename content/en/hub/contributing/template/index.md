@@ -1,6 +1,8 @@
 ---
 title: "Markdown Template for New Articles"
 linkTitle: "Article Template"
+description: "An Example of the Article Template for Documentation usage."
+tags: ["example","documentation"]
 weight: 4
 ---
 
