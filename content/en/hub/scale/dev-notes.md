@@ -4,6 +4,8 @@ description: "Running updates about TrueNAS SCALE Nightly status and current iss
 ---
 
 #### Recent Updates
+> 9/25/2020 - Samba 4.13.0 added - Includes iX VFS modules, Shadow Copies, and IO_URING support (Enabled by default)
+
 > 9/24/2020 - Preliminary support for Kubernetes added to middleware backend! - [Usage Instructions](#containerisation)
 
 > 9/21/2020 - UX Refresh - New Networking section added
