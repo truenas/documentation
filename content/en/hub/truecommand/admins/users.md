@@ -31,7 +31,7 @@ Deleting a user account permanently removes the user and cannot be undone.
 
 ## Using LDAP to Add User Accounts
 
-LDAP can be utilized for user accounts.  See the [TrueCommand Administration]({{< relref "administration.md#ldap" >}}) guide for details on LDAP configuration.
+LDAP can be utilized for user accounts.  See the [TrueCommand Administration]({{< relref "settings.md#ldap" >}}) guide for details on LDAP configuration.
 
 *LDAP/AD* allows using single sign-on credentials from the [Lightweight Directory Access Protocol (LDAP)](https://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol) or [Active Directory (AD)](https://en.wikipedia.org/wiki/Active_Directory).
 This means a user can log in with an LDAP or AD account without creating a separate TrueCommand login.

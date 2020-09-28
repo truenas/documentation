@@ -1,7 +1,6 @@
 ---
-title: "TrueCommand Administration"
-linkTitle: "Administration"
-description: "How to find or adjust various system settings, including the License, Certificates, LDAP, SSL, Alerts, and other options for connected systems."
+title: "Settings"
+description: "Using the Administration page to adjust the License, Certificates, LDAP, SSL, Alerts, and other TrueCommand options."
 weight: 4
 tags: ["TrueCommand"]
 ---
