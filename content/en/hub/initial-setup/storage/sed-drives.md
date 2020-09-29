@@ -170,12 +170,14 @@ Wipe data and reset password using the PSID: `sedutil-cli --yesIreallywanttoERAS
 
 ## TCG-E Instructions
 
-Use **all** of these commands to reset the password without losing data:
-{{% pageinfo %}}
+### Change or Reset the Password without Destroying Data
+
 These commands must be run for every *LockingRange* or *band* on the drive.
-To determine the number of bands on a drive use the `sedutil-cli -v --listLockingRanges </dev/device>`
-Incriment BandMaster# and rerun the command with --setPassword for every band that exists.
-{{% /pageinfo %}}
+To determine the number of bands on a drive, use `sedutil-cli -v --listLockingRanges </dev/device>`.
+Increment the `BandMaster` number and rerun the command with `--setPassword` for every band that exists.
+
+Use **all** of these commands to reset the password without losing data:
+
 ```
 sedutil-cli --setSIDPassword <oldpassword> "" </dev/device>
 sedutil-cli --setPassword <oldpassword> EraseMaster "" </dev/device>
@@ -184,11 +186,7 @@ sedutil-cli --setPassword <oldpassword> BandMaster1 "" </dev/device>
 ```
 
 Use **all** of these commands to change the password without destroying data:
-{{% pageinfo %}}
-These commands must be run for every *LockingRange* or *band* on the drive.
-To determine the number of bands on a drive use the `sedutil-cli -v --listLockingRanges </dev/device>`
-Incriment BandMaster# and rerun the command with --setPassword for every band that exists.
-{{% /pageinfo %}}
+
 ```
 sedutil-cli --setSIDPassword <oldpassword* newpassword */dev/device*
 sedutil-cli --setPassword <oldpassword> EraseMaster <newpassword> </dev/device>
@@ -196,8 +194,9 @@ sedutil-cli --setPassword <oldpassword> BandMaster0 <newpassword> </dev/device>
 sedutil-cli --setPassword <oldpassword> BandMaster1 <newpassword> </dev/device>
 ```
 
+### Reset Password and Wipe Data
 
-Wipe data and reset password to default MSID:
+Reset to default MSID:
 
 ```
 sedutil-cli --eraseLockingRange 0 <password> </dev/device>
@@ -205,7 +204,7 @@ sedutil-cli --setSIDPassword <oldpassword> "" </dev/device>
 sedutil-cli --setPassword <oldpassword> EraseMaster "" </dev/device>
 ```
 
-Wipe data and reset password using the PSID: 
+Reset using the PSID: 
 
 `sedutil-cli --PSIDrevertAdminSP <PSIDNODASHS> /dev/<device>`
 
