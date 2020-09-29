@@ -4,7 +4,7 @@ description: "Official hardware guide for custom TrueNAS CORE systems."
 tags: ["TrueNAS CORE","Components"]
 ---
 
-Long-time TrueNAS CORE/FreeNAS users will never forget the FreeNAS 8.0 days when flashing an IBM M1015 controller card with LSI firmware was a right of passage, 3TB drives were the largest you could buy, and floods in Thailand would soon turn every hard drive into a valuable asset.
+Long-time TrueNAS CORE/FreeNAS users will never forget the FreeNAS 8.0 days when flashing an IBM M1015 controller card with LSI firmware was a rite of passage, 3TB drives were the largest you could buy, and floods in Thailand would soon turn every hard drive into a valuable asset.
 
 Fast-forward to the amazing new [TrueNAS Minis](https://www.truenas.com/truenas-mini/) and a streamlined user experience through the intuitive [web interface](https://www.truenas.com/truenas-core/) to see just how much has changed in the TrueNAS ecosystem.
 While the TrueNAS Mini and FreeNAS certified are excellent turn-key systems, we appreciate that do-it-yourself users have always played a critical role in the growth and success of TrueNAS CORE/FreeNAS around the world.
