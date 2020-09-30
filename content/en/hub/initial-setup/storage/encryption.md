@@ -81,9 +81,9 @@ Must be longer than 8 characters
 
 Status of a dataset can be determined based on the icon used after the name.  
 
-Dataset Unlocked Icon : <mat-icon _ngcontent-iee-c469="" role="img" fontset="mdi-set" fonticon="mdi-lock-open-variant" class="mat-icon notranslate mdi-set mdi-lock-open-variant mat-icon-no-color ng-star-inserted" aria-hidden="true"></mat-icon>
+Dataset Unlocked Icon : <i class="material-icons" aria-hidden="true" title="<unlocked>"><mdi-lock-open-variant></i>
 
-Dataset Locked Icon : <mat-icon _ngcontent-iee-c469="" role="img" fontset="mdi-set" fonticon="mdi-lock" class="mat-icon notranslate mdi-set mdi-lock mat-icon-no-color ng-star-inserted" aria-hidden="true"></mat-icon>
+Dataset Locked Icon : <i class="material-icons" aria-hidden="true" title="<locked>"><mdi-lock></i>
 
 Encrypted datasets can only be locked and unlocked if they are secured with a passphrase instead of a keyfile.
 Before locking a dataset, verify that it is not currently in use, then click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp (Options) and **Lock**.
