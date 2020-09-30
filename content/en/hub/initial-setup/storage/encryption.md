@@ -31,7 +31,7 @@ The default encryption cipher is recommended, but there are other ciphers availa
 ### Encrypting a New Dataset
 
 New datasets within an existing storage pool can also be encrypted without having to encrypt the entire pool.
-To encrypt a single dataset, go to **Storage > Pools**, open the <i class="fas fa-ellipsis-v"></i> (Options) for an existing dataset, and click **Add Dataset**.
+To encrypt a single dataset, go to **Storage > Pools**, open the <i class="fas fa-ellipsis-v"></i>&nbsp (Options) for an existing dataset, and click **Add Dataset**.
 Look at the *Encryption Options* and, if the parent dataset is unencrypted, unset the **Inherit** option.
 You can then set the **Encryption** option for the new dataset and configure the *Type* and other options.
 
@@ -48,7 +48,7 @@ Manually back up a root dataset keyfile by clicking the gear menu and selecting 
 <img src="/images/TN-12.0-encryption-8.PNG">
 <br><br>
 
-To change the keyfile, click <i class="fas fa-ellipsis-v"></i> (Options) and select **Encryption Options**.  
+To change the keyfile, click <i class="fas fa-ellipsis-v"></i>&nbsp (Options) and select **Encryption Options**.  
 
 <img src="/images/TN-12.0-encryption-4.PNG">
 <br><br>
@@ -60,7 +60,7 @@ Enter your custom key or click **Generate Key**. Remember to back up your keyfil
 
 ## Passphrase
 
-To use a passphrase instead of a keyfile, click <i class="fas fa-ellipsis-v"></i> (Options) and select **Encryption Options**.
+To use a passphrase instead of a keyfile, click <i class="fas fa-ellipsis-v"></i>&nbsp (Options) and select **Encryption Options**.
 Change the *Encryption Type* from `Key` to `Passphrase`.
 
 <img src="/images/TN-12.0-encryption-6.PNG">
