@@ -79,8 +79,14 @@ Must be longer than 8 characters
 
 ## Locking and Unlocking Datasets
 
+Status of a dataset can be determined based on the icon used after the name.  
+
+Dataset Unlocked Icon : <mat-icon _ngcontent-iee-c469="" role="img" fontset="mdi-set" fonticon="mdi-lock-open-variant" class="mat-icon notranslate mdi-set mdi-lock-open-variant mat-icon-no-color ng-star-inserted" aria-hidden="true"></mat-icon>
+
+Dataset Locked Icon : <mat-icon _ngcontent-iee-c469="" role="img" fontset="mdi-set" fonticon="mdi-lock" class="mat-icon notranslate mdi-set mdi-lock mat-icon-no-color ng-star-inserted" aria-hidden="true"></mat-icon>
+
 Encrypted datasets can only be locked and unlocked if they are secured with a passphrase instead of a keyfile.
-Before locking a dataset, verify that it is not currently in use, then click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i> (Options) and **Lock**.
+Before locking a dataset, verify that it is not currently in use, then click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp (Options) and **Lock**.
 
 <img src="/images/TN-12.0-encryption-10.PNG">
 <br><br>
@@ -98,7 +104,7 @@ A dialog window remains visible while the dataset is locked.
 After locking a dataset, the unlock icon changes to a locked icon.
 While the dataset is locked, it is not available for use.
 
-To unlock a dataset, click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i> (Options) and **Unlock**.
+To unlock a dataset, click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp (Options) and **Unlock**.
 
 <img src="/images/TN-12.0-encryption-13.PNG">
 <br><br>
