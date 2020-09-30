@@ -6,6 +6,8 @@ tags: ["API"]
 ---
 
 
+Note: Due to the length of this documentation this page will take about 20 seconds to fully load. 
+
 <iframe id="inlineFrame"
     title="Inline Frame"
     width="1000"
