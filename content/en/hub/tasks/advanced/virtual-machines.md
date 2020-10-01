@@ -60,7 +60,7 @@ Notes about devices:
 * *CD-ROM* devices allowing booting a VM from a CD-ROM image like an installation CD.
   The CD image must be available in the system storage.
 
-## Starting the Virtual Machine
+## Managing the Virtual Machine
 
 After creating the VM and configuring any devices for it, you can manage the VM by expanding its entry in **Virtual Machines**
 
@@ -69,3 +69,5 @@ After creating the VM and configuring any devices for it, you can manage the VM 
 
 Options for *Serial* or *VNC* connections are available after activating the VM.
 If the *VNC* connection screen appears garbled, try adjusting the VNC device resolution.
+
+Using the Stop button will cleanly shutdown the running VM.  Using the **Poweroff** Button will immediately halt the vm, similar to holding the powerbutton on a computer for 10 seconds.  
