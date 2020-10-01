@@ -81,9 +81,9 @@ Must be longer than 8 characters
 
 Status of a dataset can be determined based on the icon used after the name.  
 
-Dataset Unlocked Icon : <i class="material-icons" aria-hidden="true" title="<unlocked>">mdi-lock-open-variant</i>
+Dataset Unlocked Icon : <i class="material-icons" aria-hidden="true" title="<unlocked>">lock_open</i>
 
-Dataset Locked Icon : <i class="material-icons" aria-hidden="true" title="<locked>">mdi-loc></i>
+Dataset Locked Icon : <i class="material-icons" aria-hidden="true" title="<locked>">lock></i>
 
 Encrypted datasets can only be locked and unlocked if they are secured with a passphrase instead of a keyfile.
 Before locking a dataset, verify that it is not currently in use, then click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp (Options) and **Lock**.
