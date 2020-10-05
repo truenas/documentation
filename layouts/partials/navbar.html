@@ -17,9 +17,6 @@
 				<a class="nav-link{{if $active }} active{{end}}" href="{{ with .Page }}{{ .RelPermalink }}{{ else }}{{ .URL | relLangURL }}{{ end }}" {{ if ne $url.Host $baseurl.Host }}target="_blank" {{ end }}><span{{if $active }} class="active"{{end}}>{{ .Name }}</span></a>
 			</li>
 			{{ end }}
-			<li class="nav-item dropdown d-lg-block">
-				{{ partial "navbar-websites-selector.html" . }}
-			</li>
 			{{ if  .Site.Params.versions }}
 			<li class="nav-item dropdown d-lg-block">
 				{{ partial "navbar-version-selector.html" . }}
@@ -30,7 +27,7 @@
 				{{ partial "navbar-lang-selector.html" . }}
 			</li>
 			{{ end }}
+			<!-- <div class="headertext"><a href="https://support.ixsystems.com/" target="_blank">Support</a></div> -->
 		</ul>
 	</div>
-	<div class="navbar-nav d-lg-block">{{ partial "search-input.html" . }}</div>
 </nav>

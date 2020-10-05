@@ -1,7 +1,4 @@
 ---
-type: hub
-hide_feedback: true
-toc_hide: true
 ---
 
-<meta http-equiv="Refresh" content="0; url='/hub/'" />
+<meta http-equiv="refresh" content="0; url='/hub/'" />

@@ -1,10 +1,9 @@
 # Commenting your code is very useful.
-#baseURL = "https://www.truenas.com/docs/"
+#baseURL = "./hub/"
 title = "TrueNAS Documentation Hub"
 enableRobotsTXT = true
 relativeURLs = true
 disableKinds = ["RSS"]
-
 
 # Hugo allows theme composition (and inheritance). The precedence is from left to right.
 theme = ["docsy"]
@@ -160,7 +159,6 @@ enable = true
 # The responses that the user sees after clicking "yes" (the page was helpful) or "no" (the page was not helpful).
 yes = 'Glad to hear it! Please <a href="https://github.com/freenas/documentation/issues/new">tell us how we can improve</a>.'
 no = 'Sorry to hear that. Please <a href="https://github.com/freenas/documentation/issues/new">tell us how we can improve</a>.'
-
 
 # Add dates to content pages
 [frontmatter]
