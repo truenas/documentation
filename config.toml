@@ -191,38 +191,3 @@ expiryDate = ["expiryDate"]
 [[params.websites]]
 	name = "Blog"
 	url = "https://www.ixsystems.com/blog/"
-
-# Add Topics menu entries
-[[params.topics]]
-	name = "Home"
-	url = "/"
-[[params.topics]]
-	name = "Overview"
-	url = "/hub/intro/"
-[[params.topics]]
-	name = "Getting Started"
-	url = "/hub/initial-setup/"
-[[params.topics]]
-	name = "Sharing"
-	url = "/hub/sharing/"
-[[params.topics]]
-	name = "Tasks"
-	url = "/hub/tasks/"
-[[params.topics]]
-	name = "Solutions"
-	url = "/hub/solutions/"
-[[params.topics]]
-	name = "TrueNAS SCALE"
-	url = "/hub/scale/"
-[[params.topics]]
-	name = "TrueCommand"
-	url = "/hub/truecommand/"
-[[params.topics]]
-	name = "Hardware"
-	url = "/hub/hardware/"
-[[params.topics]]
-	name = "Additional Topics"
-	url = "/hub/additional-topics/"
-[[params.topics]]
-	name = "Contributing"
-	url = "/hub/contributing/"
