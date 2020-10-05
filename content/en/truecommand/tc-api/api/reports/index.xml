@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>reports on TrueCommand Documentation</title>
+    <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/reports/</link>
+    <description>Recent content in reports on TrueCommand Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>3-Clause BSD License</copyright>
+    
+	<atom:link href="https://www.truenas.com/docs/hub/truecommand/tc-api/api/reports/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>reports/add</title>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/reports/add/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/reports/add/</guid>
+      <description>Namespace Name Admin Only Log Summary Generates Event Version Added     reports add No No Yes 1.1    Description Create a new report. The user who creates the report is always included in the &amp;ldquo;owners&amp;rdquo; list for the report, and is granted full edit/delete permissions for the report in the future. In addition, the owner of a report is able to share the report with other users/teams on a read-only basis, or grant ownership of a report to other users for edit capabilities as well.</description>
+    </item>
+    
+    <item>
+      <title>reports/edit</title>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/reports/edit/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/reports/edit/</guid>
+      <description>Namespace Name Admin Only Log Summary Generates Event Version Added     reports edit No Yes Yes 1.1    Description Modify an existing report. Any user included in the &amp;ldquo;owners&amp;rdquo; list has permission to modify a report, including granting edit access to other users.
+TrueCommand Administrators have permission to edit all reports, even if they are not explicitly included in the &amp;ldquo;owners&amp;rdquo; list.</description>
+    </item>
+    
+    <item>
+      <title>reports/generate</title>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/reports/generate/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/reports/generate/</guid>
+      <description>Namespace Name Admin Only Log Summary Has Event Version Added     reports generate No No No 1.1    Description This will take a designated report object with a time range and system list and return a complete report structure with all data associated with the systems pre-populated and formatted for display in the UI.This will return JSON data structures formatted for use with the &amp;ldquo;chart.</description>
+    </item>
+    
+    <item>
+      <title>reports/list</title>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/reports/list/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/reports/list/</guid>
+      <description>Namespace Name Admin Only Log Summary Has Event Version Added     reports list No No Yes 1.1    Description This will list all the reports where the current user is tagged as an &amp;ldquo;owner&amp;rdquo; of the repo, or any reports that are shared with the current user. For specific details about the formatting of the report &amp;ldquo;widgets&amp;rdquo; object, please view the
+Input Arguments  Required:  none ({})   Optional:  none ({})    Request Example Arguments ARGUMENTS ONLY: See the basics  of API requests for additional formatting information.</description>
+    </item>
+    
+    <item>
+      <title>reports/list_templates</title>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/reports/list_templates/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/reports/list_templates/</guid>
+      <description>Namespace Name Admin Only Log Summary Has Event Version Added     reports list_templates No No Yes 1.1    Description This will return all the known report item template objects by the current version of TrueCommand. These can be inserted into the &amp;ldquo;widgets&amp;rdquo; object within a report into order to enable that type of item in the report.
+For details about the &amp;ldquo;widgets&amp;rdquo; object formatting, please look at the Reporting section for details.</description>
+    </item>
+    
+    <item>
+      <title>reports/remove</title>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/reports/remove/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/reports/remove/</guid>
+      <description>Namespace Name Admin Only Log Summary Generates Event Version Added     reports remove No Yes reports/list 1.1    Description Remove a custom report. You must be listed as either an &amp;ldquo;owner&amp;rdquo; on the report or a TrueCommand administrator otherwise this action will return a &amp;ldquo;FORBIDDEN&amp;rdquo; error code.
+Input Arguments  Required:  &amp;ldquo;roid&amp;rdquo; (string or array of strings) : Report Object ID (roid) corresponding to the report(s) that need to be removed.</description>
+    </item>
+    
+  </channel>
+</rss>

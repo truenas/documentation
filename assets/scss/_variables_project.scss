@@ -128,77 +128,22 @@ $secondary: #666666;
   color: #d9d9d9;
   text-shadow: 1px 1px black;
 }
-// Front page body layout
-.docscategories {
-  background: #ffffff;
-  color: black;
-  max-width: 100%;
-}
-.heading, .grid-container {
-  max-width: 95% !important;
-  padding: 0 30px;
-  margin: 0 auto;
-  font: DIN 2014;
-}
-
-.grid-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 375px 375px 375px 375px;
-  grid-template-areas: "whatis initialsetup tasks" "advanced vcenter-plugin scale" "truecommand hardware references" "docs-contribute . .";
-  max-width: 90%;
-  grid-column-gap: 100px;
-  grid-row-gap: 75px;
-  
-}
-
-.whatis { grid-area: whatis; }
-
-.initialsetup { grid-area: initialsetup; }
-
-.tasks { grid-area: tasks; }
-
-.advanced { grid-area: advanced; }
-
-.references { grid-area: references; }
-
-.vcenter-plugin { grid-area: vcenter-plugin; }
-
-.scale { grid-area: scale; }
-
-.truecommand { grid-area: truecommand; }
-
-.hardware { grid-area: hardware; }
-
-.docs-contribute { grid-area: docs-contribute; }
-
-.block {
-  position: relative;
-  background: lighten($color: #ffffff, $amount: 30);
-  padding: 10px;
-}
-
-.button-wrapper {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
 
 // Links styled as buttons
 .linkbutton {
   min-width: 180px;
-  max-width: 30%;
-  display: block !important;
   border-radius: 5px;
-  margin-left: 20%;
-  margin-right: 20%;
   background-color: $primary;
   box-shadow: 3px 3px #D1D1D1;
   color: white;
   padding: 14px 25px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
+  position: relative;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  width: 20%;
 }
 .linkbutton:hover {
   color: #FFFFFF;
@@ -208,12 +153,6 @@ $secondary: #666666;
 
 .h2 .frontcenter {
 	text-align: center;
-}
-
-.box-centered {
-	margin-left: auto;
-	margin-right: auto;
-	width: 50%;
 }
 
 nav a {

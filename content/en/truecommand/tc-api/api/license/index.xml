@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>license on TrueCommand Documentation</title>
+    <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/license/</link>
+    <description>Recent content in license on TrueCommand Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>3-Clause BSD License</copyright>
+    
+	<atom:link href="https://www.truenas.com/docs/hub/truecommand/tc-api/api/license/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>license/check</title>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/license/check/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/license/check/</guid>
+      <description>Namespace Name Admin Only Log Summary Generates Event Version Added     license check no no yes 1    Description Check whether the current license is expired or already reached.
+Input Arguments  Required:  none ({})   Optional:  none ({})    Request Example Arguments ARGUMENTS ONLY: See the basics  of API requests for additional formatting information.
+{} Reply Example { &amp;quot;disks_over_limit&amp;quot; : false, &amp;quot;license_expired&amp;quot; : false } Events Any licensing changes will generate a &amp;ldquo;license/check&amp;rdquo; event which will be sent out to all connected users.</description>
+    </item>
+    
+    <item>
+      <title>license/info</title>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/license/info/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/license/info/</guid>
+      <description>Namespace Name Admin Only Log Summary Generates Event Version Added     license info yes no no 1    Description Return the information contained within the current license
+Input Arguments  Required:  none ({})   Optional:  none ({})    NOTE: The full license info will probably be more expansive than the example here (vendor/licensee info, etc).
+Request Example Arguments ARGUMENTS ONLY: See the basics  of API requests for additional formatting information.</description>
+    </item>
+    
+    <item>
+      <title>license/register</title>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/license/register/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/license/register/</guid>
+      <description>Namespace Name Admin Only Log Summary Generates Event Version Added     license register yes no yes 1    Description Register a new license with TrueCommand (administrator only)
+Input Arguments  Required:    &amp;ldquo;license_file_contents&amp;rdquo; : (string) Contents of the license file encapsulated as a string (file contents should already be base64-encoded can just just be read/passed through as text)      Request Example Arguments ARGUMENTS ONLY: See the basics  of API requests for additional formatting information.</description>
+    </item>
+    
+    <item>
+      <title>license/getvuid</title>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/license/gettvuid/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/license/gettvuid/</guid>
+      <description>Namespace Name Admin Only Log Summary Generates Event Version Added     license gettvid no no no 1    Description Return general the TV ID for the system itself
+Input Arguments  Required:  none ({})   Optional:  none ({})    Request Example Arguments ARGUMENTS ONLY: See the basics  of API requests for additional formatting information.
+{} Reply Example { &amp;quot;system_id&amp;quot; : &amp;quot;my_unique_system_id&amp;quot;, } Events This API call does not emit any middleware events.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>rpc on TrueCommand Documentation</title>
+    <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/rpc/</link>
+    <description>Recent content in rpc on TrueCommand Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>3-Clause BSD License</copyright>
+    
+	<atom:link href="https://www.truenas.com/docs/hub/truecommand/tc-api/api/rpc/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>rpc/auth</title>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/rpc/auth/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/rpc/auth/</guid>
+      <description>Namespace Name Admin Only Log Summary Generates Event     rpc auth N/A N/A N/A    Description Login to TrueCommand with a username and password. This needs to be performed within a few seconds of establishing the websocket connection, otherwise the server will close down the connection.
+Input Arguments  Required:  &amp;ldquo;username&amp;rdquo; (string) : Name of the user to login &amp;ldquo;password&amp;rdquo; (string) : Password associated with the specified user   Optional:  none ({})    Request Example Arguments { &amp;quot;namespace&amp;quot; : &amp;quot;rpc&amp;quot;, &amp;quot;name&amp;quot; : &amp;quot;auth&amp;quot;, &amp;quot;id&amp;quot; : &amp;quot;some_id&amp;quot;, &amp;quot;args&amp;quot; : { &amp;quot;username&amp;quot;:&amp;quot;myuser&amp;quot;, &amp;quot;password&amp;quot;:&amp;quot;mypassword&amp;quot; } } Reply Example { &amp;quot;namespace&amp;quot; : &amp;quot;response&amp;quot;, &amp;quot;name&amp;quot; : &amp;quot;auth&amp;quot;, &amp;quot;id&amp;quot; : &amp;quot;some_id&amp;quot;, &amp;quot;args&amp;quot; : { &amp;quot;args&amp;quot; : [&amp;quot;long_random_auth_token&amp;quot;, 900, &amp;quot;user_uuid&amp;quot;] } } The arguments returned are:</description>
+    </item>
+    
+    <item>
+      <title>rpc/auth_token</title>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/rpc/auth_token/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/rpc/auth_token/</guid>
+      <description>Namespace Name Admin Only Log Summary Generates Event     rpc auth_token N/A N/A N/A    Description Login to TrueCommand with a previously-provided login token. This needs to be performed within a few seconds of establishing the websocket connection, otherwise the server will close down the connection. A successful login with an auth token will automatically invalidate that token and a new token will be returned for future use again.</description>
+    </item>
+    
+    <item>
+      <title>rpc/auth_clear</title>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/rpc/auth_clear/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/rpc/auth_clear/</guid>
+      <description>Namespace Name Admin Only Log Summary Generates Event     rpc auth_clear N/A N/A N/A    Description Logout of an existing session. This will invalidate any existing auth tokens for the user session and close down the websocket connection.
+Input Arguments  Required:  none ({})   Optional:  none ({})    Request Example Arguments { &amp;quot;namespace&amp;quot; : &amp;quot;rpc&amp;quot;, &amp;quot;name&amp;quot; : &amp;quot;auth_clear&amp;quot;, &amp;quot;id&amp;quot; : &amp;quot;some_id&amp;quot;, &amp;quot;args&amp;quot; : {} } Reply Example There is no reply.</description>
+    </item>
+    
+    <item>
+      <title>rpc/query</title>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/rpc/query/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/rpc/query/</guid>
+      <description>Namespace Name Admin Only Log Summary Generates Event     rpc query N/A N/A N/A    Description List all the available systems/subsystems that the user can interact with.
+Input Arguments  Required:  none ({})   Optional:  none ({})    Request Example Arguments { &amp;quot;namespace&amp;quot; : &amp;quot;rpc&amp;quot;, &amp;quot;name&amp;quot; : &amp;quot;query&amp;quot;, &amp;quot;id&amp;quot; : &amp;quot;some_id&amp;quot;, &amp;quot;args&amp;quot; : {} } Reply Example { &amp;quot;namespace&amp;quot; : &amp;quot;response&amp;quot;, &amp;quot;name&amp;quot; : &amp;quot;query&amp;quot;, &amp;quot;id&amp;quot; : &amp;quot;some_id&amp;quot;, &amp;quot;args&amp;quot; : { &amp;quot;rpc&amp;quot;: [&amp;quot;auth&amp;quot;,&amp;quot;auth_token&amp;quot;,&amp;quot;auth_clear&amp;quot;,&amp;quot;query&amp;quot;] } } Log Summary This API call does not generate a detailed log summary item</description>
+    </item>
+    
+  </channel>
+</rss>

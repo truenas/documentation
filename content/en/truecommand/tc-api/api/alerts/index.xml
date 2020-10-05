@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>alerts on TrueCommand Documentation</title>
+    <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/alerts/</link>
+    <description>Recent content in alerts on TrueCommand Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>3-Clause BSD License</copyright>
+    
+	<atom:link href="https://www.truenas.com/docs/hub/truecommand/tc-api/api/alerts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>alerts/add</title>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/alerts/add/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/alerts/add/</guid>
+      <description>Namespace Name Admin Only Log Summary Generates Event Version Added     alerts add no no yes 1    Description Create a new alert rule. The user making the request must either be an administrator, or be granted alert-creation permission via the user or team settings. The creator of an alert rule is also automatically tagged as the owner of the rule. This grants permission to edit/delete the rule even if the user is not an administrator.</description>
+    </item>
+    
+    <item>
+      <title>alerts/edit</title>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/alerts/edit/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/alerts/edit/</guid>
+      <description>Namespace Name Admin Only Log Summary Generates Event Version Added     alerts edit no no no 1    Description Modify a custom alert rule. The user making the request must either be an administrator, or be listed as the &amp;ldquo;owner&amp;rdquo; of the designated alert rule, otherwise the middleware will return a FORBIDDEN error code.
+Input Arguments   Required Inputs:
+ &amp;ldquo;caid&amp;rdquo; : (string) ID of the custom alert At least one of the optional inputs listed below    Optional Inputs:</description>
+    </item>
+    
+    <item>
+      <title>alerts/list</title>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/alerts/list/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/alerts/list/</guid>
+      <description>Namespace Name Admin Only Log Summary Generates Event Version Added     alerts list no no no 1    Description List all the alert rules that are currently defined.
+Input Arguments  Required Inputs: none ({}) Optional Inputs:  &amp;ldquo;tvid&amp;rdquo; : (string or array of strings) Only show the alert rules that impact the designated system(s) &amp;ldquo;active_only&amp;rdquo; : (boolian - &amp;ldquo;false&amp;rdquo; by default) Only return alerts which are active.</description>
+    </item>
+    
+    <item>
+      <title>alerts/remove</title>
+      <link>https://www.truenas.com/docs/hub/truecommand/tc-api/api/alerts/remove/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.truenas.com/docs/hub/truecommand/tc-api/api/alerts/remove/</guid>
+      <description>Namespace Name Admin Only Log Summary Generates Event Version Added     alerts remove no no yes 1    Description Delete an existing alert rule. The user making the request must either be an administrator, or be listed as the &amp;ldquo;owner&amp;rdquo; of the designated alert rule, otherwise the middleware will return a FORBIDDEN error code.
+Input Arguments  Required:  &amp;ldquo;caid&amp;rdquo; : (string) ID of the custom alert to remove   Optional:  none ({})    Request Example Arguments ARGUMENTS ONLY: See the basics  of API requests for additional formatting information.</description>
+    </item>
+    
+  </channel>
+</rss>

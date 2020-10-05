@@ -1,9 +1,17 @@
 ---
 title: "TrueNAS Documentation Hub"
-type: hub
 hide_feedback: true
 no_list: true
 ---
+
+<table>
+	<tr>
+		<th><a href="/hub/"><img src="/images/truenas_open_storage-logo-full-color-rgb.png" style="display:block;margin-left:auto;margin-right:auto;padding:1em 1em 1em 1em;"><p style="text-align:center;">TrueNAS CORE, Enterprise, and SCALE Documentation</p></th>
+		<th><a href="/truecommand/"><img src="/images/truecommand-logo-full-color-rgb.png" style="display:block;margin-left:auto;margin-right:auto;padding:1em 1em 1em 1em;"><p style="text-align:center;">TrueCommand Documentation</p></th>
+		<th><a href="/hardware/"><img src="/images/TrueNASSystems.png" style="display:block;margin-left:auto;margin-right:auto;width:54%;padding:1em 1em 1em 1em;"><p style="text-align:center;">iXsystems Hardware Documentation</p></th>
+	</tr>
+</table>
+
 
 TrueNAS<sup>®</sup> is an operating system that is designed to be the most effective and time-efficient solution for storing, securing, and sharing data over a network.
 It is the simplest way to create a safe, centralized, and easily accessible place for your data.
@@ -13,18 +21,23 @@ There are additional topics for the TrueCommand and TrueNAS SCALE members of the
 
 <!-------------------------Topics------------------------------->
 
-Learn About TrueNAS
+## Introducing TrueNAS
 
-Background information and general overview of the software.
+Start by learning all about TrueNAS!
+Read about the features and wider software family, keep up with the latest release notes and software roadmap, and find hardware recommendations for installing the free TrueNAS CORE.
+
 <a href="/hub/intro/whatis/">What is TrueNAS?</a><br>
-<a href="/hub/intro/corehardwareguide/">CORE Hardware Guide</a><br>
-<a href="/hub/intro/truenas-roadmap/">Release Schedule</a><br>
 <a href="/hub/intro/release-notes/">Release Notes</a><br>
+<a href="/hub/intro/truenas-roadmap/">Release Schedule</a><br>
+<a href="/hub/intro/corehardwareguide/">CORE Hardware Guide</a><br>
 
 <a class="linkbutton" href="/hub/intro/">Overview</a>
 
 
-Getting Started With TrueNAS
+## First Steps
+
+<img src="/images/truenas_core-logo-full-color-rgb.png" style="display:block;margin-left:auto;margin-right:auto;width:35%;">
+<br><br>
 
 Installation and initial setup instructions.
 
@@ -34,10 +47,13 @@ Installation and initial setup instructions.
 <a href="/hub/initial-setup/directory-services/">Directory Services</a><br>
 <a href="/hub/initial-setup/best-practices/">Best Practices</a>
 
-<a class="linkbutton long-text" href="/hub/initial-setup/">Getting Started</a>
+<a class="linkbutton" href="/hub/initial-setup/">Getting Started</a>
 
 
-Sharing
+## Sharing Data
+
+<img src="/images/truenas_enterprise-logo-full-color-rgb.png" style="display:block;margin-left:auto;margin-right:auto;width:35%;">
+<br><br>
 
 Setting up file sharing with the different protocols built into TrueNAS.
 
@@ -49,7 +65,10 @@ Setting up file sharing with the different protocols built into TrueNAS.
 
 <a class="linkbutton" href="/hub/sharing/">Sharing</a>
 
-Tasks
+## Tasks
+
+<img src="/images/truenas_open_storage-logo-full-color-rgb.png" style="display:block;margin-left:auto;margin-right:auto;width:35%;">
+<br><br>
 
 Additional procedures and troubleshooting, including automated data backup and system administration topics.
 
@@ -57,51 +76,12 @@ Additional procedures and troubleshooting, including automated data backup and s
 <a href="/hub/tasks/administrative/">Administrative Tasks</a><br>
 <a href="/hub/tasks/advanced/">Advanced Procedures</a><br>
 
-<a class="linkbutton long-text" href="/hub/tasks/">Tasks</a>
+<a class="linkbutton" href="/hub/tasks/">Tasks</a>
 
-TrueNAS Solutions
+## Additional Topics
 
-Cross-platform integrations with TrueNAS
-
-<a href="/hub/solutions/kubernetes/">Kubernetes®</a><br>
-<a href="/hub/solutions/openstack/">OpenStack®</a><br>
-<a href="/hub/solutions/veeam/">Veeam®</a><br>
-<a href="/hub/solutions/vmware/">VMware®</a><br>
-
-<a class="linkbutton long-text" href="/hub/solutions/">TrueNAS Solutions</a>
-
-TrueNAS SCALE
-
-TrueNAS SCALE is a Debian-based version of TrueNAS with container support. It is currently in pre-ALPHA status and under active development.</p>
-
-<a href="/hub/scale/dev-notes/">Developer's Notes</a>
-<a class="linkbutton" href="/hub/scale/">TrueNAS SCALE</a>
-
-
-TrueCommand®
-
-TrueCommand is a "single pane of glass" application to simplify the scaling of data, drive management, and administration of iXsystems NAS platforms.
-
-<a href="/hub/truecommand/tcreleasenotes/">Release Notes</a><br>
-<a href="/hub/truecommand/installupdate/">Installing and Updating</a><br>
-<a href="/hub/truecommand/admins/">Administration</a><br>
-<a href="/hub/truecommand/tc_api/">API Documentation</a><br>
-
-<a class="linkbutton" href="/hub/truecommand/">TrueCommand</a>
-
-TrueNAS Hardware
-
-iXsystems hardware documentation, including Basic Setup Guides.
-
-<a href="/hub/hardware/mini/">TrueNAS Mini</a><br>
-<a href="/hub/hardware/fn-certified/">FreeNAS Certified</a><br>
-<a href="/hub/hardware/x-series/">X-Series</a><br>
-<a href="/hub/hardware/m-series/">M-Series</a><br>
-<a href="/hub/hardware/expansion-shelves/">Expansion Shelves</a><br>
-
-<a class="linkbutton block" href="/hub/hardware/">Hardware</a>
-
-Additional Topics
+<img src="/images/unsplash-alfons-morales-library.jpg" style="display:block;margin-left:auto;margin-right:auto;width:35%;">
+<br><br>
 
 Reference articles, legacy documentation links, and various articles authored by the extended user community.
 
@@ -113,13 +93,27 @@ Reference articles, legacy documentation links, and various articles authored by
 
 <a class="linkbutton" href="/hub/additional-topics/">Additional Topics</a>
 
+## TrueNAS Solutions
 
-Contributing to TrueNAS Documentation
+<img src="/images/truenas_open_storage-logo-full-color-rgb.png" style="display:block;margin-left:auto;margin-right:auto;width:35%;">
+<br><br>
 
-Step-by-step instructions for contributing documentation.</p>
+Cross-platform integrations with TrueNAS
 
-<a href="/hub/contributing/updating/">Updating Articles</a><br>
-<a href="/hub/contributing/new-articles/">New Articles</a><br>
-<a href="/hub/contributing/translations/">Translations</a><br>
+<a href="/hub/solutions/kubernetes/">Kubernetes®</a><br>
+<a href="/hub/solutions/openstack/">OpenStack®</a><br>
+<a href="/hub/solutions/veeam/">Veeam®</a><br>
+<a href="/hub/solutions/vmware/">VMware®</a><br>
 
-<a class="linkbutton" href="/hub/contributing/">Contributing</a>
+<a class="linkbutton" href="/hub/solutions/">TrueNAS Solutions</a>
+
+## TrueNAS SCALE
+
+<img src="/images/truenas_scale-logo-full-color-rgb.png" style="display:block;margin-left:auto;margin-right:auto;width:35%;">
+<br><br>
+
+TrueNAS SCALE is a Debian-based version of TrueNAS with container support. It is currently in pre-ALPHA status and under active development.</p>
+
+<a href="/hub/scale/dev-notes/">Developer's Notes</a><br>
+
+<a class="linkbutton" href="/hub/scale/">TrueNAS SCALE</a><br>
