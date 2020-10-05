@@ -14,18 +14,8 @@ The preview updates with any changes to the pull request, so you can always see 
 
 ## Making Quick Changes to an Article
 
-If you find text that needs to be fixed or improved in an article, click **Edit this page** to view the article source text in a new browser tab.
+If you find text that needs to be fixed or improved in an article, click **Edit this page** to view the article source text in a new browser tab.  To check your changes for bugs in the Markdown or HTML syntax, switch to the **Preview changes** tab.  The preview won't render the Hugo-specific syntax.
 You'll need to log in to your GitHub account to propose any changes.
-
-## Forking the Repo
-
-[content goes here]
-
-<img src="/images/article-source.png"><br><br>
-
-Make any text changes as needed.
-To check your changes for bugs in the Markdown or HTML syntax, switch to the **Preview changes** tab.
-The preview won't render the Hugo-specific syntax.
 
 ### Replacing an Image
 
@@ -40,13 +30,55 @@ Images are located in either the */static/images/* directory or are in the same 
 Click **Upload files** and either drag and drop your image or open the file browser to select your image.
 As long as the new image name is the same as the old image, the old image will be replaced and the article will automatically use the new image.
 
-## Opening a Pull Request
 
-When finished with your changes, scroll down to the **Commit changes** section and write a summary and description of your changes.
-Select **Create a new branch for this commit and start a pull request.** and click **Propose file change**.
-Make sure you're happy with your summary and description, then click **Create pull request**.
+## Forking the Repo
 
-After the pull request is created, the repository automatically builds a preview of the documentation site that has your changes included.
-The link to this preview is added to the Pull Request after the build completes.
+To start the process of submitting a change, click the **Edit this Page** link in the top right of the site. 
+
+<img src="/images/forking-contribution-00.PNG" width='700px'>
+<br><br>
+
+You will need to fork the repo in to your github account.  Click the green **Fork this repository** button to continue.
+
+<img src="/images/forking-contribution-01.PNG" width='700px'>
+<br><br>
+
+Edit the page as needed. 
+
+<img src="/images/forking-contribution-02.PNG" width='700px'>
+<br><br>
+
+When the changes are complete, add a quick overview of what changes were made in the description box, and click the green **Commit changes** button.
+
+<img src="/images/forking-contribution-03.PNG" width='700px'>
+<br><br>
+
+Once the page refreshes the changes will have been made to your repository.  
+Now these changes need to be merged into the main repo with a Pull Request (PR). To start this process, click on **Pull Requests**
+
+<img src="/images/forking-contribution-04.PNG" width='700px'>
+<br><br>
+
+Once the Pull Requests page opens, click on the green **New Pull Request** button.
+
+<img src="/images/forking-contribution-05.PNG" width='700px'>
+<br><br>
+
+Confirm that the *base repository* is set to **freenas/documentation** and  *base* is set to **master**.  *head repository* will need to be set to your forked repository name, in this example **q5sys/documentation**.  *compare* needs to be set to **master**.  Once this is correct, click the green **Create pull request** button to create the PR.
+
+
+<img src="/images/forking-contribution-06.PNG" width='700px'>
+<br><br>
+
+Make a short note about what changes were made, and click the green **Create pull request** button. 
+
+<img src="/images/forking-contribution-07.PNG" width='700px'>
+<br><br>
+
+At this point the PR has been created and the automated build system will build your changes.  A live demo of the site with the changes will be created.  Once the build is completed a comment will be added that says *All checks have passed 1 successful check* Click on **Show all checks** to reveal the **Details** link.  Click this link to see the live demo of the site with the requested changes.
+
+<img src="/images/forking-contribution-08.PNG" width='700px'>
+<br><br>
+
 
 That's it! Other contributors will review and merge your contribution!
