@@ -40,9 +40,10 @@ A clone is a writable copy of the snapshot. Since a clone is actually a dataset 
 {{% alert title=Warning color=warning %}}
 Rollback is a potentially dangerous operation and causes any configured replication tasks to fail as the replication system uses the existing snapshot when doing an incremental backup. To restore the data within a snapshot, the recommended steps are:
 
-Clone the desired snapshot.
-Share the clone with the share type or service running on the TrueNAS® system.
-After users have recovered the needed data, delete the clone in the Active Pools tab.
++ Clone the desired snapshot.
++ Share the clone with the share type or service running on the TrueNAS® system.
++ After users have recovered the needed data, delete the clone in the Active Pools tab.
+
 This approach does not destroy any on-disk data and has no impact on replication.
 {{% /alert %}}
 
