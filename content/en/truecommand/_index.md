@@ -4,7 +4,7 @@ hide_feedback: true
 no_list: true
 ---
 
-<table>
+<table style="background-color:white;">
 	<tr>
 		<th><a href="/hub/"><img src="/images/truenas_open_storage-logo-full-color-rgb.png" style="display:block;margin-left:auto;margin-right:auto;padding:1em 1em 1em 1em;"><p style="text-align:center;">TrueNAS CORE, Enterprise, and SCALE Documentation</p></th>
 		<th><a href="/truecommand/"><img src="/images/truecommand-logo-full-color-rgb.png" style="display:block;margin-left:auto;margin-right:auto;padding:1em 1em 1em 1em;"><p style="text-align:center;">TrueCommand Documentation</p></th>
