@@ -1,5 +1,5 @@
 ---
-title: "TrueCommand Documentation Hub"
+title: "TrueCommand Documentation"
 hide_feedback: true
 no_list: true
 ---
