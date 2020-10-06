@@ -2,7 +2,8 @@
 title: "TrueNAS Configuration File Management"
 linkTitle: "TrueNAS Configuration File Management"
 description: "How to manage TrueNAS configuration backups."
-tags: ["TrueCommand"]
+weight: 40
+tags: ["TrueCommand Users"]
 ---
 
 TrueCommand automatically backs up the TrueNAS configuration everytime there is a database change or a TrueCommand Audit Log entry. 

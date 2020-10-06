@@ -1,8 +1,8 @@
 ---
 title: "Connecting Systems"
 description: "How to connect to and organize systems in TrueCommand."
-weight: 3
-tags: ["TrueCommand"]
+weight: 10
+tags: ["TrueCommand Administrators"]
 ---
 
 ## Connecting Systems to TrueCommand

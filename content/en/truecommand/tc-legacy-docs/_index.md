@@ -1,5 +1,5 @@
 ---
-title: "TrueCommand"
+title: "Legacy Documentation"
 weight: 30
 ---
 

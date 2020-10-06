@@ -1,8 +1,7 @@
 ---
-title: "System Reporting"
-linkTitle: "Reporting"
+title: "Managing Reports"
 description: "How to create and view system reports."
-tags: ["TrueCommand"]
+tags: ["TrueCommand Users"]
 ---
 
 The **Reports** page is used to customize charts of system metrics for data analysis.

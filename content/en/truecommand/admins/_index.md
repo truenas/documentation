@@ -5,4 +5,4 @@ description: "Initial configuration and general administration articles."
 weight: 30
 ---
 
-The guides in this section require a TrueCommand account with administration privileges.
+Some of these tutorials can require a TrueCommand administrator account.

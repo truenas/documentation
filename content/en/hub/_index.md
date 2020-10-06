@@ -6,8 +6,8 @@ no_list: true
 
 <table>
 	<tr style="background-color:white;">
-		<th><a href="/hub/"><img src="/images/truenas_open_storage-logo-full-color-rgb.png" style="display:block;margin-left:auto;margin-right:auto;padding:1em 1em 1em 1em;"><p style="text-align:center;">TrueNAS CORE, Enterprise, and SCALE Documentation</p></th>
-		<th><a href="/truecommand/"><img src="/images/truecommand-logo-full-color-rgb.png" style="display:block;margin-left:auto;margin-right:auto;padding:1em 1em 1em 1em;"><p style="text-align:center;">TrueCommand Documentation</p></th>
+		<th><a href="/hub/"><img src="/images/truenas_open_storage-logo-full-color-rgb.png" style="display:block;margin-left:auto;margin-right:auto;width:75%;padding:2em 1em 1em 1em;"><p style="text-align:center;">TrueNAS CORE, Enterprise, and SCALE Documentation</p></th>
+		<th><a href="/truecommand/"><img src="/images/truecommand-logo-full-color-rgb.png" style="display:block;margin-left:auto;margin-right:auto;width:79%;padding:2em 1em 1em 1em;"><p style="text-align:center;">TrueCommand Documentation</p></th>
 		<th><a href="/hardware/"><img src="/images/TrueNASSystems.png" style="display:block;margin-left:auto;margin-right:auto;width:54%;padding:1em 1em 1em 1em;"><p style="text-align:center;">iXsystems Hardware Documentation</p></th>
 	</tr>
 </table>
@@ -51,7 +51,7 @@ After discovering if your hardware is right for TrueNAS, move to installing, the
 
 ## Sharing Data
 
-<img src="/images/presentation.jpg" style="float:left;width:240px;height:200px;margin: 10px 50px 10px 0px;">
+<img src="/images/laptop.jpg" style="float:left;width:240px;height:200px;margin: 10px 50px 10px 0px;">
 
 With the initial system configuration done, set up file sharing with the different protocols built into TrueNAS.
 
@@ -62,7 +62,7 @@ With the initial system configuration done, set up file sharing with the differe
 <a href="/hub/sharing/webdav/">WebDAV</a><br>
 <a class="linkbutton" href="/hub/sharing/">Sharing</a>
 
-<a style="color:#808080;font-size:8px;float:left;" href="https://www.vecteezy.com/free-vector/presentation">Presentation Vectors by Vecteezy</a>
+<a style="color:#808080;font-size:8px;float:left;" href="https://www.vecteezy.com/free-vector/laptop">Laptop Vectors by Vecteezy</a>
 
 ## Tasks
 
@@ -78,23 +78,7 @@ There are also many different advanced features that unlock the full potential o
 <a class="linkbutton" href="/hub/tasks/">Tasks</a>
 <a style="color:#808080;font-size:8px;float:left;" href="https://www.vecteezy.com/free-vector/business">Business Vectors by Vecteezy</a>
 
-## Additional Topics
-
-<img src="/images/knowledge.jpg" style="float:left;width:240px;height:200px;margin: 10px 50px 10px 0px;">
-
-Want to become a TrueNAS expert?
-These additional topics help fill in a staggering amount of detail about TrueNAS.
-They include reference materials that detail each field in the TrueNAS user interface, deep dives into TrueNAS, and miscellaneous errata.
-Topics include articles that apply to earlier specific versions of TrueNAS (and FreeNAS), along with previous version release notes.
-The Application Programming Interface is also detailed here, along with simple instructions for creating an API key.
-
-<a href="/hub/additional-topics/reference/">Reference Articles</a><br>
-<a href="/hub/additional-topics/legacy/">Legacy Documentation</a><br>
-<a href="/hub/additional-topics/api/">API Documentation</a><br>
-<a class="linkbutton" href="/hub/additional-topics/">Additional Topics</a>
-<a style="color:#808080;font-size:8px;float:left;" href="https://www.vecteezy.com/free-vector/achievement">Achievement Vectors by Vecteezy</a>
-
-## TrueNAS Solutions
+## 3rd Party Integration
 
 <img src="/images/spark_idea.jpg" style="float:left;width:240px;height:200px;margin: 10px 50px 10px 0px;">
 
@@ -121,3 +105,19 @@ SCALE documentation is mostly shared with TrueNAS CORE and Enterprise, but artic
 <a class="linkbutton" href="/hub/scale/">TrueNAS SCALE</a><br>
 <br>
 <a style="color:#808080;font-size:8px;float:left;" href="https://www.vecteezy.com/free-vector/lamp">Lamp Vectors by Vecteezy</a>
+
+## Additional Topics
+
+<img src="/images/knowledge.jpg" style="float:left;width:240px;height:200px;margin: 10px 50px 10px 0px;">
+
+Want to become a TrueNAS expert?
+These additional topics help fill in a staggering amount of detail about TrueNAS.
+They include reference materials that detail each field in the TrueNAS user interface, deep dives into TrueNAS, and miscellaneous errata.
+Topics include articles that apply to earlier specific versions of TrueNAS (and FreeNAS), along with previous version release notes.
+The Application Programming Interface is also detailed here, along with simple instructions for creating an API key.
+
+<a href="/hub/additional-topics/reference/">Reference Articles</a><br>
+<a href="/hub/additional-topics/legacy/">Legacy Documentation</a><br>
+<a href="/hub/additional-topics/api/">API Documentation</a><br>
+<a class="linkbutton" href="/hub/additional-topics/">Additional Topics</a>
+<a style="color:#808080;font-size:8px;float:left;" href="https://www.vecteezy.com/free-vector/achievement">Achievement Vectors by Vecteezy</a>
