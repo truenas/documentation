@@ -86,6 +86,6 @@ The encryption key file and passphrase are required to decrypt the pool. If the 
 Select the pool to import and confirm the settings. Click **IMPORT** to finish the process.
 
 {{% pageinfo %}}
-For security reasons, encrypted pool keys are not saved in a configuration backup file. When TrueNAS® has been installed to a new device and a saved configuration file restored to it, the keys for encrypted disks will not be present, and the system will not request them. To correct this, export the encrypted pool with  (Configure) ➞ Export/Disconnect, making sure that Destroy data on this pool? is not set. Then import the pool again. During the import, the encryption keys can be entered as described above.
+For security reasons, encrypted pool keys are not saved in a configuration backup file. When TrueNAS® has been installed to a new device and a saved configuration file restored to it, the keys for encrypted disks will not be present, and the system will not request them. To correct this, export the encrypted pool with <i class="fas fa-pen" aria-hidden="true" title="Pen"></i>&nbsp; (Configure) > **Export/Disconnect**, making sure that Destroy data on this pool? is not set. Then import the pool again. During the import, the encryption keys can be entered as described above.
 {{% /pageinfo %}}
 
