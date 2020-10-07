@@ -1,9 +1,9 @@
 # Commenting your code is very useful.
-#baseURL = "https://www.truenas.com/docs/"
+#baseURL = "./hub/"
 title = "TrueNAS Documentation Hub"
 enableRobotsTXT = true
 relativeURLs = true
-
+disableKinds = ["RSS"]
 
 # Hugo allows theme composition (and inheritance). The precedence is from left to right.
 theme = ["docsy"]
@@ -17,8 +17,6 @@ defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
 # Useful when translating.
 enableMissingTranslationPlaceholders = true
-
-disableKinds = ["RSS"]
 
 # Highlighting config
 pygmentsCodeFences = true
@@ -102,7 +100,7 @@ fullversion = "Current"
 version = "Current"
 githubbranch = "master"
 deprecated = false
-currentUrl = "https://truenas.com/docs/"
+currentUrl = "https://truenas.com/docs/hub/"
 githubWebsiteRepo = "github.com/freenas/documentation"
 githubWebsiteRaw = "raw.githubusercontent.com/freenas/documentation"
 
@@ -122,7 +120,7 @@ enable = true
 fullversion = "TrueNAS 12.0"
 version = "Current (TN 12.0)"
 githubbranch = "master"
-url = "/"
+url = "/hub/"
 
 [[params.versions]]
 fullversion = "TrueNAS 11.3"
@@ -162,7 +160,6 @@ enable = true
 yes = 'Glad to hear it! Please <a href="https://github.com/freenas/documentation/issues/new">tell us how we can improve</a>.'
 no = 'Sorry to hear that. Please <a href="https://github.com/freenas/documentation/issues/new">tell us how we can improve</a>.'
 
-
 # Add dates to content pages
 [frontmatter]
 date = ["date", "publishDate", "lastmod"]
@@ -192,38 +189,3 @@ expiryDate = ["expiryDate"]
 [[params.websites]]
 	name = "Blog"
 	url = "https://www.ixsystems.com/blog/"
-
-# Add Topics menu entries
-[[params.topics]]
-	name = "Home"
-	url = "/"
-[[params.topics]]
-	name = "Overview"
-	url = "/hub/intro/"
-[[params.topics]]
-	name = "Getting Started"
-	url = "/hub/initial-setup/"
-[[params.topics]]
-	name = "Sharing"
-	url = "/hub/sharing/"
-[[params.topics]]
-	name = "Tasks"
-	url = "/hub/tasks/"
-[[params.topics]]
-	name = "Solutions"
-	url = "/hub/solutions/"
-[[params.topics]]
-	name = "TrueNAS SCALE"
-	url = "/hub/scale/"
-[[params.topics]]
-	name = "TrueCommand"
-	url = "/hub/truecommand/"
-[[params.topics]]
-	name = "Hardware"
-	url = "/hub/hardware/"
-[[params.topics]]
-	name = "Additional Topics"
-	url = "/hub/additional-topics/"
-[[params.topics]]
-	name = "Contributing"
-	url = "/hub/contributing/"
