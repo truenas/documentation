@@ -1,7 +1,7 @@
 ---
 title: "Hot Spares and Pool Extension"
 description: "Adding spare devices and Extending a Pool" 
-tags: ["ZFS"]
+tags: ["ZFS","zpool"]
 ---
 
 
