@@ -5,15 +5,15 @@ no_list: true
 ---
 
 <table>
-	<tr style="background-color:white;border:hidden;">
-		<th><a href="/hub/"><img src="/images/truenas_open_storage-logo-full-color-rgb.png" style="display:block;margin-left:auto;margin-right:auto;max-width:75%;padding-bottom:1em;"><p style="text-align:center;">TrueNAS CORE, Enterprise, and SCALE Documentation</p></th>
-		<th><a href="/truecommand/"><img src="/images/truecommand-logo-full-color-rgb.png" style="display:block;margin-left:auto;margin-right:auto;max-width:79%;padding-bottom:1em;"><p style="text-align:center;">TrueCommand Documentation</p></th>
-		<th><a href="/hardware/"><img src="/images/TrueNASSystems.png" style="display:block;margin-left:auto;margin-right:auto;max-width:54%;padding-bottom:1em;"><p style="text-align:center;">iXsystems Hardware Documentation</p></th>
+	<tr style="background-color:white;border:hidden;display:flex;justify-content:space-between;align-items:flex-end;">
+		<th style="border:hidden;"><a href="/hub/" title="TrueNAS Documentation Hub"><img src="/images/truenas_open_storage-logo-full-color-rgb.png" style="display:block;margin:auto;;max-width:75%;padding-bottom:1em;"><p style="text-align:center">TrueNAS Documentation Hub</p></th>
+		<th style="border:hidden;"><a href="/truecommand/" title="TrueCommand Documentation"><img src="/images/truecommand-logo-full-color-rgb.png" style="display:block;margin:auto;max-width:75%;padding-bottom:1em;"><p style="text-align:center">TrueCommand Documentation</p></th>
+		<th style="border:hidden;"><a href="/hardware/" title="TrueNAS Hardware Documentation"><img src="/images/TrueNASSystems.png" style="display:block;margin:auto;max-width:65%;padding-bottom:1em;"><p style="text-align:center">TrueNAS Hardware Documentation</p></th>
 	</tr>
 </table>
 
-TrueCommand® is a "single pane of glass" application to simplify the scaling of data, drive management, and administration of iXsystems NAS platforms.
-TrueCommand boasts a wide variety of features, including Role-Based Access Control (RBAC), user account auditing, single sign-on for all connected NAS units, customizable alerts and reporting, and predictive analytics to maximize system uptime.
+<p style="max-width:100%;">TrueCommand® is a "single pane of glass" application to simplify the scaling of data, drive management, and administration of iXsystems NAS platforms.
+TrueCommand boasts a wide variety of features, including Role-Based Access Control (RBAC), user account auditing, single sign-on for all connected NAS units, customizable alerts and reporting, and predictive analytics to maximize system uptime.</p>
 
 ## Overview
 

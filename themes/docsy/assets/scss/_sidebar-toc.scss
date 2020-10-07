@@ -3,12 +3,14 @@
 //
 .td-toc {
     border-left: 1px solid $border-color;
+    overflow: auto;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 
     @supports (position: sticky) {
         position: sticky;
         top: 4rem;
         height: calc(100vh - 10rem);
-        overflow-y: auto;
     }
 
     order: 2;
@@ -55,3 +57,7 @@
         padding-left: 0;
     }
 }
+
+.td-toc::-webkit-scrollbar {
+    display:none; /* hiding scrollbar for Chrome */
+    }

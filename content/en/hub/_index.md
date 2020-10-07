@@ -5,18 +5,18 @@ no_list: true
 ---
 
 <table>
-	<tr style="background-color:white;border:hidden;">
-		<th><a href="/hub/"><img src="/images/truenas_open_storage-logo-full-color-rgb.png" style="display:block;margin-left:auto;margin-right:auto;max-width:75%;padding-bottom:1em;"><p style="text-align:center;">TrueNAS CORE, Enterprise, and SCALE Documentation</p></th>
-		<th><a href="/truecommand/"><img src="/images/truecommand-logo-full-color-rgb.png" style="display:block;margin-left:auto;margin-right:auto;max-width:79%;padding-bottom:1em;"><p style="text-align:center;">TrueCommand Documentation</p></th>
-		<th><a href="/hardware/"><img src="/images/TrueNASSystems.png" style="display:block;margin-left:auto;margin-right:auto;max-width:54%;padding-bottom:1em;"><p style="text-align:center;">iXsystems Hardware Documentation</p></th>
+	<tr style="background-color:white;border:hidden;display:flex;justify-content:space-between;align-items:flex-end;">
+		<th style="border:hidden;"><a href="/hub/" title="TrueNAS Documentation Hub"><img src="/images/truenas_open_storage-logo-full-color-rgb.png" style="display:block;margin:auto;;max-width:75%;padding-bottom:1em;"><p style="text-align:center">TrueNAS Documentation Hub</p></th>
+		<th style="border:hidden;"><a href="/truecommand/" title="TrueCommand Documentation"><img src="/images/truecommand-logo-full-color-rgb.png" style="display:block;margin:auto;max-width:75%;padding-bottom:1em;"><p style="text-align:center">TrueCommand Documentation</p></th>
+		<th style="border:hidden;"><a href="/hardware/" title="TrueNAS Hardware Documentation"><img src="/images/TrueNASSystems.png" style="display:block;margin:auto;max-width:65%;padding-bottom:1em;"><p style="text-align:center">TrueNAS Hardware Documentation</p></th>
 	</tr>
 </table>
 
-TrueNAS® is an operating system that is designed to be the most effective and time-efficient solution for storing, securing, and sharing data over a network.
-It is the simplest way to create a safe, centralized, and easily accessible place for your data.
-
-The topics on this page are arranged to guide you through learning about TrueNAS, installing and configuring the system, then setting up data storage and sharing.
-There are additional topics for the TrueCommand and TrueNAS SCALE members of the TrueNAS family, 3rd party software integration notes, and reference documentation for the powerful and cost-effective TrueNAS storage appliances available for purchase from iXsystems.
+<p style="max-width:100%;">TrueNAS® is an operating system that is designed to be the most effective and time-efficient solution for storing, securing, and sharing data over a network.
+	It is the simplest way to create a safe, centralized, and easily accessible place for your data.<br><br>
+	The topics on this page are arranged to guide you through learning about TrueNAS, installing and configuring the system, then setting up data storage and sharing.
+	There are additional topics for the TrueCommand and TrueNAS SCALE members of the TrueNAS family, 3rd party software integration notes, and reference documentation for the powerful and cost-effective TrueNAS storage appliances available for purchase from iXsystems.
+</p>
 
 ## Introducing TrueNAS
 
@@ -49,7 +49,6 @@ There are additional topics for the TrueCommand and TrueNAS SCALE members of the
 		<p><a href="/hub/initial-setup/install/">Installation and Update Procedures</a><br>
 		<a href="/hub/initial-setup/networking/">Configuring Networking</a><br>
 		<a href="/hub/initial-setup/storage/">Setting up Storage</a><br>
-		<a href="/hub/initial-setup/directory-services/">Directory Services</a><br>
 		<a href="/hub/initial-setup/best-practices/">Best Practices</a></p>
 		<a class="linkbutton" href="/hub/initial-setup/">First Steps</a>
 	</div>
@@ -73,7 +72,7 @@ There are additional topics for the TrueCommand and TrueNAS SCALE members of the
 	</div>
 </div>
 
-## Tasks
+## Advanced Topics
 
 <div class="hubrow">
 	<div class="imgcolumn">
@@ -81,13 +80,14 @@ There are additional topics for the TrueCommand and TrueNAS SCALE members of the
 		<a class="attributionlink" href="https://www.vecteezy.com/free-vector/business">Business Vectors by Vecteezy</a>
 	</div>
 	<div class="textcolumn">
-		<p>For more complicated use cases, TrueNAS supports many different administrative tasks like managing user and group accounts, monitor system statistics, set up system certificates, and backing up the system configuration.
+		<p>For more complicated use cases, TrueNAS supports many different administrative tasks like managing user and group accounts, monitor system statistics, setting up system certificates and directory services, and backing up the system configuration.
 		Automatic cloud back up, sync, or other system maintenance tasks can also be scheduled.
 		There are also many different advanced features that unlock the full potential of TrueNAS, such as modifying Access Control Lists, using plugins and Virtual Machines (VMs), and reconfiguring High-Availability in TrueNAS Enterprise.</p>
 		<p><a href="/hub/tasks/administrative/">Administrative Tasks</a><br>
+		<a href="/hub/tasks/directory-services/">Configuring Directory Services</a><br>
 		<a href="/hub/tasks/scheduled/">Automated Tasks</a><br>
 		<a href="/hub/tasks/advanced/">Advanced Procedures</a></p>
-		<a class="linkbutton" href="/hub/tasks/">Tasks</a>
+		<a class="linkbutton" href="/hub/tasks/">Advanced Topics</a>
 	</div>
 </div>
 

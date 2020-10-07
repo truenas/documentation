@@ -1,5 +1,5 @@
 ---
-title: "Tasks"
-description: "Articles describing how to setup up file sharing, data backups, automated schedules, and other advanced topics."
+title: "Advanced Topics"
+description: "Articles detailing many advanced topics, including system administration, configuring directory services, configuration and data backups, automated schedules, and other advanced TrueNAS features."
 weight: 4
 ---
