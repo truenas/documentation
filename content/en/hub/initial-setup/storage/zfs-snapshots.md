@@ -1,7 +1,7 @@
 ---
 title: "ZFS Snapshots"
 description: "ZFS Snapshots" 
-tags: ["ZFS"]
+tags: ["ZFS","snapshots"]
 ---
 
 ### Snapshots
