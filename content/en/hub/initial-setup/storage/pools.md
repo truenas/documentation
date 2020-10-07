@@ -2,7 +2,7 @@
 title: "ZFS Pools"
 description: "How to create a ZFS data storage pool."
 weight: 1
-tags: ["ZFS"]
+tags: ["ZFS", "zpool"]
 ---
 
 Perhaps the most important part about TrueNAS is the ability to efficiently store and share large amounts of data.
