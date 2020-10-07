@@ -58,8 +58,14 @@ When physically installing ZFS pool disks from another system, use the `zpool ex
 
 Existing ZFS pools can be imported by clicking **Storage** > **Pools** and **ADD**. Select **Import an existing pool**, then click **NEXT**
 
+<img src="/images/storage-pools-import.png" width='700px'>
+<br><br>
+
 If the Pool is not encrypted with GELI encryption, click **No, continue with import** then **NEXT**.
 If the Pool is encrypted see below for those instructions.
+
+<img src="/images/storage-pools-import-no-encryption.png" width='700px'>
+<br><br>
 
 Select the pool from the `Pool *` drop-down menu and click **NEXT** to confirm the options and `IMPORT` it.
 
@@ -68,6 +74,9 @@ Before importing an encrypted pool, disks must first be decrypted. Click **Yes, 
 ### Decrypting Disks Before Importing a Pool
 
 Use the `Disks` dropdown menu to select the disks to decrypt. Click **Browse** to select the encryption key file stored on the client system. Enter the `Passphrase` associated with the encryption key, then click **NEXT** to continue importing the pool.
+
+<img src="/images/storage-pools-add-decrypt.png" width='700px'>
+<br><br>
 
 Danger
 {{% alert title=Warning color=warning %}}
