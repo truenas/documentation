@@ -14,10 +14,10 @@ You must have a storage pool and any datasets or zvols created before creating a
 
 To view and manage the listing of created snapshots, use **Storage** > **Snapshots**. 
 
-<img src="/images/storage-snapshots.PNG" width='700px'>
+<img src="/images/storage-snapshots.png" width='700px'>
 <br><br>
 
-Each entry in the list includes the name of the dataset and snapshot. Click  (Expand) to view these options:
+Each entry in the list includes the name of the dataset and snapshot. Click **>** (Expand) to view these options:
 
 **DATE CREATED** shows the exact time and date of the snapshot creation.
 
@@ -33,7 +33,7 @@ Space used by individual snapshots can be seen by running `zfs list -t snapshot`
 
 A clone is a writable copy of the snapshot. Since a clone is actually a dataset which can be mounted, it appears in the **Pools** screen rather than the **Snapshots** screen. By default, -clone is added to the name of a snapshot when a clone is created.
 
-**Rollback**: Clicking <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp (Options) > **Rollback** asks for confirmation before rolling back to the chosen snapshot state. Clicking **Yes** causes all files in the dataset to revert to the state they were in when the snapshot was created.
+**Rollback**: Clicking <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; (Options) > **Rollback** asks for confirmation before rolling back to the chosen snapshot state. Clicking **Yes** causes all files in the dataset to revert to the state they were in when the snapshot was created.
 
 
 
