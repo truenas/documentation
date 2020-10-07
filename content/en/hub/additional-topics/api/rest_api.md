@@ -6,7 +6,7 @@ tags: ["API"]
 ---
 
 
-Note: Due to the length of this documentation this page will take about 20 seconds to fully load. 
+> Note: The current implementation of this content can take an extended amount of time to load, typically about 20 seconds.
 
 <iframe id="inlineFrame"
     title="Inline Frame"
