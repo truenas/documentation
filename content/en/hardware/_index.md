@@ -1,5 +1,5 @@
 ---
-title: "iXsystems Hardware Documentation"
+title: "TrueNAS Hardware Documentation"
 hide_feedback: true
 no_list: true
 ---
