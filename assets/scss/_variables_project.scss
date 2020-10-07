@@ -54,9 +54,38 @@ svg {
   font-feature-settings: 'liga';
 }
 
+// style top-level index page images
+.hubrow {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+.imgcolumn {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+  max-width: 20%;
+  padding: 0 1em;
+}
+
+.textcolumn {
+  -ms-flex: 75%; /* IE10 */
+  flex: 75%;
+  padding: 0 1em;
+}
+
 // css to center the landing page features
 .text-center {
     margin: auto;
+}
+
+// Style image attribution links
+.attributionlink {
+  color:#808080;
+  font-size:7px;
+  float:left;
 }
 
 // change some colors to ix-blue
@@ -82,6 +111,7 @@ $secondary: #666666;
   color: #ffffff;
   padding-left: 1em;
   margin: auto;
+  font-size: 90%;
 }
 .headertext a {
   color: #ffffff;
@@ -160,12 +190,6 @@ nav a {
 }
 
 @media (max-width: 999px) {
-  .grid-container {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(5, 375px);
-    grid-template-areas: "whatis initialsetup"  "tasks advanced" "references vcenter-plugin" "truecommand hardware" "docs-contribute .";
-  }
-
   #main_navbar {
     width: 65%;
     position: relative;
@@ -173,7 +197,13 @@ nav a {
     overflow: visible;
     margin-left: 20px !important;
   }
-
+  .imgcolumn {
+    -ms-flex: 100%; /* IE10 */
+    flex: 100%;
+    max-width: 65%;
+    margin: auto;
+    padding-bottom: 1em;
+  }
   .dropdown {
     width: 100px;
   }
@@ -181,7 +211,6 @@ nav a {
   .dropdown-menu {
     position: sticky !important;
     width: 190px;
-    
   }
 }
 
@@ -192,16 +221,6 @@ nav a {
 //
 
 @media (max-width: 766px) {
-  .grid-container {
-    grid-template-columns: auto;
-    grid-template-rows: auto;
-    grid-template-areas: "whatis" "initialsetup"  "tasks" "advanced" "references" "vcenter-plugin" "truecommand" "hardware" "docs-contribute";
-    
-    .button-wrapper {
-      position: unset;
-    }
-  }
-
   #main_navbar {
     width: 400px;
     position: relative;
@@ -216,13 +235,6 @@ nav a {
     position: relative;
     left: 8%;
     }
-  }
-}
-
-@media (min-width: 760px) {
-  .linkbutton.long-text {
-    margin-left: 20%;
-    margin-right: 20%;
   }
 }
 

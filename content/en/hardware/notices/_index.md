@@ -1,5 +1,5 @@
 ---
 title: "Notices"
-description: "Hardware notices and errata."
-weight: 4
+description: "Hardware announcements, frequently asked questions, and articles about specific components."
+weight: 60
 ---
