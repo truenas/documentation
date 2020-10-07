@@ -70,5 +70,5 @@ After creating the VM and configuring any devices for it, you can manage the VM 
 Options for <i class="material-icons" aria-hidden="true" title="VNC Button">settings_ethernet</i> **VNC** or <i class="material-icons" aria-hidden="true" title="Serial Button">keyboard_arrow_right</i> **SERIAL** connections are available after activating the VM.
 If the *VNC* connection screen appears garbled, try adjusting the VNC device resolution.
 
-Using the **State** toggle or clicking the <i class="material-icons" aria-hidden="true" title="Stop Button">stop</i> **STOP** button starts the shut down procedure and cleanly shuts down the running VM.
-Clicking the <i class="material-icons" aria-hidden="true" title="Power Off Button">power_settings_new</i> **POWER OFF** button immediately halts and deactivates the VM, similar to holding down the power button on a computer for several moments.  
+Using the **State** toggle or clicking the <i class="material-icons" aria-hidden="true" title="Stop Button">stop</i> **STOP** follows a standard shut down procedure to cleanly shut down the running VM.
+Clicking the <i class="material-icons" aria-hidden="true" title="Power Off Button">power_settings_new</i> **POWER OFF** immediately halts and deactivates the VM, similar to unplugging a computer.
