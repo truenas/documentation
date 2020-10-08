@@ -61,6 +61,8 @@ svg {
   display:flex;
   justify-content:space-between;
   align-items:flex-end;
+  max-width: 90%;
+  margin:auto;
 }
 .hubcategoryimage {
   display:block;
@@ -235,7 +237,7 @@ nav a {
 }
 //
 
-@media (max-width: 766px) {
+@media (max-width: 720px) {
   #main_navbar {
     width: 400px;
     position: relative;
@@ -329,7 +331,7 @@ nav a {
 	margin:1em 0 0;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 720px) {
 	.tagslist {
 		width:45%;
 		float:left;
