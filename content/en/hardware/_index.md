@@ -4,11 +4,11 @@ hide_feedback: true
 no_list: true
 ---
 
-<table>
-	<tr style="background-color:white;border:hidden;display:flex;justify-content:space-between;align-items:flex-end;">
-		<th style="border:hidden;"><a href="/hub/" title="TrueNAS Documentation Hub"><img src="/images/truenas_open_storage-logo-full-color-rgb.png" style="display:block;margin:auto;;max-width:75%;padding-bottom:1em;"><p style="text-align:center">TrueNAS Documentation Hub</p></th>
-		<th style="border:hidden;"><a href="/truecommand/" title="TrueCommand Documentation"><img src="/images/truecommand-logo-full-color-rgb.png" style="display:block;margin:auto;max-width:75%;padding-bottom:1em;"><p style="text-align:center">TrueCommand Documentation</p></th>
-		<th style="border:hidden;"><a href="/hardware/" title="TrueNAS Hardware Documentation"><img src="/images/TrueNASSystems.png" style="display:block;margin:auto;max-width:65%;padding-bottom:1em;"><p style="text-align:center">TrueNAS Hardware Documentation</p></th>
+<table style="overflow-x:hidden;background:white;">
+	<tr class="hubcategories">
+		<th style="border:hidden;"><a href="/hub/" title="TrueNAS Documentation Hub"><img class="hubcategoryimage" src="/images/truenas_open_storage-logo-full-color-rgb.png" style="max-width:60%;"><p style="text-align:center">TrueNAS Documentation Hub</p></th>
+		<th style="border:hidden;"><a href="/truecommand/" title="TrueCommand Documentation"><img class="hubcategoryimage" src="/images/truecommand-logo-full-color-rgb.png" style="max-width:70%;"><p style="text-align:center">TrueCommand Documentation</p></th>
+		<th style="border:hidden;background-color:#f2f2f2;"><a href="/hardware/" title="TrueNAS Hardware Documentation"><img class="hubcategoryimage" src="/images/TrueNASSystems.png" style="max-width:60%"><p style="text-align:center">TrueNAS Hardware Documentation</p></th>
 	</tr>
 </table>
 
@@ -106,7 +106,6 @@ Legacy documentation for discontinued iXsystems products is also archived here.<
 <div class="hubrow">
 	<div class="imgcolumn">
 		<img src="/images/Promote.jpg">
-		<a class="attributionlink" href="https://www.vecteezy.com/free-vector/megaphone">Megaphone Vectors by Vecteezy</a>
 	</div>
 	<div class="textcolumn">
 		<p>Product announcements, unspecific FAQs, and articles about specific hardware component.</p>

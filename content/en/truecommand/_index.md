@@ -4,11 +4,11 @@ hide_feedback: true
 no_list: true
 ---
 
-<table>
-	<tr style="background-color:white;border:hidden;display:flex;justify-content:space-between;align-items:flex-end;">
-		<th style="border:hidden;"><a href="/hub/" title="TrueNAS Documentation Hub"><img src="/images/truenas_open_storage-logo-full-color-rgb.png" style="display:block;margin:auto;;max-width:75%;padding-bottom:1em;"><p style="text-align:center">TrueNAS Documentation Hub</p></th>
-		<th style="border:hidden;"><a href="/truecommand/" title="TrueCommand Documentation"><img src="/images/truecommand-logo-full-color-rgb.png" style="display:block;margin:auto;max-width:75%;padding-bottom:1em;"><p style="text-align:center">TrueCommand Documentation</p></th>
-		<th style="border:hidden;"><a href="/hardware/" title="TrueNAS Hardware Documentation"><img src="/images/TrueNASSystems.png" style="display:block;margin:auto;max-width:65%;padding-bottom:1em;"><p style="text-align:center">TrueNAS Hardware Documentation</p></th>
+<table style="overflow-x:hidden;background:white;">
+	<tr class="hubcategories">
+		<th style="border:hidden;"><a href="/hub/" title="TrueNAS Documentation Hub"><img class="hubcategoryimage" src="/images/truenas_open_storage-logo-full-color-rgb.png" style="max-width:60%;"><p style="text-align:center">TrueNAS Documentation Hub</p></th>
+		<th style="border:hidden;background-color:#f2f2f2;"><a href="/truecommand/" title="TrueCommand Documentation"><img class="hubcategoryimage" src="/images/truecommand-logo-full-color-rgb.png" style="max-width:70%;"><p style="text-align:center">TrueCommand Documentation</p></th>
+		<th style="border:hidden;"><a href="/hardware/" title="TrueNAS Hardware Documentation"><img class="hubcategoryimage" src="/images/TrueNASSystems.png" style="max-width:60%"><p style="text-align:center">TrueNAS Hardware Documentation</p></th>
 	</tr>
 </table>
 
@@ -20,7 +20,6 @@ TrueCommand boasts a wide variety of features, including Role-Based Access Contr
 <div class="hubrow">
 	<div class="imgcolumn">
 		<img src="/images/vision2.jpg">
-		<a class="attributionlink" href="https://www.vecteezy.com/free-vector/binoculars">Binoculars Vectors by Vecteezy</a>
 	</div>
 	<div class="textcolumn">
 		<p>Learn more about TrueCommand before giving it a try!</p>
@@ -35,7 +34,6 @@ TrueCommand boasts a wide variety of features, including Role-Based Access Contr
 <div class="hubrow">
 	<div class="imgcolumn">
 		<img src="/images/business_idea.jpg">
-		<a class="attributionlink" href="https://www.vecteezy.com/free-vector/business">Business Vectors by Vecteezy</a>
 	</div>
 	<div class="textcolumn">
 		<p>TrueCommand can be installed or deployed in a variety of environments!
@@ -54,7 +52,6 @@ TrueCommand boasts a wide variety of features, including Role-Based Access Contr
 <div class="hubrow">
 	<div class="imgcolumn">
 		<img src="/images/presentation.jpg">
-		<a class="attributionlink" href="https://www.vecteezy.com/free-vector/business">Business Vectors by Vecteezy</a>
 	</div>
 	<div class="textcolumn">
 		<p>Now that TrueCommand is installed, it's time to configure TrueCommand for wider use.
@@ -74,7 +71,6 @@ TrueCommand boasts a wide variety of features, including Role-Based Access Contr
 <div class="hubrow">
 	<div class="imgcolumn">
 		<img src="/images/smartphone2.jpg">
-		<a class="attributionlink" href="https://www.vecteezy.com/free-vector/book">Book Vectors by Vecteezy</a>
 	</div>
 	<div class="textcolumn">
 		<p>Archived release notes and TrueCommand 1.2 articles.</p>

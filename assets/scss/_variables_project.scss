@@ -54,6 +54,21 @@ svg {
   font-feature-settings: 'liga';
 }
 
+// style Hub categories row
+.hubcategories {
+  background:white !important;
+  border:hidden;
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+}
+.hubcategoryimage {
+  display:block;
+  margin:auto;
+  padding-bottom:1em;
+}
+
+
 // style top-level index page images
 .hubrow {
   display: -ms-flexbox; /* IE10 */
@@ -224,7 +239,6 @@ nav a {
   #main_navbar {
     width: 400px;
     position: relative;
-    left: 8%;
   }
 
   .td-search-input {

@@ -4,11 +4,11 @@ hide_feedback: true
 no_list: true
 ---
 
-<table>
-	<tr style="background-color:white;border:hidden;display:flex;justify-content:space-between;align-items:flex-end;">
-		<th style="border:hidden;"><a href="/hub/" title="TrueNAS Documentation Hub"><img src="/images/truenas_open_storage-logo-full-color-rgb.png" style="display:block;margin:auto;;max-width:75%;padding-bottom:1em;"><p style="text-align:center">TrueNAS Documentation Hub</p></th>
-		<th style="border:hidden;"><a href="/truecommand/" title="TrueCommand Documentation"><img src="/images/truecommand-logo-full-color-rgb.png" style="display:block;margin:auto;max-width:75%;padding-bottom:1em;"><p style="text-align:center">TrueCommand Documentation</p></th>
-		<th style="border:hidden;"><a href="/hardware/" title="TrueNAS Hardware Documentation"><img src="/images/TrueNASSystems.png" style="display:block;margin:auto;max-width:65%;padding-bottom:1em;"><p style="text-align:center">TrueNAS Hardware Documentation</p></th>
+<table style="overflow-x:hidden;background:white;">
+	<tr class="hubcategories">
+		<th style="border:hidden;background-color:#f2f2f2;"><a href="/hub/" title="TrueNAS Documentation Hub"><img class="hubcategoryimage" src="/images/truenas_open_storage-logo-full-color-rgb.png" style="max-width:60%;"><p style="text-align:center">TrueNAS Documentation Hub</p></th>
+		<th style="border:hidden;"><a href="/truecommand/" title="TrueCommand Documentation"><img class="hubcategoryimage" src="/images/truecommand-logo-full-color-rgb.png" style="max-width:70%;"><p style="text-align:center">TrueCommand Documentation</p></th>
+		<th style="border:hidden;"><a href="/hardware/" title="TrueNAS Hardware Documentation"><img class="hubcategoryimage" src="/images/TrueNASSystems.png" style="max-width:60%"><p style="text-align:center">TrueNAS Hardware Documentation</p></th>
 	</tr>
 </table>
 
@@ -23,7 +23,6 @@ no_list: true
 <div class="hubrow">
 	<div class="imgcolumn">
 		<img src="/images/co_work.jpg">
-		<a class="attributionlink" href="https://www.vecteezy.com/free-vector/introduction">Introduction Vectors by Vecteezy</a>
 	</div>
 	<div class="textcolumn">
 		<p>Start by learning all about TrueNAS!
@@ -41,7 +40,6 @@ no_list: true
 <div class="hubrow">
 	<div class="imgcolumn">
 		<img src="/images/jump.jpg">
-		<a class="attributionlink" href="https://www.vecteezy.com/free-vector/safety-net">Safety Net Vectors by Vecteezy</a>
 	</div>
 	<div class="textcolumn">
 		<p>After discovering if your hardware is right for TrueNAS, move to downloading and installing the software.
@@ -59,7 +57,6 @@ no_list: true
 <div class="hubrow">
 	<div class="imgcolumn">
 		<img src="/images/laptop.jpg">
-		<a class="attributionlink" href="https://www.vecteezy.com/free-vector/laptop">Laptop Vectors by Vecteezy</a>
 	</div>
 	<div class="textcolumn">
 		<p>With the initial system configuration done, set up file sharing with the different protocols built into TrueNAS to pull data into the system or share files on your network.</p>
@@ -77,7 +74,6 @@ no_list: true
 <div class="hubrow">
 	<div class="imgcolumn">
 		<img src="/images/clipboard.jpg">
-		<a class="attributionlink" href="https://www.vecteezy.com/free-vector/business">Business Vectors by Vecteezy</a>
 	</div>
 	<div class="textcolumn">
 		<p>For more complicated use cases, TrueNAS supports many different administrative tasks like managing user and group accounts, monitor system statistics, setting up system certificates and directory services, and backing up the system configuration.
@@ -96,7 +92,6 @@ no_list: true
 <div class="hubrow">
 	<div class="imgcolumn">
 		<img src="/images/spark_idea.jpg">
-		<a class="attributionlink" href="https://www.vecteezy.com/free-vector/abstract">Abstract Vectors by Vecteezy</a>
 	</div>
 	<div class="textcolumn">
 		<p>Articles discussing how to integrate TrueNAS with various 3rd party applications.</p>
@@ -113,7 +108,6 @@ no_list: true
 <div class="hubrow">
 	<div class="imgcolumn">
 		<img src="/images/sml.jpg">
-		<a class="attributionlink" href="https://www.vecteezy.com/free-vector/lamp">Lamp Vectors by Vecteezy</a>
 	</div>
 	<div class="textcolumn">
 		<p>TrueNAS SCALE is a Debian-based version of TrueNAS with container support.
@@ -129,7 +123,6 @@ no_list: true
 <div class="hubrow">
 	<div class="imgcolumn">
 		<img src="/images/knowledge.jpg">
-		<a class="attributionlink" href="https://www.vecteezy.com/free-vector/achievement">Achievement Vectors by Vecteezy</a>
 	</div>
 	<div class="textcolumn">
 		<p>Want to become a TrueNAS expert?
