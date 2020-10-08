@@ -1,10 +1,11 @@
 ---
 title: "Configuring System Alerts"
-description: "How to configure basic system alerts"
+description: "How to configure basic system alerts and add an email address for alert notifications."
 tags: ["SNMP"]
+weight: 55
 ---
 
-You can customizing both how alerts are reported and which alerts are displayed or prioritized.
+After setting up storage, you'll want to set up the alert system with an email address, then customize how alerts are reported and which alerts are displayed or prioritized.
 
 ## Alert Services
 

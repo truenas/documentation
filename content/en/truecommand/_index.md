@@ -6,9 +6,9 @@ no_list: true
 
 <table style="overflow-x:hidden;background:white;">
 	<tr class="hubcategories">
-		<th style="border:hidden;"><a href="/hub/" title="TrueNAS Documentation Hub"><img class="hubcategoryimage" src="/images/truenas_open_storage-logo-full-color-rgb.png" style="max-width:60%;"><p style="text-align:center">TrueNAS Documentation Hub</p></th>
-		<th style="border:hidden;background-color:#f2f2f2;"><a href="/truecommand/" title="TrueCommand Documentation"><img class="hubcategoryimage" src="/images/truecommand-logo-full-color-rgb.png" style="max-width:70%;"><p style="text-align:center">TrueCommand Documentation</p></th>
-		<th style="border:hidden;"><a href="/hardware/" title="TrueNAS Hardware Documentation"><img class="hubcategoryimage" src="/images/TrueNASSystems.png" style="max-width:60%"><p style="text-align:center">TrueNAS Hardware Documentation</p></th>
+		<th style="border:hidden;"><a href="/hub/" title="TrueNAS Documentation Hub"><img class="hubcategoryimage" src="/images/truenas_open_storage-logo-full-color-rgb.png" style="max-width:60%;"><p style="text-align:center;font-size:85%">TrueNAS Documentation</p></th>
+		<th style="border:hidden;background-color:#f2f2f2;"><a href="/truecommand/" title="TrueCommand Documentation"><img class="hubcategoryimage" src="/images/truecommand-logo-full-color-rgb.png" style="max-width:70%;"><p style="text-align:center;font-size:85%">TrueCommand Documentation</p></th>
+		<th style="border:hidden;"><a href="/hardware/" title="TrueNAS Hardware Documentation"><img class="hubcategoryimage" src="/images/TrueNASSystems.png" style="max-width:60%"><p style="text-align:center;font-size:85%">TrueNAS Hardware Documentation</p></th>
 	</tr>
 </table>
 

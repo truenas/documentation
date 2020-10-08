@@ -43,11 +43,11 @@ no_list: true
 	</div>
 	<div class="textcolumn">
 		<p>After discovering if your hardware is right for TrueNAS, move to downloading and installing the software.
-		After installing, you'll want to log in to the web interface and start configuring the system, including the system networking. Next, move to reviewing your system security by creating user and group accounts, setting up your directory services, and reviewing best practices. After networking and security configuration is complete, the system is ready for setting up data storage.</p>
+		After installing, you'll want to log in to the web interface and start configuring the system, including the system networking. Next, move to reviewing your system security by creating user and group accounts, setting up your directory services, and reviewing best practices. After networking and security configuration is complete, the system is ready for setting up data storage and alert notifications.</p>
 		<p><a href="/hub/initial-setup/install/">Installation and Update Procedures</a><br>
 		<a href="/hub/initial-setup/firsttimelogin/">First-time Configuration</a><br>
 		<a href="/hub/initial-setup/networking/">Configuring Networking</a><br>
-		<a href="/hub/initial-setup/security/">System Security</a><br>
+		<a href="/hub/initial-setup/security/">Credentials and Security</a><br>
 		<a href="/hub/initial-setup/storage/">Setting up Storage</a></p>
 		<a class="linkbutton" href="/hub/initial-setup/">Initial Setup</a>
 	</div>
@@ -77,7 +77,7 @@ no_list: true
 		<img src="/images/clipboard.jpg">
 	</div>
 	<div class="textcolumn">
-		<p>For more complicated use cases, TrueNAS supports many different administrative tasks such as monitoring system statistics, setting up system certificates, and backing up the system configuration.
+		<p>For more complicated use cases, TrueNAS supports many different administrative tasks such as monitoring system statistics, additional scripting, and backing up the system configuration.
 		Automatic data back up, sync, or other system maintenance tasks can also be scheduled.
 		There are also many different advanced features that unlock the full potential of TrueNAS, such as modifying Access Control Lists, using plugins and Virtual Machines (VMs), and reconfiguring High-Availability in TrueNAS Enterprise.</p>
 		<p><a href="/hub/tasks/administrative/">System Administration</a><br>
