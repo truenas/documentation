@@ -126,7 +126,6 @@ $secondary: #666666;
 // header links styling
 .headertext {
   color: #ffffff;
-  padding-left: 1em;
   margin: auto;
   font-size: 90%;
 }
@@ -212,7 +211,6 @@ nav a {
     position: relative;
     margin-top: -10px;
     overflow: visible;
-    margin-left: 20px !important;
   }
   .imgcolumn {
     -ms-flex: 100%; /* IE10 */
@@ -222,7 +220,7 @@ nav a {
     padding-bottom: 1em;
   }
   .dropdown {
-    width: 100px;
+    width: 50px;
   }
 
   .dropdown-menu {
