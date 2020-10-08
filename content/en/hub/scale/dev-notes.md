@@ -114,4 +114,4 @@ A word of caution: Support for kubernetes is still considered experimental, so p
 
 **Creating Helm Charts**
 
-SCALE today supports the deployment of Helm charts using the `kubectl` command. While support for natively importing docker containers is coming later in 2020. However it is possible to create a Helm chart from a docker container by following [various tutorials available online](https://opensource.com/article/20/5/helm-charts#:~:text=%20How%20to%20make%20a%20Helm%20chart%20in,%E2%80%9Cmy-cherry-chart%E2%80%9D%20has%20been%20upgraded.%20Happy%20Helming%21%20More%20). 
+SCALE today supports the deployment of Helm charts using the `kubectl` command. Support for natively importing docker containers is coming to the SCALE UI later in 2020. In the meantime, it is possible to create a Helm chart from a docker container by following [various tutorials available online](https://opensource.com/article/20/5/helm-charts#:~:text=%20How%20to%20make%20a%20Helm%20chart%20in,%E2%80%9Cmy-cherry-chart%E2%80%9D%20has%20been%20upgraded.%20Happy%20Helming%21%20More%20). 
