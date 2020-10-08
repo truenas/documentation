@@ -1,6 +1,7 @@
 ---
 title: "System Configuration"
 description: "How to change the various system level options in TrueNAS."
+weight: 30
 ---
 
 ## General

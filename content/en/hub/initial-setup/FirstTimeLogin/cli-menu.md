@@ -1,7 +1,7 @@
 ---
 title: "Console Setup Menu"
 description: "How to access and use the console setup menu"
-weight: 30
+weight: 10
 tags: ["CLI","networking"]
 ---
 

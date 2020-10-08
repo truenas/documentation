@@ -1,5 +1,5 @@
 ---
-title: "Advanced Topics"
-description: "Articles detailing many advanced topics, including system administration, configuring directory services, configuration and data backups, automated schedules, and other advanced TrueNAS features."
+title: "Advanced Management"
+description: "Articles detailing more complicated TrueNAS use cases involving system administration, configuration and data backups, automated schedules, and other advanced TrueNAS features."
 weight: 4
 ---

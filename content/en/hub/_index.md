@@ -35,7 +35,7 @@ no_list: true
 	</div>
 </div>
 
-## First Steps
+## Initial Setup
 
 <div class="hubrow">
 	<div class="imgcolumn">
@@ -43,12 +43,13 @@ no_list: true
 	</div>
 	<div class="textcolumn">
 		<p>After discovering if your hardware is right for TrueNAS, move to downloading and installing the software.
-		After installing, you'll want to set up your system networking and storage configuration before adding and sharing data.</p>
+		After installing, you'll want to log in to the web interface and start configuring the system, including the system networking. Next, move to reviewing your system security by creating user and group accounts, setting up your directory services, and reviewing best practices. After networking and security configuration is complete, the system is ready for setting up data storage.</p>
 		<p><a href="/hub/initial-setup/install/">Installation and Update Procedures</a><br>
+		<a href="/hub/initial-setup/firsttimelogin/">First-time Configuration</a><br>
 		<a href="/hub/initial-setup/networking/">Configuring Networking</a><br>
-		<a href="/hub/initial-setup/storage/">Setting up Storage</a><br>
-		<a href="/hub/initial-setup/best-practices/">Best Practices</a></p>
-		<a class="linkbutton" href="/hub/initial-setup/">First Steps</a>
+		<a href="/hub/initial-setup/security/">System Security</a><br>
+		<a href="/hub/initial-setup/storage/">Setting up Storage</a></p>
+		<a class="linkbutton" href="/hub/initial-setup/">Initial Setup</a>
 	</div>
 </div>
 
@@ -69,37 +70,36 @@ no_list: true
 	</div>
 </div>
 
-## Advanced Topics
+## Advanced Management
 
 <div class="hubrow">
 	<div class="imgcolumn">
 		<img src="/images/clipboard.jpg">
 	</div>
 	<div class="textcolumn">
-		<p>For more complicated use cases, TrueNAS supports many different administrative tasks like managing user and group accounts, monitor system statistics, setting up system certificates and directory services, and backing up the system configuration.
-		Automatic cloud back up, sync, or other system maintenance tasks can also be scheduled.
+		<p>For more complicated use cases, TrueNAS supports many different administrative tasks such as monitoring system statistics, setting up system certificates, and backing up the system configuration.
+		Automatic data back up, sync, or other system maintenance tasks can also be scheduled.
 		There are also many different advanced features that unlock the full potential of TrueNAS, such as modifying Access Control Lists, using plugins and Virtual Machines (VMs), and reconfiguring High-Availability in TrueNAS Enterprise.</p>
-		<p><a href="/hub/tasks/administrative/">Administrative Tasks</a><br>
-		<a href="/hub/tasks/directory-services/">Configuring Directory Services</a><br>
+		<p><a href="/hub/tasks/administrative/">System Administration</a><br>
 		<a href="/hub/tasks/scheduled/">Automated Tasks</a><br>
 		<a href="/hub/tasks/advanced/">Advanced Procedures</a></p>
-		<a class="linkbutton" href="/hub/tasks/">Advanced Topics</a>
+		<a class="linkbutton" href="/hub/tasks/">Advanced Management</a>
 	</div>
 </div>
 
-## 3rd Party Integration
+## Solution Integrations
 
 <div class="hubrow">
 	<div class="imgcolumn">
 		<img src="/images/spark_idea.jpg">
 	</div>
 	<div class="textcolumn">
-		<p>Articles discussing how to integrate TrueNAS with various 3rd party applications.</p>
+		<p>Articles discussing how to integrate TrueNAS with various external applications.</p>
 		<p><a href="/hub/solutions/kubernetes/">Kubernetes®</a><br>
 		<a href="/hub/solutions/openstack/">OpenStack®</a><br>
 		<a href="/hub/solutions/veeam/">Veeam®</a><br>
 		<a href="/hub/solutions/vmware/">VMware®</a></p>
-		<a class="linkbutton" href="/hub/solutions/">Integrations</a>
+		<a class="linkbutton" href="/hub/solutions/">Solution Integrations</a>
 	</div>
 </div>
 
