@@ -54,6 +54,23 @@ svg {
   font-feature-settings: 'liga';
 }
 
+// style Hub categories row
+.hubcategories {
+  background:white !important;
+  border:hidden;
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  max-width: 90%;
+  margin:auto;
+}
+.hubcategoryimage {
+  display:block;
+  margin:auto;
+  padding-bottom:1em;
+}
+
+
 // style top-level index page images
 .hubrow {
   display: -ms-flexbox; /* IE10 */
@@ -109,7 +126,6 @@ $secondary: #666666;
 // header links styling
 .headertext {
   color: #ffffff;
-  padding-left: 1em;
   margin: auto;
   font-size: 90%;
 }
@@ -195,7 +211,6 @@ nav a {
     position: relative;
     margin-top: -10px;
     overflow: visible;
-    margin-left: 20px !important;
   }
   .imgcolumn {
     -ms-flex: 100%; /* IE10 */
@@ -205,12 +220,16 @@ nav a {
     padding-bottom: 1em;
   }
   .dropdown {
-    width: 100px;
+    width: 50px;
   }
 
   .dropdown-menu {
     position: sticky !important;
     width: 190px;
+  }
+  .hubcategories {
+    max-width: 90%;
+    margin:0;
   }
 }
 
@@ -220,11 +239,10 @@ nav a {
 }
 //
 
-@media (max-width: 766px) {
+@media (max-width: 720px) {
   #main_navbar {
     width: 400px;
     position: relative;
-    left: 8%;
   }
 
   .td-search-input {
@@ -315,7 +333,7 @@ nav a {
 	margin:1em 0 0;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 720px) {
 	.tagslist {
 		width:45%;
 		float:left;

@@ -2,6 +2,7 @@
 title: "Setting up Certificates"
 description: "A how-to for creating and importing certificates in TrueNAS."
 tags: ["networking","security","certificates"]
+weight: 12
 ---
 
 ## Introduction

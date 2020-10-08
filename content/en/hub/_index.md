@@ -4,11 +4,11 @@ hide_feedback: true
 no_list: true
 ---
 
-<table>
-	<tr style="background-color:white;border:hidden;display:flex;justify-content:space-between;align-items:flex-end;">
-		<th style="border:hidden;"><a href="/hub/" title="TrueNAS Documentation Hub"><img src="/images/truenas_open_storage-logo-full-color-rgb.png" style="display:block;margin:auto;;max-width:75%;padding-bottom:1em;"><p style="text-align:center">TrueNAS Documentation Hub</p></th>
-		<th style="border:hidden;"><a href="/truecommand/" title="TrueCommand Documentation"><img src="/images/truecommand-logo-full-color-rgb.png" style="display:block;margin:auto;max-width:75%;padding-bottom:1em;"><p style="text-align:center">TrueCommand Documentation</p></th>
-		<th style="border:hidden;"><a href="/hardware/" title="TrueNAS Hardware Documentation"><img src="/images/TrueNASSystems.png" style="display:block;margin:auto;max-width:65%;padding-bottom:1em;"><p style="text-align:center">TrueNAS Hardware Documentation</p></th>
+<table style="overflow-x:hidden;background:white;">
+	<tr class="hubcategories">
+		<th style="border:hidden;background-color:#f2f2f2;"><a href="/hub/" title="TrueNAS Documentation Hub"><img class="hubcategoryimage" src="/images/truenas_open_storage-logo-full-color-rgb.png" style="max-width:60%;"><p style="text-align:center;font-size:85%">TrueNAS Documentation</p></th>
+		<th style="border:hidden;"><a href="/truecommand/" title="TrueCommand Documentation"><img class="hubcategoryimage" src="/images/truecommand-logo-full-color-rgb.png" style="max-width:70%;"><p style="text-align:center;font-size:85%">TrueCommand Documentation</p></th>
+		<th style="border:hidden;"><a href="/hardware/" title="TrueNAS Hardware Documentation"><img class="hubcategoryimage" src="/images/TrueNASSystems.png" style="max-width:60%"><p style="text-align:center;font-size:85%">TrueNAS Hardware Documentation</p></th>
 	</tr>
 </table>
 
@@ -23,7 +23,6 @@ no_list: true
 <div class="hubrow">
 	<div class="imgcolumn">
 		<img src="/images/co_work.jpg">
-		<a class="attributionlink" href="https://www.vecteezy.com/free-vector/introduction">Introduction Vectors by Vecteezy</a>
 	</div>
 	<div class="textcolumn">
 		<p>Start by learning all about TrueNAS!
@@ -36,21 +35,21 @@ no_list: true
 	</div>
 </div>
 
-## First Steps
+## Initial Setup
 
 <div class="hubrow">
 	<div class="imgcolumn">
 		<img src="/images/jump.jpg">
-		<a class="attributionlink" href="https://www.vecteezy.com/free-vector/safety-net">Safety Net Vectors by Vecteezy</a>
 	</div>
 	<div class="textcolumn">
 		<p>After discovering if your hardware is right for TrueNAS, move to downloading and installing the software.
-		After installing, you'll want to set up your system networking and storage configuration before adding and sharing data.</p>
+		After installing, you'll want to log in to the web interface and start configuring the system, including the system networking. Next, move to reviewing your system security by creating user and group accounts, setting up your directory services, and reviewing best practices. After networking and security configuration is complete, the system is ready for setting up data storage and alert notifications.</p>
 		<p><a href="/hub/initial-setup/install/">Installation and Update Procedures</a><br>
+		<a href="/hub/initial-setup/firsttimelogin/">First-time Configuration</a><br>
 		<a href="/hub/initial-setup/networking/">Configuring Networking</a><br>
-		<a href="/hub/initial-setup/storage/">Setting up Storage</a><br>
-		<a href="/hub/initial-setup/best-practices/">Best Practices</a></p>
-		<a class="linkbutton" href="/hub/initial-setup/">First Steps</a>
+		<a href="/hub/initial-setup/security/">Credentials and Security</a><br>
+		<a href="/hub/initial-setup/storage/">Setting up Storage</a></p>
+		<a class="linkbutton" href="/hub/initial-setup/">Initial Setup</a>
 	</div>
 </div>
 
@@ -59,7 +58,6 @@ no_list: true
 <div class="hubrow">
 	<div class="imgcolumn">
 		<img src="/images/laptop.jpg">
-		<a class="attributionlink" href="https://www.vecteezy.com/free-vector/laptop">Laptop Vectors by Vecteezy</a>
 	</div>
 	<div class="textcolumn">
 		<p>With the initial system configuration done, set up file sharing with the different protocols built into TrueNAS to pull data into the system or share files on your network.</p>
@@ -72,39 +70,36 @@ no_list: true
 	</div>
 </div>
 
-## Advanced Topics
+## Advanced Management
 
 <div class="hubrow">
 	<div class="imgcolumn">
 		<img src="/images/clipboard.jpg">
-		<a class="attributionlink" href="https://www.vecteezy.com/free-vector/business">Business Vectors by Vecteezy</a>
 	</div>
 	<div class="textcolumn">
-		<p>For more complicated use cases, TrueNAS supports many different administrative tasks like managing user and group accounts, monitor system statistics, setting up system certificates and directory services, and backing up the system configuration.
-		Automatic cloud back up, sync, or other system maintenance tasks can also be scheduled.
+		<p>For more complicated use cases, TrueNAS supports many different administrative tasks such as monitoring system statistics, additional scripting, and backing up the system configuration.
+		Automatic data back up, sync, or other system maintenance tasks can also be scheduled.
 		There are also many different advanced features that unlock the full potential of TrueNAS, such as modifying Access Control Lists, using plugins and Virtual Machines (VMs), and reconfiguring High-Availability in TrueNAS Enterprise.</p>
-		<p><a href="/hub/tasks/administrative/">Administrative Tasks</a><br>
-		<a href="/hub/tasks/directory-services/">Configuring Directory Services</a><br>
+		<p><a href="/hub/tasks/administrative/">System Administration</a><br>
 		<a href="/hub/tasks/scheduled/">Automated Tasks</a><br>
 		<a href="/hub/tasks/advanced/">Advanced Procedures</a></p>
-		<a class="linkbutton" href="/hub/tasks/">Advanced Topics</a>
+		<a class="linkbutton" href="/hub/tasks/">Advanced Management</a>
 	</div>
 </div>
 
-## 3rd Party Integration
+## Solution Integrations
 
 <div class="hubrow">
 	<div class="imgcolumn">
 		<img src="/images/spark_idea.jpg">
-		<a class="attributionlink" href="https://www.vecteezy.com/free-vector/abstract">Abstract Vectors by Vecteezy</a>
 	</div>
 	<div class="textcolumn">
-		<p>Articles discussing how to integrate TrueNAS with various 3rd party applications.</p>
+		<p>Articles discussing how to integrate TrueNAS with various external applications.</p>
 		<p><a href="/hub/solutions/kubernetes/">Kubernetes®</a><br>
 		<a href="/hub/solutions/openstack/">OpenStack®</a><br>
 		<a href="/hub/solutions/veeam/">Veeam®</a><br>
 		<a href="/hub/solutions/vmware/">VMware®</a></p>
-		<a class="linkbutton" href="/hub/solutions/">Integrations</a>
+		<a class="linkbutton" href="/hub/solutions/">Solution Integrations</a>
 	</div>
 </div>
 
@@ -113,7 +108,6 @@ no_list: true
 <div class="hubrow">
 	<div class="imgcolumn">
 		<img src="/images/sml.jpg">
-		<a class="attributionlink" href="https://www.vecteezy.com/free-vector/lamp">Lamp Vectors by Vecteezy</a>
 	</div>
 	<div class="textcolumn">
 		<p>TrueNAS SCALE is a Debian-based version of TrueNAS with container support.
@@ -129,7 +123,6 @@ no_list: true
 <div class="hubrow">
 	<div class="imgcolumn">
 		<img src="/images/knowledge.jpg">
-		<a class="attributionlink" href="https://www.vecteezy.com/free-vector/achievement">Achievement Vectors by Vecteezy</a>
 	</div>
 	<div class="textcolumn">
 		<p>Want to become a TrueNAS expert?

@@ -2,6 +2,7 @@
 title: "Setting up Certificate Authorities"
 description: "A how-to for creating and importing certificate authorities (CAs) in TrueNAS."
 tags: ["networking","security","certificates"]
+weight: 11
 ---
 
 ## Introduction
