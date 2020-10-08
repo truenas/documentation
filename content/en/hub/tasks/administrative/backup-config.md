@@ -1,6 +1,6 @@
 ---
-title: "Backing up System Configuration"
-description: "A how-to for backing up the system configuration."
+title: "Backing up the System Configuration"
+description: "How-to download a copy of the current TrueNAS configuration."
 ---
 
 It is highly recommended to back up the system configuration regularly. This
