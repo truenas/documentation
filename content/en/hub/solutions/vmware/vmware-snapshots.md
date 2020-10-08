@@ -1,15 +1,12 @@
 ---
 title: "VMware Snapshots"
-description: "Snapshoting VMware Instances" 
+description: "Snapshotting VMware Instances" 
 tags: ["ZFS", "Snapshots"]
 ---
 
-### VMware Snapshots
-**Storage** > **VMware-Snapshots** is used to coordinate ZFS snapshots when using TrueNAS® as a VMware datastore. When a ZFS snapshot is created, TrueNAS® automatically snapshots any running VMware virtual machines before taking a scheduled or manual ZFS snapshot of the dataset or zvol backing that VMware datastore. Virtual machines **must be powered on** for TrueNAS® snapshots to be copied to VMware. The temporary VMware snapshots are then deleted on the VMware side but still exist in the ZFS snapshot and can be used as stable resurrection points in that snapshot. These coordinated snapshots are listed in Snapshots.
+**Storage** > **VMware-Snapshots** is used to coordinate ZFS snapshots when using TrueNAS as a VMware datastore. When a ZFS snapshot is created, TrueNAS automatically snapshots any running VMware virtual machines before taking a scheduled or manual ZFS snapshot of the dataset or zvol backing that VMware datastore. Virtual machines **must be powered on** for TrueNAS snapshots to be copied to VMware. The temporary VMware snapshots are then deleted on the VMware side but still exist in the ZFS snapshot and can be used as stable resurrection points in that snapshot. These coordinated snapshots are listed in the **Storage > Snapshots** list.
 
-
-VMware snapshot options.
-
+## VMware Snapshot Options
 
 | Setting        | Value          | Description                                                                                                                                     |
 |----------------|----------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -19,4 +16,4 @@ VMware snapshot options.
 | ZFS Filesystem | browse button  | `Browse` to the filesystem to snapshot.                                                                                                           |
 | Datastore      | drop-down menu | After entering the `Hostname`, `Username`, and `Password`, click `FETCH DATASTORES` to populate the menu, then select the datastore to be synchronized. |
 
-TrueNAS® connects to the VMware host after the credentials are entered. The `ZFS Filesystem` and `Datastore` drop-down menus are populated with information from the VMware host. Choosing a datastore also selects any previously mapped dataset.
+TrueNAS connects to the VMware host after the credentials are entered. The `ZFS Filesystem` and `Datastore` drop-down menus are populated with information from the VMware host. Choosing a datastore also selects any previously mapped dataset.

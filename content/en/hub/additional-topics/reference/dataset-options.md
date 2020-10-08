@@ -1,12 +1,11 @@
 ---
 title: "ZFS Dataset Reference Information"
-description: "ZFS Dataset Reference Information" 
 tags: ["ZFS"]
 ---
 
-Some settings are only available in **ADVANCED MODE**. To see these settings, either click the **ADVANCED MODE** button, or configure the system to always display advanced settings by enabling the **Show advanced fields by default** option in **System** > **Advanced**.
+Some dataset options are only available in **ADVANCED MODE**. To see these settings, either click the **ADVANCED MODE** button or configure the system to always display advanced settings by enabling the **Show advanced fields by default** option in **System** > **Advanced**.
 
-### Dataset Options
+## Dataset Options
 
 | Setting                                          | Value               | Advanced Mode | Description |
 |--------------------------------------------------|---------------------|---------------|---------------|
@@ -33,23 +32,21 @@ Some settings are only available in **ADVANCED MODE**. To see these settings, ei
 | Case Sensitivity                                 | drop-down menu      |               | Choices are *sensitive* (default, assumes filenames are case sensitive), *insensitive* (assumes filenames are not case sensitive), or *mixed* (understands both types of filenames). This can only be set when creating a new dataset.   |
 | Share Type                                       | drop-down menu      |               | Select the type of share that will be used on the dataset. Choose between *Generic* for most sharing options or *SMB* for a SMB share. Choosing SMB sets the `ACL Mode` to *Restricted* and `Case Sensitivity` to *Insensitive*. This field is only available when creating a new dataset.  |
 
-
-
 After a dataset is created it appears in **Storage** > **Pools**. Click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp (Options) on an existing dataset to configure these options:
 
 **Add Dataset**: create a nested dataset, or a dataset within a dataset.
 
 **Add Zvol**: add a zvol to the dataset. Refer to Adding Zvols for more information about zvols.
 
-**Edit Options**: edit the pool properties described in Table 8.2.8. Note that `Dataset Name` and `Case Sensitivity` are read-only as they cannot be edited after dataset creation.
+**Edit Options**: edit the dataset properties as described in the table above. Note that `Dataset Name` and `Case Sensitivity` are read-only as they cannot be edited after dataset creation.
 
-**Edit Permissions**: refer to Setting Permissions for more information about permissions.
+**Edit Permissions**: change the basic dataset access rules. <!--Add reference/link to dataset permissions content when it is added. -->
+
+**Edit ACL**: see [Managing Access Control Lists](/hub/tasks/advanced/editingacls/) for details about modifying an Access Control List (ACL).
 
 {{% alert title=Warning color=warning %}}
 Removing a dataset is a permanent action and results in data loss!
 {{% /alert %}}
-
-**Edit ACL**: see ACL Management for details about modifying an Access Control List (ACL).
 
 **Delete Dataset**: removes the dataset, snapshots of that dataset, and any objects stored within the dataset. To remove the dataset, set `Confirm`, click `DELETE DATASET`, verify that the correct dataset to be deleted has been chosen by entering the dataset name, and click `DELETE`. When the dataset has active shares or is still being used by other parts of the system, the dialog shows what is still using it and allows forcing the deletion anyway. **Caution**: forcing the deletion of an in-use dataset can cause data loss or other problems.
 
@@ -57,11 +54,11 @@ Removing a dataset is a permanent action and results in data loss!
 
 **Create Snapshot**: create a one-time snapshot. A dialog opens to name the snapshot. Options to include child datasets in the snapshot and synchronize with VMware can also be shown. To schedule snapshot creation, use Periodic Snapshot Tasks.
 
-### DeDuplication
+## DeDuplication
 
 Deduplication is often considered when using a group of very similar virtual machine images. However, other features of ZFS can provide dedup-like functionality more efficiently. For example, create a dataset for a standard VM, then clone a snapshot of that dataset for other VMs. Only the difference between each created VM and the main dataset are saved, giving the effect of deduplication without the overhead.
 
-### Compression
+## Compression
 
 When selecting a compression type, balancing performance with the amount of disk space saved by compression is recommended. Compression is transparent to the client and applications as ZFS automatically compresses data as it is written to a compressed dataset or zvol and automatically decompresses that data as it is read. These compression algorithms are supported:
 

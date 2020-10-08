@@ -17,7 +17,7 @@ To create a Zvol in the desired pool, go to **Storage > Pools** then click <i cl
 
 To quickly create a Zvol with the default options, enter a name for the Zvol, a size, and click *SAVE*. To modify more advanced settings of the Zvol click *ADVANCED MODE*. Zvol options can also be edited after creation. To edit a Zvol, click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp and *Edit Options*.
 
-### zvol Configuration Options 
+## zvol Configuration Options 
 
 | Setting            | Value          | Advanced Mode | Description |
 |--------------------|----------------|---------------|--------------|

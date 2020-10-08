@@ -1,23 +1,22 @@
 ---
 title: "Hot Spares and Pool Extension"
-description: "Adding spare devices and Extending a Pool" 
+description: "Adding spare devices and extending a pool."
 tags: ["ZFS","zpool"]
 ---
 
-
-### Adding Spare Devices
+## Adding Spare Devices
 
 ZFS provides the ability to have “hot” spares. These are drives that are connected to a pool, but not in use. If the pool experiences the failure of a data drive, the system uses the hot spare as a temporary replacement. If the failed drive is replaced with a new drive, the hot spare drive is no longer needed and reverts to being a hot spare. If the failed drive is detached from the pool, the spare is promoted to a full member of the pool.
 
-Hot spares can be added to a pool during or after creation. On TrueNAS®, hot spare actions are implemented by [zfsd(8)](https://www.freebsd.org/cgi/man.cgi?query=zfsd).
+Hot spares can be added to a pool during or after creation. On TrueNAS, hot spare actions are implemented by [zfsd(8)](https://www.freebsd.org/cgi/man.cgi?query=zfsd).
 
-To add a spare during pool creation, click the `Add Spare` button. Select the disk from `Available Disks` and use the <i class="fas fa-arrow-right" aria-hidden="true" title="Right Arrow"></i>&nbsp (right arrow) next to `Spare VDev` to add it to the section.
+To add a spare during pool creation, click `Add Spare`. Select the disk from `Available Disks` and use the <i class="fas fa-arrow-right" aria-hidden="true" title="Right Arrow"></i>&nbsp (right arrow) next to `Spare VDev` to add it to the section.
 
-To add a device to an existing pool, Extend that pool.
+To add a device to an existing pool, extend that pool.
 
-### Extending a Pool
+## Extending a Pool
 
-To increase the capacity of an existing pool, click the pool name, <i class="fas fa-cog" aria-hidden="true" title="Settings"></i>&nbsp (Settings) (Settings), then **Extend**.
+To increase the capacity of an existing pool, click the pool name, <i class="fas fa-cog" aria-hidden="true" title="Settings"></i>&nbsp (Settings), then **Extend**.
 
 If the existing pool is encrypted, an additional warning message shows a reminder that **extending a pool resets the passphrase and recovery key**. Extending an encrypted pool opens a dialog to download the new encryption key file. Remember to use the Encryption Operations to set a new passphrase and create a new recovery key file.
 
