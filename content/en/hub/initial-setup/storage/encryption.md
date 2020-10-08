@@ -1,7 +1,7 @@
 ---
 title: "Encryption"
 description: "Native ZFS Encryption in TrueNAS"
-tags: ["ZFS","encryption","security"]
+tags: ["ZFS","encryption","security","dataset","snapshots"]
 ---
 
 You can encrypt the root dataset of a new storage pool to further increase data security.
