@@ -7,6 +7,7 @@ tags: ["jails"]
 
 This is a TrueNAS® licensed feature only. For assistance, please contact iX Support:
 
+{{% pageinfo %}}
 | Contact Method | Contact Options                                                                                                                                  |
 |----------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
 | Web            | https://support.ixsystems.com                                                                                                                    |
@@ -122,7 +123,7 @@ Clicking *Jails* shows a list of installed jails.
 <img src="/images/jails.png" width='700px'>
 <br><br>
 
-Operations can be applied to multiple jails by selecting those jails with the checkboxes on the left. After selecting one or more jails, icons appear which can be used to ▶ (Start), <i class="fas fa-stop" aria-hidden="true" title="Stop">&nbsp; (Stop), 🕓 (Update), or <i class="fas fa-trash" aria-hidden="true" title="Delete"></i>&nbsp; (Delete) those jails.
+Operations can be applied to multiple jails by selecting those jails with the checkboxes on the left. After selecting one or more jails, icons appear which can be used to <i class="fas fa-play" aria-hidden="true" title="Start"></i>&nbsp; (Start), <i class="fas fa-stop" aria-hidden="true" title="Stop"></i>&nbsp; (Stop), <i class="fas fa-clock" aria-hidden="true" title="Update"></i>&nbsp; (Update), or <i class="fas fa-trash" aria-hidden="true" title="Delete"></i>&nbsp; (Delete) those jails.
 
 More information such as *IPV4*, *IPV6*, *TYPE* of jail, and whether it is a *TEMPLATE* jail or *BASEJAIL* can be shown by clicking > (Expand). Additional options for that jail are also displayed.
 
@@ -133,16 +134,16 @@ More information such as *IPV4*, *IPV6*, *TYPE* of jail, and whether it is a *TE
 Modify the IP address information for a jail by clicking **>** (Expand) > **EDIT** instead of issuing the networking commands directly from the command line of the jail. This ensures the changes are saved and will survive a jail or TrueNAS® reboot.
 {{% /alert %}}
 
-| Option       | Description                                                                                                                                                                                                                                                                                                      |
-|--------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| EDIT         | Used to modify the settings described in Advanced Jail Creation. A jail cannot be edited while it is running. The settings can be viewed, but are read only.                                                                                                                                                     |
-| MOUNT POINTS | Select an existing mount point to **EDIT** or click **ACTIONS** > **Add Mount Point** to create a mount point for the jail. A mount point gives a jail access to storage located elsewhere on the system. A jail must be stopped before adding, editing, or deleting a mount point. See Additional Storage for more details. |
-| RESTART      | Stop and immediately start an *up* jail.                                                                                                                                                                                                                                                                           |
-| START        | Start a jail that has a current `STATE` of *down*.                                                                                                                                                                                                                                                                   |
-| STOP         | Stop a jail that has a current `STATE` of *up*.                                                                                                                                                                                                                                                                      |
-| UPDATE       | Runs [freebsd-update](https://www.freebsd.org/cgi/man.cgi?query=freebsd-update) to update the jail to the latest patch level of the installed FreeBSD release.                                                                                                                                                                                                               |
-| SHELL        | Access a *root* command prompt to interact with a jail directly from the command line. Type `exit` to leave the command prompt.                                                                                                                                                                                      |
-| DELETE       | Caution: deleting the jail also deletes all of the jail contents and all associated snapshots. Back up the jail data, configuration, and programs first. There is no way to recover the contents of a jail after deletion!                                                                                       |
+| Option       |   | Description                                                                                                                                                                                                                                                                                                      |
+|--------------|---|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| EDIT         | | Used to modify the settings described in Advanced Jail Creation. A jail cannot be edited while it is running. The settings can be viewed, but are read only.                                                                                                                                                     |
+| MOUNT POINTS | | Select an existing mount point to **EDIT** or click **ACTIONS** > **Add Mount Point** to create a mount point for the jail. A mount point gives a jail access to storage located elsewhere on the system. A jail must be stopped before adding, editing, or deleting a mount point. See Additional Storage for more details. |
+| RESTART      | | Stop and immediately start an *up* jail.                                                                                                                                                                                                                                                                           |
+| START        | | Start a jail that has a current `STATE` of *down*.                                                                                                                                                                                                                                                                   |
+| STOP        | | Stop a jail that has a current `STATE` of *up*.                                                                                                                                                                                                                                                                      |
+| UPDATE       | | Runs [freebsd-update](https://www.freebsd.org/cgi/man.cgi?query=freebsd-update) to update the jail to the latest patch level of the installed FreeBSD release.                                                                                                                                                                                                               |
+| SHELL        | | Access a *root* command prompt to interact with a jail directly from the command line. Type `exit` to leave the command prompt.                                                                                                                                                                                      |
+| DELETE       | | Caution: deleting the jail also deletes all of the jail contents and all associated snapshots. Back up the jail data, configuration, and programs first. There is no way to recover the contents of a jail after deletion!                                                                                       |
 
 {{% pageinfo %}}
 Menu entries change depending on the jail state. For example, a stopped jail does not have a STOP or SHELL option.
@@ -262,13 +263,11 @@ Jails can be given access to an area of storage outside of the jail that is conf
 
 **>** (Expand) > **MOUNT POINTS** shows any added storage and allows adding more storage.
 
-Note
-
 A jail must have a **STATE** of *down* before adding a new mount point. Click **>** (Expand) and **STOP** for a jail to change the jail STATE to down.
 
-Storage can be added by clicking **Jails** ➞ **>** (Expand) > **MOUNT POINTS** for the desired jail. The `MOUNT POINT` section is a list of all of the currently defined mount points.
+Storage can be added by clicking **Jails** > **>** (Expand) > **MOUNT POINTS** for the desired jail. The `MOUNT POINT` section is a list of all of the currently defined mount points.
 
-Go to **MOUNT POINTS** > **ACTION**S > **Add Mount Point** to add storage to a jail.
+Go to **MOUNT POINTS** > **ACTIONS** > **Add Mount Point** to add storage to a jail.
 
 <img src="/images/jails-mountpoint-add.png" width='700px'>
 <br><br>

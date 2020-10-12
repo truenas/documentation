@@ -7,7 +7,7 @@ tags: ["jails"]
 
 
 ### Installing Jail Software
-A jail is created with no software aside from the core packages installed as part of the selected version of FreeBSD. To install more software, start the jail and click **>** SHELL.
+A jail is created with no software aside from the core packages installed as part of the selected version of FreeBSD. To install more software, start the jail and click **>**_ Shell.
 
 <img src="/images/jail-shell-example.png" width='700px'>
 <br><br>
@@ -85,7 +85,7 @@ If the port does not provide any compile options, it saves time and preserves th
 
 The [FreshPorts.org](https://www.freshports.org/) listing shows whether a port has any configurable compile options.
 
-<img src="/images/jails-audio-tag.png" width='700px'>
+<img src="/images/jails-audio-tag.png">
 <br><br>
 
 ### Audiotag Port Information
