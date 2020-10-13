@@ -78,7 +78,8 @@ Additional options allow you to recursively replicate child dataset snapshots, o
 Local sources are replicated by snapshots that were generated from a periodic snapshot task and/or from a defined naming schema that matches manually created snapshots.
 Remote sources require entering a snapshot naming schema to identify the snapshots to replicate.
 A naming schema is a collection of [strftime](https://www.freebsd.org/cgi/man.cgi?query=strftime) time and date strings and any identifiers that a user might have added to the snapshot name.
-For example, entering the naming schema *custom-%Y%m%d_%H:%M* finds and replicates snapshots like *custom-20200325_09:15*.
+For example, entering the naming schema *custom-%Y%m%d_%H:%M* finds and replicates snapshots like *custom-20200325_09:15*.  Multiple custom schemas can be entered seperating each schema by hitting the Enter key.
+
 
 To define which periodic snapshots to replicate, set the checkbox and enter a schedule. The only periodically generated snapshots that will be included in the replication task are those that match the schedule.
 Alternately, you can use your replication task schedule to determine which snapshots are replicated by setting the option in replication scheduling to only replicate snapshots matching the schedule.
