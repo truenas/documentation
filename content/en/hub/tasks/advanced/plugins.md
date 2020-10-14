@@ -6,7 +6,7 @@ description: "How to install or configure application plugins."
 {{% alert title="Notice" color="info" %}}
 The Plugins feature is generally available in TrueNAS CORE and is supported by the open source TrueNAS community.
 TrueNAS Enterprise does not show or support this feature unless it has been added to a TrueNAS Enterprise license.
-For more details or to request plugin support in TrueNAS Enterprise, please [contact iX Support](/hub/additional-topics/support/#contacting-ixsystems-support):
+For more details or to request plugin support in TrueNAS Enterprise, please [contact iX Support](/hub/initial-setup/support/#contacting-ixsystems-support):
 {{% /alert %}}
 
 Plugins allow you to extend the built-in NAS services by installing additional software.
