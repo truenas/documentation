@@ -19,7 +19,12 @@ A special vdev can store meta data, ie. where files are, allocation tables, etc.
 To Create a Fusion Pool, click on **Storage** > **Pools** > **Add**.  When adding disks to the pool, select the number of hard disks desired to be in the VDEV and ensure the pool is set as Mirrored.  From the **ADD VDEV** drop down menu, select **Metadata**. Select an SSD to add to the *Medtadata VDev* portion of UI. 
 When prompted with the notification:  `Metadata vdev must be the same type as the data vdevs.  First data vdev is a mirror, new Metadata vdev is a stripe.`, check the *Force* box and click **CREATE**.
 If a warning dialog box appears requesting an override due to the vdevs not matching, check the *Confirm* box and click **Continue**.  Then click **CREATE/CREATE POOL**
-Once pool has been created, check pool status to confirm it shows as a MIRROR pool with a 'Special' section that will contains the SSD you added .
+Once pool has been created, check pool status to confirm it shows as a MIRROR pool with a 'Special' section that will contains the SSD you added.
+
+<img src="/images/fusion-pool-create.PNG">
+<br><br>
+
+
 
 {{% pageinfo %}}
 Once a drive has been added as a *special vdev*, it cannot be removed from the pool.
