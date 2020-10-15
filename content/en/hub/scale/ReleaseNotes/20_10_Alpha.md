@@ -3,7 +3,7 @@ title: "SCALE 20.10-ALPHA (Angelfish)"
 tags: ["SCALE"]
 ---
 
-**October 15, 2020**
+**October 16, 2020**
 
 iXsystems is pleased to release the first Alpha version of TrueNAS SCALE!
 SCALE is the newest member of the TrueNAS software family.
