@@ -1,6 +1,6 @@
 ---
-title: "Media and Entertainment"
-description: "Discussion of deploying TrueNAS for Media and Entertainment work environments with suggestions for optimizing the system for specific applications."
+title: "Media Workflows"
+description: "Discussion of deploying TrueNAS for Media work environments with suggestions for optimizing the system for specific applications."
 weight:
 tags: ["tuning suggestions"]
 ---
@@ -25,7 +25,17 @@ Read more to learn how TrueNAS can be optimized for typical M&E production house
 
 ## General Optimizations
 
-<!-- add system config recommendations for anyone using TrueNAS for M&E -->
+It's recommended to use SMB3 sharing on both the TrueNAS and any client systems.
+A typical recommendation is to use Mixed RAID (*2+1 RAIDZ*) in most cases with added *Read* and *Write* cache.
+The Write cache is optional if the system is only using SMB sharing.
+
+*RAIDZ2* that is 6 or 7 disks wide (Protection-X or Protection) is viable for tier2/nearline/archival storage or if the system has extensive data storage (a few hundred Terabytes or more).
+Setting jumbo frames (*MTU: 9000*) on the network, TrueNAS, and client side is also important for large file streams.
+
+Media Cache Files and any Media Cache Databases should stay local on clients, and this should be SSD/NVME based.
+These are not meant to be stored on a NAS.
+
+When not using a flash-based system, don't move or copy files or footage while editing as this can cause choppy playback.
 
 ## Software-specific Tuning
 
@@ -34,25 +44,11 @@ Beyond general optimization for Media and Entertainment workflows are tunings or
 ### Adobe Premiere®
 
 System size is a primary factor when tuning TrueNAS for Adobe Premiere workflows.
-A typical recommendation is to use Mixed RAID (*2+1 RAIDZ*) in most cases with added *Read* and *Write* cache.
-The Write cache is optional if the system is only using SMB sharing.
-
-*RAIDZ2* that is 6 or 7 disks wide (Protection-X or Protection) is viable for tier2/nearline/archival storage or if the system has extensive data storage (a few hundred Terabytes or more).
-Setting jumbo frames (*MTU: 9000*) on the network, TrueNAS, and client side is also important for large file streams.
 
 4K workflows likely want to have 20 disks or more.
 8K can be all-flash demanding, but Premiere has the *proxies* feature which can reduce the performance impact.
+Make sure your client systems or other applications support this feature too.
 
-It's recommended to use SMB3 sharing on both the TrueNAS and any client systems.
-
-When not using a flash-based system, don't move or copy files or footage while editing in Premiere, as this can cause choppy playback.
+To get some performance improvement when scrubbing through long video files with audio tracks, de-select *play audio while scrubbing* under **Preferences > Audio**
 
 Make sure that **Project Locking** is enabled in Premiere for any shared projects.
-
-### Avid® Media Composer™ & Pro Tools™
-
-### Blackmagic DaVinci Resolve
-
-### Grass Valley® EDIUS®
-
-### Blender® 
