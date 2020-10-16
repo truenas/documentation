@@ -131,6 +131,7 @@ no_list: true
 		Topics include articles that apply to earlier specific versions of TrueNAS (and FreeNAS), along with previous version release notes.
 		The Application Programming Interface is also detailed here, along with simple instructions for creating an API key.</p>
 		<p><a href="/hub/additional-topics/reference/">Reference Articles</a><br>
+		<a href="/hub/additional-topics/usagerecommendations/">Usage Optimizations</a><br>
 		<a href="/hub/additional-topics/legacy/">Legacy Documentation</a><br>
 		<a href="/hub/additional-topics/api/">API Documentation</a></p>
 		<a class="linkbutton" href="/hub/additional-topics/">Additional Topics</a>
