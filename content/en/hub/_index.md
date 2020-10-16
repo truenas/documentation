@@ -113,7 +113,8 @@ no_list: true
 		<p>TrueNAS SCALE is a Debian-based version of TrueNAS with container support.
 		It is currently in pre-ALPHA status and under active development.
 		SCALE documentation is mostly shared with TrueNAS CORE and Enterprise, but articles discussing SCALE specific features are organized in this topic.</p>
-		<p><a href="/hub/scale/dev-notes/">Developer's Notes</a></p>
+		<p><a href="/hub/scale/dev-notes/">Developer's Notes</a><br>
+		<a href="/hub/scale/releasenotes/">SCALE Release Notes</a></p>
 		<a class="linkbutton" href="/hub/scale/">TrueNAS SCALE</a>
 	</div>
 </div>
