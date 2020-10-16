@@ -40,7 +40,6 @@ Minor bugs could be present.
 * NFS Shares
 * S3 Shares
 * AFP Shares
-* AD / LDAP Directory Services
 * Online / Offline updating
 * Virtual Machines (Using KVM)
 * WebDAV
@@ -55,6 +54,7 @@ Please use only with caution.
 * Cloud Sync Tasks
 * Docker with Kubernetes (CLI)
 * Docker with NVIDIA gpu passthrough flags (CLI)
+* AD / LDAP Directory Services
 * Wireguard (CLI)
 * Networking and Settings UX Refresh
 
