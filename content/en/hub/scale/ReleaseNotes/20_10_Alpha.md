@@ -44,7 +44,6 @@ Minor bugs could be present.
 * Virtual Machines (Using KVM)
 * WebDAV
 * Monitoring, Alerting and Reporting
-* POSIX 1e / NFSv4 ACL support
 
 ### Provisional
 
@@ -65,6 +64,7 @@ These features are still in early development and will be landing in Nightly ima
 * Applications UI
 * Clustered Datasets API support for TrueCommand
 * TrueCommand Clustering UI for SCALE
+* POSIX 1e / NFSv4 ACL support
 
 ## Bug Fixes
 
