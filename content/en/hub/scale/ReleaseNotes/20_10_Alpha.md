@@ -70,7 +70,7 @@ These features are still in early development and will be landing in Nightly ima
 
 As the root user, it is possible to load additional software via the apt package manager commands. This is useful for developers on experimental systems who are trying new features or diagnosing issues. Installing the wrong packages could render a system non-functional and caution should be taken.
 
-Packages downloaded via apt are not persistent. They will not survive a reboot or upgrade and may negatively impact normal operation. Users of operational systems should not use the apt command unless advised by the developers. For persistence between upgrades, users should deploy custom packages as containers. 
+Packages downloaded via apt are not persistent. They will not survive an upgrade and may negatively impact normal operation. Users of operational systems should not use the apt command unless advised by the developers. For persistence between upgrades, users should deploy custom packages as containers. 
 
 ## Bug Fixes
 
