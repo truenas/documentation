@@ -44,31 +44,7 @@ Here is the full list of fixes and changes in 12.0-RELEASE:
 Type = sysctl
 Variable = vfs.zfs.l2arc.rebuild_enabled
 Value = 1</th></tr></thead>
-                <tbody><tr><td></td><td></td><td></td></tr>
-                    <tr><td></td><td></td><td></td></tr>
-                </tbody>
-            </table>
-        </body>
-    </html>
-<body class="ql-editor ql-editor-view" style="font-size:14px;">
-    <html>
-        <body>
-            <table width="100%">
-                <thead><tr><th>NAS-106992</th><th>Persistent L2ARC is disabled by default due to performance impact when rebuilding with large amounts of data.</th><th>Reactivating persistent L2ARC can result in degraded UI and Middleware performance in specific situations where large amounts of data is loaded into L2ARC and a rebuild is triggered. To reactivate persistent L2ARC, log in to the TrueNAS Web Interface, go to System > Tunables, and add a new tunable with these values:
-Type = sysctl
-Variable = vfs.zfs.l2arc.rebuild_enabled
-Value = 1</th></tr></thead>
-                <tbody><tr><td></td><td></td><td></td></tr>
-                    <tr><td></td><td></td><td></td></tr>
-                </tbody>
-            </table>
-        </body>
-    </html>
-<body class="ql-editor ql-editor-view" style="font-size:14px;">
-    <html>
-        <body>
-            <table width="100%">
-                <thead><tr><th>NAS-107951</th><th>2FA is missing from TrueNAS Enterprise</th><th>2-Factor authentication is receiving additional polish for TrueNAS Enterprise and is scheduled to be added in 12.0-U1.</th></tr></thead>
+		 <thead><tr><th>NAS-107951</th><th>2FA is missing from TrueNAS Enterprise</th><th>2-Factor authentication is receiving additional polish for TrueNAS Enterprise and is scheduled to be added in 12.0-U1.</th></tr></thead>
                 <tbody><tr><td></td><td></td><td></td></tr>
                     <tr><td></td><td></td><td></td></tr>
                 </tbody>
