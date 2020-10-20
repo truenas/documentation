@@ -40,13 +40,13 @@ Here is the full list of fixes and changes in 12.0-RELEASE:
         <body>
             <table width="100%">
                 <thead><tr><th>Key</th><th>Summary</th><th>Workaround</th></tr></thead>
-                <tbody><tr><td></td><td></td><td></td></tr>
-                    <tr><td>NAS-107151</td><td>Replication fails between legacy TrueNAS 9.10 systems and 12.0-BETA1 systems.</td><td>Due to numerous improvements in the replication engine and ZFS, FreeNAS/TrueNAS 9.10 systems (or earlier) can no longer replicate to or from TrueNAS 12.0. Update the legacy TrueNAS system to FreeNAS/TrueNAS 11.3 or newer.</td></tr>
-		    <tr><td>NAS-106992</td><td>Persistent L2ARC is disabled by default due to performance impact when rebuilding with large amounts of data.</td><td>Reactivating persistent L2ARC can result in degraded UI and Middleware performance in specific situations where large amounts of data is loaded into L2ARC and a rebuild is triggered. To reactivate persistent L2ARC, log in to the TrueNAS Web Interface, go to System > Tunables, and add a new tunable with these values:
+                <tbody>
+                    <tr><td><a href="https://jira.ixsystems.com/browse/NAS-107151" target="_blank">NAS-107151</a></td><td>Replication fails between legacy TrueNAS 9.10 systems and 12.0-BETA1 systems.</td><td>Due to numerous improvements in the replication engine and ZFS, FreeNAS/TrueNAS 9.10 systems (or earlier) can no longer replicate to or from TrueNAS 12.0. Update the legacy TrueNAS system to FreeNAS/TrueNAS 11.3 or newer.</td></tr>
+		    <tr><td><a href="https://jira.ixsystems.com/browse/NAS-106992" target="_blank">NAS-106992</a></td><td>Persistent L2ARC is disabled by default due to performance impact when rebuilding with large amounts of data.</td><td>Reactivating persistent L2ARC can result in degraded UI and Middleware performance in specific situations where large amounts of data is loaded into L2ARC and a rebuild is triggered. To reactivate persistent L2ARC, log in to the TrueNAS Web Interface, go to System > Tunables, and add a new tunable with these values:
 Type = sysctl
 Variable = vfs.zfs.l2arc.rebuild_enabled
 Value = 1</td></tr>
-		    <tr><td>NAS-107951</td><td>2FA is missing from TrueNAS Enterprise</td><td>2-Factor authentication is receiving additional polish for TrueNAS Enterprise and is scheduled to be added in 12.0-U1.</td></tr>
+		    <tr><td><a href="https://jira.ixsystems.com/browse/NAS-107951" target="_blank">NAS-107951</a></td><td>2FA is missing from TrueNAS Enterprise</td><td>2-Factor authentication is receiving additional polish for TrueNAS Enterprise and is scheduled to be added in 12.0-U1.</td></tr>
                 </tbody>
             </table>
         </body>
