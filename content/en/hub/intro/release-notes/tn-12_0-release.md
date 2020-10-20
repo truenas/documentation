@@ -60,23 +60,11 @@ Value = 1</th></tr></thead>
             </table>
         </body>
     </html>
-	## Known Issues
 <body class="ql-editor ql-editor-view" style="font-size:14px;">
     <html>
         <body>
             <table width="100%">
-                <thead><tr><th>Key</th><th>Summary</th><th>Workaround</th></tr></thead>
-                <tbody><tr><td></td><td></td><td></td></tr>
-                    <tr><td></td><td></td><td></td></tr>
-                </tbody>
-            </table>
-        </body>
-    </html>
-<body class="ql-editor ql-editor-view" style="font-size:14px;">
-    <html>
-        <body>
-            <table width="100%">
-                <thead><tr><th>Key</th><th>Summary</th><th>Workaround</th></tr></thead>
+                <thead><tr><th>NAS-107951</th><th>2FA is missing from TrueNAS Enterprise</th><th>2-Factor authentication is receiving additional polish for TrueNAS Enterprise and is scheduled to be added in 12.0-U1.</th></tr></thead>
                 <tbody><tr><td></td><td></td><td></td></tr>
                     <tr><td></td><td></td><td></td></tr>
                 </tbody>
