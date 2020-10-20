@@ -40,6 +40,10 @@ Here is the full list of fixes and changes in 12.0-RELEASE:
         <body>
             <table width="100%">
                 <thead><tr><th>NAS-107151</th><th>Replication fails between legacy TrueNAS 9.10 systems and 12.0-BETA1 systems.</th><th>Due to numerous improvements in the replication engine and ZFS, FreeNAS/TrueNAS 9.10 systems (or earlier) can no longer replicate to or from TrueNAS 12.0. Update the legacy TrueNAS system to FreeNAS/TrueNAS 11.3 or newer.</th></tr></thead>
+		<thead><tr><th>NAS-106992</th><th>Persistent L2ARC is disabled by default due to performance impact when rebuilding with large amounts of data.</th><th>Reactivating persistent L2ARC can result in degraded UI and Middleware performance in specific situations where large amounts of data is loaded into L2ARC and a rebuild is triggered. To reactivate persistent L2ARC, log in to the TrueNAS Web Interface, go to System > Tunables, and add a new tunable with these values:
+Type = sysctl
+Variable = vfs.zfs.l2arc.rebuild_enabled
+Value = 1</th></tr></thead>
                 <tbody><tr><td></td><td></td><td></td></tr>
                     <tr><td></td><td></td><td></td></tr>
                 </tbody>
