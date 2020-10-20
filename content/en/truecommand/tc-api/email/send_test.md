@@ -11,10 +11,10 @@ chapter: false
 |:----------------:|:--------:|:--------:|:--------:|:--------:|:---:|
 | email | send_test | Yes | No | No | 1 (Removed in 1.2) |
 
-{{% notice warning %}}
+{{% pageinfo %}}
 This API namespace was depricated in version 1.1, and removed in version 1.2. 
 Please look at the alertplugins/* API namespace for the repacement for this functionality.
-{{% /notice %}}
+{{% /pageinfo %}}
 
 #### Description
 Send a test email to a designated address. This can be used for verifying that the system email configuration is setup properly and functional.

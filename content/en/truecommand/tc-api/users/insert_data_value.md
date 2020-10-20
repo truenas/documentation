@@ -11,10 +11,10 @@ chapter: false
 |:----------------:|:--------:|:--------:|:--------:|:--------:|:---:|:---:|
 | users | insert_data_value | no | no | no | 1 | 2.0 |
 
-{{% notice warning %}}
+{{% pageinfo %}}
 This API namespace was removed in version 2.0
 Please look at the users/set_data API for the alternative to this functionality.
-{{% /notice %}}
+{{% /pageinfo %}}
 
 #### Description
 Save any random data to be associated with the currently logged-in user. 

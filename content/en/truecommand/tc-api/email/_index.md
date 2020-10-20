@@ -10,10 +10,10 @@ chapter: true
 # API Class: email
 ## Email management interactions.
 
-{{% notice warning %}}
+{{% pageinfo %}}
 This API namespace was depricated in version 1.1, and removed in version 1.2. 
 Please look at the alertplugins/* API namespace for the repacement for this functionality.
-{{% /notice %}}
+{{% /pageinfo %}}
 
 There are four email functions:
 
