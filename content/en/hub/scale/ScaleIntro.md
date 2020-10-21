@@ -1,12 +1,13 @@
 ---
 title: "What is TrueNAS SCALE?"
-linkTitle: "SCALE Overview"
+linkTitle: "Overview"
+description: "A brief look at the purpose and structure of SCALE."
 weight: 10
 ---
 
 <img src="/images/truenas_scale-logo-full-color-rgb.png" style="scale:50%;">
 
-**TrueNAS SCALE** is the latest member of the TrueNAS family and provides Open Source HyperConverged Infrastructure including Linux containers and VMs.
+**TrueNAS SCALE** is the latest member of the TrueNAS family and provides Open Source HyperConverged Infrastructure (HCI) including Linux containers and VMs.
 TrueNAS SCALE includes the ability to cluster systems and provide scale-out storage with capacities of up to hundreds of Petabytes.
 Just like TrueNAS CORE, TrueNAS SCALE is designed to be the most secure and efficient solution to managing and sharing data over a network, from smaller home networks "scaled" up to massive business environments.
 
@@ -21,12 +22,6 @@ SCALE is an acronym that represents the core features of the software:
 	<li><b>E</b>asy to Manage</li>
 </ul>
 
-## Scaled-Out ZFS
-
-## Converged
-
-## Active-Active
-
-## Linux Containers
-
-## Easy to Manage
+Unlike other HCI platforms, a user can get started with TrueNAS SCALE on a single node and incrementally scale up and scale out to over 100 storage nodes with many additional compute-only nodes.
+TrueNAS SCALE is true Disaggregated HCI, meaning storage and compute can be scaled independently.
+Each node can support Virtual Machines (with the KVM hypervisor) as well as Docker containers by using native Kubernetes.
