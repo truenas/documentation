@@ -90,8 +90,7 @@ TrueNAS SCALE uses much of the same TrueNAS CORE source code, but adds a few dif
 
 TrueNAS delivers Software Defined Storage (SDS) and runs on any x86_64 server, no matter how old or modern.
 Intel and AMD processors or any generation are supported, whether it’s a single core or a sixty-four core behemoth.
-The TrueNAS [hardware guide](https://www.freenas.org/hardware-requirements/) provides recommendations to assist you in building your own systems.
-<!-- update link to point to updated TrueNAS guide, when available -->
+The TrueNAS [hardware guide](/hub/intro/corehardwareguide/) provides recommendations to assist you in building your own systems.
 
 TrueNAS software has been developed under the sponsorship of iXsystems since 2009 and uses a large team of professionals who develop, build, QA, document, and support the Open Source software and the TrueNAS community.
 Since the TrueNAS software is free, iXsystems grows its business by building professional and enterprise-grade systems that have similar reliability to the major NAS vendors, but at a much lower Total Cost of Ownership (TCO).
