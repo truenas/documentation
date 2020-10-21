@@ -1,7 +1,5 @@
 ---
 title: "notices/create_fake"
-menutitle: "create_fake"
-description: "Create a fake Notice"
 pre: "<i class='fa fa-flag'></i>	"
 draft: false
 chapter: false

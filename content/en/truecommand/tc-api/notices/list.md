@@ -1,7 +1,5 @@
 ---
 title: "notices/list"
-menutitle: "list"
-description: "List Notices"
 pre: "<i class='fa fa-flag'></i>	"
 draft: false
 chapter: false

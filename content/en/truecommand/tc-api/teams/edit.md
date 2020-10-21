@@ -1,7 +1,5 @@
 ---
 title: "teams/edit"
-menutitle: "edit"
-description: "Edit a Team"
 pre: "<i class='fa fa-users'></i>	"
 draft: false
 chapter: false

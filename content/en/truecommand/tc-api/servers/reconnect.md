@@ -1,7 +1,5 @@
 ---
 title: "servers/reconnect"
-menutitle: "reconnect"
-description: "Trigger NAS reconnection attempt"
 pre: "<i class='fa fa-server'></i> "
 draft: false
 chapter: false

@@ -1,7 +1,5 @@
 ---
 title: "teams/remove"
-menutitle: "remove"
-description: "Remove a Team"
 pre: "<i class='fa fa-users'></i>	"
 draft: false
 chapter: false

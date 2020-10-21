@@ -1,7 +1,5 @@
 ---
 title: "servers/list"
-menutitle: "list"
-description: "List Servers"
 pre: "<i class='fa fa-server'></i> "
 draft: false
 chapter: false

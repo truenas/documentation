@@ -1,7 +1,5 @@
 ---
 title: "external/submit_stats"
-menutitle: "submit_stats"
-description: "API hook for an external system to submit statistics"
 pre: "<i class='fas fa-chart-pie'></i>	"
 draft: false
 chapter: false

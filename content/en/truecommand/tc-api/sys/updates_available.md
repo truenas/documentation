@@ -1,7 +1,5 @@
 ---
 title: "sys/updates_available"
-menutitle: "updates_available"
-description: "Check for available updates"
 pre: "<i class='fa fa-question-circle'></i>	"
 draft: false
 chapter: false

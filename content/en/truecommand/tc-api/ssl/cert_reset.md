@@ -1,7 +1,5 @@
 ---
 title: "ssl/cert_reset"
-menutitle: "cert_reset"
-description: "Reset the SSL certificate back to the auto-generated certificate"
 pre: "<i class='fa fa-wrench'></i>	"
 draft: false
 chapter: false

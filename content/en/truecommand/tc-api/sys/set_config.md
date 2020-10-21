@@ -1,7 +1,5 @@
 ---
 title: "sys/set_config"
-menutitle: "set_config"
-description: "Change system configuration options"
 pre: "<i class='fa fa-wrench'></i>	"
 draft: false
 chapter: false

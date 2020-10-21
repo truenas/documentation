@@ -1,7 +1,5 @@
 ---
 title: "reports/add"
-menutitle: "add"
-description: "Create a new report"
 pre: "<i class='fa fa-file'></i>	"
 draft: false
 chapter: false

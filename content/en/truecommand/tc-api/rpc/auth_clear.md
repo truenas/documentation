@@ -1,7 +1,5 @@
 ---
 title: "rpc/auth_clear"
-menutitle: "auth_clear"
-description: "Websocket logout procedure"
 pre: "<i class='fa fa-sign-out-alt'></i>	"
 draft: false
 chapter: false

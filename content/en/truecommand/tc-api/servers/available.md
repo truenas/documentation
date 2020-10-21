@@ -1,7 +1,5 @@
 ---
 title: "servers/available"
-menutitle: "available"
-description: "Show available NAS IP's [Cloud-only]"
 pre: "<i class='fa fa-server'></i> "
 draft: false
 chapter: false

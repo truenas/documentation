@@ -1,7 +1,5 @@
 ---
 title: "alertplugins/remove"
-menutitle: "remove"
-description: "Remove an Alert"
 pre: "<i class='fa fa-bell'></i>	"
 draft: false
 chapter: false

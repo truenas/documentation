@@ -1,7 +1,5 @@
 ---
 title: "notices/set_resolved"
-menutitle: "set_resolved"
-description: "Mark Notice Resolved"
 pre: "<i class='fa fa-flag'></i>	"
 draft: false
 chapter: false

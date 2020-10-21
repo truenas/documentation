@@ -1,7 +1,5 @@
 ---
 title: "servers/update"
-menutitle: "update"
-description: "Upgrade a NAS"
 pre: "<i class='fa fa-server'></i> "
 draft: false
 chapter: false

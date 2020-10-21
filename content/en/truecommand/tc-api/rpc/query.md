@@ -1,7 +1,5 @@
 ---
 title: "rpc/query"
-menutitle: "query"
-description: "Scan of middleware capabilities"
 pre: "<i class='fa fa-question'></i>	"
 draft: false
 chapte: false

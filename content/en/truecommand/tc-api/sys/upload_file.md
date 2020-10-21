@@ -1,7 +1,5 @@
 ---
 title: "sys/upload_file"
-menutitle: "upload_file"
-description: "Get API key for uploading a file"
 pre: "<i class='fa fa-upload'></i>	"
 draft: false
 chapter: false

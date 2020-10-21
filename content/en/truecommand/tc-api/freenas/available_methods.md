@@ -1,7 +1,5 @@
 ---
 title: "freenas/available_methods"
-menutitle: "available_methods"
-description: "Returns FreeNAS API methods"
 pre: "<i class='fa fa-terminal'></i> "
 draft: false
 chapter: false

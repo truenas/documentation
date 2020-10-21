@@ -1,7 +1,5 @@
 ---
 title: "teams/list"
-menutitle: "list"
-description: "List Teams"
 pre: "<i class='fa fa-users'></i>	"
 draft: false
 chapter: false

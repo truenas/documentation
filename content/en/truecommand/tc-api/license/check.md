@@ -1,7 +1,5 @@
 ---
 title: "license/check"
-menutitle: "check"
-description: "Check License Restrictions"
 pre: "<i class='fas fa-newspaper'></i>	"
 draft: false
 chapter: false

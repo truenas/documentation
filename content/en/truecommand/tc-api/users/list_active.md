@@ -1,7 +1,5 @@
 ---
 title: "users/list_active"
-menutitle: "list_active"
-description: "List active user sessions"
 pre: "<i class='fa fa-users'></i>	"
 draft: false
 chapter: false

@@ -1,7 +1,5 @@
 ---
 title: "alertplugins/add"
-menutitle: "add"
-description: "Install an alert notification plugin"
 pre: "<i class='fa fa-bell'></i> "
 draft: false
 chapter: false

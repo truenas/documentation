@@ -1,7 +1,5 @@
 ---
 title: "data/retrieve"
-menutitle: "retrieve"
-description: "Retrieve Data from a Server"
 pre: "<i class='fa fa-sitemap'></i>	"
 draft: false
 chapter: false

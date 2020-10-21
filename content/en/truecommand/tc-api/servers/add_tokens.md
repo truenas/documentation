@@ -1,7 +1,5 @@
 ---
 title: "servers/add_tokens"
-menutitle: "add_tokens"
-description: "Create authentication tokens for a system"
 pre: "<i class='fa fa-server'></i> "
 draft: false
 chapter: false

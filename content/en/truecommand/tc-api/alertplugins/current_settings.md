@@ -1,7 +1,5 @@
 ---
 title: "alertplugins/current_settings"
-menutitle: "current_settings"
-description: "View the current user settings for alert plugins"
 pre: "<i class='fa fa-bell'></i>	"
 draft: false
 chapter: false

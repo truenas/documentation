@@ -1,7 +1,5 @@
 ---
 title: "servers/groups_replace"
-menutitle: "groups_replace"
-description: "Replace a Group"
 pre: "<i class='fa fa-server'></i> "
 draft: false
 chapter: false

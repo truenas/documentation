@@ -1,7 +1,5 @@
 ---
 title: "alertplugins/change_settings"
-menutitle: "change_settings"
-description: "Change the settings for alert plugins"
 pre : "<i class='fa fa-bell'></i>	"
 draft: false
 chapter: false

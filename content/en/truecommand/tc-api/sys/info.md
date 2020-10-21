@@ -1,7 +1,5 @@
 ---
 title: "sys/info"
-menutitle: "info"
-description: "System Info"
 pre: "<i class='fa fa-cogs'></i>	"
 draft: false
 chapter: false

@@ -1,7 +1,5 @@
 ---
 title: "sys/update_status"
-menutitle: "update_status"
-description: "View the log file for current updates"
 pre: "<i class='fa fa-file'></i>	"
 draft: false
 chapter: false

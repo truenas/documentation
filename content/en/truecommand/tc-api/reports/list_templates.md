@@ -1,7 +1,5 @@
 ---
 title: "reports/list_templates"
-menutitle: "list_templates"
-description: "List available item templates for reports"
 pre: "<i class='fa fa-book'></i>	"
 draft: false
 chapter: false

@@ -1,7 +1,5 @@
 ---
 title: "sys/update_check"
-menutitle: "update_check"
-description: "Start a check for system updates"
 pre: "<i class='fa fa-file'></i>	"
 draft: false
 chapter: false

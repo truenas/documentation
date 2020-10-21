@@ -1,7 +1,5 @@
 ---
 title: "sys/list_config"
-menutitle: "list_config"
-description: "View the current system configuration settings"
 pre: "<i class='fa fa-wrench'></i>	"
 draft: false
 chapter: false

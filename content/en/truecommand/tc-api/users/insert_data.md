@@ -1,7 +1,5 @@
 ---
 title: "users/insert_data"
-menutitle: "insert_data"
-description: "Save data to the user cache"
 pre: "<i class='fa fa-book'></i>	"
 draft: false
 chapter: false

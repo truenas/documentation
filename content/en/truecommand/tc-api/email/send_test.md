@@ -1,7 +1,5 @@
 ---
 title: "email/send_test"
-menutitle: "send_test"
-description: "Send a test email"
 pre: "<i class='fa fa-envelope'></i>	"
 draft: false
 chapter: false

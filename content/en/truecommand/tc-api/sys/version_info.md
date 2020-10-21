@@ -1,7 +1,5 @@
 ---
 title: "sys/version_info"
-menutitle: "version_info"
-description: "Version Information"
 pre: "<i class='fa fa-cogs'></i>	"
 draft: false
 chapter: false

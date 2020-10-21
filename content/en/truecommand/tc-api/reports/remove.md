@@ -1,7 +1,5 @@
 ---
 title: "reports/remove"
-menutitle: "remove"
-description: "Delete a custom report"
 pre: "<i class='fa fa-minus-square'></i>	"
 draft: false
 chapter: false

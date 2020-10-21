@@ -1,7 +1,5 @@
 ---
 title: "users/remove"
-menutitle: "remove"
-description: "Remove a user account"
 pre: "<i class='fa fa-user'></i>	"
 draft: false
 chapter: false

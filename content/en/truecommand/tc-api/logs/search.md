@@ -1,7 +1,5 @@
 ---
 title: "logs/search"
-menutitle: "search"
-description: "Search Logs"
 pre: "<i class='fa fa-search'></i>	"
 draft: false
 chapter: false

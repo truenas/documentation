@@ -1,7 +1,5 @@
 ---
 title: "alertplugins/test"
-menutitle: "test"
-description: "Send a test alert"
 pre: "<i class='fa fa-bell'></i> "
 draft: false
 chapter: false

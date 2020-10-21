@@ -1,7 +1,5 @@
 ---
 title: "ssl/cert_info"
-menutitle: "cert_info"
-description: "View SSL cert information"
 pre: "<i class='fa fa-wrench'></i>	"
 draft: false
 chapter: false

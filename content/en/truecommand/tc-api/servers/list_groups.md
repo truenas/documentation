@@ -1,7 +1,5 @@
 ---
 title: "servers/list_groups"
-menutitle: "list_groups"
-description: "List Server Groups"
 pre: "<i class='fa fa-server'></i> "
 draft: false
 ---

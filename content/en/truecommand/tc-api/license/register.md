@@ -1,7 +1,5 @@
 ---
 title: "license/register"
-menutitle: "register"
-description: "Register a License"
 pre: "<i class='fas fa-newspaper'></i>	"
 draft: false
 chapter: false

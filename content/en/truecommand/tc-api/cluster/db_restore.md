@@ -1,7 +1,5 @@
 ---
 title: "cluster/db_restore"
-menutitle: "db_restore"
-description: "Restore a database backup to a NAS"
 pre: "<i class='fa fa-list-ul'></i>	"
 draft: false
 chapter: false

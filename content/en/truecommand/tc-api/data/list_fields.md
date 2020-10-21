@@ -1,7 +1,5 @@
 ---
 title: "data/list_fields"
-menutitle: "list_fields"
-description: "list_fields"
 pre: "<i class='fa fa-sitemap'></i>	"
 draft: false
 chapter: false

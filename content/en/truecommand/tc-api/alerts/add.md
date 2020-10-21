@@ -1,7 +1,5 @@
 ---
 title: "alerts/add"
-menutitle: "add"
-description: "Add Alert"
 pre: "<i class='fa fa-bell'></i> "
 draft: false
 chapter: false

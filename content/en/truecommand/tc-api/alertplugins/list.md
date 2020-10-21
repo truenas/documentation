@@ -1,7 +1,5 @@
 ---
 title: "alertplugins/list"
-menutitle: "list"
-description: "List all installed alert plugins"
 pre: "<i class='fa fa-bell'></i> "
 draft: false
 chapter: false

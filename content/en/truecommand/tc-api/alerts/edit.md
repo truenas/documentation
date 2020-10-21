@@ -1,7 +1,5 @@
 ---
 title: "alerts/edit"
-menutitle: "edit"
-description: "Edit Alert"
 pre: "<i class='fa fa-bell'></i> "
 draft: false
 chapter: false

@@ -1,7 +1,5 @@
 ---
 title: "license/getvuid"
-menutitle: "gettvuid"
-description: "Get the Unique TV ID"
 pre: "<i class='fas fa-newspaper'></i>	"
 draft: false
 chapter: false

@@ -1,7 +1,5 @@
 ---
 title: "servers/remove"
-menutitle: "remove"
-description: "Remove a Server"
 pre: "<i class='fa fa-server'></i> "
 draft: false
 chapter: false

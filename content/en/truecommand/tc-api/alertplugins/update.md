@@ -1,7 +1,5 @@
 ---
 title: "alertplugins/update"
-menutitle: "update"
-description: "Update an Alert plugin"
 pre: "<i class='fa fa-bell'></i>	"
 draft: false
 chapter: false

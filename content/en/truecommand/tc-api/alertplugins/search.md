@@ -1,7 +1,5 @@
 ---
 title: "alertplugins/search"
-menutitle: "search"
-description: "Search for available alert plugins"
 pre: "<i class='fa fa-bell'></i> "
 draft: false
 chapter: false

@@ -1,7 +1,5 @@
 ---
 title: "uilogs/list"
-menutitle: "list"
-description: "Fetch all UI log entries"
 pre: "<i class='fa fa-archive'></i> "
 draft: false
 chapter: false

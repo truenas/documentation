@@ -1,7 +1,4 @@
 ---
-title: "cluster/db_backup"
-menutitle: "db_backup"
-description: "Fetch and backup a configuration database"
 pre: "<i class='fa fa-list-ul'></i>	"
 draft: false
 chapter: false

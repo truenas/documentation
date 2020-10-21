@@ -1,7 +1,5 @@
 ---
 title: "rpc/auth_token"
-menutitle: "auth_token"
-description: "Websocket login procedure (token)"
 pre:  "<i class='fa fa-sign-in-alt'></i>	"
 draft: false
 chapter: false

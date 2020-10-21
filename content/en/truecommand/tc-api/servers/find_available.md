@@ -1,7 +1,5 @@
 ---
 title: "servers/find_available"
-menutitle: "[obsolete] find_available"
-description: "Find available Servers (Obsolete)"
 pre: "<i class='fa fa-server'></i> "
 draft: false
 chapter: false

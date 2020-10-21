@@ -1,7 +1,5 @@
 ---
 title: "alerts/list"
-menutitle: "list"
-description: "List Alerts"
 pre: "<i class='fa fa-bell'></i> "
 draft: false
 chapter: false

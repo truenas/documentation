@@ -1,7 +1,5 @@
 ---
 title: "cluster/db_list"
-menutitle: "db_list"
-description: "List all the current NAS database backups"
 pre: "<i class='fa fa-list-ul'></i>	"
 draft: false
 chapter: false

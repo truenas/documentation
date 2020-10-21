@@ -1,7 +1,5 @@
 ---
 title: "users/list"
-menutitle: "list"
-description: "List known users"
 pre: "<i class='fa fa-users'></i>	"
 draft: false
 chapter: false

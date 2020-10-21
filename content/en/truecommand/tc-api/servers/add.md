@@ -1,7 +1,5 @@
 ---
 title: "servers/add"
-menutitle: "add"
-description: "Add a Server"
 pre: "<i class='fa fa-server'></i>	"
 draft: false
 chapter: false

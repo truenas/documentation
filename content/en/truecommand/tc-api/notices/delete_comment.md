@@ -1,7 +1,5 @@
 ---
 title: "notices/delete_comment"
-menutitle: "delete_comment"
-description: "Delete a Notice"
 pre: "<i class='fa fa-flag'></i>	"
 draft: false
 chapter: false

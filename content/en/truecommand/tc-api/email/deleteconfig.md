@@ -1,7 +1,5 @@
 ---
 title: "email/deleteconfig"
-menutitle: "deleteconfig"
-description: "Delete ssmtp configuration"
 pre: "<i class='fa fa-envelope'></i>	"
 draft: false
 chapter: false

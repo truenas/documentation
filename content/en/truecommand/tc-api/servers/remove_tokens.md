@@ -1,7 +1,5 @@
 ---
 title: "servers/remove_tokens"
-menutitle: "remove_tokens"
-description: "Remove authentication tokens"
 pre: "<i class='fa fa-server'></i> "
 draft: false
 chapter: false

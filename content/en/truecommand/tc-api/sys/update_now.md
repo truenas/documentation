@@ -1,7 +1,5 @@
 ---
 title: "sys/update_now"
-menutitle: "update_now"
-description: "Start performing system updates"
 pre: "<i class='fa fa-plus-square'></i>	"
 draft: false
 chapter: false

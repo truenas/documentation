@@ -1,7 +1,5 @@
 ---
 title: "servers/direct_auth"
-menutitle: "direct_auth"
-description: "Request direct access to a Server"
 pre: "<i class='fa fa-server'></i> "
 draft: false
 chapter: false

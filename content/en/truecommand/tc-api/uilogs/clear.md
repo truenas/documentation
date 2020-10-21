@@ -1,7 +1,5 @@
 ---
 title: "uilogs/clear"
-menutitle: "clear"
-description: "Delete all UI log records"
 pre: "<i class='fa fa-archive'></i> "
 draft: false
 chapter: false

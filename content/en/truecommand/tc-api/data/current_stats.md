@@ -1,7 +1,5 @@
 ---
 title: "current_stats"
-menutitle: "current_stats"
-description : "Latest statistics from a system"
 pre: "<i class='fas fa-chart-pie'></i>	"
 draft: false
 chapter: false

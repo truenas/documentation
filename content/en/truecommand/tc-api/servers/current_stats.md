@@ -1,7 +1,5 @@
 ---
 title: "servers/current_stats"
-menutitle: "current_stats"
-description: "Get Current Stats of Servers"
 pre: "<i class='fa fa-server'></i> "
 draft: false
 chapter: false

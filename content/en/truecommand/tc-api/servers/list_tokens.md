@@ -1,7 +1,5 @@
 ---
 title: "servers/list_tokens"
-menutitle: "list_tokens"
-description: "List system authentication tokens"
 pre: "<i class='fa fa-server'></i> "
 draft: false
 chapter: false

@@ -1,7 +1,5 @@
 ---
 title: "email/editconfig"
-menutitle: "editconfig"
-description: "Edit ssmtp configuration"
 pre: "<i class='fa fa-envelope'></i>	"
 draft: false
 chapter: false

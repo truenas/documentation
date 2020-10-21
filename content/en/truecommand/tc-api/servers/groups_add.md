@@ -1,7 +1,5 @@
 ---
 title: "servers/groups_add"
-menutitle: "groups_add"
-description: "Add a Group"
 pre: "<i class='fa fa-server'></i> "
 draft: false
 chapter: false

@@ -1,7 +1,5 @@
 ---
 title: "ssl/ca_remove"
-menutitle: "ca_remove"
-description: "Remove a custom certificate authority file"
 pre: "<i class='fa fa-wrench'></i>	"
 draft: false
 chapter: false

@@ -1,7 +1,5 @@
 ---
 title: "rpc/auth"
-menutitle: "auth"
-description: "Websocket login procedure (username/password)"
 pre: "<i class='fa fa-sign-in-alt'></i>	"
 draft: false
 chapter: false

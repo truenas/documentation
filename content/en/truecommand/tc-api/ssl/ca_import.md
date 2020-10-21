@@ -1,7 +1,5 @@
 ---
 title: "ssl/ca_import"
-menutitle: "ca_import"
-description: "Import a custom certificate authority file"
 pre: "<i class='fa fa-wrench'></i>	"
 draft: false
 chapter: false

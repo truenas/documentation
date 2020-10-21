@@ -1,7 +1,5 @@
 ---
 title: "sys/reboot_stop"
-menutitle: "reboot_stop"
-description: "Cancel any currently-pending reboot or shutdown"
 pre: "<i class='fa fa-power-off'></i>	"
 draft: false
 chapter: false

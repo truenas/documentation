@@ -1,7 +1,5 @@
 ---
 title: "servers/groups_remove"
-menutitle: "groups_remove"
-description: "Remove a Group"
 pre: "<i class='fa fa-server'></i> "
 draft: false
 chapter: false

@@ -1,7 +1,5 @@
 ---
 title: "users"
-menutitle: "set_data"
-description: "Save generic data for later"
 pre: "<i class='fa fa-book'></i>	"
 draft: false
 chapter: false

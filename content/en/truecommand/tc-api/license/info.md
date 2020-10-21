@@ -1,7 +1,5 @@
 ---
 title: "license/info"
-menutitle: "info"
-description: "Return License Info"
 pre: "<i class='fas fa-newspaper'></i>	"
 draft: false
 chapter: false

@@ -1,7 +1,5 @@
 ---
 title: "uilogs/add"
-menutitle: "add"
-description: "Create a UI log entry"
 pre: "<i class='fa fa-archive'></i> "
 draft: false
 chapter: false

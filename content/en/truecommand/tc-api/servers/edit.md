@@ -1,7 +1,5 @@
 ---
 title: "servers/edit"
-menutitle: "edit"
-description: "edit a Server"
 pre: "<i class='fa fa-server'></i> "
 draft: false
 chapter: false

@@ -1,7 +1,5 @@
 ---
 title: "teams/add"
-menutitle: "add"
-description: "Create a new team"
 pre: "<i class='fa fa-users'></i>	"
 draft: false
 chapter: false

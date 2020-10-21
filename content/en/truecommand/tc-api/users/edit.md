@@ -1,7 +1,5 @@
 ---
 title: "users/edit"
-menutitle: "edit"
-description: "Modify user settings"
 pre: "<i class='fa fa-user'></i>	"
 draft: false
 chapter: false

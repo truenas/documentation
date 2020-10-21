@@ -1,7 +1,5 @@
 ---
 title: "reports/list"
-menutitle: "list"
-description: "Find available reports"
 pre: "<i class='fa fa-book'></i>	"
 draft: false
 chapter: false

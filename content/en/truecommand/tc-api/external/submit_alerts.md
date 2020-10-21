@@ -1,7 +1,5 @@
 ---
 title: "external/submit_alerts"
-menutitle: "submit_alerts"
-description: "API hook for external systems to submit an alert notice"
 pre: "<i class='fa fa-bell'></i>	"
 draft: false
 chapter: false

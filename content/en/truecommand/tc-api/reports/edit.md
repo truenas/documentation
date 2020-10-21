@@ -1,7 +1,5 @@
 ---
 title: "reports/edit"
-menutitle: "edit"
-description: "Change a report"
 pre: "<i class='fa fa-file'></i>	"
 draft: false
 chapter: false

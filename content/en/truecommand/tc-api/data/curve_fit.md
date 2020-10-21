@@ -1,7 +1,5 @@
 ---
 title: "data/curve_fit"
-menutitle: "curve_fit"
-description: "Calculate a line/point from data"
 pre: "<i class='fas fa-chart-line'></i>	"
 draft: false
 chapter: false

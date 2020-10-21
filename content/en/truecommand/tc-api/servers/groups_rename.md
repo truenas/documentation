@@ -1,7 +1,5 @@
 ---
 title: "servers/groups_rename"
-menutitle: "groups_rename"
-description: "Rename or Merge a Group"
 pre: "<i class='fa fa-server'></i> "
 draft: false
 chapter: false

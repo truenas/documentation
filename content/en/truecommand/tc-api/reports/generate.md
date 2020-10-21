@@ -1,7 +1,5 @@
 ---
 title: "reports/generate"
-menutitle: "generate"
-description: "Generate reports"
 pre: "<i class='fa fa-book'></i>	"
 draft: false
 chapter: false

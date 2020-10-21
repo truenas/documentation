@@ -1,7 +1,5 @@
 ---
 title: "users/get_data"
-menutitle: "get_data"
-description: "Generic information container for the current user"
 pre: "<i class='fa fa-book'></i>	"
 draft: false
 chapter: false

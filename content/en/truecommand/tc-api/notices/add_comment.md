@@ -1,7 +1,5 @@
 ---
 title: "notices/add_comment"
-menutitle: "add_comment"
-description: "Add a notice to a Comment"
 pre: "<i class='fa fa-flag'></i>	"
 draft: false
 chapter: false

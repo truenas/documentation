@@ -1,7 +1,5 @@
 ---
 title: "sys/reboot_time"
-menutitle: "reboot_time"
-description: "See the time remaining before a system reboot occurs"
 pre: "<i class='fa fa-power-off'></i>	"
 draft: false
 chapter: false

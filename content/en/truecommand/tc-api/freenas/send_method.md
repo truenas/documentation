@@ -1,7 +1,5 @@
 ---
 title: "freenas/send_method"
-menutitle: "send_method"
-description: "Call a designated FreeNAS method API"
 pre: "<i class='fa fa-terminal'></i> "
 draft: false
 chapter: false

@@ -1,7 +1,5 @@
 ---
 title: "ssl/ca_list"
-menutitle: "ca_list"
-description: "View the current system configuration settings"
 pre: "<i class='fa fa-wrench'></i>	"
 draft: false
 chapter: false

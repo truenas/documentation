@@ -1,7 +1,5 @@
 ---
 title: "alertplugins/check_updates"
-menutitle: "check_updates"
-description: "Scan for updates to installed plugins"
 pre: "<i class='fa fa-bell'></i> "
 draft: false
 chapter: false

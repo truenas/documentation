@@ -1,7 +1,5 @@
 ---
 title: "servers/list_writable"
-menutitle: "list_writable"
-description: "List Writable Servers"
 pre: "<i class='fa fa-server'></i> "
 draft: false
 chapter: false

@@ -1,7 +1,5 @@
 ---
 title: "ssl/cert_import"
-menutitle: "cert_import"
-description: "Import a custom SSL certificate"
 pre: "<i class='fa fa-wrench'></i>	"
 draft: false
 chapter: false

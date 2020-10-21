@@ -1,7 +1,5 @@
 ---
 title: "sys/reboot"
-menutitle: "reboot"
-description: "Reboot the system"
 pre: "<i class='fa fa-power-off'></i>	"
 draft: false
 chapter: false

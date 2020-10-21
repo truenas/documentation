@@ -1,7 +1,5 @@
 ---
 title: "users/add"
-menutitle: "add"
-description: "Create a new user"
 pre: "<i class='fa fa-user'></i>	"
 draft: false
 chapter: false

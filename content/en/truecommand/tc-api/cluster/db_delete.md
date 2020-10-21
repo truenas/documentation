@@ -1,7 +1,5 @@
 ---
 title: "cluster/db_delete"
-menutitle: "db_delete"
-description: "Delete a NAS database backup"
 pre: "<i class='fa fa-list-ul'></i>	"
 draft: false
 chapter: false
