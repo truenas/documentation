@@ -7,7 +7,7 @@ draft: false
 chapter: true
 ---
 
-# API Class: email
+## API Class: email
 ## Email management interactions.
 
 {{% pageinfo %}}
@@ -21,5 +21,3 @@ There are four email functions:
  * Editing ssmtp configuration file
  * Deleting ssmtp configuration file
  * Sending emails
-
-# Reference Guide

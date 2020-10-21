@@ -15,5 +15,3 @@ By default, TrueCommand only points to the official ix-alertme plugin repository
 It is possible to submit bug tickets or even brand-new notification plugins via the open-source project.
 
 [Click here to browse the repository](https://github.com/iXsystems/ix-alertme)
-
-# Reference Guide

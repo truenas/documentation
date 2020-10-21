@@ -15,4 +15,3 @@ System reports are user-defined rules for creating groups of charts or other sta
 ## Reporting Options
 All of the options available for insertion into a report are details on the {{< api-link "reporting" >}} page.
  
-# Reference Guide

@@ -9,5 +9,3 @@ pre: "<i class='fa fa-file'></i>	"
 
 ## Licensing
 API calls related to the currently-registered user license.
-
-# Reference Guide
