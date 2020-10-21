@@ -13,5 +13,5 @@ There is also an article template that you can copy and use to submit new articl
 Please feel free to propose changes and add new content in these articles to help others learn how to contribute to project documentation!
 
 Want to discuss your in-progress changes or other TrueNAS contributions?
-The TrueNAS contributors Slack workspace is available for contributors to discuss their changes and help each other improve the software.
+The TrueNAS contributors `#truenas-docs` Slack workspace is available for contributors to discuss their changes and help each other improve the software.
 You can request to join this workspace at `truenas.slack.com`.

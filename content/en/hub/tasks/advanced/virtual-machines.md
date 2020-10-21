@@ -49,7 +49,7 @@ Notes about the VM options:
 
 ### Adding and Removing Devices
 
-After the VM is created, you can add and remove virtual devices by expanding the VM entry in **Virtual Machines** and clicking **Devices**.
+After the VM is created, you can add and remove virtual devices by expanding the VM entry in **Virtual Machines** and clicking <i class="material-icons" aria-hidden="true" title="Devices Button">device_hub</i> **DEVICES**.
 
 <img src="/images/virtual-machines-devices.png">
 <br><br>
@@ -60,12 +60,15 @@ Notes about devices:
 * *CD-ROM* devices allowing booting a VM from a CD-ROM image like an installation CD.
   The CD image must be available in the system storage.
 
-## Starting the Virtual Machine
+## Managing the Virtual Machine
 
 After creating the VM and configuring any devices for it, you can manage the VM by expanding its entry in **Virtual Machines**
 
 <img src="/images/virtual-machine-options.png">
 <br><br>
 
-Options for *Serial* or *VNC* connections are available after activating the VM.
+Options for <i class="material-icons" aria-hidden="true" title="VNC Button">settings_ethernet</i> **VNC** or <i class="material-icons" aria-hidden="true" title="Serial Button">keyboard_arrow_right</i> **SERIAL** connections are available after activating the VM.
 If the *VNC* connection screen appears garbled, try adjusting the VNC device resolution.
+
+Using the **State** toggle or clicking the <i class="material-icons" aria-hidden="true" title="Stop Button">stop</i> **STOP** follows a standard shut down procedure to cleanly shut down the running VM.
+Clicking the <i class="material-icons" aria-hidden="true" title="Power Off Button">power_settings_new</i> **POWER OFF** immediately halts and deactivates the VM, similar to unplugging a computer.

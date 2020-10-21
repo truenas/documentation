@@ -1,7 +1,7 @@
 ---
 title: "Encryption"
 description: "Native ZFS Encryption in TrueNAS"
-tags: ["ZFS","encryption","security"]
+tags: ["ZFS","encryption","security","dataset","snapshots"]
 ---
 
 You can encrypt the root dataset of a new storage pool to further increase data security.
@@ -31,7 +31,7 @@ The default encryption cipher is recommended, but there are other ciphers availa
 ### Encrypting a New Dataset
 
 New datasets within an existing storage pool can also be encrypted without having to encrypt the entire pool.
-To encrypt a single dataset, go to **Storage > Pools**, open the <i class="fas fa-ellipsis-v"></i> (Options) for an existing dataset, and click **Add Dataset**.
+To encrypt a single dataset, go to **Storage > Pools**, open the <i class="fas fa-ellipsis-v"></i>&nbsp (Options) for an existing dataset, and click **Add Dataset**.
 Look at the *Encryption Options* and, if the parent dataset is unencrypted, unset the **Inherit** option.
 You can then set the **Encryption** option for the new dataset and configure the *Type* and other options.
 
@@ -48,7 +48,7 @@ Manually back up a root dataset keyfile by clicking the gear menu and selecting 
 <img src="/images/TN-12.0-encryption-8.PNG">
 <br><br>
 
-To change the keyfile, click <i class="fas fa-ellipsis-v"></i> (Options) and select **Encryption Options**.  
+To change the keyfile, click <i class="fas fa-ellipsis-v"></i>&nbsp (Options) and select **Encryption Options**.  
 
 <img src="/images/TN-12.0-encryption-4.PNG">
 <br><br>
@@ -60,7 +60,7 @@ Enter your custom key or click **Generate Key**. Remember to back up your keyfil
 
 ## Passphrase
 
-To use a passphrase instead of a keyfile, click <i class="fas fa-ellipsis-v"></i> (Options) and select **Encryption Options**.
+To use a passphrase instead of a keyfile, click <i class="fas fa-ellipsis-v"></i>&nbsp (Options) and select **Encryption Options**.
 Change the *Encryption Type* from `Key` to `Passphrase`.
 
 <img src="/images/TN-12.0-encryption-6.PNG">
@@ -79,8 +79,14 @@ Must be longer than 8 characters
 
 ## Locking and Unlocking Datasets
 
+Status of a dataset can be determined based on the icon used after the name.  
+
+Dataset Unlocked Icon : <i class="material-icons" aria-hidden="true" title="<unlocked>">lock_open</i>
+
+Dataset Locked Icon : <i class="material-icons" aria-hidden="true" title="<locked>">lock</i>
+
 Encrypted datasets can only be locked and unlocked if they are secured with a passphrase instead of a keyfile.
-Before locking a dataset, verify that it is not currently in use, then click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i> (Options) and **Lock**.
+Before locking a dataset, verify that it is not currently in use, then click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp (Options) and **Lock**.
 
 <img src="/images/TN-12.0-encryption-10.PNG">
 <br><br>
@@ -98,7 +104,7 @@ A dialog window remains visible while the dataset is locked.
 After locking a dataset, the unlock icon changes to a locked icon.
 While the dataset is locked, it is not available for use.
 
-To unlock a dataset, click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i> (Options) and **Unlock**.
+To unlock a dataset, click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp (Options) and **Unlock**.
 
 <img src="/images/TN-12.0-encryption-13.PNG">
 <br><br>

@@ -37,7 +37,6 @@
         width: 100%;
     }
 
-
     .navbar-brand {
         font-size: 0rem;
         .nav-link {
@@ -71,7 +70,7 @@
     }
 
     .dropdown {
-        min-width: 100px;
+        padding-right: 20px;
     }
 
     @include media-breakpoint-down(md) {
@@ -86,12 +85,13 @@
             font-size: .875rem;
 
             .nav-link {
-                padding-right: .25rem;
+                padding-right: 0;
                 padding-left: 0;
             }
 
             .navbar-nav {
                 padding-bottom: 2rem;
+                font-size: 82%;
                 overflow-x: auto;
                 white-space: nowrap;
                 -webkit-overflow-scrolling: touch;

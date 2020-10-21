@@ -1,6 +1,6 @@
 ---
 title: "Task Manager"
-description: "A short article about using the web interface task manager."
+description: "Short description of the web interface task manager."
 ---
 
 The task manager shows a list of tasks performed by the TrueNAS system

@@ -37,13 +37,17 @@ A password-protected SED protects the data stored on the device when the device 
 ## Deploying SEDs
 Enter `sedutil-cli --scan` in the **Shell** to detect and list devices. The second column of the results identifies the drive type:
 
-`no` indicates a non-SED device
-`1` indicates a legacy TCG OPAL 1 device
-`2` indicates a modern TCG OPAL 2 device
-`L` indicates a TCG Opalite device
-`p` indicates a TCG Pyrite 1 device
-`P` indicates a TCG Pyrite 2 device
-`E` indicates a TCG Enterprise device
+| Character | Standard   |
+|-----------|------------|
+| no        | non-SED device |
+| 1         | Opal V1    |
+| 2         | Opal V2    |
+| E         | Enterprise |
+| L         | Opalite    |
+| p         | Pyrite V1  |
+| P         | Pyrite V2  |
+| r         | Ruby       |
+
 Example:
 
 ```
@@ -166,6 +170,12 @@ Wipe data and reset password using the PSID: `sedutil-cli --yesIreallywanttoERAS
 
 ## TCG-E Instructions
 
+### Change or Reset the Password without Destroying Data
+
+These commands must be run for every *LockingRange* or *band* on the drive.
+To determine the number of bands on a drive, use `sedutil-cli -v --listLockingRanges </dev/device>`.
+Increment the `BandMaster` number and rerun the command with `--setPassword` for every band that exists.
+
 Use **all** of these commands to reset the password without losing data:
 
 ```
@@ -184,7 +194,9 @@ sedutil-cli --setPassword <oldpassword> BandMaster0 <newpassword> </dev/device>
 sedutil-cli --setPassword <oldpassword> BandMaster1 <newpassword> </dev/device>
 ```
 
-Wipe data and reset password to default MSID:
+### Reset Password and Wipe Data
+
+Reset to default MSID:
 
 ```
 sedutil-cli --eraseLockingRange 0 <password> </dev/device>
@@ -192,4 +204,10 @@ sedutil-cli --setSIDPassword <oldpassword> "" </dev/device>
 sedutil-cli --setPassword <oldpassword> EraseMaster "" </dev/device>
 ```
 
-Wipe data and reset password using the PSID: `sedutil-cli --yesIreallywanttoERASEALLmydatausingthePSID <PSINODASHED> </dev/device>` where <PSINODASHED> is the PSID located on the physical drive with no dashes (-).
+Reset using the PSID: 
+
+`sedutil-cli --PSIDrevertAdminSP <PSIDNODASHS> /dev/<device>`
+
+If it fails use:
+
+`sedutil-cli --PSIDrevert <PSIDNODASHS>  /dev/<device>`

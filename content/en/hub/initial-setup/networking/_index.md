@@ -1,7 +1,7 @@
 ---
 title: "Configuring Networking"
 description: "Initial networking configuration procedures"
-weight: 40
+weight: 30
 ---
 
 It is recommended to set up your system connections before setting up data sharing.
