@@ -1,6 +1,5 @@
 ---
 title: "API Calls"
-linkTitle: "API Calls"
 pre: "<i class='fa fa-bookmark'></i>	"
 ---
 

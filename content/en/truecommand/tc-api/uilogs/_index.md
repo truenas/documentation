@@ -1,11 +1,11 @@
 ---
-title: "uilogs"
-MenuTitle: "uilogs"
-description: "UI Logging"
+title: "UI Logging"
 draft: false
 chapter: true
 pre: "<i class='fa fa-archive'></i>	"
 ---
 
-## UI Logging
+## API Class: uilogs
 These endpoints provide the UI with a means of managing log records. One use-case is creating log entries to document UI runtime errors.
+
+## Reference Guide

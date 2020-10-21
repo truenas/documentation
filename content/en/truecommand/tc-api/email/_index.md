@@ -1,7 +1,5 @@
 ---
-title: "email"
-menutitle: "email"
-description: "Email management"
+title: "Email management"
 pre: "<i class='fa fa-envelope'></i>	"
 draft: false
 chapter: true
@@ -21,3 +19,5 @@ There are four email functions:
  * Editing ssmtp configuration file
  * Deleting ssmtp configuration file
  * Sending emails
+
+## Reference Guide

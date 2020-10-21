@@ -1,13 +1,13 @@
 ---
-title: "logs"
-MenuTitle: "logs"
-description: "Logs"
+title: "Logs"
 draft: false
 chapter: true
 pre: "<i class='fa fa-search'></i>	"
 ---
 
 
-## Log Files
+## API Class: logs
 API call to access the audit logs maintained by the middleware
 
+
+## Reference Guide
