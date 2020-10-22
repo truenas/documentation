@@ -8,6 +8,9 @@ tags: ["components"]
 {{< imgproc hardware-image Fill "1700x400" >}}
 {{< /imgproc >}}
 
+{{< youtube GjalxUIu4MA >}}
+
+
 ## Hardware Requirements
 
 The following is a list of minimum hardware requirements to install and run TrueNAS.
@@ -51,6 +54,9 @@ Fixes reported by the Community are:
  + Disabling *C6* in the BIOS
 
 ## Preparing the Install Media
+
+{{< youtube gp1nuftxzRA >}}
+<br>
 
 The latest STABLE version of TrueNAS CORE can be downloaded from https://www.truenas.com/download-tn-core/.
 Open the link and click **Download Now** to save the TrueNAS installer `.iso` file to your local system.
