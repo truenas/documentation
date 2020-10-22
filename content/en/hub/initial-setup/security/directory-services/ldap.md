@@ -24,7 +24,7 @@ Setting *Allow Anonymous Binding* disables authentication and allows read and wr
 
 If a Kerberos realm has been added to TrueNAS, it can be selected from the *Kerberos Realm* dropdown. Likewise, if a Kerberos keytab has been created, select it in the *Kerberos Principal* dropdown.
 
-If an encryption mode for the LDAP connection is desired, select one of these options from the*Encryption Mode* dropdown:
+If an encryption mode for the LDAP connection is desired, select one of these options from the *Encryption Mode* dropdown:
 
 * *OFF*: do not encrypt the LDAP connection.
 * *ON*: encrypt the LDAP connection with SSL on port 636.
@@ -32,7 +32,7 @@ If an encryption mode for the LDAP connection is desired, select one of these op
 
 A certificate is not required when using username/password or Kerberos authentication.
 If certificate authentication is desired, select a certificate to use from the *Certificate* dropdown.
-To configure LDAP certificate-based authentication, create a Certificate Signing Request for the LDAP provider to sign.
+To configure LDAP certificate-based authentication, [create a Certificate Signing Request](/hub/initial-setup/security/certificates/) for the LDAP provider to sign.
 
 To validate the authenticity of the certificate, set *Validate Certificates*.
 
