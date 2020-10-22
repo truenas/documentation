@@ -51,3 +51,5 @@ Value = 1</td></tr>
             </table>
         </body>
     </html>
+
+> Note: there are some BIOS compatability issues when manually upgrading a TrueNAS X or M -Series system to 12.0. Please [contact iX Support](https://www.truenas.com/docs/hub/initial-setup/support/#contacting-ixsystems-support) when planning an upgrade to one of these systems.
