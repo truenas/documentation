@@ -21,8 +21,8 @@ This table describes the differences:
 <tbody>
   <tr>
     <td><b>Data Type</b></td>
-    <td>Sensitive User Data</td>
-    <td>Non-Sensitive System Data</td>
+    <td>Sensitive User Data (NOT COLLECTED)</td>
+    <td>Non-Sensitive System Data (Optionally Collected)</td>
   </tr>
   <tr>
     <td><b>Description</b></td>
@@ -30,24 +30,24 @@ This table describes the differences:
     <td>Data that only includes information about the TrueNAS system and its operation</td>
   </tr>
   <tr>
-    <td><b>Data Collection</b></td>
-    <td>No Data Collection</td>
-    <td>Collected Daily</td>
+    <td><b>Frequency</b></td>
+    <td>NEVER</td>
+    <td>Daily</td>
   </tr>
   <tr>
     <td><b>Examples</b></td>
     <td>Usernames, passwords, email addresses</td>
-    <td>System hardware inventory,  faults, statistics, Pool configuration</td>
+    <td>Anonymous hardware inventory, faults, statistics, Pool configuration</td>
   </tr>
   <tr>
     <td></td>
     <td>User-created System and dataset names</td>
-    <td>System software versions, firmware versions</td>
+    <td>Software versions, firmware versions</td>
   </tr>
   <tr>
   	<td></td>
   	<td>Directory, files names, user data</td>
-  	<td>System services and features enabled, Usage and Performance statistics</td>
+  	<td>Services and features enabled, Usage and Performance statistics</td>
   </tr>
 </tbody>
 </table>
