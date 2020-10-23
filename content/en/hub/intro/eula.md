@@ -1,10 +1,10 @@
 ---
-title: "TrueNAS EULA"
-description: "The TrueNAS End User License Agreement"
+title: "TrueNAS Enterprise EULA"
+description: "The End User License Agreement for TrueNAS Enterprise"
 tags: ["EULA", "support"]
 ---
 
-## TrueNAS Software End User License Agreement
+## TrueNAS Enterprise End User License Agreement
 
 **Important - Please Read This EULA Carefully**
 
