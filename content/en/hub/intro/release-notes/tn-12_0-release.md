@@ -47,6 +47,7 @@ Type = sysctl
 Variable = vfs.zfs.l2arc.rebuild_enabled
 Value = 1</td></tr>
 		    <tr><td><a href="https://jira.ixsystems.com/browse/NAS-107951" target="_blank">NAS-107951</a></td><td>2FA is missing from TrueNAS Enterprise</td><td>2-Factor authentication is receiving additional polish for TrueNAS Enterprise and is scheduled to be added in 12.0-U1.</td></tr>
+		    <tr><td></td><td>TrueNAS "root" user account cannot be an SMB user.</td><td>This is an intentional change to improve software security and suitability for deployment in a variety of environments. Update the SMB configuration to use a different user account.</td></tr>
                 </tbody>
             </table>
         </body>
