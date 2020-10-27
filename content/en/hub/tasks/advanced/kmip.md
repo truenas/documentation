@@ -1,7 +1,7 @@
 ---
 title: "Enabling KMIP"
 description: "Key Management Interoperability Protocol Configuration" 
-tags: ["KMIP", "encryption", "certificates"]
+tags: ["KMIP", "encryption", "certificates", "TrueNAS Enterprise"]
 ---
 
 
