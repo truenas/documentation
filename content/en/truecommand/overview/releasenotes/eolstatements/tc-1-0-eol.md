@@ -1,6 +1,5 @@
 ---
 title: "End of Life Statement for TrueCommand 1.0"
-date: 2020-09-29T12:00:00-05:00
 tags: ["TrueCommand"]
 draft: false
 ---
