@@ -1,31 +1,59 @@
 ---
 title: "Enabling KMIP"
-description: "Key Management Interoperability Protocol Configuration" 
+description: "How to integrate TrueNAS Enterprise key management with a Key Management Interoperability Protocol (KMIP) server." 
 tags: ["KMIP", "encryption", "certificates", "TrueNAS Enterprise"]
 ---
 
-
 {{% pageinfo %}}
-KMIP is an Enterprise only feature, contact the [iXsystem Sales Team](https://www.ixsystems.com/contact-us/) if you need KMIP functionality.
+KMIP is only available for TrueNAS Enterprise licensed systems. Please contact the [iXsystems Sales Team](mailto:sales@ixsystems.com) to inquire about activating KMIP functionality.
 {{% /pageinfo %}}
 
-The Key Management Interoperability Protocol (KMIP) is an extensible client/server communication protocol for the storage and maintenance of key, certificate, and secret objects. This facilitates data encryption by simplifying encryption key management. Keys may be created on a server and then retrieved, possibly wrapped by other keys. Both symmetric and asymmetric keys are supported, including the ability to sign certificates. KMIP also allows for clients to ask a server to encrypt or decrypt data, without needing direct access to the key.
+The [Key Management Interoperability Protocol (KMIP)](https://docs.oasis-open.org/kmip/spec/v1.1/os/kmip-spec-v1.1-os.html) is an extensible client/server communication protocol for the storage and maintenance of keys, certificates, and secret objects.
+KMIP on TrueNAS Enterprise is used to integrate the system within an existing centralized key management infrastructure and use a single trusted source for creating, using, and destroying SED passwords and ZFS encryption keys.
+Keys can be created on a single server and then retrieved by TrueNAS.
+Keys wrapped within keys, symmetric, and asymmetric keys are supported.
+Alternately, KMIP can be used for clients to ask a server to encrypt or decrypt data without the client ever having direct access to a key.
+KMIP also can be used to sign certificates.
 
-By implementing KMIP, enterprises no longer need to struggle with multiple key management services, and can single on an individual trusted source for creating, using and then destroying the keys.
+## Requirements
 
-More infomration on the Key Management Interface Protocol (KMIP) can he read in [the official KMIP Documentation](https://docs.oasis-open.org/kmip/spec/v1.1/os/kmip-spec-v1.1-os.html).
+You will need to have a KMIP server available with Certificates that can be imported into TrueNAS.
+It's recommended to have the KMIP server configuration open in a separate browser tab or to copy the KMIP server certificate string and private key string to later paste into the TrueNAS web interface.
+This helps simplify the TrueNAS connection process.
 
+## Connecting TrueNAS to a KMIP Server
 
-To configure TrueNAS to work with your KMIP server, verify that the configuration of the KMIP server is known and have Certificates have been generated.  Go to **System** > **CA's** and click Add.  In the `Type` drop down maneu, select **Import CA**.  Name the CA and paste the Certrificate info and Private Key for the server.  Do not add a passphrase, and click **Submit**.
+To connect TrueNAS to a KMIP server, import a Certificate Authority (CA) and Certificate from the KMIP server, then configure the KMIP options.
+For security reasons, it is strongly recommended to protect the CA and Certificate values.
 
-Next go to **System** > **Certificates** and click **add**. In the `Type` drop down maneu, select **Import Certificate**.  Add a user and paste the Certrificate info and Private Key for that user.  Do not add a passphrase, and click **Submit**.
+### Importing Certificates
+
+Log in to the TrueNAS web interface and go to **System** > **CAs** and click **Add**.
+In the **Type** drop down menu, select *Import CA*.
+Enter a memorable **Name** for the CA, then paste the KMIP server **Certificate** and **Private Key** strings into the related fields.
+Leave the **Passphrase** empty and click **Submit**.
+
+Next, go to **System** > **Certificates** and click **ADD**.
+In the **Type** drop down menu, select *Import Certificate*.
+Enter a memorable **Name** for the Certificate and paste KMIP server **Certificate** and **Private Key** strings into the related TrueNAS fields.
+Leave the **Passphrase** empty and click **Submit**.
+
+### Configuring KMIP in TrueNAS
 
 Open  **System** > **KMIP** to complete the configuration.
 
 <img src="/images/TN-12.0-KMIP.PNG">
 <br><br>
-Add in the server address.  Select the user that was added from the `Certificate` drop down and select the KMIP server from the `Certificate Authority` drop down.
 
-Enable the features desired and click **Save**.  Re-opening the KMIP page will show the KMIP Key Status.
+Enter the central key server **Server** host name or IP address and the number of an open connection port on the key server.
+Select the **Certificate** and **Certificate Authority** that were just imported from the central key server.
+To check that the Certificate and CA chain is correct, set **Validate Connection** and click **SAVE**.
+
+When the Certificate chain has been verified, set which encryption values will be moved to the central key server, SED passwords and/or ZFS data pool encryption keys.
+Set **Enabled** to begin moving the passwords and keys immediately after clicking **SAVE**.
+Refreshing the KMIP page shows the current KMIP Key Status.
+
 <img src="/images/TN-12.0-KMIP-synced.PNG">
 <br><br>
+
+To cancel a pending key synchronization, set **Force Clear** and click **SAVE**.
