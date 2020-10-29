@@ -143,9 +143,42 @@ midclt call -job kubernetes.update '{"pool": "pool_name_here"}'
 
 This will setup kubernetes on the defined pool. For the first time, it may take a few minutes for the k8s cluster to properly initialise itself. Moving on, if you have a pool configured for kubernetes, kubernetes will start automatically on boot.
 
-**Using Kubernetes**
+**Deploying Kubernetes Workloads**
 
-SCALE does not support deploying workloads to kubernetes cluster officially yet, however users interested in using k8s can do so manually via shell. SCALE has helm3 pre-installed, so users can leverage helm to deploy their workloads.
+SCALE has API support to deploy kubernetes workloads. SCALE manages kubernetes workloads with integration of Helm v3 and using a concept of catalogs ( For information on catalogs please refer to https://github.com/truenas/charts ).
+
+Each catalog item points to an application which will be deployed to kubernetes. This application is an enhanced helm chart which deploys the application to TrueNAS SCALE kubernetes cluster.
+
+Right now we have a catalog item `ix-chart` (https://github.com/truenas/charts/tree/master/test/ix-chart/2010.0.1) which has the ability to deploy single docker image workloads. Please refer to the chart link to see more details about what features / configuration are supported.
+
+An example to deploy plex docker image would be:
+```
+midclt call -job chart.release.create '{"catalog": "OFFICIAL", "train": "test", "item": "ix-chart", "values": {"image": {"repository": "plexinc/pms-docker"}, "portForwardingList": [{"containerPort": 32400, "nodePort": 32400}], "volumes": [{"datasetName": "transcode", "mountPath": "/transcode"}, {"datasetName": "config", "mountPath": "/config"}, {"datasetName": "data", "mountPath": "/data"}], "workloadType": "Deployment", "gpuConfiguration": {"nvidia.com/gpu": 1}}, "version": "2010.0.1", "release_name": "plex"}'
+```
+
+To update the chart release, an example would be:
+```
+midclt call -job chart.release.update 'plex' '{"values": {"portForwardingList": [{"containerPort": 32400, "nodePort": 32401}]}}'
+```
+
+To delete the chart release, an example would be:
+```
+midclt call -job chart.release.delete plex
+```
+
+To upgrade the chart version, an example would be ( assuming we have 2010.0.2 version ):
+```
+midclt call -job chart.release.upgrade 'plex' '{"item_version": "2010.0.2"}'
+```
+
+To rollback the chart release to previous chart version, an example would be:
+```
+midclt call -job chart.release.rollback 'plex' '{"item_version": "2010.0.1"}'
+```
+
+**Using Kubernetes via CLI**
+
+SCALE does not support workloads created manually via kubectl / helm or direct interaction with kubernetes api. Using `kubectl` / `helm` to retrieve read-only information about the status of the service is permitted.
 
 A tip for users is to add following lines to `~/.zshrc`
 ```
@@ -156,7 +189,3 @@ export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
 Setting `KUBECONFIG` is required for using helm and the `kubectl` alias helps use `kubectl` directly instead of prefixing it with `k3s` each time.
 
 A word of caution: Support for kubernetes is still considered experimental, so please use it at your own risk. However if you come across any bugs, please feel free to create tickets at https://jira.ixsystems.com.
-
-**Creating Helm Charts**
-
-SCALE today supports the deployment of Helm charts using the `kubectl` command. Support for natively importing docker containers is coming to the SCALE UI later in 2020. In the meantime, it is possible to create a Helm chart from a docker container by following [various tutorials available online](https://opensource.com/article/20/5/helm-charts#:~:text=%20How%20to%20make%20a%20Helm%20chart%20in,%E2%80%9Cmy-cherry-chart%E2%80%9D%20has%20been%20upgraded.%20Happy%20Helming%21%20More%20). 
