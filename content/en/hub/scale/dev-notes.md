@@ -143,9 +143,9 @@ midclt call -job kubernetes.update '{"pool": "pool_name_here"}'
 
 This will setup kubernetes on the defined pool. For the first time, it may take a few minutes for the k8s cluster to properly initialise itself. Moving on, if you have a pool configured for kubernetes, kubernetes will start automatically on boot.
 
-**Deploying simple docker image**
+**Deploying Kubernetes Workloads**
 
-SCALE has API support to deploy simple docker workloads. SCALE manages kubernetes workloads with integration of Helm v3 and using a concept of catalogs ( For information on catalogs please refer to https://github.com/truenas/charts ).
+SCALE has API support to deploy kubernetes workloads. SCALE manages kubernetes workloads with integration of Helm v3 and using a concept of catalogs ( For information on catalogs please refer to https://github.com/truenas/charts ).
 
 Each catalog item points to an application which will be deployed to kubernetes. This application is an enhanced helm chart which deploys the application to TrueNAS SCALE kubernetes cluster.
 
