@@ -178,7 +178,7 @@ midclt call -job chart.release.rollback 'plex' '{"item_version": "2010.0.1"}'
 
 **Using Kubernetes via CLI**
 
-SCALE does not support workloads created manually via kubectl / helm or direct interaction with kubernetes api. For users interested in using `kubectl` / `helm` to retrieve information can do so directly.
+SCALE does not support workloads created manually via kubectl / helm or direct interaction with kubernetes api. Using `kubectl` / `helm` to retrieve read-only information about the status of the service is permitted.
 
 A tip for users is to add following lines to `~/.zshrc`
 ```
