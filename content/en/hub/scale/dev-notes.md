@@ -4,6 +4,8 @@ description: "Running updates about TrueNAS SCALE Nightly status and current iss
 ---
 
 #### Recent Updates
+> 10/14/2020 - Updated [Kubernetes Workload Usage](#containerisation) information, providing examples of deploying Docker images on SCALE
+
 > 10/14/2020 - Updated [Roadmap / Information](#containerisation) about Kubernetes and Linux container support in SCALE
 
 > 10/14/2020 - Samba POSIX/NFSv4 ACL support added - UI functionality restored for setting / managing ACLs
