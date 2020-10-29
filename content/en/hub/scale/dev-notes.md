@@ -135,6 +135,9 @@ Docker containers can be deployed directly on TrueNAS SCALE. SCALE will automati
 
 The storage for Kubernetes will be based on ZFS and scale-out ZFS. Scale-out ZFS is a marriage of Gluster and OpenZFS which provides scale-out properties of higher bandwidth, capacity and increased resilience.  
 
+
+## Using Kubernetes
+
 **Configuring Kubernetes**
 
 In order to leverage containers, SCALE is using a single node kubernetes cluster powered by k3s. In order to configure kubernetes, please type the following command:
