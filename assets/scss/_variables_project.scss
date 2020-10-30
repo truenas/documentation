@@ -4,6 +4,11 @@ Add styles or override variables from the theme here.
 
 */
 
+// Unify top margins
+.td-section {
+  padding-top: 6rem;
+}
+
 // Add Material Design icons
 @font-face {
   font-family: 'Material Icons';
