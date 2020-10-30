@@ -42,15 +42,18 @@ Here is the full list of fixes and changes in 12.0-RELEASE:
                 <thead><tr><th>Key</th><th>Summary</th><th>Workaround</th></tr></thead>
                 <tbody>
                     <tr><td><a href="https://jira.ixsystems.com/browse/NAS-107151" target="_blank">NAS-107151</a></td><td>Replication fails between legacy TrueNAS 9.10 systems and 12.0-BETA1 systems.</td><td>Due to numerous improvements in the replication engine and ZFS, FreeNAS/TrueNAS 9.10 systems (or earlier) can no longer replicate to or from TrueNAS 12.0. Update the legacy TrueNAS system to FreeNAS/TrueNAS 11.3 or newer.</td></tr>
-		    <tr><td><a href="https://jira.ixsystems.com/browse/NAS-106992" target="_blank">NAS-106992</a></td><td>Persistent L2ARC is disabled by default due to performance impact when rebuilding with large amounts of data.</td><td>Reactivating persistent L2ARC can result in degraded UI and Middleware performance in specific situations where large amounts of data is loaded into L2ARC and a rebuild is triggered. To reactivate persistent L2ARC, log in to the TrueNAS Web Interface, go to System > Tunables, and add a new tunable with these values:
-Type = sysctl
-Variable = vfs.zfs.l2arc.rebuild_enabled
-Value = 1</td></tr>
-		    <tr><td><a href="https://jira.ixsystems.com/browse/NAS-107951" target="_blank">NAS-107951</a></td><td>2FA is missing from TrueNAS Enterprise</td><td>2-Factor authentication is receiving additional polish for TrueNAS Enterprise and is scheduled to be added in 12.0-U1.</td></tr>
-		    <tr><td></td><td>TrueNAS "root" user account cannot be an SMB user.</td><td>This is an intentional change to improve software security and suitability for deployment in a variety of environments. Update the SMB configuration to use a different user account.</td></tr>
+		    		<tr><td><a href="https://jira.ixsystems.com/browse/NAS-106992" target="_blank">NAS-106992</a></td><td>Persistent L2ARC is disabled by default due to performance impact when rebuilding with large amounts of data.</td><td>Reactivating persistent L2ARC can result in degraded UI and Middleware performance in specific situations where large amounts of data is loaded into L2ARC and a rebuild is triggered. To reactivate persistent L2ARC, log in to the TrueNAS Web Interface, go to System > Tunables, and add a new tunable with these values:
+		    			<ul>
+		    				<li>Type = sysctl</li>
+		    				<li>Variable = vfs.zfs.l2arc.rebuild_enabled</li>
+		    				<li>Value = 1</li>
+		    			</ul>
+		    		</td></tr>
+				    <tr><td><a href="https://jira.ixsystems.com/browse/NAS-107951" target="_blank">NAS-107951</a></td><td>2FA is missing from TrueNAS Enterprise</td><td>2-Factor authentication is receiving additional polish for TrueNAS Enterprise and is scheduled to be added in 12.0-U1.</td></tr>
+		    		<tr><td></td><td>TrueNAS "root" user account cannot be an SMB user.</td><td>This is an intentional change to improve software security and suitability for deployment in a variety of environments. Update the SMB configuration to use a different user account.</td></tr>
+		    		<tr><td></td><td>There are some BIOS compatibility issues when manually upgrading a TrueNAS X or M -Series system to 12.0.</td><td>Please <a href="/hub/initial-setup/support/#contacting-ixsystems-support">contact iX Support</a> when planning an upgrade to one of these systems.</td></tr>
+		    		<tr><td><a href="https://jira.ixsystems.com/browse/NAS-108050" target="_blank">NAS-108050</a></td><td>SNMP consumes 100% CPU and becomes unavailable.</td><td>If you are using SNMP, either disable SNMP in 12.0-RELEASE or upgrade when 12.0-U1 is released.</td></tr>
                 </tbody>
             </table>
         </body>
     </html>
-
-> Note: there are some BIOS compatability issues when manually upgrading a TrueNAS X or M -Series system to 12.0. Please [contact iX Support](https://www.truenas.com/docs/hub/initial-setup/support/#contacting-ixsystems-support) when planning an upgrade to one of these systems.
