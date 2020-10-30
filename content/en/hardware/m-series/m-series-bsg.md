@@ -1,5 +1,5 @@
 ---
-title: "Basic Setup Guide"
+title: "M40 and M50 Basic Setup Guide"
 tags: ["TrueNAS Products"]
 ---
 
