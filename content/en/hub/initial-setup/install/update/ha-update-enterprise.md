@@ -5,7 +5,7 @@ tags: ["HA"]
 ---
 
 Updating a TrueNAS Enterprise system that is configured for High Availability (HA) has a slightly different flow from non-HA systems or TrueNAS Core.
-The system downloads the update to both controllers, updates and reboots the standby TrueMAS controller, and finally fails over from and updates the active TrueNAS controller.
+The system downloads the update to both controllers, updates and reboots the standby TrueNAS controller, and finally fails over from and updates the active TrueNAS controller.
 
 ## Preparation
 
