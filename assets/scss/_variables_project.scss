@@ -4,6 +4,11 @@ Add styles or override variables from the theme here.
 
 */
 
+// Adjust sidebar-tree (left sidebar) with unified padding
+.td-sidebar{
+  padding-top: 6rem;
+}
+
 // Add Material Design icons
 @font-face {
   font-family: 'Material Icons';
