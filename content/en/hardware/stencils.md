@@ -14,7 +14,7 @@ You will need Microsoft Visio or another application that can open <file>.vssx</
 To download the stencils, hover over the reference image and click the button.
 
 {{% alert title="Work in Progress" color="info" %}}
-This stencil pack is a work in progress and currently includes the TrueNAS *Minis*, the *X* and *M* *-Series* systems, and relevant expansion cards.
+This stencil pack is a work in progress and currently includes TrueNAS *Minis*, the *R*, *X*, and *M* *-Series* systems with relevant expansion cards, and other expansion shelves.
 Additional product stencils are being added to the pack as they are finished, so check back regularly to see what's been added!
 {{% /alert %}}
 
