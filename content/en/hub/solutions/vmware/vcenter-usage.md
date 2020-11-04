@@ -50,7 +50,7 @@ The vCenter plugin can create Virtual Machine File System (VMFS) datastores on T
 
 vCenter has a default limit of eight NFS datastores per ESX host. See this[VMware article](https://kb.vmware.com/s/article/1020652) about maximum supported volumes  for more details.
 
-Datastores that already exist on the TrueNAS® system are shown, along with an option to mount an existing volume. Other types of shares created and managed through the TrueNAS® web interface are not shown here.
+Datastores that already exist on the TrueNAS® system are shown. Other types of shares created and managed through the TrueNAS® web interface are not shown here.
 
 #### Add Datastore
 
