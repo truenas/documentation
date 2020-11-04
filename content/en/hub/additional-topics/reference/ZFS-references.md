@@ -16,7 +16,7 @@ provide continued, collaborative development of the open source version.
 Here is an overview of the features provided by ZFS:
 
 **ZFS is a transactional, Copy-On-Write**
-([COW](<https://en.wikipedia.org/wiki/ZFS#Copy-on-write_transactional_model))
+([COW](https://en.wikipedia.org/wiki/ZFS#Copy-on-write_transactional_model))
 filesystem. For each write request, a copy is made of the associated
 disk blocks and all changes are made to the copy rather than to the
 original blocks. When the write is complete, all block pointers are
