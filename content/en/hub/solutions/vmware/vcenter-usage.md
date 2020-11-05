@@ -21,7 +21,7 @@ Go to the vCenter Server web interface in a browser and click **Menu** > **Globa
 <img src="/images/vcp-10.PNG">
 <br><br>
 
-Fill in the required information. To only use a secure connection to the TrueNAS® system, set *HTTPS*. Click **Add Host** and the TrueNAS® hostname or IP address appears in the list of connected systems.
+Fill in the required information. *HTTPS* is planned for a future release, and will be an option in the future. Click **Add Host** and the TrueNAS® hostname or IP address appears in the list of connected systems.
 
 <img src="/images/vcp-11.PNG">
 <br><br>
