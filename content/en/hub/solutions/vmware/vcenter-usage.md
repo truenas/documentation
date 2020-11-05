@@ -180,7 +180,7 @@ A replication that runs for the first time can take a long time to complete. Sch
 
 #### Role-Based Access Control (RBAC)
 
-An administrator can grant vCenter users specific role-based access to a TrueNAS® system.
+An administrator can grant vCenter users specific role-based access to their fleet of TrueNAS® systems managed by this plugin.
 
 <img src="/images/vcp-22.PNG">
 <br><br>
