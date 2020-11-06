@@ -1,6 +1,7 @@
 ---
 title: "ES24 Basic Setup Guide"
 tags: ["TrueNAS Products"]
+weight: 20
 ---
 
 <object data="https://www.truenas.com/docs/files/ES24BSGv1_9.pdf" type="application/pdf" width="95%" height="1000">
