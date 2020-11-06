@@ -36,7 +36,7 @@ It is still receiving minor version updates, but will reach End of Life when Tru
 
 | Version                                                                                                                 | Scheduled Release Date |
 |-------------------------------------------------------------------------------------------------------------------------|------------------------|
-| [TrueCommand 2.0](https://jira.ixsystems.com/issues/?jql=project%20%3D%20TrueCommand%20%20AND%20fixVersion%20%3D%202.0) | 2020/11/17             |
+| [TrueCommand 2.0](https://jira.ixsystems.com/issues/?jql=project%20%3D%20TrueCommand%20%20AND%20fixVersion%20%3D%202.0) | Q1 2021                |
 
 
 
