@@ -5,3 +5,6 @@ description: "Release notes for plugin version 3.3.0."
 tags: ["vCenter Plugin", "TrueNAS Enterprise"]
 weight: 10
 ---
+
+*November 10, 2020*
+
