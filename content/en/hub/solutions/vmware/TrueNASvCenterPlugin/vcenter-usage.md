@@ -1,12 +1,11 @@
 ---
 title: "vCenter Plugin Usage"
-description: "vCenter Plugin Usage" 
-tags: ["vm", "TrueNAS Enterprise"]
+description: "How to find and configure the various TrueNAS features from within vCenter." 
+tags: ["vCenter Plugin", "TrueNAS Enterprise"]
+weight: 30
 ---
 
-
-
-### vCenter Plugin Usage v 3.3.0
+### vCenter Plugin Usage v3.3.0
 
 vCenter Server (https://www.vmware.com/products/vcenter-server.html) provides a web interface to manage
 physical and virtual machines. vCenter uses plugins to integrate servers management into the vCenter application.
