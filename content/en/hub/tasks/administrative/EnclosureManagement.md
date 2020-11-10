@@ -30,7 +30,7 @@ These tabs reflect the sensors that are active in the chosen hardware.
   Clicking any of the buttons changes the graphic to show the requested details.
 * **Cooling** has an entry for each fan with status and RPM.
 * **Enclosure Services Controller Electronics** shows the enclosure status.
-* Power Supply shows the status of each power supply.
+* **Power Supply** shows the status of each power supply.
 * **SAS Connector** shows the status of the expansion shelf.
 * **Temperature Sensor** shows the current temperature of each expansion shelf and the disk chassis.
 * **Voltage Sensor** shows the current voltage for each sensor, VCCP, and VCC.
