@@ -16,7 +16,7 @@ For documentation about available iXsystems products, see the Docs Hub [Hardware
 <img src="/images/EnclosureViewES24F.png">
 <br><br>
 
-Detected TrueNAS® hardware is added to a column on the right side of the screen.
+Detected TrueNAS® hardware is added to a column on the right side of the screen. Do a thing
 Click an enclosure to show details about that hardware. 
 
 The screen is divided into different tabs.
