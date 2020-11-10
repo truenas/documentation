@@ -4,7 +4,7 @@ title = "TrueNAS Documentation Hub"
 enableRobotsTXT = true
 relativeURLs = true
 disableKinds = [""]
-rss_sections = ["hardware","hub","truecommand"]
+rss_pages = ["hardware","hub","truecommand"]
 
 # Hugo allows theme composition (and inheritance). The precedence is from left to right.
 theme = ["docsy"]
