@@ -55,6 +55,24 @@ Having a short, descriptive subject allows the community to better find and resp
 The *Description* should contain more details about the problem.
 It is recommended to keep the description less than three paragraphs and include any steps to reproduce the issue or error.
 
+### Creating a Debug File
+
+The TrueNAS web interface provides an option to save debugging information to a text file.
+
+Go to **System > Advanced**
+
+Select **SAVE DEBUG**
+
+The user will be notified that **"This operation might take a long time. Proceed?"**
+
+Select **PROCEED**
+
+The progress of the debug creation will be displayed.  
+
+Once the debug file is complete you will either be prompted by your OS to save it to a specific location (i.e. Downloads, Documents etc.), or will automatically be added to the location you specified for downloaded files.
+
+This debugging information is created by the freenas-debug command line utility and a copy of the information is saved to `/var/tmp/fndebug`.
+
 #### Web Console Log
 
 A web console log can help to diagnose problems with the user interface.
@@ -87,7 +105,7 @@ Click <i class="fa fa-cog" aria-hidden="true" title="settings"></i> and set `Pre
 
 Click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> **Settings > Preferences**. In the `Console` section, set `Show timestamps`. Close the Preferences window.
 
-Leave the console open and perform the action that encounters problems.
+Leave the console open and perform the action that encounters problems. 
 
 Right-click in the console window. Choose `Save as…` and save to a file called `console.log`.
 
