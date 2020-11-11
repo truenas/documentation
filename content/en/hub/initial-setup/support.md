@@ -59,19 +59,16 @@ It is recommended to keep the description less than three paragraphs and include
 
 The TrueNAS web interface provides an option to save debugging information to a text file.
 
-Go to **System > Advanced**
+Go to **System > Advanced** and click **SAVE DEBUG**.
+A dialog prompts that **This operation might take a long time. Proceed?**.
+You won't be able to click options in the web interface while the debug file is created.
+Click **PROCEED** to begin collecting system information into a debug file.
+Debug file creation progress is shown in a dialog.
 
-Select **SAVE DEBUG**
+When the debug file is complete, a dialog opens to save it to a location on your local system (i.e. Downloads, Documents etc.) or the file is automatically added to the location you specified for downloaded files.
 
-The user will be notified that **"This operation might take a long time. Proceed?"**
-
-Select **PROCEED**
-
-The progress of the debug creation will be displayed.  
-
-Once the debug file is complete you will either be prompted by your OS to save it to a specific location (i.e. Downloads, Documents etc.), or will automatically be added to the location you specified for downloaded files.
-
-This debugging information is created by the freenas-debug command line utility and a copy of the information is saved to `/var/tmp/fndebug`.
+Debugging information is collected by the `freenas-debug` command line utility.
+A copy of the information is saved to `/var/tmp/fndebug`.
 
 #### Web Console Log
 
@@ -85,7 +82,8 @@ Open the web console by clicking <i class="fa fa-ellipsis-v" aria-hidden="true" 
 
 In the upper right, set `Persist Logs`.
 
-Click  <i class="fa fa-ellipsis-h" aria-hidden="true" title="Options"></i> (Settings). In the `Web Console` section, set `Enable timestamps`. Click the `Console` tab or press <kbd>Ctrl+Shift+K</kbd> to switch to the console window.
+Click  <i class="fa fa-ellipsis-h" aria-hidden="true" title="Options"></i> (Settings).
+In the `Web Console` section, set `Enable timestamps`. Click the `Console` tab or press <kbd>Ctrl+Shift+K</kbd> to switch to the console window.
 
 Leave the console open and perform the action that encounters problems.
 
@@ -105,7 +103,7 @@ Click <i class="fa fa-cog" aria-hidden="true" title="settings"></i> and set `Pre
 
 Click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> **Settings > Preferences**. In the `Console` section, set `Show timestamps`. Close the Preferences window.
 
-Leave the console open and perform the action that encounters problems. 
+Leave the console open and perform the action that encounters problems.
 
 Right-click in the console window. Choose `Save as…` and save to a file called `console.log`.
 
