@@ -65,7 +65,9 @@ no_list: true
 		<a href="/hub/sharing/nfs/">Network File System (NFS)</a><br>
 		<a href="/hub/sharing/iscsi/">Block Sharing (iSCSI)</a><br>
 		<a href="/hub/sharing/afp/">Apple Filing Protocol (AFP)</a><br>
-		<a href="/hub/sharing/webdav/">WebDAV</a></p>
+		<a href="/hub/sharing/webdav/">WebDAV</a><br>
+		<a href="/hub/sharing/ftp-sftp/">FTP / SFTP</a><br>
+		<a href="/hub/sharing/s3-object-store/">S3 Object</ar></p>
 		<a class="linkbutton" href="/hub/sharing/">Sharing</a>
 	</div>
 </div>
