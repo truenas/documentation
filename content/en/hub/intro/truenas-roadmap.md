@@ -44,4 +44,4 @@ It is still receiving minor version updates, but will reach End of Life when Tru
 
 | Version                                                                                                                                   | Scheduled Release Date |
 |-------------------------------------------------------------------------------------------------------------------------------------------|------------------------|
-| [vCenter Plugin 3.3.0](https://jira.ixsystems.com/issues/?jql=project%20%3D%20%22vCenter%20Plugin%22%20AND%20fixVersion%20%3D%203.3.0%20) | 2020/11/10             |
+| [vCenter Plugin 3.3.0](https://jira.ixsystems.com/issues/?jql=project%20%3D%20%22vCenter%20Plugin%22%20AND%20fixVersion%20%3D%203.3.0%20) | November 2020          |
