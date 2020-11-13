@@ -61,7 +61,7 @@ Once you have selected the appropriate number of disks, click **ADD VDEVS**. A d
 <img src="/images/PoolManagerPage3.png" width='700px'>
 <br>
 
-Once the process is complete, you will be taken to the **Storage/Pools** page.  To verify your disk(s) were added successfully select the <i class="fas fa-cog" aria-hidden="true" title="Settings"></i>
+Once the process is complete, you will be taken to the **Storage/Pools** page.  To verify your disk(s) were added successfully select the <i class="fas fa-cog" aria-hidden="true" title="Settings"></i>&nbsp
 and choose **status** from the dropdown menu.  This will take you to the **Storage/Pools/Pool Status** page.  Here you can verify your vdevs have been successfully added.
 
 <img src="/images/PoolManagerPage4.png" width='700px'>
