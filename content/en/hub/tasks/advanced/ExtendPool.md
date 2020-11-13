@@ -39,7 +39,7 @@ Creating a pool/adding vdevs overwrites disk data, so save any required data to 
 
 ### Process ###
 
-Go to **Storage->Pools** and select the <i class="fas fa-cog" aria-hidden="true" title="Settings"></i>&nbsp of the pool you want to extend.
+Go to **Storage** > **Pools** and select the <i class="fas fa-cog" aria-hidden="true" title="Settings"></i>&nbsp of the pool you want to extend.
 From the dropdown select **Add Vdevs**.  This will take you to the **Pool Manager** page.  
 
 <img src="/images/PoolManagerPage.png" width='700px'>
