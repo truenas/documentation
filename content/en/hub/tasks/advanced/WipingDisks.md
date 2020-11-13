@@ -13,7 +13,7 @@ Clicking **Wipe** offers several options:
 
 ### Process ###
 
-Go to **Storage->Disks**. Click on **>** to the right of the disk you have chosen to wipe. A basic description of the disk will be provided.  Click on **WIPE**.
+Go to **Storage** > **Disks**. Click on **>** to the right of the disk you have chosen to wipe. A basic description of the disk will be provided.  Click on **WIPE**.
 Dialog will show the **Name** of the disk (da1, da2, ada4 etc.) and **Method**.  Click on **Method**. Dropdown will show the different wipe options available.
 
 {{% alert title=Warning color=warning %}}
