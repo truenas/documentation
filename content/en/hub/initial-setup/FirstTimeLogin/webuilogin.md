@@ -86,12 +86,13 @@ TrueNAS systems purchased from iXsystems use a default password: *abcd1234*
 
 ## Web Interface Dashboard
 
-After logging in, the system Dashboard is shown.
+After logging in, the system **Dashboard** is shown.
 Basic information about the installed version, systems component usage and network traffic are all presented on this screen.
 
-<Put screenshot here>
+<img src="/images/Dashboard.png">
+<br><br>
     
-From the Dashboard you can access the management options for the TrueNAS.
+From the **Dashboard** you can access the management options for the TrueNAS.
 Across the top row are links to outside resources and buttons to control the system.
 There is also a column of options at the left hand side of the screen for accessing the various TrueNAS Configuration screens.
 
@@ -104,17 +105,17 @@ The top row has buttons to hide the left side column.
 The top of this column shows the system hostname and the active user.
 TrueNAS configuration screens are linked in the left hand column:
 
-* **Dashboard**: Landing page for the web interface
+* **Dashboard**: Landing page for the web interface.
 * [**Accounts**](/hub/initial-setup/security/accounts/): Add or manage TrueNAS User and Group accounts.
-* [**System**](/initial-setup/firsttimelogin/systemsettings/): TrueNAS system level options
+* [**System**](/initial-setup/firsttimelogin/systemsettings/): TrueNAS system level options.
 * [**Tasks**](/hub/tasks/scheduled/): Configuring options for scheduled re-occurring operations.
-* [**Network**](/hub/initial-setup/networking/): Options for integrating TrueNAS in a network environment
+* [**Network**](/hub/initial-setup/networking/): Options for integrating TrueNAS in a network environment.
 * [**Storage**](/hub/initial-setup/storage/): How data is added to TrueNAS. Options for configuring pools and datasets on attached hard drives.
 * [**Directory Services**](/hub/initial-setup/security/directory-services/): Map network resources to TrueNAS or make the system visable in a network.
 * [**Sharing**](/hub/sharing/): Provide data stored in TrueNAS over a network using different built-in protocols.
 * **Services**: Tasks that can run in the background of TrueNAS for purposes like data sharing or network access. Services can start automatically or disabled for security. By default, most system services are disabled.
-[* **Plugins**](/hub/tasks/advanced/plugins/): Extend the built-in NAS services by installing a pre-packaged application in an isolated Jail
-[* **Jails**](/hub/tasks/advanced/jails/): lightweight operating-system-level virtualization that allows one or multiple services to run isolated from the host TrueNAS system.
+* [**Plugins**](/hub/tasks/advanced/plugins/): Extend the built-in NAS services by installing a pre-packaged application in an isolated Jail.
+* [**Jails**](/hub/tasks/advanced/jails/): lightweight operating-system-level virtualization that allows one or multiple services to run isolated from the host TrueNAS system.
 * [**Reporting**](/hub/tasks/administrative/system-reporting/): Helpful graphs and information about the system, including hardware, storage, and network utilization.
 * [**Virtual Machines**](/hub/tasks/advanced/virtual-machines/): Environment on a host computer that can be used as if it were a separate physical computer.
 * **Display System Processes**: Shows actively running system processes, including cpu and memory usage.
