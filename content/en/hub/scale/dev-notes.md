@@ -190,6 +190,18 @@ Here is an example of rolling back the chart release to a previous chart version
 midclt call -job chart.release.rollback 'plex' '{"item_version": "2010.0.1"}'
 ```
 
+To pull latest version of a container image:
+
+```
+midclt call -job docker.images.pull '{"from_image": "plexinc/pms-docker", "tag": "latest"}'
+```
+
+To redeploy a chart release, I.E. after pulling a newer container image:
+
+```
+midclt call -job chart.release.redeploy plex
+```
+
 ### Using Kubernetes via CLI
 
 SCALE does not support workloads created manually with `kubectl` / `helm` or direct interaction with the Kubernetes API. Using `kubectl` / `helm` to retrieve read-only information about the status of the service is permitted.
