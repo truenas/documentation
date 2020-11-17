@@ -43,7 +43,17 @@ To start, click the **Edit this Page** link in the top right of the site.
 To fork the repo to your GitHub account, click the green **Fork this repository** button.
 
 <img src="/images/forking-contribution-01.PNG" width='700px'>
-<br><br>
+<br>
+
+{{% pageinfo %}}
+If you already have a fork of the documentation repository, it is recommended to sync your fork before continuing on to make changes:
+* Open your fork repository, typically found by opening the GitHub profile drop down and clicking **Your repositories**.
+* Find the sync status bar and click **Pull request**.
+* Set the *base repository* to your fork and the *head repository* to freenas/documentation. You might need to click **compare across forks** first.
+  <img src="/images/GitHubCompareFork.png">
+  <br>
+* Click **Create pull request** and continue to merge the pull request.
+{{% /pageinfo %}}
 
 Edit the page as needed.
 
