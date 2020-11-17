@@ -1,9 +1,9 @@
 ---
 title: "Wiping Disks"
-description:  "How to wipe disks in TrueNAS"
+description:  "How to delete data from a disk."
 ---
 
-The **Wipe** function is used to discard an ununsed disk.
+The **Wipe** function is used to delete obsolete data off an unused disk.
 
 Clicking **Wipe** offers several options:
 
@@ -11,7 +11,7 @@ Clicking **Wipe** offers several options:
 - **Full with zeros** -  Overwrites the entire disk with zeros and can take several hours to complete.
 - **Full with random** - Overwrites the entire disk with random binary code and takes even longer than **Full with zeros** to complete.
 
-### Process ###
+## Process
 
 Go to **Storage** > **Disks**. Click on **>** to the right of the disk you have chosen to wipe. A basic description of the disk will be provided.  Click on **WIPE**.
 Dialog will show the **Name** of the disk (da1, da2, ada4 etc.) and **Method**.  Click on **Method**. Dropdown will show the different wipe options available.
