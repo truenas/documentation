@@ -72,6 +72,9 @@ There are additional kinds of vdevs that can be used to add features to the pool
 * *Cache*: ZFS L2ARC read-cache that can be used with fast devices to accelerate read operations. Optional vdev that is removable after pool creation.
 * *Log*: ZFS LOG device that can improve speeds of synchronous writes. Optional write-cache that is removable after pool creation.
 * *Hot Spare*: Drive reserved for inserting into DATA pool vdevs when an active drive has failed.
+  The hot spare is temporarily used as a replacement for the failed drive to prevent a larger pool and data loss scenario.
+  If the failed drive in the pool is replaced with a new drive, the hot spare reverts to an inactive state and is available again as a hot spare.
+  If the failed drive is detached from the pool, the temporary spare is promoted to a full member of the pool and will no longer be available as a hot spare.
 * *Metadata*: Special Allocation class used to create [Fusion pools](/hub/initial-setup/storage/fusion-pool/). Optional vdev type used to speed up metadata and small block I/O.
 * *Dedup*: Stores de-duplication tables. These vdevs must be sized to X GiB for X TiB of general storage.
 
