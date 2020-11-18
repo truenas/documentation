@@ -7,7 +7,7 @@ description: "Overview of the TrueNAS Asigra plugin."
 The Asigra plugin connects TrueNAS to a third party service and is subject to licensing.
 Please read the [Asigra Software License Agreement](https://www.asigra.com/legal/software-license-agreement) before using this plugin.
 
-Follow the instructions in the Plugins article to [install the Asigra Plugin](hub/tasks/advanced/plugins/#installing-a-plugin).
+Follow the instructions in the Plugins article to [install the Asigra Plugin](/hub/tasks/advanced/plugins/#installing-a-plugin).
 To begin using Asigra services after installing the plugin, open the plugin options and click **Register**.
 A new browser tab opens to [register a user with Asigra](https://licenseportal.asigra.com/licenseportal/user-registration.do).
 
