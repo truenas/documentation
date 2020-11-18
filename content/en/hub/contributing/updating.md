@@ -34,7 +34,7 @@ As long as the new image name is the same as the old image, the old image will b
 
 ## Forking the Repo
 
-To submit a change, you'll create a simple copy ("fork") the main repository, edit your copy, then propose "merging" your changes back into the main repository.
+To submit a change, you'll create a simple copy ("fork") of the main repository, edit your copy, then propose "merging" your changes back into the main repository.
 To start, click the **Edit this Page** link in the top right of the site. 
 
 <img src="/images/forking-contribution-00.PNG" width='700px'>
@@ -67,7 +67,7 @@ When the changes are complete, add a quick overview of what changes were made in
 
 When the page refreshes the changes are complete in your forked repository.
 Now you can request merging these changes main repository using a "Pull Request" (PR).
-Click on **Pull Requests**
+Click on **Pull Requests**.
 
 <img src="/images/forking-contribution-04.PNG" width='700px'>
 <br><br>
