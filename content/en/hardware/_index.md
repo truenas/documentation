@@ -49,6 +49,22 @@ Legacy documentation for discontinued iXsystems products is also archived here.<
 	</div>
 </div>
 
+## R-Series
+
+<div class="hubrow">
+	<div class="imgcolumn">
+		<img src="/images/HeroR50andR40.png">
+	</div>
+	<div class="textcolumn">
+		<p>The TrueNAS R-Series is a family of single controller systems that leverage ZFS and TrueNAS to provide the industry's best storage value. Models range from hybrid or all-flash configurations in 1U, 2U, and 4U form factors. Individual system specifications are highly customizable, with expansion shelves, Fibre Channel, CPU options, and Read & Write Cache SSDs supported.
+		<br>
+		A single R50 array can support up to two petabytes of raw capacity and grow HDD capacity at less than $50/TB. All-Flash options can grow at less than $200/TB.
+		</p>
+		<p><a href="/hardware/r-series/RSeriesBSG/">R-Series Basic Setup Guide</a></p>
+		<a class="linkbutton" href="/hardware/r-series/">TrueNAS R-Series</a>
+	</div>
+</div>
+
 ## X-Series
 
 <div class="hubrow">
