@@ -34,7 +34,7 @@ As long as the new image name is the same as the old image, the old image will b
 
 ## Forking the Repo
 
-To submit a change, you'll create a simple copy ("fork") the main repository, edit your copy, then propose "merging" your changes back into the main repository.
+To submit a change, you'll create a simple copy ("fork") of the main repository, edit your copy, then propose "merging" your changes back into the main repository.
 To start, click the **Edit this Page** link in the top right of the site. 
 
 <img src="/images/forking-contribution-00.PNG" width='700px'>
@@ -43,7 +43,17 @@ To start, click the **Edit this Page** link in the top right of the site.
 To fork the repo to your GitHub account, click the green **Fork this repository** button.
 
 <img src="/images/forking-contribution-01.PNG" width='700px'>
-<br><br>
+<br>
+
+{{% pageinfo %}}
+If you already have a fork of the documentation repository, it is recommended to sync your fork before continuing on to make changes:
+* Open your fork repository, typically found by opening the GitHub profile drop down and clicking **Your repositories**.
+* Find the sync status bar and click **Pull request**.
+* Set the *base repository* to your fork and the *head repository* to freenas/documentation. You might need to click **compare across forks** first.
+  <img src="/images/GitHubCompareFork.png">
+  <br>
+* Click **Create pull request** and continue to merge the pull request.
+{{% /pageinfo %}}
 
 Edit the page as needed.
 
@@ -57,7 +67,7 @@ When the changes are complete, add a quick overview of what changes were made in
 
 When the page refreshes the changes are complete in your forked repository.
 Now you can request merging these changes main repository using a "Pull Request" (PR).
-Click on **Pull Requests**
+Click on **Pull Requests**.
 
 <img src="/images/forking-contribution-04.PNG" width='700px'>
 <br><br>
