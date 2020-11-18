@@ -5,65 +5,84 @@ weight: 1
 tags: ["ZFS", "zpool"]
 ---
 
-Perhaps the most important part about TrueNAS is the ability to efficiently store and share large amounts of data.
-The way this is accomplished is through setting up [ZFS Pools](https://en.wikipedia.org/wiki/ZFS#Data_structures:_Pools,_datasets_and_volumes "ZFS Pools Wikipedia").
+TrueNAS uses ZFS data storage pools to efficiently store and protect your information.
+Storage pools are a collection of attached drives that are organized into virtual devices (vdevs).
+Data in a storage pool is periodically reviewed and "healed" whenever a bad block is discovered.
+Drives can be arranged inside vdevs to provide varying amounts of redundancy to prevent catastrophic data loss in the event a drive fails.
+Pools also support additional features to help maximize the read and write performance of data.
+
+Before creating a storage pool, it is recommended to review the available system resources and plan out your specific use case.
+Is the information being stored critical and thus more drives are needed to provide redundancy?
+Does the total available storage need to be maximized at the expense of redundancy or performance?
+Are there additional SSD drives available for maximizing pool performance?
+Determining your specific storage requirements is a critical step before creating a pool.
 
 ## Creating a new Pool
 
-To set up a pool in TrueNAS, go to **Storage > Pools** and click *ADD*.
+To create a new pool, log in to the web interface, go to **Storage > Pools**, and click **ADD**.
 
-<img src="/images/pools-list.png">
+<img src="/images/CreatePool.png">
 <br><br>
 
-Set *Create a new pool* and click *CREATE POOL*.
+Set *Create new pool* and click **CREATE POOL** to open the **Pool Manager**.
+
+<img src="/images/PoolManager.png">
+<br><br>
 
 First, enter a name for the pool.
-If you want to encrypt the data for additional security, set the *Encryption* option.
-Be aware that this can also complicate how data is retrieved and has some risks.
+If you want to encrypt the data for additional security, set *Encryption*.
+Be aware that this also complicates how data is retrieved and has some risks.
 Refer to the [Encryption article]({{< ref "encryption.md" >}}) for more details.
 
 Now configure the virtual devices (vdevs) that make up the pool.
-The TrueNAS web interface can simplify this by recommending a vdev layout based on the number of available disks.
-Click *SUGGEST LAYOUT* to add all same-sized disks in an ideal configuration for data redundancy and performance.
-
+Click **SUGGEST LAYOUT** to add all same-sized disks in an ideal configuration for balanced data redundancy and performance.
 To manually add disks in a vdev, select the disks to add and click <i class="fas fa-arrow-right" aria-hidden="true" title="Right Arrow"></i>.
+To see more details about a disk, click the `>` in a disk's row.
 
-TrueNAS helpfully suggests a vdev layout based on the number of disks added to the vdev.
-For example, if two disks are added, TrueNAS automatically configures the VDEV as a mirror (one redundant disk).
-To change the vdev layout, open the *Data VDevs* list and select the desired layout.
-Note that a stripe is never recommended for storing critical data, as a single disk failure can result in losing all data in that vdev.
+The pool manager suggests a vdev layout based on the number of disks added to the vdev.
+For example, if two disks are added, TrueNAS automatically configures the vdev as a *mirror*, where the total available storage is the size of one added disk and the other disk provides redundancy.
+To change the vdev layout, open the *Data VDevs* list and select the desired layout:
+
+* *Stripe*: each disk is used to store data. Requires at least one disk and has no data redundancy.
+* *Mirror*: data is identical in each disk. Requires at least two disks and has the most redundancy.
+* *RAIDZ1*: one disk is used to maintain data and all other disks are used to store data. Requires at least three disks.
+* *RAIDZ2*: two disks are used to maintain data and all other disks are used to store data. Requires at least four disks. 
+* *RAIDZ3*: three disks are used to maintain data and all other disks are used to store data. Requires at least five disks.
+
+**A stripe is never recommended for storing critical data as a single disk failure can result in losing all data in that vdev.**
 
 A vdev layout can be duplicated by clicking *REPEAT*.
-If more disks are available and equal in size, the *REPEAT* button creates another vdev with an identical configuration.
-Thus, it creates a mirror of vdevs.
-Otherwise, another vdev can be added by clicking *ADD DATA* and adding disks as was done in the first vdev.
+If more disks are available and equal in size, the *REPEAT* button creates another vdev with an identical configuration called a "mirror" of vdevs.
+Otherwise, another vdev can be added by clicking *ADD DATA* and adding disks manually.
 
 {{% alert title="Warning" color=warning %}}
 It is not recommended to have multiple data vdevs with different numbers of disks.
 Adding multiple vdevs with different layouts to a pool is not supported.
 Create a new pool for the different layout.
-For example, "pool1" has a data vdev in a *mirror* layout, so create "pool2" for any *raid-z* vdevs.
+For example, *Pool1* has a data vdev in a *mirror* layout, so create *pool2* for any **raid-z** vdevs.
+
+<img src="/images/MirrorPoolExample.png" size="50%">
+<br>
 {{% /alert %}}
 
-<img src="/images/pools-vdevs.png">
-<br>
+### Additional Vdev Types
 
-### Adding Cache or Log Devices
+There are additional kinds of vdevs that can be used to add features to the pool:
 
-An SSD cache or log device can be added during or after pool creation to improve performance of the pool under specific use cases. Before adding a cache or log device, refer to the [ZFS Primer](/hub/additional-topics/reference/zfs-references/) to determine if the system will benefit or suffer from the addition of the device.
+* *Cache*: ZFS L2ARC read-cache that can be used with fast devices to accelerate read operations. Optional vdev that is removable after pool creation.
+* *Log*: ZFS LOG device that can improve speeds of synchronous writes. Optional write-cache that is removable after pool creation.
+* *Hot Spare*: Drive reserved for inserting into DATA pool vdevs when an active drive has failed.
+  The hot spare is temporarily used as a replacement for the failed drive to prevent a larger pool and data loss scenario.
+  If the failed drive in the pool is replaced with a new drive, the hot spare reverts to an inactive state and is available again as a hot spare.
+  If the failed drive is detached from the pool, the temporary spare is promoted to a full member of the pool and will no longer be available as a hot spare.
+* *Metadata*: Special Allocation class used to create [Fusion pools](/hub/initial-setup/storage/fusion-pool/). Optional vdev type used to speed up metadata and small block I/O.
+* *Dedup*: Stores de-duplication tables. These vdevs must be sized to X GiB for X TiB of general storage.
 
-To add a Cache or Log device during pool creation, click the **Add Cache** or **Add Log** button. Select the disk from `Available Disks` and use the <i class="fas fa-arrow-right" aria-hidden="true" title="Right Arrow"></i>&nbsp (right arrow) next to `Cache VDev` or `Log VDev` to add it to that section.
+An SSD cache or log device can be added during or after pool creation to improve performance of the pool under specific use cases.
+Before adding a cache or log device, refer to the [ZFS Primer](/hub/additional-topics/reference/zfs-references/) to determine if the system will benefit or suffer from the addition of the device.
 
-To add to an existing pool, extend that pool and follow the same procedure.
-
-#### Advanced Options
-
-| Setting            | Value          | Advanced Mode | Description |
-| Block size         | drop-down menu | ✓             | The default is *Inherit*, other options include, *4KiB*, *8KiB*, *16KiB*, *32KiB*, *64KiB*, *128KiB*|
-
-#### Removing Cache or Log Devices
-
-Cache or log devices can be removed by going to **Storage** > **Pools**. Choose the desired pool and click <i class="fas fa-cog" aria-hidden="true" title="Settings"></i>&nbsp (Settings) > **Status**. Choose the log or cache device to remove, then click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp (Options) > **Remove**.
+To add a different kind of vdev during pool creation, click **ADD VDEV** and select the type from the drop down.
+Select disks from `Available Disks` and use the <i class="fas fa-arrow-right" aria-hidden="true" title="Right Arrow"></i> (right arrow) next to the new **VDev** to add it to that section.
 
 ## Importing a Pool
 

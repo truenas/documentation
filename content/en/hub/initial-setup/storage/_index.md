@@ -1,5 +1,5 @@
 ---
-title: "Configuring Storage"
+title: "Storage"
 description: "Initial storage configuration procedures."
 weight: 50
 ---
