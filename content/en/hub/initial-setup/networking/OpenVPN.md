@@ -37,9 +37,7 @@ Because using a VPN involves connecting to a private network while still sending
 While not required, these security options help protect the data being sent into or out of the private network.
 
 * **Authentication Algorithm**: This is used to validate packets that are sent over the network connection. Your network environment might require a specific algorithm. If no specific algorithm is required, *SHA1 HMAC* is a standard default algorithm.
-
 * **Cipher**: This is an algorithm to encrypt data packets sent through the connection. While not required, choosing a **Cipher** can increase connection security. You might need to verify which ciphers are required for your networking environment. If there are no specific cipher requirements, *AES-256-GCM* is a good default choice.
-
 * **TLS Encryption**: When the **TLS Crypt Auth Enabled** checkbox is set, all TLS handshake messages are encrypted to add another layer of security. This requires a static key that is shared between OpenVPN server and clients.
 
 ## OpenVPN Server
