@@ -7,7 +7,7 @@ A virtual private network (VPN) is an extension of a private network over public
 It allows clients to securely connect to a private network even when they are remotely using a public network.
 TrueNAS provides [OpenVPN](https://openvpn.net/) as a system level service to provide VPN Server or Client functionality.
 This means you can configure TrueNAS to act as a primary VPN server to allow remote clients access to data stored on the system using a single TCP or UDP port.
-Alternately, TrueNAS can be integrated into a private network, even when the system is in a separate physical location or only has access to a public.
+Alternately, TrueNAS can be integrated into a private network, even when the system is in a separate physical location or only has access to publicly visible networks.
 
 Before configuring TrueNAS as either an OpenVPN Server or Client, you will need an existing public key infrastructure (PKI) with [Certificates](/hub/initial-setup/security/certificates/) and [Certificate Authorities](/hub/initial-setup/security/certificate-authorities/) created in or imported to TrueNAS.
 This allows TrueNAS to authenticate with clients or servers by confirming network credentials were signed by a valid master Certificate Authority (CA).
@@ -36,7 +36,7 @@ See the OpenVPN [Reference Manual](https://openvpn.net/community-resources/refer
 Because using a VPN involves connecting to a private network while still sending data over less secure public resources, OpenVPN includes several security options.
 While not required, these security options help protect the data being sent into or out of the private network.
 
-* **Authentication Algorithm**: This is used to validate packets that are sent over the network connection. Your network environment might require a specific algorithm. If no specific algorithm is required, *SHA1 HMAC* is a standard default algorithm.
+* **Authentication Algorithm**: This is used to validate packets that are sent over the network connection. Your network environment might require a specific algorithm. If no specific algorithm is required, *SHA1 HMAC* is a good standard algorithm to use.
 
 * **Cipher**: This is an algorithm to encrypt data packets sent through the connection. While not required, choosing a **Cipher** can increase connection security. You might need to verify which ciphers are required for your networking environment. If there are no specific cipher requirements, *AES-256-GCM* is a good default choice.
 
@@ -65,7 +65,7 @@ The **Topology** selection is automatically applied to any connected clients.
 When **TLS Crypt Auth Enabled** is set, TrueNAS generates a static key for the **TLS Crypt Auth** field after saving the options.
 To change this key, click **RENEW STATIC KEY**.
 This key is required for any clients that will connect to the server.
-It is recommended to back up the key in a secure location so that it can be provided to any client systems that will connect to this server.
+Keys are stored in the system database and are automatically included in a generated client config file, but a good general practice is to back up keys in a secure location.
 
 Finally, review the [Security Options](#security-options) and choose settings that meet your network security requirements.
 
@@ -86,7 +86,7 @@ Enter the host name or IP address of the **Remote** OpenVPN server.
 
 Continue to review and choose any other [Connection Settings](#connection-settings) that fit with your network environment and performance requirements.
 The **Device Type** must match with the OpenVPN server **Device Type**.
-**Nobind** prevents using a static IP address and port for the client. By default, this is enabled to allow the OpenVPN client and server to run concurrently.
+**Nobind** prevents using a fixed port for the client. By default, this is enabled to allow the OpenVPN client and server to run concurrently.
 
 Finally, review the [Security Options](#security-options) and choose settings that meet your network security requirements.
 When the OpenVPN server is using TLS Encryption, copy the static TLS encryption key and paste into the **TLS Crypt Auth** field.
@@ -95,5 +95,5 @@ When the OpenVPN server is using TLS Encryption, copy the static TLS encryption 
 
 When you're finished configuring the Server or Client service, click **SAVE**.
 Activate the service by clicking the *Running* toggle.
-Setting **Start Automatically** means the service starts whenever the TrueNAS system is powered on and begins to boot.
+Setting **Start Automatically** means the service starts whenever TrueNAS completes booting and the network and data pools are running.
 You can check the current state of the service by hovering over the toggle.
