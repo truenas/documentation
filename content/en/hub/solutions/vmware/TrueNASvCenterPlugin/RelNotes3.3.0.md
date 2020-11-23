@@ -6,33 +6,35 @@ tags: ["vCenter Plugin", "TrueNAS Enterprise"]
 weight: 10
 ---
 
-*November 10, 2020*
+*November 24, 2020*
 
 iXsystems is pleased to release version 3.3.0 of the TrueNAS vCenter plugin!
-This is largely a maintenance release of the plugin, designed to improve overall plugin functionality and add support for TrueNAS 12.0 host systems.
+This is a significant maintenance release of the plugin, designed to improve functionality and add support for TrueNAS 12.0 host systems.
 The most notable improvements for the plugin in this release are:
 
-<ul style="list-style: none;">
+<ul>
 	<li>API calls have been converted to the 2.0 TrueNAS RestAPI (<a href="https://jira.ixsystems.com/browse/VCP-78" target="_blank">VCP-78</a>)</li>
 	<li>Added support for TrueNAS hosts upgrading from 11.3 to 12.0 (<a href="https://jira.ixsystems.com/browse/VCP-81" target="_blank">VCP-81</a>)</li>
 	<li>Mount share path for NFS reflects all available pools (<a href="https://jira.ixsystems.com/browse/VCP-60" target="_blank">VCP-60</a>)</li>
 </ul>
 
+To install or update to the 3.3.0 TrueNAS vCenter plugin, please [contact iXsystems Support](/hub/initial-setup/support/#contacting-ixsystems-support).
+
 ## Changelog
 
-### Bug
+### New Feature
 
-* [VCP-84](https://jira.ixsystems.com/browse/VCP-84) - vCenter plugin not seeing HA, NFS, iSCSI
+* [VCP-13](https://jira.ixsystems.com/browse/VCP-13) - Fix vCenter Replication Remote Host Key issue
+* [VCP-20](https://jira.ixsystems.com/browse/VCP-20) - Add the default ports for the user when adding a Host in vCenter
+* [VCP-21](https://jira.ixsystems.com/browse/VCP-21) - Make an NFS share available in a TrueNAS VM with an unconfigured NIC
 
 ### Improvement
 
 * [VCP-78](https://jira.ixsystems.com/browse/VCP-78) - Convert remaining calls to v2.0
 
-### New Feature
+### Bug
 
-* [VCP-13](https://jira.ixsystems.com/browse/VCP-13) - Fix vCenter Replication Remote Host Key issue
-* [VCP-20](https://jira.ixsystems.com/browse/VCP-20) - Add the deafult ports for the user when adding a Host in vCenter
-* [VCP-21](https://jira.ixsystems.com/browse/VCP-21) - Make an NFS share available in a TrueNAS VM with an unconfigured NIC
+* [VCP-84](https://jira.ixsystems.com/browse/VCP-84) - vCenter plugin not seeing HA, NFS, iSCSI
 
 ### Defect
 
@@ -45,3 +47,8 @@ The most notable improvements for the plugin in this release are:
 * [VCP-82](https://jira.ixsystems.com/browse/VCP-82) - vCenter password not loading correctly
 * [VCP-83](https://jira.ixsystems.com/browse/VCP-83) - vCenter Alarm exceptions
 * [VCP-86](https://jira.ixsystems.com/browse/VCP-86) - Unable to Add TrueNAS Storage Provisioning
+
+## Known Issues
+
+* The plugin replication feature has been removed due to numerous long-standing issues that could not be resolved for this version of the plugin. Please continue to create replication tasks using the TrueNAS web interface.
+* *https* has been disabled for the 3.3.0 release ([VCP-105](https://jira.ixsystems.com/browse/VCP-105)). This is a known issue that is scheduled for resolution in [plugin version 4.0](https://jira.ixsystems.com/projects/VCP/versions/12108).
