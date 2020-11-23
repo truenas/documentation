@@ -89,6 +89,7 @@ Highlight a VMFS datastore from the list and click **Edit** to extend it.
 
 The new size must be larger than the current size and less than the total available capacity.
 For best performance, it is recommended to use less than *80%* of the total available size.
+Using a decimal number when extending will round the size down to the nearest 1024 bytes or whatever the configured default blocksize is for the volume.
 Click **Extend Datastore**.
 A datastore reserves some of the available space for internal use, leaving the available capacity as slightly less than the chosen amount.
 
