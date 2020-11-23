@@ -4,8 +4,6 @@ description: "Configuring Self-Encrypted Drives."
 tags: ["encryption","security"]
 ---
 
-## Self-Encrypting Drives
-
 TrueNAS version 11.1-U5 introduced Self-Encrypting Drive (SED) support.
 
 These SED specifications are supported:
@@ -26,7 +24,7 @@ TCG Pyrite [Version 1](https://trustedcomputinggroup.org/wp-content/uploads/TCG_
 
 See this Trusted Computing Group® and NVM Express® [joint white paper](https://nvmexpress.org/wp-content/uploads/TCGandNVMe_Joint_White_Paper-TCG_Storage_Opal_and_NVMe_FINAL.pdf) for more details about these specifications.
 
-TrueNAS® implements the security capabilities of [camcontrol](https://www.freebsd.org/cgi/man.cgi?query=camcontrol) for legacy devices and [sedutil-cli](https://www.mankier.com/8/sedutil-cli) for TCG devices. When managing a SED from the command line, it is recommended to use the `sedhelper` wrapper script for `sedutil-cli` to ease SED administration and unlock the full capabilities of the device. Examples of using these commands to identify and deploy SEDs are provided below.
+TrueNAS implements the security capabilities of [camcontrol](https://www.freebsd.org/cgi/man.cgi?query=camcontrol) for legacy devices and [sedutil-cli](https://www.mankier.com/8/sedutil-cli) for TCG devices. When managing a SED from the command line, it is recommended to use the `sedhelper` wrapper script for `sedutil-cli` to ease SED administration and unlock the full capabilities of the device. Examples of using these commands to identify and deploy SEDs are provided below.
 
 A SED can be configured before or after assigning the device to a pool.
 
@@ -35,6 +33,7 @@ By default, SEDs are not locked until the administrator takes ownership of them.
 A password-protected SED protects the data stored on the device when the device is physically removed from the system. This allows secure disposal of the device without having to first wipe the contents. Repurposing a SED on another system requires the SED password.
 
 ## Deploying SEDs
+
 Enter `sedutil-cli --scan` in the **Shell** to detect and list devices. The second column of the results identifies the drive type:
 
 | Character | Standard   |
@@ -63,7 +62,7 @@ Scanning for Opal compliant disks
 
 TrueNAS supports setting a global password for all detected SEDs or setting individual passwords for each SED. Using a global password for all SEDs is strongly recommended to simplify deployment and avoid maintaining separate passwords for each SED.
 
-### Setting a global password for SEDs
+### Setting a Global Password for SEDs
 
 Go to **System > Advanced > SED Password** and enter the password. **Record this password and store it in a safe place!**
 
@@ -80,7 +79,7 @@ da11                 [OK]
 
 Rerun `sedhelper setup <password>` every time a new SED is placed in the system to apply the global password to the new SED.
 
-### Creating separate passwords for each SED
+### Creating Separate Passwords for Each SED
 
 Go to **Storage > Disks**. Click the three dot menu (Options) for the confirmed SED, then **Edit**. Enter and confirm the password in the `SED Password` and `Confirm SED Password fields`.
 

@@ -30,7 +30,7 @@ Only one overprovision/underprovision operation can occur per power cycle.
 {{% /pageinfo %}}
 
 Once this value is applied, the overprovision value is applied whenever a pool is created with a SLOG device.
-It is impossible to restore an overprovisioned SLOG device back to original capacity without running `disk_resizel` after first destroying the pool it was part of and issuing a full power cycle.
+It is impossible to restore an overprovisioned SLOG device back to original capacity without running `disk_resize` after first destroying the pool it was part of and issuing a full power cycle.
 
 The overprovision setting can be erased and set to *none* to prevent future SLOG devices from being overprovisioned.
 

@@ -4,6 +4,7 @@ description: "Running updates about TrueNAS SCALE Nightly status and current iss
 ---
 
 #### Recent Updates
+> 11/17/2020 - Update Debian base image, SCALE now includes Kernel 5.9.0 as well as more updated versions of K8s, Docker, KVM and more.
 
 > 10/29/2020 - Updated [Kubernetes Workload Usage](#using-kubernetes) information, providing examples of deploying Docker images on SCALE
 
@@ -187,6 +188,18 @@ Here is an example of rolling back the chart release to a previous chart version
 
 ```
 midclt call -job chart.release.rollback 'plex' '{"item_version": "2010.0.1"}'
+```
+
+To pull latest version of a container image:
+
+```
+midclt call -job docker.images.pull '{"from_image": "plexinc/pms-docker", "tag": "latest"}'
+```
+
+To redeploy a chart release, I.E. after pulling a newer container image:
+
+```
+midclt call -job chart.release.redeploy plex
 ```
 
 ### Using Kubernetes via CLI

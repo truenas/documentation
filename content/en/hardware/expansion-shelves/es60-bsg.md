@@ -1,6 +1,7 @@
 ---
 title: "ES60 Basic Setup Guide"
 tags: ["TrueNAS Products"]
+weight: 30
 ---
 
 <object data="https://www.truenas.com/docs/files/ES60BSGv1_8.pdf" type="application/pdf" width="95%" height="1000">
