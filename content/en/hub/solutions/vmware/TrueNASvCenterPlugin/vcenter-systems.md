@@ -15,14 +15,14 @@ The images in this guide show vCenter 6.7, but versions 7.0 and 6.5 offer a simi
 
 In a browser, go to your vCenter Server web interface, log in, and click *Menu > Global Inventory Lists > Manage TrueNAS > + Add host* to add TrueNAS hosts to vCenter.
 
-<img src="/images/vcp-10.PNG">
+<img src="/images/VCP-AddHost.png">
 <br><br>
 
 Fill in the required information.
-*HTTPS* is currently unavailable, but is planned for a future release.
+*HTTPS* is currently unavailable, but is planned for a future release ([VCP-105](https://jira.ixsystems.com/browse/VCP-105)).
 Click **Add Host** and the TrueNAS hostname or IP address appears in the list of connected systems.
 
-<img src="/images/vcp-11.PNG">
+<img src="/images/VCP-HostList.png">
 <br><br>
 
 Right-click a list entry to see options to edit the host user credentials or remove that host from vCenter.
@@ -37,7 +37,7 @@ The system management screen shows a summary and options to modify the system.
 Click **Summary** to view basic information about this system.
 The IP address, installed version of TrueNAS, storage availability, and system service status are shown.
 
-<img src="/images/vcp-12.PNG">
+<img src="/images/VCP-HostSummary.png">
 <br><br>
 
 ## Configure

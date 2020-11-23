@@ -8,16 +8,18 @@ weight: 40
 A snapshot is a read-only copy of a file system or volume.
 Snapshots require little disk space and can be used to restore a datastore to an earlier point in time.
 See [Overview of ZFS Snapshots](https://docs.oracle.com/cd/E23824_01/html/821-1448/gbciq.html) for more details.
-Select a datastore from the list and click **Create Snapshot**.
+
+To create a snapshot, select a datastore from the list and click **Create Snapshot**.
 Enter a name for the snapshot.
 Click **Create**.
 View created snapshots in the *Snapshot* menu.
 
 ## Snapshot Menu
 
-This list shows all manually or automatically created snapshots. Create snapshots in the *Datastore* and *Scheduling* menus.
+This list shows all manually or automatically created snapshots.
+Create snapshots in the *Datastore* and *Scheduling* menus.
 
-<img src="/images/vcp-19.PNG">
+<img src="/images/VCP-Snapshots.png">
 <br><br>
 
 *Revert* resets a datastore to the state saved by the selected snapshot.
@@ -34,13 +36,13 @@ The *Scheduling* tab is used to create, edit, and delete periodic snapshot sched
 Schedules are synchronized between vCenter and the individual TrueNAS web interface.
 Click **+** to begin creating a new snapshot schedule.
 
-<img src="/images/vcp-20.PNG">
+<img src="/images/VCP-PeriodicSnapshots.png">
 <br><br>
 
 | Setting   | Value                     | Description                                                                                                                                                         |
 |-----------|---------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Datastore | dropdown menu             | The datastore to snapshot. Choose a created datastore from the drop-down list.                                                                                      |
-| Recursive | checkbox                  | Set this to include child datasets in the snapshot.                                                                                                                 |       
+| Recursive | checkbox                  | Set to include child datasets in the snapshot.                                                                                                                      |
 | Lifetime  | integer and dropdown menu | The amount of time to keep snapshots created by this schedule. Enter a number and choose a unit of time from the drop-down.                                         |
 | Begin     | dropdown menu             | When the schedule can begin snapshotting the datastore. Choose a time from the dropdown.                                                                            |
 | End       | dropdown menu             | When the schedule can no longer start snapshotting the datastore. Choose a time from the drop-down. A schedule that is already running can continue past this time. |

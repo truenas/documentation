@@ -7,7 +7,7 @@ weight: 60
 
 An administrator can grant vCenter users specific role-based access to the fleet of TrueNAS systems that are managed by this plugin.
 
-<img src="/images/vcp-22.PNG">
+<img src="/images/VCP-RBAC-Roles.png">
 <br><br>
 
 | Role Name       | User is allowed to:            |
