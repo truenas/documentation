@@ -1,7 +1,7 @@
 ---
 title: "Advanced Replication"
 linkTitle: "Advanced"
-description: "How to create a replication task using the advanced options."
+description: "How to create an advanced replication task."
 weight: 3
 tags: ["ZFS", "SSH"]
 ---
@@ -11,10 +11,9 @@ Requirements:
 * SSH configured with a connection to the remote system saved in **System > SSH Connections**.
 * Dataset snapshot task saved in **Tasks > Periodic Snapshot Tasks**.
 
-
 ## Process Summary
 
-Go to **Tasks > Replication Tasks**, open the wizard, and select advanced replication
+Go to **Tasks > Replication Tasks > ADD** and select **ADVANCED REPLICATION CREATION**.
 
 * General Options
   * Name the task
@@ -38,91 +37,108 @@ Go to **Tasks > Replication Tasks**, open the wizard, and select advanced replic
   * Run automatically starts the replication after a related periodic snapshot task completes
   * To automate the task according to its own schedule, set that option and define a schedule for the replication task
 
-## Advanced Replication
+## Creating an Advanced Replication Task
 
-To use the advanced editor to create a replication task, go to **Tasks > Replication Tasks**, then open the Wizard and select the advanced replication option.
+To use the advanced editor to create a replication task, go to **Tasks > Replication Tasks**, click **ADD** to open the Wizard, and click **ADVANCED REPLICATION CREATION**.
 
 <img src="/images/replication-advanced.png">
 <br><br>
 
 Options are grouped together by category.
 Options can appear, disappear, or be disabled depending on the configuration choices you make.
-It's best to start by configuring the general options first, then the transport options before configuring replication sources and destination.
+Start by configuring the *General* options first, then the *Transport* options before configuring replication *Sources* and *Destination*.
 
-Name the task. Choose whether the local system is sending or receiving snapshots, and decide what method to use for the replication.
-Each replication task name needs to be unique.
+Name the task.
+Each task name must be different from each other, and it is recommended to name it in a way that makes it easy to remember what the task is doing.
+
+Choose whether the local system is sending (*Push*) or receiving data (*Pull*) and decide what **Transport** method to use for the replication.
 
 ### Transport Options
 
-The transport selector determines the method to use for the replication.
-*SSH* is the standard option for sending or receiving snapshots from a remote system, but *SSH+NETCAT* is available for replications that take place within completely secure networks.
-*Local* is only used for replicating snapshots within the same system.
+The **Transport** selector determines the method to use for the replication.
+*SSH* is the standard option for sending or receiving data from a remote system, but *SSH+NETCAT* is available as a faster option for replications that take place within completely secure networks.
+*Local* is only used for replicating data to another location on the same system.
 
-With remote replications, configure the transport method by selecting the SSH connection to the remote system that will send or receive snapshots.
+With *SSH*-based replications, configure the transport method by selecting the **SSH Connection** to the remote system that will send or receive snapshots.
 Options for compressing data, adding a bandwidth limit, or other data stream customizations are available.
 
-<img src="/images/replication-advanced-ssh.png">
+<img src="/images/ReplicationAdvancedTransportOptions.png">
 <br><br>
 
-For the *SSH+NETCAT* method, you also need to define the addresses and ports to use for the Netcat connection.
+For *SSH+NETCAT* replications, you also need to define the addresses and ports to use for the Netcat connection.
 
-### Sources
+{{% alert title="Warning" color="warning" %}}
+**Allow Blocks Larger than 128KB** is a one-way toggle.
+Replication tasks using large block replication will only continue to work as long as this option remains enabled.
+{{% /alert %}}
 
-Sources are the datasets or zvols with snapshots to use for replication.
+### Source
+
+The replication *Source* is the datasets or zvols to use for replication.
 Select the sources to use for this replication task by opening the file browser or entering dataset names in the field.
-Pulling snapshots from a remote source requires a valid SSH connection before the source file browser can be opened.
+Pulling snapshots from a remote source requires a valid **SSH Connection** before the file browser can show any directories.
+If the file browser shows a connection error after selecting the correct **SSH Connection**, you might need to log in to the remote system and make sure it is configured to allow SSH connections.
+In TrueNAS, this is done by going to the **Services** screen, checking the **SSH** service configuration, and starting the service.
 
-By default, dataset properties are included in the snapshots that will be replicated.
-Additional options allow you to recursively replicate child dataset snapshots, or do a full replication of the source filesystem.
+<img src="/images/ReplicationAdvancedSource.png">
+<br><br>
+
+By default, the replication task will use snapshots to quickly transfer data to the receiving system.
+When **Full Filesystem Replication** is set, the chosen **Source** is completely replicated, including all dataset properties, snapshots, child datasets, and clones.
+When choosing this option, it is recommended to allocate additional time for the replication task to run.
+Leaving **Full Filesystem Replication** unset but setting **Include Dataset Properties** will include just the dataset properties in the snapshots to be replicated.
+Additional options allow you to recursively replicate child dataset snapshots or exclude specific child datasets or properties from the replication.
 
 Local sources are replicated by snapshots that were generated from a periodic snapshot task and/or from a defined naming schema that matches manually created snapshots.
 Remote sources require entering a snapshot naming schema to identify the snapshots to replicate.
 A naming schema is a collection of [strftime](https://www.freebsd.org/cgi/man.cgi?query=strftime) time and date strings and any identifiers that a user might have added to the snapshot name.
-For example, entering the naming schema *custom-%Y%m%d_%H:%M* finds and replicates snapshots like *custom-20200325_09:15*.
-Multiple custom schemas can be entered by pressing <kbd>Enter</kbd> to separate each schema.
+For example, entering the naming schema `custom-%Y%m%d_%H:%M` finds and replicates snapshots like `custom-20200325_09:15`.
+Multiple schemas can be entered by pressing <kbd>Enter</kbd> to separate each schema.
 
-To define which periodic snapshots to replicate, set the checkbox and enter a schedule. The only periodically generated snapshots that will be included in the replication task are those that match the schedule.
-Alternately, you can use your replication task schedule to determine which snapshots are replicated by setting the option in replication scheduling to only replicate snapshots matching the schedule.
+To define specific snapshots from the periodic task to use for the replication, set **Replicate Specific Snapshots** and enter a schedule.
+The only periodically generated snapshots that will be included in the replication task are those that match your defined schedule.
+Alternately, you can use your *Replication Schedule* to determine which snapshots are replicated by setting **Run Automatically**, **Only Replicate Snapshots Matching Schedule**, and defining when the replication task will run.
 
-<img src="/images/replication-advanced-sources.png">
-<br><br>
+When a replication task is having difficulty completing, it is a good idea to set **Save Pending Snapshots**.
+This will prevent the source TrueNAS from automatically deleting any snapshots that are failing to replicate to the destination system.
 
 ### Destination
 
-The destination is where replicated snapshots are stored.
-Choosing a remote destination requires an SSH connection to that system.
-Expanding the directory browser shows the current datasets or zvols that are available for replication.
-You can select a destination or manually type a path in the field.
+The destination is where replicated data is stored.
+Choosing a remote destination requires an **SSH Connection** to that system.
+Expanding the file browser shows the current datasets or zvols that are available on the destination system.
+You can click a destination or manually type a path in the field.
 Adding a name to the end of the path creates a new dataset in that location.
 
-By default, the destination dataset is reset to be **read-only** after the replication is complete.
-You can change the read-only policy to only start replication when the destination is read-only or to disable checking the dataset's read-only state.
+<img src="/images/ReplicationAdvancedDestination.png">
+<br><br>
+
+By default, the destination dataset is *SET* to be **read-only** after the replication is complete.
+You can change the **Destination Dataset Read-only Policy** to only start replication when the destination is read-only (*REQUIRE*) or to disable checking the dataset's read-only state (*IGNORE*).
+
+**Encryption** adds another layer of security to replicated data by encrypting the data before transfer and decrypting it on the destination system.
+Setting the checkbox adds more options to choose between using a *HEX* key or defining your own encryption *PASSPHRASE*.
+The encryption key can be stored either in the TrueNAS system database or in a custom-defined location.
 
 {{% alert title="Warning" color="warning" %}}
-Synchronizing the destination snapshots with the sources **destroys** any snapshots in the destination that do not match the source snapshots.
-TrueNAS also does a full replication of the source snapshots, as if the replication task had never been run before.
+**Synchronizing Destination Snapshots With Source** **destroys** any snapshots in the destination that do not match the source snapshots.
+TrueNAS also does a full replication of the source snapshots as if the replication task had never been run before, which can lead to excessive bandwidth consumption.
 This can be a very destructive option, so be sure that any snapshots that will be deleted from the destination are obsolete or otherwise backed up in a different location.
 {{% /alert %}}
 
-
-Defining a snapshot lifetime is generally recommended to prevent cluttering the system with obsolete snapshots.
-
-<img src="/images/replication-advanced-destination.png">
-<br><br>
+Defining the **Snapshot Retention Policy** is generally recommended to prevent cluttering the system with obsolete snapshots.
+Choosing *Same as Source* will keep the snapshots on the destination system for the same amount of time as the defined **Snapshot Lifetime** from the source system periodic snapshot task.
+You can also define your own *Custom* lifetime for snapshots on the destination system.
 
 ### Schedule
 
-Setting the task to run automatically starts the replication immediately after the related periodic snapshot task is complete.
-Alternately, you can schedule the replication to run at a separate time by setting that option and defining a schedule with begin and end times for the task.
+By default, setting the task to **Run Automatically** will start the replication immediately after the related periodic snapshot task is complete.
+Setting the **Schedule** checkbox allows scheduling the replication to run at a separate time.
+You will need to define a specific time for the replication task to run.
+It is recommended to choose a time frame that both gives the replication task enough time to finish and is during a time of day when network traffic for both source and destination systems is minimal.
 Using the custom scheduler is recommended when you need to fine-tune an exact time or day for the replication.
 
-There is also an option to use this schedule instead of also defining a schedule of periodic snapshots to replicate.
+Setting **Only Replicate Snapshots Matching Schedule** restricts the replication to only replicate those snapshots created at the same time as the replication schedule.
 
-<img src="/images/replication-advanced-schedule.png">
+<img src="/images/ReplicationAdvancedSchedule.png">
 <br><br>
-
-## Advanced Option Notes
-
-The **Allow Blocks Larger than 128KB** option is a one-way toggle. Replication tasks using large block replication will only continue to work as long as this option remains enabled.
-
-
