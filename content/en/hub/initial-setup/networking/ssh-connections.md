@@ -25,7 +25,7 @@ When TrueNAS is used as an SSH server, the users in the network must use [SSH cl
 * [Restricting Command Line Users to *scp* or *sftp*](#restricting-command-line-users-to-scp-or-sftp)
   * This only works for users that use command line versions of *scp* and *sftp*.
   * Go to **Accounts > Users** and edit the user account that must be restricted.
-    * Change the user's shell to *scponly*
+    * Change the user's shell to *scponly*.
 
 * [Creating an SSH Keypair](#creating-an-ssh-keypair)
   * Can be automatically generated as part of creating a replication or SSH connection.
@@ -35,7 +35,7 @@ When TrueNAS is used as an SSH server, the users in the network must use [SSH cl
     * Key values can be copied to the clipboard or downloaded as text files.
 
 * [SSH Connections: Semi-Auto Setup](#creating-a-semi-automatic-connection-between-two-truenas-systems)
-  * Only possible between FreeNAS or TrueNAS systems
+  * Only possible between FreeNAS or TrueNAS systems.
   * **System > SSH Connections**
   * Requires the remote system have SSH root access enabled in Services > SSH.
   * Enter hostname or IP address of the remote FreeNAS or TrueNAS system.
@@ -53,7 +53,7 @@ When TrueNAS is used as an SSH server, the users in the network must use [SSH cl
     * Go to **Accounts > Users** and edit the root account.
     * Paste the Public Key text into the SSH Public Key box and click Save.
   * Local system
-    * Go to **System > SSH Connections > ADD**
+    * Go to **System > SSH Connections > ADD**.
       * Setup Method = Manual
       * Enter the hostname or IP address of the remote system that has the public SSH key.
       * Private Key: Select the Keypair that was used to copy the SSH key to the remote system.
@@ -61,7 +61,7 @@ When TrueNAS is used as an SSH server, the users in the network must use [SSH cl
 
 ## Allowing SSH Access to TrueNAS
 
-Configuring and activating the SSH service is done on the **Services** page
+Configuring and activating the SSH service is done on the **Services** page.
 
 <img src="/images/services.png">
 <br><br>
