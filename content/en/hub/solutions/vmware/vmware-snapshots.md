@@ -1,7 +1,7 @@
 ---
 title: "VMware Snapshots"
 description: "Snapshotting VMware Instances" 
-tags: ["ZFS", "Snapshots"]
+tags: ["VMware","ZFS","Snapshots"]
 ---
 
 **Storage** > **VMware-Snapshots** is used to coordinate ZFS snapshots when using TrueNAS as a VMware datastore. When a ZFS snapshot is created, TrueNAS automatically snapshots any running VMware virtual machines before taking a scheduled or manual ZFS snapshot of the dataset or zvol backing that VMware datastore. Virtual machines **must be powered on** for TrueNAS snapshots to be copied to VMware. The temporary VMware snapshots are then deleted on the VMware side but still exist in the ZFS snapshot and can be used as stable resurrection points in that snapshot. These coordinated snapshots are listed in the **Storage > Snapshots** list.
