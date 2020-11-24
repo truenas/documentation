@@ -43,7 +43,7 @@ There are a few changes you can make in TrueNAS to ensure both systems are set t
   <img src="/images/system-general-timezone.png">
   <br><br>
 
-* Set either localtime or universal time in your system BIOS
+* Set either localtime or universal time in your system BIOS.
 
 ## Connect to Active Directory Domain
 
@@ -89,7 +89,7 @@ You can go to the **Shell** and enter various commands to get more details about
   If `wbinfo -u` shows more users than appear to be available when configuring permissions and the TrueNAS cache is enabled, go to **Directory Services > Active Directory** and increase the *AD Timeout* value.
 * View AD groups: `wbinfo -g`.
   To see more details, enter `getent group DOMAIN\\domain\ users`.
-* View domains: `wbinfo -m`
+* View domains: `wbinfo -m`.
 * Test AD connection: `wbinfo -t`. A successful test shows a message similar to `checking the trust secret for domain YOURDOMAIN via RPC calls succeeded`.
 * User connection test to an SMB share: `smbclient '//127.0.0.1/smbshare -U AD01.LAB.IXSYSTEMS.COM\ixuser`, replacing `127.0.0.1` with your server address, `smbshare` with the SMB share name, `AD01.LAB.IXSYSTEMS.COM` with your trusted domain, and `ixuser` with the user account name for authentication testing.
 
