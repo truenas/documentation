@@ -16,7 +16,7 @@ TrueNAS allows configuring both Kerberos realms and keytabs.
 
  **Directory Services** > **Kerberos Realms** can be used to view and add Kerberos realms. If the network contains a Key Distribution Center (KDC), click `ADD` to add the realm. 
 
-<img src="/images/TN-12.0-directory-services-kerberos-realms-add.png" width='700px'>
+<img src="/images/DirectoryServicesKerberosRealmsAdd.png">
 <br><br>
 
 ### Kerberos Realm Options
@@ -33,9 +33,11 @@ Some settings are only available in Advanced Mode. To see these settings, either
 
 ## Kerberos Keytabs
 
-Kerberos keytabs are used to do Active Directory or LDAP joins without a password. This means the password for the Active Directory or LDAP administrator account does not need to be saved into the TrueNAS configuration database, which is a security risk in some environments.
+Kerberos keytabs are for joining Active Directory or LDAP without a password.
+This means the password for the Active Directory or LDAP administrator account is not saved in the TrueNAS system database, which can be seen as a security risk in some environments.
 
-When using a keytab, it is recommended to create and use a less privileged account for performing the required queries as the password for that account will be stored in the TrueNAS configuration database. To create the keytab on a Windows system, use the [ktpass](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/ktpass) command:
+When using a keytab, it is recommended to create and use a less privileged account for performing the required queries as the password for that account is stored in the TrueNAS system database.
+To create the keytab on a Windows system, use the [ktpass](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/ktpass) command:
 
 `ktpass.exe /out freenas.keytab /princ http/useraccount@EXAMPLE.COM /mapuser useraccount /ptype KRB5_NT_PRINCIPAL /crypto ALL /pass userpass`
 
@@ -56,20 +58,19 @@ Setting `/crypto` to *ALL* allows using all supported cryptographic types. These
 
 This will create a keytab with sufficient privileges to grant tickets.
 
-After the keytab is generated, add it to the TrueNAS system using **Directory Services** > **Kerberos Keytabs** > **Add Kerberos Keytab**.
+After the keytab is generated, add it to the TrueNAS system using **Directory Services > Kerberos Keytabs > Add Kerberos Keytab**.
 
-To instruct the Active Directory service to use the keytab, select the installed keytab using the drop-down `Kerberos Principal` menu in **Directory Services** > **Active Directory** Advanced Mode. When using a keytab with Active Directory, make sure that username and userpass in the keytab matches the Domain Account Name and Domain Account Password fields in **Directory Services** > **Active Directory**.
+To instruct the Active Directory service to use the keytab, select the installed keytab using the drop-down **Kerberos Principal** in **Directory Services > Active Directory > Advanced Mode**.
+When using a keytab with Active Directory, make sure that *username* and *userpass* in the keytab matches the **Domain Account Name** and **Domain Account Password** fields in **Directory Services > Active Directory**.
 
-To instruct LDAP to use a principal from the keytab, select the principal from the drop-down `Kerberos Principal` menu in Directory Services ➞ LDAP Advanced Mode.
+To instruct LDAP to use a principal from the keytab, use the **Kerberos Principal** drop down in **Directory Services > LDAP > Advanced Mode**.
 
 ## Kerberos Settings
 
-Configure additional Kerberos parameters in the **Directory Services** >  **Kerberos Settings** section. 
+Additional Kerberos options are in **Directory Services > Kerberos Settings**.
 
-<img src="/images/TN-12.0-directory-services-kerberos-settings.png" width='700px'>
+<img src="/images/DirectoryServicesKerberosSettings.png">
 <br><br>
-
-Notes:
 
 + **Appdefaults Auxiliary Parameters**: Define any additional settings for use by some Kerberos applications. The available settings and syntax is listed in the [[appdefaults] section of krb.conf(5)](http://web.mit.edu/kerberos/krb5-1.12/doc/admin/conf_files/krb5_conf.html#appdefaults).
 
