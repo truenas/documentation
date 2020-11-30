@@ -1,7 +1,7 @@
 ---
 title: "TrueNAS Datastores"
 description: "How to add and modify TrueNAS datastores in vCenter."
-tags: ["vCenter Plugin", "TrueNAS Enterprise"]
+tags: ["VMware", "TrueNAS Enterprise"]
 weight: 40
 ---
 

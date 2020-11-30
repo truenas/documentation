@@ -1,7 +1,7 @@
 ---
 title: "TrueNAS Snapshots"
 description: "How to schedule and manage data snapshots in vCenter."
-tags: ["vCenter Plugin", "TrueNAS Enterprise"]
+tags: ["VMware", "TrueNAS Enterprise"]
 weight: 40
 ---
 
