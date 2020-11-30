@@ -15,27 +15,27 @@ Requirements:
 
 Go to **Tasks > Replication Tasks > ADD** and select **ADVANCED REPLICATION CREATION**.
 
-* General Options
-  * Name the task
-  * Select Push or Pull for the local system
-  * Select a replication transport method
-    * SSH is recommended
-    * SSH+Netcat is used for secured networks
-    * Local is for in-system replication
-* Configure the replication transport method
-  * Remote options require an SSH connection
-  * SSH+Netcat requires defining netcat ports and addresses
-* Sources
-  * Select sources for replication
-  * Choose a periodic snapshot task as the source of snapshots to replicate
-  * Remote sources require defining a snapshot naming schema
-* Destination
-  * Remote destination requires an SSH connection
-  * Select a destination or type a path in the field
-  * Define how long to keep snapshots in the destination
-* Scheduling
-  * Run automatically starts the replication after a related periodic snapshot task completes
-  * To automate the task according to its own schedule, set that option and define a schedule for the replication task
+* General Options:
+  * Name the task.
+  * Select Push or Pull for the local system.
+  * Select a replication transport method.
+    * SSH is recommended.
+    * SSH+Netcat is used for secured networks.
+    * Local is for in-system replication.
+* Configure the replication transport method:
+  * Remote options require an SSH connection.
+  * SSH+Netcat requires defining netcat ports and addresses.
+* Sources:
+  * Select sources for replication.
+  * Choose a periodic snapshot task as the source of snapshots to replicate.
+  * Remote sources require defining a snapshot naming schema.
+* Destination:
+  * Remote destination requires an SSH connection.
+  * Select a destination or type a path in the field.
+  * Define how long to keep snapshots in the destination.
+* Scheduling:
+  * Run automatically starts the replication after a related periodic snapshot task completes.
+  * To automate the task according to its own schedule, set that option and define a schedule for the replication task.
 
 ## Creating an Advanced Replication Task
 
