@@ -35,7 +35,7 @@ For example, saving an Amazon S3 credential on TrueNAS could require logging in 
 To save cloud storage provider credentials, go to *System > Cloud Credentials* and click *Add*.
 
 <figure>
-  <img src="/images/cloud-credentials-add.png">
+  <img src="/images/S3CloudCred.png">
   <figcaption>New Cloud Credential</figcaption>
 </figure>
 
