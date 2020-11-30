@@ -16,14 +16,14 @@ To streamline creating simple replication configurations, the replication wizard
   * Choose sources for snapshot replication.
     * Remote sources require an SSH connection.
     * TrueNAS shows how many snapshots will be replicated.
-  * Define the snapshot destination
+  * Define the snapshot destination.
     * A remote destination requires an SSH connection.
     * Choose destination or define manually by typing a path.
       * Adding a new name on the end of the path creates a new dataset.
-  * Choose replication security
+  * Choose replication security.
     * Replication with encryption is always recommended.
     * Disabling encryption is only meant for absolutely secure networks.
-  * Schedule the replication
+  * Schedule the replication.
     * Schedule can be standardized presets or a custom defined schedule.
     * Running once runs the replication immediately after creation.
       * Task is still saved and can be rerun or edited.
