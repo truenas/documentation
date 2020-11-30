@@ -58,6 +58,7 @@ Alert icons indicate notification, warning, critical, and one-shot critical aler
 An automatic script sends a nightly email to the administrator (root) account containing important information such as the health of the disks.
 Alert events are also emailed to the root user account.
 
+
 > [Scrub Task](/hub/tasks/scheduled/scrub/) issues and [S.M.A.R.T. reports](/hub/tasks/scheduled/smart/) are mailed separately to the address configured in those services.
 
 The administrator typically does not read emails directly on the system.
@@ -73,22 +74,19 @@ Additional configuration is done from **System > Email**.
 <img src="/images/TN-12.0-email.PNG">
 <br><br>
 
-### Email Configuration Settings
+
+### SMTP Authentication Settings
 
 | Setting              | Value                | Description                                                                                                                                                                  |
 |----------------------|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| From E-mail          | string               | The envelope From address shown in the email. This can be set to make filtering mail on the receiving system easier.                                                         |
-| From Name            | string               | The friendly name to show in front of the sending email address.                                                                                                             |
 | Outgoing Mail Server | string or IP address | Hostname or IP address of SMTP server used for sending this email.                                                                                                           |
-| Mail Server Port     | integer              | SMTP port number. Typically 25, 465 (secure SMTP), or 587 (submission).                                                                                                      |
-| Security             | drop-down menu       | Choose an encryption type. Choices are Plain (No Encryption), SSL (Implicit TLS), or TLS (STARTTLS).                                                                         |
-| SMTP Authentication  | checkbox             | Enable or disable SMTP AUTH using PLAIN SASL. Setting this enables the required Username and optional Password fields.                                                       |
+| Mail Server Port     | integer              | SMTP port number. Typically `25`/`465` (secure SMTP), or `587` (submission).                                                                                                 |
+| Security             | drop-down menu       | Choose an encryption type. Choices are *Plain (No Encryption)*, *SSL (Implicit TLS)*, or *TLS (STARTTLS)*.                                                                   |
 | Username             | string               | Enter the SMTP username when the SMTP server requires authentication.                                                                                                        |
 | Password             | string               | Enter the SMTP account password if needed for authentication. Only plain text characters (7-bit ASCII) are allowed in passwords. UTF or composed characters are not allowed. |
 
-Click the **SEND TEST MAIL** button to verify that the configured email settings are working. If the test email fails, double-check that the *Email* field of the root user is correctly configured by clicking the **Edit** button for the root account in **Accounts > Users**.
 
-Configuring email for TLS/SSL email providers is described in [Are you having trouble getting FreeNAS to email you in Gmail?](https://forums.freenas.org/index.php?threads/are-you-having-trouble-getting-freenas-to-email-you-in-gmail.22517/).
+Click the **SEND TEST MAIL** button to verify that the configured email settings are working. If the test email fails, double-check that the *Email* field of the root user is correctly configured by clicking the **Edit** button for the root account in **Accounts > Users**.
 
 ## SNMP
 

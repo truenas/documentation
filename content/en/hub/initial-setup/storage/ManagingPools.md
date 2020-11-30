@@ -15,6 +15,17 @@ The current status and storage usage of each pool is shown.
 To see more details about a pool, click the **v** symbol on the right side of the pool entry.
 Click the <i class="fas fa-cog" aria-hidden="true" title="Settings"></i>&nbsp (Pool Actions) for all pool management options.
 
+## Pool Options
+
+Contains any additional high-level settings for the pool.
+
+<img src="/images/PoolOptions.png">
+<br><br>
+
+**Auto TRIM** allows TrueNAS to periodically check the pool disks for storage blocks that can be reclaimed.
+This can have a performance impact on the pool, so the option is disabled by default.
+For more details about TRIM in ZFS, see the `autotrim` property description in [zpool.8](https://zfsonlinux.org/manpages/0.8.1/man8/zpool.8.html).
+
 ## Export/Disconnect
 
 Removes the pool from the system.
