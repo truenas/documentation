@@ -8,11 +8,11 @@ tags: ["ZFS", "Snapshots", "VMware"]
 When a ZFS snapshot is created, TrueNAS automatically snapshots any running VMware virtual machines before taking a scheduled or manual ZFS snapshot of the dataset or zvol backing that VMware datastore.
 Virtual machines **must be powered on** for TrueNAS snapshots to be copied to VMware.
 The temporary VMware snapshots are then deleted on the VMware side but still exist in the ZFS snapshot and can be used as stable resurrection points in that snapshot.
-These coordinated snapshots are listed in the **Storage > Snapshots** list.
+These coordinated snapshots are listed in the **Storage** > **Snapshots** list.
 
 ## Creating a VMware Snapshot
 
-Go to **Storage > VMware Snapshots** and click **ADD** to create a new VMware snapshot.
+Go to **Storage** > **VMware Snapshots** and click **ADD** to create a new VMware snapshot.
 
 <img src="/images/VMwareSnapshotsAdd.png">
 <br><br>
