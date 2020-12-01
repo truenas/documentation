@@ -61,7 +61,7 @@ You can manage the plugin state, update the plugin application, configure the pl
 
 Plugin jails are preconfigured and typically require very little tuning, but you can reconfigure the jail properties in the event that a setting needs to change (updating the network configuration, for example).
 To update or reconfigure the plugin jail, go to the **Jails** screen and expand the entry for one of the plugin jails.
-You need to <i class="fas fa-stop" aria-hidden="true" title="Stop">&nbsp; **Stop** the jail before you can edit it.
+You need to <i class="fas fa-stop" aria-hidden="true" title="Stop"></i> stop the jail before you can edit it.
 
 <img src="/images/plugin-jail-installed.png">
 <br><br>
