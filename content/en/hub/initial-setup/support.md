@@ -12,7 +12,7 @@ TrueNAS CORE users can engage with the TrueNAS community to answer questions and
 There are a number of resources available to TrueNAS CORE users for answering usage questions or troubleshooting system configurations.
 It is always recommended to search through the software documentation and community resources for answers to these questions.
 
-Users are also welcome to report bugs and vote for or suggest new TrueNAS features in the project Jira instance.
+Users are also welcome to report bugs, vote for, or suggest new TrueNAS features in the project Jira instance.
 
 ### iX Community
 
