@@ -6,10 +6,10 @@ tags: ["networking","Samba", "personal storage"]
 
 ## Set up SMB with *Use as Home Share*
 
-TrueNAS offers the **Use as Home Share** option for organizations or SMBs looking to offer a single SMB share where each user has access to a personal directory. 
+TrueNAS offers the **Use as Home Share** option for organizations or SMEs looking to offer a single SMB share where each user has access to a personal directory. 
 
 {{% pageinfo %}}
-This feature can only be set once in TrueNAS. Should additional shares need to be set, it is possible, but on an individual share basis just as detailed in the SMB share section.
+This feature can only be set once in TrueNAS. Should additional shares need to be set, it is possible, but on an individual share basis just as detailed in the [general SMB sharing article](/hub/sharing/smb/smb-share/).
 {{% /pageinfo %}}
 
 Create a new dataset, e.g. *ourhome*. Select **SMB** as the **Share Type**. 
