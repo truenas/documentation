@@ -19,7 +19,7 @@ pipeline {
     }
     stage('Publish') {
         steps {
-            sh 'rsync -rvza -e "ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no" public/ docs@10.242.64.28:/var/www/html/docs1 --delete'
+            sh 'rsync -rvza -e "ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no" public/ docs@10.242.64.28:/var/www/html/docs1'
         }
     }
   }
