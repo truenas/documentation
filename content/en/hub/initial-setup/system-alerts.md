@@ -71,7 +71,7 @@ In the **Email** field, enter a remote email address that is regularly monitored
 
 Additional configuration is done from **System > Email**.
 
-<img src="/images/TN12-Emailsetup.PNG">
+<img src="/images/TN12-Emailsetup.png">
 <br><br>
 
 
