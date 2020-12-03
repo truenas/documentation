@@ -26,7 +26,7 @@ To configure HA, turn on both units in the array and log in to the web interface
 If this is the first login, the UI shows a dialog to upload the TrueNAS Enterprise License.
 Otherwise, go to **System > Support** and update the license.
 
-<img src="/images/ha-system-support-license.png">
+<img src="/images/TN12-HA1.png">
 <br><br>
 
 Paste the HA license received from iXsystems and save it.
@@ -44,7 +44,7 @@ If both TrueNAS controllers reboot simultaneously, the passphrase for an encrypt
 
 To make sure system networking is configured for HA, first go to **Network > Global Configuration**.
 
-<img src="/images/ha-network-globalconfig.png">
+<img src="/images/TN12-HANetwork.png">
 <br><br>
 
 You can set the host names for both controllers and a virtual host name that reaches whichever controller is currently active.
@@ -58,7 +58,7 @@ Edit the interface, then reactivate failover immediately.
 TrueNAS automatically synchronizes the configuration changes to the standby controller
 {{% /alert %}}
 
-<img src="/images/ha-network-interfaces-edit.png">
+<img src="/images/TN12-HAInterface.png">
 <br><br>
 
 You can designate the interface as critical for failover and combine multiple interfaces into a failover group.
@@ -76,7 +76,7 @@ When troubleshooting HA networking, the <code>ifconfig</code> command adds two a
 
 To make general changes to the Failover settings, go to **System > Failover**
 
-<img src="/images/ha-system-failover.png">
+<img src="/images/TN12-HAFailover.png">
 <br><br>
 
 You can manually disable failover on this screen.
