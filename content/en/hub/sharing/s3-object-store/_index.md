@@ -14,11 +14,11 @@ S3 is an object storage protocol used by many major cloud providers including Am
 
 Go to Services -> S3 and click on the pencil icon to edit.
 
-<img src="selectconfigures3.png" width="640px"><br><br>
+<img src="/images/selectconfigures3.png"><br><br>
 
 Set up the configuration inside this window.
 
-<img src="edits3config.png" width="640px"><br><br>
+<img src="/images/edits3config.png"><br><br>
 
 Select IP address 0.0.0.0 to allow the service to listen on any IP address. Select the TrueNAS IP address to constrain it to a specific network.
 The default port is 9000, but it can be changed as needed.
@@ -27,7 +27,7 @@ Set an access key and secret key.
 
 Select a clean dataset. Files are managed by Minio as objects, and can NOT be mixed with other dataset files. New datasets can be created by going to Storage -> Pools -> three dot menu -> Add Dataset to create a new one.
 
-<img src="adddataset.png" width="640px"><br><br>
+<img src="/images/adddataset.png"><br><br>
 
 Choose to allow an S3 web browser (Minio Browser).
 
@@ -35,13 +35,13 @@ Choose an SSH certificate for more secure connections.
 
 Start the service and select whether to start automatically (on system boot). 
 
-<img src="enables3service.png" width="640px"><br><br>
+<img src="/images/enables3service.png"><br><br>
 
 Test access to the Minio Browser by opening a web browser and typing the TrueNAS IP address with the TCP port. For example: http://192.168.0.3:9000
 
 Buckets can be created and files uploaded using the Minio Browser.
 
-<img src="miniobrowser.png" width="640px"><br><br>
+<img src="/images/miniobrowser.png"><br><br>
 
 NOTE: Port 9000 must be allowed through on the network firewall to permit bucket creation and file uploads.
 
@@ -78,14 +78,14 @@ On Windows PCs, the S3 Browser is another convenient way to connect to the Minio
 
 After installation completes, add a new account. 
 
-<img src="S3explore.png" width="640px">
+<img src="/images/S3explore.png"><br><br>
 
 In the settings, select S3 Compatible Storage as the Account Type, then enter the Minio access point similar to the S3cmd setup (TrueNAS_IP_address:9000 or other port if set differently).  
 
 Select the SSL settings appropriate for the particular setup. The default assumes SSL in S3 Browser, but for a LAN attached session, this may or may not have been set.
 
-<img src="S3explore_account.png" width="640px"><br><br>
+<img src="/images/S3explore_account.png"><br><br>
 
 It is possible to access, create new buckets, or upload files to created buckets.
 
-<img src="S3explore_browse.png" width="640px"><br><br>
+<img src="/images/S3explore_browse.png""><br><br>
