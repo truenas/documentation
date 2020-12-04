@@ -119,7 +119,7 @@ You can also choose to enable the SMB service at this time.
 
 ### Share Management
 
-After the SMB share is created, additional management options are available by going to **Sharing > Windows Shares (SMB)** and clicking <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i> for a share entry:
+After the SMB share is created, additional management options are available by going to **Sharing > Windows Shares (SMB)** and clicking <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; for a share entry:
 
 * **Edit**: Opens the [share creation screen](#creating-the-smb-share) to reconfigure the share or disable it.
 * **Edit Share ACL**: Opens a screen to configure an Access Control List (ACL) for the share. This is separate from permissions configured for the stored data.
@@ -142,7 +142,7 @@ See the [Permissions article]() for more details about configuring dataset permi
 
 ### Configure Share ACL
 
-Open the share options (<i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>) and click **Edit Share ACL** to see options for the Share ACL.
+Open the share options (<i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>)&nbsp; and click **Edit Share ACL** to see options for the Share ACL.
 
 <img src="/images/SharingSMBShareACL.png">
 <br><br>
@@ -163,7 +163,7 @@ Clicking **SAVE** stores the share ACL and applies it to the share immediately.
 
 ### Configure Filesystem ACL
 
-Open the share options (<i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>) and click **Edit Filesystem ACL** to see options for the dataset ACL.
+Open the share options (<i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>)&nbsp; and click **Edit Filesystem ACL** to see options for the dataset ACL.
 
 <img src="/images/StoragePoolsEditACL.png">
 <br><br>
