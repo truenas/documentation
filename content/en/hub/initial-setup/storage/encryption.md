@@ -24,7 +24,7 @@ To begin encrypting data, follow the same process as creating a new pool and set
 <br><br>
 
 Check the **Encryption** box, read the Warning, click the **Confirm** box and then click the **I Understand** button.
-<insert the image here>
+<img src="/images/encryptwarn.png"><br><br>
 
 The default encryption cipher is recommended, but there are other ciphers available.
 
