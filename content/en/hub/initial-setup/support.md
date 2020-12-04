@@ -135,6 +135,10 @@ Silver and Gold level Support customers can also enable Proactive Support on the
 To find more details about the different Warranty and Service Level Agreement (SLA) options available, see https://www.ixsystems.com/support/.
 To purchase support for your iXsystems TrueNAS Enterprise hardware, please call **1-855-GREP-4-IX** (US Toll Free) or **1-408-943-4100**.
 
+### Production System Reporting
+
+Once the system is ready to be in production, Update the status by checking the **This is a production system** checkbox and click the **Update Status** button. This will send an email to Support declaring that the system is in production. There is an option to include a debug with this email that could assist support in the future.
+
 ### Configuring Proactive Support
 
 Proactive Support notifies iXsystems by email whenever hardware conditions on the system require attention.
