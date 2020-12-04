@@ -24,7 +24,7 @@ Operating system updates only modify the operating system devices and do not aff
 
 {{% alert title="ZFS Upgrades" color="info" %}}
 An update could involve upgrading the version of ZFS that is installed on the storage drives.
-When a ZFS version upgrade is available, an <i class="fas fa-bell"> aria-hidden="true" title="Alert"</i>&nbsp; **Alert** appears in the web interface.
+When a ZFS version upgrade is available, an <i class="fas fa-bell" aria-hidden="true" title="Alert"></i>&nbsp; **Alert** appears in the web interface.
 Upgrading the ZFS version on storage drives is not recommended until it has been verified that rolling back to previous versions of the operating system is not necessary and that swapping the storage drives with another system that has an earlier ZFS version is not needed.
 After a ZFS version upgrade, the storage devices will not be accessible by earlier TrueNAS versions.
 {{% /alert %}}
