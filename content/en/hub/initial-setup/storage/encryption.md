@@ -23,6 +23,9 @@ To begin encrypting data, follow the same process as creating a new pool and set
 <img src="/images/TN-12.0-encryption-1.PNG">
 <br><br>
 
+Check the **Encryption** box, read the Warning, click the **Confirm** box and then click the **I Understand** button.
+<insert the image here>
+
 The default encryption cipher is recommended, but there are other ciphers available.
 
 <img src="/images/TN-12.0-encryption-2.PNG">
