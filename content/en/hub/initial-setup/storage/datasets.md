@@ -22,7 +22,7 @@ To create a dataset in the desired pool, go to **Storage > Pools**
 <img src="/images/StoragePoolsList.png">
 <br><br>
 
-Find the pool and top-level (root) dataset for that pool, click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i> and **Add Dataset**.
+Find the pool and top-level (root) dataset for that pool, click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; and **Add Dataset**.
 
 <img src="/images/StoragePoolsDatasetAdd.png">
 <br><br>
@@ -86,7 +86,7 @@ By default, many of these options *Inherit* their values from the parent dataset
 
 ## Managing Datasets
 
-After a dataset is created, additional management options are available by going to **Storage > Pools** and clicking <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i> for a dataset:
+After a dataset is created, additional management options are available by going to **Storage > Pools** and clicking <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; for a dataset:
 
 * **Add Dataset**: create a [new ZFS dataset](#creating-a-dataset) that is a "child" of this dataset. Datasets can be continuously layered in this manner.
 * **Add Zvol**: create a new [ZFS block device](/hub/initial-setup/storage/zvols/) as a "child" of this dataset.
