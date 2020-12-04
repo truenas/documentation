@@ -6,8 +6,11 @@ tags: ["networking","afp"]
 
 Apple Filing Protocol (AFP) is a network protocol that allows file sharing over a network. It's similar to SMB and NFS. However, it was made to work flawlessly on Apple systems. In this document, you will learn how to create and connect to a general purpose AFP share.
 
-{{% alert title="The AFP protocol has been deprecated by Apple" %}}
-Beginning in 2013, Apple began using the SMB sharing protocol as the default option for file sharing and ceased development of the AFP sharing protocol. It is recommended to use SMB sharing over AFP unless files will be shared with legacy Apple products. For further information please read https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/APFS_Guide/FAQ/FAQ.html
+{{% pageinfo %}}
+The AFP protocol has been deprecated by Apple
+{{% /pageinfo %}}
+
+Beginning in 2013, Apple began using the SMB sharing protocol as the default option for file sharing and ceased development of the AFP sharing protocol. It is recommended to use SMB sharing over AFP unless files will be shared with legacy Apple products. For further information please read: https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/APFS_Guide/FAQ/FAQ.html
 
 To get started, make sure a <a href="/hub/initial-setup/storage/datasets">dataset has been created</a>. This dataset serves as share data storage. If a dataset already exists, proceed to turning on the AFP service.
 
