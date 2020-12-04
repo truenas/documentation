@@ -4,7 +4,7 @@ description: "Cautions against using SMB1 in production"
 tags: ["networking","Samba","errata","security"]
 ---
 
-## Do not use SBM1
+**Do not use SBM1**
 
 SMB1, also known as SMBv1, is an early version of the Windows SMB file-sharing protocol. [Microsoft has deprecated the SMB1 protocol for security reasons and strongly recommends removing SMB1](https://support.microsoft.com/en-us/help/4034314/smbv1-is-not-installed-by-default-in-windows). SMB1 is disabled by default in FreeNAS and TrueNAS. Current SMB networking clients use later versions of the SMB protocol.
 
