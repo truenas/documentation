@@ -1,7 +1,6 @@
 ---
 title: "Alert management"
 draft: false
-chapter: true
 pre: "<i class='fa fa-bell'></i>	"
 ---
 

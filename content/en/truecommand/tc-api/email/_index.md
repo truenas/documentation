@@ -2,7 +2,6 @@
 title: "Email management"
 pre: "<i class='fa fa-envelope'></i>	"
 draft: false
-chapter: true
 ---
 
 ## API Class: email

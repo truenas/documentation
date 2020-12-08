@@ -1,7 +1,6 @@
 ---
-title: "Logs"
+title: "Audit Logs"
 draft: false
-chapter: true
 pre: "<i class='fa fa-search'></i>	"
 ---
 

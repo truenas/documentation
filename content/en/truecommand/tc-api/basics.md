@@ -1,6 +1,5 @@
 ---
 title: "Basic Formatting"
-menuitle: "Basic Formatting"
 description: "Standard connection information and syntax"
 chapter: false
 pre: "<i class='fa fa-bookmark'></i>	"

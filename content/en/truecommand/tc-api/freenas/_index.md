@@ -1,7 +1,6 @@
 ---
 title: "FreeNAS management"
 draft: false
-chapter: true
 pre: "<i class='fa fa-terminal'></i> "
 ---
 

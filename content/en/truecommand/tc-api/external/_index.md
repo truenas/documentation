@@ -1,7 +1,6 @@
 ---
-title: "External"
+title: "External Systems"
 draft: false
-chapter: true
 pre: "<i class='fas fa-chart-line'></i>	"
 ---
 

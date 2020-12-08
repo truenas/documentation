@@ -2,7 +2,6 @@
 title: "Cluster management"
 pre: "<i class='fa fa-bookmark'></i>	"
 draft: false
-chapter: true
 ---
 
 ## API Class: cluster

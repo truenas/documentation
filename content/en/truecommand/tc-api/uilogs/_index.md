@@ -1,7 +1,6 @@
 ---
 title: "UI Logging"
 draft: false
-chapter: true
 pre: "<i class='fa fa-archive'></i>	"
 ---
 

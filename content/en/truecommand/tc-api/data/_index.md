@@ -1,7 +1,6 @@
 ---
 title: "Data Retrieval"
 draft: false
-chapter: true
 pre: "<i class='fa fa-sitemap'></i>	"
 ---
 

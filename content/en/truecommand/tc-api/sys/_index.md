@@ -1,7 +1,6 @@
 ---
 title: "System Management"
 draft: false
-chapter: true
 pre: "<i class='fa fa-cogs'></i>	"
 ---
 

@@ -1,7 +1,6 @@
 ---
 title: "Notice management"
 draft: false
-chapter: true
 pre: "<i class='fa fa-flag'></i>	"
 ---
 

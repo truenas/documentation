@@ -2,7 +2,6 @@
 title: "System reports"
 pre: "<i class='fa fa-book'></i>	"
 draft: false
-chapter: true
 ---
 
 ## API Class: reports

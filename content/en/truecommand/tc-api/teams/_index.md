@@ -1,7 +1,6 @@
 ---
 title: "Team management"
 draft: false
-chapter: true
 pre: "<i class='fa fa-users'></i>	"
 ---
 
