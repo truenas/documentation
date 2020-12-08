@@ -84,9 +84,27 @@ The **Export Password Secret Seed** option is off by default and should only be 
 | Syslog Transport                          | drop down | [Transport Protocol](https://tools.ietf.org/html/rfc8095) for the remote system log server connection. Choosing Transport Layer Security (*TLS*) also requires selecting a preconfigured system Certificate. |
 | Syslog TLS Certificate                    | drop down | The preconfigured system Certificate to use for authenticating the TLS protocol connection to the remote system log server. |
 
-
-Click the **SAVE** button after making any changes.
-
 There is also an option to:
 
 **SAVE DEBUG**: generate text files that contain diagnostic information. After the debug data is collected, the system prompts for a location to save the compressed `.tar` file.
+
+### Autotuning
+
+TrueNAS provides an autotune script which optimizes the system depending on the installed hardware.
+For example, if a pool exists on a system with limited RAM, the autotune script automatically adjusts some ZFS sysctl values in an attempt to minimize memory starvation issues.
+It should only be used as a temporary measure on a system that hangs until the underlying hardware issue is addressed by adding more RAM.
+Autotune will always slow such a system, as it caps the ARC.
+
+> Note: Using the autotuning script is not recommended for TrueNAS Enterprise customers as this can override any specific tunings made by iXsystems Support.
+
+Enabling autotuning will run the autotuner script at boot.
+To run the script immediately, reboot the system.
+
+If the autotune script adjusts any settings, the changed values appear in **System > Tunables**.
+Note that deleting tunables that were created by autotune only affects the current session, as autotune-set tunables are recreated at boot.
+This means that any autotune-set value that is manually changed will revert back to the value set by autotune on reboot.
+To permanently change a value set by autotune, change the description of the tunable.
+For example, changing the description to manual override prevents autotune from reverting that tunable back to the autotune default value.
+
+When attempting to increase the performance of the TrueNAS system, and particularly when the current hardware may be limiting performance, try enabling autotune.
+For those who wish to see which checks are performed, the autotune script is located in `/usr/local/bin/autotune`.
