@@ -23,8 +23,8 @@ It is still receiving minor version updates, but will reach End of Life when Tru
 
 | Version                                                                                                          | Scheduled Release Date |
 |------------------------------------------------------------------------------------------------------------------|------------------------|
-| [TrueNAS 12.0-U1](https://jira.ixsystems.com/issues/?jql=project%20%3D%20NAS%20AND%20fixVersion%20%3D%2012.0-U1) | 2020/12/08             |
-| TrueNAS 12.0-U2 (as needed)                                                                                      | 2021/01/26             |
+| [TrueNAS 12.0-U1](https://jira.ixsystems.com/issues/?jql=project%20%3D%20NAS%20AND%20fixVersion%20%3D%2012.0-U1) | 2020/12/09             |
+| TrueNAS 12.0-U2                                                                                                  | 2021/02/02             |
 
 ## SCALE
 
