@@ -111,13 +111,13 @@ TrueNAS configuration screens are linked in the left hand column:
 
 * **Dashboard**: Landing page for the web interface.
 * [**Accounts**](/hub/initial-setup/security/accounts/): Add or manage TrueNAS User and Group accounts.
-* [**System**](/initial-setup/firsttimelogin/systemsettings/): TrueNAS system level options.
+* [**System**](/hub/initial-setup/firsttimelogin/systemsettings/): TrueNAS system level options.
 * [**Tasks**](/hub/tasks/scheduled/): Configuring options for scheduled re-occurring operations.
 * [**Network**](/hub/initial-setup/networking/): Options for integrating TrueNAS in a network environment.
 * [**Storage**](/hub/initial-setup/storage/): How data is added to TrueNAS. Options for configuring pools and datasets on attached hard drives.
-* [**Directory Services**](/hub/initial-setup/security/directory-services/): Map network resources to TrueNAS or make the system visable in a network.
+* [**Directory Services**](/hub/initial-setup/security/directory-services/): Map network resources to TrueNAS or make the system visible in a network.
 * [**Sharing**](/hub/sharing/): Provide data stored in TrueNAS over a network using different built-in protocols.
-* **Services**: Tasks that can run in the background of TrueNAS for purposes like data sharing or network access. Services can start automatically or disabled for security. By default, most system services are disabled.
+* **Services**: Tasks that can run in the background of TrueNAS for purposes like data sharing or network access. Services can start automatically or disabled for security. By default, most system services are disabled and are configured as part of enabling different sharing protocols or other system features.
 * [**Plugins**](/hub/tasks/advanced/plugins/): Extend the built-in NAS services by installing a pre-packaged application in an isolated Jail.
 * [**Jails**](/hub/tasks/advanced/jails/): lightweight operating-system-level virtualization that allows one or multiple services to run isolated from the host TrueNAS system.
 * [**Reporting**](/hub/tasks/administrative/system-reporting/): Helpful graphs and information about the system, including hardware, storage, and network utilization.
@@ -132,12 +132,12 @@ If the user interface is not accessible by IP address from a browser, check thes
 
 * Are proxy settings enabled in the browser configuration?
   If so, disable the settings and try connecting again.
-* If the page does not load, make sure that a `ping` reaches the TrueNAS system’s IP address.
+* If the page does not load, make sure that a `ping` reaches the TrueNAS system IP address.
   If the address is in a private IP address range, it is only accessible from within that private network.
 
 If the web interface is shown but seems unresponsive or incomplete:
 
-* Make sure the browser allows cookies, Javascript, and custom fonts from the TrueNAS® system.
+* Make sure the browser allows cookies, Javascript, and custom fonts from the TrueNAS system.
 * Try a different browser. Firefox is recommended.
 
 If the UI becomes unresponsive after an upgrade or other system operation, clear the site data and refresh the browser (<kbd>Shift</kbd>+<kbd>F5</kbd>).
