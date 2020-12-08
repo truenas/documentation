@@ -1,6 +1,7 @@
 ---
-title: "API Calls"
+title: "TrueCommand API Calls"
 pre: "<i class='fa fa-bookmark'></i>	"
+tags: ["API"]
 ---
 
 ## Connection Summary
