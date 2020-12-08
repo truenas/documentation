@@ -1,6 +1,7 @@
 ---
 title: "Configuring S.M.A.R.T. Tests"
 description: "How to configure S.M.A.R.T. tests for installed disks."
+weight: 30
 ---
 
 <a href="https://en.wikipedia.org/wiki/S.M.A.R.T.">S.M.A.R.T.</a> (Self-Monitoring, Analysis and Reporting Technology) is a monitoring system for computer hard disk drives to detect and report on various indicators of reliability. Replace the drive when a failure is anticipated by S.M.A.R.T. Most modern ATA, IDE, and SCSI-3 hard drives support S.M.A.R.T. Refer to the respective drive documentation for confirmation.
