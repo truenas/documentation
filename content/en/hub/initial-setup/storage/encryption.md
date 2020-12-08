@@ -24,6 +24,7 @@ To begin encrypting data, follow the same process as creating a new pool and set
 <br><br>
 
 Check the **Encryption** box, read the Warning, click the **Confirm** box and then click the **I Understand** button.
+
 <img src="/images/encryptwarn.png"><br><br>
 
 The default encryption cipher is recommended, but there are other ciphers available.
@@ -76,7 +77,7 @@ Change the *Encryption Type* from `Key` to `Passphrase`.
 
 **Passphrase**: User-defined string used to decrypt the dataset. Can be used instead of an encryption key.
 WARNING: the passphrase is the only means to decrypt the information stored in this dataset. Be sure to create a memorable passphrase or physically secure the passphrase.
-Must be longer than 8 characters
+Must be longer than 8 characters.
 
 **pbkdf2iters**: Number of password-based key derivation function 2 (PBKDF2) iterations to use for reducing vulnerability to brute-force attacks. Entering a number larger than 100000 is required. See PBKDF2 for more details.
 
