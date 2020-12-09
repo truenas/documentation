@@ -73,6 +73,7 @@ Additional configuration is done from **System > Email**.
 
 <img src="/images/TN12-Emailsetup.png">
 <br><br>
+Set the address the email will come from, along with the From Name.  Enter the mail server address and the correct port.  Select the desired security option, and enable SMTP and enter the credentials if necessary.
 
 
 ### SMTP Authentication Settings
