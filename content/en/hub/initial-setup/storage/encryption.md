@@ -93,7 +93,7 @@ Encrypted datasets can only be locked and unlocked if they are secured with a pa
 Before locking a dataset, verify that it is not currently in use, then click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; (Options) and **Lock**.
 
 <img src="/images/TN-12.0-encryption-10.PNG">
-<br><br>
+<br><br><br>
 
 Use the **Force unmount** option only if you are certain that no one is currently accessing the dataset.
 
