@@ -13,7 +13,7 @@ TrueNAS SCALE tickets are also tracked in the TrueNAS Jira Project.
 ## FreeNAS
 
 FreeNAS 11.3 is the final major version of TrueNAS CORE pre- name change.
-It is still receiving minor version updates, but will reach End of Life when TrueNAS 12.0 and the FreeNAS to TrueNAS rename is fully released.
+It is still receiving minor version updates, but will reach End of Life when TrueNAS 12.0 and the FreeNAS to TrueNAS rename is completed.
 
 | Version                                                                                                          | Scheduled Release Date |
 |------------------------------------------------------------------------------------------------------------------|------------------------|
@@ -23,8 +23,7 @@ It is still receiving minor version updates, but will reach End of Life when Tru
 
 | Version                                                                                                          | Scheduled Release Date |
 |------------------------------------------------------------------------------------------------------------------|------------------------|
-| [TrueNAS 12.0-U1](https://jira.ixsystems.com/issues/?jql=project%20%3D%20NAS%20AND%20fixVersion%20%3D%2012.0-U1) | 2020/12/09             |
-| TrueNAS 12.0-U2                                                                                                  | 2021/02/02             |
+| [TrueNAS 12.0-U2](https://jira.ixsystems.com/projects/NAS/versions/12700)                                        | 2021/02/02             |
 
 ## SCALE
 
