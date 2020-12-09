@@ -43,6 +43,6 @@ During this stage, security patches and software erratum are corrected, updated 
 
 The TrueNAS SDLC applies to the latest two release branches.
 As new releases are created for TrueNAS, the oldest TrueNAS release branch is dropped out of the SDLC and labeled as End of Life (EoL).
-For example, TrueNAS/FreeNAS 11.2 and 11.3 branches were in active development under the SDLC in January 2020.
-By May 2020, TrueNAS/FreeNAS 12.0 and 11.3 were the active development branches under the SDLC.
+For example, TrueNAS/FreeNAS 11.3 and TrueNAS 12.0 was in active development under the SDLC in August 2020.
+Currently, TrueNAS Core/Enterprise 12.0 and 12.1 branches are in active development under the SDLC. These versions of the software are in active development and maintenance.
 Users are encouraged to actively keep their software updated to an active development version to continue to receive security patches and other software improvements.
