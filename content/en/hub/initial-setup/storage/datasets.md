@@ -17,7 +17,7 @@ It is recommended to organize your pool with datasets before configuring [data s
 
 ## Creating a Dataset
 
-To create a dataset in the desired pool, go to **Storage > Pools**
+To create a dataset in the desired pool, go to **Storage > Pools**.
 
 <img src="/images/StoragePoolsList.png">
 <br><br>
