@@ -37,32 +37,38 @@ The default encryption cipher is recommended, but there are other ciphers availa
 New datasets within an existing storage pool can also be encrypted without having to encrypt the entire pool.
 To encrypt a single dataset, go to **Storage > Pools**, open the <i class="fas fa-ellipsis-v"></i>&nbsp; (Options) for an existing dataset, and click **Add Dataset**.
 Look at the *Encryption Options* and, if the parent dataset is unencrypted, unset the **Inherit** option.
-You can then set the **Encryption** option for the new dataset and configure the *Type* and other options.
 
-## Keyfiles
+<img src="/images/StoragePoolsNewDatasetEncrypted.png">
+<br><br>
 
-Creating a new encrypted dataset generates a keyfile for that dataset.
-Always back up the keyfile to a safe and secure location.
+You can then set **Encryption** for the new dataset and choose which *Type* of authentication to use: a *Key* or a *Passphrase*.
+Encryption options are the same for either a new pool or dataset.
+
+### Key
+
+Creating a new encrypted pool automatically generates new key file and prompts to download it.
+Always back up the key file to a safe and secure location.
 
 <img src="/images/TN-12.0-encryption-3.PNG">
 <br><br>
 
-Manually back up a root dataset keyfile by clicking the gear menu and selecting **Export Dataset Keys**. 
+Manually back up a root dataset keyfile by opening the pool <i class="fas fa-cog" aria-hidden="true" title="Settings"></i> (Settings) menu and selecting **Export Dataset Keys**.
 
 <img src="/images/TN-12.0-encryption-8.PNG">
 <br><br>
 
-To change the keyfile, click <i class="fas fa-ellipsis-v"></i>&nbsp; (Options) and select **Encryption Options**.  
+To change the key, click <i class="fas fa-ellipsis-v"></i>&nbsp; (Options) and select **Encryption Options**.
 
 <img src="/images/TN-12.0-encryption-4.PNG">
 <br><br>
 
-Enter your custom key or click **Generate Key**. Remember to back up your keyfiles after creating or updating them.
+Enter your custom key or click **Generate Key**.
+Remember to back up your key files after creating or updating them.
 
 <img src="/images/TN-12.0-encryption-5.PNG">
 <br><br>
 
-## Passphrase
+### Passphrase
 
 To use a passphrase instead of a keyfile, click <i class="fas fa-ellipsis-v"></i>&nbsp; (Options) and select **Encryption Options**.
 Change the *Encryption Type* from `Key` to `Passphrase`.
