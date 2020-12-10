@@ -13,7 +13,7 @@ no_list: true
 </table>
 
 <p style="max-width:100%;">TrueNAS® is an embedded open source network-attached storage (NAS) operating system that is designed to be the most effective and time-efficient solution for storing, securing, and sharing data over a network.
-The core system uses the <a href="https://opensource.org/licenses/BSD-2-Clause" target="_blank">2-clause BSD license</a> with other open source licensed ports and is the simplest way to create a safe, centralized, and easily accessible place for your data.<br><br>
+TrueNAS incorporates a variety of open source licensed solutions to provide powerful data storage and sharing, including 2-Clause BSD, 3-Clause BSD, MIT, GPL v2 and GPL v3, and CDDL.<br><br>
 The topics on this page are arranged to guide you through learning about TrueNAS, installing and configuring the system, then setting up data storage and sharing.
 There are additional topics for the TrueCommand and TrueNAS SCALE members of the TrueNAS family, 3rd party software integration notes, and reference documentation for the powerful and cost-effective TrueNAS storage appliances available for purchase from iXsystems.
 </p>
