@@ -15,7 +15,7 @@ To see saved groups, go to **Accounts > Groups**
 <br><br>
 
 By default, groups that are built in to the system are hidden.
-To see built-in groups, click <i class="fas fa-cog" aria-hidden="true" title="Settings"></i> and **SHOW**.
+To see built-in groups, click <i class="fas fa-cog" aria-hidden="true" title="Settings"></i>&nbsp: and **SHOW**.
 
 ## Adding a New Group
 
