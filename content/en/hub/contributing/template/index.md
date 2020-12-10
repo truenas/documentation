@@ -12,7 +12,7 @@ You can also include a shortened title for the table contents.
 The rest of this article contains an example article with front matter, styling, and syntax examples.
 Please feel free to copy this example and rework it when writing your own articles for this website.
 The `template/` directory can also be copied to provide a starting point for contributing an article bundle that has additional images.
-You can refer to the [Style Guide](../style.md) for specific text syntax and formatting examples.
+You can refer to the [Style Guide](../style/) for specific text syntax and formatting examples.
 
 ```
 ---
