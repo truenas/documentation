@@ -66,9 +66,6 @@ After creation open the menu by clicking the expand icon **<** on the right-hand
 
 Similar to the initial FTP setup, create a user in the jail. Type **adduser** and follow the fields including the password and home directory location. Once filled in the system will ask to confirm the credentials.
 
-<img src="/images/dduser_jail.png">
-<br><br>
-
 Enable SSH by editing the /etc/rc.conf file. Type **vi /etc/rc.conf** or **ee /etc/rc.conf** depending on preference, add **sshd_enable = "YES"** to the file, save, and exit. Type **service sshd enabled** to enable the service (enabled vs start indicates whether sshd will start once or on every reboot). 
 
 <img src="/images/edit_rcconf.png">
