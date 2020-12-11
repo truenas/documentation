@@ -119,7 +119,7 @@ This conversion can take a long time to finish, sometimes fifteen minutes or mor
 The system will start normally afterwards.
 If database errors are shown but the web interface is accessible, log in, go to **System > General**, and use the **UPLOAD CONFIG** button to upload the configuration backup that was downloaded before starting the upgrade.
 
-## Upgrading from 9.3 to 9.10 FAQ
+## FAQ: Upgrading from 9.3 to 9.10
 
 **What has changed in 9.10 vs 9.3?**
 
