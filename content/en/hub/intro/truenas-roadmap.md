@@ -23,6 +23,7 @@ It is still receiving minor version updates, but will reach End of Life when Tru
 
 | Version                                                                                                          | Scheduled Release Date |
 |------------------------------------------------------------------------------------------------------------------|------------------------|
+| [TrueNAS 12.0-U1.1](https://jira.ixsystems.com/projects/NAS/versions/12900)                                      | Unscheduled            |
 | [TrueNAS 12.0-U2](https://jira.ixsystems.com/projects/NAS/versions/12700)                                        | 2021/02/02             |
 
 ## SCALE
