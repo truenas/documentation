@@ -86,7 +86,7 @@ The controller will monitor S.M.A.R.T. separately and mark disks as a *Predictiv
 To turn the S.M.A.R.T. service on, go to **Services** and click the slider for *S.M.A.R.T.*.
 If you wish to turn the service on automatically when the TrueNAS system is turned on, set *Start Automatically*.
 
-The S.M.A.R.T. service settings can be configured by clicking <i class="fas fa-pen" aria-hidden="true" title="Pen"></i>&nbsp: (Configure).
+The S.M.A.R.T. service settings can be configured by clicking <i class="fas fa-pen" aria-hidden="true" title="Pen"></i>&nbsp; (Configure).
 
 <img src="/images/ServicesSMARTConfig.png">
 <br><br>
