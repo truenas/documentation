@@ -20,7 +20,7 @@ Determining your specific storage requirements is a critical step before creatin
 
 To create a new pool, log in to the web interface, go to **Storage > Pools**, and click **ADD**.
 
-<img src="/images/CreatePool.png">
+<img src="/images/CreateNewPool.png">
 <br><br>
 
 Select *Create new pool* and click **CREATE POOL** to open the **Pool Manager**.
@@ -30,8 +30,7 @@ Select *Create new pool* and click **CREATE POOL** to open the **Pool Manager**.
 
 First, enter a name for the pool.
 If you want to encrypt the data for additional security, select *Encryption*.
-Be aware that encrypting also complicates how data is retrieved and has some risks.
-Refer to the [Encryption article]({{< ref "encryption.md" >}}) for more details.
+Be aware that encrypting also complicates how data is retrieved and has some risks. Refer to the [Encryption article]({{< ref "encryption.md" >}}) for more details.
 
 Now you will configure the virtual devices (vdevs) that make up the pool.
 Click **SUGGEST LAYOUT** to add all same-sized disks in an ideal configuration for balanced data redundancy and performance.
@@ -57,7 +56,7 @@ Otherwise, another vdev can be added by clicking *ADD DATA* and adding disks man
 {{% alert title="Warning" color=warning %}}
 We don't recommend having multiple data vdevs with different numbers of disks.
 Adding multiple vdevs with different layouts to a pool is not supported, so you'll have to create a new pool for a different layout.
-For example, *Pool1* has a data vdev in a *mirror* layout, so create *pool2* for any **raid-z** vdevs.
+For example, *Pool1* has a data vdev in a *mirror* layout, so create *pool2* for any *raid-z* vdevs.
 
 <img src="/images/MirrorPoolExample.png" size="50%">
 <br>
@@ -84,50 +83,62 @@ Select disks from `Available Disks` and use the <i class="fas fa-arrow-right" ar
 
 ## Importing a Pool
 
-A pool that has been exported/disconnected from the system can be reconnected by clicking **Storage** > **Pools** > **Add**, then selecting **Import an existing pool**. Importing works for pools that were exported/disconnected from the current system, created on another system, or pools that need to be reconnected after reinstalling or upgrading to the TrueNAS system.
+A pool that has been exported/disconnected from the system can be reconnected by clicking **Storage** > **Pools** > **Add**, then selecting **Import an existing pool**. Importing works for pools that were exported/disconnected from the current system, created on another system, and pools that need to be reconnected after reinstalling or upgrading to the TrueNAS system.
 
 When physically installing ZFS pool disks from another system, use the `zpool export poolname` command in the command line or a web interface equivalent to export the pool on that system. Then, shut it down and connect the drives to the TrueNAS system. Shutting down the other system prevents an *“in use by another machine”* error during the import to TrueNAS.
 
-### Decrypting ZFS Pools
+### Importing Encrypted ZFS Pools
 
 You can import existing ZFS pools by clicking **Storage** > **Pools** > **ADD**. Select **Import an existing pool**, then click **NEXT**
 
-<img src="/images/storage-pools-import.png" width='700px'>
+<img src="/images/ZFS 1 - Import an existing pool.png">
 <br><br>
 
 Select **No, continue with import**, then click **NEXT**.
-**image**
+
+<img src="/images/ZFS 2 - No, continue with import.png">
+<br><br>
 
 Click the drop down menu and choose the ZFS pool that you want to decrypt, then click **NEXT**
-**image**
+
+<img src="/images/ZFS 3 - Select the pool you want to decrypt.png">
+<br><br>
 
 Review the Pool Import Summary and click **IMPORT**, then click **CONTINUE** to unlock the pool’s encrypted datasets
-**image**
+
+<img src="/images/ZFS 4 - Review the pool import summary.png">
+<br><br>
 
 Click **Choose File** and open the encryption key file, then enter the **Passphrase** (if applicable) for the encrypted disks and click **SUBMIT**. Click **CONTINUE** to unlock the datasets.
-**image**
 
-### Decrypting GELI Pools
+<img src="/images/ZFS 5 - Open the encryption key file.png">
+<br><br>
+
+### Importing Encrypted GELI Pools
 
 You can import existing GELI pools from FreeNAS/TrueNAS 11.3 or earlier by clicking **Storage** > **Pools** > **ADD**. Select **Import an existing pool**, then click **NEXT**
 
 Select **Yes, decrypt the disks** and choose which disks you want to decrypt from the dropdown list.
-Click **Choose File** and open the encryption key file, then enter the **Passphrase** (if applicable) for the encrypted disks and click **NEXT**.
-Select the GELI pool from the Pool dropdown list and click **NEXT**.
-Review the Pool Import Summary and click **IMPORT**.
 
-
-<img src="/images/storage-pools-import-no-encryption.png" width='700px'>
+<img src="/images/GELI 1 - Yes, decrypt the disks.png">
 <br><br>
 
+Click **Choose File** and open the encryption key file, then enter the **Passphrase** (if applicable) for the encrypted disks and click **NEXT**.
+Select the GELI pool from the Pool dropdown list and click **NEXT**.
+
+<img src="/images/GELI 2 - Select the pool you want to decrypt.png">
+<br><br>
+
+Review the Pool Import Summary and click **IMPORT**.
+
+<img src="/images/GELI 3 - Review the pool import summary.png">
+<br><br>
+
+## Encryption Keys and Passphrases
 
 {{% alert title=Warning color=warning %}}
 The encryption key file and passphrase are required to decrypt the pool. If the pool cannot be decrypted, it cannot be re-imported after a failed upgrade or lost configuration. This means it is very important to save a copy of the key and to remember the passphrase that was configured for the key. Refer to the [Encryption article](/hub/initial-setup/storage/encryption/) for instructions on managing keys.
 {{% /alert %}}
-
-Select the pool to import and confirm the settings. Click **IMPORT** to finish the process.
-
-## Encryption Keys
 
 {{% pageinfo %}}
 For security reasons, encrypted pool keys are not saved in a configuration backup file. When TrueNAS has been installed to a new device and a saved configuration file restored to it, the keys for encrypted disks will not be present, and the system will not request them. To correct this, export the encrypted pool with <i class="fas fa-pen" aria-hidden="true" title="Pen"></i>&nbsp; (Configure) > **Export/Disconnect**, making sure that **Destroy data on this pool?** is not set. Then import the pool again. During the import, the encryption keys can be entered as described above.
