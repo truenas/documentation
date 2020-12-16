@@ -3,7 +3,7 @@ title: "SCALE 20.12-ALPHA (Angelfish)"
 tags: ["SCALE"]
 ---
 
-**December 15, 2020**
+**December 17, 2020**
 
 iXsystems is pleased to release the next Alpha version of TrueNAS SCALE!
 SCALE is the newest member of the TrueNAS family.
@@ -57,7 +57,7 @@ Verified Features are generally working in SCALE. Minor bugs could be present.
 These features have been added, but have known issues or are not fully feature-complete.
 Please use only with caution.
 
-* Applications UI
+* [Applications UI](/hub/scale/dev-notes/#using-applications)
 * Tasks:
   * Cron
   * Init/Shutdown Scripts
@@ -66,7 +66,7 @@ Please use only with caution.
   * Periodic Snapshots
   * Rsync
   * Scrub
-* Docker Images deployed as Helm Charts with Kubernetes NVIDIA / Intel Quicksync GPU passthrough (CLI)
+* [Docker Images deployed as Helm Charts with Kubernetes NVIDIA / Intel Quicksync GPU passthrough (CLI)](/hub/scale/dev-notes/#using-kubernetes)
 * Wireguard (CLI)
 * Networking and Settings UX Refresh
 * OpenVPN Client and Server
