@@ -53,15 +53,13 @@ TrueNAS shows how many snapshots are available for replication.
 It is recommended to manually snapshot the sources or create a periodic snapshot task *before* creating the replication task.
 However, when the sources are on the local system and don't have any existing snapshots, TrueNAS can create a basic periodic snapshot task and snapshot the sources immediately before starting the replication.
 
-<img src="/images/TasksReplicationTasksAddLocalSource.png">
+<img src="/images/TasksReplicationTasksAddRemoteSource.png">
 <br><br>
 
 
 Remote sources require entering a snapshot naming schema to identify the snapshots to replicate.
 A naming schema is a collection of [strftime](https://www.freebsd.org/cgi/man.cgi?query=strftime) time and date strings and any identifiers that a user might have added to the snapshot name.
 
-<img src="/images/TasksReplicationTasksAddLocalSourceLocalDest.png">
-<br><br>
 
 Local sources can also use a naming schema to identify any custom snapshots to include in the replication.
 
@@ -73,6 +71,8 @@ Expanding the directory browser shows the current datasets or zvols that are ava
 You can select a destination or manually type a path in the field.
 Adding a name to the end of the path creates a new dataset in that location.
 
+<img src="/images/TasksReplicationTasksAddRemoteDest.png">
+<br><br>
 
 
 ### Security and Task Name
@@ -107,5 +107,5 @@ The first time a replication task runs, it takes longer because the snapshots mu
 Later replications run faster, as only the subsequent changes to snapshots are replicated.
 Clicking the task state opens the log for that task.
 
-<img src="/images/TasksReplicationTasksLocalLogs.png">
+<img src="/images/TasksReplicationTasksRemoteLogs.png">
 <br><br>
