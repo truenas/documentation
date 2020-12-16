@@ -99,7 +99,15 @@ Log into your ixSystems cloud account and click **Manage**, Under *Service Detai
 
 Log into your TrueNAS systems and click the TrueCommand icon in the upper right.
 
-Paste the TrueCommand API Key copied from the iXsystems Account Portal into the TrueNAS dialog window.  When the True Command logo starts bouncing left and right, check the email account registered for the TrueCommand Cloud Account for a verification message.  The email contains a link to the Portal account home to confirm the connection and activate the TrueNAS system.
+Paste the TrueCommand API Key copied from the iXsystems Account Portal into the TrueNAS dialog window. 
+
+<img src="/images/TNapiTC.png"><br><br>
+
+When the True Command logo starts bouncing left and right, check the email account registered for the TrueCommand Cloud Account for a verification message.  The email contains a link to the Portal account home to confirm the connection and activate the TrueNAS system.
+
+Click on the New System alert, fill in the information from the TrueNAS system, and click the **Add System** button
+
+<img src="/images/tcnewssystemcred.png"><br><br>
 
 It may take 10 to 15 minutes for your TrueNAS instance to fully sync up with the TrueCommand Cloud instance. When systems are connected to the TrueCommand Cloud instance, refer to the [TrueCommand documentation](/hub/truecommand/) for more articles about setting up configuration backups, alerts, reports, and role-based access control.
 
