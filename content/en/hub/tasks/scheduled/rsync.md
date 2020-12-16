@@ -2,6 +2,7 @@
 title: "Configuring an rsync Task"
 description: "How to configure automated data transfers using rysnc."
 tags: ["rsync", "SSH"]
+weight: 20
 ---
 
 Data often needs to be copied to another system for backup or when migrating to a new system. A fast and secure way of doing this is by using rsync.

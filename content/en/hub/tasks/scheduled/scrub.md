@@ -2,6 +2,7 @@
 title: "Configuring Scrub Tasks"
 description: "How to configure automated scrubs of storage pools."
 tags: ["ZFS"]
+weight: 70
 ---
 
 A scrub is the process of ZFS scanning through the data on a pool. Scrubs help to identify data integrity problems, detect silent data corruptions caused by transient hardware issues, and provide early alerts of impending disk failures.
