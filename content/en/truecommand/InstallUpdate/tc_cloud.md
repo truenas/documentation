@@ -105,7 +105,7 @@ Paste the TrueCommand API Key copied from the iXsystems Account Portal into the 
 
 When the True Command logo starts bouncing left and right, check the email account registered for the TrueCommand Cloud Account for a verification message.  The email contains a link to the Portal account home to confirm the connection and activate the TrueNAS system.
 
-Click on the New System alert, fill in the information from the TrueNAS system, and click the **Add System** button
+Click on the New System alert, fill in the information from the TrueNAS system, and click the **Add System** button.
 
 <img src="/images/tcnewssystemcred.png"><br><br>
 
