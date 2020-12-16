@@ -30,7 +30,7 @@ It is still receiving minor version updates, but will reach End of Life when Tru
 
 | Version                                                                                                                                                         | Scheduled Release Date |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------|
-| [SCALE-20.12-ALPHA (Angelfish)](https://jira.ixsystems.com/issues/?jql=project%20%3D%20NAS%20AND%20fixVersion%20%3D%20%22SCALE-20.12-%20ALPHA%20(Angelfish)%22) | 2020/12/15             |
+| [SCALE-20.12-ALPHA (Angelfish)](https://jira.ixsystems.com/issues/?jql=project%20%3D%20NAS%20AND%20fixVersion%20%3D%20%22SCALE-20.12-%20ALPHA%20(Angelfish)%22) | 2020/12/23             |
 
 ## TrueCommand
 
