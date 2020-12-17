@@ -224,6 +224,8 @@ Setting `KUBECONFIG` is required for using helm and the `kubectl` alias helps us
 
 Both pre-built official containers and custom application containers can be deployed using the *Apps* page in the Scale web interface.
 The UI will ask to use a storage pool for Applications.
+It is recommended to keep the container use case in mind when choosing a pool.
+Be sure to select a pool that has enough space for all the application containers you intend to use.
 This will create an `ix-applications` dataset on the chosen pool and use this location to store all container-related data.
 
 Additional options for configuring general network interfaces and IP addresses for application containers are in **Apps > Settings > Advanced Settings**.
@@ -271,8 +273,10 @@ See the Docker [DNS services documentation](https://docs.docker.com/config/conta
 
 #### Port Forwarding List
 
-Choose the protocol and define numbers for both container and node.
+Choose the protocol and enter port numbers for both the container and node.
 Multiple port forwards can be defined.
+The node port number must be over *9000*.
+Make sure no other containers or system services are using the same port number.
 
 #### Host Path Volumes
 
