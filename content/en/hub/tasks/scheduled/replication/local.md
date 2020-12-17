@@ -40,7 +40,7 @@ To open the Replication Wizard, go to **Tasks > Replication Tasks** and click **
 Set the source location to the local system and pick which datasets to snapshot.
 The wizard takes new snapshots of the sources when no existing source snapshots are found.
 
-<img src="/images/TasksReplicationTasksAddLocalSource.png.png">
+<img src="/images/TasksReplicationTasksAddLocalSource.png">
 <br><br>
 
 Set the destination to the local system and define the path to the storage location for replicated snapshots.
