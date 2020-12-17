@@ -39,4 +39,4 @@ You can **Force** creating a pool when the metadata vdev has a different layout 
 Creating a pool requires confirming the action.
 After the pool is created, you can confirm the pool shows as a *MIRROR* with a *Special* section that contains the metadata SSD by opening the [Pool Options](/hub/initial-setup/storage/managingpools/#status) and clicking **Status**.
 
-<img src="/images/fusion-pool-create.PNG">
+<img src="/images/fusion-pool-create.png">
