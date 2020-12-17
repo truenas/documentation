@@ -91,7 +91,7 @@ After a dataset is created, additional management options are available by going
 * **Add Dataset**: create a [new ZFS dataset](#creating-a-dataset) that is a "child" of this dataset. Datasets can be continuously layered in this manner.
 * **Add Zvol**: create a new [ZFS block device](/hub/initial-setup/storage/zvols/) as a "child" of this dataset.
 * **Edit Options**: opens the [dataset options](#dataset-options) to make adjustments to the dataset configuration. The dataset **Name**, **Case Sensitivity**, and **Share Type** cannot be changed.
-* **Edit Permissions**: opens the editor to set access permissions for this dataset.
+* **Edit Permissions**: opens the editor to set access permissions for this dataset. For more information on Managing ACLs, read the [Dataset Management](/hub/tasks/advanced/editingacls/) documentation.
 * **User Quotas**: shows options to set data or object quotas for user accounts cached on the system or user accounts that are connected to this system.
 * **Group Quotas**: shows options to set data or object quotas for user groups cached on the system or user groups that are connected to this system.
 * **Delete Dataset**: removes the dataset, all stored data, and any snapshots of the dataset from TrueNAS. **Warning**: this can result in unrecoverable data loss, be sure that any critical data is moved off the dataset or is otherwise obsolete.

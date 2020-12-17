@@ -1,5 +1,5 @@
 ---
-title: "Managing Access Control Lists"
+title: "Dataset Permissions"
 linktitle: "ACL Management"
 description: "How to open an Access Control List (ACL) and add or remove Access Control Entries (ACEs)."
 tags: ["security","ACLS"]
@@ -20,9 +20,9 @@ When creating a dataset, you can choose how the ACL can be modified by selecting
   Setting the ACL Mode to Restricted is typically used to optimize a dataset for SMB sharing, but can require further optimizations.
   For example, configuring an rsync task with this dataset could require adding `--no-perms` as an extra option for the task.
 
-To view an ACL, go to *Storage > Pools* and click the *Edit ACL* option for a nested dataset within a pool.
+To view an ACL, go to **Storage > Pools** and click the *Edit Permissions* option for a nested dataset within a pool.
 
-<img src="/images/dataset-options.png">
+<img src="/images/editpermission.png">
 <br><br>
 
 ### ACL Inheritance
@@ -31,11 +31,28 @@ The ACL for a new file or directory is typically inherited from the parent direc
 An exception is when there are no *File Inherit* or *Directory Inherit* flags in the parent ACL *owner@*, *group@*, or *everyone@* entries.
 These non-inheriting entries are added to the ACL of the newly created file or directory based on the [Samba](https://wiki.samba.org/index.php/Main_Page) create and directory masks or the [umask](https://www.freebsd.org/cgi/man.cgi?query=umask&sektion=2) value.
 
-## Editing an ACL
+## Basic Permissions Editor
 
-Use the ACL manager to adjust file ownership or account permissions to the dataset.
+The **Permissions Editor** option will allow basic adjustments to a datasets ACL.
 
-<img src="/images/acl-manager.png">
+<img src="/images/editpermission.png">
+<br><br>
+
+<img src="/images/basicacl.png">
+<br><br>
+
+## ACL Manager - Editing an ACL
+
+Click the **ACL Manager** button to adjust file ownership or account permissions to the dataset. The first time the ACL Manager is accessed a screen pops up that with basic presets or custom acl settings. Once they have been set you can go back anytime to adjust your ACL's.
+
+Choose **Select a preset ACL** and choose a preset. The preset options are OPEN, RESTRICTED, or HOME.
+
+<img src="/images/presetacl.png">
+<br><br>
+ 
+Choose **Create a custom ACL** to cuatomize the acl's for the dataset.
+
+<img src="/images/customacls.png">
 <br><br>
 
 ### Ownership

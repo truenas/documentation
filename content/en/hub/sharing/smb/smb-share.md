@@ -185,6 +185,9 @@ For example, to only allow the *tmoore* user permission to view dataset contents
 
 <img src="/images/StoragePoolsEditACLExample.png">
 
+For more information on Managing ACLs, read the [Dataset Management](/hub/tasks/advanced/editingacls/) documentation.
+
+
 ## SMB Service
 
 Connecting to an SMB share does not work when the related system service is not activated.
@@ -225,10 +228,3 @@ Clicking **ADVANCED OPTIONS** adds a new section of *Other Options* for fine-tun
 | Directory Mask                          | integer   | Overrides default directory creation mask of *0777* which grants directory read, write and execute access for everybody. |
 | Bind IP Addresses                       | drop down | Static IP addresses which SMB listens on for connections. Leaving all unselected defaults to listening on all active interfaces.
 | Auxiliary Parameters                    | string    | Stores additional [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html). To log more details when a client attempts to authenticate to the share, add `log level = 1, auth_audit:5`. |
-
-
-
-
-
-
-
