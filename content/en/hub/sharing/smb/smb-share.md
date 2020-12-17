@@ -184,6 +184,7 @@ Continue to define how the settings are applied to the account then choose which
 For example, to only allow the *tmoore* user permission to view dataset contents but not make changes, set the **ACL Type** to *Allow* and **Permissions** to *Read*.
 
 <img src="/images/StoragePoolsEditACLExample.png">
+
 For more information on Managing ACLs, read the [Dataset Management](/hub/tasks/advanced/editingacls/) documentation.
 
 
