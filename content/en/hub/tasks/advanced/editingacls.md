@@ -20,7 +20,7 @@ When creating a dataset, you can choose how the ACL can be modified by selecting
   Setting the ACL Mode to Restricted is typically used to optimize a dataset for SMB sharing, but can require further optimizations.
   For example, configuring an rsync task with this dataset could require adding `--no-perms` as an extra option for the task.
 
-To view an ACL, go to *Storage > Pools* and click the *Edit Permissions* option for a nested dataset within a pool.
+To view an ACL, go to **Storage > Pools** and click the *Edit Permissions* option for a nested dataset within a pool.
 
 <img src="/images/editpermission.png">
 <br><br>
