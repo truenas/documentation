@@ -4,6 +4,8 @@ description: "Running updates about TrueNAS SCALE Nightly status and current iss
 ---
 
 #### Recent Updates
+> 12/16/2020 - Applications UI lands in SCALE - Support for deploying pre-defined Helm Charts, as well as Docker Images now possible via the UI.
+
 > 11/17/2020 - Update Debian base image, SCALE now includes Kernel 5.9.0 as well as more updated versions of K8s, Docker, KVM and more.
 
 > 10/29/2020 - Updated [Kubernetes Workload Usage](#using-kubernetes) information, providing examples of deploying Docker images on SCALE
@@ -42,7 +44,9 @@ description: "Running updates about TrueNAS SCALE Nightly status and current iss
 
 Nightly images for TrueNAS SCALE are built every 24 hours, at around 2AM Eastern (EDT/EST) time. Online updates are created every 2 hours and are available in the SCALE UI online updating page.
 
-ISO files can be downloaded at [https://www.truenas.com/download-truenas-scale/](https://www.truenas.com/download-truenas-scale/ "https://www.truenas.com/download-truenas-scale/")
+The Nightly ISO Image can be downloaded from: [http://download.truenas.com/truenas-scale-nightly/TrueNAS-SCALE.iso](http://download.truenas.com/truenas-scale-nightly/TrueNAS-SCALE.iso "http://download.truenas.com/truenas-scale-nightly/TrueNAS-SCALE.iso")
+
+Users wanting to upgrade to a nightly image from 20.10 or 20.12 versions can do so by downloading the manual update file: [http://update.freenas.org/scale/TrueNAS-SCALE-Angelfish-Nightlies/TrueNAS-SCALE.update](http://update.freenas.org/scale/TrueNAS-SCALE-Angelfish-Nightlies/TrueNAS-SCALE.update)
 
 ## Current Feature Status
 

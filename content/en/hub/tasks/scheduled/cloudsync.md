@@ -2,6 +2,7 @@
 title: "Cloud Data Transfers"
 description: "How to configure Cloud Credentials and Cloud Sync tasks to send or receive data from a Cloud Storage Provider."
 tags: ["cloud storage"]
+weight: 80
 ---
 
 You can configure TrueNAS to send, receive, or synchronize data with a Cloud Storage provider.
@@ -35,7 +36,7 @@ For example, saving an Amazon S3 credential on TrueNAS could require logging in 
 To save cloud storage provider credentials, go to *System > Cloud Credentials* and click *Add*.
 
 <figure>
-  <img src="/images/cloud-credentials-add.png">
+  <img src="/images/S3CloudCred.png">
   <figcaption>New Cloud Credential</figcaption>
 </figure>
 

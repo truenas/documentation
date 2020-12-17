@@ -6,7 +6,7 @@ tags: ["VM"]
 
 {{% alert title="Licensed Feature" color="info" %}}
 While Virtual Machines are freely available in TrueNAS CORE, they are a licensed feature of TrueNAS Enterprise.
-To request adding virtual machines to your TrueNAS Enterprise license, [contact iXsystems](/hub/additional-topics/support/#contacting-ixsystems-support)
+To request adding virtual machines to your TrueNAS Enterprise license, [contact iXsystems](/hub/additional-topics/support/#contacting-ixsystems-support).
 {{% /alert %}}
 
 A Virtual Machine (VM) is an environment on a host computer that can be used as if it were a separate physical computer.
@@ -62,7 +62,7 @@ Notes about devices:
 
 ## Managing the Virtual Machine
 
-After creating the VM and configuring any devices for it, you can manage the VM by expanding its entry in **Virtual Machines**
+After creating the VM and configuring any devices for it, you can manage the VM by expanding its entry in **Virtual Machines**.
 
 <img src="/images/virtual-machine-options.png">
 <br><br>
@@ -72,3 +72,7 @@ If the *VNC* connection screen appears garbled, try adjusting the VNC device res
 
 Using the **State** toggle or clicking the <i class="material-icons" aria-hidden="true" title="Stop Button">stop</i> **STOP** follows a standard shut down procedure to cleanly shut down the running VM.
 Clicking the <i class="material-icons" aria-hidden="true" title="Power Off Button">power_settings_new</i> **POWER OFF** immediately halts and deactivates the VM, similar to unplugging a computer.
+
+{{% pageinfo %}}
+If the VM you created has no Guest OS installed, The VM **State** toggle and <i class="material-icons" aria-hidden="true" title="Stop Button">stop</i> **STOP** button might not function as expected. They will try to send an ACPI power down command to the VM operating system, but since no OS is installed, the commands will timeout.
+{{% /pageinfo %}}

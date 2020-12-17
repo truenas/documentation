@@ -1,16 +1,34 @@
 ---
-title: "Changing User Preferences"
-description: "A how-to for changing user preferences."
+title: "Interface Preferences"
+description: "Customizing interface appearance."
 ---
+
+There are a few adjustable interface preferences and a built-in theme editor for creating your own TrueNAS color schemes.
 
 To access user preferences, click <i class="fas fa-cog" aria-hidden="true" title="Settings"></i> **> Preferences**.
 This page has options to adjust global settings in the web interface, manage custom themes, and create new themes.
 
-To change the theme, select a theme from the *Choose Theme* dropdown.
-*Prefer buttons with icons only* can be set to only display icons and tooltips instead of text labels. When *Enable Password Toggle* is set, <i class="material-icons" aria-hidden="true" title="Visibility">visibility</i> appears next to password fields. The button can be used to toggle the visibility of the password. To display the legacy FreeNAS branding, set *Retro Logo*. Set *Reset Table Columns to Default* to reset all tables to display default columns.
+<img src="/images/InterfacePreferences.png">
+
+## General Preferences
+
+There are a few options for how things are displayed or behave in the web interface:
+
+* To choose a different pre-built or saved custom color scheme for the web interface, select an option from the **Choose Theme** dropdown.
+* If screen space is limited, you can set **Prefer buttons with icons only** to only display icons and tooltips without text labels.
+* When **Enable Password Toggle** is set, <i class="material-icons" aria-hidden="true" title="Visibility">visibility</i> appears next to password fields. Clicking this button will show characters typed or saved in the field.
+* To clear any custom display choices for interface tables, set **RReset Table Columns to Default**.
+* To display the legacy FreeNAS branding, set **Retro Logo**.
+* **Reset All Preferences to Default** changes all these options back to their factory default settings.
+
+## Custom Themes
 
 If a included theme doesn't satisfy your preference, a fully custom theme can be created.
-To start creating a custom theme, click *CREATE NEW THEME*.
+To start creating a custom theme, click **CREATE NEW THEME**.
+
+<img src="/images/CustomTheme.png">
+<br><br>
+
 Colors from an existing theme can be used when creating a new custom theme.
 Select a theme from the *Load Colors from Theme* dropdown to use the colors from that theme for the new custom theme.
 The fields are as follows:
@@ -32,5 +50,5 @@ The fields are as follows:
 For even more fine tuning, click the *COLORS* tab.
 Here, colors can be changed using the slider or by entering hexadecimal values.
 
-When complete, click *SUBMIT*.
-TrueNAS automatically switches to newly created theme and adds it to the *Choose Theme* dropdown.
+When complete, click **SUBMIT**.
+TrueNAS automatically switches to newly created theme and adds it to the **Choose Theme** dropdown.

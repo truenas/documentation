@@ -12,7 +12,7 @@ TrueNAS CORE users can engage with the TrueNAS community to answer questions and
 There are a number of resources available to TrueNAS CORE users for answering usage questions or troubleshooting system configurations.
 It is always recommended to search through the software documentation and community resources for answers to these questions.
 
-Users are also welcome to report bugs and vote for or suggest new TrueNAS features in the project Jira instance.
+Users are also welcome to report bugs, vote for, or suggest new TrueNAS features in the project Jira instance.
 
 ### iX Community
 
@@ -134,6 +134,10 @@ In addition to all the TrueNAS CORE support options, TrueNAS Enterprise customer
 Silver and Gold level Support customers can also enable Proactive Support on their hardware to automatically notify iXsystems if an issue occurs.
 To find more details about the different Warranty and Service Level Agreement (SLA) options available, see https://www.ixsystems.com/support/.
 To purchase support for your iXsystems TrueNAS Enterprise hardware, please call **1-855-GREP-4-IX** (US Toll Free) or **1-408-943-4100**.
+
+### Production System Reporting
+
+Once the system is ready to be in production, Update the status by checking the **This is a production system** checkbox and click the **Update Status** button. This will send an email to Support declaring that the system is in production. There is an option to include a debug with this email that could assist support in the future.
 
 ### Configuring Proactive Support
 

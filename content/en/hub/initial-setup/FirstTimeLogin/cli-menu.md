@@ -5,9 +5,11 @@ weight: 10
 tags: ["CLI","networking"]
 ---
 
-The Console Setup menu appears at the end of the boot process. If the TrueNAS system has a keyboard and monitor, this Console Setup menu can be used to administer the system.
+The Console Setup menu displays at the end of the boot process.
+If the TrueNAS system has a keyboard and monitor, this menu can be used to administer the system.
 
-When connecting to a TrueNAS system with SSH or the web shell, the Console Setup menu is not shown by default. It can be started by the `root` user or another user with root permissions by typing `/etc/netcli`.
+When connecting with SSH or the web shell, the Console Setup menu is not shown by default.
+It can be started by the `root` user or another user with root permissions by entering `/etc/netcli`.
 
 To disable the Console Setup menu, go to **System > Advanced** and unset *Enable Console Menu*.
 
@@ -40,17 +42,19 @@ The menu provides these options:
 
 11) **Shut Down** shuts down the system.
 
-***
+The numbering and quantity of options on this menu can change due to software updates, service agreements, or other factors.
+Please carefully check the menu before selecting an option, and keep this in mind when writing local procedures.
 
-The numbering and quantity of options on this menu can change due to software updates, service agreements, or other factors. Please carefully check the menu before selecting an option, and keep this in mind when writing local procedures.
+During boot, TrueNAS automatically attempts to connect to a DHCP server from all live interfaces.
+If it successfully receives an IP address, the address is displayed so it can be used to access the graphical user interface.
+In the example shown above, TrueNAS is accessible at `http://10.0.0.102`.
 
-During boot, TrueNAS® automatically attempts to connect to a DHCP server from all live interfaces. If it successfully receives an IP address, the address is displayed so it can be used to access the graphical user interface. In the example shown above, TrueNAS® is accessible at http://10.0.0.102.
+Some TrueNAS systems are set up without a monitor, making it challenging to determine which IP address has been assigned.
+On networks that support Multicast DNS (mDNS), the hostname and domain can be entered into the address bar of a browser.
+By default, this value is `truenas.local`.
 
-Some TrueNAS® systems are set up without a monitor, making it challenging to determine which IP address has been assigned. On networks that support Multicast DNS (mDNS), the hostname and domain can be entered into the address bar of a browser. By default, this value is truenas.local.
-
-If TrueNAS® is not connected to a network with a DHCP server, use the console network configuration menu to manually configure the interface as shown here. In this example, the TrueNAS® system has one network interface, em0.
-
-***
+If TrueNAS is not connected to a network with a DHCP server, use the console network configuration menu to manually configure the interface as shown here.
+In this example, the TrueNAS system has one network interface, `em0`.
 
 ```
 Enter an option from 1-12: 1
