@@ -40,11 +40,14 @@ To open the Replication Wizard, go to **Tasks > Replication Tasks** and click **
 Set the source location to the local system and pick which datasets to snapshot.
 The wizard takes new snapshots of the sources when no existing source snapshots are found.
 
-<img src="/images/TasksReplicationTasksAddLocalSourceLocalDest.png">
+<img src="/images/TasksReplicationTasksAddLocalSource.png.png">
 <br><br>
 
 Set the destination to the local system and define the path to the storage location for replicated snapshots.
 When manually defining the destination, be sure to type the full path to the destination location.
+
+<img src="/images/TasksReplicationTasksAddLocalSourceLocalDest.png">
+<br><br>
 
 TrueNAS suggests a default name for the task based on the selected source and destination locations, but you can type your own name for the replication.
 Every saved replication task can be loaded into the wizard to make creating new replication schedules even easier.
