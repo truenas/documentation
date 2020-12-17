@@ -20,7 +20,7 @@ The [Key Management Interface Protocol (KMIP)](https://docs.oasis-open.org/kmip/
 
 To begin encrypting data, follow the same process as creating a new pool and set the **Encryption** option at the top of the page.
 
-<img src="/images/TN-12.0-encryption-1.PNG">
+<img src="/images/12.0-encrypted-pool-create.PNG">
 <br><br>
 
 Check the **Encryption** box, read the Warning, click the **Confirm** box and then click the **I Understand** button.
