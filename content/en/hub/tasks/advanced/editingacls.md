@@ -33,11 +33,18 @@ These non-inheriting entries are added to the ACL of the newly created file or d
 
 ## Basic Permissions Editor
 
+The **Permissions Editor** option will allow basic adjustments to a datasets ACL
+
+<insert a screenshot of the basic ACL window>
+
 ## ACL Manager - Editing an ACL
 
-Use the ACL manager to adjust file ownership or account permissions to the dataset.
+Use the **ACL Manager** to adjust file ownership or account permissions to the dataset. The first time the ACL Manager allows you to choose basic presets or custom acl settings
 
-<img src="/images/acl-manager.png"><replace this screenshot>
+<img src="/images/acl-manager.png"><replace this screenshot with the presets>
+<br><br>
+  
+<img src="/images/acl-manager.png"><replace this screenshot with the custom ACL screen>
 <br><br>
 
 ### Ownership
