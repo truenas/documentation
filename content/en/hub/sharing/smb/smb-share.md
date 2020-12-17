@@ -185,6 +185,8 @@ For example, to only allow the *tmoore* user permission to view dataset contents
 
 <img src="/images/StoragePoolsEditACLExample.png">
 
+For more information on Managing ACLs, read the [Dataset Management](/hub/tasks/advanced/editingacls/) documentation.
+
 ## SMB Service
 
 Connecting to an SMB share does not work when the related system service is not activated.
