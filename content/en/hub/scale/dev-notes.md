@@ -223,17 +223,35 @@ Setting `KUBECONFIG` is required for using helm and the `kubectl` alias helps us
 ## Using Applications
 
 Both pre-built official containers and custom application containers can be deployed using the *Apps* page in the Scale web interface.
+
+<img src="/images/ScaleApps.png">
+<br><br>
+
 The UI will ask to use a storage pool for Applications.
+
+<img src="/images/ScaleAppsChoosePool.png">
+<br><br>
+
 It is recommended to keep the container use case in mind when choosing a pool.
 Be sure to select a pool that has enough space for all the application containers you intend to use.
 This will create an `ix-applications` dataset on the chosen pool and use this location to store all container-related data.
 
 Additional options for configuring general network interfaces and IP addresses for application containers are in **Apps > Settings > Advanced Settings**.
 
+<img src="/images/ScaleAppsAdvancedSettings.png">
+<br><br>
+
 ### Official Applications
 
 Official containers are pre-configured to only require a name during deployment.
+
+<img src="/images/ScaleAppsInstallPlex.png">
+<br><br>
+
 When the container is deployed and active, a button to open the application web interface becomes available.
+
+<img src="/images/ScaleAppsInstalledPlexActive.png">
+<br><br>
 
 Editing a deployed official container allows adjusting the container settings.
 Saving any changes will redeploy the container.
@@ -241,6 +259,10 @@ Saving any changes will redeploy the container.
 ### Custom Applications
 
 To deploy a custom application container in the Scale web interface, go to **Apps** and click *Launch Docker Image*.
+
+<img src="/images/ScaleAppsLaunchDockerImage.png">
+<br><br>
+
 There a numerous options for custom containers that are broken down into smaller sections.
 These options are derived from the [Kubernetes container options](https://kubernetes.io/docs/setup/).
 
@@ -299,6 +321,9 @@ Expand `/ix-applications/releases/<ContainerName>/volumes/ix-volumes/`.
 Saving the official or custom container will add a new entry to *Installed Applications*.
 The container will then enter a deploy status as it fetches the image from the remote repository and configures it.
 When deployment is complete, the container moves to an active status and can begin to be used.
+
+<img src="/images/ScaleAppsInstalledPlexActive.png">
+<br><br>
 
 ### Accessing the Shell in an Active Container
 
