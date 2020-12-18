@@ -267,9 +267,6 @@ Go to **MOUNT POINTS** > **ACTIONS** > **Add Mount Point** to add storage to a j
 <img src="/images/12.0-jails-mountpointadd.PNG" width='700px'>
 <br><br>
 
-
-<br><br>
-
 Browse to the **Source** and **Destination**, where:
 
 + **Source** is the directory or dataset on the TrueNAS system which will be accessed by the jail. TrueNAS creates the directory if it does not exist. This directory must reside outside of the pool or dataset being used by the jail. This is why it is recommended to create a separate dataset to store jails. The dataset holding the jails is always separate from any datasets used for storage on the TrueNAS system.
