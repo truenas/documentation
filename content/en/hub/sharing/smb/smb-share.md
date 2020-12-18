@@ -228,3 +228,9 @@ Clicking **ADVANCED OPTIONS** adds a new section of *Other Options* for fine-tun
 | Directory Mask                          | integer   | Overrides default directory creation mask of *0777* which grants directory read, write and execute access for everybody. |
 | Bind IP Addresses                       | drop down | Static IP addresses which SMB listens on for connections. Leaving all unselected defaults to listening on all active interfaces.
 | Auxiliary Parameters                    | string    | Stores additional [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html). To log more details when a client attempts to authenticate to the share, add `log level = 1, auth_audit:5`. |
+
+{{% pageinfo %}}
+Some users have experienced issues in the Windows 10 v2004 release where network shares can't be accessed. The problem appears to come from a bug in `gpedit.msc`, the Local Group Policy Editor. Unfortunately, setting the "Allow insecure guest logon" flag value to "Enabled" in Computer Configuration > Administrative Templates > Network > Lanman Workstation appears to have no effect on the configuration.
+To work around the issue, you will need to edit the registry. Use `Regedit` and go to `HKLM\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters`. The **DWORD AllowInsecureGuestAuth** will be set to the incorrect value *0x00000000*. Changing this value to `0x00000001` (Hexadecimal 1) allows adjusting the settings in `gpedit.msc`.
+This can be applied to a fleet of Windows machines with a Group Policy Update.
+{{% /pageinfo %}}
