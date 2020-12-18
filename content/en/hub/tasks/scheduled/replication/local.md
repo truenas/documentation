@@ -3,7 +3,7 @@ title: "Local Replication"
 linkTitle: "Local"
 description: "How to use the TrueNAS Wizard to quickly back up new snapshots to another location on the local system."
 weight: 1
-tags: ["ZFS"]
+tags: ["ZFS", "replication"]
 ---
 
 ## Process Summary
@@ -27,7 +27,7 @@ tags: ["ZFS"]
 
 TrueNAS provides a wizard that is useful to quickly configure different simple replication scenarios.
 
-<img src="/images/replication-wizard-empty.png">
+<img src="/images/TasksReplicationTasksAdd.png">
 <br><br>
 
 While regularly scheduled replications to a remote location are recommended as the optimal backup scenario, the wizard can be used to very quickly create and copy ZFS snapshots to another location on the same system.
@@ -40,13 +40,13 @@ To open the Replication Wizard, go to **Tasks > Replication Tasks** and click **
 Set the source location to the local system and pick which datasets to snapshot.
 The wizard takes new snapshots of the sources when no existing source snapshots are found.
 
-<img src="/images/replication-sources.png">
+<img src="/images/TasksReplicationTasksAddLocalSource.png">
 <br><br>
 
 Set the destination to the local system and define the path to the storage location for replicated snapshots.
 When manually defining the destination, be sure to type the full path to the destination location.
 
-<img src="/images/replication-destination.png">
+<img src="/images/TasksReplicationTasksAddLocalSourceLocalDest.png">
 <br><br>
 
 TrueNAS suggests a default name for the task based on the selected source and destination locations, but you can type your own name for the replication.
@@ -59,7 +59,7 @@ The destination lifetime is how long copied snapshots are stored in the destinat
 It is usually recommended to define a snapshot lifetime to prevent storage issues.
 Choosing to keep snapshots indefinitely can require you to manually clean old snapshots from the system if or when the destination fills to capacity.
 
-<img src="/images/replication-custom-snaplifetime.png">
+<img src="/images/TasksReplicationTasksAddLocalSourceLocalDestCustomLife.png">
 <br><br>
 
 Clicking **START REPLICATION** saves the new task and immediately attempts to replicate snapshots to the destination.
@@ -69,9 +69,9 @@ This can delete important data, so be sure any existing snapshots can be deleted
 The simple replication is added to the Replication task list and will show that it is currently running.
 Clicking the task state shows the replication log with an option to download the log to your local system.
 
-<img src="/images/replication-tasklog.png">
+<img src="/images/TasksReplicationTasksLocalLogs.png">
 <br><br>
 
 To confirm that snapshots have been replicated, go to **Storage > Snapshots** and verify the destination Dataset has new Snapshots with correct timestamps.
 
-<img src="/images/replication-newsnapshots.png">
+<img src="/images/TasksReplicationTasksLocalSnapshots.png">

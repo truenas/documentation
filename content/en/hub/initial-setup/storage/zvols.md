@@ -10,7 +10,7 @@ A ZFS pool must be created first to create a Zvol. See
 [Creating a new ZFS Pool]({{< ref "pools.md" >}}).
 {{% /pageinfo %}}
 
-<img src="/images/pools-zvol.JPG">
+<img src="/images/pools-zvol.jpg">
 <br><br>
 
 To create a Zvol in the desired pool, go to **Storage > Pools** then click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp and *Add Zvol*.

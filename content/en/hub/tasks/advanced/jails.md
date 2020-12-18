@@ -264,7 +264,7 @@ Storage can be added by clicking **Jails** > **>** (Expand) > **MOUNT POINTS** f
 
 Go to **MOUNT POINTS** > **ACTIONS** > **Add Mount Point** to add storage to a jail.
 
-<img src="/images/jails-mountpoint-add.png" width='700px'>
+<img src="/images/12.0-jails-mountpointadd.PNG" width='700px'>
 <br><br>
 
 Browse to the **Source** and **Destination**, where:
@@ -292,7 +292,7 @@ To prevent writes to the storage, click **Read-Only**.
 
 After storage has been added or created, it appears in the `MOUNT POINTS` for that jail. 
 
-<img src="/images/jails-mountpoint-example.png" width='700px'>
+<img src="/images/12.0-jails-mountpoint-example.PNG" width='700px'>
 <br><br>
 
 Storage is automatically mounted as it is created.
