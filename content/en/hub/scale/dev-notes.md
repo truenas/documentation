@@ -159,7 +159,7 @@ This will set up Kubernetes on the defined pool. For the first time, it may take
 
 ### Deploying Kubernetes Workloads
 
-SCALE has API support for deploying Kubernetes workloads. SCALE manages Kubernetes workloads with integration of Helm v3 and using a concept of catalogs. For more information about catalogs, please refer to https://github.com/truenas/charts.
+SCALE has API support for deploying Kubernetes workloads. SCALE manages Kubernetes workloads with integration of Helm v3 and using a concept of catalogs. For more information about catalogs and how to build your own iX Helm chart, please refer to https://github.com/truenas/charts.
 
 Each catalog item points to an application which will be deployed to Kubernetes. This application is an enhanced helm chart which deploys the application to the TrueNAS SCALE Kubernetes cluster.
 
