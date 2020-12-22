@@ -65,7 +65,7 @@ The **Export Password Secret Seed** option is off by default and should only be 
 | Setting                                   | Value     | Description                                                          |
 |-------------------------------------------|-----------|----------------------------------------------------------------------|
 | Show Text Console without Password Prompt | checkbox  | Set for the text console to be available without entering a password. |
-| Enable Serial Console                     | checkbox  | **Do not** enable this option if the serial port is disabled. Adds the **Serial Port** and **Serial Speed** fields. |
+| Enable Serial Console                     | checkbox  | **Do not** enable this option if the serial port is disabled. Adds the **Serial Port** and **Serial Speed** fields. On UEFI-installed systems, enabling the Serial Console also disables the system video output, including when connecting over the IPMI video console. |
 | Serial Port                               | drop down | Select the serial port address in hex. |
 | Serial Speed                              | drop down | Select the speed in bps used by the serial port. |
 | MOTD Banner                               | string    | Set a message of the day (MOTD) that is shown when a user logs in to the system using SSH. |
