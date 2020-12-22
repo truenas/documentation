@@ -32,7 +32,7 @@ configuration.
 {{% alert title="VMWare products and EFI boot mode:" %}}
 A third party bug currently affects EFI (UEFI) booting on VMWare products.
 TrueNAS should be installed in BIOS mode until this is resolved.
-See iXSystems reference [NAS-107298](https://jira.ixsystems.com/browse/NAS-107298)
+See iXSystems reference [NAS-107298](https://jira.ixsystems.com/browse/NAS-107298).
 {{% /alert %}}
 
 When installing TrueNAS in a VMware VM, double check the virtual switch and VMware port group.
