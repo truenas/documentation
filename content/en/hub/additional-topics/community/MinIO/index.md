@@ -16,7 +16,7 @@ On your first node, go to **Apps > Launch Docker Image**.
 <img src="/images/minIO-launch-docker-image-1.png">
 <br><br>
 
-First, enter an application name (we picked “minIO-distributed").
+First, enter an application name (we picked “minio-distributed").
 
 Enter “minio/minio” as the image name under **Image Repository** and select _Kill existing pods before creating new ones_ under **Update Strategy**.
 
