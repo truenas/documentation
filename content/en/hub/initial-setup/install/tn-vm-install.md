@@ -39,10 +39,21 @@ When installing TrueNAS in a VMware VM, double check the virtual switch and VMwa
 Network connection errors for plugins or jails inside the TrueNAS VM can be caused by a misconfigured virtual switch or VMware port group.
 Make sure *MAC spoofing* and *promiscuous mode* are enabled on the switch first, and then the port group the VM is using.
 
-## Installing
+## Outline procedure for all hypervisors
 
+For most hypervisors, the procedure for creating a TrueNAS VM is as follows:
 
-> NOTE: VMware Player 15.5 for Windows is being used in this example.
+1. Create a new Virtual Machine as usual, taking note of the following settings.
+2. Ensure the virtual hardware includes a bootable CD/DVD device, and this points to the installer image for TrueNAS (this will usually be an ISO file).
+3. Ensure the virtual network card is configured so that it can be reached from your network. In many cases, "bridged" mode is optimal; this treats the network card as if it is plugged into a simple switch on the existing network.
+4. In some products, it is possible or required to specify the type of system being installed on the VM. The ideal option is FreeBSD 12 64 bit; if this is not available try options such as FreeBSD 12, FreeBSD 64 bit, 64 bit OS, or Other. (Do not choose a Windows or Linux related OS type).
+5. For VMWare hypervisors, install in BIOS not EFI (UEFI) mode - see warning above.
+6. Ensure the VM has sufficient memory and disk space. TrueNAS needs at least 8 GB RAM and may need more. 20 GB disk space is usually enough. Not all hypervisors will allocate enough memory by default.
+7. Boot the VM, and install TrueNAS as usual.
+8. When install is complete, shut down the VM instead of rebooting, and disconnect the CD/DVD from the VM before rebooting the VM.
+9. After rebooting into TrueNAS, install VM tools if applicable for your VM, and if they exist for FreeBSD 12, or ensure they are loaded on boot. For VMWare products, see the note below. For other hypervisors, see the forum or search online, to determine if these are applicable.
+
+## Example installation for VMWare Player 15.5
 
 Open VMware Player and click *Create a New Virtual Machine* to enter
 the New Virtual Machine Wizard.
