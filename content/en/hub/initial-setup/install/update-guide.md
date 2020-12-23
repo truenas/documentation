@@ -116,7 +116,7 @@ After the dialog closes, the manual update screen is shown.
 
 The current version of TrueNAS is shown for verification.
 
-<img src="/images/12.0-manual-update.PNG ">
+<img src="/images/12.0-manual-update.png ">
 <br><br>
 
 Select the manual update file that was saved to your local system using **Browse**.
