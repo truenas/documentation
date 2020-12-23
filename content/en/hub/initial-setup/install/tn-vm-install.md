@@ -126,8 +126,8 @@ Congratulations, TrueNAS is now installed in a virtual machine.
 
 {{% alert title="TrueNAS post-install for VMware" color="info" %}}
 After installing TrueNAS in a VMware VM, it is recommended to configure and use the [vmx(4)](https://www.freebsd.org/cgi/man.cgi?query=vmx) drivers on TrueNAS.
-To load the VMX driver when TrueNAS boots, log in to the web interface and go to the **Shell**.
-Open `/boot/loader.conf` in a text editor and add `if_vmx_load="YES"` to that file:
+To load the VMX driver when TrueNAS boots, log in to the web interface and go to **System** and then **Tunables**.
+CLick **Add** and create a new tunable with variable `if_vmx_load`, value `"YES"`, and type `loader`, and save the tunable:
 
-<img src="/images/shell-loaderconf-vmx.png">
+<img src="/images/tunable-if_vmx_load.png">
 {{% /alert %}}
