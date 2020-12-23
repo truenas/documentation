@@ -51,7 +51,7 @@ For most hypervisors, the procedure for creating a TrueNAS VM is as follows:
 6. Ensure the VM has sufficient memory and disk space. TrueNAS needs at least 8 GB RAM and may need more. 20 GB disk space is usually enough. Not all hypervisors will allocate enough memory by default.
 7. Boot the VM, and install TrueNAS as usual.
 8. When install is complete, shut down the VM instead of rebooting, and disconnect the CD/DVD from the VM before rebooting the VM.
-8. After rebooting into TrueNAS, install VM tools if applicable for your VM, and if they exist for FreeBSD 12, or ensure they are loaded on boot. For VMWare products, see the note below. For other hypervisors, see the forum or search online, to determine if these are applicable.
+9. After rebooting into TrueNAS, install VM tools if applicable for your VM, and if they exist for FreeBSD 12, or ensure they are loaded on boot. For VMWare products, see the note below. For other hypervisors, see the forum or search online, to determine if these are applicable.
 
 ## Example installation for VMWare Player 15.5
 
