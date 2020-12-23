@@ -67,7 +67,7 @@ It is important to read the release notes before updating to determine if any of
 
 A dialog to save the system configuration file appears before installing updates.
 
-<img src="/images/12.0-save-config.PNG ">
+<img src="/images/12.0-save-config.png ">
 <br><br>
 
 > **Warning:**
