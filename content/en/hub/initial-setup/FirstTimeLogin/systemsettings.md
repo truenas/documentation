@@ -11,7 +11,7 @@ These allow a wide range of system customization, from changing the web interfac
 
 **System > General** contains options for configuring the web interface and other basic system settings.
 
-<img src="/images/12.0-system-general.PNG">
+<img src="/images/12.0-system-general.png">
 <br><br>
 
 | Setting                       | Value          | Description                                                                                                                                                                                                                                                                                                                                                        |

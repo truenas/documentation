@@ -67,7 +67,7 @@ It is important to read the release notes before updating to determine if any of
 
 A dialog to save the system configuration file appears before installing updates.
 
-<img src="/images/12.0-save-config.PNG ">
+<img src="/images/12.0-save-config.png ">
 <br><br>
 
 > **Warning:**
@@ -116,7 +116,7 @@ After the dialog closes, the manual update screen is shown.
 
 The current version of TrueNAS is shown for verification.
 
-<img src="/images/12.0-manual-update.PNG ">
+<img src="/images/12.0-manual-update.png ">
 <br><br>
 
 Select the manual update file that was saved to your local system using **Browse**.
