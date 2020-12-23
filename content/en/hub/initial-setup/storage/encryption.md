@@ -29,7 +29,7 @@ Check the **Encryption** box, read the Warning, click the **Confirm** box and th
 
 The default encryption cipher is recommended, but there are other ciphers available.
 
-<img src="/images/TN-12.0-encryption-2.PNG">
+<img src="/images/TN-12.0-encryption-2.png">
 <br><br>
 
 ### Encrypting a New Dataset
@@ -54,12 +54,12 @@ Always back up the key file to a safe and secure location.
 
 Manually back up a root dataset keyfile by opening the pool <i class="fas fa-cog" aria-hidden="true" title="Settings"></i> (Settings) menu and selecting **Export Dataset Keys**.
 
-<img src="/images/TN-12.0-encryption-8.PNG">
+<img src="/images/TN-12.0-encryption-8.png">
 <br><br>
 
 To change the key, click <i class="fas fa-ellipsis-v"></i>&nbsp; (Options) and select **Encryption Options**.
 
-<img src="/images/TN-12.0-encryption-4.PNG">
+<img src="/images/TN-12.0-encryption-4.png">
 <br><br>
 
 Enter your custom key or click **Generate Key**.
