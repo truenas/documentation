@@ -1,11 +1,11 @@
 ---
 title: "MinIO Clusters in TrueNAS SCALE"
 description: "How to deploy MinIO Clusters in TrueNAS SCALE."
-weight: 1
 tags: ["SCALE", "MinIO"]
 ---
 
-On TrueNAS SCALE 20.12 and later, users can create a MinIO S3 distributed instance to scale out and handle individual TrueNAS node failures. In this example, we will be using four physical TrueNAS systems and creating a distributed cluster.
+On TrueNAS SCALE 20.12-ALPHA and later, users can create a MinIO S3 distributed instance to scale out and handle individual TrueNAS node failures. In this example, we will be using four physical TrueNAS systems and creating a distributed cluster.
+For more information on MinIO distributed setups, please refer to their [documentation](https://docs.min.io/docs/distributed-minio-quickstart-guide.html).
 
 ## Creating datasets
 
@@ -25,8 +25,6 @@ Enter “minio/minio” as the image name under **Image Repository** and select 
 
 Now you need to configure your container arguments (args) to set up your cluster. Start by entering the “server” argument, and then follow it up with the IP address/hostnames of your various nodes. Keep in mind that the order is important and should be used across all the nodes identically. The IP/Hostname should be the valid address of your individual TrueNAS systems on the network. The _/data_ path should be used and will be set up in the next steps.
 
-TIP: For more information on MinIO distributed setups, please refer to their documentation.
-
 <img src="/images/minIO-enter-container-args-3.png">
 <br><br>
 
@@ -40,7 +38,7 @@ In the **Networking** section, be sure to select _Host Network_, then click **NE
 <img src="/images/minIO-host-network-5.png">
 <br><br>
 
-In the **Host Path Volumes** section, select the directory or dataset you created earlier and enter the "/data" directory under **Mount Path**, then click **NEXT**.
+In the **Host Path Volumes** section, select the directory or dataset you created earlier and enter the `/data` directory under **Mount Path**, then click **NEXT**.
 
 <img src="/images/minIO-host-path-volumes-6.png">
 <br><br>
@@ -54,7 +52,7 @@ Now that the first node is complete, you can create datasets for any remaining n
 
 ## Accessing your minio distributed setup
 
-Once you're done creating datasets, you can browse to any of the TrueNAS addresses at port **:9000**, where you will be greeted by the MinIO login screen. Log in with the Access/Secret keys you set up in the previous steps. You should now be able to access your MinIO distributed setup.
+Once you're done creating datasets, you can browse to any of the TrueNAS addresses at port `:9000`, where you will be greeted by the MinIO login screen. Log in with the Access/Secret keys you set up in the previous steps. You should now be able to access your MinIO distributed setup.
 
 <img src="/images/minIO-minio-login-screen-8.png">
 <br><br>
