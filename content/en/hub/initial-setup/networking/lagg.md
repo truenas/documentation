@@ -37,10 +37,7 @@ Under LAGG Settings, set the *Lagg Protocol* to the desired Protocol.  The optio
  > This mode disbales traffic on the LAGG interface without disabling the LAGG interface.
 
 
-Next, select the interfaces to add.to the LAGG.  
-You can disable Hardare Offloading, however this is discourged.
-Disabling hardware offloading can reduce network performance. 
+Next, select the interfaces to add to the LAGG.  
+You can disable Hardare Offloading, however this is discourged. Disabling hardware offloading can reduce network performance. 
 Disabling hardware offloading is only recommended when the interface is managing jails, plugins, or virtual machines.
-Unless you need to change the MTU, leave it at its default of 1500. The Maximum Transmission Unit (MTU), is the largest protocol data unit that can be communicated. What the largest workable MTU size can be varies with network interfaces and equipment. 1500 and 9000 are standard Ethernet MTU sizes. Leaving blank restores the field to the default value of 1500.
-
-Lastly, set the IP address for the LAGG.
+Unless you need to change the MTU, leave it at its default of 1500. The Maximum Transmission Unit (MTU), is the largest protocol data unit that can be communicated. What the largest workable MTU size can be varies with network interfaces and equipment. 1500 and 9000 are standard Ethernet MTU sizes. Leaving blank restores the field to the default value of 1500. Lastly, set the IP address for the LAGG.
