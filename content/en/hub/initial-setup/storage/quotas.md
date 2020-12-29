@@ -14,7 +14,7 @@ TrueNAS allows users to set data or object quotas for user accounts and groups c
 
 ## Editing User Quotas
 
-To view and edit user quotas, go to **Storage > Pools** and click the <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; button to open the **Dataset Actions** menu, then click **User Quotas**.
+To view and edit user quotas, go to **Storage > Pools** and click the <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; button to open the **Dataset Actions** menu and then click **User Quotas**.
 
 <img src="/images/Quotas1DatasetMenu.png">
 <br><br>
