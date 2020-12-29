@@ -24,3 +24,9 @@ After clicking **SAVE**, the disk is mounted and its contents are copied to the 
 The disk is unmounted after the copy operation completes.
 
 After importing a disk, a dialog allows viewing or downloading the disk import log.
+
+To monitor an import open the Task Manager by clicking the <i class="fas fa-clipboard"></i>
+<i class="fas fa-ellipsis-v" aria-hidden="true" title="Clipboard"></i>&nbsp; (Clipboard) in the Top Bar.
+
+If an import is interupted, it must be restarted again from the UI using the same process as before.
+If you select the same destination the system will scan which files were alreay transfered and import the remaining files.
