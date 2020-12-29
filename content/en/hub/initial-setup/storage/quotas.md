@@ -42,7 +42,7 @@ The process for viewing and editing group quotas is similar. Go to **Storage > P
 
 The **Group Quotas** page displays the names and quota data of any groups cached on or connected to the system.
 
-To edit individual group quotas, go to the group's row and click the '>' button, then click <i class="fas fa-pen" aria-hidden="true" title="Pen"></i>&nbsp;**Edit**.
+To edit individual group quotas, go to the group's row and click the **>** button, then click <i class="fas fa-pen" aria-hidden="true" title="Pen"></i>&nbsp;**Edit**.
 
 The **Edit Group** window allows you to edit the **Group Data Quota** and **Group Object Quota** the same way you would for users.
 
