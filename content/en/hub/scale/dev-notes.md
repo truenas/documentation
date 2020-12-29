@@ -68,18 +68,17 @@ They should be suitable for very adventurous users and developers who are not af
 - Virtual Machines (Using KVM)
 - WebDAV
 - Monitoring, Alerting and Reporting
+- Docker Image / Apps Menus
 
 **Currently Supported in the CLI**
 
-- Docker
-- Docker with NVIDIA --gpu passthrough flags
+- Docker with NVIDIA / Intel Quicksync --gpu passthrough flags
 - Gluster
 - Wireguard
 
 **TODO**
 
 - Posix NFSv4 ACLs
-- Docker UI
 - Clustered Datasets API support for TrueCommand
 - TrueCommand Clustering UI for SCALE
 
