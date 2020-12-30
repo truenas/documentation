@@ -5,7 +5,6 @@ tags: ["networking","Samba"]
 ---
 
 SMB (also known as CIFS) is the native file sharing system in Windows.
-Computers on a local network that offer SMB shares to other devices will appear by default in the Navigation Pane of Windows File Explorer.
 SMB shares can be connected to any major operating systems including Windows, MacOS, and Linux.
 SMB can be used in TrueNAS to share files with one user or device, or many. 
 
@@ -13,22 +12,34 @@ SMB shares allow a wide range of permissions and security settings, and can supp
 SMB is suitable for the management and administration of large or small pools of data.
 
 TrueNAS uses Samba to provide SMB services.
-SMB has multiple versions.
-Version 1 (SMB1) is strongly discouraged for security reasons, please see the separate [advisory](/hub/sharing/smb/smb1/).
-Modern computers typically use SMB versions 2.0 up to 3.1.1.
+There are multiple versions of the SMB protocol. An SMB client will typically negotiate the highest supported SMB protocol during SMB session negotiation. Industry-wide the usage of the SMB1 protocol (sometimes referred to as NT1) is in the process of being deprecated. This deprecation is largely due to security reasons, and for this reason most SMB clients support the SMB2/3 protocol even if it is not the default protocol used by the particular SMB client.
+
+Please see the separate [advisory](/hub/sharing/smb/smb1/) for more information about the SMB1 protocol.
 
 {{% alert color="warning" %}}
-SMB1 and the NetBIOS ("NetBIOS over TCP/IP") legacy protocols are usually **not** required for discovery of SMB shares.
-It is recommended to disable both protocols unless you have a very specific use case that requires either one.
-A newer protocol called [WS-Discovery](http://docs.oasis-open.org/ws-dd/ns/discovery/2009/01) is used instead in all modern versions of Windows to discover and list file shares.
-By default, TrueNAS starts a WS-Discovery service when required.
+Legacy SMB clients rely on NetBIOS Name Resolution to discover the presence of SMB servers on the network. The NetBIOS Name Server (nmbd) is disabled by default in TrueNAS, and may be enabled if this functionality is required.
+MacOS clients use mDNS to discover the the presence of SMB servers on the network. The mDNS server (avahi) is enabled by default on TrueNAS.
+Windows clients use [WS-Discovery](http://docs.oasis-open.org/ws-dd/ns/discovery/2009/01) to discover the presence of SMB servers, but depending on the version of the Windows client, network discovery may be disabled by default.
+
+Discoverability through broadcast protocols is a convenience feature and is not a requirement to access the SMB server.
 {{% /alert %}}
 
 You will need a [dataset](/hub/initial-setup/storage/datasets/) with the data to share stored within it before creating an SMB share.
-When creating a new dataset, it is recommended to set the **Share Type** to *SMB* to optimize the dataset for SMB sharing.
-You will also need user accounts created or connected to the system so that permissions can be configured.
 
-The typical workflow to create a new SMB share is to create the share, configure the share permissions, then activate the SMB service and confirm the share is available.
+## Requirements for a new SMB share
+1) Create a dataset. Typically, a new data should be creating when creating a new SMB share. It is recommended to use the *SMB* **Share Type** preset for the ZFS dataset. This will set the ZFS dataset's aclmode property to "restricted", case sensitivity to "insensitive", and apply a default ACL on the newly created dataset. The default ACL is restrictive and will only grant access to the dataset owner and group. Further modification of this default ACL may be required depending on intended usage of the share.
+
+2) Create a user. Although it is possible to grant anonymous or guest access to SMB shares, the support for this is in the process of being deprecated by major vendors of SMB clients. This is in part due to the fact that signing and encryption are not possible for guest sessions. It is therefore recommended to create one or more [user accounts](/hub/initial-setup/security/accounts/users/) for SMB access. By default all new local users are members of a builtin SMB group "builtin users". This group may be used as a simple control point to grant access to all local users on the server. Additional [groups](/hub/initial-setup/security/accounts/groups/) may be created to simplify assigning permissions to large numbers of users.
+
+User accounts that are built-in or do not have the 'smb' flag set may not be used for SMB access.
+
+{{% alert color="warning" %}}
+When LDAP has been configured and you want users from the LDAP server to have access the SMB share, set **Samba Schema** in **Directory Services > LDAP > ADVANCED MODE**.
+When **Samba Schema** is enabled, local TrueNAS user accounts cannot be used to connect to the share.
+Only user accounts configured on the LDAP server can connect to the share.
+{{% /alert %}}
+
+3) Fine-tune dataset ACL as needed. In most circumstances for home users a reasonable step at this point is to add a new ACL entry to the ACL of the dataset created in (1) above that grants "FULL_CONTROL" to the group "builtin_users" with the flags set to "INHERIT". See the [Permissions article]() for more details about configuring dataset permissions.
 
 ## Creating the SMB Share
 
@@ -36,12 +47,7 @@ To create a Windows SMB share, go to **Sharing > Windows Shares (SMB)** and clic
 
 <img src="/images/SharingSMBAdd.png">
 <br><br>
-
-The only required field to continue is the **Path**.
-Set the path to the pool or dataset you want to share by typing the full path in the field or clicking a directory in the file browser.
-
-A descriptive **Name** helps identify the share.
-Otherwise, TrueNAS automatically assigns the name of the pool or dataset shared to the name of the SMB share.
+The **Path** and **Name** of the SMB share define the absolute minimum amount of information required to create a new SMB share. The *Path* is the directory tree on the local filesystem that will be exported over the SMB protocol, and the *Name* is the name of the SMB share, which forms a part of the "full share pathname" when SMB clients perform an SMB tree connect. Because of the way that the *Name* is used in the SMB protocol, it must be less than or equal to 80 characters in length, and must not contain any invalid characters as specified in Microsoft documentation MS-FSCC section 2.1.6. If a *Name* is not supplied, then the last component of the *Path* will be used as the share name.
 
 You can set a share *Purpose* to apply and lock pre-defined [Advanced Options](#advanced-options) for the share.
 To retain full control over all the share *Advanced Options*, choose *No presets*.
@@ -107,7 +113,7 @@ The *Other Options* have settings for improving Apple software compatibility, ZF
 | Time Machine                       | checkbox  | Enables [Apple Time Machine](https://support.apple.com/en-us/HT201250) backups on this share. |
 | Enable Shadow Copies               | checkbox  | Export ZFS snapshots as [Shadow Copies](https://docs.microsoft.com/en-us/windows/win32/vss/shadow-copies-and-shadow-copy-sets) for Microsoft Volume Shadow Copy Service (VSS) clients. |
 | Export Recycle Bin                 | checkbox  | Files that are deleted from the same dataset are moved to the Recycle Bin and do not take any additional space. **Deleting files over NFS will remove the files permanently.** When the files are in a different dataset or a child dataset, they are copied to the dataset where the Recycle Bin is located. To prevent excessive space usage, files larger than *20 MiB* are deleted rather than moved. Adjust the **Auxiliary Parameter** `crossrename:sizelimit=` setting to allow larger files. For example, <code>crossrename:sizelimit=<i>50</i></code> allows moves of files up to *50 MiB* in size. This means files can be permanently deleted or moved from the recycle bin. **This is not a replacement for ZFS snapshots.** |
-| Use Apple-style Character Encoding | checkbox  | By default, Samba uses a hashing algorithm for NTFS illegal characters. Enabling this option translates NTFS illegal characters to the Unicode private range. |
+| Use Apple-style Character Encoding | checkbox  | By default, Samba uses a hashing algorithm for NTFS illegal characters. Enabling this option converts NTFS illegal characters in the same manner as MacOS SMB clients. |
 | Enable Alternate Data Streams      | checkbox  | Allows multiple [NTFS data streams](http://www.ntfs.com/ntfs-multiple.htm). Disabling this option causes MacOS to write streams to files on the filesystem. |
 | Enable SMB2/3 Durable Handles      | checkbox  | Allow using open file handles that can withstand short disconnections. Support for POSIX byte-range locks in Samba is also disabled. This option is not recommended when configuring multi-protocol or local access to files. |
 | Enable FSRVP                       | checkbox  | Enable support for the File Server Remote VSS Protocol ([FSVRP](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-fsrvp/dae107ec-8198-4778-a950-faa7edad125b)). This protocol allows Remote Procedure Call (RPC) clients to manage snapshots for a specific SMB share. The share path must be a dataset mountpoint. Snapshots have the prefix `fss-` followed by a snapshot creation timestamp. A snapshot must have this prefix for an RPC user to delete it. |
@@ -122,23 +128,9 @@ You can also choose to enable the SMB service at this time.
 After the SMB share is created, additional management options are available by going to **Sharing > Windows Shares (SMB)** and clicking <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; for a share entry:
 
 * **Edit**: Opens the [share creation screen](#creating-the-smb-share) to reconfigure the share or disable it.
-* **Edit Share ACL**: Opens a screen to configure an Access Control List (ACL) for the share. This is separate from permissions configured for the stored data.
-* **Edit Filesystem ACL**: Opens a screen to configure an Access Control List (ACL) for the dataset defined in the share **Path**.
+* **Edit Share ACL**: Opens a screen to configure an Access Control List (ACL) for the share. This is separate from filesystem permissions, and applies at the level of the entire SMB share. Permissions defined here are not interpreted by clients of other filesharing protocols or other SMB shares that export the same share *Path*. The default is open. This ACL is used to determine the browse list if *Access Based Share Enumeration* is enabled.
+* **Edit Filesystem ACL**: Opens a screen to configure an Access Control List (ACL) for the path defined in the share **Path**.
 * **Delete**: Remove the share configuration from TrueNAS. Data that was being shared is unaffected.
-
-## Define Share Permissions
-
-Users connecting to the SMB share must have [user accounts](/hub/initial-setup/security/accounts/users/) on the TrueNAS system before they can connect.
-You can also [create groups of users](/hub/initial-setup/security/accounts/groups/) to simplify assigning permissions to large numbers of users.
-User accounts that are built-in to TrueNAS should not be used for the share.
-
-When LDAP has been configured and you want users from the LDAP server to have access the SMB share, set **Samba Schema** in **Directory Services > LDAP > ADVANCED MODE**.
-When **Samba Schema** is enabled, local TrueNAS user accounts cannot be used to connect to the share.
-Only user accounts configured on the LDAP server can connect to the share.
-
-The final step for setting up a general purpose SMB share is to control permissions for users accessing the share.
-This can be done by configuring an Access Control List for the share or the dataset being shared.
-See the [Permissions article]() for more details about configuring dataset permissions.
 
 ### Configure Share ACL
 
