@@ -7,17 +7,13 @@ tags: ["Samba"]
 
 Server Message Block shares, also known as Common Internet File System
 (CIFS) shares, are accessible by Windows, macOS, Linux, and BSD computers.
-Access is slower than an NFS share due to the single-threaded design of
-Samba. SMB provides more configuration options than NFS and is a good
-choice on a network for Windows or Mac systems. However, it is a poor
-choice if the CPU on the TrueNAS system is limited. If it is maxed out,
-upgrade the CPU or consider a different type of share.
+SMB provides more configuration options than NFS and is a good
+choice on a network for Windows or Mac systems.
 
 TrueNAS uses [Samba](https://www.samba.org/) to share pools using
 Microsoft's SMB protocol. SMB is built into the Windows and macOS
-operating systems and most Linux and BSD systems pre-install the Samba
-client in order to provide support for SMB. If the distro did not,
-install the Samba client using the distro software repository.
+operating systems and most Linux and BSD systems pre-install an SMB
+client in order to provide support for the SMB protocol.
 
 The SMB protocol supports many different types of configuration
 scenarios, ranging from the simple to complex. The complexity of the
@@ -57,15 +53,6 @@ has information about the security implications and ways to enable
 NTLMv2 on those clients. If changing the client configuration is not
 possible, NTLMv1 authentication can be enabled by selecting the **NTLMv1 auth** option in the SMB service configuration screen
 
-{{% alert title="Warning" color="warning" %}}
-Be careful when using multiple SMB shares, some with and some without
-*fruit*. macOS clients negotiate SMB2 AAPL protocol extensions on the
-first connection to the server, so mixing shares with and without fruit
-will globally disable AAPL if the first connection occurs without fruit.
-To resolve this, all macOS clients need to disconnect from all SMB shares
-and the first reconnection to the server has to be to a fruit-enabled share.
-{{% /alert %}}
-
 To view all active SMB connections and users, enter <code>smbstatus</code> in the TrueNAS Shell.
 
 Most configuration scenarios require each user to have their own user
@@ -84,13 +71,12 @@ are needed.
 also known as the Volume Shadow Copy Service (VSS) or Previous
 Versions, is a Microsoft service for creating volume snapshots. Shadow
 copies can be used to restore previous versions of files from
-within Windows Explorer. Shadow Copy support is built into Vista and
-Windows 7. Windows XP or 2000 users need to install the
-[Shadow Copy client](http://www.microsoft.com/en-us/download/details.aspx?displaylang=en&id=16220).
+within Windows Explorer.
 
-When a periodic snapshot task is created on a ZFS pool that is
-configured as a SMB share in TrueNAS, it is automatically configured
-to support shadow copies.
+By default all ZFS snapshots for a dataset underlying an SMB share
+path are presented to SMB clients through the volume shadow copy
+service (or accessible directly via SMB if the hidden ZFS snapshot
+directory is located within the path of the SMB share).
 
 Before using shadow copies with TrueNAS, be aware of the following
 caveats:
@@ -100,30 +86,19 @@ caveats:
   previous versions of files to restore are visible, use Windows Update
   to ensure the system is fully up-to-date.
 
-* Shadow copy support only works for ZFS pools or datasets. This means
-  that the SMB share must be configured on a pool or dataset, not
-  on a directory.
-
-* Datasets are filesystems and shadow copies cannot traverse
-  filesystems. To see the shadow copies in the
-  child datasets, create separate shares for them.
-
-* Shadow copies will not work with a manual snapshot. Creating
-  a periodic snapshot task for the pool or dataset being shared by
-  SMB or a recursive task for a parent dataset is recommended.
-
-* The periodic snapshot task should be created and at least one
-  snapshot should exist **before** creating the SMB share. If the
-  SMB share was created first, be sure to restart the SMB service.
+* Shadow copy support only works for ZFS pools or datasets.
 
 * Appropriate permissions must be configured on the pool or dataset
   being shared by SMB.
 
-* Users cannot delete shadow copies on the Windows system due to the
-  way Samba works. Instead, the administrator can remove snapshots
-  from the TrueNAS web interface. The only way to disable shadow
-  copies completely is to remove the periodic snapshot task and delete
-  all snapshots associated with the SMB share.
+* Users cannot delete shadow copies via an SMB client.
+  Instead, the administrator can remove snapshots
+  from the TrueNAS web interface.
+  Shadow copies may be disabled for an SMB share by unchecking the
+  *Enable shadow copies* advanced option for the SMB share. Note that
+  unchecking this will not prevent access to the hidden .zfs/snapshot
+  snapdir for a ZFS dataset if it is located within the *Path* for an
+  SMB share.
 
 macOS includes the [Time Machine](https://support.apple.com/en-us/HT201250)
 feature which performs automatic backups. TrueNAS supports Time Machine
