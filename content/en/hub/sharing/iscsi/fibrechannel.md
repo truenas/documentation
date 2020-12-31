@@ -11,7 +11,7 @@ Fibre Channel is a high-speed data transfer protocol providing in-order, lossles
 
 ## Using Fibre Channel.
 
-TrueNAS systems licensed for Fibre Channel will have a tab **Fibre Channel Ports** added to Sharing ➞ Block (iSCSI).
+TrueNAS systems licensed for Fibre Channel will have a tab *Fibre Channel Ports* added to **Sharing > Block Shares (iSCSI)**.
 
 <img src="/images/fibre_tab.png"><br><br>
 
@@ -19,27 +19,27 @@ TrueNAS systems licensed for Fibre Channel will have a tab **Fibre Channel Ports
 
 > **Note:** **Portals**, **Initiators**, and **Authorized Access** screens only apply to iSCSI and can be ignored when configuring Fibre Channel.
 
-Navigate to Storage -> Pools.  Select an existing pool such as tank, click the hamburger menu, click **Add zvol** to create a <a href="/hub/initial-setup/storage/zvols/">new zvol</a>. 
+Navigate to **Storage > Pools**.  Select an existing pool such as tank, click the <i class="fa fa-bars" aria-hidden="true"></i>&nbsp; hamburger menu, and click **Add zvol** to create a <a href="/hub/initial-setup/storage/zvols/">new zvol</a>. 
 
 <img src="/images/zvol_pool_fibre.png"><br><br>
 
-Navigate to sharing, Block Shares (iSCSI), click portals.  If portal with listen interface 0.0.0.0:3260 does not yet exist click **Add** and add one.
+Navigate to sharing, Block Shares (iSCSI), click portals.  If portal with listen interface `0.0.0.0:3260` does not yet exist click **Add** and add one.
 
 <img src="/images/add_portals.png"><br><br>
 
-Navigate to sharing, Block Shares (iSCSI), click Targets, click **Add**. Enter  or select values specified for **Target Name**, **Target Alias**, **Target Mode**, and **Portal Group**. Click the **Submit** button.
+Navigate to sharing, Block Shares (iSCSI), click Targets, click **Add**. Enter  or select values specified for *Target Name*, *Target Alias*, *Target Mode*, and *Portal Group*. Click the **Submit** button.
 
 <img src="/images/add_target_fibre.png"><br><br>
 
-> **Note:** An extra **Target Mode** option appears after going to Targets and clicking **ADD**. This new option is to select whether the target to create is iSCSI, Fibre Channel, or both.
+> **Note:** An extra *Target Mode* option appears after going to Targets and clicking **ADD**. This new option is to select whether the target to create is iSCSI, Fibre Channel, or both.
 
-> **Note:** The **Target** tab of <a href="/hub/tasks/administrative/system-reporting/#graphs">Reporting</a> provides Fibre Channel port bandwidth graphs.
+> **Note:** The *Target* tab of <a href="/hub/tasks/administrative/system-reporting/#graphs">Reporting</a> provides Fibre Channel port bandwidth graphs.
 
-Navigate to sharing, Block Shares (iSCSI), click **Extents**, click **Add**, enter values for **Extent Name** and **Device**. Click the **Submit** button.
+Navigate to sharing, Block Shares (iSCSI), click **Extents**, click **Add**, enter values for *Extent Name* and *Device*. Click the **Submit** button.
 
 <img src="/images/add_extents_fibre.png"><br><br>
 
-Navigate to sharing, Block Shares (iSCSI), click Associated Targets, click Add, select values for **Target** and **Extent**. Click the **Submit** button.
+Navigate to **Sharing > Block Shares (iSCSI)**, click Associated Targets, click Add, select values for *Target** and **Extent*. Click the **Submit** button.
 
 <img src="/images/add_assoc_fibre.png"><br><br>
 
@@ -51,7 +51,7 @@ Navigate to sharing, Block Shares (iSCSI), click **Fibre Channel Ports**, expand
 
 NPIV allows the administrator to use switch zoning to configure each virtual port as if it was a physical port in order to provide access control. This is important in an environment with a mix of Windows systems and virtual machines in order to prevent automatic or accidental reformatting of targets containing unrecognized filesystems. It can also be used to segregate data; for example, to prevent the engineering department from accessing data from the human resources department. Refer to the switch documentation for details on how to configure zoning of virtual ports.
 
-To create the virtual ports on the TrueNAS® system, go to System ➞ Tunables, click **ADD** and enter these options:
+To create the virtual ports on the TrueNAS® system, go to **System > Tunables**, click **ADD** and enter these options:
 
 * **Variable**: input hint.isp.X.vports, replacing X with the number of the physical interface.
 * **Value**: input the number of virtual ports to create. Note that there cannot be more then 125 SCSI target ports and that number includes all physical Fibre Channel ports, all virtual ports, and all configured combinations of iSCSI portals and targets.
@@ -59,6 +59,6 @@ To create the virtual ports on the TrueNAS® system, go to System ➞ Tunables
 
 <img src="/images/tunables_fibre.png"><br><br>
 
-In the example shown, two physical interfaces were each assigned 4 virtual ports. Note that two tunables were required, one for each physical interface. After the tunables are created, the configured number of virtual ports appears in the **Fibre Channel Ports** screen so they can be associated with targets. They will also be advertised to the switch so zoning can be configured on the switch. 
+In the example shown, two physical interfaces were each assigned 4 virtual ports. Note that two tunables were required, one for each physical interface. After the tunables are created, the configured number of virtual ports appears in the *Fibre Channel Ports* screen so they can be associated with targets. They will also be advertised to the switch so zoning can be configured on the switch. 
 
-After a virtual port has been associated with a target, it is added to the **Target** tab of <a href="/hub/tasks/administrative/system-reporting/#graphs">Reporting</a> where its bandwidth usage can be viewed.
+After a virtual port has been associated with a target, it is added to the *Target* tab of <a href="/hub/tasks/administrative/system-reporting/#graphs">Reporting</a> where its bandwidth usage can be viewed.
