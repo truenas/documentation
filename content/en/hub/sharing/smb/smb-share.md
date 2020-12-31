@@ -29,17 +29,15 @@ You will need a [dataset](/hub/initial-setup/storage/datasets/) with the data to
 ## Requirements for a new SMB share
 1) Create a dataset. Typically, a new data should be creating when creating a new SMB share. It is recommended to use the *SMB* **Share Type** preset for the ZFS dataset. This will set the ZFS dataset's aclmode property to "restricted", case sensitivity to "insensitive", and apply a default ACL on the newly created dataset. The default ACL is restrictive and will only grant access to the dataset owner and group. Further modification of this default ACL may be required depending on intended usage of the share.
 
-2) Create a user. Although it is possible to grant anonymous or guest access to SMB shares, the support for this is in the process of being deprecated by major vendors of SMB clients. This is in part due to the fact that signing and encryption are not possible for guest sessions. It is therefore recommended to create one or more [user accounts](/hub/initial-setup/security/accounts/users/) for SMB access. By default all new local users are members of a builtin SMB group "builtin users". This group may be used as a simple control point to grant access to all local users on the server. Additional [groups](/hub/initial-setup/security/accounts/groups/) may be created to simplify assigning permissions to large numbers of users.
+2) Create a user. Although it is possible to grant anonymous or guest access to SMB shares, the support for this is in the process of being deprecated by major vendors of SMB clients. This is in part due to the fact that signing and encryption are not possible for guest sessions. It is therefore recommended to create one or more [user accounts](/hub/initial-setup/security/accounts/users/) for SMB access. By default all new local users are members of a builtin SMB group "builtin users". This group may be used as a simple control point to grant access to all local users on the server. Additional [groups](/hub/initial-setup/security/accounts/groups/) may be created to simplify assigning permissions to large numbers of users.  User accounts that are built-in or do not have the 'smb' flag set may not be used for SMB access.
 
-User accounts that are built-in or do not have the 'smb' flag set may not be used for SMB access.
+3) Fine-tune dataset ACL as needed. In most circumstances for home users a reasonable step at this point is to add a new ACL entry to the ACL of the dataset created in (1) above that grants "FULL_CONTROL" to the group "builtin_users" with the flags set to "INHERIT". See the [Permissions article]() for more details about configuring dataset permissions.
 
 {{% alert color="warning" %}}
 When LDAP has been configured and you want users from the LDAP server to have access the SMB share, set **Samba Schema** in **Directory Services > LDAP > ADVANCED MODE**.
 When **Samba Schema** is enabled, local TrueNAS user accounts cannot be used to connect to the share.
 Only user accounts configured on the LDAP server can connect to the share.
 {{% /alert %}}
-
-3) Fine-tune dataset ACL as needed. In most circumstances for home users a reasonable step at this point is to add a new ACL entry to the ACL of the dataset created in (1) above that grants "FULL_CONTROL" to the group "builtin_users" with the flags set to "INHERIT". See the [Permissions article]() for more details about configuring dataset permissions.
 
 ## Creating the SMB Share
 
@@ -210,7 +208,7 @@ Clicking **ADVANCED OPTIONS** adds a new section of *Other Options* for fine-tun
 | Setting                                 | Value     | Description  |
 |-----------------------------------------|-----------|--------------|
 | UNIX Charset                            | drop down | Character set used internally. *UTF-8* is standard for most systems as it supports all characters in all languages. |
-| Log Level                               | drop down | Record SMB service messages up to the specified log level. By default, error and warning level messages are logged. |
+| Log Level                               | drop down | Record SMB service messages up to the specified log level. By default, error and warning level messages are logged. It is not recommended to use a log level above MINIMUM for production servers. |
 | Use Syslog Only                         | checkbox  | Set to log authentication failures in */var/log/messages* instead of the default */var/log/samba4/log.smbd*. |
 | Local Master                            | checkbox  | Set to determine if the system participates in a browser election. Unset when the network contains an AD or LDAP server, or when Vista or Windows 7 machines are present. |
 | Enable Apple SMB2/3 Protocol Extensions | checkbox  | These [protocol extensions](https://support.apple.com/en-us/HT210803) can be used by macOS to improve the performance and behavioral characteristics of SMB shares. This is required for Time Machine support. |
@@ -219,7 +217,7 @@ Clicking **ADVANCED OPTIONS** adds a new section of *Other Options* for fine-tun
 | File Mask                               | integer   | Overrides default file creation mask of *0666* which creates files with read and write access for everybody. |
 | Directory Mask                          | integer   | Overrides default directory creation mask of *0777* which grants directory read, write and execute access for everybody. |
 | Bind IP Addresses                       | drop down | Static IP addresses which SMB listens on for connections. Leaving all unselected defaults to listening on all active interfaces.
-| Auxiliary Parameters                    | string    | Stores additional [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html). To log more details when a client attempts to authenticate to the share, add `log level = 1, auth_audit:5`. |
+| Auxiliary Parameters                    | string    | Stores additional [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html). Auxiliary parameters may be used to override the default SMB server configuration, but such changes may adversely affect SMB server stability or behavior. |
 
 {{% pageinfo %}}
 Some users have experienced issues in the Windows 10 v2004 release where network shares can't be accessed. The problem appears to come from a bug in `gpedit.msc`, the Local Group Policy Editor. Unfortunately, setting the "Allow insecure guest logon" flag value to "Enabled" in Computer Configuration > Administrative Templates > Network > Lanman Workstation appears to have no effect on the configuration.
