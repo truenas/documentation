@@ -1,7 +1,7 @@
 ---
 title: "Configuring Fibre Channel"
 description: "A how-to guide on creating a Fibre Channel iSCSI share."
-tags: ["networking", “Fibre Channel”, "iSCSI"]
+tags: ["networking", "Fibre Channel", "iSCSI"]
 ---
 
 The Fibre Channel protocol has been proven over time to be fast, cost effective, and reliable over a wide variety of storage workloads.
