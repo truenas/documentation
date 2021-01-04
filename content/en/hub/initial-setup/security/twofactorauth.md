@@ -43,7 +43,7 @@ Two-Factor Authentication (2FA) is an extra layer of security that is added to y
 
 {{% alert title=Important color=warning %}}
 Two-factor authentication is time-based and requires that the system time is set correctly.
-{{% /alert %}}3
+{{% /alert %}}
 
 * **Enable Two-Factor Auth for SSH :** Enable two-factor authentication for SSH access to the system.
 
