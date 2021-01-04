@@ -13,8 +13,6 @@ description: "Running updates about TrueNAS SCALE Nightly status and current iss
 
 > 10/14/2020 - Updated [Roadmap / Information](#containerisation) about Kubernetes and Linux container support in SCALE
 
-> 10/14/2020 - Samba POSIX/NFSv4 ACL support added - UI functionality restored for setting / managing ACLs
-
 > 9/25/2020 - Samba 4.13.0 added - Includes iX VFS modules, Shadow Copies, and IO_URING support (Enabled by default)
 
 > 9/24/2020 - Preliminary support for Kubernetes added to middleware backend! - [Usage Instructions](#containerisation)
