@@ -13,20 +13,20 @@ To set up a LAGG interface, go to **Network > Interface > Add**.
 
 Set **Type** to *Link Aggregation*
 
-Enter a name for the interface. The name must use the format, *laggX*, *vlanX*, or *bridgeX* where *X* is a number representing a non-parent interface.
+Enter a name for the interface. The name must use the format, *laggX*, *vlanX*, or *bridgeX*, where *X* is a number representing a non-parent interface.
 It is also recommended to add any notes or reminders about this particular LAGG in the **Description**.
 
 Under LAGG Settings, set the **Lagg Protocol** to configure the interface ports to match your networking needs:
 
-+ *LACP*: The most commonly used LAGG protocol. Link Aggregation Control Protocol (LACP) is one element of [IEEE specification 802.3ad](https://www.ieee802.org/3/hssg/public/apr07/frazier_01_0407.pdf). In LACP mode, negotiation is performed with the network switch to form a group of ports that are all active at the same time. Your network switch must support LACP for this option to function.
++ *LACP* : The most commonly used LAGG protocol. Link Aggregation Control Protocol (LACP) is one element of [IEEE specification 802.3ad](https://www.ieee802.org/3/hssg/public/apr07/frazier_01_0407.pdf). In LACP mode, negotiation is performed with the network switch to form a group of ports that are all active at the same time. Your network switch must support LACP for this option to function.
 
-+ *Failover*: Failover causes traffic to be sent through the primary interface of the group. If the primary interface fails, traffic diverts to the next available interface in the LAGG.
++ *Failover* : Failover causes traffic to be sent through the primary interface of the group. If the primary interface fails, traffic diverts to the next available interface in the LAGG.
 
-+ *Load Balance*: Load Balance accepts inbound traffic on any port of the LAGG group and then balances the outgoing traffic on the active ports in the LAGG group. It is a static setup that does not monitor the link state nor does it negotiate with the switch.
++ *Load Balance* : Load Balance accepts inbound traffic on any port of the LAGG group and then balances the outgoing traffic on the active ports in the LAGG group. It is a static setup that does not monitor the link state nor does it negotiate with the switch.
 
-+ *RoundRobin*: Round robin accepts inbound traffic on any port of the LAGG group and sends outbound traffic using a round robin scheduling algorithm. Traffic is sent out in sequence using each LAGG interface in turn.
++ *RoundRobin* : Round robin accepts inbound traffic on any port of the LAGG group and sends outbound traffic using a round robin scheduling algorithm. Traffic is sent out in sequence using each LAGG interface in turn.
 
-+ *None*: This mode disables traffic on the LAGG interface without disabling the LAGG interface.
++ *None* : This mode disables traffic on the LAGG interface without disabling the LAGG interface.
 
 Next, select the interfaces to add to the LAGG.  
 
