@@ -27,7 +27,7 @@ Two-Factor Authentication (2FA) is an extra layer of security that is added to y
 * **If the the 2FA code isn't working, or there is no access to the 2FA Password, the system is inaccessable through the UI and SSH (if that option has been set)**.
 > **Note** If the mobile device with the authenication app isn't available there is a bypass as long an there is access to the system's cli.
 
-* **One Solution:** To unlock 2FA in the cli type:  **midclt call auth.twofactor.update '{ "enabled":false }'**
+* **One Solution:** To unlock 2FA in the cli type:  `midclt call auth.twofactor.update '{ "enabled":false }'`
 
 ## 2FA Options.
 
