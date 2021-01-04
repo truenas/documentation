@@ -208,7 +208,7 @@ midclt call -job chart.release.redeploy plex
 
 ### Using Kubernetes via CLI
 
-SCALE does not support workloads created manually with `kubectl` / `helm` or direct interaction with the Kubernetes API. Using `kubectl` / `helm` to retrieve read-only information about the status of the service is permitted.
+SCALE does not officially test and support workloads created manually with `kubectl` / `helm` or direct interaction with the Kubernetes API. However, the SCALE software does not deliberately restrict them. Using the `kubectl` / `helm` in a read-only mode should be 100% safe, but for all other operations users should test and verify their own workloads.
 
 A tip for users is to add these lines to `~/.zshrc`:
 
