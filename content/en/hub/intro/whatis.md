@@ -61,15 +61,6 @@ Want to securely import or back up data with a Cloud Storage Provider?
 No problem!
 TrueNAS can even store and sync your S3 data with an automated schedule.
 
-## TrueCommand Manages your NAS Fleet
-
-TrueCommand is a single Pane-of-Glass management application that takes the repetitive work out of multi-TrueNAS management by centralizing system alerts, reports, and analytics in one easy to use interface.
-It supports users and teams with 24x365 global operations, role-based access control, and a full log of every TrueNAS configuration change.
-TrueCommand runs on docker, VMs, or as a cloud service and is free to users with less than 50 drives and affordable for those with larger installations.
-
-<img src="/images/truecommand-overview.png">
-<br><br>
-
 ## TrueNAS Delivers a Rich Set of Features
 
 There are an enormous number of features in each TrueNAS edition.
@@ -97,6 +88,8 @@ Since the TrueNAS software is free, iXsystems grows its business by building pro
 The iXsystems proposition is that TrueNAS enables dramatic storage cost savings through Open Source economics.
 TrueNAS provides the industry’s most powerful Open Storage.
 
+TrueNAS can be downloaded from [this page](https://www.truenas.com/download-tn-core/).
+
 The current TrueNAS systems available cover a wide range of sizes and use cases:
 
 <div class="hw-grid-container">
@@ -110,9 +103,17 @@ The current TrueNAS systems available cover a wide range of sizes and use cases:
   <div class="hw-certifiedtext" style="align-self:center"><b>Certified Servers:</b> Rackmount systems with optimized hardware configurations for TrueNAS software. These provide great value for applications that don’t need high availability.</div>
 </div>
 
+
 ## Join the Expert Community
 
 TrueNAS comprises both the Open Source software and an experienced and expert community developed over the last dozen years.
 Ask for advice and contribute your experiences for others to use.
 The Community can save you many hours and be a great resource for new projects and applications.
 If you need more professional support, iXsystems offers Bronze/Silver/Gold Enterprise support including 24x365 coverage and onsite support with its systems.
+
+## TrueCommand Manages your NAS Fleet
+
+TrueCommand is a single Pane-of-Glass management application that takes the repetitive work out of multi-TrueNAS management by centralizing system alerts, reports, and analytics in one easy to use interface. It supports users and teams with 24x365 global operations, role-based access control, and a full log of every TrueNAS configuration change.
+TrueCommand runs on docker, VMs, or as a cloud service and is free to users with less than 50 drives and affordable for those with larger installations.
+Read more infomration about TrueCommand in the [What is TrueCommand](https://www.truenas.com/docs/truecommand/overview/tcwhatis/) article. 
+
