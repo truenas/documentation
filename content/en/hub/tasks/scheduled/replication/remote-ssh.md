@@ -69,13 +69,11 @@ The destination is where replicated snapshots are stored.
 Choosing a remote destination requires an SSH connection to that system.
 Expanding the directory browser shows the current datasets that are available for replication.
 You can select a destination dataset or manually type a path in the field.
+Zvols cannot be used as a remote replication destination.
 Adding a name to the end of the path creates a new dataset in that location.
-
-<NOTE: Zvols can not be used as a remote destination for a Replication Task.
 
 <img src="/images/TasksReplicationTasksAddRemoteDest.png">
 <br><br>
-
 
 ### Security and Task Name
 
