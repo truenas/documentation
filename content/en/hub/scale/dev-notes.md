@@ -160,7 +160,7 @@ SCALE has API support for deploying Kubernetes workloads. SCALE manages Kubernet
 
 Each catalog item points to an application which will be deployed to Kubernetes. This application is an enhanced helm chart which deploys the application to the TrueNAS SCALE Kubernetes cluster.
 
-Right now we have a catalog item called `ix-chart` (https://github.com/truenas/charts/tree/master/test/ix-chart/2010.0.1) which has the ability to deploy single Docker image workloads. Please refer to the chart link to see more details about what features and configurations are supported.
+Right now we have a catalog item called `ix-chart` (https://github.com/truenas/charts/tree/master/test/ix-chart/) which has the ability to deploy single Docker image workloads. Please refer to the chart link to see more details about what features and configurations are supported.
 
 Here is an example of deploying the Plex docker image:
 
