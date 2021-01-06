@@ -37,8 +37,6 @@ To turn on the iSCSI service, go to **Services** and click the slider for **iSCS
 <img src="/images/iSCSI1TurnOnServices.png">
 <br><br>
 
-> NOTE: iSCSI sharing will not work if the service is not turned on.
-
 ## Setting Up an iSCSI Share
 
 It's easy to set up the necessary items for an iSCSI share using the web interface. Go to **Sharing > Block Shares (iSCSI)** and click **WIZARD**. The wizard will guide you through each step of the creation process.
@@ -48,7 +46,7 @@ It's easy to set up the necessary items for an iSCSI share using the web interfa
 
 ### Create or Choose Block Device
 
-First, enter a name for the iSCSI share. The name can only contain lowercase alphanumeric characters plus a dot (.), dash (-), or colon (:). We recommend keeping the name short or at most 63 characters. Next, choose the *Extent Type*. 
+First, enter a name for the iSCSI share. The name can only contain lowercase alphanumeric characters plus a dot (.), dash (-), or colon (:). We recommend keeping the name short or at most 63 characters. Next, choose the *Extent Type*.
 
 * If the *Extent Type* is *Device*, select the Zvol to share from the *Device* drop down.
  
@@ -61,9 +59,9 @@ Select the type of platform that will be using the share. For example, if using 
 
 ### Portal
 
-Now you will Either create a new portal or select an existing one from the dropdown. 
+Now you will either create a new portal or select an existing one from the dropdown.
 
-If you create a new portal, you will need to select a *Discovery Authentication Method*. 
+If you create a new portal, you will need to select a *Discovery Authentication Method*.
 
 If you set the *Discovery Authentication Method* to *CHAP* or *MUTUAL CHAP*, then you will also need to select a *Discovery Authentication Group*. If a group doesn't already exist select *Create New* from the dropdown and enter the desired *Group ID*, *User*, and *Secret*.
 
@@ -74,7 +72,7 @@ If you set the *Discovery Authentication Method* to *NONE*, you don't need to se
 
 Select *0.0.0.0* or *::* from the *IP Address* dropdown and click **NEXT**.
 
-> NOTE: The address *0.0.0.0* listens on all IPv4 addresses, and *::* listens on all IPv6 addresses.
+> NOTE: *0.0.0.0* listens on all IPv4 addresses and *::* listens on all IPv6 addresses.
 
 ### Initiator
 
@@ -92,11 +90,11 @@ Confirm that your settings look correct, then click **SUBMIT**.
 
 ## Using the iSCSI Share on Linux
 
-Use the following instructions to connect to an iSCSI share from a Linux system.
+Follow these steps to connect to an iSCSI share from a Linux system.
 
 ### iSCSI Utilities and Service
 
-First, open the command line and ensure that the *open-iscsi* utility is installed. To install the utility on an Ubuntu/Debian distribution, type `sudo apt update && sudo apt install open-iscsi`. After the installation completes, make sure the *iscsid* service is running by typing `sudo service iscsid start`. Once the *iscsid* service is started, you can run the `iscsiadm` command with the discovery arguments and get the necessary information to connect to the share.
+First, open the command line and ensure that the `open-iscsi` utility is installed. To install the utility on an Ubuntu/Debian distribution, type `sudo apt update && sudo apt install open-iscsi`. After the installation completes, make sure the *iscsid* service is running by typing `sudo service iscsid start`. Once the *iscsid* service is started, you can run the `iscsiadm` command with the discovery arguments and get the necessary information to connect to the share.
 
 <img src="/images/iSCSI7LinuxUtility.png">
 <br><br>
@@ -144,56 +142,54 @@ Now you can mount the iSCSI device to share data by running the command <code>su
 
 ## Using the iSCSI Share on Windows
 
-Use the following instructions to connect to an iSCSI share from a Windows system.
+Use these instructions to connect to an iSCSI share from a Windows system.
 
-In order to access the data on the iSCSI share, clients will need to use iSCSI Initiator software. An iSCSI Initiator client is pre-installed in Windows 7 to 10 Pro, and Windows Server 2008, 2012, and 2019. 
-
-> NOTE: Windows Professional Edition is typically required.
+To access the data on the iSCSI share, clients will need to use iSCSI Initiator software. An iSCSI Initiator client is pre-installed in Windows 7 to 10 Pro, and Windows Server 2008, 2012, and 2019. Windows Professional Edition is usually required.
 
 First, click the Start Menu and search for the *iSCSI Initiator* application.
 
 <img src="/images/iSCSI12bWiniSCSIInit.png">
 <br><br>
 
-First, go to the **Configuration** tab and click **Change** to change the iSCSI initiator to the same name you created earlier. Click **OK**.
+Next, go to the **Configuration** tab and click **Change** to change the iSCSI initiator to the same name created earlier. Click **OK**.
 
 <img src="/images/iSCSI12WinInitiator.png">
 <br><br>
 
-Next, switch to the **Discovery Tab**, click **Discover Portal**, and type in your TrueNAS IP address.
+Next, switch to the **Discovery Tab**, click **Discover Portal**, and type in the TrueNAS IP address.
 
 * If the port number was changed from the default of *3260*, enter the new port number.
 
-* If CHAP was set up when creating the iSCSI share, click **Advanced...**, set *Enable CHAP log on*, and enter the initiator name and the same target/secret you set earlier on TrueNAS.
+* If CHAP was set up when creating the iSCSI share, click **Advanced...**, set *Enable CHAP log on*, and enter the initiator name and the same target/secret that was set earlier in TrueNAS.
 
 Click **OK**.
 
 <img src="/images/iSCSI13WinPortal.png">
 <br><br>
 
-Navigate to the **Targets** tab, highlight your iSCSI target, and click **Connect**
+Go to the **Targets** tab, highlight the iSCSI target, and click **Connect**.
 
 <img src="/images/iSCSI14WinConnect.png">
 <br><br>
 
-Now that Windows is connected to the iSCSI target it's time to partition the drive.
+After Windows connects to the iSCSI target the drive can be partitioned.
 
-Search for and open the *Disk Management* app. 
+Search for and open the *Disk Management* app.
 
 <img src="/images/iSCSI15WinDiskManager.png">
 <br><br>
 
-Your drive should currently be *unallocated*. Right-click the drive and click **New Simple Volume...** 
+Your drive should currently be *unallocated*. Right-click the drive and click **New Simple Volume...**.
 
 <img src="/images/iSCSI16WinNewVol.png">
 <br><br>
 
-Complete the Wizard to format it and assign it a drive letter and name.
+Complete the Wizard to format the drive and assign a drive letter and name.
 
 <img src="/images/iSCSI17WinFormPart.png">
 <br><br>
 
-Finally, go to *This PC* or *My Computer* in File Explorer and your new iSCSI volume should show up under the list of drives. You should now be able to add, delete, and modify files and folders on your iSCSI drive.
+Finally, go to *This PC* or *My Computer* in File Explorer and the new iSCSI volume should show up under the list of drives. You should now be able to add, delete, and modify files and folders on your iSCSI drive.
 
 <img src="/images/iSCSI18WinDrives.png">
 <br><br>
