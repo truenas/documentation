@@ -49,9 +49,14 @@ Go to **Sharing > Unix Shares (NFS)** and click **ADD**.
 
 Use the file browser to select the dataset to be shared.
 An optional *Description* can be entered to help identify the share.
-At the time of creation, the NFS share is enabled by default.
-If you wish to create the share but not immediately enable it, unset the *Enable* checkbox.
 Clicking *SUBMIT* creates the share.
+At the time of creation, you can select *ENABLE SERVICE* for the service to start and to automatically start after any reboots.
+If you wish to create the share but not immediately enable it, select *CANCEL*.
+
+<img src="/images/NFSupdate2.png" width='700px'>
+
+<img src="/images/NFSupdate3.png" width='700px'>
+
 
 ### NFS Share Settings
 
@@ -71,6 +76,8 @@ Clicking *SUBMIT* creates the share.
 | Authorized Hosts and IP addresses | string              | ✓             | Enter a hostname or IP address to allow that system access to the NFS share. Click **ADD** to define another allowed system. Defining authorized systems restricts access to all other systems. Leave field empty to allow all systems access to the share. |
 
 Opening the *ADVANCED OPTIONS* allows tuning the share access permissions and defining authorized networks.
+
+<img src="/images/NFSupdate1.png" width='700px'>
 
 To edit an existing NFS share, go to **Sharing > Unix Shares (NFS)** and click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i> (Options) > **Edit**.
 
