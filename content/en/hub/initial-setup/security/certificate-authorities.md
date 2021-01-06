@@ -32,7 +32,7 @@ in days, this is how long the CA will remain valid.
 
 Next, fill out the geographic information of the certificate. This includes 
 *Country*, *Locality*, *Organizational Unit* (optional), *Common Name*, *State*,
-*Organization*, *Email*, and *Subject Alternate Names* (optional). The *Common
+*Organization*, *Email*, and *Subject Alternate Names*. The *Common
 Name* is the [fully-qualified hostname (FQDN)](https://kb.iu.edu/d/aiuv) and
 must be unique within a certificate chain.
 
