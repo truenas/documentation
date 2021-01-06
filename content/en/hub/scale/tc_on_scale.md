@@ -1,6 +1,6 @@
 ---
-title: "Deploying TrueCommand on TrueNAS Scale"
-description: "how to deploy TrueCommand container in TrueNAS Scale."
+title: "Deploying TrueCommand on TrueNAS SCALE"
+description: "How to deploy TrueCommand container in TrueNAS SCALE."
 tags: ["TrueCommand Docker","SCALE"]
 ---
 
