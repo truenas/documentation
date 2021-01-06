@@ -6,6 +6,17 @@ tags: ["networking", "Fibre Channel", "iSCSI"]
 
 The Fibre Channel protocol has been proven over time to be fast, cost effective, and reliable over a wide variety of storage workloads.
 
+## What are the Hardware Requirements for using Fibre Channel?
+
+The following TrueNAS Open Storage Products have a Fibre Channel Option:
+
+* <a href="https://www.truenas.com/r-series/">**TrueNAS R-Series**</a> (4x16 Gbps).
+* <a href="https://www.truenas.com/x-series/">**TrueNAS X-10**</a> (2x8 Gbps).
+* <a href="https://www.truenas.com/x-series/">**TrueNAS X-20**</a> (2x8 Gbps).
+* <a href="https://www.truenas.com/m-series/">**TrueNAS M-40**</a> (4x16 Gbps).
+* <a href="https://www.truenas.com/m-series/">**TrueNAS M-50**</a> (4x16 Gbps or 2x32 Gbps).
+* <a href="https://www.truenas.com/m-series/">**TrueNAS M-60**</a> (4x32 Gbps).
+
 ## What is Fibre Channel?
 Fibre Channel is a high-speed data transfer protocol providing in-order, lossless delivery of raw block data. Fibre Channel is primarily used to connect computer data storage to servers in storage area networks in commercial data centers.
 
