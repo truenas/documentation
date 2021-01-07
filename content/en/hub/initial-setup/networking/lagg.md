@@ -11,9 +11,9 @@ To set up a LAGG interface, go to **Network > Interface > Add**.
 <img src="/images/tn-add-lagg-interface.png">
 <br><br>
 
-Set **Type** to *Link Aggregation*
+Set **Type** to *Link Aggregation*.
 
-Enter a name for the interface. The name must use the format, *laggX*, *vlanX*, or *bridgeX*, where *X* is a number representing a non-parent interface.
+Enter a name for the interface. The name must use the format, *laggX*, where *X* is a number representing a non-parent interface.
 It is also recommended to add any notes or reminders about this particular LAGG in the **Description**.
 
 Under LAGG Settings, set the **Lagg Protocol** to configure the interface ports to match your networking needs:
