@@ -15,17 +15,17 @@ Any datasets or zvols to be snapshotted must exist, before creating a snapshot s
 ## Process Summary
 
 * Tasks > Periodic Snapshot Tasks
-  * Select the dataset to snapshot
-  * Define snapshot options
+  * Select the dataset to snapshot.
+  * Define snapshot options.
     * How long to keep it.
-    * How snapshots are named
+    * How snapshots are named.
   * Schedule when the task will run.
-    * Presets are for quickly configuring a task
-    * Advanced scheduler is typically recommended
+    * Presets are for quickly configuring a task.
+    * Advanced scheduler is typically recommended.
 
 ## Creating Dataset Snapshot Schedules
 
-Go to **Tasks > Periodic Snapshot Tasks** and click **ADD**
+Go to **Tasks > Periodic Snapshot Tasks** and click **ADD**.
 
 <img src="/images/tasks-periodicsnap-add.png">
 <br><br>
