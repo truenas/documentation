@@ -31,10 +31,13 @@ Each node can support Virtual Machines (with the KVM hypervisor) as well as Dock
 
 **Open Source**
  + Free to download and use, TrueNAS SCALE welcomes developers and testers to contribute to its Open Source development model.
+
 **Scale-Out**
  + OpenZFS and Gluster combine to enable scale-out ZFS capabilities with excellent stability and very efficient compression and snapshots.
+
 **Hyperconverged**
  + Deploy a single hyperconverged node in a home/office or a cluster with hundreds of compute and storage nodes in a datacenter.
+
 **Containers and VMs**
  + With support for KVM VMs, Kubernetes, and Docker containers, it’s easy to add applications to suit your every need.
 
