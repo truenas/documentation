@@ -11,6 +11,7 @@ tags: ["reference"]
 
 #### Groups / Add
 
+Main Window
 |-|-|
 | GID | The Group ID (GID) is a unique number used to identify a Unix group. Enter a number above 1000 for a group with user accounts. Groups used by a service must have an ID that matches the default port number used by the service. |
 | Name | Group name cannot begin with a hyphen (-) or contain a space, tab, or these characters: , : + & # % ^ ( ) ! @ ~ * ? < > =. $ can only be used as the last character of the username. |
@@ -21,26 +22,24 @@ tags: ["reference"]
 
 #### Users / Add
 
-
+Main Window
 |-|-|
 | Full Name | Spaces are allowed. |
 | Username  | Usernames can be up to 16 characters long. When using NIS or other legacy software with limited username lengths, keep usernames to eight characters or less for compatibility. Usernames cannot begin with a hyphen (-) or contain a space, tab, or these characters: , : + & # % ^ ( ) ! @ ~ * ? < > =. $ can only be used as the last character of the username. |
 | Email     | Enter the email address of the new user. |
-| Password  | Required unless Enable password login is No. Passwords cannot contain a ?.      |  
+| Password  | Required unless Enable password login is No. Passwords cannot contain a ?. |  
 
 
 User ID and Groups
-
 |-|-|
-| User ID           | User accounts have an ID greater than 1000 and system accounts have an ID equal to the default port number used by the service. |
-| New Primary Group | Set to create a new primary group with the same name as the user. Unset to select an existing group for the user.               |
-| Primary Group     | New users are not given su permissions if wheel is their primary group.                                                         |
-| Auxilliary Group  | Add this user to additional groups.                                                                                             |                                                                                             
+| User ID | User accounts have an ID greater than 1000 and system accounts have an ID equal to the default port number used by the service. |
+| New Primary Group | Set to create a new primary group with the same name as the user. Unset to select an existing group for the user. |
+| Primary Group | New users are not given su permissions if wheel is their primary group. |
+| Auxilliary Group | Add this user to additional groups. |                                                                                             
 
 Directories and Permissions 
-
 |-|-|
-| Home Directory             | Choose a path to the user's home directory. If the directory exists and matches the username, it is set as the user's home directory. When the path does not end with a subdirectory matching the username, a new subdirectory is created. The full path to the user's home directory is shown here when editing a user. |
+| Home Directory | Choose a path to the user's home directory. If the directory exists and matches the username, it is set as the user's home directory. When the path does not end with a subdirectory matching the username, a new subdirectory is created. The full path to the user's home directory is shown here when editing a user. |
 | Home Directory Permissions | Sets default Unix permissions of the user home directory. This is read-only for built-in users. |
 
 Authentication
