@@ -2,7 +2,7 @@
 title: "Interface Fields Reference Guide: Directory Services"
 linkTitle: "Directory Services"
 description: "Descriptions of each field in the Directory Services section of the TrueNAS web interface."
-weight: 30
+weight: 70
 tags: ["reference"]
 ---
 

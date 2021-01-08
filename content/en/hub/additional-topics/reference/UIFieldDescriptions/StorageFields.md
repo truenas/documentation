@@ -2,7 +2,7 @@
 title: "Interface Fields Reference Guide: Storage"
 linkTitle: "Storage"
 description: "Descriptions of each field in the Storage section of the TrueNAS web interface."
-weight: 30
+weight: 60
 tags: ["reference"]
 ---
 
