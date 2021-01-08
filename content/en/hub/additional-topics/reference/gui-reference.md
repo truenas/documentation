@@ -11,26 +11,26 @@ tags: ["reference"]
 
 #### Groups / Add
 
-|----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|-|-|
 | GID                  | The Group ID (GID) is a unique number used to identify a Unix group. Enter a number above 1000 for a group with user accounts. Groups used by a service must have an ID that matches the default port number used by the service. |
-| Name                 | Group name cannot begin with a hyphen (-) or contain a space, tab, or these characters: , : + & # % ^ ( ) ! @ ~ * ? < > =. $ can only be used as the last character of the username.                                              |
-| Permit Sudo          | Allow group members to use [sudo](https://www.freebsd.org/cgi/man.cgi?query=sudo&manpath=FreeBSD+11.1-RELEASE+and+Ports). Group members are prompted for their password when using sudo.                                          |
-| Samba Authentication | Set to allow group to be used for Samba permissions and authentication.                                                                                                                                                           |
-| Allow Duplicate GIDs | Not recommended. Allow more than one group to have the same group ID.                                                                                                                                                             |
+| Name                 | Group name cannot begin with a hyphen (-) or contain a space, tab, or these characters: , : + & # % ^ ( ) ! @ ~ * ? < > =. $ can only be used as the last character of the username. |
+| Permit Sudo          | Allow group members to use [sudo](https://www.freebsd.org/cgi/man.cgi?query=sudo&manpath=FreeBSD+11.1-RELEASE+and+Ports). Group members are prompted for their password when using sudo. |
+| Samba Authentication | Set to allow group to be used for Samba permissions and authentication. |
+| Allow Duplicate GIDs | Not recommended. Allow more than one group to have the same group ID. |
 
 #### Users / Add
 
 
-|-----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Full Name | Spaces are allowed.                                                                                                                                                                                                                                                                                                                                                 |
+|-|-|
+| Full Name | Spaces are allowed. |
 | Username  | Usernames can be up to 16 characters long. When using NIS or other legacy software with limited username lengths, keep usernames to eight characters or less for compatibility. Usernames cannot begin with a hyphen (-) or contain a space, tab, or these characters: , : + & # % ^ ( ) ! @ ~ * ? < > =. $ can only be used as the last character of the username. |
-| Email     | Enter the email address of the new user.                                                                                                                                                                                                                                                                                                                            |
+| Email     | Enter the email address of the new user. |
 | Password  | Required unless Enable password login is No. Passwords cannot contain a ?.      |  
 
 
 User ID and Groups
 
-|-------------------|---------------------------------------------------------------------------------------------------------------------------------|
+|-|-|
 | User ID           | User accounts have an ID greater than 1000 and system accounts have an ID equal to the default port number used by the service. |
 | New Primary Group | Set to create a new primary group with the same name as the user. Unset to select an existing group for the user.               |
 | Primary Group     | New users are not given su permissions if wheel is their primary group.                                                         |
@@ -38,21 +38,19 @@ User ID and Groups
 
 Directories and Permissions 
 
-|----------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|-|-|
 | Home Directory             | Choose a path to the user's home directory. If the directory exists and matches the username, it is set as the user's home directory. When the path does not end with a subdirectory matching the username, a new subdirectory is created. The full path to the user's home directory is shown here when editing a user. |
-| Home Directory Permissions | Sets default Unix permissions of the user home directory. This is read-only for built-in users.                                                                                                                                                                                                                          |
+| Home Directory Permissions | Sets default Unix permissions of the user home directory. This is read-only for built-in users. |
 
 Authentication
- 
-
-|----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| SSH Public Key       | Enter or paste the public SSH key of the user for any key-based authentication. Do not paste the private key.                                                                                                                                                                                                                                                                                                                                                              |
+|-|-|
+| SSH Public Key       | Enter or paste the public SSH key of the user for any key-based authentication. Do not paste the private key. |
 | Disable Password     | Yes: Disables the Password fields and removes the password from the account. The account cannot use password-based logins for services. For example, disabling the password prevents using account credentials to log in to an SMB share or open an SSH session on the system. The Lock User and Permit Sudo options are also removed. No: Requires adding a Password to the account. The account can use the saved Password to authenticate with password-based services. |
-| Shell                | Select the shell to use for local and SSH logins.                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| Lock User            | Prevent the user from logging in or using password-based services until this option is unset. Locking an account is only possible when **Disable Password** is *No* and a **Password** has been created for the account.                                                                                                                                                                                                                                                   |
-| Permit Sudo          | Allow group members to use [sudo](https://www.freebsd.org/cgi/man.cgi?query=sudo&manpath=FreeBSD+11.1-RELEASE+and+Ports). Group members are prompted for their password when using sudo.                                                                                                                                                                                                                                                                                   |
-| Microsoft Account    | Set to allow additional username authentication methods when the user is connecting from a Windows 8 or newer operating system.                                                                                                                                                                                                                                                                                                                                            |
-| Samba Authentication | Set to allow user to authenticate to Samba shares.                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| Shell                | Select the shell to use for local and SSH logins. |
+| Lock User            | Prevent the user from logging in or using password-based services until this option is unset. Locking an account is only possible when **Disable Password** is *No* and a **Password** has been created for the account. |
+| Permit Sudo          | Allow group members to use [sudo](https://www.freebsd.org/cgi/man.cgi?query=sudo&manpath=FreeBSD+11.1-RELEASE+and+Ports). Group members are prompted for their password when using sudo. |
+| Microsoft Account    | Set to allow additional username authentication methods when the user is connecting from a Windows 8 or newer operating system. |
+| Samba Authentication | Set to allow user to authenticate to Samba shares. |
 
 
 ### System
@@ -67,7 +65,7 @@ Authentication
 | Web Interface HTTPS Port             | Allow configuring a non-standard port to access the GUI over HTTPS.                                                                                                                                                                                                                                                                                                                                                       |
 | HTTPS Protocols                      | Cryptographic protocols for securing client/server connections. Select which [Transport Layer Security (TLS)](https://en.wikipedia.org/wiki/Transport_Layer_Security) versions TrueNAS can use for connection security.                                                                                                                                                                                                   |
 | Web Interface HTTP -> HTTPS Redirect | Redirect HTTP connections to HTTPS. A GUI SSL Certificate is required for HTTPS. Activating this also sets the [HTTP Strict Transport Security (HSTS)](https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security) maximum age to 31536000 seconds (one year). This means that after a browser connects to the web interface for the first time, the browser continues to use HTTPS and renews this setting every year. |
-|                                      |                                                                                                                                                                                                                                                                                                                                                                                                                           |
+
 
 Localization
 |----------------------|--------------------------------------------|
@@ -79,7 +77,7 @@ Localization
 
 Other Options
 
-|----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|-|-|
 | Crash reporting      | Send failed HTTP request data which can include client and server IP addresses, failed method call tracebacks, and middleware log file contents to iXsystems. |
 | Usage collection     | Enable sending anonymous usage statistics to iXsystems.                          
 
@@ -110,35 +108,35 @@ Clone
 #### Advanced
 
 Console
-|-------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
-| Show Text Console without Password Prompt | Unset to add a login prompt to the system before the console menu is shown.                                                                      |
-| Enable Serial Console                     | Do not set this if the Serial Port is disabled.                                                                                                  |
-| MOTD Banner                               | The message to show when a user logs in with SSH.                                                                                                |
+|-|-|
+| Show Text Console without Password Prompt | Unset to add a login prompt to the system before the console menu is shown. |
+| Enable Serial Console  | Do not set this if the Serial Port is disabled. |
+| MOTD Banner | The message to show when a user logs in with SSH. |
 
 
 
 Storage
-|---------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|-|-|
 | Swap Size in GiB *                          | By default, all data disks are created with the amount of swap specified. Changing the value does not affect the amount of swap on existing disks, only disks added after the change. Does not affect log or cache devices as they are created without swap. Setting to 0 disables swap creation completely. **STRONGLY DISCOURAGED** |
-| LOG (Write Cache) Overprovision Size in GiB | Overprovisioning a ZFS Log SSD can increase its performance and lifespan by distributing writes and erases across more drive flash blocks. Defining a number of GiB here overprovisions ZFS Log disks during pool creation or extension. Examples: 50 GiB, 10g, 5GB                                                                   |
+| LOG (Write Cache) Overprovision Size in GiB | Overprovisioning a ZFS Log SSD can increase its performance and lifespan by distributing writes and erases across more drive flash blocks. Defining a number of GiB here overprovisions ZFS Log disks during pool creation or extension. Examples: 50 GiB, 10g, 5GB |
 
 
 GUI
-|---------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
-| Show Console Messages           | Display console messages in real time at the bottom of the browser.                                                                              |
-| Show Advanced Fields by Default | Set to always show advanced fields, when available.                                                                                              |
+|-|-|
+| Show Console Messages | Display console messages in real time at the bottom of the browser. |
+| Show Advanced Fields by Default | Set to always show advanced fields, when available. |
 
 
 Kernel
-|---------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
-| Show Console Messages           | Display console messages in real time at the bottom of the browser.                                                                              |
-| Show Advanced Fields by Default | Set to always show advanced fields, when available.                                                                                              |
+|-|-|
+| Show Console Messages  | Display console messages in real time at the bottom of the browser.  |
+| Show Advanced Fields by Default | Set to always show advanced fields, when available.  |
 
 
 Self-Encrypting Drive
-|-------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
-| ATA Security User | User passed to camcontrol security -u to unlock SEDs                                                                                             |
-| SED Password      | Global password to unlock SEDs.                                                                                                                  |
+|-|-|
+| ATA Security User | User passed to camcontrol security -u to unlock SEDs |
+| SED Password  | Global password to unlock SEDs. |
 
 
 Syslog
