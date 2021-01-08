@@ -7,8 +7,7 @@ weight: 10
 
 <img src="/images/truenas_scale-logo-full-color-rgb.png" style="scale:50%;"> <br><br>
 
-
-[**TrueNAS SCALE**](/hub/scale/) is the latest member of the TrueNAS family and provides Open Source HyperConverged Infrastructure (HCI) including Linux containers and VMs.
+**TrueNAS SCALE** is the latest member of the TrueNAS family and provides Open Source HyperConverged Infrastructure (HCI) including Linux containers and VMs.
 TrueNAS SCALE includes the ability to cluster systems and provide scale-out storage with capacities of up to hundreds of Petabytes.
 Just like TrueNAS CORE, TrueNAS SCALE is designed to be the most secure and efficient solution to managing and sharing data over a network, from smaller home networks "scaled" up to massive business environments.
 
@@ -27,7 +26,7 @@ Unlike other HCI platforms, a user can get started with TrueNAS SCALE on a singl
 TrueNAS SCALE is true Disaggregated HCI, meaning storage and compute can be scaled independently.
 Each node can support Virtual Machines (with the KVM hypervisor) as well as Docker containers by using native Kubernetes.
 
-*TrueNAS SCALE is in early development and is not recommended for production use.
+> Note: TrueNAS SCALE is in early development and is not recommended for production use.
 
 **Open Source**
  + Free to download and use, TrueNAS SCALE welcomes developers and testers to contribute to its Open Source development model.
