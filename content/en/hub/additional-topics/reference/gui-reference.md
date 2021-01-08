@@ -201,6 +201,7 @@ Name and Type
 
 
 Authentication Type
+
 AWS
 |------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | AWS Region | Enter the [AWS account region](https://docs.aws.amazon.com/sns/latest/dg/sms_supported-countries.html).                                                             |
@@ -215,8 +216,8 @@ Email
 | Email Address | Enter a valid email address to receive alerts from this system.                                                                                                     |
 
 InfluxDB
-| Host     | Enter the [InfluxDB](https://docs.influxdata.com/influxdb/) hostname. |
 |----------|-----------------------------------------------------------------------|
+| Host     | Enter the [InfluxDB](https://docs.influxdata.com/influxdb/) hostname. |
 | Username | Username for this service.                                            |
 | Password | Enter password.                                                       |
 | Database | Name of the InfluxDB database.                                        |
