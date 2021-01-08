@@ -11,7 +11,7 @@ tags: ["reference"]
 
 #### Groups / Add
 
-Main Window
+General Options
 |-|-|
 | GID | The Group ID (GID) is a unique number used to identify a Unix group. Enter a number above 1000 for a group with user accounts. Groups used by a service must have an ID that matches the default port number used by the service. |
 | Name | Group name cannot begin with a hyphen (-) or contain a space, tab, or these characters: , : + & # % ^ ( ) ! @ ~ * ? < > =. $ can only be used as the last character of the username. |
@@ -22,7 +22,7 @@ Main Window
 
 #### Users / Add
 
-Main Window
+General Options
 |-|-|
 | Full Name | Spaces are allowed. |
 | Username  | Usernames can be up to 16 characters long. When using NIS or other legacy software with limited username lengths, keep usernames to eight characters or less for compatibility. Usernames cannot begin with a hyphen (-) or contain a space, tab, or these characters: , : + & # % ^ ( ) ! @ ~ * ? < > =. $ can only be used as the last character of the username. |
@@ -57,6 +57,7 @@ Authentication
 
 #### General 
 
+General Options
 |--------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | GUI SSL Certificate                  | The system uses a self-signed certificate to enable encrypted web interface connections. To change the default certificate, select a different certificate that was created or imported in the **Certificates** menu.                                                                                                                                                                                                     |
 | Web Interface IPv4 Address           | Choose a recent IP address to limit the usage when accessing the administrative GUI. The built-in HTTP server binds to the wildcard address of 0.0.0.0 (any address) and issues an alert if the specified address becomes unavailable.                                                                                                                                                                                    |
@@ -76,13 +77,13 @@ Localization
 | Time Format          | Choose a time format.                      |
 
 Other Options
-
 |-|-|
 | Crash reporting      | Send failed HTTP request data which can include client and server IP addresses, failed method call tracebacks, and middleware log file contents to iXsystems. |
 | Usage collection     | Enable sending anonymous usage statistics to iXsystems.                          
 
 #### NTP Servers	Add/Edit
 
+General Options
 |----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Address  | Enter the hostname or IP address of the NTP server.                                                                                                         |
 | Burst    | Recommended when Max. Poll is greater than 10. Only use on personal NTP servers or those under direct control. Do not enable when using public NTP servers. |
@@ -113,13 +114,10 @@ Console
 | Enable Serial Console  | Do not set this if the Serial Port is disabled. |
 | MOTD Banner | The message to show when a user logs in with SSH. |
 
-
-
 Storage
 |-|-|
 | Swap Size in GiB *                          | By default, all data disks are created with the amount of swap specified. Changing the value does not affect the amount of swap on existing disks, only disks added after the change. Does not affect log or cache devices as they are created without swap. Setting to 0 disables swap creation completely. **STRONGLY DISCOURAGED** |
 | LOG (Write Cache) Overprovision Size in GiB | Overprovisioning a ZFS Log SSD can increase its performance and lifespan by distributing writes and erases across more drive flash blocks. Defining a number of GiB here overprovisions ZFS Log disks during pool creation or extension. Examples: 50 GiB, 10g, 5GB |
-
 
 GUI
 |-|-|
@@ -269,6 +267,7 @@ Victor Ops
 
 #### Alert Settings
 
+General Options
 |-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Set Warning Level | Customizes the importance of the alert. Each level of importance has a different icon and color to express the level of importance.
 Info, Notice, Warning, Error, Critical (Default), Alert, Emergency                                                                                                                                                                            |
@@ -423,6 +422,7 @@ More Options
 
 #### SSH Keypairs / Add
 
+General Options
 |-|-|
 | Name | A unique name to identify this keypair. Automatically generated keypairs are named after the object that generated the keypair with " Key" appended to the name. |
 | Private Key | See Public key authentication in [SSH/Authentication](https://www.freebsd.org/cgi/man.cgi?query=ssh). |
@@ -430,6 +430,7 @@ More Options
 
 #### Tuneables / Add
 
+General Options
 |-|-|
 | Variable | Enter the name of the loader, sysctl, or rc.conf variable to configure. loader tunables are used to specify parameters to pass to the kernel or load additional modules at boot time. rc.conf tunables are for enabling system services and daemons and only take effect after a reboot. sysctl tunables are used to configure kernel parameters while the system is running and generally take effect immediately. |
 | Value | Enter a value to use for the [loader](https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/boot-introduction.html#boot-loader-commands), [sysctl](https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/configtuning-sysctl.html), or [rc.conf](https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/config-tuning.html) variable. |
@@ -439,6 +440,7 @@ More Options
 
 #### Update
 
+General Options
 |-|-|
 | Check for Update Daily and Download if Availbale | Check the update server daily for any updates on the chosen train. Automatically download an update if one is available. Click APPLY PENDING UPDATE to install the downloaded update. |
 
@@ -491,6 +493,7 @@ Key Usage
 
 
 #### ACME DNS / Add
+
 Select Authenticator
 |-|-|
 | Name | Internal identifier for the authenticator. |
@@ -503,6 +506,7 @@ Authenticator Attributes
 
 #### Support
 
+General Options
 |-|-|
 | Username | Enter a valid username for the TrueNAS bug tracking system |
 | Password | Enter the bug tracker account password. |
