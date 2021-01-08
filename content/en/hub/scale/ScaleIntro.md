@@ -5,7 +5,7 @@ description: "A brief look at the purpose and structure of SCALE."
 weight: 10
 ---
 
-<img src="/images/truenas_scale-logo-full-color-rgb.png" style="scale:50%;">
+<img src="/images/truenas_scale-logo-full-color-rgb.png" style="scale:50%;"> <br><br>
 
 **TrueNAS SCALE** is the latest member of the TrueNAS family and provides Open Source HyperConverged Infrastructure (HCI) including Linux containers and VMs.
 TrueNAS SCALE includes the ability to cluster systems and provide scale-out storage with capacities of up to hundreds of Petabytes.
@@ -25,3 +25,20 @@ SCALE is an acronym that represents the core features of the software:
 Unlike other HCI platforms, a user can get started with TrueNAS SCALE on a single node and incrementally scale up and scale out to over 100 storage nodes with many additional compute-only nodes.
 TrueNAS SCALE is true Disaggregated HCI, meaning storage and compute can be scaled independently.
 Each node can support Virtual Machines (with the KVM hypervisor) as well as Docker containers by using native Kubernetes.
+
+> Note: TrueNAS SCALE is in early development and is not recommended for production use.
+
+**Open Source**
+ + Free to download and use, TrueNAS SCALE welcomes developers and testers to contribute to its Open Source development model.
+
+**Scale-Out**
+ + OpenZFS and Gluster combine to enable scale-out ZFS capabilities with excellent stability and very efficient compression and snapshots.
+
+**Hyperconverged**
+ + Deploy a single hyperconverged node in a home/office or a cluster with hundreds of compute and storage nodes in a datacenter.
+
+**Containers and VMs**
+ + With support for KVM VMs, Kubernetes, and Docker containers, it’s easy to add applications to suit your every need.
+
+
+<img src="https://www.truenas.com/wp-content/uploads/2020/11/TrueNAS_SCALE_Software_Features_Data_Sheet_2020_image-scaled.jpg"> <br><br>
