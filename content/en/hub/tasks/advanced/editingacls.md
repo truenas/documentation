@@ -49,7 +49,7 @@ Choose **Select a preset ACL** and choose a preset. The preset options are OPEN,
 
 <img src="/images/presetacl.png">
 <br><br>
- 
+
 Choose **Create a custom ACL** to cuatomize the acl's for the dataset.
 
 <img src="/images/customacls.png">
@@ -66,6 +66,12 @@ Any user accounts or groups imported from a directory service can be selected as
 You can quickly apply a standardized ACL with preconfigured Access Control List Entries (ACEs) by choosing one of the *Default ACL Options*.
 Otherwise, add a new item to the ACL, define *Who* the ACE applies to, and configure permissions and inheritance flags for the ACE.
 
+To view an ACL information from the console, go to **System Settings > Shell** and enter command:
+
+```shell
+getfacl /mnt/path/to/dataset
+```
+
 #### Permissions
 
 Permissions are divided between Basic and Advanced options.
@@ -73,41 +79,48 @@ The basic options are commonly used groups of the advanced options.
 
 **Basic Permissions**
 
-* *Read*: view file or directory contents, attributes, named attributes, and ACL.
+* *Read* (`r-x---a-R-c---`): view file or directory contents, attributes, named attributes, and ACL.
   Includes the *Traverse* permission.
-* *Modify*: adjust file or directory contents, attributes, and named attributes.
+* *Modify* (`rwxpDdaARWc--s`): adjust file or directory contents, attributes, and named attributes.
   Create new files or subdirectories.
   Includes the *Traverse* permission.
   Changing the ACL contents or owner is not allowed.
-* *Traverse*: Execute a file or move through a directory.
+* *Traverse* (`--x---a-R-c---`): Execute a file or move through a directory.
   Directory contents are restricted from view unless the *Read* permission is also applied.
   To traverse and view files in a directory, but not be able to open individual files, set the *Traverse* and *Read* permissions, then add the advanced *Directory Inherit* flag.
-* *Full Control* : Apply all permissions.
+* *Full Control* (`rwxpDdaARWcCos`): Apply all permissions.
 
 **Advanced Permissions**
 
-* *Read Data*: View file contents or list directory contents.
-* *Write Data*: Create new files or modify any part of a file.
-* *Append Data*: Add new data to the end of a file.
-* *Read Named Attributes*: view the named attributes directory.
-* *Write Named Attributes*: create a named attribute directory. Must be paired with the Read Named Attributes permission.
-* *Execute*: Execute a file, move through, or search a directory.
-* *Delete Children*: delete files or subdirectories from inside a directory.
-* *Read Attributes*: view file or directory non-ACL attributes.
-* *Write Attributes*: change file or directory non-ACL attributes.
-* *Delete*: remove the file or directory.
-* *Read ACL* : view the ACL.
-* *Write ACL*: change the ACL and the ACL mode.
-* *Write Owner*: change the user and group owners of the file or directory.
-* *Synchronize*: synchronous file read/write with the server. This permission does not apply to FreeBSD clients.
+* *Read Data* (`r`): View file contents or list directory contents.
+* *Write Data* (`w`): Create new files or modify any part of a file.
+* *Append Data* (`p`): Add new data to the end of a file.
+* *Read Named Attributes* (`R`): view the named attributes directory.
+* *Write Named Attributes* (`W`): create a named attribute directory. Must be paired with the Read Named Attributes permission.
+* *Execute* (`x`): Execute a file, move through, or search a directory.
+* *Delete Children* (`D`): delete files or subdirectories from inside a directory.
+* *Read Attributes* (`a`): view file or directory non-ACL attributes.
+* *Write Attributes* (`A`): change file or directory non-ACL attributes.
+* *Delete* (`d`): remove the file or directory.
+* *Read ACL* (`c`): view the ACL.
+* *Write ACL* (`C`): change the ACL and the ACL mode.
+* *Write Owner* (`o`): change the user and group owners of the file or directory.
+* *Synchronize* (`s`): synchronous file read/write with the server. This permission does not apply to FreeBSD clients.
 
 #### Inheritance Flags
 
 Basic inheritance flags only enable or disable ACE inheritance.
 Advanced flags offer finer control for applying an ACE to new files or directories.
 
-* *File Inherit*: The ACE is inherited with subdirectories and files. It applies to new files.
-* *Directory Inherit*: new subdirectories inherit the full ACE.
-* *No Propagate Inherit*: The ACE can only be inherited once.
-* *Inherit Only*: Remove the ACE from permission checks but allow it to be inherited by new files or subdirectories. Inherit Only is removed from these new objects.
-* *Inherited*: set when the ACE has been inherited from another dataset.
+**Basic Flags**
+
+* *Inherit* (`fd-----`): enable ACE inheritance.
+* *No Inherit* (`-------`): disable ACE inheritance.
+
+**Advanced Flags**
+
+* *File Inherit* (`f`): The ACE is inherited with subdirectories and files. It applies to new files.
+* *Directory Inherit* (`d`): new subdirectories inherit the full ACE.
+* *No Propagate Inherit* (`n`): The ACE can only be inherited once.
+* *Inherit Only* (`i`): Remove the ACE from permission checks but allow it to be inherited by new files or subdirectories. Inherit Only is removed from these new objects.
+* *Inherited* (`I`): set when the ACE has been inherited from another dataset.
