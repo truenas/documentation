@@ -50,7 +50,7 @@ Choose **Select a preset ACL** and choose a preset. The preset options are OPEN,
 <img src="/images/presetacl.png">
 <br><br>
 
-Choose **Create a custom ACL** to cuatomize the acl's for the dataset.
+Choose **Create a custom ACL** to create a new list of customized permissions.
 
 <img src="/images/customacls.png">
 <br><br>
