@@ -3,7 +3,7 @@ title: "Interface Fields Reference Guide: Network"
 linkTitle: "Network"
 description: "Descriptions of each field in the Network section of the TrueNAS web interface."
 weight: 50
-tags: ["reference"]
+tags: ["reference", "networking", "IPMI"]
 ---
 
 ## Global Configuration
