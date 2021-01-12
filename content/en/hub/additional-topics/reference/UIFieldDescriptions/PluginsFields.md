@@ -3,7 +3,7 @@ title: "Interface Fields Reference Guide: Plugins"
 linkTitle: "Plugins"
 description: "Descriptions of each field in the Plugins section of the TrueNAS web interface."
 weight: 110
-tags: ["reference"]
+tags: ["reference", "jails", "networking"]
 ---
 
 ## Add
