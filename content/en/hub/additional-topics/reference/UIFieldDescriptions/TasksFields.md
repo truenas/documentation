@@ -3,7 +3,7 @@ title: "Interface Fields Reference Guide: Tasks"
 linkTitle: "Tasks"
 description: "Descriptions of each field in the Tasks section of the TrueNAS web interface."
 weight: 40
-tags: ["reference"]
+tags: ["reference", "cron", "rsync", "S.M.A.R.T.", "snapshots", "replication", "resilver", "scrub", "cloud sync"]
 ---
 
 ## Cron Job
