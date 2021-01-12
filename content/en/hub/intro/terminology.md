@@ -14,7 +14,7 @@ A ZFS pool is made up by one or more vdevs (virtual devices). A vdev can be made
 
 
 #### [ZFS Datasets](/hub/initial-setup/storage/datasets/)
-A ZFS dataset is roughly analogous to a standard, mounted filesystem—like a conventional filesystem, it appears to casual inspection as though it's "just another folder." But also like conventional mounted filesystems, each ZFS dataset has its own set of underlying properties.
+A ZFS dataset is similar to a conventional mounted filesystem, it appears to casual inspection as though it's "just another folder" However unlike conventional mounted filesystems, each ZFS dataset has its own set of properties.
 
 
 #### [ZFS zvols](/hub/initial-setup/storage/zvols/)
