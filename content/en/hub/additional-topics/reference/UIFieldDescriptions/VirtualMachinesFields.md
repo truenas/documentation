@@ -3,7 +3,7 @@ title: "Interface Fields Reference Guide: Virtual Machines"
 linkTitle: "Virtual Machines"
 description: "Descriptions of each field in the Virtual Machines section of the TrueNAS web interface."
 weight: 120
-tags: ["reference"]
+tags: ["reference", "networking", "VM"]
 ---
 
 ## Options
