@@ -3,7 +3,7 @@ title: "Interface Fields Reference Guide: Storage"
 linkTitle: "Storage"
 description: "Descriptions of each field in the Storage section of the TrueNAS web interface."
 weight: 60
-tags: ["reference"]
+tags: ["reference", "zpool", "dataset", "zfs", "zvol", "encryption", "snapshots", "VMWare", "S.M.A.R.T"]
 ---
 
 ## Pools
