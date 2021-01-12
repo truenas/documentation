@@ -3,7 +3,7 @@ title: "Interface Fields Reference Guide: Services"
 linkTitle: "Services"
 description: "Descriptions of each field in the Services section of the TrueNAS web interface."
 weight: 90
-tags: ["reference"]
+tags: ["reference", "AFP", "FTP/SFTP/TFTP", "iSCSI", "NFS", "SMB", "webdav", "s3", "snmp", "rsync", "S.M.A.R.T.", "openvpn", "LLDP"]
 ---
 
 ## AFP
@@ -197,7 +197,7 @@ tags: ["reference"]
 | LUN ID | Select the value or enter a value between 0 and 1023. Some initiators expect a value below 256. Leave this field blank to automatically assign the next available ID. |
 | Extent | Select an existing extent. |
 
-## LLDB
+## LLDP
 
 **General Options**
 
