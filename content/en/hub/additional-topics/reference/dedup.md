@@ -44,7 +44,7 @@ Bear in mind that the special vdev SSDs will take a continual, sustained, hammer
 
 ## RAM
 
-Deduplication requires considerable RAM. The amount of RAM depends on the size of the DDT. Figures of up to 5 GB of RAM per TB of data are discussed online, but these are often over estimates.  A realistic value depends completely on your own data. The more highly duplicated your data is, the fewer the entries and the smaller the DDT. Pools suitable for deduplication, with deduplication ratios of 3x or more (i.e., the data can be reduced to a third or less in size), may only need 1 - 3 GB of RAM per TB of data.  The actual DDT size can be estimated by deduplicating a limited amount of data in a temporary "test" pool, or by using commands shown below.
+Deduplication requires considerable RAM. The amount of RAM depends on the size of the DDT. Figures of up to 5 GB of RAM per TB of data are discussed online, but these are often over estimates.  A realistic value depends completely on your own data. The more highly duplicated your data is, the fewer the entries and the smaller the DDT. Pools suitable for deduplication, with deduplication ratios of 3x or more (i.e., the data can be reduced to a third or less in size), may only need 1 - 3 GB of RAM per TB of data.  The actual DDT size can be estimated by deduplicating a limited amount of data in a temporary "test" pool, or by using `zdb -S` as shown below.
 
 If your system does not contain sufficient RAM, it will be unable to cache DDT in memory when read, and system performance will probably plumment.
 
@@ -94,7 +94,7 @@ If deduplication is used in an inadequately built system, the following symptoms
 # Useful CLI commands
 
 * `zpool status -D` or `-Dv` shows a summary of DDT statistics for each pool, or the specified pool.
-* `zdb -U /data/zfs/zpool.cache -S [POOL_NAME]` estimates the outcome and DDT table size if a pool were entirely deduplicated.
+* `zdb -U /data/zfs/zpool.cache -S [POOL_NAME]` estimates the outcome and DDT table size if a pool were entirely deduplicated (warning: can take some hours to complete).
 * `zpool iostat` (`man zpool-iostat`) provides detailed analysis and statistics for disk I/O latency. Latencies for a healthy pool should largely be in the nanoseconds to tens of milliseconds range, perhaps with a few outliers.  If latencies of the order of seconds, and certainly tens of seconds, are seen, this indicates a problem with disk usage, usually that certain disks are unable to service commands at the speed needed, and a large queue has formed of backlogged commands.
 
 # Technical note:  hashing
