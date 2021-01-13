@@ -36,9 +36,11 @@ If data is not sufficiently duplicated, deduplication will waste resources and s
 
 ## Disks
 
-The deduplication table contains small entries of around 300 to 900 bytes. It is primarily accessed using 4K reads, which places extreme demand on the disks containing the DDT. Very high quality mirrored SSDs configured as a "special vdev" are highly recommended - you should expect potentially severe issues otherwise, as described below. As of 2020, recommended SSDs include Intel Optane 900p, 905p, P48xx, and better devices (which differ from usual SSDs andare very well suited to the task), and the lowest cost compromise solution should be well reputed high quality consumer SSDs such as Samsung EVO and PRO. If possible aim for PCIe SSDs (NVMe, M.2 "M" key, or U.2) rather than SATA SSDs (SATA or M.2 "B" key).
+The deduplication table contains small entries of around 300 to 900 bytes. It is primarily accessed using 4K reads, which places extreme demand on the disks containing the DDT. **Very high quality mirrored SSDs configured as a "special vdev" are highly recommended - you should expect potentially severe issues otherwise, as described below.** 
 
 When choosing SSDs, bear in mind that a deduplication-enabled server may have considerable mixed I/O and very long sustained access with deduplication, so do not just consider headline manufacturer figures, and consider SSDs that do not rely on a limited amount of fast cache to bolster a weak steady state performance. Most SSDs' performance (latency) will plummet if the onboard cache is fully in use and further writes occur, so check their steady state performance for 4K random mixed read/write.  This is perhaps the hardest test for any SSD. Even datacenter SSDs often deliver poor results. Good reviews will test and report it.
+
+Bear in mind that the special vdev SSDs will take a continual, sustained, hammering of highly demanding I/O - there is no simpler way to describe it.  HDDs and many common SSDs will be inadequate to the task. As of 2021, recommended SSDs for ZFS with deduplication include Intel Optane 900p, 905p, P48xx, and better devices (Optane uses a different technology from usual SSDs and isd very well suited to the task).  The lowest cost solution to consider should be well reputed high quality consumer SSDs such as Samsung EVO and PRO. If possible aim for PCIe SSDs (NVMe, M.2 "M" key, or U.2) rather than SATA SSDs (SATA or M.2 "B" key).
 
 ## RAM
 
