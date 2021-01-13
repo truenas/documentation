@@ -95,8 +95,8 @@ If deduplication is used in an inadequately built system, the following symptoms
 
 ## Useful CLI commands
 
-* `zpool status -D` or `-Dv` shows a summary of DDT statistics for each pool, or the specified pool.
-* `zdb -U /data/zfs/zpool.cache -S [POOL_NAME]` estimates the outcome and DDT table size if a pool were entirely deduplicated (warning: can take some hours to complete).
+* `zpool status -D` or `-Dv` shows a summary of DDT statistics for each pool, or the specified pool. Typical output will include a line like this:<br/><code>dedup: DDT entries 227317061, size 672B on disk, 217B in core</code><br/>This means that the DDT contains 227 million blocks, and each block is using 672 bytes in the pool, and 217 bytes of RAM when cached in ARC. The two values differ because ZFS uses different structures for DDT entries on disk and in RAM. There is also a table, showing how many blocks (actual and referenced) are duplicated, summarized in bands (or "buckets") of powers of 2, and their average actual and referenced sizes. 
+* `zdb -U /data/zfs/zpool.cache -S [POOL_NAME]` estimates the outcome and DDT table size if a pool were entirely deduplicated (warning: can take some hours to complete).  The output table is similar to that of `zpool status -Dv`, see previous.
 * `zpool iostat` (`man zpool-iostat`) provides detailed analysis and statistics for disk I/O latency. Latencies for a healthy pool should largely be in the nanoseconds to tens of milliseconds range, perhaps with a few outliers.  If latencies of the order of seconds, and certainly tens of seconds, are seen, this indicates a problem with disk usage, usually that certain disks are unable to service commands at the speed needed, and a large queue has formed of backlogged commands.
 
 ## Technical note:  hashing
