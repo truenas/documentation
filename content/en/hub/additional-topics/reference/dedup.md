@@ -58,7 +58,7 @@ If deduplication is used in an inadequately built system, the following symptoms
 		<tr>
 			<td>Extreme slowdown/latency of disk I/O</td>
 			<td>The system must perform disk I/O to fetch DDT entries, but these are usually 4K I/O and the underlying disk hardware is unable to cope in a timely manner</td>
-			<td><code>gstat</code> on console will often show large amounts of I/O for devices that contain DSDT data, or the pool generally if special vdevs are not defined.</td>
+			<td><code>gstat</code> on console will often show large amounts of I/O for devices that contain DDT data, or the pool generally if special vdevs are not defined.</td>
 			<td>Add high quality SSDs as a special vdev, and either move data or rebuild the pool to utlise the new storage.</td>
 		</tr>
 		<tr>
