@@ -18,7 +18,7 @@ Go to **Storage->Pools->ADD->CREATE POOL**  Select two hard drives from your ava
 <img src="/images/l2arc1.png">
 <br><br>
 
-From the *Available Disks* section, select an SSD and add to *Cache Vdev* then click **CREATE**.  Check the *Confirm* box and click **CREATE POOL**
+From the *Available Disks* section, select an SSD and add to *Cache Vdev* then click **CREATE**.  Check the *Confirm* box and click **CREATE POOL**.
 
 <br><br>
 <img src="/images/l2arc2.png">
