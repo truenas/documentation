@@ -38,7 +38,7 @@ If data is not sufficiently duplicated, deduplication will waste resources and s
 
 ### Disks
 
-The deduplication table contains small entries of around 300 to 900 bytes. It is primarily accessed using 4K reads, which places extreme demand on the disks containing the DDT. **Very high quality mirrored SSDs configured as a "special vdev" are highly recommended - you should expect potentially severe issues otherwise, as described below.** 
+The deduplication table contains small entries of around 300 to 900 bytes. It is primarily accessed using 4K reads, which places extreme demand on the disks containing the DDT. **High quality mirrored SSDs configured as a "special vdev" for the DDT (and usually, all metadata) are almost essential and strongly recommended - you should expect potentially severe issues otherwise, as described below.** 
 
 When choosing SSDs, bear in mind that a deduplication-enabled server may have considerable mixed I/O and very long sustained access with deduplication, so do not just consider headline manufacturer figures, and consider SSDs that do not rely on a limited amount of fast cache to bolster a weak steady state performance. Most SSDs' performance (latency) will plummet if the onboard cache is fully in use and further writes occur, so check their steady state performance for 4K random mixed read/write.  This is perhaps the hardest test for any SSD. Even datacenter SSDs often deliver poor results. Good reviews will test and report it.
 
