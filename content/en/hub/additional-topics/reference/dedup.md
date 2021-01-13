@@ -18,7 +18,7 @@ Deduplication works by hashing (calculating a digital "signature") for the data 
 
 # Benefits and impact
 
-The main benefit of deduplication is that where appropriate, it can greatly reduce the size of a pool, and therefore the disk count and cost. For example, if a server stores files that are almost identical, it could store thousands or even millions of copies for almost no extra disk space.  This arbitrarily large saving of disk space can be very useful and cost-efficient. When the data is read or written, it is also possible that a large block read or write can be replaced by a tiny DDT read or write, so disk I/O size and quantity is smaller as well.
+The main benefit of deduplication is that where appropriate, it can greatly reduce the size of a pool, and therefore the disk count and cost. For example, if a server stores files with identical blocks, it could store thousands or even millions of copies for almost no extra disk space.  This arbitrarily large saving of disk space can be very useful and cost-efficient. When the data is read or written, it is also possible that a large block read or write can be replaced by a tiny DDT read or write, so disk I/O size and quantity is smaller as well.
 
 There are three main costs to deduplication, because the deduplication process is very demanding - it requires much RAM, (probably) very fast SSDs in the pool, can in some cases take almost all of the CPU resources, and it can slow down the system's raw speed.  In effect DDT can save much storage size and pool expense, but at the cost of server RAM/CPU/SSD cost and loss of "top end" I/O speeds.
 
