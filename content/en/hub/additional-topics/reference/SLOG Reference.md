@@ -19,9 +19,13 @@ but that must be manually configured via pool options.
 
 ZIL, in and of itself, does not improve performance. The ZIL sits in your existing data pool by default, usually comprised of spinning disks, to log synchronous writes before being periodically flushed to their final location in storage. This means that your synchronous writes are not only operating at the speed of your storage pool, but have to be written to pool twice, sometimes more depending on your level of disk redundancy.
 
-## How ZIL Should Be Configured
+## Use Cases 
 
-What is needed for performance improvement is a dedicated SLOG, like a low-latency SSD or other similar device (ZeusRAM, etc), so your ZIL-based writes will not be limited by your pool IOPS or subject to RAID penalties you face with additional parity disk writes. OpenZFS also allows for the SLOG to be mirrored, which can protect against performance degradation and avoid any data loss during a device failure.
+Database applications, NFS environments, particularly for virtualization, as well as backups are known use cases with heavy synchronous writes.  Utilizing a SLOG for your ZIL will provide benefit.
+
+## ZIL Configuration
+
+What is needed for performance improvement is a dedicated SLOG, like a low-latency SSD or other similar device, so your ZIL-based writes will not be limited by your pool IOPS or subject to RAID penalties you face with additional parity disk writes. OpenZFS also allows for the SLOG to be mirrored, which can protect against performance degradation and avoid any data loss during a device failure.
 
 Go to **Storage > Pools > ADD > CREATE POOL**.  Select two hard drives from your available disks and add them to *Data Vdevs* (or however many drives you need for your requirements).  From the **ADD VDEV** dropdown menu select *Log*. 
 
@@ -46,8 +50,8 @@ It is a wise practice to check the *Status* of a pool after it has successfully 
 <br><br>
 
 
-And even with a dedicated SLOG, you will not enjoy performance improvements out of the box on asynchronous writes, as they do not utilize the ZIL by default.  
+## Pool Sync Options
 
-## Use Cases 
+Even with a dedicated SLOG, you will not enjoy performance improvements out of the box on asynchronous writes, as they do not utilize the ZIL by default.  To change Pool Sync Options, go to **Storage->Pools**, select 
 
-Database applications, NFS environments, particularly for virtualization, as well as backups are known use cases with heavy synchronous writes.  Utilizing a SLOG for your ZIL will provide benefit.
+
