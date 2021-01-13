@@ -67,14 +67,12 @@ If deduplication is used in an inadequately built system, the following symptoms
 		<tr>
 			<td>Extreme slowdown/latency of disk I/O</td>
 			<td>The system must perform disk I/O to fetch DDT entries, but these are usually 4K I/O and the underlying disk hardware is unable to cope in a timely manner</td>
-			<td><code>gstat</code> on console will often show large amounts of I/O, either for devices that contain DDT data, or for the pool generally (if special vdevs are not defined). Typically this is 4K read I/O, but may not always be.<br/><br/><code>zpool iostat</code> (see below) can also be used, and will often show unexpected or very high disk latencies.</td>
-			<td>Add high quality SSDs as a special vdev, and either move data or rebuild the pool to utilise the new storage.</td>
+			<td rowspan="2"><code>gstat</code> on console will often show large amounts of I/O, either for devices that contain DDT data, or for the pool generally (if special vdevs are not defined). Typically this is 4K read I/O attributable to DDT activity, but may not always be.<br/><br/><code>zpool iostat</code> (see below) can also be used, and will often show unexpected or very high disk latencies.<br/><br/>If networking is impacted, the issue can also be confirmed in console or at the client end, using <code>tcpdump</code> or <code>Wireshark</code> - the TCP window will be seen to be extremely low or zero for extended durations.</td>
+			<td rowspan="2">Add high quality SSDs as a special vdev, and either move data or rebuild the pool to utilise the new storage.</td>
 		</tr>
 		<tr>
 			<td>Unexpected disconnection of SMB, SSH, Web UI, iSCSI, FTP, Remote Desktop (to VMs), jailed plugins such as OwnCloud,  and all other networked services and connections</td>
 			<td>This is a byproduct of the previous issue. As network buffers become congested with incompleted demands for file data, the entire ZFS I/O system becomes gradually backlogged by tens or hundreds of seconds because huge amounts of DDT entries must first fetched, until timeouts occur when networking buffers can no longer handle the demand. Since all services on a network connection share the same networking buffers, they all block - not just the one service used for file activity. Typically this manifests as file activity working for a while, and then mysteriously stalling, followed by file and networked sessions (of all kinds) also failing.  Services will become responsive again, once the disk I/O backlog blocking the network buffers clears, but this can take 5 to 15 minutes to happen. This problem is more likely to be seen when high speed networking is used, such as 10+ Gigabit LAN or Fiber Channel, because of the speed with which network buffers can be filled.</td>
-			<td>The issue can be confirmed in console or at the client end, using <code>tcpdump</code> or <code>Wireshark</code> - the TCP window will be seen to be extremely low or zero for extended durations.<br/><br/><code>gstat</code> on console will also usually show significant 4k reads or other I/O attributable to DDT activity.</td>
-			<td>As previous.</td>
 		</tr>
 		<tr>
 			<td>CPU Starvation</td>
