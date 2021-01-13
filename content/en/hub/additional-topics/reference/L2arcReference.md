@@ -70,7 +70,7 @@ Go to **System->Tunables->ADD**.  *Variable* = **vfs.zfs.l2arc.rebuild_enabled**
 
 **To Reactivate Persistent L2ARC via the CLI**
 
-Enter the following command -> **root@freenas[~]# sysctl vfs.zfs.l2arc.rebuild_enabled=1**
+Enter the following command -> **sysctl vfs.zfs.l2arc.rebuild_enabled=1**
 
 Command output should read -> **vfs.zfs.l2arc.rebuild_enabled: 0 -> 1**
 
