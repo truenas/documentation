@@ -17,10 +17,6 @@ A pool can contain any mix of deduplicated data and non-deduplicated data, coexi
 
 It is possible to stipulate in a pool, that only certain datasets and volumes will be deduplicated. The DDT encompasses  the entire pool, but only data in those locations will be deduplicated when written. Other data which will not deduplicate well or where deduplication is inappropriate, will not be deduplicated when written, saving resources.
 
-# Deduplication hash choice
-
-Deduplication works by hashing (calculating a digital "signature") for the data in each block to be written to disk, and checking to see if data already exists in the pool with the same hash.  If a block already exists with the identical hash, then the block is not written, instead only a new pointer is written to the DDT, which is a only a few hundred bytes long, saving much space.  Depending how this digital signature, or hash, is calculated, there is a slight possibility that two different blocks could have the same hash, causing the file system to mistakenly believe they are the same. Therefore when choosing a hash, it is important to choose one that is strong (complex) enough to make the chance of such an issue extremely unlikely. Hashes such as SHA 256, SHA 512 and Skein, are designed so that the chances of this happening even on an enormous pool (Amazon or Google Cloud) or over millions of years are still extremely small, so the hashes are believed to be totally reliable in a practical sense.
-
 # Benefits and impact
 
 The main benefit of deduplication is that where appropriate, it can greatly reduce the size of a pool, and therefore the disk count and cost. For example, if a server stores files with identical blocks, it could store thousands or even millions of copies for almost no extra disk space.  This arbitrarily large saving of disk space can be very useful and cost-efficient. When the data is read or written, it is also possible that a large block read or write can be replaced by a tiny DDT read or write, so disk I/O size and quantity is smaller as well.
@@ -89,9 +85,12 @@ If deduplication is used in an inadequately built system, the following symptoms
 	</tbody>
 </table>
 
-# Useful command line commands
+# Useful CLI commands
 
 * `zpool status -D` or `-Dv` shows a summary of DDT statistics for each pool, or the specified pool.
 * `zdb -U /data/zfs/zpool.cache -S [POOL_NAME]` estimates the outcome and DDT table size if a pool were entirely deduplicated.
 * `zpool iostat` (`man zpool-iostat`) provides detailed analysis and statistics for disk I/O latency. Latencies for a healthy pool should largely be in the nanoseconds to tens of milliseconds range, perhaps with a few outliers.  If latencies of the order of seconds, and certainly tens of seconds, are seen, this indicates a problem with disk usage, usually that certain disks are unable to service commands at the speed needed, and a large queue has formed of backlogged commands.
 
+# Technical note:  hashing
+
+Deduplication works by hashing (calculating a digital "signature") for the data in each block to be written to disk, and checking to see if data already exists in the pool with the same hash.  If a block already exists with the identical hash, then the block is not written, instead only a new pointer is written to the DDT, which is a only a few hundred bytes long, saving much space.  Depending how this digital signature, or hash, is calculated, there is a slight possibility that two different blocks could have the same hash, causing the file system to mistakenly believe they are the same. Therefore when choosing a hash, it is important to choose one that is strong (complex) enough to make the chance of such an issue extremely unlikely. Hashes such as SHA 256, SHA 512 and Skein, are designed so that the chances of this happening even on an enormous pool (Amazon or Google Cloud) or over millions of years are still extremely small, so the hashes are believed to be totally reliable in a practical sense.
