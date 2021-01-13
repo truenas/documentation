@@ -67,7 +67,7 @@ If deduplication is used in an inadequately built system, the following symptoms
 		<tr>
 			<td>Extreme slowdown/latency of disk I/O</td>
 			<td>The system must perform disk I/O to fetch DDT entries, but these are usually 4K I/O and the underlying disk hardware is unable to cope in a timely manner</td>
-			<td><code>gstat</code> on console will often show large amounts of I/O, either for devices that contain DDT data, or for the pool generally (if special vdevs are not defined). Typically this is 4K read I/O, but may not always be.</td>
+			<td><code>gstat</code> on console will often show large amounts of I/O, either for devices that contain DDT data, or for the pool generally (if special vdevs are not defined). Typically this is 4K read I/O, but may not always be.<br/><br/><code>zpool iostat</code> (see below) can also be used, and will often show unexpected or very high disk latencies.</td>
 			<td>Add high quality SSDs as a special vdev, and either move data or rebuild the pool to utilise the new storage.</td>
 		</tr>
 		<tr>
@@ -80,7 +80,7 @@ If deduplication is used in an inadequately built system, the following symptoms
 			<td>CPU Starvation</td>
 			<td>If ZFS has fast special vdev SSDs and sufficient RAM for the DDT, and is not limited by disk I/O, then calculation of hashes becomes the next bottleneck. ZFS uses most or all CPU in attempting to keep hashing up to date with disk I/O. The console becomes unresponsive and the web UI fails to connect. Other tasks may not run properly or in a timely manner due to timeouts. This is especially noticed with pool scrubbing, and it may be necessary to pause the scrub temporarily if other tasks are a priority.</td>
 			<td>The most obvious symptom is that in console, the login or prompt messages take several seconds to display. The issue can be confirmed with <code>top</code> on console. In most cases, multiple entries with command "kernel {z_rd_int_[NUMBER]}" may be seen to use the CPU capacity, and the CPU will be heavily (98%+) used with little or no idle.</td>
-			<td>Improving the CPU has only limited benefit. Temporarily pause scrub and other background ZFS activities if needed.</td>
+			<td>Improving the CPU can help but may have  only limited benefit - we have seen 40 core CPUs struggle as much as 4 or 8 core CPUs. The usual workaround is to temporarily pause scrub and other background ZFS activities that generate the high level of hashing. It may also be possible to limit I/O using some tunables that control disk queues and disk I/O ceilings, but this can impact performance more generally.</td>
 		</tr>
 	</tbody>
 </table>
