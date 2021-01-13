@@ -69,7 +69,7 @@ If deduplication is used in an inadequately built system, the following symptoms
 		</tr>
 		<tr>
 			<td>CPU Starvation</td>
-			<td>If ZFS has fast special vdev SSDs and sufficient RAM for the DDT, and is not limited by disk I/O, then calculation of hashes becomes the next bottleneck. ZFS presently lacks a throttle to prevent hashing from dominating CPU, because historically this was very unlikely, and uses most or all CPU in attemtping to keep hashing up to date with disk I/O. The console becomes unresponsive and the web UI fails to connect. Other tasks may not run properly or in a timely manner due to timeouts. This is especially noticed with pool scrubbing, and it may be necessary to pause the scrub temporarily if other tasks are a priority.</td>
+			<td>If ZFS has fast special vdev SSDs and sufficient RAM for the DDT, and is not limited by disk I/O, then calculation of hashes becomes the next bottleneck. ZFS uses most or all CPU in attemtping to keep hashing up to date with disk I/O. The console becomes unresponsive and the web UI fails to connect. Other tasks may not run properly or in a timely manner due to timeouts. This is especially noticed with pool scrubbing, and it may be necessary to pause the scrub temporarily if other tasks are a priority.</td>
 			<td>The issue can be confirmed with `top` on console. In most cases, multiple entries with command "kernel {z_rd_int_[NUMBER]}" may be seen to use the CPU capacity, and the CPU will be heavily (98%+) used with little or no idle.</td>
 			<td>Improving the CPU has only limited benefit. Temporarily pause scrub and other background ZFS activities if needed.</td>
 		</tr>
