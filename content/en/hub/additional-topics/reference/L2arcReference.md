@@ -1,6 +1,6 @@
 ---
 title: "L2ARC"
-description: "What it does, and how to utilize it within TrueNAS."
+description: "What L2ARC does, and how to utilize it within TrueNAS."
 tags: ["ZFS", "zpool"]
 ---
 
@@ -12,7 +12,7 @@ If cache drives are present within a ZFS pool, these drives will cache data that
 
 ## Creating a Pool with A Cached Drive
 
-Go to **Storage->Pools->ADD->CREATE POOL**  Select two hard drives from your available disks and add them to *Data Vdevs* (or however many drives you need for your requirements).  From the **ADD VDEV** dropdown menu select *Cache*.  
+Go to **Storage > Pools > ADD > CREATE POOL**  Select two hard drives from your available disks and add them to *Data Vdevs* (or however many drives you need for your requirements).  From the **ADD VDEV** dropdown menu select *Cache*.  
 
 <br><br>
 <img src="/images/l2arc1.png">
@@ -36,7 +36,7 @@ Cached drives do not get mirrored.  To increase the size of an existing L2ARC, s
 
 ## Adding an Additional Cache Drive to an Existing Pool
 
-Go to **Storage->Pools** and select <i class="fas fa-cog" aria-hidden="true" title="Settings"></i>&nbsp to the right of the pool you wish to add an additional cached drive.  From the menu, select *Add Vdevs*.  Access the **ADD VDEV** dropdown menu and select *Cache*.  Select an SSD and add to *Cache Vdev* then click **ADD VDEVS**.  Check the *Confirm* box and click **ADD VDEVS**.
+Go to **Storage > Pools** and select <i class="fas fa-cog" aria-hidden="true" title="Settings"></i>&nbsp to the right of the pool you wish to add an additional cached drive.  From the menu, select *Add Vdevs*.  Access the **ADD VDEV** dropdown menu and select *Cache*.  Select an SSD and add to *Cache Vdev* then click **ADD VDEVS**.  Check the *Confirm* box and click **ADD VDEVS**.
 
 <br><br>
 <img src="/images/l2arc4.png">
@@ -62,7 +62,7 @@ and Middleware performance in specific situations where large amounts of data is
 
 **To Reactivate Persistent L2ARC via the WebUI**
 
-Go to **System->Tunables->ADD**.  *Variable* = **vfs.zfs.l2arc.rebuild_enabled**, *Value* = **1**, *Type* = **sysctl**, enter a description if desired and ensure the *Enabled* box is checked.  Click **SUBMIT**.
+Go to **System->Tunables->ADD**.  *Variable* = `vfs.zfs.l2arc.rebuild_enabled`, *Value* = `1`, *Type* = `sysctl`, enter a description if desired and ensure the *Enabled* box is checked.  Click **SUBMIT**.
 
 <br><br>
 <img src="/images/l2arc7.png">
@@ -70,14 +70,14 @@ Go to **System->Tunables->ADD**.  *Variable* = **vfs.zfs.l2arc.rebuild_enabled**
 
 **To Reactivate Persistent L2ARC via the CLI**
 
-Enter the following command -> **sysctl vfs.zfs.l2arc.rebuild_enabled=1**
+Enter the following command : `sysctl vfs.zfs.l2arc.rebuild_enabled=1`
 
-Command output should read -> **vfs.zfs.l2arc.rebuild_enabled: 0 -> 1**
+Command output should read : `vfs.zfs.l2arc.rebuild_enabled: 0 -> 1`
 
 {{% alert title=Warning color=warning %}}
 Settings changed through the CLI are not written to the configuration database and will be reset on reboot.
 {{% /alert %}}
 
 
-*For more information, see ZFS Build - Explanation of ARC and L2ARC (https://www.zfsbuild.com/2010/04/15/explanation-of-arc-and-l2arc/)*
+*For more information, see ZFS Build - Explanation of ARC and L2ARC : https://www.zfsbuild.com/2010/04/15/explanation-of-arc-and-l2arc/*
 
