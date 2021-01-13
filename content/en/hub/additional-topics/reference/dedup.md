@@ -48,7 +48,7 @@ Deduplication requires considerable RAM. The amount of RAM depends on the size o
 
 If deduplication is used in an inadequately built system, the following symptoms may be seen:
 
-<table class="blueTable">
+<table>
 	<thead>
 		<tr>
 			<th>Issue</th>
