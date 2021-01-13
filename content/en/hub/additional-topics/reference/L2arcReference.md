@@ -1,7 +1,7 @@
 ---
 title: "L2ARC"
 description: "What it does, and how to utilize it within TrueNAS."
-tags: ["ZFS"]
+tags: ["ZFS", "zpool"]
 ---
 
 There are features within ZFS that help to improve performance for read operations of data that is accessed on a frequent basis.  One is adaptive replacement cache (ARC), which is located in a servers memory (RAM). The other is second level adaptive replacement cache (L2ARC), or cache drives within ZFS systems.  These cache drives are multi-level cell (MLC) SSD drives, and while slower than system memory, they are faster than standard hard drives.  Generally speaking, you want as much RAM in a system as possible to make the ARC as large as possible, but this can be a costly endeavor. Cache drives provide a cheaper alternative to RAM for frequently accessed content. 
@@ -60,10 +60,24 @@ Persistent L2ARC is disabled by default due to performance impact when rebuildin
 and Middleware performance in specific situations where large amounts of data is loaded into L2ARC and a rebuild is triggered.
 {{% /pageinfo %}}
 
-**To Reactivate Persistent L2ARC Via the WebUI**
+**To Reactivate Persistent L2ARC via the WebUI**
 
 Go to **System->Tunables->ADD**.  *Variable* = **vfs.zfs.l2arc.rebuild_enabled**, *Value* = **1**, *Type* = **sysctl**, enter a description if desired and ensure the *Enabled* box is checked.  Click **SUBMIT**.
 
 <br><br>
 <img src="/images/l2arc7.png">
 <br><br>
+
+**To Reactivate Persistent L2ARC via the CLI**
+
+Enter the following command -> **root@freenas[~]# sysctl vfs.zfs.l2arc.rebuild_enabled=1**
+
+Command output should read -> **vfs.zfs.l2arc.rebuild_enabled: 0 -> 1**
+
+{{% alert title=Warning color=warning %}}
+Settings changed through the CLI are not written to the configuration database and will be reset on reboot.
+{{% /alert %}}
+
+
+*For more information, see ZFS Build - Explanation of ARC and L2ARC (https://www.zfsbuild.com/2010/04/15/explanation-of-arc-and-l2arc/)*
+
