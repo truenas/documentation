@@ -9,7 +9,7 @@ ZFS supports deduplication as a feature. Deduplication means that identical data
 
 # Deduplication on ZFS
 
-Deduplication is one technique ZFS can use to store file and other data in a pool. If several files contain the same piecews (blocks) of data, or any other pool data occurs more than once in the pool, ZFS will store just one copy of it. In effect instead of storing many copies of a book, it stores one copy and an arbitrary number of pointers to that one copy. Only when no file uses that data, is the data actually deleted. ZFS keeps a reference table which links files and pool data to the actual storage blocks containing "their" data. The index is known as the Deduplication Table" (DDT).
+Deduplication is one technique ZFS can use to store file and other data in a pool. If several files contain the same pieces (blocks) of data, or any other pool data occurs more than once in the pool, ZFS will store just one copy of it. In effect instead of storing many copies of a book, it stores one copy and an arbitrary number of pointers to that one copy. Only when no file uses that data, is the data actually deleted. ZFS keeps a reference table which links files and pool data to the actual storage blocks containing "their" data. The index is known as the Deduplication Table" (DDT).
 
 The DDT is a fundamental ZFS structure. If a pool (or any dataset in the pool) has ever contained deduplicated data, the pool _will_ contain a DDT, and that DDT is as fundamental to the pool data as any of its other file system tables. Like any other metadata, DDT contents may temporarily be held in the ARC (RAM/memory cache) or L2ARC (disk cache) for speed and repeated use, but the DDT is not a disk cache. It is a fundamental part of the ZFS pool structure, how ZFS organises pool data on its disks. Therefore like any other pool data, if DDT data is lost, the pool is likely to become unreadable. So it is important it is stored on redundant devices.
 
@@ -27,18 +27,24 @@ The main benefit of deduplication is that where appropriate, it can greatly redu
 
 There are three main costs to deduplication, because the deduplication process is very demanding - it requires much RAM, (probably) very fast SSDs in the pool, can in some cases take almost all of the CPU resources, and it can slow down the system's raw speed.  In effect DDT can save much storage size and pool expense, but at the cost of server RAM/CPU/SSD cost and loss of "top end" I/O speeds.
 
-* Deduplication requires almost immediate access to the DDT.  In a deduplicated pool, every block potentially needs DDT access. The number of small IOs can be colossal - copying a 300 GB file could require tens, perhaps hundreds of millions of 4K I/O to the DDT. This is extremely punishing and slow. Therefore RAM should be large enough to store the entire DDT _as well as any oither metadata_ and the pool should almost always be configured using "special vdevs" for metadata comprising fast high quality SSDs, again for high speed access.  Speeds of 50,000 to 300,000 4K I/O per second (IOPS) are _typical and reported on the forum_ for SSDs handling DDT. Be warned! If your RAM is insufficient, the pool will run extremely slowly. If your SSDs are unreliable or slow under mixed sustained loads, your pool will slow down as well or may lose data.
+* Deduplication requires almost immediate access to the DDT.  In a deduplicated pool, every block potentially needs DDT access. The number of small I/Os can be colossal - copying a 300 GB file could require tens, perhaps hundreds of millions of 4K I/O to the DDT. This is extremely punishing and slow. Therefore RAM should be large enough to store the entire DDT _as well as any other metadata_ and the pool should almost always be configured using "special vdevs" for metadata comprising fast high quality SSDs, again for high speed access.  Speeds of 50,000 to 300,000 4K I/O per second (IOPS) are _typical and reported on the forum_ for SSDs handling DDT. Be warned! If your RAM is insufficient, the pool will run extremely slowly. If your SSDs are unreliable or slow under mixed sustained loads, your pool will slow down as well or may lose data.
 
-* Deduplication is extremely CPU intensive. Hahsing is a complex operation and deduplication uses it on every read and write.  It is possible for some operations to use the entirety of an 8 - 32 core CPU in the effort to meet the demand for computational power for deduplication, during operations such as scrubbing, replication and other intense activities.
+* Deduplication is extremely CPU intensive. Hashing is a complex operation and deduplication uses it on every read and write.  It is possible for some operations to use the entirety of an 8 - 32 core CPU in the effort to meet the demand for computational power for deduplication, during operations such as scrubbing, replication and other intense activities.
 
 * Deduplication adds extra lookups and hashing calculations into the ZFS data pathway, and therefore slows ZFS down significantly. A deduplicated pool will not reach the same extreme speeds as a non-deduplicated pool can achieve.
 
-If data is not sufficiently duplicated, deduplication will waste resources and slow the server down and give little or no benefit. If data is considerably duplicated, then consider the costs, demands and impact of enabvling deduplication and make appropriate hardware choices.
+If data is not sufficiently duplicated, deduplication will waste resources and slow the server down and give little or no benefit. If data is considerably duplicated, then consider the costs, demands and impact of enabling deduplication and make appropriate hardware choices.
 
 
 # Hardware choices
 
-The deduplication table contains small entries of around 300 to 900 bytes. It is primarily accessed using 4K reads, which places extreme demand on the disks containing the DDT. Very high quality mirrored SSDs configured as a "special vdev" are recommended. As of 2020, these include Optane 900p, 905p and P48xx devices, and at a cheaper level, very reputable high quality consumer SSDs such as Samsung EVO and PRO. A deduplication-enabled server may have considerable mixed I/O and very long sustained access with deduplication, so do not just consider headline manufacturer figures, and consider SSDs that do not rely on a limited amount of fast cache to bolster a weak steady state performance. Most SSDs' performance (latency) will plummet if the onboard cache is fully in use and further writes occur, so check their steady state performance for 4K random mixed read/write.  This is perhaps the hardest test for any SSD, and even datacenter SSDs often deliver poor results. Good reviews will test and report it.
+## Disks
+
+The deduplication table contains small entries of around 300 to 900 bytes. It is primarily accessed using 4K reads, which places extreme demand on the disks containing the DDT. Very high quality mirrored SSDs configured as a "special vdev" are recommended. As of 2020, these include Optane 900p, 905p and P48xx devices, and at a cheaper level, well reputed high quality consumer SSDs such as Samsung EVO and PRO. 
+
+A deduplication-enabled server may have considerable mixed I/O and very long sustained access with deduplication, so do not just consider headline manufacturer figures, and consider SSDs that do not rely on a limited amount of fast cache to bolster a weak steady state performance. Most SSDs' performance (latency) will plummet if the onboard cache is fully in use and further writes occur, so check their steady state performance for 4K random mixed read/write.  This is perhaps the hardest test for any SSD. Even datacenter SSDs often deliver poor results. Good reviews will test and report it.
+
+## RAM
 
 Deduplication requires considerable RAM. The amount of RAM depends on the size of the DDT. Figures of up to 5 GB of RAM per TB of data are discussed online, but these are often over estimates.  A realistic value depends completely on your own data. The more highly duplicated your data is, the fewer the entries and the smaller the DDT. Pools suitable for deduplication, with deduplication ratios of 3x or more (i.e., the data can be reduced to a third or les in size), may only need 1 - 13 GB of RAM per TB of data.  The actual DDT size can be estimated by deduplicating a limited amount of data in a temporary "test" pool, or by using commands shown below.
 
@@ -58,7 +64,7 @@ If deduplication is used in an inadequately built system, the following symptoms
 	<tbody>
 		<tr>
 			<td>RAM Starvation</td>
-			<td>Very high RAM usage, or limited available RAM for ARC or other caches, as the DDT is continually asccessed. Memory access may also be heavily slowed if the system uses swap space on disk to compensate, especially if disk I/O itself is slowed by deduplication (see below).</td>
+			<td>Very high RAM usage, or limited available RAM for ARC or other caches, as the DDT is continually accessed. Memory access may also be heavily slowed if the system uses swap space on disk to compensate, especially if disk I/O itself is slowed by deduplication (see below).</td>
 			<td>&nbsp;</td>
 			<td>Increase RAM.</td>
 		</tr>
@@ -66,7 +72,7 @@ If deduplication is used in an inadequately built system, the following symptoms
 			<td>Extreme slowdown/latency of disk I/O</td>
 			<td>The system must perform disk I/O to fetch DDT entries, but these are usually 4K I/O and the underlying disk hardware is unable to cope in a timely manner</td>
 			<td><code>gstat</code> on console will often show large amounts of I/O, either for devices that contain DDT data, or for the pool generally (if special vdevs are not defined). Typically this is 4K read I/O, but may not always be.</td>
-			<td>Add high quality SSDs as a special vdev, and either move data or rebuild the pool to utlise the new storage.</td>
+			<td>Add high quality SSDs as a special vdev, and either move data or rebuild the pool to utilise the new storage.</td>
 		</tr>
 		<tr>
 			<td>Unexpected disconnection of SMB, SSH, Web UI, iSCSI, FTP, Remote Desktop (to VMs), jailed plugins such as OwnCloud,  and all other networked services and connections</td>
@@ -76,7 +82,7 @@ If deduplication is used in an inadequately built system, the following symptoms
 		</tr>
 		<tr>
 			<td>CPU Starvation</td>
-			<td>If ZFS has fast special vdev SSDs and sufficient RAM for the DDT, and is not limited by disk I/O, then calculation of hashes becomes the next bottleneck. ZFS uses most or all CPU in attemtping to keep hashing up to date with disk I/O. The console becomes unresponsive and the web UI fails to connect. Other tasks may not run properly or in a timely manner due to timeouts. This is especially noticed with pool scrubbing, and it may be necessary to pause the scrub temporarily if other tasks are a priority.</td>
+			<td>If ZFS has fast special vdev SSDs and sufficient RAM for the DDT, and is not limited by disk I/O, then calculation of hashes becomes the next bottleneck. ZFS uses most or all CPU in attempting to keep hashing up to date with disk I/O. The console becomes unresponsive and the web UI fails to connect. Other tasks may not run properly or in a timely manner due to timeouts. This is especially noticed with pool scrubbing, and it may be necessary to pause the scrub temporarily if other tasks are a priority.</td>
 			<td>The most obvious symptom is that in console, the login or prompt messages take several seconds to display. The issue can be confirmed with <code>top</code> on console. In most cases, multiple entries with command "kernel {z_rd_int_[NUMBER]}" may be seen to use the CPU capacity, and the CPU will be heavily (98%+) used with little or no idle.</td>
 			<td>Improving the CPU has only limited benefit. Temporarily pause scrub and other background ZFS activities if needed.</td>
 		</tr>
@@ -88,3 +94,4 @@ If deduplication is used in an inadequately built system, the following symptoms
 * `zpool status -D` or `-Dv` shows a summary of DDT statistics for each pool, or the specified pool.
 * `zdb -U /data/zfs/zpool.cache -S [POOL_NAME]` estimates the outcome and DDT table size if a pool were entirely deduplicated.
 * `zpool iostat` (`man zpool-iostat`) provides detailed analysis and statistics for disk I/O latency. Latencies for a healthy pool should largely be in the nanoseconds to tens of milliseconds range, perhaps with a few outliers.  If latencies of the order of seconds, and certainly tens of seconds, are seen, this indicates a problem with disk usage, usually that certain disks are unable to service commands at the speed needed, and a large queue has formed of backlogged commands.
+
