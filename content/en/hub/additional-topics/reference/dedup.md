@@ -48,7 +48,7 @@ When choosing SSDs, bear in mind that a deduplication-enabled server may have co
 
 The special vdev SSDs will take a continual, sustained, hammering of highly demanding I/O - there is no simpler way to describe it.  HDDs and many common SSDs will be inadequate to the task. As of 2021, recommended SSDs for ZFS with deduplication include Intel Optane 900p, 905p, P48xx, and better devices (Optane uses a different technology from usual SSDs and is very well suited to the task).  The lowest cost solution to consider should be well reputed high quality consumer SSDs such as Samsung EVO and PRO. If possible aim for PCIe NVMe SSDs (usually described as NVMe, M.2 "M" key, or U.2) rather than SATA SSDs (SATA or M.2 "B" key). 
 
-If the special vdevs cxannot contain all metadata, then metadata will silently start to be stored on other disks (HDDs) in the pool. If the special vdevs become too full (around&nbsp;85% to 90% as a rule of thumb), ZFS may be unable to run them optimally and they will operate slower. Aim to keep special vdevs under 65% - 70% full if possible, and allow for future data which will increase the amount of metadata in the pool. Additional special vdevs can be [added as required](hub/tasks/advanced/ExtendPool/) to increase pool capacity.
+If the special vdevs cxannot contain all metadata, then metadata will silently start to be stored on other disks (HDDs) in the pool. If the special vdevs become too full (around&nbsp;85% to 90% as a rule of thumb), ZFS may be unable to run them optimally and they will operate slower. Aim to keep special vdevs under 65% - 70% full if possible, and allow for future data which will increase the amount of metadata in the pool. Additional special vdevs can be [added as required](/hub/tasks/advanced/extendpool/) to increase pool capacity.
 
 ### RAM
 
@@ -58,7 +58,7 @@ If the special vdevs cxannot contain all metadata, then metadata will silently s
 
 Deduplication requires considerable RAM. The amount of RAM depends on the size of the DDT. Figures of up to 5 GB of RAM per TB of data are discussed online, but these are often over estimates.  A realistic value depends completely on the data in the pool. The more highly duplicated it is, the fewer the entries and the smaller the DDT. Pools suitable for deduplication, with deduplication ratios of 3x or more (i.e., the data can be reduced to a third or less in size), may only need 1 - 3 GB of RAM per TB of data.  The actual DDT size can be estimated by deduplicating a limited amount of data in a temporary "test" pool, or by using `zdb -S` as shown below. 
 
-The [tunable](hub/tasks/advanced/tunables/) <code>vfs.zfs.arc.meta_min</code> (type=LOADER, value=bytes) can be used if needed, to force ZFS to reserve no less than the given amount of RAM for metadata caching.
+The [tunable](/hub/tasks/advanced/tunables/) <code>vfs.zfs.arc.meta_min</code> (type=LOADER, value=bytes) can be used if needed, to force ZFS to reserve no less than the given amount of RAM for metadata caching.
 
 ### CPU
 
