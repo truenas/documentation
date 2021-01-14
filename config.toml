@@ -1,3 +1,71 @@
-baseURL = "http://example.org/"
-languageCode = "en-us"
-title = "My New Hugo Site"
+baseURL = "http://localhost"
+title = "TrueNAS Documentation Hub"
+theme = "hugo-geekdoc"
+
+# Required to get well formatted code blocks
+pygmentsUseClasses = true
+pygmentsCodeFences = true
+disablePathToLower = true
+enableGitInfo = true
+
+[markup]
+  [markup.goldmark.renderer]
+    # Needed for mermaid shortcode
+    unsafe = true
+  [markup.tableOfContents]
+    startLevel = 1
+    endLevel = 9
+
+[params]
+  # (Optional, default 6) Set how many table of contents levels to be showed on page.
+  # Use false to hide ToC, note that 0 will default to 6 (https://gohugo.io/functions/default/)
+  # You can also specify this parameter per page in front matter.
+  geekdocToC = 3
+
+  # (Optional, default static/brand.svg) Set the path to a logo for the Geekdoc
+  # relative to your 'static/' folder.
+  geekdocLogo = "logo.svg"
+
+  # (Optional, default false) Render menu from data file im 'data/menu/main.yaml'.
+  geekdocMenuBundle = false
+
+  # (Optional, default true) Show page navigation links at the bottom of each
+  # docs page (bundle menu only).
+  geekdocNextPrev = false
+
+  # (Optional, default true) Show a breadcrumb navigation bar at the top of each docs page.
+  # You can also specify this parameter per page in front matter.
+  geekdocBreadcrumb = true
+
+  # (Optional, default none) Set source repository location
+  # Used for 'Edit this page' links
+  # You can also specify this parameter per page in front matter.
+  geekdocRepo = "https://github.com/freenas/documentation"
+
+  # (Optional, default none) Enable 'Edit this page' links. Requires 'GeekdocRepo' param
+  # and path must point to 'content' directory of repo.
+  # You can also specify this parameter per page in front matter.
+  geekdocEditPath = "edit/master/content/"
+
+  # (Optional, default true) Enables search function with flexsearch.
+  # Index is built on the fly and might slowdown your website.
+  geekdocSearch = true
+
+  # (Optional, default false) Display search results with the parent folder as prefix. This
+  # option allows you to distinguish between files with the same name in different folders.
+  # NOTE: This parameter only applies when 'geekdocSearch = true'.
+  geekdocSearchShowParent = true
+
+  # (Optional, default none) Add a link to your Legal Notice page to the site footer.
+  # It can be either a remote url or a local file path relative to your content directory.
+  geekdocLegalNotice = "https://www.ixsystems.com/trademarks/"
+
+  # (Optional, default none) Add a link to your Privacy Policy page to the site footer.
+  # It can be either a remote url or a local file path relative to your content directory.
+  geekdocPrivacyPolicy = "https://www.ixsystems.com/privacy-policy/"
+
+  # (Optional, default true) Add an anchor link to headlines.
+  geekdocAnchor = true
+
+  # (Optional, default true) Copy anchor url to clipboard on click.
+  geekdocAnchorCopy = true
