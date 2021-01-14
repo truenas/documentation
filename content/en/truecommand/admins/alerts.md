@@ -82,4 +82,18 @@ To configure an alert service plugin, open the **Configure** <i class="fa fa-cog
 <img src="/images/tc-1.3-alert-services.PNG">
 <br><br>
 
+As an example, open the **Configure Plugin** <i class="fa fa-cog" aria-hidden="true" title="Settings"></i>&nbsp;for PagerDuty.  In the
+*Authtoken* section, enter your **Service Integration Key from PagerDuty**.  If you have an active subscription with PagerDuty, this key should be available to you. 
+Enter a *Title for incident reports* if desired.  Click **TEST**.
+
+<br><br>
+<img src="/images/tc3.png">
+<br><br>
+
+Login to your PagerDuty account and check for open incidents.  There you should see the triggered test alert from TrueCommand.  If no test alert was received, check the **Service Integration Key from PagerDuty** for accuracy in the plugin configuration section of the alert service.
+
+<br><br>
+<img src="/images/tc2.png">
+<br><br>
+
 Each service has different configuration options, but each can be tested to ensure your settings are working correctly.
