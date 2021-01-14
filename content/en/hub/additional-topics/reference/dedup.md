@@ -25,7 +25,7 @@ The main benefit of deduplication is that where appropriate, it can greatly redu
 
 There are four main costs to deduplication, because the deduplication process is very demanding - it requires much RAM, (probably) very fast SSDs in the pool, can in some cases take almost all of the CPU resources, and it can slow down the system's raw speed.  In effect DDT can save much storage size and pool expense, but at the cost of server RAM/CPU/SSD cost and loss of "top end" I/O speeds.
 
-* Deduplication requires almost immediate access to the DDT.  In a deduplicated pool, every block potentially needs DDT access. The number of small I/Os can be colossal - copying a 300 GB file could require tens, perhaps hundreds of millions of 4K I/O to the DDT. This is extremely punishing and slow. Therefore RAM should be large enough to store the entire DDT _as well as any other metadata_ and the pool should almost always be configured using "special vdevs" for metadata comprising fast high quality SSDs, again for high speed access.  Data rates of 50,000 to 300,000 4K I/O per second (IOPS) are _typical and reported on the forum_ for SSDs handling DDT. Be warned! If your RAM is insufficient, the pool will run extremely slowly. If your SSDs are unreliable or slow under mixed sustained loads, your pool will slow down as well or may lose data if enough SSDs fail.
+* Deduplication requires almost immediate access to the DDT.  In a deduplicated pool, every block potentially needs DDT access. The number of small I/Os can be colossal - copying a 300 GB file could require tens, perhaps hundreds of millions of 4K I/O to the DDT. This is extremely punishing and slow. Therefore RAM should be large enough to store the entire DDT _as well as any other metadata_ and the pool should almost always be configured using "special vdevs" for metadata comprising fast high quality SSDs, again for high speed access.  Data rates of 50,000 to 300,000 4K I/O per second (IOPS) are _typical and reported on the forum_ for SSDs handling DDT. Be warned! If RAM is insufficient, the pool will run extremely slowly. If the SSDs are unreliable or slow under mixed sustained loads, the pool will slow down as well or may lose data if enough SSDs fail.
 
 * Deduplication is extremely CPU intensive. Hashing is a complex operation and deduplication uses it on every read and write.  It is possible for some operations (notably `scrub` and other intense activities) to use the entirety of an 8 - 32 core CPU if provided, in the effort to meet the demand for computational power for deduplication.
 
@@ -53,10 +53,10 @@ If the special vdevs cxannot contain all metadata, then metadata will silently s
 ### RAM
 
 {{% alert color="warning" %}}
-**Deduplication is memory intensive. If your system does not contain sufficient RAM, it will be unable to cache DDT in memory when read, and system performance will probably plummet.**
+**Deduplication is memory intensive. If the system does not contain sufficient RAM, it will be unable to cache DDT in memory when read, and system performance will probably plummet.**
 {{% /alert %}}
 
-Deduplication requires considerable RAM. The amount of RAM depends on the size of the DDT. Figures of up to 5 GB of RAM per TB of data are discussed online, but these are often over estimates.  A realistic value depends completely on your own data. The more highly duplicated your data is, the fewer the entries and the smaller the DDT. Pools suitable for deduplication, with deduplication ratios of 3x or more (i.e., the data can be reduced to a third or less in size), may only need 1 - 3 GB of RAM per TB of data.  The actual DDT size can be estimated by deduplicating a limited amount of data in a temporary "test" pool, or by using `zdb -S` as shown below. 
+Deduplication requires considerable RAM. The amount of RAM depends on the size of the DDT. Figures of up to 5 GB of RAM per TB of data are discussed online, but these are often over estimates.  A realistic value depends completely on the data in the pool. The more highly duplicated it is, the fewer the entries and the smaller the DDT. Pools suitable for deduplication, with deduplication ratios of 3x or more (i.e., the data can be reduced to a third or less in size), may only need 1 - 3 GB of RAM per TB of data.  The actual DDT size can be estimated by deduplicating a limited amount of data in a temporary "test" pool, or by using `zdb -S` as shown below. 
 
 The [tunable](hub/tasks/advanced/tunables/) <code>vfs.zfs.arc.meta_min</code> (type=LOADER, value=bytes) can be used if needed, to force ZFS to reserve no less than the given amount of RAM for metadata caching.
 
@@ -87,7 +87,7 @@ If deduplication is used in an inadequately built system, the following symptoms
 		<tr>
 			<td>Extreme slowdown/latency of disk I/O.</td>
 			<td>The system must perform disk I/O to fetch DDT entries, but these are usually 4K I/O and the underlying disk hardware is unable to cope in a timely manner.</td>
-			<td rowspan="2"><code>gstat</code> on console will often show large amounts of I/O, either for devices that contain DDT data, or for the pool generally (if special vdevs are not defined). Typically this is 4K read I/O attributable to DDT activity, but may not always be.<br/><br/><code>zpool iostat</code> (see below) can also be used, and will often show unexpected or very high disk latencies.<br/><br/>If networking is impacted, the issue can also be confirmed in console or at the client end, using <code>tcpdump</code> or <code>Wireshark</code> - the TCP window will be seen to be extremely low or zero for extended durations.</td>
+			<td rowspan="2"><code>gstat</code> on console will often show large amounts of I/O, either for devices that contain DDT data, or for the pool generally (if special vdevs are not defined). Typically this is 4K read I/O attributable to DDT activity, but may not always be.<br/><br/><code>zpool iostat</code> (see below) can also be used, and will often show unexpected or very high disk latencies.<br/><br/>If networking is impacted, the issue can also be confirmed in console or at the client end, using <code>tcpdump</code> or <code>Wireshark</code> - the TCP window will be seen to be extremely low or zero for extended durations.<br/><br/>A full technical description of how this happens and symptoms seen, can be found [in the forum](https://www.truenas.com/community/threads/baffling-performance-issues-with-large-zfs-pool.84780/page-2#post-604334).</td>
 			<td rowspan="2">Add high quality SSDs as a special vdev, and either move data or rebuild the pool to utilise the new storage.</td>
 		</tr>
 		<tr>
@@ -111,6 +111,11 @@ If deduplication is used in an inadequately built system, the following symptoms
 * `zpool iostat` (`man zpool-iostat`) provides detailed analysis and statistics for disk I/O latency. Latencies for a healthy pool should largely be in the nanoseconds to tens of milliseconds range, perhaps with a few outliers.  If latencies of the order of seconds, and certainly tens of seconds, are seen, this indicates a problem with disk usage, usually that certain disks are unable to service commands at the speed needed, and a large queue has formed of backlogged commands.
 * `top` (and also `top -mio` for I/O data) and `gstat` are useful to monitor RAM, CPU and disk I/O.
 * `arc_summary` and `arcstat` are utilities that drill down into ZFS RAM/memory caching systems and ZFS memory use.
+
+## Forum resources
+
+* [NVRAM and Optane based SSDs when choosing a fast pool SSD](https://www.truenas.com/community/resources/a-bit-about-ssd-perfomance-and-optane-ssds-when-youre-plannng-your-next-ssd.149/)
+* [Forum: Building a server capable of fast consistent deduplication](https://www.truenas.com/community/resources/my-experiments-in-building-a-home-server-capable-of-handling-fast-consistent-deduplication.148/)
 
 ## Technical note:  hashing
 
