@@ -61,7 +61,7 @@ Go to **Storage > Pools** and select <i class="fas fa-cog" aria-hidden="true" ti
 
 ## Pool Sync Options
 
-Even with a dedicated SLOG, you will not enjoy performance improvements out of the box on asynchronous writes, as they do not utilize the ZIL by default.  To change Pool Sync Options, go to **Storage->Pools**, and click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; for the pool you created. Select *Edit Options* from the drop down.  Under **Sync** choose *Always* from the options available and click **SAVE**.
+Even with a dedicated SLOG, you will not enjoy performance improvements out of the box on asynchronous writes, as they do not utilize the ZIL by default.  To change Pool Sync Options, go to **Storage > Pools**, and click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; for the pool you created. Select *Edit Options* from the drop down.  Under **Sync** choose *Always* from the options available and click **SAVE**.
 
 <br><br>
 <img src="/images/slog4.png">
