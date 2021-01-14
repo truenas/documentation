@@ -2,6 +2,7 @@
 title: "What is TrueNAS SCALE?"
 linkTitle: "Overview"
 description: "A brief look at the purpose and structure of SCALE."
+tags: ["SCALE"]
 weight: 10
 ---
 
