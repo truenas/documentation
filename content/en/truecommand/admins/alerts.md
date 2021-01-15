@@ -55,7 +55,7 @@ Alert rules can be activated, suspended, edited, or deleted by either an adminis
 New TrueCommand alert rules can be created to monitor a wide variety of system information and generate a TrueCommand alert if specific conditions occur.
 To create a new alert rule, click **+ NEW ALERT RULE** and follow the creation wizard:
 
-<img src="/images/tc-1.3-alert-rulew-new.PNG">
+<img src="/images/tc-1.3-alert-rules-new.PNG">
 <br><br>
 
 * Select a System: The rule will apply to these systems.
