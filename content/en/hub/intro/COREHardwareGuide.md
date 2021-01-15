@@ -2,6 +2,7 @@
 title: "TrueNAS CORE Hardware Guide"
 description: "Official hardware guide for custom TrueNAS CORE systems."
 tags: ["TrueNAS CORE","Components"]
+weight: 35
 ---
 
 Long-time TrueNAS CORE/FreeNAS users will never forget the FreeNAS 8.0 days when flashing an IBM M1015 controller card with LSI firmware was a rite of passage, 3TB drives were the largest you could buy, and floods in Thailand would soon turn every hard drive into a valuable asset.

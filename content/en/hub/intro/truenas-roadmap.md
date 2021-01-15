@@ -1,6 +1,6 @@
 ---
 title: "Software Release Schedule"
-weight: 3
+weight: 25
 ---
 
 This is the latest roadmap for major TrueNAS and TrueCommand releases.
