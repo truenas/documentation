@@ -55,7 +55,7 @@ Alert rules can be activated, suspended, edited, or deleted by either an adminis
 New TrueCommand alert rules can be created to monitor a wide variety of system information and generate a TrueCommand alert if specific conditions occur.
 To create a new alert rule, click **+ NEW ALERT RULE** and follow the creation wizard:
 
-<img src="/images/tc-1.3-alert-rulew-new.PNG">
+<img src="/images/tc-1.3-alert-rules-new.PNG">
 <br><br>
 
 * Select a System: The rule will apply to these systems.
@@ -80,6 +80,20 @@ Individual user accounts can use these services to manage how that account is no
 To configure an alert service plugin, open the **Configure** <i class="fa fa-cog" aria-hidden="true" title="Settings"></i>&nbsp; menu and click **Alert Services**.
 
 <img src="/images/tc-1.3-alert-services.PNG">
+<br><br>
+
+As an example, open the **Configure Plugin** <i class="fa fa-cog" aria-hidden="true" title="Settings"></i>&nbsp;for PagerDuty.  In the
+*Authtoken* section, enter your **Service Integration Key from PagerDuty**.  If you have an active subscription with PagerDuty, this key should be available to you. 
+Enter a *Title for incident reports* if desired.  Click **TEST**.
+
+<br><br>
+<img src="/images/tc3.png">
+<br><br>
+
+Login to your PagerDuty account and check for open incidents.  There you should see the triggered test alert from TrueCommand.  If no test alert was received, check the **Service Integration Key from PagerDuty** for accuracy in the plugin configuration section of the alert service.
+
+<br><br>
+<img src="/images/tc2.png">
 <br><br>
 
 Each service has different configuration options, but each can be tested to ensure your settings are working correctly.
