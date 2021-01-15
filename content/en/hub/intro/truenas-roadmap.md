@@ -17,26 +17,27 @@ It is still receiving minor version updates, but will reach End of Life when Tru
 
 | Version                                                                                                          | Scheduled Release Date |
 |------------------------------------------------------------------------------------------------------------------|------------------------|
-| [FreeNAS 11.3-U6](https://jira.ixsystems.com/issues/?jql=project%20%3D%20NAS%20AND%20fixVersion%20%3D%2011.3-U6) | Unscheduled            |
+| [FreeNAS 11.3-U6](https://jira.ixsystems.com/issues/?jql=project%20%3D%20NAS%20AND%20fixVersion%20%3D%2011.3-U6) | To be scheduled as required |
 
 ## TrueNAS
 
 | Version                                                                                                          | Scheduled Release Date |
 |------------------------------------------------------------------------------------------------------------------|------------------------|
-| [TrueNAS 12.0-U1.1](https://jira.ixsystems.com/projects/NAS/versions/12900)                                      | Unscheduled            |
+| [TrueNAS 12.0-U1.1](https://jira.ixsystems.com/projects/NAS/versions/12900)                                      | 2021/1/15              |
 | [TrueNAS 12.0-U2](https://jira.ixsystems.com/projects/NAS/versions/12700)                                        | 2021/02/02             |
 
 ## SCALE
 
-| Version                                                                                                                                                         | Scheduled Release Date |
-|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------|
-| [SCALE-20.12-ALPHA (Angelfish)](https://jira.ixsystems.com/issues/?jql=project%20%3D%20NAS%20AND%20fixVersion%20%3D%20%22SCALE-20.12-%20ALPHA%20(Angelfish)%22) | 2020/12/18             |
+| Version                                                                                                                | Scheduled Release Date |
+|------------------------------------------------------------------------------------------------------------------------|------------------------|
+| [SCALE 21.02-ALPHA1 (Angelfish)](https://jira.ixsystems.com/projects/NAS/versions/12016)                               | Q1 2021                |
 
 ## TrueCommand
 
 | Version                                                                                                                 | Scheduled Release Date |
 |-------------------------------------------------------------------------------------------------------------------------|------------------------|
-| [TrueCommand 2.0](https://jira.ixsystems.com/issues/?jql=project%20%3D%20TrueCommand%20%20AND%20fixVersion%20%3D%202.0) | Q1 2021                |
+| [TrueCommand 1.3.3](https://jira.ixsystems.com/projects/TC/versions/12800)                                              | 2021/2/16              |
+| [TrueCommand 2.0-ALPHA](https://jira.ixsystems.com/projects/TC/versions/10803)                                          | 2021/2/23              |
 
 
 
