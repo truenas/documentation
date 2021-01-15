@@ -20,7 +20,7 @@ TrueCommand can monitor an entire fleet of TrueNAS systems and thousands of onli
 - NAS Fleet Dashboard: The TrueCommand dashboard provides visibility to an organization’s entire TrueNAS fleet. TrueCommand includes an auto-discovery tool that expedites identifying and integrating systems into TrueCommand.
 
 - Single Sign-on to all NAS Units
- Once a TrueNAS system has been connected to TrueCommand, authorized administrators can quickly log in to that system through TrueCommand. This allows for quicker and simpler signons instead of looking up IP addresses and login credentials.  This is even more beneficial when using different secure passwords for each TrueNAS instance instead of a single password across multiple systems.
+ Authorized administrators can quickly log into a TrueNAS system through TrueCommand, once that system has been connected to TrueCommand. This allows for quicker and simpler signons instead of looking up IP addresses and login credentials.  This is even more beneficial when using different secure passwords for each TrueNAS instance instead of a single password across multiple systems.
 
 - Centralized system updates
 
