@@ -1,5 +1,5 @@
 ---
-title: "Interface Fields Reference Guide: Storage"
+title: "FRG: Storage"
 linkTitle: "Storage"
 description: "Descriptions of each field in the Storage section of the TrueNAS web interface."
 weight: 60
@@ -13,7 +13,6 @@ tags: ["reference", "zpool", "dataset", "zfs", "zvol", "encryption", "snapshots"
 | | |
 |-|-|
 | Create New Pool | Create a new, empty pool. |
-|-|-|
 | Import Existing Pool | Import a pool that exists but is not connected. |
 
 **Pool Manager**
@@ -131,10 +130,9 @@ tags: ["reference", "zpool", "dataset", "zfs", "zvol", "encryption", "snapshots"
 | Passphrase | User-defined string used to decrypt the dataset. Can be used instead of an encryption key. **WARNING**: the passphrase is the only means to decrypt the information stored in this dataset. Be sure to create a memorable passphrase or physically secure the passphrase. |
 | pbkdf2iters | Number of password-based key derivation function 2 (PBKDF2) iterations to use for reducing vulnerability to brute-force attacks. Entering a number larger than 100000 is required. See [PBKDF2](https://en.wikipedia.org/wiki/PBKDF2) for more details. |
 
+## Snapshots: Add
 
-## Snapshots
-
-****
+**Snapshot**
 
 | | |
 |-|-|
@@ -143,9 +141,9 @@ tags: ["reference", "zpool", "dataset", "zfs", "zvol", "encryption", "snapshots"
 | Naming Schema | Generate a name for the snapshot using the naming schema from a previously created Periodic Snapshot Task. This allows the snapshot to be replicated. Cannot be used with a Name. |
 | Recursive | Set to include child datasets of the chosen dataset. |
 
-## VMware-Snapshots
+## VMware-Snapshots: Add
 
-****
+**VM Snapshot**
 
 | | |
 |-|-|
@@ -155,7 +153,7 @@ tags: ["reference", "zpool", "dataset", "zfs", "zvol", "encryption", "snapshots"
 | ZFS Filesystems | Enter the filesystem to snapshot. |
 | Datastore | After entering the Hostname, Username, and Password, click Fetch Datastores and select the datastore to be synchronized. |
 
-## Disks Edit Disk
+## Disks: Edit Disk
 
 **General**
 
@@ -180,8 +178,6 @@ tags: ["reference", "zpool", "dataset", "zfs", "zvol", "encryption", "snapshots"
 | Clear SED Password | Clear the SED password for this disk. |
 | Critical | Threshold temperature in Celsius. If the drive temperature is higher than this value, a LOG_CRIT level log entry is created and an email is sent. 0 disables this check. |
 | Informational | Report if drive temperature is at or above this temperature in Celsius. 0 disables the report. |
-
-
 
 ## Import Disk
 

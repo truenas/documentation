@@ -1,12 +1,12 @@
 ---
-title: "Interface Fields Reference Guide: Accounts"
+title: "FRG: Accounts"
 linkTitle: "Accounts"
 description: "Descriptions of each field in the Accounts section of the TrueNAS web interface."
 weight: 20
 tags: ["reference"]
 ---
 
-## Groups / Add
+## Groups: Add
 
 **Group Configuration**
 
@@ -18,7 +18,7 @@ tags: ["reference"]
 | Samba Authentication | Set to allow group to be used for Samba permissions and authentication. |
 | Allow Duplicate GIDs | Not recommended. Allow more than one group to have the same group ID. |
 
-## Users / Add
+## Users: Add
 
 **Identification**
 

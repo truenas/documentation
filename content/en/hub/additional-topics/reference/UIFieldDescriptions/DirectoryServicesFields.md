@@ -1,12 +1,12 @@
 ---
-title: "Interface Fields Reference Guide: Directory Services"
+title: "FRG: Directory Services"
 linkTitle: "Directory Services"
 description: "Descriptions of each field in the Directory Services section of the TrueNAS web interface."
 weight: 70
 tags: ["reference", "AD", "Kerberos", "LDAP", "NIS"]
 ---
 
-## General Options
+## Active Directory
 
 **Domain Credentials**
 
@@ -37,7 +37,7 @@ tags: ["reference", "AD", "Kerberos", "LDAP", "NIS"]
 | Netbios Name  | Netbios Name of this NAS. This name must differ from the Workgroup name and be no greater than 15 characters. |
 | NetBIOS alias | Alternative names that SMB clients can use when connecting to this NAS. Can be no greater than 15 characters. |
 
-## LDMAP Edit
+## IDMAP Edit
 
 **Settings**
 
@@ -96,8 +96,7 @@ tags: ["reference", "AD", "Kerberos", "LDAP", "NIS"]
 | Manycast | Set for ypbind to bind to the server that responds the fastest. |
 | Enable | Unset to disable the configuration without deleting it. |
 
-## Kerberos Realms Add
-
+## Kerberos Realms: Add
 
 **Kerberos Realms**
 
@@ -114,8 +113,7 @@ tags: ["reference", "AD", "Kerberos", "LDAP", "NIS"]
 | Admin Server | Define the server where all changes to the database are performed. Separate multiple values by pressing Enter. |
 | Password Server | Define the server where all password changes are performed. Separate multiple values by pressing Enter. |
 
-## Kerberos Keytab Add
-
+## Kerberos Keytab: Add
 
 **Kerberos Keytab**
 
@@ -124,8 +122,7 @@ tags: ["reference", "AD", "Kerberos", "LDAP", "NIS"]
 | Name | Enter a name for this Keytab. |
 | Keberos Keytab | Browse to the keytab file to upload. |
 
-## Kerberos  Settings
-
+## Kerberos Settings
 
 **Options**
 

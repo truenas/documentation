@@ -1,5 +1,5 @@
 ---
-title: "Interface Fields Reference Guide: System"
+title: "FRG: System"
 linkTitle: "System"
 description: "Descriptions of each field in the System section of the TrueNAS web interface."
 weight: 30
@@ -37,7 +37,7 @@ tags: ["reference", "NTP", "certificates", "email", "dataset", "ssh", "2FA"]
 | Crash reporting | Send failed HTTP request data which can include client and server IP addresses, failed method call tracebacks, and middleware log file contents to iXsystems. |
 | Usage collection | Enable sending anonymous usage statistics to iXsystems. |
 
-## NTP Servers	Add or Edit
+## NTP Servers: Add or Edit
 
 **NTP Server Settings**
 
@@ -159,7 +159,7 @@ tags: ["reference", "NTP", "certificates", "email", "dataset", "ssh", "2FA"]
 | Number of Graph Points | Number of points for each hourly, daily, weekly, monthly, or yearly graph (allowed values are 1-4096). Changing this value causes the **Confirm RRD Destroy** dialog to appear. Changes do not take effect until the existing reporting database is destroyed. |
 | Force | Forces the addition of the NTP server, even if it is currently unreachable. |
 
-## Alert Services / Add or Edit
+## Alert Services: Add or Edit
 
 **Name and Type**
 
@@ -255,7 +255,7 @@ tags: ["reference", "NTP", "certificates", "email", "dataset", "ssh", "2FA"]
 | Set Frequency | Adjust how often alert notifications are sent. Setting the Frequency to NEVER prevents that alert from being added to alert notifications, but the alert can still show in the web interface if it is triggered. Options:
 Immediately (Default), Hourly, Daily, and Never. |
 
-## Cloud Credentials / Add
+## Cloud Credentials: Add
 
 **Name and Provider**
 
@@ -415,7 +415,7 @@ Authentication options change according to the chosen **Provider**.
 |-|-|
 | Access Token | Yandex [Access Token](https://tech.yandex.com/direct/doc/dg-v4/concepts/auth-token-docpage/). |
 
-## SSH Connection / Add
+## SSH Connections: Add
 
 **Name and Method**
 
@@ -443,7 +443,7 @@ Authentication options change according to the chosen **Provider**.
 |  | *Disabled* removes all security in favor of maximizing connection speed. Disabling the security should only be used within a secure, trusted network. |
 | Connect Timeout | Time (in seconds) before the system stops attempting to establish a connection with the remote system. |
 
-## SSH Keypairs / Add
+## SSH Keypairs: Add
 
 **SSH Keypair**
 
@@ -453,7 +453,7 @@ Authentication options change according to the chosen **Provider**.
 | Private Key | See Public key authentication in [SSH/Authentication](https://www.freebsd.org/cgi/man.cgi?query=ssh). |
 | Public Key | See Public key authentication in [SSH/Authentication](https://www.freebsd.org/cgi/man.cgi?query=ssh). |
 
-## Tuneables / Add
+## Tuneables: Add
 
 **Tunable**
 
@@ -473,7 +473,7 @@ Authentication options change according to the chosen **Provider**.
 |-|-|
 | Check for Update Daily and Download if Availbale | Check the update server daily for any updates on the chosen train. Automatically download an update if one is available. Click APPLY PENDING UPDATE to install the downloaded update. |
 
-## CAs (Certificate Authorities) / Add
+## CAs (Certificate Authorities): Add
 
 **Identifier and Type**
 
@@ -539,11 +539,183 @@ See [RFC 3280, section 4.2.1.1](https://www.ietf.org/rfc/rfc3280.txt) for more i
 | Key Usage Config | The key usage extension defines the purpose (e.g., encipherment, signature, certificate signing) of the key contained in the certificate. The usage restriction might be employed when a key that could be used for more than one operation is to be restricted. For example, when an RSA key should be used only to verify signatures on objects other than public key certificates and CRLs, the Digital Signature bits would be asserted. Likewise, when an RSA key should be used only for key management, the Key Encipherment bit would be asserted.
 See [RFC 3280, section 4.2.1.3](https://www.ietf.org/rfc/rfc3280.txt) for more information. |
 
-## Certificates
+## Certificates: Add
 
-> TODO: Fill in this section
+Fields are sorted by certificate **Type**.
 
-## ACME DNS / Add
+### Internal Certificate
+
+**Identifier and Type**
+
+| | |
+|-|-|
+| Name | Descriptive identifier for this certificate. |
+| Type | *Internal Certificate* is used for internal or local systems. *Certificate Signing Request* (CSR) is used to get a CA signature. *Import Certificate* allows an existing certificate to be imported onto the system. *Import Certificate Signing Request* allows an existing CSR to be imported onto the system. |
+| Profiles | Predefined certificate extensions. Choose a profile that best matches your certificate usage scenario. |
+
+**Certificate Options**
+
+| | |
+|-|-|
+| Signing Certificate Authority | Select a previously imported or created CA. |
+| Key Type | See [Why is elliptic curve cryptography not widely used, compared to RSA?](https://crypto.stackexchange.com/questions/1190/why-is-elliptic-curve-cryptography-not-widely-used-compared-to-rsa) for more information about key types. |
+| EC Curve | Brainpool curves can be more secure, while secp curves can be faster. See [Elliptic Curve performance: NIST vs Brainpool](https://tls.mbed.org/kb/cryptography/elliptic-curve-performance-nist-vs-brainpool) for more information. |
+| Key Length | The number of bits in the key used by the cryptographic algorithm. For security reasons, a minimum key length of *2048* is recommended. |
+| Digest Algorithm | The cryptographic algorithm to use. The default SHA256 only needs to be changed if the organization requires a different algorithm. |
+| Lifetime | The lifetime of the CA specified in days. |
+
+**Certificate Subject**
+
+| | |
+|-|-|
+| Country | Select the country of the organization. |
+| State | Enter the state or province of the organization. |
+| Locality | Enter the location of the organization. For example, the city. |
+| Organization | Enter the name of the company or organization. |
+| Organizational Unit | Organizational unit of the entity. |
+| Email | Enter the email address of the person responsible for the CA. |
+| Common Name | Enter the [fully-qualified hostname (FQDN)](https://kb.iu.edu/d/aiuv) of the system. This name must be unique within a certificate chain. |
+| Subject Alternate Names | Multi-domain support. Enter additional domains to secure. Separate domains by pressing Enter For example, if the primary domain is example.com, entering www.example.com secures both addresses. |
+
+**Basic Constraints**
+
+| | |
+|-|-|
+| Enabled | Activates this certificate extension. |
+| Path Length | How many non-self-issued intermediate certificates that can follow this certificate in a valid certification path. Entering `0` allows a single additional certificate to follow in the certificate path. Cannot be less than *0*. |
+| Basic Constraints Config | The basic constraints extension identifies whether the subject of the certificate is a CA and the maximum depth of valid certification paths that include this certificate.
+See [RFC 3280, section 4.2.1.10](https://www.ietf.org/rfc/rfc3280.txt) for more information. |
+
+**Authority Key Identifier**
+
+| | |
+|-|-|
+| Enabled | Activates this certificate extension. |
+| Authority Key Config | The authority key identifier extension provides a means of identifying the public key corresponding to the private key used to sign a certificate. This extension is used where an issuer has multiple signing keys (either due to multiple concurrent key pairs or due to changeover). The identification MAY be based on either the key identifier (the subject key identifier in the issuer's certificate) or on the issuer name and serial number.
+See [RFC 3280, section 4.2.1.1](https://www.ietf.org/rfc/rfc3280.txt) for more information. |
+
+**Extended Key Usage**
+
+| | |
+|-|-|
+| Enabled | Activates this certificate extension. |
+| Usages | Identify the purpose for this public key. Typically used for end entity certificates. Multiple usages can be selected. Do not mark this extension critical when the *Usage* is `ANY_EXTENDED_KEY_USAGE`. Using both **Extended Key Usage** and **Key Usage** extensions requires that the purpose of the certificate is consistent with both extensions. See [RFC 3280, section 4.2.1.13](https://www.ietf.org/rfc/rfc3280.txt) for more details. |
+| Critical Extension | Identify this extension as critical for the certificate. Critical extensions must be recognized by the certificate-using system or this certificate will be rejected. Extensions identified as not critical can be ignored by the certificate-using system and the certificate still approved. |
+
+**Key Usage**
+
+| | |
+|-|-|
+| Enabled | Activates this certificate extension. |
+| Key Usage Config | The key usage extension defines the purpose (e.g., encipherment, signature, certificate signing) of the key contained in the certificate. The usage restriction might be employed when a key that could be used for more than one operation is to be restricted. For example, when an RSA key should be used only to verify signatures on objects other than public key certificates and CRLs, the *Digital Signature* bits would be asserted. Likewise, when an RSA key should be used only for key management, the *Key Encipherment* bit would be asserted. See [RFC 3280, section 4.2.1.3](https://www.ietf.org/rfc/rfc3280.txt) for more information. |
+
+### Certificate Signing Request
+
+**Identifier and Type**
+
+| | |
+|-|-|
+| Name | Descriptive identifier for this certificate. |
+| Type | *Internal Certificate* is used for internal or local systems. *Certificate Signing Request* (CSR) is used to get a CA signature. *Import Certificate* allows an existing certificate to be imported onto the system. *Import Certificate Signing Request* allows an existing CSR to be imported onto the system. |
+| Profiles | Predefined certificate extensions. Choose a profile that best matches your certificate usage scenario. |
+
+**Certificate Options**
+
+| | |
+|-|-|
+| Key Type | See [Why is elliptic curve cryptography not widely used, compared to RSA?](https://crypto.stackexchange.com/questions/1190/why-is-elliptic-curve-cryptography-not-widely-used-compared-to-rsa) for more information about key types. |
+| EC Curve | Brainpool curves can be more secure, while secp curves can be faster. See [Elliptic Curve performance: NIST vs Brainpool](https://tls.mbed.org/kb/cryptography/elliptic-curve-performance-nist-vs-brainpool) for more information. |
+| Key Length | The number of bits in the key used by the cryptographic algorithm. For security reasons, a minimum key length of *2048* is recommended. |
+| Digest Algorithm | The cryptographic algorithm to use. The default SHA256 only needs to be changed if the organization requires a different algorithm. |
+
+**Certificate Subject**
+
+| | |
+|-|-|
+| Country | Select the country of the organization. |
+| State | Enter the state or province of the organization. |
+| Locality | Enter the location of the organization. For example, the city. |
+| Organization | Enter the name of the company or organization. |
+| Organizational Unit | Organizational unit of the entity. |
+| Email | Enter the email address of the person responsible for the CA. |
+| Common Name | Enter the [fully-qualified hostname (FQDN)](https://kb.iu.edu/d/aiuv) of the system. This name must be unique within a certificate chain. |
+| Subject Alternate Names | Multi-domain support. Enter additional domains to secure. Separate domains by pressing Enter For example, if the primary domain is example.com, entering www.example.com secures both addresses. |
+
+**Basic Constraints**
+
+| | |
+|-|-|
+| Enabled | Activates this certificate extension. |
+| Path Length | How many non-self-issued intermediate certificates that can follow this certificate in a valid certification path. Entering `0` allows a single additional certificate to follow in the certificate path. Cannot be less than *0*. |
+| Basic Constraints Config | The basic constraints extension identifies whether the subject of the certificate is a CA and the maximum depth of valid certification paths that include this certificate.
+See [RFC 3280, section 4.2.1.10](https://www.ietf.org/rfc/rfc3280.txt) for more information. |
+
+**Authority Key Identifier**
+
+| | |
+|-|-|
+| Enabled | Activates this certificate extension. |
+| Authority Key Config | The authority key identifier extension provides a means of identifying the public key corresponding to the private key used to sign a certificate. This extension is used where an issuer has multiple signing keys (either due to multiple concurrent key pairs or due to changeover). The identification MAY be based on either the key identifier (the subject key identifier in the issuer's certificate) or on the issuer name and serial number.
+See [RFC 3280, section 4.2.1.1](https://www.ietf.org/rfc/rfc3280.txt) for more information. |
+
+**Extended Key Usage**
+
+| | |
+|-|-|
+| Enabled | Activates this certificate extension. |
+| Usages | Identify the purpose for this public key. Typically used for end entity certificates. Multiple usages can be selected. Do not mark this extension critical when the *Usage* is `ANY_EXTENDED_KEY_USAGE`. Using both **Extended Key Usage** and **Key Usage** extensions requires that the purpose of the certificate is consistent with both extensions. See [RFC 3280, section 4.2.1.13](https://www.ietf.org/rfc/rfc3280.txt) for more details. |
+| Critical Extension | Identify this extension as critical for the certificate. Critical extensions must be recognized by the certificate-using system or this certificate will be rejected. Extensions identified as not critical can be ignored by the certificate-using system and the certificate still approved. |
+
+**Key Usage**
+
+| | |
+|-|-|
+| Enabled | Activates this certificate extension. |
+| Key Usage Config | The key usage extension defines the purpose (e.g., encipherment, signature, certificate signing) of the key contained in the certificate. The usage restriction might be employed when a key that could be used for more than one operation is to be restricted. For example, when an RSA key should be used only to verify signatures on objects other than public key certificates and CRLs, the *Digital Signature* bits would be asserted. Likewise, when an RSA key should be used only for key management, the *Key Encipherment* bit would be asserted. See [RFC 3280, section 4.2.1.3](https://www.ietf.org/rfc/rfc3280.txt) for more information. |
+
+### Import Certificate
+
+**Identifier and Type**
+
+| | |
+|-|-|
+| Name | Descriptive identifier for this certificate. |
+| Type | *Internal Certificate* is used for internal or local systems. *Certificate Signing Request* (CSR) is used to get a CA signature. *Import Certificate* allows an existing certificate to be imported onto the system. *Import Certificate Signing Request* allows an existing CSR to be imported onto the system. |
+
+
+**Certificate Options**
+
+| | |
+|-|-|
+| CSR exists on this system | Set when importing a certificate for which a Certificate Signing Request (CSR) exists on this system. |
+| Signing Certificate Authority | Select a previously imported or created CA. |
+
+**Certificate Subject**
+
+| | |
+|-|-|
+| Certificate | Paste the certificate for the CA. |
+| Private Key | Paste the private key associated with the Certificate when available. Please provide a key at least *1024* bits long. |
+| Passphrase | Enter and confirm the passphrase for the Private Key. |
+
+### Import Certificate Signing Request
+
+**Identifier and Type**
+
+| | |
+|-|-|
+| Name | Descriptive identifier for this certificate. |
+| Type | *Internal Certificate* is used for internal or local systems. *Certificate Signing Request* (CSR) is used to get a CA signature. *Import Certificate* allows an existing certificate to be imported onto the system. *Import Certificate Signing Request* allows an existing CSR to be imported onto the system. |
+
+**Certificate Subject**
+
+| | |
+|-|-|
+| Signing Request | Paste the contents of your Certificate Signing Request here. |
+| Private Key | Paste the private key associated with the Certificate when available. Please provide a key at least *1024* bits long. |
+| Passphrase | Enter and confirm the passphrase for the Private Key. |
+
+## ACME DNS: Add
 
 **Select Authenticator**
 

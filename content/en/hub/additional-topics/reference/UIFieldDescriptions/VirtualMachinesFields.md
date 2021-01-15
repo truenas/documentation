@@ -1,13 +1,12 @@
 ---
-title: "Interface Fields Reference Guide: Virtual Machines"
+title: "FRG: Virtual Machines"
 linkTitle: "Virtual Machines"
 description: "Descriptions of each field in the Virtual Machines section of the TrueNAS web interface."
 weight: 120
 tags: ["reference", "networking", "VM"]
 ---
 
-## Options
-
+## Virtual Machines: Add
 
 **Operating System**
 
@@ -23,7 +22,6 @@ tags: ["reference", "networking", "VM"]
 | Enable VNC | Enable a VNC (Virtual Network Computing) remote connection. Requires UEFI booting. |
 | Delay VM Boot Until VNC Connects | Wait to start VM until VNC client connects. |
 | Bind  | VNC network interface IP address. The primary interface IP address is the default. A different interface IP address can be chosen. |
-
 
 **CPU and Memory**
 
@@ -57,4 +55,3 @@ tags: ["reference", "networking", "VM"]
 |-|-|
 | Choose Installation Media Image | Browse to the operating system installer image file. |
 | Upload an Installer Image File | Set to display image upload options. |
-

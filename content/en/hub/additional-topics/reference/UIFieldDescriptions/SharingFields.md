@@ -1,12 +1,12 @@
 ---
-title: "Interface Fields Reference Guide: Sharing"
+title: "FRG: Sharing"
 linkTitle: "Sharing"
 description: "Descriptions of each field in the Sharing section of the TrueNAS web interface."
 weight: 80
 tags: ["reference", "AFP", "FTP/SFTP/TFTP", "iSCSI", "NFS", "SMB", "webdav"]
 ---
 
-## AFP Add
+## Apple Shares (AFP): Add
 
 **General Options**
 
@@ -42,7 +42,7 @@ tags: ["reference", "AFP", "FTP/SFTP/TFTP", "iSCSI", "NFS", "SMB", "webdav"]
 | No Stat | If set, AFP does not stat the pool path when enumerating the pools list. This is useful for automounting or pools created by a preexec script. |
 | Auxillary Parameters | Additional [afp.conf](http://netatalk.sourceforge.net/3.1/htmldocs/afp.conf.5.html) parameters not covered by other option fields. |
 
-## iSCSI
+## Block Shares (iSCSI)
 
 **Target Global Configuration**
 
@@ -61,7 +61,6 @@ tags: ["reference", "AFP", "FTP/SFTP/TFTP", "iSCSI", "NFS", "SMB", "webdav"]
 | Discovery Authentication Group | Group ID created in Authorized Access. Required when the Discovery Authentication Method is set to CHAP or Mutual CHAP. |
 | IP Address | Select the IP addresses to be listened on by the portal. Click ADD to add IP addresses with a different network port. The address 0.0.0.0 can be selected to listen on all IPv4 addresses, or :: to listen on all IPv6 addresses. |
 | Port | TCP port used to access the iSCSI target. Default is 3260. |
-
 
 **Initiators**
 
@@ -82,7 +81,6 @@ tags: ["reference", "AFP", "FTP/SFTP/TFTP", "iSCSI", "NFS", "SMB", "webdav"]
 | Peer User | Only entered when configuring mutual CHAP. Usually the same value as User. |
 | Peer Secret | Mutual secret password. Required when Peer User is set. Must be different than the Secret. |
 
-
 **Target**
 
 | | |
@@ -92,7 +90,6 @@ tags: ["reference", "AFP", "FTP/SFTP/TFTP", "iSCSI", "NFS", "SMB", "webdav"]
 | Initiator Group ID | Select which existing initiator group has access to the target. |
 | Authentication Method | Choices are None, Auto, CHAP, or Mutual CHAP. |
 | Authentication Group Number | Select None or an integer. This value represents the number of existing authorized accesses. |
-
 
 **Extents**
 
@@ -110,7 +107,6 @@ tags: ["reference", "AFP", "FTP/SFTP/TFTP", "iSCSI", "NFS", "SMB", "webdav"]
 | LUN RPM | Do NOT change this setting when using Windows as the initiator. Only needs to be changed in large environments where the number of systems using a specific RPM is needed for accurate reporting statistics. |
 | Read-only | Set to prevent the initiator from initializing this LUN. |
 
-
 **Associated Targets**
 
 | | |
@@ -119,7 +115,7 @@ tags: ["reference", "AFP", "FTP/SFTP/TFTP", "iSCSI", "NFS", "SMB", "webdav"]
 | LUN ID | Select the value or enter a value between 0 and 1023. Some initiators expect a value below 256. Leave this field blank to automatically assign the next available ID. |
 | Extent | Select an existing extent. |
 
-## NFS Add
+## Unix Shares (NFS): Add
 
 **Basic Options**
 
@@ -144,8 +140,7 @@ tags: ["reference", "AFP", "FTP/SFTP/TFTP", "iSCSI", "NFS", "SMB", "webdav"]
 | Authorized Networks | Space-delimited list of allowed networks in network/mask CIDR notation. Example: 1.2.3.0/24. Leave empty to allow all. |
 | Authorized Hosts and IP Addresses | Space-delimited list of allowed IP addresses (192.168.1.10) or hostnames (www.freenas.com). Leave empty to allow all. |
 
-
-## webdav
+## WebDAV Shares
 
 **Add**
 
@@ -186,8 +181,6 @@ tags: ["reference", "AFP", "FTP/SFTP/TFTP", "iSCSI", "NFS", "SMB", "webdav"]
 | Hosts Allow | If neither *Hosts Allow* or *Hosts Deny* contains an entry, then AFP share access is allowed for any host. If there is a *Hosts Allow* list but no *Hosts Deny* list, then only allow hosts on the *Hosts Allow* list.  If there is a *Hosts Deny* list but no *Hosts Allow* list, then allow all hosts that are not on the *Hosts Deny* list.  If there is both a *Hosts Allow* and *Hosts Deny* list, then allow all hosts that are on the *Hosts Allow* list.  If there is a host not on the *Hosts Allow* and not on the *Hosts Deny* list, then allow it. |
 | Hosts Deny | Enter a list of denied hostnames or IP addresses. Separate entries by pressing Enter. If neither *Hosts Allow* or *Hosts Deny* contains an entry, then AFP share access is allowed for any host. If there is a *Hosts Allow* list but no *Hosts Deny* list, then only allow hosts on the *Hosts Allow* list.  If there is a *Hosts Deny* list but no *Hosts Allow* list, then allow all hosts that are not on the *Hosts Deny* list.  If there is both a *Hosts Allow* and *Hosts Deny* list, then allow all hosts that are on the *Hosts Allow* list.  If there is a host not on the *Hosts Allow* and not on the *Hosts Deny* list, then allow it. |
 
-
-
 **Other Options**
 
 | | |
@@ -203,4 +196,3 @@ tags: ["reference", "AFP", "FTP/SFTP/TFTP", "iSCSI", "NFS", "SMB", "webdav"]
 | Enable FSRVP | Enable support for the File Server Remote VSS Protocol ([FSVRP](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-fsrvp)). This protocol allows RPC clients to manage snapshots for a specific SMB share. The share path must be a dataset mountpoint. Snapshots have the prefix fss- followed by a snapshot creation timestamp. A snapshot must have this prefix for an RPC user to delete it. |
 | Path Suffix | Appends a suffix to the share connection path. This is used to provide unique shares on a per-user, per-computer, or per-IP address basis. Suffixes can contain a macro. See the [smb.conf](https://www.freebsd.org/cgi/man.cgi?query=smb.conf) manual page for a list of supported macros. The connectpath must be preset before a client connects. |
 | Auxillary Parameters | Additional [smb.conf](https://www.freebsd.org/cgi/man.cgi?query=smb.conf) parameters. |
-

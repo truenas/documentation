@@ -1,5 +1,5 @@
 ---
-title: "Interface Fields Reference Guide: Jails"
+title: "FRG: Jails"
 linkTitle: "Jails"
 description: "Descriptions of each field in the Jails section of the TrueNAS web interface."
 weight: 110
@@ -17,7 +17,6 @@ tags: ["reference", "jails", "networking"]
 | Jail Type | Default (Clone Jail) or Basejail. Clone jails are clones of the specified RELEASE. They are linked to that RELEASE, even if they are upgraded. Basejails mount the specified RELEASE directories as nullfs mounts over the jail directories. Basejails are not linked to the original RELEASE when upgraded. |
 | Release | FreeBSD release to use as the jail operating system. Jails can run FreeBSD versions up to the same version as the host system. Newer releases are not shown. |
 
-
 **Configure Networking**
 
 | | |
@@ -34,8 +33,6 @@ tags: ["reference", "jails", "networking"]
 | IPv6 Address | Enter the IPv6 address for [VNET(9)](https://www.freebsd.org/cgi/man.cgi?query=vnet) and shared IP jails. |
 | IPv6 Netmask | IPv6 prefix for the jail. |
 | IPv6 Default Router | A valid IPv6 address to use as the default route. Enter none to configure the jail without an IPv6 default route. A jail without a default route will not be able to access any networks. |
-
-
 
 ## Advanced
 
@@ -64,8 +61,7 @@ tags: ["reference", "jails", "networking"]
 | Auto Start | Set to auto-start the jail at system boot time. Jails are started and stopped based on iocage priority. Set in the priority field under Custom Properties. |
 
 
-**Jail Properties
-**
+**Jail Properties**
 
 | | |
 |-|-|
@@ -94,8 +90,7 @@ tags: ["reference", "jails", "networking"]
 | allow_socket_af | Set to allow access to other protocol stacks beyond IPv4, IPv6, local (UNIX), and route.  Warning: jail functionality does not exist for all protocol stacks. |
 | allow_mount | Set to allow privileged users inside the jail to mount and unmount filesystem types marked as jail-friendly. |
 
-**Network Properties
-**
+**Network Properties**
 
 | | |
 |-|-|
@@ -110,8 +105,7 @@ tags: ["reference", "jails", "networking"]
 | mac_prefix | Enter a valid MAC address vendor prefix. Example: E4F4C6 |
 | vnet0_mac | Leave this field empty to generate random MAC addresses for the host and jail. To assign fixed MAC addresses, enter the MAC address to be assigned to the host, a space, then the MAC address to be assigned to the jail. |
 
-**Custom Properties
-**
+**Custom Properties**
 
 | | |
 |-|-|
@@ -127,4 +121,3 @@ tags: ["reference", "jails", "networking"]
 | Autoconfigure IPv6 with rtsold | Use [rtsold(8)](https://www.freebsd.org/cgi/man.cgi?query=rtsold) as part of IPv6 autoconfiguration. Send ICMPv6 Router Solicitation messages to interfaces to discover new routers. |
 | ip_hostname | Set to use DNS records during jail IP configuration to search the resolver and apply the first open IPv4 and IPv6 addresses. See [jail(8)](https://www.freebsd.org/cgi/man.cgi?query=jail). |
 | assign_localhost | Set to add network interface lo0 to the jail and assign it the first available localhost address, starting with 127.0.0.2. VNET must be unset. Jails using VNET configure a localhost as part of their virtualized network stack. |
-

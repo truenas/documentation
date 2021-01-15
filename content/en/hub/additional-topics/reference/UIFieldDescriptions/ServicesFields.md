@@ -1,5 +1,5 @@
 ---
-title: "Interface Fields Reference Guide: Services"
+title: "FRG: Services"
 linkTitle: "Services"
 description: "Descriptions of each field in the Services section of the TrueNAS web interface."
 weight: 90
@@ -52,7 +52,6 @@ tags: ["reference", "AFP", "FTP/SFTP/TFTP", "iSCSI", "NFS", "SMB", "webdav", "s3
 |-|-|
 | Username | Username for logging in to the provider and updating the record. |
 | Password | Password for logging in to the provider and updating the record. |
-
 
 ## FTP
 
@@ -140,7 +139,6 @@ tags: ["reference", "AFP", "FTP/SFTP/TFTP", "iSCSI", "NFS", "SMB", "webdav", "s3
 | IP Address | Select the IP addresses to be listened on by the portal. Click ADD to add IP addresses with a different network port. The address 0.0.0.0 can be selected to listen on all IPv4 addresses, or :: to listen on all IPv6 addresses. |
 | Port | TCP port used to access the iSCSI target. Default is 3260. |
 
-
 **Initiators**
 
 | | |
@@ -160,7 +158,6 @@ tags: ["reference", "AFP", "FTP/SFTP/TFTP", "iSCSI", "NFS", "SMB", "webdav", "s3
 | Peer User | Only entered when configuring mutual CHAP. Usually the same value as User. |
 | Peer Secret | Mutual secret password. Required when Peer User is set. Must be different than the Secret. |
 
-
 **Target**
 
 | | |
@@ -170,7 +167,6 @@ tags: ["reference", "AFP", "FTP/SFTP/TFTP", "iSCSI", "NFS", "SMB", "webdav", "s3
 | Initiator Group ID | Select which existing initiator group has access to the target. |
 | Authentication Method | Choices are None, Auto, CHAP, or Mutual CHAP. |
 | Authentication Group Number | Select None or an integer. This value represents the number of existing authorized accesses. |
-
 
 **Extents**
 
@@ -187,7 +183,6 @@ tags: ["reference", "AFP", "FTP/SFTP/TFTP", "iSCSI", "NFS", "SMB", "webdav", "s3
 | Xen initiator compat mode | Set when using Xen as the iSCSI initiator. |
 | LUN RPM | Do NOT change this setting when using Windows as the initiator. Only needs to be changed in large environments where the number of systems using a specific RPM is needed for accurate reporting statistics. |
 | Read-only | Set to prevent the initiator from initializing this LUN. |
-
 
 **Associated Targets**
 
@@ -263,7 +258,6 @@ tags: ["reference", "AFP", "FTP/SFTP/TFTP", "iSCSI", "NFS", "SMB", "webdav", "s3
 | Additional Parameters | Additional parameters. |
 | TLS Crypt Auth | Provide static key for authentication/encryption of all control channel packets when tls_crypt_auth_enabled is enabled. |
 
-
 ## OpenVPN Server
 
 **General Options**
@@ -292,8 +286,6 @@ tags: ["reference", "AFP", "FTP/SFTP/TFTP", "iSCSI", "NFS", "SMB", "webdav", "s3
 |-|-|
 | TCP Port | rsyncd listens on this port. |
 | Auxiliary Parameters | Enter any additional parameters from [rsyncd.conf(5)](https://www.samba.org/ftp/rsync/rsyncd.conf.html). |
-
-
 
 ## S.M.A.R.T
 
@@ -335,7 +327,6 @@ tags: ["reference", "AFP", "FTP/SFTP/TFTP", "iSCSI", "NFS", "SMB", "webdav", "s3
 |  |  |
 |  |  |
 
-
 **Other Options**
 
 | | |
@@ -361,8 +352,6 @@ tags: ["reference", "AFP", "FTP/SFTP/TFTP", "iSCSI", "NFS", "SMB", "webdav", "s3
 | Location | Enter the location of the system. |
 | Contact | E-mail address that will receive SNMP service messages. |
 | Community | Change from public to increase system security. Can only contain alphanumeric characters, underscores, dashes, periods, and spaces. This can be left empty for SNMPv3 networks. |
-
-
 
 **SNMP v3 Options**
 
@@ -443,7 +432,6 @@ tags: ["reference", "AFP", "FTP/SFTP/TFTP", "iSCSI", "NFS", "SMB", "webdav", "s3
 | Port or Hostname | Serial or USB port connected to the UPS. To automatically detect and manage the USB port settings, select auto. |
 |  | When an SNMP driver is selected, enter the IP address or hostname of the SNMP UPS device. |
 
-
 **Monitor**
 
 | | |
@@ -480,8 +468,6 @@ tags: ["reference", "AFP", "FTP/SFTP/TFTP", "iSCSI", "NFS", "SMB", "webdav", "s3
 | Auxiliary Parameters (ups.conf) | nter any extra options from [UPS.CONF(5)](http://networkupstools.org/docs/man/ups.conf.html). |
 | Auxiliary Parameters (upsd.conf) | Enter any extra options from [UPSD.CONF(5)](http://networkupstools.org/docs/man/upsd.conf.html). |
 
-
-
 ## WebDAV
 
 **General Options**
@@ -492,4 +478,3 @@ tags: ["reference", "AFP", "FTP/SFTP/TFTP", "iSCSI", "NFS", "SMB", "webdav", "s3
 | HTTP Port | Specify a port for unencrypted connections. The default port 8080 is recommended. Do not reuse a port. |
 | HTTP Authentication | Basic Authentication is unencrypted. Digest Authentication is encrypted. |
 | Webdav Password | The default of davtest is recommended to change. davtest is a known value. |
-

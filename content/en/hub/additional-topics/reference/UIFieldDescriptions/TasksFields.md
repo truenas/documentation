@@ -1,5 +1,5 @@
 ---
-title: "Interface Fields Reference Guide: Tasks"
+title: "FRG: Tasks"
 linkTitle: "Tasks"
 description: "Descriptions of each field in the Tasks section of the TrueNAS web interface."
 weight: 40
@@ -20,7 +20,7 @@ tags: ["reference", "cron", "rsync", "S.M.A.R.T.", "snapshots", "replication", "
 | Hide Standard Error | Hide error output (stderr) from the command. When unset, any error output is mailed to the user account cron used to run the command. |
 | Enabled | Enable this cron job. When unset, disable the cron job without deleting it. |
 
-## Init shutdown
+## Init/Shutdown Scripts
 
 **Add**
 
@@ -33,7 +33,7 @@ tags: ["reference", "cron", "rsync", "S.M.A.R.T.", "snapshots", "replication", "
 | Enabled | Enable this task. Unset to disable the task without deleting it. |
 | Timeout | Automatically stop the script or command after the specified seconds. |
 
-## Rsync Tasks Add
+## Rsync Tasks: Add
 
 **Source**
 
@@ -75,8 +75,6 @@ tags: ["reference", "cron", "rsync", "S.M.A.R.T.", "snapshots", "replication", "
 | Auxiliary Parameters | Additional [rsync(1)](https://rsync.samba.org/ftp/rsync/rsync.html) options to include. Separate entries by pressing Enter. Note: The "*" character must be escaped with a backslash (\\*.txt) or used inside single quotes ('*.txt'). |
 | Enabled | Enable this rsync task. Unset to disable this rsync task without deleting it. |
 
-
-
 ## S.M.A.R.T. Tests
 
 **Add**
@@ -88,9 +86,7 @@ tags: ["reference", "cron", "rsync", "S.M.A.R.T.", "snapshots", "replication", "
 | Description | Enter any information about this S.M.A.R.T. test. |
 | Schedule | Choose one of the presets or select Custom to open the advanced scheduler. |
 
-
-## Periodic Snapshot Tasks Add
-
+## Periodic Snapshot Tasks: Add
 
 **Dataset**
 
@@ -112,8 +108,7 @@ tags: ["reference", "cron", "rsync", "S.M.A.R.T.", "snapshots", "replication", "
 | Allow Taking Empty Snapshots | Creates dataset snapshots even when there have been no changes to the dataset from the last snapshot. Recommended for reating long-term restore points, multiple snapshot tasks pointed at the same datasets, or to be compatible with snapshot schedules or replications created in TrueNAS 11.2 and earlier. For example, allowing empty snapshots for a monthly snapshot schedule allows that monthly snapshot to be taken, even when a daily snapshot task has already taken a snapshot of any changes to the dataset. |
 | Enabled | To activate this periodic snapshot schedule, set this option. To disable this task without deleting it, unset this option. |
 
-
-## Replication Tasks Wizard
+## Replication Tasks: Wizard
 
 **What and Where**
 
@@ -143,8 +138,7 @@ tags: ["reference", "cron", "rsync", "S.M.A.R.T.", "snapshots", "replication", "
 | Encryption | Set to use encryption when replicating data. Additional encryption options will appear. |
 | SSH Transfer Security | Data transfer security. The connection is authenticated with SSH. Data can be encrypted during transfer for security or left unencrypted to maximize transfer speed. Encryption is recommended, but can be disabled for increased speed on secure networks. |
 
-## Replication Tasks Advanced
-
+## Replication Tasks: Advanced
 
 **General**
 
@@ -200,11 +194,7 @@ tags: ["reference", "cron", "rsync", "S.M.A.R.T.", "snapshots", "replication", "
 | Synchronize Destination Snapshots With Source | Set to use encryption when replicating data. Additional encryption options will appear. |
 | Snapshot Retention Policy | If the destination system has snapshots but they do not have any data in common with the source snapshots, destroy all destination snapshots and do a full replication. Warning: enabling this option can cause data loss or excessive data transfer if the replication is misconfigured.  When replicated snapshots are deleted from the destination system:  *Same as Source*: use the Snapshot Lifetime from from the source periodic snapshot task.  *Custom*: define a Snapshot Lifetime for the destination system. *None*: never delete snapshots from the destination system. |
 
-
-
-
 ## Resilver Priority
-
 
 **Resilver Priority**
 
@@ -215,9 +205,7 @@ tags: ["reference", "cron", "rsync", "S.M.A.R.T.", "snapshots", "replication", "
 | End | Choose the hour and minute when new resilver tasks are not allowed to start. This does not affect active resilver tasks. |
 | Days of the Week | Select the days to run resilver tasks. |
 
-
-## Scrub Tasks Add
-
+## Scrub Tasks: Add
 
 **Scrub Tasks**
 
@@ -229,8 +217,7 @@ tags: ["reference", "cron", "rsync", "S.M.A.R.T.", "snapshots", "replication", "
 | Schedule | How often to run the scrub task. Choose one of the presets or choose Custom to use the advanced scheduler. |
 | Enabled | Unset to disable the scheduled scrub without deleting it. |
 
-## Cloud Sync Tasks Add
-
+## Cloud Sync Tasks: Add
 
 **Transfer**
 

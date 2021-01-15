@@ -1,5 +1,5 @@
 ---
-title: "Interface Fields Reference Guide: Network"
+title: "FRG: Network"
 linkTitle: "Network"
 description: "Descriptions of each field in the Network section of the TrueNAS web interface."
 weight: 50
@@ -45,7 +45,6 @@ tags: ["reference", "networking", "IPMI"]
 | IPv4 Default Gateway | Enter an IPv4 address. This overrides the default gateway provided by DHCP. |
 | IPv6 Default Gateway | Enter an IPv6 address. This overrides the default gateway provided by DHCP. |
 
-
 ## Interfaces
 
 **Interface Settings**
@@ -72,8 +71,7 @@ tags: ["reference", "networking", "IPMI"]
 |-|-|
 | IP Address | Define an alias for the interface on this TrueNAS controller. The alias can be an IPv4 or IPv6 address. |
 
-
-## Static Routes Add
+## Static Routes: Add
 
 **General Options**
 
@@ -95,11 +93,8 @@ tags: ["reference", "networking", "IPMI"]
 | IPv4 Default Gateway | Enter the default gateway of the IPv4 connection. |
 | VLAN ID | If the IPMI out-of-band management interface is on a different VLAN from the management network, enter the IPMI VLAN. |
 
-
 **IPMI Password Reset**
 
 | | |
 |-|-|
 | Password | Enter the password used to connect to the IPMI interface from a web browser. |
-
-
