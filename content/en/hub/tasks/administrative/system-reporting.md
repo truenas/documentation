@@ -1,6 +1,6 @@
 ---
-title: "System Reporting"
-description: "A how-to guide on configuring basic reports."
+title: "Statistics Reporting"
+description: "How to view and configure system statistical graphs."
 ---
 
 ## Reporting General Settings
