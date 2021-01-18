@@ -10,7 +10,6 @@ tags: ["components"]
 
 {{< youtube GjalxUIu4MA >}}
 
-
 ## Hardware Requirements
 
 The following is a list of minimum hardware requirements to install and run TrueNAS.
@@ -138,7 +137,7 @@ After following the steps to install, reboot the system and remove the install m
 Congratulations!
 TrueNAS is now installed.
 
-The next steps are to either wait for the system to boot and [access the web interface](/hub/initial-setup/login/) or boot the system and configure the [console setup menu](/hub/initial-setup/cli-menu/).
+The next steps are to either wait for the system to boot and [access the web interface](/hub/initial-setup/firsttimelogin/webuilogin/) or boot the system and configure the [console setup menu](/hub/initial-setup/firsttimelogin/cli-menu/).
 
 ## Installation Troubleshooting
 
