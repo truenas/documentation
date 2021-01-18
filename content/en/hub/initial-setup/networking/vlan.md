@@ -11,8 +11,6 @@ To set up a VLAN interface, go to **Network > Interface > Add**.
 <img src="/images/tn-add-vlan-interface.png">
 <br><br>
 
-Set **Type** to *Link Aggregation*.
-
 Set interface type to `VLAN` and name the interface with the format of *vlanX*, where X is a number representing a non-parent interface.  Enable DHCP and IPv6 as needed on your network.  
 Under *VLAN Settings* select the Parent Interface the VLAN will work with, and create a *vlan tag*.  THe VLAN tag is a numeric tag configured in the switching network. 
 
