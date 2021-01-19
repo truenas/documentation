@@ -8,17 +8,27 @@ While TrueNAS is designed for and ever-evolving towards increased user friendlin
 
 ## General Concepts
 
-* Operating System (OS):
-* Open Source:
-* Network Attach Storage (NAS):
-* Storage Area Network (SAN):
-* Software as a Service (SaaS):
-* Storage:
-* File System:
-* Networking:
-* Sharing:
-* Virtualization:
-* Encryption:
+* Operating System (OS): An operating system (OS) is system software that manages computer hardware, software resources, and provides common services for computer programs.
+
+* Open Source: Open-source software is a type of computer software in which source code is released under a license in which the copyright holder grants users the rights to use, study, change, and distribute the software to anyone and for any purpose.
+
+* Network Attach Storage (NAS): Network-attached storage (NAS) is a computer data storage server connected to a computer network providing data access to a heterogeneous group of clients.
+
+* Storage Area Network (SAN): A storage area network (SAN) or storage network is a computer network which provides access to consolidated, block-level data storage. SANs are primarily used to access storage devices, such as disk arrays and tape libraries from servers so that the devices appear to the operating system as direct-attached storage.
+
+* Software as a Service (SaaS): Software as a service (SaaS) is a software licensing and delivery model in which software is licensed on a subscription basis and is centrally hosted. It is sometimes referred to as "on-demand software".
+
+* Storage: Computer data storage is a technology consisting of computer components and recording media that are used to retain digital data.
+
+* File System: A file system or filesystem (fs) controls how data is stored and retrieved. Without a file system, data placed in a storage medium would be one large body of data with no way to tell where one piece of data stops and the next begins.
+
+* Networking: A computer network is a group of computers that use a set of common communication protocols over digital interconnections for the purpose of sharing resources located on or provided by the network nodes.
+
+* Sharing: File sharing is the public or private sharing of computer data or space in a network of multiple systems.
+
+* Virtualization: Virtualization refers to the act of creating a virtual (rather than physical) version of something, including virtual computer hardware platforms, storage devices, and computer network resources.
+
+* Encryption: In cryptography, encryption is the process of encoding information. This process converts the original representation of the information, known as plaintext, into an alternative form known as ciphertext. Ideally, only authorized parties can decipher a ciphertext back to plaintext and access the original information. Encryption does not itself prevent interference but denies the intelligible content to a would-be interceptor.
 
 ## Accounts Terminology
 
@@ -80,6 +90,7 @@ A Cloud Sync is when TrueNAS is configured to send, receive, or synchronize data
 
 ## Networking Terminology
 
+
 * Certificate Authority (CA): A certificate authority or CA is an entity that issues digital certificates. A digital certificate certifies the ownership of a public key by the named subject of the certificate.
 
 * Certificate: A Certificate is an electronic document used to prove the ownership of a public key. The certificate includes information about the key, information about the identity of its owner, and the digital signature of an entity that has verified the certificate.
@@ -127,18 +138,6 @@ A Cloud Sync is when TrueNAS is configured to send, receive, or synchronize data
 * KMIP: The Key Management Interoperability Protocol (KMIP) is an extensible client/server communication protocol for the storage and maintenance of keys, certificates, and secret objects.
 
 * Kerberos: Kerberos is a computer-network authentication protocol designed by MIT that works on the basis of tickets to allow nodes communicating over a non-secure network to prove their identity to one another in a secure manner. 
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
