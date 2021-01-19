@@ -43,3 +43,5 @@ Each node can support Virtual Machines (with the KVM hypervisor) as well as Dock
 
 
 <img src="https://www.truenas.com/wp-content/uploads/2020/11/TrueNAS_SCALE_Software_Features_Data_Sheet_2020_image-scaled.jpg"> <br><br>
+
+For more information, contact iXsystems at [info@ixsystems.com](mailto:info@ixsystems.com) or visit [TrueNAS.com](https://www.truenas.com)
