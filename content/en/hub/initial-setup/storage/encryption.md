@@ -154,7 +154,7 @@ Before using the command line to migrate data, it is recommended to consider the
 {{% /pageinfo %}}
 
 ZFS data migration can be a complicated process.
-You can ask for assistance in the [TrueNAS Community Forums](https://www.ixsystems.com/community/) or, if you have a support contract with iXsystems, [contact iX Support](/hub/additional-topics/support/#support-in-truenas-enterprise) for assistance.
+You can ask for assistance in the [TrueNAS Community Forums](https://www.ixsystems.com/community/) or, if you have a support contract with iXsystems, [contact iX Support](/hub/initial-setup/support/#support-in-truenas-enterprise) for assistance.
 
 ### File Transfer
 
