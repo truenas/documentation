@@ -6,6 +6,7 @@ weight: 15
 TrueNAS is very complicated software that combines many different Open Source solutions into one cohesive software package.
 While TrueNAS is designed for and ever-evolving towards increased user friendliness, there are many terms and concepts that can be learned to improve your ability to understand and configure the software.
 
+
 ## General Concepts
 
 * Operating System (OS): An operating system (OS) is system software that manages computer hardware, software resources, and provides common services for computer programs.
@@ -30,6 +31,7 @@ While TrueNAS is designed for and ever-evolving towards increased user friendlin
 
 * Encryption: In cryptography, encryption is the process of encoding information. This process converts the original representation of the information, known as plaintext, into an alternative form known as ciphertext. Ideally, only authorized parties can decipher a ciphertext back to plaintext and access the original information. Encryption does not itself prevent interference but denies the intelligible content to a would-be interceptor.
 
+
 ## Accounts Terminology
 
 * `root` User: "root" is the primary account that by default has access to all commands and files on a Linux and Unix-like operating systems. It is also referred to as the root account, root user, and/or the superuser.  This is similar to the "Administrator" account on Windows.
@@ -48,6 +50,7 @@ While TrueNAS is designed for and ever-evolving towards increased user friendlin
 * [Zettabyte File System (ZFS)](/hub/additional-topics/reference/zfs-references/): ZFS is a next-generation file system designed by Sun Microsystems that eliminates most, if not all of the shortcomings found in legacy file systems and hardware RAID devices.
 
 * iSCSI: iSCSI stands for Internet Small Computer Systems Interface. iSCSI is a transport layer protocol that works on top of the Transport Control Protocol (TCP).  It provides block-level access to storage devices by carrying SCSI commands over a TCP/IP network.
+
 
 ### ZFS
 
@@ -90,6 +93,7 @@ Repliation works with snapshots so only the changes to the stored data need to b
 
 [Cloud Sync](h/hub/tasks/scheduled/cloudsync/)
 A Cloud Sync is when TrueNAS is configured to send, receive, or synchronize data with a Cloud Storage provider like Amazon S3, Google Cloud, and Microsft Azure.
+
 
 ## Networking Terminology
 
