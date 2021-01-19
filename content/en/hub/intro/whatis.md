@@ -69,7 +69,7 @@ You can read the Open Source software, try out TrueNAS in a VM at zero cost, or 
 <img src="/images/truenas-features.png">
 <br><br>
 
-TrueNAS SCALE uses much of the same TrueNAS CORE source code, but adds a few different capabilities which are defined by this acronym:
+[TrueNAS SCALE](/hub/scale/scaleintro/) uses much of the same TrueNAS CORE source code, but adds a few different capabilities which are defined by this acronym:
 
 **S**cale-out ZFS<br>
 **C**onverged<br>
