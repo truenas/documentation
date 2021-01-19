@@ -71,10 +71,20 @@ In the **Email** field, enter a remote email address that is regularly monitored
 
 Additional configuration is done from **System > Email**.
 
-<img src="/images/TN12-emailsetup.png">
+<img src="/images/TN12-emailsetup-01.png">
 <br><br>
 Set the address the email will come from, along with the From Name.  Enter the mail server address and the correct port.  Select the desired security option, and enable SMTP and enter the credentials if necessary.
 
+
+To use Gmail OAuth, select the option and click **LOG IN TO GMAIL**.
+Log into your gmail account as you normally would.
+
+<img src="/images/TN12-emailsetup-02.png">
+<br><br>
+<img src="/images/TN12-emailsetup-03.png">
+<br><br>
+<img src="/images/TN12-emailsetup-04.png">
+<br><br>
 
 ### SMTP Authentication Settings
 
