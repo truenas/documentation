@@ -69,13 +69,11 @@ Then insert the CD into the TrueNAS system and boot from the CD.
 
 ### Windows
 
-To write the TrueNAS installer to a USB stick on Windows, plug the USB stick into the system and use [Rufus](http://rufus.akeo.ie/) to burn the *.iso* file to the stick.
-[Win32 Image Writer](https://launchpad.net/win32-image-writer/) can also burn write the TrueNAS installer, but only when the USB stick does not have a previous TrueNAS installer.
+To write the TrueNAS installer to a USB stick on Windows, plug the USB stick into the system and use [Rufus](http://rufus.akeo.ie/) to write the *.iso* file to the memory stick. When Rufus prompts for which write method to use, please ensure that "dd mode" is selected. 
 
 The USB stick will not be recognized by Windows after the TrueNAS installer has been written to it.
 To reclaim the USB stick after installing TrueNAS, use Rufus to write a "Non bootable" image, then remove and reinsert the USB stick.
-Alternately, [diskpart](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/diskpart) can be used to clean the USB stick.
-Be very careful with `diskpart`, as choosing the wrong disk can result in irretrievable data loss!
+
 
 ### Linux
 
