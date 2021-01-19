@@ -1,0 +1,17 @@
+name: Daily link check
+on:
+  schedule:
+  # Every day at 6:00 AM UTC
+  - cron: "0 6 * * *"
+jobs:
+  markdown-link-check:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - uses: gaurav-nelson/github-action-markdown-link-check@v1
+      with:
+        use-quiet-mode: 'yes'
+        use-verbose-mode: 'yes'
+        folder-path: './content/en'
+        max-depth: -1
+        file-path: config.toml
