@@ -32,9 +32,12 @@ While TrueNAS is designed for and ever-evolving towards increased user friendlin
 
 ## Accounts Terminology
 
-* Group:
-* User:
-* `root` User:
+* `root` User: "root" is the primary account that by default has access to all commands and files on a Linux and Unix-like operating systems. It is also referred to as the root account, root user, and/or the superuser.  This is similar to the "Administrator" account on Windows.
+
+* User: A 'user' account is an additional account on a Linux and Unix-like operating system that has a lower permission levels than the "root" account. 
+
+* Group:  A group is a collection of users. The main purpose of the groups is to easily define a set of privileges like read, write, or execute permission for a given resource that can be shared among the multiple users within the group. 
+
 
 ## Storage Terminology
 
