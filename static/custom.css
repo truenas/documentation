@@ -7,10 +7,7 @@
 /* Site header */
 .gdoc-header {
 	background: #ffffff;
-}
-.container.flex.align-center.justify-between {
-}
-.truenas-menubar {
+	border-bottom: 1em solid #007cba;
 }
 .truenas-menuitem {
 	position: relative;
@@ -58,4 +55,11 @@
  }
 .truenas-downloadbutton a {color:#ffffff;}
 /* End site header */
-
+/* Site footer */
+.gdoc-footer {
+	background-color: #007cba;
+}
+.gdoc-footer__link a {
+	color: #white;
+}
+/* End site footer */
