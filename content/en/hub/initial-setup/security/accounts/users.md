@@ -5,10 +5,10 @@ description: "How to add or manage user accounts."
 
 User accounts can be added to the TrueNAS system to allow flexibility for user permissions to access shared data.
 Note that only the `root` user account can be used to log in to the TrueNAS web interface.
-A common practice is to create users and assign them to <a href="/hub/tasks/administrative/groups/">groups</a>.
+A common practice is to create users and assign them to <a href="/hub/initial-setup/security/accounts/groups/">groups</a>.
 This allows for efficient permissions tuning for large numbers of users.
 
-If the network uses a directory service, import the existing account information using the instructions in <a href="/hub/initial-setup/directory-services/">Directory Services</a>.
+If the network uses a directory service, import the existing account information using the instructions in <a href="/hub/initial-setup/security/directory-services/">Directory Services</a>.
 When using [Active Directory](/hub/initial-setup/security/directory-services/activedirectory/), Windows user passwords must be set from within Windows.
 
 To see user accounts, go to **Accounts > Users**.

@@ -14,4 +14,4 @@ All warranted systems inherit the iXsystems RMA policy. The details of the polic
 
 **FreeNAS/Server International RMA Policy**: Advanced Replacement; customer responsible for returning failed component (no shipping label). Parts must be received by iXsystems within 30 days to avoid an automated invoice for the full cost of the replacement part.
 
-For additional info, please [contact the iXsystems Support team](https://www.truenas.com/docs/hub/additional-topics/support/#contacting-ixsystems-support) at any time!
+For additional info, please [contact the iXsystems Support team](/hub/initial-setup/support/#contacting-ixsystems-support) at any time!

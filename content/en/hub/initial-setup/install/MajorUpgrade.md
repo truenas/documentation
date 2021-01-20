@@ -15,7 +15,7 @@ TrueNAS provides flexibility for keeping the operating system up-to-date:
    Boot environments provide the option to return to the previous version of the operating system by rebooting the system and selecting the previous boot environment from the **System > Boot** menu.
 
 This article describes how to use an `.iso` file to perform a major version upgrade from an earlier version of FreeNAS/TrueNAS.
-See the [Updating](/hub/tasks/administrative/update-guide/) article for instructions about using the web interface to keep the system updated.
+See the [Updating](/hub/initial-setup/install/update-guide/) article for instructions about using the web interface to keep the system updated.
 
 The upgrade path for major versions of FreeNAS/TrueNAS is **9.3 > 9.10 > 11.1 > 11.3 > 12.0**.
 It is always recommended to upgrade to a [supported version](/hub/intro/lifecycle/) of the software.
@@ -64,7 +64,7 @@ For example, this is the path to download an `.iso` of the latest FreeNAS 11.3 r
 <img src="/images/FN11.3Latest.png">
 <br><br>
 
-Burn the downloaded `.iso` file to a CD or USB stick. Refer to the [Preparing Media](/hub/initial-setup/install/physicalhardware/#preparing-the-install-media) instructions in the Installation article for tips about burning the `.iso` to media using different Operating Systems.
+Burn the downloaded `.iso` file to a CD or USB stick. Refer to the [Preparing Media](/hub/initial-setup/install/firsttimeinstall/#preparing-the-install-media) instructions in the Installation article for tips about burning the `.iso` to media using different Operating Systems.
 
 Insert the prepared media into the system and boot from it.
 The installer waits ten seconds in the installer boot menu before booting the default option.

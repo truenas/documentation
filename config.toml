@@ -136,7 +136,7 @@ url = "https://www.ixsystems.com/documentation/freenas/11.3-U4/freenas.html"
 [[params.versions]]
 fullversion = "TrueCommand 1.2"
 version = "TC 1.2"
-url = "/hub/additional-topics/legacy/tc-legacy-docs/truecommand-1.2/"
+url = "https://www.ixsystems.com/documentation/truecommand/"
 
 # User interface configuration
 [params.ui]
