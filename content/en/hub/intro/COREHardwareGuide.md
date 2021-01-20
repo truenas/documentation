@@ -29,7 +29,7 @@ Therefore, this guide will use the TrueNAS Mini and FreeNAS Certified systems as
 At the heart of any storage system is the symbiotic pairing of its file system and its physical storage devices.
 The ZFS file system in TrueNAS provides the [best available data protection of any filesystem at any cost](https://www.ixsystems.com/blog/openzfs-vs-the-competition/) and makes very effective use of both spinning disk and all-flash storage, or a mix of the two.
 ZFS is fully prepared for the eventual failure of storage devices and is highly-configurable to achieve the perfect balance of redundancy and performance to meet any storage goal.
-A properly-configured TrueNAS system can tolerate the failure of multiple storage devices and even its boot media which can be quickly re-created with a copy of the [configuration file](/hub/initial-setup/firsttimelogin/systemsettings/).
+A properly-configured TrueNAS system can tolerate the failure of multiple storage devices and even its boot media which can be quickly re-created with a copy of the [configuration file](/hub/tasks/administrative/backup-config/).
 Choosing storage media is the first step in designing the storage system to meet immediate objectives and prepare for future capacity expansion.
 
 ### Spinning Disks

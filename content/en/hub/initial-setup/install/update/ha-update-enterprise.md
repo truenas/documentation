@@ -13,7 +13,7 @@ An update usually takes between thirty minutes and an hour.
 A reboot is required after the update, so it is recommended to schedule updates during a maintenance window, allowing two to three hours to update, test, and possibly roll back if issues appear.
 On very large systems, a proportionally longer maintenance window is recommended.
 
-For individual support during an upgrade, please [contact iXsystems Support](/hub/initial-setup/support/#support-in-truenas-enterprise) to schedule your upgrade.
+For individual support during an upgrade, please [contact iXsystems Support](/hub/initial-setup/support/#contacting-ixsystems-support) to schedule your upgrade.
 Scheduling at least two days in advance of a planned upgrade gives time to make sure a specialist is available for assistance.
 Updating from earlier than version 9.3 of TrueNAS must be scheduled with iXsystems Support.
 
