@@ -19,7 +19,7 @@ The OS does not require a special on-disk format and there is no attempt to conn
 
 After reviewing our reliability data, no significant benefit was found to using multipathing within the FNC line of products.
 Wide porting performs equally well and, in some specific cases, even better.
-If higher availability is needed, a dual controller system like the [M-Series](/hub/hardware/m-series/) should be used.
+If higher availability is needed, a dual controller system like the [M-Series](/docs/hardware/m-series/) should be used.
 
 There are several reasons to discontinue the use of multipathing on the FNC line:
 
@@ -39,4 +39,4 @@ On an existing system, we recommend keeping the multipath functional unless itâ€
 
 The existing multipathing software within TrueNAS CORE (and FreeBSD) is unchanged and will continue to be supported.
 
-If any existing FNC customers have questions about this issue, please discuss in the [forums](https://www.ixsystems.com/community/) or [contact us](/hub/additional-topics/support/#contacting-ixsystems-support).
+If any existing FNC customers have questions about this issue, please discuss in the [forums](https://www.ixsystems.com/community/) or [contact us](/hub/initial-setup/support/#support-in-truenas-enterprise).
