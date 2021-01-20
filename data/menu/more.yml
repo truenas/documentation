@@ -1,0 +1,15 @@
+#available icons: https://github.com/thegeeklab/hugo-geekdoc/tree/master/src/icons
+---
+more:
+  - name: News
+    ref: "https://www.ixsystems.com/blog/"
+    external: true
+    icon: "notification"
+  - name: Legacy Documentation
+    ref: "https://www.ixsystems.com/library/"
+    external: true
+    icon: "bookmark"
+  - name: "View Source"
+    ref: "https://github.com/freenas/documentation"
+    external: true
+    icon: "github"

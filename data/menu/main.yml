@@ -1,0 +1,14 @@
+# Manually defined menu that is currently disabled. To enable, set geekdocMenuBundle = true in config.toml
+---
+main:
+  - name: TrueNAS Core/Enterprise
+    ref: "/CORE"
+    icon: "notification"
+    sub:
+      - name: Overview
+        ref: "/CORE/Overview"
+        sub:
+          - name: Introduction
+            ref: /CORE/Overview/Introduction
+      - name: Getting Started Guide
+        ref: "/CORE/GettingStarted"

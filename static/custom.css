@@ -1,0 +1,61 @@
+/* Adjust overall site height */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 10vh;
+}
+/* Site header */
+.gdoc-header {
+	background: #ffffff;
+}
+.container.flex.align-center.justify-between {
+}
+.truenas-menubar {
+}
+.truenas-menuitem {
+	position: relative;
+	display: inline-block;
+}
+.truenas-menubutton {
+	background-color: #ffffff;
+	color: black;
+	padding: 16px;
+	font-size: 16px;
+	border: none;
+}
+.truenas-menubutton a {color:#black;}
+.truenas-menulink {
+	background-color: #ffffff;
+	color: black;
+	padding: 16px;
+	font-size: 16px;
+	border: none;
+}
+.truenas-menulink a {color:#black;}
+.truenas-menudropdown {
+	display: none;
+	position: absolute;
+	background-color: #007cba;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+}
+.truenas-menudropdown a {
+	color: white;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+.truenas-menudropdown a:hover {color: #bbb;}
+.truenas-menuitem:hover .truenas-menudropdown {display: block;}
+.truenas-menuitem:hover .truenas-menubutton {background-color: #ffffff;color:#31beec;}
+.truenas-downloadbutton {
+	background:#71bf44;
+	padding: 5px 25px!important;
+    margin: 10px;
+    border-radius: 15px;
+    border: none;
+ }
+.truenas-downloadbutton a {color:#ffffff;}
+/* End site header */
+
