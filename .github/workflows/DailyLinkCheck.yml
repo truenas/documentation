@@ -14,4 +14,4 @@ jobs:
         use-quiet-mode: 'no'
         use-verbose-mode: 'yes'
         max-depth: -1
-        config-file: './static/config.json'
+        config-file: 'static/config.json'
