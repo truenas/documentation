@@ -9,9 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - uses: gaurav-nelson/github-action-markdown-link-check@v1
+    - uses: gaurav-nelson/github-action-markdown-link-check@1.0.12
       with:
         use-quiet-mode: 'no'
         use-verbose-mode: 'yes'
         max-depth: -1
-        config-file: 'static/config.json'
