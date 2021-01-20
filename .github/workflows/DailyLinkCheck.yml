@@ -11,7 +11,7 @@ jobs:
     - uses: actions/checkout@master
     - uses: gaurav-nelson/github-action-markdown-link-check@v1
       with:
-        use-quiet-mode: 'yes'
+        use-quiet-mode: 'no'
         use-verbose-mode: 'yes'
         max-depth: -1
         config-file: './static/config.json'
