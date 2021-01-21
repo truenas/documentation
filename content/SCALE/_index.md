@@ -1,5 +1,5 @@
 ---
-title: "TrueNAS SCALE"
+title: "SCALE"
 geekdocCollapseSection: true
 weight: 20
 ---
