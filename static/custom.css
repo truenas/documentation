@@ -63,3 +63,9 @@
 	color: #white;
 }
 /* End site footer */
+/* Styling images in the Topics Tab Boxes */
+.topic-image {
+	width:25%;
+	float:left;
+	padding-right:20px;
+}

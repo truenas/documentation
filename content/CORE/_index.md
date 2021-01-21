@@ -4,12 +4,40 @@ geekdocCollapseSection: true
 weight: 10
 ---
 
-<p style="max-width:100%;">TrueNAS® is an embedded open source network-attached storage (NAS) operating system that is designed to be the most effective and time-efficient solution for storing, securing, and sharing data over a network.
-TrueNAS incorporates a variety of open source licensed solutions to provide powerful data storage and sharing, including 2-Clause BSD, 3-Clause BSD, MIT, GPL v2 and GPL v3, and CDDL.<br><br>
-The topics on this page are arranged to guide you through learning about TrueNAS, installing and configuring the system, then setting up data storage and sharing.
-There are additional topics for the TrueCommand and TrueNAS SCALE members of the TrueNAS family, 3rd party software integration notes, and reference documentation for the powerful and cost-effective TrueNAS storage appliances available for purchase from iXsystems.
-</p>
+TrueNAS® is an embedded open source network-attached storage (NAS) operating system that is designed to be the most effective and time-efficient solution for storing, securing, and sharing data over a network.
+TrueNAS incorporates a variety of open source licensed solutions to provide powerful data storage and sharing, including 2-Clause BSD, 3-Clause BSD, MIT, GPL v2 and GPL v3, and CDDL.
 
+The topics on this page are arranged to guide you through learning about TrueNAS, a basic setup guide for quickly installing and doing a basic system configuration, and then many advanced configuration topics for more complicated installations and use cases.
+
+{{< tabs "CORE Topics" >}}
+{{< tab "Overview" >}}
+<img class="topic-image" src="/images/co_work.jpg">Start by learning all about TrueNAS! Read about the software features, keep up with the development, and find hardware recommendations for installing TrueNAS.
+* [Release Notes](/hub/intro/release-notes/)
+* [Release Schedule](/hub/intro/truenas-roadmap/)
+* [CORE Hardware Guide](/hub/intro/corehardwareguide/)
+{{< /tab >}}
+{{< tab "Getting Started" >}}
+{{< /tab >}}
+{{< tab "Storage" >}}
+text
+{{< /tab >}}
+{{< tab "Sharing" >}}
+text
+{{< /tab >}}
+{{< tab "Networking" >}}
+text
+{{< /tab >}}
+{{< tab "Security" >}}
+text
+{{< /tab >}}
+{{< tab "Solution Integrations" >}}
+text
+{{< /tab >}}
+{{< tab "References" >}}
+text
+{{< /tab >}}
+{{< /tabs >}}
+<!--
 ## Introducing TrueNAS
 
 <div class="hubrow">
@@ -132,3 +160,4 @@ There are additional topics for the TrueCommand and TrueNAS SCALE members of the
 		<a class="linkbutton" href="/hub/additional-topics/">Additional Topics</a>
 	</div>
 </div>
+-->
