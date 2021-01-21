@@ -7,7 +7,7 @@ Using groups in TrueNAS can be an efficient way of managing permissions for many
 See <a href="/hub/initial-setup/security/accounts/users/">users</a> for managing users.
 The interface provides management of UNIX-style groups.
 If the network uses a directory service, import the existing account information using the instructions in
-<a href="/hub/initial-setup/directory-services/">Directory Services</a>.
+<a href="/hub/initial-setup/security/directory-services/activedirectory/">Directory Services</a>.
 
 To see saved groups, go to **Accounts > Groups**
 
