@@ -95,7 +95,7 @@ Legacy documentation for discontinued iXsystems products is also archived here.<
 		The TrueNAS M-Series provides High Availability (HA), hybrid capacity, and all-flash performance configurations.
 		The M-Series grows to support multiple 100GbE ports and over 20PB of storage.
 		All TrueNAS Enterprise systems use OpenZFS to give you unbelievable performance with legendary protection and reliability for your mission-critical data.</p>
-		<p><a href="/hardware/m-series/m-series-bsg/">M-Series Basic Setup Guide</a><br>
+		<p><a href="/hardware/m-series/mseries-3g/">M-Series Basic Setup Guide</a><br>
 		<a href="/hardware/m-series/m-series-satadom-replacement/">M-Series SATADOM Replacement Guide</a></p>
 		<a class="linkbutton" href="/hardware/m-series/">TrueNAS M-Series</a>
 	</div>
