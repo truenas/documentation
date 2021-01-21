@@ -20,7 +20,7 @@
 	font-size: 16px;
 	border: none;
 }
-.truenas-menubutton a {color:#black;}
+.truenas-menubutton,.truenas-menubutton a {color:#black;cursor:pointer;}
 .truenas-menulink {
 	background-color: #ffffff;
 	color: black;
