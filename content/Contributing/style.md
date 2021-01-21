@@ -179,15 +179,15 @@ With non-breaking space: Click the <i class="fas fa-ellipsis-v" aria-hidden="tru
 
 #### Icon Examples
 
-<i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i> = `<i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>`
+<i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> = `<i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>`
 
-<i class="fas fa-cog" aria-hidden="true" title="Settings"></i> = `<i class="fas fa-cog" aria-hidden="true" title="Settings"></i>`
+<i class="fa fa-cog" aria-hidden="true" title="Settings"></i> = `<i class="fa fa-cog" aria-hidden="true" title="Settings"></i>`
 
-<i class="fas fa-pen" aria-hidden="true" title="Pen"></i> = `<i class="fas fa-pen" aria-hidden="true" title="Pen"></i>`
+<i class="fa fa-pencil" aria-hidden="true" title="Pen"></i> = `<i class="fa fa-pencil" aria-hidden="true" title="Pencil"></i>`
 
 <i class="fa fa-bell" aria-hidden="true" title="Alert"></i> = `<i class="fa fa-bell" aria-hidden="true" title="Alert"></i>`
 
-<i class="fas fa-trash" aria-hidden="true" title="Delete"></i> = `<i class="fas fa-trash" aria-hidden="true" title="Delete"></i>`
+<i class="fa fa-trash" aria-hidden="true" title="Delete"></i> = `<i class="fa fa-trash" aria-hidden="true" title="Delete"></i>`
 
 <i class="fa fa-eye" aria-hidden="true" title="eye"></i> = `<i class="fa fa-eye" aria-hidden="true" title="eye"></i>`
 
