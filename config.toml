@@ -1,6 +1,7 @@
 #baseURL = "https://www.truenas.com/docs/"
 title = ""
 theme = "hugo-geekdoc"
+#disableKinds = ["home"]
 
 # Required to get well formatted code blocks
 pygmentsUseClasses = true
