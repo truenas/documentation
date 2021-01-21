@@ -17,6 +17,13 @@ enableGitInfo = true
     startLevel = 1
     endLevel = 9
 
+[services]
+[services.googleAnalytics]
+# Google Tag Manager is added directly to the baseof.html files in themes/docsy/layouts/ _default/ and hub/.
+# GA disabled by commenting out shortcode in themes/docsy/layouts/partials/head.html.
+# Commenting id line only disables the feature described in [params.ui.feedback].
+id = "UA-2174408-20"
+
 [params]
   # (Optional, default 6) Set how many table of contents levels to be showed on page.
   # Use false to hide ToC, note that 0 will default to 6 (https://gohugo.io/functions/default/)
