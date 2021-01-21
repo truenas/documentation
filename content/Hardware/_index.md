@@ -1,5 +1,5 @@
 ---
-title: "Hardware Products"
+title: "TrueNAS Hardware"
 geekdocCollapseSection: true
 weight: 40
 ---
