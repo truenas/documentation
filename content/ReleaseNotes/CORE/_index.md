@@ -1,5 +1,5 @@
 ---
-title: "Release Notes"
+title: "TrueNAS CORE"
 geekdocCollapseSection: true
-weight: 5
+weight: 10
 ---
