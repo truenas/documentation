@@ -2,6 +2,7 @@
 title: "External Systems"
 draft: false
 pre: "<i class='fas fa-chart-line'></i>	"
+geekdocCollapseSection: true
 ---
 
 ## API Class: external

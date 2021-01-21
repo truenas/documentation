@@ -2,6 +2,7 @@
 title: "Data Retrieval"
 draft: false
 pre: "<i class='fa fa-sitemap'></i>	"
+geekdocCollapseSection: true
 ---
 
 ## API Class: data

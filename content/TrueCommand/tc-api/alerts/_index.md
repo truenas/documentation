@@ -2,6 +2,7 @@
 title: "Alert management"
 draft: false
 pre: "<i class='fa fa-bell'></i>	"
+geekdocCollapseSection: true
 ---
 
 ## API Class: alerts

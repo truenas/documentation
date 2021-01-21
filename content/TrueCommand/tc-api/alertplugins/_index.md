@@ -2,6 +2,7 @@
 title: "Alert Notification Plugins"
 draft: false
 pre: "<i class='fa fa-bell'></i>	"
+geekdocCollapseSection: true
 ---
 
 ## API Class: alertplugins

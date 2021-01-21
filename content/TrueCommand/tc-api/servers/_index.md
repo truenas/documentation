@@ -2,6 +2,7 @@
 title: "Server management"
 draft: false
 pre: "<i class='fa fa-server'></i>	"
+geekdocCollapseSection: true
 ---
 
 ## API Class: servers

@@ -2,6 +2,7 @@
 title: "Notice management"
 draft: false
 pre: "<i class='fa fa-flag'></i>	"
+geekdocCollapseSection: true
 ---
 
 ## API Class: notices 

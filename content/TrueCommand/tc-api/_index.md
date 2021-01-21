@@ -2,6 +2,7 @@
 title: "TrueCommand API Calls"
 pre: "<i class='fa fa-bookmark'></i>	"
 tags: ["API"]
+geekdocCollapseSection: true
 ---
 
 ## Connection Summary

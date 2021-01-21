@@ -2,6 +2,7 @@
 title: "Cluster management"
 pre: "<i class='fa fa-bookmark'></i>	"
 draft: false
+geekdocCollapseSection: true
 ---
 
 ## API Class: cluster

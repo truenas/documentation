@@ -2,6 +2,7 @@
 title: "Remote Protocol Communications"
 pre: "<i class='fa fa-server'></i>	"
 draft: false
+geekdocCollapseSection: true
 ---
 
 ## API Class: rpc

@@ -2,6 +2,7 @@
 title: "System reports"
 pre: "<i class='fa fa-book'></i>	"
 draft: false
+geekdocCollapseSection: true
 ---
 
 ## API Class: reports

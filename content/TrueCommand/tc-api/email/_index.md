@@ -2,6 +2,7 @@
 title: "Email management"
 pre: "<i class='fa fa-envelope'></i>	"
 draft: false
+geekdocCollapseSection: true
 ---
 
 ## API Class: email
