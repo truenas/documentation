@@ -1,4 +1,4 @@
-<!-- GeekDoc modified with TrueNAS favicon and loading Font Awesome -->
+<!-- GeekDoc modified with the TrueNAS favicon and loading additional icon packs -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="{{ partial "title" . }}">
@@ -6,7 +6,11 @@
 <title>{{ partial "title" . }} | {{ .Site.Title -}}</title>
 
 <link rel="icon" href="{{ "favicon/TN-favicon-32x32.png" | relURL }}" type="image/x-icon">
+<!-- Add Font Awesome and Material Design -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="/webfonts/material-icons.css" rel="stylesheet">
+<link href="/webfonts/materialdesignicons.min.css" rel="stylesheet">
+<link href="/webfonts/primeicons.css" rel="stylesheet">
 
 <link rel="preload" as="font" href="{{ "fonts/Metropolis.woff2" | relURL }}" type="font/woff2" crossorigin="anonymous">
 <link rel="preload" as="font" href="{{ "fonts/LiberationSans.woff2" | relURL }}" type="font/woff2" crossorigin="anonymous">

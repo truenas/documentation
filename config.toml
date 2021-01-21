@@ -1,7 +1,6 @@
 #baseURL = "https://www.truenas.com/docs/"
 title = ""
 theme = "hugo-geekdoc"
-rss_pages = ["content"]
 
 # Required to get well formatted code blocks
 pygmentsUseClasses = true
