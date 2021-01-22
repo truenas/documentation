@@ -5,4 +5,4 @@ geekdocCollapseSection: true
 weight: 20
 ---
 
-text
+Articles coming soon!
