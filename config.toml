@@ -9,6 +9,31 @@ pygmentsCodeFences = true
 disablePathToLower = true
 enableGitInfo = true
 
+# Print support
+[outputs]
+section = [ "HTML", "RSS", "print" ]
+
+[outputFormats]
+
+[outputFormats.PRINT]
+baseName = "index"
+isHTML = true
+mediaType = "text/html"
+path = "_print"
+permalinkable = false
+
+[print_printable_section]
+other = "This the multi-page printable view of this section."
+[print_click_to_print]
+other = "Click here to print"
+[print_show_regular]
+other = "Return to the regular view of this page"
+[print_entire_section]
+other = "Print entire section"
+
+[params.print]
+disable_toc = false
+
 [markup]
   [markup.goldmark.renderer]
     # Needed for mermaid shortcode
