@@ -12,7 +12,7 @@ TrueNAS has both a RESTful and Websocket API.
 
 To create an API key, open the web interface <i class="fas fa-cog" aria-hidden="true" title="Settings"></i> (Settings) menu and click **API KEY**.
 
-<img src="/images/tn-12.0-apikeys.PNG">
+<img src="/images/tn-12.0-apikeys.png">
 <br><br>
 
 Click **Add**, enter a new key name, and click **Add** again to confirm.

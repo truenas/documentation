@@ -29,7 +29,7 @@ Identify the node to be replaced by verifying the serial number. The serial numb
 
 Node power buttons are on the front of the system. On a two-node system, the left power button controls node A and the right button controls node B. Only the left power button is used for a single-node system.
 
-<img src="/images/z-series-node-2.PNG">
+<img src="/images/z-series-node-2.png">
 <br><br>
 
 Press and release the power button of the node to be replaced. This starts a clean shutdown of that node. Do not hold the power button down. After pressing and releasing the power button, wait two full minutes to give the node sufficient time to shut down cleanly.  Move to the rear of the system and note where all cables are connected to the node to be replaced. Make notes, label wires, or take a picture of the cables to facilitate reconnection, then disconnect the cables from that node.
