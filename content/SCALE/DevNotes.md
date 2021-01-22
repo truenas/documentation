@@ -4,7 +4,8 @@ description: "Running updates about TrueNAS SCALE Nightly status and current iss
 tags: ["SCALE"]
 ---
 
-#### Recent Updates
+{{< expand "Update Log" >}}
+
 > 01/16/2021 - Updated Debian base image, SCALE now includes Kernel 5.10 as well as updates to all other base packages
 
 > 12/16/2020 - Applications UI lands in SCALE - Support for deploying pre-defined Helm Charts, as well as Docker Images now possible via the UI.
@@ -34,6 +35,7 @@ tags: ["SCALE"]
 > 7/16/2020 - [Slack Instance](https://www.ixsystems.com/community/threads/collaborator-community-slack-instance.85717/) is available for community contributors
 
 > 7/15/2020 - VM support using KVM as the backend has arrived, including support for PCI passthrough and nested virtualization.
+{{< /expand >}}
 
 ## System Requirements
 
