@@ -88,6 +88,14 @@ The iXsystems proposition is that TrueNAS enables dramatic storage cost savings 
 TrueNAS provides the industry’s most powerful Open Storage.
 Learn more about [TrueNAS hardware](/Hardware/).
 {{< /tab >}}
+{{< tab "TrueCommand" >}}
+# TrueCommand Manages your NAS Fleet
+[TrueCommand](https://www.truenas.com/truecommand/) is a single Pane-of-Glass management application that takes the repetitive work out of multi-TrueNAS management by centralizing system alerts, reports, and analytics in one easy to use interface. It supports users and teams with 24x365 global operations, role-based access control, and a full log of every TrueNAS configuration change.
+<img src="/images/truecommand-overview.png"><br>
+
+TrueCommand runs on Docker, Virtual Machines, or as a [cloud service](https://portal.ixsystems.com/portal/login/index.php#login) and is free to users with less than 50 drives and affordable for those with larger installations.
+[TrueCommand documentation](/TrueCommand/) is also available here on the TrueNAS Documentation Hub.
+{{< /tab >}}
 {{< tab "Expert Community" >}}
 # Join the Expert Community
 TrueNAS comprises both the Open Source software and an experienced and expert community developed over the last dozen years.
@@ -96,12 +104,3 @@ The [Community](https://www.truenas.com/community/) can save you many hours and 
 If you need more professional support, iXsystems offers Bronze/Silver/Gold [Enterprise support](https://support.ixsystems.com) including 24x365 coverage and onsite support with its systems.
 {{< /tab >}}
 {{< /tabs >}}
-
-# TrueCommand Manages your NAS Fleet
-
-[TrueCommand](https://www.truenas.com/truecommand/) is a single Pane-of-Glass management application that takes the repetitive work out of multi-TrueNAS management by centralizing system alerts, reports, and analytics in one easy to use interface. It supports users and teams with 24x365 global operations, role-based access control, and a full log of every TrueNAS configuration change.
-
-<img src="/images/truecommand-overview.png"><br>
-
-TrueCommand runs on Docker, Virtual Machines, or as a [cloud service](https://portal.ixsystems.com/portal/login/index.php#login) and is free to users with less than 50 drives and affordable for those with larger installations.
-[TrueCommand documentation](/TrueCommand/) is also available here on the TrueNAS Documentation Hub.

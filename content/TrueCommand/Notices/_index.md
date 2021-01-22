@@ -1,4 +1,5 @@
 ---
-title: "End of Life Statements"
+title: "Notices"
 geekdocCollapseSection: true
+weight: 60
 ---

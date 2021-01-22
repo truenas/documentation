@@ -1,7 +1,9 @@
 ---
-title: "SCALE"
-geekdocCollapseSection: true
-weight: 20
+title: "What is TrueNAS SCALE?"
+linkTitle: "Overview"
+description: "A brief look at the purpose and structure of SCALE."
+tags: ["SCALE"]
+weight: 10
 ---
 
 <img src="/images/truenas_scale-logo-full-color-rgb.png" style="scale:50%;"> <br><br>
@@ -25,23 +27,21 @@ Unlike other HCI platforms, a user can get started with TrueNAS SCALE on a singl
 TrueNAS SCALE is true Disaggregated HCI, meaning storage and compute can be scaled independently.
 Each node can support Virtual Machines (with the KVM hypervisor) as well as Docker containers by using native Kubernetes.
 
-{{< hint warning >}}
-TrueNAS SCALE is in early development and is not recommended for production use.
-{{< /hint >}}
+> Note: TrueNAS SCALE is in early development and is not recommended for production use.
 
-{{< tabs "SCALE Features" >}}
-{{< tab "Open Source" >}}
-Free to download and use, TrueNAS SCALE welcomes developers and testers to contribute to its Open Source development model.
-{{< /tab >}}
-{{< tab "Scale-Out" >}}
-OpenZFS and Gluster combine to enable scale-out ZFS capabilities with excellent stability and very efficient compression and snapshots.
-{{< /tab >}}
-{{< tab "Hyperconverged" >}}
-Deploy a single hyperconverged node in a home/office or a cluster with hundreds of compute and storage nodes in a datacenter.
-{{< /tab >}}
-{{< tab "Virtualization" >}}
-With support for KVM VMs, Kubernetes, and Docker containers, it’s easy to add applications to suit your every need.
-{{< /tab >}}
-{{< /tabs >}}
+**Open Source**
+ + Free to download and use, TrueNAS SCALE welcomes developers and testers to contribute to its Open Source development model.
 
-<img src="https://www.truenas.com/wp-content/uploads/2020/11/TrueNAS_SCALE_Software_Features_Data_Sheet_2020_image-scaled.jpg">
+**Scale-Out**
+ + OpenZFS and Gluster combine to enable scale-out ZFS capabilities with excellent stability and very efficient compression and snapshots.
+
+**Hyperconverged**
+ + Deploy a single hyperconverged node in a home/office or a cluster with hundreds of compute and storage nodes in a datacenter.
+
+**Containers and VMs**
+ + With support for KVM VMs, Kubernetes, and Docker containers, it’s easy to add applications to suit your every need.
+
+
+<img src="https://www.truenas.com/wp-content/uploads/2020/11/TrueNAS_SCALE_Software_Features_Data_Sheet_2020_image-scaled.jpg"> <br><br>
+
+For more information, contact iXsystems at [info@ixsystems.com](mailto:info@ixsystems.com) or visit [TrueNAS.com](https://www.truenas.com)
