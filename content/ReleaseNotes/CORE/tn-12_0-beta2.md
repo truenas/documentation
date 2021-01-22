@@ -1,5 +1,6 @@
 ---
 title: "12.0-BETA2 Releases"
+weight: 14
 ---
 
 ## 12.0-BETA2.1

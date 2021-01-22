@@ -1,5 +1,6 @@
 ---
 title: "12.0-RELEASE"
+weight: 12
 ---
 
 **20 October 2020**

@@ -1,5 +1,6 @@
 ---
 title: "12.0-BETA1"
+weight: 15
 ---
 
 **30 June 2020**

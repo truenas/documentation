@@ -1,6 +1,6 @@
 ---
 title: "20.12-ALPHA (Angelfish)"
-tags: ["SCALE"]
+weight: 19
 ---
 
 **December 18, 2020**
