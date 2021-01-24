@@ -41,7 +41,7 @@ Examples of syntax:
 
 Note that days can be specified as days of month, or days of week.
 
-With these options, flecxible schedules can be created similar to these examples:
+With these options, flexible schedules can be created similar to these examples:
 
 <table>
 	<thead>
