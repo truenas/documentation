@@ -36,10 +36,25 @@ Defining a snapshot lifetime is recommended to save time manually deleting obsol
 The naming schema determines how automated snapshot names are generated. A valid schema requires the *%Y* (year), *%m* (month), *%d* (day), *%H* (hour), and *%M* (minute) time strings, but you can add more identifiers to the schema too, using any identifiers from the Python [strptime function](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior). Note this uses some letters differently from POSIX (Unix) time functions. For example, including *%z* (time zone) ensures that snapshots do not have naming conflicts when daylight time starts and ends, and *%S* (second) adds finer time granularity.
 
 Examples: 
-<blockquote>Schema: <i>replicationsnaps-1wklife-%Y%m%d_%H:%M</i><br/>
-Snapshot names look like: <i>replicationsnaps-1wklife-20210120_00:00</i>, <i>replicationsnaps-1wklife-20210120_06:00</i>, etc.<br/><br/>
-Schema: <i>autosnap_%z-%Y.%m.%d-%H.%M.%S</i><br/>
-Snapshot names look like: <i>autosnap_EST-2021.01.20-00.00.00</i>, <i>autosnap_EST-2021.01.20-06.00.00</i>, etc.</blockquote>
+
+<table>
+	<thead>
+		<tr>
+			<th>Naming scheme</th>
+			<th>Snapshot names look like</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>replicationsnaps-1wklife-%Y%m%d_%H:%M</td>
+   <td>replicationsnaps-1wklife-20210120_00:00<br/>replicationsnaps-1wklife-20210120_06:00<br/>&nbsp;etc.</td>
+		</tr>
+		<tr>
+			<td>autosnap_%z-%Y.%m.%d-%H.%M.%S</td>
+			<td>autosnap_EST-2021.01.20-00.00.00<br/>autosnap_EST-2021.01.20-06.00.00<br/>&nbsp;etc.</td>
+		</tr>
+	</tbody>
+</table>
 
 Snapshot schedules are configured by selecting a premade schedule or creating a custom schedule. Custom schedules are generally recommended, as the advanced scheduler offers a high degree of control over the schedule and a preview that shows you the exact schedule you've created. Selecting recursive snapshots will also cause snapshots to be taken of all descendant datasets and volumes within the stated dataset or pool. Custom schedules allow for selection by clicking, and for finer control, custom values can be manually entered. See <a href="hub/additional-topics/reference/scheduled_task_timings.md">Scheduled task timings</a> for details of the format used.
 
