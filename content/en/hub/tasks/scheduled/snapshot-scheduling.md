@@ -57,7 +57,7 @@ Examples:
 </table>
 
 {{% alert color="warning" %}}
-If the snapshots are likely to be referenced from a Windows computer, avoid using characters such as ":" that are invalid as part of a Windows file path. Also, some applications will have limits to file lenth, path length, and spaces and other characters in a path. You should consider future uses and ensure the names given to periodic snapshots will be acceptable.  Note also that snapshots can be renamed in future if required.
+If the snapshots are likely to be referenced from a Windows computer, avoid using characters such as ":" that are invalid as part of a Windows file path. Also, some applications will have limits to filename or path length, and there may be limitations related to spaces and other characters. You should carefully consider future uses and ensure the names given to periodic snapshots will be acceptable.  Note however that snapshots can be renamed at any time, if required.
 {{% /alert %}}
 
 Snapshot schedules are configured by selecting a premade schedule or creating a custom schedule. Custom schedules are generally recommended, as the advanced scheduler offers a high degree of control over the schedule and a preview that shows you the exact schedule you've created. Selecting recursive snapshots will also cause snapshots to be taken of all descendant datasets and volumes within the stated dataset or pool. Custom schedules allow for selection by clicking, and for finer control, custom values can be manually entered. See <a href="hub/additional-topics/reference/scheduled_task_timings.md">Scheduled task timings</a> for details of the format used.
