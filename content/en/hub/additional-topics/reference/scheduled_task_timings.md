@@ -63,6 +63,10 @@ With these options, flexible schedules can be created similar to these examples:
 			<td>1st and 15th day of the month, during October to June, at 00:01 am</td>
 			<td>months=oct-dec,jan-jun; days=1,15; hours=0; minutes=1</td>
 		</tr>
+		<tr>
+			<td>Every 15 minutes during the working week, which is 8am - 7pm (08:00 - 19:00) Monday to Friday</td>
+			<td>(1) months=*; days=mon-fri; hours=8-18; minutes=0/15<br/>(2) months=*; days=mon-fri; hours=19; minutes=0<br/>Note that we need a second schedule to execute at 19:00, otherwise we would stop at 18:45. Another workaround would be to run until either 18:45 or 19:45 rather than 19:00.</td>
+		</tr>
 	</tbody>
 </table>
 
