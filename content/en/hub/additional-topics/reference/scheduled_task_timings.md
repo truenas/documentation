@@ -39,4 +39,31 @@ Examples of syntax:
 	</tbody>
 </table>
 
+Note that days can be specified as days of month, or days of week.
+
+With these options, flecxible schedules can be created similar to these examples:
+
+<table>
+	<thead>
+		<tr>
+			<th>Desired schedule</th>
+			<th>Values to enter</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>3 times a day (at midnight, 08:00 and 16:00)</td>
+			<td>months=*; days=*; hours=0/8 or 0,8,16; minutes=0<br/>(Meaning: every day of every month, when hours=0/8/16 and minutes=0)</td>
+		</tr>
+		<tr>
+			<td>Every Monday, Wednesday and Friday, at 8.30 pm</td>
+			<td>months=*; days=mon,wed,fri; hours=20; minutes=30</td>
+		</tr>
+		<tr>
+			<td>1st and 15th day of the month, during October to June, at 00:01 am</td>
+			<td>months=oct-dec,jan-jun; days=1,15; hours=0; minutes=1</td>
+		</tr>
+	</tbody>
+</table>
+
 See <a href="https://www.freebsd.org/cgi/man.cgi?cron(8)">man cron</a> for more.
