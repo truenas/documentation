@@ -1,38 +1,22 @@
 #baseURL = "https://www.truenas.com/docs/"
 title = ""
-theme = "hugo-geekdoc"
+theme = ["hugo-geekdoc"]
 #disableKinds = ["home"]
+
+[outputs]
+section = ["HTML","RSS","print"]
+[outputFormats.PRINT]
+baseName = ""
+isHTML = true
+mediaType = "text/html"
+path = "_print"
+permalinkable = false
 
 # Required to get well formatted code blocks
 pygmentsUseClasses = true
 pygmentsCodeFences = true
 disablePathToLower = true
 enableGitInfo = true
-
-# Print support
-[outputs]
-section = [ "HTML", "RSS", "print" ]
-
-[outputFormats]
-
-[outputFormats.PRINT]
-baseName = "index"
-isHTML = true
-mediaType = "text/html"
-path = "_print"
-permalinkable = false
-
-[print_printable_section]
-other = "This the multi-page printable view of this section."
-[print_click_to_print]
-other = "Click here to print"
-[print_show_regular]
-other = "Return to the regular view of this page"
-[print_entire_section]
-other = "Print entire section"
-
-[params.print]
-disable_toc = false
 
 [markup]
   [markup.goldmark.renderer]
@@ -106,3 +90,7 @@ enable = true
 
   # (Optional, default true) Copy anchor url to clipboard on click.
   geekdocAnchorCopy = true
+
+[frontmatter]
+date = ["date", "publishDate", "lastmod"]
+lastmod = ["lastmod", ":fileModTime", ":default"]
