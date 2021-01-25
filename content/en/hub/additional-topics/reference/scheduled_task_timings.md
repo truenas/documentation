@@ -6,8 +6,9 @@ tags: ["TBA"]
 
 A number of TrueNAS functions allow the user to choose a standard schedule for the task to run, or their own custom schedule. 
 
-A custom schedule can be selected by clicking preferred times and days. It is also possible to manually enter values, for more specific requirements. 
-Where the Web Interface allows for a custom schedule, it usually uses a similar format to the Unix `cron` command, making scheduling extremely flexible.  
+Where the Web Interface allows for a custom schedule, it usually uses a similar format to the Unix cron command, making scheduling extremely flexible.
+<img src="/images/TN-12.0-custom-scheduler.png">
+<br><br> 
 This page describes the format used for custom scheduled tasks. 
 
 Examples of syntax:
