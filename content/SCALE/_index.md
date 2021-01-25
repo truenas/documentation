@@ -4,7 +4,7 @@ geekdocCollapseSection: true
 weight: 20
 ---
 
-<img src="/images/truenas_scale-logo-full-color-rgb.png" style="scale:50%;"> <br><br>
+<img src="/images/truenas_scale-logo-full-color-rgb.png" style="size:50%;"> <br><br>
 
 **TrueNAS SCALE** is the latest member of the TrueNAS family and provides Open Source HyperConverged Infrastructure (HCI) including Linux containers and VMs.
 TrueNAS SCALE includes the ability to cluster systems and provide scale-out storage with capacities of up to hundreds of Petabytes.

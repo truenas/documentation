@@ -48,9 +48,10 @@
     <ul>
     {{ template "recurse-toc" (dict "section" .CurrentSection "psid" "") }}
     </ul>
+    <hr style="margin-bottom:2em;">
 {{ end }}
 
-<div class="content">
+<div class="content-print">
       {{ .Content }}
 </div>
 </div>

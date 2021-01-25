@@ -4,7 +4,7 @@
   {{ partial $tpl . }}
 {{ else -}}
 {{ $break := cond .DoPageBreak "page-break-before: always" "" -}}
-<div class="td-content" style="{{ $break }}">
+<div class="td-content-print" style="{{ $break }}">
     {{ $break := cond .DoPageBreak "page-break-before: always" "" }}
 	<h1 id="pg-{{ .Page.File.UniqueID }}">{{ .PageNum }} - {{ .Page.Title }}</h1>
     {{ with .Page.Params.description }}<div class="lead">{{ . | markdownify }}</div>{{ end }}

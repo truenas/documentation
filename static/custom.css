@@ -65,11 +65,7 @@
 /* End site footer */
 /* Styling images in the Topics Tab Boxes */
 .topic-image {
-	width:25%;
 	float:left;
 	padding-right:20px;
-}
-/* Print Styling */
-.pageinfo {
-	background-color: black;
+	max-width: 25% !important;
 }

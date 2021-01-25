@@ -13,13 +13,13 @@ TrueNAS CORE and Enterprise share the same code base and documentation, but in s
 
 {{< tabs "CORE Topics" >}}
 {{< tab "Overview" >}}
-<img class="topic-image" src="/images/co_work.jpg">Start by learning all about TrueNAS! Read about the software features, keep up with the development, and find hardware recommendations for installing TrueNAS.
+<img class="topic-image" style="max-width: 10%; padding-right: 1em;" src="/images/co_work.jpg">Start by learning all about TrueNAS! Read about the software features, keep up with the development, and find hardware recommendations for installing TrueNAS.
 
 [CORE Hardware Guide](/hub/intro/corehardwareguide/)
 
 {{< /tab >}}
 {{< tab "Getting Started" >}}
-<img class="topic-image" src="/images/jump.jpg">
+<img class="topic-image" style="max-width: 10%; padding-right: 1em;" src="/images/jump.jpg">
 After discovering if your hardware is right for TrueNAS, move to downloading and installing the software.
 After installing, you'll want to log in to the web interface and start configuring the system, including the system networking.
 Next, move to reviewing your system security by creating user and group accounts, setting up your directory services, and reviewing best practices.
@@ -32,7 +32,7 @@ After networking and security configuration is complete, the system is ready for
 <a href="/hub/initial-setup/storage/">Setting up Storage</a>
 {{< /tab >}}
 {{< tab "Data Sharing" >}}
-<img class="topic-image" src="/images/laptop.jpg">
+<img class="topic-image" style="max-width: 10%; padding-right: 1em;" src="/images/laptop.jpg">
 With the initial system configuration done, set up file sharing with the different protocols built into TrueNAS to pull data into the system or share files on your network.
 
 <a href="/hub/sharing/smb/">Server Message Block (SMB)</a><br>
@@ -44,7 +44,7 @@ With the initial system configuration done, set up file sharing with the differe
 <a href="/hub/sharing/s3-object-store/">S3 Object</a>
 {{< /tab >}}
 {{< tab "Advanced" >}}
-<img class="topic-image" src="/images/clipboard.jpg">
+<img class="topic-image" style="max-width: 10%; padding-right: 1em;" src="/images/clipboard.jpg">
 For more complicated use cases, TrueNAS supports many different administrative tasks such as monitoring system statistics, additional scripting, and backing up the system configuration.
 Automatic data back up, sync, or other system maintenance tasks can also be scheduled.
 There are also many different advanced features that unlock the full potential of TrueNAS, such as modifying Access Control Lists, using plugins and Virtual Machines (VMs), and reconfiguring High-Availability in TrueNAS Enterprise.
@@ -54,7 +54,7 @@ There are also many different advanced features that unlock the full potential o
 <a href="/hub/tasks/advanced/">Advanced Procedures</a>
 {{< /tab >}}
 {{< tab "Solution Integrations" >}}
-<img class="topic-image" src="/images/spark_idea.jpg">
+<img class="topic-image" style="max-width: 10%; padding-right: 1em;" src="/images/spark_idea.jpg">
 Articles discussing how to integrate TrueNAS with various external applications.
 
 <a href="/hub/solutions/kubernetes/">Kubernetes®</a><br>
@@ -63,11 +63,11 @@ Articles discussing how to integrate TrueNAS with various external applications.
 <a href="/hub/solutions/vmware/">VMware®</a>
 {{< /tab >}}
 {{< tab "example" >}}
-<img class="topic-image" src="/images/sml.jpg">
+<img class="topic-image" style="max-width: 10%; padding-right: 1em;" src="/images/sml.jpg">
 
 {{< /tab >}}
 {{< tab "Additional Topics" >}}
-<img class="topic-image" src="/images/knowledge.jpg">
+<img class="topic-image" style="max-width: 10%; padding-right: 1em;" src="/images/knowledge.jpg">
 Want to become a TrueNAS expert?
 These additional topics help fill in a staggering amount of detail about TrueNAS.
 They include reference materials that detail each field in the TrueNAS user interface, deep dives into TrueNAS, and miscellaneous errata.
