@@ -42,7 +42,7 @@ For example, entering `1` in Days and setting `Wed` for `Days of Week` creates a
 
 The `Schedule Preview` shows when the current schedule settings will cause the task to run.
 
-Examples of CRON syntax:
+#### Examples of CRON syntax
 
 <table>
 	<thead>
