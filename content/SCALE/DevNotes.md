@@ -2,6 +2,7 @@
 title: "Developer's Notes"
 description: "Running updates about TrueNAS SCALE Nightly status and current issues."
 tags: ["SCALE"]
+weight: 2
 ---
 
 {{< expand "Update Log" >}}
