@@ -69,3 +69,7 @@
 	float:left;
 	padding-right:20px;
 }
+/* Print Styling */
+.pageinfo {
+	background-color: black;
+}

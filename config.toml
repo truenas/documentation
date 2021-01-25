@@ -6,10 +6,10 @@ theme = ["hugo-geekdoc"]
 [outputs]
 section = ["HTML","RSS","print"]
 [outputFormats.PRINT]
-baseName = ""
+baseName = "index"
 isHTML = true
 mediaType = "text/html"
-path = "_print"
+path = "printview"
 permalinkable = false
 
 # Required to get well formatted code blocks
@@ -90,7 +90,3 @@ enable = true
 
   # (Optional, default true) Copy anchor url to clipboard on click.
   geekdocAnchorCopy = true
-
-[frontmatter]
-date = ["date", "publishDate", "lastmod"]
-lastmod = ["lastmod", ":fileModTime", ":default"]

@@ -9,7 +9,6 @@ more:
     ref: "https://github.com/freenas/documentation"
     external: true
     icon: "github"
-  - name: Test section print
+  - name: Print this Section
     ref: ""
-    external: false
     icon: "download"
