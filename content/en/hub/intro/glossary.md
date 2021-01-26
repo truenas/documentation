@@ -172,3 +172,12 @@ A Cloud Sync is when TrueNAS is configured to send, receive, or synchronize data
 
 * VNC: Virtual Network Computing (VNC) is a graphical desktop-sharing system that uses the remote frame buffer protocol to remotely control another computer. It transmits the keyboard and mouse events from one computer to another and relaying the graphical-screen updates back in the other direction over a network.
 
+## iSCSI
+
+* Portals: An iSCSI portal is a target's IP and TCP port pair. 
+
+* Initiator: An initiator is software or hardware that enables a host computer to send data to an external iSCSI-based storage array through a network adapter.
+
+* Targets: An iSCSI target is a storage resource located on an iSCSI server. 
+
+* Extents: Extents are used to define resources to share with clients. There are two types of extents: device and file. 
