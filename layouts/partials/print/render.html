@@ -38,8 +38,9 @@
   {{ end }}
 {{ end }}
 
-<div class="pageinfo">
-<a href="#" onclick="print();return false;">{{ "Click to Print" }}</a><br>
+<div class="pageinfo"style="width:300px;border:5px solid black;padding:20px;margin:20px;background-color:#f0f0f5">
+All articles under the main topic are listed in order. Click <b>Print</b> to open a preview with options to download content as a single file or physically print.<br><br>
+<a href="#" onclick="print();return false;">{{ "Print" }}</a><br>
 <a href="{{ .RelPermalink }}">{{ "Back to Docs Hub" }}</a>
 </div>
 {{ partial "print/page-heading.html" . }}

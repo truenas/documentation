@@ -69,3 +69,9 @@
 	padding-right:20px;
 	max-width: 25% !important;
 }
+.pageinfo {
+  width: 300px;
+  border: 15px solid green;
+  padding: 50px;
+  margin: 20px;
+}
