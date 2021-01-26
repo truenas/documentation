@@ -146,5 +146,29 @@ A Cloud Sync is when TrueNAS is configured to send, receive, or synchronize data
 
 * Kerberos: Kerberos is a computer-network authentication protocol designed by MIT that works on the basis of tickets to allow nodes communicating over a non-secure network to prove their identity to one another in a secure manner. 
 
+* NAT: Network address translation (NAT) is a method of remapping an IP address space into another by modifying network address information in the IP header of packets while they are in transit across a traffic routing device.
 
+* VNET: VNET is the name of a technique on FreeBSD to virtualize the network stack.  The basic idea is to change global resources most notably variables into per network stack resources and have functions, sysctls, eventhandlers, etc. access and handle them in the context of the correct instance.
+
+* FTP: The File Transfer Protocol (FTP) is a classic network protocol used transferring computer files between a server and a client on a computer network. FTP is built on a client-server model architecture using separate control and data connections between the client and the server.
+
+* AFP: The Apple Filing Protocol (AFP), formerly AppleTalk Filing Protocol, a proprietary network protocol, is part of the Apple File Service (AFS), AFP offers file services for macOS and the classic Mac OS. AFP was the primary protocol for file services, in Mac OS 9 and earlier. The protocol was deprecated starting in OS X 10.9 Mavericks, and AFP Server support was removed in macOS 11 Big Sur.
+
+
+* MAC Address: A media access control address (MAC address) is a unique identifier assigned to a network interface controller (NIC) for use as a network address in communications within a network segment. Within the [Open Systems Interconnection (OSI) network model](https://en.wikipedia.org/wiki/OSI_model), MAC addresses are used in the medium access control protocol sublayer of the data link layer.
+
+
+## Virtualization
+
+* AHCI: The Advanced Host Controller Interface (AHCI) is a technical standard defined by Intel that specifies the operation of Serial ATA (SATA) host controllers in a non-implementation-specific manner in its motherboard chipsets. The specification describes a system memory structure for computer hardware to exchange data between host system memory and attached storage devices. For modern solid state drives, the interface has been superseded by NVMe.
+
+* VirtIO: Virtio is a virtualization standard for network and disk device drivers where just the guest's device driver "knows" it is running in a virtual environment, and cooperates with the hypervisor.  Virtio was chosen to be the main platform for IO virtualization in KVM.
+
+* UEFI: The Unified Extensible Firmware Interface (UEFI) is a specification that defines a software interface between an operating system and platform firmware. UEFI replaces the legacy Basic Input/Output System (BIOS) firmware interface originally present in all IBM PC-compatible personal computers
+
+* UEFI-CSM: To ensure backward compatibility, most UEFI firmware implementations on PC-class machines also support booting in legacy BIOS mode from MBR-partitioned disks, through the Compatibility Support Module (CSM) that provides legacy BIOS compatibility. In this scenario, booting is performed in the same way as on legacy BIOS-based systems, by ignoring the partition table and relying on the content of a boot sector.
+
+* GRUB: GNU GRUB stands for GNU GRand Unified Bootloader and is commonly referred to as GRUB.  GRUB is a boot loader package from the GNU Project. GRUB is the reference implementation of the Free Software Foundation's Multiboot Specification, which provides a user the choice to boot one of multiple operating systems installed on a computer or select a specific kernel configuration available on a particular operating system's partitions.
+
+* VNC: Virtual Network Computing (VNC) is a graphical desktop-sharing system that uses the remote frame buffer protocol to remotely control another computer. It transmits the keyboard and mouse events from one computer to another and relaying the graphical-screen updates back in the other direction over a network.
 
