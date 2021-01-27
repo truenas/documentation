@@ -78,7 +78,7 @@ On Windows PCs, the S3 Browser is another convenient way to connect to the Minio
 
 After installation completes, add a new account. 
 
-<img src="/images/S3Explore.png"><br><br>
+<img src="/images/S3-Explore.png"><br><br>
 
 In the settings, select S3 Compatible Storage as the Account Type, then enter the Minio access point similar to the S3cmd setup (TrueNAS_IP_address:9000 or other port if set differently).  
 
