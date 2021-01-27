@@ -38,7 +38,7 @@ The **Permissions Editor** option will allow basic adjustments to a datasets ACL
 <img src="/images/EditPermission.png">
 <br><br>
 
-<img src="/images/bBasicACL.png">
+<img src="/images/BasicACL.png">
 <br><br>
 
 ## ACL Manager - Editing an ACL
