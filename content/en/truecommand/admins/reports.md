@@ -6,7 +6,7 @@ tags: ["TrueCommand Users"]
 
 The **Reports** page is used to customize charts of system metrics for data analysis.
 
-<img src="/images/tc-1.3-reporting.png">
+<img src="/images/TC1.3-Reporting.png">
 <br><br>
 
 These reports are created by or shared with the current TrueCommand user.
@@ -20,12 +20,12 @@ Viewing a report requires that the user has access to the systems that are being
 Click **+ CREATE REPORT** to create a customizable report.
 Enter a report name and an optional description for the report.
 
-<img src="/images/tc-1.3-reports-new-1.png">
+<img src="/images/TC1.3-ReportsNew1.png">
 <br><br>
 
 Click BROWSE WIDGETS or WIDGET to add charts to the report.
 
-<img src="/images/tc-1.3-reports-new-2.png">
+<img src="/images/TC1.3-ReportsNew2.png">
 <br><br>
 
 ### Custom Charts
@@ -45,15 +45,15 @@ Fill in these options when adding a custom chart:
 After adding charts to the report, click **SAVE** to make this report available for use.
 
 After creating a report, click **GENERATE** to generate the report.
-<img src="/images/tc-1.3-reports-new-3.png">
+<img src="/images/TC1.3-ReportsNew3.png">
 <br><br>
 
 Next, add in the range and systems to be included in the report, and click the **GENERATE** button.
-<img src="/images/tc-1.3-reports-new-4.png">
+<img src="/images/TC1.3-ReportsNew4.png">
 <br><br>
 
 The report will be generated and displayed.
-<img src="/images/tc-1.3-reports-new-5.png">
+<img src="/images/TC1.3-ReportsNew5.png">
 <br><br>
 
 ## Share Report
@@ -62,7 +62,7 @@ By default, the reports created by a user are available only to that user.
 To share a report with other users or teams, open the **Configure** <i class="fa fa-cog" aria-hidden="true" title="Settings"></i>&nbsp; menu > **Reports** screen and click the **Share** button for a report.
 Reports can also be shared after clicking **Generate report**<i class="fa fa-eye" aria-hidden="true" title="eye"></i>.
 
-<img src="/images/tc-1.3-reports-share.png">
+<img src="/images/tTC1.3-ReportsShare.png">
 <br><br>
 
 Reports can be shared with individual users or entire teams.
@@ -75,14 +75,14 @@ Clicking the **OWNER** or **SHARED WITH** text toggles every name in the list.
 Open the **Configure** <i class="fa fa-cog" aria-hidden="true" title="Settings"></i>&nbsp; menu > **Reports** page and click **Generate report**<i class="fa fa-eye" aria-hidden="true" title="eye"></i>&nbsp; on the appropriate report.
 Click **GENERATE** to select the systems and time frame for the report
 
-<img src="/images/tc-1.3-generate-report.png">
+<img src="/images/TC1.3-GeneratReport.png">
 <br>
-<img src="/images/tc-1.3-generate-report-2.png">
+<img src="/images/TC1.3-GeneratReport2.png">
 <br><br>
 
 A non-administrative user must have the appropriate permissions to view data from specific systems.
 
 Clicking **Confirm** shows the saved charts from the report, populated with system data according to the selected amount of time.
 
-<img src="/images/tc-1.3-reports-new-5.png">
+<img src="/images/TC1.3-ReportsNew5.png">
 <br><br>

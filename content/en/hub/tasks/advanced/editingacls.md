@@ -22,7 +22,7 @@ When creating a dataset, you can choose how the ACL can be modified by selecting
 
 To view an ACL, go to **Storage > Pools** and click the *Edit Permissions* option for a nested dataset within a pool.
 
-<img src="/images/editpermission.png">
+<img src="/images/EditPermission.png">
 <br><br>
 
 ### ACL Inheritance
@@ -35,10 +35,10 @@ These non-inheriting entries are added to the ACL of the newly created file or d
 
 The **Permissions Editor** option will allow basic adjustments to a datasets ACL.
 
-<img src="/images/editpermission.png">
+<img src="/images/EditPermission.png">
 <br><br>
 
-<img src="/images/basicacl.png">
+<img src="/images/bBasicACL.png">
 <br><br>
 
 ## ACL Manager - Editing an ACL
@@ -47,12 +47,12 @@ Click the **ACL Manager** button to adjust file ownership or account permissions
 
 Choose **Select a preset ACL** and choose a preset. The preset options are OPEN, RESTRICTED, or HOME.
 
-<img src="/images/presetacl.png">
+<img src="/images/PresetACL.png">
 <br><br>
 
 Choose **Create a custom ACL** to create a new list of customized permissions.
 
-<img src="/images/customacls.png">
+<img src="/images/CustomACLS.png">
 <br><br>
 
 ### Ownership

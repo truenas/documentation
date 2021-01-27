@@ -21,7 +21,7 @@ Legacy documentation for discontinued iXsystems products is also archived here.<
 
 <div class="hubrow">
 	<div class="imgcolumn">
-		<img src="/images/Mini_Family_Lineup_HERO_Image_Final_compressor.png">
+		<img src="/images/MiniFamilyLineupHEROImageFinalcompressor.png">
 	</div>
 	<div class="textcolumn">
 		<p>TrueNAS Minis allow you to easily store and manage your important data using any storage protocol, including NFS, SMB, AFP, iSCSI, S3, and many others.
@@ -39,7 +39,7 @@ Legacy documentation for discontinued iXsystems products is also archived here.<
 
 <div class="hubrow">
 	<div class="imgcolumn">
-		<img src="/images/FreeNAS_Certified.png">
+		<img src="/images/FreeNASCertified.png">
 	</div>
 	<div class="textcolumn">
 		<p>Built on ZFS, FreeNAS (TrueNAS CORE) includes enterprise-level features like deduplication and compression, copy-on-write with checksum compare, snapshots and replication, support for multiple hypervisor solutions, and much more.
@@ -69,7 +69,7 @@ Legacy documentation for discontinued iXsystems products is also archived here.<
 
 <div class="hubrow">
 	<div class="imgcolumn">
-		<img src="/images/Hero-XSeries.png">
+		<img src="/images/HeroXSeries.png">
 	</div>
 	<div class="textcolumn">
 		<p>The TrueNAS X-Series is our compact 2U enterprise storage system built on the powerful OpenZFS file system for unbeatable value and performance.
@@ -88,7 +88,7 @@ Legacy documentation for discontinued iXsystems products is also archived here.<
 
 <div class="hubrow">
 	<div class="imgcolumn">
-		<img src="/images/Hero-TrueNASM50-compressor.png">
+		<img src="/images/HeroTrueNASM50compressor.png">
 	</div>
 	<div class="textcolumn">
 		<p>The TrueNAS M-Series is the flagship model of TrueNAS Enterprise systems and is ideally suited for heavy IT storage workloads and intensive data center applications.
@@ -105,7 +105,7 @@ Legacy documentation for discontinued iXsystems products is also archived here.<
 
 <div class="hubrow">
 	<div class="imgcolumn">
-		<img src="/images/tn_es60.png">
+		<img src="/images/tnes60.png">
 	</div>
 	<div class="textcolumn">
 		<p>Add storage to your datacenter without hassle or downtime.
@@ -138,7 +138,7 @@ Legacy documentation for discontinued iXsystems products is also archived here.<
 
 <div class="hubrow">
 	<div class="imgcolumn">
-		<img src="/images/z-series.jpg">
+		<img src="/images/zseries.jpg">
 	</div>
 	<div class="textcolumn">
 		<p>Archived documentation about discontinued iXsystems hardware products.</p>

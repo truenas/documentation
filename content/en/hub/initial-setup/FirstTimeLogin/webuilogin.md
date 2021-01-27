@@ -28,7 +28,7 @@ You can change this after logging in to the web interface by going to **Network 
 
 If an IP address is needed, connect a monitor to the TrueNAS system and view the console setup menu that displays at the end of the boot process.
 
-<img src="/images/console-menu.png">
+<img src="/images/ConsoleMenu.png">
 <br><br>
 
 When able to automatically configure a connection, the system shows the web interface IP address at the bottom of the console setup menu.
@@ -76,7 +76,7 @@ These settings can also be adjusted later in the various **Network** options ava
 
 On a computer that can access the same network as the TrueNAS system, enter the hostname and domain or IP address in a web browser to connect to the web interface.
 
-<img src="/images/tn-core-login.png">
+<img src="/images/TNCore-Login.png">
 <br><br>
 
 Only the `root` username is used to log in to the web interface.

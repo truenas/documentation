@@ -26,7 +26,7 @@ Snapshots that do not follow a proper naming schema cannot be replicated!
 
 To view and manage the listing of created snapshots, use **Storage** > **Snapshots**. 
 
-<img src="/images/storage-snapshots.png" width='700px'>
+<img src="/images/StorageSnapshots.png" width='700px'>
 <br><br>
 
 Each entry in the list includes the name of the dataset and snapshot. Click **>** (Expand) to view these options:

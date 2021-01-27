@@ -9,7 +9,7 @@ For example, if a user deletes a system from TrueCommand, the log records which 
 
 To view the system log, open the **Configure (Gear)** menu and click **Logs**.
 
-<img src="/images/tc-logs.png">
+<img src="/images/TC-Logs.png">
 <br><br>
 
 All system log entries are shown by default.

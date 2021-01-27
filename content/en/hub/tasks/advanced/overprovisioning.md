@@ -20,7 +20,7 @@ Some BIOS can block resize during boot and require a live power cycle.
 To over provision a SLOG device, log in to TrueNAS and go to **System > Advanced**.
 Enter an overprovision value corresponding to the new size in GB.
 
-<img src="/images/TN-12.0-slog-overprovision.png" width='700px'>
+<img src="/images/TN12.0-SLOGOverprovision.png" width='700px'>
 <br><br>
 
 This setting only applies to SLOG devices during pool creation.
@@ -40,4 +40,4 @@ You can also overprovision using the `disk_resize` command in the Shell.
 
 The command to overprovision an SSD is **disk_resize** device size**, where *device* is the device name of the SSD and size is the desired size of the provision in GB or TB. Here is an example of the command: **disk_resize ada5 16GB**. When no size is specified, it reverts the provision back the full size of the device.
 
-<img src="/images/shell-disk-resize.png" width='700px'>
+<img src="/images/ShellDiskResize.png" width='700px'>

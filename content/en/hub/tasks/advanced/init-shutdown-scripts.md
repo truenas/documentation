@@ -7,12 +7,12 @@ TrueNAS provides the ability to schedule commands or scripts to run at system st
 
 Go to **Tasks > Init/Shutdown Scripts** and click `ADD`.
 
-<img src="/images/TN-12.0-tasks-init-shutdown-scripts-add.png" width='700px'>
+<img src="/images/TN12.0-TasksInitShutdownScriptsAdd.png" width='700px'>
 <br><br>
 
 ##  Init/Shutdown Options
 
-<img src="/images/TN-12.0-tasks-init-shutdown-scripts.png" width='700px'>
+<img src="/images/TN12.0-TasksInitShutdownScripts.png" width='700px'>
 <br><br>
 
 | Setting           | Value          | Description   |

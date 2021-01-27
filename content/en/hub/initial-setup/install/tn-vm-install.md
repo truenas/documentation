@@ -98,27 +98,27 @@ Select the virtual machine from the list and click *Play virtual
 machine*. The machine will start and boot into the TrueNAS installer.
 Select *Install/Upgrade*.
 
-<img src="/images/installer-install.png">
+<img src="/images/InstallerInstall.png">
 <br><br>
 
 Select the desired disk for the boot environments.
 
-<img src="/images/installer-disk.png">
+<img src="/images/InstallerDisk.png">
 <br><br>
 
 Select *Yes*. **This will erase all contents on the disk**!
 
-<img src="/images/installer-fresh.png">
+<img src="/images/InstallerFresh.png">
 <br><br>
 
 Set a password for root login.
 
-<img src="/images/installer-password.png">
+<img src="/images/InstallerPassword.png">
 <br><br>
 
 Select *\<Boot via BIOS>*.
 
-<img src="/images/installer-bios.png">
+<img src="/images/InstallerBios.png">
 <br><br>
 
 After the installation of TrueNAS has completed, reboot the system.

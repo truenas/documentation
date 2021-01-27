@@ -28,7 +28,7 @@ Go to **Tasks > Replication Tasks**, click **ADD**, and select the advanced repl
 
 Set the replication transport method to **LEGACY** to reorganize the screen to show only the relevant options.
 
-<img src="/images/replication-legacy.png">
+<img src="/images/ReplicationLegacy.png">
 <br><br>
 
 Choose the SSH connection to the remote system that will store replicated snapshots.

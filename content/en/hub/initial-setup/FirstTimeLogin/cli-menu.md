@@ -13,7 +13,7 @@ It can be started by the `root` user or another user with root permissions by en
 
 To disable the Console Setup menu, go to **System > Advanced** and unset *Enable Console Menu*.
 
-<img src="/images/console-menu.png">
+<img src="/images/ConsoleMenu.png">
 <br><br>
 
 On HA systems, some of these menu options are not available unless HA has been administratively disabled.

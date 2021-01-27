@@ -42,7 +42,7 @@ Leave the **Passphrase** empty and click **Submit**.
 
 Open  **System** > **KMIP** to complete the configuration.
 
-<img src="/images/TN-12.0-KMIP.png">
+<img src="/images/TN12.0-KMIP.png">
 <br><br>
 
 Enter the central key server **Server** host name or IP address and the number of an open connection port on the key server.
@@ -53,7 +53,7 @@ When the Certificate chain has been verified, set which encryption values will b
 Set **Enabled** to begin moving the passwords and keys immediately after clicking **SAVE**.
 Refreshing the KMIP page shows the current KMIP Key Status.
 
-<img src="/images/TN-12.0-KMIP-synced.png">
+<img src="/images/TN12.0-KMIPSynced.png">
 <br><br>
 
 To cancel a pending key synchronization, set **Force Clear** and click **SAVE**.

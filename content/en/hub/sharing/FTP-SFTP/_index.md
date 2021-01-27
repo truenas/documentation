@@ -15,12 +15,12 @@ Create a dataset for the FTP service under **Storage**.
 
 Create a local user on the TrueNAS and assign a user name, password, and assign the newly created dataset for the FTP share as the home directory of the user. This can be done on a per user basis, or a global account for the FTP could also be created, for example OurOrgFTPacnt, etc.
 
-<img src="/images/adduser_TN.png">
+<img src="/images/TN-AddUser.png">
 <br><br>
 
 Return to **Storage** and click on the three dot menu of the new dataset. Click **Edit permissions**. Set the dataset owner (user and group) to the newly created user account. Be sure to click **Apply User** and **Apply Group** before saving.
 
-<img src="/images/editDSpermissions.png">
+<img src="/images/EditDSPermissions.png">
 <br><br>
 
 Go to **Services > FTP** and click on the **Configure** icon.
@@ -29,12 +29,12 @@ Choose whether to adjust the default options of port number, max number of clien
 
 Click advanced, ensure chroot is enabled (this helps confine FTP sessions to a local user's home directory) and allow **Local User Login**. Unless necessary, do NOT allow anonymous or root access. For better security, recommend enabling TLS if able - effectively FTPS. TLS definitely should be enabled if the FTP service is to be exposed to a WAN.
 
-<img src="/images/FTPoptions.png">
+<img src="/images/FTPOptions.png">
 <br><br>
 
 Using a browser or FTP client, such as FileZilla, connect to the TrueNAS FTP share. Note the user name and password are those of the local user account on the TrueNAS itself. The default directory is the same as the user's /home directory. Directories can be created and files uploaded and downloaded.
 
-<img src="/images/FTP_FZ.png">
+<img src="/images/FTPFZ.png">
 <br><br>
 
 ## SFTP on TrueNAS
@@ -59,24 +59,24 @@ Go to **Jails > Add**. Provide a name for the jail and pick a target FreeBSD ima
 
 Set the networking settings - either DHCP or static IP - and confirm to create. 
 
-<img src="/images/jailnetwork.png">
+<img src="/images/JailNetwork.png">
 <br><br>
 
 After creation open the menu by clicking the expand icon **<** on the right-hand side of the jail. Click **START** and open the **SHELL**. 
 
 Similar to the initial FTP setup, create a user in the jail. Type **adduser** and follow the fields including the password and home directory location. Once filled in the system will ask to confirm the credentials.
 
-<img src="/images/adduser_jail.png">
+<img src="/images/Jail-AddUser.png">
 <br><br>
 
 Enable SSH by editing the /etc/rc.conf file. Type **vi /etc/rc.conf** or **ee /etc/rc.conf** depending on preference, add **sshd_enable = "YES"** to the file, save, and exit. Type **service sshd enabled** to enable the service (enabled vs start indicates whether sshd will start once or on every reboot). 
 
-<img src="/images/edit_rcconf.png">
+<img src="/images/Editrcconf.png">
 <br><br>
 
 Using an FTP client, such as FileZilla, log in with the jail IP address and user credentials. Like with SSH on TrueNAS, browsing to other folders and locations beyond the user's home directory is possible, but unlike running on TrueNAS directly, only the components of the jail are available.
 
-<img src="/images/jailSFTP_FZ.png">
+<img src="/images/JailSFTPFZ.png">
 <br><br>
 
 ## TFTP
@@ -86,7 +86,7 @@ The Trivial File Transfer Protocol (TFTP) is a light-weight version of FTP typic
 If the TrueNAS system will be used to store images and configuration files for network devices, configure and start the TFTP service.
 Starting the TFTP service opens UDP port `69`.
 
-<img src="/images/TN-12.0-services-tftp.png" width='700px'>
+<img src="/images/TN12.0-ServicesTFTP.png" width='700px'>
 <br><br>
 
 ### TFTP Service Options

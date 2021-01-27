@@ -8,7 +8,7 @@ A jail is created with no software aside from the core packages installed as par
 To install more software, go to the **Jails** screen and expand the jail entry.
 Start the jail, then click **> SHELL** when the jail has booted.
 
-<img src="/images/jail-shell-example.png" width='700px'>
+<img src="/images/Jail-ShellExample.png" width='700px'>
 <br><br>
 
 ## Installing FreeBSD Packages
@@ -85,7 +85,7 @@ Compiling a port has these disadvantages:
 + It takes time. Depending upon the size of the application, the amount of dependencies, the speed of the CPU, the amount of RAM available, and the current load on the TrueNAS system, the time needed can range from a few minutes to a few hours or even to a few days.
 + If the port does not provide any compile options, it saves time and preserves the TrueNAS system resources to use the `pkg install` command instead. The [FreshPorts.org](https://www.freshports.org/) listing shows whether a port has any configurable compile options.
 
-<img src="/images/jails-audio-tag.png">
+<img src="/images/Jails-AudioTag.png">
 <br><br>
 
 ### Audiotag Port Information
@@ -109,7 +109,7 @@ make install clean
 
 The first time this command is run, the configure screen shown.
 
-<img src="/images/jails-audio-tag-port.png" width='700px'>
+<img src="/images/Jails-AudioTagPort.png" width='700px'>
 <br><br>
 
 ### Audiotag Port Configuration Options

@@ -55,7 +55,7 @@ To install a container with a previous release of TrueCommand, replace `latest` 
 
 After fetching the TrueCommand Docker container, run `docker ps` to see details about running containers.
 
-<img src="/images/tc-docker-container-list.png">
+<img src="/images/TC-DockerContainerList.png">
 <br><br>
 
 Use the port assigned to the container to access the web interface.
@@ -82,14 +82,14 @@ The process of adding an exception is shown here for two different browsers, but
 
 Click **Advanced** to view information about the error code.
 
-<img src="/images/tc-firefox-warning.png">
+<img src="/images/TC-FirefoxWarning.png">
 <br><br>
 
 Click **Add Exception...**.
 Set **Permanently store this exception** to keep the IP address or DNS hostname permanently stored in Firefox.
 Click **Confirm Security Exception**.
 
-<img src="/images/tc-firefox-add-exception.png">
+<img src="/images/TC-FirefoxAddException.png">
 <br><br>
 
 #### Chrome
@@ -98,7 +98,7 @@ Click **Advanced** to view information about the error code.
 
 Click **Proceed to *hostname* (unsafe)**.
 
-<img src="/images/tc-chrome-warning.png">
+<img src="/images/TC-ChromeWarning.png">
 <br><br>
 
 ## Creating the Administrator Account
@@ -109,13 +109,13 @@ Follow these steps to create a new admin user:
 
 * Log in using the default username (*admin*) and password (*admin*).
 
-<img src="/images/tc-admin-login.png">
+<img src="/images/TC-AdminLogin.png">
 <br><br>
 
 * Enter a username and password.
   Read the Terms of Service, set **I have read and agree to the terms of service**, and click **SIGN UP**.
 
-<img src="/images/tc-sign-up.png">
+<img src="/images/TC-SignUp.png">
 <br><br>
 
 * The default login credentials are disabled and you can now log in to the TrueCommand web interface with the new administrator account credentials.

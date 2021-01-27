@@ -66,7 +66,7 @@ TrueNAS can even store and sync your S3 data with an automated schedule.
 There are an enormous number of features in each TrueNAS edition.
 You can read the Open Source software, try out TrueNAS in a VM at zero cost, or have a look through this chart which summarizes the key features (TrueNAS 12.0 features are in blue).
 
-<img src="/images/truenas-features.png">
+<img src="/images/TrueNASFeatures.png">
 <br><br>
 
 [TrueNAS SCALE](/hub/scale/scaleintro/) uses much of the same TrueNAS CORE source code, but adds a few different capabilities which are defined by this acronym:
@@ -94,11 +94,11 @@ The current TrueNAS systems available cover a wide range of sizes and use cases:
 
 
 <div class="hw-grid-container">
-  <div class="hw-mimage" style="justify-self:center"><img src="/images/m-series.png" style="scale:75%"></div>
+  <div class="hw-mimage" style="justify-self:center"><img src="/images/mseries.png" style="scale:75%"></div>
   <div class="hw-mtext" style="align-self:center"><b>M-Series:</b> Dual controller systems with performance and capacity that scale to 15GB/s and 20 PB. Available in All-Flash and Hybrid storage configurations.</div>
   <div class="hw-rimage" style="justify-self:center"><img src="/images/HeroR50andR40.png"style="margin-top:20%"></div>
   <div class="hw-rtext" style="align-self:center"><b>R-Series:</b> Single controller systems with hybrid or all-flash configuratios with capacity of up to 1 PB.</div>
-  <div class="hw-ximage" style="justify-self:center"><img src="/images/x-series.png"style="margin-top:20%"></div>
+  <div class="hw-ximage" style="justify-self:center"><img src="/images/xseries.png"style="margin-top:20%"></div>
   <div class="hw-xtext" style="align-self:center"><b>X-Series:</b> Dual controller systems with lower power and space footprints with capacity of up to 1 PB.</div>
   <div class="hw-miniimage" style="justify-self:center"><img src="/images/minis.png"></div>
   <div class="hw-minitext" style="align-self:center"><b>Minis:</b> Small Office systems that quietly sit on or under a desk and have up to 100 TB of capacity for videos and backup storage.</div>
@@ -120,4 +120,4 @@ TrueCommand is a single Pane-of-Glass management application that takes the repe
 TrueCommand runs on docker, VMs, or as a cloud service and is free to users with less than 50 drives and affordable for those with larger installations.
 Read more infomration about TrueCommand in the [What is TrueCommand](https://www.truenas.com/docs/truecommand/overview/tcwhatis/) article. 
 
-<img src="/images/truecommand-overview.png">
+<img src="/images/TrueCommandOverview.png">

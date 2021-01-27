@@ -61,7 +61,7 @@ Before upgrading the operating system, follow these steps:
 To upgrade TrueNAS using an `.iso` file, go to https://www.truenas.com/download-truenas-core/ (TrueNAS CORE latest release) or https://download.freenas.org to download the `.iso` to the computer that will be used to prepare the installation media.
 For example, this is the path to download an `.iso` of the latest FreeNAS 11.3 release:
 
-<img src="/images/FN11.3Latest.png">
+<img src="/images/FN11.3-Latest.png">
 <br><br>
 
 Burn the downloaded `.iso` file to a CD or USB stick. Refer to the [Preparing Media](/hub/initial-setup/install/firsttimeinstall/#preparing-the-install-media) instructions in the Installation article for tips about burning the `.iso` to media using different Operating Systems.

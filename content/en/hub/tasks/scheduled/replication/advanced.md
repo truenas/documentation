@@ -41,7 +41,7 @@ Go to **Tasks > Replication Tasks > ADD** and select **ADVANCED REPLICATION CREA
 
 To use the advanced editor to create a replication task, go to **Tasks > Replication Tasks**, click **ADD** to open the Wizard, and click **ADVANCED REPLICATION CREATION**.
 
-<img src="/images/replication-advanced.png">
+<img src="/images/ReplicationAdvanced.png">
 <br><br>
 
 Options are grouped together by category.

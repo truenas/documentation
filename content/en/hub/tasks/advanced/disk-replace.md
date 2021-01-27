@@ -18,7 +18,7 @@ Any data on the replacement disk will be wiped as part of the process.
 
 The TrueNAS **Dashboard** shows when a pool has been degraded from a failed disk.
 
-<img src="/images/pool-degraded.png">
+<img src="/images/PoolDegraded.png">
 <br><br>
 
 Click the <i class="fas fa-cog" aria-hidden="true" title="Settings"></i>&nbsp; on the pool's card to go to the status screen for the pool and locate the failed disk.
@@ -27,7 +27,7 @@ Click the <i class="fas fa-cog" aria-hidden="true" title="Settings"></i>&nbsp; o
 
 Clicking <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; for the failed disk shows additional operations.
 
-<img src="/images/failed-drive-options.png">
+<img src="/images/FailedDriveOptions.png">
 <br><br>
 
 It is recommended to *Offline* the disk before starting the replacement.
@@ -42,7 +42,7 @@ Attempting to replace a heavily degraded disk without offlining it first can res
 If the *Offline* operation fails with a "Disk offline failed - no valid replicas" message, go to **Storage > Pools**, click the <i class="fas fa-cog" aria-hidden="true" title="Settings"></i>&nbsp; for the degraded pool, and select *Scrub Pool*.
 When the scrub operation is finished, reopen the pool *Status* and try to *Offline* the disk again.
 
-<img src="/images/disk-offline.png">
+<img src="/images/DiskOffline.png">
 <br><br>
 
 When the disk status shows as *Offline*, physically remove the disk from the system.
@@ -52,7 +52,7 @@ If the replacement disk is not already physically added to the system, add it no
 
 In the **Pool Status**, open the options for the *Offline* disk and click *Replace*
 
-<img src="/images/disk-replace.png">
+<img src="/images/DiskReplace.png">
 <br><br>
 
 Select a new member disk and click *Replace Disk*.
@@ -62,7 +62,7 @@ To <ins>destroy</ins> any data on the replacement disk and allow the replacement
 
 When the new disk has been wiped and is ready to replace the failed disk, the pool status updates to show the replacement in progress.
 
-<img src="/images/pool-status-replace.png">
+<img src="/images/PoolStatusReplace.png">
 <br><br>
 
 TrueNAS resilvers the pool during the replacement process.
@@ -70,5 +70,5 @@ For pools with large amounts of data, this can take a long time.
 
 When the resilver is complete, the pool status screen updates to show the new disk and the pool status returns to *Online*.
 
-<img src="/images/pool-status-replace-complete.png">
+<img src="/images/PoolStatusReplaceComplete.png">
 <br><br>

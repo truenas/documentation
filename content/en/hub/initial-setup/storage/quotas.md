@@ -16,24 +16,24 @@ TrueNAS allows users to set data or object quotas for user accounts and groups c
 
 To view and edit user quotas, go to **Storage > Pools** and click the <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; button to open the **Dataset Actions** menu and then click **User Quotas**.
 
-<img src="/images/Quotas1DatasetMenu.png">
+<img src="/images/QuotasDatasetMenu.png">
 <br><br>
 
 The **User Quotas** page displays the names and quota data of any user accounts cached on or connected to the system.
 
-<img src="/images/Quotas2UserPage.png">
+<img src="/images/QuotasUserPage.png">
 <br><br>
 
 To edit individual user quotas, go to the user's row and click the <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; button, then click **Edit**. 
 
 The **Edit User** window allows you to edit the **User Data Quota**, which is the amount of disk space that can be used by the selected users, and the **User Object Quota**, which is the number of objects that can be owned by each of the selected users.
 
-<img src="/images/Quotas3EditUser.png">
+<img src="/images/QuotasEditUser.png">
 <br><br>
 
 To edit user quotas in bulk, click **Actions** and select **Set Quotas (Bulk)**. The **Set Quotas** window allows you to edit user data and object quotas after selecting any cached or connected users that you want. 
 
-<img src="/images/Quotas4UserBulk.png">
+<img src="/images/QuotasUserBulk.png">
 <br><br>
 
 ## Editing Group Quotas
