@@ -68,7 +68,7 @@ Configuring and activating the SSH service is done on the **Services** page.
 
 To configure SSH, disable the service and open the configuration screen.
 
-<img src="/images/sServicesSSH.png">
+<img src="/images/ServicesSSH.png">
 <br><br>
 
 
