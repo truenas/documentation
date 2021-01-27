@@ -1,6 +1,6 @@
 ---
 title: "TrueNAS System Data Collection Statement"
-weight:
+weight: 35
 ---
 
 TrueNAS collects non-sensitive system data and relays the data to a collector managed by iXsystems.

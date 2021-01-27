@@ -1,6 +1,6 @@
 ---
 title: "What is TrueNAS?"
-weight: 1
+weight: 10
 ---
 
 <img src="/images/tn-openstorage-logo.png" style="float:left;width:240px;height:50px;margin: 10px 50px 10px 0px;">
