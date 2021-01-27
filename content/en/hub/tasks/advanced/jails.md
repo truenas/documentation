@@ -77,7 +77,7 @@ Setting a proxy in the TrueNAS network settings also configures new jails to use
 
 When pairing the jail with a physical interface, edit the network interface and set **Disable Hardware Offloading**. This prevents a network interface reset when the jail starts.
 
-<img src="/images/jJails-AddWizardNetworking.png" width='700px'>
+<img src="/images/Jails-AddWizardNetworking.png" width='700px'>
 <br><br>
 
 Click **NEXT** to view a summary screen of the chosen jail options. Click **SUBMIT** to create the new jail. After a few moments, the new jail is added to the primary jails list.
