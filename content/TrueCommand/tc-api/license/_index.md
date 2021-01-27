@@ -9,3 +9,5 @@ geekdocCollapseSection: true
 API calls related to the currently-registered user license.
 
 ## Reference Guide
+
+{{< toc-tree >}}

@@ -9,3 +9,5 @@ geekdocCollapseSection: true
 Administrators can create custom rules for generating alerts about systems based on the statistics from the monitored systems.
 
 ## Reference Guide
+
+{{< toc-tree >}}

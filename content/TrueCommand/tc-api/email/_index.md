@@ -21,3 +21,5 @@ There are four email functions:
  * Sending emails
 
 ## Reference Guide
+
+{{< toc-tree >}}

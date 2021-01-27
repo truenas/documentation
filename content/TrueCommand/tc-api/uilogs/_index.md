@@ -9,3 +9,5 @@ geekdocCollapseSection: true
 These endpoints provide the UI with a means of managing log records. One use-case is creating log entries to document UI runtime errors.
 
 ## Reference Guide
+
+{{< toc-tree >}}

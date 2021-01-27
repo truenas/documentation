@@ -13,3 +13,5 @@ The access to this subsystem still respects the user permissions for systems, so
 * Note 2: TrueCommand only provides access to the **websocket** API for FreeNAS, not the REST[1.0/2.0] API calls.
 
 ## Reference Guide
+
+{{< toc-tree >}}

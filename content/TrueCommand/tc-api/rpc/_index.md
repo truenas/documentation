@@ -9,3 +9,5 @@ geekdocCollapseSection: true
 Authentication procedures for websocket connections to TrueCommand or other "universal" information requests.
 
 ## Reference Guide
+
+{{< toc-tree >}}

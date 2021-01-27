@@ -9,3 +9,5 @@ geekdocCollapseSection: true
 Class of functions for interacting with low-level system functionality for TrueCommand itself.
 
 ## Reference Guide
+
+{{< toc-tree >}}

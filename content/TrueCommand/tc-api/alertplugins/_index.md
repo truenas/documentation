@@ -15,3 +15,5 @@ It is possible to submit bug tickets or even brand-new notification plugins via 
 [Click here to browse the repository](https://github.com/iXsystems/ix-alertme)
 
 ## Reference Guide
+
+{{< toc-tree >}}
