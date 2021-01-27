@@ -144,7 +144,7 @@ Once the system is ready to be in production, Update the status by checking the 
 Proactive Support notifies iXsystems by email whenever hardware conditions on the system require attention.
 This feature is available to iXsystems Silver and Gold Support customers.
 
-<img src="/images/eEnterpriseProActiveSupport.png">
+<img src="/images/EnterpriseProActiveSupport.png">
 <br><br>
 
 Be sure to add valid email addresses and phone numbers for the contacts to be quickly notified of any issues.
