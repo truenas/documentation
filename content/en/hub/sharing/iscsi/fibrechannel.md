@@ -36,7 +36,7 @@ Navigate to **Storage > Pools**.  Select an existing pool such as tank, click t
 
 Navigate to sharing, Block Shares (iSCSI), click portals.  If portal with listen interface `0.0.0.0:3260` does not yet exist click **Add** and add one.
 
-<img src="/images/FiberAddPortals.png"><br><br>
+<img src="/images/FibreAddPortals.png"><br><br>
 
 Navigate to sharing, Block Shares (iSCSI), click Targets, click **Add**. Enter  or select values specified for *Target Name*, *Target Alias*, *Target Mode*, and *Portal Group*. Click the **Submit** button.
 
