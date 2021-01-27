@@ -21,7 +21,7 @@ It is also recommended to go to **Network > Interfaces** and set *Disable Hardwa
 Open the **Plugins** menu to find the plugins that are available to download.
 If no options appear, verify the system can `ping` an Internet address and confirm the default gateway address and DNS server address are correct in **Network > Global Configuration**.
 
-<img src="/images/pPluginsAvailable.png">
+<img src="/images/PluginsAvailable.png">
 <br><br>
 
 Plugins are organized by those supported by [iXsystems](https://www.ixsystems.com/) and open source plugins created and maintained by the TrueNAS community.
