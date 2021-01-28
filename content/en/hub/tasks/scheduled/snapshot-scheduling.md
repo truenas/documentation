@@ -27,7 +27,7 @@ Any datasets or zvols to be snapshotted must exist, before creating a snapshot s
 
 Go to **Tasks > Periodic Snapshot Tasks** and click **ADD**.
 
-<img src="/images/tasks-periodicsnap-add.png">
+<img src="/images/TasksPeriodicSnapAdd.png">
 <br><br>
 
 Choose the dataset you want to regularly back up with snapshots and how long you want to keep the snapshots on the system.
@@ -66,7 +66,7 @@ Periodic snapshots are named by default according to their creation schedule (1 
 
 TrueNAS will automatically delete periodic snapshots when they reach the end of their life, and will preserve snapshots so long as at least one periodic task requires their preservation. For example, suppose two schedules are created, one that takes a snapshot every hour, keeping them for a week, and one that takes a snapshot every day, keeping them for 3 years. A snapshot will be taken every hour. After a week, snapshots created at 01.00 through 23.00 will be destroyed, but snapshots timed at 00.00 will be kept because they are needed for the second periodic task, and will be destroyed at 3 years.
 
-<img src="/images/advanced-scheduler.png">
+<img src="/images/AdvancedScheduler.png">
 <br><br>
 
 You can check the log for a saved snapshot schedule by clicking the task state.

@@ -91,27 +91,27 @@ When physically installing ZFS pool disks from another system, use the `zpool ex
 
 You can import existing ZFS pools by clicking **Storage** > **Pools** > **ADD**. Select **Import an existing pool**, then click **NEXT**.
 
-<img src="/images/ZFS1_ImportExistingPool.png">
+<img src="/images/ZFS-ImportExistingPool.png">
 <br><br>
 
 Select **No, continue with import**, then click **NEXT**.
 
-<img src="/images/ZFS2_NoContinueWithImport.png">
+<img src="/images/ZFS-NoContinueWithImport.png">
 <br><br>
 
 Click the drop down menu and choose the ZFS pool that you want to decrypt, then click **NEXT**.
 
-<img src="/images/ZFS3_SelectPoolToDecrypt.png">
+<img src="/images/ZFS-SelectPoolToDecrypt.png">
 <br><br>
 
 Review the Pool Import Summary and click **IMPORT**, then click **CONTINUE** to unlock the pool’s encrypted datasets.
 
-<img src="/images/ZFS4_ReviewPoolImportSummary.png">
+<img src="/images/ZFS-ReviewPoolImportSummary.png">
 <br><br>
 
 Click **Choose File** and open the encryption key file, then enter the **Passphrase** (if applicable) for the encrypted disks and click **SUBMIT**. Click **CONTINUE** to unlock the datasets.
 
-<img src="/images/ZFS_OpenEncryptionKeyFile.png">
+<img src="/images/ZFS-OpenTheEencryptionKeyFile.png">
 <br><br>
 
 ### Importing Encrypted GELI Pools
@@ -120,18 +120,18 @@ You can import existing GELI pools from FreeNAS/TrueNAS 11.3 or earlier by click
 
 Select **Yes, decrypt the disks** and choose which disks you want to decrypt from the dropdown list.
 
-<img src="/images/GELI1_YesDecryptDisks.png">
+<img src="/images/GELI-YesDecryptDisks.png">
 <br><br>
 
 Click **Choose File** and open the encryption key file, then enter the **Passphrase** (if applicable) for the encrypted disks and click **NEXT**.
 Select the GELI pool from the Pool dropdown list and click **NEXT**.
 
-<img src="/images/GELI2_SelectPoolToDecrypt.png">
+<img src="/images/GELI-SelectPoolToDecrypt.png">
 <br><br>
 
 Review the Pool Import Summary and click **IMPORT**.
 
-<img src="/images/GELI3_ReviewPoolImportSummary.png">
+<img src="/images/GELI-ReviewPoolImportSummary.png">
 <br><br>
 
 ## Encryption Keys and Passphrases

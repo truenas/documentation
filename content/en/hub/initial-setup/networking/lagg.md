@@ -8,7 +8,7 @@ A [Link Aggregation (LAGG)](https://tools.ietf.org/html/rfc7424) generally refer
 
 To set up a LAGG interface, go to **Network > Interface > Add**.
 
-<img src="/images/tn-add-lagg-interface.png">
+<img src="/images/TN-AddLAGGInterface.png">
 <br><br>
 
 Set **Type** to *Link Aggregation*.

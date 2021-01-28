@@ -40,7 +40,7 @@ Using the web interface is recommended as that option has an additional safety f
 
 Log in to the web interface and go to *Network > Interfaces*. This contains creation and configuration options for physical and virtual network interfaces.
 
-<img src="/images/network-interfaces.png">
+<img src="/images/NetworkInterfaces.png">
 <br><br>
 
 You can configure static IP addresses while creating or editing an interface.
@@ -49,7 +49,7 @@ You can configure static IP addresses while creating or editing an interface.
 [High Availability](/high-availability/high-availability) must be disabled on TrueNAS Enterprise systems before an active interface can be edited.
 {{% /alert %}}
 
-<img src="/images/network-interfaces-edit.png">
+<img src="/images/NetworkInterfacesEdit.png">
 <br><br>
 
 Type the desired address in the *IP Address* field and select a subnet mask.
@@ -65,7 +65,7 @@ Use the buttons to *Add* and *Delete* more IP addresses as needed.
 To avoid permanently saving invalid or unusable settings, network changes are applied temporary.
 Saving any interface changes adds a dialog to the *Network > Interfaces* list to apply these changes.
 
-<img src="/images/network-changes-apply.png">
+<img src="/images/NetworkChangesApply.png">
 <br><br>
 
 You can adjust how long to test the network changes before they are reverted back to the previous settings.
@@ -73,7 +73,7 @@ If the test is successful, another dialog allows making the network changes perm
 
 To quickly view system networking settings, go to the *Network Summary* screen.
 
-<img src="/images/network-summary.png">
+<img src="/images/NetworkSummary.png">
 <br><br>
 
 ### Using the System Console Menu to Assign Static IP Addresses to a Physical Interface
@@ -81,7 +81,7 @@ To quickly view system networking settings, go to the *Network Summary* screen.
 A monitor and keyboard attached to the system is needed to use the console, or, if the system hardware allows it, you can connect with IPMI.
 The console menu is shown when the system is fully booted.
 
-<img src="/images/network-summary.png">
+<img src="/images/NetworkSummary.png">
 <br><br>
 
 Use the *Configure Network Interfaces* option to add static IP addresses to a physical interface.

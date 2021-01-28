@@ -66,12 +66,12 @@ Reboot the system. When the welcome screen appears press the key that correspond
 The *Boot Environments* options doesn't appear when there are no extra boot environments on the system.
 {{% /pageinfo %}}
 
-<img src="/images/truenas-welcome.png">
+<img src="/images/TN-Welcome.png">
 <br><br>
 
 After selecting the *Boot Environment* option, choose the new boot environment to activate. Press the corresponding key for the *Active:* option. In the picture below, the key is <kbd>2</kbd>. 
 
-<img src="/images/truenas-welcome-BE.png">
+<img src="/images/TN-WelcomeBE.png">
 <br><br>
 
 Press the key to cycle through existing boot environments. When the desired boot environment is selected, press <kbd>Backspace</kbd> to return to the welcome menu. Then, press <kbd>4</kbd> to reboot the system. When the system reboots, it will boot into the selected boot environment.

@@ -48,7 +48,7 @@ Some providers can automatically populate the required *Authentication* strings 
 To automatically configure the credential, click *Login to Provider* and entering your account username and password.
 
 <figure>
-  <img src="/images/cloud-credentials-box-login.png">
+  <img src="/images/CloudCredentialsBoxLogin.png">
   <figcaption>Box Authentication Example</figcaption>
 </figure>
 
@@ -59,7 +59,7 @@ It is recommended to verify the credential before saving it.
 Now that the required Cloud Credentials are saved, go to *Tasks > Cloud Sync Tasks* and click *Add*.
 
 <figure>
-  <img src="/images/tasks-cloudsync-add.png">
+  <img src="/images/TasksCloudSyncAdd.png">
   <figcaption>New Cloud Sync Task</figcaption>
 </figure>
 
@@ -141,7 +141,7 @@ No data is actually sent or received.
 A dialog shows the test status and allows downloading the task logs.
 
 <figure>
-  <img src="/images/tasks-cloudsync-googledrive-dryrun.png">
+  <img src="/images/TasksCloudSyncGoogleDriveDryRun.png">
   <figcaption>Google Drive Test</figcaption>
 </figure>
 
@@ -158,7 +158,7 @@ To view logs about a running or the most recent run of a task, click the task st
 To quickly create a new Cloud Sync that uses the same options but reverses the data transfer, expand and existing Cloud Sync and click *Restore*.
 
 <figure>
-  <img src="/images/tasks-cloudsync-restore.png">
+  <img src="/images/TaskCloudSyncRestore.png">
   <figcaption>Cloud Sync Restore Options</figcaption>
 </figure>
 

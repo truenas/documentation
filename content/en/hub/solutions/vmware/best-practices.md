@@ -26,7 +26,7 @@ When using TrueNAS as a VMware datastore:
 When TrueNAS is used as a VMware datastore you can coordinate creating and using ZFS and VMware snapshots.
 To configure a VMware snapshot, log in to the TrueNAS web interface and go to **Storage > VMware-Snapshots > Add**
 
-<img src="/images/storage-vmware-snapshots.png">
+<img src="/images/StoragevmWareSnapshots.png">
 
 Enter connection information to your VMware host then click **Fetch Datastores**.
 Choose the *ZFS Filesystem* and *Datastore* and click **Submit**.

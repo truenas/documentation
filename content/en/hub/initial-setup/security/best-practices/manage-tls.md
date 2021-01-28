@@ -14,7 +14,7 @@ By default, all options are available if you need to adjust this setting to matc
 
 Log in to the web interface and go to **System > General**:
 
-<img src="/images/12.0-system-general.png">
+<img src="/images/12.0-SystemGeneral.png">
 <br><br>
 
 Click on *HTTPS Protocols* to open a dropdown menu with the various cipher suites.

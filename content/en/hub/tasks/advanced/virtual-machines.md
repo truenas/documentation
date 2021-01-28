@@ -35,7 +35,7 @@ Before creating the virtual machine, you will need an installer *.iso* or image 
 To create a new VM, go to **Virtual Machines** and click *Add*.
 Configure each category of the VM according to your specifications, starting with the **Operating System**.
 
-<img src="/images/virtual-machines-add.png">
+<img src="/images/VirtualMachinesAdd.png">
 <br><br>
 
 Notes about the VM options:
@@ -51,7 +51,7 @@ Notes about the VM options:
 
 After the VM is created, you can add and remove virtual devices by expanding the VM entry in **Virtual Machines** and clicking <i class="material-icons" aria-hidden="true" title="Devices Button">device_hub</i> **DEVICES**.
 
-<img src="/images/virtual-machines-devices.png">
+<img src="/images/VirtualMachinesDevices.png">
 <br><br>
 
 Notes about devices:
@@ -64,7 +64,7 @@ Notes about devices:
 
 After creating the VM and configuring any devices for it, you can manage the VM by expanding its entry in **Virtual Machines**.
 
-<img src="/images/virtual-machine-options.png">
+<img src="/images/VirtualMachinesOptions.png">
 <br><br>
 
 Options for <i class="material-icons" aria-hidden="true" title="VNC Button">settings_ethernet</i> **VNC** or <i class="material-icons" aria-hidden="true" title="Serial Button">keyboard_arrow_right</i> **SERIAL** connections are available after activating the VM.

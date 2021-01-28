@@ -12,12 +12,12 @@ TrueCommand Cloud is a SaaS offering of TrueCommand which includes a WireGuard V
 
 Open https://portal.ixsystems.com and click **Register**. 
 
-<img src="/images/tcc-01.png" width='700px'>
+<img src="/images/TCC-01.png" width='700px'>
 <br><br>
 
 Fill out the form using the email address you want to use. 
 
-<img src="/images/tcc-02.png" width='700px'>
+<img src="/images/TCC-02.png" width='700px'>
 <br><br>
 
 This email account will need to be verified.  The email should arrive in a few minutes, if it does not show up in your inbox, check your spam folder.  If the email is in the spam folder, mark it as *not spam* and add the account to your address book so future emails will go to your inbox.
@@ -27,35 +27,35 @@ When you have received the verification email, open the link provided in the ema
 
 Log in to your verified account and click **New Subscription**.  
 
-<img src="/images/tcc-03.png" width='700px'>
+<img src="/images/TCC-03.png" width='700px'>
 <br><br>
 
-<img src="/images/tcc-04.png" width='700px'>
+<img src="/images/TCC-04.png" width='700px'>
 <br><br>
 
 Select the TrueCommand Cloud option and choose the subscription plan that best fits your current needs.  This can be adjusted later if your needs change.
 
-<img src="/images/tcc-05.png" width='700px'>
+<img src="/images/TCC-05.png" width='700px'>
 <br><br>
 
 Click Continue to proceed.
 
-<img src="/images/tcc-06.png" width='700px'>
+<img src="/images/TCC-06.png" width='700px'>
 <br><br>
 
 Next, fill the payment form. 
 
-<img src="/images/tcc-07.png" width='700px'>
+<img src="/images/TCC-07.png" width='700px'>
 <br><br>
 
 Once the form has been accepted, click **Provision Now**.
 
-<img src="/images/tcc-08.png" width='700px'>
+<img src="/images/TCC-08.png" width='700px'>
 <br><br>
 
 Select a Subnet that is not currently in-use on your network. If unsure, please speak to your local IT staff.
 
-<img src="/images/tcc-09.png" width='700px'>
+<img src="/images/TCC-09.png" width='700px'>
 <br><br>
 
 
@@ -63,27 +63,27 @@ Select a Subnet that is not currently in-use on your network. If unsure, please 
 
 From the account home page, click **Manage**.  Add a client for your desktop or laptop so that you can obtain a TrueCommand WireGuard Config file. 
 
-<img src="/images/tcc-10.png" width='700px'>
+<img src="/images/TCC-10.png" width='700px'>
 <br><br>
 
 Once the client account has been created, click the <i class="fas fa-download action-icon clickable" aria-hidden="true" title="Download WireGuard configuration file"></i>&nbsp download icon to download the config file.
 
-<img src="/images/tcc-11.png" width='700px'>
+<img src="/images/TCC-11.png" width='700px'>
 <br><br>
 
 Open Wireguard on your machine and click **Add Tunnel**. 
 
-<img src="/images/wg-01.png" width='700px'>
+<img src="/images/WG-01.png" width='700px'>
 <br><br>
 
 Select the TrueCommand WireGuard Configuration file that was downloaded from the portal.
 the configuration file into WireGuard on your machine and activate the tunnel.
 
-<img src="/images/wg-02.png" width='700px'>
+<img src="/images/WG-02.png" width='700px'>
 <br><br>
 
 Click **Activate** to initialize the Wireguard tunnel.
-<img src="/images/wg-03.png" width='700px'>
+<img src="/images/WG-03.png" width='700px'>
 <br><br>
 
 Further information on WireGuard and WireGuard clients can be found on the [WireGuard home page](https://www.wireguard.com). The IP of your TrueCommand Cloud instance is displayed in the iXsystems Account Portal page.  
@@ -94,7 +94,7 @@ After WireGuard has been activated, you can log in to the TrueCommand Cloud Inte
 
 Log into your ixSystems cloud account and click **Manage**, Under *Service Details* copy the *TrueCommand API Key* that is displayed.
 
-<img src="/images/tcc-11.png" width='700px'>
+<img src="/images/TCC-11.png" width='700px'>
 <br><br>
 
 Log into your TrueNAS systems and click the TrueCommand icon in the upper right.
@@ -107,7 +107,7 @@ When the True Command logo starts bouncing left and right, check the email accou
 
 Click on the New System alert, fill in the information from the TrueNAS system, and click the **Add System** button.
 
-<img src="/images/tcnewssystemcred.png"><br><br>
+<img src="/images/TC-NewSystemCred.png"><br><br>
 
 It may take 10 to 15 minutes for your TrueNAS instance to fully sync up with the TrueCommand Cloud instance. When systems are connected to the TrueCommand Cloud instance, refer to the [TrueCommand documentation](/truecommand/) for more articles about setting up configuration backups, alerts, reports, and role-based access control.
 

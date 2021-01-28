@@ -44,7 +44,7 @@ Several specific words are used to describe the type of train:
 
 ## Checking for Updates
 
-<img src="/images/12.0-system-update.png">
+<img src="/images/12.0-SystemUpdate.png">
 <br><br>
 
 ## Update Options
@@ -67,7 +67,7 @@ It is important to read the release notes before updating to determine if any of
 
 A dialog to save the system configuration file appears before installing updates.
 
-<img src="/images/12.0-save-config.png ">
+<img src="/images/12.0-SaveConfig.png ">
 <br><br>
 
 > **Warning:**
@@ -116,7 +116,7 @@ After the dialog closes, the manual update screen is shown.
 
 The current version of TrueNAS is shown for verification.
 
-<img src="/images/12.0-manual-update.png ">
+<img src="/images/12.0-ManualUpdate.png ">
 <br><br>
 
 Select the manual update file that was saved to your local system using **Browse**.
