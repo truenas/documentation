@@ -29,12 +29,12 @@ Follow these steps to adjust the BIOS fan settings for the Mini.
 
 2. At the start of the boot process, press the <kbd>F2</kbd> or <kbd>Delete</kbd> key several times until the `BIOS Main menu` appears:
 
-   <img src="/images/FN-heat-bios-1.png">
+   <img src="/images/FNheatbios1.png">
    <br><br>
 
 3. Press the <kbd>right arrow</kbd> to go to the `H/W Monitor` tab:
 
-   <img src="/images/FN-heat-bios-2.png">
+   <img src="/images/FNheatbios2.png">
    <br><br>
 
 4. Use the <kbd>down arrow</kbd> to scroll to the **REAR_FAN2** setting, then press <kbd>Enter</kbd>.

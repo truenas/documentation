@@ -48,7 +48,7 @@ This will configure the FreeNAS system to boot without using a certificate.
 
 6. To create the new self-signed certificate, go to *System -> Certificates*.
 
-<img src="/images/fn-9.1-cert-5.PNG">
+<img src="/images/fn-9.1-cert-5.png">
 <br><br>
 
 6.1 Click **Create Internal Certificate**.

@@ -33,7 +33,7 @@ TrueCommand boasts a wide variety of features, including Role-Based Access Contr
 
 <div class="hubrow">
 	<div class="imgcolumn">
-		<img src="/images/business_idea.jpg">
+		<img src="/images/businessidea.jpg">
 	</div>
 	<div class="textcolumn">
 		<p>TrueCommand can be installed or deployed in a variety of environments!

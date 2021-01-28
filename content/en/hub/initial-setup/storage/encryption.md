@@ -20,16 +20,16 @@ The [Key Management Interface Protocol (KMIP)](https://docs.oasis-open.org/kmip/
 
 To begin encrypting data, follow the same process as creating a new pool and set the **Encryption** option at the top of the page.
 
-<img src="/images/12.0-encrypted-pool-create.PNG">
+<img src="/images/12.0-EncryptedPoolCreate.png">
 <br><br>
 
 Check the **Encryption** box, read the Warning, click the **Confirm** box and then click the **I Understand** button.
 
-<img src="/images/encryptwarn.png"><br><br>
+<img src="/images/EncryptWarn.png"><br><br>
 
 The default encryption cipher is recommended, but there are other ciphers available.
 
-<img src="/images/TN-12.0-encryption-2.png">
+<img src="/images/TN12.0-Encryption2.png">
 <br><br>
 
 ### Encrypting a New Dataset
@@ -49,23 +49,23 @@ Encryption options are the same for either a new pool or dataset.
 Creating a new encrypted pool automatically generates new key file and prompts to download it.
 Always back up the key file to a safe and secure location.
 
-<img src="/images/TN-12.0-encryption-3.PNG">
+<img src="/images/TN12.0-Encryption3.png">
 <br><br>
 
 Manually back up a root dataset keyfile by opening the pool <i class="fas fa-cog" aria-hidden="true" title="Settings"></i> (Settings) menu and selecting **Export Dataset Keys**.
 
-<img src="/images/TN-12.0-encryption-8.png">
+<img src="/images/TN12.0-Encryption8.png">
 <br><br>
 
 To change the key, click <i class="fas fa-ellipsis-v"></i>&nbsp; (Options) and select **Encryption Options**.
 
-<img src="/images/TN-12.0-encryption-4.png">
+<img src="/images/TN12.0-Encryption4.png">
 <br><br>
 
 Enter your custom key or click **Generate Key**.
 Remember to back up your key files after creating or updating them.
 
-<img src="/images/TN-12.0-encryption-5.PNG">
+<img src="/images/TN12.0-Encryption5.png">
 <br><br>
 
 ### Passphrase
@@ -73,10 +73,10 @@ Remember to back up your key files after creating or updating them.
 To use a passphrase instead of a keyfile, click <i class="fas fa-ellipsis-v"></i>&nbsp; (Options) and select **Encryption Options**.
 Change the *Encryption Type* from `Key` to `Passphrase`.
 
-<img src="/images/TN-12.0-encryption-6.PNG">
+<img src="/images/TN12.0-Encryption6.png">
 <br><br>
 
-<img src="/images/TN-12.0-encryption-7.PNG">
+<img src="/images/TN12.0-Encryption7.png">
 <br><br>
 
 **Encryption Type**: How the dataset is secured. Choose between securing with an encryption Key or a user-defined Passphrase.
@@ -98,17 +98,17 @@ Dataset Locked Icon : <i class="material-icons" aria-hidden="true" title="<locke
 Encrypted datasets can only be locked and unlocked if they are secured with a passphrase instead of a keyfile.
 Before locking a dataset, verify that it is not currently in use, then click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; (Options) and **Lock**.
 
-<img src="/images/TN-12.0-encryption-10.PNG">
+<img src="/images/TN12.0-Encryption10.png">
 <br><br>
 
 Use the **Force unmount** option only if you are certain that no one is currently accessing the dataset.
 
-<img src="/images/TN-12.0-encryption-11.PNG">
+<img src="/images/TN12.0-Encryption11.png">
 <br><br>
 
 A dialog window remains visible while the dataset is locked.
 
-<img src="/images/TN-12.0-encryption-12.PNG">
+<img src="/images/TN12.0-Encryption12.png">
 <br><br>
 
 After locking a dataset, the unlock icon changes to a locked icon.
@@ -116,22 +116,22 @@ While the dataset is locked, it is not available for use.
 
 To unlock a dataset, click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; (Options) and **Unlock**.
 
-<img src="/images/TN-12.0-encryption-13.PNG">
+<img src="/images/TN12.0-Encryption13.png">
 <br><br>
 
 Enter the passphrase and click **Submit**. If there are child datasets that are locked with the same passphrase you can unlock them all at the same time by setting *Unlock Children*.
 
-<img src="/images/TN-12.0-encryption-14.PNG">
+<img src="/images/TN12.0-Encryption14.png">
 <br><br>
 
 Confirm that you want to unlock the datasets.
 
-<img src="/images/TN-12.0-encryption-15.PNG">
+<img src="/images/TN12.0-Encryption15.png">
 <br><br>
 
 A dialog confirms when datasets are successfully unlocked.
 
-<img src="/images/TN-12.0-encryption-16.PNG">
+<img src="/images/TN12.0-Encryption16.png">
 <br><br>
 
 The dataset listing changes to show the unlocked icon.

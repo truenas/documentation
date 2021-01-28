@@ -34,7 +34,7 @@ After a ZFS version upgrade, the storage devices will not be accessible by earli
 In the web interface **Dashboard**, find the entry for the active TrueNAS controller and click **CHECK FOR UPDATES**.
 This button changes to **UPDATES AVAILABLE** when there is an available update.
 
-<img src="/images/enterprise-dashboard-example.png">
+<img src="/images/EnterpriseDashboardExample.png">
 <br><br>
 
 Clicking the button goes to **System > Update** and shows the option to **Download Updates** or, when the system has already detected and staged an update, **Apply Pending Update**.
@@ -53,7 +53,7 @@ A <i class="fas fa-arrow-alt-square-down" aria-hidden="true" title="Down Arrow">
 
 Update progress is shown for both TrueNAS controllers.
 
-<img src="/images/ha-update-progress.png">
+<img src="/images/HA-UpdateProgress.png">
 <br><br>
 
 The standby TrueNAS controller reboots when it is finished updating.
@@ -64,7 +64,7 @@ When the standby controller has finished booting, the system must fail over to u
 
 To deactivate the active TrueNAS controller and finish the update, go to the **Dashboard**, find the entry for the *Standby* controller, and click **INITIATE FAILOVER**.
 
-<img src="/images/dashboard-initiate-failover.png">
+<img src="/images/HA-DashboardInitiateFailover.png">
 <br><br>
 
 Initiating the failover briefly interrupts TrueNAS services and availability.
@@ -72,7 +72,7 @@ Initiating the failover briefly interrupts TrueNAS services and availability.
 The browser logs out of the web interface while the active TrueNAS controller deactivates and the standby TrueNAS controller is brought online.
 The web interface login screen reappears when the standby TrueNAS controller finishes activating.
 
-<img src="/images/failover-login.png">
+<img src="/images/HA-FailoverLogin.png">
 <br><br>
 
 Log in to the web interface and check the <i class="fas fa-cloud" aria-hidden="true" title="Cloud"></i>&nbsp; HA status in the top toolbar.
@@ -86,7 +86,7 @@ Verify that the update is complete by going to the **Dashboard** and confirming 
 
 If the update did not install on one of the controllers, the web interface generates an alert about a mismatch between controller versions.
 
-<img src="/images/ha-controller-version-mismatch.png">
+<img src="/images/HA-ControllerVersionMismatch.png">
 <br><br>
 
 If something else goes wrong with the update, the system generates an alert and writes details to `/data/update.failed`.
@@ -97,12 +97,12 @@ This requires physical or IPMI access to the TrueNAS controller console.
 
 Reboot the system and press the space bar when the boot menu appears, pausing the boot process.
 
-<img src="/images/truenas-boot-menu.png">
+<img src="/images/TN-BootMenu.png">
 <br><br>
 
 Open the *Boot Environments* menu and cycle the *Active* boot environment until one that is dated prior to the update is selected.
 
-<img src="/images/truenas-boot-menu-select-boot-environment.png">
+<img src="/images/TN-BootMenuSelectBootEnvironment.png">
 <br><br>
 
 Return to the first screen and press <kbd>Enter</kbd> to boot into the version of TrueNAS that was installed on that date.

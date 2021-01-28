@@ -18,7 +18,7 @@ Before configuring Active Directory, there are a few steps you can take to ensur
 
 To confirm that name resolution is functioning, go to the **Shell** and use `ping` to check the connection to the AD domain controller.
 
-<img src="/images/shell-ad-dc-ping.png">
+<img src="/images/ShellADDCPping.png">
 <br><br>
 
 When packets are being sent and received without loss, the connection is verified.
@@ -40,7 +40,7 @@ There are a few changes you can make in TrueNAS to ensure both systems are set t
 
 * Go to **System > General** and make sure the system *Timezone* matches the AD Domain Controller.
 
-  <img src="/images/system-general-timezone.png">
+  <img src="/images/SystemGeneralTimezone.png">
   <br><br>
 
 * Set either localtime or universal time in your system BIOS.
@@ -50,7 +50,7 @@ There are a few changes you can make in TrueNAS to ensure both systems are set t
 To connect to Active Directory, go to **Directory Services > Active Directory** and enter the AD **Domain Name** and account credentials.
 Set **Enable** to attempt to join the AD domain immediately after saving the configuration.
 
-<img src="/images/directoryservices-activedirectory-example.png">
+<img src="/images/DirectoryServicesActiveDirectoryExample.png">
 <br><br>
 
 Advanced options are available for fine-tuning the AD configuration, but the preconfigured defaults are generally suitable.
