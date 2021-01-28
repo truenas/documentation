@@ -6,7 +6,7 @@ description: "How to create and view system reports."
 
 The **Reports** page is used to customize charts of system metrics for data analysis.
 
-<img src="/images/tc-reports.png">
+<img src="/images/TC-Reports.png">
 <br><br>
 
 These reports are created by or shared with the current TrueCommand user.
@@ -21,7 +21,7 @@ Click **+ CREATE REPORT** to create a customizable report.
 Enter a report name and an optional description for the report.
 Click BROWSE WIDGETS or WIDGET to add charts to the report.
 
-<img src="/images/tc-reports-widgets.png">
+<img src="/images/TC-ReportsWidgets.png">
 <br><br>
 
 ### Custom Charts
@@ -46,7 +46,7 @@ By default, the reports created by a user are available only to that user.
 To share a report with other users or teams, open the **User Menu ‣ Reports** screen and click the **Share** button for a report.
 Reports can also be shared after clicking **Generate report (Eye)**.
 
-<img src="/images/tc-reports-share-users.png">
+<img src="/images/TC-ReportsShareUsers.png">
 <br><br>
 
 Reports can be shared with individual users or entire teams.
@@ -59,13 +59,13 @@ Clicking the **OWNER** or **SHARED WITH** text toggles every name in the list.
 Open the **User Menu ‣ Reports** page and click **Generate report (Eye)** on the appropriate report.
 Click **GENERATE** to select the systems and time frame for the report
 
-<img src="/images/tc-reports-generate.png">
+<img src="/images/TC-ReportsGenerate.png">
 <br><br>
 
 A non-administrative user must have the appropriate permissions to view data from specific systems.
 
 Clicking **Confirm** shows the saved charts from the report, populated with system data according to the selected amount of time.
 
-<img src="/images/tc-reports-view.png">
+<img src="/images/TC-ReportsView.png">
 <br><br>
 

@@ -24,7 +24,7 @@ Fibre Channel is a high-speed data transfer protocol providing in-order, lossles
 
 TrueNAS systems licensed for Fibre Channel will have a tab *Fibre Channel Ports* added to **Sharing > Block Shares (iSCSI)**.
 
-<img src="/images/fibre_tab.png"><br><br>
+<img src="/images/FibreTab.png"><br><br>
 
 ### Configuring a Fibre Channel ISCSI share example.
 
@@ -32,15 +32,15 @@ TrueNAS systems licensed for Fibre Channel will have a tab *Fibre Channel Ports*
 
 Navigate to **Storage > Pools**.  Select an existing pool such as tank, click the <i class="fa fa-bars" aria-hidden="true"></i>&nbsp; hamburger menu, and click **Add zvol** to create a <a href="/hub/initial-setup/storage/zvols/">new zvol</a>. 
 
-<img src="/images/zvol_pool_fibre.png"><br><br>
+<img src="/images/FibrezvolPool.png"><br><br>
 
 Navigate to sharing, Block Shares (iSCSI), click portals.  If portal with listen interface `0.0.0.0:3260` does not yet exist click **Add** and add one.
 
-<img src="/images/add_portals.png"><br><br>
+<img src="/images/FibreAddPortals.png"><br><br>
 
 Navigate to sharing, Block Shares (iSCSI), click Targets, click **Add**. Enter  or select values specified for *Target Name*, *Target Alias*, *Target Mode*, and *Portal Group*. Click the **Submit** button.
 
-<img src="/images/add_target_fibre.png"><br><br>
+<img src="/images/FibreAddTarget"><br><br>
 
 > **Note:** An extra *Target Mode* option appears after going to Targets and clicking **ADD**. This new option is to select whether the target to create is iSCSI, Fibre Channel, or both.
 
@@ -48,11 +48,11 @@ Navigate to sharing, Block Shares (iSCSI), click Targets, click **Add**. Enter 
 
 Navigate to sharing, Block Shares (iSCSI), click **Extents**, click **Add**, enter values for *Extent Name* and *Device*. Click the **Submit** button.
 
-<img src="/images/add_extents_fibre.png"><br><br>
+<img src="/images/FibreAddExtents.png"><br><br>
 
 Navigate to **Sharing > Block Shares (iSCSI)**, click Associated Targets, click Add, select values for *Target** and **Extent*. Click the **Submit** button.
 
-<img src="/images/add_assoc_fibre.png"><br><br>
+<img src="/images/FibreAddAssoc.png"><br><br>
 
 Navigate to sharing, Block Shares (iSCSI), click **Fibre Channel Ports**, expand using > next to isp0, select options as presented under test data, and click save.
 
@@ -68,7 +68,7 @@ To create the virtual ports on the TrueNAS® system, go to **System > Tunables
 * **Value**: input the number of virtual ports to create. Note that there cannot be more then 125 SCSI target ports and that number includes all physical Fibre Channel ports, all virtual ports, and all configured combinations of iSCSI portals and targets.
 * **Type**: make sure loader is selected.
 
-<img src="/images/tunables_fibre.png"><br><br>
+<img src="/images/FibreTunables.png"><br><br>
 
 In the example shown, two physical interfaces were each assigned 4 virtual ports. Note that two tunables were required, one for each physical interface. After the tunables are created, the configured number of virtual ports appears in the *Fibre Channel Ports* screen so they can be associated with targets. They will also be advertised to the switch so zoning can be configured on the switch. 
 

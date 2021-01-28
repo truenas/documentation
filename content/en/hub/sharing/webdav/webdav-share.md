@@ -19,7 +19,7 @@ The HTTP and HTTPS ports are also configurable.
 Make sure that the port assigned to the WebDAV share isn't already in use on the network.
 Don't forget to click *SAVE* when changing any settings.
 
-<img src="/images/Webdav4.png">
+<img src="/images/WebDAV4.png">
 
 ## WebDAV Share
 
@@ -32,9 +32,9 @@ By default, *Change User & Group Ownership* is set. This setting changes existin
 By default, a new WebDAV share is enabled after creation. To create the share but not immediately enable it, unset *Enable*.
 Clicking *SUBMIT* creates the share.
 
-<img src="/images/Webdav1.png">
-<img src="/images/Webdav2.png">
-<img src="/images/Webdav3.png">
+<img src="/images/WebDAV1.png">
+<img src="/images/WebDAV2.png">
+<img src="/images/WebDAV3.png">
 
 ## Connecting to the WebDAV Share
 

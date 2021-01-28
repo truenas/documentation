@@ -72,7 +72,7 @@ In the **Email** field, enter a remote email address that is regularly monitored
 
 Additional configuration is done from **System > Email**.
 
-<img src="/images/TN12-emailsetup-01.png">
+<img src="/images/TN12-EmailSetup1.png">
 <br><br>
 Set the address the email will come from, along with the From Name.  Enter the mail server address and the correct port.  Select the desired security option, and enable SMTP and enter the credentials if necessary.
 
@@ -80,11 +80,11 @@ Set the address the email will come from, along with the From Name.  Enter the m
 To use Gmail OAuth, select the option and click **LOG IN TO GMAIL**.
 Log into your gmail account as you normally would.
 
-<img src="/images/TN12-emailsetup-02.png">
+<img src="/images/TN12-EmailSetup2.png">
 <br><br>
-<img src="/images/TN12-emailsetup-03.png">
+<img src="/images/TN12-EmailSetup3.png">
 <br><br>
-<img src="/images/TN12-emailsetup-04.png">
+<img src="/images/TN12-EmailSetup4.png">
 <br><br>
 
 ### SMTP Authentication Settings
@@ -131,4 +131,4 @@ When starting the SNMP service, port `UDP 161` is enabled to listen for SNMP req
 Available Management Information Bases (MIBs) are located in `/usr/local/share/snmp/mibs`.
 Here is a sample of the directory contents:
 
-<img src="/images/SNMP-MibsSample.png">
+<img src="/images/SNMPMibsSample.png">

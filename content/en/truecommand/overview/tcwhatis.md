@@ -10,7 +10,7 @@ TrueCommand is a multi-system management "Single pane of Glass" system that help
 
 TrueCommand can monitor an entire fleet of TrueNAS systems and thousands of online storage devices simultaneously. This includes displaying statistics on storage usage, network activity, active services, and more. TrueCommand also has the ability to create custom reports about individual systems or a combination of many systems.
 
-<img src="/images/truecommand-overview.png" width='700px'>
+<img src="/images/TrueCommandOverview.png" width='700px'>
 <br><br>
 
 ### What features does TrueCommand have?

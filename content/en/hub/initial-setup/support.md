@@ -40,7 +40,7 @@ You will need to [create a Jira account](https://jira.ixsystems.com/secure/Signu
 
 To report an issue using the web interface, go to **System > Support**.
 
-<img src="/images/truenas-core-bug-report.png">
+<img src="/images/TNCore-BugReport.png">
 <br><br>
 
 Enter your Jira *Username* and *Password* to verify your account credentials and unlock the *Submit* button.
@@ -116,12 +116,12 @@ You can see and vote for community proposed features in the TrueNAS Jira project
 To see the list of features that have been proposed by the community, go to the TrueNAS Jira project and [search for open suggestions](https://jira.ixsystems.com/issues/?jql=issuetype%20%3D%20Suggestion%20AND%20status%20%3D%20%22Gathering%20Interest%22).
 If you find a suggestion that you would also like to see implemented, open that ticket and click *Vote for this issue* in the *People* section of the ticket.
 
-<img src="/images/suggestion-example.png">
+<img src="/images/SuggestionExample.png">
 <br><br>
 
 To suggest a new feature, go to https://jira.ixsystems.com/projects/NAS/, log in to your Jira account, and click **Create**.
 
-<img src="/images/suggestion-create.png">
+<img src="/images/SuggestionCreate.png">
 <br><br>
 
 Enter a brief *Summary* and describe the new feature you'd like to see added to the software.
@@ -144,7 +144,7 @@ Once the system is ready to be in production, Update the status by checking the 
 Proactive Support notifies iXsystems by email whenever hardware conditions on the system require attention.
 This feature is available to iXsystems Silver and Gold Support customers.
 
-<img src="/images/enterprise-proactive-support.png">
+<img src="/images/EnterpriseProActiveSupport.png">
 <br><br>
 
 Be sure to add valid email addresses and phone numbers for the contacts to be quickly notified of any issues.
@@ -157,7 +157,7 @@ To administratively disable failover in the web interface, go to **System > Fail
 
 TrueNAS Enterprise customers can file tickets directly with iXsystems Support by going to **System > Support** in the web interface.
 
-<img src="/images/enterprise-contact-support.png">
+<img src="/images/EnterpriseContactSupport.png">
 <br><br>
 
 Be sure to enter a valid *Email* and *Phone* number.

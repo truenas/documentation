@@ -10,7 +10,7 @@ When the local network contains managed switches, configuring and starting the L
 
 To configure LLDP, log in to the web interface and go to **Services > LLDP**
 
-<img src="/images/TN-12.0-services-lldp.png" width='700px'>
+<img src="/images/TN12.0-ServicesLLDP.png" width='700px'>
 <br><br>
 
 Set an **Interface Description** and enter a **Country Code** before turning the LLDP service on.

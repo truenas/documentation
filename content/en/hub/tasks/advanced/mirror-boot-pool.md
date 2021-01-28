@@ -17,7 +17,7 @@ View the current boot pool status by going to **System > Boot > ACTIONS > Boot P
 * It is **strongly recommended** to use SSDs rather than USB devices when
   creating a mirrored boot pool.
 
-<img src="/images/boot-pool-status.png">
+<img src="/images/BootPoolStatus.png">
 <br><br>
 
 Click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; on a device entry to access actions specific to that device:
