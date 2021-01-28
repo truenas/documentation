@@ -6,25 +6,43 @@
 }
 /* Site header */
 .iconsbar {
-	background-color: #0095d5;
+	background: #0095d5;
 	text-align: right !important;
 }
 .iconsbar a {
 	color: #fff;
+}
+/* Sticky top menu */
+.sticky {
+  position: fixed;
+  top: 0;
+  z-index: 5;
+}
+.stickyelement {
+	background: white;
+	width: 90rem;
+}
+.gdoc-header__link {
+	float:left;
+}
+.truenas-menubar {
+	float: right;
+	display: flex;
+}
+/* End sticky top menu */
+.container{
+	max-width: 90rem;
 }
 .gdoc-header {
 	background: #ffffff;
 	border: none;
 }
 .truenas-menuitem {
-	position: relative;
-	display: inline-block;
 }
 .truenas-menubutton {
 	background-color: #ffffff;
 	color: black;
 	padding: 16px;
-	font-size: 16px;
 	border: none;
 }
 .truenas-menubutton,.truenas-menubutton a {color:#black;cursor:pointer;}
@@ -42,7 +60,7 @@
 	background-color: #0095d5;
 	min-width: 160px;
 	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-	z-index: 1;
+	z-index: 10;
 }
 .truenas-menudropdown a {
 	color: white;
@@ -64,10 +82,13 @@
 /* End site header */
 /* Site footer */
 .gdoc-footer {
-	background-color: #0095d5;
+	background: #0095d5;
 }
-.gdoc-footer__link a {
-	color: #white;
+.gdoc-footer__link {
+	color: white;
+}
+.gdoc-footer__link:visited {
+	color: white;
 }
 /* End site footer */
 /* Styling images in the Topics Tab Boxes */

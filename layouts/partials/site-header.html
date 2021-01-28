@@ -9,81 +9,82 @@
             <a href="https://www.vendop.com/vendor/ixsystems-inc/reviews/" target="_blank" title="iXsystems VendOp Reviews"><b>V</b></a>&nbsp;
             <a href="https://support.ixsystems.com/" target="_blank" title="iXsystems TrueNAS Enterprise Support">Commercial Support</a>
     </div>
-    <div class="container flex align-center justify-between" id="stickymenu">
-        <a class="gdoc-header__link" href="https://www.truenas.com">
-            <span class="gdoc-brand flex align-center">
+    <div class="container">
+        <div class="stickyelement" id="stickymenu">
+            <a class="gdoc-header__link" href="https://www.truenas.com">
+                <span class="gdoc-brand flex align-center">
                 <img class="gdoc-brand__img" src="{{ (default "brand.svg" .Root.Site.Params.GeekdocLogo) | relURL }}" alt="">
                 {{ .Root.Site.Title }}
-            </span>
-        </a>
-        {{ if .MenuEnabled }}
-        <label for="menu-control" class="gdoc-nav__control">
-            <svg class="icon menu"><use xlink:href="#menu"></use></svg>
-            <svg class="icon arrow-back"><use xlink:href="#arrow_back"></use></svg>
-        </label>
-        {{ end }}
-        <div class="truenas-menubar">
-            <div class="truenas-menuitem">
-                <button class="truenas-menubutton">Software <i class="fa fa-angle-down"></i></button>
-                <div class="truenas-menudropdown">
+                </span>
+            </a>
+            <div class="truenas-menubar">
+                <div class="truenas-menuitem">
+                    <button class="truenas-menubutton">Software <i class="fa fa-angle-down"></i></button>
+                    <div class="truenas-menudropdown">
                     <a href="https://www.truenas.com/truenas-core/">TrueNAS CORE</a>
                     <a href="https://www.truenas.com/truenas-enterprise/">TrueNAS Enterprise</a>
                     <a href="https://www.truenas.com/truenas-scale/">TrueNAS SCALE</a>
                     <a href="https://www.truenas.com/truecommand/">TrueNAS TrueCommand</a>
                     <a href="https://www.truenas.com/help-me-choose/">Help Me Choose</a>
                     <a href="https://www.truenas.com/freenas/">FreeNAS</a>
+                    </div>
+                </div>
+                <div class="truenas-menuitem">
+                    <button class="truenas-menubutton">Systems <i class="fa fa-angle-down"></i></button>
+                    <div class="truenas-menudropdown">
+                        <a href="https://www.truenas.com/systems-overview/">Systems Overview</a>
+                        <a href="https://www.truenas.com/truenas-mini/">Mini Series</a>
+                        <a href="https://www.truenas.com/r-series/">R-Series</a>
+                        <a href="https://www.truenas.com/x-series/">X-Series</a>
+                        <a href="https://www.truenas.com/m-series/">M-Series</a>
+                    </div>
+                </div>
+                <div class="truenas-menuitem">
+                    <button class="truenas-menubutton">Company <i class="fa fa-angle-down"></i></button>
+                    <div class="truenas-menudropdown">
+                        <a href="https://www.ixsystems.com/blog/">Blog</a>
+                        <a href="https://www.ixsystems.com/ix-news/">In the News</a>
+                        <a href="https://www.truenas.com/store/">TrueNAS Store</a>
+                        <a href="https://www.ixsystems.com">iXsystems</a>
+                        <a href="https://www.truenas.com/contact-us/">Contact Us</a>
+                    </div>
+                </div>
+                <div class="truenas-menuitem">
+                    <a href="https://www.truenas.com/community/"><button class="truenas-menubutton">Community</button></a>
+                </div>
+                <div class="truenas-menuitem">
+                    <button class="truenas-menubutton">Resources <i class="fa fa-angle-down"></i></button>
+                    <div class="truenas-menudropdown">
+                        <a href="https://security.truenas.com">TrueNAS Security</a>
+                        <a href="https://www.truenas.com/docs/hub/">Documentation</a>
+                        <a href="https://www.ixsystems.com/library">Information Library</a>
+                        <a href="https://www.ixsystems.com/white-papers/">White Papers</a>
+                        <a href="https://www.ixsystems.com/case-studies/">Case Studies</a>
+                        <a href="https://www.ixsystems.com/solution-briefs/">Solution Briefs</a>
+                        <a href="https://portal.ixsystems.com/portal/login/index.php#login">iX Portal</a>
+                        <a href="https://www.truenas.com/plugins/">Plugins</a>
+                        <a href="https://www.truenas.com/zfs/">ZFS</a>
+                    </div>
+                </div>
+                <div class="truenas-menuitem">
+                    <button class="truenas-downloadbutton"><a href="https://www.truenas.com/download-truenas-core/">Download</a></button>
                 </div>
             </div>
-            <div class="truenas-menuitem">
-                <button class="truenas-menubutton">Systems <i class="fa fa-angle-down"></i></button>
-                <div class="truenas-menudropdown">
-                    <a href="https://www.truenas.com/systems-overview/">Systems Overview</a>
-                    <a href="https://www.truenas.com/truenas-mini/">Mini Series</a>
-                    <a href="https://www.truenas.com/r-series/">R-Series</a>
-                    <a href="https://www.truenas.com/x-series/">X-Series</a>
-                    <a href="https://www.truenas.com/m-series/">M-Series</a>
-                </div>
-            </div>
-            <div class="truenas-menuitem">
-                <button class="truenas-menubutton">Company <i class="fa fa-angle-down"></i></button>
-                <div class="truenas-menudropdown">
-                    <a href="https://www.ixsystems.com/blog/">Blog</a>
-                    <a href="https://www.ixsystems.com/ix-news/">In the News</a>
-                    <a href="https://www.truenas.com/store/">TrueNAS Store</a>
-                    <a href="https://www.ixsystems.com">iXsystems</a>
-                    <a href="https://www.truenas.com/contact-us/">Contact Us</a>
-                </div>
-            </div>
-            <div class="truenas-menuitem">
-                <a href="https://www.truenas.com/community/"><button class="truenas-menubutton">Community</button></a>
-            </div>
-            <div class="truenas-menuitem">
-                <button class="truenas-menubutton">Resources <i class="fa fa-angle-down"></i></button>
-                <div class="truenas-menudropdown">
-                    <a href="https://security.truenas.com">TrueNAS Security</a>
-                    <a href="https://www.truenas.com/docs/hub/">Documentation</a>
-                    <a href="https://www.ixsystems.com/library">Information Library</a>
-                    <a href="https://www.ixsystems.com/white-papers/">White Papers</a>
-                    <a href="https://www.ixsystems.com/case-studies/">Case Studies</a>
-                    <a href="https://www.ixsystems.com/solution-briefs/">Solution Briefs</a>
-                    <a href="https://portal.ixsystems.com/portal/login/index.php#login">iX Portal</a>
-                    <a href="https://www.truenas.com/plugins/">Plugins</a>
-                    <a href="https://www.truenas.com/zfs/">ZFS</a>
-                </div>
-            </div>
-            <div class="truenas-menuitem">
-                <button class="truenas-downloadbutton"><a href="https://www.truenas.com/download-truenas-core/">Download</a></button>
-            </div>
+            {{ if .MenuEnabled }}
+            <label for="menu-control" class="gdoc-nav__control">
+                <svg class="icon menu"><use xlink:href="#menu"></use></svg>
+                <svg class="icon arrow-back"><use xlink:href="#arrow_back"></use></svg>
+            </label>
+            {{ end }}
         </div>
     </div>
 </header>
 
+<!-- Make stickymenu stay on the top of the page when the user scrolls -->
 <script>
 window.onscroll = function() {myFunction()};
-
 var navbar = document.getElementById("stickymenu");
 var sticky = navbar.offsetTop;
-
 function myFunction() {
   if (window.pageYOffset >= sticky) {
     navbar.classList.add("sticky")
@@ -92,3 +93,4 @@ function myFunction() {
   }
 }
 </script>
+<!-- End sticky main_navbar -->
