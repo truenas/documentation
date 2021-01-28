@@ -58,17 +58,20 @@ tags: ["reference", "networking", "IPMI"]
 | Autoconfigure IPv6 | Set to automatically configure the IPv6 address with [rtsol(8)](https://www.freebsd.org/cgi/man.cgi?query=rtsol). Only one interface can be configured this way. |
 
 Bridge Settings
+
 | | |
 |-|-|
 | Bridge Members | Network interfaces to include in the bridge. | 
 
 LAGG Settings
+
 | | |
 |-|-|
 | Lagg Protocol | Determines the outgoing and incoming traffic ports. LACP is the recommended protocol if the network switch is capable of active LACP. Failover is the default protocol choice and should only be used if the network switch does not support active LACP. See [lagg(4)](https://www.freebsd.org/cgi/man.cgi?query=lagg) for more details. | 
 | Lagg Interfaces | Select the interfaces to use in the aggregation. Warning: Lagg creation fails if any of the selected interfaces have been manually configured. |
 
 VLAN Settings
+
 | | |
 |-|-|
 | Parent Interface | Select the VLAN Parent Interface. Usually an Ethernet card connected to a switch port configured for the VLAN. New link aggregations are not available until the system is restarted. |
