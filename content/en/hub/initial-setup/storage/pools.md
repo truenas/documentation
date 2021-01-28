@@ -89,7 +89,7 @@ When physically installing ZFS pool disks from another system, use the `zpool ex
 
 ### Importing Encrypted ZFS Pools
 
-You can import existing ZFS pools by clicking **Storage** > **Pools** > **ADD**. Select **Import an existing pool**, then click **NEXT**
+You can import existing ZFS pools by clicking **Storage** > **Pools** > **ADD**. Select **Import an existing pool**, then click **NEXT**.
 
 <img src="/images/ZFS-ImportExistingPool.png">
 <br><br>
@@ -99,12 +99,12 @@ Select **No, continue with import**, then click **NEXT**.
 <img src="/images/ZFS-NoContinueWithImport.png">
 <br><br>
 
-Click the drop down menu and choose the ZFS pool that you want to decrypt, then click **NEXT**
+Click the drop down menu and choose the ZFS pool that you want to decrypt, then click **NEXT**.
 
 <img src="/images/ZFS-SelectPoolToDecrypt.png">
 <br><br>
 
-Review the Pool Import Summary and click **IMPORT**, then click **CONTINUE** to unlock the pool’s encrypted datasets
+Review the Pool Import Summary and click **IMPORT**, then click **CONTINUE** to unlock the pool’s encrypted datasets.
 
 <img src="/images/ZFS-ReviewPoolImportSummary.png">
 <br><br>
@@ -116,7 +116,7 @@ Click **Choose File** and open the encryption key file, then enter the **Passphr
 
 ### Importing Encrypted GELI Pools
 
-You can import existing GELI pools from FreeNAS/TrueNAS 11.3 or earlier by clicking **Storage** > **Pools** > **ADD**. Select **Import an existing pool**, then click **NEXT**
+You can import existing GELI pools from FreeNAS/TrueNAS 11.3 or earlier by clicking **Storage** > **Pools** > **ADD**. Select **Import an existing pool**, then click **NEXT**.
 
 Select **Yes, decrypt the disks** and choose which disks you want to decrypt from the dropdown list.
 

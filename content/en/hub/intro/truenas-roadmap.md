@@ -1,6 +1,6 @@
 ---
 title: "Software Release Schedule"
-weight: 3
+weight: 25
 ---
 
 This is the latest roadmap for major TrueNAS and TrueCommand releases.
@@ -24,12 +24,13 @@ It is still receiving minor version updates, but will reach End of Life when Tru
 | Version                                                                                                          | Scheduled Release Date |
 |------------------------------------------------------------------------------------------------------------------|------------------------|
 | [TrueNAS 12.0-U2](https://jira.ixsystems.com/projects/NAS/versions/12700)                                        | 2021/02/02             |
+| [TrueNAS 12.0-U3](https://jira.ixsystems.com/projects/NAS/versions/12902)                                        | 2021/03/30             |
 
 ## SCALE
 
 | Version                                                                                                                | Scheduled Release Date |
 |------------------------------------------------------------------------------------------------------------------------|------------------------|
-| [SCALE 21.02-ALPHA1 (Angelfish)](https://jira.ixsystems.com/projects/NAS/versions/12016)                               | Q1 2021                |
+| [SCALE 21.02-ALPHA1 (Angelfish)](https://jira.ixsystems.com/projects/NAS/versions/12016)                               | 2021/02/09             |
 
 ## TrueCommand
 

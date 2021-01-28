@@ -1,6 +1,6 @@
 ---
 title: "Software Development Life Cycle"
-weight: 2
+weight: 20
 ---
 
 ## TrueNAS Software Development Life Cycle
