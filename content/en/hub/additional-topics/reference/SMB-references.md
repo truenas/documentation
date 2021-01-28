@@ -33,9 +33,9 @@ shows helpful hints for configuring and managing SMB networking.
 
 These videos help clarify setting up permissions on SMB shares:
 
-{{< youtube RxggaE935PM >}}
+{{< youtube R-5jbDTCsOE?t=81 >}}
 <br>
-{{< youtube QhwOyLtArw0>}}
+
 
 Another helpful reference is
 [Methods For Fine-Tuning Samba Permissions](https://forums.freenas.org/index.php?threads/methods-for-fine-tuning-samba-permissions.50739/).
