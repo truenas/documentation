@@ -97,3 +97,7 @@
 	padding-right:20px;
 	max-width: 25% !important;
 }
+/* Make Readtime and lastmod less visible */
+.reading-time {
+	opacity: 0.5;
+}

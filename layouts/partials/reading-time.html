@@ -1,1 +1,10 @@
-<p class="reading-time"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp {{ .ReadingTime }} minute read</p>
+<!-- Add reading time estimate to articles along with last modified date and hash pulled from GitHub -->
+<p class="reading-time"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp {{ .ReadingTime }} minute read. Last modified:
+<lastmod>{{ .Lastmod.Format "2006-01-02T15:04:05-07:00" }}</lastmod>
+{{ with .Sitemap.ChangeFreq }}
+<changefreq>{{ . }}</changefreq>
+{{ "post_last_mod"}}
+{{ .Lastmod.Format .Site.Params.time_format_default }}{{ with .GitInfo }}: <a href="{{ $.Site.Params.github_repo }}/commit/{{ .Hash }}">{{ .Subject }} ({{ .AbbreviatedHash }})</a>
+{{ end }}
+{{ end }}
+</p>
