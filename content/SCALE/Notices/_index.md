@@ -4,4 +4,4 @@ geekdocCollapseSection: true
 weight: 130
 ---
 
-Articles are coming soon!
+Official statements from iXsystems, Inc.
