@@ -31,9 +31,12 @@ server-side. Windows 7 clients support server-side copying with
 [SMB Tips and Tricks](https://forums.freenas.org/index.php?resources/smb-tips-and-tricks.15/)
 shows helpful hints for configuring and managing SMB networking.
 
-These videos help clarify setting up permissions on SMB shares:
+This video explains the process of setting up ACLs with the new UI in FreeNAS 11.3.
 
-{{< youtube R-5jbDTCsOE?t=81 >}}
+{{< youtube mCfX4sqDmzs >}}
+
+Tom from Lawrence Systems explains setting SMB ACLs in TrueNAS Core 12.0 in this video. 
+{{< youtube R-5jbDTCsOE >}}
 <br>
 
 
