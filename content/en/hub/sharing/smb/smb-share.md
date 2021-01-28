@@ -174,6 +174,7 @@ Continue to define how the settings are applied to the account then choose which
 For example, to only allow the *tmoore* user permission to view dataset contents but not make changes, set the **ACL Type** to *Allow* and **Permissions** to *Read*.
 
 <img src="/images/StoragePoolsEditACLExample.png">
+<br><br>
 
 For more information on Managing ACLs, read the [Dataset Management](/hub/tasks/advanced/editingacls/) documentation.
 
@@ -204,6 +205,7 @@ Unless a specific setting is needed or configuring for a specific network enviro
 Clicking **ADVANCED OPTIONS** adds a new section of *Other Options* for fine-tuning the service.
 
 <img src="/images/ServicesSMBConfigureAdvanced.png">
+<br><br>
 
 | Setting                                 | Value     | Description  |
 |-----------------------------------------|-----------|--------------|
