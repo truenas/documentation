@@ -35,6 +35,7 @@ Select SSDs to add to the *Metadata VDev*.
 It is highly recommended that the special vdev be set up as a mirror.  If the special-vdev is set as a stripe , if a disk fails, you will lose all of the data in the pool, as such a stripe setup must be **Forced**.
 
 <img src="/images/Metadatavdev.png">
+<br><br>
 
 Creating a pool requires confirming the action.
 After the pool is created, you can confirm the pool shows as a *MIRROR* with a *Special* section that contains the metadata SSD by opening the [Pool Options](/hub/initial-setup/storage/managingpools/#status) and clicking **Status**.
