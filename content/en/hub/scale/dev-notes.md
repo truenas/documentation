@@ -5,6 +5,8 @@ tags: ["SCALE"]
 ---
 
 #### Recent Updates
+> 01/29/2021 - First early look at the new TrueNAS CLI has been merged into SCALE Nightly images. To launch run "cli" from the shell.
+
 > 01/16/2021 - Updated Debian base image, SCALE now includes Kernel 5.10 as well as updates to all other base packages
 
 > 12/16/2020 - Applications UI lands in SCALE - Support for deploying pre-defined Helm Charts, as well as Docker Images now possible via the UI.
