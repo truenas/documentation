@@ -20,4 +20,5 @@ Disabling this is only recommended when the interface is managing [Jails](/hub/t
 The Maximum Transmission Unit (MTU) is the largest protocol data unit that can be communicated.
 What the largest workable MTU size can be will change according to your available network interfaces and other physical hardware.
 `1500` and `9000` are standard Ethernet MTU sizes and TrueNAS recommends leaving this at the default `1500`.
-Leaving this field blank restores the default value.
+The permissable range of MTU values is 1492 to 9216. 
+Leaving this field blank restores the field to the default value of 1500.

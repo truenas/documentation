@@ -86,7 +86,7 @@ tags: ["reference", "networking", "IPMI"]
 | | |
 |-|-|
 | Disable Hardware Offloading | Turn off hardware offloading for network traffic processing. WARNING: disabling hardware offloading can reduce network performance. Disabling hardware offloading is only recommended when the interface is managing jails, plugins, or virtual machines. |
-| MTU | Maximum Transmission Unit, the largest protocol data unit that can be communicated. The largest workable MTU size varies with network interfaces and equipment. 1500 and 9000 are standard Ethernet MTU sizes. Leaving blank restores the field to the default value of 1500. |
+| MTU | Maximum Transmission Unit, the largest protocol data unit that can be communicated. The largest workable MTU size varies with network interfaces and equipment. 1500 and 9000 are standard Ethernet MTU sizes, however the permissable range of values is 1492 to 9216. Leaving blank restores the field to the default value of 1500. |
 | Options | Enter additional parameters from [ifconfig(8)](https://www.freebsd.org/cgi/man.cgi?query=ifconfig). |
 
 **IP Addresses**
