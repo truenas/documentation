@@ -2,6 +2,7 @@
 title = ""
 theme = ["hugo-geekdoc"]
 #disableKinds = ["home"]
+relativeURLs = true
 
 [outputs]
 section = ["HTML","RSS","print"]
