@@ -3,6 +3,22 @@ title: "Documentation Hub"
 geekdocCollapseSection: true
 ---
 
+# TrueNAS: Your Data Storage Solution
+
+Basic overview of the software: what it is, what it does, why I care, etc.
+
+# First Steps
+
+Simple pointers for new users who are coming to the Docs immediately after downloading the .iso:
+
+* link to getting started guide
+* link to resources for new customers
+
+# Using the Documentation Hub
+
+Overview of site and how to use or search.
+
+<!--
 # What is TrueNAS?
 
 TrueNAS is the world’s most popular Open Source storage operating system and is the most efficient solution for managing and sharing data over a network.
@@ -104,3 +120,4 @@ The [Community](https://www.truenas.com/community/) can save you many hours and 
 If you need more professional support, iXsystems offers Bronze/Silver/Gold [Enterprise support](https://support.ixsystems.com) including 24x365 coverage and onsite support with its systems.
 {{< /tab >}}
 {{< /tabs >}}
+-->

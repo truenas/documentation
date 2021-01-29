@@ -1,8 +1,6 @@
 ---
 title: "Getting Started"
-description: "Guide to quickly install and share data with TrueNAS."
+description: "Guide to quickly install and set up TrueNAS."
 geekdocCollapseSection: true
 weight: 20
 ---
-
-Articles coming soon!
