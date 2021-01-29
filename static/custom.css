@@ -17,17 +17,28 @@
   position: fixed;
   top: 0;
   z-index: 5;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 90rem;
 }
 .stickyelement {
 	background: white;
-	width: 90rem;
 }
 .gdoc-header__link {
 	float:left;
+	margin-right: 18rem;
 }
 .truenas-menubar {
 	float: right;
 	display: flex;
+	margin-left: 1rem;
+	max-width: 90rem;
+}
+/* Remove stickybar for small screens and use default GeekDoc menu */
+@media screen and (max-width:39rem) {
+	.stickyelement {
+		display: none;
+	}
 }
 /* End sticky top menu */
 .container{
@@ -42,7 +53,7 @@
 .truenas-menubutton {
 	background-color: #ffffff;
 	color: black;
-	padding: 16px;
+	padding: 13px;
 	border: none;
 }
 .truenas-menubutton,.truenas-menubutton a {color:#black;cursor:pointer;}
@@ -101,3 +112,19 @@
 .reading-time {
 	opacity: 0.5;
 }
+/* Site directory for mobile browsing */
+.truenas-mediamenu {
+	display: none;
+}
+@media screen and (max-width:39rem) {
+	.truenas-mediamenu {
+		display: inline-block;
+		position: relative;
+	}
+	.truenas-menubutton {
+		padding: 0px 15px 15px 0px;
+	}
+	.truenas-mediamenu:hover .truenas-menudropdown {display: block;}
+	.truenas-mediamenu:hover .truenas-menubutton {background-color: #ffffff;color:#31beec;}	
+}
+/* End site directory for mobile browsing */

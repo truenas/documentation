@@ -10,6 +10,27 @@
             <a href="https://support.ixsystems.com/" target="_blank" title="iXsystems TrueNAS Enterprise Support">Commercial Support</a>
     </div>
     <div class="container">
+            {{ if .MenuEnabled }}
+            <div class="truenas-mediamenu">
+                <button class="truenas-menubutton"><img src="/favicon/TN-favicon-32x32.png"> TrueNAS Directory <i class="fa fa-angle-down"></i></button>
+                <div class="truenas-menudropdown">
+                    <a href="https://www.truenas.com/truenas-core/">TrueNAS.com</a>
+                    <a href="https://www.truenas.com/help-me-choose/">Software</a>
+                    <a href="https://www.truenas.com/systems-overview/">Systems</a>
+                    <a href="https://www.ixsystems.com">Company</a>
+                    <a href="https://www.truenas.com/community/">Community</a>
+                    <a href="https://security.truenas.com">Security</a>
+                    <a href="https://portal.ixsystems.com/portal/login/index.php#login">iX Portal</a>
+                    <a href="https://www.truenas.com/download-truenas-core/">Download</a>
+                </div>
+            </div>
+            <br>
+            <label for="menu-control" class="gdoc-nav__control">
+                <svg class="icon menu" style="color:black;"><use xlink:href="#menu"></use></svg>
+                <svg class="icon arrow-back" style="color:black;"><use xlink:href="#arrow_back"></use></svg>
+                <text style="color:black;"> Navigation</text>
+            </label>
+            {{ end }}
         <div class="stickyelement" id="stickymenu">
             <a class="gdoc-header__link" href="https://www.truenas.com">
                 <span class="gdoc-brand flex align-center">
@@ -32,7 +53,7 @@
                 <div class="truenas-menuitem">
                     <button class="truenas-menubutton">Systems <i class="fa fa-angle-down"></i></button>
                     <div class="truenas-menudropdown">
-                        <a href="https://www.truenas.com/systems-overview/">Systems Overview</a>
+                        
                         <a href="https://www.truenas.com/truenas-mini/">Mini Series</a>
                         <a href="https://www.truenas.com/r-series/">R-Series</a>
                         <a href="https://www.truenas.com/x-series/">X-Series</a>
@@ -70,12 +91,6 @@
                     <button class="truenas-downloadbutton"><a href="https://www.truenas.com/download-truenas-core/">Download</a></button>
                 </div>
             </div>
-            {{ if .MenuEnabled }}
-            <label for="menu-control" class="gdoc-nav__control">
-                <svg class="icon menu"><use xlink:href="#menu"></use></svg>
-                <svg class="icon arrow-back"><use xlink:href="#arrow_back"></use></svg>
-            </label>
-            {{ end }}
         </div>
     </div>
 </header>
