@@ -32,11 +32,12 @@ To create a Fusion Pool, go to **Storage** > **Pools** > **Add**.
 Configure the data vdev, then open the **ADD VDEV** drop down menu and select *Metadata*.
 Select SSDs to add to the *Metadata VDev*.
 
-It is recommended to use the same vdev layout for the metadata as the data.
-For example, when the data vdev is a mirror, the metadata vdev is recommended to also be a mirror.
-You can **Force** creating a pool when the metadata vdev has a different layout from the data vdevs by setting that option.
+It is recommended to configure a special vdev as a mirror, at minimum.
+Configuring a special vdev as a stripe means losing all data in the pool if a disk fails.
+Creating a striped special vdev requires setting the **Force** option.
 
-<img src="/images/FusionPoolCreate.png">
+<img src="/images/Metadatavdev.png">
+<br><br>
 
 Creating a pool requires confirming the action.
 After the pool is created, you can confirm the pool shows as a *MIRROR* with a *Special* section that contains the metadata SSD by opening the [Pool Options](/hub/initial-setup/storage/managingpools/#status) and clicking **Status**.
