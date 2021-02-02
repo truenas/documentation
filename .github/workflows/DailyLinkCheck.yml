@@ -14,4 +14,3 @@ jobs:
         use-verbose-mode: 'yes'
         max-depth: -1
         folder-path: content/
-        config-file: 'static/config.json'
