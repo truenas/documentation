@@ -1,6 +1,10 @@
 {
   "replacementPatterns": [
     {
+      "pattern": "\/$",
+      "replacement": ".md"
+    },
+    {
       "pattern": "^/hub/",
       "replacement": "/content/en/hub/"
     }
