@@ -4,6 +4,10 @@
     {
       "pattern": "\/$",
       "replacement": ".md"
+    },
+    {
+      "pattern": "^/",
+      "replacement": "{{BASEURL}}/"
     }
-  ],
+  ]
 }
