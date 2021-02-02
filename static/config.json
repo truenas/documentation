@@ -1,5 +1,5 @@
 {
-  "projectBaseUrl": "https://www.truenas.com/docs",
+  "projectBaseUrl": "content/en",
   "replacementPatterns": [
     {
       "pattern": "^/hub/",
@@ -13,5 +13,15 @@
       "pattern": "^/hardware/",
       "replacement": "/content/en/hardware/"
     }
+    {
+      "pattern": "\/$",
+      "replacement": ".md"
+    },
+    {
+      "pattern": "^/",
+      "replacement": "{{BASEURL}}/"
+    }
+  ]
+}
   ]
 }
