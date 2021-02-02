@@ -141,4 +141,4 @@ There are additional topics for the TrueCommand and TrueNAS SCALE members of the
 	</div>
 </div>
 
-## This is a test. [this link is bad][/hub/badlink/]
+## This is a test. [this link is bad.][/hub/badlink/]
