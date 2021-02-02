@@ -140,3 +140,5 @@ There are additional topics for the TrueCommand and TrueNAS SCALE members of the
 		<a class="linkbutton" href="/hub/additional-topics/">Additional Topics</a>
 	</div>
 </div>
+
+## This is a test. [this link is bad][/hub/badlink/]
