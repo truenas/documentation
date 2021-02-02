@@ -1,4 +1,5 @@
 {
+  "projectBaseUrl": "https://www.truenas.com/docs",
   "replacementPatterns": [
     {
       "pattern": "\/$",

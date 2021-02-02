@@ -97,4 +97,4 @@ As part of the review process, automation will build a preview of the Docs site 
 When the build is completed, a comment will be added to the PR that says *All checks have passed 1 successful check*.
 Click on **Show all checks** and **Details** to see a live demo of the site with your changes.
 
-<img src="/images/fForkingContribution-08.png" width='700px'>
+<img src="/images/ForkingContribution-08.png" width='700px'>

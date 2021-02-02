@@ -40,7 +40,7 @@ Navigate to sharing, Block Shares (iSCSI), click portals.  If portal with liste
 
 Navigate to sharing, Block Shares (iSCSI), click Targets, click **Add**. Enter  or select values specified for *Target Name*, *Target Alias*, *Target Mode*, and *Portal Group*. Click the **Submit** button.
 
-<img src="/images/FibreAddTarget"><br><br>
+<img src="/images/FibreAddTarget.png"><br><br>
 
 > **Note:** An extra *Target Mode* option appears after going to Targets and clicking **ADD**. This new option is to select whether the target to create is iSCSI, Fibre Channel, or both.
 

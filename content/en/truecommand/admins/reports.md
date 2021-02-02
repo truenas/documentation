@@ -62,7 +62,7 @@ By default, the reports created by a user are available only to that user.
 To share a report with other users or teams, open the **Configure** <i class="fa fa-cog" aria-hidden="true" title="Settings"></i>&nbsp; menu > **Reports** screen and click the **Share** button for a report.
 Reports can also be shared after clicking **Generate report**<i class="fa fa-eye" aria-hidden="true" title="eye"></i>.
 
-<img src="/images/tTC1.3-ReportsShare.png">
+<img src="/images/TC1.3-ReportsShare.png">
 <br><br>
 
 Reports can be shared with individual users or entire teams.
@@ -75,9 +75,9 @@ Clicking the **OWNER** or **SHARED WITH** text toggles every name in the list.
 Open the **Configure** <i class="fa fa-cog" aria-hidden="true" title="Settings"></i>&nbsp; menu > **Reports** page and click **Generate report**<i class="fa fa-eye" aria-hidden="true" title="eye"></i>&nbsp; on the appropriate report.
 Click **GENERATE** to select the systems and time frame for the report
 
-<img src="/images/TC1.3-GeneratReport.png">
+<img src="/images/TC1.3-GenerateReport1.png">
 <br>
-<img src="/images/TC1.3-GeneratReport2.png">
+<img src="/images/TC1.3-GenerateReport2.png">
 <br><br>
 
 A non-administrative user must have the appropriate permissions to view data from specific systems.
