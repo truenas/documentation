@@ -1,7 +1,7 @@
 ---
-title: "Solution Integrations"
+title: "Optimizations"
 geekdocCollapseSection: true
-weight: 40
+weight: 10
 ---
 
 Articles coming soon!

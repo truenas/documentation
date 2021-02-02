@@ -1,7 +1,7 @@
 ---
-title: "Extensions"
+title: "Integrations"
 geekdocCollapseSection: true
-weight: 130
+weight: 20
 ---
 
 Articles coming soon!

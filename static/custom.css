@@ -8,6 +8,7 @@
 .iconsbar {
 	background: #0095d5;
 	text-align: right !important;
+	max-width: 100% !important;
 }
 .iconsbar a {
 	color: #fff;
@@ -94,6 +95,7 @@
 /* Site footer */
 .gdoc-footer {
 	background: #0095d5;
+	max-width: 100%;
 }
 .gdoc-footer__link {
 	color: white;
