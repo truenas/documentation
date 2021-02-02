@@ -3,18 +3,6 @@
     {
       "pattern": "\/$",
       "replacement": ".md"
-    },
-    {
-      "pattern": "^/hub/",
-      "replacement": "/content/en/hub/"
-    }
-    {
-      "pattern": "^/truecommand/",
-      "replacement": "/content/en/truecommand/"
-    }
-    {
-      "pattern": "^/hardware/",
-      "replacement": "/content/en/hardware/"
     }
   ],
 }
