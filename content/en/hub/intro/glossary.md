@@ -91,7 +91,7 @@ Replication is a process by which a ZFS dataset can be copied to another dataset
 Repliation works with snapshots so only the changes to the stored data need to be sent to the receiving dataset.
 
 
-[Cloud Sync](h/hub/tasks/scheduled/cloudsync/)
+[Cloud Sync](/hub/tasks/scheduled/cloudsync/)
 A Cloud Sync is when TrueNAS is configured to send, receive, or synchronize data with a Cloud Storage provider like Amazon S3, Google Cloud, and Microsft Azure.
 
 
