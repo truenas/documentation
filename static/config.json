@@ -1,27 +1,19 @@
 {
-  "projectBaseUrl": "content/en",
-  "replacementPatterns": [
+"ignorePatterns": [
     {
-      "pattern": "^/hub/",
-      "replacement": "/content/en/hub/"
+      "pattern": "^ixsystems.com"
     }
     {
-      "pattern": "^/truecommand/",
-      "replacement": "/content/en/truecommand/"
+      "pattern": "^truenas.com"
     }
     {
-      "pattern": "^/hardware/",
-      "replacement": "/content/en/hardware/"
+      "pattern": "^truecommand.io"
     }
+  ],
+ "replacementPatterns": [
     {
-      "pattern": "\/$",
-      "replacement": ".md"
-    },
-    {
-      "pattern": "^/",
-      "replacement": "{{BASEURL}}/"
+    "pattern": "(?<=^\/hub.+)\/$",
+    "replacement": ".md"
     }
-  ]
-}
   ]
 }
