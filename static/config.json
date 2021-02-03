@@ -13,8 +13,8 @@
     "replacement": ".md"
     },
     {
-    "pattern": "\/#contacting-ixsystems-support",
+    "pattern": "\/#(?=.+)",
     "replacement": ".md"
-  },
+  }
   ]
 }
