@@ -2,7 +2,7 @@
 "ignorePatterns": [
     {
       "pattern": "^ixsystems.com"
-    }
+    },
     {
       "pattern": "^truecommand.io"
     }
