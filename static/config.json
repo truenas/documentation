@@ -13,7 +13,7 @@
     "replacement": ".md"
     },
     {
-    "pattern": "\/#(?=.+)",
+    "pattern": "\/#+",
     "replacement": ".md"
   }
   ]
