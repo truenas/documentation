@@ -13,6 +13,14 @@
     "replacement": ".md"
     },
     {
+    "pattern": "(?<=^\/truecommand.+)\/$",
+    "replacement": ".md"
+    },
+    {
+    "pattern": "(?<=^\/hardware.+)\/$",
+    "replacement": ".md"
+    },
+    {
     "pattern": "\/#contacting-ixsystems-support",
     "replacement": ".md"
   }
