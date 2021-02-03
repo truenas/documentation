@@ -215,3 +215,4 @@ To find more details about the different Warranty and Service Level Agreement (S
 
 ## This is a test. 
 [this link is bad.](/hub/badlink/)
+[so is this.](/hub/anotherbadlink/)
