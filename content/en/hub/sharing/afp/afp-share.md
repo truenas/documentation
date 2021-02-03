@@ -21,10 +21,12 @@ Next, use the file browser and select a dataset to share. Enter a descriptive na
 Clicking *SUBMIT* creates the share.
 
 <img src="/images/AFPsetup1.png" width='700px'>
+<br><br>
 
 Opening the *ADVANCED OPTIONS* allows you to modify the shares permissions, add a description, and specify auxillary parameters.
 
 <img src="/images/AFPsetup2.png" width='700px'>
+<br><br>
 
 Existing AFP shares can be edited by going to **Sharing > Apple Shares (AFP)** and clicking <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>.
 
@@ -38,9 +40,11 @@ The AFP service settings can be configured by clicking <i class="fas fa-pen" ari
 Don't forget to click *SAVE* when changing the settings. Unless a specific setting is needed, it is recommended to use the default settings for the AFP service.
 
 <img src="/images/AFPsetup3.png" width='700px'>
+<br><br>
 
 ## Connecting to the AFP Share
 
 Although you can connect to an AFP share with various operating systems, it is recommended to use a Mac operating system. First, open the *Finder* app. Click **Go > Connect to Server...** in the top menu bar of the application. Next, enter <code>afp://<i>IPofTrueNASsystem</i></code> and click *Connect*. For example, entering `afp://192.168.2.2` connects to the AFP share on a TrueNAS system with the IP address of `192.168.2.2`. By default, any user that connects to the AFP share only has the read permission.
 
 <img src="/images/AFPsharing.png" width='700px'>
+<br><br>
