@@ -11,6 +11,10 @@
     {
     "pattern": "(?<=^\/hub.+)\/$",
     "replacement": ".md"
-    }
+    },
+    {
+    "pattern": "\/#(?=.+)",
+    "replacement": ".md"
+  },
   ]
 }
