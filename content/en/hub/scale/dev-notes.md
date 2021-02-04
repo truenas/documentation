@@ -5,6 +5,8 @@ tags: ["SCALE"]
 ---
 
 #### Recent Updates
+> 02/04/2021 - Rounding out the last set of feature to merge for the release of 21.02, support for dynamic charts and managing additional catalog repos has merged.
+
 > 01/29/2021 - First early look at the new TrueNAS CLI has been merged into SCALE Nightly images. To launch run "cli" from the shell.
 
 > 01/16/2021 - Updated Debian base image, SCALE now includes Kernel 5.10 as well as updates to all other base packages
