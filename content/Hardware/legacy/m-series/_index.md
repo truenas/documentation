@@ -1,4 +1,4 @@
 ---
-title: "M-Series (2nd Generation)"
+title: "M-Series (2nd Gen)"
 geekdocCollapseSection: true
 ---
