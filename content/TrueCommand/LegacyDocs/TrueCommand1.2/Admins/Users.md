@@ -5,7 +5,7 @@ description: "How to add, configure, and organize users."
 ---
 
 TrueCommand has a robust user management system designed to allow TrueCommand administrators to personalize the TrueCommand experience for each user account.
-User accounts can be created within the TrueCommand interface or you can configure [LDAP]({{< relref "administration.md#ldap" >}}) to automatically create a new user account when someone logs into TrueCommand with their LDAP credentials.
+User accounts can be created within the TrueCommand interface or you can configure [LDAP]({{< relref "Administration.md#ldap" >}}) to automatically create a new user account when someone logs into TrueCommand with their LDAP credentials.
 
 User accounts can also be organized into Teams for simultaneous management of large numbers or related user accounts.
 
@@ -60,7 +60,7 @@ Team permissions are applied to this user account, but setting a specific permis
 ### System Permissions
 
 To limit the access that non-administrative accounts have to the connected systems, configure the **System Access** and/or **System Groups** sections.
-This requires [system connections]({{< relref "add-systems.md#connecting-systems-to-truecommand" >}}) and/or [system groups]({{< relref "add-systems.md#organizing-systems-into-groups" >}}) have already been configured in TrueCommand.
+This requires [system connections]({{< relref "AddSystems.md#connecting-systems-to-truecommand" >}}) and/or [system groups]({{< relref "AddSystems.md#organizing-systems-into-groups" >}}) have already been configured in TrueCommand.
 
 Click **ADD SYSTEM** and select a system from the drop-down to give the user access to that system.
 To restrict the user to only viewing details about the system, set the *read* permission.
