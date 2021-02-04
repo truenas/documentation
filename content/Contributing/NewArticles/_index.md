@@ -18,7 +18,7 @@ There is an [Article Template](/hub/contributing/template/) available that can s
 Find a place on your local system to create a directory for your article.
 Name the directory according to the title of your article.
 
-<img src="/images/new-article-bundle.png"><br><br>
+<img src="/images/ArticlePagebundleFiles.png"><br><br>
 
 Open the directory and create a new file called *index.md*.
 This file will contain all the text for your article.
@@ -56,12 +56,12 @@ Be sure to have unique names for each image file.
 Open the Community Docs section of the repository at https://github.com/freenas/documentation/tree/master/content/en/hub/additional-topics/community.
 When submitting an article in a language other than English, change the `/en/` to the language directory that matches the language of your article.
 
-{{< figure src="docrepo-truenas-articles-location.png" title="Community Articles" >}}
+{{< figure src="DocsRepoArticlesLocation.png" title="Community Articles" >}}
 
 Click **Upload files** and drag and drop the article bundle directory into the repository.
 GitHub shows all the files that will be uploaded.
 
-{{< figure src="newarticle-github.png" title="Uploading an Article Bundle" >}}
+{{< figure src="GitHubNewArticle.png" title="Uploading an Article Bundle" >}}
 
 ## Opening a Pull Request
 
@@ -74,6 +74,6 @@ Make sure you're happy with the summary and description of your article, then cl
 After the pull request is created, the repository automatically builds a preview of the documentation site that has your changes included.
 The link to this preview is added to the Pull Request after the build completes.
 
-{{< figure src="preview-example.png" title="New Article Preview" >}}
+{{< figure src="GitHubNewArticlePreview.png" title="New Article Preview" >}}
 
 Other contributors will review and merge your article!

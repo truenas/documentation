@@ -1,6 +1,5 @@
 ---
-title: "Markdown Template for New Articles"
-linkTitle: "Article Template"
+title: "Article Template"
 description: "An Example of the Article Template for Documentation usage."
 tags: ["example","documentation"]
 weight: 4
@@ -35,7 +34,7 @@ It also makes translations easier!
 The first step is typically to log in to the system and go to a location like *System > General*.
 Including a screenshot is a good way for the reader to confirm they're in the correct location and get more context.
 
-{{\< imgproc example-image Fit "960x695" />}}
+{{\< imgproc ExampleImage Fit "960x695" />}}
 
 {{\% alert title="Warning" color="warning" %}}
 Warnings about common errors that are made during the procedure are best placed before listing out any specific changes to make to the system.
