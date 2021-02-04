@@ -74,16 +74,18 @@ Additional configuration is done from **System > Email**.
 
 <img src="/images/TN12-EmailSetup1.png">
 <br><br>
-Set the address the email will come from, along with the From Name.  Enter the mail server address and the correct port.  Select the desired security option, and enable SMTP and enter the credentials if necessary.
 
+Set the address the email will come from, along with the From Name.  Enter the mail server address and the correct port.  Select the desired security option, and enable SMTP and enter the credentials if necessary.
 
 To use Gmail OAuth, select the option and click **LOG IN TO GMAIL**.
 Log into your gmail account as you normally would.
 
 <img src="/images/TN12-EmailSetup2.png">
 <br><br>
+
 <img src="/images/TN12-EmailSetup3.png">
 <br><br>
+
 <img src="/images/TN12-EmailSetup4.png">
 <br><br>
 
@@ -96,7 +98,6 @@ Log into your gmail account as you normally would.
 | Security             | drop-down menu       | Choose an encryption type. Choices are *Plain (No Encryption)*, *SSL (Implicit TLS)*, or *TLS (STARTTLS)*.                                                                   |
 | Username             | string               | Enter the SMTP username when the SMTP server requires authentication.                                                                                                        |
 | Password             | string               | Enter the SMTP account password if needed for authentication. Only plain text characters (7-bit ASCII) are allowed in passwords. UTF or composed characters are not allowed. |
-
 
 Click the **SEND TEST MAIL** button to verify that the configured email settings are working. If the test email fails, double-check that the *Email* field of the root user is correctly configured by clicking the **Edit** button for the root account in **Accounts > Users**.
 
