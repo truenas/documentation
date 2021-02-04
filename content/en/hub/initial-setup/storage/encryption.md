@@ -96,7 +96,7 @@ Dataset Unlocked Icon : <i class="material-icons" aria-hidden="true" title="<unl
 Dataset Locked Icon : <i class="material-icons" aria-hidden="true" title="<locked>">lock</i>
 
 Encrypted datasets can only be locked and unlocked if they are secured with a passphrase instead of a keyfile.
-Before locking a dataset, verify that it is not currently in use, then click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; (Options) and **Lock**.
+Verify that a dataset is not in use before locking it by clicking <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; (Options) and **Lock**.
 
 <img src="/images/TN12.0-Encryption10.png">
 <br><br>
