@@ -27,6 +27,7 @@ successfully. ZFS has direct access to disks and bundles multiple read
 and write requests into transactions. Most filesystems cannot do this,
 as they only have access to disk blocks. A transaction either
 completes or fails, meaning there will never be a
+<!-- markdown-link-check-disable-next-line -->
 [write-hole](https://blogs.oracle.com/bonwick/raid-z)
 and a filesystem checker utility is not necessary. Because of the
 transactional design, as additional storage capacity is added, it
@@ -260,13 +261,9 @@ These resources are also useful for reference:
 
 * [FreeBSD ZFS Tuning Guide](https://wiki.freebsd.org/ZFSTuningGuide)
 
-* [ZFS Administration Guide](https://docs.oracle.com/cd/E19253-01/819-5461/index.html)
-
 * [Becoming a ZFS Ninja (video)](https://www.youtube.com/watch?v=6_K55Ira1Cs)
 
 * [Slideshow explaining VDev, zpool, ZIL and L2ARC and other easy mistakes!](https://forums.freenas.org/index.php?threads/slideshow-explaining-vdev-zpool-zil-and-l2arc-for-noobs.7775/)
-
-* [A Crash Course on ZFS](http://www.bsdnow.tv/tutorials/zfs)
 
 * [ZFS: The Last Word in File Systems - Part 1 (video)](https://www.youtube.com/watch?v=uT2i2ryhCio)
 
