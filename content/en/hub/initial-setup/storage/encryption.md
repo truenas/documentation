@@ -124,14 +124,18 @@ Enter the passphrase and click **Submit**. If there are child datasets that are 
 <img src="/images/TN12.0-Encryption14.png">
 <br><br>
 
+<img src="/images/TN12.0-Encryption15.png">
+<br><br>
 Confirm that you want to unlock the datasets.
 
-<img src="/images/TN12.0-Encryption15.png">
+<img src="/images/TN12.0-Encryption16.png">
+<br><br>
+<img src="/images/TN12.0-Encryption17.png">
 <br><br>
 
 A dialog confirms when datasets are successfully unlocked.
 
-<img src="/images/TN12.0-Encryption16.png">
+<img src="/images/TN12.0-Encryption18.png">
 <br><br>
 
 The dataset listing changes to show the unlocked icon.
