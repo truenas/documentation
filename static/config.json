@@ -7,22 +7,18 @@
       "pattern": "^truecommand.io"
     }
   ],
- "replacementPatterns": [
+"replacementPatterns": [
     {
-    "pattern": "(?<=^\/hub.+)\/$",
-    "replacement": ".md"
+      "pattern": "(?<=^\/(hub|hardware|truecommand)\/.+)\/$",
+      "replacement": ".md"
     },
     {
-    "pattern": "(?<=^\/truecommand.+)\/$",
-    "replacement": ".md"
+      "pattern": "(?<=^\/(hub|hardware|truecommand)\/.+)\/#(?=.+)",
+      "replacement": ".md#"
     },
     {
-    "pattern": "(?<=^\/hardware.+)\/$",
-    "replacement": ".md"
-    },
-    {
-    "pattern": "\/#contacting-ixsystems-support",
-    "replacement": ".md"
-  }
+      "pattern": "^\/",
+      "replacement": "{{BASEURL}}/content/en/"
+    }
   ]
 }
