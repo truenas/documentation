@@ -83,7 +83,7 @@ This option is typically used when virtual disks are resized outside of TrueNAS.
 
 ## Upgrade Pool
 
-This option only appears when the pool can be upgraded to use new [ZFS feature flags](/hub/additional-topics/reference/zfs-references/#zfs-feature-flags).
+This option only appears when the pool can be upgraded to use new [ZFS feature flags](/hub/additional-topics/reference/ZFS-references/).
 Before upgrading an existing pool, be aware of these caveats:
 
 - Upgrading a pool is one-way, meaning that if you change your mind you cannot go back to an earlier ZFS version or downgrade to an earlier version of the software that does not support those ZFS features.
