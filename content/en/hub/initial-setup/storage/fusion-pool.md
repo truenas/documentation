@@ -40,4 +40,4 @@ Creating a striped special vdev requires setting the **Force** option.
 <br><br>
 
 Creating a pool requires confirming the action.
-After the pool is created, you can confirm the pool shows as a *MIRROR* with a *Special* section that contains the metadata SSD by opening the [Pool Options](/hub/initial-setup/storage/managingpools/#status) and clicking **Status**.
+After the pool is created, you can confirm the pool shows as a *MIRROR* with a *Special* section that contains the metadata SSD by opening the [Pool Options](/hub/initial-setup/storage/ManagingPools/) and clicking **Status**.
