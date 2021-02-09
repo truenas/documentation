@@ -1,13 +1,12 @@
 ---
 title: "How To Back Up Google Drive to FreeNAS"
-description: "How To Back Up Google Drive to FreeNAS."
 ---
 
-Google Drive and G Suite are widely used tools for creating and sharing documents, spreadsheets, and presentations with team members. While cloud-based tools have inherent backups and replications included by the cloud provider, certain users may require additional backup or archive capabilities. For example, companies using G Suite for important work may be required to keep records for years, potentially beyond the scope of the G Suite subscription. FreeNAS and TrueNAS offer the ability to back up Google Drive easily, using the built-in cloud sync.
+Google Drive and G Suite are widely used tools for creating and sharing documents, spreadsheets, and presentations with team members. While cloud-based tools have inherent backups and replications included by the cloud provider, certain users may require additional backup or archive capabilities. For example, companies using G Suite for important work may be required to keep records for years, potentially beyond the scope of the G Suite subscription. FreeNAS and TrueNAS offer the ability to easily back up Google Drive by using the built-in cloud sync.
 
 This blog will explain how to set up Google Drive sync with FreeNAS 11.3, as well as provide a few caveats and workarounds when backing up Google Docs and other Google created content.
 
-### Setting up Google Drive credentials
+## Setting up Google Drive credentials
 
 Set up the credentials under **System > Cloud Credentials**.
 
