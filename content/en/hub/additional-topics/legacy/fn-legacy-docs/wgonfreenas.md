@@ -1,6 +1,5 @@
 ---
-title: "How To Enable Wireguard on FreeNAS 11.3"
-description: "How To Enable Wireguard on FreeNAS 11.3."
+title: "How To Enable WireGuard on FreeNAS 11.3"
 ---
 
 Google Drive and G Suite are widely used tools for creating and sharing documents, spreadsheets, and presentations with team members. While cloud-based tools have inherent backups and replications included by the cloud provider, certain users may require additional backup or archive capabilities. For example, companies using G Suite for important work may be required to keep records for years, potentially beyond the scope of the G Suite subscription. FreeNAS and TrueNAS offer the ability to back up Google Drive easily, using the built-in cloud sync.
@@ -11,9 +10,10 @@ This blog will explain how to set up Google Drive sync with FreeNAS 11.3, as wel
 
 Set up the credentials under **System > Cloud Credentials**.
 
-[WireGuard](https://www.wireguard.com/) is quickly gaining popularity in the VPN marketplace due to its speed, simplicity, and modern cryptography standards. Starting with FreeNAS version 11.3-RC1, it is possible to connect your NAS directly to a WireGuard network with a few easy steps.
+[WireGuard](https://www.wireguard.com/) is a popular option in the VPN marketplace due to its speed, simplicity, and modern cryptography standards. Starting with FreeNAS version 11.3-RC1, it is possible to connect your NAS directly to a WireGuard network with a few easy steps.
 
-We get started on this by creating some custom tunables to enable the WireGuard service and give it a default interface. To do this you must first navigate to **System > Tunables > Add**.
+We get started on this by creating some custom tunables to enable the 
+service and give it a default interface. To do this you must first navigate to **System > Tunables > Add**.
 
 Enable the WireGuard service by adding `“wireguard_enable” -> “YES”` in rc.conf.
 
@@ -56,4 +56,3 @@ Once you have a valid `/root/wg0.conf`, rebooting the system should bring up the
 <br><br>
 
 Congratulations, you have successfully linked your FreeNAS system to a secure WireGuard tunnel!
-
