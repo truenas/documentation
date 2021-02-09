@@ -27,7 +27,6 @@ successfully. ZFS has direct access to disks and bundles multiple read
 and write requests into transactions. Most filesystems cannot do this,
 as they only have access to disk blocks. A transaction either
 completes or fails, meaning there will never be a
-<!-- markdown-link-check-disable-next-line -->
 [write-hole](https://blogs.oracle.com/bonwick/raid-z)
 and a filesystem checker utility is not necessary. Because of the
 transactional design, as additional storage capacity is added, it
