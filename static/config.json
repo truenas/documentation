@@ -1,34 +1,34 @@
 {
 "ignorePatterns": [
     {
-      "pattern": "^ixsystems.com"
+      "pattern": "www.ixsystems.com(.*)"
     },
     {
-      "pattern": "^truecommand.io"
+      "pattern": "truecommand.io(.*)"
     },
     {
-      "pattern": "^fastmail.com"
+      "pattern": "fastmail.com(.*)"
     },
     {
-      "pattern": "^docs.aws.amazon.com"
+      "pattern": "docs.aws.amazon.com(.*)"
     },
     {
-      "pattern": "^blogs.oracle.com"
+      "pattern": "blogs.oracle.com(.*)"
     },
     {
-      "pattern": "^community.openvpn.net"
+      "pattern": "community.openvpn.net(.*)"
     },
     {
-      "pattern": "^facebook.com"
+      "pattern": "facebook.com(.*)"
     },
     {
-      "pattern": "^mirbsd.org"
+      "pattern": "mirbsd.org(.*)"
     },
     {
-      "pattern": "^kb.vmware.com"
+      "pattern": "kb.vmware.com(.*)"
     },
     {
-      "pattern": "^docs.vmware.com"
+      "pattern": "docs.vmware.com(.*)"
     }   
   ],
 "replacementPatterns": [
