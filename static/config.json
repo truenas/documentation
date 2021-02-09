@@ -5,7 +5,31 @@
     },
     {
       "pattern": "^truecommand.io"
-    }
+    },
+    {
+      "pattern": "^fastmail.com"
+    },
+    {
+      "pattern": "^docs.aws.amazon.com"
+    },
+    {
+      "pattern": "^blogs.oracle.com"
+    },
+    {
+      "pattern": "^community.openvpn.net"
+    },
+    {
+      "pattern": "^facebook.com"
+    },
+    {
+      "pattern": "^mirbsd.org"
+    },
+    {
+      "pattern": "^kb.vmware.com"
+    },
+    {
+      "pattern": "^docs.vmware.com"
+    }   
   ],
 "replacementPatterns": [
     {
