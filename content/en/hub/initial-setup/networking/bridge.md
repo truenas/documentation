@@ -1,3 +1,4 @@
+---
 title: "Creating a Network Bridge"
 description: "How to create a network Bridge on TrueNAS."
 tags: ["Bridge", "networking"]
