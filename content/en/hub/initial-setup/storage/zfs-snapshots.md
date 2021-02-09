@@ -1,6 +1,7 @@
 ---
 title: "ZFS Snapshots"
 description: "ZFS Snapshots" 
+weight: 90
 tags: ["ZFS","snapshots"]
 ---
 
