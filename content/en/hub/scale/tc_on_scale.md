@@ -53,7 +53,6 @@ When deployment is complete, the card updates to show TrueCommand is active.
 <img src="/images/SCALE-TCAp12.png" width='700px'><br>
 
 To access TrueCommand, open a new browser tab and enter the address of your TrueNAS SCALE with `:9004` or `:9005` appended.
-<!-- markdown-link-check-disable-next-line -->
 Example: *https://www.truenasscale01.ixsystems.com:9005*
 The TrueCommand login screen appears and asks to create the new [Administrator account](https://www.truenas.com/docs/truecommand/installupdate/install/#creating-the-administrator-account).
 <img src="/images/SCALE-TCAp13.png" width='700px'><br>
