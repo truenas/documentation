@@ -1,6 +1,7 @@
 ---
 title: "Self-Encrypting Drives"
 description: "Configuring Self-Encrypted Drives."
+weight: 60
 tags: ["encryption","security"]
 ---
 
