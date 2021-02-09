@@ -1,7 +1,7 @@
 ---
 title: "ZFS Pools"
 description: "How to create a ZFS data storage pool."
-weight: 1
+weight: 10
 tags: ["ZFS", "zpool"]
 ---
 

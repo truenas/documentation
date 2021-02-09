@@ -1,6 +1,7 @@
 ---
 title: "Importing Disks"
 description: "How to do a one-time import of data from a disk into a TrueNAS dataset."
+weight: 100
 tags: ["Import"]
 ---
 
