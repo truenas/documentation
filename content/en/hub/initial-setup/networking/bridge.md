@@ -14,9 +14,9 @@ To set up a Bridge interface, go to **Network > Interface > Add**.
 Set **Type** to *Bridge*.
 
 Enter a name for the interface. The name must use the format, *bridgeX*, where *X* is a number representing a non-parent interface.
-It is also recommended to add any notes or reminders about this particular LAGG in the **Description**.
+It is also recommended to add any notes or reminders about this particular Bridge in the **Description**.
 
-Under Bridge Settings, select the *Bridge Members* to configure the interface ports to match your networking needs:
+Under **Bridge Settings**, select which interfaces will be *Bridge Members* and then configure the remaining options to match your networking needs:
 
 Disabling **Hardware Offloading** is discouraged as it can reduce network performance.
 Disabling this is only recommended when the interface is managing [Jails](/hub/tasks/advanced/jails/), [Plugins](/hub/tasks/advanced/plugins/), or [Virtual Machines](/hub/tasks/advanced/virtual-machines/).
@@ -29,5 +29,5 @@ Leaving this field blank restores the field to the default value of 1500.
 
 If additional tuning is needed, you can enter additional [ifconfig](https://www.freebsd.org/cgi/man.cgi?query=ifconfig) settings in the **Options**
 
-You can also define additional aliases for the LAGG interface.
+You can also define additional aliases for the Bridge interface.
 Either IPv4 or IPv6 interfaces can be defined.
