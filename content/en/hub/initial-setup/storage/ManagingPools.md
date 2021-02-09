@@ -1,6 +1,7 @@
 ---
 title: "Managing Existing Pools"
 description: "How to make changes to a data storage pool after it has been created."
+weight: 80
 tags: ["ZFS","zpool"]
 ---
 
