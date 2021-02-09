@@ -1,6 +1,5 @@
 ---
 title: "Cross-Site Disaster Recovery with TrueNAS"
-description: "Cross-Site Disaster Recovery with TrueNAS."
 ---
 
 
@@ -12,7 +11,6 @@ TrueNAS has long supported disaster recovery (DR) scenarios. This blog attempts 
 
 Of the native ways to replicate data, ZFS replication is the most efficient and reliable method for asynchronously replicating data from one TrueNAS system to another. Replication is based on snapshots of datasets or zvols and synchronizes the snapshots of the first system to the second system. There are numerous advantages to using ZFS replication. One of those is that a snapshot is a point-in-time, read-only copy of the data. This ensures that the contents of the snapshot cannot be altered.
 
-
 <img src="/images/Cross-Recovery-TrueNAS-4.png">
 <br><br>
 
@@ -20,7 +18,6 @@ ZFS replication is commonly used for disaster recovery. Should the first system 
 
 <img src="/images/Cross-Recovery-TrueNAS-2.png">
 <br><br>
-
 
 Another benefit of ZFS replication is the capability for the snapshots and referenced data to be stored on systems and pools of different specs or pool configuration. All-flash, high-performance pools can be backed up to lower performance pools with traditional drives and different RAID configurations. Smaller systems can also be backed up to larger central repositories. Companies such as [FirstLink](https://www.ixsystems.com/Firstlink_CaseStudy_PDF) and others use this to help clone edge devices like the TrueNAS Mini systems to a central core TrueNAS in their data center. ZFS replication on TrueNAS ensures data protection regardless of system complexity, size, or location.
 
