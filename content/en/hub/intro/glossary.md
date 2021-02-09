@@ -85,7 +85,6 @@ A Scrub is the process that ZFS uses to verify the data on disk.  All of the dat
 [ZFS Resilver](/hub/tasks/scheduled/resilver/)
 A Resilver is the process when a disk in a zfs pool has been replaced and ZFS reconstructs the data on the replaced disk.
 
-<!-- markdown-link-check-disable-next-line -->
 [ZFS Replication](/hub/tasks/scheduled/replication/)
 Replication is a process by which a ZFS dataset can be copied to another dataset.  The receiving dataset can be on the same machine or on another machine in a remote location.
 Repliation works with snapshots so only the changes to the stored data need to be sent to the receiving dataset.
