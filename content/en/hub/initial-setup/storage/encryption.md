@@ -1,6 +1,7 @@
 ---
 title: "Encryption"
 description: "Native ZFS Encryption in TrueNAS"
+weight: 50
 tags: ["ZFS","encryption","security","dataset","snapshots"]
 ---
 
