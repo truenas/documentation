@@ -1,6 +1,7 @@
 ---
 title: "Fusion Pools"
-description: "Utilizing a special vdev" 
+description: "Utilizing a special vdev"
+weight: 40
 tags: ["zfs","pool","vdev"]
 ---
 
