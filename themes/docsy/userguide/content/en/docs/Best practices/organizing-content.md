@@ -5,6 +5,7 @@ weight: 9
 description: >
   Optional guidance and recommendations on how to organize your documentation site.
 ---
+<!-- markdown-link-check-disable -->
 
 If you have a look at our [Example Site](https://example.docsy.dev/about/), you'll see that we've organized 
 the Documentation section into a number of subsections, each with some recommendations about what you might put 
@@ -53,3 +54,4 @@ documentation, particularly for Open Source projects.
 This guide and the example site just address how to organize your documentation content into pages and sections. For some guidance on how to organize and write the content in each page, we recommend the 
 [Google Developer Documentation Style Guide](https://developers.google.com/style/), particularly the 
 [Style Guide Highlights](https://developers.google.com/style/highlights).
+<!-- markdown-link-check-enable -->
