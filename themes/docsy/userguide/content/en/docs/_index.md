@@ -6,6 +6,7 @@ menu:
   main:
     weight: 20
 ---
+<!-- markdown-link-check-disable -->
 
 Welcome to the Docsy theme user guide! This guide shows you how to get started creating technical documentation sites using Docsy, including site customization and how to use Docsy's blocks and templates.
 
@@ -43,3 +44,4 @@ If you'd like to use Docsy's layouts but prefer to use Jekyll, [vsoch](https://g
 Find out how to build and serve your first site in [Getting Started](./getting-started/). Or visit the [example site](https://example.docsy.dev) and [its repo](https://github.com/google/docsy-example) and start exploring!
 
 
+<!-- markdown-link-check-enable -->
