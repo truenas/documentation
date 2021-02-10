@@ -1,3 +1,5 @@
+<!-- markdown-link-check-disable -->
+
 ## How does Bootstrap's test suite work?
 
 Bootstrap uses [QUnit](https://qunitjs.com/) and [Sinon](http://sinonjs.org/). Each plugin has a file dedicated to its tests in `unit/<plugin-name>.js`.
@@ -67,3 +69,4 @@ QUnit.test('should describe the unit being tested', function (assert) {
     .bootstrapTooltip('show')
 })
 ```
+<!-- markdown-link-check-enable -->

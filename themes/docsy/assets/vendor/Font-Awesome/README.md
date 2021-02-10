@@ -1,3 +1,5 @@
+<!-- markdown-link-check-disable -->
+
 <h1><img src="https://img.fortawesome.com/349cfdf6/logo-fa-free.svg" alt="Font Awesome 5 Free" width="50%"></h1>
 
 > Version 5 – the iconic SVG, font, and CSS framework
@@ -136,3 +138,4 @@ learn about Font Awesome.
 * [Jason Otero](https://github.com/deathnfudge)
 * [Edward Emanuel](https://github.com/ej2)
 * [Geremia Taglialatela](https://github.com/tagliala)
+<!-- markdown-link-check-enable -->

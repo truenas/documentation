@@ -13,6 +13,7 @@ See [Creating a new ZFS Pool]({{< ref "pools.md" >}}).
 A ZFS dataset is used in TrueNAS as a file system that is created within a data storage pool.
 Datasets can contain files, directories (child datasets), and have individual permissions or flags.
 Datasets can also be [encrypted](/hub/initial-setup/storage/encryption/), either using the encryption created with the pool or with a separate encryption configuration.
+<!-- markdown-link-check-disable-next-line -->
 It is recommended to organize your pool with datasets before configuring [data sharing](/hub/sharing/), as this allows for more fine-tuning of access permissions and using different sharing protocols.
 
 ## Creating a Dataset

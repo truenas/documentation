@@ -6,6 +6,7 @@ description: >
   Add Google Analytics tracking to your site, use the "was this page helpful?" widget data, disable the widget on a single
   page or all pages, and change the response text.
 ---
+<!-- markdown-link-check-disable -->
 
 ## Adding Analytics
 
@@ -131,3 +132,4 @@ Set `params.ui.feedback.enable` to `false` in `config.toml`:
 
     [params.ui.feedback]
     enable = false
+<!-- markdown-link-check-enable -->

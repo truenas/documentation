@@ -38,7 +38,7 @@ Be aware of these caveats before attempting a major version upgrade:
   However, if the system is currently running a 32-bit version of FreeNAS/TrueNAS and the hardware supports 64-bit, the system can be upgraded.
   Any archived reporting graphs will be lost during the upgrade.
 * **UFS is not supported.**
-  If the data currently resides on **one** UFS-formatted disk, [create a ZFS pool](/hub/initial-setup/storage/pools/) using other disks after the upgrade, then use the instructions in [Importing a Disk](/hub/initial-setup/storage/importdisk/) to mount the UFS-formatted disk and copy the data to the ZFS pool.
+  If the data currently resides on **one** UFS-formatted disk, [create a ZFS pool](/hub/initial-setup/storage/pools/) using other disks after the upgrade, then use the instructions in [Importing a Disk](/hub/initial-setup/storage/ImportDisk/) to mount the UFS-formatted disk and copy the data to the ZFS pool.
   With only one disk, back up its data to another system or media before the upgrade, format the disk as `ZFS` after the upgrade, then restore the backup.
   If the data currently resides on a UFS RAID of disks, it is not possible to directly import that data to the ZFS pool.
   Instead, back up the data before the upgrade, create a ZFS pool after the upgrade, then restore the data from the backup.
@@ -63,8 +63,8 @@ For example, this is the path to download an `.iso` of the latest FreeNAS 11.3 r
 
 <img src="/images/FN11.3-Latest.png">
 <br><br>
-
-Burn the downloaded `.iso` file to a CD or USB stick. Refer to the [Preparing Media](/hub/initial-setup/install/firsttimeinstall/#preparing-the-install-media) instructions in the Installation article for tips about burning the `.iso` to media using different Operating Systems.
+<!-- markdown-link-check-disable-next-line -->
+Burn the downloaded `.iso` file to a CD or USB stick. Refer to the [Preparing Media](/hub/initial-setup/install/FirstTimeInstall/) instructions in the Installation article for tips about burning the `.iso` to media using different Operating Systems.
 
 Insert the prepared media into the system and boot from it.
 The installer waits ten seconds in the installer boot menu before booting the default option.

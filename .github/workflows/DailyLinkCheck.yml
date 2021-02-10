@@ -1,5 +1,5 @@
 name: Daily link check
-on: 
+on:
   schedule:
   # Every day at 6:00 AM UTC
   - cron: "0 6 * * *"

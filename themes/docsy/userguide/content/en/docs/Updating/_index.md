@@ -5,6 +5,7 @@ weight: 8
 description: >
  Keeping the theme up to date.
 ---
+<!-- markdown-link-check-disable -->
 
 We hope to continue to make improvements to the theme [along with the Docsy community](/docs/contribution-guidelines/). 
 If you have cloned the example site (or are otherwise using the theme as a submodule), you can update the Docsy theme
@@ -58,3 +59,4 @@ the `themes` folder in your project, then you use the `git pull` command:
 
 If you have made any local changes to the cloned theme, you must manually resolve any merge conflicts.
 
+<!-- markdown-link-check-enable -->

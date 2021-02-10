@@ -1,3 +1,5 @@
+<!-- markdown-link-check-disable -->
+
 # Change Log
 
 All notable changes to this project will be documented in this file.
@@ -881,3 +883,4 @@ information.**
 
 ### Changed
 * New directory structure
+<!-- markdown-link-check-enable -->

@@ -5,6 +5,7 @@ weight: 1
 description: >
   Add different types of content to your Docsy site.
 ---
+<!-- markdown-link-check-disable -->
 
 So you've got a new Hugo website with Docsy, now it's time to add some content! This page tells you how to use the theme to add and structure your site content. 
 
@@ -298,3 +299,4 @@ sitemap:
 
 To learn more about configuring sitemaps, see [Sitemap Template](https://gohugo.io/templates/sitemap-template/).
 
+<!-- markdown-link-check-enable -->

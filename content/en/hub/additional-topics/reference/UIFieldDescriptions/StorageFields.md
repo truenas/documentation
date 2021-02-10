@@ -171,7 +171,7 @@ tags: ["reference", "zpool", "dataset", "zfs", "zvol", "encryption", "snapshots"
 | Advanced Power Management | Select a power management profile from the menu. |
 | Force HDD Standby | Allows the drive to enter standby, even when non-physical S.M.A.R.T. operations could prevent the drive from sleeping. |
 | Acoustic Level | Modify for disks that understand [AAM](https://en.wikipedia.org/wiki/Automatic_acoustic_management). |
-| Enable S.M.A.R.T. | Enabling allows the system to conduct periodic [S.M.A.R.T. tests](https://www.truenas.com/docs//tasks.html#s-m-a-r-t-tests). |
+| Enable S.M.A.R.T. | Enabling allows the system to conduct periodic [S.M.A.R.T. tests](/hub/tasks/scheduled/smart/). |
 | S.M.A.R.T. extra options | Additional [smartctl(8)](https://www.smartmontools.org/browser/trunk/smartmontools/smartctl.8.in) options. |
 | Difference | Report if the temperature of a drive has changed by this many degrees Celsius since the last report. 0 disables the report. |
 | SED Password | Set or change the password of this SED. This password is used instead of the global SED password. |

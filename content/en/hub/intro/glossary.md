@@ -47,20 +47,20 @@ While TrueNAS is designed for and ever-evolving towards increased user friendlin
 
 * Self-Encrypting Drive (SED): A SED (or Self-Encrypting Drive) is a hard drive that automatically and continuously encrypts the data on the drive without any user action.
 
-* [Zettabyte File System (ZFS)](/hub/additional-topics/reference/zfs-references/): ZFS is a next-generation file system designed by Sun Microsystems that eliminates most, if not all of the shortcomings found in legacy file systems and hardware RAID devices.
+* [Zettabyte File System (ZFS)](/hub/additional-topics/reference/ZFS-references/): ZFS is a next-generation file system designed by Sun Microsystems that eliminates most, if not all of the shortcomings found in legacy file systems and hardware RAID devices.
 
 * iSCSI: iSCSI stands for Internet Small Computer Systems Interface. iSCSI is a transport layer protocol that works on top of the Transport Control Protocol (TCP).  It provides block-level access to storage devices by carrying SCSI commands over a TCP/IP network.
 
 
 ### ZFS
 
-[L2ARC](/hub/additional-topics/reference/l2arcreference/): An L2ARC is sometimes called a CACHE vdev. This is a special class of vdev. ARC stands for Adaptive Replacement Cache and is a caching algorithm that tracks both the blocks in cache and blocks recently evicted from cache. The main ARC resides in system memory. The L2ARC is 2nd layer ARC assigned to a disk to expand ARC capability.
+[L2ARC](/hub/additional-topics/reference/L2arcReference/): An L2ARC is sometimes called a CACHE vdev. This is a special class of vdev. ARC stands for Adaptive Replacement Cache and is a caching algorithm that tracks both the blocks in cache and blocks recently evicted from cache. The main ARC resides in system memory. The L2ARC is 2nd layer ARC assigned to a disk to expand ARC capability.
 
 [ZFS Datasets](/hub/initial-setup/storage/datasets/): A ZFS dataset is similar to a conventional mounted filesystem. It appears in casual inspection as "just another folder". However, unlike conventional mounted filesystems, each ZFS dataset has its own set of properties.
 
 [ZFS Pools](/hub/initial-setup/storage/pools/): A pool is a filesystem container that is composed of one or more vdevs.
 
-[ZFS vdev](/hub/additional-topics/reference/zfs-references/): ZFS virtual device. A ZFS pool is made up by one or more vdevs. A vdev can be created using a single disk or many. A vdev has many configurations: single disk, stripe, RAIDz1, RAIDz2, RAIDz3, or mirror.
+[ZFS vdev](/hub/additional-topics/reference/ZFS-references/): ZFS virtual device. A ZFS pool is made up by one or more vdevs. A vdev can be created using a single disk or many. A vdev has many configurations: single disk, stripe, RAIDz1, RAIDz2, RAIDz3, or mirror.
 
 [ZFS zvols](/hub/initial-setup/storage/zvols/): A zvol is a dataset that represents a block device.
 
@@ -84,14 +84,13 @@ A Scrub is the process that ZFS uses to verify the data on disk.  All of the dat
 
 [ZFS Resilver](/hub/tasks/scheduled/resilver/)
 A Resilver is the process when a disk in a zfs pool has been replaced and ZFS reconstructs the data on the replaced disk.
-
-
+<!-- markdown-link-check-disable-next-line -->
 [ZFS Replication](/hub/tasks/scheduled/replication/)
 Replication is a process by which a ZFS dataset can be copied to another dataset.  The receiving dataset can be on the same machine or on another machine in a remote location.
 Repliation works with snapshots so only the changes to the stored data need to be sent to the receiving dataset.
 
 
-[Cloud Sync](h/hub/tasks/scheduled/cloudsync/)
+[Cloud Sync](/hub/tasks/scheduled/cloudsync/)
 A Cloud Sync is when TrueNAS is configured to send, receive, or synchronize data with a Cloud Storage provider like Amazon S3, Google Cloud, and Microsft Azure.
 
 

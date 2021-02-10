@@ -10,6 +10,8 @@ resources:
   params:
     byline: "Photo: Bjørn Erik Pedersen / CC-BY-SA"
 ---
+<!-- markdown-link-check-disable -->
+
 
 Rather than writing all your site pages from scratch, Hugo lets you define and use [shortcodes](https://gohugo.io/content-management/shortcodes/). These are reusable snippets of content that you can include in your pages, often using HTML to create effects that are difficult or impossible to do in simple Markdown. Shortcodes can also have parameters that let you, for example, add your own text to a fancy shortcode text box. As well as Hugo's [built-in shortcodes](https://gohugo.io/content-management/shortcodes/), Docsy provides some shortcodes of its own to help you build your pages.
 
@@ -239,3 +241,4 @@ description: Reference for the Pet Store API
 ```
 
 You can customize Swagger UI's look and feel by overriding Swagger's CSS or by editing and compiling a [Swagger UI dist](https://github.com/swagger-api/swagger-ui) yourself and replace `themes/docsy/static/css/swagger-ui.css`.
+<!-- markdown-link-check-enable -->

@@ -5,6 +5,7 @@ weight: 9
 description: >
   How to contribute to Docsy
 ---
+<!-- markdown-link-check-disable -->
 
 Docsy is an open source project and we love getting patches and contributions to make Docsy and its docs even better.
 
@@ -105,3 +106,4 @@ If you want to run your own local Hugo server to preview your changes as you wor
 If there's something you'd like to see in the docs, but you're not sure how to fix it yourself, please create an issue in [this repository](https://github.com/google/docsy). You can also create an issue about a specific page by clicking the **Create Issue** button in the top right hand corner of the page.
 
 
+<!-- markdown-link-check-enable -->

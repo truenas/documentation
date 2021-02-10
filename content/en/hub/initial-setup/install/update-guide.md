@@ -4,7 +4,7 @@ description: "Update the version of TrueNAS on your system"
 ---
 
 TrueNAS has an integrated update system to make it easy to keep up to date.
-For Updating HA systems refer to the [Updating a High Availability System](https://truenas.com/docs/hub/tasks/administrative/update/ha-update-enterprise/) guide.
+For Updating HA systems refer to the [Updating a High Availability System](/hub/initial-setup/install/update/ha-update-enterprise/) guide.
 
 ## Preparing for Updates
 

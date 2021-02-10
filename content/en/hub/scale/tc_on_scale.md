@@ -5,6 +5,7 @@ tags: ["TrueCommand Docker","SCALE"]
 ---
 
 A [TrueCommand](https://www.truenas.com/truecommand/) Docker image can be deployed on TrueNAS SCALE.
+<!-- markdown-link-check-disable-next-line -->
 The SCALE installation will need [Internet access](/hub/initial-setup/networking/) and a [storage pool](https://www.truenas.com/docs/hub/initial-setup/storage/) with at least 20 GiB of space available for the image.
 
 After logging in to SCALE, go to the **Apps** page.

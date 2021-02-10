@@ -98,4 +98,5 @@ When the user account is going to be using a Windows 8 or newer client to access
 This enables additional authentication methods available from those operating systems.
 
 By default, **Samba Authentication** is enabled.
+<!-- markdown-link-check-disable-next-line -->
 This allows using the account credentials to access data shared with [SMB](/hub/sharing/smb/).

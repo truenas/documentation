@@ -4,6 +4,7 @@ weight: 8
 description: >
   Some examples of Docsy in action!
 ---
+<!-- markdown-link-check-disable -->
 
 One of the best ways to see what Docsy can do, and learn how to configure a site with it, is to see some real projects. In addition to our provided Docsy Example Project, there are several live sites already using the theme. Please add your own examples once you've got a production site up and running with Docsy!
 
@@ -26,3 +27,4 @@ Example sites that include a moderate to high amount of customization:
 |---|---|
 | [Knative](https://knative.dev) | https://github.com/knative/docs and https://github.com/knative/website |
 | [Apache Airflow](https://airflow.apache.org/) | https://github.com/apache/airflow-site/ |
+<!-- markdown-link-check-enable -->

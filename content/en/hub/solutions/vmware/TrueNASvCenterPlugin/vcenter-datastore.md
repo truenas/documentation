@@ -12,7 +12,6 @@ The vCenter plugin can create two different kinds of datastores on a TrueNAS hos
 
 <img src="/images/VCP-DatastoreList.png">
 <br><br>
-
 vCenter has a default limit of eight NFS datastores per ESX host.
 See this [VMware article](https://kb.vmware.com/s/article/1020652) about maximum supported volumes for more details.
 

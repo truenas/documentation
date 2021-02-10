@@ -5,7 +5,7 @@ description: A brief overview of Bootstrap's features and limitations for the cr
 group: getting-started
 toc: true
 ---
-
+<!-- markdown-link-check-disable -->
 Bootstrap provides an easy-to-use framework of ready-made styles, layout tools, and interactive components, allowing developers to create websites and applications that are visually appealing, functionally rich, and accessible out of the box.
 
 ## Overview and Limitations
@@ -55,3 +55,5 @@ Bootstrap includes support for the [`prefers-reduced-motion` media feature](http
 - [Tenon.io Accessibility Checker](https://tenon.io/)
 - [Colour Contrast Analyser (CCA)](https://developer.paciellogroup.com/resources/contrastanalyser/)
 - ["HTML Codesniffer" bookmarklet for identifying accessibility issues](https://github.com/squizlabs/HTML_CodeSniffer)
+
+<!-- markdown-link-check-enable -->
