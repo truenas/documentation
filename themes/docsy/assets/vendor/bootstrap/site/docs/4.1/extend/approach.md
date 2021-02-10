@@ -4,6 +4,7 @@ title: Approach
 description: Learn about the guiding principles, strategies, and techniques used to build and maintain Bootstrap so you can more easily customize and extend it yourself.
 group: extend
 ---
+<!-- markdown-link-check-disable -->
 
 While the getting started pages provide an introductory tour of the project and what it offers, this document focuses on _why_ we do the things we do in Bootstrap. It explains our philosophy to building on the web so that others can learn from us, contribute with us, and help us improve.
 
@@ -74,3 +75,4 @@ Specifically regarding custom CSS, utilities can help combat increasing file siz
 ## Flexible HTML
 
 While not always possible, we strive to avoid being overly dogmatic in our HTML requirements for components. Thus, we focus on single classes in our CSS selectors and try to avoid immediate children selectors (`>`). This gives you more flexibility in your implementation and helps keep our CSS simpler and less specific.
+<!-- markdown-link-check-enable -->
