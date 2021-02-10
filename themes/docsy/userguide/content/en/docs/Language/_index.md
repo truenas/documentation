@@ -5,6 +5,7 @@ weight: 7
 description: >
   Support multiple languages in your site.
 ---
+<!-- markdown-link-check-disable -->
 
 If you'd like to provide site content in multiple languages, the Docsy theme and Hugo make it easy to both add your translated content and for your users to navigate between language versions.
 
@@ -58,3 +59,4 @@ Run `hugo server --i18n-warnings` when doing translation work, as it will give y
 {{% /alert %}}
 
 
+<!-- markdown-link-check-enable -->
