@@ -1,3 +1,4 @@
+<!-- markdown-link-check-disable -->
 # Docsy
 
 Docsy is a [Hugo](https://gohugo.io/) theme for technical documentation sets, providing simple navigation, site structure, and more.
@@ -48,3 +49,4 @@ hugo server --themesDir ../..
 ```
 
 Note that you need the `themesDir` flag when running Hugo because the site files are inside the theme repo.
+<!-- markdown-link-check-enable -->
