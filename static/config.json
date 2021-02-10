@@ -1,7 +1,7 @@
 {
 "ignorePatterns": [
     {
-      "pattern": "www.ixsystems.com(.*)"
+      "pattern": "ixsystems.com(.*)"
     },
     {
       "pattern": "truecommand.io(.*)"
@@ -29,7 +29,19 @@
     },
     {
       "pattern": "docs.vmware.com(.*)"
-    }   
+    },
+    {
+      "pattern": "freebsd.org(.*)"
+    },
+    {
+      "pattern": "opsgenie.com(.*)"
+    },
+    {
+      "pattern": "10.231.3.76(.*)"
+    },
+    {
+      "pattern": "192.168.0.3(.*)"
+    }
   ],
 "replacementPatterns": [
     {
