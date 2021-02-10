@@ -28,7 +28,7 @@ Coupled with the TrueNAS M-Series system, it scales to 15GB/s and 20 PB with fiv
 <br><br>
 
 <img src="/images/tn-scale-logo.png" style="float:left;width:240px;height:50px;margin: 10px 50px 10px 0px;">
-
+<!-- markdown-link-check-disable-next-line -->
 **[TrueNAS SCALE](/hub/scale/)** is the latest member of the TrueNAS family and provides Open Source HyperConverged Infrastructure including Linux containers and VMs.
 TrueNAS SCALE includes the ability to cluster systems and provide scale-out storage with capacities of up to hundreds of Petabytes.
 It is currently in development and will be available for deployment in 2021.
