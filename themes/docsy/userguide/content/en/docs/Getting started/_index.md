@@ -7,6 +7,7 @@ date: 2018-07-30
 description: >
   This page tells you how to get started with the Docsy theme, including installation and basic configuration.
 ---
+<!-- markdown-link-check-disable -->
 
 
 ## Prerequisites and installation
@@ -264,3 +265,4 @@ To use your own Custom Search Engine, replace the value in the `gcs_engine_id` w
 
 
 	
+<!-- markdown-link-check-enable -->
