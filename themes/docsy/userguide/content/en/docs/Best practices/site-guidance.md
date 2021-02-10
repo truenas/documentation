@@ -5,6 +5,7 @@ weight: 9
 description: >
   Tips for authoring content for your Docsy-themed Hugo site.
 ---
+<!-- markdown-link-check-disable -->
 
 Docsy is a theme for the [Hugo](https://gohugo.io/) static site 
 generator. If you're not already familiar with Hugo and, in particular, its version of Markdown, this page provides some 
@@ -39,3 +40,4 @@ find and automatically link to your file named `filename.md`.
 Note, however, that `ref` and `relref` links don't work with `_index` or `index` files (for example, this site's [content landing page](/docs/adding-content/)): you'll need to use regular Markdown links to section landing or other index pages. Specify these links relative to the site's root URL, for example: `/docs/adding-content/`.
 
 [Learn more about linking](/docs/adding-content/content/#working-with-links). 
+<!-- markdown-link-check-enable -->
