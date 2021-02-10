@@ -5,7 +5,7 @@ tags: ["ZFS","snapshots"]
 ---
 
 Snapshots are one of the most powerful features of ZFS. A snapshot provides a read-only point-in-time copy of a file system or volume that does not consume extra space in the ZFS pool. The snapshot only uses space when the block references are changed. Snapshots save disk space by recording only the differences between the current dataset and a previous version.
-
+<!-- markdown-link-check-disable-next-line -->
 Snapshots keep a history of files, providing a way to recover an older copy or even a deleted file. For this reason, many administrators take snapshots often, store them for a period of time, and store them on another system, typically by [replication](/hub/tasks/scheduled/replication/). Such a strategy allows the administrator to roll the system back to a specific point in time. If there is a catastrophic loss, an off-site snapshot can be used to restore data up to the time of the last snapshot.
 
 You must have a storage pool and any datasets or zvols created before creating a snapshot.
