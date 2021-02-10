@@ -212,7 +212,3 @@ To find more details about the different Warranty and Service Level Agreement (S
     <td class="tg-0pky">After Hours (24x7 Gold Level Support only):<br><br>US-only toll-free: 855-499-5131<br>International: 408-878-3140 (international calling<br>rates will apply)<br></td>
   </tr>
 </table>
-
-## This is a test. 
-[this link is bad.](/hub/badlink/)
-[so is this.](/hub/anotherbadlink/)
