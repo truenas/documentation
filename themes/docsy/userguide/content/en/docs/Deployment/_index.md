@@ -5,6 +5,7 @@ weight: 7
 description: >
   Deploying your Docsy site.
 ---
+<!-- markdown-link-check-disable -->
 
 There are multiple possible options for deploying a Hugo site, including Netlify, Firebase Hosting, Bitbucket with Aerobatic, and more; you can read about them all in [Hosting and Deployment](https://gohugo.io/hosting-and-deployment/). Hugo also makes it easy to deploy your site locally for quick previews of your content.
 
@@ -48,3 +49,4 @@ Then follow the instructions in [Host on Netlify](https://gohugo.io/hosting-and-
 
 If you have an existing deployment you can view and update the relevant information by selecting the site from your list of sites in Netlify, then clicking **Site settings** - **Build and deploy**. Ensure that **Ubuntu Xenial 16.04** is selected in the **Build image selection** section - if you're creating a new deployment this is used by default. You need to use this image to run the extended version of Hugo.
 
+<!-- markdown-link-check-enable -->
