@@ -6,6 +6,7 @@ menu:
     weight: 10
 layout: docs
 ---
+<!-- markdown-link-check-disable -->
 
 {{% blocks/cover title="About Docsy" height="auto" %}}
 
@@ -136,4 +137,4 @@ You can find out how to update your site to the latest version of Docsy in [Keep
 
 
 
-
+<!-- markdown-link-check-enable -->
