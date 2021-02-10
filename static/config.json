@@ -41,6 +41,9 @@
     },
     {
       "pattern": "192.168.0.3(.*)"
+    },
+    {
+      "pattern": "linode.com(.*)"
     }
   ],
 "replacementPatterns": [
