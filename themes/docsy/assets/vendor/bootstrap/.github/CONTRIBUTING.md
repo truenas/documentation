@@ -1,3 +1,5 @@
+<!-- markdown-link-check-disable -->
+
 # Contributing to Bootstrap
 
 Looking to contribute something to Bootstrap? **Here's how you can help.**
@@ -241,3 +243,5 @@ By contributing your code, you agree to license your contribution under the [MIT
 By contributing to the documentation, you agree to license your contribution under the [Creative Commons Attribution 3.0 Unported License](docs/LICENSE).
 
 Prior to v3.1.0, Bootstrap's code was released under the Apache License v2.0.
+
+<!-- markdown-link-check-enable -->
