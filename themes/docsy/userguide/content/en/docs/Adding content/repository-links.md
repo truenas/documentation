@@ -5,6 +5,7 @@ weight: 8
 description: >
   Help your users interact with your source repository.
 ---
+<!-- markdown-link-check-disable -->
 
 The Docsy [docs and blog layouts](/docs/adding-content/content/#adding-docs-and-blog-posts) include links for readers to edit the page or create issues for your docs or project via your site's source repository. The current generated links for each docs or blog page are:
 
@@ -52,4 +53,4 @@ Specify a value here if you have would like to reference a different branch for 
 github_brach = "release"
 ```
 
-
+<!-- markdown-link-check-enable -->
