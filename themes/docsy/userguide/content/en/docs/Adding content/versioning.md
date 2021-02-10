@@ -5,6 +5,7 @@ weight: 4
 description: >
    Customize navigation and banners for multiple versions of your docs.
 ---
+<!-- markdown-link-check-disable -->
 
 Depending on your project's releases and versioning, you may want to let your
 users access previous versions of your documentation. How you deploy the
@@ -86,3 +87,4 @@ To add the banner to your doc site, make the following changes in your
     ```
     url_latest_version = "https://your-latest-doc-site.com"
     ```
+<!-- markdown-link-check-enable -->
