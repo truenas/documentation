@@ -108,7 +108,7 @@ The remaining buttons link to system configuration option or can be used to logo
 The top row has buttons to hide the left side column.
 The top of this column shows the system hostname and the active user.
 TrueNAS configuration screens are linked in the left hand column:
-
+<!-- markdown-link-check-disable -->
 * **Dashboard**: Landing page for the web interface.
 * [**Accounts**](/hub/initial-setup/security/accounts/): Add or manage TrueNAS User and Group accounts.
 * [**System**](/hub/initial-setup/firsttimelogin/systemsettings/): TrueNAS system level options.
@@ -125,6 +125,7 @@ TrueNAS configuration screens are linked in the left hand column:
 * **Display System Processes**: Shows actively running system processes, including cpu and memory usage.
 * [**Shell**](/hub/tasks/administrative/gui-shell/): Command line interface (CLI) for running diagnostic or other integrated applications as the system administrator. To access the [system console setup menu](#default-access-to-the-web-interface) from the **Shell**, enter `/etc/netcli`.
 * **Guide**: Opens a new browser tab to the TrueNAS Documentation Hub.
+<!-- markdown-link-check-enable -->
 
 ## Troubleshooting
 
