@@ -38,6 +38,7 @@ When set, it allows group members to act as the root account by using [sudo](htt
 It is recommended to leave this unset.
 
 The option **Samba Authentication** is set by default.
+<!-- markdown-link-check-disable-next-line -->
 This option allows group members to be used for [SMB](/hub/sharing/smb/) permissions and authentication.
 
 Finally, the **Allow Duplicate GIDs** option is unset by default.
