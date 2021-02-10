@@ -63,7 +63,7 @@ For example, this is the path to download an `.iso` of the latest FreeNAS 11.3 r
 
 <img src="/images/FN11.3-Latest.png">
 <br><br>
-
+<!-- markdown-link-check-disable-next-line -->
 Burn the downloaded `.iso` file to a CD or USB stick. Refer to the [Preparing Media](/hub/initial-setup/install/FirstTimeInstall/) instructions in the Installation article for tips about burning the `.iso` to media using different Operating Systems.
 
 Insert the prepared media into the system and boot from it.
