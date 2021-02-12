@@ -126,10 +126,12 @@ Enter the passphrase and click **Submit**. If there are child datasets that are 
 
 <img src="/images/TN12.0-Encryption15.png">
 <br><br>
-Confirm that you want to unlock the datasets.
+
+Confirm that you want to unlock the datasets:
 
 <img src="/images/TN12.0-Encryption16.png">
 <br><br>
+
 <img src="/images/TN12.0-Encryption17.png">
 <br><br>
 
