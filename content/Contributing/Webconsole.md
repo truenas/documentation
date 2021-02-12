@@ -15,6 +15,8 @@ Open the web console by clicking  <i class="fa fa-bars" aria-hidden="true" title
 
 In the upper right, set Persist Logs.
 Click <i class="fa fa-bars" aria-hidden="true" title="More"></i>&nbsp; (More) > Settings. In the Web Console section, set **Enable timestamps**. 
+
+In the Web Console area, on verisons of Firefox v78 and later, click <i class="fa fa-cog" aria-hidden="true" title="Settings"></i>&nbsp; (Settings) and set **Enable timestamps** and set **Persist Logs** 
 Click the Console tab or press Ctrl-Shift-K to switch to the console window.
 
 Leave the console open and perform the action that encounters problems.
