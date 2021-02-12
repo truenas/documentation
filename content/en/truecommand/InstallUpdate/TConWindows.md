@@ -42,16 +42,7 @@ Open Docker Hub and click the *Get Docker* button to download the [Docker Deskto
 <img src="/images/DownloadDockerDesktop.png">
 <br><br>
 
-Once the download has completed, run the Docker Installer
-
-<img src="/images/DockerDesktop1.png">
-<br><br>
-<img src="/images/DockerDesktop2.png">
-<br><br>
-<img src="/images/DockerDesktop3.png">
-<br><br>
-
-After the Installer has completed, reboot the system.
+Once the download has completed, run the Docker Installer.  After the Installer has completed, reboot the system.
 
 If the admin account is different from your Windows user account, the user must be added to the docker-users group. Run Computer Management as an administrator and navigate to **Local Users and Groups > Groups > docker-users** to add the user to the group.  You will need to Log out and then log back in for the changes to take effect.
 
@@ -66,7 +57,7 @@ Update package can be downloaded from [this link](https://wslstorestorage.blob.c
 <img src="/images/DockerDesktop5.png">
 <br><br>
 
-Refer to the [Microsoft Documentatation](https://docs.microsoft.com/en-us/windows/wsl/install-win10#step-4---download-the-linux-kernel-update-package) if you need more information The 
+Refer to the [Microsoft Documentatation](https://docs.microsoft.com/en-us/windows/wsl/install-win10#step-4---download-the-linux-kernel-update-package) if you need more information.
 
 Once the Kernel Update has been installed, set the default version of WSL to version 2 with the powershell command: `wsl --set-default-version 2`.
 
@@ -91,7 +82,7 @@ Verify the pull command required and run it from the CLI, `docker pull ixsystems
 <img src="/images/DockerHub3.png">
 <br><br>
 
-Once that has completed, open the Docker Desktop, select *Images*, and Click on **Run**.
+Once that has completed, open the Docker Desktop, select *Images*, hover over the ixsystems/truecommand entry to reveal the Run button and click on **Run**.
 
 <img src="/images/DockerDesktop7.png">
 <br><br>
