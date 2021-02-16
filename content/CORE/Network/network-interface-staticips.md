@@ -46,7 +46,7 @@ Log in to the web interface and go to *Network > Interfaces*. This contains crea
 You can configure static IP addresses while creating or editing an interface.
 
 {{% alert title="TrueNAS Enterprise" color="info" %}}
-[High Availability](/hub/tasks/advanced/high-availability/) must be disabled on TrueNAS Enterprise systems before an active interface can be edited.
+[High Availability](/CORE/System/Failover/) must be disabled on TrueNAS Enterprise systems before an active interface can be edited.
 {{% /alert %}}
 
 <img src="/images/NetworkInterfacesEdit.png">
