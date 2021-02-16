@@ -1,6 +1,7 @@
 ---
 title: "The GUI Shell"
 description: "Using the GUI Shell in TrueNAS."
+weight: 50
 ---
 
 The web interface has a web shell that makes it convenient to run command line tools from the web browser as the root user.
