@@ -2,6 +2,7 @@
 title: "VMware Snapshots"
 description: "Snapshotting VMware Instances" 
 tags: ["VMware","ZFS","Snapshots"]
+weight: 20
 ---
 
 **Storage** > **VMware-Snapshots** is used to coordinate ZFS snapshots when using TrueNAS as a VMware datastore.
