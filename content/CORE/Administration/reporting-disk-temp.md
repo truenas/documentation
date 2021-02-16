@@ -2,6 +2,7 @@
 title: "Disk Temperature Reporting"
 linkTitle: "Monitor Disk Temperature"
 description: "How to find and monitor the temperature of disks in the system."
+weight: 40
 ---
 
 TrueNAS reports the temperature of all active disks in the system. To view these reports, go to **Reporting** and select the *Disk* option from the drop-down on the top left of the page.
