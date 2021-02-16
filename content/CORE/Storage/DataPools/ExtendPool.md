@@ -1,6 +1,7 @@
 ---
 title: "Extending a Storage Pool"
 description: "How to add additional storage to an existing pool"
+weight: 20
 ---
 
 There are numerous options available to TrueNAS users for extending pools within a system.  They are:
