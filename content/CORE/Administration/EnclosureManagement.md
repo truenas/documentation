@@ -1,6 +1,7 @@
 ---
 title: "Managing the Enclosure"
 description: "Overview of options for configuring the TrueNAS hardware and connnected systems"
+weight: 30
 ---
 
 Click System ➞ View Enclosure to display the status of connected disks and hardware.
