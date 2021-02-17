@@ -1,11 +1,7 @@
 ---
 title: "IPMI"
-description: "Out of Band Management"
-tags: ["IPMI","networking"]
+weight: 50
 ---
-
-
-## IPMI
 
 Many TrueNAS Storage Arrays provide a built-in out-of-band management port which can be used to provide side-band management should the system become unavailable through the web interface. This allows for a few vital functions, such as checking the log, accessing the BIOS setup, and powering on the system without requiring physical access to the system. It can also be used to allow another person remote access to the system to assist with a configuration or troubleshooting issue.
 

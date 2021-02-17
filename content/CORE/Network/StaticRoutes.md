@@ -1,9 +1,9 @@
 ---
 title: "Defining a Static Route"
-tags: ["networking"]
+weight: 40
 ---
 
-No static routes are defined on a default TrueNAS system.
+By default, no static routes are defined on a default TrueNAS system.
 If a static route is required to reach portions of the network, add the route by going to **Network > Static Routes** and clicking **ADD**.
 
 <img src="/images/NetworkStaticRoutesAdd.png">

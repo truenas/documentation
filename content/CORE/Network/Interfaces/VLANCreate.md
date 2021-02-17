@@ -1,7 +1,6 @@
 ---
 title: "VLAN"
-description: "How to Create a VLAN"
-tags: ["VLAN", "networking"]
+weight: 30
 ---
 
 A virtual LAN (VLAN) is a domain that is partitioned and isolated in a computer network at the data link layer (OSI layer 2).  More information on VLANs can be found [here](https://www.ieee802.org/1/pages/802.1Q-2014.html). TrueNAS uses [vlan(4)](https://www.freebsd.org/cgi/man.cgi?vlan(4)) to manage VLANS. 

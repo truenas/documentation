@@ -1,7 +1,6 @@
 ---
 title: "Link Aggregations"
-description: "How to combine network connections into a Link Aggregation (LAGG)."
-tags: ["LAGG", "networking"]
+weight: 20
 ---
 
 A [Link Aggregation (LAGG)](https://tools.ietf.org/html/rfc7424) generally refers to various methods of combining (aggregating) multiple network connections in parallel or series to provide additional bandwidth or to provide redundancy for critical connections. TrueNAS uses [lagg(4)](https://www.freebsd.org/cgi/man.cgi?lagg(4)) to manage LAGGs. 
