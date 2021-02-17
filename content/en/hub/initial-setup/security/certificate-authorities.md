@@ -1,69 +1,169 @@
 ---
-title: "Setting up Certificate Authorities"
-description: "A how-to for creating and importing certificate authorities (CAs) in TrueNAS."
-tags: ["networking","security","certificates"]
+title: "Setting up Certificate Authorities in TrueNAS CORE"
+description: "A how-to for creating and importing certificate authorities (CAs) in TrueNAS CORE."
+tags: ["networking","security","certificates","CORE"]
 weight: 11
 ---
 
 ## Introduction
 
-TrueNAS can act as a Certificate Authority (CA). When encrypting SSL or TLS
-connections to the TrueNAS system, either import an existing CA, or
-create a CA and certificate on the TrueNAS system. This certificate will appear
-in the drop-down menus for services that support SSL or TLS. If desired, a new
-CA can be created or an existing CA can be imported. To
-add or import a CA, go to **System > Certificate Authorities** and click *ADD*. First,
-enter the name for the CA. Next, choose the *Type*. The three options are
-*Internal CA*, *Intermediate CA*, and *Import CA*. The process for
-each type is slightly different. Follow the appropriate section below
-based on your desired type.
+TrueNAS CORE can act as a Certificate Authority (CA). When encrypting SSL (Secure Sockets Layer) or TLS (Transport Layer Security) connections to the TrueNAS system, you can either import or create a Certificate or Signing Request. Certificates will appear in the drop-down menus for services that support SSL or TLS. 
 
-## Internal CA
+To add or import a Certificate or Signing Request, go to **System > Certificates** and click **ADD**. Enter a name for the CA, then choose the *Type*. You may choose to create or import either an *Internal Certificate* type, or a *Certificate Signing Request* type. The creation process for each type is slightly different. Use the links below to jump to the appropriate section based on your desired type.
 
-To create an internal CA, select *Internal CA* as the *Type*. If desired, a
-profile can be selected for the CA. Selecting a profile
-automatically sets certain options such as *Key Type*, *Key Length*, *Digest
-Algorithm*, and more. If you would like to set each option manually, do not
-select a profile from the *Profiles* dropdown. Select a *Key Type* from the
-dropdown. The recommended key type is *RSA*. Next, select the *Key Length*. A
-minimum of *2048* is recommended for security reasons. Select a *Digest
-Algorithm*. The recommended is *SHA256*. Enter the *Lifetime* of the CA
-in days, this is how long the CA will remain valid.
+[Create a Certificate](#Create a Certificate)  
+[Import a Certificate](#Import a Certificate)  
+[Create a Certificate Signing Request](#Create a Certificate Signing Request)  
+[Import Certificate Signing Request](#Import Certificate Signing Request)  
 
-Next, fill out the geographic information of the certificate. This includes 
-*Country*, *Locality*, *Organizational Unit* (optional), *Common Name*, *State*,
-*Organization*, *Email*, and *Subject Alternate Names*. The *Common
-Name* is the [fully-qualified hostname (FQDN)](https://kb.iu.edu/d/aiuv) and
-must be unique within a certificate chain.
+## Create a Certificate<a name="Create a Certificate"></a>
 
-If *Basic Constraints* are desired, set *Enabled* and more options will appear.
-Set a *Path Length*. This is how many non-self-issued intermediate certificates
-that can follow this certificate in a valid certification path. Entering *0*
-allows a single additional certificate to follow in the certificate path.
-Cannot be less than *0*. Next, select the *Basic Constraints Config*. More than
-one can be selected from the dropdown.
+### Identifier and Type
 
-If an *Authority Key Identifier* is desired, set *Enabled*. Next, select the
-*Authority Key Config*. More than one can be selected from the dropdown.
+Select *Internal Certificate* as the *Type*. 
 
-If *Extended Key Usage* is desired, set *Enabled*. Next, select the usage for
-this public key from the *Usages* dropdown. This is typically used for end
-entity certificates. Multiple usages can be selected. Do not set this
-*Critical Extension* when the *Usages* contains *ANY_EXTENDED_KEY_USAGE*.
-Using both *Extended Key Usage* and *Key Usage* extensions requires that the
-purpose of the certificate is consistent with both extensions. See
-[RFC 3280, section 4.2.1.13](https://www.ietf.org/rfc/rfc3280.txt) for more
-details.
+If you want, you can select a profile for the CA. Selecting a profile automatically sets certain options such as *Key Type*, *Key Length*, *Digest Algorithm*, and more. If you would like to set each option manually, do not select a profile from the *Profiles* dropdown. 
 
-## Intermediate CA
+<img src="/images/CreateCert-IdentTyp.png">
+<br><br>
 
-To create an Intermediate CA, select *Intermediate CA* as the *Type*. All the
-settings are the same as [Internal CA](#internal-ca) except an existing
-*Signing Certificate Authority* is needed.
+### Certificate Options
 
-## Import CA
+1. Select a *Signing Certificate Authority* from the dropdown.
+2. Select a *Key Type* from the dropdown. We recommend the *RSA* key type. 
+3. Select the *Key Length*. We recommend a minimum of *2048* for security reasons. 
+4. Select a *Digest Algorithm*. We recommend *SHA256*. 
+5. Enter the *Lifetime* of the CA in days to set how long the CA will remain valid.
 
-To import an existing CA, select *Import CA* as the *Type*. Paste the
-certificate of the CA in the *Certificate* field. Paste the CA
-private key in the *Private Key* field. If the private key is protected by a
-passphrase, enter the *Passphrase*.
+<img src="/images/CreateCert-CertOpt.png">
+<br><br>
+
+### Certificate Subject
+
+1. Fill out the geographic information of the certificate by entering the *Country*, *Locality*, *Organizational Unit* (optional), *Common Name*, *State*, *Organization*, *Email*, and *Subject Alternate Names*. 
+2. The *Common Name* is the [fully-qualified hostname (FQDN)](https://kb.iu.edu/d/aiuv) and must be unique within a certificate chain.
+
+<img src="/images/CreateCert-CertSubj.png">
+<br><br>
+
+### Basic Constraints
+
+1. If you would like to have *Basic Constraints*, set them to *Enabled* and more options will appear. 
+2. Set a *Path Length* to determine how many non-self-issued intermediate certificates can follow this certificate in a valid certification path. Entering *0* allows a single additional certificate to follow in the certificate path. 
+3. Select the *Basic Constraints Config*. You can select more than one from the dropdown.
+
+<img src="/images/CreateCert-BasCon.png">
+<br><br>
+
+### Authority Key Identifier
+
+If you want an *Authority Key Identifier*, set it to *Enabled*, then select the *Authority Key Config*. You can select more than one from the dropdown.
+
+<img src="/images/CreateCert-AuthKeyIdent.png">
+<br><br>
+
+### Key Usage
+
+Extended Key Usage is typically used for end entity certificates. 
+
+1. If you want to utilize *Extended Key Usage*, set it to *Enabled*, then select the usage for the public key from the *Usages* dropdown. You can select multiple usages in the dropdown. 
+2. Enable *Critical Extension* if you want to identify this extension as critical for the certificate. Do not enable *Critical Extension* if *Usages* contains *ANY_EXTENDED_KEY_USAGE*. 
+
+> NOTE: Using both *Extended Key Usage* and *Key Usage* extensions requires that the purpose of the certificate is consistent with both extensions. See [RFC 3280, section 4.2.1.13](https://www.ietf.org/rfc/rfc3280.txt) for more details.
+
+<img src="/images/CreateCert-KeyUse.png">
+<br><br>
+
+## Import a Certificate<a name="Import a Certificate"></a>
+
+### Identifier and Type
+
+Select *Import Certificate* as the *Type*. 
+
+<img src="/images/ImportCert-IdentTyp.png">
+<br><br>
+
+### Certificate Options
+
+If you want to import a CSR that is already on the system, enable *CSR exists on this system*, then select the one you want to use from the drop-down. 
+
+<img src="/images/ImportCert-CertOpt.png">
+<br><br>
+
+### Certificate Subject
+
+1. Copy the certificate for the CA you want to import and paste it in the *Certificate* field.
+2. Paste the *Private Key* associated with the Certificate when available. Provide a key at least 1024 bits long.
+3. Enter and confirm the *Passphrase* for the Private Key.
+
+<img src="/images/ImportCert-CertSubj.png">
+<br><br>
+
+## Create a Certificate Signing Request<a name="Create a Certificate Signing Request"></a>
+
+### Identifier and Type
+
+1. Select *Certificate Signing Request* as the *Type*. 
+2. If you want, you can select a profile for the CA. Selecting a profile automatically sets certain options such as *Key Type*, *Key Length*, and *Digest Algorithm*. If you would like to set options manually, do not select a profile from the *Profiles* dropdown. 
+
+<img src="/images/CreateCSA-IdentTyp.png">
+<br><br>
+
+### Certificate Options
+
+1. Select a *Key Type* from the dropdown. We recommend the *RSA* key type. 
+2. Select a *Digest Algorithm*. We recommend *SHA256*. 
+
+<img src="/images/CreateCSA-CertOpt.png">
+<br><br>
+
+### Certificate Subject
+
+Fill out the geographic information of the certificate by entering the *Country*, *Locality*, *Organizational Unit* (optional), *Common Name*, *State*, *Organization*, *Email*, and *Subject Alternate Names*. The *Common Name* is the [fully-qualified hostname (FQDN)](https://kb.iu.edu/d/aiuv) and must be unique within a certificate chain.
+
+<img src="/images/CreateCSA-CertSubj.png">
+<br><br>
+
+### Basic Constraints
+
+1. If you would like to have *Basic Constraints*, set them to *Enabled* and more options will appear. 
+2. Set a *Path Length* to determine how many non-self-issued intermediate certificates can follow this certificate in a valid certification path. Entering *0* allows a single additional certificate to follow in the certificate path. 
+3. Select the *Basic Constraints Config*. You can select more than one from the dropdown.
+
+<img src="/images/CreateCSA-BasCon.png">
+<br><br>
+
+### Authority Key Identifier
+
+If you want an *Authority Key Identifier*, set it to *Enabled*, then select the *Authority Key Config*. You can select more than one from the dropdown.
+
+<img src="/images/CreateCSA-AuthKeyIdent.png">
+<br><br>
+
+### Key Usage
+
+1. Extended Key Usage is typically used for end entity certificates. If you want to utilize *Extended Key Usage*, set it to *Enabled*, then select the usage for the public key from the *Usages* dropdown. You can select multiple usages in the dropdown. 
+2. Do not set the *Critical Extension* when the *Usages* contains *ANY_EXTENDED_KEY_USAGE*. 
+
+> NOTE: Using both *Extended Key Usage* and *Key Usage* extensions requires that the purpose of the certificate is consistent with both extensions. See [RFC 3280, section 4.2.1.13](https://www.ietf.org/rfc/rfc3280.txt) for more details.
+
+<img src="/images/CreateCSA-KeyUse.png">
+<br><br>
+
+## Import Certificate Signing Request<a name="Import Certificate Signing Request"></a>
+
+### Identifier and Type
+
+Select *Import Certificate* as the *Type*. 
+
+<img src="/images/ImportCSA-IdentTyp.png">
+<br><br>
+
+### Certificate Subject
+
+1. Copy the contents of the Certificate Signing Request you want to import and paste it in the *Signing Request* field.
+2. Paste the *Private Key* associated with the Certificate when available. Provide a key at least 1024 bits long.
+3. Enter and confirm the *Passphrase* for the Private Key.
+
+<img src="/images/ImportCSA-CertSubj.png">
+<br><br>
