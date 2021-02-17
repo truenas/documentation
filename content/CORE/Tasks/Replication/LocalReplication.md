@@ -1,7 +1,6 @@
 ---
 title: "Local Replication"
 weight: 70
-tags: ["ZFS", "replication"]
 ---
 
 ## Process Summary
