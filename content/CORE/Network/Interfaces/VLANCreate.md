@@ -7,17 +7,20 @@ A virtual LAN (VLAN) is a domain that is partitioned and isolated in a computer 
 
 To set up a VLAN interface, go to **Network > Interface > Add**.
 
-<img src="/images/TN-AddVLANInterface.png">
+<img src="/images/CORE/12.0/NetworkInterfacesAddVLAN.png">
 <br><br>
 
-Set interface type to `VLAN` and name the interface with the format of *vlanX*, where X is a number representing a non-parent interface.  Enable DHCP and IPv6 as needed on your network.  
-Under *VLAN Settings* select the Parent Interface the VLAN will work with, and create a *vlan tag*.  THe VLAN tag is a numeric tag configured in the switching network. 
+Set the *Type* to *VLAN* and enter a *Name* for the interface. The name must use the format *vlanX*, where *X* is a number representing a non-parent interface.
+It is also recommended to add any notes or reminders about this particular VLAN in the *Description*.
 
-Disabling **Hardware Offloading** is discouraged as it can reduce network performance.
-Disabling this is only recommended when the interface is managing [Jails](/CORE/Virtualization/Jails/), [Plugins](/CORE/Virtualization/Plugins/), or [Virtual Machines](/CORE/Virtualization/VirtualMachines/).
+Enabling *DHCP* or *Autoconfigure IPv6* requires understanding how this new interface will function inside your particular network environment. By default, TrueNAS allows only one network interface to have *DHCP* enabled.
 
-The Maximum Transmission Unit (MTU) is the largest protocol data unit that can be communicated.
-What the largest workable MTU size can be will change according to your available network interfaces and other physical hardware.
-`1500` and `9000` are standard Ethernet MTU sizes and TrueNAS recommends leaving this at the default `1500`.
-The permissable range of MTU values is 1492 to 9216. 
-Leaving this field blank restores the field to the default value of 1500.
+The remaining **VLAN Settings** must be configured for the interface to function properly:
+
+* *Parent Interface* : Select the VLAN Parent Interface. This is usually an Ethernet card connected to a switch port that has already been configured for the VLAN.
+* *Vlan Tag* : Enter a numeric tag for this interface. This is usually preconfigured in the switched network.
+* *Priority Code Point* : Define the VLAN [Class of Service](https://tools.ietf.org/html/rfc4761#section-4.2.7). The available *802.1p* class of service ranges from *Best effort (default)* to *Network control (highest)*.
+
+With the VLAN-specific options set, there are a few additional interfaces options to review.
+
+{{< include file="static/includes/InterfaceOptions.md.part" markdown="true" >}}

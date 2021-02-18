@@ -3,20 +3,24 @@ title: "IPMI"
 weight: 50
 ---
 
-Many TrueNAS Storage Arrays provide a built-in out-of-band management port which can be used to provide side-band management should the system become unavailable through the web interface. This allows for a few vital functions, such as checking the log, accessing the BIOS setup, and powering on the system without requiring physical access to the system. It can also be used to allow another person remote access to the system to assist with a configuration or troubleshooting issue.
+{{< hint info >}}
+IPMI requires compatible hardware! Refer to your hardware documentation to determine if this option will appear in the TrueNAS web interface.
+{{< /hint >}}
 
-{{% pageinfo %}}
+Many [TrueNAS Storage Arrays](/hardware/) provide a built-in out-of-band management port which can be used to provide side-band management should the system become unavailable through the web interface. This allows for a few vital functions, such as checking the log, accessing the BIOS setup, and powering on the system without requiring physical access to the system. It can also be used to allow another person remote access to the system to assist with a configuration or troubleshooting issue.
+
+{{< hint info >}}
 Some IPMI implementations require updates to work with newer versions of Java. See [PSA: Java 8 Update 131 breaks ASRock’s IPMI Virtual console](https://forums.freenas.org/index.php?threads/psa-java-8-update-131-breaks-asrocks-ipmi-virtual-console.53911/) for more information.
-{{% /pageinfo %}}
+{{< /hint >}}
 
-<img src="/images/TN-NetworkIPMI.png">
+<img src="/images/CORE/12.0/NetworkIPMI.png">
 <br><br>
 
-IPMI is configured from **Network > IPMI**. The IPMI configuration screen  provides a shortcut to the most basic IPMI configuration. Those already familiar with IPMI management tools can use them instead.
+IPMI is configured from **Network > IPMI**. The IPMI configuration screen provides a shortcut to the most basic IPMI configuration.
 
 ## IPMI Configuration
 
-Here are options available when configuring IPMI with the TrueNAS® web interface.
+These options are available:
 
 | Setting              | Value          | Description                                                                                                                                                                                  |
 |----------------------|----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -32,6 +36,6 @@ Here are options available when configuring IPMI with the TrueNAS® web interfac
 
 ## IPMI Options
 
-After configuration, the IPMI interface is accessed using a web browser and the IP address specified in the configuration. The management interface prompts for a username and the configured password. Refer to the IPMI device documentation to determine the default administrative username.
+After saving the configuration, the IPMI interface is accessed using a web browser and the IP address specified in **Network > IPMI**. The management interface prompts for login credentials. Refer to your IPMI device documentation to learn the default administrator account credentials.
 
-After logging in to the management interface, the default administrative username can be changed, and additional users created. The appearance of the IPMI utility and the functions that are available vary depending on the hardware.
+After logging in to the management interface, the default administrative user name can be changed and additional IPMI users created. The appearance of the IPMI utility and the functions that are available vary by hardware.

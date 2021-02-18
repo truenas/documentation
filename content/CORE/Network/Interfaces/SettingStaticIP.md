@@ -1,23 +1,24 @@
 ---
-title: "Setting a Static IP Address"
+title: "Setting a Static IP Address for the TrueNAS UI"
 weight: 40
 ---
 
-{{% alert title="Warning" color="warning" %}}
+{{< hint warning >}}
+**Disruptive Change**\
 Making changes to the network interface the web interface uses can result in losing connection to the TrueNAS system!
 Fixing any misconfigured network settings might require command line knowledge or physical access to the TrueNAS system.
-{{% /alert %}}
+{{< /hint >}}
 
 ## Process Summary
 
 * Web UI
-  * *Network > Interfaces* > Add or Edit
-    * Type address into *IP Address* and select subnet mask.
-    * Add or Delete additional addresses as needed.
+  * **Network > Interfaces** > *Add* or *Edit*
+    * Type address into *IP Address* and select a subnet mask.
+    * *Add* or *Delete* additional addresses as needed.
   * Test saved changes before permanently applying them.
     * Dialog asks to temporarily apply changes.
     * After applying the changes, you have an adjustable amount of time to verify the new settings work before permanently saving over the previous configuration.
-  * *Network > Network Summary* summarizes addressing information of every configured interface.
+  * **Network > Network Summary** summarizes addressing information of every configured interface.
 * Console menu 
   * Physical Interfaces: select *Configure Network Interfaces* (options are similar for other interface types)    
     * Delete interface? `n`
@@ -29,58 +30,61 @@ Fixing any misconfigured network settings might require command line knowledge o
     * Configure failover? `n`
   * Saving changes interrupts the web interface and could require a system reboot.
 
-
 ## Setting Static IP Addresses
 
 TrueNAS can configure physical network interfaces with static IP addresses in either the web interface or the system console menu.
-Using the web interface is recommended as that option has an additional safety feature to prevent saving misconfigured interface settings.
+
+{{< hint ok >}}
+Using the web interface for this process is recommended. There are additional safety features to prevent saving misconfigured interface settings.
+{{< /hint >}}
 
 ### Adding Static IP Addresses Using the Web Interface
 
-Log in to the web interface and go to *Network > Interfaces*. This contains creation and configuration options for physical and virtual network interfaces.
+Log in to the web interface and go to **Network > Interfaces**.
+This contains creation and configuration options for physical and virtual network interfaces.
 
-<img src="/images/NetworkInterfaces.png">
+<img src="/images/CORE/12.0/NetworkInterfaces.png">
 <br><br>
 
 You can configure static IP addresses while creating or editing an interface.
 
-{{% alert title="TrueNAS Enterprise" color="info" %}}
+{{< hint ok >}}
 [High Availability](/CORE/System/Failover/) must be disabled on TrueNAS Enterprise systems before an active interface can be edited.
-{{% /alert %}}
+{{< /hint >}}
 
-<img src="/images/NetworkInterfacesEdit.png">
+<img src="/images/CORE/12.0/NetworkInterfacesEdit.png">
 <br><br>
 
 Type the desired address in the *IP Address* field and select a subnet mask.
 
-{{% alert title="Note" color="info" %}}
+{{< hint warning >}}
 Multiple interfaces cannot be members of the same subnet.
 See [Multiple network interfaces on a single subnet](https://www.ixsystems.com/community/threads/multiple-network-interfaces-on-a-single-subnet.20204/) for more information.
 Check the subnet mask if an error is shown when setting the IP addresses on multiple interfaces.
-{{% /alert %}}
+{{< /hint >}}
 
 Use the buttons to *Add* and *Delete* more IP addresses as needed.
 
-To avoid permanently saving invalid or unusable settings, network changes are applied temporary.
-Saving any interface changes adds a dialog to the *Network > Interfaces* list to apply these changes.
+To avoid permanently saving invalid or unusable settings, network changes are applied temporarily.
+Saving any interface changes adds a dialog to the **Network > Interfaces** list to apply these changes.
 
-<img src="/images/NetworkChangesApply.png">
+<img src="/images/CORE/12.0/NetworkInterfacesChangesPresent.jpeg">
 <br><br>
 
 You can adjust how long to test the network changes before they are reverted back to the previous settings.
 If the test is successful, another dialog allows making the network changes permanent.
 
-To quickly view system networking settings, go to the *Network Summary* screen.
+To quickly view system networking settings, go to **Network > Network Summary**.
 
-<img src="/images/NetworkSummary.png">
+<img src="/images/CORE/12.0/NetworkNetworkSummary.png">
 <br><br>
 
 ### Using the System Console Menu to Assign Static IP Addresses to a Physical Interface
 
-A monitor and keyboard attached to the system is needed to use the console, or, if the system hardware allows it, you can connect with IPMI.
+A monitor and keyboard attached to the system is needed to use the console, or, if the system hardware allows it, you can connect with [IPMI](/core/network/ipmi/).
 The console menu is shown when the system is fully booted.
 
-<img src="/images/NetworkSummary.png">
+<img src="/images/CORE/ConsoleMenu.png">
 <br><br>
 
 Use the *Configure Network Interfaces* option to add static IP addresses to a physical interface.
