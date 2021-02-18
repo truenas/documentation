@@ -10,7 +10,7 @@ command line knowledge or physical access to the TrueNAS® system to fix. Be ver
 
 **Network > Global Configuration** is for general network settings that are not unique to any particluar network interface.
 
-<img src="/images/CORE/12.0/GlobalConfig1.png">
+<img src="/images/CORE/12.0/GlobalConfig.png">
 <br><br>
 
 ## Global Configuration Settings ##
