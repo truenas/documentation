@@ -1,39 +1,52 @@
 ---
-title: "Set up SMB share as a Home Share"
-description: "Creating a personal storage share for your team with one SMB share."
-tags: ["networking","Samba", "personal storage"]
+title: "SMB Home Share"
+weight: 20
 ---
 
-## Set up SMB with *Use as Home Share*
+{{< toc >}}
 
-TrueNAS offers the **Use as Home Share** option for organizations or SMEs looking to offer a single SMB share where each user has access to a personal directory. 
+TrueNAS offers the *Use as Home Share* option for organizations or SMEs that want to use a single SMB share to provide a personal directory to every user account.
 
-{{% pageinfo %}}
-This feature can only be set once in TrueNAS. Should additional shares need to be set, it is possible, but on an individual share basis just as detailed in the [general SMB sharing article](/CORE/Sharing/SMB/smb-share/).
-{{% /pageinfo %}}
+{{< hint warning >}}
+This feature is available for a single TrueNAS SMB share. Additional SMB shares can be created as described in the [general SMB sharing article](/CORE/Sharing/SMB/smb-share/) but without the *Use as Home Share* option enabled.
+{{< /hint >}}
 
-Create a new dataset, e.g. *ourhome*. Select **SMB** as the **Share Type**. 
+## Prepare a Dataset
 
-<img src="/images/DatasetCreation.png"><br><br>
+Create a new dataset in an existing storage pool.
+This article uses the example *ourhome*.
+Set the *Share Type* to *SMB*.
 
-Edit the permissions of the share and change the ACL preset to **HOME**.
+<img src="/images/CORE/12.0/StoragePoolsOptionsDatasetCreateOurhome.jpeg"><br><br>
 
-<img src="/images/SetHomepPermission.png"><br><br>
+After creating the dataset, go to **Storage > Pools**, open the dataset options, and select *Edit Permissions*.
+Click *Select an ACL Preset* and choose *HOME*.
 
-Go to **Sharing** > **Windows Shares (SMB)**. 
+<img src="/images/CORE/12.0/StoragePoolsOptionsEditPermissionsACLPresetHome.png"><br><br>
 
-Select the appropriate dataset (previously named 'ourhome'). Under purpose select **No presets**, then click **ADVANCED OPTIONS** and select **Use as Home Share**. 
+Save the ACL and begin creating the home share.
 
-{{% pageinfo %}}
-When setting a home share the name of the share must be the same as the dataset name.
-{{% /pageinfo %}}
+## Create the Share
 
-<img src="/images/CreateSMBShare.png"><br><br>
+Go to **Sharing > Windows Shares (SMB) > ADD**. 
 
-Under **Accounts**, select **Users** and click **ADD**. Create a new user name and password. By default, the user's Home Directory will be a new data set with his/her user name used as the subdirectory of the *ourhome* dataset. 
+Set the *Path* to the prepared dataset (example is *ourhome*). The *Name* automatically changes to be identical to the dataset. Leave this at the default.
 
-<img src="/images/EditUserHomeDir.png"><br><br>
+Set the *Purpose* to **No presets**, click *ADVANCED OPTIONS*, and select **Use as Home Share**. 
 
-If existing users require access to this **Home Share**, click the user, select **Edit**, and simply adjust their home directory to the appropriate dataset and give it a name to create their own personal directory.
+<img src="/images/CORE/12.0/SharingSMBAddHomeShareExample.png"><br><br>
 
-Once user permisions have been set accordingly, users will be able to log in to the common share with each having his/her own folder. 
+Click *Submit* and enable the SMB service to make the share available on your network.
+
+The final step is to create user accounts in TrueNAS and define their home directories.
+
+## Add Users
+
+Go to **Accounts > Users > ADD**. Create a new user name and password. By default, the user *Home Directory* will be titled from the user account name and added as a new subdirectory of the *ourhome* dataset.
+
+<img src="/images/CORE/12.0/AccountsUsersEditHomeDir.png"><br><br>
+
+If existing users require access to the home share, go to **Accounts > Users** and edit an existing account.
+Adjust the account home directory to the appropriate dataset and give it a name to create their own personal directory.
+
+After the user accounts have been added and permissions configured, users can log in to the common share and see a folder that is titled with their user name.
