@@ -4,10 +4,10 @@ description: "How to set up a Virtual Machine."
 tags: ["VM"]
 ---
 
-{{% alert title="Licensed Feature" color="info" %}}
+{{< hint info >}}
 While Virtual Machines are freely available in TrueNAS CORE, they are a licensed feature of TrueNAS Enterprise.
 To request adding virtual machines to your TrueNAS Enterprise license, [contact iXsystems](/hub/initial-setup/support/#contacting-ixsystems-support).
-{{% /alert %}}
+{{< /hint >}}
 
 A Virtual Machine (VM) is an environment on a host computer that can be used as if it were a separate physical computer.
 VMs can be used to run multiple operating systems simultaneously on a single computer.
