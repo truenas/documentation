@@ -1,0 +1,17 @@
+## IDMAP Edit
+
+**Settings**
+
+| | |
+|-|-|
+| ldmap Backend | Provides a plugin interface for Winbind to use varying backends to store SID/uid/gid mapping tables. The correct setting depends on the environment in which the NAS is deployed. |
+| Name | Enter the pre-Windows 2000 domain name. |
+| DNS Domain Name | DNS name of the domain |
+| Range Low | Range Low and Range High set the range of UID/GID numbers which this IDMap backend translates. If an external credential like a Windows SID maps to a UID or GID number outside this range, the external credential is ignored. |
+| Range High | Range Low and Range High set the range of UID/GID numbers which this IDMap backend translates. If an external credential like a Windows SID maps to a UID or GID number outside this range, the external credential is ignored. |
+
+**Options**
+
+| | |
+|-|-|
+| SSSD Compat | Generate idmap low range based on same algorithm that SSSD uses by default. |
