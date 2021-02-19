@@ -10,5 +10,5 @@
 | ip6.saddrsel | Disable IPv6 source address selection for the jail in favor of the primary IPv6 address of the jail. Only available when the jail is not configured to use VNET. |
 | ip4 | Control the availability of IPv4 addresses.  Inherit: Allow unrestricted access to all system addresses.  New: Restrict addresses with ip4_addr.  Disable: Stop the jail from using IPv4 entirely. |
 | ip6 | Control the availability of IPv6 addresses.  Inherit: Allow unrestricted access to all system addresses.  New: Restrict addresses with ip6_addr.  Disable: Stop the jail from using IPv6 entirely. |
-| mac_prefix | Enter a valid MAC address vendor prefix. Example: E4F4C6 |
+| mac_prefix | Enter a valid MAC address vendor prefix. Example: `E4F4C6` |
 | vnet0_mac | Leave this field empty to generate random MAC addresses for the host and jail. To assign fixed MAC addresses, enter the MAC address to be assigned to the host, a space, then the MAC address to be assigned to the jail. |
