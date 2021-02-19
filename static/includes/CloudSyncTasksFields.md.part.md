@@ -1,0 +1,40 @@
+## Cloud Sync Tasks: Add
+
+**Transfer**
+
+| | |
+|-|-|
+| Description | Enter a description of the Cloud Sync Task. |
+| Direction | PUSH sends data to cloud storage. PULL receives data from cloud storage. Changing the direction resets the Transfer Mode to COPY. |
+| Transfer Mode | SYNC: Files on the destination are changed to match those on the source. If a file does not exist on the source, it is also deleted from the destination. COPY: Files from the source are copied to the destination. If files with the same names are present on the destination, they are overwritten. MOVE: After files are copied from the source to the destination, they are deleted from the source. Files with the same names on the destination are overwritten. |
+| Directory/Files | Select the directories or files to be sent to the cloud for Push syncs, or the destination to be written for Pull syncs. Be cautious about the destination of Pull jobs to avoid overwriting existing files. |
+
+**Remote**
+
+| | |
+|-|-|
+| Credential | Select the cloud storage provider credentials from the list of available Cloud Credentials. |
+
+**Control**
+
+| | |
+|-|-|
+| Schedule | Select a schedule preset or choose Custom to open the advanced scheduler. |
+| Enabled | Enable this Cloud Sync Task. Unset to disable this Cloud Sync Task without deleting it. |
+
+**Advanced Options**
+
+| | |
+|-|-|
+| Follow Sumlinks | Follow symlinks and copy the items to which they link. |
+| Pre-Script | Script to execute before running sync. |
+| Post-Script | Script to execute after running sync. |
+| Exclude | List of files and directories to exclude from sync.  Separate entries by pressing Enter. See [rclone filtering](https://rclone.org/filtering/) for more details about the --exclude option.  |
+
+**Advanced Remote Options**
+
+| | |
+|-|-|
+| Remote Encryption | *PUSH*: Encrypt files before transfer and store the encrypted files on the remote system. Files are encrypted using the Encryption Password and Encryption Salt values. *PULL*: Decrypt files that are being stored on the remote system before the transfer. Transferring the encrypted files requires entering the same Encryption Password and Encryption Salt that was used to encrypt the files. Additional details about the encryption algorithm and key derivation are available in the [rclone crypt File formats documentation](https://rclone.org/crypt/#file-formats). |
+| Transfers | Number of simultaneous file transfers. Enter a number based on the available bandwidth and destination system performance. See [rclone --transfers](https://rclone.org/docs/#transfers-n). |
+| Bandwidth limit | A single bandwidth limit or bandwidth limit schedule in rclone format. Separate entries by pressing Enter. Example: 08:00,512 12:00,10MB 13:00,512 18:00,30MB 23:00,off. Units can be specified with the beginning letter: b, k (default), M, or G. See [rclone --bwlimit](https://rclone.org/docs/#bwlimit-bandwidth-spec). |
