@@ -1,0 +1,72 @@
+## Block Shares (iSCSI)
+
+**Target Global Configuration**
+
+| | |
+|-|-|
+| Base Name | Lowercase alphanumeric characters plus dot (.), dash (-), and colon (:) are allowed. See the Constructing iSCSI names using the iqn.format section of [RFC3721](https://tools.ietf.org/html/rfc3721.html). |
+| ISNS Servers | Hostnames or IP addresses of the ISNS servers to be registered with the iSCSI targets and portals of the system. Separate entries by pressing Enter. |
+| Pool Available Space Threshold | Generate an alert when the pool has this percent space remaining. This is typically configured at the pool level when using zvols or at the extent level for both file and device based extents. |
+
+**Portals**
+
+| | |
+|-|-|
+| Description | Optional description. Portals are automatically assigned a numeric group. |
+| Discovery Authentication Group | iSCSI supports multiple authentication methods that are used by the target to discover valid devices. None allows anonymous discovery while CHAP and Mutual CHAP require authentication. |
+| Discovery Authentication Group | Group ID created in Authorized Access. Required when the Discovery Authentication Method is set to CHAP or Mutual CHAP. |
+| IP Address | Select the IP addresses to be listened on by the portal. Click ADD to add IP addresses with a different network port. The address 0.0.0.0 can be selected to listen on all IPv4 addresses, or :: to listen on all IPv6 addresses. |
+| Port | TCP port used to access the iSCSI target. Default is 3260. |
+
+**Initiators**
+
+| | |
+|-|-|
+| Connected Initiators | Initiators currently connected to the system. Shown in IQN format with an IP address. Set initiators and click an -> (arrow) to add the initiators to either the Allowed Initiators or Authorized Networks lists. Clicking Refresh updates the Connected Initiators list. |
+| Allowed Initiators | Initiators allowed access to this system. Enter an [iSCSI Qualified Name (IQN)](https://tools.ietf.org/html/rfc3720#section-3.2.6) and click + to add it to the list. Example: iqn.1994-09.org.freebsd:freenas.local |
+| Authorized Networks | Network addresses allowed use this initiator. Each address can include an optional [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) netmask. Click + to add the network address to the list. Example: 192.168.2.0/24. |
+| Description | Any notes about initiators. |
+
+**Authorized**
+
+| | |
+|-|-|
+| Group ID | Allow different groups to be configured with different authentication profiles. Example: all users with a group ID of 1 will inherit the authentication profile associated with Group 1. |
+| User | User account to create for CHAP authentication with the user on the remote system. Many initiators use the initiator name as the user name. |
+| Secret  | User password. Must be at least 12 and no more than 16 characters long. |
+| Peer User | Only entered when configuring mutual CHAP. Usually the same value as User. |
+| Peer Secret | Mutual secret password. Required when Peer User is set. Must be different than the Secret. |
+
+**Target**
+
+| | |
+|-|-|
+| Target Name | The base name is automatically prepended if the target name does not start with iqn. Lowercase alphanumeric characters plus dot (.), dash (-), and colon (:) are allowed. See the Constructing iSCSI names using the iqn.format section of [RFC3721](https://tools.ietf.org/html/rfc3721.html). |
+| Portal Group ID | Leave empty or select number of existing portal to use. |
+| Initiator Group ID | Select which existing initiator group has access to the target. |
+| Authentication Method | Choices are None, Auto, CHAP, or Mutual CHAP. |
+| Authentication Group Number | Select None or an integer. This value represents the number of existing authorized accesses. |
+
+**Extents**
+
+| | |
+|-|-|
+| Name | Name of the extent. If the Extent size is not 0, it cannot be an existing file within the pool or dataset. |
+| Description | Notes about this extent. |
+| Enabled | Set to enable the iSCSI extent. |
+| Extent Type | Device provides virtual storage access to zvols, zvol snapshots, or physical devices. File provides virtual storage access to a single file. |
+| Device | Only appears if Device is selected. Select the unformatted disk, controller, or zvol snapshot. |
+| Logical Block Size | Leave at the default of 512 unless the initiator requires a different block size. |
+| Disable Physical Block Size Reporting | Set if the initiator does not support physical block size values over 4K (MS SQL). |
+| Enable TPC | Set to allow an initiator to bypass normal access control and access any scannable target. This allows xcopy operations which are otherwise blocked by access control. |
+| Xen initiator compat mode | Set when using Xen as the iSCSI initiator. |
+| LUN RPM | Do NOT change this setting when using Windows as the initiator. Only needs to be changed in large environments where the number of systems using a specific RPM is needed for accurate reporting statistics. |
+| Read-only | Set to prevent the initiator from initializing this LUN. |
+
+**Associated Targets**
+
+| | |
+|-|-|
+| Target | Select an existing target. |
+| LUN ID | Select the value or enter a value between 0 and 1023. Some initiators expect a value below 256. Leave this field blank to automatically assign the next available ID. |
+| Extent | Select an existing extent. |
