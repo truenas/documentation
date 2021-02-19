@@ -10,7 +10,7 @@ Making changes to the network interface the web interface uses can result in los
 
 **Network > Global Configuration** is for general network settings that are not unique to any particluar network interface.
 
-<img src="/images/CORE/12.0/GlobalConfig.png">
+![GlobalConfigOpts](/images/CORE/12.0/GlobalConfig.png "Global Configuration Options")
 <br><br>
 
 ## Global Configuration Settings ##
