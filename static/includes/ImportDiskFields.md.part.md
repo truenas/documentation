@@ -1,0 +1,9 @@
+## Import Disk
+
+**Disk**
+
+| | |
+|-|-|
+| Disk | Select the disk to import. The import will copy the data from the chosen disk to an existing ZFS dataset. Only one disk can be imported at a time. |
+| Filesystem Tyope | Choose the type of filesystem on the disk. |
+| Destination Path | Browse to the ZFS dataset that will hold the copied data. |
