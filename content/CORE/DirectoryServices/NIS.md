@@ -7,11 +7,11 @@ tags: ["NIS", "networking"]
 
 NIS (Network Information Service) is a client–server directory service protocol for distributing system configuration data such as user and host names between computers on a computer network.
 
-A NIS system maintains and distributes a central directory of user and group information, hostnames, e-mail aliases and other text-based tables of information in a computer network. In FreeBSD, the list of users is placed in /etc/passwd and authentication hashes in /etc/shadow.  NIS adds another "global" user list which is used for identifying users on any client of the NIS domain.
+A NIS system maintains and distributes a central directory of user and group information, hostnames, e-mail aliases and other text-based tables of information in a computer network. In FreeBSD, the list of users is placed in <file>/etc/passwd</file> and authentication hashes in <file>/etc/shadow</file>.  NIS adds another "global" user list which is used for identifying users on any client of the NIS domain.
 
-{{% pageinfo %}}
+{{< hint info >}}
 NIS has some inherent limitations due to its design that limit its degree of scalability and security, as a result it has been largely superseeded by LDAP. 
-{{% /pageinfo %}}
+{{< /hint >}}
 
 To configure NIS open **Directory Services > NIS***.
 
