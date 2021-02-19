@@ -12,7 +12,7 @@ S3 is an object storage protocol used by many major cloud providers including Am
 
 ## Setting up the S3 service
 
-Go to Services -> S3 and click on the pencil icon to edit.
+Go to **Services > S3** and click on the pencil icon to edit.
 
 <img src="/images/S3-SelectConfigure.png"><br><br>
 
@@ -20,12 +20,12 @@ Set up the configuration inside this window.
 
 <img src="/images/S3-EditConfig.png"><br><br>
 
-Select IP address 0.0.0.0 to allow the service to listen on any IP address. Select the TrueNAS IP address to constrain it to a specific network.
-The default port is 9000, but it can be changed as needed.
+Select IP address `0.0.0.0` to allow the service to listen on any IP address. Select the TrueNAS IP address to constrain it to a specific network.
+The default port is `9000`, but it can be changed as needed.
 
 Set an access key and secret key.
 
-Select a clean dataset. Files are managed by Minio as objects, and can NOT be mixed with other dataset files. New datasets can be created by going to Storage -> Pools -> three dot menu -> Add Dataset to create a new one.
+Select a clean dataset. Files are managed by Minio as objects, and can NOT be mixed with other dataset files. New datasets can be created by going to **Storage > Pools > three dot menu > Add Dataset** to create a new one.
 
 <img src="/images/S3-AddDataset.png"><br><br>
 
@@ -37,13 +37,13 @@ Start the service and select whether to start automatically (on system boot).
 
 <img src="/images/S3-EnableService.png"><br><br>
 
-Test access to the Minio Browser by opening a web browser and typing the TrueNAS IP address with the TCP port. For example: http://192.168.0.3:9000
+Test access to the Minio Browser by opening a web browser and typing the TrueNAS IP address with the TCP port. For example: `http://192.168.0.3:9000`
 
 Buckets can be created and files uploaded using the Minio Browser.
 
 <img src="/images/S3-MinIOBrowser.png"><br><br>
 
-NOTE: Port 9000 must be allowed through on the network firewall to permit bucket creation and file uploads.
+NOTE: Port `9000` must be allowed through on the network firewall to permit bucket creation and file uploads.
 
 ## Setting Up s3cmd
 
@@ -53,19 +53,19 @@ Ubuntu can access the configuration by running s3cmd --configure to walk through
 
 Enter the specified access key and the secret key. Under the S3 Endpoint enter the TrueNAS IP address followed by TCP port, and reply N to the DNS-style bucket+hostname. 
 
-Save the file. On Linux the default is in the home directory `~/.s3cfg`.
+Save the file. On Linux the default is in the home directory <file>~/.s3cfg</file>.
 
-If the connection has any issues, open the config file again to clean it up. In Ubuntu use nano .s3cfg or vi .s3cfg or gedit .s3cfg depending on the preferred text editor. For other operating systems, .s3cfg file location and editing tools may vary. 
+If the connection has any issues, open the config file again to clean it up. In Ubuntu use `nano .s3cfg` or `vi .s3cfg` or `gedit .s3cfg` depending on the preferred text editor. For other operating systems, .s3cfg file location and editing tools may vary. 
 
 Scroll down to the host_bucket area and make sure the %(bucket)s. portion is removed and the address points to the IP_address:TCP_port for the system.
 
 **Right:**
-host_base = 192.168.123.207:9000
-host_bucket = 192.168.123.207:9000
+host_base = `192.168.123.207:9000`
+host_bucket = `192.168.123.207:9000`
 
 **Wrong:**
-host_base = 192.168.123.207
-host_bucket = %(bucket)s.192.168.123.207
+host_base = `192.168.123.207`
+host_bucket = `%(bucket)s.192.168.123.207`
 
 Poll the buckets using `s3cmd ls`. The buckets created with the Minio Browser should be visible.
 
