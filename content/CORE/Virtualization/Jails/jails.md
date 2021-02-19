@@ -4,11 +4,11 @@ description: "How to create, manage, and update a FreeBSD jail."
 tags: ["jails"]
 ---
 
-{{% alert title="Notice" color="info" %}}
+{{< hint info >}}
 The Jails feature is generally available in TrueNAS CORE and is supported by the open source TrueNAS community.
 TrueNAS Enterprise does not show or support this feature unless it has been added to a TrueNAS Enterprise license.
 For more details or to request jail support in TrueNAS Enterprise, please [contact iX Support](/hub/initial-setup/support/#contacting-ixsystems-support):
-{{% /alert %}}
+{{< /hint >}}
 
 Jails are a lightweight, operating-system-level virtualization. One or multiple services can run in a jail, isolating those services from the host TrueNAS system. TrueNAS uses [iocage](https://github.com/iocage/iocage) for jail and plugin management. The main differences between a user-created jail and a plugin are that plugins are preconfigured and usually provide only a single service.
 
@@ -33,13 +33,13 @@ Notes about the `iocage/` dataset:
 + At least 10 GiB of free space is recommended.
 + Cannot be located on a Share.
 + [iocage](http://iocage.readthedocs.io/en/latest/index.html) automatically uses the first pool that is not a root pool for the TrueNAS system.
-+ A `defaults.json` file contains default settings used when a new jail is created. The file is created automatically if not already present. If the file is present but corrupted, iocage shows a warning and uses default settings from memory.
++ A <file>defaults.json</file> file contains default settings used when a new jail is created. The file is created automatically if not already present. If the file is present but corrupted, iocage shows a warning and uses default settings from memory.
 + Each new jail installs into a new child dataset of `iocage/`. For example, with the `iocage/jails` dataset in *pool1*, a new jail called *jail1* installs into a new dataset named *pool1/iocage/jails/jail1*.
 + FreeBSD releases are fetched as a child dataset into the `/iocage/download` dataset. This datset is then extracted into the `/iocage/releases` dataset to be used in jail creation. The dataset in `/iocage/download` can then be removed without affecting the availability of fetched releases or an existing jail.
 + `iocage/` datasets on activated pools are independent of each other and do not share any data.
 
 {{% pageinfo %}}
-iocage jail configs are stored in `/mnt/poolname/iocage/jails/jailname`. When iocage is updated, the `config.json` configuration file is backed up as `/mnt/poolname/iocage/jails/jailname/config_backup.json`. The backup file can be renamed to `config.json` to restore previous jail settings.
+iocage jail configs are stored in <file>/mnt/poolname/iocage/jails/jailname</file>. When iocage is updated, the <file>config.json</file> configuration file is backed up as <file>/mnt/poolname/iocage/jails/jailname/config_backup.json</file>. The backup file can be renamed to <file>config.json</file> to restore previous jail settings.
 {{% /pageinfo %}}
 
 ## Creating Jails
@@ -122,9 +122,9 @@ More information such as *IPV4*, *IPV6*, *TYPE* of jail, and whether it is a *TE
 <img src="/images/JailsActions.png" width='700px'>
 <br><br>
 
-{{% alert title=Warning color=warning %}}
+{{< hint warning >}}
 Modify the IP address information for a jail by clicking **>** (Expand) > **EDIT** instead of issuing the networking commands directly from the command line of the jail. This ensures the changes are saved and will survive a jail or TrueNAS reboot.
-{{% /alert %}}
+{{< /hint >}}
 
 | Option       |   | Description                                                                                                                                                                                                                                                                                                      |
 |--------------|---|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -137,11 +137,11 @@ Modify the IP address information for a jail by clicking **>** (Expand) > **EDIT
 | SHELL        | | Access a *root* command prompt to interact with a jail directly from the command line. Type `exit` to leave the command prompt.                                                                                                                                                                                      |
 | DELETE       | | Caution: deleting the jail also deletes all of the jail contents and all associated snapshots. Back up the jail data, configuration, and programs first. There is no way to recover the contents of a jail after deletion!                                                                                       |
 
-{{% pageinfo %}}
+{{< hint info >}}
 Menu entries change depending on the jail state. For example, a stopped jail does not have a **STOP** or **SHELL** option.
-{{% /pageinfo %}}
+{{< /hint >}}
 
-Jail status messages and command output are stored in `/var/log/iocage.log`.
+Jail status messages and command output are stored in <file>/var/log/iocage.log</file>.
 
 ## Jail Updates and Upgrades
 
@@ -276,7 +276,7 @@ Storage is typically added because the user and group account associated with an
 
 Here is the typical workflow for adding storage:
 
-+ Determine the name of the user and group account used by the application. For example, the installation of the *transmission* application automatically creates a user account named *transmission* and a group account also named *transmission*. When in doubt, check the files `/etc/passwd` (to find the user account) and `/etc/group` (to find the group account) inside the jail. Typically, the user and group names are similar to the application name. Also, the UID and GID are usually the same as the port number used by the service. A *media* user and group (GID 8675309) are part of the base system. Having applications run as this group or user makes it possible to share storage between multiple applications in a single jail, between multiple jails, or even between the host and jails.
++ Determine the name of the user and group account used by the application. For example, the installation of the *transmission* application automatically creates a user account named *transmission* and a group account also named *transmission*. When in doubt, check the files <file>/etc/passwd</file> (to find the user account) and <file>/etc/group</file> (to find the group account) inside the jail. Typically, the user and group names are similar to the application name. Also, the UID and GID are usually the same as the port number used by the service. A *media* user and group (GID 8675309) are part of the base system. Having applications run as this group or user makes it possible to share storage between multiple applications in a single jail, between multiple jails, or even between the host and jails.
 
 + On the TrueNAS system, create a user account and group account that match the user and group names used by the jail application.
 
@@ -300,6 +300,6 @@ Mounting a dataset does not automatically mount any child datasets inside it. Ea
 
 Click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; (Options) > **Delete** to delete the storage.
 
-{{% alert title=Warning color=warning %}}
+{{ hint warning >}}
 Remember that added storage is just a pointer to the selected storage directory on the TrueNAS system. It does not copy that data to the jail. Files that are deleted from the **Destination** directory in the jail are also deleted from the **Source** directory on the TrueNAS system. However, removing the jail storage entry only removes the pointer. This leaves the data intact but no longer accessible to the jail.
-{{% /alert %}}
+{{< /hint >}}
