@@ -37,10 +37,10 @@ When the TrueNAS system is connected to a UPS device, configure the UPS service 
 | Email Subject                    | string         | Enter a subject line for email status updates.   |
 
 
-{{% pageinfo %}}
+{{< hint info >}}
 For USB devices, the easiest way to determine the correct device name is to enable the **Show console messages** option in **System > Advanced**.
-Plug in the USB device and look for a `/dev/ugen` or `/dev/uhid` device name in the console messages.
-{{% /pageinfo %}}
+Plug in the USB device and look for a <file>/dev/ugen</file> or <file>/dev/uhid</file> device name in the console messages.
+{{< /hint >}}
 
 Some UPS models can be unresponsive with the default polling frequency.
 This can show in TrueNAS logs as a recurring error like `libusb_get_interrupt: Unknown error`.
