@@ -70,7 +70,7 @@ audiotag-0.19_1:
 /usr/local/share/licenses/audiotag-0.19_1/catalog.mk
 ```
 
-In FreeBSD, third-party software is always stored in `/usr/local` to differentiate it from the software that came with the operating system. Binaries are almost always located in a subdirectory called `bin` or `sbin` and configuration files in a subdirectory called `etc`.
+In FreeBSD, third-party software is always stored in <file>/usr/local</file> to differentiate it from the software that came with the operating system. Binaries are almost always located in a subdirectory called `bin` or `sbin` and configuration files in a subdirectory called `etc`.
 
 ## Compiling FreeBSD Ports
 
@@ -92,7 +92,7 @@ Compiling a port has these disadvantages:
 
 Packages are built with default options. Ports let the user select options.
 
-The FreeBSD Ports Collection must be installed in the jail before ports can be compiled. Inside the jail, use the **portsnap** utility. This command downloads the ports collection and extracts it to the `/usr/ports/` directory of the jail:
+The FreeBSD Ports Collection must be installed in the jail before ports can be compiled. Inside the jail, use the **portsnap** utility. This command downloads the ports collection and extracts it to the <file>/usr/ports/</file> directory of the jail:
 
 ```
 portsnap fetch extract
@@ -100,7 +100,7 @@ portsnap fetch extract
 
 To install additional software at a later date, make sure the ports collection is updated with `portsnap fetch update`.
 
-To compile a port, `cd` into a subdirectory of `/usr/ports/`. The entry for the port at FreshPorts provides the location to `cd` into and the `make` command to run. This example compiles and installs the *audiotag* port:
+To compile a port, `cd` into a subdirectory of <file>/usr/ports/</file>. The entry for the port at FreshPorts provides the location to `cd` into and the `make` command to run. This example compiles and installs the *audiotag* port:
 
 ```
 cd /usr/ports/audio/audiotag
@@ -126,9 +126,9 @@ Installed ports are registered in the same package database that manages package
 
 ## Starting Installed Software
 
-After packages or ports are installed, they must be configured and started. Configuration files are usually in `/usr/local/etc` or a subdirectory of it. Many FreeBSD packages contain a sample configuration file as a reference. Take some time to read the software documentation to learn which configuration options are available and which configuration files require editing.
+After packages or ports are installed, they must be configured and started. Configuration files are usually in <file>/usr/local/etc</file> or a subdirectory of it. Many FreeBSD packages contain a sample configuration file as a reference. Take some time to read the software documentation to learn which configuration options are available and which configuration files require editing.
 
-Most FreeBSD packages that contain a startable service include a startup script that is automatically installed to `/usr/local/etc/rc.d/`. After the configuration is complete, test starting the service by running the script with the *onestart* option. For example, when *openvpn* is installed in a jail, these commands verify that the service has started:
+Most FreeBSD packages that contain a startable service include a startup script that is automatically installed to <file>/usr/local/etc/rc.d/</file>. After the configuration is complete, test starting the service by running the script with the *onestart* option. For example, when *openvpn* is installed in a jail, these commands verify that the service has started:
 
 ```
 /usr/local/etc/rc.d/openvpn onestart
@@ -152,11 +152,11 @@ Starting openvpn.
 
 Enter `tail /var/log/messages` to see any error messages if an issue is found. Most startup failures are related to a misconfiguration in a configuration file.
 
-After verifying that the service starts and is working as intended, add a line to `/etc/rc.conf` to start the service automatically when the jail is started. The line to start a service always ends in `_enable=”YES”` and typically starts with the name of the software. For example, this is the entry for the *openvpn* service:
+After verifying that the service starts and is working as intended, add a line to <file>/etc/rc.conf</file> to start the service automatically when the jail is started. The line to start a service always ends in `_enable=”YES”` and typically starts with the name of the software. For example, this is the entry for the *openvpn* service:
 
 `openvpn_enable="YES"`
 
-When in doubt, the startup script shows the line to put in `/etc/rc.conf`. This is the description in `/usr/local/etc/rc.d/openvpn`:
+When in doubt, the startup script shows the line to put in <file>/etc/rc.conf</file>. This is the description in <file>/usr/local/etc/rc.d/openvpn</file>:
 
 ```
 # To run additional instances link this script to something like
