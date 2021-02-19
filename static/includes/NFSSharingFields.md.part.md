@@ -1,0 +1,24 @@
+## Unix Shares (NFS): Add
+
+**Basic Options**
+
+| | |
+|-|-|
+| Path | Full path to the pool or dataset to share. Mandatory. Click ADD ADDITIONAL PATH to configure multiple paths. |
+| Description | Set the share name. If left empty, share name is the list of selected Path entries. |
+| All Dirs | Set to allow the client to mount any subdirectory within the Path. |
+| Quiet | Set to inhibit some syslog diagnostics to avoid error messages. See [exports(5)](https://www.freebsd.org/cgi/man.cgi?query=exports) for examples. |
+| Enabled | Enable this NFS share. Unset to disable this NFS share without deleting it. |
+
+**Advanced**
+
+| | |
+|-|-|
+| Read Only | Set to prohibit writing to the share. |
+| Maproot User | When a user is selected, the root user is limited to the permissions of that user. |
+| Maproot Group | When a group is selected, the root user is also limited to the permissions of that group. |
+| Mapall User | The specified permissions of that user are used by all clients. |
+| Mapall Group | The specified permissions of that group are used by all clients. |
+| Security |  |
+| Authorized Networks | Space-delimited list of allowed networks in network/mask CIDR notation. Example: 1.2.3.0/24. Leave empty to allow all. |
+| Authorized Hosts and IP Addresses | Space-delimited list of allowed IP addresses (192.168.1.10) or hostnames (www.freenas.com). Leave empty to allow all. |
