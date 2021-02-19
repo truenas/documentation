@@ -1,0 +1,34 @@
+## NFS
+
+**General Options**
+
+| | |
+|-|-|
+| Number of servers * | Specify how many servers to create. Increase if NFS client responses are slow. Keep this less than or equal to the number of CPUs reported by sysctl -n kern.smp.cpus to limit CPU context switching. |
+| Bind IP Addresses | Select IP addresses to listen to for NFS requests. Leave empty for NFS to listen to all available addresses. |
+
+**NFSv4**
+
+| | |
+|-|-|
+| Enable NFSv4 | Set to switch from NFSv3 to NFSv4. |
+| NFSv3 ownership model for NFSv4 | Set when NFSv4 ACL support is needed without requiring the client and the server to sync users and groups. |
+| Require Kerberos for NFSv4 | Set to force NFS shares to fail if the Kerberos ticket is unavailable. |
+
+**Ports**
+
+| | |
+|-|-|
+| mountd(8) bind port | Enter a port to bind [mountd(8)](https://www.freebsd.org/cgi/man.cgi?query=mountd). |
+| rpc.statd(8) bind port | Enter a port to bind [rpc.statd(8)](https://www.freebsd.org/cgi/man.cgi?query=rpc.statd). |
+| rpc.lockd(8) bind port | Enter a port to bind [rpc.lockd(8)](https://www.freebsd.org/cgi/man.cgi?query=rpc.lockd). |
+
+**Other Options**
+
+| | |
+|-|-|
+| Serve UDP NFS clients | Set if NFS clients need to use UDP. |
+| Allow non-root mount | Set only if required by the NFS client. Set to allow serving non-root mount requests. |
+| Support >16 groups | Set when a user is a member of more than 16 groups. This assumes group membership is configured correctly on the NFS server. |
+| Log mountd(8) requests | Set to log [mountd(8)](https://www.freebsd.org/cgi/man.cgi?query=mountd) syslog requests. |
+| Log rpc.statd(8) and rpc.lockd(8) | Set to log [rpc.statd(8)](https://www.freebsd.org/cgi/man.cgi?query=rpc.statd) and [rpc.lockd(8)](https://www.freebsd.org/cgi/man.cgi?query=rpc.lockd) syslog requests. |
