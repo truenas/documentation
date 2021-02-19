@@ -22,7 +22,7 @@ This will configure the FreeNAS system to boot without using a certificate.
 
 3. Log in to the web GUI, ensuring `http://` is at the beginning of the URL.
 
-4. To delete the 9.3 CA and certificates, go to *System -> CAs*.
+4. To delete the 9.3 CA and certificates, go to *System > CAs*.
 
 <img src="/images/fn-9.1-cert-1.png">
 <br><br>
@@ -46,7 +46,7 @@ This will configure the FreeNAS system to boot without using a certificate.
 
 5.2 Click **OK** to save.
 
-6. To create the new self-signed certificate, go to *System -> Certificates*.
+6. To create the new self-signed certificate, go to *System > Certificates*.
 
 <img src="/images/fn-9.1-cert-5.png">
 <br><br>
@@ -60,7 +60,7 @@ This will configure the FreeNAS system to boot without using a certificate.
 
 6.3 Fill in the fields that apply. The domain name or hostname of the system must be used in the *Common Name* field. Click **OK** to save.
 
-7. To enable HTTPS with the new certificate, go to *System -> General*.
+7. To enable HTTPS with the new certificate, go to *System > General*.
 
 <img src="/images/fn-9.1-cert-7.png">
 <br><br>
