@@ -1,0 +1,43 @@
+## Windows Shares (SMB)
+
+**General Options**
+
+| | |
+|-|-|
+| Path | Select pool, dataset, or directory to share. |
+|-|-|
+| Name | Enter a name for the share. |
+| Purpose | Choosing a preset configuration for the share locks in several predetermined values for the share Advanced Options, including the Path Suffix. To see which options have been set and/or locked, click Advanced Options after selecting a Purpose. %U is added as the Path Suffix when a Multi-user, Multi-protocol, or Private Purpose is selected. To retain full control over all the Advanced Options, select No presets. |
+| Description | Description of the share or notes on how it is used. |
+| Enabled | Enable this SMB share. Unset to disable this SMB share without deleting it. |
+
+**Advanced**
+
+| | |
+|-|-|
+| Access | Enable ACL support for the SMB share. Disabling ACL support for a share deletes that ACL. |
+|-|-|
+| Enable ACL | Prohibits writes to this share. |
+| Export Read Only | Determine whether this share name is included when browsing shares. Home shares are only visible to the owner regardless of this setting. |
+| Browsable to Network Clients | Privileges are the same as the guest account. Guest access is disabled by default in Windows 10 version 1709 and Windows Server version 1903. Additional client-side configuration is required to provide guest access to these clients. |
+| Allow Guest Access | MacOS clients: Attempting to connect as a user that does not exist in FreeNAS does not automatically connect as the guest account. The Connect As: Guest option must be specifically chosen in MacOS to log in as the guest account. See the [Apple documentation](https://support.apple.com/guide/mac-help/connect-mac-shared-computers-servers-mchlp1140/) for more details. |
+|  | Restrict share visibility to users with read or write access to the share. See the [smb.conf](https://www.freebsd.org/cgi/man.cgi?query=smb.conf) manual page. |
+| Access Based Share Enumeration | Enter a list of allowed hostnames or IP addresses. Separate entries by pressing Enter. A more detailed description with examples can be found here. |
+| Hosts Allow | If neither *Hosts Allow* or *Hosts Deny* contains an entry, then AFP share access is allowed for any host. If there is a *Hosts Allow* list but no *Hosts Deny* list, then only allow hosts on the *Hosts Allow* list.  If there is a *Hosts Deny* list but no *Hosts Allow* list, then allow all hosts that are not on the *Hosts Deny* list.  If there is both a *Hosts Allow* and *Hosts Deny* list, then allow all hosts that are on the *Hosts Allow* list.  If there is a host not on the *Hosts Allow* and not on the *Hosts Deny* list, then allow it. |
+| Hosts Deny | Enter a list of denied hostnames or IP addresses. Separate entries by pressing Enter. If neither *Hosts Allow* or *Hosts Deny* contains an entry, then AFP share access is allowed for any host. If there is a *Hosts Allow* list but no *Hosts Deny* list, then only allow hosts on the *Hosts Allow* list.  If there is a *Hosts Deny* list but no *Hosts Allow* list, then allow all hosts that are not on the *Hosts Deny* list.  If there is both a *Hosts Allow* and *Hosts Deny* list, then allow all hosts that are on the *Hosts Allow* list.  If there is a host not on the *Hosts Allow* and not on the *Hosts Deny* list, then allow it. |
+
+**Other Options**
+
+| | |
+|-|-|
+| Use as Home Share | Allows the share to host user home directories. Each user is given a personal home directory when connecting to the share which is not accessible by other users. This allows for a personal, dynamic share. Only one share can be used as the home share. |
+|-|-|
+| Time Machine | Enable Time Machine backups on this share. |
+| Enable Shadow Copies | Export ZFS snapshots as [Shadow Copies](https://docs.microsoft.com/en-us/windows/desktop/vss/shadow-copies-and-shadow-copy-sets) for VSS clients. |
+| Export Recycle Bin | Files that are deleted from the same dataset are moved to the Recycle Bin and do not take any additional space. Deleting files over NFS will remove the files permanently . When the files are in a different dataset or a child dataset, they are copied to the dataset where the Recycle Bin is located. To prevent excessive space usage, files larger than 20 MiB are deleted rather than moved. Adjust the Auxiliary Parameter crossrename:sizelimit= setting to allow larger files. For example, crossrename:sizelimit=\{50\} allows moves of files up to 50 MiB in size. This means files can be permanently deleted or moved from the recycle bin. This is not a replacement for ZFS snapshots. |
+| Use Apple-Style Character Encoding | By default, Samba uses a hashing algorithm for NTFS illegal characters. Enabling this option translates NTFS illegal characters to the Unicode private range. |
+| Enable Alternate Data Streams | Allows multiple [NTFS data streams](http://www.ntfs.com/ntfs-multiple.htm). Disabling this option causes MacOS to write streams to files on the filesystem. |
+| Enable SMB2/SMB3 Durable Handles | Allow using open file handles that can withstand short disconnections. Support for POSIX byte-range locks in Samba is also disabled. This option is not recommended when configuring multi-protocol or local access to files. |
+| Enable FSRVP | Enable support for the File Server Remote VSS Protocol ([FSVRP](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-fsrvp)). This protocol allows RPC clients to manage snapshots for a specific SMB share. The share path must be a dataset mountpoint. Snapshots have the prefix fss- followed by a snapshot creation timestamp. A snapshot must have this prefix for an RPC user to delete it. |
+| Path Suffix | Appends a suffix to the share connection path. This is used to provide unique shares on a per-user, per-computer, or per-IP address basis. Suffixes can contain a macro. See the [smb.conf](https://www.freebsd.org/cgi/man.cgi?query=smb.conf) manual page for a list of supported macros. The connectpath must be preset before a client connects. |
+| Auxillary Parameters | Additional [smb.conf](https://www.freebsd.org/cgi/man.cgi?query=smb.conf) parameters. |
