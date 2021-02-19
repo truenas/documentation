@@ -19,19 +19,19 @@ For example, `pkg install plexmediaserver` and configure the application manuall
 A plugin adds metadata that provides an installation source, reasonable defaults, and user interface elements such as an icon.
 The components for the sabnzbd plugin are:
 
-- `README.md`: A popular convention for a file in markdown format for describing the project.
+- <file>README.md</file>: A popular convention for a file in markdown format for describing the project.
 
-- `sabnzbd.json`: The JSON “Artifact” file containing various plugin properties including an inventory of all other metadata components which may be in the same or a remote repo.
+- <file>sabnzbd.json</file>: The JSON “Artifact” file containing various plugin properties including an inventory of all other metadata components which may be in the same or a remote repo.
 
-- `overlay/`: An optional directory containing the files to be copied into the Jail.
+- <file>overlay/</file>: An optional directory containing the files to be copied into the Jail.
 
-- `ui.json`: A file containing the plugin management interface URL and port number.
+- <file>ui.json</file>: A file containing the plugin management interface URL and port number.
 
-- `settings.json`: An optional JSON file that contains variables used during plugin startup and for its configuration.
+- <file>settings.json</file>: An optional JSON file that contains variables used during plugin startup and for its configuration.
 
-- `sabnzbd.png`: A `.png` image such as `sabnzbd.png` that will appear in the TrueNAS plugins Index. It is used as the icon.
+- <file>sabnzbd.png</file>: A <file>.png</file> image such as <file>sabnzbd.png</file> that will appear in the TrueNAS plugins Index. It is used as the icon.
 
-- `post_install.sh`: A shell script ran after jail creation to perform necessary configuration steps. It runs only once.
+- <file>post_install.sh</file>: A shell script ran after jail creation to perform necessary configuration steps. It runs only once.
 
 ## Requirements
 
@@ -101,32 +101,32 @@ The *latest* branch contains binary packages that are updated immediately, while
 The fingerprint remains the same for all official FreeBSD repositories.
 If custom port build options are required, the preferred solution is to set up a custom [Poudriere](https://www.freebsd.org/doc/handbook/ports-poudriere.html) build server.
 
-### The `overlay/` Directory
+### The <file>overlay/</file> Directory
 
-The `overlay/` is a directory of files that are copied into the jail after creation and before the execution of `post_install.sh`.
+The <file>overlay/</file> is a directory of files that are copied into the jail after creation and before the execution of <file>post_install.sh</file>.
 The layout of these files should follow the same paths as they should have in the root filesystem of the jail.
-For example, a file placed in `/overlay/usr/local/www/lighttpd/` inside the Git repo will be placed in `/usr/local/www/lighttpd/` in the jail.
+For example, a file placed in <file>/overlay/usr/local/www/lighttpd/</file> inside the Git repo will be placed in <file>/usr/local/www/lighttpd</file> in the jail.
 This is very useful for providing pre-made configuration files, additional scripts, or even binaries that may not be available in the pkg repository.
 
-### The `ui.json` file
+### The <file>ui.json</file> file
 
 A small JSON file containing the address of the WebUI and port.
 Use the variable `%%IP%%` to automatically display the correct IP address.
-Make sure to include any extra components in the URL following the domain name or IP address, for example `/admin` or `/web/index`.
+Make sure to include any extra components in the URL following the domain name or IP address, for example <file>/admin</file> or <file>/web/index</file>.
 
-### The `settings.json` file
+### The <file>settings.json</file> file
 
 A JSON file that is used when working with generated or user-specified data such as passwords or database names.
-These variables can be used in `post_install.sh`.
+These variables can be used in <file>post_install.sh</file>.
 In addition to these variables the `servicerestart` command must also be set.
 This is the command that is run when a setting is changed or the jail is restarted, such as restarting a web server.
 
-### The `sabnzbd.png` Icon file
+### The <file>sabnzbd.png</file> Icon file
 
-A link to a `.png` file that will be displayed in the TrueNAS plugins Index.
+A link to a <file>.png</file> file that will be displayed in the TrueNAS plugins Index.
 The image requires a transparent background and should be 128 pixel by 128 pixel square in size to produce quality results when automatically resized.
 
-### The `post_install.sh` script
+### The <file>post_install.sh</file> script
 
 A POSIX shell script that leverages all the other files to automate installation of the Plugin.
 In simple Plugins, it might only contain a few lines that enable and start a few services.
@@ -146,7 +146,7 @@ Common post-installation steps include:
 ### The `/root/PLUGIN_INFO` file
 
 A text file that stores easily accessible information which can be recalled again from the web interface by clicking **Post Install Notes**.
-Information can be entered into this file using <code>echo <i>information/notes</i> >> /root/PLUGIN_INFO</code> in `post_install.sh`, where *information/notes* is the relevant information about the plugin.
+Information can be entered into this file using <code>echo <i>information/notes</i> >> /root/PLUGIN_INFO</code> in <file>post_install.sh</file>, where *information/notes* is the relevant information about the plugin.
 
 ## Git Repo Initialization
 
