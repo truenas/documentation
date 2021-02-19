@@ -7,7 +7,7 @@
 | | |
 |-|-|
 | AWS Region | Enter the [AWS account region](https://docs.aws.amazon.com/sns/latest/dg/sms_supported-countries.html). |
-| ARN | Topic [Amazon Resource Name (ARN)](https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html) for publishing. Example: arn:aws:sns:us-west-2:111122223333:MyTopic. |
+| ARN | Topic [Amazon Resource Name (ARN)](https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html) for publishing. Example: `arn:aws:sns:us-west-2:111122223333:MyTopic`. |
 | Key ID | Access Key ID for the linked AWS account. |
 | Secret Key | Secret Access Key for the linked AWS account. |
 
