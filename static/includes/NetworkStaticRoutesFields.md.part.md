@@ -1,0 +1,9 @@
+## Static Routes: Add
+
+**General Options**
+
+| | |
+|-|-|
+| Destination | Use the format A.B.C.D/E where E is the CIDR mask. |
+| Gateway | Enter the IP address of the gateway. |
+| Description | Enter a description of the static route. |
