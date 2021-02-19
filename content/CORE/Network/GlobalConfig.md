@@ -3,10 +3,10 @@ title: "Global Configuration"
 weight: 20
 ---
 
-{{% alert title=Warning color=warning %}}
+{{< hint warning >}}
 Making changes to the network interface the web interface uses can result in losing connection to the TrueNAS® system! Misconfiguring network settings might require 
 command line knowledge or physical access to the TrueNAS® system to fix. Be very careful when configuring Interfaces and Link Aggregations.
-{{% /alert %}}
+{{< /hint >}}
 
 **Network > Global Configuration** is for general network settings that are not unique to any particluar network interface.
 
