@@ -6,8 +6,8 @@ Authentication options change according to the chosen **Provider**.
 
 | | |
 |-|-|
-| Access Key ID | Amazon Web Services Key ID. This is found on [Amazon AWS](https://aws.amazon.com/) by going through My account -> Security Credentials -> Access Keys (Access Key ID and Secret Access Key). Must be alphanumeric and between 5 and 20 characters. |
-| Secret Access Key | Amazon Web Services password. If the Secret Access Key cannot be found or remembered, go to My Account -> Security Credentials -> Access Keys and create a new key pair. Must be alphanumeric and between 8 and 40 characters. |
+| Access Key ID | Amazon Web Services Key ID. This is found on [Amazon AWS](https://aws.amazon.com/) by going through **My account > Security Credentials > Access Keys** (Access Key ID and Secret Access Key). Must be alphanumeric and between 5 and 20 characters. |
+| Secret Access Key | Amazon Web Services password. If the Secret Access Key cannot be found or remembered, go to **My Account > Security Credentials > Access Keys** and create a new key pair. Must be alphanumeric and between 8 and 40 characters. |
 | Maximum Upload Ports | Define the maximum number of chunks for a multipart upload. This can be useful if a service does not support the 10,000 chunk AWS S3 specification. |
 
 **Amazon S3 Advanced Options**
