@@ -29,7 +29,7 @@
 | Follow Sumlinks | Follow symlinks and copy the items to which they link. |
 | Pre-Script | Script to execute before running sync. |
 | Post-Script | Script to execute after running sync. |
-| Exclude | List of files and directories to exclude from sync.  Separate entries by pressing Enter. See [rclone filtering](https://rclone.org/filtering/) for more details about the --exclude option.  |
+| Exclude | List of files and directories to exclude from sync.  Separate entries by pressing Enter. See [rclone filtering](https://rclone.org/filtering/) for more details about the `--exclude` option.  |
 
 **Advanced Remote Options**
 
