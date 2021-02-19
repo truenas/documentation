@@ -84,15 +84,15 @@ Don't forget to re-enable the SSH service on the **Services** page when all the 
 
 ## Restricting Command Line Users to *scp* or *sftp*
 
-This only works for users that use command line versions of *scp* and *sftp*.
-When SSH is configured, authenticated users with a user account can use *ssh* to log into the TrueNAS system over the network.
+This only works for users that use command line versions of `scp` and `sftp`.
+When SSH is configured, authenticated users with a user account can use `ssh` to log into the TrueNAS system over the network.
 User accounts are created by going to **Accounts > Users** and clicking ADD.
 
 By default, the user will see their home directory after logging in with SSH.
 However, the user can still navigate to system locations outside their home directory, so take security precautions before granting users SSH access to the system.
 One method to increase security is to change a user's shell to only allow file transfers.
 
-To allow users to use *scp* and *sftp* to transfer files between their local computer and their home directory on the TrueNAS system, while restricting them from logging into the system using *ssh*.
+To allow users to use `scp` and `sftp` to transfer files between their local computer and their home directory on the TrueNAS system, while restricting them from logging into the system using `ssh`.
 To configure this scenario, go to **Accounts > Users** and edit the desired user account.
 Change the user's shell to **scponly**.
 Repeat for each user that needs restricted SSH access.
@@ -100,8 +100,8 @@ Repeat for each user that needs restricted SSH access.
 <img src="/images/UserShellscpOnly.png">
 <br><br>
 
-Test the configuration from another system by running the *sftp*, *ssh*, and *scp* commands as the user.
-*sftp* and *scp* will work but *ssh* will fail.
+Test the configuration from another system by running the `sftp`, `ssh`, and `scp` commands as the user.
+`sftp` and `scp` will work but `ssh` will fail.
 
 ## Creating an SSH Keypair
 
