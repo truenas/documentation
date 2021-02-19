@@ -3,7 +3,7 @@
 | | |
 |-|-|
 | priority | Numeric start priority for the jail at boot time. Valid priorities are between 1 and 99. Smaller values are higher priority. At system shutdown the priority is reversed.  Example: 99 |
-| hostid | A new jail hostid, if desired.  Example hostid: 1a2bc345-678d-90e1-23fa-4b56c78901de. |
+| hostid | A new jail hostid, if desired.  Example `hostid: 1a2bc345-678d-90e1-23fa-4b56c78901de`. |
 | comment | Enter comments about the jail. |
 | template | Set to set this jail as a template. |
 | host_time | System host time to synchronize the time between jail and host. |
@@ -13,4 +13,4 @@
 | allow_tun | Reveal tun devices for the jail with an individual devfs ruleset. Allow the creation of tun devices in the jail |
 | Autoconfigure IPv6 with rtsold | Use [rtsold(8)](https://www.freebsd.org/cgi/man.cgi?query=rtsold) as part of IPv6 autoconfiguration. Send ICMPv6 Router Solicitation messages to interfaces to discover new routers. |
 | ip_hostname | Set to use DNS records during jail IP configuration to search the resolver and apply the first open IPv4 and IPv6 addresses. See [jail(8)](https://www.freebsd.org/cgi/man.cgi?query=jail). |
-| assign_localhost | Set to add network interface lo0 to the jail and assign it the first available localhost address, starting with 127.0.0.2. VNET must be unset. Jails using VNET configure a localhost as part of their virtualized network stack. |
+| assign_localhost | Set to add network interface lo0 to the jail and assign it the first available localhost address, starting with `127.0.0.2`. VNET must be unset. Jails using VNET configure a localhost as part of their virtualized network stack. |
