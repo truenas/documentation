@@ -17,12 +17,12 @@
 |-|-|
 | Unix Charset | Default is UTF-8 which supports all characters in all languages. |
 | Log Level | Record SMB service messages up to the specified log level. By default, error and warning level messages are logged. |
-| Use Syslog Only | Set to log authentication failures in /var/log/messages instead of the default of /var/log/samba4/log.smbd. |
+| Use Syslog Only | Set to log authentication failures in <file>/var/log/messages</file> instead of the default of <file>/var/log/samba4/log.smbd</file>. |
 | Local Master | Set to determine if the system participates in a browser election. Leave unset when the network contains an AD or LDAP server, or when Vista or Windows 7 machines are present. |
 | Enable Apple SMB2/3 Protocol Extensions | These [protocol extensions](https://support.apple.com/en-us/HT210803) can be used by macOS to improve the performance and behavioral characteristics of SMB shares. This is required for Time Machine support. |
 | Administrators Group | Members of this group are local admins and automatically have privileges to take ownership of any file in an SMB share, reset permissions, and administer the SMB server through the Computer Management MMC snap-in. |
 | Guest Account | Account to be used for guest access. Default is nobody. The chosen account is required to have permissions to the shared pool or dataset. To adjust permissions, edit the dataset Access Control List (ACL), add a new entry for the chosen guest account, and configure the permissions in that entry. If the selected Guest Account is deleted the field resets to nobody. |
-| File Mask | Overrides default file creation mask of 0666 which creates files with read and write access for everybody. |
-| Directory Mask | Overrides default directory creation mask of 0777 which grants directory read, write and execute access for everybody. |
+| File Mask | Overrides default file creation mask of *0666* which creates files with read and write access for everybody. |
+| Directory Mask | Overrides default directory creation mask of *0777* which grants directory read, write and execute access for everybody. |
 | Bind IP Addresses | Static IP addresses which SMB listens on for connections. Leaving all unselected defaults to listening on all active interfaces. |
 | Auxiliary Parameters | Enter additional smb.conf options. See the [Samba Guide](http://www.oreilly.com/openbook/samba/book/appb_02.html) for more information on these settings. To log more details when a client attempts to authenticate to the share, add log level = 1, auth_audit:5. |
