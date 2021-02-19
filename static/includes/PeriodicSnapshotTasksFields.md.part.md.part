@@ -7,7 +7,7 @@
 | Dataset | Select a pool, dataset, or zvol. |
 |-|-|
 | Recursive | Set to take separate snapshots of the dataset and each of its child datasets. Leave unset to take a single snapshot only of the specified dataset without child datasets. |
-| Exclude | Exclude specific child datasets from the snapshot. Use with recursive snapshots. List paths to any child datasets to exclude. Example: pool1/dataset1/child1. A recursive snapshot of pool1/dataset1 will include all child datasets except child1. Separate entries by pressing Enter. |
+| Exclude | Exclude specific child datasets from the snapshot. Use with recursive snapshots. List paths to any child datasets to exclude. Example: `pool1/dataset1/child1`. A recursive snapshot of pool1/dataset1 will include all child datasets except child1. Separate entries by pressing Enter. |
 
 **Schedule**
 
