@@ -19,7 +19,7 @@
 | SSH Connection | Choose a connection that has been saved in System > SSH Connections. |
 | Stream Compression | Select a compression algorithm to reduce the size of the data being replicated. Only appears when SSH is chosen for Transport type. |
 | Limit | Limit replication speed to this number of bytes per second. |
-| Allow Bloxks Larger than 128KB | Allow this replication to send large data blocks. The destination system must also support large blocks. This setting cannot be changed after it has been enabled and the replication task is created. For more details, see [zfs(8)](https://www.freebsd.org/cgi/man.cgi?query=zfs). |
+| Allow Blocks Larger than 128KB | Allow this replication to send large data blocks. The destination system must also support large blocks. This setting cannot be changed after it has been enabled and the replication task is created. For more details, see [zfs(8)](https://www.freebsd.org/cgi/man.cgi?query=zfs). |
 | Allow Compressed WRITE Records | Use compressed WRITE records to make the stream more efficient. The destination system must also support compressed WRITE records. See [zfs(8)](https://www.freebsd.org/cgi/man.cgi?query=zfs). |
 
 **Source**
