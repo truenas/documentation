@@ -15,7 +15,7 @@
 | Description | Optional description. Portals are automatically assigned a numeric group. |
 | Discovery Authentication Group | iSCSI supports multiple authentication methods that are used by the target to discover valid devices. None allows anonymous discovery while CHAP and Mutual CHAP require authentication. |
 | Discovery Authentication Group | Group ID created in Authorized Access. Required when the Discovery Authentication Method is set to CHAP or Mutual CHAP. |
-| IP Address | Select the IP addresses to be listened on by the portal. Click ADD to add IP addresses with a different network port. The address 0.0.0.0 can be selected to listen on all IPv4 addresses, or :: to listen on all IPv6 addresses. |
+| IP Address | Select the IP addresses to be listened on by the portal. Click ADD to add IP addresses with a different network port. The address `0.0.0.0` can be selected to listen on all IPv4 addresses, or :: to listen on all IPv6 addresses. |
 | Port | TCP port used to access the iSCSI target. Default is 3260. |
 
 **Initiators**
