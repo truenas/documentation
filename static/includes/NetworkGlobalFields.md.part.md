@@ -1,0 +1,38 @@
+## Global Configuration
+
+**Hostname and Domain**
+
+| | |
+|-|-|
+| Hostname | System hostname. |
+| Domain | System domain name, like example.com |
+| Additional Domains | Additional domains to search. Separate entries by pressing Enter. Adding search domains can cause slow DNS lookups. |
+
+**DNS Servers**
+
+| | |
+|-|-|
+| NameServer 1 | Primary DNS server. |
+| NameServer 2 | Secondary DNS server. |
+| NameServer 3 | Third DNS server. |
+
+**Other Settings**
+
+| | |
+|-|-|
+| HTTP Proxy | When using a proxy, enter the proxy information for the network in the format `http://my.proxy.server:3128` or `http://user:password@my.proxy.server:3128` |
+| Enabled Netwait Features | Delays the start of network services until pings are returned from the IP addresses added to the Netwait IP List. |
+| Host Name Database | Additional hosts to be appended to /etc/hosts. Separate entries by pressing Enter. Hosts defined here are still accessible by name even when DNS is not available. See hosts(5) for additional information. |
+**Service Announcement**
+
+| | |
+|-|-|
+| NetBIOS-NS | Legacy NetBIOS name server. Advertises the SMB service NetBIOS Name. Can be required for legacy SMB1 clients to discover the server. When advertised, the server appears in Network Neighborhood). |
+| mDNS | Multicast DNS. Uses the system Hostname to advertise enabled and running services. For example, this controls if the server appears under Network on MacOS clients. |
+| WS-Discovery | Uses the SMB Service NetBIOS Name to advertise the server to WS-Discovery clients. This causes the computer appear in the Network Neighborhood of modern Windows OSes. |
+**Default Gateway**
+
+| | |
+|-|-|
+| IPv4 Default Gateway | Enter an IPv4 address. This overrides the default gateway provided by DHCP. |
+| IPv6 Default Gateway | Enter an IPv6 address. This overrides the default gateway provided by DHCP. |
