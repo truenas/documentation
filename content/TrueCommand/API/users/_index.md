@@ -3,6 +3,7 @@ title: "User management"
 pre: "<i class='fa fa-users'></i>	"
 draft: false
 geekdocCollapseSection: true
+no_list: true
 ---
 
 ## API Class: users

@@ -134,7 +134,7 @@ By specifying a language, the included file will have syntax highlighting.
 
 #### Example
 
-{{< include file="static/includes/table.html.part" >}}
+{{< include file="static/includes/ContactSupport.html.part" >}}
 
 ### SVG Charts from Text!
 Geekdocs uses [mermaid](https://mermaid-js.github.io/mermaid/#/) to represent diagrams using text and code. It is Javascript based.
