@@ -12,7 +12,7 @@
 
 | | |
 |-|-|
-| TrueNAS URL | Hostname or IP address of the remote system. A valid URL scheme is required. Example: https://10.231.3.76 |
+| TrueNAS URL | Hostname or IP address of the remote system. A valid URL scheme is required. Example: `https://10.231.3.76` |
 | Username | Username for logging in to the remote system. |
 | Password | User account password for logging into the remote system. |
 | Private Key | Choose a saved SSH Keypair or select Generate New to create a new keypair and use it for this connection. |
@@ -32,6 +32,6 @@
 
 | | |
 |-|-|
-| Name | A unique name to identify this keypair. Automatically generated keypairs are named after the object that generated the keypair with " Key" appended to the name. |
+| Name | A unique name to identify this keypair. Automatically generated keypairs are named after the object that generated the keypair with "Key" appended to the name. |
 | Private Key | See Public key authentication in [SSH/Authentication](https://www.freebsd.org/cgi/man.cgi?query=ssh). |
 | Public Key | See Public key authentication in [SSH/Authentication](https://www.freebsd.org/cgi/man.cgi?query=ssh). |
