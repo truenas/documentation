@@ -3,7 +3,7 @@
 | | |
 |-|-|
 | priority | Numeric start priority for the jail at boot time. Valid priorities are between 1 and 99. Smaller values are higher priority. At system shutdown the priority is reversed.  Example: 99 |
-| hostid | A new jail hostid, if desired.  Example hostid: 1a2bc345-678d-90e1-23fa-4b56c78901de. |
+| hostid | A new jail hostid, if desired.  Example `hostid: 1a2bc345-678d-90e1-23fa-4b56c78901de`. |
 | comment | Enter comments about the jail. |
 | template | Set to set this jail as a template. |
 | host_time | System host time to synchronize the time between jail and host. |
