@@ -1,7 +1,6 @@
 ---
 title: "SMB1 Security Advisory"
-description: "Cautions against using SMB1 in production"
-tags: ["networking","Samba","errata","security"]
+weight: 10
 ---
 
 **Do not use SBM1**

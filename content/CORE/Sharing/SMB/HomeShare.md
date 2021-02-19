@@ -1,5 +1,5 @@
 ---
-title: "SMB Home Share"
+title: "Home Shares"
 weight: 20
 ---
 

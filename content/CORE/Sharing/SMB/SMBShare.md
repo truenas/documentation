@@ -1,9 +1,11 @@
 ---
-title: "SMB Share Creation"
+title: "Share Creation"
 weight: 10
 ---
 
 {{< toc >}}
+
+## Background
 
 SMB (also known as CIFS) is the native file sharing system in Windows.
 SMB shares can connect to any major operating system, including Windows, MacOS, and Linux.
@@ -26,11 +28,11 @@ Windows clients use [WS-Discovery](http://docs.oasis-open.org/ws-dd/ns/discovery
 Discoverability through broadcast protocols is a convenience feature and not required to access a SMB server.
 {{< /hint >}}
 
-You will need a [dataset](/CORE/Storage/datasets/) with the data to share stored within it before creating an SMB share.
+## First Steps
 
-## SMB Share Requirements
+### Create a Dataset
 
-1) Create a dataset. It is recommended to create a new dataset and set the *Share Type* to *SMB* for the new SMB share.
+It is recommended to create a new dataset and set the *Share Type* to *SMB* for the new SMB share.
 {{< expand "What does this do?" "v" >}}
 The ZFS dataset is created with these settings:
 
@@ -42,7 +44,9 @@ The ZFS dataset is created with these settings:
  This ACL can be modified later according to your use case.
 {{< /expand >}}
 
-2) Create one or more [user accounts](/CORE/Accounts/users/) for SMB access. By default, all TrueNAS local users are members of a built in SMB group called *builtin users*. This group can be used to grant access to all local users on the server. Additional [groups](/CORE/Accounts/groups/) can be created fine-tune permissions to large numbers of users. User accounts built-in to TrueNAS or that do not have the *smb* flag set cannot be used for SMB access.
+### Create Local User Accounts
+
+By default, all new local users are members of a built in SMB group called *builtin users*. This group can be used to grant access to all local users on the server. Additional [groups](/CORE/Accounts/groups/) can be used to fine-tune permissions to large numbers of users. User accounts built-in to TrueNAS or that do not have the *smb* flag set cannot be used for SMB access.
 {{< expand "Why not just allow anonymous access to the share?" "v" >}}
 Although anonymous or guest access to the share is possible, this is a security vulnerability and is being deprecated by the major SMB client vendors. This partly because signing and encryption are not possible for guest sessions.
 {{< /expand >}}
@@ -50,14 +54,17 @@ Although anonymous or guest access to the share is possible, this is a security 
 When LDAP has been configured and you want users from the LDAP server to have access the SMB share, go to **Directory Services > LDAP > ADVANCED MODE** and set *Samba Schema*. However, local TrueNAS user accounts will no longer have access to the share.
 {{< /expand >}}
 
-3) Fine-tune the dataset ACL as needed. Many home users typically add a new entry that grants *FULL_CONTROL* to the *builtin_users* group with the flags set to *INHERIT*. See the [Permissions article]() for more details.
+### Tune the Dataset ACL
+
+After a dataset and accounts are created, you will need to investigate your access requirements and adjust the dataset ACL to match. To edit the ACL, go to **Storage > Pools**, open the options for the new dataset, and click *Edit Permissions*.
+Many home users typically add a new entry that grants *FULL_CONTROL* to the *builtin_users* group with the flags set to *INHERIT*.
+See the [Permissions article]() for more details.
 
 ## Creating the SMB Share
 
 To create a Windows SMB share, go to **Sharing > Windows Shares (SMB)** and click **ADD**.
 
-<img src="/images/SharingSMBAdd.png">
-<br><br>
+![SMBShareAdd](/images/CORE/12.0/SharingSMBAdd.png "Basic SMB Share Options")
 
 The **Path** and **Name** of the SMB share define the absolute minimum amount of information required to create a new SMB share. The *Path* is the directory tree on the local filesystem that will be exported over the SMB protocol, and the *Name* is the name of the SMB share, which forms a part of the "full share pathname" when SMB clients perform an SMB tree connect. Because of the way that the *Name* is used in the SMB protocol, it must be less than or equal to 80 characters in length, and must not contain any invalid characters as specified in Microsoft documentation MS-FSCC section 2.1.6. If a *Name* is not supplied, then the last component of the *Path* will be used as the share name.
 
@@ -95,22 +102,18 @@ An optional *Description* can be specified to help explain the purpose of the sh
 **Enabled** allows this path to be shared when the SMB service is activated.
 Unsetting **Enabled** disables the share without deleting the configuration.
 
-### Advanced Options
+{{< expand "Advanced Options" "v" >}}
+![SMBShareAdvanced](/images/CORE/12.0/SharingSMBAddAdvanced.png "SMB Share Advanced Options")
 
-To fine-tune the share configuration, click **ADVANCED OPTIONS**.
-
-<img src="/images/SharingSMBAddAdvanced.png">
-<br><br>
-
-Options are divided into *Access* and *Other Options* groups.
+Options are divided into **Access** and **Other Options** groups.
 *Access* options control various settings for allowing systems or users to access or modify the shared data.
 
 | Setting                        | Value     | Description  |
 |--------------------------------|-----------|--------------|
-| Enable ACL                     | checkbox  | Set to add Access Control List (ACL) support to the share. Unsetting disables ACL support and will delete any existing ACL for the share. |
+| Enable ACL                     | checkbox  | Set to add Access Control List (ACL) support to the share. Unsetting disables ACL support and deletes any existing ACL for the share. |
 | Export Read Only               | checkbox  | Prohibits writes to the share. Unset to allow writes to the share. |
 | Browsable to Network Clients   | checkbox  | Determine whether this share name is included when browsing shares. Home shares are only visible to the owner regardless of this setting.
-| Allow Guest Access             | checkbox  | Privileges are the same as the guest account. Guest access is disabled by default in Windows 10 version 1709 and Windows Server version 1903. Additional client-side configuration is required to provide guest access to these clients.<br><br> *MacOS clients*: Attempting to connect as a user that does not exist in FreeNAS *does not* automatically connect as the guest account. The **Connect As:** *Guest* option must be specifically chosen in MacOS to log in as the guest account. See the [Apple documentation](https://support.apple.com/guide/mac-help/connect-mac-shared-computers-servers-mchlp1140/mac) for more details. |
+| Allow Guest Access             | checkbox  | Privileges are the same as the guest account. Guest access is disabled by default in Windows 10 version 1709 and Windows Server version 1903. Additional client-side configuration is required to provide guest access to these clients.<br><br> *MacOS clients*: Attempting to connect as a user that does not exist in FreeNAS *does not* automatically connect as the guest account. The *Connect As: Guest* option must be specifically chosen in MacOS to log in as the guest account. See the [Apple documentation](https://support.apple.com/guide/mac-help/connect-mac-shared-computers-servers-mchlp1140/mac) for more details. |
 | Access Based Share Enumeration | checkbox  | Setting this restricts share visibility to users with read or write access to the share. See the [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) manual page. |
 | Hosts Allow                    | string    | Enter a list of allowed hostnames or IP addresses. Separate entries by pressing <kbd>Enter</kbd>. A more detailed description with examples can be found [here](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html#HOSTSALLOW).
 | Hosts Deny                     | string    | Enter a list of denied hostnames or IP addresses. Separate entries by pressing <kbd>Enter</kbd>. |
@@ -135,11 +138,11 @@ The *Other Options* have settings for improving Apple software compatibility, ZF
 | Enable FSRVP                       | checkbox  | Enable support for the File Server Remote VSS Protocol ([FSVRP](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-fsrvp/dae107ec-8198-4778-a950-faa7edad125b)). This protocol allows Remote Procedure Call (RPC) clients to manage snapshots for a specific SMB share. The share path must be a dataset mountpoint. Snapshots have the prefix `fss-` followed by a snapshot creation timestamp. A snapshot must have this prefix for an RPC user to delete it. |
 | Path Suffix                        | string    | Appends a suffix to the share connection path. This is used to provide unique shares on a per-user, per-computer, or per-IP address basis. Suffixes can contain a macro. See the [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) manual page for a list of supported macros. The connectpath must be preset before a client connects. |
 | Auxiliary Parameters               | string    | Additional [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) settings. |
-
+{{< /expand >}}
 Clicking **Submit** creates the share and adds it to the **Sharing > Windows Shares (SMB)** list.
 You can also choose to enable the SMB service at this time.
 
-### Share Management
+## Share Management
 
 After the SMB share is created, additional management options are available by going to **Sharing > Windows Shares (SMB)** and clicking <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; for a share entry:
 
@@ -150,80 +153,91 @@ After the SMB share is created, additional management options are available by g
 
 ### Configure Share ACL
 
-Open the share options (<i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>)&nbsp; and click **Edit Share ACL** to see options for the Share ACL.
+To see the share ACL options, click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> > *Edit Share ACL*.
 
-<img src="/images/SharingSMBShareACL.png">
-<br><br>
+![EditShareACL](/images/CORE/12.0/SharingSMBShareACL.png "Share ACL Options")>
 
-The **Share Name** is shown, but cannot be changed.
+The *Share Name* is shown, but cannot be changed.
 *ACL Entries* are listed as a block of settings.
-To add a new entry, click **ADD**.
+Click *ADD* to register a new entry.
 
 | Setting    | Value     | Description  |
 |------------|-----------|--------------|
-| SID        | string    | Who this ACL entry (ACE) applies to, shown as a [Windows Security Identifier](https://docs.microsoft.com/en-us/windows/win32/secauthz/security-identifiers). Either a **SID** or a **Domain** and **Name** is required for the ACL. |
-| Domain     | string    | Domain for the user **Name**. Required when a **SID** is not entered. Local users have the SMB server NetBIOS name: `truenas\\smbusers`.
+| SID        | string    | Who this ACL entry (ACE) applies to, shown as a [Windows Security Identifier](https://docs.microsoft.com/en-us/windows/win32/secauthz/security-identifiers). Either a *SID* or a *Domain* with *Name* is required for the ACL. |
+| Domain     | string    | Domain for the user *Name*. Required when a **SID** is not entered. Local users have the SMB server NetBIOS name: *truenas\\smbusers*.
 | Permission | drop down | Predefined permission combinations:<br>*Read*: Read access and Execute permission on the object (RX).<br>*Change*: Read access, Execute permission, Write access, and Delete object (RXWD).<br>*Full*: Read access, Execute permission, Write access, Delete object, change Permissions, and take Ownership (RXWDPO).<br><br>For more details, see [smbacls(1)](https://www.samba.org/samba/docs/current/man-html/smbcacls.1.html). |
 | Name       | string    | Who this ACL entry applies to, shown as a user name. Requires adding the user **Domain**. |
 | Type       | drop down | How permissions are applied to the share. *Allowed* denies all permissions by default except those that are manually defined. *Denied* allows all permissions by default except those that are manually defined. |
 
-Clicking **SAVE** stores the share ACL and applies it to the share immediately.
+Clicking *SAVE* stores the share ACL and applies it to the share immediately.
 
 ### Configure Filesystem ACL
 
-Open the share options (<i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>)&nbsp; and click **Edit Filesystem ACL** to see options for the dataset ACL.
+Click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> > *Edit Filesystem ACL* to quickly return to **Storage > Pools** and edit the dataset ACL.
 
-<img src="/images/StoragePoolsEditACL.png">
-<br><br>
+![DatasetACLEdit](/images/CORE/12.0/StoragePoolsEditACL.png "Dataset Permissions Options")
 
-This ACL is used to define the user accounts or groups that own or have specific permissions to the dataset that is being shared.
-The options in this screen are detailed in the [Permissions article]().
-This section will outline how to choose a preset ACL and add an ACL entry (ACE) for a specific TrueNAS user account.
+This ACL is used to define the user accounts or groups that own or have specific [permissions]() to the dataset that is being shared.
+The *User* and *Group* values show which accounts "own", or have full permissions to the dataset.
+To change these settings, set *Apply* before saving any changes.
 
-The **User** and **Group** values show which accounts "own", or have full permissions to, the dataset.
-If you want to change these settings, be sure to set the **Apply** option before saving any changes.
+#### ACL Presets
 
-There are some standard ACLs that can be applied to the dataset by clicking **SELECT AN ACL PRESET** and choosing an preconfigured ACL to apply.
-This will overwrite any current ACL entries.
+To rewrite the current ACL with a standardized preset, click *SELECT AN ACL PRESET* and choose an option:
 
-To define permissions for a specific user account or group, click **ADD ACL ITEM**.
-Open the **Who** drop down, select *User* or *Group*, and choose the specific **User** or **Group** in the new drop down that appears.
-Continue to define how the settings are applied to the account then choose which permissions to apply to that account.
-For example, to only allow the *tmoore* user permission to view dataset contents but not make changes, set the **ACL Type** to *Allow* and **Permissions** to *Read*.
+{{< tabs "SaveConsoleLog" >}}
+{{< tab "Open" >}}
+Has three entries:
+* *owner@* has full dataset control.
+* *group@* has full dataset control.
+* All other accounts can modify the dataset contents.
+{{< /tab >}}
+{{< tab "Restricted" >}}
+Has two entries:
+* *owner@* has full dataset control.
+* *group@* can modify the dataset contents.
+{{< /tab >}}
+{{< tab "Home" >}}
+Has three entries:
+* *owner@* has full dataset control.
+* *group@* can modify the dataset contents.
+* All other accounts can traverse through the dataset.
+{{< /tab >}}
+{{< /tabs >}}
 
-<img src="/images/StoragePoolsEditACLExample.png">
-<br><br>
+#### Adding ACL Entries (ACEs)
 
-For more information on Managing ACLs, read the [Dataset Management](/hub/tasks/advanced/editingacls/) documentation.
+To define permissions for a specific user account or group, click *ADD ACL ITEM*.
+Open the *Who* drop down, select *User* or *Group*, and choose a specific *User* or *Group* account.
+Define how the settings are applied to the account then choose which permissions to apply to that account.
+For example, to only allow the *tmoore* user permission to view dataset contents but not make changes, set the *ACL Type* to *Allow* and *Permissions* to *Read*.
 
+![ExampleACE](/images/CORE/12.0/StoragePoolsEditACLExample.png "Sample ACE")
 
-## SMB Service
+## Activate the SMB Service
 
 Connecting to an SMB share does not work when the related system service is not activated.
-To turn the SMB service on, go to **Services** and click the toggle for *SMB*.
+To make SMB share available on the network, *Services* and click the toggle for *SMB*.
 If you want the service to activate whenever TrueNAS boots, set *Start Automatically*.
 
-The SMB service is configured by clicking <i class="fas fa-pen" aria-hidden="true" title="Pen"></i>.
+### Service Configuration
+
+The SMB service is configured by clicking <i class="fa fa-pen" aria-hidden="true" title="Pen"></i>.
 Unless a specific setting is needed or configuring for a specific network environment, it is recommended to use the default settings for the SMB service.
 
-<img src="/images/ServicesSMBConfigure.png">
-<br><br>
+![SMBServiceOptions](/images/CORE/12.0/ServicesSMBOptions.png "SMB Service Options")
 
 | Setting             | Value    | Description  |
 |---------------------|----------|--------------|
-| NetBIOS Name        | string   | Automatically populated with the original hostname of the system. This name is limited to 15 characters and cannot be the **Workgroup** name. |
+| NetBIOS Name        | string   | Automatically populated with the original hostname of the system. This name is limited to 15 characters and cannot be the *Workgroup* name. |
 | NetBIOS Alias       | string   | Enter any aliases, separated by spaces. Each alias can be up to 15 characters long. |
 | Workgroup           | string   | Must match the Windows workgroup name. When this is unconfigured and Active Directory or LDAP are active, TrueNAS will detect and set the correct workgroup from these services. |
 | Description         | string   | This allows entering any notes or descriptive details about the service configuration. |
 | Enable SMB1 support | checkbox | Allow legacy SMB1 clients to connect to the server. Note that SMB1 is being deprecated and it is advised to upgrade clients to operating system versions that support modern versions of the SMB protocol. |
 | NTLMv1 Auth         | checkbox | When set, [smbd](https://www.samba.org/samba/docs/current/man-html/smbd.8.html) attempts to authenticate users with the insecure and vulnerable NTLMv1 encryption. This setting allows backward compatibility with older versions of Windows, but is not recommended and should not be used on untrusted networks. |
 
-### Advanced Options
-
-Clicking **ADVANCED OPTIONS** adds a new section of *Other Options* for fine-tuning the service.
-
-<img src="/images/ServicesSMBConfigureAdvanced.png">
-<br><br>
+{{< expand "Advanced Options" "v" >}}
+![SMBServiceAdvanced](/images/CORE/12.0/ServicesSMBOptionsAdvanced.png "Advanced Options for the SMB Service")
 
 | Setting                                 | Value     | Description  |
 |-----------------------------------------|-----------|--------------|
@@ -238,35 +252,4 @@ Clicking **ADVANCED OPTIONS** adds a new section of *Other Options* for fine-tun
 | Directory Mask                          | integer   | Overrides default directory creation mask of *0777* which grants directory read, write and execute access for everybody. |
 | Bind IP Addresses                       | drop down | Static IP addresses which SMB listens on for connections. Leaving all unselected defaults to listening on all active interfaces.
 | Auxiliary Parameters                    | string    | Stores additional [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html). Auxiliary parameters may be used to override the default SMB server configuration, but such changes may adversely affect SMB server stability or behavior. |
-
-### Shadow Copies
-
-[Shadow Copies](https://en.wikipedia.org/wiki/Shadow_copy), also known as the Volume Shadow Copy Service (VSS) or Previous Versions, is a Microsoft service for creating volume snapshots.
-Shadow copies can be used to restore previous versions of files from within Windows Explorer.
-
-By default, all ZFS snapshots for a dataset underlying an SMB share path are presented to SMB clients through the volume shadow copy service or are accessible directly with SMB when the hidden ZFS snapshot directory is located within the path of the SMB share.
-
-There are a few caveats about shadow copies to be aware of before activating the feature in TrueNAS:
-
-* When the Windows system is not fully patched to the latest service pack, Shadow Copies might not work.
-  If no previous versions of files to restore are visible, use Windows Update to ensure the system is fully up-to-date.
-
-* Shadow copy support only works for ZFS pools or datasets.
-
-* Appropriate permissions must be configured on the pool or dataset being shared by SMB.
-
-* Users cannot use an SMB client to delete shadow copies. Instead, the administrator use the TrueNAS web interface to remove snapshots.
-  Shadow copies can be disabled for an SMB share by unsetting *Enable shadow copies* for the SMB share.
-  Note that this does not prevent access to the hidden `.zfs/snapshot` directory for a ZFS dataset when the directory is located within the *Path* for an SMB share.
-  
-To enable Shadow Copies, set *Enable shadow copies* in the **Advanced** SMB Properties section.
-
-<img src="/images/ShadowCopyOption.png">
-<br><br>
-  
-{{% pageinfo %}}
-Some users have experienced issues in the Windows 10 v2004 release where network shares can't be accessed. The problem appears to come from a bug in `gpedit.msc`, the Local Group Policy Editor. Unfortunately, setting the "Allow insecure guest logon" flag value to `Enabled` in **Computer Configuration > Administrative Templates > Network > Lanman Workstation** appears to have no effect on the configuration.
-To work around this issue, edit the Windows registry. Use `Regedit` and go to `HKLM\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters`.
-The **DWORD AllowInsecureGuestAuth** is set to an incorrect value: *0x00000000*. Change this value to `0x00000001` (Hexadecimal 1) to allow adjusting the settings in `gpedit.msc`.
-This can be applied to a fleet of Windows machines with a Group Policy Update.
-{{% /pageinfo %}}
+{{< /expand >}}
