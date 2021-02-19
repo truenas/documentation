@@ -4,7 +4,7 @@
 
 | | |
 |-|-|
-| Number of servers * | Specify how many servers to create. Increase if NFS client responses are slow. Keep this less than or equal to the number of CPUs reported by sysctl -n kern.smp.cpus to limit CPU context switching. |
+| Number of servers * | Specify how many servers to create. Increase if NFS client responses are slow. Keep this less than or equal to the number of CPUs reported by `sysctl -n kern.smp.cpus` to limit CPU context switching. |
 | Bind IP Addresses | Select IP addresses to listen to for NFS requests. Leave empty for NFS to listen to all available addresses. |
 
 **NFSv4**
