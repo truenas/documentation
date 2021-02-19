@@ -10,8 +10,8 @@
 
 | | |
 |-|-|
-| Host | The default host to use for TFTP transfers. Enter an IP address. Example: 192.0.2.1 |
-| Port | The UDP port number that listens for TFTP requests. Example: 8050 |
+| Host | The default host to use for TFTP transfers. Enter an IP address. Example: `192.0.2.1` |
+| Port | The UDP port number that listens for TFTP requests. Example: `8050` |
 | Username | Select the account to use for TFTP requests. This account must have permission to the Directory. |
 
 **Access**
