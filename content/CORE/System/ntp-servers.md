@@ -11,12 +11,12 @@ By default, several entries for NTP servers are created for new installations, b
 
 Go to **System > NTP Servers** to view, edit, or remove NTP Servers.
 
-<img src="/images/TN12.0-NTP1.png">
+![System NTP Servers](/images/CORE/12.0/SystemNTPServers.png "System NTP Servers")
 <br><br>
 
 ## NTP Server Options
 
-<img src="/images/TN12.0-NTP2.png">
+![System NTP Servers Add](/images/CORE/12.0/SystemNTPServersAdd.png "System NTP Servers Add")
 <br><br>
 
 | Setting  | Value    | Description                                                                                                                                      |
