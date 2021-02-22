@@ -34,7 +34,7 @@ To get started, make sure a [dataset](/CORE/Storage/DataPools/datasets/) has bee
 
 To turn on the iSCSI service, go to **Services** and click the slider for **iSCSI**. Check the *Start Automatically* box if you want the service to turn on automatically when the TrueNAS system is rebooted.
 
-<img src="/images/iSCSI1TurnOnServices.png">
+![Services ISCSI Enable](/images/CORE/12.0/ServicesISCSIEnable.png "Services ISCSI Enable")
 <br><br>
 
 ## Setting Up an iSCSI Share
@@ -54,7 +54,7 @@ First, enter a name for the iSCSI share. The name can only contain lowercase alp
 
 Select the type of platform that will be using the share. For example, if using the share from an updated Linux OS, choose *Modern OS*.
 
-<img src="/images/iSCSI3CreateBlockDevice.png">
+![Sharing ISCSI Wizard Device](/images/CORE/12.0/SharingISCSIWizardDevice.png "Sharing ISCSI Wizard Device")
 <br><br>
 
 ### Portal
@@ -65,8 +65,7 @@ If you create a new portal, you will need to select a *Discovery Authentication 
 
 If you set the *Discovery Authentication Method* to *CHAP* or *MUTUAL CHAP*, then you will also need to select a *Discovery Authentication Group*. If a group doesn't already exist select *Create New* from the dropdown and enter the desired *Group ID*, *User*, and *Secret*.
 
-<img src="/images/iSCSI4Portal.png">
-<br><br>
+![Sharing ISCSI Wizard Portal](/images/CORE/12.0/SharingISCSIWizardPortal.png "Sharing ISCSI Wizard Portal")
 
 If you set the *Discovery Authentication Method* to *NONE*, you don't need to select a *Discovery Authentication Group*.
 
@@ -78,14 +77,14 @@ Select *0.0.0.0* or *::* from the *IP Address* dropdown and click **NEXT**.
 
 If you wish, you can allow only specific initiators or networks to use the iSCSI share. You can leave it blank to allow all initiators or networks to use the share.
 
-<img src="/images/iSCSI5Initiator.png">
+![Sharing ISCSI Wizard Initiator](/images/CORE/12.0/SharingISCSIWizardInitiator.png "SharingISCSIWizard Initiator")
 <br><br>
 
 ### Confirm
 
 Confirm that your settings look correct, then click **SUBMIT**.
 
-<img src="/images/iSCSI6Confirm.png">
+![Sharing ISCSI Wizard Summary](/images/CORE/12.0/SharingISCSIWizardSummary.png "Sharing ISCSI Wizard Summary")
 <br><br>
 
 ## Using the iSCSI Share on Linux
@@ -96,21 +95,21 @@ Follow these steps to connect to an iSCSI share from a Linux system.
 
 First, open the command line and ensure that the `open-iscsi` utility is installed. To install the utility on an Ubuntu/Debian distribution, type `sudo apt update && sudo apt install open-iscsi`. After the installation completes, make sure the *iscsid* service is running by typing `sudo service iscsid start`. Once the *iscsid* service is started, you can run the `iscsiadm` command with the discovery arguments and get the necessary information to connect to the share.
 
-<img src="/images/iSCSI7LinuxUtility.png">
+![Linux ISCSI App Install](/images/CORE/12.0/LinuxISCSIAppInstall.png "Linux ISCSI App Install")
 <br><br>
 
 ### Discover and Login to the iSCSI Share
 
 Run the command <code>sudo iscsiadm \--mode discovery \--type sendtargets \--portal <i>IPofTrueNASsystem</i></code>. The output provides the basename and target name that you configured in TrueNAS.
 
-<img src="/images/iSCSI8LinuxDiscover.png">
+![Linux ISCSI Discovery List](/images/CORE/12.0/LinuxISCSIDiscoveryList.png "Linux ISCSI Discovery List")
 <br><br>
 
 Alternatively, you can enter <code>sudo iscsiadm -m discovery -t st -p <i>IPofTrueNASsystem</i></code> to get the same output. Take note of the basename and target name given in the output. You will need it to login to the iSCSI share.
 
 Next, run the command <code>sudo iscsiadm \--mode node \--targetname <i>basename</i>:<i>targetname</i> \--portal <i>IPofTrueNASsystem</i> \--login</code> where *basename* and *targetname* is the information you got from the discovery command.
 
-<img src="/images/iSCSI9LinuxLogin.png">
+![Linux ISCSI Login](/images/CORE/12.0/Linux ISCSI Login.png "Linux ISCSI Login")
 <br><br>
 
 ### Partition iSCSI Disk
@@ -124,7 +123,7 @@ We recommend using the `fdisk` command defaults when partitioning the disk.
 
 > NOTE: Remember to enter the letter *w* when you are finished partitioning the disk. The *w* command tells `fdisk` to save any changes before you quit the utility.
 
-<img src="/images/iSCSI11LinuxPartition.png">
+![Linux ISCSI Filesystem Created](/images/CORE/12.0/LinuxISCSIFilesystemCreated.png "Linux ISCSI Filesystem Created")
 <br><br>
 
 After creating the partition on the iSCSI disk, a partition slice will show up on the device name. For example, `/dev/sdb1`. Run `fdisk -l` to see the new partition slice.
@@ -133,7 +132,7 @@ After creating the partition on the iSCSI disk, a partition slice will show up o
 
 Finally, make a filesystem on the new partition slice of the device. This can be done by using the command `mkfs`. To create the default filesystem (ext2), run the command <code>sudo mkfs <i>/path/to/iSCSIdevicePartitionSlice</i></code>.
 
-<img src="/images/iSCSI11bLinuxFilesys.png">
+![Linux ISCSI Filesystem](/images/CORE/12.0/LinuxISCSIFilesystem.png "Linux ISCSI Filesystem")
 <br><br>
 
 ### Mount the iSCSI Device
@@ -148,12 +147,12 @@ To access the data on the iSCSI share, clients will need to use iSCSI Initiator 
 
 First, click the Start Menu and search for the *iSCSI Initiator* application.
 
-<img src="/images/iSCSI12bWiniSCSIInit.png">
+![Windows ISCSI Initiator App](/images/CORE/12.0/WindowsISCSIInitiatorApp.png "Windows ISCSI Initiator App")
 <br><br>
 
 Next, go to the **Configuration** tab and click **Change** to change the iSCSI initiator to the same name created earlier. Click **OK**.
 
-<img src="/images/iSCSI12WinInitiator.png">
+![Windows ISCSI Initiator Config Name](/images/CORE/12.0/WindowsISCSIInitiatorConfigName.png "Windows ISCSI Initiator Config Name")
 <br><br>
 
 Next, switch to the **Discovery Tab**, click **Discover Portal**, and type in the TrueNAS IP address.
@@ -164,32 +163,32 @@ Next, switch to the **Discovery Tab**, click **Discover Portal**, and type in th
 
 Click **OK**.
 
-<img src="/images/iSCSI13WinPortal.png">
+![Windows ISCSI Initiator Discover Portal](/images/CORE/12.0/WindowsISCSIInitiatorDiscoverPortal.png "Windows ISCSI Initiator Discover Portal")
 <br><br>
 
 Go to the **Targets** tab, highlight the iSCSI target, and click **Connect**.
 
-<img src="/images/iSCSI14WinConnect.png">
+![Windows ISCSI Initiator Target Connect](/images/CORE/12.0/WindowsISCSIInitiatorTargetConnect.png "Windows ISCSI Initiator Target Connect")
 <br><br>
 
 After Windows connects to the iSCSI target the drive can be partitioned.
 
 Search for and open the *Disk Management* app.
 
-<img src="/images/iSCSI15WinDiskManager.png">
+![Windows ISCSI Disk Management App](/images/CORE/12.0/WindowsISCSIDiskManagementApp.png "Windows ISCSI Disk Management App")
 <br><br>
 
 Your drive should currently be *unallocated*. Right-click the drive and click **New Simple Volume...**.
 
-<img src="/images/iSCSI16WinNewVol.png">
+![Windows ISCSI Disk New Volume](/images/CORE/12.0/WindowsISCSIDiskNewVolume.png "Windows ISCSI Disk New Volume")
 <br><br>
 
 Complete the Wizard to format the drive and assign a drive letter and name.
 
-<img src="/images/iSCSI17WinFormPart.png">
+![Windows ISCSI Disk New Volume Options](/images/CORE/12.0/WindowsISCSIDiskNewVolumeOptions.png "Windows ISCSI Disk New Volume Options")
 <br><br>
 
 Finally, go to *This PC* or *My Computer* in File Explorer and the new iSCSI volume should show up under the list of drives. You should now be able to add, delete, and modify files and folders on your iSCSI drive.
 
-<img src="/images/iSCSI18WinDrives.png">
+![Windows iSCSI Volume Location](/images/CORE/12.0/WindowsiSCSIVolumeLocation.png "Windows iSCSI Volume Location")
 <br><br>
