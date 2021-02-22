@@ -50,7 +50,7 @@ TrueNAS has two options to create a jail. The *Jail Wizard* makes it easy to qui
 
 New jails can be created quickly by going to **Jails > ADD**.
 
-<img src="/images/Jails-AddWizardName.png" width='700px'>
+![JailsAddName](/images/CORE/12.0/JailsAddName.png "Jails Add Name")
 <br><br>
 
 The wizard provides the simplest process to create and configure a new jail.
@@ -77,7 +77,7 @@ Setting a proxy in the TrueNAS network settings also configures new jails to use
 
 When pairing the jail with a physical interface, edit the network interface and set **Disable Hardware Offloading**. This prevents a network interface reset when the jail starts.
 
-<img src="/images/Jails-AddWizardNetworking.png" width='700px'>
+![JailsAddNetworking](/images/CORE/12.0/JailsAddNetworking.png "Jails Add Networking")
 <br><br>
 
 Click **NEXT** to view a summary screen of the chosen jail options. Click **SUBMIT** to create the new jail. After a few moments, the new jail is added to the primary jails list.
@@ -86,7 +86,7 @@ Click **NEXT** to view a summary screen of the chosen jail options. Click **SUBM
 
 The advanced jail creation form is opened by clicking **Jails > ADD**, then **ADVANCED JAIL CREATION**.
 
-<img src="/images/Jails-AddAdvanced.png" width='700px'>
+![JailsAddAdvanced](/images/CORE/12.0/JailsAddAdvanced.png "Jails Add Advanced")
 <br><br>
 
 #### Simple Advanced Jail
@@ -112,14 +112,14 @@ Template jails are basejails that can be used as a template to efficiently creat
 
 Going to the *Jails* screen shows a list of installed jails.
 
-<img src="/images/Jails.png" width='700px'>
+![Jails](/images/CORE/12.0/Jails.png "Jails")
 <br><br>
 
 Operations can be applied to multiple jails by selecting those jails with the checkboxes on the left. After selecting one or more jails, icons appear which can be used to <i class="fas fa-play" aria-hidden="true" title="Start"></i>&nbsp; (Start), <i class="fas fa-stop" aria-hidden="true" title="Stop"></i>&nbsp; (Stop), <i class="fas fa-clock" aria-hidden="true" title="Update"></i>&nbsp; (Update), or <i class="fas fa-trash" aria-hidden="true" title="Delete"></i>&nbsp; (Delete) those jails.
 
 More information such as *IPV4*, *IPV6*, *TYPE* of jail, and whether it is a *TEMPLATE* jail or *BASEJAIL* can be shown by clicking **>** (Expand) for a jail. Additional options for that jail are also displayed.
 
-<img src="/images/JailsActions.png" width='700px'>
+![Jails Options](/images/CORE/12.0/JailsOptions.png "Jails Options")
 <br><br>
 
 {{< hint warning >}}
@@ -264,7 +264,7 @@ Storage can be added by clicking **Jails** > **>** (Expand) > **MOUNT POINTS** f
 
 Go to **MOUNT POINTS** > **ACTIONS** > **Add Mount Point** to add storage to a jail.
 
-<img src="/images/Jails-MountPointAdd.png" width='700px'>
+![Jails Mountpoint Add](/images/CORE/12.0/JailMountpointAdd.png "Jails Mountpoint Add")
 <br><br>
 
 Browse to the **Source** and **Destination**, where:
@@ -292,7 +292,7 @@ To prevent writes to the storage, click **Read-Only**.
 
 After storage has been added or created, it appears in the `MOUNT POINTS` for that jail. 
 
-<img src="/images/Jails-MountPointExample.png" width='700px'>
+![Jails Mountpoint Example](/images/CORE/12.0/JailMountpointExample.png "Jails Mountpoint Example")
 <br><br>
 
 Storage is automatically mounted as it is created.
