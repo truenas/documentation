@@ -14,11 +14,11 @@ S3 is an object storage protocol used by many major cloud providers including Am
 
 Go to **Services > S3** and click on the pencil icon to edit.
 
-<img src="/images/S3-SelectConfigure.png"><br><br>
+![Services S3 Enable](/images/CORE/12.0/ServicesS3Enable.png "Services S3 Enable")<br><br>
 
 Set up the configuration inside this window.
 
-<img src="/images/S3-EditConfig.png"><br><br>
+![Services S3 Options](/images/CORE/12.0/ServicesS3Options.png "Services S3 Options")
 
 Select IP address `0.0.0.0` to allow the service to listen on any IP address. Select the TrueNAS IP address to constrain it to a specific network.
 The default port is `9000`, but it can be changed as needed.
@@ -27,7 +27,7 @@ Set an access key and secret key.
 
 Select a clean dataset. Files are managed by Minio as objects, and can NOT be mixed with other dataset files. New datasets can be created by going to **Storage > Pools > three dot menu > Add Dataset** to create a new one.
 
-<img src="/images/S3-AddDataset.png"><br><br>
+![Storage Pools Add Dataset](/images/CORE/12.0/StoragePoolsAddDataset.png "Storage Pools Add Dataset")<br><br>
 
 Choose to allow an S3 web browser (Minio Browser).
 
@@ -35,7 +35,7 @@ Choose an SSH certificate for more secure connections.
 
 Start the service and select whether to start automatically (on system boot). 
 
-<img src="/images/S3-EnableService.png"><br><br>
+![Services S3 Enable](/images/CORE/12.0/ServicesS3Enable.png "Services S3 Enable")<br><br>
 
 Test access to the Minio Browser by opening a web browser and typing the TrueNAS IP address with the TCP port. For example: `http://192.168.0.3:9000`
 
