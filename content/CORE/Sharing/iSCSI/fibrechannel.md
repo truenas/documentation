@@ -24,7 +24,7 @@ Fibre Channel is a high-speed data transfer protocol providing in-order, lossles
 
 TrueNAS systems licensed for Fibre Channel will have a tab *Fibre Channel Ports* added to **Sharing > Block Shares (iSCSI)**.
 
-<img src="/images/FibreTab.png"><br><br>
+![Sharing ISCSI Fibre Channel Ports](/images/CORE/12.0/SharingISCSIFibreChannelPorts.png "Sharing ISCSI Fibre Channel Ports")
 
 ### Configuring a Fibre Channel ISCSI share example.
 
@@ -32,15 +32,15 @@ TrueNAS systems licensed for Fibre Channel will have a tab *Fibre Channel Ports*
 
 Navigate to **Storage > Pools**.  Select an existing pool such as tank, click the <i class="fa fa-bars" aria-hidden="true"></i>&nbsp; hamburger menu, and click **Add zvol** to create a <a href="/hub/initial-setup/storage/zvols/">new zvol</a>. 
 
-<img src="/images/FibrezvolPool.png"><br><br>
+![Storage Pools Zvol Fibre Enterprise](/images/CORE/12.0/StoragePoolsZvolFibreEnterprise.png "Storage Pools Zvol Fibre Enterprise")
 
 Navigate to sharing, Block Shares (iSCSI), click portals.  If portal with listen interface `0.0.0.0:3260` does not yet exist click **Add** and add one.
 
-<img src="/images/FibreAddPortals.png"><br><br>
+![ISCSI Targets Add Fibre](/images/CORE/12.0/ISCSITargetsAddFibre.png "ISCSI Targets Add Fibre")
 
 Navigate to sharing, Block Shares (iSCSI), click Targets, click **Add**. Enter  or select values specified for *Target Name*, *Target Alias*, *Target Mode*, and *Portal Group*. Click the **Submit** button.
 
-<img src="/images/FibreAddTarget.png"><br><br>
+![Sharing ISCSI Targets Add Fibre](/images/CORE/12.0/SharingISCSITargetsAddFibre.png "Sharing ISCSI Targets Add Fibre")
 
 > **Note:** An extra *Target Mode* option appears after going to Targets and clicking **ADD**. This new option is to select whether the target to create is iSCSI, Fibre Channel, or both.
 
@@ -48,11 +48,11 @@ Navigate to sharing, Block Shares (iSCSI), click Targets, click **Add**. Enter 
 
 Navigate to sharing, Block Shares (iSCSI), click **Extents**, click **Add**, enter values for *Extent Name* and *Device*. Click the **Submit** button.
 
-<img src="/images/FibreAddExtents.png"><br><br>
+![ISCSI Extents Add Fibre](/images/CORE/12.0/ISCSIExtentsAddFibre.png "ISCSI Extents Add Fibre")
 
 Navigate to **Sharing > Block Shares (iSCSI)**, click Associated Targets, click Add, select values for *Target** and **Extent*. Click the **Submit** button.
 
-<img src="/images/FibreAddAssoc.png"><br><br>
+![ISCSI Assoc Target Add Fibre](/images/CORE/12.0/ISCSIAssocTargetAddFibre.png "ISCSI Assoc Target Add Fibre")
 
 Navigate to sharing, Block Shares (iSCSI), click **Fibre Channel Ports**, expand using > next to isp0, select options as presented under test data, and click save.
 
