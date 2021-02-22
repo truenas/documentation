@@ -18,7 +18,7 @@ Select *Internal CA* as the *Type*.
 
 If you want, you can select a profile for the CA. Selecting a profile automatically sets certain options such as *Key Type*, *Key Length*, *Digest Algorithm*, and more. If you would like to set each option manually, do not select a profile from the *Profiles* dropdown. 
 
-![SMBShareOpts](/images/CORE/12.0/SharingSMBAdd.png)
+![Internal CA Identifier Type](/images/CORE/12.0/InternalCAIdentifierType.png)
 <br><br>
 
 ### Certificate Options
@@ -28,7 +28,7 @@ If you want, you can select a profile for the CA. Selecting a profile automatica
 3. Select a *Digest Algorithm*. We recommend *SHA256*. 
 4. Enter the *Lifetime* of the CA in days to set how long the CA will remain valid.
 
-![SMBShareOpts](/images/CORE/12.0/InternalCACertificateOptions.png)
+![Internal CA Certificate Options](/images/CORE/12.0/InternalCACertificateOptions.png)
 <br><br>
 
 ### Certificate Subject
@@ -46,14 +46,14 @@ If you want, you can select a profile for the CA. Selecting a profile automatica
 2. Set a *Path Length* to determine how many non-self-issued intermediate certificates can follow this certificate in a valid certification path. Entering *0* allows a single additional certificate to follow in the certificate path. 
 3. Select the *Basic Constraints Config*. You can select more than one from the dropdown.
 
-![SMBShareOpts](/images/CORE/12.0/InternalCABasicConstraints.png)
+![Internal CA Basic Constraints](/images/CORE/12.0/InternalCABasicConstraints.png)
 <br><br>
 
 ### Authority Key Identifier
 
 If you want an *Authority Key Identifier*, set it to *Enabled*, then select the *Authority Key Config*. You can select more than one from the dropdown.
 
-![SMBShareOpts](/images/CORE/12.0/InternalCAAuthorityKeyIdentifier.png)
+![Internal CA Authority Key Identifier](/images/CORE/12.0/InternalCAAuthorityKeyIdentifier.png)
 <br><br>
 
 ### Key Usage
@@ -64,11 +64,11 @@ Extended Key Usage is typically used for end entity certificates.
 2. Enable *Critical Extension* if you want to identify this extension as critical for the certificate. Do not enable *Critical Extension* if *Usages* contains *ANY_EXTENDED_KEY_USAGE*. 
 
 {{< hint [info] >}}
-**Markdown content**\
-NOTE: Using both *Extended Key Usage* and *Key Usage* extensions requires that the purpose of the certificate is consistent with both extensions. See [RFC 3280, section 4.2.1.13](https://www.ietf.org/rfc/rfc3280.txt) for more details.
+**NOTE:**\
+Using both *Extended Key Usage* and *Key Usage* extensions requires that the purpose of the certificate is consistent with both extensions. See [RFC 3280, section 4.2.1.13](https://www.ietf.org/rfc/rfc3280.txt) for more details.
 {{< /hint >}}
 
-![SMBShareOpts](/images/CORE/12.0/InternalCertificateKeyUsage.png)
+![Internal Certificate Key Usage](/images/CORE/12.0/InternalCertificateKeyUsage.png)
 <br><br>
 
 ## Create an Intermediate CA
@@ -79,7 +79,7 @@ Select *Intermediate CA* as the *Type*.
 
 If you want, you can select a profile for the CA. Selecting a profile automatically sets certain options such as *Key Type*, *Key Length*, *Digest Algorithm*, and more. If you would like to set each option manually, do not select a profile from the *Profiles* dropdown. 
 
-![SMBShareOpts](/images/CORE/12.0/IntermediateCAIdentifierType.png)
+![Intermediate CA Identifier Type](/images/CORE/12.0/IntermediateCAIdentifierType.png)
 <br><br>
 
 ### Certificate Options
@@ -90,7 +90,7 @@ If you want, you can select a profile for the CA. Selecting a profile automatica
 4. Select a *Digest Algorithm*. We recommend *SHA256*. 
 5. Enter the *Lifetime* of the CA in days to set how long the CA will remain valid.
 
-![SMBShareOpts](/images/CORE/12.0/IntermediateCACertificateOptions.png)
+![Intermediate CA Certificate Options](/images/CORE/12.0/IntermediateCACertificateOptions.png)
 <br><br>
 
 ### Certificate Subject
@@ -98,7 +98,7 @@ If you want, you can select a profile for the CA. Selecting a profile automatica
 1. Fill out the geographic information of the certificate by entering the *Country*, *Locality*, *Organizational Unit* (optional), *Common Name*, *State*, *Organization*, *Email*, and *Subject Alternate Names*. 
 2. The *Common Name* is the [fully-qualified hostname (FQDN)](https://kb.iu.edu/d/aiuv) and must be unique within a certificate chain.
 
-![SMBShareOpts](/images/CORE/12.0/IntermediateCACertificateSubject.png)
+![Intermediate CA Certificate Subject](/images/CORE/12.0/IntermediateCACertificateSubject.png)
 <br><br>
 
 ### Basic Constraints
@@ -107,16 +107,15 @@ If you want, you can select a profile for the CA. Selecting a profile automatica
 2. Set a *Path Length* to determine how many non-self-issued intermediate certificates can follow this certificate in a valid certification path. Entering *0* allows a single additional certificate to follow in the certificate path. 
 3. Select the *Basic Constraints Config*. You can select more than one from the dropdown.
 
-![SMBShareOpts](/images/CORE/12.0/InternalCABasicConstraints.png)
+![Internal CA Basic Constraints](/images/CORE/12.0/InternalCABasicConstraints.png)
 <br><br>
 
 ### Authority Key Identifier
 
 If you want an *Authority Key Identifier*, set it to *Enabled*, then select the *Authority Key Config*. You can select more than one from the dropdown.
 
-![SMBShareOpts](/images/CORE/12.0/InternalCAAuthorityKeyIdentifier.png)
+![Internal CA Authority Key Identifier](/images/CORE/12.0/InternalCAAuthorityKeyIdentifier.png)
 <br><br>
-
 
 ### Key Usage
 
@@ -126,11 +125,11 @@ Extended Key Usage is typically used for end entity certificates.
 2. Enable *Critical Extension* if you want to identify this extension as critical for the certificate. Do not enable *Critical Extension* if *Usages* contains *ANY_EXTENDED_KEY_USAGE*. 
 
 {{< hint [info] >}}
-**Markdown content**\
-NOTE: Using both *Extended Key Usage* and *Key Usage* extensions requires that the purpose of the certificate is consistent with both extensions. See [RFC 3280, section 4.2.1.13](https://www.ietf.org/rfc/rfc3280.txt) for more details.
+**NOTE:**\
+Using both *Extended Key Usage* and *Key Usage* extensions requires that the purpose of the certificate is consistent with both extensions. See [RFC 3280, section 4.2.1.13](https://www.ietf.org/rfc/rfc3280.txt) for more details.
 {{< /hint >}}
 
-![SMBShareOpts](/images/CORE/12.0/InternalCertificateKeyUsage.png)
+![Internal Certificate Key Usage](/images/CORE/12.0/InternalCertificateKeyUsage.png)
 <br><br>
 
 ## Import a CA
@@ -139,7 +138,7 @@ NOTE: Using both *Extended Key Usage* and *Key Usage* extensions requires that t
 
 Select *Import a CA* as the *Type*. 
 
-![SMBShareOpts](/images/CORE/12.0/ImportCAIdentifierType.png)
+![Import CA Identifier Type](/images/CORE/12.0/ImportCAIdentifierType.png)
 <br><br>
 
 ### Certificate Subject
@@ -148,5 +147,5 @@ Select *Import a CA* as the *Type*.
 2. Paste the *Private Key* associated with the Certificate when available. Provide a key at least 1024 bits long.
 3. Enter and confirm the *Passphrase* for the Private Key.
 
-![SMBShareOpts](/images/CORE/12.0/ImportCACertificateSubject.png)
+![Import CA Certificate Subject](/images/CORE/12.0/ImportCACertificateSubject.png)
 <br><br>
