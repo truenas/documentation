@@ -29,7 +29,7 @@ Choose whether to adjust the default options of port number, max number of clien
 
 Click advanced, ensure chroot is enabled (this helps confine FTP sessions to a local user's home directory) and allow **Local User Login**. Unless necessary, do NOT allow anonymous or root access. For better security, recommend enabling TLS if able - effectively FTPS. TLS definitely should be enabled if the FTP service is to be exposed to a WAN.
 
-<img src="/images/FTPOptions.png">
+![Services FTP Options](/images/CORE/12.0/ServicesFTPOptions.png "Services FTP Options")
 <br><br>
 
 Using a browser or FTP client, such as FileZilla, connect to the TrueNAS FTP share. Note the user name and password are those of the local user account on the TrueNAS itself. The default directory is the same as the user's /home directory. Directories can be created and files uploaded and downloaded.
@@ -66,12 +66,12 @@ After creation open the menu by clicking the expand icon **<** on the right-hand
 
 Similar to the initial FTP setup, create a user in the jail. Type **adduser** and follow the fields including the password and home directory location. Once filled in the system will ask to confirm the credentials.
 
-<img src="/images/Jail-AddUser.png">
+![Jails Shell User Add](/images/CORE/12.0/JailsShellUserAdd.png "Jails Shell User Add")
 <br><br>
 
 Enable SSH by editing the <file>/etc/rc.conf</file> file. Type `vi /etc/rc.conf` or `ee /etc/rc.conf` depending on preference, add `sshd_enable = "YES"` to the file, save, and exit. Type `service sshd enabled` to enable the service (enabled vs start indicates whether sshd will start once or on every reboot). 
 
-<img src="/images/Editrcconf.png">
+![Jails Shell Edit RCConf](/images/CORE/12.0/JailsShellEditRCConf.png "Jails Shell Edit RCConf")
 <br><br>
 
 Using an FTP client, such as FileZilla, log in with the jail IP address and user credentials. Like with SSH on TrueNAS, browsing to other folders and locations beyond the user's home directory is possible, but unlike running on TrueNAS directly, only the components of the jail are available.
@@ -86,7 +86,7 @@ The Trivial File Transfer Protocol (TFTP) is a light-weight version of FTP typic
 If the TrueNAS system will be used to store images and configuration files for network devices, configure and start the TFTP service.
 Starting the TFTP service opens UDP port `69`.
 
-<img src="/images/TN12.0-ServicesTFTP.png" width='700px'>
+![Services TFTP Options](/images/CORE/12.0/ServicesTFTPOptions.png "Services TFTP Options")
 <br><br>
 
 ### TFTP Service Options
