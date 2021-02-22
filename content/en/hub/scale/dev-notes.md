@@ -17,11 +17,11 @@ tags: ["SCALE"]
 
 > 10/29/2020 - Updated [Kubernetes Workload Usage](#using-kubernetes) information, providing examples of deploying Docker images on SCALE
 
-> 10/14/2020 - Updated [Roadmap / Information](#containerisation) about Kubernetes and Linux container support in SCALE
+> 10/14/2020 - Updated [Roadmap / Information](#containerization) about Kubernetes and Linux container support in SCALE
 
 > 9/25/2020 - Samba 4.13.0 added - Includes iX VFS modules, Shadow Copies, and IO_URING support (Enabled by default)
 
-> 9/24/2020 - Preliminary support for Kubernetes added to middleware backend! - [Usage Instructions](#containerisation)
+> 9/24/2020 - Preliminary support for Kubernetes added to middleware backend! - [Usage Instructions](#containerization)
 
 > 9/21/2020 - UX Refresh - New Networking section added
 
