@@ -14,12 +14,12 @@ By default, all options are available if you need to adjust this setting to matc
 
 Log in to the web interface and go to **System > General**:
 
-<img src="/images/12.0-SystemGeneral.png">
+![System General](/images/CORE/12.0/SystemGeneral.png "System General")
 <br><br>
 
 Click on *HTTPS Protocols* to open a dropdown menu with the various cipher suites.
 Unsetting a cipher restricts its use in TrueNAS.
 After enabling or disabling a cipher, the TrueNAS system must be rebooted.
 
-<img src="/images/SystemGeneralHTTPSProtocols.png">
+![System General HTTPS Protocols](/images/CORE/12.0/SystemGeneralHTTPSProtocols.png "System General HTTPS Protocols)
 <br><br>
