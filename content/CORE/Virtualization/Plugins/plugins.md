@@ -21,7 +21,7 @@ It is also recommended to go to **Network > Interfaces** and set *Disable Hardwa
 Open the **Plugins** menu to find the plugins that are available to download.
 If no options appear, verify the system can `ping` an Internet address and confirm the default gateway address and DNS server address are correct in **Network > Global Configuration**.
 
-<img src="/images/PluginsAvailable.png">
+![Plugins List](/images/CORE/12.0/PluginsList.png "Plugins List")
 <br><br>
 
 Plugins are organized by those supported by [iXsystems](https://www.ixsystems.com/) and open source plugins created and maintained by the TrueNAS community.
@@ -30,7 +30,7 @@ To view the community-supported plugins, open *Browse a Collection* and select *
 
 To install a plugin, click the plugin icon then *Install*.
 
-<img src="/images/PluginsInstall.png">
+![Plugins Tarsnap Install](/images/CORE/12.0/PluginsTarsnapInstall.png "Plugins Tarsnap Install")
 <br><br>
 
 Enter a name for the plugin jail and adjust the networking settings as needed.
@@ -54,7 +54,7 @@ A couple of possible solutions are to hard reset your router to clear any stale 
 
 After a plugin is installed, an entry is added to the **Plugins** screen.
 
-<img src="/images/PluginsInstalledExample.png">
+![Plugins List with Installed](/images/CORE/12.0/PluginsListWithInstalled.png "Plugins List With Installed")
 <br><br>
 
 You can manage the plugin state, update the plugin application, configure the plugin jail mount points to storage datasets, and, when supported, open a link to the management portal for the plugin application.
@@ -63,7 +63,7 @@ Plugin jails are preconfigured and typically require very little tuning, but you
 To update or reconfigure the plugin jail, go to the **Jails** screen and expand the entry for one of the plugin jails.
 You need to <i class="fas fa-stop" aria-hidden="true" title="Stop"></i> stop the jail before you can edit it.
 
-<img src="/images/PluginJailInstalled.png">
+**<img src="/images/PluginJailInstalled.png">**
 <br><br>
 
 ## Removing a Plugin
@@ -76,14 +76,15 @@ Make sure to back up any important data stored in the plugin jail before deletin
 To find a jail's stored data, go to **Storage > Pools** and expand the entry for the pool that was chosen to store plugin and jail data.
 Expand the `iocage` and `jails` datasets to find the plugin jail storage dataset.
 
-<img src="/images/Jails-StorageDataset.png">
+![Storage Pools Jails Dataset Location](/images/CORE/12.0/StoragePoolsJailsDatasetLocation.png "Storage Pools Jails Dataset Location")
 <br><br>
 One option to back up this stored data is to create a [local replication](/hub/tasks/scheduled/replication/local/).
 The replication task can even be configured to run periodically and automatically back up new changes to the jail dataset.
 
 To convert a jail snapshot into a new storage dataset, go to **Storage > Snapshots** and find a snapshot of the jail dataset.
 
-<img src="/images/Jail-SnapshotOptions.png">
+![Storage Snapshots Jails Location](/images/CORE/12.0/Storage Snapshots Jails Location.png "Storage Snapshots Jails Location")
+
 <br><br>
 
 Expand the snapshot entry, click <i class="fas fa-clone" aria-hidden="true" title="Clone"></i>&nbsp **Clone to New Dataset**, and define the path and name of the new dataset to create from the snapshot.
@@ -94,7 +95,7 @@ Then go to **Storage > Pools**, open the <i class="fas fa-ellipsis-v" aria-hidde
 To remove a plugin, go to **Plugins**, expand the installed plugin entry, and click <i class="fas fa-trash" aria-hidden="true" title="Delete"></i>&nbsp; **Uninstall**.
 Confirm the plugin removal by typing in the name of the plugin jail and setting *Confirm*.
 
-<img src="/images/PluginUninstall.png">
+![Plugins Uninstall](/images/CORE/12.0/PluginsUninstall.png "Plugins Uninstall")
 <br><br>
 
 Uninstalling can take a few moments.
