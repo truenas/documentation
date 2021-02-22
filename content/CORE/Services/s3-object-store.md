@@ -88,4 +88,4 @@ Select the SSL settings appropriate for the particular setup. The default assume
 
 It is possible to access, create new buckets, or upload files to created buckets.
 
-<img src="/images/S3-ExploreBrowse.png""><br><br>
+<img src="/images/S3-ExploreBrowse.png"><br><br>
