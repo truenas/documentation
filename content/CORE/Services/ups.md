@@ -8,7 +8,7 @@ tags: ["UPS"]
 TrueNAS uses [NUT](https://networkupstools.org/) (Network UPS Tools) to provide UPS support.
 When the TrueNAS system is connected to a UPS device, configure the UPS service in **Services > UPS > Configure**.
 
-<img src="/images/UPSOptions.png">
+![Service UPS Options](/images/CORE/12.0/ServicesUPSOptions.png "Service UPS Options")
 <br><br>
 
 ## UPS Configuration Options
