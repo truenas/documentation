@@ -1,6 +1,6 @@
 ---
 title: "ZFS Deduplication"
-weight: 40
+weight: 60
 ---
 
 {{< toc >}}
@@ -116,13 +116,14 @@ These commands monitor RAM, CPU, and disk I/O.
 These utilities provide much more information about RAM and memory caching systems and ZFS memory use.
 {{< /tab >}}
 {{< /tabs >}}
-{{< expand "Additional Resources" "v" >}}
-* [Diagnosing Deduplication Performance Issues](https://www.truenas.com/community/threads/baffling-performance-issues-with-large-zfs-pool.84780/page-2#post-604334)
-* [NVRAM and Optane based SSDs when choosing a fast pool SSD](https://www.truenas.com/community/resources/a-bit-about-ssd-perfomance-and-optane-ssds-when-youre-plannng-your-next-ssd.149/)
-* [Building a server capable of fast consistent deduplication](https://www.truenas.com/community/resources/my-experiments-in-building-a-home-server-capable-of-handling-fast-consistent-deduplication.148/)
-{{< /expand >}}
 
 {{< expand "Hashing Note" "v" >}}
 Deduplication hashes (calculates a digital signature) for the data in each block to be written to disk and checking to see if data already exists in the pool with the same hash.
 When a block exists with the same hash, then the block is not written and a new pointer is written to the DDT and saving that space. Depending how the hash is calculated, there is a possibility that two different blocks could have the same hash and cause the file system to believe the blocks are the same. When choosing a hash, choose one that is complex, like *SHA 256*, *SHA 512*, and *Skein*, to minimize this risk.
 {{< /expand >}}
+
+## Additional Resources
+
+* [Diagnosing Deduplication Performance Issues](https://www.truenas.com/community/threads/baffling-performance-issues-with-large-zfs-pool.84780/page-2#post-604334)
+* [NVRAM and Optane based SSDs when choosing a fast pool SSD](https://www.truenas.com/community/resources/a-bit-about-ssd-perfomance-and-optane-ssds-when-youre-plannng-your-next-ssd.149/)
+* [Building a server capable of fast consistent deduplication](https://www.truenas.com/community/resources/my-experiments-in-building-a-home-server-capable-of-handling-fast-consistent-deduplication.148/)

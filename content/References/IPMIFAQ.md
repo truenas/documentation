@@ -1,10 +1,7 @@
 ---
-title: "iXsystems Remote Management (IPMI) Frequently Asked Questions (FAQ)"
-description: "iXsystems Remote Management Frequently Asked Questions"
-tags: ["TrueNAS Products","ipmi"]
+title: "IPMI Frequently Asked Questions"
+weight: 25
 ---
-
-## iXsystems Remote Management (IPMI) Frequently Asked Questions (FAQ)
 
 **How do I connect to Remote Management?**
 

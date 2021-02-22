@@ -1,5 +1,5 @@
 ---
-title: "TrueNAS Default Ports"
+title: "Default Ports"
 weight: 20
 ---
 
