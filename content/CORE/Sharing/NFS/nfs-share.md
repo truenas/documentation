@@ -7,7 +7,7 @@ tags: ["networking","NFS"]
 Creating a Network File System (NFS) share on TrueNAS gives the benefit of making lots of data easily available for anyone with share access.
 Depending how the share is configured, users accessing the share can be restricted to read or write privileges.
 
-To get started, make sure a <a href="/hub/initial-setup/storage/datasets">dataset has been created</a>.
+To get started, make sure a [dataset](/CORE/Storage/datasets) has been created.
 This dataset serves as share data storage.
 If a dataset already exists, proceed to turning the NFS service on.
 
@@ -18,7 +18,7 @@ If you want NFS sharing to activate immediately after TrueNAS boots, set **Start
 
 NFS service settings can be configured by clicking <i class="fas fa-pen" aria-hidden="true" title="Configure"></i> (Configure).
 
-<img src="/images/NFSServiceConfig.png">
+![Services NFS Options](/images/CORE/12.0/ServicesNFSOptions.png "Services NFS Options")
 <br><br>
 
 | Setting                           | Value     | Description                                                                                                                                                                                             |
@@ -44,7 +44,7 @@ When TrueNAS is already connected to [Active Directory](/hub/initial-setup/secur
 
 Go to **Sharing > Unix Shares (NFS)** and click **ADD**.
 
-<img src="/images/NFSShareAdd.png">
+![Services NFS Add](/images/CORE/12.0/SharingNFSAdd.png "Services NFS Add")
 <br><br>
 
 Use the file browser to select the dataset to be shared.
@@ -53,9 +53,9 @@ Clicking *SUBMIT* creates the share.
 At the time of creation, you can select *ENABLE SERVICE* for the service to start and to automatically start after any reboots.
 If you wish to create the share but not immediately enable it, select *CANCEL*.
 
-<img src="/images/NFSupdate2.png" width='700px'>
+![Services NFS Add Service Enable](/images/CORE/12.0/SharingNFSAddServiceEnable.png "Services NFS Add Service Enable")
 
-<img src="/images/NFSupdate3.png" width='700px'>
+![Services NFS Service Enable Success](/images/CORE/12.0/SharingNFSAddServiceEnableSuccess.png "Services NFS Add Service Enable Success")
 
 
 ### NFS Share Settings
@@ -77,7 +77,7 @@ If you wish to create the share but not immediately enable it, select *CANCEL*.
 
 Opening the *ADVANCED OPTIONS* allows tuning the share access permissions and defining authorized networks.
 
-<img src="/images/NFSupdate1.png" width='700px'>
+![Services NFS Advanced](/images/CORE/12.0/SharingNFSAdvanced.png "Services NFS Advanced")
 
 To edit an existing NFS share, go to **Sharing > Unix Shares (NFS)** and click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i> (Options) > **Edit**.
 
