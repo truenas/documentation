@@ -10,7 +10,7 @@ If the network uses a directory service, import the existing account information
 
 To see saved groups, go to **Accounts > Groups**
 
-<img src="/images/AccountsGroupsList.png">
+![Accounts Groups List](/images/CORE/12.0/AccountsGroupsList.png "Accounts Groups List")
 <br><br>
 
 By default, groups that are built in to the system are hidden.
@@ -20,7 +20,7 @@ To see built-in groups, click <i class="fas fa-cog" aria-hidden="true" title="Se
 
 To create a new group, go to **Accounts > Groups** and click **ADD**.
 
-<img src="/images/AccountsGroupsAdd.png">
+![Accounts Groups Add](/images/CORE/12.0/AccountsGroupsAdd.png "Accounts Groups Add")
 <br><br>
 
 Each group is assigned a Group ID (**GID**).
@@ -49,7 +49,7 @@ Leaving this option unset is recommended.
 After a group is created, user accounts can then be added or removed from the group.
 To manage existing group membership, go to **Accounts > Groups**, click <i class="fas fa-chevron-right" aria-hidden="true" title="Right Chevron"></i>, and **MEMBERS**.
 
-<img src="/images/AccountsGroupsMembers.png">
+![Accounts Groups Members](/images/CORE/12.0/AccountsGroupsMembers.png "Accounts Groups Members")
 <br><br>
 
 To add user accounts to the group, select them from the list of *All users* and click <i class="fas fa-arrow-right" aria-hidden="true" title="Right Arrow"></i>.
