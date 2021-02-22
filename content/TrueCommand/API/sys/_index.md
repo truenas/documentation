@@ -3,6 +3,7 @@ title: "System Management"
 draft: false
 pre: "<i class='fa fa-cogs'></i>	"
 geekdocCollapseSection: true
+no_list: true
 ---
 
 ## API Class: sys
