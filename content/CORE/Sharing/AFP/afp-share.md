@@ -20,12 +20,12 @@ Go to **Sharing > Apple Shares (AFP)** and click *ADD* to create an AFP share.Yo
 Next, use the file browser and select a dataset to share. Enter a descriptive name for the share. If this share is is to be used for Time Machine backups, set *Time Machine*. This advertises the share as a disk for other Mac systems to use as storage for Time Machine backups. It is not recommended to have multiple AFP shares configured for Time Machine backups. If desired, you can set *Use as Home Share*. When this setting is enabled, users that connect to the share have home directories created for them. Only one share can be used as a home share. At the time of creation, the AFP share is enabled by default. If you wish to create the share but not immediately enable it, unset the *Enable* checkbox. 
 Clicking *SUBMIT* creates the share.
 
-<img src="/images/AFPsetup1.png" width='700px'>
+![Sharing AFP Add](/images/CORE/12.0/SharingAFPAdd.png "Sharing AFP Add")
 <br><br>
 
 Opening the *ADVANCED OPTIONS* allows you to modify the shares permissions, add a description, and specify auxillary parameters.
 
-<img src="/images/AFPsetup2.png" width='700px'>
+![Sharing AFP Add Advanced](/images/CORE/12.0/SharingAFPAddAdvanced.png "Sharing AFP Add Advanced")
 <br><br>
 
 Existing AFP shares can be edited by going to **Sharing > Apple Shares (AFP)** and clicking <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>.
@@ -39,12 +39,12 @@ The AFP share does not work if the service is not turned on.
 The AFP service settings can be configured by clicking <i class="fas fa-pen" aria-hidden="true" title="Configure"></i>. Select the database path used for the AFP Share.
 Don't forget to click *SAVE* when changing the settings. Unless a specific setting is needed, it is recommended to use the default settings for the AFP service.
 
-<img src="/images/AFPsetup3.png" width='700px'>
+![Services AFP Edit](/images/CORE/12.0/ServicesAFPEdit.png "Services AFP Edit")
 <br><br>
 
 ## Connecting to the AFP Share
 
 Although you can connect to an AFP share with various operating systems, it is recommended to use a Mac operating system. First, open the *Finder* app. Click **Go > Connect to Server...** in the top menu bar of the application. Next, enter <code>afp://<i>IPofTrueNASsystem</i></code> and click *Connect*. For example, entering `afp://192.168.2.2` connects to the AFP share on a TrueNAS system with the IP address of `192.168.2.2`. By default, any user that connects to the AFP share only has the read permission.
 
-<img src="/images/AFPsharing.png" width='700px'>
+![Apple AFP Connect](/images/CORE/AppleAFPConnect.png "Apple AFP Connect")
 <br><br>
