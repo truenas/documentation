@@ -3,6 +3,7 @@ title: "FreeNAS management"
 draft: false
 pre: "<i class='fa fa-terminal'></i> "
 geekdocCollapseSection: true
+no_list: true
 ---
 
 ## API Class: FreeNAS

@@ -3,6 +3,7 @@ title: "UI Logging"
 draft: false
 pre: "<i class='fa fa-archive'></i>	"
 geekdocCollapseSection: true
+no_list: true
 ---
 
 ## API Class: uilogs
