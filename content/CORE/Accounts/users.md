@@ -5,15 +5,15 @@ description: "How to add or manage user accounts."
 
 User accounts can be added to the TrueNAS system to allow flexibility for user permissions to access shared data.
 Note that only the `root` user account can be used to log in to the TrueNAS web interface.
-A common practice is to create users and assign them to <a href="/hub/initial-setup/security/accounts/groups/">groups</a>.
+A common practice is to create users and assign them to [groups](/CORE/Accounts).
 This allows for efficient permissions tuning for large numbers of users.
 
-If the network uses a directory service, import the existing account information using the instructions in <a href="/hub/initial-setup/security/directory-services/">Directory Services</a>.
-When using [Active Directory](/hub/initial-setup/security/directory-services/activedirectory/), Windows user passwords must be set from within Windows.
+If the network uses a directory service, import the existing account information using the instructions in [Directory Services](/CORE/DirectoryServices).
+When using [Active Directory](/CORE/DirectoryServices/activedirectory/), Windows user passwords must be set from within Windows.
 
 To see user accounts, go to **Accounts > Users**.
 
-<img src="/images/AccountsUsersList.png">
+![Accounts Users List](/images/CORE/12.0/AccountsUsersList.png "Accounts Users List")
 <br><br>
 
 TrueNAS hides all built-in users by default. To see all built-in users, click <i class="fas fa-cog" aria-hidden="true" title="Settings"></i> and **SHOW**.
@@ -22,7 +22,7 @@ TrueNAS hides all built-in users by default. To see all built-in users, click <i
 
 To create a new user, go to **Accounts > Users** and click *ADD*.
 
-<img src="/images/AccountsUsersAdd.png">
+![Accounts Users Add](/images/CORE/12.0/AccountsUsersAdd.png "Accounts Users Add")
 <br><br>
 
 Account options are subdivided into groups of similar options.
