@@ -17,17 +17,18 @@ Clicking **Wipe** offers several options:
 Go to **Storage** > **Disks**. Click on **>** to the right of the disk you have chosen to wipe. A basic description of the disk will be provided.  Click on **WIPE**.
 Dialog will show the **Name** of the disk (da1, da2, ada4 etc.) and **Method**.  Click on **Method**. Dropdown will show the different wipe options available.
 
-{{% alert title=Warning color=warning %}}
+{{< hint warning >}}
 Ensure all data is backed up and the disk is no longer in use. Triple check that the correct disk is being selected to be wiped, as recovering data from a wiped disk is usually impossible.
-{{% /alert %}}
+{{< /hint >}}
 
-<img src="/images/DiskWipe1.png" width='700px'>
+![Storage Disks Expand](/images/CORE/12.0/StorageDisksExpand.png "Storage Disks Expand")
+StorageDisksExpand.png
 <br><br>
 
-<img src="/images/DiskWipe2.png" width='700px'>
+![Storage Disks Wipe Method](/images/CORE/12.0/StorageDisksWipeMethod.png "Storage Disks Wipe Method")
 <br><br>
 
 After choosing the appropriate method, click **WIPE**.  A dialog prompts **Wipe this disk?**.  ***Verify the name to ensure you have the correct disk chosen***. Check **Confirm** and click **CONTINUE**.  **Wipe** progress is shown in a dialog.
 
-<img src="/images/DiskWipe3.png" width='700px'>
+![Storage Disks Wipe Confirm](/images/CORE/12.0/StorageDisksWipeConfirm.png "Storage Disks Wipe Confirm")
 <br><br>
