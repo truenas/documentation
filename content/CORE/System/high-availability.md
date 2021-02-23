@@ -51,12 +51,12 @@ You can set the host names for both controllers and a virtual host name that rea
 
 Next, go to **Network > Interfaces** and edit the primary interface.
 
-{{% alert title="Restricted by HA" color="warning" %}}
+{{< hint warning >}}
 Editing interfaces is disabled when HA is active.
 To disable HA, go to **System > Failover** and disable failover.
 Edit the interface, then reactivate failover immediately.
 TrueNAS automatically synchronizes the configuration changes to the standby controller
-{{% /alert %}}
+{{< /hint >}}
 
 ![Network Interface Edit HA Enterprise](/images/CORE/12.0/NetworkInterfaceEditHAEnterprise.png "Network Interface Edit HA Enterprise")
 <br><br>
@@ -89,6 +89,6 @@ You can have the system wait to failover during a network timeout by overwriting
 
 TrueNAS is designed to automatically synchronize the system configuration, but manual sync options are available during high-risk troubleshooting situations.
 
-{{% alert title="Danger" color="danger" %}}
+{{< hint warning >}}
 Do not manually sync the TrueNAS configuration unless directed by an iXsystems Support Engineer!
-{{% /alert %}}
+{{< /hint >}}
