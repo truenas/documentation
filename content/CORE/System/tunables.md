@@ -11,11 +11,11 @@ Tunables are used to manage TrueNAS [sysctls](https://www.freebsd.org/cgi/man.cg
 * *rc.conf* tunables are for enabling system services and daemons and only take effect after a reboot.
 * *sysctl* tunables are used to configure kernel parameters while the system is running and generally take effect immediately.
 
-{{% alert title=Warning color=warning %}}
+{{< hint warning >}}
 Adding a sysctl, loader, or `rc.conf` option is an advanced feature.
 A sysctl immediately affects the kernel running the TrueNAS system and a loader could adversely affect the ability of the TrueNAS system to successfully boot.
 Do not create a tunable on a production system before testing the ramifications of that change.
-{{% /alert %}}
+{{< /hint >}}
 
 ## Configuring System Tunables
 
