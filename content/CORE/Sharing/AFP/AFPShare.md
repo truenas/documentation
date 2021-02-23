@@ -12,7 +12,7 @@ It is similar to SMB and NFS, but was made specifically for Apple systems.
 Beginning in 2013, Apple began using the SMB sharing protocol as the default option for file sharing and ceased development of the AFP sharing protocol. It is recommended to use SMB sharing instead of AFP, unless files are being shared with legacy Apple products. Please see https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/APFS_Guide/FAQ/FAQ.html
 {{< /hint >}}
 
-Before getting started, make sure a [dataset is created](/hub/initial-setup/storage/datasets) and contains the data to be shared.
+{{< include file="static/includes/SharingPrereqs.md.part" markdown="true" >}}
 
 ## AFP Share Configuration
 
