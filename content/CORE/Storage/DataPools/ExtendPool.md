@@ -28,15 +28,15 @@ Examples are as follows:
 
 Mixing disks of different sizes in a vdev is not allowed.  For example, if you have a mirrored pool with two 3TB drives, the added disks must also be 3TB.
 
-<img src="/images/PoolManagerPage5.png" width='700px'>
+![Storage Pools Add Create Vdev Warning](/images/CORE/12.0/StoragePoolsAddCreateVdevWarning.png "Storage Pools Add Create Vdev Warning")
 <br>
 
 For encrypted pools, the added disks will inherit the same encryption options as the parent disks (encryption key/passphrase).
 
-{{% pageinfo %}}
+{{< hint >}}
 Before creating a pool, determine the level of required redundancy, how many disks will be added, and if any data exists on those disks.
 Creating a pool/adding vdevs overwrites disk data, so save any required data to different media before adding disks/vdevs to a pool.
-{{% /pageinfo %}}
+{{< /hint >}}
 
 ### Process ###
 
