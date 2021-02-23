@@ -25,9 +25,9 @@ A pool must always have at least one normal (non-dedup/special) vdev before othe
 If the special class becomes full, then allocations intended for it will spill back into the normal class.
 If more than one metadata vdev is specified, then allocations are load-balanced between all the devices.
 
-{{% pageinfo %}}
+{{< hint >}}
 Drives added to a metadata vdev cannot be removed from the pool.
-{{% /pageinfo %}}
+{{< /hint >}}
 
 To create a Fusion Pool, go to **Storage** > **Pools** > **Add**.
 Configure the data vdev, then open the **ADD VDEV** drop down menu and select *Metadata*.
