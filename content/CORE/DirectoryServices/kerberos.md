@@ -16,7 +16,7 @@ TrueNAS allows configuring both Kerberos realms and keytabs.
 
  **Directory Services** > **Kerberos Realms** can be used to view and add Kerberos realms. If the network contains a Key Distribution Center (KDC), click `ADD` to add the realm. 
 
-<img src="/images/DirectoryServicesKerberosRealmsAdd.png">
+![Directory Services Kerberos Realms Add](/images/CORE/12.0/DirectoryServicesKerberosRealmsAdd.png "Directory Services Kerberos Realms Add")
 <br><br>
 
 ### Kerberos Realm Options
@@ -69,7 +69,7 @@ To instruct LDAP to use a principal from the keytab, use the **Kerberos Principa
 
 Additional Kerberos options are in **Directory Services > Kerberos Settings**.
 
-<img src="/images/DirectoryServicesKerberosSettings.png">
+![Directory Services Kerberos Settings](/images/CORE/12.0/DirectoryServicesKerberosSettings.png "Directory Services Kerberos Settings")
 <br><br>
 
 + **Appdefaults Auxiliary Parameters**: Define any additional settings for use by some Kerberos applications. The available settings and syntax is listed in the [[appdefaults] section of krb.conf(5)](http://web.mit.edu/kerberos/krb5-1.12/doc/admin/conf_files/krb5_conf.html#appdefaults).
