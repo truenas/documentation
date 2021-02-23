@@ -52,9 +52,9 @@ Sometimes, rolling back to an older boot environment can be useful. For example,
 
 To activate a previous boot environment, go to **System > Boot** and click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; for the desired boot environment. Next, click *Activate*. The boot environment that was activated will now have *Reboot* displayed in the *Active* column. This means that the boot environment will become active on the next reboot. 
 
-{{% pageinfo %}}
+{{< hint info >}}
 When changing the boot environment, the system configuration also changes to the state it was in when the boot environment was created.
-{{% /pageinfo %}}
+{{< /hint >}}
 
 ## Changing Boot Environments in the Welcome CLI
 
@@ -62,9 +62,9 @@ If the web interface is inaccessible but physical access to the system is still 
 
 Reboot the system. When the welcome screen appears press the key that corresponds with the option *Boot Environments*. In the picture below, the key to select the *Boot Environments* option is <kbd>7</kbd>.
 
-{{% pageinfo %}}
+{{< hint info >}}
 The *Boot Environments* options doesn't appear when there are no extra boot environments on the system.
-{{% /pageinfo %}}
+{{< /hint >}}
 
 ![Boot Menu](/images/CORE/12.0/BootMenu.png "Boot Menu")
 <br><br>
