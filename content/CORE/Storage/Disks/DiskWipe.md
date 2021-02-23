@@ -1,7 +1,6 @@
 ---
-title: "Wiping Disks"
-description:  "How to delete data from a disk."
-weight: 40
+title: "Wipe"
+weight: 20
 ---
 
 The **Wipe** function is used to delete obsolete data off an unused disk.
