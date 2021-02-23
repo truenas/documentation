@@ -14,7 +14,7 @@ Only one disk can be imported at a time.
   EXT4 filesystems with extended attributes or inodes greater than 128 bytes are not supported.
   EXT4 filesystems with EXT3 journaling must have an `fsck` run on them before import, as described above.
 
-<img src="/images/DiskImportOptions.png">
+![Storage Import Disk](/images/CORE/12.0/StorageImportDisk.png "Storage Import Disk")
 <br><br>
 
 Use the drop-down menu to select the disk to import, confirm the detected file system is correct, and browse to the ZFS dataset that will hold the copied data.
