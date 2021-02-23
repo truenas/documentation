@@ -11,7 +11,7 @@ These allow a wide range of system customization, from changing the web interfac
 
 **System > General** contains options for configuring the web interface and other basic system settings.
 
-<img src="/images/12.0-SystemGeneral.png">
+![System General](/images/CORE/12.0/SystemGeneral.png "System General")
 <br><br>
 
 | Setting                       | Value          | Description                                                                                                                                                                                                                                                                                                                                                        |
@@ -59,7 +59,7 @@ The **Export Password Secret Seed** option is off by default and should only be 
 
 **System > Advanced** contains more advanced options for configuring system settings.
 
-<img src="/images/SystemAdvanced.png">
+![System Advanced](/images/CORE/12.0/SystemAdvanced.png "System Advanced")
 <br><br>
 
 | Setting                                   | Value     | Description                                                          |
