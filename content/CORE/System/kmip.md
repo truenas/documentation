@@ -4,9 +4,9 @@ description: "How to integrate TrueNAS Enterprise key management with a Key Mana
 tags: ["KMIP", "encryption", "certificates", "TrueNAS Enterprise"]
 ---
 
-{{% pageinfo %}}
+{{< hint >}}
 KMIP is only available for TrueNAS Enterprise licensed systems. Please contact the [iXsystems Sales Team](mailto:sales@ixsystems.com) to inquire about activating KMIP functionality.
-{{% /pageinfo %}}
+{{< /hint >}}
 
 The [Key Management Interoperability Protocol (KMIP)](https://docs.oasis-open.org/kmip/spec/v1.1/os/kmip-spec-v1.1-os.html) is an extensible client/server communication protocol for the storage and maintenance of keys, certificates, and secret objects.
 KMIP on TrueNAS Enterprise is used to integrate the system within an existing centralized key management infrastructure and use a single trusted source for creating, using, and destroying SED passwords and ZFS encryption keys.
@@ -42,7 +42,7 @@ Leave the **Passphrase** empty and click **Submit**.
 
 Open  **System** > **KMIP** to complete the configuration.
 
-<img src="/images/TN12.0-KMIP.png">
+![System KMIP](/images/CORE/12.0/SystemKMIP.png "System KMIP")
 <br><br>
 
 Enter the central key server **Server** host name or IP address and the number of an open connection port on the key server.
@@ -53,7 +53,7 @@ When the Certificate chain has been verified, set which encryption values will b
 Set **Enabled** to begin moving the passwords and keys immediately after clicking **SAVE**.
 Refreshing the KMIP page shows the current KMIP Key Status.
 
-<img src="/images/TN12.0-KMIPSynced.png">
+![System KMIP Key Status](/images/CORE/12.0/SystemKMIPKeyStatus.png "System KMIP Key Status")
 <br><br>
 
 To cancel a pending key synchronization, set **Force Clear** and click **SAVE**.
