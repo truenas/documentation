@@ -21,7 +21,7 @@ Do not create a tunable on a production system before testing the ramifications 
 
 To configure a tunable, go to **System > Tunables** and click *ADD*.
 
-<img src="/images/SystemTunablesAdd.png">
+![System Tunables Add](/images/CORE/12.0/SystemTunablesAdd.png "System Tunables Add")
 <br><br>
 
 First, select the *Type* of tunable to add or modify.
