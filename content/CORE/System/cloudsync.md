@@ -9,16 +9,16 @@ You can configure TrueNAS to send, receive, or synchronize data with a Cloud Sto
 Configuring a Cloud Sync task allows you to transfer data a single time or set up a recurring schedule to periodically transfer data.
 This can be an effective method to back up your data to a remote location.
 
-You should already have your <a href="/hub/initial-setup/storage/">TrueNAS Storage</a> configured.
+You should already have your [TrueNAS Storage](/CORE/Storage/) configured.
 You will also need an account with the Cloud Storage provider and a storage location created with the provider, like an Amazon S3 bucket.
 Major providers like Amazon S3, Google Cloud, and Microsoft Azure are supported, along with a variety of other vendors.
 To see the full list of supported vendors, log in to the TrueNAS UI and go to *System > Cloud Credentials > Add* and open the *Provider* dropdown.
 
-{{% alert title="Warning" color="warning" %}}
+{{< hint warning>}}
 Using the Cloud means that data can go to a third party commercial vendor not directly affiliated with iXsystems.
 Please investigate and fully understand that vendor’s pricing policies and services before creating any Cloud Sync task.
 iXsystems is not responsible for any charges incurred from the use of third party vendors with the Cloud Sync feature.
-{{% /alert %}}
+{{< /hint >}}
 
 To start using Cloud storage, save cloud storage provider credentials on the system and create a new *Cloud Sync* task.
 
@@ -35,10 +35,7 @@ For example, saving an Amazon S3 credential on TrueNAS could require logging in 
 
 To save cloud storage provider credentials, go to *System > Cloud Credentials* and click *Add*.
 
-<figure>
-  <img src="/images/S3CloudCred.png">
-  <figcaption>New Cloud Credential</figcaption>
-</figure>
+![System Cloud Credentials Add S3](/images/CORE/12.0/SystemCloudCredentialsAddS3.png "System Cloud Credentials Add S3")
 
 Enter a name for the credential and choose a *Provider*.
 The rest of the options change according to the chosen *Provider*.
@@ -47,10 +44,7 @@ Enter the required *Authentication* strings to enable saving the credential.
 Some providers can automatically populate the required *Authentication* strings by logging in to the account.
 To automatically configure the credential, click *Login to Provider* and entering your account username and password.
 
-<figure>
-  <img src="/images/CloudCredentialsBoxLogin.png">
-  <figcaption>Box Authentication Example</figcaption>
-</figure>
+![System Cloud Credentials OAuth Login](/images/CORE/12.0/SystemCloudCredentialsOAuthLogin.png "System Cloud Credentials OAuth Login")
 
 It is recommended to verify the credential before saving it.
 
@@ -58,10 +52,7 @@ It is recommended to verify the credential before saving it.
 
 Now that the required Cloud Credentials are saved, go to *Tasks > Cloud Sync Tasks* and click *Add*.
 
-<figure>
-  <img src="/images/TasksCloudSyncAdd.png">
-  <figcaption>New Cloud Sync Task</figcaption>
-</figure>
+![Tasks Cloud Sync Add](/images/CORE/12.0/TasksCloudSyncAdd.png "Tasks Cloud Sync Add")
 
 Give the task a memorable name and select a cloud credential that is saved on the system.
 TrueNAS will attempt to connect to the Cloud Storage Provider and show the available storage locations.
@@ -140,10 +131,7 @@ A connection to the Cloud Storage Provider is established and a file transfer is
 No data is actually sent or received.
 A dialog shows the test status and allows downloading the task logs.
 
-<figure>
-  <img src="/images/TasksCloudSyncGoogleDriveDryRun.png">
-  <figcaption>Google Drive Test</figcaption>
-</figure>
+![Tasks Cloud sync Add Google drive Dry run](/images/CORE/12.0/TasksCloudsyncAddGoogledriveDryrun.png "Tasks Cloud sync Add Google drive Dry run")
 
 ## Cloud Sync Behavior
 
@@ -157,9 +145,6 @@ To view logs about a running or the most recent run of a task, click the task st
 
 To quickly create a new Cloud Sync that uses the same options but reverses the data transfer, expand and existing Cloud Sync and click *Restore*.
 
-<figure>
-  <img src="/images/TaskCloudSyncRestore.png">
-  <figcaption>Cloud Sync Restore Options</figcaption>
-</figure>
+![Task Cloud Sync Restore](/images/CORE/12.0/TaskCloudSyncRestore.png "Task Cloud Sync Restore")
 
 The restored cloud sync is saved as another entry in *Tasks > Cloud Sync Tasks*.
