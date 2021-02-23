@@ -22,19 +22,19 @@ If a space warning is shown, go to **System > Boot** and remove any unneeded boo
 
 Operating system updates only modify the operating system devices and do not affect end-user data on storage drives.
 
-{{% alert title="ZFS Upgrades" color="info" %}}
+{{< hint info >}}
 An update could involve upgrading the version of ZFS that is installed on the storage drives.
 When a ZFS version upgrade is available, an <i class="fas fa-bell" aria-hidden="true" title="Alert"></i>&nbsp; **Alert** appears in the web interface.
 Upgrading the ZFS version on storage drives is not recommended until it has been verified that rolling back to previous versions of the operating system is not necessary and that swapping the storage drives with another system that has an earlier ZFS version is not needed.
 After a ZFS version upgrade, the storage devices will not be accessible by earlier TrueNAS versions.
-{{% /alert %}}
+{{< /hint >}}
 
 ### Starting the Update
 
 In the web interface **Dashboard**, find the entry for the active TrueNAS controller and click **CHECK FOR UPDATES**.
 This button changes to **UPDATES AVAILABLE** when there is an available update.
 
-<img src="/images/EnterpriseDashboardExample.png">
+![Dashboard Enterprise](/images/CORE/12.0/DashboardEnterprise.png "Dashboard Enterprise")
 <br><br>
 
 Clicking the button goes to **System > Update** and shows the option to **Download Updates** or, when the system has already detected and staged an update, **Apply Pending Update**.
@@ -64,7 +64,7 @@ When the standby controller has finished booting, the system must fail over to u
 
 To deactivate the active TrueNAS controller and finish the update, go to the **Dashboard**, find the entry for the *Standby* controller, and click **INITIATE FAILOVER**.
 
-<img src="/images/HA-DashboardInitiateFailover.png">
+![Dashboard Initiate Failover](/images/CORE/12.0/DashboardInitiateFailover.png "Dashboard Initiate Failover")
 <br><br>
 
 Initiating the failover briefly interrupts TrueNAS services and availability.
@@ -72,7 +72,7 @@ Initiating the failover briefly interrupts TrueNAS services and availability.
 The browser logs out of the web interface while the active TrueNAS controller deactivates and the standby TrueNAS controller is brought online.
 The web interface login screen reappears when the standby TrueNAS controller finishes activating.
 
-<img src="/images/HA-FailoverLogin.png">
+![Login Failover Enterprise](/images/CORE/12.0/LoginFailoverEnterprise.png "Login Failover Enterprise")
 <br><br>
 
 Log in to the web interface and check the <i class="fas fa-cloud" aria-hidden="true" title="Cloud"></i>&nbsp; HA status in the top toolbar.
@@ -86,7 +86,7 @@ Verify that the update is complete by going to the **Dashboard** and confirming 
 
 If the update did not install on one of the controllers, the web interface generates an alert about a mismatch between controller versions.
 
-<img src="/images/HA-ControllerVersionMismatch.png">
+![HA Controller Versions Error Enterprise](/images/CORE/12.0/HAControllerVersionsErrorEnterprise.png "HA Controller Versions Error Enterprise")
 <br><br>
 
 If something else goes wrong with the update, the system generates an alert and writes details to `/data/update.failed`.
@@ -102,7 +102,7 @@ Reboot the system and press the space bar when the boot menu appears, pausing th
 
 Open the *Boot Environments* menu and cycle the *Active* boot environment until one that is dated prior to the update is selected.
 
-<img src="/images/TN-BootMenuSelectBootEnvironment.png">
+!Boot Menu Select BE[](/images/CORE/12.0/BootMenuSelectBE.png "Boot Menu Select BE")
 <br><br>
 
 Return to the first screen and press <kbd>Enter</kbd> to boot into the version of TrueNAS that was installed on that date.
