@@ -14,7 +14,7 @@ To configure ACME certificate automation, you will need to add an ACME DNS authe
 
 Go to **System > ACME DNS** and click **ADD**.
 
-<img src="/images/SystemACMEDNSAdd.png">
+![System ACME DNS Add](/images/CORE/12.0/SystemACMEDNSAdd.png "System ACME DNS Add")
 <br><br>
 
 Enter a name for the authenticator.
@@ -31,7 +31,7 @@ ACME certificates can be created for existing certificate signing requests.
 These certificates use an ACME DNS authenticator to confirm domain ownership, then are automatically issued and renewed.
 To create a new ACME certificate, go to **System > Certificates**, click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i> (Options) for an existing certificate signing request, and click **Create ACME Certificate**.
 
-<img src="/images/SystemCertificatesAddACMECertificate.png">
+![System Certificates Add ACME Certificate](/images/CORE/12.0/SystemCertificatesAddACMECertificate.png "System Certificates Add ACME Certificate")
 <br><br>
 
 | Setting | Value |	Description |
