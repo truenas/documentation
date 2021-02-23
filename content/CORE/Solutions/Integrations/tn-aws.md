@@ -132,7 +132,7 @@ Now that the image has been created and properly configured, it’s time to uplo
 Use `bsdec2-image-upload` with the image file:
 `bsdec2-image-upload --public {TRUENAS}.img TrueNAS {description} {region} {S3 bucket} KEY.pem`
 Replace {TRUENAS} with the image file name, {description} with a unique identifier for the Amazon Machine Image (AMI), {region} with your [Amazon region](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html), and {S3 bucket} with your AWS image storage location.
-`KEY.pem` is the IAM user access key that was downloaded earlier.
+<file>KEY.pem</file> is the IAM user access key that was downloaded earlier.
 All of these elements are required for the upload to start.
 
 `bsdec2-image-upload` sends the image to the AWS bucket in 10MB segments.
