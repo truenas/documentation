@@ -26,11 +26,11 @@ To begin encrypting data, follow the same process as creating a new pool and set
 
 Check the **Encryption** box, read the Warning, click the **Confirm** box and then click the **I Understand** button.
 
-<img src="/images/EncryptWarn.png"><br><br>
+![Storage Pools Add Encryption Warning](/images/CORE/12.0/StoragePoolsAddEncryptionWarning.png "Storage Pools Add Encryption Warning")
 
 The default encryption cipher is recommended, but there are other ciphers available.
 
-<img src="/images/TN12.0-Encryption2.png">
+![Storage Pools Add Create Encryption Ciphers](/images/CORE/12.0/StoragePoolsAddCreateEncryptionCiphers.png "Storage Pools Add Create Encryption Ciphers")
 <br><br>
 
 ### Encrypting a New Dataset
@@ -50,23 +50,23 @@ Encryption options are the same for either a new pool or dataset.
 Creating a new encrypted pool automatically generates new key file and prompts to download it.
 Always back up the key file to a safe and secure location.
 
-<img src="/images/TN12.0-Encryption3.png">
+![Encryption Key Backup Warning](/images/CORE/12.0/EncryptionKeyBackupWarning.png "Encryption Key Backup Warning")
 <br><br>
 
 Manually back up a root dataset keyfile by opening the pool <i class="fas fa-cog" aria-hidden="true" title="Settings"></i> (Settings) menu and selecting **Export Dataset Keys**.
 
-<img src="/images/TN12.0-Encryption8.png">
+![Storage Pools Encryption Actions Export Keys](/images/CORE/12.0/StoragePoolsEncryptionActionsExportKeys.png "Storage Pools Encryption Actions Export Keys")
 <br><br>
 
 To change the key, click <i class="fas fa-ellipsis-v"></i>&nbsp; (Options) and select **Encryption Options**.
 
-<img src="/images/TN12.0-Encryption4.png">
+![Storage Pools Encrypted Dataset](/images/CORE/12.0/StoragePoolsEncryptedDataset.png "Storage Pools Encrypted Dataset")
 <br><br>
 
 Enter your custom key or click **Generate Key**.
 Remember to back up your key files after creating or updating them.
 
-<img src="/images/TN12.0-Encryption5.png">
+![Storage Pools Encrypted Dataset Options](/images/CORE/12.0/StoragePoolsEncryptedDatasetOptions.png "Storage Pools Encrypted Dataset Options")
 <br><br>
 
 ### Passphrase
@@ -74,10 +74,10 @@ Remember to back up your key files after creating or updating them.
 To use a passphrase instead of a keyfile, click <i class="fas fa-ellipsis-v"></i>&nbsp; (Options) and select **Encryption Options**.
 Change the *Encryption Type* from `Key` to `Passphrase`.
 
-<img src="/images/TN12.0-Encryption6.png">
+![Storage Pools Dataset Encryption Type](/images/CORE/12.0/StoragePoolsDatasetEncryptionType.png "Storage Pools Dataset Encryption Type")
 <br><br>
 
-<img src="/images/TN12.0-Encryption7.png">
+![Storage Pools Dataset Encryption Passphrase](/images/CORE/12.0/StoragePoolsDatasetEncryptionPassphrase.png "Storage Pools Dataset Encryption Passphrase")
 <br><br>
 
 **Encryption Type**: How the dataset is secured. Choose between securing with an encryption Key or a user-defined Passphrase.
@@ -154,11 +154,11 @@ Be sure to unlock the GELI-encrypted pool before attempting any data migrations.
 The new ZFS-encrypted pool must be at least the same size as the previous GELI-encrypted pool.
 Two options exist to migrate data from a GELI-encrypted pool to a new ZFS-encrypted pool: file transfer or ZFS send/receive.
 
-{{% pageinfo %}}
+{{< hint info >}}
 In future TrueNAS versions, a decrypted GELI pool will be able to migrate data to a new ZFS encrypted pool using an advanced Replication Task ([NAS-107463](https://jira.ixsystems.com/browse/NAS-107463)).
 Until this time, GELI encrypted pools will continue to be detected and supported in the TrueNAS web interface, so you are not required to immediately migrate data away from GELI pools.
 Before using the command line to migrate data, it is recommended to consider the benefits and drawbacks of immediately migrating from GELI to ZFS.
-{{% /pageinfo %}}
+{{< /hint >}}
 
 ZFS data migration can be a complicated process.
 You can ask for assistance in the [TrueNAS Community Forums](https://www.ixsystems.com/community/) or, if you have a support contract with iXsystems, [contact iX Support](/hub/initial-setup/support/#support-in-truenas-enterprise) for assistance.
@@ -167,19 +167,19 @@ You can ask for assistance in the [TrueNAS Community Forums](https://www.ixsyste
 
 The first method is to use `rsync` or other file transfer mechanisms (`scp`, `cp`, `sftp`, `ftp`, `rdiff-backup`) to copy the data between the pools.
 
-{{% alert title=Warning color=warning %}}
+{{< hint warning >}}
 Transfering your files in this method will not preserve file ACLs.
-{{% /alert %}}
+{{< /hint >}}
 
 ### ZFS Send and Receive
 
 The second method is to use ZFS send/receive commands.
 
-{{% alert title=Warning color=warning %}}
+{{< hint warning >}}
 The following is an example walkthrough. It is not an exact step-by-step guide for all situations. Research ZFS [send](https://openzfs.github.io/openzfs-docs/man/8/zfs-send.8.html)/[receive](https://openzfs.github.io/openzfs-docs/man/8/zfs-receive.8.html) before attempting this.  There are many edge cases that cannot be covered by a simple example.
 
 Do not delete your GELI dataset until you have verified you have successfully migrated the data.  Failure to do so may result in data loss.
-{{% /alert %}}
+{{< /hint >}}
 
 Legend:
 ```
