@@ -63,12 +63,12 @@ When TrueNAS is used as an SSH server, the users in the network must use [SSH cl
 
 Configuring and activating the SSH service is done on the **Services** page.
 
-<img src="/images/Services.png">
+![Services Default](/images/CORE/12.0/ServicesDefault.png "Services Default")
 <br><br>
 
 To configure SSH, disable the service and open the configuration screen.
 
-<img src="/images/ServicesSSH.png">
+![Services SSH Options](/images/CORE/12.0/ServicesSSHOptions.png "Services SSH Options")
 <br><br>
 
 
@@ -97,7 +97,7 @@ To configure this scenario, go to **Accounts > Users** and edit the desired user
 Change the user's shell to **scponly**.
 Repeat for each user that needs restricted SSH access.
 
-<img src="/images/UserShellscpOnly.png">
+![Accounts Users Edit Shell Scp only](/images/CORE/12.0/AccountsUsersEditShellScponly.png "Accounts Users Edit Shell Scp only")
 <br><br>
 
 Test the configuration from another system by running the *sftp*, *ssh*, and *scp* commands as the user.
@@ -112,7 +112,7 @@ Encrypted keypairs or keypairs with passphrases are not supported.
 Keypairs can be automatically generated as needed when creating new SSH Connections or Replication tasks.
 To manually generate a new keypair, click **ADD** and give the keypair a unique name.
 
-<img src="/images/SystemSSHKeypairsAdd.png">
+![System SSH Keypairs Add](/images/CORE/12.0/SystemSSHKeypairsAdd.png "System SSH Keypairs Add")
 <br><br>
 
 Clicking the button to generate a keypair adds values to the public and private key fields.
@@ -127,7 +127,7 @@ The keypair can be generated as part of the semiautomatic configuration or manua
 
 Go to **System > SSH Connections** and click **ADD**.
 
-<img src="/images/SystemSSHConnectionsSemiAuto.png">
+![System SSH Connections Add Semi Auto](/images/CORE/12.0/SystemSSHConnectionsAddSemiAuto.png "System SSH Connections Add Semi Auto")
 <br><br>
 
 Be sure to use a valid URL scheme for the remote TrueNAS URL.
@@ -151,14 +151,13 @@ When the remote NAS is not a TrueNAS system, please see the documentation for th
 Log in to the TrueNAS system that generated the SSH keypair and go to **System > SSH Keypairs**.
 Open the keypair to use for the SSH connection and copy the text of the public SSH key or download the public key as a text file.
 
-<img src="/images/SystemSSHKeypairsCopyPublic.png">
+![Accounts Users Edit Shell Scp only](/images/CORE/12.0/AccountsUsersEditShellScponly.png "Accounts Users Edit Shell Scp only")
 <br><br>
 
 Log in to the TrueNAS system that needs to register the public key and go to **Accounts > Users**.
 Edit the *root* account.
 Paste the SSH public key text into the **SSH Public Key** field.
-
-<img src="/images/AccountsAsersRootPublicSSHKey.png">
+![Accounts Users Root SSH Key](/images/CORE/12.0/AccountsUsersRootSSHKey.png "Accounts Users Root SSH Key")
 <br><br>
 
 ### Manually Configuring the SSH Connection on the Local TrueNAS
@@ -166,7 +165,7 @@ Paste the SSH public key text into the **SSH Public Key** field.
 Log back in to the local TrueNAS system and go to **System > SSH Connections** and add a new connection.
 Change the setup method over to **Manual**.
 
-<img src="/images/SystemSSHConnectionsManual.png">
+![System SSH Connections Add Manual](/images/CORE/12.0/SystemSSHConnectionsAddManual.png "System SSH Connections Add Manual")
 <br><br>
 
 Fill in the required information.
