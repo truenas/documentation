@@ -15,7 +15,7 @@ These coordinated snapshots are listed in the **Storage** > **Snapshots** list.
 
 Go to **Storage** > **VMware Snapshots** and click **ADD** to create a new VMware snapshot.
 
-<img src="/images/VMwareSnapshotsAdd.png">
+![Storage VMware Snapshots Add](/images/CORE/12.0/StorageVMwareSnapshotsAdd.png "Storage VMware Snapshots Add")
 <br><br>
 
 | Setting        | Value          | Description                                                                                                                                     |
