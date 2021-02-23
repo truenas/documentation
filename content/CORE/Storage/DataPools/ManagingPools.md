@@ -9,7 +9,7 @@ After creating a data storage pool, there are a variety of options to change the
 Changing a pool can be disruptive, so make sure you are aware of existing resources on the system and consider backing up any stored data before changing the pool.
 To find an existing pool, log in to the web interface and go to **Storage > Pools**.
 
-<img src="/images/PoolsList.png">
+![Storage Pools List](/images/CORE/12.0/StoragePoolsList.png "StoragePoolsList")
 <br><br>
 
 The current status and storage usage of each pool is shown.
@@ -20,7 +20,7 @@ Click the <i class="fas fa-cog" aria-hidden="true" title="Settings"></i>&nbsp (P
 
 Contains any additional high-level settings for the pool.
 
-<img src="/images/PoolOptions.png">
+![Storage Pools Pool Options](/images/CORE/12.0/StoragePoolsPoolOptions.png "StoragePoolsPoolOptions")
 <br><br>
 
 **Auto TRIM** allows TrueNAS to periodically check the pool disks for storage blocks that can be reclaimed.
@@ -33,7 +33,7 @@ Removes the pool from the system.
 Can be used to prepare drives for transfer to a new system and import the pool or completely delete the pool and any data stored on it.
 A dialog warns about the risks of disconnecting the pool and shows any system services that are affected by removing the pool.
 
-<img src="/images/PoolExportExample.png">
+![Storage Pools Export Example](/images/CORE/12.0/StoragePoolsExportExample.png "Storage Pools Export Example")
 <br><br>
 
 Because this is a destructive action, additional checkboxes must be set and the name of the pool manually entered when also deleting stored data.
@@ -43,7 +43,7 @@ Existing shares to this data can also be removed when the pool is disconnected.
 
 This opens the **Pool Manager** to add more vdevs to the pool.
 
-<img src="/images/AddVdevManager.png">
+![Storage Pools Add Create Vdevs](/images/CORE/12.0/StoragePoolsAddCreateVdevs.png "Storage Pools Add Create Vdevs")
 <br><br>
 
 Changing the original encryption and data vdev configuration is not allowed.
@@ -72,7 +72,7 @@ By default, every pool is automatically checked on a reoccurring [scrub schedule
 
 Opens the **Pool Status** screen to show the state of the last scrub and disks in the pool.
 
-<img src="/images/PoolStatus.png">
+![Storage Pools Status](/images/CORE/12.0/StoragePoolsStatus.png "Storage Pools Status")
 <br><br>
 
 Additional options for [managing connected disks](/CORE/Storage/disk-replace/) are available in this screen.
