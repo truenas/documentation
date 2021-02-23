@@ -13,7 +13,7 @@ Alert Services are the various methods built into to TrueNAS that can notify you
 
 To add a new alert service, go to **System > Alert Services > ADD**.
 
-<img src="/images/AlertServiceAdd.png">
+![System Alert Services Add](/images/CORE/12.0/SystemAlertServicesAdd.png "System Alert Services Add")
 <br><br>
 
 Enter a **Name** for the alert service and select the **Type**.
@@ -25,7 +25,7 @@ You can test the service configuration by clicking **SEND TEST ALERT**.
 
 To modify the default system alerts, go to **System > Alert Settings**.
 
-<img src="/images/AlertSettings.png">
+![System Alert Settings](/images/CORE/12.0/SystemAlertSettings.png "System Alert Settings")
 <br><br>
 
 The alerts are grouped into sections based on type.
@@ -72,7 +72,7 @@ In the **Email** field, enter a remote email address that is regularly monitored
 
 Additional configuration is done from **System > Email**.
 
-<img src="/images/TN12-EmailSetup1.png">
+![System Email SMTP Options](/images/CORE/12.0/SystemEmailSMTPOptions.png "System Email SMTP Options")
 <br><br>
 
 Set the address the email will come from, along with the From Name.  Enter the mail server address and the correct port.  Select the desired security option, and enable SMTP and enter the credentials if necessary.
@@ -80,13 +80,13 @@ Set the address the email will come from, along with the From Name.  Enter the m
 To use Gmail OAuth, select the option and click **LOG IN TO GMAIL**.
 Log into your gmail account as you normally would.
 
-<img src="/images/TN12-EmailSetup2.png">
+![System Email GMail OAuth](/images/CORE/12.0/SystemEmailGMailOAuth.png "System Email GMail OAuth")
 <br><br>
 
-<img src="/images/TN12-EmailSetup3.png">
+![System Email Oauth Window](/images/CORE/12.0/SystemEmailOauthWindow.png "System Email Oauth Window")
 <br><br>
 
-<img src="/images/TN12-EmailSetup4.png">
+![System Email Oauth Account](/images/CORE/12.0/SystemEmailOauthAccount.png "System Email Oauth Account")
 <br><br>
 
 ### SMTP Authentication Settings
@@ -107,7 +107,7 @@ Click the **SEND TEST MAIL** button to verify that the configured email settings
 TrueNAS uses [Net-SNMP](http://net-snmp.sourceforge.net/) to provide SNMP.
 To configure SNMP, go to the **Services** page, find the **SNMP** row, and click <i class="fas fa-pen" aria-hidden="true" title="Configure"></i> (Configure).
 
-<img src="/images/SNMPConfigure.png">
+![Services SNMP Options](/images/CORE/12.0/ServicesSNMPOptions.png "Services SNMP Options")
 <br><br>
 
 ### SNMP Service Options
@@ -132,4 +132,4 @@ When starting the SNMP service, port `UDP 161` is enabled to listen for SNMP req
 Available Management Information Bases (MIBs) are located in `/usr/local/share/snmp/mibs`.
 Here is a sample of the directory contents:
 
-<img src="/images/SNMPMibsSample.png">
+![Services SNMP Mib Sample](/images/CORE/12.0/ServicesSNMPMibSample.png "Services SNMP Mib Sample")
