@@ -19,15 +19,15 @@ Select an existing ZFS pool, dataset, or zvol to snapshot. To include child data
 
 The snapshot can have a custom **Name** or be automatically named by a **Naming Schema**. Using a **Naming Schema** allows the snapshot to be included in Replication Tasks. The **Naming Schema** drop-down is populated with previously created schemas from [Periodic Snapshot Tasks](/CORE/Tasks/snapshot-scheduling/).
 
-{{% alert title=Warning color=warning %}}
+{{< hint warning >}}
 Snapshots that do not follow a proper naming schema cannot be replicated!
-{{% /alert %}}
+{{< /hint >}}
 
 ## Managing Snapshots
 
 To view and manage the listing of created snapshots, use **Storage** > **Snapshots**. 
 
-<img src="/images/StorageSnapshots.png" width='700px'>
+![Storage Snapshots](/images/CORE/12.0/StorageSnapshots.png "Storage Snapshots")
 <br><br>
 
 Each entry in the list includes the name of the dataset and snapshot. Click **>** (Expand) to view these options:
@@ -48,7 +48,7 @@ A clone is a writable copy of the snapshot. Since a clone is actually a dataset 
 
 **Rollback**: Clicking <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; (Options) > **Rollback** asks for confirmation before rolling back to the chosen snapshot state. Clicking **Yes** causes all files in the dataset to revert to the state they were in when the snapshot was created.
 
-{{% alert title=Warning color=warning %}}
+{{< hint warning >}}
 Rollback is a potentially dangerous operation and causes any configured replication tasks to fail as the replication system uses the existing snapshot when doing an incremental backup. To restore the data within a snapshot, the recommended steps are:
 
 + Clone the desired snapshot.
@@ -56,7 +56,7 @@ Rollback is a potentially dangerous operation and causes any configured replicat
 + After users have recovered the needed data, delete the clone in the Active Pools tab.
 
 This approach does not destroy any on-disk data and has no impact on replication.
-{{% /alert %}}
+
 
 A range of snapshots can be deleted. Set the left column checkboxes for each snapshot and click the **Delete** icon above the table. Be careful when deleting multiple snapshots.
 
@@ -64,9 +64,9 @@ Periodic snapshots can be configured to appear as shadow copies in newer version
 
 To quickly search through the snapshots list by name, type a matching criteria into the `Filter Snapshots` text area. The listing will change to only display the snapshot names that match the filter text.
 
-{{% alert title=Warning color=warning %}}
+{{< hint warning >}}
 A snapshot and any files it contains will not be accessible or searchable if the mount path of the snapshot is longer than 88 characters. The data within the snapshot will be safe, and the snapshot will become accessible again when the mount path is shortened.
-{{% /alert %}}
+{{< /hint >}}
 
 ## Browsing a Snapshot Collection
 
