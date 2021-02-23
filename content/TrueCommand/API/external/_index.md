@@ -3,6 +3,7 @@ title: "External Systems"
 draft: false
 pre: "<i class='fas fa-chart-line'></i>	"
 geekdocCollapseSection: true
+no_list: true
 ---
 
 ## API Class: external
@@ -14,3 +15,4 @@ These API calls are **only** available via HTTP requests (PUT or POST) with a va
 * {{< api-link "servers/list_tokens" >}}
 * {{< api-link "servers/add_tokens" >}}
 * {{< api-link "servers/remove_tokens" >}}
+
