@@ -20,7 +20,7 @@ Some BIOS can block resize during boot and require a live power cycle.
 To over provision a SLOG device, log in to TrueNAS and go to **System > Advanced**.
 Enter an overprovision value corresponding to the new size in GB.
 
-![Storage Pools Option SLOG Overprovision](/images/CORE/12.0/StoragePoolsOptionsLog Overprovision..png "Storage Pools Option SLOG Overprovision.")
+![Storage Pools Option SLOG Overprovision](/images/CORE/12.0/StoragePoolsOptionsLog Overprovision.png "Storage Pools Option SLOG Overprovision")
 <br><br>
 
 This setting only applies to SLOG devices during pool creation.
