@@ -44,7 +44,7 @@ If both TrueNAS controllers reboot simultaneously, the passphrase for an encrypt
 
 To make sure system networking is configured for HA, first go to **Network > Global Configuration**.
 
-<img src="/images/TN12-HANetwork.png">
+![Network Global Configuration HA Enterprise](/images/CORE/12.0/NetworkGlobalConfigurationHAEnterprise.png "Network Global Configuration HA Enterprise")
 <br><br>
 
 You can set the host names for both controllers and a virtual host name that reaches whichever controller is currently active.
@@ -58,7 +58,7 @@ Edit the interface, then reactivate failover immediately.
 TrueNAS automatically synchronizes the configuration changes to the standby controller
 {{% /alert %}}
 
-<img src="/images/TN12-HAInterface.png">
+![Network Interface Edit HA Enterprise](/images/CORE/12.0/NetworkInterfaceEditHAEnterprise.png "Network Interface Edit HA Enterprise")
 <br><br>
 
 You can designate the interface as critical for failover and combine multiple interfaces into a failover group.
@@ -76,7 +76,7 @@ When troubleshooting HA networking, the <code>ifconfig</code> command adds two a
 
 To make general changes to the Failover settings, go to **System > Failover**
 
-<img src="/images/TN12-HAFailover.png">
+![System Failover Enterprise](/images/CORE/12.0/SystemFailoverEnterprise.png "System Failover Enterprise")
 <br><br>
 
 You can manually disable failover on this screen.
