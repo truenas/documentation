@@ -72,14 +72,14 @@ If needed, press <kbd>Spacebar</kbd> to stop the timer and choose another boot o
 After the media finishes booting into the installation menu, press <kbd>Enter</kbd> to select the default option `1 Install/Upgrade`.
 The installer presents a screen showing all available drives.
 
-{{% alert title="Warning" color="warning" %}}
+{{< hint warning >}}
 All drives are shown, including boot drives and storage drives.
 Only choose boot drives when upgrading.
 **Choosing the wrong drives to upgrade or install will cause loss of data.**
 If unsure about which drives contain the TrueNAS operating system, reboot and remove the install media.
 Log in to the TrueNAS web interface and go to **System > Boot > ACTIONS > Boot Pool Status** to identify the boot drives.
 More than one drive is shown when a mirror has been used.
-{{% /alert %}}
+{{< /hint >}}
 
 Highlight the drive where TrueNAS is installed and press <kbd>Spacebar</kbd> to mark it with a star.
 If a mirror has been used for the operating system, mark all of the drives where the TrueNAS operating system is installed.
