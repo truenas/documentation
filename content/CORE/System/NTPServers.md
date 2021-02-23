@@ -1,23 +1,22 @@
 ---
 title: "NTP Servers"
-description: "Managing NTP Servers"
-tags: ["NTP"]
+weight: 20
 ---
 
-Network Time Protocol (NTP) servers are used to sync the local system time with an accurate reference.
-By default, several entries for NTP servers are created for new installations, but you can connect with custom NTP servers as needed.
+[Network Time Protocol (NTP)](https://datatracker.ietf.org/wg/ntp/about/) servers sync the local system time with an accurate external reference.
+By default, new installations use several existing NTP servers.
+TrueNAS supports adding custom NTP servers.
 
-## NTP Server
+## Adding a Custom NTP Server
 
-Go to **System > NTP Servers** to view, edit, or remove NTP Servers.
+Go to **System > NTP Servers** to view, edit, or remove NTP Servers:
 
-![System NTP Servers](/images/CORE/12.0/SystemNTPServers.png "System NTP Servers")
-<br><br>
+![SystemNTPServers](/images/CORE/12.0/SystemNTPServers.png "System NTP Servers")
 
-## NTP Server Options
+Several default servers are listed.
+To register a new server, click *ADD*.
 
 ![System NTP Servers Add](/images/CORE/12.0/SystemNTPServersAdd.png "System NTP Servers Add")
-<br><br>
 
 | Setting  | Value    | Description                                                                                                                                      |
 |----------|----------|--------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -28,12 +27,3 @@ Go to **System > NTP Servers** to view, edit, or remove NTP Servers.
 | Min Poll | integer  | The minimum polling interval, in seconds, as a power of 2. For example, 6 means 2^6, or 64 seconds. The default is 6, minimum value is 4.        |
 | Max Poll | integer  | The maximum polling interval, in seconds, as a power of 2. For example, 10 means 2^10, or 1,024 seconds. The default is 10, maximum value is 17. |
 | Force    | checkbox | Force the addition of the NTP server, even if it is currently unreachable.                                                                       |
-
-## Editing a NTP Server
-
-Click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i> (Options) and select **Edit**.
-Edit as needed and click **Save**.
-
-## Deleting a NTP Server
-
-Click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i> (Options) and select **Delete**.
