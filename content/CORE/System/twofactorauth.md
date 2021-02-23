@@ -42,15 +42,15 @@ Two-Factor Authentication (2FA) is an extra layer of security that is added to y
 
 * **Window:** Use Window to extend the validity of passwords beyond the Interval setting. For example, a window setting of 1 means that one password before and after the current one is valid. leaving three valid passwords. Extending the window can be useful in high-latency situations. 
 
-{{% alert title=Important color=warning %}}
+{{< hint warning >}}
 Two-factor authentication is time-based and requires that the system time is set correctly.
-{{% /alert %}}
+{{< /hint >}}
 
 * **Enable Two-Factor Auth for SSH :** Enable two-factor authentication for SSH access to the system.
 
-{{% alert title=Important color=warning %}}
+{{< hint warning >}}
 It is recommended to leave this DISABLED until after two-factor authentication is successfully tested with the UI.
-{{% /alert %}}
+{{< /hint >}}
 
 ### **System Generated Settings**.
 
