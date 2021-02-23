@@ -38,15 +38,15 @@ This screen also contains these buttons:
 
 **SAVE CONFIG**: save a backup copy of the current configuration database in the format hostname-version-architecture to the computer accessing the web interface. Saving the configuration after making any configuration changes is highly recommended. TrueNAS® automatically backs up the configuration database to the system dataset every morning at 3:45. However, this backup does not occur if the system is shut down at that time. If the system dataset is stored on the boot pool and the boot pool becomes unavailable, the backup will also not be available. The location of the system dataset can be viewed or set using System ➞ System Dataset.
 
-{{% pageinfo %}}
+{{< hint info >}}
 SSH keys are not stored in the configuration database and must be backed up separately. System host keys are files with names beginning with `ssh_host_` in `/usr/local/etc/ssh/`. The root user keys are stored in `/root/.ssh`.
-{{% /pageinfo %}}
+{{< /hint >}}
 
 There are two types of passwords. User account passwords for the base operating system are stored as hashed values, do not need to be encrypted to be secure, and are saved in the system configuration backup. Other passwords, like iSCSI CHAP passwords, Active Directory bind credentials, and cloud credentials are stored in an encrypted form to prevent them from being visible as plain text in the saved system configuration. The key or seed for this encryption is normally stored only on the operating system device. When **Save Config** is chosen, a dialog gives two options. *Export Password Secret Seed* includes passwords in the configuration file which allows the configuration file to be restored to a different operating system device where the decryption seed is not already present. Configuration backups containing the seed must be physically secured to prevent decryption of passwords and unauthorized access.
 
-{{% alert title="Warning" color="warning" %}}
+{{< hint warning >}}
 The **Export Password Secret Seed** option is off by default and should only be used when making a configuration backup that will be stored securely. After moving a configuration to new hardware, media containing a configuration backup with a decryption seed should be securely erased before reuse.
-{{% /alert %}}
+{{< /hint >}}
 
 **Export Pool Encryption Keys** includes the encryption keys of encrypted pools in the configuration file. The encryption keys are restored if the configuration file is uploaded to a system with **UPLOAD CONFIG**.
 
