@@ -61,7 +61,7 @@ Before upgrading the operating system, follow these steps:
 To upgrade TrueNAS using an `.iso` file, go to https://www.truenas.com/download-truenas-core/ (TrueNAS CORE latest release) or https://download.freenas.org to download the `.iso` to the computer that will be used to prepare the installation media.
 For example, this is the path to download an `.iso` of the latest FreeNAS 11.3 release:
 
-<img src="/images/FN11.3-Latest.png">
+![Download Latest](/images/CORE/11.3/Download Latest.png "Download Latest")
 <br><br>
 <!-- markdown-link-check-disable-next-line -->
 Burn the downloaded `.iso` file to a CD or USB stick. Refer to the [Preparing Media](/hub/initial-setup/install/FirstTimeInstall/) instructions in the Installation article for tips about burning the `.iso` to media using different Operating Systems.
@@ -87,13 +87,13 @@ Press <kbd>Enter</kbd> when done.
 
 The installer recognizes earlier versions of FreeNAS/TrueNAS installed on the boot drives and asks to either upgrade or do a fresh install:
 
-<img src="/images/InstallerUpgradeChoice.png">
+![Installer Upgrade Choice](/images/CORE/12.0/InstallerUpgradeChoice.png "Installer Upgrade Choice")
 <br><br>
 
 To perform an upgrade, press <kbd>Enter</kbd> to accept the default `Upgrade Install`.
 The installer will display another reminder that the operating system should be installed on a disk that is not used for storage.
 
-<img src="/images/InstallerUpgradeMethod.png">
+![Installer Upgrade Method](/images/CORE/12.0/InstallerUpgradeMethod.png "InstallerUpgradeMethod")
 <br><br>
 
 The updated system can be installed in a new boot environment, or the entire operating system device can be formatted to start fresh.
@@ -105,7 +105,7 @@ Move the highlight to one of the options and press <kbd>Enter</kbd> to start the
 The installer unpacks the new image and checks for upgrades to the existing database file.
 The database file that is preserved and migrated contains your TrueNAS configuration settings.
 
-<img src="/images/InstallerUpgradePreservedDatabase.png">
+![Installer Upgrade Preserved Database](/images/CORE/12.0/InstallerUpgradePreservedDatabase.png "Installer Upgrade Preserved Database")
 <br><br>
 
 Press <kbd>Enter</kbd>.
