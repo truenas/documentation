@@ -10,7 +10,7 @@ There are a few adjustable interface preferences and a built-in theme editor for
 To access user preferences, click <i class="fas fa-cog" aria-hidden="true" title="Settings"></i> **> Preferences**.
 This page has options to adjust global settings in the web interface, manage custom themes, and create new themes.
 
-<img src="/images/InterfacePreferences.png">
+![Interface Preferences](/images/CORE/12.0/InterfacePreferences.png "Interface Preferences")
 
 ## General Preferences
 
@@ -28,7 +28,7 @@ There are a few options for how things are displayed or behave in the web interf
 If a included theme doesn't satisfy your preference, a fully custom theme can be created.
 To start creating a custom theme, click **CREATE NEW THEME**.
 
-<img src="/images/CustomTheme.png">
+![Preferences Custom Theme](/images/CORE/12.0/PreferencesCustomTheme.png "Preferences Custom Theme")
 <br><br>
 
 Colors from an existing theme can be used when creating a new custom theme.
