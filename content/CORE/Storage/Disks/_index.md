@@ -1,5 +1,5 @@
 ---
-title: "Data Pools"
+title: "Disks"
 geekdocCollapseSection: true
-weight: 10
+weight: 40
 ---
