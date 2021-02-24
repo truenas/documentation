@@ -8,7 +8,7 @@ TrueNAS has a variety of options for scheduling tasks.
 Typical choices are often suggested, but an advanced scheduler provides an increased level of control to fine-tune and visualize exactly when a task will run.
 To open the advanced scheduler, open a scheduling related field and click **Custom**.
 
-<img src="/images/TN12.0-CustomScheduler.png">
+![Tasks Advanced Scheduler](/images/CORE/12.0/TasksAdvancedScheduler.png "Tasks Advanced Scheduler")
 
 ## Creating a Custom Schedule
 
