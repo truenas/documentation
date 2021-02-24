@@ -24,7 +24,7 @@ In this example, VMware Workstation Player on Windows is being used.
 
 When VMware Player is open, click **Create a New Virtual Machine**
 
-<img src="/images/tc-vm-1.PNG" width='700px'>
+![VMware Installer Start](/images/CORE/12.0/VMwareInstallerStart.png "VMware Installer Start")
 <br><br>
 
 Select **I will install the operating system later** and click **Next**.
@@ -38,13 +38,13 @@ The recommended disk size is at least *20GB*.
 Click **Next**.
 Review the settings for the virtual machine and click **Finish**.
 
-<img src="/images/tc-vm-2.PNG" width='700px'>
+![Vmware Installer VM Create](/images/CORE/12.0/VmwareInstallerVMCreate.png "Vmware Installer VM Create")
 <br><br>
 
 Now that the virtual machine has been created, we need to add our TrueCommand virtual image to the machine.
 Select the virtual machine from the list and click **Edit virtual machine settings**.
 
-<img src="/images/tc-vm-3.PNG" width='700px'>
+![VMware Installer VM Create Summary](/images/CORE/12.0/VMwareInstallerVMCreateSummary.png "VMware Installer VM Create Summary")
 <br><br>
 
 Next, click **Add…**.
