@@ -205,27 +205,27 @@ Select the virtual machine from the list and click *Play virtual
 machine*. The machine will start and boot into the TrueNAS installer.
 Select *Install/Upgrade*.
 
-![InstallVMMain](/images/CORE/12.0/InstallVMMain.png "Install VM Main Screen")
+![InstallVMMain](/images/CORE/12.0/InstallVMMainScreen.png "Install VM Main Screen")
 <br><br>
 
 Select the desired disk for the boot environments.
 
-![InstallVMMedia](/images/CORE/12.0/InstallVMMedia.png "Install VM Media Screen")
+![InstallVMMedia](/images/CORE/12.0/InstallVMMediaScreen.png "Install VM Media Screen")
 <br><br>
 
 Select *Yes*. **This will erase all contents on the disk**!
 
-![InstallVMWarning](/images/CORE/12.0/InstallVMWarning.png "Install VM Warning Screen")
+![InstallVMWarning](/images/CORE/12.0/InstallVMWarningScreen.png "Install VM Warning Screen")
 <br><br>
 
 Set a password for root login.
 
-![InstallVMPassword](/images/CORE/12.0/InstallVMPassword.png "Install VM Password Screen")
+![InstallVMPassword](/images/CORE/12.0/InstallVMPasswordScreen.png "Install VM Password Screen")
 <br><br>
 
 Select *\<Boot via BIOS>*.
 
-![InstallVMBootMode](/images/CORE/12.0/InstallVMBootMode.png "Install VM Boot Mode Screen")
+![InstallVMBootMode](/images/CORE/12.0/InstallVMBootModeScreen.png "Install VM Boot Mode Screen")
 <br><br>
 
 After the installation of TrueNAS has completed, reboot the system.
