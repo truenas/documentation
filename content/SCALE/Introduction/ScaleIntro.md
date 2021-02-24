@@ -6,7 +6,7 @@ tags: ["SCALE"]
 weight: 10
 ---
 
-<img src="/images/truenas_scale-logo-full-color-rgb.png" style="scale:50%;"> <br><br>
+![TrueNAS SCALE Logo Full Color RGB](/images/CORE/12.0/truenas_scale-logo-full-color-rgb.png "TrueNAS SCALE Logo Full Color RGB")
 
 **TrueNAS SCALE** is the latest member of the TrueNAS family and provides Open Source HyperConverged Infrastructure (HCI) including Linux containers and VMs.
 TrueNAS SCALE includes the ability to cluster systems and provide scale-out storage with capacities of up to hundreds of Petabytes.
@@ -41,7 +41,6 @@ Each node can support Virtual Machines (with the KVM hypervisor) as well as Dock
 **Containers and VMs**
  + With support for KVM VMs, Kubernetes, and Docker containers, it’s easy to add applications to suit your every need.
 
-
-<img src="https://www.truenas.com/wp-content/uploads/2020/11/TrueNAS_SCALE_Software_Features_Data_Sheet_2020_image-scaled.jpg"> <br><br>
+![TrueNAS SCALE Software Features Data Sheet](https://www.truenas.com/wp-content/uploads/2020/11/TrueNAS_SCALE_Software_Features_Data_Sheet_2020_image-scaled.jpg "TrueNAS SCALE Software Features Data Sheet")
 
 For more information, contact iXsystems at [info@ixsystems.com](mailto:info@ixsystems.com) or visit [TrueNAS.com](https://www.truenas.com)
