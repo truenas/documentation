@@ -6,7 +6,7 @@ weight: 50
 
 The web interface has a web shell that makes it convenient to run command line tools from the web browser as the root user.
 
-<img src="/images/TN-GuiShell.png">
+![UI Shell](/images/CORE/12.0/UIShell.png "UI Shell")
 <br><br>
 
 The prompt shows that the current user is `root`, the hostname is `freenas`, and the current working directory is `~`, the home directory of the logged-in user.
@@ -30,9 +30,9 @@ Click **Reconnect** to start a new session.
 
 Clicking other web interface menus closes the shell session and stops commands running in the shell. `tmux` provides the ability to detach shell sessions and then reattach to them later. Commands continue to run in a detached session.
 
-{{% alert title="Recommended Browser" color="info" %}}
+{{< hint info >}}
 Not all shell features render correctly in Chrome. Firefox is the recommended browser when using the shell.
-{{% /alert %}}
+{{< /hint >}}
 
 Most FreeBSD command line utilities are available in the Shell, including additional troubleshooting applications for TrueNAS Core and Enterprise.  
 For TrueNAS Scale, most Linux command line utilities are available in the shell.
