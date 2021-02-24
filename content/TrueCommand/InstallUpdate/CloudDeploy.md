@@ -12,12 +12,12 @@ TrueCommand Cloud is a SaaS offering of TrueCommand which includes a WireGuard V
 
 Open https://portal.ixsystems.com and click **Register**. 
 
-<img src="/images/tcc-01.png" width='700px'>
+![Portal Login](/images/CORE/12.0/PortalLogin.png "Portal Login")
 <br><br>
 
 Fill out the form using the email address you want to use. 
 
-<img src="/images/tcc-02.png" width='700px'>
+![Portal Account Create](/images/CORE/12.0/PortalAccountCreate.png "Portal Account Create")
 <br><br>
 
 This email account will need to be verified.  The email should arrive in a few minutes, if it does not show up in your inbox, check your spam folder.  If the email is in the spam folder, mark it as *not spam* and add the account to your address book so future emails will go to your inbox.
@@ -27,35 +27,35 @@ When you have received the verification email, open the link provided in the ema
 
 Log in to your verified account and click **New Subscription**.  
 
-<img src="/images/tcc-03.png" width='700px'>
+![Portal Dashboard](/images/CORE/12.0/PortalDashboard.png "Portal Dashboard")
 <br><br>
 
-<img src="/images/tcc-04.png" width='700px'>
+![Portal Cloud Subscription](/images/CORE/12.0/PortalCloudSubscription.png "Portal Cloud Subscription")
 <br><br>
 
 Select the TrueCommand Cloud option and choose the subscription plan that best fits your current needs.  This can be adjusted later if your needs change.
 
-<img src="/images/tcc-05.png" width='700px'>
+![Portal Cloud Subscription Options](/images/CORE/12.0/PortalCloudSubscriptionOptions.png "Portal Cloud Subscription Options")
 <br><br>
 
 Click Continue to proceed.
 
-<img src="/images/tcc-06.png" width='700px'>
+![Portal Cloud Subscription Selected](/images/CORE/12.0/PortalCloudSubscriptionSelected.png "Portal Cloud Subscription Selected")
 <br><br>
 
 Next, fill the payment form. 
 
-<img src="/images/tcc-07.png" width='700px'>
+![Cloud Subscription Payment](/images/CORE/12.0/CloudSubscriptionPayment.png "Cloud Subscription Payment")
 <br><br>
 
 Once the form has been accepted, click **Provision Now**.
 
-<img src="/images/tcc-08.png" width='700px'>
+![Portal Dashboard Active Subscription](/images/CORE/12.0/PortalDashboardActiveSubscription.png "Portal Dashboard Active Subscription")
 <br><br>
 
 Select a Subnet that is not currently in-use on your network. If unsure, please speak to your local IT staff.
 
-<img src="/images/tcc-09.png" width='700px'>
+![TrueCommand Provision Subnet](/images/CORE/12.0/TrueCommandProvisionSubnet.png "TrueCommand Provision Subnet")
 <br><br>
 
 
@@ -63,27 +63,27 @@ Select a Subnet that is not currently in-use on your network. If unsure, please 
 
 From the account home page, click **Manage**.  Add a client for your desktop or laptop so that you can obtain a TrueCommand WireGuard Config file. 
 
-<img src="/images/tcc-10.png" width='700px'>
+![Cloud Subscription Service Details](/images/CORE/12.0/CloudSubscriptionServiceDetails.png "Cloud Subscription Service Details")
 <br><br>
 
 Once the client account has been created, click the <i class="fas fa-download action-icon clickable" aria-hidden="true" title="Download WireGuard configuration file"></i>&nbsp download icon to download the config file.
 
-<img src="/images/tcc-11.png" width='700px'>
+![Cloud Subscription Service Details WireGuard Client](/images/CORE/12.0/CloudSubscriptionServiceDetailsWireGuardClient.png "Cloud Subscription Service DetailsW ireGuard Client")
 <br><br>
 
 Open Wireguard on your machine and click **Add Tunnel**. 
 
-<img src="/images/wg-01.png" width='700px'>
+![WireGuard Tunnels](/images/CORE/12.0/WireGuardTunnels.png "WireGuard Tunnels")
 <br><br>
 
 Select the TrueCommand WireGuard Configuration file that was downloaded from the portal.
 the configuration file into WireGuard on your machine and activate the tunnel.
 
-<img src="/images/wg-02.png" width='700px'>
+![WireGuard TC Cloud Inactive](/images/CORE/12.0/WireGuardTCCloudInactive.png "WireGuard TC Cloud Inactive")
 <br><br>
 
 Click **Activate** to initialize the Wireguard tunnel.
-<img src="/images/wg-03.png" width='700px'>
+![WireGuard TC Cloud Activate](/images/CORE/12.0/WireGuardTCCloudActivate.png "WireGuard TC Cloud Activate")
 <br><br>
 
 Further information on WireGuard and WireGuard clients can be found on the [WireGuard home page](https://www.wireguard.com). The IP of your TrueCommand Cloud instance is displayed in the iXsystems Account Portal page.  
@@ -94,20 +94,20 @@ After WireGuard has been activated, you can log in to the TrueCommand Cloud Inte
 
 Log into your ixSystems cloud account and click **Manage**, Under *Service Details* copy the *TrueCommand API Key* that is displayed.
 
-<img src="/images/tcc-11.png" width='700px'>
+![Cloud Subscription Service Details WireGuard Client](/images/CORE/12.0/CloudSubscriptionServiceDetailsWireGuardClient.png "Cloud Subscription Service Details WireGuard Client")
 <br><br>
 
 Log into your TrueNAS systems and click the TrueCommand icon in the upper right.
 
 Paste the TrueCommand API Key copied from the iXsystems Account Portal into the TrueNAS dialog window. 
 
-<img src="/images/TNapiTC.png"><br><br>
+![TrueCommand Cloud Connect API Key](/images/SCALE/TrueCommandCloudConnectAPIKey "TrueCommand Cloud Connect API Key")
 
 When the True Command logo starts bouncing left and right, check the email account registered for the TrueCommand Cloud Account for a verification message.  The email contains a link to the Portal account home to confirm the connection and activate the TrueNAS system.
 
 Click on the New System alert, fill in the information from the TrueNAS system, and click the **Add System** button.
 
-<img src="/images/tcnewssystemcred.png"><br><br>
+![New System Credendtials](/images/TrueCommand/1.3/NewSystemCreds.png "New System Credendtials")
 
 It may take 10 to 15 minutes for your TrueNAS instance to fully sync up with the TrueCommand Cloud instance. When systems are connected to the TrueCommand Cloud instance, refer to the [TrueCommand documentation](/truecommand/) for more articles about setting up configuration backups, alerts, reports, and role-based access control.
 
