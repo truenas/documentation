@@ -1,8 +1,6 @@
 ---
-title: "Managing Existing Pools"
-description: "How to make changes to a data storage pool after it has been created."
-weight: 60
-tags: ["ZFS","zpool"]
+title: "Managing Pools"
+weight: 40
 ---
 
 After creating a data storage pool, there are a variety of options to change the initial configuration of that pool.

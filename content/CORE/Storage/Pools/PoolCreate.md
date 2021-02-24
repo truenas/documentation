@@ -1,35 +1,96 @@
 ---
-title: "Pool Creation Overview"
+title: "Pool Creation"
 weight: 10
 ---
 
-TrueNAS uses ZFS data storage pools to efficiently store and protect your information. 
-Storage pools are collections of attached drives that are organized into virtual devices (vdevs). 
-Data in a storage pool is periodically reviewed and “healed” whenever a bad block is discovered. 
-Drives can be arranged inside vdevs to provide varying amounts of redundancy, which prevents catastrophic data loss in the event a drive fails. 
-Pools also support additional features to help maximize the read and write performance of data.
+{{< toc >}}
 
-Before creating a storage pool, we recommended you review the available system resources and plan out your specific use case. 
-If you’re storing critical information, more drives may be needed to provide redundancy. 
-If you need to maximize the total available storage at the expense of redundancy or performance, you can use additional SSD drives to maximize pool performance. 
+TrueNAS uses ZFS data storage "pools" to efficiently store and protect data.
+
+{{< expand "What's a pool?" "v" >}}
+Storage pools are attached drives organized into virtual devices (vdevs).
+ZFS and TrueNAS periodically reviews and “heals” whenever a bad block is discovered in a pool.
+Drives are arranged inside vdevs to provide varying amounts of redundancy and performance.
+This allows for high performance pools, pools that maximize data lifetime, and all situations in between
+{{< /expand >}}
+
+## Review Storage Needs
+
+It is strongly recommended to review the available system resources and plan the storage use case before creating a storage pool.
+* When storing critical information, more drives allocated to the pool increases redundancy.
+* Maximizing total available storage at the expense of redundancy or performance means allocating large volume disks and configuring the pool for minimal redundancy.
+* Maximizing pool performance means installing and allocating high-speed SSD drives to the pool.
+
 Determining your specific storage requirements is a critical step before creating a pool.
 
-## Creating a new Pool
+## Creating a Pool
 
-To create a new pool, log in to the web interface, go to **Storage > Pools**, and click **ADD**.
-Select *Create new pool* and click **CREATE POOL** to open the **Pool Manager**.
+To create a new pool, go to **Storage > Pools** and click *ADD*.
+Select *Create new pool* and click *CREATE POOL* to open the **Pool Manager**.
 
-<img src="/images/PoolManager.png">
-<br><br>
+![StoragePoolsAddCreateManager](/images/CORE/12.0/StoragePoolsAddCreateManager.png "TrueNAS Pool Manager")
 
-First, enter a name for the pool.
-If you want to encrypt the data for additional security, select *Encryption*.
-Be aware that encrypting also complicates how data is retrieved and has some risks. Refer to the [Encryption article](/CORE/Storage/DataPools/encryption/) for more details.
+To begin, enter a pool *Name*.
 
-Now you will configure the virtual devices (vdevs) that make up the pool.
-Click **SUGGEST LAYOUT** to add all same-sized disks in an ideal configuration for balanced data redundancy and performance.
-To manually add disks in a vdev, select the disks to add and click <i class="fas fa-arrow-right" aria-hidden="true" title="Right Arrow"></i>.
-To see more details about a disk, click the `>` in a disk's row.
+{{< expand "Encryption?" "v" >}}
+Encryption algorithms are available as an option for maximizing data security.
+This also complicates how data is retrieved and risks permanent data loss!
+Refer to the [Encryption article](/CORE/Storage/Pools/Encryption/) for more details and decide if encryption is necessary for your use case before setting any *Encryption* options.
+{{< /expand >}}
+
+Next, configure the virtual devices (vdevs) that make up the pool.
+
+### Suggested Layout
+
+Clicking *SUGGEST LAYOUT* allows TrueNAS to review all available disks and populate the primary *Data* vdev with identically sized drives in a balanced configuration between storage capacity and data redundancy.
+To clear the suggestion, click *RESET LAYOUT*.
+
+To manually configure the pool, add vdevs according to your use case.
+Set the **Disk** boxes and click the <i class="fa fa-arrow-right" aria-hidden="true" title="Right Arrow"></i> to move the disks into a vdev.
+
+### Vdev Types
+
+Pools have many different kinds of vdevs available.
+These store data or enable unique features for the pool:
+
+{{< tabs "Vdev Types" >}}
+{{< tab "Data" >}}
+Standard vdev for primary storage operations.
+Each storage pool requires at least one *Data* vdev.
+*Data* vdev configuration typically affects how the other kinds of vdevs are configured.
+{{< /tab >}}
+{{< tab "Cache" >}}
+[ZFS L2ARC](/references/l2arc/) read-cache used with fast devices to accelerate read operations.
+This can be added or removed after creating the pool.
+{{< /tab >}}
+{{< tab "Log" >}}
+[ZFS LOG](/references/slog/) device that improves synchronous write speeds.
+This can be added or removed after creating the pool.
+{{< /tab >}}
+{{< tab "Hot Spare" >}}
+Drives reserved for inserting into *Data* vdevs when an active drive fails.
+Hot spares are temporarily used as replacements for failed drives to prevent larger pool and data loss scenarios.
+
+When a failed drive is replaced with a new drive, the hot spare reverts to an inactive state and is available again as a hot spare.
+
+When the failed drive is only detached from the pool, the temporary hot spare is promoted to a full *Data* vdev member and is no longer available as a hot spare.
+{{< /tab >}}
+{{< tab "Metadata" >}}
+Special Allocation class used to create [Fusion Pools](/core/storage/pools/fusionpool/) for increased metadata and small block I/O performance.
+{{< /tab >}}
+{{< tab "Dedup" >}}
+Stores [ZFS de-duplication](/references/zfsdeduplication/) tables.
+Requires allocating X GiB for every X TiB of general storage.
+Example: 1 GiB of *Dedup* vdev capacity for every 1 TiB of *Data* vdev availability
+{{< /tab >}}
+{{< /tabs >}}
+
+To add a different vdev type during pool creation, click *ADD VDEV* and select the type.
+Select disks from `Available Disks` and use the <i class="fa fa-arrow-right" aria-hidden="true" title="Right Arrow"></i> (right arrow) next to the new **VDev** to add it to that section.
+
+### Vdev Layout
+
+By default, a single 
 
 The pool manager suggests a vdev layout based on the number of disks added to the vdev.
 For example, if two disks are added, TrueNAS automatically configures the vdev as a *mirror*, where the total available storage is the size of one added disk while the other disk provides redundancy.
@@ -43,6 +104,11 @@ To change the vdev layout, open the *Data VDevs* list and select the desired lay
 
 **We never recommend using a Stripe to store critical data, since a single disk failure could result in losing all data in that vdev.**
 
+To manually add disks in a vdev, select the disks to add and click <i class="fa fa-arrow-right" aria-hidden="true" title="Right Arrow"></i>.
+To see more details about a disk, click the `>` in a disk's row.
+
+Click *SUGGEST LAYOUT* to add all the same-sized disks in an ideal configuration for balanced data redundancy and performance.
+
 A vdev layout can be duplicated by clicking *REPEAT*.
 If more disks are available and equal in size, the *REPEAT* button creates another vdev with an identical configuration called a "mirror" of vdevs.
 Otherwise, another vdev can be added by clicking *ADD DATA* and adding disks manually.
@@ -54,86 +120,4 @@ For example, *Pool1* has a data vdev in a *mirror* layout, so create *pool2* for
 
 ![Storage Pools Add Create Mirror](/images/CORE/12.0/StoragePoolsAddCreateMirror.png "Storage Pools Add Create Mirror")
 <br>
-{{< /hint >}}
-
-### Additional Vdev Types
-
-There are several vdev types that you can use to add features to the pool:
-
-* *Cache*: ZFS L2ARC read-cache that can be used with fast devices to accelerate read operations. Optional vdev that is removable after pool creation.
-* *Log*: ZFS LOG device that can improve speeds of synchronous writes. Optional write-cache that is removable after pool creation.
-* *Hot Spare*: Drive reserved for inserting into DATA pool vdevs when an active drive has failed.
-  The hot spare is temporarily used as a replacement for the failed drive to prevent a larger pool and data loss scenario.
-  If the failed drive in the pool is replaced with a new drive, the hot spare reverts to an inactive state and is available again as a hot spare.
-  If the failed drive is detached from the pool, the temporary spare is promoted to a full member of the pool and will no longer be available as a hot spare.
-* *Metadata*: Special Allocation class used to create [Fusion pools](/CORE/Storage/DataPools/fusion-pool/). Optional vdev type used to speed up metadata and small block I/O.
-* *Dedup*: Stores de-duplication tables. These vdevs must be sized to X GiB for X TiB of general storage.
-
-You can add an SSD cache or log device during or after pool creation to improve pool performance under specific use cases.
-Before adding a cache or log device, refer to the [ZFS Primer](/Reference/ZFS-references/) to determine if the system will benefit or suffer from adding the device.
-
-To add a different vdev type during pool creation, click **ADD VDEV** and select the type from the drop down.
-Select disks from `Available Disks` and use the <i class="fas fa-arrow-right" aria-hidden="true" title="Right Arrow"></i> (right arrow) next to the new **VDev** to add it to that section.
-
-## Importing a Pool
-
-A pool that has been exported/disconnected from the system can be reconnected by clicking **Storage** > **Pools** > **Add**, then selecting **Import an existing pool**. Importing works for pools that were exported/disconnected from the current system, created on another system, and pools that need to be reconnected after reinstalling or upgrading to the TrueNAS system.
-
-When physically installing ZFS pool disks from another system, use the `zpool export poolname` command in the command line or a web interface equivalent to export the pool on that system. Then, shut it down and connect the drives to the TrueNAS system. Shutting down the other system prevents an *“in use by another machine”* error during the import to TrueNAS.
-
-### Importing Encrypted ZFS Pools
-
-You can import existing ZFS pools by clicking **Storage** > **Pools** > **ADD**. Select **Import an existing pool**, then click **NEXT**.
-
-![Storage Pools Add Import](/images/CORE/12.0/StoragePoolsAddImport.png "Storage Pools Add Import")
-<br><br>
-
-Select **No, continue with import**, then click **NEXT**.
-
-<img src="/images/ZFS-NoContinueWithImport.png">
-<br><br>
-
-Click the drop down menu and choose the ZFS pool that you want to decrypt, then click **NEXT**.
-
-![StoragePoolsAddImportGELIPresentDecryptPool](/images/CORE/12.0/StoragePoolsAddImportGELIPresentDecryptPool.png "StoragePoolsAddImportGELIPresentDecryptPool")
-<br><br>
-
-Review the Pool Import Summary and click **IMPORT**, then click **CONTINUE** to unlock the pool’s encrypted datasets.
-
-![StoragePoolsAddImportGELIPresentDecryptPoolSummary](/images/CORE/12.0/StoragePoolsAddImportGELIPresentDecryptPoolSummary.png "StoragePoolsAddImportGELIPresentDecryptPoolSummary")
-<br><br>
-
-Click **Choose File** and open the encryption key file, then enter the **Passphrase** (if applicable) for the encrypted disks and click **SUBMIT**. Click **CONTINUE** to unlock the datasets.
-
-<img src="/images/ZFS-OpenTheEencryptionKeyFile.png">
-<br><br>
-
-### Importing Encrypted GELI Pools
-
-You can import existing GELI pools from FreeNAS/TrueNAS 11.3 or earlier by clicking **Storage** > **Pools** > **ADD**. Select **Import an existing pool**, then click **NEXT**.
-
-Select **Yes, decrypt the disks** and choose which disks you want to decrypt from the dropdown list.
-
-![StoragePoolsAddImportNoGELI](/images/CORE/12.0/StoragePoolsAddImportNoGELI.png "StoragePoolsAddImportNoGELI")
-<br><br>
-
-Click **Choose File** and open the encryption key file, then enter the **Passphrase** (if applicable) for the encrypted disks and click **NEXT**.
-Select the GELI pool from the Pool dropdown list and click **NEXT**.
-
-![StoragePoolsAddImportGELIPresentDecryptPoolSummary](/images/CORE/12.0/StoragePoolsAddImportGELIPresentDecryptPoolSummary.png "StoragePoolsAddImportGELIPresentDecryptPoolSummary")
-<br><br>
-
-Review the Pool Import Summary and click **IMPORT**.
-
-![StoragePoolsAddImportZFSPoolSummary](/images/CORE/12.0/StoragePoolsAddImportZFSPoolSummary.png "StoragePoolsAddImportZFSPoolSummary")
-<br><br>
-
-## Encryption Keys and Passphrases
-
-{{< hint warning >}}
-The encryption key file and passphrase are required to decrypt the pool. If the pool cannot be decrypted, it cannot be re-imported after a failed upgrade or lost configuration. This means it is very important to save a copy of the key and to remember the passphrase that was configured for the key. Refer to the [Encryption article](/CORE/Storage/DataPools/encryption/) for instructions on managing keys.
-{{< /hint >}}
-
-{{< hint >}}
-For security reasons, encrypted pool keys are not saved in a configuration backup file. When TrueNAS has been installed to a new device and a saved configuration file restored to it, the keys for encrypted disks will not be present, and the system will not request them. To correct this, export the encrypted pool with <i class="fas fa-pen" aria-hidden="true" title="Pen"></i>&nbsp; (Configure) > **Export/Disconnect**, making sure that **Destroy data on this pool?** is not set. Then import the pool again. During the import, the encryption keys can be entered as described above.
 {{< /hint >}}

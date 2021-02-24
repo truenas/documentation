@@ -1,5 +1,5 @@
 ---
-title: "Fusion Pool Creation"
+title: "Fusion Pools"
 weight: 30
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Storage Encryption"
-weight: 50
+weight: 20
 ---
 
 You can encrypt the root dataset of a new storage pool to further increase data security.

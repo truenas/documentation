@@ -9,7 +9,7 @@ If one of the two devices were to fail, that device is easily detached and repla
 
 View the current boot pool status by going to **System > Boot > ACTIONS > Boot Pool Status**.
 
-![SystemBootBootPoolStatus](images/CORE/12.0/SystemBootBootPoolStatus.png "Boot Pool Status Example")
+![SystemBootBootPoolStatus](/images/CORE/12.0/SystemBootBootPoolStatus.png "Boot Pool Status Example")
 
 On this page you will find the list and status of each boot pool on the system.
 By default, this pool is named **boot-pool**.
