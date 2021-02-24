@@ -12,9 +12,9 @@ When *Report CPU usage in percent* is set, it simply reports the CPU usage in pe
 
 A *Remote Graphite Server Hostname* can be typed in the respective field. The *Graph Age in Months* field is used to set the maximum number of months a graphis stored. The *Number of Graph points* field is used to set the number of points for each hourly, daily, weekly, monthly, or yearly graph.  
 
-{{% alert title="Warning" color="warning" %}}
+{{< hint warning >}}
 Report history is cleared when CPU reporting, Graph Age, or Graph Points are changed.
-{{% /alert %}}
+{{< /hint >}}
 
 ## Graphs
 
@@ -66,7 +66,6 @@ time. This data is preserved across system upgrades and restarts.
 
 Data files are saved in `/var/db/collectd/rrd/`.
 
-{{% alert title=Warning color=warning %}}
-Reporting data is frequently written and should not be stored on the boot pool
-or operating system device.
-{{% /alert %}}
+{{< hint warning >}}
+Reporting data is frequently written and should not be stored on the boot pool or operating system device.
+{{< /hint >}}
