@@ -5,7 +5,7 @@ weight: 50
 tags: ["S.M.A.R.T."]
 ---
 
-<a href="https://en.wikipedia.org/wiki/S.M.A.R.T.">S.M.A.R.T.</a> (Self-Monitoring, Analysis and Reporting Technology) is an industry standard for disk monitoring and testing.
+[S.M.A.R.T.](https://en.wikipedia.org/wiki/S.M.A.R.T.) (Self-Monitoring, Analysis and Reporting Technology) is an industry standard for disk monitoring and testing.
 Disks can be monitored for problems, with several different kinds of self-tests available.
 TrueNAS can adjust when and how [alerts](/CORE/System/system-alerts/) for SMART are issued.
 When S.M.A.R.T. monitoring reports an issue, it is recommended to replace that disk.
@@ -17,17 +17,17 @@ Running tests can reduce drive performance, so it is recommended to schedule tes
 Avoid scheduling disk-intensive tests at the same time!
 For example, S.M.A.R.T. tests should not be scheduled on the same day as a disk [scrub](/CORE/Tasks/scrub/) or [resilver](/CORE/Tasks/resilver/).
 
-{{% pageinfo %}}
+{{< hint info >}}
 To disable all S.M.A.R.T. testing for a disk, go to **Storage > Disks**, select a disk, and click **EDIT DISK(S)**.
 Unset **Enable S.M.A.R.T.**.
-{{% /pageinfo %}}
+{{< /hint >}}
 
 ## Manual S.M.A.R.T. Test
 
 To quickly test a disk for errors, go to **Storage > Disks** and select the disks to be tested.
 After selecting the desired disks, click *MANUAL TEST*.
 
-<img src="/images/ManualSMARTTest.png">
+![Storage Disks Manual Test Options](/images/CORE/12.0/StorageDisksManualTestOptions.png "Storage Disks Manual Test Options")
 <br><br>
 
 Next, select the test **Type**.
@@ -45,7 +45,7 @@ Each test type can be slightly different based on the drive connection (ATA or S
 * Offline - [SCSI] runs the default self test in foreground.
   No entry is placed in the self test log.
 
-For more information, refer to <a href="https://www.smartmontools.org/browser/trunk/smartmontools/smartctl.8.in">smartctl(8)</a>.
+For more information, refer to [smartctl(8)](https://www.smartmontools.org/browser/trunk/smartmontools/smartctl.8.in).
 
 Click *START* to begin the test.
 Depending on the chosen test type, the test can take some time to complete.
@@ -57,7 +57,7 @@ To find test results from the [shell](/CORE/Administrative/gui-shell/), use `sma
 
 To schedule recurring S.M.A.R.T. tests, go to **Tasks > S.M.A.R.T. Tests** and click **ADD**.
 
-<img src="/images/TasksSMARTTestAdd.png">
+![Tasks SMART Tests Add](/images/CORE/12.0/TasksSMARTTestsAdd.png "Tasks SMART Tests Add")
 <br><br>
 
 Setting **All Disks** will include every disk that has S.M.A.R.T. enabled in the test.
@@ -79,17 +79,17 @@ To verify the schedule is saved, you can open the [shell](/CORE/Administrative/g
 
 The S.M.A.R.T. service must be turned on for automatic S.M.A.R.T. tests to function.
 
-{{% pageinfo %}}
+{{< hint info >}}
 It is recommended to disable the S.M.A.R.T. service when disks are controlled by a RAID controller.
 The controller will monitor S.M.A.R.T. separately and mark disks as a *Predictive Failure* on a test failure.
-{{% /pageinfo %}}
+{{< /hint >}}
 
 To turn the S.M.A.R.T. service on, go to **Services** and click the slider for *S.M.A.R.T.*.
 If you wish to turn the service on automatically when the TrueNAS system is turned on, set *Start Automatically*.
 
 The S.M.A.R.T. service settings can be configured by clicking <i class="fas fa-pen" aria-hidden="true" title="Pen"></i>&nbsp; (Configure).
 
-<img src="/images/ServicesSMARTConfig.png">
+![Services SMART Options](/images/CORE/12.0/ServicesSMARTOptions.png "Services SMART Options")
 <br><br>
 
 *Check Interval* is the amount of time, in minutes, the [smartd](https://www.freebsd.org/cgi/man.cgi?query=smartd) service checks for S.M.A.R.T. tests to run on the system.
