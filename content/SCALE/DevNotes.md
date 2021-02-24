@@ -204,7 +204,7 @@ To pull latest version of a container image:
 midclt call -job docker.images.pull '{"from_image": "plexinc/pms-docker", "tag": "latest"}'
 ```
 
-To redeploy a chart release, I.E. after pulling a newer container image:
+To redeploy a chart release, i.e. after pulling a newer container image:
 
 ```
 midclt call -job chart.release.redeploy plex
@@ -229,12 +229,12 @@ Setting `KUBECONFIG` is required for using helm and the `kubectl` alias helps us
 
 Both pre-built official containers and custom application containers can be deployed using the *Apps* page in the Scale web interface.
 
-<img src="/images/ScaleApps.png">
+![Apps Catalog](/images/CORE/12.0/AppsCatalog.png "Apps Catalog")
 <br><br>
 
 The UI will ask to use a storage pool for Applications.
 
-<img src="/images/ScaleAppsChoosePool.png">
+![Apps Choose Pool](/images/CORE/12.0/AppsChoosePool.png "Apps Choose Pool")
 <br><br>
 
 It is recommended to keep the container use case in mind when choosing a pool.
@@ -243,19 +243,19 @@ This will create an `ix-applications` dataset on the chosen pool and use this lo
 
 Additional options for configuring general network interfaces and IP addresses for application containers are in **Apps > Settings > Advanced Settings**.
 
-<img src="/images/ScaleAppsAdvancedSettings.png">
+![Scale Apps Advanced Settings](/images/CORE/12.0/ScaleAppsAdvancedSettings.png "Scale Apps Advanced Settings")
 <br><br>
 
 ### Official Applications
 
 Official containers are pre-configured to only require a name during deployment.
 
-<img src="/images/ScaleAppsInstallPlex.png">
+![Scale Apps Install Plex](/images/CORE/12.0/ScaleAppsInstallPlex.png "Scale Apps Install Plex")
 <br><br>
 
 When the container is deployed and active, a button to open the application web interface becomes available.
 
-<img src="/images/ScaleAppsInstalledPlexActive.png">
+![Scale Apps Installed Plex Active](/images/CORE/12.0/ScaleAppsInstalledPlexActive.png "Scale Apps Installed Plex Active")
 <br><br>
 
 Editing a deployed official container allows adjusting the container settings.
@@ -265,7 +265,7 @@ Saving any changes will redeploy the container.
 
 To deploy a custom application container in the Scale web interface, go to **Apps** and click *Launch Docker Image*.
 
-<img src="/images/ScaleAppsLaunchDockerImage.png">
+![Scale Apps Launch Docker Image](/images/CORE/12.0/ScaleAppsLaunchDockerImage.png "Scale Apps Launch Docker Image")
 <br><br>
 
 There a numerous options for custom containers that are broken down into smaller sections.
@@ -327,7 +327,7 @@ Saving the official or custom container will add a new entry to *Installed Appli
 The container will then enter a deploy status as it fetches the image from the remote repository and configures it.
 When deployment is complete, the container moves to an active status and can begin to be used.
 
-<img src="/images/ScaleAppsInstalledPlexActive.png">
+![Scale Apps Installed Plex Active](/images/CORE/12.0/ScaleAppsInstalledPlexActive.png "Scale Apps Installed Plex Active")
 <br><br>
 
 ### Accessing the Shell in an Active Container
