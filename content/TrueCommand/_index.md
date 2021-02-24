@@ -4,7 +4,7 @@ geekdocCollapseSection: true
 weight: 30
 ---
 
-<img src="/images/truecommand-logo-full-color-rgb.png" style="size:50%;">
+![Truecommand Logo Full Color RGB](/images/CORE/12.0/truecommand-logo-full-color-rgb.png "Truecommand Logo Full Color RGB")
 
 TrueCommand® is a "single pane of glass" application to simplify the scaling of data, drive management, and administration of iXsystems NAS platforms.
 TrueCommand boasts a wide variety of features, including Role-Based Access Control (RBAC), user account auditing, single sign-on for all connected NAS units, customizable alerts and reporting, and predictive analytics to maximize system uptime.<br><br>
