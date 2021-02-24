@@ -29,7 +29,7 @@ To enable Hyper-V, click on the Windows Start button and select or search for *A
 
 Alternatively, Hyper-V can be enabled with the Powershell. To do this, run Powershell as a Windows Administrator and enter `Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All`. If an error is returned that says the command could not be found, verify that you are running PowerShell as the Administrator. After the command successfully runs, reboot the computer.
 
-![Powershell HyperV CLI](/images/CORE/12.0/.png "Powershell HyperV CLI")
+![Powershell HyperV CLI](/images/CORE/12.0/PowershellHyperVCLI.png "Powershell HyperV CLI")
 <br><br>
 
 ### Install Docker Desktop
@@ -95,7 +95,7 @@ Click the `+` sign to add a second set of ports.
 + Local Host Port `9004`
 + Container Port `80/tcp`
 
-![Docker Desktop Images Run](/images/CORE/12.0/DockerDesktopImagesRun.png "Docker Desktop Images Run")
+![Docker Desktop TrueCommand Config](/images/CORE/12.0/DockerDesktopTrueCommandConfig.png "Docker Desktop TrueCommand Config")
 <br><br>
 
 Setting the *Volume* is not usually required for TrueCommand.
