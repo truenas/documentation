@@ -2,9 +2,12 @@
 title: "Developer's Notes"
 description: "Running updates about TrueNAS SCALE Nightly status and current issues."
 tags: ["SCALE"]
+weight: 2	
 ---
 
-#### Recent Updates
+
+{{< expand "Update Log" >}}
+
 > 02/04/2021 - Rounding out the last set of feature to merge for the release of 21.02, support for dynamic charts and managing additional catalog repos has merged.
 
 > 01/29/2021 - First early look at the new TrueNAS CLI has been merged into SCALE Nightly images. To launch run "cli" from the shell.
@@ -223,7 +226,10 @@ export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
 
 Setting `KUBECONFIG` is required for using helm and the `kubectl` alias helps use `kubectl` directly instead of prefixing it with `k3s` each time.
 
-> Caution: Support for Kubernetes is still considered experimental, so please use it at your own risk. If you find any bugs, please create tickets at https://jira.ixsystems.com.
+{{< hint danger >}}	> Caution: Support for Kubernetes is still considered experimental, so please use it at your own risk. If you find any bugs, please create tickets at https://jira.ixsystems.com.
+Support for Kubernetes is still considered experimental, so please use it at your own risk.	
+If you find any bugs, please create tickets at https://jira.ixsystems.com.	## Using Applications
+{{< /hint >}}
 
 ## Using Applications
 
