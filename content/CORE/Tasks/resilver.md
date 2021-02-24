@@ -11,7 +11,7 @@ The Resilver Priority menu makes it possible to increase the priority of resilve
 
 Go to **Tasks > Resilver Priority** to configure the priority to a time that most effective for your environment.
 
-<img src="/images/TasksResilverPriority.png">
+![Tasks Resilver Priority](/images/CORE/12.0/TasksResilverPriority.png "Tasks Resilver Priority")
 <br><br>
 
 | Setting | Value | Description |
