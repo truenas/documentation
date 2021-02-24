@@ -1,8 +1,6 @@
 ---
-title: "Encryption"
-description: "Native ZFS Encryption in TrueNAS"
+title: "Storage Encryption"
 weight: 50
-tags: ["ZFS","encryption","security","dataset","snapshots"]
 ---
 
 You can encrypt the root dataset of a new storage pool to further increase data security.
@@ -10,7 +8,7 @@ Please note that you will be responsible to remember or otherwise back up passph
 
 Data-at-rest encryption is available with:
 
-+ [Self Encrypting Drives (SEDs)]({{< ref "sed-drives.md" >}}) using OPAL or FIPS 140.2 (Both [AES 256](https://csrc.nist.gov/projects/cryptographic-standards-and-guidelines/archived-crypto-projects/aes-development))
++ [Self Encrypting Drives (SEDs)]() using OPAL or FIPS 140.2 (Both [AES 256](https://csrc.nist.gov/projects/cryptographic-standards-and-guidelines/archived-crypto-projects/aes-development))
 + Encryption of specific datasets (AES-256-GCM in TrueNAS 12.0)
 
 Keys for data-at-rest are managed on the local TrueNAS system.

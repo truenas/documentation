@@ -1,8 +1,6 @@
 ---
-title: "Overprovisioning SLOG SSDs"
-description: ""
-tags: ["components"]
-Weight: 80
+title: "SLOG Overprovision"
+weight: 80
 ---
 
 Overprovisioning SLOG SSDs can be useful for many different scenarios.

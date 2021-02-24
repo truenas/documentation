@@ -1,8 +1,6 @@
 ---
-title: "ZFS Pools"
-description: "How to create a ZFS data storage pool."
+title: "Pool Creation Overview"
 weight: 10
-tags: ["ZFS", "zpool"]
 ---
 
 TrueNAS uses ZFS data storage pools to efficiently store and protect your information. 
