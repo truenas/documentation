@@ -27,7 +27,7 @@ Any datasets or zvols to be snapshotted must exist, before creating a snapshot s
 
 Go to **Tasks > Periodic Snapshot Tasks** and click **ADD**.
 
-<img src="/images/TasksPeriodicSnapAdd.png">
+![Tasks Periodic Snapshot Add](/images/CORE/12.0/TasksPeriodicSnapshotAdd.png "Tasks Periodic Snapshot Add")
 <br><br>
 
 Choose the dataset you want to regularly back up with snapshots and how long you want to keep the snapshots on the system.
@@ -56,9 +56,9 @@ Examples:
 	</tbody>
 </table>
 
-{{% alert color="warning" %}}
+{{< hint warning >}}
 If the snapshots are likely to be referenced from a Windows computer, avoid using characters such as ":" that are invalid as part of a Windows file path. Also, some applications will have limits to filename or path length, and there may be limitations related to spaces and other characters. You should carefully consider future uses and ensure the names given to periodic snapshots will be acceptable.  Note however that snapshots can be renamed at any time, if required.
-{{% /alert %}}
+{{< /hint >}}
 
 Snapshot schedules are configured by selecting a premade schedule or creating a custom schedule. Custom schedules are generally recommended, as the advanced scheduler offers a high degree of control over the schedule and a preview that shows you the exact schedule you've created. Selecting recursive snapshots will also cause snapshots to be taken of all descendant datasets and volumes within the stated dataset or pool. Custom schedules allow for selection by clicking, and for finer control, custom values can be manually entered. See [Scheduled task timings](/CORE/Tasks/advanced-scheduler/) for details of the format used.
 
@@ -66,7 +66,7 @@ Periodic snapshots are named by default according to their creation schedule (1 
 
 TrueNAS will automatically delete periodic snapshots when they reach the end of their life, and will preserve snapshots so long as at least one periodic task requires their preservation. For example, suppose two schedules are created, one that takes a snapshot every hour, keeping them for a week, and one that takes a snapshot every day, keeping them for 3 years. A snapshot will be taken every hour. After a week, snapshots created at 01.00 through 23.00 will be destroyed, but snapshots timed at 00.00 will be kept because they are needed for the second periodic task, and will be destroyed at 3 years.
 
-<img src="/images/AdvancedScheduler.png">
+![Tasks Advanced Scheduler](/images/CORE/12.0/TasksAdvancedScheduler.png "Tasks Advanced Scheduler")
 <br><br>
 
 You can check the log for a saved snapshot schedule by clicking the task state.
