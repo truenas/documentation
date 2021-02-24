@@ -13,7 +13,7 @@ Rsync provides the ability to either *push* or *pull* data. When using rsync to 
 
 The rsync task does not work if the related system service is not turned on. To turn the rsync service on, go to **Services** and click the slider for *rsync*. To activate the service whenever TrueNAS boots, set *Start Automatically*.
 
-The rsync service settings can be configured by clicking <i class="fas fa-pen" aria-hidden="true" title="pencil"></i>. The default TCP port that rsync listens on can be changed, and additional auxiliary parameters from <a href="https://www.samba.org/ftp/rsync/rsyncd.conf.html">rsyncd.conf</a> can be added.
+The rsync service settings can be configured by clicking <i class="fas fa-pen" aria-hidden="true" title="pencil"></i>. The default TCP port that rsync listens on can be changed, and additional auxiliary parameters from [rsyncd.conf](https://www.samba.org/ftp/rsync/rsyncd.conf.html) can be added.
 
  Unless a specific setting is needed, it is recommended to use the default settings for the rsync service. Don't forget to click *SAVE* after changing any settings.
 
@@ -35,11 +35,11 @@ When using a specific user or group during data transfers to and from the module
 
 You can also define a list of hosts that are allowed or denied access to the rsync module.
 
-{{% pageinfo %}}
+{{< hint info >}}
 If a *Hosts Allow* list is specified, **only** the IPs and hostnames on the list will be able to connect to the module.
-{{% /pageinfo %}}
+{{< /hint >}}
 
-Other options include specifying a comment for the rsync module and any additional parameters from <a href="https://www.samba.org/ftp/rsync/rsyncd.conf.html">rsyncd.conf</a>.
+Other options include specifying a comment for the rsync module and any additional parameters from [rsyncd.conf](https://www.samba.org/ftp/rsync/rsyncd.conf.html).
 
 When a module has been created on the *remote* system, log in to the *host* system interface, go to **Tasks > Rsync Tasks**, and click *ADD*.
 
@@ -64,11 +64,11 @@ When *Delete* is set, the rsync task will delete files in the destination direct
 
 Set the *Quiet* option to suppress informational messages from the *remote* system. Set the option *Preserve Permissions* to preserve original file permissions. This is useful when the user is set to root.
 
-Set *Preserve Extended Attributes* to keep the advanced file system features and file metadata through the transfer (see <a href="https://en.wikipedia.org/wiki/Extended_file_attributes">Extended attributes</a>). Extended attributes must be supported by both systems.
+Set *Preserve Extended Attributes* to keep the advanced file system features and file metadata through the transfer (see [Extended attributes](https://en.wikipedia.org/wiki/Extended_file_attributes)). Extended attributes must be supported by both systems.
 
 Set *Delay Updates* to save the temporary files from updated files to a holding directory until the end of the transfer when all transferred files are renamed into place.
 
-Additional <a href="https://rsync.samba.org/ftp/rsync/rsync.html">rsync</a> options can be included in *Auxiliary Parameters*. Separate entries by pressing <kbd>Enter</kbd>. The *\* character must be escaped with a backslash (\\*.txt) or used inside single quotes ('\*.txt').
+Additional [rsync](https://rsync.samba.org/ftp/rsync/rsync.html) options can be included in *Auxiliary Parameters*. Separate entries by pressing <kbd>Enter</kbd>. The *\* character must be escaped with a backslash (\\*.txt) or used inside single quotes ('\*.txt').
 
 Unsetting *Enabled* disables the task schedule.
 You can still save the rsync task and run it manually.
@@ -116,9 +116,9 @@ Next, enter the *remote* host IP address or hostname.
 Use the format *username@remote_host* if the username differs on the *remote*host. Select *SSH* in the *Rsync Mode* dropdown. Enter the *TCP port* set on the *remote* system. The default is *22*. Enter the remote path of the dataset for rsync to *push* or *pull*. Set *Validate Remote Path* to automatically create the defined *Remote Path* if it does not exist on the *remote* system.
 
 Setting the *Times* option preserves modification times of the files. Set *Compress* to reduce the size of data to transmit. This is recommended for slow connections. *Archives* can be set to run recursively, preserving symlinks, permissions, modification times, group, and special files. When run as root, the owner, device files, and special files are also preserved. This is equivalent to passing the flags `-rlptgoD` to rsync. When *Delete* is set, the rsync task will delete files in the destination directory that do not exist in the source directory. For example, if the task is set to *pull*, this option will delete any files on the *host* dataset that do not existing on the *remote* module. Alternatively, if the task is set to *push*, this option will delete any files on the *remote* module that are not in the *host* dataset. This is a **destructive** option. Use with caution as data can be deleted permanently.
-Set the *Quiet* option to suppress informational messages from the *remote* system. Set the option *Preserve Permissions* to preserve original file permissions. This is useful when the user is set to root. Set *Preserve Extended Attributes* to keep the advanced file system features and file metadata through the transfer (see <a href="https://en.wikipedia.org/wiki/Extended_file_attributes">Extended attributes</a>). Extended attributes must be supported by both systems. Set *Delay Updates* to save the temporary files from updated files to a holding directory until the end of the transfer when all transferred files are renamed into place. 
+Set the *Quiet* option to suppress informational messages from the *remote* system. Set the option *Preserve Permissions* to preserve original file permissions. This is useful when the user is set to root. Set *Preserve Extended Attributes* to keep the advanced file system features and file metadata through the transfer (see [>Extended attributes](https://en.wikipedia.org/wiki/Extended_file_attributes)). Extended attributes must be supported by both systems. Set *Delay Updates* to save the temporary files from updated files to a holding directory until the end of the transfer when all transferred files are renamed into place. 
 
-Additional <a href="https://rsync.samba.org/ftp/rsync/rsync.html">rsync(1)</a> options can be included in *Auxiliary Parameters*. Separate entries by pressing <kbd>Enter</kbd>. The *\* character must be escaped with a backslash (\\*.txt) or used inside single quotes ('\*.txt').
+Additional [rsync(1)](https://rsync.samba.org/ftp/rsync/rsync.html) options can be included in *Auxiliary Parameters*. Separate entries by pressing <kbd>Enter</kbd>. The *\* character must be escaped with a backslash (\\*.txt) or used inside single quotes ('\*.txt').
 
 Unsetting *Enabled* disables the task schedule.
 You can still save the rsync task and run it manually.
