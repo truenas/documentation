@@ -12,11 +12,11 @@ This has the benefit of a smaller footprint and simpler upgrades.
 Use the appropriate Operating System [Docker installation instructions](https://docs.docker.com/get-docker/) and install Docker.
 Make sure that the Docker service is started.
 
-{{% alert title="Warning" color="warning" %}}
+{{< hint warning >}}
 Docker Desktop for Windows uses Hyper-V. This interferes with
 other virtualization applications. For example, you cannot use Docker
 Desktop and VMware Workstation Player simultaneously.
-{{% /alert %}}
+{{< /hint >}}
 
 Before fetching the TrueCommand docker image, create a local directory for
 the image to mount to for storage. This can be done by running
@@ -25,8 +25,8 @@ of choice for the new directory.
 
 After creating the new directory, fetch and run the TrueCommand Docker image.
 This is done in the Command Line Interface (CLI) by typing
-<code>docker run \--detach -v "/*hostdirectory*:/data" -p *portnumber*:80 -p
-*sslport*:443 ixsystems/truecommand:latest</code> where *hostdirectory* is a
+`docker run \--detach -v "/*hostdirectory*:/data" -p *portnumber*:80 -p
+*sslport*:443 ixsystems/truecommand:latest` where *hostdirectory* is a
 directory on the host machine that is used as the data directory for the Docker
 container, *portnumber* is the desired port number to access the web interface,
 and *sslportnumber* is the desired port number to securely access the web
@@ -35,18 +35,18 @@ interface through SSL. Do not forget to use
 when specifying paths in the Windows file system. For example, if the created
 directory for the TrueCommand image was created in the *Documents* folder in the
 Windows file system, the docker command would look like:
-<code>docker run \--detach -v *driveLetter*:\Users\\*username*\\Documents\\*directoryName*</code>.
+`docker run \--detach -v *driveLetter*:\Users\\*username*\\Documents\\*directoryName*`.
 In this command *driveLetter* is the letter associated with the drive that
 contains the new directory, *username* is the username of the current user, and
 *directoryName* is the name of the directory created for the TrueCommand image.
 
 
-Although there are different ways to run a Docker container, using <code>-v /*hostdirectory*:/data</code> is required for TrueCommand to function.
+Although there are different ways to run a Docker container, using `-v /*hostdirectory*:/data` is required for TrueCommand to function.
 
-{{% alert title="Warning" color="warning" %}}
+{{< hint warning >}}
 Do not try to use the same `hostdirectory` for two different containers!
 This can result in file conflicts and database corruption.
-{{% /alert %}}
+{{< /hint >}}
 
 To install a container with a previous release of TrueCommand, replace `latest` with the desired TrueCommand version tag.
 
@@ -54,7 +54,7 @@ To install a container with a previous release of TrueCommand, replace `latest` 
 
 After fetching the TrueCommand Docker container, run `docker ps` to see details about running containers.
 
-<img src="/images/tc-docker-container-list.png">
+![Docker Container List](/images/TrueCommand/DockerContainerList.png "Docker Container List")
 <br><br>
 
 Use the port assigned to the container to access the web interface.
@@ -81,14 +81,14 @@ The process of adding an exception is shown here for two different browsers, but
 
 Click **Advanced** to view information about the error code.
 
-<img src="/images/tc-firefox-warning.png">
+![Firefox Warning](/images/TrueCommand/1.3/FirefoxWarning.png "Firefox Warning")
 <br><br>
 
 Click **Add Exception...**.
 Set **Permanently store this exception** to keep the IP address or DNS hostname permanently stored in Firefox.
 Click **Confirm Security Exception**.
 
-<img src="/images/tc-firefox-add-exception.png">
+![Firefox Exception Add](/images/TrueCommand/1.3/FirefoxExceptionAdd.png "Firefox Exception Add")
 <br><br>
 
 #### Chrome
@@ -97,7 +97,7 @@ Click **Advanced** to view information about the error code.
 
 Click **Proceed to *hostname* (unsafe)**.
 
-<img src="/images/tc-chrome-warning.png">
+![Chrome Warning](/images/TrueCommand/1.3/ChromeWarning.png "Chrome Warning")
 <br><br>
 
 ## Creating the Administrator Account
@@ -108,7 +108,7 @@ Follow these steps to create a new admin user:
 
 * Log in using the default username (*admin*) and password (*admin*).
 
-<img src="/images/tc-admin-login.png">
+![Login Admin](/images/TrueCommand/1.3/LoginAdmin.png "Login Admin")
 <br><br>
 
 * Enter a username and password.
