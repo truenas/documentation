@@ -21,9 +21,9 @@ Migrating data can be done before or after installing the Docker container versi
 
 ## Preparing an Existing Container for Migration
 
-{{% alert title="Overwrite Warning" color="warning" %}}
+{{< hint warning >}}
 Migrating the configuration from a previous version of TrueCommand will overwrite any existing configuration! Migrating the configuration before installing the Docker container is recommended, or as soon as possible after installing to prevent making and then losing any new configuration settings.
-{{% /alert %}}
+{{< /hint >}}
 
 Migrating a previous configuration into an existing TrueCommand Docker container installation requires wiping the existing database from the container and replacing with the `ixdb.sql` database from the previous version of TrueCommand.
 Make sure the container is turned off.
