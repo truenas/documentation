@@ -19,16 +19,16 @@ Enter a descriptive user name and an authentication method for the user.
 The *DEFAULT* authentication method is used to create unique credentials for logging in to the TrueCommand web interface.
 The administrator has to provide these credentials to the intended user.
 
-<img src="/images/tc-1.3-users-new.PNG">
+![Users Add](/images/TrueCommand/1.3/UsersAdd.png "Users Add")
 <br><br>
 
 Users can also be assigned to existing Teams.
 Select a team from the drop-down to add the user to that team.
 Users can be members of multiple teams.
 
-{{% alert title="Permanent Action" color="warning" %}}
+{{< hint warning >}}
 Deleting a user account permanently removes the user and cannot be undone.
-{{% /alert %}}
+{{< /hint >}}
 
 ## Using LDAP to Add User Accounts
 
@@ -44,7 +44,7 @@ The LDAP or AD Username (optional) is required when the TrueCommand user name do
 
 To configure account details and permissions, open the **Configure** <i class="fa fa-cog" aria-hidden="true" title="Settings"></i>&nbsp; menu, click **Users** and **Edit user** <i class="fas fa-pen" aria-hidden="true" title="Edit"></i>.
 
-<img src="/images/tc-1.3-users-edit.PNG">
+![Users Edit](/images/TrueCommand/1.3/UsersEdit.png "Users Edit")
 <br><br>
 
 There are several different elements that can be configured for a user, including the user's avatar, personal details, Team membership, and system permissions.
@@ -85,7 +85,7 @@ For example, changing the permissions of a *Metrics* team that has 20 joined use
 
 To create a team, open the **Configure** <i class="fa fa-cog" aria-hidden="true" title="Settings"></i>&nbsp; menu and click **TEAMS > + NEW TEAM**.
 
-<img src="/images/tc-1.3-teams-new.PNG">
+![Teams Add](/images/TrueCommand/1.3/TeamsAdd.png "Teams Add")
 <br><br>
 
 Enter a name and select an avatar for the new team.
@@ -95,7 +95,7 @@ You can edit the permissions for a team after creating it.
 
 To adjust the team members or permissions, open the **Configure** <i class="fa fa-cog" aria-hidden="true" title="Settings"></i>&nbsp; menu and click **Teams > Edit team** <i class="fas fa-pen" aria-hidden="true" title="Edit"></i>.
 
-<img src="/images/tc-1.3-teams-edit.PNG">
+![Teams Edit](/images/TrueCommand/1.3/TeamsEdit.png "Teams Edit")
 <br><br>
 
 You can adjust the team profile with a new avatar, change the team name, or grant team members permission to create new TrueCommand Alert Rules.
