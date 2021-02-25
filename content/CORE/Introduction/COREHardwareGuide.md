@@ -1,9 +1,9 @@
 ---
-title: "TrueNAS CORE Hardware Guide"
-description: "Official hardware guide for custom TrueNAS CORE systems."
-tags: ["TrueNAS CORE","Components"]
-weight: 35
+title: "CORE Hardware Guide"
+weight: 30
 ---
+
+{{< toc >}}
 
 Long-time TrueNAS CORE/FreeNAS users will never forget the FreeNAS 8.0 days when flashing an IBM M1015 controller card with LSI firmware was a rite of passage, 3TB drives were the largest you could buy, and floods in Thailand would soon turn every hard drive into a valuable asset.
 
@@ -11,7 +11,7 @@ Fast-forward to the amazing new [TrueNAS Minis](https://www.truenas.com/truenas-
 While the TrueNAS Mini and FreeNAS certified are excellent turn-key systems, we appreciate that do-it-yourself users have always played a critical role in the growth and success of TrueNAS CORE/FreeNAS around the world.
 From repurposed systems to highly-custom builds, the fundamental freedom of TrueNAS is the ability to run it on nearly any x86 computer.
 
-In celebration of the TrueNAS software evolution, we have brought together the wisdom of our engineering staff and top blog posts to produce the first comprehensive TrueNAS CORE Hardware Guide to complement the [official hardware requirements](/CORE/Introduction/COREHardwareGuide/) and the community’s highly-detailed [Hardware Recommendations Guide](https://www.ixsystems.com/community/resources/hardware-recommendations-guide.12/).
+In celebration of the TrueNAS software evolution, we have brought together the wisdom of our engineering staff and top blog posts to produce the first comprehensive TrueNAS CORE Hardware Guide to complement the [official hardware requirements](/CORE/Introduction/COREHardwareGuide/) and the community’s highly-detailed [Hardware Recommendations Guide](https://www.truenas.com/community/resources/hardware-recommendations-guide.12/).
 Have something to add? Please open a pull request or issue by clicking the buttons in the side panel!
 
 Here’s to building your best NAS ever in 2020 and beyond!
@@ -25,22 +25,24 @@ From the [official Hardware Requirements](/CORE/Introduction/COREHardwareGuide/)
 The [TrueNAS Mini](https://www.truenas.com/truenas-mini/) and [FreeNAS Certified](https://www.ixsystems.com/freenas-certified-servers/) lines of purpose-built TrueNAS systems from iXsystems are the official answers to this question, but they also serve to provide templates for users that want to build their own systems or repurpose existing ones.
 Therefore, this guide will use the TrueNAS Mini and FreeNAS Certified systems as points of reference to all of the criteria to consider when building TrueNAS-compatible systems of any size.
 
-## Storage Device Considerations
+## Storage Considerations
 
 At the heart of any storage system is the symbiotic pairing of its file system and its physical storage devices.
 The ZFS file system in TrueNAS provides the [best available data protection of any filesystem at any cost](https://www.ixsystems.com/blog/openzfs-vs-the-competition/) and makes very effective use of both spinning disk and all-flash storage, or a mix of the two.
 ZFS is fully prepared for the eventual failure of storage devices and is highly-configurable to achieve the perfect balance of redundancy and performance to meet any storage goal.
 A properly-configured TrueNAS system can tolerate the failure of multiple storage devices and even its boot media which can be quickly re-created with a copy of the [configuration file](/CORE/System//backup-config/).
+
+### Storage Media
+
 Choosing storage media is the first step in designing the storage system to meet immediate objectives and prepare for future capacity expansion.
 
-### Spinning Disks
-
+{{< tabs "Storage Device Options">}}
+{{< tab "Spinning Disks" >}}
 Until the next unforeseen scientific breakthrough in storage media, spinning hard disks are here to stay, thanks to their balance of capacity and cost.
 The arrival of double-digit terabyte consumer and enterprise drives has provided more choices to TrueNAS users than ever.
-TrueNAS Mini and FreeNAS Certified systems ship with Western Digital NAS and NL-SAS respectively for good reason, and understanding the alternatives will explain this decision.
-
-### SATA NAS Disks
-
+TrueNAS Mini systems ship with Western Digital NAS and NL-SAS respectively for good reason, and understanding the alternatives will explain this decision.
+{{< /tab >}}
+{{< tab "SATA NAS Disks" >}}
 Serial Advanced Technology Attachment (SATA) is still the de facto standard disk interface and can be found in many desktop/laptop computers, servers, and some non-enterprise storage arrays.
 SATA disks first arrived offering double-digit gigabyte capacities and have since been produced to meet a myriad of capacity, reliability, and performance goals.
 While consumer desktop SATA disks are not as problematic as they used to be in terms of overall reliability, they are still not designed or warrantied for continuous operation or use in RAID groups.
@@ -52,9 +54,8 @@ WD Red™ Plus NAS drives (non-SMR) are designed for use in systems with up to e
 
 WD drives are known among the iXsystems Community Forum as the preferred hard drives for TrueNAS builds due to their exceptional quality and reliability.
 All TrueNAS Minis ship with WD Red™ Plus drives unless requested otherwise.
-
-### Nearline SAS Disks
-
+{{< /tab >}}
+{{< tab "Nearline SAS Disks" >}}
 “Nearline” SAS (NL-SAS) disks are essentially 7200 RPM enterprise SATA disks with the industry-standard SAS interface found in the majority of enterprise storage systems.
 SAS stands for “Serial-Attached SCSI”, the traditional SCSI disk interface in serial form.
 SAS systems are designed for data center storage applications and therefore have accurate, verbose error handling, predictable failure behavior, reliable hot swapping, and have the added feature of multipath support.
@@ -62,16 +63,14 @@ Multipath access means that each drive has two interfaces and can be connected t
 This redundancy protects against cable failure, controller card failure, or complete system failure in the case of the TrueNAS high-availability architecture in which each “controller” is in fact an independent server that accesses the same set of NL-SAS drives.
 NL-SAS drives are also robust enough to handle the rigors of systems with more than 16 disks.
 Therefore, capacity-oriented TrueNAS and certain [FreeNAS Certified](https://www.freenas.org/freenas-certified-servers/) systems ship with [Western Digital UltraStar](https://www.westerndigital.com/products/data-center-drives#hard-disk-hdd) NL-SAS disks thanks to the all-around perfect balance of capacity, reliability, performance, and flexibility that NL-SAS drives offer.
-
-### SAS Disks
-
+{{< /tab >}}
+{{< tab "SAS Disks" >}}
 Enterprise SAS disks were the traditional heavy-lifters of the enterprise storage industry and are built for maximum performance and reliability that a spinning platter can provide.
 SAS disk capacities are surprisingly low compared to NL-SAS or NAS drives, due to the speed at which the platters spin, reaching as high as 15,000 RPMs.
 While SAS drives may sound like the ultimate answer for high-performance storage, the many consumer and enterprise flash-based options that have come onto the market have significantly reduced the competitiveness of SAS drives.
 For example, Enterprise SAS drives were discontinued from the FreeNAS and TrueNAS product lines, and replaced almost entirely by flash drives (SSDs or NVMe) in 2016 due to their superior performance/cost ratio.
-
-### SATA and SAS Flash Storage SSDs
-
+{{< /tab >}}
+{{< tab "SATA and SAS Flash Storage SSDs" >}}
 Flash storage technology has made significant progress in recent years, enabling a revolution in mobile devices and the rise of flash storage in general-purpose PCs and servers.
 Unlike hard disks, flash storage is not sensitive to vibration and can be significantly faster with comparable reliability.
 Flash storage remains more expensive per gigabyte but is finding many ways into TrueNAS systems as that price gap continually narrows.
@@ -80,16 +79,25 @@ The shortest path for the introduction of flash storage into the mainstream mark
 For this reason, flash storage Solid State Disks (SSDs) have SATA interfaces and are the size of 2.5” laptop hard disks, allowing them to be drop-in replacements for traditional hard disks.
 Flash storage SSDs can be used in place of HDDs for primary storage on a FreeNAS system, resulting in a faster, though either smaller or more expensive storage solution.
 If going “all-flash”, buy the highest-quality flash storage SSDs the budget allows with a focus on power safety and write endurance that matches your expected write workload.
-
-### NVMe
-
+{{< /tab >}}
+{{< tab "NVMe" >}}
 While it made sense for SSDs to pretend they were HDDs for rapid adoption, the Non-Volatile Memory Express (NVMe) standard is a “native” flash protocol that takes full advantage of the non-linear and parallel nature of flash storage.
 The key advantage of NVMe is generally its low-latency performance and it’s quickly becoming a mainstream option for boot and other tasks.
 While it was originally limited to expansion-card form factors such as PCIe and M.2, the new U.2 interface offers a rather universal solution that includes the 2.5” drive form factor and an externally-accessible (but generally not hot-swappable) NVMe interface.
 Note that NVMe devices can run quite hot and may require dedicated heat sinks.
+{{< /tab >}}
+{{< tab "USB Hard Disks" >}}
+USB-connected hard disks should be avoided for primary storage with FreeNAS but can be used for very basic backups in a pinch.
+While TrueNAS does not automate this process, a USB HDD can be connected, replicated at the command line, and ideally taken off-site for safe keeping.
+{{< /tab >}}
+{{< /tabs >}}
 
-### Hybrid Storage & Flash Cache (SLOG/ZIL/L2ARC)
+These storage device media arrange together to create powerful storage solutions.
 
+### Storage Solutions
+
+{{< tabs "Storage Solutions" >}}
+{{< tab "Hybrid Storage & Flash Cache (SLOG/ZIL/L2ARC)" >}}
 With hard disks providing double-digit terabyte capacities and flash-based options providing significantly higher performance, a “best of both worlds” option is available.
 With TrueNAS and OpenZFS, you can merge both flash and disk to create “hybrid storage”, which makes the most of both storage types.
 In a hybrid configuration, large-capacity spinning disks store the data, while DRAM and flash act as hyper-fast read and write caching.
@@ -114,37 +122,31 @@ High-end TrueNAS systems can have NVMe-based L2ARC in the double digit terabytes
 
 Keep in mind that for every data block in the L2ARC, the primary ARC needs an 88 byte entry; this can cause the ARC to fill up unexpectedly and actually reduce performance in a poorly-designed system.
 For example, a 480GB L2ARC filled with 4KiB blocks will need more than 10GiB of metadata storage in the primary ARC!
-
-### Self Encrypting Drives
-
-TrueNAS supports two forms of data encryption at rest to achieve privacy and compliance objectives: [Native ZFS encryption](/CORE/Storage/DataPools/encryption/) and [Self Encrypting Drives (SEDs)](/hub/initial-setup/storage/sed-drives/).
+{{< /tab >}}
+{{< tab "Self Encrypting Drives" >}}
+TrueNAS supports two forms of data encryption at rest to achieve privacy and compliance objectives: [Native ZFS encryption](/core/storage/pools/storageencryption/) and [Self Encrypting Drives (SEDs)](/hub/initial-setup/storage/sed-drives/).
 SEDs do not experience the performance overhead introduced by software partition encryption but aren’t as readily-available as non-SED drives (and thus can cost a little bit more).
-
-### USB Hard Disks
-
-USB-connected hard disks should be avoided for primary storage with FreeNAS but can be used for very basic backups in a pinch.
-While TrueNAS does not automate this process, a USB HDD can be connected, replicated at the command line, and ideally taken off-site for safe keeping.
-
-### Boot Devices
-
+{{< /tab >}}
+{{< tab "Boot Devices" >}}
 It was once very popular to boot FreeNAS systems from 8 GB or larger USB flash drives, but with the wide variance in USB drive quality and the increased drive writes done to the boot pool by modern TrueNAS versions, it’s advisable to look at other options.
 For this reason, all TrueNAS Mini and Certified systems ship with either M.2 drives or SATA DOMs.
 SATA DOMs, or “disk-on-modules”, offer close to the reliability of consumer 2.5” SSDs with a smaller form factor that mounts to an internal SATA port and therefore doesn’t consume a drive bay.
 Because SATA DOMs and motherboards with m.2 slots are not as common as the other storage devices mentioned here, it is popular to boot TrueNAS systems from 2.5” SSDs and HDDs (often mirrored for added redundancy).
 8 GB is the recommended minimum size for the TrueNAS boot volume, but using 16 or 32 GB (or a 120 GB 2.5” SATA SSD) provides room for more boot environments.
-
-### Hot Swapability
-
+{{< /tab >}}
+{{< tab "Hot Swapability" >}}
 TrueNAS CORE systems come in all shapes and sizes, but it is highly desirable to have external access to all storage devices for efficient replacement if issues occur.
 Most “hot swap” drive bays require a proprietary drive tray into which each drive is installed.
 These bay and tray combinations also often include convenient features like activity and identification lights to both visualize activity and illuminate a failed drive with [sesutil(8)](https://www.freebsd.org/cgi/man.cgi?query=sesutil&sektion=8).
 TrueNAS Mini systems ship with four or more hot swap bays and FreeNAS Certified systems can support dozens of drives in their head units and external expansion shelves.
 Because pre-owned or repurposed hardware is popular among TrueNAS users, pay attention to the maximum performance offered by the hot swap backplanes of a given system, watching for at least 6 Gbps SATA III support.
 Note that hot-swapping PCIe NVMe devices is not supported at this time.
+{{< /tab >}}
+{{< /tabs >}}
 
 ### Storage Device Sizing
 
-While [zpool layout](/CORE/Storage/Datapools/) (the organization of LUNs and volumes, in TrueNAS/ZFS parlance) is beyond the scope of this guide, the availability of double-digit terabyte drives raises a question that TrueNAS users have not traditionally had the luxury of asking: how many drives should I use to achieve my desired capacity?
+While [zpool layout](/core/storage/pools/poolcreate/#vdev-layout) (the organization of LUNs and volumes, in TrueNAS/ZFS parlance) is beyond the scope of this guide, the availability of double-digit terabyte drives raises a question that TrueNAS users have not traditionally had the luxury of asking: how many drives should I use to achieve my desired capacity?
 Just because one can mirror two 16TB drives to achieve 16TB of available capacity, it doesn’t necessarily mean that one should.
 Mirroring two large drives offers the advantage of redundancy and balancing reads between the two devices, potentially lowering power draw, but little else.
 The write performance of two large drives will be at most that of a single drive.
@@ -166,7 +168,7 @@ Spinning disk hard drives have moving parts, by definition. These parts are high
 * NVMe percentage used (`nvmecontrol logpage -p 2 nvme0 | grep “Percentage used”`)
 
 Take time before deploying the system to create a pool and subject it to as close to the real-world workload as possible.
-This may reveal individual drive issues but also can help determine if an alternative pool layout is better suited to that workload.
+This can reveal individual drive issues but also can help determine if an alternative pool layout is better suited to that workload.
 Be cautious of used drives as vendors may not be honest or informed about the age and health of any given drive.
 Check the number of hours on all “new” drives using [smartctl(8)](https://www.ixsystems.com/community/resources/hard-drive-troubleshooting-guide-all-versions-of-freenas.17/) as they may in fact be “recertified” or simply untruthfully advertised.
 A drive vendor may also zero the hours of a drive during recertification, masking its true age.
@@ -206,7 +208,7 @@ If repurposing hardware RAID cards with TrueNAS, be aware that some hardware RAI
 A direct-attached system where every disk is connected to an interface on the controller card is optimal but not always feasible.
 A SAS expander is essentially a port multiplier or splitter that enables each SAS port on a controller card to service multiple disks.
 They typically only reside on the drive backplane of servers or JBODs that have more than twelve drive bays.
-For example, there are TrueNAS JBODs that eclipse 90 drives in only four rack units of space!
+For example, there are [TrueNAS JBODs that eclipse 90 drives](/hardware/expansionshelves/es102bsg/) in only four rack units of space!
 This wouldn’t be possible without the miracle of SAS expanders.
 Otherwise, imagine how many eight port HBAs would be required to access 90 drives!
 

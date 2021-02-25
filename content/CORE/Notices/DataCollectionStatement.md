@@ -1,11 +1,11 @@
 ---
-title: "TrueNAS System Data Collection Statement"
-weight: 35
+title: "TrueNAS Data Collection Statement"
+weight: 5
 ---
 
 TrueNAS collects non-sensitive system data and relays the data to a collector managed by iXsystems.
-This system data collection is enabled by default and can be disabled in the web interface under **System -> General -> Usage collection**.
-When disabled, no information about system configuration and usage will be collected.
+This system data collection is enabled by default and can be disabled in the web interface under **System > General > Usage collection**.
+When disabled, no information about system configuration and usage is collected.
 The system capacity and software version is still collected.
 
 The protocol for system data collection uses the same TCP ports as HTTPS (*443*) and passes through most firewalls as an outgoing web connection.
@@ -51,4 +51,3 @@ This table describes the differences:
   </tr>
 </tbody>
 </table>
-
