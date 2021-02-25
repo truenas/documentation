@@ -13,7 +13,7 @@ The page is organized into **About**, **Certificates**, and **Configuration** ta
 
 The **About** tab contains the current TrueCommand system ID and version, license details, and contact information for iXsystems.
 
-<img src="/images/tc-administration-about.png">
+![Administration About](/images/TrueCommand/1.2/AdministrationAbout.png "Administration About")
 <br><br>
 
 ### Updating the License
@@ -31,7 +31,7 @@ Select the new license file to upload and click **UPLOAD LICENSE** to apply the 
 
 The **Certificates** tab shows the certificates and Certificate Authorities (CAs) used by TrueCommand and has options to upload or import a certificate or CA.
 
-<img src="/images/tc-administration-certificates.png">
+![Administration Certificates](/images/TrueCommand/1.2/AdministrationCertificates.png "Administration Certificates")
 <br><br>
 
 Clicking **Browse...** opens a dialog to upload a file from the local system.
@@ -42,7 +42,7 @@ Selecting **Plain text** allows copying and pasting the file raw text instead of
 
 The Configuration tab contains options to configure various features of TrueCommand.
 
-<img src="/images/tc-administration-configuration.png">
+![Administration Configuration](/images/TrueCommand/1.2/AdministrationConfiguration.png "Administration Configuration")
 <br><br>
 
 Changing any options requires clicking **SAVE** to save the new system configuration.
