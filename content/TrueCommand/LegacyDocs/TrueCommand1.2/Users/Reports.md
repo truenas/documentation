@@ -6,7 +6,7 @@ description: "How to create and view system reports."
 
 The **Reports** page is used to customize charts of system metrics for data analysis.
 
-![Reports List](/images/TrueCommand/1.3/ReportsList.png "Reports List")
+![Reports List](/images/TrueCommand/1.2/ReportsList.png "Reports List")
 <br><br>
 
 These reports are created by or shared with the current TrueCommand user.
@@ -21,7 +21,7 @@ Click **+ CREATE REPORT** to create a customizable report.
 Enter a report name and an optional description for the report.
 Click BROWSE WIDGETS or WIDGET to add charts to the report.
 
-![Reports Create Widgets Add](/images/TrueCommand/1.3/ReportsCreateWidgetsAdd.png "Reports Create Widgets Add")
+![Reports Create Widgets Add](/images/TrueCommand/1.2/ReportsCreateWidgetsAdd.png "Reports Create Widgets Add")
 <br><br>
 
 ### Custom Charts
@@ -46,7 +46,7 @@ By default, the reports created by a user are available only to that user.
 To share a report with other users or teams, open the **User Menu ‣ Reports** screen and click the **Share** button for a report.
 Reports can also be shared after clicking **Generate report (Eye)**.
 
-![Reports Sharing](/images/TrueCommand/1.3/ReportsSharing.png "Reports Sharing")
+![Reports Sharing](/images/TrueCommand/1.2/ReportsSharing.png "Reports Sharing")
 <br><br>
 
 Reports can be shared with individual users or entire teams.
@@ -59,13 +59,13 @@ Clicking the **OWNER** or **SHARED WITH** text toggles every name in the list.
 Open the **User Menu ‣ Reports** page and click **Generate report (Eye)** on the appropriate report.
 Click **GENERATE** to select the systems and time frame for the report
 
-![Reports Generate Dates](/images/TrueCommand/1.3/ReportsGenerateDates.png "Reports Generate Dates")
+![Reports Generate Dates](/images/TrueCommand/1.2/ReportsGenerateDates.png "Reports Generate Dates")
 <br><br>
 
 A non-administrative user must have the appropriate permissions to view data from specific systems.
 
 Clicking **Confirm** shows the saved charts from the report, populated with system data according to the selected amount of time.
 
-![Reports Generated](/images/TrueCommand/1.3/ReportsGenerated.png "Reports Generated")
+![Reports Generated](/images/TrueCommand/1.2/ReportsGenerated.png "Reports Generated")
 <br><br>
 
