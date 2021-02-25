@@ -196,3 +196,6 @@ Receieving Dataset = dataset_2
 6. If desired, you can convert the dataset to use a keyfile instead of a passphrase. To use a passphrase instead of a keyfile, open the dataset <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; (Options) and click **Encryption Options**. Change the *Encryption Type* from **Passphrase** to **Key** and save. Remember to back up your keyfile immediately!
 7. Repeat this process for every dataset in the Pool that needs to be migrated.
 
+{{< hint >}}
+For security reasons, encrypted pool keys are not saved in a configuration backup file. When TrueNAS has been installed to a new device and a saved configuration file restored to it, the keys for encrypted disks will not be present, and the system will not request them. To correct this, export the encrypted pool with <i class="fas fa-pen" aria-hidden="true" title="Pen"></i>&nbsp; (Configure) > **Export/Disconnect**, making sure that **Destroy data on this pool?** is not set. Then import the pool again. During the import, the encryption keys can be entered as described above.
+{{< /hint >}}

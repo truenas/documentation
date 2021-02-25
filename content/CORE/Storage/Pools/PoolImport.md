@@ -3,63 +3,77 @@ title: "Pool Import"
 weight: 15
 ---
 
-## Importing a Pool
+{{< toc >}}
 
-A pool that has been exported/disconnected from the system can be reconnected by clicking **Storage** > **Pools** > **Add**, then selecting **Import an existing pool**. Importing works for pools that were exported/disconnected from the current system, created on another system, and pools that need to be reconnected after reinstalling or upgrading to the TrueNAS system.
-
-When physically installing ZFS pool disks from another system, use the `zpool export poolname` command in the command line or a web interface equivalent to export the pool on that system. Then, shut it down and connect the drives to the TrueNAS system. Shutting down the other system prevents an *“in use by another machine”* error during the import to TrueNAS.
-
-### Encrypted ZFS Pools
-
-You can import existing ZFS pools by clicking **Storage** > **Pools** > **ADD**. Select **Import an existing pool**, then click **NEXT**.
-
-![Storage Pools Add Import](/images/CORE/12.0/StoragePoolsAddImport.png "Storage Pools Add Import")
-
-Select **No, continue with import**, then click **NEXT**.
-
-<img src="/images/ZFS-NoContinueWithImport.png">
-
-Click the drop down menu and choose the ZFS pool that you want to decrypt, then click **NEXT**.
-
-![StoragePoolsAddImportGELIPresentDecryptPool](/images/CORE/12.0/StoragePoolsAddImportGELIPresentDecryptPool.png "StoragePoolsAddImportGELIPresentDecryptPool")
-
-
-Review the Pool Import Summary and click **IMPORT**, then click **CONTINUE** to unlock the pool’s encrypted datasets.
-
-![StoragePoolsAddImportGELIPresentDecryptPoolSummary](/images/CORE/12.0/StoragePoolsAddImportGELIPresentDecryptPoolSummary.png "StoragePoolsAddImportGELIPresentDecryptPoolSummary")
-
-
-Click **Choose File** and open the encryption key file, then enter the **Passphrase** (if applicable) for the encrypted disks and click **SUBMIT**. Click **CONTINUE** to unlock the datasets.
-
-<img src="/images/ZFS-OpenTheEencryptionKeyFile.png">
-
-
-### Encrypted GELI Pools
-
-You can import existing GELI pools from FreeNAS/TrueNAS 11.3 or earlier by clicking **Storage** > **Pools** > **ADD**. Select **Import an existing pool**, then click **NEXT**.
-
-Select **Yes, decrypt the disks** and choose which disks you want to decrypt from the dropdown list.
-
-![StoragePoolsAddImportNoGELI](/images/CORE/12.0/StoragePoolsAddImportNoGELI.png "StoragePoolsAddImportNoGELI")
-
-
-Click **Choose File** and open the encryption key file, then enter the **Passphrase** (if applicable) for the encrypted disks and click **NEXT**.
-Select the GELI pool from the Pool dropdown list and click **NEXT**.
-
-![StoragePoolsAddImportGELIPresentDecryptPoolSummary](/images/CORE/12.0/StoragePoolsAddImportGELIPresentDecryptPoolSummary.png "StoragePoolsAddImportGELIPresentDecryptPoolSummary")
-
-
-Review the Pool Import Summary and click **IMPORT**.
-
-![StoragePoolsAddImportZFSPoolSummary](/images/CORE/12.0/StoragePoolsAddImportZFSPoolSummary.png "StoragePoolsAddImportZFSPoolSummary")
-
-
-### Encryption Keys and Passphrases
-
-{{< hint warning >}}
-The encryption key file and passphrase are required to decrypt the pool. If the pool cannot be decrypted, it cannot be re-imported after a failed upgrade or lost configuration. This means it is very important to save a copy of the key and to remember the passphrase that was configured for the key. Refer to the [Encryption article](/CORE/Storage/DataPools/encryption/) for instructions on managing keys.
+{{< hint info >}}
+This procedure only applies to disks with a ZFS storage pool.
+To import disks with different file systems, see [Import Disk](/core/storage/importdisk/).
 {{< /hint >}}
 
-{{< hint >}}
-For security reasons, encrypted pool keys are not saved in a configuration backup file. When TrueNAS has been installed to a new device and a saved configuration file restored to it, the keys for encrypted disks will not be present, and the system will not request them. To correct this, export the encrypted pool with <i class="fas fa-pen" aria-hidden="true" title="Pen"></i>&nbsp; (Configure) > **Export/Disconnect**, making sure that **Destroy data on this pool?** is not set. Then import the pool again. During the import, the encryption keys can be entered as described above.
+ZFS pool importing works for pools that were exported or disconnected from the current system, created on another system, and pools to reconnect after reinstalling or upgrading the TrueNAS system.
+To import a pool, go to **Storage > Pools > ADD**.
+
+{{< expand "Do I need to do anything different with disks installed on a different system?" "v" >}}
+When physically installing ZFS pool disks from another system, use the `zpool export poolname` command in the command line or a web interface equivalent to export the pool on that system.
+Shut that system down and move the drives to the TrueNAS system.
+Shutting down the original system prevents an *“in use by another machine”* error during the TrueNAS import.
+{{< /expand >}}
+
+There are two kinds of pool imports, standard ZFS pool imports and ZFS pools with [legacy GELI encryption](https://docs.freebsd.org/en_US.ISO8859-1/books/handbook/disks-encrypting.html).
+
+{{< tabs "Pool Import Options" >}}
+{{< tab "Standard ZFS Pool" >}}
+## Standard ZFS Pools
+
+Select *Import Existing Pool* and click *NEXT*.
+![StoragePoolsAddImport](/images/CORE/12.0/StoragePoolsAddImport.png "Import Pool Selection")
+
+The wizard asks if the pool has legacy GELI encryption.
+![StoragePoolsAddImportNoGELI](/images/CORE/12.0/StoragePoolsAddImportNoGELI.png "No GELI on the pool")
+Select *No, continue with import* and click *NEXT*.
+
+TrueNAS detects any pools that are present but unconnected.
+![StoragePoolsAddImportZFSPool](/images/CORE/12.0/StoragePoolsAddImportZFSPool.png "Selecting a pool to import")
+Choose the ZFS pool to import and click *NEXT*.
+
+Review the Pool Import Summary and click *IMPORT*.
+![StoragePoolsAddImportZFSPoolSummary](/images/CORE/12.0/StoragePoolsAddImportZFSPoolSummary.png "Pool Import Summary")
+{{< /tab >}}
+{{< tab "ZFS Pool with GELI" >}}
+## Encrypted GELI Pools
+
+{{< hint danger >}}
+Importing a GELI-encrypted pool requires using the encryption key file and passphrase to decrypt the pool *before* importing.
+When a pool cannot be decrypted, it cannot be re-imported after a failed upgrade or lost configuration, and the **data is irretrievable**.
+Always have a copy of the pool GELI key file and passphrase available.
 {{< /hint >}}
+
+Select *Import Existing Pool* and click *NEXT*.
+![StoragePoolsAddImport](/images/CORE/12.0/StoragePoolsAddImport.png "Import Pool Selection")
+
+The wizard asks if the pool has legacy GELI encryption.
+Select *Yes, decrypt the disks* and review the decryption options.
+![StoragePoolsAddImportGELIPresentDecrypt](/images/CORE/12.0/StoragePoolsAddImportGELIPresentDecrypt.png "GELI decryption options")
+
+Make sure the *Disks* selection shows the encrypted disks and partitions that are part of the incoming pool.
+Apply the GELI encryption key file by clicking *Choose File* and uploading the file from your local system.
+
+![StoragePoolsAddImportGELIPresentDecryptKeyFile](/images/CORE/12.0/StoragePoolsAddImportGELIPresentDecryptKeyFile.png "GELI encryption key file upload")
+
+When a passphrase is also present, enter it in the *Passphrase* field.
+Click *Next* and wait for the disks to decrypt.
+
+When the disks are decrypted, select the GELI pool to import.
+
+![StoragePoolsAddImportGELIPresentDecryptPool](/images/CORE/12.0/StoragePoolsAddImportGELIPresentDecryptPool.png "Select the GELI pool to import")
+
+Review the **Pool Import Summary** and click *IMPORT*.
+
+![StoragePoolsAddImportGELIPresentDecryptPoolSummary](/images/CORE/12.0/StoragePoolsAddImportGELIPresentDecryptPoolSummary.png "Import Summary for GELI pool")
+
+GELI encrypted pools show in **Storage > Pools** as **(Legacy Encryption)**.
+
+![StoragePoolsLegacyGELI](/images/CORE/12.0/StoragePoolsLegacyGELI.png "Pool with GELI encryption")
+
+{{< /tab >}}
+{{< /tabs >}}

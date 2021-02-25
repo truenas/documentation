@@ -58,6 +58,18 @@ These store data or enable unique features for the pool:
 Standard vdev for primary storage operations.
 Each storage pool requires at least one *Data* vdev.
 *Data* vdev configuration typically affects how the other kinds of vdevs are configured.
+{{< expand "Duplicating a Data vdev" "v" >}}
+A **Data VDev** with disks is duplicated by clicking *REPEAT*.
+When more disks are available and equal in size, the *REPEAT* button creates another vdev with an identical configuration called a "mirror" of vdevs.
+
+![StoragePoolsAddCreateVdevRepeat](/images/CORE/12.0/StoragePoolsAddCreateVdevRepeat.png "Duplicating a Data VDev")
+
+When even more same-size disks are available, multiple copies of the original vdev can be created.
+{{< hint warning >}}
+Don't have multiple data vdevs with different numbers of disks in each vdev.
+This complicates and limits the pool capabilities.
+{{< /hint >}}
+{{< /expand >}}
 {{< /tab >}}
 {{< tab "Cache" >}}
 [ZFS L2ARC](/references/l2arc/) read-cache used with fast devices to accelerate read operations.
@@ -81,7 +93,7 @@ Special Allocation class used to create [Fusion Pools](/core/storage/pools/fusio
 {{< tab "Dedup" >}}
 Stores [ZFS de-duplication](/references/zfsdeduplication/) tables.
 Requires allocating X GiB for every X TiB of general storage.
-Example: 1 GiB of *Dedup* vdev capacity for every 1 TiB of *Data* vdev availability
+Example: 1 GiB of *Dedup* vdev capacity for every 1 TiB of *Data* vdev availability.
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -90,34 +102,42 @@ Select disks from `Available Disks` and use the <i class="fa fa-arrow-right" ari
 
 ### Vdev Layout
 
-By default, a single 
+Disks added to a vdev arrange in different layouts, according to the specific pool use case.
 
-The pool manager suggests a vdev layout based on the number of disks added to the vdev.
-For example, if two disks are added, TrueNAS automatically configures the vdev as a *mirror*, where the total available storage is the size of one added disk while the other disk provides redundancy.
-To change the vdev layout, open the *Data VDevs* list and select the desired layout:
+{{< expand "Can I create vdevs with different layouts in one pool?" "v" >}}
+Adding multiple vdevs with different layouts to a pool is not supported.
+Create a new pool when a different vdev layout is required.
+For example, *pool1* has a data vdev in a *mirror* layout, so create *pool2* for any *raid-z* vdevs.
+{{< /expand >}}
 
-* *Stripe*: each disk is used to store data. Requires at least one disk and has no data redundancy.
-* *Mirror*: data is identical in each disk. Requires at least two disks and has the most redundancy.
-* *RAIDZ1*: one disk is used to maintain data and all other disks are used to store data. Requires at least three disks.
-* *RAIDZ2*: two disks are used to maintain data and all other disks are used to store data. Requires at least four disks. 
-* *RAIDZ3*: three disks are used to maintain data and all other disks are used to store data. Requires at least five disks.
+{{< tabs "Vdev Layouts" >}}
+{{< tab "Stripe" >}}
+Each disk is used to store data.
+Requires at least one disk and has no data redundancy.
+Never use a *Stripe* to store critical data!
+A single disk failure results in losing all data in the vdev.
+{{< /tab >}}
+{{< tab "Mirror" >}}
+Data is identical in each disk.
+Requires at least two disks, has the most redundancy, and the least capacity.
+{{< /tab >}}
+{{< tab "RAIDZ1" >}}
+One disk maintains data and all other disks store data.
+Requires at least three disks.
+{{< /tab >}}
+{{< tab "RAIDZ2" >}}
+Two disks maintain data and all other disks store data.
+Requires at least four disks.
+{{< /tab >}}
+{{< tab "RAIDZ3" >}}
+Three disks maintain data and all other disks store data.
+Requires at least five disks.
+{{< /tab >}}
+{{< /tabs >}}
 
-**We never recommend using a Stripe to store critical data, since a single disk failure could result in losing all data in that vdev.**
+The **Pool Manager** suggests a vdev layout from the number of disks added to the vdev.
+For example, if two disks are added, TrueNAS automatically configures the vdev as a *Mirror*, where the total available storage is the size of one added disk while the other disk provides redundancy.
 
-To manually add disks in a vdev, select the disks to add and click <i class="fa fa-arrow-right" aria-hidden="true" title="Right Arrow"></i>.
-To see more details about a disk, click the `>` in a disk's row.
+![StoragePoolsAddCreateMirror](/images/CORE/12.0/StoragePoolsAddCreateMirror.png "Mirrored Vdev")
 
-Click *SUGGEST LAYOUT* to add all the same-sized disks in an ideal configuration for balanced data redundancy and performance.
-
-A vdev layout can be duplicated by clicking *REPEAT*.
-If more disks are available and equal in size, the *REPEAT* button creates another vdev with an identical configuration called a "mirror" of vdevs.
-Otherwise, another vdev can be added by clicking *ADD DATA* and adding disks manually.
-
-{{< hint warning >}}
-We don't recommend having multiple data vdevs with different numbers of disks.
-Adding multiple vdevs with different layouts to a pool is not supported, so you'll have to create a new pool for a different layout.
-For example, *Pool1* has a data vdev in a *mirror* layout, so create *pool2* for any *raid-z* vdevs.
-
-![Storage Pools Add Create Mirror](/images/CORE/12.0/StoragePoolsAddCreateMirror.png "Storage Pools Add Create Mirror")
-<br>
-{{< /hint >}}
+To change the vdev layout, open the *Data VDevs* list and select the desired layout.
