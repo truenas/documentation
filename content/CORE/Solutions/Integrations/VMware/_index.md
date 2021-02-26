@@ -1,5 +1,5 @@
 ---
-title: "Integrations"
+title: "VMware®"
 geekdocCollapseSection: true
-weight: 20
+weight: 50
 ---

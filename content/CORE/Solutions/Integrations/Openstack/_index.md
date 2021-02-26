@@ -1,5 +1,5 @@
 ---
-title: "Integrations"
+title: "OpenStack®"
 geekdocCollapseSection: true
-weight: 20
+weight: 30
 ---

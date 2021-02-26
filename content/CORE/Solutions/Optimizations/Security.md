@@ -1,6 +1,6 @@
 ---
 title: "Security Recommendations"
-weight: 10
+weight: 30
 ---
 
 {{< toc >}}
