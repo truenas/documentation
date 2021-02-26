@@ -13,9 +13,9 @@ In FreeBSD, the list of users is placed in <file>/etc/passwd</file> and authenti
 NIS adds another "global" user list to identify users on any NIS domain client.
 {{< /expand >}}
 
-{{< hint info >}}
+{{< hint warning >}}
 NIS is limited in scalability and security.
-For modern networks, LDAP has replaced NIS.
+For modern networks, [LDAP](/core/directoryservices/ldap/) has replaced NIS.
 {{< /hint >}}
 
 To configure NIS, go to **Directory Services > NIS**.
