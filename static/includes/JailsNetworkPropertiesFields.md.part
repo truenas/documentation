@@ -1,0 +1,14 @@
+**Network Properties**
+
+| | |
+|-|-|
+| Interfaces | Enter up to four interface configurations in the format interface:bridge, separated by a comma (,). The left value is the virtual VNET interface name and the right value is the bridge name where the virtual interface should be attached. |
+| host_domainname | Enter a [NIS Domain name](https://www.freebsd.org/doc/handbook/network-nis.html) for the jail. |
+| host_hostname | Set the jail hostname. Defaults to the jail UUID. |
+| resolver | Add lines to the jail resolv.conf. Example: nameserver IP;search domain.local. Fields must be delimited with a semicolon (;), This is translated as new lines in resolv.conf. Enter none to inherit resolv.conf from the host. |
+| ip4.saddrsel | Disable IPv4 source address selection for the jail in favor of the primary IPv4 address of the jail. Only available when the jail is not configured to use VNET. |
+| ip6.saddrsel | Disable IPv6 source address selection for the jail in favor of the primary IPv6 address of the jail. Only available when the jail is not configured to use VNET. |
+| ip4 | Control the availability of IPv4 addresses.  Inherit: Allow unrestricted access to all system addresses.  New: Restrict addresses with ip4_addr.  Disable: Stop the jail from using IPv4 entirely. |
+| ip6 | Control the availability of IPv6 addresses.  Inherit: Allow unrestricted access to all system addresses.  New: Restrict addresses with ip6_addr.  Disable: Stop the jail from using IPv6 entirely. |
+| mac_prefix | Enter a valid MAC address vendor prefix. Example: E4F4C6 |
+| vnet0_mac | Leave this field empty to generate random MAC addresses for the host and jail. To assign fixed MAC addresses, enter the MAC address to be assigned to the host, a space, then the MAC address to be assigned to the jail. |
