@@ -1,7 +1,5 @@
 ---
 title: "Cinder Driver"
-linkTitle: "Cinder"
-description: "Basic overview of the community-supported Cinder driver."
 ---
 
 There is a community-supported, open source driver for Cinder available for TrueNAS, available at https://github.com/iXsystems/cinder.

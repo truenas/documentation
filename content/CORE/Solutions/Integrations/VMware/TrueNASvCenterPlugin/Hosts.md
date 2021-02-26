@@ -1,9 +1,9 @@
 ---
-title: "Managing TrueNAS Hosts in vCenter"
-description: "How to add and configure TrueNAS hosts in vCenter."
-tags: ["VMware", "TrueNAS Enterprise"]
-weight: 30
+title: "TrueNAS Hosts"
+weight: 20
 ---
+
+{{< toc >}}
 
 [vCenter Server](https://www.vmware.com/products/vcenter-server.html) provides a web interface to manage physical and virtual machines.
 vCenter uses plugins to integrate servers management into the vCenter application.
@@ -13,17 +13,15 @@ The images in this guide show vCenter 6.7, but versions 7.0 and 6.5 offer a simi
 
 ## Connecting TrueNAS Systems to vCenter
 
-In a browser, go to your vCenter Server web interface, log in, and click *Menu > Global Inventory Lists > Manage TrueNAS > + Add host* to add TrueNAS hosts to vCenter.
+In a browser, go to your vCenter Server web interface, log in, and click **Menu > Global Inventory Lists > Manage TrueNAS > + Add host** to add TrueNAS hosts to vCenter.
 
-<img src="/images/VCP-AddHost.png">
-<br><br>
+![AddHost](/images/vCenterPlugin/AddHost.png "Options for Adding Hosts")
 
 Fill in the required information.
 *HTTPS* is currently unavailable, but is planned for a future release ([VCP-105](https://jira.ixsystems.com/browse/VCP-105)).
-Click **Add Host** and the TrueNAS hostname or IP address appears in the list of connected systems.
+Click *Add Host* and the TrueNAS hostname or IP address appears in the list of connected systems.
 
-<img src="/images/VCP-HostList.png">
-<br><br>
+![HostList](/images/vCenterPlugin/HostList.png "Example Showing a Connected Host")
 
 Right-click a list entry to see options to edit the host user credentials or remove that host from vCenter.
 Click a hostname to see the system management options.
@@ -34,18 +32,17 @@ The system management screen shows a summary and options to modify the system.
 
 ## System Summary
 
-Click **Summary** to view basic information about this system.
+Click *Summary* to view basic information about this system.
 The IP address, installed version of TrueNAS, storage availability, and system service status are shown.
 
-<img src="/images/VCP-HostSummary.png">
-<br><br>
+![HostSummary](/images/vCenterPlugin/HostSummary.png "Example Summary")
 
 ## Configure
 
-To modify the TrueNAS system, click **Configure**.
+To modify the TrueNAS system, click *Configure*.
 Each submenu has a row of buttons to add or make changes to any items in the list.
 vCenter works in the background when resolving change requests.
-**Refresh** updates the list to see any items that might have finished being created or modified.
+*Refresh* updates the list to see any items that might have finished being created or modified.
 Tasks in progress display in the collapsible **Recent Tasks** area across the bottom of the screen.
 Naming objects in the plugin follow a standard convention.
 Names can contain spaces, alphanumeric, `-`, and `.` characters.

@@ -1,14 +1,13 @@
 ---
 title: "Role-Based Access Control (RBAC)"
-description: "How to configure individual vCenter user access to TrueNAS hosts."
-tags: ["VMware", "TrueNAS Enterprise"]
-weight: 60
+weight: 50
 ---
 
-An administrator can grant vCenter users specific role-based access to the fleet of TrueNAS systems that are managed by this plugin.
+{{< toc >}}
 
-<img src="/images/VCP-RBAC-Roles.png">
-<br><br>
+An administrator can grant vCenter users specific role-based access to the TrueNAS systems managed by this plugin.
+
+![RBACRoles](/images/vCenterPlugin/RBACRoles.png "RBAC Roles")
 
 | Role Name       | User is allowed to:            |
 |-----------------|--------------------------------|
@@ -22,15 +21,15 @@ Each role gives the user the ability to perform the functions in that role and a
 For example, a user with a *Create Storage* role can create a new datastore and clone existing datastores.
 The vCenter administrator account always has all permissions.
 
-{{< hint >}}
+{{< hint info >}}
 New vCenter users must be created in **Menu > Administration > Single Sign On > Users and Groups**.
 {{< /hint >}}
 
 ## Add a Role to an Existing vCenter User
 
-Click **+** to open the Add Role Based Access Control window.
+Click *+* to open the **Add Role Based Access Control** window.
 Type a user name in the form `DOMAIN.NAME\username`, where `DOMAIN.NAME` is the user Domain found in the **vCenter Menu > Administration > Single Sign On > Users and Groups** page.
 Open the *Assign Role* drop-down menu and choose a role for the user.
-Click **Add** to add the role.
+Click *Add* to add the role.
 
-If the entry does not appear in the list immediately, click **Refresh**.
+If the entry does not appear in the list immediately, click *Refresh*.

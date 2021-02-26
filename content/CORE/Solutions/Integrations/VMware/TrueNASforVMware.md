@@ -1,7 +1,6 @@
 ---
-title: "TrueNAS for VMware Whitepaper"
-description: "Discussion of the benefits of pairing TrueNAS Enterprise with VMware solutions."
-tags: ["VMware"]
+title: "Whitepaper"
+weight: 20
 ---
 
 <object data="https://truenas.com/docs/files/TrueNASforVMware1.2.pdf" type="application/pdf" width="95%" height="1000">
