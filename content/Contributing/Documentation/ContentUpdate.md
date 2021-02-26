@@ -1,5 +1,6 @@
 ---
 title: "Updating Content"
+geekdocCollapseSection: true
 weight: 10
 ---
 
