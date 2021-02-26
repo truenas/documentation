@@ -1,8 +1,7 @@
 ---
 title: "Article Template"
-description: "An Example of the Article Template for Documentation usage."
-tags: ["example","documentation"]
-weight: 4
+weight: 40
+geekdocCollapseSection : true
 ---
 
 Every article needs a "front matter" section that contains the article title and a numeric "weight" that orders the article in the table of contents.
