@@ -1,9 +1,9 @@
 ---
 title: "Recommended ZFS Update"
-tags: ["FreeNAS","TrueNAS Enterprise", "ZFS"]
+weight: 40
 ---
 
-*August 24, 2020*
+**August 24, 2020**
 
 ZFS is the primary file system for FreeNAS and TrueNAS.
 It manages stored data and provides both disk protection (mirror, RAID-Z) and data protection (snapshots, replication) services.
@@ -14,7 +14,7 @@ While reviewing our support data, iXsystems identified one bug ([NAS-102541](htt
 Fortunately, pool data has been recoverable and the issue only occurs on replication targets where there are more than a dozen Access Control Lists (ACLs) on a source file.
 The bug could be triggered by performing a scrub of the replicated pool, but **the issue was resolved in FreeNAS and TrueNAS 11.3**.
 
-Based on the maturity of the 11.3 version, we recommend that FreeNAS and TrueNAS users upgrade to 11.3-U4.1.
+Based on the maturity of the 11.3 version, we recommend that FreeNAS and TrueNAS users upgrade to 11.3-U4.1 or newer.
 Upgrading avoids any possibility of data loss from that bug and ensures that your system will have all ZFS improvements from the past several years.
 FreeNAS 11.3-U4.1 is currently the most popular version of FreeNAS with over 20,000 successful deployments!
 
