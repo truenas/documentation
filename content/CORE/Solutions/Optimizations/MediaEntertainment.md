@@ -1,6 +1,6 @@
 ---
 title: "Media Workflows"
-weight: 10
+weight: 20
 ---
 
 {{< toc >}}
@@ -20,7 +20,6 @@ The security risk and expense of cloud storage are a top priority of IT and Medi
 These factors and others put intense pressure on your budget and data storage infrastructure to keep up with the demand.
 
 A TrueNAS storage system from iXsystems brings an enterprise-grade storage solution supporting multiple protocols to M&E production houses that is capable and affordable for many M&E applications.
-
 It is designed to enable M&E customers to address media capacity and performance requirements while reducing total cost of ownership (TCO), consolidating digital assets, accelerating media workflows, and providing the features needed to protect all media assets.
 Read more to learn how TrueNAS can be optimized for typical M&E production house usage.
 
