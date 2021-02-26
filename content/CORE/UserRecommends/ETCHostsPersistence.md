@@ -1,7 +1,9 @@
 ---
 title: "/etc/hosts IP Persistence"
-description: "How to have IP addresses added to /etc/hosts persist across reboots."
+weight: 5
 ---
+
+{{< toc >}}
 
 ## Description
 
@@ -13,17 +15,16 @@ When adding entries to the <file>hosts</file> file of a TrueNAS system, use the 
 
 ## Errors
 
-*“I’m trying to use NFS, SSH, and FTP, but I keep receiving “reverse DNS” or timeout errors.”*
-
+{{< expand "I’m trying to use NFS, SSH, and FTP, but I keep receiving “reverse DNS” or timeout errors." "v" >}}
 The fastest domain name resolution method is for the operating system to read the <file>hosts</file> file, but if there are no matching entries in the <file>hosts</file> file, a DNS server is queried instead. This is a slower process as the OS has to find the DNS server, send it a query, and wait for an answer.
 Timeout errors are common for some network protocols, such as SSH, FTP and NFS, as their connection requests can time out before a DNS server replies.
 To speed up name resolution, add entries for commonly used hosts to the <file>hosts</file> file.
 
-## Fix
+### Fix
 
 To add an entry to the <file>hosts</file> file, log in to the TrueNAS web interface using a browser, and follow these steps:
 
-1. Open the **Network** menu.
-2. Click the **Global Configuration** option.
-3. Scroll down to the **Host name database** field and add an entry for the TrueNAS system in the format *IP_address space hostname*.
-4. Click **Save**.
+1. Go to **Network > Global Configuration**.
+3. Scroll down to the *Host name database* field and add an entry for the TrueNAS system in the format *IP_address space hostname*.
+4. Click *Save*.
+{{< /expand >}}
