@@ -1,7 +1,9 @@
 ---
 title: "Updating Content"
-weight: 1
+weight: 10
 ---
+
+{{< toc >}}
 
 Changes wanted!
 Contributing changes to the TrueNAS documentation has never been easier.
@@ -27,7 +29,8 @@ Make sure your replacement image has the same name as the image to be replaced.
 In the repository, click **Code** and navigate to the image location in the repository.
 Images are located in either the */static/images/* directory or are in the same location as the article text file as part of an article bundle.
 
-<img src="/images/image-location.png"><br><br>
+![ImageLocation](/images/Contribute/GitHubImagesLocation.png)
+<br><br>
 
 Click **Upload files** and either drag and drop your image or open the file browser to select your image.
 As long as the new image name is the same as the old image, the old image will be replaced and the article will automatically use the new image.
@@ -37,44 +40,45 @@ As long as the new image name is the same as the old image, the old image will b
 To submit a change, you'll create a simple copy ("fork") of the main repository, edit your copy, then propose "merging" your changes back into the main repository.
 To start, click the **Edit this Page** link in the top right of the site. 
 
-<img src="/images/forking-contribution-00.PNG" width='700px'>
+![ArticletoEdit](/images/Contribute/ArticletoEdit.png)
 <br><br>
 
 To fork the repo to your GitHub account, click the green **Fork this repository** button.
 
-<img src="/images/forking-contribution-01.PNG" width='700px'>
+![ForktheRepository](/images/Contribute/GitHubForktheRepository.png)
 <br>
 
-{{% pageinfo %}}
+{{< hint [info] >}}
+**Syncing Your Fork Before Contributing**\
 If you already have a fork of the documentation repository, it is recommended to sync your fork before continuing on to make changes:
 * Open your fork repository, typically found by opening the GitHub profile drop down and clicking **Your repositories**.
 * Find the sync status bar and click **Pull request**.
 * Set the *base repository* to your fork and the *head repository* to freenas/documentation. You might need to click **compare across forks** first.
-  <img src="/images/GitHubCompareFork.png">
+  ![CompareFork](/images/Contribute/GitHubCompareFork.png)
   <br>
 * Click **Create pull request** and continue to merge the pull request.
-{{% /pageinfo %}}
+{{< /hint >}}
 
 Edit the page as needed.
 
-<img src="/images/forking-contribution-02.PNG" width='700px'>
+![EditForkNotice](/images/Contribute/GitHubEditForkNotice.png)
 <br><br>
 
 When the changes are complete, add a quick overview of what changes were made in the description box, and click the green **Commit changes** button.
 
-<img src="/images/forking-contribution-03.PNG" width='700px'>
+![CommitChanges](/images/Contribute/GitHubEditCommitChanges.png)
 <br><br>
 
 When the page refreshes the changes are complete in your forked repository.
 Now you can request merging these changes main repository using a "Pull Request" (PR).
 Click on **Pull Requests**.
 
-<img src="/images/forking-contribution-04.PNG" width='700px'>
+![RepositoryFork](/images/Contribute/GitHubRepositoryFork.png)
 <br><br>
 
 After the Pull Requests page opens, click on the green **New Pull Request** button.
 
-<img src="/images/forking-contribution-05.PNG" width='700px'>
+![ForkPullRequests](/images/Contribute/GitHubRepositoryForkPullrequests.png)
 <br><br>
 
 Confirm that the *base repository* is set to **freenas/documentation** and  *base* is set to **master**.
@@ -82,12 +86,12 @@ Confirm that the *base repository* is set to **freenas/documentation** and  *bas
 *compare* needs to be set to **master**.
 Make sure these options are correct then click the green **Create pull request** button to create the PR.
 
-<img src="/images/forking-contribution-06.PNG" width='700px'>
+![RepositoryComparison](/images/Contribute/GitHubRepositoryComparison.png)
 <br><br>
 
 Describe your changes and click the green **Create pull request** button.
 
-<img src="/images/forking-contribution-07.PNG" width='700px'>
+![CreatePullRequest](/images/Contribute/GitHubPullRequestCreate.png)
 <br><br>
 
 That's it!
@@ -97,4 +101,4 @@ As part of the review process, automation will build a preview of the Docs site 
 When the build is completed, a comment will be added to the PR that says *All checks have passed 1 successful check*.
 Click on **Show all checks** and **Details** to see a live demo of the site with your changes.
 
-<img src="/images/forking-contribution-08.PNG" width='700px'>
+![PullRequestSummary](/images/Contribute/GitHubPullRequestSummary.png)
