@@ -1,9 +1,9 @@
 ---
 title: "Media Workflows"
-description: "Discussion of deploying TrueNAS for Media work environments with suggestions for optimizing the system for specific applications."
-weight:
-tags: ["tuning suggestions"]
+weight: 10
 ---
+
+{{< toc >}}
 
 Developing and delivering media content that reaches audiences whenever and wherever they are has increased in importance and complexity.
 In today’s highly connected, entertainment-driven world, media and entertainment (M&E) companies need to stay competitive to succeed.
@@ -20,37 +20,43 @@ The security risk and expense of cloud storage are a top priority of IT and Medi
 These factors and others put intense pressure on your budget and data storage infrastructure to keep up with the demand.
 
 A TrueNAS storage system from iXsystems brings an enterprise-grade storage solution supporting multiple protocols to M&E production houses that is capable and affordable for many M&E applications.
-It is designed to enable M&E customers to address media capacity and performance requirements while reducing TCO, consolidating digital assets, accelerating media workflows, and providing the features needed to protect all media assets.
+
+It is designed to enable M&E customers to address media capacity and performance requirements while reducing total cost of ownership (TCO), consolidating digital assets, accelerating media workflows, and providing the features needed to protect all media assets.
 Read more to learn how TrueNAS can be optimized for typical M&E production house usage.
 
-> Note: new general tuning recommendations for generic media use or specific software are always forthcoming. Check back often to see what's changed or [add your own recommendations](/hub/contributing/updating/#making-quick-changes-to-an-article)!
+{{< hint info >}}
+General tuning recommendations are changing constantly!
+Check back often to see what's changed or [add your own recommendations](/contributing/)!
+{{< /hint >}}
 
 ## General Optimizations
 
-It's recommended to use SMB3 sharing on both the TrueNAS and any client systems.
-A typical recommendation is to use Mixed RAID (*2+1 RAIDZ*) in most cases with added *Read* and *Write* cache.
-The Write cache is optional if the system is only using SMB sharing.
-
-*RAIDZ2* that is 6 or 7 disks wide (Protection-X or Protection) is viable for tier2/nearline/archival storage or if the system has extensive data storage (a few hundred Terabytes or more).
-Setting jumbo frames (*MTU: 9000*) on the network, TrueNAS, and client side is also important for large file streams.
-
-Media Cache Files and any Media Cache Databases should stay local on clients, and this should be SSD/NVME based.
-These are not meant to be stored on a NAS.
-
-When not using a flash-based system, don't move or copy files or footage while editing as this can cause choppy playback.
+* Use SMB3 sharing on both the TrueNAS and any client systems.
+* A typical recommendation is to use Mixed RAID (*2+1 RAIDZ*) in most cases with added *Read* and *Write* cache.
+  The Write cache is optional if the system is only using SMB sharing.
+  {{< expand "What about RAIDZ2 Configurations?" "v" >}}
+  *6* or *7* disk wide *RAIDZ2* (Protection-X or Protection) is possible for tier2, nearline, or archival storage. It also works when the system has extensive data storage of a few hundred Terabytes or more.
+  {{< /expand >}}
+* Setting jumbo frames (*MTU: 9000*) on the network, TrueNAS, and client side is important for large file streams.
+* Do not store Media Cache Files and Media Cache Databases on a NAS. These files must stay local on clients. Ideally, client systems use SSDs and NVMe devices to store these files.
+* With standard (non flash) systems, don't move or copy files or footage while editing. This causes choppy playback.
 
 ## Software-specific Tuning
 
-Beyond general optimization for Media and Entertainment workflows are tunings or TrueNAS usage recommendations for a specific application.
+Beyond general optimization for Media and Entertainment workflows are tunings or TrueNAS usage recommendations for specific applications.
 
+{{< tabs "Software Tunings" >}}
+{{< tab "Adobe Premier" >}}
 ### Adobe Premiere®
 
 System size is a primary factor when tuning TrueNAS for Adobe Premiere workflows.
 
-4K workflows likely want to have 20 disks or more.
-8K can be all-flash demanding, but Premiere has the *proxies* feature which can reduce the performance impact.
+4K workflows typically want *20* disks or more.
+8K can be all-flash demanding, but Premiere has the *proxies* feature to reduce the performance impact.
 Make sure your client systems or other applications support this feature too.
 
 To get some performance improvement when scrubbing through long video files with audio tracks, de-select *play audio while scrubbing* under **Preferences > Audio**
 
-Make sure that **Project Locking** is enabled in Premiere for any shared projects.
+Shared projects must enable *Project Locking* in Premiere.
+{{< /tab >}}
+{{< /tabs >}}
