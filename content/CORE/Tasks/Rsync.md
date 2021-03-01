@@ -3,81 +3,90 @@ title: "Rsync Tasks"
 weight: 30
 ---
 
-Data often needs to be copied to another system for backup or when migrating to a new system. A fast and secure way of doing this is by using rsync.
+{{< toc >}}
 
-Rsync provides the ability to either *push* or *pull* data. When using rsync to *push*, data is copied from a *host* system to a *remote* system. When using rsync to *pull*, data is pulled from a *remote* system and put on the *host* system. To do this, a dataset with data available for transfer must exist on either the *host* or the *remote* system. See [ZFS Datasets](/CORE/Storage/DataPool/datasets) for more details about creating a dataset.
+Data often needs to be copied to another system for backup or when migrating to a new system.
+A fast and secure way of doing this is by using [rsync](https://rsync.samba.org/).
+These instructions assume that TrueNAS systems are being used for both sides of the rsync task: *host* and *remote*.
 
-## Rsync Service
+## Basic Requirements
 
-The rsync task does not work if the related system service is not turned on. To turn the rsync service on, go to **Services** and click the slider for *rsync*. To activate the service whenever TrueNAS boots, set *Start Automatically*.
+Rysnc requires a [dataset](/CORE/Storage/DataPool/datasets) with the needed data on the *host* or *remote* system.
+Rsync provides the ability to either *push* or *pull* data.
+When using rsync to *push*, data is copied from a *host* system to a *remote* system.
+When using rsync to *pull*, data is pulled from a *remote* system and put on the *host* system.
 
-The rsync service settings can be configured by clicking <i class="fas fa-pen" aria-hidden="true" title="pencil"></i>. The default TCP port that rsync listens on can be changed, and additional auxiliary parameters from [rsyncd.conf](https://www.samba.org/ftp/rsync/rsyncd.conf.html) can be added.
+The *remote* system must have the rsync service activated.
+Additional requirements are listed further down for either *module* or *SSH* rsync tasks.
 
- Unless a specific setting is needed, it is recommended to use the default settings for the rsync service. Don't forget to click *SAVE* after changing any settings.
 
-## Create Rsync Task
+## Creating an Rsync Task
 
-To create an rsync task, go to **Tasks > Rsync Tasks** and click *ADD*. There are two primary rsync modes: *Module* and *SSH*. The requirements for each mode are different. Refer to the appropriate section below for your desired rsync mode.
+Go to **Tasks > Rsync Tasks** and click *ADD*.
+There are two primary *Rsync Mode*s: *Module* and *SSH*.
+The requirements for each mode are different.
+Refer to the related tab for your desired *Rsync Mode*.
 
-### Rsync Mode: Module
+{{< tabs "Rsync Modes" >}}
+{{< tab "Module" >}}
+### Module Requirements
 
-First, turn on the rsync service on the *remote* system. Before creating an rsync task on the *host* system, a module on the *remote* system must be created. Create a module by going to **Services** and clicking <i class="fas fa-pen" aria-hidden="true" title="Pen"></i>&nbsp; for the rsync service. Then go to **Rsync Module > ADD**.
+Before creating an rsync task on the *host* system, a module on the *remote* system must be created.
+When TrueNAS is the *remote* system, create a module by going to **Services** and clicking <i class="fa fa-pencil" aria-hidden="true" title="Pen"></i> for the rsync service.
+Click the **Rsync Module** tab and *ADD*.
+Specific creation instructions are farther down, in the [Rsync Service section](#rsync-service-and-modules).
 
-Enter a descriptive name for the rsync module and use the file browser to define the path to the dataset to be transferred from the *host* system.
+### Process
 
-Select the permissions for the module by selecting an option from the *Access Mode* dropdown.
+Log in to the *host* system interface, go to **Tasks > Rsync Tasks**, and click *ADD*.
 
-Set the *Max Connections*. Entering *0* sets the amount of connections to unlimited.
+![TasksRsyncTasksAddModeModule](/images/CORE/12.0/TasksRsyncTasksAddModeModule.png "Rsync Task: Module Mode")
 
-When using a specific user or group during data transfers to and from the module, select them from the related dropdowns.
+Select the source dataset to use with the rsync task and a user account to run the rsync task.
+Choose a direction for the rsync task.
 
-You can also define a list of hosts that are allowed or denied access to the rsync module.
+Select a schedule for the rsync task.
+When a custom schedule is required, select *Custom*.
+{{< expand "Advanced Scheduler" "v" >}}
+{{< include file="static/includes/AdvancedScheduler.md.part" markdown="true" >}}
+{{< /expand >}}
 
-{{< hint info >}}
-If a *Hosts Allow* list is specified, **only** the IPs and hostnames on the list will be able to connect to the module.
-{{< /hint >}}
+Next, enter the *Remote Host* IP address or hostname.
+Use the format *username@remote_host* when the username differs on the *remote* host.
+Select *Module* in the *Rsync Mode* dropdown. 
+Enter the *Remote Module Name* exactly as it appears on the *remote* system.
 
-Other options include specifying a comment for the rsync module and any additional parameters from [rsyncd.conf](https://www.samba.org/ftp/rsync/rsyncd.conf.html).
+Configure the remaining options according to your specific needs.
+{{< expand "Options" "v" >}}
 
-When a module has been created on the *remote* system, log in to the *host* system interface, go to **Tasks > Rsync Tasks**, and click *ADD*.
+{{< include file="static/includes/TasksRsyncAddFields.md.part" markdown="true" >}}
 
-Select the source dataset to be used for the rsync task. This dataset will be transferred to the remote module when *pushing*. Alternately, this dataset will be used as the destination when *pulling* data from the module.
+The *Module* mode adds one field to the **Remote** section:
 
-Select a user to run the rsync task. The user selected must have write permissions to the specified directory chosen for the module on the *remote* system.
-
-Choose a direction for the rsync task. When *push* is selected, data from the *host* dataset copies to the *remote* module. When *pull* is selected, data from the *remote* module is copied into the *host* dataset.
-
-Select a schedule for the rsync task to run on. If a custom schedule is desired, select *Custom* and fill out the custom scheduler to meet your needs. The custom scheduler can accept standard [cron input strings](https://www.freebsd.org/cgi/man.cgi?query=crontab&sektion=5) for the *Minutes*, *Hours*, and *Days*.
-
-By default, the rsync task will include all subdirectories of the chosen *host* dataset with the transer. To disable this, unset the *Recursive* option.
-
-Next, enter the *remote* host IP address or hostname.
-Use the format *username@remote_host* if the username differs on the *remote* host. Select *Module* in the *Rsync Mode* dropdown. Enter the *Remote Module Name* exactly.
-
-Setting the *Times* option preserves the modification times of files. Set *Compress* to reduce the size of data to transmit. This is recommended for slow connections.
-
-*Archives* can be set to run recursively, preserving symlinks, permissions, modification times, group, and special files. When run as root, the owner, device files, and special files are also preserved. This is equivalent to passing the flags `-rlptgoD` to rsync.
-
-When *Delete* is set, the rsync task will delete files in the destination directory that do not exist in the source directory. For example, if the task is set to *pull*, this option will delete any files on the *host* dataset that do not existing on the *remote* module. Alternatively, if the task is set to *push*, this option will delete any files on the *remote* module that are not in the *host* dataset. This is a **destructive** option. Use with caution as data can be deleted permanently.
-
-Set the *Quiet* option to suppress informational messages from the *remote* system. Set the option *Preserve Permissions* to preserve original file permissions. This is useful when the user is set to root.
-
-Set *Preserve Extended Attributes* to keep the advanced file system features and file metadata through the transfer (see [Extended attributes](https://en.wikipedia.org/wiki/Extended_file_attributes)). Extended attributes must be supported by both systems.
-
-Set *Delay Updates* to save the temporary files from updated files to a holding directory until the end of the transfer when all transferred files are renamed into place.
-
-Additional [rsync](https://rsync.samba.org/ftp/rsync/rsync.html) options can be included in *Auxiliary Parameters*. Separate entries by pressing <kbd>Enter</kbd>. The *\* character must be escaped with a backslash (\\*.txt) or used inside single quotes ('\*.txt').
+*Remote Module Name* : At least one module must be defined in [rsyncd.conf(5)](https://www.samba.org/ftp/rsync/rsyncd.conf.html) of the rsync server or in the Rsync Modules of another system.
+{{< /expand >}}
 
 Unsetting *Enabled* disables the task schedule.
 You can still save the rsync task and run it manually.
+{{< /tab >}}
+{{< tab "SSH" >}}
+### SSH Requirements
 
-### Rsync Mode: SSH
+The *remote* system must have *SSH* enabled.
+To enable SSH in TrueNAS, go to **Services** and toggle **SSH**.
 
-Using the *SSH* rsync mode requires the SSH service to be enabled on the *remote* system. To enable SSH, go to **Services** and click the slider for SSH. SSH settings can be configured by clicking <i class="fas fa-pen" aria-hidden="true" title="Pen"></i>. Take note of the TCP port set on the *remote* system. The default port for the SSH service is port *22*. It is required when creating the rsync task.
+The *host* system needs an established [SSH connection]() to the *remote* for the rsync task.
+To create the connection, go to **System > SSH Connections** and click *Add*.
+Configure a *Semi-automatic* connection and set *Private Key* to *Generate New*.
 
-Now, an ssh key pair must be created on the *host* system. Open up the **Shell** on the *host* system. To create the ssh key pair, the `ssh-keygen` command is used. Typically, the rsync task is ran as the root user. If running the command as a different user, run <code>su - <i>username</i></code> where *username* is the name of the user that will run the rsync task. When the appropriate user is selected, run the command `ssh-keygen -t rsa` and follow the prompts. When prompted for a password, press <kbd>Enter</kbd>. Setting a password will break the scheduled rsync task since it is automatic. Below is an example of running the command.
+{{< expand "Can this be set up in a command line instead?" "v" >}}
+To use a command line, go to the **Shell** on the *host* system.
+When the rsync task is managed by a TrueNAS account other than *root*, enter `su - {USERNAME}`, where *{USERNAME}* is the TrueNAS user account that runs the rsync task.
+Enter `ssh-keygen -t rsa` to create the key pair.
+When prompted for a password, press <kbd>Enter</kbd> without setting a password, as a password breaks the automated task.
+Here is an example of running the command:
 
-```shell
+```zsh
 truenas# ssh-keygen -t rsa
 Generating public/private rsa key pair.
 Enter file in which to save the key (/root/.ssh/id_rsa):
@@ -101,22 +110,86 @@ The key's randomart image is:
 |     o+==oo      |
 +----[SHA256]-----+
 ```
+The default public key location is <file>\~/.ssh/id_rsa.pub</file>.
+Enter `cat ~/.ssh/id_rsa.pub` to see the key and copy the file contents.
+Copy it to the corresponding user account on the *remote* system in **Accounts > Users**.
+Click *EDIT* and paste the key in *SSH Public Key*.
 
-The default location for the public key is `~/.ssh/id_rsa.pub`. Run the command `cat ~/.ssh/id_rsa.pub` to view the key. Copy it to the corresponding user account on the *remote* system in **Accounts > Users**. Click *EDIT* and paste the key in the *SSH Public Key* field.
+Next, copy the host key from the *remote* system to the *host* system user's <file>.ssh/known_hosts</file> directory, using `ssh-keyscan`.
+On the *host* system, open the **Shell** and enter `ssh-keyscan -t rsa {remoteIPaddress} >> {userknown_hostsDir}` where *{remoteIPaddress}* is the *remote* system IP address and *{userknown_hostsDir}* is the <file>known_hosts</file> directory on the *host* system.
+Example: `ssh-keyscan -t rsa 192.168.2.6 >> /root/.ssh/known_hosts`.
+{{< /expand >}}
 
-Next, copy the host key of the *remote* to the user's `.ssh/known_hosts` directory on the *host* system. This is done using the `ssh-keyscan` command. While on the *host* system, open up the **Shell** and run <code>ssh-keyscan -t rsa <i>remoteIPaddress</i> >> <i>userknown_hostsDir</i></code> where *remoteIPaddress* is the IP address of the *remote* system and *userknown_hostsDir* is the known_hosts directory on the *host* system. 
-Here is an example of the command: `ssh-keyscan -t rsa 192.168.2.6 >> /root/.ssh/known_hosts`.
+### Process
 
-Finally, the rsync task is ready to be created. Go to **Tasks > Rsync Tasks** and click *ADD*. Select the source dataset to be used for the rsync task. This dataset will be copied to the remote path chosen when *pushing*. Alternatively, this dataset will be used as the destination when *pulling* data from the remote path. Select the user to run the rsync task. Make sure this is the same user the ssh key pair was created for. In the example given, the user is root. Choose a direction for the rsync task. When *push* is selected, data from the *host* dataset copies to the *remote* dataset. When *pull* is selected, data from the *remote* dataset is copied into the *host* dataset. An optional description can be specified. Select a schedule for the rsync task. 
-If a custom schedule is desired, select *Custom* and fill out the custom scheduler to meet your needs. The custom scheduler can accept standard [cron input strings](https://www.freebsd.org/cgi/man.cgi?query=crontab&sektion=5) for the *Minutes*, *Hours*, and *Days*. By default, the *Recursive* option is set. If unset, the rsync task will not copy any subdirectories in the *host* dataset. 
+Go to **Tasks > Rsync Tasks** and click *ADD*.
+
+![TasksRsyncTasksAddModeSSH](/images/CORE/12.0/TasksRsyncTasksAddModeSSH.png "Rsync Task: SSH Mode")
+
+Configure the SSH settings first by selecting *SSH* in the *Rsync Mode* dropdown and entering the *Port* number and *Remote Path*.
+
+Next, define the **Source** dataset to use for the rsync task and select a *User* account.
+The *User* must be identical to the [SSH Connection]() *Username*.
+
+Choose a direction for the rsync task, either *Push* or *Pull* and then define the task *Schedule*.
+When a custom schedule is required, select *Custom*.
+{{< expand "Advanced Scheduler" "v" >}}
+{{< include file="static/includes/AdvancedScheduler.md.part" markdown="true" >}}
+{{< /expand >}}
 
 Next, enter the *remote* host IP address or hostname.
-Use the format *username@remote_host* if the username differs on the *remote*host. Select *SSH* in the *Rsync Mode* dropdown. Enter the *TCP port* set on the *remote* system. The default is *22*. Enter the remote path of the dataset for rsync to *push* or *pull*. Set *Validate Remote Path* to automatically create the defined *Remote Path* if it does not exist on the *remote* system.
+Use the format *username@remote_host* if the username differs on the *remote*host.
+Configure the remaining options according to your specific needs.
 
-Setting the *Times* option preserves modification times of the files. Set *Compress* to reduce the size of data to transmit. This is recommended for slow connections. *Archives* can be set to run recursively, preserving symlinks, permissions, modification times, group, and special files. When run as root, the owner, device files, and special files are also preserved. This is equivalent to passing the flags `-rlptgoD` to rsync. When *Delete* is set, the rsync task will delete files in the destination directory that do not exist in the source directory. For example, if the task is set to *pull*, this option will delete any files on the *host* dataset that do not existing on the *remote* module. Alternatively, if the task is set to *push*, this option will delete any files on the *remote* module that are not in the *host* dataset. This is a **destructive** option. Use with caution as data can be deleted permanently.
-Set the *Quiet* option to suppress informational messages from the *remote* system. Set the option *Preserve Permissions* to preserve original file permissions. This is useful when the user is set to root. Set *Preserve Extended Attributes* to keep the advanced file system features and file metadata through the transfer (see [>Extended attributes](https://en.wikipedia.org/wiki/Extended_file_attributes)). Extended attributes must be supported by both systems. Set *Delay Updates* to save the temporary files from updated files to a holding directory until the end of the transfer when all transferred files are renamed into place. 
+{{< expand "Options" "v" >}}
+{{< include file="static/includes/TasksRsyncAddFields.md.part" markdown="true" >}}
 
-Additional [rsync(1)](https://rsync.samba.org/ftp/rsync/rsync.html) options can be included in *Auxiliary Parameters*. Separate entries by pressing <kbd>Enter</kbd>. The *\* character must be escaped with a backslash (\\*.txt) or used inside single quotes ('\*.txt').
+Additional options for the *SSH Rsync Mode*:
 
-Unsetting *Enabled* disables the task schedule.
-You can still save the rsync task and run it manually.
+* *Remote SSH Port* : Enter the SSH port number of the remote system. By default, *22* is reserved in TrueNAS.
+* *Remote Path* : Browse to the existing path on the remote host to sync with. Maximum path length is *255* characters.
+* *Validate Remote Path* : Set to automatically create the defined *Remote Path* when it does not exist.
+
+{{< /expand >}}
+
+Unsetting *Enabled* disables the task schedule without deleting the configuration.
+The rsync task can still run by going to **Tasks > Rsync Tasks** and clicking <i class="fa fa-chevron-right"></i> and *Run Now*.
+{{< /tab >}}
+{{< /tabs >}}
+
+## Rsync Service and Modules
+
+The rsync task does not work when the related system service is not turned on.
+To turn the rsync service on, go to **Services** and toggle *rsync*.
+To activate the service whenever TrueNAS boots, set *Start Automatically*.
+
+Click the <i class="fa fa-pencil" aria-hidden="true" title="pencil"></i> to configure the service.
+There are two sections for rsync configuration: basic **Configure** options and **Rsync Module** creation and management.
+
+{{< tabs "Rsync Service Options" >}}
+{{< tab "Configure" >}}
+
+![ServicesRsyncConfigure](/images/CORE/12.0/ServicesRsyncConfigure.png "rsync service options")
+
+{{< include file="static/includes/ServicesRsyncConfigureFields.md.part" markdown="true" >}}
+
+Use the default settings unless a specific change is required.
+Don't forget to click *SAVE* after changing any settings.
+{{< /tab >}}
+{{< tab "Rsync Module" >}}
+
+All created modules are listed here.
+To create a new module, click *ADD*.
+
+![ServicesRsyncModuleAdd](/images/CORE/12.0/ServicesRsyncModuleAdd.png "Creating a rsync module")
+
+{{< include file="static/includes/ServicesRsyncConfigureRsyncModuleAdd.md.part" markdown="true" >}}
+
+{{< hint info >}}
+When a *Hosts Allow* list is defined, **only** the IPs and hostnames on the list are able to connect to the module.
+{{< /hint >}}
+
+To *Edit* or *Delete* a module, go to the **Rsync Modules** list and click <i class="fa fa-chevron-right"></i> for an entry.
+
+{{< /tab >}}
+{{< /tabs >}}

@@ -3,43 +3,29 @@ title: "Init/Shutdown Scripts"
 weight: 20
 ---
 
-TrueNAS provides the ability to schedule commands or scripts to run at system startup or shutdown.
+TrueNAS can schedule commands or scripts to run at system startup or shutdown.
+To create a new script, go to **Tasks > Init/Shutdown Scripts** and click *ADD*.
 
-Go to **Tasks > Init/Shutdown Scripts** and click `ADD`.
+![TasksInitShutdownScriptsAdd](/images/CORE/12.0/TasksInitShutdownScriptsAdd.png "Creating a new script")
 
-![Tasks Init Shutdown Scripts Add](/images/CORE/12.0/TasksInitShutdownScriptsAdd.png "Tasks Init Shutdown Scripts Add")
-<br><br>
+{{< include file="static/includes/TasksInitShutdownScriptsAddFields.md.part" markdown="true" >}}
 
-##  Init/Shutdown Options
-
-![Tasks Init Shutdown Scripts](/images/CORE/12.0/TasksInitShutdownScripts.png "Tasks Init Shutdown Scripts")
-
-<br><br>
-
-| Setting           | Value          | Description   |
-|-------------------|----------------|----------------|
-| Description       | string         | Write any comments about this task.
-| Type              | drop-down menu | Select *Command* for an executable or *Script* for an executable script. |
-| Command or Script | string         | When *Command* is selected, enter the command with any options. When *Script* is selected, click <i class="fa fa-folder" aria-hidden="true" title="folder"></i>&nbsp (Browse) to select the script from an existing pool. |
-| When              | drop-down menu | Select when the *Command* or *Script* runs: *Pre Init*: early in the boot process, after mounting filesystems and starting networking. *Post Init*: at the end of the boot process, before TrueNAS services start. *Shutdown*: during the system power off process. |
-| Enabled           | checkbox       | Enable this task. Unset to disable the task without deleting it. |
-| Timeout           | integer        | Automatically stop the script or command after the specified number of seconds.  |
-
+{{< expand "Can I use a path for the Command?" "v" >}}
+The full path to a command can also be included in the entry.
 Scheduled commands must be in the default path.
-The full path to the command can also be included in the entry.
-The path can be tested with **which {commandname}** in the **Shell**.
+The path can be tested with `which {COMMAND}` in the **Shell**.
 When available, the path to the command is shown:
 
 ```
 [root@freenas ~]# which ls
 /bin/ls
 ```
+{{< /expand >}}
 
-When scheduling a script, test the script first to verify it is executable and achieves the desired results.
-
-{{< hint >}}
-Init/shutdown scripts are run with `sh`.
+{{< hint info >}}
+Always test the script first to verify it is executable and achieves the desired results.
+All init/shutdown scripts are run with `sh`.
 {{< /hint >}}
 
 All saved Init/Shutdown tasks are shown in **Tasks > Init/Shutdown Scripts**.
-Click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp (Options) for a task to `Edit` or `Delete` that task.
+Click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> (Options) for a task to *Edit* or *Delete* that task.
