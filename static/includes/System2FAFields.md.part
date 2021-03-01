@@ -1,0 +1,15 @@
+**User Settings**
+
+| | |
+|-|-|
+| One Time Passsword (OTP) Digits | The number of digits in the One-Time Password. The default value is 6, which is the length of the standard OTP from Google. Check the settings of your app or device before selecting this. |
+| Interval | The lifespan (in seconds) of each One-Time Password. Default is 30 seconds. The minimum lifetime is 5 seconds. |
+| Window | Use Window to extend the validity of passwords beyond the Interval setting. For example, a window setting of 1 means that one password before and after the current one is valid. leaving three valid passwords. Extending the window can be useful in high-latency situations. IMPORTANT: Two-factor authentication is time-based and requires that the system time is set correctly. |
+| Enable Two-Factor Auth for SSH | Enable two-factor authentication for SSH access to the system. It is recommended to leave this DISABLED until after two-factor authentication is successfully tested with the UI. |
+
+**System Generated Settings**
+
+| | |
+|-|-|
+| Secret (Read Only) | The secret used to generate OTPs. The secret is produced by the system when Two-Factor Authentication is first activated. |
+| Provisioning URI (includes Secret - Read Only) | The URI used to provision an OTP. The URI (which contains the secret) is encoded in a QR Code. To set up an OTP app like Google Authenticator, use the app to scan the QR code or enter the secret manually into the app. The URI is produced by the system when Two-Factor Authentication is first activated. |
