@@ -1,8 +1,6 @@
 ---
 title: "Adding a New Article"
-linkTitle: "New Articles"
-description: "How to add a new article to the Documentation Hub."
-weight: 2
+weight: 20
 ---
 
 Thanks for your interest in submitting documentation articles!
@@ -18,7 +16,8 @@ There is an [Article Template](/hub/contributing/template/) available that can s
 Find a place on your local system to create a directory for your article.
 Name the directory according to the title of your article.
 
-<img src="/images/ArticlePagebundleFiles.png"><br><br>
+![ArticleBundle](/images/Contribute/HugoNewArticleBundle.png "Creating an Article Bundle")
+<br><br>
 
 Open the directory and create a new file called *index.md*.
 This file will contain all the text for your article.
@@ -31,9 +30,7 @@ For example, this article uses basic front matter:
 ```
 ---
 title: "Adding a New Article"
-linkTitle: "New Articles"
-description: "How to add a new article to the Documentation Hub."
-weight: 2
+weight: 20
 ---
 ```
 
@@ -48,20 +45,22 @@ You can generally style the article however you like, but please be aware that o
 If you want to include screenshots of the TrueNAS User Interface with your article, add these files to your article bundle.
 Be sure to have unique names for each image file.
 
-<img src="/images/example-article-bundle.png"><br><br>
-
+![AddingImages](/images/Contribute/HugoArticleBundle.png "Adding Images")
+<br><br>
 
 ## Uploading the Article Bundle
 
 Open the Community Docs section of the repository at https://github.com/freenas/documentation/tree/master/content/en/hub/additional-topics/community.
 When submitting an article in a language other than English, change the `/en/` to the language directory that matches the language of your article.
 
-{{< figure src="DocsRepoArticlesLocation.png" title="Community Articles" >}}
+![UploadImages](/images/Contribute/UploadingNewArticleBundle.png "Uploading Images")
+<br><br>
 
 Click **Upload files** and drag and drop the article bundle directory into the repository.
 GitHub shows all the files that will be uploaded.
 
-{{< figure src="GitHubNewArticle.png" title="Uploading an Article Bundle" >}}
+![ImageRepo](/images/Contribute/AddNewArticlePhotoRepo.png "Adding Images Repo")
+<br><br>
 
 ## Opening a Pull Request
 
@@ -74,6 +73,7 @@ Make sure you're happy with the summary and description of your article, then cl
 After the pull request is created, the repository automatically builds a preview of the documentation site that has your changes included.
 The link to this preview is added to the Pull Request after the build completes.
 
-{{< figure src="GitHubNewArticlePreview.png" title="New Article Preview" >}}
+![ArticlePreview](/images/Contribute/NewArticlePreview.png "Article Preview")
+<br><br>
 
 Other contributors will review and merge your article!
