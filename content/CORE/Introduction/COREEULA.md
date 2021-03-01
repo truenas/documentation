@@ -2,7 +2,7 @@
 title: "TrueNAS CORE EULA"
 description: "The End User License Agreement for TrueNAS CORE"
 tags: ["EULA", "support"]
-weight: 25
+weight: 35
 ---
 
 ## TrueNAS CORE End User License Agreement
