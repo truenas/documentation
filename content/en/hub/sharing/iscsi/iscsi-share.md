@@ -108,13 +108,13 @@ Run the command <code>sudo iscsiadm \--mode discovery \--type sendtargets \--por
 
 Alternatively, you can enter <code>sudo iscsiadm -m discovery -t st -p <i>IPofTrueNASsystem</i></code> to get the same output. Take note of the basename and target name given in the output. You will need it to login to the iSCSI share.
 
-When a Portal Discovery Authentication Method is set to CHAP, the three following lines need to be added to /etc/iscsi/iscsid.conf.
+When a Portal *Discovery Authentication Method* is set to *CHAP*, these three lines need to be added to <file>/etc/iscsi/iscsid.conf</file>.
 ```
 discovery.sendtargets.auth.authmethod = CHAP
 discovery.sendtargets.auth.username = user
 discovery.sendtargets.auth.password = secret
 ```
-The user for discovery.sendtargets.auth.username is the user set in the Authorized Access used by the Portal of the iSCSI share. Likewise, the password to use for discovery.sendtargets.auth.password is the Authorized Access secret. Without those lines, the iscsiadm will not discover the Portal with the CHAP authentication method.
+The user for `discovery.sendtargets.auth.username` is the user set in the Authorized Access used by the Portal of the iSCSI share. Likewise, the password to use for `discovery.sendtargets.auth.password` is the Authorized Access secret. Without these lines, the iscsiadm will not discover the Portal with the CHAP authentication method.
 
 Next, run the command <code>sudo iscsiadm \--mode node \--targetname <i>basename</i>:<i>targetname</i> \--portal <i>IPofTrueNASsystem</i> \--login</code> where *basename* and *targetname* is the information you got from the discovery command.
 
