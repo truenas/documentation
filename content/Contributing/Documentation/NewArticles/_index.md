@@ -1,7 +1,10 @@
 ---
 title: "Adding a New Article"
 weight: 20
+geekdocCollapseSection: true
 ---
+
+{{< toc >}}
 
 Thanks for your interest in submitting documentation articles!
 This article shows you how to add a new article to the TrueNAS Documentation Hub.
