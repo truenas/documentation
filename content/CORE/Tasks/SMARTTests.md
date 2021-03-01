@@ -1,8 +1,6 @@
 ---
-title: "Configuring S.M.A.R.T. Tests"
-description: "How to configure S.M.A.R.T. tests for installed disks."
-weight: 50
-tags: ["S.M.A.R.T."]
+title: "S.M.A.R.T. Tests"
+weight: 40
 ---
 
 [S.M.A.R.T.](https://en.wikipedia.org/wiki/S.M.A.R.T.) (Self-Monitoring, Analysis and Reporting Technology) is an industry standard for disk monitoring and testing.

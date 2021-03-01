@@ -1,7 +1,5 @@
 ---
-title: "Disk Resilver Scheduling"
-description: "How to optimize disk resilvering."
-tags: ["ZFS"]
+title: "Resilver Priority"
 weight: 70
 ---
 

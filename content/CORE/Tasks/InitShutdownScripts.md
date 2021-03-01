@@ -1,7 +1,6 @@
 ---
 title: "Init/Shutdown Scripts"
-description: "How to add commands or scripts that automatically run when TrueNAS starts or begins to shut down."
-weight: 30
+weight: 20
 ---
 
 TrueNAS provides the ability to schedule commands or scripts to run at system startup or shutdown.

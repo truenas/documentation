@@ -1,7 +1,5 @@
 ---
-title: "Configuring Scrub Tasks"
-description: "How to configure automated scrubs of storage pools."
-tags: ["ZFS"]
+title: "Scrub Tasks"
 weight: 80
 ---
 
