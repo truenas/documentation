@@ -49,7 +49,7 @@ It's easy to set up the necessary items for an iSCSI share using the web interfa
 First, enter a name for the iSCSI share. The name can only contain lowercase alphanumeric characters plus a dot (.), dash (-), or colon (:). We recommend keeping the name short or at most 63 characters. Next, choose the *Extent Type*.
 
 * If the *Extent Type* is *Device*, select the Zvol to share from the *Device* drop down.
- 
+
 * If the *Extent Type* is *File*, select the path to the Extent and indicate the file size.
 
 Select the type of platform that will be using the share. For example, if using the share from an updated Linux OS, choose *Modern OS*.
@@ -63,7 +63,7 @@ Now you will either create a new portal or select an existing one from the dropd
 
 If you create a new portal, you will need to select a *Discovery Authentication Method*.
 
-If you set the *Discovery Authentication Method* to *CHAP* or *MUTUAL CHAP*, then you will also need to select a *Discovery Authentication Group*. If a group doesn't already exist select *Create New* from the dropdown and enter the desired *Group ID*, *User*, and *Secret*.
+If you set the *Discovery Authentication Method* to *CHAP* or *MUTUAL CHAP*, then you will also need to select a *Discovery Authentication Group*. If a group doesn't already exist, select *Create New* from the dropdown and enter the desired *Group ID*, *User*, and *Secret*.
 
 <img src="/images/iSCSI4Portal.png">
 <br><br>
@@ -107,6 +107,14 @@ Run the command <code>sudo iscsiadm \--mode discovery \--type sendtargets \--por
 <br><br>
 
 Alternatively, you can enter <code>sudo iscsiadm -m discovery -t st -p <i>IPofTrueNASsystem</i></code> to get the same output. Take note of the basename and target name given in the output. You will need it to login to the iSCSI share.
+
+When a Portal *Discovery Authentication Method* is set to *CHAP*, these three lines need to be added to <file>/etc/iscsi/iscsid.conf</file>.
+```
+discovery.sendtargets.auth.authmethod = CHAP
+discovery.sendtargets.auth.username = user
+discovery.sendtargets.auth.password = secret
+```
+The user for `discovery.sendtargets.auth.username` is the user set in the Authorized Access used by the Portal of the iSCSI share. Likewise, the password to use for `discovery.sendtargets.auth.password` is the Authorized Access secret. Without these lines, the iscsiadm will not discover the Portal with the CHAP authentication method.
 
 Next, run the command <code>sudo iscsiadm \--mode node \--targetname <i>basename</i>:<i>targetname</i> \--portal <i>IPofTrueNASsystem</i> \--login</code> where *basename* and *targetname* is the information you got from the discovery command.
 
