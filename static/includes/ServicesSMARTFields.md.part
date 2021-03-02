@@ -1,7 +1,5 @@
-**General Options**
-
-| | |
-|-|-|
+| Name | Description |
+|------|-------------|
 | Check Interval | Define a number of minutes for [smartd](https://www.freebsd.org/cgi/man.cgi?query=smartd&manpath=FreeBSD+11.1-RELEASE+and+Ports) to wake up and check if any tests are configured to run. |
 | Difference | Enter a number of degrees in Celsius. SMART reports if the temperature of a drive has changed by N degrees Celsius since the last report. |
 | Informational | Enter a threshold temperature in Celsius. SMART will message with a log level of LOG_INFO if the temperature is higher than the threshold. |

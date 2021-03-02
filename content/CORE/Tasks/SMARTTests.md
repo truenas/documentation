@@ -3,6 +3,8 @@ title: "S.M.A.R.T. Tests"
 weight: 40
 ---
 
+{{< toc >}}
+
 [S.M.A.R.T.](https://en.wikipedia.org/wiki/S.M.A.R.T.) (Self-Monitoring, Analysis and Reporting Technology) is an industry standard for disk monitoring and testing.
 Disks can be monitored for problems, with several different kinds of self-tests available.
 TrueNAS can adjust when and how [alerts](/CORE/System/system-alerts/) for SMART are issued.
@@ -15,92 +17,98 @@ Running tests can reduce drive performance, so it is recommended to schedule tes
 Avoid scheduling disk-intensive tests at the same time!
 For example, S.M.A.R.T. tests should not be scheduled on the same day as a disk [scrub](/CORE/Tasks/scrub/) or [resilver](/CORE/Tasks/resilver/).
 
-{{< hint info >}}
-To disable all S.M.A.R.T. testing for a disk, go to **Storage > Disks**, select a disk, and click **EDIT DISK(S)**.
-Unset **Enable S.M.A.R.T.**.
-{{< /hint >}}
+
+
+{{< expand "How do I check or change S.M.A.R.T. testing for a disk?" "v" >}}
+Go to **Storage > Disks** and click <i class="fa fa-chevron-right"></i> to expand an entry.
+*Enable S.M.A.R.T.* shows as *true* or *false*.
+
+To enable or disable testing, click *EDIT DISK(S)* and find the *Enable S.M.A.R.T.* option.
+{{< /expand >}}
 
 ## Manual S.M.A.R.T. Test
 
 To quickly test a disk for errors, go to **Storage > Disks** and select the disks to be tested.
 After selecting the desired disks, click *MANUAL TEST*.
 
-![Storage Disks Manual Test Options](/images/CORE/12.0/StorageDisksManualTestOptions.png "Storage Disks Manual Test Options")
-<br><br>
+![StorageDisksManualTest Options](/images/CORE/12.0/StorageDisksManualTestOptions.png "Manual Test Options")
 
-Next, select the test **Type**.
-Each test type can be slightly different based on the drive connection (ATA or SCSI):
-
-* Long - [ATA] runs SMART Extended Self Test. This will scan the entire disk surface and can take many hours on large-volume disks.
-* Long - [SCSI] runs the "Background long" self-test.
-* Short - [ATA] runs SMART Short Self Test (usually under ten minutes). These are basic disk tests that vary by manufacturer.
-* Short - [SCSI] runs the "Background short" self-test.
-* Conveyance - [ATA only] runs a SMART Conveyance Self Test (minutes).
+Next, select the test *Type*.
+Each test type can be slightly different based on the drive connection, ATA or SCSI:
+{{< tabs "Tests by Drive Connection" >}}
+{{< tab "ATA" >}}
+* *Long* - runs SMART Extended Self Test. This will scan the entire disk surface and can take many hours on large-volume disks.
+* *Short* - runs SMART Short Self Test (usually under ten minutes). These are basic disk tests that vary by manufacturer.
+* *Conveyance* - runs a SMART Conveyance Self Test.
   This self-test routine is intended to identify damage incurred during transporting of the device.
-  This self-test routine should take on the order of minutes to complete.
-* Offline - [ATA] runs SMART Immediate Offline Test.
-  The effects of this test are visible only in that it updates the SMART Attribute values, and if errors are found they will appear in the SMART error log.
-* Offline - [SCSI] runs the default self test in foreground.
+  This self-test routine requires only minutes to complete.
+* *Offline* - runs SMART Immediate Offline Test.
+  The effects of this test are visible only in that it updates the SMART Attribute values, and if errors are found, they appear in the SMART error log.
+
+{{< /tab >}}
+{{< tab "SCSI" >}}
+* *Long* - runs the "Background long" self-test.
+* *Short* - runs the "Background short" self-test.
+* *Offline* - runs the default self test in foreground.
   No entry is placed in the self test log.
+
+{{< /tab >}}
+{{< /tabs >}}
 
 For more information, refer to [smartctl(8)](https://www.smartmontools.org/browser/trunk/smartmontools/smartctl.8.in).
 
 Click *START* to begin the test.
 Depending on the chosen test type, the test can take some time to complete.
+TrueNAS generates alerts when tests discover issues.
 
-Test results can be viewed by expanding a **Storage > Disks** entry and clicking **S.M.A.R.T. TEST RESULTS**.
-To find test results from the [shell](/CORE/Administrative/gui-shell/), use `smartctl` and the name of the drive: `smartctl -l selftest /dev/ada0`.
+{{< expand "Where can I view the test results?" "v" >}}
+Go to **Storage > Disks**, expand an entry, and click *S.M.A.R.T. TEST RESULTS*.
+From the **[Shell](/CORE/Administrative/gui-shell/)**, use `smartctl` and the name of the drive: `smartctl -l selftest /dev/ada0`.
+{{< /expand >}}
 
 ## Automatic S.M.A.R.T. Tests
 
-To schedule recurring S.M.A.R.T. tests, go to **Tasks > S.M.A.R.T. Tests** and click **ADD**.
+To schedule recurring S.M.A.R.T. tests, go to **Tasks > S.M.A.R.T. Tests** and click *ADD*.
 
-![Tasks SMART Tests Add](/images/CORE/12.0/TasksSMARTTestsAdd.png "Tasks SMART Tests Add")
-<br><br>
+![TasksSMARTTestsAdd](/images/CORE/12.0/TasksSMARTTestsAdd.png "Add recurring S.M.A.R.T. test")
 
-Setting **All Disks** will include every disk that has S.M.A.R.T. enabled in the test.
-To check if a disk has S.M.A.R.T. Enabled, go to **Storage > Disks** and expand a disk entry.
-*Enable S.M.A.R.T.* shows *true* or *false*.
+{{< expand "Specific Options" "v" >}}
+{{< include file="static/includes/TasksSMARTAddFields.md.part" markdown="true" >}}
+{{< /expand >}}
 
-To specify which disks to test, leave **All Disks** unset and make selections from the **Disks** drop down.
+Choose the *Disks* to test, *Type* of test to run, and *Schedule* for the task.
 
-Select a test type from the *Type* dropdown.
-Test types are the same as a [manual test](/CORE/Tasks/smart/#manual-smart-test).
+{{< hint warning >}}
+SMART tests can offline disks! Avoid scheduling S.M.A.R.T. tests simultaneously with scrub or resilver operations.
+{{< /hint >}}
 
-Finally, select a schedule for the S.M.A.R.T. test.
-If a custom schedule is desired, select *Custom* and fill out the [custom scheduler](/CORE/Tasks/advanced-scheduler/) to meet your needs.
+When the test must run on a very specific *Schedule*, set this to *Custom* to open the advanced scheduler.
+{{< expand "Advanced Scheduler" "v" >}}
+{{< include file="static/includes/AdvancedScheduler.md.part" markdown="true" >}}
+{{< /expand >}}
 
 Saved schedules appear in the **Tasks > S.M.A.R.T. Tests** list.
+
+{{< expand "CLI" "v" >}}
 To verify the schedule is saved, you can open the [shell](/CORE/Administrative/gui-shell/) and enter `smartd -q showtests`.
+{{< /expand >}}
 
 ## Service Options
 
-The S.M.A.R.T. service must be turned on for automatic S.M.A.R.T. tests to function.
+The S.M.A.R.T. service must enabled on for automatic S.M.A.R.T. tests to run.
 
-{{< hint info >}}
-It is recommended to disable the S.M.A.R.T. service when disks are controlled by a RAID controller.
-The controller will monitor S.M.A.R.T. separately and mark disks as a *Predictive Failure* on a test failure.
-{{< /hint >}}
+{{< expand "RAID controllers?" "v" >}}
+Disable the S.M.A.R.T. service when disks are controlled by a RAID controller.
+The controller monitors S.M.A.R.T. separately and marks disks as a **Predictive Failure** on a test failure.
+{{< /expand >}}
 
-To turn the S.M.A.R.T. service on, go to **Services** and click the slider for *S.M.A.R.T.*.
-If you wish to turn the service on automatically when the TrueNAS system is turned on, set *Start Automatically*.
+To start the S.M.A.R.T. service, go to **Services** and toggle *S.M.A.R.T.*.
+To start the service during the TrueNAS boot process, set *Start Automatically*.
 
-The S.M.A.R.T. service settings can be configured by clicking <i class="fas fa-pen" aria-hidden="true" title="Pen"></i>&nbsp; (Configure).
+Configure the S.M.A.R.T. service by clicking <i class="fa fa-pen" aria-hidden="true" title="Pencil"></i> (Configure).
 
-![Services SMART Options](/images/CORE/12.0/ServicesSMARTOptions.png "Services SMART Options")
-<br><br>
+![ServicesSMARTOptions](/images/CORE/12.0/ServicesSMARTOptions.png "Services SMART Options")
 
-*Check Interval* is the amount of time, in minutes, the [smartd](https://www.freebsd.org/cgi/man.cgi?query=smartd) service checks for S.M.A.R.T. tests to run on the system.
-`smartd` wakes up at the configured interval and checks the times configured in **Tasks > S.M.A.R.T. Tests** to see if a test must begin.
-For example, if a SMART test is scheduled to run every 15 minutes but the *Check Interval* is 30 minutes, then the SMART test only runs every 30 minutes when the `smartd` service activates.
-
-Enter a number of degrees in Celsius for the *Difference*.
-S.M.A.R.T. reports if the temperature of a drive has changed by the number of degrees Celsius specified since the last report.
-
-Enter a threshold temperature in Celsius for *Informational*.
-S.M.A.R.T. will message with a log level of `LOG_INFO` if the temperature is higher than the threshold specified.
-
-Enter a threshold temperature in Celsius for *Critical*.
-S.M.A.R.T. will message with a log level of `LOG_CRIT` if the temperature is higher than the threshold.
+{{< include file="static/includes/TasksSMARTAddFields.md.part" markdown="true" >}}
 
 Don't forget to click *SAVE* after changing any settings.
