@@ -3,6 +3,8 @@ title: "Managing TLS Ciphers"
 weight: 30
 ---
 
+{{< toc >}}
+
 {{< hint info >}}
 This feature was introduced in TrueNAS 12.0
 {{< /hint >}}
@@ -18,6 +20,8 @@ Log in to the web interface and go to **System > General**:
 ![SystemGeneral](/images/CORE/12.0/SystemGeneral.png "System General")
 
 Click on *HTTPS Protocols* to open a dropdown menu with the various cipher suites.
+
+![SystemGeneralHTTPSProtocols](/images/CORE/12.0/SystemGeneralHTTPSProtocols.png "HTTPS Protocols")
 
 {{< tabs "Supported Cipher Suites" >}}
 {{< tab "TLSv1" >}}
@@ -40,8 +44,5 @@ Legacy or insecure encryption algorithms are removed, additional encryption for 
 {{< /tab >}}
 {{< /tabs >}}
 
-
 Unsetting a cipher restricts its use in TrueNAS.
 After enabling or disabling a cipher, the TrueNAS system must be rebooted.
-
-![SystemGeneralHTTPSProtocols](/images/CORE/12.0/SystemGeneralHTTPSProtocols.png "HTTPS Protocols")
