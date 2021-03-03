@@ -139,6 +139,15 @@
   opacity: 0.3;
 }
 .container-image-download:hover .middle {
+  opacity: 1;
+}
+.image-download-text {
+  background-color: #0095D5;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+.middle {
   -webkit-transition:.5s ease;
   -o-transition:.5s ease;
   transition:.5s ease;
@@ -150,13 +159,7 @@
   -o-transform:translate(-50%,-50%);
   transform:translate(-50%,-50%);
   -ms-transform:translate(-50%,-50%)
-}
-.image-download-text {
-  background-color: #0095D5;
-  color: white;
-  font-size: 16px;
-  padding: 16px 32px;
-}
+ }
 .linkbutton{
   min-width:180px;border-radius:5px;
   background-color:#0095d5;
