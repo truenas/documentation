@@ -82,7 +82,8 @@ Information **NOT** migrated due to drastic changes in how these are performed n
 * User-defined reports
 * Security Logs
 
-WARNING: If you are using an LDAP-enabled system for user logins, please be sure to have your non-LDAP admin user credentials handy before updating. The LDAP integration systems between 1.x and 2.x are different, and while the settings are migrated over as much as possible, you will still want to login and verify that everything is still configured properly.
+***WARNING***: 
+If you are using an LDAP-enabled system (non-Cloud) for user logins, please be sure to have your non-LDAP admin user credentials handy before updating. The LDAP integration systems between 1.x and 2.x are different, and while the settings are migrated over as much as possible, you will still want to login and verify that everything is still configured properly.
 
 #### Minimum Supported TrueNAS Versions
 Due to the changes in integrating with the TrueNAS middleware, the minimum version for full-support of functionality has changed with TrueCommand 2.0:
