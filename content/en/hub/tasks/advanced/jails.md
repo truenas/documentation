@@ -94,7 +94,7 @@ The advanced jail creation form is opened by clicking **Jails > ADD**, then **AD
 A usable jail without any networking can be quickly created by setting only the required **Jail Name** and **Release**.
 Configure the remaining `Basic Properties` when the jail needs to communicate over the local network or out to the internet.
 Additional settings are in the `Jail Properties`, `Network Properties`, and `Custom Properties` sections.
-See the [Jail Options Reference](/hub/additional-topics/reference/uifielddescriptions/jailsfields/) for a breakdown all of the options for `Jail Properties`, `Network Properties`, and `Custom Properties`.
+See the [Jail Options Reference](/hub/additional-topics/reference/UIFieldDescriptions/JailsFields/) for a breakdown all of the options for `Jail Properties`, `Network Properties`, and `Custom Properties`.
 
 ### Creating Template Jails
 
