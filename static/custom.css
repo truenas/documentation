@@ -130,3 +130,21 @@
 	.truenas-mediamenu:hover .truenas-menubutton {background-color: #ffffff;color:#31beec;}	
 }
 /* End site directory for mobile browsing */
+/* Styling for fade-in on image download links */
+.container-image-download {
+  position: relative;
+  width: 50%;
+}
+.container-image-download:hover .image {
+  opacity: 0.3;
+}
+.container-image-download:hover .middle {
+  opacity: 1;
+}
+.image-download-text {
+  background-color: #0095D5;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+/* End styling for fade-in on image download links */
