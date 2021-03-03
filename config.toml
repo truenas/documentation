@@ -5,6 +5,7 @@ enableRobotsTXT = true
 relativeURLs = true
 disableKinds = [""]
 rss_pages = ["hardware","hub","truecommand"]
+disablePathToLower = true
 
 # Hugo allows theme composition (and inheritance). The precedence is from left to right.
 theme = ["docsy"]
