@@ -1,43 +1,43 @@
 **Console**
 
-| | |
-|-|-|
+| Name | Description |
+|------|-------------|
 | Show Text Console without Password Prompt | Unset to add a login prompt to the system before the console menu is shown. |
 | Enable Serial Console | Do not set this if the Serial Port is disabled. |
 | MOTD Banner | The message to show when a user logs in with SSH. |
 
 **Storage**
 
-| | |
-|-|-|
+| Name | Description |
+|------|-------------|
 | Swap Size in GiB | By default, all data disks are created with the amount of swap specified. Changing the value does not affect the amount of swap on existing disks, only disks added after the change. Does not affect log or cache devices as they are created without swap. Setting to 0 disables swap creation completely. **STRONGLY DISCOURAGED** |
 | LOG (Write Cache) Overprovision Size in GiB | Overprovisioning a ZFS Log SSD can increase its performance and lifespan by distributing writes and erases across more drive flash blocks. Defining a number of GiB here overprovisions ZFS Log disks during pool creation or extension. Examples: 50 GiB, 10g, 5GB |
 
 **GUI**
 
-| | |
-|-|-|
+| Name | Description |
+|------|-------------|
 | Show Console Messages | Display console messages in real time at the bottom of the browser. |
 | Show Advanced Fields by Default | Set to always show advanced fields, when available. |
 
 **Kernel**
 
-| | |
-|-|-|
+| Name | Description |
+|------|-------------|
 | Show Console Messages | Display console messages in real time at the bottom of the browser. |
 | Show Advanced Fields by Default | Set to always show advanced fields, when available. |
 
 **Self-Encrypting Drive**
 
-| | |
-|-|-|
+| Name | Description |
+|------|-------------|
 | ATA Security User | User passed to camcontrol security -u to unlock SEDs |
 | SED Password | Global password to unlock SEDs. |
 
 **Syslog**
 
-| | |
-|-|-|
+| Name | Description |
+|------|-------------|
 | Use FQDN for Logging | Set to include the Fully-Qualified Domain Name (FQDN) in logs to precisely identify systems with similar hostnames. |
 | Syslog Level | When Syslog Server is defined, only logs matching this level are sent. |
 | Syslog Server | Remote syslog server DNS hostname or IP address. Nonstandard port numbers can be used by adding a colon and the port number to the hostname, like `mysyslogserver:1928`. Log entries are written to local logs and sent to the remote syslog server. |

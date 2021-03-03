@@ -3,146 +3,206 @@ title: "Cloud Credentials"
 weight: 100
 ---
 
-You can configure TrueNAS to send, receive, or synchronize data with a Cloud Storage provider.
-Configuring a Cloud Sync task allows you to transfer data a single time or set up a recurring schedule to periodically transfer data.
-This can be an effective method to back up your data to a remote location.
+{{< toc >}}
 
-You should already have your [TrueNAS Storage](/CORE/Storage/) configured.
-You will also need an account with the Cloud Storage provider and a storage location created with the provider, like an Amazon S3 bucket.
-Major providers like Amazon S3, Google Cloud, and Microsoft Azure are supported, along with a variety of other vendors.
-To see the full list of supported vendors, log in to the TrueNAS UI and go to *System > Cloud Credentials > Add* and open the *Provider* dropdown.
-
-{{< hint warning>}}
-Using the Cloud means that data can go to a third party commercial vendor not directly affiliated with iXsystems.
-Please investigate and fully understand that vendor’s pricing policies and services before creating any Cloud Sync task.
-iXsystems is not responsible for any charges incurred from the use of third party vendors with the Cloud Sync feature.
-{{< /hint >}}
-
-To start using Cloud storage, save cloud storage provider credentials on the system and create a new *Cloud Sync* task.
+To begin integrating TrueNAS with a Cloud Storage provider, register the account credentials on the system.
+After saving any credentials, a [Cloud Sync Task](/CORE/Tasks/CloudSyncTasks/) allows sending or receiving data from that Cloud Storage Provider.
 
 ## Saving a Cloud Storage Credential
 
 Transferring data from TrueNAS to the Cloud requires saving Cloud Storage Provider credentials on the system.
-To maximize security, these credentials are encrypted when saved.
-However, this means that to restore any cloud credentials from a TrueNAS configuration file, you must enable *Export Password Secret Seed* when generating that configuration backup.
-Remember to keep any downloaded TrueNAS configuration files secure.
 
-It is recommended to have another browser tab open and logged in to the Cloud Storage Provider account you intend to link to TrueNAS.
-Some providers can require additional information that is generated on the storage provider account page.
+{{< expand "Is this secure?" "v" >}}
+To maximize security, these credentials are encrypted when saved.
+However, this means that to restore any cloud credentials from a TrueNAS configuration file, you must enable *Export Password Secret Seed* when generating that [configuration backup](/CORE/System/General/ConfigBackup/).
+Remember to protect any downloaded TrueNAS configuration files.
+{{< /expand >}}
+
+It is recommended to have another browser tab open and logged in to the Cloud Storage Provider account you intend to link with TrueNAS.
+Some providers require additional information that is generated on the storage provider account page.
 For example, saving an Amazon S3 credential on TrueNAS could require logging in to the S3 account and generating an access key pair on the *Security Credentials > Access Keys* page.
 
-To save cloud storage provider credentials, go to *System > Cloud Credentials* and click *Add*.
+To save cloud storage provider credentials, go to **System > Cloud Credentials** and click *Add*.
 
-![System Cloud Credentials Add S3](/images/CORE/12.0/SystemCloudCredentialsAddS3.png "System Cloud Credentials Add S3")
+![SystemCloudCredentialsAddS3](/images/CORE/12.0/SystemCloudCredentialsAddS3.png "Adding new Cloud Credential: S3")
 
-Enter a name for the credential and choose a *Provider*.
-The rest of the options change according to the chosen *Provider*.
+Enter a credential *Name* and choose a *Provider*.
+The rest of the options change according to the chosen *Provider*:
+
+{{< tabs "Cloud Credentials Authentication Providers" >}}
+{{< tab "Amazon S3" >}}
+
+| Name | Description |
+|------|-------------|
+| Access Key ID | Amazon Web Services Key ID. This is found on [Amazon AWS](https://aws.amazon.com/) by going through **My account > Security Credentials > Access Keys** (Access Key ID and Secret Access Key). Must be alphanumeric and between 5 and 20 characters. |
+| Secret Access Key | Amazon Web Services password. If the Secret Access Key cannot be found or remembered, go to **My Account > Security Credentials > Access Keys** and create a new key pair. Must be alphanumeric and between 8 and 40 characters. |
+| Maximum Upload Ports | Define the maximum number of chunks for a multipart upload. This can be useful if a service does not support the 10,000 chunk AWS S3 specification. |
+
+**Amazon S3 Advanced Options**
+
+| Name | Description |
+|------|-------------|
+| Endpoint URL | [S3 API endpoint URL](https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteEndpoints.html). When using AWS, the endpoint field can be empty to use the default endpoint for the region, and available buckets are automatically fetched. Refer to the AWS Documentation for a list of [Simple Storage Service Website Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_website_region_endpoints%20%20target=). |
+| Region | [AWS resources in a geographic area](https://docs.aws.amazon.com/general/latest/gr/rande-manage.html). Leave empty to automatically detect the correct public region for the bucket. Entering a private region name allows interacting with Amazon buckets created in that region. For example, enter us-gov-east-1 to discover buckets created in the eastern [AWS GovCloud](https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/whatis.html) region. |
+| Disable Endpoint Region | Skip automatic detection of the Endpoint URL region. Set this when configuring a custom Endpoint URL. |
+| User Signature Version 2 | Force using [Signature Version 2](https://docs.aws.amazon.com/general/latest/gr/signature-version-2.html) to sign API requests. Set this when configuring a custom Endpoint URL. |
+
+{{< /tab >}}
+{{< tab "BackBlaze B2" >}}
+
+| Name | Description |
+|------|-------------|
+| Key ID | Alphanumeric [Backblaze B2](https://www.backblaze.com/b2/cloud-storage.html) Application Key ID. To generate a new application key, log in to the Backblaze account, go to the App Keys page, and add a new application key. Copy the application keyID string to this field. |
+| Application Key | [Backblaze B2](https://www.backblaze.com/b2/cloud-storage.html) Application Key. To generate a new application key, log in to the Backblaze account, go to the App Keys page, and add a new application key. Copy the applicationKey string to this field. |
+
+{{< /tab >}}
+{{< tab "Box" >}}
+
+| Name | Description |
+|------|-------------|
+| Access Token | A User Access Token for [Box](https://developer.box.com/). An [access token](https://developer.box.com/reference#token) enables Box to verify a request belongs to an authorized session. Example token: T9cE5asGnuyYCCqIZFoWjFHvNbvVqHjl. |
+
+{{< /tab >}}
+{{< tab "DropBox" >}}
+
+| Name | Description |
+|------|-------------|
+| Access Token | Access Token for a Dropbox account. A [token must be generated](https://blogs.dropbox.com/developers/2014/05/generate-an-access-token-for-your-own-account/) by the [Dropbox account](https://www.dropbox.com/) before adding it here. |
+
+{{< /tab >}}
+{{< tab "FTP" >}}
+
+| Name | Description |
+|------|-------------|
+| Host | FTP Host to connect to. Example: ftp.example.com. |
+| Port | FTP Port number. Leave blank to use the default port 21. |
+| Username | A username on the FTP Host system. This user must already exist on the FTP Host. |
+| Password | Password for the user account. |
+
+{{< /tab >}}
+{{< tab "Google Cloud Storage" >}}
+
+| Name | Description |
+|------|-------------|
+| Preview JSON Service Account Key | Contents of the uploaded Service Account JSON file. |
+| Choose File | Upload a Google [Service Account credential file](https://rclone.org/googlecloudstorage/#service-account-support). The file is created with the [Google Cloud Platform Console](https://console.cloud.google.com/apis/credentials). |
+
+{{< /tab >}}
+{{< tab "Google Drive" >}}
+
+| Name | Description |
+|------|-------------|
+| Access Token | Token created with [Google Drive](https://developers.google.com/drive/api/v3/about-auth). Access Tokens expire periodically and must be refreshed. |
+| Team Drive ID | Only needed when connecting to a Team Drive. The ID of the top level folder of the Team Drive. |
+
+{{< /tab >}}
+{{< tab "HTTP" >}}
+
+| Name | Description |
+|------|-------------|
+| URL | HTTP host URL. |
+
+{{< /tab >}}
+{{< tab "Hubic" >}}
+
+| Name | Description |
+|------|-------------|
+| Access Token | Access Token [generated by a Hubic account](https://api.hubic.com/sandbox/). |
+
+{{< /tab >}}
+{{< tab "Mega" >}}
+
+| Name | Description |
+|------|-------------|
+| Username | [MEGA](https://mega.nz/) account username. |
+| Password | MEGA account password. |
+
+{{< /tab >}}
+{{< tab "Microsoft Azure Blob Storage" >}}
+
+| Name | Description |
+|------|-------------|
+| Account Name | [Microsoft Azure](https://docs.microsoft.com/en-us/azure/storage/common/storage-create-storage-account) account name. |
+| Account Key | Base64 encoded key for Azure Account |
+
+{{< /tab >}}
+{{< tab "Microsoft One Drive" >}}
+
+| Name | Description |
+|------|-------------|
+| Access Token | Microsoft Onedrive [Access Token](https://docs.microsoft.com/en-us/onedrive/developer/rest-api/getting-started/authentication). Log in to the Microsoft account to add an access token. |
+| Drives List | Drives and IDs registered to the Microsoft account. Selecting a drive also fills the Drive ID field. |
+| Drive Account Type | Type of Microsoft acount. Logging in to a Microsoft account automatically chooses the correct account type.  Options: Personal, Business, Document_Library |
+| Drive ID | Unique drive identifier. Log in to a Microsoft account and choose a drive from the Drives List drop-down to add a valid ID. |
+
+{{< /tab >}}
+{{< tab "OpenStack Swift" >}}
+
+| Name | Description |
+|------|-------------|
+| User Name | Openstack user name for login. This is the OS_USERNAME from an [OpenStack credentials file](https://rclone.org/swift/#configuration-from-an-openstack-credentials-file). |
+| API Key or Password | Openstack API key or password. This is the OS_PASSWORD from an [OpenStack credentials file](https://rclone.org/swift/#configuration-from-an-openstack-credentials-file). |
+| Authentication URL | Authentication URL for the server. This is the OS_AUTH_URL from an [OpenStack credentials file](https://rclone.org/swift/#configuration-from-an-openstack-credentials-file). |
+| Auth Version | AuthVersion - optional - set to (1,2,3) if your auth URL has no version ([rclone documentation](https://rclone.org/swift/#standard-options)). |
+| Authentication Advanced Options |  |
+| Tenant Name | This is the OS_TENANT_NAME from an [OpenStack credentials file](https://rclone.org/swift/#configuration-from-an-openstack-credentials-file). |
+| Tenant ID | Tenant ID - optional for v1 auth, this or tenant required otherwise ([rclone documentation](https://rclone.org/swift/#standard-options)). |
+| Auth Token | Auth Token from alternate authentication - optional ([rclone documentation](https://rclone.org/swift/#standard-options)). |
+
+**Advanced Options**
+
+| Name | Description |
+|------|-------------|
+| Region Name | Region name - optional ([rclone documentation](https://rclone.org/swift/#standard-options)). |
+| Storage URL | Storage URL - optional ([rclone documentation](https://rclone.org/swift/#standard-options)). |
+| Endpoint Type | Endpoint type to choose from the service catalogue. Public is recommended, see the [rclone documentation](https://rclone.org/swift/#standard-options). |
+
+{{< /tab >}}
+{{< tab "pCloud" >}}
+
+| Name | Description |
+|------|-------------|
+| Access Token | [pCloud Access Token](https://docs.pcloud.com/methods/intro/authentication.html). These tokens can expire and require extension. |
+| Hostname | Enter the hostname to connect to. |
+
+{{< /tab >}}
+{{< tab "SFTP" >}}
+
+| Name | Description |
+|------|-------------|
+| Host | SSH Host to connect to. |
+| Port | SSH port number. Leave empty to use the default port 22. |
+| Username | SSH Username. |
+| Password | Password for the SSH Username account. |
+| Private Key ID | Import the private key from an existing SSH keypair or select Generate New to create a new SSH key for this credential. |
+
+{{< /tab >}}
+{{< tab "WebDav" >}}
+
+| Name | Description |
+|------|-------------|
+| URL | URL of the HTTP host to connect to. |
+| WebDav Service | Name of the WebDAV site, service, or software being used. |
+| Username | WebDAV account username. |
+| Password | WebDAV account password. |
+
+{{< /tab >}}
+{{< tab "Yandex" >}}
+
+| Name | Description |
+|------|-------------|
+| Access Token | Yandex [Access Token](https://tech.yandex.com/direct/doc/dg-v4/concepts/auth-token-docpage/). |
+
+{{< /tab >}}
+{{< /tabs >}}
+
 Enter the required *Authentication* strings to enable saving the credential.
+
+## Automatic Authentication
 
 Some providers can automatically populate the required *Authentication* strings by logging in to the account.
 To automatically configure the credential, click *Login to Provider* and entering your account username and password.
 
-![System Cloud Credentials OAuth Login](/images/CORE/12.0/SystemCloudCredentialsOAuthLogin.png "System Cloud Credentials OAuth Login")
+![SystemCloudCredentialsOAuthLogin](/images/CORE/12.0/SystemCloudCredentialsOAuthLogin.png "Cloud Provider OAuth Login")
 
 It is recommended to verify the credential before saving it.
-
-## Creating a Cloud Sync Task
-
-Now that the required Cloud Credentials are saved, go to *Tasks > Cloud Sync Tasks* and click *Add*.
-
-![Tasks Cloud Sync Add](/images/CORE/12.0/TasksCloudSyncAdd.png "Tasks Cloud Sync Add")
-
-Give the task a memorable name and select a cloud credential that is saved on the system.
-TrueNAS will attempt to connect to the Cloud Storage Provider and show the available storage locations.
-You can configure the task to push to or pull from the cloud storage provider.
-
-### File Transfer Behavior
-
-There are three options for how files are transfered between systems:
-
-*Sync* keeps all the files identical between the two storage locations.
-If the sync encounters an error, files are not deleted in the destination.
-This includes a common error when the [Dropbox copyright detector](https://techcrunch.com/2014/03/30/how-dropbox-knows-when-youre-sharing-copyrighted-stuff-without-actually-looking-at-your-stuff/) flags a file as copyrighted.
-
-Note that syncing to a Backblaze B2 bucket does not delete files from the bucket, even when those files have been deleted locally.
-Instead, files are tagged with a version number or moved to a hidden state.
-To automatically delete old or unwanted files from the bucket, adjust the [Backblaze B2 Lifecycle Rules](https://www.backblaze.com/blog/backblaze-b2-lifecycle-rules/).
-
-Files stored in Amazon S3 Glacier or S3 Glacier Deep Archive cannot be deleted by a sync.
-These files must first be restored by another means, like the [Amazon S3 console](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/restore-archived-objects.html).
-
-*Copy* duplicates each source file into the destination, <ins>overwriting</ins> any files in the destination that have the same name as the source.
-This is the least potentially destructive option.
-
-*Move* transfers the files from the source to the destination and <ins>deletes</ins> the original source files.
-Files with the same names on the destination are overwritten.
-
-### Scheduling the Task
-
-To automate the task to periodically run, define a *Schedule* and make sure *Enabled* is set.
-It's recommended to schedule the task at times when the task can run quickly and not be interrupted.
-The advanced scheduler shows a preview of your currently chosen schedule and can accept standard [cron input strings](https://www.freebsd.org/cgi/man.cgi?query=crontab&sektion=5) for the *Minutes*, *Hours*, and *Days*.
-Unsetting *Enabled* only keeps the task from automatically running.
-You can still save the cloud sync task and run it manually.
-
-### Advanced Options
-
-There are a variety of advanced options that allow you to fine-tune the cloud sync.
-These include:
-
-* including symlinked files in the transfer
-* a list of files to **Exclude** from the transfer
-* defining transfer limitations to prevent going over any bandwidth caps
-* adding encryption to the data that will be transferred
-  
-#### Scripting and Environment Variables
-
-Advanced users can write scripts that run immediately *before* or *after* the Cloud Sync task.
-The **Post-script** field is only run when the Cloud Sync task successfully completes.
-You can pass a variety of task environment variables into the **Pre-** and **Post-** script fields:
-
-* CLOUD_SYNC_ID
-* CLOUD_SYNC_DESCRIPTION
-* CLOUD_SYNC_DIRECTION
-* CLOUD_SYNC_TRANSFER_MODE
-* CLOUD_SYNC_ENCRYPTION
-* CLOUD_SYNC_FILENAME_ENCRYPTION
-* CLOUD_SYNC_ENCRYPTION_PASSWORD
-* CLOUD_SYNC_ENCRYPTION_SALT
-* CLOUD_SYNC_SNAPSHOT
-
-There also are provider-specific variables like CLOUD_SYNC_CLIENT_ID or CLOUD_SYNC_TOKEN or CLOUD_SYNC_CHUNK_SIZE
-
-Remote storage settings:
-* CLOUD_SYNC_BUCKET
-* CLOUD_SYNC_FOLDER
-
-Local storage settings:
-* CLOUD_SYNC_PATH
-
-Advanced options are not required for every cloud sync and are configured according to your specific security and data needs.
-
-### Testing Settings
-
-It is recommended to test your settings before saving the cloud sync task by clicking *Dry Run*.
-A connection to the Cloud Storage Provider is established and a file transfer is simulated.
-No data is actually sent or received.
-A dialog shows the test status and allows downloading the task logs.
-
-![Tasks Cloud sync Add Google drive Dry run](/images/CORE/12.0/TasksCloudsyncAddGoogledriveDryrun.png "Tasks Cloud sync Add Google drive Dry run")
-
-## Cloud Sync Behavior
-
-Saved tasks are activated according to their schedule or by clicking *Run Now*.
-An in-progress cloud sync must finish before another can begin.
-Stopping an in-progress task cancels the file transfer and requires starting the file transfer over.
-
-To view logs about a running or the most recent run of a task, click the task status.
-
-## Cloud Sync Restore
-
-To quickly create a new Cloud Sync that uses the same options but reverses the data transfer, expand and existing Cloud Sync and click *Restore*.
-
-![Task Cloud Sync Restore](/images/CORE/12.0/TaskCloudSyncRestore.png "Task Cloud Sync Restore")
-
-The restored cloud sync is saved as another entry in *Tasks > Cloud Sync Tasks*.

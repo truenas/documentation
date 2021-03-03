@@ -3,6 +3,8 @@ title: "Major Version Upgrades"
 weight: 30
 ---
 
+{{< toc >}}
+
 TrueNAS provides flexibility for keeping the operating system up-to-date:
 
 1. Upgrades to major releases, for example from version 9.3 to 9.10, can still be performed using either an ISO or the web interface.
@@ -13,7 +15,7 @@ TrueNAS provides flexibility for keeping the operating system up-to-date:
 3. The updater automatically creates a boot environment, making updates a low-risk operation.
    Boot environments provide the option to return to the previous version of the operating system by rebooting the system and selecting the previous boot environment from the **System > Boot** menu.
 
-This article describes how to use an `.iso` file to perform a major version upgrade from an earlier version of FreeNAS/TrueNAS.
+This article describes how to use an <file>.iso</file> file to perform a major version upgrade from an earlier version of FreeNAS/TrueNAS.
 See the [Updating](/CORE/System/Updating/update-guide/) article for instructions about using the web interface to keep the system updated.
 
 The upgrade path for major versions of FreeNAS/TrueNAS is **9.3 > 9.10 > 11.1 > 11.3 > 12.0**.
@@ -23,7 +25,7 @@ It is always recommended to upgrade to a [supported version](/CORE/Introduction/
 
 Be aware of these caveats before attempting a major version upgrade:
 
-* **Warning: upgrading a data storage pool can make it impossible to go back to a previous version.**
+* **Upgrading a data storage pool can make it impossible to go back to a previous version.**
   For this reason, the update process does not automatically upgrade storage pools, though the system shows an alert when a pool can be upgraded.
   Unless new ZFS feature flags are needed, it is safe to leave the pool at the current version.
   If the pool is upgraded, it will not be possible to boot into a previous TrueNAS version that does not support the newer feature flags.
@@ -57,13 +59,12 @@ Before upgrading the operating system, follow these steps:
 
 ## ISO Upgrades
 
-To upgrade TrueNAS using an `.iso` file, go to https://www.truenas.com/download-truenas-core/ (TrueNAS CORE latest release) or https://download.freenas.org to download the `.iso` to the computer that will be used to prepare the installation media.
-For example, this is the path to download an `.iso` of the latest FreeNAS 11.3 release:
+To upgrade TrueNAS using an <file>.iso</file> file, go to https://www.truenas.com/download-truenas-core/ (TrueNAS CORE latest release) or https://download.freenas.org to download the <file>.iso</file> to the computer that will be used to prepare the installation media.
+For example, this is the path to download an <file>.iso</file> of the latest FreeNAS 11.3 release:
 
-![Download Latest](/images/CORE/11.3/Download Latest.png "Download Latest")
-<br><br>
-<!-- markdown-link-check-disable-next-line -->
-Burn the downloaded `.iso` file to a CD or USB stick. Refer to the [Preparing Media](/hub/initial-setup/install/FirstTimeInstall/) instructions in the Installation article for tips about burning the `.iso` to media using different Operating Systems.
+![DownloadLatest](/images/CORE/11.3/DownloadLatest.png "Path to latest 11.3 release")
+
+Burn the downloaded <file>.iso</file> file to a CD or USB stick. Refer to the [Preparing Media](/hub/initial-setup/install/FirstTimeInstall/) instructions in the Installation article for tips about burning the <file>.iso</file> to media using different Operating Systems.
 
 Insert the prepared media into the system and boot from it.
 The installer waits ten seconds in the installer boot menu before booting the default option.
@@ -86,14 +87,12 @@ Press <kbd>Enter</kbd> when done.
 
 The installer recognizes earlier versions of FreeNAS/TrueNAS installed on the boot drives and asks to either upgrade or do a fresh install:
 
-![Installer Upgrade Choice](/images/CORE/12.0/InstallerUpgradeChoice.png "Installer Upgrade Choice")
-<br><br>
+![InstallerUpgradeChoice](/images/CORE/12.0/InstallerUpgradeChoice.png "Upgrade Choice")
 
 To perform an upgrade, press <kbd>Enter</kbd> to accept the default `Upgrade Install`.
 The installer will display another reminder that the operating system should be installed on a disk that is not used for storage.
 
-![Installer Upgrade Method](/images/CORE/12.0/InstallerUpgradeMethod.png "InstallerUpgradeMethod")
-<br><br>
+![InstallerUpgradeMethod](/images/CORE/12.0/InstallerUpgradeMethod.png "Upgrade Method")
 
 The updated system can be installed in a new boot environment, or the entire operating system device can be formatted to start fresh.
 Installing into a new boot environment preserves the old code, allowing a roll-back to previous versions if necessary.
@@ -104,12 +103,11 @@ Move the highlight to one of the options and press <kbd>Enter</kbd> to start the
 The installer unpacks the new image and checks for upgrades to the existing database file.
 The database file that is preserved and migrated contains your TrueNAS configuration settings.
 
-![Installer Upgrade Preserved Database](/images/CORE/12.0/InstallerUpgradePreservedDatabase.png "Installer Upgrade Preserved Database")
-<br><br>
+![Installer Upgrade Preserved Database](/images/CORE/12.0/InstallerUpgradePreservedDatabase.png "Preserved Database")
 
 Press <kbd>Enter</kbd>.
 TrueNAS indicates that the upgrade is complete and a reboot is required.
-Press **OK**, highlight `3 Reboot System`, then press <kbd>Enter</kbd> to reboot the system.
+Press *OK*, highlight `3 Reboot System`, then press <kbd>Enter</kbd> to reboot the system.
 If the upgrade installer was booted from CD, remove the CD.
 
 During the reboot there can be a conversion of the previous configuration database to the new version of the database.
@@ -118,7 +116,7 @@ This conversion can take a long time to finish, sometimes fifteen minutes or mor
 The system will start normally afterwards.
 If database errors are shown but the web interface is accessible, log in, go to **System > General**, and use the **UPLOAD CONFIG** button to upload the configuration backup that was downloaded before starting the upgrade.
 
-## FAQ: Upgrading from 9.3 to 9.10
+{{< expand "FAQ: Upgrading from 9.3 to 9.10" "v" >}}
 
 **What has changed in 9.10 vs 9.3?**
 
@@ -160,3 +158,4 @@ For a rebootless http workaround please do the following:
 **I'm having authentication issues with SMB and AD / LDAP / ... after upgrading - Why?**
 
 TLSv1 has been deprecated as insecure. Switch to TLSv1.2.
+{{< /expand >}}
