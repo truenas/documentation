@@ -49,8 +49,8 @@ Table of features and current status (Timestamp references when the item status 
 
 | Feature | Status | Timestamp | Description |
 |:---:|:---:|:---:|:---:|
-|Users | **OK** | 02/26/2021 | Create and manage users and user permissions|
-|Teams| **OK** | 02/26/2021 | Create and manage teams of users and permissions|
+|Users | **OK** | 02/26/2021 | Create and manage TrueCommand users and user permissions|
+|Teams| **OK** | 02/26/2021 | Create and manage teams of TrueCommand users and permissions|
 |Systems| **OK** | 02/26/2021 | Register NAS’s and maintain connections/status info |
 |Alert Rules|**OK**|02/26/2021 | Create and manage custom alert rules |
 |Alert Notices| **OK** | 02/26/2021|Rolling feed of alerts that have been triggered with comment and resolution systems|
