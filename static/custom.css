@@ -160,4 +160,25 @@
   transform:translate(-50%,-50%);
   -ms-transform:translate(-50%,-50%)
  }
+.linkbutton{
+  min-width:180px;border-radius:5px;
+  background-color:#0095d5;
+  -webkit-box-shadow:3px 3px #d1d1d1;
+  box-shadow:3px 3px #d1d1d1;
+  color:#fff;
+  padding:14px 25px;
+  text-align:center;
+  text-decoration:none;
+  position:relative;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  width:20%
+}
+.linkbutton:hover{
+  color:#fff;
+  background-color:#1eaedb;
+  border-color:#1eaedb
+}
+
 /* End styling for fade-in on image download links */
