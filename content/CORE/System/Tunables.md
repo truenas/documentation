@@ -1,6 +1,6 @@
 ---
-title: "Configuring System Tunables"
-description: "How to tune the system."
+title: "Tunables"
+weight: 140
 ---
 
 TrueNAS allows you to add system tunables from the web interface.

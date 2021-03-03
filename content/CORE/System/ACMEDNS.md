@@ -1,8 +1,6 @@
 ---
-title: "Using ACME Certificates"
-description: "How to use ACME for automated certificate issuing and renewal."
-tags: ["networking","security","certificates"]
-weight: 13
+title: "ACME DNS"
+weight: 170
 ---
 
 [Automatic Certificate Management Environment (ACME)](https://ietf-wg-acme.github.io/acme/draft-ietf-acme-acme.html) is available for automating certificate issuing and renewal.

@@ -1,6 +1,6 @@
 ---
 title: "KMIP"
-weight: 180
+weight: 175
 ---
 
 {{< hint info >}}

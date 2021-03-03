@@ -1,6 +1,6 @@
 ---
-title: "Configuring High Availability"
-description: "How to set up and manage High Availability (HA) in TrueNAS Enterprise"
+title: "Failover (HA)"
+weight: 178
 ---
 
 ## Process Summary

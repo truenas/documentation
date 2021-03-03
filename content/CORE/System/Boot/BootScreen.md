@@ -1,6 +1,6 @@
 ---
-title: "Boot"
-weight: 30
+title: "Boot Screen"
+weight: 10
 ---
 
 {{< toc >}}

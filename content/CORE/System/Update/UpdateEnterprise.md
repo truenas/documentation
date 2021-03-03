@@ -1,7 +1,6 @@
 ---
-title: "Updating a High Availability System"
-description: "How to update a High Availability (HA) TrueNAS Enterprise system."
-tags: ["HA"]
+title: "Updating Enterprise (HA)"
+weight: 20
 ---
 
 Updating a TrueNAS Enterprise system that is configured for High Availability (HA) has a slightly different flow from non-HA systems or TrueNAS Core.

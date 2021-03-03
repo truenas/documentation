@@ -1,6 +1,6 @@
 ---
 title: "Managing TLS Ciphers"
-weight: 20
+weight: 30
 ---
 
 {{< hint info >}}

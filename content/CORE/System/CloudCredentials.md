@@ -1,8 +1,6 @@
 ---
-title: "Cloud Data Transfers"
-description: "How to configure Cloud Credentials and Cloud Sync tasks to send or receive data from a Cloud Storage Provider."
-tags: ["cloud storage"]
-weight: 80
+title: "Cloud Credentials"
+weight: 100
 ---
 
 You can configure TrueNAS to send, receive, or synchronize data with a Cloud Storage provider.

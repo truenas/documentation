@@ -1,7 +1,6 @@
 ---
-title: "Major Version Upgrades With ISO"
-description: "Upgrade path for major TrueNAS versions and how to use an .iso file to update TrueNAS."
-tags: ["Upgrade"]
+title: "Major Version Upgrades"
+weight: 30
 ---
 
 TrueNAS provides flexibility for keeping the operating system up-to-date:

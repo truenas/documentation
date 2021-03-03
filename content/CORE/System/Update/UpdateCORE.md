@@ -1,6 +1,6 @@
 ---
-title: "Updating TrueNAS"
-description: "Update the version of TrueNAS on your system"
+title: "Updating CORE"
+weight: 10
 ---
 
 TrueNAS has an integrated update system to make it easy to keep up to date.

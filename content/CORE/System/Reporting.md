@@ -1,6 +1,6 @@
 ---
-title: "Statistics Reporting"
-description: "How to view and configure system statistical graphs."
+title: "Reporting"
+weight: 80
 ---
 
 ## Reporting General Settings
