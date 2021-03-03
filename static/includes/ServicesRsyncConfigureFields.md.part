@@ -1,42 +1,4 @@
-{{< tabs "Rsync Service Options" >}}
-{{< tab "Configure" >}}
-
-| | |
-|-|-|
+| Name | Description |
+|------|-------------|
 | TCP Port | rsyncd listens on this port. |
 | Auxiliary Parameters | Enter any additional parameters from [rsyncd.conf(5)](https://www.samba.org/ftp/rsync/rsyncd.conf.html). |
-
-{{< /tab >}}
-{{< tab "Rsync Module Add" >}}
-
-**General**
-
-| | |
-|-|-|
-| Name | Module name that matches the name requested by the rsync client. |
-| Path | Browse to the pool or dataset to store received data. |
-| Comment | Describe this module. |
-| Enabled | Activate this module for use with Rsync. Unset this field to deactivate the module without completely removing it. |
-
-**Access**
-
-| | |
-|-|-|
-| Access Mode | Choose permissions for this rsync module. |
-| Max Connections | Maximum number of connections to this module. 0 is unlimited. |
-| User | User to run as during file transfers to and from this module. |
-| Group | Group to run as during file transfers to and from this module. |
-| Hosts Allow | From [rsyncd.conf(5)](https://www.samba.org/ftp/rsync/rsyncd.conf.html). A list of patterns to match with the hostname and IP address of a connecting client. The connection is rejected if no patterns match. Separate entries by pressing <kbd>Enter</kbd>. |
-| Hosts Deny | From [rsyncd.conf(5)](https://www.samba.org/ftp/rsync/rsyncd.conf.html). A list of patterns to match with the hostname and IP address of a connecting client. The connection is rejected when the patterns match. Separate entries by pressing <kbd>Enter</kbd>. |
-
-**Other Options**
-
-| | |
-|-|-|
-| Auxiliary Parameters | Enter any additional parameters from [rsyncd.conf(5)](https://www.samba.org/ftp/rsync/rsyncd.conf.html). |
-
-{{< /tab >}}
-{{< /tabs >}}
-
-
-
