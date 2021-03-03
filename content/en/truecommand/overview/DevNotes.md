@@ -88,7 +88,7 @@ If you are using an LDAP-enabled system (non-Cloud) for user logins, please be s
 #### Minimum Supported TrueNAS Versions
 Due to the changes in integrating with the TrueNAS middleware, the minimum version for full-support of functionality has changed with TrueCommand 2.0:
 
-* FreeNAS/TrueNAS 11.3 series - No longer supported. Does not provide realtime statistics or storage information, but you can still connect to them and use TrueCommand to initiate updates.
+* FreeNAS/TrueNAS 11.3 series - No longer supported on self-hosted instances of TC. Does not provide realtime statistics or storage information, but you can still connect to them and use TrueCommand to initiate updates. TrueCommand Cloud has never supported the 11.3 series.
 * TrueNAS 12 CORE/Enterprise - Supported after 12.0-U3. 12.0-U2.1 and older are missing some key metrics in the realtime stats (disk/network usage metrics in particular), but work otherwise.
 TrueNAS SCALE - Fully Supported
 
