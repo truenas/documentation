@@ -40,7 +40,7 @@ TrueCommand boasts a wide variety of features, including Role-Based Access Contr
 		TrueCommand Cloud is a Software as a Service (SaaS) option that uses encrypted connections to allow managing TrueNAS 12.0 or newer systems using the Cloud.
 		To install TrueCommand on a local system, the primary method is to deploy the TrueCommand Docker Container.
 		You can also install TrueCommand in a Virtual Machine (VM).</p>
-		<p><a href="/truecommand/installupdate/tc_cloud/">Accessing TrueCommand Cloud</a><br>
+		<p><a href="/truecommand/InstallUpdate/tc_cloud/">Accessing TrueCommand Cloud</a><br>
 		<a href="/truecommand/InstallUpdate/install/">Installing TrueCommand (Docker)</a><br>
 		<a href="/truecommand/InstallUpdate/tc-vm/">Installing TrueCommand (VM)</a></p>
 		<a class="linkbutton" href="/truecommand/installupdate/">Installation</a>
