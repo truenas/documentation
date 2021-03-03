@@ -76,7 +76,7 @@ There are several vdev types that you can use to add features to the pool:
 * *Dedup*: Stores de-duplication tables. These vdevs must be sized to X GiB for X TiB of general storage.
 
 You can add an SSD cache or log device during or after pool creation to improve pool performance under specific use cases.
-Before adding a cache or log device, refer to the [ZFS Primer](/hub/additional-topics/reference/ZFS-references/) to determine if the system will benefit or suffer from adding the device.
+Before adding a cache or log device, refer to the [ZFS Primer](/hub/additional-topics/reference/zfs-references/) to determine if the system will benefit or suffer from adding the device.
 
 To add a different vdev type during pool creation, click **ADD VDEV** and select the type from the drop down.
 Select disks from `Available Disks` and use the <i class="fas fa-arrow-right" aria-hidden="true" title="Right Arrow"></i> (right arrow) next to the new **VDev** to add it to that section.
