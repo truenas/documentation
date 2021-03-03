@@ -1,7 +1,5 @@
 ---
-title: "TrueNAS Overview"
-linkTitle: "Overview"
-description: "Background information and general overview of the software."
+title: "Introduction"
 geekdocCollapseSection: true
 weight: 10
 ---
