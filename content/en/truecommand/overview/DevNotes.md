@@ -2,6 +2,7 @@
 title: Developer’s Notes
 description: Running updates about TrueCommand Nightly status and current issues.
 tags: [“TrueCommand”]
+weight: 30
 ---
 
 #### Recent Updates
@@ -93,10 +94,10 @@ TrueNAS SCALE - Fully Supported
 ## Detailed look at new features
 
 #### Storage Explorer
-TO DO
+Coming soon!
 
 #### ISCSI Dashboard
-TO DO
+Coming soon!
 
 #### Cluster Dashboard
-TO DO
+Coming soon!
