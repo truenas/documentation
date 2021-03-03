@@ -18,7 +18,7 @@ Additional product stencils are being added to the pack as they are finished, so
 {{% /alert %}}
 
 <div class="container-image-download">
-  <img src="/images/TrueNAS-Stencils-Preview.png" alt="TrueNAS Hardware Stencils" class="image" style="width:100%">
+  <img src="/images/Hardware/TrueNAS-Stencils-Preview.png" alt="TrueNAS Hardware Stencils" class="image" style="width:100%">
   <div class="middle">
     <div class="image-download-text,button-wrapper"><a class="linkbutton" href="/files/TrueNASCollection.vssx">Download</a></div>
   </div>
