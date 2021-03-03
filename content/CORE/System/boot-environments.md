@@ -1,12 +1,53 @@
 ---
-title: "Managing Boot Environments"
-description: "How to create, activate, or generally manage boot environments."
-tags: ["ZFS"]
+title: "Boot"
+weight: 30
 ---
 
-TrueNAS supports a ZFS feature known as boot environments. With multiple boot environments, the process of updating the operating system becomes a low-risk operation. The updater automatically creates a snapshot of the current boot environment and adds it to the boot menu before applying the update.
+{{< toc >}}
 
-## Boot Environments
+TrueNAS supports a ZFS feature known as boot environments.
+These are snapshot clones that TrueNAS can boot into.
+Only one boot environment can be used for booting.
+
+{{< expand "How does this help me?" "v" >}}
+A boot environment allows rebooting into a specific point in time and greatly simplifies recovering from system misconfigurations or other potential system failures.
+With multiple boot environments, the process of updating the operating system becomes a low-risk operation.
+The updater automatically creates a snapshot of the current boot environment and adds it to the boot menu before applying the update.
+If anything goes wrong during the update, the system administrator can boot TrueNAS into the previous environment to restore system functionality.
+{{< /expand >}}
+
+Go to **System > Boot** to see a boot environment list and additional options for the system boot pool.
+
+## Boot Actions
+
+The *ACTIONS* button leads to several different screens:
+
+{{< tabs "System Boot Actions" >}}
+{{< tab "Add" >}}
+
+{{< /tab >}}
+{{< tab "Stats/Settings" >}}
+
+{{< /tab >}}
+{{< tab "Boot Pool Status" >}}
+
+{{< /tab >}}
+{{< tab "Scrub Boot Pool" >}}
+
+{{< /tab >}}
+{{< /tabs >}}
+
+
+## Creating new Boot Environments
+
+Go to **System > Boot** and click *ACTIONS* > *Add*.
+
+![SystemBootActionsAdd](/images/CORE/12.0/SystemBootActionsAdd.png "Creating a new Boot Environment")
+
+*Name* the new boot environment and click *SUBMIT*.
+This environment preserves the system configuration at the exact moment in time when the environment is created.
+
+## Managing Boot Environments
 
 To view the list of boot environments on the system, go to **System > Boot**.
 Each boot environment entry contains this information:
