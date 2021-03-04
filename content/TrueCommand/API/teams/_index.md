@@ -3,6 +3,7 @@ title: "Team management"
 draft: false
 pre: "<i class='fa fa-users'></i>	"
 geekdocCollapseSection: true
+no_list: true
 ---
 
 ## API Class: teams 
