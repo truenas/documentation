@@ -11,9 +11,11 @@ The TrueNAS external storage is added using the [mount_nullfs(8)](https://www.fr
 
 **>** (Expand) > **MOUNT POINTS** shows any added storage and allows adding more storage.
 
-A jail must have a **STATE** of *down* before adding a new mount point. Click **>** (Expand) and **STOP** for a jail to change the jail STATE to down.
+A jail must have a **STATE** of *down* before adding a new mount point.
+Click **>** (Expand) and **STOP** for a jail to change the jail STATE to down.
 
-Storage can be added by clicking **Jails** > **>** (Expand) > **MOUNT POINTS** for the desired jail. The `MOUNT POINT` section is a list of all of the currently defined mount points.
+Storage can be added by clicking **Jails** > **>** (Expand) > **MOUNT POINTS** for the desired jail.
+The **MOUNT POINT** section is a list of all of the currently defined mount points.
 
 Go to **MOUNT POINTS > ACTIONS > Add Mount Point** to add storage to a jail.
 
@@ -44,28 +46,34 @@ Here is the typical workflow for adding jail storage:
   Also, the UID and GID are usually the same as the port number used by the service.
   A *media* user and group (GID 8675309) are part of the base system. Having applications run as this group or user makes it possible to share storage between multiple applications in a single jail, between multiple jails, or even between the host and jails.
 
-+ On the TrueNAS system, create a user account and group account that match the user and group names used by the jail application.
+* On the TrueNAS system, create a user account and group account that match the user and group names used by the jail application.
 
-+ Decide if the jail needs access to existing data or if a new storage area should be created.
+* Decide if the jail needs access to existing data or if a new storage area should be created.
 
-+ If the jail needs to access existing data, [edit the permissions](/hub/tasks/advanced/editingacls/) of the pool or dataset so the user and group accounts have the desired read and write access. If multiple applications or jails need have access to the same data, create a new group and add each new user account to that group.
+* If the jail needs to access existing data, [edit the permissions](/hub/tasks/advanced/editingacls/) of the pool or dataset so the user and group accounts have the desired read and write access.
+  When multiple applications or jails need access to the same data, create a new group and add each new user account to that group.
 
-+ If a new storage area is being set aside for that jail or application, [create a dataset](/CORE/Storage/datasets/). Edit the dataset permissions so the user and group account has the desired read and write access.
+* If a new storage area is being set aside for that jail or application, [create a dataset](/CORE/Storage/datasets/).
+  Edit the dataset permissions so the user and group account has the desired read and write access.
 
-+ Use the jail **>** (Expand) > **MOUNT POINTS** > **ACTIONS** > **Add Mount Point** to select the data **Source** and the **Destination** where it will be mounted in the jail.
+* Use jail **> (Expand) > **MOUNT POINTS > ACTIONS > Add Mount Point** to select the data *Source* and the jail mount *Destination*.
 
-To prevent writes to the storage, click **Read-Only**.
+To prevent writes to the storage, click *Read-Only*.
 
-After storage has been added or created, it appears in the `MOUNT POINTS` for that jail. 
+After storage has been added or created, it appears in the `MOUNT POINTS` for that jail.
 
 ![Jails Mountpoint Example](/images/CORE/12.0/JailMountpointExample.png "Jails Mountpoint Example")
-<br><br>
 
 Storage is automatically mounted as it is created.
-Mounting a dataset does not automatically mount any child datasets inside it. Each dataset is a separate filesystem, so child datasets must each have separate mount points.
+Mounting a dataset does not automatically mount any child datasets inside it.
+Each dataset is a separate filesystem, so child datasets must each have separate mount points.
 
-Click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; (Options) > **Delete** to delete the storage.
+Click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> (Options) > **Delete** to delete the storage.
 
-{{ hint warning >}}
-Remember that added storage is just a pointer to the selected storage directory on the TrueNAS system. It does not copy that data to the jail. Files that are deleted from the **Destination** directory in the jail are also deleted from the **Source** directory on the TrueNAS system. However, removing the jail storage entry only removes the pointer. This leaves the data intact but no longer accessible to the jail.
+{{< hint warning >}}
+Remember that added storage is just a pointer to the selected storage directory on the TrueNAS system.
+It does not copy that data to the jail.
+Files that are deleted from the *Destination* directory in the jail are also deleted from the *Source* directory on the TrueNAS system.
+However, removing the jail storage entry only removes the pointer.
+This leaves the data intact but no longer accessible to the jail.
 {{< /hint >}}

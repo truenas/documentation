@@ -7,7 +7,7 @@ A jail is created with no software aside from the core packages installed as par
 To install more software, go to the **Jails** screen and expand the jail entry.
 Start the jail, then click **> SHELL** when the jail has booted.
 
-<img src="/images/Jail-ShellExample.png" width='700px'>
+![JailsShellExample](/images/CORE/12.0/JailsShellExample.png "Jail Shell")
 
 ## Installing FreeBSD Packages
 
@@ -68,28 +68,32 @@ audiotag-0.19_1:
 /usr/local/share/licenses/audiotag-0.19_1/catalog.mk
 ```
 
-In FreeBSD, third-party software is always stored in <file>/usr/local</file> to differentiate it from the software that came with the operating system. Binaries are almost always located in a subdirectory called `bin` or `sbin` and configuration files in a subdirectory called `etc`.
+In FreeBSD, third-party software is always stored in <file>/usr/local</file> to differentiate it from the software that came with the operating system.
+Binaries are almost always located in a subdirectory called <file>bin</file> or <file>sbin</file> and configuration files in a subdirectory called <file>etc</file>.
 
 ## Compiling FreeBSD Ports
 
 Compiling a port is another option. Compiling ports offer these advantages:
 
-+ Not every port has an available package. This is usually due to licensing restrictions or known, unaddressed security vulnerabilities.
-+ Sometimes the package is out-of-date and a feature is needed that only became available in the newer version.
-+ Some ports provide compile options that are not available in the pre-compiled package. These options are used to add or remove features or options.
+* Not every port has an available package. This is usually due to licensing restrictions or known, unaddressed security vulnerabilities.
+* Sometimes the package is out-of-date and a feature is needed that only became available in the newer version.
+* Some ports provide compile options that are not available in the pre-compiled package. These options are used to add or remove features or options.
 
 Compiling a port has these disadvantages:
 
-+ It takes time. Depending upon the size of the application, the amount of dependencies, the speed of the CPU, the amount of RAM available, and the current load on the TrueNAS system, the time needed can range from a few minutes to a few hours or even to a few days.
-+ If the port does not provide any compile options, it saves time and preserves the TrueNAS system resources to use the `pkg install` command instead. The [FreshPorts.org](https://www.freshports.org/) listing shows whether a port has any configurable compile options.
+* It takes time. Depending upon the size of the application, the amount of dependencies, the speed of the CPU, the amount of RAM available, and the current load on the TrueNAS system, the time needed can range from a few minutes to a few hours or even to a few days.
+* If the port does not provide any compile options, it saves time and preserves the TrueNAS system resources to use the `pkg install` command instead. The [FreshPorts.org](https://www.freshports.org/) listing shows whether a port has any configurable compile options.
 
-<img src="/images/Jails-AudioTag.png">
+![AudiotagDetails](/images/CORE/AudiotagDetails.png "Audio Tag Details")
 
 ### Audiotag Port Information
 
-Packages are built with default options. Ports let the user select options.
+Packages are built with default options.
+Ports let the user select options.
 
-The FreeBSD Ports Collection must be installed in the jail before ports can be compiled. Inside the jail, use the **portsnap** utility. This command downloads the ports collection and extracts it to the <file>/usr/ports/</file> directory of the jail:
+The FreeBSD Ports Collection must be installed in the jail before ports can be compiled.
+Inside the jail, use the `portsnap` utility.
+This command downloads the ports collection and extracts it to the <file>/usr/ports/</file> directory of the jail:
 
 ```
 portsnap fetch extract
@@ -97,7 +101,9 @@ portsnap fetch extract
 
 To install additional software at a later date, make sure the ports collection is updated with `portsnap fetch update`.
 
-To compile a port, `cd` into a subdirectory of <file>/usr/ports/</file>. The entry for the port at FreshPorts provides the location to `cd` into and the `make` command to run. This example compiles and installs the *audiotag* port:
+To compile a port, `cd` into a subdirectory of <file>/usr/ports/</file>.
+The entry for the port at FreshPorts provides the location to `cd` into and the `make` command to run.
+This example compiles and installs the *audiotag* port:
 
 ```
 cd /usr/ports/audio/audiotag
@@ -106,25 +112,37 @@ make install clean
 
 The first time this command is run, the configure screen shown.
 
-<img src="/images/Jails-AudioTagPort.png" width='700px'>
+![JailsShellAudiotagInstall](/images/CORE/12.0/JailsShellAudiotagInstall.png "AudioTag Configuration")
 
 ### Audiotag Port Configuration Options
 
-This port has several configurable options: *DOCS*, *FLAC*, *ID3*, *MP4*, and *VORBIS*. Selected options are shown with a `*`.
+This port has several configurable options: *DOCS*, *FLAC*, *ID3*, *MP4*, and *VORBIS*.
+Selected options are shown with a `*`.
 
-Use the arrow keys to select an option and press <kbd>spacebar</kbd> to toggle the value. Press <kbd>Enter</kbd> when satisfied with the options. The port begins to compile and install.
+Use the arrow keys to select an option and press <kbd>spacebar</kbd> to toggle the value.
+Press <kbd>Enter</kbd> when satisfied with the options.
+The port begins to compile and install.
 
-After options have been set, the configuration screen is normally not shown again. Use `make config` to display the screen and change options before rebuilding the port with `make clean install clean`.
+After options are set, the configuration screen is normally not shown again.
+Use `make config` to display the screen and change options before rebuilding the port with `make clean install clean`.
 
-Many ports depend on other ports. Those other ports also have configuration screens that are shown before compiling begins. It is a good idea to watch the compile until it finishes and the command prompt returns.
+Many ports depend on other ports.
+Those other ports also have configuration screens that are shown before compiling begins.
+It is a good idea to watch the compile until it finishes and the command prompt returns.
 
-Installed ports are registered in the same package database that manages packages. `pkg info` can be used to determine which ports were installed.
+Installed ports are registered in the same package database that manages packages.
+`pkg info` determines which ports were installed.
 
 ## Starting Installed Software
 
-After packages or ports are installed, they must be configured and started. Configuration files are usually in <file>/usr/local/etc</file> or a subdirectory of it. Many FreeBSD packages contain a sample configuration file as a reference. Take some time to read the software documentation to learn which configuration options are available and which configuration files require editing.
+After packages or ports are installed, they must be configured and started.
+Configuration files are usually in <file>/usr/local/etc</file> or a subdirectory of it.
+Many FreeBSD packages contain a sample configuration file as a reference.
+Take some time to read the software documentation to learn which configuration options are available and which configuration files require editing.
 
-Most FreeBSD packages that contain a startable service include a startup script that is automatically installed to <file>/usr/local/etc/rc.d/</file>. After the configuration is complete, test starting the service by running the script with the *onestart* option. For example, when *openvpn* is installed in a jail, these commands verify that the service has started:
+Most FreeBSD packages that contain a startable service include a startup script that is automatically installed to <file>/usr/local/etc/rc.d/</file>.
+After the configuration is complete, test starting the service by running the script with the *onestart* option.
+For example, when *openvpn* is installed in a jail, these commands verify that the service has started:
 
 ```
 /usr/local/etc/rc.d/openvpn onestart
@@ -146,13 +164,17 @@ Starting openvpn.
 /usr/local/etc/rc.d/openvpn: WARNING: failed to start openvpn
 ```
 
-Enter `tail /var/log/messages` to see any error messages if an issue is found. Most startup failures are related to a misconfiguration in a configuration file.
+Enter `tail /var/log/messages` to see any error messages if an issue is found.
+Most startup failures are related to a misconfiguration in a configuration file.
 
-After verifying that the service starts and is working as intended, add a line to <file>/etc/rc.conf</file> to start the service automatically when the jail is started. The line to start a service always ends in `_enable=”YES”` and typically starts with the name of the software. For example, this is the entry for the *openvpn* service:
+After verifying that the service starts and is working as intended, add a line to <file>/etc/rc.conf</file> to start the service automatically when the jail is started.
+The line to start a service always ends in `_enable=”YES”` and typically starts with the name of the software.
+For example, this is the entry for the *openvpn* service:
 
 `openvpn_enable="YES"`
 
-When in doubt, the startup script shows the line to put in <file>/etc/rc.conf</file>. This is the description in <file>/usr/local/etc/rc.d/openvpn</file>:
+When in doubt, the startup script shows the line to put in <file>/etc/rc.conf</file>.
+This is the description in <file>/usr/local/etc/rc.d/openvpn</file>:
 
 ```
 # To run additional instances link this script to something like
