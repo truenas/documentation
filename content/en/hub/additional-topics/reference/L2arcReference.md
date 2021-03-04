@@ -77,7 +77,3 @@ Command output should read : `vfs.zfs.l2arc.rebuild_enabled: 0 -> 1`
 {{% alert title=Warning color=warning %}}
 Settings changed through the CLI are not written to the configuration database and will be reset on reboot.
 {{% /alert %}}
-
-
-*For more information, see ZFS Build - Explanation of ARC and L2ARC : https://www.zfsbuild.com/2010/04/15/explanation-of-arc-and-l2arc/*
-

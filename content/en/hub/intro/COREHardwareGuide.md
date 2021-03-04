@@ -326,7 +326,7 @@ You can read more about 80 Plus ratings in [this post](https://www.tomshardware.
 ### Uninterruptible Power Supplies
 
 TrueNAS provides the ability to communicate with a battery-backed, uninterruptible power supply (UPS) over a traditional serial or USB connection to coordinate a graceful shutdown in the case of power loss.
-TrueNAS is known to work well with [APC brand UPSs](https://www.cyberciti.biz/faq/how-to-install-apc-ups-on-freenas-server/), followed by CyberPower, and consider budgeting for a UPS with pure sine wave output.
+TrueNAS is known to work well with APC brand UPSs, followed by CyberPower, and consider budgeting for a UPS with pure sine wave output.
 Some models of SSD can experience data corruption on power loss.
 If multiple SSDs experience this simultaneously, this could cause total pool failure, making a UPS a critical investment.
 

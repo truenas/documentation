@@ -4,7 +4,7 @@ description: "How to tune the system."
 ---
 
 TrueNAS allows you to add system tunables from the web interface.
-These can be manually defined or TrueNAS can run an [autotuning script](/hub/initial-setup/firsttimelogin/systemsettings/#autotuning) to attempt to optimize the system.
+These can be manually defined or TrueNAS can run an [autotuning script](/hub/initial-setup/FirstTimeLogin/systemsettings/#autotuning) to attempt to optimize the system.
 Tunables are used to manage TrueNAS [sysctls](https://www.freebsd.org/cgi/man.cgi?query=sysctl), loaders, and [rc.conf](https://www.freebsd.org/cgi/man.cgi?query=rc.conf) options.
 
 * *loader* tunables are used to specify parameters to pass to the kernel or load additional modules at boot time.
