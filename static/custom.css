@@ -143,6 +143,9 @@
 }
 .container-image-download:hover .middle {
   opacity: 1;
+  -webkit-transition:.5s ease;
+  -o-transition:.5s ease;
+  transition:.5s ease;
 }
 .image-download-text {
   background-color: #0095D5;
