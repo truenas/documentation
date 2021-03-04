@@ -8,7 +8,6 @@ To install more software, go to the **Jails** screen and expand the jail entry.
 Start the jail, then click **> SHELL** when the jail has booted.
 
 <img src="/images/Jail-ShellExample.png" width='700px'>
-<br><br>
 
 ## Installing FreeBSD Packages
 
@@ -85,7 +84,6 @@ Compiling a port has these disadvantages:
 + If the port does not provide any compile options, it saves time and preserves the TrueNAS system resources to use the `pkg install` command instead. The [FreshPorts.org](https://www.freshports.org/) listing shows whether a port has any configurable compile options.
 
 <img src="/images/Jails-AudioTag.png">
-<br><br>
 
 ### Audiotag Port Information
 
@@ -109,7 +107,6 @@ make install clean
 The first time this command is run, the configure screen shown.
 
 <img src="/images/Jails-AudioTagPort.png" width='700px'>
-<br><br>
 
 ### Audiotag Port Configuration Options
 

@@ -193,20 +193,25 @@ Menu entries change depending on the jail state. For example, a stopped jail doe
 
 Jail status messages and command output are stored in <file>/var/log/iocage.log</file>.
 
-## Jail Updates and Upgrades
+## Updates and Upgrades
 
 Click **>** (Expand) > *Update* to update a jail to the most current patch level of the installed FreeBSD release.
-This does **not** change the release. For example, a jail installed with *FreeBSD 11.2-RELEASE* can update to *p15* or the latest patch of 11.2, but not an *11.3-RELEASE-p#* version of FreeBSD.
+This does **not** change the release.
+For example, a jail installed with *FreeBSD 11.2-RELEASE* can update to *p15* or the latest patch of 11.2, but not an *11.3-RELEASE-p#* version of FreeBSD.
 
-A jail *upgrade* replaces the jail FreeBSD operating system with a new release of FreeBSD, such as taking a jail from *FreeBSD 11.2-RELEASE* to *11.3-RELEASE*. Upgrade a jail by stopping it, opening the TrueNAS **Shell** and entering `iocage upgrade name -r release`, where *name* is the plugin jail name and *release* is the desired FreeBSD release.
+A jail *upgrade* replaces the jail FreeBSD operating system with a new release of FreeBSD, such as taking a jail from *FreeBSD 11.2-RELEASE* to *11.3-RELEASE*.
+Upgrade a jail by stopping it, opening the TrueNAS **Shell** and entering `iocage upgrade name -r release`, where *name* is the plugin jail name and *release* is the desired FreeBSD release.
 
-It is possible to manually remove unused releases from the `/iocage/releases/` dataset after upgrading a jail. The release must not be in use by any jail on the system!
+It is possible to manually remove unused releases from the `/iocage/releases/` dataset after upgrading a jail.
+The release must not be in use by any jail on the system!
 
 ## Accessing a Jail Using SSH
 
 The ssh daemon [sshd(8)](https://www.freebsd.org/cgi/man.cgi?query=sshd) must be enabled in a jail to allow SSH access to that jail from another system.
 
-The jail `STATE` must be up before the `SHELL` option is available. If the jail is not up, start it by clicking **Jails** > **>** (Expand) > **START** for the desired jail. Click **>** (Expand), then **SHELL** to open a shell inside the jail:
+The jail **STATE** must be up before the *SHELL* option is available.
+When the jail is not up, start it by clicking **Jails** > **>** (Expand) > **START** for the desired jail.
+Click **>** (Expand), then **SHELL** to open a shell inside the jail:
 
 ```
 FreeBSD 11.1-STABLE (FreeNAS.amd64) #0 0ale9f753(freenas/11-stable): FriApr 6 04:46:31 UTC 2018
@@ -232,8 +237,8 @@ FreeBSD directory layout:     man hier
 Edit /etc/motd to change this login announcement.
 root@jailexamp:~ #
 ```
-
-A root shell can also be opened for a jail using the TrueNAS Shell. Open the **Shell** then enter `iocage console jailname`.
+The **Shell** can also open a jail root shell.
+Open the **Shell** and enter `iocage console jailname`.
 
 Enable sshd:
 
@@ -242,9 +247,12 @@ sysrc sshd_enable="YES"
 sshd_enable: NO -> YES
 ```
 
-Using `sysrc` to enable sshd verifies that sshd is enabled.
-Start the SSH daemon: `service sshd start`
-The first time the service runs, the jail RSA key pair is generated and the key fingerprint is displayed. Add a user account with `adduser`. Follow the prompts, <kbd>Enter</kbd> accepts the default value. Users that require root access must also be a member of the `wheel` group. Enter `wheel` when prompted to `invite user into other groups`?
+Start the SSH daemon: `service sshd start`.
+The first time the service runs, the jail RSA key pair is generated and the key fingerprint is displayed.
+Add a user account with `adduser` and follow the prompts.
+<kbd>Enter</kbd> accepts the default value.
+Users that require root access must also be a member of the `wheel` group.
+Enter `wheel` when prompted to `invite user into other groups`?
 
 ```
 root@jailexamp:~ # adduser
@@ -280,7 +288,9 @@ Goodbye!
 root@jailexamp:~
 ```
 
-After creating the user, set the jail *root* password to allow users to use `su` to gain superuser privileges. To set the jail *root* password, use `passwd`. Nothing is echoed back when using `passwd`:
+After creating the user, set the jail *root* password to allow users to use `su` to gain superuser privileges.
+To set the jail *root* password, use `passwd`.
+Nothing is echoed back when using `passwd`:
 
 ```
 root@jailexamp:~ # passwd
@@ -290,7 +300,9 @@ Retype New Password:
 root@jailexamp:~ #
 ```
 
-Finally, test that the user can successfully `ssh` into the jail from another system and gain superuser privileges. In this example, a user named `jailuser` uses `ssh` to access the jail at *192.168.2.3*. The host RSA key fingerprint must be verified the first time a user logs in.
+Finally, test that the user can successfully `ssh` into the jail from another system and gain superuser privileges.
+In this example, a user named `jailuser` uses `ssh` to access the jail at *192.168.2.3*.
+The host RSA key fingerprint must be verified the first time a user logs in.
 
 ```
 ssh jailuser@192.168.2.3
@@ -301,56 +313,5 @@ Warning: Permanently added '192.168.2.3' (RSA) to the list of known hosts.
 Password:
 ```
 
-Every jail has its own user accounts and service configuration. These steps must be repeated for each jail that requires SSH access.
-
-## Additional Storage
-
-Jails can be given access to an area of storage outside of the jail that is configured on the TrueNAS system. It is possible to give a FreeBSD jail access to an area of storage on the TrueNAS system. This is useful for applications or plugins that store large amounts of data or if an application in a jail needs access to data stored on the TrueNAS system. For example, *Transmission* is a plugin that stores data using BitTorrent. The TrueNAS external storage is added using the [mount_nullfs(8)](https://www.freebsd.org/cgi/man.cgi?query=mount_nullfs) mechanism, which links data that resides outside of the jail as a storage area within a jail.
-
-**>** (Expand) > **MOUNT POINTS** shows any added storage and allows adding more storage.
-
-A jail must have a **STATE** of *down* before adding a new mount point. Click **>** (Expand) and **STOP** for a jail to change the jail STATE to down.
-
-Storage can be added by clicking **Jails** > **>** (Expand) > **MOUNT POINTS** for the desired jail. The `MOUNT POINT` section is a list of all of the currently defined mount points.
-
-Go to **MOUNT POINTS** > **ACTIONS** > **Add Mount Point** to add storage to a jail.
-
-![Jails Mountpoint Add](/images/CORE/12.0/JailMountpointAdd.png "Jails Mountpoint Add")
-<br><br>
-
-Browse to the **Source** and **Destination**, where:
-
-+ **Source** is the directory or dataset on the TrueNAS system which will be accessed by the jail. TrueNAS creates the directory if it does not exist. This directory must reside outside of the pool or dataset being used by the jail. This is why it is recommended to create a separate dataset to store jails. The dataset holding the jails is always separate from any datasets used for storage on the TrueNAS system.
-+ **Destination** is an existing and empty directory within the jail to link to the **Source** storage area. It is also possible to add `/` and a name to the end of the path for TrueNAS to create a new directory. New directories created must be **within** the jail directory structure. Example: **/mnt/iocage/jails/samplejail/root/new-destination-directory**.
-
-Storage is typically added because the user and group account associated with an application installed inside of a jail needs to access data stored on the TrueNAS system. Before selecting the **Source**, it is important to ensure that the permissions of the selected directory or dataset grant permission to the user or group account inside the jail. This is not the default, as the users and groups created inside a jail are separate from the users and groups created on the TrueNAS system.
-
-Here is the typical workflow for adding storage:
-
-+ Determine the name of the user and group account used by the application. For example, the installation of the *transmission* application automatically creates a user account named *transmission* and a group account also named *transmission*. When in doubt, check the files <file>/etc/passwd</file> (to find the user account) and <file>/etc/group</file> (to find the group account) inside the jail. Typically, the user and group names are similar to the application name. Also, the UID and GID are usually the same as the port number used by the service. A *media* user and group (GID 8675309) are part of the base system. Having applications run as this group or user makes it possible to share storage between multiple applications in a single jail, between multiple jails, or even between the host and jails.
-
-+ On the TrueNAS system, create a user account and group account that match the user and group names used by the jail application.
-
-+ Decide if the jail needs access to existing data or if a new storage area should be created.
-
-+ If the jail needs to access existing data, [edit the permissions](/hub/tasks/advanced/editingacls/) of the pool or dataset so the user and group accounts have the desired read and write access. If multiple applications or jails need have access to the same data, create a new group and add each new user account to that group.
-
-+ If a new storage area is being set aside for that jail or application, [create a dataset](/CORE/Storage/datasets/). Edit the dataset permissions so the user and group account has the desired read and write access.
-
-+ Use the jail **>** (Expand) > **MOUNT POINTS** > **ACTIONS** > **Add Mount Point** to select the data **Source** and the **Destination** where it will be mounted in the jail.
-
-To prevent writes to the storage, click **Read-Only**.
-
-After storage has been added or created, it appears in the `MOUNT POINTS` for that jail. 
-
-![Jails Mountpoint Example](/images/CORE/12.0/JailMountpointExample.png "Jails Mountpoint Example")
-<br><br>
-
-Storage is automatically mounted as it is created.
-Mounting a dataset does not automatically mount any child datasets inside it. Each dataset is a separate filesystem, so child datasets must each have separate mount points.
-
-Click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; (Options) > **Delete** to delete the storage.
-
-{{ hint warning >}}
-Remember that added storage is just a pointer to the selected storage directory on the TrueNAS system. It does not copy that data to the jail. Files that are deleted from the **Destination** directory in the jail are also deleted from the **Source** directory on the TrueNAS system. However, removing the jail storage entry only removes the pointer. This leaves the data intact but no longer accessible to the jail.
-{{< /hint >}}
+Every jail has its own user accounts and service configuration.
+These steps must be repeated for each jail that requires SSH access.
