@@ -47,7 +47,7 @@ TrueCommand can be downloaded from the [TrueNAS website](https://www.truenas.com
 ### What is TrueCommand Cloud?
 
 TrueCommand Cloud is a secure SaaS offering of TrueCommand which includes a WireGuard VPN capability to connect TrueNAS systems through firewalls. TrueCommand Cloud is compatible with TrueNAS versions 12.0+ or SCALE for the Wireguard VPN capability.
-Subscribe to and set up TrueCommand Cloud using [these instructions](https://www.truenas.com/docs/truecommand/installupdate/tc_cloud/).
+Subscribe to and set up TrueCommand Cloud using [these instructions](https://www.truenas.com/docs/truecommand/InstallUpdate/tc_cloud/).
 
 
 
