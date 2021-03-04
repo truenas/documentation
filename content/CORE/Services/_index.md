@@ -4,4 +4,4 @@ geekdocCollapseSection: true
 weight: 120
 ---
 
-Services related to Sharing can be found in the [Sharing secion of the TrueNAS Documentation](/CORE/Sharing)
+Services related to data sharing or automated tasks are documented in their respective [Sharing](/CORE/Sharing) or [Tasks](/CORE/Tasks) articles.

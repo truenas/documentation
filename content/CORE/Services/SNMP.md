@@ -1,6 +1,6 @@
 ---
-title: "SNMP service placeholder"
-weight: 10
+title: "SNMP"
+weight: 60
 ---
 
 ## SNMP

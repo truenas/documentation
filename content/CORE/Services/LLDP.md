@@ -1,7 +1,6 @@
 ---
 title: "LLDP"
-description: "Advertising TrueNAS on a network with the Link Layer Discovery Protocol."
-tags: ["LLDP", "networking"]
+weight: 30
 ---
 
 The [Link Layer Discovery Protocol (LLDP)](https://tools.ietf.org/html/rfc4957) is used by network devices to advertise their identity, capabilities, and neighbors on an Ethernet network.

@@ -1,6 +1,6 @@
 ---
 title: "OpenVPN"
-description: "How to configure TrueNAS to act as an OpenVPN Server or Client."
+weight: 40
 ---
 
 A virtual private network (VPN) is an extension of a private network over public resources.

@@ -1,9 +1,7 @@
 ---
-title: "UPS Configuration"
-description: "Using an Uninterruptible Power Supply (UPS) with TrueNAS."
-tags: ["UPS"]
+title: "UPS"
+weight: 80
 ---
-
 
 TrueNAS uses [NUT](https://networkupstools.org/) (Network UPS Tools) to provide UPS support.
 When the TrueNAS system is connected to a UPS device, configure the UPS service in **Services > UPS > Configure**.

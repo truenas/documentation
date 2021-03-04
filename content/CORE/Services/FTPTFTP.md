@@ -1,7 +1,6 @@
 ---
-title: "FTP and SFTP"
-description: "How to set up and use the File Transfer Protocol (FTP), Secure File Transfer Protocol (SFTP), and Trivial File Transfer Protocol (TFTP)."
-tags: ["networking","FTP/SFTP/TFTP"]
+title: "FTP, SFTP, and TFTP"
+weight: 20
 ---
 
 The [File Transfer Protocol (FTP)](https://tools.ietf.org/html/rfc959) is a simple option for data transfers.
