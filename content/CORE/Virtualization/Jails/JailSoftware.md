@@ -1,7 +1,6 @@
 ---
-title: "Installing Software in a Jail"
-description: "How to install software in a jail using FreeBSD packages."
-tags: ["jails"]
+title: "Installing Software"
+weight: 20
 ---
 
 A jail is created with no software aside from the core packages installed as part of the selected version of FreeBSD.

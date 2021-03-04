@@ -1,9 +1,8 @@
 **Jail Properties**
 
-| | |
-|-|-|
+| Name | Description |
+|------|-------------|
 | devfs_ruleset | The [devfs(8)](https://www.freebsd.org/cgi/man.cgi?query=devfs) ruleset number to enforce when mounting devfs in the jail. The default 0 means no ruleset is enforced. Mounting devfs inside a jail is only possible when the allow_mount and allow_mount_devfs permissions are enabled and enforce_statfs is set to a value lower than 2. |
-|-|-|
 | exec_start | Commands to run in the jail environment when the jail is created. Example: sh /etc/rc. The pseudo-parameters section of [JAIL(8)](https://www.freebsd.org/cgi/man.cgi?query=jail) describes exec.start usage. |
 | exec_stop | Commands to run in the jail environment before the jail is removed and after exec.prestop commands are complete. Example: sh /etc/rc.shutdown. |
 | exec_prestart | Commands to run in the system environment before a jail is started. |

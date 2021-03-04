@@ -1,57 +1,73 @@
 ---
-title: "Jails"
-description: "How to create, manage, and update a FreeBSD jail."
-tags: ["jails"]
+title: "Jail Management"
+weight: 10
 ---
 
+{{< toc >}}
+
 {{< hint info >}}
-The Jails feature is generally available in TrueNAS CORE and is supported by the open source TrueNAS community.
-TrueNAS Enterprise does not show or support this feature unless it has been added to a TrueNAS Enterprise license.
-For more details or to request jail support in TrueNAS Enterprise, please [contact iX Support](/hub/initial-setup/support/#contacting-ixsystems-support):
+Jails feature are available to and supported by the TrueNAS CORE community.
 {{< /hint >}}
 
-Jails are a lightweight, operating-system-level virtualization. One or multiple services can run in a jail, isolating those services from the host TrueNAS system. TrueNAS uses [iocage](https://github.com/iocage/iocage) for jail and plugin management. The main differences between a user-created jail and a plugin are that plugins are preconfigured and usually provide only a single service.
+Jails are a lightweight, operating-system-level virtualization.
+One or multiple services can run in a jail, isolating those services from the host TrueNAS system.
+TrueNAS uses [iocage](https://github.com/iocage/iocage) for jail and plugin management.
+The main differences between a user-created jail and a plugin are that plugins are preconfigured and usually provide only a single service.
 
-By default, jails run the [FreeBSD](https://www.freebsd.org/) operating system. These jails are independent instances of FreeBSD. The jail uses the host hardware and runs on the host kernel, avoiding most of the overhead usually associated with virtualization. The jail installs FreeBSD software management utilities so FreeBSD packages or ports can be installed from the jail command line. This allows for FreeBSD ports to be compiled and FreeBSD packages to be installed from the command line of the jail.
+{{< expand "Why use a Jail instead of a VM?" "v" >}}
+By default, jails run the [FreeBSD](https://www.freebsd.org/) operating system.
+These jails are independent instances of FreeBSD.
+The jail uses the host hardware and runs on the host kernel, avoiding most of the overhead usually associated with virtualization.
+The jail installs FreeBSD software management utilities so FreeBSD packages or ports can be installed from the jail command line.
+This allows for FreeBSD ports to be compiled and FreeBSD packages to be installed from the command line of the jail.
+{{< /expand >}}
 
 It is important to understand that users, groups, installed software, and configurations within a jail are isolated from both the TrueNAS host operating system and any other jails running on that system.
 
-The ability to create multiple jails offers flexibility regarding software management. For example, an administrator can choose to provide application separation by installing different applications in each jail, to create one jail for all installed applications, or to mix and match how software is installed into each jail.
+The ability to create multiple jails offers flexibility regarding software management.
+For example, an administrator can choose to provide application separation by installing different applications in each jail, to create one jail for all installed applications, or to mix and match how software is installed into each jail.
 
 ## Jail Storage
 
-A [data storage pool](/CORE/Storage/DataPools/) must be created before using jails. Make sure the pool has enough storage for all the intended jails. The **Jails** screen displays a message and button to **CREATE POOL** if no pools exist on the TrueNAS system.
+A [data storage pool](/CORE/Storage/Pools/) must be created before using jails.
+Make sure the pool has enough storage for all the intended jails.
+The **Jails** screen displays a message and button to **CREATE POOL** if no pools exist on the TrueNAS system.
 
 If pools exist, but none have been chosen for use with jails or plugins, a dialog appears to choose a pool. Select a pool and click **CHOOSE**.
 
-To select a different pool for jail and plugin storage, click <i class="fas fa-cog" aria-hidden="true" title="Settings"></i>&nbsp; (Settings). A dialog shows the active pool. A different pool can be selected from the drop-down.
+To select a different pool for jail and plugin storage, click <i class="fa fa-cog" aria-hidden="true" title="Settings"></i>&nbsp; (Settings). A dialog shows the active pool. A different pool can be selected from the drop-down.
 
 Jails and downloaded FreeBSD release files are stored in a dataset named `iocage/`.
 
-Notes about the `iocage/` dataset:
+{{< expand "The iocage dataset" "v" >}}
 
-+ At least 10 GiB of free space is recommended.
-+ Cannot be located on a Share.
-+ [iocage](http://iocage.readthedocs.io/en/latest/index.html) automatically uses the first pool that is not a root pool for the TrueNAS system.
-+ A <file>defaults.json</file> file contains default settings used when a new jail is created. The file is created automatically if not already present. If the file is present but corrupted, iocage shows a warning and uses default settings from memory.
-+ Each new jail installs into a new child dataset of `iocage/`. For example, with the `iocage/jails` dataset in *pool1*, a new jail called *jail1* installs into a new dataset named *pool1/iocage/jails/jail1*.
-+ FreeBSD releases are fetched as a child dataset into the `/iocage/download` dataset. This datset is then extracted into the `/iocage/releases` dataset to be used in jail creation. The dataset in `/iocage/download` can then be removed without affecting the availability of fetched releases or an existing jail.
-+ `iocage/` datasets on activated pools are independent of each other and do not share any data.
+* At least *10* GiB of free space is recommended.
+* Cannot be located on a Share.
+* [iocage](http://iocage.readthedocs.io/en/latest/index.html) automatically uses the first pool that is not a root pool for the TrueNAS system.
+* A <file>defaults.json</file> file contains default settings used when a new jail is created.
+  The file is created automatically when not already present.
+  When the file is present but corrupted, iocage shows a warning and uses default settings from memory.
+* Each new jail installs into a new child dataset of <file>iocage/</file>.
+  For example, with the <file>iocage/jails</file> dataset in *pool1*, a new jail called *jail1* installs into a new dataset named *pool1/iocage/jails/jail1*.
+* FreeBSD releases are fetched as a child dataset into the <file>/iocage/download</file> dataset.
+  This datset is then extracted into the <file>/iocage/releases</file> dataset to be used in jail creation.
+  The dataset in <file>/iocage/download</file> can then be removed without affecting the availability of fetched releases or an existing jail.
+* <file>iocage/</file> datasets on activated pools are independent of each other and do not share any data.
 
-{{% pageinfo %}}
-iocage jail configs are stored in <file>/mnt/poolname/iocage/jails/jailname</file>. When iocage is updated, the <file>config.json</file> configuration file is backed up as <file>/mnt/poolname/iocage/jails/jailname/config_backup.json</file>. The backup file can be renamed to <file>config.json</file> to restore previous jail settings.
-{{% /pageinfo %}}
+iocage jail configs are stored in <file>/mnt/poolname/iocage/jails/jailname</file>.
+When iocage is updated, the <file>config.json</file> configuration file is backed up as <file>/mnt/poolname/iocage/jails/jailname/config_backup.json</file>.
+The backup file can be renamed to <file>config.json</file> to restore previous jail settings.
+{{< /expand>}}
 
 ## Creating Jails
 
 TrueNAS has two options to create a jail. The *Jail Wizard* makes it easy to quickly create a jail. *ADVANCED JAIL CREATION* is an alternate method, where every possible jail option is configurable. There are numerous options spread across four different primary sections. This form is recommended for advanced users with very specific requirements for a jail.
 
-### Jail Wizard
-
+{{< tabs "Jail Create Options" >}}
+{{< tab "Jail Wizard" >}}
 New jails can be created quickly by going to **Jails > ADD**.
 
 ![JailsAddName](/images/CORE/12.0/JailsAddName.png "Jails Add Name")
-<br><br>
 
 The wizard provides the simplest process to create and configure a new jail.
 
@@ -63,89 +79,124 @@ Jails can run FreeBSD versions up to the same version as the host TrueNAS system
 
 Versions of FreeBSD are downloaded the first time they are used in a jail. Additional jails created with the same version of FreeBSD are created faster because the download has already been completed.
 
-Click **NEXT** to see a simplified list of networking options.
+Click *NEXT* to see a simplified list of networking options.
 
 Jails support several different networking solutions:
 
-+ *VNET* can be set to add a virtual network interface to the jail. This interface can be used to set NAT, DHCP, or static jail network configurations. Since *VNET* provides the jail with an independent networking stack, it can broadcast an IP address, which is required by some applications.
-* The jail can use [Network Address Translation (NAT)](https://en.wikipedia.org/wiki/Network_address_translation), which uses the TrueNAS® IP address and sets a unique port for the jail to use. *VNET* is required when *NAT* is selected.
-+ Configure the jail to receive its IP address from a DHCP server by setting **DHCP Autoconfigure IPv4**.
-+ Networking can be manually configured by entering values for the **IPv4 Address** or **IPv6 Address** fields. Any combination of these fields can be configured. Multiple interfaces are supported for IPv4 and IPv6 addresses. To add more interfaces and addresses, click **ADD**. Setting the **IPv4 Default Router** and **IPv6 Default Router** fields to *auto* automatically configures these values. **VNET** must be set to enable the **IPv4 Default Router** field. If no interface is selected when manually configuring IP addresses, TrueNAS automatically assigns the given IP address of the jail to the current active interface of the host system.
-+ Leaving all checkboxes unset and fields empty initializes the jail without any networking abilities. Networking can be added to the jail after creation by going to **Jails**, clicking **>**(Expand) for a jail, then <i class="fas fa-pen" aria-hidden="true" title="Pen"></i>&nbsp; **EDIT > Basic Properties**.
+* *VNET* adds a virtual network interface to the jail.
+  This interface can set NAT, DHCP, or static jail network configurations.
+  Since *VNET* provides the jail with an independent networking stack, it can broadcast an IP address, which is required by some applications.
+* [Network Address Translation (NAT)](https://tools.ietf.org/html/rfc2663), which uses the TrueNAS IP address and sets a unique port for the jail to use.
+  *VNET* is required when *NAT* is selected.
+* Set *DHCP Autoconfigure IPv4* for the jail to receive its IP address from a DHCP server.
+* Manually configure networking by entering values for the *IPv4 Address* or *IPv6 Address* fields.
+  Any combination of these fields can be configured.
+  Multiple interfaces are supported for IPv4 and IPv6 addresses.
+  To add more interfaces and addresses, click *ADD*.
 
-Setting a proxy in the TrueNAS network settings also configures new jails to use the proxy settings, except when performing DNS lookups. Make sure a firewall is properly configured to maximize system security.
+  Setting the *IPv4 Default Router* and *IPv6 Default Router* fields to *auto* automatically configures these values.
+  *VNET* must be set to enable the **IPv4 Default Router** field.
+  When no interface is selected when manually configuring IP addresses, TrueNAS automatically assigns the given jail IP address to the current active interface of the host system.
+* Leaving all checkboxes unset and fields empty initializes the jail without any networking abilities.
+  Networking is added to the jail after creation by going to **Jails**, clicking **>**(Expand) for a jail, then <i class="fa fa-pencil" aria-hidden="true" title="Pen"></i> **EDIT > Basic Properties**.
 
-When pairing the jail with a physical interface, edit the network interface and set **Disable Hardware Offloading**. This prevents a network interface reset when the jail starts.
+Setting a proxy in the TrueNAS network settings also configures new jails to use the proxy settings, except when performing DNS lookups.
+Make sure a firewall is properly configured to maximize system security.
+
+{{< hint warning >}}
+When pairing the jail with a physical interface, edit the network interface and set *Disable Hardware Offloading*.
+This prevents a network interface reset when the jail starts.
+{{< /hint >}}
 
 ![JailsAddNetworking](/images/CORE/12.0/JailsAddNetworking.png "Jails Add Networking")
-<br><br>
 
 Click **NEXT** to view a summary screen of the chosen jail options. Click **SUBMIT** to create the new jail. After a few moments, the new jail is added to the primary jails list.
-
-### Advanced Jail Creation
-
-The advanced jail creation form is opened by clicking **Jails > ADD**, then **ADVANCED JAIL CREATION**.
+{{< /tab >}}
+{{< tab "Advanced Jail Creation" >}}
+The advanced jail creation form is opened by clicking **Jails > ADD**, then *ADVANCED JAIL CREATION*.
 
 ![JailsAddAdvanced](/images/CORE/12.0/JailsAddAdvanced.png "Jails Add Advanced")
-<br><br>
 
-#### Simple Advanced Jail
+### Options
 
-A usable jail without any networking can be quickly created by setting only the required **Jail Name** and **Release**.
-Configure the remaining `Basic Properties` when the jail needs to communicate over the local network or out to the internet.
-Additional settings are in the `Jail Properties`, `Network Properties`, and `Custom Properties` sections.
-See the [Jail Options Reference](/hub/additional-topics/reference/UIFieldDescriptions/JailsFields/) for a breakdown all of the options for `Jail Properties`, `Network Properties`, and `Custom Properties`.
+A usable jail without any networking can be quickly created by setting only the required *Jail Name* and *Release*.
+Configure the remaining **Basic Properties** when the jail needs to communicate over the local network or out to the internet.
 
-### Creating Template Jails
+{{< include file="static/includes/JailsAdvancedFields.md.part" markdown="true" >}}
 
-Template jails are basejails that can be used as a template to efficiently create jails with the same configuration. These steps create a template jail:
+Additional settings are in the **Jail Properties**, **Network Properties**, and **Custom Properties** sections.
 
-+ Go to **Jails > ADD > ADVANCED JAIL CREATION**.
-+ Select *Basejail* as the **Jail Type**. Configure the jail with desired options.
-+ Set **template** in the `Custom Properties` section.
-+ Click **SAVE**.
-+ Click **ADD**.
-+ Enter a name for the template jail. Leave **Jail Type** as *Default (Clone Jail)*. Set **Release** to *basejailname(template)*, where *basejailname* is the name of the base jail created earlier.
-+ Complete the jail creation wizard.
+{{< expand "Jail Properties" "v" >}}
+{{< include file="static/includes/JailsPropertiesFields.md.part" markdown="true" >}}
+{{< /expand >}}
+
+{{< expand "Network Properties" "v" >}}
+{{< include file="static/includes/JailsNetworkPropertiesFields.md.part" markdown="true" >}}
+{{< /expand >}}
+
+{{< expand "Custom Properties" "v" >}}
+{{< include file="static/includes/JailsCustomPropertiesFields.md.part" markdown="true" >}}
+{{< /expand >}}
+
+{{< /tab >}}
+{{< /tabs >}}
+
+## Creating Template Jails
+
+Template jails are basejails that can efficiently create jails with the same configuration.
+These steps create a template jail:
+
+* Go to **Jails > ADD > ADVANCED JAIL CREATION**.
+* Select *Basejail* as the *Jail Type*.
+  Configure the jail with desired options.
+* Set *template* in the `Custom Properties` section.
+* Click *SAVE*.
+* Click *ADD*.
+* Enter a name for the template jail.
+  Leave *Jail Type* as *Default (Clone Jail)*.
+  Set *Release* to *basejailname(template)*, where *basejailname* is the name of the base jail created earlier.
+* Complete the jail creation wizard.
 
 ## Managing Jails
 
 Going to the *Jails* screen shows a list of installed jails.
 
-![Jails](/images/CORE/12.0/Jails.png "Jails")
-<br><br>
+![Jails](/images/CORE/12.0/Jails.png "Jails List")
 
-Operations can be applied to multiple jails by selecting those jails with the checkboxes on the left. After selecting one or more jails, icons appear which can be used to <i class="fas fa-play" aria-hidden="true" title="Start"></i>&nbsp; (Start), <i class="fas fa-stop" aria-hidden="true" title="Stop"></i>&nbsp; (Stop), <i class="fas fa-clock" aria-hidden="true" title="Update"></i>&nbsp; (Update), or <i class="fas fa-trash" aria-hidden="true" title="Delete"></i>&nbsp; (Delete) those jails.
+Operations can be applied to multiple jails by selecting those jails with the checkboxes on the left.
+After selecting one or more jails, icons appear which can be used to <i class="fa fa-play" aria-hidden="true" title="Start"></i> (Start), <i class="fa fa-stop" aria-hidden="true" title="Stop"></i> (Stop), <i class="fa fa-clock-o" aria-hidden="true" title="Update"></i> (Update), or <i class="fa fa-trash" aria-hidden="true" title="Delete"></i> (Delete) those jails.
 
-More information such as *IPV4*, *IPV6*, *TYPE* of jail, and whether it is a *TEMPLATE* jail or *BASEJAIL* can be shown by clicking **>** (Expand) for a jail. Additional options for that jail are also displayed.
+More information such as **IPV4**, **IPV6**, jail **TYPE**, and whether it is a **TEMPLATE** or **BASEJAIL** is seen by clicking **>** (Expand) for a jail.
+Additional options for that jail are also displayed.
 
 ![Jails Options](/images/CORE/12.0/JailsOptions.png "Jails Options")
-<br><br>
 
 {{< hint warning >}}
-Modify the IP address information for a jail by clicking **>** (Expand) > **EDIT** instead of issuing the networking commands directly from the command line of the jail. This ensures the changes are saved and will survive a jail or TrueNAS reboot.
+Modify the IP address information for a jail by clicking **>** (Expand) > *EDIT* instead of issuing the networking commands directly from the command line of the jail.
+This ensures changes are saved and survive a jail or TrueNAS reboot.
 {{< /hint >}}
 
-| Option       |   | Description                                                                                                                                                                                                                                                                                                      |
-|--------------|---|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| EDIT         | | Used to modify the settings described in Advanced Jail Creation. A jail cannot be edited while it is running. The settings can be viewed, but are read only.                                                                                                                                                     |
-| MOUNT POINTS | | Select an existing mount point to **EDIT** or click **ACTIONS** > **Add Mount Point** to create a mount point for the jail. A mount point gives a jail access to storage located elsewhere on the system. A jail must be stopped before adding, editing, or deleting a mount point. See Additional Storage for more details. |
-| RESTART      | | Stop and immediately start an *up* jail.                                                                                                                                                                                                                                                                           |
-| START        | | Start a jail that has a current `STATE` of *down*.                                                                                                                                                                                                                                                                   |
-| STOP        | | Stop a jail that has a current `STATE` of *up*.                                                                                                                                                                                                                                                                      |
-| UPDATE       | | Runs [freebsd-update](https://www.freebsd.org/cgi/man.cgi?query=freebsd-update) to update the jail to the latest patch level of the installed FreeBSD release.                                                                                                                                                                                                               |
-| SHELL        | | Access a *root* command prompt to interact with a jail directly from the command line. Type `exit` to leave the command prompt.                                                                                                                                                                                      |
-| DELETE       | | Caution: deleting the jail also deletes all of the jail contents and all associated snapshots. Back up the jail data, configuration, and programs first. There is no way to recover the contents of a jail after deletion!                                                                                       |
+| Name | Description |
+|------|-------------|
+| EDIT | Used to modify the settings described in Advanced Jail Creation. A jail cannot be edited while it is running. The settings can be viewed, but are read only. |
+| MOUNT POINTS | Select an existing mount point to **EDIT** or click **ACTIONS** > **Add Mount Point** to create a mount point for the jail. A mount point gives a jail access to storage located elsewhere on the system. A jail must be stopped before adding, editing, or deleting a mount point. See Additional Storage for more details. |
+| RESTART | Stop and immediately start an *up* jail. |
+| START | Start a jail that has a current **STATE** of *down*. |
+| STOP | Stop a jail that has a current **STATE** of *up*. |
+| UPDATE | Runs [freebsd-update](https://www.freebsd.org/cgi/man.cgi?query=freebsd-update) to update the jail to the latest patch level of the installed FreeBSD release. |
+| SHELL | Access a *root* command prompt to interact with a jail directly from the command line. Type `exit` to leave the command prompt. |
+| DELETE | Caution: deleting the jail also deletes all of the jail contents and all associated snapshots. Back up the jail data, configuration, and programs first. There is no way to recover the contents of a jail after deletion! |
 
 {{< hint info >}}
-Menu entries change depending on the jail state. For example, a stopped jail does not have a **STOP** or **SHELL** option.
+Menu entries change depending on the jail state. For example, a stopped jail does not have a *STOP* or *SHELL* option.
 {{< /hint >}}
 
 Jail status messages and command output are stored in <file>/var/log/iocage.log</file>.
 
 ## Jail Updates and Upgrades
 
-Click **>** (Expand) > **Update** to update a jail to the most current patch level of the installed FreeBSD release. This does **not** change the release. For example, a jail installed with *FreeBSD 11.2-RELEASE* can update to *p15* or the latest patch of 11.2, but not an *11.3-RELEASE-p#* version of FreeBSD.
+Click **>** (Expand) > *Update* to update a jail to the most current patch level of the installed FreeBSD release.
+This does **not** change the release. For example, a jail installed with *FreeBSD 11.2-RELEASE* can update to *p15* or the latest patch of 11.2, but not an *11.3-RELEASE-p#* version of FreeBSD.
 
 A jail *upgrade* replaces the jail FreeBSD operating system with a new release of FreeBSD, such as taking a jail from *FreeBSD 11.2-RELEASE* to *11.3-RELEASE*. Upgrade a jail by stopping it, opening the TrueNAS **Shell** and entering `iocage upgrade name -r release`, where *name* is the plugin jail name and *release* is the desired FreeBSD release.
 

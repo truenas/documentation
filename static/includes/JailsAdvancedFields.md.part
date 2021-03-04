@@ -1,9 +1,8 @@
-**Advanced**
+**Basic Properties**
 
-| | |
-|-|-|
+| Name | Description |
+|------|-------------|
 | Name | Required. Can contain letters, numbers, periods (.), dashes (-), and underscores (_). |
-|-|-|
 | Jail Type | Default (Clone Jail) or Basejail. Clone jails are clones of the specified RELEASE. They are linked to that RELEASE, even if they are upgraded. Basejails mount the specified RELEASE directories as nullfs mounts over the jail directories. Basejails are not linked to the original RELEASE when upgraded. |
 | Release | FreeBSD release to use as the jail operating system. Jails can run FreeBSD versions up to the same version as the host system. Newer releases are not shown. |
 | DHCP Autoconfigure IPv4 | Set to autoconfigure jail networking with the Dynamic Host Configuration Protocol. VNET and Berkeley Packet Filter must also be enabled. |
