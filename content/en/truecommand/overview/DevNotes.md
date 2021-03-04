@@ -21,7 +21,7 @@ Nightly images for TrueCommand are built every 24 hours. These images are automa
 Download information:
 
 * [DockerHub] (https://hub.docker.com/r/ixsystems/truecommand)
-* [Example in Documentation](https://www.truenas.com/docs/truecommand/installupdate/install/), replace “latest” with “nightly” in the docker pull commands.
+* [Example in Documentation](https://www.truenas.com/docs/truecommand/InstallUpdate/install/), replace “latest” with “nightly” in the docker pull commands.
 
 ## Current Status
 
