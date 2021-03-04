@@ -137,6 +137,9 @@
 }
 .container-image-download:hover .image {
   opacity: 0.3;
+  -webkit-transition:.5s ease;
+  -o-transition:.5s ease;
+  transition:.5s ease;
 }
 .container-image-download:hover .middle {
   opacity: 1;
