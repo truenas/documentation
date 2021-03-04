@@ -3,8 +3,9 @@ title: "Failover (HA)"
 weight: 178
 ---
 
-## Process Summary
+{{< toc >}}
 
+{{< expand "Process Summary" "v" >}}
 * **System > Support**
   * Update license
 * **Network > Global Configuration**
@@ -20,14 +21,15 @@ weight: 178
   * Designate the default TrueNAS controller
   * Define how long to wait after a network interruption to trigger a failover
 
+{{< /expand >}}
+
 ## Configuring High Availability (HA)
 
 To configure HA, turn on both units in the array and log in to the web interface for one of the units.
 If this is the first login, the UI shows a dialog to upload the TrueNAS Enterprise License.
 Otherwise, go to **System > Support** and update the license.
 
-<img src="/images/TN12-HA1.png">
-<br><br>
+![SystemSupportLicenseEnterprise](/images/CORE/12.0/SystemSupportLicenseEnterprise.png "Enterprise License")
 
 Paste the HA license received from iXsystems and save it.
 The license contains the serial numbers for both units in the chassis.
@@ -44,8 +46,7 @@ If both TrueNAS controllers reboot simultaneously, the passphrase for an encrypt
 
 To make sure system networking is configured for HA, first go to **Network > Global Configuration**.
 
-![Network Global Configuration HA Enterprise](/images/CORE/12.0/NetworkGlobalConfigurationHAEnterprise.png "Network Global Configuration HA Enterprise")
-<br><br>
+![NetworkGlobalConfigurationHAEnterprise](/images/CORE/12.0/NetworkGlobalConfigurationHAEnterprise.png "Network Config for Enterprise HA")
 
 You can set the host names for both controllers and a virtual host name that reaches whichever controller is currently active.
 
@@ -58,8 +59,7 @@ Edit the interface, then reactivate failover immediately.
 TrueNAS automatically synchronizes the configuration changes to the standby controller
 {{< /hint >}}
 
-![Network Interface Edit HA Enterprise](/images/CORE/12.0/NetworkInterfaceEditHAEnterprise.png "Network Interface Edit HA Enterprise")
-<br><br>
+![NetworkInterfaceEditHAEnterprise](/images/CORE/12.0/NetworkInterfaceEditHAEnterprise.png "Network Interface Edit for Enterprise HA")
 
 You can designate the interface as critical for failover and combine multiple interfaces into a failover group.
 There are also options to configure IP addresses for each controller and a virtual IP address with virtual host ID to use for administrative access.
@@ -72,23 +72,21 @@ Connecting directly to the standby TrueNAS controller with a browser does not al
 
 When troubleshooting HA networking, the <code>ifconfig</code> command adds two additional fields to the output to help with failover troubleshooting: **CriticalGroup*n*** and **Interlink**.
 
-### Failover Options
+## Failover
 
 To make general changes to the Failover settings, go to **System > Failover**
 
-![System Failover Enterprise](/images/CORE/12.0/SystemFailoverEnterprise.png "System Failover Enterprise")
-<br><br>
+![System Failover Enterprise](/images/CORE/12.0/SystemFailoverEnterprise.png "HA Failover Options")
 
 You can manually disable failover on this screen.
 
 Make sure to set one of the controllers as the default, so that the default controller becomes active when both boot simultaneously.
-Note that booting an HA pair with failover disabled causes both TrueNAS controllers to come up in standby mode.
+Booting an HA pair with failover disabled causes both TrueNAS controllers to come up in standby mode.
 In this situation, the web interface shows an option to force a TrueNAS controller to become active.
 
-You can have the system wait to failover during a network timeout by overwriting *0* with a new number of seconds.
+To have the system wait to failover during a network timeout, replace *0* with a new number of seconds.
 
-TrueNAS is designed to automatically synchronize the system configuration, but manual sync options are available during high-risk troubleshooting situations.
-
-{{< hint warning >}}
-Do not manually sync the TrueNAS configuration unless directed by an iXsystems Support Engineer!
+{{< hint danger >}}
+Do not *sync* the TrueNAS configuration unless directed by an iXsystems Support Engineer!
+TrueNAS is designed to automatically synchronize the system configuration and the manual sync options are only for dangerous or high-risk troubleshooting situations.
 {{< /hint >}}
