@@ -15,7 +15,7 @@ Asigra Inc. Asigra, the Asigra logo, Asigra Cloud Backup, Recovery is Everything
 
 AWS® is a registered trademark of Amazon. 
 
-Broadcom is a trademark of Broadcom Corporation.
+Broadcom® is a trademark of Broadcom Corporation.
 
 Chelsio® is a registered trademark of Chelsio Communications.
 
@@ -43,9 +43,9 @@ Mellanox® is a registered trademark Mellanox Technologies Ltd. which is a subsi
 
 OpenStack® is a registered trademark of The OpenStack Foundation.
 
-Oracle is a registered trademark of Oracle Corporation and/or its affiliates.
+Oracle® is a registered trademark of Oracle Corporation and/or its affiliates.
 
-Twitter is a trademark of Twitter, Inc. in the United States and other countries.
+Twitter® is a trademark of Twitter, Inc. in the United States and other countries.
 
 UNIX® is a registered trademark of The Open Group.
 
@@ -53,7 +53,7 @@ Veeam® is a registered trademark of Veeam Software.
 
 VirtualBox® is a registered trademark of Oracle.
 
-VMware® is a registered trademark of VMware, Inc.
+VMware® and vCenter® is a registered trademark of VMware, Inc.
 
 Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
 
