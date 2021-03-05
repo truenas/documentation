@@ -1,11 +1,13 @@
 ---
-title: Developer’s Notes
-tags: [“TrueCommand”]
-weight: 30
+title: "Developer’s Notes"
+weight: 5
 ---
 
-#### Recent Updates
+{{< toc >}}
+
+{{< expand "Recent Updates" "v" >}}
 > 02/25/2021 - Initial nightly image release for TrueCommand 2.0
+{{< /expand >}}
 
 ## System Requirements
 
@@ -15,11 +17,12 @@ weight: 30
 
 ## Nightly Docker Images
 
-Nightly images for TrueCommand are built every 24 hours. These images are automatically pushed to the “nightly” tag on DockerHub if they pass the automated QA testing procedure.
+Nightly images for TrueCommand are built every 24 hours.
+These images are automatically pushed to the “nightly” tag on DockerHub if they pass the automated QA testing procedure.
 
 Download information:
 
-* [DockerHub] (https://hub.docker.com/r/ixsystems/truecommand)
+* [DockerHub](https://hub.docker.com/r/ixsystems/truecommand)
 * [Example in Documentation](https://www.truenas.com/docs/truecommand/InstallUpdate/install/), replace “latest” with “nightly” in the docker pull commands.
 
 ## Current Status
@@ -41,7 +44,7 @@ NAS metrics and state updates in realtime - no more 30s delay!
  * Docker image ~50% smaller
  * Network bandwidth usage ~40% less
  * CPU usage ~5% lower
- * Database growth rate ~99% lower
+ * Database growth rate \~99% lower
 
 Table of features and current status (Timestamp references when the item status was last updated):
 
@@ -61,8 +64,10 @@ Table of features and current status (Timestamp references when the item status 
 |Cluster Volumes|**In Progress**|02/26/2021|Create and manage clusters of TrueNAS SCALE systems (glusterfs)|
 |ISCSI Manager|**Review**|02/26/2021|Create and manage ISCSI volumes in bulk|
 
-#### Migration Notice
-Due to the change in database between the 1.x and 2.x versions of TrueCommand, there is an automatic database migration routine that will run the first time you start up the v2.0 image of TrueCommand. 
+### Migration Notice
+
+{{< hint warning >}}
+Due to the change in database between the 1.x and 2.x versions of TrueCommand, there is an automatic database migration routine that will run the first time you start up the v2.0 image of TrueCommand.
 
 Information Migrated:
 
@@ -80,9 +85,12 @@ Information **NOT** migrated due to drastic changes in how these are performed n
 * User-defined reports
 * Security Logs
 
-WARNING: If you are using an LDAP-enabled system for user logins, please be sure to have your non-LDAP admin user credentials handy before updating. The LDAP integration systems between 1.x and 2.x are different, and while the settings are migrated over as much as possible, you will still want to login and verify that everything is still configured properly.
+When you are using an LDAP-enabled system for user logins, please have your non-LDAP admin user credentials handy before updating.
+The LDAP integration systems between 1.x and 2.x are different, and you need to login and verify that everything is still configured properly after the migration.
+{{< /hint >}}
 
 #### Minimum Supported TrueNAS Versions
+
 Due to the changes in integrating with the TrueNAS middleware, the minimum version for full-support of functionality has changed with TrueCommand 2.0:
 
 * FreeNAS/TrueNAS 11.3 series - No longer supported. Does not provide realtime statistics or storage information, but you can still connect to them and use TrueCommand to initiate updates.
@@ -91,12 +99,14 @@ TrueNAS SCALE - Fully Supported
 
 ## Detailed look at new features
 
-#### Storage Explorer
+{{< tabs "Features" >}}
+{{< tab "Storage Explorer" >}}
 Coming soon
-
-#### ISCSI Dashboard
+{{< /tab >}}
+{{< tab "ISCSI Dashboard" >}}
 Coming soon
-
-#### Cluster Dashboard
+{{< /tab >}}
+{{< tab "Cluster Dashboard" >}}
 Coming soon
-
+{{< /tab >}}
+{{< /tabs >}}
