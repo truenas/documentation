@@ -1,7 +1,7 @@
 **General Options**
 
-| | |
-|-|-|
+| Name | Description |
+|------|-------------|
 | Provider | Several providers are supported. If a specific provider is not listed, select Custom Provider and enter the information in the Custom Server and Custom Path fields. |
 | CheckIP-Server SSL | Use HTTPS for the connection to the CheckIP Server. |
 | CheckIP Server | Name and port of the server that reports the external IP address. For example, entering checkip.dyndns.org:80 uses [Dyn IP detection](https://help.dyn.com/remote-access-api/checkip-tool/). to discover the remote socket IP address. |
@@ -12,7 +12,7 @@
 
 **Credentials**
 
-| | |
-|-|-|
+| Name | Description |
+|------|-------------|
 | Username | Username for logging in to the provider and updating the record. |
 | Password | Password for logging in to the provider and updating the record. |
