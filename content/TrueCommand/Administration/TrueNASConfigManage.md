@@ -11,14 +11,9 @@ Manual backups can be created as needed.
 
 ## Viewing Backups
 
-Viewing the current TrueNAS configuration backups can be accomplished by opening the overview page and clicking **Config Backups**. 
+Viewing the current TrueNAS configuration backups can be accomplished by opening the overview page and clicking **Config Backups**. This will open the Configuration Backup Window.
 
-<img src="/images/tc-1.3-alert-system.PNG">
-<br><br>
-
-This will open the Configuration Backup Window.
-
-<img src="/images/tn-config-management.PNG">
+<img src="/images/TrueCommand/1.3/DashboardSystemConfigManagement.png">
 <br><br>
 
 The list of backups will be shown with the time and date of their creation.  
