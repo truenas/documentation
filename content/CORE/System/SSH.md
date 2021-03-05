@@ -8,48 +8,6 @@ weight: 120
 [Secure Socket Shell (SSH)](https://searchsecurity.techtarget.com/definition/Secure-Shell) is a network protocol that provides a secure method to access and transfer files between two hosts while using an unsecure network.
 SSH can use user account credentials to establish secure connections, but often uses key pairs shared between host systems for authentication.
 
-When TrueNAS is used as an SSH server, the users in the network must use [SSH client software](https://en.wikipedia.org/wiki/Comparison_of_SSH_clients) to transfer files with SSH.
-
-## Allowing SSH Access to TrueNAS
-
-Configuring and activating the SSH service is done on the **Services** page.
-
-![ServicesDefaults](/images/CORE/12.0/ServicesDefaults.png "System Services")
-
-To configure SSH, click the toggle to disable the service and open the configuration screen.
-
-![ServicesSSHOptions](/images/CORE/12.0/ServicesSSHOptions.png "SSH Service Options")
-
-Configure the options as needed to match your network environment.
-Remote systems could require *root* access to the system, but be sure all security precautions are in place before setting that option.
-There are some additional options recommendations for the SSH service:
-
-* Add *NoneEnabled no* to disable the insecure *none* cipher.
-* Increase the *ClientAliveInterval* if SSH connections tend to drop.
-* *ClientMaxStartup* defaults to *10*. Increase this value when more concurrent SSH connections are required.
-
-Don't forget to re-enable the SSH service on the **Services** page when all configuration changes are complete.
-
-{{< expand "Advanced: Restricting Command Line Users to scp or sftp" "v" >}}
-This only works for users that use command line versions of *scp* and *sftp*.
-When SSH is configured, authenticated users with a user account can use *ssh* to log into the TrueNAS system over the network.
-User accounts are created by going to **Accounts > Users** and clicking *ADD*.
-
-By default, the user sees their home directory after logging in with SSH.
-However, the user can still find system locations outside their home directory, so take security precautions before granting users SSH access to the system.
-One method to increase security is to change a user's shell to only allow file transfers.
-This allows users to use *scp* and *sftp* to transfer files between their local computer and their home directory on the TrueNAS system while restricting them from logging into the system using *ssh*.
-
-To configure this scenario, go to **Accounts > Users** and edit the desired user account.
-Change the *Shell* to *scponly*.
-Repeat for each user that needs restricted SSH access.
-
-![Accounts Users Edit Shell Scp only](/images/CORE/12.0/AccountsUsersEditShellScponly.png "Accounts Users Edit Shell Scp only")
-
-Test the configuration from another system by running the *sftp*, *ssh*, and *scp* commands as that user account.
-*sftp* and *scp* will work but *ssh* will fail.
-{{< /expand >}}
-
 ## Creating an SSH Keypair
 
 TrueNAS generates and stores [RSA-encrypted](https://tools.ietf.org/html/rfc8017) SSH public and private keypairs in **System > SSH Keypairs**.

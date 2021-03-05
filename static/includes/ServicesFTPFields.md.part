@@ -1,7 +1,7 @@
 **General Options**
 
-| | |
-|-|-|
+| Name | Description |
+|------|-------------|
 | Port | Set the port the FTP service listens on. |
 | Clients | The maximum number of simultaneous clients. |
 | Connections | Set the maximum number of connections per IP address. 0 means unlimited. |
@@ -11,20 +11,21 @@
 
 **Advanced**
 
-| | |
-|-|-|
-| Access | When set, a local user is only allowed access to their home directory if they are a member of the wheel group. |
-| Always Chroot | Setting this option is discouraged as it increases security risk. |
-| Allow Root Login | Allow anonymous FTP logins with access to the directory specified in Path. |
-| Allow Anonymous Login | Allow any local user to log in. By default, only members of the ftp group are allowed to log in. |
-| Allow Local User Login | Setting this option will result in timeouts if identd is not running on the client. |
+**Access**
+
+| Name | Description |
+|------|-------------|
+| Always Chroot | When set, a local user is only allowed access to their home directory if they are a member of the wheel group. Setting this option is discouraged as it increases security risk. |
+| Allow Root Login | Allow anonymous FTP logins with access to the directory specified in *Path*. |
+| Allow Anonymous Login | Allow any local user to log in. By default, only members of the *ftp* group are allowed to log in. |
+| Allow Local User Login | Setting this option results in timeouts when `identd` is not running on the client. |
 | Require IDENT Authentication | Sets default permissions for newly created files. |
-| File Permissionshelp_outline | Sets default permissions for newly created directories. |
+| File Permissions | Sets default permissions for newly created directories. |
 
 **TLS**
 
-| | |
-|-|-|
+| Name | Description |
+|------|-------------|
 | Enable TLS | Allow encrypted connections. Requires a certificate created or imported with the System > Certificates menu. |
 | TLS Policy | Define whether the control channel, data channel, both channels, or neither channel of an FTP session must occur over SSL/TLS. The policies are described [here](http://www.proftpd.org/docs/directives/linked/config_ref_TLSRequired.html). |
 | TLS Allow Client Renegotiations | Setting this option is not recommended as it breaks several security measures. Refer to [mod_tls](http://www.proftpd.org/docs/contrib/mod_tls.html) for more details. |
@@ -42,8 +43,8 @@
 
 **Bandwidth**
 
-| | |
-|-|-|
+| Name | Description |
+|------|-------------|
 | Local User Upload Bandwidth: (Examples: 500 KiB, 500M, 2 TB) * | In KiBs or greater. A default of 0 KiB means unlimited. This field accepts human-readable input (Ex. 50 GiB, 500M, 2 TB). If units are not specified, the value defaults to KiB. |
 | Local User Download Bandwidth * | In KiBs or greater. A default of 0 KiB means unlimited. This field accepts human-readable input (Ex. 50 GiB, 500M, 2 TB). If units are not specified, the value defaults to KiB. |
 | Anonymous User Upload Bandwidth * | In KiBs or greater. A default of 0 KiB means unlimited. This field accepts human-readable input (Ex. 50 GiB, 500M, 2 TB). If units are not specified, the value defaults to KiB. |
@@ -51,8 +52,8 @@
 
 **Other Options**
 
-| | |
-|-|-|
+| Name | Description |
+|------|-------------|
 | Minimum Passive Port * | Used by clients in PASV mode. A default of 0 means any port above 1023. |
 | Maximum Passive Port * | Used by clients in PASV mode. A default of 0 means any port above 1023. |
 | Enable FXP | Set to enable the File eXchange Protocol. This option makes the server vulnerable to FTP bounce attacks so it is not recommended. |
