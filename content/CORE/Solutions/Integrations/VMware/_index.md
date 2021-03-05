@@ -1,5 +1,5 @@
 ---
-title: "VMware®"
+title: "VMware"
 geekdocCollapseSection: true
 weight: 50
 ---
