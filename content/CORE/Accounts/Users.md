@@ -108,7 +108,3 @@ By default, *Samba Authentication* is enabled.
 This allows using the account credentials to access data shared with [SMB](/core/sharing/smb/smbshare/).
 {{< /tab >}}
 {{< /tabs >}}
-
-{{< expand "UI Field Reference" "v" >}}
-{{< include file="static/includes/AccountsUsersAddFields.md.part" >}}
-{{< /expand >}}
