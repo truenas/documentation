@@ -44,7 +44,7 @@ Go to **Storage > Snapshots** to manage created snapshots.
 ![StorageSnapshots](/images/CORE/12.0/StorageSnapshots.png "List of Created Snapshots")
 
 Each entry in the list includes the dataset and snapshot names.
-Click <i class="fa fa-chevron-right" aria-hidden="true" title="Right Chevron"></i> (Expand) to view options for a snapshot:
+Click <i class="fa fa-chevron-right" aria-hidden="true" title="Right Chevron"></i>&nbsp; (Expand) to view options for a snapshot:
 
 {{< tabs "Snapshot Options" >}}
 {{< tab "DATE CREATED" >}}
