@@ -1,0 +1,27 @@
+**What and Where**
+
+| | |
+|-|-|
+| Load Previous Replication Task | Use settings from a saved replication. |
+|-|-|
+| Source Location | Storage location for the original snapshots that will be replicated. |
+| Destination Location | Storage location for the replicated snapshots. |
+| Task Name | Name of this replication configuration. |
+
+**Source Location: On this System**
+
+| | |
+|-|-|
+| Source | Define the path to a system location that has snapshots to replicate. Click the folder to see all locations on the source system or click in the field to manually type a location (Example: pool1/dataset1). Multiple source locations can be selected or manually defined with a comma (,) separator.  Selecting a location displays the number of existing snapshots that can be replicated. Selecting a location that has no snapshots configures the replication task to take a manual snapshot of that location and replicate it to the destination. |
+| Recursive | Set to also replicate all snapshots contained within the selected source dataset snapshots. Unset to only replicate the selected dataset snapshots. |
+| Replicate Custom Snapshots | Replicate snapshots that have not been created by an automated snapshot task. Requires setting a naming schema for the custom snapshots. |
+| Naming Schema | Pattern of naming custom snapshots to be replicated. Enter the name and [strftime(3)](https://www.freebsd.org/cgi/man.cgi?query=strftime) {0}, {1}, {2}, {3}, and {4} strings that match the snapshots to include in the replication. Separate entries by pressing Enter. The number of snapshots matching the patterns are shown. |
+
+**Destination Location: On a Different System**
+
+| | |
+|-|-|
+| SSH Connections | Select a saved remote system SSH connection or choose Create New to create a new SSH connection. |
+| Destination | Define the path to a system location that will store replicated snapshots. Click the folder to see all locations on the destination system or click in the field to manually type a location path (Example: pool1/dataset1). Selecting a location defines the full path to that location as the destination. Appending a name to the path will create new zvol at that location. For example, selecting pool1/dataset1 will store snapshots in dataset1, but clicking the path and typing /zvol1 after dataset1 will create zvol1 for snapshot storage. |
+| Encryption | Set to use encryption when replicating data. Additional encryption options will appear. |
+| SSH Transfer Security | Data transfer security. The connection is authenticated with SSH. Data can be encrypted during transfer for security or left unencrypted to maximize transfer speed. Encryption is recommended, but can be disabled for increased speed on secure networks. |

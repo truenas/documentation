@@ -47,7 +47,7 @@ To begin advertising the AFP shared location, go to **Services** and toggle *AFP
 To automatically start the service after TrueNAS boots, set *Start Automatically*.
 
 It is recommended to use the default settings for the AFP service.
-However, to adjust the service settings, click <i class="fa fa-pen" aria-hidden="true" title="Configure"></i>.
+However, to adjust the service settings, click <i class="fa fa-pencil" aria-hidden="true" title="Configure"></i>.
 
 ![Services AFP Edit](/images/CORE/12.0/ServicesAFPEdit.png "Services AFP Edit")
 

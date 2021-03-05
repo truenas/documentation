@@ -1,0 +1,64 @@
+**General Options**
+
+| Name | Description |
+|------|-------------|
+| Port | Set the port the FTP service listens on. |
+| Clients | The maximum number of simultaneous clients. |
+| Connections | Set the maximum number of connections per IP address. 0 means unlimited. |
+| Login Attempts | Enter the maximum number of attempts before client is disconnected. Increase this if users are prone to typos. |
+| Timeout | Maximum client idle time in seconds before client is disconnected. |
+| Certificate | The SSL certificate to be used for TLS FTP connections. To create a certificate, use System --> Certificates. |
+
+**Advanced**
+
+**Access**
+
+| Name | Description |
+|------|-------------|
+| Always Chroot | When set, a local user is only allowed access to their home directory if they are a member of the wheel group. Setting this option is discouraged as it increases security risk. |
+| Allow Root Login | Allow anonymous FTP logins with access to the directory specified in *Path*. |
+| Allow Anonymous Login | Allow any local user to log in. By default, only members of the *ftp* group are allowed to log in. |
+| Allow Local User Login | Setting this option results in timeouts when `identd` is not running on the client. |
+| Require IDENT Authentication | Sets default permissions for newly created files. |
+| File Permissions | Sets default permissions for newly created directories. |
+
+**TLS**
+
+| Name | Description |
+|------|-------------|
+| Enable TLS | Allow encrypted connections. Requires a certificate created or imported with the System > Certificates menu. |
+| TLS Policy | Define whether the control channel, data channel, both channels, or neither channel of an FTP session must occur over SSL/TLS. The policies are described [here](http://www.proftpd.org/docs/directives/linked/config_ref_TLSRequired.html). |
+| TLS Allow Client Renegotiations | Setting this option is not recommended as it breaks several security measures. Refer to [mod_tls](http://www.proftpd.org/docs/contrib/mod_tls.html) for more details. |
+| TLS Allow Dot Login | If set, the user home directory is checked for a .tlslogin file which contains one or more PEM-encoded certificates. If not found, the user is prompted for password authentication. |
+| TLS Allow Per User | If set, the password of the user can be sent unencrypted. |
+| TLS Common Name Required | When set, the common name in the certificate must match the FQDN of the host. |
+| TLS Enable Diagnostics | If set when troubleshooting a connection, logs more verbosely. |
+| TLS Export Certificate Data | Set to export the certificate environment variables. |
+| TLS No Certificate Request | Set if the client cannot connect, and it is suspected the client is poorly handling the server certificate request. |
+| TLS No Empty Fragments | Enabling this option is not recommended as it bypasses a security mechanism. |
+| TLS No Session Reuse Required | Setting this option reduces the security of the connection, so only use it if the client does not understand reused SSL sessions. |
+| TLS Export Standard Vars | If selected, sets several environment variables. |
+| TLS DNS Name Required | If set, the DNS name of the client must resolve to its IP address and the cert must contain the same DNS name. |
+| TLS IP Address Required | If set, the client certificate must contain the IP address that matches the IP address of the client. |
+
+**Bandwidth**
+
+| Name | Description |
+|------|-------------|
+| Local User Upload Bandwidth: (Examples: 500 KiB, 500M, 2 TB) * | In KiBs or greater. A default of 0 KiB means unlimited. This field accepts human-readable input (Ex. 50 GiB, 500M, 2 TB). If units are not specified, the value defaults to KiB. |
+| Local User Download Bandwidth * | In KiBs or greater. A default of 0 KiB means unlimited. This field accepts human-readable input (Ex. 50 GiB, 500M, 2 TB). If units are not specified, the value defaults to KiB. |
+| Anonymous User Upload Bandwidth * | In KiBs or greater. A default of 0 KiB means unlimited. This field accepts human-readable input (Ex. 50 GiB, 500M, 2 TB). If units are not specified, the value defaults to KiB. |
+| Anonymous User Download Bandwidth * | In KiBs or greater. A default of 0 KiB means unlimited. This field accepts human-readable input (Ex. 50 GiB, 500M, 2 TB). If units are not specified, the value defaults to KiB. |
+
+**Other Options**
+
+| Name | Description |
+|------|-------------|
+| Minimum Passive Port * | Used by clients in PASV mode. A default of 0 means any port above 1023. |
+| Maximum Passive Port * | Used by clients in PASV mode. A default of 0 means any port above 1023. |
+| Enable FXP | Set to enable the File eXchange Protocol. This option makes the server vulnerable to FTP bounce attacks so it is not recommended. |
+| Allow Transfer Resumption | Set to allow FTP clients to resume interrupted transfers. |
+| Perform Reverse DNS Lookups | Set to perform reverse DNS lookups on client IPs. This can cause long delays if reverse DNS is not configured. |
+| Masquerade Address | Public IP address or hostname. Set if FTP clients cannot connect through a NAT device. |
+| Display Login | Specify the message displayed to local login users after authentication. Not displayed to anonymous login users. |
+| Auxiliary Parameters | Used to add additional [proftpd(8](https://linux.die.net/man/8/proftpd) parameters. |
