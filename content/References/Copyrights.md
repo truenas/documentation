@@ -3,9 +3,10 @@ title: "Copyrights and Trademarks"
 weight: 1
 ---
 
-FreeNAS®, the FreeNAS® logo, TrueNAS®, and the TrueNAS® logo are registered trademarks of iXsystems.
+FreeNAS®, TrueNAS®, TrueNAS® SCALE, and TrueCommand are registered trademarks of iXsystems. 
+Likewise, the logos for the aforementioned products are also registered trademarks of iXsystems.
 
-The following trademarks and copyrights are owned by their respective Companies and/or Foundations.
+#### The following trademarks and copyrights are owned by their respective Companies and/or Foundations.
 
 FreeBSD® is a registered trademark of the FreeBSD Foundation
 
