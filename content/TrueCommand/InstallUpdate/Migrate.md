@@ -1,8 +1,6 @@
 ---
-title: "Migrating Legacy TrueCommand to Version 1.2 and Newer"
-linkTitle: "Migrating to the 1.2 Docker Container"
-description: "How to migrate legacy versions of TrueCommand to the Docker container version introduced in version 1.2."
-tags: ["TrueCommand Docker", "TrueCommand"]
+title: "Migrate Legacy to 1.2+"
+weight: 40
 ---
 
 Starting with TrueCommand 1.2, TrueCommand is built and offered as a Docker container to drastically reduce system overhead and simplify TrueCommand updates.

@@ -1,8 +1,6 @@
 ---
-title: "TrueCommand VM Installation"
-description: "Installing TrueCommand in a Virtual Machine" 
-tags: ["TrueCommand"]
-weight: 30
+title: "VM"
+weight: 20
 ---
 
 TrueCommand is typically installed and managed using a Docker container.

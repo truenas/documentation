@@ -1,9 +1,6 @@
 ---
-title: "Installing and Accessing the TrueCommand Interface"
-linkTitle: "Installing TrueCommand"
-description: "How to install TrueCommand and access the web interface for the first time."
-tags: ["TrueCommand Docker", "TrueCommand"]
-weight: 20
+title: "Docker"
+weight: 15
 ---
 
 ## Installing the TrueCommand Container
