@@ -23,7 +23,7 @@ In this example, VMware Workstation Player on Windows is being used.
 When VMware Player is open, click **Create a New Virtual Machine**
 
 ![VMware Installer Start](/images/CORE/12.0/VMwareInstallerStart.png "VMware Installer Start")
-<br><br>
+
 
 Select **I will install the operating system later** and click **Next**.
 Select *Linux* as the guest operating system and *Debian 10.x 64-bit* as the version.
@@ -37,13 +37,13 @@ Click **Next**.
 Review the settings for the virtual machine and click **Finish**.
 
 ![Vmware Installer VM Create](/images/CORE/12.0/VmwareInstallerVMCreate.png "Vmware Installer VM Create")
-<br><br>
+
 
 Now that the virtual machine has been created, we need to add our TrueCommand virtual image to the machine.
 Select the virtual machine from the list and click **Edit virtual machine settings**.
 
 ![VMware Installer VM Create Summary](/images/CORE/12.0/VMwareInstallerVMCreateSummary.png "VMware Installer VM Create Summary")
-<br><br>
+
 
 Next, click **Add…**.
 The TrueCommand file downloaded earlier is a virtual hard disk.
