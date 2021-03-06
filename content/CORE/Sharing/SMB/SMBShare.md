@@ -144,7 +144,7 @@ You can also choose to enable the SMB service at this time.
 
 ## Share Management
 
-After the SMB share is created, additional management options are available by going to **Sharing > Windows Shares (SMB)** and clicking <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; for a share entry:
+After the SMB share is created, additional management options are available by going to **Sharing > Windows Shares (SMB)** and clicking <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> for a share entry:
 
 * **Edit**: Opens the [share creation screen](#creating-the-smb-share) to reconfigure the share or disable it.
 * **Edit Share ACL**: Opens a screen to configure an Access Control List (ACL) for the share. This is separate from filesystem permissions, and applies at the level of the entire SMB share. Permissions defined here are not interpreted by clients of other filesharing protocols or other SMB shares that export the same share *Path*. The default is open. This ACL is used to determine the browse list if *Access Based Share Enumeration* is enabled.
@@ -222,7 +222,7 @@ If you want the service to activate whenever TrueNAS boots, set *Start Automatic
 
 ### Service Configuration
 
-The SMB service is configured by clicking <i class="fa fa-pen" aria-hidden="true" title="Pen"></i>.
+The SMB service is configured by clicking <i class="fa fa-pencil" aria-hidden="true" title="Pencil"></i>.
 Unless a specific setting is needed or configuring for a specific network environment, it is recommended to use the default settings for the SMB service.
 
 ![SMBServiceOptions](/images/CORE/12.0/ServicesSMBOptions.png "SMB Service Options")
