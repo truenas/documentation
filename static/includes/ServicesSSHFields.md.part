@@ -1,0 +1,20 @@
+**General Options**
+
+| Name | Description |
+|------|-------------|
+| TCP Port | Open a port for SSH connection requests. |
+| Log in as Root with Password | Root logins are discouraged. Allows root logins. A password must be set for the root user account. |
+| Allow Password Authentication | Enabling allows using a password to authenticate the SSH login. Warning: when directory services are enabled, allowing password authentication can grant access to all users imported by the directory service.<br><br> Disabling changes authentication to require keys for all users. This requires additional setup on both the SSH client and server. |
+| Allow Kerberos Authentication | Ensure valid entries exist in Directory Services > Kerberos Realms and Directory Services > Kerberos Keytabs and the system can communicate with the Kerberos Domain Controller before enabling this option. |
+| Allow TCP Port Forwarding | Set to allow users to bypass firewall restrictions using the SSH port [forwarding feature](https://www.symantec.com/connect/articles/ssh-port-forwarding). |
+
+**Advanced Options**
+
+| Name | Description |
+|------|-------------|
+| Bind Interfaces | Select interfaces for SSH to listen on. Leave all options unselected for SSH to listen on all interfaces. |
+| Compress Connections | Select the [syslog(3)](https://www.freebsd.org/cgi/man.cgi?query=syslog) level of the SFTP server. |
+| SFTP Log Level | Select the [syslog(3)](https://www.freebsd.org/cgi/man.cgi?query=syslog) facility of the SFTP server. |
+| SFTP Log Facility | Allow more ciphers for [sshd(8)](https://www.freebsd.org/cgi/man.cgi?query=sshd) in addition to the defaults in [sshd_config(5)](https://www.freebsd.org/cgi/man.cgi?query=sshd_config). None allows unencrypted SSH connections and AES128-CBC allows the 128-bit [Advanced Encryption Standard](https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.197.pdf). |
+| Weak Ciphers | WARNING: these ciphers are considered security vulnerabilities and should only be allowed in a secure network environment. |
+| Auxiliary Parameters | Add any more [sshd_config(5)](https://www.freebsd.org/cgi/man.cgi?query=sshd_config) options not covered in this screen. Enter one option per line. These options are case-sensitive. Misspellings can prevent the SSH service from starting. |

@@ -1,5 +1,6 @@
 ---
-title: "FreeNAS Mini Generation 2.0"
+title: "FreeNAS Mini Gen 2.0"
+weight: 22
 ---
 
 ## FreeNAS Mini 2.0 EOL Announcement (February 2020)

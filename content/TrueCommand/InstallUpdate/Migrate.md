@@ -1,8 +1,6 @@
 ---
-title: "Migrating Legacy TrueCommand to Version 1.2 and Newer"
-linkTitle: "Migrating to the 1.2 Docker Container"
-description: "How to migrate legacy versions of TrueCommand to the Docker container version introduced in version 1.2."
-tags: ["TrueCommand Docker", "TrueCommand"]
+title: "Migrate Legacy to 1.2+"
+weight: 40
 ---
 
 Starting with TrueCommand 1.2, TrueCommand is built and offered as a Docker container to drastically reduce system overhead and simplify TrueCommand updates.
@@ -21,9 +19,9 @@ Migrating data can be done before or after installing the Docker container versi
 
 ## Preparing an Existing Container for Migration
 
-{{% alert title="Overwrite Warning" color="warning" %}}
+{{< hint warning >}}
 Migrating the configuration from a previous version of TrueCommand will overwrite any existing configuration! Migrating the configuration before installing the Docker container is recommended, or as soon as possible after installing to prevent making and then losing any new configuration settings.
-{{% /alert %}}
+{{< /hint >}}
 
 Migrating a previous configuration into an existing TrueCommand Docker container installation requires wiping the existing database from the container and replacing with the `ixdb.sql` database from the previous version of TrueCommand.
 Make sure the container is turned off.

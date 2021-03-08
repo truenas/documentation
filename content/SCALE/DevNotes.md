@@ -1,11 +1,15 @@
 ---
 title: "Developer's Notes"
-description: "Running updates about TrueNAS SCALE Nightly status and current issues."
-tags: ["SCALE"]
 weight: 2
 ---
 
+{{< toc >}}
+
 {{< expand "Update Log" >}}
+
+> 02/04/2021 - Rounding out the last set of feature to merge for the release of 21.02, support for dynamic charts and managing additional catalog repos has merged.
+
+> 01/29/2021 - First early look at the new TrueNAS CLI has been merged into SCALE Nightly images. To launch, run `cli` from the shell.
 
 > 01/16/2021 - Updated Debian base image, SCALE now includes Kernel 5.10 as well as updates to all other base packages
 
@@ -15,11 +19,11 @@ weight: 2
 
 > 10/29/2020 - Updated [Kubernetes Workload Usage](#using-kubernetes) information, providing examples of deploying Docker images on SCALE
 
-> 10/14/2020 - Updated [Roadmap / Information](#containerisation) about Kubernetes and Linux container support in SCALE
+> 10/14/2020 - Updated [Roadmap / Information](#containerization) about Kubernetes and Linux container support in SCALE
 
 > 9/25/2020 - Samba 4.13.0 added - Includes iX VFS modules, Shadow Copies, and IO_URING support (Enabled by default)
 
-> 9/24/2020 - Preliminary support for Kubernetes added to middleware backend! - [Usage Instructions](#containerisation)
+> 9/24/2020 - Preliminary support for Kubernetes added to middleware backend! - [Usage Instructions](#containerization)
 
 > 9/21/2020 - UX Refresh - New Networking section added
 
@@ -40,9 +44,9 @@ weight: 2
 
 ## System Requirements
 
-- Any x86_64 compatible (Intel or AMD) processor
-- 8GB of RAM (More is better)
-- 20GB Boot Device
+* Any x86_64 compatible (Intel or AMD) processor
+* 8GB of RAM (More is better)
+* 20GB Boot Device
 
 ## Nightly Status
 
@@ -59,31 +63,31 @@ They should be suitable for very adventurous users and developers who are not af
 
 **Fully Functional in the UI:**
 
-- Pool creation
-- Pool Management
-- SMB Shares
-- iSCSI Shares
-- AFP Shares
-- NFS Shares
-- S3 Shares
-- AD / LDAP Directory Services
-- Online / Offline updating
-- Virtual Machines (Using KVM)
-- WebDAV
-- Monitoring, Alerting and Reporting
-- Docker Image / Apps Menus
+* Pool creation
+* Pool Management
+* SMB Shares
+* iSCSI Shares
+* AFP Shares
+* NFS Shares
+* S3 Shares
+* AD / LDAP Directory Services
+* Online / Offline updating
+* Virtual Machines (Using KVM)
+* WebDAV
+* Monitoring, Alerting and Reporting
+* Docker Image / Apps Menus
 
 **Currently Supported in the CLI**
 
-- Docker with NVIDIA / Intel Quicksync --gpu passthrough flags
-- Gluster
-- Wireguard
+* Docker with NVIDIA / Intel Quicksync --gpu passthrough flags
+* Gluster
+* Wireguard
 
 **TODO**
 
-- Posix NFSv4 ACLs
-- Clustered Datasets API support for TrueCommand
-- TrueCommand Clustering UI for SCALE
+* Posix NFSv4 ACLs
+* Clustered Datasets API support for TrueCommand
+* TrueCommand Clustering UI for SCALE
 
 ## Virtual Machines
 
@@ -91,8 +95,8 @@ They should be suitable for very adventurous users and developers who are not af
 
 In order to use PCI passthrough devices with VMs, follow these steps to have PCI devices show up in UI when it is time to create a PCI device to attach to a VM.
 
-1. In the CLI, identify the PCI device to use for passthrough with `virsh nodedev-list pci`.
-2. When the PCI address has been identified, make sure the host OS is not using the device anywhere else (i.e pools). When you're sure the device is not being used, execute `virsh nodedev-detach pci_0000_26_00_0`, where `pci_0000_26_00_0` is the name of the PCI device.
+1. In the CLI, identify the PCI device to use for passthrough with `virsh -c "qemu+unix:///system?socket=/run/truenas_libvirt/libvirt-sock" nodedev-list pci`.
+2. When the PCI address has been identified, make sure the host OS is not using the device anywhere else (i.e pools). When you're sure the device is not being used, execute `virsh -c "qemu+unix:///system?socket=/run/truenas_libvirt/libvirt-sock" nodedev-detach pci_0000_26_00_0`, where `pci_0000_26_00_0` is the name of the PCI device.
 3. Step (2) detaches the PCI device from the host. It can now be used with a VM guest by adding a PCI device to a VM using the UI.
 
 Follow the above steps when there is already 1 VM created with the UI.
@@ -203,7 +207,7 @@ To pull latest version of a container image:
 midclt call -job docker.images.pull '{"from_image": "plexinc/pms-docker", "tag": "latest"}'
 ```
 
-To redeploy a chart release, I.E. after pulling a newer container image:
+To redeploy a chart release, i.e. after pulling a newer container image:
 
 ```
 midclt call -job chart.release.redeploy plex
@@ -222,7 +226,7 @@ export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
 
 Setting `KUBECONFIG` is required for using helm and the `kubectl` alias helps use `kubectl` directly instead of prefixing it with `k3s` each time.
 
-{{< hint danger >}}
-Support for Kubernetes is still considered experimental, so please use it at your own risk.
-If you find any bugs, please create tickets at https://jira.ixsystems.com.
+{{< hint danger >}}	> Caution: Support for Kubernetes is still considered experimental, so please use it at your own risk. If you find any bugs, please create tickets at https://jira.ixsystems.com.
+Support for Kubernetes is still considered experimental, so please use it at your own risk.	
+If you find any bugs, please create tickets at https://jira.ixsystems.com.	## Using Applications
 {{< /hint >}}
