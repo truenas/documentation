@@ -61,7 +61,7 @@
     },
     {
       "pattern": "\/content/images/",
-      "replacement": "/static/images/"
+      "replacement": "/images/"
     }
   ]
 }
