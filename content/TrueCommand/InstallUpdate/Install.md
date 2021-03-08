@@ -113,12 +113,6 @@ Click on the **New System** alert, fill in the information from the TrueNAS syst
 
 It can take 10 to 15 minutes for the TrueNAS instance to fully sync up with TrueCommand Cloud.
 When all systems are connected to TrueCommand Cloud, refer to the [TrueCommand Administration articles](/TrueCommand/Administration/) for more instructions about setting up configuration backups, alerts, reports, and role-based access control.
-
-## Support
-
-If any issues are found when using TrueCommand Cloud or an iX Portal account, log in to the Portal Account and click *Manage* > *Request Support*.
-Fill out the *Request Support* form with specific details and screenshots of the issue and click *Send Request*.
-A copy of the support request is emailed to the registered email account.
 {{< /tab >}}
 {{< tab "Docker (Linux)" >}}
 ## Installing the TrueCommand Container
@@ -268,20 +262,8 @@ Click *RUN* after configuring the settings.
 
 When Docker Desktop shows the container status as **RUNNING**, open a new browser tab and go to `https://127.0.0.1:9005`.
 
-![Docker Desktop TrueCommand Running](/images/TrueCommand/DockerDesktopTrueCommandRunning.png "Docker Desktop TrueCommand Running")
+![DockerDesktopTrueCommandRunning](/images/TrueCommand/DockerDesktopTrueCommandRunning.png "TrueCommand Container is running")
 
-
-Because TrueCommand uses a self-signed certificate, the certificate must be manually authorized before the TrueCommand web interface can be accessed:
-
-![TrueCommand Browser Error](/images/TrueCommand/TrueCommandBrowserError.png "TrueCommandBrowserError")
-
-
-The initial TrueCommand screen requires creating an administrator account before logging in.  
-![TrueCommand Browser Setup Admin Login](/images/TrueCommand/TrueCommandBrowserSetupAdminLogin.png "TrueCommand Browser Setup Admin Login")
-
-After creating the account the login screen refreshes and you can log in with the account credentials that were just created.
-TrueCommand can now be configured and begin to be used.
-See the remaining [TrueCommand Administration articles](/TrueCommand/Administration/) for specific usage guides.
 {{< /tab >}}
 {{< tab "Virtual Machine" >}}
 TrueCommand has both VMDK and VHDX files for virtual machine installs available from http://pkg.truecommand.io/.
@@ -301,47 +283,43 @@ In this example, VMware Workstation Player on Windows is being used.
 
 When VMware Player is open, click **Create a New Virtual Machine**
 
-![VMware Installer Start](/images/TrueCommand/VMwareInstallerStart.png "VMware Installer Start")
+![VMwareInstallerStart](/images/TrueCommand/VMwareInstallerStart.png "VMware: Create VM")
 
-
-Select **I will install the operating system later** and click **Next**.
+Select *I will install the operating system later* and click *Next*.
 Select *Linux* as the guest operating system and *Debian 10.x 64-bit* as the version.
-Click **Next**.
+Click *Next*.
 
 The virtual machine can be given a name and the location can be selected.
-To keep the default values, click **Next**.
-Enter the maximum size of the disk to be used for storage and set **Store virtual disk as a single file**.
+To keep the default values, click *Next*.
+Enter the maximum size of the disk to be used for storage and set *Store virtual disk as a single file*.
 The recommended disk size is at least *20GB*.
-Click **Next**.
-Review the settings for the virtual machine and click **Finish**.
+Click *Next*.
+Review the settings for the virtual machine and click *Finish*.
 
-![Vmware Installer VM Create](/images/TrueCommand/VmwareInstallerVMCreate.png "Vmware Installer VM Create")
+![VmwareInstallerVMCreate](/images/TrueCommand/VmwareInstallerVMCreate.png "VMware: TrueCommand VM Settings")
 
+Now that the virtual machine is created, we need to add our TrueCommand virtual image to the machine.
+Select the virtual machine from the list and click *Edit virtual machine settings*.
 
-Now that the virtual machine has been created, we need to add our TrueCommand virtual image to the machine.
-Select the virtual machine from the list and click **Edit virtual machine settings**.
+![VMwareInstallerVMCreateSummary](/images/TrueCommand/VMwareInstallerVMCreateSummary.png "VMware: TrueCommand VM Summary")
 
-![VMware Installer VM Create Summary](/images/TrueCommand/VMwareInstallerVMCreateSummary.png "VMware Installer VM Create Summary")
-
-
-Next, click **Add…**.
+Next, click *Add…*.
 The TrueCommand file downloaded earlier is a virtual hard disk.
-Select *Hard Disk* from the list of options and click **Next**.
-Select *SCSI* and click **Next**.
-Ensure that **Use an existing virtual disk** is set and click **Next**.
+Select *Hard Disk* from the list of options and click *Next*.
+Select *SCSI* and click *Next*.
+Ensure that *Use an existing virtual disk* is set and click *Next*.
 
 It then prompts to select an existing virtual disk from the host system.
-Click **Browse…** and select the TrueCommand virtual disk (`.vmdk` file) that was downloaded earlier.
-Click **Finish**.
-If VMware player prompts to convert the virtual disk to a new format, click **Keep Existing Format**.
+Click *Browse…* and select the TrueCommand virtual disk (<file>.vmdk</file> file) that was downloaded earlier.
+Click *Finish*.
+If VMware player prompts to convert the virtual disk to a new format, click *Keep Existing Format*.
 
 The final step is to remove the initial hard disk that was created when the virtual machine was created.
-Select the virtual machine from the list and click **Edit virtual machine settings**.
-Select the first hard disk and click **Remove**.
+Select the virtual machine from the list and click *Edit virtual machine settings*.
+Select the first hard disk and click *Remove*.
 
 The TrueCommand virtual machine is now ready to be used.
-To boot the TrueCommand virtual machine, select it from the list of virtual machines and click **Play virtual machine**.
-TrueCommand usage documentation is available on the TrueNAS Documentation Hub at https://www.truenas.com/docs/hub/truecommand/.
+To boot the TrueCommand virtual machine, select it from the list of virtual machines and click *Play virtual machine*.
 {{< /tab >}}
 {{< /tabs >}}
 
