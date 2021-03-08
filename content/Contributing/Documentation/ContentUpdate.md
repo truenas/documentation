@@ -102,3 +102,17 @@ When the build is completed, a comment will be added to the PR that says *All ch
 Click on **Show all checks** and **Details** to see a live demo of the site with your changes.
 
 ![PullRequestSummary](/images/Contribute/GitHubPullRequestSummary.png)
+
+### Editing an Include
+
+Some content in a document is added to the published material via an *include* statement.  An include statement is a section of documentation that has a single location in the Documentation Hub Repo, but can be applied in multiple places so that a single edit updates multiple documents.
+
+An example of this is in the [Cron Jobs](/CORE/Tasks/CronJobs) article.  The expandable *Advanced Scheduler* section is pulled from another file.  This include is also used in other articles.
+
+If you click the "Edit this Page" link to open the markdown you will see the following line:
+`{{< expand "Advanced Scheduler" "v" >}} {{< include file="static/includes/AdvancedScheduler.md.part" markdown="true" >}} {{< /expand >}}`
+
+The *expand* and */expand* code handles the expansion/collapse section of the document, inside that you will find our include statement:
+`{{< include file="static/includes/AdvancedScheduler.md.part" markdown="true" >}}`
+
+The file <file>/documentation/static/includes/AdvancedScheduler.md.part</file> contains the documenation for this section. To update this section, update the `.md.part` file with any required changes.  Keep in mind that this documentation block will be used in multiple documents, so be sure to not include any task specific comments.
