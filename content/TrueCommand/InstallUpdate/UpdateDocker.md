@@ -1,8 +1,6 @@
 ---
-title: "Updating a TrueCommand Docker Container"
-linkTitle: "Updating: Docker"
-description: "How to update TrueCommand within a Docker container."
-tags: ["TrueCommand Docker", "TrueCommand"]
+title: "Update Docker"
+weight: 30
 ---
 
 Updating TrueCommand installed in a Docker container requires stopping the existing container, obtaining the latest software image from the *ixsystems/truecommand* hub, and starting an updated container using the preexisting TrueCommand storage volume.
