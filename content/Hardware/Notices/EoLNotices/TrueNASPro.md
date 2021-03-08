@@ -1,5 +1,6 @@
 ---
 title: "TrueNAS Pro Family"
+weight: 30
 ---
 
 ## TrueNAS Pro Family EOL Announcement
