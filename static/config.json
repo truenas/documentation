@@ -58,7 +58,7 @@
     {
       "pattern": "^\/",
       "replacement": "{{BASEURL}}/content/"
-    }
+    },
     {
       "pattern": "\/content/images/",
       "replacement": "/images/"
