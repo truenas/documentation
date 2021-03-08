@@ -1,5 +1,6 @@
 ---
 title: "FreeNAS Certified"
+weight: 20
 ---
 
 ## FreeNAS Certified EOL Announcement (March 2021)
