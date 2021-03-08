@@ -57,7 +57,7 @@
     },
     {
       "pattern": "^\/",
-      "replacement": "{{BASEURL}}/content/en/"
+      "replacement": "{{BASEURL}}/content/"
     }
   ]
 }
