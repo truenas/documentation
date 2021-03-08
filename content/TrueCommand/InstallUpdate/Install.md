@@ -120,7 +120,7 @@ If any issues are found when using TrueCommand Cloud or an iX Portal account, lo
 Fill out the *Request Support* form with specific details and screenshots of the issue and click *Send Request*.
 A copy of the support request is emailed to the registered email account.
 {{< /tab >}}
-{{< tab "Docker" >}}
+{{< tab "Docker (Linux)" >}}
 ## Installing the TrueCommand Container
 
 {{< hint warning >}}
@@ -174,6 +174,115 @@ To access the web interface with standard SSL encryption, enter `https://hostsys
 When a connection to the web interface cannot be established, add the container ports as an exception to the host system firewall.
 {{< /expand >}}
 {{< /tab >}}
+{{< tab "Docker Desktop (Windows)" >}}
+The requirements to run TrueCommand in Docker Desktop for Windows are:
+
+* Windows 10 Enterprise, Pro, or Education editions.
+* 64-bit Processor with Second Level Address Translation (SLAT).
+* CPU support for VM Monitor Mode Extension (VT-c on Intel CPUs).
+* Hyper-V is enabled in Windows 10.
+* 4 GB memory at minimum.
+* [Docker Desktop](https://www.docker.com/products/docker-desktop) needs to be installed in Windows.
+
+### Enable Hyper-V
+
+To enable Hyper-V, click on Windows Start button and select or search for *Apps & Features*.
+Select *Programs and Features* under **Related settings** and *Turn Windows Features on or off* (Administrator action).
+Set the Hyper-V option and click *Ok*.
+ You will need to restart your restart your computer for the change to take effect.
+
+![EnableHyperV](/images/TrueCommand/EnableHyperV.png "Enable HyperV")
+
+Alternatively, Hyper-V can be enabled with the **Powershell**.
+To do this, run Powershell as a Windows Administrator and enter `Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All`.
+If an error is returned that says the command could not be found, verify that you are running PowerShell as the Administrator.
+After the command successfully runs, reboot the computer.
+
+![PowershellHyperVCLI](/images/TrueCommand/PowershellHyperVCLI.png "Powershell HyperV CLI")
+
+### Install Docker Desktop
+
+Open Docker Hub and click *[Get Docker](https://hub.docker.com/editions/community/docker-ce-desktop-windows/)*.
+
+![DownloadDockerDesktop](/images/TrueCommand/DownloadDockerDesktop.png "Download Docker Desktop")
+
+Run the installer after the download completes.
+When the installer is finished, reboot the system.
+
+{{< expand "Different Admin accounts?" "v" >}}
+If the admin account is different from your Windows user account, the user must be added to the `docker-users` group.
+Run *Computer Management* as an administrator and go to **Local Users and Groups > Groups > docker-users** to add the user to the group.
+Changes take effect after logging out and back in.
+{{< /expand >}}
+
+{{< expand "WSL 2 Install Incomplete?" "v" >}}
+If this error message appears after rebooting, install the Linux Kernel Update Package:
+
+![DockerDesktopError](/images/TrueCommand/DockerDesktopError.png "Docker Desktop Error")
+
+The update package is downloaded from a [Windows storage location](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi).
+
+![DockerDesktopInstallWSL](/images/TrueCommand/DockerDesktopInstallWSL.png "Docker Desktop Install WSL")
+
+Microsoft has additional documentation available for assistance with [downloading the Linux kernel update](https://docs.microsoft.com/en-us/windows/wsl/install-win10#step-4---download-the-linux-kernel-update-package).
+
+After installing the kernel update, set the WSL default version to `version 2` by opening the Powershell and entering `wsl --set-default-version 2`.
+
+![DockerDesktopSetWSLDefault](/images/TrueCommand/DockerDesktopSetWSLDefault.png "Docker Desktop Set WSL Default")
+
+The system must be rebooted after changing the default version.
+{{< /expand >}}
+
+## Installing the TrueCommand Docker Container
+
+Open the [Docker Hub](https://hub.docker.com) in a browser and search for `ixsystems/truecommand`.
+
+![DockerHubSearchResults](/images/TrueCommand/DockerHubSearchResults.png "Finding the TrueCommand Container")
+
+![DockerHubTrueCommand](/images/TrueCommand/DockerHubTrueCommand.png "TrueCommand Container details")
+
+Verify the pull command required and run it from a command line. Example: `docker pull ixsystems/truecommand:latest`.
+
+![DockerHubCLIInstallTrueCommand](/images/TrueCommand/DockerHubCLIInstallTrueCommand.png "CLI: Install TrueCommand Container")
+
+When the container is downloaded, open the Docker Desktop and select *Images*.
+Hover over the *ixsystems/truecommand* entry to show the **Run** button, then click it.
+
+![DockerDesktopImages](/images/TrueCommand/DockerDesktopImages.png "Docker Desktop: Starting the TrueCommand Container")
+
+Open the *Optional Settings* drop down menu, name the container, and set the following port values.
+Investigate your network environment or check with your IT department to ensure that these ports will not conflict with any other running services.
+
+* Local Host Port: `9005`
+* Container Port `443`
+
+Click the `+` sign to add a second set of ports.
+
+* Local Host Port `9004`
+* Container Port `80/tcp`
+
+![DockerDesktopTrueCommandConfig](/images/TrueCommand/DockerDesktopTrueCommandConfig.png "")
+
+Setting the **Volume** is not usually required for TrueCommand.
+Click *RUN* after configuring the settings.
+
+When Docker Desktop shows the container status as **RUNNING**, open a new browser tab and go to `https://127.0.0.1:9005`.
+
+![Docker Desktop TrueCommand Running](/images/TrueCommand/DockerDesktopTrueCommandRunning.png "Docker Desktop TrueCommand Running")
+
+
+Because TrueCommand uses a self-signed certificate, the certificate must be manually authorized before the TrueCommand web interface can be accessed:
+
+![TrueCommand Browser Error](/images/TrueCommand/TrueCommandBrowserError.png "TrueCommandBrowserError")
+
+
+The initial TrueCommand screen requires creating an administrator account before logging in.  
+![TrueCommand Browser Setup Admin Login](/images/TrueCommand/TrueCommandBrowserSetupAdminLogin.png "TrueCommand Browser Setup Admin Login")
+
+After creating the account the login screen refreshes and you can log in with the account credentials that were just created.
+TrueCommand can now be configured and begin to be used.
+See the remaining [TrueCommand Administration articles](/TrueCommand/Administration/) for specific usage guides.
+{{< /tab >}}
 {{< tab "Virtual Machine" >}}
 TrueCommand has both VMDK and VHDX files for virtual machine installs available from http://pkg.truecommand.io/.
 Most virtual machine applications, including VMware and VirtualBox, support TrueCommand VMDK files.
@@ -192,7 +301,7 @@ In this example, VMware Workstation Player on Windows is being used.
 
 When VMware Player is open, click **Create a New Virtual Machine**
 
-![VMware Installer Start](/images/CORE/12.0/VMwareInstallerStart.png "VMware Installer Start")
+![VMware Installer Start](/images/TrueCommand/VMwareInstallerStart.png "VMware Installer Start")
 
 
 Select **I will install the operating system later** and click **Next**.
@@ -206,13 +315,13 @@ The recommended disk size is at least *20GB*.
 Click **Next**.
 Review the settings for the virtual machine and click **Finish**.
 
-![Vmware Installer VM Create](/images/CORE/12.0/VmwareInstallerVMCreate.png "Vmware Installer VM Create")
+![Vmware Installer VM Create](/images/TrueCommand/VmwareInstallerVMCreate.png "Vmware Installer VM Create")
 
 
 Now that the virtual machine has been created, we need to add our TrueCommand virtual image to the machine.
 Select the virtual machine from the list and click **Edit virtual machine settings**.
 
-![VMware Installer VM Create Summary](/images/CORE/12.0/VMwareInstallerVMCreateSummary.png "VMware Installer VM Create Summary")
+![VMware Installer VM Create Summary](/images/TrueCommand/VMwareInstallerVMCreateSummary.png "VMware Installer VM Create Summary")
 
 
 Next, click **Add…**.
