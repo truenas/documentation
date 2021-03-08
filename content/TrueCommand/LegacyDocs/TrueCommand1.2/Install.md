@@ -1,9 +1,9 @@
 ---
-title: "Installing and Accessing the TrueCommand Interface"
-linkTitle: "Installing TrueCommand"
-description: "A how-to guide for installing TrueCommand and accessing the web interface for the first time."
+title: "Installing and Accessing TrueCommand"
 weight: 2
 ---
+
+{{< toc >}}
 
 ## Installing the TrueCommand Container
 
@@ -24,27 +24,16 @@ the image to mount to for storage. This can be done by running
 of choice for the new directory.
 
 After creating the new directory, fetch and run the TrueCommand Docker image.
-This is done in the Command Line Interface (CLI) by typing
-`docker run \--detach -v "/*hostdirectory*:/data" -p *portnumber*:80 -p
-*sslport*:443 ixsystems/truecommand:latest` where *hostdirectory* is a
-directory on the host machine that is used as the data directory for the Docker
-container, *portnumber* is the desired port number to access the web interface,
-and *sslportnumber* is the desired port number to securely access the web
-interface through SSL. Do not forget to use
-[Windows compatible syntax](https://docs.microsoft.com/en-us/dotnet/standard/io/file-path-formats)
-when specifying paths in the Windows file system. For example, if the created
-directory for the TrueCommand image was created in the *Documents* folder in the
-Windows file system, the docker command would look like:
-`docker run \--detach -v *driveLetter*:\Users\\*username*\\Documents\\*directoryName*`.
-In this command *driveLetter* is the letter associated with the drive that
-contains the new directory, *username* is the username of the current user, and
-*directoryName* is the name of the directory created for the TrueCommand image.
+This is done in the Command Line Interface (CLI) by typing `docker run \--detach -v "/*hostdirectory*:/data" -p *portnumber*:80 -p *sslport*:443 ixsystems/truecommand:latest`, where *hostdirectory* is a directory on the host machine that is used as the data directory for the Docker container, *portnumber* is the desired port number to access the web interface, and *sslportnumber* is the desired port number to securely access the web interface through SSL.
 
+Do not forget to use [Windows compatible syntax](https://docs.microsoft.com/en-us/dotnet/standard/io/file-path-formats) when specifying paths in the Windows file system.
+For example, if the created directory for the TrueCommand image was created in the *Documents* folder in the Windows file system, the docker command would look like `docker run \--detach -v *driveLetter*:\Users\\*username*\\Documents\\*directoryName*`.
+In this command, *driveLetter* is the letter associated with the drive that contains the new directory, *username* is the username of the current user, and *directoryName* is the name of the directory created for the TrueCommand image.
 
 Although there are different ways to run a Docker container, using `-v /*hostdirectory*:/data` is required for TrueCommand to function.
 
 {{< hint warning >}}
-Do not try to use the same `hostdirectory` for two different containers!
+Do not try to use the same *hostdirectory* for two different containers!
 This can result in file conflicts and database corruption.
 {{< /hint >}}
 
@@ -52,23 +41,18 @@ To install a container with a previous release of TrueCommand, replace `latest` 
 
 ## Accessing the TrueCommand Web Interface
 
-After fetching the TrueCommand Docker container, run `docker ps` to see details about running containers.
+After fetching the TrueCommand Docker container, enter `docker ps` to see details about running containers.
 
-![Docker Container List](/images/TrueCommand/DockerContainerList.png "Docker Container List")
-<br><br>
+![DockerContainerList](/images/TrueCommand/DockerContainerList.png "Docker Container List")
 
 Use the port assigned to the container to access the web interface.
 The list from `docker ps` contains a *PORTS* column.
 Find the port associated with the `ixsystems/truecommand:latest` *IMAGE*.
 The *PORTS* entry is listed as `0.0.0.0:port->80/tcp`, `0.0.0.0:sslport->443/tcp` where `port` and `sslport` are the ports specified earlier.
 
-To access the web interface with no encryption, enter
-`hostsystemIPaddress:port` in a browser address bar, where `hostsystemIPaddress`
-is the IP address of the host system that is running the TrueCommand Docker
-container. To access the web interface with standard SSL encryption, enter
-`https://hostsystemIPaddress:sslport` in a browser address bar.
-If a connection to the web interface cannot be established, add the container
-ports as an exception to the host system firewall.
+To access the web interface with no encryption, enter `hostsystemIPaddress:port` in a browser address bar, where `hostsystemIPaddress` is the IP address of the host system that is running the TrueCommand Docker container.
+To access the web interface with standard SSL encryption, enter `https://hostsystemIPaddress:sslport` in a browser address bar.
+If a connection to the web interface cannot be established, add the container ports as an exception to the host system firewall.
 
 ### Adding Browser Security Exceptions
 
@@ -81,24 +65,21 @@ The process of adding an exception is shown here for two different browsers, but
 
 Click **Advanced** to view information about the error code.
 
-![Firefox Warning](/images/TrueCommand/1.3/FirefoxWarning.png "Firefox Warning")
-<br><br>
+![FirefoxWarning](/images/TrueCommand/1.3/FirefoxWarning.png "Firefox Warning")
 
-Click **Add Exception...**.
-Set **Permanently store this exception** to keep the IP address or DNS hostname permanently stored in Firefox.
-Click **Confirm Security Exception**.
+Click *Add Exception...*.
+Set *Permanently store this exception* to keep the IP address or DNS hostname permanently stored in Firefox.
+Click *Confirm Security Exception*.
 
-![Firefox Exception Add](/images/TrueCommand/1.3/FirefoxExceptionAdd.png "Firefox Exception Add")
-<br><br>
+![FirefoxExceptionAdd](/images/TrueCommand/1.3/FirefoxExceptionAdd.png "Firefox Exception Add")
 
 #### Chrome
 
-Click **Advanced** to view information about the error code.
+Click *Advanced* to view information about the error code.
 
-Click **Proceed to *hostname* (unsafe)**.
+Click *Proceed to {hostname} (unsafe)*.
 
-![Chrome Warning](/images/TrueCommand/1.3/ChromeWarning.png "Chrome Warning")
-<br><br>
+![ChromeWarning](/images/TrueCommand/1.3/ChromeWarning.png "Chrome Warning")
 
 ## Creating the Administrator Account
 
@@ -108,13 +89,12 @@ Follow these steps to create a new admin user:
 
 * Log in using the default username (*admin*) and password (*admin*).
 
-![Login Admin](/images/TrueCommand/1.3/LoginAdmin.png "Login Admin")
-<br><br>
+![LoginAdmin](/images/TrueCommand/1.3/LoginAdmin.png "Login Admin")
 
 * Enter a username and password.
-  Read the Terms of Service, set **I have read and agree to the terms of service**, and click **SIGN UP**.
+  Read the Terms of Service, set *I have read and agree to the terms of service*, and click *SIGN UP*.
 
-<img src="/images/tc-sign-up.png">
-<br><br>
+![LoginSignUp](/images/TrueCommand/1.2/LoginSignUp.png "Creating the Admin Account")
+
 
 * The default login credentials are disabled and you can now log in to the TrueCommand web interface with the new administrator account credentials.
