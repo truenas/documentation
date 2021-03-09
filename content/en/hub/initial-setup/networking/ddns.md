@@ -9,7 +9,7 @@ With dynamic DNS, the system can automatically associate its current IP address 
 
 ## Configuring Dynamic DNS
 
-DDNS requires registration with a DDNS service such as [DynDNS](https://dyn.com/dns/) before configuring TrueNAS.
+DDNS requires registration with a DDNS service such as [DynDNS](https://account.dyn.com/) before configuring TrueNAS.
 It's recommended to have the DDNS service settings available or open in another browser tab when configuring TrueNAS.
 Log in to the TrueNAS web interface and go to **Services > Dynamic DNS**.
 
