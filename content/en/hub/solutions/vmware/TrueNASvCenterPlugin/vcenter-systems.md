@@ -1,7 +1,7 @@
 ---
 title: "Managing TrueNAS Hosts in vCenter"
 description: "How to add and configure TrueNAS hosts in vCenter."
-tags: ["VMware", "TrueNAS Enterprise"]
+tags: ["vmware"]
 weight: 30
 ---
 

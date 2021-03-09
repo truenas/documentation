@@ -1,7 +1,7 @@
 ---
 title: "Configuring an iSCSI Share"
 description: "A how-to guide on creating a general-purpose iSCSI share."
-tags: ["networking","iSCSI", "block"]
+tags: ["networking","iscsi", "block"]
 ---
 
 Unlike other sharing protocols on TrueNAS, an iSCSI share allows for block sharing *and* file sharing. Block sharing provides the benefit of [block-level access](https:/ en.wikipedia.org/wiki/Block-level_storage) to data on the TrueNAS. iSCSI exports disk devices (zvols on TrueNAS) over a network that allows other iSCSI clients (initiators) to attach to and mount. Here is a list of terminology to be familiar with:

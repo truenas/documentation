@@ -1,7 +1,6 @@
 ---
 title: Developer’s Notes
 description: Running updates about TrueCommand Nightly status and current issues.
-tags: [“TrueCommand”]
 weight: 30
 ---
 

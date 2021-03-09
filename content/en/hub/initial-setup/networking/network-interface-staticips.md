@@ -1,7 +1,7 @@
 ---
 title: "Setting a Static IP Address"
 description: "How to set a static IP address in either the web interface or system console."
-tags: ["networking","CLI"]
+tags: ["networking","cli"]
 ---
 
 {{% alert title="Warning" color="warning" %}}

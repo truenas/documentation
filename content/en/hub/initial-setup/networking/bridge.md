@@ -1,7 +1,7 @@
 ---
 title: "Creating a Network Bridge"
 description: "How to create a network Bridge on TrueNAS."
-tags: ["Bridge", "networking"]
+tags: ["bridge", "networking"]
 ---
 
 A [Bridge](https://tools.ietf.org/html/rfc6325) generally refers to various methods of combining (aggregating) multiple network connections into a single, aggregate network from multiple communication networks or network segments. TrueNAS uses [bridge(4)](https://www.freebsd.org/cgi/man.cgi?bridge(4)) to manage Bridges. 

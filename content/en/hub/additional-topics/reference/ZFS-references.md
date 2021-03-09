@@ -2,7 +2,7 @@
 Title: "ZFS Primer"
 linkTitle: "ZFS Primer"
 weight: 4
-tags: ["ZFS"]
+tags: ["zfs"]
 ---
 
 ZFS is an advanced, modern filesystem that was specifically designed

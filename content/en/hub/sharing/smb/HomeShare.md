@@ -1,7 +1,7 @@
 ---
 title: "Set up SMB share as a Home Share"
 description: "Creating a personal storage share for your team with one SMB share."
-tags: ["networking","Samba", "personal storage"]
+tags: ["networking","samba", "personal storage"]
 ---
 
 ## Set up SMB with *Use as Home Share*

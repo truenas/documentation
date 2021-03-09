@@ -1,7 +1,6 @@
 ---
 title: "Basic Setup Guide"
 description: "Deployment guide included with TrueNAS R-Series Unified Storage Arrays purchased from iXsystems."
-tags: ["TrueNAS Products"]
 ---
 
 <object data="https://www.truenas.com/docs/files/RSeriesBSG1.01.pdf" type="application/pdf" width="95%" height="1000">

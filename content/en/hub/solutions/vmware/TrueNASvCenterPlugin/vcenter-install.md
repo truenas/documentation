@@ -1,7 +1,7 @@
 ---
 title: "TrueNAS vCenter Plugin Installation"
 description: "TrueNAS vCenter Plugin installation: note for Enterprise customers."
-tags: ["VMware", "TrueNAS Enterprise"]
+tags: ["vmware"]
 weight: 20
 ---
 

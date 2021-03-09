@@ -2,7 +2,6 @@
 title: "TrueNAS Visio Stencils"
 linkTitle: "Stencils"
 description: "Downloadable Visio stencil pack for TrueNAS Hardware."
-tags: ["TrueNAS Products"]
 weight: 60
 ---
 

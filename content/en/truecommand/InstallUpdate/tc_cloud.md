@@ -1,7 +1,6 @@
 ---
 title: "Accessing TrueCommand Cloud"
 description: "How to use TrueCommand Cloud to manage TrueNAS 12.0 (or newer) systems."
-tags: ["TrueCommand Cloud", "TrueCommand"]
 weight: 10
 ---
 

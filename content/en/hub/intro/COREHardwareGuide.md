@@ -1,7 +1,7 @@
 ---
 title: "TrueNAS CORE Hardware Guide"
 description: "Official hardware guide for custom TrueNAS CORE systems."
-tags: ["TrueNAS CORE","Components"]
+tags: ["components"]
 weight: 35
 ---
 

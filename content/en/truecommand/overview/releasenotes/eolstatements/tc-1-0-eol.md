@@ -1,6 +1,5 @@
 ---
 title: "End of Life Statement for TrueCommand 1.0"
-tags: ["TrueCommand"]
 draft: false
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Dynamic DNS"
 description: "Using Dynamic DNS to configure a domain name for the TrueNAS system."
-tags: ["DDNS", "networking"]
+tags: ["ddns", "networking"]
 ---
 
 [Dynamic Domain Name Service (DDNS)](https://tools.ietf.org/html/rfc2136) is useful when TrueNAS is connected to an ISP that periodically changes the IP address of the system.

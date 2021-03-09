@@ -1,7 +1,7 @@
 ---
 title: "Configuring a Windows SMB share"
 description: "How to set up a general purpose Server Message Block (SMB) share."
-tags: ["networking","Samba"]
+tags: ["networking","samba"]
 ---
 
 SMB (also known as CIFS) is the native file sharing system in Windows.

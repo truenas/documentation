@@ -1,7 +1,7 @@
 ---
 title: "Configuring Active Directory"
 description: "How to configure Active Directory (AD) connections"
-tags: ["security","LDAP","AD","networking"]
+tags: ["security","ldap","ad","networking"]
 ---
 
 Active Directory (AD) is a service for sharing resources in a Windows network.

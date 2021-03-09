@@ -1,6 +1,6 @@
 ---
 title: "Recommended ZFS Update"
-tags: ["FreeNAS","TrueNAS Enterprise", "ZFS"]
+tags: ["zfs"]
 ---
 
 *August 24, 2020*

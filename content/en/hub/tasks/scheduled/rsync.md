@@ -1,7 +1,7 @@
 ---
 title: "Configuring an rsync Task"
 description: "How to configure automated data transfers using rysnc."
-tags: ["rsync", "SSH"]
+tags: ["rsync", "ssh"]
 weight: 20
 ---
 

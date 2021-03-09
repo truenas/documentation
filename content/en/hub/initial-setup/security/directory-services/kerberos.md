@@ -1,7 +1,7 @@
 ---
 title: "Kerberos"
 description: "Configuring Kerberos, Kerberos Realms, and Kerberos Keytabs."
-tags: ["Kerberos", "security", "AD", "networking"]
+tags: ["kerberos", "security", "ad", "networking"]
 ---
 
 [Kerberos](https://web.mit.edu/kerberos/) is a web authentication protocol that uses strong cryptography to prove the identity of both client and server over an insecure network connection.

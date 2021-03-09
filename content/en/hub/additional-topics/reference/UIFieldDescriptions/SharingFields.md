@@ -3,7 +3,7 @@ title: "FRG: Sharing"
 linkTitle: "Sharing"
 description: "Descriptions of each field in the Sharing section of the TrueNAS web interface."
 weight: 80
-tags: ["reference", "AFP", "FTP/SFTP/TFTP", "iSCSI", "NFS", "SMB", "webdav"]
+tags: ["reference", "afp", "ftp/sftp/tftp", "iscsi", "nfs", "smb", "webdav"]
 ---
 
 ## Apple Shares (AFP): Add

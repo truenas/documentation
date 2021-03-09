@@ -2,7 +2,7 @@
 title: "ZFS Snapshots"
 description: "ZFS Snapshots" 
 weight: 90
-tags: ["ZFS","snapshots"]
+tags: ["zfs","snapshots"]
 ---
 
 Snapshots are one of the most powerful features of ZFS. A snapshot provides a read-only point-in-time copy of a file system or volume that does not consume extra space in the ZFS pool. The snapshot only uses space when the block references are changed. Snapshots save disk space by recording only the differences between the current dataset and a previous version.

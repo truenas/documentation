@@ -1,7 +1,6 @@
 ---
 title: "Deploying TrueCommand on TrueNAS SCALE"
 description: "How to deploy the TrueCommand application in TrueNAS SCALE."
-tags: ["TrueCommand Docker","SCALE"]
 ---
 
 A [TrueCommand](https://www.truenas.com/truecommand/) Docker image can be deployed on TrueNAS SCALE.
