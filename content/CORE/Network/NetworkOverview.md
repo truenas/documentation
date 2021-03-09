@@ -18,8 +18,8 @@ These menu items are provided in the UI to add or edit network options:
 
 * Global Configuration - Hostname and Domain, DNS Servers, Default Gateway and other realted options
 
-* Interfaces (documentation/content/CORE/Network/Interfaces/) - Set up Static IP, Bridge, LAGG, amd Vlan's
+* [Interfaces](documentation/content/CORE/Network/Interfaces/) - Set up Static IP, Bridge, LAGG, amd Vlan's
 
-* Static Routes (documentation/content/CORE/Network/StaticRoutes) - Add a static route here if it is required to reach portions of the network 
+* [Static Routes](documentation/content/CORE/Network/StaticRoutes) - Add a static route here if it is required to reach portions of the network 
 
-* IPMI (documentation/content/CORE/Network/IPMI) - Configure Out of Band Management
+* [IPMI](documentation/content/CORE/Network/IPMI) - Configure Out of Band Management
