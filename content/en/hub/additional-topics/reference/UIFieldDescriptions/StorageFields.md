@@ -3,7 +3,7 @@ title: "FRG: Storage"
 linkTitle: "Storage"
 description: "Descriptions of each field in the Storage section of the TrueNAS web interface."
 weight: 60
-tags: ["reference", "zpool", "dataset", "zfs", "zvol", "encryption", "snapshots", "VMWare", "S.M.A.R.T"]
+tags: ["reference", "zpool", "dataset", "zfs", "zvol", "encryption", "snapshots", "vmware", "s.m.a.r.t."]
 ---
 
 ## Pools

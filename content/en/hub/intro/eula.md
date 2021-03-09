@@ -1,7 +1,7 @@
 ---
 title: "TrueNAS Enterprise EULA"
 description: "The End User License Agreement for TrueNAS Enterprise"
-tags: ["EULA", "support"]
+tags: ["eula"]
 weight: 30
 ---
 

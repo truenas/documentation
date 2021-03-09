@@ -1,7 +1,6 @@
 ---
 title: "Installing TrueCommand on Windows"
 description: "Running TrueCommand in Docker Desktop for Windows"
-tags: ["TrueCommand Docker", "TrueCommand"]
 ---
 
 {{% pageinfo %}}

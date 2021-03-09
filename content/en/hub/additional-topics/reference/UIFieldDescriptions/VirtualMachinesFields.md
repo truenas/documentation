@@ -3,7 +3,7 @@ title: "FRG: Virtual Machines"
 linkTitle: "Virtual Machines"
 description: "Descriptions of each field in the Virtual Machines section of the TrueNAS web interface."
 weight: 120
-tags: ["reference", "networking", "VM"]
+tags: ["reference", "networking", "vm"]
 ---
 
 ## Virtual Machines: Add

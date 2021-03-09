@@ -1,7 +1,7 @@
 ---
 title: "Virtual Machines"
 description: "How to set up a Virtual Machine."
-tags: ["VM"]
+tags: ["vm"]
 ---
 
 {{% alert title="Licensed Feature" color="info" %}}

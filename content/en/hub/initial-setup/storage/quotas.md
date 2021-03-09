@@ -2,7 +2,6 @@
 title: "Quotas"
 description: "How to set data or object quotas for user accounts and groups."
 weight: 70
-tags: ["Quotas"]
 ---
 
 {{% pageinfo color="primary" %}}

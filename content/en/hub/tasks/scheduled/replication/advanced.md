@@ -3,7 +3,7 @@ title: "Advanced Replication"
 linkTitle: "Advanced"
 description: "How to create an advanced replication task."
 weight: 3
-tags: ["ZFS", "SSH"]
+tags: ["zfs", "ssh"]
 ---
 
 Requirements:

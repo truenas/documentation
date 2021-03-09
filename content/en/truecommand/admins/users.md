@@ -3,7 +3,6 @@ title: "Adding and Organizing Users"
 linkTitle: "User Management"
 description: "How to add, configure, and organize users."
 weight: "30"
-tags: ["TrueCommand Administrators"]
 ---
 
 TrueCommand has a robust user management system designed to allow TrueCommand administrators to personalize the TrueCommand experience for each user account.

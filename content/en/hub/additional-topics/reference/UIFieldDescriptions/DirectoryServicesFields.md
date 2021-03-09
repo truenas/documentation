@@ -3,7 +3,7 @@ title: "FRG: Directory Services"
 linkTitle: "Directory Services"
 description: "Descriptions of each field in the Directory Services section of the TrueNAS web interface."
 weight: 70
-tags: ["reference", "AD", "Kerberos", "LDAP", "NIS"]
+tags: ["reference", "ad", "kerberos", "ldap", "nis"]
 ---
 
 ## Active Directory

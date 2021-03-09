@@ -3,7 +3,7 @@ title: "FRG: System"
 linkTitle: "System"
 description: "Descriptions of each field in the System section of the TrueNAS web interface."
 weight: 30
-tags: ["reference", "NTP", "certificates", "email", "dataset", "ssh", "2FA"]
+tags: ["reference", "ntp", "certificates", "email", "dataset", "ssh", "2fa"]
 ---
 
 ## General 

@@ -1,7 +1,7 @@
 ---
 title: "Role-Based Access Control (RBAC)"
 description: "How to configure individual vCenter user access to TrueNAS hosts."
-tags: ["VMware", "TrueNAS Enterprise"]
+tags: ["vmware"]
 weight: 60
 ---
 

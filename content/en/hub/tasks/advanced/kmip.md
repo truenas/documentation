@@ -1,7 +1,7 @@
 ---
 title: "Enabling KMIP"
 description: "How to integrate TrueNAS Enterprise key management with a Key Management Interoperability Protocol (KMIP) server." 
-tags: ["KMIP", "encryption", "certificates", "TrueNAS Enterprise"]
+tags: ["kmip", "encryption", "certificates"]
 ---
 
 {{% pageinfo %}}

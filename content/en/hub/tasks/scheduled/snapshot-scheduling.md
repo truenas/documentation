@@ -1,7 +1,7 @@
 ---
 title: "Snapshots"
 description: "How to set up automated dataset snapshotting."
-tags: ["ZFS"]
+tags: ["zfs"]
 weight: 40
 ---
 

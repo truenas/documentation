@@ -3,7 +3,7 @@ title: "Local Replication"
 linkTitle: "Local"
 description: "How to use the TrueNAS Wizard to quickly back up new snapshots to another location on the local system."
 weight: 1
-tags: ["ZFS", "replication"]
+tags: ["zfs", "replication"]
 ---
 
 ## Process Summary

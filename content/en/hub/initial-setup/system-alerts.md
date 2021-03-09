@@ -2,7 +2,7 @@
 title: "Configuring System Alerts"
 description: "How to configure basic system alerts and add an email address for alert notifications."
 weight: 55
-tags: ["email", "SNMP", "Alerts"]
+tags: ["email", "snmp", "alerts"]
 ---
 
 After setting up storage, it is recommended to configure the alert system with an email address and then customize how alerts are reported and which alerts are displayed or prioritized.

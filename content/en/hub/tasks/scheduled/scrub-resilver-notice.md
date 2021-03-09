@@ -1,7 +1,7 @@
 ---
 title: "Sequential Scrub and Resilver Adjustments"
 description: "How to adjust the scrub and resilver settings or revert to a legacy algorithm."
-tags: ["ZFS"]
+tags: ["zfs"]
 weight: 75
 ---
 
