@@ -74,7 +74,7 @@ TrueCommand boasts a wide variety of features, including Role-Based Access Contr
 	</div>
 	<div class="textcolumn">
 		<p>Archived release notes and TrueCommand 1.2 articles.</p>
-		<p><a href="/truecommand/tc-legacy-docs/Truecommand-1.2/">TrueCommand 1.2 documentation</a><br>
+		<p><a href="/truecommand/tc-legacy-docs/TrueCommand-1.2/">TrueCommand 1.2 documentation</a><br>
 		<a href="/truecommand/tc-legacy-docs/release-notes/">Historic (pre-1.3) release notes</a></p>
 		<a class="linkbutton" href="/truecommand/tc-legacy-docs/">Legacy Docs</a>
 	</div>
