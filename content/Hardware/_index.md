@@ -22,13 +22,6 @@ TrueNAS Minis are built with professional-grade components including ECC RAM and
 
 [Mini Basic Setup Guide](/Hardware/mini/MiniBSG/)<br>
 {{< /tab >}}
-{{< tab "FreeNAS Certified" >}}
-<img class="topic-image" src="/images/FreeNAS_Certified.png">
-Built on ZFS, FreeNAS (TrueNAS CORE) includes enterprise-level features like deduplication and compression, copy-on-write with checksum compare, snapshots and replication, support for multiple hypervisor solutions, and much more.
-FreeNAS Certified Servers have been tested and fine-tuned to maximize storage and sharing performance.
-
-[FreeNAS Certified Basic Setup Guide](/Hardware/fn-certified/fn-certified-bsg/)
-{{< /tab >}}
 {{< tab "R-Series" >}}
 <img class="topic-image" src="/images/HeroR50andR40.png">
 The TrueNAS R-Series is a family of single controller systems that leverage ZFS and TrueNAS to provide the industry's best storage value.
