@@ -11,7 +11,7 @@ Fast-forward to the amazing new [TrueNAS Minis](https://www.truenas.com/truenas-
 While the TrueNAS Mini and FreeNAS certified are excellent turn-key systems, we appreciate that do-it-yourself users have always played a critical role in the growth and success of TrueNAS CORE/FreeNAS around the world.
 From repurposed systems to highly-custom builds, the fundamental freedom of TrueNAS is the ability to run it on nearly any x86 computer.
 
-In celebration of the TrueNAS software evolution, we have brought together the wisdom of our engineering staff and top blog posts to produce the first comprehensive TrueNAS CORE Hardware Guide to complement the [official hardware requirements](/CORE/Introduction/COREHardwareGuide/) and the community’s highly-detailed [Hardware Recommendations Guide](https://www.truenas.com/community/resources/hardware-recommendations-guide.12/).
+In celebration of the TrueNAS software evolution, we have brought together the wisdom of our engineering staff and top blog posts to produce the first comprehensive TrueNAS CORE Hardware Guide to complement the community’s highly-detailed [Hardware Recommendations Guide](https://www.truenas.com/community/resources/hardware-recommendations-guide.12/).
 Have something to add? Please open a pull request or issue by clicking the buttons in the side panel!
 
 Here’s to building your best NAS ever in 2020 and beyond!
