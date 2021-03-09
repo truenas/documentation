@@ -1,7 +1,7 @@
 ---
 title: "Configuring Two-Factor Authentication"
 description: "A how-to for setting up and configuring Two-Factor Authentication in TrueNAS."
-tags: ["networking","security","2FA"]
+tags: ["networking","security","2fa"]
 ---
 
 ## Introduction

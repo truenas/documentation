@@ -1,7 +1,7 @@
 ---
 title: "SLOG"
 description: "How to best configure your ZFS Intent Log"
-tags: ["ZFS"]
+tags: ["zfs"]
 ---
 
 To improve read performance, ZFS utilizes system memory as an Adaptive Replacement Cache (ARC), which stores your file system’s 

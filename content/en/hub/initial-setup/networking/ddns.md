@@ -1,7 +1,7 @@
 ---
 title: "Dynamic DNS"
 description: "Using Dynamic DNS to configure a domain name for the TrueNAS system."
-tags: ["DDNS", "networking"]
+tags: ["ddns", "networking"]
 ---
 
 [Dynamic Domain Name Service (DDNS)](https://tools.ietf.org/html/rfc2136) is useful when TrueNAS is connected to an ISP that periodically changes the IP address of the system.
@@ -9,7 +9,7 @@ With dynamic DNS, the system can automatically associate its current IP address 
 
 ## Configuring Dynamic DNS
 
-DDNS requires registration with a DDNS service such as [DynDNS](https://dyn.com/dns/) before configuring TrueNAS.
+DDNS requires registration with a DDNS service such as [DynDNS](https://account.dyn.com/) before configuring TrueNAS.
 It's recommended to have the DDNS service settings available or open in another browser tab when configuring TrueNAS.
 Log in to the TrueNAS web interface and go to **Services > Dynamic DNS**.
 

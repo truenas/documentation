@@ -1,7 +1,7 @@
 ---
 title: "MinIO Clusters in TrueNAS SCALE"
 description: "How to deploy MinIO Clusters in TrueNAS SCALE."
-tags: ["SCALE", "MinIO"]
+tags: ["scale", "minio"]
 ---
 
 On TrueNAS SCALE 20.12-ALPHA and later, users can create a MinIO S3 distributed instance to scale out and handle individual TrueNAS node failures. In this example, we will be using four physical TrueNAS systems and creating a distributed cluster.

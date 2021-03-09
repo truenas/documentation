@@ -45,7 +45,7 @@ Legacy documentation for discontinued iXsystems products is also archived here.<
 		<br>
 		A single R50 array can support up to two petabytes of raw capacity and grow HDD capacity at less than $50/TB. All-Flash options can grow at less than $200/TB.
 		</p>
-		<p><a href="/hardware/r-series/RseriesBSG/">R-Series Basic Setup Guide</a></p>
+		<p><a href="/hardware/r-series/RSeriesBSG/">R-Series Basic Setup Guide</a></p>
 		<a class="linkbutton" href="/hardware/r-series/">TrueNAS R-Series</a>
 	</div>
 </div>

@@ -111,7 +111,7 @@ TrueNAS configuration screens are linked in the left hand column:
 <!-- markdown-link-check-disable -->
 * **Dashboard**: Landing page for the web interface.
 * [**Accounts**](/hub/initial-setup/security/accounts/): Add or manage TrueNAS User and Group accounts.
-* [**System**](/hub/initial-setup/firsttimelogin/systemsettings/): TrueNAS system level options.
+* [**System**](/hub/initial-setup/FirstTimeLogin/systemsettings/): TrueNAS system level options.
 * [**Tasks**](/hub/tasks/scheduled/): Configuring options for scheduled re-occurring operations.
 * [**Network**](/hub/initial-setup/networking/): Options for integrating TrueNAS in a network environment.
 * [**Storage**](/hub/initial-setup/storage/): How data is added to TrueNAS. Options for configuring pools and datasets on attached hard drives.

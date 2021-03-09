@@ -1,7 +1,7 @@
 ---
 title: "Disk Resilver Scheduling"
 description: "How to optimize disk resilvering."
-tags: ["ZFS"]
+tags: ["zfs"]
 weight: 60
 ---
 

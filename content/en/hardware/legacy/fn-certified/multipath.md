@@ -1,6 +1,5 @@
 ---
 title: "FNC is Changing to Wide Porting"
-tags: ["TrueNAS Products"]
 ---
 
 *August 19, 2020*

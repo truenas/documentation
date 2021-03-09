@@ -1,7 +1,7 @@
 ---
 title: "Managing Boot Environments"
 description: "How to create, activate, or generally manage boot environments."
-tags: ["ZFS"]
+tags: ["zfs"]
 ---
 
 TrueNAS supports a ZFS feature known as boot environments. With multiple boot environments, the process of updating the operating system becomes a low-risk operation. The updater automatically creates a snapshot of the current boot environment and adds it to the boot menu before applying the update.

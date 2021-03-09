@@ -1,7 +1,7 @@
 ---
 title: "Major Version Upgrades With ISO"
 description: "Upgrade path for major TrueNAS versions and how to use an .iso file to update TrueNAS."
-tags: ["Upgrade"]
+tags: ["upgrade"]
 ---
 
 TrueNAS provides flexibility for keeping the operating system up-to-date:
@@ -124,7 +124,7 @@ If database errors are shown but the web interface is accessible, log in, go to 
 **What has changed in 9.10 vs 9.3?**
 
 In a nutshell, the underlying OS and a lot of "ports" used to implement various services.
-See the 9.10-RELEASE [Release Notes](https://archive.freenas.org/9.10/RELEASE/ReleaseNotes) as well as the `ChangeLog` files for all the various [9.10 Software Updates](https://archive.freenas.org/9.10/STABLE/) to paint a complete picture.
+See the 9.10-RELEASE [Release Notes](https://www.ixsystems.com/documentation/freenas/9.10/intro.html#new-features-in-release).
 
 **I upgraded to 9.10 and my LACP (lagg) interface stopped working. It worked great in 9.3! HELP!**
 

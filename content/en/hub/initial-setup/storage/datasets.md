@@ -2,7 +2,7 @@
 title: "ZFS Datasets"
 description: "How to create a ZFS dataset."
 weight: 20
-tags: ["ZFS", "dataset"]
+tags: ["zfs", "dataset"]
 ---
 
 {{% pageinfo color="primary" %}}

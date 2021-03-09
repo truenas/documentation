@@ -2,7 +2,6 @@
 title: "TrueCommand Settings"
 description: "Using the Administration page to adjust the License, Certificates, LDAP, SSL, Alerts, and other TrueCommand options."
 weight: 20
-tags: ["TrueCommand Administrators"]
 ---
 
 The **Administration** page shows additional system details and offers a variety of TrueCommand configuration options.

@@ -3,7 +3,7 @@ title: "FRG: Network"
 linkTitle: "Network"
 description: "Descriptions of each field in the Network section of the TrueNAS web interface."
 weight: 50
-tags: ["reference", "networking", "IPMI"]
+tags: ["reference", "networking", "ipmi"]
 ---
 
 ## Global Configuration

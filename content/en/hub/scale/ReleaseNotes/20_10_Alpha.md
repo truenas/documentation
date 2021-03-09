@@ -1,6 +1,5 @@
 ---
 title: "SCALE 20.10-ALPHA (Angelfish)"
-tags: ["SCALE"]
 ---
 
 **October 16, 2020**
