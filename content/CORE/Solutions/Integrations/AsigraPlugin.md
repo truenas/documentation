@@ -1,5 +1,5 @@
 ---
-title: "Asigra® Plugin"
+title: "Asigra Plugin"
 weight: 10
 ---
 
