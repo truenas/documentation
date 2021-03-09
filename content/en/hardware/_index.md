@@ -34,20 +34,6 @@ Legacy documentation for discontinued iXsystems products is also archived here.<
 	</div>
 </div>
 
-## FreeNAS Certified
-
-<div class="hubrow">
-	<div class="imgcolumn">
-		<img src="/images/FreeNASCertified.png">
-	</div>
-	<div class="textcolumn">
-		<p>Built on ZFS, FreeNAS (TrueNAS CORE) includes enterprise-level features like deduplication and compression, copy-on-write with checksum compare, snapshots and replication, support for multiple hypervisor solutions, and much more.
-		FreeNAS Certified Servers have been tested and fine-tuned to maximize storage and sharing performance.</p>
-		<p><a href="/hardware/fn-certified/fn-certified-bsg/">FreeNAS Certified Basic Setup Guide</a></p>
-		<a class="linkbutton" href="/hardware/fn-certified/">FreeNAS Certified</a>
-	</div>
-</div>
-
 ## R-Series
 
 <div class="hubrow">
@@ -141,7 +127,8 @@ Legacy documentation for discontinued iXsystems products is also archived here.<
 	</div>
 	<div class="textcolumn">
 		<p>Archived documentation about discontinued iXsystems hardware products.</p>
-		<p><a href="/hardware/legacy/z-series/">TrueNAS Z-Series</a><br>
+		<p><a href="/hardware/legacy/fn-certified/">FreeNAS Certified</a><br>
+		<a href="/hardware/legacy/z-series/">TrueNAS Z-Series</a><br>
 		<a href="/hardware/legacy/mini-gen2/">2nd Generation FreeNAS Minis</a><br>
 		<a href="/hardware/legacy/expansion-shelves/">Discontinued Expansion Shelves</a></p>
 		<a class="linkbutton" href="/hardware/legacy/">Legacy Hardware Docs</a>
