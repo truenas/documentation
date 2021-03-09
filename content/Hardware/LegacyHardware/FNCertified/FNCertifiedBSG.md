@@ -1,6 +1,6 @@
 ---
 title: "Basic Setup Guide"
-tags: ["TrueNAS Products"]
+weight: 10
 ---
 
 <object data="https://www.truenas.com/docs/files/FNCertifiedBSGv2_7.pdf" type="application/pdf" width="95%" height="1000">
