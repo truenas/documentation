@@ -10,7 +10,6 @@ iXsystems sells a variety of hardware solutions that are rigorously qualified an
 Each line of products are tailored to meet your specific needs, whether you are a home user, Small and Medium Enterprise (SME), or extended business environment.
 To help visualize the system placement in a networking environment, iXsystems also provides a [Visio stencil pack](/Hardware/stencils/) of these products.
 Legacy documentation for discontinued iXsystems products is also archived here.
-<br><br>
 
 {{< tabs "TrueNAS Hardware" >}}
 {{< tab "TrueNAS Mini" >}}
@@ -77,6 +76,7 @@ Product announcements, unspecific FAQs, and articles about specific hardware com
 <img class="topic-image" src="/images/z-series.jpg">
 Archived documentation about discontinued iXsystems hardware products.
 
+[FreeNAS Certified]({{< relref "FNCertifiedBSG.md" >}})<br>
 [TrueNAS Z-Series](/Hardware/legacy/z-series/)<br>
 [2nd Generation FreeNAS Minis](/Hardware/legacy/mini-gen2/)<br>
 [Discontinued Expansion Shelves](/Hardware/legacy/expansion-shelves/)
