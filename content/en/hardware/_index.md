@@ -34,20 +34,6 @@ Legacy documentation for discontinued iXsystems products is also archived here.<
 	</div>
 </div>
 
-## FreeNAS Certified
-
-<div class="hubrow">
-	<div class="imgcolumn">
-		<img src="/images/FreeNASCertified.png">
-	</div>
-	<div class="textcolumn">
-		<p>Built on ZFS, FreeNAS (TrueNAS CORE) includes enterprise-level features like deduplication and compression, copy-on-write with checksum compare, snapshots and replication, support for multiple hypervisor solutions, and much more.
-		FreeNAS Certified Servers have been tested and fine-tuned to maximize storage and sharing performance.</p>
-		<p><a href="/hardware/fn-certified/fn-certified-bsg/">FreeNAS Certified Basic Setup Guide</a></p>
-		<a class="linkbutton" href="/hardware/fn-certified/">FreeNAS Certified</a>
-	</div>
-</div>
-
 ## R-Series
 
 <div class="hubrow">
