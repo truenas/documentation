@@ -1,7 +1,9 @@
 ---
 title: "ASRock Rack C2750D4I BMC Watchdog Issue"
-description: "FAQ about the 2nd generation FreeNAS Mini motherboard firmware issue."
+weight: 30
 ---
+
+{{< toc >}}
 
 (*Original Publish Date: September 19, 2017*)
 
