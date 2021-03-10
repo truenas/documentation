@@ -65,6 +65,7 @@ The M-Series grows to support multiple 100GbE ports and over 20PB of storage.
 All TrueNAS Enterprise systems use OpenZFS to give you unbelievable performance with legendary protection and reliability for your mission-critical data.
 
 [M-Series Basic Setup Guide](/Hardware/MSeries/MSeriesBSG/)<br>
+[M-Series SATADOM Replacement Guide](/Hardware/LegacyHardware/MSeries/MSeriesGen2SatadomReplace)
 {{< /tab >}}
 {{< tab "Expansion Shelves" >}}
 ![ES60](/images/Hardware/ES60Front.png "ES60 Expansion Shelf")
