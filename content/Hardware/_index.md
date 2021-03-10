@@ -9,7 +9,7 @@ weight: 40
 
 iXsystems sells a variety of hardware solutions that are rigorously qualified and built to maximize TrueNAS performance.
 Each line of products are tailored to meet your specific needs, whether you are a home user, Small and Medium Enterprise (SME), or extended business environment.
-To help visualize the system placement in a networking environment, iXsystems also provides a [Visio stencil pack](/Hardware/stencils/) of these products.
+To help visualize the system placement in a networking environment, iXsystems also provides a [Visio stencil pack](/Hardware/Stencils/) of these products.
 Legacy documentation for discontinued iXsystems products is also archived here.
 <br><br>
 
