@@ -12,12 +12,16 @@ These areas are not editable.
 
 ![**Network Summary**](/images/CORE/12.0/NetworkSummary.png "Network Summary")
 
+
 * [**Interfaces**]({{< relref "/CORE/Network/Interfaces/_index.md" >}}) - Lists configured [Static IP]({{< relref "SettingStaticIP.md" >}}), [Bridge]({{< relref "BridgeCreate.md" >}}), [LAGG]({{< relref "LAGGCreate.md" >}}), and [Vlan's]({{< relref "VLANCreate.md" >}}).
 
 * **Default Routes** lists configured Default Routes information. Click the **Global Configuration** link in the left menu to configure Default Routes.
 
 * **NameServers** lists configured nameservers. Click the **Global Configuration** link in the left menu to configure Nameservers.
 
-You can configure Hostname and Domain, DNS Servers, Default Gateway and other realted options by clicking the **Global Configuration** link in tyhe left menu.
+
+You can configure **Hostname and Domain**, **DNS Servers**, **Default Gateway** and other realted options by clicking the **Global Configuration** link in the left menu.
+
 You can configure the Out of Band Management by clicking the [**IPMI**]({{< relref "IPMI.md" >}}) link in the left menu.
+
 You can Configure Static Routes by clicking the [**Static Routes**]({{< relref "StaticRoutes.md" >}}) link in the left menu.
