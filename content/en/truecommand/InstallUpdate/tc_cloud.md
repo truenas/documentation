@@ -108,7 +108,7 @@ Click on the New System alert, fill in the information from the TrueNAS system, 
 
 <img src="/images/TC-NewSystemCred.png"><br><br>
 
-It may take 10 to 15 minutes for your TrueNAS instance to fully sync up with the TrueCommand Cloud instance. When systems are connected to the TrueCommand Cloud instance, refer to the [TrueCommand documentation](/truecommand/) for more articles about setting up configuration backups, alerts, reports, and role-based access control.
+It may take 10 to 15 minutes for your TrueNAS instance to fully sync up with the TrueCommand Cloud instance. When systems are connected to the TrueCommand Cloud instance, refer to the [TrueCommand documentation]({{< relref "/truecommand/admins/_index.md" >}}) for more articles about setting up configuration backups, alerts, reports, and role-based access control.
 
 ## Support
 
