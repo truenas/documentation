@@ -17,4 +17,4 @@ Advanced Replacement; customer responsible for returning failed component (no sh
 {{< /tab >}}
 {{< /tabs >}}
 
-For additional info, please [contact the iXsystems Support team](/hub/initial-setup/support/#contacting-ixsystems-support) at any time!
+For additional info, please [contact the iXsystems Support team](/CORE/System/Support) at any time!
