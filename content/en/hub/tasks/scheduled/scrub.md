@@ -9,7 +9,7 @@ A scrub is the process of ZFS scanning through the data on a pool. Scrubs help t
 
 By default, TrueNAS creates a scrub task when new pool is created. The default schedule for a scrub is to run every Sunday at 12:00 AM. To edit the default scrub, go to **Tasks > Scrub Tasks** and click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>.
 
-To create additional scrub tasks, you must first <a href="/hub/initial-setup/storage/pools/">create a pool</a>.
+To create additional scrub tasks, you must first [create a pool]({{< relref "pools.md" >}}).
 
 ## Create Scrub Task
 

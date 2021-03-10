@@ -6,7 +6,7 @@ tags: ["networking","webdav"]
 
 A Web-based Distributed Authoring and Versioning (WebDAV) share makes it easy to share a TrueNAS dataset and its contents over the web.
 
-To get started, make sure a <a href="/hub/initial-setup/storage/datasets">dataset has been created</a>. This dataset stores the data that will be shared. If a dataset already exists, proceed to turning the WebDAV service on.
+To get started, make sure a [dataset has been created]({{< relref "datasets.md" >}}). This dataset stores the data that will be shared. If a dataset already exists, proceed to turning the WebDAV service on.
 
 ## WebDAV Service
 
@@ -33,7 +33,9 @@ By default, a new WebDAV share is enabled after creation. To create the share bu
 Clicking *SUBMIT* creates the share.
 
 <img src="/images/WebDAV1.png">
+
 <img src="/images/WebDAV2.png">
+
 <img src="/images/WebDAV3.png">
 
 ## Connecting to the WebDAV Share

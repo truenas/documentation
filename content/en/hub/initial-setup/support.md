@@ -107,7 +107,7 @@ Leave the console open and perform the action that encounters problems.
 
 Right-click in the console window. Choose `Save as…` and save to a file called `console.log`.
 
-After saving the file, go back to the console with <i class="fa fa-cog" aria-hidden="true" title="settings"></i>&nbsp **More Tools > Developer tools** or by pressing <kbd>Ctrl+Shift+I</kbd>. Click <i class="fa fa-cog" aria-hidden="true" title="settings"></i>&nbsp and unset `Preserve log`.
+After saving the file, go back to the console with <i class="fa fa-cog" aria-hidden="true" title="settings"></i>&nbsp; **More Tools > Developer tools** or by pressing <kbd>Ctrl+Shift+I</kbd>. Click <i class="fa fa-cog" aria-hidden="true" title="settings"></i>&nbsp and unset `Preserve log`.
 
 ### New Features
 

@@ -53,7 +53,7 @@ Align the new replacement node with the bay and slide it into the chassis until 
 
 Reconnect the cables, referring to notes, labels, or photos for correct connection. Turn on the new node with the front power button. Use the console or web GUI to verify successful startup. On an HA system, select System –> Failover –> Sync to Peer. This forces a configuration sync from the active node to the standby node. The standby node will then reboot to load the new configuration.  Pack the old node into the shipping box from the new node for return to iXsystems.
 
-The node replacement is now complete, and the new node is running. Contact support@iXsystems.com for any further questions about this article or the node replacement process.
+The node replacement is now complete, and the new node is running. [Contact iXsystems Customer Support]({{< relref "/hub/initial-setup/support#contacting-ixsystems-support" >}}) for any further questions about this article or the node replacement process.
 
 #### Replacing Both Nodes
 

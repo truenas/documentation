@@ -14,7 +14,7 @@ TrueNAS automatically creates a number of ways to access the web interface, but 
 {{% alert title="Preconfigured Systems" color="info" %}}
 When you purchase TrueNAS Enterprise hardware from iXsystems, the system is preconfigured with your provided networking details.
 The IP address of the TrueNAS web interface is provided on the system sales order or configuration sheet.
-Please [contact iX Support](/hub/initial-setup/support/#contacting-ixsystems-support) if the TrueNAS web interface IP address has not been provided with these documents or cannot be identified from the TrueNAS system console.
+Please [contact iX Support]({{< relref "/hub/initial-setup/support.md#contacting-ixsystems-support" >}}) if the TrueNAS web interface IP address has not been provided with these documents or cannot be identified from the TrueNAS system console.
 {{% /alert %}}
 
 To configure access to the web interface or view the web interface IP address, you will need to connect a monitor and keyboard to your TrueNAS system or connect with IPMI for out-of-band system management.
@@ -82,7 +82,6 @@ On a computer that can access the same network as the TrueNAS system, enter the 
 Only the `root` username is used to log in to the web interface.
 Enter the `root` account password that was created during installation.
 
-<!-- Update with how to find the randomly generated password -->
 {{% alert title="Root Password on Preconfigured Systems" color="info" %}}
 TrueNAS systems purchased from iXsystems use a default password: *abcd1234*
 {{% /alert %}}
@@ -108,24 +107,23 @@ The remaining buttons link to system configuration option or can be used to logo
 The top row has buttons to hide the left side column.
 The top of this column shows the system hostname and the active user.
 TrueNAS configuration screens are linked in the left hand column:
-<!-- markdown-link-check-disable -->
+
 * **Dashboard**: Landing page for the web interface.
-* [**Accounts**](/hub/initial-setup/security/accounts/): Add or manage TrueNAS User and Group accounts.
-* [**System**](/hub/initial-setup/FirstTimeLogin/systemsettings/): TrueNAS system level options.
-* [**Tasks**](/hub/tasks/scheduled/): Configuring options for scheduled re-occurring operations.
-* [**Network**](/hub/initial-setup/networking/): Options for integrating TrueNAS in a network environment.
-* [**Storage**](/hub/initial-setup/storage/): How data is added to TrueNAS. Options for configuring pools and datasets on attached hard drives.
-* [**Directory Services**](/hub/initial-setup/security/directory-services/): Map network resources to TrueNAS or make the system visible in a network.
-* [**Sharing**](/hub/sharing/): Provide data stored in TrueNAS over a network using different built-in protocols.
+* [**Accounts**]({{< relref "accounts.md" >}}): Add or manage TrueNAS User and Group accounts.
+* [**System**]({{< relref "systemsettings.md" >}}): TrueNAS system level options.
+* [**Tasks**]({{< relref "/hub/tasks/scheduled/_index.md" >}}): Configuring options for scheduled re-occurring operations.
+* [**Network**]({{< relref "/hub/initial-setup/networking/_index.md" >}}): Options for integrating TrueNAS in a network environment.
+* [**Storage**]({{< relref "/hub/initial-setup/storage/_index.md" >}}): How data is added to TrueNAS. Options for configuring pools and datasets on attached hard drives.
+* [**Directory Services**]({{< relref "/hub/initial-setup/security/directory-services/_index.md" >}}): Map network resources to TrueNAS or make the system visible in a network.
+* [**Sharing**]({{< relref "/hub/sharing/_index.md" >}}): Provide data stored in TrueNAS over a network using different built-in protocols.
 * **Services**: Tasks that can run in the background of TrueNAS for purposes like data sharing or network access. Services can start automatically or disabled for security. By default, most system services are disabled and are configured as part of enabling different sharing protocols or other system features.
-* [**Plugins**](/hub/tasks/advanced/plugins/): Extend the built-in NAS services by installing a pre-packaged application in an isolated Jail.
-* [**Jails**](/hub/tasks/advanced/jails/): lightweight operating-system-level virtualization that allows one or multiple services to run isolated from the host TrueNAS system.
-* [**Reporting**](/hub/tasks/administrative/system-reporting/): Helpful graphs and information about the system, including hardware, storage, and network utilization.
-* [**Virtual Machines**](/hub/tasks/advanced/virtual-machines/): Environment on a host computer that can be used as if it were a separate physical computer.
+* [**Plugins**]({{< relref "/hub/tasks/advanced/plugins/_index.md" >}}): Extend the built-in NAS services by installing a pre-packaged application in an isolated Jail.
+* [**Jails**]({{< relref "/hub/tasks/advanced/jails/_index.md" >}}): lightweight operating-system-level virtualization that allows one or multiple services to run isolated from the host TrueNAS system.
+* [**Reporting**]({{< relref "system-reporting.md" >}}): Helpful graphs and information about the system, including hardware, storage, and network utilization.
+* [**Virtual Machines**]({{< relref "virtual-machines.md" >}}): Environment on a host computer that can be used as if it were a separate physical computer.
 * **Display System Processes**: Shows actively running system processes, including cpu and memory usage.
-* [**Shell**](/hub/tasks/administrative/gui-shell/): Command line interface (CLI) for running diagnostic or other integrated applications as the system administrator. To access the [system console setup menu](#default-access-to-the-web-interface) from the **Shell**, enter `/etc/netcli`.
+* [**Shell**]({{< relref "gui-shell.md" >}}): Command line interface (CLI) for running diagnostic or other integrated applications as the system administrator. To access the [system console setup menu](#default-access-to-the-web-interface) from the **Shell**, enter `/etc/netcli`.
 * **Guide**: Opens a new browser tab to the TrueNAS Documentation Hub.
-<!-- markdown-link-check-enable -->
 
 ## Troubleshooting
 

@@ -12,7 +12,7 @@ This article is provided as a historical reference for encryption management in 
 ## GELI Encryption
 
 FreeNAS/TrueNAS 11.3 and earlier used
-`GELI <https://www.freebsd.org/cgi/man.cgi?query=geli>`__ to provide
+[GELI](https://www.freebsd.org/cgi/man.cgi?query=geli) to provide
 full disk encryption for ZFS pools. This type of encryption is
 intended to protect against the risks of data being read or copied when
 the system is powered down, when the pool is locked, or when disks are
@@ -25,13 +25,13 @@ is encrypted. These are generally called "encrypted drives", even though
 the partition table is not encrypted.
 
 For GELI encryption, using a processor that supports the
-`AES-NI <https://en.wikipedia.org/wiki/AES_instruction_set>`__
+[AES-NI](https://en.wikipedia.org/wiki/AES_instruction_set)
 instruction set is strongly recommended. These processors can handle
 encryption of a small number of disks with negligible performance impact.
 They also retain performance better as the number of disks increases.
 Older processors without the AES-NI instructions could see significant
 performance impact with even a single encrypted disk. This
-`forum post <https://forums.freenas.org/index.php?threads/encryption-performance-benchmarks.12157/>`__
+[forum post](https://forums.freenas.org/index.php?threads/encryption-performance-benchmarks.12157/)
 compares the performance of various processors.
 
 All drives in a GELI-encrypted pool are encrypted, including L2ARC (read

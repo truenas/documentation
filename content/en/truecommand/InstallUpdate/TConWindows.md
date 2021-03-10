@@ -5,7 +5,7 @@ description: "Running TrueCommand in Docker Desktop for Windows"
 
 {{% pageinfo %}}
 For even easier deployment, iXsystems now offers TrueCommand as a cloud service!
-See the [TrueCommand information page](https://www.truenas.com/truecommand/) for more details.
+See the [TrueCommand information page]({{< relref "tcwhatis.md" >}}) for more details.
 {{% /pageinfo %}}
 
 ## Prerequisites
@@ -117,7 +117,7 @@ The initial TrueCommand screen requires creating an administrator account before
 <!-- markdown-link-check-disable-next-line -->
 After creating the account the login screen refreshes and you can log in with the account credentials that were just created.
 TrueCommand can now be configured and begin to be used.
-See the remaining [TrueCommand Administration articles](https://www.truenas.com/docs/truecommand/admins/) for specific usage guides.
+See the remaining [TrueCommand Administration articles]({{< relref "/truecommand/admins/_index.md" >}}) for specific usage guides.
 
 ## Support
 

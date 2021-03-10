@@ -11,7 +11,7 @@ Fast-forward to the amazing new [TrueNAS Minis](https://www.truenas.com/truenas-
 While the TrueNAS Mini and FreeNAS certified are excellent turn-key systems, we appreciate that do-it-yourself users have always played a critical role in the growth and success of TrueNAS CORE/FreeNAS around the world.
 From repurposed systems to highly-custom builds, the fundamental freedom of TrueNAS is the ability to run it on nearly any x86 computer.
 
-In celebration of the TrueNAS software evolution, we have brought together the wisdom of our engineering staff and top blog posts to produce the first comprehensive TrueNAS CORE Hardware Guide to complement the [official hardware requirements](/hub/intro/COREHardwareGuide/) and the community’s highly-detailed [Hardware Recommendations Guide](https://www.ixsystems.com/community/resources/hardware-recommendations-guide.12/).
+In celebration of the TrueNAS software evolution, we have brought together the wisdom of our engineering staff and top blog posts to produce the first comprehensive TrueNAS CORE Hardware Guide to complement the community’s highly-detailed [Hardware Recommendations Guide](https://www.ixsystems.com/community/resources/hardware-recommendations-guide.12/).
 Have something to add? Please open a pull request or issue by clicking the buttons in the side panel!
 
 Here’s to building your best NAS ever in 2020 and beyond!
@@ -21,7 +21,7 @@ Here’s to building your best NAS ever in 2020 and beyond!
 ## Introduction
 
 The TrueNAS community has a rich ecosystem of advice when it comes to the art and science of choosing the ideal hardware for their favorite storage operating system.
-From the [official Hardware Requirements](/hub/intro/COREHardwareGuide/) to the [Hardware Recommendations Guide](https://www.ixsystems.com/community/resources/hardware-recommendations-guide.12/) maintained by the community, to countless blog posts, users have a comprehensive, if not overwhelming choice of answers to the simple question, “What hardware should I buy?”
+From the [Hardware Recommendations Guide](https://www.ixsystems.com/community/resources/hardware-recommendations-guide.12/) maintained by the community, to countless blog posts, users have a comprehensive, if not overwhelming choice of answers to the simple question, “What hardware should I buy?”
 The [TrueNAS Mini](https://www.truenas.com/truenas-mini/) and [FreeNAS Certified](https://www.ixsystems.com/freenas-certified-servers/) lines of purpose-built TrueNAS systems from iXsystems are the official answers to this question, but they also serve to provide templates for users that want to build their own systems or repurpose existing ones.
 Therefore, this guide will use the TrueNAS Mini and FreeNAS Certified systems as points of reference to all of the criteria to consider when building TrueNAS-compatible systems of any size.
 
@@ -30,7 +30,7 @@ Therefore, this guide will use the TrueNAS Mini and FreeNAS Certified systems as
 At the heart of any storage system is the symbiotic pairing of its file system and its physical storage devices.
 The ZFS file system in TrueNAS provides the [best available data protection of any filesystem at any cost](https://www.ixsystems.com/blog/openzfs-vs-the-competition/) and makes very effective use of both spinning disk and all-flash storage, or a mix of the two.
 ZFS is fully prepared for the eventual failure of storage devices and is highly-configurable to achieve the perfect balance of redundancy and performance to meet any storage goal.
-A properly-configured TrueNAS system can tolerate the failure of multiple storage devices and even its boot media which can be quickly re-created with a copy of the [configuration file](/hub/tasks/administrative/backup-config/).
+A properly-configured TrueNAS system can tolerate the failure of multiple storage devices and even its boot media which can be quickly re-created with a copy of the [configuration file]({{< relref "backup-config.md" >}}).
 Choosing storage media is the first step in designing the storage system to meet immediate objectives and prepare for future capacity expansion.
 
 ### Spinning Disks
@@ -117,7 +117,7 @@ For example, a 480GB L2ARC filled with 4KiB blocks will need more than 10GiB of 
 
 ### Self Encrypting Drives
 
-TrueNAS supports two forms of data encryption at rest to achieve privacy and compliance objectives: [Native ZFS encryption](https://www.truenas.com/docs/hub/initial-setup/storage/encryption/) and [Self Encrypting Drives (SEDs)](/hub/initial-setup/storage/sed-drives/).
+TrueNAS supports two forms of data encryption at rest to achieve privacy and compliance objectives: [Native ZFS encryption]({{< relref "/hub/initial-setup/storage/encryption.md" >}}) and [Self Encrypting Drives (SEDs)]({{< relref "sed-drives.md" >}}).
 SEDs do not experience the performance overhead introduced by software partition encryption but aren’t as readily-available as non-SED drives (and thus can cost a little bit more).
 
 ### USB Hard Disks
@@ -144,7 +144,7 @@ Note that hot-swapping PCIe NVMe devices is not supported at this time.
 
 ### Storage Device Sizing
 
-While [zpool layout](/hub/initial-setup/storage/pools/) (the organization of LUNs and volumes, in TrueNAS/ZFS parlance) is beyond the scope of this guide, the availability of double-digit terabyte drives raises a question that TrueNAS users have not traditionally had the luxury of asking: how many drives should I use to achieve my desired capacity?
+While [zpool layout]({{< relref "pools.md" >}}) (the organization of LUNs and volumes, in TrueNAS/ZFS parlance) is beyond the scope of this guide, the availability of double-digit terabyte drives raises a question that TrueNAS users have not traditionally had the luxury of asking: how many drives should I use to achieve my desired capacity?
 Just because one can mirror two 16TB drives to achieve 16TB of available capacity, it doesn’t necessarily mean that one should.
 Mirroring two large drives offers the advantage of redundancy and balancing reads between the two devices, potentially lowering power draw, but little else.
 The write performance of two large drives will be at most that of a single drive.

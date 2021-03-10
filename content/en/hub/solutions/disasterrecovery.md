@@ -30,7 +30,7 @@ Rsync is a file-level migration that’s the same as rsync in the Linux/FreeBSD 
 
 Rsync is useful for file transfer, but it’s not recommended if files are being modified. For example, if an rsync task starts while 100 GB is being written and the data is changed before the file is written, it will cause issues with versioning and data integrity. Rsync should never be used to copy active VM data stores, block-level data (iSCSI or fibre channel shares), or other data that could constantly be in use. Rsync is slower than ZFS replication, particularly for large datasets, so it’s recommended for convenience over data integrity. It can be used between TrueNAS and many other systems.
 
-More information about setting rsync tasks in TrueNAS is located [here](https://www.ixsystems.com/documentation/truenas/11.3-U3.2/tasks.html#rsync-tasks).
+More information about setting rsync tasks in TrueNAS is located [here]({{< relref "/hub/tasks/scheduled/rsync.md" >}}).
 
 ### File Recovery To or From the Cloud – Cloud Sync
 

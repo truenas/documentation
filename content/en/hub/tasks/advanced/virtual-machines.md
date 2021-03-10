@@ -6,7 +6,7 @@ tags: ["vm"]
 
 {{% alert title="Licensed Feature" color="info" %}}
 While Virtual Machines are freely available in TrueNAS CORE, they are a licensed feature of TrueNAS Enterprise.
-To request adding virtual machines to your TrueNAS Enterprise license, [contact iXsystems](/hub/initial-setup/support/#contacting-ixsystems-support).
+To request adding virtual machines to your TrueNAS Enterprise license, [contact iXsystems Support](({{< relref "/hub/initial-setup/support.md#contacting-ixsystems-support" >}}).
 {{% /alert %}}
 
 A Virtual Machine (VM) is an environment on a host computer that can be used as if it were a separate physical computer.
@@ -30,7 +30,7 @@ Production of these processors ceased in 2012-2013.
 
 ## Creating a Virtual Machine
 
-Before creating the virtual machine, you will need an installer *.iso* or image file for the operating system you intend to install and a [storage pool](/hub/initial-setup/storage/pools/) available for both the virtual disk and operating system install file.
+Before creating the virtual machine, you will need an installer *.iso* or image file for the operating system you intend to install and a [storage pool]({{< relref "pools.md" >}}) available for both the virtual disk and operating system install file.
 
 To create a new VM, go to **Virtual Machines** and click *Add*.
 Configure each category of the VM according to your specifications, starting with the **Operating System**.

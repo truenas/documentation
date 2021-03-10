@@ -11,8 +11,8 @@ All that is required is a [GitHub account](https://github.com) and your favorite
 Taking screenshots for your article is also recommended.
 
 To add an article, construct a bundle that contains your text file and any images, then open a pull request on the repository.
-<!-- markdown-link-check-disable-next-line -->
-There is an [Article Template](/hub/contributing/template/) available that can simplify creating your article.
+
+There is an [Article Template]({{< relref "template.md" >}}) available that can simplify creating your article.
 
 ## Creating an Article Bundle
 
@@ -41,7 +41,7 @@ weight: 2
 After setting the front matter, continue writing your article.
 Raw text is supported, or you can add [Markdown](https://daringfireball.net/projects/markdown/) syntax.
 Markdown is designed to be easy to write and read, but also supports directly adding HTML elements.
-See the [Style Guide]({{< ref "style.md" >}}) for syntax help and other suggestions for writing the article.
+See the [Style Guide]({{< relref "style.md" >}}) for syntax help and other suggestions for writing the article.
 You can generally style the article however you like, but please be aware that other contributors might review the article and change the styling.
 
 ### Adding Images
@@ -54,7 +54,7 @@ Be sure to have unique names for each image file.
 
 ## Uploading the Article Bundle
 
-Open the Community Docs section of the repository at https://github.com/freenas/documentation/tree/master/content/en/hub/additional-topics/community.
+Open the Community Docs section of the repository at https://github.com/truenas/documentation/tree/master/content/en/hub/additional-topics/community.
 When submitting an article in a language other than English, change the `/en/` to the language directory that matches the language of your article.
 
 {{< figure src="docrepo-truenas-articles-location.png" title="Community Articles" >}}

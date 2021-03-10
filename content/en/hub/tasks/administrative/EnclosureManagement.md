@@ -5,7 +5,7 @@ description: "Overview of options for configuring the TrueNAS hardware and connn
 
 Click System ➞ View Enclosure to display the status of connected disks and hardware.
 Only compatible TrueNAS hardware and expansion shelves that are available from iXsystems will allow the Enclosure Management screen to appear.
-For documentation about available iXsystems products, see the Docs Hub [Hardware Section](/hardware/)
+For documentation about available iXsystems products, see the Docs Hub [Hardware Section]({{< relref "/hardware/_index.md" >}})
 
 <img src="/images/EnclosureViewM50.png">
 <br><br>

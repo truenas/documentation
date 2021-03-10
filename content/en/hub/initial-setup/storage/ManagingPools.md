@@ -65,8 +65,8 @@ Some vdev extending examples:
 ## Scrub Pool
 
 Initiate a data integrity check of the pool.
-Any problems detected during the scrub are either automatically corrected or will generate an [alert](/hub/initial-setup/system-alerts/) in the web interface.
-By default, every pool is automatically checked on a reoccurring [scrub schedule](/hub/tasks/scheduled/scrub/).
+Any problems detected during the scrub are either automatically corrected or will generate an [alert]({{< relref "system-alerts.md" >}}) in the web interface.
+By default, every pool is automatically checked on a reoccurring [scrub schedule]({{< relref "/hub/tasks/scheduled/scrub.md" >}}).
 
 ## Status
 
@@ -75,7 +75,7 @@ Opens the **Pool Status** screen to show the state of the last scrub and disks i
 <img src="/images/PoolStatus.png">
 <br><br>
 
-Additional options for [managing connected disks](/hub/tasks/advanced/disk-replace/) are available in this screen.
+Additional options for [managing connected disks]({{< relref "disk-replace.md" >}}) are available in this screen.
 
 ## Expand Pool
 
@@ -84,7 +84,7 @@ This option is typically used when virtual disks are resized outside of TrueNAS.
 
 ## Upgrade Pool
 
-This option only appears when the pool can be upgraded to use new [ZFS feature flags](/hub/additional-topics/reference/ZFS-references/).
+This option only appears when the pool can be upgraded to use new [ZFS feature flags]({{< relref "ZFS-references.md" >}}).
 Before upgrading an existing pool, be aware of these caveats:
 
 - Upgrading a pool is one-way, meaning that if you change your mind you cannot go back to an earlier ZFS version or downgrade to an earlier version of the software that does not support those ZFS features.

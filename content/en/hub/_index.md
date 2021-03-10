@@ -30,7 +30,7 @@ There are additional topics for the TrueCommand and TrueNAS SCALE members of the
 		<p><a href="/hub/intro/whatis/">What is TrueNAS?</a><br>
 		<a href="/hub/intro/release-notes/">Release Notes</a><br>
 		<a href="/hub/intro/truenas-roadmap/">Release Schedule</a><br>
-		<a href="/hub/intro/COREHardwareGuide/">CORE Hardware Guide</a></p>
+		<a href="/hub/intro/corehardwareguide/">CORE Hardware Guide</a></p>
 		<a class="linkbutton" href="/hub/intro/">Overview</a>
 	</div>
 </div>
@@ -45,7 +45,7 @@ There are additional topics for the TrueCommand and TrueNAS SCALE members of the
 		<p>After discovering if your hardware is right for TrueNAS, move to downloading and installing the software.
 		After installing, you'll want to log in to the web interface and start configuring the system, including the system networking. Next, move to reviewing your system security by creating user and group accounts, setting up your directory services, and reviewing best practices. After networking and security configuration is complete, the system is ready for setting up data storage and alert notifications.</p>
 		<p><a href="/hub/initial-setup/install/">Installation and Update Procedures</a><br>
-		<a href="/hub/initial-setup/FirstTimeLogin/">First-time Configuration</a><br>
+		<a href="/hub/initial-setup/firsttimelogin/">First-time Configuration</a><br>
 		<a href="/hub/initial-setup/networking/">Configuring Networking</a><br>
 		<a href="/hub/initial-setup/security/">Credentials and Security</a><br>
 		<a href="/hub/initial-setup/storage/">Setting up Storage</a></p>
@@ -66,7 +66,7 @@ There are additional topics for the TrueCommand and TrueNAS SCALE members of the
 		<a href="/hub/sharing/iscsi/">Block Sharing (iSCSI)</a><br>
 		<a href="/hub/sharing/afp/">Apple Filing Protocol (AFP)</a><br>
 		<a href="/hub/sharing/webdav/">WebDAV</a><br>
-		<a href="/hub/sharing/FTP-SFTP/">FTP / SFTP</a><br>
+		<a href="/hub/sharing/ftp-sftp/">FTP / SFTP</a><br>
 		<a href="/hub/sharing/s3-object-store/">S3 Object</ar></p>
 		<a class="linkbutton" href="/hub/sharing/">Sharing</a>
 	</div>
@@ -116,7 +116,7 @@ There are additional topics for the TrueCommand and TrueNAS SCALE members of the
 		It is currently in pre-ALPHA status and under active development.
 		SCALE documentation is mostly shared with TrueNAS CORE and Enterprise, but articles discussing SCALE specific features are organized in this topic.</p>
 		<p><a href="/hub/scale/dev-notes/">Developer's Notes</a><br>
-		<a href="/hub/scale/ReleaseNotes/">SCALE Release Notes</a></p>
+		<a href="/hub/scale/releasenotes/">SCALE Release Notes</a></p>
 		<a class="linkbutton" href="/hub/scale/">TrueNAS SCALE</a>
 	</div>
 </div>
@@ -134,7 +134,7 @@ There are additional topics for the TrueCommand and TrueNAS SCALE members of the
 		Topics include articles that apply to earlier specific versions of TrueNAS (and FreeNAS), along with previous version release notes.
 		The Application Programming Interface is also detailed here, along with simple instructions for creating an API key.</p>
 		<p><a href="/hub/additional-topics/reference/">Reference Articles</a><br>
-		<a href="/hub/additional-topics/UsageRecommendations/">Usage Optimizations</a><br>
+		<a href="/hub/additional-topics/usagerecommendations/">Usage Optimizations</a><br>
 		<a href="/hub/additional-topics/legacy/">Legacy Documentation</a><br>
 		<a href="/hub/additional-topics/api/">API Documentation</a></p>
 		<a class="linkbutton" href="/hub/additional-topics/">Additional Topics</a>
