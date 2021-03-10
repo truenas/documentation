@@ -32,7 +32,7 @@ If an encryption mode for the LDAP connection is desired, select one of these op
 
 A certificate is not required when using username/password or Kerberos authentication.
 If certificate authentication is desired, select a certificate to use from the *Certificate* dropdown.
-To configure LDAP certificate-based authentication, [create a Certificate Signing Request](/hub/initial-setup/security/certificates/) for the LDAP provider to sign.
+To configure LDAP certificate-based authentication, [create a Certificate Signing Request]({{< relref "/hub/initial-setup/security/certificates.md" >}}) for the LDAP provider to sign.
 
 To validate the authenticity of the certificate, set *Validate Certificates*.
 

@@ -11,7 +11,7 @@ weight: 10
 iXsystems is pleased to release version 3.3.0 of the TrueNAS vCenter plugin!
 This is a maintenance release of the plugin, designed to improve functionality and add support for TrueNAS 12.0 host systems. As part of this maintenance release, additional testing resources have been devoted to the plugin and several large-scale improvements have also been identified for future plugin versions.
 
-Please note that deploying the TrueNAS vCenter Plugin requires TrueNAS host systems with version **11.3 or later** installed and **vCenter 6.7-U3 or earlier** deployed. To install or update to the 3.3.0 TrueNAS vCenter plugin, please [contact iXsystems Support](/hub/initial-setup/support/#contacting-ixsystems-support).
+Please note that deploying the TrueNAS vCenter Plugin requires TrueNAS host systems with version **11.3 or later** installed and **vCenter 6.7-U3 or earlier** deployed. To install or update to the 3.3.0 TrueNAS vCenter plugin, please [contact iXsystems Support]({{< relref "/hub/initial-setup/support.md#contacting-ixsystems-support" >}}).
 
 ## Changelog
 

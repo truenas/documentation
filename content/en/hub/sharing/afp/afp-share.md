@@ -12,7 +12,7 @@ The AFP protocol has been deprecated by Apple
 
 Beginning in 2013, Apple began using the SMB sharing protocol as the default option for file sharing and ceased development of the AFP sharing protocol. It is recommended to use SMB sharing over AFP unless files will be shared with legacy Apple products. For further information please read: https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/APFS_Guide/FAQ/FAQ.html
 
-To get started, make sure a <a href="/hub/initial-setup/storage/datasets">dataset has been created</a>. This dataset serves as share data storage. If a dataset already exists, proceed to turning on the AFP service.
+To get started, make sure a [dataset has been created]({{< relref "datasets.md" >}}). This dataset serves as share data storage. If a dataset already exists, proceed to turning on the AFP service.
 
 ## AFP Share
 

@@ -14,7 +14,7 @@ There are numerous options available to TrueNAS users for extending pools within
 
 For the purposes of this article, the focus will be on adding a data vdev to an existing pool.
 
-### Requirements ###
+### Requirements
 
 When adding disks to increase the capacity of a pool, ZFS supports the addition of virtual devices, or *vdevs*, to an existing ZFS pool. 
 To extend a pool, the vdev being added must be the same type as the existing vdevs. The **ADD VDEVS** button is only enabled when the vdev being added is the same type as the existing vdevs. 
@@ -37,7 +37,7 @@ Before creating a pool, determine the level of required redundancy, how many dis
 Creating a pool/adding vdevs overwrites disk data, so save any required data to different media before adding disks/vdevs to a pool.
 {{% /pageinfo %}}
 
-### Process ###
+### Process
 
 Go to **Storage** > **Pools** and select the <i class="fas fa-cog" aria-hidden="true" title="Settings"></i>&nbsp of the pool you want to extend.
 From the dropdown select **Add Vdevs**.  This will take you to the **Pool Manager** page.  
@@ -61,7 +61,7 @@ Once you have selected the appropriate number of disks, click **ADD VDEVS**. A d
 <img src="/images/PoolManagerPage3.png" width='700px'>
 <br>
 
-Once the process is complete, you will be taken to the **Storage/Pools** page.  To verify your disk(s) were added successfully select the <i class="fas fa-cog" aria-hidden="true" title="Settings"></i>&nbsp
+Once the process is complete, you will be taken to the **Storage/Pools** page.  To verify your disk(s) were added successfully select the <i class="fas fa-cog" aria-hidden="true" title="Settings"></i>&nbsp;
 and choose **status** from the dropdown menu.  This will take you to the **Storage/Pools/Pool Status** page.  Here you can verify your vdevs have been successfully added.
 
 <img src="/images/PoolManagerPage4.png" width='700px'>

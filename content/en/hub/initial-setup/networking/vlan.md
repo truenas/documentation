@@ -15,7 +15,7 @@ Set interface type to `VLAN` and name the interface with the format of *vlanX*, 
 Under *VLAN Settings* select the Parent Interface the VLAN will work with, and create a *vlan tag*.  THe VLAN tag is a numeric tag configured in the switching network. 
 
 Disabling **Hardware Offloading** is discouraged as it can reduce network performance.
-Disabling this is only recommended when the interface is managing [Jails](/hub/tasks/advanced/jails/), [Plugins](/hub/tasks/advanced/plugins/), or [Virtual Machines](/hub/tasks/advanced/virtual-machines/).
+Disabling this is only recommended when the interface is managing [Jails]({{< relref "/hub/tasks/advanced/jails.md" >}}), [Plugins]({{< relref "plugins.md" >}}), or [Virtual Machines]({{< relref "virtual-machines.md" >}}).
 
 The Maximum Transmission Unit (MTU) is the largest protocol data unit that can be communicated.
 What the largest workable MTU size can be will change according to your available network interfaces and other physical hardware.

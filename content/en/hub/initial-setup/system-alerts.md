@@ -60,7 +60,7 @@ An automatic script sends a nightly email to the administrator (root) account co
 Alert events are also emailed to the root user account.
 
 
-> [Scrub Task](/hub/tasks/scheduled/scrub/) issues and [S.M.A.R.T. reports](/hub/tasks/scheduled/smart/) are mailed separately to the address configured in those services.
+> [Scrub Task]({{< relref "/hub/tasks/scheduled/scrub.md" >}}) issues and [S.M.A.R.T. reports]({{< relref "smart.md" >}}) are mailed separately to the address configured in those services.
 
 The administrator typically does not read emails directly on the system.
 These emails are usually sent to an external email address where they can be read more conveniently.

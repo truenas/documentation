@@ -4,7 +4,7 @@ description: "A how-to guide on creating a general-purpose iSCSI share."
 tags: ["networking","iscsi", "block"]
 ---
 
-Unlike other sharing protocols on TrueNAS, an iSCSI share allows for block sharing *and* file sharing. Block sharing provides the benefit of [block-level access](https:/ en.wikipedia.org/wiki/Block-level_storage) to data on the TrueNAS. iSCSI exports disk devices (zvols on TrueNAS) over a network that allows other iSCSI clients (initiators) to attach to and mount. Here is a list of terminology to be familiar with:
+Unlike other sharing protocols on TrueNAS, an iSCSI share allows for block sharing *and* file sharing. Block sharing provides the benefit of [block-level access](https://en.wikipedia.org/wiki/Block-level_storage) to data on the TrueNAS. iSCSI exports disk devices (zvols on TrueNAS) over a network that allows other iSCSI clients (initiators) to attach to and mount. Here is a list of terminology to be familiar with:
 
 * **CHAP (Challenge-Handshake Authentication Protocol)**: an authentication method that uses a shared secret and three-way authentication to determine if a system is authorized to access the storage device. It also periodically confirms that the session has not been hijacked by another system. In iSCSI, the client (initiator) performs the CHAP authentication.
 
@@ -28,7 +28,7 @@ Unlike other sharing protocols on TrueNAS, an iSCSI share allows for block shari
 NOTE: Do not enable ALUA on TrueNAS unless it is supported by and enabled on the client computers also. ALUA only works properly when enabled on both the client and server.
 {{% /alert %}}
 
-To get started, make sure a <a href="/hub/initial-setup/storage/datasets/">dataset has been created</a> with at least one file to share, or a <a href="/hub/initial-setup/storage/zvols/">zvol has been created</a>. If the desired file or zvol already exists, proceed to turning on the iSCSI service.
+To get started, make sure a [dataset has been created]({{< relref "datasets.md" >}}) with at least one file to share, or a [zvol has been created]({{< relref "zvols.md" >}}). If the desired file or zvol already exists, proceed to turning on the iSCSI service.
 
 ## Turning On iSCSI Service
 

@@ -7,15 +7,15 @@ tags: ["zfs","zvol"]
 
 {{% pageinfo color="primary" %}}
 A ZFS pool must be created first to create a Zvol. See
-[Creating a new ZFS Pool]({{< ref "pools.md" >}}).
+[Creating a new ZFS Pool]({{< relref "pools.md" >}}).
 {{% /pageinfo %}}
 
 <img src="/images/Pools-zvol.png">
 <br><br>
 
-To create a Zvol in the desired pool, go to **Storage > Pools** then click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp and *Add Zvol*.
+To create a Zvol in the desired pool, go to **Storage > Pools** then click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; and *Add Zvol*.
 
-To quickly create a Zvol with the default options, enter a name for the Zvol, a size, and click *SAVE*. To modify more advanced settings of the Zvol click *ADVANCED MODE*. Zvol options can also be edited after creation. To edit a Zvol, click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp and *Edit Options*.
+To quickly create a Zvol with the default options, enter a name for the Zvol, a size, and click *SAVE*. To modify more advanced settings of the Zvol click *ADVANCED MODE*. Zvol options can also be edited after creation. To edit a Zvol, click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; and *Edit Options*.
 
 ## zvol Configuration Options 
 
@@ -31,7 +31,7 @@ To quickly create a Zvol with the default options, enter a name for the Zvol, a 
 | Sparse             | checkbox       |               | Used to provide thin provisioning. Use with caution as writes will fail when the pool is low on space.   |
 | Inherit (Encrytption Options) | checkbox | | Enabling will cause the zvol to use the encryption properties of the root dataset. |
 
-Click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp (Options) next to the desired zvol in **Storage** > **Pools** to access the `Delete zvol`, `Edit Zvol`, `Create Snapshot`, and, for an existing zvol snapshot, `Promote Dataset` options.
+Click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; (Options) next to the desired zvol in **Storage** > **Pools** to access the `Delete zvol`, `Edit Zvol`, `Create Snapshot`, and, for an existing zvol snapshot, `Promote Dataset` options.
 
 Similar to datasets, a zvol name cannot be changed.
 

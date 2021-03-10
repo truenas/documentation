@@ -32,7 +32,7 @@ Simultaneously, a security evaluation of the TrueNAS code is completed, with any
 
 The Technical Documentation Department audits all development changes to the software and resolves any inconsistencies with the current software documentation.
 This is to verify that end user documentation is as accurate as possible.
-Any security notices, errata, or best practices are also drafted for inclusion on the [TrueNAS Security website]().
+Any security notices, errata, or best practices are also drafted for inclusion on the [TrueNAS Security website](https://security.truenas.com/).
 
 ### Maintenance
 
