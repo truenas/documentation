@@ -12,7 +12,7 @@ These areas are not editable.
 
 ![**Network Summary**](/images/CORE/12.0/NetworkSummary.png "Network Summary")
 
-* [**Interfaces**]({{< relref "documentation/content/CORE/Network/Interfaces/_index.md" >}}) - Lists configured [Static IP]({{< relref "documentation/content/CORE/Network/Interfaces/SettingStaticIP.md" >}}), [Bridge]({{< relref "documentation/content/CORE/Network/Interfaces/BridgeCreate.md" >}}), [LAGG]({{< relref "documentation/content/CORE/Network/Interfaces/LAGGCreate.md" >}}), and [Vlan's]({{< relref "documentation/content/CORE/Network/Interfaces/VLANCreate.md" >}}).
+* [**Interfaces**]({{< relref "/CORE/Network/Interfaces/_index.md" >}}) - Lists configured [Static IP]({{< relref "SettingStaticIP.md" >}}), [Bridge]({{< relref "BridgeCreate.md" >}}), [LAGG]({{< relref "LAGGCreate.md" >}}), and [Vlan's]({{< relref "VLANCreate.md" >}}).
 
 * **Default Routes** lists configured Default Routes information. Click the **Global Configuration** link in the left menu to configure Default Routes.
 
