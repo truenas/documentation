@@ -5,4 +5,4 @@ weight: 30
 geekdocCollapseSection: true
 ---
 
-Some of these tutorials can require a TrueCommand administrator account.
+Some of these tutorials may require a TrueCommand administrator account.
