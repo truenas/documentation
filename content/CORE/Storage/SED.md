@@ -3,6 +3,8 @@ title: "Self-Encrypting Drives"
 weight: 40
 ---
 
+{{< toc >}}
+
 [TrueNAS version 11.1-U5]({{< relref "/ReleaseNotes/CORE/TrueNAS/11.1/11.1U5.md" >}}) introduced Self-Encrypting Drive (SED) support.
 
 These SED specifications are supported:
@@ -88,9 +90,9 @@ The SED must be configured to use the new password. Go to the **Shell** and ente
 
 This process must be repeated for each SED and any SEDs added to the system in the future.
 
-{{% alert title="Danger!" color="warning" %}}
+{{< hint danger >}}
 Remember SED passwords! If the SED password is lost, SEDs cannot be unlocked and their data is unavailable. Always record SED passwords whenever they are configured or modified and store them in a secure place!
-{{% /alert %}}
+{{ /hint >}}
 
 ## Check SED Functionality
 
@@ -118,9 +120,9 @@ Band[0]:
 
 This section contains command line instructions to manage SED passwords and data. The command used is [sedutil-cli(8)](https://www.mankier.com/8/sedutil-cli). Most SEDs are TCG-E (Enterprise) or TCG-Opal ([Opal v2.0](https://trustedcomputinggroup.org/wp-content/uploads/TCG_Storage-Opal_SSC_v2.01_rev1.00.pdf)). Commands are different for the different drive types, so the first step is identifying which type is being used.
 
-{{% alert title="Warning" color="warning" %}}
+{{< hint warning >}}
 These commands can be destructive to data and passwords. Keep backups and use the commands with caution.
-{{% /alert %}}
+{{< /hint >}}
 
 Check SED version on a single drive, */dev/da0* in this example:
 
