@@ -10,7 +10,6 @@ iXsystems sells a variety of hardware solutions that are rigorously qualified an
 Each line of products are tailored to meet your specific needs, whether you are a home user, Small and Medium Enterprise (SME), or extended business environment.
 To help visualize the system placement in a networking environment, iXsystems also provides a [Visio stencil pack](/Hardware/stencils/) of these products.
 Legacy documentation for discontinued iXsystems products is also archived here.
-<br><br>
 
 {{< tabs "TrueNAS Hardware" >}}
 {{< tab "TrueNAS Mini" >}}
@@ -21,13 +20,6 @@ All Minis are backed by the OpenZFS (ZFS) enterprise-class file system that prov
 TrueNAS Minis are built with professional-grade components including ECC RAM and IPMI for remote management. Whisper-quiet fans and low power footprints make them ideal for a quiet office environment.
 
 [Mini Basic Setup Guide](/Hardware/mini/MiniBSG/)<br>
-{{< /tab >}}
-{{< tab "FreeNAS Certified" >}}
-<img class="topic-image" src="/images/FreeNAS_Certified.png">
-Built on ZFS, FreeNAS (TrueNAS CORE) includes enterprise-level features like deduplication and compression, copy-on-write with checksum compare, snapshots and replication, support for multiple hypervisor solutions, and much more.
-FreeNAS Certified Servers have been tested and fine-tuned to maximize storage and sharing performance.
-
-[FreeNAS Certified Basic Setup Guide](/Hardware/fn-certified/fn-certified-bsg/)
 {{< /tab >}}
 {{< tab "R-Series" >}}
 <img class="topic-image" src="/images/HeroR50andR40.png">
@@ -84,6 +76,7 @@ Product announcements, unspecific FAQs, and articles about specific hardware com
 <img class="topic-image" src="/images/z-series.jpg">
 Archived documentation about discontinued iXsystems hardware products.
 
+[FreeNAS Certified]({{< relref "FNCertifiedBSG.md" >}})<br>
 [TrueNAS Z-Series](/Hardware/legacy/z-series/)<br>
 [2nd Generation FreeNAS Minis](/Hardware/legacy/mini-gen2/)<br>
 [Discontinued Expansion Shelves](/Hardware/legacy/expansion-shelves/)

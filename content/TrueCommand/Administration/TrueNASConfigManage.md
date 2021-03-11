@@ -1,29 +1,21 @@
 ---
 title: "TrueNAS Configuration File Management"
-linkTitle: "TrueNAS Configuration File Management"
-description: "How to manage TrueNAS configuration backups."
-weight: 40
-tags: ["TrueCommand Users"]
+weight: 25
 ---
 
-TrueCommand automatically backs up the TrueNAS configuration everytime there is a database change or a TrueCommand Audit Log entry. 
-Manual backups can be created as needed. 
+TrueCommand automatically backs up the TrueNAS configuration any time there is a database change or a TrueCommand Audit Log entry.
+Manual backups can be created as needed.
 
 ## Viewing Backups
 
-Viewing the current TrueNAS configuration backups can be accomplished by opening the overview page and clicking **Config Backups**. 
+To viewing the current TrueNAS configuration backups, opening the **Dashboard** and click *Config Backups*.
+This opens the **Configuration Backup Window**.
 
-![Dashboard System Alerts](/images/TrueCommand/1.3/DashboardSystemAlerts.png "Dashboard System Alerts")
-<br><br>
+![DashboardSystemConfigManagement](/images/TrueCommand/1.3/DashboardSystemConfigManagement.png "Dashboard: Configuration Backups")
 
-This will open the Configuration Backup Window.
+The list of backups is shown along with the time and date of their creation.
+To create a new backup, click *Create Backup*.
 
-![Dashboard System Config Management](/images/TrueCommand/1.3/DashboardSystemConfigManagement.png "Dashboard System Config Management")
-<br><br>
-
-The list of backups will be shown with the time and date of their creation.  
-
-To create a new backup, click **Create Backup**
-
-To restore a backup click the History <i class="fas fa-history" aria-hidden="true" title="history"></i>&nbsp; icon.
-
+To reset a TrueNAS system to a previous configuration, click the <i class="fa fa-history" aria-hidden="true" title="history"></i> icon.
+Choose the configuration file to use.
+The TrueNAS system must reset to apply the configuration changes.

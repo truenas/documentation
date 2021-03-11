@@ -1,5 +1,6 @@
 ---
 title: "FreeNAS Mini XL"
+weight: 21
 ---
 
 ## FreeNAS Mini XL EOL Announcement (February 2020)

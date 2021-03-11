@@ -1,6 +1,6 @@
 ---
 title: "Media Workflows"
-weight: 10
+weight: 20
 ---
 
 {{< toc >}}
@@ -56,6 +56,6 @@ Make sure your client systems or other applications support this feature too.
 
 To get some performance improvement when scrubbing through long video files with audio tracks, de-select *play audio while scrubbing* under **Preferences > Audio**
 
-Shared project must enable *Project Locking* in Premiere.
+Shared projects must enable *Project Locking* in Premiere.
 {{< /tab >}}
 {{< /tabs >}}
