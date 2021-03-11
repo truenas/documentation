@@ -5,15 +5,15 @@ weight: 35
 
 {{< toc >}}
 
-The **Reports** page is used to customize charts of system metrics for data analysis.
+The **Reports** page customizes system metrics charts for data analysis.
 
 ![ReportsList](/images/TrueCommand/1.3/ReportsList.png "Reports List")
 
-These reports are created by or shared with the current TrueCommand user.
-There are default reports that are designed to generate a basic system overview chart.
-These show details like network traffic, storage, and memory utilization for the chosen system.
+TrueCommand users can create reports and share them with other TrueCommand users.
+We designed default reports that generate a basic system overview chart.
+Default reports show details like network traffic, storage, and the chosen system's memory utilization.
 
-Viewing a report requires that the user has access to the systems that are being analyzed.
+Users must have access to the analyzed systems to view their reports.
 
 ## Creating a Report
 
@@ -50,7 +50,7 @@ Next, add in the range and systems to be included in the report and click *GENER
 
 ![ReportsView](/images/TrueCommand/1.3/ReportsView.png "Reports View")
 
-The report will be generated and displayed.
+TrueCommand will now generate and display the report.
 
 ![Reports Generated](/images/TrueCommand/1.3/ReportsGenerated.png "Reports Generated")
 
@@ -58,11 +58,11 @@ The report will be generated and displayed.
 
 By default, the reports created by a user are available only to that user.
 To share a report with other users or teams, open the **Configure** <i class="fa fa-cog" aria-hidden="true" title="Settings"></i> menu > **Reports** screen and click *Share*.
-Reports can also be shared after generation.
+You can also share reports after generating them.
 
 ![ReportsSharing](/images/TrueCommand/1.3/ReportsSharing.png "Reports Sharing")
 
-Reports can be shared with individual users or entire teams.
+You can share reports with individual users or entire teams.
 Set either *OWNER* or *SHARED WITH* for the desired user.
 Users with the **SHARED WITH** status can view the report, while the **OWNER** status allows that user to edit the report.
 Clicking the **OWNER** or **SHARED WITH** text toggles every name in the list.
