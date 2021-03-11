@@ -6,7 +6,7 @@ weight: 10
 {{< toc >}}
 
 Using groups in TrueNAS can be an efficient way of managing permissions for many similar user accounts.
-See [Users]({{< relref "Users.md" >}})for managing users.
+See [Users]({{< relref "Users.md" >}}) for managing users.
 The interface provides management of UNIX-style groups.
 If the network uses a directory service, import the existing account information using the instructions in [Active Directory]({{< relref "ActiveDirectory.md" >}}).
 
