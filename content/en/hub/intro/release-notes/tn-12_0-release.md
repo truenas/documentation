@@ -28,7 +28,7 @@ Additionally, version 12 includes these notable changes and improvements:
 The [Cloud Deployment Guide]({{< relref "tc_cloud.md" >}}) has step-by-step instructions for starting with TrueCommand.
 
 These major changes are also paired with numerous other bug fixes and quality-of-life type improvements to the UI and APIs for users.
-We’ve also revamped our [Documentation](https://www.truenas.com/docs/), focusing more content on how to accomplish specific tasks, reducing the learning curve and time normally spent on deploying TrueNAS in a variety of storage environments.
+We’ve also revamped our [Documentation]({{< relref "/hub/_index.md" >}}), focusing more content on how to accomplish specific tasks, reducing the learning curve and time normally spent on deploying TrueNAS in a variety of storage environments.
 
 Here is the full list of fixes and changes in 12.0-RELEASE:
 
