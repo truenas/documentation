@@ -1,7 +1,6 @@
 ---
 title: "Article Template"
 weight: 40
-geekdocCollapseSection : true
 ---
 
 Every article needs a "front matter" section that contains the article title and a numeric "weight" that orders the article in the table of contents.
@@ -9,8 +8,8 @@ You can also include a shortened title for the table contents.
 
 The rest of this article contains an example article with front matter, styling, and syntax examples.
 Please feel free to copy this example and rework it when writing your own articles for this website.
-The `template/` directory can also be copied to provide a starting point for contributing an article bundle that has additional images.
-You can refer to the [Style Guide](/hub/contributing/style/) for specific text syntax and formatting examples.
+The <file>template/</file> directory can also be copied to provide a starting point for contributing an article bundle that has additional images.
+You can refer to the [Style Guide]({{< relref "Style.md" >}}) for specific text syntax and formatting examples.
 
 ```
 ---
