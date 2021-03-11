@@ -30,30 +30,54 @@ In the repository, click **Code** and navigate to the image location in the repo
 Images are located in either the */static/images/* directory or are in the same location as the article text file as part of an article bundle.
 
 ![ImageLocation](/images/Contribute/GitHubImagesLocation.png)
-<br><br>
 
-Click **Upload files** and either drag and drop your image or open the file browser to select your image.
+Click *Upload files* and either drag and drop your image or open the file browser to select your image.
 As long as the new image name is the same as the old image, the old image will be replaced and the article will automatically use the new image.
+
+### Editing an Included File
+
+Some article content comes from a separate *include* statement.
+This statement pulls in content from a different location and allows using common text in many different website article simultaneously.
+Updating an <file>include/</file> file updates the content in every single affected article!
+
+An example of this is in the [Cron Jobs]({{< relref "CronJobs.md" >}}) article.
+The expandable *Advanced Scheduler* content is pulled from another location in the repository (<file>static/includes/AdvancedScheuler.md.part</file>).
+The <file>AdvancedScheuler.md.part</file> is included in the [Cloud Sync Tasks]({{< relref "CloudSyncTasks.md" >}}) and other **Tasks** content.
+
+Clicking the *Edit this Page* link opens the article markdown file, but only these lines are visible for the included content:
+```
+{{< expand "Advanced Scheduler" "v" >}}
+{{< include file="static/includes/AdvancedScheduler.md.part" markdown="true" >}}
+{{< /expand >}}
+```
+
+The *expand* and */expand* shortcodes handle the expansion/collapse section of the document and don't need to change.
+The include statement is within the expandable element:
+`{{< include file="static/includes/AdvancedScheduler.md.part" markdown="true" >}}`.
+
+The [repository](https://github.com/truenas/documentation/) file <file>static/includes/AdvancedScheduler.md.part</file> contains the documentation for this section.
+To update this section, edit the <file>.md.part</file> file.
+Remember that this snippet file is used in multiple documents, so only content that generally applies is included in the snippet.
+Changes that are specific to a certain piece of content are added directly to that article.
 
 ## Forking the Repo
 
 To submit a change, you'll create a simple copy ("fork") of the main repository, edit your copy, then propose "merging" your changes back into the main repository.
-To start, click the **Edit this Page** link in the top right of the site. 
+To start, click the *Edit this Page* link in the top right of the site.
 
 ![ArticletoEdit](/images/Contribute/ArticletoEdit.png)
-<br><br>
 
-To fork the repo to your GitHub account, click the green **Fork this repository** button.
+To fork the repo to your GitHub account, click the green *Fork this repository* button.
 
 ![ForktheRepository](/images/Contribute/GitHubForktheRepository.png)
-<br>
 
-{{< hint [info] >}}
-**Syncing Your Fork Before Contributing**\
+{{< hint info >}}
+**Syncing Your Fork Before Contributing**
 If you already have a fork of the documentation repository, it is recommended to sync your fork before continuing on to make changes:
-* Open your fork repository, typically found by opening the GitHub profile drop down and clicking **Your repositories**.
-* Find the sync status bar and click **Pull request**.
-* Set the *base repository* to your fork and the *head repository* to freenas/documentation. You might need to click **compare across forks** first.
+* Open your fork repository, typically found by opening the GitHub profile drop down and clicking *Your repositories*.
+* Find the sync status bar and click *Pull request*.
+* Set the *base repository* to your fork and the *head repository* to truenas/documentation.
+  You might need to click *compare across forks* first.
   ![CompareFork](/images/Contribute/GitHubCompareFork.png)
   <br>
 * Click **Create pull request** and continue to merge the pull request.
@@ -62,57 +86,37 @@ If you already have a fork of the documentation repository, it is recommended to
 Edit the page as needed.
 
 ![EditForkNotice](/images/Contribute/GitHubEditForkNotice.png)
-<br><br>
 
-When the changes are complete, add a quick overview of what changes were made in the description box, and click the green **Commit changes** button.
+When the changes are complete, add a quick overview of what changes were made in the description box, and click the green *Commit changes* button.
 
 ![CommitChanges](/images/Contribute/GitHubEditCommitChanges.png)
-<br><br>
 
 When the page refreshes the changes are complete in your forked repository.
 Now you can request merging these changes main repository using a "Pull Request" (PR).
-Click on **Pull Requests**.
+Click on *Pull Requests*.
 
 ![RepositoryFork](/images/Contribute/GitHubRepositoryFork.png)
-<br><br>
 
-After the Pull Requests page opens, click on the green **New Pull Request** button.
+After the **Pull Requests** page opens, click on the green *New Pull Request* button.
 
 ![ForkPullRequests](/images/Contribute/GitHubRepositoryForkPullrequests.png)
-<br><br>
 
-Confirm that the *base repository* is set to **freenas/documentation** and  *base* is set to **master**.
-*head repository* must be set to your forked repository, for example **q5sys/documentation**.
-*compare* needs to be set to **master**.
-Make sure these options are correct then click the green **Create pull request** button to create the PR.
+Confirm that the *base repository* is set to *truenas/documentation* and  *base* is set to *master*.
+*head repository* must be set to your forked repository, for example *q5sys/documentation*.
+*compare* needs to be set to *master*.
+Make sure these options are correct, then click the green *Create pull request* button to create the PR.
 
 ![RepositoryComparison](/images/Contribute/GitHubRepositoryComparison.png)
-<br><br>
 
-Describe your changes and click the green **Create pull request** button.
+Describe your changes and click the green *Create pull request* button.
 
 ![CreatePullRequest](/images/Contribute/GitHubPullRequestCreate.png)
-<br><br>
 
 That's it!
-Other contributors will review and merge your changes!
+Other contributors review and merge your changes!
 
-As part of the review process, automation will build a preview of the Docs site with your changes.
-When the build is completed, a comment will be added to the PR that says *All checks have passed 1 successful check*.
-Click on **Show all checks** and **Details** to see a live demo of the site with your changes.
+As part of the review process, automation builds a preview of the Docs site with your changes.
+When the build is completed, a comment appears in the PR that shows the automation result.
+Click on *Show all checks* and *Details* to see a live demo of the site with your changes.
 
 ![PullRequestSummary](/images/Contribute/GitHubPullRequestSummary.png)
-
-### Editing an Include
-
-Some content in a document is added to the published material via an *include* statement.  An include statement is a section of documentation that has a single location in the Documentation Hub Repo, but can be applied in multiple places so that a single edit updates multiple documents.
-
-An example of this is in the [Cron Jobs](/CORE/Tasks/CronJobs) article.  The expandable *Advanced Scheduler* section is pulled from another file.  This include is also used in other articles.
-
-If you click the "Edit this Page" link to open the markdown you will see the following line:
-`{{< expand "Advanced Scheduler" "v" >}} {{< include file="static/includes/AdvancedScheduler.md.part" markdown="true" >}} {{< /expand >}}`
-
-The *expand* and */expand* code handles the expansion/collapse section of the document, inside that you will find our include statement:
-`{{< include file="static/includes/AdvancedScheduler.md.part" markdown="true" >}}`
-
-The file <file>/documentation/static/includes/AdvancedScheduler.md.part</file> contains the documenation for this section. To update this section, update the `.md.part` file with any required changes.  Keep in mind that this documentation block will be used in multiple documents, so be sure to not include any task specific comments.

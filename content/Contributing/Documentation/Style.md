@@ -1,7 +1,9 @@
 ---
-title: "Style Guide"
+title: "Content Styling"
 weight: 30
 ---
+
+{{< toc >}}
 
 This guide has many examples of how to style your documentation contributions.
 TrueNAS documentation uses standardized Markdown, HTML, and Hugo syntax to transform text, add images, and link to other locations.
@@ -9,6 +11,7 @@ The guide is not exhaustive, but contains examples of the elements that are most
 To learn more about each markup language, see these resources:
 
 * Markdown: https://daringfireball.net/projects/markdown
+* CommonMark: https://spec.commonmark.org/
 * HTML: https://www.w3schools.com/html/default.asp
 * Hugo: https://gohugo.io/documentation/
 
@@ -58,7 +61,7 @@ Linking to a site that is outside docs.truenas.com is done with square brackets 
 You can also link directly just by typing the URL with no additional markup: `www.example.com`
 HTML linking syntax is also allowed: `<a href="www.example.com">Example Site</a>`
 
-To link to another section of the same article, use an anchor to refer to that section header: `[Linking](#linking)`
+To link to another section of the **same** article, use an anchor to refer to that section header: `[Linking](#linking)`
 The header title needs to be in lower case and spaces replaced with dashes (-): `[Escape Characters](#escape-characters)`
 
 {{< /tab >}}
@@ -180,16 +183,6 @@ To find icons that you can include with your text, please refer to the [Material
 
 To improve accessibility assistance, please be sure to use the `aria-hidden` and `title` fields with your icon.
 This allows users that require accessibility assistance like screen readers to be able to know what icon is being used.
-
-{{< hint [info] >}}
-**Preventing Formatting Issues**\
-To prevent formatting issues, you can add a non-breaking space `&nbsp;` after the icon.
-This is not usually needed if the icon is immediately followed by puncuation. 
-
-Without nonbreaking space: Click the <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i> Options Menu.
-
-With non-breaking space: Click the <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; Options Menu.
-{{< /hint >}}
 
 {{< /tab >}}
 {{< /tabs >}}
