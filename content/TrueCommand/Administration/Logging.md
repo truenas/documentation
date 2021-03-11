@@ -3,6 +3,8 @@ title: "Logs"
 weight: 17
 ---
 
+{{< toc >}}
+
 TrueCommand records all user account activity in a system log.
 For example, if a user deletes a system from TrueCommand, the log records which user deleted it along with other information associated with the deleted system.
 
