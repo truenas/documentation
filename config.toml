@@ -3,6 +3,7 @@ title = ""
 theme = ["hugo-geekdoc"]
 #disableKinds = ["home"]
 relativeURLs = true
+disablePathToLower = false
 
 [outputs]
 section = ["HTML","RSS","print"]
@@ -16,7 +17,6 @@ permalinkable = false
 # Required to get well formatted code blocks
 pygmentsUseClasses = true
 pygmentsCodeFences = true
-disablePathToLower = true
 enableGitInfo = true
 
 [markup]

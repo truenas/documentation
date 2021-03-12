@@ -1,17 +1,17 @@
 ---
-title: "Dashboard Theming"
-description: "How to adjust alert colors in TrueCommand."
-tags: ["TrueCommand Users"]
+title: "Theming"
+weight: 10
 ---
 
-TrueCommand 1.3.1 introduced the ability to customize the alert colors to user preferences. The Theme pallet is located in the top banner on the right. To open the theme configuration menu, click the <i class="fas fa-palette" aria-hidden="true" title="Theme"></i>&nbsp; icon.
+TrueCommand 1.3.1 introduced the ability to customize the alert colors to user preferences.
+The Theme pallet is located in the top banner on the right.
+To open the theme configuration menu, click the <i class="fa fa-palette" aria-hidden="true" title="Theme"></i> icon.
 
-<img src="/images/TrueCommand/1.3/ThemeSelect.png">
-<br><br>
+![ThemeSelect](/images/TrueCommand/1.3/ThemeSelect.png "Theme Select")
 
 To change a color, click on the color to open a selection menu. Select the desired color or enter its HEX color value.
 
-<img src="/images/TrueCommand/1.3/ThemeCustomize.png">
-<br><br>
+![ThemeCustomize](/images/TrueCommand/1.3/ThemeCustomize.png "Theme Customize")
 
-To remove changes and revert to the currently saved settings, click **Reset**. To reset all colors to the application defaults, click **Defaults**.
+To remove changes and revert to the currently saved settings, click *Reset*.
+To reset all colors to the application defaults, click *Defaults*.
