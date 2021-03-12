@@ -24,7 +24,7 @@ The [Key Management Interface Protocol (KMIP)](https://docs.oasis-open.org/kmip/
 ## Encrypting a Storage Pool
 
 Encrypting the root dataset of a new storage pool further increases data security.
-[Create a new pool](/core/storage/pools/poolcreate/#creating-a-pool) and set *Encryption* in the **Pool Manager**.
+[Create a new pool]({{< relref "PoolCreate.md#creating-a-pool" >}}) and set *Encryption* in the **Pool Manager**.
 TrueNAS shows a warning.
 
 ![Storage Pools Add Encryption Warning](/images/CORE/12.0/StoragePoolsAddEncryptionWarning.png "Storage Pools Add Encryption Warning")
