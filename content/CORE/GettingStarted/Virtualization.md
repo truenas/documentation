@@ -15,72 +15,74 @@ Article to describe expanding TrueNAS with plugins, Jails, or Virtual Machines i
 Pre-Requirement:
 Create a dataset called adio and a dataset called video to be used as mountpoints for Plex
 
+Note: It is possible that you may need to Disable Hardware Offloading in your Network -> Interface to install Plex but disabling hardware offloading can reduce network performance. 
+
+
+
 Installing a basic PlexMedia Plugin:
 
 1. Select the Plex Media Server plugin and click the INSTALL button.
 
-<insert PlexInstallButton graphic here>
+ ![PlexInstallButton](/images/CORE/12.0/SharingSMBAdd.png "Plex Install Button")
 
-3. Under "Jail Name" enter whatever name you'd like (i.e. "Plex").
-4. DHCP should be checked automatically for this plugin.
-5. Click the SAVE button.
+2. Under "Jail Name" enter whatever name you'd like (i.e. "Plex").
+3. DHCP should be checked automatically for this plugin.
+4. Click the SAVE button.
 
-<insert PlexMediaSave graphic here>
+ ![PlexMediaSave](/images/CORE/12.0/PlexMediaSave.png "Plex Media Save")
 
-7. Install window should be visible outlining progress of installation
+5. Install window should be visible outlining progress of installation
 
-<install PlexInstallProgress graphic here>
+ ![PlexInstallProgress](/images/CORE/12.0/PlexInstallProgress.png "Plex Installation Progress")
 
 Note: If available, Plugin Installation Notes will be listed
-9. Status should be "up", with Boot option checked
-10. To the right of Plex in the plugin table, click the ">"
+6. Status should be "up", with Boot option checked
+7. To the right of Plex in the plugin table, click the ">"
 
-<insert the graphic PlexJailUp here>
+ ![PlexJailUp](/images/CORE/12.0/PlexJailUp.png "Plex Jail Up")
 
-12. Stop the running PlexMedia
-13. Click on MountPoint
+8. Stop the running PlexMedia
+9. Click on MountPoint
 
-<inser the PlexSetMountpoints graphics here>
+ ![PlexSetMountpoints](/images/CORE/12.0/PlexSetMountpoints.png "Plex Set Mountpoints")
 
-15. Click the Actions button in the upper right and clock on Add
+10. Click the Actions button in the upper right and clock on Add
 
-<insert PlexAddMountpoint graphic here>
+ ![PlexAddMountpoint](/images/CORE/12.0/PlexAddMountpoint.png "Plex Add Mountpoint")
 
-Fill out one mounpint for each source dataset you have created. The Source is the dataset you created.
-For the Destination, chose the media directory and append /datasetname (see example)
+11. Fill out one mounpint for each source dataset you have created. The Source is the dataset you created. For the Destination, chose the media directory and append /datasetname (see example)
 
-<Insert PlexSetMountpoint graphic here>
+ ![PlexSetMountpoint](/images/CORE/12.0/PlexSetMountpoint.png "Plex Set Mountpoint")
 
-Click the Submit button
+12. Click the Submit button
 (Do this for as many mointpoints as you desire. In our example we have Audio and Video.
 
-Go to Storage, click on the three dots to the left of your source dataserts and click on Edit Permissions
+13. Go to Storage, click on the three dots to the left of your source dataserts and click on Edit Permissions
 
-<insert the PlexEditPermissions graphic here>
+ ![PlexEditPermissions](/images/CORE/12.0/PlexEditPermissions.png "Edit Permissions")
 
-Click "Create a custom ACL" and click the Continue button
+14. Click "Create a custom ACL" and click the Continue button
 
-<insert PlexACL graphic here>
+ ![PlexACL](/images/CORE/12.0/PlexACL.png "Custom ACL")
 
-Click the "Add ACL ITEM button" and enter the values pictured below, click Apply permissions recursively, and click the Save button
+15. Click the "Add ACL ITEM button" and enter the values pictured below, click Apply permissions recursively, and click the Save button
 
-<insert PlexPermissions" graphic here
+![PlexPermissions](/images/CORE/12.0/PlexPermissions "Plex ermissions")
 
-Go to Plugins and at the right of Plex in the plugin table, click the ">"
-Click Start to run PlexMedia
+16, Go to Plugins and at the right of Plex in the plugin table, click the ">". Click Start to run PlexMedia
 
 
 ## Accessing Plex
 
- To the right of Plex in the plugin table, click the ">" and click "Manage"
+ 1. To the right of Plex in the plugin table, click the ">" and click "Manage"
  
- <insert PlexManage graphic here>
+ ![PlexManage](/images/CORE/12.0/PlexManage.png "Plex Manage")
  
- Enter your Plex login informamtion
+ 2. Enter your Plex login informamtion
  
- <Insert PlexLogin graphic here>
+ ![PlexLogin](/images/CORE/12.0/PlexLogin.png "Plex Login")
   
-  <insert PlexSuccess graphic here>
+ ![PlexSuccess](/images/CORE/12.0/PlexSuccess.png "Accessed Plex")
  
 
 # Jails
