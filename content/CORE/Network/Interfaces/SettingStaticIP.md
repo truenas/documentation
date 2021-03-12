@@ -49,7 +49,7 @@ This contains creation and configuration options for physical and virtual networ
 You can configure static IP addresses while creating or editing an interface.
 
 {{< hint ok >}}
-[High Availability](/CORE/System/Failover/) must be disabled on TrueNAS Enterprise systems before an active interface can be edited.
+[High Availability]({{< relref "Failover.md" >}}) must be disabled on TrueNAS Enterprise systems before an active interface can be edited.
 {{< /hint >}}
 
 <img src="/images/CORE/12.0/NetworkInterfacesEdit.png">
