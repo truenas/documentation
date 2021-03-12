@@ -13,7 +13,7 @@ you have the LSI 9300 HBA with firmware version 16.00.12.00 or earlier installed
 occasional controller reset from this issue, follow these instructions. Please note that the firmware update is
 only available from iXsystems.”
 
-{{< hint [info] >}}
+{{ hint info }}
 This problem only applies to firmware versions below 16.00.12.00 and only affects SATA drives.
 SAS drives are not affected.
 {{< /hint >}}
