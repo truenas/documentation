@@ -35,7 +35,7 @@ Do not enable ALUA on TrueNAS unless it is supported by and enabled on the clien
 {{< /hint >}}
 {{< /expand >}}
 
-To get started, make sure a [dataset](/CORE/Storage/DataPools/datasets/) has been created with at least one file to share, or a [zvol](/CORE/Storage/zvols/) has been created.
+To get started, make sure a [dataset]({{< relref "Datasets.md" >}}) has been created with at least one file to share, or a [zvol]({{< relref "ZVols.md" >}}) has been created.
 
 ## Setting Up an iSCSI Share
 
