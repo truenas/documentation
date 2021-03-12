@@ -87,7 +87,7 @@ TrueNAS SCALE uses much of the same TrueNAS CORE source code, but adds a few dif
 
 TrueNAS delivers Software Defined Storage (SDS) and runs on any x86_64 server, no matter how old or modern.
 Intel and AMD processors or any generation are supported, whether it’s a single core or a sixty-four core behemoth.
-The TrueNAS [hardware guide](/CORE/Introduction/COREHardwareGuide/) provides recommendations to assist you in building your own systems.
+The TrueNAS [hardware guide]({{< relref "COREHardwareGuide.md" >}}) provides recommendations to assist you in building your own systems.
 
 TrueNAS software has been developed under the sponsorship of iXsystems since 2009 and uses a large team of professionals who develop, build, QA, document, and support the Open Source software and the TrueNAS community.
 Since the TrueNAS software is free, iXsystems grows its business by building professional and enterprise-grade systems that have similar reliability to the major NAS vendors, but at a much lower Total Cost of Ownership (TCO).
@@ -97,7 +97,7 @@ TrueNAS provides the industry’s most powerful Open Storage.
 TrueNAS can be downloaded from [this page](https://www.truenas.com/download-tn-core/).
 
 The current TrueNAS systems available cover a wide range of sizes and use cases!
-Go to the [hardware](/hardware/) section to learn more about each family of TrueNAS hardware.
+Go to the [hardware]({{< relref "/Hardware/_index.md" >}}) section to learn more about each family of TrueNAS hardware.
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -112,6 +112,6 @@ If you need more professional support, iXsystems offers Bronze/Silver/Gold Enter
 
 TrueCommand is a single Pane-of-Glass management application that takes the repetitive work out of multi-TrueNAS management by centralizing system alerts, reports, and analytics in one easy to use interface. It supports users and teams with 24x365 global operations, role-based access control, and a full log of every TrueNAS configuration change.
 TrueCommand runs on docker, VMs, or as a cloud service and is free to users with less than 50 drives and affordable for those with larger installations.
-Read more information about TrueCommand in the [What is TrueCommand](/truecommand/introduction/whatistruecommand/) article.
+Read more information about TrueCommand in the [overview]({{< relref "TrueCommandOverview.md" >}}) article.
 
 ![TrueCommandOverview](/images/TrueCommand/Overview.png)
