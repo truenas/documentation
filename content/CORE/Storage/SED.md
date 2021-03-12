@@ -7,23 +7,21 @@ weight: 40
 
 [TrueNAS version 11.1-U5]({{< relref "/ReleaseNotes/CORE/TrueNAS/11.1/11.1U5.md" >}}) introduced Self-Encrypting Drive (SED) support.
 
-These SED specifications are supported:
+## Supported Specifications
 
-Legacy interface for older ATA devices. **Not recommended for security-critical environments**
+* Legacy interface for older ATA devices. **Not recommended for security-critical environments**.
+* [TCG Opal 1](https://trustedcomputinggroup.org/wp-content/uploads/Opal_SSC_1.00_rev3.00-Final.pdf) legacy specification.
+* [TCG OPAL 2](https://trustedcomputinggroup.org/wp-content/uploads/TCG_Storage-Opal_SSC_v2.01_rev1.00.pdf) standard for newer consumer-grade devices.
+* [TCG Opalite](https://trustedcomputinggroup.org/wp-content/uploads/TCG_Storage-Opalite_SSC_FAQ.pdf) is a reduced form of OPAL 2.
+* TCG Pyrite [Version 1](https://trustedcomputinggroup.org/wp-content/uploads/TCG_Storage-Pyrite_SSC_v1.00_r1.00.pdf) and [Version 2](https://trustedcomputinggroup.org/wp-content/uploads/TCG_Storage-Pyrite_SSC_v2.00_r1.00_PUB.pdf) are similar to Opalite, but hardware encryption is removed. Pyrite provides a logical equivalent of the legacy ATA security for non-ATA devices. Only the drive firmware is used to protect the device.
+  {{< hint danger >}}
+  Pyrite Version 1 SEDs do not have PSID support and can become unusable if the password is lost.
+  {{< /hint >}}
+* [TCG Enterprise](https://trustedcomputinggroup.org/wp-content/uploads/TCG_Storage-SSC_Enterprise-v1.01_r1.00.pdf) is designed for systems with many data disks. These SEDs do not have the functionality to be unlocked before the operating system boots.
 
-[TCG Opal 1](https://trustedcomputinggroup.org/wp-content/uploads/Opal_SSC_1.00_rev3.00-Final.pdf) legacy specification
+See this Trusted Computing Group and NVM Express® [joint white paper](https://nvmexpress.org/wp-content/uploads/TCGandNVMe_Joint_White_Paper-TCG_Storage_Opal_and_NVMe_FINAL.pdf) for more details about these specifications.
 
-[TCG OPAL 2](https://trustedcomputinggroup.org/wp-content/uploads/TCG_Storage-Opal_SSC_v2.01_rev1.00.pdf) standard for newer consumer-grade devices
-
-[TCG Opalite](https://trustedcomputinggroup.org/wp-content/uploads/TCG_Storage-Opalite_SSC_FAQ.pdf) is a reduced form of OPAL 2
-
-TCG Pyrite [Version 1](https://trustedcomputinggroup.org/wp-content/uploads/TCG_Storage-Pyrite_SSC_v1.00_r1.00.pdf) and [Version 2](https://trustedcomputinggroup.org/wp-content/uploads/TCG_Storage-Pyrite_SSC_v2.00_r1.00_PUB.pdf) are similar to Opalite, but hardware encryption is removed. Pyrite provides a logical equivalent of the legacy ATA security for non-ATA devices. Only the drive firmware is used to protect the device.
-
-*Danger*: Pyrite Version 1 SEDs do not have PSID support and can become unusable if the password is lost.
-
-[TCG Enterprise](https://trustedcomputinggroup.org/wp-content/uploads/TCG_Storage-SSC_Enterprise-v1.01_r1.00.pdf) is designed for systems with many data disks. These SEDs do not have the functionality to be unlocked before the operating system boots.
-
-See this Trusted Computing Group® and NVM Express® [joint white paper](https://nvmexpress.org/wp-content/uploads/TCGandNVMe_Joint_White_Paper-TCG_Storage_Opal_and_NVMe_FINAL.pdf) for more details about these specifications.
+## TrueNAS Implementation
 
 TrueNAS implements the security capabilities of [camcontrol](https://www.freebsd.org/cgi/man.cgi?query=camcontrol) for legacy devices and [sedutil-cli](https://www.mankier.com/8/sedutil-cli) for TCG devices. When managing a SED from the command line, it is recommended to use the `sedhelper` wrapper script for `sedutil-cli` to ease SED administration and unlock the full capabilities of the device. Examples of using these commands to identify and deploy SEDs are provided below.
 
@@ -92,7 +90,7 @@ This process must be repeated for each SED and any SEDs added to the system in t
 
 {{< hint danger >}}
 Remember SED passwords! If the SED password is lost, SEDs cannot be unlocked and their data is unavailable. Always record SED passwords whenever they are configured or modified and store them in a secure place!
-{{ /hint >}}
+{{< /hint >}}
 
 ## Check SED Functionality
 
@@ -152,9 +150,8 @@ Scanning for Opal compliant disks
 No more disks present ending scan
 root@truenas:~ #
 ```
-
-## TCG-Opal Instructions
-
+{{< tabs "Instructions for Specific Drives" >}}
+{{< tab "TCG-Opal Instructions" >}}
 Reset the password without losing data: `sedutil-cli --revertNoErase <oldpassword> </dev/device>`
 
 Use **both** of these commands to change the password without destroying data:
@@ -167,9 +164,8 @@ sedutil-cli --setPassword <oldpassword> Admin1 <newpassword> </dev/device>
 Wipe data and reset password to default MSID: `sedutil-cli --revertPer <oldpassword> </dev/device>`
 
 Wipe data and reset password using the PSID: `sedutil-cli --yesIreallywanttoERASEALLmydatausingthePSID <PSINODASHED> </dev/device>` where <PSINODASHED> is the PSID located on the pysical drive with no dashes (-).
-
-## TCG-E Instructions
-
+{{< /tab >}}
+{{< tab "TCG-E Instructions" >}}
 ### Change or Reset the Password without Destroying Data
 
 These commands must be run for every *LockingRange* or *band* on the drive.
@@ -211,3 +207,4 @@ Reset using the PSID:
 If it fails use:
 
 `sedutil-cli --PSIDrevert <PSIDNODASHS>  /dev/<device>`
+{{< /tabs >}}

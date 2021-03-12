@@ -24,8 +24,10 @@ FreeNAS®, TrueNAS®, TrueNAS® SCALE, TrueCommand, and all related logos are re
 * LinkedIn® is a registered trademark of LinkedIn Corporation.
 * Linux® is a registered trademark of Linus Torvalds.
 * Mellanox® is a registered trademark Mellanox Technologies Ltd. which is a subsidiary of Nvidia.
+* NVM Express® is a registered trademark of NVM Express, Inc.
 * OpenStack® is a registered trademark of The OpenStack Foundation.
 * Oracle® is a registered trademark of Oracle Corporation and/or its affiliates.
+* Trusted Computing Group® is a registered trademark of the Trusted Computing Group.
 * Twitter® is a trademark of Twitter, Inc. in the United States and other countries.
 * UNIX® is a registered trademark of The Open Group.
 * Veeam® is a registered trademark of Veeam Software.
