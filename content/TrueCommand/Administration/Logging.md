@@ -11,7 +11,7 @@ For example, if a user deletes a system from TrueCommand, the log records which 
 
 To view the system log, open the **Configure** <i class="fa fa-cog" aria-hidden="true" title="Settings"></i>&nbsp; menu and click **Logs**.
 
-<img src="/images/tc-1.3-logs.PNG">
+<img src="/images/TrueCommand/1.3/Logs.png">
 <br><br>
 
 All system log entries are shown by default.

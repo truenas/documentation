@@ -1,7 +1,5 @@
 ---
 title: "Visio Stencils"
-description: "Downloadable Visio stencil pack for TrueNAS Hardware."
-tags: ["TrueNAS Products"]
 weight: 60
 ---
 
@@ -12,13 +10,15 @@ They are also customizable, with drop-in functionality for the expansion cards a
 You will need Microsoft Visio or another application that can open <file>.vssx</file> files to use this stencil pack.
 To download the stencils, hover over the reference image and click the button.
 
-{{% alert title="Work in Progress" color="info" %}}
+{{< hint warning >}}
+**Work in Progress**
+
 This stencil pack is a work in progress and currently includes TrueNAS *Minis*, the *R*, *X*, and *M* *-Series* systems with relevant expansion cards, and other expansion shelves.
 Additional product stencils are being added to the pack as they are finished, so check back regularly to see what's been added!
-{{% /alert %}}
+{{< /hint >}}
 
 <div class="container-image-download">
-  <img src="/images/TrueNAS-Stencils-Preview.png" alt="TrueNAS Hardware Stencils" class="image" style="width:100%">
+  <img src="/images/Hardware/TrueNASStencilsPreview.png" alt="TrueNAS Hardware Stencils" class="image" style="width:100%">
   <div class="middle">
     <div class="image-download-text,button-wrapper"><a class="linkbutton" href="/files/TrueNASCollection.vssx">Download</a></div>
   </div>

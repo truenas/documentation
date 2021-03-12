@@ -1,7 +1,9 @@
 ---
 title: "FreeNAS Mini Motherboard Clock Signal Issue"
-description: "FreeNAS Mini Motherboard Clock Signal Issue"
+weight: 40
 ---
+
+{{< toc >}}
 
 ## FreeNAS Mini Motherboard Clock Signal Issue
 

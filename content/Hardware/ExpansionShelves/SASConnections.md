@@ -1,8 +1,5 @@
 ---
 title: "SAS Connections Guide"
-linktitle: "SAS Connections"
-description: "How to connect iXsystems SAS expansion shelves to different TrueNAS hardware products."
-tags: ["TrueNAS Products"]
 weight: 50
 ---
 
