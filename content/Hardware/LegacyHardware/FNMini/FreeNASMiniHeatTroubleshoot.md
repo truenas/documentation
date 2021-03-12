@@ -1,7 +1,9 @@
 ---
 title: "Troubleshooting Heat Issues"
-description: "Discovering and resolving overheating issues with 2nd Generation FreeNAS Minis."
+weight: 50
 ---
+
+{{< toc >}}
 
 This article demonstrates how to diagnose and fix overheating issues in the FreeNAS Mini and Mini XL. While unlikely, overheating can occur when the Mini is kept in a non-optimal environment for operation, such as a room with high dust accumulation or poor ventilation. Incorrect BIOS settings might also cause overheating.
 
@@ -29,13 +31,11 @@ Follow these steps to adjust the BIOS fan settings for the Mini.
 
 2. At the start of the boot process, press the <kbd>F2</kbd> or <kbd>Delete</kbd> key several times until the `BIOS Main menu` appears:
 
-   <img src="/images/FN-heat-bios-1.png">
-   <br><br>
+   ![BIOSMainMenu](/images/Hardware/LegacyBIOSMainMenu.png)
 
 3. Press the <kbd>right arrow</kbd> to go to the `H/W Monitor` tab:
 
-   <img src="/images/FN-heat-bios-2.png">
-   <br><br>
+   ![BIOSMainMenu](/images/Hardware/LegacyHardwareMonitor.png)
 
 4. Use the <kbd>down arrow</kbd> to scroll to the **REAR_FAN2** setting, then press <kbd>Enter</kbd>.
 
