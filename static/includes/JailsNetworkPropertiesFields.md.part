@@ -1,7 +1,7 @@
 **Network Properties**
 
-| | |
-|-|-|
+| Name | Description |
+|------|-------------|
 | Interfaces | Enter up to four interface configurations in the format interface:bridge, separated by a comma (,). The left value is the virtual VNET interface name and the right value is the bridge name where the virtual interface should be attached. |
 | host_domainname | Enter a [NIS Domain name](https://www.freebsd.org/doc/handbook/network-nis.html) for the jail. |
 | host_hostname | Set the jail hostname. Defaults to the jail UUID. |

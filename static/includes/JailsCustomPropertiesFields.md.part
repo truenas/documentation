@@ -1,7 +1,7 @@
 **Custom Properties**
 
-| | |
-|-|-|
+| Name | Description |
+|------|-------------|
 | priority | Numeric start priority for the jail at boot time. Valid priorities are between 1 and 99. Smaller values are higher priority. At system shutdown the priority is reversed.  Example: 99 |
 | hostid | A new jail hostid, if desired.  Example `hostid: 1a2bc345-678d-90e1-23fa-4b56c78901de`. |
 | comment | Enter comments about the jail. |

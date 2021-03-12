@@ -1,8 +1,7 @@
-**Add**
-
-| | |
-|-|-|
+| Name | Description |
+|------|-------------|
+| All Disks | Setting *All Disks* includes every disk that has S.M.A.R.T. enabled in this test. Leave unset to choose which *Disks* to test. |
 | Disks | Select the disks to monitor. |
-| Type | Choose the test type. See [smartctl(8)](https://www.smartmontools.org/browser/trunk/smartmontools/smartctl.8.in) for descriptions of each type. Some types will degrade performance or take disks offline. Avoid scheduling S.M.A.R.T. tests simultaneously with scrub or resilver operations. |
+| Type | Choose the test type. See [smartctl(8)](https://www.smartmontools.org/browser/trunk/smartmontools/smartctl.8.in) for descriptions of each type. Some types degrade performance or take disks offline. |
 | Description | Enter any information about this S.M.A.R.T. test. |
-| Schedule | Choose one of the presets or select Custom to open the advanced scheduler. |
+| Schedule | The time when the test runs. Choose a preset or select *Custom* to open the advanced scheduler. |
