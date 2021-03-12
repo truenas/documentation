@@ -49,7 +49,7 @@ iXsystems is proud to stand behind its products. We’re extending the warranty 
 
 ## What should I do if I think my FreeNAS Mini has stopped working because of this issue?
 
-[Contact iXsystems Customer Support]({{< relref "/CORE/System/Support.md#contacting-ixsystems-support" >}}) and we will be glad to assist you!
+Contact iXsystems Customer Support and we will be glad to assist you!
 
 ## How does the return process work and how long does it take?
 
@@ -57,6 +57,10 @@ We offer an advanced replacement option if you have experienced a failure relate
 
 ## What if I didn’t get an answer to my question in this FAQ?
 
-[Contact iXsystems Customer Support]({{< relref "/CORE/System/Support.md#contacting-ixsystems-support" >}} and we will be glad to assist you!
+Contact iXsystems Customer Support and we will be glad to assist you!
 
 Thank you for your loyalty as an iXsystems customer. We stand behind the FreeNAS Mini and the FreeNAS Mini XL and will continue to support our customers.
+
+{{< expand "Contacting iXsystems Support" "v" >}}
+{{< include file="static/includes/iXsystemsSupportContact.html.part" html="true" >}}
+{{< /expand >}}
