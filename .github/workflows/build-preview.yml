@@ -56,11 +56,13 @@ jobs:
      
       - name: Sleep for 30 seconds
         uses: jakejarvis/wait-action@master
+        with:
+          time: '30s'
      
       - name: Check links using container
         uses: ruzickap/action-my-broken-link-checker@v2
         with:
           url: "https://${{ steps.preview_step.outputs.preview_url }}"
-          cmd_params: "--skip-tls-verification --timeout=30 --verbose --max-connections=5 --color=always --exclude=linkedin.com --exclude=googletagmanager.com --exclude=youtube.com"
+          cmd_params: "--skip-tls-verification --timeout=30 --max-connections=10 --color=always --exclude=jira.ixsystems.com --exclude=linkedin.com --exclude=googletagmanager.com --exclude=youtube.com"
           run_timeout: 600
           debug: true
