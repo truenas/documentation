@@ -61,7 +61,7 @@ SAS systems are designed for data center storage applications and therefore have
 Multipath access means that each drive has two interfaces and can be connected to either two storage controllers, or one controller over two cables.
 This redundancy protects against cable failure, controller card failure, or complete system failure in the case of the TrueNAS high-availability architecture in which each “controller” is in fact an independent server that accesses the same set of NL-SAS drives.
 NL-SAS drives are also robust enough to handle the rigors of systems with more than 16 disks.
-Therefore, capacity-oriented TrueNAS and certain [FreeNAS Certified](https://www.freenas.org/freenas-certified-servers/) systems ship with [Western Digital UltraStar](https://www.westerndigital.com/products/data-center-drives#hard-disk-hdd) NL-SAS disks thanks to the all-around perfect balance of capacity, reliability, performance, and flexibility that NL-SAS drives offer.
+Therefore, capacity-oriented TrueNAS and certain [FreeNAS Certified](https://www.freenas.org/freenas-certified-servers/) systems ship with [Western Digital UltraStar](https://www.westerndigital.com/products/data-center-platforms) NL-SAS disks thanks to the all-around perfect balance of capacity, reliability, performance, and flexibility that NL-SAS drives offer.
 
 ### SAS Disks
 

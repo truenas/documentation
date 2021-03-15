@@ -15,7 +15,7 @@ On these particular motherboards, the BMC creates a backup copy of its configura
 
 ## How do I protect my system?
 
-The best way to protect your system is to update the BMC firmware from ASRock Rack’s website to the newest version: [ASRock Rack C2750D4I](https://www.asrockrack.com/general/productdetail.asp?Model=C2750D4I#Download) BMC firmware update (Version: 00.30.00).
+The best way to protect your system is to update the BMC firmware from ASRock Rack’s website to the newest version: [ASRock Rack C2750D4I](https://www.asrockrack.com/general/productdetail.asp?Model=C2750D4I) BMC firmware update (Version: 00.30.00).
 
 ## Is the data in my FreeNAS Mini safe?
 
