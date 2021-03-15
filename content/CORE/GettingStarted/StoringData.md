@@ -22,33 +22,28 @@ Backups with Replication requires either additional storage on the TrueNAS syste
 ## Simple Storage Setup
 
 Go to **Storage > Pools** and click *ADD*.
-
-![]()
-
 Set *Create a new pool* and click *CREATE POOL*
 
-![]()
+![StoragePoolsAddCreateManager](/images/CORE/12.0/StoragePoolsAddCreateManager.png "TrueNAS Pool Manager")
 
-For the *Name*, enter *pool1* or any other preferred name.
+For the *Name*, enter *tank* or any other preferred name.
 In the **Available Disks**, set two identical disks and click the <right arrow icon> to move them to the **Data VDevs** area.
 
-![]()
+![StoragePoolsAddCreateTank](/images/CORE/12.0/StoragePoolsAddCreateTank.png "Creating the tank pool")
 
 TrueNAS automatically suggests *Mirror* as the ideal layout for maximized data storage and protection.
 
 Review the **Estimated total raw data capacity** and click *CREATE*.
-TrueNAS wipes the disks and adds *pool1* to the **Storage > Pools** list.
+TrueNAS wipes the disks and adds *tank* to the **Storage > Pools** list.
 
-![]()
+![StoragePoolsListTank](/images/CORE/12.0/StoragePoolsListTank.png "Finding the tank pool")
 
 ## Data Management
 
-Once your storage has been successfully created, it's time to ensure your data is effectively stored and backed-up.
+When the storage is created, it's time to ensure the data is effectively stored and backed-up.
 TrueNAS offers several options to help ensure your data is adequately protected.
 
 {{< tabs "Backup Options" >}}
-{{< tab "Rsync" >}}
-{{< /tab >}}
 {{< tab "Cloud Sync" >}}
 {{< hint info >}}
 This option requires an account with the Cloud Storage provider and a storage location created with the provider, like an Amazon S3 bucket.
@@ -58,37 +53,74 @@ These can charge fees for data transfers and storage, so please review your clou
 
 You can configure TrueNAS to send, receive, or synchronize data with a Cloud Storage provider.
 Configuring a Cloud Sync task allows you to transfer data a single time or set up a recurring schedule to periodically transfer data.
-This can be an effective method to back up your data to a remote location.
+
+### Add the Credential
 
 Go to **System > Cloud Credentials > ADD**.
-Enter a *Name* and choose your *Provider* from the dropdown menu.
-For authentication, depending on the provider chosen, you will either enter the credentials manually, or you will be prompted to login to the provider and the credentials will be filled in automatically.
+Enter a *Name* and choose the *Provider* from the dropdown menu.
+The authentication options change depending on the selected *Provider*.
+Credentials either must be entered manually or a single provider login is required and the credentials add automatically.
 
 ![CloudSyncLogin](/images/CORE/12.0/StoringDataCloudSyncAuth.png "Cloud Sync Authorization")
 
-After the credentials have been successfully entered, click **VERIFY CREDENTIAL**.  Once verification is confirmed, click **SUBMIT**. 
+After entering the *Provider* credentials, click *VERIFY CREDENTIAL*.
+When verification is confirmed, click *SUBMIT*.
 
-Go to **Tasks > Cloud Sync Tasks > ADD**.  Add a *Description* for your task, select **PUSH** as your *Direction* and **COPY** as the *Transfer Mode*.  Choose the Pool/Dataset you wish to backup under *Directory File* and the frequency of your task via the *Schedule* options available.  Finally, under the *Credential* dropdown, select your provider. To test your task, click **DRY RUN**.  Once the dry run is complete, click **SUBMIT**. 
+### Add the Data Transfer Task
+
+Go to **Tasks > Cloud Sync Tasks** and click *ADD*.
+
+![TasksCloudSyncAdd](/images/CORE/12.0/TasksCloudSyncAdd.png "Creating a Cloud Sync Task")
+
+Select the previously saved *Credential* to populate the **Remote** section.
+
+Add a *Description* for the  task, select *PUSH* or *PULL* as the *Direction* and *COPY* as the *Transfer Mode*.
+Under *Directory/Files*, choose the **tank** dataset previously created.
+
+Now, use the **Control** options to define how often this task runs.
+Open the *Schedule* drop down and choose a preset time when running the task is least intrusive to your network.
+When the task only needs to run once, unset *Enabled*.
+The task can then be triggered a single time from the **Tasks > Cloud Sync Tasks** list to do the initial migration or backup.
+
+To test your task, click *DRY RUN*.
+When the test run is successful, click *SUBMIT* to save the task and add it to **Tasks > Cloud Sync Tasks**.
+
+To manually run the task, go to **Tasks > Cloud Sync Tasks**, click **>** to expand the new task, and click *RUN NOW*.
+
+![TasksCloudSyncOptions](/images/CORE/12.0/TasksCloudSyncOptions.png "Cloud Sync Task Options")
+
+The **Status** shows success or failure.
+Click the status entry to see a detailed log of the action.
 {{< /tab >}}
 {{< tab "Replication" >}}
-TrueNAS provides a wizard that is useful to quickly configure different simple replication scenarios.  Go to **Tasks > Replication Tasks** and click **ADD**.  Set the source location to the local system and pick which datasets to snapshot. The wizard takes new snapshots of the sources when no existing source snapshots are found.
+Replication is the process of taking a moment in time "snapshot" of the data and copying that snapshot to another location.
+Snapshots typically use less storage than full file backups and have more management options.
+This instruction shows using the TrueNAS Wizard to create a simple replication.
+
+Go to **Tasks > Replication Tasks** and click *ADD*.
+Set the source location to the local system and pick which datasets to snapshot.
+The wizard takes new snapshots of the sources when no existing source snapshots are found.
 
 ![RepTaskSource](/images/CORE/12.0/StoringDataRepTaskSource.png "Rep Task Source")
 
-Set the destination to the local system and define the path to the storage location for replicated snapshots. When manually defining the destination, be sure to type the full path to the destination location.
+Set the destination to the local system and define the path to the storage location for replicated snapshots.
+When manually defining the destination, be sure to type the full path to the destination location.
 
 ![RepTaskDestination](/images/CORE/12.0/StoringDataRepTaskDestination.png "Rep Task Destination")
 
-You can define a specific schedule for this replication or choose to run it immediately after saving the new task. Unscheduled tasks are still saved in the replication task list and can be run manually or edited later to add a schedule.
+You can define a specific schedule for this replication or choose to run it immediately after saving the new task.
+Unscheduled tasks are still saved in the replication task list and can be run manually or edited later to add a schedule.
 
 ![RepTaskSchedule](/images/CORE/12.0/StoringDataRepTaskSchedule.png "Rep Task Schedule")
 
-Clicking **START REPLICATION** saves the new task and immediately attempts to replicate snapshots to the destination.
+Clicking *START REPLICATION* saves the new task and immediately attempts to replicate snapshots to the destination.
 
 ![RepTaskCompletion](/images/CORE/12.0/StoringDataRepTaskCompletion.png "Rep Task Completion")
 
-To confirm that snapshots have been replicated, go to **Storage > Snapshots** and verify the destination Dataset has new Snapshots with correct timestamps.
+To confirm that snapshots have been replicated, go to **Storage > Snapshots** and verify the destination dataset has new snapshots with correct timestamps.
 
 ![RepTaskVerification](/images/CORE/12.0/StoringDataRepTaskVerified.png "Rep Task Verification")
 {{< /tab >}}
 {{< /tabs >}}
+
+With TrueNAS configured to store and back up data, let's move on to [sharing data]({{< relref "SharingStorage.md" >}}).
