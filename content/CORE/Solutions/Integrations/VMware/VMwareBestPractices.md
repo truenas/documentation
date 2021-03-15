@@ -1,5 +1,5 @@
 ---
-title: "VMware® Best Practices"
+title: "VMware Best Practices"
 weight: 30
 ---
 

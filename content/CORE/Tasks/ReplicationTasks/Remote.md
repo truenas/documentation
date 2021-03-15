@@ -51,7 +51,7 @@ You can select multiple sources or manually type the names into the field.
 
 TrueNAS shows how many snapshots are available for replication.
 It is recommended to manually snapshot the sources or create a periodic snapshot task *before* creating the replication task.
-However, when the sources are on the local system and don't have any existing snapshots, TrueNAS can create a basic periodic snapshot task and snapshot the sources immediately before starting the replication.
+However, when the sources are on the local system and don't have any existing snapshots, TrueNAS can create a basic periodic snapshot task and snapshot the sources immediately before starting the replication. Enabling *Recursive* replicates all snapshots contained within the selected source dataset snapshots.
 
 ![TasksReplicationTasksAddRemoteSource](/images/CORE/12.0/TasksReplicationTasksAddRemoteSource.png "Choosing a Remote Source")
 

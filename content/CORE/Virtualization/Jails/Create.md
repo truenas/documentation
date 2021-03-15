@@ -98,7 +98,7 @@ Jails support several different networking solutions:
   *VNET* must be set to enable the **IPv4 Default Router** field.
   When no interface is selected when manually configuring IP addresses, TrueNAS automatically assigns the given jail IP address to the current active interface of the host system.
 * Leaving all checkboxes unset and fields empty initializes the jail without any networking abilities.
-  Networking is added to the jail after creation by going to **Jails**, clicking **>**(Expand) for a jail, then <i class="fa fa-pencil" aria-hidden="true" title="Pen"></i> **EDIT > Basic Properties**.
+  Networking is added to the jail after creation by going to **Jails**, clicking **>**(Expand) for a jail, then <i class="fa fa-pencil" aria-hidden="true" title="Pen"></i>&nbsp; **EDIT > Basic Properties**.
 
 Setting a proxy in the TrueNAS network settings also configures new jails to use the proxy settings, except when performing DNS lookups.
 Make sure a firewall is properly configured to maximize system security.
