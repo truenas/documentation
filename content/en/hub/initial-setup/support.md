@@ -180,7 +180,7 @@ Use the same e-mail address submitted with the ticket when registering.
 
 Business hours: 6:00AM to 6:00PM Pacific Time, Monday – Friday, excluding holidays.
 
-To find more details about the different Warranty and Service Level Agreement (SLA) options available, see [TrueCommand Support](https://www.ixsystems.com/support/#truecommand). To purchase support, please call 1-855-GREP-4-IX (US Toll Free) or 1-408-943-4100.
+To find more details about the different Warranty and Service Level Agreement (SLA) options available, see the [iXsystems Support](https://www.ixsystems.com/support/) **TrueCommand** tab. To purchase support, please call 1-855-GREP-4-IX (US Toll Free) or 1-408-943-4100.
 
 ### Contacting iXsystems Support
 

@@ -52,7 +52,7 @@ Other connected TrueNAS systems can also be selected with the drop down menu.
 
 Select the datastore *VMFS Version* from the drop down menu.
 Choose between the modern version *6* or the legacy versions *3* and *5*.
-See the [VMware VMFS documentation](https://docs.vmware.com/en/search/#/VMFS?) for detailed comparisons.
+See the [VMware documentation](https://docs.vmware.com) for detailed comparisons.
 
 Enabling *Sparse Volume* reserves less than the total available size and metadata storage space, but this can cause writes to fail if the volume has little space remaining.
 See [zfs(8)](https://www.freebsd.org/cgi/man.cgi?query=zfs) for more details.

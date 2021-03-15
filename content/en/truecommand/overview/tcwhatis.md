@@ -41,7 +41,7 @@ TrueCommand software is free to use to manage up to 50 drives. It can be deploye
 
 ### Where do I get it?
 
-TrueCommand can be downloaded from the [TrueNAS website](https://www.truenas.com/truecommand/). TrueCommand Cloud subscriptions are available at the [iXsystems Account Services Portal](https://portal.ixsystems.com/portal/login/index.php#login).
+TrueCommand can be downloaded from the [TrueNAS website](https://www.truenas.com/truecommand/). TrueCommand Cloud subscriptions are available at the [iXsystems Account Services Portal](https://portal.ixsystems.com/portal/login/index.php).
 
 
 ### What is TrueCommand Cloud?

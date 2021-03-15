@@ -20,5 +20,5 @@ Set an **Interface Description** and enter a **Country Code** before turning the
 | Setting               | Value    | Description                                                                                     |
 |-----------------------|----------|-------------------------------------------------------------------------------------------------|
 | Interface Description | checkbox | Enables *receive* mode. Any received peer information is saved in interface descriptions.       |
-| Country Code          | string   | Two-letter [ISO 3166-1 alpha-2](https://www.iso.org/obp/ui/#search) code used to enable LLDP location support.                        |
+| Country Code          | string   | Two-letter [ISO 3166-1 alpha-2](https://www.iso.org/obp/ui/) code used to enable LLDP location support.                        |
 | Location              | string   | The physical location of the host.  

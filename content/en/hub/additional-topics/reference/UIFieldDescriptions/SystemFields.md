@@ -242,7 +242,7 @@ tags: ["reference", "ntp", "certificates", "email", "dataset", "ssh", "2fa"]
 | | |
 |-|-|
 | API Key | Enter or paste the [VictorOps API key](https://help.victorops.com/knowledge-base/api/). |
-| Routing Key | Enter or paste the [VictorOps routing key](https://portal.victorops.com/public/api-docs.html#/Routing32Keys). |
+| Routing Key | Enter or paste the [VictorOps routing key](https://portal.victorops.com/public/api-docs.html). |
 
 ## Alert Settings
 
@@ -295,7 +295,7 @@ Authentication options change according to the chosen **Provider**.
 
 | | |
 |-|-|
-| Access Token | A User Access Token for [Box](https://developer.box.com/). An [access token](https://developer.box.com/reference#token) enables Box to verify a request belongs to an authorized session. Example token: T9cE5asGnuyYCCqIZFoWjFHvNbvVqHjl. |
+| Access Token | A User Access Token for [Box](https://developer.box.com/). An [access token](https://developer.box.com/reference/) enables Box to verify a request belongs to an authorized session. Example token: T9cE5asGnuyYCCqIZFoWjFHvNbvVqHjl. |
 
 **DropBox**
 
