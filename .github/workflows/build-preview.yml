@@ -53,3 +53,11 @@ jobs:
             echo Deploying to surge.sh
       - name: Get the preview_url
         run: echo "url => ${{ steps.preview_step.outputs.preview_url }}"
+     
+      - name: lychee Link Checker
+        uses: lycheeverse/lychee-action@v1.0.4
+        with:
+          args: --verbose --no-progress public/*
+      - name: Fail if there were link errors
+        run: exit ${{ steps.lychee.outputs.exit_code }}
+     
