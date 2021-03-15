@@ -54,10 +54,10 @@ jobs:
       - name: Get the preview_url
         run: echo "url => ${{ steps.preview_step.outputs.preview_url }}"
      
-      - name: Sleep for 45 seconds
+      - name: Sleep for 120 seconds
         uses: jakejarvis/wait-action@master
         with:
-          time: '45s'
+          time: '120s'
      
       - name: Check links using container
         uses: ruzickap/action-my-broken-link-checker@v2
