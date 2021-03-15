@@ -1,7 +1,6 @@
 ---
 title: "iXsystems Remote Management (IPMI) Frequently Asked Questions (FAQ)"
-description: "iXsystems Remote Management Frequently Asked Questions"
-tags: ["TrueNAS Products","ipmi"]
+weight: 10
 ---
 
 ## iXsystems Remote Management (IPMI) Frequently Asked Questions (FAQ)
@@ -61,7 +60,7 @@ When opening a support ticket with iXsystems in regards to troubleshooting Remot
 
 **How do I reset Remote Management?**
 
-In rare circumstances, Remote Management can malfunction and require a reset. To reset Remote Management, log in to the web interface and select *Reset Controller* from the *Maintenance* menu. Wait approximately 2 minutes before logging in to the web interface again. It may be necessary to reboot the host to allow the sensors to repopulate afterward.
+In rare circumstances, Remote Management can malfunction and require a reset. To reset Remote Management, log in to the web interface and select **Reset Controller** from the **Maintenance** menu. Wait approximately 2 minutes before logging in to the web interface again. It may be necessary to reboot the host to allow the sensors to repopulate afterward.
 
 If the procedure above does not address the issue, Remote Management may need to be power-cycled by shutting down and unplugging the server for approximately 30 seconds, then reconnecting and powering up the server. This causes Remote Management to re-initialize itself upon the next boot.
 
