@@ -12,7 +12,7 @@ The prompt shows that the current user is `root`, the hostname is `freenas`, and
 The default shell for a new installations is `zsh`.
 {{< expand "How do I change the default shell?" "v" >}}
 The default shell can be changed in **Accounts > Users**.
-Click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; (Options) and *Edit* for the root user.
+Click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> (Options) and *Edit* for the root user.
 
 ![AccountsUsersEditRootShell](/images/CORE/12.0/AccountsUsersEditRootShell.png "Shell Options")
 

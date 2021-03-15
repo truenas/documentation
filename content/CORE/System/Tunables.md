@@ -39,5 +39,5 @@ Be careful when adding or editing the default tunables.
 Changing the default tunables can make the system unusable.
 
 {{< expand "UI Field Reference" "v" >}}
-{{< include file="static/includes/SystemTunablesFields.md.part" >}}
+{{< include file="static/includes/SystemTunablesFields.md.part" markdown="true" >}}
 {{< /expand >}}

@@ -47,8 +47,8 @@ If a portal with listen interface `0.0.0.0:3260` does not exist, click *Add* and
 
 {{< tab "Initiators Groups" >}}
 
-| | |
-|-|-|
+| Name | Description |
+|------|-------------|
 | Connected Initiators | Initiators currently connected to the system. Shown in IQN format with an IP address. Set initiators and click an -> (arrow) to add the initiators to either the Allowed Initiators or Authorized Networks lists. Clicking Refresh updates the Connected Initiators list. |
 | Allowed Initiators | Initiators allowed access to this system. Enter an [iSCSI Qualified Name (IQN)](https://tools.ietf.org/html/rfc3720#section-3.2.6) and click + to add it to the list. Example: iqn.1994-09.org.freebsd:freenas.local |
 | Authorized Networks | Network addresses allowed use this initiator. Each address can include an optional [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) netmask. Click + to add the network address to the list. Example: `192.168.2.0/24`. |
@@ -57,8 +57,8 @@ If a portal with listen interface `0.0.0.0:3260` does not exist, click *Add* and
 
 {{< tab "Authorized Access" >}}
 
-| | |
-|-|-|
+| Name | Description |
+|------|-------------|
 | Group ID | Allow different groups to be configured with different authentication profiles. Example: all users with a group ID of 1 will inherit the authentication profile associated with Group 1. |
 | User | User account to create for CHAP authentication with the user on the remote system. Many initiators use the initiator name as the user name. |
 | Secret  | User password. Must be at least 12 and no more than 16 characters long. |
@@ -85,8 +85,8 @@ The *Target* [Reporting](/CORE/Administration/Reporting/) tab provides Fibre Cha
 
 ![ISCSIExtentsAddFibre](/images/CORE/12.0/ISCSIExtentsAddFibre.png "ISCSI Extents Add Fibre")
 
-| | |
-|-|-|
+| Name | Description |
+|------|-------------|
 | Name | Name of the extent. If the Extent size is not 0, it cannot be an existing file within the pool or dataset. |
 | Description | Notes about this extent. |
 | Enabled | Set to enable the iSCSI extent. |
@@ -104,6 +104,7 @@ The *Target* [Reporting](/CORE/Administration/Reporting/) tab provides Fibre Cha
 *Add* a new Associated Target.
 
 ![ISCSIAssocTargetAddFibre](/images/CORE/12.0/ISCSIAssocTargetAddFibre.png "ISCSI Assoc Target: Add Fibre")
+
 Select values for *Target* and *Extent*.  The LUN ID is  a value between 0 and 1023. Some initiators expect a value below 256. Leave this field blank to automatically assign the next available ID.
 {{< /tab >}}
 {{< tab "Fibre Channel Ports" >}}
