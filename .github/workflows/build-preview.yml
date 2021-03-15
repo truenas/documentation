@@ -58,6 +58,6 @@ jobs:
         uses: ruzickap/action-my-broken-link-checker@v2
         with:
           url: "https://${{ steps.preview_step.outputs.preview_url }}"
-          cmd_params: "--skip-tls-verification --verbose --max-connections=5 --color=always --exclude=linkedin.com --exclude=googletagmanager.com"
+          cmd_params: "--skip-tls-verification --verbose --max-connections=5 --color=always --one-page-only=true --exclude=linkedin.com --exclude=googletagmanager.com"
           run_timeout: 10
           debug: true
