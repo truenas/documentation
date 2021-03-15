@@ -5,7 +5,7 @@ name: CI
 # Controls when the action will run. 
 on:
   pull_request:
-    branches: [ master ]
+    branches: [ master, docshubtwo ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -54,10 +54,11 @@ jobs:
       - name: Get the preview_url
         run: echo "url => ${{ steps.preview_step.outputs.preview_url }}"
      
-      - name: lychee Link Checker
-        uses: lycheeverse/lychee-action@v1.0.4
+      - name: Check links using container
+        uses: ruzickap/action-my-broken-link-checker@v1
         with:
-          args: --verbose --no-progress public/*
-      - name: Fail if there were link errors
-        run: exit ${{ steps.lychee.outputs.exit_code }}
-     
+          url: ${{ steps.preview_step.outputs.preview_url }}
+          pages_path: ./
+          cmd_params: "--skip-tls-verification --verbose --color=always"
+          run_timeout: 10
+          debug: true
