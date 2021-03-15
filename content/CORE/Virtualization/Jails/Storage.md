@@ -56,7 +56,7 @@ Here is the typical workflow for adding jail storage:
 * If a new storage area is being set aside for that jail or application, [create a dataset](/CORE/Storage/datasets/).
   Edit the dataset permissions so the user and group account has the desired read and write access.
 
-* Use jail **> (Expand) > **MOUNT POINTS > ACTIONS > Add Mount Point** to select the data *Source* and the jail mount *Destination*.
+* Use jail **> (Expand) > MOUNT POINTS > ACTIONS > Add Mount Point** to select the data *Source* and the jail mount *Destination*.
 
 To prevent writes to the storage, click *Read-Only*.
 
@@ -68,7 +68,7 @@ Storage is automatically mounted as it is created.
 Mounting a dataset does not automatically mount any child datasets inside it.
 Each dataset is a separate filesystem, so child datasets must each have separate mount points.
 
-Click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> (Options) > **Delete** to delete the storage.
+Click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; (Options) > **Delete** to delete the storage.
 
 {{< hint warning >}}
 Remember that added storage is just a pointer to the selected storage directory on the TrueNAS system.

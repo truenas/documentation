@@ -277,4 +277,4 @@ CLick *Add* and create a new tunable with the *Variable* `if_vmx_load`, *Value* 
 
 Congratulations, TrueNAS is now installed!
 
-The next steps are to log in to the web interface and begin setting up the software!
+The next step is to log in to the web interface and begin [storing data]({{< relref "StoringData.md" >}}).
