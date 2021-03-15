@@ -14,7 +14,7 @@ description: "Running updates about TrueNAS SCALE Nightly status and current iss
 
 > 11/17/2020 - Update Debian base image, SCALE now includes Kernel 5.9.0 as well as more updated versions of K8s, Docker, KVM and more.
 
-> 10/29/2020 - Updated [Kubernetes Workload Usage](#using-kubernetes) information, providing examples of deploying Docker images on SCALE
+> 10/29/2020 - Updated [Kubernetes Workload Usage](#kubernetes-integration-information) information, providing examples of deploying Docker images on SCALE
 
 > 10/14/2020 - Updated [Roadmap / Information](#containerization) about Kubernetes and Linux container support in SCALE
 

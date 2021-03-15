@@ -48,7 +48,7 @@ Therefore, Enterprise SATA disks were introduced to address both the “always-o
 However, the price delta between desktop and enterprise SATA drives was (and still is) vast enough that it drove users to push their consumer drives into 24/7 service in pursuit of cost savings.
 
 Drive vendors responded to this gap in the market (and likely grew tired of honoring warranties for failed desktop drives used in incorrect applications) by producing “NAS” drives, made famous by the original Western Digital (WD) Red™ drives with CMR/PMR technology (now called WD Red Plus).
-WD Red™ Plus NAS drives (non-SMR) are designed for use in systems with up to eight hard drives, up to 16 drives in the case of the [WD Red™ Pro](https://www.westerndigital.com/products/internal-drives/wd-red-hdd) drives, and [WD UltraStar™](https://www.westerndigital.com/products/data-center-drives#hard-disk-hdd) drives for systems beyond 16 drives.
+WD Red™ Plus NAS drives (non-SMR) are designed for use in systems with up to eight hard drives, up to 16 drives in the case of the [WD Red™ Pro](https://www.westerndigital.com/products/internal-drives/wd-red-hdd) drives, and [WD UltraStar™](https://www.westerndigital.com/products/data-center-platforms) drives for systems beyond 16 drives.
 
 WD drives are known among the iXsystems Community Forum as the preferred hard drives for TrueNAS builds due to their exceptional quality and reliability.
 All TrueNAS Minis ship with WD Red™ Plus drives unless requested otherwise.
@@ -61,7 +61,7 @@ SAS systems are designed for data center storage applications and therefore have
 Multipath access means that each drive has two interfaces and can be connected to either two storage controllers, or one controller over two cables.
 This redundancy protects against cable failure, controller card failure, or complete system failure in the case of the TrueNAS high-availability architecture in which each “controller” is in fact an independent server that accesses the same set of NL-SAS drives.
 NL-SAS drives are also robust enough to handle the rigors of systems with more than 16 disks.
-Therefore, capacity-oriented TrueNAS and certain [FreeNAS Certified](https://www.freenas.org/freenas-certified-servers/) systems ship with [Western Digital UltraStar](https://www.westerndigital.com/products/data-center-drives#hard-disk-hdd) NL-SAS disks thanks to the all-around perfect balance of capacity, reliability, performance, and flexibility that NL-SAS drives offer.
+Therefore, capacity-oriented TrueNAS and certain [FreeNAS Certified](https://www.freenas.org/freenas-certified-servers/) systems ship with [Western Digital UltraStar](https://www.westerndigital.com/products/data-center-platforms) NL-SAS disks thanks to the all-around perfect balance of capacity, reliability, performance, and flexibility that NL-SAS drives offer.
 
 ### SAS Disks
 

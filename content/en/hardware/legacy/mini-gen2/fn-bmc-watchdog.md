@@ -5,7 +5,7 @@ description: "FAQ about the 2nd generation FreeNAS Mini motherboard firmware iss
 
 (*Original Publish Date: September 19, 2017*)
 
-iXsystems has verified a firmware-related issue with the Board Management Controller (BMC) on the ASRock Rack C2750D4I motherboard used in the second generation FreeNAS Mini and FreeNAS Mini XL. In December of 2016, we provided a software fix starting in FreeNAS 9.10.1-U3 that mitigates this issue and protects your board from experiencing damage. ASRock Rack has since provided a [BMC firmware update](https://www.asrockrack.com/general/productdetail.asp?Model=C2750D4I#Download) (Version: 00.30.00) that resolves the issue. For more information about the issue and our plan to address it please read below.
+iXsystems has verified a firmware-related issue with the Board Management Controller (BMC) on the ASRock Rack C2750D4I motherboard used in the second generation FreeNAS Mini and FreeNAS Mini XL. In December of 2016, we provided a software fix starting in FreeNAS 9.10.1-U3 that mitigates this issue and protects your board from experiencing damage. ASRock Rack has since provided a [BMC firmware update](https://www.asrockrack.com/general/productdetail.asp?Model=C2750D4I) (Version: 00.30.00) that resolves the issue. For more information about the issue and our plan to address it please read below.
 
 ## What exactly is this BMC or “watchdog” issue?
 
@@ -15,7 +15,7 @@ On these particular motherboards, the BMC creates a backup copy of its configura
 
 ## How do I protect my system?
 
-The best way to protect your system is to update the BMC firmware from ASRock Rack’s website to the newest version: [ASRock Rack C2750D4I](https://www.asrockrack.com/general/productdetail.asp?Model=C2750D4I#Download) BMC firmware update (Version: 00.30.00).
+The best way to protect your system is to update the BMC firmware from ASRock Rack’s website to the newest version: [ASRock Rack C2750D4I](https://www.asrockrack.com/general/productdetail.asp?Model=C2750D4I) BMC firmware update (Version: 00.30.00).
 
 ## Is the data in my FreeNAS Mini safe?
 

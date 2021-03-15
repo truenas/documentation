@@ -24,7 +24,7 @@ It is recommended to examine your specific storage and sharing requirements and 
   It is not recommended to use a USB stick as a boot device because the build quality or device lifetime varies too much to reliably use as the operating system device.
 
 * **Storage disks and controllers**: TrueNAS supports hot-pluggable SATA drives when AHCI is enabled in the BIOS.
-  TrueNAS is predominantly tested using [Western Digital](https://www.westerndigital.com/products/internal-drives#enterprise) hard drives.
+  TrueNAS is predominantly tested using [Western Digital](https://www.westerndigital.com/products/commercial-internal-drives) hard drives.
   Therefore, we recommend **WD Red Plus** drives when the system has *fewer than 8* storage drives, **WD Red Pro** drives when the system has *8-16* drives, and **WD Ultrastar** drives for systems with *more than 16* storage drives.
   Always make sure to use a hard drive with conventional magnetic recording (CMR) techology and avoid drives with shingled magnetic recording (SMR) technology for best results with TrueNAS and OpenZFS. 
   A list of supported disk controllers is found in the [FreeBSD Hardware Notes](https://www.freebsd.org/releases/12.1R/hardware.html#support).
