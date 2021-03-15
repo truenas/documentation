@@ -55,7 +55,7 @@ jobs:
         run: echo "url => ${{ steps.preview_step.outputs.preview_url }}"
      
       - name: Check links using container
-        uses: ruzickap/action-my-broken-link-checker@v1
+        uses: ruzickap/action-my-broken-link-checker@v2
         with:
           url: ${{ steps.preview_step.outputs.preview_url }}
           pages_path: ./
