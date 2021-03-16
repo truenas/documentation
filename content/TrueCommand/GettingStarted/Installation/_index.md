@@ -4,3 +4,5 @@ description: "Articles describing how to obtain and deploy TrueCommand in variou
 weight: 20
 geekdocCollapseSection: true
 ---
+
+Various Methods to Install or Update TrueCommand.
