@@ -61,8 +61,6 @@ Select the first hard disk and click *Remove*.
 
 The TrueCommand virtual machine is now ready to be used.
 To boot the TrueCommand virtual machine, select it from the list of virtual machines and click *Play virtual machine*.
-{{< /tab >}}
-{{< /tabs >}}
 
 {{< include file="static/includes/AddingBrowserExceptions.md.part" markdown="true" >}}
 {{< include file="static/includes/TCSupport.md.part" markdown="true" >}}
