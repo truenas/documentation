@@ -71,7 +71,7 @@ TrueNAS can even store and sync your S3 data with an automated schedule.
 There are an enormous number of features in each TrueNAS edition.
 You can read the Open Source software, try out TrueNAS in a VM at zero cost, or have a look through this chart which summarizes the key features (TrueNAS 12.0 features are in blue).
 
-![TrueNASFeatures](/images/TrueNASFeatures.png)
+![TrueNASFeatures](/images/CORE/Features.png)
 
 TrueNAS SCALE uses much of the same TrueNAS CORE source code, but adds a few different capabilities which are defined by this acronym:
 

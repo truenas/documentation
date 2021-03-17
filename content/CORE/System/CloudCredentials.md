@@ -6,7 +6,7 @@ weight: 100
 {{< toc >}}
 
 To begin integrating TrueNAS with a Cloud Storage provider, register the account credentials on the system.
-After saving any credentials, a [Cloud Sync Task]({{< relref "CloudSyncTasks.md" >}}") allows sending or receiving data from that Cloud Storage Provider.
+After saving any credentials, a [Cloud Sync Task]({{< relref "CloudSyncTasks.md" >}}) allows sending or receiving data from that Cloud Storage Provider.
 
 ## Saving a Cloud Storage Credential
 

@@ -94,7 +94,7 @@ Follow these steps to create a new admin user:
 * Enter a username and password.
   Read the Terms of Service, set *I have read and agree to the terms of service*, and click *SIGN UP*.
 
-![LoginSignUp](/images/TrueCommand/1.2/LoginSignUp.png "Creating the Admin Account")
+![LoginSignUp](/images/TrueCommand/1.3/LoginSignUp.png "Creating the Admin Account")
 
 
 * The default login credentials are disabled and you can now log in to the TrueCommand web interface with the new administrator account credentials.

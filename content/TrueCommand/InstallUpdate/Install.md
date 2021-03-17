@@ -112,7 +112,7 @@ Click on the **New System** alert, fill in the information from the TrueNAS syst
 ![NewSystemCreds](/images/TrueCommand/1.3/NewSystemCreds.png "Registering TrueNAS in TrueCommand Cloud")
 
 It can take 10 to 15 minutes for the TrueNAS instance to fully sync up with TrueCommand Cloud.
-When all systems are connected to TrueCommand Cloud, refer to the [TrueCommand Administration articles](/TrueCommand/Administration/) for more instructions about setting up configuration backups, alerts, reports, and role-based access control.
+When all systems are connected to TrueCommand Cloud, refer to the [TrueCommand Administration articles]({{< relref "/TrueCommand/Administration/_index.md" >}}") for more instructions about setting up configuration backups, alerts, reports, and role-based access control.
 {{< /tab >}}
 {{< tab "Docker (Linux)" >}}
 ## Installing the TrueCommand Container

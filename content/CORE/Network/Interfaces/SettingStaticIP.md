@@ -43,8 +43,7 @@ Using the web interface for this process is recommended. There are additional sa
 Log in to the web interface and go to **Network > Interfaces**.
 This contains creation and configuration options for physical and virtual network interfaces.
 
-<img src="/images/CORE/12.0/NetworkInterfaces.png">
-<br><br>
+![NetworkInterfaces](/images/CORE/12.0/NetworkInterfaces.png "Interfaces List")
 
 You can configure static IP addresses while creating or editing an interface.
 
@@ -52,8 +51,7 @@ You can configure static IP addresses while creating or editing an interface.
 [High Availability]({{< relref "Failover.md" >}}) must be disabled on TrueNAS Enterprise systems before an active interface can be edited.
 {{< /hint >}}
 
-<img src="/images/CORE/12.0/NetworkInterfacesEdit.png">
-<br><br>
+![NetworkInterfacesEdit](/images/CORE/12.0/NetworkInterfacesEdit.png "Editing an Interface")
 
 Type the desired address in the *IP Address* field and select a subnet mask.
 
@@ -68,24 +66,21 @@ Use the buttons to *Add* and *Delete* more IP addresses as needed.
 To avoid permanently saving invalid or unusable settings, network changes are applied temporarily.
 Saving any interface changes adds a dialog to the **Network > Interfaces** list to apply these changes.
 
-<img src="/images/CORE/12.0/NetworkInterfacesChangesPresent.jpeg">
-<br><br>
+![NetworkInterfacesChangesPresent](/images/CORE/12.0/NetworkInterfacesChangesPresent.jpeg "Interface Changes Detected")
 
 You can adjust how long to test the network changes before they are reverted back to the previous settings.
 If the test is successful, another dialog allows making the network changes permanent.
 
 To quickly view system networking settings, go to **Network > Network Summary**.
 
-<img src="/images/CORE/12.0/NetworkNetworkSummary.png">
-<br><br>
+![NetworkNetworkSummary](/images/CORE/12.0/NetworkNetworkSummary.png "Network Summary")
 
 ### Using the System Console Menu to Assign Static IP Addresses to a Physical Interface
 
-A monitor and keyboard attached to the system is needed to use the console, or, if the system hardware allows it, you can connect with [IPMI](/core/network/ipmi/).
+A monitor and keyboard attached to the system is needed to use the console, or, if the system hardware allows it, you can connect with [IPMI]({{< relref "CORE/Network/IPMI.md" >}}).
 The console menu is shown when the system is fully booted.
 
-<img src="/images/CORE/ConsoleMenu.png">
-<br><br>
+![ConsoleSetupMenu](/images/CORE/ConsoleSetupMenu.png "TrueNAS Console Setup Menu")
 
 Use the *Configure Network Interfaces* option to add static IP addresses to a physical interface.
 Other interface types have a similar process to add static IP addresses.

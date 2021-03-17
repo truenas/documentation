@@ -45,7 +45,7 @@ By default, the reports created by a user are available only to that user.
 To share a report with other users or teams, open the **User Menu ‣ Reports** screen and click *Share*.
 Reports can also be shared after clicking *Generate report (Eye)*.
 
-![ReportsViewShare](/images/TrueCommand/1.3/ReportsViewShare.png "Sharing a report")
+![ReportsViewShare](/images/TrueCommand/1.2/ReportsViewShare.png "Sharing a report")
 
 Reports can be shared with individual users or entire teams.
 Set either *OWNER* or *SHARED WITH* for the desired user.
@@ -57,7 +57,7 @@ Clicking the **OWNER** or **SHARED WITH** text toggles every name in the list.
 Open the **User Menu ‣ Reports** page and click *Generate report (Eye)* on the appropriate report.
 Click *GENERATE* to select the systems and time frame for the report.
 
-![ReportsGenerate](/images/TrueCommand/1.3/ReportsGenerate.png "Choosing a report time frame")
+![ReportsGenerate](/images/TrueCommand/1.2/ReportsGenerate.png "Choosing a report time frame")
 
 A non-administrative user must have the appropriate permissions to view data from specific systems.
 
