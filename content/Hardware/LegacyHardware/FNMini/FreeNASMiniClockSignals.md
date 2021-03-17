@@ -1,7 +1,9 @@
 ---
 title: "FreeNAS Mini Motherboard Clock Signal Issue"
-description: "FreeNAS Mini Motherboard Clock Signal Issue"
+weight: 40
 ---
+
+{{< toc >}}
 
 ## FreeNAS Mini Motherboard Clock Signal Issue
 
@@ -33,7 +35,7 @@ iXsystems is proud to stand behind its products. We’re extending the warranty 
 
 **What should I do if I think my FreeNAS Mini has stopped working because of this issue?**
 
-Call the iXsystems Customer Support Department at (408) 943-4100 or send an email to support@iXsystems.com. We will be glad to assist you.
+Contact iXsystems Support and we will be glad to assist you!
 
 **How does the return process work and how long does it take?**
 
@@ -41,6 +43,10 @@ We offer an advanced replacement option if you have experienced a failure relate
 
 **What if I didn’t get an answer to my question in this FAQ?**
 
-Send an email to support@iXsystems.com or call us at (408) 943-4100.  We will be glad to answer your questions.
+Contact iXsystems Support and we will be glad to answer your questions!
 
-Thank you for your loyalty as an iXsystems customer.  We stand behind the FreeNAS Mini and the FreeNAS Mini XL and will continue to support our customers.
+Thank you for your loyalty as an iXsystems customer. We stand behind the FreeNAS Mini and the FreeNAS Mini XL and will continue to support our customers.
+
+{{< expand "Contacting iXsystems Support" "v" >}}
+{{< include file="static/includes/iXsystemsSupportContact.html.part" html="true" >}}
+{{< /expand >}}

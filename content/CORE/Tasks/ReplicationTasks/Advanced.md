@@ -58,7 +58,7 @@ The *Transport* selector determines the method to use for the replication:
 *Local* is only used for replicating data to another location on the same system.
 
 With *SSH*-based replications, configure the transport method by selecting the **SSH Connection** to the remote system that will send or receive snapshots.
-Options for compressing data, adding a bandwidth limit, or other data stream customizations are available.
+Options for compressing data, adding a bandwidth limit, or other data stream customizations are available.  *Stream Compression* options are only available when using SSH. Before enabling *Compressed WRITE Records* verify that the destination system also supports compressed WRITE records. 
 
 ![TasksReplicationAddAvancedTransportOptions](/images/CORE/12.0/TasksReplicationAddAdvancedTransportOptions.png "Advanced Replication: Transport")
 
