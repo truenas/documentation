@@ -16,7 +16,7 @@ All added systems are listed in the **Systems** tab with the current connection 
 
 The **Discovered Systems** tab has a list of all the systems TrueCommand has detected on the local network.
 
-![SystemsDiscoveredSystems](/images/TrueCommand/1.3/SystemsDiscoveredSystems.png "Systems Discovered Systems")
+![SystemsDiscoveredSystems](/images/TrueCommand/1.2/SystemsDiscoveredSystems.png "Systems Discovered Systems")
 
 Click the *+* to connect that system to TrueCommand.
 This requires entering a nickname and password for the system.
@@ -28,7 +28,7 @@ To manually connect a new system, open the **Systems** tab and click *+ NEW SYST
 Enter the system IP address or DNS hostname, nickname, and password.
 If a mistake is made, the contents of the fields can be reset by clicking *RESET FORM*.
 
-![SystemsNewSystem](/images/TrueCommand/1.3/SystemsNewSystem.png "Adding a new system")
+![SystemsNewSystem](/images/TrueCommand/1.2/SystemsNewSystem.png "Adding a new system")
 
 ### Adjusting Systems
 
@@ -48,7 +48,7 @@ Groups are created by clicking *Configure (Gear) ‣ Systems ‣ + NEW GROUP*.
 Enter a name for the new group and click *ADD SYSTEM* to add a system to the group.
 When all the desired systems are added to the group, click *CREATE GROUP*.
 
-![SystemsSystemGroupsAdd](/images/TrueCommand/1.3/SystemsSystemGroupsAdd.png "Adding a new system group")
+![SystemsSystemGroupsAdd](/images/TrueCommand/1.2/SystemsSystemGroupsAdd.png "Adding a new system group")
 
 Editing a group allows updating the group name or changing which systems are members of that group.
 
