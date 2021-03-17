@@ -109,7 +109,7 @@ Learn more about [TrueNAS hardware](/Hardware/).
 [TrueCommand](https://www.truenas.com/truecommand/) is a single Pane-of-Glass management application that takes the repetitive work out of multi-TrueNAS management by centralizing system alerts, reports, and analytics in one easy to use interface. It supports users and teams with 24x365 global operations, role-based access control, and a full log of every TrueNAS configuration change.
 <img src="/images/truecommand-overview.png"><br>
 
-TrueCommand runs on Docker, Virtual Machines, or as a [cloud service](https://portal.ixsystems.com/portal/login/index.php#login) and is free to users with less than 50 drives and affordable for those with larger installations.
+TrueCommand runs on Docker, Virtual Machines, or as a [cloud service](https://portal.ixsystems.com/portal/login/index.php) and is free to users with less than 50 drives and affordable for those with larger installations.
 [TrueCommand documentation](/TrueCommand/) is also available here on the TrueNAS Documentation Hub.
 {{< /tab >}}
 {{< tab "Expert Community" >}}
