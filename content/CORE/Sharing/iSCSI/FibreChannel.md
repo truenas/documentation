@@ -77,7 +77,7 @@ Enter or select values specific to your use case for the *Target Name*, *Target 
 An extra *Target Mode* option appears after going to *Targets* and clicking *ADD*.
 This new option is to select whether the target to create is iSCSI, Fibre Channel, or both.
 
-The *Target* [Reporting]({{< relref "Reporting.md" >}}) tab provides Fibre Channel port bandwidth graphs.
+The *Target* [Reporting]({{< relref "/CORE/Administration/Reporting.md" >}}) tab provides Fibre Channel port bandwidth graphs.
 {{< /hint >}}
 {{< /tab >}}
 {{< tab "Extents" >}}
@@ -136,4 +136,4 @@ Two tunables were required, one for each physical interface.
 After the tunables are created, the configured number of virtual ports appears in **Sharing > Block Shares (iSCSI) > Fibre Channel Ports** screen so they can be associated with targets.
 They are also advertised to the switch so zoning can be configured on the switch.
 
-After a virtual port has been associated with a target, it is added to the *Target* tab of [Reporting]({{< relref "Reporting.md" >}}) where its bandwidth usage can be viewed.
+After a virtual port has been associated with a target, it is added to the *Target* tab of [Reporting]({{< relref "/CORE/Administration/Reporting.md" >}}) where its bandwidth usage can be viewed.
