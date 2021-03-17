@@ -89,7 +89,7 @@ Set *Start Automatically* for the service to start during TrueNAS system boots.
 
 ![ServicesISCSIEnable](/images/CORE/12.0/ServicesISCSIEnable.png "Starting the iSCSI Service")
 
-Clicking the <i class="fa fa-pencil" aria-hidden="true" title="Pencil"></i> returns to the options in **Sharing > iSCSI**.
+Clicking the <i class="fa fa-pencil" aria-hidden="true" title="Pencil"></i>&nbsp; returns to the options in **Sharing > iSCSI**.
 
 ## Using the iSCSI Share
 

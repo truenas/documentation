@@ -7,7 +7,7 @@ weight: 10
 
 There are a few adjustable interface preferences and a built-in theme editor for creating your own TrueNAS color schemes.
 
-To access user preferences, click <i class="fa fa-cog" aria-hidden="true" title="Settings"></i> (Settings) **> Preferences**.
+To access user preferences, click <i class="fa fa-cog" aria-hidden="true" title="Settings"></i>&nbsp; (Settings) **> Preferences**.
 This page has options to adjust global settings in the web interface, manage custom themes, and create new themes.
 
 ![InterfacePreferences](/images/CORE/12.0/InterfacePreferences.png "Interface Preferences")

@@ -46,7 +46,7 @@ Clicking *SUGGEST LAYOUT* allows TrueNAS to review all available disks and popul
 To clear the suggestion, click *RESET LAYOUT*.
 
 To manually configure the pool, add vdevs according to your use case.
-Set the **Disk** boxes and click the <i class="fa fa-arrow-right" aria-hidden="true" title="Right Arrow"></i> to move the disks into a vdev.
+Set the **Disk** boxes and click the <i class="fa fa-arrow-right" aria-hidden="true" title="Right Arrow"></i>&nbsp; to move the disks into a vdev.
 
 ### Vdev Types
 
@@ -98,7 +98,7 @@ Example: 1 GiB of *Dedup* vdev capacity for every 1 TiB of *Data* vdev availabil
 {{< /tabs >}}
 
 To add a different vdev type during pool creation, click *ADD VDEV* and select the type.
-Select disks from `Available Disks` and use the <i class="fa fa-arrow-right" aria-hidden="true" title="Right Arrow"></i> (right arrow) next to the new **VDev** to add it to that section.
+Select disks from `Available Disks` and use the <i class="fa fa-arrow-right" aria-hidden="true" title="Right Arrow"></i>&nbsp; (right arrow) next to the new **VDev** to add it to that section.
 
 ### Vdev Layout
 

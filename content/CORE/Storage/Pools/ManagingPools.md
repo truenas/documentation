@@ -11,7 +11,7 @@ To find an existing pool, log in to the web interface and go to **Storage > Pool
 
 The current status and storage usage of each pool is shown.
 To see more details about a pool, click the **v** symbol on the right side of the pool entry.
-Click the <i class="fa fa-cog" aria-hidden="true" title="Settings"></i> (Pool Actions) for all pool management options.
+Click the <i class="fa fa-cog" aria-hidden="true" title="Settings"></i>&nbsp; (Pool Actions) for all pool management options.
 
 {{< tabs "Pool Actions" >}}
 {{< tab "Pool Options" >}}

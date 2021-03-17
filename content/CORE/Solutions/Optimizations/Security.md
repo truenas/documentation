@@ -43,7 +43,7 @@ However, it allows outside connections to the system and must be properly use to
 
 To create a new SMB share, see [SMB Share Creation]({{< relref "SMBShare.md" >}}).
 
-SMB service settings are in **Services** after clicking the <i class="fas fa-pencil" aria-hidden="true" title="Pencil"></i>.
+SMB service settings are in **Services** after clicking the <i class="fa fa-pencil" aria-hidden="true" title="Pencil"></i>.
 
 [Do not use SMB1.]({{< relref "SMB1Advisory.md" >}})
 
