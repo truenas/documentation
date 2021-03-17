@@ -8,7 +8,7 @@ For example, if a user deletes a system from TrueCommand, the log records which 
 
 To view the system log, open the **Configure (Gear)** menu and click *Logs*.
 
-![Logs](/images/TrueCommand/1.2/Logs.png "Logs")
+![Logs](/images/TrueCommand/1.3/Logs.png "Logs")
 
 All system log entries are shown by default.
 To hide specific categories of log entry, make selections in the *Hide* drop down.
