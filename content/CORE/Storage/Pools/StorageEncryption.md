@@ -1,6 +1,6 @@
 ---
 title: "Storage Encryption"
-weight: 20
+weight: 25
 ---
 
 {{< toc >}}
