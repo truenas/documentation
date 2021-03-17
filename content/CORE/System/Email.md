@@ -10,7 +10,7 @@ Alert events are also emailed to the root user account.
 Configure the system to send these emails to the administrator’s remote email account for fast awareness and resolution of any critical issues.
 
 {{< hint info >}}
-[Scrub Task](/CORE/Tasks/ScrubTasks/) issues and [S.M.A.R.T. reports](/CORE/Tasks/SMARTTests/) are mailed separately to the address configured in those services.
+[Scrub Task]({{< relref "ScrubTasks.md" >}}) issues and [S.M.A.R.T. reports]({{< relref "SMARTTests.md" >}}) are mailed separately to the address configured in those services.
 {{< /hint >}}
 
 ## TrueNAS Root Email Address

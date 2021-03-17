@@ -9,10 +9,6 @@ weight: 10
 ## Hugo Shortcodes
 These are build directly into Hugo and are supported regardless of theme implementation.
 
-### Figure
-
-{{< figure src="static/images/12.0-save-config.png" title="Image Caption" >}}
-
 ### Highlight
 
 {{< highlight html >}}
@@ -37,7 +33,7 @@ Embed directly from Instagram.
 
 Embedded directly from Twitter.
 
-{{< tweet 877500564405444608 >}}
+`{{< tweet 877500564405444608 >}}`
 
 ### Vimeo
 
@@ -137,7 +133,7 @@ By specifying a language, the included file will have syntax highlighting.
 {{< include file="static/includes/iXsystemsSupportContact.html.part" >}}
 
 ### SVG Charts from Text!
-Geekdocs uses [mermaid](https://mermaid-js.github.io/mermaid/#/) to represent diagrams using text and code. It is Javascript based.
+Geekdocs uses [mermaid](https://mermaid-js.github.io/mermaid/) to represent diagrams using text and code. It is Javascript based.
 
 {{< mermaid class="text-center">}}
 graph TD;

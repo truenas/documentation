@@ -27,7 +27,7 @@ You can change this after logging in to the web interface by going to **Network 
 
 If an IP address is needed, connect a monitor to the TrueNAS system and view the console setup menu that displays at the end of the boot process.
 
-![ConsoleMenu](/images/CORE/ConsoleMenu.png "TrueNAS Console Menu")
+![ConsoleMenu](/images/CORE/ConsoleSetupMenu.png "TrueNAS Console Menu")
 
 When able to automatically configure a connection, the system shows the web interface IP address at the bottom of the console setup menu.
 If needed, you can reset the root password in the TrueNAS console setup menu or by clicking **Settings > Change Password** in the web interface.
