@@ -9,12 +9,12 @@
         </span>
         {{ with .Site.Params.GeekdocLegalNotice }}
         <span class="gdoc-footer__item">
-            <a href="{{ absURL }}" class="gdoc-footer__link">Legal Notice</a>
+            <a href="{{ . | absURL }}" class="gdoc-footer__link">Legal Notice</a>
         </span>
         {{ end }}
         {{ with .Site.Params.GeekdocPrivacyPolicy }}
         <span class="gdoc-footer__item">
-            <a href="{{ absURL }}" class="gdoc-footer__link">Privacy Policy</a>
+            <a href="{{ . | absURL }}" class="gdoc-footer__link">Privacy Policy</a>
         </span>
         {{ end }}
     </div>
