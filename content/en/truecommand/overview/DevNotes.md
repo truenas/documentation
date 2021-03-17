@@ -6,6 +6,7 @@ weight: 30
 
 #### Recent Updates
 > 03/17/2021 - Large update to Cluster creation/management. Requires latest TrueNAS SCALE nightlies to work properly (API's just changed on their end).
+> 
 > 02/25/2021 - Initial nightly image release for TrueCommand 2.0
 
 ## System Requirements
