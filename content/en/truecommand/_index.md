@@ -24,7 +24,8 @@ TrueCommand boasts a wide variety of features, including Role-Based Access Contr
 	<div class="textcolumn">
 		<p>Learn more about TrueCommand before giving it a try!</p>
 		<p><a href="/truecommand/overview/tcwhatis/">What is TrueCommand?</a><br>
-		<a href="/truecommand/overview/releasenotes/">Release Notes</a></p>
+		<a href="/truecommand/overview/releasenotes/">Release Notes</a><br>
+		<a href="/truecommand/overview/devnotes/">Developer Notes</a></p>
 		<a class="linkbutton" href="/truecommand/overview/">Overview</a>
 	</div>
 </div>
