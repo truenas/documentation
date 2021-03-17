@@ -12,7 +12,7 @@ chapter: false
 #### Description
 This will return all the known report item template objects by the current version of TrueCommand. These can be inserted into the "widgets" object within a report into order to enable that type of item in the report.
 
-For details about the "widgets" object formatting, please look at the [Reporting section]({{< relref "reporting.md" >}}) for details.
+For details about the "widgets" object formatting, please look at the [Reporting section](#reporting) for details.
 
 ### Input Arguments
 * Required:
