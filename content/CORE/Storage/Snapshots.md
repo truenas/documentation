@@ -17,7 +17,7 @@ This strategy allows an administrator to roll the system data back to a specific
 In the event of catastrophic system or disk failure, off-site snapshots can restore data up to the most recent snapshot.
 {{< /expand >}}
 
-Taking snapshots requires the system have all [pools]({{< relref "/Pools/_index.md" >}}), [datasets]({{< relref "/Pools/_index.md" >}}), and [zvols]({{< relref "/Pools/_index.md" >}}) already configured.
+Taking snapshots requires the system have all [pools]({{< relref "/CORE/Storage/Pools/_index.md" >}}), [datasets]({{< relref "" >}}), and [zvols]({{< relref "" >}}) already configured.
 
 ## Creating a Single Snapshot
 
@@ -32,7 +32,7 @@ To quickly snapshot existing storage, go to **Storage > Snapshots** and click *A
 Use the *Dataset* drop down to select an existing ZFS pool, dataset, or zvol to snapshot.
 
 The suggested *Name* is automatically generated but can be overridden with any custom string.
-Choosing a proper *Naming Schema* instead allows including the snapshot in [Replication Tasks]({{< relref "/Pools/_index.md" >}}).
+Choosing a proper *Naming Schema* instead allows including the snapshot in [Replication Tasks]({{< relref "/CORE/Tasks/ReplicationTasks/_index.md" >}}).
 The *Naming Schema* drop-down is populated with previously created schemas from periodic snapshot tasks.
 
 To include child datasets with the snapshot, set *Recursive*.
