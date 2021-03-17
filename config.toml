@@ -80,7 +80,7 @@ enable = true
 
   # (Optional, default none) Add a link to your Legal Notice page to the site footer.
   # It can be either a remote url or a local file path relative to your content directory.
-  geekdocLegalNotice = "[Trademarks](https://www.ixsystems.com/trademarks/)"
+  geekdocLegalNotice = "https://www.ixsystems.com/trademarks/"
 
   # (Optional, default none) Add a link to your Privacy Policy page to the site footer.
   # It can be either a remote url or a local file path relative to your content directory.
