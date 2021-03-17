@@ -27,7 +27,7 @@ Each boot environment entry contains this information:
 * **Active**: indicates which entry boots by default if a boot environment is not active.
 * **Created**: indicates the boot environment creation date and time.
 * **Space**: shows boot environment size.
-* **Keep**: indicates whether or not TrueNAS deletes this boot environment when a [system update](/CORE/System/Update/) does not have enough space to proceed.
+* **Keep**: indicates whether or not TrueNAS deletes this boot environment when a [system update]({{< relref "UpdateCORE.md" >}}) does not have enough space to proceed.
 
 To access more options for a boot environment, click  <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> :
 

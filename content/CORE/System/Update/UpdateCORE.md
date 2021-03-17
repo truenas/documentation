@@ -28,7 +28,7 @@ There are several trains available for updates, but the web interface only displ
 Update trains are labeled with a numeric version followed by a short description.
 The current version receives regular bug fixes and new features.
 Supported older versions of TrueNAS only receive maintenance updates.
-See the [Software Development Life Cycle](/CORE/Introduction/#sdlc-application) for more details about the development and support timeline for TrueNAS versions.
+See the [Software Development Life Cycle]({{< relref "SofDevLifecycle.md" >}}) for more details about the development and support timeline for TrueNAS versions.
 
 Several specific words are used to describe the type of train:
 
