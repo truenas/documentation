@@ -48,7 +48,7 @@ When FTP is exposed to a WAN, enable TLS.
 ### FTP Connection
 
 Use a browser or FTP client to connect to the TrueNAS FTP share.
-The images here show using [FileZilla](https://filezilla-project.org/), a free option.
+The images here show using [FileZilla](https://filezilla-project.org/client_features.php), a free option.
 
 The user name and password are those of the local user account on the TrueNAS.
 The default directory is the same as the user's <file>/home</file> directory.

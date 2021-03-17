@@ -29,7 +29,7 @@ For example, an administrator can choose to provide application separation by in
 
 ## Jail Storage
 
-A [data storage pool](/CORE/Storage/Pools/) must be created before using jails.
+A [data storage pool]({{< relref "PoolCreate.md" >}}) must be created before using jails.
 Make sure the pool has enough storage for all the intended jails.
 The **Jails** screen displays a message and button to **CREATE POOL** if no pools exist on the TrueNAS system.
 

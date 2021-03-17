@@ -68,7 +68,7 @@ To create a Windows SMB share, go to **Sharing > Windows Shares (SMB)** and clic
 
 The **Path** and **Name** of the SMB share define the absolute minimum amount of information required to create a new SMB share. The *Path* is the directory tree on the local filesystem that will be exported over the SMB protocol, and the *Name* is the name of the SMB share, which forms a part of the "full share pathname" when SMB clients perform an SMB tree connect. Because of the way that the *Name* is used in the SMB protocol, it must be less than or equal to 80 characters in length, and must not contain any invalid characters as specified in Microsoft documentation MS-FSCC section 2.1.6. If a *Name* is not supplied, then the last component of the *Path* will be used as the share name.
 
-You can set a share *Purpose* to apply and lock pre-defined [Advanced Options](#advanced-options) for the share.
+You can set a share *Purpose* to apply and lock pre-defined advanced options for the share.
 To retain full control over all the share *Advanced Options*, choose *No presets*.
 
 

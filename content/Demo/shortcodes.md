@@ -33,7 +33,7 @@ Embed directly from Instagram.
 
 Embedded directly from Twitter.
 
-`{{< tweet 877500564405444608 >}}`
+`{{/< tweet 877500564405444608 />}}`
 
 ### Vimeo
 

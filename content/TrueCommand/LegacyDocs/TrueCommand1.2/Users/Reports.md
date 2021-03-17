@@ -7,7 +7,7 @@ weight: 20
 
 The **Reports** page is used to customize charts of system metrics for data analysis.
 
-![ReportsList](/images/TrueCommand/1.2/ReportsList.png "Reports List")
+![ReportsList](/images/TrueCommand/1.3/ReportsList.png "Reports List")
 
 These reports are created by or shared with the current TrueCommand user.
 There are default reports that are designed to generate a basic system overview chart.
@@ -21,7 +21,7 @@ Click *+ CREATE REPORT* to create a customizable report.
 Enter a report name and an optional description for the report.
 Click BROWSE WIDGETS or WIDGET to add charts to the report.
 
-![ReportsCreateWidgetsAdd](/images/TrueCommand/1.2/ReportsCreateWidgetsAdd.png "Adding widgets to a new report")
+![ReportsCreateWidgetsAdd](/images/TrueCommand/1.3/ReportsCreateWidgetsAdd.png "Adding widgets to a new report")
 
 ### Custom Charts
 
@@ -45,7 +45,7 @@ By default, the reports created by a user are available only to that user.
 To share a report with other users or teams, open the **User Menu ‣ Reports** screen and click *Share*.
 Reports can also be shared after clicking *Generate report (Eye)*.
 
-![ReportsViewShare](/images/TrueCommand/1.2/ReportsViewShare.png "Sharing a report")
+![ReportsViewShare](/images/TrueCommand/1.3/ReportsViewShare.png "Sharing a report")
 
 Reports can be shared with individual users or entire teams.
 Set either *OWNER* or *SHARED WITH* for the desired user.
@@ -57,10 +57,10 @@ Clicking the **OWNER** or **SHARED WITH** text toggles every name in the list.
 Open the **User Menu ‣ Reports** page and click *Generate report (Eye)* on the appropriate report.
 Click *GENERATE* to select the systems and time frame for the report.
 
-![ReportsGenerate](/images/TrueCommand/1.2/ReportsGenerate.png "Choosing a report time frame")
+![ReportsGenerate](/images/TrueCommand/1.3/ReportsGenerate.png "Choosing a report time frame")
 
 A non-administrative user must have the appropriate permissions to view data from specific systems.
 
 Clicking *Confirm* shows the saved charts from the report, populated with system data according to the selected amount of time.
 
-![ReportsView](/images/TrueCommand/1.2/ReportsView.png "Generated report")
+![ReportsView](/images/TrueCommand/1.3/ReportsView.png "Generated report")

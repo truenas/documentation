@@ -6,7 +6,7 @@ weight: 100
 {{< toc >}}
 
 To begin integrating TrueNAS with a Cloud Storage provider, register the account credentials on the system.
-After saving any credentials, a [Cloud Sync Task](/CORE/Tasks/CloudSyncTasks/) allows sending or receiving data from that Cloud Storage Provider.
+After saving any credentials, a [Cloud Sync Task]({{< relref "CloudSyncTasks.md" >}}") allows sending or receiving data from that Cloud Storage Provider.
 
 ## Saving a Cloud Storage Credential
 
@@ -14,7 +14,7 @@ Transferring data from TrueNAS to the Cloud requires saving Cloud Storage Provid
 
 {{< expand "Is this secure?" "v" >}}
 To maximize security, these credentials are encrypted when saved.
-However, this means that to restore any cloud credentials from a TrueNAS configuration file, you must enable *Export Password Secret Seed* when generating that [configuration backup](/CORE/System/General/ConfigBackup/).
+However, this means that to restore any cloud credentials from a TrueNAS configuration file, you must enable *Export Password Secret Seed* when generating that [configuration backup]({{< relref "ConfigBackup.md" >}}).
 Remember to protect any downloaded TrueNAS configuration files.
 {{< /expand >}}
 
@@ -60,7 +60,7 @@ The rest of the options change according to the chosen *Provider*:
 
 | Name | Description |
 |------|-------------|
-| Access Token | A User Access Token for [Box](https://developer.box.com/). An [access token](https://developer.box.com/reference#token) enables Box to verify a request belongs to an authorized session. Example token: T9cE5asGnuyYCCqIZFoWjFHvNbvVqHjl. |
+| Access Token | A User Access Token for [Box](https://developer.box.com/). An [access token](https://developer.box.com/reference) enables Box to verify a request belongs to an authorized session. Example token: T9cE5asGnuyYCCqIZFoWjFHvNbvVqHjl. |
 
 {{< /tab >}}
 {{< tab "DropBox" >}}
