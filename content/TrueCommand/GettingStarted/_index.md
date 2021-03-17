@@ -5,4 +5,21 @@ weight: 20
 geekdocCollapseSection: true
 ---
 
-An overview of installing and initally configuring TrueCommand.
+This section will walk you through the initial set up of TrueCommand.
+
++ TrueCommand Cloud Registration
++ Installing TrueCommand
+ + Installing on SCALE
+ + Installing on Linux
+ + Installing on VM
+ + Installing on Windows
++ Creating the initial Administrator Account
++ Setting Global Options
+ + LDAP
+ + SSL
+ + Email
++ Connecting TrueNAS systmes
++ Creating User Accounts
+
+
+
