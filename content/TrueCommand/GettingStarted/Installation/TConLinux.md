@@ -7,7 +7,7 @@ weight: 20
 {{< toc >}}
 
 A [TrueCommand](https://www.truenas.com/truecommand/) Docker image can be deployed on Linux.
-A Linux installation of TrueCommand needs internet access, docker to be installed, and a storage location with at least *20 GiB* of space available for the image.
+A Linux installation of TrueCommand needs internet access, docker to be installed, and a storage location with at least *20 GiB* of space available for the image. 
 
 ## Installing the TrueCommand Docker Container
 
