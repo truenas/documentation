@@ -7,4 +7,4 @@ geekdocCollapseSection: true
 
 ### SSL options
 
-{{< include file="static/includes/TrueCommandSSL.md.part" >}}
+{{< include file="static/includes/TrueCommandSSL.md.part" markdown="true" >}}

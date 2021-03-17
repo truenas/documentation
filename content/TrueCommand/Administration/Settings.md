@@ -45,7 +45,7 @@ General options include how frequently TrueCommand measures systems statistics, 
 
 ### SSL options
 
-{{< include file="static/includes/TrueCommandSSL.md.part" >}}
+{{< include file="static/includes/TrueCommandSSL.md.part" markdown="true" >}}
 
 ### Alert Options
 
@@ -55,5 +55,5 @@ Multiple categories can be selected.
 
 ### LDAP
 
-{{< include file="static/includes/TrueCommandLDAP.md.part" >}}
+{{< include file="static/includes/TrueCommandLDAP.md.part" markdown="true" >}}
 

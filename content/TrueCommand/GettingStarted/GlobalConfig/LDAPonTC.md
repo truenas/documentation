@@ -7,4 +7,4 @@ geekdocCollapseSection: true
 
 ## Using LDAP to Add User Accounts
 
-{{< include file="static/includes/TrueCommandLDAP.md.part" >}}
+{{< include file="static/includes/TrueCommandLDAP.md.part" markdown="true" >}}

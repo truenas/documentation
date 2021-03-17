@@ -29,7 +29,7 @@ Deleting a user account permanently removes the user and cannot be undone.
 
 ## Using LDAP to Add User Accounts
 
-{{< include file="static/includes/TrueCommandLDAP.md.part" >}}
+{{< include file="static/includes/TrueCommandLDAP.md.part" markdown="true" >}}
 
 
 ## Configuring User Accounts
