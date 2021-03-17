@@ -98,6 +98,24 @@ If space for a new boot environment is not available, the upgrade fails.
 Space on the operating system device can be manually freed by going to **System > Boot** and removing the *Keep* attribute or deleting any boot environments that are no longer needed.
 {{< /hint >}}
 
+{{< expand "Can I force a full update?" "v" >}}
+The TrueNAS updater defaults to delta packages for updates.
+During an update, only files that changed in the base operating system since the previous update are downloaded.
+Delta update packages are generally preferred over full update packages, providing a faster update and taking less bandwidth.
+By contrast, a full update package downloads all of the files included in the base system, even if those files have not changed.
+
+While the full package might require more time to install, there are some rare cases where it is necessary, such as when a patch has been applied as a temporary fix to a local system.
+A patch is a piece of software that is used to fix a bug within the main codebase.
+While software patches are often used to fix bugs, they can also repair security issues or add new features.
+
+To force a full update, open the web interface **Shell** and enter this command in the console:
+
+`freenas-update -C /tmp/update-$$ –no-delta –reboot update`
+
+The updater downloads the full package, which contains all of the files from the latest software release.
+when the download completes, the system reboots with the standard configuration.
+{{< /expand >}}
+
 ## Manual Updates
 
 Updates can also be manually downloaded and applied in **System > Update**.
