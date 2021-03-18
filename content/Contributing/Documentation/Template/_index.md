@@ -32,12 +32,12 @@ It also makes translations easier!
 The first step is typically to log in to the system and go to a location like *System > General*.
 Including a screenshot is a good way for the reader to confirm they're in the correct location and get more context.
 
-{{\< imgproc ExampleImage Fit "960x695" />}}
+![Image Name Text](/images/CORE/12.0/imagename.png "Image Name Text")
 
-{{\% alert title="Warning" color="warning" %}}
-Warnings about common errors that are made during the procedure are best placed before listing out any specific changes to make to the system.
+{{\< hint danger >}}
+Danger warnings about common errors that are made during the procedure are best placed before listing out any specific changes to make to the system.
 This can help prevent mistakes and educate the reader about common troubleshooting steps.
-{{\% /alert %}}
+{{\< /hint >}}
 
 Now find the settings to change or button to click to move forward in the procedure.
 Button or setting names need to be precise to avoid confusing the reader.
