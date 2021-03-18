@@ -29,6 +29,9 @@ Below is a summary of what each page of graphs displays:
 {{< tab "CPU" >}}
 [CPU](https://collectd.org/wiki/index.php/Plugin:CPU) shows the amount of time spent by the CPU in various states such as executing user code, executing system code, and being idle.
 Graphs of short-, mid-, and long-term load are shown, along with CPU temperature graphs.
+
+![ReportingCPUTab](/images/CORE/12.0/ReportingCPUTab.png "CPU Reporting")
+
 {{< /tab >}}
 {{< tab "Disk" >}}
 [Disk](https://collectd.org/wiki/index.php/Plugin:Disk) shows read and write statistics on I/O, percent busy, latency, operations per second, pending I/O requests, and disk temperature.
@@ -44,22 +47,40 @@ The default view shows a temperature graph of the first disk. To see the tempera
 {{< tab "Memory" >}}
 [Memory](https://collectd.org/wiki/index.php/Plugin:Memory) displays memory usage.
 [Swap](https://collectd.org/wiki/index.php/Plugin:Swap) displays the amount of free and used swap space.
+
+![ReportingMemoryTab](/images/CORE/12.0/ReportingMemoryTab.png "Memory Reporting")
+
 {{< /tab >}}
 {{< tab "Network" >}}
 [Network](https://collectd.org/wiki/index.php/Plugin:Interface) shows received and transmitted traffic in megabytes per second for each configured interface.
+
+![ReportingNetworkTab](/images/CORE/12.0/ReportingNetworkTab.png "Network Reporting")
+
 {{< /tab >}}
 {{< tab "NFS" >}}
 [NFS](https://collectd.org/wiki/index.php/Plugin:NFS) shows information about the number of procedure calls for each procedure and whether the system is a server or client.
+
+![ReportingNFSTab](/images/CORE/12.0/ReportingNFSTab.png "NFS Reporting")
+
 {{< /tab >}}
 {{< tab "Partition" >}}
 [Partition](https://collectd.org/wiki/index.php/Plugin:DF) displays free, used, and reserved space for each pool and dataset. However, the disk space used by an individual zvol is not displayed as it is a block device.
+
+![ReportingPartitionTab](/images/CORE/12.0/ReportingPartitionTab.png "Partition Reporting")
+
 {{< /tab >}}
 {{< tab "System" >}}
 [System](https://collectd.org/wiki/index.php/Plugin:Processes) displays the number of processes.
 It is grouped by state.
+
+![ReportingSystemTab](/images/CORE/12.0/ReportingSystemTab.png "System Reporting")
+
 {{< /tab >}}
 {{< tab "Target" >}}
 *Target* shows bandwidth statistics for iSCSI ports.
+
+![ReportingTargetTab](/images/CORE/12.0/ReportingTargetTab.png "iSCSI Target Reporting")
+
 {{< /tab >}}
 {{< tab "UPS" >}}
 [UPS](https://collectd.org/wiki/index.php/Plugin:NUT) displays statistics about an uninterruptible power supply (UPS) using [Network UPS tools](https://networkupstools.org/).
@@ -67,6 +88,9 @@ Statistics include voltages, currents, power, frequencies, load, and temperature
 {{< /tab >}}
 {{< tab "ZFS" >}}
 [ZFS](https://collectd.org/wiki/index.php/Plugin:ZFS_ARC) shows compressed physical ARC size, hit ratio, demand data, demand metadata, and prefetch data.
+
+![ReportingZFSTab](/images/CORE/12.0/ReportingZFSTab.png "ZFS Reporting")
+
 {{< /tab >}}
 {{< /tabs >}}
 
