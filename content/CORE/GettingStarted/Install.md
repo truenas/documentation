@@ -264,6 +264,7 @@ Select *<Boot via BIOS>*.
 ![InstallVMBootMode](/images/CORE/12.0/InstallVMBootMode.png "Install VM Boot Mode Screen")
 
 After the TrueNAS installation is complete, reboot the system.
+The [Console Setup Menu]({{< relref "ConsoleSetupMenu.md" >}}) displays when the system boots successfully.
 
 {{< expand "VMWare post-install" "v">}}
 After installing TrueNAS in a VMware VM, it is recommended to configure and use the [vmx(4)](https://www.freebsd.org/cgi/man.cgi?query=vmx) drivers on TrueNAS.
