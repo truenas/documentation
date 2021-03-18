@@ -5,7 +5,7 @@ weight: 20
 
 {{< toc >}}
 
-Configure [SSH](/CORE/System/SSH/) and [automatic dataset snapshots](/CORE/Tasks/PeriodicSnapshotTasks/) in TrueNAS before creating a remote replication task.
+Configure [SSH]({{< relref "SystemSSH.md" >}}) and [automatic dataset snapshots]({{< relref "PeriodicSnapshotTasks.md" >}}) in TrueNAS before creating a remote replication task.
 This ensures that both systems can connect to each other and new snapshots are regularly available for replication.
 
 To streamline creating simple replication configurations, the replication wizard assists with creating a new SSH connection and automatically creates a periodic snapshot task for sources that have no existing snapshots.
@@ -51,7 +51,7 @@ You can select multiple sources or manually type the names into the field.
 
 TrueNAS shows how many snapshots are available for replication.
 It is recommended to manually snapshot the sources or create a periodic snapshot task *before* creating the replication task.
-However, when the sources are on the local system and don't have any existing snapshots, TrueNAS can create a basic periodic snapshot task and snapshot the sources immediately before starting the replication.
+However, when the sources are on the local system and don't have any existing snapshots, TrueNAS can create a basic periodic snapshot task and snapshot the sources immediately before starting the replication. Enabling *Recursive* replicates all snapshots contained within the selected source dataset snapshots.
 
 ![TasksReplicationTasksAddRemoteSource](/images/CORE/12.0/TasksReplicationTasksAddRemoteSource.png "Choosing a Remote Source")
 

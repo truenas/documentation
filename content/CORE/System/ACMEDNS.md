@@ -13,7 +13,7 @@ This feature is only available in the open source supported TrueNAS CORE.
 The user must verify ownership of the domain before certificate automation is allowed.
 
 An ACME DNS Authenticator is required to configure ACME certificate automation.
-This also requires a [Certificate Signing Request](/hub/initial-setup/security/certificates/#certificate-signing-request).
+This also requires a [Certificate Signing Request]({{< relref "Certificates.md" >}}).
 
 ## ACME DNS Authenticators
 

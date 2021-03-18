@@ -46,35 +46,35 @@ While TrueNAS is designed for and ever-evolving towards increased user friendlin
 
 * Self-Encrypting Drive (SED): A SED (or Self-Encrypting Drive) is a hard drive that automatically and continuously encrypts the data on the drive without any user action.
 
-* [Zettabyte File System (ZFS)](/hub/additional-topics/reference/ZFS-references/): ZFS is a next-generation file system designed by Sun Microsystems that eliminates most, if not all of the shortcomings found in legacy file systems and hardware RAID devices.
+* [Zettabyte File System (ZFS)]({{< relref "ZFSPrimer.md" >}}): ZFS is a next-generation file system designed by Sun Microsystems that eliminates most, if not all of the shortcomings found in legacy file systems and hardware RAID devices.
 
 * iSCSI: iSCSI stands for Internet Small Computer Systems Interface. iSCSI is a transport layer protocol that works on top of the Transport Control Protocol (TCP). It provides block-level access to storage devices by carrying SCSI commands over a TCP/IP network.
 
 ### ZFS
 
-* [L2ARC](/hub/additional-topics/reference/L2arcReference/): sometimes called a CACHE vdev. This is a special class of vdev. ARC stands for Adaptive Replacement Cache and is a caching algorithm that tracks both the blocks in cache and blocks recently evicted from cache. The main ARC resides in system memory. The L2ARC is 2nd layer ARC assigned to a disk to expand ARC capability.
+* [L2ARC]({{< relref "L2ARC.md" >}}): sometimes called a CACHE vdev. This is a special class of vdev. ARC stands for Adaptive Replacement Cache and is a caching algorithm that tracks both the blocks in cache and blocks recently evicted from cache. The main ARC resides in system memory. The L2ARC is 2nd layer ARC assigned to a disk to expand ARC capability.
 
-* [ZFS Datasets](/hub/initial-setup/storage/datasets/): similar to a conventional mounted filesystem. It appears in casual inspection as "just another folder". However, unlike conventional mounted filesystems, each ZFS dataset has its own set of properties.
+* [ZFS Datasets]({{< relref "Datasets.md" >}}): similar to a conventional mounted filesystem. It appears in casual inspection as "just another folder". However, unlike conventional mounted filesystems, each ZFS dataset has its own set of properties.
 
-* [ZFS Pools](/hub/initial-setup/storage/pools/): filesystem container that is composed of one or more vdevs.
+* [ZFS Pools]({{< relref "PoolCreate.md" >}}): filesystem container that is composed of one or more vdevs.
 
-* [ZFS vdev](/hub/additional-topics/reference/ZFS-references/): ZFS virtual device. A ZFS pool is made up by one or more vdevs. A vdev can be created using a single disk or many. A vdev has many configurations: single disk, stripe, RAIDz1, RAIDz2, RAIDz3, or mirror.
+* [ZFS vdev]({{< relref "ZFSPrimer.md" >}}): ZFS virtual device. A ZFS pool is made up by one or more vdevs. A vdev can be created using a single disk or many. A vdev has many configurations: single disk, stripe, RAIDz1, RAIDz2, RAIDz3, or mirror.
 
-* [ZFS zvols](/hub/initial-setup/storage/zvols/): datasets that represent block devices.
+* [ZFS zvols]({{< relref "Zvols.md" >}}): datasets that represent block devices.
 
 * [ZIL](http://www.freenas.org/blog/zfs-zil-and-slog-demystified/) (or ZFS Intent Log): special vdev class. This is also sometimes referred to as a SLOG or Separate Intent Log.
 
-* [Fusion Pool](/hub/initial-setup/storage/fusion-pool/) (or metadata vdev): is a special class of vdev. This special vdev can store meta data such as file locations and allocation tables. Using a special vdev drastically speeds up random I/O and can cut the average number of spinning-disk I/Os needed to find and access a file by up to half.
+* [Fusion Pool]({{< relref "FusionPool.md" >}}) (or metadata vdev): is a special class of vdev. This special vdev can store meta data such as file locations and allocation tables. Using a special vdev drastically speeds up random I/O and can cut the average number of spinning-disk I/Os needed to find and access a file by up to half.
 
-* [ZFS Snapshots](/hub/initial-setup/storage/zfs-snapshots/): read-only copy of a file system or volume. When a snapshot of a dataset is made, ZFS records the timestamp of when the snapshot was made. No data is copied and no extra storage is consumed. Only when changes occur in the filesystem and the data in it diverges from the snapshot does the snapshot start using additional storage.
+* [ZFS Snapshots]({{< relref "Snapshots.md" >}}): read-only copy of a file system or volume. When a snapshot of a dataset is made, ZFS records the timestamp of when the snapshot was made. No data is copied and no extra storage is consumed. Only when changes occur in the filesystem and the data in it diverges from the snapshot does the snapshot start using additional storage.
 
-* [ZFS Scrub](/hub/tasks/scheduled/scrub/): the process that ZFS uses to verify the data on disk. All of the data is read and checked against the computed checksums to verify that no corruption has occurred.
+* [ZFS Scrub]({{< relref "ScrubTasks.md" >}}): the process that ZFS uses to verify the data on disk. All of the data is read and checked against the computed checksums to verify that no corruption has occurred.
 
-* [ZFS Resilver](/hub/tasks/scheduled/resilver/): process to reconstruct data on a disk when that disk has replaced a failed disk.
+* [ZFS Resilver]({{< relref "ResilverPriority.md" >}}): process to reconstruct data on a disk when that disk has replaced a failed disk.
 
-* [ZFS Replication](/hub/tasks/scheduled/replication/): copying a ZFS dataset to another dataset. The receiving dataset can be on the same machine or on another machine in a remote location. Replication works with snapshots so only the changes to the stored data need to be sent to the receiving dataset.
+* [ZFS Replication]({{< relref "/CORE/Tasks/ReplicationTasks/_index.md" >}}): copying a ZFS dataset to another dataset. The receiving dataset can be on the same machine or on another machine in a remote location. Replication works with snapshots so only the changes to the stored data need to be sent to the receiving dataset.
 
-* [Cloud Sync](/hub/tasks/scheduled/cloudsync/): TrueNAS sending, receiving, or synchronizing data with a Cloud Storage provider like Amazon S3, Google Cloud, or Microsoft Azure.
+* [Cloud Sync]({{< relref "CloudSyncTasks.md" >}}): TrueNAS sending, receiving, or synchronizing data with a Cloud Storage provider like Amazon S3, Google Cloud, or Microsoft Azure.
 
 ## Networking Terminology
 

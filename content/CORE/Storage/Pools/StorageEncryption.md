@@ -1,6 +1,6 @@
 ---
 title: "Storage Encryption"
-weight: 20
+weight: 25
 ---
 
 {{< toc >}}
@@ -24,7 +24,7 @@ The [Key Management Interface Protocol (KMIP)](https://docs.oasis-open.org/kmip/
 ## Encrypting a Storage Pool
 
 Encrypting the root dataset of a new storage pool further increases data security.
-[Create a new pool](/core/storage/pools/poolcreate/#creating-a-pool) and set *Encryption* in the **Pool Manager**.
+[Create a new pool]({{< relref "PoolCreate.md#creating-a-pool" >}}) and set *Encryption* in the **Pool Manager**.
 TrueNAS shows a warning.
 
 ![Storage Pools Add Encryption Warning](/images/CORE/12.0/StoragePoolsAddEncryptionWarning.png "Storage Pools Add Encryption Warning")
@@ -43,7 +43,7 @@ These algorithms provide authenticated encryption with block ciphers.
 ## Encrypting a New Dataset
 
 New datasets within an existing storage pool can also be encrypted without having to encrypt the entire pool.
-To encrypt a single dataset, go to **Storage > Pools**, open the <i class="fa fa-ellipsis-v"></i> (Options) for an existing dataset, and click *Add Dataset*.
+To encrypt a single dataset, go to **Storage > Pools**, open the <i class="fa fa-ellipsis-v"></i>&nbsp; (Options) for an existing dataset, and click *Add Dataset*.
 
 ![StoragePoolsDatasetAdd](/images/CORE/12.0/StoragePoolsDatasetAdd.png "New Dataset Options")
 
@@ -63,7 +63,7 @@ The dataset status is determined from an icon:
 * Dataset locked icon: <i class="material-icons" aria-hidden="true" title="<locked>">lock</i>
 
 Encrypted datasets can only be locked and unlocked if they are secured with a passphrase instead of a keyfile.
-Before locking a dataset, verify that it is not currently in use, then click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> (Options) and *Lock*.
+Before locking a dataset, verify that it is not currently in use, then click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; (Options) and *Lock*.
 
 ![StoragePoolsDatasetLockOptions](/images/CORE/12.0/StoragePoolsDatasetLockOptions.png "Dataset Locking Options")
 
@@ -71,7 +71,7 @@ Use the **Force unmount** option only if you are certain that no one is currentl
 After locking a dataset, the unlock icon changes to a locked icon.
 While the dataset is locked, it is not available for use.
 
-To unlock a dataset, click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> (Options) and *Unlock*.
+To unlock a dataset, click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; (Options) and *Unlock*.
 
 ![StoragePoolsDatasetUnlockOptions](/images/CORE/12.0/StoragePoolsDatasetUnlockOptions.png "Dataset Unlock Options")
 
@@ -95,11 +95,11 @@ Creating a new encrypted pool automatically generates new key file and prompts t
 
 ![EncryptionKeyBackupWarning](/images/CORE/12.0/EncryptionKeyBackupWarning.png "Encryption Backup Warning")
 
-To manually back up a root dataset keyfile by opening the pool <i class="fas fa-cog" aria-hidden="true" title="Settings"></i> (Settings) menu and selecting *Export Dataset Keys*.
+To manually back up a root dataset keyfile by opening the pool <i class="fas fa-cog" aria-hidden="true" title="Settings"></i>&nbsp; (Settings) menu and selecting *Export Dataset Keys*.
 
 ![StoragePoolsEncryptionActionsExportKeys](/images/CORE/12.0/StoragePoolsEncryptionActionsExportKeys.png "Exporting Key Files")
 
-To change the key, click the dataset <i class="fa fa-ellipsis-v"></i> (Options) and *Encryption Options*.
+To change the key, click the dataset <i class="fa fa-ellipsis-v"></i>&nbsp; (Options) and *Encryption Options*.
 
 ![StoragePoolsEncryptedDataset](/images/CORE/12.0/StoragePoolsEncryptedDataset.png "Dataset Options: Encryption Options")
 
@@ -110,7 +110,7 @@ Enter your custom key or click *Generate Key*.
 {{< tab "Passphrases" >}}
 #### Passphrases
 
-To use a passphrase instead of a keyfile, click the dataset <i class="fa fa-ellipsis-v"></i> (Options) and *Encryption Options*.
+To use a passphrase instead of a keyfile, click the dataset <i class="fa fa-ellipsis-v"></i>&nbsp; (Options) and *Encryption Options*.
 Change the *Encryption Type* from *Key* to *Passphrase*.
 
 ![Storage Pools Dataset Encryption Passphrase](/images/CORE/12.0/StoragePoolsDatasetEncryptionPassphrase.png "Dataset Encryption Passphrase Options")
@@ -189,7 +189,7 @@ Receieving Dataset = dataset_2
    TrueNAS prompts for the passphrase.
    After entering the passphrase and the pool is unlocked, you can delete the `/tmp/pass` file used for the transfer.
 6. If desired, you can convert the dataset to use a keyfile instead of a passphrase.
-   To use a key file, click the dataset <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> (Options) and click *Encryption Options*.
+   To use a key file, click the dataset <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; (Options) and click *Encryption Options*.
    Change the *Encryption Type* from *Passphrase* to *Key* and save.
    Back up your key file immediately!
 7. Repeat this process for every dataset in the pool that needs to be migrated.

@@ -17,12 +17,12 @@ This strategy allows an administrator to roll the system data back to a specific
 In the event of catastrophic system or disk failure, off-site snapshots can restore data up to the most recent snapshot.
 {{< /expand >}}
 
-Taking snapshots requires the system have all [pools](/core/storage/pools/), [datasets](/core/storage/pools/), and [zvols](/core/storage/pools/) already configured.
+Taking snapshots requires the system have all [pools]({{< relref "/CORE/Storage/Pools/_index.md" >}}), [datasets]({{< relref "" >}}), and [zvols]({{< relref "" >}}) already configured.
 
 ## Creating a Single Snapshot
 
 {{< hint ok >}}
-To save time and regularly create fresh snapshots, consider making a [Periodic Snapshot Task](/core/tasks/) instead.
+To save time and regularly create fresh snapshots, consider making a [Periodic Snapshot Task]({{< relref "PeriodicSnapshotTasks.md" >}}) instead.
 {{< /hint >}}
 
 To quickly snapshot existing storage, go to **Storage > Snapshots** and click *ADD*.
@@ -32,7 +32,7 @@ To quickly snapshot existing storage, go to **Storage > Snapshots** and click *A
 Use the *Dataset* drop down to select an existing ZFS pool, dataset, or zvol to snapshot.
 
 The suggested *Name* is automatically generated but can be overridden with any custom string.
-Choosing a proper *Naming Schema* instead allows including the snapshot in [Replication Tasks](/core/storage/pools/).
+Choosing a proper *Naming Schema* instead allows including the snapshot in [Replication Tasks]({{< relref "/CORE/Tasks/ReplicationTasks/_index.md" >}}).
 The *Naming Schema* drop-down is populated with previously created schemas from periodic snapshot tasks.
 
 To include child datasets with the snapshot, set *Recursive*.
@@ -44,7 +44,7 @@ Go to **Storage > Snapshots** to manage created snapshots.
 ![StorageSnapshots](/images/CORE/12.0/StorageSnapshots.png "List of Created Snapshots")
 
 Each entry in the list includes the dataset and snapshot names.
-Click <i class="fa fa-chevron-right" aria-hidden="true" title="Right Chevron"></i> (Expand) to view options for a snapshot:
+Click <i class="fa fa-chevron-right" aria-hidden="true" title="Right Chevron"></i>&nbsp; (Expand) to view options for a snapshot:
 
 {{< tabs "Snapshot Options" >}}
 {{< tab "DATE CREATED" >}}
