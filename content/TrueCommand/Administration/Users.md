@@ -6,7 +6,7 @@ weight: 15
 {{< toc >}}
 
 TrueCommand has a robust user management system designed to allow TrueCommand administrators to personalize the TrueCommand experience for each user account.
-User accounts are created in the TrueCommand interface or LDAP can automatically create new user accounts when someone logs into TrueCommand with their LDAP credentials.
+You can create user accounts in the TrueCommand interface. Alternatively, LDAP can automatically create new user accounts when someone logs into TrueCommand with their LDAP credentials.
 
 User accounts also organize into "Teams" for simultaneous management of large numbers or related user accounts.
 
@@ -15,14 +15,13 @@ User accounts also organize into "Teams" for simultaneous management of large nu
 To create a new user account, open the **Configure** <i class="fa fa-cog" aria-hidden="true" title="Settings"></i> menu and click *Users > + NEW USER*.
 Enter a descriptive user name and an authentication method for the user.
 
-The *DEFAULT* authentication method is used to create unique credentials for logging in to the TrueCommand web interface.
+TrueCommand uses the *DEFAULT* authentication method to create unique credentials for logging in to the web interface.
 The administrator has to provide these credentials to the intended user.
 
 ![UsersAdd](/images/TrueCommand/1.3/UsersAdd.png "Adding a new user")
 
-Users can also be assigned to existing *Teams*.
-Select a team from the drop-down to add the user to that team.
-Users can be members of multiple teams.
+You can assign users to existing *Teams* by selecting a team from the drop-down to add the user to that team.
+You can assign users to multiple teams.
 
 {{< hint warning >}}
 Deleting a user account permanently removes the user and cannot be undone.
@@ -45,11 +44,11 @@ To configure account details and permissions, open the *Configure* <i class="fa 
 
 ![Users Edit](/images/TrueCommand/1.3/UsersEdit.png "Users Edit")
 
-There are several different elements that can be configured for a user, including the user's avatar, personal details, Team membership, and system permissions.
+There are several different elements that you can configure for a user, including the user's avatar, personal details, Team membership, and system permissions.
 
 ### User Details
 
-You can add personal details about the user in this form, designate the account as TrueCommand administrator, or change the account password.
+You can add personal details about the user in this form. You may also designate the account as TrueCommand administrator or change the account password.
 Saving changes to a user's password requires entering the current password for that user.
 To go back to the original contents of the fields, click RESET FORM.
 
@@ -58,8 +57,8 @@ To go back to the original contents of the fields, click RESET FORM.
 The *CREATE A NEW TEAM* button appears if no TrueCommand teams exist.
 When teams are present, the *JOIN TEAM* button appears.
 Click JOIN TEAM to add the user to a team.
-Users can be added to multiple teams.
-Team permissions are applied to this user account, but setting a specific permission for this user can override a related team permission.
+You can add users to multiple teams.
+TrueCommand applies team permissions to any user added to a team, but setting a specific permission for the user can override a related team permission.
 
 ### System Permissions
 
@@ -70,15 +69,15 @@ Click *ADD SYSTEM* and select a system from the drop-down to give the user acces
 To restrict the user to only viewing details about the system, set the *read* permission.
 To remove a user’s access to a particular system, click minus on the desired system.
 
-When system groups are available an *ADD GROUP* button appears.
+When system groups are available, an *ADD GROUP* button appears.
 Click *ADD GROUP* and select a group from the drop-down to give the user access to all the systems in that group.
 To assign user's type of access to the group, choose *read* or *read/write* permissions.
 To remove a user’s access to a particular system group, click *- (minus)* on the desired group.
 
 ## Organizing User Teams
 
-Teams are a collection of users with permissions that are applied to all the joined user accounts.
-They provide a more efficient way of managing large numbers of or related user accounts.
+Teams are collections of users with permissions that apply to all the joined user accounts.
+Teams provide a more efficient way of managing large numbers of or related user accounts.
 For example, changing the permissions of a *Metrics* team that has 20 joined user accounts is much faster than changing the permissions for each account.
 
 To create a team, open the **Configure** <i class="fa fa-cog" aria-hidden="true" title="Settings"></i> menu and click *TEAMS > + NEW TEAM*.
@@ -100,12 +99,12 @@ The **Members** section shows which user accounts are included in the team.
 To add users to the team, click *ADD USER* and choose them from the drop-down.
 To remove users from the team, click *- (minus)* on the desired user.
 
-The system permissions are configured exactly the same way as described above for individual user accounts.
+System permissions are configured exactly the same way as described above for individual user accounts.
 Note that individual user account permissions can override team permissions.
 
 ## Resetting a User Password from the Command Line
 
-The Docker version of TrueCommand allows resetting user passwords from the command line.
+The Docker version of TrueCommand allows you to reset user passwords from the command line.
 Open the shell on the system running the TrueCommand Container and use the following command, replacing the values in brackets with their appropriate values. 
 
 ```
