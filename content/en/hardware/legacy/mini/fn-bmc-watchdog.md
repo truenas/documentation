@@ -5,7 +5,7 @@ description: "FAQ about the 2nd generation FreeNAS Mini motherboard firmware iss
 
 (*Original Publish Date: September 19, 2017*)
 
-iXsystems has verified a firmware-related issue with the Board Management Controller (BMC) on the ASRock Rack C2750D4I motherboard used in the second generation FreeNAS Mini and FreeNAS Mini XL. In December of 2016, we provided a software fix starting in FreeNAS 9.10.1-U3 that mitigates this issue and protects your board from experiencing damage. ASRock Rack has since provided a [BMC firmware update](https://www.asrockrack.com/general/productdetail.asp?Model=C2750D4I#Download) (Version: 00.30.00) that resolves the issue. For more information about the issue and our plan to address it please read below.
+iXsystems has verified a firmware-related issue with the Board Management Controller (BMC) on the ASRock Rack C2750D4I motherboard used in the second generation FreeNAS Mini and FreeNAS Mini XL. In December of 2016, we provided a software fix starting in FreeNAS 9.10.1-U3 that mitigates this issue and protects your board from experiencing damage. ASRock Rack has since provided a [BMC firmware update](https://www.asrockrack.com/general/productdetail.asp?Model=C2750D4I) (Version: 00.30.00) that resolves the issue. For more information about the issue and our plan to address it please read below.
 
 ## What exactly is this BMC or “watchdog” issue?
 
@@ -15,7 +15,7 @@ On these particular motherboards, the BMC creates a backup copy of its configura
 
 ## How do I protect my system?
 
-The best way to protect your system is to update the BMC firmware from ASRock Rack’s website to the newest version: [ASRock Rack C2750D4I](https://www.asrockrack.com/general/productdetail.asp?Model=C2750D4I#Download) BMC firmware update (Version: 00.30.00).
+The best way to protect your system is to update the BMC firmware from ASRock Rack’s website to the newest version: [ASRock Rack C2750D4I](https://www.asrockrack.com/general/productdetail.asp?Model=C2750D4I) BMC firmware update (Version: 00.30.00).
 
 ## Is the data in my FreeNAS Mini safe?
 
@@ -47,7 +47,7 @@ iXsystems is proud to stand behind its products. We’re extending the warranty 
 
 ## What should I do if I think my FreeNAS Mini has stopped working because of this issue?
 
-[Contact iXsystems Customer Support](/hub/initial-setup/support/#contacting-ixsystems-support) and we will be glad to assist you!
+[Contact iXsystems Customer Support]({{< relref "/hub/initial-setup/support#contacting-ixsystems-support" >}}) and we will be glad to assist you!
 
 ## How does the return process work and how long does it take?
 
@@ -55,6 +55,6 @@ We offer an advanced replacement option if you have experienced a failure relate
 
 ## What if I didn’t get an answer to my question in this FAQ?
 
-[Contact iXsystems Customer Support](/hub/initial-setup/support/#contacting-ixsystems-support) and we will be glad to assist you!
+[Contact iXsystems Customer Support]({{< relref "/hub/initial-setup/support#contacting-ixsystems-support" >}}) and we will be glad to assist you!
 
 Thank you for your loyalty as an iXsystems customer. We stand behind the FreeNAS Mini and the FreeNAS Mini XL and will continue to support our customers.

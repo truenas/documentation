@@ -1,7 +1,7 @@
 ---
 title: "LLDP"
 description: "Advertising TrueNAS on a network with the Link Layer Discovery Protocol."
-tags: ["LLDP", "networking"]
+tags: ["lldp", "networking"]
 ---
 
 The [Link Layer Discovery Protocol (LLDP)](https://tools.ietf.org/html/rfc4957) is used by network devices to advertise their identity, capabilities, and neighbors on an Ethernet network.
@@ -20,5 +20,5 @@ Set an **Interface Description** and enter a **Country Code** before turning the
 | Setting               | Value    | Description                                                                                     |
 |-----------------------|----------|-------------------------------------------------------------------------------------------------|
 | Interface Description | checkbox | Enables *receive* mode. Any received peer information is saved in interface descriptions.       |
-| Country Code          | string   | Two-letter [ISO 3166-1 alpha-2](https://www.iso.org/obp/ui/#search) code used to enable LLDP location support.                        |
+| Country Code          | string   | Two-letter [ISO 3166-1 alpha-2](https://www.iso.org/obp/ui/) code used to enable LLDP location support.                        |
 | Location              | string   | The physical location of the host.  

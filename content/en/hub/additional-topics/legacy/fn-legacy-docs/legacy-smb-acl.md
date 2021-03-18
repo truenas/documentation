@@ -1,7 +1,7 @@
 ---
 Title: "Setting SMB ACLs on Legacy FreeNAS systems"
 weight: 1
-tags: ["Samba"]
+tags: ["samba"]
 ---
 
 

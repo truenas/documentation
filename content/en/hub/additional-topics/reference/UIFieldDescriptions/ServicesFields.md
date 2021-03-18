@@ -3,7 +3,7 @@ title: "FRG: Services"
 linkTitle: "Services"
 description: "Descriptions of each field in the Services section of the TrueNAS web interface."
 weight: 90
-tags: ["reference", "AFP", "FTP/SFTP/TFTP", "iSCSI", "NFS", "SMB", "webdav", "s3", "snmp", "rsync", "S.M.A.R.T.", "openvpn", "LLDP"]
+tags: ["reference", "afp", "ftp/sftp/tftp", "iscsi", "nfs", "smb", "webdav", "s3", "snmp", "rsync", "s.m.a.r.t.", "openvpn", "lldp"]
 ---
 
 ## AFP
@@ -200,7 +200,7 @@ tags: ["reference", "AFP", "FTP/SFTP/TFTP", "iSCSI", "NFS", "SMB", "webdav", "s3
 |-|-|
 | Interface Description | Enables receive mode. Any received peer information is saved in interface descriptions. |
 |-|-|
-| County Code | Two-letter [ISO 3166-1 alpha-2](https://www.iso.org/obp/ui/#search/code/) code used to enable LLDP location support. |
+| Country Code | Two-letter [ISO 3166-1 alpha-2](https://www.iso.org/obp/ui/) code used to enable LLDP location support. |
 | Location | The physical location of the host. |
 
 ## NFS

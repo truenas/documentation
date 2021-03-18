@@ -2,7 +2,7 @@
 title: "Importing Disks"
 description: "How to do a one-time import of data from a disk into a TrueNAS dataset."
 weight: 100
-tags: ["Import"]
+tags: ["disk"]
 ---
 
 The **Storage > Import Disk** options are used to import disks that are formatted with UFS (BSD Unix), FAT(MSDOS) or NTFS (Windows), or EXT2 (Linux) file systems.

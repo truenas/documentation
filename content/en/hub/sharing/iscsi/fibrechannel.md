@@ -1,7 +1,7 @@
 ---
 title: "Configuring Fibre Channel"
 description: "A how-to guide on creating a Fibre Channel iSCSI share."
-tags: ["networking", "Fibre Channel", "iSCSI"]
+tags: ["networking", "fibre channel", "iscsi"]
 ---
 
 The Fibre Channel protocol has been proven over time to be fast, cost effective, and reliable over a wide variety of storage workloads.
@@ -30,7 +30,7 @@ TrueNAS systems licensed for Fibre Channel will have a tab *Fibre Channel Ports*
 
 > **Note:** **Portals**, **Initiators**, and **Authorized Access** screens only apply to iSCSI and can be ignored when configuring Fibre Channel.
 
-Navigate to **Storage > Pools**.  Select an existing pool such as tank, click the <i class="fa fa-bars" aria-hidden="true"></i>&nbsp; hamburger menu, and click **Add zvol** to create a <a href="/hub/initial-setup/storage/zvols/">new zvol</a>. 
+Navigate to **Storage > Pools**.  Select an existing pool such as tank, click the <i class="fa fa-bars" aria-hidden="true"></i>&nbsp; hamburger menu, and click **Add zvol** to create a [new zvol]({{< relref "zvols.md" >}}). 
 
 <img src="/images/FibrezvolPool.png"><br><br>
 
@@ -50,7 +50,7 @@ Navigate to sharing, Block Shares (iSCSI), click **Extents**, click **Add**, ent
 
 <img src="/images/FibreAddExtents.png"><br><br>
 
-Navigate to **Sharing > Block Shares (iSCSI)**, click Associated Targets, click Add, select values for *Target** and **Extent*. Click the **Submit** button.
+Navigate to **Sharing > Block Shares (iSCSI)**, click Associated Targets, click Add, select values for *Target* and *Extent*. Click the *Submit* button.
 
 <img src="/images/FibreAddAssoc.png"><br><br>
 
@@ -72,4 +72,4 @@ To create the virtual ports on the TrueNAS® system, go to **System > Tunables
 
 In the example shown, two physical interfaces were each assigned 4 virtual ports. Note that two tunables were required, one for each physical interface. After the tunables are created, the configured number of virtual ports appears in the *Fibre Channel Ports* screen so they can be associated with targets. They will also be advertised to the switch so zoning can be configured on the switch. 
 
-After a virtual port has been associated with a target, it is added to the *Target* tab of <a href="/hub/tasks/administrative/system-reporting/#graphs">Reporting</a> where its bandwidth usage can be viewed.
+After a virtual port has been associated with a target, it is added to the *Target* tab of [Reporting]({{< relref "system-reporting.md#graphs" >}}) where its bandwidth usage can be viewed.

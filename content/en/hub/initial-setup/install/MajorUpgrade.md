@@ -1,7 +1,7 @@
 ---
 title: "Major Version Upgrades With ISO"
 description: "Upgrade path for major TrueNAS versions and how to use an .iso file to update TrueNAS."
-tags: ["Upgrade"]
+tags: ["upgrade"]
 ---
 
 TrueNAS provides flexibility for keeping the operating system up-to-date:
@@ -15,10 +15,10 @@ TrueNAS provides flexibility for keeping the operating system up-to-date:
    Boot environments provide the option to return to the previous version of the operating system by rebooting the system and selecting the previous boot environment from the **System > Boot** menu.
 
 This article describes how to use an `.iso` file to perform a major version upgrade from an earlier version of FreeNAS/TrueNAS.
-See the [Updating](/hub/initial-setup/install/update-guide/) article for instructions about using the web interface to keep the system updated.
+See the [Updating]({{< relref "update-guide.md" >}}) article for instructions about using the web interface to keep the system updated.
 
 The upgrade path for major versions of FreeNAS/TrueNAS is **9.3 > 9.10 > 11.1 > 11.3 > 12.0**.
-It is always recommended to upgrade to a [supported version](/hub/intro/lifecycle/) of the software.
+It is always recommended to upgrade to a [supported version]({{< relref "lifecycle.md" >}}) of the software.
 
 ## Caveats
 
@@ -29,7 +29,7 @@ Be aware of these caveats before attempting a major version upgrade:
   Unless new ZFS feature flags are needed, it is safe to leave the pool at the current version.
   If the pool is upgraded, it will not be possible to boot into a previous TrueNAS version that does not support the newer feature flags.
 * Upgrading the firmware of Broadcom SAS HBAs to the latest version is recommended.
-* When upgrading from 9.3.x to 9.10, read this [changes FAQ](#upgrading-from-93-to-910-faq) first.
+* When upgrading from 9.3.x to 9.10, read this [changes FAQ](#faq-upgrading-from-93-to-910) first.
 * **Upgrades from FreeNAS 0.7x are not supported.**
   The system has no way to import configuration settings from FreeNAS 0.7x versions.
   The configuration must be manually recreated.
@@ -38,13 +38,13 @@ Be aware of these caveats before attempting a major version upgrade:
   However, if the system is currently running a 32-bit version of FreeNAS/TrueNAS and the hardware supports 64-bit, the system can be upgraded.
   Any archived reporting graphs will be lost during the upgrade.
 * **UFS is not supported.**
-  If the data currently resides on **one** UFS-formatted disk, [create a ZFS pool](/hub/initial-setup/storage/pools/) using other disks after the upgrade, then use the instructions in [Importing a Disk](/hub/initial-setup/storage/ImportDisk/) to mount the UFS-formatted disk and copy the data to the ZFS pool.
+  If the data currently resides on **one** UFS-formatted disk, [create a ZFS pool]({{< relref "pools.md" >}}) using other disks after the upgrade, then use the instructions in [Importing a Disk]({{< relref "ImportDisk.md" >}}) to mount the UFS-formatted disk and copy the data to the ZFS pool.
   With only one disk, back up its data to another system or media before the upgrade, format the disk as `ZFS` after the upgrade, then restore the backup.
   If the data currently resides on a UFS RAID of disks, it is not possible to directly import that data to the ZFS pool.
   Instead, back up the data before the upgrade, create a ZFS pool after the upgrade, then restore the data from the backup.
 * **If you have GELI-encrypted pools and are upgrading to TrueNAS 12.0 or newer**, you might want to migrate data out of the GELI-encrypted pools into ZFS-encrypted pools.
   The GELI pools **cannot be converted**; the data must be migrated to a new ZFS pool.
-  See the [Encryption article](/hub/initial-setup/storage/encryption/) for more details.
+  See the [Encryption article]({{< relref "/hub/initial-setup/storage/encryption.md" >}}) for more details.
 
 ## Preparation
 
@@ -63,8 +63,8 @@ For example, this is the path to download an `.iso` of the latest FreeNAS 11.3 r
 
 <img src="/images/FN11.3-Latest.png">
 <br><br>
-<!-- markdown-link-check-disable-next-line -->
-Burn the downloaded `.iso` file to a CD or USB stick. Refer to the [Preparing Media](/hub/initial-setup/install/FirstTimeInstall/) instructions in the Installation article for tips about burning the `.iso` to media using different Operating Systems.
+
+Burn the downloaded `.iso` file to a CD or USB stick. Refer to the [Preparing Media]({{< relref "FirstTimeInstall.md" >}}) instructions in the Installation article for tips about burning the `.iso` to media using different Operating Systems.
 
 Insert the prepared media into the system and boot from it.
 The installer waits ten seconds in the installer boot menu before booting the default option.
@@ -124,7 +124,7 @@ If database errors are shown but the web interface is accessible, log in, go to 
 **What has changed in 9.10 vs 9.3?**
 
 In a nutshell, the underlying OS and a lot of "ports" used to implement various services.
-See the 9.10-RELEASE [Release Notes](https://archive.freenas.org/9.10/RELEASE/ReleaseNotes) as well as the `ChangeLog` files for all the various [9.10 Software Updates](https://archive.freenas.org/9.10/STABLE/) to paint a complete picture.
+See the 9.10-RELEASE [Release Notes](https://www.ixsystems.com/documentation/freenas/9.10/intro.html#new-features-in-release).
 
 **I upgraded to 9.10 and my LACP (lagg) interface stopped working. It worked great in 9.3! HELP!**
 

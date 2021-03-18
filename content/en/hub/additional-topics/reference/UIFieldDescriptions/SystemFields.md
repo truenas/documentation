@@ -3,7 +3,7 @@ title: "FRG: System"
 linkTitle: "System"
 description: "Descriptions of each field in the System section of the TrueNAS web interface."
 weight: 30
-tags: ["reference", "NTP", "certificates", "email", "dataset", "ssh", "2FA"]
+tags: ["reference", "ntp", "certificates", "email", "dataset", "ssh", "2fa"]
 ---
 
 ## General 
@@ -212,8 +212,8 @@ tags: ["reference", "NTP", "certificates", "email", "dataset", "ssh", "2FA"]
 
 | | |
 |-|-|
-| API Key | Enter or paste the [API key](https://docs.opsgenie.com/v1.0/docs/api-integration). Find the API key by signing into the OpsGenie web interface and going to Integrations/Configured Integrations. Click the desired integration, Settings, and read the API Key field. |
-| API URL | Leave empty for default ([OpsGenie API](https://api.opsgenie.com/) |
+| API Key | Enter or paste the [API key](https://docs.opsgenie.com/docs/api-integration). Find the API key by signing into the OpsGenie web interface and going to Integrations/Configured Integrations. Click the desired integration, Settings, and read the API Key field. |
+| API URL | Leave empty for default ([OpsGenie API](https://docs.opsgenie.com/docs/api-integration) |
 
 **Pager Duty**
 
@@ -242,7 +242,7 @@ tags: ["reference", "NTP", "certificates", "email", "dataset", "ssh", "2FA"]
 | | |
 |-|-|
 | API Key | Enter or paste the [VictorOps API key](https://help.victorops.com/knowledge-base/api/). |
-| Routing Key | Enter or paste the [VictorOps routing key](https://portal.victorops.com/public/api-docs.html#/Routing32Keys). |
+| Routing Key | Enter or paste the [VictorOps routing key](https://portal.victorops.com/public/api-docs.html). |
 
 ## Alert Settings
 
@@ -295,7 +295,7 @@ Authentication options change according to the chosen **Provider**.
 
 | | |
 |-|-|
-| Access Token | A User Access Token for [Box](https://developer.box.com/). An [access token](https://developer.box.com/reference#token) enables Box to verify a request belongs to an authorized session. Example token: T9cE5asGnuyYCCqIZFoWjFHvNbvVqHjl. |
+| Access Token | A User Access Token for [Box](https://developer.box.com/). An [access token](https://developer.box.com/reference/) enables Box to verify a request belongs to an authorized session. Example token: T9cE5asGnuyYCCqIZFoWjFHvNbvVqHjl. |
 
 **DropBox**
 

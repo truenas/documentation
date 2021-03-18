@@ -24,7 +24,8 @@ TrueCommand boasts a wide variety of features, including Role-Based Access Contr
 	<div class="textcolumn">
 		<p>Learn more about TrueCommand before giving it a try!</p>
 		<p><a href="/truecommand/overview/tcwhatis/">What is TrueCommand?</a><br>
-		<a href="/truecommand/overview/releasenotes/">Release Notes</a></p>
+		<a href="/truecommand/overview/releasenotes/">Release Notes</a><br>
+		<a href="/truecommand/overview/devnotes/">Developer Notes</a></p>
 		<a class="linkbutton" href="/truecommand/overview/">Overview</a>
 	</div>
 </div>
@@ -40,10 +41,10 @@ TrueCommand boasts a wide variety of features, including Role-Based Access Contr
 		TrueCommand Cloud is a Software as a Service (SaaS) option that uses encrypted connections to allow managing TrueNAS 12.0 or newer systems using the Cloud.
 		To install TrueCommand on a local system, the primary method is to deploy the TrueCommand Docker Container.
 		You can also install TrueCommand in a Virtual Machine (VM).</p>
-		<p><a href="/truecommand/InstallUpdate/tc_cloud/">Accessing TrueCommand Cloud</a><br>
-		<a href="/truecommand/InstallUpdate/install/">Installing TrueCommand (Docker)</a><br>
-		<a href="/truecommand/InstallUpdate/tc-vm/">Installing TrueCommand (VM)</a></p>
-		<a class="linkbutton" href="/truecommand/InstallUpdate/">Installation</a>
+		<p><a href="/truecommand/installupdate/tc_cloud/">Accessing TrueCommand Cloud</a><br>
+		<a href="/truecommand/installupdate/install/">Installing TrueCommand (Docker)</a><br>
+		<a href="/truecommand/installupdate/tc-vm/">Installing TrueCommand (VM)</a></p>
+		<a class="linkbutton" href="/truecommand/installupdate/">Installation</a>
 	</div>
 </div>
 
@@ -74,7 +75,7 @@ TrueCommand boasts a wide variety of features, including Role-Based Access Contr
 	</div>
 	<div class="textcolumn">
 		<p>Archived release notes and TrueCommand 1.2 articles.</p>
-		<p><a href="/truecommand/tc-legacy-docs/Truecommand-1.2/">TrueCommand 1.2 documentation</a><br>
+		<p><a href="/truecommand/tc-legacy-docs/truecommand-1.2/">TrueCommand 1.2 documentation</a><br>
 		<a href="/truecommand/tc-legacy-docs/release-notes/">Historic (pre-1.3) release notes</a></p>
 		<a class="linkbutton" href="/truecommand/tc-legacy-docs/">Legacy Docs</a>
 	</div>

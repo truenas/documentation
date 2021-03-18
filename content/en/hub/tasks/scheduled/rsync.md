@@ -1,13 +1,13 @@
 ---
 title: "Configuring an rsync Task"
 description: "How to configure automated data transfers using rysnc."
-tags: ["rsync", "SSH"]
+tags: ["rsync", "ssh"]
 weight: 20
 ---
 
 Data often needs to be copied to another system for backup or when migrating to a new system. A fast and secure way of doing this is by using rsync.
 
-Rsync provides the ability to either *push* or *pull* data. When using rsync to *push*, data is copied from a *host* system to a *remote* system. When using rsync to *pull*, data is pulled from a *remote* system and put on the *host* system. To do this, a dataset with data available for transfer must exist on either the *host* or the *remote* system. See <a href="/hub/initial-setup/storage/datasets/">ZFS Datasets</a> for more details about creating a dataset.
+Rsync provides the ability to either *push* or *pull* data. When using rsync to *push*, data is copied from a *host* system to a *remote* system. When using rsync to *pull*, data is pulled from a *remote* system and put on the *host* system. To do this, a dataset with data available for transfer must exist on either the *host* or the *remote* system. See [ZFS Datasets]({{< relref "datasets.md" >}}) for more details about creating a dataset.
 
 ## Rsync Service
 

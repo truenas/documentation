@@ -4,7 +4,7 @@ tags: ["api"]
 ---
 
 **The v1 TrueNAS API has been deprecated.**
-Please refer to the [v2 API documentation]({{< ref "../api/_index.md" >}}) for TrueNAS 11.3 and later versions.
+Please refer to the [v2 API documentation]({{< relref "../../api/_index.md" >}}) for TrueNAS 11.3 and later versions.
 
 <iframe id="inline"
     title="Inline"

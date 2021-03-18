@@ -2,7 +2,7 @@
 title: "TrueNAS Best Practices with VMware®"
 linktitle: "Best Practices"
 description: "General recommendations when using TrueNAS and VMware together."
-tags: ["VMware"]
+tags: ["vmware"]
 ---
 
 There are several configuration recommendations and troubleshooting tips when using TrueNAS with a [VMware](https://www.vmware.com/) hypervisor.

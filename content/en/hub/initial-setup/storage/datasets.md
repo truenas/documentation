@@ -2,19 +2,19 @@
 title: "ZFS Datasets"
 description: "How to create a ZFS dataset."
 weight: 20
-tags: ["ZFS", "dataset"]
+tags: ["zfs", "dataset"]
 ---
 
 {{% pageinfo color="primary" %}}
 A ZFS pool is required for creating a ZFS dataset.
-See [Creating a new ZFS Pool]({{< ref "pools.md" >}}).
+See [Creating a new ZFS Pool]({{< relref "pools.md" >}}).
 {{% /pageinfo %}}
 
 A ZFS dataset is used in TrueNAS as a file system that is created within a data storage pool.
 Datasets can contain files, directories (child datasets), and have individual permissions or flags.
-Datasets can also be [encrypted](/hub/initial-setup/storage/encryption/), either using the encryption created with the pool or with a separate encryption configuration.
-<!-- markdown-link-check-disable-next-line -->
-It is recommended to organize your pool with datasets before configuring [data sharing](/hub/sharing/), as this allows for more fine-tuning of access permissions and using different sharing protocols.
+Datasets can also be [encrypted]({{< relref "/hub/initial-setup/storage/encryption.md" >}}), either using the encryption created with the pool or with a separate encryption configuration.
+
+It is recommended to organize your pool with datasets before configuring [data sharing]({{< relref "/hub/sharing/_index.md" >}}), as this allows for more fine-tuning of access permissions and using different sharing protocols.
 
 ## Creating a Dataset
 
@@ -45,7 +45,7 @@ Datasets typically *Inherit* most of these settings from the root or parent data
 
 By default, datasets **Inherit** the *Encryption Options* from the root or parent dataset.
 To configure the dataset with different encryption settings, unset **Inherit** and choose the new *Encryption Options*.
-For detailed descriptions of the encryption options, see the [Encryption article](/hub/initial-setup/storage/encryption/#encrypting-a-new-dataset).
+For detailed descriptions of the encryption options, see the [Encryption article]({{< relref "/hub/initial-setup/storage/encryption.md#encrypting-a-new-dataset" >}}).
 
 The *Other Options* generally have settings to help tune the dataset for particular data sharing protocols:
 
@@ -68,8 +68,8 @@ Quotas can be configured for either the new dataset or to include all child data
 | Setting            | Value     | Description  |
 |--------------------|-----------|--------------|
 | Quota for this datset | integer | Define the maximum allowed space for the dataset. *0* disables quotas. |
-| Quota warning alert at, % | integer | Generate a warning level [alert](/hub/initial-setup/system-alerts/#system-alerts) when consumed space reaches the defined percentage. By default, the dataset will **Inherit** this value from the parent dataset. Unset **Inherit** to change the value. |
-| Quota critical alert at, % | integer | Generate a critical level [alert](/hub/initial-setup/system-alerts/#system-alerts) when consumed space reaches the defined percentage. By default, the dataset will **Inherit** this value from the parent dataset. Unset **Inherit** to change the value. |
+| Quota warning alert at, % | integer | Generate a warning level [alert]({{< relref "system-alerts.md#system-alerts" >}}) when consumed space reaches the defined percentage. By default, the dataset will **Inherit** this value from the parent dataset. Unset **Inherit** to change the value. |
+| Quota critical alert at, % | integer | Generate a critical level [alert]({{< relref "system-alerts.md#system-alerts" >}}) when consumed space reaches the defined percentage. By default, the dataset will **Inherit** this value from the parent dataset. Unset **Inherit** to change the value. |
 | Reserved space for this dataset | integer | Reserve additional space for datasets that contain logs which could eventually take up all the available free space. *0* is unlimited. |
 
 Additional advanced settings are added to the *Other Options*.
@@ -82,18 +82,18 @@ By default, many of these options *Inherit* their values from the parent dataset
 | Snapshot directory                  | drop down | Controls visibility of the *.zfs* directory on the dataset. Choose between *Visible* or *Invisible*. |
 | Copies                              | drop down | Duplicates ZFS user data stored on this dataset. Choose between *1*, *2*, or *3* redundant data copies. This can improve data protection and retention, but is not a substitute for storage pools with disk redundancy. |
 | Record Size                         | drop down | Logical block size in the dataset. Matching the fixed size of data, as in a database, could result in better performance. |
-| ACL Mode                            | drop down | Determine how [chmod](https://www.freebsd.org/cgi/man.cgi?query=chmod) behaves when adjusting file ACLs. See the [zfs](https://www.freebsd.org/cgi/man.cgi?query=zfs) `aclmode` property.<br>*Passthrough* only updates ACL entries that are related to the file or directory mode.<br>*Restricted* does not allow chmod to make changes to files or directories with a non-trivial ACL. An ACL is trivial if it can be fully expressed as a file mode without losing any access rules. Setting the ACL Mode to *Restricted* is typically used to optimize a dataset for SMB sharing, but can require further optimizations. For example, configuring an [rsync task](/hub/tasks/scheduled/rsync/) with this dataset could require adding `--no-perms` in the task **Auxiliary Parameters** field. |
-| Metadata (Special) Small Block Size | integer   | Threshold block size for including small file blocks into the [special allocation class (fusion pools)](/hub/initial-setup/storage/fusion-pool/). Blocks smaller than or equal to this value will be assigned to the special allocation class while greater blocks will be assigned to the regular class. Valid values are zero or a power of two from 512B up to 1M. The default size *0* means no small file blocks will be allocated in the special class. Before setting this property, a [special class vdev](/hub/initial-setup/storage/fusion-pool/#creating-a-fusion-pool) must be added to the pool. |
+| ACL Mode                            | drop down | Determine how [chmod](https://www.freebsd.org/cgi/man.cgi?query=chmod) behaves when adjusting file ACLs. See the [zfs](https://www.freebsd.org/cgi/man.cgi?query=zfs) `aclmode` property.<br>*Passthrough* only updates ACL entries that are related to the file or directory mode.<br>*Restricted* does not allow chmod to make changes to files or directories with a non-trivial ACL. An ACL is trivial if it can be fully expressed as a file mode without losing any access rules. Setting the ACL Mode to *Restricted* is typically used to optimize a dataset for SMB sharing, but can require further optimizations. For example, configuring an [rsync task]({{< relref "/hub/tasks/scheduled/rsync.md" >}}) with this dataset could require adding `--no-perms` in the task **Auxiliary Parameters** field. |
+| Metadata (Special) Small Block Size | integer   | Threshold block size for including small file blocks into the [special allocation class (fusion pools)]({{< relref "fusion-pool.md" >}}). Blocks smaller than or equal to this value will be assigned to the special allocation class while greater blocks will be assigned to the regular class. Valid values are zero or a power of two from 512B up to 1M. The default size *0* means no small file blocks will be allocated in the special class. Before setting this property, a [special class vdev]({{< relref "fusion-pool.md#creating-a-fusion-pool" >}}) must be added to the pool. |
 
 ## Managing Datasets
 
 After a dataset is created, additional management options are available by going to **Storage > Pools** and clicking <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; for a dataset:
 
 * **Add Dataset**: create a [new ZFS dataset](#creating-a-dataset) that is a "child" of this dataset. Datasets can be continuously layered in this manner.
-* **Add Zvol**: create a new [ZFS block device](/hub/initial-setup/storage/zvols/) as a "child" of this dataset.
+* **Add Zvol**: create a new [ZFS block device]({{< relref "zvols.md" >}}) as a "child" of this dataset.
 * **Edit Options**: opens the [dataset options](#dataset-options) to make adjustments to the dataset configuration. The dataset **Name**, **Case Sensitivity**, and **Share Type** cannot be changed.
-* **Edit Permissions**: opens the editor to set access permissions for this dataset. For more information on Managing ACLs, read the [Dataset Management](/hub/tasks/advanced/editingacls/) documentation.
-* **User Quotas**: shows options to [set data or object quotas for user accounts](/hub/initial-setup/storage/quotas/) cached on the system or user accounts that are connected to this system.
-* **Group Quotas**: shows options to [set data or object quotas for user groups](/hub/initial-setup/storage/quotas/) cached on the system or user groups that are connected to this system. 
+* **Edit Permissions**: opens the editor to set access permissions for this dataset. For more information on Managing ACLs, read the [Dataset Management]({{< relref "editingacls.md" >}}) documentation.
+* **User Quotas**: shows options to [set data or object quotas for user accounts]({{< relref "quotas.md" >}}) cached on the system or user accounts that are connected to this system.
+* **Group Quotas**: shows options to [set data or object quotas for user groups]({{< relref "quotas.md" >}}) cached on the system or user groups that are connected to this system. 
 * **Delete Dataset**: removes the dataset, all stored data, and any snapshots of the dataset from TrueNAS. **Warning**: this can result in unrecoverable data loss, be sure that any critical data is moved off the dataset or is otherwise obsolete.
-* **Create Snapshot**: takes a single manual [ZFS snapshot](/hub/initial-setup/storage/zfs-snapshots/) of the dataset to provide additional data protection and mobility. Created snapshots are listed in **Storage > Snapshots**.
+* **Create Snapshot**: takes a single manual [ZFS snapshot]({{< relref "zfs-snapshots.md" >}}) of the dataset to provide additional data protection and mobility. Created snapshots are listed in **Storage > Snapshots**.

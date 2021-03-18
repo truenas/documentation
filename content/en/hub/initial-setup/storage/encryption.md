@@ -2,7 +2,7 @@
 title: "Encryption"
 description: "Native ZFS Encryption in TrueNAS"
 weight: 50
-tags: ["ZFS","encryption","security","dataset","snapshots"]
+tags: ["zfs","encryption","security","dataset","snapshots"]
 ---
 
 You can encrypt the root dataset of a new storage pool to further increase data security.
@@ -10,7 +10,7 @@ Please note that you will be responsible to remember or otherwise back up passph
 
 Data-at-rest encryption is available with:
 
-+ [Self Encrypting Drives (SEDs)]({{< ref "sed-drives.md" >}}) using OPAL or FIPS 140.2 (Both [AES 256](https://csrc.nist.gov/projects/cryptographic-standards-and-guidelines/archived-crypto-projects/aes-development))
++ [Self Encrypting Drives (SEDs)]({{< relref "sed-drives.md" >}}) using OPAL or FIPS 140.2 (Both [AES 256](https://csrc.nist.gov/projects/cryptographic-standards-and-guidelines/archived-crypto-projects/aes-development))
 + Encryption of specific datasets (AES-256-GCM in TrueNAS 12.0)
 
 Keys for data-at-rest are managed on the local TrueNAS system.
@@ -161,7 +161,7 @@ Before using the command line to migrate data, it is recommended to consider the
 {{% /pageinfo %}}
 
 ZFS data migration can be a complicated process.
-You can ask for assistance in the [TrueNAS Community Forums](https://www.ixsystems.com/community/) or, if you have a support contract with iXsystems, [contact iX Support](/hub/initial-setup/support/#support-in-truenas-enterprise) for assistance.
+You can ask for assistance in the [TrueNAS Community Forums](https://www.ixsystems.com/community/) or, if you have a support contract with iXsystems, [contact iX Support]({{< relref "/hub/initial-setup/support.md#support-in-truenas-enterprise" >}}) for assistance.
 
 ### File Transfer
 

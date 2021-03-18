@@ -2,12 +2,11 @@
 title: "Quotas"
 description: "How to set data or object quotas for user accounts and groups."
 weight: 70
-tags: ["Quotas"]
 ---
 
 {{% pageinfo color="primary" %}}
 A dataset is required to view and edit quotas.
-See [ZFS Datasets]({{< ref "datasets.md" >}}).
+See [ZFS Datasets]({{< relref "datasets.md" >}}).
 {{% /pageinfo %}}
 
 TrueNAS allows users to set data or object quotas for user accounts and groups cached on or connected to the system.

@@ -1,7 +1,7 @@
 ---
 title: "Setting a Static IP Address"
 description: "How to set a static IP address in either the web interface or system console."
-tags: ["networking","CLI"]
+tags: ["networking","cli"]
 ---
 
 {{% alert title="Warning" color="warning" %}}
@@ -46,7 +46,7 @@ Log in to the web interface and go to *Network > Interfaces*. This contains crea
 You can configure static IP addresses while creating or editing an interface.
 
 {{% alert title="TrueNAS Enterprise" color="info" %}}
-[High Availability](/hub/tasks/advanced/high-availability/) must be disabled on TrueNAS Enterprise systems before an active interface can be edited.
+[High Availability]({{< relref "high-availability.md" >}}) must be disabled on TrueNAS Enterprise systems before an active interface can be edited.
 {{% /alert %}}
 
 <img src="/images/NetworkInterfacesEdit.png">

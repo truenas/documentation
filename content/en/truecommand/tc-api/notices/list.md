@@ -18,7 +18,7 @@ List alert notices for systems that the user can view:
    * "tvid" : (string or array of strings) Restrict the search to notices about the specified systems. Default value is to search for notices from all systems the current user can view (read access).
    * "all_notices" : (boolian - false by default) Return notices that have been marked as resolved.
    * "count" : (integer) Maximum limit for the number of notices returned
-   * "limit_datetime" : ([string : date/time code](#input_time_codes)) Provide a date/time cutoff for the search (default value: current date/time)
+   * "limit_datetime" : ([string : date/time code]({{< relref "timecodes.md" >}}) Provide a date/time cutoff for the search (default value: current date/time)
    * "newer_than_datetime" : (boolean) Return notices newer than the datetime cutoff (default: false - older than cutoff)
    * "sort_ascending_time" : (boolean) Return notices in an array format arranged oldest->newest (if true) or newest->oldest (if false). Do not set this optional flag to return it in the standard object-based format.
 * **Note:** The "system_time_triggered" field returns the time code (in time_t format) for finding the trigger of the event in the system data logs. This can be very useful for viewing all of the data/subsystems around the time that the alert was triggered for debugging purposes.

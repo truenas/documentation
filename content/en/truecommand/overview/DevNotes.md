@@ -1,11 +1,12 @@
 ---
 title: Developer’s Notes
 description: Running updates about TrueCommand Nightly status and current issues.
-tags: [“TrueCommand”]
 weight: 30
 ---
 
 #### Recent Updates
+> 03/17/2021 - Large update to Cluster creation/management. Requires latest TrueNAS SCALE nightlies to work properly (API's just changed on their end).
+> 
 > 02/25/2021 - Initial nightly image release for TrueCommand 2.0
 
 ## System Requirements
@@ -21,7 +22,7 @@ Nightly images for TrueCommand are built every 24 hours. These images are automa
 Download information:
 
 * [DockerHub](https://hub.docker.com/r/ixsystems/truecommand)
-* [Example in Documentation](https://www.truenas.com/docs/truecommand/InstallUpdate/install/), replace “latest” with “nightly” in the docker pull commands.
+* [Example in Documentation]({{< relref "/truecommand/InstallUpdate/install.md" >}}), replace “latest” with “nightly” in the docker pull commands.
 
 ## Current Status
 
@@ -60,7 +61,7 @@ Table of features and current status (Timestamp references when the item status 
 |System Administration|**OK**|02/26/2021| Configuration of TrueCommand system (SSL certificates, licensing, AD/LDAP, etc)|
 |Dashboard|**In Progress**|02/26/2021|Top-level look at NAS state and information|
 |NAS Explorer|**Review**|02/26/2021| Detailed inspection/management of storage on individual NAS’s|
-|Cluster Volumes|**In Progress**|02/26/2021|Create and manage clusters of TrueNAS SCALE systems (glusterfs)|
+|Cluster Volumes|**Review**|03/17/2021|Create and manage clusters of TrueNAS SCALE systems (glusterfs)|
 |ISCSI Manager|**Review**|02/26/2021|Create and manage ISCSI volumes in bulk|
 
 #### Migration Notice
@@ -90,7 +91,7 @@ Due to the changes in integrating with the TrueNAS middleware, the minimum versi
 
 * FreeNAS/TrueNAS 11.3 series - No longer supported on self-hosted instances of TC. Does not provide realtime statistics or storage information, but you can still connect to them and use TrueCommand to initiate updates. TrueCommand Cloud has never supported the 11.3 series.
 * TrueNAS 12 CORE/Enterprise - Supported after 12.0-U3. 12.0-U2.1 and older are missing some key metrics in the realtime stats (disk/network usage metrics in particular), but work otherwise.
-TrueNAS SCALE - Fully Supported
+* TrueNAS SCALE 21.03+ - Fully Supported (SCALE-20.12+ is supported excluding cluster functionality)
 
 ## Detailed look at new features
 

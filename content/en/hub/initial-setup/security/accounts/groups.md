@@ -4,10 +4,9 @@ description: "How to add or manage user account groups."
 ---
 
 Using groups in TrueNAS can be an efficient way of managing permissions for many similar user accounts.
-See <a href="/hub/initial-setup/security/accounts/users/">users</a> for managing users.
+See [users]({{< relref "users.md" >}}) for managing users.
 The interface provides management of UNIX-style groups.
-If the network uses a directory service, import the existing account information using the instructions in
-<a href="/hub/initial-setup/security/directory-services/activedirectory/">Directory Services</a>.
+If the network uses a directory service, import the existing account information using the instructions in [Directory Services]({{< relref "/hub/initial-setup/security/directory-services/_index.md" >}}).
 
 To see saved groups, go to **Accounts > Groups**
 
@@ -15,7 +14,7 @@ To see saved groups, go to **Accounts > Groups**
 <br><br>
 
 By default, groups that are built in to the system are hidden.
-To see built-in groups, click <i class="fas fa-cog" aria-hidden="true" title="Settings"></i>&nbsp: and **SHOW**.
+To see built-in groups, click <i class="fas fa-cog" aria-hidden="true" title="Settings"></i>&nbsp; and **SHOW**.
 
 ## Adding a New Group
 
@@ -38,8 +37,8 @@ When set, it allows group members to act as the root account by using [sudo](htt
 It is recommended to leave this unset.
 
 The option **Samba Authentication** is set by default.
-<!-- markdown-link-check-disable-next-line -->
-This option allows group members to be used for [SMB](/hub/sharing/smb/) permissions and authentication.
+
+This option allows group members to be used for [SMB]({{< relref "/hub/sharing/smb/_index.md" >}}) permissions and authentication.
 
 Finally, the **Allow Duplicate GIDs** option is unset by default.
 This allows groups to have duplicate group IDs.

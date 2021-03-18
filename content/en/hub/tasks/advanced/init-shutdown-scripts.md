@@ -19,7 +19,7 @@ Go to **Tasks > Init/Shutdown Scripts** and click `ADD`.
 |-------------------|----------------|----------------|
 | Description       | string         | Write any comments about this task.
 | Type              | drop-down menu | Select *Command* for an executable or *Script* for an executable script. |
-| Command or Script | string         | When *Command* is selected, enter the command with any options. When *Script* is selected, click <i class="fa fa-folder" aria-hidden="true" title="folder"></i>&nbsp (Browse) to select the script from an existing pool. |
+| Command or Script | string         | When *Command* is selected, enter the command with any options. When *Script* is selected, click <i class="fa fa-folder" aria-hidden="true" title="folder"></i>&nbsp; (Browse) to select the script from an existing pool. |
 | When              | drop-down menu | Select when the *Command* or *Script* runs: *Pre Init*: early in the boot process, after mounting filesystems and starting networking. *Post Init*: at the end of the boot process, before TrueNAS services start. *Shutdown*: during the system power off process. |
 | Enabled           | checkbox       | Enable this task. Unset to disable the task without deleting it. |
 | Timeout           | integer        | Automatically stop the script or command after the specified number of seconds.  |

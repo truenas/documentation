@@ -1,7 +1,7 @@
 ---
 title: "Link Aggregations"
 description: "How to combine network connections into a Link Aggregation (LAGG)."
-tags: ["LAGG", "networking"]
+tags: ["lagg", "networking"]
 ---
 
 A [Link Aggregation (LAGG)](https://tools.ietf.org/html/rfc7424) generally refers to various methods of combining (aggregating) multiple network connections in parallel or series to provide additional bandwidth or to provide redundancy for critical connections. TrueNAS uses [lagg(4)](https://www.freebsd.org/cgi/man.cgi?lagg(4)) to manage LAGGs. 
@@ -31,7 +31,7 @@ Under LAGG Settings, set the **Lagg Protocol** to configure the interface ports 
 Next, select the interfaces to add to the LAGG.  
 
 Disabling **Hardware Offloading** is discouraged as it can reduce network performance.
-Disabling this is only recommended when the interface is managing [Jails](/hub/tasks/advanced/jails/), [Plugins](/hub/tasks/advanced/plugins/), or [Virtual Machines](/hub/tasks/advanced/virtual-machines/).
+Disabling this is only recommended when the interface is managing [Jails]({{< relref "/hub/tasks/advanced/jails.md" >}}), [Plugins]({{< relref "plugins.md" >}}), or [Virtual Machines]({{< relref "virtual-machines.md" >}}).
 
 The Maximum Transmission Unit (MTU) is the largest protocol data unit that can be communicated.
 What the largest workable MTU size can be will change according to your available network interfaces and other physical hardware.

@@ -1,6 +1,6 @@
 ---
 title: "Recommended ZFS Update"
-tags: ["FreeNAS","TrueNAS Enterprise", "ZFS"]
+tags: ["zfs"]
 ---
 
 *August 24, 2020*
@@ -29,4 +29,4 @@ These performance improvements are also welcome:
 > I've also noticed a substantial decline in overall disk busy time, moving from a prior average around 65% to an average closer to 45%.
 > All of this while a scrub was running…“
  
-TrueNAS Enterprise users should [contact iXsystems Support](/hub/initial-setup/support/#contacting-ixsystems-support) to schedule the software update and discuss any potential challenges with this update.
+TrueNAS Enterprise users should [contact iXsystems Support]({{< relref "/hub/initial-setup/support.md#contacting-ixsystems-support" >}}) to schedule the software update and discuss any potential challenges with this update.

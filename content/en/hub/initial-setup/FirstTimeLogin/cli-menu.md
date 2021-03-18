@@ -2,7 +2,7 @@
 title: "Console Setup Menu"
 description: "How to access and use the console setup menu"
 weight: 10
-tags: ["CLI","networking"]
+tags: ["cli","networking"]
 ---
 
 The Console Setup menu displays at the end of the boot process.

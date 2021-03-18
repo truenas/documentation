@@ -2,7 +2,7 @@
 title: "ZFS Pools"
 description: "How to create a ZFS data storage pool."
 weight: 10
-tags: ["ZFS", "zpool"]
+tags: ["zfs", "zpool"]
 ---
 
 TrueNAS uses ZFS data storage pools to efficiently store and protect your information. 
@@ -30,7 +30,7 @@ Select *Create new pool* and click **CREATE POOL** to open the **Pool Manager**.
 
 First, enter a name for the pool.
 If you want to encrypt the data for additional security, select *Encryption*.
-Be aware that encrypting also complicates how data is retrieved and has some risks. Refer to the [Encryption article]({{< ref "encryption.md" >}}) for more details.
+Be aware that encrypting also complicates how data is retrieved and has some risks. Refer to the [Encryption article]({{< relref "encryption.md" >}}) for more details.
 
 Now you will configure the virtual devices (vdevs) that make up the pool.
 Click **SUGGEST LAYOUT** to add all same-sized disks in an ideal configuration for balanced data redundancy and performance.
@@ -72,11 +72,11 @@ There are several vdev types that you can use to add features to the pool:
   The hot spare is temporarily used as a replacement for the failed drive to prevent a larger pool and data loss scenario.
   If the failed drive in the pool is replaced with a new drive, the hot spare reverts to an inactive state and is available again as a hot spare.
   If the failed drive is detached from the pool, the temporary spare is promoted to a full member of the pool and will no longer be available as a hot spare.
-* *Metadata*: Special Allocation class used to create [Fusion pools](/hub/initial-setup/storage/fusion-pool/). Optional vdev type used to speed up metadata and small block I/O.
+* *Metadata*: Special Allocation class used to create [Fusion pools]({{< relref "fusion-pool.md" >}}). Optional vdev type used to speed up metadata and small block I/O.
 * *Dedup*: Stores de-duplication tables. These vdevs must be sized to X GiB for X TiB of general storage.
 
 You can add an SSD cache or log device during or after pool creation to improve pool performance under specific use cases.
-Before adding a cache or log device, refer to the [ZFS Primer](/hub/additional-topics/reference/ZFS-references/) to determine if the system will benefit or suffer from adding the device.
+Before adding a cache or log device, refer to the [ZFS Primer]({{< relref "ZFS-references.md" >}}) to determine if the system will benefit or suffer from adding the device.
 
 To add a different vdev type during pool creation, click **ADD VDEV** and select the type from the drop down.
 Select disks from `Available Disks` and use the <i class="fas fa-arrow-right" aria-hidden="true" title="Right Arrow"></i> (right arrow) next to the new **VDev** to add it to that section.
@@ -137,7 +137,7 @@ Review the Pool Import Summary and click **IMPORT**.
 ## Encryption Keys and Passphrases
 
 {{% alert title=Warning color=warning %}}
-The encryption key file and passphrase are required to decrypt the pool. If the pool cannot be decrypted, it cannot be re-imported after a failed upgrade or lost configuration. This means it is very important to save a copy of the key and to remember the passphrase that was configured for the key. Refer to the [Encryption article](/hub/initial-setup/storage/encryption/) for instructions on managing keys.
+The encryption key file and passphrase are required to decrypt the pool. If the pool cannot be decrypted, it cannot be re-imported after a failed upgrade or lost configuration. This means it is very important to save a copy of the key and to remember the passphrase that was configured for the key. Refer to the [Encryption article]({{< relref "encryption.md" >}}) for instructions on managing keys.
 {{% /alert %}}
 
 {{% pageinfo %}}

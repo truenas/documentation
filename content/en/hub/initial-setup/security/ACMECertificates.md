@@ -8,7 +8,7 @@ weight: 13
 [Automatic Certificate Management Environment (ACME)](https://ietf-wg-acme.github.io/acme/draft-ietf-acme-acme.html) is available for automating certificate issuing and renewal.
 The user must verify ownership of the domain before certificate automation is allowed.
 
-To configure ACME certificate automation, you will need to add an ACME DNS authenticator to TrueNAS and have a [Certificate Signing Request](/hub/initial-setup/security/certificates/#certificate-signing-request) on the system.
+To configure ACME certificate automation, you will need to add an ACME DNS authenticator to TrueNAS and have a [Certificate Signing Request]({{< relref "/hub/initial-setup/security/certificates.md#certificate-signing-request" >}}) on the system.
 
 ## ACME DNS Authenticators
 

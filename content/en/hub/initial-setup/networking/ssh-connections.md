@@ -1,7 +1,7 @@
 ---
 title: "SSH Connections"
 description: "How to create and save SSH connections."
-tags: ["security","SSH","networking"]
+tags: ["security","ssh","networking"]
 ---
 
 [Secure Socket Shell (SSH)](https://searchsecurity.techtarget.com/definition/Secure-Shell) is a network protocol that provides a secure method to access and transfer files between two hosts while using an unsecure network.
@@ -49,7 +49,7 @@ When TrueNAS is used as an SSH server, the users in the network must use [SSH cl
     * Go to **System > SSH Keypairs** and open the keypair to be used for the connection.
     * Highlight the entire Public Key text and copy it to the clipboard or download the public key as a text file.
   * Log in to the remote system and follow the procedure recommended by that system’s software documentation to add the Public Key.
-    * [FreeNAS/TrueNAS](#adding-an-ssh-key-to-the-truenas-root-account)
+    * [FreeNAS/TrueNAS](#adding-a-public-ssh-key-to-the-truenas-root-account)
     * Go to **Accounts > Users** and edit the root account.
     * Paste the Public Key text into the SSH Public Key box and click Save.
   * Local system

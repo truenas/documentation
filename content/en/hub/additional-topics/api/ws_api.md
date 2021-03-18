@@ -2,9 +2,8 @@
 title: "V2 Websocket API"
 description: "Websocket API documentation for TrueNAS 11.3 and later."
 weight: 3
-tags: ["API"]
+tags: ["api"]
 ---
-
 
 <iframe id="inlineFrameExample"
     title="Inline Frame Example"

@@ -41,13 +41,13 @@ TrueCommand software is free to use to manage up to 50 drives. It can be deploye
 
 ### Where do I get it?
 
-TrueCommand can be downloaded from the [TrueNAS website](https://www.truenas.com/truecommand/). TrueCommand Cloud subscriptions are available at the [iXsystems Account Services Portal](https://portal.ixsystems.com/portal/login/index.php#login).
+TrueCommand can be downloaded from the [TrueNAS website](https://www.truenas.com/truecommand/). TrueCommand Cloud subscriptions are available at the [iXsystems Account Services Portal](https://portal.ixsystems.com/portal/login/index.php).
 
 
 ### What is TrueCommand Cloud?
 
 TrueCommand Cloud is a secure SaaS offering of TrueCommand which includes a WireGuard VPN capability to connect TrueNAS systems through firewalls. TrueCommand Cloud is compatible with TrueNAS versions 12.0+ or SCALE for the Wireguard VPN capability.
-Subscribe to and set up TrueCommand Cloud using [these instructions](https://www.truenas.com/docs/truecommand/InstallUpdate/tc_cloud/).
+Subscribe to and set up TrueCommand Cloud using [these instructions]({{< relref "tc_cloud.md" >}}).
 
 
 

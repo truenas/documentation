@@ -1,14 +1,12 @@
 ---
 title: "Changing the System Dataset"
 description: "A how-to on changing the system dataset."
-tags: ["ZFS"]
+tags: ["zfs"]
 ---
 
 The system dataset stores debugging core files, encryption keys for encrypted
 pools, and Samba4 metadata such as the user/group cache and share level
 permissions.
-
-
 
 ## Change System Dataset
 

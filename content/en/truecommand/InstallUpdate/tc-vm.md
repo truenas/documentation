@@ -1,7 +1,6 @@
 ---
 title: "TrueCommand VM Installation"
 description: "Installing TrueCommand in a Virtual Machine" 
-tags: ["TrueCommand"]
 weight: 30
 ---
 
@@ -64,4 +63,4 @@ Select the first hard disk and click **Remove**.
 
 The TrueCommand virtual machine is now ready to be used.
 To boot the TrueCommand virtual machine, select it from the list of virtual machines and click **Play virtual machine**.
-TrueCommand usage documentation is available on the TrueNAS Documentation Hub at https://www.truenas.com/docs/hub/truecommand/.
+[TrueCommand usage documentation]({{< relref "/truecommand/admins/_index.md" >}}) is available on the TrueNAS Documentation Hub.

@@ -1,12 +1,11 @@
 ---
 title: "Installing TrueCommand on Windows"
 description: "Running TrueCommand in Docker Desktop for Windows"
-tags: ["TrueCommand Docker", "TrueCommand"]
 ---
 
 {{% pageinfo %}}
 For even easier deployment, iXsystems now offers TrueCommand as a cloud service!
-See the [TrueCommand information page](https://www.truenas.com/truecommand/) for more details.
+See the [TrueCommand information page]({{< relref "tcwhatis.md" >}}) for more details.
 {{% /pageinfo %}}
 
 ## Prerequisites
@@ -118,10 +117,10 @@ The initial TrueCommand screen requires creating an administrator account before
 <!-- markdown-link-check-disable-next-line -->
 After creating the account the login screen refreshes and you can log in with the account credentials that were just created.
 TrueCommand can now be configured and begin to be used.
-See the remaining [TrueCommand Administration articles](https://www.truenas.com/docs/truecommand/admins/) for specific usage guides.
+See the remaining [TrueCommand Administration articles]({{< relref "/truecommand/admins/_index.md" >}}) for specific usage guides.
 
 ## Support
 
 The [TrueNAS Community](https://www.truenas.com/community/) is an active online resource for asking questions, troubleshooting issues, and sharing information with other TrueNAS or TrueCommand users. [Registering](https://www.truenas.com/community/register/) is required for posting. New users are encouraged to briefly [introduce](https://www.truenas.com/community/forums/introductions.25/) themselves and review the [forum rules](https://www.truenas.com/community/threads/forum-rules.45124/) before posting.
 
-iXsystems also offers different Support packages for TrueCommand customers. To find more details about the different Warranty and Service Level Agreement (SLA) options available, see the [TrueCommand Support overview](https://www.ixsystems.com/support/#truecommand).
+iXsystems also offers different Support packages for TrueCommand customers. To find more details about the different Warranty and Service Level Agreement (SLA) options available, see the [iXsystems Support overview](https://www.ixsystems.com/support/), **TrueCommand** tab.

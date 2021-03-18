@@ -7,7 +7,7 @@ tags: ["jails"]
 {{% alert title="Notice" color="info" %}}
 The Jails feature is generally available in TrueNAS CORE and is supported by the open source TrueNAS community.
 TrueNAS Enterprise does not show or support this feature unless it has been added to a TrueNAS Enterprise license.
-For more details or to request jail support in TrueNAS Enterprise, please [contact iX Support](/hub/initial-setup/support/#contacting-ixsystems-support):
+For more details or to request jail support in TrueNAS Enterprise, please [contact iXsystems Support](({{< relref "/hub/initial-setup/support.md#contacting-ixsystems-support" >}}).
 {{% /alert %}}
 
 Jails are a lightweight, operating-system-level virtualization. One or multiple services can run in a jail, isolating those services from the host TrueNAS system. TrueNAS uses [iocage](https://github.com/iocage/iocage) for jail and plugin management. The main differences between a user-created jail and a plugin are that plugins are preconfigured and usually provide only a single service.
@@ -20,7 +20,7 @@ The ability to create multiple jails offers flexibility regarding software manag
 
 ## Jail Storage
 
-A [data storage pool](/hub/initial-setup/storage/pools/) must be created before using jails. Make sure the pool has enough storage for all the intended jails. The **Jails** screen displays a message and button to **CREATE POOL** if no pools exist on the TrueNAS system.
+A [data storage pool]({{< relref "pools.md" >}}) must be created before using jails. Make sure the pool has enough storage for all the intended jails. The **Jails** screen displays a message and button to **CREATE POOL** if no pools exist on the TrueNAS system.
 
 If pools exist, but none have been chosen for use with jails or plugins, a dialog appears to choose a pool. Select a pool and click **CHOOSE**.
 
@@ -94,7 +94,7 @@ The advanced jail creation form is opened by clicking **Jails > ADD**, then **AD
 A usable jail without any networking can be quickly created by setting only the required **Jail Name** and **Release**.
 Configure the remaining `Basic Properties` when the jail needs to communicate over the local network or out to the internet.
 Additional settings are in the `Jail Properties`, `Network Properties`, and `Custom Properties` sections.
-See the [Jail Options Reference](/hub/additional-topics/reference/UIFieldDescriptions/JailsFields/) for a breakdown all of the options for `Jail Properties`, `Network Properties`, and `Custom Properties`.
+See the [Jail Options Reference]({{< relref "JailsFields.md" >}}) for a breakdown all of the options for `Jail Properties`, `Network Properties`, and `Custom Properties`.
 
 ### Creating Template Jails
 
@@ -282,9 +282,9 @@ Here is the typical workflow for adding storage:
 
 + Decide if the jail needs access to existing data or if a new storage area should be created.
 
-+ If the jail needs to access existing data, [edit the permissions](/hub/tasks/advanced/editingacls/) of the pool or dataset so the user and group accounts have the desired read and write access. If multiple applications or jails need have access to the same data, create a new group and add each new user account to that group.
++ If the jail needs to access existing data, [edit the permissions]({{< relref "editingacls.md" >}}) of the pool or dataset so the user and group accounts have the desired read and write access. If multiple applications or jails need have access to the same data, create a new group and add each new user account to that group.
 
-+ If a new storage area is being set aside for that jail or application, [create a dataset](/hub/initial-setup/storage/datasets/). Edit the dataset permissions so the user and group account has the desired read and write access.
++ If a new storage area is being set aside for that jail or application, [create a dataset]({{< relref "datasets.md" >}}). Edit the dataset permissions so the user and group account has the desired read and write access.
 
 + Use the jail **>** (Expand) > **MOUNT POINTS** > **ACTIONS** > **Add Mount Point** to select the data **Source** and the **Destination** where it will be mounted in the jail.
 

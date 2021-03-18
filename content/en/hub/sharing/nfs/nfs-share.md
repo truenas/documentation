@@ -1,13 +1,13 @@
 ---
 title: "Configuring a NFS Share"
 description: "How to create a general purpose Network File System share."
-tags: ["networking","NFS"]
+tags: ["networking","nfs"]
 ---
 
 Creating a Network File System (NFS) share on TrueNAS gives the benefit of making lots of data easily available for anyone with share access.
 Depending how the share is configured, users accessing the share can be restricted to read or write privileges.
 
-To get started, make sure a <a href="/hub/initial-setup/storage/datasets">dataset has been created</a>.
+To get started, make sure a [dataset has been created]({{< relref "datasets.md" >}}).
 This dataset serves as share data storage.
 If a dataset already exists, proceed to turning the NFS service on.
 
@@ -38,7 +38,7 @@ NFS service settings can be configured by clicking <i class="fas fa-pen" aria-hi
 | rpc.lockd(8) bind port            | integer   | Enter a number to bind [rpc.lockd](https://www.freebsd.org/cgi/man.cgi?query=rpc.lockd) only to that port. |
 
 Unless a specific setting is needed, it is recommended to use the default settings for the NFS service.
-When TrueNAS is already connected to [Active Directory](/hub/initial-setup/security/directory-services/activedirectory/), setting NFSv4 and **Require Kerberos for NFSv4** will also require a [Kerberos Keytab](/hub/initial-setup/security/directory-services/kerberos/#kerberos-keytabs).
+When TrueNAS is already connected to [Active Directory]({{< relref "activedirectory.md" >}}), setting NFSv4 and **Require Kerberos for NFSv4** will also require a [Kerberos Keytab]({{< relref "/hub/initial-setup/security/directory-services/kerberos.md#kerberos-keytabs" >}}).
 
 ## Creating an NFS Share
 

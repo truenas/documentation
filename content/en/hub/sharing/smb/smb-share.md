@@ -1,7 +1,7 @@
 ---
 title: "Configuring a Windows SMB share"
 description: "How to set up a general purpose Server Message Block (SMB) share."
-tags: ["networking","Samba"]
+tags: ["networking","samba"]
 ---
 
 SMB (also known as CIFS) is the native file sharing system in Windows.
@@ -14,7 +14,7 @@ SMB is suitable for the management and administration of large or small pools of
 TrueNAS uses Samba to provide SMB services.
 There are multiple versions of the SMB protocol. An SMB client will typically negotiate the highest supported SMB protocol during SMB session negotiation. Industry-wide the usage of the SMB1 protocol (sometimes referred to as NT1) is in the process of being deprecated. This deprecation is largely due to security reasons, and for this reason most SMB clients support the SMB2/3 protocol even if it is not the default protocol used by the particular SMB client.
 
-Please see the separate [advisory](/hub/sharing/smb/smb1/) for more information about the SMB1 protocol.
+Please see the separate [advisory]({{< relref "smb1.md" >}}) for more information about the SMB1 protocol.
 
 {{% alert color="warning" %}}
 Legacy SMB clients rely on NetBIOS Name Resolution to discover the presence of SMB servers on the network. The NetBIOS Name Server (nmbd) is disabled by default in TrueNAS, and may be enabled if this functionality is required.
@@ -24,14 +24,14 @@ Windows clients use [WS-Discovery](http://docs.oasis-open.org/ws-dd/ns/discovery
 Discoverability through broadcast protocols is a convenience feature and is not a requirement to access the SMB server.
 {{% /alert %}}
 
-You will need a [dataset](/hub/initial-setup/storage/datasets/) with the data to share stored within it before creating an SMB share.
+You will need a [dataset]({{< relref "datasets.md" >}}) with the data to share stored within it before creating an SMB share.
 
 ## Requirements for a new SMB share
 1) Create a dataset. Typically, a new dataset should be created when creating a new SMB share. It is recommended to use the *SMB* **Share Type** preset for the ZFS dataset. This will set the ZFS dataset's aclmode property to "restricted", case sensitivity to "insensitive", and apply a default ACL on the newly created dataset. The default ACL is restrictive and will only grant access to the dataset owner and group. Further modification of this default ACL may be required depending on intended usage of the share.
 
-2) Create a user. Although it is possible to grant anonymous or guest access to SMB shares, the support for this is in the process of being deprecated by major vendors of SMB clients. This is in part due to the fact that signing and encryption are not possible for guest sessions. It is therefore recommended to create one or more [user accounts](/hub/initial-setup/security/accounts/users/) for SMB access. By default all new local users are members of a builtin SMB group "builtin users". This group may be used as a simple control point to grant access to all local users on the server. Additional [groups](/hub/initial-setup/security/accounts/groups/) may be created to simplify assigning permissions to large numbers of users.  User accounts that are built-in or do not have the 'smb' flag set may not be used for SMB access.
+2) Create a user. Although it is possible to grant anonymous or guest access to SMB shares, the support for this is in the process of being deprecated by major vendors of SMB clients. This is in part due to the fact that signing and encryption are not possible for guest sessions. It is therefore recommended to create one or more [user accounts]({{< relref "/hub/initial-setup/security/accounts/users.md" >}}) for SMB access. By default all new local users are members of a builtin SMB group "builtin users". This group may be used as a simple control point to grant access to all local users on the server. Additional [groups]({{< relref "/hub/initial-setup/security/accounts/groups.md" >}}) may be created to simplify assigning permissions to large numbers of users.  User accounts that are built-in or do not have the 'smb' flag set may not be used for SMB access.
 
-3) Fine-tune dataset ACL as needed. In most circumstances for home users a reasonable step at this point is to add a new ACL entry to the ACL of the dataset created in (1) above that grants "FULL_CONTROL" to the group "builtin_users" with the flags set to "INHERIT". See the [Permissions article]() for more details about configuring dataset permissions.
+3) Fine-tune dataset ACL as needed. In most circumstances for home users a reasonable step at this point is to add a new ACL entry to the ACL of the dataset created in (1) above that grants "FULL_CONTROL" to the group "builtin_users" with the flags set to "INHERIT". See the [Permissions article]({{< relref "editingacls.md" >}}) for more details about configuring dataset permissions.
 
 {{% alert color="warning" %}}
 When LDAP has been configured and you want users from the LDAP server to have access the SMB share, set **Samba Schema** in **Directory Services > LDAP > ADVANCED MODE**.
@@ -107,7 +107,7 @@ The *Other Options* have settings for improving Apple software compatibility, ZF
 
 | Setting                            | Value     | Description  |
 |------------------------------------|-----------|--------------|
-| Use as Home Share                  | checkbox  | Allows the share to host user home directories. Each user is given a personal home directory when connecting to the share which is not accessible by other users. This allows for a personal, dynamic share. Only one share can be used as the home share. See the configuring [Home Share article](/hub/sharing/smb/HomeShare/) for detailed instructions. |
+| Use as Home Share                  | checkbox  | Allows the share to host user home directories. Each user is given a personal home directory when connecting to the share which is not accessible by other users. This allows for a personal, dynamic share. Only one share can be used as the home share. See the configuring [Home Share article]({{< relref "HomeShare.md" >}}) for detailed instructions. |
 | Time Machine                       | checkbox  | Enables [Apple Time Machine](https://support.apple.com/en-us/HT201250) backups on this share. |
 | Enable Shadow Copies               | checkbox  | Export ZFS snapshots as [Shadow Copies](https://docs.microsoft.com/en-us/windows/win32/vss/shadow-copies-and-shadow-copy-sets) for Microsoft Volume Shadow Copy Service (VSS) clients. |
 | Export Recycle Bin                 | checkbox  | Files that are deleted from the same dataset are moved to the Recycle Bin and do not take any additional space. **Deleting files over NFS will remove the files permanently.** When the files are in a different dataset or a child dataset, they are copied to the dataset where the Recycle Bin is located. To prevent excessive space usage, files larger than *20 MiB* are deleted rather than moved. Adjust the **Auxiliary Parameter** `crossrename:sizelimit=` setting to allow larger files. For example, <code>crossrename:sizelimit=<i>50</i></code> allows moves of files up to *50 MiB* in size. This means files can be permanently deleted or moved from the recycle bin. **This is not a replacement for ZFS snapshots.** |
@@ -176,8 +176,7 @@ For example, to only allow the *tmoore* user permission to view dataset contents
 <img src="/images/StoragePoolsEditACLExample.png">
 <br><br>
 
-For more information on Managing ACLs, read the [Dataset Management](/hub/tasks/advanced/editingacls/) documentation.
-
+For more information on Managing ACLs, read the [Permissions Management]({{< relref "editingacls.md" >}}) documentation.
 
 ## SMB Service
 

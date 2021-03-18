@@ -2,12 +2,12 @@
 title: "Configuring S.M.A.R.T. Tests"
 description: "How to configure S.M.A.R.T. tests for installed disks."
 weight: 30
-tags: ["S.M.A.R.T."]
+tags: ["s.m.a.r.t."]
 ---
 
 <a href="https://en.wikipedia.org/wiki/S.M.A.R.T.">S.M.A.R.T.</a> (Self-Monitoring, Analysis and Reporting Technology) is an industry standard for disk monitoring and testing.
 Disks can be monitored for problems, with several different kinds of self-tests available.
-TrueNAS can adjust when and how [alerts](/hub/initial-setup/system-alerts/) for SMART are issued.
+TrueNAS can adjust when and how [alerts]({{< relref "system-alerts.md" >}}) for SMART are issued.
 When S.M.A.R.T. monitoring reports an issue, it is recommended to replace that disk.
 Most modern ATA, IDE, and SCSI-3 hard drives support S.M.A.R.T.
 Refer to your respective drive documentation for confirmation.
@@ -15,7 +15,7 @@ Refer to your respective drive documentation for confirmation.
 S.M.A.R.T. tests are run on a disk.
 Running tests can reduce drive performance, so it is recommended to schedule tests when the system is in a low-usage state.
 Avoid scheduling disk-intensive tests at the same time!
-For example, S.M.A.R.T. tests should not be scheduled on the same day as a disk [scrub](/hub/tasks/scheduled/scrub/) or [resilver](/hub/tasks/scheduled/resilver/).
+For example, S.M.A.R.T. tests should not be scheduled on the same day as a disk [scrub]({{< relref "/hub/tasks/scheduled/scrub.md" >}}) or [resilver]({{< relref "/hub/tasks/scheduled/resilver.md" >}}).
 
 {{% pageinfo %}}
 To disable all S.M.A.R.T. testing for a disk, go to **Storage > Disks**, select a disk, and click **EDIT DISK(S)**.
@@ -51,7 +51,7 @@ Click *START* to begin the test.
 Depending on the chosen test type, the test can take some time to complete.
 
 Test results can be viewed by expanding a **Storage > Disks** entry and clicking **S.M.A.R.T. TEST RESULTS**.
-To find test results from the [shell](/hub/tasks/administrative/gui-shell/), use `smartctl` and the name of the drive: `smartctl -l selftest /dev/ada0`.
+To find test results from the [shell]({{< relref "gui-shell.md" >}}), use `smartctl` and the name of the drive: `smartctl -l selftest /dev/ada0`.
 
 ## Automatic S.M.A.R.T. Tests
 
@@ -67,13 +67,13 @@ To check if a disk has S.M.A.R.T. Enabled, go to **Storage > Disks** and expand 
 To specify which disks to test, leave **All Disks** unset and make selections from the **Disks** drop down.
 
 Select a test type from the *Type* dropdown.
-Test types are the same as a [manual test](/hub/tasks/scheduled/smart/#manual-smart-test).
+Test types are the same as a [manual test]({{< relref "smart.md#manual-smart-test" >}}).
 
 Finally, select a schedule for the S.M.A.R.T. test.
-If a custom schedule is desired, select *Custom* and fill out the [custom scheduler](/hub/tasks/scheduled/advanced-scheduler/) to meet your needs.
+If a custom schedule is desired, select *Custom* and fill out the [custom scheduler]({{< relref "advanced-scheduler.md" >}}) to meet your needs.
 
 Saved schedules appear in the **Tasks > S.M.A.R.T. Tests** list.
-To verify the schedule is saved, you can open the [shell](/hub/tasks/administrative/gui-shell/) and enter `smartd -q showtests`.
+To verify the schedule is saved, you can open the [shell]({{< relref "gui-shell.md" >}}) and enter `smartd -q showtests`.
 
 ## Service Options
 

@@ -1,7 +1,7 @@
 ---
 title: "IPMI"
 description: "Out of Band Management"
-tags: ["IPMI","networking"]
+tags: ["ipmi","networking"]
 ---
 
 

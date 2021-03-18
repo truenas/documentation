@@ -20,8 +20,8 @@ based on your desired type.
 ## Internal Certificate
 
 Select the *Internal Certificate* type when creating a new internal certificate.
-Before setting any options, ensure a <a href="/hub/initial-setup/security/certificate-authorities/">Certificate
-Authority (CA)</a> has been created. A CA is used to sign the new certificate.
+Before setting any options, ensure a [Certificate Authority (CA)]({{< relref "/hub/initial-setup/security/certificate-authorities.md" >}}) has been created.
+A CA is used to sign the new certificate.
 
 If desired, a profile can be selected for the certificate. Selecting a profile
 automatically sets certain options such as *Key Type*, *Key Length*, *Digest

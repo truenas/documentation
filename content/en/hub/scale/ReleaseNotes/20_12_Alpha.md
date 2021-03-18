@@ -1,6 +1,5 @@
 ---
 title: "SCALE 20.12-ALPHA (Angelfish)"
-tags: ["SCALE"]
 ---
 
 **December 18, 2020**
@@ -66,7 +65,7 @@ Please use only with caution.
   * Periodic Snapshots
   * Rsync
   * Scrub
-* [Docker Images deployed as Helm Charts with Kubernetes NVIDIA / Intel Quicksync GPU passthrough (CLI)](/hub/scale/dev-notes/#using-kubernetes)
+* [Docker Images deployed as Helm Charts with Kubernetes NVIDIA / Intel Quicksync GPU passthrough (CLI)]({{< relref "dev-notes.md#kubernetes-integration-information" >}})
 * Wireguard (CLI)
 * Networking and Settings UX Refresh
 * OpenVPN Client and Server
