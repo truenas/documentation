@@ -35,7 +35,7 @@ Do not enable ALUA on TrueNAS unless it is supported by and enabled on the clien
 {{< /hint >}}
 {{< /expand >}}
 
-To get started, make sure a [dataset](/CORE/Storage/DataPools/datasets/) has been created with at least one file to share, or a [zvol](/CORE/Storage/zvols/) has been created.
+To get started, make sure a [dataset]({{< relref "Datasets.md" >}}) has been created with at least one file to share, or a [zvol]({{< relref "ZVols.md" >}}) has been created.
 
 ## Setting Up an iSCSI Share
 
@@ -89,7 +89,7 @@ Set *Start Automatically* for the service to start during TrueNAS system boots.
 
 ![ServicesISCSIEnable](/images/CORE/12.0/ServicesISCSIEnable.png "Starting the iSCSI Service")
 
-Clicking the <i class="fa fa-pencil" aria-hidden="true" title="Pencil"></i> returns to the options in **Sharing > iSCSI**.
+Clicking the <i class="fa fa-pencil" aria-hidden="true" title="Pencil"></i>&nbsp; returns to the options in **Sharing > iSCSI**.
 
 ## Using the iSCSI Share
 

@@ -38,4 +38,4 @@ When more than one metadata vdev is created, then allocations are load-balanced 
 If the special class becomes full, then allocations spill back into the normal class.
 
 After the fusion pool is created, the **Status** shows a **Special** section with the metadata SSDs.
-See [Managing Pools](/CORE/Storage/DataPools/ManagingPools/).
+See [Managing Pools]({{< relref "ManagingPools.md" >}}).

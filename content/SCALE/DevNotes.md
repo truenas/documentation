@@ -52,7 +52,7 @@ weight: 2
 
 Nightly images for TrueNAS SCALE are built every 24 hours, at around 2AM Eastern (EDT/EST) time. Online updates are created every 2 hours and are available in the SCALE UI online updating page.
 
-The Nightly ISO Image can be downloaded from: [http://download.truenas.com/truenas-scale-nightly/TrueNAS-SCALE.iso](http://download.truenas.com/truenas-scale-nightly/TrueNAS-SCALE.iso "http://download.truenas.com/truenas-scale-nightly/TrueNAS-SCALE.iso")
+The Nightly ISO Image can be downloaded from: [https://download.truenas.com/truenas-scale-nightly/](https://download.truenas.com/truenas-scale-nightly/ "SCALE Nightly .iso files")
 
 Users wanting to upgrade to a nightly image from 20.10 or 20.12 versions can do so by downloading the manual update file: [http://update.freenas.org/scale/TrueNAS-SCALE-Angelfish-Nightlies/TrueNAS-SCALE.update](http://update.freenas.org/scale/TrueNAS-SCALE-Angelfish-Nightlies/TrueNAS-SCALE.update)
 

@@ -1,6 +1,6 @@
 ---
 title: "Managing Pools"
-weight: 40
+weight: 16
 ---
 
 After creating a data storage pool, there are a variety of options to change the initial configuration of that pool.
@@ -11,7 +11,7 @@ To find an existing pool, log in to the web interface and go to **Storage > Pool
 
 The current status and storage usage of each pool is shown.
 To see more details about a pool, click the **v** symbol on the right side of the pool entry.
-Click the <i class="fa fa-cog" aria-hidden="true" title="Settings"></i> (Pool Actions) for all pool management options.
+Click the <i class="fa fa-cog" aria-hidden="true" title="Settings"></i>&nbsp; (Pool Actions) for all pool management options.
 
 {{< tabs "Pool Actions" >}}
 {{< tab "Pool Options" >}}
@@ -56,22 +56,22 @@ Some vdev extending examples:
 {{< /tab >}}
 {{< tab "Scrub Pool" >}}
 Initiate a data integrity check of the pool.
-Any problems detected during the scrub are either automatically corrected or will generate an [alert](/CORE/System/system-alerts/) in the web interface.
-By default, every pool is automatically checked on a reoccurring [scrub schedule](/hub/Tasks/scrub/).
+Any problems detected during the scrub are either automatically corrected or will generate an [alert]({{< relref "Alert.md" >}}) in the web interface.
+By default, every pool is automatically checked on a reoccurring [scrub schedule]({{< relref "ScrubTasks.md" >}}).
 {{< /tab >}}
 {{< tab "Status" >}}
 Opens the **Pool Status** screen to show the state of the last scrub and disks in the pool.
 
 ![Storage Pools Status](/images/CORE/12.0/StoragePoolsStatus.png "Storage Pools Status")
 
-Additional options for [managing connected disks](/core/storage/disks/diskreplace/) are available in this screen.
+Additional options for [managing connected disks]({{< relref "DiskReplace.md" >}}) are available in this screen.
 {{< /tab >}}
 {{< tab "Expand Pool" >}}
 Increases the size of the pool to match all available disk space.
 This option is typically used when virtual disks are resized apart from TrueNAS.
 {{< /tab >}}
 {{< tab "Upgrade Pool" >}}
-This option only appears when the pool can be upgraded to use new [ZFS feature flags](/references/zfsprimer/).
+This option only appears when the pool can be upgraded to use new [ZFS feature flags]({{< relref "ZFSPrimer.md" >}}).
 Before upgrading an existing pool, be aware of these caveats:
 
 * Upgrading a pool is one-way, meaning that if you change your mind you cannot go back to an earlier ZFS version or downgrade to an earlier version of the software that does not support those ZFS features.

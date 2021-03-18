@@ -3,6 +3,8 @@ title: "TrueCommand Administration"
 weight: 5
 ---
 
+{{< toc >}}
+
 The **Administration** page shows additional system details and offers a variety of TrueCommand configuration options.
 This page is available to users with administrator permissions by opening the **Configure** <i class="fa fa-cog" aria-hidden="true" title="Settings"></i> menu and clicking *Administration*.
 The page is organized into **About**, **Certificates**, and **Configuration** tabs.
@@ -15,21 +17,21 @@ The **About** tab contains the current TrueCommand system ID and version, licens
 
 ### Updating the License
 
-TrueCommand can be expanded to monitor more disks by upgrading or purchasing a license from iXsystems.
+You can expand TrueCommand to monitor more disks by upgrading or purchasing a license from iXsystems.
 Clicking *GET A LICENSE* opens a new browser tab to purchase a TrueCommand license.
 You can also contact iXsystems to upgrade the current license.
 
-Purchasing or upgrading the License requires uploading the new license to TrueCommand.
+After you purchase or upgrade the license, you must upload the new license to TrueCommand.
 Click *Browse…* to open a file browser on your local system.
 Select the new license file to upload and click *UPLOAD LICENSE* to apply the new license to TrueCommand.
 {{< /tab >}}
 {{< tab "Certificates" >}}
-The **Certificates** tab shows the certificates and Certificate Authorities (CAs) used by TrueCommand and has options to upload or import a certificate or CA.
+The **Certificates** tab shows the certificates and Certificate Authorities (CAs) TrueCommand uses and has options to upload or import a certificate or CA.
 
 ![AdministrationCertificates](/images/TrueCommand/1.3/AdministrationCertificates.png "Administration: Certificates")
 
 Clicking *Browse...* opens a dialog to upload a file from the local system.
-Selecting *Plain text* allows copying and pasting the file raw text instead of uploading a file.
+Selecting *Plain text* allows you to copy and paste the file raw text instead of uploading a file.
 {{< /tab >}}
 {{< tab "Configuration" >}}
 The Configuration tab contains options to configure various features of TrueCommand.
@@ -54,17 +56,17 @@ This allows the first-time login to TrueCommand and accepting certificates from 
 
 ### Alert Options
 
-You can adjust the level of alert that TrueCommand shows from a connected NAS to tune the system messages shown according to your use case.
+You can adjust the alert levels that TrueCommand shows from a connected NAS to tune the system messages shown according to your use case.
 Choose an alert category to ignore.
 Multiple categories can be selected.
 
 ### LDAP
 
 TrueCommand supports using [LDAP](https://tools.ietf.org/html/rfc4511) to better integrate within an established network environment.
-To configure LDAP, add an LDAP server IP address or DNS hostname, fill in the *Domain*, and click *ADD SERVER*.
-Multiple LDAP servers and Domains can be added.
+To configure LDAP, add an LDAP server IP address or DNS hostname, fill in the *Domain*, then click *ADD SERVER*.
+You can add Multiple LDAP servers and Domains.
 
 Enabling *Allow LDAP user creation* means TrueCommand creates user accounts when someone logs in to the User Interface with their LDAP credentials.
-*JOIN TEAM* has LDAP users automatically added to specific TrueCommand teams.
+*JOIN TEAM* automatically adds LDAP users to specific TrueCommand teams.
 {{< /tab >}}
 {{< /tabs >}}

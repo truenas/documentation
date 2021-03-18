@@ -58,7 +58,7 @@ The *Transport* selector determines the method to use for the replication:
 *Local* is only used for replicating data to another location on the same system.
 
 With *SSH*-based replications, configure the transport method by selecting the **SSH Connection** to the remote system that will send or receive snapshots.
-Options for compressing data, adding a bandwidth limit, or other data stream customizations are available.
+Options for compressing data, adding a bandwidth limit, or other data stream customizations are available.  *Stream Compression* options are only available when using SSH. Before enabling *Compressed WRITE Records* verify that the destination system also supports compressed WRITE records. 
 
 ![TasksReplicationAddAvancedTransportOptions](/images/CORE/12.0/TasksReplicationAddAdvancedTransportOptions.png "Advanced Replication: Transport")
 
@@ -99,7 +99,7 @@ This prevents the source TrueNAS from automatically deleting any snapshots that 
 {{< /tab >}}
 {{< tab "Destination" >}}
 The destination is where replicated data is stored.
-Choosing a remote destination requires an *[SSH Connection](/CORE/System/SSH/)* to that system.
+Choosing a remote destination requires an *[SSH Connection]({{< relref "SystemSSH.md" >}})* to that system.
 Expanding the file browser shows the current datasets or zvols that are available on the destination system.
 You can click a destination or manually type a path in the field.
 Adding a name to the end of the path creates a new dataset in that location.

@@ -38,7 +38,10 @@ Setting up the local replication is done entirely in the Replication Wizard.
 
 To open the Replication Wizard, go to **Tasks > Replication Tasks** and click *ADD*.
 Set the source location to the local system and pick which datasets to snapshot.
-The wizard takes new snapshots of the sources when no existing source snapshots are found.
+The wizard takes new snapshots of the sources when no existing source snapshots are found.  
+Enabling *Recusrive* replicates all snapshots contained within the selected source dataset snapshots.
+Local sources can also use a naming schema to identify any custom snapshots to include in the replication.
+A naming schema is a collection of [strftime](https://www.freebsd.org/cgi/man.cgi?query=strftime) time and date strings and any identifiers that a user might have added to the snapshot name.
 
 ![TasksReplicationTasksAddLocalSource](/images/CORE/12.0/TasksReplicationTasksAddLocalSource.png "Replication with Local Source")
 
