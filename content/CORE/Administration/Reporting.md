@@ -85,6 +85,9 @@ It is grouped by state.
 {{< tab "UPS" >}}
 [UPS](https://collectd.org/wiki/index.php/Plugin:NUT) displays statistics about an uninterruptible power supply (UPS) using [Network UPS tools](https://networkupstools.org/).
 Statistics include voltages, currents, power, frequencies, load, and temperatures.
+
+![ReportingUPSTab](/images/CORE/12.0/ReportingUPSTab.png "UPS Reporting")
+
 {{< /tab >}}
 {{< tab "ZFS" >}}
 [ZFS](https://collectd.org/wiki/index.php/Plugin:ZFS_ARC) shows compressed physical ARC size, hit ratio, demand data, demand metadata, and prefetch data.
