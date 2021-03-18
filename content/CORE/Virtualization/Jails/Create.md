@@ -29,7 +29,7 @@ For example, an administrator can choose to provide application separation by in
 
 ## Jail Storage
 
-A [data storage pool](/CORE/Storage/Pools/) must be created before using jails.
+A [data storage pool]({{< relref "PoolCreate.md" >}}) must be created before using jails.
 Make sure the pool has enough storage for all the intended jails.
 The **Jails** screen displays a message and button to **CREATE POOL** if no pools exist on the TrueNAS system.
 
@@ -98,7 +98,7 @@ Jails support several different networking solutions:
   *VNET* must be set to enable the **IPv4 Default Router** field.
   When no interface is selected when manually configuring IP addresses, TrueNAS automatically assigns the given jail IP address to the current active interface of the host system.
 * Leaving all checkboxes unset and fields empty initializes the jail without any networking abilities.
-  Networking is added to the jail after creation by going to **Jails**, clicking **>**(Expand) for a jail, then <i class="fa fa-pencil" aria-hidden="true" title="Pen"></i> **EDIT > Basic Properties**.
+  Networking is added to the jail after creation by going to **Jails**, clicking **>**(Expand) for a jail, then <i class="fa fa-pencil" aria-hidden="true" title="Pen"></i>&nbsp; **EDIT > Basic Properties**.
 
 Setting a proxy in the TrueNAS network settings also configures new jails to use the proxy settings, except when performing DNS lookups.
 Make sure a firewall is properly configured to maximize system security.

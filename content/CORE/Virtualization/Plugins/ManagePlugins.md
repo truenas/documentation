@@ -15,7 +15,7 @@ A plugin is a pre-packaged application that is installed into a [FreeBSD Jail](h
 The plugin jail is limited to installing and using only the plugin software.
 
 {{< expand "Before getting started..." "v" >}}
-* A [data pool](/core/storage/datapools) must be available for plugin storage.
+* A [data pool]({{ relref "PoolCreate.md" >}}) must be available for plugin storage.
 * The system must be connected to the internet.
 * Go to **Network > Interfaces**, edit the intended plugin interface, and set *Disable Hardware Offloading*.
 {{< /expand >}}
@@ -75,12 +75,12 @@ After a plugin is installed, an entry is added to the **Plugins** screen.
 
 ![PluginsListwithInstalled](/images/CORE/12.0/PluginsListWithInstalled.png "Plugins List With Installed")
 
-Click <i class="fa fa-chevron-right" aria-hidden="true" title="Right Chevron"></i> to manage the plugin state, update the plugin application, configure the plugin jail mount points to storage datasets, and, when supported, open a link to the management portal for the plugin application.
+Click <i class="fa fa-chevron-right" aria-hidden="true" title="Right Chevron"></i>&nbsp; to manage the plugin state, update the plugin application, configure the plugin jail mount points to storage datasets, and, when supported, open a link to the management portal for the plugin application.
 
 Plugin jails are preconfigured and require very little tuning.
 However, jail properties are available in the event a setting needs to change.
 To update or reconfigure the plugin jail, go to the **Jails** screen and expand the entry for one of the plugin jails.
-You need to click <i class="fa fa-stop" aria-hidden="true" title="Stop"></i> and stop the jail before changing it.
+You need to click <i class="fa fa-stop" aria-hidden="true" title="Stop"></i>&nbsp; and stop the jail before changing it.
 
 ![PluginsInstalledOptions](/images/CORE/12.0/PluginsInstalledOptions.png "Installed Plugin Options")
 
@@ -98,7 +98,7 @@ Expand the `iocage` and `jails` datasets to find the plugin jail storage dataset
 
 ![StoragePoolsJailsDatasetLocation](/images/CORE/12.0/StoragePoolsJailsDatasetLocation.png "Storage Pools Jails Dataset Location")
 
-One option to back up this stored data is to create a [local replication](core/tasks/replication/local).
+One option to back up this stored data is to create a [local replication]({{< relref "Local.md" >}}).
 The replication task can even be configured to run periodically and automatically back up new changes to the jail dataset.
 
 To convert a jail snapshot into a new storage dataset, go to **Storage > Snapshots** and find a snapshot of the jail dataset.
@@ -110,7 +110,7 @@ Then go to **Storage > Pools**, open the <i class="fa fa-ellipsis-v" aria-hidden
 
 ### Uninstalling a Plugin
 
-To remove a plugin, go to **Plugins**, expand the installed plugin entry, and click <i class="fa fa-trash" aria-hidden="true" title="Delete"></i> *Uninstall*.
+To remove a plugin, go to **Plugins**, expand the installed plugin entry, and click <i class="fa fa-trash" aria-hidden="true" title="Delete"></i>&nbsp; *Uninstall*.
 Confirm the plugin removal by typing in the name of the plugin jail and setting *Confirm*.
 
 ![PluginsUninstall](/images/CORE/12.0/PluginsUninstall.png "Plugins Uninstall")

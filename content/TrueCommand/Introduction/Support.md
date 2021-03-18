@@ -12,7 +12,7 @@ New users are encouraged to briefly [introduce](https://www.truenas.com/communit
 ## Paid Support
 
 iXsystems offers different Support packages for TrueCommand customers.
-To find more details about the different Warranty and Service Level Agreement (SLA) options available, see the [TrueCommand Support overview](https://www.ixsystems.com/support/#truecommand).
+To find more details about the different Warranty and Service Level Agreement (SLA) options available, see the [TrueCommand Support overview](https://www.ixsystems.com/support/).
 
 ## TrueCommand Cloud
 
