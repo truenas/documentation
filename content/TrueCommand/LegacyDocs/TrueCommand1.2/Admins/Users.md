@@ -24,7 +24,7 @@ This means a user can log in with an LDAP or AD account without creating a separ
 The LDAP server IP address or DNS hostname and Domain are required to use LDAP/AD.
 The LDAP or AD Username (optional) is required when the TrueCommand user name does not match the LDAP or AD credentials.
 
-![UsersAdd](/images/TrueCommand/1.2/UsersAdd.png "Adding Users")
+![UsersAdd](/images/TrueCommand/1.3/UsersAdd.png "Adding Users")
 
 Users can also be assigned to existing Teams.
 Select a team from the drop-down to add the user to that team.
@@ -38,7 +38,7 @@ Deleting a user account permanently removes the user and cannot be undone.
 
 To configure account details and permissions, open the **Configure (Gear)** menu, click *Users > Edit user (Pencil)*.
 
-![Users Edit](/images/TrueCommand/1.2/UsersEdit.png "Users Edit")
+![Users Edit](/images/TrueCommand/1.3/UsersEdit.png "Users Edit")
 
 There are several different elements that can be configured for a user, including the user's avatar, personal details, Team membership, and system permissions.
 
@@ -78,7 +78,7 @@ For example, changing the permissions of a *Metrics* team that has 20 joined use
 
 To create a team, open the **Configure (Gear)** menu and click *TEAMS > + NEW TEAM*.
 
-![TeamsAdd](/images/TrueCommand/1.2/TeamsAdd.png "Teams Add")
+![TeamsAdd](/images/TrueCommand/1.3/TeamsAdd.png "Teams Add")
 
 Enter a name and select an avatar for the new team.
 You can edit the permissions for a team after creating it.
@@ -87,7 +87,7 @@ You can edit the permissions for a team after creating it.
 
 To adjust the team members or permissions, open the **Configure (Gear)** menu and click *Teams > Edit team (Pencil)*.
 
-![Teams Edit](/images/TrueCommand/1.2/TeamsEdit.png "Teams Edit")
+![Teams Edit](/images/TrueCommand/1.3/TeamsEdit.png "Teams Edit")
 
 You can adjust the team profile with a new avatar, change the team name, or grant team members permission to create new TrueCommand Alert Rules.
 

@@ -11,7 +11,7 @@ These instructions assume that TrueNAS systems are being used for both sides of 
 
 ## Basic Requirements
 
-Rysnc requires a [dataset](/CORE/Storage/DataPool/datasets) with the needed data on the *host* or *remote* system.
+Rysnc requires a [dataset]({{< relref "Datasets.md" >}}) with the needed data on the *host* or *remote* system.
 Rsync provides the ability to either *push* or *pull* data.
 When using rsync to *push*, data is copied from a *host* system to a *remote* system.
 When using rsync to *pull*, data is pulled from a *remote* system and put on the *host* system.

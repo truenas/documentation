@@ -61,7 +61,7 @@ Linking to a site that is outside docs.truenas.com is done with square brackets 
 You can also link directly just by typing the URL with no additional markup: `www.example.com`
 HTML linking syntax is also allowed: `<a href="www.example.com">Example Site</a>`
 
-To link to another section of the **same** article, use an anchor to refer to that section header: `[Linking](#linking)`
+To link to another section of the **same** article, use an anchor (`#`) to refer to that section header.
 The header title needs to be in lower case and spaces replaced with dashes (-): `[Escape Characters](#escape-characters)`
 
 {{< /tab >}}
@@ -124,7 +124,7 @@ Internal references use the Hugo `ref` shortcode to look up a file by name:
 (remove the escaping backslash \)
 ```
 
-Linking to the index file of an article bundle requires using the generic [linking](#linking) syntax to point to the article location:
+Linking to the index file of an article bundle requires using the generic linking syntax to point to the article location:
 ```
 You can copy the [article template](/hub/contributing/template/).
 ```

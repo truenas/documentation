@@ -7,7 +7,7 @@ weight: 40
 
 {{< hint warning >}}
 These options have reasonable defaults in place.
-Make sure you are comfortable with ZFS, FreeBSD, and system [configuration backup and restoration](/CORE/System/General/ConfigBackup/) before making any changes.
+Make sure you are comfortable with ZFS, FreeBSD, and system [configuration backup and restoration]({{< relref "ConfigBackup.md" >}}) before making any changes.
 {{< /hint >}}
 
 ![System Advanced](/images/CORE/12.0/SystemAdvanced.png "Advanced Settings")
