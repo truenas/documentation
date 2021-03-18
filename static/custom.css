@@ -193,3 +193,7 @@
 }
 
 /* End styling for fade-in on image download links */
+/* Begin print view styling */
+.td-content-print .p{
+	font-size: 10em;
+}
