@@ -5,6 +5,11 @@
   min-height: 10vh;
 }
 /* Site header */
+.gdoc-brand__img {
+	max-width: 7em;
+	width: auto;
+	height: auto;
+}
 .iconsbar {
 	background: #0095d5;
 	text-align: right !important;
