@@ -15,7 +15,7 @@ A plugin is a pre-packaged application that is installed into a [FreeBSD Jail](h
 The plugin jail is limited to installing and using only the plugin software.
 
 {{< expand "Before getting started..." "v" >}}
-* A [data pool]({{ relref "PoolCreate.md" >}}) must be available for plugin storage.
+* A [data pool]({{< relref "PoolCreate.md" >}}) must be available for plugin storage.
 * The system must be connected to the internet.
 * Go to **Network > Interfaces**, edit the intended plugin interface, and set *Disable Hardware Offloading*.
 {{< /expand >}}
