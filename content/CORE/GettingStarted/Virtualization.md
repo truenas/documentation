@@ -1,90 +1,119 @@
 ---
 title: "Virtualization"
-geekdocCollapseSection: true
-weight: 40
+weight: 50
 ---
 
 {{< toc >}}
 
-Article to describe expanding TrueNAS with plugins, Jails, or Virtual Machines immediately after configuring sharing.
+With the rest of the system configured and data being shared over a network, the final step to consider for first time setup is installing any virtualized solutions.
+Virtualized means the applications or features added to TrueNAS are created in separate "Jails", "Containers", or "Environments" that are kept separate from the base TrueNAS operating system.
+If anything goes wrong or a security vulnerability is exploited in a virtualized environment, TrueNAS remains unaffected.
+These solutions safely expand TrueNAS' capabilities in a restricted, safeguarded way.
 
-# Plugins
+The primary virtualization method is to install **Plugins**.
+These are pre-packaged applications that quickly install in a tailor-made environment.
+Some plugins are supported by iXsystems while others are provided and maintained by the open source community.
+
+A **Jail** is a restricted FreeBSD operating system installed as a separate subset of TrueNAS.
+Jails can install a wide variety of applications and be tuned to very specific use cases, but require more extensive knowledge of FreeBSD and command line operation.
+
+A **Virtual Machine** is a fully independent operating system installation.
+This reserves or splits the available hardware resources to create a different, full operating system experience.
+TrueNAS can install Windows or Unix-like operating systems in a Virtual Machine (VM), but regular system performance is reduced while virtual machines are running.
+
+Click one of the tabs below to see instructions on installing your preferred virtualization solution.
+
+{{< expand "Network Hardware Offloading" "v" >}}
+Plugins that use a network interface need to Disable Hardware Offloading in **Network -> Interface**.
+Disabling hardware offloading can reduce general network performance for that interface, so it is recommended to use a secondary interface for virtualization solutions.
+{{< /expand >}}
+
+{{< tabs "Virtualization Solutions" >}}
+{{< tab "Plugins" >}}
+This instruction demonstrates plugins by walking you through installing the community-favorite [Plex](https://www.plex.tv/) application.
+You will need an account with Plex to follow these instructions.
 
 ## Installing Plex
 
-Pre-Requirement:
-Create a dataset called adio and a dataset called video to be used as mountpoints for Plex
-
-Note: It is possible that you may need to Disable Hardware Offloading in your Network -> Interface to install Plex but disabling hardware offloading can reduce network performance. 
-
-
+Create a [dataset]({{< relref "Datasets.md" >}}) called *audio* and a dataset called *video* to be used as mount points for Plex.
+Next, go to the **Plugins** page.
 
 Installing a basic PlexMedia Plugin:
 
-1. Select the Plex Media Server plugin and click the INSTALL button.
+1. Select the *Plex Media Server* plugin and click *INSTALL*.
 
- ![PlexInstallButton](/images/CORE/12.0/SharingSMBAdd.png "Plex Install Button")
+ ![PlexInstallButton](/images/CORE/12.0/PluginsPlexInstallButton.png "Finding the Plex Plugin")
 
-2. Under "Jail Name" enter whatever name you'd like (i.e. "Plex").
-3. DHCP should be checked automatically for this plugin.
-4. Click the SAVE button.
+2. Under *Jail Name*, enter whatever name you'd like (i.e. "Plex").
+3. *DHCP* is set automatically.
+4. Click *SAVE*.
 
- ![PlexMediaSave](/images/CORE/12.0/PlexMediaSave.png "Plex Media Save")
+ ![PluginsPlexMediaSave](/images/CORE/12.0/PluginsPlexMediaSave.png "Plex: Save the Jail Settings")
 
-5. Install window should be visible outlining progress of installation
+5. A dialog window shows the installation progress.
 
- ![PlexInstallProgress](/images/CORE/12.0/PlexInstallProgress.png "Plex Installation Progress")
+ ![PluginsPlexInstallProgress](/images/CORE/12.0/PluginsPlexInstallProgress.png "Plex: Installation Progress")
 
-Note: If available, Plugin Installation Notes will be listed
-6. Status should be "up", with Boot option checked
-7. To the right of Plex in the plugin table, click the ">"
+  {{< hint info >}}
+  When available, *Plugin Installation Notes* display when the install completes.
+  {{< /hint >}}
 
- ![PlexJailUp](/images/CORE/12.0/PlexJailUp.png "Plex Jail Up")
+6. The plugin *Status* shows as **up**, with the *Boot* option set.
+7. Click *>* to expand the Plex table entry:
 
-8. Stop the running PlexMedia
-9. Click on MountPoint
+ ![PluginsPlexJailUp](/images/CORE/12.0/PluginsPlexJailUp.png "Plex: up status")
 
- ![PlexSetMountpoints](/images/CORE/12.0/PlexSetMountpoints.png "Plex Set Mountpoints")
+8. Stop the *up* plugin.
+9. Click *MOUNT POINTS*.
 
-10. Click the Actions button in the upper right and clock on Add
+ ![PluginsPlexSetMountpoints](/images/CORE/12.0/PluginsPlexSetMountpoints.png "Plex: Setting Mount Points")
 
- ![PlexAddMountpoint](/images/CORE/12.0/PlexAddMountpoint.png "Plex Add Mountpoint")
+10. Click *Actions* and *Add*.
 
-11. Fill out one mounpint for each source dataset you have created. The Source is the dataset you created. For the Destination, chose the media directory and append /datasetname (see example)
+ ![JailsMountPointsPlexAddMountpoint](/images/CORE/12.0/JailsMountPointsPlexAddMountpoint.png "Plex: Adding a new Mount point")
 
- ![PlexSetMountpoint](/images/CORE/12.0/PlexSetMountpoint.png "Plex Set Mountpoint")
+11. Fill out one mount point for each previously created dataset. The *Source* is the created dataset and the *Destination* is the <file>media</file> directory with <file>/datasetname</file> appended (see example):
 
-12. Click the Submit button
-(Do this for as many mointpoints as you desire. In our example we have Audio and Video.
+ ![JailsMountPointsPlexSetMountpoint](/images/CORE/12.0/JailsMountPointsPlexSetMountpoint.png "Plex: Setting the Mount point")
 
-13. Go to Storage, click on the three dots to the left of your source dataserts and click on Edit Permissions
+12. Click *Submit*. Do this for as many mount points as needed. In this example, we have *audio* and *video*.
 
- ![PlexEditPermissions](/images/CORE/12.0/PlexEditPermissions.png "Edit Permissions")
+13. Go to **Storage > Pools** and click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> *> Edit Permissions* for your source datasets.
 
-14. Click "Create a custom ACL" and click the Continue button
+ ![StoragePoolsPlexEditPermissions](/images/CORE/12.0/StoragePoolsPlexEditPermissions.png "Editing Dataset Permissions")
 
- ![PlexACL](/images/CORE/12.0/PlexACL.png "Custom ACL")
+14. Click *Create a custom ACL* and *Continue*.
 
-15. Click the "Add ACL ITEM button" and enter the values pictured below, click Apply permissions recursively, and click the Save button
+ ![StoragePoolsPermissionsPlexACL](/images/CORE/12.0/StoragePoolsPermissionsPlexACL.png "Plex Datasets: Custom ACL")
 
-![PlexPermissions](/images/CORE/12.0/PlexPermissions "Plex ermissions")
+15. Click *ADD ACL ITEM* and enter the values pictured below:
 
-16, Go to Plugins and at the right of Plex in the plugin table, click the ">". Click Start to run PlexMedia
+ ![StoragePoolsPermissionsPlexPermissions](/images/CORE/12.0/StoragePoolsPermissionsPlexPermissions.png "Plex Datasets: Permissions")
 
+  Set *Apply permissions recursively* and click *Save*.
+
+16. Go to **Plugins**, find the **Plex** entry, and click the *>*. *Start* the plugin.
 
 ## Accessing Plex
 
- 1. To the right of Plex in the plugin table, click the ">" and click "Manage"
+1. When the **Plex** plugin status is **up**, click the *>* and *Manage*.
  
- ![PlexManage](/images/CORE/12.0/PlexManage.png "Plex Manage")
+ ![PluginsPlexManage](/images/CORE/12.0/PluginsPlexManage.png "Plex Management")
+
+2. Enter your Plex login informamtion.
  
- 2. Enter your Plex login informamtion
- 
- ![PlexLogin](/images/CORE/12.0/PlexLogin.png "Plex Login")
+ ![PluginsPlexLogin](/images/CORE/12.0/PluginsPlexLogin.png "Plex Interface Login")
   
- ![PlexSuccess](/images/CORE/12.0/PlexSuccess.png "Accessed Plex")
- 
+ ![PluginsPlexSuccess](/images/CORE/12.0/PluginsPlexSuccess.png "Plex Login Success")
+{{< /tab >}}
+{{< tab "Jails" >}}
 
-# Jails
+Placeholder
 
-# Virtual Machines
+{{< /tab >}}
+{{< tab "Virtual Machines" >}}
+
+Placeholder
+
+{{< /tab >}}
+{{< /tabs >}}
