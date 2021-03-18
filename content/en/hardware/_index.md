@@ -129,7 +129,7 @@ Legacy documentation for discontinued iXsystems products is also archived here.
 		<p>Archived documentation about discontinued iXsystems hardware products.</p>
 		<p><a href="/hardware/legacy/fn-certified/">FreeNAS Certified</a><br>
 		<a href="/hardware/legacy/z-series/">TrueNAS Z-Series</a><br>
-		<a href="/hardware/legacy/mini-gen2/">2nd Generation FreeNAS Minis</a><br>
+		<a href="/hardware/legacy/mini/">Legacy FreeNAS Minis</a><br>
 		<a href="/hardware/legacy/expansion-shelves/">Discontinued Expansion Shelves</a></p>
 		<a class="linkbutton" href="/hardware/legacy/">Legacy Hardware Docs</a>
 	</div>
