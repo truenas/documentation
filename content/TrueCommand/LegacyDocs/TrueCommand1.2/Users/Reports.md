@@ -7,7 +7,7 @@ weight: 20
 
 The **Reports** page is used to customize charts of system metrics for data analysis.
 
-![ReportsList](/images/TrueCommand/1.2/ReportsList.png "Reports List")
+![ReportsList](/images/TrueCommand/1.3/ReportsList.png "Reports List")
 
 These reports are created by or shared with the current TrueCommand user.
 There are default reports that are designed to generate a basic system overview chart.
@@ -21,7 +21,7 @@ Click *+ CREATE REPORT* to create a customizable report.
 Enter a report name and an optional description for the report.
 Click BROWSE WIDGETS or WIDGET to add charts to the report.
 
-![ReportsCreateWidgetsAdd](/images/TrueCommand/1.2/ReportsCreateWidgetsAdd.png "Adding widgets to a new report")
+![ReportsCreateWidgetsAdd](/images/TrueCommand/1.3/ReportsCreateWidgetsAdd.png "Adding widgets to a new report")
 
 ### Custom Charts
 
@@ -63,4 +63,4 @@ A non-administrative user must have the appropriate permissions to view data fro
 
 Clicking *Confirm* shows the saved charts from the report, populated with system data according to the selected amount of time.
 
-![ReportsView](/images/TrueCommand/1.2/ReportsView.png "Generated report")
+![ReportsView](/images/TrueCommand/1.3/ReportsView.png "Generated report")

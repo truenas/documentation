@@ -23,7 +23,7 @@ These images are automatically pushed to the “nightly” tag on DockerHub if t
 Download information:
 
 * [DockerHub](https://hub.docker.com/r/ixsystems/truecommand)
-* [Example in Documentation](https://www.truenas.com/docs/truecommand/InstallUpdate/install/), replace “latest” with “nightly” in the docker pull commands.
+* [Example in Documentation]({{< relref "/TrueCommand/InstallUpdate/Install.md" >}}), replace “latest” with “nightly” in the docker pull commands.
 
 ## Current Status
 
