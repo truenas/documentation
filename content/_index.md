@@ -8,6 +8,12 @@ geekdocCollapseSection: true
 Whether you're looking to protect and share your company documents or your family photos, TrueNAS provides a secure, centralized, and easily accessible place for your data.
 When combined with our high-performance hardware and TrueCommand single interface management solution, TrueNAS ensures that your data is always safe, secure, and available.
 
+<div style="text-align:center;">
+
+![TrueNASCORE-Infographics.png](/images/CORE/TrueNASCORE-Infographics.png "TrueNAS CORE Features")
+
+</div>
+
 ## First Steps
 
 **Ready to get started? Click your platform below to begin setting up your system.**  
