@@ -156,20 +156,20 @@ You can also use HTML to link to an image file that is relative to the site `/st
 {{< /tab >}}
 {{< tab "Admonition Boxes" >}}
 
-A simple note box is created with the `pageinfo` shortcode:
+A simple note box is created with the `hint` shortcode:
 
 ```
-{{\% pageinfo %}}
+{{\< hint info >}}
 This is a simple note box that has a gray background and blue border
-{{\% /pageinfo %}}
+{{\< /hint >}}
 (remove the escaping backslash \)
 ```
 
 Alert boxes can be given any title and use `info` and `warning` to define the color:
 ```
-{{\% alert title="Warning" color="warning" %}}
+{{\< hint warning>}}
 This is an alert that is titled Warning and uses a red coloration.
-{{\% /alert %}}
+{{\< /hint >}}
 (remove the escaping backslash \)
 ```
 
