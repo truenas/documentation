@@ -93,15 +93,8 @@ They should be suitable for very adventurous users and developers who are not af
 
 ### PCI Passthrough Devices
 
-In order to use PCI passthrough devices with VMs, follow these steps to have PCI devices show up in UI when it is time to create a PCI device to attach to a VM.
+For PCI Passthrough devices, system will try to detach the PCI device before the VM starts and then re-attach once the VM stops. Please ensure the device can be safely used with the guest.
 
-1. In the CLI, identify the PCI device to use for passthrough with `virsh -c "qemu+unix:///system?socket=/run/truenas_libvirt/libvirt-sock" nodedev-list pci`.
-2. When the PCI address has been identified, make sure the host OS is not using the device anywhere else (i.e pools). When you're sure the device is not being used, execute `virsh -c "qemu+unix:///system?socket=/run/truenas_libvirt/libvirt-sock" nodedev-detach pci_0000_26_00_0`, where `pci_0000_26_00_0` is the name of the PCI device.
-3. Step (2) detaches the PCI device from the host. It can now be used with a VM guest by adding a PCI device to a VM using the UI.
-
-Follow the above steps when there is already 1 VM created with the UI.
-
-Please ensure the device can be safely used with the guest.
 For example, the device could be part of a CPU and we try to pass it through to the guest, it can result in a crash where the system only recovers after a reboot.
 
 ## Containerization
