@@ -1,5 +1,5 @@
 ---
 title: "Release Notes"
 geekdocCollapseSection: true
-weight: 5
+weight: 45
 ---
