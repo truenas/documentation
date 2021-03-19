@@ -6,7 +6,7 @@ weight: 5
 {{< toc >}}
 
 {{< hint info >}}
-This feature is only supported by the TrueNAS CORE community.
+{{< include file="static/includes/CommunitySupportedFeature.md.part" markdown="true" >}}
 {{< /hint >}}
 
 Jails are a lightweight, operating-system-level virtualization.

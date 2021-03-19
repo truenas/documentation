@@ -6,8 +6,7 @@ weight: 10
 {{< toc >}}
 
 {{< hint info >}}
-The Plugins feature is generally available in TrueNAS CORE and is supported by the open source TrueNAS community.
-TrueNAS Enterprise licenses do not support or show this feature.
+{{< include file="static/includes/CommunitySupportedFeature.md.part" markdown="true" >}}
 {{< /hint >}}
 
 Plugins allow extending the built-in NAS services by installing additional software.
