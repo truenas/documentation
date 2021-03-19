@@ -6,7 +6,7 @@ weight: 10
 {{< toc >}}
 
 {{< hint info >}}
-Virtual Machines are only available in the community supported TrueNAS CORE.
+This feature is only supported by the TrueNAS CORE community.
 {{< /hint >}}
 
 A Virtual Machine (VM) is an environment on a host computer that can be used as if it were a separate physical computer.
