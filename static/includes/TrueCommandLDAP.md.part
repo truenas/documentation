@@ -6,8 +6,15 @@ This means a user can log in with an LDAP or AD account without creating a separ
 The LDAP server IP address or DNS hostname and Domain are required to use LDAP/AD.
 The LDAP or AD Username (optional) is required when the TrueCommand user name does not match the LDAP or AD credentials.
 
+To configure LDAP, click on the **<i class="fas fa-cog" aria-hidden="true" title="Settings"></i>&nbsp; (Gear) > Administration**.  Open the *Configuration* Tab to access the LDAP configuration section.
+
+![Configure LDAP](/images/TrueCommand/2.0/AdministrationConfigurationLDAP.png "Configure LDAP")
+
 To configure LDAP, add an LDAP server IP address or DNS hostname, fill in the *Domain*, and click *ADD SERVER*.
 Multiple LDAP servers and Domains can be added.
 
+![Add LDAP Server](/images/TrueCommand/2.0/AdministrationConfigurationLDAPAddServer.png "Add LDAP Server")
+
 Enabling *Allow LDAP user creation* means TrueCommand creates user accounts when someone logs in to the User Interface with their LDAP credentials.
 *JOIN TEAM* has LDAP users automatically added to specific TrueCommand teams.
+
