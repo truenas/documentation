@@ -195,7 +195,10 @@
 /* End styling for fade-in on image download links */
 /* Begin print view styling */
 .td-content-print{
+	min-width: 10rem;
+	max-width: 80rem;
+	margin: 0rem 10rem 0rem 10rem;
 }
 .td-content-print img{
-	max-width: 40rem;
+	max-width: 80rem;
 }
