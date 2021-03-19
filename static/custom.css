@@ -197,8 +197,8 @@
 .td-content-print{
 	min-width: 10rem;
 	max-width: 80rem;
-	margin: 0rem 10rem 0rem 10rem;
+	margin: 0rem 5rem 0rem 5rem;
 }
 .td-content-print img{
-	max-width: 80rem;
+	max-width: 800px;
 }
