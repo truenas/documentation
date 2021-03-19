@@ -194,6 +194,8 @@
 
 /* End styling for fade-in on image download links */
 /* Begin print view styling */
+.td-content-print{
+}
 .td-content-print img{
-	max-width: 10%;
+	max-width: 40rem;
 }
