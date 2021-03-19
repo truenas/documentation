@@ -22,6 +22,9 @@ TrueCommand Cloud is also available as a cloud-based subscription option that al
 {{< expand "NAS Fleet Dashboard" "v" >}}
 The TrueCommand dashboard provides visibility to an organization’s entire TrueNAS fleet.
 TrueCommand includes an auto-discovery tool that expedites identifying and integrating systems into TrueCommand.
+
+![TrueCommand Dashboard](/images/TrueCommand/2.0/TrueCommandDashboard.png "TrueCommand Dashboard")
+
 {{< /expand >}}
 {{< expand "Single Sign-on to all NAS Units" "v" >}}
 Authorized administrators can quickly log into a TrueNAS system through TrueCommand
