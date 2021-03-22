@@ -339,17 +339,18 @@ In the Scale UI, go to **System Settings > Shell** to begin entering commands:
 
 ### Custom Catalogs
 
-TrueNAS SCALE 21.02 allows users to configure custom catalogs with their own applications. Users can add a custom catalog with
+TrueNAS SCALE 21.02 allows users to configure custom catalogs for their own applications. In the CLI, add a custom catalog with
 
 ```
 midclt call catalog.create '{"label": "<<CATALOG_LABEL_HERE>>", "repository": "git repo uri", "branch": "master"}'
 ```
+This command adds the applications from that catalog to the UI. Users can then install or configure these custom applications using the the UI.
+UI support for managing custom catalogs is planned for next release.
 
-The applications available in the catalog should now be available in the UI and user can install / configure them from the UI. UI support for managing custom catalogs is planned for next release.
-
-For users working on their own custom catalogs, following is a helpful command which will verify if their catalog is healthy.
+For users working on their own custom catalogs, here is a helpful command that verifies if the custom catalog is healthy:
 ```
 midclt call catalog.validate <<CATALOG_LABEL_HERE>>
 ```
 
-This will list out any errors system finds with the catalog. If an application version contains errors, they must be resolved before the application can be installed.
+This lists any errors TrueNAS finds with the catalog.
+Any application version errors they must be resolved before the application can be installed.
