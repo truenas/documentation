@@ -1,8 +1,8 @@
 #available icons: https://github.com/thegeeklab/hugo-geekdoc/tree/master/src/icons
 ---
 more:
-  - name: Legacy Documentation
-    ref: "https://www.ixsystems.com/library/"
+  - name: Documentation Archive
+    ref: "/archives/"
     external: true
     icon: "bookmark"
   - name: "View Source"
