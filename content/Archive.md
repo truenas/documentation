@@ -1,14 +1,12 @@
 ---
-title: "Documentation Archives"
+title: "Documentation Archive"
 ---
 
-Welcome to the TrueNAS Documentation Archive!
+Welcome to the Documentation Archive!
 
 {{< hint warning >}}
 All documentation provided here is End of Life (EoL) and no longer receives **any** updates.
 {{< /hint >}}
-
-{{< columns >}}
 
 <div class="dropdown">
   <button onclick="myFunction()" class="dropbtn">TrueNAS (Unified)</button>
@@ -16,7 +14,7 @@ All documentation provided here is End of Life (EoL) and no longer receives **an
     <a href=".">Coming Soon!</a>
   </div>
 </div>
-<hr>
+
 <div class="dropdown">
   <button onclick="myFunction()" class="dropbtn">Legacy TrueNAS</button>
   <div id="myDropdown" class="dropdown-content">
@@ -25,7 +23,7 @@ All documentation provided here is End of Life (EoL) and no longer receives **an
     <a href="https://www.ixsystems.com/documentation/truenas/11.1/TrueNAS.pdf">11.1</a>
   </div>
 </div>
-<hr>
+
 <div class="dropdown">
   <button onclick="myFunction()" class="dropbtn">Legacy FreeNAS</button>
   <div id="myDropdown" class="dropdown-content">
@@ -43,8 +41,6 @@ All documentation provided here is End of Life (EoL) and no longer receives **an
   </div>
 </div>
 
-<--->
-
 <div class="dropdown">
   <button onclick="myFunction()" class="dropbtn">TrueCommand</button>
   <div id="myDropdown" class="dropdown-content">
@@ -53,27 +49,6 @@ All documentation provided here is End of Life (EoL) and no longer receives **an
     <a href="https://www.ixsystems.com/documentation/truecommand/1.0/TrueCommand-Guide-1.0-RELEASE.pdf">1.0</a>
   </div>
 </div>
-
-<--->
-
-## TrueNAS SCALE
-
-Archives coming soon!
-
-<--->
-
-## vCenter Plugin
-
-<div class="dropdown">
-  <button onclick="myFunction()" class="dropbtn">vCenter Plugin</button>
-  <div id="myDropdown" class="dropdown-content">
-    <a href="https://www.google.com">1.2</a>
-    <a href="#"></a>
-    <a href="#"></a>
-  </div>
-</div>
-
-{{< /columns >}}
 
 <script>
 // Get all drop-down buttons
