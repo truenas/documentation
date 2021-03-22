@@ -15,7 +15,7 @@ A plugin is a pre-packaged application that is installed into a [FreeBSD Jail](h
 The plugin jail is limited to installing and using only the plugin software.
 
 {{< expand "Before getting started..." "v" >}}
-* A [data pool](/core/storage/datapools) must be available for plugin storage.
+* A [data pool]({{< relref "PoolCreate.md" >}}) must be available for plugin storage.
 * The system must be connected to the internet.
 * Go to **Network > Interfaces**, edit the intended plugin interface, and set *Disable Hardware Offloading*.
 {{< /expand >}}
@@ -98,7 +98,7 @@ Expand the `iocage` and `jails` datasets to find the plugin jail storage dataset
 
 ![StoragePoolsJailsDatasetLocation](/images/CORE/12.0/StoragePoolsJailsDatasetLocation.png "Storage Pools Jails Dataset Location")
 
-One option to back up this stored data is to create a [local replication](core/tasks/replication/local).
+One option to back up this stored data is to create a [local replication]({{< relref "Local.md" >}}).
 The replication task can even be configured to run periodically and automatically back up new changes to the jail dataset.
 
 To convert a jail snapshot into a new storage dataset, go to **Storage > Snapshots** and find a snapshot of the jail dataset.

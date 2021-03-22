@@ -9,7 +9,7 @@ When the local network contains managed switches, configuring and starting the L
 
 To configure LLDP, go to the **Services** page, find the **LLDP** entry, and click the <i class="fa fa-pencil" aria-hidden="true" title="Configure"></i>.
 
-![ServicesLLDPOptions](/images/CORE/12.0/ServicesLLDPOptions.png" "LLDP Service Options")
+![ServicesLLDPOptions](/images/CORE/12.0/ServicesLLDPOptions.png "LLDP Service Options")
 
 {{< include file="static/includes/ServicesLLDPFields.md.part" markdown="true" >}}
 

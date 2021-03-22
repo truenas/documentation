@@ -4,15 +4,15 @@ weight: 20
 ---
 
 In TrueNAS, user accounts allow flexibility for accessing shared data.
-A common practice is to create users and assign them to [groups](/core/accounts/groups/).
+A common practice is to create users and assign them to [groups]({{< relref "Groups.md" >}}).
 This allows for efficient permissions tuning for large numbers of users.
 
 {{< hint info >}}
 Only the *root* user account can log in to the TrueNAS web interface.
 {{< /hint >}}
 
-When the network uses a directory service, import the existing account information using the instructions in [Directory Services](/CORE/DirectoryServices).
-Using [Active Directory](/CORE/DirectoryServices/activedirectory/) requires setting Windows user passwords inside Windows.
+When the network uses a directory service, import the existing account information using the instructions in [Directory Services]({{< relref "DirectoryServices" >}}).
+Using [Active Directory]({{< relref "ActiveDirectory.md" >}}) requires setting Windows user passwords inside Windows.
 
 To see user accounts, go to **Accounts > Users**.
 
@@ -79,7 +79,7 @@ The account is then restricted from password-based logins for services.
 For example, disabling the password prevents using account credentials to log in to an SMB share or open an SSH session on the system.
 By default, *Disable Password* is *No*.
 
-A specific [shell](/hub/tasks/administrative/gui-shell/) can be set for the user from the *Shell* drop-down:
+A specific [shell]({{< relref "Shell.md" >}}) can be set for the user from the *Shell* drop-down:
 
 | Shell | Description |
 |-------|-------------|
@@ -105,6 +105,6 @@ When the user account is going to be using a *Windows 8* or newer client to acce
 This enables additional authentication methods available from those operating systems.
 
 By default, *Samba Authentication* is enabled.
-This allows using the account credentials to access data shared with [SMB](/core/sharing/smb/smbshare/).
+This allows using the account credentials to access data shared with [SMB]({{< relref "SMBShare.md" >}}).
 {{< /tab >}}
 {{< /tabs >}}

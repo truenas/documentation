@@ -11,7 +11,7 @@ For more information on MinIO distributed setups, please refer to their [documen
 
 ## Creating Datasets
 
-Before getting started, create a dataset or other shared directory on your storage pool to be used for the persistent MinIO data (e.g. "/mnt/tank/minio01").
+Before getting started, create a dataset or other shared directory on your storage pool to be used for the persistent MinIO data (e.g. <file>/mnt/tank/minio01</file>).
 Create datasets across all nodes in advance.
 
 On your first node, go to **Apps > Launch Docker Image**.

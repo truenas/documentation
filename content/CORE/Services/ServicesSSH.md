@@ -36,7 +36,7 @@ There are some additional options recommendations for the SSH service:
   Increase this value when more concurrent SSH connections are required.
 
 Don't forget to re-enable the SSH service on the **Services** page when all configuration changes are complete.
-To create and store specific [SSH connections and keypairs](/CORE/System/SSH/), go to the **System** menu section.
+To create and store specific [SSH connections and keypairs]({{< relref "SystemSSH.md" >}}), go to the **System** menu section.
 
 {{< expand "Advanced: Restricting Command Line Users to scp or sftp" "v" >}}
 This only works for users that use command line versions of *scp* and *sftp*.
