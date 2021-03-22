@@ -263,7 +263,9 @@ Unless a specific setting is needed or configuring for a specific network enviro
 
 Verify that the required CIFS packages are installed for your distribution of Linux.
 Create a mount point: `sudo mkdir /mnt/smb_share`.
+
 Mount the volume. `sudo mount -t cifs //computer_name/share_name /mnt/smb_share`
+
 If your share requires user credentials, add the switch `-o username=` with your username after `cifs` and before the share address.
 
 {{< /tab >}}
@@ -278,6 +280,7 @@ To mount the SMB share to a drive letter on windows, open the command line and r
 
 Open **Finder > Go > Connect To Server**
 Enter the SMB address: `smb://192.168.1.111`
+
 Input the username and password for the user assigned to that pool or Guest if Guest access is enabled on the share.
 
 {{< /tab >}}
