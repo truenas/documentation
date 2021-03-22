@@ -22,7 +22,7 @@ When combined with our high-performance hardware and TrueCommand single interfac
 [**TrueCommand**]({{< relref "/TrueCommand/InstallUpdate/Install.md" >}})  
 
 **Want to learn more about TrueNAS before diving in?.**  
-Check out our [**Overview**]({{< relref "/CORE/Introduction/Overview.md" >}}) page to learn more about TrueNAS's features, or see our [**Hardware**]({{< relref "/Hardware/_index.md" >}}) page to read about our systems' specs and capabilities.
+Check out our [**Overview**]({{< relref "/CORE/_index.md" >}}) page to learn more about TrueNAS's features, or see our [**Hardware**]({{< relref "/Hardware/_index.md" >}}) page to read about our systems' specs and capabilities.
 
 ## Using the Documentation Hub
 
