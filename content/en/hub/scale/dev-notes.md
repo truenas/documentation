@@ -336,3 +336,21 @@ In the Scale UI, go to **System Settings > Shell** to begin entering commands:
 
 * View details about all containers: `k3s kubectl get pods,svc,daemonsets,deployments,statefulset,sc,pvc,ns,job --all-namespaces -o wide`.
 * Get container status: `k3s kubectl describe -n <CONTAINER NAMESPACE> <POD-ID>`.
+
+### Custom Catalogs
+
+TrueNAS SCALE 21.02 allows users to configure custom catalogs for their own applications. In the CLI, add a custom catalog with
+
+```
+midclt call catalog.create '{"label": "<<CATALOG_LABEL_HERE>>", "repository": "git repo uri", "branch": "master"}'
+```
+This command adds the applications from that catalog to the UI. Users can then install or configure these custom applications using the the UI.
+UI support for managing custom catalogs is planned for next release.
+
+For users working on their own custom catalogs, here is a helpful command that verifies if the custom catalog is healthy:
+```
+midclt call catalog.validate <<CATALOG_LABEL_HERE>>
+```
+
+This lists any errors TrueNAS finds with the catalog.
+Any application version errors they must be resolved before the application can be installed.
