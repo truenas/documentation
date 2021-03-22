@@ -255,7 +255,7 @@ Unless a specific setting is needed or configuring for a specific network enviro
 {{< /expand >}}
 
 
-### Mounting SMB Share on another machine.
+## Mounting SMB Share on another machine.
 
 
 {{< tabs "Mount Commands" >}}
