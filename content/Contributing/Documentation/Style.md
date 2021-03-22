@@ -61,7 +61,7 @@ Linking to a site that is outside docs.truenas.com is done with square brackets 
 You can also link directly just by typing the URL with no additional markup: `www.example.com`
 HTML linking syntax is also allowed: `<a href="www.example.com">Example Site</a>`
 
-To link to another section of the **same** article, use an anchor to refer to that section header: `[Linking](#linking)`
+To link to another section of the **same** article, use an anchor (`#`) to refer to that section header.
 The header title needs to be in lower case and spaces replaced with dashes (-): `[Escape Characters](#escape-characters)`
 
 {{< /tab >}}
@@ -124,7 +124,7 @@ Internal references use the Hugo `ref` shortcode to look up a file by name:
 (remove the escaping backslash \)
 ```
 
-Linking to the index file of an article bundle requires using the generic [linking](#linking) syntax to point to the article location:
+Linking to the index file of an article bundle requires using the generic linking syntax to point to the article location:
 ```
 You can copy the [article template](/hub/contributing/template/).
 ```
@@ -156,20 +156,20 @@ You can also use HTML to link to an image file that is relative to the site `/st
 {{< /tab >}}
 {{< tab "Admonition Boxes" >}}
 
-A simple note box is created with the `pageinfo` shortcode:
+A simple note box is created with the `hint` shortcode:
 
 ```
-{{\% pageinfo %}}
+{{\< hint info >}}
 This is a simple note box that has a gray background and blue border
-{{\% /pageinfo %}}
+{{\< /hint >}}
 (remove the escaping backslash \)
 ```
 
 Alert boxes can be given any title and use `info` and `warning` to define the color:
 ```
-{{\% alert title="Warning" color="warning" %}}
+{{\< hint warning>}}
 This is an alert that is titled Warning and uses a red coloration.
-{{\% /alert %}}
+{{\< /hint >}}
 (remove the escaping backslash \)
 ```
 

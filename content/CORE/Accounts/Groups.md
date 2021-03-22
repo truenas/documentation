@@ -6,9 +6,9 @@ weight: 10
 {{< toc >}}
 
 Using groups in TrueNAS can be an efficient way of managing permissions for many similar user accounts.
-See [Users](/core/accounts/users/) for managing users.
+See [Users]({{< relref "Users.md" >}}) for managing users.
 The interface provides management of UNIX-style groups.
-If the network uses a directory service, import the existing account information using the instructions in [Active Directory](/CORE/DirectoryServices/activedirectory/).
+If the network uses a directory service, import the existing account information using the instructions in [Active Directory]({{< relref "ActiveDirectory.md" >}}).
 
 ## View Existing Groups
 
@@ -38,7 +38,7 @@ Setting allows group members to act as the root account by using [sudo](https://
 A common security practice is to leave this disabled.
 
 The option **Samba Authentication** is set by default.
-This allows group members to be used for [SMB](/hub/sharing/smb/) permissions and authentication.
+This allows group members to be used for [SMB]({{< relref "SMBShare.md" >}}) permissions and authentication.
 
 Finally, *Allow Duplicate GIDs* allows setting a duplicate group ID, but can greatly complicate system configurations.
 Leaving this option unset is recommended.

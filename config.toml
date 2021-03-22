@@ -46,7 +46,7 @@ enable = true
 
   # (Optional, default static/brand.svg) Set the path to a logo for the Geekdoc
   # relative to your 'static/' folder.
-  geekdocLogo = "truenas_open_storage-logo-full-color-rgb-1.svg"
+  geekdocLogo = "/images/truenas_open_storage-logo-full-color-rgb.png"
 
   # (Optional, default false) Render menu from data file im 'data/menu/main.yaml'.
   geekdocMenuBundle = false

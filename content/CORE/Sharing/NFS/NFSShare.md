@@ -82,7 +82,7 @@ NFS service settings can be configured by clicking <i class="fa fa-pen" aria-hid
 | rpc.lockd(8) bind port            | integer   | Enter a number to bind [rpc.lockd](https://www.freebsd.org/cgi/man.cgi?query=rpc.lockd) only to that port. |
 
 Unless a specific setting is needed, it is recommended to use the default settings for the NFS service.
-When TrueNAS is already connected to [Active Directory](/hub/initial-setup/security/directory-services/activedirectory/), setting *NFSv4* and *Require Kerberos for NFSv4* also requires a [Kerberos Keytab](/hub/initial-setup/security/directory-services/kerberos/#kerberos-keytabs).
+When TrueNAS is already connected to [Active Directory]({{< relref "ActiveDirectory.md" >}}), setting *NFSv4* and *Require Kerberos for NFSv4* also requires a [Kerberos Keytab]({{< relref "Kerberos.md#kerberos-keytabs" >}}).
 
 ## Connecting to the NFS Share
 

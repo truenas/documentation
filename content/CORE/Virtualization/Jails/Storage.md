@@ -50,10 +50,10 @@ Here is the typical workflow for adding jail storage:
 
 * Decide if the jail needs access to existing data or if a new storage area should be created.
 
-* If the jail needs to access existing data, [edit the permissions](/hub/tasks/advanced/editingacls/) of the pool or dataset so the user and group accounts have the desired read and write access.
+* If the jail needs to access existing data, [edit the permissions]({{< relref "Permissions.md" >}}) of the pool or dataset so the user and group accounts have the desired read and write access.
   When multiple applications or jails need access to the same data, create a new group and add each new user account to that group.
 
-* If a new storage area is being set aside for that jail or application, [create a dataset](/CORE/Storage/datasets/).
+* If a new storage area is being set aside for that jail or application, [create a dataset]({{< relref "Datasets.md" >}}).
   Edit the dataset permissions so the user and group account has the desired read and write access.
 
 * Use jail **> (Expand) > MOUNT POINTS > ACTIONS > Add Mount Point** to select the data *Source* and the jail mount *Destination*.

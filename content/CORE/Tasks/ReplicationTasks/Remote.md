@@ -5,7 +5,7 @@ weight: 20
 
 {{< toc >}}
 
-Configure [SSH](/CORE/System/SSH/) and [automatic dataset snapshots](/CORE/Tasks/PeriodicSnapshotTasks/) in TrueNAS before creating a remote replication task.
+Configure [SSH]({{< relref "SystemSSH.md" >}}) and [automatic dataset snapshots]({{< relref "PeriodicSnapshotTasks.md" >}}) in TrueNAS before creating a remote replication task.
 This ensures that both systems can connect to each other and new snapshots are regularly available for replication.
 
 To streamline creating simple replication configurations, the replication wizard assists with creating a new SSH connection and automatically creates a periodic snapshot task for sources that have no existing snapshots.
