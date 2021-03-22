@@ -253,3 +253,33 @@ Unless a specific setting is needed or configuring for a specific network enviro
 | Bind IP Addresses                       | drop down | Static IP addresses which SMB listens on for connections. Leaving all unselected defaults to listening on all active interfaces.
 | Auxiliary Parameters                    | string    | Stores additional [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html). Auxiliary parameters may be used to override the default SMB server configuration, but such changes may adversely affect SMB server stability or behavior. |
 {{< /expand >}}
+
+
+### Mounting SMB Share on another machine.
+
+
+{{< tabs "Mount Commands" >}}
+{{< tab "Linux" >}}
+
+Verify that the required CIFS packages are installed for your distribution of Linux.
+Create a mount point: `sudo mkdir /mnt/smb_share`.
+Mount the volume. `sudo mount -t cifs //computer_name/share_name /mnt/smb_share`
+If your share requires user credentials, add the switch `-o username=` with your username after `cifs` and before the share address.
+
+{{< /tab >}}
+{{< tab "Windows" >}}
+
+To mount the SMB share to a drive letter on windows, open the command line and run the following command with the appropiate drive letter, computer name, and share name.
+
+```net use Z: \\computer_name\share_name /PERSISTENT:YES```
+
+{{< /tab >}}
+{{< tab "Apple" >}}
+
+Open **Finder > Go > Connect To Server**
+Enter the SMB address: `smb://192.168.1.111`
+Input the username and password for the user assigned to that pool or Guest if Guest access is enabled on the share.
+
+{{< /tab >}}
+{{< /tabs >}}
+
