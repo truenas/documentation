@@ -17,9 +17,6 @@ A best effort attempt has been made to exclude physical link encoding overheads 
 .tg .tg-0lax{text-align:left;vertical-align:top}
 </style>
 
-{{< tabs "Performance Results" >}}
-{{< tab "PCI Express 4.0" >}}
-
 <table class="tg">
 <thead>
   <tr>
@@ -71,9 +68,6 @@ A best effort attempt has been made to exclude physical link encoding overheads 
   </tr>
 </tbody>
 </table>
-
-{{< /tab >}}
-{{< tab "PCI Express 3.0" >}}
 
 <table class="tg">
 <thead>
@@ -127,9 +121,6 @@ A best effort attempt has been made to exclude physical link encoding overheads 
 </tbody>
 </table>
 
-{{< /tab >}}
-{{< tab "SAS-4 (24 Gb/s)" >}}
-
 <table class="tg">
 <thead>
   <tr>
@@ -163,9 +154,6 @@ A best effort attempt has been made to exclude physical link encoding overheads 
   </tr>
 </tbody>
 </table>
-
-{{< /tab >}}
-{{< tab "SAS-3 (12 Gb/s)" >}}
 
 <table class="tg">
 <thead>
@@ -201,9 +189,6 @@ A best effort attempt has been made to exclude physical link encoding overheads 
 </tbody>
 </table>
 
-{{< /tab >}}
-{{< tab "SAS-2 & SATA 3.0 (6 Gb/s)" >}}
-
 <table class="tg">
 <thead>
   <tr>
@@ -237,9 +222,6 @@ A best effort attempt has been made to exclude physical link encoding overheads 
   </tr>
 </tbody>
 </table>
-
-{{< /tab >}}
-{{< tab "Ethernet" >}}
 
 <table class="tg">
 <thead>
@@ -299,9 +281,6 @@ A best effort attempt has been made to exclude physical link encoding overheads 
 </tbody>
 </table>
 
-{{< /tab >}}
-{{< tab "Fibre Channel" >}}
-
 <table class="tg">
 <thead>
   <tr>
@@ -335,6 +314,3 @@ A best effort attempt has been made to exclude physical link encoding overheads 
   </tr>
 </tbody>
 </table>
-
-{{< /tab >}}
-{{< /tabs >}}
