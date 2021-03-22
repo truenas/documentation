@@ -41,7 +41,7 @@ The Host Path volume will be set to a dataset and directory paths which were cre
 Additional Volumes can be added to the container if needed.
 When all the settings have been entered, verify the Application and Container Name and click **Submit**. 
 
-![SCALE App Deploying](/images/TrueCommand/2.0/SCALEAppsPiHoleDeploying.png "SCALE App Deploying")
+![SCALE App Deploying](/images/SCALE/SCALEAppsPiHoleDeploying.png "SCALE App Deploying")
 
 When the deployment has completed, click **Start** to launch the container.
 
