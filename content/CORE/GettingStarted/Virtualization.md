@@ -112,28 +112,34 @@ Installing a basic PlexMedia Plugin:
 
 ## Installing a Jail
 
-Click the Add button
+Installing a basic Jail:
+
+1. Go to the **Jail** page 
+
+2. Click the *Add* button
 
 ![JailAdd](/images/CORE/12.0/JailAdd.png "Jail: Add button")
  
- Give the Jail a name, select the Release version, and click tyhe NEXT button
+3.  Give the Jail a name, select the Release version, and click the *NEXT* button
  
  ![JailCreate](/images/CORE/12.0/JailCreate.png "Jail: Create")
  
- Click DHCP and click the NEXT button
+ 4. Click *DHCP* and click the *NEXT* button
  
  ![JailDHCP](/images/CORE/12.0/JailDHCP.png "Jail: DHCP")
  <insert JailDHCP Image here>
  
- Confirm the information is correct and Click the Submit button
+ 5. Confirm the information is correct and click the *Submit* button
  
  ![JailSubmit](/images/CORE/12.0/JailSubmit.png "Jail: Submit")
  
- Click on the arrow nwxt to the newly created Jail and click the Start Button
+ ## Accessing a Jail
+ 
+ 1. Click on the arrow next to the newly created Jail and click the *Start* Button
  
  ![JailStart](/images/CORE/12.0/JailStart.png "Jail: Start")
  
- Wait for it to finish starting and then click on the Shell option to get to the CLI
+ 2. Wait for it to finish starting and then click on the *Shell option* to get to the CLI
  
  ![JailShell](/images/CORE/12.0/JailShell.png "Jail: Shell")
  
