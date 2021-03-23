@@ -136,7 +136,51 @@ Installing a basic PlexMedia Plugin:
 {{< /tab >}}
 {{< tab "Virtual Machines" >}}
 
-Placeholder
+## Installing a Virtual Machine
 
+Download an iso of the Operating System you would like to use for the VM. For this example I have downloaded an Ubuntu iso file.
+
+1. Go to the **Virtual Machines** page and click *ADD*.
+
+   ![VMAdd](/images/CORE/12.0/VMAdd.png "Adding a new VM")
+   
+ 2. Select a *Guest Operating System*. name your VM, add a description and click the *NEXT* button.
+
+   ![VMOs](/images/CORE/12.0/VMOs.png "VM Operating system")
+   
+ 3. Enter number of *Virual CPUs*, *Cores*. and *Memory Size* and click the *NEXT* button.
+
+   ![VMCPU](/images/CORE/12.0/VMCPU.png "CPU and Memory")
+   
+ 4. Make sure *Create a new disk image* is selected, select a *Zvol Location*, increase the *Size* to 50 GiB, and click the *NEXT* button.
+
+   ![VMDisk](/images/CORE/12.0/VMDisk.png "VM Disks")
+   
+ 5. Leave the settings for *Network Interface* and click the *NEXT* button.
+
+   ![VMNetwork](/images/CORE/12.0/VMNetwork.png "VM Network")
+   
+ 6. Check the box "Upload an installer image file", click the *Choose File*" button, navigate to the installation iso, and wait for the Upload to finish. Click the *NEXT* button.
+
+   ![VMUpload](/images/CORE/12.0/VMUpload.png "VM Upload")
+   
+ 7. Confirm the settings are correct and click the *Submit* button.
+
+   ![VMConfirm](/images/CORE/12.0/VMConfirm.png "VM Confirm")
+   
+  
+## Accessing a Virtual Machine
+
+1. Go to **Virtual Machines** and click the **>** next to the newly created VM.
+   Click *START*.
+   
+   ![VMStart](/images/CORE/12.0/VMStart.png "Startiing a VM")
+   
+2. When the VM **State** changes to **up**, click **>** *VNC* to see the VM's Ubuntu installation screen.
+
+   ![VMAccessUbuntu](/images/CORE/12.0/VMAccessUbuntu.png "Launch VNC")
+   
+   ![VMUbuntu](/images/CORE/12.0/VMUbuntu.png "Ububtu VM")
+   
 {{< /tab >}}
 {{< /tabs >}}
