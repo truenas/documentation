@@ -1,6 +1,6 @@
 ---
 title: "Contributing with Jira"
-weight: 10
+weight: 5
 ---
 
 iXsystems' utilizes Jira for bug tracking and feature development.
