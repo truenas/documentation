@@ -6,23 +6,23 @@ weight: 10
 iXsystems' utilizes Jira for bug tracking and feature development.
 A login is required to use Jira, so you will need to create a Jira account.
 
-![TrueNAS Jira Project](/images/Jira.png "TrueNAS Jira Project")
+![TrueNAS Jira Project](/images/Contribute/Jira.png "TrueNAS Jira Project")
 
 
 ## Creating a bug
 
 Open [The TrueNAS project on Jira](https://jira.ixsystems.com/browse/NAS), and click **Create** in the top bar.
 
-![Create Ticket](/images/JiraCreate.png "Create Ticket")
+![Create Ticket](/images/Contribute/JiraCreate.png "Create Ticket")
 
 Select Bug or Suggestion depending on the nature of your contribution.
 If bug is selected, the form will reload and include more fields.
 
 The Summary field is required.  Add a short summary for the developers.  
-![SummaryField](/images/JiraSummary.png "Summar Field")
+![SummaryField](/images/Contribute/JiraSummary.png "Summar Field")
 
 Add as much information as you can in the description field.
-![DescriptionField](/images/JiraDescription.png "Description Field")
+![DescriptionField](/images/Contribute/JiraDescription.png "Description Field")
 
 A good bug report will include the following information:
 
@@ -58,7 +58,7 @@ A good bug report will include the following information:
 
 When you are finished filling out the description, click the **Create** button at the bottom of the form window.
 
-![Submit Ticket](/images/JiraCreateBottom.png "Submit Ticket")
+![Submit Ticket](/images/Contribute/JiraCreateBottom.png "Submit Ticket")
 
 Your ticket will be reviewed shortly and if any additional information is needed, you will receive an email requesting clarification and/or additional information.  As the ticket is processed, you will be updated to its status.  Developers may leave comments requesting additional input from you as they work to resolve the issue.
 
