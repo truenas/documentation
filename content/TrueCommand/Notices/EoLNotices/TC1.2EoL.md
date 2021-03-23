@@ -1,0 +1,13 @@
+---
+title: "TrueCommand 1.2"
+weight: 10
+---
+
+**March 18, 2020**
+
+TrueCommand 1.2 has reached its End of Life and is no longer receiving security updates.
+The TrueCommand 1.3.2 release announcement can be found at https://www.ixsystems.com/blog/truecommand-1-3-2/.
+
+Please schedule a time to upgrade to the latest version of TrueCommand. If assistance is required, please contact the iXsystems Support Team.
+
+{{< include file="static/includes/iXsystemsSupportContact.html.part" html="true" >}}
