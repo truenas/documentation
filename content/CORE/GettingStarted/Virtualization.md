@@ -107,41 +107,31 @@ Installing a basic PlexMedia Plugin:
  ![PluginsPlexSuccess](/images/CORE/12.0/PluginsPlexSuccess.png "Plex Login Success")
 
 {{< /tab >}}
-{{< tab "Jails" >}}
-
+{{< tab "FreeBSD Jails" >}}
 
 ## Installing a Jail
 
-Installing a basic Jail:
+1. Go to the **Jails** page and click *ADD*.
+   ![Jails](/images/CORE/12.0/Jails.png "Adding a new Jail")
 
-1. Go to the **Jail** page and click the *Add* button.
+2. Enter a jail *Name*, select the *Release* version, and click *NEXT*.
+   ![JailsAddName](/images/CORE/12.0/JailsAddName.png "Jail Creation: Name and Release")
 
-![JailAdd](/images/CORE/12.0/JailAdd.png "Jail: Add button")
- 
-2.  Give the Jail a name, select the *Release* version, and click the *NEXT* button.
- 
- ![JailCreate](/images/CORE/12.0/JailCreate.png "Jail: Create")
- 
- 3. Click *DHCP* and click the *NEXT* button.
- 
- ![JailDHCP](/images/CORE/12.0/JailDHCP.png "Jail: DHCP")
- <insert JailDHCP Image here>
- 
- 4. Confirm the information is correct and click the *Submit* button.
- 
- ![JailSubmit](/images/CORE/12.0/JailSubmit.png "Jail: Submit")
- 
- 
- ## Accessing a Jail
- 
- 1. Click on the arrow next to the newly created Jail and click the *Start* Button.
- 
- ![JailStart](/images/CORE/12.0/JailStart.png "Jail: Start")
- 
- 2. Wait for it to finish starting and then click on the *Shell option* to get to the CLI.
- 
- ![JailShell](/images/CORE/12.0/JailShell.png "Jail: Shell")
- 
+3. To allow the jail access to the internet, set *DHCP Autoconfigure IPv4* and click *NEXT*.
+   Additional defaults are set when the DHCP option is set.
+   ![JailsAddNetworkingDHCP](/images/CORE/12.0/JailsAddNetworkingDHCP.png "Jail Creation: Default Internet Access")
+
+4. Review the **Jail Summary** and click *SUBMIT*.
+   ![JailsAddConfirm](/images/CORE/12.0/JailsAddConfirm.png "Jail Creation: Confirm Settings")
+
+## Accessing a Jail
+
+1. Go to **Jails** and click the **>** next to the newly created jail.
+   Click *START*.
+   ![JailsStart](/images/CORE/12.0/JailsStart.png "Starting a Jail")
+
+2. When the jail **State** changes to **up**, click *> SHELL* to see the jail command line.
+   ![JailsShell](/images/CORE/12.0/JailShell.png "Jail Shell")
 
 {{< /tab >}}
 {{< tab "Virtual Machines" >}}
