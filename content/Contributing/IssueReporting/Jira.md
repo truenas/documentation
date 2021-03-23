@@ -18,43 +18,45 @@ Open [The TrueNAS project on Jira](https://jira.ixsystems.com/browse/NAS), and c
 Select Bug or Suggestion depending on the nature of your contribution.
 If bug is selected, the form will reload and include more fields.
 
-The Summary field is required.  Add a short summary for the developers.  
+The Summary field is required.  Add a short summary for the developers. 
+
 ![SummaryField](/images/Contribute/JiraSummary.png "Summar Field")
 
 Add as much information as you can in the description field.
+
 ![DescriptionField](/images/Contribute/JiraDescription.png "Description Field")
 
 A good bug report will include the following information:
 
  + A "to the point" description of the issue.
- > The Summary field was a short explination, this field is where you will clearly describe the problem you are facing.
+   > The Summary field was a short explination, this field is where you will clearly describe the problem you are facing.
 
  + The exact steps you can take to reproduce the issue.
- > This can be a simple bullet point list of the steps you take to reproduce the issue.
+   > This can be a simple bullet point list of the steps you take to reproduce the issue.
 
  + What you expect should happen.
- > Explain what you expected would happen while taking the steps listed above.
+   > Explain what you expected would happen while taking the steps listed above.
 
  + What does happen.
- > Describe what actually happened while taking the steps listed above.
+   > Describe what actually happened while taking the steps listed above.
 
  + Software version 
- > The version string of TrueNAS can be copied from the Dashboard of the NAS.  
+   > The version string of TrueNAS can be copied from the Dashboard of the NAS.  
 
  + Current configuration
- > If the bug is related to a service, include the current configuration of the service.  This helps the developers reproduce your system as close as possible.
+   > If the bug is related to a service, include the current configuration of the service.  This helps the developers reproduce your system as close as possible.
 
  + Debugs and console logs
- > Always include a TrueNAS Debug file and if the error is a WebUI issue, please include a console log.  If you are unsure how to save these, refer to the articles about [Creating a Debug](/Contributing/IssueReporting/Debug/) and [Saving the Console Log](/Contributing/IssueReporting/SaveWebConsoleLog/)
+   > Always include a TrueNAS Debug file and if the error is a WebUI issue, please include a console log.  If you are unsure how to save these, refer to the articles about [Creating a Debug](/Contributing/IssueReporting/Debug/) and [Saving the Console Log](/Contributing/IssueReporting/SaveWebConsoleLog/)
 
  + Screenshots
- > If the bug is a UI bug or a formatting problem, screenshots are very helpful.
+   > If the bug is a UI bug or a formatting problem, screenshots are very helpful.
 
  + Video
- > If screenshots will not adequately explain the problem, you can include a video recording of the issue.
+   > If screenshots will not adequately explain the problem, you can include a video recording of the issue.
 
  + Any additional Information.
- > If there is any additional information that you feel may be helpful for the developers to know, please include it.
+   > If there is any additional information that you feel may be helpful for the developers to know, please include it.
 
 When you are finished filling out the description, click the **Create** button at the bottom of the form window.
 
