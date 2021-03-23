@@ -223,3 +223,21 @@ Setting `KUBECONFIG` is required for using helm and the `kubectl` alias helps us
 Support for Kubernetes is still considered experimental, so please use it at your own risk.	
 If you find any bugs, please create tickets at https://jira.ixsystems.com.	## Using Applications
 {{< /hint >}}
+
+### Custom Catalogs
+
+TrueNAS SCALE 21.02 allows users to configure custom catalogs for their own applications. In the CLI, add a custom catalog with
+
+```
+midclt call catalog.create '{"label": "<<CATALOG_LABEL_HERE>>", "repository": "git repo uri", "branch": "master"}'
+```
+This command adds the applications from that catalog to the UI. Users can then install or configure these custom applications using the the UI.
+UI support for managing custom catalogs is planned for next release.
+
+For users working on their own custom catalogs, here is a helpful command that verifies if the custom catalog is healthy:
+```
+midclt call catalog.validate <<CATALOG_LABEL_HERE>>
+```
+
+This lists any errors TrueNAS finds with the catalog.
+Any application version errors they must be resolved before the application can be installed.
