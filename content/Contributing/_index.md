@@ -1,6 +1,5 @@
 ---
 title: "Contributing"
-description: "Step-by-step instructions for contributing to TrueNAS documentation."
 geekdocCollapseSection: true
 weight: 50
 ---

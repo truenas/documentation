@@ -5,6 +5,11 @@
   min-height: 10vh;
 }
 /* Site header */
+.gdoc-brand__img {
+	max-width: 7em;
+	width: auto;
+	height: auto;
+}
 .iconsbar {
 	background: #0095d5;
 	text-align: right !important;
@@ -130,3 +135,70 @@
 	.truenas-mediamenu:hover .truenas-menubutton {background-color: #ffffff;color:#31beec;}	
 }
 /* End site directory for mobile browsing */
+/* Styling for fade-in on image download links */
+.container-image-download {
+  position: relative;
+  width: 50%;
+}
+.container-image-download:hover .image {
+  opacity: 0.3;
+  -webkit-transition:.5s ease;
+  -o-transition:.5s ease;
+  transition:.5s ease;
+}
+.container-image-download:hover .middle {
+  opacity: 1;
+  -webkit-transition:.5s ease;
+  -o-transition:.5s ease;
+  transition:.5s ease;
+}
+.image-download-text {
+  background-color: #0095D5;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+.middle {
+  -webkit-transition:.5s ease;
+  -o-transition:.5s ease;
+  transition:.5s ease;
+  opacity:0;
+  position:absolute;
+  top:50%;
+  left:50%;
+  -webkit-transform:translate(-50%,-50%);
+  -o-transform:translate(-50%,-50%);
+  transform:translate(-50%,-50%);
+  -ms-transform:translate(-50%,-50%)
+ }
+.linkbutton{
+  min-width:180px;border-radius:5px;
+  background-color:#0095d5;
+  -webkit-box-shadow:3px 3px #d1d1d1;
+  box-shadow:3px 3px #d1d1d1;
+  color:#fff;
+  padding:14px 25px;
+  text-align:center;
+  text-decoration:none;
+  position:relative;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  width:20%
+}
+.linkbutton:hover{
+  color:#fff;
+  background-color:#1eaedb;
+  border-color:#1eaedb
+}
+
+/* End styling for fade-in on image download links */
+/* Begin print view styling */
+.td-content-print{
+	min-width: 10rem;
+	max-width: 80rem;
+	margin: 0rem 5rem 0rem 5rem;
+}
+.td-content-print img{
+	max-width: 800px;
+}

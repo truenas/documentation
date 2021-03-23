@@ -4,47 +4,70 @@ geekdocCollapseSection: true
 weight: 30
 ---
 
-<img src="/images/truecommand-logo-full-color-rgb.png" style="size:50%;">
+![TrueCommandLogoFullColorRGB](/images/truecommand-logo-full-color-rgb.png)
 
-TrueCommand® is a "single pane of glass" application to simplify the scaling of data, drive management, and administration of iXsystems NAS platforms.
-TrueCommand boasts a wide variety of features, including Role-Based Access Control (RBAC), user account auditing, single sign-on for all connected NAS units, customizable alerts and reporting, and predictive analytics to maximize system uptime.<br><br>
+TrueCommand is a multi-system management "Single pane of Glass" system that helps control and monitor your TrueNAS fleet. TrueCommand assists in managing TrueNAS systems through REST APIs, WebSocket APIs, and a web user interface. The TrueCommand web interface provides single sign-on functionality and unified administration of users and TrueNAS systems.
 
-{{< tabs "TrueCommand Topics" >}}
-{{< tab "Overview" >}}
-<img class="topic-image" style="max-width: 10%; padding-right: 1em;" src="/images/vision2.jpg">
+TrueCommand can monitor an entire fleet of TrueNAS systems and thousands of online storage devices simultaneously. This includes displaying statistics on storage usage, network activity, active services, and more. TrueCommand also has the ability to create custom reports about individual systems or a combination of many systems.
 
-Learn more about TrueCommand before giving it a try!
-[What is TrueCommand?](/TrueCommand/overview/tcwhatis/)<br>
-{{< /tab >}}
-{{< tab "Getting Started" >}}
-<img class="topic-image" style="max-width: 10%; padding-right: 1em;" src="/images/business_idea.jpg">
+![Overview](/images/TrueCommand/Overview.png "Truecommand Overview")
 
-TrueCommand can be installed or deployed in a variety of environments!
-TueCommand Cloud is a Software as a Service (SaaS) option that uses encrypted connections to allow managing TrueNAS 12.0 or newer systems using the Cloud.
-To install TrueCommand on a local system, the primary method is to deploy the TrueCommand Docker Container.
-You can also install TrueCommand in a Virtual Machine (VM).
+## What Features does TrueCommand have?
 
-[Accessing TrueCommand Cloud](/TrueCommand/InstallUpdate/tc_cloud/)<br>
-[Installing TrueCommand (Docker)](/TrueCommand/InstallUpdate/install/)<br>
-[Installing TrueCommand (VM)](/TrueCommand/InstallUpdate/tc-vm/)
-{{< /tab >}}
-{{< tab "Administration" >}}
-<img class="topic-image" style="max-width: 10%; padding-right: 1em;" src="/images/presentation.jpg">
-Now that TrueCommand is installed, it's time to configure TrueCommand for wider use.
-Begin by connecting your TrueNAS systems and verifying your system settings, then import or create the user accounts and teams that need access to the different systems.
-From here, the administrator or other user accounts can monitor systems, create reports, and respond to alerts as needed.
-TrueCommand administrators can also monitor the user activity on TrueCommand or connected systems.
+{{< expand "Multiple Deployment Options" "v" >}}
+TrueCommand is a lightweight application that supports deployments in either a Virtual Machine or a Docker Container.
+TrueCommand Cloud is also available as a cloud-based subscription option that allows you to offload TrueCommand resources and deployment and only focus on fine-tuning your configuration.
+{{< /expand >}}
+{{< expand "NAS Fleet Dashboard" "v" >}}
+The TrueCommand dashboard provides visibility to an organization’s entire TrueNAS fleet.
+TrueCommand includes an auto-discovery tool that expedites identifying and integrating systems into TrueCommand.
+{{< /expand >}}
+{{< expand "Single Sign-on to all NAS Units" "v" >}}
+Authorized administrators can quickly log into a TrueNAS system through TrueCommand
+This allows for quicker and simpler signons instead of looking up IP addresses and login credentials.
+This is even more beneficial when using different secure passwords for each TrueNAS instance instead of a single password across multiple systems.
+{{< /expand >}}
+{{< expand "Centralized system updates" "v" >}}
+Easily update any connected TrueNAS system.
+Monitor update progress, reboot the system, or even roll it back if something goes wrong.
+{{< /expand >}}
+{{< expand "Customized Alerts and Reports" "v" >}}
+TrueCommand centralizes the management of alerts across a fleet of TrueNAS systems.
+In addition to the standard system alerts, administrators can define custom alerts.
+  
+Administrators can also create custom graphical reports.
+Reports are configurable and can span as many systems as desired and/or set of metrics.
+This brings the information that the administrators deem the most relevant immediately to visibility.
+Report data can be exported in CSV or JSON for other uses.
 
-[Connecting Systems](/TrueCommand/admins/add-systems/)<br>
-[TrueCommand Settings](/TrueCommand/admins/settings/)<br>
-[Managing Users](/TrueCommand/admins/users/)<br>
-[Managing Reports](/TrueCommand/admins/reports/)
-{{< /tab >}}
-{{< tab "More Documentation" >}}
-<img class="topic-image" style="max-width: 10%; padding-right: 1em;" src="/images/smartphone2.jpg">
-API Documentation, previous version articles, and additional notices about TrueCommand.
+Alerts for all managed systems are shown in TrueCommand's web-based dashboard.
+Notification groups can also be defined so that unique groups receive specific alerts via email.
+This enables TrueCommand to keep the right individuals informed of any current or potential problems.
+{{< /expand >}}
+{{< expand "Enterprise Security with Role-Based Access Control (RBAC)" "v" >}}
+TrueCommand administrators can define varied levels of system access.
+These access levels can be assigned to system groups.
+Individuals can be assigned to teams or departments.
+Doing so allows the administrator to control the level of access appropriate to each individual or group in a manageable and atomic fashion.
+TrueCommand's RBAC controls can leverage pre-existing LDAP and Active Directory identities and groups in your infrastructure, eliminating redundant management overhead.
+{{< /expand >}}
+{{< expand "Audit Logs" "v" >}}
+TrueCommand records all administration actions in secure audit logs. This allows for quick identification of what has been changed and who changed it.
+{{< /expand >}}
 
-[API](/TrueCommand/tc-api/)<br>
-[TrueCommand 1.2](/TrueCommand/tc-legacy-docs/TrueCommand-1.2/install/)
-{{< /tab >}}
-{{< /tabs >}}
+## What Does it Cost?
+
+TrueCommand is free to use for up to 50 drives.
+Licenses to expand TrueCommand capabilities are purchased from the [iXsystems account portal](http://portal.ixsystems.com/).
+Pricing is based on the number of drives and the desired level of support.
+
+## Where do I get it?
+
+TrueCommand is downloaded from the [TrueNAS website](https://www.truenas.com/truecommand/).
+TrueCommand Cloud subscriptions are available at the [iXsystems Account Services Portal](https://portal.ixsystems.com/portal/login/index.php).
+
+## What is TrueCommand Cloud?
+
+TrueCommand Cloud is a secure SaaS offering that includes a WireGuard VPN capability to connect TrueNAS systems through firewalls.
+TrueCommand Cloud is compatible with TrueNAS versions **12.0+ or SCALE** for the Wireguard VPN capability.
+Subscribe to and set up TrueCommand Cloud using [these instructions]({{< relref "/TrueCommand/InstallUpdate/Install.md" >}}).
