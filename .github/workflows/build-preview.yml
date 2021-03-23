@@ -63,6 +63,6 @@ jobs:
         uses: ruzickap/action-my-broken-link-checker@v2
         with:
           url: "https://${{ steps.preview_step.outputs.preview_url }}"
-          cmd_params: "--skip-tls-verification --timeout=30 --max-connections=7 --color=always --exclude=docs/files/ --exclude=files/TrueNASCollection.vssx --exclude=update.freenas.org --exclude=microsoft.com --exclude=oracle.com --exclude=amazon.com --exclude=apple.com --exclude=fastmail.com --exclude=linode.com --exclude=community.openvpn.net --exclude=tools.ietf.org --exclude=github.com --exclude=freebsd.org --exclude=jira.ixsystems.com --exclude=linkedin.com --exclude=googletagmanager.com --exclude=youtube.com"
+          cmd_params: "--skip-tls-verification --timeout=30 --max-connections=10 --color=always --exclude=docs/files/ --exclude=files/TrueNASCollection.vssx --exclude=update.freenas.org --exclude=microsoft.com --exclude=oracle.com --exclude=amazon.com --exclude=apple.com --exclude=fastmail.com --exclude=linode.com --exclude=community.openvpn.net --exclude=tools.ietf.org --exclude=github.com --exclude=freebsd.org --exclude=jira.ixsystems.com --exclude=linkedin.com --exclude=googletagmanager.com --exclude=youtube.com"
           run_timeout: 600
           debug: true
