@@ -4,7 +4,8 @@ weight: 40
 ---
 
 {{< hint warning >}}
-**Disruptive Change**\
+**Disruptive Change**
+
 Making changes to the network interface the web interface uses can result in losing connection to the TrueNAS system!
 Fixing any misconfigured network settings might require command line knowledge or physical access to the TrueNAS system.
 {{< /hint >}}
