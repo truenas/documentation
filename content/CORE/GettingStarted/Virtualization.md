@@ -105,10 +105,33 @@ Installing a basic PlexMedia Plugin:
  ![PluginsPlexLogin](/images/CORE/12.0/PluginsPlexLogin.png "Plex Interface Login")
   
  ![PluginsPlexSuccess](/images/CORE/12.0/PluginsPlexSuccess.png "Plex Login Success")
-{{< /tab >}}
-{{< tab "Jails" >}}
 
-Placeholder
+{{< /tab >}}
+{{< tab "FreeBSD Jails" >}}
+
+## Installing a Jail
+
+1. Go to the **Jails** page and click *ADD*.
+   ![Jails](/images/CORE/12.0/Jails.png "Adding a new Jail")
+
+2. Enter a jail *Name*, select the *Release* version, and click *NEXT*.
+   ![JailsAddName](/images/CORE/12.0/JailsAddName.png "Jail Creation: Name and Release")
+
+3. To allow the jail access to the internet, set *DHCP Autoconfigure IPv4* and click *NEXT*.
+   Additional defaults are set when the DHCP option is set.
+   ![JailsAddNetworkingDHCP](/images/CORE/12.0/JailsAddNetworkingDHCP.png "Jail Creation: Default Internet Access")
+
+4. Review the **Jail Summary** and click *SUBMIT*.
+   ![JailsAddConfirm](/images/CORE/12.0/JailsAddConfirm.png "Jail Creation: Confirm Settings")
+
+## Accessing a Jail
+
+1. Go to **Jails** and click the **>** next to the newly created jail.
+   Click *START*.
+   ![JailsStart](/images/CORE/12.0/JailsStart.png "Starting a Jail")
+
+2. When the jail **State** changes to **up**, click *> SHELL* to see the jail command line.
+   ![JailsShell](/images/CORE/12.0/JailShell.png "Jail Shell")
 
 {{< /tab >}}
 {{< tab "Virtual Machines" >}}
