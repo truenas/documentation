@@ -11,7 +11,7 @@ Requirements:
 * Dataset snapshot task saved in **Tasks > Periodic Snapshot Tasks**.
 
 {{< expand "Process Summary" "v" >}}
-Go to **Tasks > Replication Tasks > ADD** and select *ADVANCED REPLICATION CREATION*.
+Go to **Tasks > Replication Tasks** and click *ADD*, then select *ADVANCED REPLICATION CREATION*.
 
 * General Options:
   * Name the task.
@@ -38,7 +38,7 @@ Go to **Tasks > Replication Tasks > ADD** and select *ADVANCED REPLICATION CREAT
 
 ## Creating an Advanced Replication Task
 
-To use the advanced editor to create a replication task, go to **Tasks > Replication Tasks**, click **ADD** to open the Wizard, and click **ADVANCED REPLICATION CREATION**.
+To use the advanced editor to create a replication task, go to **Tasks > Replication Tasks**, click *ADD* to open the Wizard, then click *ADVANCED REPLICATION CREATION*.
 
 ![TasksReplicationAddAdvanced](/images/CORE/12.0/TasksReplicationAddAdvanced.png "Advanced Replication Tasks")
 
@@ -47,7 +47,7 @@ Options can appear, disappear, or be disabled depending on the configuration cho
 Start by configuring the *General* options first, then the *Transport* options before configuring replication *Sources* and *Destination*.
 
 Name the task.
-Each task name must be different from each other, and it is recommended to name it in a way that makes it easy to remember what the task is doing.
+Each task name must be unique, and we recommend you name it in a way that makes it easy to remember what the task is doing.
 
 Choose whether the local system is sending (*Push*) or receiving data (*Pull*) and decide what *Transport* method to use for the replication before configuring the other sections.
 
@@ -58,7 +58,7 @@ The *Transport* selector determines the method to use for the replication:
 *Local* is only used for replicating data to another location on the same system.
 
 With *SSH*-based replications, configure the transport method by selecting the **SSH Connection** to the remote system that will send or receive snapshots.
-Options for compressing data, adding a bandwidth limit, or other data stream customizations are available.  *Stream Compression* options are only available when using SSH. Before enabling *Compressed WRITE Records* verify that the destination system also supports compressed WRITE records. 
+Options for compressing data, adding a bandwidth limit, or other data stream customizations are available.  *Stream Compression* options are only available when using SSH. Before enabling *Compressed WRITE Records*, verify that the destination system also supports compressed WRITE records. 
 
 ![TasksReplicationAddAvancedTransportOptions](/images/CORE/12.0/TasksReplicationAddAdvancedTransportOptions.png "Advanced Replication: Transport")
 

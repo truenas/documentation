@@ -11,7 +11,7 @@ To create a new script, go to **Tasks > Init/Shutdown Scripts** and click *ADD*.
 {{< include file="static/includes/TasksInitShutdownScriptsAddFields.md.part" markdown="true" >}}
 
 {{< expand "Can I use a path for the Command?" "v" >}}
-The full path to a command can also be included in the entry.
+You can also include the full path to a command in the entry.
 Scheduled commands must be in the default path.
 The path can be tested with `which {COMMAND}` in the **Shell**.
 When available, the path to the command is shown:
@@ -28,4 +28,4 @@ All init/shutdown scripts are run with `sh`.
 {{< /hint >}}
 
 All saved Init/Shutdown tasks are shown in **Tasks > Init/Shutdown Scripts**.
-Click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> (Options) for a task to *Edit* or *Delete* that task.
+Click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> (Options) next to a task to *EDIT* or *DELETE* that task.
