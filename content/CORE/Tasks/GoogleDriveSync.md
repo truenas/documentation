@@ -36,15 +36,15 @@ Click **VERIFY CREDENTIAL** and wait for the credential to verify.
 
 Go to **Tasks > Cloud Sync Tasks** and set the backup time frame, frequency, and folders – both the cloud-based folder and TrueNAS dataset. 
 Set whether the synchronization should sync all changes, just copy new files, or move files. 
-Files are removed from the cloud source or FreeNAS source depending on push or pull.
+Files are removed from the cloud source or TrueNAS source depending on push or pull.
 Add a description for the task and select the cloud credentials.
-Choose the appropriate cloud folder target and FreeNAS storage location.
+Choose the appropriate cloud folder target and TrueNAS storage location.
 
 Select the file transfer mode: 
 
 + **Sync**: Keep files newly created or deleted the same.
-+ **Copy**: Copy new files to the appropriate target (i.e., FreeNAS pulls files from Google Drive or pushes files to Google Drive).
-+ **Move**: Copies files to the target and then delete files from the source. Using Move, users can set a folder in Google Drive for archival, and move older documents to that folder from their Drive account. Those files would then automatically get backed up to their FreeNAS storage.
++ **Copy**: Copy new files to the appropriate target (i.e., TrueNAS pulls files from Google Drive or pushes files to Google Drive).
++ **Move**: Copies files to the target and then delete files from the source. Using Move, users can set a folder in Google Drive for archival, and move older documents to that folder from their Drive account. Those files would then automatically get backed up to their TrueNAS storage.
 
 ![TasksCloudSyncCreate](/images/CORE/12.0/TasksCloudSyncCreate.png "Tasks Cloud Sync Create")
 
