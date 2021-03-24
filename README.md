@@ -1,58 +1,24 @@
 [![Actions Status](https://github.com/freenas/documentation/workflows/Publish%20Docs/badge.svg)](https://github.com/freenas/documentation/actions) ![Preview Build](https://github.com/freenas/documentation/workflows/Preview%20Build/badge.svg)
 
-# How To: Hugo Local Build
+Welcome to the TrueNAS Documentation Repository!
+The collected documentation for TrueNAS software, hardware, and TrueCommand is stored here.
+These files are used to build the TrueNAS Documentation Hub available at https://www.truenas.com/docs/.
 
-The documentation repository can be downloaded locally. This may be
-desired if you prefer using a specific text editor other than the
-in-browser Github editor to develop content.
+Software documentation is released under the Creative Commons license.
 
-Part of the theme requires
-<code><a href="https://postcss.org/"> PostCSS</a></code>. To install
-`PostCSS`, a recent version of
-<code><a href="https://nodejs.org/en/"> NodeJS</a></code> must be
-installed on your machine so that you can use `npm`. Once installed,
-type
+# Technologies
 
-```bash
-sudo npm install -D --save autoprefixer
-sudo npm install -D --save postcss-cli
-```
-in the CLI.
+* [CommonMark ](https://spec.commonmark.org/current/) and [HTML](https://www.w3schools.com/html/default.asp) governs the syntax for content files.
+* [Hugo](https://gohugo.io/) (extended version) builds the website from the content files and governs the file organization, naming, front matter, and some of the [shortcode](https://gohugo.io/content-management/shortcodes/) syntax. 
+* The custom [GeekDocs theme](https://geekdocs.de/) provides a bare-bones theme with templates and shortcodes for styling the website and content.
+* Specific .css customizations are added on top of GeekDocs in the /static/custom.css, /data/menu/, and /layouts/ files
 
-## Download Hugo
+# Local Build Process
 
-First, download the **extended** version of Hugo from
-https://github.com/gohugoio/hugo/releases/. Follow the
-[Hugo install instructions](https://gohugo.io/getting-started/installing/ "Install Hugo")
-for the appropriate operating system.
+1. Download Hugo Extended from https://github.com/gohugoio/hugo/releases/ and [install](https://gohugo.io/getting-started/installing/ "Install Hugo").
+   See these instructions for manually installing the Hugo extended version in WSL: https://sal.as/post/install-hugo-on-wsl/
 
-See these instructions for manually installing the Hugo extended version in WSL: https://sal.as/post/install-hugo-on-wsl/
+2. Download this repository.
 
-## Clone Documentation Repo
-
-The next step is to clone this repo. To clone the repo in your current
-directory, type
-
-```bash
-git clone https://github.com/freenas/documentation.git
-```
-
-in the CLI.
-
-> **Note**: To update your current local branch with any changes that have been merged into the master branch, run\
-`git pull origin master
-
-
-## Build Locally
-
-Finally, the documentation website is ready to be built locally. `cd` into the cloned repo. To
-build the website locally, type
-
-```bash
-hugo serve
-```
-
-in the CLI.
-
-After building the website with `hugo serve`, access it by entering
-`localhost:1313` in a browser address bar.
+3. Open the downloaded repository and run Hugo with `hugo serve`.
+   When complete, a local copy of the website is available by entering `localhost:1313` in a browser address bar.

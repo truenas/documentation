@@ -1,28 +1,27 @@
-# How to Contribute
+Content patches are welcome!
+See the repository README to learn more about content specifications and technologies that are in use.
 
-We'd love to accept your patches and contributions to this project. There are
-just a few small guidelines you need to follow.
+## Content Needs
 
-## Contributor License Agreement
+The content in this repository attempts to document the latest version of TrueNAS CORE, TrueNAS SCALE, and TrueCommand.
+It is very easy for content to become out of date or syntax and typographical errors to creep in.
+Contributions that resolve a discovered content issue are extremely helpful!
 
-Contributions to this project must be accompanied by a Contributor License
-Agreement. You (or your employer) retain the copyright to your contribution;
-this simply gives us permission to use and redistribute your contributions as
-part of the project. Head over to <https://cla.developers.google.com/> to see
-your current agreements on file or to sign a new one.
+## Upstream Changes
 
-You generally only need to submit a CLA once, so if you've already submitted one
-(even if it was for a different project), you probably don't need to do it
-again.
+Because of the variety of Open Source solutions that are powering this repository and website, most structural changes need to be proposed upstream in these projects:
 
-## Code reviews
+* https://github.com/commonmark
+* https://github.com/gohugoio/hugo
+* https://github.com/thegeeklab/hugo-geekdoc
 
-All submissions, including submissions by project members, require review. We
-use GitHub pull requests for this purpose. Consult
-[GitHub Help](https://help.github.com/articles/about-pull-requests/) for more
-information on using pull requests.
+## Reviews
 
-## Community Guidelines
+All submissions, including submissions by project members, require review.
+GitHub pull requests provide the means to see and review proposed changes.
+See the [GitHub Help](https://help.github.com/articles/about-pull-requests/) for more information.
 
-This project follows
-[Google's Open Source Community Guidelines](https://opensource.google.com/conduct/).
+## Issue Reports
+
+To report an issue with the website or content, go to https://jira.ixsystems.com/ and open a ticket in the [NAS](https://jira.ixsystems.com/projects/NAS/) project.
+New feature issues are added as suggestions for the community to vote and developers to review.
