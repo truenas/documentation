@@ -33,7 +33,7 @@ To streamline creating simple replication configurations, the replication wizard
 
 ## Creating a Remote Replication Task
 
-To create a new replication, go to **Tasks > Replication Tasks** and click **ADD**.
+To create a new replication, go to **Tasks > Replication Tasks** and click *ADD*.
 
 ![TasksReplicationTasksAdd](/images/CORE/12.0/TasksReplicationTasksAdd.png "Add new Replication Task")
 

@@ -11,7 +11,7 @@ Requirements:
 * Dataset snapshot task saved in **Tasks > Periodic Snapshot Tasks**.
 
 {{< expand "Process Summary" "v" >}}
-Go to **Tasks > Replication Tasks** and click **ADD**, then select **ADVANCED REPLICATION CREATION**.
+Go to **Tasks > Replication Tasks** and click *ADD*, then select *ADVANCED REPLICATION CREATION*.
 
 * General Options:
   * Name the task.
@@ -38,7 +38,7 @@ Go to **Tasks > Replication Tasks** and click **ADD**, then select **ADVANCED RE
 
 ## Creating an Advanced Replication Task
 
-To use the advanced editor to create a replication task, go to **Tasks > Replication Tasks**, click **ADD** to open the Wizard, then click **ADVANCED REPLICATION CREATION**.
+To use the advanced editor to create a replication task, go to **Tasks > Replication Tasks**, click *ADD* to open the Wizard, then click *ADVANCED REPLICATION CREATION*.
 
 ![TasksReplicationAddAdvanced](/images/CORE/12.0/TasksReplicationAddAdvanced.png "Advanced Replication Tasks")
 

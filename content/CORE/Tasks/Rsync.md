@@ -22,7 +22,7 @@ Additional requirements are listed further down for either *module* or *SSH* rsy
 
 ## Creating an Rsync Task
 
-Go to **Tasks > Rsync Tasks** and click **ADD**.
+Go to **Tasks > Rsync Tasks** and click *ADD*.
 There are two primary *Rsync Mode*s: *Module* and *SSH*.
 The requirements for each mode are different.
 Refer to the related tab for your desired *Rsync Mode*.
@@ -33,12 +33,12 @@ Refer to the related tab for your desired *Rsync Mode*.
 
 Before you create an rsync task on the *host* system, you must create a module on the *remote* system.
 When TrueNAS is the *remote* system, create a module by going to **Services** and clicking <i class="fa fa-pencil" aria-hidden="true" title="Pen"></i> for the rsync service.
-Click the **Rsync Module** tab, then click and **ADD**.
+Click the **Rsync Module** tab, then click *ADD*.
 Specific creation instructions are farther down, in the [Rsync Service section](#rsync-service-and-modules).
 
 ### Process
 
-Log in to the *host* system interface, go to **Tasks > Rsync Tasks**, and click **ADD**.
+Log in to the *host* system interface, go to **Tasks > Rsync Tasks**, and click *ADD*.
 
 ![TasksRsyncTasksAddModeModule](/images/CORE/12.0/TasksRsyncTasksAddModeModule.png "Rsync Task: Module Mode")
 
@@ -76,7 +76,7 @@ The *remote* system must have *SSH* enabled.
 To enable SSH in TrueNAS, go to **Services** and toggle **SSH**.
 
 The *host* system needs an established [SSH connection]() to the *remote* for the rsync task.
-To create the connection, go to **System > SSH Connections** and click **Add**.
+To create the connection, go to **System > SSH Connections** and click *Add*.
 Configure a *Semi-automatic* connection and set *Private Key* to *Generate New*.
 
 {{< expand "Can this be set up in a command line instead?" "v" >}}
@@ -122,14 +122,14 @@ Example: `ssh-keyscan -t rsa 192.168.2.6 >> /root/.ssh/known_hosts`.
 
 ### Process
 
-Go to **Tasks > Rsync Tasks** and click **ADD**.
+Go to **Tasks > Rsync Tasks** and click *ADD*.
 
 ![TasksRsyncTasksAddModeSSH](/images/CORE/12.0/TasksRsyncTasksAddModeSSH.png "Rsync Task: SSH Mode")
 
 Configure the SSH settings first by selecting *SSH* in the *Rsync Mode* dropdown and entering the *Port* number and *Remote Path*.
 
 Next, define the **Source** dataset to use for the rsync task and select a *User* account.
-The *User* must be identical to the [SSH Connection]() *Username*.
+The *User* must be identical to the [SSH Connection]({{< relref "SystemSSH.md" >}}) *Username*.
 
 Choose a direction for the rsync task, either *Push* or *Pull* and then define the task *Schedule*.
 If you need a custom schedule, select *Custom*.
@@ -153,7 +153,7 @@ Additional options for the *SSH Rsync Mode*:
 {{< /expand >}}
 
 Unsetting *Enabled* disables the task schedule without deleting the configuration.
-You can still run the rsync task by going to **Tasks > Rsync Tasks** and clicking <i class="fa fa-chevron-right"></i>, then **RUN NOW**.
+You can still run the rsync task by going to **Tasks > Rsync Tasks** and clicking <i class="fa fa-chevron-right"></i>, then *RUN NOW*.
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -174,12 +174,12 @@ There are two sections for rsync configuration: basic **Configure** options and 
 {{< include file="static/includes/ServicesRsyncConfigureFields.md.part" markdown="true" >}}
 
 Use the default settings unless a specific change is required.
-Don't forget to click **SAVE** after changing any settings.
+Don't forget to click *SAVE* after changing any settings.
 {{< /tab >}}
 {{< tab "Rsync Module" >}}
 
 All created modules are listed here.
-To create a new module, click **ADD**.
+To create a new module, click *ADD*.
 
 ![ServicesRsyncModuleAdd](/images/CORE/12.0/ServicesRsyncModuleAdd.png "Creating a rsync module")
 
@@ -189,7 +189,7 @@ To create a new module, click **ADD**.
 When a *Hosts Allow* list is defined, **only** the IPs and hostnames on the list are able to connect to the module.
 {{< /hint >}}
 
-To **EDIT** or **DELETE** a module, go to the **Rsync Modules** list and click <i class="fa fa-chevron-right"></i> for an entry.
+To *EDIT* or *DELETE* a module, go to the **Rsync Modules** list and click <i class="fa fa-chevron-right"></i> for an entry.
 
 {{< /tab >}}
 {{< /tabs >}}

@@ -29,7 +29,7 @@ To enable or disable testing, click *EDIT DISK(S)* and find the *Enable S.M.A.R.
 ## Manual S.M.A.R.T. Test
 
 To quickly test a disk for errors, go to **Storage > Disks** and select the disks to be tested.
-After selecting the desired disks, click **MANUAL TEST**.
+After selecting the desired disks, click *MANUAL TEST*.
 
 ![StorageDisksManualTest Options](/images/CORE/12.0/StorageDisksManualTestOptions.png "Manual Test Options")
 
@@ -68,7 +68,7 @@ From the **[Shell]({{< relref "Shell.md" >}})**, use `smartctl` and the name of 
 
 ## Automatic S.M.A.R.T. Tests
 
-To schedule recurring S.M.A.R.T. tests, go to **Tasks > S.M.A.R.T. Tests** and click **ADD**.
+To schedule recurring S.M.A.R.T. tests, go to **Tasks > S.M.A.R.T. Tests** and click *ADD*.
 
 ![TasksSMARTTestsAdd](/images/CORE/12.0/TasksSMARTTestsAdd.png "Add recurring S.M.A.R.T. test")
 
@@ -111,4 +111,4 @@ Configure the S.M.A.R.T. service by clicking <i class="fa fa-pencil" aria-hidden
 
 {{< include file="static/includes/TasksSMARTAddFields.md.part" markdown="true" >}}
 
-Don't forget to click **SAVE** after changing any settings.
+Don't forget to click *SAVE* after changing any settings.

@@ -10,7 +10,7 @@ weight: 10
 
 * Requirements: Storage pools and datasets created in **Storage > Pools**.
 
-* Go to **Tasks > Replication Tasks** and click **ADD**
+* Go to **Tasks > Replication Tasks** and click *ADD*
   * Choose Sources
     * Set the source location to the local system
     * Use the file browser or type paths to the sources
@@ -19,7 +19,7 @@ weight: 10
   	 * Select or manually define a path to the single destination location for the snapshot copies.
   * Set the Replication schedule to run once
   * Define how long the snapshots will be stored in the Destination
-  * Clicking **START REPLICATION** immediately snapshots the chosen Sources and copies those snapshots to the Destination
+  * Clicking *START REPLICATION* immediately snapshots the chosen Sources and copies those snapshots to the Destination
     * Dialog might ask to delete existing snapshots from the Destination. Be sure that all important important data is protected before deleting anything.
 * Clicking the task *State* shows the logs for that replication task.
 {{< /expand >}}
@@ -36,7 +36,7 @@ This is useful when no remote backup locations are available, or when a disk is 
 The only thing you'll need before creating a quick local replication are datasets or zvols in a storage pool to use as the replication source and (preferably) a second storage pool to use for storing replicated snapshots.
 You can set up the local replication entirely in the Replication Wizard.
 
-To open the Replication Wizard, go to **Tasks > Replication Tasks** and click **ADD**.
+To open the Replication Wizard, go to **Tasks > Replication Tasks** and click *ADD*.
 Set the source location to the local system and pick which datasets to snapshot.
 The wizard takes new snapshots of the sources when no existing source snapshots are found.  
 Enabling *Recursive* replicates all snapshots contained within the selected source dataset snapshots.
@@ -62,7 +62,7 @@ Choosing to keep snapshots indefinitely can require you to manually clean old sn
 
 ![TasksReplicationTasksAddLocalSourceLocalDestCustomLife](/images/CORE/12.0/TasksReplicationTasksAddLocalSourceLocalDestCustomLife.png "Custom Lifetime")
 
-Clicking **START REPLICATION** saves the new task and immediately attempts to replicate snapshots to the destination.
+Clicking *START REPLICATION* saves the new task and immediately attempts to replicate snapshots to the destination.
 When TrueNAS detects that the destination already has unrelated snapshots, it will ask to delete the unrelated snapshots and do a full copy of the new snapshots.
 This can delete important data, so be sure any existing snapshots can be deleted or are backed up in another location.
 
@@ -71,6 +71,6 @@ Clicking the task state shows the replication log with an option to download the
 
 ![TasksReplicationTasksLocalLogs](/images/CORE/12.0/TasksReplicationTasksLocalLogs.png "Local Replication Log")
 
-To confirm that snapshots have been replicated, go to **Storage > Snapshots** and verify the destination Dataset has new Snapshots with correct timestamps.
+To confirm that snapshots have been replicated, go to **Storage > Snapshots** and verify the destination dataset has new snapshots with correct timestamps.
 
 ![TasksReplicationTasksLocalSnapshots](/images/CORE/12.0/TasksReplicationTasksLocalSnapshots.png "Finding Replicated Snapshots")

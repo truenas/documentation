@@ -25,7 +25,7 @@ Any required datasets or zvols must exist before creating a snapshot task.
 
 ### Process
 
-Go to **Tasks > Periodic Snapshot Tasks** and click **ADD**.
+Go to **Tasks > Periodic Snapshot Tasks** and click *ADD*.
 
 ![TasksPeriodicSnapshotAdd](/images/CORE/12.0/TasksPeriodicSnapshotAdd.png "Creating a new Snapshot Task")
 
@@ -72,7 +72,7 @@ These snapshots are destroyed at the end of 3 years.
 
 {{< /expand >}}
 
-Click **SUBMIT** to save this task and add it to the list in **Tasks > Periodic Snapshot Tasks**.
+Click *SUBMIT* to save this task and add it to the list in **Tasks > Periodic Snapshot Tasks**.
 Any snapshots taken using this task are found in **Storage > Snapshots**.
 
 To check the log for a saved snapshot schedule, go to **Tasks > Periodic Snapshot Tasks** and click the task **State**.

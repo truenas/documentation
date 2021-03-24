@@ -4,7 +4,7 @@ weight: 20
 ---
 
 TrueNAS can schedule commands or scripts to run at system startup or shutdown.
-To create a new script, go to **Tasks > Init/Shutdown Scripts** and click **ADD**.
+To create a new script, go to **Tasks > Init/Shutdown Scripts** and click *ADD*.
 
 ![TasksInitShutdownScriptsAdd](/images/CORE/12.0/TasksInitShutdownScriptsAdd.png "Creating a new script")
 
@@ -28,4 +28,4 @@ All init/shutdown scripts are run with `sh`.
 {{< /hint >}}
 
 All saved Init/Shutdown tasks are shown in **Tasks > Init/Shutdown Scripts**.
-Click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> (Options) next to a task to **EDIT** or **DELETE** that task.
+Click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> (Options) next to a task to *EDIT* or *DELETE* that task.

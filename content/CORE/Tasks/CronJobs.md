@@ -10,7 +10,7 @@ This can be helpful for running repetitive tasks.
 
 ## Creating a Cron Job
 
-To create a cron job, go to **Tasks > Cron Jobs** and click **ADD**.
+To create a cron job, go to **Tasks > Cron Jobs** and click *ADD*.
 
 ![TasksCronJobsAdd](/images/CORE/12.0/TasksCronJobsAdd.png "Creating a new Cron Job")
 
@@ -45,6 +45,6 @@ Click the <i class="fa fa-chevron-right"></i> next to an entry to see details an
 
 ![TasksCronJobsOptions](/images/CORE/12.0/TasksCronJobsOptions.png "Options for an existing cron job")
 
-Clicking **RUN NOW** immediately starts the job *Command*, separately from any *Schedule*.
-**EDIT** changes any setting available during task creation.
-**DELETE** removes the cron job from TrueNAS. Once a cron job is deleted, the job configuration cannot be restored.
+Clicking *RUN NOW* immediately starts the job *Command*, separately from any *Schedule*.
+*EDIT* changes any setting available during task creation.
+*DELETE* removes the cron job from TrueNAS. Once a cron job is deleted, the job configuration cannot be restored.

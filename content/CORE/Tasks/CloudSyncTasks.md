@@ -14,7 +14,7 @@ Please investigate and fully understand that vendor’s pricing policies and ser
 iXsystems is not responsible for any charges incurred from the use of third party vendors with the Cloud Sync feature.
 {{< /hint >}}
 
-TrueNAS supprts major providers like Amazon S3, Google Cloud, and Microsoft Azure, along with a variety of other vendors.
+TrueNAS supports major providers like Amazon S3, Google Cloud, and Microsoft Azure, along with a variety of other vendors.
 To see the full list of supported vendors, go to **System > Cloud Credentials > Add** and open the *Provider* dropdown.
 
 ## Requirements
@@ -26,7 +26,7 @@ To see the full list of supported vendors, go to **System > Cloud Credentials > 
 
 ## Creating a Cloud Sync Task
 
-Go to **Tasks > Cloud Sync Tasks** and click **Add**.
+Go to **Tasks > Cloud Sync Tasks** and click *Add*.
 
 ![TasksCloudSyncAdd](/images/CORE/12.0/TasksCloudSyncAdd.png "Creating a Cloud Sync Task")
 
@@ -66,7 +66,7 @@ When a specific *Schedule* is required, choose *Custom* and use the **Advanced S
 {{< /expand >}}
 
 Unsetting *Enable* makes the configuration available without allowing the *Schedule* to run the task.
-To manually activate a saved task, go to **Tasks > Cloud Sync Tasks**, click <i class="fa fa-chevron-right"></i> to expand a task, and click **RUN NOW**.
+To manually activate a saved task, go to **Tasks > Cloud Sync Tasks**, click <i class="fa fa-chevron-right"></i> to expand a task, and click *RUN NOW*.
 
 The remaining options allow tuning the task to your specific requirements.
 
@@ -102,7 +102,7 @@ Local storage settings:
 
 ### Testing Settings
 
-Test the settings before saving by clicking **DRY RUN**.
+Test the settings before saving by clicking *DRY RUN*.
 TrueNAS connects to the Cloud Storage Provider and simulates a file transfer.
 No data is actually sent or received.
 A dialog shows the test status and allows downloading the task logs.
@@ -119,7 +119,7 @@ To view logs about a running or the most recent run of a task, click the task st
 
 ## Cloud Sync Restore
 
-To quickly create a new Cloud Sync that uses the same options but reverses the data transfer, expand (<i class="fa fa-chevron-right"></i>) an existing Cloud Sync and click **RESTORE**.
+To quickly create a new Cloud Sync that uses the same options but reverses the data transfer, expand (<i class="fa fa-chevron-right"></i>) an existing Cloud Sync and click *RESTORE*.
 
 ![TasksCloudSyncRestore](/images/CORE/12.0/TasksCloudSyncRestore.png "Cloud Sync Restore")
 
