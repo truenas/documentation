@@ -1,11 +1,11 @@
 #available icons: https://github.com/thegeeklab/hugo-geekdoc/tree/master/src/icons
 ---
 more:
-  - name: Legacy Documentation
-    ref: "https://www.ixsystems.com/library/"
+  - name: Documentation Archive
+    ref: "/archive/"
     external: true
-    icon: "bookmark"
+    icon: "gdoc_bookmark"
   - name: "View Source"
     ref: "https://github.com/freenas/documentation"
     external: true
-    icon: "github"
+    icon: "gdoc_github"

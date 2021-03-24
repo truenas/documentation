@@ -105,15 +105,103 @@ Installing a basic PlexMedia Plugin:
  ![PluginsPlexLogin](/images/CORE/12.0/PluginsPlexLogin.png "Plex Interface Login")
   
  ![PluginsPlexSuccess](/images/CORE/12.0/PluginsPlexSuccess.png "Plex Login Success")
-{{< /tab >}}
-{{< tab "Jails" >}}
 
-Placeholder
+{{< /tab >}}
+{{< tab "FreeBSD Jails" >}}
+
+## Installing a Jail
+
+1. Go to the **Jails** page and click *ADD*.
+   ![Jails](/images/CORE/12.0/Jails.png "Adding a new Jail")
+
+2. Enter a jail *Name*, select the *Release* version, and click *NEXT*.
+   ![JailsAddName](/images/CORE/12.0/JailsAddName.png "Jail Creation: Name and Release")
+
+3. To allow the jail access to the internet, set *DHCP Autoconfigure IPv4* and click *NEXT*.
+   Additional defaults are set when the DHCP option is set.
+   ![JailsAddNetworkingDHCP](/images/CORE/12.0/JailsAddNetworkingDHCP.png "Jail Creation: Default Internet Access")
+
+4. Review the **Jail Summary** and click *SUBMIT*.
+   ![JailsAddConfirm](/images/CORE/12.0/JailsAddConfirm.png "Jail Creation: Confirm Settings")
+
+## Accessing a Jail
+
+1. Go to **Jails** and click the **>** next to the newly created jail.
+   Click *START*.
+   ![JailsStart](/images/CORE/12.0/JailsStart.png "Starting a Jail")
+
+2. When the jail **State** changes to **up**, click *> SHELL* to see the jail command line.
+   ![JailsShell](/images/CORE/12.0/JailShell.png "Jail Shell")
 
 {{< /tab >}}
 {{< tab "Virtual Machines" >}}
 
-Placeholder
+## Installing a Virtual Machine
+
+Virtual Machines require uploading an Operating System <file>.iso</file> to TrueNAS.
+This example shows using an Ubuntu <file>.iso</file>:
+
+1. Go to **Virtual Machines** and click *ADD*.
+
+   ![VirtualMachines](/images/CORE/12.0/VirtualMachines.png "Adding a new VM")
+   
+2. Select a *Guest Operating System* and enter a *Name*.
+   For this example the *Guest Operating System* is set to *Linux*.
+   Click *NEXT*.
+
+   ![VirtualMachinesAddOperatingSystemLinux](/images/CORE/12.0/VirtualMachinesAddOperatingSystemLinux.png "VM Creation: Operating System")
+
+3. Now enter the physical resources to give the VM.
+   Larger numbers of *Virtual CPUs*, *Cores*, *Threads*, and *Memory* allow the VM to perform better, but reduces the performance of the TrueNAS system.
+   Click *NEXT*.
+
+   ![VirtualMachinesAddCPU](/images/CORE/12.0/VirtualMachinesAddCPU.png "Allocating resources to the VM")
+   
+4. Set *Create a new disk image* and select a *Zvol Location* for the VM storage.
+   Enter a usable storage *Size* (example shows 50 GiB) and click the *NEXT* button.
+
+   ![VirtualMachinesAddDisks](/images/CORE/12.0/VirtualMachinesAddDisks.png "Choosing a VM hard drive")
+
+5. **Network Interface** automatically detects the hardware and sets defaults that allow network access.
+   Make sure these settings are valid, then click *NEXT*.
+
+   ![VirtualMachinesAddNetworkInterface](/images/CORE/12.0/VirtualMachinesAddNetworkInterface.png "VM Network Settings")
+   
+6. Set *Upload an installer image file* to see additional options.
+   Select an *ISO save location* on the TrueNAS system.
+   Now click *Choose File* and browse to the OS installation <file>.iso</file>.
+   Click *UPLOAD* and wait for the process to finish (this can take some time).
+   Click *NEXT*.
+
+   ![VirtualMachinesAddInstallationMedia](/images/CORE/12.0/VirtualMachinesAddInstallationMedia.png "Uploading the ISO file")
+
+7. Confirm the VM configuration is correct and click *SUBMIT*.
+
+   ![VirtualMachinesAddConfirm](/images/CORE/12.0/VirtualMachinesAddConfirm.png "Confirm the VM configuration")
+
+## Accessing a Virtual Machine
+
+1. Go to **Virtual Machines** and click **>** next to the newly created VM.
+   Click *START*.
+
+   ![VirtualMachinesStart](/images/CORE/12.0/VirtualMachinesStart.png "Starting a VM")
+   
+2. When the VM **State** changes to **up**, click *VNC* to see the VM display.
+
+   ![VirtualMachinesOptions](/images/CORE/12.0/VirtualMachinesOptions.png "Launch VNC")
+
+   Because this example used an Ubuntu <file>.iso</file>, the Ubuntu installation screen is shown.
+
+   ![UbuntuInstall](/images/CORE/12.0/UbuntuInstall.png "Ubuntu Virtual Machine: Install")
+
+   From here, install the OS as normal.
+
+3. When the OS install completes, go back to **Virtual Machines**, toggle the *State*, and click *DEVICES*.
+
+   ![VirtualMachinesDevices](/images/CORE/12.0/VirtualMachinesDevices.png "VM Devices")
+
+   Find the **CDROM** entry and click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> > *Delete* to remove it.
+   This removes the installation <file>.iso</file> from the VM and allows it to boot into the full OS the next time the VM activates.
 
 {{< /tab >}}
 {{< /tabs >}}
