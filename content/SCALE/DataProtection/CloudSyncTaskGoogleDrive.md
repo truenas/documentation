@@ -89,4 +89,4 @@ Once the sync reports a status of *SUCCESS* you can verify this by opening the f
 
 ### Working with Google created content
 
-{{< include file="static/includes/GoogleDriveBadPermissions.md.part" markdown=true >}}
+{{< include file="static/includes/GoogleDriveBadPermissions.md.part" markdown="true" >}}
