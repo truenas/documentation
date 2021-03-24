@@ -60,35 +60,13 @@ It is recommended to keep the description less than three paragraphs and include
 
 ### Creating a Debug File
 
-The TrueNAS web interface provides an option to save debugging information to a text file.
+{{< include file="static/includes/CreateDebug.md.part" markdown="true" >}}
 
-Go to **System > Advanced** and click *SAVE DEBUG*.
-A dialog prompts that **This operation might take a long time. Proceed?**.
-You won't be able to click options in the web interface while the debug file is created.
-Click *PROCEED* to begin collecting system information into a debug file.
-Debug file creation progress is shown in a dialog.
-
-When the debug file is complete, a dialog opens to save it to a location on your local system (i.e. Downloads, Documents etc.) or the file is automatically added to the location you specified for downloaded files.
-
-Debugging information is collected by the `freenas-debug` command line utility.
-A copy of the information is saved to <file>/var/tmp/fndebug</file>.
 
 ### Suggest New Features
 
-Want to see a new feature added to TrueNAS?
-You can see and vote for community proposed features in the TrueNAS Jira project and make your own feature suggestions.
-To see the list of features that have been proposed by the community, go to the TrueNAS Jira project and [search for open suggestions](https://jira.ixsystems.com/issues/?jql=issuetype%20%3D%20Suggestion%20AND%20status%20%3D%20%22Gathering%20Interest%22).
-If you find a suggestion that you would also like to see implemented, open that ticket and click *Vote for this issue* in the *People* section of the ticket.
+{{< include file="static/includes/CreateJiraSuggestion.md.part" markdown="true" >}}
 
-![JiraSuggestionVote](/images/Contribute/JiraSuggestionVote.jpeg "Voting for a Suggestion")
-
-To suggest a new feature, go to https://jira.ixsystems.com/projects/NAS/, log in to your Jira account, and click *Create*.
-
-![JiraSuggestionCreate](/images/Contribute/JiraSuggestionCreate.png "Creating a new Suggestion")
-
-Enter a brief *Summary* and describe the new feature you'd like to see added to the software.
-After your feature suggestion is created, it will move to the *Gathering Interest* stage, where the rest of the community can review and vote for the feature.
-When enough interest has been shown, the TrueNAS Release Council will review the suggestion for feasibility and find where to add the feature in the software roadmap.
 {{< /tab >}}
 {{< tab "TrueNAS Enterprise" >}}
 In addition to all the TrueNAS CORE support options, TrueNAS Enterprise customers who purchase hardware from iXsystems can receive assistance from iXsystems if an issue occurs with the system.

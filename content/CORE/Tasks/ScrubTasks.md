@@ -10,9 +10,9 @@ Scrubs identify data integrity problems, detect silent data corruptions caused b
 
 ## Default Scrub Tasks
 
-By default, TrueNAS creates a scrub task when new pool is created.
+By default, TrueNAS creates a scrub task when you create a new pool.
 The default schedule for a scrub is to run every Sunday at 12:00 AM.
-To edit this default scrub, go to **Tasks > Scrub Tasks**, click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>, and *Edit*.
+To edit the default scrub, go to **Tasks > Scrub Tasks**, click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>, and *EDIT*.
 
 ## Creating New Scrub Tasks
 
