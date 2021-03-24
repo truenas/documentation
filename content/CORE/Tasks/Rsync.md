@@ -22,7 +22,7 @@ Additional requirements are listed further down for either *module* or *SSH* rsy
 
 ## Creating an Rsync Task
 
-Go to **Tasks > Rsync Tasks** and click *ADD*.
+Go to **Tasks > Rsync Tasks** and click **ADD**.
 There are two primary *Rsync Mode*s: *Module* and *SSH*.
 The requirements for each mode are different.
 Refer to the related tab for your desired *Rsync Mode*.
@@ -31,14 +31,14 @@ Refer to the related tab for your desired *Rsync Mode*.
 {{< tab "Module" >}}
 ### Module Requirements
 
-Before creating an rsync task on the *host* system, a module on the *remote* system must be created.
+Before you create an rsync task on the *host* system, you must create a module on the *remote* system.
 When TrueNAS is the *remote* system, create a module by going to **Services** and clicking <i class="fa fa-pencil" aria-hidden="true" title="Pen"></i> for the rsync service.
-Click the **Rsync Module** tab and *ADD*.
+Click the **Rsync Module** tab, then click and **ADD**.
 Specific creation instructions are farther down, in the [Rsync Service section](#rsync-service-and-modules).
 
 ### Process
 
-Log in to the *host* system interface, go to **Tasks > Rsync Tasks**, and click *ADD*.
+Log in to the *host* system interface, go to **Tasks > Rsync Tasks**, and click **ADD**.
 
 ![TasksRsyncTasksAddModeModule](/images/CORE/12.0/TasksRsyncTasksAddModeModule.png "Rsync Task: Module Mode")
 
@@ -46,7 +46,7 @@ Select the source dataset to use with the rsync task and a user account to run t
 Choose a direction for the rsync task.
 
 Select a schedule for the rsync task.
-When a custom schedule is required, select *Custom*.
+If you need a custom schedule, select *Custom*.
 {{< expand "Advanced Scheduler" "v" >}}
 {{< include file="static/includes/AdvancedScheduler.md.part" markdown="true" >}}
 {{< /expand >}}
@@ -76,14 +76,14 @@ The *remote* system must have *SSH* enabled.
 To enable SSH in TrueNAS, go to **Services** and toggle **SSH**.
 
 The *host* system needs an established [SSH connection]() to the *remote* for the rsync task.
-To create the connection, go to **System > SSH Connections** and click *Add*.
+To create the connection, go to **System > SSH Connections** and click **Add**.
 Configure a *Semi-automatic* connection and set *Private Key* to *Generate New*.
 
 {{< expand "Can this be set up in a command line instead?" "v" >}}
 To use a command line, go to the **Shell** on the *host* system.
 When the rsync task is managed by a TrueNAS account other than *root*, enter `su - {USERNAME}`, where *{USERNAME}* is the TrueNAS user account that runs the rsync task.
 Enter `ssh-keygen -t rsa` to create the key pair.
-When prompted for a password, press <kbd>Enter</kbd> without setting a password, as a password breaks the automated task.
+When prompted for a password, press <kbd>Enter</kbd> without setting a password (a password breaks the automated task).
 Here is an example of running the command:
 
 ```zsh
@@ -122,7 +122,7 @@ Example: `ssh-keyscan -t rsa 192.168.2.6 >> /root/.ssh/known_hosts`.
 
 ### Process
 
-Go to **Tasks > Rsync Tasks** and click *ADD*.
+Go to **Tasks > Rsync Tasks** and click **ADD**.
 
 ![TasksRsyncTasksAddModeSSH](/images/CORE/12.0/TasksRsyncTasksAddModeSSH.png "Rsync Task: SSH Mode")
 
@@ -132,7 +132,7 @@ Next, define the **Source** dataset to use for the rsync task and select a *User
 The *User* must be identical to the [SSH Connection]() *Username*.
 
 Choose a direction for the rsync task, either *Push* or *Pull* and then define the task *Schedule*.
-When a custom schedule is required, select *Custom*.
+If you need a custom schedule, select *Custom*.
 {{< expand "Advanced Scheduler" "v" >}}
 {{< include file="static/includes/AdvancedScheduler.md.part" markdown="true" >}}
 {{< /expand >}}
@@ -153,7 +153,7 @@ Additional options for the *SSH Rsync Mode*:
 {{< /expand >}}
 
 Unsetting *Enabled* disables the task schedule without deleting the configuration.
-The rsync task can still run by going to **Tasks > Rsync Tasks** and clicking <i class="fa fa-chevron-right"></i> and *Run Now*.
+You can still run the rsync task by going to **Tasks > Rsync Tasks** and clicking <i class="fa fa-chevron-right"></i>, then **RUN NOW**.
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -174,12 +174,12 @@ There are two sections for rsync configuration: basic **Configure** options and 
 {{< include file="static/includes/ServicesRsyncConfigureFields.md.part" markdown="true" >}}
 
 Use the default settings unless a specific change is required.
-Don't forget to click *SAVE* after changing any settings.
+Don't forget to click **SAVE** after changing any settings.
 {{< /tab >}}
 {{< tab "Rsync Module" >}}
 
 All created modules are listed here.
-To create a new module, click *ADD*.
+To create a new module, click **ADD**.
 
 ![ServicesRsyncModuleAdd](/images/CORE/12.0/ServicesRsyncModuleAdd.png "Creating a rsync module")
 
@@ -189,7 +189,7 @@ To create a new module, click *ADD*.
 When a *Hosts Allow* list is defined, **only** the IPs and hostnames on the list are able to connect to the module.
 {{< /hint >}}
 
-To *Edit* or *Delete* a module, go to the **Rsync Modules** list and click <i class="fa fa-chevron-right"></i> for an entry.
+To **EDIT** or **DELETE** a module, go to the **Rsync Modules** list and click <i class="fa fa-chevron-right"></i> for an entry.
 
 {{< /tab >}}
 {{< /tabs >}}
