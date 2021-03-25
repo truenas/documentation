@@ -18,10 +18,15 @@ When combined with our high-performance hardware and [**TrueCommand**]({{< relre
 
 **Ready to get started? Click your platform below to begin setting up your system.**
 
+{{< columns >}}
 ![](/favicon/TN-favicon-32x32.png) [**TrueNAS CORE and Enterprise**]({{< relref "/CORE/GettingStarted/Install.md" >}})<br>
-![](/favicon/TNScale-favicon-32x32.png) [**TrueNAS SCALE**]({{< relref "/SCALE/GettingStarted/_index.md" >}}) (Coming soon!)<br>
+
+![](/favicon/TNScale-favicon-32x32.png) [**TrueNAS SCALE**]({{< relref "/SCALE/GettingStarted/_index.md" >}}) (Coming soon!)
+<--->
 ![](/favicon/TC-favicon-32x32.png) [**TrueCommand**]({{< relref "/TrueCommand/InstallUpdate/Install.md" >}})<br>
+
 ![](/favicon/iXfavicon-32x32.png) [**TrueNAS Hardware**]({{< relref "/Hardware/_index.md" >}})
+{{< /columns >}}
 
 ## Using the Documentation Hub
 
