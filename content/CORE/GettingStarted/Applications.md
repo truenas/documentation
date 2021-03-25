@@ -1,16 +1,16 @@
 ---
-title: "Virtualization"
+title: "Applications"
 weight: 50
 ---
 
 {{< toc >}}
 
-With the rest of the system configured and data being shared over a network, the final step to consider for first time setup is installing any virtualized solutions.
-Virtualized means the applications or features added to TrueNAS are created in separate "Jails", "Containers", or "Environments" that are kept separate from the base TrueNAS operating system.
-If anything goes wrong or a security vulnerability is exploited in a virtualized environment, TrueNAS remains unaffected.
+With the rest of the system configured and data being shared over a network, the final step to consider for first time setup is installing any application solutions.
+Applications or features added to TrueNAS are created in separate "Plugins", Jails", or "Virtual Machines" that are kept separate from the base TrueNAS operating system.
+If anything goes wrong or a security vulnerability is exploited in one of these application environments, TrueNAS remains unaffected.
 These solutions safely expand TrueNAS' capabilities in a restricted, safeguarded way.
 
-The primary virtualization method is to install **Plugins**.
+The primary method to install applications is to use **Plugins**.
 These are pre-packaged applications that quickly install in a tailor-made environment.
 Some plugins are supported by iXsystems while others are provided and maintained by the open source community.
 
@@ -21,14 +21,14 @@ A **Virtual Machine** is a fully independent operating system installation.
 This reserves or splits the available hardware resources to create a different, full operating system experience.
 TrueNAS can install Windows or Unix-like operating systems in a Virtual Machine (VM), but regular system performance is reduced while virtual machines are running.
 
-Click one of the tabs below to see instructions on installing your preferred virtualization solution.
+Click one of the tabs below to see instructions on installing your preferred application solution.
 
 {{< expand "Network Hardware Offloading" "v" >}}
 Plugins that use a network interface need to Disable Hardware Offloading in **Network -> Interface**.
-Disabling hardware offloading can reduce general network performance for that interface, so it is recommended to use a secondary interface for virtualization solutions.
+Disabling hardware offloading can reduce general network performance for that interface, so it is recommended to use a secondary interface for application environments.
 {{< /expand >}}
 
-{{< tabs "Virtualization Solutions" >}}
+{{< tabs "Application Solutions" >}}
 {{< tab "Plugins" >}}
 This instruction demonstrates plugins by walking you through installing the community-favorite [Plex](https://www.plex.tv/) application.
 You will need an account with Plex to follow these instructions.
