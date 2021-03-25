@@ -55,3 +55,23 @@ The editing options for an interface are dependent on the *Type* of interface th
 
 ## Saving Changes ##
 
+After editing is complete click *SAVE*.  The option to *TEST CHANGES* or *REVERT CHANGES* is available.  The default time for testing any changes is 60 seconds, but can be changed to your desired setting.  
+
+![NetworkInterfaceTestChanges](/images/CORE/12.0/NetworkInterfaceTestChanges.png "Network Interface Test Changes")
+<br><br>
+
+After clicking *TEST CHANGES* confirm your choice and click *TEST CHANGES* again.
+
+![NetworkInterfaceTestChangesNotice](/images/CORE/12.0/NetworkInterfaceTestChangesNotice.png "Network Interface Test Changes Notice")
+<br><br>
+
+Users can either *SAVE CHANGES* or *REVERT CHANGES*.  A user will have the time they specified to make their choice.  If *SAVE CHANGES* is selected, a dialog box will ask the user to *CANCEL* or *SAVE* network interface changes.  Click *SAVE*.
+
+![NetworkInterfaceSaveChangesOption](/images/CORE/12.0/NetworkInterfaceSaveChangesOption.png "Network Interface Save Changes Option ")
+<br><br>
+
+A dialog box will show that Network interface changes have been made permanent.
+
+![NetworkInterfaceDialog](/images/CORE/12.0/NetworkInterfaceDialogBox.png "Network Interface Dialog Box ")
+<br><br>
+
