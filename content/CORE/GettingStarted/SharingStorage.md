@@ -99,10 +99,10 @@ tmoore@ChimaeraPrime:~$ sudo mount -t nfs 10.238.15.194:/mnt/pool1/testds nfstem
 
 From here, `cd` into the local directory and view or modify the files as needed.
 {{< /tab >}}
+{{< tab "Block Shares (iSCSI)">}}
+Block sharing is a complicated scenario that requires detailed configuration steps and knowledge of your network environment.
+A simple configuration is beyond the scope of this getting started guide, but detailed articles are available in in the [iSCSI Sharing topic]({{< relref "iSCSIShare.md" >}})
 {{< /tabs >}}
 
-With simple sharing done, TrueNAS is now installed, accessible, storing and backing up data, and sharing data over your network.
-If necessary, TrueNAS also provides more features with [Virtualization]({{< relref "Virtualization" >}}) solutions.
-
-For reference material about each web interface screen and advanced configuration or tuning procedures, see the remaining sections in the TrueNAS CORE and Enterprise section.
-These sections are organized in order of appearance in the TrueNAS interface, with additional topics for [3rd party solutions]({{< relref "/CORE/Solutions/_index.md" >}}), [API reference guide]({{< relref "/CORE/API/_index.md" >}}), official [notices]({{< relref "/CORE/Notices/_index.md" >}}) from iXsystems, Inc, and [community recommendations]({{< relref "/CORE/UserRecommends/_index.md" >}}).
+With simple sharing done, TrueNAS is now installed, accessible, and capable to receive or share data over your network.
+Now it's time to protect the TrueNAS storage by setting up [data backups]({{< relref "DataBackups.md" >}})

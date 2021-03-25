@@ -5,7 +5,7 @@ weight: 10
 
 {{< toc >}}
 
-Now that the <file>.iso</file> file is downloaded, you can start installing TrueNAS!
+Now that the <file>.iso</file> file is [downloaded](https://www.truenas.com/download-tn-core/), you can start installing TrueNAS!
 
 {{< expand "ISO Verification" "v" >}}
 The iXsystems Security Team cryptographically signs TrueNAS ISO files so that users can verify the integrity of their downloaded file.

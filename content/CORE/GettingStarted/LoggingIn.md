@@ -90,10 +90,6 @@ On a computer that can access the same network as the TrueNAS system, enter the 
 Only the `root` username is used to log in to the web interface.
 Enter the `root` account password that was created during installation.
 
-{{< hint info >}}
-TrueNAS systems purchased from iXsystems use a default password: *abcd1234*
-{{< /hint >}}
-
 {{< expand "Troubleshooting" "v" >}}
 If the user interface is not accessible by IP address from a browser, check these things:
 

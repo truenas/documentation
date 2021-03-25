@@ -1,5 +1,5 @@
 ---
-title: "Virtualization"
+title: "Applications"
 geekdocCollapseSection: true
 weight: 130
 ---
