@@ -53,7 +53,7 @@ Select the file transfer mode:
 
 + **Sync**: Keep files newly created or deleted the same.
 + **Copy**: Copy new files to the appropriate target (i.e., TrueNAS pulls files from Google Drive or pushes files to Google Drive).
-+ **Move**: Copies files to the target and then delete files from the source. Using Move, users can set a folder in Google Drive for archival, and move older documents to that folder from their Drive account. Those files would then automatically get backed up to their TrueNAS storage.
++ **Move**: Copy files to the target and then delete files from the source. Using Move, users can set a folder in Google Drive for archival, and move older documents to that folder from their Drive account. Those files would then automatically get backed up to their TrueNAS storage.
 
 ![TasksCloudSyncTask](/images/SCALE/TasksCloudSyncTask.png "TasksCloudSyncTask")
 
@@ -64,7 +64,7 @@ Once created, attempt a dry run of the task.
 
 ![CloudSyncDryRunLog](/images/CORE/12.0/CloudSyncDryRunLog.png "Cloud Sync Dry Run Log")
 
-If the Dry run succeeds, click **SUBMIT** to save the task.
+If the Dry Run succeeds, click **SUBMIT** to save the task.
 
 ![CloudSyncTaskNew](/images/CORE/12.0/CloudSyncTaskNew.png "Cloud Sync Task New")
 
