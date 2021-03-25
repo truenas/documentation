@@ -195,12 +195,56 @@
 /* End styling for fade-in on image download links */
 /* Begin print view styling */
 .td-content-print{
-	min-width: 10rem;
+  min-width: 10rem;
 	max-width: 80rem;
 	margin: 0rem 5rem 0rem 5rem;
 }
 .td-content-print img{
 	max-width: 800px;
+}
+.td-content-print table, th, td{
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 5px;
+}
+.td-content-print th{
+  background-color: #31beec;
+  color: white;
+}
+.td-content-print tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+.td-content-print input[type="checkbox" i] {
+  display: none;
+}
+.td-content-print input[type="radio" i] {
+  display: none;
+}
+.td-content-print .gdoc-tabs__label {
+  font-weight: bold;
+}
+.td-content-print .gdoc-expand {
+  border: 1px solid black;
+  padding: 5px;
+  background-color: #f2f2f2;
+}
+.td-content-print blockquote {
+    margin: 1rem 0;
+    padding: .5rem 1rem .5rem .75rem;
+    border-left: 4px solid #e9ecef;
+    border-radius: .15rem;
+}
+.td-content-print .gdoc-hint.warning {
+    border-left-color: #fd6;
+    background-color: rgba(255,221,102,.1);
+}
+.td-content-print .gdoc-hint.info {
+    border-left-color: #6bf;
+    background-color: rgba(102,187,255,.1);
+}
+.td-content-print .gdoc-hint.danger {
+    border-left-color: #f66;
+    background-color: rgba(255,102,102,.1);
 }
 /* End print view styling */
 /* Begin archive drop down styling */
