@@ -8,27 +8,27 @@ weight: 50
 ## Interface Editing ###
 
 {{< hint warning >}}
-Be careful when configuring the network interface that controls the TrueNAS® web interface or web connectivity can be lost.
+Be careful when configuring the network interface that controls the TrueNAS® web interface or you may lose web connectivity.
 {{< /hint >}}
 
-**Network > Interfaces** has all the physical [Network Interface Controllers (NICs)]({{< relref "/CORE/Network/Interfaces/_index.md" >}}) connected
+**Network > Interfaces** lists all the physical [Network Interface Controllers (NICs)]({{< relref "/CORE/Network/Interfaces/_index.md" >}}) connected
 to your TrueNAS® system. 
 
 ![NetworkInterfaceOverview](/images/CORE/12.0/NetworkInterfaceOverviewPage.png "Network Interface Overview")
 <br><br>
 
-Click **>** for the interface that you want to edit.  This will expand the view and provide a general description about the chosen interface. Click *EDIT*.
+To edit an interface, click **>** next to it to expand the view and provide a general description about the chosen interface, then click *EDIT*.
 
 {{< hint info >}}
-If you are a TrueNAS Enterprise customer, it is important to remember that an interface cannot be edited when High Availability (HA) has been enabled.  Go to
-**System > Failover** and check the *Disable Failover* box and click *SAVE*.
+If you are a TrueNAS Enterprise customer, remember that you cannot edit an interface if High Availability (HA) is enabled.  
+Go to **System > Failover** and check the *Disable Failover* box, then click *SAVE*.
 {{< /hint >}}
 
 ![NetworkInterfaceDescription](/images/CORE/12.0/NetworkInterfaceDescriptionView.png "Network Interface Description")
 <br><br>
 
 {{< hint note >}}
-The editing options for an interface are dependent on the *Type* of interface that is being modified.
+An interface's editing options are dependent on the *Type* of interface that you are modifying.
 {{< /hint >}}
 
 ### Interface Settings ###
@@ -55,17 +55,17 @@ The editing options for an interface are dependent on the *Type* of interface th
 
 ## Saving Changes ##
 
-After editing is complete click *SAVE*.  The option to *TEST CHANGES* or *REVERT CHANGES* is available.  The default time for testing any changes is 60 seconds, but can be changed to your desired setting.  
+After you're done editing, click *SAVE*. You have the option to *TEST CHANGES* or *REVERT CHANGES*. The default time for testing any changes is 60 seconds, but you can change it to your desired setting.  
 
 ![NetworkInterfaceTestChanges](/images/CORE/12.0/NetworkInterfaceTestChanges.png "Network Interface Test Changes")
 <br><br>
 
-After clicking *TEST CHANGES* confirm your choice and click *TEST CHANGES* again.
+After clicking *TEST CHANGES*, confirm your choice and click *TEST CHANGES* again.
 
 ![NetworkInterfaceTestChangesNotice](/images/CORE/12.0/NetworkInterfaceTestChangesNotice.png "Network Interface Test Changes Notice")
 <br><br>
 
-Users can either *SAVE CHANGES* or *REVERT CHANGES*.  A user will have the time they specified to make their choice.  If *SAVE CHANGES* is selected, a dialog box will ask the user to *CANCEL* or *SAVE* network interface changes.  Click *SAVE*.
+Users can either *SAVE CHANGES* or *REVERT CHANGES*. A user will have the time they specified to make their choice. If you select *SAVE CHANGES*, a dialog box will ask you to *CANCEL* or *SAVE* network interface changes. Click *SAVE*.
 
 ![NetworkInterfaceEditSaveChanges](/images/CORE/12.0/NetworkInterfaceEditSaveChanges.png "Network Interface Edit Save Changes ")
 <br><br>
@@ -73,7 +73,7 @@ Users can either *SAVE CHANGES* or *REVERT CHANGES*.  A user will have the time 
 ![NetworkInterfaceSaveChangesOption](/images/CORE/12.0/NetworkInterfaceSaveChangesOption.png "Network Interface Save Changes Option ")
 <br><br>
 
-A dialog box will show that Network interface changes have been made permanent.
+The system will display a dialog box to show that Network interface changes have been made permanent.
 
 ![NetworkInterfaceDialog](/images/CORE/12.0/NetworkInterfaceDialogBox.png "Network Interface Dialog Box ")
 <br><br>
