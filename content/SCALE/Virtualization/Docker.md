@@ -34,7 +34,7 @@ The PiHole Docker Hub page lists a set of ports that will need to be set.  These
 
 Click **Next** when all the ports are configured.
 
-The Host Path volume will be set to a dataset and directory paths which were created before attempting to deploy the container. 
+The Host Path volume will be set to a dataset and directory paths which were created before attempting to deploy the container. PiHole uses volumes store your data between container upgrades.  You will need to create these directories in a dataset on SCALE prior to installing this container.
 
 ![SCALE App Host Path Volumes](/images/SCALE/SCALEAppsPiHoleHostPathVolumes.png "SCALE App Host Path Volumes")
 
