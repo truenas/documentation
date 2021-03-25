@@ -26,7 +26,7 @@ When you are ready to create a container, open the **APPS** page and click **Lau
 ![AppsCatalog](/images/SCALE/AppsCatalog.png "Apps Catalog")
 
 
-Fill in the *Application Name* and *Image Repository* for the docker contained you'd like to set up.  This example shows installation of the [PiHole project[(https://hub.docker.com/r/pihole/pihole).
+Fill in the *Application Name* and *Image Repository* for the docker container you'd like to set up.  This example shows installation of the [PiHole project[(https://hub.docker.com/r/pihole/pihole).
 
 ![Image And Policies](/images/SCALE/SCALEAppsPiHoleImageAndPolicies.png "Image And Policies")
 
@@ -34,7 +34,7 @@ Click **Next** to move to the *Container Settings* section. In this example, PiH
 
 ![SCALE Apps Container Settings](/images/SCALE/SCALEAppsPiHoleContainerSettings.png "SCALE Apps Container Settings")
 
-Clicking **Next** will open the Networking section. If the container needs special networking configuration it should be set here.  Ports are configured in the next section.  Once completed, click Next to move forward in the coniguration process.
+Clicking **Next** will open the Networking section. If the container needs special networking configuration it should be set here.  Ports are configured in the next section.  Once completed, click Next to move forward in the configuration process.
 
 The PiHole Docker Hub page lists a set of ports that will need to be set.  These values may need to be adjusted depending on the configuration of your system.  TrueNAS SCALE requires all Node Ports to be above 9000. 
 
@@ -55,7 +55,7 @@ TrueNAS SCALE will deploy the container.
 
 ![SCALE App Deploying](/images/SCALE/SCALEAppsPiHoleDeploying.png "SCALE App Deploying")
 
-When the deployment is completed the continer will become active.  If the container does not autostart, click the **START** button.
+When the deployment is completed the container will become active.  If the container does not autostart, click the **START** button.
 
 ![SCALE App Active](/images/SCALE/AppsPiHoleActive.png "SCALE App Active")
 
