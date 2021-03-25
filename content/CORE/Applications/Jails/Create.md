@@ -43,7 +43,7 @@ Jails and downloaded FreeBSD release files are stored in a dataset named `iocage
 
 * At least *10* GiB of free space is recommended.
 * Cannot be located on a Share.
-* [iocage](http://iocage.readthedocs.io/en/latest/index.html) automatically uses the first pool that is not a root pool for the TrueNAS system.
+* [iocage](https://iocage.readthedocs.io/en/latest/index.html) automatically uses the first pool that is not a root pool for the TrueNAS system.
 * A <file>defaults.json</file> file contains default settings used when a new jail is created.
   The file is created automatically when not already present.
   When the file is present but corrupted, iocage shows a warning and uses default settings from memory.

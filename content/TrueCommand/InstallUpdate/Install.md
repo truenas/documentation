@@ -266,7 +266,7 @@ When Docker Desktop shows the container status as **RUNNING**, open a new browse
 
 {{< /tab >}}
 {{< tab "Virtual Machine" >}}
-TrueCommand has both VMDK and VHDX files for virtual machine installs available from http://pkg.truecommand.io/.
+TrueCommand has both VMDK and VHDX files for virtual machine installs available from https://pkg.truecommand.io/.
 Most virtual machine applications, including VMware and VirtualBox, support TrueCommand VMDK files.
 Hyper-V users should use a TrueCommand VHDX file.
 

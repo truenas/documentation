@@ -72,7 +72,7 @@ Copy any examples from the files in the [Git repo](https://github.com/ix-plugin-
   "pkgs": [                 //FreeBSD packages to be installed, one per line
     "sabnzbdplus",
   ],
-  "packagesite": "http://pkg.FreeBSD.org/FreeBSD:11:amd64/latest",          //The package site, latest, quarterly, or self-hosted
+  "packagesite": "https://pkg.FreeBSD.org/FreeBSD:11:amd64/latest",          //The package site, latest, quarterly, or self-hosted
   "fingerprints": {
     "iocage-plugins": [
       {

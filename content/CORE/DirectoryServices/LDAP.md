@@ -5,7 +5,7 @@ weight: 20
 
 {{< toc >}}
 
-TrueNAS includes an [Open LDAP](http://www.openldap.org/) client for accessing information from an LDAP server. An LDAP server provides directory services for finding network resources such as users and their associated permissions.
+TrueNAS includes an [Open LDAP](https://www.openldap.org/) client for accessing information from an LDAP server. An LDAP server provides directory services for finding network resources such as users and their associated permissions.
 
 {{< expand "Does LDAP work with SMB?" "v" >}}
 LDAP authentication for SMB shares is disabled unless the LDAP directory has been configured for and populated with Samba attributes.

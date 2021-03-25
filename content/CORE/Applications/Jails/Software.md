@@ -37,7 +37,7 @@ Prefix:         /usr/local
 Categories:     multimedia audio
 Licenses:       GPLv2
 Maintainer:     ports@FreeBSD.org
-WWW:            http://github.com/Daenyth/audiotag
+WWW:            https://github.com/Daenyth/audiotag
 Comment:        Command-line tool for mass tagging/renaming of audio files
 Options:
   DOCS:         on
@@ -51,7 +51,7 @@ Annotations:
 Flat size:      62.8KiB
 Description:   Audiotag is a command-line tool for mass tagging/renaming of audio files
                it supports the vorbis comment, id3 tags, and MP4 tags.
-WWW:           http://github.com/Daenyth/audiotag
+WWW:           https://github.com/Daenyth/audiotag
 ```
 
 To show what was installed by the package:

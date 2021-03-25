@@ -4,7 +4,7 @@ weight: 60
 ---
 
 [SNMP (Simple Network Management Protocol)](https://tools.ietf.org/html/rfc1157) monitors network-attached devices for conditions that warrant administrative attention.
-TrueNAS uses [Net-SNMP](http://net-snmp.sourceforge.net/) to provide SNMP.
+TrueNAS uses [Net-SNMP](https://net-snmp.sourceforge.net/) to provide SNMP.
 To configure SNMP, go to the **Services** page, find the **SNMP** entry, and click the <i class="fa fa-pencil" aria-hidden="true" title="Configure"></i>.
 
 ![ServicesSNMPOptions](/images/CORE/12.0/ServicesSNMPOptions.png "SNMP Service Options")
