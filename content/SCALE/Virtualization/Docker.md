@@ -41,8 +41,22 @@ The Host Path volume will be set to a dataset and directory paths which were cre
 Additional Volumes can be added to the container if needed.
 When all the settings have been entered, verify the Application and Container Name and click **Submit**. 
 
+![SCALEAppsPiHoleConfirmOptions](/images/SCALE/SCALEAppsPiHoleConfirmOptions.png "SCALE Apps PiHole Confirm Options")
+
+TrueNAS SCALE will deploy the container.
+
 ![SCALE App Deploying](/images/SCALE/SCALEAppsPiHoleDeploying.png "SCALE App Deploying")
 
-When the deployment has completed, click **Start** to launch the container.
+When the deployment is completed the continer will become active.  If the container does not autostart, click the **START** button.
+
+![SCALE App Active](/images/SCALE/AppsPiHoleActive.png "SCALE App Active")
+
+Clicking on the App card will reveal details.
+
+![SCALE App Status](/images/SCALE/AppsPiHoleStatus.png "SCALE App Status")
+
+With PiHole as our example we navigate to the IP of our TrueNAS system with the port and directory address `:9080/admin/`.
+
+![PiHoleRunning](/images/SCALE/AppsPiHoleRunning.png "PiHole Running")
 
 
