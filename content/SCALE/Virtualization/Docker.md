@@ -16,7 +16,10 @@ Kubernetes is a portable, extensible, open-source container-orchestration system
 {{< /expand >}}
 
 
-To Set up a Docker Image, first determine if you wish the container to use its own dataset.  Create a dataset before hand if desired. When you are reacy to create a container, click **Launch Docker Image**.
+To Set up a Docker Image, first determine if you wish the container to use its own dataset.  Create a dataset for before hand if desired for host volume paths. 
+Always read through the docker hub page for the container you are considering installing so that you know all of the settings that need to be configured.
+
+When you are ready to create a container, click **Launch Docker Image**.
 
 Fill in the *Application Name* and *Image Repository* for the docker contained you'd like to set up.  This example shows installation of the [PiHole project[(https://hub.docker.com/r/pihole/pihole).
 
