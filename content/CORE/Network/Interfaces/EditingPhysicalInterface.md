@@ -67,6 +67,9 @@ After clicking *TEST CHANGES* confirm your choice and click *TEST CHANGES* again
 
 Users can either *SAVE CHANGES* or *REVERT CHANGES*.  A user will have the time they specified to make their choice.  If *SAVE CHANGES* is selected, a dialog box will ask the user to *CANCEL* or *SAVE* network interface changes.  Click *SAVE*.
 
+![NetworkInterfaceEditSaveChanges](/images/CORE/12.0/NetworkInterfaceEditSaveChanges.png "Network Interface Edit Save Changes ")
+<br><br>
+
 ![NetworkInterfaceSaveChangesOption](/images/CORE/12.0/NetworkInterfaceSaveChangesOption.png "Network Interface Save Changes Option ")
 <br><br>
 
