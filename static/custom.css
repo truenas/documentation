@@ -194,6 +194,20 @@
 
 /* End styling for fade-in on image download links */
 /* Begin print view styling */
+.content-print {
+  min-width: 10rem;
+  max-width: 80rem;
+  margin: 0rem 5rem 0rem 5rem;  
+}
+.content-print img {
+  max-width: 800px;
+}
+.content-print .gdoc-tabs input[type="radio" i] {
+  display: none;
+}
+.content-print .gdoc-tabs label{
+  display: none;
+}
 .td-content-print{
   min-width: 10rem;
 	max-width: 80rem;
