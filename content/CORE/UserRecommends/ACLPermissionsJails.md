@@ -8,12 +8,12 @@ weight: 20
 
 Various Jail Plugins will require permissions to be set on datasets so that they can access them. 
 
-Unless otherwise modified, dataset will be owned by the user `roo` and group `wheel`.  
+Unless otherwise modified, dataset will be owned by the user `root` and group `wheel`.  
 Jailed processes like Plex run as their own user.
 As a result Plex will not be able to read or write to the any datasets and thus not be able to access media files stored in those datasets. 
 
 To create an ACL for dataset for an application you need to obtain the Application user ID. 
-Plex's ID is 972. 
+Plex's ID is `972`. 
 
 Other popular Plugin user IDs include:
 + Radarr = 352
