@@ -6,7 +6,7 @@ weight: 20
 ## Reporting General Settings
 
 TrueNAS has a built in reporting engine that gives helpful graphs and information about the system.
-TrueNAS is uses [Graphite](http://graphiteapp.org/ "Graphite Homepage") for metric gathering and visualizations.
+TrueNAS uses [Graphite](https://graphiteapp.org/ "Graphite Homepage") for metric gathering and visualizations.
 Some general settings can be found in **System > Reporting**.
 
 ![SystemReporting](/images/CORE/12.0/SystemReporting.png "Reporting Options")

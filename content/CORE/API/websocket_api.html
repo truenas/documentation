@@ -38011,7 +38011,7 @@ the output file.</p>
 <p>In the response, the first value <code>86</code> is the job id for <code>config.save</code>. This can be used to query
 the status of the job. The second value is a REST endpoint used to download the file.</p>
 <p>The download endpoint has a special format:</p>
-<p><code>http://system_ip/_download/{job_id}?auth_token={token}</code></p>
+<p><code>https://system_ip/_download/{job_id}?auth_token={token}</code></p>
 <p><code>job_id</code> and <code>token</code> are parameters being passed.</p>
 <p><code>core.download</code> takes responsibility for providing the download URI with the <code>job_id</code> and <code>token</code> values.</p>
 <p>Note:
@@ -38020,7 +38020,7 @@ the status of the job. The second value is a REST endpoint used to download the 
 3) The file can only be downloaded once.</p>
 <h4>Uploading a File</h4>
 <p>Files can be uploaded via HTTP POST request only. The upload endpoint is:</p>
-<p><code>http://system_ip/_upload</code></p>
+<p><code>https://system_ip/_upload</code></p>
 <p>It expects two values as form data, <code>data</code> and <code>file</code>.</p>
 <p><code>data</code> is JSON-encoded data. It must be the first parameter provided and in this format:</p>
 <pre class="codehilite"><code class="language-json">::: json
@@ -38033,7 +38033,7 @@ the status of the job. The second value is a REST endpoint used to download the 
 <p><code>file</code> is the URI of the file to download.</p>
 <p>This example uses <code>curl</code>,</p>
 <p>Request:</p>
-<pre class="codehilite"><code>curl -X POST -u root:freenas -H &quot;Content-Type: multipart/form-data&quot; -F 'data={&quot;method&quot;: &quot;config.upload&quot;, &quot;params&quot;: []}' -F &quot;file=@/home/user/Desktop/config&quot; http://system_ip/_upload/</code></pre>
+<pre class="codehilite"><code>curl -X POST -u root:freenas -H &quot;Content-Type: multipart/form-data&quot; -F 'data={&quot;method&quot;: &quot;config.upload&quot;, &quot;params&quot;: []}' -F &quot;file=@/home/user/Desktop/config&quot; https://system_ip/_upload/</code></pre>
 
 
 <p>Response:</p>

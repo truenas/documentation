@@ -62,7 +62,7 @@ While TrueNAS is designed for and ever-evolving towards increased user friendlin
 
 * [ZFS zvols]({{< relref "Zvols.md" >}}): datasets that represent block devices.
 
-* [ZIL](http://www.freenas.org/blog/zfs-zil-and-slog-demystified/) (or ZFS Intent Log): special vdev class. This is also sometimes referred to as a SLOG or Separate Intent Log.
+* [ZIL](https://www.freenas.org/blog/zfs-zil-and-slog-demystified/) (or ZFS Intent Log): special vdev class. This is also sometimes referred to as a SLOG or Separate Intent Log.
 
 * [Fusion Pool]({{< relref "FusionPool.md" >}}) (or metadata vdev): is a special class of vdev. This special vdev can store meta data such as file locations and allocation tables. Using a special vdev drastically speeds up random I/O and can cut the average number of spinning-disk I/Os needed to find and access a file by up to half.
 

@@ -208,6 +208,24 @@
 .content-print .gdoc-tabs label{
   display: none;
 }
+.content-print input[type="checkbox" i] {
+  display: none;
+}
+.content-print input[type="radio" i] {
+  display: none;
+}
+.content-print .gdoc-tabs__label {
+  font-weight: bold;
+}
+.content-print .gdoc-expand {
+  border: 1px solid black;
+  margin-bottom: 1rem;
+  padding: 5px;
+  background-color: #f2f2f2;
+}
+.content-print .gdoc-expand__head.flex.justify-between{
+font-weight: bold;
+}
 .td-content-print{
   min-width: 10rem;
 	max-width: 80rem;
@@ -241,6 +259,9 @@
   border: 1px solid black;
   padding: 5px;
   background-color: #f2f2f2;
+}
+.td-content-print .gdoc-expand__head.flex.justify-between{
+font-weight: bold;
 }
 .td-content-print blockquote {
     margin: 1rem 0;

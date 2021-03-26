@@ -58,7 +58,7 @@ TrueCommand records all administration actions in secure audit logs. This allows
 ## What Does it Cost?
 
 TrueCommand is free to use for up to 50 drives.
-Licenses to expand TrueCommand capabilities are purchased from the [iXsystems account portal](http://portal.ixsystems.com/).
+Licenses to expand TrueCommand capabilities are purchased from the [iXsystems account portal](https://portal.ixsystems.com/).
 Pricing is based on the number of drives and the desired level of support.
 
 ## Where do I get it?
