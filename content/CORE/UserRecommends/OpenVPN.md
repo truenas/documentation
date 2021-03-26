@@ -85,7 +85,7 @@ Give it a name (here VPN_CA) and select "Import CA" as type
 
 
 Copy/paste the certificate from the configuration file
-The certificat can be found between the tags `<ca>` and `</ca>` of the OpenVPN config file
+The certificate can be found between the tags `<ca>` and `</ca>` of the OpenVPN config file
 ![CertAuthorityImportCACertificate](/images/UserProvided/CertAuthorityImportCACertificate.png "Cert Authority Import CA Certificate")
 
 
@@ -127,6 +127,6 @@ Start the service (check automatically if needed)
 
 
 Test if the connection is working using curl ifconfig.me in a terminal for example (it should give you the IP from the VPN connection and not from your "local" connection, turn the OpenVPN client service on and off to see the difference)
-Logs of the OpenVPN client can be found in /var/log/messages and /var/log/daemon
+Logs of the OpenVPN client can be found in <file>/var/log/messages</file> and <file>/var/log/daemon</file>
 
 
