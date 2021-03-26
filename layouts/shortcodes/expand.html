@@ -1,0 +1,12 @@
+<!-- Rework Geekdoc Expand shortcode to use Material icon for better visibility -->
+{{ $id := substr (sha1 .Inner) 0 8 }}
+<div class="gdoc-expand">
+  <label class="gdoc-expand__head flex justify-between" for="{{ $id }}-{{ .Ordinal }}">
+    <span>{{ default "Expand" (.Get 0) }}</span>
+    <span><i class="material-icons" aria-hidden="true" title="Click to expand">expand</i></span>
+  </label>
+  <input id="{{ $id }}-{{ .Ordinal }}" type="checkbox" class="gdoc-expand__control hidden" />
+  <div class="gdoc-markdown--nested gdoc-expand__content">
+    {{ .Inner | $.Page.RenderString }}
+  </div>
+</div>
