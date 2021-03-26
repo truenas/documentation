@@ -34,7 +34,7 @@ Who: User
 User: 972 (Don't worry if it says "Could not find a username for this ID")
 ACL Type: Allow
 Permissions Type:
-Basic Permissions: Full Control
+Basic Permissions: Read
 Flags Type: Basic
 Flags: Inherit
 ```
