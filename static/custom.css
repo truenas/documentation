@@ -201,8 +201,8 @@
 }
 .content-print .gdoc_link{
   max-height: 1rem;
+  max-width: 1rem;
 }
-
 .content-print img {
   max-width: 800px;
 }
@@ -237,6 +237,10 @@ font-weight: bold;
 }
 .td-content-print img{
 	max-width: 800px;
+}
+.td-content-print .gdoc_link{
+  max-height: 1rem;
+  max-width: 1rem;
 }
 .td-content-print table, th, td{
   border: 1px solid black;
