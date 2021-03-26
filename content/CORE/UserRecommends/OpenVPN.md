@@ -85,7 +85,7 @@ Give it a name (here VPN_CA) and select "Import CA" as type
 
 
 Copy/paste the certificate from the configuration file
-The certificat can be found between the tags <ca> and </ca> of the OpenVPN config file
+The certificat can be found between the tags `<ca>` and `</ca>` of the OpenVPN config file
 ![CertAuthorityImportCACertificate](/images/UserProvided/CertAuthorityImportCACertificate.png "Cert Authority Import CA Certificate")
 
 
@@ -98,8 +98,8 @@ Add a certificate
 
 
 Give it a name (here VPN) and select "Import Certificate" as type
-Copy and paste the certificate, it can be found in the OpenVPN config file between the tags <cert> and </cert>
-Copy and paste the key between the tags <key> and </key> from the configuration file
+Copy and paste the certificate, it can be found in the OpenVPN config file between the tags `<cert>` and `</cert>`
+Copy and paste the key between the tags `<key>` and `</key>` from the configuration file
 ![CertificateAddDetails](/images/UserProvided/CertificateAddDetails.png "Certificate Add Details")
 
 
