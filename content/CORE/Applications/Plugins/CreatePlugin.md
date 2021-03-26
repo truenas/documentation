@@ -59,7 +59,7 @@ Copy any examples from the files in the [Git repo](https://github.com/ix-plugin-
 {{< tabs "Custom Plugin Files" >}}
 {{< tab "Artifact File" >}}
 <file>sabnzbd.json</file> (artifact file)
-```json
+```
 {
   "name": "sabnzbd",                //The name of the Plugin and resulting Jail
   "plugin_schema": "2",             //The Plugin schema version
