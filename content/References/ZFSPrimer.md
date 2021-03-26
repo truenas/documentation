@@ -7,7 +7,7 @@ weight: 70
 
 ZFS is an advanced, modern filesystem that was specifically designed to provide features not available in traditional UNIX filesystems.
 It was originally developed at Sun with the intent to open source the filesystem so that it could be ported to other operating systems.
-After the Oracle acquisition of Sun, some of the original ZFS engineers founded [OpenZFS](https://open-zfs.org/wiki/Main_Page) to provide continued, collaborative development of the open source version.
+After the Oracle acquisition of Sun, some of the original ZFS engineers founded [OpenZFS](https://openzfs.org/wiki/Main_Page) to provide continued, collaborative development of the open source version.
 
 ## Feature Overview
 
@@ -85,7 +85,7 @@ Synchronous writes are relatively rare with SMB, AFP, and iSCSI, and
 adding a SLOG to improve performance of these protocols only makes
 sense in special cases.
 The `zilstat` utility can be run from the TrueNAS **Shell** to determine if the system will benefit from a SLOG.
-See [this website](https://www.richardelling.com/Home/scripts-and-programs-1/zilstat) for usage information.
+See [this blog](http://www.richardelling.com/Home/scripts-and-programs-1/zilstat) for usage information.
 
 ZFS currently uses 16 GiB of space for SLOG.
 Larger SSDs can be installed, but the extra space will not be used.
