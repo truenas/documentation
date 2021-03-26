@@ -199,6 +199,10 @@
   max-width: 80rem;
   margin: 0rem 5rem 0rem 5rem;  
 }
+.content-print .gdoc_link{
+  max-height: 1rem;
+}
+
 .content-print img {
   max-width: 800px;
 }
