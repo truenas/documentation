@@ -1,5 +1,7 @@
 ---
 title: "Setting ACL Permissions for Jailed Applications"
+geekdocCollapseSection: true
+weight: 20
 ---
 
 
@@ -18,8 +20,9 @@ Other popular Plugin user IDs include:
 
 
 To create an ACL for dataset, open **Storage > Pools**.  
-Click the three dot icon <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; and select **Edit Permissions**.
-Click the **Add ACL Item** button to create a new entry.  The new entry will appear at the bottom of the list of existing ACL items.
+Click the three dot icon <mat-icon _ngcontent-swc-c471="" role="img" aria-haspopup="true" class="mat-icon notranslate mat-menu-trigger material-icons mat-icon-no-color" aria-hidden="true" style="cursor: pointer;" aria-expanded="true" aria-controls="mat-menu-panel-30">more_vert</mat-icon> and select **Edit Permissions**.
+Click the **Add ACL Item** button to create a new entry.  
+The new entry will appear at the bottom of the list of existing ACL items.
 
 Continuing with Plex as our example we would enter the following:
 
