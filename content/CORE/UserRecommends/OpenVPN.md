@@ -1,16 +1,17 @@
 ---
-title: "Configuring 3rd Party VPN service on TrueNAS"
+title: "Configuring a 3rd Party VPN service on TrueNAS"
 geekdocCollapseSection: true
 weight: 20
 ---
 
 TrueNAS includes the ability to run OpenVPN, this is a short tutorial to configure the OpenVPN client on TrueNAS 12.0.
 
+
 {{< toc >}}
 
 Prerequisite: An OpenVPN server running with a similar configuration:
 
-{{< expand "OpenVPN Configuration File" "v" >}}
+{{< expand "Example OpenVPN Configuration File" "v" >}}
 ```
 dev tun
 persist-tun
@@ -109,7 +110,7 @@ So now we have a CA and a certificate for the VPN connexion as below
 ## Configure OpenVPN Service
 
 Go to the **Services** page and find the **OpenVPN Client** entry.
-Click the <i class="fa fa-pencil" aria-hidden="true" title="Configure"></i> to configure the service.
+Click the <i class="fa fa-pencil" aria-hidden="true" title="Configure"></i>&nbsp; to configure the service.
 
 ![OpenVPNServiceEdit](/images/UserProvided/OpenVPNServiceEdit.png "OpenVPN Service Edit")
 
