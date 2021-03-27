@@ -8,5 +8,5 @@ weight: 20
     width="98%"
     max-width="99%"
     height="800"
-    src="../websocket_api.html">
+    src="/COREWebsocketAPIDocs.html">
 </iframe>
