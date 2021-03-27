@@ -37,7 +37,7 @@ code {
   margin: 0 auto;
   width: 100%;
   max-width: 90rem;
-  font-family: "Inter", sans-serif;
+  font-family: "din-2014", sans-serif;
   font-weight: bold;
 }
 .stickyelement {
@@ -52,7 +52,7 @@ code {
 	display: flex;
 	margin-left: 1rem;
 	max-width: 90rem;
-  font-family: "Inter", sans-serif;
+  font-family: "din-2014", sans-serif;
   font-weight: bold;
 }
 /* Remove stickybar for small screens and use default GeekDoc menu */
@@ -105,7 +105,6 @@ code {
 .truenas-menuitem:hover .truenas-menubutton {background-color: #ffffff;color:#31beec;}
 .truenas-downloadbutton {
 	background:#71bf44;
-  font-weight: bold;
 	padding: 5px 25px!important;
     margin: 10px;
     border-radius: 15px;
@@ -117,7 +116,7 @@ code {
 .gdoc-footer {
 	background: #0095d5;
 	max-width: 100%;
-  font-family: "Inter", sans-serif;
+  font-family: "Din 2014", sans-serif;
 }
 .gdoc-footer__link {
 	color: white;
