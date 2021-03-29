@@ -1,3 +1,10 @@
+/* Font Changes */
+p,h1,h2,h3,h4,th,td,a {
+  font-family: "Inter", sans-serif;
+}
+code {
+  font-family: "Mono";
+}
 /* Adjust overall site height */
 .wrapper {
   display: flex;
@@ -14,6 +21,10 @@
 	background: #0095d5;
 	text-align: right !important;
 	max-width: 100% !important;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  padding-right: 10%;
 }
 .iconsbar a {
 	color: #fff;
@@ -39,6 +50,8 @@
 	display: flex;
 	margin-left: 1rem;
 	max-width: 90rem;
+  font-family: "din-2014";
+  font-weight: 500;
 }
 /* Remove stickybar for small screens and use default GeekDoc menu */
 @media screen and (max-width:39rem) {
@@ -61,7 +74,15 @@
 	color: black;
 	padding: 13px;
 	border: none;
+  font-family: "din-2014";
+  font-weight: normal;
+  font-size: 19px;
+  color: #666666;
 }
+.truenas-menubutton:hover {
+  color: #31beec;
+}
+
 .truenas-menubutton,.truenas-menubutton a {color:#black;cursor:pointer;}
 .truenas-menulink {
 	background-color: #ffffff;
@@ -80,7 +101,10 @@
 	z-index: 10;
 }
 .truenas-menudropdown a {
-	color: white;
+	font-family: "din-2014";
+  font-weight: 500;
+  font-size: 19px;
+  color: white;
 	padding: 12px 16px;
 	text-decoration: none;
 	display: block;
@@ -89,18 +113,33 @@
 .truenas-menuitem:hover .truenas-menudropdown {display: block;}
 .truenas-menuitem:hover .truenas-menubutton {background-color: #ffffff;color:#31beec;}
 .truenas-downloadbutton {
-	background:#71bf44;
+	background:#a5ce3c;
 	padding: 5px 25px!important;
     margin: 10px;
     border-radius: 15px;
     border: none;
  }
-.truenas-downloadbutton a {color:#ffffff;}
+.truenas-downloadbutton:hover {
+  background-color: #a5ce3c;
+}
+.truenas-downloadbutton a {
+  font-family: "din-2014";
+  font-weight: normal;
+  font-size: 19px;
+  color:#ffffff;
+}
+.truenas-downloadbutton a:hover {
+  color: #00597f;
+  text-decoration: none;
+}
 /* End site header */
 /* Site footer */
 .gdoc-footer {
 	background: #0095d5;
 	max-width: 100%;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
 }
 .gdoc-footer__link {
 	color: white;
@@ -109,6 +148,7 @@
 	color: white;
 }
 /* End site footer */
+
 /* Styling images in the Topics Tab Boxes */
 .topic-image {
 	float:left;
@@ -197,7 +237,12 @@
 .content-print {
   min-width: 10rem;
   max-width: 80rem;
-  margin: 0rem 5rem 0rem 5rem;  
+  margin: 0rem 5rem 0rem 5rem;
+  font-family: "Inter", sans-serif;
+}
+.content-print .gdoc_link{
+  max-height: 1rem;
+  max-width: 1rem;
 }
 .content-print img {
   max-width: 800px;
@@ -230,9 +275,14 @@ font-weight: bold;
   min-width: 10rem;
 	max-width: 80rem;
 	margin: 0rem 5rem 0rem 5rem;
+  font-family: "Inter", sans-serif;
 }
 .td-content-print img{
 	max-width: 800px;
+}
+.td-content-print .gdoc_link{
+  max-height: 1rem;
+  max-width: 1rem;
 }
 .td-content-print table, th, td{
   border: 1px solid black;
@@ -259,6 +309,7 @@ font-weight: bold;
   border: 1px solid black;
   padding: 5px;
   background-color: #f2f2f2;
+  margin-bottom: 1rem;
 }
 .td-content-print .gdoc-expand__head.flex.justify-between{
 font-weight: bold;

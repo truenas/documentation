@@ -4,6 +4,7 @@ theme = ["hugo-geekdoc"]
 #disableKinds = ["home"]
 relativeURLs = true
 disablePathToLower = false
+googlefonts = "//fonts.googleapis.com/css?family=Inter|Open+Sans|Merriweather|Fira+Mono|Droid+Sans"
 
 [outputs]
 section = ["HTML","RSS","print"]
