@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>FreeNAS Websocket Documentation</title>
+    <title>TrueNAS Websocket Documentation</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- Optional theme -->
@@ -291,6 +291,10 @@
                 </li>
                 
                 <li>
+                  <a href="#enterprise">enterprise</a>
+                </li>
+                
+                <li>
                   <a href="#failover">failover</a>
                 </li>
                 
@@ -471,6 +475,10 @@
                 </li>
                 
                 <li>
+                  <a href="#replication.config">replication.config</a>
+                </li>
+                
+                <li>
                   <a href="#reporting">reporting</a>
                 </li>
                 
@@ -500,10 +508,6 @@
                 
                 <li>
                   <a href="#service">service</a>
-                </li>
-                
-                <li>
-                  <a href="#sharing">sharing</a>
                 </li>
                 
                 <li>
@@ -576,10 +580,6 @@
                 
                 <li>
                   <a href="#systemdataset">systemdataset</a>
-                </li>
-                
-                <li>
-                  <a href="#taskpath">taskpath</a>
                 </li>
                 
                 <li>
@@ -657,10 +657,10 @@
 
                <span id="websocket_protocol">
                <h2>Websocket Protocol</h2>
-<p>FreeNAS uses DDP: https://github.com/meteor/meteor/blob/devel/packages/ddp/DDP.md .</p>
+<p>TrueNAS uses DDP: https://github.com/meteor/meteor/blob/devel/packages/ddp/DDP.md .</p>
 <p>DDP (Distributed Data Protocol) is the stateful websocket protocol to communicate between the client and the server.</p>
 <p>Websocket endpoint: <code>/websocket</code></p>
-<p>e.g. <code>ws://freenas.domain/websocket</code></p>
+<p>e.g. <code>ws://truenas.domain/websocket</code></p>
 <h3>Example of connection</h3>
 <h4>Client connects to websocket endpoint and sends a <code>connect</code> message.</h4>
 <pre class="codehilite"><code class="language-javascript">{
@@ -6353,6 +6353,17 @@ is included in the bundle:</p>
 }</div>
                      </div>
                      
+                     <div style="float: left; margin-right: 10px;">
+                       <div style="background-color: #ddd; white-space: pre; font-family: Courier;">{
+ &#34;title&#34;: &#34;description&#34;,
+ &#34;default&#34;: null,
+ &#34;type&#34;: [
+  &#34;string&#34;,
+  &#34;null&#34;
+ ]
+}</div>
+                     </div>
+                     
                      <div style="clear: both;"></div>
                      </div>
                    </th></tr>
@@ -6363,6 +6374,7 @@ is included in the bundle:</p>
                      
                        <p>Will loop on a list of items for the given method, returning a list of
 dicts containing a result and error key.</p>
+<p><code>description</code> contains format string for job progress (e.g. "Deleting snapshot {0[dataset]}@{0[name]}")</p>
 <p>Result will be the message returned by the method being called,
 or a string of an error, in which case the error key will be the
 exception</p>
@@ -7809,6 +7821,29 @@ pool or the user pools.</p>
                  <tbody>
                    <tr><td>
                      
+                       <p>Query disks.</p>
+<p>The following extra options are supported:</p>
+<pre class="codehilite"><code> include_expired: true - will also include expired disks (default: false)
+ passwords: true - will not hide KMIP password for the disks (default: false)
+ pools: true - will join pool name for each disk (default: false)</code></pre>
+                     
+                   </td></tr>
+                   
+                   
+                 </tbody>
+               </table>
+              
+               <table class="table">
+                 <thead>
+                   <tr><th>
+                       disk.sed_dev_name
+                       
+                   </th></tr>
+                   
+                 </thead>
+                 <tbody>
+                   <tr><td>
+                     
                        -
                      
                    </td></tr>
@@ -8780,6 +8815,9 @@ DNS record.</p>
                </table>
               
              
+              <h2 id="enterprise">enterprise</h2>
+              
+             
               <h2 id="failover">failover</h2>
               
                <table class="table">
@@ -9282,8 +9320,9 @@ to be MASTER importing the pools.</p>
                    <tr><td>
                      
                        <p>Update failover state.</p>
-<p><code>disabled</code> when true indicates that HA is disabled.
-<code>master</code> sets the state of current node. Standby node will have the opposite value.</p>
+<p><code>disabled</code> When true indicates that HA will be disabled.
+<code>master</code>  Marks the particular node in the chassis as the master node.
+            The standby node will have the opposite value.</p>
 <p><code>timeout</code> is the time to WAIT until a failover occurs when a network
     event occurs on an interface that is marked critical for failover AND
     HA is enabled and working appropriately.</p>
@@ -10624,6 +10663,17 @@ connection.</p>
   &#34;sudo&#34;: {
    &#34;type&#34;: &#34;boolean&#34;
   },
+  &#34;sudo_nopasswd&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
+  },
+  &#34;sudo_commands&#34;: {
+   &#34;type&#34;: &#34;array&#34;,
+   &#34;items&#34;: [
+    {
+     &#34;type&#34;: &#34;string&#34;
+    }
+   ]
+  },
   &#34;allow_duplicate_gid&#34;: {
    &#34;type&#34;: &#34;boolean&#34;
   },
@@ -10917,6 +10967,17 @@ if the option <code>{'extra': {'search_dscache': True}}</code> is specified.</p>
   &#34;sudo&#34;: {
    &#34;type&#34;: &#34;boolean&#34;
   },
+  &#34;sudo_nopasswd&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
+  },
+  &#34;sudo_commands&#34;: {
+   &#34;type&#34;: &#34;array&#34;,
+   &#34;items&#34;: [
+    {
+     &#34;type&#34;: &#34;string&#34;
+    }
+   ]
+  },
   &#34;allow_duplicate_gid&#34;: {
    &#34;type&#34;: &#34;boolean&#34;
   },
@@ -11070,7 +11131,12 @@ This should be performed after finalizing idmap changes.</p>
    &#34;type&#34;: &#34;object&#34;,
    &#34;properties&#34;: {
     &#34;schema_mode&#34;: {
-     &#34;type&#34;: &#34;string&#34;
+     &#34;type&#34;: &#34;string&#34;,
+     &#34;enum&#34;: [
+      &#34;RFC2307&#34;,
+      &#34;SFU&#34;,
+      &#34;SFU20&#34;
+     ]
     },
     &#34;unix_primary_group&#34;: {
      &#34;type&#34;: &#34;boolean&#34;
@@ -11119,7 +11185,7 @@ This should be performed after finalizing idmap changes.</p>
      &#34;type&#34;: &#34;string&#34;
     },
     &#34;ldap_realm&#34;: {
-     &#34;type&#34;: &#34;string&#34;
+     &#34;type&#34;: &#34;boolean&#34;
     },
     &#34;bind_path_user&#34;: {
      &#34;type&#34;: &#34;string&#34;
@@ -11128,7 +11194,7 @@ This should be performed after finalizing idmap changes.</p>
      &#34;type&#34;: &#34;string&#34;
     },
     &#34;user_cn&#34;: {
-     &#34;type&#34;: &#34;string&#34;
+     &#34;type&#34;: &#34;boolean&#34;
     },
     &#34;cn_realm&#34;: {
      &#34;type&#34;: &#34;string&#34;
@@ -11210,6 +11276,7 @@ while keeping all RFC 2307 records in one place. This parameter is optional, the
 the AD server in the current domain to query LDAP records.</p>
 <p><code>ldap_url</code> when using a stand-alone LDAP server, this parameter specifies the LDAP URL for accessing the LDAP server.</p>
 <p><code>ldap_user_dn</code> defines the user DN to be used for authentication.</p>
+<p><code>ldap_user_dn_password</code> is the password to be used for LDAP authentication.</p>
 <p><code>realm</code> defines the realm to use in the user and group names. This is only required when using cn_realm together with
  a stand-alone ldap server.</p>
 <p><code>RID</code> backend options:
@@ -11459,7 +11526,12 @@ the AD server in the current domain to query LDAP records.</p>
    &#34;type&#34;: &#34;object&#34;,
    &#34;properties&#34;: {
     &#34;schema_mode&#34;: {
-     &#34;type&#34;: &#34;string&#34;
+     &#34;type&#34;: &#34;string&#34;,
+     &#34;enum&#34;: [
+      &#34;RFC2307&#34;,
+      &#34;SFU&#34;,
+      &#34;SFU20&#34;
+     ]
     },
     &#34;unix_primary_group&#34;: {
      &#34;type&#34;: &#34;boolean&#34;
@@ -11508,7 +11580,7 @@ the AD server in the current domain to query LDAP records.</p>
      &#34;type&#34;: &#34;string&#34;
     },
     &#34;ldap_realm&#34;: {
-     &#34;type&#34;: &#34;string&#34;
+     &#34;type&#34;: &#34;boolean&#34;
     },
     &#34;bind_path_user&#34;: {
      &#34;type&#34;: &#34;string&#34;
@@ -11517,7 +11589,7 @@ the AD server in the current domain to query LDAP records.</p>
      &#34;type&#34;: &#34;string&#34;
     },
     &#34;user_cn&#34;: {
-     &#34;type&#34;: &#34;string&#34;
+     &#34;type&#34;: &#34;boolean&#34;
     },
     &#34;cn_realm&#34;: {
      &#34;type&#34;: &#34;string&#34;
@@ -12135,10 +12207,16 @@ within this period of time the changes will get reverted.</p>
    &#34;type&#34;: &#34;boolean&#34;
   },
   &#34;failover_group&#34;: {
-   &#34;type&#34;: &#34;integer&#34;
+   &#34;type&#34;: [
+    &#34;integer&#34;,
+    &#34;null&#34;
+   ]
   },
   &#34;failover_vhid&#34;: {
-   &#34;type&#34;: &#34;integer&#34;
+   &#34;type&#34;: [
+    &#34;integer&#34;,
+    &#34;null&#34;
+   ]
   },
   &#34;failover_aliases&#34;: {
    &#34;type&#34;: &#34;array&#34;,
@@ -12258,6 +12336,25 @@ vlan_tag and vlan_pcp.</p>
                    <tr><td>
                      
                        <p>Delete Interface of <code>id</code>.</p>
+                     
+                   </td></tr>
+                   
+                   
+                 </tbody>
+               </table>
+              
+               <table class="table">
+                 <thead>
+                   <tr><th>
+                       interface.enable_capabilities_individually
+                       
+                   </th></tr>
+                   
+                 </thead>
+                 <tbody>
+                   <tr><td>
+                     
+                       -
                      
                    </td></tr>
                    
@@ -12592,10 +12689,16 @@ LAG interface.</p>
    &#34;type&#34;: &#34;boolean&#34;
   },
   &#34;failover_group&#34;: {
-   &#34;type&#34;: &#34;integer&#34;
+   &#34;type&#34;: [
+    &#34;integer&#34;,
+    &#34;null&#34;
+   ]
   },
   &#34;failover_vhid&#34;: {
-   &#34;type&#34;: &#34;integer&#34;
+   &#34;type&#34;: [
+    &#34;integer&#34;,
+    &#34;null&#34;
+   ]
   },
   &#34;failover_aliases&#34;: {
    &#34;type&#34;: &#34;array&#34;,
@@ -14783,7 +14886,10 @@ null.</p>
    &#34;type&#34;: &#34;integer&#34;
   },
   &#34;lunid&#34;: {
-   &#34;type&#34;: &#34;integer&#34;
+   &#34;type&#34;: [
+    &#34;integer&#34;,
+    &#34;null&#34;
+   ]
   },
   &#34;extent&#34;: {
    &#34;type&#34;: &#34;integer&#34;
@@ -16161,6 +16267,25 @@ exception is raised.</p>
                    <tr><td>
                      
                        <p>Updates specified jail to latest patch level.</p>
+                     
+                   </td></tr>
+                   
+                   
+                 </tbody>
+               </table>
+              
+               <table class="table">
+                 <thead>
+                   <tr><th>
+                       jail.vnet_default_interface_choices
+                       
+                   </th></tr>
+                   
+                 </thead>
+                 <tbody>
+                   <tr><td>
+                     
+                       <p>Returns a dictionary of interface choices which can be used with <code>vnet_default_interface</code> property.</p>
                      
                    </td></tr>
                    
@@ -18008,13 +18133,7 @@ LDAP server.</p>
     &#34;client_secret&#34;: {
      &#34;type&#34;: &#34;string&#34;
     },
-    &#34;access_token&#34;: {
-     &#34;type&#34;: &#34;string&#34;
-    },
     &#34;refresh_token&#34;: {
-     &#34;type&#34;: &#34;string&#34;
-    },
-    &#34;token_uri&#34;: {
      &#34;type&#34;: &#34;string&#34;
     }
    },
@@ -18123,13 +18242,7 @@ via HTTP upload:
     &#34;client_secret&#34;: {
      &#34;type&#34;: &#34;string&#34;
     },
-    &#34;access_token&#34;: {
-     &#34;type&#34;: &#34;string&#34;
-    },
     &#34;refresh_token&#34;: {
-     &#34;type&#34;: &#34;string&#34;
-    },
-    &#34;token_uri&#34;: {
      &#34;type&#34;: &#34;string&#34;
     }
    },
@@ -18488,6 +18601,53 @@ Discovery support.</p>
                <table class="table">
                  <thead>
                    <tr><th>
+                       nfs.add_principal
+                       
+                   </th></tr>
+                   
+                   <tr><th>
+                     Arguments:
+                     <div>
+                     
+                     <div style="float: left; margin-right: 10px;">
+                       <div style="background-color: #ddd; white-space: pre; font-family: Courier;">{
+ &#34;type&#34;: &#34;object&#34;,
+ &#34;properties&#34;: {
+  &#34;username&#34;: {
+   &#34;type&#34;: &#34;string&#34;
+  },
+  &#34;password&#34;: {
+   &#34;type&#34;: &#34;string&#34;
+  }
+ },
+ &#34;additionalProperties&#34;: false,
+ &#34;title&#34;: &#34;add_nfs_principal_creds&#34;,
+ &#34;default&#34;: {}
+}</div>
+                     </div>
+                     
+                     <div style="clear: both;"></div>
+                     </div>
+                   </th></tr>
+                   
+                 </thead>
+                 <tbody>
+                   <tr><td>
+                     
+                       <p>Use user-provided admin credentials to kinit, add NFS SPN
+entries to the remote kerberos server, and then append the new entries
+to our system keytab.</p>
+<p>Currently this is only supported in AD environments.</p>
+                     
+                   </td></tr>
+                   
+                   
+                 </tbody>
+               </table>
+              
+               <table class="table">
+                 <thead>
+                   <tr><th>
                        nfs.bindip_choices
                        
                    </th></tr>
@@ -18830,10 +18990,16 @@ value is changed to False.</p>
    &#34;type&#34;: &#34;boolean&#34;
   },
   &#34;client_certificate&#34;: {
-   &#34;type&#34;: &#34;integer&#34;
+   &#34;type&#34;: [
+    &#34;integer&#34;,
+    &#34;null&#34;
+   ]
   },
   &#34;root_ca&#34;: {
-   &#34;type&#34;: &#34;integer&#34;
+   &#34;type&#34;: [
+    &#34;integer&#34;,
+    &#34;null&#34;
+   ]
   },
   &#34;port&#34;: {
    &#34;type&#34;: &#34;integer&#34;
@@ -18874,7 +19040,11 @@ value is changed to False.</p>
    &#34;type&#34;: &#34;string&#34;,
    &#34;enum&#34;: [
     &#34;UDP&#34;,
-    &#34;TCP&#34;
+    &#34;UDP4&#34;,
+    &#34;UDP6&#34;,
+    &#34;TCP&#34;,
+    &#34;TCP4&#34;,
+    &#34;TCP6&#34;
    ]
   },
   &#34;remote&#34;: {
@@ -19060,13 +19230,19 @@ user to use the file without making any edits to connect to OpenVPN server.</p>
    &#34;type&#34;: &#34;integer&#34;
   },
   &#34;server_certificate&#34;: {
-   &#34;type&#34;: &#34;integer&#34;
+   &#34;type&#34;: [
+    &#34;integer&#34;,
+    &#34;null&#34;
+   ]
   },
   &#34;port&#34;: {
    &#34;type&#34;: &#34;integer&#34;
   },
   &#34;root_ca&#34;: {
-   &#34;type&#34;: &#34;integer&#34;
+   &#34;type&#34;: [
+    &#34;integer&#34;,
+    &#34;null&#34;
+   ]
   },
   &#34;server&#34;: {
    &#34;type&#34;: &#34;string&#34;
@@ -19107,7 +19283,11 @@ user to use the file without making any edits to connect to OpenVPN server.</p>
    &#34;type&#34;: &#34;string&#34;,
    &#34;enum&#34;: [
     &#34;UDP&#34;,
-    &#34;TCP&#34;
+    &#34;UDP4&#34;,
+    &#34;UDP6&#34;,
+    &#34;TCP&#34;,
+    &#34;TCP4&#34;,
+    &#34;TCP6&#34;
    ]
   },
   &#34;tls_crypt_auth&#34;: {
@@ -19597,6 +19777,56 @@ use the current system version. Example: 11.3-RELEASE.</p>
                    <tr><td>
                      
                        <p>Update plugin <code>id</code>.</p>
+                     
+                   </td></tr>
+                   
+                   
+                 </tbody>
+               </table>
+              
+               <table class="table">
+                 <thead>
+                   <tr><th>
+                       plugin.update_plugin
+                       
+                            <div class="tool_tip" style="margin-left: 20px;">Job
+                                <span class="tooltip_text">
+                                    This endpoint is a Job. Please refer to the <a href="#jobs">Jobs</a> section for details.
+                                    
+                                    
+                                </span>
+                            </div>
+                       
+                   </th></tr>
+                   
+                   <tr><th>
+                     Arguments:
+                     <div>
+                     
+                     <div style="float: left; margin-right: 10px;">
+                       <div style="background-color: #ddd; white-space: pre; font-family: Courier;">{
+ &#34;title&#34;: &#34;jail&#34;,
+ &#34;type&#34;: &#34;string&#34;
+}</div>
+                     </div>
+                     
+                     <div style="float: left; margin-right: 10px;">
+                       <div style="background-color: #ddd; white-space: pre; font-family: Courier;">{
+ &#34;type&#34;: &#34;boolean&#34;,
+ &#34;title&#34;: &#34;update_jail&#34;,
+ &#34;default&#34;: true
+}</div>
+                     </div>
+                     
+                     <div style="clear: both;"></div>
+                     </div>
+                   </th></tr>
+                   
+                 </thead>
+                 <tbody>
+                   <tr><td>
+                     
+                       <p>Updates specified plugin to latest available plugin version and optionally update plugin to latest patch level.</p>
                      
                    </td></tr>
                    
@@ -21531,6 +21761,13 @@ on volume unlock.</p>
     }
    },
    &#34;additionalProperties&#34;: false
+  },
+  &#34;autotrim&#34;: {
+   &#34;type&#34;: &#34;string&#34;,
+   &#34;enum&#34;: [
+    &#34;ON&#34;,
+    &#34;OFF&#34;
+   ]
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -21742,6 +21979,25 @@ share, asking for confirmation.</p>
                <table class="table">
                  <thead>
                    <tr><th>
+                       pool.dataset.compression_choices
+                       
+                   </th></tr>
+                   
+                 </thead>
+                 <tbody>
+                   <tr><td>
+                     
+                       <p>Retrieve compression algorithm supported by ZFS.</p>
+                     
+                   </td></tr>
+                   
+                   
+                 </tbody>
+               </table>
+              
+               <table class="table">
+                 <thead>
+                   <tr><th>
                        pool.dataset.create
                        
                    </th></tr>
@@ -21806,8 +22062,50 @@ share, asking for confirmation.</p>
     &#34;GZIP&#34;,
     &#34;GZIP-1&#34;,
     &#34;GZIP-9&#34;,
+    &#34;ZSTD&#34;,
+    &#34;ZSTD-FAST&#34;,
     &#34;ZLE&#34;,
-    &#34;LZJB&#34;
+    &#34;LZJB&#34;,
+    &#34;ZSTD-1&#34;,
+    &#34;ZSTD-2&#34;,
+    &#34;ZSTD-3&#34;,
+    &#34;ZSTD-4&#34;,
+    &#34;ZSTD-5&#34;,
+    &#34;ZSTD-6&#34;,
+    &#34;ZSTD-7&#34;,
+    &#34;ZSTD-8&#34;,
+    &#34;ZSTD-9&#34;,
+    &#34;ZSTD-10&#34;,
+    &#34;ZSTD-11&#34;,
+    &#34;ZSTD-12&#34;,
+    &#34;ZSTD-13&#34;,
+    &#34;ZSTD-14&#34;,
+    &#34;ZSTD-15&#34;,
+    &#34;ZSTD-16&#34;,
+    &#34;ZSTD-17&#34;,
+    &#34;ZSTD-18&#34;,
+    &#34;ZSTD-19&#34;,
+    &#34;ZSTD-FAST-1&#34;,
+    &#34;ZSTD-FAST-2&#34;,
+    &#34;ZSTD-FAST-3&#34;,
+    &#34;ZSTD-FAST-4&#34;,
+    &#34;ZSTD-FAST-5&#34;,
+    &#34;ZSTD-FAST-6&#34;,
+    &#34;ZSTD-FAST-7&#34;,
+    &#34;ZSTD-FAST-8&#34;,
+    &#34;ZSTD-FAST-9&#34;,
+    &#34;ZSTD-FAST-10&#34;,
+    &#34;ZSTD-FAST-20&#34;,
+    &#34;ZSTD-FAST-30&#34;,
+    &#34;ZSTD-FAST-40&#34;,
+    &#34;ZSTD-FAST-50&#34;,
+    &#34;ZSTD-FAST-60&#34;,
+    &#34;ZSTD-FAST-70&#34;,
+    &#34;ZSTD-FAST-80&#34;,
+    &#34;ZSTD-FAST-90&#34;,
+    &#34;ZSTD-FAST-100&#34;,
+    &#34;ZSTD-FAST-500&#34;,
+    &#34;ZSTD-FAST-1000&#34;
    ]
   },
   &#34;atime&#34;: {
@@ -22219,6 +22517,61 @@ the key and sets a boolean value for the dataset.</p>
         "unlock_successful": false
     }
 ]</p>
+                     
+                   </td></tr>
+                   
+                   
+                 </tbody>
+               </table>
+              
+               <table class="table">
+                 <thead>
+                   <tr><th>
+                       pool.dataset.export_key
+                       
+                            <div class="tool_tip" style="margin-left: 20px;">Job
+                                <span class="tooltip_text">
+                                    This endpoint is a Job. Please refer to the <a href="#jobs">Jobs</a> section for details.
+                                    
+                                    <br>
+                                    A file can be downloaded from this endpoint. Please refer to the <a href="#jobs">Jobs</a> section to download a file.
+                                    
+                                    
+                                </span>
+                            </div>
+                       
+                   </th></tr>
+                   
+                   <tr><th>
+                     Arguments:
+                     <div>
+                     
+                     <div style="float: left; margin-right: 10px;">
+                       <div style="background-color: #ddd; white-space: pre; font-family: Courier;">{
+ &#34;title&#34;: &#34;id&#34;,
+ &#34;type&#34;: &#34;string&#34;
+}</div>
+                     </div>
+                     
+                     <div style="float: left; margin-right: 10px;">
+                       <div style="background-color: #ddd; white-space: pre; font-family: Courier;">{
+ &#34;type&#34;: &#34;boolean&#34;,
+ &#34;title&#34;: &#34;download&#34;,
+ &#34;default&#34;: false
+}</div>
+                     </div>
+                     
+                     <div style="clear: both;"></div>
+                     </div>
+                   </th></tr>
+                   
+                 </thead>
+                 <tbody>
+                   <tr><td>
+                     
+                       <p>Export own encryption key for dataset <code>id</code>. If <code>download</code> is <code>true</code>, key will be downloaded as a text file,
+otherwise it will be returned as string.</p>
+<p>Please refer to websocket documentation for downloading the file.</p>
                      
                    </td></tr>
                    
@@ -23043,8 +23396,50 @@ validation will not be performed for <code>id</code>. This allow unlocking encry
     &#34;GZIP&#34;,
     &#34;GZIP-1&#34;,
     &#34;GZIP-9&#34;,
+    &#34;ZSTD&#34;,
+    &#34;ZSTD-FAST&#34;,
     &#34;ZLE&#34;,
     &#34;LZJB&#34;,
+    &#34;ZSTD-1&#34;,
+    &#34;ZSTD-2&#34;,
+    &#34;ZSTD-3&#34;,
+    &#34;ZSTD-4&#34;,
+    &#34;ZSTD-5&#34;,
+    &#34;ZSTD-6&#34;,
+    &#34;ZSTD-7&#34;,
+    &#34;ZSTD-8&#34;,
+    &#34;ZSTD-9&#34;,
+    &#34;ZSTD-10&#34;,
+    &#34;ZSTD-11&#34;,
+    &#34;ZSTD-12&#34;,
+    &#34;ZSTD-13&#34;,
+    &#34;ZSTD-14&#34;,
+    &#34;ZSTD-15&#34;,
+    &#34;ZSTD-16&#34;,
+    &#34;ZSTD-17&#34;,
+    &#34;ZSTD-18&#34;,
+    &#34;ZSTD-19&#34;,
+    &#34;ZSTD-FAST-1&#34;,
+    &#34;ZSTD-FAST-2&#34;,
+    &#34;ZSTD-FAST-3&#34;,
+    &#34;ZSTD-FAST-4&#34;,
+    &#34;ZSTD-FAST-5&#34;,
+    &#34;ZSTD-FAST-6&#34;,
+    &#34;ZSTD-FAST-7&#34;,
+    &#34;ZSTD-FAST-8&#34;,
+    &#34;ZSTD-FAST-9&#34;,
+    &#34;ZSTD-FAST-10&#34;,
+    &#34;ZSTD-FAST-20&#34;,
+    &#34;ZSTD-FAST-30&#34;,
+    &#34;ZSTD-FAST-40&#34;,
+    &#34;ZSTD-FAST-50&#34;,
+    &#34;ZSTD-FAST-60&#34;,
+    &#34;ZSTD-FAST-70&#34;,
+    &#34;ZSTD-FAST-80&#34;,
+    &#34;ZSTD-FAST-90&#34;,
+    &#34;ZSTD-FAST-100&#34;,
+    &#34;ZSTD-FAST-500&#34;,
+    &#34;ZSTD-FAST-1000&#34;,
     &#34;INHERIT&#34;
    ]
   },
@@ -24049,9 +24444,11 @@ a scrub can run again.</p>
                        <p>Create a Periodic Snapshot Task</p>
 <p>Create a Periodic Snapshot Task that will take snapshots of specified <code>dataset</code> at specified <code>schedule</code>.
 Recursive snapshots can be created if <code>recursive</code> flag is enabled. You can <code>exclude</code> specific child datasets
-from snapshot.
+or zvols from the snapshot.
 Snapshots will be automatically destroyed after a certain amount of time, specified by
 <code>lifetime_value</code> and <code>lifetime_unit</code>.
+If multiple periodic tasks create snapshots at the same time (for example hourly and daily at 00:00) the snapshot
+will be kept until the last of these tasks reaches its expiry time.
 Snapshots will be named according to <code>naming_schema</code> which is a <code>strftime</code>-like template for snapshot name
 and must contain <code>%Y</code>, <code>%m</code>, <code>%d</code>, <code>%H</code> and <code>%M</code>.</p>
                      
@@ -24590,8 +24987,41 @@ and must contain <code>%Y</code>, <code>%m</code>, <code>%d</code>, <code>%H</co
   &#34;properties&#34;: {
    &#34;type&#34;: &#34;boolean&#34;
   },
+  &#34;properties_exclude&#34;: {
+   &#34;type&#34;: &#34;array&#34;,
+   &#34;items&#34;: [
+    {
+     &#34;type&#34;: &#34;string&#34;
+    }
+   ]
+  },
   &#34;replicate&#34;: {
    &#34;type&#34;: &#34;boolean&#34;
+  },
+  &#34;encryption&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
+  },
+  &#34;encryption_key&#34;: {
+   &#34;type&#34;: [
+    &#34;string&#34;,
+    &#34;null&#34;
+   ]
+  },
+  &#34;encryption_key_format&#34;: {
+   &#34;type&#34;: [
+    &#34;string&#34;,
+    &#34;null&#34;
+   ],
+   &#34;enum&#34;: [
+    &#34;HEX&#34;,
+    &#34;PASSPHRASE&#34;
+   ]
+  },
+  &#34;encryption_key_location&#34;: {
+   &#34;type&#34;: [
+    &#34;string&#34;,
+    &#34;null&#34;
+   ]
   },
   &#34;periodic_snapshot_tasks&#34;: {
    &#34;type&#34;: &#34;array&#34;,
@@ -25456,8 +25886,41 @@ and must contain <code>%Y</code>, <code>%m</code>, <code>%d</code>, <code>%H</co
   &#34;properties&#34;: {
    &#34;type&#34;: &#34;boolean&#34;
   },
+  &#34;properties_exclude&#34;: {
+   &#34;type&#34;: &#34;array&#34;,
+   &#34;items&#34;: [
+    {
+     &#34;type&#34;: &#34;string&#34;
+    }
+   ]
+  },
   &#34;replicate&#34;: {
    &#34;type&#34;: &#34;boolean&#34;
+  },
+  &#34;encryption&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
+  },
+  &#34;encryption_key&#34;: {
+   &#34;type&#34;: [
+    &#34;string&#34;,
+    &#34;null&#34;
+   ]
+  },
+  &#34;encryption_key_format&#34;: {
+   &#34;type&#34;: [
+    &#34;string&#34;,
+    &#34;null&#34;
+   ],
+   &#34;enum&#34;: [
+    &#34;HEX&#34;,
+    &#34;PASSPHRASE&#34;
+   ]
+  },
+  &#34;encryption_key_location&#34;: {
+   &#34;type&#34;: [
+    &#34;string&#34;,
+    &#34;null&#34;
+   ]
   },
   &#34;periodic_snapshot_tasks&#34;: {
    &#34;type&#34;: &#34;array&#34;,
@@ -25681,6 +26144,72 @@ and must contain <code>%Y</code>, <code>%m</code>, <code>%d</code>, <code>%H</co
         }
     ]
 }</code></pre></td></tr>
+                   
+                 </tbody>
+               </table>
+              
+             
+              <h2 id="replication.config">replication.config</h2>
+              
+               <table class="table">
+                 <thead>
+                   <tr><th>
+                       replication.config.config
+                       
+                   </th></tr>
+                   
+                 </thead>
+                 <tbody>
+                   <tr><td>
+                     
+                       -
+                     
+                   </td></tr>
+                   
+                   
+                 </tbody>
+               </table>
+              
+               <table class="table">
+                 <thead>
+                   <tr><th>
+                       replication.config.update
+                       
+                   </th></tr>
+                   
+                   <tr><th>
+                     Arguments:
+                     <div>
+                     
+                     <div style="float: left; margin-right: 10px;">
+                       <div style="background-color: #ddd; white-space: pre; font-family: Courier;">{
+ &#34;type&#34;: &#34;object&#34;,
+ &#34;properties&#34;: {
+  &#34;max_parallel_replication_tasks&#34;: {
+   &#34;type&#34;: [
+    &#34;integer&#34;,
+    &#34;null&#34;
+   ]
+  }
+ },
+ &#34;additionalProperties&#34;: false,
+ &#34;title&#34;: &#34;replication_config_update&#34;,
+ &#34;default&#34;: {}
+}</div>
+                     </div>
+                     
+                     <div style="clear: both;"></div>
+                     </div>
+                   </th></tr>
+                   
+                 </thead>
+                 <tbody>
+                   <tr><td>
+                     
+                       <p><code>max_parallel_replication_tasks</code> represents a maximum number of parallel replication tasks running.</p>
+                     
+                   </td></tr>
+                   
                    
                  </tbody>
                </table>
@@ -27659,114 +28188,6 @@ service should start on boot.</p>
                </table>
               
              
-              <h2 id="sharing">sharing</h2>
-              
-               <table class="table">
-                 <thead>
-                   <tr><th>
-                       sharing.query
-                       
-                   </th></tr>
-                   
-                   <tr><th>
-                     Arguments:
-                     <div>
-                     
-                     <div style="float: left; margin-right: 10px;">
-                       <div style="background-color: #ddd; white-space: pre; font-family: Courier;">{
- &#34;type&#34;: &#34;array&#34;,
- &#34;title&#34;: &#34;query-filters&#34;,
- &#34;default&#34;: [],
- &#34;items&#34;: [
-  {
-   &#34;type&#34;: &#34;null&#34;
-  }
- ]
-}</div>
-                     </div>
-                     
-                     <div style="float: left; margin-right: 10px;">
-                       <div style="background-color: #ddd; white-space: pre; font-family: Courier;">{
- &#34;type&#34;: &#34;object&#34;,
- &#34;properties&#34;: {
-  &#34;relationships&#34;: {
-   &#34;type&#34;: &#34;boolean&#34;
-  },
-  &#34;extend&#34;: {
-   &#34;type&#34;: [
-    &#34;string&#34;,
-    &#34;null&#34;
-   ]
-  },
-  &#34;extend_context&#34;: {
-   &#34;type&#34;: [
-    &#34;string&#34;,
-    &#34;null&#34;
-   ]
-  },
-  &#34;prefix&#34;: {
-   &#34;type&#34;: [
-    &#34;string&#34;,
-    &#34;null&#34;
-   ]
-  },
-  &#34;extra&#34;: {
-   &#34;type&#34;: &#34;object&#34;,
-   &#34;properties&#34;: {},
-   &#34;additionalProperties&#34;: true
-  },
-  &#34;order_by&#34;: {
-   &#34;type&#34;: &#34;array&#34;,
-   &#34;items&#34;: [
-    {
-     &#34;type&#34;: &#34;null&#34;
-    }
-   ]
-  },
-  &#34;select&#34;: {
-   &#34;type&#34;: &#34;array&#34;,
-   &#34;items&#34;: [
-    {
-     &#34;type&#34;: &#34;null&#34;
-    }
-   ]
-  },
-  &#34;count&#34;: {
-   &#34;type&#34;: &#34;boolean&#34;
-  },
-  &#34;get&#34;: {
-   &#34;type&#34;: &#34;boolean&#34;
-  },
-  &#34;offset&#34;: {
-   &#34;type&#34;: &#34;integer&#34;
-  },
-  &#34;limit&#34;: {
-   &#34;type&#34;: &#34;integer&#34;
-  }
- },
- &#34;additionalProperties&#34;: false,
- &#34;title&#34;: &#34;query-options&#34;,
- &#34;default&#34;: {}
-}</div>
-                     </div>
-                     
-                     <div style="clear: both;"></div>
-                     </div>
-                   </th></tr>
-                   
-                 </thead>
-                 <tbody>
-                   <tr><td>
-                     
-                       -
-                     
-                   </td></tr>
-                   
-                   
-                 </tbody>
-               </table>
-              
-             
               <h2 id="sharing.afp">sharing.afp</h2>
               
                <table class="table">
@@ -29500,6 +29921,42 @@ indicates they are disabled.</p>
                <table class="table">
                  <thead>
                    <tr><th>
+                       smart.test.disk_choices
+                       
+                   </th></tr>
+                   
+                   <tr><th>
+                     Arguments:
+                     <div>
+                     
+                     <div style="float: left; margin-right: 10px;">
+                       <div style="background-color: #ddd; white-space: pre; font-family: Courier;">{
+ &#34;type&#34;: &#34;boolean&#34;,
+ &#34;title&#34;: &#34;full_disk&#34;,
+ &#34;default&#34;: false
+}</div>
+                     </div>
+                     
+                     <div style="clear: both;"></div>
+                     </div>
+                   </th></tr>
+                   
+                 </thead>
+                 <tbody>
+                   <tr><td>
+                     
+                       <p>Returns disk choices for S.M.A.R.T. test.</p>
+<p><code>full_disk</code> will return full disk objects instead of just names.</p>
+                     
+                   </td></tr>
+                   
+                   
+                 </tbody>
+               </table>
+              
+               <table class="table">
+                 <thead>
+                   <tr><th>
                        smart.test.manual_test
                        
                    </th></tr>
@@ -30272,7 +30729,7 @@ user.</p>
    ]
   },
   &#34;syslog&#34;: {
-   &#34;type&#34;: &#34;boolean&#34;
+   &#34#34;type&#34;: &#34;boolean&#34;
   },
   &#34;aapl_extensions&#34;: {
    &#34;type&#34;: &#34;boolean&#34;
@@ -30769,6 +31226,9 @@ to both /var/db/system/samba4/share_info.tdb and the configuration file.</p>
    &#34;type&#34;: &#34;string&#34;
   },
   &#34;zilstat&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
+  },
+  &#34;iftop&#34;: {
    &#34;type&#34;: &#34;boolean&#34;
   }
  },
@@ -31696,6 +32156,25 @@ For TrueNAS <code>username</code>, <code>password</code> and <code>type</code> a
                <table class="table">
                  <thead>
                    <tr><th>
+                       system.build_time
+                       
+                   </th></tr>
+                   
+                 </thead>
+                 <tbody>
+                   <tr><td>
+                     
+                       <p>Retrieve build time of the system.</p>
+                     
+                   </td></tr>
+                   
+                   
+                 </tbody>
+               </table>
+              
+               <table class="table">
+                 <thead>
+                   <tr><th>
                        system.debug
                        
                             <div class="tool_tip" style="margin-left: 20px;">Job
@@ -32446,11 +32925,28 @@ hardware.</p>
                        
                    </th></tr>
                    
+                   <tr><th>
+                     Arguments:
+                     <div>
+                     
+                     <div style="float: left; margin-right: 10px;">
+                       <div style="background-color: #ddd; white-space: pre; font-family: Courier;">{
+ &#34;type&#34;: &#34;integer&#34;,
+ &#34;title&#34;: &#34;delay&#34;,
+ &#34;default&#34;: 3
+}</div>
+                     </div>
+                     
+                     <div style="clear: both;"></div>
+                     </div>
+                   </th></tr>
+                   
                  </thead>
                  <tbody>
                    <tr><td>
                      
                        <p>Restart HTTP server to use latest UI settings.</p>
+<p>HTTP server will be restarted after <code>delay</code> seconds.</p>
                      
                    </td></tr>
                    
@@ -32983,114 +33479,6 @@ is not provided.</p>
                </table>
               
              
-              <h2 id="taskpath">taskpath</h2>
-              
-               <table class="table">
-                 <thead>
-                   <tr><th>
-                       taskpath.query
-                       
-                   </th></tr>
-                   
-                   <tr><th>
-                     Arguments:
-                     <div>
-                     
-                     <div style="float: left; margin-right: 10px;">
-                       <div style="background-color: #ddd; white-space: pre; font-family: Courier;">{
- &#34;type&#34;: &#34;array&#34;,
- &#34;title&#34;: &#34;query-filters&#34;,
- &#34;default&#34;: [],
- &#34;items&#34;: [
-  {
-   &#34;type&#34;: &#34;null&#34;
-  }
- ]
-}</div>
-                     </div>
-                     
-                     <div style="float: left; margin-right: 10px;">
-                       <div style="background-color: #ddd; white-space: pre; font-family: Courier;">{
- &#34;type&#34;: &#34;object&#34;,
- &#34;properties&#34;: {
-  &#34;relationships&#34;: {
-   &#34;type&#34;: &#34;boolean&#34;
-  },
-  &#34;extend&#34;: {
-   &#34;type&#34;: [
-    &#34;string&#34;,
-    &#34;null&#34;
-   ]
-  },
-  &#34;extend_context&#34;: {
-   &#34;type&#34;: [
-    &#34;string&#34;,
-    &#34;null&#34;
-   ]
-  },
-  &#34;prefix&#34;: {
-   &#34;type&#34;: [
-    &#34;string&#34;,
-    &#34;null&#34;
-   ]
-  },
-  &#34;extra&#34;: {
-   &#34;type&#34;: &#34;object&#34;,
-   &#34;properties&#34;: {},
-   &#34;additionalProperties&#34;: true
-  },
-  &#34;order_by&#34;: {
-   &#34;type&#34;: &#34;array&#34;,
-   &#34;items&#34;: [
-    {
-     &#34;type&#34;: &#34;null&#34;
-    }
-   ]
-  },
-  &#34;select&#34;: {
-   &#34;type&#34;: &#34;array&#34;,
-   &#34;items&#34;: [
-    {
-     &#34;type&#34;: &#34;null&#34;
-    }
-   ]
-  },
-  &#34;count&#34;: {
-   &#34;type&#34;: &#34;boolean&#34;
-  },
-  &#34;get&#34;: {
-   &#34;type&#34;: &#34;boolean&#34;
-  },
-  &#34;offset&#34;: {
-   &#34;type&#34;: &#34;integer&#34;
-  },
-  &#34;limit&#34;: {
-   &#34;type&#34;: &#34;integer&#34;
-  }
- },
- &#34;additionalProperties&#34;: false,
- &#34;title&#34;: &#34;query-options&#34;,
- &#34;default&#34;: {}
-}</div>
-                     </div>
-                     
-                     <div style="clear: both;"></div>
-                     </div>
-                   </th></tr>
-                   
-                 </thead>
-                 <tbody>
-                   <tr><td>
-                     
-                       -
-                     
-                   </td></tr>
-                   
-                   
-                 </tbody>
-               </table>
-              
-             
               <h2 id="tftp">tftp</h2>
               
                <table class="table">
@@ -33417,6 +33805,14 @@ TRUENAS-UNKNOWN</p>
                  <thead>
                    <tr><th>
                        truenas.set_production
+                       
+                            <div class="tool_tip" style="margin-left: 20px;">Job
+                                <span class="tooltip_text">
+                                    This endpoint is a Job. Please refer to the <a href="#jobs">Jobs</a> section for details.
+                                    
+                                    
+                                </span>
+                            </div>
                        
                    </th></tr>
                    
@@ -34574,6 +34970,17 @@ initiating a shutdown. This only applies when <code>shutdown</code> is set to "B
   &#34;sudo&#34;: {
    &#34;type&#34;: &#34;boolean&#34;
   },
+  &#34;sudo_nopasswd&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
+  },
+  &#34;sudo_commands&#34;: {
+   &#34;type&#34;: &#34;array&#34;,
+   &#34;items&#34;: [
+    {
+     &#34;type&#34;: &#34;string&#34;
+    }
+   ]
+  },
   &#34;sshpubkey&#34;: {
    &#34;type&#34;: [
     &#34;string&#34;,
@@ -35133,6 +35540,17 @@ if the option <code>{'extra': {'search_dscache': True}}</code> is specified.</p>
   &#34;sudo&#34;: {
    &#34;type&#34;: &#34;boolean&#34;
   },
+  &#34;sudo_nopasswd&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
+  },
+  &#34;sudo_commands&#34;: {
+   &#34;type&#34;: &#34;array&#34;,
+   &#34;items&#34;: [
+    {
+     &#34;type&#34;: &#34;string&#34;
+    }
+   ]
+  },
   &#34;sshpubkey&#34;: {
    &#34;type&#34;: [
     &#34;string&#34;,
@@ -35177,25 +35595,6 @@ if the option <code>{'extra': {'search_dscache': True}}</code> is specified.</p>
               
              
               <h2 id="vm">vm</h2>
-              
-               <table class="table">
-                 <thead>
-                   <tr><th>
-                       vm.bootloader_options
-                       
-                   </th></tr>
-                   
-                 </thead>
-                 <tbody>
-                   <tr><td>
-                     
-                       <p>Supported motherboard firmware options.</p>
-                     
-                   </td></tr>
-                   
-                   
-                 </tbody>
-               </table>
               
                <table class="table">
                  <thead>
@@ -35256,20 +35655,6 @@ If not provided it will append the next number available to the VM name.</p>
                        <div style="background-color: #ddd; white-space: pre; font-family: Courier;">{
  &#34;type&#34;: &#34;object&#34;,
  &#34;properties&#34;: {
-  &#34;cpu_mode&#34;: {
-   &#34;type&#34;: &#34;string&#34;,
-   &#34;enum&#34;: [
-    &#34;CUSTOM&#34;,
-    &#34;HOST-MODEL&#34;,
-    &#34;HOST-PASSTHROUGH&#34;
-   ]
-  },
-  &#34;cpu_model&#34;: {
-   &#34;type&#34;: [
-    &#34;string&#34;,
-    &#34;null&#34;
-   ]
-  },
   &#34;name&#34;: {
    &#34;type&#34;: &#34;string&#34;
   },
@@ -35419,7 +35804,7 @@ shutdown, if the VM hasn't exited after a hardware shutdown signal has been sent
                  <tbody>
                    <tr><td>
                      
-                       <p>Returns a dictionary with CPU flags for the hypervisor.</p>
+                       <p>Returns a dictionary with CPU flags for bhyve.</p>
                      
                    </td></tr>
                    
@@ -35455,7 +35840,7 @@ shutdown, if the VM hasn't exited after a hardware shutdown signal has been sent
                      
                        <p>Get the attached physical interfaces from a given guest.</p>
 <p>Returns:
-    list: will return a list with all attached physical interfaces or otherwise False.</p>
+    list: will return a list with all attached phisycal interfaces or otherwise False.</p>
                      
                    </td></tr>
                    
@@ -35667,7 +36052,7 @@ available at the current moment and if a VM should be allowed to be launched.</p
                <table class="table">
                  <thead>
                    <tr><th>
-                       vm.maximum_supported_vcpus
+                       vm.identify_hypervisor
                        
                    </th></tr>
                    
@@ -35675,7 +36060,9 @@ available at the current moment and if a VM should be allowed to be launched.</p
                  <tbody>
                    <tr><td>
                      
-                       <p>Returns maximum supported VCPU's</p>
+                       <p>Identify Hypervisors that might work nested with bhyve.</p>
+<p>Returns:
+        bool: True if compatible otherwise False.</p>
                      
                    </td></tr>
                    
@@ -35709,7 +36096,7 @@ available at the current moment and if a VM should be allowed to be launched.</p
                  <tbody>
                    <tr><td>
                      
-                       <p>Poweroff a VM.</p>
+                       -
                      
                    </td></tr>
                    
@@ -35964,7 +36351,7 @@ If true, VM starts even if there is not enough memory for all configured VMs.</p
                  <tbody>
                    <tr><td>
                      
-                       <p>Get the status of <code>id</code> VM.</p>
+                       <p>Get the status of a VM.</p>
 <p>Returns a dict:
     - state, RUNNING or STOPPED
     - pid, process id if RUNNING</p>
@@ -36042,25 +36429,6 @@ not already stopped within the specified <code>shutdown_timeout</code>.</p>
                <table class="table">
                  <thead>
                    <tr><th>
-                       vm.supports_virtualization
-                       
-                   </th></tr>
-                   
-                 </thead>
-                 <tbody>
-                   <tr><td>
-                     
-                       <p>Returns "true" if system supports virtualization, "false" otherwise</p>
-                     
-                   </td></tr>
-                   
-                   
-                 </tbody>
-               </table>
-              
-               <table class="table">
-                 <thead>
-                   <tr><th>
                        vm.update
                        
                    </th></tr>
@@ -36080,20 +36448,6 @@ not already stopped within the specified <code>shutdown_timeout</code>.</p>
                        <div style="background-color: #ddd; white-space: pre; font-family: Courier;">{
  &#34;type&#34;: &#34;object&#34;,
  &#34;properties&#34;: {
-  &#34;cpu_mode&#34;: {
-   &#34;type&#34;: &#34;string&#34;,
-   &#34;enum&#34;: [
-    &#34;CUSTOM&#34;,
-    &#34;HOST-MODEL&#34;,
-    &#34;HOST-PASSTHROUGH&#34;
-   ]
-  },
-  &#34;cpu_model&#34;: {
-   &#34;type&#34;: [
-    &#34;string&#34;,
-    &#34;null&#34;
-   ]
-  },
   &#34;name&#34;: {
    &#34;type&#34;: &#34;string&#34;
   },
@@ -36322,25 +36676,6 @@ true with valid <code>attributes.zvol_name</code> and <code>attributes.zvol_vols
                <table class="table">
                  <thead>
                    <tr><th>
-                       vm.device.iommu_enabled
-                       
-                   </th></tr>
-                   
-                 </thead>
-                 <tbody>
-                   <tr><td>
-                     
-                       <p>Returns "true" if iommu is enabled, "false" otherwise</p>
-                     
-                   </td></tr>
-                   
-                   
-                 </tbody>
-               </table>
-              
-               <table class="table">
-                 <thead>
-                   <tr><th>
                        vm.device.nic_attach_choices
                        
                    </th></tr>
@@ -36350,25 +36685,6 @@ true with valid <code>attributes.zvol_name</code> and <code>attributes.zvol_vols
                    <tr><td>
                      
                        <p>Available choices for NIC Attach attribute.</p>
-                     
-                   </td></tr>
-                   
-                   
-                 </tbody>
-               </table>
-              
-               <table class="table">
-                 <thead>
-                   <tr><th>
-                       vm.device.passthrough_device_choices
-                       
-                   </th></tr>
-                   
-                 </thead>
-                 <tbody>
-                   <tr><td>
-                     
-                       <p>Available choices for PCI passthru devices.</p>
                      
                    </td></tr>
                    
@@ -37456,8 +37772,6 @@ lowercased</p>
                    <tr><td>
                      
                        <p>Take a snapshot from a given dataset.</p>
-<p>Returns:
-    bool: True if succeed otherwise False.</p>
                      
                    </td></tr>
                    
@@ -37740,11 +38054,173 @@ arguments only use the event name when subscribing to the event.</p>
 <h3>core.get_jobs</h3>
 <h5><p>Updates on job changes.</p></h5>
 <p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
-<h3>auth.sessions</h3>
-<h5><p>Notification of new and removed sessions.</p></h5>
+<h3>acme.dns.authenticator.query</h3>
+<h5><p>Sent on acme.dns.authenticator changes.</p></h5>
+<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
+<h3>acme.registration.query</h3>
+<h5><p>Sent on acme.registration changes.</p></h5>
+<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
+<h3>alertservice.query</h3>
+<h5><p>Sent on alertservice changes.</p></h5>
+<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
+<h3>api_key.query</h3>
+<h5><p>Sent on api_key changes.</p></h5>
+<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
+<h3>bootenv.query</h3>
+<h5><p>Sent on bootenv changes.</p></h5>
+<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
+<h3>certificate.query</h3>
+<h5><p>Sent on certificate changes.</p></h5>
+<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
+<h3>certificateauthority.query</h3>
+<h5><p>Sent on certificateauthority changes.</p></h5>
+<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
+<h3>cloudsync.query</h3>
+<h5><p>Sent on cloudsync changes.</p></h5>
+<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
+<h3>cloudsync.credentials.query</h3>
+<h5><p>Sent on cloudsync.credentials changes.</p></h5>
+<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
+<h3>cronjob.query</h3>
+<h5><p>Sent on cronjob changes.</p></h5>
+<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
+<h3>enclosure.query</h3>
+<h5><p>Sent on enclosure changes.</p></h5>
+<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
+<h3>fcport.query</h3>
+<h5><p>Sent on fcport changes.</p></h5>
+<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
+<h3>group.query</h3>
+<h5><p>Sent on group changes.</p></h5>
+<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
+<h3>idmap.query</h3>
+<h5><p>Sent on idmap changes.</p></h5>
+<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
+<h3>initshutdownscript.query</h3>
+<h5><p>Sent on initshutdownscript changes.</p></h5>
+<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
+<h3>interface.query</h3>
+<h5><p>Sent on interface changes.</p></h5>
+<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
+<h3>ipmi.query</h3>
+<h5><p>Sent on ipmi changes.</p></h5>
+<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
+<h3>iscsi.auth.query</h3>
+<h5><p>Sent on iscsi.auth changes.</p></h5>
+<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
+<h3>iscsi.extent.query</h3>
+<h5><p>Sent on iscsi.extent changes.</p></h5>
+<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
+<h3>iscsi.initiator.query</h3>
+<h5><p>Sent on iscsi.initiator changes.</p></h5>
+<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
+<h3>iscsi.portal.query</h3>
+<h5><p>Sent on iscsi.portal changes.</p></h5>
+<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
+<h3>iscsi.target.query</h3>
+<h5><p>Sent on iscsi.target changes.</p></h5>
+<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
+<h3>iscsi.targetextent.query</h3>
+<h5><p>Sent on iscsi.targetextent changes.</p></h5>
+<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
+<h3>jail.query</h3>
+<h5><p>Sent on jail changes.</p></h5>
+<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
+<h3>kerberos.keytab.query</h3>
+<h5><p>Sent on kerberos.keytab changes.</p></h5>
+<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
+<h3>kerberos.realm.query</h3>
+<h5><p>Sent on kerberos.realm changes.</p></h5>
+<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
+<h3>keychaincredential.query</h3>
+<h5><p>Sent on keychaincredential changes.</p></h5>
+<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
+<h3>multipath.query</h3>
+<h5><p>Sent on multipath changes.</p></h5>
+<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
+<h3>plugin.query</h3>
+<h5><p>Sent on plugin changes.</p></h5>
+<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
+<h3>pool.query</h3>
+<h5><p>Sent on pool changes.</p></h5>
+<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
+<h3>pool.dataset.query</h3>
+<h5><p>Sent on pool.dataset changes.</p></h5>
+<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
+<h3>pool.dataset.userprop.query</h3>
+<h5><p>Sent on pool.dataset.userprop changes.</p></h5>
+<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
+<h3>pool.scrub.query</h3>
+<h5><p>Sent on pool.scrub changes.</p></h5>
+<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
+<h3>pool.snapshottask.query</h3>
+<h5><p>Sent on pool.snapshottask changes.</p></h5>
+<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
+<h3>replication.query</h3>
+<h5><p>Sent on replication changes.</p></h5>
+<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
+<h3>rsyncmod.query</h3>
+<h5><p>Sent on rsyncmod changes.</p></h5>
+<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
+<h3>rsynctask.query</h3>
+<h5><p>Sent on rsynctask changes.</p></h5>
 <p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
 <h3>service.query</h3>
 <h5><p>Sent on service changes.</p></h5>
+<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
+<h3>sharing.afp.query</h3>
+<h5><p>Sent on sharing.afp changes.</p></h5>
+<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
+<h3>sharing.nfs.query</h3>
+<h5><p>Sent on sharing.nfs changes.</p></h5>
+<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
+<h3>sharing.smb.query</h3>
+<h5><p>Sent on sharing.smb changes.</p></h5>
+<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
+<h3>sharing.webdav.query</h3>
+<h5><p>Sent on sharing.webdav changes.</p></h5>
+<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
+<h3>smart.test.query</h3>
+<h5><p>Sent on smart.test changes.</p></h5>
+<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
+<h3>smb.sharesec.query</h3>
+<h5><p>Sent on smb.sharesec changes.</p></h5>
+<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
+<h3>staticroute.query</h3>
+<h5><p>Sent on staticroute changes.</p></h5>
+<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
+<h3>system.ntpserver.query</h3>
+<h5><p>Sent on system.ntpserver changes.</p></h5>
+<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
+<h3>tunable.query</h3>
+<h5><p>Sent on tunable changes.</p></h5>
+<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
+<h3>user.query</h3>
+<h5><p>Sent on user changes.</p></h5>
+<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
+<h3>vm.query</h3>
+<h5><p>Sent on vm changes.</p></h5>
+<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
+<h3>vm.device.query</h3>
+<h5><p>Sent on vm.device changes.</p></h5>
+<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
+<h3>vmware.query</h3>
+<h5><p>Sent on vmware changes.</p></h5>
+<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
+<h3>webui.image.query</h3>
+<h5><p>Sent on webui.image changes.</p></h5>
+<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
+<h3>zfs.dataset.query</h3>
+<h5><p>Sent on zfs.dataset changes.</p></h5>
+<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
+<h3>zfs.pool.query</h3>
+<h5><p>Sent on zfs.pool changes.</p></h5>
+<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
+<h3>zfs.snapshot.query</h3>
+<h5><p>Sent on zfs.snapshot changes.</p></h5>
+<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
+<h3>auth.sessions</h3>
+<h5><p>Notification of new and removed sessions.</p></h5>
 <p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
 <h3>system</h3>
 <h5><p>Sent on system state changes.</p></h5>
@@ -37758,23 +38234,20 @@ arguments only use the event name when subscribing to the event.</p>
 <h3>network.config</h3>
 <h5><p>Sent on network configuration changes.</p></h5>
 <p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
-<h3>replication.query</h3>
-<h5><p>Replication task state</p></h5>
-<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
 <h3>directoryservices.status</h3>
 <h5><p>Sent on directory service state changes.</p></h5>
-<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
-<h3>zfs.pool.scan</h3>
-<h5><p>Progress of pool resilver/scrub.</p></h5>
-<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
-<h3>vm.query</h3>
-<h5><p>Sent on VM state changes.</p></h5>
 <p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
 <h3>disk.query</h3>
 <h5><p>Sent on disk changes.</p></h5>
 <p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
 <h3>truecommand.config</h3>
 <h5><p>Sent on TrueCommand configuration changes.</p></h5>
+<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
+<h3>zfs.pool.scan</h3>
+<h5><p>Progress of pool resilver/scrub.</p></h5>
+<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
+<h3>failover.setup</h3>
+<h5><p>Sent when failover is being setup.</p></h5>
 <p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
 <h3>failover.status</h3>
 <h5><p>Sent when failover status changes.</p></h5>
@@ -37808,6 +38281,10 @@ on when the periodic event should be generated.</p></p>
 <h3>reporting.realtime</h3>
 <h5><p>Retrieve real time statistics for CPU, network,</h5>
 <p>virtual memory and zfs arc.</p></p>
+<p>This event cannot be subscribed to with the wildcard <code>*</code> as the event name.</p>
+<h3>reporting.processes</h3>
+<h5><p>Retrieve currently running processes stats.</p></h5>
+<p><p>Usage: reporting.processes:{"interval": 10, "cpu_percent": 0.1, "memory_percent": 0.1}</p></p>
 <p>This event cannot be subscribed to with the wildcard <code>*</code> as the event name.</p>
 <h2>Subscribing to Events</h2>
 <p>Events are generated by the system based on when certain conditions are met. It is not useful
@@ -37947,7 +38424,7 @@ When a client connects to an endpoint marked as a job, they receive a job id
 from the endpoint. With this job id, the client can query the status of the job
 to see the progress and status. Errors are shown
 in the output, or the output contains the result returned by the endpoint on completion.</p>
-<p>e.g. <code>ws://freenas.domain/websocket</code></p>
+<p>e.g. <code>ws://truenas.domain/websocket</code></p>
 <h3>Example of connecting to endpoint marked as a job</h3>
 <h4>Client connects to websocket endpoint and sends a <code>connect</code> message.</h4>
 <pre class="codehilite"><code class="language-javascript">{
@@ -38011,7 +38488,7 @@ the output file.</p>
 <p>In the response, the first value <code>86</code> is the job id for <code>config.save</code>. This can be used to query
 the status of the job. The second value is a REST endpoint used to download the file.</p>
 <p>The download endpoint has a special format:</p>
-<p><code>https://system_ip/_download/{job_id}?auth_token={token}</code></p>
+<p><code>http://system_ip/_download/{job_id}?auth_token={token}</code></p>
 <p><code>job_id</code> and <code>token</code> are parameters being passed.</p>
 <p><code>core.download</code> takes responsibility for providing the download URI with the <code>job_id</code> and <code>token</code> values.</p>
 <p>Note:
@@ -38020,7 +38497,7 @@ the status of the job. The second value is a REST endpoint used to download the 
 3) The file can only be downloaded once.</p>
 <h4>Uploading a File</h4>
 <p>Files can be uploaded via HTTP POST request only. The upload endpoint is:</p>
-<p><code>https://system_ip/_upload</code></p>
+<p><code>http://system_ip/_upload</code></p>
 <p>It expects two values as form data, <code>data</code> and <code>file</code>.</p>
 <p><code>data</code> is JSON-encoded data. It must be the first parameter provided and in this format:</p>
 <pre class="codehilite"><code class="language-json">::: json
@@ -38033,7 +38510,7 @@ the status of the job. The second value is a REST endpoint used to download the 
 <p><code>file</code> is the URI of the file to download.</p>
 <p>This example uses <code>curl</code>,</p>
 <p>Request:</p>
-<pre class="codehilite"><code>curl -X POST -u root:freenas -H &quot;Content-Type: multipart/form-data&quot; -F 'data={&quot;method&quot;: &quot;config.upload&quot;, &quot;params&quot;: []}' -F &quot;file=@/home/user/Desktop/config&quot; https://system_ip/_upload/</code></pre>
+<pre class="codehilite"><code>curl -X POST -u root:freenas -H &quot;Content-Type: multipart/form-data&quot; -F 'data={&quot;method&quot;: &quot;config.upload&quot;, &quot;params&quot;: []}' -F &quot;file=@/home/user/Desktop/config&quot; http://system_ip/_upload/</code></pre>
 
 
 <p>Response:</p>
