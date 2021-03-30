@@ -284,5 +284,12 @@ Enter the SMB address: `smb://192.168.1.111`.
 Input the username and password for the user assigned to that pool or Guest if Guest access is enabled on the share.
 
 {{< /tab >}}
+{{< tab "FreeBSD" >}}
+
+Create a mount point: `sudo mkdir /mnt/smb_share`.
+
+Mount the volume. `sudo mount_smbfs -I computer_name\share_name /mnt/smb_share`.
+
+{{< /tab >}}
 {{< /tabs >}}
 
