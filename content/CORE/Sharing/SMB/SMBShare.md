@@ -58,7 +58,7 @@ When LDAP has been configured and you want users from the LDAP server to have ac
 
 After a dataset and accounts are created, you will need to investigate your access requirements and adjust the dataset ACL to match. To edit the ACL, go to **Storage > Pools**, open the options for the new dataset, and click *Edit Permissions*.
 Many home users typically add a new entry that grants *FULL_CONTROL* to the *builtin_users* group with the flags set to *INHERIT*.
-See the [Permissions article]() for more details.
+See the [Permissions article]({{< relref "Permission.md" >}}) for more details.
 
 ## Creating the SMB Share
 
