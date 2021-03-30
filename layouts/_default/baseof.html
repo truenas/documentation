@@ -1,0 +1,45 @@
+<!-- Geekdoc theme with Google ID Manager Added -->
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}">
+
+<head>
+     <!-- Google Tag Manager -->
+    <link href="https://www.googletagmanager.com/gtm.js?id=GTM-P87FM6K" rel="preload" as="script">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com/">
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-P87FM6K');</script>
+    <!-- End Google Tag Manager -->
+    {{ partial "head" . }}
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P87FM6K"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    {{ partial "svg-icon-symbols" . }}
+
+    <div class="wrapper">
+        <input type="checkbox" class="hidden" id="menu-control" />
+        {{ partial "site-header" (dict "Root" . "MenuEnabled" true) }}
+
+        <main class="container flex flex-even">
+            <aside class="gdoc-nav">
+                {{ partial "menu" . }}
+            </aside>
+
+            <div class="gdoc-page">
+                {{ template "main" . }}
+                {{ partial "page-footer" . }}
+            </div>
+        </main>
+
+        {{ partial "site-footer" . }}
+    </div>
+
+    {{ partial "foot" . }}
+</body>
+</html>

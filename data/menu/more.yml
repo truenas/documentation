@@ -1,0 +1,11 @@
+#available icons: https://github.com/thegeeklab/hugo-geekdoc/tree/master/src/icons
+---
+more:
+  - name: Documentation Archive
+    ref: "/archive/"
+    external: true
+    icon: "gdoc_bookmark"
+  - name: "View Source"
+    ref: "https://github.com/freenas/documentation"
+    external: true
+    icon: "gdoc_github"
