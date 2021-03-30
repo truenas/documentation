@@ -1,8 +1,9 @@
 ---
-title: "Install"
+title: "Installing or Updating"
 weight: 10
+geekdocCollapseSection: true
 ---
-asdf
+
 {{< toc >}}
 
 TrueCommand is incredibly versatile and offers several different install options.
