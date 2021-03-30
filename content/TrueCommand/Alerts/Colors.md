@@ -1,6 +1,6 @@
 ---
-title: "Theming"
-weight: 10
+title: "Colors"
+weight: 20
 ---
 
 TrueCommand 1.3.1 introduced the ability to customize the alert colors to user preferences.

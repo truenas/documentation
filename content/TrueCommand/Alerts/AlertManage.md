@@ -1,6 +1,6 @@
 ---
-title: "Alerts"
-weight: 30
+title: "Alert Management"
+weight: 10
 ---
 
 {{< toc >}}
@@ -40,7 +40,7 @@ Clicking *View alert notice details (`i`)* shows details for that alert, includi
 
 TrueCommand uses alert rules to generate alerts.
 Several default rules are built into TrueCommand.
-TrueCommand administrators and [team members]({{< relref "Users.md#configuring-teams" >}}) with the appropriate permissions can create new alert rules.
+TrueCommand administrators and [team members]({{< relref "/TrueCommand/Administration/Users.md" >}}) with the appropriate permissions can create new alert rules.
 
 To view all TrueCommand alert rules, open the **Configure** <i class="fa fa-cog" aria-hidden="true" title="Settings"></i>&nbsp; menu and click **Alert Rules**.
 

@@ -23,7 +23,7 @@ When combined with our high-performance hardware and [**TrueCommand**]({{< relre
 
 ![](/favicon/TNScale-favicon-32x32.png) [**TrueNAS SCALE**]({{< relref "/SCALE/GettingStarted/_index.md" >}}) (Coming soon!)
 <--->
-![](/favicon/TC-favicon-32x32.png) [**TrueCommand**]({{< relref "/TrueCommand/InstallUpdate/Install.md" >}})<br>
+![](/favicon/TC-favicon-32x32.png) [**TrueCommand**]({{< relref "/TrueCommand/TCGettingStarted/_index.md" >}})<br>
 
 ![](/favicon/iXfavicon-32x32.png) [**TrueNAS Hardware**]({{< relref "/Hardware/_index.md" >}})
 {{< /columns >}}
@@ -43,7 +43,7 @@ Documentation articles follow the latest supported software releases, with previ
 |----------|-------------------------------|
 | TrueNAS CORE & Enterprise | 12.0 |
 | TrueNAS SCALE | ALPHA (In Development) |
-| TrueCommand | 1.3 |
+| TrueCommand | 2.0 |
   
 The navigation pane to the left has topics that you can expand to find the specific knowledge you're looking for. You can also use the search bar above the navigation pane if you know specific keywords for what you're looking for.   
 

@@ -1,5 +1,5 @@
 ---
-title: "Notices"
+title: System Management
+weight: 30
 geekdocCollapseSection: true
-weight: 110
 ---

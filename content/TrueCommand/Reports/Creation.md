@@ -1,7 +1,9 @@
 ---
-title: "Reports"
-weight: 35
+title: "Creating a Report"
+weight: 10
 ---
+
+<!-- Rework this article to only cover building a report in tc -->
 
 {{< toc >}}
 

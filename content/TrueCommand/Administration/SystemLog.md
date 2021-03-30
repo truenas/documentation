@@ -1,6 +1,6 @@
 ---
-title: "Logs"
-weight: 17
+title: "System Log"
+weight: 30
 ---
 
 {{< toc >}}

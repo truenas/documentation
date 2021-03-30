@@ -1,6 +1,6 @@
 ---
 title: "Migrate Legacy to 1.2+"
-weight: 40
+weight: 30
 ---
 
 Starting with TrueCommand 1.2, TrueCommand is built and offered as a Docker container to drastically reduce system overhead and simplify TrueCommand updates.
