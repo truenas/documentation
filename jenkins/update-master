@@ -14,7 +14,7 @@ pipeline {
         steps {
             sh 'npm install -D --save autoprefixer'
             sh 'npm install -D --save postcss-cli'
-            sh 'hugo -t docsy -d public --gc --minify --cleanDestinationDir'
+            sh 'hugo -d public --gc --minify --cleanDestinationDir'
         }
     }
     stage('Publish') {
