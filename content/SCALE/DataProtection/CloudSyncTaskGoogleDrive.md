@@ -58,7 +58,7 @@ Select the file transfer mode:
 ![TasksCloudSyncTask](/images/SCALE/TasksCloudSyncTask.png "TasksCloudSyncTask")
 
 
-Once created, attempt a dry run of the task. 
+Once created, attempt a Dry Run of the task. 
 
 ![CloudSyncDryRun](/images/TrueNASCommon/CloudSyncDryRun.png "Cloud Sync Dry Run")
 
