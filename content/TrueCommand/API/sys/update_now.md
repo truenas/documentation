@@ -27,7 +27,7 @@ Perform TrueCommand system updates and reboot the system. Note that for offline 
 
 ```
 "args" : {
-  "fetch_url" : "http://mylocalserver.net/system-update.img"
+  "fetch_url" : "https://mylocalserver.net/system-update.img"
 }
 ```
 

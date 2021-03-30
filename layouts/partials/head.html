@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="/webfonts/material-icons.css">
 <link rel="stylesheet" href="/webfonts/materialdesignicons.min.css">
 <link rel="stylesheet" href="/webfonts/primeicons.css">
+<link rel="stylesheet" href="https://use.typekit.net/tjl0ypy.css">
 
 <link rel="preload" as="font" href="{{ "fonts/Metropolis.woff2" | relURL }}" type="font/woff2" crossorigin="anonymous">
 <link rel="preload" as="font" href="{{ "fonts/LiberationSans.woff2" | relURL }}" type="font/woff2" crossorigin="anonymous">
@@ -20,6 +21,10 @@
 <link rel="preload" as="font" href="{{ "fonts/LiberationMono.woff2" | relURL }}" type="font/woff2" crossorigin="anonymous">
 <link rel="preload" as="font" href="{{ "fonts/DroidSans.woff2" | relURL }}" type="font/woff2" crossorigin="anonymous">
 <link rel="preload" as="font" href="{{ "fonts/GeekdocIcons.woff2" | relURL }}" type="font/woff2" crossorigin="anonymous">
+<!-- Add Google Font loading as determined by the config.toml file -->
+ {{ if .Site.Params.googlefonts }}
+ <link rel="stylesheet" href="{{ .Site.Params.googlefonts }}" type="text/css" media="all" /> 
+ {{ end }}
 
 <link rel="preload" href="{{ index .Site.Data.assets "main.min.css" | relURL }}" as="style">
 <link rel="stylesheet" href="{{ index .Site.Data.assets "main.min.css" | relURL }}" media="all">

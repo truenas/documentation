@@ -19,7 +19,7 @@ The complexity of the scenario depends on several factors:
 
 Depending on the specific authentication requirements, it can be necessary to create or import user and group accounts into FreeNAS/TrueNAS.
 
-These videos clarify setting up permissions on SMB shares on legacy (pre-TrueNAS 12.0) versions of FreeNAS:
+The videos at https://www.youtube.com/watch?v=RxggaE935PM and https://www.youtube.com/watch?v=QhwOyLtArw0 clarify setting up permissions on SMB shares on legacy (pre-TrueNAS 12.0) versions of FreeNAS:
 
 {{< youtube RxggaE935PM >}}
 <br>

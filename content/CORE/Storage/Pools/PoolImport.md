@@ -26,18 +26,25 @@ There are two kinds of pool imports, standard ZFS pool imports and ZFS pools wit
 ## Standard ZFS Pools
 
 Select *Import Existing Pool* and click *NEXT*.
+
 ![StoragePoolsAddImport](/images/CORE/12.0/StoragePoolsAddImport.png "Import Pool Selection")
 
 The wizard asks if the pool has legacy GELI encryption.
+
 ![StoragePoolsAddImportNoGELI](/images/CORE/12.0/StoragePoolsAddImportNoGELI.png "No GELI on the pool")
+
 Select *No, continue with import* and click *NEXT*.
 
 TrueNAS detects any pools that are present but unconnected.
+
 ![StoragePoolsAddImportZFSPool](/images/CORE/12.0/StoragePoolsAddImportZFSPool.png "Selecting a pool to import")
+
 Choose the ZFS pool to import and click *NEXT*.
 
 Review the Pool Import Summary and click *IMPORT*.
+
 ![StoragePoolsAddImportZFSPoolSummary](/images/CORE/12.0/StoragePoolsAddImportZFSPoolSummary.png "Pool Import Summary")
+
 {{< /tab >}}
 {{< tab "ZFS Pool with GELI" >}}
 ## Encrypted GELI Pools
@@ -49,10 +56,12 @@ Always have a copy of the pool GELI key file and passphrase available.
 {{< /hint >}}
 
 Select *Import Existing Pool* and click *NEXT*.
+
 ![StoragePoolsAddImport](/images/CORE/12.0/StoragePoolsAddImport.png "Import Pool Selection")
 
 The wizard asks if the pool has legacy GELI encryption.
 Select *Yes, decrypt the disks* and review the decryption options.
+
 ![StoragePoolsAddImportGELIPresentDecrypt](/images/CORE/12.0/StoragePoolsAddImportGELIPresentDecrypt.png "GELI decryption options")
 
 Make sure the *Disks* selection shows the encrypted disks and partitions that are part of the incoming pool.

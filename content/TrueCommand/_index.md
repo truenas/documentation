@@ -58,7 +58,7 @@ TrueCommand records all administration actions in secure audit logs. This allows
 ## What Does it Cost?
 
 TrueCommand is free to use for up to 50 drives.
-Licenses to expand TrueCommand capabilities are purchased from the [iXsystems account portal](http://portal.ixsystems.com/).
+Licenses to expand TrueCommand capabilities are purchased from the [iXsystems account portal](https://portal.ixsystems.com/).
 Pricing is based on the number of drives and the desired level of support.
 
 ## Where do I get it?
@@ -70,4 +70,4 @@ TrueCommand Cloud subscriptions are available at the [iXsystems Account Services
 
 TrueCommand Cloud is a secure SaaS offering that includes a WireGuard VPN capability to connect TrueNAS systems through firewalls.
 TrueCommand Cloud is compatible with TrueNAS versions **12.0+ or SCALE** for the Wireguard VPN capability.
-Subscribe to and set up TrueCommand Cloud using [these instructions]({{< relref "/TrueCommand/InstallUpdate/Install.md" >}}).
+Subscribe to and set up TrueCommand Cloud using [these instructions]({{< relref "/TrueCommand/TCGettingStarted/Install/_index.md" >}}).

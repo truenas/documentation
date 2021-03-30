@@ -28,7 +28,7 @@ Authorization: basic [base-64 encoded "[user]:[pass]"]
 
 Example of using curl to sent a TCP/REST request:
 ```
-curl -l -g --data '{}' -u "username:password" -X GET http://[IP_ADDRESS]/api/[NAMESPACE]/[NAME]
+curl -l -g --data '{}' -u "username:password" -X GET https://[IP_ADDRESS]/api/[NAMESPACE]/[NAME]
 ```
 
 ## WebSocket Connections

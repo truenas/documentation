@@ -1,6 +1,6 @@
 ---
-title: "TrueCommand Administration"
-weight: 5
+title: "Settings"
+weight: 50
 ---
 
 {{< toc >}}

@@ -1,0 +1,14 @@
+Want to see a new feature added to TrueNAS?
+You can see and vote for community proposed features in the TrueNAS Jira project and make your own feature suggestions.
+To see the list of features that have been proposed by the community, go to the TrueNAS Jira project and [search for open suggestions](https://jira.ixsystems.com/issues/?jql=issuetype%20%3D%20Suggestion%20AND%20status%20%3D%20%22Gathering%20Interest%22).
+If you find a suggestion that you would also like to see implemented, open that ticket and click *Vote for this issue* in the *People* section of the ticket.
+
+![JiraSuggestionVote](/images/Contribute/JiraSuggestionVote.jpeg "Voting for a Suggestion")
+
+To suggest a new feature, go to https://jira.ixsystems.com/projects/NAS/, log in to your Jira account, and click *Create*.
+
+![JiraSuggestionCreate](/images/Contribute/JiraSuggestionCreate.png "Creating a new Suggestion")
+
+Enter a brief *Summary* and describe the new feature you'd like to see added to the software.
+After your feature suggestion is created, it will move to the *Gathering Interest* stage, where the rest of the community can review and vote for the feature.
+When enough interest has been shown, the TrueNAS Release Council will review the suggestion for feasibility and find where to add the feature in the software roadmap.

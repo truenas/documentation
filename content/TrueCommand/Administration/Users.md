@@ -1,6 +1,6 @@
 ---
 title: "Users"
-weight: 15
+weight: 20
 ---
 
 {{< toc >}}
@@ -30,7 +30,7 @@ Deleting a user account permanently removes the user and cannot be undone.
 ## Using LDAP to Add User Accounts
 
 LDAP is also available for user accounts.
-See the [TrueCommand Administration]({{< relref "settings.md#ldap" >}}) guide for details on LDAP configuration.
+See the [TrueCommand Administration]({{< relref "UserAccounts.md#automatic-creation-with-ldap" >}}) guide for details on LDAP configuration.
 
 *LDAP/AD* allows using single sign-on credentials from the [Lightweight Directory Access Protocol (LDAP)](https://tools.ietf.org/html/rfc4511) or [Active Directory (AD)](https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/active-directory-domain-services).
 This means a user can log in with an LDAP or AD account without creating a separate TrueCommand login.
@@ -63,7 +63,7 @@ TrueCommand applies team permissions to any user added to a team, but setting a 
 ### System Permissions
 
 To limit the access that non-administrative accounts have to the connected systems, configure the **System Access** and/or **System Groups** sections.
-This requires [system connections]({{< relref "AddSystems.md#connecting-systems-to-truecommand" >}}) and/or [system groups]({{< relref "AddSystems.md#organizing-systems-into-groups" >}}) have already been configured in TrueCommand.
+This requires [system connections]({{< relref "ConnectingTrueNAS.md" >}}) and/or [system groups]({{< relref "ConnectingTrueNAS.md" >}}) have already been configured in TrueCommand.
 
 Click *ADD SYSTEM* and select a system from the drop-down to give the user access to that system.
 To restrict the user to only viewing details about the system, set the *read* permission.
