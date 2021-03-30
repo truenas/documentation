@@ -1,5 +1,5 @@
 ---
-title: "Kubernetes Drivers"
+title: "CSI (Container Storage Interface) Drivers"
 weight: 25
 ---
 
@@ -7,22 +7,11 @@ weight: 25
 
 # Introduction
 
-The open-source community has made a container storage interface (CSI)
-Kubernetes/Nomad driver available for integration with TrueNAS!
+A CSI (Container Storage Interface) is an interface between container workloads and third-party storage that supports creating and configuring persistent storage external to the orchestrator, its input/output (I/O), and its advanced functionality such as snapshots and cloning.
 
-[Kubernetes](https://kubernetes.io/) is "an open-source system for automating
-deployment, scaling, and management of containerized applications."
+The open-source community has made a container storage interface (CSI) Kubernetes/Nomad driver available for integration with TrueNAS!
 
-[Nomad](https://www.nomadproject.io/) is a "simple and flexible workload
-orchestrator to deploy and manage containers and non-containerized applications
-across on-prem and clouds at scale."
-
-The TrueNAS integration drivers available from
-https://github.com/democratic-csi/democratic-csi are focused on providing
-storage using iSCSI, NFS, and SMB protocols and include several ZFS features
-like snapshots, cloning, and resizing.
-
-Contributions from the community are welcomed and encouraged!
+The TrueNAS integration drivers available at https://github.com/democratic-csi/democratic-csi are focused on providing storage using iSCSI, NFS, and SMB protocols and include several ZFS features like snapshots, cloning, and resizing.
 
 # Features
 
@@ -43,8 +32,9 @@ Contributions from the community are welcomed and encouraged!
 ## Node Prep
 
 Install and configure the requirements for both nfs and iscsi.
-
-### nfs
+{{< tabs "NodePrep" >}}
+{{< tab "NFS" >}}
+## NFS
 
 ```
 RHEL / CentOS
@@ -52,13 +42,12 @@ sudo yum install -y nfs-utils
 Ubuntu / Debian
 sudo apt-get install -y nfs-common
 ```
-
-### iscsi
+{{< /tab >}}
+{{< tab "iSCSI" >}}
+## iSCSI
 
 {{< hint info >}}
-Note that multipath is supported for the `iscsi`-based drivers.
-Configure multipath with multiple portals in the configuration as needed.
-{{< /hint >}}
+Note that multipath is supported for the `iscsi`-based drivers. Configure multipath with multiple portals in the configuration as needed.
 
 If you are running Kubernetes with rancher/rke please see the https://github.com/rancher/rke/issues/1846.
 
@@ -92,16 +81,20 @@ sudo systemctl enable open-iscsi.service
 sudo service open-iscsi start
 sudo systemctl status open-iscsi
 ```
-
-### SMB
+{{< /hint >}}
+{{< /tab >}}
+{{< tab "SMB" >}}
+## SMB
 
 If using with Windows based machines you may need to enable guest access (even
-if you are connecting with credentials)
+if you are connecting with credentials).
 
 ```
 Set-ItemProperty HKLM:\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters AllowInsecureGuestAuth -Value 1
 Restart-Service LanmanWorkstation -Force
 ```
+{{< /tab >}}
+{{< /tabs >}}
 
 ## Server Prep
 
@@ -229,6 +222,60 @@ Install `democratic-csi` as usual with `volumeSnapshotClasses` defined as approp
 
 - https://kubernetes.io/docs/concepts/storage/volume-snapshots/
 - https://github.com/kubernetes-csi/external-snapshotter#usage
+
+# Container Solutions
+
+Once you have set up a CSI using the instruction above, you may navigate through the tabs below to deploy a container solution. There are several container solutions that integrate with TrueNAS, but we prefer Kubernetes. Before you set up a container solution, go to **Services** and make sure that *iSCSI*, *NFS*, and *SSH* are enabled.
+
+{{< tabs "ContainerSolutions" >}}
+{{< tab "Kubernetes" >}}
+## Kubernetes
+ 
+[Kubernetes](https://kubernetes.io/) is "an open-source system for automating deployment, scaling, and management of containerized applications."
+
+### Create Pools
+
+Go to **Storage > Pools** and create the pools that you want to include in your Kubernetes container.
+
+### Set up SSH 
+
+Now you need to ensure that the user account Kubernetes will use to SSH to TrueNAS has a supported shell.  
+Go to **Accounts > Users** and set the desired user's *Shell* to either *bash* or *sh*, the click *SAVE*.
+
+### Set up NFS
+
+1. Go to **Services** and click the <i class="fa fa-pencil" aria-hidden="true" title="Configure"></i> next to *NFS* to edit its properties.
+2. Make sure *Enable NFSv4*, *NFSv3 ownership model for NFSv4*, and *Allow non-root mount* are checked, then click *SAVE*.
+
+### Set up iSCSI
+
+1. Go to **Sharing > Block Shares (iSCSI)**.
+2. Use the default settings in the *Target Global Configuration* tab.
+3. In the *Portals* tab, click *ADD*, then create a **Description*. Set the *IP Address* to *0.0.0.0* and the *Port* to *3260*, then click *SUBMIT*.
+4. In the *Initiators Groups* tab, click *ADD*. For ease of use, check the *Allow ALL Initiators*, then click *SAVE*. You can make restrictions later using the *Allowed Initiators (IQN)* function.
+5. Kubernetes will create Targets and Extents automatically.
+
+### Finishing Up
+
+Since you already set up the CSI in the Installation section, your Kubernetes container should be ready.
+
+* You can run the `kubectl get pods -n democratic-csi -o wide` command to make sure all the democratic-csi pods are running.
+* You can also run the `kubectl get sc` command to make sure your storage classes are present and set a default class.
+* Visit the [Kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/) for more Kubernetes creation and configuration commands.
+{{< /tab >}}
+{{< tab "Nomad" >}}
+## Nomad
+ 
+[Nomad](https://www.nomadproject.io/) is a "simple and flexible workload orchestrator to deploy and manage containers and non-containerized applications across on-prem and clouds at scale."
+{{< /tab >}}
+{{< tab "Mesos" >}}
+## Mesos
+ 
+[Mesos](http://mesos.apache.org/) is an open source cluster manager that abstracts CPU, memory, storage, and other compute resources away from machines (physical or virtual), enabling fault-tolerant and elastic distributed systems to easily be built and run effectively.
+{{< /tab >}}
+{{< /tabs >}}
+
+As always, we welcome and encourage contributions from the community!
 
 # Additional Resources
 
