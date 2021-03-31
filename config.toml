@@ -1,4 +1,4 @@
-#baseURL = "https://www.truenas.com/docs/"
+baseURL = "https://www.truenas.com/docs/"
 title = ""
 theme = ["hugo-geekdoc"]
 #disableKinds = ["home"]
