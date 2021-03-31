@@ -14,8 +14,8 @@
   function init() {
     input.removeEventListener('focus', init); // init once
 
-    loadScript('/docs/{{ index .Site.Data.assets "js/groupBy.min.js" | absURL }}');
-    loadScript('/docs/{{ index .Site.Data.assets "js/flexsearch.min.js" | absURL }}', function() {
+    loadScript('/docs/{{ index .Site.Data.assets "js/groupBy.min.js" | relURL }}');
+    loadScript('/docs/{{ index .Site.Data.assets "js/flexsearch.min.js" | relURL }}', function() {
       const indexCfg = {{ with .Scratch.Get "geekdocSearchConfig" }}{{ . | jsonify}}{{ else }}{}{{ end }};
       const dataUrl = "/docs{{ $searchData.RelPermalink }}"
 
