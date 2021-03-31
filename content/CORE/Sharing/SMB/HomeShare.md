@@ -17,7 +17,7 @@ Create a new dataset in an existing storage pool.
 This article uses the example *ourhome*.
 Set the *Share Type* to *SMB*.
 
-![StoragePoolsOptionsDatasetCreateOurhome](/images/CORE/12.0/StoragePoolsOptionsDatasetCreateOurhome.jpeg "Creating the SMB Dataset")
+![StoragePoolsOptionsDatasetCreateOurhome](/images/CORE/12.0/StoragePoolsOptionsDatasetCreateOurhome.jpg "Creating the SMB Dataset")
 
 After creating the dataset, go to **Storage > Pools**, open the dataset options, and select *Edit Permissions*.
 Click *Select an ACL Preset* and choose *HOME*.
