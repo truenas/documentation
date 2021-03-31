@@ -2,7 +2,7 @@
 
 Every kind of network interface has common settings:
 
-![NetworkInterfacesAddOtherSettings](/images/CORE/12.0/NetworkInterfacesAddOtherSettings.jpeg "Common Interface Settings")
+![NetworkInterfacesAddOtherSettings](/images/CORE/12.0/NetworkInterfacesAddOtherSettings.jpg "Common Interface Settings")
 
 Disabling *Hardware Offloading* is discouraged as it can reduce network performance.
 However, disabling this option might be needed when the interface is managing [Jails]({{< relref "Create.md" >}}), [Plugins]({{< relref "CreatePlugin.md" >}}), or [Virtual Machines]({{< relref "Basic.md" >}}).
@@ -19,7 +19,7 @@ If additional tuning is needed, you can enter additional [ifconfig](https://www.
 
 Additional aliases for the interface can also be defined:
 
-![NetworkInterfacesAddIpAddresses](/images/CORE/12.0/NetworkInterfacesAddIpAddresses.jpeg "Interface Aliases")
+![NetworkInterfacesAddIpAddresses](/images/CORE/12.0/NetworkInterfacesAddIpAddresses.jpg "Interface Aliases")
 
 Either IPv4 or IPv6 addresses and subnets from *1-32* can be defined.
 Clicking *Add* will provide another field for defining an IP address.
