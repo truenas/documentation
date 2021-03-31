@@ -17,7 +17,7 @@
     loadScript('{{ index .Site.Data.assets "js/groupBy.min.js" | absURL }}');
     loadScript('{{ index .Site.Data.assets "js/flexsearch.min.js" | absURL }}', function() {
       const indexCfg = {{ with .Scratch.Get "geekdocSearchConfig" }}{{ . | jsonify}}{{ else }}{}{{ end }};
-      const dataUrl = "docs{{ $searchData.RelPermalink }}"
+      const dataUrl = "{{ $searchData.RelPermalink }}"
 
       indexCfg.doc = {
         id: 'id',
