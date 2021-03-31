@@ -7,7 +7,7 @@ weight: 20
 TrueNAS includes the ability to run OpenVPN, this is a short tutorial to configure the OpenVPN client on TrueNAS 12.0.
 
 {{< hint info >}}
-Many VPN services are provided by 3rd parties that are unaffiliated with iXsystems. Please verify compatibility and pricing with your provider before integrating with TrueNAS
+Many VPN services are provided by 3rd parties that are unaffiliated with iXsystems. Please verify compatibility and pricing with your provider before integrating with TrueNAS.
 {{< /hint >}}
 
 
@@ -78,36 +78,42 @@ c0224e25d9ed3d2b562e94bed507fcac
 
 ## Installing the CA
 
-Open **System > CA**
+Open **System > CA**.
 
-Add a new certificate
+Add a new certificate.
+
 ![CertAuthorityAdd](/images/UserProvided/CertAuthorityAdd.png "Cert Authority Add")
 
 
-Give it a name (here VPN_CA) and select "Import CA" as type
+Give it a name (here VPN_CA) and select "Import CA" as type.
+
 ![CertAuthorityImportCA](/images/UserProvided/CertAuthorityImportCA.png "Cert Authority Import CA")
 
 
-Copy/paste the certificate from the configuration file
-The certificate can be found between the tags `<ca>` and `</ca>` of the OpenVPN config file
+Copy/paste the certificate from the configuration file.
+The certificate can be found between the tags `<ca>` and `</ca>` of the OpenVPN config file.
+
 ![CertAuthorityImportCACertificate](/images/UserProvided/CertAuthorityImportCACertificate.png "Cert Authority Import CA Certificate")
 
 
 ## Installing the Certificate
 
-Open **System > Certificate**
+Open **System > Certificate**.
 
-Add a certificate
+Add a certificate.
+
 ![CertificateAdd](/images/UserProvided/CertificateAdd.png "Certificate Add")
 
 
-Give it a name (here VPN) and select "Import Certificate" as type
-Copy and paste the certificate, it can be found in the OpenVPN config file between the tags `<cert>` and `</cert>`
-Copy and paste the key between the tags `<key>` and `</key>` from the configuration file
+Give it a name (here VPN) and select "Import Certificate" as type.
+Copy and paste the certificate, it can be found in the OpenVPN config file between the tags `<cert>` and `</cert>`.
+Copy and paste the key between the tags `<key>` and `</key>` from the configuration file.
+
 ![CertificateAddDetails](/images/UserProvided/CertificateAddDetails.png "Certificate Add Details")
 
 
-So now we have a CA and a certificate for the VPN connexion as below
+So now we have a CA and a certificate for the VPN connexion as below:
+
 ![CertandCAAdded](/images/UserProvided/CertandCAAdded.png "Cert and CA Added")
 
 
@@ -120,17 +126,20 @@ Click the <i class="fa fa-pencil" aria-hidden="true" title="Configure"></i>&nbsp
 
 
 Choose the certificate and Root CA we previously installed.
-The rest of the parameters are found in the OpenVPN configuration file
-In "Additional parameters" you can add options that are in the configuration files, like the TLS key for authentication or user login/password
+The rest of the parameters are found in the OpenVPN configuration file.
+In "Additional parameters" you can add options that are in the configuration files, like the TLS key for authentication or user login/password.
+
 ![OpenVPNServiceConfigure](/images/UserProvided/OpenVPNServiceConfigure.png "OpenVPN Service Configure")
 
 ## Start the service
 
-Start the service (check automatically if needed)
+Start the service (check automatically if needed).
+
 ![OpenVPNServiceStart](/images/UserProvided/OpenVPNServiceStart.png "OpenVPN Service Start")
 
 
-Test if the connection is working using curl ifconfig.me in a terminal for example (it should give you the IP from the VPN connection and not from your "local" connection, turn the OpenVPN client service on and off to see the difference)
-Logs of the OpenVPN client can be found in <file>/var/log/messages</file> and <file>/var/log/daemon</file>
+Test if the connection is working using curl ifconfig.me in a terminal for example (it should give you the IP from the VPN connection and not from your "local" connection, turn the OpenVPN client service on and off to see the difference).
+
+Logs of the OpenVPN client can be found in <file>/var/log/messages</file> and <file>/var/log/daemon</file>.
 
 
