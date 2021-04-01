@@ -4,12 +4,11 @@ geekdocCollapseSection: true
 weight: 20
 ---
 
-TrueNAS includes the ability to run OpenVPN, this is a short tutorial to configure the OpenVPN client on TrueNAS 12.0.
+TrueNAS includes the ability to run OpenVPN.  This is a short tutorial to configure the OpenVPN client on TrueNAS 12.0.
 
 {{< hint info >}}
 Many VPN services are provided by 3rd parties that are unaffiliated with iXsystems. Please verify compatibility and pricing with your provider before integrating with TrueNAS.
 {{< /hint >}}
-
 
 {{< toc >}}
 
@@ -84,17 +83,14 @@ Add a new certificate.
 
 ![CertAuthorityAdd](/images/UserProvided/CertAuthorityAdd.png "Cert Authority Add")
 
-
 Give it a name (here VPN_CA) and select "Import CA" as type.
 
 ![CertAuthorityImportCA](/images/UserProvided/CertAuthorityImportCA.png "Cert Authority Import CA")
-
 
 Copy/paste the certificate from the configuration file.
 The certificate can be found between the tags `<ca>` and `</ca>` of the OpenVPN config file.
 
 ![CertAuthorityImportCACertificate](/images/UserProvided/CertAuthorityImportCACertificate.png "Cert Authority Import CA Certificate")
-
 
 ## Installing the Certificate
 
@@ -104,18 +100,15 @@ Add a certificate.
 
 ![CertificateAdd](/images/UserProvided/CertificateAdd.png "Certificate Add")
 
-
 Give it a name (here VPN) and select "Import Certificate" as type.
 Copy and paste the certificate, it can be found in the OpenVPN config file between the tags `<cert>` and `</cert>`.
 Copy and paste the key between the tags `<key>` and `</key>` from the configuration file.
 
 ![CertificateAddDetails](/images/UserProvided/CertificateAddDetails.png "Certificate Add Details")
 
-
 So now we have a CA and a certificate for the VPN connexion as below:
 
 ![CertandCAAdded](/images/UserProvided/CertandCAAdded.png "Cert and CA Added")
-
 
 ## Configure OpenVPN Service
 
@@ -123,7 +116,6 @@ Go to the **Services** page and find the **OpenVPN Client** entry.
 Click the <i class="fa fa-pencil" aria-hidden="true" title="Configure"></i>&nbsp; to configure the service.
 
 ![OpenVPNServiceEdit](/images/UserProvided/OpenVPNServiceEdit.png "OpenVPN Service Edit")
-
 
 Choose the certificate and Root CA we previously installed.
 The rest of the parameters are found in the OpenVPN configuration file.
@@ -137,8 +129,7 @@ Start the service (check automatically if needed).
 
 ![OpenVPNServiceStart](/images/UserProvided/OpenVPNServiceStart.png "OpenVPN Service Start")
 
-
-Test if the connection is working using curl ifconfig.me in a terminal for example (it should give you the IP from the VPN connection and not from your "local" connection, turn the OpenVPN client service on and off to see the difference).
+Test if the connection is working using `curl ifconfig.me` in a terminal for example.  It should give you the IP from the VPN connection and not from your "local" connection, turn the OpenVPN client service on and off to see the difference.
 
 Logs of the OpenVPN client can be found in <file>/var/log/messages</file> and <file>/var/log/daemon</file>.
 
