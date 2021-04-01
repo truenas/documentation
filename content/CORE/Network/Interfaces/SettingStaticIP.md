@@ -10,8 +10,7 @@ Making changes to the network interface the web interface uses can result in los
 Fixing any misconfigured network settings might require command line knowledge or physical access to the TrueNAS system.
 {{< /hint >}}
 
-## Process Summary
-
+{{< expand "Process Summary" "v" >}}
 * Web UI
   * **Network > Interfaces** > *Add* or *Edit*
     * Type address into *IP Address* and select a subnet mask.
@@ -30,6 +29,7 @@ Fixing any misconfigured network settings might require command line knowledge o
       * Enter IP address
     * Configure failover? `n`
   * Saving changes interrupts the web interface and could require a system reboot.
+{{< /expand >}}
 
 ## Setting Static IP Addresses
 
