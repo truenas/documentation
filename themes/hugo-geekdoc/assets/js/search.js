@@ -101,8 +101,7 @@
 
       entry.classList.add("flex")
 
-      console.log(page)
-      a.href = page.href;
+      a.href = `/docs${page.href}`;
       a.textContent = page.title;
       a.classList.add("gdoc-search__entry")
 
