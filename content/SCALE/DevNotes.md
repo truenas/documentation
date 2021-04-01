@@ -97,6 +97,80 @@ For PCI Passthrough devices, system will try to detach the PCI device before the
 
 For example, the device could be part of a CPU and we try to pass it through to the guest, it can result in a crash where the system only recovers after a reboot.
 
+### GPU Passthrough
+
+For GPU passthrough, it is a requirement for the system to have at least 2 GPU's available.
+GPU's can be identified by running
+
+```
+midclt call device.get_gpus | jq .
+
+[
+  {
+    "addr": {
+      "pci_slot": "0000:af:00.0",
+      "domain": "0000",
+      "bus": "af",
+      "slot": "00"
+    },
+    "description": "NVIDIA Corporation GM107 [GeForce GTX 750 Ti]",
+    "devices": [
+      {
+        "pci_id": "10DE:1380",
+        "pci_slot": "0000:af:00.0"
+      },
+      {
+        "pci_id": "10DE:0FBC",
+        "pci_slot": "0000:af:00.1"
+      }
+    ],
+    "vendor": "NVIDIA",
+    "available_to_host": false
+  },
+  {
+    "addr": {
+      "pci_slot": "0000:d8:00.0",
+      "domain": "0000",
+      "bus": "d8",
+      "slot": "00"
+    },
+    "description": "NVIDIA Corporation GK208B [GeForce GT 730]",
+    "devices": [
+      {
+        "pci_id": "10DE:1287",
+        "pci_slot": "0000:d8:00.0"
+      },
+      {
+        "pci_id": "10DE:0E0F",
+        "pci_slot": "0000:d8:00.1"
+      }
+    ],
+    "vendor": "NVIDIA",
+    "available_to_host": true
+  }
+]
+```
+
+After identifying the GPU which is to be used for passthrough, please note down `addr.pci_slot` value
+and then to have system isolate the GPU, please execute the following command:
+
+```
+midclt call system.advanced.update '{"isolated_gpu_pci_ids": ["0000:af:00.0"]}'
+```
+
+After a reboot of the system, the GPU in question should not be consumed by the host now and can be confirmed with `lspci`.
+Moving on, relevant PCI devices can be added to the VM which is going to consume the GPU from the UI.
+In some cases like a Windows 10 VM, GPU might not be recognized unless `hide_from_msr` is enabled for the VM.
+That can be achieved by
+```
+midclt call vm.update 1 '{"hide_from_msr": true}'
+```
+
+Please note that `1` is the id of the VM. This will be different for each VM and it can be retrieved by executing
+```
+midclt call vm.query | jq .
+```
+
 ## Containerization
 
 ### Containers / Kubernetes Roadmap
