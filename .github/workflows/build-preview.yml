@@ -57,7 +57,7 @@ jobs:
       - name: Sleep for 120 seconds
         uses: jakejarvis/wait-action@master
         with:
-          time: '120s'
+          time: '160s'
      
       - name: Check links using container
         uses: ruzickap/action-my-broken-link-checker@v2
