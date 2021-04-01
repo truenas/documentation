@@ -13,7 +13,7 @@ Many VPN services are provided by 3rd parties that are unaffiliated with iXsyste
 
 {{< toc >}}
 
-Prerequisite: An OpenVPN server running with a similar configuration:
+Prerequisite: An OpenVPN server running with a similar configuration to these configuration file settings:
 
 {{< expand "Example OpenVPN Configuration File" "v" >}}
 ```
@@ -141,5 +141,4 @@ Start the service (check automatically if needed).
 Test if the connection is working using curl ifconfig.me in a terminal for example (it should give you the IP from the VPN connection and not from your "local" connection, turn the OpenVPN client service on and off to see the difference).
 
 Logs of the OpenVPN client can be found in <file>/var/log/messages</file> and <file>/var/log/daemon</file>.
-
 
