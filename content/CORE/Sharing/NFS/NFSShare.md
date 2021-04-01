@@ -53,7 +53,7 @@ Opening the *ADVANCED OPTIONS* allows tuning the share access permissions and de
 
 {{< /expand >}}
 
-To edit an existing NFS share, go to **Sharing > Unix Shares (NFS)** and click <i class="fas fa-ellipsis-v" aria-hidden="true" title="Options"></i> (Options) > **Edit**.
+To edit an existing NFS share, go to **Sharing > Unix Shares (NFS)** and click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> **> Edit**.
 The options available are identical to the share creation options.
 
 ## Configure the NFS Service
