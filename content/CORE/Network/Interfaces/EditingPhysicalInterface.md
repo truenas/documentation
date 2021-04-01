@@ -43,7 +43,7 @@ An interface's editing options are dependent on the *Type* of interface that you
 
 | Setting | Value | Description |
 |---------|-------|-------------|
-| Disable Hardware Offloading | checkbox | Turn off hardware offloading for network traffic processing. WARNING: disabling hardware offloading can reduce network performance and is only recommended when the interface is managing [jails]({{< relref "/CORE/Virtualization/Jails/_index.md" >}}), [plugins]({{< relref "/CORE/Virtualization/Plugins/_index.md" >}}), or [virtual machines (VMs)]({{< relref "/CORE/Virtualization/VirtualMachines/_index.md" >}}). |
+| Disable Hardware Offloading | checkbox | Turn off hardware offloading for network traffic processing. WARNING: disabling hardware offloading can reduce network performance and is only recommended when the interface is managing [jails]({{< relref "/CORE/Applications/Jails/_index.md" >}}), [plugins]({{< relref "/CORE/Applications/Plugins/_index.md" >}}), or [virtual machines (VMs)]({{< relref "/CORE/Applications/VirtualMachines/_index.md" >}}). |
 | MTU | string | Maximum Transmission Unit, the largest protocol data unit that can be communicated. The largest workable MTU size varies with network interfaces and equipment. 1500 and 9000 are standard Ethernet MTU sizes. Leaving blank restores the field to the default value of 1500. |
 | Options | string | Additional parameters from [ifconfig](https://www.freebsd.org/cgi/man.cgi?query=ifconfig). Separate multiple parameters with a space. For example: mtu 9000 increases the MTU for interfaces which support jumbo frames. |
 
