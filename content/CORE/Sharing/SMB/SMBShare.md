@@ -153,7 +153,7 @@ After the SMB share is created, additional management options are available by g
 
 ### Configure Share ACL
 
-To see the share ACL options, click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> > *Edit Share ACL*.
+To see the share ACL options, click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> > *Edit Share ACL*.
 
 ![EditShareACL](/images/CORE/12.0/SharingSMBShareACL.png "Share ACL Options")>
 
@@ -173,7 +173,7 @@ Clicking *SAVE* stores the share ACL and applies it to the share immediately.
 
 ### Configure Filesystem ACL
 
-Click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> > *Edit Filesystem ACL* to quickly return to **Storage > Pools** and edit the dataset ACL.
+Click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> > *Edit Filesystem ACL* to quickly return to **Storage > Pools** and edit the dataset ACL.
 
 ![DatasetACLEdit](/images/CORE/12.0/StoragePoolsEditACL.png "Dataset Permissions Options")
 
