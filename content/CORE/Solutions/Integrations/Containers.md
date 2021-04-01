@@ -1,17 +1,19 @@
 ---
-title: "CSI (Container Storage Interface) Drivers"
+title: "Containers"
 weight: 25
 ---
 
 {{< toc >}}
 
-# Introduction
+
+
+TrueNAS CORE does not natively support container solutions. However, the open-source community has made a container storage interface (CSI) driver available for TrueNAS CORE! 
+
+The driver (available at https://github.com/democratic-csi/democratic-csi) supports integrating popular container solutions like Kubernetes, Nomad, or Mesos into the TrueNAS CLI.
 
 A CSI (Container Storage Interface) is an interface between container workloads and third-party storage that supports creating and configuring persistent storage external to the orchestrator, its input/output (I/O), and its advanced functionality such as snapshots and cloning.
 
-The open-source community has made a container storage interface (CSI) Kubernetes/Nomad driver available for integration with TrueNAS!
-
-The TrueNAS integration drivers available at https://github.com/democratic-csi/democratic-csi are focused on providing storage using iSCSI, NFS, and SMB protocols and include several ZFS features like snapshots, cloning, and resizing.
+The democratic-csi focuses on providing storage using iSCSI, NFS, and SMB protocols and include several ZFS features like snapshots, cloning, and resizing.
 
 # Features
 
@@ -22,14 +24,13 @@ The TrueNAS integration drivers available at https://github.com/democratic-csi/d
 
 # Installation
 
-3 steps are required:
+3 steps to install the democratic-csi:
 
-- node prep (ie: your kubernetes cluster nodes)
-- server prep (ie: your storage server)
-- deploy the driver into the cluster (`helm` chart provided with sample
-  `values.yaml`)
+1. Prepare the nodes (ie: your kubernetes cluster nodes).
+2. Deploy the driver into the cluster (`helm` chart provided with sample `values.yaml`).
+3. Prepare the server with a container solution.
 
-## Node Prep
+## Prepare the Nodes
 
 Install and configure the requirements for both nfs and iscsi.
 {{< tabs "NodePrep" >}}
@@ -96,46 +97,7 @@ Restart-Service LanmanWorkstation -Force
 {{< /tab >}}
 {{< /tabs >}}
 
-## Server Prep
-
-The recommended version of TrueNAS is 12.0-U2.1+, however the driver should work
-with much older versions as well.
-
-Ensure the following services are configured and running:
-
-- ssh (if you use a password for authentication make sure it is allowed)
-- ensure `zsh`, `bash`, or `sh` is set as the root shell, `csh` gives false errors due to quoting
-- nfs
-- iscsi
-  - (fixed in 12.0-U2+) when using the TrueNAS API concurrently the
-    `/etc/ctl.conf` file on the server can become invalid, some sample scripts
-    are provided in the `contrib` directory to clean things up ie: copy the 
-    script to the server and directly and run - `./ctld-config-watchdog-db.sh | logger -t ctld-config-watchdog-db.sh &`
-    please read the scripts and set the variables as appropriate for your server.
-  - ensure you have preemptively created portals, initiator groups, and authorizations
-    - make note of the respective IDs (the true ID may not reflect what is
-      visible in the UI)
-    - IDs can be visible by clicking the the `Edit` link and finding the ID in the
-      browser address bar
-    - Alternately, use these commands to retrieve appropriate IDs:
-      - `curl --header "Accept: application/json" --user root:<password> 'http(s)://<ip>/api/v2.0/iscsi/portal'`
-      - `curl --header "Accept: application/json" --user root:<password> 'http(s)://<ip>/api/v2.0/iscsi/initiator'`
-      - `curl --header "Accept: application/json" --user root:<password> 'http(s)://<ip>/api/v2.0/iscsi/auth'`
-- smb
-
-In addition, if you want to use a non-root user for the ssh operations you may
-create a `csi` user and then run `visudo` directly from the console. Make sure
-the line for the `csi` user has `NOPASSWD` added (note this can get reset by
-TrueNAS if you alter the user via the GUI later):
-
-```
-csi ALL=(ALL) NOPASSWD:ALL
-```
-
-Starting with TrueNAS CORE 12 it is also possible to use an `apiKey` instead of
-the `root` password for the http connection.
-
-## Helm Installation
+## Deploy the Driver (Helm Installation)
 
 ```
 helm repo add democratic-csi https://democratic-csi.github.io/charts/
@@ -160,9 +122,7 @@ helm upgrade \
 zfs-nfs democratic-csi/democratic-csi
 ```
 {{< expand "Note About non-standard Kubelet Paths" "v" >}}
-Some distributions, such as `minikube` and `microk8s` use a non-standard
-kubelet path. In such cases it is necessary to provide a new kubelet host path,
-microk8s example below:
+If you're using a distribution with a non-standard kubelet path (such as `minikube` and `microk8s`), you will need to provide a new kubelet host path (microk8s example below).
 
 ```bash
 microk8s helm upgrade \
@@ -176,8 +136,7 @@ microk8s helm upgrade \
 
 ### openshift
 
-`democratic-csi` generally works fine with openshift. Some special parameters
-need to be set with helm (support added in chart version `0.6.1`):
+The `democratic-csi` generally works fine with openshift. You will need to set special parameters with helm (support added in chart version `0.6.1`):
 
 ```
 # for sure required
@@ -187,16 +146,16 @@ need to be set with helm (support added in chart version `0.6.1`):
 --set controller.rbac.openshift.privileged=true
 ```
 
-## Multiple Deployments
+### Multiple Deployments
 
-You can install multiple deployments of each or any driver. This requires:
+You can install multiple deployments of each or any driver. This will need:
 
 - a new helm release name for each deployment
 - a unique `csiDriver.name` in the values file
-- unique names for the storage classes (per cluster)
+- a unique name for each storage class (per cluster)
 - a unique parent dataset (don't try to use the same parent across deployments or clusters)
 
-# Snapshot Support
+### Snapshot Support
 
 Install beta (v1.17+) CRDs (once per cluster):
 
@@ -223,9 +182,11 @@ Install `democratic-csi` as usual with `volumeSnapshotClasses` defined as approp
 - https://kubernetes.io/docs/concepts/storage/volume-snapshots/
 - https://github.com/kubernetes-csi/external-snapshotter#usage
 
-# Container Solutions
+## Prepare the Server with a Container Solution
 
-Once you have set up a CSI using the instruction above, you may navigate through the tabs below to deploy a container solution. There are several container solutions that integrate with TrueNAS, but we prefer Kubernetes. Before you set up a container solution, go to **Services** and make sure that *iSCSI*, *NFS*, and *SSH* are enabled.
+We recommend using TrueNAS 12.0-U2.1+. However, the driver should work with older versions too.
+
+Once you have prepared the nodes and set up the democratic-csi driver using the instructions above, you may navigate through the tabs below to prepare the server with a container solution. There are several container solutions that integrate with TrueNAS, but we prefer Kubernetes. Before you set up a container solution, go to **Services** and make sure that *iSCSI*, *NFS*, and *SSH* are enabled.
 
 {{< tabs "ContainerSolutions" >}}
 {{< tab "Kubernetes" >}}
@@ -242,6 +203,17 @@ Go to **Storage > Pools** and create the pools that you want to include in your 
 Now you need to ensure that the user account Kubernetes will use to SSH to TrueNAS has a supported shell.  
 Go to **Accounts > Users** and set the desired user's *Shell* to either *bash* or *sh*, the click *SAVE*.
 
+{{< hint info >}}
+ 
+In addition, if you want to use a non-root user for the SSH operations, you may create a `csi` user and then run `visudo` directly from the console. Make sure the line for the `csi` user has `NOPASSWD` added (note: this can get reset by TrueNAS if you alter the user via the GUI later):
+
+```
+csi ALL=(ALL) NOPASSWD:ALL
+```
+
+With TrueNAS CORE 12, you can use an `apiKey` instead of the `root` password for the http connection.
+{{< /hint >}}
+
 ### Set up NFS
 
 1. Go to **Services** and click the <i class="fa fa-pencil" aria-hidden="true" title="Configure"></i> next to *NFS* to edit its properties.
@@ -255,9 +227,17 @@ Go to **Accounts > Users** and set the desired user's *Shell* to either *bash* o
 4. In the *Initiators Groups* tab, click *ADD*. For ease of use, check the *Allow ALL Initiators*, then click *SAVE*. You can make restrictions later using the *Allowed Initiators (IQN)* function.
 5. Kubernetes will create Targets and Extents automatically.
 
-### Finishing Up
-
-Since you already set up the CSI in the Installation section, your Kubernetes container should be ready.
+{{< hint info >}}
+ 
+When using the TrueNAS API concurrently, the `/etc/ctl.conf` file on the server can become invalid. There are sample scripts in the `contrib` directory to clean things up ie: copy the script to the server and directly and run - `./ctld-config-watchdog-db.sh | logger -t ctld-config-watchdog-db.sh &`. Please read the scripts and set the variables as appropriate for your server.
+  - Ensure you have preemptively created portals, initiator groups, and authorizations
+    - Make note of the respective IDs (the true ID may not reflect what is visible in the UI)
+    - IDs can be visible by clicking the the `Edit` link and finding the ID in the browser address bar
+    - Alternately, use these commands to retrieve appropriate IDs:
+      - `curl --header "Accept: application/json" --user root:<password> 'http(s)://<ip>/api/v2.0/iscsi/portal'`
+      - `curl --header "Accept: application/json" --user root:<password> 'http(s)://<ip>/api/v2.0/iscsi/initiator'`
+      - `curl --header "Accept: application/json" --user root:<password> 'http(s)://<ip>/api/v2.0/iscsi/auth'`
+{{< /hint >}}
 
 * You can run the `kubectl get pods -n democratic-csi -o wide` command to make sure all the democratic-csi pods are running.
 * You can also run the `kubectl get sc` command to make sure your storage classes are present and set a default class.
