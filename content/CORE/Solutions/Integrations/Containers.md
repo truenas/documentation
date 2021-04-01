@@ -134,21 +134,9 @@ microk8s helm upgrade \
 ```
 {{< /expand >}}
 
-### openshift
-
-The `democratic-csi` generally works fine with openshift. You will need to set special parameters with helm (support added in chart version `0.6.1`):
-
-```
-# for sure required
---set node.rbac.openshift.privileged=true
---set node.driver.localtimeHostPath=false
-# unlikely, but in special circumstances may be required
---set controller.rbac.openshift.privileged=true
-```
-
 ### Multiple Deployments
 
-You can install multiple deployments of each or any driver. This will need:
+You can install multiple deployments of each or any driver. You will need:
 
 - a new helm release name for each deployment
 - a unique `csiDriver.name` in the values file
@@ -181,6 +169,22 @@ Install `democratic-csi` as usual with `volumeSnapshotClasses` defined as approp
 
 - https://kubernetes.io/docs/concepts/storage/volume-snapshots/
 - https://github.com/kubernetes-csi/external-snapshotter#usage
+
+
+{{< expand "Custom Label" "v" >}}
+### openshift
+
+[Openshift](https://www.simplilearn.com/kubernetes-vs-openshift article#:~:text=OpenShift%201%20Deployment.%20Kubernetes%20offers%20more%20flexibility%20as,6%20Templates.%20...%207%20Container%20Image%20Management.%20) is another addon to Kubernetes and generally works fine with the `democratic-csi`. You will need to set special parameters with helm (support added in chart version `0.6.1`):
+
+```
+# for sure required
+--set node.rbac.openshift.privileged=true
+--set node.driver.localtimeHostPath=false
+# unlikely, but in special circumstances may be required
+--set controller.rbac.openshift.privileged=true
+```
+
+{{< /expand >}}
 
 ## Prepare the Server with a Container Solution
 
@@ -247,6 +251,11 @@ When using the TrueNAS API concurrently, the `/etc/ctl.conf` file on the server 
 ## Nomad
  
 [Nomad](https://www.nomadproject.io/) is a "simple and flexible workload orchestrator to deploy and manage containers and non-containerized applications across on-prem and clouds at scale."
+
+The democratic-csi works in Nomad with limited functionality and has to be deployed as a set of jobs. The controller job runs as a single instance, and the node job runs on every node and manages mounting the volume.
+
+Read the [Nomad Support](https://github.com/democratic-csi/democratic-csi/blob/master/docs/nomad.md) page in the democratic-csi GitHub for detailed setup instructions. 
+
 {{< /tab >}}
 {{< tab "Mesos" >}}
 ## Mesos
