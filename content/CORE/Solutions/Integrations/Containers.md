@@ -171,9 +171,7 @@ Install `democratic-csi` as usual with `volumeSnapshotClasses` defined as approp
 - https://github.com/kubernetes-csi/external-snapshotter#usage
 
 
-{{< expand "Custom Label" "v" >}}
-### openshift
-
+{{< expand "Openshift" "v" >}}
 [Openshift](https://www.simplilearn.com/kubernetes-vs-openshift article#:~:text=OpenShift%201%20Deployment.%20Kubernetes%20offers%20more%20flexibility%20as,6%20Templates.%20...%207%20Container%20Image%20Management.%20) is another addon to Kubernetes and generally works fine with the `democratic-csi`. You will need to set special parameters with helm (support added in chart version `0.6.1`):
 
 ```
