@@ -7,5 +7,7 @@
 | End | Choose the hour and minute after which a resilver process must return to running at a lower priority. A resilver process running after this time will likely take much longer to complete due to running at a lower priority compared to other disk and CPU activities, such as replications, SMB transfers, NFS transfers, Rsync transfers, S.M.A.R.T. tests, pool scrubs, user activity, etc. |
 | Days of the Week | Select the days to run resilver tasks. |
 
-{{< hint info >}} A resilver process running during the time-frame defined between "Begin Time" and "End Time" will likely work faster, as it is not being throttled to run at a lower priority.
-Keep in mind that it is advised to avoid putting the system under any intensive activity or heavy loads (replications, SMB transfers, NFS transfers, Rsync transfers, S.M.A.R.T. tests, pool scrubs, etc) during a resilver process. {{< /hint >}}
+{{< hint info >}} 
+A resilver process running during the time-frame defined between "Begin Time" and "End Time" will likely work faster, as it is not being throttled to run at a lower priority.
+Keep in mind that it is advised to avoid putting the system under any intensive activity or heavy loads (replications, SMB transfers, NFS transfers, Rsync transfers, S.M.A.R.T. tests, pool scrubs, etc) during a resilver process. 
+{{< /hint >}}
