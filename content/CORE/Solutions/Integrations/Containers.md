@@ -11,7 +11,7 @@ The driver (available at https://github.com/democratic-csi/democratic-csi) suppo
 
 A CSI (Container Storage Interface) is an interface between container workloads and third-party storage that supports creating and configuring persistent storage external to the orchestrator, its input/output (I/O), and its advanced functionality such as snapshots and cloning.
 
-The democratic-csi focuses on providing storage using iSCSI, NFS, and SMB protocols and include several ZFS features like snapshots, cloning, and resizing.
+The democratic-csi focuses on providing storage using iSCSI, NFS, and SMB protocols, and includes several ZFS features like snapshots, cloning, and resizing.
 
 # Features
 
@@ -24,13 +24,13 @@ The democratic-csi focuses on providing storage using iSCSI, NFS, and SMB protoc
 
 3 steps to install the democratic-csi:
 
-1. Prepare the nodes (ie: your kubernetes cluster nodes).
+1. Prepare the nodes (ie: your Kubernetes cluster nodes).
 2. Deploy the driver into the cluster (`helm` chart provided with sample `values.yaml`).
 3. Prepare the server with a container solution.
 
 ## Prepare the Nodes
 
-Install and configure the requirements for both nfs and iscsi.
+Install and configure the requirements for both NFS and iSCSI.
 {{< tabs "NodePrep" >}}
 {{< tab "NFS" >}}
 ## NFS
@@ -186,7 +186,7 @@ Install `democratic-csi` as usual with `volumeSnapshotClasses` defined as approp
 
 We recommend using TrueNAS 12.0-U2.1+. However, the driver should work with older versions too.
 
-Once you have prepared the nodes and set up the democratic-csi driver using the instructions above, you may navigate through the tabs below to prepare the server with a container solution. There are several container solutions that integrate with TrueNAS, but we prefer Kubernetes. Before you set up a container solution, go to **Services** and make sure that *iSCSI*, *NFS*, and *SSH* are enabled.
+Once you have prepared the nodes and set up the democratic-csi driver using the instructions above, you may navigate through the tabs below to prepare the server with a container solution. Several container solutions integrate with TrueNAS, but we prefer Kubernetes. Before you set up a container solution, go to **Services** and make sure that *iSCSI*, *NFS*, and *SSH* are enabled.
 
 {{< tabs "ContainerSolutions" >}}
 {{< tab "Kubernetes" >}}
@@ -201,17 +201,17 @@ Go to **Storage > Pools** and create the pools that you want to include in your 
 ### Set up SSH 
 
 Now you need to ensure that the user account Kubernetes will use to SSH to TrueNAS has a supported shell.  
-Go to **Accounts > Users** and set the desired user's *Shell* to either *bash* or *sh*, the click *SAVE*.
+Go to **Accounts > Users** and set the desired user's *Shell* to either *bash* or *sh*, then click *SAVE*.
 
 {{< hint info >}}
  
-In addition, if you want to use a non-root user for the SSH operations, you may create a `csi` user and then run `visudo` directly from the console. Make sure the line for the `csi` user has `NOPASSWD` added (note: this can get reset by TrueNAS if you alter the user via the GUI later):
+Also, if you want to use a non-root user for the SSH operations, you may create a `csi` user and then run `visudo` directly from the console. Make sure the line for the `csi` user has `NOPASSWD` added (note: this can get reset by TrueNAS if you alter the user via the GUI later):
 
 ```
 csi ALL=(ALL) NOPASSWD:ALL
 ```
 
-With TrueNAS CORE 12, you can use an `apiKey` instead of the `root` password for the http connection.
+With TrueNAS CORE 12, you can use an `apiKey` instead of the `root` password for the HTTP connection.
 {{< /hint >}}
 
 ### Set up NFS
@@ -232,7 +232,7 @@ With TrueNAS CORE 12, you can use an `apiKey` instead of the `root` password for
 When using the TrueNAS API concurrently, the `/etc/ctl.conf` file on the server can become invalid. There are sample scripts in the `contrib` directory to clean things up ie: copy the script to the server and directly and run - `./ctld-config-watchdog-db.sh | logger -t ctld-config-watchdog-db.sh &`. Please read the scripts and set the variables as appropriate for your server.
   - Ensure you have preemptively created portals, initiator groups, and authorizations
     - Make note of the respective IDs (the true ID may not reflect what is visible in the UI)
-    - IDs can be visible by clicking the the `Edit` link and finding the ID in the browser address bar
+    - You can make ID's visible by clicking the `Edit` link and finding the ID in the browser address bar
     - Alternately, use these commands to retrieve appropriate IDs:
       - `curl --header "Accept: application/json" --user root:<password> 'http(s)://<ip>/api/v2.0/iscsi/portal'`
       - `curl --header "Accept: application/json" --user root:<password> 'http(s)://<ip>/api/v2.0/iscsi/initiator'`
