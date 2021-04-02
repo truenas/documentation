@@ -99,8 +99,8 @@ For example, the device could be part of a CPU and we try to pass it through to 
 
 ### GPU Passthrough
 
-For GPU passthrough, it is a requirement for the system to have at least 2 GPU's available.
-GPU's can be identified by running
+For GPU passthrough, it is a requirement for the system to have at least 2 GPUs available.
+GPUs are identified by running
 
 ```
 midclt call device.get_gpus | jq .
@@ -151,22 +151,24 @@ midclt call device.get_gpus | jq .
 ]
 ```
 
-After identifying the GPU which is to be used for passthrough, please note down `addr.pci_slot` value
-and then to have system isolate the GPU, please execute the following command:
+After identifying the GPU to use for passthrough, please note the `addr.pci_slot` value.
+To have the system isolate the GPU, please execute this command:
 
 ```
 midclt call system.advanced.update '{"isolated_gpu_pci_ids": ["0000:af:00.0"]}'
 ```
 
-After a reboot of the system, the GPU in question should not be consumed by the host now and can be confirmed with `lspci`.
-Moving on, relevant PCI devices can be added to the VM which is going to consume the GPU from the UI.
-In some cases like a Windows 10 VM, GPU might not be recognized unless `hide_from_msr` is enabled for the VM.
-That can be achieved by
+After a system reboot, the specified GPU is not consumed by the host. This can be confirmed with `lspci`.
+Relevant PCI devices can now be added to the VM that is consuming the GPU from the UI.
+In some cases, like a Windows 10 VM, the GPU might not be recognized unless `hide_from_msr` is enabled for the VM:
+
 ```
 midclt call vm.update 1 '{"hide_from_msr": true}'
 ```
 
-Please note that `1` is the id of the VM. This will be different for each VM and it can be retrieved by executing
+Please note that `1` is the VM *ID*.
+This is different for each VM and can be retrieved by running:
+
 ```
 midclt call vm.query | jq .
 ```
