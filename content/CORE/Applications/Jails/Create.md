@@ -35,7 +35,7 @@ The **Jails** screen displays a message and button to **CREATE POOL** if no pool
 
 If pools exist, but none have been chosen for use with jails or plugins, a dialog appears to choose a pool. Select a pool and click **CHOOSE**.
 
-To select a different pool for jail and plugin storage, click <i class="fa fa-cog" aria-hidden="true" title="Settings"></i>&nbsp; (Settings). A dialog shows the active pool. A different pool can be selected from the drop-down.
+To select a different pool for jail and plugin storage, click <i class="material-icons" aria-hidden="true" title="Settings">settings</i>. A dialog shows the active pool. A different pool can be selected from the drop-down.
 
 Jails and downloaded FreeBSD release files are stored in a dataset named `iocage/`.
 
@@ -98,7 +98,7 @@ Jails support several different networking solutions:
   *VNET* must be set to enable the **IPv4 Default Router** field.
   When no interface is selected when manually configuring IP addresses, TrueNAS automatically assigns the given jail IP address to the current active interface of the host system.
 * Leaving all checkboxes unset and fields empty initializes the jail without any networking abilities.
-  Networking is added to the jail after creation by going to **Jails**, clicking **>**(Expand) for a jail, then <i class="fa fa-pencil" aria-hidden="true" title="Pen"></i>&nbsp; **EDIT > Basic Properties**.
+  Networking is added to the jail after creation by going to **Jails**, clicking <i class="material-icons" aria-hidden="true" title="Expand/Collapse Row">chevron_right</i> for a jail, then <i class="material-icons" aria-hidden="true" title="edit">edit</i> **> Basic Properties**.
 
 Setting a proxy in the TrueNAS network settings also configures new jails to use the proxy settings, except when performing DNS lookups.
 Make sure a firewall is properly configured to maximize system security.
