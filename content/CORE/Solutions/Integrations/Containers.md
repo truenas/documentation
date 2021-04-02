@@ -5,8 +5,6 @@ weight: 25
 
 {{< toc >}}
 
-
-
 TrueNAS CORE does not natively support container solutions. However, the open-source community has made a container storage interface (CSI) driver available for TrueNAS CORE! 
 
 The driver (available at https://github.com/democratic-csi/democratic-csi) supports integrating popular container solutions like Kubernetes, Nomad, or Mesos into the TrueNAS CLI.
@@ -172,7 +170,7 @@ Install `democratic-csi` as usual with `volumeSnapshotClasses` defined as approp
 
 
 {{< expand "Openshift" "v" >}}
-[Openshift](https://www.simplilearn.com/kubernetesvsopenshiftarticle#:~:text=OpenShift%201%20Deployment.%20Kubernetes%20offers%20more%20flexibility%20as,6%20Templates.%20...%207%20Container%20Image%20Management.%20) is another addon to Kubernetes and generally works fine with the `democratic-csi`. You will need to set special parameters with helm (support added in chart version `0.6.1`):
+[Openshift](https://www.simplilearn.com/kubernetes-vs-openshift-article) is another addon to Kubernetes and generally works fine with the `democratic-csi`. You will need to set special parameters with helm (support added in chart version `0.6.1`):
 
 ```
 # for sure required
