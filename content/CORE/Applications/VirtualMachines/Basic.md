@@ -56,7 +56,7 @@ Additional notes:
 
 ### Adding and Removing Devices
 
-After the VM is created, add and remove virtual devices by expanding the VM entry in **Virtual Machines** and clicking <i class="material-icons" aria-hidden="true" title="Devices Button">device_hub</i> *DEVICES*.
+After the VM is created, add and remove virtual devices by expanding the VM entry in **Virtual Machines** and clicking <i class="material-icons" aria-hidden="true" title="Devices">device_hub</i>.
 
 ![VMDevices](/images/CORE/12.0/VirtualMachinesDevices.png "VM Devices")
 
@@ -72,14 +72,14 @@ After creating the VM and configuring any devices for it, manage the VM by expan
 
 ![VMOptions](/images/CORE/12.0/VirtualMachinesOptions.png "VM Options")
 
-Options for <i class="material-icons" aria-hidden="true" title="VNC Button">settings_ethernet</i> *VNC* or <i class="material-icons" aria-hidden="true" title="Serial Button">keyboard_arrow_right</i> *SERIAL* connections are available after activating the VM.
+Options for <i class="material-icons" aria-hidden="true" title="VNC">settings_ethernet</i> or <i class="material-icons" aria-hidden="true" title="Serial">keyboard_arrow_right</i> connections are available after activating the VM.
 If the *VNC* connection screen appears garbled, try adjusting the VNC device resolution.
 
-Using the *State* toggle or clicking <i class="material-icons" aria-hidden="true" title="Stop Button">stop</i> *STOP* follows a standard shut down procedure to cleanly shut down the running VM.
-Clicking <i class="material-icons" aria-hidden="true" title="Power Off Button">power_settings_new</i> *POWER OFF* immediately halts and deactivates the VM, similar to unplugging a computer.
+Using the *State* toggle or clicking <i class="material-icons" aria-hidden="true" title="Stop Button">stop</i> follows a standard shut down procedure to cleanly shut down the running VM.
+Clicking <i class="material-icons" aria-hidden="true" title="Power Off Button">power_settings_new</i> immediately halts and deactivates the VM, similar to unplugging a computer.
 
 {{< hint info >}}
-If the VM you created has no Guest OS installed, The VM **State** toggle and <i class="material-icons" aria-hidden="true" title="Stop Button">stop</i> *STOP* button might not function as expected.
+If the VM you created has no Guest OS installed, The VM **State** toggle and <i class="material-icons" aria-hidden="true" title="Stop Button">stop</i> button might not function as expected.
 These buttons try to send an ACPI power down command to the VM operating system, but since no OS is installed, the commands time out.
 Use the *POWER OFF* button instead.
 {{< /hint >}}
