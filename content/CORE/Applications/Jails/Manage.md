@@ -57,7 +57,7 @@ The ssh daemon [sshd(8)](https://www.freebsd.org/cgi/man.cgi?query=sshd) must be
 
 The jail **STATE** must be up before the *SHELL* option is available.
 When the jail is not up, start it by clicking **Jails** > <i class="material-icons" aria-hidden="true" title="Expand">chevron_right</i> > **START** for the desired jail.
-Click **>** (Expand), then **SHELL** to open a shell inside the jail:
+Click <i class="material-icons" aria-hidden="true" title="Expand">chevron_right</i>, then **SHELL** to open a shell inside the jail:
 
 ```
 FreeBSD 11.1-STABLE (FreeNAS.amd64) #0 0ale9f753(freenas/11-stable): FriApr 6 04:46:31 UTC 2018
