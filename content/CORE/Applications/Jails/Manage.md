@@ -10,7 +10,7 @@ Going to the *Jails* screen shows a list of installed jails.
 ![Jails](/images/CORE/12.0/Jails.png "Jails List")
 
 Operations can be applied to multiple jails by selecting those jails with the checkboxes on the left.
-After selecting one or more jails, icons appear which can be used to <i class="fa fa-play" aria-hidden="true" title="Start"></i> (Start), <i class="fa fa-stop" aria-hidden="true" title="Stop"></i> (Stop), <i class="fa fa-clock-o" aria-hidden="true" title="Update"></i> (Update), or <i class="fa fa-trash" aria-hidden="true" title="Delete"></i> (Delete) those jails.
+After selecting one or more jails, icons appear which can be used to <i class="material-icons" aria-hidden="true" title="Start">play_arrow</i>, <i class="material-icons" aria-hidden="true" title="Stop">stop</i>, <i class="material-icons" aria-hidden="true" title="Update">update</i>, or <i class="material-icons" aria-hidden="true" title="Delete">delete</i> those jails.
 
 More information such as **IPV4**, **IPV6**, jail **TYPE**, and whether it is a **TEMPLATE** or **BASEJAIL** is seen by clicking **>** (Expand) for a jail.
 Additional options for that jail are also displayed.
@@ -18,7 +18,7 @@ Additional options for that jail are also displayed.
 ![Jails Options](/images/CORE/12.0/JailsOptions.png "Jails Options")
 
 {{< hint warning >}}
-Modify the IP address information for a jail by clicking **>** (Expand) > *EDIT* instead of issuing the networking commands directly from the command line of the jail.
+Modify the IP address information for a jail by clicking <i class="material-icons" aria-hidden="true" title="Expand">chevron_right</i> > *EDIT* instead of issuing the networking commands directly from the command line of the jail.
 This ensures changes are saved and survive a jail or TrueNAS reboot.
 {{< /hint >}}
 
@@ -56,7 +56,7 @@ The release must not be in use by any jail on the system!
 The ssh daemon [sshd(8)](https://www.freebsd.org/cgi/man.cgi?query=sshd) must be enabled in a jail to allow SSH access to that jail from another system.
 
 The jail **STATE** must be up before the *SHELL* option is available.
-When the jail is not up, start it by clicking **Jails** > **>** (Expand) > **START** for the desired jail.
+When the jail is not up, start it by clicking **Jails** > <i class="material-icons" aria-hidden="true" title="Expand">chevron_right</i> > **START** for the desired jail.
 Click **>** (Expand), then **SHELL** to open a shell inside the jail:
 
 ```
