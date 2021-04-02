@@ -92,7 +92,3 @@ enable = true
 
   # (Optional, default true) Copy anchor url to clipboard on click.
   geekdocAnchorCopy = true
-
-#Add last modified dates to articles
-[frontmatter]
-lastmod = ["lastmod", ":git", "date", "publishDate"]
