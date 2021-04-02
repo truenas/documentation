@@ -26,7 +26,7 @@ When you are ready to create a container, open the **APPS** page and click **Lau
 ![AppsCatalog](/images/SCALE/AppsCatalog.png "Apps Catalog")
 
 
-Fill in the *Application Name* and *Image Repository* for the docker container you'd like to set up.  This example shows installation of the [PiHole project[(https://hub.docker.com/r/pihole/pihole).
+Fill in the *Application Name* and *Image Repository* for the docker container you'd like to set up.  This example shows installation of the [PiHole project](https://hub.docker.com/r/pihole/pihole).
 
 ![Image And Policies](/images/SCALE/SCALEAppsPiHoleImageAndPolicies.png "Image And Policies")
 
