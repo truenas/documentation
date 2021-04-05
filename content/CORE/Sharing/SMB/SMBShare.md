@@ -222,7 +222,7 @@ If you want the service to activate whenever TrueNAS boots, set *Start Automatic
 
 ### Service Configuration
 
-The SMB service is configured by clicking <i class="fa fa-pencil" aria-hidden="true" title="Pencil"></i>.
+The SMB service is configured by clicking <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
 Unless a specific setting is needed or configuring for a specific network environment, it is recommended to use the default settings for the SMB service.
 
 ![SMBServiceOptions](/images/CORE/12.0/ServicesSMBOptions.png "SMB Service Options")
