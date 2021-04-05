@@ -18,7 +18,7 @@ Additional options for that jail are also displayed.
 ![Jails Options](/images/CORE/12.0/JailsOptions.png "Jails Options")
 
 {{< hint warning >}}
-Modify the IP address information for a jail by clicking <i class="material-icons" aria-hidden="true" title="Expand">chevron_right</i> > *EDIT* instead of issuing the networking commands directly from the command line of the jail.
+Modify the IP address information for a jail by clicking <i class="material-icons" aria-hidden="true" title="Expand">chevron_right</i> **> EDIT** instead of issuing the networking commands directly from the command line of the jail.
 This ensures changes are saved and survive a jail or TrueNAS reboot.
 {{< /hint >}}
 
