@@ -30,7 +30,7 @@ Be sure to click *Apply User* and *Apply Group* before saving.
 
 ### Service Configuration
 
-To configure FTP, go to the **Services** page, find the **FTP** entry, and click the <i class="fa fa-pencil" aria-hidden="true" title="Configure"></i>.
+To configure FTP, go to the **Services** page, find the **FTP** entry, and click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
 
 ![Services FTP Options](/images/CORE/12.0/ServicesFTPOptions.png "Services FTP Options")
 
@@ -61,7 +61,7 @@ After connecting, directories can be created and files uploaded and downloaded.
 SFTP or SSH File Transfer Protocol, is available by enabling SSH remote access to the TrueNAS system.
 SFTP is more secure than standard FTP as it applies SSL encryption on all transfers by default.
 
-Go to **Services**, find the **SSH** entry, and click the <i class="fa fa-pencil" aria-hidden="true" title="Configure"></i>.
+Go to **Services**, find the **SSH** entry, and click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
 
 ![ServicesSSHOptions](/images/CORE/12.0/ServicesSSHOptions.png "SSH Options")
 
