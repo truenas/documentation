@@ -22,7 +22,7 @@ After downloading the appropriate TrueCommand file, extract the TrueCommand VMDK
 Launch your virtual machine application.
 In this example, VMware Workstation Player on Windows is being used.
 
-When VMware Player is open, click **Create a New Virtual Machine**
+When VMware Player is open, click **Create a New Virtual Machine**.
 
 ![VMwareInstallerStart](/images/TrueCommand/VMwareInstallerStart.png "VMware: Create VM")
 
