@@ -1,5 +1,6 @@
 ---
-title: "Reports"
+title: "Managing Reports"
+description: "How to create and view system reports."
 weight: 35
 ---
 
