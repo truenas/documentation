@@ -92,7 +92,7 @@ There are two different methods for changing the active boot environment: using 
 
 {{< tabs "Changing Boot Environments" >}}
 {{< tab "Web Interface" >}}
-To activate a different boot environment, go to **System > Boot** and click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> for the desired boot environment.
+To activate a different boot environment, go to **System > Boot** and click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> for the desired boot environment.
 Next, click *Activate*.
 This boot environment shows **Reboot** in the **Active** column.
 This means the boot environment becomes active on the next system boot.

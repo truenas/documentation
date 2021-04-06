@@ -89,7 +89,7 @@ GELI encrypted pools show in **Storage > Pools** as **(Legacy Encryption)**.
 For security reasons, encrypted pool keys do not save to a configuration backup file.
 When TrueNAS is installed to a new device and restored with a saved configuration file, keys for encrypted disks are not present and the system does not request them.
 
-To correct this, export the encrypted pool in **Storage > Pools** with <i class="fa fa-cog" aria-hidden="true" title="Settings"></i> **(Settings) > Export/Disconnect**.
+To correct this, export the encrypted pool in **Storage > Pools** with <i class="material-icons" aria-hidden="true" title="Settings">settings</i> > **Export/Disconnect**.
 **Do not** set *Destroy data on this pool?*.
 Now import the pool again.
 During the import, add the encryption keys as described previously.

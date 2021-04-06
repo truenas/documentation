@@ -2,9 +2,6 @@
 p,h1,h2,h3,h4,th,td,a {
   font-family: "Inter", sans-serif;
 }
-code {
-  font-family: "Mono";
-}
 /* Adjust overall site height */
 .wrapper {
   display: flex;
