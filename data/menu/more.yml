@@ -2,10 +2,10 @@
 ---
 more:
   - name: Documentation Archive
-    ref: "/archive/"
+    ref: "https://truenas.com/docs/archive/"
     external: true
     icon: "gdoc_bookmark"
   - name: "View Source"
-    ref: "https://github.com/freenas/documentation"
+    ref: "https://github.com/truenas/documentation"
     external: true
     icon: "gdoc_github"

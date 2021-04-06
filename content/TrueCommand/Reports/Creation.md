@@ -59,7 +59,7 @@ TrueCommand will now generate and display the report.
 ## Share Report
 
 By default, the reports created by a user are available only to that user.
-To share a report with other users or teams, open the **Configure** <i class="fa fa-cog" aria-hidden="true" title="Settings"></i> menu > **Reports** screen and click *Share*.
+To share a report with other users or teams, open the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu > **Reports** screen and click *Share*.
 You can also share reports after generating them.
 
 ![ReportsSharing](/images/TrueCommand/1.3/ReportsSharing.png "Reports Sharing")
@@ -71,7 +71,7 @@ Clicking the **OWNER** or **SHARED WITH** text toggles every name in the list.
 
 ## Viewing a System Report
 
-Open the **Configure** <i class="fa fa-cog" aria-hidden="true" title="Settings"></i> menu > **Reports** page and click *Generate report* <i class="fa fa-eye" aria-hidden="true" title="eye"></i> on the appropriate report.
+Open the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu > **Reports** page and click *Generate report* <i class="material-icons" aria-hidden="true" title="Eye">visibility</i> on the appropriate report.
 Click *GENERATE* to select the systems and time frame for the report.
 
 ![ReportsGenerateDates](/images/TrueCommand/1.3/ReportsGenerateDates.png "Report Time Frame")

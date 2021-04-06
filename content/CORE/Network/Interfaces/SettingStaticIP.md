@@ -10,8 +10,7 @@ Making changes to the network interface the web interface uses can result in los
 Fixing any misconfigured network settings might require command line knowledge or physical access to the TrueNAS system.
 {{< /hint >}}
 
-## Process Summary
-
+{{< expand "Process Summary" "v" >}}
 * Web UI
   * **Network > Interfaces** > *Add* or *Edit*
     * Type address into *IP Address* and select a subnet mask.
@@ -30,6 +29,7 @@ Fixing any misconfigured network settings might require command line knowledge o
       * Enter IP address
     * Configure failover? `n`
   * Saving changes interrupts the web interface and could require a system reboot.
+{{< /expand >}}
 
 ## Setting Static IP Addresses
 
@@ -67,7 +67,7 @@ Use the buttons to *Add* and *Delete* more IP addresses as needed.
 To avoid permanently saving invalid or unusable settings, network changes are applied temporarily.
 Saving any interface changes adds a dialog to the **Network > Interfaces** list to apply these changes.
 
-![NetworkInterfacesChangesPresent](/images/CORE/12.0/NetworkInterfacesChangesPresent.jpeg "Interface Changes Detected")
+![NetworkInterfacesChangesPresent](/images/CORE/12.0/NetworkInterfacesChangesPresent.jpg "Interface Changes Detected")
 
 You can adjust how long to test the network changes before they are reverted back to the previous settings.
 If the test is successful, another dialog allows making the network changes permanent.
