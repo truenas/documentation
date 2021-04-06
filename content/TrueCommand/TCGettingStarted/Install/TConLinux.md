@@ -21,7 +21,7 @@ Verify the pull command required and run it from a command line. Example: `docke
 
 ## Launching the TrueCommand Docker Container
 
-Determine the ports you will use for the container and select a storage location.  Use the `docker run` command to launch TrueCommand.  In this example, the ports are set to `80` and `443`, and the storage location is set to `/data`
+Determine the ports you will use for the container and select a storage location.  Use the `docker run` command to launch TrueCommand.  In this example, the ports are set to `80` and `443`, and the storage location is set to `/data`.
 
 ```docker run --detach -v "/data:/data" -p 80:80 -p 443:443 ixsystems/truecommand:latest```
 
