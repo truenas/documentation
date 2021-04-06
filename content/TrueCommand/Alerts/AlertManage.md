@@ -17,14 +17,14 @@ A non-administrator account can only view alerts according to their team and use
 ![AlertNoticesActiveAlerts](/images/TrueCommand/1.3/AlertNoticesActiveAlerts.png "Active Alerts")
 
 The **Active Alerts** tab shows all unresolved alerts.
-Alerts are moved to the **Resolved Alerts** tab by clicking *Resolve* <i class="material-icons" aria-hidden="true" title="Check">done</i>.
-To resolve multiple alerts, select each alert and click *Resolve* <i class="material-icons" aria-hidden="true" title="Check">done</i>.
+Alerts are moved to the **Resolved Alerts** tab by clicking *Resolve Selected* <i class="material-icons" aria-hidden="true" title="Check">done</i>.
+To resolve multiple alerts, select each alert and click *Resolve Selected* <i class="material-icons" aria-hidden="true" title="Check">done</i>.
 
 Click *View alert notice details (`i`)* to view any user comments about an alert.
 
-Administrator accounts can delete an alert by clicking *Delete* <i class="material-icons" aria-hidden="true" title="Delete">delete</i>.
+Administrator accounts can delete an alert by clicking *Delete Selected* <i class="material-icons" aria-hidden="true" title="Delete">delete</i>.
 Deleting an alert cannot be undone.
-To delete multiple alerts, select each alert and click *Delete* <i class="material-icons" aria-hidden="true" title="Delete">delete</i>.
+To delete multiple alerts, select each alert and click *Delete Selected* <i class="material-icons" aria-hidden="true" title="Delete">delete</i>.
 
 ### Viewing Alerts by System
 
