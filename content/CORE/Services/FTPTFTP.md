@@ -7,7 +7,7 @@ The [File Transfer Protocol (FTP)](https://tools.ietf.org/html/rfc959) is a simp
 The additional SSH and Trivial FTP options provide secure or simple config file transfer methods, respectively.
 
 Options for configuring **FTP**, **SSH**, and **TFTP** are in the system **Services**.
-Click the <i class="fa fa-pencil" aria-hidden="true" title="Configure"></i> to configure the related service.
+Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to configure the related service.
 
 {{< tabs "FTP Services Configurations" >}}
 {{< tab "FTP" >}}
@@ -22,7 +22,7 @@ Next, go to **Accounts > Users > Add** to create a local user on the TrueNAS.
 Assign a user name, password, and link the newly created dataset for the FTP share as the home directory of the user.
 This can be done on a per user basis, or a global account for FTP can also be created, for example OurOrgFTPacnt, etc.
 
-Return to **Storage > Pools**, find the new dataset, and click <i class="fa fa-ellipsis-v"></i> > *Edit Permissions*.
+Return to **Storage > Pools**, find the new dataset, and click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> > *Edit Permissions*.
 Set the **Owner** fields (user and group) to the newly created user account.
 Be sure to click *Apply User* and *Apply Group* before saving.
 
@@ -30,7 +30,7 @@ Be sure to click *Apply User* and *Apply Group* before saving.
 
 ### Service Configuration
 
-To configure FTP, go to the **Services** page, find the **FTP** entry, and click the <i class="fa fa-pencil" aria-hidden="true" title="Configure"></i>.
+To configure FTP, go to the **Services** page, find the **FTP** entry, and click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
 
 ![Services FTP Options](/images/CORE/12.0/ServicesFTPOptions.png "Services FTP Options")
 
@@ -61,7 +61,7 @@ After connecting, directories can be created and files uploaded and downloaded.
 SFTP or SSH File Transfer Protocol, is available by enabling SSH remote access to the TrueNAS system.
 SFTP is more secure than standard FTP as it applies SSL encryption on all transfers by default.
 
-Go to **Services**, find the **SSH** entry, and click the <i class="fa fa-pencil" aria-hidden="true" title="Configure"></i>.
+Go to **Services**, find the **SSH** entry, and click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
 
 ![ServicesSSHOptions](/images/CORE/12.0/ServicesSSHOptions.png "SSH Options")
 

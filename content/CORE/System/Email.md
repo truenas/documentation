@@ -16,7 +16,7 @@ Configure the system to send these emails to the administrator’s remote email 
 ## TrueNAS Root Email Address
 
 Before configuring anything else, set the *root* account email address.
-Go to **Accounts > Users**, click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> (Options) and *Edit* for the `root` user.
+Go to **Accounts > Users**, click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> and *Edit* for the `root` user.
 In the *Email* field, enter a remote email address that is regularly monitored by the system administrator, like *admin@example.com* and click *SAVE*.
 
 ## Email Options
