@@ -16,7 +16,7 @@ User accounts also organize into "Teams" for simultaneous management of large nu
 
 ## Users and Teams
 
-To create a new user account, open the **Configure** <i class="fa fa-cog" aria-hidden="true" title="Settings"></i> menu and click *Users > + NEW USER*.
+To create a new user account, open the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and click *Users > + NEW USER*.
 Enter a descriptive user name and an authentication method for the user.
 
 TrueCommand uses the *DEFAULT* authentication method to create unique credentials for logging in to the web interface.
