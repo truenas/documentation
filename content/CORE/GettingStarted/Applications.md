@@ -78,7 +78,7 @@ Installing a basic PlexMedia Plugin:
 
 12. Click *Submit*. Do this for as many mount points as needed. In this example, we have *audio* and *video*.
 
-13. Go to **Storage > Pools** and click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> *> Edit Permissions* for your source datasets.
+13. Go to **Storage > Pools** and click <i class="material-icons" aria-hidden="true" title="Edit Permissions">more_vert</i> > *Edit Permissions* for your source datasets.
 
  ![StoragePoolsPlexEditPermissions](/images/CORE/12.0/StoragePoolsPlexEditPermissions.png "Editing Dataset Permissions")
 

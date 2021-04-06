@@ -32,7 +32,7 @@ Refer to the related tab for your desired *Rsync Mode*.
 ### Module Requirements
 
 Before you create an rsync task on the *host* system, you must create a module on the *remote* system.
-When TrueNAS is the *remote* system, create a module by going to **Services** and clicking <i class="fa fa-pencil" aria-hidden="true" title="Pen"></i> for the rsync service.
+When TrueNAS is the *remote* system, create a module by going to **Services** and clicking <i class="material-icons" aria-hidden="true" title="edit">edit</i> for the rsync service.
 Click the **Rsync Module** tab, then click *ADD*.
 Specific creation instructions are farther down, in the [Rsync Service section](#rsync-service-and-modules).
 
@@ -163,7 +163,7 @@ The rsync task does not work when the related system service is not turned on.
 To turn the rsync service on, go to **Services** and toggle *rsync*.
 To activate the service whenever TrueNAS boots, set *Start Automatically*.
 
-Click the <i class="fa fa-pencil" aria-hidden="true" title="pencil"></i> to configure the service.
+Click the <i class="material-icons" aria-hidden="true" title="edit">edit</i> to configure the service.
 There are two sections for rsync configuration: basic **Configure** options and **Rsync Module** creation and management.
 
 {{< tabs "Rsync Service Options" >}}
