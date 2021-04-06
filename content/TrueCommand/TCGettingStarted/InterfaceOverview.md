@@ -29,7 +29,7 @@ You can now log in to the TrueCommand web interface with the new administrator a
 
 TrueCommand 1.3.1 introduced the ability to customize the alert colors to user preferences.
 The Theme pallet is located in the top banner on the right.
-To open the theme configuration menu, click the <i class="fa fa-palette" aria-hidden="true" title="Theme"></i> icon.
+To open the theme configuration menu, click the <i class="material-icons" aria-hidden="true" title="Palette">palette</i> icon.
 
 ![ThemeSelect](/images/TrueCommand/1.3/ThemeSelect.png "Theme Select")
 
