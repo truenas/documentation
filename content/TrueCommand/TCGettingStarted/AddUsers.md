@@ -12,7 +12,7 @@ User accounts also organize into "Teams" for simultaneous management of large nu
 
 ## Adding Local User Accounts
 
-To create a new user account, open the **Configure** <i class="fa fa-cog" aria-hidden="true" title="Settings"></i> menu and click *Users > + NEW USER*.
+To create a new user account, open the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and click *Users > + NEW USER*.
 Enter a descriptive user name and an authentication method for the user.
 
 TrueCommand uses the *DEFAULT* authentication method to create unique credentials for logging in to the web interface.
@@ -34,7 +34,7 @@ Deleting a user account permanently removes the user and cannot be undone.
 
 ## Configuring User Accounts
 
-To configure account details and permissions, open the *Configure* <i class="fa fa-cog" aria-hidden="true" title="Settings"></i>menu and click *Users > Edit user* <i class="fa fa-pencil" aria-hidden="true" title="Edit"></i>.
+To configure account details and permissions, open the *Configure* <i class="material-icons" aria-hidden="true" title="Settings">settings</i>menu and click *Users > Edit user* <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
 
 ![Users Edit](/images/TrueCommand/1.3/UsersEdit.png "Users Edit")
 
@@ -74,7 +74,7 @@ Teams are collections of users with permissions that apply to all the joined use
 Teams provide a more efficient way of managing large numbers of or related user accounts.
 For example, changing the permissions of a *Metrics* team that has 20 joined user accounts is much faster than changing the permissions for each account.
 
-To create a team, open the **Configure** <i class="fa fa-cog" aria-hidden="true" title="Settings"></i> menu and click *TEAMS > + NEW TEAM*.
+To create a team, open the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and click *TEAMS > + NEW TEAM*.
 
 ![TeamsAdd](/images/TrueCommand/1.3/TeamsAdd.png "Teams: Add")
 
@@ -83,7 +83,7 @@ You can edit the permissions for a team after creating it.
 
 ### Configuring Teams
 
-To adjust the team members or permissions, open the **Configure** <i class="fa fa-cog" aria-hidden="true" title="Settings"></i> menu and click *Teams > Edit team* <i class="fas fa-pencil" aria-hidden="true" title="Edit"></i>.
+To adjust the team members or permissions, open the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and click *Teams > Edit team* <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
 
 ![Teams Edit](/images/TrueCommand/1.3/TeamsEdit.png "Teams Edit")
 
