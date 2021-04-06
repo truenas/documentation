@@ -1,13 +1,6 @@
 ---
-<<<<<<< HEAD
-title: "Managing Reports"
-description: "How to create and view system reports."
-tags: ["TrueCommand Users"]
-weight: 60
-=======
 title: "Reports"
 weight: 35
->>>>>>> parent of 4bbd35e4 (Delete Reports.md)
 ---
 
 {{< toc >}}
