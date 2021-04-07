@@ -27,12 +27,12 @@ If you make a mistake, you can reset the form by clicking *RESET FORM*.
 
 Each system has its own control area with what options are available.
 
-Pause Data Polling : <i class="material-icons" aria-hidden="true" title="Pause Data Polling">pause</i>
-Start Data Polling : <i class="material-icons" aria-hidden="true" title="Start Data Polling">play_arrow</i>
-Edit System : <i class="material-icons" aria-hidden="true" title="Configure">edit</i>
-Update System : <i class="material-icons" aria-hidden="true" title="System Update">system_update_alt</i>
-Reconnect System : <i class="material-icons" aria-hidden="true" title="Refresh">refresh</i>
-Delete System : <i class="material-icons" aria-hidden="true" title="Delete">delete</i>
++ Pause Data Polling : <i class="material-icons" aria-hidden="true" title="Pause Data Polling">pause</i>
++ Start Data Polling : <i class="material-icons" aria-hidden="true" title="Start Data Polling">play_arrow</i>
++ Edit System : <i class="material-icons" aria-hidden="true" title="Configure">edit</i>
++ Update System : <i class="material-icons" aria-hidden="true" title="System Update">system_update_alt</i>
++ Reconnect System : <i class="material-icons" aria-hidden="true" title="Refresh">refresh</i>
++ Delete System : <i class="material-icons" aria-hidden="true" title="Delete">delete</i>
 
 {{< tabs "SaveConsoleLog" >}}
 {{< tab "Pause" >}}
