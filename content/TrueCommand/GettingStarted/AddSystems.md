@@ -43,7 +43,7 @@ If the pause button <i class="material-icons" aria-hidden="true" title="Pause Da
 ![Systems Pause Polling](/images/TrueCommand/2.0/SystemsPausePollingSystem.png "Systems Pause Polling")
 
 {{< /tab >}}
-{{< tab "Start >}}
+{{< tab "Start" >}}
 If the play button <i class="material-icons" aria-hidden="true" title="Start Data Polling">play_arrow</i> is visible, TrueCommand is not collecting any data from the NAS.  To start data polling, click the play button.
 
 ![Systems Start Polling](/images/TrueCommand/2.0/SystemsStartPollingSystem.png "Systems Start Polling")
