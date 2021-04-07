@@ -70,4 +70,4 @@ TrueCommand Cloud subscriptions are available at the [iXsystems Account Services
 
 TrueCommand Cloud is a secure SaaS offering that includes a WireGuard VPN capability to connect TrueNAS systems through firewalls.
 TrueCommand Cloud is compatible with TrueNAS versions **12.0+ or SCALE** for the Wireguard VPN capability.
-Subscribe to and set up TrueCommand Cloud using [these instructions]({{< relref "/TrueCommand/TCGettingStarted/Install/_index.md" >}}).
+Subscribe to and set up TrueCommand Cloud using [these instructions]({{< relref "/TrueCommand/GettingStarted/Installation/_index.md" >}}).
