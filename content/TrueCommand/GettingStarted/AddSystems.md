@@ -34,7 +34,7 @@ Each system has its own control area with what options are available.
 + Reconnect System : <i class="material-icons" aria-hidden="true" title="Refresh">refresh</i>
 + Delete System : <i class="material-icons" aria-hidden="true" title="Delete">delete</i>
 
-{{< tabs "SaveConsoleLog" >}}
+{{< tabs "System Control Options" >}}
 {{< tab "Pause" >}}
 
 
@@ -68,8 +68,10 @@ If a system has lost its connection to TrueCommand either through maintainence o
 
 {{< /tab >}}
 {{< tab "Delete" >}}
-Clicking the <i class="material-icons" aria-hidden="true" title="Delete">delete</i> button will initiate a popup confirmation box to delete a system. 
+Clicking the <i class="material-icons" aria-hidden="true" title="Delete">delete</i> button will initiate a popup confirmation box to delete a system.
+
 ![Systems Delete](/images/TrueCommand/2.0/SystemsDeleteSystem.png "Systems Delete")
+
 {{< hint warning >}}
 Deleting a system will purge all collected data from the database.
 {{< /hint >}}
@@ -83,13 +85,43 @@ Groups are collections of systems that are organized by TrueCommand administrato
 Grouping systems allows you to efficiently manage system permissions and reporting.
 
 Open the **System Groups** tab to view the list of created groups and the systems they contain.
+
+![SystemsGroups](/images/TrueCommand/2.0/SystemsGroups.png "System Groups")
+
 Create a Group by clicking **Configure <i class="material-icons" aria-hidden="true" title="Settings">settings</i>&nbsp; > Systems > + NEW GROUP**.
 Enter a name for the new group and click *ADD SYSTEM* to add a system to the group.
 When you've added all the desired systems to the group, click *CREATE GROUP*.
 
-![SystemsNewGroup](/images/TrueCommand/2.0/SystemsGroups.png "New System Group")
+![SystemsNewGroup](/images/TrueCommand/2.0/SystemsGroupsNewGroup.png "New System Group")
 
-Editing a group allows you to update the group name or change which systems are members of that group.
+### Adjusting Groups
 
-To delete a system group, click *Delete* <i class="material-icons" aria-hidden="true" title="Delete">delete</i>.
-Confirm the deletion by clicking *YES*.
+Each group has its own control area with what options are available.
+
++ Edit System : <i class="material-icons" aria-hidden="true" title="Configure">edit</i>
++ Delete System : <i class="material-icons" aria-hidden="true" title="Delete">delete</i>
+
+{{< tabs "Group Control Options" >}}
+{{< tab "Edit" >}}
+Clicking the edit button <i class="material-icons" aria-hidden="true" title="Configure">edit</i> opens a side bar menu.  Adjustments can be made to the Group in this manner.  Systems can be added or removed from the group by using the **Add System** button or the Remove <i class="material-icons" aria-hidden="true" title="Delete">delete</i> button.  Click **Save Changes** when finished with your changes to update the Group to the new group settings.
+
+![Groups Edit](/images/TrueCommand/2.0/SystemsGroupsEditGroup.png "Groups Edit")
+
+{{< /tab >}}
+{{< tab "Delete" >}}
+
+Clicking the <i class="material-icons" aria-hidden="true" title="Delete">delete</i> button will initiate a popup confirmation box to delete a group. 
+
+![Groups Delete](/images/TrueCommand/2.0/SystemsGroupsDeleteGroup.png "Group Delete")
+
+{{< /tab >}}
+{{< /tabs >}}
+
+
+
+
+
+
+
+
+
