@@ -27,8 +27,15 @@ If you make a mistake, you can reset the form by clicking *RESET FORM*.
 
 Each system has its own control area with what options are available.
 
+Pause Data Polling : <i class="material-icons" aria-hidden="true" title="Pause Data Polling">pause</i>
+Start Data Polling : <i class="material-icons" aria-hidden="true" title="Start Data Polling">play_arrow</i>
+Edit System : <i class="material-icons" aria-hidden="true" title="Configure">edit</i>
+Update System : <i class="material-icons" aria-hidden="true" title="System Update">system_update_alt</i>
+Reconnect System : <i class="material-icons" aria-hidden="true" title="Refresh">refresh</i>
+Delete System : <i class="material-icons" aria-hidden="true" title="Delete">delete</i>
+
 {{< tabs "SaveConsoleLog" >}}
-{{< tab "Pause System Polling : <i class="material-icons" aria-hidden="true" title="Pause Data Polling">pause</i>" >}}
+{{< tab "Pause >}}
 
 
 If the pause button <i class="material-icons" aria-hidden="true" title="Pause Data Polling">pause</i> is visible, TrueCommand is actively polling data from the NAS.  Clicking this button will stop data collection until it is manually restarted.
@@ -36,26 +43,31 @@ If the pause button <i class="material-icons" aria-hidden="true" title="Pause Da
 ![Systems Pause Polling](/images/TrueCommand/2.0/SystemsPausePollingSystem.png "Systems Pause Polling")
 
 {{< /tab >}}
-{{< tab "Start System Polling: ![Systems Start Polling](/images/TrueCommand/2.0/SystemsStartPollingSystem.png)" >}}
+{{< tab "Start >}}
 If the play button <i class="material-icons" aria-hidden="true" title="Start Data Polling">play_arrow</i> is visible, TrueCommand is not collecting any data from the NAS.  To start data polling, click the play button.
 
 ![Systems Start Polling](/images/TrueCommand/2.0/SystemsStartPollingSystem.png "Systems Start Polling")
 
 {{< /tab >}}
-{{< tab "Edit a System " >}}
+{{< tab "Edit" >}}
 Clicking the edit button <i class="material-icons" aria-hidden="true" title="Configure">edit</i> opens a side bar menu.  Adjustments can be made to the system in this meny.  Click **Save Changes** to update the system to the new values entered. 
 Clicking **Reset Form** will reset the form to the previous saved settings for the NAS.
+
 ![Systems Edit](/images/TrueCommand/2.0/SystemsEditSystem.png "Systems Edit")
+
 {{< /tab >}}
-{{< tab "Update a System " >}}
+{{< tab "Update" >}}
 If updates are available on the system, the Update column will say *Available* and the update button <i class="material-icons" aria-hidden="true" title="System Update">system_update_alt</i> will be visible. 
 Clicking the update button will open a popup window requiring you to confirm your desire to update the system.
+
 ![Systems Update](/images/TrueCommand/2.0/SystemsUpdateNAS.png "Systems Update")
+
 {{< /tab >}}
-{{< tab "Reconnect a System " >}}
+{{< tab "Reconnect" >}}
 If a system has lost its connection to TrueCommand either through maintainence or being powered off, click the reconnect button <i class="material-icons" aria-hidden="true" title="Refresh">refresh</i> to trigger TrueCommand to reconnect with the NAS.  Reconnecting may take several minutes.  If data polling was paused before the system was disconnected, data polling will remain paused. Data polling must be manually restarted with the play button.
+
 {{< /tab >}}
-{{< tab "Delete a System " >}}
+{{< tab "Delete" >}}
 Clicking the <i class="material-icons" aria-hidden="true" title="Delete">delete</i> button will initiate a popup confirmation box to delete a system. 
 ![Systems Delete](/images/TrueCommand/2.0/SystemsDeleteSystem.png "Systems Delete")
 {{< hint warning >}}
