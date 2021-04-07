@@ -35,7 +35,7 @@ Reconnect System : <i class="material-icons" aria-hidden="true" title="Refresh">
 Delete System : <i class="material-icons" aria-hidden="true" title="Delete">delete</i>
 
 {{< tabs "SaveConsoleLog" >}}
-{{< tab "Pause >}}
+{{< tab "Pause" >}}
 
 
 If the pause button <i class="material-icons" aria-hidden="true" title="Pause Data Polling">pause</i> is visible, TrueCommand is actively polling data from the NAS.  Clicking this button will stop data collection until it is manually restarted.
