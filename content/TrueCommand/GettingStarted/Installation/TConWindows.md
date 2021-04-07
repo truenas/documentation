@@ -110,7 +110,7 @@ When Docker Desktop shows the container status as **RUNNING**, open a new browse
 ![DockerDesktopTrueCommandRunning](/images/TrueCommand/DockerDesktopTrueCommandRunning.png "TrueCommand Container is running")
 After creating the account the login screen refreshes and you can log in with the account credentials that were just created.
 TrueCommand can now be configured and begin to be used.
-See the remaining [TrueCommand Administration articles](https://www.truenas.com/docs/truecommand/admins/) for specific usage guides.
+See the remaining [TrueCommand Administration articles](https://www.truenas.com/docs/truecommand/Administration/) for specific usage guides.
 
 {{< include file="static/includes/AddingBrowserExceptions.md.part" markdown="true" >}}
 

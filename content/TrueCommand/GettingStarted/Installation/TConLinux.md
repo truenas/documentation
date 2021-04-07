@@ -29,7 +29,7 @@ Adjust the port numbers and storage location as needed on your machine.
 
 Once the docker container has launched, open your browser and navigate to the configured port on localhost. 
 
-The TrueCommand login screen will appear and require yout to create the new [Administrator account](/TrueCommand/GettingStarted/CreatingAdminUser/).
+The TrueCommand login screen appears and asks to create the new [Administrator Account]({{< relref "/TrueCommand/GettingStarted/CreatingAdminUser.md" >}}).
 
 If the login screen fails to appear, double-check your system networking settings, open networking ports, and if the ports in the docker run command are already in use by another application.
 
