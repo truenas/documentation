@@ -29,12 +29,18 @@ Each system has its own control area with what options are available.
 
 {{< tabs "SaveConsoleLog" >}}
 {{< tab "Pause System Polling : <i class="material-icons" aria-hidden="true" title="Pause Data Polling">pause</i>" >}}
+
+
 If the pause button <i class="material-icons" aria-hidden="true" title="Pause Data Polling">pause</i> is visible, TrueCommand is actively polling data from the NAS.  Clicking this button will stop data collection until it is manually restarted.
+
 ![Systems Pause Polling](/images/TrueCommand/2.0/SystemsPausePollingSystem.png "Systems Pause Polling")
+
 {{< /tab >}}
-{{< tab "Start System Polling" >}}
+{{< tab "Start System Polling: ![Systems Start Polling](/images/TrueCommand/2.0/SystemsStartPollingSystem.png)" >}}
 If the play button <i class="material-icons" aria-hidden="true" title="Start Data Polling">play_arrow</i> is visible, TrueCommand is not collecting any data from the NAS.  To start data polling, click the play button.
+
 ![Systems Start Polling](/images/TrueCommand/2.0/SystemsStartPollingSystem.png "Systems Start Polling")
+
 {{< /tab >}}
 {{< tab "Edit a System " >}}
 Clicking the edit button <i class="material-icons" aria-hidden="true" title="Configure">edit</i> opens a side bar menu.  Adjustments can be made to the system in this meny.  Click **Save Changes** to update the system to the new values entered. 
