@@ -17,9 +17,9 @@ This section will walk you through the initial set up of TrueCommand.
   * [Migrate Legacy to v1.2+]({{< relref "/TrueCommand/GettingStarted/Installation/Migrate.md" >}})
 * [Creating the initial Administrator Account]({{< relref "/TrueCommand/GettingStarted/CreatingAdminUser.md" >}})
 * Setting Global Options
-  * [LDAP]({{< relref "/TrueCommand/TCGettingStarted/GlobalConfig/LDAPonTC.md" >}})
-  * [SSL]({{< relref "/TrueCommand/TCGettingStarted/GlobalConfig/SSLonTC.md" >}})
-  * [Email]({{< relref "/TrueCommand/TCGettingStarted/GlobalConfig/EmailonTC.md" >}})
+  * [LDAP]({{< relref "/TrueCommand/GettingStarted/GlobalConfig/LDAPonTC.md" >}})
+  * [SSL]({{< relref "/TrueCommand/GettingStarted/GlobalConfig/SSLonTC.md" >}})
+  * [Email]({{< relref "/TrueCommand/GettingStarted/GlobalConfig/EmailonTC.md" >}})
 * [Connecting TrueNAS systems]({{< relref "/TrueCommand/GettingStarted/AddSystems.md" >}})
 * [Creating User Accounts]({{< relref "/TrueCommand/GettingStarted/AddUsers.md" >}})
 
