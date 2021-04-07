@@ -25,7 +25,7 @@ When combined with our high-availability hardware and [**TrueCommand**]({{< relr
 
 ![](/favicon/TNScale-favicon-32x32.png) [**TrueNAS SCALE**]({{< relref "/SCALE/GettingStarted/_index.md" >}}) (Coming soon!)
 <--->
-![](/favicon/TC-favicon-32x32.png) [**TrueCommand**]({{< relref "/TrueCommand/TCGettingStarted/_index.md" >}})<br>
+![](/favicon/TC-favicon-32x32.png) [**TrueCommand**]({{< relref "/TrueCommand/GettingStarted/_index.md" >}})<br>
 
 ![](/favicon/iXfavicon-32x32.png) [**TrueNAS Hardware**]({{< relref "/Hardware/_index.md" >}})
 {{< /columns >}}
