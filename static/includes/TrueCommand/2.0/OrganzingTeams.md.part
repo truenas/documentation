@@ -1,0 +1,10 @@
+To create a team, open the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and click **TEAMS**
+
+![TeamsList](/images/TrueCommand/2.0/TeamsList.png "Teams List")
+
+Clicking **NEW TEAM** will open a popout menu.
+
+![TeamsAdd](/images/TrueCommand/2.0/TeamsNewTeam.png "Teams: Add")
+
+Enter a name and select an avatar for the new team.
+You can edit the permissions for a team after creating it.
