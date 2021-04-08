@@ -18,3 +18,45 @@ To create a new backup, click *Create Backup*.
 To reset a TrueNAS system to a previous configuration, click the <i class="material-icons" aria-hidden="true" title="History">history</i>icon.
 Choose the configuration file to use.
 You must reset the TrueNAS system to apply the configuration changes.
+
+
+
+
+
+### Viewing Backups
+
+Open the TrueCommand Dashboard.
+
+DashboardView.png
+
+Click on the system name for a TrueNAS server to open the Single System view.
+
+DashboardSingleSystemView.png
+
+Click the **Config Backups** Button to open the config backup window
+
+
+
+### Create a config backup
+
+ConfigBackupsCreate.png
+
+
+### Apply a config backup
+
+
+ConfigBackupsList.png
+
+
+
+### Delete a config backup
+
+
+ConfigBackupDelete.png
+
+
+
+
+
+
+
