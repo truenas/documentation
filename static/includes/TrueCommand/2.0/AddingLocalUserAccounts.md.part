@@ -1,0 +1,14 @@
+To create a new user account, open the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and click *Users > + NEW USER*.
+Enter a descriptive user name and an authentication method for the user.
+
+TrueCommand uses the *DEFAULT* authentication method to create unique credentials for logging in to the web interface.
+The administrator has to provide these credentials to the intended user.
+
+![UsersAdd](/images/TrueCommand/2.0/UsersAddUser.png "Adding a new user")
+
+You can assign users to existing *Teams* by selecting a team from the drop-down to add the user to that team.
+You can assign users to multiple teams.
+
+If the user needs to be an Administrator, check the *TrueCommand Administrator* box.
+
+When the form is completed, click **Create User**.

@@ -1,0 +1,6 @@
+To connect a new system, click *+ NEW SYSTEM*.
+
+Enter the system IP address or DNS hostname, the nickname, and the password.
+If you make a mistake, you can reset the form by clicking *RESET FORM*.
+
+![Systems Add](/images/TrueCommand/2.0/SystemsAddNew.png "Systems Add")

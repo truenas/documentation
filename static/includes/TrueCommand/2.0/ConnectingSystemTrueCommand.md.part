@@ -1,0 +1,6 @@
+To connect a system to TrueCommand, open the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and click *Systems*.
+This menu is organized into two tabs: **Systems** and **System Groups**.
+The **Systems** and **System Groups** tabs contain all the options to connect and organize systems in TrueCommand.
+All added systems are listed in the **Systems** tab with the current connection status.
+
+![Systems List](/images/TrueCommand/2.0/SystemsPage.png "Systems List")

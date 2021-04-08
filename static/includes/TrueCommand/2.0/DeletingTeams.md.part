@@ -1,0 +1,8 @@
+To delete an account details and permissions, open the *Configure* <i class="material-icons" aria-hidden="true" title="Settings">settings</i>menu and click **Teams**
+When the users page loads, click the delete button <i class="material-icons" aria-hidden="true" title="Delete">delete</i> to the right of the user you wish to delete.
+A popup will appear to confirm deletion of the Team.
+![Teams Delete](/images/TrueCommand/2.0/TeamsDeleteTeam.png "Teams Delete")
+
+{{< hint info>}}
+Deleting a team does not remove users or systems assigned to that team.
+{{< /hint >}

@@ -1,0 +1,4 @@
+To delete an account details and permissions, open the *Configure* <i class="material-icons" aria-hidden="true" title="Settings">settings</i>menu and click **Users**
+When the users page loads, click the delete button <i class="material-icons" aria-hidden="true" title="Delete">delete</i> to the right of the user you wish to delete.
+A popup will appear to confirm deletion of the user.
+![Users Delete](/images/TrueCommand/1.3/UsersDeleteUser.png "Users Delete")

@@ -1,0 +1,6 @@
+The **CREATE A NEW TEAM** button appears if no TrueCommand teams exist.
+When teams are present, the **JOIN TEAM** button appears.
+Click **JOIN TEAM** to add the user to a team.
+You can add users to multiple teams.
+TrueCommand applies team permissions to any user added to a team, but setting a specific permission for the user can override a related team permission.
+Team Configuration can be accomplished in the [Team Page]({{< relref "/TrueCommand/GettingStarted/AddTeams.md" >}})

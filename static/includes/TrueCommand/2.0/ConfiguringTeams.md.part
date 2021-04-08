@@ -1,0 +1,13 @@
+To create a team, open the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and click **TEAMS**
+To adjust the team members or permissions, click the Edit button <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
+
+![Teams Edit](/images/TrueCommand/2.0/TeamsEdit.png "Teams Edit")
+
+You can adjust the team profile with a new avatar, change the team name, or grant team members permission to create new TrueCommand Alert Rules.
+
+The **Members** section shows which user accounts are included in the team.
+To add users to the team, click *ADD USER* and choose them from the drop-down.
+To remove users from the team, click *- (minus)* on the desired user.
+
+System permissions are configured exactly the same way as described above for individual user accounts.
+Note that individual user account permissions can override team permissions.
