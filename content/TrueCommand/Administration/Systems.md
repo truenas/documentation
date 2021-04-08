@@ -23,7 +23,7 @@ weight: 10
 
 ## Organizing Systems into Groups
 
-{{< include file="static/includes/TrueCommand/2.0/OrganizingSystemsIntoGroups.md" markdown="true" >}}
+{{< include file="static/includes/TrueCommand/2.0/OrganizingSystemsIntoGroups.md.part" markdown="true" >}}
 
 
 Editing a group allows you to update the group name or change which systems are members of that group.
