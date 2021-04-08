@@ -73,11 +73,11 @@ Click on the **New System** alert, fill in the information from the TrueNAS syst
 ![NewSystemCreds](/images/TrueCommand/1.3/NewSystemCreds.png "Registering TrueNAS in TrueCommand Cloud")
 
 It can take 10 to 15 minutes for the TrueNAS instance to fully sync up with TrueCommand Cloud.
-When all systems are connected to TrueCommand Cloud, refer to the [TrueCommand Administration articles](/TrueCommand/Administration/) for more instructions about setting up configuration backups, alerts, reports, and role-based access control.
+When all systems are connected to TrueCommand Cloud, refer to the [TrueCommand Administration articles]({{< relref "/TrueCommand/Administration/_index.md" >}}) for more instructions about setting up configuration backups, alerts, reports, and role-based access control.
 
 ## Manual Connections
 
-To connect a system to TrueCommand, open the **Configure** <i class="fa fa-cog" aria-hidden="true" title="Settings"></i> menu and click *Systems*.
+To connect a system to TrueCommand, open the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and click *Systems*.
 This menu is organized into two tabs: **Systems** and **System Groups**.
 These tabs contain all the options to connect and organize systems in TrueCommand.
 All added systems are listed in the **Systems** tab with the current connection status.
