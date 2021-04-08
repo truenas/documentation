@@ -2,7 +2,7 @@
 title: "Install"
 weight: 10
 ---
-
+asdf
 {{< toc >}}
 
 TrueCommand is incredibly versatile and offers several different install options.
