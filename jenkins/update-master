@@ -14,12 +14,12 @@ pipeline {
         steps {
             sh 'npm install -D --save autoprefixer'
             sh 'npm install -D --save postcss-cli'
-            sh 'hugo -d public --gc --minify --cleanDestinationDir'
+            sh 'hugo -t docsy -d public --gc --minify --cleanDestinationDir'
         }
     }
     stage('Publish') {
         steps {
-            sh 'rsync -rvza -e "ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no" --delete --exclude="pdf/" --exclude="PRs/" --exclude="CNAME" --exclude="download/" public/ docs@10.242.64.28:/var/www/html/docs1'
+            sh 'rsync -rvza -e "ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no" --delete --exclude="pdf/" --exclude="PRs/" --exclude="CNAME" --exclude="archive/" --exclude="download/" public/ docs@10.242.64.28:/var/www/html/docs1'
         }
     }
   }

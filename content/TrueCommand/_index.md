@@ -10,11 +10,7 @@ TrueCommand is a multi-system management "Single pane of Glass" system that help
 
 TrueCommand can monitor an entire fleet of TrueNAS systems and thousands of online storage devices simultaneously. This includes displaying statistics on storage usage, network activity, active services, and more. TrueCommand also has the ability to create custom reports about individual systems or a combination of many systems.
 
-<div style="text-align:center;">
-
 ![Overview](/images/TrueCommand/Overview.png "Truecommand Overview")
-
-</div>
 
 ## What Features does TrueCommand have?
 
@@ -74,4 +70,4 @@ TrueCommand Cloud subscriptions are available at the [iXsystems Account Services
 
 TrueCommand Cloud is a secure SaaS offering that includes a WireGuard VPN capability to connect TrueNAS systems through firewalls.
 TrueCommand Cloud is compatible with TrueNAS versions **12.0+ or SCALE** for the Wireguard VPN capability.
-Subscribe to and set up TrueCommand Cloud using [these instructions]({{< relref "/TrueCommand/GettingStarted/Installation/_index.md" >}}).
+Subscribe to and set up TrueCommand Cloud using [these instructions]({{< relref "/TrueCommand/TCGettingStarted/Install/_index.md" >}}).

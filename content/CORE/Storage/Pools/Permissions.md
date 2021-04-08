@@ -8,7 +8,7 @@ weight: 22
 Permissions control the actions users can perform on dataset contents.
 TrueNAS allows using both a simple permissions manager and editing a full Access Control List (ACL) for defining dataset permissions.
 
-To change dataset permissions, go to **Storage > Pools >** <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> **>** *Edit Permissions* for a dataset.
+To change dataset permissions, go to **Storage > Pools** and click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> > *Edit Permissions* for a dataset.
 
 ## Basic Permissions Editor
 
@@ -55,7 +55,7 @@ When [creating a dataset]({{< relref "Datasets.md" >}}), you can choose how the 
   Setting the ACL Mode to Restricted is typically used to optimize a dataset for SMB sharing, but can require further optimizations.
   For example, configuring an rsync task with this dataset could require adding `--no-perms` as an extra option for the task.
 
-To view an ACL, go to **Storage > Pools >** <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> **>** *Edit Permissions* for a nested dataset within a pool.
+To view an ACL, go to **Storage > Pools** and click the *Edit Permissions* option for a nested dataset within a pool.
 
 ![ACLManager](/images/CORE/12.0/ACLManager.png)
 

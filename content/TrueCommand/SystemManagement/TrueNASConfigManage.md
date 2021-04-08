@@ -15,6 +15,6 @@ To view the current TrueNAS configuration backups, open the **Dashboard** and cl
 The **Configuration Backup Window** shows a list of backups along with the time and date of their creation.
 To create a new backup, click *Create Backup*.
 
-To reset a TrueNAS system to a previous configuration, click the <i class="material-icons" aria-hidden="true" title="History">history</i>icon.
+To reset a TrueNAS system to a previous configuration, click the <i class="fa fa-history" aria-hidden="true" title="history"></i> icon.
 Choose the configuration file to use.
 You must reset the TrueNAS system to apply the configuration changes.

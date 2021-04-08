@@ -6,7 +6,7 @@ weight: 50
 {{< toc >}}
 
 The **Administration** page shows additional system details and offers a variety of TrueCommand configuration options.
-This page is available to users with administrator permissions by opening the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and clicking *Administration*.
+This page is available to users with administrator permissions by opening the **Configure** <i class="fa fa-cog" aria-hidden="true" title="Settings"></i> menu and clicking *Administration*.
 The page is organized into **About**, **Certificates**, and **Configuration** tabs.
 
 {{< tabs "Administration Tabs" >}}

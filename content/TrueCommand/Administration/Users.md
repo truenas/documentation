@@ -12,7 +12,7 @@ User accounts also organize into "Teams" for simultaneous management of large nu
 
 ## Adding Local User Accounts
 
-To create a new user account, open the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and click *Users > + NEW USER*.
+To create a new user account, open the **Configure** <i class="fa fa-cog" aria-hidden="true" title="Settings"></i> menu and click *Users > + NEW USER*.
 Enter a descriptive user name and an authentication method for the user.
 
 TrueCommand uses the *DEFAULT* authentication method to create unique credentials for logging in to the web interface.
@@ -30,7 +30,7 @@ Deleting a user account permanently removes the user and cannot be undone.
 ## Using LDAP to Add User Accounts
 
 LDAP is also available for user accounts.
-See the [TrueCommand Administration]({{< relref "AddUsers.md#automatic-creation-with-ldap" >}}) guide for details on LDAP configuration.
+See the [TrueCommand Administration]({{< relref "UserAccounts.md#automatic-creation-with-ldap" >}}) guide for details on LDAP configuration.
 
 *LDAP/AD* allows using single sign-on credentials from the [Lightweight Directory Access Protocol (LDAP)](https://tools.ietf.org/html/rfc4511) or [Active Directory (AD)](https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/active-directory-domain-services).
 This means a user can log in with an LDAP or AD account without creating a separate TrueCommand login.
@@ -40,7 +40,7 @@ The LDAP or AD Username (optional) is required when the TrueCommand user name do
 
 ## Configuring User Accounts
 
-To configure account details and permissions, open the *Configure* <i class="material-icons" aria-hidden="true" title="Settings">settings</i>menu and click *Users > Edit user* <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
+To configure account details and permissions, open the *Configure* <i class="fa fa-cog" aria-hidden="true" title="Settings"></i>menu and click *Users > Edit user* <i class="fa fa-pencil" aria-hidden="true" title="Edit"></i>.
 
 ![Users Edit](/images/TrueCommand/1.3/UsersEdit.png "Users Edit")
 
@@ -63,7 +63,7 @@ TrueCommand applies team permissions to any user added to a team, but setting a 
 ### System Permissions
 
 To limit the access that non-administrative accounts have to the connected systems, configure the **System Access** and/or **System Groups** sections.
-This requires [system connections]({{< relref "AddSystems.md" >}}) and/or [system groups]({{< relref "AddSystems.md" >}}) have already been configured in TrueCommand.
+This requires [system connections]({{< relref "ConnectingTrueNAS.md" >}}) and/or [system groups]({{< relref "ConnectingTrueNAS.md" >}}) have already been configured in TrueCommand.
 
 Click *ADD SYSTEM* and select a system from the drop-down to give the user access to that system.
 To restrict the user to only viewing details about the system, set the *read* permission.
@@ -80,7 +80,7 @@ Teams are collections of users with permissions that apply to all the joined use
 Teams provide a more efficient way of managing large numbers of or related user accounts.
 For example, changing the permissions of a *Metrics* team that has 20 joined user accounts is much faster than changing the permissions for each account.
 
-To create a team, open the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and click *TEAMS > + NEW TEAM*.
+To create a team, open the **Configure** <i class="fa fa-cog" aria-hidden="true" title="Settings"></i> menu and click *TEAMS > + NEW TEAM*.
 
 ![TeamsAdd](/images/TrueCommand/1.3/TeamsAdd.png "Teams: Add")
 
@@ -89,7 +89,7 @@ You can edit the permissions for a team after creating it.
 
 ### Configuring Teams
 
-To adjust the team members or permissions, open the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and click *Teams > Edit team* <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
+To adjust the team members or permissions, open the **Configure** <i class="fa fa-cog" aria-hidden="true" title="Settings"></i> menu and click *Teams > Edit team* <i class="fas fa-pencil" aria-hidden="true" title="Edit"></i>.
 
 ![Teams Edit](/images/TrueCommand/1.3/TeamsEdit.png "Teams Edit")
 

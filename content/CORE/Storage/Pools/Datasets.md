@@ -115,7 +115,7 @@ To view and edit user quotas, go to **Storage > Pools** and click <i class="fa f
 
 The **User Quotas** page displays the names and quota data of any user accounts cached on or connected to the system.
 
-To edit individual user quotas, go to the user's row and click the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; button, then click <i class="material-icons" aria-hidden="true" title="edit">edit</i>.
+To edit individual user quotas, go to the user's row and click the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; button, then click <i class="fa fa-pencil" aria-hidden="true" title="Pencil"></i> *Edit*.
 
 ![StoragePoolsDatasetActionsUserQuotasUserEdit](/images/CORE/12.0/StoragePoolsDatasetActionsUserQuotasUserEdit.png "User Quotas: Editing a Single User")
 
@@ -135,7 +135,7 @@ Click *Group Quotas*.
 
 The **Group Quotas** page displays the names and quota data of any groups cached on or connected to the system.
 
-To edit individual group quotas, go to the group's row and click the **>** button, then click <i class="material-icons" aria-hidden="true" title="edit">edit</i>.
+To edit individual group quotas, go to the group's row and click the **>** button, then click <i class="fa fa-pencil" aria-hidden="true" title="Pencil"></i>&nbsp; *Edit*.
 
 ![StoragePoolsDatasetActionsGroupQuotasEditGroup](/images/CORE/12.0/StoragePoolsDatasetActionsGroupQuotasEditGroup.png "Group Quotas: Edit single group")
 

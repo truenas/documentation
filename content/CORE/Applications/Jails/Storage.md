@@ -9,12 +9,12 @@ This is useful for applications or plugins that store large amounts of data or i
 For example, *Transmission* is a plugin that stores data using BitTorrent.
 The TrueNAS external storage is added using the [mount_nullfs(8)](https://www.freebsd.org/cgi/man.cgi?query=mount_nullfs) mechanism, which links data that resides outside of the jail as a storage area within a jail.
 
-<i class="material-icons" aria-hidden="true" title="Expand">chevron_right</i> > **MOUNT POINTS** shows any added storage and allows adding more storage.
+**>** (Expand) > **MOUNT POINTS** shows any added storage and allows adding more storage.
 
 A jail must have a **STATE** of *down* before adding a new mount point.
-Click <i class="material-icons" aria-hidden="true" title="Expand">chevron_right</i> and <i class="material-icons" aria-hidden="true" title="Stop">stop</i> for a jail to change the jail STATE to down.
+Click **>** (Expand) and **STOP** for a jail to change the jail STATE to down.
 
-Storage can be added by clicking **Jails** > <i class="material-icons" aria-hidden="true" title="Expand">chevron_right</i> > **MOUNT POINTS** for the desired jail.
+Storage can be added by clicking **Jails** > **>** (Expand) > **MOUNT POINTS** for the desired jail.
 The **MOUNT POINT** section is a list of all of the currently defined mount points.
 
 Go to **MOUNT POINTS > ACTIONS > Add Mount Point** to add storage to a jail.
@@ -56,7 +56,7 @@ Here is the typical workflow for adding jail storage:
 * If a new storage area is being set aside for that jail or application, [create a dataset]({{< relref "Datasets.md" >}}).
   Edit the dataset permissions so the user and group account has the desired read and write access.
 
-* Use jail <i class="material-icons" aria-hidden="true" title="Expand">chevron_right</i> **> MOUNT POINTS > ACTIONS > Add Mount Point** to select the data *Source* and the jail mount *Destination*.
+* Use jail **> (Expand) > MOUNT POINTS > ACTIONS > Add Mount Point** to select the data *Source* and the jail mount *Destination*.
 
 To prevent writes to the storage, click *Read-Only*.
 
@@ -68,7 +68,7 @@ Storage is automatically mounted as it is created.
 Mounting a dataset does not automatically mount any child datasets inside it.
 Each dataset is a separate filesystem, so child datasets must each have separate mount points.
 
-Click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> > **Delete** to delete the storage.
+Click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; (Options) > **Delete** to delete the storage.
 
 {{< hint warning >}}
 Remember that added storage is just a pointer to the selected storage directory on the TrueNAS system.

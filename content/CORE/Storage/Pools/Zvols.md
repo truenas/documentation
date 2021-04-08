@@ -38,7 +38,7 @@ To quickly create a Zvol with the default options, enter a name for the Zvol, a 
 
 ## Managing Zvols
 
-To see options for an existing zvol, click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> next to the desired zvol in **Storage** > **Pools**:
+To see options for an existing zvol, click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; (Options) next to the desired zvol in **Storage** > **Pools**:
 
 * *Delete zvol* removes the zvol from TrueNAS.
   {{< hint danger >}}

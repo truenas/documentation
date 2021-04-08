@@ -39,7 +39,7 @@ Creating a share immediately opens a dialog to activate the WebDAV service:
 
 To later enable or disable the WebDAV system service, go to **Services** and toggle *WebDAV*.
 To automatically start the service when TrueNAS boots, set *Start Automatically*.
-Click the <i class="material-icons" aria-hidden="true" title="edit">edit</i> to change the service settings.
+Click the <i class="fa fa-pencil" aria-hidden="true" title="Pencil"></i> to change the service settings.
 
 ![WebDAVServiceOptions](/images/CORE/12.0/ServicesWebdavOptions.png "WebDAV Service Options")
 

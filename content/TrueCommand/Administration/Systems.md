@@ -7,7 +7,7 @@ weight: 10
 
 ## Connecting Systems to TrueCommand
 
-To connect a system to TrueCommand, open the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and click *Systems*.
+To connect a system to TrueCommand, open the **Configure** <i class="fa fa-cog" aria-hidden="true" title="Settings"></i> menu and click *Systems*.
 This menu is organized into two tabs: **Systems** and **System Groups**.
 The **Systems** and **System Groups** tabs contain all the options to connect and organize systems in TrueCommand.
 All added systems are listed in the **Systems** tab with the current connection status.
@@ -35,7 +35,7 @@ Groups are collections of systems that are organized by TrueCommand administrato
 Grouping systems allows you to efficiently manage system permissions and reporting.
 
 Open the **System Groups** tab to view the list of created groups and the systems they contain.
-Create a Group by clicking **Configure <i class="material-icons" aria-hidden="true" title="Settings">settings</i>&nbsp; > Systems > + NEW GROUP**.
+Create a Group by clicking **Configure <i class="fa fa-cog" aria-hidden="true" title="gear"></i>&nbsp; > Systems > + NEW GROUP**.
 Enter a name for the new group and click *ADD SYSTEM* to add a system to the group.
 When you've added all the desired systems to the group, click *CREATE GROUP*.
 
@@ -43,5 +43,5 @@ When you've added all the desired systems to the group, click *CREATE GROUP*.
 
 Editing a group allows you to update the group name or change which systems are members of that group.
 
-To delete a system group, click *Delete* <i class="material-icons" aria-hidden="true" title="Delete">delete</i>.
+To delete a system group, click *Delete* <i class="fa fa-trash" aria-hidden="true" title="Delete"></i>.
 Confirm the deletion by clicking *YES*.

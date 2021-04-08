@@ -25,7 +25,7 @@ Use this option to select the locale when non-ASCII characters are present on th
 Finally, browse to the ZFS dataset to hold the copied data and define the *Destination Path*.
 
 After clicking *SAVE*, the chosen *Disk* mounts and its contents copied to the specified dataset at the end of the *Destination Path*.
-To monitor an in-progress import, open the Task Manager by clicking the <i class="material-icons" aria-hidden="true" title="Task Manager">assignment</i> in the interface top bar.
+To monitor an in-progress import, open the Task Manager by clicking the <i class="material-icons" aria-hidden="true" title="Assignment">assignment</i> (Clipboard icon) in the interface top bar.
 The disk unmounts after the copy operation completes.
 A dialog allows viewing or downloading the disk import log.
 

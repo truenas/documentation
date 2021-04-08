@@ -108,7 +108,7 @@ The *Target* [Reporting]({{< relref "/CORE/Administration/Reporting.md" >}}) tab
 Select values for *Target* and *Extent*.  The LUN ID is  a value between 0 and 1023. Some initiators expect a value below 256. Leave this field blank to automatically assign the next available ID.
 {{< /tab >}}
 {{< tab "Fibre Channel Ports" >}}
-Click <i class="material-icons" aria-hidden="true" title="Expand">chevron_right</i> to expand the option, select options as presented under test data, and *Save*.
+Click <i class="fa fa-chevron-right"></i>&nbsp; to expand the option, select options as presented under test data, and *Save*.
 {{< /tab >}}
 {{< /tabs >}}
 

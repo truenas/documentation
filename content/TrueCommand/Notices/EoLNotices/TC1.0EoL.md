@@ -1,6 +1,6 @@
 ---
 title: "TrueCommand 1.0"
-weight: 30
+weight: 20
 ---
 
 **September 29, 2020**

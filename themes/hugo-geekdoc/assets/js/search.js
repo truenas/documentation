@@ -14,10 +14,10 @@
   function init() {
     input.removeEventListener('focus', init); // init once
 
-    loadScript('/docs/{{ index .Site.Data.assets "js/groupBy.min.js" | relURL }}');
-    loadScript('/docs/{{ index .Site.Data.assets "js/flexsearch.min.js" | relURL }}', function() {
+    loadScript('{{ index .Site.Data.assets "js/groupBy.min.js" | relURL }}');
+    loadScript('{{ index .Site.Data.assets "js/flexsearch.min.js" | relURL }}', function() {
       const indexCfg = {{ with .Scratch.Get "geekdocSearchConfig" }}{{ . | jsonify}}{{ else }}{}{{ end }};
-      const dataUrl = "/docs{{ $searchData.RelPermalink }}"
+      const dataUrl = "{{ $searchData.RelPermalink }}"
 
       indexCfg.doc = {
         id: 'id',
@@ -101,7 +101,7 @@
 
       entry.classList.add("flex")
 
-      a.href = `/docs${page.href}`;
+      a.href = page.href;
       a.textContent = page.title;
       a.classList.add("gdoc-search__entry")
 

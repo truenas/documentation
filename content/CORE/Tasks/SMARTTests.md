@@ -20,7 +20,7 @@ For example, S.M.A.R.T. tests should not be scheduled on the same day as a disk 
 
 
 {{< expand "How do I check or change S.M.A.R.T. testing for a disk?" "v" >}}
-Go to **Storage > Disks** and click <i class="material-icons" aria-hidden="true" title="Expand">chevron_right</i> to expand an entry.
+Go to **Storage > Disks** and click <i class="fa fa-chevron-right"></i> to expand an entry.
 *Enable S.M.A.R.T.* shows as *true* or *false*.
 
 To enable or disable testing, click *EDIT DISK(S)* and find the *Enable S.M.A.R.T.* option.
@@ -105,7 +105,7 @@ The controller monitors S.M.A.R.T. separately and marks disks as a **Predictive 
 To start the S.M.A.R.T. service, go to **Services** and toggle *S.M.A.R.T.*.
 To start the service during the TrueNAS boot process, set *Start Automatically*.
 
-Configure the S.M.A.R.T. service by clicking <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
+Configure the S.M.A.R.T. service by clicking <i class="fa fa-pencil" aria-hidden="true" title="Pencil"></i> (Configure).
 
 ![ServicesSMARTOptions](/images/CORE/12.0/ServicesSMARTOptions.png "Services SMART Options")
 
