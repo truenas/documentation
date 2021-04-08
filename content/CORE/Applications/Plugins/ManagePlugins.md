@@ -74,7 +74,7 @@ After a plugin is installed, an entry is added to the **Plugins** screen.
 
 ![PluginsListwithInstalled](/images/CORE/12.0/PluginsListWithInstalled.png "Plugins List With Installed")
 
-Click <i class="fa fa-chevron-right" aria-hidden="true" title="Right Chevron"></i>&nbsp; to manage the plugin state, update the plugin application, configure the plugin jail mount points to storage datasets, and, when supported, open a link to the management portal for the plugin application.
+Click <i class="material-icons" aria-hidden="true" title="Expand">chevron_right</i> to manage the plugin state, update the plugin application, configure the plugin jail mount points to storage datasets, and, when supported, open a link to the management portal for the plugin application.
 
 Plugin jails are preconfigured and require very little tuning.
 However, jail properties are available in the event a setting needs to change.
@@ -104,12 +104,12 @@ To convert a jail snapshot into a new storage dataset, go to **Storage > Snapsho
 
 ![StorageSnapshotsJailsLocation](/images/CORE/12.0/StorageSnapshotsJailsLocation.png "Storage Snapshots Jails Location")
 
-Expand the snapshot entry, click <i class="fa fa-clone" aria-hidden="true" title="Clone"></i> *Clone to New Dataset*, and define the path and name of the new dataset to create from the snapshot.
-Then go to **Storage > Pools**, open the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> options for the new dataset, and click *Promote Dataset*.
+Expand the snapshot entry, click <i class="material-icons" aria-hidden="true" title="Clone to New Dataset">filter_none</i>, and define the path and name of the new dataset to create from the snapshot.
+Then go to **Storage > Pools**, open the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> for the new dataset, and click *Promote Dataset*.
 
 ### Uninstalling a Plugin
 
-To remove a plugin, go to **Plugins**, expand the installed plugin entry, and click <i class="fa fa-trash" aria-hidden="true" title="Delete"></i>&nbsp; *Uninstall*.
+To remove a plugin, go to **Plugins**, expand the installed plugin entry, and click <i class="material-icons" aria-hidden="true" title="Uninstall">delete</i>.
 Confirm the plugin removal by typing in the name of the plugin jail and setting *Confirm*.
 
 ![PluginsUninstall](/images/CORE/12.0/PluginsUninstall.png "Plugins Uninstall")

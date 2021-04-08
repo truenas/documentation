@@ -5,6 +5,7 @@ theme = ["hugo-geekdoc"]
 relativeURLs = true
 disablePathToLower = false
 googlefonts = "//fonts.googleapis.com/css?family=Inter|Open+Sans|Merriweather|Fira+Mono|Droid+Sans"
+enableGitInfo = true
 
 [outputs]
 section = ["HTML","RSS","print"]
@@ -14,11 +15,9 @@ isHTML = true
 mediaType = "text/html"
 path = "printview"
 permalinkable = false
-
 # Required to get well formatted code blocks
 pygmentsUseClasses = true
 pygmentsCodeFences = true
-enableGitInfo = true
 
 [markup]
   [markup.goldmark.renderer]
@@ -64,11 +63,12 @@ enable = true
   # Used for 'Edit this page' links
   # You can also specify this parameter per page in front matter.
   geekdocRepo = "https://github.com/truenas/documentation"
+  github_repo = "https://github.com/truenas/documentation"
 
   # (Optional, default none) Enable 'Edit this page' links. Requires 'GeekdocRepo' param
   # and path must point to 'content' directory of repo.
   # You can also specify this parameter per page in front matter.
-  geekdocEditPath = "edit/master/documentation/content"
+  geekdocEditPath = "blob/master/content"
 
   # (Optional, default true) Enables search function with flexsearch.
   # Index is built on the fly and might slowdown your website.
@@ -92,3 +92,6 @@ enable = true
 
   # (Optional, default true) Copy anchor url to clipboard on click.
   geekdocAnchorCopy = true
+
+[frontmatter]
+lastmod = ["lastmod", ":git", ":fileModTime", ":default"]
