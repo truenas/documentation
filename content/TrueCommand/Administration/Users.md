@@ -61,7 +61,7 @@ Team Configuration can be accomplished in the Team Page.
 ### System Permissions
 
 To limit the access that non-administrative accounts have to the connected systems, configure the **System Access** and/or **System Groups** sections.
-This requires [system connections]({{< relref "/TrueCommand/GettingStarted/AddSystems.md#connecting-systems-to-truecommand" >}}) and/or [system groups]({{< relref "/TrueCommand/GettingStarted/AddSystems.md#organizing-systems-into-groups" >}}) have already been configured in TrueCommand.
+This requires [system connections]({{< relref "ConnectingTrueNAS.md" >}}) and/or [system groups]({{< relref "ConnectingTrueNAS.md" >}}) have already been configured in TrueCommand.
 
 Click **ADD SYSTEM** and select a system from the drop-down to give the user access to that system.
 To restrict the user to only viewing details about the system, set the *read* permission.
