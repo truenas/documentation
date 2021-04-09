@@ -9,7 +9,7 @@ weight: 10
 
 SMB (also known as CIFS) is the native file sharing system in Windows.
 SMB shares can connect to any major operating system, including Windows, MacOS, and Linux.
-SMB can be used in TrueNAS to share files among single or multiple users or devices
+SMB can be used in TrueNAS to share files among single or multiple users or devices.
 
 SMB shares allow a wide range of permissions and security settings, and can support advanced permissions (ACLs) on Windows and other systems, as well as Windows Alternate Streams and Extended Metadata.
 SMB is suitable for the management and administration of large or small pools of data.
@@ -153,7 +153,7 @@ After the SMB share is created, additional management options are available by g
 
 ### Configure Share ACL
 
-To see the share ACL options, click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> > *Edit Share ACL*.
+To see the share ACL options, click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> > *Edit Share ACL*.
 
 ![EditShareACL](/images/CORE/12.0/SharingSMBShareACL.png "Share ACL Options")>
 
@@ -173,7 +173,7 @@ Clicking *SAVE* stores the share ACL and applies it to the share immediately.
 
 ### Configure Filesystem ACL
 
-Click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> > *Edit Filesystem ACL* to quickly return to **Storage > Pools** and edit the dataset ACL.
+Click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> > *Edit Filesystem ACL* to quickly return to **Storage > Pools** and edit the dataset ACL.
 
 ![DatasetACLEdit](/images/CORE/12.0/StoragePoolsEditACL.png "Dataset Permissions Options")
 
@@ -222,7 +222,7 @@ If you want the service to activate whenever TrueNAS boots, set *Start Automatic
 
 ### Service Configuration
 
-The SMB service is configured by clicking <i class="fa fa-pencil" aria-hidden="true" title="Pencil"></i>.
+The SMB service is configured by clicking <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
 Unless a specific setting is needed or configuring for a specific network environment, it is recommended to use the default settings for the SMB service.
 
 ![SMBServiceOptions](/images/CORE/12.0/ServicesSMBOptions.png "SMB Service Options")
@@ -253,3 +253,43 @@ Unless a specific setting is needed or configuring for a specific network enviro
 | Bind IP Addresses                       | drop down | Static IP addresses which SMB listens on for connections. Leaving all unselected defaults to listening on all active interfaces.
 | Auxiliary Parameters                    | string    | Stores additional [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html). Auxiliary parameters may be used to override the default SMB server configuration, but such changes may adversely affect SMB server stability or behavior. |
 {{< /expand >}}
+
+
+## Mounting SMB Share on another machine.
+
+
+{{< tabs "Mount Commands" >}}
+{{< tab "Linux" >}}
+
+Verify that the required CIFS packages are installed for your distribution of Linux.
+Create a mount point: `sudo mkdir /mnt/smb_share`.
+
+Mount the volume. `sudo mount -t cifs //computer_name/share_name /mnt/smb_share`.
+
+If your share requires user credentials, add the switch `-o username=` with your username after `cifs` and before the share address.
+
+{{< /tab >}}
+{{< tab "Windows" >}}
+
+To mount the SMB share to a drive letter on windows, open the command line and run the following command with the appropiate drive letter, computer name, and share name.
+
+```net use Z: \\computer_name\share_name /PERSISTENT:YES```
+
+{{< /tab >}}
+{{< tab "Apple" >}}
+
+Open **Finder > Go > Connect To Server**
+Enter the SMB address: `smb://192.168.1.111`.
+
+Input the username and password for the user assigned to that pool or Guest if Guest access is enabled on the share.
+
+{{< /tab >}}
+{{< tab "FreeBSD" >}}
+
+Create a mount point: `sudo mkdir /mnt/smb_share`.
+
+Mount the volume. `sudo mount_smbfs -I computer_name\share_name /mnt/smb_share`.
+
+{{< /tab >}}
+{{< /tabs >}}
+

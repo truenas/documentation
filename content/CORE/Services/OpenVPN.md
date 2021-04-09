@@ -22,7 +22,7 @@ The general process to configure OpenVPN (server or client) on TrueNAS is to sel
 ## OpenVPN Client
 
 Go to the **Services** page and find the **OpenVPN Client** entry.
-Click the <i class="fa fa-pencil" aria-hidden="true" title="Configure"></i> to configure the service.
+Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to configure the service.
 
 ![ServicesOpenVPNClientOptions](/images/CORE/12.0/ServicesOpenVPNClientOptions.png "OpenVPN Client Options")
 
@@ -41,7 +41,7 @@ When the OpenVPN server is using TLS Encryption, copy the static TLS encryption 
 ## OpenVPN Server
 
 Go to the **Services** page and find the **OpenVPN Server** entry.
-Click the <i class="fa fa-pencil" aria-hidden="true" title="Configure"></i> to configure the service.
+Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to configure the service.
 
 ![ServicesOpenVPNServerOptions](/images/CORE/12.0/ServicesOpenVPNServerOptions.png "OpenVPN Server Options")
 
