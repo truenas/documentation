@@ -14,7 +14,7 @@ The configuration file contains sensitive data about the TrueNAS system.
 Ensure that it is stored somewhere safe.
 {{< /hint >}}
 
-TrueNAS automatically backs up the configuration database to the [system dataset](/CORE/System/SystemDataset/) every morning at 3:45 (relative to system time settings).
+TrueNAS automatically backs up the configuration database to the [system dataset]({{< relref "SystemDataset.md" >}}) every morning at 3:45 (relative to system time settings).
 However, this backup does not occur if the system is shut down at that time.
 When the system dataset is stored on the boot pool and the boot pool becomes unavailable, the backup also loses availability.
 

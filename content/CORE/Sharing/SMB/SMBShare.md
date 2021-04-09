@@ -9,13 +9,13 @@ weight: 10
 
 SMB (also known as CIFS) is the native file sharing system in Windows.
 SMB shares can connect to any major operating system, including Windows, MacOS, and Linux.
-SMB can be used in TrueNAS to share files among single or multiple users or devices
+SMB can be used in TrueNAS to share files among single or multiple users or devices.
 
 SMB shares allow a wide range of permissions and security settings, and can support advanced permissions (ACLs) on Windows and other systems, as well as Windows Alternate Streams and Extended Metadata.
 SMB is suitable for the management and administration of large or small pools of data.
 
 TrueNAS uses [Samba](https://www.samba.org/) to provide SMB services.
-There are multiple versions of the SMB protocol. An SMB client will typically negotiate the highest supported SMB protocol during SMB session negotiation. Industry-wide, the usage of the SMB1 protocol (sometimes referred to as NT1) is in the [process of being deprecated](/core/notices/smb1/). This deprecation is for security reasons.
+There are multiple versions of the SMB protocol. An SMB client will typically negotiate the highest supported SMB protocol during SMB session negotiation. Industry-wide, the usage of the SMB1 protocol (sometimes referred to as NT1) is in the [process of being deprecated]({{< relref "SMB1Advisory.md" >}}). This deprecation is for security reasons.
 However, most SMB clients support SMB 2 or 3 protocols, even when they are not the default protocols.
 
 {{< hint info >}}
@@ -23,7 +23,7 @@ Legacy SMB clients rely on NetBIOS Name Resolution to discover SMB servers on a 
 
 MacOS clients use mDNS to discover the the presence of SMB servers on the network. The mDNS server (avahi) is enabled by default on TrueNAS.
 
-Windows clients use [WS-Discovery](http://docs.oasis-open.org/ws-dd/ns/discovery/2009/01) to discover the presence of SMB servers, but depending on the version of the Windows client, network discovery can be disabled by default.
+Windows clients use [WS-Discovery](https://docs.oasis-open.org/ws-dd/ns/discovery/2009/01) to discover the presence of SMB servers, but depending on the version of the Windows client, network discovery can be disabled by default.
 
 Discoverability through broadcast protocols is a convenience feature and not required to access a SMB server.
 {{< /hint >}}
@@ -46,7 +46,7 @@ The ZFS dataset is created with these settings:
 
 ### Create Local User Accounts
 
-By default, all new local users are members of a built in SMB group called *builtin users*. This group can be used to grant access to all local users on the server. Additional [groups](/CORE/Accounts/groups/) can be used to fine-tune permissions to large numbers of users. User accounts built-in to TrueNAS or that do not have the *smb* flag set cannot be used for SMB access.
+By default, all new local users are members of a built in SMB group called *builtin users*. This group can be used to grant access to all local users on the server. Additional [groups]({{< relref "Groups.md" >}}) can be used to fine-tune permissions to large numbers of users. User accounts built-in to TrueNAS or that do not have the *smb* flag set cannot be used for SMB access.
 {{< expand "Why not just allow anonymous access to the share?" "v" >}}
 Although anonymous or guest access to the share is possible, this is a security vulnerability and is being deprecated by the major SMB client vendors. This partly because signing and encryption are not possible for guest sessions.
 {{< /expand >}}
@@ -58,7 +58,7 @@ When LDAP has been configured and you want users from the LDAP server to have ac
 
 After a dataset and accounts are created, you will need to investigate your access requirements and adjust the dataset ACL to match. To edit the ACL, go to **Storage > Pools**, open the options for the new dataset, and click *Edit Permissions*.
 Many home users typically add a new entry that grants *FULL_CONTROL* to the *builtin_users* group with the flags set to *INHERIT*.
-See the [Permissions article]() for more details.
+See the [Permissions article]({{< relref "Permissions.md" >}}) for more details.
 
 ## Creating the SMB Share
 
@@ -68,7 +68,7 @@ To create a Windows SMB share, go to **Sharing > Windows Shares (SMB)** and clic
 
 The **Path** and **Name** of the SMB share define the absolute minimum amount of information required to create a new SMB share. The *Path* is the directory tree on the local filesystem that will be exported over the SMB protocol, and the *Name* is the name of the SMB share, which forms a part of the "full share pathname" when SMB clients perform an SMB tree connect. Because of the way that the *Name* is used in the SMB protocol, it must be less than or equal to 80 characters in length, and must not contain any invalid characters as specified in Microsoft documentation MS-FSCC section 2.1.6. If a *Name* is not supplied, then the last component of the *Path* will be used as the share name.
 
-You can set a share *Purpose* to apply and lock pre-defined [Advanced Options](#advanced-options) for the share.
+You can set a share *Purpose* to apply and lock pre-defined advanced options for the share.
 To retain full control over all the share *Advanced Options*, choose *No presets*.
 
 
@@ -128,12 +128,12 @@ The *Other Options* have settings for improving Apple software compatibility, ZF
 
 | Setting                            | Value     | Description  |
 |------------------------------------|-----------|--------------|
-| Use as Home Share                  | checkbox  | Allows the share to host user home directories. Each user is given a personal home directory when connecting to the share which is not accessible by other users. This allows for a personal, dynamic share. Only one share can be used as the home share. See the configuring [Home Share article](/CORE/Sharing/SMB/HomeShare/) for detailed instructions. |
+| Use as Home Share                  | checkbox  | Allows the share to host user home directories. Each user is given a personal home directory when connecting to the share which is not accessible by other users. This allows for a personal, dynamic share. Only one share can be used as the home share. See the configuring [Home Share article]({{< relref "HomeShare.md" >}}) for detailed instructions. |
 | Time Machine                       | checkbox  | Enables [Apple Time Machine](https://support.apple.com/en-us/HT201250) backups on this share. |
 | Enable Shadow Copies               | checkbox  | Export ZFS snapshots as [Shadow Copies](https://docs.microsoft.com/en-us/windows/win32/vss/shadow-copies-and-shadow-copy-sets) for Microsoft Volume Shadow Copy Service (VSS) clients. |
 | Export Recycle Bin                 | checkbox  | Files that are deleted from the same dataset are moved to the Recycle Bin and do not take any additional space. **Deleting files over NFS will remove the files permanently.** When the files are in a different dataset or a child dataset, they are copied to the dataset where the Recycle Bin is located. To prevent excessive space usage, files larger than *20 MiB* are deleted rather than moved. Adjust the **Auxiliary Parameter** `crossrename:sizelimit=` setting to allow larger files. For example, <code>crossrename:sizelimit=<i>50</i></code> allows moves of files up to *50 MiB* in size. This means files can be permanently deleted or moved from the recycle bin. **This is not a replacement for ZFS snapshots.** |
 | Use Apple-style Character Encoding | checkbox  | By default, Samba uses a hashing algorithm for NTFS illegal characters. Enabling this option converts NTFS illegal characters in the same manner as MacOS SMB clients. |
-| Enable Alternate Data Streams      | checkbox  | Allows multiple [NTFS data streams](http://www.ntfs.com/ntfs-multiple.htm). Disabling this option causes MacOS to write streams to files on the filesystem. |
+| Enable Alternate Data Streams      | checkbox  | Allows multiple [NTFS data streams](https://www.ntfs.com/ntfs-multiple.htm). Disabling this option causes MacOS to write streams to files on the filesystem. |
 | Enable SMB2/3 Durable Handles      | checkbox  | Allow using open file handles that can withstand short disconnections. Support for POSIX byte-range locks in Samba is also disabled. This option is not recommended when configuring multi-protocol or local access to files. |
 | Enable FSRVP                       | checkbox  | Enable support for the File Server Remote VSS Protocol ([FSVRP](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-fsrvp/dae107ec-8198-4778-a950-faa7edad125b)). This protocol allows Remote Procedure Call (RPC) clients to manage snapshots for a specific SMB share. The share path must be a dataset mountpoint. Snapshots have the prefix `fss-` followed by a snapshot creation timestamp. A snapshot must have this prefix for an RPC user to delete it. |
 | Path Suffix                        | string    | Appends a suffix to the share connection path. This is used to provide unique shares on a per-user, per-computer, or per-IP address basis. Suffixes can contain a macro. See the [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) manual page for a list of supported macros. The connectpath must be preset before a client connects. |
@@ -153,7 +153,7 @@ After the SMB share is created, additional management options are available by g
 
 ### Configure Share ACL
 
-To see the share ACL options, click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> > *Edit Share ACL*.
+To see the share ACL options, click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> > *Edit Share ACL*.
 
 ![EditShareACL](/images/CORE/12.0/SharingSMBShareACL.png "Share ACL Options")>
 
@@ -173,7 +173,7 @@ Clicking *SAVE* stores the share ACL and applies it to the share immediately.
 
 ### Configure Filesystem ACL
 
-Click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> > *Edit Filesystem ACL* to quickly return to **Storage > Pools** and edit the dataset ACL.
+Click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> > *Edit Filesystem ACL* to quickly return to **Storage > Pools** and edit the dataset ACL.
 
 ![DatasetACLEdit](/images/CORE/12.0/StoragePoolsEditACL.png "Dataset Permissions Options")
 
@@ -222,7 +222,7 @@ If you want the service to activate whenever TrueNAS boots, set *Start Automatic
 
 ### Service Configuration
 
-The SMB service is configured by clicking <i class="fa fa-pencil" aria-hidden="true" title="Pencil"></i>.
+The SMB service is configured by clicking <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
 Unless a specific setting is needed or configuring for a specific network environment, it is recommended to use the default settings for the SMB service.
 
 ![SMBServiceOptions](/images/CORE/12.0/ServicesSMBOptions.png "SMB Service Options")
@@ -253,3 +253,43 @@ Unless a specific setting is needed or configuring for a specific network enviro
 | Bind IP Addresses                       | drop down | Static IP addresses which SMB listens on for connections. Leaving all unselected defaults to listening on all active interfaces.
 | Auxiliary Parameters                    | string    | Stores additional [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html). Auxiliary parameters may be used to override the default SMB server configuration, but such changes may adversely affect SMB server stability or behavior. |
 {{< /expand >}}
+
+
+## Mounting SMB Share on another machine.
+
+
+{{< tabs "Mount Commands" >}}
+{{< tab "Linux" >}}
+
+Verify that the required CIFS packages are installed for your distribution of Linux.
+Create a mount point: `sudo mkdir /mnt/smb_share`.
+
+Mount the volume. `sudo mount -t cifs //computer_name/share_name /mnt/smb_share`.
+
+If your share requires user credentials, add the switch `-o username=` with your username after `cifs` and before the share address.
+
+{{< /tab >}}
+{{< tab "Windows" >}}
+
+To mount the SMB share to a drive letter on windows, open the command line and run the following command with the appropiate drive letter, computer name, and share name.
+
+```net use Z: \\computer_name\share_name /PERSISTENT:YES```
+
+{{< /tab >}}
+{{< tab "Apple" >}}
+
+Open **Finder > Go > Connect To Server**
+Enter the SMB address: `smb://192.168.1.111`.
+
+Input the username and password for the user assigned to that pool or Guest if Guest access is enabled on the share.
+
+{{< /tab >}}
+{{< tab "FreeBSD" >}}
+
+Create a mount point: `sudo mkdir /mnt/smb_share`.
+
+Mount the volume. `sudo mount_smbfs -I computer_name\share_name /mnt/smb_share`.
+
+{{< /tab >}}
+{{< /tabs >}}
+

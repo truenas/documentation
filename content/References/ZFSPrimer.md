@@ -7,7 +7,7 @@ weight: 70
 
 ZFS is an advanced, modern filesystem that was specifically designed to provide features not available in traditional UNIX filesystems.
 It was originally developed at Sun with the intent to open source the filesystem so that it could be ported to other operating systems.
-After the Oracle acquisition of Sun, some of the original ZFS engineers founded [OpenZFS](http://open-zfs.org/wiki/Main_Page) to provide continued, collaborative development of the open source version.
+After the Oracle acquisition of Sun, some of the original ZFS engineers founded [OpenZFS](https://openzfs.org/wiki/Main_Page) to provide continued, collaborative development of the open source version.
 
 ## Feature Overview
 
@@ -79,13 +79,13 @@ More detail on SLOG benefits and usage is available in these blog and forum post
 
 * [Some insights into SLOG/ZIL with ZFS on FreeNAS®](https://forums.freenas.org/index.php?threads/some-insights-into-slog-zil-with-zfs-on-freenas.13633/)
 
-* [ZFS Intent Log](http://nex7.blogspot.com/2013/04/zfs-intent-log.html)
+* [ZFS Intent Log](https://nex7.blogspot.com/2013/04/zfs-intent-log.html)
 
 Synchronous writes are relatively rare with SMB, AFP, and iSCSI, and
 adding a SLOG to improve performance of these protocols only makes
 sense in special cases.
 The `zilstat` utility can be run from the TrueNAS **Shell** to determine if the system will benefit from a SLOG.
-See [this website](http://www.richardelling.com/Home/scripts-and-programs-1/zilstat) for usage information.
+See [this blog](http://www.richardelling.com/Home/scripts-and-programs-1/zilstat) for usage information.
 
 ZFS currently uses 16 GiB of space for SLOG.
 Larger SSDs can be installed, but the extra space will not be used.
@@ -101,7 +101,7 @@ A version value of *-* means the ZFS pool is version *5000* (also known as *Feat
 
 **ZFS provides a read cache** in RAM, known as the ARC, which reduces read latency.
 TrueNAS adds ARC stats to [top(1)](https://www.freebsd.org/cgi/man.cgi?query=top) and includes the `arc_summary.py` and `arcstat.py` tools for monitoring the ARC efficiency.
-If an SSD is dedicated as a cache device, it is known as an [L2ARC](http://www.brendangregg.com/blog/2008-07-22/zfs-l2arc.html).
+If an SSD is dedicated as a cache device, it is known as an [L2ARC](https://www.brendangregg.com/blog/2008-07-22/zfs-l2arc.html).
 Additional read data is cached here, which can increase random read performance.
 L2ARC does *not* reduce the need for sufficient RAM.
 In fact, L2ARC needs RAM to function.
@@ -178,13 +178,13 @@ These resources are also useful for reference:
 
 * [FreeBSD ZFS Tuning Guide](https://wiki.freebsd.org/ZFSTuningGuide)
 
-* [Becoming a ZFS Ninja (video)](https://www.youtube.com/watch?v=6_K55Ira1Cs)
+* [Becoming a ZFS Ninja - Part 1 (video)](https://www.youtube.com/watch?v=tPsV_8k-aVU)
 
 * [Slideshow explaining VDev, zpool, ZIL and L2ARC and other easy mistakes!](https://forums.freenas.org/index.php?threads/slideshow-explaining-vdev-zpool-zil-and-l2arc-for-noobs.7775/)
 
-* [ZFS: The Last Word in File Systems - Part 1 (video)](https://www.youtube.com/watch?v=uT2i2ryhCio)
+* [ZFS: The Last Word in File Systems - Part 1 (video)](https://www.youtube.com/watch?v=NRoUC9P1PmA)
 
-* [The Zettabyte Filesystem](https://www.youtube.com/watch?v=ptY6-K78McY)
+* [The Zettabyte Filesystem (video)](https://www.youtube.com/watch?v=ptY6-K78McY)
 
 ## ZFS Feature Flags
 

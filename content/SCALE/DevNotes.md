@@ -52,9 +52,9 @@ weight: 2
 
 Nightly images for TrueNAS SCALE are built every 24 hours, at around 2AM Eastern (EDT/EST) time. Online updates are created every 2 hours and are available in the SCALE UI online updating page.
 
-The Nightly ISO Image can be downloaded from: [http://download.truenas.com/truenas-scale-nightly/TrueNAS-SCALE.iso](http://download.truenas.com/truenas-scale-nightly/TrueNAS-SCALE.iso "http://download.truenas.com/truenas-scale-nightly/TrueNAS-SCALE.iso")
+The Nightly ISO Image can be downloaded from: [https://download.truenas.com/truenas-scale-nightly/](https://download.truenas.com/truenas-scale-nightly/ "SCALE Nightly .iso files")
 
-Users wanting to upgrade to a nightly image from 20.10 or 20.12 versions can do so by downloading the manual update file: [http://update.freenas.org/scale/TrueNAS-SCALE-Angelfish-Nightlies/TrueNAS-SCALE.update](http://update.freenas.org/scale/TrueNAS-SCALE-Angelfish-Nightlies/TrueNAS-SCALE.update)
+Users wanting to upgrade to a nightly image from 20.10 or 20.12 versions can do so by downloading the manual update file: [https://update.freenas.org/scale/TrueNAS-SCALE-Angelfish-Nightlies/TrueNAS-SCALE.update](https://update.freenas.org/scale/TrueNAS-SCALE-Angelfish-Nightlies/TrueNAS-SCALE.update)
 
 ## Current Feature Status
 
@@ -93,16 +93,85 @@ They should be suitable for very adventurous users and developers who are not af
 
 ### PCI Passthrough Devices
 
-In order to use PCI passthrough devices with VMs, follow these steps to have PCI devices show up in UI when it is time to create a PCI device to attach to a VM.
+For PCI Passthrough devices, system will try to detach the PCI device before the VM starts and then re-attach once the VM stops. Please ensure the device can be safely used with the guest.
 
-1. In the CLI, identify the PCI device to use for passthrough with `virsh -c "qemu+unix:///system?socket=/run/truenas_libvirt/libvirt-sock" nodedev-list pci`.
-2. When the PCI address has been identified, make sure the host OS is not using the device anywhere else (i.e pools). When you're sure the device is not being used, execute `virsh -c "qemu+unix:///system?socket=/run/truenas_libvirt/libvirt-sock" nodedev-detach pci_0000_26_00_0`, where `pci_0000_26_00_0` is the name of the PCI device.
-3. Step (2) detaches the PCI device from the host. It can now be used with a VM guest by adding a PCI device to a VM using the UI.
-
-Follow the above steps when there is already 1 VM created with the UI.
-
-Please ensure the device can be safely used with the guest.
 For example, the device could be part of a CPU and we try to pass it through to the guest, it can result in a crash where the system only recovers after a reboot.
+
+### GPU Passthrough
+
+For GPU passthrough, it is a requirement for the system to have at least 2 GPUs available.
+GPUs are identified by running
+
+```
+midclt call device.get_gpus | jq .
+
+[
+  {
+    "addr": {
+      "pci_slot": "0000:af:00.0",
+      "domain": "0000",
+      "bus": "af",
+      "slot": "00"
+    },
+    "description": "NVIDIA Corporation GM107 [GeForce GTX 750 Ti]",
+    "devices": [
+      {
+        "pci_id": "10DE:1380",
+        "pci_slot": "0000:af:00.0"
+      },
+      {
+        "pci_id": "10DE:0FBC",
+        "pci_slot": "0000:af:00.1"
+      }
+    ],
+    "vendor": "NVIDIA",
+    "available_to_host": false
+  },
+  {
+    "addr": {
+      "pci_slot": "0000:d8:00.0",
+      "domain": "0000",
+      "bus": "d8",
+      "slot": "00"
+    },
+    "description": "NVIDIA Corporation GK208B [GeForce GT 730]",
+    "devices": [
+      {
+        "pci_id": "10DE:1287",
+        "pci_slot": "0000:d8:00.0"
+      },
+      {
+        "pci_id": "10DE:0E0F",
+        "pci_slot": "0000:d8:00.1"
+      }
+    ],
+    "vendor": "NVIDIA",
+    "available_to_host": true
+  }
+]
+```
+
+After identifying the GPU to use for passthrough, please note the `addr.pci_slot` value.
+To have the system isolate the GPU, please execute this command:
+
+```
+midclt call system.advanced.update '{"isolated_gpu_pci_ids": ["0000:af:00.0"]}'
+```
+
+After a system reboot, the specified GPU is not consumed by the host. This can be confirmed with `lspci`.
+Relevant PCI devices can now be added to the VM that is consuming the GPU from the UI.
+In some cases, like a Windows 10 VM, the GPU might not be recognized unless `hide_from_msr` is enabled for the VM:
+
+```
+midclt call vm.update 1 '{"hide_from_msr": true}'
+```
+
+Please note that `1` is the VM *ID*.
+This is different for each VM and can be retrieved by running:
+
+```
+midclt call vm.query | jq .
+```
 
 ## Containerization
 
@@ -230,3 +299,21 @@ Setting `KUBECONFIG` is required for using helm and the `kubectl` alias helps us
 Support for Kubernetes is still considered experimental, so please use it at your own risk.	
 If you find any bugs, please create tickets at https://jira.ixsystems.com.	## Using Applications
 {{< /hint >}}
+
+### Custom Catalogs
+
+TrueNAS SCALE 21.02 allows users to configure custom catalogs for their own applications. In the CLI, add a custom catalog with
+
+```
+midclt call catalog.create '{"label": "<<CATALOG_LABEL_HERE>>", "repository": "git repo uri", "branch": "master"}'
+```
+This command adds the applications from that catalog to the UI. Users can then install or configure these custom applications using the the UI.
+UI support for managing custom catalogs is planned for next release.
+
+For users working on their own custom catalogs, here is a helpful command that verifies if the custom catalog is healthy:
+```
+midclt call catalog.validate <<CATALOG_LABEL_HERE>>
+```
+
+This lists any errors TrueNAS finds with the catalog.
+Any application version errors they must be resolved before the application can be installed.

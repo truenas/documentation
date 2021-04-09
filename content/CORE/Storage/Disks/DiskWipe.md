@@ -11,7 +11,7 @@ Back up any critical data off the disk to be wiped.
 {{< /hint >}}
 
 To wipe a disk, go to **Storage** > **Disks**.
-Click the <i class="fa fa-chevron-right" aria-hidden="true" title="Right Chevron"></i> for an disk to see all the options.
+Click the <i class="material-icons" aria-hidden="true" title="Expand">chevron_right</i> for a disk to see all the options.
 
 ![StorageDisksExpand](/images/CORE/12.0/StorageDisksExpand.png "Disk Options")
 

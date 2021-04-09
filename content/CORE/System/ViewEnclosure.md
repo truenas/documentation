@@ -5,7 +5,7 @@ weight: 50
 
 {{< hint ok >}}
 Only compatible TrueNAS hardware and expansion shelves available from [iXsystems](https://www.ixsystems.com/) allow seeing the **View Enclosure** option.
-To learn more about available iXsystems products, see the [TrueNAS Systems Overview](https://www.truenas.com/systems-overview/) or browse the [Hardware](/Hardware/) documentation.
+To learn more about available iXsystems products, see the [TrueNAS Systems Overview](https://www.truenas.com/systems-overview/) or browse the [Hardware]({{< relref "/Hardware/_index.md" >}}) documentation.
 {{< /hint >}}
 
 Go to **System > View Enclosure** to display the status of connected disks and hardware.

@@ -105,7 +105,7 @@ Restart-Service LanmanWorkstation -Force
 
 ## Server Prep
 
-The recommended version of TrueNAS is 12.0-U2+, however the driver should work
+The recommended version of TrueNAS is 12.0-U2.1+, however the driver should work
 with much older versions as well.
 
 Ensure the following services are configured and running:

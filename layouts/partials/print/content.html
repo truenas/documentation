@@ -8,6 +8,9 @@
     {{ $break := cond .DoPageBreak "page-break-before: always" "" }}
 	<h1 id="pg-{{ .Page.File.UniqueID }}">{{ .PageNum }} - {{ .Page.Title }}</h1>
     {{ with .Page.Params.description }}<div class="lead">{{ . | markdownify }}</div>{{ end }}
+    <head>
+    	<link rel="stylesheet" type="text/css" href="../../custom.css">
+    </head>
 	{{ .Page.Content }}
 </div>
 {{ end }}

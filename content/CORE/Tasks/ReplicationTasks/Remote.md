@@ -5,7 +5,7 @@ weight: 20
 
 {{< toc >}}
 
-Configure [SSH](/CORE/System/SSH/) and [automatic dataset snapshots](/CORE/Tasks/PeriodicSnapshotTasks/) in TrueNAS before creating a remote replication task.
+Configure [SSH]({{< relref "SystemSSH.md" >}}) and [automatic dataset snapshots]({{< relref "PeriodicSnapshotTasks.md" >}}) in TrueNAS before creating a remote replication task.
 This ensures that both systems can connect to each other and new snapshots are regularly available for replication.
 
 To streamline creating simple replication configurations, the replication wizard assists with creating a new SSH connection and automatically creates a periodic snapshot task for sources that have no existing snapshots.
@@ -22,7 +22,7 @@ To streamline creating simple replication configurations, the replication wizard
     * Choose destination or define manually by typing a path.
       * Adding a new name on the end of the path creates a new dataset.
   * Choose replication security.
-    * Replication with encryption is always recommended.
+    * We always recommend Replication with encryption.
     * Disabling encryption is only meant for absolutely secure networks.
   * Schedule the replication.
     * Schedule can be standardized presets or a custom defined schedule.
@@ -50,8 +50,8 @@ Expanding the directory browser shows the current datasets or zvols that are ava
 You can select multiple sources or manually type the names into the field.
 
 TrueNAS shows how many snapshots are available for replication.
-It is recommended to manually snapshot the sources or create a periodic snapshot task *before* creating the replication task.
-However, when the sources are on the local system and don't have any existing snapshots, TrueNAS can create a basic periodic snapshot task and snapshot the sources immediately before starting the replication.
+We recommend you manually snapshot the sources or create a periodic snapshot task *before* creating the replication task.
+However, when the sources are on the local system and don't have any existing snapshots, TrueNAS can create a basic periodic snapshot task and snapshot the sources immediately before starting the replication. Enabling *Recursive* replicates all snapshots contained within the selected source dataset snapshots.
 
 ![TasksReplicationTasksAddRemoteSource](/images/CORE/12.0/TasksReplicationTasksAddRemoteSource.png "Choosing a Remote Source")
 
@@ -89,7 +89,7 @@ You can choose between a number of preset schedules or create a custom schedule 
 Choosing to run the replication once will run the replication immediately after saving the task, but any additional replications must be triggered manually.
 
 Finally, define how long you want to keep snapshots on the destination system.
-Defining a snapshot lifetime is generally recommended to prevent cluttering the system with obsolete snapshots.
+We generally recommend defining snapshot lifetime to prevent cluttering the system with obsolete snapshots.
 
 ![TasksReplicationTasksAddLocalSourceLocalDestCustomLife](/images/CORE/12.0/TasksReplicationTasksAddLocalSourceLocalDestCustomLife.png "Custom Lifetimes")
 {{< /tab >}}

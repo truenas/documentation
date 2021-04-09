@@ -14,7 +14,10 @@ An update usually takes between thirty minutes and an hour.
 A reboot is required after the update, so it is recommended to schedule updates during a maintenance window, allowing two to three hours to update, test, and possibly roll back if issues appear.
 On very large systems, a proportionally longer maintenance window is recommended.
 
-For individual support during an upgrade, please [contact iXsystems Support](/hub/initial-setup/support/#contacting-ixsystems-support) to schedule your upgrade.
+For individual support during an upgrade, please contact iXsystems Support to schedule your upgrade.
+{{< expand "Contacting iXsystems Support" "v" >}}
+{{< include file="static/includes/iXsystemsSupportContact.html.part" html="true" >}}
+{{< /expand >}}
 Scheduling at least two days in advance of a planned upgrade gives time to make sure a specialist is available for assistance.
 Updating from earlier than version 9.3 of TrueNAS must be scheduled with iXsystems Support.
 
@@ -25,7 +28,7 @@ Operating system updates only modify the operating system devices and do not aff
 
 {{< hint info >}}
 An update could involve upgrading the version of ZFS that is installed on the storage drives.
-When a ZFS version upgrade is available, an <i class="fa fa-bell" aria-hidden="true" title="Alert"></i> **Alert** appears in the web interface.
+When a ZFS version upgrade is available, an <i class="material-icons" aria-hidden="true" title="Alert">notifications</i> **Alert** appears in the web interface.
 Upgrading the ZFS version on storage drives is not recommended until it has been verified that rolling back to previous versions of the operating system is not necessary and that swapping the storage drives with another system that has an earlier ZFS version is not needed.
 After a ZFS version upgrade, the storage devices will not be accessible by earlier TrueNAS versions.
 {{< /hint >}}
@@ -68,7 +71,7 @@ The web interface login screen reappears when the standby TrueNAS controller fin
 
 ![LoginFailoverEnterprise](/images/CORE/12.0/LoginFailoverEnterprise.png "Login after Failover")
 
-Log in to the web interface and check the <i class="fa fa-cloud" aria-hidden="true" title="Cloud"></i> HA status in the top toolbar.
+Log in to the web interface and check the <i class="material-icons" aria-hidden="true" title="Cloud">cloud</i> HA status in the top toolbar.
 This icon shows that HA is unavailable while the previously active TrueNAS controller reboots.
 When HA is available, a dialog asks to finish the update.
 Click *CONTINUE* to finish updating the previously active TrueNAS controller.

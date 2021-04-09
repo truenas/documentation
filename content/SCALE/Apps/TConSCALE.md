@@ -75,4 +75,4 @@ The TrueCommand login screen appears and asks to create the new [Administrator a
 
 If the login screen fails to appear, double-check your system networking settings, open networking ports, and if the `9004` or `9005` *Node Port* values are already in use by another application.
 
-For more details about TrueCommand, see the [TrueCommand section](/TrueCommand/).
+For more details about TrueCommand, see the [TrueCommand section]({{< relref "/TrueCommand/_index.md" >}}).

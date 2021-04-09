@@ -1,3 +1,7 @@
+/* Font Changes */
+p,h1,h2,h3,h4,th,td,a {
+  font-family: "Inter", sans-serif;
+}
 /* Adjust overall site height */
 .wrapper {
   display: flex;
@@ -5,10 +9,19 @@
   min-height: 10vh;
 }
 /* Site header */
+.gdoc-brand__img {
+	max-width: 7em;
+	width: auto;
+	height: auto;
+}
 .iconsbar {
 	background: #0095d5;
 	text-align: right !important;
 	max-width: 100% !important;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  padding-right: 10%;
 }
 .iconsbar a {
 	color: #fff;
@@ -34,6 +47,8 @@
 	display: flex;
 	margin-left: 1rem;
 	max-width: 90rem;
+  font-family: "din-2014";
+  font-weight: 500;
 }
 /* Remove stickybar for small screens and use default GeekDoc menu */
 @media screen and (max-width:39rem) {
@@ -56,7 +71,15 @@
 	color: black;
 	padding: 13px;
 	border: none;
+  font-family: "din-2014";
+  font-weight: normal;
+  font-size: 19px;
+  color: #666666;
 }
+.truenas-menubutton:hover {
+  color: #31beec;
+}
+
 .truenas-menubutton,.truenas-menubutton a {color:#black;cursor:pointer;}
 .truenas-menulink {
 	background-color: #ffffff;
@@ -75,7 +98,10 @@
 	z-index: 10;
 }
 .truenas-menudropdown a {
-	color: white;
+	font-family: "din-2014";
+  font-weight: 500;
+  font-size: 19px;
+  color: white;
 	padding: 12px 16px;
 	text-decoration: none;
 	display: block;
@@ -84,18 +110,33 @@
 .truenas-menuitem:hover .truenas-menudropdown {display: block;}
 .truenas-menuitem:hover .truenas-menubutton {background-color: #ffffff;color:#31beec;}
 .truenas-downloadbutton {
-	background:#71bf44;
+	background:#a5ce3c;
 	padding: 5px 25px!important;
     margin: 10px;
     border-radius: 15px;
     border: none;
  }
-.truenas-downloadbutton a {color:#ffffff;}
+.truenas-downloadbutton:hover {
+  background-color: #a5ce3c;
+}
+.truenas-downloadbutton a {
+  font-family: "din-2014";
+  font-weight: normal;
+  font-size: 19px;
+  color:#ffffff;
+}
+.truenas-downloadbutton a:hover {
+  color: #00597f;
+  text-decoration: none;
+}
 /* End site header */
 /* Site footer */
 .gdoc-footer {
 	background: #0095d5;
 	max-width: 100%;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
 }
 .gdoc-footer__link {
 	color: white;
@@ -104,6 +145,7 @@
 	color: white;
 }
 /* End site footer */
+
 /* Styling images in the Topics Tab Boxes */
 .topic-image {
 	float:left;
@@ -188,3 +230,151 @@
 }
 
 /* End styling for fade-in on image download links */
+/* Begin print view styling */
+.content-print {
+  min-width: 10rem;
+  max-width: 80rem;
+  margin: 0rem 5rem 0rem 5rem;
+  font-family: "Inter", sans-serif;
+}
+.content-print .gdoc_link{
+  max-height: 1rem;
+  max-width: 1rem;
+}
+.content-print img {
+  max-width: 800px;
+}
+.content-print .gdoc-tabs input[type="radio" i] {
+  display: none;
+}
+.content-print .gdoc-tabs label{
+  display: none;
+}
+.content-print input[type="checkbox" i] {
+  display: none;
+}
+.content-print input[type="radio" i] {
+  display: none;
+}
+.content-print .gdoc-tabs__label {
+  font-weight: bold;
+}
+.content-print .gdoc-expand {
+  border: 1px solid black;
+  margin-bottom: 1rem;
+  padding: 5px;
+  background-color: #f2f2f2;
+}
+.content-print .gdoc-expand__head.flex.justify-between{
+font-weight: bold;
+}
+.td-content-print{
+  min-width: 10rem;
+	max-width: 80rem;
+	margin: 0rem 5rem 0rem 5rem;
+  font-family: "Inter", sans-serif;
+}
+.td-content-print img{
+	max-width: 800px;
+}
+.td-content-print .gdoc_link{
+  max-height: 1rem;
+  max-width: 1rem;
+}
+.td-content-print table, th, td{
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 5px;
+}
+.td-content-print th{
+  background-color: #31beec;
+  color: white;
+}
+.td-content-print tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+.td-content-print input[type="checkbox" i] {
+  display: none;
+}
+.td-content-print input[type="radio" i] {
+  display: none;
+}
+.td-content-print .gdoc-tabs__label {
+  font-weight: bold;
+}
+.td-content-print .gdoc-expand {
+  border: 1px solid black;
+  padding: 5px;
+  background-color: #f2f2f2;
+  margin-bottom: 1rem;
+}
+.td-content-print .gdoc-expand__head.flex.justify-between{
+font-weight: bold;
+}
+.td-content-print blockquote {
+    margin: 1rem 0;
+    padding: .5rem 1rem .5rem .75rem;
+    border-left: 4px solid #e9ecef;
+    border-radius: .15rem;
+}
+.td-content-print .gdoc-hint.warning {
+    border-left-color: #fd6;
+    background-color: rgba(255,221,102,.1);
+}
+.td-content-print .gdoc-hint.info {
+    border-left-color: #6bf;
+    background-color: rgba(102,187,255,.1);
+}
+.td-content-print .gdoc-hint.danger {
+    border-left-color: #f66;
+    background-color: rgba(255,102,102,.1);
+}
+/* End print view styling */
+/* Begin archive drop down styling */
+/* Dropdown Button */
+.dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 8px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  height: 9rem;
+  overflow-y: scroll;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}

@@ -1,32 +1,30 @@
 ---
-title: "Managing Reports"
-description: "How to create and view system reports."
-tags: ["TrueCommand Users"]
+title: "Reports"
+weight: 35
 ---
 
-The **Reports** page is used to customize charts of system metrics for data analysis.
+{{< toc >}}
 
-<img src="/images/TrueCommand/1.3/ReportsList.png">
-<br><br>
+The **Reports** page customizes system metrics charts for data analysis.
 
-These reports are created by or shared with the current TrueCommand user.
-There are default reports that are designed to generate a basic system overview chart.
-These show details like network traffic, storage, and memory utilization for the chosen system.
+![ReportsList](/images/TrueCommand/1.3/ReportsList.png "Reports List")
 
-Viewing a report requires that the user has access to the systems that are being analyzed.
+TrueCommand users can create reports and share them with other TrueCommand users.
+We designed default reports that generate a basic system overview chart.
+Default reports show details like network traffic, storage, and the chosen system's memory utilization.
+
+Users must have access to the analyzed systems to view their reports.
 
 ## Creating a Report
 
-Click **+ CREATE REPORT** to create a customizable report.
+Click *+ CREATE REPORT* to create a customizable report.
 Enter a report name and an optional description for the report.
 
-<img src="/images/TrueCommand/1.3/ReportsCreate.png">
-<br><br>
+![ReportsCreate](/images/TrueCommand/1.3/ReportsCreate.png "Create a new report")
 
-Click BROWSE WIDGETS or WIDGET to add charts to the report.
+Click *BROWSE WIDGETS* or *WIDGET* to add charts to the report.
 
-<img src="/images/TrueCommand/1.3/ReportsCreateWidgetsAdd.png">
-<br><br>
+![ReportsCreateWidgetsAdd](/images/TrueCommand/1.3/ReportsCreateWidgetsAdd.png "Adding widgets to a new report")
 
 ### Custom Charts
 
@@ -40,47 +38,47 @@ Fill in these options when adding a custom chart:
 * Data sources: Add data sources to the chart by expanding a category and selecting appropriate sources.
   Multiple data sources can be added to one chart.
 * Summary: This step shows the all of the chosen values.
-  Click **SAVE** to add the custom chart to the report or **BACK** to go back and change a setting or data source.
+  Click *SAVE* to add the custom chart to the report or *BACK* to go back and change a setting or data source.
 
-After adding charts to the report, click **SAVE** to make this report available for use.
+After adding charts to the report, click *SAVE* to make this report available for use.
 
-After creating a report, click **GENERATE** to generate the report.
-<img src="/images/TrueCommand/1.3/ReportsView.png">
-<br><br>
+After creating a report, click *GENERATE* to generate the report.
 
-Next, add in the range and systems to be included in the report, and click the **GENERATE** button.
-<img src="/images/TrueCommand/1.3/ReportsGenerateSystemSelect.png">
-<br><br>
+![ReportsGenerateSystemSelect](/images/TrueCommand/1.3/ReportsGenerateSystemSelect.png "Selecting System for a report")
 
-The report will be generated and displayed.
-<img src="/images/TrueCommand/1.3/ReportsGenerated.png">
-<br><br>
+Next, add in the range and systems to be included in the report and click *GENERATE*.
+
+![ReportsView](/images/TrueCommand/1.3/ReportsView.png "Reports View")
+
+TrueCommand will now generate and display the report.
+
+![Reports Generated](/images/TrueCommand/1.3/ReportsGenerated.png "Reports Generated")
 
 ## Share Report
 
 By default, the reports created by a user are available only to that user.
-To share a report with other users or teams, open the **Configure** <i class="fa fa-cog" aria-hidden="true" title="Settings"></i>&nbsp; menu > **Reports** screen and click the **Share** button for a report.
-Reports can also be shared after clicking **Generate report**<i class="fa fa-eye" aria-hidden="true" title="eye"></i>.
+To share a report with other users or teams, open the **Configure** <i class="fa fa-cog" aria-hidden="true" title="Settings"></i> menu > **Reports** screen and click *Share*.
+You can also share reports after generating them.
 
-<img src="/images/TrueCommand/1.3/ReportsSharing.png">
-<br><br>
+![ReportsSharing](/images/TrueCommand/1.3/ReportsSharing.png "Reports Sharing")
 
-Reports can be shared with individual users or entire teams.
-Set either **OWNER** or **SHARED WITH** for the desired user.
+You can share reports with individual users or entire teams.
+Set either *OWNER* or *SHARED WITH* for the desired user.
 Users with the **SHARED WITH** status can view the report, while the **OWNER** status allows that user to edit the report.
 Clicking the **OWNER** or **SHARED WITH** text toggles every name in the list.
 
 ## Viewing a System Report
 
-Open the **Configure** <i class="fa fa-cog" aria-hidden="true" title="Settings"></i>&nbsp; menu > **Reports** page and click **Generate report**<i class="fa fa-eye" aria-hidden="true" title="eye"></i>&nbsp; on the appropriate report.
-Click **GENERATE** to select the systems and time frame for the report
+Open the **Configure** <i class="fa fa-cog" aria-hidden="true" title="Settings"></i> menu > **Reports** page and click *Generate report* <i class="fa fa-eye" aria-hidden="true" title="eye"></i> on the appropriate report.
+Click *GENERATE* to select the systems and time frame for the report.
 
-<img src="/images/TrueCommand/1.3/ReportsGenerateDates.png">
+![ReportsGenerateDates](/images/TrueCommand/1.3/ReportsGenerateDates.png "Report Time Frame")
 <br>
+
+![ReportsGenerateDatesSelect](/images/TrueCommand/1.3/ReportsGenerateDatesSelect.png "Select dates for a report")
 
 A non-administrative user must have the appropriate permissions to view data from specific systems.
 
-Clicking **Confirm** shows the saved charts from the report, populated with system data according to the selected amount of time.
+Clicking *Confirm* shows the saved charts from the report, populated with system data according to the selected amount of time.
 
-<img src="/images/TrueCommand/1.3/ReportsGenerated.png">
-<br><br>
+![ReportsGenerated](/images/TrueCommand/1.3/ReportsGenerated.png "Report Generated")

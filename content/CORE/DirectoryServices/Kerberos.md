@@ -82,6 +82,6 @@ Additional Kerberos options are in **Directory Services > Kerberos Settings**.
 ![DirectoryServicesKerberosSettings](/images/CORE/12.0/DirectoryServicesKerberosSettings.png "Kerberos Settings")
 
 * *Appdefaults Auxiliary Parameters* : Define any additional settings for use by some Kerberos applications.
-  The available settings and syntax is listed in the [[appdefaults] section of krb.conf(5)](http://web.mit.edu/kerberos/krb5-1.12/doc/admin/conf_files/krb5_conf.html#appdefaults).
+  The available settings and syntax is listed in the [[appdefaults] section of krb.conf(5)](https://web.mit.edu/kerberos/krb5-1.12/doc/admin/conf_files/krb5_conf.html#appdefaults).
 * *Libdefaults Auxiliary Parameters* : Define any settings used by the Kerberos library.
-  The available settings and their syntax are listed in the [[libdefaults] section of krb.conf(5)](http://web.mit.edu/kerberos/krb5-1.12/doc/admin/conf_files/krb5_conf.html#libdefaults).
+  The available settings and their syntax are listed in the [[libdefaults] section of krb.conf(5)](https://web.mit.edu/kerberos/krb5-1.12/doc/admin/conf_files/krb5_conf.html#libdefaults).

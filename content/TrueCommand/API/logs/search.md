@@ -20,7 +20,7 @@ Search through the logs and return results
    * "user_id" (string - only return log entries associated with this user)
    * "api_header" (string - only return log entries associed with a particular API call: such as "users/add" or "servers/edit")
 
-For information about the time formats, please look at the [Input Time Codes section](#input_time_codes) for details.
+For information about the time formats, please look at the [Input Time Codes section]({{< relref "timecodes.md" >}}) for details.
 
 ### Request Example Arguments
 **ARGUMENTS ONLY**: See the {{< api-link "basics" >}} of API requests for additional formatting information.

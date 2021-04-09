@@ -7,7 +7,7 @@ weight: 15
 
 {{< hint info >}}
 This procedure only applies to disks with a ZFS storage pool.
-To import disks with different file systems, see [Import Disk](/core/storage/importdisk/).
+To import disks with different file systems, see [Import Disk]({{< relref "ImportDisk.md" >}}).
 {{< /hint >}}
 
 ZFS pool importing works for pools that were exported or disconnected from the current system, created on another system, and pools to reconnect after reinstalling or upgrading the TrueNAS system.
@@ -26,18 +26,25 @@ There are two kinds of pool imports, standard ZFS pool imports and ZFS pools wit
 ## Standard ZFS Pools
 
 Select *Import Existing Pool* and click *NEXT*.
+
 ![StoragePoolsAddImport](/images/CORE/12.0/StoragePoolsAddImport.png "Import Pool Selection")
 
 The wizard asks if the pool has legacy GELI encryption.
+
 ![StoragePoolsAddImportNoGELI](/images/CORE/12.0/StoragePoolsAddImportNoGELI.png "No GELI on the pool")
+
 Select *No, continue with import* and click *NEXT*.
 
 TrueNAS detects any pools that are present but unconnected.
+
 ![StoragePoolsAddImportZFSPool](/images/CORE/12.0/StoragePoolsAddImportZFSPool.png "Selecting a pool to import")
+
 Choose the ZFS pool to import and click *NEXT*.
 
 Review the Pool Import Summary and click *IMPORT*.
+
 ![StoragePoolsAddImportZFSPoolSummary](/images/CORE/12.0/StoragePoolsAddImportZFSPoolSummary.png "Pool Import Summary")
+
 {{< /tab >}}
 {{< tab "ZFS Pool with GELI" >}}
 ## Encrypted GELI Pools
@@ -49,10 +56,12 @@ Always have a copy of the pool GELI key file and passphrase available.
 {{< /hint >}}
 
 Select *Import Existing Pool* and click *NEXT*.
+
 ![StoragePoolsAddImport](/images/CORE/12.0/StoragePoolsAddImport.png "Import Pool Selection")
 
 The wizard asks if the pool has legacy GELI encryption.
 Select *Yes, decrypt the disks* and review the decryption options.
+
 ![StoragePoolsAddImportGELIPresentDecrypt](/images/CORE/12.0/StoragePoolsAddImportGELIPresentDecrypt.png "GELI decryption options")
 
 Make sure the *Disks* selection shows the encrypted disks and partitions that are part of the incoming pool.
@@ -80,7 +89,7 @@ GELI encrypted pools show in **Storage > Pools** as **(Legacy Encryption)**.
 For security reasons, encrypted pool keys do not save to a configuration backup file.
 When TrueNAS is installed to a new device and restored with a saved configuration file, keys for encrypted disks are not present and the system does not request them.
 
-To correct this, export the encrypted pool in **Storage > Pools** with <i class="fa fa-cog" aria-hidden="true" title="Settings"></i> **(Settings) > Export/Disconnect**.
+To correct this, export the encrypted pool in **Storage > Pools** with <i class="material-icons" aria-hidden="true" title="Settings">settings</i> > **Export/Disconnect**.
 **Do not** set *Destroy data on this pool?*.
 Now import the pool again.
 During the import, add the encryption keys as described previously.

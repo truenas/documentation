@@ -83,7 +83,7 @@ iXsystems will provide these support services based on the length of time of the
 This maintenance and support is only valid for the length of time that You have purchased with Your TrueNAS Device.
 iXsystems may from time to time and at their sole discretion vary the terms and conditions of the maintenance and support agreement based on different business environmental and personnel factors.
 Any variations will be notified via email and the support portal.
-For more information on our Maintenance and Support contract, refer to [https://www.ixsystems.com/support/](https://www.ixsystems.com/support/).
+For more information on our Maintenance and Support contract, refer to https://www.ixsystems.com/support/.
 
 **4.9&emsp;Force Majeure** - iXsystems will not be deemed to be in default of any of the provisions of this Agreement or be liable for any delay or failure in performance due to Force Majeure, which shall include without limitation acts of God, earthquake, weather conditions, labor disputes, changes in law, regulation or government policy, riots, war, fire, epidemics, acts or omissions of vendors or suppliers, equipment failures, transportation difficulties, malicious or criminal acts of third parties, or other occurrences which are beyond iXsystems’ reasonable control.
 

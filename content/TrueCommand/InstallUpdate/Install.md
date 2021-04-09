@@ -112,7 +112,7 @@ Click on the **New System** alert, fill in the information from the TrueNAS syst
 ![NewSystemCreds](/images/TrueCommand/1.3/NewSystemCreds.png "Registering TrueNAS in TrueCommand Cloud")
 
 It can take 10 to 15 minutes for the TrueNAS instance to fully sync up with TrueCommand Cloud.
-When all systems are connected to TrueCommand Cloud, refer to the [TrueCommand Administration articles](/TrueCommand/Administration/) for more instructions about setting up configuration backups, alerts, reports, and role-based access control.
+When all systems are connected to TrueCommand Cloud, refer to the [TrueCommand Administration articles]({{< relref "/TrueCommand/Administration/_index.md" >}}) for more instructions about setting up configuration backups, alerts, reports, and role-based access control.
 {{< /tab >}}
 {{< tab "Docker (Linux)" >}}
 ## Installing the TrueCommand Container
@@ -266,7 +266,7 @@ When Docker Desktop shows the container status as **RUNNING**, open a new browse
 
 {{< /tab >}}
 {{< tab "Virtual Machine" >}}
-TrueCommand has both VMDK and VHDX files for virtual machine installs available from http://pkg.truecommand.io/.
+TrueCommand has both VMDK and VHDX files for virtual machine installs available from https://pkg.truecommand.io/.
 Most virtual machine applications, including VMware and VirtualBox, support TrueCommand VMDK files.
 Hyper-V users should use a TrueCommand VHDX file.
 
@@ -281,7 +281,7 @@ After downloading the appropriate TrueCommand file, extract the TrueCommand VMDK
 Launch your virtual machine application.
 In this example, VMware Workstation Player on Windows is being used.
 
-When VMware Player is open, click **Create a New Virtual Machine**
+When VMware Player is open, click **Create a New Virtual Machine**.
 
 ![VMwareInstallerStart](/images/TrueCommand/VMwareInstallerStart.png "VMware: Create VM")
 

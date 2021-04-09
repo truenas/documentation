@@ -20,8 +20,8 @@
     padding: 6rem 1rem
   }
   .gdoc-error .icon {
-    width: 4rem;
-    height: 4rem
+    width: 6rem;
+    height: 6rem
   }
   .gdoc-error__message {
     padding-left: 2rem
@@ -46,10 +46,10 @@
   #menu-control:checked ~ main .gdoc-page {
     opacity: .25
   }
-  #menu-control:checked ~ .gdoc-header .gdoc-nav__control .icon.menu {
+  #menu-control:checked ~ .gdoc-header .gdoc-nav__control .icon.gdoc_menu {
     display: none
   }
-  #menu-control:checked ~ .gdoc-header .gdoc-nav__control .icon.arrow-back {
+  #menu-control:checked ~ .gdoc-header .gdoc-nav__control .icon.gdoc_arrow_back {
     display: inline-block
   }
 }

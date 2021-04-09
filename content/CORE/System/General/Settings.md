@@ -23,7 +23,7 @@ Saves a backup copy of the current configuration database in the format *hostnam
 This file is downloaded to the computer accessing the web interface.
 Saving the configuration after making any configuration changes is highly recommended.
 
-See [System Config Backups](/CORE/System/General/GeneralSettings/) for more details about backing up the system configuration.
+See [System Config Backups]({{< relref "ConfigBackup.md" >}}) for more details about backing up the system configuration.
 {{< /tab >}}
 {{< tab "UPLOAD CONFIG" >}}
 Changes the system configuration settings.

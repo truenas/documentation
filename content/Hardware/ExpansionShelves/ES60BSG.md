@@ -1,6 +1,5 @@
 ---
 title: "ES60 Basic Setup Guide"
-tags: ["TrueNAS Products"]
 weight: 30
 ---
 

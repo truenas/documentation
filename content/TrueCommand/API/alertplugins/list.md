@@ -36,7 +36,7 @@ List all the alert provider plugins that are currently installed.
     "tags":["email","ssmtp","sendmail","plaintext"],
     "maintainer":[
       {"name":"Ken Moore","email":"ken@ixsystems.com","site_url":""},
-      {"name":"iXsystems","email":"support@ixsystems.com","site_url":"http://ixsystems.com"}
+      {"name":"iXsystems","email":"support@ixsystems.com","site_url":"https://ixsystems.com"}
     ],
     "repository":"ix-alertme",
     "depends":[

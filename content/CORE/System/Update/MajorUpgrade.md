@@ -16,10 +16,10 @@ TrueNAS provides flexibility for keeping the operating system up-to-date:
    Boot environments provide the option to return to the previous version of the operating system by rebooting the system and selecting the previous boot environment from the **System > Boot** menu.
 
 This article describes how to use an <file>.iso</file> file to perform a major version upgrade from an earlier version of FreeNAS/TrueNAS.
-See the [Updating](/CORE/System/Updating/update-guide/) article for instructions about using the web interface to keep the system updated.
+See the [Updating]({{< relref "UpdateCORE.md" >}}) article for instructions about using the web interface to keep the system updated.
 
 The upgrade path for major versions of FreeNAS/TrueNAS is **9.3 > 9.10 > 11.1 > 11.3 > 12.0**.
-It is always recommended to upgrade to a [supported version](/CORE/Introduction/lifecycle/) of the software.
+It is always recommended to upgrade to a [supported version]({{< relref "SofDevLifecycle.md" >}}) of the software.
 
 ## Caveats
 
@@ -30,7 +30,7 @@ Be aware of these caveats before attempting a major version upgrade:
   Unless new ZFS feature flags are needed, it is safe to leave the pool at the current version.
   If the pool is upgraded, it will not be possible to boot into a previous TrueNAS version that does not support the newer feature flags.
 * Upgrading the firmware of Broadcom SAS HBAs to the latest version is recommended.
-* When upgrading from 9.3.x to 9.10, read this [changes FAQ](#upgrading-from-93-to-910-faq) first.
+* When upgrading from 9.3.x to 9.10, read this [changes FAQ]({{< relref "9.3to9.10UpgradeFAQ.md" >}}) first.
 * **Upgrades from FreeNAS 0.7x are not supported.**
   The system has no way to import configuration settings from FreeNAS 0.7x versions.
   The configuration must be manually recreated.
@@ -39,13 +39,13 @@ Be aware of these caveats before attempting a major version upgrade:
   However, if the system is currently running a 32-bit version of FreeNAS/TrueNAS and the hardware supports 64-bit, the system can be upgraded.
   Any archived reporting graphs will be lost during the upgrade.
 * **UFS is not supported.**
-  If the data currently resides on **one** UFS-formatted disk, [create a ZFS pool](/CORE/Storage/DataPools/) using other disks after the upgrade, then use the instructions in [Importing a Disk](/CORE/Storage/ImportDisk/) to mount the UFS-formatted disk and copy the data to the ZFS pool.
+  If the data currently resides on **one** UFS-formatted disk, [create a ZFS pool]({{< relref "PoolCreate.md" >}}) using other disks after the upgrade, then use the instructions in [Importing a Disk]({{< relref "ImportDisk.md" >}}) to mount the UFS-formatted disk and copy the data to the ZFS pool.
   With only one disk, back up its data to another system or media before the upgrade, format the disk as `ZFS` after the upgrade, then restore the backup.
   If the data currently resides on a UFS RAID of disks, it is not possible to directly import that data to the ZFS pool.
   Instead, back up the data before the upgrade, create a ZFS pool after the upgrade, then restore the data from the backup.
 * **If you have GELI-encrypted pools and are upgrading to TrueNAS 12.0 or newer**, you might want to migrate data out of the GELI-encrypted pools into ZFS-encrypted pools.
   The GELI pools **cannot be converted**; the data must be migrated to a new ZFS pool.
-  See the [Encryption article](/CORE/Storage/encryption/) for more details.
+  See the [Encryption article]({{< relref "StorageEncryption.md" >}}) for more details.
 
 ## Preparation
 
@@ -64,7 +64,7 @@ For example, this is the path to download an <file>.iso</file> of the latest Fre
 
 ![DownloadLatest](/images/CORE/11.3/DownloadLatest.png "Path to latest 11.3 release")
 
-Burn the downloaded <file>.iso</file> file to a CD or USB stick. Refer to the [Preparing Media](/hub/initial-setup/install/FirstTimeInstall/) instructions in the Installation article for tips about burning the <file>.iso</file> to media using different Operating Systems.
+Burn the downloaded <file>.iso</file> file to a CD or USB stick. Refer to the [Prepare the Install File]({{< relref "/Core/GettingStarted/Install.md#prepare-the-install-file" >}}) instructions in the Installation article for tips about burning the <file>.iso</file> to media using different Operating Systems.
 
 Insert the prepared media into the system and boot from it.
 The installer waits ten seconds in the installer boot menu before booting the default option.

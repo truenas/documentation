@@ -66,9 +66,9 @@ To check the AD join progress, open the <i class="material-icons" aria-hidden="t
 Any errors during the join process are also displayed in the **Task Manager**.
 {{< /expand >}}
 
-When the import is complete and the TrueNAS cache is enabled (enabled by default), AD users and groups become available when configuring basic dataset permissions or an [Access Control List (ACL)](/hub/tasks/advanced/editingacls/).
+When the import is complete and the TrueNAS cache is enabled (enabled by default), AD users and groups become available when configuring basic dataset permissions or an [Access Control List (ACL)]({{< relref "Permissions.md" >}}).
 
-Joining AD also adds default [Kerberos](/core/directoryservices/kerberos/) realms and generates a default `AD_MACHINE_ACCOUNT` keytab.
+Joining AD also adds default [Kerberos]({{< relref "Kerberos.md" >}}) realms and generates a default `AD_MACHINE_ACCOUNT` keytab.
 TrueNAS automatically begins using this default keytab and removes any administrator credentials that were stored in the TrueNAS configuration file.
 
 ## Troubleshooting

@@ -35,7 +35,7 @@ To begin, enter a pool *Name*.
 {{< expand "Encryption?" "v" >}}
 Encryption algorithms are available as an option for maximizing data security.
 This also complicates how data is retrieved and risks permanent data loss!
-Refer to the [Encryption article](/CORE/Storage/Pools/Encryption/) for more details and decide if encryption is necessary for your use case before setting any *Encryption* options.
+Refer to the [Encryption article]({{< relref "StorageEncryption.md" >}}) for more details and decide if encryption is necessary for your use case before setting any *Encryption* options.
 {{< /expand >}}
 
 Next, configure the virtual devices (vdevs) that make up the pool.
@@ -46,7 +46,7 @@ Clicking *SUGGEST LAYOUT* allows TrueNAS to review all available disks and popul
 To clear the suggestion, click *RESET LAYOUT*.
 
 To manually configure the pool, add vdevs according to your use case.
-Set the **Disk** boxes and click the <i class="fa fa-arrow-right" aria-hidden="true" title="Right Arrow"></i> to move the disks into a vdev.
+Set the **Disk** boxes and click the <i class="fa fa-arrow-right" aria-hidden="true" title="Right Arrow"></i>&nbsp; to move the disks into a vdev.
 
 ### Vdev Types
 
@@ -72,11 +72,11 @@ This complicates and limits the pool capabilities.
 {{< /expand >}}
 {{< /tab >}}
 {{< tab "Cache" >}}
-[ZFS L2ARC](/references/l2arc/) read-cache used with fast devices to accelerate read operations.
+[ZFS L2ARC]({{< relref "L2ARC.md" >}}) read-cache used with fast devices to accelerate read operations.
 This can be added or removed after creating the pool.
 {{< /tab >}}
 {{< tab "Log" >}}
-[ZFS LOG](/references/slog/) device that improves synchronous write speeds.
+[ZFS LOG]({{< relref "SLOG.md" >}}) device that improves synchronous write speeds.
 This can be added or removed after creating the pool.
 {{< /tab >}}
 {{< tab "Hot Spare" >}}
@@ -88,17 +88,17 @@ When a failed drive is replaced with a new drive, the hot spare reverts to an in
 When the failed drive is only detached from the pool, the temporary hot spare is promoted to a full *Data* vdev member and is no longer available as a hot spare.
 {{< /tab >}}
 {{< tab "Metadata" >}}
-Special Allocation class used to create [Fusion Pools](/core/storage/pools/fusionpool/) for increased metadata and small block I/O performance.
+Special Allocation class used to create [Fusion Pools]({{< relref "FusionPool.md" >}}) for increased metadata and small block I/O performance.
 {{< /tab >}}
 {{< tab "Dedup" >}}
-Stores [ZFS de-duplication](/references/zfsdeduplication/) tables.
+Stores [ZFS de-duplication]({{< relref "ZFSDeduplication.md" >}}).
 Requires allocating X GiB for every X TiB of general storage.
 Example: 1 GiB of *Dedup* vdev capacity for every 1 TiB of *Data* vdev availability.
 {{< /tab >}}
 {{< /tabs >}}
 
 To add a different vdev type during pool creation, click *ADD VDEV* and select the type.
-Select disks from `Available Disks` and use the <i class="fa fa-arrow-right" aria-hidden="true" title="Right Arrow"></i> (right arrow) next to the new **VDev** to add it to that section.
+Select disks from `Available Disks` and use the <i class="fa fa-arrow-right" aria-hidden="true" title="Right Arrow"></i>&nbsp; (right arrow) next to the new **VDev** to add it to that section.
 
 ### Vdev Layout
 

@@ -1,0 +1,12 @@
+The TrueNAS web interface allows saving debugging information to a text file.
+
+Go to **System > Advanced** and click *SAVE DEBUG*.
+A dialog prompts that **This operation might take a long time. Proceed?**.
+You won't be able to click options in the web interface while the debug file is created.
+Click *PROCEED* to begin collecting system information into a debug file.
+Debug file creation progress is shown in a dialog.
+
+When the debug file is complete, a dialog opens to save it to a location on your local system (i.e. Downloads, Documents etc.) or the file is automatically added to the location you specified for downloaded files.
+
+Debugging information is collected by the `freenas-debug` command line utility.
+A copy of the information is saved to <file>/var/tmp/fndebug</file>.

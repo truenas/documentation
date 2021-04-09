@@ -5,7 +5,7 @@ weight: 20
 
 {{< toc >}}
 
-TrueNAS includes an [Open LDAP](http://www.openldap.org/) client for accessing information from an LDAP server. An LDAP server provides directory services for finding network resources such as users and their associated permissions.
+TrueNAS includes an [Open LDAP](https://www.openldap.org/) client for accessing information from an LDAP server. An LDAP server provides directory services for finding network resources such as users and their associated permissions.
 
 {{< expand "Does LDAP work with SMB?" "v" >}}
 LDAP authentication for SMB shares is disabled unless the LDAP directory has been configured for and populated with Samba attributes.
@@ -47,7 +47,7 @@ To further modify the LDAP configuration, click *ADVANCED OPTIONS*.
 
 Setting *Allow Anonymous Binding* disables authentication and allows read and write access to any client.
 
-If a [Kerberos](/core/directoryservices/kerberos/) realm has been added to TrueNAS, it can be selected from the *Kerberos Realm* dropdown.
+If a [Kerberos]({{< relref "Kerberos.md" >}}) realm has been added to TrueNAS, it can be selected from the *Kerberos Realm* dropdown.
 Likewise, if a Kerberos keytab has been created, select it in the *Kerberos Principal* dropdown.
 
 If an encryption mode for the LDAP connection is desired, select one of these options from the *Encryption Mode* dropdown:
@@ -58,7 +58,7 @@ If an encryption mode for the LDAP connection is desired, select one of these op
 
 A certificate is not required when using username/password or Kerberos authentication.
 If certificate authentication is desired, select a certificate to use from the *Certificate* dropdown.
-To configure LDAP certificate-based authentication, [create a Certificate Signing Request](/CORE/System/certificates/) for the LDAP provider to sign.
+To configure LDAP certificate-based authentication, [create a Certificate Signing Request]({{< relref "Certificates.md" >}}) for the LDAP provider to sign.
 
 To validate the authenticity of the certificate, set *Validate Certificates*.
 

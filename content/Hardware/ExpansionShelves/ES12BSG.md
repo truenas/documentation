@@ -1,6 +1,5 @@
 ---
 title: "ES12 Basic Setup Guide"
-tags: ["TrueNAS Products"]
 weight: 10
 ---
 

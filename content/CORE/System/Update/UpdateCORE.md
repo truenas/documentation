@@ -28,7 +28,7 @@ There are several trains available for updates, but the web interface only displ
 Update trains are labeled with a numeric version followed by a short description.
 The current version receives regular bug fixes and new features.
 Supported older versions of TrueNAS only receive maintenance updates.
-See the [Software Development Life Cycle](/CORE/Introduction/#sdlc-application) for more details about the development and support timeline for TrueNAS versions.
+See the [Software Development Life Cycle]({{< relref "SofDevLifecycle.md" >}}) for more details about the development and support timeline for TrueNAS versions.
 
 Several specific words are used to describe the type of train:
 
@@ -97,6 +97,24 @@ Boot environments marked with the *Keep* attribute as shown in **System > Boot**
 If space for a new boot environment is not available, the upgrade fails.
 Space on the operating system device can be manually freed by going to **System > Boot** and removing the *Keep* attribute or deleting any boot environments that are no longer needed.
 {{< /hint >}}
+
+{{< expand "Can I force a full update?" "v" >}}
+The TrueNAS updater defaults to delta packages for updates.
+During an update, only files that changed in the base operating system since the previous update are downloaded.
+Delta update packages are generally preferred over full update packages, providing a faster update and taking less bandwidth.
+By contrast, a full update package downloads all of the files included in the base system, even if those files have not changed.
+
+While the full package might require more time to install, there are some rare cases where it is necessary, such as when a patch has been applied as a temporary fix to a local system.
+A patch is a piece of software that is used to fix a bug within the main codebase.
+While software patches are often used to fix bugs, they can also repair security issues or add new features.
+
+To force a full update, open the web interface **Shell** and enter this command in the console:
+
+`freenas-update -C /tmp/update-$$ –no-delta –reboot update`
+
+The updater downloads the full package, which contains all of the files from the latest software release.
+when the download completes, the system reboots with the standard configuration.
+{{< /expand >}}
 
 ## Manual Updates
 

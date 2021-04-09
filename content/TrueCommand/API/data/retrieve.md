@@ -25,7 +25,7 @@ Retrieve data from specified servers/fields
       * If null, the full stats object will be returned.
       * Default value: `["cpu","cpu_temp","disks","memory","network", "storage","time_t"]`
 
-For information about the time formats, please look at the [Input Time Codes section](#input_time_codes) for details.
+For information about the time formats, please look at the [Input Time Codes section]({{< relref "timecodes.md" >}}) for details.
 
 
 ### Request Example Arguments

@@ -6,9 +6,9 @@ weight: 10
 {{< toc >}}
 
 Using groups in TrueNAS can be an efficient way of managing permissions for many similar user accounts.
-See [Users](/core/accounts/users/) for managing users.
+See [Users]({{< relref "Users.md" >}}) for managing users.
 The interface provides management of UNIX-style groups.
-If the network uses a directory service, import the existing account information using the instructions in [Active Directory](/CORE/DirectoryServices/activedirectory/).
+If the network uses a directory service, import the existing account information using the instructions in [Active Directory]({{< relref "ActiveDirectory.md" >}}).
 
 ## View Existing Groups
 
@@ -17,7 +17,7 @@ To see saved groups, go to **Accounts > Groups**
 ![AccountsGroupsList](/images/CORE/12.0/AccountsGroupsList.png "Accounts Groups List")
 
 By default, groups built in to the system are hidden.
-To see built-in groups, click <i class="fa fa-cog" aria-hidden="true" title="Settings"></i> and *SHOW*.
+To see built-in groups, click <i class="material-icons" aria-hidden="true" title="Settings">settings</i> and *SHOW*.
 
 ## Add a New Group
 
@@ -38,7 +38,7 @@ Setting allows group members to act as the root account by using [sudo](https://
 A common security practice is to leave this disabled.
 
 The option **Samba Authentication** is set by default.
-This allows group members to be used for [SMB](/hub/sharing/smb/) permissions and authentication.
+This allows group members to be used for [SMB]({{< relref "SMBShare.md" >}}) permissions and authentication.
 
 Finally, *Allow Duplicate GIDs* allows setting a duplicate group ID, but can greatly complicate system configurations.
 Leaving this option unset is recommended.
@@ -46,7 +46,7 @@ Leaving this option unset is recommended.
 ## Group Member Management
 
 Register user accounts to a group to simplify permissions and access to large numbers of user accounts.
-To manage group membership, go to **Accounts > Groups**, click the <i class="fa fa-chevron-right" aria-hidden="true" title="Right Chevron"></i> for a group, and click <i class="material-icons" aria-hidden="true" title="Group">group</i> **MEMBERS**:
+To manage group membership, go to **Accounts > Groups**, click the <i class="material-icons" aria-hidden="true" title="Expand/Collapse Row">navigate_next</i> for a group, and click <i class="material-icons" aria-hidden="true" title="Group">group</i> **MEMBERS**:
 
 ![AccountsGroupsMembers](/images/CORE/12.0/AccountsGroupsMembers.png "Managing Group Members")
 

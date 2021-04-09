@@ -70,7 +70,7 @@ Choosing a *Type* adds options specific to that alert service:
 | Name | Description |
 |------|-------------|
 | API Key | Enter or paste the [API key](https://docs.opsgenie.com/v1.0/docs/api-integration). Find the API key by signing into the OpsGenie web interface and going to Integrations/Configured Integrations. Click the desired integration, Settings, and read the API Key field. |
-| API URL | Leave empty for default ([OpsGenie API](https://api.opsgenie.com/) |
+| API URL | Leave empty for default OpsGenie API. |
 
 {{< /tab >}}
 {{< tab "Pager Duty" >}}
@@ -103,7 +103,7 @@ Choosing a *Type* adds options specific to that alert service:
 | Name | Description |
 |------|-------------|
 | API Key | Enter or paste the [VictorOps API key](https://help.victorops.com/knowledge-base/api/). |
-| Routing Key | Enter or paste the [VictorOps routing key](https://portal.victorops.com/public/api-docs.html#/Routing32Keys). |
+| Routing Key | Enter or paste the [VictorOps routing key](https://portal.victorops.com/public/api-docs.html). |
 
 {{< /tab >}}
 {{< /tabs >}}

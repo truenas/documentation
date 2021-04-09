@@ -1,6 +1,5 @@
 ---
 title: "ES24F Basic Setup Guide"
-tags: ["TrueNAS Products"]
 weight: 25
 ---
 
