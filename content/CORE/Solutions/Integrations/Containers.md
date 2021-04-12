@@ -22,34 +22,34 @@ The democratic-csi focuses on providing storage using iSCSI, NFS, and SMB protoc
 
 # Installation
 
-3 steps to install the democratic-csi:
+There are 3 steps to integrating a container solution in TrueNAS:
 
-1. Prepare TrueNAS for a container solution.
+1. Prepare TrueNAS.
 2. Prepare the nodes (ie: your Kubernetes cluster nodes).
-3. Deploy your orchestrator into the cluster (`helm` chart provided with sample `values.yaml`).
+3. Deploy your container orchestrator.
 
 ## Prepare TrueNAS for a Container Solution
 
-We recommend using TrueNAS 12.0-U2.1+. However, the driver should work with older versions too. Before you start, go to **Services** and make sure that *iSCSI*, *NFS*, and *SSH* are enabled.
+We recommend using TrueNAS 12.0-U2.1+. However, the driver typically works with previous versions too, but is unsupported. Before you start, log in to TrueNAS, go to **Services**, and make sure *iSCSI*, *NFS*, and *SSH* are enabled.
 
 ### Create Pools
 
-Go to **Storage > Pools** and create the pools that you want to include in your Kubernetes container.
+Go to **Storage > Pools** and create the pools to include in your container.
 
-### Set up SSH 
+### Set up SSH
 
-Now you need to ensure that the user account Kubernetes will use to SSH to TrueNAS has a supported shell.  
+Now you need to ensure that a supported shell is used by the user account that your container solution can use to SSH to TrueNAS.
 Go to **Accounts > Users** and set the desired user's *Shell* to either *bash* or *sh*, then click *SAVE*.
 
 {{< hint info >}}
  
-If you want to use a non-root user for the SSH operations, you may create a `csi` user and then run `visudo` directly from the console. Make sure the line for the `csi` user has `NOPASSWD` added (note: this can get reset by TrueNAS if you alter the user via the GUI later):
+To use a non-root user for the SSH operations, you can create a `csi` user and then run `visudo` directly from the console. Make sure the line for the `csi` user has `NOPASSWD` added (this can get reset by TrueNAS if you alter the user in the GUI later):
 
 ```
 csi ALL=(ALL) NOPASSWD:ALL
 ```
 
-With TrueNAS CORE 12, you can use an `apiKey` instead of the `root` password for the HTTP connection.
+With TrueNAS CORE version 12.0+, you can use an `apiKey` instead of the `root` password for the HTTP connection.
 {{< /hint >}}
 
 ### Set up NFS
@@ -84,12 +84,12 @@ Install and configure the requirements for both NFS and iSCSI.
 {{< tab "NFS" >}}
 ### NFS
 
-##RHEL / CentOS##
+#### RHEL / CentOS
 ```
 sudo yum install -y nfs-utils
 ```
 
-##Ubuntu / Debian##
+#### Ubuntu / Debian
 ```
 sudo apt-get install -y nfs-common
 ```
@@ -98,41 +98,43 @@ sudo apt-get install -y nfs-common
 ### iSCSI
 
 {{< hint info >}}
-Note that multipath is supported for the `iscsi`-based drivers. Configure multipath with multiple portals in the configuration as needed.
+Multipath is supported for the `iscsi`-based drivers. Configure multipath with multiple portals in the configuration as needed.
 
-If you are running Kubernetes with rancher/rke please see the https://github.com/rancher/rke/issues/1846.
+If you are running Kubernetes with rancher/rke, please see https://github.com/rancher/rke/issues/1846.
 {{< /hint >}}
 
-##RHEL / CentOS##
-Install the following system packages
+#### RHEL / CentOS
+Install these system packages:
 ```
 sudo yum install -y lsscsi iscsi-initiator-utils sg3_utils device-mapper-multipath
 ```
 
-Enable multipathing
+Enable multipathing:
 ```
 sudo mpathconf --enable --with_multipathd y
 ```
 
-Ensure that iscsid and multipathd are running
+Ensure that `iscsid` and `multipathd` are running:
 ```
 sudo systemctl enable iscsid multipathd
+
 sudo systemctl start iscsid multipathd
 ```
 
-Start and enable iSCSI
+Start and enable iSCSI:
 ```
 sudo systemctl enable iscsi
+
 sudo systemctl start iscsi
 ```
 
-##Ubuntu / Debian##
-Install the following system packages
+#### Ubuntu / Debian
+Install these system packages:
 ```
 sudo apt-get install -y open-iscsi lsscsi sg3-utils multipath-tools scsitools
 ```
 
-Enable multipathing
+Enable multipathing:
 ```
 sudo tee /etc/multipath.conf <<-'EOF'
 defaults {
@@ -146,7 +148,7 @@ sudo systemctl enable multipath-tools.service
 sudo service multipath-tools restart
 ```
 
-Ensure that open-iscsi and multipath-tools are enabled and running
+Ensure that open-iscsi and multipath-tools are enabled and running:
 ```
 sudo systemctl status multipath-tools
 
@@ -161,8 +163,7 @@ sudo systemctl status open-iscsi
 {{< tab "SMB" >}}
 ### SMB
 
-If using with Windows based machines you may need to enable guest access (even
-if you are connecting with credentials).
+When using Windows based machines, you might need to enable guest access, even if you are connecting with credentials.
 
 ```
 Set-ItemProperty HKLM:\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters AllowInsecureGuestAuth -Value 1
@@ -184,13 +185,17 @@ Restart-Service LanmanWorkstation -Force
 ```
 helm repo add democratic-csi https://democratic-csi.github.io/charts/
 helm repo update
+
 # helm v2
 helm search democratic-csi/
+
 # helm v3
 helm search repo democratic-csi/
+
 # copy proper values file from https://github.com/democratic-csi/charts/tree/master/stable/democratic-csi/examples
 # edit as appropriate
 # examples are from helm v2, alter as appropriate for v3
+
 # add --create-namespace for helm v3
 helm upgrade \
 --install \
@@ -203,8 +208,8 @@ helm upgrade \
 --namespace democratic-csi \
 zfs-nfs democratic-csi/democratic-csi
 ```
-{{< expand "Note About non-standard Kubelet Paths" "v" >}}
-If you're using a distribution with a non-standard kubelet path (such as `minikube` and `microk8s`), you will need to provide a new kubelet host path (microk8s example below).
+{{< expand "Non-standard Kubelet Paths" "v" >}}
+When using a distribution with a non-standard kubelet path (such as `minikube` and `microk8s`), a new kubelet host path is required. Example:
 
 ```bash
 microk8s helm upgrade \
@@ -260,6 +265,7 @@ Install `democratic-csi` as usual with `volumeSnapshotClasses` defined as approp
 # for sure required
 --set node.rbac.openshift.privileged=true
 --set node.driver.localtimeHostPath=false
+
 # unlikely, but in special circumstances may be required
 --set controller.rbac.openshift.privileged=true
 ```
