@@ -126,4 +126,4 @@ A popup will appear to confirm deletion of the Team.
 
 {{< hint info>}}
 Deleting a team does not remove users or systems assigned to that team.
-{{< /hint >}
+{{< /hint >}}
