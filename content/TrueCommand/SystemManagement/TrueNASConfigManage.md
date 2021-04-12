@@ -26,6 +26,15 @@ To create a new backup, click **Create Backup**.
 
 ![ConfigBackupsCreate](/images/TrueCommand/2.0/ConfigBackupsCreate.png "Config Backups Create")
 
+A maximum of one config backup per day can exist.  
+If a prior config backup for the current day exists, creating a new one will overwrite the previous backup.
+
+{{< hint info >}}
+The default number of backups retained is seven.
+Local instances of TrueCommand can raise or lower this figure as desired. 
+This can be changed in the Configuration Tab of the Administration Page.
+{{< /hint >}}
+
 ### Apply a config backup
 
 To reset a TrueNAS system to a previous configuration, click the <i class="material-icons" aria-hidden="true" title="History">history</i>icon.
