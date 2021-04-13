@@ -38,8 +38,8 @@ Clicking *View alert notice details (`i`)* shows details for that alert, includi
 
 ## Managing Alert Rules
 
-Alerts in TrueCommand are generated from alert rules.
-Several default rules are built into TrueCommand.
+Alert rules generate alerts in TrueCommand.
+TrueCommand has several default rules built in.
 TrueCommand administrators and [team members]({{< relref "/TrueCommand/TCGettingStarted/UserAccounts.md" >}}) with the appropriate permissions can create new alert rules.
 
 To view all TrueCommand alert rules, open the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and click **Alert Rules**.
@@ -47,9 +47,9 @@ To view all TrueCommand alert rules, open the **Configure** <i class="material-i
 ![AlertRules](/images/TrueCommand/2.0/AlertRules.png "Alert Rules")
 
 Details about each TrueCommand alert rule are shown on this page, including which user account created the rule.
-Alert rules can be activated, suspended, edited, or deleted by either an administrator account or the account that created the rule.
+Users can activate, suspend, edit, or delete alert rules using either an administrator account, or the account that created the rule.
 
-New TrueCommand alert rules can be created to monitor a wide variety of system information and generate a TrueCommand alert if specific conditions occur.
+Users can create new TrueCommand alert rules to monitor a wide variety of system information and generate a TrueCommand alert if specific conditions occur.
 To create a new alert rule, click **+ NEW ALERT RULE** and follow the creation wizard:
 
 ![AlertRulesCreate](/images/TrueCommand/2.0/AlertRulesCreate.png "Create new Alert Rule")
@@ -93,7 +93,7 @@ Enter a *Title for incident reports* if desired. Click *TEST*.
 
 Login to your PagerDuty account and check for open incidents.
 There you should see the triggered test alert from TrueCommand.
-If no test alert was received, check the **Service Integration Key from PagerDuty** for accuracy in the plugin configuration section of the alert service.
+If you did not receive a test alert, check the **Service Integration Key from PagerDuty** for accuracy in the plugin configuration section of the alert service.
 
 ![PagerDutyTestConfirm](/images/TrueCommand/2.0/PagerDutyTestConfirm.png "Confirming the Pager Duty test")
 
@@ -103,6 +103,6 @@ If no test alert was received, check the **Service Integration Key from PagerDut
 Enter the mailserver and port along with the user and password for the email account to be used.
 The *From* field allows you to customize the sender field of the email.
 Click **Test** to verify that the configuarion is correct.
-If no test alert email is received, check the values entered for accuracy.
+If you did not receive a test alert email, check the values entered for accuracy.
 
 
