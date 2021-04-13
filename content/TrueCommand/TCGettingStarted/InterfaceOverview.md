@@ -59,11 +59,3 @@ To change a color, click on the color to open a selection menu. Select the desir
 
 To remove changes and revert to the currently saved settings, click *Reset*.
 To reset all colors to the application defaults, click *Defaults*.
-
-## Settings Menu Options
-
-![Settings Menu](/images/TrueCommand/2.0/TopBarSettingsMenu.png "Settings Menu")
-
-## User Menu Options
-
-![User Menu](/images/TrueCommand/2.0/TopBarUserMenu.png "User Menu")
