@@ -31,7 +31,7 @@ The Top Bar has various quick links, configuration options, Alerts, and Menus.
 
 + Cluster Volumes : <mat-icon role="img" fontset="mdi" fonticon="mdi-server-network" aria-hidden="true" class="mat-icon mdi mdi-server-network mat-icon-no-color" aria-hidden="true"></mat-icon>
 + Reports : <mat-icon role="img" fontset="mdi" fonticon="mdi-chart-line-stacked"  class="mat-icon mdi mdi-chart-line-stacked mat-icon-no-color" aria-hidden="true" ng-reflect-font-set="mdi" ng-reflect-font-icon="mdi-chart-line-stacked"></mat-icon>
-+ Toggle Documentation Tooltips : <mat-icon role="img" mattooltip="Toggle documentation tooltips" class="mat-icon material-icons mat-icon-no-color" aria-hidden="true" ng-reflect-message="Toggle documentation tooltips" aria-describedby="cdk-describedby-message-87"></mat-icon>
++ Toggle Documentation Tooltips : <mat-icon role="img" mattooltip="Toggle documentation tooltips" class="mat-icon material-icons mat-icon-no-color" aria-hidden="true" ng-reflect-message="Toggle documentation tooltips" aria-describedby="cdk-describedby-message-87">help</mat-icon>
 + Theme Settings : <mat-icon role="img" fontset="mdi" fonticon="mdi-palette" mattooltip="Theme settings" class="mat-icon mdi mdi-palette mat-icon-no-color" aria-hidden="true" ng-reflect-font-set="mdi" ng-reflect-font-icon="mdi-palette" ng-reflect-message="Theme settings" aria-describedby="cdk-describedby-message-88"></mat-icon>
 + Alert Notifications : <mat-icon role="img" fontset="mdi" fonticon="mdi-bell" class="mat-icon mdi mdi-bell mat-icon-no-color" aria-hidden="true" ng-reflect-font-set="mdi" ng-reflect-font-icon="mdi-bell"></mat-icon>
 + Settings Menu : <i class="material-icons" aria-hidden="true" title="Settings">settings</i>
