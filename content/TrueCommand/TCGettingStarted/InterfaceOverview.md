@@ -74,16 +74,11 @@ The Settings mention has the following options:
 
 The Settings mention has the following options:
 
-+ Clicking 
-Profile
-<mat-icon role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true">person</mat-icon> opens the [User Account]({{< relref "/TrueCommand/Administration/Users.md" >}}) page.
++ Clicking <mat-icon role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true">person</mat-icon> opens the [User Account]({{< relref "/TrueCommand/Administration/Users.md" >}}) page.
 
-API
-<mat-icon role="img" fontset="mdi" fonticon="mdi-swap-vertical-bold" class="mat-icon mdi mdi-swap-vertical-bold mat-icon-no-color" aria-hidden="true"></mat-icon> opens the [API]({{< relref "/TrueCommand/API/_index.md" >}}) Testing page.
++ Clicking <mat-icon role="img" fontset="mdi" fonticon="mdi-swap-vertical-bold" class="mat-icon mdi mdi-swap-vertical-bold mat-icon-no-color" aria-hidden="true"></mat-icon> opens the [API]({{< relref "/TrueCommand/API/_index.md" >}}) testing page.
 
-EULA
-<mat-icon role="img" fontset="mdi" fonticon="mdi-file-document-edit" class="mat-icon notranslate mdi mdi-file-document-edit mat-icon-no-color" aria-hidden="true"></mat-icon> opens the [TrueCommand EULA]({{< relref "/TrueCommand/Introduction/TCTermsOfService.md" >}}).
++ Clicking <mat-icon role="img" fontset="mdi" fonticon="mdi-file-document-edit" class="mat-icon notranslate mdi mdi-file-document-edit mat-icon-no-color" aria-hidden="true"></mat-icon> opens the [TrueCommand EULA]({{< relref "/TrueCommand/Introduction/TCTermsOfService.md" >}}).
 
-Log Out
-<mat-icon role="img" class="mat-icon material-icons mat-icon-no-color" aria-hidden="true">exit_to_app</mat-icon> logs the user out of TrueCommand.
++ Clicking <mat-icon role="img" class="mat-icon material-icons mat-icon-no-color" aria-hidden="true">exit_to_app</mat-icon> logs the user out of TrueCommand.
 
