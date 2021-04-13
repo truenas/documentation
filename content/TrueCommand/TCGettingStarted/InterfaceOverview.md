@@ -29,11 +29,11 @@ You can now log in to the TrueCommand web interface with the new administrator a
 
 The Top Bar has various quick links, configuration options, Alerts, and Menus.
 
-+ Cluster Volumes : <mat-icon _ngcontent-ath-c284="" role="img" fontset="mdi" fonticon="mdi-server-network" routerlink="/gluster" aria-hidden="true" ng-reflect-font-set="mdi" ng-reflect-font-icon="mdi-server-network"></mat-icon>
-+ Reports : <mat-icon _ngcontent-ath-c284="" role="img" fontset="mdi" fonticon="mdi-chart-line-stacked" routerlink="/reporting" aria-hidden="true" ng-reflect-font-set="mdi" ng-reflect-font-icon="mdi-chart-line-stacked"></mat-icon>
-+ Toggle Documentation Tooltips : <mat-icon _ngcontent-ath-c284="" role="img" mattooltip="Toggle documentation tooltips" aria-hidden="true" ng-reflect-message="Toggle documentation tooltips"> help </mat-icon>
-+ Theme Settings : <mat-icon _ngcontent-ath-c284="" role="img" fontset="mdi" fonticon="mdi-palette" mattooltip="Theme settings"  aria-hidden="true" ng-reflect-font-set="mdi" ng-reflect-font-icon="mdi-palette" ng-reflect-message="Theme settings"></mat-icon>
-+ Alert Notifications : <mat-icon _ngcontent-ath-c284="" role="img" fontset="mdi" fonticon="mdi-bell"  aria-hidden="true" ng-reflect-font-set="mdi" ng-reflect-font-icon="mdi-bell"></mat-icon>
++ Cluster Volumes : <mat-icon _ngcontent-ath-c284="" role="img" fontset="mdi" fonticon="mdi-server-network" routerlink="/gluster" aria-hidden="true" class="mat-icon mdi mdi-server-network mat-icon-no-color" aria-hidden="true"></mat-icon>
++ Reports : <mat-icon _ngcontent-ath-c284="" role="img" fontset="mdi" fonticon="mdi-chart-line-stacked" routerlink="/reporting" class="mat-icon notranslate cursor-pointer ng-tns-c284-379 mdi mdi-chart-line-stacked mat-icon-no-color ng-star-inserted" aria-hidden="true" ng-reflect-font-set="mdi" ng-reflect-font-icon="mdi-chart-line-stacked"></mat-icon>
++ Toggle Documentation Tooltips : <mat-icon _ngcontent-ath-c284="" role="img" mattooltip="Toggle documentation tooltips" class="mat-icon notranslate cursor-pointer help ng-tns-c284-379 material-icons mat-icon-no-color" aria-hidden="true" ng-reflect-message="Toggle documentation tooltips" aria-describedby="cdk-describedby-message-87" cdk-describedby-host="" style="margin-right: 8px; padding: 0 var(--space-md);"> help </mat-icon>
++ Theme Settings : <mat-icon _ngcontent-ath-c284="" role="img" fontset="mdi" fonticon="mdi-palette" mattooltip="Theme settings" class="mat-icon notranslate cursor-pointer theme ng-tns-c284-379 mdi mdi-palette mat-icon-no-color" aria-hidden="true" ng-reflect-font-set="mdi" ng-reflect-font-icon="mdi-palette" ng-reflect-message="Theme settings" aria-describedby="cdk-describedby-message-88" cdk-describedby-host="" style="margin-right: 8px;"></mat-icon>
++ Alert Notifications : <mat-icon _ngcontent-ath-c284="" role="img" fontset="mdi" fonticon="mdi-bell" class="mat-icon notranslate mdi mdi-bell mat-icon-no-color" aria-hidden="true" ng-reflect-font-set="mdi" ng-reflect-font-icon="mdi-bell"></mat-icon>
 + Settings Menu : <i class="material-icons" aria-hidden="true" title="Settings">settings</i>
 + User Menu : This will display your user avatar. If no avatar has been set it will show your default user gravtar
 
