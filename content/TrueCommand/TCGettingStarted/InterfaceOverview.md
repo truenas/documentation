@@ -30,10 +30,10 @@ You can now log in to the TrueCommand web interface with the new administrator a
 The Top Bar has various quick links, configuration options, Alerts, and Menus.
 
 + Cluster Volumes : <mat-icon role="img" fontset="mdi" aria-hidden="true" class="mat-icon mdi mdi-server-network mat-icon-no-color"></mat-icon>
-+ Reports : <mat-icon role="img" fontset="mdi" fonticon="mdi-chart-line-stacked"  class="mat-icon mdi mdi-chart-line-stacked mat-icon-no-color" aria-hidden="true"</mat-icon>
++ Reports : <mat-icon role="img" fontset="mdi" fonticon="mdi-chart-line-stacked"  class="mat-icon mdi mdi-chart-line-stacked mat-icon-no-color" aria-hidden="true"></mat-icon>
 + Toggle Documentation Tooltips : <mat-icon role="img" mattooltip="Toggle documentation tooltips" class="mat-icon material-icons mat-icon-no-color" aria-hidden="true">help</mat-icon>
-+ Theme Settings : <mat-icon role="img" fontset="mdi" fonticon="mdi-palette" mattooltip="Theme settings" class="mat-icon mdi mdi-palette mat-icon-no-color" aria-hidden="true"</mat-icon>
-+ Alert Notifications : <mat-icon role="img" fontset="mdi" fonticon="mdi-bell" class="mat-icon mdi mdi-bell mat-icon-no-color" aria-hidden="true"</mat-icon>
++ Theme Settings : <mat-icon role="img" fontset="mdi" fonticon="mdi-palette" mattooltip="Theme settings" class="mat-icon mdi mdi-palette mat-icon-no-color" aria-hidden="true"></mat-icon>
++ Alert Notifications : <mat-icon role="img" fontset="mdi" fonticon="mdi-bell" class="mat-icon mdi mdi-bell mat-icon-no-color" aria-hidden="true"></mat-icon>
 + Settings Menu : <i class="material-icons" aria-hidden="true" title="Settings">settings</i>
 + User Menu : This will display your user avatar. If no avatar has been set it will show your default user gravtar
 
