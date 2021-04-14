@@ -65,7 +65,7 @@ TrueNAS has two options to create a jail. The *Jail Wizard* makes it easy to qui
 
 {{< expand "Additional VMware Requirements" "v" >}}
 
-{{< include file="static/includes/VirtualMachinesJailNetworking.html.part" >}}
+{{< include file="static/includes/VirtualMachinesJailNetworking.md.part" markdown="true" >}}
 {{< /expand>}}
 
 {{< tabs "Jail Create Options" >}}
