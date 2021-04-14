@@ -12,6 +12,6 @@ While viewing a single system, users can see various statistics like CPU, Memory
 
 Users can also create and manage storage, snapshots, and shares using the File Explorer. 
 
-Users with adequate permissions may update the system, configure backups, and generate system audits and reports.
+Users with adequate permissions may update the system, [configure backups]({{< relref "TrueNASConfigManage.md" >}}), and generate system audits and reports.
 
 ![TrueCommandSingleSystemDashboard](/images/TrueCommand/TrueCommandSingleSystemDashboard.png "Single System Dashboard")
