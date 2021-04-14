@@ -83,7 +83,18 @@ Each plugin has three options.
 + <i class="material-icons" aria-hidden="true" title="Settings">settings</i> : Configure Plugin
 + <mat-icon _ngcontent-ath-c200="" role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true">remove_circle</mat-icon> : Clear Plugin Configuration
 
-### Pager Duty
+
+{{< tabs "Services" >}}
+{{< tab "Email" >}}
+
+![AlertServicesSMTPEmailptions](/images/TrueCommand/2.0/AlertServicesSMTPEmailptions.png "Alert Services: SMTP Email options")
+Enter the mailserver and port along with the user and password for the email account to be used.
+The *From* field allows you to customize the sender field of the email.
+Click **Test** to verify that the configuarion is correct.
+If you did not receive a test alert email, check the values entered for accuracy.
+
+{{< /tab >}}
+{{< tab "PagerDuty" >}}
 
 Open the **Configure Plugin** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> for PagerDuty.  In the
 *Authtoken* section, enter your **Service Integration Key from PagerDuty**.  If you have an active subscription with PagerDuty, this key should be available to you. 
@@ -97,12 +108,12 @@ If you did not receive a test alert, check the **Service Integration Key from Pa
 
 ![PagerDutyTestConfirm](/images/TrueCommand/2.0/PagerDutyTestConfirm.png "Confirming the Pager Duty test")
 
-### SMTP Email
+{{< /tab >}}
+{{< /tabs >}}
 
-![AlertServicesSMTPEmailptions](/images/TrueCommand/2.0/AlertServicesSMTPEmailptions.png "Alert Services: SMTP Email options")
-Enter the mailserver and port along with the user and password for the email account to be used.
-The *From* field allows you to customize the sender field of the email.
-Click **Test** to verify that the configuarion is correct.
-If you did not receive a test alert email, check the values entered for accuracy.
+
+
+
+
 
 
