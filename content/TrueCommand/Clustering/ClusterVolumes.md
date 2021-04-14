@@ -43,4 +43,6 @@ Review the configuration and click **Create** to create the Volume.
 
 ![ClusterVolumeReview](/images/TrueCommand/2.0/ClusterVolumeReview.png "Cluster Volume Review")
 
-Once the volume is made, you can review the details.
+Once the volume is made, you can view its status.
+
+![ClusterVolumeCreated](/images/TrueCommand/2.0/ClusterVolumeCreated.png "Cluster Volume Created")
