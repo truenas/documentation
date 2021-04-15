@@ -21,7 +21,7 @@ Name the snapshot and click *CONFIRM*.
 
 ## Create Recurring Snapshot Tasks
 
-To create recurring snapshot tasks, select a pool in the system's *EXPLORE* menu and click *CREATE SNAPSHOTS*, then select *Create Snapshot Task*
+To create recurring snapshot tasks, select a pool in the system's *EXPLORE* menu and click *CREATE SNAPSHOTS*, then select *Create Snapshot Task*.
 
 ![TrueCommandCreateSnapshotTask](/images/TrueCommand/TrueCommandCreateSnapshotTask.png "Create Snapshot Task")
 
