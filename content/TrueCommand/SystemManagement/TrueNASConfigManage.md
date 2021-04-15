@@ -8,7 +8,8 @@ Manual backups can be created as needed.
 
 ## Viewing Backups
 
-To view the current TrueNAS configuration backups, open the **Dashboard** 
+To view the current TrueNAS configuration backups, open the **Dashboard**.
+
 ![DashboardView](/images/TrueCommand/2.0/DashboardView.png "Dashboard View")
 
 Click on the system name for a TrueNAS server to open the Single System view.
