@@ -45,14 +45,11 @@ General options include how frequently TrueCommand measures systems statistics, 
 
 ### SSL options
 
-This section has options to configure secure connections.
-By default, TrueCommand attempts an SSL connection, then a non-SSL connection if the first attempt fails.
-You can disable non-SSL connection attempts by setting *Require SSL for all connections*.
-This is useful when a monitored system does not allow SSL-secured access or when the monitored system is using a custom port.
+{{< hint info >}}
+This feature is only available for local installations or containerized TrueCommand deployments.
+{{< /hint >}}
 
-There are additional options to configure how TrueCommand handles certificates.
-By default, TrueCommand accepts self-signed certificates and certificate hostname mismatches.
-This allows the first-time login to TrueCommand and accepting certificates from systems that use a hostname, but are registered in TrueCommand with an IP address (or vice-versa).
+{{< include file="static/includes/TrueCommand/2.0/TrueCommandSSL.md.part" markdown="true" >}}
 
 ### Alert Options
 
