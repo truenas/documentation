@@ -5,7 +5,7 @@ weight: 10
 
 **April 13, 2021**
 
-TrueNAS M-Series users are strongly recommended to update to [TrueNAS 12.0-U3]({{< relref "12.0U3.md" >}}) to minimize the potential impact of a NVDIMM firmware bug  that might not save ZIL/SLOG contents on a power failure.
+We strongly recommend TrueNAS M-Series users update to [TrueNAS 12.0-U3]({{< relref "12.0U3.md" >}}) to minimize the potential impact of a NVDIMM firmware bug that might not save ZIL/SLOG contents on a power failure.
 
 NVDIMM (Non-Volatile Dual Inline Memory Module)  is the primary Write Cache (ZFS SLOG or ZIL) for TrueNAS M-Series. It stores incoming data prior to it being written to the ZFS pool with its data protection. On a dual controller system (HA), each Write is stored on the NVDIMM of the active controller and then mirrored to the NVDIMM on the standby controller. On power failure or power loss, the NVDIMM saves the contents of DRAM to its flash devices. NVDIMM is used because it is the fastest (very low latency) and most reliable Write Cache available.
 
@@ -24,8 +24,8 @@ Since discovering this weakness, all new M-Series now ship with NVDIMM Rev 2.2 f
 * Upgrade or downgrade the NVDIMM firmware ([NAS-109199](https://jira.ixsystems.com/browse/NAS-109199))
 * Upgrade the BIOS of each controller (necessary to change the NVDIMM firmware)
 
-It is recommended that, for use-cases where data is mission-critical, all M-Series systems be updated to 12.0-U3 and the latest BIOS within a reasonable period to minimize risk of disruption to your business. After that, these NVDIMM firmware levels should be verified and we can determine if the NVDIMM firmware needs to be changed.
+We recommend that, for use-cases where data is mission-critical, all M-Series systems be updated to 12.0-U3 and the latest BIOS within a reasonable period to minimize risk of disruption to your business. After that, we can verify these NVDIMM firmware levels and determine if the NVDIMM firmware needs to be changed.
  
-If an NVDIMM firmware change is needed, it is important to note that the multi-step NVDIMM downgrade process takes multiple hours and requires two failovers on a dual controller, HA system. This is to ensure IPMI firmware, BIOS version, and NVDIMM firmware are all on the latest qualified versions. Apart from the failovers, there is no disruption to normal storage services. It should be scheduled with iX Support, who will walk you through the process while taking into account your situation and business needs.
+If a NVDIMM firmware change is needed, it is important to note that the multi-step NVDIMM downgrade process takes multiple hours and requires two failovers on a dual controller, HA system. This is to ensure IPMI firmware, BIOS version, and NVDIMM firmware are all on the latest qualified versions. Apart from the failovers, there is no disruption to normal storage services. It should be scheduled with iX Support, who will walk you through the process while taking into account your situation and business needs.
 
 {{< include file="static/includes/iXsystemsSupportContact.html.part" html="true" >}}
