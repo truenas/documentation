@@ -26,7 +26,7 @@ The administrator has to provide these credentials to the intended user.
 
 ## Automatic Creation with LDAP
 
-{{< include file="static/includes/TrueCommandLDAP.md.part" markdown="true" >}}
+{{< include file="static/includes/TrueCommand/2.0/TrueCommandLDAP.md.part" markdown="true" >}}
 
 ### Teams and Permissions
 
