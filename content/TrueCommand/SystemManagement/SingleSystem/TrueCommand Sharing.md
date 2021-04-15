@@ -27,7 +27,7 @@ To create an NFS share from an already existing profile, select the *Profiles* t
 
 ### Create a Custom NFS Share
 
-To create an NFS share with custom settings, select the *Custom Settings* tab and fill out the form, then click *SHARE*
+To create an NFS share with custom settings, select the *Custom Settings* tab and fill out the form, then click *SHARE*.
 
 ![TrueCommandNFSCustom](/images/TrueCommand/TrueCommandNFSCustom.png "Custom NFS Share")
 
@@ -45,6 +45,6 @@ To create an SMB share from an already existing profile, select the *Profiles* t
 
 ### Create a Custom SMB Share
 
-To create an SMB share with custom settings, select the *Custom Settings* tab and fill out the form, then click *SHARE*
+To create an SMB share with custom settings, select the *Custom Settings* tab and fill out the form, then click *SHARE*.
 
 ![TrueCommandSMBCustom](/images/TrueCommand/TrueCommandSMBCustom.png "Custom SMB Share")
