@@ -6,6 +6,12 @@ relativeURLs = true
 disablePathToLower = false
 googlefonts = "//fonts.googleapis.com/css?family=Inter|Open+Sans|Merriweather|Fira+Mono|Droid+Sans"
 enableGitInfo = true
+rssLimit = 10
+languageCode = "en-us"
+copyright = "Documentation distributed under CC BY NC SA 4.0"
+
+[author]
+name = "iXsystems and TrueNAS Users"
 
 [outputs]
 section = ["HTML","RSS","print"]
