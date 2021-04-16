@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: 'External Contributor Build Preview'
 
 # Controls when the action will run. 
 on:
@@ -12,6 +12,8 @@ on:
 
 jobs:
   deploy:
+    if: github.event.pull_request.head.repo.full_name != github.repository
+    environment: CI
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
@@ -45,7 +47,7 @@ jobs:
         uses: afc163/surge-preview@v1
         id: preview_step
         with:
-          surge_token: ${{ secrets.SURGE_TOKEN }}
+          surge_token: ${{ secrets.CI_SURGE_TOKEN }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
           dist: public
           failOnError: 'true'
@@ -54,7 +56,7 @@ jobs:
       - name: Get the preview_url
         run: echo "url => ${{ steps.preview_step.outputs.preview_url }}"
      
-      - name: Sleep for 120 seconds
+      - name: Sleep for 160 seconds
         uses: jakejarvis/wait-action@master
         with:
           time: '160s'
