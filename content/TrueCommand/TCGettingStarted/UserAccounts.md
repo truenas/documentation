@@ -29,7 +29,7 @@ Enter a descriptive user name and an authentication method for the user.
 TrueCommand uses the *DEFAULT* authentication method to create unique credentials for logging in to the web interface.
 The administrator has to provide these credentials to the intended user.
 
-![UsersAdd](/images/TrueCommand/12.0/UsersNewUser.png "Adding a new user")
+![UsersAdd](/images/TrueCommand/2.0/UsersNewUser.png "Adding a new user")
 
 ## Automatic Creation with LDAP
 
