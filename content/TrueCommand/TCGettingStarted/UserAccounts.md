@@ -40,7 +40,7 @@ The administrator has to provide these credentials to the intended user.
 You can assign users to existing *Teams* by selecting a team from the drop-down to add the user to that team.
 You can assign users to multiple teams.
 TrueCommand applies team permissions to any user added to a team, but setting a specific permission for the user can override a related team permission.
-For more indepth inforamation regarding teams, see the [Teams Documentation]({{< relref "/TrueCommand/Administration/Users.md#organizing-user-teams" >}}).
+For more indepth inforamation regarding teams, see the [Teams Documentation]({{< relref "/TrueCommand/Administration/Users.md" >}}).
 
 To limit the access that non-administrative accounts have to the connected systems, configure the **System Access** and/or **System Groups** sections.
 This requires that [system connections]({{< relref "/TrueCommand/TCGettingStarted/ConnectingTrueNAS.md#connecting-systems-to-truecommand" >}}) and/or system groups have already been configured in TrueCommand.
