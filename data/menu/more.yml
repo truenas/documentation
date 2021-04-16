@@ -9,3 +9,7 @@ more:
     ref: "https://github.com/truenas/documentation"
     external: true
     icon: "gdoc_github"
+  - name: "RSS Feed"
+    ref: "https://truenas.com/docs/index.xml"
+    icon: "gdoc_notification"
+    external: true
