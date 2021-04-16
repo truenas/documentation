@@ -33,7 +33,7 @@ When the form is completed, click **Create User**.
 
 ## Configuring User Accounts
 
-To configure account details and permissions, open the *Configure* <i class="material-icons" aria-hidden="true" title="Settings">settings</i>menu and click **Users**
+To configure account details and permissions, open the *Configure* <i class="material-icons" aria-hidden="true" title="Settings">settings</i>menu and click **Users**.
 
 ![UsersList](/images/TrueCommand/2.0/UsersList.png "List of Users")
 
@@ -83,14 +83,14 @@ docker exec -it [docker instance ID] resetpw [username]
 
 ## Deleting User Accounts
 
-To delete an account details and permissions, open the *Configure* <i class="material-icons" aria-hidden="true" title="Settings">settings</i>menu and click **Users**
+To delete an account details and permissions, open the *Configure* <i class="material-icons" aria-hidden="true" title="Settings">settings</i>menu and click **Users**.
 When the users page loads, click the delete button <i class="material-icons" aria-hidden="true" title="Delete">delete</i> to the right of the user you wish to delete.
 A popup will appear to confirm deletion of the user.
 ![Users Delete](/images/TrueCommand/2.0/UsersDeleteUser.png "Users Delete")
 
 ## Organizing Users into Teams
 
-To create a team, open the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and click **TEAMS**
+To create a team, open the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and click **TEAMS**.
 
 ![TeamsList](/images/TrueCommand/2.0/TeamsList.png "Teams List")
 
@@ -103,7 +103,7 @@ You can edit the permissions for a team after creating it.
 
 ### Configuring Teams
 
-To create a team, open the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and click **TEAMS**
+To configure a team, open the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and click **TEAMS**.
 To adjust the team members or permissions, click the Edit button <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
 
 ![Teams Edit](/images/TrueCommand/2.0/TeamsEdit.png "Teams Edit")
@@ -119,7 +119,7 @@ Note that individual user account permissions can override team permissions.
 
 ## Deleting Teams
 
-To delete an account details and permissions, open the *Configure* <i class="material-icons" aria-hidden="true" title="Settings">settings</i>menu and click **Teams**
+To delete an account details and permissions, open the *Configure* <i class="material-icons" aria-hidden="true" title="Settings">settings</i>menu and click **Teams**.
 When the users page loads, click the delete button <i class="material-icons" aria-hidden="true" title="Delete">delete</i> to the right of the user you wish to delete.
 A popup will appear to confirm deletion of the Team.
 ![Teams Delete](/images/TrueCommand/2.0/TeamsDeleteTeam.png "Teams Delete")
