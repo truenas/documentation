@@ -43,7 +43,7 @@ TrueCommand applies team permissions to any user added to a team, but setting a 
 For more indepth inforamation regarding teams, see the [Teams Documentation]({{< relref "/TrueCommand/Administration/Users.md#organizing-user-teams" >}}).
 
 To limit the access that non-administrative accounts have to the connected systems, configure the **System Access** and/or **System Groups** sections.
-This requires that [system connections]({{< relref "/TrueCommand/TCGettingStarted/AddSystems.md#connecting-systems-to-truecommand" >}}) and/or system groups have already been configured in TrueCommand.
+This requires that [system connections]({{< relref "/TrueCommand/TCGettingStarted/ConnectingTrueNAS.md#connecting-systems-to-truecommand" >}}) and/or system groups have already been configured in TrueCommand.
 
 Click *ADD SYSTEM* and select a system from the drop-down to give the user access to that system.
 To restrict the user to only viewing details about the system, set the *read* permission.
