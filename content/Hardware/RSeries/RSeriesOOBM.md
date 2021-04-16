@@ -1,6 +1,6 @@
 ---
 title: "Out of Band Management Guide"
-tags: ["TrueNAS Products"]
+weight: 30
 ---
 
 <object data="https://www.truenas.com/docs/files/RSeriesOOBM1.1.pdf" type="application/pdf" width="95%" height="1000">
