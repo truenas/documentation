@@ -13,10 +13,12 @@ User accounts also organize into "Teams" for simultaneous management of large nu
 
 ## Administrator Accounts
 
-TrueCommand has two levels of accounts: Administrators and Users.
+TrueCommand has two levels of accounts - Administrators and Users:
+
 Administrators can add and remove users and servers.
 Administrators can also assign Users to Teams and Servers to Groups.
 Administrators have full access to all Alerts and Reports.
+
 Users on the other other hand can only interact with the servers they have been assigned by an Administrator.  
 Users can configure alerts and generate reports on their respective systems.
 
@@ -40,7 +42,7 @@ The administrator has to provide these credentials to the intended user.
 You can assign users to existing *Teams* by selecting a team from the drop-down to add the user to that team.
 You can assign users to multiple teams.
 TrueCommand applies team permissions to any user added to a team, but setting a specific permission for the user can override a related team permission.
-For more indepth inforamation regarding teams, see the [Teams Documentation]({{< relref "/TrueCommand/Administration/Users.md" >}}).
+For more indepth information regarding teams, see the [Teams Documentation]({{< relref "/TrueCommand/Administration/Users.md" >}}).
 
 To limit the access that non-administrative accounts have to the connected systems, configure the **System Access** and/or **System Groups** sections.
 This requires that [system connections]({{< relref "/TrueCommand/TCGettingStarted/ConnectingTrueNAS.md#connecting-systems-to-truecommand" >}}) and/or system groups have already been configured in TrueCommand.
