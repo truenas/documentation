@@ -4,4 +4,7 @@ weight: 50
 geekdocCollapseSection: true
 ---
 
-Introductory text about the TrueCommand Alert system
+TrueCommand allows for user notification based on custom defined alerts for connected TrueNAS systems.
+Method of alert notifications as well as theming of alerts in the TrueCommand interface can be user customized.
+
+{{< include file="static/includes/MenuNav.md.part" markdown="true" >}}
