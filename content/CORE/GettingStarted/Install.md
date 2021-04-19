@@ -182,6 +182,8 @@ See FreeBSD reference [ESXi VM does not boot in UEFI mode](https://freebsd.10457
 When installing TrueNAS in a VMware VM, double check the virtual switch and VMware port group.
 Network connection errors for plugins or jails inside the TrueNAS VM can be caused by a misconfigured virtual switch or VMware port group.
 Make sure *MAC spoofing* and *promiscuous mode* are enabled on the switch first, and then the port group the VM is using.
+
+{{< include file="static/includes/VirtualMachinesJailNetworking.md.part" markdown="true" >}}
 {{< /expand >}}
 
 ## Generic VM Creation Process
