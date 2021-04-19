@@ -88,10 +88,16 @@ Each plugin has three options.
 
 {{< tabs "Services" >}}
 {{< tab "Email" >}}
+Before proceding, verify that the sending mailserver has TLS enabled.  
+TrueCommand cannot send emails through a mailserver without TLS.
+Additionally, verify that the user account has an email address configured on the profile page.
 
-![AlertServicesSMTPEmailptions](/images/TrueCommand/2.0/AlertServicesSMTPEmailptions.png "Alert Services: SMTP Email options")
 Enter the mailserver and port along with the user and password for the email account to be used.
 The *From* field allows you to customize the sender field of the email.
+For a *No-Auth* SMTP configuration, leave the password field blank.
+
+![AlertServicesSMTPEmailptions](/images/TrueCommand/2.0/AlertServicesSMTPEmailptions.png "Alert Services: SMTP Email options")
+
 Click **Test** to verify that the configuarion is correct.
 If you did not receive a test alert email, check the values entered for accuracy.
 
