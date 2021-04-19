@@ -63,6 +63,11 @@ The backup file can be renamed to <file>config.json</file> to restore previous j
 
 TrueNAS has two options to create a jail. The *Jail Wizard* makes it easy to quickly create a jail. *ADVANCED JAIL CREATION* is an alternate method, where every possible jail option is configurable. There are numerous options spread across four different primary sections. This form is recommended for advanced users with very specific requirements for a jail.
 
+{{< expand "Additional VMware Requirements" "v" >}}
+
+{{< include file="static/includes/VirtualMachinesJailNetworking.md.part" markdown="true" >}}
+{{< /expand>}}
+
 {{< tabs "Jail Create Options" >}}
 {{< tab "Jail Wizard" >}}
 New jails can be created quickly by going to **Jails > ADD**.
