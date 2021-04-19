@@ -71,6 +71,11 @@ To create a new alert rule, click **+ NEW ALERT RULE** and follow the creation w
 
 ## Configuring Alert Services
 
+{{< hint info >}}
+Configurable Alert Services are only available for local installations or containerized TrueCommand deployments.
+TrueCommand Cloud instances are preconfigured to use email alerts; PagerDuty is not an option.
+{{< /hint >}}
+
 TrueCommand uses different services to expand how alerts are communicated to individual users or administrators.
 Individual user accounts can use these services to manage how that account is notified of an alert.
 To configure an alert service plugin, open the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and click **Alert Services**.
@@ -88,9 +93,12 @@ Each plugin has three options.
 
 {{< tabs "Services" >}}
 {{< tab "Email" >}}
+ 
 Before proceding, verify that the sending mailserver has TLS enabled.  
 TrueCommand cannot send emails through a mailserver without TLS.
-Additionally, verify that the user account has an email address configured on the profile page.
+{{< hint info >}}
+An email address must exist on the users profile page to recieve emails.
+{{< /hint >}}
 
 Enter the mailserver and port along with the user and password for the email account to be used.
 The *From* field allows you to customize the sender field of the email.
