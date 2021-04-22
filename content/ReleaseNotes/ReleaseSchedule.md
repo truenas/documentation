@@ -22,7 +22,7 @@ TrueNAS SCALE tickets are also tracked in the TrueNAS Jira Project.
 
 | Version                                                                                                                | Scheduled Release Date |
 |------------------------------------------------------------------------------------------------------------------------|------------------------|
-| [SCALE 21.04-ALPHA.1 (Angelfish)](https://jira.ixsystems.com/projects/NAS/versions/12908)                              | 2021/04/20             |
+| [SCALE 21.04-ALPHA.1 (Angelfish)](https://jira.ixsystems.com/projects/NAS/versions/12908)                              | 2021/04/22             |
 | [SCALE 21.06-BETA.1 (Angelfish)](https://jira.ixsystems.com/projects/NAS/versions/13003)                               | 2021/06/15             |
 
 {{< /tab >}}
