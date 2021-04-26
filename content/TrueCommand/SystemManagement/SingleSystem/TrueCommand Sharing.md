@@ -21,7 +21,7 @@ To add an NFS share to a pool, open the pool using the *EXPLORE* menu in your sy
 
 ### Create NFS Share From a Profile
 
-To create an NFS share from an already existing profile, select the *Profiles* tab, then select a profile from the dropdown and click *CREATE*.
+To create an NFS share from an already existing user-defined configuration, select the *Profiles* tab, then select a profile from the dropdown and click *CREATE*.
 
 ![TrueCommandNFSProfile](/images/TrueCommand/TrueCommandNFSProfile.png "NFS From a Profile")
 
@@ -39,7 +39,7 @@ To add an SMB share to a pool, open the pool using the *EXPLORE* menu in your sy
 
 ### Create SMB Share From a Profile
 
-To create an SMB share from an already existing profile, select the *Profiles* tab, then select a profile from the dropdown and click *CREATE*.
+To create an SMB share from an already existing user-defined configuration, select the *Profiles* tab, then select a profile from the dropdown and click *CREATE*.
 
 ![TrueCommandSMBProfile](/images/TrueCommand/TrueCommandSMBProfile.png "SMB From a Profile")
 
