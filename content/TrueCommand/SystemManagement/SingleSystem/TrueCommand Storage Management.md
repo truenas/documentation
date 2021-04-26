@@ -13,7 +13,7 @@ To view, add, and delete storage from a single system in TrueCommand, click *EXP
 
 1. In the pool's menu, click *CREATE DATASET*.
 2. Name the dataset(s) and set how many you want to create.
-3. Select a profile or apply custom settings to the dataset(s), then click *CREATE*.
+3. Select a user-defined configuration profile or apply custom settings to the dataset(s), then click *CREATE*.
 
 ![TrueCommandDatasetsForm](/images/TrueCommand/TrueCommandDatasetsForm.png "Datasets Form")
 
@@ -21,7 +21,7 @@ To view, add, and delete storage from a single system in TrueCommand, click *EXP
 
 1. In the pool's menu, click *CREATE ZVOLS*.
 2. Name the zvol(s) and set how many you want to create.
-3. Select a profile or apply custom settings to the dataset(s), then click *CREATE*.
+3. Select a user-defined configuration profile or apply custom settings to the dataset(s), then click *CREATE*.
 
 ![TrueCommandZvolsForm](/images/TrueCommand/TrueCommandZvolsForm.png "Zvols Form")
 
