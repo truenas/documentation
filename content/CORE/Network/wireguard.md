@@ -1,14 +1,6 @@
 ---
-title: "How To Enable WireGuard on FreeNAS 11.3"
+title: "How To Enable WireGuard on FreeNAS 12.0"
 ---
-
-Google Drive and G Suite are widely used tools for creating and sharing documents, spreadsheets, and presentations with team members. While cloud-based tools have inherent backups and replications included by the cloud provider, certain users may require additional backup or archive capabilities. For example, companies using G Suite for important work may be required to keep records for years, potentially beyond the scope of the G Suite subscription. FreeNAS and TrueNAS offer the ability to back up Google Drive easily, using the built-in cloud sync.
-
-This blog will explain how to set up Google Drive sync with FreeNAS 11.3, as well as provide a few caveats and workarounds when backing up Google Docs and other Google created content.
-
-### Setting up Google Drive credentials
-
-Set up the credentials under **System > Cloud Credentials**.
 
 [WireGuard](https://www.wireguard.com/) is a popular option in the VPN marketplace due to its speed, simplicity, and modern cryptography standards. Starting with FreeNAS version 11.3-RC1, it is possible to connect your NAS directly to a WireGuard network with a few easy steps.
 
@@ -17,17 +9,17 @@ service and give it a default interface. To do this you must first navigate to *
 
 Enable the WireGuard service by adding `“wireguard_enable” -> “YES”` in rc.conf.
 
-<img src="/images/WireguardFreeNAS-1.png">
+<img src="/images/wireguard_enable.png">
 <br><br>
 
 Next, create another tunable and add “wireguard_interfaces” -> “wg0” in rc.conf.
 
-<img src="/images/WireguardFreeNAS-2.png">
+<img src="/images/wireguard_interfaces.png">
 <br><br>
 
 When finished, you should have the following two variables set and enabled.
 
-<img src="/images/WireguardFreeNAS-3.png">
+<img src="/images/wireguard_variables.png">
 <br><br>
 
 Next, we will need to create a post-init script that will place the WireGuard config into the correct location at startup. Navigate to Tasks -> Init/Shutdown Scripts -> Add.
@@ -45,7 +37,7 @@ You can configure the `/root/wg0.conf` file and apply a WireGuard configuration 
 + Attaching a managed NAS to a remote network
 + Access to your NAS from your smartphone
 
-<img src="/images/WireguardFreeNAS-4.png">
+<img src="/images/wireguard_post_init.png">
 <br><br>
 
 We need to create the /root/wg0.conf which will contain the specific WireGuard configuration to apply at boot. This configuration is beyond the scope of this article, but there are [quickstart guides](https://www.wireguard.com/quickstart/) and [tutorials](https://www.linode.com/docs/networking/vpn/set-up-wireguard-vpn-on-ubuntu/) available online as well as the built-in `wg-quick` manpage.
