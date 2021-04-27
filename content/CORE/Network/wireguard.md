@@ -23,7 +23,7 @@ When finished, you should have the following two variables set and enabled.
 ![WireguardVariables](/images/CORE/12.0/wireguard_variables.png "Wireguard Variables")
 <br><br>
 
-Next, we will need to create a post-init script that will place the WireGuard config into the correct location at startup. Navigate to Tasks -> Init/Shutdown Scripts -> Add.
+Next, we will need to create a post-init script that will place the WireGuard config into the correct location at startup. Navigate to **Tasks > Init/Shutdown Scripts > Add**.
 
 Create the following command and set it to run at post-init:
 
