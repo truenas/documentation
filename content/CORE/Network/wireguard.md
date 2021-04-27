@@ -28,7 +28,7 @@ Next, we will need to create a post-init script that will place the WireGuard co
 Create the following command and set it to run at post-init:
 
 ```
-mkdir /usr/local/etc/wireguard && cp /root/wg0.conf /usr/local/etc/wireguard/wg0.conf && /usr/local/etc/rc.d/wireguard start
+mkdir -p /usr/local/etc/wireguard && cp /root/wg0.conf /usr/local/etc/wireguard/wg0.conf && /usr/local/etc/rc.d/wireguard start
 ```
 
 You can configure the `/root/wg0.conf` file and apply a WireGuard configuration to attach to whatever WireGuard network you define. It can be a single point-to-point to anything running WG, or even with full routing. Example use cases are:
