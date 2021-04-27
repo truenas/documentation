@@ -13,7 +13,7 @@ Enable the WireGuard service by adding `“wireguard_enable” -> “YES”` in 
 ![EnableWireguard](/images/CORE/12.0/wireguard_enable.png "Enable Wireguard")
 <br><br>
 
-Next, create another tunable and add “wireguard_interfaces” -> “wg0” in rc.conf.
+Next, create another tunable and add `“wireguard_interfaces” -> “wg0”` in rc.conf.
 
 ![WireguardInterface](/images/CORE/12.0/wireguard_interfaces.png "Wireguard Interfaces")
 <br><br>
