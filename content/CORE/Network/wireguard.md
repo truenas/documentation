@@ -1,5 +1,6 @@
 ---
 title: "How To Enable WireGuard on FreeNAS 12.0"
+weight: 50
 ---
 
 [WireGuard](https://www.wireguard.com/) is a popular option in the VPN marketplace due to its speed, simplicity, and modern cryptography standards. Starting with FreeNAS version 11.3-RC1, it is possible to connect your NAS directly to a WireGuard network with a few easy steps.
@@ -44,7 +45,7 @@ We need to create the /root/wg0.conf which will contain the specific WireGuard c
 
 Once you have a valid `/root/wg0.conf`, rebooting the system should bring up the WireGuard interface, and you’ll see a `wg0` device in the output of `ifconfig`.
 
-<![wg0DeviceOutput](/images/CORE/12.0/wireguard_post_init.png "wg0 device output") - working on this images>
+<![wg0DeviceOutput](/images/CORE/12.0/wg0_Device_Output.png "wg0 device output") - working on this images>
 <br><br>
 
 Congratulations, you have successfully linked your FreeNAS system to a secure WireGuard tunnel!
