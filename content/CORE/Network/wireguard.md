@@ -45,7 +45,7 @@ We need to create the /root/wg0.conf which will contain the specific WireGuard c
 
 Once you have a valid `/root/wg0.conf`, rebooting the system should bring up the WireGuard interface, and you’ll see a `wg0` device in the output of `ifconfig`.
 
-![wg0DeviceOutput](/images/CORE/12.0/wg0_Device_Output.png "wg0 device output")
+![wg0DeviceOutput](/images/CORE/12.0/wg0DeviceOutput.png "wg0 device output")
 <br><br>
 
 Congratulations, you have successfully linked your FreeNAS system to a secure WireGuard tunnel!
