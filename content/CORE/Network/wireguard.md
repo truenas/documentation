@@ -9,17 +9,17 @@ service and give it a default interface. To do this you must first navigate to *
 
 Enable the WireGuard service by adding `“wireguard_enable” -> “YES”` in rc.conf.
 
-<img src="/images/wireguard_enable.png">
+![EnableWireguard](/images/CORE/12.0/wireguard_enable.png "Enable Wireguard")
 <br><br>
 
 Next, create another tunable and add “wireguard_interfaces” -> “wg0” in rc.conf.
 
-<img src="/images/wireguard_interfaces.png">
+![WireguardInterface](/images/CORE/12.0/wireguard_interfaces.png "Wireguard Interfaces")
 <br><br>
 
 When finished, you should have the following two variables set and enabled.
 
-<img src="/images/wireguard_variables.png">
+![WireguardVariables](/images/CORE/12.0/wireguard_variables.png "Wireguard Variables")
 <br><br>
 
 Next, we will need to create a post-init script that will place the WireGuard config into the correct location at startup. Navigate to Tasks -> Init/Shutdown Scripts -> Add.
@@ -37,14 +37,14 @@ You can configure the `/root/wg0.conf` file and apply a WireGuard configuration 
 + Attaching a managed NAS to a remote network
 + Access to your NAS from your smartphone
 
-<img src="/images/wireguard_post_init.png">
+![WireguardPostInit](/images/CORE/12.0/wireguard_post_init.png "Wireguard POst Init")
 <br><br>
 
 We need to create the /root/wg0.conf which will contain the specific WireGuard configuration to apply at boot. This configuration is beyond the scope of this article, but there are [quickstart guides](https://www.wireguard.com/quickstart/) and [tutorials](https://www.linode.com/docs/networking/vpn/set-up-wireguard-vpn-on-ubuntu/) available online as well as the built-in `wg-quick` manpage.
 
 Once you have a valid `/root/wg0.conf`, rebooting the system should bring up the WireGuard interface, and you’ll see a `wg0` device in the output of `ifconfig`.
 
-<img src="/images/WireguardFreeNAS-5.png">
+<![wg0DeviceOutput](/images/CORE/12.0/wireguard_post_init.png "wg0 device output") - working on this images>
 <br><br>
 
 Congratulations, you have successfully linked your FreeNAS system to a secure WireGuard tunnel!
