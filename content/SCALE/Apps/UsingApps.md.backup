@@ -90,6 +90,12 @@ Expand `/ix-applications/releases/<ContainerName>/volumes/ix-volumes/`.
 {{< /tab >}}
 {{< /tabs >}}
 
+### Volume(s) Access
+
+Users developing applications should be mindful that if an application uses Persistent Volume Claims (PVC), those datasets won't be mounted on the host, and therefore will not be accessible within a file browser. This is upstream zfs-localpv behavior which is being used for managing PVC(s)
+
+If you want to consume or have access to data that is present on the host, set up your custom application to use host path volumes.
+
 ## Deploying the Application
 
 Saving an official or custom container adds a new entry to *Installed Applications*.
