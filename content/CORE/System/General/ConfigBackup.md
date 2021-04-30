@@ -9,7 +9,7 @@ Save the configuration file each time the system configuration changes.
 
 ## Manual Backup
 
-To back up the system configuration, go to **System > General** and click *SAVE CONFIG*.
+To back up the system configuration, go to **System > General** and click *SAVE CONFIG*, then enter your password. 
 
 ![SaveUploadResetConfig](/images/CORE/12.0/SaveUploadResetConfig.png "Save, Upload, Reset Config")
 
