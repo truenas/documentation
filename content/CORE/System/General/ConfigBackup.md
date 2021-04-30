@@ -64,7 +64,7 @@ Users can view the contents of the backup config using database viewing software
 Users can reset their system's configuration to factory settings by going to **System > General** and clicking *RESET CONFIG*.
 
 {{< hint danger >}}
-**Save the system's current configuration before clicking resetting the configuration.**
+**Save the system's current configuration before resetting the configuration.**
  
 If you do not save the system configuration before resetting it, you may lose any data that was not backed up and will not be able to revert back the previous settings.
 {{< /hint >}}
