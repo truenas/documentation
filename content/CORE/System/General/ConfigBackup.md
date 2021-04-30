@@ -11,6 +11,8 @@ Save the configuration file each time the system configuration changes.
 
 To back up the system configuration, go to **System > General** and click *SAVE CONFIG*.
 
+![SaveUploadResetConfig](/images/CORE/12.0/SaveUploadResetConfig.png "Save, Upload, Reset Config")
+
 {{< hint warning >}}
 The configuration file contains sensitive data about the TrueNAS system.
 Ensure that it is stored somewhere safe.
@@ -46,8 +48,10 @@ There are two options after clicking *SAVE CONFIG*:
 1. *Export Password Secret Seed* includes encrypted passwords in the configuration file.
    This allows the configuration file to be restored to a different operating system device where the decryption seed is not already present.
    Users must physically secure configuration backups containing the seed to prevent unauthorized access or password decryption.
-2. *Export Pool Encryption Keys* includes encrypted pools' encryption keys in the configuration file.
+2. *Export Legacy Encryption (GELI) Keys* includes encrypted legacy encryption keys in the configuration file.
    Users can restore the encryption keys by uploading the configuration file to the system using *UPLOAD CONFIG*.
+   
+![SaveConfiguration](/images/CORE/12.0/SaveConfiguration.png "Save Configuration")
    
 ## Backup Contents
 
