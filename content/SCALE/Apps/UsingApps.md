@@ -107,8 +107,6 @@ To copy a local file to the remote pod in namespace:
 To copy a remote pod file locally:
 `kubectl cp <some-namespace>/<some-pod>:/tmp/foo /tmp/bar`
 
-
-
 ## Deploying the Application
 
 Saving an official or custom container adds a new entry to *Installed Applications*.
