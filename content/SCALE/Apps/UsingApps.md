@@ -90,6 +90,25 @@ Expand `/ix-applications/releases/<ContainerName>/volumes/ix-volumes/`.
 {{< /tab >}}
 {{< /tabs >}}
 
+### Volume(s) Access
+
+Users developing applications should be mindful that if an application uses Persistent Volume Claims (PVC), those datasets won't be mounted on the host, and therefore will not be accessible within a file browser. This is upstream zfs-localpv behavior which is being used for managing PVC(s)
+
+If you want to consume or have file browser access to data that is present on the host, set up your custom application to use host path volumes.
+
+Alternatively, you can use the network to copy directories and files to and from the pod using `k3s kubectl` commands.
+
+To copy from a pod in a specific container:  
+`kubectl cp <file-spec-src> <file-spec-dest> -c <specific-container>`
+
+To copy a local file to the remote pod in namespace:
+`kubectl cp /tmp/foo <some-namespace>/<some-pod>:/tmp/bar`
+
+To copy a remote pod file locally:
+`kubectl cp <some-namespace>/<some-pod>:/tmp/foo /tmp/bar`
+
+
+
 ## Deploying the Application
 
 Saving an official or custom container adds a new entry to *Installed Applications*.
