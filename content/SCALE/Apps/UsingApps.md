@@ -99,13 +99,13 @@ If you want to consume or have file browser access to data that is present on th
 Alternatively, you can use the network to copy directories and files to and from the pod using `k3s kubectl` commands.
 
 To copy from a pod in a specific container:
-`kubectl cp <file-spec-src> <file-spec-dest> -c <specific-container>`
+`k3s kubectl cp <file-spec-src> <file-spec-dest> -c <specific-container>`
 
 To copy a local file to the remote pod:
-`kubectl cp /tmp/foo <some-namespace>/<some-pod>:/tmp/bar`
+`k3s kubectl cp /tmp/foo <some-namespace>/<some-pod>:/tmp/bar`
 
-To copy a remote pod file to the local system:
-`kubectl cp <some-namespace>/<some-pod>:/tmp/foo /tmp/bar`
+To copy a remote pod file locally:
+`k3s kubectl cp <some-namespace>/<some-pod>:/tmp/foo /tmp/bar`
 
 ## Deploying the Application
 
