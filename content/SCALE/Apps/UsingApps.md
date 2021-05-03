@@ -13,11 +13,11 @@ The UI will ask to use a storage pool for Applications.
 
 ![AppsChoosePool](/images/SCALE/AppsChoosePool.png "Choosing a Pool for Apps")
 
-It is recommended to keep the container use case in mind when choosing a pool.
+We recommend users keep the container use case in mind when choosing a pool.
 Select a pool that has enough space for all the application containers you intend to use.
-This creates an *ix-applications* dataset on the chosen pool and use this location to store all container-related data.
+TrueNAS creates an *ix-applications* dataset on the chosen pool and uses it to store all container-related data.
 
-Additional options for configuring general network interfaces and IP addresses for application containers are in **Apps > Settings > Advanced Settings**.
+You can find additional options for configuring general network interfaces and IP addresses for application containers in **Apps > Settings > Advanced Settings**.
 
 ![AppsAdvancedSettings](/images/SCALE/AppsAdvancedSettings.png "Apps Advanced Settings")
 
@@ -27,11 +27,11 @@ Official containers are pre-configured to only require a name during deployment.
 
 ![AppsInstallPlex](/images/SCALE/AppsInstallPlex.png "Installing Plex")
 
-When the container is deployed and active, a button to open the application web interface becomes available.
+A button to open the application web interface will appear when the container is deployed and active.
 
 ![AppsPlexActive](/images/SCALE/AppsPlexActive.png "Plex App: Active")
 
-Editing a deployed official container allows adjusting the container settings.
+Users can adjust the container settings by editing a deployed official container.
 Saving any changes redeploys the container.
 
 ## Custom Applications
@@ -40,12 +40,12 @@ To deploy a custom application container in the Scale web interface, go to **App
 
 ![AppsLaunchDockerImage](/images/SCALE/AppsLaunchDockerImage.png)
 
-There a numerous options for custom containers that are broken down into smaller sections.
+TrueNAS has numerous options for custom containers that are broken down into smaller sections.
 These options are derived from the [Kubernetes container options](https://kubernetes.io/docs/setup/).
 
 {{< tabs "Custom Container Options" >}}
 {{< tab "Image and Policies" >}}
-You will need to name the custom application and provide the online storage location (repository) that will be used to download the container.
+You will need to name the custom application and provide the online storage location (repository) that the system will use to download the container.
 The remaining options allow setting the image tag, defining when the image is pulled from the remote repository, how the container is updated, and defining when a container will automatically restart.
 {{< /tab >}}
 {{< tab "Container Settings" >}}
@@ -61,10 +61,10 @@ To use the system IP address for the container, set *Host Networking*.
 The container will not be given a separate IP address and the container port number will be appended to the end of the system IP address.
 See the [Docker documentation](https://docs.docker.com/network/host/) for more details.
 
-If needed, additional network interfaces can be created for the container.
-Each new interface can be given static IP addresses and routes.
+Users can create additional network interfaces for the container if needed.
+Users can also give static IP addresses and routes to new interface.
 
-By default, the DNS settings from the host system are used for the container.
+By default, containers use the DNS settings from the host system.
 You can change the DNS policy and define separate nameservers and search domains.
 See the Docker [DNS services documentation](https://docs.docker.com/config/containers/container-networking/#dns-services) for more details.
 {{< /tab >}}
@@ -77,18 +77,35 @@ Make sure no other containers or system services are using the same port number.
 {{< tab "Host Path Volumes" >}}
 Scale storage locations can be mounted inside the container.
 To mount Scale storage, define the path to the system storage and the container internal path for the system storage location to appear.
-You can also mount the storage as read only to prevent the container from being used to change any stored data.
+You can also mount the storage as read-only to prevent the container from being used to change any stored data.
 For more details, see the [Kubernetes hostPath documentation](https://kubernetes.io/docs/concepts/storage/volumes/#hostpath).
 {{< /tab >}}
 {{< tab "Volumes" >}}
-Additional Persistent Volumes (PVs) can be created for storage within the container.
-These consume space from the pool that was chosen for Application management.
+Users can create additional Persistent Volumes (PV's) for storage within the container.
+PV's consume space from the pool chosen for Application management.
 You will need to name each new dataset and define a path where that dataset appears inside the container.
 
 To view created container datasets, go to **Storage** and expand the pool used for applications.
 Expand `/ix-applications/releases/<ContainerName>/volumes/ix-volumes/`.
 {{< /tab >}}
 {{< /tabs >}}
+
+### Volume(s) Access
+
+Users developing applications should be mindful that if an application uses Persistent Volume Claims (PVC), those datasets won't be mounted on the host, and therefore will not be accessible within a file browser. This is upstream zfs-localpv behavior which is being used for managing PVC(s)
+
+If you want to consume or have file browser access to data that is present on the host, set up your custom application to use host path volumes.
+
+Alternatively, you can use the network to copy directories and files to and from the pod using `k3s kubectl` commands.
+
+To copy from a pod in a specific container:
+`k3s kubectl cp <file-spec-src> <file-spec-dest> -c <specific-container>`
+
+To copy a local file to the remote pod:
+`k3s kubectl cp /tmp/foo <some-namespace>/<some-pod>:/tmp/bar`
+
+To copy a remote pod file locally:
+`k3s kubectl cp <some-namespace>/<some-pod>:/tmp/foo /tmp/bar`
 
 ## Deploying the Application
 
