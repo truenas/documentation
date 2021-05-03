@@ -1,5 +1,5 @@
 ---
-title: "Truecommand Storage Management"
+title: "TrueCommand Storage Management"
 weight: 20
 ---
 
