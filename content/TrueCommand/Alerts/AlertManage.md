@@ -50,7 +50,7 @@ Details about each TrueCommand alert rule are shown on this page, including whic
 Users can activate, suspend, edit, or delete alert rules using either an administrator account, or the account that created the rule.
 
 Users can create new TrueCommand alert rules to monitor a wide variety of system information and generate a TrueCommand alert if specific conditions occur.
-To create a new alert rule, click **+ NEW ALERT RULE** and follow the creation wizard:
+To create a new alert rule, click *+ NEW ALERT RULE* and follow the creation wizard:
 
 ![AlertRulesCreate](/images/TrueCommand/2.0/AlertRulesCreate.png "Create new Alert Rule")
 
