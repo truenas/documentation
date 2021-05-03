@@ -1,5 +1,5 @@
 ---
-title: "Truecommand Snapshots"
+title: "TrueCommand Snapshots"
 weight: 20
 ---
 
