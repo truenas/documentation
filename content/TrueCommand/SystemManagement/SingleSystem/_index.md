@@ -1,6 +1,6 @@
 ---
 title: Single System Management
-weight: 30
+weight: 20
 geekdocCollapseSection: true
 ---
 
