@@ -1,5 +1,5 @@
 ---
-title: "Truecommand Sharing"
+title: "TrueCommand Sharing"
 weight: 20
 ---
 
