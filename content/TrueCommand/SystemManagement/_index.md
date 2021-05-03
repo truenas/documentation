@@ -8,7 +8,7 @@ The TrueCommand dashboard gives a quick overview of the status of the TrueNAS sy
 
 ![TrueCommandDashboard](/images/TrueCommand/2.0/TCDashBoard.png "TrueCommand Dashboard")
 
-For information on the Top Bar and the options refer to [Interface Overview]({{< relref "/TrueCommand/GettingStarted/InterfaceOverview.md" >}}) article in the Getting Started Documentation.
+For information on the Top Bar and the options refer to [Interface Overview]({{< relref "/TrueCommand/TCGettingStarted/InterfaceOverview.md" >}}) article in the Getting Started Documentation.
 
 ### System Cards
 
