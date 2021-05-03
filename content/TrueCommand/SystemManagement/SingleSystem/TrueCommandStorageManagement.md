@@ -1,6 +1,6 @@
 ---
 title: "TrueCommand Storage Management"
-weight: 20
+weight: 10
 ---
 
 {{< toc >}}
