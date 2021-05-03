@@ -22,7 +22,6 @@ TrueNAS SCALE tickets are also tracked in the TrueNAS Jira Project.
 
 | Version                                                                                                                | Scheduled Release Date |
 |------------------------------------------------------------------------------------------------------------------------|------------------------|
-| [SCALE 21.04-ALPHA.1 (Angelfish)](https://jira.ixsystems.com/projects/NAS/versions/12908)                              | 2021/04/22             |
 | [SCALE 21.06-BETA.1 (Angelfish)](https://jira.ixsystems.com/projects/NAS/versions/13003)                               | 2021/06/15             |
 
 {{< /tab >}}
@@ -30,7 +29,7 @@ TrueNAS SCALE tickets are also tracked in the TrueNAS Jira Project.
 
 | Version                                                                                                                 | Scheduled Release Date |
 |-------------------------------------------------------------------------------------------------------------------------|------------------------|
-| [TrueCommand 2.0-Beta](https://jira.ixsystems.com/projects/TC/versions/12906)                                           | 2021/04/27             |
+| [TrueCommand 2.0-Beta](https://jira.ixsystems.com/projects/TC/versions/12906)                                           | 2021/05/04             |
 | [TrueCommand 2.0](https://jira.ixsystems.com/projects/TC/versions/12907)                                                | 2021/06/08             |
 
 {{< /tab >}}
@@ -38,7 +37,7 @@ TrueNAS SCALE tickets are also tracked in the TrueNAS Jira Project.
 
 | Version                                                                                                                                   | Scheduled Release Date |
 |-------------------------------------------------------------------------------------------------------------------------------------------|------------------------|
-| [vCenter Plugin 3.4.0](https://jira.ixsystems.com/projects/VCP/versions/12302)                                                            | Unscheduled            |
+| [vCenter Plugin 3.4.0](https://jira.ixsystems.com/projects/VCP/versions/12302)                                                            | 2021/06/29             |
 
 {{< /tab >}}
 {{< /tabs >}}
