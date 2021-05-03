@@ -1,17 +1,18 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: 'Internal Contributor Build Preview'
 
 # Controls when the action will run. 
 on:
   pull_request:
-    branches: [ master, docs1975fixestesttwo ]
+    branches: [ master, DOCS-553-TC2Docs ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 jobs:
   deploy:
+    if: github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
@@ -54,7 +55,7 @@ jobs:
       - name: Get the preview_url
         run: echo "url => ${{ steps.preview_step.outputs.preview_url }}"
      
-      - name: Sleep for 120 seconds
+      - name: Sleep for 160 seconds
         uses: jakejarvis/wait-action@master
         with:
           time: '160s'
@@ -63,6 +64,6 @@ jobs:
         uses: ruzickap/action-my-broken-link-checker@v2
         with:
           url: "https://${{ steps.preview_step.outputs.preview_url }}"
-          cmd_params: "--skip-tls-verification --timeout=30 --max-connections=10 --color=always --exclude=docs/files/ --exclude=files/TrueNASCollection.vssx --exclude=update.freenas.org --exclude=microsoft.com --exclude=oracle.com --exclude=amazon.com --exclude=apple.com --exclude=fastmail.com --exclude=linode.com --exclude=community.openvpn.net --exclude=tools.ietf.org --exclude=github.com --exclude=freebsd.org --exclude=jira.ixsystems.com --exclude=linkedin.com --exclude=googletagmanager.com --exclude=youtube.com"
+          cmd_params: "--skip-tls-verification --timeout=30 --rate-limit=30 --max-connections=10 --color=always --exclude=docs/files/ --exclude=files/TrueNASCollection.vssx --exclude=update.freenas.org --exclude=microsoft.com --exclude=oracle.com --exclude=amazon.com --exclude=apple.com --exclude=fastmail.com --exclude=linode.com --exclude=community.openvpn.net --exclude=tools.ietf.org --exclude=github.com --exclude=freebsd.org --exclude=jira.ixsystems.com --exclude=linkedin.com --exclude=googletagmanager.com --exclude=youtube.com"
           run_timeout: 600
           debug: true

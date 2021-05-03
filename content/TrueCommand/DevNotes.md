@@ -6,6 +6,8 @@ weight: 15
 {{< toc >}}
 
 {{< expand "Recent Updates" "v" >}}
+> 04/09/2021 - ISCSI creation process completed. Cluster creation routines finished up and streamlined.
+
 > 03/17/2021 - Large update to Cluster creation/management. Requires latest TrueNAS SCALE nightlies to work properly (API's just changed on their end).
 
 > 02/25/2021 - Initial nightly image release for TrueCommand 2.0
@@ -63,8 +65,8 @@ Table of features and current status (Timestamp references when the item status 
 |System Administration|**OK**|02/26/2021| Configuration of TrueCommand system (SSL certificates, licensing, AD/LDAP, etc)|
 |Dashboard|**In Progress**|02/26/2021|Top-level look at NAS state and information|
 |NAS Explorer|**Review**|02/26/2021| Detailed inspection/management of storage on individual NAS’s|
-|Cluster Volumes|**Review**|03/17/2021|Create and manage clusters of TrueNAS SCALE systems (glusterfs)|
-|ISCSI Manager|**Review**|02/26/2021|Create and manage ISCSI volumes in bulk|
+|Cluster Volumes|**Review**|04/09/2021|Create and manage clusters of TrueNAS SCALE systems (glusterfs)|
+|ISCSI Manager|**Review**|04/09/2021|Create and manage ISCSI volumes in bulk|
 
 ### Migration Notice
 

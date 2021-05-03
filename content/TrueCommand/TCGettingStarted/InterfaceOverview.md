@@ -74,7 +74,7 @@ The Settings mention has the following options:
 
 The Settings mention has the following options:
 
-+ Clicking <mat-icon role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true">person</mat-icon> opens the [User Account]({{< relref "/TrueCommand/Administration/Users.md" >}}) page.
++ Clicking <mat-icon role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true">person</mat-icon> opens the [User Profile]({{< relref "/TrueCommand/Administration/Users.md" >}}) page.
 
 + Clicking <mat-icon role="img" fontset="mdi" fonticon="mdi-swap-vertical-bold" class="mat-icon mdi mdi-swap-vertical-bold mat-icon-no-color" aria-hidden="true"></mat-icon> opens the [API]({{< relref "/TrueCommand/API/_index.md" >}}) testing page.
 
