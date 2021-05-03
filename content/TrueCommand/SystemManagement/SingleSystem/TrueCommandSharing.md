@@ -1,6 +1,6 @@
 ---
 title: "TrueCommand Sharing"
-weight: 20
+weight: 30
 ---
 
 {{< toc >}}
