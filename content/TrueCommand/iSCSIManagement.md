@@ -40,7 +40,7 @@ Mark the checkbox to assign the target to the block device.
 Click **NEXT** to proceed.
 
 By default all initiators are granted access to change this, click **+ Initiator**.
-Name your intiator and then mark the checkbox to assign the initator to the target.
+Name your initiator and then mark the checkbox to assign the initiator to the target.
 
 ![iSCSICreateInitiator](/images/TrueCommand/2.0/iSCSICreateInitiator.png "iSCSICreateInitiator")
 
