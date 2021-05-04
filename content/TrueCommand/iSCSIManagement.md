@@ -3,6 +3,10 @@ title: iSCSI Volume Management
 weight: 70
 ---
 
+{{< hint warning >}}
+iSCSI management is a BETA feature in TrueCommand 2.0. Before attempting to use such features, please ensure that your data is backed up. Do not rely on this for critical data.
+{{< /hint >}}
+
 Open the iSCSI manager page by clicking the <mat-icon role="img" fontset="mdi" fonticon="mdi-database" class="mat-icon mdi mdi-database mat-icon-no-color" aria-hidden="true"></mat-icon> icon.
 
 ![iSCSIManagerPage](/images/TrueCommand/2.0/iSCSIManagerPage.png "iSCSI Manager Page")
