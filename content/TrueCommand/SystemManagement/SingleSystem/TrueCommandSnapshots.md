@@ -9,7 +9,9 @@ weight: 20
 
 To view a system's already existing snapshots, click *EXPLORE* in that system's window and select a storage pool. Once the pool loads, select the *Snapshots* tab.
 
-![TrueCommandSelectPool](/images/TrueCommand/TrueCommandSelectPool.png "Select a Pool") ![TrueCommandViewSnapshots](/images/TrueCommand/TrueCommandViewSnapshots.png "View Snapshots")
+![TrueCommandSelectPool](/images/TrueCommand/TrueCommandSelectPool.png "Select a Pool") 
+
+![TrueCommandViewSnapshots](/images/TrueCommand/TrueCommandViewSnapshots.png "View Snapshots")
 
 ## Create Single Snapshots
 
