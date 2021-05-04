@@ -10,6 +10,12 @@ TrueCommand is a multi-system management "Single pane of Glass" system that help
 
 TrueCommand can monitor an entire fleet of TrueNAS systems and thousands of online storage devices simultaneously. This includes displaying statistics on storage usage, network activity, active services, and more. TrueCommand also has the ability to create custom reports about individual systems or a combination of many systems.
 
+{{< hint info >}}
+TrueCommand 2.0 is now in Beta!
+To see a preview of this exciting new version, check out the [TrueCommand 2.0 Beta Documentation](https://truenas-documentation-deploy-pr-871.surge.sh/truecommand/).
+To try the 2.0 Beta, see the [2.0-Beta release notes]({{< relref "/ReleaseNotes/TrueCommand/2.0-Beta.md >}}) for download instructions.
+{{< /hint >}}
+
 ![Overview](/images/TrueCommand/Overview.png "Truecommand Overview")
 
 ## What Features does TrueCommand have?
