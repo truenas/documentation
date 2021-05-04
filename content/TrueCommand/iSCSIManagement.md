@@ -16,7 +16,7 @@ Open the iSCSI manager page by clicking the <mat-icon role="img" fontset="mdi" f
 Start creating an iSCSI volume by clicking **+ Volume** button.
 Once the page opens click **+ Add System Pool** and select a pool or multipe pools.
 
-![iSCSISelect Pools](/images/TrueCommand/2.0/iSCSISelect Pools.png "iSCSI Select Pools")
+![iSCSISelect Pools](/images/TrueCommand/2.0/iSCSISelectPools.png "iSCSI Select Pools")
 
 Click next to proceed.
 
