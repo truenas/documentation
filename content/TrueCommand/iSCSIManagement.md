@@ -3,7 +3,7 @@ title: iSCSI Volume Management
 weight: 70
 ---
 
-{{< hint warning >}}
+{{< hint danger >}}
 iSCSI management is a BETA feature in TrueCommand 2.0. Before attempting to use such features, please ensure that your data is backed up. Do not rely on this for critical data.
 {{< /hint >}}
 
