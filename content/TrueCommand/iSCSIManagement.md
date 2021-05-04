@@ -9,7 +9,7 @@ Before attempting to use such features, please ensure that your data is backed u
 Do not rely on this for critical data.
 {{< /hint >}}
 
-Open the iSCSI manager page by clicking the <mat-icon role="img" fontset="mdi" fonticon="mdi-database" class="mat-icon mdi mdi-database mat-icon-no-color" aria-hidden="true"></mat-icon> icon.
+Open the iSCSI manager page by clicking the <mat-icon role="img" fontset="mdi" fonticon="mdi-database" class="mat-icon mdi mdi-database mat-icon-no-color" aria-hidden="true"></mat-icon> icon on the top bar.
 
 ![iSCSIManagerPage](/images/TrueCommand/2.0/iSCSIManagerPage.png "iSCSI Manager Page")
 
