@@ -5,6 +5,21 @@ weight: 10
 
 {{< toc >}}
 
+{{< hint danger >}}
+Cluster Volume management is a BETA feature in TrueCommand 2.0. 
+Before attempting to use such features, please ensure that your data is backed up. 
+Do not rely on this for critical data.
+{{< /hint >}}
+
+{{< hint info >}}
+Gluster requires TrueNAS systmes to have a static IP.  TrueNAS with DHCP enabled can not be part of a Cluster Volume.
+{{< /hint >}}
+
+{{< hint danger >}}
+Removing and/or Replacing bricks from a clustered volume may lead to data corruption.  Do not attempt to utilize this feature at the current time. 
+{{< /hint >}}
+
+
 To create a Cluster Volume, click the Cluster Volume button <mat-icon role="img" fontset="mdi" aria-hidden="true" class="mat-icon mdi mdi-server-network mat-icon-no-color"></mat-icon> in the top left of the dashboard or the Cluster Volume button in the Settings Menu <i class="material-icons" aria-hidden="true" title="Settings">settings</i> dropdown.
 
 Once the Cluster Volumes page has loaded click **Create**.
@@ -36,6 +51,30 @@ Click the *Brick Choices* drop down and check the locations to use for bricks.
 
 ![ClusterVolumeBricksSelection](/images/TrueCommand/2.0/ClusterVolumeBricksSelection.png "Cluster Volume Bricks Selection")
 
+The **Replica value** for a Replicated Volume must either equal the number of bricks selected or be *n-1* if using an Arbiter.
+
+{{< hint danger >}}
+Using a Replica count of 0 will result in a distributed volume and offer no data integrity saftey. 
+{{< /hint >}}
+{{< hint warning >}}
+When using an arbiter, deselect the *Sync Sizes* option and manually set a size for the Arbiter brick. The size of the arbiter needs to be 4kb times the number of files you predict.  Depending on the type of data being stored, that could be much smaller or much larger than the brick size.
+{{< /hint >}}
+
+The **Replica value** value for a Distributed Replicated Volume must be a divisor of the total number of bricks selected.  If 8 bricks are selected, the replica count can either be 2 or 4.  A replica count of two will create a 4x2 volume where pairs of bricks replicate each other. A replica count of four will create a 2x4 volume where sets of 4 bricks replicate each other.
+
+{{< hint danger >}}
+Using a Replica count of 0 will result in a distributed volume and offer no data integrity saftey. 
+{{< /hint >}}
+{{< hint warning >}}
+Using a Replica count of that is not a divisor of the total number or bricks will results in a failed Volume Creation.
+{{< /hint >}}
+
+The **Redundancy value** for a Dispersed Volume must be greater than 0 and less than n-1.  The redundancy value can be considered to be the number of bricks you that can be lost before data loss occurs. 
+{{< hint info >}}
+Attempting to use a Replica count of 0 will be overridden by Gluster and the value will be set to 1.
+{{< /hint >}}
+
+
 ![ClusterVolumeBricksSelected](/images/TrueCommand/2.0/ClusterVolumeBricksSelected.png "Cluster Volume Bricks Selected")
 
 When finished click **Next**.
@@ -46,3 +85,7 @@ Review the configuration and click **Create** to create the Volume.
 Once the volume is made, you can view its status.
 
 ![ClusterVolumeCreated](/images/TrueCommand/2.0/ClusterVolumeCreated.png "Cluster Volume Created")
+
+
+
+
