@@ -1,6 +1,6 @@
 ---
 title: "VM Deployment"
-weight: 40
+weight: 10
 ---
 
 {{< toc >}}
