@@ -57,7 +57,10 @@ The **Replica value** for a Replicated Volume must either equal the number of br
 Using a Replica count of 0 will result in a distributed volume and offer no data integrity saftey. 
 {{< /hint >}}
 {{< hint warning >}}
-When using an arbiter, deselect the *Sync Sizes* option and manually set a size for the Arbiter brick. The size of the arbiter needs to be 4kb times the number of files you predict.  Depending on the type of data being stored, that could be much smaller or much larger than the brick size.
+When using an arbiter, deselect the *Sync Sizes* option and manually set a size for the Arbiter brick. The size of the arbiter needs to be 4kb * the number of files you expect to store on the volume.  Depending on the type of data being stored, that could be much smaller or much larger than the brick size.
+{{< /hint >}}
+{{< hint danger >}}
+If an Arbiter is being used, ensure that the size is of sufficient size.  If the Arbiter brick runs out of space, the node will crash and the Arbiter brick cannot be restarted.  This will result in a split-brain situation which can lead to data corruption.
 {{< /hint >}}
 
 The **Replica value** value for a Distributed Replicated Volume must be a divisor of the total number of bricks selected.  If 8 bricks are selected, the replica count can either be 2 or 4.  A replica count of two will create a 4x2 volume where pairs of bricks replicate each other. A replica count of four will create a 2x4 volume where sets of 4 bricks replicate each other.
