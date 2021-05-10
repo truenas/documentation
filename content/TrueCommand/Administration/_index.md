@@ -7,8 +7,8 @@ geekdocCollapseSection: true
 
 Access to some of these areas may require a TrueCommand administrator account.
 
-* **TrueCommand Administration**provides TrueCommand System Information, Contact Information, and TrueCommand License Management.
-* **Themimg** provides the ability to customize the alert colors to user preferences.
+* **TrueCommand Administration** provides TrueCommand System Information, Contact Information, and TrueCommand License Management.
+* **Theming** provides the ability to customize the alert colors to user preferences.
 * **Users** allows TrueCommand administrators to personalize the TrueCommand experience for each user account.
 * **Logs** records all user account activity in a system log.
 * **Systems** connects a system to TrueCommand.
