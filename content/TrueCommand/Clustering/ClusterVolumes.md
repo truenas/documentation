@@ -74,7 +74,7 @@ Using a Replica count of that is not a divisor of the total number or bricks wil
 
 The **Redundancy value** for a Dispersed Volume must be greater than 0 and less than n-1.  The redundancy value can be considered to be the number of bricks you that can be lost before data loss occurs. 
 {{< hint info >}}
-Attempting to use a Replica count of 0 will be overridden by Gluster and the value will be set to 1.
+Attempting to use a Replica count of 0 in a Dispersed Volume will be overridden by Gluster and the value will be set to 1.
 {{< /hint >}}
 
 
