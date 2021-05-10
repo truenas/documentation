@@ -5,6 +5,6 @@ weight: 30
 geekdocCollapseSection: true
 ---
 
-Some of these tutorials may require a TrueCommand administrator account.
-
 The TrueCommand Administration provides TrueCommand System Information, Contact Information, and TrueCommand License Management 
+
+![TCAdministration](/images/TrueCommand/2.0/tc20_administration.png "TC Administration")
