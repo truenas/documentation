@@ -76,7 +76,7 @@ After change from the request above:
   }
 }
 ```
-Note that the entire "dataobject" was replaced. If you only want to insert an item into dataobject, then you will want to use the {{< api-link "users/insert_data_value" >}} API call instead.
+Note that the entire "dataobject" was replaced. If you only want to insert an item into dataobject, then you will want to use the users/insert_data_value API call instead.
 
 ### Log Summary
 This API call does not generate a detailed log summary item
