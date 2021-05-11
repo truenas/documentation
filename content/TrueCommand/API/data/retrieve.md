@@ -23,7 +23,7 @@ Retrieve data from specified servers/fields
    * "metrics" (array of strings) : List of measurements to return. See {{< api-link "data/list_fields" >}}.
       * This always returns the "avg" field for the given measurements. 
 
-For information about the time formats, please look at the [Input Time Codes section](#input_time_codes) for details.
+For information about the time formats, please look at the Input Time Codes section for details.
 
 
 ### Request Example Arguments

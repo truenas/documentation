@@ -64,6 +64,5 @@ This API call does not generate a detailed log summary item
 * **v2.0** : The "delete_[plugin-name]" arguments were added, replacing the "null" value submission to delete a plugin configuration.
 
 #### See Also
-* {{< api-link "alertplugins/add" >}}
 * {{< api-link "alertplugins/list" >}}
 * {{< api-link "alertplugins/current_settings" >}}

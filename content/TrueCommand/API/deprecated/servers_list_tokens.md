@@ -48,5 +48,3 @@ This API call does not emit any middleware events of it's own. Any modification 
 This API call does not generate a detailed log summary item
 
 #### See Also
-* {{< api-link "servers/add_tokens" >}}
-* {{< api-link "servers/remove_tokens" >}}

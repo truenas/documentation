@@ -78,5 +78,3 @@ This API call does not generate a detailed log summary item
 This API call will generate the standard event notifications for new alert notices. See the {{< api-link "notices/list" >}} API for event details.
 
 #### See Also
-* {{< api-link "servers/list_tokens" >}}
-* {{< api-link "external/submit_stats" >}}

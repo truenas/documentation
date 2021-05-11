@@ -87,4 +87,3 @@ This API call does not emit any middleware events.
 #### See Also
 * {{< api-link "users/get_data" >}}
 * {{< api-link "users/set_data" >}}
-* {{< api-link "users/insert_data_value" >}}

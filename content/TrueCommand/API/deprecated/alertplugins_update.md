@@ -54,6 +54,4 @@ This API call does not generate a detailed log summary item
 
 
 #### See Also
-* {{< api-link "alertplugins/add" >}}
 * {{< api-link "alertplugins/list" >}}
-* {{< api-link "alertplugins/check_updates" >}}

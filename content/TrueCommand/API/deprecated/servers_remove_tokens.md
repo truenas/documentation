@@ -50,5 +50,3 @@ This API call will emit a "servers/list_tokens" event to notify other administra
 This API call does not generate a detailed log summary item
 
 #### See Also
-* {{< api-link "servers/add_tokens" >}}
-* {{< api-link "servers/list_tokens" >}}

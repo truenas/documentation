@@ -53,4 +53,4 @@ This API call does not generate a detailed log summary item
 
 
 #### See Also
-* {{< api-link "freenas/send_method" >}}
+

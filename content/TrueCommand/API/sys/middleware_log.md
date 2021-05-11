@@ -45,9 +45,3 @@ This API call does not generate a detailed log summary item
 #### See Also
 * {{< api-link "sys/info" >}}
 * {{< api-link "sys/middleware_log" >}}
-* {{< api-link "sys/reboot_time" >}}
-* {{< api-link "sys/reboot" >}}
-* {{< api-link "sys/updates_available" >}}
-* {{< api-link "sys/update_now" >}}
-* {{< api-link "sys/update_status" >}}
-* {{< api-link "sys/upload_file" >}}

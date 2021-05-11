@@ -20,7 +20,7 @@ Search through the logs and return results
    * "uuid" (string - only return log entries associated with this user)
    * "header" (string or array of strings - only return log entries associed with particular API calls: such as "users/add" or "servers/edit")
 
-For information about the time formats, please look at the [Input Time Codes section](#input_time_codes) for details.
+For information about the time formats, please look at the Input Time Codes section for details.
 
 ### Request Example Arguments
 **ARGUMENTS ONLY**: See the {{< api-link "basics" >}} of API requests for additional formatting information.
