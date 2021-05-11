@@ -28,5 +28,4 @@ The `sshd` service must be running in TrueCommand to enable SSH access to the sy
 |Event Support| Yes | No |
 
 ## Documentation and Reference Materials
-### [Middleware API Reference Guide](calls/)
 ### [NAS Connection FAQ](faq/)
