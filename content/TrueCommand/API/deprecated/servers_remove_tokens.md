@@ -44,7 +44,7 @@ NOTE: Administrator access only - all others will get a 403/Forbidden error
 ```
 
 ### Events
-This API call will emit a "servers/list_tokens" event to notify other administrators of the change. See the {{< api-link "servers/list_tokens" >}} API reference for details.
+This API call will emit a "servers/list_tokens" event to notify other administrators of the change.
 
 ## Log Summary
 This API call does not generate a detailed log summary item

@@ -12,14 +12,14 @@ chapter: false
 #### Description
 **This API has been removed and is no longer available on version 1.2 and later**
 
-Perform TrueCommand system updates and reboot the system. Note that for offline updates, this process generally takes less than 10 seconds before the system will reboot to finish the update. For online updates this may take a while longer while it downloads the update files. During an online update, the current status of the update process can be found with the {{< api-link "sys/update_status" >}} API call.
+Perform TrueCommand system updates and reboot the system. Note that for offline updates, this process generally takes less than 10 seconds before the system will reboot to finish the update. For online updates this may take a while longer while it downloads the update files. During an online update, the current status of the update process can be found with the sys/update_status API call.
 
 ### Input Arguments
 * Required:
    * none ({}) : If no arguments are provided, then it will assume that an online update is being attempted.
 * Optional (only one of these may be provided at a time):
    * "fetch_url" (string) : Fetch an offline update file from a designated URL on the local network.
-   * "file_upload" (string) : Filename of the offline update file that was uploaded via the {{< api-link "sys/upload_file" >}} mechanisms.
+   * "file_upload" (string) : Filename of the offline update file that was uploaded via the sys/upload_file  mechanisms.
 
 
 ### Request Example Arguments

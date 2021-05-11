@@ -14,7 +14,7 @@ chapter: false
 
 Check for available updates to the TrueCommand appliance.
 
-* **NOTE** This requires the ability to connect to the iXsystems update server. Offline update files may be provided using the {{< api-link "sys/update_now" >}} API call.
+* **NOTE** This requires the ability to connect to the iXsystems update server.
 
 ### Input Arguments
 * Required:

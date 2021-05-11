@@ -18,7 +18,7 @@ Please look at the users/set_data API for the alternative to this functionality.
 Save any random data to be associated with the currently logged-in user. 
 This is useful to save/restore a cache of user settings that might be needed by the Web UI for instance.
 
-This is different from the {{< api-link "users/set_data" >}} API call in that the fields within the input arguments will be **added** to the  current user data rather than replace it. Any input objects/variables with the same name as existing fields in the user data **will** overwrite those fields however.
+This is different from the users/set_data API call in that the fields within the input arguments will be **added** to the  current user data rather than replace it. Any input objects/variables with the same name as existing fields in the user data **will** overwrite those fields however.
 
 ### Input Arguments
 * Required:
