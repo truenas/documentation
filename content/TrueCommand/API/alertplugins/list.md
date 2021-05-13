@@ -130,7 +130,7 @@ List all the alert provider plugins that are currently installed.
 This API call does not emit any middleware events.
 
 ### Log Summary
-This API call does not generate a detailed log summary item
+This API call does not generate a detailed log summary item.
 
 ### Changelog
 * **v2.0** : Supported fields/settings for the "smtp-email" plugin changed significantly. Run this API to see the current "api" fields.
