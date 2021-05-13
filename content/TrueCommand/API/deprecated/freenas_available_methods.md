@@ -10,7 +10,7 @@ chapter: false
 | freenas | available_methods | N/A | N/A | N/A | 1 | 2.0 |
 
 {{% notice warning %}}
-This API was removed in version 2.0
+This API was removed in version 2.0.
 {{% /notice %}}
 
 #### Description
@@ -49,7 +49,7 @@ This will return all the known/supported methods as well as the permission level
 This API call does not emit any middleware events.
 
 ### Log Summary
-This API call does not generate a detailed log summary item
+This API call does not generate a detailed log summary item.
 
 
 #### See Also
