@@ -15,7 +15,7 @@ Please look at the alertplugins/* API namespace for the repacement for this func
 {{% /pageinfo %}}
 
 #### Description
-Configure SSMTP
+Configure SSMTP.
 
 ### Input Arguments
 * Required:
