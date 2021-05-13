@@ -43,7 +43,7 @@ curl -k --data "${DATA}" -u ":${TC_TOKEN}" -X PUT "${URL}"
    * alert-ID (JSON Object) : Every alert needs to have a unique alert ID, this can be any string. This allows TrueCommand to see/combine alert notices with the same ID while also keeping track of all the times that the alert was submitted or triggered.
       * "source" (string) : Internal source designation for the alert. Can be anything that is useful for diagnosing and fixing the alert.
          * Examples: "SMART tests", "service/XYZ", "alertsystem/123"
-      * "type" (string) : Priority designation for the alert. Must be one of the following options: "information", "warning", or "critical"
+      * "type" (string) : Priority designation for the alert. Must be one of the following options: "information", "warning", or "critical".
       * "time_t" (string or number) : UNIX timestamp for when the alert was created on the system itself.
       * "text" (string) : User-facing text for the alert.
 * Optional:
@@ -71,7 +71,7 @@ curl -k --data "${DATA}" -u ":${TC_TOKEN}" -X PUT "${URL}"
 }
 ```
 ### Log Summary
-This API call does not generate a detailed log summary item
+This API call does not generate a detailed log summary item.
 
 
 ### Events
