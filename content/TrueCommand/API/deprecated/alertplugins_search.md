@@ -10,7 +10,7 @@ chapter: false
 | alertplugins | search | no | no | no | 1.1 | 2.0 |
 
 #### Description
-Search for plugins that are available to install
+Search for plugins that are available to install.
 
 ### Input Arguments
 * Required Inputs: none ({})
@@ -43,7 +43,7 @@ Search for plugins that are available to install
 This API call does not emit any middleware events.
 
 ### Log Summary
-This API call does not generate a detailed log summary item
+This API call does not generate a detailed log summary item.
 
 
 #### See Also
