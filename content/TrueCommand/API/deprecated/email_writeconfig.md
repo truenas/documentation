@@ -15,17 +15,17 @@ Please look at the alertplugins/* API namespace for the repacement for this func
 {{% /pageinfo %}}
 
 #### Description
-Write SSMTP Configuration
+Write SSMTP Configuration.
 
 ### Input Arguments
 * Required:
-   * "rootaddress" (String) : This email address will appear in the "From" field of email alerts
-   * "mailserver" (String) : Address to contact for email submissions (Example: "smtp.gmail.com")
-   * "port" (String) : Port number to use when contacting the mail server (Example: "587");
+   * "rootaddress" (String) : This email address will appear in the "From" field of email alerts.
+   * "mailserver" (String) : The address to contact for email submissions (Example: "smtp.gmail.com").
+   * "port" (String) : The port number to use when contacting the mail server (Example: "587").
    * "security" (String) ("TLS" or "STARTTLS" or "TLS+STARTTLS")
-   * "AuthUser" (String) : Username to use when connecting to the mailserver
-   * "AuthPass" (String) : Password to use when connecting to the mailserver
-   * "AuthMethod" (String) : Type of authentication to mailserver ("LOGIN" is standard username/password).
+   * "AuthUser" (String) : The Username to use when connecting to the mailserver.
+   * "AuthPass" (String) : The Password to use when connecting to the mailserver.
+   * "AuthMethod" (String) : The type of authentication to mailserver ("LOGIN" is standard username/password).
 
 
 ### Request Example Arguments
