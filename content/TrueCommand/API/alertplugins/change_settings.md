@@ -15,7 +15,7 @@ Modify the settings for alert plugins. Note that each plugin's settings are mana
 ### Input Arguments
 * Required (at least one of these):
    * "[plugin-name]" (Json Object) : Settings object for the listed plugin.
-   * "delete_[plugin_name]" (boolean) : Delete the settings for the listed plugin
+   * "delete_[plugin_name]" (boolean) : Delete the settings for the listed plugin.
       * Added in v2.0
 * Optional:
    * none ({})
@@ -58,7 +58,7 @@ This will configure the "smtp-email" plugin while also disabling the "Plugin_A" 
 This API call does not emit any middleware events.
 
 ### Log Summary
-This API call does not generate a detailed log summary item
+This API call does not generate a detailed log summary item.
 
 ### Changelog
 * **v2.0** : The "delete_[plugin-name]" arguments were added, replacing the "null" value submission to delete a plugin configuration.
