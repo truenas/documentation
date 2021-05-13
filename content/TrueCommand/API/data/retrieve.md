@@ -11,7 +11,7 @@ chapter: false
 | data | retrieve | no | no | yes | 1 |
 
 #### Description
-Retrieve data from specified servers/fields
+Retrieve data from specified servers/fields.
 
 ### Input Arguments
 * Required Arguments: 
@@ -23,7 +23,7 @@ Retrieve data from specified servers/fields
    * "metrics" (array of strings) : List of measurements to return. See {{< api-link "data/list_fields" >}}.
       * This always returns the "avg" field for the given measurements. 
 
-For information about the time formats, please look at the Input Time Codes section for details.
+For information about the time formats, please look at the **Input Time Codes** section in the {{< api-link "timecodes" >}} page for details.
 
 
 ### Request Example Arguments
@@ -170,14 +170,14 @@ Example:
 ```
 
 ### Log Summary
-This API call does not generate a detailed log summary item
+This API call does not generate a detailed log summary item.
 
 ### Changelog
 * **v2.0**
-   * "tvid" input changed to string-only (remove support for a list of strings)
+   * "tvid" input changed to string-only (remove support for a list of strings).
    * "time_start" and "time_end" input formats changed to unix timestamp only.
-   * "raw_objects" input option removed
-   * "data_list" input option removed (replaced by the "metrics" option)
+   * "raw_objects" input option removed.
+   * "data_list" input option removed (replaced by the "metrics" option).
 
 #### See Also
 * {{< api-link "data/current_stats" >}}
