@@ -10,7 +10,7 @@ chapter: false
 | alertplugins | add | yes | no | yes | 1.1 | 2.0 |
 
 #### Description
-Create a new alert rule
+Create a new alert rule.
 
 ### Input Arguments
 * Required Inputs:
@@ -46,7 +46,7 @@ Example:
 ```
 
 ### Log Summary
-This API call does not generate a detailed log summary item
+This API call does not generate a detailed log summary item.
 
 
 #### See Also
