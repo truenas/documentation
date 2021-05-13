@@ -38,11 +38,11 @@ This will send a test alert to the current user. An individual plugin can be spe
 This API call does not emit any middleware events.
 
 ### Log Summary
-This API call does not generate a detailed log summary item
+This API call does not generate a detailed log summary item.
 
 
 ### Changelog
-* **v2.0** : "plugin" input argument moved from optional to required
+* **v2.0** : "plugin" input argument moved from optional to required.
 
 #### See Also
 * {{< api-link "alertplugins/list" >}}
