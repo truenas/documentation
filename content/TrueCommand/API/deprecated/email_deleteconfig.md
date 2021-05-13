@@ -15,7 +15,7 @@ Please look at the alertplugins/* API namespace for the repacement for this func
 {{% /pageinfo %}}
 
 #### Description
-Delete SSMTP Configuration
+Delete SSMTP Configuration.
 
 ### Input Arguments
 * Required:
