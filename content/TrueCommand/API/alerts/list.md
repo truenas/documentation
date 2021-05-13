@@ -13,9 +13,9 @@ chapter: false
 List all the alert rules that are currently defined.
 
 ### Input Arguments
-* Required Inputs: none ({})
+* Required Inputs: none ({}).
 * Optional Inputs: 
-   * "tvid" : (string or array of strings) Only show the alert rules that impact the designated system(s)
+   * "tvid" : (string or array of strings) Only show the alert rules that impact the designated system(s).
    * "active_only" : (boolian - "false" by default) Only return alerts which are active.
 **Note:** If an alert rule does not have a listed "tvid", then it will be used for all registered systems.
 
@@ -69,7 +69,7 @@ List all the alert rules that are currently defined.
 This API call does not emit any middleware events.
 
 ### Log Summary
-This API call does not generate a detailed log summary item
+This API call does not generate a detailed log summary item.
 
 ### Changelog
 * **v2.0** : Output format changed. Uses the new "triggers" object array. See {{< api-link "alerts/edit" >}} for details.
