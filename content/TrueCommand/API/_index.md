@@ -1,6 +1,7 @@
 ---
 title: "TrueCommand API"
 weight: "10"
+geekdocCollapseSection: true
 ---
 
 ## Quick Start Information
