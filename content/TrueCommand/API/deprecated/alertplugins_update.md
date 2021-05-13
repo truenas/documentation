@@ -50,7 +50,7 @@ Example:
 ```
 
 ### Log Summary
-This API call does not generate a detailed log summary item
+This API call does not generate a detailed log summary item.
 
 
 #### See Also
