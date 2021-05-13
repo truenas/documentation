@@ -33,7 +33,7 @@ List all the types of data which are available for particular server(s). The ava
 
 ### Reply Example
 NOTE: If no tvid is given, then a generic "fields" object will be returned instead of the objects tagged by the the tvid's.
-In the generic "fields" object, there will be items tagged within carats (<deviceID> for example). These are placeholder labels for something that is system-specific ("<deviceID>" might become "ada0" for particular systems).
+In the generic "fields" object, there will be items tagged within carats (<deviceID> for example). These are placeholder labels for something that is system-specific (`<deviceID>` might become "ada0" for particular systems).
 
 ```
 [
@@ -84,11 +84,11 @@ In the generic "fields" object, there will be items tagged within carats (<devic
 This API call does not emit any middleware events.
 
 ### Log Summary
-This API call does not generate a detailed log summary item
+This API call does not generate a detailed log summary item.
 
 ### Changelog
 * **v2.0**
-   * Optional "tvid" input changed to a string only (does not support array of strings any more)
+   * Optional "tvid" input changed to a string only (does not support array of strings any more).
    * Optional flags "with_type", "filter_type", and "ui_format" removed.
 
 #### See Also
