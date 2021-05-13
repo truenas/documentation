@@ -42,31 +42,31 @@ curl -k --data "${DATA}" -u ":${TC_TOKEN}" -X PUT "${URL}"
 ### Input Arguments
 * Required:
    * "hostname" (string) : System hostname
-   * "cpu" (Json Array of Objects) : One object per CPU
-      * "user" (number) : Percent utilization by user processes
-      * "system" (number) : Percent utilization by system processes
+   * "cpu" (Json Array of Objects) : One object per CPU.
+      * "user" (number) : Percent utilization by user processes.
+      * "system" (number) : Percent utilization by system processes.
       * "idle" (number) : Percent remaining un-used.   
    * "memory" (Json Object) : Information about memory usage on the system. Primary memory types supported are "active", "free", "inactive", "laundry", and "wired".
-      * "bytes-per-page" (number) : [Optional] conversion from page numbers to bytes (if pages are supplied)
-      * "cache-hit-percent" (number) : [Optional] Percentage of memory requests hitting the ZFS cache
+      * "bytes-per-page" (number) : [Optional] conversion from page numbers to bytes (if pages are supplied).
+      * "cache-hit-percent" (number) : [Optional] Percentage of memory requests hitting the ZFS cache.
       * "[something]-pages" (number) : Number of pages of a particular type of memory. As many of these fields as needed. This requires that the "bytes-per-page" conversion number also be provided.
       * "[something]-bytes" (number) : Number of bytes of a particular type of memory. As many of these fields as needed. These fields are preferred over the -pages fields if they both have the same prefix ("free-bytes" will be used instead of "free-pages" if both are provided).
-   * "network" (Json Array of Json Objects) : Information about network usage on the system (one object per interface)
-      * "name" (string) : [Required] Unique name of the interface (example: "igb0")
-      * "KB/s in" (number) : [Recommended] Current data transfer into the interface
-      * "KB/s out" (number) : [Recommended] Current data transfer out of the interface
+   * "network" (Json Array of Json Objects) : Information about network usage on the system (one object per interface).
+      * "name" (string) : [Required] Unique name of the interface (example: "igb0").
+      * "KB/s in" (number) : [Recommended] Current data transfer into the interface.
+      * "KB/s out" (number) : [Recommended] Current data transfer out of the interface.
       * "[something]" (number) : [Optional] Statistic to record.
-   * "storage" (Json Object) : Information about storage utilization from the system
-      * "total-bytes" (number) : Total size of the available storage in bytes
+   * "storage" (Json Object) : Information about storage utilization from the system.
+      * "total-bytes" (number) : Total size of the available storage in bytes.
       * "used-bytes" (number) : Amount of storage space already used in bytes.
-   * "version" (string) : Version number of the system
+   * "version" (string) : Version number of the system.
    * "uptime_seconds" (number) : System uptime in seconds.
 * Optional (but recommended):
    * "cpu_temperatures" (Json Array of numbers) : One element per CPU, with temperature number in degrees Celcius.
    * "disk" (Json Array of Json Objects) : One element per hard-disk of stats about that disk. 
       * Note: Each disk object must have a field called "Name" which contains the unique identifier for that disk ("ada0" or "da3" for example). All other field names are arbitrary/optional but should have numerical values.
-   * "timezone" (string) : System timezone (Example: "America/New_York")
-   * "model" (string) : model information about the system (typically CPU make/model)
+   * "timezone" (string) : System timezone (Example: "America/New_York").
+   * "model" (string) : model information about the system (typically CPU make/model).
 
 ### Request Example Arguments
 **ARGUMENTS ONLY**: See the {{< api-link "basics" >}} of API requests for additional formatting information.
@@ -99,7 +99,7 @@ curl -k --data "${DATA}" -u ":${TC_TOKEN}" -X PUT "${URL}"
 }
 ```
 ### Log Summary
-This API call does not generate a detailed log summary item
+This API call does not generate a detailed log summary item.
 
 ### Events
 This API call will generate the standard event notifications for new statistics. See the {{< api-link "servers/list" >}} API for event details.
