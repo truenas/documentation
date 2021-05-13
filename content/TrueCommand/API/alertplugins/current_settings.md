@@ -53,7 +53,7 @@ Return all the current settings for alert plugins for the current user.
 This API call does not emit any middleware events.
 
 ### Log Summary
-This API call does not generate a detailed log summary item
+This API call does not generate a detailed log summary item.
 
 ### Changelog
 * **v2.0** : Sensitive settings (such as passwords), no longer get obfuscated in this API return. This permits confirmation of saved settings now.
