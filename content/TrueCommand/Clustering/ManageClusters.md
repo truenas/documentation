@@ -19,14 +19,23 @@ In a Distributed Volume the editing options are, adding a brick, replacing a bri
 ### Add a brick to a Distributed Cluster
 
 Click the three dots icon in the cluster overview card and select the **+ Add Brick** option to open the *Add Brick* menu.
+
 ![DistributedClusterOptionsAdd](/images/TrueCommand/2.0/DistributedClusterOptionsAdd.png "DistributedClusterOptionsAdd")
+
 Click *Brick Choices* to display the list of systems available.
+
 ![DistributedClusterOptionsAddBrick](/images/TrueCommand/2.0/DistributedClusterOptionsAddBrick.png "DistributedClusterOptionsAddBrick")
+
 Selecting a system will display the options for the brick that will be created. It is strongly recommended that the size matches the existing bricks, but this can be changed if required.
+
 ![DistributedClusterOptionsAddBrickOptions](/images/TrueCommand/2.0/DistributedClusterOptionsAddBrickOptions.png "DistributedClusterOptionsAddBrickOptions")
+
 When you are satified with the settings, click **SAVE** to add the brick.  TrueCommmand and TrueNAS SCALE will not add the brick to the cluster.
+
 ![DistributedClusterOptionsAddProcessing](/images/TrueCommand/2.0/DistributedClusterOptionsAddProcessing.png "DistributedClusterOptionsAddProcessing")
+
 When the new brick has been added, the cluster card will reflect the change.
+
 ![DistributedClusterOptionsAddBrickCompleted](/images/TrueCommand/2.0/
 DistributedClusterOptionsAddBrickCompleted.png "DistributedClusterOptionsAddBrickCompleted")
 
