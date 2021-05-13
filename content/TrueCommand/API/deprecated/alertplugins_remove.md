@@ -10,7 +10,7 @@ chapter: false
 | alertplugins | remove | yes | no | yes | 1.1 | 2.0 |
 
 #### Description
-Delete an existing alert rule
+Delete an existing alert rule.
 
 ### Input Arguments
 * Required:
@@ -50,7 +50,7 @@ Example:
 ```
 
 ### Log Summary
-This API call does not generate a detailed log summary item
+This API call does not generate a detailed log summary item.
 
 
 #### See Also
