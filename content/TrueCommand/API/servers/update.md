@@ -52,7 +52,7 @@ Update status is reported via the {{< api-link "servers/list" >}} API output.
 This API call does not emit any middleware events.
 
 ### Log Summary
-This API call does not generate a detailed log summary item
+This API call does not generate a detailed log summary item.
 
 #### See Also
 * {{< api-link "servers/add" >}}
