@@ -10,15 +10,15 @@ chapter: false
 | truenas | send_method | N/A | N/A | N/A | 1 |
 
 #### Description
-**This is only available for Websocket connections**
+**This is only available for Websocket connections**.
 
 Call a designated TrueNAS method API.
 
 ### Input Arguments
 * Required Arguments:
-   * "tvid" : (string or array of strings) ID of the system(s) to send the API request to
-   * "method" : (string) API method to call (example: "disk.query")
-   * "params" : (anything) JSON field that is passed directly to FreeNAS as the method arguments (typically an array of JSON information)
+   * "tvid" : (string or array of strings) ID of the system(s) to send the API request to.
+   * "method" : (string) API method to call (example: "disk.query").
+   * "params" : (anything) JSON field that is passed directly to FreeNAS as the method arguments (typically an array of JSON information).
 
 **Notes:** 
  * The "id" field of the API request will be automatically re-used for the designated FreeNAS API call and reply.
@@ -40,7 +40,7 @@ Call a designated TrueNAS method API.
 }
 ```
 
-### Reply Example
+### Reply Example:
 ```
 {
   "id": "freenas_api_call_1",
@@ -94,7 +94,7 @@ Call a designated TrueNAS method API.
 This API call does not emit any middleware events.
 
 ### Log Summary
-This API call does not generate a detailed log summary item
+This API call does not generate a detailed log summary item.
 ```
 {}
 ```
