@@ -10,16 +10,16 @@ chapter: false
 | notices | list | no | no | no | 1 |
 
 #### Description
-List alert notices for systems that the user can view:
+List alert notices for systems that the user can view.
 
 ### Input Arguments
 * Required inputs: none ({})
 * Optional inputs:
    * "tvid" : (string or array of strings) Restrict the search to notices about the specified systems. Default value is to search for notices from all systems the current user can view (read access).
    * "all_notices" : (boolian - false by default) Return notices that have been marked as resolved.
-   * "count" : (integer) Maximum limit for the number of notices returned
-   * "limit_datetime" : (int64) Unix timestamp (seconds since epoch) providing a date/time cutoff for the search (default value: current date/time)
-   * "newer_than_datetime" : (boolean) Return notices newer than the datetime cutoff (default: false - older than cutoff)
+   * "count" : (integer) The maximum limit for the number of notices returned.
+   * "limit_datetime" : (int64) Unix timestamp (seconds since epoch) providing a date/time cutoff for the search (default value: current date/time).
+   * "newer_than_datetime" : (boolean) Return notices newer than the datetime cutoff (default: false - older than cutoff).
 
 * **Note:** The "system_time_triggered" field returns the time code (in time_t format) for finding the trigger of the event in the system data logs. This can be very useful for viewing all of the data/subsystems around the time that the alert was triggered for debugging purposes.
 
@@ -34,7 +34,7 @@ List alert notices for systems that the user can view:
 }
 ```
 
-### Reply Example
+### Reply Example:
 ```
 {
   "3" : {
@@ -96,7 +96,7 @@ List alert notices for systems that the user can view:
 
 
 ### Events
-Events from this change will be sent to everybody currently logged-in who has read permission for the system which triggered the alert
+Events from this change will be sent to everybody currently logged-in who has read permission for the system which triggered the alert.
 
 Example:
 ```
@@ -136,7 +136,7 @@ Example:
 **NOTE:** If an alert was modified in any way (such as getting marked resolved or having comments added/removed), this same event with be sent out but with the "notices/update" name instead.
 
 ### Log Summary
-This API call does not generate a detailed log summary item
+This API call does not generate a detailed log summary item.
 
 ### Changelog
 * **v2.0** : 
