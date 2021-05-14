@@ -63,8 +63,6 @@ A confirmation box will appear and the deletion must be confirmed before proceed
 ![DispersedClusterDelete](/images/TrueCommand/2.0/DispersedClusterDelete.png "DispersedClusterDelete")
 
 After checking the confirm box, Click **OK** to delete the cluster.
-{{< /tab >}}
-{{< tab "Distributed Dispersed" >}}
 
 {{< hint warning >}}
 Distributed Dispersed Volumes are not implemented at this time.
