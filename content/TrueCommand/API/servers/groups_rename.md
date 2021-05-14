@@ -12,7 +12,7 @@ chapter: false
 #### Description
 Simplification for renaming a server group to a different name. If a group with the new name exists, then this will effectively "merge" the old group into the new one.
 
-NOTE: Administrator access only - all others will get a 403/Forbidden error
+NOTE: Administrator access only - all others will get a 403/Forbidden error.
 
 ### Input Arguments
 * Required:
@@ -32,7 +32,7 @@ NOTE: Administrator access only - all others will get a 403/Forbidden error
 }
 ```
 
-### Reply Example
+### Reply Example:
 ```
 {
   "result" : "success",
