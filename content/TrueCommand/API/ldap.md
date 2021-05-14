@@ -20,24 +20,24 @@ Please ensure that you have a non-LDAP admin account for your TrueCommand instan
 ## LDAP Settings Object
 Each LDAP settings definition provides all the information necessary to establish a connection to AD/LDAP and authenticate a user.
 
-* "url" (string, Required) : IP or DNS name of the LDAP server, with port number on the end
+* "url" (string, Required) : The IP or DNS name of the LDAP server, with port number on the end.
    * Example: "ldap.mycorp.com:389"
-* "verify_ssl" (bool) : Require strict SSL certificate verification
+* "verify_ssl" (bool) : Require strict SSL certificate verification.
    * Default value: false
    * Disable this option if the hostname of the system is different than the one listed on the SSL certificate, an IP is used for the connection instead of the DNS hostname, or if a self-signed certificate is used by the LDAP server.
-* "domain" (string, Required) : Base domain settings of the user
+* "domain" (string, Required) : The base domain settings of the user.
    * Example: "dc=mycorp,dc=com" for a typical username@mycorp.com user account
-* "user_id_field" (string) : Domain fieldname to use for user-matching.
+* "user_id_field" (string) : The domain fieldname to use for user-matching.
    * Default value: "uid" (user ID)
    * Another field commonly-used is "cn" (common name)
-* "group_id_field" (string) : Domain fieldname to use when searching for a group name.
+* "group_id_field" (string) : The domain fieldname to use when searching for a group name.
    * Default value: "cn" (common name)
-* "group_domain_base" (string) : Alternative domain setting to use when searching for groups
+* "group_domain_base" (string) : The alternative domain setting to use when searching for groups.
    * Default value: Same as "domain"
-* "bind_user_domain" (string) : Full domain setting for a pre-authenticated bind to the server.
+* "bind_user_domain" (string) : The full domain setting for a pre-authenticated bind to the server.
    * Example: "uid=binduser,cn=read-only-bind,dc=mycorp,dc=com"
    * For an unauthenticated bind set this field to just a name (example: "truecommand-bind"). This is sometimes used for logging purposes on the LDAP, but otherwise is not validated.
-* "bind_user_password" (string) : Password to use for the bind user
+* "bind_user_password" (string) : The password to use for the bind user.
    * For an unauthenticated bind, leave this field blank while setting the "bind_user_domain" to a non-empty value.
 
 ## LDAP connection options
