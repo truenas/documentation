@@ -10,7 +10,7 @@ chapter: false
 | sys | info | no | no | no | 1 |
 
 #### Description
-Return general information about the system itself
+Return general information about the system itself.
 
 ### Input Arguments
 * Required:
@@ -26,7 +26,7 @@ Return general information about the system itself
 {}
 ```
 
-### Reply Example
+### Reply Example:
 ```
 {
   "system_id" : "my_unique_system_id",
