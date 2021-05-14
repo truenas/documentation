@@ -10,7 +10,7 @@ chapter: false
 | sys | reboot | yes | no | yes | 1 | 1.2 |
 
 #### Description
-**API Call Obsolete : Removed in version 1.2**
+**API Call Obsolete : Removed in version 1.2**.
 
 Schedule a system reboot for the TrueCommand appliance. 
 There is a 5 minute delay by default in order to allow other logged-in users enough time to finish up whatever they are doing before the system goes down. There will also be system-wide events announcing the impending reboot to all active user sessions.
@@ -43,7 +43,7 @@ There is a 5 minute delay by default in order to allow other logged-in users eno
 }
 ```
 ### Log Summary
-This API call does not generate a detailed log summary item
+This API call does not generate a detailed log summary item.
 
 ### Events
 | Name | Who Receives |
