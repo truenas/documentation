@@ -26,7 +26,7 @@ Return the unique system ID for the TrueCommand instance.
 {}
 ```
 
-### Reply Example
+### Reply Example:
 ```
 {
   "system_id" : "my_unique_system_id",
