@@ -14,18 +14,18 @@ Add a new FreeNAS/TrueNAS server to the TrueCommand administration framework.
 
 ### Input Arguments
 * Required Arguments: 
-   * "nickname" (string) : User-visible name for this system
-   * "ip" (string) : DNS name or IP address of the system on the network.
+   * "nickname" (string) : The user-visible name for this system.
+   * "ip" (string) : The DNS name or IP address of the system on the network.
       * NOTE: For custom port numbers, append ":[port]" to the IP of the system. Example: "localhost:1234"
-   * "login_user" (string) : Name of the user to login to the system
-   * "login_password" (string) : Password for the user to login to the system
+   * "login_user" (string) : The name of the user to login to the system.
+   * "login_password" (string) : The password for the user to login to the system.
 * Optional Arguments: 
    * "groups" (JsonArray of strings)
    * "tags" (JsonArray) : Search tags, Format - ["tag_1", "tag_2"]
-   * "ignore_alerts" (string or JsonArray of strings) : Types of passthrough alerts to ignore from the NAS
+   * "ignore_alerts" (string or JsonArray of strings) : Types of passthrough alerts to ignore from the NAS.
       * Added in TrueCommand 1.1
       * Valid types: "information", "warning", "critical", or "all"
-      * Default value: null. Will use system-wide setting for ignoring alerts
+      * Default value: null. Will use system-wide setting for ignoring alerts.
 
 ### Request Example Arguments
 **ARGUMENTS ONLY**: See the {{< api-link "basics" >}} of API requests for additional formatting information.
@@ -40,7 +40,7 @@ Add a new FreeNAS/TrueNAS server to the TrueCommand administration framework.
 }
 ```
 
-### Reply Example
+### Reply Example:
 * Example Reply Arguments (success):
 ```
 {
@@ -49,7 +49,7 @@ Add a new FreeNAS/TrueNAS server to the TrueCommand administration framework.
 }
 ```
 
-* Example Reply Arguments (error: IP already managed)
+* Example Reply Arguments (error: IP already managed):
 ```
 {
   "error" : "IP Exists",
@@ -91,7 +91,7 @@ Log entries for this API call will have the following "summary" object. Note tha
 #### Changelog
 * **v2.0**
    * The "is_external" flag was removed.
-   * The "nickname" field is now required
+   * The "nickname" field is now required.
 
 #### See Also
 * {{< api-link "servers/direct_auth" >}}
