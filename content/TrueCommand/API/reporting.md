@@ -65,11 +65,11 @@ Visual Representation if the column count is changed to 3:
 ## Types of widgets
 All widget options **must** contain a field called "type" which is set to one of the following options:
 
-* "chart" : A graphical chart of information
-* "list" : An auto-generated list of information
+* "chart" : A graphical chart of information.
+* "list" : An auto-generated list of information.
 * "text" : Simple text which should be shown. Supports some basic rules for inserting information such as timestamps automatically.
 
-Details for these types of widgets are included below
+Details for these types of widgets are included below:
 
 ### Chart Widgets
 
