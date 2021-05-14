@@ -29,7 +29,7 @@ For details about the "widgets" object formatting, please look at the Reporting 
 }
 ```
 
-### Reply Example
+### Reply Example:
 ```
 {
   "namespace" : "reports",
@@ -86,7 +86,7 @@ For details about the "widgets" object formatting, please look at the Reporting 
 }
 ```
 ### Log Summary
-This API call does not generate a detailed log summary item
+This API call does not generate a detailed log summary item.
 
 ### Events
 This this API call does not emit any middleware events.
