@@ -13,9 +13,9 @@ chapter: false
 List all the alert rules that are currently defined.
 
 ### Input Arguments
-* Required Inputs: none ({})
+* Required Inputs: none ({}).
 * Optional Inputs: 
-   * "tvid" : (string or array of strings) Only show the alert rules that impact the designated system(s)
+   * "tvid" : (string or array of strings) Only show the alert rules that impact the designated system(s).
    * "active_only" : (boolian - "false" by default) Only return alerts which are active.
 **Note:** If an alert rule does not have a listed "tvid", then it will be used for all registered systems.
 
@@ -36,23 +36,31 @@ List all the alert rules that are currently defined.
     "caid" : "alert_rule_1",
     "tvid" : "",
     "name" : "Custom Rule 1",
-    "source" : "memory%free_percent",
-    "alerttype" : "less_than",
-    "value" : "10",
     "priority" : "warning",
     "isactive" : true,
-    "owner" : "user_id_1"
+    "owner" : "user_id_1",
+	"triggers" : [
+      {
+        "source" : "memory%free_percent",
+        "comparison" : "less_than",
+        "value" : "10"
+      }
+    ]
   }, 
   "alert_rule_2" : {
     "caid" : "alert_rule_2",
     "tvid" : "server_id_1",
     "name" : "Custom Rule 2",
-    "source" : "memory%free_percent",
-    "alerttype" : "less_than",
-    "value" : "5",
     "priority" : "critical",
     "isactive" : false
-    "owner" : "user_id_4"
+    "owner" : "user_id_4",
+	"triggers" : [
+      {
+        "source" : "memory%free_percent",
+        "comparison" : "less_than",
+        "value" : "5"
+      }
+    ]
   }
 }
 ```
@@ -61,8 +69,10 @@ List all the alert rules that are currently defined.
 This API call does not emit any middleware events.
 
 ### Log Summary
-This API call does not generate a detailed log summary item
+This API call does not generate a detailed log summary item.
 
+### Changelog
+* **v2.0** : Output format changed. Uses the new "triggers" object array. See {{< api-link "alerts/edit" >}} for details.
 
 #### See Also
 * {{< api-link "alerts/add" >}}

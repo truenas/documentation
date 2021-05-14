@@ -16,9 +16,10 @@ TrueCommand Administrators have permission to edit all reports, even if they are
 
 ### Input Arguments
 * Required:
-   * "roid" (string) : Report Object ID for the desired report to be changed
+   * "roid" (string) : Report Object ID for the desired report to be changed.
 * Optional:
    * "name" (string) : Visible title to be shown for the report.
+   * "description" (string) : Short description of the report
    * "owners" (string or Json Array of strings) : User ID's for those who are granted edit permission for this report.
       * Note: The middleware ensures that the user editing the report always keeps ownership of the report.
       * The word "all" can be provided in order to grant edit permission to all users.
@@ -28,7 +29,7 @@ TrueCommand Administrators have permission to edit all reports, even if they are
       * Note: The word "all" can be used in place of a team ID in order to grant access to all teams. 
    * "widgets" (Json Object) : Special data object for defining the visible widgets for this report.
       * See the {{< api-link "reporting" >}} page for full details.
-   * "tags" (Json Array of strings) : Search tags to help filter available reports
+   * "tags" (Json Array of strings) : Search tags to help filter available reports.
 
 
 ### Request Example Arguments
@@ -41,7 +42,7 @@ TrueCommand Administrators have permission to edit all reports, even if they are
 }
 ```
 
-### Reply Example
+### Reply Example:
 ```
 {
   "namespace" : "reports",
@@ -74,6 +75,9 @@ The log summary contains a "new_" entry for every field that was changed by the 
 
 ### Events
 This will generate a {{< api-link "reports/list" >}} API event.
+
+### Changelog
+* **v2.0** : Add "description" option for reports.
 
 #### See Also
 * {{< api-link "reports/add" >}}

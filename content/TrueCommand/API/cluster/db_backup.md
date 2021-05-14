@@ -14,7 +14,6 @@ This API call will return a list of all the NAS database backups that are stored
 ***WARNING:***
 
 * This can only be performed for systems that the user has write access to. All other systems will be ignored.
-* NAS backup functionality requires a valid, non-expired license from iXsystems. This API will return a FORBIDDEN error otherwise.
 
 ### Input Arguments
 * Required:

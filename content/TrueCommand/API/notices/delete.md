@@ -16,8 +16,6 @@ Delete an alert notice in its entirety. There is no way to recover an alert noti
 ### Input Arguments
 * Required Arguments:
    * "aid" : (string or JSON array of strings) Notice ID(s) to delete.
-      * Special Option: "aid" = "delete-all: yes, this is terrible... don't do it!"
-      * This will delete *all* alert notices in the database (mainly used for developer debugging)
 
 
 ### Request Example Arguments
@@ -29,7 +27,7 @@ Delete an alert notice in its entirety. There is no way to recover an alert noti
 }
 ```
 
-### Reply Example
+### Reply Example:
 ```
 {]
 ```

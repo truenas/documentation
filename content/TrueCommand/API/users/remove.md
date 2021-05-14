@@ -10,11 +10,11 @@ chapter: false
 | users | remove | yes | yes | yes | 1 |
 
 #### Description
-Removes a user account from TrueCommand (Administrator Access Only - others will get a 403/Forbidden error code)
+Removes a user account from TrueCommand (Administrator Access Only - others will get a 403/Forbidden error code).
 
 ### Input Arguments
 * Required:
-   * "uuid" (string) : User ID of the account to remove
+   * "uuid" (string or array of strings) : User ID of the account(s) to remove.
 * Optional:
    * none ({})
 
@@ -28,7 +28,7 @@ Removes a user account from TrueCommand (Administrator Access Only - others will
 }
 ```
 
-### Reply Example
+### Reply Example:
 ```
 {
   "namespace" : "response",
@@ -72,6 +72,9 @@ Example:
   }
 }
 ```
+
+#### Changelog
+* **v2.0** : Allow for a list of "uuid" values as well.
 
 #### See Also
 * {{< api-link "users/add" >}}

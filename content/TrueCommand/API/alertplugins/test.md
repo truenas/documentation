@@ -14,9 +14,8 @@ This will send a test alert to the current user. An individual plugin can be spe
 
 ### Input Arguments
 * Required Inputs: 
-   * None ({})
+   * "plugin" (string) : Name of a single plugin to test.
 * Optional Inputs:
-   * "plugin" (string) : Name of a single plugin to test. Will use all configured plugins if not specified.
    * "settings" (JSON Object) : Custom settings object to use for the test instead of using the currently-saved configuration for the user.
 
 ### Request Example Arguments
@@ -31,7 +30,7 @@ This will send a test alert to the current user. An individual plugin can be spe
 ### Reply Example
 ```
 {
-  "result" : "Text sent"
+  "result" : "Error/Confirmation message for the test"
 }
 ```
 
@@ -39,9 +38,13 @@ This will send a test alert to the current user. An individual plugin can be spe
 This API call does not emit any middleware events.
 
 ### Log Summary
-This API call does not generate a detailed log summary item
+This API call does not generate a detailed log summary item.
 
+
+### Changelog
+* **v2.0** : "plugin" input argument moved from optional to required.
 
 #### See Also
-* {{< api-link "alertplugins/add" >}}
-* {{< api-link "alertplugins/remove" >}}
+* {{< api-link "alertplugins/list" >}}
+* {{< api-link "alertplugins/current_settings" >}}
+* {{< api-link "alertplugins/change_settings" >}}

@@ -10,7 +10,7 @@ chapter: false
 | alertplugins | current_settings | no | no | no | 1.1 |
 
 #### Description
-Return all the current settings for alert plugins for the current user. Any plugin settings with sensitive information (such as passwords or authentication tokens) will return "----" as the value for that sensitive information when the option is currently defined in the settings.
+Return all the current settings for alert plugins for the current user.
 
 ### Input Arguments
 * Required:
@@ -29,6 +29,8 @@ Return all the current settings for alert plugins for the current user. Any plug
 ```
 
 ### Reply Example
+**NOTE:** This is just an example. The actual smtp-email configuration settings can be found with the {{< api-link "alertplugins/list" >}} API.
+
 ```
 {
   "smtp-email" : {
@@ -51,10 +53,12 @@ Return all the current settings for alert plugins for the current user. Any plug
 This API call does not emit any middleware events.
 
 ### Log Summary
-This API call does not generate a detailed log summary item
+This API call does not generate a detailed log summary item.
 
+### Changelog
+* **v2.0** : Sensitive settings (such as passwords), no longer get obfuscated in this API return. This permits confirmation of saved settings now.
 
 #### See Also
-* {{< api-link "alertplugins/add" >}}
 * {{< api-link "alertplugins/list" >}}
+* {{< api-link "alertplugins/current_settings" >}}
 * {{< api-link "alertplugins/change_settings" >}}

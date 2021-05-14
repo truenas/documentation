@@ -13,7 +13,7 @@ chapter: false
 Save any random data to be associated with the currently logged-in user. 
 This is useful to save/restore a cache of user settings that might be needed by the Web UI for instance.
 
-**WARNING:** This API call with overwrite the entire data object for the user with the given arguments. To insert data into an existing object, please use the {{< api-link "users/insert_data" >}} or {{< api-link "users/insert_data_value" >}} API calls.
+**WARNING:** This API call with overwrite the entire data object for the user with the given arguments.
 
 ### Inputs Arguments
 * Required:
@@ -31,7 +31,7 @@ This is useful to save/restore a cache of user settings that might be needed by 
 }
 ```
 
-### Reply Example
+### Reply Example:
 ```
 {
   "namespace" : "response",
@@ -43,12 +43,10 @@ This is useful to save/restore a cache of user settings that might be needed by 
 }
 ```
 ### Log Summary
-This API call does not generate a detailed log summary item
+This API call does not generate a detailed log summary item.
 
 ### Events
 This API call does not emit any middleware events.
 
 #### See Also
 * {{< api-link "users/get_data" >}}
-* {{< api-link "users/insert_data" >}}
-* {{< api-link "users/insert_data_value" >}}

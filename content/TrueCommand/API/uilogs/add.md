@@ -10,7 +10,7 @@ chapter: false
 | uilogs | add | no | no | no | 1 |
 
 #### Description
-Create a new log entry
+Create a new log entry.
 
 ### Input Arguments
 * Required Inputs:
@@ -25,17 +25,10 @@ Create a new log entry
 }
 ```
 
-### Reply Example
+### Reply Example:
 ```
 {
   "result" : "success",
-  "entry" : {
-      "log_id" : "f7d4c622-f432-4431-9506-4cbf68b0082d",
-      "time_t" : 1554996212,
-      "log_entry": {
-          "error_info": "A problem occurred..."
-      }
-  }
 }
 ```
 
@@ -45,6 +38,8 @@ This API call does not generate events.
 ### Log Summary
 This API call does not generate a detailed log summary item.
 
+#### Changlog
+* **v2.0** : Reply structure no longer returns a copy of the new log entry.
 
 #### See Also
 * {{< api-link "uilogs/list" >}}

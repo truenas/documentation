@@ -10,7 +10,7 @@ chapter: false
 | sys | info | no | no | no | 1 |
 
 #### Description
-Return general information about the system itself
+Return general information about the system itself.
 
 ### Input Arguments
 * Required:
@@ -26,11 +26,13 @@ Return general information about the system itself
 {}
 ```
 
-### Reply Example
+### Reply Example:
 ```
 {
   "system_id" : "my_unique_system_id",
-  "system_version" : "0.4"
+  "system_version" : "2.0",
+  "middleware_version" : "2.0-20210426",
+  "online_docs_url" : "http://www.truenas.com/docs/truecommand"
 }
 ```
 
@@ -41,9 +43,4 @@ This API call does not emit any middleware events.
 
 #### See Also
 * {{< api-link "sys/middleware_log" >}}
-* {{< api-link "sys/reboot_time" >}}
-* {{< api-link "sys/reboot" >}}
-* {{< api-link "sys/updates_available" >}}
-* {{< api-link "sys/update_now" >}}
-* {{< api-link "sys/update_status" >}}
-* {{< api-link "sys/upload_file" >}}
+* {{< api-link "sys/version_info" >}}

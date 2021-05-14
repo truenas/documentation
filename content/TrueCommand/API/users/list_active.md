@@ -7,11 +7,11 @@ chapter: false
 
 | Namespace | Name | Admin Only | Log Summary | Generates Event | Version Added
 |:----------------:|:--------:|:--------:|:--------:|:--------:|:---:|
-| users | list_active | yes | no | no | 1 |
+| users | list_active | no | no | no | 1 |
 
 #### Description
-List all currently-active user sessions (Administrator Access Only - others will get a 403/Forbidden error code)
-The output reply contains all users with active sessions, as well as the number of active sessions for each user
+List all currently-active user sessions (admin user), or the number of active sessions for the current user (non-admin user).
+The output reply contains all users with active sessions, as well as the number of active sessions for each user.
 
 ### Input Arguments
 * Required:
@@ -27,7 +27,7 @@ The output reply contains all users with active sessions, as well as the number 
 {}
 ```
 
-### Reply Example
+### Reply Example:
 ```
 {
   "namespace" : "response",
@@ -42,7 +42,7 @@ The output reply contains all users with active sessions, as well as the number 
 }
 ```
 ### Log Summary
-This API call does not generate a detailed log summary item
+This API call does not generate a detailed log summary item.
 
 
 ### Events
@@ -62,6 +62,9 @@ Example:
 "args" : {}
 }
 ```
+
+#### Changelog
+* **v2.0** : Allow non-admins to run this API to see how many active sessions they have open.
 
 #### See Also
 * {{< api-link "users/list" >}}
