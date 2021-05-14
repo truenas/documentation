@@ -11,7 +11,7 @@ chapter: false
 
 #### Description
 List all currently-active user sessions (admin user), or the number of active sessions for the current user (non-admin user).
-The output reply contains all users with active sessions, as well as the number of active sessions for each user
+The output reply contains all users with active sessions, as well as the number of active sessions for each user.
 
 ### Input Arguments
 * Required:
@@ -27,7 +27,7 @@ The output reply contains all users with active sessions, as well as the number 
 {}
 ```
 
-### Reply Example
+### Reply Example:
 ```
 {
   "namespace" : "response",
@@ -42,7 +42,7 @@ The output reply contains all users with active sessions, as well as the number 
 }
 ```
 ### Log Summary
-This API call does not generate a detailed log summary item
+This API call does not generate a detailed log summary item.
 
 
 ### Events
