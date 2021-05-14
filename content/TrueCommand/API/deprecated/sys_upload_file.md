@@ -33,7 +33,7 @@ Files that are uploaded are **temporary**. They will be removed the next time th
 ```
 
 ### Log Summary
-This API call does not generate a detailed log summary item
+This API call does not generate a detailed log summary item.
 
 ### Events
 This API call does not emit any middleware events.
