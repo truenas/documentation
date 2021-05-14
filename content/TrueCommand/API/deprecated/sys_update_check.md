@@ -10,7 +10,7 @@ chapter: false
 | sys | update_check | yes | no | no | 1 | 1.2 |
 
 #### Description
-**This API has been removed and is no longer available on version 1.2 and later**
+**This API has been removed and is no longer available on version 1.2 and later**.
 
 Have TrueCommand perform a check for whether system updates are available. This is a manual probe to start the update check only. TrueCommand automatically checks for system updates every 24 hours or whenever the middleware is restarted otherwise.
 
@@ -31,7 +31,7 @@ Have TrueCommand perform a check for whether system updates are available. This 
 }
 ```
 ### Log Summary
-This API call does not generate a detailed log summary item
+This API call does not generate a detailed log summary item.
 
 ### Events
 This API call does not emit any middleware events.
