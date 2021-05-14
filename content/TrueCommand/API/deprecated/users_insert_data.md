@@ -10,7 +10,7 @@ chapter: false
 | users | insert_data | no | no | no | 1 |2.0|
 
 {{% pageinfo %}}
-This API namespace was removed in version 2.0
+This API namespace was removed in version 2.0.
 Please look at the users/set_data API for the alternative to this functionality.
 {{% /pageinfo %}}
 
@@ -22,7 +22,7 @@ This is different from the users/set_data API call in that the fields within the
 
 ### Input Arguments
 * Required:
-   * Anything as long as the input arguments are a Json Object
+   * Anything as long as the input arguments are a Json Object.
 
 ### Request Example Arguments
 **ARGUMENTS ONLY**: See the {{< api-link "basics" >}} of API requests for additional formatting information.
@@ -36,7 +36,7 @@ This is different from the users/set_data API call in that the fields within the
 }
 ```
 
-### Reply Example
+### Reply Example:
 ```
 {
   "namespace" : "response",
@@ -51,7 +51,7 @@ This is different from the users/set_data API call in that the fields within the
 }
 ```
 
-### Changes from Example
+### Changes from Example.
 Original saved data:
 ```
 {
@@ -79,7 +79,7 @@ After change from the request above:
 Note that the entire "dataobject" was replaced. If you only want to insert an item into dataobject, then you will want to use the users/insert_data_value API call instead.
 
 ### Log Summary
-This API call does not generate a detailed log summary item
+This API call does not generate a detailed log summary item.
 
 ### Events
 This API call does not emit any middleware events.
