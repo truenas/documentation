@@ -10,14 +10,14 @@ chapter: false
 | servers | remove | yes | yes | yes | 1 |
 
 #### Description
-Remove a FreeNAS/TrueNAS server from the administration framework
+Remove a FreeNAS/TrueNAS server from the administration framework.
 
-NOTE: Administrator access only - non-administrators will receive a 403/Forbidden error
+NOTE: Administrator access only - non-administrators will receive a 403/Forbidden error.
 
 NOTE 2: This will not remove the data previously collected from the server - just the connection/management of the server.
 
 ### Input Arguments
-* Required Arguments: "id" (string or array of strings) ID of the server(s) to remove
+* Required Arguments: "id" (string or array of strings) ID of the server(s) to remove.
 
 
 ### Request Example Arguments
@@ -29,7 +29,7 @@ NOTE 2: This will not remove the data previously collected from the server - jus
 }
 ```
 
-### Reply Example
+### Reply Example:
 ```
 {
   "result" : "success"
