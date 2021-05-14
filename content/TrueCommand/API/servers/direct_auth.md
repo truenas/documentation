@@ -10,8 +10,8 @@ chapter: false
 | servers | direct_auth | no | no | no | 1 |
 
 #### Description
-Request direct access to a server (requires user write permissions for server)
-This will return all the necessary information to directly connect to the server for advanced configuration
+Request direct access to a server (requires user write permissions for server).
+This will return all the necessary information to directly connect to the server for advanced configuration.
 
 NOTE: The authentication token returned is only temporary - any significant delay in using it to login to the server may result in the token becoming invalid.
 
@@ -53,7 +53,7 @@ NOTE: The authentication token returned is only temporary - any significant dela
 This API call does not emit any middleware events.
 
 ### Log Summary
-This API call does not generate a detailed log summary item
+This API call does not generate a detailed log summary item.
 
 #### See Also
 * {{< api-link "servers/add" >}}
