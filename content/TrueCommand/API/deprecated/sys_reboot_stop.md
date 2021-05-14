@@ -10,7 +10,7 @@ chapter: false
 | sys | reboot_stop | Yes | no | Yes | 1.1 | 1.2 |
 
 #### Description
-**API Call Obsolete : Removed in version 1.2**
+**API Call Obsolete : Removed in version 1.2**.
 
 Cancel any pending reboot or shudown procedure. Requires administrator permissions.
 
@@ -38,7 +38,7 @@ OR if no reboot is scheduled:
 ```
 
 ### Log Summary
-This API call does not generate a detailed log summary item
+This API call does not generate a detailed log summary item.
 
 ### Events
 This will generate a "sys/reboot" event with the following arguments:
