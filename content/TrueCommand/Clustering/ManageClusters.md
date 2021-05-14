@@ -7,6 +7,10 @@ weight: 20
 
 Clustered Volumes have differing management options based on cluster type.
 
+{{< hint danger >}}
+Removing and/or Replacing bricks from a clustered volume may lead to data corruption.  Do not attempt to utilize this feature at the current time. 
+{{< /hint >}}
+
 {{< tabs "Types of Clustered Volumes" >}}
 {{< tab "Distributed" >}}
 
@@ -144,5 +148,9 @@ A confirmation box will appear and the deletion must be confirmed before proceed
 ![DispersedClusterDelete](/images/TrueCommand/2.0/DispersedClusterDelete.png "DispersedClusterDelete")
 
 After checking the confirm box, Click **OK** to delete the cluster.
+{{< /tab >}}
+{{< tab "Distributed Dispersed" >}}
+
+
 {{< /tab >}}
 {{< /tabs >}}
