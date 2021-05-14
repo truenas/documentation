@@ -10,9 +10,9 @@ chapter: false
 | servers | edit | yes | yes | yes | 1 |
 
 #### Description
-Modify an existing server settings
+Modify an existing server settings.
 
-NOTE: Administrator access only - non-administrators will receive a 403/Forbidden error
+NOTE: Administrator access only - non-administrators will receive a 403/Forbidden error.
 
 ### Input Arguments
 * Required Arguments: "id" (string)
@@ -24,7 +24,7 @@ NOTE: Administrator access only - non-administrators will receive a 403/Forbidde
    * "groups" (JsonArray of strings)
    * "tags" (JsonArray) : Search tags, Format - ["tag_1", "tag_2"],
    * "connection_paused" (boolean) : Pause the connection. Will connect to the system and allow minimal access, but no stats or probes will run on the NAS.
-   * "ignore_alerts" (string or JsonArray of strings) : Types of passthrough alerts to ignore from the NAS
+   * "ignore_alerts" (string or JsonArray of strings) : Types of passthrough alerts to ignore from the NAS.
       * Valid types: "information", "warning", "critical", or "all". Submit a null value to reset back to system defaults.
 
 ### Request Example Arguments
@@ -38,7 +38,7 @@ NOTE: Administrator access only - non-administrators will receive a 403/Forbidde
 }
 ```
 
-### Reply Example
+### Reply Example:
 ```
 {
   "server_id_1" : {
@@ -73,7 +73,7 @@ Example:
 ```
 
 ### Log Summary
-This API call does not generate a detailed log summary item
+This API call does not generate a detailed log summary item.
 ```
 "summary" : {
   "action" : "servers/edit",
