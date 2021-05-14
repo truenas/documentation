@@ -7,7 +7,7 @@ geekdocCollapseSection: true
 
 
 TrueCommand includes an easy to use interface for administrative configurations.  
-These include:
+Access to some of these areas may require a TrueCommand administrator account.
 
  + NAS Fleet Administration
    + NAS Configuration
@@ -20,6 +20,5 @@ These include:
    + User and Team Management
    + UI Theme settings
 
-Some of these actions may require a TrueCommand administrator account.
-
 {{< include file="static/includes/MenuNav.md.part" markdown="true" >}}
+
