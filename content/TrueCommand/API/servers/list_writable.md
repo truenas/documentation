@@ -26,7 +26,7 @@ List all the servers that the current user has write access to. This is useful f
 {}
 ```
 
-### Reply Example
+### Reply Example:
 ```
 {
   "server_id_1" : {
@@ -48,7 +48,7 @@ List all the servers that the current user has write access to. This is useful f
 This API call does not emit any middleware events.
 
 ### Log Summary
-This API call does not generate a detailed log summary item
+This API call does not generate a detailed log summary item.
 
 #### See Also
 * {{< api-link "servers/add" >}}
