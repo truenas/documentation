@@ -10,13 +10,13 @@ chapter: false
 | servers | groups_replace | yes | no | yes | 1 | 2.0 |
 
 #### Description
-Simplification for replacing the group assignments for existing servers
+Simplification for replacing the group assignments for existing servers.
 
-NOTE: Administrator access only - all others will get a 403/Forbidden error
+NOTE: Administrator access only - all others will get a 403/Forbidden error.
 
 ### Input Arguments
 * Required:
-   * "[server_id]" : String or array of strings for groups which need to include this server
+   * "[server_id]" : String or array of strings for groups which need to include this server.
 * Optional:
    * none ({})
 
@@ -60,7 +60,7 @@ Example:
 ```
 
 ### Log Summary
-This API call does not generate a detailed log summary item
+This API call does not generate a detailed log summary item.
 
 #### See Also
 * {{< api-link "servers/add" >}}
