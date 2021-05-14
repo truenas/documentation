@@ -10,7 +10,7 @@ chapter: false
 | users | insert_data_value | no | no | no | 1 | 2.0 |
 
 {{% pageinfo %}}
-This API namespace was removed in version 2.0
+This API namespace was removed in version 2.0.
 Please look at the users/set_data API for the alternative to this functionality.
 {{% /pageinfo %}}
 
@@ -34,7 +34,7 @@ This is different from the "set_data" API call in that the fields within the inp
 }
 ```
 
-### Reply Example
+### Reply Example:
 ```
 {
   "namespace" : "response",
@@ -77,7 +77,7 @@ After change from the request above:
 ```
 
 ### Log Summary
-This API call does not generate a detailed log summary item
+This API call does not generate a detailed log summary item.
 
 ### Events
 This API call does not emit any middleware events.
