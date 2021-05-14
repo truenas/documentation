@@ -6,6 +6,12 @@ weight: 30
 
 ![TrueCommandLogoFullColorRGB](/images/truecommand-logo-full-color-rgb.png)
 
+{{< hint info >}}
+TrueCommand 2.0 is now in Beta!
+To see a preview of this exciting new version, check out the [TrueCommand 2.0 Beta Documentation](https://truenas-documentation-deploy-pr-871.surge.sh/truecommand/).
+To try the 2.0 Beta, see the [2.0-Beta release notes]({{< relref "/ReleaseNotes/TrueCommand/2.0-Beta.md" >}}) for download instructions.
+{{< /hint >}}
+
 {{< hint warning >}}
 TrueCommand 2.0 and the documentation is currently in BETA and subject to change before full release.
 Please use caution when trying the BETA release of TrueCommand 2.0, as some features might still be getting tested and polished.
