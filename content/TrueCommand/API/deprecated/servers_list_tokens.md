@@ -12,11 +12,11 @@ chapter: false
 #### Description List all the current authentication tokens which are associated with a specific system.
 These are tokens that may be used to submit system information via the  "external" namespace of API calls, and are associated with a specific system registration.
 
-NOTE: Administrator access only - non-administrators will receive a 403/Forbidden error
+NOTE: Administrator access only - non-administrators will receive a 403/Forbidden error.
 
 ### Input Arguments
 * Required:
-   * "tvid" (string) : System ID for which to return current auth tokens
+   * "tvid" (string) : System ID for which to return current auth tokens.
 * Optional:
    * none ({})
 
@@ -45,6 +45,6 @@ NOTE: Administrator access only - non-administrators will receive a 403/Forbidde
 This API call does not emit any middleware events of it's own. Any modification of the available tokens will emit a "servers/list_tokens" event to notify other administrators of the change.
 
 ### Log Summary
-This API call does not generate a detailed log summary item
+This API call does not generate a detailed log summary item.
 
 #### See Also
