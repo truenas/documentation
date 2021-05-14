@@ -151,6 +151,9 @@ After checking the confirm box, Click **OK** to delete the cluster.
 {{< /tab >}}
 {{< tab "Distributed Dispersed" >}}
 
+{{< hint warning >}}
+Distributed Dispersed Volumes are not implemented at this time.
+{{< /hint >}} 
 
 {{< /tab >}}
 {{< /tabs >}}
