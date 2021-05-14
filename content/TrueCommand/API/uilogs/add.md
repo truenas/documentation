@@ -10,7 +10,7 @@ chapter: false
 | uilogs | add | no | no | no | 1 |
 
 #### Description
-Create a new log entry
+Create a new log entry.
 
 ### Input Arguments
 * Required Inputs:
@@ -25,7 +25,7 @@ Create a new log entry
 }
 ```
 
-### Reply Example
+### Reply Example:
 ```
 {
   "result" : "success",
@@ -39,7 +39,7 @@ This API call does not generate events.
 This API call does not generate a detailed log summary item.
 
 #### Changlog
-* **v2.0** : Reply structure no longer returns a copy of the new log entry
+* **v2.0** : Reply structure no longer returns a copy of the new log entry.
 
 #### See Also
 * {{< api-link "uilogs/list" >}}
