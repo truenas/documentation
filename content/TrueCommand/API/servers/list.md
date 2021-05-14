@@ -10,7 +10,7 @@ chapter: false
 | servers | list | no | no | no | 1 |
 
 #### Description
-List basic information about the associated servers
+List basic information about the associated servers.
 
 ### Input Arguments
 * Required Arguments: none ({})
@@ -26,7 +26,7 @@ List basic information about the associated servers
 ```
 
 ### Reply Example
-* Example Reply Arguments (read-only server)
+* Example Reply Arguments (read-only server):
 ```
 {
   "server1" : {
@@ -43,7 +43,7 @@ List basic information about the associated servers
 }
 ```
 
-* Example Reply Arguments (read-only server, with extra details requested)
+* Example Reply Arguments (read-only server, with extra details requested):
 ```
 {
   "server1" : {
@@ -66,7 +66,7 @@ List basic information about the associated servers
 }
 ```
 
-* Example Reply Arguments (read/write server)
+* Example Reply Arguments (read/write server):
 ```
 {
   "server1" : {
@@ -91,7 +91,7 @@ List basic information about the associated servers
 This API call does not emit any middleware events.
 
 ### Log Summary
-This API call does not generate a detailed log summary item
+This API call does not generate a detailed log summary item.
 
 
 #### See Also
