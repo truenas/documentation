@@ -10,7 +10,7 @@ chapter: false
 | servers | current_stats | no | no | yes | 1.0 | 2.0 |
 
 {{% notice warning %}}
-This API and it's associated event were removed in version 2.0
+This API and it's associated event were removed in version 2.0.
 {{% /notice %}}
 
 #### Description
@@ -88,7 +88,7 @@ Events from this change will be sent to all administrators and any user with rea
 ```
 
 ### Log Summary
-This API call does not generate a detailed log summary item
+This API call does not generate a detailed log summary item.
 
 #### See Also
 * {{< api-link "servers/add" >}}
