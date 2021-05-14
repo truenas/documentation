@@ -10,11 +10,11 @@ chapter: false
 | license | register | yes | no | yes | 1 |
 
 #### Description
-Register a new license with TrueCommand (administrator only)
+Register a new license with TrueCommand (administrator only).
 
 ### Input Arguments
 * Required:
-   * * "license_file_contents" : (string) Contents of the license file encapsulated as a string (file contents are already base64-encoded and can just be read/passed through as text)
+   * * "license_file_contents" : (string) The contents of the license file encapsulated as a string (file contents are already base64-encoded and can just be read/passed through as text).
 
 
 ### Request Example Arguments
@@ -48,7 +48,7 @@ This API call will generate a {{< api-link "license/check" >}} event.
 If the license expires while TrueCommand is still running, this will generate another {{< api-link "license/check" >}} event.
 
 ### Log Summary
-This API call does not generate a detailed log summary item
+This API call does not generate a detailed log summary item.
 
 
 #### See Also
