@@ -13,9 +13,9 @@ There are two main kinds of users within TrueCommand: administrators and non-adm
 
 *Administrators* are those who have full access to the appliance itself:
 
- * Add/remove user accounts
- * Add/remove system registrations
- * View audit logs
+ * Add/remove user accounts.
+ * Add/remove system registrations.
+ * View audit logs.
  * and more...
 
 *Non-Administrators* are those who can login to TrueCommand to view or change individual systems on the network with permissions that were assigned by an administrator. These accounts may still be system administrators, but only have access to manage a subset of all the system registered within the appliance.
