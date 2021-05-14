@@ -10,7 +10,7 @@ chapter: false
 | sys | update_now | yes | no | yes | 1 | 1.2 |
 
 #### Description
-**This API has been removed and is no longer available on version 1.2 and later**
+**This API has been removed and is no longer available on version 1.2 and later**.
 
 Perform TrueCommand system updates and reboot the system. Note that for offline updates, this process generally takes less than 10 seconds before the system will reboot to finish the update. For online updates this may take a while longer while it downloads the update files. During an online update, the current status of the update process can be found with the sys/update_status API call.
 
@@ -55,7 +55,7 @@ Perform TrueCommand system updates and reboot the system. Note that for offline 
 ```
 
 ### Log Summary
-This API call does not generate a detailed log summary item
+This API call does not generate a detailed log summary item.
 
 ### Events
 | Name | Who Receives |
@@ -77,7 +77,7 @@ There are 3 different types of events that will get sent out, but all of them wi
 }
 ```
 
-2. When the update process finishes
+2. When the update process finishes.
 Example:
 ```
 {
