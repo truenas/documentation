@@ -17,11 +17,11 @@ This is useful to save/restore a cache of user settings that might be needed by 
 * Required:
    * none ({})
 * Optional:
-   * "key_path" : [Depricated in v2.0] "/"-delimited JSON object path (Example: "my/settings/variable")
-   * "key_default_value" : [Depricated in v2.0] Value returned if the key path does not exist in the JSON data (empty string by default)
+   * "key_path" : [Depricated in v2.0] "/"-delimited JSON object path (Example: "my/settings/variable").
+   * "key_default_value" : [Depricated in v2.0] Value returned if the key path does not exist in the JSON data (empty string by default).
 
 ### Examples
-* Example data stored on the server
+* Example data stored on the server:
 
 ```
 {
@@ -34,7 +34,7 @@ This is useful to save/restore a cache of user settings that might be needed by 
 }
 ```
 
-* Example Reply Arguments (no "key_path", returns full JSON data)
+* Example Reply Arguments (no "key_path", returns full JSON data):
 
 ```
 {
