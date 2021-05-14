@@ -8,7 +8,7 @@ no_list: true
 
 
 ## API Class: logs
-API call to access the audit logs maintained by the middleware
+API call to access the audit logs maintained by the middleware.
 
 
 ## Reference Guide
