@@ -10,13 +10,13 @@ chapter: false
 | servers | groups_remove | yes | no | no | 1 |
 
 #### Description
-Simplification for removing existing servers from existing groups
+Simplification for removing existing servers from existing groups.
 
-NOTE: Administrator access only - all others will get a 403/Forbidden error
+NOTE: Administrator access only - all others will get a 403/Forbidden error.
 
 ### Input Arguments
 * Required:
-   * "[server_id]" : String or array of strings for groups which need to be removed from this server
+   * "[server_id]" : String or array of strings for groups which need to be removed from this server.
 * Optional:
    * none ({})
 
@@ -31,13 +31,13 @@ NOTE: Administrator access only - all others will get a 403/Forbidden error
 }
 ```
 
-* Example Group Assignments (initial, before example request)
+* Example Group Assignments (initial, before example request):
 ```
   "server_id_1" : [ "previous_group_1", "previous_group_2" ],
   "server_id_2" : [ "previous_group_1", "previous_group_2" ]
 ```
 
-### Reply Example
+### Reply Example:
 ```
 {
   "server_id_1" : [ "previous_group_2" ],
@@ -66,7 +66,7 @@ Example:
 ```
 
 ## Log Summary
-This API call does not generate a detailed log summary item
+This API call does not generate a detailed log summary item.
 
 #### See Also
 * {{< api-link "servers/add" >}}
