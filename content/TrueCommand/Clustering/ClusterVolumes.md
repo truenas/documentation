@@ -15,9 +15,6 @@ Do not rely on this for critical data.
 Gluster requires TrueNAS systems to have a static IP.  TrueNAS with DHCP enabled can not be part of a Cluster Volume.
 {{< /hint >}}
 
-{{< hint danger >}}
-Removing and/or Replacing bricks from a clustered volume may lead to data corruption.  Do not attempt to utilize this feature at the current time. 
-{{< /hint >}}
 
 
 To create a Cluster Volume, click the Cluster Volume button <mat-icon role="img" fontset="mdi" aria-hidden="true" class="mat-icon mdi mdi-server-network mat-icon-no-color"></mat-icon> in the top left of the dashboard or the Cluster Volume button in the Settings Menu <i class="material-icons" aria-hidden="true" title="Settings">settings</i> dropdown.
@@ -27,7 +24,7 @@ Name the Cluster, select the type in the *Volume Type* Drop down, and set the re
 
 ![ClusterVolumeTypeSelection](/images/TrueCommand/2.0/ClusterVolumeTypeSelection.png "Cluster Volume Type Selection")
 
-There are four types of Clustered Volumes available.
+There are five types of Clustered Volumes.
 
 {{< tabs "Types of Clustered Volumes" >}}
 {{< tab "Distributed" >}}
@@ -52,17 +49,10 @@ Once the volume is made, you can view its status.
 
 {{< /tab >}}
 {{< tab "Replicated" >}}
-In a Replicated Volume, the risk of data loss in a distributed volume is overome. Exact copies of the all of the data are maintained on all bricks. The number of replicas in the volume is determined when creating the volume. At least two bricks are needed to create a volume.  For further redundancy, add more bricks.  A 2 brick volume will have 2 replicas, while a three brick volume will contain 3 replicas. A replicated volume will allow data to still be accessed even if a single brick fails. A Replicated volume is used for better reliability and data redundancy.
+In a Replicated Volume, the risk of data loss in a distributed volume is overome. Exact copies of the all of the data are maintained on all bricks. The number of replicas in the volume is determined when creating the volume. At least three bricks are needed to create a volume.  For further redundancy, add more bricks.  A three brick volume will have 3 replicas, while a four brick volume will contain 4 replicas. A replicated volume will allow data to still be accessed even if a single brick fails. A Replicated volume is used for better reliability and data redundancy.
 
-The **Replica value** for a Replicated Volume must either equal the number of bricks selected or be *n-1* if using an Arbiter.
 {{< hint danger >}}
 Using a Replica count of 0 will result in a distributed volume and offer no data integrity saftey. 
-{{< /hint >}}
-{{< hint warning >}}
-When using an arbiter, deselect the *Sync Sizes* option and manually set a size for the Arbiter brick. The size of the arbiter needs to be 4kb * the number of files you expect to store on the volume.  Depending on the type of data being stored, that could be much smaller or much larger than the brick size.
-{{< /hint >}}
-{{< hint danger >}}
-If an Arbiter is being used, ensure that the size is of sufficient size.  If the Arbiter brick runs out of space, the node will crash and the Arbiter brick cannot be restarted.  This will result in a split-brain situation which can lead to data corruption.
 {{< /hint >}}
 
 Click the *Brick Choices* drop down and check the locations to use for bricks.
@@ -134,6 +124,14 @@ Review the configuration and click **Create** to create the Volume.
 Once the volume is made, you can view its status.
 
 ![DispersedClusterCard](/images/TrueCommand/2.0/DispersedClusterCard.png "DispersedClusterCard")
+
+{{< /tab >}}
+
+{{< tab "Distributed Dispersed" >}}
+
+{{< hint warning >}}
+Distributed Dispersed Volumes are not implemented at this time.
+{{< /hint >}} 
 
 {{< /tab >}}
 {{< /tabs >}}
