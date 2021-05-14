@@ -10,7 +10,7 @@ chapter: false
 | sys | update_status | no | no | no | 1 | 1.2 |
 
 #### Description
-**This API has been removed and is no longer available on version 1.2 and later**
+**This API has been removed and is no longer available on version 1.2 and later**.
 
 View the log file for the current update procedure, and report whether the system is waiting to reboot to finish performing updates.
 
@@ -32,7 +32,7 @@ View the log file for the current update procedure, and report whether the syste
 }
 ```
 ### Log Summary
-This API call does not generate a detailed log summary item
+This API call does not generate a detailed log summary item.
 
 ### Events
 This API call does not emit any middleware events.
