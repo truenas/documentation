@@ -10,7 +10,7 @@ chapter: false
 | logs | search | no | no | no | 1 |
 
 #### Description
-Search through the logs and return results
+Search through the logs and return results.
 
 ### Input Arguments
 * Required Arguments: none ({})
@@ -61,4 +61,4 @@ This API call does not emit any middleware events.
 
 
 ### Log Summary
-This API call does not generate a detailed log summary item
+This API call does not generate a detailed log summary item.
