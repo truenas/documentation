@@ -31,7 +31,7 @@ This is useful to save/restore a cache of user settings that might be needed by 
 }
 ```
 
-### Reply Example
+### Reply Example:
 ```
 {
   "namespace" : "response",
@@ -43,7 +43,7 @@ This is useful to save/restore a cache of user settings that might be needed by 
 }
 ```
 ### Log Summary
-This API call does not generate a detailed log summary item
+This API call does not generate a detailed log summary item.
 
 ### Events
 This API call does not emit any middleware events.
