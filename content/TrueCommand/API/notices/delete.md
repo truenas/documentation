@@ -27,7 +27,7 @@ Delete an alert notice in its entirety. There is no way to recover an alert noti
 }
 ```
 
-### Reply Example
+### Reply Example:
 ```
 {]
 ```
