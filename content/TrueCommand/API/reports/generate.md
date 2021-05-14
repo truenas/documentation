@@ -14,11 +14,11 @@ This will take a designated report object with a time range and system list and 
 
 ### Input Arguments
 * Required Arguments: 
-   * "roid" (string) : Report Object ID for the report to generate
+   * "roid" (string) : Report Object ID for the report to generate.
    * "tvid" (string or JsonArray of strings) : System(s) for which to generate the report.
-   * "time_start" (int64) : Unix timestamp for start time (seconds since epoch)
+   * "time_start" (int64) : Unix timestamp for start time (seconds since epoch).
 * Optional Arguments:
-   * "time_end" (int64) : Unix timestamp for end time (seconds since epoch)
+   * "time_end" (int64) : Unix timestamp for end time (seconds since epoch).
       * Default Value: Current time
 
 The user requesting the report must have read permission for the designated report and systems, otherwise a BAD REQUEST error will be returned.
@@ -34,7 +34,7 @@ The user requesting the report must have read permission for the designated repo
 }
 ```
 
-### Reply Example
+### Reply Example:
 ```
 {
   "namespace" : "reports",
@@ -72,7 +72,7 @@ The user requesting the report must have read permission for the designated repo
 }
 ```
 ### Log Summary
-This API call does not generate a detailed log summary item
+This API call does not generate a detailed log summary item.
 
 ### Events
 This this API call does not emit any middleware events.
