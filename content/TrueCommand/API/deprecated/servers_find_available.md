@@ -10,11 +10,11 @@ chapter: false
 | servers | find_available | yes | no | no | 1 | 1.2 |
 
 #### Description
-**This API call has been removed in version 1.2**
+**This API call has been removed in version 1.2**.
 
 Ask for a list of all non-associcated servers on the local network which are discoverable via MDNS.
 
-NOTE: Administrator access only - all others will get a 403/Forbidden error
+NOTE: Administrator access only - all others will get a 403/Forbidden error.
 
 ### Input Arguments
 * Required:
@@ -52,7 +52,7 @@ NOTE: Administrator access only - all others will get a 403/Forbidden error
 This API call does not emit any middleware events.
 
 ### Log Summary
-This API call does not generate a detailed log summary item
+This API call does not generate a detailed log summary item.
 
 #### See Also
 * {{< api-link "servers/add" >}}
