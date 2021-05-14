@@ -12,7 +12,7 @@ draft: false
 List all the current groups and which servers are associated with each group.
 If a non-administrator makes this API call, it will only return information about the groups that the user currently has access to see.
 
-NOTE: Administrator access requirement removed in version 1.2
+NOTE: Administrator access requirement removed in version 1.2.
 
 ### Input Arguments
 * Required:
@@ -28,7 +28,7 @@ NOTE: Administrator access requirement removed in version 1.2
 {}
 ```
 
-### Reply Example
+### Reply Example:
 ```
 {
   "group1" : ["server_1", "server_2"],
