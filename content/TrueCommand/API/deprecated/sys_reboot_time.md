@@ -10,7 +10,7 @@ chapter: false
 | sys | reboot_time | no | no | no | 1 | 1.2 |
 
 #### Description
-**API Call Obsolete : Removed in version 1.2**
+**API Call Obsolete : Removed in version 1.2**.
 
 See if there is a scheduled reboot of the TrueCommand system, and the time remaining before the system reboot occurs.
 
@@ -41,7 +41,7 @@ OR if no reboot is scheduled:
 ```
 
 ### Log Summary
-This API call does not generate a detailed log summary item
+This API call does not generate a detailed log summary item.
 
 ### Events
 This API call does not emit any middleware events.
