@@ -12,11 +12,11 @@ chapter: false
 #### Description
 Create authentication tokens that are associated with a specific system. These tokens may be used to submit information to TrueCommand via the "external" namespace of API calls.
 
-NOTE: Administrator access only - all others will get a 403/Forbidden error
+NOTE: Administrator access only - all others will get a 403/Forbidden error.
 
 ### Input Arguments
 * Required:
-   * "tvid" (string) : System ID for where to generate auth tokens
+   * "tvid" (string) : System ID for where to generate auth tokens.
    * "name" (string or Json Array of strings) : Nickname(s) for the tokens to create. These should generally be useful for the user to remember what they were using the token for.
       *  The names given here must be unique. This API will not overwrite existing tokens if the name was already created previously.
 
