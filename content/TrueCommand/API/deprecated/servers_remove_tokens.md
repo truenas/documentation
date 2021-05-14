@@ -12,12 +12,12 @@ chapter: false
 #### Description
 Remove special access tokens from server registrations.
 
-NOTE: Administrator access only - all others will get a 403/Forbidden error
+NOTE: Administrator access only - all others will get a 403/Forbidden error.
 
 ### Input Arguments
 * Required:
-   * "tvid" (string) : System ID where the auth token needs to be removed
-   * "name" (string or Json Array of strings) : Name(s) of the tokens to remove
+   * "tvid" (string) : The System ID where the auth token needs to be removed.
+   * "name" (string or Json Array of strings) : The name(s) of the tokens to remove.
 * Optional:
    * none ({})
 
@@ -47,6 +47,6 @@ NOTE: Administrator access only - all others will get a 403/Forbidden error
 This API call will emit a "servers/list_tokens" event to notify other administrators of the change.
 
 ## Log Summary
-This API call does not generate a detailed log summary item
+This API call does not generate a detailed log summary item.
 
 #### See Also
