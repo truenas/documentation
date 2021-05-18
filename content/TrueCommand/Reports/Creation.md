@@ -54,6 +54,6 @@ After creating a report, you can click **GENERATE** to [generate the report]({{<
 By default, the reports created by a user are available only to that user.
 To share a report with other users or teams, open the Reports page and click the <mat-icon _ngcontent-fxr-c199="" role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true">share</mat-icon> icon for the chart.
 
-![ReportsSharing](/images/TrueCommand/1.3/ReportsShareReport.png "Reports Sharing")
+![ReportsSharing](/images/TrueCommand/2.0/ReportsShareReport.png "Reports Sharing")
 
 You can share reports with individual users or entire teams.
