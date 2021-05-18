@@ -3,13 +3,11 @@ title: "Creating a Report"
 weight: 10
 ---
 
-<!-- Rework this article to only cover building a report in tc -->
-
 {{< toc >}}
 
 The **Reports** page customizes system metrics charts for data analysis.
 
-![ReportsList](/images/TrueCommand/1.3/ReportsList.png "Reports List")
+![ReportsList](/images/TrueCommand/2.0/ReportsList.png "Reports List")
 
 TrueCommand users can create reports and share them with other TrueCommand users.
 We designed default reports that generate a basic system overview chart.
@@ -22,11 +20,11 @@ Users must have access to the analyzed systems to view their reports.
 Click *+ CREATE REPORT* to create a customizable report.
 Enter a report name and an optional description for the report.
 
-![ReportsCreate](/images/TrueCommand/1.3/ReportsCreate.png "Create a new report")
+![ReportsCreate](/images/TrueCommand/2.0/ReportsCreateReportNameDescription.png "Create a new report")
 
 Click *BROWSE WIDGETS* or *WIDGET* to add charts to the report.
 
-![ReportsCreateWidgetsAdd](/images/TrueCommand/1.3/ReportsCreateWidgetsAdd.png "Adding widgets to a new report")
+![ReportsCreateWidgetsAdd](/images/TrueCommand/2.0/ReportsCreateReportWidgets.png "Adding widgets to a new report")
 
 ### Custom Charts
 
@@ -42,45 +40,20 @@ Fill in these options when adding a custom chart:
 * Summary: This step shows the all of the chosen values.
   Click *SAVE* to add the custom chart to the report or *BACK* to go back and change a setting or data source.
 
-After adding charts to the report, click *SAVE* to make this report available for use.
+After adding charts to the report, click **SAVE** to make this report available for use.
 
-After creating a report, click *GENERATE* to generate the report.
 
-![ReportsGenerateSystemSelect](/images/TrueCommand/1.3/ReportsGenerateSystemSelect.png "Selecting System for a report")
+![ReportsCreateReportSave](/images/TrueCommand/2.0/ReportsCreateReportSave.png "Reports Create Report Save")
 
-Next, add in the range and systems to be included in the report and click *GENERATE*.
+After creating a report, you can click **GENERATE** to [generate the report]({{< relref "Generation.md" >}}) or you can go back to the reports page and make create another report.
 
-![ReportsView](/images/TrueCommand/1.3/ReportsView.png "Reports View")
-
-TrueCommand will now generate and display the report.
-
-![Reports Generated](/images/TrueCommand/1.3/ReportsGenerated.png "Reports Generated")
+![ReportsGenerate](/images/TrueCommand/2.0/ReportsGenerate.png "Reports Generate")
 
 ## Share Report
 
 By default, the reports created by a user are available only to that user.
-To share a report with other users or teams, open the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu > **Reports** screen and click *Share*.
-You can also share reports after generating them.
+To share a report with other users or teams, open the Reports page and click the <mat-icon _ngcontent-fxr-c199="" role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true">share</mat-icon> icon for the chart.
 
-![ReportsSharing](/images/TrueCommand/1.3/ReportsSharing.png "Reports Sharing")
+![ReportsSharing](/images/TrueCommand/1.3/ReportsShareReport.png "Reports Sharing")
 
 You can share reports with individual users or entire teams.
-Set either *OWNER* or *SHARED WITH* for the desired user.
-Users with the **SHARED WITH** status can view the report, while the **OWNER** status allows that user to edit the report.
-Clicking the **OWNER** or **SHARED WITH** text toggles every name in the list.
-
-## Viewing a System Report
-
-Open the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu > **Reports** page and click *Generate report* <i class="material-icons" aria-hidden="true" title="Eye">visibility</i> on the appropriate report.
-Click *GENERATE* to select the systems and time frame for the report.
-
-![ReportsGenerateDates](/images/TrueCommand/1.3/ReportsGenerateDates.png "Report Time Frame")
-<br>
-
-![ReportsGenerateDatesSelect](/images/TrueCommand/1.3/ReportsGenerateDatesSelect.png "Select dates for a report")
-
-A non-administrative user must have the appropriate permissions to view data from specific systems.
-
-Clicking *Confirm* shows the saved charts from the report, populated with system data according to the selected amount of time.
-
-![ReportsGenerated](/images/TrueCommand/1.3/ReportsGenerated.png "Report Generated")
