@@ -12,7 +12,7 @@ Cluster capability has been added with TrueCommand 2.0, as well as applying True
 
 ## Config Management
 
-TrueCommand can manage TrueNAS [Config files]({{< relref "/truecommand/truenasconfigmanage.md/" >}}).  TrueCommand can also restore those files to multiple systems.
+TrueCommand can manage TrueNAS [Config files]({{< relref "truenasconfigmanage.md" >}}).  TrueCommand can also restore those files to multiple systems.
 
 To apply a config to multiple systems, first create a config backup from the TrueNAS system you with the settings you wish to apply to other TrueNAS units. 
 
@@ -42,7 +42,7 @@ Once the systems have been chosen, click **CONFIRM** to upload the config backup
 
 ## iSCSI Management
 
-When creating an iSCSI Volume with TrueCommand they can be configured on multiple systems at the same time. [Refer to the iSCSI Section of the Documentation for further information]({{< relref "/truecommand/iscsimanagement.md/" >}})
+When creating an iSCSI Volume with TrueCommand they can be configured on multiple systems at the same time. [Refer to the iSCSI Section of the Documentation for further information]({{< relref "iscsimanagement.md" >}})
 
 ## Cluster Managemnet
 
