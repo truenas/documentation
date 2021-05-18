@@ -12,7 +12,7 @@ chapter: false
 #### Description
 Simplification for renaming a server group to a different name. If a group with the new name exists, then this will effectively "merge" the old group into the new one.
 
-NOTE: Administrator access only - all others will get a 403/Forbidden error
+NOTE: Administrator access only - all others will get a 403/Forbidden error.
 
 ### Input Arguments
 * Required:
@@ -32,7 +32,7 @@ NOTE: Administrator access only - all others will get a 403/Forbidden error
 }
 ```
 
-### Reply Example
+### Reply Example:
 ```
 {
   "result" : "success",
@@ -43,7 +43,8 @@ NOTE: Administrator access only - all others will get a 403/Forbidden error
 
 
 ### Events
-This API call will generate a standard "servers/list_groups" event due to the group name changes.
+This API call will generate a standard "servers/list_groups" event due to the group name changes,
+as well as "servers/list".
 See the {{< api-link "servers/list_groups" >}} API documentation for event formatting and examples.
 
 ## Log Summary
@@ -61,12 +62,9 @@ Log entries for this API call will have the following "summary" object.
 
 #### See Also
 * {{< api-link "servers/add" >}}
-* {{< api-link "servers/current_stats" >}}
 * {{< api-link "servers/direct_auth" >}}
 * {{< api-link "servers/edit" >}}
-* {{< api-link "servers/find_available" >}}
 * {{< api-link "servers/groups_add" >}}
-* {{< api-link "servers/groups_replace" >}}
 * {{< api-link "servers/list" >}}
 * {{< api-link "servers/list_groups" >}}
 * {{< api-link "servers/list_writable" >}}

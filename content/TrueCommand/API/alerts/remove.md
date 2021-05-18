@@ -14,7 +14,7 @@ Delete an existing alert rule. The user making the request must either be an adm
 
 ### Input Arguments
 * Required:
-   * "caid" : (string) ID of the custom alert to remove
+   * "caid" : (string) ID of the custom alert to remove.
 * Optional:
    * none ({})
 
@@ -52,7 +52,7 @@ Example:
 ```
 
 ### Log Summary
-This API call does not generate a detailed log summary item
+This API call does not generate a detailed log summary item.
 
 
 #### See Also

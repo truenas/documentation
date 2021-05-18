@@ -10,15 +10,14 @@ chapter: false
 | servers | remove | yes | yes | yes | 1 |
 
 #### Description
-Remove a FreeNAS/TrueNAS server from the administration framework
+Remove a FreeNAS/TrueNAS server from the administration framework.
 
-NOTE: Administrator access only - non-administrators will receive a 403/Forbidden error
+NOTE: Administrator access only - non-administrators will receive a 403/Forbidden error.
 
 NOTE 2: This will not remove the data previously collected from the server - just the connection/management of the server.
 
 ### Input Arguments
-* Required Arguments: "id" (string) ID string for the server to remove
-   * Added in v1.1: "id" may also be a JSON array of strings, each string being the ID of a server to remove.
+* Required Arguments: "id" (string or array of strings) ID of the server(s) to remove.
 
 
 ### Request Example Arguments
@@ -30,7 +29,7 @@ NOTE 2: This will not remove the data previously collected from the server - jus
 }
 ```
 
-### Reply Example
+### Reply Example:
 ```
 {
   "result" : "success"
@@ -38,13 +37,13 @@ NOTE 2: This will not remove the data previously collected from the server - jus
 ```
 
 ### Events
-Events from this change will be sent to **all** active connections. 
+Events from this change will be sent to **all** active connections. A separate "servers/remove" event was removed in 2.0.
 
 Example:
 ```
 {
 "namespace" : "event",
-"name" : "servers/remove",
+"name" : "servers/list",
 "id" : "",
 "args" : {
   "tvid" : ["server_id_1"]
@@ -69,15 +68,15 @@ Log entries for this API call will have the following "summary" object. Note tha
 }
 ```
 
+#### Changelog
+* **v1.1** : "id" field supports an array of id's for bulk operations now.
+
 #### See Also
 * {{< api-link "servers/add" >}}
-* {{< api-link "servers/current_stats" >}}
 * {{< api-link "servers/direct_auth" >}}
 * {{< api-link "servers/edit" >}}
-* {{< api-link "servers/find_available" >}}
 * {{< api-link "servers/groups_add" >}}
 * {{< api-link "servers/groups_remove" >}}
-* {{< api-link "servers/groups_replace" >}}
 * {{< api-link "servers/list" >}}
 * {{< api-link "servers/list_groups" >}}
 * {{< api-link "servers/list_writable" >}}

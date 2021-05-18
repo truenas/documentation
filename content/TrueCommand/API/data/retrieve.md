@@ -11,21 +11,19 @@ chapter: false
 | data | retrieve | no | no | yes | 1 |
 
 #### Description
-Retrieve data from specified servers/fields
+Retrieve data from specified servers/fields.
 
 ### Input Arguments
 * Required Arguments: 
-   * "tvid" (string or JsonArray of strings)
-   * "time_start" (string)
+   * "tvid" (string) : ID of the system to fetch data for
+   * "time_start" (int64) : Unix timestamp of the start time (seconds since epoch)
 * Optional Arguments:
-   * "time_end" (string - if not supplied it defaults to the current time)
-   * "raw_objects" (bool) : Show raw system information rather than the compressed system summary (false by default)
-   * "data_list" (string, JsonArray of strings, or null)
-      * Path(s) to the data from the stats tree that you would like returned (using the "%"-delimiter for object names).
-      * If null, the full stats object will be returned.
-      * Default value: `["cpu","cpu_temp","disks","memory","network", "storage","time_t"]`
+   * "time_end" (int64) : Unix timestamp for the end time (seconds since epoch)
+      * If not supplied it defaults to the current time
+   * "metrics" (array of strings) : List of measurements to return. See {{< api-link "data/list_fields" >}}.
+      * This always returns the "avg" field for the given measurements. 
 
-For information about the time formats, please look at the [Input Time Codes section]({{< relref "timecodes.md" >}}) for details.
+For information about the time formats, please look at the **Input Time Codes** section in the {{< api-link "timecodes" >}} page for details.
 
 
 ### Request Example Arguments
@@ -172,8 +170,14 @@ Example:
 ```
 
 ### Log Summary
-This API call does not generate a detailed log summary item
+This API call does not generate a detailed log summary item.
 
+### Changelog
+* **v2.0**
+   * "tvid" input changed to string-only (remove support for a list of strings).
+   * "time_start" and "time_end" input formats changed to unix timestamp only.
+   * "raw_objects" input option removed.
+   * "data_list" input option removed (replaced by the "metrics" option).
 
 #### See Also
 * {{< api-link "data/current_stats" >}}

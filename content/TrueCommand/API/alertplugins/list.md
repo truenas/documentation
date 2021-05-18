@@ -36,7 +36,7 @@ List all the alert provider plugins that are currently installed.
     "tags":["email","ssmtp","sendmail","plaintext"],
     "maintainer":[
       {"name":"Ken Moore","email":"ken@ixsystems.com","site_url":""},
-      {"name":"iXsystems","email":"support@ixsystems.com","site_url":"https://ixsystems.com"}
+      {"name":"iXsystems","email":"support@ixsystems.com","site_url":"http://ixsystems.com"}
     ],
     "repository":"ix-alertme",
     "depends":[
@@ -130,9 +130,11 @@ List all the alert provider plugins that are currently installed.
 This API call does not emit any middleware events.
 
 ### Log Summary
-This API call does not generate a detailed log summary item
+This API call does not generate a detailed log summary item.
 
+### Changelog
+* **v2.0** : Supported fields/settings for the "smtp-email" plugin changed significantly. Run this API to see the current "api" fields.
 
 #### See Also
-* {{< api-link "alertplugins/add" >}}
-* {{< api-link "alertplugins/remove" >}}
+* {{< api-link "alertplugins/current_settings" >}}
+* {{< api-link "alertplugins/change_settings" >}}

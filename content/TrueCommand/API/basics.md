@@ -9,7 +9,7 @@ There are 4 basic pieces of an API request:
 
 * Namespace: Top-level subsystem to access
 * Name: Lower-level subsystem to access
-* ID: (Websocket only) Used for correlating a request with a reply (Websocket connections are asynchronous - replies may come back in a different order than they were requested)
+* ID: (Websocket only) Used for correlating a request with a reply (Websocket connections are asynchronous - replies may come back in a different order than they were requested.)
 * Arguments: JSON Object containing additional information for the request/reply
 
 ## HTTP Connections
@@ -28,7 +28,7 @@ Authorization: basic [base-64 encoded "[user]:[pass]"]
 
 Example of using curl to sent a TCP/REST request:
 ```
-curl -l -g --data '{}' -u "username:password" -X GET https://[IP_ADDRESS]/api/[NAMESPACE]/[NAME]
+curl -l -g --data '{}' -u "username:password" -X GET http://[IP_ADDRESS]/api/[NAMESPACE]/[NAME]
 ```
 
 ## WebSocket Connections

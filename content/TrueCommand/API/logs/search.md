@@ -10,27 +10,25 @@ chapter: false
 | logs | search | no | no | no | 1 |
 
 #### Description
-Search through the logs and return results
+Search through the logs and return results.
 
 ### Input Arguments
 * Required Arguments: none ({})
 * Optional Arguments: 
-   * "time_end" (string - if not supplied it defaults to the current time)
-   * "time_start" (string - if not supplied it defaults to one month prior to the end time)
-   * "user_id" (string - only return log entries associated with this user)
-   * "api_header" (string - only return log entries associed with a particular API call: such as "users/add" or "servers/edit")
+   * "time_end" (time_t - if not supplied it defaults to the current time)
+   * "time_start" (time_t - if not supplied it defaults to one month prior to the end time)
+   * "uuid" (string - only return log entries associated with this user)
+   * "header" (string or array of strings - only return log entries associed with particular API calls: such as "users/add" or "servers/edit")
 
-For information about the time formats, please look at the [Input Time Codes section]({{< relref "timecodes.md" >}}) for details.
+For information about the time formats, please look at the Input Time Codes section for details.
 
 ### Request Example Arguments
 **ARGUMENTS ONLY**: See the {{< api-link "basics" >}} of API requests for additional formatting information.
 
 ```
 
-  "user_id" : "user_uuid",
-  "time_end" : "5d",
-  "time_start" : "30d",
-  "api_header" : "users/add"
+  "uuid" : "user_uuid",
+  "header" : "users/add"
 }
 ```
 
@@ -42,21 +40,15 @@ NOTE: The actual reply structure will be much more expansive than shown here (mo
   "logs_end" : "2017-03-31T10:10:03Z",
   "logs" : [
     {
-      "logtime" : <ISO 8601 date format (yyyy-MM-ddThh:mm:ssZ)>,
-      "logtime_t" : "time_t_number",
-      "user_id" : "user_uuid",
-      "api_header" : "users/add",
-      "input_args" : { <json arguments> },
-      "output_args" : { <json arguments> },
+      "timestamp" : <ISO 8601 date format (yyyy-MM-ddThh:mm:ssZ)>,
+      "uuid" : "user_uuid",
+      "header" : "users/add",
       "summary" : {<optional summary of changes> }
     } ,
     {
-      "logtime" : <ISO 8601 date format (yyyy-MM-ddThh:mm:ssZ)>,
-      "logtime_t" : "time_t_number",
-      "user_id" : "user_uuid",
-      "api_header" : "users/add",
-      "input_args" : { <json arguments> },
-      "output_args" : { <json arguments> },
+      "timestamp" : <ISO 8601 date format (yyyy-MM-ddThh:mm:ssZ)>,
+      "uuid" : "user_uuid",
+      "header" : "users/add",
       "summary" : {<optional summary of changes> }
     } 
   ]
@@ -69,4 +61,4 @@ This API call does not emit any middleware events.
 
 
 ### Log Summary
-This API call does not generate a detailed log summary item
+This API call does not generate a detailed log summary item.

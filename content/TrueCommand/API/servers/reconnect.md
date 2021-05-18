@@ -16,7 +16,7 @@ Update status is reported via the {{< api-link "servers/list" >}} API output.
 
 ### Input Arguments
 * Required:
-   "id" (string or JSON Array of strings) : System ID's for which systems to queue up reconnections
+   "id" (string or JSON Array of strings) : The System ID's for which systems to queue up reconnections.
 * Optional:
    * none ({})
 
@@ -50,16 +50,13 @@ Update status is reported via the {{< api-link "servers/list" >}} API output.
 This API call does not emit any middleware events.
 
 ### Log Summary
-This API call does not generate a detailed log summary item
+This API call does not generate a detailed log summary item.
 
 #### See Also
 * {{< api-link "servers/add" >}}
-* {{< api-link "servers/current_stats" >}}
 * {{< api-link "servers/edit" >}}
-* {{< api-link "servers/find_available" >}}
 * {{< api-link "servers/groups_add" >}}
 * {{< api-link "servers/groups_remove" >}}
-* {{< api-link "servers/groups_replace" >}}
 * {{< api-link "servers/list" >}}
 * {{< api-link "servers/list_groups" >}}
 * {{< api-link "servers/list_writable" >}}

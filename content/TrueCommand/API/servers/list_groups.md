@@ -12,7 +12,7 @@ draft: false
 List all the current groups and which servers are associated with each group.
 If a non-administrator makes this API call, it will only return information about the groups that the user currently has access to see.
 
-NOTE: Administrator access requirement removed in version 1.2
+NOTE: Administrator access requirement removed in version 1.2.
 
 ### Input Arguments
 * Required:
@@ -28,7 +28,7 @@ NOTE: Administrator access requirement removed in version 1.2
 {}
 ```
 
-### Reply Example
+### Reply Example:
 ```
 {
   "group1" : ["server_1", "server_2"],
@@ -46,11 +46,7 @@ Example event message:
 "namespace" : "event",
 "name" : "servers/list_groups",
 "id" : "",
-"args" : {
-  "group1" : ["server_1", "server_2"],
-  "group2" : ["server_1", "server_3"],
-  "group3" : ["server_4"]
-  }
+"args" : {}
 }
 ```
 ### Log Summary
@@ -58,13 +54,10 @@ This API call does not generate a detailed log summary item
 
 #### See Also
 * {{< api-link "servers/add" >}}
-* {{< api-link "servers/current_stats" >}}
 * {{< api-link "servers/direct_auth" >}}
 * {{< api-link "servers/edit" >}}
-* {{< api-link "servers/find_available" >}}
 * {{< api-link "servers/groups_add" >}}
 * {{< api-link "servers/groups_remove" >}}
-* {{< api-link "servers/groups_replace" >}}
 * {{< api-link "servers/list" >}}
 * {{< api-link "servers/list_writable" >}}
 * {{< api-link "servers/remove" >}}

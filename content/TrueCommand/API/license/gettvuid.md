@@ -10,7 +10,7 @@ chapter: false
 | license | gettvid| no | no | no | 1 |
 
 #### Description
-Return general the TV ID for the system itself
+Return the unique system ID for the TrueCommand instance.
 
 ### Input Arguments
 * Required:
@@ -26,7 +26,7 @@ Return general the TV ID for the system itself
 {}
 ```
 
-### Reply Example
+### Reply Example:
 ```
 {
   "system_id" : "my_unique_system_id",

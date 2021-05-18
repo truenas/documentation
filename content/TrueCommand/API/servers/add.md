@@ -14,25 +14,18 @@ Add a new FreeNAS/TrueNAS server to the TrueCommand administration framework.
 
 ### Input Arguments
 * Required Arguments: 
-   * "ip" (string) : DNS name or IP address of the system on the network.
-   * "login_user" (string) : Name of the user to login to the system
-      * NOTE: Not needed/used if the "is_external" flag is enabled
-   * "login_password" (string) : Password for the user to login to the system
-      * NOTE: Not needed/used if the "is_external" flag is enabled
+   * "nickname" (string) : The user-visible name for this system.
+   * "ip" (string) : The DNS name or IP address of the system on the network.
+      * NOTE: For custom port numbers, append ":[port]" to the IP of the system. Example: "localhost:1234"
+   * "login_user" (string) : The name of the user to login to the system.
+   * "login_password" (string) : The password for the user to login to the system.
 * Optional Arguments: 
-   * "nickname" (string) : User-visible name for this system
-      * NOTE: This field is required if the "is_external" flag is enabled
    * "groups" (JsonArray of strings)
    * "tags" (JsonArray) : Search tags, Format - ["tag_1", "tag_2"]
-   * "ignore_alerts" (string or JsonArray of strings) : Types of passthrough alerts to ignore from the NAS
+   * "ignore_alerts" (string or JsonArray of strings) : Types of passthrough alerts to ignore from the NAS.
       * Added in TrueCommand 1.1
       * Valid types: "information", "warning", "critical", or "all"
-      * Default value: null. No alerts are ignored.
-   * "is_external" (boolean) : This system is a not a FreeNAS/TrueNAS system (default: false)
-      * Added in TrueCommand 1.1
-      * Information from this system is only submitted via the "external" API namespace
-      * TrueCommand does not connect to this system directly. TC is just an endpoint for storing/viewing stats that the system periodically submits.
-      * This flag cannot be changed later.
+      * Default value: null. Will use system-wide setting for ignoring alerts.
 
 ### Request Example Arguments
 **ARGUMENTS ONLY**: See the {{< api-link "basics" >}} of API requests for additional formatting information.
@@ -47,7 +40,7 @@ Add a new FreeNAS/TrueNAS server to the TrueCommand administration framework.
 }
 ```
 
-### Reply Example
+### Reply Example:
 * Example Reply Arguments (success):
 ```
 {
@@ -56,7 +49,7 @@ Add a new FreeNAS/TrueNAS server to the TrueCommand administration framework.
 }
 ```
 
-* Example Reply Arguments (error: IP already managed)
+* Example Reply Arguments (error: IP already managed):
 ```
 {
   "error" : "IP Exists",
@@ -66,13 +59,13 @@ Add a new FreeNAS/TrueNAS server to the TrueCommand administration framework.
 ```
 
 ### Events
-Events from this change will be sent to all currently-connected administrators and any user with read access to the new server (such as from adding a server to an existing group).
+Events from this change will be sent to all currently-connected administrators and any user with read access to the new server (such as from adding a server to an existing group). A separate "servers/add" event was removed in 2.0.
 
 Example event message:
 ```
 {
 "namespace" : "event",
-"name" : "servers/add",
+"name" : "servers/list",
 "id" : "",
 "args" : {
   "tvid" : "new_server_id"
@@ -95,15 +88,16 @@ Log entries for this API call will have the following "summary" object. Note tha
 }
 ```
 
+#### Changelog
+* **v2.0**
+   * The "is_external" flag was removed.
+   * The "nickname" field is now required.
 
 #### See Also
-* {{< api-link "servers/current_stats" >}}
 * {{< api-link "servers/direct_auth" >}}
 * {{< api-link "servers/edit" >}}
-* {{< api-link "servers/find_available" >}}
 * {{< api-link "servers/groups_add" >}}
 * {{< api-link "servers/groups_remove" >}}
-* {{< api-link "servers/groups_replace" >}}
 * {{< api-link "servers/list" >}}
 * {{< api-link "servers/list_groups" >}}
 * {{< api-link "servers/list_writable" >}}
