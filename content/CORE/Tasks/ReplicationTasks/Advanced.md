@@ -100,9 +100,13 @@ This prevents the source TrueNAS from automatically deleting any snapshots that 
 {{< tab "Destination" >}}
 The destination is where replicated data is stored.
 Choosing a remote destination requires an *[SSH Connection]({{< relref "SystemSSH.md" >}})* to that system.
-Expanding the file browser shows the current datasets or zvols that are available on the destination system.
+Expanding the file browser shows the current datasets that are available on the destination system.
 You can click a destination or manually type a path in the field.
 Adding a name to the end of the path creates a new dataset in that location.
+
+{{< hint warning >}}
+**DO NOT** use zvols for a remote destination
+{{< /hint >}}
 
 ![TasksReplicationAddAdvancedDestination](/images/CORE/12.0/TasksReplicationAddAdvancedDestination.png "Advanced Replication: Destination")
 
