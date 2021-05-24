@@ -1,6 +1,6 @@
 ---
 title: "Config Backups"
-weight: 40
+weight: 20
 ---
 
 {{< toc >}}
