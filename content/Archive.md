@@ -18,7 +18,7 @@ All documentation provided here is End of Life (EoL) and no longer receives **an
 <div class="dropdown">
   <button onclick="myFunction()" class="dropbtn">Legacy TrueNAS</button>
   <div id="myDropdown" class="dropdown-content">
-    <a href="https://www.ixsystems.com/documentation/truenas/11.3-U5/TrueNAS-11.3-U5-User-Guide_screen.pdf">11.3</a>
+    <a href="https://www.truenas.com/docs/files/TrueNAS-11.3-U5-User-Guide.pdf">11.3</a>
     <a href="https://www.ixsystems.com/documentation/truenas/11.2-U8-legacy/TrueNAS-11.2-U8-Legacy-User-Guide_screen.pdf">11.2</a>
     <a href="https://www.ixsystems.com/documentation/truenas/11.1/TrueNAS.pdf">11.1</a>
   </div>

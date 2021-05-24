@@ -126,3 +126,5 @@ To quickly create a new Cloud Sync that uses the same options but reverses the d
 Enter a new *Description* for this reversed task and define the path to a storage location for the transferred data.
 
 The restored cloud sync is saved as another entry in **Tasks > Cloud Sync Tasks**.
+
+In case the restore destination dataset is the same as the original source dataset, the restored files might have their ownership altered to _root_. If the original files were not created by _root_ and a different owner is required, you can recursively reset ACL Permissions of the restored dataset through the GUI or by running chown from the CLI.
