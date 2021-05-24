@@ -33,8 +33,6 @@ The *iSCSI Volumes* button in the system settings menu allows users to filter, c
 
 See the full [iSCSI Management]({{< relref "iSCSIManagement.md" >}}) article for more information.
 
-![TrueCommandSystemSettingsiSCSICreate](/images/TrueCommand/TrueCommandSystemSettingsiSCSICreate.png "System Settings iSCSI Wizard")
-
 ## Services
 
 TrueCommand offers limited control over system services. Users can't currently edit service parameters, but can set them to start on boot, as well as start, stop, and restart them.
