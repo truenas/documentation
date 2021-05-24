@@ -31,7 +31,7 @@ The *iSCSI Volumes* button in the system settings menu allows users to filter, c
 
 ![TrueCommandSystemSettingsiSCSI](/images/TrueCommand/TrueCommandSystemSettingsiSCSI.png "System Settings iSCSI")
 
-To create a new iSCAI volume on the system, click the *+ VOLUME* button in the iSCSI manager window and go through the creation wizard.
+See the full [iSCSI Management]({{< relref "iSCSIManagement.md" >}}) article for more information.
 
 ![TrueCommandSystemSettingsiSCSICreate](/images/TrueCommand/TrueCommandSystemSettingsiSCSICreate.png "System Settings iSCSI Wizard")
 
