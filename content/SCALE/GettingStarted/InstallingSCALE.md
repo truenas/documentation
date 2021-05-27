@@ -252,6 +252,9 @@ Select *<Boot via BIOS>*.
 After the TrueNAS SCALE installation is complete, reboot the system.
 The [Console Setup Menu]({{< relref "ConsoleSetupMenu.md" >}}) displays when the system boots successfully.
 {{< /tab >}}
+{{< tab "Migrating from TrueNAS CORE" >}}
+To migrate from TrueNAS CORE to SCALE, you will have to use a TrueNAS Scale .ISO file. We do not currently support maigrating using trains, or manual updates.
+{{< /tab >}}
 {{< /tabs >}}
 
 Congratulations, TrueNAS SCALE is now installed!
