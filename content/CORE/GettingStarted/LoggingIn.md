@@ -109,7 +109,8 @@ If the UI becomes unresponsive after an upgrade or other system operation, clear
 ## Dashboard
 
 After logging in, the system **Dashboard** is shown.
-Basic information about the installed version, systems component usage and network traffic are all presented on this screen.
+Basic information about the installed version, systems component usage and network traffic are all presented on this screen.  For users with compatible TrueNAS
+Hardware, clicking the system image will take you to the **System > View Enclosure** page. 
 
 ![DashboardCORE](/images/CORE/12.0/DashboardCORE.png "TrueNAS CORE Dashboard")
 

@@ -5,6 +5,11 @@ weight: 178
 
 {{< toc >}}
 
+{{< hint danger >}}
+**Warning:**
+To avoid the potential for data loss, [iXsystems must be contacted](https://www.truenas.com/contact-us/) before replacing a controller or upgrading to High Availability.
+{{< /hint >}}
+
 {{< expand "Process Summary" "v" >}}
 * **System > Support**
   * Update license
