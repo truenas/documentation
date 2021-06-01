@@ -107,8 +107,8 @@ To start the service during the TrueNAS boot process, set *Start Automatically*.
 
 Configure the S.M.A.R.T. service by clicking <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
 
-![ServicesSMARTOptions](/images/CORE/12.0/ServicesSMARTOptions.png "Services SMART Options")
+![ServicesSMARTOptions](/images/CORE/12.0/smartoptions12.png "Services SMART Options")
 
-{{< include file="static/includes/TasksSMARTAddFields.md.part" markdown="true" >}}
+{{< include file="static/includes/ServicesSMARTFields.md.part" markdown="true" >}}
 
 Don't forget to click *SAVE* after changing any settings.
