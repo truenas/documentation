@@ -31,6 +31,7 @@ Once the date range is set, use the dropdown to select which systems you want in
 ![ReportsGenerateDateWidgetSelectSystems](/images/TrueCommand/2.0/ReportsGenerateDateWidgetSelectSystems.png "Reports Generate Date Widget Select Systems")
 
 With the systems selected, click **Generate**
+
 ![ReportsGenerateDateWidgetGenerate](/images/TrueCommand/2.0/ReportsGenerateDateWidgetGenerate.png "Reports Generate Date Widget Generate")
 
 The report will be generated and the graph will appear. 
