@@ -51,10 +51,6 @@ Once the volume is made, you can view its status.
 {{< tab "Replicated" >}}
 In a Replicated Volume, the risk of data loss in a distributed volume is overome. Exact copies of the all of the data are maintained on all bricks. The number of replicas in the volume is determined when creating the volume. At least three bricks are needed to create a volume.  For further redundancy, add more bricks.  A three brick volume will have 3 replicas, while a four brick volume will contain 4 replicas. A replicated volume will allow data to still be accessed even if a single brick fails. A Replicated volume is used for better reliability and data redundancy.
 
-{{< hint danger >}}
-Using a Replica count of 0 will result in a distributed volume and offer no data integrity saftey. 
-{{< /hint >}}
-
 Click the *Brick Choices* drop down and check the locations to use for bricks.
 
 ![ReplicatedClusterSelectBrickLocations](/images/TrueCommand/2.0/ReplicatedClusterSelectBrickLocations.png "ReplicatedClusterSelectBrickLocations")
@@ -76,9 +72,7 @@ Once the volume is made, you can view its status.
 In a Distributed Replicated Volume, data is distributed across replicated sets of bricks. The number of bricks must be a multiple of the replica count. The order in which bricks are specified is important because adjacent bricks become replicas of each other. This type of volume is best used when high availability of data due to redundancy and scaling storage is required. For example, an 8 brick volume with a replica count of two would result in the first two bricks become replicas of each other then the next two and so on. This volume would be referred to as 4x2. By contrast, in this 8 brick example, a replica count of 4 would result in four bricks become replica of each other and this volume would be referred to as 2x4 volume.
 
 The **Replica value** value for a Distributed Replicated Volume must be a divisor of the total number of bricks selected.  If 8 bricks are selected, the replica count can either be 2 or 4.  A replica count of two will create a 4x2 volume where pairs of bricks replicate each other. A replica count of four will create a 2x4 volume where sets of 4 bricks replicate each other.
-{{< hint danger >}}
-Using a Replica count of 0 will result in a distributed volume and offer no data integrity saftey. 
-{{< /hint >}}
+
 {{< hint warning >}}
 Using a Replica count of that is not a divisor of the total number or bricks will results in a failed Volume Creation.
 {{< /hint >}}
@@ -87,7 +81,7 @@ Click the *Brick Choices* drop down and check the locations to use for bricks.
 
 ![DistributedReplicatedClusterSelectBrickLocations](/images/TrueCommand/2.0/DistributedReplicatedClusterSelectBrickLocations.png "DistributedReplicatedClusterSelectBrickLocations")
 
-When finished click **Next**.
+Select the *Replica Count* from the list. When finished click **Next**.
 
 ![DistributedReplicatedClusterCreate](/images/TrueCommand/2.0/DistributedReplicatedClusterCreate.png "DistributedReplicatedClusterCreate")
 
@@ -105,9 +99,6 @@ Once the volume is made, you can view its status.
 In a Dispersed Volume, the data is dispersed across the bricks and is based on on erasure codes. The data is stripped, with some redundancy added, across multiple bricks in the volume. Dispersed volumes allow a configurable level of reliability with minimal storage space waste. The number of redundant bricks in the volume is determined when creating the volume. The number of redundant bricks determines how many bricks can be lost without interrupting the operation of the volume.
 
 The **Redundancy value** for a Dispersed Volume must be greater than 0 and less than n-1.  The redundancy value can be considered to be the number of bricks you that can be lost before data loss occurs. 
-{{< hint info >}}
-Attempting to use a Replica count of 0 in a Dispersed Volume will be overridden by Gluster and the value will be set to 1.
-{{< /hint >}}
 
 Click the *Brick Choices* drop down and check the locations to use for bricks.
 
