@@ -34,14 +34,13 @@ Selecting a system will display the options for the brick that will be created. 
 
 ![DistributedClusterOptionsAddBrickOptions](/images/TrueCommand/2.0/DistributedClusterOptionsAddBrickOptions.png "DistributedClusterOptionsAddBrickOptions")
 
-When you are satified with the settings, click **SAVE** to add the brick.  TrueCommmand and TrueNAS SCALE will not add the brick to the cluster.
+When you are satisfied with the settings, click **SAVE** to add the brick.  TrueCommmand and TrueNAS SCALE will not add the brick to the cluster.
 
 ![DistributedClusterOptionsAddProcessing](/images/TrueCommand/2.0/DistributedClusterOptionsAddProcessing.png "DistributedClusterOptionsAddProcessing")
 
 When the new brick has been added, the cluster card will reflect the change.
 
-![DistributedClusterOptionsAddBrickCompleted](/images/TrueCommand/2.0/
-DistributedClusterOptionsAddBrickCompleted.png "DistributedClusterOptionsAddBrickCompleted")
+![DistributedClusterOptionsAddBrickCompleted](/images/TrueCommand/2.0/DistributedClusterOptionsAddBrickCompleted.png "DistributedClusterOptionsAddBrickCompleted")
 
 ### Removing a brick in a Distributed Cluster
 
@@ -70,8 +69,7 @@ After checking the confirm box, Click **OK** to remove the brick.
 
 ### Deleting a Distrubuted Cluster
 
-Click the three dots icon in the cluster overview card and select **Delete**
-A confirmation box will appear and the deletion must be confirmed before proceeding.
+Click the three dots icon in the cluster overview card and select **Delete**. A confirmation box will appear and the deletion must be confirmed before proceeding.
 
 ![DistributedClusterDelete](/images/TrueCommand/2.0/DistributedClusterDelete.png "DistributedClusterDelete")
 
@@ -94,8 +92,7 @@ This Feature is not fully implemented yet.
 
 ### Deleting a Replicated Cluster
 
-Click the three dots icon in the cluster overview card and select **Delete**
-A confirmation box will appear and the deletion must be confirmed before proceeding.
+Click the three dots icon in the cluster overview card and select **Delete**. A confirmation box will appear and the deletion must be confirmed before proceeding.
 
 ![ReplicatedClusterDelete](/images/TrueCommand/2.0/ReplicatedClusterDelete.png "ReplicatedClusterDelete")
 
@@ -118,8 +115,7 @@ This Feature is not fully implemented yet.
 
 ### Deleting a Distrubuted Replicated Cluster
 
-Click the three dots icon in the cluster overview card and select **Delete**
-A confirmation box will appear and the deletion must be confirmed before proceeding.
+Click the three dots icon in the cluster overview card and select **Delete**. A confirmation box will appear and the deletion must be confirmed before proceeding.
 
 ![DistributedReplicatedClusterDelete](/images/TrueCommand/2.0/DistributedReplicatedClusterDelete.png "DistributedReplicatedClusterDelete")
 
@@ -142,8 +138,7 @@ This Feature is not fully implemented yet.
 
 ### Deleting a Dispersed Cluster
 
-Click the three dots icon in the cluster overview card and select **Delete**
-A confirmation box will appear and the deletion must be confirmed before proceeding.
+Click the three dots icon in the cluster overview card and select **Delete**. A confirmation box will appear and the deletion must be confirmed before proceeding.
 
 ![DispersedClusterDelete](/images/TrueCommand/2.0/DispersedClusterDelete.png "DispersedClusterDelete")
 
