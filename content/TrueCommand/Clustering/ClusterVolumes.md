@@ -104,7 +104,7 @@ Click the *Brick Choices* drop down and check the locations to use for bricks.
 
 ![DispersedClusterSelectBrickLocations](/images/TrueCommand/2.0/DispersedClusterSelectBrickLocations.png "DispersedClusterSelectBrickLocations")
 
-Select the *Redundancy value. When finished click **Next**.
+Select the *Redundancy value*. When finished click **Next**.
 
 ![DispersedClusterCreate](/images/TrueCommand/2.0/DispersedClusterCreate.png "DispersedClusterCreate")
 
