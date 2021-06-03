@@ -42,8 +42,11 @@ Once the systems have been chosen, click **CONFIRM** to upload the config backup
 
 ## iSCSI Management
 
-When creating an iSCSI Volume with TrueCommand they can be configured on multiple systems at the same time. [Refer to the iSCSI Section of the Documentation for further information]({{< relref "iscsimanagement.md" >}})
+When creating an iSCSI Volume with TrueCommand they can be configured on multiple systems at the same time.
+Refer to the [iSCSI section]({{< relref "iscsimanagement.md" >}}) for more information.
 
 ## Cluster Managemnet
 
-By definition, clusters span across multiple systems.  TrueCommand instances that are connected to three or more TrueNAS SCALE systems can create clustered volumes. [Refer to the Clustering Section of the Documentation for further information]({{< relref "/truecommand/clustering/" >}})
+By definition, clusters span across multiple systems.
+TrueCommand instances that are connected to three or more TrueNAS SCALE systems can create clustered volumes.
+Refer to the [Clustering section]({{< relref "TrueCommand/Clustering/_index.md" >}}) for more information.
