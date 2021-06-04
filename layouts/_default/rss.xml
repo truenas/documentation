@@ -18,16 +18,16 @@
     <copyright>{{.}}</copyright>{{end}}{{ if not .Date.IsZero }}
     <lastBuildDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>{{ end }}
     {{ with .OutputFormats.Get "RSS" }}
-	  <atom:link href="/docs{{ .RelPermalink }}" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://www.truenas.com/docs{{ .RelPermalink }}" rel="self" type="application/rss+xml" />
     {{ end }}
     {{ range $pages }}
     {{ if ne .Params.no_print "true" }}
     <item>
       <title>{{ .Title }}</title>
-      <link>/docs{{ .RelPermalink }}</link>
+      <link>https://www.truenas.com/docs{{ .RelPermalink }}</link>
       <pubDate>{{ .Lastmod.Format "2006-01-02 15:04 MST" | safeHTML }}</pubDate>
       {{ with .Site.Author.email }}<author>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</author>{{end}}
-      <guid>/docs{{ .RelPermalink }}</guid>
+      <guid>https://www.truenas.com/docs{{ .RelPermalink }}</guid>
       <description>{{ .Content | html }}</description> 
     </item>
     {{ end }}
