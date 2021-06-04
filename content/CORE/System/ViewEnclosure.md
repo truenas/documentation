@@ -27,9 +27,9 @@ The system can be renamed from any tab by clicking *EDIT LABEL*.
 {{< tab "Disks" >}}
 Shows a graphic representation of the TrueNAS hardware and details about connected disks.
 
-![SystemViewEnclosureDisksTabOverview](/images/CORE/12.0/SystemViewEnclosureDisksTabOverview.png "Disks")
+![SystemViewEnclosureDisksTabOverview](/images/CORE/12.0/SystemViewEnclosureDisksTabOverviewUpdate.png "Disks")
 
-Click any disk slot to see specific details about the disk like the device name, vdev assignment and function, serial number, and current drive settings.
+Click any disk slot to see specific details about the disk like the device name, vdev assignment, function, drive slot number, serial number, and current drive settings.
 *IDENTIFY DRIVE* flashes the identification LED for the chosen drive.
 
 The **Disks Overview** shows statistics about the enclosure pools, status, and detected expanders.
