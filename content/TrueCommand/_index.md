@@ -21,7 +21,7 @@ TrueCommand can monitor an entire fleet of TrueNAS systems and thousands of onli
 ## What Features does TrueCommand have?
 
 {{< expand "Multiple Deployment Options" "v" >}}
-TrueCommand is a lightweight application that supports deployments in either a Virtual Machine or a Docker Container.
+TrueCommand docker container can be deployed as a VM since vhdk and vmdk are no longer supported in version 2.0.
 TrueCommand Cloud is also available as a cloud-based subscription option that allows you to offload TrueCommand resources and deployment and only focus on fine-tuning your configuration.
 {{< /expand >}}
 {{< expand "NAS Fleet Dashboard" "v" >}}
