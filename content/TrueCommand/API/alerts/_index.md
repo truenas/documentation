@@ -1,5 +1,5 @@
 ---
-title: "Alert management"
+title: "Alert Management"
 draft: false
 pre: "<i class='fa fa-bell'></i>	"
 geekdocCollapseSection: true
