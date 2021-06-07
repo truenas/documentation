@@ -1,5 +1,5 @@
 ---
-title: "System reports"
+title: "System Reports"
 pre: "<i class='fa fa-book'></i>	"
 draft: false
 geekdocCollapseSection: true
