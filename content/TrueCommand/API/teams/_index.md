@@ -1,5 +1,5 @@
 ---
-title: "Team management"
+title: "Team Management"
 draft: false
 pre: "<i class='fa fa-users'></i>	"
 geekdocCollapseSection: true

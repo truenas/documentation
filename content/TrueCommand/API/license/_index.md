@@ -1,5 +1,5 @@
 ---
-title: "License management"
+title: "License Management"
 draft: false
 pre: "<i class='fa fa-file'></i>	"
 geekdocCollapseSection: true
