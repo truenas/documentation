@@ -12,6 +12,11 @@ To see a preview of this exciting new version, check out the [TrueCommand 2.0 Be
 To try the 2.0 Beta, see the [2.0-Beta release notes]({{< relref "/ReleaseNotes/TrueCommand/2.0-Beta.md" >}}) for download instructions.
 {{< /hint >}}
 
+{{< hint warning >}}
+TrueCommand 2.0 and the documentation is currently in BETA and subject to change before full release.
+Please use caution when trying the BETA release of TrueCommand 2.0, as some features might still be getting tested and polished.
+{{< /hint >}}
+
 TrueCommand is a multi-system management "Single pane of Glass" system that helps control and monitor your TrueNAS fleet. TrueCommand assists in managing TrueNAS systems through REST APIs, WebSocket APIs, and a web user interface. The TrueCommand web interface provides single sign-on functionality and unified administration of users and TrueNAS systems.
 
 TrueCommand can monitor an entire fleet of TrueNAS systems and thousands of online storage devices simultaneously. This includes displaying statistics on storage usage, network activity, active services, and more. TrueCommand also has the ability to create custom reports about individual systems or a combination of many systems.
@@ -76,4 +81,4 @@ TrueCommand Cloud subscriptions are available at the [iXsystems Account Services
 
 TrueCommand Cloud is a secure SaaS offering that includes a WireGuard VPN capability to connect TrueNAS systems through firewalls.
 TrueCommand Cloud is compatible with TrueNAS versions **12.0+ or SCALE** for the Wireguard VPN capability.
-Subscribe to and set up TrueCommand Cloud using [these instructions]({{< relref "/TrueCommand/InstallUpdate/Install.md" >}}).
+Subscribe to and set up TrueCommand Cloud using [these instructions]({{< relref "/TrueCommand/TCGettingStarted/Install/_index.md" >}}).
