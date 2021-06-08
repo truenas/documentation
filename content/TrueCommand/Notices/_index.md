@@ -1,5 +1,5 @@
 ---
 title: "Notices"
 geekdocCollapseSection: true
-weight: 60
+weight: 110
 ---
