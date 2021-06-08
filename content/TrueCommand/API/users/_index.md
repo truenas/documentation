@@ -1,5 +1,5 @@
 ---
-title: "User management"
+title: "User Management"
 pre: "<i class='fa fa-users'></i>	"
 draft: false
 geekdocCollapseSection: true

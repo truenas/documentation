@@ -1,5 +1,5 @@
 ---
-title: "FreeNAS management"
+title: "FreeNAS Management"
 draft: false
 pre: "<i class='fa fa-terminal'></i> "
 geekdocCollapseSection: true

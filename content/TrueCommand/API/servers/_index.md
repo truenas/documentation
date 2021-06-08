@@ -1,5 +1,5 @@
 ---
-title: "Server management"
+title: "Server Management"
 draft: false
 pre: "<i class='fa fa-server'></i>	"
 geekdocCollapseSection: true

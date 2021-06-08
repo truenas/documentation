@@ -1,5 +1,5 @@
 ---
-title: "Notice management"
+title: "Notice Management"
 draft: false
 pre: "<i class='fa fa-flag'></i>	"
 geekdocCollapseSection: true

@@ -1,5 +1,5 @@
 ---
-title: "Cluster management"
+title: "Cluster Management"
 pre: "<i class='fa fa-bookmark'></i>	"
 draft: false
 geekdocCollapseSection: true

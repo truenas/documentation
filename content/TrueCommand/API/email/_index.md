@@ -1,5 +1,5 @@
 ---
-title: "Email management"
+title: "Email Management"
 pre: "<i class='fa fa-envelope'></i>	"
 draft: false
 geekdocCollapseSection: true
