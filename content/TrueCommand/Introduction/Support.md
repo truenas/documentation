@@ -17,5 +17,5 @@ To find more details about the different Warranty and Service Level Agreement (S
 ## TrueCommand Cloud
 
 If any issues are found when using TrueCommand Cloud or an iX Portal account, log in to the Portal Account and click *Manage* > *Request Support*.
-Fill out the *Request Support* form with specific details and screenshots of the issue and click *Send Request*.
+Fill out the *Request Support* form with specific details of the issue and click *Send Request*.
 A copy of the support request is emailed to the registered email account.
