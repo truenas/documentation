@@ -8,8 +8,8 @@ weight: 10
 Once you have [downloaded](https://www.truenas.com/download-truenas-scale/) the <file>.iso</file> file, you can start installing TrueNAS SCALE!
 
 {{< expand "ISO Verification" "v" >}}
-The iXsystems Security Team cryptographically signs TrueNAS ISO files so that users can verify the integrity of their downloaded file.
-This section demonstrates how to verify an ISO file using the [Pretty Good Privacy (PGP)](https://tools.ietf.org/html/rfc4880) and [SHA256](https://tools.ietf.org/html/rfc6234) methods.
+The iXsystems Security Team cryptographically signs TrueNAS <file>.iso</file> files so that users can verify the integrity of their downloaded file.
+This section demonstrates how to verify an <file>.iso</file> file using the [Pretty Good Privacy (PGP)](https://tools.ietf.org/html/rfc4880) and [SHA256](https://tools.ietf.org/html/rfc6234) methods.
 
 ### PGP ISO Verification
 
@@ -190,7 +190,7 @@ Open VMware Player and click *Create a New Virtual Machine* to enter the New Vir
 
 ### 1. Installer disk image file
 
-Select the *Installer disk image file (iso)* option, click *Browse...*, and upload the TrueNAS SCALE <file>.iso</file> downloaded earlier.
+Select the *Installer disk image file (<file>.iso</file>)* option, click *Browse...*, and upload the TrueNAS SCALE <file>.iso</file> downloaded earlier.
 
 ### 2. Name the Virtual Machine
 
@@ -253,7 +253,7 @@ After the TrueNAS SCALE installation is complete, reboot the system.
 The [Console Setup Menu]({{< relref "ConsoleSetupMenu.md" >}}) displays when the system boots successfully.
 {{< /tab >}}
 {{< tab "Migrating from TrueNAS CORE" >}}
-To migrate from TrueNAS CORE to SCALE, you will have to use a TrueNAS Scale .ISO file. We do not currently support maigrating using trains, or manual updates.
+To migrate from TrueNAS CORE to SCALE, you will have to use a TrueNAS Scale <file>.iso</file> file. We do not currently support maigrating using trains, or manual updates.
 
 Start be saving the [SCALE ISO file](https://www.truenas.com/download-truenas-scale/) to a USB drive (detailed in the Physical Hardware tab). Plug the USB drive into your CORE system that you want to sidegrade and boot or reboot the system. 
 
