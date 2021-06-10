@@ -5,7 +5,7 @@ weight: 10
 
 {{< toc >}}
 
-Once you have [downloaded](https://www.truenas.com/download-truenas-scale/) the <file>.iso</file> file, you can start installing TrueNAS SCALE!
+Once you have [downloaded](https://www.truenas.com/download-tn-scale/) the <file>.iso</file> file, you can start installing TrueNAS SCALE!
 
 {{< expand "ISO Verification" "v" >}}
 The iXsystems Security Team cryptographically signs TrueNAS <file>.iso</file> files so that users can verify the integrity of their downloaded file.
@@ -255,7 +255,7 @@ The [Console Setup Menu]({{< relref "ConsoleSetupMenu.md" >}}) displays when the
 {{< tab "Migrating from TrueNAS CORE" >}}
 To migrate from TrueNAS CORE to SCALE, you will have to use a TrueNAS Scale <file>.iso</file> file. We do not currently support maigrating using trains, or manual updates.
 
-Start be saving the [SCALE ISO file](https://www.truenas.com/download-truenas-scale/) to a USB drive (detailed in the Physical Hardware tab). Plug the USB drive into your CORE system that you want to sidegrade and boot or reboot the system. 
+Start be saving the [SCALE ISO file](https://www.truenas.com/download-tn-scale/) to a USB drive (detailed in the Physical Hardware tab). Plug the USB drive into your CORE system that you want to sidegrade and boot or reboot the system. 
 
 At the motherboard splash screen, use the hotkey defined by your motherboard manufacturer to select a boot device, then select the USB drive with the SCALE <file>.iso<file>.
   
