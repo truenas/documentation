@@ -12,7 +12,7 @@ Click on the Chia apps **Install** button in the *Avaialable Aplications* list.
 
 ![ChiaInstall](/images/SCALE/chia_Install.png "Install Chia")
 
-Name your App. Click the **Next** button.
+Name your App. In this example the name is *chia1*. Click the **Next** button.
 
 ![ChiaAppName](/images/SCALE/chia_AppName.png "Chia Name")
 
@@ -20,7 +20,7 @@ Leave *Enable Custom Host Path for Chia Configuration Volume* and *Enable Custom
 
 ![ChiaStorage](/images/SCALE/chia_Storage.png "Chia Storage")
 
-Click the **Next** button for Chia Environment Variables.
+Click the **Next** button in the Chia Environment Variables screen. We will be adding one later.
 
 ![chiaSkipEnvironmentalVariables](/images/SCALE/chia_SkipEnvironmental_Variables.png "Chia Skip Environmental Variables")
 
