@@ -239,7 +239,7 @@ Finally, name and chose a location for the new virtual disk.
 
 Repeat this process until enough disks are available for TrueNAS to create ideal storage pools
 This depends on your specific TrueNAS use case.
-See [Pool Creation]{{< relref "PoolCreate.md" >}} for descriptions of the various pool ("vdev") types and layouts
+See [Pool Creation]({{< relref "PoolCreate.md" >}}) for descriptions of the various pool ("vdev") types and layouts
 
 ## TrueNAS Installer
 
@@ -261,7 +261,7 @@ Set a password for root login.
 
 ![InstallVMPassword](/images/CORE/12.0/InstallVMPasswordScreen.png "Install VM Password Screen")
 
-Select *<Boot via BIOS>*.
+Select *Boot via BIOS*.
 
 ![InstallVMBootMode](/images/CORE/12.0/InstallVMBootMode.png "Install VM Boot Mode Screen")
 
