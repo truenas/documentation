@@ -254,6 +254,26 @@ The [Console Setup Menu]({{< relref "ConsoleSetupMenu.md" >}}) displays when the
 {{< /tab >}}
 {{< tab "Migrating from TrueNAS CORE" >}}
 To migrate from TrueNAS CORE to SCALE, you will have to use a TrueNAS Scale .ISO file. We do not currently support maigrating using trains, or manual updates.
+
+Start be saving the [SCALE ISO file](https://www.truenas.com/download-truenas-scale/) to a USB drive (detailed in the Physical Hardware tab). Plug the USB drive into your CORE system that you want to sidegrade and boot or reboot the system. 
+
+At the motherboard splash screen, use the hotkey defined by your motherboard manufacturer to select a boot device, then select the USB drive with the SCALE <file>.iso<file>.
+  
+When the SCALE console setup screen appears, select *Install/Upgrade*.
+
+![SCALEUpgrade1](/images/SCALE/SCALEUpgrade1.png "Install/Upgrade SCALE")
+
+The installer will ask if you want to preserve your existing configuration or start with a fresh installation. We recommend selecting *Upgrade Install* when migrating from CORE to SCALE to keep your configuration data. Then select *Install in new boot environment*.
+
+![SCALEUpgrade2](/images/SCALE/SCALEUpgrade2.png "Preserve Existing Configuration")
+
+![SCALEUpgrade3](/images/SCALE/SCALEUpgrade3.png "Install in new boot environment")
+
+{{< hint warning>}}
+Although TrueNAS will attempt to keep most of your CORE configuration data when upgrading to SCALE, some CORE-specific will not carry over.
+GELI Encrypted pools, NIS data, AFP and SMB shares, metadata, jails, tunables, and boot environments will not migrate from CORE to SCALE. Init/shutdown scripts will carry over, but may break.
+{{< /hint >}}
+
 {{< /tab >}}
 {{< /tabs >}}
 
