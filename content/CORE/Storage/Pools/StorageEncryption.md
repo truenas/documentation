@@ -138,7 +138,7 @@ Users with TrueNAS CORE or Enterprise installations without [KMIP]({{< relref "K
 1. Replicate every encrypted dataset you want to replicate with properties. 
 2. Export key for every child dataset which has a unique key. 
 3. For each child dataset construct a proper json with poolname/datasetname of the destination system and key from the source system like this: 
-   {"tank/share01": "57112db4be777d93fa7b76138a68b790d46d6858569bf9d13e32eb9fda72146b"}. 
+   `{"tank/share01": "57112db4be777d93fa7b76138a68b790d46d6858569bf9d13e32eb9fda72146b"}`
 5. Save this file with the extension <file>.json<file>. 
 6. On remote system unlock the dataset(s) using properly constructed <file>json<file> files.
 
