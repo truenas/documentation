@@ -274,6 +274,13 @@ Although TrueNAS will attempt to keep most of your CORE configuration data when 
 GELI Encrypted pools, NIS data, AFP and SMB shares, metadata, jails, tunables, and boot environments will not migrate from CORE to SCALE. Init/shutdown scripts will carry over, but may break.
 {{< /hint >}}
 
+After choosing to install in new boot environment, the installer will warn you that you you will be installing SCALE into the boot pool previously used for CORE. Select *Yes*.
+
+![SCALEUpgrade4](/images/SCALE/SCALEUpgrade4.png "Proceed with the upgrade")
+
+Once the installation completes, you will be asked to reboot the system and remove the USB with the SCALE <file>.iso<file> file. 
+  
+When TrueNAS SCALE boots, you may need to [use the Shell to configure networking interfaces]({{< relref "/SCALE/Network/_index.md" >}}) so that you may access the GUI.
 {{< /tab >}}
 {{< /tabs >}}
 
