@@ -4,29 +4,27 @@ weight: 20
 ---
 
 
-SCALE includes Chia in it's Official Apps catalog.
+SCALE includes Chia in it's Official Apps catalog. Chia Blockchain is a new cryptocurrency that uses Proof of Space and Time. Instead of using expensive hardware that consumes exorbitant amounts of electricity to mine cryptos, it leverages existing empty hard disk space on your computer(s) to farm cryptos with minimal resources, such as electricity.
 
-Chia Blockchain is a new cryptocurrency that uses Proof of Space and Time. Instead of using expensive hardware that consumes exorbitant amounts of electricity to mine cryptos, it leverages existing empty hard disk space on your computer(s) to farm cryptos with minimal resources, such as electricity.
-
-To install the Chia App
+## install the Chia App
 
 Click on the Chia apps **Install** button in the *Avaialable Aplications* list.
 
 ![ChiaInstall](/images/SCALE/chia_Install.png "Install Chia")
 
-Name your App. Click the **Next** button
+Name your App. Click the **Next** button.
 
 ![ChiaAppName](/images/SCALE/chia_AppName.png "Chia Name")
 
-Leave *Enable Custom Host Path for Chia Configuration Volume* and *Enable Custom Host Path for Chia Plots Volume* unchecked and click the **Next* button
+Leave *Enable Custom Host Path for Chia Configuration Volume* and *Enable Custom Host Path for Chia Plots Volume* unchecked and click the **Next** button.
 
 ![ChiaStorage](/images/SCALE/chia_Storage.png "Chia Storage")
 
-Click the **Next** button for Chia Environment Variables
+Click the **Next** button for Chia Environment Variables.
 
 ![chiaSkipEnvironmentalVariables](/images/SCALE/chia_SkipEnvironmental_Variables.png "Chia Skip Environmental Variables")
 
-Confirm the otions and click the **Submit** button
+Confirm the otions and click the **Submit** button.
 
 ![chiaSubmit](/images/SCALE/chia_Submit.png "Chia Submit")
 
@@ -40,8 +38,9 @@ Leave the defaults for the pod (There is only one) and use the selected /bin/bas
 
 ![chiaChoosePod](/images/SCALE/chia_ChoosePod.png "Chia choose Pod")
   
-The first time Chia launches, it will automatically create a new private key set which is for your plotting, as well as wallet. However this will not get preserved across container restarts. To make sure your keys and wallet persist, we need to save the Mnemonic Seed which was magically created and make sure it gets used at each container initialization. To do this, start by displaying the current key information by running: 
-# /chia-blockchain/venv/bin/chia keys show --show-mnemonic-seed
+The first time Chia launches, it will automatically create a new private key set which is for your plotting, as well as wallet. However this will not get preserved across container restarts. To make sure your keys and wallet persist, we need to save the Mnemonic Seed which was magically created and make sure it gets used at each container initialization. To do this, start by displaying the current key information by running the following shell command: 
+
+**/chia-blockchain/venv/bin/chia keys show --show-mnemonic-seed**
 
 ![chiaMnemonicSeed](/images/SCALE/chia_mnemonicSeed.png "Chia Mnemonic Seed")
 
@@ -49,7 +48,7 @@ You’ll want to make a backup copy of the information provided here for your re
 
 Copy and paste the 24 secret words of the mnemonic seed into a new shell command:
 
-# echo "my unique 24 secret words here" > /plots/keyfile
+**echo "my unique 24 secret words here" > /plots/keyfile**
 
 ![chiaAddKeyfile](/images/SCALE/chia_AddKeyfile.png "Chia Add Keyfile")
 
@@ -62,7 +61,7 @@ Environment Variable Value: /plots/keyfile
 
 ![chiaAddEV](/images/SCALE/chia_AddEV.png "Chia Add Environment Variables")
   
-If you entered the command correctly, you should see some output that looks like the screenshot (minus the redaction of course)
+If you entered the command correctly, you should see some output that looks like the screenshot.
   
 Save the change, and the chia container should restart automatically. To confirm your changes have persisted you can log into the containers shell again and run the same “/chia-blockchain/venv/bin/chia keys show --show-mnemonic-seed” command to show your keys. If the keys are identical to what you previously recorded, then congratulations you are done! This Chia container will persist across reboots, upgrades and re-deployments.
 
