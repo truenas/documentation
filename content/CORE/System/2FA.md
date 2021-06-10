@@ -66,7 +66,7 @@ Enabling 2FA changes the log in process for both the TrueNAS web interface and S
 
 {{< tabs "2FA Logins" >}}
 {{< tab "Web Interface" >}}
-* Log out of TrueNAS and back in.
+* The log in screen adds another field for the randomized authenticator code. If this field isn't immediately visible, try refreshing the browser.
 * Enter the code on the mobile device (complete without the space) in the login window with the *root* *Username* and *Password*.
 
 ![Login2FA](/images/CORE/12.0/Login2FA.png "2FA Login")

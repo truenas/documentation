@@ -15,21 +15,21 @@ TrueNAS SCALE tickets are also tracked in the TrueNAS Jira Project.
 
 | Version                                                                                                          | Scheduled Release Date |
 |------------------------------------------------------------------------------------------------------------------|------------------------|
-| [TrueNAS 12.0-U4](https://jira.ixsystems.com/projects/NAS/versions/13002)                                        | 2021/06/01             |
+| [TrueNAS 12.0-U5](https://jira.ixsystems.com/projects/NAS/versions/13007)                                        | 2021/08/03             |
 
 {{< /tab >}}
 {{< tab "TrueNAS SCALE" >}}
 
 | Version                                                                                                                | Scheduled Release Date |
 |------------------------------------------------------------------------------------------------------------------------|------------------------|
-| [SCALE 21.06-BETA.1 (Angelfish)](https://jira.ixsystems.com/projects/NAS/versions/13003)                               | 2021/06/15             |
+| [SCALE 21.06-BETA.1 (Angelfish)](https://jira.ixsystems.com/projects/NAS/versions/13003)                               | 2021/06/22             |
 
 {{< /tab >}}
 {{< tab "TrueCommand" >}}
 
 | Version                                                                                                                 | Scheduled Release Date |
 |-------------------------------------------------------------------------------------------------------------------------|------------------------|
-| [TrueCommand 2.0](https://jira.ixsystems.com/projects/TC/versions/12907)                                                | 2021/06/08             |
+| [TrueCommand 2.1](https://jira.ixsystems.com/projects/TC/versions/12202)                                                | Q3 2021                |
 
 {{< /tab >}}
 {{< tab "TrueNAS vCenter Plugin" >}}
