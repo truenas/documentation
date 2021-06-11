@@ -130,7 +130,8 @@ Set the rest of the options:
 
 ## Unlocking a Replicated Encrypted Dataset or Zvol Without a Passphrase
 
-TrueNAS Enterprise users may connect a Key Management Interoperability Protocol ([KMIP]({{< relref "KMIP.md" >}})) server to centralize keys when passphrases are not used to unlock a dataset or zvol.  
+TrueNAS Enterprise users may connect a Key Management Interoperability Protocol ([KMIP]({{< relref "KMIP.md" >}})) server to centralize keys when passphrases are not used to unlock a dataset or zvol. 
+
 Users with TrueNAS CORE or Enterprise installations without [KMIP]({{< relref "KMIP.md" >}}) should either replicate the dataset or zvol without properties to disable encryption at the remote end, or construct a special json manifest to unlock each child dataset/zvol with a unique key.
 
 {{< tabs "Unlocking Methods" >}}
@@ -146,9 +147,9 @@ Users with TrueNAS CORE or Enterprise installations without [KMIP]({{< relref "K
 {{< tab "Method 2: Replicate Encrypted Dataset/zvol Without Properties" >}}
 Uncheck properties when replicating so that the destination dataset will not be encrypted on the remote side and will not require a key to unlock.
 1. Go to **Tasks > Replication Tasks** and click *ADD*.
-2. Click *ADVANCED REPLICATION CREATION*
+2. Click *ADVANCED REPLICATION CREATION*.
 3. Fill out the form as needed and make sure *Include Dataset Properties* is **NOT** checked.
-4. Click *SUBMIT*
+4. Click *SUBMIT*.
 
 {{< /tab >}}
 {{< /tabs >}}
