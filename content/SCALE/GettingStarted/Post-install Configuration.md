@@ -1,19 +1,15 @@
 ---
-title: "Post-install Configuration"
+title: "Console Setup Menu"
 weight: 11
 ---
 
-{{< toc >}}
-
-Once you have installed or upgraded to SCALE, you can take care of any necessary post-install configurations using the Console Setup menu for fresh installations, or the Shell for upgrade installations.
-
-{{< tabs "Console Setup" >}}
-{{< tab "Configuring Fresh SCALE Installations" >}}
 The Console Setup menu displays at the end of the boot process.
 If the TrueNAS system has a keyboard and monitor, this menu can be used to administer the system.
 
 When connecting with SSH or the web shell, the Console Setup menu is not shown by default.
 It can be started by the `root` user or another user with root permissions by entering `/etc/netcli`.
+
+To disable the Console Setup menu, go to **System > Advanced** and unset *Show Text Console without Password Prompt*.
 
 ![ConsoleSetupMenu](/images/CORE/ConsoleSetupMenu.png "TrueNAS Console Setup Menu")
 
