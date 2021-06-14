@@ -15,8 +15,6 @@ If the TrueNAS system has a keyboard and monitor, this menu can be used to admin
 When connecting with SSH or the web shell, the Console Setup menu is not shown by default.
 It can be started by the `root` user or another user with root permissions by entering `/etc/netcli`.
 
-To disable the Console Setup menu, go to **System > Advanced** and unset *Enable Console Menu*.
-
 ![ConsoleSetupMenu](/images/CORE/ConsoleSetupMenu.png "TrueNAS Console Setup Menu")
 
 On HA systems, some of these menu options are not available unless HA has been administratively disabled.
