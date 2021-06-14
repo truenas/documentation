@@ -1,5 +1,5 @@
 ---
-title: "Console Setup Menu"
+title: "Post-install Configuration"
 weight: 11
 ---
 
