@@ -1,6 +1,6 @@
 ---
 title: "Post-install Configuration"
-weight: 11
+weight: 12
 ---
 
 The Console Setup menu displays at the end of the boot process.
