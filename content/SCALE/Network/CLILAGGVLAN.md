@@ -5,7 +5,7 @@ weight: 20
 
 {{< toc >}}
 
-Setting a LAGG or VLAN on TrueNAS SCALE can be accomplished with the new CLI utility. In this example we will be setting both a LAGG and a VLAN at the same time.  Keep in mind the values used in this example will change based on your network infrastructure.
+Setting a LAGG or VLAN on TrueNAS SCALE can be accomplished with the new CLI utility. In this example we will be setting both a LAGG and a VLAN at the same time.  The values used in this example will change based on your network infrastructure.
 
 | Parameter | Value |
 |-|-|
@@ -27,7 +27,9 @@ Next, launch the CLI utility by entering: **cli**
 The following commands will configure the interface.
 
 `network interface create type=LINK_AGGREGATION lag_ports=["eno1","eno2"] lag_protocol=LACP`
+
 `network interface create type=VLAN vlan_parent_interface=bond0 vlan_tag=1022 aliases=[{"address": "10.215.6.5", "netmask": "25"}]`
+
 `network interface commit options={}`
 
 The configuration will be attempted and if any errors occur they will be displayed.
