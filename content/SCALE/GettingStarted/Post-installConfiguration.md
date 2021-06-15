@@ -31,7 +31,7 @@ The menu provides these options:
 
 7) **Reset Root Password** is used to reset a lost or forgotten root password. Select this option and follow the prompts to set the password.
 
-8) **Reset Configuration to Defaults** *Caution!* This option deletes all of the configuration settings made in the administrative GUI and is used to reset  TrueNAS® back to defaults. Before selecting this option, make a full backup of all data and make sure all encryption keys and passphrases are known! After this option is selected, the configuration is reset to defaults and the system reboots. Storage ➞ Pools ➞ Import Pool can be used to re-import pools.
+8) **Reset Configuration to Defaults** *Caution!* This option deletes all of the configuration settings made in the administrative GUI and is used to reset  TrueNAS® back to defaults. Before selecting this option, make a full backup of all data and make sure all encryption keys and passphrases are known! After this option is selected, the configuration is reset to defaults and the system reboots. Navigate to **Storage** and click *Import* to re-import pools.
 
 9) **Shell** starts a shell for running FreeBSD commands. To leave the shell, type exit.
 
@@ -47,8 +47,7 @@ If it successfully receives an IP address, the address is displayed so it can be
 In the example shown above, TrueNAS is accessible at `10.238.15.194`.
 
 Some TrueNAS systems are set up without a monitor, making it challenging to determine which IP address has been assigned.
-On networks that support Multicast DNS (mDNS), the hostname and domain can be entered into the address bar of a browser.
-By default, this value is `truenas.local`.
+On networks that support Multicast DNS (mDNS), the hostname and domain can be entered into the address bar of a browser. (`truenas.local` by default).
 
 Web Interface Configuration Options
 {{< tabs "Web Interface Access Options" >}}
