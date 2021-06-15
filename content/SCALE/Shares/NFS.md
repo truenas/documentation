@@ -35,11 +35,11 @@ If you wish to create the share but not immediately enable it, select *CANCEL*.
 
 | Setting | Value | Description |
 |---------|-------|-------------|
-| Path    | file browser | Type or browse to the full path to the pool or dataset to share. Click **Add** to configure multiple paths. |
+| Path    | file browser | Type or browse to the full path to the pool or dataset to share. Click *Add* to configure multiple paths. |
 | Description | string | Enter any notes or reminders about the share. |
 | Alias | String | Custom shortcut for the *Path* using */nfsshare* format. |
 | Enabled | checkbox | Enable this NFS share. Unset to disable this NFS share without deleting the configuration. |
-| Add Networks | String | Enter an allowed network in network/mask CIDR notation. Click **Add** to define another authorized network. Defining an authorized network restricts access to all other networks. Leave field empty to allow all networks. |
+| Add Networks | String | Enter an allowed network in network/mask CIDR notation. Click *Add* to define another authorized network. Defining an authorized network restricts access to all other networks. Leave field empty to allow all networks. |
 | Authorized Hosts and IP addresses | string | Enter a hostname or IP address to allow that system access to the NFS share. Click **Add** to define another allowed system. Defining authorized systems restricts access to all other systems. Leave field empty to allow all systems access to the share. |
 
 {{< expand "Advanced Options" "v" >}}
