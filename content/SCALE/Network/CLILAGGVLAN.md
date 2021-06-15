@@ -20,7 +20,7 @@ Setting a LAGG or VLAN on TrueNAS SCALE can be accomplished with the new CLI uti
 Open the TrueNAS shell by clicking **System Settings > Shell**.
 Next, launch the CLI utility by entering: **cli**
 
-![SCALECLI](/images/SCALE/12.0/SCALECLIShell.png "SCALE CLI")
+![SCALECLI](/images/SCALE/SCALECLIShell.png "SCALE CLI")
 
 #### Configure the LAGG and VLAN
 
