@@ -58,7 +58,7 @@ After logging in, the system **Dashboard** is shown.
 Basic information about the installed version, systems component usage and network traffic are all presented on this screen.  For users with compatible TrueNAS
 Hardware, clicking the system image will take you to the **System > View Enclosure** page. 
 
-![DashoardSCALE](/images/SCALE/12.0/DashoardSCALE.png "TrueNAS SCALE Dashboard")
+![DashboardSCALE](/images/SCALE/DashboardSCALE.png "TrueNAS SCALE Dashboard")
 
 The **Dashboard** provides access to all TrueNAS management options.
 Across the top row are links to outside resources and buttons to control the system.
