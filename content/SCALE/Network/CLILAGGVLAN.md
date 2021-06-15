@@ -26,11 +26,9 @@ Next, launch the CLI utility by entering: **cli**
 
 The following commands will configure the interface.
 
-```
-network interface create type=LINK_AGGREGATION lag_ports=["eno1","eno2"] lag_protocol=LACP
-network interface create type=VLAN vlan_parent_interface=bond0 vlan_tag=1022 aliases=[{"address": "10.215.6.5", "netmask": "25"}]
-network interface commit options={}
-```
+`network interface create type=LINK_AGGREGATION lag_ports=["eno1","eno2"] lag_protocol=LACP`
+`network interface create type=VLAN vlan_parent_interface=bond0 vlan_tag=1022 aliases=[{"address": "10.215.6.5", "netmask": "25"}]`
+`network interface commit options={}`
 
 The configuration will be attempted and if any errors occur they will be displayed.
 Once this has been completed you can exit the CLI Utility and run `ip addr show` and verify that the IP was set.
