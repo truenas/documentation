@@ -23,7 +23,7 @@ On networks that support Multicast Domain Name Services (mDNS), a hostname and d
 By default, TrueNAS is configured to use the hostname and domain *truenas.local*
 You can change this after logging in to the web interface by going to **Network**, clicking *Settings* in the *Global Configuration* window, and setting a new *Hostname* and *Domain*.
 
-To access the web interface using an IP address, use the one that the Console Setup Menu generated after installing SCALE, or use the one you configured in the [Post-install Configuration] article ({{< relref "Post-installConfiguration.md" >}}) if you upgraded from CORE.
+To access the web interface using an IP address, use the one that the Console Setup Menu generated after installing SCALE, or use the one you configured in the [Post-install Configuration article]({{< relref "Post-installConfiguration.md" >}}) if you upgraded from CORE.
 
 If you need to, you can reset the root password in the TrueNAS console setup menu or in the web interface by going to **Credentials > Local Users** and editing the Root user.
 
@@ -54,8 +54,8 @@ If the UI becomes unresponsive after an upgrade or other system operation, clear
 
 ## Dashboard
 
-After logging in, the system **Dashboard** is shown.
-Basic information about the installed version, systems component usage and network traffic are all presented on this screen.  For users with compatible TrueNAS
+After logging in, you will see the system **Dashboard**.
+The dashboard displays basic information about the installed version, systems component usage, and network traffic. For users with compatible TrueNAS
 Hardware, clicking the system image will take you to the **System > View Enclosure** page. 
 
 ![DashboardSCALE](/images/SCALE/DashboardSCALE.png "TrueNAS SCALE Dashboard")
