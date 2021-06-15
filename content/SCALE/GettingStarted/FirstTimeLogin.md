@@ -56,7 +56,7 @@ If the UI becomes unresponsive after an upgrade or other system operation, clear
 
 After logging in, you will see the system **Dashboard**.
 The dashboard displays basic information about the installed version, systems component usage, and network traffic. For users with compatible TrueNAS
-Hardware, clicking the system image will take you to the **System > View Enclosure** page. 
+Hardware, clicking the system image will take you to the **System Settings > Enclosure** page. 
 
 ![DashboardSCALE](/images/SCALE/DashboardSCALE.png "TrueNAS SCALE Dashboard")
 
