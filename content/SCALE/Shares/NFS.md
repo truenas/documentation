@@ -19,11 +19,11 @@ Creating a Network File System (NFS) share on TrueNAS gives the benefit of makin
 
 ### Creating an NFS Share ###
 
-Go to **Shares** and within the **UNIX (NFS) Shares** header click *ADD*  
+Go to **Shares** and within the **UNIX (NFS) Shares** header click *Add*  
 
 ![Services NFS Add](/images/SCALE/SharingNFSAdd.png "Services NFS Add")
 
-Select a path to the dataset by clicking *ADD*.  Use the file browser to select the dataset to be shared.  An *Alias* can be used To define a custom shortcut for the *Path*. Enter a memorable name, for example: */nfsshare*. NFS clients can connect using the *Alias* instead of the *Path* when the share is active. A share with multiple paths requires either not using aliases or defining an alias for each path in the share.  An optional Description can be entered to help identify the share.  Clicking *SAVE* creates the share.
+Select a path to the dataset by clicking *Add*.  Use the file browser to select the dataset to be shared.  An *Alias* can be used To define a custom shortcut for the *Path*. Enter a memorable name, for example: */nfsshare*. NFS clients can connect using the *Alias* instead of the *Path* when the share is active. A share with multiple paths requires either not using aliases or defining an alias for each path in the share.  An optional Description can be entered to help identify the share.  Clicking *Save* creates the share.
 At the time of creation, you can select *ENABLE SERVICE* for the service to start and to automatically start after any reboots.
 If you wish to create the share but not immediately enable it, select *CANCEL*.
 
@@ -35,12 +35,12 @@ If you wish to create the share but not immediately enable it, select *CANCEL*.
 
 | Setting | Value | Description |
 |---------|-------|-------------|
-| Path    | file browser | Type or browse to the full path to the pool or dataset to share. Click **ADD** to configure multiple paths. |
+| Path    | file browser | Type or browse to the full path to the pool or dataset to share. Click **Add** to configure multiple paths. |
 | Description | string | Enter any notes or reminders about the share. |
 | Alias | String | Custom shortcut for the *Path* using */nfsshare* format. |
 | Enabled | checkbox | Enable this NFS share. Unset to disable this NFS share without deleting the configuration. |
-| Add Networks | String | Enter an allowed network in network/mask CIDR notation. Click **ADD** to define another authorized network. Defining an authorized network restricts access to all other networks. Leave field empty to allow all networks. |
-| Authorized Hosts and IP addresses | string | Enter a hostname or IP address to allow that system access to the NFS share. Click **ADD** to define another allowed system. Defining authorized systems restricts access to all other systems. Leave field empty to allow all systems access to the share. |
+| Add Networks | String | Enter an allowed network in network/mask CIDR notation. Click **Add** to define another authorized network. Defining an authorized network restricts access to all other networks. Leave field empty to allow all networks. |
+| Authorized Hosts and IP addresses | string | Enter a hostname or IP address to allow that system access to the NFS share. Click **Add** to define another allowed system. Defining authorized systems restricts access to all other systems. Leave field empty to allow all systems access to the share. |
 
 {{< expand "Advanced Options" "v" >}}
 Opening the *Advanced Options* allows tuning the share access permissions.
@@ -76,7 +76,7 @@ To begin sharing the data, go to **System Settings > Services** and click the *N
 
 {{< hint info >}}
  
-There are additional paths to the **Services** page.  Go to **Shares** and click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> within the *Unix (NFS) Shares* header.  Choose *Config Service*.  The service can also be turned on/off from this same location.
+There are additional paths to the **Services** page.  Go to **Shares** and click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> within the **Unix (NFS) Shares** header.  Choose *Config Service*.  The service can also be turned on/off from this same location.
 {{< /hint >}}
 
 NFS service settings can be configured by clicking <i class="fa fa-pen" aria-hidden="true" title="Configure"></i> (Configure).
