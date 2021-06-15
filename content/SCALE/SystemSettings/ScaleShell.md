@@ -30,7 +30,7 @@ Click *Reconnect* to start a new session.
 Clicking other web interface menus closes the shell session and stops commands running in the shell.
 [zsh](https://www.zsh.org/) is the default shell, but this is changed by editing the *root* user in **Credentials > Local Users** and choosing a different option in the *Shell* drop down. Most Linux command line utilities are available in the shell.
 
-tmux provides the ability to detach shell sessions and then reattach to them later.
+Tmux provides the ability to detach shell sessions and then reattach to them later.
 Commands continue to run in a detached session.
 
 ## Experimental CLI
