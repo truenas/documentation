@@ -4,7 +4,7 @@ weight: 12
 ---
 
 The Console Setup menu displays at the end of the boot process.
-If the TrueNAS system has a keyboard and monitor, this menu can be used to administer the system.
+If the TrueNAS system has a keyboard and monitor, you can use this menu to administer the system.
 
 When connecting with SSH or the web shell, the Console Setup menu is not shown by default.
 It can be started by the `root` user or another user with root permissions by entering `/etc/netcli`.
@@ -50,8 +50,9 @@ Some TrueNAS systems are set up without a monitor, making it challenging to dete
 On networks that support Multicast DNS (mDNS), the hostname and domain can be entered into the address bar of a browser.
 By default, this value is `truenas.local`.
 
+Web Interface Configuration Options
 {{< tabs "Web Interface Access Options" >}}
-{{< tab "Configuring Web Interface Access for Fresh SCALE Installs" >}}
+{{< tab "Fresh SCALE Installs" >}}
 If TrueNAS is not connected to a network with a DHCP server, use the console network configuration menu to manually configure the interface as shown here.
 In this example, the TrueNAS system has one network interface, `em0`.
 
@@ -81,7 +82,7 @@ The web user interface is at
 http://192.168.1.108
 ```
 {{< /tab >}}
-{{< tab "Configuring Web Interface Access for SCALE Installations Upgraded From CORE" >}}
+{{< tab "SCALE Installations Upgraded From CORE" >}}
 Information coming soon.
 {{< /tab >}}
 {{< /tabs >}}
