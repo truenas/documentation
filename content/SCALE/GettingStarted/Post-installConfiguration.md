@@ -50,6 +50,8 @@ Some TrueNAS systems are set up without a monitor, making it challenging to dete
 On networks that support Multicast DNS (mDNS), the hostname and domain can be entered into the address bar of a browser.
 By default, this value is `truenas.local`.
 
+{{< tabs "Web Interface Access Options" >}}
+{{< tab "Configuring Web Interface Access for Fresh SCALE Installs" >}}
 If TrueNAS is not connected to a network with a DHCP server, use the console network configuration menu to manually configure the interface as shown here.
 In this example, the TrueNAS system has one network interface, `em0`.
 
@@ -79,7 +81,7 @@ The web user interface is at
 http://192.168.1.108
 ```
 {{< /tab >}}
-{{< tab "Configuring SCALE Installations Upgraded From CORE" >}}
+{{< tab "Configuring Web Interface Access for SCALE Installations Upgraded From CORE" >}}
 Information coming soon.
 {{< /tab >}}
 {{< /tabs >}}
