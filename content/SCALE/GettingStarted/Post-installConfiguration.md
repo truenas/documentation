@@ -44,7 +44,7 @@ Please carefully check the menu before selecting an option, and keep this in min
 
 During boot, TrueNAS automatically attempts to connect to a DHCP server from all live interfaces.
 If it successfully receives an IP address, the address is displayed so it can be used to access the graphical user interface.
-In the example shown above, TrueNAS is accessible at `10.0.0.102`.
+In the example shown above, TrueNAS is accessible at `10.238.15.194`.
 
 Some TrueNAS systems are set up without a monitor, making it challenging to determine which IP address has been assigned.
 On networks that support Multicast DNS (mDNS), the hostname and domain can be entered into the address bar of a browser.
