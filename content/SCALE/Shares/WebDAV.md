@@ -13,7 +13,7 @@ WebDAV stands for Web-based Distributed Authoring and Versioning, which is an ex
 
 Go to **Shares > WebDAV** and click *Add*.
 
-![SharingWebdavAdd](/images/SCALE/SharingWebdavAdd.png "Creating a WebDAV Share")
+![SharingWebdavAdd](/images/SCALE/SharingWebdavADD.png "Creating a WebDAV Share")
 
 Enter a share *Name* and use the file browser to select the dataset to be shared. An optional *Description* helps to identify the share. To prevent user accounts from modifying the shared data, set *Read Only*.
 
