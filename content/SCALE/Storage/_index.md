@@ -1,7 +1,7 @@
 ---
 title: "Storage"
 geekdocCollapseSection: true
-weight: 10
+weight: 30
 ---
 
 The SCALE Storage topic includes covers importing, creating, and managing pools, creating and managing snapshots, and importaing and managing disks. 
