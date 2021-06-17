@@ -108,8 +108,6 @@ Clicking the task state opens the log for that task.
 
 ## Local Replication
 
-{{< toc >}}
-
 {{< expand "Process Summary" "v" >}}
 ## Process Summary
 
