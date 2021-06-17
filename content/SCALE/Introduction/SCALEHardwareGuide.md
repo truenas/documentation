@@ -173,17 +173,17 @@ Spinning disk hard drives have moving parts, by definition. These parts are high
 * NVMe percentage used (`nvmecontrol logpage -p 2 nvme0 | grep “Percentage used”`)
 
 Take time before deploying the system to create a pool and subject it to as close to the real-world workload as possible.
-This can reveal individual drive issues but also can help determine if an alternative pool layout is better suited to that workload.
+Doing so can reveal individual drive issues but also can help determine if an alternative pool layout is better suited to that workload.
 Be cautious of used drives as vendors may not be honest or informed about the age and health of any given drive.
-Check the number of hours on all “new” drives using [smartctl(8)](https://www.ixsystems.com/community/resources/hard-drive-troubleshooting-guide-all-versions-of-freenas.17/) as they may in fact be “recertified” or simply untruthfully advertised.
+Check the number of hours on all “new” drives using [smartctl(8)](https://www.ixsystems.com/community/resources/hard-drive-troubleshooting-guide-all-versions-of-freenas.17/) as they may  actually be “recertified” or simply untruthfully advertised.
 A drive vendor may also zero the hours of a drive during recertification, masking its true age.
-All storage devices sold by iXsystems are tested for a minimum of 48 hours prior to shipment.
+All storage devices sold by iXsystems are tested for a minimum of 48 hours before shipping.
 
 ### Storage Controllers
 
 The uncontested most popular storage controllers used with TrueNAS are the 6 and 12 Gbps (“Gigabits per second”, sometimes expressed as “Gb/s”) Broadcom (formerly Avago, formerly LSI) SAS host bus adapters (HBA).
 These occasionally ship as embedded controllers on some motherboards but are generally PCIe cards with four or more internal or external SATA/SAS ports.
-The 6 Gbps LSI 9211 and its rebranded siblings that also use the LSI SAS2008 chip, such as the IBM M1015 and Dell H200 are legendary among TrueNAS users who are building systems using parts from the second hand market.
+The 6 Gbps LSI 9211 and its rebranded siblings that also use the LSI SAS2008 chip, such as the IBM M1015 and Dell H200 are legendary among TrueNAS users who are building systems using parts from the second-hand market.
 Broadcom controllers should be flashed with the latest IT or Target Mode firmware to disable the optional RAID functionality found in the “IR” firmware.
 For those with the budget, newer models like the Broadcom 9300/9400 series give 12 Gbps SAS capabilities and even NVMe to SAS translation abilities with the 9400 series.
 TrueNAS includes the `sas2flash`, `sas3flash`, and `storcli` commands to flash to perform reflashing operations on 9200, 9300, and 9400 series cards respectively.
@@ -194,13 +194,12 @@ Be aware that many motherboards ship with a mix of 3 Gbps and 6 Gbps onboard SAT
 If a motherboard includes hardware RAID functionality, do not use or configure it, but note that disabling it in the BIOS may remove some SATA functionality, depending on the motherboard.
 Fortunately, most SATA compatibility-related issues are immediately obvious.
 
-In addition, there are countless warnings against using hardware RAID cards with TrueNAS, but it’s really not as cut and dry as that.
-ZFS and TrueNAS provide built-in RAID that protects your data better than any hardware RAID card, eliminating the need for one entirely.
-However, they can be used if it’s all you have, but like life, there are rules.
+In addition, there are countless warnings against using hardware RAID cards with TrueNAS, but it’s not that simple.
+ZFS and TrueNAS provide built-in RAID that protects your data better than any hardware RAID card, which eliminates the need for one.
+However, they can be used if it’s all you have, but there are limitations.
 First and foremost, do not use their RAID facility (there is one caveat in the bullets below).
 Ideally, the chosen hardware RAID card supports HBA mode, also known as “passthrough” or “JBOD” mode, which will allow it to perform indistinguishably from a standard HBA.
 If your RAID card does not have this mode, you can configure a RAID0 for every single disk in your system.
-It’s not ideal, but it works in a pinch.
 
 If repurposing hardware RAID cards with TrueNAS, be aware that some hardware RAID cards:
 
@@ -272,7 +271,7 @@ However:
 
 ### Central Processing Unit (CPU) Selection
 
-Choosing ECC RAM will significantly reduce the available CPU and motherboard options, but this is actually a good thing.
+Choosing ECC RAM will significantly reduce the available CPU and motherboard options, but that is actually a good thing.
 Intel<sup>®</sup> makes a point of limiting ECC RAM support to their lowest and highest-end CPUs, cutting out the mid-range i5 and i7 models.
 All TrueNAS Mini systems ship with Intel Denverton C3000 CPUs and all FreeNAS Certified and TrueNAS systems ship with Intel Xeon® CPUs.
 
@@ -286,7 +285,7 @@ Exactly what CPU to choose can come down to a short list of key factors:
 * A Xeon E5 (or similar) CPU is recommended for use with software-encrypted pools.
 * Intel Ivy Bridge or later CPUs are strongly recommended for virtual machine use.
 * Watch for VT-d/AMD-Vi device virtualization support on the CPU and motherboard to pass PCIe devices to virtual machines.
-* Be aware if a given CPU contains a GPU or requires an external one. Also note that many server motherboards include a BMC chip with a built-in GPU. See below for more details on BMCs.
+* Be aware if a given CPU contains a GPU or requires an external one. Also, note that many server motherboards include a BMC chip with a built-in GPU. See below for more details on BMCs.
 
 AMD CPUs are making a comeback thanks to the Ryzen and EPYC (Naples/Rome) lines but support for these platforms has been relatively limited on FreeBSD and, by extension, TrueNAS.
 They will work, but there has been less run time and performance tuning.
@@ -300,7 +299,7 @@ As a courtesy to *further* limit the motherboard choices, the Intelligent Platfo
 * Remote virtual media for TrueNAS installation or reinstallation
 
 Because TrueNAS relies heavily on its web-based user interface (UI), console access can occasionally be needed to make network configuration changes.
-TrueNAS administration and sharing default to a single network interface, and this becomes a challenge when it comes time to upgrade, for example, LACP aggregated networking.
+TrueNAS administration and sharing default to a single network interface, which becomes a challenge when it comes time to upgrade, for example, LACP aggregated networking.
 The ideal solution is to have a dedicated subnet for access to the TrueNAS web UI, but this luxury is not available to all users.
 This is why the occasional visit to the hardware console is necessary for global configuration and, possibly, system recovery.
 The latest TrueNAS Mini and TrueNAS R-Series systems ship with full-featured, HTML5-based IPMI support on a dedicated gigabit network interface.
@@ -315,14 +314,14 @@ The top criteria to consider for a power supply unit or PSU on a TrueNAS system 
 * Relative noise
 * Optional redundancy to keep an important system running if one power supply fails
 
-It is critical that PSU(s) are rated for the initial and future load that will be placed on them.
+PSU(s) **must** be rated for the initial and future load that will be placed on them.
 If the plan is to gradually populate a large storage chassis, be sure to have adequate power for the fully-populated chassis.
-Also consider a hot-swappable redundant PSU to help guarantee uptime.
+Also, consider a hot-swappable redundant PSU to help guarantee uptime.
 Users on a budget can keep a cold spare PSU to limit their potential downtime to hours, rather than days.
-A good, modern PSU is efficient and is fully integrated into the IPMI management system to provide real time fan, temperature, and load information. 
+A good, modern PSU is efficient and is fully integrated into the IPMI management system to provide real-time fan, temperature, and load information. 
 
 Most power supplies are certified with an efficiency rating known as an [“80 Plus”](https://en.wikipedia.org/wiki/80_Plus) rating.
-This rating indicates how much power drawn from the wall will be lost as heat, noise, and vibrations, instead of doing useful work like powering your components.
+The 80 Plus rating indicates how much of the power drawn from the wall will be lost as heat, noise, and vibrations, instead of doing useful work like powering your components.
 If a power supply needs to draw 600 watts from the wall to provide 500 watts of power to your components, it’s operating at 500/600 = \~83% efficiency.
 The other 100 watts gets lost as heat, noise, and vibration.
 Power supplies with higher ratings will be more efficient, but can also be far more expensive.
@@ -339,7 +338,7 @@ If multiple SSDs experience this simultaneously, this could cause total pool fai
 
 ### Ethernet Networking
 
-The “Network” in “Network Attached Storage” is obviously just as important as Storage but the topic can be reduced to a few key points:
+The “Network” in “Network Attached Storage” is just as important as Storage but the topic can be reduced to a few key points:
 
 * Simplicity is often the secret to reliability with network configurations.
 * Faster individual interfaces such as 10/25/40/100GbE are preferred to aggregating slower interfaces.
@@ -349,11 +348,10 @@ The “Network” in “Network Attached Storage” is obviously just as importa
 
 ### High Speed Interconnects
 
-As the pace of hardware developement increases and enterprises upgrade at a faster pace, higher bandwidth hardware is becoming more and more accessible.
-It's now realistic for home labs to employ 40GB and higher networking components.
-Home users are now discovering the same complications with these speeds that have been found by Enterprise customers.
+As the pace of hardware development increases and enterprises upgrade at a faster pace, higher bandwidth hardware is becoming more and more accessible.
+Home labs can now realistically employ 40GB and higher networking components, and home users are discovering the same complications with these speeds that have been  by Enterprise customers have found.
 
-iXsystems highly recommends using Optical Fiber over Direct Attached Copper (DAC) cables for the high speed interconnects listed below:
+iXsystems recommends using Optical Fiber over Direct Attached Copper (DAC) cables for the high speed interconnects listed below:
 
 * 10Gb NICs: SFP+ connectors
 * 25Gb NICs: SFP28 connectors
@@ -363,12 +361,12 @@ iXsystems highly recommends using Optical Fiber over Direct Attached Copper (DAC
 * 400Gb NICs: QSFP-DD connectors
 
 iXsystems also recommends using optical fiber for any of the aforementioned transceiver form factors when using Fibre Channel.
-Direct Attached Copper (DAC) cables could create interoperability issues between the NIC, cable and switch.
+Direct Attached Copper (DAC) cables could create interoperability issues between the NIC, cable, and switch.
 
 ## Virtualized TrueNAS SCALE
 
 Finally, the ultimate TrueNAS hardware question is whether to use actual hardware at all or go with a virtualization solution.
-TrueNAS developers [virtualize TrueNAS every day](https://www.ixsystems.com/blog/yes-you-can-virtualize-freenas/) as part of their work, and cloud services are obviously popular among users of all sizes.
+TrueNAS developers [virtualize TrueNAS every day](https://www.ixsystems.com/blog/yes-you-can-virtualize-freenas/) as part of their work, and cloud services are popular among users of all sizes.
 The fact remains, however, that OpenZFS at the heart of TrueNAS has been designed from day one to work directly with physical storage devices, fully aware of their strengths and compensating for their weaknesses.
 Also, at the heart of TrueNAS is FreeBSD, which offers exemplary hardware performance and health reporting.
 When the need arises to virtualize TrueNAS:
