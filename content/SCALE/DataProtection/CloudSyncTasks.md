@@ -23,7 +23,7 @@ TrueNAS supports major providers like Amazon S3, Google Cloud, and Microsoft Azu
 
 Go to **Data Protection > Cloud Sync Tasks** and click *Add*.
 
-![TasksCloudSyncAdd](/images/SCALE/DataProtectionCloudSyncAdd.png "Creating a Cloud Sync Task")
+![DataProtectionCloudSyncAdd](/images/SCALE/DataProtectionCloudSyncAdd.png "Creating a Cloud Sync Task")
 
 Give the task a memorable *Description* and select an existing cloud *Credential*. TrueNAS connects to the chosen Cloud Storage Provider and shows the available storage locations. Decide if data is transferring to (*PUSH*) or from (*PULL*) the Cloud Storage location (**Remote**). Choose a *Transfer Mode*:
 
@@ -87,22 +87,22 @@ Local storage settings:
 Test the settings before saving by clicking *Dry Run*. TrueNAS connects to the Cloud Storage Provider and simulates a file transfer. No data is actually sent or received.
 A dialog shows the test status and allows downloading the task logs.  This can also be ran by clicking <i class="material-icons" aria-hidden="true" title="Dry Run">loop</i> after the task has been created.
 
-![TasksCloudsyncAddGoogledriveDryrun](/images/CORE/12.0/TasksCloudsyncAddGoogledriveDryrun.png "Example: Google Drive Test")
+![DataProtectionCloudSyncAddBoxDryRun](/images/SCALE/DataProtectionCloudSyncDryRun.png "Example: Box Drive Test")
 
 ## Cloud Sync Behavior
 
-Saved tasks are activated according to their schedule or by clicking **Run Now**. An in-progress cloud sync must finish before another can begin. Stopping an in-progress task cancels the file transfer and requires starting the file transfer over.
+Saved tasks are activated according to their schedule or by clicking <i class="material-icons" aria-hidden="true" title="Run Now">play_arrow</i>. An in-progress cloud sync must finish before another can begin. Stopping an in-progress task cancels the file transfer and requires starting the file transfer over.
 
-To view logs about a running or the most recent run of a task, click the task state.
+To view logs about a running or the most recent run of a task, click the task *State*.
 
 ## Cloud Sync Restore
 
-To quickly create a new Cloud Sync that uses the same options but reverses the data transfer, expand (<i class="fa fa-chevron-right"></i>) an existing Cloud Sync and click *RESTORE*.
+To quickly create a new Cloud Sync that uses the same options but reverses the data transfer, select <i class="material-icons" aria-hidden="true" title="Restore">history</i> for an existing Cloud Sync on the **Data Protection** page.
 
-![TasksCloudSyncRestore](/images/CORE/12.0/TasksCloudSyncRestore.png "Cloud Sync Restore")
+![DataProtectionsCloudSyncRestore](/images/SCALE/DataProtectionCloudSyncRestore.png "Cloud Sync Restore")
 
-Enter a new *Description* for this reversed task and define the path to a storage location for the transferred data.
+Enter a new *Description* for this reversed task, define the path to a storage location for the transferred data and click *Restore*.
 
-The restored cloud sync is saved as another entry in **Tasks > Cloud Sync Tasks**.
+The restored cloud sync is saved as another entry in **Data protection > Cloud Sync Tasks**.
 
-In case the restore destination dataset is the same as the original source dataset, the restored files might have their ownership altered to _root_. If the original files were not created by _root_ and a different owner is required, you can recursively reset ACL Permissions of the restored dataset through the GUI or by running chown from the CLI.
+In case the restore destination dataset is the same as the original source dataset, the restored files might have their ownership altered to *root*. If the original files were not created by *root* and a different owner is required, you can recursively reset ACL Permissions of the restored dataset through the GUI or by running `chown` from the CLI.
