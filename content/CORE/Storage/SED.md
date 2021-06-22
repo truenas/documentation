@@ -161,7 +161,7 @@ sedutil-cli --setSIDPassword <oldpassword> <newpassword> </dev/device>
 sedutil-cli --setPassword <oldpassword> Admin1 <newpassword> </dev/device>
 ```
 
-Wipe data and reset password to default MSID: `sedutil-cli --revertPer <oldpassword> </dev/device>`
+Wipe data and reset password to default MSID: `sedutil-cli --revertTPer <oldpassword> </dev/device>`
 
 Wipe data and reset password using the PSID: `sedutil-cli --yesIreallywanttoERASEALLmydatausingthePSID <PSINODASHED> </dev/device>` where <PSINODASHED> is the PSID located on the pysical drive with no dashes (-).
 {{< /tab >}}
