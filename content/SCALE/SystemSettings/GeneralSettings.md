@@ -4,6 +4,8 @@ geekdocCollapseSection: true
 weight: 20
 ---
 
+{{< toc >}}
+
 The TrueNAS SCALE General Settings section provides settings options for support, graphic user interface, localization, NTP servers, and system configuration. 
 
 ![GeneralSettingsSCALE](/images/SCALE/GeneralSettingsSCALE.png "SCALE General Settings Screen")
@@ -38,5 +40,42 @@ If you do not save the system configuration before resetting it, you may lose da
 {{< /tab >}}
 {{< /tabs >}}
 
+## Support
 
+The *Support* window in the Advenced Settings screen displays the systems genreal hardware and software specs and contains links to the Documentation Hub, TrueNAS Forums, and enterprise licensing information. 
 
+There are also buttons that allow users to add an enterprise license or report bugs via a Jira support ticket.
+
+## GUI 
+
+The *GUI* window allows users to configure the TrueNAS SCALE web interface address.
+
+| Name | Description |
+|------|-------------|
+| GUI SSL Certificate | The system uses a self-signed certificate to enable encrypted web interface connections. To change the default certificate, select a different certificate that was created or imported in the **Certificates** section. |
+| Web Interface IPv4 Address | Choose a recent IP address to limit the usage when accessing the administrative GUI. The built-in HTTP server binds to the wildcard address of 0.0.0.0 (any address) and issues an alert if the specified address becomes unavailable. |
+| Web Interface IPv6 Address | Choose a recent IPv6 address to limit the usage when accessing the administrative GUI. The built-in HTTP server binds to the wildcard address of 0.0.0.0 (any address) and issues an alert if the specified address becomes unavailable. |
+| Web Interface HTTPS Port | Allow configuring a non-standard port to access the GUI over HTTPS. |
+| HTTPS Protocols | Cryptographic protocols for securing client/server connections. Select which [Transport Layer Security (TLS)](https://en.wikipedia.org/wiki/Transport_Layer_Security) versions TrueNAS SCALE can use for connection security. |
+| Web Interface HTTP -> HTTPS Redirect | Redirect HTTP connections to HTTPS. A GUI SSL Certificate is required for HTTPS. Activating this also sets the [HTTP Strict Transport Security (HSTS)](https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security) maximum age to 31536000 seconds (one year). This means that after a browser connects to the web interface for the first time, the browser continues to use HTTPS and renews this setting every year. |
+| Crash Reporting | Send failed HTTP request data which can include client and server IP addresses, failed method call tracebacks, and middleware log file contents to iXsystems. |
+| Usage Collection | Enable sending anonymous usage statistics to iXsystems. |
+| Show Console Messages | Display console messages in real time at the bottom of the browser. |
+
+## Localization 
+
+The *Localization* window lets users localize their system to a specific region.
+
+| Name | Description |
+|------|-------------|
+| Language | Select a language from the drop-down menu. |
+| Date Format | Choose a date format. |
+| Time Format | Choose a time format. |
+| Timezone | Select a time zone. |
+| Console Keyboard Map | Select a keyboard layout. |
+
+## NTP Servers 
+
+The *NTP Servers* window allows user to configure Network Time Protocol (NTP) servers, which sync the local system time with an accurate external reference. By default, new installations use several existing NTP servers. TrueNAS SCALE supports adding custom NTP servers.
+
+{{< include file="static/includes/SystemNTPServersAddFields.md.part" markdown="true" >}}
