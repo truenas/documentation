@@ -18,6 +18,8 @@ To verify that you have Intel VT or AMD-V, open the **Shell** and run `egrep '^f
 If device information appears, your system has VT. You can also check the processor model name (in `/proc/cpuinfo`) on the vendor's website.
 {{< /expand >}}
 
+![VirtualizationSCALE](/images/SCALE/VirtualizationSCALE.png "SCALE Virtualization Screen")
+
 {{< tabs "VM Configuration Options" >}}
 {{< tab "1 Operating System" >}}
 The Operating System menu lets users chose the VM operating system type, the time it uses, its boot method, and its display type.
