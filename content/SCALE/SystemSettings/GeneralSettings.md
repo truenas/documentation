@@ -10,7 +10,7 @@ The TrueNAS SCALE General Settings section provides settings options for support
 
 ## Manage Configuration
 
-TrueNAS SCALE allows users to manage the system configuration via uploading/downloading configurations or restting the system to the default configuration. 
+TrueNAS SCALE allows users to manage the system configuration via uploading/downloading configurations or resetting the system to the default configuration. 
 
 {{< tabs "Configuration Options" >}}
 {{< tab "Download File" >}}
@@ -31,9 +31,9 @@ All passwords will be reset if the uploaded configuration file was saved without
 The *Reset to Defaults* option resets the system's configuration to factory settings. After the configuration resets, the system will restart and users must set a new login password.
 
 {{< hint danger >}}
-**Save the system's current configuration with the _Download File_ option before resetting the configuration to defualt settings.**
+**Save the system's current configuration with the _Download File_ option before resetting the configuration to default settings.**
  
-If you do not save the system configuration before resetting it, you may lose data that was not backed up, and you will not be able to revert back the previous configuration.
+If you do not save the system configuration before resetting it, you may lose data that was not backed up, and you will not be able to revert to the previous configuration.
 {{< /hint >}}
 {{< /tab >}}
 {{< /tabs >}}
