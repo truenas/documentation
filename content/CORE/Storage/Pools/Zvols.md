@@ -36,6 +36,30 @@ To quickly create a Zvol with the default options, enter a name for the Zvol, a 
 
 {{< /expand >}}
 
+{{< expand "Optimal Zvol Block Sizes" "v" >}}
+
+When creating zvols TrueNAS will automatically recommend a sane volume *block size* for optimizing space efficiency.  Below are the minimum volume *block size* values the TrueNAS zvol creation process will recommend. To manually change this value select from the *Block size* dropdown menu. 
+
+| Number of Drives | Configuration | Optimal Block Size | 
+|---------------|-------|-------|
+|N/A|Mirror|16k
+|3|Raidz-1|16k|
+|4|Raidz-2|16k|
+|5|Raidz-3|16K|
+|4/5|Raidz-1|32k|
+|5/6|Raidz-2|32k|
+|6/7|Raidz-3|32k|
+|6/7/8/9|Raidz-1|64k|
+|7/8/9/10|Raidz-2|64k|
+|8/9/10/11|Raidz-3|64k|
+|10+ drives|Raidz-1|128k|
+|11+ drives|Raidz-2|128k|
+|12+ drives|Raidz-3|128k|
+
+Additional tuning may be required for optimal performance depending on the workload.  See the [workload tuning chapter](https://openzfs.github.io/openzfs-docs/Performance%20and%20Tuning/Workload%20Tuning.html) of the OpenZFS handbook for more information
+
+{{< /expand >}}
+
 ## Managing Zvols
 
 To see options for an existing zvol, click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> next to the desired zvol in **Storage** > **Pools**:
