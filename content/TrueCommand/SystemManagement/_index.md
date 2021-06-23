@@ -19,6 +19,9 @@ Note: The alerts bubble will show how many alerts there are for that specific sy
 
 ![DashboardSingleSystemView](/images/TrueCommand/2.0/DashboardSingleSystemView.png "Dashboard Single System View")
 
+{{< hint info >}}
+Clicking on the system name on the system card will give you an expanded view of the system and give additional [Single System Management options]({{< relref "/TrueCommand/SystemManagement/SingleSystem/_index.md" >}})
+
 #### Options menu
 
 ![DashboardSystemOptions](/images/TrueCommand/2.0/DashboardSystemOptions.png "Dashboard System Options")
