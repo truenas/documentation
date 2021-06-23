@@ -14,6 +14,8 @@ For information on the Top Bar and the options refer to [Interface Overview]({{<
 
 Each system will have a unique card to display it stats.
 
+Note: The alerts bubble will show how many alerts there are for that specific system next to the system version on the card. If there are no alerts, there will be no alert bubble. See [Alert Management]({{< relref "/TrueCommand//Alerts/AlertManage.md" >}}) for further information.
+
 ![DashboardSingleSystemView](/images/TrueCommand/2.0/DashboardSingleSystemView.png "Dashboard Single System View")
 
 #### Options menu
