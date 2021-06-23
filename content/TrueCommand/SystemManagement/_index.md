@@ -39,9 +39,9 @@ Clicking on the values for CPU, Disk, and Network will open up small popup windo
 ![DashboadNetworkGraph](/images/TrueCommand/2.0/DashboadNetworkGraph.png "Dashboad Network Graph")
 
 
-#### Updating Wheel
+#### Activity Wheel
 
-When a TrueNAS is updating, a small rotating wheel will be visible to the right of the system nickname.
+When a TrueNAS is updating, a small rotating activity wheel will be visible to the right of the system nickname.
 
 ![DashboardSystemCardUpdating](/images/TrueCommand/2.0/DashboardSystemCardUpdating.png "Dashboard System Card Updating")
 
