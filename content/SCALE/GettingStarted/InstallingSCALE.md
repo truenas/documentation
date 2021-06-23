@@ -286,4 +286,4 @@ When TrueNAS SCALE boots, you may need to [use the Shell to configure networking
 
 Congratulations, TrueNAS SCALE is now installed!
 
-The next step is to log in to the web interface and begin [storing data]({{< relref "StoringData.md" >}}).
+The next step is to boot up the system and [configure SCALE]({{< relref "Post-installConfiguration.md" >}}).
