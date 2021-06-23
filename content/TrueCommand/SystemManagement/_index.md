@@ -30,12 +30,15 @@ The Options menu gives you several shortcuts to simple tasks.  **Edit** opens th
 Clicking on the values for CPU, Disk, and Network will open up small popup windows giving you a quick glance at the statistical history for these systems.
 
 + CPU
+
 ![DashboardCPUGraph](/images/TrueCommand/2.0/DashboardCPUGraph.png "Dashboard CPU Graph")
 
 + Disk
+
 ![DashboardDiskGraph](/images/TrueCommand/2.0/DashboardDiskGraph.png "Dashboard Disk Graph")
 
 + Network
+
 ![DashboadNetworkGraph](/images/TrueCommand/2.0/DashboadNetworkGraph.png "Dashboad Network Graph")
 
 
