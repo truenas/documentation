@@ -1,10 +1,10 @@
 ---
-title: "Console Setup Menu"
-weight: 11
+title: "Post-install Configuration"
+weight: 12
 ---
 
 The Console Setup menu displays at the end of the boot process.
-If the TrueNAS system has a keyboard and monitor, this menu can be used to administer the system.
+If the TrueNAS system has a keyboard and monitor, you can use this menu to administer the system.
 
 When connecting with SSH or the web shell, the Console Setup menu is not shown by default.
 It can be started by the `root` user or another user with root permissions by entering `/etc/netcli`.
@@ -31,7 +31,7 @@ The menu provides these options:
 
 7) **Reset Root Password** is used to reset a lost or forgotten root password. Select this option and follow the prompts to set the password.
 
-8) **Reset Configuration to Defaults** *Caution!* This option deletes all of the configuration settings made in the administrative GUI and is used to reset  TrueNAS® back to defaults. Before selecting this option, make a full backup of all data and make sure all encryption keys and passphrases are known! After this option is selected, the configuration is reset to defaults and the system reboots. Storage ➞ Pools ➞ Import Pool can be used to re-import pools.
+8) **Reset Configuration to Defaults** *Caution!* This option deletes all of the configuration settings made in the administrative GUI and is used to reset  TrueNAS® back to defaults. Before selecting this option, make a full backup of all data and make sure all encryption keys and passphrases are known! After this option is selected, the configuration is reset to defaults and the system reboots. Navigate to **Storage** and click *Import* to re-import pools.
 
 9) **Shell** starts a shell for running FreeBSD commands. To leave the shell, type exit.
 
@@ -44,12 +44,14 @@ Please carefully check the menu before selecting an option, and keep this in min
 
 During boot, TrueNAS automatically attempts to connect to a DHCP server from all live interfaces.
 If it successfully receives an IP address, the address is displayed so it can be used to access the graphical user interface.
-In the example shown above, TrueNAS is accessible at `10.0.0.102`.
+In the example shown above, TrueNAS is accessible at `10.238.15.194`.
 
 Some TrueNAS systems are set up without a monitor, making it challenging to determine which IP address has been assigned.
-On networks that support Multicast DNS (mDNS), the hostname and domain can be entered into the address bar of a browser.
-By default, this value is `truenas.local`.
+On networks that support Multicast DNS (mDNS), the hostname and domain can be entered into the address bar of a browser. (`truenas.local` by default).
 
+Web Interface Configuration Options
+{{< tabs "Web Interface Access Options" >}}
+{{< tab "Fresh SCALE Installs" >}}
 If TrueNAS is not connected to a network with a DHCP server, use the console network configuration menu to manually configure the interface as shown here.
 In this example, the TrueNAS system has one network interface, `em0`.
 
@@ -78,3 +80,8 @@ Restarting network: ok
 The web user interface is at
 http://192.168.1.108
 ```
+{{< /tab >}}
+{{< tab "SCALE Installations Upgraded From CORE" >}}
+Information coming soon.
+{{< /tab >}}
+{{< /tabs >}}
