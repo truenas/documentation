@@ -19,7 +19,7 @@ Before configuring Active Directory, you should take a few steps to ensure the c
 {{< tab "Verify Name Resolution" >}}
 To confirm that name resolution is functioning, go to the **Shell** and use `ping` to check the connection to the AD domain controller.
 
-![ShellDomainControllerPing](/images/CORE/12.0/ShellDomainControllerPing.png "Pinging a Domain Controller")
+![ShellDomainPingSCALE](/images/SCALE/ShellDomainPingSCALE.png "Pinging a Domain Controller")
 
 When packets are being sent and received without loss, the connection is verified.
 Press <kbd>Ctrl + C</kbd> to cancel the `ping`.
