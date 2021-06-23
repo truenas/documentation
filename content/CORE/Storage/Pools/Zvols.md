@@ -52,9 +52,9 @@ When creating zvols TrueNAS will automatically recommend a sane volume *block si
 |6/7/8/9|Raidz-1|64k|
 |7/8/9/10|Raidz-2|64k|
 |8/9/10/11|Raidz-3|64k|
-|10+ drives|Raidz-1|128k|
-|11+ drives|Raidz-2|128k|
-|12+ drives|Raidz-3|128k|
+|10+|Raidz-1|128k|
+|11+|Raidz-2|128k|
+|12+|Raidz-3|128k|
 
 Additional tuning may be required for optimal performance depending on the workload.  See the [workload tuning chapter](https://openzfs.github.io/openzfs-docs/Performance%20and%20Tuning/Workload%20Tuning.html) of the OpenZFS handbook for more information
 
