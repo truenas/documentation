@@ -56,7 +56,7 @@ When creating zvols TrueNAS will automatically recommend a sane volume *block si
 |11+|Raidz-2|128k|
 |12+|Raidz-3|128k|
 
-Additional tuning may be required for optimal performance depending on the workload.  See the [workload tuning chapter](https://openzfs.github.io/openzfs-docs/Performance%20and%20Tuning/Workload%20Tuning.html) of the OpenZFS handbook for more information
+Additional tuning can be required for optimal performance, depending on the workload. iXsystems Engineers are available to assist [Enterprise](https://www.truenas.com/truenas-enterprise/) customers with tuning their TrueNAS hardware. The [workload tuning chapter](https://openzfs.github.io/openzfs-docs/Performance%20and%20Tuning/Workload%20Tuning.html) of the OpenZFS handbook is also a good resource.
 
 {{< /expand >}}
 
