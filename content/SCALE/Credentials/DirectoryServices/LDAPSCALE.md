@@ -5,7 +5,7 @@ weight: 20
 
 {{< toc >}}
 
-TrueNAS has an [Open LDAP](https://www.openldap.org/) client for accessing information on an LDAP server. An LDAP server provides directory services for finding network resources such as users and their associated permissions.
+TrueNAS has an [Open LDAP](https://www.openldap.org/) client for accessing the information on an LDAP server. An LDAP server provides directory services for finding network resources such as users and their associated permissions.
 
 {{< expand "Does LDAP work with SMB?" "v" >}}
 LDAP authentication for SMB shares is disabled unless the LDAP directory has been configured for and populated with Samba attributes.
@@ -21,7 +21,7 @@ To integrate an LDAP server with TrueNAS, go to **Credentials > Directory Servic
 ![LDAPSCALE](/images/SCALE/LDAPSCALE.png "LDAP Options")
 
 | Field | Description |
-| Hostname | LDAP server hostnames or IP addresses. Separate entries with an empty space. Multiple hostnames or IP addresses can be entered to create an LDAP failover priority list. If a host does not respond, the next host in the list is tried until a new connection is established. |
+| Hostname | LDAP server hostnames or IP addresses. Separate entries with <kbd>Space</kbd>. Multiple hostnames or IP addresses can be entered to create an LDAP failover priority list. If a host does not respond, the next host in the list is tried until a new connection is established. |
 | Base DN | Top level of the LDAP directory tree to be used when searching for resources. Example: dc=test,dc=org. |
 | Bind DN | Administrative account name on the LDAP server. Example: cn=Manager,dc=test,dc=org. |
 | Bind Password | Password for the Bind DN. |
@@ -41,7 +41,7 @@ To further modify the LDAP configuration, click *Advanced Options*.
 | Certificate | Certificate to use when performing LDAP certificate-based authentication. To configure LDAP certificate-based authentication, create a Certificate Signing Request for the LDAP provider to sign. A certificate is not required when using username/password or Kerberos authentication.
 To configure LDAP certificate-based authentication, [create a Certificate Signing Request]({{< relref "CertificatesSCALE.md" >}}) for the LDAP provider to sign. |
 | Validate Certificates | Verify certificate authenticity. |
-| Disable LDAP User/Group Cache | Disable caching LDAP users and groups in large LDAP environments. When caching is disabled, LDAP users and groups do not appear in dropdown menus, but are still accepted when manually entered. |
+| Disable LDAP User/Group Cache | Disable caching LDAP users and groups in large LDAP environments. When caching is disabled, LDAP users and groups do not appear in dropdown menus but are still accepted when manually entered. |
 | Kerberos Realm | Select an existing realm that was added in [Kerberos Realms]({{< relref "KerberosSCALE.md" >}}). |
 | Kerberos Principal | Select the location of the principal in the keytab created in [Kerberos Keytab]({{< relref "KerberosSCALE.md" >}}). |
 | LDAP timeout | LDAP timeout in seconds. Increase this value if a Kerberos ticket timeout occurs. |
