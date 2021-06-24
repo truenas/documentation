@@ -19,7 +19,7 @@ Here’s to building your best NAS ever in 2021 and beyond!
 ## Introduction
 
 The TrueNAS community has a rich ecosystem of advice when it comes to the art and science of choosing the ideal hardware for their favorite storage operating system.
-From the [official Hardware Requirements]({{< relref "COREHardwareGuide.md" >}}) to the [Hardware Recommendations Guide](https://www.ixsystems.com/community/resources/hardware-recommendations-guide.12/) maintained by the community, to countless blog posts, users have a comprehensive, if not overwhelming choice of answers to the simple question: 
+From these official Hardware Requirements to the [Hardware Recommendations Guide](https://www.truenas.com/community/resources/hardware-recommendations-guide.12/) maintained by the community, to countless blog posts, users have a comprehensive, if not overwhelming choice of answers to the simple question: 
 
 *“What hardware should I buy?”*
 
