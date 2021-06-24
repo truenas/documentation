@@ -12,7 +12,7 @@ A Kerberos realm is an authorized domain that a Kerberos server can use to authe
 By default, TrueNAS creates a Kerberos realm for the local system.
 A [keytab ("key table")](https://web.mit.edu/kerberos/krb5-devel/doc/basic/keytab_def.html) is a file that stores encryption keys and is used for various authentication scenarios.
 
-TrueNAS SCALE allows users to configuring general Kerberos settings, as well as realms and keytabs.
+TrueNAS SCALE allows users to configure general Kerberos settings, as well as realms and keytabs.
 
 ## Kerberos Settings
 
@@ -61,7 +61,7 @@ where:
 * *freenas.keytab* is the file to upload to the TrueNAS server.
 * *useraccount* is the name of the user account for the TrueNAS server generated in [Active Directory Users and Computers](https://technet.microsoft.com/en-us/library/aa998508(v=exchg.65).aspx.
 * *http/useraccount@EXAMPLE.COM* is the principal name written in the format host/user.account@KERBEROS.REALM.
-  By convention, the kerberos realm is written in all caps, but make sure the case used for the Kerberos Realm matches the realm name.
+  By convention, the Kerberos realm is written in all caps, but make sure the case used for the Kerberos Realm matches the realm name.
   See [this note](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/ktpass#BKMK_remarks) about using `/princ` for more details.
 * *userpass* is the password associated with *useraccount*.
 
@@ -82,6 +82,6 @@ After generating the keytab, navigate back to **Directory Services** in TrueNAS 
 
 To instruct the *Active Directory* service to use the keytab, click *Settings* in the *Active Directory* window and select the installed keytab using the *Kerberos Principal* drop-down.
 
-When using a keytab with Active Directory, make sure that *username* and *userpass* in the keytab matches the *Domain Account Name* and *Domain Account Password*.
+When using a keytab with Active Directory, make sure that *username* and *userpass* in the keytab match the *Domain Account Name* and *Domain Account Password*.
 
 To instruct LDAP to use a principal from the keytab, click *Settings* in the *LDAP* window and select the installed keytab using the *Kerberos Principal* drop-down.
