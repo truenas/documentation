@@ -9,7 +9,7 @@ The Active Directory (AD) service shares resources in a Windows network.
 Because AD provides authentication and authorization services for the users in a network, you do not need to recreate the same user accounts in TrueNAS.
 
 Users can configure AD services on a Windows server running Windows Server 2000 or higher, or on a Unix-like operating system that is running [Samba version 4](https://wiki.samba.org/index.php/Setting_up_Samba_as_an_Active_Directory_Domain_Controller#Provisioning_a_Samba_Active_Directory).
-To configure a basic connection, you will need to know the the Active Directory domain controller's domain and that system's account credentials.
+To configure a basic connection, you will need to know the Active Directory domain controller's domain and that system's account credentials.
 
 ## Preparation
 
@@ -35,7 +35,7 @@ This helps maintain the AD connection whenever a domain controller becomes unava
 {{< tab "Time Synchronization" >}}
 Active Directory relies on the time-sensitive [Kerberos](https://tools.ietf.org/html/rfc1510) protocol.
 During the domain join process, the AD domain controller with the [PDC Emulator FSMO Role](https://support.microsoft.com/en-us/help/197132/active-directory-fsmo-roles-in-windows) is added as the preferred NTP server. 
-If your environment requires something different, navigate to **System Settings** and add or edit a server in the *NTP Servers* window .
+If your environment requires something different, navigate to **System Settings** and add or edit a server in the *NTP Servers* window.
 
 The time on the system and the AD domain controller cannot be out of sync by more than **five minutes** in a default AD environment.
 Use an external time source when configuring a virtualized domain controller.
@@ -61,7 +61,7 @@ Set *Enable* to attempt to join the AD domain immediately after saving the confi
 Advanced options are available for fine-tuning the AD configuration, but the preconfigured defaults are generally suitable.
 
 {{< expand "I can't see any AD information!" "v" >}}
-After configuring the Active Directory service, it can take a few minutes TrueNAS to populate the AD information.
+After configuring the Active Directory service, it can take a few minutes for TrueNAS to populate the AD information.
 To check the AD join progress, open the <i class="material-icons" aria-hidden="true" title="Assignment">assignment</i> **Task Manager** in the upper-right corner.
 Any errors during the join process are also displayed in the **Task Manager**.
 {{< /expand >}}
@@ -77,7 +77,7 @@ If the cache becomes out of sync or fewer users than expected are available in t
 
 If the Windows server version is lower than 2008 R2, try creating a **Computer** entry on the Windows server Organizational Unit (OU).
 When creating the entry, enter the TrueNAS hostname in the name field.
-Make sure it is the same name as the one set in the *Hostname* field in the **Network** section (go to **Network** and find the *Hostname* in the *Global Configuration* window), and the same *NetBIOS alias* from **Directory Services** section (go to **Directory Services** and click *Settings* in the *Active Directory* window, then click *Advanced Options* and find the *NetBIOS alias*).
+Make sure it is the same name as the one set in the *Hostname* field in the **Network** section (go to **Network** and find the *Hostname* in the *Global Configuration* window), and the same *NetBIOS alias* from the **Directory Services** section (go to **Directory Services** and click *Settings* in the *Active Directory* window, then click *Advanced Options* and find the *NetBIOS alias*).
 
 {{< expand "Shell Commands" "v" >}}
 You can go to **System Settings > Shell** and enter various commands to get more details about the AD connection and users:
