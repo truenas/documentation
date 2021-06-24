@@ -5,12 +5,13 @@ weight: 20
 
 {{< toc >}}
 
-We now have a SCALE hardware guide alongside our [CORE Hardware Guide]({{< relref "COREHardwareGuide.md" >}}).
-
+TrueNAS SCALE and CORE have similar hardware recommendations.
 From repurposed systems to highly custom builds, the fundamental freedom of TrueNAS is the ability to run it on nearly any x86 computer.
 
-Have something to add? Please open a pull request or issue by clicking the buttons in the side panel!
+For hardware built specifically to run TrueNAS, see the [product families](https://www.truenas.com/systems-overview/) that iXsystems provides!
 
+This guide iterates on the [CORE hardware guide]({{< relref "COREHardwareGuide.md" >}}) by adjusting a few recommendations for the Linux base of the SCALE software.
+Have something to add? You can edit this article directly by clicking the *Edit this page* button at the top of the article.
 Here’s to building your best NAS ever in 2021 and beyond!
 
 **The TrueNAS Team**
