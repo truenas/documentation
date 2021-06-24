@@ -23,7 +23,7 @@ From these official Hardware Requirements to the [Hardware Recommendations Guide
 
 *“What hardware should I buy?”*
 
-The [TrueNAS Mini](https://www.truenas.com/truenas-mini/) and [TrueNAS R-Series](https://www.ixsystems.com/freenas-certified-servers/) lines of purpose-built TrueNAS systems from iXsystems are the official answers to this question, but they also serve to provide templates for users that want to build their own systems or repurpose existing ones.
+The [TrueNAS Mini](https://www.truenas.com/truenas-mini/) and [TrueNAS R-Series](https://www.truenas.com/r-series/) lines of purpose-built TrueNAS systems from iXsystems are the official answers to this question, but they also serve to provide templates for users that want to build their own systems or repurpose existing ones.
 Therefore, this guide will use the TrueNAS Mini and TrueNAS R-Series systems as points of reference to all of the criteria to consider when building TrueNAS-compatible systems of any size.
 
 ## Storage Considerations
