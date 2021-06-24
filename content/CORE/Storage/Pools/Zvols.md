@@ -38,7 +38,7 @@ To quickly create a Zvol with the default options, enter a name for the Zvol, a 
 
 {{< expand "Optimal Zvol Block Sizes" "v" >}}
 
-When creating zvols TrueNAS will automatically recommend a sane volume *block size* for optimizing space efficiency.  Below are the minimum volume *block size* values the TrueNAS zvol creation process will recommend. To manually change this value select from the *Block size* dropdown menu. 
+TrueNAS automatically recommends a space-efficient *block size* for new zvols. This table shows the minimum volume *block size* values that are recommended. To manually change this value, use the *Block size* dropdown menu.
 
 | Number of Drives | Configuration | Optimal Block Size | 
 |---------------|-------|-------|
