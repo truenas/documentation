@@ -16,7 +16,7 @@ Advanced Settings have reasonable defaults in place. Changing advanced settings 
 
 ## Console
 
-The *Console* wondow allows users to configure the [Console Setup menu]({{< relref "Post-installConfiguration.md" >}}).
+The *Console* window allows users to configure the [Console Setup menu]({{< relref "Post-installConfiguration.md" >}}).
 
 | Name | Description |
 |------|-------------|
@@ -40,7 +40,7 @@ The *Syslog* window lets users configure how and when the system sends log messa
 
 ## Sysctl
 
-The *Sysctl* window lets users set up tunables that configure kernel parameters at runtime
+The *Sysctl* window lets users set up tunables that configure kernel parameters at runtime.
 
 | Name | Description |
 |------|-------------|
