@@ -9,7 +9,7 @@ Both pre-built official containers and custom application containers can be depl
 
 ![AppsCatalog](/images/SCALE/AppsCatalog.png "Apps Catalog")
 
-The UI will ask to use a storage pool for Applications.
+When you navigate to **Apps**, TrueNAS will ask you to choose a storage pool for Applications.
 
 ![AppsChoosePool](/images/SCALE/AppsChoosePool.png "Choosing a Pool for Apps")
 
@@ -17,9 +17,22 @@ We recommend users keep the container use case in mind when choosing a pool.
 Select a pool that has enough space for all the application containers you intend to use.
 TrueNAS creates an *ix-applications* dataset on the chosen pool and uses it to store all container-related data.
 
-You can find additional options for configuring general network interfaces and IP addresses for application containers in **Apps > Settings > Advanced Settings**.
+{{< expand "Advanced Settings" "v" >}}
+You can find additional options for configuring general network interfaces and IP addresses for application containers in the **Apps** screen by clicking *Settings* and selecting *Advanced Settings*.
 
 ![AppsAdvancedSettings](/images/SCALE/AppsAdvancedSettings.png "Apps Advanced Settings")
+
+| Setting | Description |
+|---------|-------|
+| Pool | The pool the *ix-applications* dataset will be stored in. |
+| Cluster CIDR | The CIDR pool used to assign IP addresses to pods in the cluster. |
+| Service CIDR  | Assigns internal services in the AKS cluster an IP address. |
+| Cluster DNS IP | The DNS Cluster IP address.  |
+| Node IP | The host IP address. |
+| Route v4 Interface | The interface for the static IPv4 address. |
+| Route v4 Gateway | The gateway for the static IPv4 address. |
+| Enable Container Image Updates | Automatically pulls the latest container image updates. |
+{{< /expand >}}
 
 ## Official Applications
 
