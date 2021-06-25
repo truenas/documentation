@@ -17,6 +17,6 @@ The Windows (SMB) Shares advanced options section has a checkbox that enables co
 As of SCALE version 21.06, the Netatalk service has been removed. AFP shares will be automatically migrated to SMB shares with the Legacy AFP Compatibility box checked. Do not uncheck Legacy AFP Compatibility as it will impact how data is written to and read from shares. Any other shares created to access these paths after the migration _must_ also have the Legacy AFP Compatibility box checked.
 {{< /hint >}}
 
-Once you have [sidegraded from CORE to SCALE]({{< relref "InstallingSCALE.md" >}}), you can find your migrated AFP in **Shares >** *Windows Shares (SMB)* with the prefix *AFP_* in the name.
+Once you have [sidegraded from CORE to SCALE]({{< relref "InstallingSCALE.md" >}}), you can find your migrated AFP in **Shares >** *Windows Shares (SMB)* with the prefix "AFP_".
 
 ![MigratedAFPShareSCALE](/images/SCALE/MigratedAFPShareSCALE.png "Migrated AFP Share")
