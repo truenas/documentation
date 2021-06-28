@@ -11,7 +11,7 @@ TrueNAS can send, receive, or synchronize data with a Cloud Storage provider. Cl
 Using the Cloud means that data can go to a third party commercial vendor not directly affiliated with iXsystems. Please investigate and fully understand that vendor’s pricing policies and services before creating any Cloud Sync task. iXsystems is not responsible for any charges incurred from the use of third party vendors with the Cloud Sync feature.
 {{< /hint >}}
 
-TrueNAS supports major providers like Amazon S3, Google Cloud, and Microsoft Azure, along with a variety of other vendors.  To see the full list of supported vendors, go to **Credentials > Backup Credentials > Cloud Credentials** click *Add* and open the *Provider* dropdown.
+TrueNAS supports major providers like Amazon S3, Google Cloud, and Microsoft Azure, along with a variety of other vendors. To see the full list of supported vendors, go to **Credentials > Backup Credentials > Cloud Credentials** click *Add* and open the *Provider* dropdown.
 
 ## Requirements
 
