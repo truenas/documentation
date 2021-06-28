@@ -91,7 +91,7 @@ A dialog shows the test status and allows downloading the task logs. This is als
 
 ## Cloud Sync Behavior
 
-Saved tasks are activated according to their schedule or by clicking <i class="material-icons" aria-hidden="true" title="Run Now">play_arrow</i>. An in-progress cloud sync must finish before another can begin. Stopping an in-progress task cancels the file transfer and requires starting the file transfer over.
+Saved tasks activate according to their schedule or by clicking <i class="material-icons" aria-hidden="true" title="Run Now">play_arrow</i>. An in-progress cloud sync must finish before another can begin. Stopping an in-progress task cancels the file transfer and requires starting the file transfer over.
 
 To view logs about a running or the most recent run of a task, click the task *State*.
 
