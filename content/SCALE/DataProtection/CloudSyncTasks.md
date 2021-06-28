@@ -16,7 +16,7 @@ TrueNAS supports major providers like Amazon S3, Google Cloud, and Microsoft Azu
 ## Requirements
 
 * All system [Storage](/SCALE/storage/) must be configured and ready to receive or send data.
-* A Cloud Storage provider account and a cloud storage location must be available, like an Amazon S3 bucket.
+* A Cloud Storage provider account and a cloud storage location, like an Amazon S3 bucket, must be available.
 * Cloud Storage account credentials must be saved to **System > Cloud Credentials** before creating the sync task. See *Cloud Credentials* for specific instructions.
 
 ## Creating a Cloud Sync Task
