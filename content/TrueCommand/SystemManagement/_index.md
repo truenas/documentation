@@ -12,11 +12,15 @@ For information on the Top Bar and the options refer to [Interface Overview]({{<
 
 ### System Cards
 
-Each system will have a unique card to display it stats.
+Each system has a unique card to display statistics.
+When the system has an alert, an *Alerts* bubble appears next to the system version to show how many alerts there are for that specific system.
+See [Alert Management]({{< relref "/TrueCommand/Alerts/AlertManage.md" >}}) for further information.
 
 ![DashboardSingleSystemView](/images/TrueCommand/2.0/DashboardSingleSystemView.png "Dashboard Single System View")
 
-#### Options menu
+Clicking the system name on the card shows an expanded view of the system with more [Single System Management options]({{< relref "/TrueCommand/SystemManagement/SingleSystem/_index.md" >}}).
+
+#### Options Menu
 
 ![DashboardSystemOptions](/images/TrueCommand/2.0/DashboardSystemOptions.png "Dashboard System Options")
 
@@ -30,18 +34,21 @@ The Options menu gives you several shortcuts to simple tasks.  **Edit** opens th
 Clicking on the values for CPU, Disk, and Network will open up small popup windows giving you a quick glance at the statistical history for these systems.
 
 + CPU
+
 ![DashboardCPUGraph](/images/TrueCommand/2.0/DashboardCPUGraph.png "Dashboard CPU Graph")
 
 + Disk
+
 ![DashboardDiskGraph](/images/TrueCommand/2.0/DashboardDiskGraph.png "Dashboard Disk Graph")
 
 + Network
+
 ![DashboadNetworkGraph](/images/TrueCommand/2.0/DashboadNetworkGraph.png "Dashboad Network Graph")
 
 
-#### Updating Wheel
+#### Activity Wheel
 
-When a TrueNAS is updating, a small rotating wheel will be visible to the right of the system nickname.
+When a TrueNAS is updating, a small rotating activity wheel will be visible to the right of the system nickname.
 
 ![DashboardSystemCardUpdating](/images/TrueCommand/2.0/DashboardSystemCardUpdating.png "Dashboard System Card Updating")
 
