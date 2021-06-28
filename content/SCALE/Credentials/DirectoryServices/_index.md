@@ -1,5 +1,5 @@
 ---
-title: "SCALE Directory Services"
+title: "Directory Services"
 geekdocCollapseSection: true
 weight: 30
 ---
