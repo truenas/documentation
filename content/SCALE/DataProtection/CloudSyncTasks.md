@@ -78,7 +78,7 @@ Remote storage settings:
 * CLOUD_SYNC_FOLDER
 
 Local storage settings:
-* CLOUD_SYNC_PATH
+* `CLOUD_SYNC_PATH`
 
 {{< /expand >}}
 
