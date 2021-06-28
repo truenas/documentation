@@ -74,8 +74,8 @@ Advanced users can write scripts that run immediately *before* or *after* the Cl
 There also are provider-specific variables like CLOUD_SYNC_CLIENT_ID or CLOUD_SYNC_TOKEN or CLOUD_SYNC_CHUNK_SIZE
 
 Remote storage settings:
-* CLOUD_SYNC_BUCKET
-* CLOUD_SYNC_FOLDER
+* `CLOUD_SYNC_BUCKET`
+* `CLOUD_SYNC_FOLDER`
 
 Local storage settings:
 * `CLOUD_SYNC_PATH`
