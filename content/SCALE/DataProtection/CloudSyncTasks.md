@@ -85,7 +85,7 @@ Local storage settings:
 ### Testing Settings
 
 Test the settings before saving by clicking *Dry Run*. TrueNAS connects to the Cloud Storage Provider and simulates a file transfer. No data is actually sent or received.
-A dialog shows the test status and allows downloading the task logs.  This can also be ran by clicking <i class="material-icons" aria-hidden="true" title="Dry Run">loop</i> after the task has been created.
+A dialog shows the test status and allows downloading the task logs. This is also ran by clicking <i class="material-icons" aria-hidden="true" title="Dry Run">loop</i> after the task is created.
 
 ![DataProtectionCloudSyncAddBoxDryRun](/images/SCALE/DataProtectionCloudSyncDryRun.png "Example: Box Drive Test")
 
