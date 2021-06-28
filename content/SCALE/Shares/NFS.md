@@ -19,15 +19,17 @@ Creating a Network File System (NFS) share on TrueNAS gives the benefit of makin
 
 ### Creating an NFS Share ###
 
-Go to **Shares** and within the **UNIX (NFS) Shares** header click *Add*  
+Go to **Shares** and within the **UNIX (NFS) Shares** header click *Add*.  
 
 ![Services NFS Add](/images/SCALE/SharingNFSAdd.png "Services NFS Add")
 
 Select a path to the dataset by clicking *Add*.  Use the file browser to select the dataset to be shared.  An *Alias* can be used To define a custom shortcut for the *Path*. Enter a memorable name, for example: */nfsshare*. NFS clients can connect using the *Alias* instead of the *Path* when the share is active. A share with multiple paths requires either not using aliases or defining an alias for each path in the share.  An optional Description can be entered to help identify the share.  Clicking *Save* creates the share.
+
 At the time of creation, you can select *ENABLE SERVICE* for the service to start and to automatically start after any reboots.
 If you wish to create the share but not immediately enable it, select *CANCEL*.
 
 ![Services NFS Add Service Enable](/images/SCALE/SharingNFSAddServiceEnable.png "Services NFS Add Service Enable")
+
 
 ![Services NFS Service Enable Success](/images/SCALE/SharingNFSAddServiceEnableSuccess.png "Services NFS Add Service Enable Success")
 
