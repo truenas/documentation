@@ -11,7 +11,7 @@ This allows for efficient permissions tuning for large numbers of users.
 Only the *root* user account can log in to the TrueNAS web interface.
 {{< /hint >}}
 
-When the network uses a directory service, import the existing account information using the instructions in [Directory Services]({{< relref "DirectoryServices.md" >}}).
+When the network uses a directory service, import the existing account information using the instructions in [Directory Services]({{< relref "documentation/content/CORE/DirectoryServices/_index.md" >}}).
 Using [Active Directory]({{< relref "ActiveDirectory.md" >}}) requires setting Windows user passwords inside Windows.
 
 To see user accounts, go to **Accounts > Users**.
