@@ -61,15 +61,15 @@ The remaining options allow tuning the task to your specific requirements.
 
 Advanced users can write scripts that run immediately *before* or *after* the Cloud Sync task. The **Post-script** field is only run when the Cloud Sync task successfully completes. You can pass a variety of task environment variables into the **Pre-** and **Post-** script fields:
 
-* CLOUD_SYNC_ID
-* CLOUD_SYNC_DESCRIPTION
-* CLOUD_SYNC_DIRECTION
-* CLOUD_SYNC_TRANSFER_MODE
-* CLOUD_SYNC_ENCRYPTION
-* CLOUD_SYNC_FILENAME_ENCRYPTION
-* CLOUD_SYNC_ENCRYPTION_PASSWORD
-* CLOUD_SYNC_ENCRYPTION_SALT
-* CLOUD_SYNC_SNAPSHOT
+* `CLOUD_SYNC_ID`
+* `CLOUD_SYNC_DESCRIPTION`
+* `CLOUD_SYNC_DIRECTION`
+* `CLOUD_SYNC_TRANSFER_MODE`
+* `CLOUD_SYNC_ENCRYPTION`
+* `CLOUD_SYNC_FILENAME_ENCRYPTION`
+* `CLOUD_SYNC_ENCRYPTION_PASSWORD`
+* `CLOUD_SYNC_ENCRYPTION_SALT`
+* `CLOUD_SYNC_SNAPSHOT`
 
 There also are provider-specific variables like CLOUD_SYNC_CLIENT_ID or CLOUD_SYNC_TOKEN or CLOUD_SYNC_CHUNK_SIZE
 
