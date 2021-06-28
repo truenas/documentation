@@ -105,4 +105,4 @@ Enter a new *Description* for this reversed task, define the path to a storage l
 
 The restored cloud sync is saved as another entry in **Data protection > Cloud Sync Tasks**.
 
-In case the restore destination dataset is the same as the original source dataset, the restored files might have their ownership altered to *root*. If the original files were not created by *root* and a different owner is required, you can recursively reset ACL Permissions of the restored dataset through the GUI or by running `chown` from the CLI.
+In case the restore destination dataset is the same as the original source dataset, the restored files might have their ownership altered to *root*. If the original files were not created by *root* and a different owner is required, you can recursively reset [ACL Permissions]({{< relref "Permissions.md" >}}) of the restored dataset through the GUI or by running `chown` from the CLI.
