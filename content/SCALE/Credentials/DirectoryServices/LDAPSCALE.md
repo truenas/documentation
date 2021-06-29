@@ -40,8 +40,7 @@ To further modify the LDAP configuration, click *Advanced Options*.
 | | * *OFF*: do not encrypt the LDAP connection. |
 | | * *ON*: encrypt the LDAP connection with SSL on port 636. |
 | | * *START_TLS*: encrypt the LDAP connection with STARTTLS on the default LDAP port *389*. |
-| Certificate | Certificate to use when performing LDAP certificate-based authentication. To configure LDAP certificate-based authentication, create a Certificate Signing Request for the LDAP provider to sign. A certificate is not required when using username/password or Kerberos authentication.
-To configure LDAP certificate-based authentication, [create a Certificate Signing Request]({{< relref "CertificatesSCALE.md" >}}) for the LDAP provider to sign. |
+| Certificate | Certificate to use when performing LDAP certificate-based authentication. To configure LDAP certificate-based authentication, create a Certificate Signing Request for the LDAP provider to sign. A certificate is not required when using username/password or Kerberos authentication. To configure LDAP certificate-based authentication, [create a Certificate Signing Request]({{< relref "CertificatesSCALE.md" >}}) for the LDAP provider to sign. |
 | Validate Certificates | Verify certificate authenticity. |
 | Disable LDAP User/Group Cache | Disable caching LDAP users and groups in large LDAP environments. When caching is disabled, LDAP users and groups do not appear in dropdown menus but are still accepted when manually entered. |
 | Kerberos Realm | Select an existing realm that was added in [Kerberos Realms]({{< relref "KerberosSCALE.md" >}}). |
