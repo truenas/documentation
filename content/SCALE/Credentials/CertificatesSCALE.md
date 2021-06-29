@@ -17,7 +17,8 @@ By default, TrueNAS comes equipped with an internal, self-signed certificate tha
 {{< tab "Identifier and Type" >}}
 The Identifier and Type step lets users name the certificate and choose whether it will be used for internal or local systems, or import an existing certificate.     
 Users may also select a predefined certificate extension from the *Profiles* drop-down.
-{{< /tab >}} {{< /tab >}}
+{{< /tab >}}
+{{< /tab >}}
 
 {{< tab "Certificate Options" >}}
 The Certificate Options step provides options for choosing the Signing Certificate Authority, what type of private key type to use (as well as the number of bits in the key used by the cryptographic algorithm), the cryptographic algorithm the certificate will use, and how many days the certificate authority will last.
@@ -35,7 +36,6 @@ The Extra Constraints step contains certificate extention options.
 * *Key Usage*: Enable to define the purpose of the public key contained in a certificate.
 * *Extended Key Usage*: Enable to further refine key usage extensions.
 {{< /tab >}}
-{{< /tabs >}}
 
 ## Certificate Signing Requests
 
