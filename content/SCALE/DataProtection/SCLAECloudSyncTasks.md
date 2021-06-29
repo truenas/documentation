@@ -71,7 +71,7 @@ Advanced users can write scripts that run immediately *before* or *after* the Cl
 * `CLOUD_SYNC_ENCRYPTION_SALT`
 * `CLOUD_SYNC_SNAPSHOT`
 
-There also are provider-specific variables like CLOUD_SYNC_CLIENT_ID or CLOUD_SYNC_TOKEN or CLOUD_SYNC_CHUNK_SIZE
+There also are provider-specific variables like CLOUD_SYNC_CLIENT_ID or CLOUD_SYNC_TOKEN or CLOUD_SYNC_CHUNK_SIZE.
 
 Remote storage settings:
 * `CLOUD_SYNC_BUCKET`
