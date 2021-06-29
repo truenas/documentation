@@ -36,6 +36,30 @@ To quickly create a Zvol with the default options, enter a name for the Zvol, a 
 
 {{< /expand >}}
 
+{{< expand "Optimal Zvol Block Sizes" "v" >}}
+
+TrueNAS automatically recommends a space-efficient *block size* for new zvols. This table shows the minimum volume *block size* values that are recommended. To manually change this value, use the *Block size* dropdown menu.
+
+| Configuration | Number of Drives | Optimal Block Size | 
+|---------------|-------|-------|
+| Mirror | N/A | 16k |
+| Raidz-1 | 3 | 16k |
+| Raidz-1 | 4/5 | 32k |
+| Raidz-1 | 6/7/8/9 | 64k |
+| Raidz-1 | 10+ | 128k |
+| Raidz-2 | 4 | 16k |
+| Raidz-2 | 5/6 | 32k |
+| Raidz-2 | 7/8/9/10 | 64k |
+| Raidz-2 | 11+ | 128k |
+| Raidz-3 | 5 | 16k |
+| Raidz-3 | 6/7 | 32k |
+| Raidz-3 | 8/9/10/11 | 64k |
+| Raidz-3 | 12+ | 128k |
+
+Additional tuning can be required for optimal performance, depending on the workload. iXsystems Engineers are available to assist [Enterprise](https://www.truenas.com/truenas-enterprise/) customers with tuning their TrueNAS hardware. The [workload tuning chapter](https://openzfs.github.io/openzfs-docs/Performance%20and%20Tuning/Workload%20Tuning.html) of the OpenZFS handbook is also a good resource.
+
+{{< /expand >}}
+
 ## Managing Zvols
 
 To see options for an existing zvol, click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> next to the desired zvol in **Storage** > **Pools**:
