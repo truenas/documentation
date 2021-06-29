@@ -11,14 +11,14 @@ This allows for efficient permissions tuning for large numbers of users.
 Only the *root* user account can log in to the TrueNAS web interface.
 {{< /hint >}}
 
-When the network uses a directory service, import the existing account information using the instructions in [Directory Services]({{< relref "DirectoryServices" >}}).
+When the network uses a directory service, import the existing account information using the instructions in [Directory Services](https://www.truenas.com/docs/core/directoryservices/).
 Using [Active Directory]({{< relref "ActiveDirectory.md" >}}) requires setting Windows user passwords inside Windows.
 
 To see user accounts, go to **Accounts > Users**.
 
 ![AccountsUsersList](/images/CORE/12.0/AccountsUsersList.png "List of User Accounts")
 
-TrueNAS hides all built-in users by default. To see all built-in users, click <i class="material-icons" aria-hidden="true" title="Settings">check_box_outline_blank</i> and **SHOW**.
+TrueNAS hides all built-in users by default. To see all built-in users, click <i class="material-icons" aria-hidden="true" title="Settings">settings</i> and **SHOW**.
 
 ## Creating User Accounts
 
