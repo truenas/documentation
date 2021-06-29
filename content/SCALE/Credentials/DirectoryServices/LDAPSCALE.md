@@ -33,10 +33,10 @@ To further modify the LDAP configuration, click *Advanced Options*.
 
 ![LDAPAdvancedSCALE](/images/SCALE/LDAPAdvancedSCALE.png "LDAP Advanced Options")
 
-| Field | Description |
-|-------|-------------|
+| Field | Description |  
+|-------|-------------|  
 | Allow Anonymous Binding | Set for the LDAP server to disable authentication and allow read and write access to any client. |
-| Encryption Mode | Options for encrypting the LDAP connection:
+| Encryption Mode | Options for encrypting the LDAP connection:  
 * *OFF*: do not encrypt the LDAP connection.
 * *ON*: encrypt the LDAP connection with SSL on port 636.
 * *START_TLS*: encrypt the LDAP connection with STARTTLS on the default LDAP port *389*. |
