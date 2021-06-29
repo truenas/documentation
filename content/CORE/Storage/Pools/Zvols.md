@@ -40,21 +40,21 @@ To quickly create a Zvol with the default options, enter a name for the Zvol, a 
 
 TrueNAS automatically recommends a space-efficient *block size* for new zvols. This table shows the minimum volume *block size* values that are recommended. To manually change this value, use the *Block size* dropdown menu.
 
-| Number of Drives | Configuration | Optimal Block Size | 
+| Configuration | Number of Drives | Optimal Block Size | 
 |---------------|-------|-------|
-|N/A|Mirror|16k
-|3|Raidz-1|16k|
-|4|Raidz-2|16k|
-|5|Raidz-3|16K|
-|4/5|Raidz-1|32k|
-|5/6|Raidz-2|32k|
-|6/7|Raidz-3|32k|
-|6/7/8/9|Raidz-1|64k|
-|7/8/9/10|Raidz-2|64k|
-|8/9/10/11|Raidz-3|64k|
-|10+|Raidz-1|128k|
-|11+|Raidz-2|128k|
-|12+|Raidz-3|128k|
+| Mirror | N/A | 16k |
+| Raidz-1 | 3 | 16k |
+| Raidz-1 | 4/5 | 32k |
+| Raidz-1 | 6/7/8/9 | 64k |
+| Raidz-1 | 10+ | 128k |
+| Raidz-2 | 4 | 16k |
+| Raidz-2 | 5/6 | 32k |
+| Raidz-2 | 7/8/9/10 | 64k |
+| Raidz-2 | 11+ | 128k |
+| Raidz-3 | 5 | 16k |
+| Raidz-3 | 6/7 | 32k |
+| Raidz-3 | 8/9/10/11 | 64k |
+| Raidz-3 | 12+ | 128k |
 
 Additional tuning can be required for optimal performance, depending on the workload. iXsystems Engineers are available to assist [Enterprise](https://www.truenas.com/truenas-enterprise/) customers with tuning their TrueNAS hardware. The [workload tuning chapter](https://openzfs.github.io/openzfs-docs/Performance%20and%20Tuning/Workload%20Tuning.html) of the OpenZFS handbook is also a good resource.
 
