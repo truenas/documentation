@@ -21,6 +21,7 @@ To integrate an LDAP server with TrueNAS, go to **Credentials > Directory Servic
 ![LDAPSCALE](/images/SCALE/LDAPSCALE.png "LDAP Options")
 
 | Field | Description |
+|-------|-------------|
 | Hostname | LDAP server hostnames or IP addresses. Separate entries with <kbd>Space</kbd>. Multiple hostnames or IP addresses can be entered to create an LDAP failover priority list. If a host does not respond, the next host in the list is tried until a new connection is established. |
 | Base DN | Top level of the LDAP directory tree to be used when searching for resources. Example: dc=test,dc=org. |
 | Bind DN | Administrative account name on the LDAP server. Example: cn=Manager,dc=test,dc=org. |
@@ -33,6 +34,7 @@ To further modify the LDAP configuration, click *Advanced Options*.
 ![LDAPAdvancedSCALE](/images/SCALE/LDAPAdvancedSCALE.png "LDAP Advanced Options")
 
 | Field | Description |
+|-------|-------------|
 | Allow Anonymous Binding | Set for the LDAP server to disable authentication and allow read and write access to any client. |
 | Encryption Mode | Options for encrypting the LDAP connection:
 * *OFF*: do not encrypt the LDAP connection.
