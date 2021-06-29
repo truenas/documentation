@@ -18,7 +18,7 @@ To see user accounts, go to **Accounts > Users**.
 
 ![AccountsUsersList](/images/CORE/12.0/AccountsUsersList.png "List of User Accounts")
 
-TrueNAS hides all built-in users by default. To see all built-in users, click <i class="material-icons" aria-hidden="true" title="Settings">check_box_outline_blank</i> and **SHOW**.
+TrueNAS hides all built-in users by default. To see all built-in users, click <i class="material-icons" aria-hidden="true" title="Settings">settings</i> and **SHOW**.
 
 ## Creating User Accounts
 
