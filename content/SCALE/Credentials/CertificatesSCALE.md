@@ -7,7 +7,7 @@ weight: 50
 
 The Certificates section contains all the information for certificates, certificate signing requests, certificate authorities, and DNS-authenticators. TrueNAS comes equipped with an internal, self-signed certificate that enables encrypted access to the web interface, but users can make custom certificates for authentication and validation while sharing data.
 
-![CertificatesSCALE](/images/SCALE/CertificatesSCALE.png "Certificates Screen")
+![CertificatesSCALE](/images/scale/certificatesscale.png "Certificates Screen")
 
 ## Certificates
 
