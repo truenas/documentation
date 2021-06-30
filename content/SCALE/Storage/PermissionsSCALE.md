@@ -10,87 +10,66 @@ Permissions control the actions users can perform on dataset contents.
 
 To change dataset permissions, go to **Storage** and click the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> button next to the intended dataset, then click *Edit Permissions*.
 
-## Basic Permissions Editor **(LEFT OFF HERE)**>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+## Basic Permissions Editor
 
 The **Permissions Editor** option allows basic adjustments to a datasets ACL.
 
-![StoragePoolsEditPermissionsBasic](/images/CORE/12.0/StoragePoolsEditPermissionsBasic.png "Basic Permissions Editor")
+![BasicPermissionsSCALE](/images/SCALE/BasicPermissionsSCALE.png "Basic Permissions Editor")
 
-### Options
+{{< tabs "Edit Permissions" >}}
+{{< tab "Dataset Path" >}}
+*Path* shows the full pathway to the dataset. The system sets the dataset path when creating the dataset and it cannot change.
+{{< /tab >}}
+{{< tab "Owner" >}}
+The *Owner* section controls which TrueNAS *User* and *Group* has full control of this dataset.
 
-**Dataset Path** shows the full pathway to this dataset.
-This is set when the dataset is created and cannot be changed.
-
-The **Owner** section controls which TrueNAS *User* and *Group* has full control of this dataset.
-
-| Name | Description |
+| Field | Description |
 |------|-------------|
-| User | User that controls the dataset. Users created manually or imported from a directory service appear in the drop-down menu. |
+| User | Select the user to control the dataset. Users created manually or imported from a directory service appear in the drop-down menu. |
 | Apply User | Confirms changes to *User*. To prevent errors, changes to the *User* are submitted only when this box is set. |
-| Group | Group that controls the dataset. Groups created manually or imported from a directory service appear in the drop-down menu. |
+| Group | Select the group to control the dataset. Groups created manually or imported from a directory service appear in the drop-down menu. |
 | Apply Group | Confirms changes to *Group*. To prevent errors, changes to the *Group* are submitted only when this box is set. |
+{{< /tab >}}
+{{< tab "Access" >}}
+The *Access* section lets users define the basic *Read*, *Write*, and *Execute* permissions for the *User*, *Group*, and *Other* accounts that might access this dataset.
+{{< /tab >}}
+{{< tab "Advanced" >}}
+The *Advanced* section allows users to apply permissions recursively to all directories, files, and child datasets within the current dataset.
+{{< /tab >}}
+{{< /tabs >}}
 
-**Access Mode** defines the basic *Read*, *Write*, and *Execute* permissions for the *User*, *Group*, and *Other* accounts that might access this dataset.
+## POSIX.1e Access Control Lists
 
-**Advanced** has several tuning options:
-
-| Name | Description |
-|------|-------------|
-| Apply Permissions Recursively | Apply permissions recursively to all directories and files within the current dataset. |
-| Traverse | Apply permissions recursively to all child datasets of the current dataset. |
-
-To switch from the basic editor to the advanced ACL editor, click *USE ACL MANAGER*. 
-
-## Access Control Lists
+To switch from the basic permissions editor to the advanced ACL editor, click *Use ACL Manager*. 
 
 An Access Control List (ACL) is a set of account permissions associated with a dataset and applied to directories or files within that dataset.
-ACLs are typically used to manage user interactions with shared datasets and are created when a dataset is added to a pool.
+TrueNAS uses ACLs to manage user interactions with shared datasets and creates them when users add a dataset to a pool.
 
-When [creating a dataset]({{< relref "Datasets.md" >}}), you can choose how the ACL can be modified by selecting an *ACL Mode*:
+![AdvancedACLEditorSCALE](/images/SCALE/AdvancedACLEditorSCALE.png)
 
-* *Passthrough* only updates ACL entries (ACEs) that are related to the file or directory mode.
+{{< tabs "Edit POSIX.1e ACL" >}}
+{{< tab "File Information" >}}
+| Field | Description |
+|------|-------------|
+| Path | Shows the full pathway to the file. |
+| User | User who controls the dataset. This user always has permissions to read or write the ACL and read or write attributes. Users created manually or imported from a directory service appear in the drop-down menu. |
+| Apply User | Confirm changes to *User*. To prevent errors, changes to the *User* are submitted only when this box is set. |
+| Group | The group which controls the dataset. This group has the same permissions as granted to the group@ Who. Groups created manually or imported from a directory service appear in the drop-down menu. |
+| Apply Group | Confirm changes to *Group*. To prevent errors, changes to the *Group* are submitted only when this box is set. |
 
-* *Restricted* does not allow `chmod` to make changes to files or directories with a non-trivial ACL.
-  An ACL is trivial if it can be fully expressed as a file mode without losing any access rules.
-  Setting the ACL Mode to Restricted is typically used to optimize a dataset for SMB sharing, but can require further optimizations.
-  For example, configuring an rsync task with this dataset could require adding `--no-perms` as an extra option for the task.
-
-To view an ACL, go to **Storage > Pools >** <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> **>** *Edit Permissions* for a nested dataset within a pool.
-
-![ACLManager](/images/CORE/12.0/ACLManager.png)
-
-{{< expand "Tutorial Video" "v" >}}
-The video at https://www.youtube.com/watch?v=p3wn0b_aXNw&t=3s shows editing ACLs for FreeNAS 11.3.
-However, the same process applies for TrueNAS 12.0 and later:
-{{< youtube p3wn0b_aXNw >}}
-{{< /expand >}}
-
-### ACL Inheritance
-
-The ACL for a new file or directory is typically inherited from the parent directory and is preserved when it is moved or renamed within the same dataset.
-An exception is when there are no *File Inherit* or *Directory Inherit* flags in the parent ACL *owner@*, *group@*, or *everyone@* entries.
-These non-inheriting entries are added to the ACL of the newly created file or directory based on the [Samba](https://wiki.samba.org/index.php/Main_Page) create and directory masks or the [umask](https://www.freebsd.org/cgi/man.cgi?query=umask&sektion=2) value.
-
-### Editing an ACL
-
-Click *ACL Manager* to adjust file ownership or account permissions to the dataset.
-The first time viewing the ACL Manager a dialog suggests using basic presets.
-The ACL can be edited at any time after choosing to either apply a preset or create a custom ACL.
-
-Choose **Select a preset ACL** and choose a preset.
-The preset options are *OPEN*, *RESTRICTED*, or *HOME*.
-
-Choose **Create a custom ACL** to create a new list of customized permissions.
-
-**File Information**
-
-The selected *User* controls the dataset and always has permission to modify the ACL and other attributes.
-The selected *Group* also controls the dataset, but can have permissions changed by adding or modifying a `group@` ACE.
 Any user accounts or groups imported from a directory service can be selected as the primary *User* or *Group*.
-
-### Access Control List (ACEs)
-
+{{< /tab >}}
+{{< tab "Access Control List (ACEs)" >}}
 To add a new item to the ACL, define *Who* the Access Control Entry (ACE) applies to, and configure permissions and inheritance flags for the ACE.
+
+| Field | Description |
+|------|-------------|
+| Add | Adds a new ACE to the Access Control List. |
+| Who | The object the ACE permissions apply to. |
+| Permissons | The read/write/execute permissions the *Who* will have. |
+| Default | Set to make the include the ACE on newly created directories and files within the datset. |
+{{< /tab >}}
+{{< /tabs >}}
 
 {{< expand "ACL Details from Shell" "v" >}}
 To view an ACL information from the console, go to **System Settings > Shell** and enter command:
@@ -99,6 +78,16 @@ To view an ACL information from the console, go to **System Settings > Shell** a
 getfacl /mnt/path/to/dataset
 ```
 {{< /expand >}}
+
+### ACL Inheritance
+
+New files and directories typically inherit the ACL from the parent directory and preserve it when being moved or renamed within the same dataset.
+An exception is when there are no *File Inherit* or *Directory Inherit* flags in the parent ACL *owner@*, *group@*, or *everyone@* entries.
+These non-inheriting entries are added to the ACL of the newly created file or directory based on the [Samba](https://wiki.samba.org/index.php/Main_Page) create and directory masks or the [umask](https://www.freebsd.org/cgi/man.cgi?query=umask&sektion=2) value.
+
+New files and directories typically inherit the ACL from the parent directory and preserve it when it is moved or renamed within the same dataset.
+
+## NFSv4 Access Control Lists
 
 #### Permissions
 
