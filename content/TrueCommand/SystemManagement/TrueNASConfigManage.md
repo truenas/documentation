@@ -3,8 +3,8 @@ title: "TrueNAS Configuration File Management"
 weight: 25
 ---
 
-TrueCommand automatically backs up the TrueNAS configuration any time there is a database change or a TrueCommand Audit Log entry.
-Manual backups can be created as needed.
+TrueCommand automatically backs up the TrueNAS configuration every 24 hours as well as any time there is a database change or a TrueCommand Audit Log entry.
+Users can create manual backups as needed.
 
 ## Viewing Backups
 
@@ -31,7 +31,7 @@ A maximum of one config backup per day can exist.
 If a prior config backup for the current day exists, creating a new one will overwrite the previous backup.
 
 {{< hint info >}}
-The default number of backups retained is seven.
+By default, TrueCommand retains seven backups.
 Local instances of TrueCommand can raise or lower this figure as desired. 
 This can be changed in the Configuration Tab of the Administration Page.
 {{< /hint >}}
@@ -49,12 +49,3 @@ You must reset the TrueNAS system to apply the configuration changes.
 To Delete a backup, click the Delete Button delete button <i class="material-icons" aria-hidden="true" title="Delete">delete</i> or mark the checkbox and click **Delete Backups**.
 
 ![ConfigBackupDelete](/images/TrueCommand/2.0/ConfigBackupDelete.png "Config Backup Delete")
-
-
-
-
-
-
-
-
-
