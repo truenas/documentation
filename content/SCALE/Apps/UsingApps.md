@@ -1,143 +1,58 @@
 ---
-title: "Using SCALE Apps"
-weight: 10
+title: "Using SCALE Catalogs"
+weight: 20
 ---
 
 {{< toc >}}
 
-Both pre-built official containers and custom application containers can be deployed using the *Apps* page in the Scale web interface.
+TrueNAS SCALE comes with a pre-built official catalog of iXsystems-approved Docker apps that includes Plex, [MinIO]({{< relref "MinIOClustersSCALE.md" >}}), Nextcloud, [Chia]({{< relref "Chia.md" >}}), and IPFS.
+
+Users can also configure custom apps catalogs, although iXsystems will not directly support any non-official apps in a custom catalogue.
+
+## Manage Catalogs
+
+To manage and add catalogs, click the *Manage Catalogs* tab in the **Applications** screen. 
 
 ![AppsCatalog](/images/SCALE/AppsCatalog.png "Apps Catalog")
 
-When you navigate to **Apps**, TrueNAS will ask you to choose a storage pool for Applications.
+Users can edit, refresh, delete, and view the summary of a catalog by clicking the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> button next to the intended catalog.
 
-![AppsChoosePool](/images/SCALE/AppsChoosePool.png "Choosing a Pool for Apps")
+**Edit**
+The edit option allows users to respecify the name TrueNAS will use to lookup the catalog, as well as the trains from which UI should retrieve available applications for the catalog.
 
-We recommend users keep the container use case in mind when choosing a pool.
-Select a pool that has enough space for all the application containers you intend to use.
-TrueNAS creates an *ix-applications* dataset on the chosen pool and uses it to store all container-related data.
+![EditCatalogSCALE](/images/SCALE/EditCatalogSCALE.png "Edit Catalog")
 
-{{< expand "Advanced Settings" "v" >}}
-You can find additional options for configuring general network interfaces and IP addresses for application containers in the **Apps** screen by clicking *Settings* and selecting *Advanced Settings*.
+**Refresh**
+The Refresh option re-pulls the catalog from from its repository and applies any updates.
 
-![AppsAdvancedSettings](/images/SCALE/AppsAdvancedSettings.png "Apps Advanced Settings")
+**Delete**
+The Delete option allows users to remove a catalog from the system. Users cannot delete the default Official catalog.
 
-| Setting | Description |
+**Summary**
+The Summary option lists all of the apps in the catalog and sorts them Train, App, and Version.
+
+Users may filter the list by Train type (All, charts, or test), and by Status (All, Healthy, or Unhealthy)
+
+![CatalogSummarySCALE](/images/SCALE/CatalogSummarySCALE.png "Catalog Summary")
+
+## Adding Catalogs
+
+To add a catalog, click the *Add Catalog* button in the *Manage Catalogs* tab and fill out the Add Catalog form.
+
+| Field | Description |
 |---------|-------|
-| Pool | The pool the *ix-applications* dataset will be stored in. |
-| Cluster CIDR | The CIDR pool used to assign IP addresses to pods in the cluster. |
-| Service CIDR  | Assigns internal services in the AKS cluster an IP address. |
-| Cluster DNS IP | The DNS Cluster IP address.  |
-| Node IP | The host IP address. |
-| Route v4 Interface | The interface for the static IPv4 address. |
-| Route v4 Gateway | The gateway for the static IPv4 address. |
-| Enable Container Image Updates | Automatically pulls the latest container image updates. |
-{{< /expand >}}
+| Catalog Name | The name to be used to lookup catalog. |
+| Force Create | Set to add catalog to system even if some trains are unhealthy |
+| Repository |  The valid git repository URL. |
+| Preferred Trains | words |
+| Branch | words |
 
-## Official Applications
+### Displaying Catalogs
 
-Official containers are pre-configured to only require a name during deployment.
+Users can select which catalogs they want to view in the *Available Applications* tab by clicking the *Catalogs* drop-down menu and checking the catalogs they want to see.
 
-![AppsInstallPlex](/images/SCALE/AppsInstallPlex.png "Installing Plex")
+![SelectCatalogsSCALE](/images/SCALE/SelectCatalogsSCALE.png "Catalog Summary")
 
-A button to open the application web interface will appear when the container is deployed and active.
 
-![AppsPlexActive](/images/SCALE/AppsPlexActive.png "Plex App: Active")
 
-Users can adjust the container settings by editing a deployed official container.
-Saving any changes redeploys the container.
 
-## Custom Applications
-
-To deploy a custom application container in the Scale web interface, go to **Apps** and click *Launch Docker Image*.
-
-![AppsLaunchDockerImage](/images/SCALE/AppsLaunchDockerImage.png)
-
-TrueNAS has numerous options for custom containers that are broken down into smaller sections.
-These options are derived from the [Kubernetes container options](https://kubernetes.io/docs/setup/).
-
-{{< tabs "Custom Container Options" >}}
-{{< tab "Image and Policies" >}}
-You will need to name the custom application and provide the online storage location (repository) that the system will use to download the container.
-The remaining options allow setting the image tag, defining when the image is pulled from the remote repository, how the container is updated, and defining when a container will automatically restart.
-{{< /tab >}}
-{{< tab "Container Settings" >}}
-Define any [commands and arguments](https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/) to use for the image.
-These can override any existing commands stored in the image.
-
-You can also [define additional environment variables](https://kubernetes.io/docs/tasks/inject-data-application/define-environment-variable-container/) for the container.
-Some Docker images can require additional environment variables.
-Be sure to check the documentation for the image you're trying to deploy and add any required variables here.
-{{< /tab >}}
-{{< tab "Networking" >}}
-To use the system IP address for the container, set *Host Networking*.
-The container will not be given a separate IP address and the container port number will be appended to the end of the system IP address.
-See the [Docker documentation](https://docs.docker.com/network/host/) for more details.
-
-Users can create additional network interfaces for the container if needed.
-Users can also give static IP addresses and routes to new interface.
-
-By default, containers use the DNS settings from the host system.
-You can change the DNS policy and define separate nameservers and search domains.
-See the Docker [DNS services documentation](https://docs.docker.com/config/containers/container-networking/#dns-services) for more details.
-{{< /tab >}}
-{{< tab "Port Forwarding List" >}}
-Choose the protocol and enter port numbers for both the container and node.
-Multiple port forwards can be defined.
-The node port number must be over *9000*.
-Make sure no other containers or system services are using the same port number.
-{{< /tab >}}
-{{< tab "Host Path Volumes" >}}
-Scale storage locations can be mounted inside the container.
-To mount Scale storage, define the path to the system storage and the container internal path for the system storage location to appear.
-You can also mount the storage as read-only to prevent the container from being used to change any stored data.
-For more details, see the [Kubernetes hostPath documentation](https://kubernetes.io/docs/concepts/storage/volumes/#hostpath).
-{{< /tab >}}
-{{< tab "Volumes" >}}
-Users can create additional Persistent Volumes (PV's) for storage within the container.
-PV's consume space from the pool chosen for Application management.
-You will need to name each new dataset and define a path where that dataset appears inside the container.
-
-To view created container datasets, go to **Storage** and expand the pool used for applications.
-Expand `/ix-applications/releases/<ContainerName>/volumes/ix-volumes/`.
-{{< /tab >}}
-{{< /tabs >}}
-
-### Volume(s) Access
-
-Users developing applications should be mindful that if an application uses Persistent Volume Claims (PVC), those datasets won't be mounted on the host, and therefore will not be accessible within a file browser. This is upstream zfs-localpv behavior which is being used for managing PVC(s)
-
-If you want to consume or have file browser access to data that is present on the host, set up your custom application to use host path volumes.
-
-Alternatively, you can use the network to copy directories and files to and from the pod using `k3s kubectl` commands.
-
-To copy from a pod in a specific container:
-`k3s kubectl cp <file-spec-src> <file-spec-dest> -c <specific-container>`
-
-To copy a local file to the remote pod:
-`k3s kubectl cp /tmp/foo <some-namespace>/<some-pod>:/tmp/bar`
-
-To copy a remote pod file locally:
-`k3s kubectl cp <some-namespace>/<some-pod>:/tmp/foo /tmp/bar`
-
-## Deploying the Application
-
-Saving an official or custom container adds a new entry to *Installed Applications*.
-The container enters a deploy status as it fetches the image from the remote repository and configures it.
-When deployment is complete, the container moves to an active status and can be used.
-
-![AppsPlexActive](/images/SCALE/AppsPlexActive.png "Plex App: Active")
-
-## Accessing the Shell in an Active Container
-
-To access the shell in an active container, first identify the namespace and pod for the container.
-In the Scale UI, go to **System Settings > Shell** to begin entering commands:
-
-1. View container namespaces: `k3s kubectl get namespaces`.
-2. View pods by namespace: `k3s kubectl get -n <NAMESPACE> pods`.
-3. Access container shell: `k3s kubectl exec -n <NAMESPACE> --stdin --tty <POD> -- /bin/bash`.
-
-{{< expand "Additional Container Commands" >}}
-* View details about all containers: `k3s kubectl get pods,svc,daemonsets,deployments,statefulset,sc,pvc,ns,job --all-namespaces -o wide`.
-* Get container status: `k3s kubectl describe -n <CONTAINER NAMESPACE> <POD-ID>`.
-{{< /expand >}}
