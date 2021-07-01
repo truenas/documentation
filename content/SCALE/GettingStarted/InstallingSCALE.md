@@ -17,7 +17,7 @@ You will need an OpenPGP encryption application for this method of ISO verificat
 There are many different free applications available, but the OpenPGP group provides a list of available software for different operating systems at https://www.openpgp.org/software/.
 The examples in this section show verifying the TrueNAS <file>.iso</file> using [gnupg2](https://gnupg.org/software/index.html) in a command prompt, but [Gpg4win](https://www.gpg4win.org/) is also a good option for Windows users.
 
-To verify the <file>.iso</file> source, go to https://www.truenas.com/download-tn-scale/ , expand the **Security** option, and click *PGP Signature* to download the Gnu Privacy Guard (<file>.gpg</file>) signature file. Open the [PGP Public key link](https://keys.gnupg.net/pks/lookup?search=0xC8D62DEF767C1DB0DFF4E6EC358EAA9112CF7946&fingerprint=on&op=index) and note the address in your browser and **Search results for** string .
+To verify the <file>.iso</file> source, go to https://www.truenas.com/download-tn-scale/ , expand the **Security** option, and click *PGP Signature* to download the Gnu Privacy Guard (<file>.gpg</file>) signature file. Open the [PGP Public key link](https://keyserver.ubuntu.com/pks/lookup?search=0xC8D62DEF767C1DB0DFF4E6EC358EAA9112CF7946&fingerprint=on&op=index) and note the address in your browser and **Search results for** string .
 
 Use one of the OpenPGP encryption tools mentioned above to import the public key and verify the PGP signature.
 
@@ -253,9 +253,9 @@ After the TrueNAS SCALE installation is complete, reboot the system.
 The [Console Setup Menu]({{< relref "ConsoleSetupMenu.md" >}}) displays when the system boots successfully.
 {{< /tab >}}
 {{< tab "Migrating from TrueNAS CORE" >}}
-To migrate from TrueNAS CORE to SCALE, you will have to use a TrueNAS Scale <file>.iso</file> file. We do not currently support maigrating using trains, or manual updates.
+To migrate from TrueNAS CORE to SCALE, use a TrueNAS SCALE <file>.iso</file> file. This is currently the only method to migrate a CORE system to SCALE.
 
-Start be saving the [SCALE ISO file](https://www.truenas.com/download-tn-scale/) to a USB drive (detailed in the Physical Hardware tab). Plug the USB drive into your CORE system that you want to sidegrade and boot or reboot the system. 
+Start by saving the [SCALE ISO file](https://www.truenas.com/download-tn-scale/) to a USB drive (detailed in the Physical Hardware tab). Plug the USB drive into the CORE system that you want to sidegrade and boot or reboot the system. 
 
 At the motherboard splash screen, use the hotkey defined by your motherboard manufacturer to select a boot device, then select the USB drive with the SCALE <file>.iso<file>.
   
@@ -263,15 +263,15 @@ When the SCALE console setup screen appears, select *Install/Upgrade*.
 
 ![SCALEUpgrade1](/images/SCALE/SCALEUpgrade1.png "Install/Upgrade SCALE")
 
-The installer will ask if you want to preserve your existing configuration or start with a fresh installation. We recommend selecting *Upgrade Install* when migrating from CORE to SCALE to keep your configuration data. Then select *Install in new boot environment*.
+The installer asks if you want to preserve your existing configuration or start with a fresh installation. We recommend selecting *Upgrade Install* when migrating from CORE to SCALE to keep your configuration data. Then select *Install in new boot environment*.
 
 ![SCALEUpgrade2](/images/SCALE/SCALEUpgrade2.png "Preserve Existing Configuration")
 
 ![SCALEUpgrade3](/images/SCALE/SCALEUpgrade3.png "Install in new boot environment")
 
 {{< hint warning>}}
-Although TrueNAS will attempt to keep most of your CORE configuration data when upgrading to SCALE, some CORE-specific will not carry over.
-GELI Encrypted pools, NIS data, AFP and SMB shares, metadata, jails, tunables, and boot environments will not migrate from CORE to SCALE. Init/shutdown scripts will carry over, but may break.
+Although TrueNAS attempts to keep most of your CORE configuration data when upgrading to SCALE, some CORE-specific items do not transfer.
+GELI Encrypted pools, NIS data, AFP shares, metadata, jails, tunables, and boot environments do not migrate from CORE to SCALE. Init/shutdown scripts transfer, but can break and should be reviewed before use.
 {{< /hint >}}
 
 After choosing to install in new boot environment, the installer will warn you that you you will be installing SCALE into the boot pool previously used for CORE. Select *Yes*.
