@@ -17,7 +17,7 @@ You will need an OpenPGP encryption application for this method of ISO verificat
 There are many different free applications available, but the OpenPGP group provides a list of available software for different operating systems at https://www.openpgp.org/software/.
 The examples in this section show verifying the TrueNAS <file>.iso</file> using [gnupg2](https://gnupg.org/software/index.html) in a command prompt, but [Gpg4win](https://www.gpg4win.org/) is also a good option for Windows users.
 
-To verify the <file>.iso</file> source, go to https://www.truenas.com/download-tn-scale/ , expand the **Security** option, and click *PGP Signature* to download the Gnu Privacy Guard (<file>.gpg</file>) signature file. Open the [PGP Public key link](https://keys.gnupg.net/pks/lookup?search=0xC8D62DEF767C1DB0DFF4E6EC358EAA9112CF7946&fingerprint=on&op=index) and note the address in your browser and **Search results for** string .
+To verify the <file>.iso</file> source, go to https://www.truenas.com/download-tn-scale/ , expand the **Security** option, and click *PGP Signature* to download the Gnu Privacy Guard (<file>.gpg</file>) signature file. Open the [PGP Public key link](https://keyserver.ubuntu.com/pks/lookup?search=0xC8D62DEF767C1DB0DFF4E6EC358EAA9112CF7946&fingerprint=on&op=index) and note the address in your browser and **Search results for** string .
 
 Use one of the OpenPGP encryption tools mentioned above to import the public key and verify the PGP signature.
 
