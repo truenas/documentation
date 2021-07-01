@@ -16,7 +16,7 @@ Users can select what ACL type they'd like a new dataset to use while creating i
 To change an existing dataset's ACL type, click the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> button next to the intended dataset and select *Edit Options*. Next, click *Advanced Options* and scroll down to the *ACL Type* drop-down. 
 
 {{< hint warning >}}
-Changing the ACL type affects how on-disk ZFS ACL is written and read. 
+**WARNING: Changing the ACL type affects how on-disk ZFS ACL is written and read.**
 
 When the ACL type changes from POSIX to NFSv4, internal ZFS ACLs do not migrate by default, and access ACLs encoded in posix1e extended attributes convert to native ZFS ACLs. 
 
