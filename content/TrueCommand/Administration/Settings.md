@@ -61,7 +61,5 @@ Multiple categories can be selected.
 
 {{< include file="static/includes/TrueCommand/2.0/TrueCommandLDAP.md.part" markdown="true" >}}
 
-Enabling *Allow LDAP user creation* means TrueCommand creates user accounts when someone logs in to the User Interface with their LDAP credentials.
-*JOIN TEAM* automatically adds LDAP users to specific TrueCommand teams.
 {{< /tab >}}
 {{< /tabs >}}
