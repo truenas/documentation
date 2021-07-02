@@ -17,22 +17,18 @@ To manage and add catalogs, click the *Manage Catalogs* tab in the **Application
 
 Users can edit, refresh, delete, and view the summary of a catalog by clicking the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> button next to the intended catalog.
 
-**Edit**
-
+**Edit**: 
 The edit option allows users to respecify the name TrueNAS will use to look up the catalog, as well as the trains from which UI should retrieve available applications for the catalog.
 
 ![EditCatalogSCALE](/images/SCALE/EditCatalogSCALE.png "Edit Catalog")
 
-**Refresh**
-
+**Refresh**: 
 The Refresh option re-pulls the catalog from its repository and applies any updates.
 
-**Delete**
-
+**Delete**: 
 The Delete option allows users to remove a catalog from the system. Users cannot delete the default Official catalog.
 
-**Summary**
-
+**Summary**: 
 The Summary option lists all of the apps in the catalog and sorts them Train, App, and Version.
 
 Users may filter the list by Train type (All, charts, or test), and by Status (All, Healthy, or Unhealthy).
