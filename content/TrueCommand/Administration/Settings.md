@@ -63,7 +63,7 @@ TrueCommand supports using [LDAP](https://tools.ietf.org/html/rfc4511) to better
 To configure LDAP, add an LDAP server IP address or DNS hostname, fill in the *Domain*, then click *ADD SERVER*.
 You can add Multiple LDAP servers and Domains.
 
-{{< include file="static/includes/TrueCommand/2.0/TrueCommandLDAP.md.part" markdown="true" >}
+{{< include file="static/includes/TrueCommand/2.0/TrueCommandLDAP.md.part" markdown="true" >}}
 
 Enabling *Allow LDAP user creation* means TrueCommand creates user accounts when someone logs in to the User Interface with their LDAP credentials.
 *JOIN TEAM* automatically adds LDAP users to specific TrueCommand teams.
