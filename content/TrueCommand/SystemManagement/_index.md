@@ -18,9 +18,15 @@ See [Alert Management]({{< relref "/TrueCommand/Alerts/AlertManage.md" >}}) for 
 
 ![DashboardSingleSystemView](/images/TrueCommand/2.0/DashboardSingleSystemView.png "Dashboard Single System View")
 
+There are several "hot spots" on the card that will open system specific areas for management. 
+
 Clicking the system name on the card shows an expanded view of the system with more [Single System Management options]({{< relref "/TrueCommand/SystemManagement/SingleSystem/_index.md" >}}).
 
-There are several "hot Spots" on the card. Clicking  ISCSI, NFS, and SMB will open Services management for the system.Clicking VM will open the Virtual Machines management for the system. Clicking APPS will open the Jails management for the system.
+Clicking  ISCSI, NFS, and SMB will open Services management for the system.
+
+Clicking VM will open the Virtual Machines management for the system.
+
+Clicking APPS will open the Jails management for the system.
 
 #### Options Menu
 
