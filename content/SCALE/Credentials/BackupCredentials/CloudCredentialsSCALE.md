@@ -131,7 +131,7 @@ Enter a credential Name and choose a Provider. The rest of the options change ac
 | Name | Description |
 |------|-------------|
 | Account Name | [Microsoft Azure](https://docs.microsoft.com/en-us/azure/storage/common/storage-create-storage-account) account name. |
-| Account Key | Base64 encoded key for Azure Account |
+| Account Key | Base64 encoded key for Azure Account. |
 
 {{< /tab >}}
 {{< tab "Microsoft One Drive" >}}
