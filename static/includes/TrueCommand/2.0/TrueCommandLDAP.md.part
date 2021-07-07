@@ -18,15 +18,15 @@ Multiple LDAP servers and Domains can be added.
 | Field | Value/Example |
 | ----- | ------------- |
 | LDAP Server URL (string, Required) | IP or DNS name of the LDAP server, with port number on the end.
-Example: "ldap.mycorp.com:389" |
+| | Example: "ldap.mycorp.com:389" |
 | Domain (string, Required) | Base domain settings of the user. Example: "dc=mycorp,dc=com" for a typical username@mycorp.com user account |
 | Group Domain (string) | The alternative domain setting to use when searching for groups. The Default value is the same as "domain" |
-| Verify SSL (bool) : Require strict SSL certificate verification. The default value is false. 
-Disable this option if the hostname of the system is different than the one listed on the SSL certificate, an IP is used for the connection instead of the DNS hostname, or if a self-signed certificate is used by the LDAP server. |
+| Verify SSL (bool) | Require strict SSL certificate verification. The default value is false. | 
+| | Disable this option if the hostname of the system is different than the one listed on the SSL certificate, an IP is used for the connection instead of the DNS hostname, or if a self-signed certificate is used by the LDAP server. |
 | User ID Field (string) | Domain fieldname to use for user-matching. The default value is "uid" (user ID). Another field commonly-used is "cn" (common name) |
 | Group ID Field (string) | The =domain fieldname to use when searching for a group name. The default value is "cn" (common name). |
-| BIND User Domain (string) | The full domain setting for a pre-authenticated bind to the server. Example: "uid=binduser,cn=read-only-bind,dc=mycorp,dc=com"
-For an unauthenticated bind set this field to just a name (example: "truecommand-bind"). This is sometimes used for logging purposes on the LDAP, but otherwise is not validated. |
+| BIND User Domain (string) | The full domain setting for a pre-authenticated bind to the server. Example: "uid=binduser,cn=read-only-bind,dc=mycorp,dc=com" |
+| | For an unauthenticated bind set this field to just a name (example: "truecommand-bind"). This is sometimes used for logging purposes on the LDAP, but otherwise is not validated. |
 | Bind Password (string) | The password to use for the bind user For an unauthenticated bind, leave this field blank while setting the "bind_user_domain" to a non-empty value. |
 
 
