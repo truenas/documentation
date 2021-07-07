@@ -41,9 +41,9 @@ In this method, the "domain" and "user_id_field" are used to create a static dom
 Example:
 
 * { 
-"domain" : "dc=mycorp,dc=com", 
-"user_id_field" : "uid" 
-}
+* "domain" : "dc=mycorp,dc=com", 
+* "user_id_field" : "uid" 
+* }
 
 When user "bobby.singer" attempts to login, TrueCommand will establish an SSL-secure connection to the LDAP server and then attempt to bind with the static domain "uid=bobby.singer,dc=mycorp,dc=com" and the user-provided password. If successful, then the user authentication has been verified and Bobby Singer is allowed access to TrueCommand.
 
@@ -55,11 +55,11 @@ Once logged in, a search is then performed to find the domain of the user curren
 Example:
 
 * { 
-"domain" : "dc=mycorp,dc=com", 
-"user_id_field" : "uid", 
-"bind_user_domain" : "uid=binduser,cn=read-only-bind,dc=mycorp,dc=com", 
-"bind_user_password" : "pre-shared-key", 
-}
+* "domain" : "dc=mycorp,dc=com", 
+* "user_id_field" : "uid", 
+* "bind_user_domain" : "uid=binduser,cn=read-only-bind,dc=mycorp,dc=com", 
+* "bind_user_password" : "pre-shared-key", 
+* }
 
 When "bobby.singer" attempts to login, TrueCommand will establish an SSL-secure connection to the LDAP server, and then the "bind_user_domain" and "bind_user_password" settings are used to perform an initial bind utilizing pre-known settings from your LDAP provider. Once bound, a search is then performed for the user matching "uid=bobby-singer", but only within the subdomains that include the "domain" setting ("dc=mycorp,dc=com" in this example). If a user is found, the full user domain string from the search result is then used to initialize a second bind along with the user-provided password. If successful, then the user authentication has been verified and Bobby Singer is allowed access to TrueCommand.
 
