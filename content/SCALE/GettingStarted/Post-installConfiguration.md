@@ -33,7 +33,7 @@ The menu provides these options:
 
 8) **Reset Configuration to Defaults** *Caution!* This option deletes all of the configuration settings made in the administrative GUI and is used to reset  TrueNAS® back to defaults. Before selecting this option, make a full backup of all data and make sure all encryption keys and passphrases are known! After this option is selected, the configuration is reset to defaults and the system reboots. Navigate to **Storage** and click *Import* to re-import pools.
 
-9) **Shell** starts a shell for running FreeBSD commands. To leave the shell, type exit.
+9) **Shell** starts a shell for running Linux commands. To leave the shell, type exit.
 
 10) **Reboot** reboots the system.
 
