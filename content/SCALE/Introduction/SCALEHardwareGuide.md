@@ -143,7 +143,7 @@ Because SATA DOMs and motherboards with m.2 slots are not as common as the other
 {{< tab "Hot Swapability" >}}
 TrueNAS systems come in all shapes and sizes, but having external access to all storage devices for efficient replacement if issues occur is highly desirable.
 Most “hot swap” drive bays require a proprietary drive tray into which each drive is installed.
-These bay and tray combinations also often include convenient features like activity and identification lights to both visualize activity and illuminate a failed drive with [sesutil(8)](https://www.freebsd.org/cgi/man.cgi?query=sesutil&sektion=8).
+These bay and tray combinations also often include convenient features like activity and identification lights to both visualize activity and illuminate a failed drive with [sesutil in sg3_utils(8)](https://manpages.debian.org/testing/sg3-utils/sg3_utils.8.en.html).
 TrueNAS Mini systems ship with four or more hot swap bays and TrueNAS R-Series systems can support dozens of drives in their head units and external expansion shelves.
 Pre-owned or repurposed hardware is popular among TrueNAS users, so pay attention to the maximum performance offered by the hot swap backplanes of a given system and watch for at least 6 Gbps SATA III support.
 Note that TrueNAS does not currently support hot-swapping PCIe NVMe devices.
@@ -288,8 +288,7 @@ Exactly what CPU to choose can come down to a short list of key factors:
 * Watch for VT-d/AMD-Vi device virtualization support on the CPU and motherboard to pass PCIe devices to virtual machines.
 * Be aware if a given CPU contains a GPU or requires an external one. Also, note that many server motherboards include a BMC chip with a built-in GPU. See below for more details on BMCs.
 
-AMD CPUs are making a comeback thanks to the Ryzen and EPYC (Naples/Rome) lines but support for these platforms has been relatively limited on FreeBSD and, by extension, TrueNAS.
-They will work, but there has been less run time and performance tuning.
+AMD CPUs are making a comeback thanks to the Ryzen and EPYC (Naples/Rome) lines have substantial Linux support and should work without issue.
 
 ### Remote Management: IPMI
 
@@ -343,7 +342,6 @@ The “Network” in “Network Attached Storage” is just as important as Stor
 
 * Simplicity is often the secret to reliability with network configurations.
 * Faster individual interfaces such as 10/25/40/100GbE are preferred to aggregating slower interfaces.
-* Intel and Chelsio interfaces are the best [supported options](https://www.freebsd.org/releases/11.3R/hardware.html#ethernet).
 * Only consider a “jumbo frames” [MTU](https://en.wikipedia.org/wiki/Maximum_transmission_unit) with dedicated connections such as between servers or video editors and TrueNAS that are not likely to experience packet fragmentation.
 * Interfaces with [LRO](https://en.wikipedia.org/wiki/Large_receive_offload) and [LSO](https://en.wikipedia.org/wiki/Large_send_offload) offload features will generally alleviate the need for jumbo frames and their use can result in lower CPU overhead.
 
@@ -369,7 +367,7 @@ Direct Attached Copper (DAC) cables could create interoperability issues between
 Finally, the ultimate TrueNAS hardware question is whether to use actual hardware at all or go with a virtualization solution.
 TrueNAS developers [virtualize TrueNAS every day](https://www.ixsystems.com/blog/yes-you-can-virtualize-freenas/) as part of their work, and cloud services are popular among users of all sizes.
 The fact remains, however, that OpenZFS at the heart of TrueNAS has been designed from day one to work directly with physical storage devices, fully aware of their strengths and compensating for their weaknesses.
-Also, at the heart of TrueNAS is FreeBSD, which offers exemplary hardware performance and health reporting.
+Also, at the heart of TrueNAS is Linux, which offers exemplary hardware performance and health reporting.
 When the need arises to virtualize TrueNAS:
 
 * Pass hardware disks or the entire storage controller to the FreeNAS VM if possible (requires VT-d/AMD-Vi support)
@@ -378,7 +376,6 @@ When the need arises to virtualize TrueNAS:
 * Remember to provide one or more 8GB or larger boot devices 
 * Provide the FreeNAS VM with adequate RAM, as per its usual requirements
 * Consider “jumbo frame” networking if supported by all devices
-* Be prepared that the “guest tools” in FreeBSD may lack features found in other guest operating systems
 * Enable MAC address spoofing on virtual interfaces and enable “promiscuous mode” to use Plugins
 
 Follow these rules when buying or building your next TrueNAS system to achieve maximum reliability, performance, and manageability.

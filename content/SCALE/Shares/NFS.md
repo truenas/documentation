@@ -93,9 +93,9 @@ NFS service settings can be configured by clicking <i class="fa fa-pen" aria-hid
 | Require Kerberos for NFSv4        | checkbox  | Set to force NFS shares to fail if the Kerberos ticket is unavailable. |
 | Serve UDP NFS clients             | checkbox  | Set if NFS clients need to use the User Datagram Protocol (UDP). |
 | Support >16 groups                | checkbox  | Set when a user is a member of more than 16 groups. This assumes group membership is configured correctly on the NFS server. |
-| mountd(8) bind port               | integer   | Enter a number to bind [mountd](https://www.freebsd.org/cgi/man.cgi?query=mountd) only to that port. |
-| rpc.statd(8) bind port            | integer   | Enter a number to bind [rpc.statd](https://www.freebsd.org/cgi/man.cgi?query=rpc.statd) only to that port. |
-| rpc.lockd(8) bind port            | integer   | Enter a number to bind [rpc.lockd](https://www.freebsd.org/cgi/man.cgi?query=rpc.lockd) only to that port. |
+| mountd(8) bind port               | integer   | Enter a number to bind [mountd](https://manpages.debian.org/testing/nfs-kernel-server/mountd.8.en.html) only to that port. |
+| rpc.statd(8) bind port            | integer   | Enter a number to bind [rpc.statd](https://manpages.debian.org/testing/nfs-common/statd.8.en.html) only to that port. |
+| rpc.lockd(8) bind port            | integer   | Enter a number to bind [rpc.lockd](https://manpages.debian.org/testing/nfs-kernel-server/rpc.nfsd.8.en.html) only to that port. |
 
 Unless a specific setting is needed, it is recommended to use the default settings for the NFS service.
 When TrueNAS is already connected to [Active Directory]({{< relref "ActiveDirectory.md" >}}), setting *NFSv4* and *Require Kerberos for NFSv4* also requires a [Kerberos Keytab]({{< relref "Kerberos.md#kerberos-keytabs" >}}).
