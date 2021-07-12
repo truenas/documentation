@@ -40,10 +40,8 @@ In this method, the "domain" and "user_id_field" are used to create a static dom
 
 Example:
 
-* { 
-* "domain" : "dc=mycorp,dc=com", 
-* "user_id_field" : "uid" 
-* }
+* Domain: "dc=mycorp,dc=com"
+* User ID Field: "uid" 
 
 When user "bobby.singer" attempts to login, TrueCommand will establish an SSL-secure connection to the LDAP server and then attempt to bind with the static domain "uid=bobby.singer,dc=mycorp,dc=com" and the user-provided password. If successful, then the user authentication has been verified and Bobby Singer is allowed access to TrueCommand.
 
