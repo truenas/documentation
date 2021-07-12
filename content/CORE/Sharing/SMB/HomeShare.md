@@ -11,6 +11,10 @@ TrueNAS offers the *Use as Home Share* option for organizations or SMEs that wan
 This feature is available for a single TrueNAS SMB share. Additional SMB shares can be created as described in the [general SMB sharing article]({{< relref "SharingStorage.md" >}}) but without the *Use as Home Share* option enabled.
 {{< /hint >}}
 
+## Create a Pool
+
+## Join the Active Directory
+
 ## Prepare a Dataset
 
 Create a new dataset in an existing storage pool.
