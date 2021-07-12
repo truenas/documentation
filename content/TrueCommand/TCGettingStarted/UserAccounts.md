@@ -6,7 +6,7 @@ weight: 30
 {{< toc >}}
 
 TrueCommand has a robust user management system designed to allow TrueCommand administrators to personalize the TrueCommand experience for each user account.
-You can create user accounts in the TrueCommand interface. Alternatively, [LDAP can automatically create new user accounts when someone logs into TrueCommand with their LDAP credentials]({{< relref "/TrueCommand/Administration/Settings.md#ldap" >}}).
+You can create user accounts in the TrueCommand interface. Alternatively, LDAP can automatically create new user accounts when someone logs into TrueCommand with their LDAP credentials.
 
 User accounts also organize into "Teams" for simultaneous management of large numbers or related user accounts.
 
@@ -37,7 +37,7 @@ The administrator has to provide these credentials to the intended user.
 
 {{< include file="static/includes/TrueCommand/2.0/TrueCommandLDAP.md.part" markdown="true" >}}
 
-### Teams and Permissions
+## Teams and Permissions
 
 You can assign users to existing *Teams* by selecting a team from the drop-down to add the user to that team.
 You can assign users to multiple teams.
