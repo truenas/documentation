@@ -17,8 +17,7 @@ Multiple LDAP servers and Domains can be added.
 
 | Field | Value |
 | ----- | ------------- |
-| LDAP Server URL (string, Required) | IP or DNS name of the LDAP server, with port number on the end.
-| | Example: "ldap.mycorp.com:636" (SSL port is typically 636 for AD/LDAP)|
+| LDAP Server URL (string, Required) | <span>IP or DNS name of the LDAP server, with port number on the end.<br>Example: "ldap.mycorp.com:636" (SSL port is typically 636 for AD/LDAP)</span>|
 | Domain (string, Required) | Base domain settings of the user. |
 | | Example: "dc=mycorp,dc=com" for a typical username@mycorp.com user account |
 | Group Domain (string) | The alternative domain setting to use when searching for groups. The Default value is the same as "domain" |
