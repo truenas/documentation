@@ -18,7 +18,7 @@ Multiple LDAP servers and Domains can be added.
 | Field | Value |
 | ----- | ------------- |
 | LDAP Server URL (string, Required) | <span>IP or DNS name of the LDAP server, with port number on the end.<br>Example: "ldap.mycorp.com:636" (SSL port is typically 636 for AD/LDAP)</span> |
-| Domain (string, Required) | <span>Base domain settings of the user.<br>Example: "mycorp.com" for a typical username@mycorp.com user account</span> |
+| Domain (string, Required) | <span>Base domain settings of the user.<br>Example: "dc=mycorp,dc=com" for a typical username@mycorp.com user account</span> |
 | Group Domain (string) | The alternative domain setting to use when searching for groups. The Default value is the same as *Domain* |
 | Verify SSL (bool) | <span>Require strict SSL certificate verification. The default value is false.<br>Disable this option if the hostname of the system is different than the one listed on the SSL certificate, an IP is used for the connection instead of the DNS hostname, or if a self-signed certificate is used by the LDAP server.</span> |
 | User ID Field (string) | Domain fieldname to use for user-matching. The default value is *User ID FIELD*. Another field commonly-used is "cn" (common name) |
