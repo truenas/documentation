@@ -30,7 +30,7 @@ Multiple LDAP servers and Domains can be added.
 
 TrueCommand supports two common methods of validating LDAP user credentials:
 
-*Direct Bind*
+#### Direct Bind
 In this method, the *Domain* and *User ID Field* are used to create a static domain string which is then utilized to attempt to authenticate the user.
 
 Example:
