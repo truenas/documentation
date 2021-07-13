@@ -24,7 +24,7 @@ Multiple LDAP servers and Domains can be added.
 | User ID Field (string) | Domain fieldname to use for user-matching. The default value is "uid" (user ID). Another field commonly-used is "cn" (common name) |
 | Group ID Field (string) | The domain fieldname to use when searching for a group name. The default value is "cn" (common name). |
 | BIND User Domain (string) | <span>The full domain setting for a pre-authenticated bind to the server.<br>Example: "uid=binduser,cn=read-only-bind,dc=mycorp,dc=com"<br>For an unauthenticated bind set this field to just a name (example: "truecommand-bind"). This is sometimes used for logging purposes on the LDAP, but otherwise is not validated.</span> |
-| Bind Password (string) | The password to use for the bind user For an unauthenticated bind, leave this field blank while setting the *BIND User Domain* to a non-empty value. |
+| Bind Password (string) | <span>The password to use for the bind user.<br>For an unauthenticated bind, leave this field blank while setting the *BIND User Domain* to a non-empty value.</span> |
 
 ### LDAP connection options
 
