@@ -40,7 +40,7 @@ Example:
 
 When user "bobby.singer" attempts to login, TrueCommand will establish an SSL-secure connection to the LDAP server and then attempt to bind with the static domain "uid=bobby.singer,dc=mycorp,dc=com" and the user-provided password. If successful, then the user authentication has been verified and Bobby Singer is allowed access to TrueCommand.
 
-*Indirect Bind*
+#### Indirect Bind
 This method of authentication is much more dynamic and searches for the proper user domain settings rather than making assumptions about the format. 
 In this situation, a "bind user" (typically a read-only, minimal-permissions user account) is configured with a known domain/password to perform the initial bind to the LDAP server. 
 Once logged in, a search is then performed to find the domain of the user currently requesting to login, and then a second bind is attempted utilizing the user domain and provided password.
