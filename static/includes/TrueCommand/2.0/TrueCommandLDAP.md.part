@@ -28,7 +28,7 @@ Multiple LDAP servers and Domains can be added.
 
 ### LDAP connection options
 
-There are two common methods of validating an LDAP user which TrueCommand supports:
+TrueCommand supports two common methods of validating LDAP user credentials:
 
 *Direct Bind*
 In this method, the *Domain* and *User ID Field* are used to create a static domain string which is then utilized to attempt to authenticate the user.
