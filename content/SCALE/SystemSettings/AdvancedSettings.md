@@ -9,7 +9,7 @@ weight: 30
 The TrueNAS SCALE Advanced Settings section provides configuration options for the Console, Syslog, Sysctl, Kernel, Cron Jobs, Init/Shutdown Scripts, System Dataset Pool, and Isolated GPU Device(s).
 
 {{< hint warning >}} 
-Advanced Settings have reasonable defaults in place. Changing advanced settings can be dangerous when done incorrectly. Please use caution before saving. Make sure you are comfortable with ZFS, FreeBSD, and system [configuration backup and restoration]({{< relref "GeneralSettings.md" >}}) before making any changes. 
+Advanced Settings have reasonable defaults in place. Changing advanced settings can be dangerous when done incorrectly. Please use caution before saving. Make sure you are comfortable with ZFS, Linux, and system [configuration backup and restoration]({{< relref "GeneralSettings.md" >}}) before making any changes. 
 {{< /hint >}}
 
 ![AdvancedSettingsSCALE](/images/SCALE/AdvancedSettingsSCALE.png "SCALE Advanced Settings Screen")
@@ -60,7 +60,7 @@ The *Kernel* window contains options for system optimization and kernel debuggin
 
 ## Cron Jobs
 
-The *Cron Jobs* window allows users to configure jobs that run specific commands or scripts on a regular schedule using [cron(8)](https://man.openbsd.org/cron.8 "Cron Man Page"). Cron Jobs help run repetitive tasks.
+The *Cron Jobs* window allows users to configure jobs that run specific commands or scripts on a regular schedule using [cron(8)](https://manpages.debian.org/testing/cron/cron.8.en.html "Cron Man Page"). Cron Jobs help run repetitive tasks.
 
 | Name | Description |
 |------|-------------|
@@ -81,7 +81,7 @@ The *Init/Shutdown Scripts* window allows users to schedule commands or scripts 
 | Description | Comments about this script. |
 | Type | Select Command for an executable or Script for an executable script. |
 | Command | Enter the command with any options. |
-| Script | Select the script. The script will be run using [sh(1)](https://www.freebsd.org/cgi/man.cgi?query=sh "SH(1) Page"). |
+| Script | Select the script. The script will be run using [dash(1)](https://manpages.debian.org/testing/dash/sh.1.en.html "dash(1) Page"). |
 | When | Select when the command or script runs:
 *Pre Init* is early in the boot process, after mounting filesystems and starting networking.
 *Post Init* is at the end of the boot process, before FreeNAS services start.
