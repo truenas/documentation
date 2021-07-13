@@ -22,11 +22,13 @@ There are several "hot spots" on the card that will open system specific areas f
 
 Clicking the system name on the card shows an expanded view of the system with more [Single System Management options]({{< relref "/TrueCommand/SystemManagement/SingleSystem/_index.md" >}}).
 
-Clicking  ISCSI, NFS, and SMB will open an area that will allow the user to stop/start Services for the system.
+Clicking on the *Alerts* bubble bubble after the system version on the card will open an expanded system information screen that lists the current system alerts.
 
-Clicking VM will open the Virtual Machines an area that will allow the user to start/stop VM's on the system.
+Clicking  *ISCSI*, *NFS*, and *SMB* will open an area that will allow the user to stop/start Services for the system.
 
-Clicking APPS will open an area that will allow the user to start/stop APPS (SCALE)/Jails (TN 12.x) on the system.
+Clicking *VM* will open the Virtual Machines an area that will allow the user to start/stop VM's on the system.
+
+Clicking *APPS* (Scale) or *Jails* (TrueNAS 12.x) will open an area that will allow the user to start/stop APPS/Jails on the system.
 
 #### Options Menu
 
