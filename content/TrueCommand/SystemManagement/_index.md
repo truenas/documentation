@@ -24,6 +24,14 @@ Clicking the system name on the card shows an expanded view of the system with m
 
 Clicking on the *Alerts* bubble bubble after the system version on the card will open an expanded system information screen that lists the current system alerts.
 
+Clicking on *DRIVE*, *DISK WRITE*, *DISK READ* displays the disk activity graph.
+
+Clicking on *NET* displays the Net Activity graph.
+
+Clicking on *CPU* displays the CPU Usage percentages graph.
+
+Cluping on *TEMP* displays the CPU Temperature percentages graph.
+
 Clicking  *ISCSI*, *NFS*, and *SMB* will open an area that will allow the user to stop/start Services for the system.
 
 Clicking *VM* will open the Virtual Machines an area that will allow the user to start/stop VM's on the system.
