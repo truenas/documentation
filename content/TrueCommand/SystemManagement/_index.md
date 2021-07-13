@@ -22,21 +22,21 @@ There are several "hot spots" on the card that will open system specific areas f
 
 Clicking the system name on the card shows an expanded view of the system with more [Single System Management options]({{< relref "/TrueCommand/SystemManagement/SingleSystem/_index.md" >}}).
 
-Clicking on the *Alerts* bubble bubble after the system version on the card will open an expanded system information screen that lists the current system alerts.
+Clicking the *Alerts* bubble after the system version on the card will open an expanded system information screen that lists the current system alerts.
 
-Clicking on *DRIVE*, *DISK WRITE*, *DISK READ* displays the disk activity graph.
+Clicking *DRIVE*, *DISK WRITE*, *DISK READ* displays the disk activity graph.
 
-Clicking on *NET* displays the Net Activity graph.
+Clicking *NET* displays the Net Activity graph.
 
-Clicking on *CPU* displays the CPU Usage percentages graph.
+Clicking *CPU* displays the CPU Usage percentages graph.
 
-Cluping on *TEMP* displays the CPU Temperature percentages graph.
+Clicking *TEMP* displays the CPU Temperature percentages graph.
 
-Clicking  *ISCSI*, *NFS*, and *SMB* will open an area that will allow the user to stop/start Services for the system.
+Clicking  *ISCSI*, *NFS*, and *SMB* will open a Services window that will allow the user to stop/start Services for the system.
 
-Clicking *VM* will open the Virtual Machines an area that will allow the user to start/stop VM's on the system.
+Clicking *VM* will open a Virtual Machines window that will allow the user to start/stop VM's on the system.
 
-Clicking *APPS* (Scale) or *Jails* (TrueNAS 12.x) will open an area that will allow the user to start/stop APPS/Jails on the system.
+Clicking *APPS* (Scale) or *Jails* (TrueNAS 12.x) will open a window that will allow the user to start/stop APPS/Jails on the system.
 
 #### Options Menu
 
