@@ -52,7 +52,7 @@ Example:
 * BIND User Domain: "uid=binduser,cn=read-only-bind,dc=mycorp,dc=com"
 * BIND Password: "pre-shared-key"
 
-When "bobby.singer" attempts to login, TrueCommand will establish an SSL-secure connection to the LDAP server, and then the *BIND User Domain* and *BIND Password* settings are used to perform an initial bind utilizing pre-known settings from your LDAP provider. Once bound, a search is then performed for the user matching "uid=bobby-singer", but only within the subdomains that include the "domain" setting ("dc=mycorp,dc=com" in this example). If a user is found, the full user domain string from the search result is then used to initialize a second bind along with the user-provided password. If successful, then the user authentication has been verified and Bobby Singer is allowed access to TrueCommand.
+When "bobby.singer" attempts to login, TrueCommand will establish an SSL-secure connection to the LDAP server, and then the *BIND User Domain* and *BIND Password* settings are used to perform an initial bind utilizing pre-known settings from your LDAP provider. Once bound, a search is then performed for the user matching "uid=bobby.singer", but only within the subdomains that include the "domain" setting ("dc=mycorp,dc=com" in this example). If a user is found, the full user domain string from the search result is then used to initialize a second bind along with the user-provided password. If successful, then the user authentication has been verified and Bobby Singer is allowed access to TrueCommand.
 
 
 ### SSL/TLS Connection Info
