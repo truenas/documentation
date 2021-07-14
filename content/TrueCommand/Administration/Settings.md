@@ -70,7 +70,7 @@ Enabling *Allow LDAP user creation* means TrueCommand creates user accounts when
 
 TrueCommand reports some basic usage telemetry back to iXsystems for product improvement analysis. These metrics are completely anonymous.
 
-Click the **PREVIEW** button below to see exactly what your system is sending.
+Click the **PREVIEW** button below to see exactly what your system is sending.<br>
 Check the *Disable Telemetry* check box and click the **SAVE** button to disable this feature.
 
 {{< /tab >}}
