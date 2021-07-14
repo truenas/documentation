@@ -133,7 +133,7 @@ getfacl /mnt/path/to/dataset
 | Field | Description |
 |------|-------------|
 | Add | Adds a new ACE to the Access Control List. |
-| Who | Access Control Entry (ACE) user or group. Select a specific User or Group for this entry, owner@ to apply this entry to the user that owns the dataset, group@ to apply this entry to the group that owns the dataset, or everyone@ to apply this entry to all users and groups. See [setfacl(1) NFSv4 ACL ENTRIES](https://www.freebsd.org/cgi/man.cgi?query=setfacl). |
+| Who | Access Control Entry (ACE) user or group. Select a specific User or Group for this entry, owner@ to apply this entry to the user that owns the dataset, group@ to apply this entry to the group that owns the dataset, or everyone@ to apply this entry to all users and groups. See [nfs4_setfacl(1) NFSv4 ACL ENTRIES](https://manpages.debian.org/testing/nfs4-acl-tools/nfs4_setfacl.1.en.html). |
 | ACL Type | How the Permissions are applied to the chosen Who. Choose Allow to grant the specified permissions and Deny to restrict the specified permissions. |
 | Permissions Type | Choose the type of permissions. Basic shows general permissions. Advanced shows each specific type of permission for finer control. |
 | Permissions | Select permissions to apply to the chosen Who. Choices change depending on the Permissions Type. |
