@@ -24,7 +24,7 @@ The [Key Management Interface Protocol (KMIP)](https://docs.oasis-open.org/kmip/
 ## Encrypting a Storage Pool
 
 Encrypting the root dataset of a new storage pool further increases data security.
-[Create a new pool]({{< relref "PoolsSCALE.md" >}}) and check the *Encryption* box in the *Pool Manager*.
+[Create a new pool]({{< relref "CreatingPoolsSCALE.md" >}}) and check the *Encryption* box in the *Pool Manager*.
 
 ![EncryptionWarningSCALE](/images/SCALE/EncryptionWarningSCALE.png "SCALE Encryption Warning")
 
