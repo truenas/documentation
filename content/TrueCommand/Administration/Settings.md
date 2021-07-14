@@ -65,8 +65,6 @@ You can add Multiple LDAP servers and Domains.
 
 Enabling *Allow LDAP user creation* means TrueCommand creates user accounts when someone logs in to the User Interface with their LDAP credentials.
 *JOIN TEAM* automatically adds LDAP users to specific TrueCommand teams.
-{{< /tab >}}
-{{< /tabs >}}
 
 ### Telemetry
 
@@ -74,3 +72,6 @@ TrueCommand reports some basic usage telemetry back to iXsystems for product imp
 
 Click the **PREVIEW** button below to see exactly what your system is sending.
 Check the *Disable Telemetry* check box and click the **SAVE** button to disable this feature.
+
+{{< /tab >}}
+{{< /tabs >}}
