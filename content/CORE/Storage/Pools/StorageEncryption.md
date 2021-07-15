@@ -25,8 +25,8 @@ The [Key Management Interface Protocol (KMIP)](https://docs.oasis-open.org/kmip/
 Always consider the following drawbacks/considerations when encrypting data:
 * Losing encryption keys and passwords means losing your data.
 * Unrelated encrypted datasets [do not support deduplication](https://github.com/openzfs/zfs/discussions/9423).
-* GELI and ZFS encryption both have a sizable performance impact, as does deduplication. 
-* Be cautious when using many encryption and deduplication features at once since they will all be competing  for the same CPU cycles.
+* We do not recommend using GELI or ZFS encryption with deduplication because of the sizable performance impact. 
+* Be cautious when using many encryption and deduplication features at once since they will all be competing for the same CPU cycles.
 {{< /expand >}}
 
 ## Encrypting a Storage Pool
