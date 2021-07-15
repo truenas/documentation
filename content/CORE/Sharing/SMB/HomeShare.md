@@ -13,7 +13,7 @@ The *Use as Home Share* feature is available for a single TrueNAS SMB share. You
 
 ## Create a Pool and Join Active Directory
 
-First, go to **Storage > Pools** and [create a pool]({{< relref "PoolCreate.md" >}}) so that you may add a dataset for the home share.
+First, go to **Storage > Pools** and [create a pool]({{< relref "PoolCreate.md" >}}) for the dataset you will add that will be used for the home share.
 
 Next, [set up the Active Directory]({{< relref "ActiveDirectory.md" >}}) that you will want to share resources with over your network.
 
@@ -29,9 +29,9 @@ After creating the dataset, go to **Storage > Pools** and open <i class="materia
 
 Click the *Group* drop-down menu and change the owning group to your Active Directory's domain admins.
 
-![GroupDomainAdmins](/images/CORE/12.0/GroupDomainAdmins.png "Set the owning group to Domain Admins)
+![GroupDomainAdmins](/images/CORE/12.0/GroupDomainAdmins.png "Set the owning group to Domain Admins")
 
-Click *Select an ACL Preset* and choose *HOME*. Then, click *SAVE*
+Click *Select an ACL Preset* and choose *HOME*. Then, click *SAVE*.
 
 ![StoragePoolsOptionsEditPermissionsACLPresetHome](/images/CORE/12.0/StoragePoolsOptionsEditPermissionsACLPresetHome.png "Set the Home ACL Preset")
 
