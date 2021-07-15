@@ -46,7 +46,7 @@ To encrypt a single dataset, go to **Storage**, open the <i class="material-icon
 
 ![AddDatasetFormSCALE](/images/SCALE/AddDatasetFormSCALE.png "New Dataset Options")
 
-Look at the *Encryption Options* and, when the parent dataset is unencrypted, uncheck *Inherit (encrypted)*.
+Look at the *Encryption Options* and, when the parent dataset is unencrypted, uncheck *Inherit (non-encrypted)*.
 
 ![EncryptionOptionsSCALE](/images/SCALE/EncryptionOptionsSCALE.png "Dataset Encryption Options")
 
@@ -115,7 +115,7 @@ Change the *Encryption Type* from *Key* to *Passphrase*.
 ![EncryptionPassphraseSCALE](/images/SCALE/EncryptionPassphraseSCALE.png "Encryption Passphrase Options")
 
 Set the rest of the options:
-* *Passphrase* : User-defined string that decrypts the dataset. Passphrases must be longer than eight characters.Passphrases must be longer than eight characters.
+* *Passphrase* : User-defined string that decrypts the dataset. Passphrases must be longer than eight characters.
   {{< hint warning >}}
   The passphrase is the only means to decrypt the information stored in this dataset. Be sure to create a memorable passphrase or physically secure the passphrase.
   {{< /hint >}}
