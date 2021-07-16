@@ -82,6 +82,7 @@ TrueNAS automatically begins using this default keytab and removes any administr
 | Use Default Domain | Unset to prepend the domain name to the username. Unset to prevent name collisions when Allow Trusted Domains is set and multiple domains use the same username. |
 | Allow DNS Updates | Set to enable Samba to do DNS updates when joining a domain. |
 | Disable FreeNAS Cache | Set to disable caching AD users and groups. This can help when unable to bind to a domain with a large number of users or groups. |
+| Restrict PAM | Set to restrict SSH access in certain circumstances to only members of BUILTIN\\Administrators. |
 | Site Name | Enter the relative distinguished name of the site object in the Active Directory. |
 | Kerberos Realm | Select an existing realm that was added in Directory Services > Kerberos Realms. |
 | Kerberos Principal | Select the location of the principal in the keytab created in Directory Services > Kerberos Keytabs. |
