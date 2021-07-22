@@ -69,6 +69,11 @@ Zvols cannot be used as a remote replication destination.
 Adding a name to the end of the path creates a new dataset in that location.
 
 ![TasksReplicationTasksAddRemoteDest](/images/CORE/12.0/TasksReplicationTasksAddRemoteDest.png "Replication with Remote Destination")
+
+Check **Encryption checkbox** to use encryption when replicating data. The following additional encryption options will become available:
+* *Ecryption Key Format* allows the user to choose between a Hex (base 16 numeral) or Passphrase (alphanumeric) style encryption key.
+* *Store Encryption key in Sending TrueNAS database* allows the user to either store the Encryption key in the sending TrueNAS database or choose a temporary location for the encryption key that will decrypt replicated data.
+
 {{< /tab >}}
 {{< tab "Security and Task Name" >}}
 {{< hint info >}}
