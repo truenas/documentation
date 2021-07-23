@@ -69,7 +69,11 @@ The dataset status is determined from an icon:
 
 * Dataset unlocked icon: <i class="material-icons" aria-hidden="true" title="<unlocked>">lock_open</i>
 * Dataset locked icon: <i class="material-icons" aria-hidden="true" title="<locked>">lock</i>
-* Unecrypted Pool with an encrypted dataset: 
+
+{{< hint info>}}
+An unencrypted pool with an encrypted dataset will show this icon
+{{< /info >}}
+ 
 
 Encrypted datasets can only be locked and unlocked if they are secured with a passphrase instead of a keyfile.
 Before locking a dataset, verify that it is not currently in use, then click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; (Options) and *Lock*.
