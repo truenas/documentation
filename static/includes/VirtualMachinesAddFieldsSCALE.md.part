@@ -6,7 +6,7 @@
 | Name | Enter an alphanumeric name for the virtual machine. |
 | Description | Description (optional). |
 | System Clock * | VM system time. Default is Local. |
-| Boot Method | Select UEFI for newer operating systems or UEFI-CSM (Compatibility Support Mode) for older operating systems that only support BIOS booting. Grub is not recommended but can be used when the other options do not work. |
+| Boot Method | Select UEFI for newer operating systems or Legacy BIOS for older operating systems that only support BIOS booting. |
 | Shutdown Timeout | The time in seconds the system waits for the VM to cleanly shut down. During system shutdown, the system initiates poweroff for the VM after the shutdown timeout has expired. |
 | Start on Boot | Set to start this VM when the system boots. |
 | Enable Display | Enable a Display (Virtual Network Computing) remote connection. Requires UEFI booting. |
