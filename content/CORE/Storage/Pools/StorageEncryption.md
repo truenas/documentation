@@ -67,13 +67,13 @@ Datasets with encryption enabled show additional icons in the **Storage > Pools*
 
 The dataset status is determined from an icon:
 
-* Dataset unlocked icon: <i class="material-icons" aria-hidden="true" title="<unlocked>">lock_open</i>
-* Dataset locked icon: <i class="material-icons" aria-hidden="true" title="<locked>">lock</i>
-* Dataset with non-inherited encrytion: ![UnecryptedPoolEncryptionDatasetIcon](/images/CORE/12.0/unecrypted_pool_encrypted_dataset.png "Unencrypted Storage Pool with an Unencrypted Dataset")
+* The dataset unlocked icon: <i class="material-icons" aria-hidden="true" title="<unlocked>">lock_open</i>.
+* The dataset locked icon: <i class="material-icons" aria-hidden="true" title="<locked>">lock</i>.
+* A Dataset on an encrypted pool with encryption properties that don't match the root dataset have this icon: ![UnecryptedPoolEncryptionDatasetIcon](/images/CORE/12.0/unecrypted_pool_encrypted_dataset.png "Unencrypted Storage Pool with an Unencrypted Dataset").
 
 {{< hint info>}}
-NOTE: An unencrypted pool  with an encrypted dataset will also show this icon ![UnecryptedPoolEncryptionDatasetIcon](/images/CORE/12.0/unecrypted_pool_encrypted_dataset.png "Unencrypted Storage Pool with an Unencrypted Dataset")
-{{< /hint >}}
+NOTE: An unencrypted pool  with an encrypted dataset will also show this icon: ![UnecryptedPoolEncryptionDatasetIcon](/images/CORE/12.0/unecrypted_pool_encrypted_dataset.png "Unencrypted Storage Pool with an Unencrypted Dataset")
+{{< /hint >}}.
  
 
 Encrypted datasets can only be locked and unlocked if they are secured with a passphrase instead of a keyfile.
