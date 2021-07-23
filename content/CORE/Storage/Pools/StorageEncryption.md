@@ -72,7 +72,7 @@ The dataset status is determined from an icon:
 
 {{< hint warning>}}
 An unencrypted pool with an encrypted dataset will show this icon
-{{< /warning >}}
+{{< /hint >}}
  
 
 Encrypted datasets can only be locked and unlocked if they are secured with a passphrase instead of a keyfile.
