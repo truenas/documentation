@@ -43,7 +43,7 @@ The TrueNAS system database stores the password for that account.
 
 ### Create Keytab on Windows Server for Active Directory
 
-To create the keytab on a Windows system, use the [ktpass](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/ktpass) command:
+To create the keytab on a Windows Server system, use the [ktpass](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/ktpass) command:
 
 `ktpass.exe /out freenas.keytab /princ http/useraccount@EXAMPLE.COM /mapuser useraccount /ptype KRB5_NT_PRINCIPAL /crypto ALL /pass userpass`
 
