@@ -71,6 +71,7 @@ Zvols cannot be used as a remote replication destination.
 Adding a name to the end of the path creates a new dataset in that location.
 
 ![TasksReplicationTasksAddRemoteDestSCALE](/images/SCALE/RepAddDestinationSCALE.png "Replication with Remote Destination")
+
 {{< /tab >}}
 {{< tab "Security and Task Name" >}}
 {{< hint info >}}
@@ -106,6 +107,7 @@ The first time a replication task runs, it takes longer because the snapshots mu
 
 Later replications run faster, as only the subsequent changes to snapshots are replicated.
 Clicking the task state opens the log for that task.
+
 ![TasksReplicationTasksLogSCALE](/images/SCALE/RepLogSCALE.png "Replication Log")
 {{< /tab >}}
 {{< /tabs >}}
@@ -117,7 +119,7 @@ Clicking the task state opens the log for that task.
 
 * Requirements: Storage pools and datasets created in **Storage > Pools**.
 
-* Go to **Tasks > Replication Tasks** and click *ADD*
+* Go to **Data Protection > Replication Tasks** and click *ADD*
   * Choose Sources
     * Set the source location to the local system
     * Use the file browser or type paths to the sources
@@ -143,19 +145,19 @@ This is useful when no remote backup locations are available, or when a disk is 
 The only thing you'll need before creating a quick local replication are datasets or zvols in a storage pool to use as the replication source and (preferably) a second storage pool to use for storing replicated snapshots.
 You can set up the local replication entirely in the Replication Wizard.
 
-To open the Replication Wizard, go to **Tasks > Replication Tasks** and click *ADD*.
+To open the Replication Wizard, go to **Data Protection > Replication Tasks** and click *ADD*.
 Set the source location to the local system and pick which datasets to snapshot.
 The wizard takes new snapshots of the sources when no existing source snapshots are found.  
 Enabling *Recursive* replicates all snapshots contained within the selected source dataset snapshots.
 Local sources can also use a naming schema to identify any custom snapshots to include in the replication.
 A naming schema is a collection of [strftime](https://www.freebsd.org/cgi/man.cgi?query=strftime) time and date strings and any identifiers that a user might have added to the snapshot name.
 
-![TasksReplicationTasksAddLocalSource](/images/CORE/12.0/TasksReplicationTasksAddLocalSource.png "Replication with Local Source")
+![TasksReplicationTasksAddLocalSourceSCALE](/images/SCALE/RepWizardLocalSourceSCALE.png "Replication with Local Source")
 
 Set the destination to the local system and define the path to the storage location for replicated snapshots.
 When manually defining the destination, be sure to type the full path to the destination location.
 
-![TasksReplicationTasksAddLocalSourceLocalDest](/images/CORE/12.0/TasksReplicationTasksAddLocalSourceLocalDest.png "Local Source and Destination")
+![TasksReplicationTasksAddLocalDestSCALE](/images/SCALE/RepWizardLocalDestSCALE.png "Local Destination")
 
 TrueNAS suggests a default name for the task based on the selected source and destination locations, but you can type your own name for the replication.
 You can load any saved replication task into the wizard to make creating new replication schedules even easier.
@@ -176,8 +178,8 @@ This can delete important data, so be sure any existing snapshots can be deleted
 The simple replication is added to the Replication task list and will show that it is currently running.
 Clicking the task state shows the replication log with an option to download the log to your local system.
 
-![TasksReplicationTasksLocalLogs](/images/CORE/12.0/TasksReplicationTasksLocalLogs.png "Local Replication Log")
+![TasksReplicationTasksLogSCALE](/images/SCALE/RepLogSCALE.png "Replication Log")
 
-To confirm that snapshots have been replicated, go to **Storage > Snapshots** and verify the destination dataset has new snapshots with correct timestamps.
+To confirm that snapshots have been replicated, go to **Storage > Snapshots >Snapshots** and verify the destination dataset has new snapshots with correct timestamps.
 
-![TasksReplicationTasksLocalSnapshots](/images/CORE/12.0/TasksReplicationTasksLocalSnapshots.png "Finding Replicated Snapshots")
+![TasksReplicationTasksLocalSnapshotsSCALE](/images/SCALE/RepLocalSnaphots.png "Local Replicated Snapshots")
