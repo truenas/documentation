@@ -37,7 +37,7 @@ To streamline creating simple replication configurations, the replication wizard
 
 To create a new replication, go to **Data Protection > Replication Tasks** and click *ADD*.
 
-![TasksReplicationTasksAdd](/images/CORE/12.0/TasksReplicationTasksAdd.png "Add new Replication Task")
+![TasksReplicationTasksAddSCALE](/images/SCALE/RepWhatWhereSCALE.png "Add new Replication Task")
 
 You can load any saved replication to prepopulate the wizard with that configuration.
 Saving changes to the configuration creates a new replication task without altering the task that was loaded into the wizard.
@@ -55,12 +55,12 @@ TrueNAS shows how many snapshots are available for replication.
 We recommend you manually snapshot the sources or create a periodic snapshot task *before* creating the replication task.
 However, when the sources are on the local system and don't have any existing snapshots, TrueNAS can create a basic periodic snapshot task and snapshot the sources immediately before starting the replication. Enabling *Recursive* replicates all snapshots contained within the selected source dataset snapshots.
 
-![TasksReplicationTasksAddRemoteSource](/images/CORE/12.0/TasksReplicationTasksAddRemoteSource.png "Choosing a Remote Source")
+![TasksReplicationTasksAddSourceSCALE](/images/SCALE/RepAddSourceSCALE.png "Choosing a Local Source")
 
+Local sources can also use a naming schema to identify any custom snapshots to include in the replication.
 Remote sources require entering a *snapshot naming schema* to identify the snapshots to replicate.
 A naming schema is a collection of [strftime](https://www.freebsd.org/cgi/man.cgi?query=strftime) time and date strings and any identifiers that a user might have added to the snapshot name.
 
-Local sources can also use a naming schema to identify any custom snapshots to include in the replication.
 {{< /tab >}}
 {{< tab "Destination" >}}
 The destination is where replicated snapshots are stored.
@@ -70,7 +70,7 @@ You can select a destination dataset or manually type a path in the field.
 Zvols cannot be used as a remote replication destination.
 Adding a name to the end of the path creates a new dataset in that location.
 
-![TasksReplicationTasksAddRemoteDest](/images/CORE/12.0/TasksReplicationTasksAddRemoteDest.png "Replication with Remote Destination")
+![TasksReplicationTasksAddRemoteDestSCALE](/images/SCALE/RepAddDestinationSCALE.png "Replication with Remote Destination")
 {{< /tab >}}
 {{< tab "Security and Task Name" >}}
 {{< hint info >}}
@@ -83,6 +83,8 @@ However, the data is completely unprotected from malicious sources.
 Choosing no encryption for the task is the same as choosing the *SSH+NETCAT* transport method from the advanced options screen.
 NETCAT uses common port settings, but these can be overriden by switching to the advanced options screen or editing the task after creation.
 
+![TasksReplicationTaskSecuritySCALE](/images/SCALE/RepSecurityTaskSCALE.png "Replication Security and Task Name")
+
 TrueNAS suggests a name based off the selected sources and destination, but this can be overwritten with a custom name.
 {{< /tab >}}
 {{< tab "Schedule and Lifetime" >}}
@@ -93,16 +95,18 @@ Choosing to run the replication once will run the replication immediately after 
 Finally, define how long you want to keep snapshots on the destination system.
 We generally recommend defining snapshot lifetime to prevent cluttering the system with obsolete snapshots.
 
-![TasksReplicationTasksAddLocalSourceLocalDestCustomLife](/images/CORE/12.0/TasksReplicationTasksAddLocalSourceLocalDestCustomLife.png "Custom Lifetimes")
+![TasksReplicationTasksScheduleLifeSCALE](/images/SCALE//RepScheduleSCALE.png "Custom Lifetimes")
 {{< /tab >}}
 {{< tab "Starting the Replication" >}}
 *Start Replication* saves the new replication task.
 New tasks are enabled by default and activate according to their schedule or immediately when no schedule was chosen.
 The first time a replication task runs, it takes longer because the snapshots must be copied entirely fresh to the destination.
+
+![TasksReplicationTasksSuccessSCALE](/images/SCALE/RepSuccessSCALE.png "Remote Replication Success")
+
 Later replications run faster, as only the subsequent changes to snapshots are replicated.
 Clicking the task state opens the log for that task.
-
-![TasksReplicationTasksRemoteLogs](/images/CORE/12.0/TasksReplicationTasksRemoteLogs.png "Remote Replication Log")
+![TasksReplicationTasksLogSCALE](/images/SCALE/RepLogSCALE.png "Replication Log")
 {{< /tab >}}
 {{< /tabs >}}
 
