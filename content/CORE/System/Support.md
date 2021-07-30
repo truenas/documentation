@@ -116,4 +116,4 @@ Use the same e-mail address submitted with the ticket when registering.
 
 ## Contacting iXsystems Support
 
-{{< include file="static/includes/iXsystemsSupportContact.html.part" html="true" >}}
+{{< include file="static/includes/General/iXsystemsSupportContact.html.part" html="true" >}}
