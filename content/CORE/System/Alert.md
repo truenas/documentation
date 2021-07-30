@@ -95,7 +95,7 @@ Choosing a *Type* adds options specific to that alert service:
 | Hostname | Hostname or IP address of the system to receive SNMP trap notifications. |
 | Port | UDP port number on the system receiving SNMP trap notifications. The default is 162. |
 | SNMPv3 Security Model | Enable the SNMPv3 security model. |
-| SNMP Community | Network community string. The community string acts like a user ID or password. A user with the correct community string has access to network information. The default is public. For more information, see [What is an SNMP Community String?](https://community.helpsystems.com/knowledge-base/intermapper/snmp/snmp-community-strings/). |
+| SNMP Community | Network community string. The community string acts like a user ID or password. A user with the correct community string has access to network information. The default is public. For more information, see this helpful [SNMP Community Strings tutorial](https://www.dnsstuff.com/snmp-community-string). |
 
 {{< /tab >}}
 {{< tab "Victor Ops" >}}
