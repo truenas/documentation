@@ -16,7 +16,7 @@ On very large systems, a proportionally longer maintenance window is recommended
 
 For individual support during an upgrade, please contact iXsystems Support to schedule your upgrade.
 {{< expand "Contacting iXsystems Support" "v" >}}
-{{< include file="static/includes/iXsystemsSupportContact.html.part" html="true" >}}
+{{< include file="static/includes/General/iXsystemsSupportContact.html.part" html="true" >}}
 {{< /expand >}}
 Scheduling at least two days in advance of a planned upgrade gives time to make sure a specialist is available for assistance.
 Updating from earlier than version 9.3 of TrueNAS must be scheduled with iXsystems Support.
