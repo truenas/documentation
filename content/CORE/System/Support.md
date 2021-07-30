@@ -60,7 +60,7 @@ It is recommended to keep the description less than three paragraphs and include
 
 ### Creating a Debug File
 
-{{< include file="static/includes/General/CreateDebug.md.part" markdown="true" >}}
+{{< include file="static/includes/CORE/CreateDebug.md.part" markdown="true" >}}
 
 
 ### Suggest New Features
