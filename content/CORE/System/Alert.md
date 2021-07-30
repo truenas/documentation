@@ -62,7 +62,7 @@ Choosing a *Type* adds options specific to that alert service:
 | Webhook URL | Enter or paste the [incoming webhook](https://docs.mattermost.com/developer/webhooks-incoming.html) URL associated with this service. |
 | Username | Mattermost username. |
 | Channel | Name of the [channel](https://docs.mattermost.com/help/getting-started/organizing-conversations.html#managing-channels) to receive notifications. This overrides the default channel in the incoming webhook settings. |
-| Icon Url | Icon file to use as the profile picture for new messages. Example: https://mattermost.org/wp-content/uploads/2016/04/icon.png. Requires configuring Mattermost to [override profile picture icons](https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-icons). |
+| Icon Url | Icon file to use as the profile picture for new messages. Example: https://mattermost.org/wp-content/uploads/2016/04/icon.png. Requires configuring Mattermost to [override profile picture icons](https://docs.mattermost.com/configure/configuration-settings.html#enable-integrations-to-override-profile-picture-icons). |
 
 {{< /tab >}}
 {{< tab "OpsGenie" >}}
