@@ -8,4 +8,4 @@ The *Backup Credentials* page lets users set up SSH Connection and Keypairs, as 
 
 ![BackupCredentialsSCALE](/images/SCALE/BackupCredentialsSCALE.png "Backup Credentials Screen")
 
-{{< include file="static/includes/MenuNav.md.part" markdown="true" >}}
+{{< include file="static/includes/General/MenuNav.md.part" markdown="true" >}}
