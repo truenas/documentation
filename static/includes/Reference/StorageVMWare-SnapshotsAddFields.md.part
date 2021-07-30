@@ -1,0 +1,9 @@
+**VM Snapshot**
+
+| | |
+|-|-|
+| Hostname | Enter the IP address or hostname of the VMware host. When clustering, this is the vCenter server for the cluster. |
+| Username | Enter the user on the VMware host with permission to snapshot virtual machines. |
+| Password | Enter the password associated with Username. |
+| ZFS Filesystems | Enter the filesystem to snapshot. |
+| Datastore | After entering the Hostname, Username, and Password, click Fetch Datastores and select the datastore to be synchronized. |
