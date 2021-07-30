@@ -10,7 +10,7 @@ These allow a wide range of system customization, from changing the web interfac
 
 ![System General](/images/CORE/12.0/SystemGeneral.png "System General")
 
-{{< include file="static/includes/SystemGeneralFields.md.part" markdown="true" >}}
+{{< include file="static/includes/Reference/SystemGeneralFields.md.part" markdown="true" >}}
 
 After making any changes, click **SAVE**.
 Changes to any of the web interface fields can interrupt web interface connectivity while the new settings are applied.
