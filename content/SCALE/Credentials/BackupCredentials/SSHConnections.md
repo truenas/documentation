@@ -54,7 +54,7 @@ Change the setup method to **Manual**.
 
 ![SSHConnectionsManualSCALE](/images/SCALE/SSHConnectionsManualSCALE.png "SSH Connections: Manual Options")
 
-{{< include file="static/includes/SystemSSHConnectionsAddManualFields.md.part" markdown="true" >}}
+{{< include file="static/includes/Reference/SystemSSHConnectionsAddManualFields.md.part" markdown="true" >}}
 
 Make sure to select the private key from the SSH keypair that was used to transfer the public key on the remote NAS.
 {{< /tab >}}
