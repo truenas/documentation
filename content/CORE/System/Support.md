@@ -60,12 +60,12 @@ It is recommended to keep the description less than three paragraphs and include
 
 ### Creating a Debug File
 
-{{< include file="static/includes/CreateDebug.md.part" markdown="true" >}}
+{{< include file="static/includes/General/CreateDebug.md.part" markdown="true" >}}
 
 
 ### Suggest New Features
 
-{{< include file="static/includes/CreateJiraSuggestion.md.part" markdown="true" >}}
+{{< include file="static/includes/General/CreateJiraSuggestion.md.part" markdown="true" >}}
 
 {{< /tab >}}
 {{< tab "TrueNAS Enterprise" >}}
