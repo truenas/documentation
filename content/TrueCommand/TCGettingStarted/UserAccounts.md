@@ -37,7 +37,7 @@ The administrator has to provide these credentials to the intended user.
 
 {{< include file="static/includes/TrueCommand/2.0/TrueCommandLDAP.md.part" markdown="true" >}}
 
-### Teams and Permissions
+## Teams and Permissions
 
 You can assign users to existing *Teams* by selecting a team from the drop-down to add the user to that team.
 You can assign users to multiple teams.

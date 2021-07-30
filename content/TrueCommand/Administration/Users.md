@@ -27,10 +27,6 @@ If the user needs to be an Administrator, check the *TrueCommand Administrator* 
 
 When the form is completed, click **Create User**.
 
-## Using LDAP to Add User Accounts
-
-{{< include file="static/includes/TrueCommand/2.0/TrueCommandLDAP.md.part" markdown="true" >}}
-
 ## Configuring User Accounts
 
 To configure account details and permissions, open the *Configure* <i class="material-icons" aria-hidden="true" title="Settings">settings</i>menu and click **Users**.
