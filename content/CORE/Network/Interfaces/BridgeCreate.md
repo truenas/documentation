@@ -15,4 +15,4 @@ It is also recommended to add any notes or reminders about this particular bridg
 
 Under **Bridge Settings**, select which interfaces will be *Bridge Members* and then configure the remaining interface options to match your networking needs.
 
-{{< include file="static/includes/InterfaceOptions.md.part" markdown="true" >}}
+{{< include file="static/includes/References/InterfaceOptions.md.part" markdown="true" >}}
