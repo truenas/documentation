@@ -8,4 +8,4 @@ The SCALE Storage topic contains articles on importing, creating, and managing p
 
 The storage topic also has information about datasets, Zvols, permissions, and quotas.
 
-{{< include file="static/includes/MenuNav.md.part" markdown="true" >}}
+{{< include file="static/includes/General/MenuNav.md.part" markdown="true" >}}
