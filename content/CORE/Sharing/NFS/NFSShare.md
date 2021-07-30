@@ -8,7 +8,7 @@ weight: 10
 Creating a Network File System (NFS) share on TrueNAS gives the benefit of making lots of data easily available for anyone with share access.
 Depending how the share is configured, users accessing the share can be restricted to read or write privileges.
 
-{{< include file="static/includes/SharingPrereqs.md.part" markdown="true" >}}
+{{< include file="static/includes/Reference/SharingPrereqs.md.part" markdown="true" >}}
 
 ## Creating an NFS Share
 
