@@ -12,7 +12,7 @@ To create a zvol in a pool, go to **Storage > Pools** then click <i class="fa fa
 
 ## Options
 
-![StoragePoolsCreateZvol](/images/CORE/12.0/StoragePoolsCreateZvol.jpg "Creating a new Zvol")
+![StoragePoolsCreateZvol](/images/CORE/12.0/StoragePoolsCreateZvol.png "Creating a new Zvol")
 
 To quickly create a Zvol with the default options, enter a name for the Zvol, a size, and click *SAVE*.
 
@@ -26,6 +26,7 @@ To quickly create a Zvol with the default options, enter a name for the Zvol, a 
 | Compression level  | drop-down menu | Compress data to save space. Refer to Compression for a description of the available algorithms. |
 | ZFS Deduplication | drop-down menu | Do not change this setting unless instructed to do so by your iXsystems support engineer. |
 | Sparse | checkbox | Used to provide thin provisioning. Use with caution as writes will fail when the pool is low on space. |
+| Read-only | drop-down menu | Set to prevent the zvol from being modified. |
 | Inherit (Encryption Options) | checkbox | Enabling causes the zvol to use the encryption properties of the root dataset. |
 
 {{< expand "Advanced Options" "v" >}}
