@@ -12,11 +12,11 @@ Install the glusterfs client for your Linux distribution first, consult with you
 
 To mount a volume, use the following command:
 
-'# mount -t glusterfs HOSTNAME-OR-IPADDRESS:/VOLNAME MOUNTDIR'
+'mount -t glusterfs HOSTNAME-OR-IPADDRESS:/VOLNAME MOUNTDIR'
 
 For example:
 
-'# mount -t glusterfs server1:/test-volume /mnt/glusterfs'
+'mount -t glusterfs server1:/test-volume /mnt/glusterfs'
 
 
 See http://gluster.org/ for additional references. 
