@@ -39,7 +39,7 @@ Properly configuring ACLs on SMB shares is not straightforward, depending on the
 
 Even though TrueNAS SCALE NFSv4 ACL support provides the best possible compatibility with a Windows file system security model, it is not the best choice for every situation. 
 
-### When to NFSv4 ACLs
+### When to use NFSv4 ACLs
 
 TrueNAS administrators should use NFSv4 ACLs to **losslessly migrate Windows-style ACLs** across domains and active directories useing ACL models richer than POSIX1E ACLs.
 
@@ -47,8 +47,14 @@ NFSv4 ACLs **maintain compatibility with TrueNAS Core / Enterprise and FreeBSD**
 
 TrueNAS administrators should also use NFSv4 ACLs if their **infrastructure requires advanced NFSv4 ACL features**. NFSv4 ACLs have many features that meet critical business needs and simplify server administration, such as the ability to explicitly deny users or groups access to a share, and the ability to differentiate entries that are inherited and non-inherited.
 
-### When to POSIX ACLs
+### When to use POSIX ACLs
 
-* Backup strategy for the TrueNAS data does not support native NFSv4 ACLs. POSIX1E ACLs have a long history on the Linux platform and many backup products that access the server outside of the SMB protocol will not be able to understand and preserve native NFSv4 ACLs. If this is the case, then POSIX1E ACL type must be selected to maintain compatibility with the backup product. Note: when making decisions about how you’re configuring ACLs, also take the extra time to verify that you can restore the permissions correctly from backups.
-* TrueNAS is a backup target for clients that have POSIX1E ACLs in use. Many administrators take advantage of the tremendous safety and data protection that ZFS gives by making their TrueNAS server a target for file-based backups from computers on their networks. Just like mentioned above, POSIX1E ACLs have a long history on Linux. There are many common file-based backup or synchronization tools that are POSIX1E ACL aware, e.g. rsync. If you wish to preserve POSIX1E ACLs from the client, then POSIX1E ACLs are a requirement.
-* ZFS replication to non-TrueNAS ZFS on Linux. If the SMB dataset is replicated to another non-TrueNAS Linux server with ZFS on Linux, and this server is expected to be able to seamlessly take over serving files in a disaster recovery scenario, then POSIX1E ACLs must be used.
+TrueNAS administrators should use POSIX ACLs when their organization's **data backup strategy does not suppor native NFSv4 ACLs**. Since the Linux platform used POSIX for a long time, many backup products that access the server outside of the SMB protocol will not be able to understand or preserve native NFSv4 ACLs.
+
+{{< hint info >}}
+**Note:** When deciding how to configuring ACLs, administrators should also take time to verify that they can restore permissions correctly from backups.
+{{< /hint >}}
+
+Inversely, TrueNAS administrators should use POSIX ACLs when TrueNAS is the backup target for clients that use POSIX ACLs. Since ZFS provides superb safety and data protection, many administrators use their TrueNAS system as a target for file-based backups from computers on their networks. Using POSIX ACLs preserves POSIX.1e ACLs from client systems.
+
+TrueNAS administrators should also use POSIX ACLs if they wish to **replicate ZFS filesystems on SMB datasets to other non-TrueNAS Linux** servers. Especially when the Linux server should be able to seamlessly take over serving files in a disaster recovery scenario.
