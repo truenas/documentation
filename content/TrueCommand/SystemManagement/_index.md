@@ -38,6 +38,8 @@ Clicking *VM* opens a *Virtual Machines* window that allows users to start/stop 
 
 Clicking *APPS* (Scale) or *Jails* (TrueNAS 12.x) opens a window that allows users to start/stop APPS/Jails on the system.
 
+*ARC MISS* is a measure of how often the system is going to disk rather than using the ARC cache. If it starts to show anything above 0% it means the system is using ram. The numbers may vary depending on use case and work load.
+
 #### Options Menu
 
 ![DashboardSystemOptions](/images/TrueCommand/2.0/DashboardSystemOptions.png "Dashboard System Options")
