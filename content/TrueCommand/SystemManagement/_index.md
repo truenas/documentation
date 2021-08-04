@@ -18,9 +18,11 @@ See [Alert Management]({{< relref "/TrueCommand/Alerts/AlertManage.md" >}}) for 
 
 ![DashboardSingleSystemView](/images/TrueCommand/2.0/DashboardSingleSystemView.png "Dashboard Single System View")
 
-*Storage* shows How many pools and drives are being used by the system. It also shows how much storage is used and avaialble by size and percentage.
+
+*Storage* informs the user about how many pools and drives are being used by the system. It also shows how much storage is used and avaialble by size and percentage.
 
 *ARC MISS* is a measure of how often the system is going to disk rather than using the ARC cache. If it starts to show anything above 0% it means the system is using ram. The numbers may vary depending on use case and work load.
+
 
 There are several "hot spots" on the card that will open system specific areas for management. 
 
@@ -41,6 +43,7 @@ Clicking  *ISCSI*, *NFS*, and *SMB* opens a *Services* window that allows users 
 Clicking *VM* opens a *Virtual Machines* window that allows users to start/stop VM's on the system.
 
 Clicking *APPS* (Scale) or *Jails* (TrueNAS 12.x) opens a window that allows users to start/stop APPS/Jails on the system.
+
 
 
 #### Options Menu
