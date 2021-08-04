@@ -19,12 +19,11 @@ See [Alert Management]({{< relref "/TrueCommand/Alerts/AlertManage.md" >}}) for 
 ![DashboardSingleSystemView](/images/TrueCommand/2.0/DashboardSingleSystemView.png "Dashboard Single System View")
 
 
-*Storage* informs the user about how many pools and drives are being used by the system. It also shows how much storage is used and avaialble by size and percentage.
+*Storage* lists how many pools and drives are being used by the system. It also shows how much storage is used and available by size and percentage.
 
-*ARC MISS* is a measure of how often the system is going to disk rather than using the ARC cache. If it starts to show anything above 0% it means the system is using ram. The numbers may vary depending on use case and work load.
+*ARC MISS* shows how often the system is going to disk rather than using the ARC cache. Anything above 0% means that the system is using ram. The numbers may vary depending on use case and work load.
 
-
-There are several "hot spots" on the card that will open system specific areas for management. 
+**There are also several "hot spots" on the card that will open system specific areas for management.** 
 
 Clicking the system name on the card shows an expanded view of the system with more [Single System Management options]({{< relref "/TrueCommand/SystemManagement/SingleSystem/_index.md" >}}).
 
