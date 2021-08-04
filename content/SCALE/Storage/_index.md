@@ -8,4 +8,6 @@ The SCALE Storage topic contains articles on importing, creating, and managing p
 
 The storage topic also has information about datasets, Zvols, permissions, and quotas.
 
+SCALE also supports clustering storage across multiple systems. This feature is managed by TrueCommand. See [TrueCommand Clustering]({{< relref "/TrueCommand/Clustering/_index.md" >}}) for more details.
+
 {{< include file="static/includes/General/MenuNav.md.part" markdown="true" >}}
