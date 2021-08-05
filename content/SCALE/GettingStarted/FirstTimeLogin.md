@@ -64,6 +64,10 @@ The **Dashboard** provides access to all TrueNAS management options.
 Across the top row are links to outside resources and buttons to control the system.
 There is also a column of options at the left hand side of the UI for accessing the various TrueNAS Configuration screens.
 
+Users can select which apps appear on the dashboard by clicking *Configure*.
+
+![ConfigureWidgetsSCALE](/images/SCALE/ConfigureWidgetsSCALE.png "Dashboard Configuration")
+
 Logos in the top row are links to iXsystems sites.
 
 ![TopRowSCALE](/images/SCALE/TopRowSCALE.png "TrueNAS SCALE Dashboard Top Row Icons")
