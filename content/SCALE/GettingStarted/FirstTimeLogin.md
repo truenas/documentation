@@ -29,7 +29,7 @@ To change the hostname and domain in the web interface, go to **Network** and cl
 
 To access the web interface using an IP address, use the one that the Console Setup Menu generated after installing SCALE, or use the one you configured in the [Post-install Configuration article]({{< relref "Post-installConfiguration.md" >}}) if you upgraded from CORE.
 
-If you need to, you can reset the root password in the TrueNAS console setup menu, or in the web interface by going to **Credentials > Local Users** and editing the Root user.
+If you need to, you can reset the root password in the TrueNAS console setup menu, or in the web interface by going to **Credentials > Local Users** and editing the `root` user.
 
 ## Logging In
 
