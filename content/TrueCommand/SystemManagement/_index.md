@@ -21,7 +21,7 @@ See [Alert Management]({{< relref "/TrueCommand/Alerts/AlertManage.md" >}}) for 
 
 *Storage* lists how many pools and drives are being used by the system. It also shows how much storage is used and available by size and percentage.
 
-*ARC MISS* shows how often the system is going to disk rather than using the ARC cache. Anything above 0% means that the system is using ram. The numbers may vary depending on use case and work load.
+*ARC MISS* shows how often the system is using disks instead of the ARC cache. Anything above 0% means that the system is using RAM. The numbers vary on use case and work load.
 
 **There are also several "hot spots" on the card that will open system specific areas for management.** 
 
@@ -74,4 +74,3 @@ Clicking on the values for CPU, Disk, and Network will open small popup windows 
 When a TrueNAS is updating, a small rotating activity wheel will be visible to the right of the system nickname.
 
 ![DashboardSystemCardUpdating](/images/TrueCommand/2.0/DashboardSystemCardUpdating.png "Dashboard System Card Updating")
-
