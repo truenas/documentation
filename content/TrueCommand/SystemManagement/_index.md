@@ -43,8 +43,6 @@ Clicking *VM* opens a *Virtual Machines* window that allows users to start/stop 
 
 Clicking *APPS* (Scale) or *Jails* (TrueNAS 12.x) opens a window that allows users to start/stop APPS/Jails on the system.
 
-
-
 #### Options Menu
 
 ![DashboardSystemOptions](/images/TrueCommand/2.0/DashboardSystemOptions.png "Dashboard System Options")
