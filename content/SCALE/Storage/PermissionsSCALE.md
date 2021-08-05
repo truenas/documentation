@@ -27,7 +27,7 @@ Users must manually set new ACLs recursively on the dataset after changing the A
 Setting new ACLs recursively is destructive, so we suggest creating a ZFS snapshot of the dataset before changing the ACL type or modifying permissions.
 {{< /hint >}}
 
-For a more in-depth explaination of ACLs and configurations in TrueNAS SCALE, see our [ACL Primer]({{< relref "ACLPrimer.md" >}}).
+For a more in-depth explanation of ACLs and configurations in TrueNAS SCALE, see our [ACL Primer]({{< relref "ACLPrimer.md" >}}).
 
 ### Basic Permissions Editor
 
