@@ -13,7 +13,7 @@ After installing TrueNAS, you can configure and use the system through the web i
 {{< /hint >}}
 
 By default, using the command-line interface (CLI) to modify the system **does not modify the settings database**.
-If users make any changes in the command line, the sytem will revert to the original database settings when it restarts.
+The system reverts to the original database settings when it restarts and wipes any user-made command line changes.
 TrueNAS automatically creates a number of ways to access the web interface, but you might need to adjust the default settings to better fit the system in your network environment.
 {{< /expand >}}
 
