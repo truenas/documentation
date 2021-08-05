@@ -32,7 +32,7 @@ By default, SEDs are not locked until the administrator takes ownership of them.
 A password-protected SED protects the data stored on the device when the device is physically removed from the system. This allows secure disposal of the device without having to first wipe the contents. Repurposing a SED on another system requires the SED password.
 
 {{< hint info >}}
-**SED drives are only unlocked on the active controller.**
+**For TrueNAS High Availability (HA) systems, SED drives are only unlocked on the active controller.**
 {{< /hint >}}
 
 ## Deploying SEDs
