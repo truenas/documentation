@@ -15,7 +15,6 @@ Click one of the tabs below to see instructions for your preferred deployment me
 
 {{< tabs "TrueCommand Install Options" >}}
 {{< tab "VM Deployment" >}}
-{{< toc >}}
 
 Deploying TrueCommand on a virtual machine (VM) requires different methods depending on what operating system you intend to use. 
 
@@ -23,8 +22,7 @@ You can find VM images and setup instructions on our [TrueCommand-install](https
 
 ## Linux
 
-{{< tabs "Deploy TrueCommand on a Linux VM" >}}
-{{< tab "Debian" >}}
+### Debian
 
 If you don't already have it, you can download the VM image [here](https://www.debian.org/CD/http-ftp/).
 
@@ -34,8 +32,8 @@ Ensure you have the "wget" utility installed first: `apt-get install wget`
 
 Run this command (as root) from a system terminal:  
 `wget https://raw.githubusercontent.com/iXsystems/truecommand-install/main/debian/setup.sh -O - | bash`
-{{< /tab >}}
-{{< tab "Alpine" >}}
+
+### Alpine
 
 If you don't already have it, you can download the VM image [here](https://alpinelinux.org/downloads/).
 
@@ -48,8 +46,8 @@ Ensure that you have the "community" package repository enabled:
 
 Run this command (as root) from a system terminal:   
 `wget https://raw.githubusercontent.com/iXsystems/truecommand-install/main/alpine/setup.sh -O - | sh`
-{{< /tab >}}
-{{< tab "Void" >}}
+
+### Void
 
 If you don't already have it, you can download the VM image [here](https://voidlinux.org/download/).
 
