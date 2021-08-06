@@ -27,23 +27,35 @@ The ACL would give *user1* permission to view, edit, and create files and direct
 
 ## NFSv4 in TrueNAS
 
-While the POSIX ACL type lets administrators assign read, write, and execute permissions to the chosen *Who*, the NFSv4 ACL type lets administrators fine-tune the read, modify (write), and traverse (execute) permissions so that they apply to certain file traits and actions. 
+While the POSIX ACL type has basic read, write, and execute permissions, the NFSv4 ACL type lets administrators fine-tune advanced read, modify (write), and traverse (execute) permissions. 
+
+For example, NFSv4 advanced permissions allow an administrator to set up a trustee that can read and write data, but not delete anything.
 
 The NFSv4 ACL type also lets administrators apply basic or advanced inheritance flags. Basic flags enable or disable ACE (Access Control Entry) inheritance. Advanced flags give further control of how an ACE applies to a dataset's files and directories.
 
+For example, advanced flags allow an administrator to apply the ACL to new directories within a dataset, but not new files.
+
 ## Preferred Configurations for SMB Shares
 
-Properly configuring ACLs on SMB shares is not straightforward, depending on the existing environment.
+To properly configure ACLs on SMB shares, users should consider how they intend to access the dataset/share with other devices and services on the network.
 
 Even though TrueNAS SCALE NFSv4 ACL support provides the best possible compatibility with a Windows file system security model, it is not the best choice for every situation. 
 
 ### When to use NFSv4 ACLs
 
-TrueNAS administrators should use NFSv4 ACLs to losslessly migrate Windows-style ACLs across domains and active directories using ACL models richer than POSIX1E ACLs.
+TrueNAS administrators should use NFSv4 ACLs to losslessly migrate Windows-style ACLs across Active Directory domains (or stand-alone servers) that use ACL models richer than POSIX.
 
-NFSv4 ACLs maintain compatibility with TrueNAS Core / Enterprise and FreeBSD. POSIX1E ACLs are a Linux-specific ZFS feature. If TrueNAS administrators intend to migrate data from TrueNAS CORE/Enterprise, FreeBSD, or other non-Linux ZFS implementations into TrueNAS SCALE, the NFSv4 ACL type preserves permissions.
+Since POSIX ACLs are a Linux-specific ZFS feature, administrators should use NFSv4 to maintain compatibility with TrueNAS Core, FreeBSD, or other non-Linux ZFS implementations
 
-TrueNAS administrators should also use NFSv4 ACLs if their infrastructure requires advanced NFSv4 ACL features. NFSv4 ACLs meet many critical business needs and simplify server administration. Administrators can use NFSv4 ACLs to explicitly deny users or groups access to a share. NFSv4 ACLs can also differentiate entries that are inherited and non-inherited.
+{{< hint danger >}}
+Administrators *must* use NFSv4 if they intend to replicate data from TrueNAS SCALE to a TrueNAS CORE disaster recovery target.
+{{< /hint >}}
+
+TrueNAS administrators should also use NFSv4 ACLs if their organization requires advanced NFSv4 ACL features.
+
+* If an organization requires managers to review all data before deletion, administrators can use advanced NFSv4 permissions to let employees access and create files, but not edit or delete existing files.
+* NFSv4 can operate alongside CIFS, allowing organizations that use UNIX-based processing systems features to use Windows-based clients. 
+* NFSv4 can also cooperate with CIFS to bypass NFS's 16 group limitation by generating NFS credentials based on Unix *and* Windows groups.
 
 ### When to use POSIX ACLs
 
