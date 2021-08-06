@@ -1,3 +1,9 @@
+---
+title: "TrueCommand Cloud Security"
+weight: 10
+geekdocCollapseSection: true
+---
+
 ### The iX Portal 
 
 The [iXsystems Account Services Portal](https://portal.ixsystems.com) is an easy to use site to manage TrueCommand Cloud Subscriptions and TrueNAS Mini Warranties.
