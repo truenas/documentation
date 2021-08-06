@@ -27,7 +27,7 @@
 | Follow Symlinks | Follow symlinks and copy the items to which they link. |
 | Pre-Script | Script to execute before running sync. |
 | Post-Script | Script to execute after running sync. |
-| Exclude | List of files and directories to exclude from sync.  Separate entries by pressing Enter. Examples of proper syntax used to exlude files/directories are:
+| Exclude | List of files and directories to exclude from sync.  Separate entries by pressing Enter. Examples of proper syntax used to exlude files/directories are -
 <code>photos</code> will exclude a file named "photos", <code>/photos</code> will exclude a file named "photos" from root directory (but not subdirectories), <code>photos/</code> will exclude a directory named "photos", <code>/photos/</code> will exclude a directory named "photos" from root directory (but not subdirectories)
 See [rclone filtering](https://rclone.org/filtering/) for more details about the `--exclude` option. |
 
