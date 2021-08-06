@@ -8,7 +8,7 @@ weight: 100
 
 {{< toc >}}
 
-Configure SSH in TrueNAS before creating a remote replication task. This ensures that both systems can connect to each other and new snapshots are regularly available for replication.
+Configure SSH in TrueNAS before creating a remote replication task. This ensures that new snapshots are regularly available for replication.
 
 To streamline creating simple replication configurations, the replication wizard assists with creating a new SSH connection and automatically creates a periodic snapshot task for sources that have no existing snapshots.
 
