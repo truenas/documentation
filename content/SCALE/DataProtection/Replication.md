@@ -25,7 +25,7 @@ To streamline creating simple replication configurations, the replication wizard
       * Adding a new name on the end of the path creates a new dataset.
   * Choose replication security.
     * We always recommend Replication with encryption.
-    * Disabling encryption is only meant for absolutely secure networks.
+    * Disabling encryption is only meant for absolutely secure and trusted destinations.
   * Schedule the replication.
     * Schedule can be standardized presets or a custom defined schedule.
     * Running once runs the replication immediately after creation.
