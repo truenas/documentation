@@ -101,7 +101,7 @@ enable = true
   geekdocAnchorCopy = true
 
   # Featured image for search results
-  featured_image = "/docs/images/tn-openstorage-logo.png"
+  featured_image = "/images/tn-openstorage-logo.png"
 
 [frontmatter]
 lastmod = ["lastmod", ":git", ":fileModTime", ":default"]
