@@ -86,7 +86,7 @@ Using encryption for SSH transfer security is always recommended.
 {{< /hint >}}
 
 In situations where two systems within an absolutely secure network are used for replication, disabling encryption speeds up the transfer.
-However, the data is completely unprotected from malicious sources.
+However, the data is completely unprotected from eavesdropping.
 
 Choosing no encryption for the task is the same as choosing the *SSH+NETCAT* transport method from the advanced options screen.
 NETCAT uses common port settings, but these can be overriden by switching to the advanced options screen or editing the task after creation.
