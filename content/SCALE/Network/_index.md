@@ -79,7 +79,9 @@ Many of these fields have default values, but users can be change them to meet l
 
 TrueNAS displays the *Hostname* and *Domain* in the **Dashboard** *System Information* window. 
 
-**Note:** The *Global Configuration* window will only display some options when the appropriate hardware is present.  
+{{< hint info >}}
+**Note:** The *Global Configuration* window will only display some options when the appropriate hardware is present.
+{{< /hint >}}  
 
 | Setting | Description |
 |---------|-------------|
