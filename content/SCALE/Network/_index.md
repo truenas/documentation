@@ -54,7 +54,7 @@ Users may also select how many bits will be a part of the network address.
 
 ## Global Configuration
 
-The *Global Configuration* section has all the general TrueNAS networking settings *not* specific to any [interfaces]({{< relref "InterfacesSCALE.md" >}}).
+The *Global Configuration* section has all the general TrueNAS networking settings *not* specific to any interfaces.
 
 ![GlobalConfigurationSCALE](/images/SCALE/GlobalConfigurationSCALE.png "Global Configuration")
 
