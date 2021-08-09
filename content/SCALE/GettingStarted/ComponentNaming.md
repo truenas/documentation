@@ -24,3 +24,10 @@ NVMe drives will be continue to be labeled with a numeric value.
 
 ## Interfaces
 
+TrueNAS CORE utilizes driver information and enumeration order to assign an interface name.
+
+![ComponentNamingInterfacesCore](/images/SCALE/ComponentNamingInterfacesCore.png "TrueNAS CORE Interface Listing")
+
+TrueNAS SCALE uses PCI location to assign an interface name.
+
+![ComponentNamingInterfacesSCALE](/images/SCALE/ComponentNamingInterfacesSCALE.png "TrueNAS SCALE Interface Listing")
