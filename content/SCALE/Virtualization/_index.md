@@ -47,4 +47,4 @@ The GPU menu allows users to select a graphics processing unit (GPU) for the VM.
 {{< /tab >}}
 {{< /tabs >}}
 
-{{< include file="static/includes/MenuNav.md.part" markdown="true" >}}
+{{< include file="static/includes/General/MenuNav.md.part" markdown="true" >}}

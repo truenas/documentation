@@ -48,7 +48,7 @@ Choose a direction for the rsync task.
 Select a schedule for the rsync task.
 If you need a custom schedule, select *Custom*.
 {{< expand "Advanced Scheduler" "v" >}}
-{{< include file="static/includes/AdvancedScheduler.md.part" markdown="true" >}}
+{{< include file="static/includes/CORE/AdvancedScheduler.md.part" markdown="true" >}}
 {{< /expand >}}
 
 Next, enter the *Remote Host* IP address or hostname.
@@ -59,7 +59,7 @@ Enter the *Remote Module Name* exactly as it appears on the *remote* system.
 Configure the remaining options according to your specific needs.
 {{< expand "Options" "v" >}}
 
-{{< include file="static/includes/TasksRsyncAddFields.md.part" markdown="true" >}}
+{{< include file="static/includes/Reference/TasksRsyncAddFields.md.part" markdown="true" >}}
 
 The *Module* mode adds one field to the **Remote** section:
 
@@ -134,7 +134,7 @@ The *User* must be identical to the [SSH Connection]({{< relref "SystemSSH.md" >
 Choose a direction for the rsync task, either *Push* or *Pull* and then define the task *Schedule*.
 If you need a custom schedule, select *Custom*.
 {{< expand "Advanced Scheduler" "v" >}}
-{{< include file="static/includes/AdvancedScheduler.md.part" markdown="true" >}}
+{{< include file="static/includes/CORE/AdvancedScheduler.md.part" markdown="true" >}}
 {{< /expand >}}
 
 Next, enter the *remote* host IP address or hostname.
@@ -142,7 +142,7 @@ Use the format *username@remote_host* if the username differs on the *remote*hos
 Configure the remaining options according to your specific needs.
 
 {{< expand "Options" "v" >}}
-{{< include file="static/includes/TasksRsyncAddFields.md.part" markdown="true" >}}
+{{< include file="static/includes/Reference/TasksRsyncAddFields.md.part" markdown="true" >}}
 
 Additional options for the *SSH Rsync Mode*:
 
@@ -171,7 +171,7 @@ There are two sections for rsync configuration: basic **Configure** options and 
 
 ![ServicesRsyncConfigure](/images/CORE/12.0/ServicesRsyncConfigure.png "rsync service options")
 
-{{< include file="static/includes/ServicesRsyncConfigureFields.md.part" markdown="true" >}}
+{{< include file="static/includes/Reference/ServicesRsyncConfigureFields.md.part" markdown="true" >}}
 
 Use the default settings unless a specific change is required.
 Don't forget to click *SAVE* after changing any settings.
@@ -183,7 +183,7 @@ To create a new module, click *ADD*.
 
 ![ServicesRsyncModuleAdd](/images/CORE/12.0/ServicesRsyncModuleAdd.png "Creating a rsync module")
 
-{{< include file="static/includes/ServicesRsyncConfigureRsyncModuleAdd.md.part" markdown="true" >}}
+{{< include file="static/includes/Reference/ServicesRsyncConfigureRsyncModuleAdd.md.part" markdown="true" >}}
 
 {{< hint info >}}
 When a *Hosts Allow* list is defined, **only** the IPs and hostnames on the list are able to connect to the module.
