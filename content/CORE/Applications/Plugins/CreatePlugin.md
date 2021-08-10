@@ -10,7 +10,7 @@ The web interface allows users to deploy, start, stop, and update applications, 
 Plugins are popular for content, security, development, collaboration, and backup applications for home and business use.
 
 {{< hint info >}}
-{{< include file="static/includes/CommunitySupportedFeature.md.part" markdown="true" >}}
+{{< include file="static/includes/General/CommunitySupportedFeature.md.part" markdown="true" >}}
 {{< /hint >}}
 
 {{< expand "Plugin Technology" "v" >}}

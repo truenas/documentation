@@ -70,4 +70,4 @@ Check the ticket periodically as developers can request additional details as th
 
 ## Feature Suggestions
 
-{{< include file="static/includes/CreateJiraSuggestion.md.part" markdown="true" >}}
+{{< include file="static/includes/General/CreateJiraSuggestion.md.part" markdown="true" >}}

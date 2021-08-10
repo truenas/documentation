@@ -30,7 +30,7 @@ Next, define the *Command* *Schedule*.
 Various preset schedules are available. There is also an advanced scheduler for very specific schedule requirements.
 
 {{< expand "Advanced Scheduler" "v" >}}
-{{< include file="static/includes/AdvancedScheduler.md.part" markdown="true" >}}
+{{< include file="static/includes/CORE/AdvancedScheduler.md.part" markdown="true" >}}
 {{< /expand >}}
 
 Additional Options:

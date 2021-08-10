@@ -11,6 +11,6 @@ To configure LLDP, go to the **Services** page, find the **LLDP** entry, and cli
 
 ![ServicesLLDPOptions](/images/CORE/12.0/ServicesLLDPOptions.png "LLDP Service Options")
 
-{{< include file="static/includes/ServicesLLDPFields.md.part" markdown="true" >}}
+{{< include file="static/includes/Reference/ServicesLLDPFields.md.part" markdown="true" >}}
 
 Set *Interface Description* and enter a *Country Code* before turning the LLDP service on.

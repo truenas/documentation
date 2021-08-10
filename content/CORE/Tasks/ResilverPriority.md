@@ -14,7 +14,7 @@ Go to **Tasks > Resilver Priority** to configure the priority to a time that is 
 
 ![TasksResilverPriority](/images/CORE/12.0/TasksResilverPriority.png "Scheduling Resilver Priority Times")
 
-{{< include file="static/includes/TasksResilverPriorityFields.md.part" markdown="true" >}}
+{{< include file="static/includes/Reference/TasksResilverPriorityFields.md.part" markdown="true" >}}
 
 {{< hint info >}} 
 A resilver process running during the time-frame defined between "Begin Time" and "End Time" will likely work faster, as it is not being throttled to run at a lower priority.

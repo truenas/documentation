@@ -7,7 +7,7 @@ weight: 40
 
 WebDAV stands for Web-based Distributed Authoring and Versioning, which is an extension to HTTP. In TrueNAS, WebDAV shares can be created so that authenticated users can browse the contents of a specified pool, dataset, or directory from a web browser.
 
-{{< include file="static/includes/SharingPrereqs.md.part" markdown="true" >}}
+{{< include file="static/includes/General/SharingPrereqs.md.part" markdown="true" >}}
 
 ## Share Configuration 
 
