@@ -12,6 +12,7 @@ The Network screen also displays *OpenVPN* information and *IPMI* channels.
 
 ![NetworkSCALE](/images/SCALE/NetworkSCALE.png "SCALE Network Page")
 <br></br>  
+<br></br>
 
 ## Interfaces
 
