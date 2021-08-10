@@ -33,6 +33,11 @@ Remove snapshots by clicking *Delete* and confirming the action.
 
 The *Scheduling* tab is used to create, edit, and delete periodic snapshot schedules.
 Schedules are synchronized between vCenter and the individual TrueNAS web interface.
+
+{{< hint info >}}
+When scheduling periodic snapshots the times and dates are NAS specific.
+{{< /hint >}}
+
 Click *+* to begin creating a new snapshot schedule.
 
 ![PeriodicSnapshots](/images/vCenterPlugin/PeriodicSnapshots.png "Periodic Snapshot Options")
