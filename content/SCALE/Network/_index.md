@@ -52,6 +52,8 @@ The IP Address section lets users define an alias for the interface on the TrueN
 Users may also select how many bits will be a part of the network address.
 {{< /expand >}}
 
+
+
 ## Global Configuration
 
 The *Global Configuration* section has all the general TrueNAS networking settings *not* specific to any interfaces.
@@ -132,6 +134,8 @@ TrueNAS displays the *Hostname* and *Domain* in the **Dashboard** *System Inform
 | Host Name Database | Additional hosts to be appended to */etc/hosts*. Separate entries by pressing. Separate entries by pressing <kbd>Enter</kbd>.  Use the format *`IP_address space hostname`* where multiple hostnames can be used if separated by a space. Hosts defined here are still accessible by name even when DNS is not available. See <a href="https://www.freebsd.org/cgi/man.cgi?query=hosts">hosts</a> for additional information. |
 {{< /expand >}}
 
+
+
 ## Static Routes
 
 TrueNAS administrators can use the *Static Routes* section to manually enter routes so the router can send packets to a destination network.
@@ -150,6 +154,8 @@ If you need a static route to reach portions of the network, add the route by go
 | Gateway | Enter the IP address of the gateway. |
 | Description | Notes or identifiers describing the route. |
 {{< /expand >}}
+
+
 
 ## OpenVPN
 
@@ -282,6 +288,8 @@ Start the service by clicking the play button next to it in the OpenVPN window.
 You may also start the service by going to **System Settings > Services** and clicking the *State* toggle.
 Setting *Start Automatically* starts the service when TrueNAS completes booting and runs the network and data pools.
 {{< /expand >}}
+
+
 
 ## IPMI
 
