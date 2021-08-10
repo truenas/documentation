@@ -11,8 +11,7 @@ The SCALE Network section contains network configuration and settings options fo
 The Network screen also displays *OpenVPN* information and *IPMI* channels.
 
 ![NetworkSCALE](/images/SCALE/NetworkSCALE.png "SCALE Network Page")
-<br></br>
-<br></br>   
+<br></br>  
 
 ## Interfaces
 
@@ -53,8 +52,8 @@ The IP Address section lets users define an alias for the interface on the TrueN
 
 Users may also select how many bits will be a part of the network address.
 {{< /expand >}}
-<br></br>
-<br></br>
+<br></br>  
+
 ## Global Configuration
 
 The *Global Configuration* section has all the general TrueNAS networking settings *not* specific to any interfaces.
@@ -134,8 +133,7 @@ TrueNAS displays the *Hostname* and *Domain* in the **Dashboard** *System Inform
 | Netwait IP List | Only appears when *Enable Netwait Feature* is set. Enter a list of IP addresses to [ping](https://www.freebsd.org/cgi/man.cgi?query=ping). Separate entries by pressing <kbd>Enter</kbd>. Each address is tried until one is successful or the list is exhausted. Leave empty to use the default gateway.
 | Host Name Database | Additional hosts to be appended to */etc/hosts*. Separate entries by pressing. Separate entries by pressing <kbd>Enter</kbd>.  Use the format *`IP_address space hostname`* where multiple hostnames can be used if separated by a space. Hosts defined here are still accessible by name even when DNS is not available. See <a href="https://www.freebsd.org/cgi/man.cgi?query=hosts">hosts</a> for additional information. |
 {{< /expand >}}
-<br></br>
-<br></br>   
+<br></br>  
 
 ## Static Routes
 
@@ -155,8 +153,7 @@ If you need a static route to reach portions of the network, add the route by go
 | Gateway | Enter the IP address of the gateway. |
 | Description | Notes or identifiers describing the route. |
 {{< /expand >}}
-<br></br>
-<br></br>   
+<br></br>  
 
 ## OpenVPN
 
@@ -289,8 +286,7 @@ Start the service by clicking the play button next to it in the OpenVPN window.
 You may also start the service by going to **System Settings > Services** and clicking the *State* toggle.
 Setting *Start Automatically* starts the service when TrueNAS completes booting and runs the network and data pools.
 {{< /expand >}}
-<br></br>
-<br></br>   
+<br></br>  
 
 ## IPMI
 
