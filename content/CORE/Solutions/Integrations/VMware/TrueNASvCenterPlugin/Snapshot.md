@@ -35,7 +35,7 @@ The *Scheduling* tab is used to create, edit, and delete periodic snapshot sched
 Schedules are synchronized between vCenter and the individual TrueNAS web interface.
 
 {{< hint info >}}
-When scheduling periodic snapshots the times and dates are NAS specific.
+When scheduling periodic snapshots, the chosen **dates and times are specific to the NAS system time**. The vCenter server could have different time zone settings; these have no bearing on the periodic snapshot schedule.
 {{< /hint >}}
 
 Click *+* to begin creating a new snapshot schedule.
