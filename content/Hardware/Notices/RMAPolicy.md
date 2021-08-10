@@ -20,5 +20,5 @@ Advanced Replacement; customer responsible for returning failed component (no sh
 For additional info, please contact the iXsystems Support team at any time!
 
 {{< expand "Contacting iXsystems Support" "v" >}}
-{{< include file="static/includes/iXsystemsSupportContact.html.part" html="true" >}}
+{{< include file="static/includes/General/iXsystemsSupportContact.html.part" html="true" >}}
 {{< /expand >}}

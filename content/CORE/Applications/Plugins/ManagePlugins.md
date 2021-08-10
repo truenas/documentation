@@ -6,7 +6,7 @@ weight: 10
 {{< toc >}}
 
 {{< hint info >}}
-{{< include file="static/includes/CommunitySupportedFeature.md.part" markdown="true" >}}
+{{< include file="static/includes/General/CommunitySupportedFeature.md.part" markdown="true" >}}
 {{< /hint >}}
 
 Plugins allow extending the built-in NAS services by installing additional software.
@@ -25,7 +25,7 @@ The plugin jail is limited to installing and using only the plugin software.
 
 To see the plugin catalog, go to the **Plugins** screen.
 {{< expand "First time in this menu?" "v" >}}
-{{< include file="static/includes/JailsPluginsFirstTime.md.part" markdown="true" >}}
+{{< include file="static/includes/CORE/JailsPluginsFirstTime.md.part" markdown="true" >}}
 {{< /expand >}}
 
 ![PluginsList](/images/CORE/12.0/PluginsList.png "Plugins Catalog")

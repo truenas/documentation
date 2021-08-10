@@ -23,7 +23,7 @@ In the *Email* field, enter a remote email address that is regularly monitored b
 
 The remaining configuration is done from **System > Email**.
 
-{{< include file="static/includes/SystemEmailFields.md.part" markdown="true" >}}
+{{< include file="static/includes/Reference/SystemEmailFields.md.part" markdown="true" >}}
 
 Changing the *Send Mail Method* shows different options:
 

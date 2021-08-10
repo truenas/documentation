@@ -73,7 +73,7 @@ To schedule recurring S.M.A.R.T. tests, go to **Tasks > S.M.A.R.T. Tests** and c
 ![TasksSMARTTestsAdd](/images/CORE/12.0/TasksSMARTTestsAdd.png "Add recurring S.M.A.R.T. test")
 
 {{< expand "Specific Options" "v" >}}
-{{< include file="static/includes/TasksSMARTAddFields.md.part" markdown="true" >}}
+{{< include file="static/includes/Reference/TasksSMARTAddFields.md.part" markdown="true" >}}
 {{< /expand >}}
 
 Choose the *Disks* to test, *Type* of test to run, and *Schedule* for the task.
@@ -84,7 +84,7 @@ SMART tests can offline disks! Avoid scheduling S.M.A.R.T. tests simultaneously 
 
 When the test must run on a very specific *Schedule*, set this to *Custom* to open the advanced scheduler.
 {{< expand "Advanced Scheduler" "v" >}}
-{{< include file="static/includes/AdvancedScheduler.md.part" markdown="true" >}}
+{{< include file="static/includes/CORE/AdvancedScheduler.md.part" markdown="true" >}}
 {{< /expand >}}
 
 Saved schedules appear in the **Tasks > S.M.A.R.T. Tests** list.
@@ -109,6 +109,6 @@ Configure the S.M.A.R.T. service by clicking <i class="material-icons" aria-hidd
 
 ![ServicesSMARTOptions](/images/CORE/12.0/smartoptions12.png "Services SMART Options")
 
-{{< include file="static/includes/ServicesSMARTFields.md.part" markdown="true" >}}
+{{< include file="static/includes/Reference/ServicesSMARTFields.md.part" markdown="true" >}}
 
 Don't forget to click *SAVE* after changing any settings.

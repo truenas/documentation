@@ -36,4 +36,4 @@ This mode disables traffic on the LAGG interface without disabling the LAGG inte
 
 Now define the *Lagg Interfaces* and review the remaining interface options.
 
-{{< include file="static/includes/InterfaceOptions.md.part" markdown="true" >}}
+{{< include file="static/includes/CORE/InterfaceOptions.md.part" markdown="true" >}}

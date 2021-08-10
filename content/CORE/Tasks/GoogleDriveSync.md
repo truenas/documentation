@@ -81,4 +81,4 @@ Once the sync reports a *SUCCESS* status, you can verify it by opening the folde
 
 ### Working with Google created content
 
-{{< include file="static/includes/GoogleDriveBadPermissions.md.part" markdown="true" >}}
+{{< include file="static/includes/General/GoogleDriveBadPermissions.md.part" markdown="true" >}}

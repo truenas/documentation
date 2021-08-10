@@ -60,12 +60,12 @@ It is recommended to keep the description less than three paragraphs and include
 
 ### Creating a Debug File
 
-{{< include file="static/includes/CreateDebug.md.part" markdown="true" >}}
+{{< include file="static/includes/CORE/CreateDebug.md.part" markdown="true" >}}
 
 
 ### Suggest New Features
 
-{{< include file="static/includes/CreateJiraSuggestion.md.part" markdown="true" >}}
+{{< include file="static/includes/General/CreateJiraSuggestion.md.part" markdown="true" >}}
 
 {{< /tab >}}
 {{< tab "TrueNAS Enterprise" >}}
@@ -116,4 +116,4 @@ Use the same e-mail address submitted with the ticket when registering.
 
 ## Contacting iXsystems Support
 
-{{< include file="static/includes/iXsystemsSupportContact.html.part" html="true" >}}
+{{< include file="static/includes/General/iXsystemsSupportContact.html.part" html="true" >}}

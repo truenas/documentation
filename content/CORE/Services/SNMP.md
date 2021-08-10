@@ -10,7 +10,7 @@ To configure SNMP, go to the **Services** page, find the **SNMP** entry, and cli
 ![ServicesSNMPOptions](/images/CORE/12.0/ServicesSNMPOptions.png "SNMP Service Options")
 
 {{< expand "Field Descriptions" "v" >}}
-{{< include file="static/includes/ServicesSNMPFields.md.part" markdown="true" >}}
+{{< include file="static/includes/Reference/ServicesSNMPFields.md.part" markdown="true" >}}
 {{< /expand >}}
 
 When starting the SNMP service, port *UDP 161* listens for SNMP requests.
