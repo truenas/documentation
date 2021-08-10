@@ -11,4 +11,4 @@ Additional information that may also be included would be:
 + a list of JIRA tickets resolved.
 + any known existing issues that have not been resolved yet.
 
-{{< include file="static/includes/MenuNav.md.part" markdown="true" >}}
+{{< include file="static/includes/General/MenuNav.md.part" markdown="true" >}}

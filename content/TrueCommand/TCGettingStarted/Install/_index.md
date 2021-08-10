@@ -357,4 +357,4 @@ Click *Confirm Security Exception*.
 
 ## Creating the Administrator Account
 
-{{< include file="static/includes/TrueCommandFirstTimeLogin.md.part" markdown="true" >}}
+{{< include file="static/includes/TrueCommand/TrueCommandFirstTimeLogin.md.part" markdown="true" >}}
