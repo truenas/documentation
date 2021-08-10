@@ -13,7 +13,7 @@ TrueNAS uses [Graphite](https://graphiteapp.org/ "Graphite Homepage") for metric
 
 The options in **System > Reporting** control how the graphs in **Reporting** appear:
 
-{{< include file="static/includes/SystemReportingFields.md.part" markdown="true" >}}
+{{< include file="static/includes/Reference/SystemReportingFields.md.part" markdown="true" >}}
 
 {{< hint warning >}}
 Report history is cleared when *Report CPU*, *Graph Age*, or *Graph Points* are changed.

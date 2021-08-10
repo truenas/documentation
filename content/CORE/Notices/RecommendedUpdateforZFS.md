@@ -32,5 +32,5 @@ These performance improvements are also welcome:
 TrueNAS Enterprise users should contact iXsystems Support to schedule the software update and discuss any potential challenges with this update.
 
 {{< expand "Contacting iXsystems Support" "v" >}}
-{{< include file="static/includes/iXsystemsSupportContact.html.part" html="true" >}}
+{{< include file="static/includes/General/iXsystemsSupportContact.html.part" html="true" >}}
 {{< /expand >}}

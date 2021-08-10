@@ -9,4 +9,4 @@ TrueNAS SCALE allows users to create and configure Windows SMB shares, Unix (NFS
 
 ![SharingSCALE](/images/SCALE/SharingSCALE.png "SCALE Sharing Screen")
 
-{{< include file="static/includes/MenuNav.md.part" markdown="true" >}}
+{{< include file="static/includes/General/MenuNav.md.part" markdown="true" >}}

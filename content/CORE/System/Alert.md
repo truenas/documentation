@@ -22,7 +22,7 @@ To add a new alert service, go to **System > Alert Services** and click *ADD*.
 
 ![SystemAlertServicesAdd](/images/CORE/12.0/SystemAlertServicesAdd.png "New Alert Service")
 
-{{< include file="static/includes/SystemAlertServicesAddEditFields.md.part" markdown="true" >}}
+{{< include file="static/includes/Reference/SystemAlertServicesAddEditFields.md.part" markdown="true" >}}
 
 Choosing a *Type* adds options specific to that alert service:
 
@@ -119,6 +119,6 @@ To modify the default system alerts, go to **System > Alert Settings**.
 The alerts are grouped into sections based on type.
 For example, alerts that are related to pools appear in the **Storage** alert section.
 
-{{< include file="static/includes/SystemAlertSettingsFields.md.part" markdown="true" >}}
+{{< include file="static/includes/Reference/SystemAlertSettingsFields.md.part" markdown="true" >}}
 
 Changing any of these options affects every configured alert service.

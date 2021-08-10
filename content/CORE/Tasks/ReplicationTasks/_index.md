@@ -8,4 +8,4 @@ The ZFS file system provides ability to create a snapshot of the file system con
 
 ZFS replication relies on periodic ZFS snapshots. ZFS snapshots are an inherent feature from the ZFS file system, and are a point-in-time state of the existing ZFS file system. Snapshot can be triggered manually or scheduled. Once the ZFS replication task has been configured, the selected snapshot or snapshots will be replicated to the target ZFS dataset.  Usually, the target ZFS dataset is on a secondary TrueNAS storage server, serving as a disaster recovery platform.
 
-{{< include file="static/includes/MenuNav.md.part" markdown="true" >}}
+{{< include file="static/includes/General/MenuNav.md.part" markdown="true" >}}

@@ -20,7 +20,7 @@ The keypair can be generated as part of the semiautomatic configuration or manua
 
 ![SSHConnectionsSCALE](/images/SCALE/SSHConnectionsSCALE.png "SSH Connections Form")
 
-{{< include file="static/includes/SystemSSHConnectionsAddSemiAutoFields.md.part" markdown="true" >}}
+{{< include file="static/includes/Reference/SystemSSHConnectionsAddSemiAutoFields.md.part" markdown="true" >}}
 
 Be sure to use a valid URL scheme for the remote TrueNAS URL.
 Leave the username as *root* and enter the account password for the remote TrueNAS system.
@@ -54,7 +54,7 @@ Change the setup method to **Manual**.
 
 ![SSHConnectionsManualSCALE](/images/SCALE/SSHConnectionsManualSCALE.png "SSH Connections: Manual Options")
 
-{{< include file="static/includes/SystemSSHConnectionsAddManualFields.md.part" markdown="true" >}}
+{{< include file="static/includes/Reference/SystemSSHConnectionsAddManualFields.md.part" markdown="true" >}}
 
 Make sure to select the private key from the SSH keypair that was used to transfer the public key on the remote NAS.
 {{< /tab >}}

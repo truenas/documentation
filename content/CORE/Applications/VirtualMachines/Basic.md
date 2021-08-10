@@ -6,7 +6,7 @@ weight: 10
 {{< toc >}}
 
 {{< hint info >}}
-{{< include file="static/includes/CommunitySupportedFeature.md.part" markdown="true" >}}
+{{< include file="static/includes/General/CommunitySupportedFeature.md.part" markdown="true" >}}
 {{< /hint >}}
 
 A Virtual Machine (VM) is an environment on a host computer that can be used as if it were a separate physical computer.
@@ -42,7 +42,7 @@ Configure each category of the VM according to your specifications, starting wit
 
 {{< expand "Specific Options" "v" >}}
 
-{{< include file="static/includes/VirtualMachinesAddFields.md.part" markdown="true" >}}
+{{< include file="static/includes/Reference/VirtualMachinesAddFields.md.part" markdown="true" >}}
 
 Additional notes:
 
