@@ -13,6 +13,7 @@ The Network screen also displays *OpenVPN* information and *IPMI* channels.
 ![NetworkSCALE](/images/SCALE/NetworkSCALE.png "SCALE Network Page")
 
 Each Networking configurable is a separate widget on the overview screen. Click the buttons or an existing widget entry to view a side panel with configuration options.
+
 Select a networking section in the box below to see more details about specific configuration options.
 
 {{< tabs "Network Options" >}}
