@@ -11,16 +11,15 @@ The SCALE Network section contains network configuration and settings options fo
 The Network screen also displays *OpenVPN* information and *IPMI* channels.
 
 ![NetworkSCALE](/images/SCALE/NetworkSCALE.png "SCALE Network Page")
-<br></br>  
-<br></br>
 
+{{< tabs "Network Options" >}}
+{{< tab "Interfaces" >}}
 ## Interfaces
 
 The Interfaces section displays network port names and IP addresses, as well as their upload/download rates. 
 
 ![InterfacesSCALE](/images/SCALE/InterfacesSCALE.png "Interfaces")
 
-{{< expand "Configuration Overview" "v" >}}
 Users can edit interfaces by clicking them, delete them by clicking the trashcan icon next to them, or add new ones by clicking *Add*.
 
 ![AddInterfaceSCALE](/images/SCALE/AddInterfaceSCALE.png "Add Interface Form")
@@ -52,9 +51,9 @@ Users can edit interfaces by clicking them, delete them by clicking the trashcan
 The IP Address section lets users define an alias for the interface on the TrueNAS controller. The alias can be an IPv4 or IPv6 address.
 
 Users may also select how many bits will be a part of the network address.
-{{< /expand >}}
-<br></br>  
 
+{{< /tab >}}
+{{< tab "Global Configuration" >}}
 ## Global Configuration
 
 The *Global Configuration* section has all the general TrueNAS networking settings *not* specific to any interfaces.
@@ -66,7 +65,6 @@ Users can configure many of these Interface, DNS, and Gateway options in the [Co
 Be sure to check both locations when troubleshooting network connectivity issues.
 {{< /expand >}}
 
-{{< expand "Configuration Overview" "v" >}}
 {{< hint danger >}}
 **Disruptive Change**
 
@@ -133,16 +131,15 @@ TrueNAS displays the *Hostname* and *Domain* in the **Dashboard** *System Inform
 | Enable Netwait Feature | Delays the start of network services until pings are returned from the IP addresses added to the *Netwait IP List*. |
 | Netwait IP List | Only appears when *Enable Netwait Feature* is set. Enter a list of IP addresses to [ping](https://www.freebsd.org/cgi/man.cgi?query=ping). Separate entries by pressing <kbd>Enter</kbd>. Each address is tried until one is successful or the list is exhausted. Leave empty to use the default gateway.
 | Host Name Database | Additional hosts to be appended to */etc/hosts*. Separate entries by pressing. Separate entries by pressing <kbd>Enter</kbd>.  Use the format *`IP_address space hostname`* where multiple hostnames can be used if separated by a space. Hosts defined here are still accessible by name even when DNS is not available. See <a href="https://www.freebsd.org/cgi/man.cgi?query=hosts">hosts</a> for additional information. |
-{{< /expand >}}
-<br></br>  
 
+{{< /tab >}}
+{{< tab "Static Routes" >}}
 ## Static Routes
 
 TrueNAS administrators can use the *Static Routes* section to manually enter routes so the router can send packets to a destination network.
 
 ![StaticRoutesSCALE](/images/SCALE/StaticRoutesSCALE.png "Static Routes")
 
-{{< expand "Configuration Overview" "v" >}}
 TrueNAS does not have defined static routes by default.
 If you need a static route to reach portions of the network, add the route by going to **Network** and clicking *Add* in the *Static Routes* window .
 
@@ -153,9 +150,9 @@ If you need a static route to reach portions of the network, add the route by go
 | Destination | Use the format *A.B.C.D/E* where *E* is the CIDR mask. |
 | Gateway | Enter the IP address of the gateway. |
 | Description | Notes or identifiers describing the route. |
-{{< /expand >}}
-<br></br>  
 
+{{< /tab >}}
+{{< tab "OpenVPN" >}}
 ## OpenVPN
 
 A virtual private network (VPN) is an extension of a private network over public resources.
@@ -286,9 +283,8 @@ Start the service by clicking the play button next to it in the OpenVPN window.
 
 You may also start the service by going to **System Settings > Services** and clicking the *State* toggle.
 Setting *Start Automatically* starts the service when TrueNAS completes booting and runs the network and data pools.
-{{< /expand >}}
-<br></br>  
-
+{{< /tab >}}
+{{< tab "IPMI" >}}
 ## IPMI
 
 {{< hint info >}}
@@ -327,10 +323,11 @@ Click the channel you wish to edit to open the configuration form.
 | Identify Light | Lets users select a duration for the system's IPMI light to flash on the compatible connected hardware. |
 | Manage | Opens the IPMI manager in a new browser tab. |
 
-
 ### IPMI Options
 
 After saving the configuration, users can access the IPMI interface using a web browser and the IP address specified in **Network >** *IPMI*. The management interface prompts for login credentials. Refer to your IPMI device documentation to learn the default administrator account credentials.
 
 After logging in to the management interface, users can change the default administrative user name and create additional IPMI users. IPMI utility appearance and available functions vary by hardware.
-{{< /expand >}}
+
+{{< /tab >}}
+{{< /tabs >}}
