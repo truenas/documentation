@@ -1,6 +1,9 @@
 ---
 title: "Alert Management"
 weight: 10
+aliases:
+  - /truecommand/alerts/alertmanage/
+  - /truecommand/tcgettingstarted/configurealert/
 ---
 
 {{< toc >}}
