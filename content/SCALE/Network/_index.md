@@ -164,7 +164,6 @@ Alternately, TrueNAS can integrate into a private network, even when the system 
 
 ![OpenVPNSCALE](/images/SCALE/OpenVPNSCALE.png "OpenVPN")
 
-{{< expand "Configuration Overview" "v" >}}
 Before configuring TrueNAS as either an OpenVPN Server or Client, you will need an existing public key infrastructure (PKI) with [Certificates]({{< relref "CertificatesSCALE.md #certificates" >}}) and [Certificate Authorities]({{< relref "CertificatesSCALE.md #certificate-authorities" >}}) created in or imported to TrueNAS.
 
 {{< expand "What does a PKI do?" "v" >}}
@@ -303,7 +302,6 @@ IPMI is configured in **Network >** *IPMI*. The IPMI configuration screen provid
 
 ![IPMISCALE](/images/SCALE/IPMISCALE.png "IPMI")
 
-{{< expand "Configuration Overview" "v" >}}
 The IPMI window displays the available IPMI channels. The *Identify Light* button (flashlight) lets users select a duration for the system's IPMI to flash so they can identify it. The *Manage* button (square with an outward-pointing arrow) opens the IPMI manager in a new browser tab.
 
 ### IPMI Configuration
