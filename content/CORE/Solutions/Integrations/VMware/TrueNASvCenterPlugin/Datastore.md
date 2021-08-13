@@ -50,7 +50,7 @@ Users can select other connected TrueNAS systems with the drop-down menu.
 
 Select the datastore *VMFS Version* from the drop-down menu.
 Choose between the modern version *6* or the legacy versions *3* and *5*.
-See the [VMware VMFS documentation](https://docs.vmware.com/en/search/) for detailed comparisons.
+See the [VMware VMFS documentation](https://docs.vmware.com/) for detailed comparisons.
 
 Enabling *Sparse Volume* reserves less than the total available size and metadata storage space, but it can cause writing to fail if the volume has little space remaining.
 See [zfs(8)](https://www.freebsd.org/cgi/man.cgi?query=zfs) for more details.
@@ -58,9 +58,9 @@ See [zfs(8)](https://www.freebsd.org/cgi/man.cgi?query=zfs) for more details.
 Select the TrueNAS pool to hold the datastore.
 The *Volume* must be large enough to contain the chosen *Datastore Size*.
 
-If your NAS has high availability with Fibre Channel HBAs and a network set up to form a Fibre Channel fabric with the NAS and ESXi, you will also be able to select a Fibre Channel port for the datastore.
+If you have a high availability NAS with a Fibre Channel license and a network configured to form a Fibre Channel fabric with the NAS and ESXi, you will also be able to select a *Fibre Channel port* for the datastore.
 
-Selecting a Fibre Channel port enables that port with the datastore's target on the NAS and creates a datastore with a corresponding Fibre Channel HBA on the ESXi.
+Selecting a *Fibre Channel port* enables that port with the datastore's target on the NAS and creates a datastore with a corresponding Fibre Channel HBA on the ESXi.
 {{< /tab >}}
 {{< tab "NFS Datastore Configuration" >}}
 ![NFSDataStoreSettings](/images/vCenterPlugin/NFSDatastoreSettings.png "NFS Options")
