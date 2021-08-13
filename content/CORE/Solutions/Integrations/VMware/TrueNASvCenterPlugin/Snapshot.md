@@ -3,6 +3,8 @@ title: "Snapshot"
 weight: 40
 ---
 
+This is to be removed when Zack is done implementing the Snapshot and Scheduling removal.
+
 {{< toc >}}
 
 A snapshot is a read-only copy of a file system or volume.
