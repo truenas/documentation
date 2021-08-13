@@ -95,7 +95,7 @@ Datastores reserve some available space for internal use and set the available c
 
 ## Cloning Datastores
 
-Cloning an NFS or VMFS datastore creates a duplicate of that datastore.
+Cloning an NFS or VMFS datastore duplicates that datastore.
 Select a datastore from the list and click *Clone*.
 Choose an ESXi host to store the new datastore and click *Next*.
 Enter a name for the clone and click *Clone Datastore*.
