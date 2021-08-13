@@ -58,6 +58,10 @@ See [zfs(8)](https://www.freebsd.org/cgi/man.cgi?query=zfs) for more details.
 
 Select the TrueNAS pool to hold the datastore.
 The *Volume* must be large enough to contain the chosen *Datastore Size*.
+
+If your NAS has high availability with Fibre Channel HBAs and a network set up to form a Fibre Channel fabric with the NAS and ESXi, you will also be able to select a Fibre Channel port for the datastore.
+
+Selecting a Fibre Channel port enables that port with the datastore's target on the NAS and creates a datastore with a corresponding Fibre Channel HBA on the ESXi.
 {{< /tab >}}
 {{< tab "NFS Datastore Configuration" >}}
 ![NFSDataStoreSettings](/images/vCenterPlugin/NFSDatastoreSettings.png "NFS Options")
