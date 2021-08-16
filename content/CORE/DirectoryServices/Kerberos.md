@@ -46,13 +46,13 @@ To create the keytab on a Windows Server system, open a Command Prompt and use t
 
 `ktpass -princ USERNAME@REALM.COM -pass PASSWORD -crypto ENCRYPTION TYPE -ptype KRB5_NT_PRINCIPAL -kvno 0 -out c:PATH/KEYTABNAME.KEYTAB`
 
-*USERNAME@REALM.COM* is the Windows Server user and principal name written in the format username@KERBEROS.REALM.
+`USERNAME@REALM.COM` is the Windows Server user and principal name written in the format username@KERBEROS.REALM.
   The Kerberos Realm is typically in all caps, but the Kerberos Realm case should match the realm name.
   See [this note](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/ktpass#BKMK_remarks) about using `/princ` for more details.
 
-*PASSWORD* is the Windows Server user's password.
+`PASSWORD` is the Windows Server user's password.
 
-*ENCRYPTION TYPE* is the cryptographic type you want to use. Setting `[ENCRYPTION TYPE]` to `ALL` allows using all supported cryptographic types.
+`ENCRYPTION TYPE` is the cryptographic type you want to use. Setting `[ENCRYPTION TYPE]` to `ALL` allows using all supported cryptographic types.
 Users can specify each key instead of ALL:
 * *DES-CBC-CRC* is used for compatibility.
 * *DES-CBC-MD5* is used for compatibility and adheres more closely to the MIT implementation.
@@ -61,7 +61,7 @@ Users can specify each key instead of ALL:
 * *AES128-SHA1* uses AES128-CTS-HMAC-SHA1-96 encryption.
 Specifying cryptographic types creates a keytab with sufficient privileges to grant tickets.
 
-*PATH/KEYTABNAME.KEYTAB* is the path where you want to save the keytab and the name you want it to have.
+`PATH/KEYTABNAME.KEYTAB` is the path where you want to save the keytab and the name you want it to have.
 
 An example ktpass command would look like this:
 
