@@ -22,7 +22,7 @@ To add a new alert service, go to **System > Alert Services** and click *ADD*.
 
 ![SystemAlertServicesAdd](/images/CORE/12.0/SystemAlertServicesAdd.png "New Alert Service")
 
-{{< include file="static/includes/SystemAlertServicesAddEditFields.md.part" markdown="true" >}}
+{{< include file="static/includes/Reference/SystemAlertServicesAddEditFields.md.part" markdown="true" >}}
 
 Choosing a *Type* adds options specific to that alert service:
 
@@ -61,8 +61,8 @@ Choosing a *Type* adds options specific to that alert service:
 |------|-------------|
 | Webhook URL | Enter or paste the [incoming webhook](https://docs.mattermost.com/developer/webhooks-incoming.html) URL associated with this service. |
 | Username | Mattermost username. |
-| Channel | Name of the [channel](https://docs.mattermost.com/help/getting-started/organizing-conversations.html#managing-channels) to receive notifications. This overrides the default channel in the incoming webhook settings. |
-| Icon Url | Icon file to use as the profile picture for new messages. Example: https://mattermost.org/wp-content/uploads/2016/04/icon.png. Requires configuring Mattermost to [override profile picture icons](https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-icons). |
+| Channel | Name of the [channel](https://docs.mattermost.com/messaging/managing-channels.html) to receive notifications. This overrides the default channel in the incoming webhook settings. |
+| Icon Url | Icon file to use as the profile picture for new messages. Example: https://mattermost.org/wp-content/uploads/2016/04/icon.png. Requires configuring Mattermost to [override profile picture icons](https://docs.mattermost.com/configure/configuration-settings.html#enable-integrations-to-override-profile-picture-icons). |
 
 {{< /tab >}}
 {{< tab "OpsGenie" >}}
@@ -95,7 +95,7 @@ Choosing a *Type* adds options specific to that alert service:
 | Hostname | Hostname or IP address of the system to receive SNMP trap notifications. |
 | Port | UDP port number on the system receiving SNMP trap notifications. The default is 162. |
 | SNMPv3 Security Model | Enable the SNMPv3 security model. |
-| SNMP Community | Network community string. The community string acts like a user ID or password. A user with the correct community string has access to network information. The default is public. For more information, see [What is an SNMP Community String?](https://community.helpsystems.com/knowledge-base/intermapper/snmp/snmp-community-strings/). |
+| SNMP Community | Network community string. The community string acts like a user ID or password. A user with the correct community string has access to network information. The default is public. For more information, see this helpful [SNMP Community Strings tutorial](https://www.dnsstuff.com/snmp-community-string). |
 
 {{< /tab >}}
 {{< tab "Victor Ops" >}}
@@ -119,6 +119,6 @@ To modify the default system alerts, go to **System > Alert Settings**.
 The alerts are grouped into sections based on type.
 For example, alerts that are related to pools appear in the **Storage** alert section.
 
-{{< include file="static/includes/SystemAlertSettingsFields.md.part" markdown="true" >}}
+{{< include file="static/includes/Reference/SystemAlertSettingsFields.md.part" markdown="true" >}}
 
 Changing any of these options affects every configured alert service.

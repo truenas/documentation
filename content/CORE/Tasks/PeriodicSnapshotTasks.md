@@ -34,12 +34,12 @@ Define the task **Schedule**.
 When a specific *Schedule* is required, choose *Custom* and use the **Advanced Scheduler**.
 
 {{< expand "Advanced Scheduler" "v" >}}
-{{< include file="static/includes/AdvancedScheduler.md.part" markdown="true" >}}
+{{< include file="static/includes/CORE/AdvancedScheduler.md.part" markdown="true" >}}
 {{< /expand >}}
 
 Configure the remaining options to your use case.
 {{< expand "Specific Options" "v" >}}
-{{< include file="static/includes/TasksPeriodicSnapshotAddFields.md.part" markdown="true" >}}
+{{< include file="static/includes/Reference/TasksPeriodicSnapshotAddFields.md.part" markdown="true" >}}
 
 ### Naming Schemas
 

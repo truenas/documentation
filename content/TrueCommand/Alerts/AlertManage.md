@@ -1,6 +1,9 @@
 ---
 title: "Alert Management"
 weight: 10
+aliases:
+  - /truecommand/alerts/alertmanage/
+  - /truecommand/tcgettingstarted/configurealert/
 ---
 
 {{< toc >}}
@@ -90,7 +93,6 @@ Each plugin has three options.
 
 <mat-icon _ngcontent-ath-c200="" role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true">remove_circle</mat-icon> : Clear Plugin Configuration
 
-
 {{< tabs "Services" >}}
 {{< tab "Email" >}}
  
@@ -126,10 +128,3 @@ If you did not receive a test alert, check the **Service Integration Key from Pa
 
 {{< /tab >}}
 {{< /tabs >}}
-
-
-
-
-
-
-

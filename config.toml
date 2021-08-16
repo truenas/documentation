@@ -45,6 +45,7 @@ id = "UA-2174408-20"
 enable = true
 
 [params]
+
   # (Optional, default 6) Set how many table of contents levels to be showed on page.
   # Use false to hide ToC, note that 0 will default to 6 (https://gohugo.io/functions/default/)
   # You can also specify this parameter per page in front matter.
@@ -98,6 +99,9 @@ enable = true
 
   # (Optional, default true) Copy anchor url to clipboard on click.
   geekdocAnchorCopy = true
+
+  # Featured image for search results
+  featured_image = "/images/tn-openstorage-logo.png"
 
 [frontmatter]
 lastmod = ["lastmod", ":git", ":fileModTime", ":default"]

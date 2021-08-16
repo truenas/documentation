@@ -10,7 +10,7 @@
 
 | Name | Description |
 |------|-------------|
-| SNMP v3 Support | Set to to enable support for [SNMP version 3](https://tools.ietf.org/html/rfc3410). See [snmpd.conf(5)](http://net-snmp.sourceforge.net/docs/man/snmpd.conf.html) for configuration details. |
+| SNMP v3 Support | Set to to enable support for [SNMP version 3](https://tools.ietf.org/html/rfc3410). See [snmpd.conf(5)](https://net-snmp.sourceforge.io/docs/man/snmpd.conf.html) for configuration details. |
 | Username | Enter a username to register with this service. |
 | Authentication Type | Choose an authentication method: `---` for none, *[SHA](https://tools.ietf.org/html/rfc4634)*, or *[MD5](https://tools.ietf.org/html/rfc1321)*|
 | Password | Enter a password of at least eight characters. |
@@ -21,7 +21,7 @@
 
 | Name | Description |
 |------|-------------|
-| Auxiliary Parameters | Enter any additional [snmpd.conf](http://net-snmp.sourceforge.net/docs/man/snmpd.conf.html) options. Add one option for each line. |
+| Auxiliary Parameters | Enter any additional [snmpd.conf](https://net-snmp.sourceforge.io/docs/man/snmpd.conf.html) options. Add one option for each line. |
 | Expose zilstat via SNMP | Enabling this option may have performance implications on your pools. |
 | Log Level | Choose how many log entries to create. Choices range from the least log entries (Emergency) to the most (Debug). |
 | Enable Network Performance Statistics | Include [iftop](https://linuxcommandlibrary.com/man/iftop) network performance statistics in SNMP messages. |

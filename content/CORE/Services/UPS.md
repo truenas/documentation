@@ -9,7 +9,7 @@ When the TrueNAS system is connected to a UPS device, configure the UPS service 
 ![ServicesUPSOptions](/images/CORE/12.0/ServicesUPSOptions.png "UPS Options")
 
 {{< expand "Specific Options" "v" >}}
-{{< include file="static/includes/ServicesUPSFields.md.part" markdown="true" >}}
+{{< include file="static/includes/Reference/ServicesUPSFields.md.part" markdown="true" >}}
 {{< /expand >}}
 
 Some UPS models can be unresponsive with the default polling frequency.

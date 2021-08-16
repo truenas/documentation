@@ -10,4 +10,4 @@ Scrub Tasks and S.M.A.R.T. (Self-Monitoring, Analysis and Reporting Technology) 
 
 Cloud Sync, Periodic Snapshot, Rsync, and Replication Tasks, provide backup storage for data and allow users to revert the system to a previous configuration or point in time.
 
-{{< include file="static/includes/MenuNav.md.part" markdown="true" >}}
+{{< include file="static/includes/General/MenuNav.md.part" markdown="true" >}}

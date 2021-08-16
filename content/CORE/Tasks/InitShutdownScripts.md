@@ -8,7 +8,7 @@ To create a new script, go to **Tasks > Init/Shutdown Scripts** and click *ADD*.
 
 ![TasksInitShutdownScriptsAdd](/images/CORE/12.0/TasksInitShutdownScriptsAdd.png "Creating a new script")
 
-{{< include file="static/includes/TasksInitShutdownScriptsAddFields.md.part" markdown="true" >}}
+{{< include file="static/includes/Reference/TasksInitShutdownScriptsAddFields.md.part" markdown="true" >}}
 
 {{< expand "Can I use a path for the Command?" "v" >}}
 You can also include the full path to a command in the entry.

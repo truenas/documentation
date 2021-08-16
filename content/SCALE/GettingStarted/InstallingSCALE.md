@@ -155,19 +155,12 @@ and boot environments and at least one additional virtual disk with
 at least 4GB to be used as data storage.
 * NETWORK: Use NAT, Bridged, or Host-only depending on your host network configuration.
 
-{{< expand "FreeBSD UEFI Bug with ESXi" "v">}}
-**VMWare products and EFI boot mode:**
-A third party bug currently affects EFI (UEFI) booting on VMWare products.
-TrueNAS should be installed in BIOS mode until this is resolved.
-See FreeBSD reference [ESXi VM does not boot in UEFI mode](https://freebsd.1045724.x6.nabble.com/ESXi-VM-does-not-boot-in-UEFI-mode-from-20190906-snapshot-ISO-td6350284.html).
-{{< /expand >}}
-
 {{< expand "Networking checks for VMware" "v">}}
 When installing TrueNAS in a VMware VM, double check the virtual switch and VMware port group.
 Network connection errors for plugins or jails inside the TrueNAS VM can be caused by a misconfigured virtual switch or VMware port group.
 Make sure *MAC spoofing* and *promiscuous mode* are enabled on the switch first, and then the port group the VM is using.
 
-{{< include file="static/includes/VirtualMachinesJailNetworking.md.part" markdown="true" >}}
+{{< include file="static/includes/CORE/VirtualMachinesJailNetworking.md.part" markdown="true" >}}
 {{< /expand >}}
 
 ## Generic VM Creation Process
@@ -177,12 +170,12 @@ For most hypervisors, the procedure for creating a TrueNAS VM is the same:
 1. Create a new Virtual Machine as usual, taking note of the following settings.
 2. The virtual hardware has a bootable CD/DVD device pointed to the TrueNAS SCALE installer image (this is usually an <file>.iso</file>).
 3. The virtual network card is configured so it can be reached from your network. **bridged** mode is optimal as this treats the network card as if it is plugged into a simple switch on the existing network.
-4. Some products require identifying the OS being installed on the VM. The ideal option is *FreeBSD 12 64 bit*. If this is not available, try options like *FreeBSD 12*, *FreeBSD 64 bit*, *64 bit OS*, or *Other*. **Do not choose a Windows or Linux related OS type.**
+4. Some products require identifying the OS being installed on the VM. The ideal option is *Debian 11 64 bit*. If this is not available, try options like *Debian 11*, *Debian 64 bit*, *64 bit OS*, or *Other*. **Do not choose a Windows, Mac or BSD related OS type.**
 5. For VMWare hypervisors, install in BIOS mode.
 6. The VM has sufficient memory and disk space. TrueNAS needs at least *8 GB* RAM and *20 GB* disk space. Not all hypervisors allocate enough memory by default.
 7. Boot the VM and install TrueNAS as usual.
 8. When installation is complete, shut down the VM instead of rebooting, and disconnect the CD/DVD from the VM before rebooting the VM.
-9. After rebooting into TrueNAS, install VM tools if applicable for your VM, and if they exist for FreeBSD 12, or ensure they are loaded on boot.
+9. After rebooting into TrueNAS, install VM tools if applicable for your VM, and if they exist for Debian 11, or ensure they are loaded on boot.
 
 ## Example installation for VMWare Player 15.5
 

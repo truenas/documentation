@@ -47,7 +47,7 @@ Files stored in Amazon S3 Glacier or S3 Glacier Deep Archive cannot be deleted b
 Next, **Control** when the task runs by defining a *Schedule*. When a specific *Schedule* is required, choose *Custom* and use the **Advanced Scheduler**.
 
 {{< expand "Advanced Scheduler" "v" >}}
-{{< include file="static/includes/AdvancedScheduler.md.part" markdown="true" >}}
+{{< include file="static/includes/SCALE/SCALEAdvancedScheduler.md.part" markdown="true" >}}
 {{< /expand >}}
 
 Unsetting *Enable* makes the configuration available without allowing the *Schedule* to run the task. To manually activate a saved task, go to **Data Protection > Cloud Sync Tasks**, click <i class="fa fa-play" aria-hidden="true"></i> for the cloud sync task you want to run.  You will be prompted to *CONTINUE* or *CANCEL* the *Run Now* operation.
@@ -55,7 +55,7 @@ Unsetting *Enable* makes the configuration available without allowing the *Sched
 The remaining options allow tuning the task to your specific requirements.
 
 {{< expand "Specific Options" "v" >}}
-{{< include file="static/includes/TasksCloudSyncAddFields.md.part" markdown="true" >}}
+{{< include file="static/includes/Reference/TasksCloudSyncAddFields.md.part" markdown="true" >}}
 
 ### Scripting and Environment Variables
 

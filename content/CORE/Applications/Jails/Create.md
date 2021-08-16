@@ -6,7 +6,7 @@ weight: 5
 {{< toc >}}
 
 {{< hint info >}}
-{{< include file="static/includes/CommunitySupportedFeature.md.part" markdown="true" >}}
+{{< include file="static/includes/General/CommunitySupportedFeature.md.part" markdown="true" >}}
 {{< /hint >}}
 
 Jails are a lightweight, operating-system-level virtualization.
@@ -65,7 +65,7 @@ TrueNAS has two options to create a jail. The *Jail Wizard* makes it easy to qui
 
 {{< expand "Additional VMware Requirements" "v" >}}
 
-{{< include file="static/includes/VirtualMachinesJailNetworking.md.part" markdown="true" >}}
+{{< include file="static/includes/CORE/VirtualMachinesJailNetworking.md.part" markdown="true" >}}
 {{< /expand>}}
 
 {{< tabs "Jail Create Options" >}}
@@ -127,20 +127,20 @@ The advanced jail creation form is opened by clicking **Jails > ADD**, then *ADV
 A usable jail without any networking can be quickly created by setting only the required *Jail Name* and *Release*.
 Configure the remaining **Basic Properties** when the jail needs to communicate over the local network or out to the internet.
 
-{{< include file="static/includes/JailsAdvancedFields.md.part" markdown="true" >}}
+{{< include file="static/includes/Reference/JailsAdvancedFields.md.part" markdown="true" >}}
 
 Additional settings are in the **Jail Properties**, **Network Properties**, and **Custom Properties** sections.
 
 {{< expand "Jail Properties" "v" >}}
-{{< include file="static/includes/JailsPropertiesFields.md.part" markdown="true" >}}
+{{< include file="static/includes/Reference/JailsPropertiesFields.md.part" markdown="true" >}}
 {{< /expand >}}
 
 {{< expand "Network Properties" "v" >}}
-{{< include file="static/includes/JailsNetworkPropertiesFields.md.part" markdown="true" >}}
+{{< include file="static/includes/Reference/JailsNetworkPropertiesFields.md.part" markdown="true" >}}
 {{< /expand >}}
 
 {{< expand "Custom Properties" "v" >}}
-{{< include file="static/includes/JailsCustomPropertiesFields.md.part" markdown="true" >}}
+{{< include file="static/includes/Reference/JailsCustomPropertiesFields.md.part" markdown="true" >}}
 {{< /expand >}}
 
 {{< /tab >}}

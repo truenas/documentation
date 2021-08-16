@@ -24,4 +24,4 @@ SCALE Credential options are collected in this section of the UI and organized i
 * **2FA** allows users to set up Two-Factor Authentication for their system.
   Users can set up 2FA, then link the system to an authenticator app (such as Google Authenticator, LastPass Authenticator, etc.) on a mobile device.
 
-{{< include file="static/includes/MenuNav.md.part" markdown="true" >}}
+{{< include file="static/includes/General/MenuNav.md.part" markdown="true" >}}
