@@ -45,39 +45,27 @@ The TrueNAS system database stores the password for that account.
 
 To create the keytab on a Windows Server system, use the [ktpass](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/ktpass) command:
 
-`ktpass -princ [Windows user name]@[Realm name] -pass [Password] -crypto [Encryption type] -ptype KRB5_NT_PRINCIPAL -kvno 0 -out [Keytab file path]`
-
-```
-ktpass -princ *[Windows user name]*@[Realm name] -pass [Password] -crypto [Encryption type] -ptype KRB5_NT_PRINCIPAL -kvno 0 -out [Keytab file path]
-```
+`ktpass -princ USERNAME@REALM.COM -pass [PASSWORD] -crypto [ENCRYPTION TYPE] -ptype KRB5_NT_PRINCIPAL -kvno 0 -out c:PATH/KEYTABNAME.KEYTAB`
 
 where: 
 
-
-* *freenas.keytab* is the file to upload to the TrueNAS server.
-* *useraccount* is the name of the user account for the TrueNAS server generated in [Active Directory Users and Computers](https://technet.microsoft.com/en-us/library/aa998508(v=exchg.65).aspx.
-* *http/useraccount@EXAMPLE.COM* is the principal name written in the format host/user.account@KERBEROS.REALM.
+* [USERNAME@REALM.COM] is the Windows Server username and the principal name written in the format username@KERBEROS.REALM.
   The Kerberos realm is typically in all caps, but the Kerberos Realm case should match the realm name.
   See [this note](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/ktpass#BKMK_remarks) about using `/princ` for more details.
-* *userpass* is the password associated with *useraccount*.
-* [Windows user name] - mywindowsname.
-* [Real name] - SAMPLE.COM.
-* [Password] - mywindowsname user password.
-* [Encryption type] - RC4-HMAC-NT. See RFC 3961, section 8.
-* [Principle type] - KRB5_NT_PRINCIPAL which is Kerberos protocol 5.
-* [Key version number] - 0.
-* [Keytab file path] - c:\kerberos\keytabname.keytab.
+* [PASSWORD] - is the Windows Server user's password.
+* [ENCRYPTION TYPE] is the cryptographic type you want to use. Setting `[ENCRYPTION TYPE]` to `ALL` allows using all supported cryptographic types.
+  Users can specify each key instead of ALL:
+  * *DES-CBC-CRC* is used for compatibility.
+  * *DES-CBC-MD5* is used for compatibility and adheres more closely to the MIT implementation.
+  * *RC4-HMAC-NT* uses 128-bit encryption.
+  * *AES256-SHA1* uses AES256-CTS-HMAC-SHA1-96 encryption.
+  * *AES128-SHA1* uses AES128-CTS-HMAC-SHA1-96 encryption.
+  Specifying cryptographic types creates a keytab with sufficient privileges to grant tickets.
+* [PATH/KEYTABNAME.KEYTAB] is the path where you want to save the keytab to and the name you want it to have.
 
-Setting `/crypto` to *ALL* allows using all supported cryptographic types.
-Users can specify each key instead of ALL:
+An example ktpass command would liook like this:
 
-* *DES-CBC-CRC* is used for compatibility.
-* *DES-CBC-MD5* is used for compatibility and adheres more closely to the MIT implementation.
-* *RC4-HMAC-NT* uses 128-bit encryption.
-* *AES256-SHA1* uses AES256-CTS-HMAC-SHA1-96 encryption.
-* *AES128-SHA1* uses AES128-CTS-HMAC-SHA1-96 encryption.
-
-Specifying cryptographic types creates a keytab with sufficient privileges to grant tickets.
+`ktpass -princ administrator@WINDOWSSERVER.NET -pass Abcd1234! -crypto ALL -ptype KRB5_NT_PRINCIPAL -kvno 0 -out c:\kerberos\freenas.keytab`
 
 ### Add Windows Keytab to TrueNAS
 
