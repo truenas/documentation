@@ -104,7 +104,7 @@ An optional *Description* can be specified to help explain the purpose of the sh
 **Enabled** allows this path to be shared when the SMB service is activated. Unsetting **Enabled** disables the share without deleting the configuration.
 
 {{< expand "Advanced Options" "v" >}}
-![SMBShareAdvanced](/images/CORE/12.0/SharingSMBAddAdvanced.png "SMB Share Advanced Options")
+![SMBShareAdvanced](/images/SCALE/SharesSMBAdvancedOptions.png "SMB Share Advanced Options")
 
 Options are divided into **Access** and **Other Options** groups.
 *Access* options control various settings for allowing systems or users to access or modify the shared data.
@@ -129,7 +129,7 @@ The *Other Options* have settings for improving Apple software compatibility, ZF
 
 | Setting                            | Value     | Description  |
 |------------------------------------|-----------|--------------|
-| Use as Home Share                  | checkbox  | Allows the share to host user home directories. Each user is given a personal home directory when connecting to the share which is not accessible by other users. This allows for a personal, dynamic share. Only one share can be used as the home share. See the configuring [Home Share article]({{< relref "HomeShare.md" >}}) for detailed instructions. |
+| Use as Home Share                  | checkbox  | Allows the share to host user home directories. Each user is given a personal home directory when connecting to the share which is not accessible by other users. This allows for a personal, dynamic share. Only one share can be used as the home share. |
 | Time Machine                       | checkbox  | Enables [Apple Time Machine](https://support.apple.com/en-us/HT201250) backups on this share. |
 | Enable Shadow Copies               | checkbox  | Export ZFS snapshots as [Shadow Copies](https://docs.microsoft.com/en-us/windows/win32/vss/shadow-copies-and-shadow-copy-sets) for Microsoft Volume Shadow Copy Service (VSS) clients. |
 | Export Recycle Bin                 | checkbox  | Files that are deleted from the same dataset are moved to the Recycle Bin and do not take any additional space. **Deleting files over NFS will remove the files permanently.** When the files are in a different dataset or a child dataset, they are copied to the dataset where the Recycle Bin is located. To prevent excessive space usage, files larger than *20 MiB* are deleted rather than moved. Adjust the **Auxiliary Parameter** `crossrename:sizelimit=` setting to allow larger files. For example, <code>crossrename:sizelimit=<i>50</i></code> allows moves of files up to *50 MiB* in size. This means files can be permanently deleted or moved from the recycle bin. **This is not a replacement for ZFS snapshots.** |
@@ -140,6 +140,6 @@ The *Other Options* have settings for improving Apple software compatibility, ZF
 | Path Suffix                        | string    | Appends a suffix to the share connection path. This is used to provide unique shares on a per-user, per-computer, or per-IP address basis. Suffixes can contain a macro. See the [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) manual page for a list of supported macros. The connectpath must be preset before a client connects. |
 | Auxiliary Parameters               | string    | Additional [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) settings. |
 {{< /expand >}}
-Clicking **Submit** creates the share and adds it to the **Sharing > Windows Shares (SMB)** list.
+Clicking **Save** creates the share and adds it to the **Sharing > Windows (SMB) Shares (SMB)** list.
 You can also choose to enable the SMB service at this time.
 
