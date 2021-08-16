@@ -52,7 +52,7 @@ To create the keytab on a Windows Server system, open a Command Prompt and use t
 
 `PASSWORD` is the Windows Server user's password.
 
-`ENCRYPTION TYPE` is the cryptographic type you want to use. Setting `[ENCRYPTION TYPE]` to `ALL` allows using all supported cryptographic types.
+`ENCRYPTION TYPE` is the cryptographic type you want to use. Setting `ENCRYPTION TYPE` to `ALL` allows using all supported cryptographic types.
 Users can specify each key instead of ALL:
 * *DES-CBC-CRC* is used for compatibility.
 * *DES-CBC-MD5* is used for compatibility and adheres more closely to the MIT implementation.
