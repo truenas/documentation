@@ -41,7 +41,7 @@ Configure each category of the VM according to your specifications, starting wit
 
 {{< expand "Specific Options" "v" >}}
 
-{{< include file="static/includes/VirtualMachinesAddFieldsSCALE.md.part" markdown="true" >}}
+{{< include file="static/includes/Reference/VirtualMachinesAddFieldsSCALE.md.part" markdown="true" >}}
 
 Additional notes:
 

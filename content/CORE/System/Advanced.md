@@ -12,7 +12,7 @@ Make sure you are comfortable with ZFS, FreeBSD, and system [configuration backu
 
 ![System Advanced](/images/CORE/12.0/SystemAdvanced.png "Advanced Settings")
 
-{{< include file="static/includes/SystemAdvancedFields.md.part" markdown="true" >}}
+{{< include file="static/includes/Reference/SystemAdvancedFields.md.part" markdown="true" >}}
 
 There is also an option to **SAVE DEBUG**.
 This generates text files that contain diagnostic information.

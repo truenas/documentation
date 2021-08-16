@@ -8,4 +8,4 @@ The TrueNAS **References** section includes additional information on various to
 
 If you are searching for additional information on a topic and are unable to find it, [let us know](https://jira.ixsystems.com/projects/DOCS/issues/).  
 
-{{< include file="static/includes/MenuNav.md.part" markdown="true" >}}
+{{< include file="static/includes/General/MenuNav.md.part" markdown="true" >}}

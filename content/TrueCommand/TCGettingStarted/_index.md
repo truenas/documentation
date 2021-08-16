@@ -12,6 +12,3 @@ Thank you for trying TrueCommand! This Guide walks you through the initial insta
 * [First time logins]({{< relref "InterfaceOverview.md" >}})
 * [Creating User Accounts]({{< relref "UserAccounts.md" >}})
 * [Connecting TrueNAS Systems]({{< relref "ConnectingTrueNAS.md" >}})
-* [Configure an Alert]({{< relref "ConfigureAlert.md" >}})
-* [Create a Report]({{< relref "CreateReport.md" >}})
-

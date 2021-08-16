@@ -22,8 +22,8 @@ To create a scrub task for a pool, go to **Tasks > Scrub Tasks** and click *ADD*
 
 ![TasksScrubTasksAdd](/images/CORE/12.0/TasksScrubTasksAdd.png "Creating a new Scrub Task")
 
-{{< include file="static/includes/TasksScrubTasksAddFields.md.part" markdown="true" >}}
+{{< include file="static/includes/Reference/TasksScrubTasksAddFields.md.part" markdown="true" >}}
 
 {{< expand "Advanced Scheduler" "v" >}}
-{{< include file="static/includes/AdvancedScheduler.md.part" markdown="true" >}}
+{{< include file="static/includes/CORE/AdvancedScheduler.md.part" markdown="true" >}}
 {{< /expand >}}

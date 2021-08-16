@@ -175,7 +175,7 @@ at least 4GB to be used as data storage.
 **VMWare products and EFI boot mode:**
 A third party bug currently affects EFI (UEFI) booting on VMWare products.
 TrueNAS should be installed in BIOS mode until this is resolved.
-See FreeBSD reference [ESXi VM does not boot in UEFI mode](https://freebsd.1045724.x6.nabble.com/ESXi-VM-does-not-boot-in-UEFI-mode-from-20190906-snapshot-ISO-td6350284.html).
+See VMware article [Host Fails to Boot After You Install ESXi in UEFI Mode](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.esxi.install.doc/GUID-D1BD27AB-C432-454D-9B2B-DC04E7BA9979.html).
 {{< /expand >}}
 
 {{< expand "Networking checks for VMware" "v">}}
@@ -183,7 +183,7 @@ When installing TrueNAS in a VMware VM, double check the virtual switch and VMwa
 Network connection errors for plugins or jails inside the TrueNAS VM can be caused by a misconfigured virtual switch or VMware port group.
 Make sure *MAC spoofing* and *promiscuous mode* are enabled on the switch first, and then the port group the VM is using.
 
-{{< include file="static/includes/VirtualMachinesJailNetworking.md.part" markdown="true" >}}
+{{< include file="static/includes/CORE/VirtualMachinesJailNetworking.md.part" markdown="true" >}}
 {{< /expand >}}
 
 ## Generic VM Creation Process
