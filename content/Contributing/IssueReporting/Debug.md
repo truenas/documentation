@@ -7,7 +7,7 @@ weight: 8
 
 ## Creating a Debug File
 
-{{< include file="static/includes/CreateDebug.md.part" markdown="true" >}}
+{{< include file="static/includes/CORE/CreateDebug.md.part" markdown="true" >}}
 
 {{< expand "TrueNAS SCALE" "v" >}}
 TrueNAS SCALE has an identical process in **System Settings > Advanced**.

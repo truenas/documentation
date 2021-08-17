@@ -8,7 +8,7 @@ weight: 25
 TrueNAS supports different encryption options for critical data.
 
 {{< hint danger>}}
-Users are responsible for backing up and securing encryption key files and passphrases!
+Users are responsible for backing up and securing encryption keys and passphrases!
 Losing the ability to decrypt data is similar to a catastrophic data loss.
 {{< /hint >}}
 
@@ -20,6 +20,14 @@ Data-at-rest encryption is available with:
 Keys for data-at-rest are managed on the local TrueNAS system.
 The user is responsible for storing and securing their keys.
 The [Key Management Interface Protocol (KMIP)](https://docs.oasis-open.org/kmip/spec/v1.1/os/kmip-spec-v1.1-os.html) is included in TrueNAS 12.0.
+
+{{< expand "Encryption Drawbacks and Considerations" "v" >}}
+Always consider the following drawbacks/considerations when encrypting data:
+* Losing encryption keys and passwords means losing your data.
+* Unrelated encrypted datasets [do not support deduplication](https://github.com/openzfs/zfs/discussions/9423).
+* We do not recommend using GELI or ZFS encryption with deduplication because of the sizable performance impact. 
+* Be cautious when using many encryption and deduplication features at once since they will all be competing for the same CPU cycles.
+{{< /expand >}}
 
 ## Encrypting a Storage Pool
 
@@ -59,8 +67,14 @@ Datasets with encryption enabled show additional icons in the **Storage > Pools*
 
 The dataset status is determined from an icon:
 
-* Dataset unlocked icon: <i class="material-icons" aria-hidden="true" title="<unlocked>">lock_open</i>
-* Dataset locked icon: <i class="material-icons" aria-hidden="true" title="<locked>">lock</i>
+* The dataset unlocked icon: <i class="material-icons" aria-hidden="true" title="<unlocked>">lock_open</i>.
+* The dataset locked icon: <i class="material-icons" aria-hidden="true" title="<locked>">lock</i>.
+* A Dataset on an encrypted pool with encryption properties that don't match the root dataset have this icon: ![UnecryptedPoolEncryptionDatasetIcon](/images/CORE/12.0/unecrypted_pool_encrypted_dataset.png "Unencrypted Storage Pool with an Unencrypted Dataset").
+
+{{< hint info>}}
+NOTE: An unencrypted pool  with an encrypted dataset will also show this icon: ![UnecryptedPoolEncryptionDatasetIcon](/images/CORE/12.0/unecrypted_pool_encrypted_dataset.png "Unencrypted Storage Pool with an Unencrypted Dataset")
+{{< /hint >}}.
+ 
 
 Encrypted datasets can only be locked and unlocked if they are secured with a passphrase instead of a keyfile.
 Before locking a dataset, verify that it is not currently in use, then click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; (Options) and *Lock*.

@@ -19,4 +19,4 @@ TrueNAS includes an easy to use interface for common tasks a sysadmin needs to p
    + Scrubs
    + Replication
 
-{{< include file="static/includes/MenuNav.md.part" markdown="true" >}}
+{{< include file="static/includes/General/MenuNav.md.part" markdown="true" >}}

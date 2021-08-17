@@ -62,7 +62,7 @@ Next, **Control** when the task runs by defining a *Schedule*.
 When a specific *Schedule* is required, choose *Custom* and use the **Advanced Scheduler**.
 
 {{< expand "Advanced Scheduler" "v" >}}
-{{< include file="static/includes/AdvancedScheduler.md.part" markdown="true" >}}
+{{< include file="static/includes/CORE/AdvancedScheduler.md.part" markdown="true" >}}
 {{< /expand >}}
 
 Unsetting *Enable* makes the configuration available without allowing the *Schedule* to run the task.
@@ -71,7 +71,7 @@ To manually activate a saved task, go to **Tasks > Cloud Sync Tasks**, click <i 
 The remaining options allow tuning the task to your specific requirements.
 
 {{< expand "Specific Options" "v" >}}
-{{< include file="static/includes/TasksCloudSyncAddFields.md.part" markdown="true" >}}
+{{< include file="static/includes/Reference//TasksCloudSyncAddFields.md.part" markdown="true" >}}
 
 ### Scripting and Environment Variables
 

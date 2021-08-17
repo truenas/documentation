@@ -17,7 +17,7 @@ You will need an OpenPGP encryption application for this method of ISO verificat
 There are many different free applications available, but the OpenPGP group provides a list of available software for different operating systems at https://www.openpgp.org/software/.
 The examples in this section show verifying the TrueNAS <file>.iso</file> using [gnupg2](https://gnupg.org/software/index.html) in a command prompt, but [Gpg4win](https://www.gpg4win.org/) is also a good option for Windows users.
 
-To verify the <file>.iso</file> source, go to https://www.truenas.com/download-tn-core/ , expand the **Security** option, and click *PGP Signature* to download the Gnu Privacy Guard (<file>.gpg</file>) signature file. Open the [PGP Public key link](https://keys.gnupg.net/pks/lookup?search=0xC8D62DEF767C1DB0DFF4E6EC358EAA9112CF7946&fingerprint=on&op=index) and note the address in your browser and **Search results for** string .
+To verify the <file>.iso</file> source, go to https://www.truenas.com/download-tn-core/ , expand the **Security** option, and click *PGP Signature* to download the Gnu Privacy Guard (<file>.gpg</file>) signature file. Open the [PGP Public key link](https://keyserver.ubuntu.com/pks/lookup?search=0xC8D62DEF767C1DB0DFF4E6EC358EAA9112CF7946&fingerprint=on&op=index) and note the address in your browser and **Search results for** string .
 
 Use one of the OpenPGP encryption tools mentioned above to import the public key and verify the PGP signature.
 
@@ -175,7 +175,7 @@ at least 4GB to be used as data storage.
 **VMWare products and EFI boot mode:**
 A third party bug currently affects EFI (UEFI) booting on VMWare products.
 TrueNAS should be installed in BIOS mode until this is resolved.
-See FreeBSD reference [ESXi VM does not boot in UEFI mode](https://freebsd.1045724.x6.nabble.com/ESXi-VM-does-not-boot-in-UEFI-mode-from-20190906-snapshot-ISO-td6350284.html).
+See VMware article [Host Fails to Boot After You Install ESXi in UEFI Mode](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.esxi.install.doc/GUID-D1BD27AB-C432-454D-9B2B-DC04E7BA9979.html).
 {{< /expand >}}
 
 {{< expand "Networking checks for VMware" "v">}}
@@ -183,7 +183,7 @@ When installing TrueNAS in a VMware VM, double check the virtual switch and VMwa
 Network connection errors for plugins or jails inside the TrueNAS VM can be caused by a misconfigured virtual switch or VMware port group.
 Make sure *MAC spoofing* and *promiscuous mode* are enabled on the switch first, and then the port group the VM is using.
 
-{{< include file="static/includes/VirtualMachinesJailNetworking.md.part" markdown="true" >}}
+{{< include file="static/includes/CORE/VirtualMachinesJailNetworking.md.part" markdown="true" >}}
 {{< /expand >}}
 
 ## Generic VM Creation Process

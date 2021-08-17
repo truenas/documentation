@@ -175,11 +175,11 @@ Clicking *SAVE* stores the share ACL and applies it to the share immediately.
 
 Click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> > *Edit Filesystem ACL* to quickly return to **Storage > Pools** and edit the dataset ACL.
 
-![DatasetACLEdit](/images/CORE/12.0/StoragePoolsEditACL.png "Dataset Permissions Options")
+![DatasetACLEdit](/images/CORE/12.0/StoragePoolsEditACLOwner.png "Dataset Permissions Options")
 
-This ACL is used to define the user accounts or groups that own or have specific [permissions]() to the dataset that is being shared.
+This ACL is used to define the user accounts or groups that own or have specific [permissions]({{< relref "Permissions.md" >}}) to the dataset that is being shared.
 The *User* and *Group* values show which accounts "own", or have full permissions to the dataset.
-To change these settings, set *Apply* before saving any changes.
+Change the default settings to your preferred primary account and group and  set the *Apply* check boxes before saving any changes.
 
 #### ACL Presets
 

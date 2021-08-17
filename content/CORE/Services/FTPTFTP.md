@@ -36,7 +36,7 @@ To configure FTP, go to the **Services** page, find the **FTP** entry, and click
 
 Configure the options according to your environment and security considerations.
 
-{{< include file="static/includes/ServicesFTPFields.md.part" markdown="true" >}}
+{{< include file="static/includes/Reference/ServicesFTPFields.md.part" markdown="true" >}}
 
 Ensure *chroot* is enabled as this helps confine FTP sessions to a local user's home directory and allow *Local User Login*.
 
@@ -70,7 +70,7 @@ SSH with root is a security vulnerability as it allows full remote control over 
 Review the remaining options and configure according to your environment or security needs.
 
 {{< expand "SSH Service Options" "v" >}}
-{{< include file="static/includes/ServicesSSHFields.md.part" markdown="true" >}}
+{{< include file="static/includes/Reference/ServicesSSHFields.md.part" markdown="true" >}}
 {{< /expand >}}
 
 ### SFTP Connections
@@ -125,7 +125,7 @@ Starting the TFTP service opens UDP port *69*.
 
 ![ServicesTFTPOptions](/images/CORE/12.0/ServicesTFTPOptions.png "TFTP Service Options")
 
-{{< include file="static/includes/ServicesTFTPFields.md.part" markdown="true" >}}
+{{< include file="static/includes/Reference/ServicesTFTPFields.md.part" markdown="true" >}}
 
 {{< /tab >}}
 {{< /tabs >}}

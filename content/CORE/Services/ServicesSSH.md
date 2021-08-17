@@ -24,7 +24,7 @@ To configure SSH, disable the service and click <i class="fa fa-pencil" aria-hid
 
 Configure the options as needed to match your network environment.
 {{< expand "SSH Service Fields" "v" >}}
-{{< include file="static/includes/ServicesSSHFields.md.part" markdown="true" >}}
+{{< include file="static/includes/Reference/ServicesSSHFields.md.part" markdown="true" >}}
 {{< /expand >}}
 Remote systems could require *root* access to the system, but have all security precautions in place before allowing *root* access.
 

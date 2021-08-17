@@ -14,7 +14,7 @@ Log in to the TrueNAS web interface and go to **Services > Dynamic DNS**.
 
 ![ServicesDynamicDNSOptions](/images/CORE/12.0/ServicesDynamicDNSOptions.png "Dynamic DNS Service Options")
 
-{{< include file="static/includes/ServicesDynamicDNSFields.md.part" markdown="true" >}}
+{{< include file="static/includes/Reference/ServicesDynamicDNSFields.md.part" markdown="true" >}}
 
 The required values for these fields are provided by your DDNS solution.
 Start the DDNS service after choosing your *Provider* options and saving the settings.

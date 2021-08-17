@@ -17,7 +17,7 @@ You will need an OpenPGP encryption application for this method of ISO verificat
 There are many different free applications available, but the OpenPGP group provides a list of available software for different operating systems at https://www.openpgp.org/software/.
 The examples in this section show verifying the TrueNAS <file>.iso</file> using [gnupg2](https://gnupg.org/software/index.html) in a command prompt, but [Gpg4win](https://www.gpg4win.org/) is also a good option for Windows users.
 
-To verify the <file>.iso</file> source, go to https://www.truenas.com/download-tn-scale/ , expand the **Security** option, and click *PGP Signature* to download the Gnu Privacy Guard (<file>.gpg</file>) signature file. Open the [PGP Public key link](https://keys.gnupg.net/pks/lookup?search=0xC8D62DEF767C1DB0DFF4E6EC358EAA9112CF7946&fingerprint=on&op=index) and note the address in your browser and **Search results for** string .
+To verify the <file>.iso</file> source, go to https://www.truenas.com/download-tn-scale/ , expand the **Security** option, and click *PGP Signature* to download the Gnu Privacy Guard (<file>.gpg</file>) signature file. Open the [PGP Public key link](https://keyserver.ubuntu.com/pks/lookup?search=0xC8D62DEF767C1DB0DFF4E6EC358EAA9112CF7946&fingerprint=on&op=index) and note the address in your browser and **Search results for** string .
 
 Use one of the OpenPGP encryption tools mentioned above to import the public key and verify the PGP signature.
 
@@ -155,19 +155,12 @@ and boot environments and at least one additional virtual disk with
 at least 4GB to be used as data storage.
 * NETWORK: Use NAT, Bridged, or Host-only depending on your host network configuration.
 
-{{< expand "FreeBSD UEFI Bug with ESXi" "v">}}
-**VMWare products and EFI boot mode:**
-A third party bug currently affects EFI (UEFI) booting on VMWare products.
-TrueNAS should be installed in BIOS mode until this is resolved.
-See FreeBSD reference [ESXi VM does not boot in UEFI mode](https://freebsd.1045724.x6.nabble.com/ESXi-VM-does-not-boot-in-UEFI-mode-from-20190906-snapshot-ISO-td6350284.html).
-{{< /expand >}}
-
 {{< expand "Networking checks for VMware" "v">}}
 When installing TrueNAS in a VMware VM, double check the virtual switch and VMware port group.
 Network connection errors for plugins or jails inside the TrueNAS VM can be caused by a misconfigured virtual switch or VMware port group.
 Make sure *MAC spoofing* and *promiscuous mode* are enabled on the switch first, and then the port group the VM is using.
 
-{{< include file="static/includes/VirtualMachinesJailNetworking.md.part" markdown="true" >}}
+{{< include file="static/includes/CORE/VirtualMachinesJailNetworking.md.part" markdown="true" >}}
 {{< /expand >}}
 
 ## Generic VM Creation Process
@@ -177,12 +170,12 @@ For most hypervisors, the procedure for creating a TrueNAS VM is the same:
 1. Create a new Virtual Machine as usual, taking note of the following settings.
 2. The virtual hardware has a bootable CD/DVD device pointed to the TrueNAS SCALE installer image (this is usually an <file>.iso</file>).
 3. The virtual network card is configured so it can be reached from your network. **bridged** mode is optimal as this treats the network card as if it is plugged into a simple switch on the existing network.
-4. Some products require identifying the OS being installed on the VM. The ideal option is *FreeBSD 12 64 bit*. If this is not available, try options like *FreeBSD 12*, *FreeBSD 64 bit*, *64 bit OS*, or *Other*. **Do not choose a Windows or Linux related OS type.**
+4. Some products require identifying the OS being installed on the VM. The ideal option is *Debian 11 64 bit*. If this is not available, try options like *Debian 11*, *Debian 64 bit*, *64 bit OS*, or *Other*. **Do not choose a Windows, Mac or BSD related OS type.**
 5. For VMWare hypervisors, install in BIOS mode.
 6. The VM has sufficient memory and disk space. TrueNAS needs at least *8 GB* RAM and *20 GB* disk space. Not all hypervisors allocate enough memory by default.
 7. Boot the VM and install TrueNAS as usual.
 8. When installation is complete, shut down the VM instead of rebooting, and disconnect the CD/DVD from the VM before rebooting the VM.
-9. After rebooting into TrueNAS, install VM tools if applicable for your VM, and if they exist for FreeBSD 12, or ensure they are loaded on boot.
+9. After rebooting into TrueNAS, install VM tools if applicable for your VM, and if they exist for Debian 11, or ensure they are loaded on boot.
 
 ## Example installation for VMWare Player 15.5
 
@@ -253,9 +246,9 @@ After the TrueNAS SCALE installation is complete, reboot the system.
 The [Console Setup Menu]({{< relref "ConsoleSetupMenu.md" >}}) displays when the system boots successfully.
 {{< /tab >}}
 {{< tab "Migrating from TrueNAS CORE" >}}
-To migrate from TrueNAS CORE to SCALE, you will have to use a TrueNAS Scale <file>.iso</file> file. We do not currently support maigrating using trains, or manual updates.
+To migrate from TrueNAS CORE to SCALE, use a TrueNAS SCALE <file>.iso</file> file. This is currently the only method to migrate a CORE system to SCALE.
 
-Start be saving the [SCALE ISO file](https://www.truenas.com/download-tn-scale/) to a USB drive (detailed in the Physical Hardware tab). Plug the USB drive into your CORE system that you want to sidegrade and boot or reboot the system. 
+Start by saving the [SCALE ISO file](https://www.truenas.com/download-tn-scale/) to a USB drive (detailed in the Physical Hardware tab). Plug the USB drive into the CORE system that you want to sidegrade and boot or reboot the system. 
 
 At the motherboard splash screen, use the hotkey defined by your motherboard manufacturer to select a boot device, then select the USB drive with the SCALE <file>.iso<file>.
   
@@ -263,15 +256,15 @@ When the SCALE console setup screen appears, select *Install/Upgrade*.
 
 ![SCALEUpgrade1](/images/SCALE/SCALEUpgrade1.png "Install/Upgrade SCALE")
 
-The installer will ask if you want to preserve your existing configuration or start with a fresh installation. We recommend selecting *Upgrade Install* when migrating from CORE to SCALE to keep your configuration data. Then select *Install in new boot environment*.
+The installer asks if you want to preserve your existing configuration or start with a fresh installation. We recommend selecting *Upgrade Install* when migrating from CORE to SCALE to keep your configuration data. Then select *Install in new boot environment*.
 
 ![SCALEUpgrade2](/images/SCALE/SCALEUpgrade2.png "Preserve Existing Configuration")
 
 ![SCALEUpgrade3](/images/SCALE/SCALEUpgrade3.png "Install in new boot environment")
 
 {{< hint warning>}}
-Although TrueNAS will attempt to keep most of your CORE configuration data when upgrading to SCALE, some CORE-specific will not carry over.
-GELI Encrypted pools, NIS data, AFP and SMB shares, metadata, jails, tunables, and boot environments will not migrate from CORE to SCALE. Init/shutdown scripts will carry over, but may break.
+Although TrueNAS attempts to keep most of your CORE configuration data when upgrading to SCALE, some CORE-specific items do not transfer.
+GELI Encrypted pools, NIS data, AFP shares, metadata, jails, tunables, and boot environments do not migrate from CORE to SCALE. Init/shutdown scripts transfer, but can break and should be reviewed before use.
 {{< /hint >}}
 
 After choosing to install in new boot environment, the installer will warn you that you you will be installing SCALE into the boot pool previously used for CORE. Select *Yes*.
