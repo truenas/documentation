@@ -177,7 +177,7 @@ The *Settings* button has options for passwords, web interface preferences, API 
 
 ### Change Password
 
-Clicking **Change Password** allows users to change the currently logged-in account's password
+Clicking **Change Password** allows users to change the currently logged-in administrator password.
 
 ### Preferences
 
@@ -204,7 +204,7 @@ Users may also click *DOCS* to access their system's API documentation.
 
 Clicking the *Guide* button opens the TrueNAS Documentation Hub in a new tab.
 
-Clicking the *About* button brings up links to the TrueNAS Documentation Hub, the TrueNAS Community Forums, the FreeNAS Open Source Storage Appliance GitHub, and the iXsystems homepage.
+Clicking the *About* button brings up links to the TrueNAS Documentation Hub, the TrueNAS Community Forums, the FreeNAS Open Source Storage Appliance GitHub repository, and the iXsystems homepage.
 {{< /tab >}}
 
 {{< tab "Power" >}}
