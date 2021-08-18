@@ -126,7 +126,7 @@ To create virtual ports on the TrueNAS system, go to **System > Tunables** and
 Enter these options:
 
 * *Variable* : `input hint.isp.X.vports`, replacing *X* with the number of the physical interface.
-* *Value* : input the number of virtual ports to create. There cannot be more then *125* SCSI target ports, including all physical Fibre Channel ports, all virtual ports, and all configured combinations of iSCSI portals and targets.
+* *Value* : input the number of virtual ports to create. There cannot be more than *125* SCSI target ports, including all physical Fibre Channel ports, all virtual ports, and all configured combinations of iSCSI portals and targets.
 * *Type* : make sure *loader* is selected.
 
 ![SystemTunablesFibre](/images/CORE/11.3/SystemTunablesFibre.png "Virtual Ports for Fibre Channel")
