@@ -73,14 +73,17 @@ This complicates and limits the pool capabilities.
 {{< /hint >}}
 {{< /expand >}}
 {{< /tab >}}
+
 {{< tab "Cache" >}}
 [ZFS L2ARC]({{< relref "L2ARC.md" >}}) read-cache used with fast devices to accelerate read operations.
 This can be added or removed after creating the pool.
 {{< /tab >}}
+
 {{< tab "Log" >}}
 [ZFS LOG]({{< relref "SLOG.md" >}}) device that improves synchronous write speeds.
 This can be added or removed after creating the pool.
 {{< /tab >}}
+
 {{< tab "Hot Spare" >}}
 Drives reserved for inserting into *Data* vdevs when an active drive fails.
 Hot spares are temporarily used as replacements for failed drives to prevent larger pool and data loss scenarios.
@@ -89,9 +92,11 @@ When a failed drive is replaced with a new drive, the hot spare reverts to an in
 
 When the failed drive is only detached from the pool, the temporary hot spare is promoted to a full *Data* vdev member and is no longer available as a hot spare.
 {{< /tab >}}
+
 {{< tab "Metadata" >}}
 Special Allocation class used to create [Fusion Pools]({{< relref "FusionPool.md" >}}) for increased metadata and small block I/O performance.
 {{< /tab >}}
+
 {{< tab "Dedup" >}}
 Stores [ZFS de-duplication]({{< relref "ZFSDeduplication.md" >}}).
 Requires allocating X GiB for every X TiB of general storage.
@@ -119,18 +124,22 @@ Requires at least one disk and has no data redundancy.
 Never use a *Stripe* to store critical data!
 A single disk failure results in losing all data in the vdev.
 {{< /tab >}}
+
 {{< tab "Mirror" >}}
 Data is identical in each disk.
 Requires at least two disks, has the most redundancy, and the least capacity.
 {{< /tab >}}
+
 {{< tab "RAIDZ1" >}}
 One disk maintains data and all other disks store data.
 Requires at least three disks.
 {{< /tab >}}
+
 {{< tab "RAIDZ2" >}}
 Two disks maintain data and all other disks store data.
 Requires at least four disks.
 {{< /tab >}}
+
 {{< tab "RAIDZ3" >}}
 Three disks maintain data and all other disks store data.
 Requires at least five disks.
@@ -144,6 +153,7 @@ For example, if two disks are added, TrueNAS automatically configures the vdev a
 
 To change the vdev layout, open the *Data VDevs* list and select the desired layout.
 {{< /tab >}}
+
 {{< tab "Importing a Pool" >}}
 {{< hint info >}}
 This procedure only applies to disks with a ZFS storage pool.
@@ -152,37 +162,5 @@ To import disks with different file systems, see [Import Disk]({{< relref "Impor
 
 ZFS pool importing works for pools that were exported or disconnected from the current system, created on another system, and pools to reconnect after reinstalling or upgrading the TrueNAS system.
 To import a pool, go to **Storage > Pools > ADD**.
-
-{{< expand "Do I need to do anything different with disks installed on a different system?" "v" >}}
-When physically installing ZFS pool disks from another system, use the `zpool export poolname` command in the command line or a web interface equivalent to export the pool on that system.
-Shut that system down and move the drives to the TrueNAS system.
-Shutting down the original system prevents an *“in use by another machine”* error during the TrueNAS import.
-{{< /expand >}}
-
-There are two kinds of pool imports, standard ZFS pool imports and ZFS pools with [legacy GELI encryption](https://docs.freebsd.org/en_US.ISO8859-1/books/handbook/disks-encrypting.html).
-
-{{< tabs "Pool Import Options" >}}
-{{< tab "Standard ZFS Pool" >}}
-## Standard ZFS Pools
-
-Select *Import Existing Pool* and click *NEXT*.
-
-![StoragePoolsAddImport](/images/CORE/12.0/StoragePoolsAddImport.png "Import Pool Selection")
-
-The wizard asks if the pool has legacy GELI encryption.
-
-![StoragePoolsAddImportNoGELI](/images/CORE/12.0/StoragePoolsAddImportNoGELI.png "No GELI on the pool")
-
-Select *No, continue with import* and click *NEXT*.
-
-TrueNAS detects any pools that are present but unconnected.
-
-![StoragePoolsAddImportZFSPool](/images/CORE/12.0/StoragePoolsAddImportZFSPool.png "Selecting a pool to import")
-
-Choose the ZFS pool to import and click *NEXT*.
-
-Review the Pool Import Summary and click *IMPORT*.
-
-![StoragePoolsAddImportZFSPoolSummary](/images/CORE/12.0/StoragePoolsAddImportZFSPoolSummary.png "Pool Import Summary")
 {{< /tab >}}
 {{< /tabs >}}
