@@ -58,7 +58,7 @@ Vdevs store data or enable unique features for the pool.
 To add a different vdev type during pool creation, click *ADD VDEV* and select the type.
 Select disks from `Available Disks` and use the <i class="fa fa-arrow-right" aria-hidden="true" title="Right Arrow"></i>&nbsp; (right arrow) next to the new **VDev** to add it to that section.
 
-#### Data
+#### Data Type
 
 *Data* is the standard vdev for primary storage operations. Each storage pool requires at least one *Data* vdev.
 *Data* vdev configuration typically affects how the other kinds of vdevs are configured.
@@ -76,30 +76,23 @@ This complicates and limits the pool capabilities.
 {{< /hint >}}
 {{< /expand >}}
 
-#### Cache
-[ZFS L2ARC]({{< relref "L2ARC.md" >}}) read-cache used with fast devices to accelerate read operations. This can be added or removed after creating the pool.
+#### Additional Types
 
-#### Log
-[ZFS LOG]({{< relref "SLOG.md" >}}) device that improves synchronous write speeds.
-This can be added or removed after creating the pool.
-
-#### Hot Spare
-
-Drives reserved for inserting into *Data* vdevs when an active drive fails.
+| Setting | Description |
+|---------|-------------|
+| Cache | [ZFS L2ARC]({{< relref "L2ARC.md" >}}) read-cache used with fast devices to accelerate read operations. This can be added or removed after creating the pool. |
+| Log | [ZFS LOG]({{< relref "SLOG.md" >}}) device that improves synchronous write speeds. This can be added or removed after creating the pool. |
+| Hot Spare | Drives reserved for inserting into *Data* vdevs when an active drive fails.
 Hot spares are temporarily used as replacements for failed drives to prevent larger pool and data loss scenarios.
 
 When a failed drive is replaced with a new drive, the hot spare reverts to an inactive state and is available again as a hot spare.
 
-When the failed drive is only detached from the pool, the temporary hot spare is promoted to a full *Data* vdev member and is no longer available as a hot spare.
-
-#### Metadata
-
-Special Allocation class used to create [Fusion Pools]({{< relref "FusionPool.md" >}}) for increased metadata and small block I/O performance.
-
-#### Dedup
-Stores [ZFS de-duplication]({{< relref "ZFSDeduplication.md" >}}).
+When the failed drive is only detached from the pool, the temporary hot spare is promoted to a full *Data* vdev member and is no longer available as a hot spare. |
+| Metadata | Special Allocation class used to create [Fusion Pools]({{< relref "FusionPool.md" >}}) for increased metadata and small block I/O performance. |
+| Dedup | Stores [ZFS de-duplication]({{< relref "ZFSDeduplication.md" >}}).
 Requires allocating X GiB for every X TiB of general storage.
-Example: 1 GiB of *Dedup* vdev capacity for every 1 TiB of *Data* vdev availability.
+
+Example: 1 GiB of *Dedup* vdev capacity for every 1 TiB of *Data* vdev availability. |
 
 ### Vdev Layouts
 
@@ -118,27 +111,16 @@ Create a new pool when a different vdev layout is required.
 For example, *pool1* has a data vdev in a *mirror* layout, so create *pool2* for any *raid-z* vdevs.
 {{< /expand >}}
 
-#### Stripe
-Each disk is used to store data.
-Requires at least one disk and has no data redundancy.
-Never use a *Stripe* to store critical data!
-A single disk failure results in losing all data in the vdev.
-
-#### Mirror
-Data is identical in each disk.
-Requires at least two disks, has the most redundancy, and the least capacity.
-
-#### RAIDZ1
-One disk maintains data and all other disks store data.
-Requires at least three disks.
-
-#### RAIDZ2
-Two disks maintain data and all other disks store data.
-Requires at least four disks.
-
-#### RAIDZ3
-Three disks maintain data and all other disks store data.
-Requires at least five disks.
+| Setting | Description |
+|---------|-------------|
+| Stripe | Each disk is used to store data. Requires at least one disk and has no data redundancy.
+{{< hint danger >}}
+Never use a *Stripe* to store critical data! A single disk failure results in losing all data in the vdev.
+{{< /hint >}} |
+| Mirror | Data is identical in each disk. Requires at least two disks, has the most redundancy, and the least capacity. |
+| RAIDZ1 | One disk maintains data and all other disks store data. Requires at least three disks. |
+| RAIDZ2 | Two disks maintain data and all other disks store data. Requires at least four disks. |
+| RAIDZ3 | Three disks maintain data and all other disks store data. Requires at least five disks. |
 {{< /tab >}}
 
 {{< tab "Importing a Pool" >}}
