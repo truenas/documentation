@@ -106,13 +106,14 @@ For example, *pool1* has a data vdev in a *mirror* layout, so create *pool2* for
 {{< /expand >}}
 
 * *Stripe*: Each disk stores data. A *Stripe* requires at least one disk and has no data redundancy.
-{{< hint danger >}}
-Never use a *Stripe* to store critical data! A single disk failure results in losing all data in the vdev.
-{{< /hint >}}
 * *Mirror*: Data is identical in each disk. A *Mirror* requires at least two disks, provides the most redundancy, and has the least capacity.
 * *RAIDZ1*: One disk maintains data while all other disks store data. *RAIDZ1* requires at least three disks.
 * *RAIDZ2*: Two disks maintain data while all other disks store data. *RAIDZ2* requires at least four disks.
 * *RAIDZ3*: Three disks maintain data while all other disks store data. *RAIDZ3* requires at least five disks.
+
+{{< hint danger >}}
+Never use a *Stripe* to store critical data! A single disk failure results in losing all data in the vdev.
+{{< /hint >}}
 {{< /tab >}}
 
 {{< tab "Importing a Pool" >}}
@@ -122,7 +123,6 @@ To import disks with different file systems, see the SCALE Disks article.
 {{< /hint >}}
 
 ZFS pool importing works for pools that were exported or disconnected from the current system, created on another system, and pools to reconnect after reinstalling or upgrading the TrueNAS system.
-To import a pool, go to **Storage** and click *Import*.
 
 {{< expand "Do I need to do anything different with disks installed on a different system?" "v" >}}
 When physically installing ZFS pool disks from another system, use the `zpool export poolname` command in the command line or a web interface equivalent to export the pool on that system.
@@ -132,23 +132,23 @@ Shutting down the original system prevents an *“in use by another machine”* 
 
 There are two kinds of pool imports, standard ZFS pool imports and ZFS pools with [legacy GELI encryption](https://docs.freebsd.org/en_US.ISO8859-1/books/handbook/disks-encrypting.html).
 
-## Pool Import Options" >}}
+To import a pool, go to **Storage** and click *Import*.
 
-### Standard ZFS Pools
+## Standard ZFS Pools
 
-Select *Import Existing Pool* and click *NEXT*.
+Select a pool from the *Pool* drop-down and click *Next*.
 
-![StoragePoolsAddImport](/images/CORE/12.0/StoragePoolsAddImport.png "Import Pool Selection")
+![ImportPool1SCALE](/images/SCALE/ImportPool1SCALE.png "Import Pool Selection")
 
-The wizard asks if the pool has legacy GELI encryption.
+Confirm the pool import options look correct and click *Import*.
 
-![StoragePoolsAddImportNoGELI](/images/CORE/12.0/StoragePoolsAddImportNoGELI.png "No GELI on the pool")
+![ImportPool2SCALE](/images/SCALE/ImportPool2SCALE.png "Import Pool Selection")
 
 Select *No, continue with import* and click *NEXT*.
 
 TrueNAS detects any pools that are present but unconnected.
 
-![StoragePoolsAddImportZFSPool](/images/CORE/12.0/StoragePoolsAddImportZFSPool.png "Selecting a pool to import")
+![StoragePoolsAddImportZFSPool](/images/CORE/12.0/StoragePoolsAddImportZFSPool.png "Confirm Import")
 
 Choose the ZFS pool to import and click *NEXT*.
 
@@ -156,9 +156,7 @@ Review the Pool Import Summary and click *IMPORT*.
 
 ![StoragePoolsAddImportZFSPoolSummary](/images/CORE/12.0/StoragePoolsAddImportZFSPoolSummary.png "Pool Import Summary")
 
-### ZFS Pool with GELI
-
-### Encrypted GELI Pools
+## ZFS Pool with GELI
 
 {{< hint danger >}}
 Importing a GELI-encrypted pool requires using the encryption key file and passphrase to decrypt the pool *before* importing.
@@ -195,7 +193,7 @@ GELI encrypted pools show in **Storage > Pools** as **(Legacy Encryption)**.
 
 ![StoragePoolsLegacyGELI](/images/CORE/12.0/StoragePoolsLegacyGELI.png "Pool with GELI encryption")
 
-#### Back Up the Pool Key
+### Back Up the Pool Key
 
 For security reasons, encrypted pool keys do not save to a configuration backup file.
 When TrueNAS is installed to a new device and restored with a saved configuration file, keys for encrypted disks are not present and the system does not request them.
