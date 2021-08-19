@@ -195,7 +195,7 @@ GELI encrypted pools show in **Storage > Pools** as **(Legacy Encryption)**.
 
 ![StoragePoolsLegacyGELI](/images/CORE/12.0/StoragePoolsLegacyGELI.png "Pool with GELI encryption")
 
-### Back Up the Pool Key
+#### Back Up the Pool Key
 
 For security reasons, encrypted pool keys do not save to a configuration backup file.
 When TrueNAS is installed to a new device and restored with a saved configuration file, keys for encrypted disks are not present and the system does not request them.
