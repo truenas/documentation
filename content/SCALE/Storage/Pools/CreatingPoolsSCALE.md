@@ -118,7 +118,7 @@ Never use a *Stripe* to store critical data! A single disk failure results in lo
 {{< tab "Importing a Pool" >}}
 {{< hint info >}}
 The import procedure only applies to disks with a ZFS storage pool.
-To import disks with different file systems, see the [SCALE Disks]({{< relref "DisksSCALE.md" >}}) article.
+To import disks with different file systems, see the SCALE Disks article.
 {{< /hint >}}
 
 ZFS pool importing works for pools that were exported or disconnected from the current system, created on another system, and pools to reconnect after reinstalling or upgrading the TrueNAS system.
