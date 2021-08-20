@@ -47,8 +47,8 @@ To create the keytab on a Windows Server system, open a Command Prompt and use t
 `ktpass -princ USERNAME@REALM.COM -pass PASSWORD -crypto ENCRYPTION TYPE -ptype KRB5_NT_PRINCIPAL -kvno 0 -out c:PATH/KEYTABNAME.KEYTAB`
 
 `USERNAME@REALM.COM` is the Windows Server user and principal name written in the format username@KERBEROS.REALM.
-  The Kerberos Realm is typically in all caps, but the Kerberos Realm case should match the realm name.
-  See [this note](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/ktpass#BKMK_remarks) about using `/princ` for more details.
+The Kerberos Realm is typically in all caps, but the Kerberos Realm case should match the realm name.
+See [this note](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/ktpass#BKMK_remarks) about using `/princ` for more details.
 
 `PASSWORD` is the Windows Server user's password.
 
