@@ -146,6 +146,5 @@ Review the Pool Import Summary and click *Import*.
 Since GELI encryption is specific to FreeBSD, TrueNAS SCALE cannot import GELI-encrypted pools. 
 See the [Migrating GELI-encrypted Pools to SCALE](https://www.truenas.com/docs/scale/gettingstarted/installingscale/#migrating-geli-encrypted-pools-to-scale) section in the [Installing SCALE]({{< relref "InstallingSCALE.md" >}}) article.
 {{< /expand >}}
-
 {{< /tab >}}
 {{< /tabs >}}
