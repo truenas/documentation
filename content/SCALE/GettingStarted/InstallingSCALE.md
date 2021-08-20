@@ -60,6 +60,12 @@ The value produced by running the command must match the value shown in the <fil
 Different checksum values indicate a corrupted installer file that should not be used.
 {{< /expand >}}
 
+### Migrating GELI-encrypted Pools to SCALE
+{{< hint danger >}}
+TrueNAS SCALE is based on Linux, which does not support FreeBSD GELI encryption.
+If you have GELI-encrypted pools on your system that you plan to import into SCALE, you must migrate your data from the GELI pool to a non-GELI encrypted pool *before* sidegrading to SCALE. 
+{{< /hint >}}
+
 Choose the install type to see specific instructions:
 
 {{< tabs "Install Types" >}}
