@@ -3,7 +3,7 @@ title: "Developer's Notes"
 weight: 2
 ---
 
-NOTE: This page is retired, please use the official documentation instead for TrueNAS SCALE 21.08 and later. Want to get involved in helping to collaborate on TrueNAS SCALE? Join our [Official Discord Server.](https://www.truenas.com/wp-content/uploads/2021/08/Discord-Logo-White_15.png)
+NOTE: This page is retired, please use the official documentation instead for TrueNAS SCALE 21.08 and later. Want to get involved in helping to collaborate on TrueNAS SCALE? Join our [Official Discord Server.](https://discord.gg/Q3St5fPETd)
 
 ## System Requirements
 
