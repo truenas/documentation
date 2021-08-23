@@ -71,3 +71,10 @@ Check the ticket periodically as developers can request additional details as th
 ## Feature Suggestions
 
 {{< include file="static/includes/General/CreateJiraSuggestion.md.part" markdown="true" >}}
+
+## Security Issues
+
+Previous security reports are published to https://security.truenas.com/.
+
+Due to their sensitive nature, security issues are not reported on public issue trackers.
+If you have discovered a suspected security vulnerability in the latest version of a software release, you can [report this directly to the Security Team](mailto:security-officer@ixsystems.com).
