@@ -55,7 +55,7 @@ To encrypt a single dataset, go to **Storage > Pools**, open the <i class="mater
 
 ![StoragePoolsDatasetAdd](/images/CORE/12.0/StoragePoolsDatasetAdd.png "New Dataset Options")
 
-Look at the *Encryption Options* and, when the parent dataset is unencrypted, unset *Inherit* and set *Encryption*.
+In the *Encryption Options* area uncheck *Inherit* and check *Encryption*.
 
 ![StoragePoolsCreateDatasetEncryptionOptions](/images/CORE/12.0/StoragePoolsCreateDatasetEncryptionOptions.png "Dataset Encryption Options")
 
@@ -89,8 +89,14 @@ To unlock a dataset, click <i class="material-icons" aria-hidden="true" title="O
 
 ![StoragePoolsDatasetUnlockOptions](/images/CORE/12.0/StoragePoolsDatasetUnlockOptions.png "Dataset Unlock Options")
 
-Enter the passphrase and click **Submit**. If there are child datasets that are locked with the same passphrase you can unlock them all at the same time by setting *Unlock Children*.
+Enter the passphrase and click **Submit**. To unlock child datasets check the *Unlock Children* box. Child datasets that inherited the encryption settings of the parent will unlock when parent is unlocked. Child datasets that have a different passphrase from the parent can be unlocked at the same time by entering their passphrase.
+
 Confirm unlocking the datasets and wait for a dialog to confirm the unlock is successful.
+
+![StoragePoolsDatasetUnlockSuccess](/images/CORE/12.0/StoragePoolsDatasetUnlockSuccess.png "Dataset Unlock Success")
+
+Example:
+The parent dataset is media. Media has three child datasets. Documents has "inherited" the parent encryption settings and it's password. The other two child datasets, audio and video, have their own seperate passphrases. When the parent dataset is locked all the children are locked. To unlock them all, check the *Unlock Children* and enter the passphrase for each dataset that needs to be unlocked.
 
 ![StoragePoolsDatasetUnlockSuccess](/images/CORE/12.0/StoragePoolsDatasetUnlockSuccess.png "Dataset Unlock Success")
 
