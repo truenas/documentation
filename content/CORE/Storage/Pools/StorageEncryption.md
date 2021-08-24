@@ -98,7 +98,11 @@ Confirm unlocking the datasets and wait for a dialog to confirm the unlock is su
 Example:
 The parent dataset is media. Media has three child datasets. Documents has "inherited" the parent encryption settings and it's password. The other two child datasets, audio and video, have their own seperate passphrases. When the parent dataset is locked all the children are locked. To unlock them all, check the *Unlock Children* and enter the passphrase for each dataset that needs to be unlocked.
 
-![StoragePoolsDatasetUnlockSuccess](/images/CORE/12.0/StoragePoolsDatasetUnlockSuccess.png "Dataset Unlock Success")
+![StoragePoolsDatasetUnlockexample1](/images/CORE/12.0/EncrytionExample1.png "Encrypted locked Datasets")
+
+![StoragePoolsDatasetUnlockexample2](/images/CORE/12.0/EncrytionExample2.png "Password for locked Datasets")
+
+![StoragePoolsDatasetUnlockexample3](/images/CORE/12.0/EncrytionExample3.png "Successfully unlocked Datasets")
 
 The dataset listing changes to show the unlocked icon.
 
