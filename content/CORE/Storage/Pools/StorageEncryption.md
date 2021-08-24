@@ -50,7 +50,7 @@ These algorithms provide authenticated encryption with block ciphers.
 
 ## Encrypting a New Dataset
 
-New datasets within an existing storage pool can also be encrypted without having to encrypt the entire pool.
+New datasets within an existing unencrypted storage pool can also be encrypted without having to encrypt the entire pool.
 To encrypt a single dataset, go to **Storage > Pools**, open the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> for an existing dataset, and click *Add Dataset*.
 
 ![StoragePoolsDatasetAdd](/images/CORE/12.0/StoragePoolsDatasetAdd.png "New Dataset Options")
