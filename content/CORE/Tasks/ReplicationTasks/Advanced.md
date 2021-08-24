@@ -144,3 +144,5 @@ Setting *Only Replicate Snapshots Matching Schedule* restricts the replication t
 ![TasksReplicationAddAdvancedSchedule](/images/CORE/12.0/TasksReplicationAddAdvancedSchedule.png "Advanced Replication: Schedule")
 {{< /tab >}}
 {{< /tabs >}}
+
+## Creating Dedicated User Replication Task
