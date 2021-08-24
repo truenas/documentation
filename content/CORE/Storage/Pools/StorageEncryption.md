@@ -95,15 +95,15 @@ Confirm unlocking the datasets and wait for a dialog to confirm the unlock is su
 
 ![StoragePoolsDatasetUnlockSuccess](/images/CORE/12.0/StoragePoolsDatasetUnlockSuccess.png "Dataset Unlock Success")
 
-###Example:###
+**Example:**
 
 ![StoragePoolsDatasetUnlockexample1](/images/CORE/12.0/EncrytionExample1.png "Encrypted locked Datasets")
 
- The parent dataset is media. Media has three child datasets. Documents has "inherited" the parent encryption settings and it's password. The other two child datasets, audio and video, have their own seperate passphrases. When the parent dataset is locked all the children are locked.
+ The parent dataset is media. It has three child datasets. Documents has "inherited" the parent encryption settings and it's password. The other two child datasets, audio and video, have their own seperate passphrases. When the parent dataset is locked all the children are locked.
 
 ![StoragePoolsDatasetUnlockexample2](/images/CORE/12.0/EncrytionExample2.png "Password for locked Datasets")
 
-To unlock them all, check the *Unlock Children* and enter the passphrase for each dataset that needs to be unlocked.
+Open the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> for the parent dataset and select *unlock*. To unlock all the datasets, check the *Unlock Children* and enter the passphrase for each dataset that needs to be unlocked.
 
 ![StoragePoolsDatasetUnlockexample3](/images/CORE/12.0/EncrytionExample3.png "Successfully unlocked Datasets")
 
