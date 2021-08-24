@@ -146,3 +146,55 @@ Setting *Only Replicate Snapshots Matching Schedule* restricts the replication t
 {{< /tabs >}}
 
 ## Creating Dedicated User Replication Task
+
+Dedicated User Replication
+A dedicated user can be used for replications rather than the root user. This example shows the process using the
+semi-automatic replication setup between two TrueNAS® systems with a dedicated user named repluser. SSH key
+authentication is used to allow the user to log in remotely without a password.
+In this example, the periodic snapshot task has not been created yet. If the periodic snapshot shown in the example
+configuration (page 122) has already been created, go to Storage → Periodic Snapshot Tasks, click on the task to select
+it, and click Delete to remove it before continuing.
+On Alpha, select Account → Users. Click the Add User. Enter repluser for Username, enter /mnt/alphavol/repluser in the
+Create Home Directory In field, enter Replication Dedicated User for the Full Name, and set the Disable password login
+option. Leave the other fields at their default values, but note the User ID number. Click OK to create the user.
+On Beta, the same dedicated user must be created as was created on the sending computer. Select Account → Users.
+Click the Add User. Enter the User ID number from Alpha, repluser for Username, enter /mnt/betavol/repluser in the
+Create Home Directory In field, enter Replication Dedicated User for the Full Name, and set the Disable password login
+option. Leave the other fields at their default values. Click OK to create the user.
+A dataset with the same name as the original must be created on the destination computer, Beta. Select Storage →
+Volumes, click on betavol, then click the Create Dataset icon at the bottom. Enter alphadata as the Dataset Name, then
+click Add Dataset.
+The replication user must be given permissions to the destination dataset. Still on Beta, open a Shell (page 244) and
+enter this command:
+zfs allow -ldu repluser create,destroy,diff,mount,readonly,receive,release,send,userprop betavol/
+֒→alphadata
+The destination dataset must also be set to read-only. Enter this command in the Shell (page 244):
+125
+zfs set readonly=on betavol/alphadata
+Close the Shell (page 244) by typing exit and pressing Enter.
+The replication user must also be able to mount datasets. Still on Beta, go to System → Tunables. Click Add Tunable.
+Enter vfs.usermount for the Variable, 1 for the Value, and choose Sysctl from the Type drop-down. Click OK to save the
+tunable settings.
+Back on Alpha, create a periodic snapshot of the source dataset by selecting Storage → Periodic Snapshot Tasks. Click
+the alphavol/alphadata dataset to highlight it. Create a periodic snapshot (page 120) of it by clicking Periodic Snapshot
+Tasks, then Add Periodic Snapshot as shown in Figure 7.23.
+Still on Alpha, create the replication task by clicking Replication Tasks and Add Replication. alphavol/alphadata is selected as the dataset to replicate. betavol/alphadata is the destination volume and dataset where alphadata snapshots are replicated.
+The Setup mode dropdown is set to Semi-automatic as shown in Figure 7.24. The IP address of Beta is entered in the
+Remote hostname field. A hostname can be entered here if local DNS resolves for that hostname.
+Note: If WebGUI HTTP –> HTTPS Redirect has been enabled in System → General on the destination computer, Remote
+HTTP/HTTPS Port must be set to the HTTPS port (usually 443) and Remote HTTPS must be enabled when creating the
+replication on the source computer.
+The Remote Auth Token field expects a special token from the Beta computer. On Beta, choose Storage → Replication
+Tasks, then click Temporary Auth Token. A dialog showing the temporary authorization token is shown as in Figure
+7.25.
+Highlight the temporary authorization token string with the mouse and copy it.
+On the Alpha system, paste the copied temporary authorization token string into the Remote Auth Token field as
+shown in Figure 7.26.
+Set the Dedicated User option. Choose repluser in the Dedicated User drop-down.
+Click the OK button to create the replication task.
+Note: The temporary authorization token is only valid for a few minutes. If a Token is invalid message is shown, get
+a new temporary authorization token from the destination system, clear the Remote Auth Token field, and paste in
+the new one.
+Replication will begin when the periodic snapshot task runs.
+Additional replications can use the same dedicated user that has already been set up. The permissions and read
+only settings made through the Shell (page 244) must be set on each new destination dataset.
