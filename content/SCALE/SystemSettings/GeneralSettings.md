@@ -78,4 +78,4 @@ The *Localization* window lets users localize their system to a specific region.
 
 The *NTP Servers* window allows user to configure Network Time Protocol (NTP) servers, which sync the local system time with an accurate external reference. By default, new installations use several existing NTP servers. TrueNAS SCALE supports adding custom NTP servers.
 
-{{< include file="static/includes/SystemNTPServersAddFields.md.part" markdown="true" >}}
+{{< include file="static/includes/Reference/SystemNTPServersAddFields.md.part" markdown="true" >}}

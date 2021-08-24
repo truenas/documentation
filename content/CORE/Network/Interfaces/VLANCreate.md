@@ -22,4 +22,4 @@ The remaining **VLAN Settings** must be configured for the interface to function
 
 With the VLAN-specific options set, there are a few additional interfaces options to review.
 
-{{< include file="static/includes/InterfaceOptions.md.part" markdown="true" >}}
+{{< include file="static/includes/CORE/InterfaceOptions.md.part" markdown="true" >}}

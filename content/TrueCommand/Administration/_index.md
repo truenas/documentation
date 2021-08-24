@@ -20,5 +20,5 @@ Access to some of these areas may require a TrueCommand administrator account.
    + User and Team Management
    + UI Theme settings
 
-{{< include file="static/includes/MenuNav.md.part" markdown="true" >}}
+{{< include file="static/includes/General/MenuNav.md.part" markdown="true" >}}
 

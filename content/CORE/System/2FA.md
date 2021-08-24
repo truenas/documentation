@@ -38,7 +38,7 @@ Two-Factor Authentication (2FA) is an extra layer of security that is added to y
 Two-factor authentication is time-based and requires that the system time is set correctly.
 {{< /hint >}}
 
-{{< include file="static/includes/System2FAFields.md.part" markdown="true" >}}
+{{< include file="static/includes/Reference/System2FAFields.md.part" markdown="true" >}}
 
 ## Enabling Two-Factor Authentication.
 
