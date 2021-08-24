@@ -1,6 +1,9 @@
 ---
 title: "Datastore"
 weight: 30
+aliases:
+  - /core/solutions/integrations/vmware/truenasvcenterplugin/datastore/
+  - /core/solutions/integrations/vmware/truenasvcenterplugin/snapshot/
 ---
 
 {{< toc >}}
