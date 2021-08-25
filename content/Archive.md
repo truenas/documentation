@@ -9,15 +9,15 @@ All documentation provided here is End of Life (EoL) and no longer receives **an
 {{< /hint >}}
 
 <div class="dropdown">
-  <button onclick="handleClick(event)" class="dropbtn">TrueNAS (Unified)</button>
-  <div id="myDropdown" class="dropdown-content">
+  <button onclick="handleClick(myDropdown1)" class="dropbtn">TrueNAS (Unified)</button>
+  <div id="myDropdown1" class="dropdown-content">
     <a href=".">Coming Soon!</a>
   </div>
 </div>
 
 <div class="dropdown">
-  <button onclick="handleClick(event)" class="dropbtn">Legacy TrueNAS</button>
-  <div id="myDropdown" class="dropdown-content">
+  <button onclick="handleClick(myDropdown2)" class="dropbtn">Legacy TrueNAS</button>
+  <div id="myDropdown2" class="dropdown-content">
     <a href="https://www.truenas.com/docs/files/TrueNAS-11.3-U5-User-Guide.pdf">11.3</a>
     <a href="https://www.ixsystems.com/documentation/truenas/11.2-U8-legacy/TrueNAS-11.2-U8-Legacy-User-Guide_screen.pdf">11.2</a>
     <a href="https://www.ixsystems.com/documentation/truenas/11.1/TrueNAS.pdf">11.1</a>
@@ -25,8 +25,8 @@ All documentation provided here is End of Life (EoL) and no longer receives **an
 </div>
 
 <div class="dropdown">
-  <button onclick="handleClick(event)" class="dropbtn">Legacy FreeNAS</button>
-  <div id="myDropdown" class="dropdown-content">
+  <button onclick="handleClick(myDropdown3)" class="dropbtn">Legacy FreeNAS</button>
+  <div id="myDropdown3" class="dropdown-content">
     <a href="https://www.ixsystems.com/documentation/freenas/11.3-U5/FreeNAS-11.3-U5-User-Guide_screen.pdf">11.3</a>
     <a href="https://www.ixsystems.com/documentation/freenas/11.2-U8/FreeNAS-11.2-U8-User-Guide_screen.pdf">11.2 (New GUI)</a>
     <a href="https://www.ixsystems.com/documentation/freenas/11.2-U8-legacy/FreeNAS-11.2-U8-Legacy-User-Guide_screen.pdf">11.2 (Legacy GUI)</a>
@@ -42,8 +42,8 @@ All documentation provided here is End of Life (EoL) and no longer receives **an
 </div>
 
 <div class="dropdown">
-  <button onclick="handleClick(event)" class="dropbtn">TrueCommand</button>
-  <div id="myDropdown" class="dropdown-content">
+  <button onclick="handleClick(myDropdown4)" class="dropbtn">TrueCommand</button>
+  <div id="myDropdown4" class="dropdown-content">
     <a href="https://www.truenas.com/docs/files/TrueCommand1.3Docs.pdf">1.3</a>
     <a href="https://www.ixsystems.com/documentation/truecommand/1.2/TrueCommand-Guide-1.2_screen.pdf">1.2</a>
     <a href="https://www.ixsystems.com/documentation/truecommand/1.1/TrueCommand-Guide-1.1_screen.pdf">1.1</a>
