@@ -89,7 +89,7 @@ To unlock a dataset, click <i class="material-icons" aria-hidden="true" title="O
 
 ![StoragePoolsDatasetUnlockOptions](/images/CORE/12.0/StoragePoolsDatasetUnlockOptions.png "Dataset Unlock Options")
 
-Enter the passphrase and click **Submit**. To unlock child datasets check the *Unlock Children* box. Child datasets that inherited the encryption settings of the parent will unlock when parent is unlocked. Child datasets that have a different passphrase from the parent can be unlocked at the same time by entering their passphrase.
+Enter the passphrase and click **Submit**. To unlock child datasets, set the *Unlock Children* box. Child datasets that inherited the encryption settings of the parent unlock when parent unlocks. Child datasets that have a different passphrase from the parent can be unlocked at the same time by entering their passphrase.
 
 Confirm unlocking the datasets and wait for a dialog to confirm the unlock is successful.
 
@@ -99,7 +99,7 @@ Confirm unlocking the datasets and wait for a dialog to confirm the unlock is su
 
 ![StoragePoolsDatasetUnlockexample1](/images/CORE/12.0/EncrytionExample1.png "Encrypted locked Datasets")
 
- The parent dataset is media. It has three child datasets. Documents has "inherited" the parent encryption settings and it's password. The other two child datasets, audio and video, have their own seperate passphrases. When the parent dataset is locked all the children are locked.
+The parent dataset is media. It has three child datasets. Documents has "inherited" the parent encryption settings and its password. The other two child datasets, `audio` and `video`, have their own seperate passphrases. When the parent dataset is locked, all child datasets lock too.
 
 ![StoragePoolsDatasetUnlockexample2](/images/CORE/12.0/EncrytionExample2.png "Password for locked Datasets")
 
@@ -108,7 +108,6 @@ Open the <i class="material-icons" aria-hidden="true" title="Options">more_vert<
 ![StoragePoolsDatasetUnlockexample3](/images/CORE/12.0/EncrytionExample3.png "Successfully unlocked Datasets")
 
 Click the *Continue* button in the dialog window that confirms that the unlocking was successful. The dataset listing changes to show the unlocked icon.
-
 
 ## Encryption Management
 
