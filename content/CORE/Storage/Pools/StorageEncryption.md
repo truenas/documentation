@@ -55,7 +55,7 @@ To encrypt a single dataset, go to **Storage > Pools**, open the <i class="mater
 
 ![StoragePoolsDatasetAdd](/images/CORE/12.0/StoragePoolsDatasetAdd.png "New Dataset Options")
 
-In the *Encryption Options* area uncheck *Inherit* and check *Encryption*.
+In the *Encryption Options* area, unset *Inherit* and check *Encryption*.
 
 ![StoragePoolsCreateDatasetEncryptionOptions](/images/CORE/12.0/StoragePoolsCreateDatasetEncryptionOptions.png "Dataset Encryption Options")
 
