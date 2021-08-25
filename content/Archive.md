@@ -9,14 +9,14 @@ All documentation provided here is End of Life (EoL) and no longer receives **an
 {{< /hint >}}
 
 <div class="dropdown">
-  <button onclick="myFunction()" class="dropbtn">TrueNAS (Unified)</button>
+  <button onclick="handleClick(event)" class="dropbtn">TrueNAS (Unified)</button>
   <div id="myDropdown" class="dropdown-content">
     <a href=".">Coming Soon!</a>
   </div>
 </div>
 
 <div class="dropdown">
-  <button onclick="myFunction()" class="dropbtn">Legacy TrueNAS</button>
+  <button onclick="handleClick(event)" class="dropbtn">Legacy TrueNAS</button>
   <div id="myDropdown" class="dropdown-content">
     <a href="https://www.truenas.com/docs/files/TrueNAS-11.3-U5-User-Guide.pdf">11.3</a>
     <a href="https://www.ixsystems.com/documentation/truenas/11.2-U8-legacy/TrueNAS-11.2-U8-Legacy-User-Guide_screen.pdf">11.2</a>
@@ -25,7 +25,7 @@ All documentation provided here is End of Life (EoL) and no longer receives **an
 </div>
 
 <div class="dropdown">
-  <button onclick="myFunction()" class="dropbtn">Legacy FreeNAS</button>
+  <button onclick="handleClick(event)" class="dropbtn">Legacy FreeNAS</button>
   <div id="myDropdown" class="dropdown-content">
     <a href="https://www.ixsystems.com/documentation/freenas/11.3-U5/FreeNAS-11.3-U5-User-Guide_screen.pdf">11.3</a>
     <a href="https://www.ixsystems.com/documentation/freenas/11.2-U8/FreeNAS-11.2-U8-User-Guide_screen.pdf">11.2 (New GUI)</a>
@@ -42,7 +42,7 @@ All documentation provided here is End of Life (EoL) and no longer receives **an
 </div>
 
 <div class="dropdown">
-  <button onclick="myFunction()" class="dropbtn">TrueCommand</button>
+  <button onclick="handleClick(event)" class="dropbtn">TrueCommand</button>
   <div id="myDropdown" class="dropdown-content">
     <a href="https://www.truenas.com/docs/files/TrueCommand1.3Docs.pdf">1.3</a>
     <a href="https://www.ixsystems.com/documentation/truecommand/1.2/TrueCommand-Guide-1.2_screen.pdf">1.2</a>
