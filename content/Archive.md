@@ -59,6 +59,7 @@ const dropDownContent = document.querySelectorAll(".dropdown-content");
 
 
 function handleClick(event) {
+  console.log("test123")
   const main = event.target; // Use the event.target, the clicked element
   const className = "show"; // Spcecify the class name one time
   let myContent = null; // The drop down contents of the clicked item, if found
