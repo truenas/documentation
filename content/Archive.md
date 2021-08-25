@@ -58,9 +58,9 @@ const dropDownButtons = document.querySelectorAll(".dropbtn");
 const dropDownContent = document.querySelectorAll(".dropdown-content");
 
 function showMenu(id) {
-  console.log("Show Menu:"+id)
-  elem = window.GetElementByID(id)
-  elem.style.display = "block"
+  console.log("Show Menu:"+id);
+  elem = window.GetElementByID(id);
+  elem.style.display = "block";
 }
   
 function handleClick(event) {
