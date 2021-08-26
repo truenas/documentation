@@ -2,6 +2,9 @@
 title: "Troubleshooting Tips"
 weight: 40
 ---
+{{< toc >}}
+
+
 
 ## Access and Download the Replication Log
 
@@ -14,6 +17,7 @@ To access, and download, the replication task log file go to **Tasks > Replicati
 Click the *DOWNLOAD LOGS* button to download the log file.
 
 
+
 ## Edit a Replication Task
 
 To edit the replication task go to **Tasks > Replication Tasks**. Click on the *>* to expand the replication task information.Click **EDIT**.
@@ -21,6 +25,7 @@ To edit the replication task go to **Tasks > Replication Tasks**. Click on the *
 ![TasksReplicationTasksEdit](/images/CORE/12.0/RepEditTaskCORE.png "Replication Task Edit")
 
 See [**Replication Advanced Options**]({{< relref "/CORE/Tasks/ReplicationTasks/Advanced.md" >}}) for descriptions of the available fields.
+
 
 
 ## Setting Up Alert Importance For a Replication Task
@@ -31,6 +36,7 @@ Set the Warning Level and how often the alert notification is sent.
 ![TasksSetReplicationAlert](/images/CORE/12.0/AlertTaskReplication.png "Set Replication Alert")
 
 See [**Alert Settings**]({{< relref "core/system/alert.md" >}}) for descriptions of the available options.
+
 
 
 ## FAQ
