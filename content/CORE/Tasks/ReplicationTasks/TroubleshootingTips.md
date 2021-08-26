@@ -30,8 +30,13 @@ Set the Warning Level and how often the alert notification is sent.
 
 ![TasksSetReplicationAlert](/images/CORE/12.0/AlertTaskReplication.png "Set Replication Alert")
 
+See [**Alert Settings**]({{< relref "core/system/alert.md" >}}) for descriptions of the available options.
+
+
 ## FAQ
 
-If the internet connection goes down for a period. will the replication take up where it left off, including all intermediate snapshots? Yes.
+Question: If the internet connection goes down for a period of time, will the replication take up where it left off - including all the intermediate snapshots?
+Answer: Yes.
 
-If a site changes a lot of data at one time, and the internet bandwidth is not enough to finish sending the snapshot before the next one begins, will the replication jobs run one after the other and not stomp on each other? Yes.
+Question: If a site changes a lot of data at one time, and the internet bandwidth is not enough to finish sending the snapshot before the next one begins, will the replication jobs run one after the other and not stomp on each other?
+Answer: Yes.
