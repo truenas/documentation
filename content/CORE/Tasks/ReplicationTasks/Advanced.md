@@ -157,38 +157,31 @@ On both sending and receiving systems the SSH service should be running with the
 
 In this example, the periodic snapshot task has not been created yet. If the periodic snapshot task has already been created, go to Tasks → Periodic Snapshot Tasks, click on the arrow next to the task to expand the information, and click Delete to remove to the task.
 
-In this example the pool on alpha is /mnt/alphavol and the pool on beta is /mnt/betavol
+Create a pool on alpha called alphavol and add a dataset called alphadata. Create a pool on beta called betavol.
 
-On Alpha, select Account → Users. Click the Add User. Enter Replication Dedicated User for the Full Name. Enter repluser for Username, enter /mnt/alphavol/repluser in the Create Home Directory In field, and set the Disable Password to Yes. Leave the other fields at their default values, but note the User ID number. Click the Submit button to create the user.
+On Alpha, select Account → Users. Click the Add User. Enter repluser for the Full Name. Enter repluser for Username. Enter /mnt/alphavol/repluser in the Home Directory field. Set the Disable Password to Yes. Leave the other fields at their default values, but note the User ID number. Click the Submit button to create the user.
 
 On Beta, the same dedicated user must be created as was created on the sending computer. Select Account → Users.
-Click the Add User. nter Replication Dedicated User for the Full Name. Enter repluser for Username. Enter the User ID number from Alpha, and enter /mnt/betavol/repluser in the Create Home Directory In field. set the Disable Password to Yes. Leave the other fields at their default values.Click the Submit button to create the user.
+Click the Add User. Enter repluser for the Full Name. Enter repluser for Username. Enter the User ID number from Alpha, and enter /mnt/betavol/repluser in the Home Directory field. Set the Disable Password to Yes. Leave the other fields at their default values. Click the Submit button to create the user.
 
 A dataset with the same name as the original must be created on the destination computer, Beta. Select Storage →
 Pools, click on betavol, then click the Create Dataset icon at the bottom. Enter alphadata as the Dataset Name, then
 click Add Dataset.
 
-The replication user must be given permissions to the destination dataset. Still on Beta, Go to Storage →
-Pools, Edit Options for betavol\alphadata. Click the ADVANCED OPTIONS button and set *Read-only* to On. Click the **SAVE** button
+The replication user must be given permissions to the destination dataset. Still on Beta, open the Shell and
+enter this command:
+
+zfs allow -ldu repluser create,destroy,diff,mount,readonly,receive,release,send,userprop betavol/alphadata
+
+The destination dataset must also be set to read-only. Still on Beta, go to Storage -> Pools - Edit options for betavol/alphadata. Click the ADAVANCED OPTIONS button and set Read-only to Yes. Click the Save button.
 
 The replication user must also be able to mount datasets. Still on Beta, go to System → Tunables. Click Add Tunable.
 Enter vfs.usermount for the Variable, 1 for the Value, and choose Sysctl from the Type drop-down. Click OK to save the
 tunable settings.
 
-On Alpha, create the SSh Connection by going to System -> SSH Connections. Then go to Tasks -> Peplication Tasks and Add Replication. alphavol/alphadata is selected as the dataset to replicate. betavol/alphadata is the destination volume and dataset where alphadata snapshots are replicated. Choose the SSH Connection created above for the SSH Connection while setting up the Destination.
+Still on Alpha, create the replication task by clicking Replication Tasks and Add Replication. alphavol/alphadata is selected as the dataset to replicate. betavol/alphadata is the destination volume and dataset where alphadata snapshots are replicated.
 
 
-The Setup mode dropdown is set to Semi-automatic as shown in Figure 7.24. The IP address of Beta is entered in the
-Remote hostname field. A hostname can be entered here if local DNS resolves for that hostname.
-Note: If WebGUI HTTP –> HTTPS Redirect has been enabled in System → General on the destination computer, Remote
-HTTP/HTTPS Port must be set to the HTTPS port (usually 443) and Remote HTTPS must be enabled when creating the
-replication on the source computer.
-
-**Bonnie's Note: I don't think this is there
-Set the Dedicated User option. Choose repluser in the Dedicated User drop-down.
-Click the OK button to create the replication task.
-Note: The temporary authorization token is only valid for a few minutes. If a Token is invalid message is shown, get
-a new temporary authorization token from the destination system, clear the Remote Auth Token field, and paste in
-the new one.**
 Replication will begin when the periodic snapshot task runs.
+
 Additional replications can use the same dedicated user that has already been set up.
