@@ -62,7 +62,6 @@ It is recommended to keep the description less than three paragraphs and include
 
 {{< include file="static/includes/CORE/CreateDebug.md.part" markdown="true" >}}
 
-
 ### Suggest New Features
 
 {{< include file="static/includes/General/CreateJiraSuggestion.md.part" markdown="true" >}}
@@ -79,7 +78,6 @@ To find more details about the different Warranty and Service Level Agreement (S
 The *License Information* area contains System *Model*, *System Serial* numbers, *Additional Hardware*, licensed *Features*, Support *Contract Type*, and support contract *Expiration Date* information. The ability to update the status of a *production System* is available here as well.
 
 ![SystemSupportLicenseInformation](/images/CORE/12.0/LicenseInformationArea.png "System License Information")
-
 
 ### Production System Reporting
 
