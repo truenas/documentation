@@ -70,8 +70,13 @@ It is recommended to keep the description less than three paragraphs and include
 {{< /tab >}}
 {{< tab "TrueNAS Enterprise" >}}
 In addition to all the TrueNAS CORE support options, TrueNAS Enterprise customers who purchase hardware from iXsystems can receive assistance from iXsystems if an issue occurs with the system.
+
 Silver and Gold level Support customers can also enable Proactive Support on their hardware to automatically notify iXsystems if an issue occurs.
 To find more details about the different Warranty and Service Level Agreement (SLA) options available, see https://www.ixsystems.com/support/.
+
+### License Information
+
+Helpful system *Model*, *System Serial numbers*, *Additional Hardware*, licensed *Features*, *Contract Type*, and support contract *Expiration Date* are all contained in the *License Information* area.
 
 ### Production System Reporting
 
