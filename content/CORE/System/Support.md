@@ -75,7 +75,7 @@ To find more details about the different Warranty and Service Level Agreement (S
 
 ### License Information
 
-The *License Information* area contains System *Model*, *System Serial* numbers, *Additional Hardware*, licensed *Features*, Support *Contract Type*, and support contract *Expiration Date* information. The ability to update the status of a *production System* is available here as well.
+The *License Information* area contains System *Model*, *System Serial* numbers, *Additional Hardware*, licensed *Features*, Support *Contract Type*, and support contract *Expiration Date* information. The ability to mark the system as a *production system* is also available.
 
 ![SystemSupportLicenseInformation](/images/CORE/12.0/LicenseInformationArea.png "System License Information")
 
