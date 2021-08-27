@@ -1,5 +1,5 @@
 ---
-title: "TrueNAS vCenter Plugin Documentation"
+title: "TrueNAS vCenter Plugin"
 geekdocCollapseSection: true
 weight: 10
 aliases:
