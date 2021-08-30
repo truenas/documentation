@@ -181,7 +181,7 @@ Click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i>
 
 ![DatasetACLEdit](/images/SCALE/SharesSMBShareACLEditor.png "Dataset Permissions Options")
 
-This ACL is used to define the user accounts or groups that own or have specific [permissions]({{< relref "SCALE/Storage/PermissionsSCALE.md" >}}) to the dataset that is being shared.
+This ACL is used to define the user accounts or groups that own or have specific [permissions]({{< relref "SCALE/Storage/Pools/PermissionsSCALE.md" >}}) to the dataset that is being shared.
 The *User* and *Group* values show which accounts "own", or have full permissions to the dataset.
 
 #### ACL Presets
