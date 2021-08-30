@@ -1,5 +1,5 @@
 ---
-title: "Replication"
+title: "Remote Replication"
 weight: 100
 ---
 
