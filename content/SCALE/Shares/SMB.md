@@ -62,7 +62,7 @@ Support for Samba Schema is [officially deprecated in Samba 4.13](https://www.sa
 
 After a dataset and accounts are created, you will need to investigate your access requirements and adjust the dataset ACL to match. To edit the ACL, go to **Storage** and select <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> for the new dataset, click *View Permissions*.  Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i> within the *Dataset Permissions* box and you will be taken to the *ACL Editor* page.
 Many home users typically add a new entry that grants *Full Control* to the *builtin_users* group with the flags set to *Inherit*.
-See the [Permissions article]({{< relref "SCALE/Storage/PermissionsSCALE.md" >}}) for more details.
+See the [Permissions article]({{< relref "SCALE/Storage/Pools/PermissionsSCALE.md" >}}) for more details.
 
 ## Creating the SMB Share
 
