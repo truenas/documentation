@@ -9,7 +9,7 @@
 
 <title>{{ partial "title" . }} | {{ .Site.Title -}}</title>
 
-<link rel="icon" href="{{ "favicon/TN-favicon-32x32.png" | relURL }}" type="image/x-icon">
+<link rel="icon"  href="https://truenas.com/docs/favicon/TN-favicon-32x32.png" type="image/x-icon">
 <!-- Add Font Awesome and Material Design -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://use.typekit.net/tjl0ypy.css">
@@ -47,7 +47,7 @@
 
         <main class="container flex flex-even">
             <aside class="gdoc-nav">
-                {{ with .Site.GetPage "/" }}{{partial "menu" . }}{{end}}
+                {{partial "menu-static" . }}
             </aside>
             <div class="flex align-center justify-center">
                 <div class="gdoc-error__message">                 
