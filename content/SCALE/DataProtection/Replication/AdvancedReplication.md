@@ -40,16 +40,16 @@ Go to **Tasks > Replication Tasks** and click *ADD*, then select *ADVANCED REPLI
 
 To use the advanced editor to create a replication task, go to **Tasks > Replication Tasks**, click *ADD* to open the Wizard, then click *ADVANCED REPLICATION CREATION*.
 
-![TasksReplicationAddAdvanced](/images/CORE/12.0/TasksReplicationAddAdvanced.png "Advanced Replication Tasks")
-
 Options are grouped together by category.
 Options can appear, disappear, or be disabled depending on the configuration choices you make.
-Start by configuring the *General* options first, then the *Transport* options before configuring replication *Sources* and *Destination*.
+Start by configuring the *General* options first, then the *Transport* options before configuring replication *Sources*,  *Destination*, and *Replication Schedule*.
+
+![TasksReplicationAdvancedGen](/images/SCALE/ScaleGeneralReplication.png "General and Transportation Options")
 
 Name the task.
 Each task name must be unique, and we recommend you name it in a way that makes it easy to remember what the task is doing.
 
-Choose whether the local system is sending (*Push*) or receiving data (*Pull*) and decide what *Transport* method to use for the replication before configuring the other sections.
+Choose whether the local system is sending (*Push*) or receiving data (*Pull*) and decide what *Transport* method to use for the replication before configuring the other sections. Set the *Number of retries for failed replications* before stopping and marking the task as failed (the default is 5). Use the *Logging Level* to set the message verbosity level in the replication task log. To ensure the Replication task is active check the *Enabled* box.
 
 {{< tabs "Advanced Replication Configuration Sections" >}}
 {{< tab "Transport Options" >}}
@@ -82,7 +82,7 @@ By default, the replication task will use snapshots to quickly transfer data to 
 When **Full Filesystem Replication** is set, the chosen **Source** is completely replicated, including all dataset properties, snapshots, child datasets, and clones.
 When choosing this option, it is recommended to allocate additional time for the replication task to run.
 Leaving **Full Filesystem Replication** unset but setting **Include Dataset Properties** will include just the dataset properties in the snapshots to be replicated.
-Additional options allow you to recursively replicate child dataset snapshots or exclude specific child datasets or properties from the replication.
+Checking the **Recursive** check box allows you to recursively replicate child dataset snapshots or exclude specific child datasets or properties from the replication.
 
 Local sources are replicated by snapshots that were generated from a periodic snapshot task and/or from a defined naming schema that matches manually created snapshots.
 Remote sources require entering a snapshot naming schema to identify the snapshots to replicate.
