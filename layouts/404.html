@@ -47,7 +47,12 @@
 
         <main class="container flex flex-even">
             <aside class="gdoc-nav">
-               {{ range .Site.RegularPages }}<a href="{{.Permalink}}">{{.LinkTitle}}</a>{{end}}
+                {{ range .Pages.GroupBy "Section" }}
+                <!-- Checks for existence of _index.md for a section; if available, pulls from "title" in front matter -->
+                {{ with $.Site.GetPage "section" .Key }}
+                <a href="https://truenas.com/docs/{{.Permalink}}">{{.LinkTitle}}</a>
+                {{ end }}
+                {{ end }}
             </aside>
             <div class="flex align-center justify-center">
                 <div class="gdoc-error__message">                 
