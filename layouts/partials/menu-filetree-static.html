@@ -3,7 +3,7 @@
 
 <!-- templates -->
 {{ define "tree-nav" }}
-    {{ $current := .current }}
+    {{ $current := .Site }}
 
     <ul class="gdoc-nav__list">
         {{ range .sect.GroupBy "Weight" }}
