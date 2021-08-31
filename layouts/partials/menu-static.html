@@ -6,7 +6,7 @@
         {{ if .Site.Params.GeekdocMenuBundle }}
             {{ partial "menu-bundle" (dict "current" . "source" .Site.Data.menu.main.main) }}
         {{ else }}
-            {{ partial "menu-filetree" . }}
+            {{ partial "menu-filetree-static" . }}
         {{ end }}
     </section>
 
