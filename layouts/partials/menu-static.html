@@ -4,9 +4,9 @@
     <section class="gdoc-nav--main">
         <h2>Navigation</h2>
         {{ if .Site.Params.GeekdocMenuBundle }}
-            {{ partial "menu-bundle" (dict "current" .Site.Pages "source" .Site.Data.menu.main.main) }}
+            {{ partial "menu-bundle" (dict "current" . "source" .Site.Data.menu.main.main) }}
         {{ else }}
-            {{ partial "menu-filetree" .Site.Pages }}
+            {{ partial "menu-filetree" . }}
         {{ end }}
     </section>
 

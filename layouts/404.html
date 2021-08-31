@@ -47,7 +47,7 @@
 
         <main class="container flex flex-even">
             <aside class="gdoc-nav">
-                {{partial "menu-static" . }}
+               {{ range .Site.RegularPages }}<a href="{{.Permalink}}">{{.LinkTitle}}</a>{{end}}
             </aside>
             <div class="flex align-center justify-center">
                 <div class="gdoc-error__message">                 
