@@ -1,6 +1,6 @@
 ---
 title: "Remote Replication"
-weight: 100
+weight: 300
 ---
 
 ## Remote Replication
