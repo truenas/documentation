@@ -83,8 +83,13 @@ When **Full Filesystem Replication** is set, the chosen **Source** is completely
 When choosing this option, it is recommended to allocate additional time for the replication task to run.
 Leaving **Full Filesystem Replication** unset but setting **Include Dataset Properties** will include just the dataset properties in the snapshots to be replicated.
 Checking the **Recursive** check box allows you to recursively replicate child dataset snapshots or exclude specific child datasets or properties from the replication.
+Enter new defined properties in **Properties Override** field to replace existing dataset properties with the newly defined properties in the replicated files.
+List any existing dataset properties to remove from the replicated files in the **Properties Exclude** field.
 
 Local sources are replicated by snapshots that were generated from a periodic snapshot task and/or from a defined naming schema that matches manually created snapshots.
+
+Select a previously configured periodic snapshot task for this replication task in **Periodic Snapshot Tasks** drop down list. The replication task selected must have the same Recursive and Exclude Child Datasets values as the chosen periodic snapshot task. Selecting a periodic snapshot schedule removes the Schedule field.
+
 Remote sources require entering a snapshot naming schema to identify the snapshots to replicate.
 A naming schema is a collection of [strftime](https://www.freebsd.org/cgi/man.cgi?query=strftime) time and date strings and any identifiers that a user might have added to the snapshot name.
 For example, entering the naming schema `custom-%Y-%m-%d_%H-%M` finds and replicates snapshots like `custom-2020-03-25_09-15`.
