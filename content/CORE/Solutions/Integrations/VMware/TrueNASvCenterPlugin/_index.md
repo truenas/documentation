@@ -20,7 +20,7 @@ This enables some management of TrueNAS systems from a single interface.
 
 {{< hint info >}}
 The current release version of the TrueNAS vCenter Plugin is **3.4.0**.
-This version is only compatible with VMware vCenter Server version **6.7.0**.
+This version is only compatible with [VMware vCenter Server version **6.7.0**](https://docs.vmware.com/en/VMware-vSphere/6.7/vsphere-vcenter-server-67-installation-guide.pdf).
 {{< /hint >}}
 
 ## Getting and Deploying the Plugin
