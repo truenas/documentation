@@ -3,8 +3,6 @@ title: "Replication Tasks"
 weight: 300
 ---
 
-## Replication Tasks
-
 
 {{< toc >}}
 
