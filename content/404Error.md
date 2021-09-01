@@ -1,5 +1,5 @@
 ---
-title: "Lost? (404)"
+title: ""
 ---
 
 <div class="flex align-center justify-center">
