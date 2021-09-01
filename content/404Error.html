@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}">
+
+<head>
+    <!-- GeekDoc modified with the TrueNAS favicon and loading additional icon packs -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="{{ partial "title" . }}">
+
+<title>{{ partial "title" . }} | {{ .Site.Title -}}</title>
+
+<link rel="icon"  href="https://truenas.com/docs/favicon/TN-favicon-32x32.png" type="image/x-icon">
+<!-- Add Font Awesome and Material Design -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://use.typekit.net/tjl0ypy.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="//cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css">
+                             
+<!-- Add Google Font loading as determined by the config.toml file -->
+ {{ if .Site.Params.googlefonts }}
+ <link rel="stylesheet" href="{{ .Site.Params.googlefonts }}" type="text/css" media="all" /> 
+ {{ end }}
+
+<link rel="preload" href="https://truenas.com/docs/main-b21fa8a269.min.css" as="style">
+<link rel="stylesheet" href="https://truenas.com/docs/main-b21fa8a269.min.css" media="all">
+
+<link rel="preload" href="https://truenas.com/docs/mobile-249b801e7d.min.css" as="style">
+<link rel="stylesheet" href="https://truenas.com/docs/mobile-249b801e7d.min.css" media="screen and (max-width: 45rem)">
+
+<link rel="preload" href="https://truenas.com/docs/print-f79fc3e5d7.min.css" as="style">
+<link rel="stylesheet" href="https://truenas.com/docs/print-f79fc3e5d7.min.css" media="print">
+
+<link rel="preload" href="https://truenas.com/docs/custom.css" as="style">
+<link rel="stylesheet" href="https://truenas.com/docs/custom.css" media="all">
+
+{{ with .OutputFormats.Get "rss" -}}
+    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+{{ end -}}
+</head>
+
+<body>
+    {{ partial "svg-icon-symbols" . }}
+
+   <div class="wrapper">
+        <input type="checkbox" class="hidden" id="menu-control" />
+        {{ partial "site-header" (dict "Root" . "MenuEnabled" true) }}
+
+        <main class="container flex flex-even">
+            <aside class="gdoc-nav">
+                {{ partial "menu" . }}
+            </aside>
+
+            <div class="flex align-center justify-center">
+                <div class="gdoc-error__message">                 
+                    <div class="gdoc-error__line gdoc-error__title" style="display:flex;justify-content:center;align-items:center;"><svg class="icon gdoc_cloud_off" style="width:3em;height:3em;padding-right:.75rem;"><use xlink:href="#gdoc_cloud_off"></use></svg>Lost?</div>
+                    <div class="gdoc-error__line gdoc-error__code">Error 404</div>
+                    <div class="gdoc-error__line gdoc-error__help">
+                        <p>The article you were looking for might have moved or been retired. Don't worry, you can use the side menu to search for content or browse through the documentation topics.</p>
+                        <p>Looking for previous version documentation? Legacy software documentation is also available in the <a href="https://www.truenas.com/docs/archive/">Archive</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        {{ partial "site-footer" . }}
+
+    </div>
+</body>
+
+</html>
