@@ -10,7 +10,7 @@ Permissions control the actions users can perform on dataset contents.
 
 ## ACL Types in SCALE
 
-TrueNAS SCALE offers two types of ACLs: POSIX.1e, which is the SCALE default, and NSFv4, which uses the same editor as TrueNAS CORE.
+TrueNAS SCALE offers two types of ACLs: POSIX.1e, which is the SCALE default, and NSFv4.
 
 Users can select what ACL type they'd like a new dataset to use while creating it. 
 To change an existing dataset's ACL type, click the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> button next to the intended dataset and select *Edit Options*. Next, click *Advanced Options* and scroll down to the *ACL Type* drop-down. 
@@ -29,11 +29,11 @@ Setting new ACLs recursively is destructive, so we suggest creating a ZFS snapsh
 
 For a more in-depth explanation of ACLs and configurations in TrueNAS SCALE, see our [ACL Primer]({{< relref "ACLPrimer.md" >}}).
 
-### Basic Permissions Editor
+## Unix Permissions Editor
 
-The **Permissions Editor** option allows basic adjustments to a dataset's ACL and is the same for POSIX.1e and NFSv4 ACL types.
+The **Unix Permissions Editor** option allows basic adjustments to a dataset's ACL.
 
-![BasicPermissionsSCALE](/images/SCALE/BasicPermissionsSCALE.png "Basic Permissions Editor")
+![BasicPermissionsSCALE](/images/SCALE/UnixPermissionsSCALE.png "Unix Permissions Editor")
 
 {{< tabs "Edit Permissions" >}}
 {{< tab "Dataset Path" >}}
@@ -57,18 +57,21 @@ The *Advanced* section allows users to apply permissions recursively to all dire
 {{< /tab >}}
 {{< /tabs >}}
 
-To switch from the basic permissions editor to the advanced ACL editor, click *Use ACL Manager*. 
+To switch from the basic permissions editor to the advanced ACL editor, click *Set ACL*. 
+
+{{< hint info >}}
 
 An Access Control List (ACL) is a set of account permissions associated with a dataset and applied to directories or files within that dataset.
 TrueNAS uses ACLs to manage user interactions with shared datasets and creates them when users add a dataset to a pool.
+{{< /hint >}}
 
-## POSIX.1e ACL Manager
+To change dataset permissions, go to **Storage** and click the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> button next to the intended dataset, then click *View Permissions*.
 
-To change dataset permissions, go to **Storage** and click the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> button next to the intended dataset, then click *Edit Permissions*.
+![UnixEditorSCALE](/images/SCALE/UnixPermissionsEditorSCALE.png "Unix Permissions Editor")
 
-![AdvancedACLEditorSCALE](/images/SCALE/AdvancedACLEditorSCALE.png "Advanced Permissions Editor")
 
-{{< tabs "Edit POSIX.1e ACL" >}}
+
+{{< tabs "Edit Permissions" >}}
 {{< tab "File Information" >}}
 | Field | Description |
 |------|-------------|
