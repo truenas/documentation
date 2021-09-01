@@ -40,7 +40,8 @@ TrueNAS automatically generates the suggested *Name*, but users can override it 
 TrueNAS automatically populates the *Naming Schema* drop-down with previously created periodic snapshot task schemas. Choosing one generates a name for the snapshot using the naming schema from a previously created Periodic Snapshot and replicates that snapshot. *Naming Schema* cannot be used with a *Name*.
 
 Check the *Recursive* box to include child datasets with the snapshot.
-
+  
+  
 ## Managing Snapshots
 
 Go to **Storage** and click *Snapshots* to manage created snapshots.
@@ -51,6 +52,7 @@ Each entry in the list includes the dataset and snapshot names. Entries also dis
 
 Click <i class="material-icons" aria-hidden="true" title="Expand">more_vert</i> to view snapshot options.
 
+  
 ### Delete
 
 The *Delete* option destroys the snapshot.
@@ -61,6 +63,7 @@ While creating a snapshot is instantaneous, deleting one is I/O intensive and ca
 ZFS has to review all allocated blocks before deletion to see if another process is using that block. If not, the ZFS can free that block.
 {{< /expand >}}
 
+  
 ### Clone to New Dataset
 
 The *Clone to New Dataset* option creates a new snapshot "clone" (dataset) from the snapshot contents.
@@ -74,6 +77,7 @@ By default, TrueNAS adds *-clone* to the new snapshot name when creating the clo
 A dialog prompts for the new dataset *Name*.
 The suggested *Name* derives from the snapshot name.
 
+  
 ### Rollback
 
 The *Rollback* option reverts the *Dataset* back to the point in time saved by the *Snapshot*.
@@ -85,7 +89,7 @@ To restore the data within a snapshot, the recommended steps are:
 
 * Clone the desired snapshot.
 * Share the clone with the share type or service running on the TrueNAS system.
-* After users have recovered the needed data, delete the clone from **Storage > Pools**.
+* After users have recovered the needed data, delete the clone from **Storage**.
 
 This approach does not destroy any on-disk data or impact replication.
 {{< /hint >}}
@@ -93,6 +97,7 @@ This approach does not destroy any on-disk data or impact replication.
 TrueNAS asks for confirmation before rolling back to the chosen snapshot state.
 Clicking *Yes* reverts all dataset files to the state they were in when TrueNAS created the snapshot.
 
+  
 ### Batch Operations
 
 To delete multiple snapshots, check the left column boxes for each snapshot and click the <i class="material-icons" aria-hidden="true" title="Delete">delete</i> *Delete* button that appears.
@@ -100,6 +105,7 @@ To delete multiple snapshots, check the left column boxes for each snapshot and 
 To search through the snapshots list by name, type a matching criteria into the <i class="material-icons" aria-hidden="true" title="Search">search</i> *Filter Snapshots* text area.
 The list changes to only display the snapshot names that match the filter text.
 
+  
 ## Browsing a Snapshot Collection
 
 {{< hint warning >}}
