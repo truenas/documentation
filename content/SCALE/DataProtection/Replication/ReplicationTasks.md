@@ -1,5 +1,5 @@
 ---
-title: "Remote Replication"
+title: "Replication Tasks"
 weight: 300
 ---
 
@@ -55,7 +55,7 @@ TrueNAS shows how many snapshots are available for replication.
 We recommend you manually snapshot the sources or create a periodic snapshot task *before* creating the replication task.
 However, when the sources are on the local system and don't have any existing snapshots, TrueNAS can create a basic periodic snapshot task and snapshot the sources immediately before starting the replication. Enabling *Recursive* replicates all snapshots contained within the selected source dataset snapshots.
 
-![TasksReplicationTasksAddSourceSCALE](/images/SCALE/RepAddSourceSCALE.png "Choosing a Local Source")
+![TasksReplicationTasksAddSourceSCALE](/images/SCALE/RepWizardLocalSourceSCALE.png "Choosing a Local Source")
 
 Local sources can also use a naming schema to identify any custom snapshots to include in the replication.
 Remote sources require entering a *snapshot naming schema* to identify the snapshots to replicate.
