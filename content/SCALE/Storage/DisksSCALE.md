@@ -54,7 +54,7 @@ Clicking *Edit* allows users to configure general disk settings, as well as powe
 
 | Setting | Description |
 |---------|-------------|
-| Enable S.M.A.R.T. | Enabling allows the system to conduct periodic [S.M.A.R.T. tests]({{< relref "S.M.A.R.T.TestsSCALE.md" >}}). |
+| Enable S.M.A.R.T. | Enabling allows the system to conduct periodic [S.M.A.R.T. tests]({{< relref "/SCALE/DataProtection/_index.md" >}}). |
 | S.M.A.R.T. extra options | Additional [smartctl(8)](https://www.smartmontools.org/browser/trunk/smartmontools/smartctl.8.in) options. |
 | SED Password | Set or change the password of this SED. This password is used instead of the global SED password. |
 | Clear SED Password | Clear the SED password for this disk. |
@@ -74,7 +74,7 @@ Select the disk(s) you want to perform a S.M.A.R.T. test on and click *Manual Te
 
 Click *Start* to begin the test. Depending on the test type you choose, the test can take some time to complete. TrueNAS generates alerts when tests discover issues.
 
-For information on automated S.M.A.R.T. testing, see the [S.M.A.R.T. tests]({{< relref "S.M.A.R.T.TestsSCALE.md" >}}) SCALE article.
+For information on automated S.M.A.R.T. testing, see the [S.M.A.R.T. tests]({{< relref "/SCALE/DataProtection/_index.md" >}}) SCALE article.
 
 ### S.M.A.R.T. Test Results
 
