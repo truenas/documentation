@@ -26,7 +26,7 @@ Taking snapshots requires the system have all [pools]({{< relref "PoolsSCALE.md"
 ## Creating a Single Snapshot
 
 {{< hint ok >}}
-To save time and regularly create fresh snapshots, consider making a [Periodic Snapshot Task]({{< relref "PeriodicSnapshotsSCALE.md" >}}) instead.
+To save time and regularly create fresh snapshots, consider making a [Periodic Snapshot Task]({{< relref "/SCALE/DataProtection/_index.md" >}}) instead.
 {{< /hint >}}
 
 Go to **Storage** and click *Snapshots*, then click *ADD*.
