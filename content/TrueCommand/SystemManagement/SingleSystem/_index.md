@@ -14,7 +14,7 @@ Users can create and manage storage, snapshots, and shares using the File Explor
 
 Users can also view the TrueNAS system's Manufacturer, Serial Numbers, Support Tier, Support Expiration date, Hostname, CPU, CPU Cores, Plysical Memory, OS, and Uptime by clicking on the double arrows located at the lower right corner of the System Card.
 
-![TrueCommandSingleSystemhardware](/images/TrueCommand/2.0/TCHardwareDash.png "Single System Hardware Information"
+![TrueCommandSingleSystemhardware](/images/TrueCommand/2.0/TCHardwareDash.png "Single System Hardware Information")
 
 Users with adequate permissions may update the system, [configure backups]({{< relref "TrueNASConfigManage.md" >}}), and generate system audits and [reports]({{< relref "Creation.md" >}}).
 
