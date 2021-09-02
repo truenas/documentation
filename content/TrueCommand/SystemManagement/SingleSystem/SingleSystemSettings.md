@@ -21,9 +21,9 @@ The *General Settings* window lets users edit the system's IP address/hostname, 
 
 The update button in the system settings menu allows users to update the system to the latest build.
 
-## NAS Portal
+## Launch TrueNAS Interface
 
-The NAS Portal button in the system settings menu navigates directly to the system's GUI in a new tab. 
+The Launch TrueNAS Interface button in the system settings menu navigates directly to the system's GUI in a new tab. 
 
 ## iSCSI Volumes
 
