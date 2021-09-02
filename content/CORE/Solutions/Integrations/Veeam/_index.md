@@ -167,9 +167,6 @@ With support for SMB/CIFS, NFS, AFP, iSCSI, and FC, TrueNAS offers many ways to 
 
 ## Performance Tuning for Veeam Backup & Replication
 
-When testing Veeam, the TrueNAS X Series was shown to outperform benchmark standards by around 100 percent using the [scale-out repository setup](https://bp.veeam.com/vbr/VBP/3_Build_structures/B_Veeam_Components/B_backup_repositories/scaleout.html) detailed in the Veeam help center.
-When testing, the VMs being backed up were each 100 GB in size running Linux or Windows Server; more details are listed below.
-
 **Test environment:**
 
 * A 2TB datastore must be configured on TrueNAS System 1 utilizing the iSCSI wizard using default values.  This will be the backup source.
@@ -194,13 +191,13 @@ Scale-out Backup Repository is only available in Veeam Backup & Replication 9.5 
 
 **Results**
 
-Testing in this configuration with a backup server and backup proxy, both Windows Server 2012 R2 VMs, yielded excellent results with the TrueNAS X-Series platform.
+Testing in this configuration with a backup server and backup proxy, Windows Server 2019 Standard VMs, yielded excellent results with the TrueNAS R-Series platform.
 iXsystems reference numbers can be seen below.
 These were achieved with just a single Veeam Backup Server and a Veeam Backup Proxy Server.
 For more demanding workloads, results can be scaled by adding more VMs to act as the Veeam Backup Proxy.
 
-| Test | Time Limit | TrueNAS Time | Result |
-|------|------------|--------------|--------|
-| Full Backup | 30:00 Minutes | 13:10 Minutes | 2X Faster |
-| Full Restore | 25:00 Minutes | 12:00 Minutes | 2X Faster |
-| Synthetic Full Backup | 50:00 Minutes | 24:18 Minutes | 2X Faster |
+| Test | Time Limit | TrueNAS Time | 
+|------|------------|--------------|
+| Full Backup | 30:00 Minutes | 27:41 Minutes | 
+| Full Restore | 25:00 Minutes | 16:48 Minutes | 
+| Synthetic Full Backup | 50:00 Minutes | 37:18 Minutes |
