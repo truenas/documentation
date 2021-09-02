@@ -40,7 +40,27 @@ Once the systems have been chosen, click **CONFIRM** to upload the config backup
 
 ![RestoreDatabaseSystemSelected](/images/TrueCommand/2.0/RestoreDatabaseSystemSelected.png "RestoreDatabaseSystemSelected")
 
+
 ## System Inventory
+
+To access the System Inventory page, click the Gear icon and Select **System Inventory**.
+
+![SystemInventoryMenu](/images/TrueCommand/2.0/SystemInventoryMenu.png "Access the System Inventory Page")
+
+There are three areas of inventory information avaiable:
+
+**System** provides information on the *Manufacturer*, the *Serial* numbers of the controllers, the system's *Support Tier*, the Support Contract's *Expiration* date, the *Hostname* of the active controller, the *CPU*, the number of *CPU Cores*, the amount of *Physical Memory*, what *OS* the system is running, and the *Uptime*.
+
+![SystemInventorySystem](/images/TrueCommand/2.0/SystemInventorySystem.png "System Information")
+
+**Network** provides information about the *Interface* names, *Type*, *Link State* and *MAC* Address.
+
+![SystemInventoryNetwork](/images/TrueCommand/2.0/SystemInventoryNetwork.png "System Network Information")
+
+**Storage** provides information about the *Drives* such as *Name*, *Type* of drive, *Size*, *Model*, *Serial* Number, and location in the *Enclosure*.
+
+![SystemInventoryStorage](/images/TrueCommand/2.0/SystemInventoryStorage.png "System Storage Information")
+
 
 ## iSCSI Management
 
