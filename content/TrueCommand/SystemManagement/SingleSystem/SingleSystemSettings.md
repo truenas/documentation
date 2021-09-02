@@ -7,7 +7,7 @@ weight: 10
 
 TrueCommand allows users to manage certain settings when managing a single system. To see the system settings menu, click the three-dot menu in a system's window on the TrueCommand dashboard.
 
-![TrueCommandSystemSettingsMenu](/images/TrueCommand/TrueCommandSystemSettingsMenu.png "System Settings Menu")
+![TrueCommandSystemSettingsMenu](/images/TrueCommand/2.0/TrueCommandSystemSettingsMenu.png "System Settings Menu")
 
 ## Edit
 
