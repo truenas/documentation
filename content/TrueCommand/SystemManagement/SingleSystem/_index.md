@@ -10,7 +10,11 @@ To manage a single system either click the name of the system in the system card
 
 While viewing a single system, users can see various statistics like CPU, Memory, and Storage usage, as well as existing datasets and [alerts]({{< relref "AlertManage.md" >}}).
 
-Users can also create and manage storage, snapshots, and shares using the File Explorer. 
+Users can create and manage storage, snapshots, and shares using the File Explorer. 
+
+Users can also view the TrueNAS system's Manufacturer, Serial Numbers, Support Tier, Support Expiration date, Hostname, CPU, CPU Cores, Physical Memory, OS, and Uptime by clicking on the double arrows located at the lower right corner of the System Card.
+
+![TrueCommandSingleSystemhardware](/images/TrueCommand/2.0/TCHardwareDash.png "Single System Hardware Information")
 
 Users with adequate permissions may update the system, [configure backups]({{< relref "TrueNASConfigManage.md" >}}), and generate system audits and [reports]({{< relref "Creation.md" >}}).
 
