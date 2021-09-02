@@ -48,7 +48,7 @@ To access the System Inventory page, click the Gear icon and Select **System Inv
 ![SystemInventoryMenu](/images/TrueCommand/2.0/SystemInventoryMenu.png "Access the System Inventory Page")
 
 {{< hint info >}}
-To download a comma delimintaed cvs file for the active Iventory page, click the *CVS* button in the upper right of the screen.
+To download a comma deliminated cvs file for the current Inventory page, click the *CVS* button in the upper right of the screen.
 {{< /hint >}}
 
 There are three areas of inventory information available:
