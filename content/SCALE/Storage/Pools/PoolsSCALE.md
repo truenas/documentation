@@ -66,7 +66,7 @@ Select disks from *Available Disks* and use the <i class="fa fa-arrow-right" ari
 Users can duplicate a **Data VDev** by clicking *Repeat*.
 When the system has more available equal-sized disks, the *Repeat* button creates another vdev with an identical configuration called a *Mirror*.
 
-![StoragePoolsAddCreateVdevRepeat](/images/CORE/12.0/StoragePoolsAddCreateVdevRepeat.png "Duplicating a Data VDev")
+![PoolRepeatVdevSCALE](/images/SCALE/PoolRepeatVdevSCALE.png "Duplicating a Data VDev")
 
 When even more same-size disks are available, users can create multiple copies of the original vdev.
 
@@ -95,7 +95,7 @@ Disks added to a vdev arrange in different layouts, according to the specific po
 The **Pool Manager** suggests a vdev layout from the number of disks added to the vdev.
 For example, if you add two disks, TrueNAS automatically configures the vdev as a *Mirror*. The total available storage will be the size of one added disk while the other disk provides redundancy.
 
-![StoragePoolsAddCreateMirror](/images/CORE/12.0/StoragePoolsAddCreateMirror.png "Mirrored Vdev")
+![PoolCreateMirrorSCALE](/images/SCALE/PoolCreateMirrorSCALE.png "Creating a Mirror")
 
 To change the vdev layout, open the *Data VDevs* list and select the desired layout.
 
@@ -144,7 +144,7 @@ Review the Pool Import Summary and click *Import*.
 
 {{< expand "Can I import GELI-encrypted pools?" "v" >}}
 Since GELI encryption is specific to FreeBSD, TrueNAS SCALE cannot import GELI-encrypted pools. 
-See the [Migrating GELI-encrypted Pools to SCALE](https://www.truenas.com/docs/scale/gettingstarted/installingscale/#migrating-geli-encrypted-pools-to-scale) section in the [Installing SCALE]({{< relref "InstallingSCALE.md" >}}) article.
+See the **Migrating GELI-encrypted Pools to SCALE** section in the [Installing SCALE]({{< relref "InstallingSCALE.md" >}}) article.
 {{< /expand >}}
 {{< /tab >}}
 {{< /tabs >}}
