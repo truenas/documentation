@@ -172,13 +172,15 @@ When testing, the VMs being backed up were each 100 GB in size running Linux or 
 
 **Test environment:**
 
-* **Host servers**: 2 x server nodes with 36 cores, 64 GB RAM, dual-port 10 GbE and 4 HDDs in RAID10
-* **Hypervisor**: VMware 6.5 
-* **Number of VMs**: 8 x Windows Server 2012 each 100GB for instant recovery, 4 Linux VMs for full recovery and other tests as dictated by Veeam
-* **Network**: 10GbE BASE-T for data traffic and 1 GbE for management communication. 
-* **Backup server**: Windows Server 2012 R2 installed in a VM on the host server running Veeam 9.5
-* **Hypervisor data store**: FreeNAS Certified All-Flash with 4 x datasets (LUNs) one for each VMware host server.
-* **Veeam backup repository**: TrueNAS with 4 x Pools (LUNs) corresponding to each of the 4 VMware host servers.
+* A 2TB datastore must be configured on TrueNAS System 1 utilizing the iSCSI wizard using default values.  This will be the backup source.
+* A 2TB datastore must be configured on TrueNAS System 2 utilizing the iSCSI wizard using default values.  This will be the backup target. 
+* Connect the source datastore to the Hypervisor.
+* Ensure the NFS ISO datastore is mounted. 
+* A 64-bit Microsoft Windows Server 2019 Standard VM should be constructed for Veaam Backup & Replication Server. 
+* Install VMware guest additions.
+* Configure STATIC IP for Windows Server 2019 VM.
+* Connect storage to the Veeam VM
+* Install Veeam software on Veeam Backup & Replication Server.
 
 ![VeeamXSeriesTestEnvironment](/images/Veeam/VeeamXSeriesTestEnv.png "X-Series Test Environment")
 
