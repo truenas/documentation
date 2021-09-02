@@ -47,7 +47,7 @@ To access the System Inventory page, click the Gear icon and Select **System Inv
 
 ![SystemInventoryMenu](/images/TrueCommand/2.0/SystemInventoryMenu.png "Access the System Inventory Page")
 
-There are three areas of inventory information avaiable:
+There are three areas of inventory information available:
 
 **System** provides information on the *Manufacturer*, the *Serial* numbers of the controllers, the system's *Support Tier*, the Support Contract's *Expiration* date, the *Hostname* of the active controller, the *CPU*, the number of *CPU Cores*, the amount of *Physical Memory*, what *OS* the system is running, and the *Uptime*.
 
