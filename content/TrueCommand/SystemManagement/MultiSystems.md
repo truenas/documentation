@@ -40,6 +40,8 @@ Once the systems have been chosen, click **CONFIRM** to upload the config backup
 
 ![RestoreDatabaseSystemSelected](/images/TrueCommand/2.0/RestoreDatabaseSystemSelected.png "RestoreDatabaseSystemSelected")
 
+## System Inventory
+
 ## iSCSI Management
 
 When creating an iSCSI Volume with TrueCommand they can be configured on multiple systems at the same time.
