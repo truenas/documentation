@@ -2,13 +2,18 @@
 <html lang="{{ .Site.Language.Lang }}">
 
 <head>
-    {{ partial "head" . }}
+    {{ partial "head/meta" . }}
+    <title>Lost? Don't worry</title>
+
+    {{ partial "head/favicons" . }}
+    {{ partial "head/others" . }}
 </head>
 
 <body>
     {{ partial "svg-icon-symbols" . }}
 
     <div class="wrapper">
+        <input type="checkbox" class="hidden" id="menu-header-control" />
         {{ partial "site-header" (dict "Root" . "MenuEnabled" false) }}
 
         <main class="gdoc-error flex-even">
