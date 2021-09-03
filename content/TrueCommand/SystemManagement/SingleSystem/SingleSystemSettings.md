@@ -23,7 +23,7 @@ The update button in the system settings menu allows users to update the system 
 
 ## Launch TrueNAS Interface
 
-The Launch TrueNAS Interface button in the system settings menu navigates directly to the system's GUI in a new tab. 
+**Launch TrueNAS Interface** in the system settings menu opens a new browser tab pointed at the system's web interface.
 
 ## iSCSI Volumes
 
