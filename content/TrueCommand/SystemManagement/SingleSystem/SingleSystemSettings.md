@@ -7,7 +7,7 @@ weight: 10
 
 TrueCommand allows users to manage certain settings when managing a single system. To see the system settings menu, click the three-dot menu in a system's window on the TrueCommand dashboard.
 
-![TrueCommandSystemSettingsMenu](/images/TrueCommand/TrueCommandSystemSettingsMenu.png "System Settings Menu")
+![TrueCommandSystemSettingsMenu](/images/TrueCommand/2.0/TrueCommandSystemSettingsMenu.png "System Settings Menu")
 
 ## Edit
 
@@ -21,9 +21,9 @@ The *General Settings* window lets users edit the system's IP address/hostname, 
 
 The update button in the system settings menu allows users to update the system to the latest build.
 
-## NAS Portal
+## Launch TrueNAS Interface
 
-The NAS Portal button in the system settings menu navigates directly to the system's GUI in a new tab. 
+**Launch TrueNAS Interface** in the system settings menu opens a new browser tab pointed at the system's web interface.
 
 ## iSCSI Volumes
 
