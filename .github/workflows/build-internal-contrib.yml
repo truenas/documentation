@@ -13,7 +13,7 @@ on:
 jobs:
   deploy:
     if: github.event.pull_request.head.repo.full_name == github.repository
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
         with:
@@ -32,11 +32,15 @@ jobs:
 
       - name: Cache dependencies
         uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
         with:
           path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-node-
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
 
       - run: npm ci
       - run: hugo -d public --gc --minify
