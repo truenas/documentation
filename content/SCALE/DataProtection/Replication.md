@@ -276,7 +276,7 @@ Pulling snapshots from a remote source requires a valid *SSH Connection* before 
 
 If the file browser shows a connection error after selecting the correct *SSH Connection*, you might need to log in to the remote system and make sure it is configured to allow SSH connections.
 
-In TrueNAS, this is done by going to the **Services** screen, checking the **SSH** service configuration, and starting the service.
+In TrueNAS, this is done by going to the **System Settings > Services** screen, checking the **SSH** service configuration, and starting the service.
 
 ![SCALEReplicationAdvancedSourceOptions](/images/SCALE/SCALEAdvRepSource.png "Advanced Replication: Source")
 
@@ -310,7 +310,7 @@ This prevents the source TrueNAS from automatically deleting any snapshots that 
 {{< /tab >}}
 {{< tab "Destination" >}}
 The *Destination* is where replicated data is stored.
-Choosing a remote destination requires an *[SSH Connection]({{< relref "SystemSSH.md" >}})* to that system.
+Choosing a remote destination requires an *[SSH Connection]({{< relref "scale/credentials/backupcredentials/sshconnections/" >}})* to that system.
 Expanding the file browser shows the current datasets that are available on the destination system.
 You can click a destination or manually type a path in the field.
 Adding a name to the end of the path creates a new dataset in that location.
