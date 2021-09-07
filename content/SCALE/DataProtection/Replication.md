@@ -189,3 +189,12 @@ Clicking the task state shows the replication log with an option to download the
 To confirm that snapshots have been replicated, go to **Storage > Snapshots >Snapshots** and verify the destination dataset has new snapshots with correct timestamps.
 
 ![TasksReplicationTasksLocalSnapshotsSCALE](/images/SCALE/RepLocalSnaphots.png "Local Replicated Snapshots")
+
+
+## Advanced Replication
+
+
+Requirements:
+* Storage pools with datasets and data to snapshot.
+* SSH configured with a connection to the remote system saved in **System > SSH Connections**.
+* Dataset snapshot task saved in **Tasks > Periodic Snapshot Tasks**.
