@@ -34,14 +34,16 @@ jobs:
         uses: actions/cache@v2
         env:
           cache-name: cache-node-modules
+          date: 09-07-2021
         with:
           path: ~/.npm
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ env.date }}
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
-
+      
+      - run: git status **/package-lock.json
       - run: npm ci
       - run: hugo -d public --gc --minify
       
