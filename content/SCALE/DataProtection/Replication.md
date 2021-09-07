@@ -15,7 +15,7 @@ To streamline creating simple replication configurations, the replication wizard
 {{< expand "Process Summary" "v" >}}
 ## Process Summary
 
-* **Tasks > Replication Tasks**
+* **Data Protection > Replication Tasks**
   * Choose sources for snapshot replication.
     * Remote sources require an SSH connection.
     * TrueNAS shows how many snapshots will be replicated.
