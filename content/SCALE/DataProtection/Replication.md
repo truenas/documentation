@@ -349,7 +349,7 @@ Setting the *Schedule* checkbox allows scheduling the replication to run at a se
 * Using the custom scheduler is recommended when you need to fine-tune an exact time or day for the replication.
 
 {{< expand "Advanced Scheduler" "v" >}}
-{{< include file="static/includes/CORE/AdvancedScheduler.md.part" markdown="true" >}}
+{{< include file="static/includes/SCALE/SCALEAdvancedScheduler.md.part" markdown="true" >}}
 {{< /expand >}}
 
 Setting *Only Replicate Snapshots Matching Schedule* restricts the replication to only replicate those snapshots created at the same time as the replication schedule.
