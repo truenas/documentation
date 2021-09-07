@@ -34,9 +34,8 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
+          key: npm-${{ hashFiles('package-lock.json') }}
+          restore-keys: npm-
 
       - run: npm ci
       - run: hugo -d public --gc --minify
