@@ -8,6 +8,25 @@
             <a href="https://www.linkedin.com/company/ixsystems/" target="_blank" title="iXsystems LinkedIn"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>&nbsp;&nbsp;
             <a href="https://www.vendop.com/vendor/ixsystems-inc/reviews/" target="_blank" title="iXsystems VendOp Reviews"><b>V</b></a>&nbsp;&nbsp;
             <a href="https://support.ixsystems.com/" target="_blank" title="iXsystems TrueNAS Enterprise Support">Commercial Support</a>
+            <span id="gdoc-dark-mode" style="padding-left: 3rem;">
+                <svg class="icon gdoc_brightness_dark" onclick="toggletheme()">
+                    <title>Toggle between Light and Dark mode</title>
+                    <use xlink:href="#gdoc_brightness_dark"></use>
+                </svg>
+                <script>
+                    function toggletheme() {
+                        let html = document.documentElement;
+                        let cur=localStorage.getItem("hugo-geekdoc");
+                        if (cur==="dark"){
+                            localStorage.setItem("hugo-geekdoc", "light");
+                            html.setAttribute("color-mode", "light");
+                        } else {
+                            localStorage.setItem("hugo-geekdoc", "dark");
+                            html.setAttribute("color-mode", "dark");
+                        }
+                    }
+                </script>
+            </span>
     </div>
     <div class="container">
             {{ if .MenuEnabled }}
