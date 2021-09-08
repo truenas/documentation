@@ -36,19 +36,19 @@ Click the *ENABLE SERVICE* button to activate the service and set *Start Automti
 
 {{< hint info >}}
  
-The *ENABLE SERVICE* dialog box does not show when the WebDev service is already running in **System Settings > Services**.
+The *ENABLE SERVICE* dialog box does not show when the WebDav service is already running in **System Settings > Services**.
 {{< /hint >}}
 
 
 There are multiple ways to enter the edit mode for a share:
-1. Click on either the **WebDAV** header or *View Details*.  From this page click <i class="material-icons" aria-hidden="true" title="Expand">expand_more</i> then *Edit*.
+1. Click on the **WebDAV** header.  From this page click <i class="material-icons" aria-hidden="true" title="Expand">expand_more</i> then *Edit*.
 2. Clicking anywhere within the row of the share you created will open the **Edit WebDAV** section.
 
 ## Service Activation
 
-To later enable or disable the WebDAV system service, go to either **System Settings > Services** and toggle *WebDAV*, or **Shares** and click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> within the **WebDAV** header and select *Turn Off Service*.  To automatically start the service when TrueNAS boots, set *Start Automatically*. Click the <i class="material-icons" aria-hidden="true" title="edit">edit</i> to change the service settings.
+To later enable or disable the WebDAV system service, go to either **System Settings > Services** and toggle *WebDAV*, or go to **Shares** and click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> within the **WebDAV** header and select *Turn Off Service*.  To automatically start the service when TrueNAS boots,go to **System Settings > Services** and set *Start Automatically*. Click the <i class="material-icons" aria-hidden="true" title="edit">edit</i> to change the service settings.
 
-To change, or edit, the service settings, go to either **System Settings > Services** and click the <i class="material-icons" aria-hidden="true" title="edit">edit</i> or **Shares** and click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> within the **WebDAV** header and select *Config Service* to change the service settings.
+To change, or edit, the config/service settings, go to either **System Settings > Services** and click the <i class="material-icons" aria-hidden="true" title="edit">edit</i> or go to **Shares** and click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> within the **WebDAV** header and select *Config Service* to change the service settings.
 
 ![WebDAVServiceOptions](/images/SCALE/SharingWebdavServiceOptions.png "WebDAV Service Options")
 
