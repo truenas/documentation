@@ -19,7 +19,7 @@ This strategy allows an administrator to roll the system data back to a specific
 In case of catastrophic system or disk failure, off-site snapshots can restore data up to the most recent snapshot.
 {{< /expand >}}
 
-Taking snapshots requires the system have all [pools]({{< relref "PoolsSCALE.md" >}}), [datasets]({{< relref "DatasetsSCALE.md" >}}), and [zvols]({{< relref "ZvolsSCALE.md" >}}) already configured.
+Taking snapshots requires the system have all [pools]({{< relref "/SCALE/Storage/Pools/_index.md" >}}), [datasets]({{< relref "DatasetsSCALE.md" >}}), and [zvols]({{< relref "ZvolsSCALE.md" >}}) already configured.
 
 ## Snapshot Creation Options
 

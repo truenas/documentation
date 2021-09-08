@@ -185,8 +185,6 @@ The *Add Vdevs* button opens up the Pool Manager so users can add Vdevs to the p
 
 Users cannot change the original encryption or data Vdev configuration.
 
-See the [Pools]({{< relref "PoolsSCALE.md" >}}) Vdev section for an overview on Vdevs. 
-
 TrueNAS selects *Data VDev* by default. To add different Vdev types to the pool, select one from the *Add Vdev* drop-down.
 
 When adding disks to increase the capacity of a pool, ZFS supports adding Vdevs (virtual devices) to an existing ZFS pool. After creating a Vdev, you cannot add more drives to that Vdev. However, you can stripe a new Vdev with another of the same type to increase the overall pool size To extend a pool, you must add a Vdev that is the same type as existing Vdevs.
