@@ -8,6 +8,7 @@ p,h1,h2,h3,h4,th,td,a {
   flex-direction: column;
   min-height: 10vh;
 }
+
 /* Site header */
 .gdoc-brand__img {
 	max-width: 7em;
