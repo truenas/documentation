@@ -30,7 +30,7 @@ Clicking *Edit* allows users to configure general disk settings, as well as powe
 
 | Setting | Description |
 |---------|-------------|
-| Name | FreeBSD disk device name. |
+| Name | Linux disk device name. |
 | Serial | Serial number for this disk. |
 | Description | Notes about this disk. |
 
@@ -38,7 +38,7 @@ Clicking *Edit* allows users to configure general disk settings, as well as powe
 
 | Setting | Description |
 |---------|-------------|
-| HDD Standby | Minutes of inactivity before the drive enters standby mode. This [forum post](https://forums.freenas.org/index.php?threads/how-to-find-out-if-a-drive-is-spinning-down-properly.2068/) describes identifying spun down drives. Temperature monitoring is disabled for standby disks. |
+| HDD Standby | Minutes of inactivity before the drive enters standby mode. This [forum post](https://www.truenas.com/community/threads/how-to-find-out-if-a-drive-is-spinning-down-properly.2068/) describes identifying spun down drives. Temperature monitoring is disabled for standby disks. |
 | Force HDD Standby | Allows the drive to enter standby, even when non-physical S.M.A.R.T. operations could prevent the drive from sleeping. |
 | Advanced Power Management  | Select a power management profile from the menu. |
 
@@ -183,7 +183,7 @@ Attempting to replace a heavily degraded disk without offlining it will signific
 {{< /expand >}}
 
 {{< expand "The offline failed?" "v" >}}
-If the *Offline* operation fails with a "Disk offline failed - no valid replicas" message, go to **Storage > Pools**, click the <i class="material-icons" aria-hidden="true" title="Settings">settings</i> for the degraded pool, and select *Scrub Pool*.
+If the *Offline* operation fails with a "Disk offline failed - no valid replicas" message, go to **Storage**, click the <i class="material-icons" aria-hidden="true" title="Settings">settings</i> for the degraded pool, and select *Scrub Pool*.
 When the scrub operation finishes, reopen the pool *Status* and try to *Offline* the disk again.
 {{< /expand >}}
 

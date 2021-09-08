@@ -21,9 +21,12 @@ In case of catastrophic system or disk failure, off-site snapshots can restore d
 
 Taking snapshots requires the system have all [pools]({{< relref "PoolsSCALE.md" >}}), [datasets]({{< relref "DatasetsSCALE.md" >}}), and [zvols]({{< relref "ZvolsSCALE.md" >}}) already configured.
 
-{{< tabs "Snapshots" >}}
-{{< tab "Snapshots" >}}
-## Creating a Single Snapshot
+## Snapshot Creation Options
+
+{{< tabs "Snapshot Creation Options" >}}
+{{< tab "Single Snapshots" >}}
+
+### Creating a Single Snapshot
 
 {{< hint ok >}}
 To save time and regularly create fresh snapshots, consider making a [Periodic Snapshot Task]({{< relref "/SCALE/DataProtection/_index.md" >}}) instead.
@@ -39,10 +42,9 @@ TrueNAS automatically generates the suggested *Name*, but users can override it 
 
 TrueNAS automatically populates the *Naming Schema* drop-down with previously created periodic snapshot task schemas. Choosing one generates a name for the snapshot using the naming schema from a previously created Periodic Snapshot and replicates that snapshot. *Naming Schema* cannot be used with a *Name*.
 
-Check the *Recursive* box to include child datasets with the snapshot.
+Set the *Recursive* box to include child datasets with the snapshot.
   
-  
-## Managing Snapshots
+### Managing Snapshots
 
 Go to **Storage** and click *Snapshots* to manage created snapshots.
 
@@ -52,8 +54,7 @@ Each entry in the list includes the dataset and snapshot names. Entries also dis
 
 Click <i class="material-icons" aria-hidden="true" title="Expand">more_vert</i> to view snapshot options.
 
-  
-### Delete
+#### Delete
 
 The *Delete* option destroys the snapshot.
 You must delete child clones before you can delete their parent snapshot.
@@ -63,8 +64,7 @@ While creating a snapshot is instantaneous, deleting one is I/O intensive and ca
 ZFS has to review all allocated blocks before deletion to see if another process is using that block. If not, the ZFS can free that block.
 {{< /expand >}}
 
-  
-### Clone to New Dataset
+#### Clone to New Dataset
 
 The *Clone to New Dataset* option creates a new snapshot "clone" (dataset) from the snapshot contents.
 
@@ -72,13 +72,12 @@ The *Clone to New Dataset* option creates a new snapshot "clone" (dataset) from 
 A clone is a writable copy of the snapshot.
 Because a clone is a dataset that can be mounted, it appears in the **Storage** screen rather than the *Snapshots* screen.
 By default, TrueNAS adds *-clone* to the new snapshot name when creating the clone.
-
 {{< /expand >}}
+
 A dialog prompts for the new dataset *Name*.
 The suggested *Name* derives from the snapshot name.
 
-  
-### Rollback
+#### Rollback
 
 The *Rollback* option reverts the *Dataset* back to the point in time saved by the *Snapshot*.
 
@@ -97,7 +96,6 @@ This approach does not destroy any on-disk data or impact replication.
 TrueNAS asks for confirmation before rolling back to the chosen snapshot state.
 Clicking *Yes* reverts all dataset files to the state they were in when TrueNAS created the snapshot.
 
-  
 ### Batch Operations
 
 To delete multiple snapshots, check the left column boxes for each snapshot and click the <i class="material-icons" aria-hidden="true" title="Delete">delete</i> *Delete* button that appears.
@@ -105,7 +103,6 @@ To delete multiple snapshots, check the left column boxes for each snapshot and 
 To search through the snapshots list by name, type a matching criteria into the <i class="material-icons" aria-hidden="true" title="Search">search</i> *Filter Snapshots* text area.
 The list changes to only display the snapshot names that match the filter text.
 
-  
 ## Browsing a Snapshot Collection
 
 {{< hint warning >}}

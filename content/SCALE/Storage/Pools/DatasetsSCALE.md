@@ -29,6 +29,9 @@ To quickly create a dataset with the default options, enter a name and click *Su
 You must configure the *Name and Options* fields to create the dataset.
 Datasets typically *Inherit* settings from the root or parent dataset, so you only need to enter a dataset *Name* before clicking *Submit*.
 
+{{< tabs "Dataset Options" >}}
+{{< tab "Basic Options" >}}
+
 | Setting | Description |
 |---------|-------------|
 | Name | Unique identifier for the dataset. Cannot be changed after the dataset is created. |
@@ -39,7 +42,10 @@ Datasets typically *Inherit* settings from the root or parent dataset, so you on
 
 By default, datasets *Inherit* the *Encryption Options* from the root or parent dataset.
 To configure the dataset with different encryption settings, unset *Inherit* and choose the new *Encryption Options*.
-For detailed descriptions of the encryption options, see the [Encryption article]({{< relref "StorageEncryption.md" >}}).
+For detailed descriptions of the encryption options, see the [Encryption article]({{< relref "EncryptionSCALE.md" >}}).
+
+{{< /tab >}}
+{{< tab "Other Options" >}}
 
 The *Other Options* help tune the dataset for specific data sharing protocols:
 
@@ -49,7 +55,9 @@ The *Other Options* help tune the dataset for specific data sharing protocols:
 | Case Sensitivity | *Sensitive* assumes filenames are case sensitive. *Insensitive* assumes filenames are not case sensitive. *Mixed* understands both types of filenames. Cannot be changed after the dataset is created. |
 | Share Type | Define the type of data sharing the dataset will use to optimize the dataset for that sharing protocol. Cannot be changed after the dataset is created. |
 
-{{< expand "Advanced Options" "v" >}}
+{{< /tab >}}
+{{< tab "Advanced Options" >}}
+
 Clicking *Advanced Options* adds dataset quota management tools and a few additional fields to the *Other Options*:
 
 Setting a quota defines the maximum allowed space for the dataset.
@@ -75,7 +83,9 @@ By default, many of these options *Inherit* their values from the parent dataset
 | Record Size | Logical block size in the dataset. Matching the fixed size of data, as in a database, could result in better performance. |
 | ACL Mode | Determine how [chmod](https://www.freebsd.org/cgi/man.cgi?query=chmod) behaves when adjusting file ACLs. See the [zfs](https://www.freebsd.org/cgi/man.cgi?query=zfs) `aclmode` property.<br>*Passthrough* only updates ACL entries that are related to the file or directory mode.<br>*Restricted* does not allow chmod to make changes to files or directories with a non-trivial ACL. An ACL is trivial if it can be fully expressed as a file mode without losing any access rules. Setting the ACL Mode to *Restricted* is typically used to optimize a dataset for SMB sharing, but can require further optimizations. For example, configuring an [rsync task]({{< relref "Rsync.md" >}}) with this dataset could require adding `--no-perms` in the task **Auxiliary Parameters** field. |
 | Metadata (Special) Small Block Size | Threshold block size for including small file blocks into the [special allocation class (fusion pools)]({{< relref "FusionPool.md" >}}). Blocks smaller than or equal to this value will be assigned to the special allocation class while greater blocks will be assigned to the regular class. Valid values are zero or a power of two from 512B up to 1M. The default size *0* means no small file blocks will be allocated in the special class. Before setting this property, a [special class vdev]({{< relref "FusionPool.md" >}}) must be added to the pool. |
-{{< /expand >}}
+
+{{< /tab >}}
+{{< /tabs >}}
 
 ## Managing Datasets
 
