@@ -31,15 +31,16 @@ This warning does not show when *Change User & Group Ownsership* is unset. In th
 By default, the new WebDAV share is immediately active. To create the share but not immediately activate it, unset *Enable*.  If *Change User & Group Ownsership* was unset,
 click *Save* to create the share.
 
+To enable the share immediately click the *ENABLE SERVICE* button
+
+![WebdavServiceEnable](/images/SCALE/SharingCreateServiceEnable.png "WebDAV Service Activation from Share")
+
+
 There are multiple ways to enter the edit mode for a share:
 1. Click on either the **WebDAV** header or *View Details*.  From this page click <i class="material-icons" aria-hidden="true" title="Expand">expand_more</i> then *Edit*.
 2. Clicking anywhere within the row of the share you created will open the **Edit WebDAV** section.
 
 ## Service Activation
-
-Creating a share immediately opens a dialog to activate the WebDAV service:
-
-![WebdavServiceEnable](/images/SCALE/SharingCreateServiceEnable.png "WebDAV Service Activation from Share")
 
 To later enable or disable the WebDAV system service, go to either **System Settings > Services** and toggle *WebDAV*, or **Shares** and click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> within the **WebDAV** header and select *Turn Off Service*.  To automatically start the service when TrueNAS boots, set *Start Automatically*. Click the <i class="material-icons" aria-hidden="true" title="edit">edit</i> to change the service settings.
 
