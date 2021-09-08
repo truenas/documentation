@@ -46,7 +46,7 @@ There are multiple ways to enter the edit mode for a share:
 
 ## Service Activation
 
-To later enable or disable the WebDAV system service, go to either **System Settings > Services** and toggle *WebDAV*, or go to **Shares** and click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> within the **WebDAV** header and select *Turn Off Service*.  To automatically start the service when TrueNAS boots,go to **System Settings > Services** and set *Start Automatically*.
+To later enable or disable the WebDAV system service, go to either **System Settings > Services** and toggle *WebDAV*, or go to **Shares** and click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> within the **WebDAV** header and select *Turn Off Service*.  To automatically start the service when TrueNAS boots, go to **System Settings > Services** and set *Start Automatically*.
 
 To change, or edit, the config/service settings go to either **System Settings > Services** and click the <i class="material-icons" aria-hidden="true" title="edit">edit</i> or go to **Shares** and click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> within the **WebDAV** header and select *Config Service*.
 
