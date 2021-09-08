@@ -28,12 +28,16 @@ Setting the *Confirm* checkbox and clicking *OK* will create the share.
 This warning does not show when *Change User & Group Ownsership* is unset. In that situation, shared file ownership must be manually set to the *webdav* or *www* user and group accounts.
 {{< /hint >}}
 
-By default, the new WebDAV share is immediately active. To create the share but not immediately activate it, unset *Enable*.  If *Change User & Group Ownsership* was unset,
-click *Save* to create the share.
+To create the share but not immediately activate it, unset *Enable*. Click the *Save* button to create the share.
 
-To enable the share immediately click the *ENABLE SERVICE* button
+Click the *ENABLE SERVICE* button to activate the service and set *Start Automtically" or click the *Cancel* button to keep the service inactive.
 
 ![WebdavServiceEnable](/images/SCALE/SharingCreateServiceEnable.png "WebDAV Service Activation from Share")
+
+{{< hint info >}}
+ 
+The *ENABLE SERVICE* dialog box does not show when the WebDev service is already running in **System Settings > Services**.
+{{< /hint >}}
 
 
 There are multiple ways to enter the edit mode for a share:
@@ -43,6 +47,8 @@ There are multiple ways to enter the edit mode for a share:
 ## Service Activation
 
 To later enable or disable the WebDAV system service, go to either **System Settings > Services** and toggle *WebDAV*, or **Shares** and click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> within the **WebDAV** header and select *Turn Off Service*.  To automatically start the service when TrueNAS boots, set *Start Automatically*. Click the <i class="material-icons" aria-hidden="true" title="edit">edit</i> to change the service settings.
+
+To change, or edit, the service settings, go to either **System Settings > Services** and click the <i class="material-icons" aria-hidden="true" title="edit">edit</i> or **Shares** and click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> within the **WebDAV** header and select *Config Service* to change the service settings.
 
 ![WebDAVServiceOptions](/images/SCALE/SharingWebdavServiceOptions.png "WebDAV Service Options")
 
