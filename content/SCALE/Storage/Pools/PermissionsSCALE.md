@@ -1,6 +1,6 @@
 ---
 title: "Permissions"
-weight: 60
+weight: 50
 ---
 
 {{< toc >}}

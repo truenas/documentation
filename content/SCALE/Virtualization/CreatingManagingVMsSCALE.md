@@ -32,7 +32,7 @@ AMD stopped making K10 processors in 2012-2013.
 
 ## Creating a Virtual Machine
 
-Before creating a virtual machine, you need an installer <file>.iso</file> or image file for the OS you intend to install, and a [storage pool]({{< relref "CreatingPoolsSCALE.md" >}}) available for both the virtual disk and OS install file.
+Before creating a virtual machine, you need an installer <file>.iso</file> or image file for the OS you intend to install, and a [storage pool]({{< relref "/SCALE/Storage/_index.md" >}}) available for both the virtual disk and OS install file.
 
 To create a new VM, go to **Virtualization** and click *Add* (or *Add Virtual Machines*).
 Configure each category of the VM according to your specifications, starting with the *Operating System*.
