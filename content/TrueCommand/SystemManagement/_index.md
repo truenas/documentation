@@ -45,9 +45,16 @@ Clicking *APPS* (Scale) or *Jails* (TrueNAS 12.x) opens a window that allows use
 
 #### Options Menu
 
-![DashboardSystemOptions](/images/TrueCommand/2.0/DashboardSystemOptions.png "Dashboard System Options")
+![DashboardSystemOptions](/images/TrueCommand/2.0/DashboardSystemOptions202.png "Dashboard System Options")
 
-The Options menu gives you several shortcuts to simple tasks.  **Edit** opens the edit window for the TrueNAS connection details and nickname.  **Update** updates the TrueNAS system.  **NAS Portal** opens a new tab for the full TrueNAS Web UI.  **iSCSI Volumes** opens the specific TrueNAS's iSCSI management page.  **Services** opens the services page, which allows users to directly control current service status and autostart.  **Delete** removes the system from TrueCommand. **Delete** will not delete any data stored on the TrueNAS system, however it will delete all system metrics history saved in TrueCommand's database.
+The *Options* menu has several shortcuts to simple tasks.
+
+* **Edit** opens the edit window for the TrueNAS connection details and nickname.
+* **Update** updates the TrueNAS system.
+* **Launch TrueNAS Interface** opens a new tab for the full TrueNAS Web UI.
+* **iSCSI Volumes** opens the specific TrueNAS's iSCSI management page.
+* **Services** opens the services page, which allows users to directly control current service status and autostart.
+* **Delete** removes the system from TrueCommand. This does not delete any data stored on the TrueNAS system. However, it does delete all system metrics that are saved in TrueCommand's database.
 
 #### Services
 ![DashboardServices](/images/TrueCommand/2.0/DashboardServices.png "Dashboard Services")
