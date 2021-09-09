@@ -78,14 +78,18 @@ The *Portals* tab lets users create new portals or edit existing ones in the lis
 
 To add a new portal, click *ADD* and enter the basic and IP address information.
 
-To edit an existing portal, click <i class="material-icons" aria-hidden="true" title="Settings">settings</i> next to the portal and select *Edit*.
+To edit an existing portal, click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> next to the portal and select *Edit*.
 
-![SharingISCSIWizardPortal](/images/CORE/12.0/SharingISCSIWizardPortal.png "iSCSI Wizard: Portal")
+![SharingISCSIManualPortalsForm](/images/CORE/12.0/SharingISCSIManualPortalsForm.png "iSCSI Portals Form")
 
 **Basic Info**
 | Setting | Description |
 |---------|-------|
 | Description | Optional description. Portals are automatically assigned a numeric group. |
+
+**Authentication Method and Group**
+| Setting | Description |
+|---------|-------|
 | Discovery Authentication Method | iSCSI supports multiple authentication methods that the target uses to discover valid devices. *None* allows anonymous discovery while *CHAP* and *Mutual CHAP* require authentication. |
 | Discovery Authentication Group | Group ID created in Authorized Access. Required when the Discovery Authentication Method is CHAP or Mutual CHAP. |
 
@@ -104,7 +108,7 @@ The *Initiators Groups* tab lets users create new authorized access client group
 
 To add a new initiators group, click *ADD* and either leave *Allow All Initiators* checked or configure your own allowed initiators and authorized networks.
 
-To edit an existing initiators group, click <i class="material-icons" aria-hidden="true" title="Settings">settings</i> next to the initiators group and select *Edit*.
+To edit an existing initiators group, click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> next to the initiators group and select *Edit*.
 
 | Setting | Description |
 |---------|-------|
@@ -121,7 +125,7 @@ The *Authorized Access* tab lets users create new authorized access networks or 
 
 To add a new authorized access network, click *ADD* and fill out the group, user, and peer user information.
 
-To edit an existing authorized access network, click <i class="material-icons" aria-hidden="true" title="Settings">settings</i> next to it and select *Edit*.
+To edit an existing authorized access network, click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> next to it and select *Edit*.
 
 ![SharingISCSIManualAuthorizedAccessForm](/images/CORE/12.0/SharingISCSIManualAuthorizedAccessForm.png "iSCSI Authorized Access Form")
 
@@ -152,7 +156,7 @@ The *Targets* tab lets users create new TrueNAS storage resources or edit existi
 
 To add a new target, click *ADD* and enter the basic and iSCSI group information.
 
-To edit an existing target, click <i class="material-icons" aria-hidden="true" title="Settings">settings</i> next to it and select *Edit*.
+To edit an existing target, click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> next to it and select *Edit*.
 
 ![SharingISCSIManualTargetsForm](/images/CORE/12.0/SharingISCSIManualTargetsForm.png "iSCSI Targets Form")
 
@@ -178,7 +182,7 @@ The *Extents* tab lets users create new shared storage units or edit existing on
 
 To add a new extent, click *ADD* and enter the basic, type, and compatibility information.
 
-To edit an existing extent, click <i class="material-icons" aria-hidden="true" title="Settings">settings</i> next to it and select *Edit*.
+To edit an existing extent, click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> next to it and select *Edit*.
 
 ![SharingISCSIManualExtentsForm](/images/CORE/12.0/SharingISCSIManualExtentsForm.png "iSCSI Extents Form")
 
@@ -215,7 +219,7 @@ The *Associated Targets* tab lets users create new associated TrueNAS storage re
 
 To add a new associated target, click *ADD* and fill out the information.
 
-To edit an existing associated target, click <i class="material-icons" aria-hidden="true" title="Settings">settings</i> next to it and select *Edit*.
+To edit an existing associated target, click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> next to it and select *Edit*.
 
 ![SharingISCSIManualAssociatedTargetsForm](/images/CORE/12.0/SharingISCSIManualAssociatedTargetsForm.png "iSCSI Associated Targets Form")
 
@@ -363,7 +367,7 @@ TrueNAS lets users expand Zvol and file-based LUNs to increase the available sto
 
 {{< tabs "Expanding LUNs" >}}
 {{< tab "Zvol LUN" >}}
-To expand a Zvol LUN, go to **Storage > Pools** and click the <i class="material-icons" aria-hidden="true" title="Settings">settings</i> next to the Zvol LUN, then select *Edit Zvol*.
+To expand a Zvol LUN, go to **Storage > Pools** and click the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> next to the Zvol LUN, then select *Edit Zvol*.
 
 ![ExpandingZvolLUNList](/images/CORE/ExpandingZvolLUNList.png "Edit the Zvol LUN")
 
@@ -379,7 +383,7 @@ TrueNAS also does not allow users to increase the Zvol's size past 80% of the po
 
 {{< tab "File LUN" >}}
 To expand a file-based LUN, you will need to know the path to the file. You can find the path by going to **Sharing > Block Shares (iSCSI)** and clicking the *Extents* tab. 
-Click the <i class="material-icons" aria-hidden="true" title="Settings">settings</i> next to the file-based LUN and select *Edit*. 
+Click the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> next to the file-based LUN and select *Edit*. 
 
 ![ExpandingFileLUNPath](/images/CORE/ExpandingFileLUNPath.png "Copy the Path to the File")
 
