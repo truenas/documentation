@@ -62,7 +62,7 @@ Confirm the settings are correct and click *SUBMIT*.
 {{< tab "Target Global Configuration" >}}
 The *Target Global Configuration* tab lets users configure settings that will apply to all iSCSI shares.
 
-![SharingISCSIManualPortals](/images/CORE/12.0/SharingISCSIManualPortals.png "iSCSI Portal")
+![SharingISCSIManualTargetGlobalConfig](/images/CORE/12.0/SharingISCSIManualTargetGlobalConfig.png "iSCSI Target Global Configuration")
 
 | Setting | Description |
 |---------|-------|
