@@ -242,7 +242,6 @@ Connecting to and using an iSCSI share can differ between operating systems:
 
 {{< tabs "iSCSI Use: OSes" >}}
 {{< tab "Linux" >}}
-
 ### iSCSI Utilities and Service
 
 First, open the command line and ensure that the `open-iscsi` utility is installed.
@@ -279,12 +278,12 @@ Next, enter `sudo iscsiadm \--mode node \--targetname {BASENAME}:{TARGETNAME} \-
 When the iSCSI share login succeeds, the device shared through iSCSI shows on the Linux system as an *iSCSI Disk*.
 To view a list of connected disks in Linux, enter `sudo fdisk -l`.
 
-![FDiskList](/images/CORE/FdiskList.png "fdisk -l output")
+![FDiskList](/images/CORE/FDiskList.png "fdisk -l output")
 
 Because the connected iSCSI disk is raw, you must partition it.
 Identify the iSCSI device in the list and enter `sudo fdisk {/PATH/TO/iSCSIDEVICE}`.
 
-![FDiskPartition](/images/CORE/FdiskPartition.png "fdisk partitioning")
+![FDiskPartition](/images/CORE/FDiskPartition.png "fdisk partitioning")
 
 **Shell** lists the iSCSI device path in the `sudo fdisk -l` output.
 Use the `fdisk` command defaults when partitioning the disk.
