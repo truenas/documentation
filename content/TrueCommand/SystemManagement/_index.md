@@ -80,9 +80,8 @@ Clicking on the values for CPU, Disk, and Network will open small popup windows 
 
 TrueCommand's individual indicators provide a better, "at-a-glance", indication of what the system is up to. The indicators will be visible to the right of the system nickname.
 
-* Update: ![DashboardSystemUpdateIndicator](/images/TrueCommand/2.0/TC20UpgradeIndicator.png "System Update")
-* Replication
-* Resilver/Scrub : [DashboardSystemResilverScrubIndicator](/images/TrueCommand/2.0/TC20ResilverScrubIndicator.png "System Resilver/Scrub")
-
-
 ![DashboardSystemCardMultipleIndicators](/images/TrueCommand/2.0/TC20MultipleActivityIndicators.png "System Card Multiple Indicators")
+
+* Update: ![DashboardSystemUpdateIndicator](/images/TrueCommand/2.0/TC20UpgradeIndicator.png "System Update")
+* Replication: 
+* Resilver/Scrub : ![DashboardSystemResilverScrubIndicator](/images/TrueCommand/2.0/TC20ResilverScrubIndicator.png "System Resilver/Scrub")
