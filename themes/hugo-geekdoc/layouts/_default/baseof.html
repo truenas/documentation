@@ -1,21 +1,30 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.Language.Lang }}">
+<html lang="{{ .Site.Language.Lang }}" class="color-toggle-hidden">
 
 <head>
-    {{ partial "head" . }}
+    {{ partial "head/meta" . }}
+    <title>{{ if not (eq .Kind "home") }}{{ partial "title" . }} | {{ end }}{{ .Site.Title }}</title>
+
+    {{ partial "head/favicons" . }}
+    {{ partial "head/others" . }}
+    {{ partial "head/custom" . }}
 </head>
 
 <body itemscope itemtype="https://schema.org/WebPage">
     {{ partial "svg-icon-symbols" . }}
 
-    <div class="wrapper">
+    <div class="wrapper {{ if default false .Site.Params.GeekdocDarkModeDim }}dark-mode-dim{{ end }}">
         <input type="checkbox" class="hidden" id="menu-control" />
-        {{ partial "site-header" (dict "Root" . "MenuEnabled" true) }}
+        <input type="checkbox" class="hidden" id="menu-header-control" />
+        {{ $navEnabled := default true .Page.Params.GeekdocNav }}
+        {{ partial "site-header" (dict "Root" . "MenuEnabled" $navEnabled) }}
 
         <main class="container flex flex-even">
+            {{ if $navEnabled }}
             <aside class="gdoc-nav">
                 {{ partial "menu" . }}
             </aside>
+            {{ end }}
 
             <div class="gdoc-page">
                 {{ template "main" . }}

@@ -5,7 +5,7 @@ name: 'Internal Contributor Build Preview'
 # Controls when the action will run. 
 on:
   pull_request:
-    branches: [ master, DOCS-553-TC2Docs ]
+    branches: [ master ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -13,11 +13,10 @@ on:
 jobs:
   deploy:
     if: github.event.pull_request.head.repo.full_name == github.repository
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
         with:
-          submodules: recursive  # Fetch the Docsy theme
           fetch-depth: 0         # Fetch all history for .GitInfo and .Lastmod
 
       - name: Setup Hugo
@@ -29,18 +28,25 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v2
         with:
-          node-version: '12.x'
-
+          node-version: '14'
+      
       - name: Cache dependencies
-        uses: actions/cache@v1
+        uses: actions/cache@v2.1.6
+        env:
+          cache-name: cache-node-modules
         with:
+          # npm cache files are stored in `~/.npm` on Linux/macOS
           path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-node-
-
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+      
       - run: npm ci
-      - run: hugo -d public --gc --minify
+      
+      - name: Build Hugo Site
+        run: hugo -d public --gc --minify
       
       - name: Preview
         uses: afc163/surge-preview@v1
@@ -64,6 +70,6 @@ jobs:
         uses: ruzickap/action-my-broken-link-checker@v2
         with:
           url: "https://${{ steps.preview_step.outputs.preview_url }}"
-          cmd_params: "--skip-tls-verification --timeout=30 --rate-limit=30 --max-connections=10 --color=always --exclude=docs/files/ --exclude=files/TrueNASCollection.vssx --exclude=update.freenas.org --exclude=microsoft.com --exclude=oracle.com --exclude=amazon.com --exclude=apple.com --exclude=fastmail.com --exclude=linode.com --exclude=community.openvpn.net --exclude=tools.ietf.org --exclude=github.com --exclude=freebsd.org --exclude=jira.ixsystems.com --exclude=linkedin.com --exclude=googletagmanager.com --exclude=youtube.com --exclude=vmware.com --exclude=cyberciti.biz --exclude=truenas-documentation-deploy.surge.sh --exclude=tc2api.html --exclude=/docs/images/tn-openstorage-logo.png --exclude=https://www.backblaze.com/ --exclude=https://discord.com/invite/Q3St5fPETd"
+          cmd_params: "--skip-tls-verification --timeout=30 --rate-limit=30 --max-connections=10 --color=always --exclude=docs/files/ --exclude=files/TrueNASCollection.vssx --exclude=update.freenas.org --exclude=microsoft.com --exclude=oracle.com --exclude=amazon.com --exclude=apple.com --exclude=fastmail.com --exclude=linode.com --exclude=community.openvpn.net --exclude=tools.ietf.org --exclude=github.com --exclude=freebsd.org --exclude=jira.ixsystems.com --exclude=linkedin.com --exclude=googletagmanager.com --exclude=youtube.com --exclude=vmware.com --exclude=cyberciti.biz --exclude=truenas-documentation-deploy.surge.sh --exclude=tc2api.html --exclude=/docs/images/tn-openstorage-logo.png --exclude=https://www.backblaze.com/ --exclude=https://discord.com/invite/Q3St5fPETd --exclude=https://www.veeam.com/documentation-guides-datasheets.html --exclude=https://shop.westerndigital.com/products/internal-drives/wd-red-plus-sata-2-5-hdd#WD10JFCX"
           run_timeout: 600
           debug: true
