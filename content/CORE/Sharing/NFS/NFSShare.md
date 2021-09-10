@@ -69,7 +69,7 @@ NFS service settings can be configured by clicking <i class="fa fa-pen" aria-hid
 |-----------------------------------|-----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Number of servers                 | integer   | Specify how many servers to create. Increase if NFS client responses are slow. Keep this less than or equal to the number of CPUs reported by `sysctl -n kern.smp.cpus` to limit CPU context switching. |
 | Bind IP Addresses                 | drop down | Select IP addresses to listen to for NFS requests. Leave empty for NFS to listen to all available addresses. |
-| Enable NFSv4                      | checkbox  | Set to switch from NFSv3 to NFSv4. |
+| Enable NFSv4                      | checkbox  | Set to switch from NFSv3 to NFSv4.  |
 | NFSv3 ownership model for NFSv4   | checkbox  | Set when NFSv4 ACL support is needed without requiring the client and the server to sync users and groups. |
 | Require Kerberos for NFSv4        | checkbox  | Set to force NFS shares to fail if the Kerberos ticket is unavailable. |
 | Serve UDP NFS clients             | checkbox  | Set if NFS clients need to use the User Datagram Protocol (UDP). |
@@ -97,3 +97,7 @@ For example, `sudo mount -t nfs 10.239.15.110:/mnt/pool1/photoDataset /mnt` will
 
 By default, anyone that connects to the NFS share only has the *read* permission.
 To change the default permissions, edit the share, open the *Advanced Options*, and change the **Access** settings.
+
+{{< hint warning >}}
+ESXI 6.7 or later is required for read/write functionality with NFSv4 shares.
+{{< /hint >}}
