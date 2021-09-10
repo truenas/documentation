@@ -19,7 +19,7 @@ The *General Settings* window lets users edit the system's IP address/hostname, 
 
 ## Update
 
-The update button in the system settings menu allows users to update the system to the latest build.
+The update button in the system settings menu allows users to update the system to the latest build. During a system update the system card will change to indicate that the system is offline and finishing the update.
 
 ## Launch TrueNAS Interface
 
