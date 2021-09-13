@@ -3,6 +3,8 @@ title: "Interface Preferences"
 weight: 10
 ---
 
+
+
 {{< toc >}}
 
 There are a few adjustable interface preferences and a built-in theme editor for creating your own TrueNAS color schemes.
