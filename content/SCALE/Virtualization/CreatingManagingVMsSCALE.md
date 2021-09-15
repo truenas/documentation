@@ -52,12 +52,13 @@ Additional notes:
 * The *VirtIO* network interface requires a guest OS that supports VirtIO paravirtualized network drivers.
 {{< /expand >}}
 
-{{< tabs "Examples of VM Installations" >}}
+{{< tabs "Examples of Specific OS VM Installations" >}}
 {{< tab "Debian" >}}
 
 Go to https://www.debian.org to download the latest Debian Installation file.
 
 {{< /tab >}}
+{{< /tabs >}}
 
 ### Adding and Removing Devices
 
