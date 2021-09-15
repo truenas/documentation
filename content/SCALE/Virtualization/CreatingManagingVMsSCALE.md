@@ -82,3 +82,5 @@ If the VM you created has no Guest OS installed, The VM *State* toggle and <i cl
 The *State* toggle and <i class="material-icons" aria-hidden="true" title="Stop Button">stop</i> *Stop* button send an ACPI power down command to the VM operating system, but since no OS is installed, the commands time out.
 Use the *Power Off* button instead.
 {{< /hint >}}
+
+## Example: Installing a Debian VM
