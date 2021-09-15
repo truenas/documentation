@@ -62,14 +62,20 @@ Go to https://www.debian.org to download the latest Debian Installation file.
 
 From the Virtualization menu, click the ADD button to start the VM Wizard.
 
+![SCALEDebianVMOperatingSystem](/images/SCALE/ScaleDebianVMOsSystem.png "Debian VM Add: OS")
+
 Operating System
 Guest Operating System: Linux
 Name: 
 Descrition:
 Click the Next Button
 
+![SCALEDebianVMCpuMemory](/images/SCALE/ScaleDebianVMCpuMemory.png "Debian VM Add: CPU Memory")
+
 CPU and Memory
 Change the memory size to 1024 and click the Next button
+
+![SCALEDebianVMDisks](/images/SCALE/ScaleDebianVMDisks.png "Debian VM Add: Disks")
 
 Disks
 Select Create new disk image
@@ -77,17 +83,25 @@ Select the Zvol location
 Chane the size to 30 Gib
 Click the Next button
 
+![SCALEDebianVMNetwork](/images/SCALE/ScaleDebianVMNetwork.png "Debian VM Add: Network")
+
 Network Interface
 Attach NIC: Select the physical interface to associate with the VM.
 Click the Next button.
+
+![SCALEDebianVMInstallationMedia](/images/SCALE/ScaleDebianVMInstallMedia.png "Debian VM Add: Installation Media")
 
 Installation Media:
 In this case I have uploaded the installation media to /mnt/tank2/isostorage/. Click on the installation ISO, debian-11.0.0-amd64-netinst.iso in this case. 
 If the iso isn'r uploaded, select the "Upload an installer image file" box, slect a dataset to upload the iso to, click the Choose file button, and click the Upload button.
 Click the Next button.
 
+![SCALEDebianVMGpu](/images/SCALE/ScaleDebianVMGPU.png "Debian VM Add: GPU")
+
 GPU
 Click the Next button
+
+![SCALEDebianVMConfirm](/images/SCALE/ScaleDebianVMInstallConfirm.png "Debian VM Add: Install confirm")
 
 Confirm Options
 Verify the information is correct and then click the Submit button.
