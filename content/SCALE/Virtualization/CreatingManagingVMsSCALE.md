@@ -52,6 +52,37 @@ Additional notes:
 * The *VirtIO* network interface requires a guest OS that supports VirtIO paravirtualized network drivers.
 {{< /expand >}}
 
+### Adding and Removing Devices
+
+After creating the VM, add and remove virtual devices by expanding the VM entry in **Virtualization** and clicking <i class="material-icons" aria-hidden="true" title="Devices">device_hub</i>*Devices*.
+
+![VirtualMachinesDevicesSCALE](/images/SCALE/VirtualMachinesDevicesSCALE.png "VM Devices")
+
+Device notes:
+
+* The virtual machine attempts to boot from devices according to the *Device Order*, starting with *1000*, then ascending.
+* *CD-ROM* devices allow booting a VM from a CD-ROM image like an installation CD.
+  The CD image must be available in the system storage.
+
+## Managing the Virtual Machine
+
+After creating the VM and configuring any devices for it, manage the VM by expanding its entry in **Virtualization**.
+
+![VirtualMachinesOptionsSCALE](/images/SCALE/VirtualMachinesOptionsSCALE.png "VM Options")
+
+When the VM is active, it will display options for <i class="material-icons" aria-hidden="true" title="VNC">settings_ethernet</i> *VNC* and <i class="material-icons" aria-hidden="true" title="Serial">keyboard_arrow_right</i> *Serial* connections.
+
+If the *VNC* connection screen appears distorted, try adjusting the VNC device resolution.
+
+Using the *State* toggle or clicking <i class="material-icons" aria-hidden="true" title="Stop Button">stop</i> *Stop* follows a standard shut down procedure to cleanly shut down the running VM.
+Clicking <i class="material-icons" aria-hidden="true" title="Power Off Button">power_settings_new</i> *Power Off* immediately halts and deactivates the VM, similar to unplugging a computer.
+
+{{< hint info >}}
+If the VM you created has no Guest OS installed, The VM *State* toggle and <i class="material-icons" aria-hidden="true" title="Stop Button">stop</i> *Stop* button might not function as expected.
+The *State* toggle and <i class="material-icons" aria-hidden="true" title="Stop Button">stop</i> *Stop* button send an ACPI power down command to the VM operating system, but since no OS is installed, the commands time out.
+Use the *Power Off* button instead.
+{{< /hint >}}
+
 {{< tabs "Examples of Specific OS VM Installations" >}}
 {{< tab "Example Installations" >}}
 
@@ -64,21 +95,22 @@ From the Virtualization menu, click the ADD button to start the VM Wizard.
 
 **Operating System:**
 * Guest Operating System: Linux
-* Name: 
-* Descrition:
+* Name: debianVM
+* Description: Debian VM
 * Click the Next Button
 
 ![SCALEDebianVMOperatingSystem](/images/SCALE/ScaleDebianVMOsSystem.png "Debian VM Add: OS")
 
 **CPU and Memory:**
-* Change the memory size to 1024 and click the Next button
+* Change the memory size to 1024 MiB.
+* Click the Next button.
 
 ![SCALEDebianVMCpuMemory](/images/SCALE/ScaleDebianVMCpuMemory.png "Debian VM Add: CPU Memory")
 
 **Disks:**
-* Select Create new disk image
-* Select the Zvol location
-* Change the size to 30 Gib
+* Select *Create new disk image*
+* Select the Zvol Location
+* Change the size to 30 GiB
 * Click the Next button
 
 ![SCALEDebianVMDisks](/images/SCALE/ScaleDebianVMDisks.png "Debian VM Add: Disks")
@@ -90,8 +122,8 @@ From the Virtualization menu, click the ADD button to start the VM Wizard.
 ![SCALEDebianVMNetwork](/images/SCALE/ScaleDebianVMNetwork.png "Debian VM Add: Network")
 
 **Installation Media:**
-* In this case I have uploaded the installation media to /mnt/tank2/isostorage/. Click on the installation ISO, debian-11.0.0-amd64-netinst.iso in this case. 
-Note: If the iso isn't uploaded, select the "Upload an installer image file" box, slect a dataset to upload the iso to, click the Choose file button, and click the Upload button.
+* In this case the installion iso has already been uploaded to /mnt/tank2/isostorage/. Click on the installation ISO, debian-11.0.0-amd64-netinst.iso. 
+* Note: If the iso hadn't been uploaded, the user would have to select the "Upload an installer image file" box, slect a dataset to upload the iso to, click the Choose file button, and click the Upload button.
 * Click the Next button.
 
 ![SCALEDebianVMInstallationMedia](/images/SCALE/ScaleDebianVMInstallMedia.png "Debian VM Add: Installation Media")
@@ -109,7 +141,7 @@ Note: If the iso isn't uploaded, select the "Upload an installer image file" box
 
 Expand the VM by clicking on the down pointing arrow to the right of the new VM. Click the Start button
 
-Click the Display button
+To start the Debian Installtion, click the Display button
 
 
 **Debian Graphical Install**
@@ -188,35 +220,4 @@ To test if it now boots up on startup:
 
 {{< /tab >}}
 {{< /tabs >}}
-
-### Adding and Removing Devices
-
-After creating the VM, add and remove virtual devices by expanding the VM entry in **Virtualization** and clicking <i class="material-icons" aria-hidden="true" title="Devices">device_hub</i>*Devices*.
-
-![VirtualMachinesDevicesSCALE](/images/SCALE/VirtualMachinesDevicesSCALE.png "VM Devices")
-
-Device notes:
-
-* The virtual machine attempts to boot from devices according to the *Device Order*, starting with *1000*, then ascending.
-* *CD-ROM* devices allow booting a VM from a CD-ROM image like an installation CD.
-  The CD image must be available in the system storage.
-
-## Managing the Virtual Machine
-
-After creating the VM and configuring any devices for it, manage the VM by expanding its entry in **Virtualization**.
-
-![VirtualMachinesOptionsSCALE](/images/SCALE/VirtualMachinesOptionsSCALE.png "VM Options")
-
-When the VM is active, it will display options for <i class="material-icons" aria-hidden="true" title="VNC">settings_ethernet</i> *VNC* and <i class="material-icons" aria-hidden="true" title="Serial">keyboard_arrow_right</i> *Serial* connections.
-
-If the *VNC* connection screen appears distorted, try adjusting the VNC device resolution.
-
-Using the *State* toggle or clicking <i class="material-icons" aria-hidden="true" title="Stop Button">stop</i> *Stop* follows a standard shut down procedure to cleanly shut down the running VM.
-Clicking <i class="material-icons" aria-hidden="true" title="Power Off Button">power_settings_new</i> *Power Off* immediately halts and deactivates the VM, similar to unplugging a computer.
-
-{{< hint info >}}
-If the VM you created has no Guest OS installed, The VM *State* toggle and <i class="material-icons" aria-hidden="true" title="Stop Button">stop</i> *Stop* button might not function as expected.
-The *State* toggle and <i class="material-icons" aria-hidden="true" title="Stop Button">stop</i> *Stop* button send an ACPI power down command to the VM operating system, but since no OS is installed, the commands time out.
-Use the *Power Off* button instead.
-{{< /hint >}}
 
