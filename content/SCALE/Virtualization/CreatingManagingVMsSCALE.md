@@ -52,6 +52,13 @@ Additional notes:
 * The *VirtIO* network interface requires a guest OS that supports VirtIO paravirtualized network drivers.
 {{< /expand >}}
 
+{{< tabs "Examples of VM Installations" >}}
+{{< tab "Debian" >}}
+
+Go to https://www.debian.org to download the latest Debian Installation file.
+
+{{< /tab >}}
+
 ### Adding and Removing Devices
 
 After creating the VM, add and remove virtual devices by expanding the VM entry in **Virtualization** and clicking <i class="material-icons" aria-hidden="true" title="Devices">device_hub</i>*Devices*.
@@ -83,4 +90,3 @@ The *State* toggle and <i class="material-icons" aria-hidden="true" title="Stop 
 Use the *Power Off* button instead.
 {{< /hint >}}
 
-## Example: Installing a Debian VM
