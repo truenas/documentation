@@ -53,9 +53,108 @@ Additional notes:
 {{< /expand >}}
 
 {{< tabs "Examples of Specific OS VM Installations" >}}
+{{< tab "Example Installations" >}}
+
+{{< /tab >}}
 {{< tab "Debian" >}}
 
 Go to https://www.debian.org to download the latest Debian Installation file.
+
+From the Virtualization menu, click the ADD button to start the VM Wizard.
+
+Operating System
+Guest Operating System: Linux
+Name: 
+Descrition:
+Click the Next Button
+
+CPU and Memory
+Change the memory size to 1024 and click the Next button
+
+Disks
+Select Create new disk image
+Select the Zvol location
+Chane the size to 30 Gib
+Click the Next button
+
+Network Interface
+Attach NIC: Select the physical interface to associate with the VM.
+Click the Next button.
+
+Installation Media:
+In this case I have uploaded the installation media to /mnt/tank2/isostorage/. Click on the installation ISO, debian-11.0.0-amd64-netinst.iso in this case. 
+If the iso isn'r uploaded, select the "Upload an installer image file" box, slect a dataset to upload the iso to, click the Choose file button, and click the Upload button.
+Click the Next button.
+
+GPU
+Click the Next button
+
+Confirm Options
+Verify the information is correct and then click the Submit button.
+
+Expand the VM by clicking on the down poiy=ting arrow to the right of the new VM. Click the Start button
+
+Click the Display button
+
+Press the Retuen key, on the keyboard, to start the Debian Graphical Install.
+Language: English, click the continue button.
+Location: United States, click the continue button.
+Keymap: American English, click the continue button.
+Installation begins
+If the Network Configuration fails, click the Continue button.
+Do not configure the network at this time, click the Continue button.
+Enter a Hostname, click the Continue button.
+Enter the root password and re-enter the root password. Click the Continue button.
+Enter a New User name, click the Continue button.
+Select the uaername for your account (it should already be filled in), click the Continue button.
+Enter and re-enter the password for the user account, then click the Continue button.
+Choose the time zone, Eastern in this case, and click the Continue button.
+Disk Detection should begin
+Partition disks: select Guided - use entire disk, click the Continue button.
+Select the avaialble disk, click the Continue button.
+Select "All files in one partition (secommended for new users), click the Continue button.
+Select "Finish partitioning and write changes to disk, click the Continue button.
+Select "Yes" to "Write the changes to disks?", click the Continue button.
+Installing the base system
+Select "No" to the question "Scan extra installation media, click the Continue button.
+Select "Yes" when asked "Continue without a network mirror, click the Continue button.
+Installing Software
+Select "No" when asked "Participate in the package usage survey" , click the Continue button.
+Select Standard system utilities, click the Continue button.
+Click the Continue botton when the installation is finished.
+
+Close the Display window and Click the Power Off button to stop the new VM.
+Click the Devices button.
+Click the 3 dots next to the CDROM, select Delete, and click the Delete Device button.
+Click Virtualization and expand the new VM by clicking on the down poiting arrow to the right.
+Click the Start button.
+Click the Display button.
+
+To set the grub file to run on startup instead of having to maually start it up each time:
+at the Shell prompt
+type FS0:
+Type ls
+There needs to be a startup.nsh file is this directory with the command to start up debian.
+
+To create this file type edit startup.nsh
+in the editor type:
+FS0:
+cd EFI
+CD Debian
+grubx64.efi
+
+Type the Control+s keys(Command+s for Mac OS) and then the return key
+Type the Control+q keys to quit
+Close the Dispaly window
+
+Power off the VM
+Click the Start button and then click the Dispaly button
+
+Log into your Debian VM.
+
+
+
+
 
 {{< /tab >}}
 {{< /tabs >}}
