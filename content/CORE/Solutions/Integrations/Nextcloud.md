@@ -53,7 +53,7 @@ Once Nextcloud has installed successfully, you can then begin to manage your ins
 
 ![NextcloudPostInstall](/images/CORE/12.0/SolutionsIntegrationsNextcloudPostInstall.png "Nextcloud Post Install")
 
-Select *POST INSTALL NOTES* to obtain your *Nextcloud Admin User* and *Nextcloud Admin Password* information.  Select *MANAGE* and you will be directed to the *Nextcloud* login page within your browser.
+Select *POST INSTALL NOTES* to obtain your *Nextcloud Admin User* and *Nextcloud Admin Password* information.  Select *MANAGE* and you will be directed to the Nextcloud login page within your browser.
 
 ![NextcloudLogin](/images/CORE/12.0/SolutionsIntegrationsNextcloudLogin.png "Nextcloud Login")
 
@@ -71,12 +71,14 @@ Enter the credentials obtained from *POST INSTALL NOTES* and click *Log in*.  Yo
 * Go to **Network > Interfaces**, edit the intended application interface, and set *Disable Hardware Offloading*.
 {{< /expand >}}
 
-To see the Applications catalog, go to the **Apps** screen.  Going to the **Apps** screen for the first time prompts to select a location on the system for storing application related data.  ![JailsApplicationStorage](/images/SCALE/SCALEJailAppsStorage.png "Choosing a Storage Pool for Applications")
+To see the Applications catalog, go to the **Apps** screen.  Going to the **Apps** screen for the first time prompts to select a location on the system for storing application related data.  
+![JailsApplicationStorage](/images/SCALE/SCALEJailAppsStorage.png "Choosing a Storage Pool for Applications")
 
 By default, this location stores all data related to applications, including downloaded applications, data managed by applications, and any application snapshots.
 
-> Disconnecting or deleting the pool that stores application data can result in **permanent data loss!**
-> Make sure to back up any critical data or snapshots that are stored in a application before changing the storage configuration.
+{{< hint warning >}}
+ Disconnecting or deleting the pool that stores application data can result in **permanent data loss!** Make sure to back up any critical data or snapshots that are stored in a application before changing the storage configuration.
+{{< /hint >}}
 
 To change the applications storage location, click *Settings* on the Applications page and select *Choose Pool* from the dropdown menu.
 
@@ -106,7 +108,7 @@ For *Nextcloud Configuration* the *Username* defaults to *admin* and *Password* 
 
 ![SCALENextcloudConfiguration](/images/SCALE/SCALENextcloudConfiguration.png "SCALE Nextcloud Configuration")
 
-For *Storage*, *Scaling/Upgrading Policy* and *Advanced DNS Settings* the defaults can be used for basic installation by clicking *Next* for each.  To *Confirm Options*, review the information presented and ensure that it is all correct.  Click *Submit*.
+For *Storage*, *Scaling/Upgrading Policy* and *Advanced DNS Settings* the defaults can be used for basic installation by clicking *Next* or bypassing and going directly to *Confirm Options*.  To *Confirm Options*, review the information presented and ensure that it is all correct.  Click *Submit*.
 
 ![SCALENextcloudConfirmOptions](/images/SCALE/SCALENextcloudConfirmOptions.png "SCALE Nextcloud Confirm Options")
 
@@ -120,9 +122,8 @@ Enter the credentials specified during installation and click *Log in*.  You wil
 {{< /tab >}}
 {{< /tabs >}}
 
-
 Refer to the Nextcloud documentation for details about using the Nextcloud platform:
 
 * [Administrators Manual](https://docs.nextcloud.com/server/latest/admin_manual/)
 * [Users Manual](https://docs.nextcloud.com/server/latest/user_manual/en/)
-* [Nextcloud Developer Documentation](https://docs.nextcloud.com/server/latest/developer_manual/):
+* [Nextcloud Developer Documentation](https://docs.nextcloud.com/server/latest/developer_manual/)
