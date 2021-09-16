@@ -98,7 +98,7 @@ From the Virtualization menu, click the ADD button to start the VM Wizard.
 * Guest Operating System: Linux
 * Name: debianVM
 * Description: Debian VM
-* Click the Next Button
+* Click the Next Button.
 
 ![SCALEDebianVMOperatingSystem](/images/SCALE/ScaleDebianVMOsSystem.png "Debian VM Add: OS")
 
@@ -109,10 +109,10 @@ From the Virtualization menu, click the ADD button to start the VM Wizard.
 ![SCALEDebianVMCpuMemory](/images/SCALE/ScaleDebianVMCpuMemory.png "Debian VM Add: CPU Memory")
 
 **Disks values entered:**
-* Select *Create new disk image*
-* Select the Zvol Location
-* Change the size to 30 GiB
-* Click the Next button
+* Select *Create new disk image*.
+* Select the Zvol Location.
+* Change the size to 30 GiB.
+* Click the Next button.
 
 ![SCALEDebianVMDisks](/images/SCALE/ScaleDebianVMDisks.png "Debian VM Add: Disks")
 
@@ -130,7 +130,7 @@ From the Virtualization menu, click the ADD button to start the VM Wizard.
 ![SCALEDebianVMInstallationMedia](/images/SCALE/ScaleDebianVMInstallMedia.png "Debian VM Add: Installation Media")
 
 **GPU values entered:**
-* Click the Next button
+* Click the Next button.
 
 ![SCALEDebianVMGpu](/images/SCALE/ScaleDebianVMGPU.png "Debian VM Add: GPU")
 
@@ -140,12 +140,14 @@ From the Virtualization menu, click the ADD button to start the VM Wizard.
 ![SCALEDebianVMConfirm](/images/SCALE/ScaleDebianVMInstallConfirm.png "Debian VM Add: Install confirm")
 
 
-Expand the VM by clicking on the down pointing arrow to the right of the new VM. Click the Start button
+Expand the VM by clicking on the down pointing arrow to the right of the new VM. Click the Start button.
 
-Click the Display button to step through the Debian installation. The following are the steps/values entered in this example.
+Click the Display button to step through the Debian installation.
+
+{{< expand "The steps/values entered during the example Debian Graphic installation." "v" >}}
 
 **Debian Graphical Install**
-* Press the Retuen key, on the keyboard, to start the Debian Graphical Install.
+* Press the Return key, on the keyboard, to start the Debian Graphical Install.
 * Language: English, click the continue button.
 * Location: United States, click the continue button.
 * Keymap: American English, click the continue button.
@@ -179,8 +181,9 @@ Installing Software
 * Select "No" when asked "Participate in the package usage survey" , click the Continue button.
 * Select Standard system utilities, click the Continue button.
 * Click the Continue botton when the installation is finished.
+{{< /expand >}}
 
-Close the Display window. In the VM's expanded section click the Power Off button to stop the new VM.
+Close the Display window after the installtion is finished. In the VM's expanded section click the Power Off button to stop the new VM.
 
 Click the Devices button.
 
