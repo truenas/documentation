@@ -119,7 +119,7 @@ These utilities provide much more information about RAM and memory caching syste
 
 {{< expand "Hashing Note" "v" >}}
 Deduplication hashes (calculates a digital signature) for the data in each block to be written to disk and checking to see if data already exists in the pool with the same hash.
-When a block exists with the same hash, then the block is not written and a new pointer is written to the DDT and saving that space. Depending how the hash is calculated, there is a possibility that two different blocks could have the same hash and cause the file system to believe the blocks are the same. When choosing a hash, choose one that is complex, like *SHA 256*, *SHA 512*, and *Skein*, to minimize this risk.
+When a block exists with the same hash, then the block is not written and a new pointer is written to the DDT and saving that space. Depending how the hash is calculated, there is a possibility that two different blocks could have the same hash and cause the file system to believe the blocks are the same. When choosing a hash, choose one that is complex, like *SHA 256*, *SHA 512*, and *Skein*, to minimize this risk. A *SHA 512* checksum hash is recommended for 64-bit platforms. To manually change at the time dedup is enabled on a pool, or any dataset/volume within a pool, use <code>zfs set checksum=sha512 <pool name></code>.
 {{< /expand >}}
 
 ## Additional Resources
