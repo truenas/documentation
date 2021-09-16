@@ -89,8 +89,8 @@ Use the *Power Off* button instead.
 {{< tab "Debian" >}}
 
 Prerequisites:
-The latest [Debian installation file](https://www.debian.org) has been downloaded.
-The iso has been uploaded to a dataset on the TrueNAS SCALE system.
+* The latest [Debian installation file](https://www.debian.org) has been downloaded.
+* The iso has been uploaded to a dataset on the TrueNAS SCALE system.
 
 From the Virtualization menu, click the ADD button to start the VM Wizard.
 
@@ -187,21 +187,19 @@ Close the Display window after the installtion is finished. In the VM's expanded
 
 Click the Devices button.
 
-Click the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; and *Delete* next to the CDROM. Click the Delete Device button.
+Remove the CDROM from the Devices by clicking the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; and selecting *Delete*. Click the Delete Device button.
 
 Click Virtualization and expand the new VM by clicking on the down pointing arrow to the right.
 
 Click the Start button.
 
-Click the Display button.
-
-{{< hint warning >}}
-The grub file does not run when the VM is started. This can be done manually, after each start,  at the shell prompt by typing:
+Click the Display button. The grub file does not run when the VM is started. This can be done manually, after each start,  at the shell prompt.
 * Type FS0: and the Reurn key on the Keyboard.
 * Type cd EFI and the Reurn key on the Keyboard.
 * Type cd Debian and the Reurn key on the Keyboard
 * Type grubx64.efi
 
+{{< hint warning >}}
 To set it up to automatically start up create the startup.nsh file at the root directory on the vm. At the shell prompt type *edit startup.nsh*. In the editor type:
 * Type FS0: and the Reurn key on the Keyboard.
 * Type cd EFIand the Reurn key on the Keyboard.
@@ -209,7 +207,7 @@ To set it up to automatically start up create the startup.nsh file at the root d
 * Type grubx64.efi
 * Type the Control+s keys(Command+s for Mac OS) and then the return key.
 * Type the Control+q keys to quit.
-* 
+ 
 Close the Dispaly window
 
 To test if it now boots up on startup:
