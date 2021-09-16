@@ -70,9 +70,9 @@ After creating the VM and configuring any devices for it, manage the VM by expan
 
 ![VirtualMachinesOptionsSCALE](/images/SCALE/VirtualMachinesOptionsSCALE.png "VM Options")
 
-When the VM is active, it will display options for <i class="material-icons" aria-hidden="true" title="VNC">settings_ethernet</i> *VNC* and <i class="material-icons" aria-hidden="true" title="Serial">keyboard_arrow_right</i> *Serial* connections.
+When the VM is active, it will display options for <i class="material-icons" aria-hidden="true" title="VNC">settings_ethernet</i> *Display* and <i class="material-icons" aria-hidden="true" title="Serial">keyboard_arrow_right</i> *Serial* connections.
 
-If the *VNC* connection screen appears distorted, try adjusting the VNC device resolution.
+If the *Display* connection screen appears distorted, try adjusting the display device resolution.
 
 Using the *State* toggle or clicking <i class="material-icons" aria-hidden="true" title="Stop Button">stop</i> *Stop* follows a standard shut down procedure to cleanly shut down the running VM.
 Clicking <i class="material-icons" aria-hidden="true" title="Power Off Button">power_settings_new</i> *Power Off* immediately halts and deactivates the VM, similar to unplugging a computer.
@@ -83,13 +83,12 @@ The *State* toggle and <i class="material-icons" aria-hidden="true" title="Stop 
 Use the *Power Off* button instead.
 {{< /hint >}}
 
-{{< tabs "Examples of Specific OS VM Installations" >}}
-{{< tab "Example Installations" >}}
+## Examples of Specific OS VM Installations
 
-{{< /tab >}}
+{{< tabs "Examples of Specific OS VM Installations" >}}
 {{< tab "Debian" >}}
 
-Go to https://www.debian.org to download the latest Debian Installation file.
+Download the latest [Debian installation file](https://www.debian.org).
 
 From the Virtualization menu, click the ADD button to start the VM Wizard.
 
