@@ -88,11 +88,13 @@ Use the *Power Off* button instead.
 {{< tabs "Examples of Specific OS VM Installations" >}}
 {{< tab "Debian" >}}
 
-Download the latest [Debian installation file](https://www.debian.org).
+Prerequisites:
+The latest [Debian installation file](https://www.debian.org) has been downloaded.
+The iso has been uploaded to a dataset on the TrueNAS SCALE system.
 
 From the Virtualization menu, click the ADD button to start the VM Wizard.
 
-**Operating System:**
+**Operating System values entered:**
 * Guest Operating System: Linux
 * Name: debianVM
 * Description: Debian VM
@@ -100,13 +102,13 @@ From the Virtualization menu, click the ADD button to start the VM Wizard.
 
 ![SCALEDebianVMOperatingSystem](/images/SCALE/ScaleDebianVMOsSystem.png "Debian VM Add: OS")
 
-**CPU and Memory:**
+**CPU and Memory values entered:**
 * Change the memory size to 1024 MiB.
 * Click the Next button.
 
 ![SCALEDebianVMCpuMemory](/images/SCALE/ScaleDebianVMCpuMemory.png "Debian VM Add: CPU Memory")
 
-**Disks:**
+**Disks values entered:**
 * Select *Create new disk image*
 * Select the Zvol Location
 * Change the size to 30 GiB
@@ -114,20 +116,20 @@ From the Virtualization menu, click the ADD button to start the VM Wizard.
 
 ![SCALEDebianVMDisks](/images/SCALE/ScaleDebianVMDisks.png "Debian VM Add: Disks")
 
-**Network Interface:**
+**Network Interface values entered:**
 * Attach NIC: Select the physical interface to associate with the VM.
 * Click the Next button.
 
 ![SCALEDebianVMNetwork](/images/SCALE/ScaleDebianVMNetwork.png "Debian VM Add: Network")
 
-**Installation Media:**
-* In this case the installion iso has already been uploaded to /mnt/tank2/isostorage/. Click on the installation ISO, debian-11.0.0-amd64-netinst.iso. 
-* Note: If the iso hadn't been uploaded, the user would have to select the "Upload an installer image file" box, slect a dataset to upload the iso to, click the Choose file button, and click the Upload button.
+**Installation Media values entered:**
+* In this case the installation iso was uploaded to /mnt/tank2/isostorage/. Click on the installation ISO, debian-11.0.0-amd64-netinst.iso. 
+* Note: If the iso hadn't been uploaded previously, the user would select the "Upload an installer image file" box, select a dataset to upload the iso to, click the Choose file button, and click the Upload button. Wait for the upload to complete.
 * Click the Next button.
 
 ![SCALEDebianVMInstallationMedia](/images/SCALE/ScaleDebianVMInstallMedia.png "Debian VM Add: Installation Media")
 
-**GPU:**
+**GPU values entered:**
 * Click the Next button
 
 ![SCALEDebianVMGpu](/images/SCALE/ScaleDebianVMGPU.png "Debian VM Add: GPU")
@@ -140,11 +142,9 @@ From the Virtualization menu, click the ADD button to start the VM Wizard.
 
 Expand the VM by clicking on the down pointing arrow to the right of the new VM. Click the Start button
 
-To start the Debian Installtion, click the Display button
-
+Click the Display button to step through the Debian installation. The following are the steps/values entered in this example.
 
 **Debian Graphical Install**
-I this example I used the following values:
 * Press the Retuen key, on the keyboard, to start the Debian Graphical Install.
 * Language: English, click the continue button.
 * Location: United States, click the continue button.
@@ -157,7 +157,7 @@ Installation begins
 * Enter a Hostname, click the Continue button.
 * Enter the root password and re-enter the root password. Click the Continue button.
 * Enter a New User name, click the Continue button.
-* Select the uaername for your account (it should already be filled in), click the Continue button.
+* Select the username for your account (it should already be filled in), click the Continue button.
 * Enter and re-enter the password for the user account, then click the Continue button.
 * Choose the time zone, Eastern in this case, and click the Continue button.
 
@@ -165,7 +165,7 @@ Disk Detection should begin
 
 * Partition disks: select Guided - use entire disk, click the Continue button.
 * Select the avaialble disk, click the Continue button.
-* Select "All files in one partition (secommended for new users), click the Continue button.
+* Select "All files in one partition (recommended for new users), click the Continue button.
 * Select "Finish partitioning and write changes to disk, click the Continue button.
 * Select "Yes" to "Write the changes to disks?", click the Continue button.
 
@@ -180,13 +180,13 @@ Installing Software
 * Select Standard system utilities, click the Continue button.
 * Click the Continue botton when the installation is finished.
 
-Close the Display window and Click the Power Off button to stop the new VM.
+Close the Display window. In the VM's expanded section click the Power Off button to stop the new VM.
 
 Click the Devices button.
 
-Click the 3 dots next to the CDROM, select Delete, and click the Delete Device button.
+Click the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; and *Delete* next to the CDROM. Click the Delete Device button.
 
-Click Virtualization and expand the new VM by clicking on the down poiting arrow to the right.
+Click Virtualization and expand the new VM by clicking on the down pointing arrow to the right.
 
 Click the Start button.
 
