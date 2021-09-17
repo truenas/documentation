@@ -380,10 +380,6 @@ Finally, go to *This PC* or *My Computer* in File Explorer. The new iSCSI volume
 ![WindowsiSCSIVolumeLocation](/images/CORE/WindowsiSCSIVolumeLocation.png "Windows iSCSI Volume Location")
 {{< /expand >}}
 
-
-{{< /tab >}}
-{{< /tabs >}}
-
 ## Expanding LUNs
 
 TrueNAS lets users expand Zvol and file-based LUNs to increase the available storage that the iSCSI shares.
