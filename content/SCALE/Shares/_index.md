@@ -231,9 +231,197 @@ To edit an existing associated target, click <i class="material-icons" aria-hidd
 | Extent | Select an existing extent. |
 {{< /expand >}}
 
-## Quick iSCSI Target Creation
+{{< expand "Quick iSCSI Target Creation" "v" >}}
+TrueNAS SCALE lets users quickly add iSCSI targets without having to set up another share. To add a target, go to **Shares** and click *Add* in the *Block (iSCSI) Shares Targets* window.
+
+![QuickiSCSITargetSCALE](/images/SCALE/QuickiSCSITargetSCALE.png "Quick iSCSI Target")
+
+**Basic Info**
+| Setting | Description |
+|---------|-------|
+| Target Name | The base name is automatically prepended if the target name does not start with iqn. Lowercase alphanumeric characters plus dot (.), dash (-), and colon (:) are allowed. See the Constructing iSCSI names using the iqn.format section of [RFC3721](https://tools.ietf.org/html/rfc3721.html). |
+| Target Alias | Optional user-friendly name. |
+
+**iSCSI Group**
+| Setting | Description |
+|---------|-------|
+| Portal Group ID | Leave empty or select an existing portal to use. |
+| Initiator Group ID | Select which existing initiator group has access to the target. |
+| Authentication Method | Choices are *None*, *Auto*, *CHAP*, or *Mutual CHAP*. |
+| Authentication Group Number | Select *None* or an integer. This value represents the number of existing authorized accesses. |
+{{< /expand >}}
+
+## Starting the iSCSI Service
+
+To turn on the iSCSI service, go to **Services** and toggle *iSCSI*.
+Set *Start Automatically* to start it when TrueNAS boots up.
+
+![ServicesISCSIEnableSCALE](/images/SCALE/ServicesISCSIEnableSCALE.png "Starting the iSCSI Service")
+
+Clicking the <i class="material-icons" aria-hidden="true" title="Configure">edit</i> returns to the options in **Shares >** *Block (iSCSI) Shares Targets*.
+
+## Using the iSCSI Share
+
+Connecting to and using an iSCSI share can differ between operating systems:
+
+{{< expand "Linux" "v" >}}
+### iSCSI Utilities and Service
+
+First, open the command line and ensure that the `open-iscsi` utility is installed.
+To install the utility on an Ubuntu/Debian distribution, enter `sudo apt update && sudo apt install open-iscsi`.
+After the installation completes, ensure the *iscsid* service is running: `sudo service iscsid start`.
+With the *iscsid* service started, run the `iscsiadm` command with the discovery arguments and get the necessary information to connect to the share.
+
+![LinuxISCSIAppInstall](/images/CORE/LinuxISCSIAppInstall.png "Linux ISCSI App Install")
+
+### Discover and Log In to the iSCSI Share
+
+Run the command `sudo iscsiadm \--mode discovery \--type sendtargets \--portal {IPADDRESS}`.
+The output provides the basename and target name that TrueNAS configured.
+
+![LinuxISCSIDiscoveryList](/images/CORE/LinuxISCSIDiscoveryList.png "Linux ISCSI Discovery List")
+
+Alternatively, enter `sudo iscsiadm -m discovery -t st -p {IPADDRESS}` to get the same output.
+Note the basename and target name given in the output, since they you need them to log in to the iSCSI share.
+
+When a Portal Discovery Authentication Method is CHAP, add the three following lines to /etc/iscsi/iscsid.conf.
+```
+discovery.sendtargets.auth.authmethod = CHAP
+discovery.sendtargets.auth.username = user
+discovery.sendtargets.auth.password = secret
+```
+The user for `discovery.sendtargets.auth.username` is set in the *Authorized Access* used by the *Portal* of the iSCSI share. Likewise, the password to use for `discovery.sendtargets.auth.password` is the *Authorized Access* secret. Without those lines, the iscsiadm will not discover the Portal with the CHAP authentication method.
+
+Next, enter `sudo iscsiadm \--mode node \--targetname {BASENAME}:{TARGETNAME} \--portal {IPADDRESS} \--login`, where *{BASENAME}* and *{TARGETNAME}* is the information from the discovery command.
+
+![LinuxISCSILogin](/images/CORE/LinuxISCSILogin.png "Linux ISCSI Login")
+
+### Partition iSCSI Disk
+
+When the iSCSI share login succeeds, the device shared through iSCSI shows on the Linux system as an *iSCSI Disk*.
+To view a list of connected disks in Linux, enter `sudo fdisk -l`.
+
+![FDiskList](/images/CORE/FDiskList.png "fdisk -l output")
+
+Because the connected iSCSI disk is raw, you must partition it.
+Identify the iSCSI device in the list and enter `sudo fdisk {/PATH/TO/iSCSIDEVICE}`.
+
+![FDiskPartition](/images/CORE/FDiskPartition.png "fdisk partitioning")
+
+**Shell** lists the iSCSI device path in the `sudo fdisk -l` output.
+Use the `fdisk` command defaults when partitioning the disk.
+
+{{< hint info >}}
+Remember to type <kbd>w</kbd> when finished partitioning the disk.
+The `w` command tells `fdisk` to save any changes before quitting.
+{{< /hint >}}
+
+![LinuxISCSIFilesystemCreated](/images/CORE/LinuxISCSIFilesystemCreated.png "Linux ISCSI Filesystem Created")
+
+After creating the partition on the iSCSI disk, a partition slice displays on the device name.
+For example, <file>/dev/sdb1</file>.
+Enter `fdisk -l` to see the new partition slice.
+
+### Make a Filesystem on the iSCSI Disk
+
+Finally, use `mkfs` to make a filesystem on the device's new partition slice.
+To create the default filesystem (ext2), enter `sudo mkfs {/PATH/TO/iSCSIDEVICEPARTITIONSLICE}`.
+
+![LinuxISCSIFilesystem](/images/CORE/LinuxISCSIFilesystem.png "Linux ISCSI Filesystem")
+
+### Mount the iSCSI Device
+
+Now the iSCSI device can mount and share data.
+Enter `sudo mount {/PATH/TO/iSCSIDEVICEPARTITIONSLICE}`.
+For example, `sudo mount /dev/sdb1 /mnt` mounts the iSCSI device *sdb1* to <file>/mnt</file>.
+{{< /expand >}}
+
+{{< expand "Windows" "v" >}}
+To access the data on the iSCSI share, clients will need to use iSCSI Initiator software. An iSCSI Initiator client is pre-installed in Windows 7 to 10 Pro, and Windows Server 2008, 2012, and 2019. Windows Professional Edition is usually required.
+
+First, click the Start Menu and search for the *iSCSI Initiator* application.
+
+![WindowsISCSIInitiatorApp](/images/CORE/WindowsISCSIInitiatorApp.png "Windows ISCSI Initiator App")
+
+Next, go to the **Configuration** tab and click **Change** to change the iSCSI initiator to the same name created earlier. Click **OK**.
+
+![Windows ISCSI Initiator Config Name](/images/CORE/WindowsISCSIInitiatorConfigName.png "Windows ISCSI Initiator Config Name")
+
+Next, switch to the **Discovery Tab**, click **Discover Portal**, and type in the TrueNAS IP address.
+
+* If TrueNAS changed the port number from the default *3260*, enter the new port number.
+
+* If you set up CHAP when creating the iSCSI share, click **Advanced...**, set *Enable CHAP log on*, and enter the initiator name and the same target/secret set earlier in TrueNAS.
+
+Click **OK**.
+
+![Windows ISCSI Initiator Discover Portal](/images/CORE/WindowsISCSIInitiatorDiscoverPortal.png "Windows ISCSI Initiator Discover Portal")
+
+Go to the **Targets** tab, highlight the iSCSI target, and click **Connect**.
+
+![Windows ISCSI Initiator Target Connect](/images/CORE/WindowsISCSIInitiatorTargetConnect.png "Windows ISCSI Initiator Target Connect")
+
+After Windows connects to the iSCSI target, you can partition the drive.
+
+Search for and open the *Disk Management* app.
+
+![WindowsISCSIDiskManagementApp](/images/CORE/WindowsISCSIDiskManagementApp.png "Windows ISCSI Disk Management App")
+
+Your drive should currently be *unallocated*. Right-click the drive and click **New Simple Volume...**.
+
+![WindowsISCSIDiskNewVolume](/images/CORE/WindowsISCSIDiskNewVolume.png "Windows ISCSI Disk New Volume")
+
+Complete the Wizard to format the drive and assign a drive letter and name.
+
+![WindowsISCSIDiskNewVolumeOptions](/images/CORE/WindowsISCSIDiskNewVolumeOptions.png "Windows ISCSI Disk New Volume Options")
+
+Finally, go to *This PC* or *My Computer* in File Explorer. The new iSCSI volume should show up under the list of drives. You should now be able to add, delete, and modify files and folders on your iSCSI drive.
+
+![WindowsiSCSIVolumeLocation](/images/CORE/WindowsiSCSIVolumeLocation.png "Windows iSCSI Volume Location")
+{{< /expand >}}
 
 
+{{< /tab >}}
+{{< /tabs >}}
+
+## Expanding LUNs
+
+TrueNAS lets users expand Zvol and file-based LUNs to increase the available storage that the iSCSI shares.
+
+{{< expand "Zvol LUN" "v" >}}
+To expand a Zvol LUN, go to **Storage > Pools** and click the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> next to the Zvol LUN, then select *Edit Zvol*.
+
+![ExpandingZvolLUNListSCALE](/images/SCALE/ExpandingZvolLUNListSCALE.png "Edit the Zvol LUN")
+
+Enter a new size in the *Size for this zvol* field, then click *SAVE*.
+
+![ExpandingZvolLUNSizeSCALE](/images/SCALE/ExpandingZvolLUNSizeSCALE.png "Change the Zvol Size")
+
+{{< hint ok >}}
+To prevent data loss, the web interface does not allow users to reduce the Zvol's size. 
+TrueNAS also does not allow users to increase the Zvol's size past 80% of the pool size.
+{{< /hint >}}
+{{< /expand >}}
+
+{{< expand "File LUN" "v" >}}
+You will need to know the path to the file to expand a file-based LUN. To find the path, go to **Shares** and click *Configure* in the *Block (iSCSI) Shares Targets* window, then select the *Extents* tab. 
+
+Click the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> next to the file-based LUN and select *Edit*. 
+
+![ExpandingFileLUNPathSCALE](/images/SCALE/ExpandingFileLUNPathSCALE.png "Copy the Path to the File")
+
+Highlight and copy the path, then click *Cancel*
+
+Go to **Shell** and input `truncate -s +[size] [path to file]`, then press <kbd>Enter</kbd>.
+
+The *[size]* is how much space you want to grow the file by, and the *[path to file]* is the file path you copied earlier. 
+
+![ExpandingFileLUNShellSCALE](/images/SCALE/ExpandingFileLUNShellSCALE.png "Expanding the File Size in Shell")
+
+An example of the command could look like this: `truncate -s +2g /mnt/Pool1/Dataset1/File LUN`
+
+Lastly, go back to the extent in **Shares >** *Block (iSCSI) Shares Targets* and make sure the *Filesize* is set to *0* so that the share uses the actual file size.
+{{< /expand >}}
 {{< /tab >}}
 
 {{< tab "Windows (SMB) Shares" >}}
@@ -245,5 +433,5 @@ To edit an existing associated target, click <i class="material-icons" aria-hidd
 {{< tab "WebDAV" >}}
 {{< /tab >}}
 {{< /tabs >}}
-## iSCSI Background
+
 
