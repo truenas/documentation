@@ -153,7 +153,7 @@ To edit an existing authorized access network, click <i class="material-icons" a
 {{< expand "Targets" "v" >}}
 The *Targets* tab lets users create new TrueNAS storage resources or edit existing ones in the list.
 
-![SharingISCSIManualTargetsSCALE](/images/SCALE/SharingISCSIManualTargets.png "iSCSI Targets")
+![SharingISCSIManualTargetsSCALE](/images/SCALE/SharingISCSIManualTargetsSCALE.png "iSCSI Targets")
 
 To add a new target, click *ADD* and enter the basic and iSCSI group information.
 
@@ -421,6 +421,94 @@ Lastly, go back to the extent in **Shares >** *Block (iSCSI) Shares Targets* and
 {{< /tab >}}
 
 {{< tab "Windows (SMB) Shares" >}}
+SMB (also known as CIFS) is the native file sharing system in Windows.
+SMB shares can connect to any major operating system, including Windows, MacOS, and Linux.
+SMB can be used in TrueNAS to share files among single or multiple users or devices.
+
+SMB shares allow a wide range of permissions and security settings, and can support advanced permissions (ACLs) on Windows and other systems, as well as Windows Alternate Streams and Extended Metadata.
+SMB is suitable for the management and administration of large or small pools of data.
+
+TrueNAS uses [Samba](https://www.samba.org/) to provide SMB services.
+There are multiple versions of the SMB protocol. An SMB client will typically negotiate the highest supported SMB protocol during SMB session negotiation. Industry-wide, the usage of the SMB1 protocol (sometimes referred to as NT1) is in the [process of being deprecated]({{< relref "SMB1Advisory.md" >}}). This deprecation is for security reasons.
+However, most SMB clients support SMB 2 or 3 protocols, even when they are not the default protocols.
+
+{{< hint info >}}
+Legacy SMB clients rely on NetBIOS Name Resolution to discover SMB servers on a network. The NetBIOS Name Server (nmbd) is disabled by default in TrueNAS. It can be enabled in **Network > Global Configuration** if this functionality is required.
+
+MacOS clients use mDNS to discover the the presence of SMB servers on the network. The mDNS server (avahi) is enabled by default on TrueNAS.
+
+Windows clients use [WS-Discovery](https://docs.oasis-open.org/ws-dd/ns/discovery/2009/01) to discover the presence of SMB servers, but depending on the version of the Windows client, network discovery can be disabled by default.
+
+Discoverability through broadcast protocols is a convenience feature and not required to access a SMB server.
+{{< /hint >}}
+
+## First Steps
+
+### Create a Dataset
+
+It is recommended to create a new dataset and set the *Share Type* to *SMB* for the new SMB share.
+{{< expand "What does this do?" "v" >}}
+The ZFS dataset is created with these settings:
+
+ * *aclmode* = "restricted"
+ * *case sensitivity* = "insensitive"
+
+ A default Access Control List is also applied to the dataset.
+ This default ACL is restrictive and only allows access to the dataset owner and group.
+ This ACL can be modified later according to your use case.
+{{< /expand >}}
+
+### Create Local User Accounts
+
+By default, all new local users are members of a built in SMB group called *builtin users*. This group can be used to grant access to all local users on the server. Additional [groups]({{< relref "Groups.md" >}}) can be used to fine-tune permissions to large numbers of users. User accounts built-in to TrueNAS or that do not have the *smb* flag set cannot be used for SMB access.
+{{< expand "Why not just allow anonymous access to the share?" "v" >}}
+Although anonymous or guest access to the share is possible, this is a security vulnerability and is being deprecated by the major SMB client vendors. This partly because signing and encryption are not possible for guest sessions.
+{{< /expand >}}
+{{< expand "What about LDAP users?" "v" >}}
+When LDAP has been configured and you want users from the LDAP server to have access the SMB share, go to **Directory Services > LDAP > ADVANCED MODE** and set *Samba Schema*. However, local TrueNAS user accounts will no longer have access to the share.
+{{< /expand >}}
+
+### Tune the Dataset ACL
+
+After a dataset and accounts are created, you will need to investigate your access requirements and adjust the dataset ACL to match. To edit the ACL, go to **Storage > Pools**, open the options for the new dataset, and click *Edit Permissions*.
+Many home users typically add a new entry that grants *FULL_CONTROL* to the *builtin_users* group with the flags set to *INHERIT*.
+See the [Permissions article]({{< relref "Permissions.md" >}}) for more details.
+
+## Creating the SMB Share
+
+To create a Windows SMB share, go to **Sharing > Windows Shares (SMB)** and click **ADD**.
+
+![SMBShareAdd](/images/CORE/12.0/SharingSMBAdd.png "Basic SMB Share Options")
+
+The **Path** and **Name** of the SMB share define the absolute minimum amount of information required to create a new SMB share. The *Path* is the directory tree on the local filesystem that will be exported over the SMB protocol, and the *Name* is the name of the SMB share, which forms a part of the "full share pathname" when SMB clients perform an SMB tree connect. Because of the way that the *Name* is used in the SMB protocol, it must be less than or equal to 80 characters in length, and must not contain any invalid characters as specified in Microsoft documentation MS-FSCC section 2.1.6. If a *Name* is not supplied, then the last component of the *Path* will be used as the share name.
+
+You can set a share *Purpose* to apply and lock pre-defined advanced options for the share.
+To retain full control over all the share *Advanced Options*, choose *No presets*.
+
+{{< expand "What do all the presets do?" "v" >}}
+The following table shows the preset options for the different *Purposes* and if those options are locked.
+An <i class="material-icons" aria-hidden="true" title="System Update">check_box</i> indicates the option is enabled, <i class="material-icons" aria-hidden="true" title="System Update">check_box_outline_blank</i> means the option is disabled, and [text] indicates a specific value:
+
+| Setting                            | Default share parameters                                                            | Multi-user time machine                                                             | Multi-protocol (NFSv3/SMB) shares                                                   | Private SMB Datasets and Shares                                                     | Files become readonly of SMB after 5 minutes                                        |
+|------------------------------------|-------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|
+| Enable ACL                         | <i class="material-icons" aria-hidden="true">check_box</i> (locked)                 | <i class="material-icons" aria-hidden="true">check_box</i> (unlocked)               | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> (locked)   | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> (unlocked) | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> (unlocked) |
+| Export Read Only                   | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> (locked)   | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> (unlocked) | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> (unlocked) | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> (unlocked) | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> (unlocked) |
+| Browsable to Network Clients       | <i class="material-icons" aria-hidden="true">check_box</i> (locked)                 | <i class="material-icons" aria-hidden="true">check_box</i> (unlocked)               | <i class="material-icons" aria-hidden="true">check_box</i> (unlocked)               | <i class="material-icons" aria-hidden="true">check_box</i> (unlocked)               | <i class="material-icons" aria-hidden="true">check_box</i> (unlocked)               |
+| Allow Guest Access                 | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> (unlocked) | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> (unlocked) | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> (unlocked) | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> (unlocked) | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> (unlocked) |
+| Access Based Share Enumeration     | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> (locked)   | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> (unlocked) | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> (unlocked) | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> (unlocked) | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> (unlocked) |
+| Hosts Allow                        | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> (locked)   | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> (unlocked) | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> (unlocked) | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> (unlocked) | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> (unlocked) |
+| Hosts Deny                         | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> (locked)   | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> (unlocked) | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> (unlocked) | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> (unlocked) | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> (unlocked) |
+| Use as Home Share                  | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> (locked)   | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> (unlocked) | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> (unlocked) | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> (unlocked) | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> (unlocked) |
+| Time Machine                       | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> (locked)   | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> (unlocked) | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> (unlocked) | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> (unlocked) | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> (unlocked) |
+| Enable Shadow Copies               | <i class="material-icons" aria-hidden="true">check_box</i> (locked)                 | <i class="material-icons" aria-hidden="true">check_box</i> (unlocked)               | <i class="material-icons" aria-hidden="true">check_box</i> (unlocked)               | <i class="material-icons" aria-hidden="true">check_box</i> (unlocked)               | <i class="material-icons" aria-hidden="true">check_box</i> (unlocked)               |
+| Export Recycle Bin                 | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> (locked)   | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> (unlocked) | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> (unlocked) | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> (unlocked) | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> (unlocked) |
+| Use Apple-style Character Encoding | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> (locked)   | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> (unlocked) | <i class="material-icons" aria-hidden="true">check_box</i> (unlocked)               | <i class="material-icons" aria-hidden="true">check_box</i>                          | <i class="material-icons" aria-hidden="true">check_box</i> (unlocked)               |
+| Enable Alternate Data Streams      | <i class="material-icons" aria-hidden="true">check_box</i> (locked)                 | <i class="material-icons" aria-hidden="true">check_box</i> (unlocked)               | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> (locked)   | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> (unlocked) | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> (unlocked) |
+| Enable SMB2/3 Durable Handles      | <i class="material-icons" aria-hidden="true">check_box</i> (locked)                 | <i class="material-icons" aria-hidden="true">check_box</i> (unlocked)               | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> (locked)   | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> (unlocked) | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i>            |
+| Enable FSRVP                       | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> (locked)   | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> (unlocked) | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> (unlocked) | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> (unlocked) | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> (unlocked) |
+| Path Suffix                        | [text string] (locked)                                                              | [text string] (locked)                                                              | [text string] (unlocked)                                                            | [text string] (locked)                                                              | [text string] (locked)                                                              |
+| Auxiliary Parameters               | [text string] (unlocked)                                                            | [text string] (unlocked)                                                            | [text string] (unlocked)                                                            | [text string] (unlocked)                                                            | [text string] (unlocked)                                                            |
+{{< /expand >}}
 {{< /tab >}}
 
 {{< tab "UNIX (NFS) Shares" >}}
