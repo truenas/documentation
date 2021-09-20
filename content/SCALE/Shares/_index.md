@@ -486,7 +486,7 @@ You can set a share *Purpose* to apply and lock pre-defined advanced options for
 To retain full control over all the share *Advanced Options*, choose *No presets*.
 
 {{< expand "What do all the presets do?" "v" >}}
-The following table shows the preset options for the different *Purposes* and if those options are locked.
+The following table shows the preset options for the different *Purposes* and if those options are locked.      
 A <i class="material-icons" aria-hidden="true" title="System Update">check_box</i> indicates the option is enabled while <i class="material-icons" aria-hidden="true" title="System Update">check_box_outline_blank</i> means the option is disabled. [ ] indicates empty text fields, and [%U] indicates the exact option the preset created.
 
 | Setting                            | Default share parameters                                                          | Multi-user time machine                                                   | Multi-protocol (NFSv3/SMB) shares                                                 | Private SMB Datasets and Shares                                          | Files become readonly of SMB after 5 minutes                             |
@@ -509,7 +509,210 @@ A <i class="material-icons" aria-hidden="true" title="System Update">check_box</
 | Path Suffix                        | [ ] (locked)                                                                      | [%U] (locked)                                                             | [%U]                                                                              | [%U] (locked)                                                            | [ ] (locked)                                                             |
 | Auxiliary Parameters               | [ ]                                                                               | [ ]                                                                       | [ ]                                                                               | [ ]                                                                      | [ ]                                                                      |
 {{< /expand >}}
-{{< /tab >}}
+
+An optional *Description* can be specified to help explain the purpose of the share.
+
+**Enabled** allows this path to be shared when the SMB service is activated.
+Unsetting **Enabled** disables the share without deleting the configuration.
+
+{{< expand "Advanced Options" "v" >}}
+![SharingSMBAddAdvancedSCALE](/images/SCALE/SharingSMBAddAdvancedSCALE.png "SMB Share Advanced Options")
+
+Options are divided into **Access** and **Other Options** groups.
+*Access* options control various settings for allowing systems or users to access or modify the shared data.
+
+| Setting                        | Description  |
+|--------------------------------|--------------|
+| Enable ACL                     | Enable ACL support for the SMB share. |
+| Export Read Only               | Prohibits writes to the share. |
+| Browsable to Network Clients   | Determine whether this share name is included when browsing shares. Home shares are only visible to the owner regardless of this setting.
+| Allow Guest Access             | Privileges are the same as the guest account. Guest access is disabled by default in Windows 10 version 1709 and Windows Server version 1903. Additional client-side configuration is required to provide guest access to these clients.<br><br> *MacOS clients*: Attempting to connect as a user that does not exist in FreeNAS *does not* automatically connect as the guest account. The *Connect As: Guest* option must be specifically chosen in MacOS to log in as the guest account. See the [Apple documentation](https://support.apple.com/guide/mac-help/connect-mac-shared-computers-servers-mchlp1140/mac) for more details. |
+| Access Based Share Enumeration | Restrict share visibility to users with read or write access to the share. See the [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) manual page. |
+| Hosts Allow                    | Enter a list of allowed hostnames or IP addresses. Separate entries by pressing <kbd>Enter</kbd>. A more detailed description with examples can be found [here](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html#HOSTSALLOW).
+| Hosts Deny                     | Enter a list of denied hostnames or IP addresses. Separate entries by pressing <kbd>Enter</kbd>. |
+
+The **Hosts Allow** and **Hosts Deny** fields work together to produce different situations:
+* If neither *Hosts Allow* or *Hosts Deny* contains an entry, then SMB share access is allowed for any host.
+* If there is a *Hosts Allow* list but no *Hosts Deny* list, then only allow hosts on the *Hosts Allow* list.
+* If there is a *Hosts Deny* list but no *Hosts Allow* list, then allow all hosts that are not on the *Hosts Deny* list.
+* If there is both a *Hosts Allow* and *Hosts Deny* list, then allow all hosts that are on the *Hosts Allow* list. If there is a host not on the *Hosts Allow* and not on the *Hosts Deny* list, then allow it.
+
+The *Other Options* have settings for improving Apple software compatibility, ZFS snapshot features, and other advanced features.
+
+| Setting                            | Description  |
+|------------------------------------|--------------|
+| Use as Home Share                  | Allows the share to host user home directories. Each user is given a personal home directory when connecting to the share which is not accessible by other users. This allows for a personal, dynamic share. Only one share can be used as the home share. See the configuring [Home Share article]({{< relref "HomeShare.md" >}}) for detailed instructions. |
+| Time Machine                       | Enables [Apple Time Machine](https://support.apple.com/en-us/HT201250) backups on this share. |
+| Legacy AFP Compatibility           | This controls how the SMB share reads and writes data. Leave unset for the share to behave like a normal SMB share and set for the share to behave like the deprecated Apple Filing Protocol (AFP). This should only be set when this share originated as an AFP sharing configuration. This is not required for pure SMB shares or MacOS SMB clients. |
+| Enable Shadow Copies               | Export ZFS snapshots as [Shadow Copies](https://docs.microsoft.com/en-us/windows/win32/vss/shadow-copies-and-shadow-copy-sets) for Microsoft Volume Shadow Copy Service (VSS) clients. |
+| Export Recycle Bin                 | Files that are deleted from the same dataset are moved to the Recycle Bin and do not take any additional space. **Deleting files over NFS will remove the files permanently.** When the files are in a different dataset or a child dataset, they are copied to the dataset where the Recycle Bin is located. To prevent excessive space usage, files larger than *20 MiB* are deleted rather than moved. Adjust the **Auxiliary Parameter** `crossrename:sizelimit=` setting to allow larger files. For example, <code>crossrename:sizelimit=<i>50</i></code> allows moves of files up to *50 MiB* in size. This means files can be permanently deleted or moved from the recycle bin. **This is not a replacement for ZFS snapshots.** |
+| Use Apple-style Character Encoding | By default, Samba uses a hashing algorithm for NTFS illegal characters. Enabling this option converts NTFS illegal characters in the same manner as MacOS SMB clients. |
+| Enable Alternate Data Streams      | Allows multiple [NTFS data streams](https://www.ntfs.com/ntfs-multiple.htm). Disabling this option causes MacOS to write streams to files on the filesystem. |
+| Enable SMB2/3 Durable Handles      | Allow using open file handles that can withstand short disconnections. Support for POSIX byte-range locks in Samba is also disabled. This option is not recommended when configuring multi-protocol or local access to files. |
+| Enable FSRVP                       | Enable support for the File Server Remote VSS Protocol ([FSVRP](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-fsrvp/dae107ec-8198-4778-a950-faa7edad125b)). This protocol allows Remote Procedure Call (RPC) clients to manage snapshots for a specific SMB share. The share path must be a dataset mountpoint. Snapshots have the prefix `fss-` followed by a snapshot creation timestamp. A snapshot must have this prefix for an RPC user to delete it. |
+| Path Suffix                        | Appends a suffix to the share connection path. This is used to provide unique shares on a per-user, per-computer, or per-IP address basis. Suffixes can contain a macro. See the [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) manual page for a list of supported macros. The connectpath must be preset before a client connects. |
+| Auxiliary Parameters               | Additional [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) settings. |
+{{< /expand >}}
+
+Clicking *Save* creates the share and adds it to the **Shares >** *Windows (SMB) Shares* list.
+You can also choose to enable the SMB service at this time.
+
+## Share Management
+
+After creating the SMB share, additional management options are available by going to the **Shares** screen and clicking <i class="material-icons" aria-hidden="true">open_in_new</i> in the *Windows (SMB) Shares* window. Click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> next to the share you want to manage.
+
+* **Edit**: Opens the [share creation screen](#creating-the-smb-share) to reconfigure the share or disable it.
+* **Edit Share ACL**: Opens a screen to configure an Access Control List (ACL) for the share. This is separate from filesystem permissions, and applies at the level of the entire SMB share. Permissions defined here are not interpreted by clients of other filesharing protocols or other SMB shares that export the same share *Path*. The default is open. This ACL is used to determine the browse list if *Access Based Share Enumeration* is enabled.
+* **Edit Filesystem ACL**: Opens a screen to configure an Access Control List (ACL) for the path defined in the share **Path**.
+* **Delete**: Remove the share configuration from TrueNAS. Data that was being shared is unaffected.
+
+### Configure Share ACL
+
+To see the share ACL options, select *Edit Share ACL*.
+
+![SharingSMBShareACLSCALE](/images/SCALE/SharingSMBShareACLSCALE.png "Share ACL Options")
+
+The *Share Name* is shown, but cannot be changed.
+*ACL Entries* are listed as a block of settings.
+Click *ADD* to register a new entry.
+
+| Setting    | Description  |
+|------------|--------------|
+| SID        | Who this ACL entry (ACE) applies to, shown as a [Windows Security Identifier](https://docs.microsoft.com/en-us/windows/win32/secauthz/security-identifiers). Either a *SID* or a *Domain* with *Name* is required for the ACL. |
+| Domain     | Domain for the user *Name*. Required when a **SID** is not entered. Local users have the SMB server NetBIOS name: *truenas\\smbusers*.
+| Permission | Predefined permission combinations.<br>*Read*: Read access and Execute permission on the object (RX).<br>*Change*: Read access, Execute permission, Write access, and Delete object (RXWD).<br>*Full*: Read access, Execute permission, Write access, Delete object, change Permissions, and take Ownership (RXWDPO).<br><br>For more details, see [smbacls(1)](https://www.samba.org/samba/docs/current/man-html/smbcacls.1.html). |
+| Name       | Who this ACL entry applies to, shown as a user name. Requires adding the user **Domain**. |
+| Type       | How permissions are applied to the share. *Allowed* denies all permissions by default except those that are manually defined. *Denied* allows all permissions by default except those that are manually defined. |
+
+Clicking *Save* stores the share ACL and applies it to the share immediately.
+
+### Configure Filesystem ACL
+
+Selecting *Edit Filesystem ACL* will take you to the *Edit File ACL* screen in **Storage** to edit the dataset ACL.
+
+Since SCALE gives users the option to use either POSIX or NFSv4 share [ACL types]({{< relref "ACLPrimer.md" >}}), the *Edit File ACL* page will differ depending on which ACL type the filesystem is using.
+
+{{< expand "NFSv4 Filesystem ACL" "v" >}}
+![DatasetACLEditNFSv4](/images/SCALE/DatasetACLEditNFSv4.png "NFSv4 Dataset Permissions Options")
+
+The filesystem ACL defines the user accounts or groups that own or have specific [permissions]({{< relref "PermissionsSCALE.md" >}}) to the dataset that is being shared.
+The *User* and *Group* values show which accounts "own", or have full permissions to the dataset.
+Change the default settings to your preferred primary account and group and set the *Apply permissions recursively* check box before saving any changes.
+
+#### ACL Presets
+
+To rewrite the current ACL with a standardized preset, click *Use ACL Preset* and choose an option:
+
+**NFS4_OPEN**: *Owner* and *group* have full dataset control. All other accounts can modify the dataset contents.  
+**NFS4_RESTRICTED**: *Owner* has full dataset control. *Group* can modify the dataset contents.
+**NFS4_HOME**: *Owner* has full dataset control. *Group* can modify the dataset contents. All other accounts can navigate the dataset.
+
+#### Adding ACL Entries (ACEs)
+
+To define permissions for a specific user account or group, click *Add Item*.
+Open the *Who* drop down, select *User* or *Group*, and choose a specific *User* or *Group* account.
+Define how the settings are applied to the account then choose which permissions to apply to that account.
+For example, to only allow the *newuser* user permission to view dataset contents but not make changes, set the *ACL Type* to *Allow* and *Permissions* to *Read*.
+
+![ExampleACENFSv4](/images/SCALE/ExampleACENFSv4.png "Sample ACE")
+{{< /expand >}}
+
+{{< expand "POSIX Filesystem ACL" "v" >}}
+![DatasetACLEditPOSIX](/images/SCALE/DatasetACLEditPOSIX.png "POSIX Dataset Permissions Options")
+
+The filesystem ACL defines the user accounts or groups that own or have specific [permissions]({{< relref "PermissionsSCALE.md" >}}) to the dataset that is being shared.
+The *User* and *Group* values show which accounts "own", or have full permissions to the dataset.
+Change the default settings to your preferred primary account and group and set the *Apply permissions recursively* check box before saving any changes.
+
+#### ACL Presets
+
+To rewrite the current ACL with a standardized preset, click *Use ACL Preset* and choose an option:
+
+**POSIX_OPEN**: *Owner* and *group* have full dataset control. All other accounts can modify the dataset contents.  
+**POSIX_RESTRICTED**: *Owner* has full dataset control. *Group* can modify the dataset contents.
+**POSIX_HOME**: *Owner* has full dataset control. *Group* can modify the dataset contents. All other accounts can navigate the dataset.
+
+#### Adding ACL Entries (ACEs)
+
+To define permissions for a specific user account or group, click *Add Item*.
+Open the *Who* drop down, select *User* or *Group*, and choose a specific *User* or *Group* account.
+Define how the settings are applied to the account then choose which permissions to apply to that account.
+For example, to only allow the *newuser* user permission to view dataset contents but not make changes, set the *ACL Type* to *Allow* and *Permissions* to *Read*.
+
+![ExampleACEPOSIX](/images/SCALE/ExampleACEPOSIX.png "Sample ACE")
+{{< /expand >}}
+
+## Activate the SMB Service
+
+Connecting to an SMB share does not work when the related system service is not activated.
+To make SMB share available on the network, go to **System Settings > Services** and click the toggle for *SMB*.
+If you want the service to activate whenever TrueNAS boots, set *Start Automatically*.
+
+### Service Configuration
+
+The SMB service is configured by clicking <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
+Unless a specific setting is needed or configuring for a specific network environment, it is recommended to use the default settings for the SMB service.
+
+![SMBServiceOptionsSCALE](/images/SCALE/SMBServiceOptionsSCALE.png "SMB Service Options")
+
+| Setting             | Description  |
+|---------------------|--------------|
+| NetBIOS Name        | Automatically populated with the original hostname of the system. This name is limited to 15 characters and cannot be the *Workgroup* name. |
+| NetBIOS Alias       | Enter any aliases, separated by spaces. Each alias can be up to 15 characters long. |
+| Workgroup           | Must match the Windows workgroup name. When this is unconfigured and Active Directory or LDAP are active, TrueNAS will detect and set the correct workgroup from these services. |
+| Description         | This allows entering any notes or descriptive details about the service configuration. |
+| Enable SMB1 support | Allow legacy SMB1 clients to connect to the server. Note that SMB1 is being deprecated and it is advised to upgrade clients to operating system versions that support modern versions of the SMB protocol. |
+| NTLMv1 Auth         | When set, [smbd](https://www.samba.org/samba/docs/current/man-html/smbd.8.html) attempts to authenticate users with the insecure and vulnerable NTLMv1 encryption. This setting allows backward compatibility with older versions of Windows, but is not recommended and should not be used on untrusted networks. |
+
+{{< expand "Advanced Options" "v" >}}
+![SMBServiceAdvancedSCALE](/images/SCALE/SMBServiceAdvancedSCALE.png "Advanced Options for the SMB Service")
+
+| Setting                                 | Description  |
+|-----------------------------------------|--------------|
+| UNIX Charset                            | Character set used internally. *UTF-8* is standard for most systems as it supports all characters in all languages. |
+| Log Level                               | Record SMB service messages up to the specified log level. By default, error and warning level messages are logged. It is not recommended to use a log level above MINIMUM for production servers. |
+| Use Syslog Only                         | Set to log authentication failures in */var/log/messages* instead of the default */var/log/samba4/log.smbd*. |
+| Local Master                            | Set to determine if the system participates in a browser election. Unset when the network contains an AD or LDAP server, or when Vista or Windows 7 machines are present. |
+| Enable Apple SMB2/3 Protocol Extensions | These [protocol extensions](https://support.apple.com/en-us/HT210803) can be used by macOS to improve the performance and behavioral characteristics of SMB shares. This is required for Time Machine support. |
+| Administrators Group                    | Members of this group are local administrators and automatically have privileges to take ownership of any file in an SMB share, reset permissions, and administer the SMB server through the Computer Management MMC snap-in. |
+| Guest Account                           | Account to be used for guest access. Default is *nobody*. The chosen account is required to have permissions to the shared pool or dataset. To adjust permissions, edit the dataset Access Control List (ACL), add a new entry for the chosen guest account, and configure the permissions in that entry. If the selected **Guest Account** is deleted the field resets to *nobody*. |
+| File Mask                               | Overrides default file creation mask of *0666* which creates files with read and write access for everybody. |
+| Directory Mask                          | Overrides default directory creation mask of *0777* which grants directory read, write and execute access for everybody. |
+| Bind IP Addresses                       | Static IP addresses which SMB listens on for connections. Leaving all unselected defaults to listening on all active interfaces.
+| Auxiliary Parameters                    | Stores additional [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html). Auxiliary parameters may be used to override the default SMB server configuration, but such changes may adversely affect SMB server stability or behavior. |
+{{< /expand >}}
+
+
+## Mounting SMB Share on another machine.
+
+{{< expand "Linux" "v" >}}
+Verify that the required CIFS packages are installed for your distribution of Linux.
+Create a mount point: `sudo mkdir /mnt/smb_share`.
+
+Mount the volume. `sudo mount -t cifs //computer_name/share_name /mnt/smb_share`.
+
+If your share requires user credentials, add the switch `-o username=` with your username after `cifs` and before the share address.
+{{< /expand >}}
+
+{{< expand "Windows" "v" >}}
+
+To mount the SMB share to a drive letter on windows, open the command line and run the following command with the appropiate drive letter, computer name, and share name.
+
+```net use Z: \\computer_name\share_name /PERSISTENT:YES```
+{{< /expand >}}
+
+{{< expand "Apple" "v" >}}
+Open **Finder > Go > Connect To Server**
+Enter the SMB address: `smb://192.168.1.111`.
+
+Input the username and password for the user assigned to that pool or Guest if Guest access is enabled on the share.
+{{< /expand >}}
+
+{{< expand "FreeBSD" "v" >}}
+Create a mount point: `sudo mkdir /mnt/smb_share`.
+
+Mount the volume. `sudo mount_smbfs -I computer_name\share_name /mnt/smb_share`.
+{{< /expand >}}
 
 {{< tab "UNIX (NFS) Shares" >}}
 {{< /tab >}}
