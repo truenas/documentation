@@ -57,7 +57,7 @@ Be sure to click *SAVE* after making any changes.
 WebDAV shared data is accessible from a web browser.
 To see the shared data, open a new browser tab and enter `{PROTOCOL}://{TRUENASIP}:{PORT}/{SHAREPATH}`.
 Replace the elements in curly brackets `{}` with your chosen settings from the WebDAV share and service.
-Example: `https://10.2.1.1:8081/mnt/corepool1/newdataset`
+Example: `https://10.2.1.1:8081/newdataset`
 
 When the *Authentication* WebDAV service option is set to either *Basic* or *Digest*, a user name and password is required.
 Enter the user name *webdav* and the password defined in the WebDAV service.
