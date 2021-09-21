@@ -418,6 +418,10 @@ An example of the command could look like this: `truncate -s +2g /mnt/Pool1/Data
 
 Lastly, go back to the extent in **Shares >** *Block (iSCSI) Shares Targets* and make sure the *Filesize* is set to *0* so that the share uses the actual file size.
 {{< /expand >}}
+
+{{< expand "Integrating Fibre Channel" "v" >}}
+
+{{< /expand >}}
 {{< /tab >}}
 
 {{< tab "Windows (SMB) Shares" >}}
@@ -574,7 +578,7 @@ To see the share ACL options, select *Edit Share ACL*.
 
 The *Share Name* is shown, but cannot be changed.
 *ACL Entries* are listed as a block of settings.
-Click *ADD* to register a new entry.
+Click *Add* to register a new entry.
 
 | Setting    | Description  |
 |------------|--------------|
@@ -711,6 +715,7 @@ Create a mount point: `sudo mkdir /mnt/smb_share`.
 
 Mount the volume. `sudo mount_smbfs -I computer_name\share_name /mnt/smb_share`.
 {{< /expand >}}
+{{< /tab >}}
 
 {{< tab "UNIX (NFS) Shares" >}}
 Creating a Network File System (NFS) share on TrueNAS gives the benefit of making lots of data easily available for anyone with share access.
@@ -854,5 +859,23 @@ Example: `https://10.2.1.1:8081/newdataset`
 
 When the *Authentication* WebDAV service option is set to either *Basic* or *Digest*, a user name and password is required.
 Enter the user name *webdav* and the password defined in the WebDAV service.
+{{< /tab >}}
+{{< /tabs >}}
+
+{{< tabs tabTotal="3" tabID="1" tabName1="Tab 1" tabName2="Tab 2" tabName3="Tab 3" >}}
+{{< tab tabNum="1" >}}
+
+**Tab 1 Content**
+
+{{< /tab >}}
+{{< tab tabNum="2" >}}
+
+**Tab 2 Content**
+
+{{< /tab >}}
+{{< tab tabNum="3" >}}
+
+**Tab 3 Content**
+
 {{< /tab >}}
 {{< /tabs >}}
