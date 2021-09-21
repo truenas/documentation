@@ -675,13 +675,12 @@ Unless a specific setting is needed or configuring for a specific network enviro
 | Local Master                            | Set to determine if the system participates in a browser election. Unset when the network contains an AD or LDAP server, or when Vista or Windows 7 machines are present. |
 | Enable Apple SMB2/3 Protocol Extensions | These [protocol extensions](https://support.apple.com/en-us/HT210803) can be used by macOS to improve the performance and behavioral characteristics of SMB shares. This is required for Time Machine support. |
 | Administrators Group                    | Members of this group are local administrators and automatically have privileges to take ownership of any file in an SMB share, reset permissions, and administer the SMB server through the Computer Management MMC snap-in. |
-| Guest Account                           | Account to be used for guest access. Default is *nobody*. The chosen account is required to have permissions to the shared pool or dataset. To adjust permissions, edit the dataset Access Control List (ACL), add a new entry for the chosen guest account, and configure the permissions in that entry. If the selected **Guest Account** is deleted the field resets to *nobody*. |
-| File Mask                               | Overrides default file creation mask of *0666* which creates files with read and write access for everybody. |
+| Guest Account                           | Account used for guest access. Default is *nobody*. The chosen account is required to have permissions to the shared pool or dataset. To adjust permissions, edit the dataset Access Control List (ACL), add a new entry for the chosen guest account, and configure the permissions in that entry. If the selected **Guest Account** is deleted the field resets to *nobody*. |
+| File Mask                               | Overrides default *0666* file creation mask which creates files with read and write access for everybody. |
 | Directory Mask                          | Overrides default directory creation mask of *0777* which grants directory read, write and execute access for everybody. |
 | Bind IP Addresses                       | Static IP addresses which SMB listens on for connections. Leaving all unselected defaults to listening on all active interfaces.
 | Auxiliary Parameters                    | Stores additional [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html). Auxiliary parameters may be used to override the default SMB server configuration, but such changes may adversely affect SMB server stability or behavior. |
 {{< /expand >}}
-
 
 ## Mounting SMB Share on another machine.
 
@@ -695,7 +694,6 @@ If your share requires user credentials, add the switch `-o username=` with your
 {{< /expand >}}
 
 {{< expand "Windows" "v" >}}
-
 To mount the SMB share to a drive letter on windows, open the command line and run the following command with the appropiate drive letter, computer name, and share name.
 
 ```net use Z: \\computer_name\share_name /PERSISTENT:YES```
@@ -756,44 +754,32 @@ Opening the *Advanced Options* allows tuning the share access permissions and de
 | Mapall Group | string or drop down | Permissions for the chosen group are applied to all clients. |
 {{< /expand >}}
 
-
-
-
-
-
-
-
-
-To edit an existing NFS share, go to **Sharing > Unix Shares (NFS)** and click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> **> Edit**.
+To edit an existing NFS share, go to **Shares >** *Unix Shares (NFS)* and click the share you want to edit.
 The options available are identical to the share creation options.
 
 ## Configure the NFS Service
 
-To begin sharing the data, go to **Services** and click the *NFS* toggle.
+To begin sharing the data, go to **System Settings > Services** and click the *NFS* toggle.
 If you want NFS sharing to activate immediately after TrueNAS boots, set *Start Automatically*.
 
-NFS service settings can be configured by clicking <i class="fa fa-pen" aria-hidden="true" title="Configure"></i> (Configure).
+NFS service settings can be configured by clicking <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
 
-![Services NFS Options](/images/CORE/12.0/ServicesNFSOptions.png "Services NFS Options")
+![ServicesNFSOptionsSCALE](/images/SCALE/ServicesNFSOptionsSCALE.png "Services NFS Options")
 
-| Setting                           | Value     | Description                                                                                                                                                                                             |
-|-----------------------------------|-----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Number of servers                 | integer   | Specify how many servers to create. Increase if NFS client responses are slow. Keep this less than or equal to the number of CPUs reported by `sysctl -n kern.smp.cpus` to limit CPU context switching. |
-| Bind IP Addresses                 | drop down | Select IP addresses to listen to for NFS requests. Leave empty for NFS to listen to all available addresses. |
-| Enable NFSv4                      | checkbox  | Set to switch from NFSv3 to NFSv4.  |
-| NFSv3 ownership model for NFSv4   | checkbox  | Set when NFSv4 ACL support is needed without requiring the client and the server to sync users and groups. |
-| Require Kerberos for NFSv4        | checkbox  | Set to force NFS shares to fail if the Kerberos ticket is unavailable. |
-| Serve UDP NFS clients             | checkbox  | Set if NFS clients need to use the User Datagram Protocol (UDP). |
-| Allow non-root mount              | checkbox  | Set only if required by the NFS client. Set to allow serving non-root mount requests. |
-| Support >16 groups                | checkbox  | Set when a user is a member of more than 16 groups. This assumes group membership is configured correctly on the NFS server. |
-| Log mountd(8) requests            | checkbox  | Set to log [mountd](https://www.freebsd.org/cgi/man.cgi?query=mountd) syslog requests. |
-| Log rpc.statd(8) and rpc.lockd(8) | checkbox  | Set to log [rpc.statd](https://www.freebsd.org/cgi/man.cgi?query=rpc.statd) and [rpc.lockd](https://www.freebsd.org/cgi/man.cgi?query=rpc.lockd) syslog requests. |
-| mountd(8) bind port               | integer   | Enter a number to bind [mountd](https://www.freebsd.org/cgi/man.cgi?query=mountd) only to that port. |
-| rpc.statd(8) bind port            | integer   | Enter a number to bind [rpc.statd](https://www.freebsd.org/cgi/man.cgi?query=rpc.statd) only to that port. |
-| rpc.lockd(8) bind port            | integer   | Enter a number to bind [rpc.lockd](https://www.freebsd.org/cgi/man.cgi?query=rpc.lockd) only to that port. |
+| Setting                           | Description |
+|-----------------------------------|-------------|
+| Bind IP Addresses                 | Select IP addresses to listen to for NFS requests. Leave empty for NFS to listen to all available addresses. |
+| Enable NFSv4                      | Set to switch from NFSv3 to NFSv4.  |
+| NFSv3 ownership model for NFSv4   | Set when NFSv4 ACL support is needed without requiring the client and the server to sync users and groups. |
+| Require Kerberos for NFSv4        | Set to force NFS shares to fail if the Kerberos ticket is unavailable. |
+| Serve UDP NFS clients             | Set if NFS clients need to use the User Datagram Protocol (UDP). |
+| Support >16 groups                | Set when a user is a member of more than 16 groups. This assumes group membership is configured correctly on the NFS server. |
+| mountd(8) bind port               | Enter a number to bind [mountd](https://www.freebsd.org/cgi/man.cgi?query=mountd) only to that port. |
+| rpc.statd(8) bind port            | Enter a number to bind [rpc.statd](https://www.freebsd.org/cgi/man.cgi?query=rpc.statd) only to that port. |
+| rpc.lockd(8) bind port            | Enter a number to bind [rpc.lockd](https://www.freebsd.org/cgi/man.cgi?query=rpc.lockd) only to that port. |
 
 Unless a specific setting is needed, it is recommended to use the default settings for the NFS service.
-When TrueNAS is already connected to [Active Directory]({{< relref "ActiveDirectory.md" >}}), setting *NFSv4* and *Require Kerberos for NFSv4* also requires a [Kerberos Keytab]({{< relref "Kerberos.md#kerberos-keytabs" >}}).
+When TrueNAS is already connected to [Active Directory]({{< relref "ActiveDirectorySCALE.md" >}}), setting *NFSv4* and *Require Kerberos for NFSv4* also requires a [Kerberos Keytab]({{< relref "KerberosSCALE.md#kerberos-keytabs" >}}). 
 
 ## Connecting to the NFS Share
 
@@ -804,19 +790,69 @@ For example, on Ubuntu/Debian, enter `sudo apt-get install nfs-common` in the te
 
 After installing the module, connect to an NFS share by entering `sudo mount -t nfs {IPaddressOfTrueNASsystem}:{path/to/nfsShare} {localMountPoint}`.
 In the above example, *{IPaddressOfTrueNASsystem}* is the IP address of the remote TrueNAS system that contains the NFS share, *{path/to/nfsShare}* is the path to the NFS share on the TrueNAS system, and *{localMountPoint}* is a local directory on the host system configured for the mounted NFS share.
-For example, `sudo mount -t nfs 10.239.15.110:/mnt/pool1/photoDataset /mnt` will mount the NFS share *photoDataset* to the local directory `/mnt`.
+For example, `sudo mount -t nfs 10.239.15.110:/mnt/Pool1/NFS_Share /mnt` will mount the NFS share *NFS_Share* to the local directory `/mnt`.
 
-By default, anyone that connects to the NFS share only has the *read* permission.
-To change the default permissions, edit the share, open the *Advanced Options*, and change the **Access** settings.
+By default, anyone that connects to the NFS share only has *read* permission.
+To change the default permissions, edit the share, open the *Advanced Options*, and change the *Access* settings.
 
 {{< hint warning >}}
 ESXI 6.7 or later is required for read/write functionality with NFSv4 shares.
 {{< /hint >}}
-
 {{< /tab >}}
 
 {{< tab "WebDAV" >}}
+A Web-based Distributed Authoring and Versioning (WebDAV) share makes it easy to share a TrueNAS dataset and its contents over the web.
+{{< include file="static/includes/General/SharingPrereqs.md.part" markdown="true" >}}
+
+## Share Configuration
+
+Go to **Shares >** *WebDAV Shares* and click *Add*.
+
+![SharingWebdavAddSCALE](/images/SCALE/SharingWebdavAddSCALE.png "Creating a WebDAV Share")
+
+Enter a share *Name* and use the file browser to select the dataset to be shared.
+An optional *Description* helps to identify the share.
+To prevent user accounts from modifying the shared data, set *Read Only*.
+
+By default, *Change User & Group Ownership* is set.
+This changes existing ownership of *ALL* files in the share to the *webdav* user and group accounts.
+The default simplifies WebDAV share permission, but is unexpected, so the web interface shows a warning:
+
+![SharingWebdavAddWarningSCALE](/images/SCALE/SharingWebdavAddWarningSCALE.png "Services Webdav Add Warning")
+
+This warning does not show when *Change User & Group Ownsership* is unset.
+In that situation, shared file ownership must be manually set to the *webdav* or *www* user and group accounts.
+
+By default, the new WebDAV share is immediately active.
+To create the share but not immediately activate it, unset *Enable*.
+Click *SUBMIT* to create the share.
+
+## Service Activation
+
+Creating a share immediately opens a dialog to activate the WebDAV service.
+To later enable or disable the WebDAV system service, go to **System Settings > Services** and toggle *WebDAV*.
+To automatically start the service when TrueNAS boots, set *Start Automatically*.
+Click <i class="material-icons" aria-hidden="true" title="edit">edit</i> to change the service settings.
+
+![WebDAVServiceOptionsSCALE](/images/SCALE/WebDAVServiceOptionsSCALE.png "WebDAV Service Options")
+
+For better data security, set the *Protocol* to *HTTPS*.
+This requires choosing an SSL certificate, but the *freenas_default* certificate is always available.
+All of the *Protocol* options require defining a *Port* number.
+Make sure the WebDAV service port is not already used on the network.
+
+To prevent unauthorized access to the shared data, set the *HTTP Authentication* to either *Basic* or *Digest* and create a new *Webdav Password*.
+
+Be sure to click *Save* after making any changes.
+
+## Connecting to the WebDAV Share
+
+WebDAV shared data is accessible from a web browser.
+To see the shared data, open a new browser tab and enter `{PROTOCOL}://{TRUENASIP}:{PORT}/{SHAREPATH}`.
+Replace the elements in curly brackets `{}` with your chosen settings from the WebDAV share and service.
+Example: `https://10.2.1.1:8081/newdataset`
+
+When the *Authentication* WebDAV service option is set to either *Basic* or *Digest*, a user name and password is required.
+Enter the user name *webdav* and the password defined in the WebDAV service.
 {{< /tab >}}
 {{< /tabs >}}
-
-
