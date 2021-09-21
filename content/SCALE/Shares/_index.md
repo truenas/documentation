@@ -991,13 +991,11 @@ Example: `https://10.2.1.1:8081/newdataset`
 When the *Authentication* WebDAV service option is set to either *Basic* or *Digest*, a user name and password is required.
 Enter the user name *webdav* and the password defined in the WebDAV service.
 {{< /tab >}}
-{{< /tabs >}}
 
+{{< tab "Nested Tabs" >}}
 {{< tabs tabTotal="3" tabID="1" tabName1="Tab 1" tabName2="Tab 2" tabName3="Tab 3" >}}
 {{< tab tabNum="1" >}}
-{{< tabs tabTotal="3" tabID="1" tabName1="Tab 1" tabName2="Tab 2" tabName3="Tab 3" >}}
-{{< tab tabNum="1" >}}
-**Tab 1 Content**
+**Stuff goes here.**
 {{< /tab >}}
 
 {{< tab tabNum="2" >}}
@@ -1008,13 +1006,5 @@ Enter the user name *webdav* and the password defined in the WebDAV service.
 **Tab 3 Content**
 {{< /tab >}}
 {{< /tabs >}}
-{{< /tab >}}
-
-{{< tab tabNum="2" >}}
-**Tab 2 Content**
-{{< /tab >}}
-
-{{< tab tabNum="3" >}}
-**Tab 3 Content**
-{{< /tab >}}
 {{< /tabs >}}
+
