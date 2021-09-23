@@ -86,16 +86,19 @@ Use the *Power Off* button instead.
 ## Installing an OS
 
 When the VM is configured in TrueNAS and has an OS .iso attached, you can start the VM and begin installing the operating system.
-Note that some operating systems can require specific settings to function properly in a virtual machine. For example, vanilla Debian can require advanced partitioning when installing the OS. Please refer to the documentation for your chosen Operating System for tips and configuration instructions.
+
+{{< hint info >}}
+Some operating systems can require specific settings to function properly in a virtual machine. For example, vanilla Debian can require advanced partitioning when installing the OS. Please refer to the documentation for your chosen Operating System for tips and configuration instructions.
+{{< /hint >}}
 
 
-This example shows installing the Debian OS in a TrueNAS VM. The Debian .iso was uploaded to the TrueNAS system and attached to the VM.
+This is an example of a Debian OS installation in a TrueNAS VM. The Debian .iso was uploaded to the TrueNAS system and attached to the VM. 
 
-From the Virtualization menu, click the ADD button to start the VM Wizard.
+* Click on the Virtualization menu then click the ADD button to start the VM creation process using the VM Wizard.
 
 ![SCALEDebianVMOperatingSystem](/images/SCALE/ScaleDebianVMOsSystem.png "Debian VM Add: OS")
 
-{{< expand "VM Values Entered For Debian Example." "v" >}}
+{{< expand "Values used to created the VM for the Debian Example." "v" >}}
 
 **Operating System values entered:**
 * Guest Operating System: Linux
@@ -137,9 +140,9 @@ From the Virtualization menu, click the ADD button to start the VM Wizard.
 {{< /expand >}}
 
 
-Expand the VM by clicking on the down pointing arrow to the right of the new VM. Click the Start button.
+* Expand the VM by clicking on the down pointing arrow to the right of the new VM. Click the Start button.
 
-Click the Display button to step through the Debian installation.
+* Click the Display button to step through the Debian installation.
 
 {{< expand "Debian Install Example." "v" >}}
 
@@ -180,17 +183,19 @@ Installing Software
 * Click the Continue botton when the installation is finished.
 {{< /expand >}}
 
-Close the Display window after the installtion is finished. In the VM's expanded section click the Power Off button to stop the new VM.
+* Close the Display window after the installtion is finished. In the VM's expanded section click the Power Off button to stop the new VM.
 
-Click the Devices button.
+* Click the Devices button.
 
-Remove the CDROM from the Devices by clicking the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; and selecting *Delete*. Click the Delete Device button.
+* Remove the CDROM from the Devices by clicking the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; and selecting *Delete*. Click the Delete Device button.
 
-Click Virtualization and expand the new VM by clicking on the down pointing arrow to the right.
+* Click Virtualization and expand the new VM by clicking on the down pointing arrow to the right.
 
-Click the Start button.
+* Click the Start button.
 
-Click the Display button. The grub file does not run when the VM is started. This can be done manually, after each start,  at the shell prompt.
+* Click the Display button.
+
+The grub file does not run when the VM is started. This can be done manually, after each start,  at the shell prompt.
 * Type FS0: and the Reurn key on the Keyboard.
 * Type cd EFI and the Reurn key on the Keyboard.
 * Type cd Debian and the Reurn key on the Keyboard
