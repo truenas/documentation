@@ -140,7 +140,7 @@ This is an example of a Debian OS installation in a TrueNAS VM. The Debian .iso 
 {{< /expand >}}
 
 
-* Expand the VM by clicking on the down pointing arrow to the right of the new VM. Click the Start button.
+* Once the VM has been created, expand the VM by clicking on the down pointing arrow to the right of the new VM. Click the Start button.
 
 * Click the Display button to step through the Debian installation.
 
@@ -183,7 +183,9 @@ Installing Software
 * Click the Continue botton when the installation is finished.
 {{< /expand >}}
 
-* Close the Display window after the installtion is finished. In the VM's expanded section click the Power Off button to stop the new VM.
+* Once the Debian installation is finished, close the Display window.
+ 
+* In the VM's expanded section click the Power Off button to stop the new VM.
 
 * Click the Devices button.
 
@@ -195,7 +197,8 @@ Installing Software
 
 * Click the Display button.
 
-The grub file does not run when the VM is started. This can be done manually, after each start,  at the shell prompt.
+**The grub file does not run when the VM is started. This can be done manually after each start.**
+At the shell prompt:
 * Type FS0: and the Reurn key on the Keyboard.
 * Type cd EFI and the Reurn key on the Keyboard.
 * Type cd Debian and the Reurn key on the Keyboard
