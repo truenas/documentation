@@ -9,9 +9,9 @@ From repurposed systems to highly-custom builds, the fundamental freedom of True
 
 These are the absolute minimum system specifications required to install TrueNAS:
 
-| Processor | Memory | Boot Device |
-|-----------|--------|-------------|
-| 2-Core Intel 64-Bit or AMD x86_64 Processor | 16 GiB Memory | 16 GiB SSD Boot Device |
+| Processor | Memory | Boot Device | Storage |
+|-----------|--------|-------------|---------|
+| 2-Core Intel 64-Bit or AMD x86_64 Processor | 16 GiB Memory | 16 GiB SSD Boot Device | 2 identically-sized devices for a single storage "pool" |
 
 For help building a system according to your unique performance, storage, and networking requirements, read on!
 
