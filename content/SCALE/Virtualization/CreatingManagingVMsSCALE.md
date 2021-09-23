@@ -83,16 +83,17 @@ The *State* toggle and <i class="material-icons" aria-hidden="true" title="Stop 
 Use the *Power Off* button instead.
 {{< /hint >}}
 
-## Examples of Specific OS VM Installations
+## Installing an OS
 
-{{< tabs "Examples of Specific OS VM Installations" >}}
-{{< tab "Debian" >}}
+When the VM is configured in TrueNAS and has an OS .iso attached, you can start the VM and begin installing the operating system.
+Note that some operating systems can require specific settings to function properly in a virtual machine. For example, vanilla Debian can require advanced partitioning when installing the OS. Please refer to the documentation for your chosen Operating System for tips and configuration instructions.
 
-Prerequisites:
-* The latest [Debian installation file](https://www.debian.org) has been downloaded.
-* The iso has been uploaded to a dataset on the TrueNAS SCALE system.
+
+This example shows installing the Debian OS in a TrueNAS VM. The Debian .iso was uploaded to the TrueNAS system and attached to the VM.
 
 From the Virtualization menu, click the ADD button to start the VM Wizard.
+
+![SCALEDebianVMOperatingSystem](/images/SCALE/ScaleDebianVMOsSystem.png "Debian VM Add: OS")
 
 **Operating System values entered:**
 * Guest Operating System: Linux
@@ -100,13 +101,11 @@ From the Virtualization menu, click the ADD button to start the VM Wizard.
 * Description: Debian VM
 * Click the Next Button.
 
-![SCALEDebianVMOperatingSystem](/images/SCALE/ScaleDebianVMOsSystem.png "Debian VM Add: OS")
 
 **CPU and Memory values entered:**
 * Change the memory size to 1024 MiB.
 * Click the Next button.
 
-![SCALEDebianVMCpuMemory](/images/SCALE/ScaleDebianVMCpuMemory.png "Debian VM Add: CPU Memory")
 
 **Disks values entered:**
 * Select *Create new disk image*.
@@ -114,37 +113,31 @@ From the Virtualization menu, click the ADD button to start the VM Wizard.
 * Change the size to 30 GiB.
 * Click the Next button.
 
-![SCALEDebianVMDisks](/images/SCALE/ScaleDebianVMDisks.png "Debian VM Add: Disks")
 
 **Network Interface values entered:**
 * Attach NIC: Select the physical interface to associate with the VM.
 * Click the Next button.
 
-![SCALEDebianVMNetwork](/images/SCALE/ScaleDebianVMNetwork.png "Debian VM Add: Network")
 
 **Installation Media values entered:**
 * In this case the installation iso was uploaded to /mnt/tank2/isostorage/. Click on the installation ISO, debian-11.0.0-amd64-netinst.iso. 
 * Note: If the iso hadn't been uploaded previously, the user would select the "Upload an installer image file" box, select a dataset to upload the iso to, click the Choose file button, and click the Upload button. Wait for the upload to complete.
 * Click the Next button.
 
-![SCALEDebianVMInstallationMedia](/images/SCALE/ScaleDebianVMInstallMedia.png "Debian VM Add: Installation Media")
 
 **GPU values entered:**
 * Click the Next button.
 
-![SCALEDebianVMGpu](/images/SCALE/ScaleDebianVMGPU.png "Debian VM Add: GPU")
 
 **Confirm Options:**
 * Verify the information is correct and then click the Submit button.
-
-![SCALEDebianVMConfirm](/images/SCALE/ScaleDebianVMInstallConfirm.png "Debian VM Add: Install confirm")
 
 
 Expand the VM by clicking on the down pointing arrow to the right of the new VM. Click the Start button.
 
 Click the Display button to step through the Debian installation.
 
-{{< expand "The steps/values entered during the example Debian Graphic installation." "v" >}}
+{{< expand "Debian Install Example." "v" >}}
 
 **Debian Graphical Install**
 * Press the Return key, on the keyboard, to start the Debian Graphical Install.
@@ -216,8 +209,4 @@ To test if it now boots up on startup:
 * Click the Dispaly button
 * Log into your Debian VM.
 {{< /hint >}}
-
-
-{{< /tab >}}
-{{< /tabs >}}
 
