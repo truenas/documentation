@@ -95,6 +95,8 @@ From the Virtualization menu, click the ADD button to start the VM Wizard.
 
 ![SCALEDebianVMOperatingSystem](/images/SCALE/ScaleDebianVMOsSystem.png "Debian VM Add: OS")
 
+{{< expand "VM Values Entered For Debian Example." "v" >}}
+
 **Operating System values entered:**
 * Guest Operating System: Linux
 * Name: debianVM
@@ -131,6 +133,8 @@ From the Virtualization menu, click the ADD button to start the VM Wizard.
 
 **Confirm Options:**
 * Verify the information is correct and then click the Submit button.
+
+{{< /expand >}}
 
 
 Expand the VM by clicking on the down pointing arrow to the right of the new VM. Click the Start button.
