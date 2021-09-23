@@ -99,3 +99,7 @@ Open the *Boot Environments* menu and cycle the *Active* boot environment until 
 
 Return to the first screen and press <kbd>Enter</kbd> to boot into the version of TrueNAS that was installed on that date.
 {{< /expand >}}
+
+{{< expand "Manualy Updating an Enterprise HA System" "v" >}}
+It is highly recommended that an appointment is scheduled with Support to walk through the manual update of an Enterprise HA system.
+{{< /expand >}}
