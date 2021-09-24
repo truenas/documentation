@@ -101,9 +101,9 @@ Return to the first screen and press <kbd>Enter</kbd> to boot into the version o
 {{< /expand >}}
 
 {{< expand "Manualy Updating an Enterprise HA System" "v" >}}
-Contacting Support for assistance is highly recommended before the manual update process is deployed for an Enterprise HA system.
+Enterprise customers should contact iX Support for assistance updating their TrueNAS system.
 
-* Download the manual update file located at [TrueNAS Enterprise](https://www.truenas.com/truenas-enterprise/).
+* Download the manual update file located at the [TrueNAS/FreeNAS Download Page](https://download.freenas.org/).
 * Go to **System -> Update**.
 * Click the *INSTALL MANUAL UPDATE* button.
 * Set the *Include Password Secret Seed* checkbox and click the *Save Configuration* button.
