@@ -199,16 +199,16 @@ Installing Software
 
 **The grub file does not run when the VM is started. This can be done manually after each start.**
 At the shell prompt:
-* Type FS0: and the Reurn key on the Keyboard.
-* Type cd EFI and the Reurn key on the Keyboard.
-* Type cd Debian and the Reurn key on the Keyboard
+* Type FS0: and the Return key on the Keyboard.
+* Type cd EFI and the Return key on the Keyboard.
+* Type cd Debian and the Return key on the Keyboard.
 * Type grubx64.efi
 
 {{< hint warning >}}
 To set it up to automatically start up create the startup.nsh file at the root directory on the vm. At the shell prompt type *edit startup.nsh*. In the editor type:
-* Type FS0: and the Reurn key on the Keyboard.
-* Type cd EFIand the Reurn key on the Keyboard.
-* Type cd Debian and the Reurn key on the Keyboard.
+* Type FS0: and the Return key on the Keyboard.
+* Type cd EFIand the Return key on the Keyboard.
+* Type cd Debian and the Return key on the Keyboard.
 * Type grubx64.efi
 * Type the Control+s keys(Command+s for Mac OS) and then the return key.
 * Type the Control+q keys to quit.
@@ -216,9 +216,9 @@ To set it up to automatically start up create the startup.nsh file at the root d
 Close the Dispaly window
 
 To test if it now boots up on startup:
-* Power off the VM
-* Click the Start button
-* Click the Dispaly button
+* Power off the VM.
+* Click the Start button.
+* Click the Dispaly button.
 * Log into your Debian VM.
 {{< /hint >}}
 
