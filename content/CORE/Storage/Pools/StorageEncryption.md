@@ -75,7 +75,6 @@ The dataset status is determined from an icon:
 NOTE: An unencrypted pool  with an encrypted dataset will also show this icon: ![UnecryptedPoolEncryptionDatasetIcon](/images/CORE/12.0/unecrypted_pool_encrypted_dataset.png "Unencrypted Storage Pool with an Unencrypted Dataset")
 {{< /hint >}}.
  
-
 Encrypted datasets can only be locked and unlocked if they are secured with a passphrase instead of a keyfile.
 Before locking a dataset, verify that it is not currently in use, then click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; (Options) and *Lock*.
 
@@ -122,7 +121,7 @@ Creating a new encrypted pool automatically generates new key file and prompts t
 
 ![EncryptionKeyBackupWarning](/images/CORE/12.0/EncryptionKeyBackupWarning.png "Encryption Backup Warning")
 
-Manually download a back up of the pool's, inherited and non-inherited encryption, dataset keyfiles by opening the pool <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and selecting *Export Dataset Keys*. Enter the root password and click the *CONTINUE* button.
+Manually download a copy of the pool's inherited and non-inherited encrypted dataset keyfiles by opening the pool <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and selecting *Export Dataset Keys*. Enter the root password and click the *CONTINUE* button.
 
 ![StoragePoolsEncryptionActionsExportKeys](/images/CORE/12.0/StoragePoolsEncryptionActionsExportKeys.png "Exporting Key Files")
 
