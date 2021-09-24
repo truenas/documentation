@@ -103,12 +103,12 @@ Return to the first screen and press <kbd>Enter</kbd> to boot into the version o
 {{< expand "Manualy Updating an Enterprise HA System" "v" >}}
 Contacting Support for assistance is highly recommended before the manual update process is deployed for an Enterprise HA system.
 
-* Download the manual update file is at [TrueNAS Enterprise]"https://www.truenas.com/truenas-enterprise/".
+* Download the manual update file located at [TrueNAS Enterprise](https://www.truenas.com/truenas-enterprise/).
 * Go to **System -> Update**.
 * Click the *INSTALL MANUAL UPDATE* button.
 * Set the *Include Password Secret Seed* checkbox and click the *Save Configuration* button.
-* Select the *Update File Temporary Storage Location*, click the *Choose File* button and select the manual upgrade file that was downloaded. Wait for the file to upload and then click the *APPLY UPDATE* button.
-* The Manual update will upload the file, install the file to both controllers, and then reboot the Standby Controller. To complete the upgrade process click the *Close* button in thr dialog box. Initiate a failover of the standby controller, as instructed, by clicking *INITIATE FAILOVER* from the Standby Controller's Dashboard card.
+* Select the *Update File Temporary Storage Location*, click the *Choose File* button. Select the manual upgrade file that was downloaded. Wait for the file to upload and then click the *APPLY UPDATE* button.
+* The Manual update will upload the file, install the file to both controllers, and then reboot the Standby Controller. To complete the upgrade process click the *Close* button in the dialog box. Initiate a failover of the standby controller, as instructed, by clicking *INITIATE FAILOVER* from the Standby Controller's Dashboard card.
 * Log into the system.
 * Click the *Continue* button at the Pending Upgrade dialog box and the standby controller will reboot completing the upgrade.
 
