@@ -100,7 +100,7 @@ Open the *Boot Environments* menu and cycle the *Active* boot environment until 
 Return to the first screen and press <kbd>Enter</kbd> to boot into the version of TrueNAS that was installed on that date.
 {{< /expand >}}
 
-{{< expand "Manualy Updating an Enterprise HA System" "v" >}}
+{{< expand "Manually Updating an Enterprise HA System" "v" >}}
 Enterprise customers should contact iX Support for assistance updating their TrueNAS system.
 
 * Download the manual update file located at the [TrueNAS/FreeNAS Download Page](https://download.freenas.org/).
