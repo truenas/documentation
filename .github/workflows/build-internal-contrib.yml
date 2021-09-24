@@ -13,14 +13,14 @@ on:
 jobs:
   deploy:
     if: github.event.pull_request.head.repo.full_name == github.repository
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0         # Fetch all history for .GitInfo and .Lastmod
 
       - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
+        uses: peaceiris/actions-hugo@v2.4.13
         with:
           hugo-version: '0.81.0'
           extended: true
@@ -29,8 +29,8 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '14'
-      
-      - name: Cache dependencies
+
+      - name: Cache
         uses: actions/cache@v2.1.6
         env:
           cache-name: cache-node-modules
@@ -42,9 +42,9 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
-      
+
       - run: npm ci
-      
+
       - name: Build Hugo Site
         run: hugo -d public --gc --minify
       
