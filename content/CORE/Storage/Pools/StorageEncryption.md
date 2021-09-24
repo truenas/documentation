@@ -122,13 +122,13 @@ Creating a new encrypted pool automatically generates new key file and prompts t
 
 ![EncryptionKeyBackupWarning](/images/CORE/12.0/EncryptionKeyBackupWarning.png "Encryption Backup Warning")
 
-Manually back up the pool's inherited and non enherited encrypted dataset keyfiles by opening the pool <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and selecting *Export Dataset Keys*, enter the root password, and click the *CONTINUE* button.
-
-{{< hint info >}}
-To manually back up a single dataset's keyfile, click the dataset <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> and selecting *Export Key*, enter the root password, and click the *CONTINUE* button. Click the *DOWNLOAD KEY* button.
-{{< /hint >}}
+Manually download a back up of the pool's, inherited and non-inherited encryption, dataset keyfiles by opening the pool <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and selecting *Export Dataset Keys*, enter the root password, and click the *CONTINUE* button.
 
 ![StoragePoolsEncryptionActionsExportKeys](/images/CORE/12.0/StoragePoolsEncryptionActionsExportKeys.png "Exporting Key Files")
+
+{{< hint info >}}
+To manually download a back up of a single dataset's keyfile, click the dataset <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> and selecting *Export Key*, enter the root password, and click the *CONTINUE* button. Click the *DOWNLOAD KEY* button.
+{{< /hint >}}
 
 To change the key, click the dataset <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> and *Encryption Options*.
 
