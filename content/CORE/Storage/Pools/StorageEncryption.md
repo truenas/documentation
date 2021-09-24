@@ -122,7 +122,7 @@ Creating a new encrypted pool automatically generates new key file and prompts t
 
 ![EncryptionKeyBackupWarning](/images/CORE/12.0/EncryptionKeyBackupWarning.png "Encryption Backup Warning")
 
-To manually back up a root dataset keyfile by opening the pool <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and selecting *Export Dataset Keys*.
+To manually back up a root dataset keyfile by opening the pool <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and selecting *Export Dataset Keys*, engter the root password, and click the *CONTINUE* button.
 
 ![StoragePoolsEncryptionActionsExportKeys](/images/CORE/12.0/StoragePoolsEncryptionActionsExportKeys.png "Exporting Key Files")
 
