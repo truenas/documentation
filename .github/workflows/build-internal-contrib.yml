@@ -13,38 +13,24 @@ on:
 jobs:
   deploy:
     if: github.event.pull_request.head.repo.full_name == github.repository
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0         # Fetch all history for .GitInfo and .Lastmod
 
       - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
+        uses: peaceiris/actions-hugo@v2.4.13
         with:
           hugo-version: '0.81.0'
           extended: true
+      
+      - name: NPM Setup & Cache
+        uses: bahmutov/npm-install@v1.6.0
 
-      - name: Setup Node
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14'
-      
-      - name: Cache dependencies
-        uses: actions/cache@v2.1.6
-        env:
-          cache-name: cache-node-modules
-        with:
-          # npm cache files are stored in `~/.npm` on Linux/macOS
-          path: ~/.npm
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
-      
-      - run: npm ci
-      
+      - name: Print NPM modules after install
+        run: du -d 0 -h ~/.npm || true
+
       - name: Build Hugo Site
         run: hugo -d public --gc --minify
       
@@ -61,7 +47,7 @@ jobs:
       - name: Get the preview_url
         run: echo "url => ${{ steps.preview_step.outputs.preview_url }}"
      
-      - name: Sleep for 160 seconds
+      - name: Sleep for 180 seconds
         uses: jakejarvis/wait-action@master
         with:
           time: '160s'
