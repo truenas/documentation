@@ -7,7 +7,7 @@ weight: 40
 {{< toc >}}
 
 A ZFS Volume (zvol) is a [dataset]({{< relref "DatasetsSCALE.md" >}}) that represents a block device.
-TrueNAS requires a zvol when configuring [iSCSI Shares]({{< relref "/SCALE/Shares/iSCSI.md" >}}).
+TrueNAS requires a zvol when configuring [iSCSI Shares]({{< relref "/SCALE/Shares/_index.md" >}}).
 
 To create a zvol in a pool, go to **Storage** and click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; on a pool or dataset, then select *Add Zvol*.
 
