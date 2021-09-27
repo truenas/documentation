@@ -47,7 +47,7 @@ jobs:
       - name: Get the preview_url
         run: echo "url => ${{ steps.preview_step.outputs.preview_url }}"
      
-      - name: Sleep for 160 seconds
+      - name: Sleep for 180 seconds
         uses: jakejarvis/wait-action@master
         with:
           time: '160s'
