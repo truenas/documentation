@@ -122,7 +122,7 @@ To edit an existing initiators group, click <i class="material-icons" aria-hidde
 {{< expand "Authorized Access" "v" >}}
 The *Authorized Access* tab lets users create new authorized access networks or edit existing ones in the list.
 
-![SharingISCSIManualAuthorizedAccessSCALE](/images/SCALE/12.0/SharingISCSIManualAuthorizedAccessSCALE.png "iSCSI Authorized Access")
+![SharingISCSIManualAuthorizedAccessSCALE](/images/SCALE/SharingISCSIManualAuthorizedAccessSCALE.png "iSCSI Authorized Access")
 
 To add a new authorized access network, click *ADD* and fill out the group, user, and peer user information.
 
