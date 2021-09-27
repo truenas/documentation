@@ -1,6 +1,8 @@
 ---
 title: "TrueCommand Terms of Service"
-weight: 10
+weight: 2
+aliases:
+  - /truecommand/introduction/tctermsofservice/
 ---
 
 # iXsystems Software End User License Agreement #
