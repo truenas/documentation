@@ -24,14 +24,12 @@ jobs:
         with:
           hugo-version: '0.81.0'
           extended: true
+      
+      - name: NPM Setup & Cache
+        uses: bahmutov/npm-install@v1.6.0
 
-      - name: Setup Node
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14'
-          cache: 'npm'
-
-      - run: npm ci
+      - name: Print NPM modules after install
+        run: du -d 0 -h ~/.npm || true
 
       - name: Build Hugo Site
         run: hugo -d public --gc --minify
@@ -49,7 +47,7 @@ jobs:
       - name: Get the preview_url
         run: echo "url => ${{ steps.preview_step.outputs.preview_url }}"
      
-      - name: Sleep for 160 seconds
+      - name: Sleep for 180 seconds
         uses: jakejarvis/wait-action@master
         with:
           time: '160s'
