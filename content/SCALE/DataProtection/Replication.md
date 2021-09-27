@@ -102,7 +102,7 @@ Choosing to run the replication once will run the replication immediately after 
 Finally, define how long you want to keep snapshots on the destination system.
 We generally recommend defining snapshot lifetime to prevent cluttering the system with obsolete snapshots.
 
-![TasksReplicationTasksScheduleLifeSCALE](/images/SCALE//RepScheduleSCALE.png "Custom Lifetimes")
+![TasksReplicationTasksScheduleLifeSCALE](/images/SCALE/RepScheduleSCALE.png "Custom Lifetimes")
 {{< /tab >}}
 {{< tab "Starting the Replication" >}}
 *Start Replication* saves the new replication task.
