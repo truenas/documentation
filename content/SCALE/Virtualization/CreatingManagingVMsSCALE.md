@@ -11,23 +11,9 @@ Operating systems running inside a VM see emulated virtual hardware rather than 
 VMs provide more isolation than Jails but will also consume more system resources.
 
 {{< expand "What system resources do VMs require?" "v" >}}
-TrueNAS assigns a portion of system RAM and a new zvol to each VM.
-While a VM is running, these resources are not available to the host computer or other VMs.
 
-TrueNAS VMs use [bhyve](https://bhyve.org/) virtual machine software.
-[Bhyve](https://bhyve.org/) virtualization requires at least one of two processors: 
+{{< include file="static/includes/SCALE/ScaleVMReqResources.md.part” markdown="true" >}}
 
-* An Intel processor with Extended Page Tables (EPT) 
-* An AMD processor with Rapid Virtualization Indexing (RVI) or Nested Page Tables (NPT)
-
-To verify that an Intel processor has the required features, open the **Shell** and run `grep VT-x /var/run/dmesg.boot`.
-If the **Shell** shows the EPT and UG features, the processor will work with bhyve.
-
-To verify that an AMD processor has the required features, open the **Shell** and run `grep POPCNT /var/run/dmesg.boot`.
-If the output shows the POPCNT feature, the processor will work with bhyve.
-
-Note that AMD K10 "Kuma" processors include POPCNT but do not support NRIS, which bhyve requires.
-AMD stopped making K10 processors in 2012-2013.
 {{< /expand >}}
 
 ## Creating a Virtual Machine
