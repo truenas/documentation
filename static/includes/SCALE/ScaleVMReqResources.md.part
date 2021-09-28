@@ -1,4 +1,3 @@
-{{< expand "What system resources do VMs require?" "v" >}}
 A portion of system RAM and a new zvol is assigned to each VM.
 While a VM is running, these resources are not available to the host computer or other VMs.
 
@@ -8,4 +7,3 @@ VMs cannot be created unless the host system supports these features.
 
 To verify that you have Intel VT or AMD-V, open the **Shell** and run `egrep '^flags.*(vmx|svm)' /proc/cpuinfo`.
 If device information appears, your system has VT. You can also check the processor model name (in `/proc/cpuinfo`) on the vendor's website.
-{{< /expand >}}
