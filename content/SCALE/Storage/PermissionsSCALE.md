@@ -1,5 +1,5 @@
 ---
-title: "Permissions"
+title: "SCALE Permissions"
 weight: 60
 ---
 
@@ -150,7 +150,7 @@ getfacl /mnt/path/to/dataset
 {{< /tab >}}
 {{< /tabs >}}
 
-### Permissions and Flags (Update)
+### Permissions and Flags
 
 Permissions are divided between Basic and Advanced options. The basic options are commonly used groups of the advanced options.
 
