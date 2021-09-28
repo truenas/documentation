@@ -85,140 +85,127 @@ Use the *Power Off* button instead.
 
 ## Installing an OS
 
-When the VM is configured in TrueNAS and has an OS .iso attached, you can start the VM and begin installing the operating system.
+When the VM is configured in TrueNAS and has an OS '.iso' attached, you can start the VM and begin installing the operating system.
 
 {{< hint info >}}
 Some operating systems can require specific settings to function properly in a virtual machine. For example, vanilla Debian can require advanced partitioning when installing the OS. Please refer to the documentation for your chosen Operating System for tips and configuration instructions.
 {{< /hint >}}
 
+Here is an example of installing a Debian OS in a TrueNAS VM. The Debian `.iso` was uploaded to the TrueNAS system and attached to the VM as a *CD-ROM* device. 
 
-This is an example of a Debian OS installation in a TrueNAS VM. The Debian .iso was uploaded to the TrueNAS system and attached to the VM. 
-
-* Click on the Virtualization menu then click the ADD button to start the VM creation process using the VM Wizard.
+* Click on the **Virtualization** menu then click ADD to start the VM creation process using the wizard.
 
 ![SCALEDebianVMOperatingSystem](/images/SCALE/ScaleDebianVMOsSystem.png "Debian VM Add: OS")
 
-{{< expand "Values used to created the VM for the Debian Example." "v" >}}
+{{< expand "VM values entered for the Debian Example." "v" >}}
 
-**Operating System values entered:**
+**Operating System:**
 * Guest Operating System: Linux
 * Name: debianVM
 * Description: Debian VM
-* Click the Next Button.
 
-
-**CPU and Memory values entered:**
+**CPU and Memory:**
 * Change the memory size to 1024 MiB.
-* Click the Next button.
 
-
-**Disks values entered:**
+**Disks:**
 * Select *Create new disk image*.
 * Select the Zvol Location.
 * Change the size to 30 GiB.
-* Click the Next button.
 
-
-**Network Interface values entered:**
+**Network Interface:**
 * Attach NIC: Select the physical interface to associate with the VM.
-* Click the Next button.
 
+**Installation Media:**
+* In this case the installation ISO was uploaded to `/mnt/tank2/isostorage/`. Click on the installation ISO, *debian-11.0.0-amd64-netinst.iso*. 
+* If the ISO hadn't been uploaded previously, the user needs to set *Upload an installer image file*, select a dataset to store the ISO, click *Choose file*, then click *Upload*. Wait for the upload to complete (this can take some time).
 
-**Installation Media values entered:**
-* In this case the installation iso was uploaded to /mnt/tank2/isostorage/. Click on the installation ISO, debian-11.0.0-amd64-netinst.iso. 
-* Note: If the iso hadn't been uploaded previously, the user would select the "Upload an installer image file" box, select a dataset to upload the iso to, click the Choose file button, and click the Upload button. Wait for the upload to complete.
-* Click the Next button.
+**GPU:**
+* Leave the default values.
 
-
-**GPU values entered:**
-* Click the Next button.
-
-
-**Confirm Options:**
-* Verify the information is correct and then click the Submit button.
+**Confirm Options**
+* Verify the information is correct and then click *Submit*.
 
 {{< /expand >}}
 
+* Once the VM has been created, start it by expanding the VM entry (down pointing arrow to the right of the VM name) and click *Start*.
 
-* Once the VM has been created, expand the VM by clicking on the down pointing arrow to the right of the new VM. Click the Start button.
-
-* Click the Display button to step through the Debian installation.
+* Click *Display* to open a virtual monitor to the VM and see the Debian Graphical Installation screens.
 
 {{< expand "Debian Install Example." "v" >}}
 
 **Debian Graphical Install**
-* Press the Return key, on the keyboard, to start the Debian Graphical Install.
-* Language: English, click the continue button.
-* Location: United States, click the continue button.
-* Keymap: American English, click the continue button.
+* Press <kbd>Return</kbd> to start the Debian Graphical Install.
+* Language: English
+* Location: United States
+* Keymap: American English
 
 Installation begins
 
-* If the Network Configuration fails, click the Continue button.
-* Do not configure the network at this time, click the Continue button.
-* Enter a Hostname, click the Continue button.
-* Enter the root password and re-enter the root password. Click the Continue button.
-* Enter a New User name, click the Continue button.
-* Select the username for your account (it should already be filled in), click the Continue button.
-* Enter and re-enter the password for the user account, then click the Continue button.
-* Choose the time zone, Eastern in this case, and click the Continue button.
+* Continue if the Network Configuration fails.
+* Do not configure the network at this time.
+* Enter a Hostname.
+* Enter the root password and re-enter the root password.
+* Enter a New User name.
+* Select the username for your account (it should already be filled in).
+* Enter and re-enter the password for the user account.
+* Choose the time zone, Eastern in this case.
 
 Disk Detection should begin
 
-* Partition disks: select Guided - use entire disk, click the Continue button.
-* Select the avaialble disk, click the Continue button.
-* Select "All files in one partition (recommended for new users), click the Continue button.
-* Select "Finish partitioning and write changes to disk, click the Continue button.
-* Select "Yes" to "Write the changes to disks?", click the Continue button.
+* Partition disks: select Guided - use entire disk.
+* Select the avaialble disk.
+* Select "All files in one partition (recommended for new users).
+* Select "Finish partitioning and write changes to disk.
+* Select "Yes" to "Write the changes to disks?".
 
 Installing the base system
 
-* Select "No" to the question "Scan extra installation media, click the Continue button.
-* Select "Yes" when asked "Continue without a network mirror, click the Continue button.
+* Select "No" to the question "Scan extra installation media".
+* Select "Yes" when asked "Continue without a network mirror".
 
 Installing Software
 
-* Select "No" when asked "Participate in the package usage survey" , click the Continue button.
-* Select Standard system utilities, click the Continue button.
-* Click the Continue botton when the installation is finished.
+* Select "No" when asked "Participate in the package usage survey".
+* Select Standard system utilities.
+* Click *Continue* when the installation is finished.
 {{< /expand >}}
 
 * Once the Debian installation is finished, close the Display window.
  
-* In the VM's expanded section click the Power Off button to stop the new VM.
+* In the VM's expanded section click *Power Off* to stop the new VM.
 
-* Click the Devices button.
+* Click *Devices*.
 
-* Remove the CDROM from the Devices by clicking the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; and selecting *Delete*. Click the Delete Device button.
+* Remove the CDROM from the Devices by clicking the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; and selecting *Delete*. Click *Delete Device*.
 
 * Click Virtualization and expand the new VM by clicking on the down pointing arrow to the right.
 
-* Click the Start button.
+* Click *Start*.
 
-* Click the Display button.
+* Click *Display*.
 
 **The grub file does not run when the VM is started. This can be done manually after each start.**
 At the shell prompt:
-* Type FS0: and the Return key on the Keyboard.
-* Type cd EFI and the Return key on the Keyboard.
-* Type cd Debian and the Return key on the Keyboard.
-* Type grubx64.efi
+* Type FS0: <kbd>Return</kbd>.
+* Type cd EFI <kbd>Return</kbd>.
+* Type cd Debian <kbd>Return</kbd.
+* Type grubx64.efi <kbd>Return</kbd
 
 {{< hint warning >}}
-To set it up to automatically start up create the startup.nsh file at the root directory on the vm. At the shell prompt type *edit startup.nsh*. In the editor type:
-* Type FS0: and the Return key on the Keyboard.
-* Type cd EFIand the Return key on the Keyboard.
-* Type cd Debian and the Return key on the Keyboard.
-* Type grubx64.efi
-* Type the Control+s keys(Command+s for Mac OS) and then the return key.
+To insure it starts automatically, you will need to create the startup.nsh file at the root directory on the vm. At the shell prompt type *edit startup.nsh*. In the editor type:
+* Type FS0: <kbd>Return</kbd.
+* Type cd EFI <kbd>Return</kbd.
+* Type cd Debian <kbd>Return</kbd.
+* Type grubx64.efi <kbd>Return</kbd
+* Type the Control+s keys(Command+s for Mac OS) <kbd>Return</kbd.
 * Type the Control+q keys to quit.
  
-Close the Dispaly window
+Close the Display window
 
 To test if it now boots up on startup:
 * Power off the VM.
-* Click the Start button.
-* Click the Dispaly button.
+* Click *Start*.
+* Click *Display*.
 * Log into your Debian VM.
 {{< /hint >}}
 
