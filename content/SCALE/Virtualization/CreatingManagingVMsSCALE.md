@@ -12,7 +12,7 @@ VMs provide more isolation than Jails but will also consume more system resource
 
 {{< expand "What system resources do VMs require?" "v" >}}
 
-{{< include file="static/includes/SCALE/ScaleVMReqResources.md.part” markdown="true" >}}
+{{< include file="static/includes/SCALE/ScaleVMReqResources.md.part" markdown="true" >}}
 
 {{< /expand >}}
 
