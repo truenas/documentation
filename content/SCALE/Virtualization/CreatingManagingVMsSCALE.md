@@ -10,9 +10,7 @@ Users can use VMs to run multiple operating systems simultaneously on a single c
 Operating systems running inside a VM see emulated virtual hardware rather than the host computer's physical hardware.
 VMs provide more isolation than Jails but will also consume more system resources.
 
-{{< expand "What system resources do VMs require?" "v" >}}
 {{< include file="static/includes/SCALE/ScaleVMReqResources.md.part" markdown="true" >}}
-{{< /expand >}}
 
 ## Creating a Virtual Machine
 
