@@ -99,3 +99,17 @@ Open the *Boot Environments* menu and cycle the *Active* boot environment until 
 
 Return to the first screen and press <kbd>Enter</kbd> to boot into the version of TrueNAS that was installed on that date.
 {{< /expand >}}
+
+{{< expand "Manually Updating an Enterprise HA System" "v" >}}
+Enterprise customers should contact iX Support for assistance updating their TrueNAS system.
+
+* Download the manual update file located at the [TrueNAS/FreeNAS Download Page](https://download.freenas.org/).
+* Go to **System -> Update**.
+* Click the *INSTALL MANUAL UPDATE* button.
+* Set the *Include Password Secret Seed* checkbox and click the *Save Configuration* button.
+* Select the *Update File Temporary Storage Location*, click the *Choose File* button. Select the manual upgrade file that was downloaded. Wait for the file to upload and then click the *APPLY UPDATE* button.
+* The Manual update will upload the file, install the file to both controllers, and then reboot the Standby Controller. To complete the upgrade process click the *Close* button in the dialog box. Initiate a failover of the standby controller, as instructed, by clicking *INITIATE FAILOVER* from the Standby Controller's Dashboard card.
+* Log into the system.
+* Click the *Continue* button at the Pending Upgrade dialog box and the standby controller will reboot completing the upgrade.
+
+{{< /expand >}}

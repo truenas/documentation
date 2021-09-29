@@ -1,10 +1,17 @@
 {
   "custom.css": "custom.css",
-  "js/clipboard.min.js": "js/clipboard-af8ab36589.min.js",
-  "js/flexsearch.min.js": "js/flexsearch-ad47a5e1ee.min.js",
-  "js/groupBy.min.js": "js/groupBy-62b30ac391.min.js",
-  "js/mermaid.min.js": "js/mermaid-71505ed73e.min.js",
-  "main.min.css": "main-b21fa8a269.min.css",
-  "mobile.min.css": "mobile-249b801e7d.min.css",
+  "js/auto-render.min.js": "js/auto-render-e6e57901eb.min.js",
+  "js/clipboard-loader.min.js": "js/clipboard-loader-f0b5fbd5f6.min.js",
+  "js/clipboard.min.js": "js/clipboard-27784b7376.min.js",
+  "js/darkmode.min.js": "js/darkmode-ce906ea916.min.js",
+  "js/flexsearch.min.js": "js/flexsearch-e54a90f706.min.js",
+  "js/groupBy.min.js": "js/groupBy-174feb11c7.min.js",
+  "js/katex-loader.min.js": "js/katex-loader-3cfedeea38.min.js",
+  "js/katex.min.js": "js/katex-b7063e58c5.min.js",
+  "js/mermaid-loader.min.js": "js/mermaid-loader-1bd1515cbf.min.js",
+  "js/mermaid.min.js": "js/mermaid-6164eefd95.min.js",
+  "katex.min.css": "katex-38042a7abd.min.css",
+  "main.min.css": "main-d68a035c7b.min.css",
+  "mobile.min.css": "mobile-3fc330242c.min.css",
   "print.min.css": "print-f79fc3e5d7.min.css"
 }
