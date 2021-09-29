@@ -208,29 +208,31 @@ There are a few options to migrate data from a GELI-encrypted pool to a new ZFS-
 
 {{< tabs "GELI Migration Methods" >}}
 {{< tab "Replication Wizard" >}}
-{{< expand "Instructions coming soon!" "v" >}}
-As of TrueNAS version 12.0-U1 a decrypted GELI pool is able to migrate data to a new ZFS encrypted pool using an advanced Replication Task.
+{{< expand "Using the Replication Wizard" "v" >}}
+As of TrueNAS version 12.0-U1 a decrypted GELI pool is able to migrate data to a new ZFS encrypted pool using an advanced Replication Task. Start the Replication Wizard by selecting **Tasks** -> **Replication Task** -> *ADD*
+
+Source Location:
+ * Select *On this System*.
+ * Set dataset to transfer.
  
- Replication Task -> ADD
- Source Location: *On this System*
- Select dataset to transfer.
+Destination LocationL
+ * Select *On a Different System*.
  
- Destination Location: *On a Different System*
- SSH Connection: Created the ssh connection by clicking *Create New* or select the Destination system's ssh connection.
- Destination: Select the dataset of the dataset.
- Set Encryption
- Encryption Key Format: PASSPHRASE
- Passphrase: Enter the passphrase.
- set *Store Encryption key in Sending TrueNAS database*.
- Click Next
+SSH Connection:
+ * Either Created the ssh connection by clicking *Create New* or select the Destination system's ssh connection.
+ * In Destination, select the dataset to replicate the files to.
+ * Set Encryption.
+ * Choose PASSPHRASE for the Encryption Key Format.
+ * Enter the passphrase.
+ * Set *Store Encryption key in Sending TrueNAS database*.
+ * Click Next
  
- set *Run Once*
- Unset *Make Destination Dataset Read-Only*.
- Click *START REPLICATION*
+ Replication Schedule:
+ * Set *Run Once* in Replication Schedule.
+ * Unset *Make Destination Dataset Read-Only*.
  
- 
-In versions earlier than 12.0-U1, GELI encrypted pools will continue to be detected and supported in the TrueNAS web interface.
-It is recommended to consider the benefits and drawbacks of immediately migrating from GELI to ZFS.
+ * Click *START REPLICATION*
+
 {{< /expand >}}
 {{< /tab >}}
 {{< tab "File Transfer" >}}
