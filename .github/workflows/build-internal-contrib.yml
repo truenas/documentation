@@ -27,6 +27,8 @@ jobs:
       
       - name: NPM Setup & Cache
         uses: bahmutov/npm-install@v1.6.0
+        with:
+          useRollingCache: true
 
       - name: Print NPM modules after install
         run: du -d 0 -h ~/.npm || true
