@@ -209,9 +209,10 @@ There are a few options to migrate data from a GELI-encrypted pool to a new ZFS-
 {{< tabs "GELI Migration Methods" >}}
 {{< tab "Advanced Replication" >}}
 {{< expand "Instructions coming soon!" "v" >}}
-As of TrueNAS version 12.0-U6 a decrypted GELI pool is able to migrate data to a new ZFS encrypted pool using an advanced Replication Task ([NAS-107463](https://jira.ixsystems.com/browse/NAS-107463)).
-In versions earlier than 12.0-U6, GELI encrypted pools will continue to be detected and supported in the TrueNAS web interface, so you are not required to immediately migrate data away from GELI pools.
-Before using the command line to migrate data, it is recommended to consider the benefits and drawbacks of immediately migrating from GELI to ZFS.
+As of TrueNAS version 12.0-U1 a decrypted GELI pool is able to migrate data to a new ZFS encrypted pool using an advanced Replication Task.
+ 
+In versions earlier than 12.0-U1, GELI encrypted pools will continue to be detected and supported in the TrueNAS web interface.
+It is recommended to consider the benefits and drawbacks of immediately migrating from GELI to ZFS.
 {{< /expand >}}
 {{< /tab >}}
 {{< tab "File Transfer" >}}
