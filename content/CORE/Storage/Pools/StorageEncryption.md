@@ -207,9 +207,27 @@ Do not delete the GELI dataset until you have verified the data migration.
 There are a few options to migrate data from a GELI-encrypted pool to a new ZFS-encrypted pool:
 
 {{< tabs "GELI Migration Methods" >}}
-{{< tab "Advanced Replication" >}}
+{{< tab "Replication Wizard" >}}
 {{< expand "Instructions coming soon!" "v" >}}
 As of TrueNAS version 12.0-U1 a decrypted GELI pool is able to migrate data to a new ZFS encrypted pool using an advanced Replication Task.
+ 
+ Replication Task -> ADD
+ Source Location: *On this System*
+ Select dataset to transfer.
+ 
+ Destination Location: *On a Different System*
+ SSH Connection: Created the ssh connection by clicking *Create New* or select the Destination system's ssh connection.
+ Destination: Select the dataset of the dataset.
+ Set Encryption
+ Encryption Key Format: PASSPHRASE
+ Passphrase: Enter the passphrase.
+ set *Store Encryption key in Sending TrueNAS database*.
+ Click Next
+ 
+ set *Run Once*
+ Unset *Make Destination Dataset Read-Only*.
+ Click *START REPLICATION*
+ 
  
 In versions earlier than 12.0-U1, GELI encrypted pools will continue to be detected and supported in the TrueNAS web interface.
 It is recommended to consider the benefits and drawbacks of immediately migrating from GELI to ZFS.
