@@ -1,5 +1,5 @@
 ---
-title: "TrueNAS Hardware"
+title: "TrueNAS Systems"
 geekdocCollapseSection: true
 weight: 40
 ---
@@ -56,7 +56,6 @@ A single X-Series system can support up to 1 petabyte of raw capacity and is ove
 Powerful enterprise features, like ZFS data protection and high-availability, ensure up to 99.999% uptime to keep your business running even when components fail.
 
 [X-Series Basic Setup Guide]({{< relref "/Hardware/XSeries/XSeriesBSG.md" >}})<br>
-[Controller Replacement Guide]({{< relref "/Hardware/XSeries/XSeriesControllerReplacement.md" >}})
 {{< /tab >}}
 {{< tab "M-Series" >}}
 <div style="text-align:center;">

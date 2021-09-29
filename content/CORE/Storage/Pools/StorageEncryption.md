@@ -50,12 +50,12 @@ These algorithms provide authenticated encryption with block ciphers.
 
 ## Encrypting a New Dataset
 
-New datasets within an existing storage pool can also be encrypted without having to encrypt the entire pool.
+New datasets within an existing unencrypted storage pool can also be encrypted without having to encrypt the entire pool.
 To encrypt a single dataset, go to **Storage > Pools**, open the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> for an existing dataset, and click *Add Dataset*.
 
 ![StoragePoolsDatasetAdd](/images/CORE/12.0/StoragePoolsDatasetAdd.png "New Dataset Options")
 
-Look at the *Encryption Options* and, when the parent dataset is unencrypted, unset *Inherit* and set *Encryption*.
+In the *Encryption Options* area, unset *Inherit* and check *Encryption*.
 
 ![StoragePoolsCreateDatasetEncryptionOptions](/images/CORE/12.0/StoragePoolsCreateDatasetEncryptionOptions.png "Dataset Encryption Options")
 
@@ -75,7 +75,6 @@ The dataset status is determined from an icon:
 NOTE: An unencrypted pool  with an encrypted dataset will also show this icon: ![UnecryptedPoolEncryptionDatasetIcon](/images/CORE/12.0/unecrypted_pool_encrypted_dataset.png "Unencrypted Storage Pool with an Unencrypted Dataset")
 {{< /hint >}}.
  
-
 Encrypted datasets can only be locked and unlocked if they are secured with a passphrase instead of a keyfile.
 Before locking a dataset, verify that it is not currently in use, then click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; (Options) and *Lock*.
 
@@ -89,12 +88,25 @@ To unlock a dataset, click <i class="material-icons" aria-hidden="true" title="O
 
 ![StoragePoolsDatasetUnlockOptions](/images/CORE/12.0/StoragePoolsDatasetUnlockOptions.png "Dataset Unlock Options")
 
-Enter the passphrase and click **Submit**. If there are child datasets that are locked with the same passphrase you can unlock them all at the same time by setting *Unlock Children*.
+Enter the passphrase and click **Submit**. To unlock child datasets, set the *Unlock Children* box. Child datasets that inherited the encryption settings of the parent unlock when parent unlocks. Child datasets that have a different passphrase from the parent can be unlocked at the same time by entering their passphrase.
+
 Confirm unlocking the datasets and wait for a dialog to confirm the unlock is successful.
 
 ![StoragePoolsDatasetUnlockSuccess](/images/CORE/12.0/StoragePoolsDatasetUnlockSuccess.png "Dataset Unlock Success")
 
-The dataset listing changes to show the unlocked icon.
+**Example:**
+
+![StoragePoolsDatasetUnlockexample1](/images/CORE/12.0/EncrytionExample1.png "Encrypted locked Datasets")
+
+The parent dataset is media. It has three child datasets. Documents has "inherited" the parent encryption settings and its password. The other two child datasets, `audio` and `video`, have their own seperate passphrases. When the parent dataset is locked, all child datasets lock too.
+
+![StoragePoolsDatasetUnlockexample2](/images/CORE/12.0/EncrytionExample2.png "Password for locked Datasets")
+
+Open the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> for the parent dataset and select *unlock*. To unlock all the datasets, check the *Unlock Children* and enter the passphrase for each dataset that needs to be unlocked.
+
+![StoragePoolsDatasetUnlockexample3](/images/CORE/12.0/EncrytionExample3.png "Successfully unlocked Datasets")
+
+Click the *Continue* button in the dialog window that confirms that the unlocking was successful. The dataset listing changes to show the unlocked icon.
 
 ## Encryption Management
 
@@ -109,9 +121,13 @@ Creating a new encrypted pool automatically generates new key file and prompts t
 
 ![EncryptionKeyBackupWarning](/images/CORE/12.0/EncryptionKeyBackupWarning.png "Encryption Backup Warning")
 
-To manually back up a root dataset keyfile by opening the pool <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and selecting *Export Dataset Keys*.
+Manually download a copy of the pool's inherited and non-inherited encrypted dataset keyfiles by opening the pool <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and selecting *Export Dataset Keys*. Enter the root password and click the *CONTINUE* button.
 
 ![StoragePoolsEncryptionActionsExportKeys](/images/CORE/12.0/StoragePoolsEncryptionActionsExportKeys.png "Exporting Key Files")
+
+{{< hint info >}}
+To manually download a back up of a single dataset's keyfile, click the dataset <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> and select *Export Key*. Enter the root password and click the *CONTINUE* button. Click the *DOWNLOAD KEY* button.
+{{< /hint >}}
 
 To change the key, click the dataset <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> and *Encryption Options*.
 
