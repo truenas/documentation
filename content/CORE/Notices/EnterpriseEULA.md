@@ -1,6 +1,8 @@
 ---
 title: "TrueNAS Enterprise EULA"
-weight: 40
+weight: 2
+aliases:
+  - /core/introduction/enterpriseeula/
 ---
 
 ## TrueNAS Enterprise End User License Agreement

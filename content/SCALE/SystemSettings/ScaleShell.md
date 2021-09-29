@@ -4,7 +4,7 @@ geekdocCollapseSection: true
 weight: 60
 ---
 
-The SCALE shell is a convenient means to run command lines tools, configure different system settings, or find log files or debut information.
+The SCALE shell is a convenient means to run command lines tools, configure different system settings, or find log files or debug information.
 The shell opens with the root user logged in.
 
 ![Shell](/images/SCALE/shell.png "SCALE Shell")

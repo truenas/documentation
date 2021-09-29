@@ -31,7 +31,7 @@ Allow access and the appropriate access key will be inserted to the FreeNAS acce
 
 Click **VERIFY CREDENTIAL** and wait for the credential to verify.
 
-![CredentialsVerify](/images//TrueNASCommon/CredentialsVerify.png "Credentials Verify")
+![CredentialsVerify](/images/TrueNASCommon/CredentialsVerify.png "Credentials Verify")
 
  Once successful, click **SUBMIT**. The new cloud credentials will be visible in the web interface.
 
