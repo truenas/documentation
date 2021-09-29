@@ -213,15 +213,15 @@ As of TrueNAS version 12.0-U1 a decrypted GELI pool is able to migrate data to a
  
 Start the Replication Wizard by selecting **Tasks** -> **Replication Task** -> *ADD*
 
-Source Location:
+**Source Location**:
  * Select *On this System*.
  * Set the dataset to transfer.
  
-Destination LocationL
+**Destination Location**:
  * Select *On a Different System*.
  
-SSH Connection:
- * Either Created the ssh connection by clicking *Create New* or select the Destination system's ssh connection.
+**SSH Connection**:
+ * Either Created the ssh connection by clicking *Create New* or select the destination system's ssh connection.
  * In *Destination*, select the dataset to replicate the files to.
  * Set *Encryption*.
  * Choose either PASSPHRASE or HEX for the *Encryption Key Format*.
@@ -229,7 +229,7 @@ SSH Connection:
  * Set *Store Encryption key in Sending TrueNAS database*.
  * Click Next
  
- Replication Schedule:
+ **Replication Schedule**:
  * Set *Run Once* in Replication Schedule.
  * Unset *Make Destination Dataset Read-Only*.
  
