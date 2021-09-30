@@ -32,8 +32,8 @@ jobs:
       - name: Install dependencies
         run: pnpm i
 
-      - name: Print NPM modules after install
-        run: du -d 0 -h ~/.npm || true
+      - name: Print PNPM modules after install
+        run: du -d 0 -h ~/.pnpm-store || true
 
       - name: Build Hugo Site
         run: hugo -d public --gc --minify
@@ -52,8 +52,8 @@ jobs:
       - name: Get the preview_url
         run: echo "url => ${{ steps.preview_step.outputs.preview_url }}"
 
-      - name: Sleep for 120 seconds
-        run:  sleep 120s
+      - name: Sleep for 60 seconds
+        run:  sleep 60s
         shell: bash
 
       - name: Check links using container
