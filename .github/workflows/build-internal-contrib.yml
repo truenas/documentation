@@ -26,14 +26,16 @@ jobs:
           extended: true
       
       - name: Cache dependencies
-        uses: actions/cache@v1
+        id: cache
+        uses: actions/cache@v2
         with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
+          path: ./node_modules
+          key: modules-${{ hashFiles('package-lock.json') }}
 
-      - run: npm ci
+      - name: Install dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm ci --ignore-scripts
+
       - run: hugo -d public --gc --minify
 
       # - name: Print NPM modules after install
