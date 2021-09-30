@@ -28,23 +28,16 @@ jobs:
         with:
           hugo-version: '0.81.0'
           extended: true
-      
-      # - name: Cache dependencies
-      #   uses: actions/cache@v2
-      #   with:
-      #     path: ~/.npm
-      #     key: npm-${{ hashFiles('package-lock.json') }}
-      #     restore-keys: npm-
 
       - name: Install dependencies
         run: pnpm i
 
-      # - name: Print NPM modules after install
-      #   run: du -d 0 -h ~/.npm || true
+      - name: Print NPM modules after install
+        run: du -d 0 -h ~/.npm || true
 
       - name: Build Hugo Site
         run: hugo -d public --gc --minify
-      
+
       - name: Preview
         uses: afc163/surge-preview@v1
         id: preview_step
@@ -55,14 +48,14 @@ jobs:
           failOnError: 'true'
           build: |
             echo Deploying to surge.sh
+
       - name: Get the preview_url
         run: echo "url => ${{ steps.preview_step.outputs.preview_url }}"
-     
-      # - name: Sleep for 180 seconds
-      #   uses: jakejarvis/wait-action@master
-      #   with:
-      #     time: '160s'
-     
+
+      - name: Sleep for 120 seconds
+        run:  sleep 120s
+        shell: bash
+
       - name: Check links using container
         uses: ruzickap/action-my-broken-link-checker@v2
         with:
