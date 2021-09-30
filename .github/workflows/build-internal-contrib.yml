@@ -26,15 +26,14 @@ jobs:
           extended: true
       
       - name: Cache dependencies
-        id: cache
         uses: actions/cache@v2
         with:
-          path: ./node_modules
-          key: modules-${{ hashFiles('package-lock.json') }}
+          path: ~/.npm
+          key: npm-${{ hashFiles('package-lock.json') }}
+          restore-keys: npm-
 
       - name: Install dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: npm ci --ignore-scripts
+        run: npm ci --prefer-offline --no-audit
 
       - run: hugo -d public --gc --minify
 
