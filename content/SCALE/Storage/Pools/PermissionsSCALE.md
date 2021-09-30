@@ -29,6 +29,14 @@ Setting new ACLs recursively is destructive, so we suggest creating a ZFS snapsh
 
 For a more in-depth explanation of ACLs and configurations in TrueNAS SCALE, see our [ACL Primer]({{< relref "ACLPrimer.md" >}}).
 
+{{< expand "ACL Details from Shell" "v" >}}
+To view ACL information from the console, go to **System Settings > Shell** and enter:
+
+```shell
+getfacl /mnt/path/to/dataset
+```
+{{< /expand >}}
+
 ## Unix Permissions Editor (POSIX)
 
 The **Unix Permissions Editor** option allows basic adjustments to a dataset's ACL.  Click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> for the dataset to edit and choose *View Permissions*.
@@ -46,6 +54,7 @@ The *Owner* section controls which TrueNAS *User* and *Group* has full control o
 | Apply User | Confirms changes to *User*. To prevent errors, changes to the *User* are submitted only when this box is set. |
 | Group | Select the group to control the dataset. Groups created manually or imported from a directory service appear in the drop-down menu. |
 | Apply Group | Confirms changes to *Group*. To prevent errors, changes to the *Group* are submitted only when this box is set. |
+
 {{< /tab >}}
 {{< tab "Access" >}}
 The *Access* section lets users define the basic *Read*, *Write*, and *Execute* permissions for the *User*, *Group*, and *Other* accounts that might access this dataset.
@@ -66,12 +75,13 @@ TrueNAS uses ACLs to manage user interactions with shared datasets and creates t
 The option to *Select a preset ACL* or *Create a custom ACL* are available. Preset ACL's available from the dropdown menu are *POSIX_OPEN*, *POSIX_RESTRICTED*, or *POSIX_HOME*.  
 ![ACLPresetsSCALE](/images/SCALE/ACLPresetsSCALE.png "ACL Presets")
 
-When creating a custon ACL, Use *Add Item* to apply additional permissions to the *Access Control List*.
+When creating a custom ACL, Use *Add Item* to apply additional permissions to the *Access Control List*.
 
-{{< tabs "Edit ACL" >}}
-{{< tab "ACL Editor" >}}
+{{< tabs "POSIX Edit ACL" >}}
+{{< tab "POSIX ACL Editor" >}}
+
 | Field | Description |
-|------|-------------|
+|-------|-------------|
 | Path | Shows the full pathway to the file. |
 | Owner | User who controls the dataset. This user always has permissions to read or write the ACL and read or write attributes. Users created manually or imported from a directory service appear in the drop-down menu. |
 | Owner Group | The group which controls the dataset. This group has the same permissions as granted to the group@ Who. Groups created manually or imported from a directory service appear in the drop-down menu. |
@@ -81,13 +91,6 @@ Any user accounts or groups imported from a directory service can be selected as
 {{< tab "Access Control List" >}}
 Define *Who* the Access Control Entry (ACE) applies to, and configure permissions and inheritance flags for the ACE.
 
-{{< expand "ACL Details from Shell" "v" >}}
-To view an ACL information from the console, go to **System Settings > Shell** and enter command:
-
-```shell
-getfacl /mnt/path/to/dataset
-```
-{{< /expand >}}
 
 | Field | Description |
 |------|-------------|
@@ -95,17 +98,9 @@ getfacl /mnt/path/to/dataset
 | User | User account to which this ACL entry applies. |
 | Permissions | Select permissions to apply to the chosen Who. Choices change depending on the Permissions Type. |
 | Flags | How this ACE is applied to newly created directories and files within the dataset. Basic flags enable or disable ACE inheritance. Advanced flags allow further control of how the ACE is applied to files and directories in the dataset. |
+
 {{< /tab >}}
 {{< /tabs >}}
-
-
-{{< expand "ACL Details from Shell" "v" >}}
-To view an ACL information from the console, go to **System Settings > Shell** and enter command:
-
-```shell
-getfacl /mnt/path/to/dataset
-```
-{{< /expand >}}
 
 ## ACL Manager (NFSv4)
 
@@ -115,8 +110,9 @@ For *NSFv4* share types, click <i class="material-icons" aria-hidden="true" titl
 Select <i class="material-icons" aria-hidden="true" title="edit">edit</i> and you will be directed to the **Edit ACL** page.
 ![ACLEditPermissionsSCALE](/images/SCALE/ACLEditPermissionsSCALE.png "ACL Edit Permissions")
 
-{{< tabs "Edit ACL" >}}
-{{< tab "ACL Editor" >}}
+{{< tabs "NFSv4 ACL Editing" >}}
+{{< tab "NFSv4 ACL Editor" >}}
+
 | Field | Description |
 |------|-------------|
 | Path | Shows the full pathway to the file. |
@@ -127,14 +123,6 @@ Any user accounts or groups imported from a directory service can be selected as
 {{< /tab >}}
 {{< tab "Access Control List" >}}
 To add a new item to the ACL click *Add Item*, define *Who* the Access Control Entry (ACE) applies to, and configure permissions and inheritance flags for the ACE.
-
-{{< expand "ACL Details from Shell" "v" >}}
-To view an ACL information from the console, go to **System Settings > Shell** and enter command:
-
-```shell
-getfacl /mnt/path/to/dataset
-```
-{{< /expand >}}
 
 | Field | Description |
 |------|-------------|
