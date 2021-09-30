@@ -77,7 +77,7 @@ Some operating systems can require specific settings to function properly in a v
 
 Here is an example of installing a Debian OS in a TrueNAS VM. The Debian `.iso` was uploaded to the TrueNAS system and attached to the VM as a *CD-ROM* device. 
 
-* Click on the **Virtualization** menu then click ADD to start the VM creation process using the wizard.
+* Click on the **Virtualization** menu then click *ADD* to start the VM creation process using the wizard.
 
 ![SCALEDebianVMOperatingSystem](/images/SCALE/ScaleDebianVMOsSystem.png "Debian VM Add: OS")
 
