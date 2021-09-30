@@ -175,7 +175,7 @@ Basic inheritance flags only enable or disable ACE inheritance. Advanced flags o
 | Flag | Description |
 |---------|-------------|
 | Inherit (`fd-----`) | Enable ACE inheritance. | 
-| No Inherit (`-------`) | Enable ACE inheritance. | 
+| No Inherit (`-------`) | Disable ACE inheritance. | 
 {{< /tab >}}
 {{< tab "Advanced Flags" >}}
 | Flag | Description |
