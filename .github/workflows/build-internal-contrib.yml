@@ -37,7 +37,7 @@ jobs:
       #     restore-keys: npm-
 
       - name: Install dependencies
-        run: pnpm ci
+        run: pnpm i
 
       # - name: Print NPM modules after install
       #   run: du -d 0 -h ~/.npm || true
