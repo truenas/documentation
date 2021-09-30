@@ -25,22 +25,16 @@ jobs:
           hugo-version: '0.81.0'
           extended: true
       
-      - name: Cache dependencies
-        uses: actions/cache@v1
+      - name: NPM Setup & Cache
+        uses: bahmutov/npm-install@v1.6.0
         with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
+          useRollingCache: true
 
-      - run: npm ci
-      - run: hugo -d public --gc --minify
+      - name: Print NPM modules after install
+        run: du -d 0 -h ~/.npm || true
 
-      # - name: Print NPM modules after install
-      #   run: du -d 0 -h ~/.npm || true
-
-      # - name: Build Hugo Site
-      #   run: hugo -d public --gc --minify
+      - name: Build Hugo Site
+        run: hugo -d public --gc --minify
       
       - name: Preview
         uses: afc163/surge-preview@v1
