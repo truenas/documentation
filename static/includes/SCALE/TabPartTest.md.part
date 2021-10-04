@@ -1,0 +1,8 @@
+{{< tabs "Tab Test" >}}
+{{< tab "Tab 1" >}}
+Text Text Text Text Text
+{{< /tab >}}
+{{< tab "Tab 2" >}}
+Text Text Text Text Text
+{{< /tab >}}
+{{< /tabs >}}
