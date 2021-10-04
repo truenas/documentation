@@ -1,3 +1,8 @@
+---
+title: "Some Article"
+weight: 15
+---
+
 {{< tabs "Lagg Protocol Options" >}}
 {{< tab "LACP" >}}
 The most commonly used LAGG protocol and is one part of [IEEE specification 802.3ad](https://www.ieee802.org/3/hssg/public/apr07/frazier_01_0407.pdf). In LACP mode, negotiation is performed with the network switch to form a group of ports that are all active at the same time. The network switch must support LACP for this option to function.
