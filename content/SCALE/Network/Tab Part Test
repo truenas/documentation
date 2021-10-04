@@ -6,7 +6,7 @@ The most commonly used LAGG protocol and is one part of [IEEE specification 802.
 Failover causes traffic to be sent through the primary interface of the group. If the primary interface fails, traffic diverts to the next available interface in the LAGG.
 {{< /tab >}}
 {{< tab "Tab Part Test" >}}
-{{< include file="static/includes/TabPartTest.md.part" >}}
+{{< include file="static/includes/SCALE/TabPartTest.md.part" >}}
 {{< /tab >}}
 {{< tab "RoundRobin" >}}
 Round robin accepts inbound traffic on any port of the LAGG group and sends outbound traffic using a round robin scheduling algorithm. Traffic is sent out in sequence using each LAGG interface in turn.
