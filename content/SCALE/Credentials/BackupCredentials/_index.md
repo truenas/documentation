@@ -26,7 +26,7 @@ We recommend users open another browser tab open and log in to the Cloud Storage
 Some providers require additional information that they generate on the storage provider account page.
 For example, saving an Amazon S3 credential on TrueNAS could require logging in to the S3 account and generating an access key pair on the *Security Credentials > Access Keys* page.
 
-To set up a Cloud Credential, navigate to **Credentials > Backup Credentials** and click *Add* in the *Cloud Credentials* window.
+To set up a Cloud Credential, go to **Credentials > Backup Credentials** and click *Add* in the *Cloud Credentials* window.
 
 ![CloudCredentialsSCALE](/images/SCALE/CloudCredentialsSCALE.png "Cloud Credentials Form")
 
