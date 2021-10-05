@@ -71,7 +71,8 @@ If you're still researching what kind of hardware to use with TrueNAS, read over
 
 ## Prepare the Install File
 
-Physical hardware typically requires burning the TrueNAS installer to a physical device, typically a CD or removable USB device. This device is temporarily attached to the system to install TrueNAS to the system's permanent boot device.
+Physical hardware typically requires burning the TrueNAS installer to a physical device, usually a CD or removable USB device is used. This device is temporarily attached to the system to install TrueNAS to the system's permanent boot device.
+
 Remote or headless installation can be done using the .iso file by setting up a virtual media CD in the IPMI.
 
 The method of writing the installer to a device varies between operating systems.
@@ -106,7 +107,15 @@ If this results in a “permission denied” error, use `sudo dd` with the same 
 {{< /expand >}}
 
 {{< expand "IPMI Virtual Media" "v" >}}
-The Virtual Media function, in the IPMI, can be used to set up a virtual boot device using an <file>.iso</file> without using a physical CD or removable USB device. Once the <file>.iso</file> file has been mounted in a virtual cd rom, it can be used to install or update headless servers remotely through the console. 
+The Virtual Media function, in the IPMI, can be used to set up a virtual boot device using an <file>.iso</file> without using a physical CD or removable USB device. Once the <file>.iso</file> file has been mounted in a virtual cd rom, it can be used to install or update headless servers remotely through the console.
+
+The following is an example of how to set up a virtual CD-ROM:
+From the **Virtual Media** menu select *CD-ROM Image*.
+Shared Host: The IP of the system the .iso file has been downloaded to.
+Path to Image: The path to the image file (example install\iso\<name of .iso file>
+Click *Mount*
+Click *Refresh Status* and confirm a disk is being emulated.
+Click *Save*
 {{< /expand >}}
 
 ## Install Process
