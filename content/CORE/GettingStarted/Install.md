@@ -71,8 +71,8 @@ If you're still researching what kind of hardware to use with TrueNAS, read over
 
 ## Prepare the Install File
 
-Physical hardware requires burning the TrueNAS installer to a device, typically a CD or removable USB device.
-This device is temporarily attached to the system to install TrueNAS to the system's permanent boot device.
+Physical hardware typically requires burning the TrueNAS installer to a device, typically a CD or removable USB device. This device is temporarily attached to the system to install TrueNAS to the system's permanent boot device.
+The .iso file can be used on IPMI as virtual media as well for headless installation
 
 The method of writing the installer to a device varies between operating systems.
 Click **Windows** or **Linux** to see instructions for your Operating System, or **CD** for generic CD burning guidance.
@@ -104,10 +104,16 @@ Be very careful when using dd, as choosing the wrong *of=* device path can resul
 Enter `dd status=progress if=path/to/.iso of=path/to/USB` in the CLI.
 If this results in a “permission denied” error, use `sudo dd` with the same parameters and enter the administrator password.
 {{< /expand >}}
+
+{{< expand "IPMI" "v" >}}
+To use IPMI to install with an <file>.iso</file> file the installer with a CD, download your favorite CD burning utility and burn the <file>.iso</file> file to the CD.
+Insert the CD into the TrueNAS system and boot from the CD.
+{{< /expand >}}
+
 ## Install Process
 
 With the installer added to a device, you can now install TrueNAS onto the desired system.
-Insert the install media and reboot or boot the system.
+Insert the install media, or load the iso using IPMI, and reboot or boot the system.
 At the motherboard splash screen, use the hotkey defined by your motherboard manufacturer to boot into the motherboard UEFI/BIOS.
 
 Choose to boot in UEFI mode or legacy CSM/BIOS mode.
