@@ -6,10 +6,7 @@ weight: 150
 
 {{< toc >}}
 
-{{< tabs "Updating Systems" >}}
-{{< tab "Updating CORE" >}}
-
-{{< toc >}}
+# TrueNAS CORE
 
 TrueNAS CORE has an integrated update system to make it easy to keep up to date.
 
@@ -21,6 +18,51 @@ Plan updates around scheduled maintenance times to avoid disrupting user activit
 
 The update process does not proceed unless there is enough free space in the boot pool for the new update files.
 If a space warning is shown, go to **System > Boot** to remove unneeded boot environments.
+
+# TrueNAS Enterprise (HA)
+
+Updating a TrueNAS Enterprise system that is configured for High Availability (HA) has a slightly different flow from non-HA systems or TrueNAS Core.
+The system downloads the update to both controllers, updates and reboots the standby TrueNAS controller, and finally fails over from and updates the active TrueNAS controller.
+
+## Preparation
+
+An update usually takes between thirty minutes and an hour.
+A reboot is required after the update, so it is recommended to schedule updates during a maintenance window, allowing two to three hours to update, test, and possibly roll back if issues appear.
+On very large systems, a proportionally longer maintenance window is recommended.
+
+For individual support during an upgrade, please contact iXsystems Support to schedule your upgrade.
+{{< expand "Contacting iXsystems Support" "v" >}}
+{{< include file="static/includes/General/iXsystemsSupportContact.html.part" html="true" >}}
+{{< /expand >}}
+Scheduling at least two days in advance of a planned upgrade gives time to make sure a specialist is available for assistance.
+Updating from earlier than version 9.3 of TrueNAS must be scheduled with iXsystems Support.
+
+The update process will not proceed unless there is enough free space in the boot pool for the new update files.
+If a space warning is shown, go to **System > Boot** and remove any unneeded boot environments.
+
+Operating system updates only modify the operating system devices and do not affect end-user data on storage drives.
+
+{{< hint info >}}
+An update could involve upgrading the version of ZFS that is installed on the storage drives.
+When a ZFS version upgrade is available, an <i class="material-icons" aria-hidden="true" title="Alert">notifications</i> **Alert** appears in the web interface.
+Upgrading the ZFS version on storage drives is not recommended until it has been verified that rolling back to previous versions of the operating system is not necessary and that swapping the storage drives with another system that has an earlier ZFS version is not needed.
+After a ZFS version upgrade, the storage devices will not be accessible by earlier TrueNAS versions.
+{{< /hint >}}
+
+# Major Version Upgrades
+
+TrueNAS provides flexibility for keeping the operating system up-to-date:<br>
+
+1. Upgrades to major releases, for example from version 9.3 to 9.10, can still be performed using either an ISO or the web interface.
+   Unless the Release Notes for the new major release indicate that the current version requires an ISO upgrade, either upgrade method can be used.
+2. Minor releases have been replaced with signed updates.
+   This means that it is not necessary to wait for a minor release to update the system with a system update or newer versions of drivers and features.
+   It is also no longer necessary to manually download an upgrade file and its associated checksum to update the system.
+3. The updater automatically creates a boot environment, making updates a low-risk operation.
+   Boot environments provide the option to return to the previous version of the operating system by rebooting the system and selecting the previous boot environment from the **System > Boot** menu.
+
+{{< tabs "Updating Systems" >}}
+{{< tab "Updating CORE" >}}
 
 ### Updates and Trains
 
@@ -159,41 +201,6 @@ Dialogs also appear in every active web interface session to warn that a system 
 
 {{< /tab >}}
 {{< tab "Updating ENTERPRISE (HA)" >}}
-{{< toc >}}
----
-title: "Updating Enterprise (HA)"
-weight: 20
----
-
-{{< toc >}}
-
-Updating a TrueNAS Enterprise system that is configured for High Availability (HA) has a slightly different flow from non-HA systems or TrueNAS Core.
-The system downloads the update to both controllers, updates and reboots the standby TrueNAS controller, and finally fails over from and updates the active TrueNAS controller.
-
-## Preparation
-
-An update usually takes between thirty minutes and an hour.
-A reboot is required after the update, so it is recommended to schedule updates during a maintenance window, allowing two to three hours to update, test, and possibly roll back if issues appear.
-On very large systems, a proportionally longer maintenance window is recommended.
-
-For individual support during an upgrade, please contact iXsystems Support to schedule your upgrade.
-{{< expand "Contacting iXsystems Support" "v" >}}
-{{< include file="static/includes/General/iXsystemsSupportContact.html.part" html="true" >}}
-{{< /expand >}}
-Scheduling at least two days in advance of a planned upgrade gives time to make sure a specialist is available for assistance.
-Updating from earlier than version 9.3 of TrueNAS must be scheduled with iXsystems Support.
-
-The update process will not proceed unless there is enough free space in the boot pool for the new update files.
-If a space warning is shown, go to **System > Boot** and remove any unneeded boot environments.
-
-Operating system updates only modify the operating system devices and do not affect end-user data on storage drives.
-
-{{< hint info >}}
-An update could involve upgrading the version of ZFS that is installed on the storage drives.
-When a ZFS version upgrade is available, an <i class="material-icons" aria-hidden="true" title="Alert">notifications</i> **Alert** appears in the web interface.
-Upgrading the ZFS version on storage drives is not recommended until it has been verified that rolling back to previous versions of the operating system is not necessary and that swapping the storage drives with another system that has an earlier ZFS version is not needed.
-After a ZFS version upgrade, the storage devices will not be accessible by earlier TrueNAS versions.
-{{< /hint >}}
 
 ### Starting the Update
 
@@ -278,23 +285,6 @@ Enterprise customers should contact iX Support for assistance updating their Tru
 
 {{< /tab >}}
 {{< tab "Major Version Upgrades" >}}
-
----
-title: "Major Version Upgrades"
-weight: 30
----
-
-{{< toc >}}
-
-TrueNAS provides flexibility for keeping the operating system up-to-date:
-
-1. Upgrades to major releases, for example from version 9.3 to 9.10, can still be performed using either an ISO or the web interface.
-   Unless the Release Notes for the new major release indicate that the current version requires an ISO upgrade, either upgrade method can be used.
-2. Minor releases have been replaced with signed updates.
-   This means that it is not necessary to wait for a minor release to update the system with a system update or newer versions of drivers and features.
-   It is also no longer necessary to manually download an upgrade file and its associated checksum to update the system.
-3. The updater automatically creates a boot environment, making updates a low-risk operation.
-   Boot environments provide the option to return to the previous version of the operating system by rebooting the system and selecting the previous boot environment from the **System > Boot** menu.
 
 This article describes how to use an <file>.iso</file> file to perform a major version upgrade from an earlier version of FreeNAS/TrueNAS.
 See the [Updating]({{< relref "UpdateCORE.md" >}}) article for instructions about using the web interface to keep the system updated.
