@@ -107,15 +107,16 @@ If this results in a “permission denied” error, use `sudo dd` with the same 
 {{< /expand >}}
 
 {{< expand "IPMI Virtual Media" "v" >}}
-The Virtual Media function, in the IPMI, can be used to set up a virtual boot device using an <file>.iso</file> without using a physical CD or removable USB device. Once the <file>.iso</file> file has been mounted in a virtual cd rom, it can be used to install or update headless servers remotely through the console.
+The Virtual Media function, in the IPMI, can be used to set up a virtual boot device for installation (using an <file>.iso</file>) instead of using a physical device. Once the <file>.iso</file> file has been mounted in a virtual cd rom, it can be used to install or update headless servers remotely through the console.
 
 The following is an example of how to set up a virtual CD-ROM:
-From the **Virtual Media** menu select *CD-ROM Image*.
-Shared Host: The IP of the system the .iso file has been downloaded to.
-Path to Image: The path to the image file (example install\iso\<name of .iso file>
-Click *Mount*
-Click *Refresh Status* and confirm a disk is being emulated.
-Click *Save*
+
+* From the **Virtual Media** menu select *CD-ROM Image*.
+* Shared Host: The IP of the system the .iso file has been downloaded to.
+* Path to Image: The path to the image file (example install\iso\<name of .iso file>
+* Click *Mount*.
+* Click *Refresh Status* and confirm a disk is being emulated.
+* Click *Save*.
 {{< /expand >}}
 
 ## Install Process
