@@ -2,6 +2,11 @@
 title: "Update"
 geekdocCollapseSection: true
 weight: 150
+
+aliases:
+  - /core/system/update/updatecore/
+  - /core/system/update/updateenterprise/
+  - /core/system/update/majorupgrade/
 ---
 
 {{< toc >}}
@@ -89,7 +94,7 @@ TrueNAS provides flexibility for keeping the operating system up-to-date:<br>
 3. The updater automatically creates a boot environment, making updates a low-risk operation.
    Boot environments provide the option to return to the previous version of the operating system by rebooting the system and selecting the previous boot environment from the **System > Boot** menu.
    
-The [upgrade instructions](https://truenas-documentation-deploy-pr-1103.surge.sh/core/system/update/#update-and-upgrade-instructions) describe how to use an <file>.iso</file> file to perform a major version upgrade from an earlier version of FreeNAS/TrueNAS.
+The [upgrade instructions](#update-and-upgrade-instructions) describe how to use an <file>.iso</file> file to perform a major version upgrade from an earlier version of FreeNAS/TrueNAS.
 See the [Updating]({{< relref "UpdateCORE.md" >}}) article for instructions about using the web interface to keep the system updated.
 
 The upgrade path for major versions of FreeNAS/TrueNAS is **9.3 > 9.10 > 11.1 > 11.3 > 12.0**.
