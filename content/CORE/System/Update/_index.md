@@ -9,6 +9,8 @@ weight: 150
 {{< tabs "Updating Systems" >}}
 {{< tab "Updating CORE" >}}
 
+{{< toc >}}
+
 TrueNAS CORE has an integrated update system to make it easy to keep up to date.
 
 ## Preparing for Updates
@@ -157,10 +159,244 @@ Dialogs also appear in every active web interface session to warn that a system 
 
 {{< /tab >}}
 {{< tab "Updating ENTERPRISE (HA)" >}}
-Coming Soon!
+{{< toc >}}
+---
+title: "Updating Enterprise (HA)"
+weight: 20
+---
+
+{{< toc >}}
+
+Updating a TrueNAS Enterprise system that is configured for High Availability (HA) has a slightly different flow from non-HA systems or TrueNAS Core.
+The system downloads the update to both controllers, updates and reboots the standby TrueNAS controller, and finally fails over from and updates the active TrueNAS controller.
+
+## Preparation
+
+An update usually takes between thirty minutes and an hour.
+A reboot is required after the update, so it is recommended to schedule updates during a maintenance window, allowing two to three hours to update, test, and possibly roll back if issues appear.
+On very large systems, a proportionally longer maintenance window is recommended.
+
+For individual support during an upgrade, please contact iXsystems Support to schedule your upgrade.
+{{< expand "Contacting iXsystems Support" "v" >}}
+{{< include file="static/includes/General/iXsystemsSupportContact.html.part" html="true" >}}
+{{< /expand >}}
+Scheduling at least two days in advance of a planned upgrade gives time to make sure a specialist is available for assistance.
+Updating from earlier than version 9.3 of TrueNAS must be scheduled with iXsystems Support.
+
+The update process will not proceed unless there is enough free space in the boot pool for the new update files.
+If a space warning is shown, go to **System > Boot** and remove any unneeded boot environments.
+
+Operating system updates only modify the operating system devices and do not affect end-user data on storage drives.
+
+{{< hint info >}}
+An update could involve upgrading the version of ZFS that is installed on the storage drives.
+When a ZFS version upgrade is available, an <i class="material-icons" aria-hidden="true" title="Alert">notifications</i> **Alert** appears in the web interface.
+Upgrading the ZFS version on storage drives is not recommended until it has been verified that rolling back to previous versions of the operating system is not necessary and that swapping the storage drives with another system that has an earlier ZFS version is not needed.
+After a ZFS version upgrade, the storage devices will not be accessible by earlier TrueNAS versions.
+{{< /hint >}}
+
+### Starting the Update
+
+In the web interface **Dashboard**, find the entry for the active TrueNAS controller and click *CHECK FOR UPDATES*.
+This button changes to *UPDATES AVAILABLE* when there is an available update.
+
+![Dashboard Enterprise](/images/CORE/12.0/DashboardEnterprise.png "Dashboard Enterprise")
+
+Clicking the button goes to **System > Update** and shows the option to *Download Updates* or, when the system has already detected and staged an update, *Apply Pending Update*.
+
+When *Download Updates* or *Apply Pending Update* is clicked, it first gives an opportunity to save the current system configuration.
+Backing up the system configuration is strongly recommended before starting the update.
+Including the *Password Secret Seed* in the system configuration removes the encryption from sensitive system data, like stored passwords.
+When enabling this option, take extra precautions to store the downloaded system configuration file in a secure location.
+
+After downloading the system configuration, you can continue to download and/or apply the system update.
+This will start the process to update and reboot the TrueNAS controllers.
+HA and other system services will be briefly unavailable.
+
+Other users that are logged in to the web interface will see a warning dialog.
+A <i class="fa fa-arrow-alt-square-down" aria-hidden="true" title="Down Arrow"></i> **System Updating** icon is shown in the top bar of the web interface while the update is in progress.
+
+Update progress is shown for both TrueNAS controllers.
+The standby TrueNAS controller reboots when it is finished updating.
+This can take several minutes.
+When the standby controller has finished booting, the system must fail over to update and reboot the active TrueNAS controller.
+
+### Fail Over to Complete the Update
+
+To deactivate the active TrueNAS controller and finish the update, go to the **Dashboard**, find the entry for the *Standby* controller, and click *INITIATE FAILOVER*.
+
+![DashboardInitiateFailover](/images/CORE/12.0/DashboardInitiateFailover.png "Initiate Failover")
+
+Initiating the failover briefly interrupts TrueNAS services and availability.
+The browser logs out of the web interface while the active TrueNAS controller deactivates and the standby TrueNAS controller is brought online.
+The web interface login screen reappears when the standby TrueNAS controller finishes activating.
+
+![LoginFailoverEnterprise](/images/CORE/12.0/LoginFailoverEnterprise.png "Login after Failover")
+
+Log in to the web interface and check the <i class="material-icons" aria-hidden="true" title="Cloud">cloud</i> HA status in the top toolbar.
+This icon shows that HA is unavailable while the previously active TrueNAS controller reboots.
+When HA is available, a dialog asks to finish the update.
+Click *CONTINUE* to finish updating the previously active TrueNAS controller.
+
+Verify that the update is complete by going to the **Dashboard** and confirming that the *Version* is the same on both TrueNAS controllers.
+
+{{< expand "Reverting an Update" "v" >}}
+If the update did not install on one of the controllers, the web interface generates an alert about a mismatch between controller versions.
+
+![HA Controller Versions Error Enterprise](/images/CORE/12.0/HAControllerVersionsErrorEnterprise.png "HA Controller Versions Error Enterprise")
+
+If something else goes wrong with the update, the system generates an alert and writes details to <file>/data/update.failed</file>.
+
+You can return the system to its pre-update state by activating a previous boot environment during system boot.
+To ensure the versions match, do this procedure for both TrueNAS controllers.
+This requires physical or IPMI access to the TrueNAS controller console.
+
+Reboot the system and press the space bar when the boot menu appears, pausing the boot process.
+
+![BootMenu](/images/CORE/12.0/BootMenu.png "TrueNAS Boot Menu")
+
+Open the *Boot Environments* menu and cycle the *Active* boot environment until one that is dated prior to the update is selected.
+
+![BootMenuSelectBE](/images/CORE/12.0/BootMenuSelectBE.png "Selecting a Boot Environment")
+
+Return to the first screen and press <kbd>Enter</kbd> to boot into the version of TrueNAS that was installed on that date.
+{{< /expand >}}
+
+{{< expand "Manually Updating an Enterprise HA System" "v" >}}
+Enterprise customers should contact iX Support for assistance updating their TrueNAS system.
+
+* Download the manual update file located at the [TrueNAS/FreeNAS Download Page](https://download.freenas.org/).
+* Go to **System -> Update**.
+* Click the *INSTALL MANUAL UPDATE* button.
+* Set the *Include Password Secret Seed* checkbox and click the *Save Configuration* button.
+* Select the *Update File Temporary Storage Location*, click the *Choose File* button. Select the manual upgrade file that was downloaded. Wait for the file to upload and then click the *APPLY UPDATE* button.
+* The Manual update will upload the file, install the file to both controllers, and then reboot the Standby Controller. To complete the upgrade process click the *Close* button in the dialog box. Initiate a failover of the standby controller, as instructed, by clicking *INITIATE FAILOVER* from the Standby Controller's Dashboard card.
+* Log into the system.
+* Click the *Continue* button at the Pending Upgrade dialog box and the standby controller will reboot completing the upgrade.
+
+{{< /expand >}}
 
 {{< /tab >}}
 {{< tab "Major Version Upgrades" >}}
-Coming Soon!
+
+---
+title: "Major Version Upgrades"
+weight: 30
+---
+
+{{< toc >}}
+
+TrueNAS provides flexibility for keeping the operating system up-to-date:
+
+1. Upgrades to major releases, for example from version 9.3 to 9.10, can still be performed using either an ISO or the web interface.
+   Unless the Release Notes for the new major release indicate that the current version requires an ISO upgrade, either upgrade method can be used.
+2. Minor releases have been replaced with signed updates.
+   This means that it is not necessary to wait for a minor release to update the system with a system update or newer versions of drivers and features.
+   It is also no longer necessary to manually download an upgrade file and its associated checksum to update the system.
+3. The updater automatically creates a boot environment, making updates a low-risk operation.
+   Boot environments provide the option to return to the previous version of the operating system by rebooting the system and selecting the previous boot environment from the **System > Boot** menu.
+
+This article describes how to use an <file>.iso</file> file to perform a major version upgrade from an earlier version of FreeNAS/TrueNAS.
+See the [Updating]({{< relref "UpdateCORE.md" >}}) article for instructions about using the web interface to keep the system updated.
+
+The upgrade path for major versions of FreeNAS/TrueNAS is **9.3 > 9.10 > 11.1 > 11.3 > 12.0**.
+It is always recommended to upgrade to a [supported version]({{< relref "SofDevLifecycle.md" >}}) of the software.
+
+## Caveats
+
+Be aware of these caveats before attempting a major version upgrade:
+
+* **Upgrading a data storage pool can make it impossible to go back to a previous version.**
+  For this reason, the update process does not automatically upgrade storage pools, though the system shows an alert when a pool can be upgraded.
+  Unless new ZFS feature flags are needed, it is safe to leave the pool at the current version.
+  If the pool is upgraded, it will not be possible to boot into a previous TrueNAS version that does not support the newer feature flags.
+* Upgrading the firmware of Broadcom SAS HBAs to the latest version is recommended.
+* When upgrading from 9.3.x to 9.10, read this [changes FAQ]({{< relref "9.3to9.10UpgradeFAQ.md" >}}) first.
+* **Upgrades from FreeNAS 0.7x are not supported.**
+  The system has no way to import configuration settings from FreeNAS 0.7x versions.
+  The configuration must be manually recreated.
+  If supported, the FreeNAS 0.7x pools or disks must be manually imported.
+* **Upgrades on 32-bit hardware are not supported.**
+  However, if the system is currently running a 32-bit version of FreeNAS/TrueNAS and the hardware supports 64-bit, the system can be upgraded.
+  Any archived reporting graphs will be lost during the upgrade.
+* **UFS is not supported.**
+  If the data currently resides on **one** UFS-formatted disk, [create a ZFS pool]({{< relref "PoolCreate.md" >}}) using other disks after the upgrade, then use the instructions in [Importing a Disk]({{< relref "ImportDisk.md" >}}) to mount the UFS-formatted disk and copy the data to the ZFS pool.
+  With only one disk, back up its data to another system or media before the upgrade, format the disk as `ZFS` after the upgrade, then restore the backup.
+  If the data currently resides on a UFS RAID of disks, it is not possible to directly import that data to the ZFS pool.
+  Instead, back up the data before the upgrade, create a ZFS pool after the upgrade, then restore the data from the backup.
+* **If you have GELI-encrypted pools and are upgrading to TrueNAS 12.0 or newer**, you might want to migrate data out of the GELI-encrypted pools into ZFS-encrypted pools.
+  The GELI pools **cannot be converted**; the data must be migrated to a new ZFS pool.
+  See the [Encryption article]({{< relref "StorageEncryption.md" >}}) for more details.
+
+## Preparation
+
+Before upgrading the operating system, follow these steps:
+
+1. Back up the TrueNAS configuration in **System > General > Save Config**.
+2. Back up any or have the keys or passphrases for encrypted data available.
+3. Warn users that TrueNAS shared data will be unavailable during the upgrade.
+   It is recommended to schedule the upgrade for a time that will least impact users.
+4. Stop all system **Services**.
+
+## ISO Upgrades
+
+To upgrade TrueNAS using an <file>.iso</file> file, go to https://www.truenas.com/download-truenas-core/ (TrueNAS CORE latest release) or https://download.freenas.org to download the <file>.iso</file> to the computer that will be used to prepare the installation media.
+For example, this is the path to download an <file>.iso</file> of the latest FreeNAS 11.3 release:
+
+![DownloadLatest](/images/CORE/11.3/DownloadLatest.png "Path to latest 11.3 release")
+
+Burn the downloaded <file>.iso</file> file to a CD or USB stick. Refer to the [Prepare the Install File]({{< relref "/Core/GettingStarted/Install.md#prepare-the-install-file" >}}) instructions in the Installation article for tips about burning the <file>.iso</file> to media using different Operating Systems.
+
+Insert the prepared media into the system and boot from it.
+The installer waits ten seconds in the installer boot menu before booting the default option.
+If needed, press <kbd>Spacebar</kbd> to stop the timer and choose another boot option.
+After the media finishes booting into the installation menu, press <kbd>Enter</kbd> to select the default option `1 Install/Upgrade`.
+The installer presents a screen showing all available drives.
+
+{{< hint warning >}}
+All drives are shown, including boot drives and storage drives.
+Only choose boot drives when upgrading.
+**Choosing the wrong drives to upgrade or install will cause loss of data.**
+If unsure about which drives contain the TrueNAS operating system, reboot and remove the install media.
+Log in to the TrueNAS web interface and go to **System > Boot > ACTIONS > Boot Pool Status** to identify the boot drives.
+More than one drive is shown when a mirror has been used.
+{{< /hint >}}
+
+Highlight the drive where TrueNAS is installed and press <kbd>Spacebar</kbd> to mark it with a star.
+If a mirror has been used for the operating system, mark all of the drives where the TrueNAS operating system is installed.
+Press <kbd>Enter</kbd> when done.
+
+The installer recognizes earlier versions of FreeNAS/TrueNAS installed on the boot drives and asks to either upgrade or do a fresh install:
+
+![InstallerUpgradeChoice](/images/CORE/12.0/InstallerUpgradeChoice.png "Upgrade Choice")
+
+To perform an upgrade, press <kbd>Enter</kbd> to accept the default `Upgrade Install`.
+The installer will display another reminder that the operating system should be installed on a disk that is not used for storage.
+
+![InstallerUpgradeMethod](/images/CORE/12.0/InstallerUpgradeMethod.png "Upgrade Method")
+
+The updated system can be installed in a new boot environment, or the entire operating system device can be formatted to start fresh.
+Installing into a new boot environment preserves the old code, allowing a roll-back to previous versions if necessary.
+Formatting the boot device is usually not necessary but can reclaim space.
+User data and settings are preserved when installing to a new boot environment and also when formatting the operating system device.
+Move the highlight to one of the options and press <kbd>Enter</kbd> to start the upgrade.
+
+The installer unpacks the new image and checks for upgrades to the existing database file.
+The database file that is preserved and migrated contains your TrueNAS configuration settings.
+
+![Installer Upgrade Preserved Database](/images/CORE/12.0/InstallerUpgradePreservedDatabase.png "Preserved Database")
+
+Press <kbd>Enter</kbd>.
+TrueNAS indicates that the upgrade is complete and a reboot is required.
+Press *OK*, highlight `3 Reboot System`, then press <kbd>Enter</kbd> to reboot the system.
+If the upgrade installer was booted from CD, remove the CD.
+
+During the reboot there can be a conversion of the previous configuration database to the new version of the database.
+This happens during the `Applying database schema changes` line in the reboot cycle.
+This conversion can take a long time to finish, sometimes fifteen minutes or more, and can cause the system to reboot again.
+The system will start normally afterwards.
+If database errors are shown but the web interface is accessible, log in, go to **System > General**, and use the **UPLOAD CONFIG** button to upload the configuration backup that was downloaded before starting the upgrade.
+
+
 {{< /tab >}}
 {{< /tabs >}}
