@@ -19,6 +19,34 @@ Plan updates around scheduled maintenance times to avoid disrupting user activit
 The update process does not proceed unless there is enough free space in the boot pool for the new update files.
 If a space warning is shown, go to **System > Boot** to remove unneeded boot environments.
 
+### Updates and Trains
+
+Cryptographically signed update files are used to update TrueNAS.
+Update files provide flexibility in deciding when to upgrade the system.
+Updates are installed in a new Boot Environment, giving you the opportunity to install and test an update, but revert to a previous Boot Environment in **System > Boot** if anything goes wrong.
+
+TrueNAS defines software branches, known as trains.
+There are several trains available for updates, but the web interface only displays trains that can be selected as an upgrade.
+
+Update trains are labeled with a numeric version followed by a short description.
+The current version receives regular bug fixes and new features.
+Supported older versions of TrueNAS only receive maintenance updates.
+See the [Software Development Life Cycle]({{< relref "SofDevLifecycle.md" >}}) for more details about the development and support timeline for TrueNAS versions.
+
+Several specific words are used to describe the type of train:
+
+**STABLE**: Bug fixes and new features are available from this train. Upgrades available from a STABLE train are tested and ready to apply to a production environment.
+
+**Nightlies**: Experimental train used for testing future versions of TrueNAS.
+
+**SDK**: Software Developer Kit train. This has additional tools for testing and debugging TrueNAS.
+
+{{< hint warning >}}
+The UI shows a warning when the currently selected train is not suited for production use.
+Before using a non-production train, be prepared to experience bugs or problems.
+Testers are encouraged to submit bug reports at https://jira.ixsystems.com.
+{{< /hint >}}
+
 ## TrueNAS Enterprise (HA)
 
 Updating a TrueNAS Enterprise system that is configured for High Availability (HA) has a slightly different flow from non-HA systems or TrueNAS Core.
@@ -61,7 +89,7 @@ TrueNAS provides flexibility for keeping the operating system up-to-date:<br>
 3. The updater automatically creates a boot environment, making updates a low-risk operation.
    Boot environments provide the option to return to the previous version of the operating system by rebooting the system and selecting the previous boot environment from the **System > Boot** menu.
    
-The upgrade instructions below describes how to use an <file>.iso</file> file to perform a major version upgrade from an earlier version of FreeNAS/TrueNAS.
+The [upgrade instructions](#update-and-upgrade-instructions) describe how to use an <file>.iso</file> file to perform a major version upgrade from an earlier version of FreeNAS/TrueNAS.
 See the [Updating]({{< relref "UpdateCORE.md" >}}) article for instructions about using the web interface to keep the system updated.
 
 The upgrade path for major versions of FreeNAS/TrueNAS is **9.3 > 9.10 > 11.1 > 11.3 > 12.0**.
@@ -107,34 +135,6 @@ Before upgrading the operating system, follow these steps:
 
 {{< tabs "Updating and Upgrading Systems" >}}
 {{< tab "Updating CORE" >}}
-
-### Updates and Trains
-
-Cryptographically signed update files are used to update TrueNAS.
-Update files provide flexibility in deciding when to upgrade the system.
-Updates are installed in a new Boot Environment, giving you the opportunity to install and test an update, but revert to a previous Boot Environment in **System > Boot** if anything goes wrong.
-
-TrueNAS defines software branches, known as trains.
-There are several trains available for updates, but the web interface only displays trains that can be selected as an upgrade.
-
-Update trains are labeled with a numeric version followed by a short description.
-The current version receives regular bug fixes and new features.
-Supported older versions of TrueNAS only receive maintenance updates.
-See the [Software Development Life Cycle]({{< relref "SofDevLifecycle.md" >}}) for more details about the development and support timeline for TrueNAS versions.
-
-Several specific words are used to describe the type of train:
-
-**STABLE**: Bug fixes and new features are available from this train. Upgrades available from a STABLE train are tested and ready to apply to a production environment.
-
-**Nightlies**: Experimental train used for testing future versions of TrueNAS.
-
-**SDK**: Software Developer Kit train. This has additional tools for testing and debugging TrueNAS.
-
-{{< hint warning >}}
-The UI shows a warning when the currently selected train is not suited for production use.
-Before using a non-production train, be prepared to experience bugs or problems.
-Testers are encouraged to submit bug reports at https://jira.ixsystems.com.
-{{< /hint >}}
 
 ### Checking for Updates
 
