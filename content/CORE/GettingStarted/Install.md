@@ -71,7 +71,7 @@ If you're still researching what kind of hardware to use with TrueNAS, read over
 
 ## Prepare the Install File
 
-Physical hardware typically requires burning the TrueNAS installer to a physical device, usually a CD or removable USB device is used. This device is temporarily attached to the system to install TrueNAS to the system's permanent boot device.
+Physical hardware typically requires burning the TrueNAS installer to a physical device. Usually a CD or removable USB device is used. This device is temporarily attached to the system to install TrueNAS to the system's permanent boot device.
 
 Remote or headless installation can be done using the .iso file by setting up a virtual media CD in the IPMI.
 
