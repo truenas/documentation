@@ -6,6 +6,9 @@ weight: 150
 
 {{< toc >}}
 
+{{< tabs "Updating Systems" >}}
+{{< tab "Updating CORE" >}}
+
 TrueNAS CORE has an integrated update system to make it easy to keep up to date.
 
 ## Preparing for Updates
@@ -151,3 +154,13 @@ Starting an update shows a progress dialog.
 When an update is in progress, the web interface shows an animated <i class="material-icons" aria-hidden="true" title="System Update">system_update_alt</i> icon in the top row.
 Dialogs also appear in every active web interface session to warn that a system update is in progress.
 **Do not** interrupt a system update.
+
+{{< /tab >}}
+{{< tab "Updating ENTERPRISE (HA)" >}}
+Coming Soon!
+
+{{< /tab >}}
+{{< tab "Major Version Upgrades" >}}
+Coming Soon!
+{{< /tab >}}
+{{< /tabs >}}
