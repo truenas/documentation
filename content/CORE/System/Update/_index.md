@@ -6,11 +6,11 @@ weight: 150
 
 {{< toc >}}
 
-# TrueNAS CORE
+## TrueNAS CORE
 
 TrueNAS CORE has an integrated update system to make it easy to keep up to date.
 
-## Preparing for Updates
+### Preparation
 
 It is best to perform updates at times the TrueNAS system is idle, with no clients connected and no scrubs or other disk activity happening.
 Most updates require a system reboot.
@@ -19,12 +19,12 @@ Plan updates around scheduled maintenance times to avoid disrupting user activit
 The update process does not proceed unless there is enough free space in the boot pool for the new update files.
 If a space warning is shown, go to **System > Boot** to remove unneeded boot environments.
 
-# TrueNAS Enterprise (HA)
+## TrueNAS Enterprise (HA)
 
 Updating a TrueNAS Enterprise system that is configured for High Availability (HA) has a slightly different flow from non-HA systems or TrueNAS Core.
 The system downloads the update to both controllers, updates and reboots the standby TrueNAS controller, and finally fails over from and updates the active TrueNAS controller.
 
-## Preparation
+### Preparation
 
 An update usually takes between thirty minutes and an hour.
 A reboot is required after the update, so it is recommended to schedule updates during a maintenance window, allowing two to three hours to update, test, and possibly roll back if issues appear.
@@ -49,7 +49,7 @@ Upgrading the ZFS version on storage drives is not recommended until it has been
 After a ZFS version upgrade, the storage devices will not be accessible by earlier TrueNAS versions.
 {{< /hint >}}
 
-# Major Version Upgrades
+## Major Version Upgrades
 
 TrueNAS provides flexibility for keeping the operating system up-to-date:<br>
 
@@ -67,7 +67,7 @@ See the [Updating]({{< relref "UpdateCORE.md" >}}) article for instructions abou
 The upgrade path for major versions of FreeNAS/TrueNAS is **9.3 > 9.10 > 11.1 > 11.3 > 12.0**.
 It is always recommended to upgrade to a [supported version]({{< relref "SofDevLifecycle.md" >}}) of the software.
 
-## Caveats
+### Caveats
 
 Be aware of these caveats before attempting a major version upgrade:
 
@@ -93,7 +93,7 @@ Be aware of these caveats before attempting a major version upgrade:
   The GELI pools **cannot be converted**; the data must be migrated to a new ZFS pool.
   See the [Encryption article]({{< relref "StorageEncryption.md" >}}) for more details.
 
-## Preparation
+### Preparation
 
 Before upgrading the operating system, follow these steps:
 
@@ -103,7 +103,9 @@ Before upgrading the operating system, follow these steps:
    It is recommended to schedule the upgrade for a time that will least impact users.
 4. Stop all system **Services**.
 
-{{< tabs "Updating Systems" >}}
+## Update and Upgrade Instructions
+
+{{< tabs "Updating and Upgrading Systems" >}}
 {{< tab "Updating CORE" >}}
 
 ### Updates and Trains
