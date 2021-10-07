@@ -56,7 +56,7 @@ Return to **Storage**, find the new dataset, and click <i class="material-icons"
 Set the *Owner* fields (user and group) to the new user account.
 Set *Apply User* and *Apply Group* before saving.
 
-![EditDatasetPermissionsSCALE](/images/SCALE/StoragePoolsEditPermissionsBasic.png "Basic Permissions Editor")
+![EditDatasetPermissionsSCALE](/images/SCALE/EditDatasetPermissionsSCALE.png "Basic Permissions Editor")
 
 ### Service Configuration
 
