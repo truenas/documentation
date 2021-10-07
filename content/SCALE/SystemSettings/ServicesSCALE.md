@@ -343,7 +343,7 @@ It is possible to access, create new buckets, or upload files to created buckets
 ![AmazonS3Browser](/images/CORE/AmazonS3Browser.png "S3 Browser")
 {{< /tab >}}
 
-{{< tab "S3" >}}
+{{< tab "SNMP" >}}
 [SNMP (Simple Network Management Protocol)](https://tools.ietf.org/html/rfc1157) monitors network-attached devices for conditions that warrant administrative attention.
 TrueNAS uses [Net-SNMP](https://sourceforge.net/projects/net-snmp/) to provide SNMP.
 To configure SNMP, go to **System Settings > Services** page, find *SNMP*, and click the <i class="fa fa-pencil" aria-hidden="true" title="Configure"></i>.
@@ -364,4 +364,71 @@ Check the directory on your system by going to  **System Settings > Shell** and 
 Here is a sample of the directory contents:
 
 ![ServicesSNMPsampleSCALE](/images/SCALE/ServicesSNMPsampleSCALE.png "Services SNMP Mib Sample")
+{{< /tab >}}
+
+{{< tab "SSH" >}}
+The SSH service lets users connect to TrueNAS with the [Secure SHell Transport Layer Protocol](https://tools.ietf.org/html/rfc4253).
+When using TrueNAS as an SSH server, the users in the network must use [SSH client software](https://www.bing.com/search?q=SSH%20client%20software) to transfer files with SSH.
+
+{{< hint warning >}}
+Allowing external connections to TrueNAS is a security vulnerability!
+Do not enable SSH unless you require external connections.
+{{< /hint>}}
+
+Activate or configure the SSH service on the **System Settings > Services** page.
+
+To configure SSH, go to **System Settings > Services** and find *SSH*, then click <i class="fa fa-pencil" aria-hidden="true" title="Configure"></i>.
+
+![ServicesSSHSCALE](/images/SCALE/ServicesSSHSCALE.png "SSH Options")
+
+Configure the options as needed to match your network environment.
+{{< expand "SSH Service Fields" "v" >}}
+{{< include file="static/includes/Reference/ServicesSSHFields.md.part" markdown="true" >}}
+{{< /expand >}}
+
+Remote systems may require *root* access. Be sure to have all security precautions in place before allowing *root* access.
+
+We recommend these additional SSH service options:
+
+* Add `NoneEnabled no` to *Auxiliary Parameters* to disable the insecure *none* cipher.
+* Increase the *ClientAliveInterval* if SSH connections tend to drop.
+* Increase the *ClientMaxStartup* value (*10* is default) when you need more concurrent SSH connections.
+
+Don't forget to re-enable the SSH service in **System Settings > Services** after making changes.
+To create and store specific [SSH connections and keypairs]({{< relref "/SCALE/Credentials/BackupCredentials/_index.md" >}}), go to **Credentials > Backup Credentials**.
+{{< /tab >}}
+
+{{< tab "UPS" >}}
+TrueNAS uses [NUT](https://networkupstools.org/) (Network UPS Tools) to provide UPS support.
+After connecting the TrueNAS system UPS device, configure the UPS service by going to **System settings > Services**, finding *UPS*, and clicking <i class="fa fa-pencil" aria-hidden="true" title="Configure"></i>.
+
+![ServicesUPSSCALE](/images/SCALE/ServicesUPSSCALE.png "UPS Options")
+
+{{< expand "Specific Options" "v" >}}
+{{< include file="static/includes/Reference/ServicesUPSFields.md.part" markdown="true" >}}
+{{< /expand >}}
+
+Some UPS models sre unresponsive with the default polling frequency (default is *two* seconds).
+TrueNAS displays the issue in logs as a recurring error like `libusb_get_interrupt: Unknown error`.
+If you get an error, decrease the polling frequency by adding an entry to *Auxiliary Parameters (ups.conf)*: `pollinterval = 10`.
+
+[upsc(8)](https://www.freebsd.org/cgi/man.cgi?query=upsc) can get status variables like the current charge and input voltage from the UPS daemon.
+Run this in **System Settings > Shell** using the syntax `upsc ups@localhost`.
+The [upsc(8)](https://www.freebsd.org/cgi/man.cgi?query=upsc) manual page has other usage examples.
+
+[upscmd(8)](https://www.freebsd.org/cgi/man.cgi?query=upscmd) can send commands directly to the UPS, assuming the hardware supports it.
+Only users with administrative rights can use this command. You can create them in the *Extra Users* field.
+
+{{< expand "How do I find a device name?" "v" >}}
+For USB devices, the easiest way to determine the correct device name is to set *Show console messages* in **System Settings > Advanced**.
+Plug in the USB device and look for a <file>/dev/ugen</file> or <file>/dev/uhid</file> device name in the console messages.
+{{< /expand >}}
+
+{{< expand "Can I attach Multiple Computers to One UPS?" "v" >}}
+A UPS with adequate capacity can power multiple computers.
+One computer connects to the UPS data port with a serial or USB cable.
+This primary system makes UPS status available on the network for other computers.
+The UPS powers the secondary computers, and they receive UPS status data from the primary system.
+See the [NUT User Manual](https://networkupstools.org/docs/user-manual.chunked/index.html) and [NUT User Manual Pages](https://networkupstools.org/docs/man/index.html#User_man).
+{{< /expand >}}
 {{< /tab >}}
