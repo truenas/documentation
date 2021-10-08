@@ -33,44 +33,34 @@ The *Description* lets you enter specific issue details.
 
 A good bug report includes these elements:
 
-* A "to the point" issue description.
-  Detail the problem you encountered.
+* A "to the point" description detailing the problem you encountered.
 
-* Reproducing the issue.
-  You can make a simple list of the steps you took to see the issue.
+* Steps to reproduce the issue. A simple list of the steps you took to see the issue is fine.
 
-* What should have happened.
-  Explain what you expected to happen while taking the steps listed above.
+* An explaination of what should have happened while taking the steps listed above.
 
-* What did happen.
-  Describe what happened while taking the steps listed above.
+* A description of what actually happened while taking the steps listed above.
 
-* Software version.
-  Find your TrueNAS version in **Dashboard**.
+* Your TrueNAS software version (found in **Dashboard**).
 
-* Current configuration.
-  If the bug is service-related, include the current service configuration to help developers replicate your system.
+* If the bug is service-related, include the current service configuration to help developers replicate your system.
 
-* Debugs and console logs.
-  Always include a TrueNAS Debug file and, if the error is a web interface issue, please include a console log.
-  If unsure how to save these, refer to the TrueNAS Debug and Web Console Log tabs in this article.
+* Always include a TrueNAS Debug file. Include a console log if the error is a web interface issue.
+  If unsure how to save these, refer to the TrueNAS Debug and Web Console Log tabs on this page.
 
-* Screenshots.
-  If the bug is a web interface glitch or a formatting problem, screenshots are helpful.
+* Include screenshots if the bug is a web interface glitch or a formatting problem.
 
-* Video.
-  If screenshots do not adequately show the issue, you can include a video recording.
+* Include a video if screenshots do not adequately show the issue.
 
-* Additional information.
-  Include additional details you think can help the developer investigate.
+* Include additional details you think can help the developer investigate.
 
 When finished filling out the *Description*, click *Create* at the bottom of the form.
 
 ![Submit Ticket](/images/Contribute/JiraCreateBottom.png "Submit Ticket")
 
-The ticket will be reviewed and updated when any additional information is needed.
+Developers will review and update the ticket if/when they need additional information.
 The Jira account receives emails about the ticket status.
-Check the ticket periodically as developers can request additional details as they work to resolve the issue.
+Developers may request more details as they work to resolve the issue, so check the ticket periodically.
 
 ## Feature Suggestions
 
