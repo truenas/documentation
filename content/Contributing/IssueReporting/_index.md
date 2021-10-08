@@ -1,7 +1,10 @@
 ---
 title: "Issue Reporting"
-geekdocCollapseSection: true
 weight: 10
+aliases:
+  - /Contributing/IssueReporting/BugsFeatures/
+  - /Contributing/IssueReporting/Debug/
+  - /Contributing/IssueReporting/SaveWebConsoleLog/
 ---
 
 We encourage all users to help us make TrueNAS the best NAS OS by submitting bug reports, requesting features that may be helpful to other users, and reporting security vulnerabililties.  
@@ -77,7 +80,7 @@ Check the ticket periodically as developers can request additional details as th
 
 Previous security reports are published to https://security.truenas.com/.
 
-Due to their sensitive nature, security issues are not reported on public issue trackers.
+Security issues do not appear on public issue trackers due to their sensitive nature.
 If you have discovered a suspected security vulnerability in the latest version of a software release, you can [report this directly to the Security Team](mailto:security-officer@ixsystems.com).
 {{< /tab >}}
 
@@ -86,84 +89,66 @@ If you have discovered a suspected security vulnerability in the latest version 
 
 {{< include file="static/includes/CORE/CreateDebug.md.part" markdown="true" >}}
 
-{{< expand "TrueNAS SCALE" "v" >}}
-TrueNAS SCALE has an identical process in **System Settings > Advanced**.
-{{< /expand >}}
-
 ## Adding a Debug File to a Report
 
 Jira provides a secure area for uploading files with sensitive information, like a system debug.
 
-{{< tabs "Secure Attachments" >}}
-{{< tab "New Tickets" >}}
+### New Tickets
+
 Drag and drop the file into the **Private Attachment** box:
 
-![JiraNASCreateBug](/images/Contribute/JiraNASCreateBug.png "NAS Project Bug Creation Form")
+![JiraAttachmentNew](/images/Contribute/JiraAttachmentNew.png "NAS Project Bug Creation Form")
 
-Clicking *browse* opens a local system file browser for selecting the file.
+Clicking *browse* opens a local system file browser for selecting files.
 
-{{< /tab >}}
-{{< tab "Existing Tickets" >}}
+### Existing Tickets
 
 Open the ticket in your browser and find the **Attachments** section.
 
-![JiraNASBugHighlightPrivateAttachment](/images/Contribute/JiraNASBugHighlightPrivateAttachment.png "Jira Ticket: Private Attachments")
+![JiraAttachmentExisting](/images/Contribute/JiraAttachmentExisting.png "Jira Ticket: Private Attachments")
 
 Click the *+* to open a dialog for adding a new file to the secure area.
 
 ![JiraNASAttachPrivateDialog](/images/Contribute/JiraNASAttachPrivateDialog.png "Attaching a private file")
 
 Drag and drop the file, add any comments about it, then click *Attach*.
-{{< /tab >}}
-{{< /tabs >}}
 
-Uploads in the **Private** section are only visible to project developers.
-These files are also removed when the ticket is closed.
+Uploads in the **Private** section are only visible to project developers. JIRA removes them when closing the ticket.
 {{< /tab >}}
 
 {{< tab "Web Console Log" >}}
-A web console log can help to diagnose problems with the user interface.
-This document explains how to save the web console log from different browsers.
-The log can then be added to a TrueNAS issue for debugging.
+## Web Console Log
+Web console logs help diagnose problems with the user interface.
+You can add logs to TrueNAS issues for debugging.
 
-{{< tabs "SaveConsoleLog" >}}
-{{< tab "Firefox" >}}
-## Firefox
+### Firefox
 
-Open the web console by clicking  <i class="fa fa-bars" aria-hidden="true" title="Menu"></i> **(Menu) > Web Developer > Web Console** or by pressing <kbd>Ctrl-Shift-K</kbd>.
+Open the web console by clicking <i class="fa fa-bars" aria-hidden="true" title="Menu"></i> **(Menu) > More Tools > Web Developer Tools** (<kbd>Ctrl-Shift-I</kbd>).
 
 In the upper right, set *Persist Logs*.
 Click <i class="fa fa-bars" aria-hidden="true" title="More"></i> (More) > Settings. In the Web Console section, set **Enable timestamps**. 
 
-For versions *78* and later, click <i class="fa fa-cog" aria-hidden="true" title="Settings"></i> (Settings) in the **Web Console** area and set *Enable timestamps* and *Persist Logs*.
-Click the *Console* tab or press <kbd>Ctrl-Shift-K</kbd> to switch to the console window.
+Select the *Console* tab, then click <i class="fa fa-cog" aria-hidden="true" title="Settings"></i> (Settings) and set *Show Timestamps* and *Persist Logs*.
 
 Leave the console open and perform the action that encounters problems.
-Right-click in the console window and select *Export visible messages to clipboard*.
+Right-click in the console window and select *Export Visible Messages To > Clipboard*.
 Open an editor, paste the clipboard contents, and save to a new <file>console.log</file> file.
 
-After saving the file, go back to the console with <i class="fa fa-bars" aria-hidden="true" title="Menu"></i> **(Menu) > Web Developer > Web Console** or by pressing <kbd>Ctrl-Shift-K</kbd>.
-Find and unset *Persist Logs*.
-{{< /tab >}}
-{{< tab "Chrome" >}}
-## Chrome
+After saving the file, open the console with <i class="fa fa-bars" aria-hidden="true" title="Menu"></i> **(Menu) > More Tools > Web Developer Tools** (<kbd>Ctrl-Shift-I</kbd>) and unset *Persist Logs*.
 
-Open the console by clicking <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> **(Options) > More Tools > Developer tools** or by pressing <kbd>Ctrl-Shift-I</kbd>.
+### Chrome
 
-Click <i class="fa fa-cog" aria-hidden="true" title="Settings"></i> (Settings) and set *Preserve log*.
+Open the console by clicking <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> **(Options) > More Tools > Developer tools** (<kbd>Ctrl-Shift-I</kbd>).
 
-Click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> **(Options) > Settings > Preferences**. In the **Console** section, set *Show timestamps*. Close the **Preferences** window.
+Click <i class="fa fa-cog" aria-hidden="true" title="Settings"></i> **(Preferences)** and set *Preserve log* and *Show timestamps*. Close the **Preferences** window.
 
-Leave the console open and perform the action that encounters problems.
-Right-click in the console window. Choose *Save as…* and save to a file called <file>console.log</file>.
+Leave the console open and perform the action that encounters problems. Right-click the console window. Choose *Save as…* and save the file.
 
-After saving the file, go back to the console with <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> **(Options) > More Tools > Developer tools** or by pressing <kbd>Ctrl-Shift-I</kbd>. Click <i class="fa fa-cog" aria-hidden="true" title="Settings"></i> (Settings) and unset *Preserve log*.
-{{< /tab >}}
-{{< /tabs >}}
+After saving the file, open the console with <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> **(Options) > More Tools > Developer tools** (<kbd>Ctrl-Shift-I</kbd>) and unset *Preserve log*.
 
 ## Attaching a Console Log File to a Report
 
 Go to the [iXsystems Bug Tracker](https://jira.ixsystems.com). Locate an existing ticket or create a new one reporting the problem.
-Attach the console log file to the ticket by dragging it to the **Document Vault**.
+Attach the console log file to the ticket by dragging it to the **Attachments**.
 {{< /tab >}}
 {{< /tabs >}}
