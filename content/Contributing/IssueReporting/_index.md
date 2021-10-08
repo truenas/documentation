@@ -2,9 +2,9 @@
 title: "Issue Reporting"
 weight: 10
 aliases:
-  - /Contributing/IssueReporting/BugsFeatures/
-  - /Contributing/IssueReporting/Debug/
-  - /Contributing/IssueReporting/SaveWebConsoleLog/
+  - /contributing/issuereporting/bugsfeatures/
+  - /contributing/issuereporting/debug/
+  - /contributing/issuereporting/savewebconsolelog/
 ---
 
 We encourage all users to help us make TrueNAS the best NAS by reporting issues, requesting potentially helpful features, and relaying security vulnerabilities.  
