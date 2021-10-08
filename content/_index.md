@@ -21,7 +21,7 @@ When combined with our high-availability hardware and [**TrueCommand**]({{< relr
 **Ready to get started? Click your platform below to begin setting up your system.**
 
 {{< columns >}}
-![](/favicon/TN-favicon-32x32.png) [**TrueNAS CORE and Enterprise**]({{< relref "/Contributing/IssueReporting/_index.md" >}})<br>
+![](/favicon/TN-favicon-32x32.png) [**TrueNAS CORE and Enterprise**]({{< relref "/CORE/GettingStarted/Install.md" >}})<br>
 
 ![](/favicon/TNScale-favicon-32x32.png) [**TrueNAS SCALE**]({{< relref "/SCALE/GettingStarted/_index.md" >}}) (Coming soon!)
 <--->
@@ -49,6 +49,6 @@ Documentation articles follow the latest supported software releases, with previ
   
 The navigation pane to the left has topics that you can expand to find the specific knowledge you're looking for. You can also use the search bar above the navigation pane if you know specific keywords for what you're looking for.   
 
-We encourage all users to provide feedback about the Documentation Hub and TrueNAS by [**Reporting Issues**]({{< relref "BugsFeatures.md" >}}) or suggesting [**updates**]({{< relref "ContentUpdate.md" >}}) and [**new articles**]({{< relref "/Contributing/Documentation/NewArticles/_index.md" >}}).  
+We encourage all users to provide feedback about the Documentation Hub and TrueNAS by [**Reporting Issues**]({{< relref "/Contributing/IssueReporting/_index.md" >}}) or suggesting [**updates**]({{< relref "ContentUpdate.md" >}}) and [**new articles**]({{< relref "/Contributing/Documentation/NewArticles/_index.md" >}}).  
   
 Can't find what you're looking for? Just want to be part of the TrueNAS community? Join our [**Community Forums**](https://www.truenas.com/community/) or the [**TrueNAS subreddit**](https://www.reddit.com/r/truenas/).
