@@ -92,11 +92,13 @@ TrueNAS automatically begins using this default keytab and removes any administr
 | Winbind NSS Info | Choose the schema to use when querying AD for user/group info. *rfc2307* uses the schema support included in Windows 2003 R2, *sfu* is for Service For Unix 3.0 or 3.5, and *sfu20* is for Service For Unix 2.0. |
 | Netbios Name | Netbios Name of this NAS. This name must differ from the Workgroup name and be no greater than 15 characters. |
 | NetBIOS alias | Alternative names that SMB clients can use when connecting to this NAS. Can be no greater than 15 characters. |
-| EDIT IDMAP | Navigates to **Directory Services > Idmap** so the user can edit the Active Directory's Idmap |
-| LEAVE DOMAIN | Disconnects the TrueNAS system from the Active Directory. |
+| Edit Idmap | Navigates to **Directory Services > Idmap** so the user can edit the Active Directory's Idmap |
+| Leave Domain | Disconnects the TrueNAS system from the Active Directory. |
 
 ## Troubleshooting
 
+{{< tabs "Troubleshooting" >}}
+{{< tab "Resync the Cache" >}}
 If the cache becomes out of sync or fewer users than expected are available in the permissions editors, resync it by clicking *Settings* in the *Active Directory* window and selecting *Rebuild Directory Service Cache*.
 
 If the Windows server version is lower than 2008 R2, try creating a **Computer** entry on the Windows server Organizational Unit (OU).
@@ -132,3 +134,23 @@ You can go to **System Settings > Shell** and enter various commands to get more
 * Test AD connection: `wbinfo -t`. A successful test shows a message similar to `checking the trust secret for domain YOURDOMAIN via RPC calls succeeded`.
 * User connection test to an SMB share: `smbclient '//127.0.0.1/smbshare -U AD01.LAB.IXSYSTEMS.COM\ixuser`, replacing `127.0.0.1` with your server address, `smbshare` with the SMB share name, `AD01.LAB.IXSYSTEMS.COM` with your trusted domain, and `ixuser` with the user account name for authentication testing.
 {{< /expand >}}
+{{< /tab >}}
+
+{{< tab "Clean Up Active Directory" >}}
+However if the SCALE server has already been moved, or server running the AD service has been shut down prior to this, AD on SCALE must be cleaned up manually so that the AD object is removed.
+
+TrueNAS SCALE requires users to cleanly leave an Active Directory using the *Leave Domain* button under *Advanced Settings* to remove the AD object. However, if the AD server moves or shuts down before you can use the *Leave Domain* button, TrueNAS won't remove the AD object and you will have to manually clean up the Active Directory.
+
+Go to **Credentials > Directory Services** and click *Show* next to *Advanced Settings*
+
+1. Clean out Kerberos settings by clicking *Settings* in the *Kerberos Settings* window and clearing the *Appdefaults Auxiliary Parameters* and *Libdefaults Auxiliary Parameters* boxes. You may also need to clear out leftover Kerberos Realms and Keytabs by clicking the <i class="material-icons" aria-hidden="true">delete</i> next to remaining entries.
+2. Click the *Idmap* *Active Directory - Primary Domain* entry and clear out the Active Directory settings, then click *CONTINUE* to clear the Idmap cache.
+3. Go to **Network** and click *Settings* in the *Global Configuration* window. Remove the Active Directory Nameserver and enter a new one.
+4. Ensure all other network settings are correct.
+5. Go to **System Settings > Services** and change the workgroup to "WORKGROUP".
+6. Go to **Credentials> Directory Services** and edit the Active Directory config to the new domain.
+7. Make sure the Kerberos settings and Idmap are set properly, and that SMB is running.
+{{< /tab >}}
+{{< /tabs >}}
+
+
