@@ -4,7 +4,7 @@ name: 'External Contributor Build Preview'
 
 # Controls when the action will run.
 on:
-  pull_request:
+  pull_request_target:
     branches: [master]
 
   # Allows you to run this workflow manually from the Actions tab
@@ -25,18 +25,16 @@ jobs:
           version: 6.0.2
 
       - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
+        uses: peaceiris/actions-hugo@v2.4.13
         with:
           hugo-version: '0.81.0'
           extended: true
 
-      # - name: Setup Node
-      #   uses: actions/setup-node@v2
-      #   with:
-      #     node-version: '12.x'
-
       - name: Install dependencies
         run: pnpm i
+
+      - name: Print PNPM modules after install
+        run: du -d 0 -h ~/.pnpm-store/*/* || true
 
       - name: Build Hugo Site
         run: hugo -d public --gc --minify
@@ -45,7 +43,7 @@ jobs:
         uses: afc163/surge-preview@v1
         id: preview_step
         with:
-          surge_token: ${{ secrets.CI_SURGE_TOKEN }}
+          surge_token: ${{ secrets.SURGE_TOKEN }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
           dist: public
           failOnError: 'true'
@@ -63,6 +61,6 @@ jobs:
         uses: ruzickap/action-my-broken-link-checker@v2
         with:
           url: "https://${{ steps.preview_step.outputs.preview_url }}"
-          cmd_params: "--skip-tls-verification --timeout=30 --rate-limit=30 --max-connections=10 --color=always --exclude=docs/files/ --exclude=files/TrueNASCollection.vssx --exclude=update.freenas.org --exclude=microsoft.com --exclude=oracle.com --exclude=amazon.com --exclude=apple.com --exclude=fastmail.com --exclude=linode.com --exclude=community.openvpn.net --exclude=tools.ietf.org --exclude=github.com --exclude=freebsd.org --exclude=jira.ixsystems.com --exclude=linkedin.com --exclude=googletagmanager.com --exclude=youtube.com --exclude=vmware.com --exclude=cyberciti.biz --exclude=truenas-documentation-deploy.surge.sh --exclude=tc2api.html --exclude=/docs/images/tn-openstorage-logo.png"
-          run_timeout: 600
+          cmd_params: "--buffer-size=8192 --skip-tls-verification --timeout=60 --rate-limit=30 --color=always --exclude docs/ --exclude=docs/files/ --exclude=files/TrueNASCollection.vssx --exclude=update.freenas.org --exclude=microsoft.com --exclude=oracle.com --exclude=amazon.com --exclude=apple.com --exclude=fastmail.com --exclude=linode.com --exclude=community.openvpn.net --exclude=tools.ietf.org --exclude=github.com --exclude=freebsd.org --exclude=jira.ixsystems.com --exclude=linkedin.com --exclude=googletagmanager.com --exclude=youtube.com --exclude=vmware.com --exclude=cyberciti.biz --exclude=truenas-documentation-deploy.surge.sh --exclude=tc2api.html --exclude=/docs/images/tn-openstorage-logo.png --exclude=https://www.backblaze.com/ --exclude=https://discord.com/invite/Q3St5fPETd --exclude=https://www.veeam.com/documentation-guides-datasheets.html --exclude=https://shop.westerndigital.com/products/internal-drives/wd-red-plus-sata-2-5-hdd#WD10JFCX"
+          run_timeout: 300
           debug: true
