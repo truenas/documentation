@@ -2,10 +2,10 @@
 
 name: 'External Contributor Build Preview'
 
-# Controls when the action will run. 
+# Controls when the action will run.
 on:
   pull_request:
-    branches: [ master, DOCS-553-TC2Docs ]
+    branches: [master]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -14,12 +14,15 @@ jobs:
   deploy:
     if: github.event.pull_request.head.repo.full_name != github.repository
     environment: CI
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:
-          submodules: recursive  # Fetch the Docsy theme
           fetch-depth: 0         # Fetch all history for .GitInfo and .Lastmod
+
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6.0.2
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
@@ -27,22 +30,17 @@ jobs:
           hugo-version: '0.81.0'
           extended: true
 
-      - name: Setup Node
-        uses: actions/setup-node@v2
-        with:
-          node-version: '12.x'
+      # - name: Setup Node
+      #   uses: actions/setup-node@v2
+      #   with:
+      #     node-version: '12.x'
 
-      - name: Cache dependencies
-        uses: actions/cache@v1
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
+      - name: Install dependencies
+        run: pnpm i
 
-      - run: npm ci
-      - run: hugo -d public --gc --minify
-      
+      - name: Build Hugo Site
+        run: hugo -d public --gc --minify
+
       - name: Preview
         uses: afc163/surge-preview@v1
         id: preview_step
@@ -53,14 +51,14 @@ jobs:
           failOnError: 'true'
           build: |
             echo Deploying to surge.sh
+
       - name: Get the preview_url
         run: echo "url => ${{ steps.preview_step.outputs.preview_url }}"
-     
-      - name: Sleep for 160 seconds
-        uses: jakejarvis/wait-action@master
-        with:
-          time: '160s'
-     
+
+      - name: Sleep for 60 seconds
+        run: sleep 60s
+        shell: bash
+
       - name: Check links using container
         uses: ruzickap/action-my-broken-link-checker@v2
         with:
