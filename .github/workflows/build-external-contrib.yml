@@ -4,7 +4,7 @@ name: 'External Contributor Build Preview'
 
 # Controls when the action will run.
 on:
-  pull_request:
+  pull_request_target:
     branches: [master]
 
   # Allows you to run this workflow manually from the Actions tab
