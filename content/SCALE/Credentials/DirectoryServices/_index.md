@@ -208,7 +208,10 @@ To further modify the LDAP configuration, click *Advanced Options*.
 | Field | Description |  
 |-------|-------------|  
 | Allow Anonymous Binding | Set for the LDAP server to disable authentication and allow read and write access to any client. |
-| Encryption Mode | Options for encrypting the LDAP connection:<br><br>* *OFF*: do not encrypt the LDAP connection.<br><br>* *ON*: encrypt the LDAP connection with SSL on port 636.<br><br>* *START_TLS*: encrypt the LDAP connection with STARTTLS on the default LDAP port *389*. |
+| Encryption Mode | Options for encrypting the LDAP connection:  
+* *OFF*: do not encrypt the LDAP connection.  
+* * *ON*: encrypt the LDAP connection with SSL on port 636.  
+* * *START_TLS*: encrypt the LDAP connection with STARTTLS on the default LDAP port *389*. |
 | Certificate | Certificate to use when performing LDAP certificate-based authentication. To configure LDAP certificate-based authentication, create a Certificate Signing Request for the LDAP provider to sign. TrueNAS does not need a certificate when using username/password or Kerberos authentication. To configure LDAP certificate-based authentication, [create a Certificate Signing Request]({{< relref "CertificatesSCALE.md" >}}) for the LDAP provider to sign. |
 | Validate Certificates | Verify certificate authenticity. |
 | Disable LDAP User/Group Cache | Disable caching LDAP users and groups in large LDAP environments. When caching is disabled, LDAP users and groups do not appear in drop-down menus but are still accepted when manually entered. |
@@ -302,14 +305,14 @@ TrueNAS will store that account's password in the system database.
 {{< /hint >}}
 
 
-### Create Keytab on Windows
+#### Create Keytab on Windows
 
 To create the keytab on a Windows system, use the [ktpass](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/ktpass) command:
 
 `ktpass.exe /out file.keytab /princ http/user@EXAMPLE.COM /mapuser user /ptype KRB5_NT_PRINCIPAL /crypto ALL /pass userpass`
 
 * `file.keytab` is the file to upload to the TrueNAS server.
-* `user` is the user account name for the TrueNAS server generated in [Active Directory Users and Computers](https://technet.microsoft.com/en-us/library/aa998508(v=exchg.65).aspx.
+* `user` is the user account name for the TrueNAS server generated in [Active Directory Users and Computers](https://technet.microsoft.com/en-us/library/aa998508(v=exchg.65).aspx).
 * `http/user@EXAMPLE.COM` is the principal name written in the format `host/user.account@KERBEROS.REALM`.
   The Kerberos realm is usually in all caps, but be sure to match the Kerberos Realm case with the realm name. See [this note](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/ktpass#BKMK_remarks) about using `/princ` for more details.
 * `userpass` is the `user`'s password.
@@ -324,7 +327,7 @@ You can use specific keys instead of using *ALL*:
 * *AES256-SHA1* uses AES256-CTS-HMAC-SHA1-96 encryption.
 * *AES128-SHA1* uses AES128-CTS-HMAC-SHA1-96 encryption.
 
-### Add Windows Keytab to TrueNAS
+#### Add Windows Keytab to TrueNAS
 
 After generating the keytab, go back to **Directory Services** in TrueNAS and click *Add* in the *Kerberos Keytab* window to add it to TrueNAS.
 
