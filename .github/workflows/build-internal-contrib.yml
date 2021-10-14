@@ -19,9 +19,9 @@ jobs:
         with:
           fetch-depth: 0         # Fetch all history for .GitInfo and .Lastmod
 
-      # - uses: pnpm/action-setup@v2.0.1
-      #   with:
-      #     version: 6.0.2
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6.0.2
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2.4.13
@@ -30,7 +30,7 @@ jobs:
           extended: true
 
       - name: Install dependencies
-        run: npm ci
+        run: pnpm i
 
       - name: Print PNPM modules after install
         run: du -d 0 -h ~/.pnpm-store/* || true
@@ -45,6 +45,7 @@ jobs:
           surge_token: ${{ secrets.SURGE_TOKEN }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
           dist: public
+          teardown: 'false'
           failOnError: 'true'
           build: |
             echo Deploying to surge.sh
