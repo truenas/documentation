@@ -175,7 +175,6 @@ Go to **Credentials > Directory Services** and click *Show* next to *Advanced Se
 7. Make sure the Kerberos settings and Idmap are correct and that SMB is running.
 {{< /expand >}}
 {{< /tab >}}
-
 {{< tab "LDAP" >}}
 TrueNAS has an [Open LDAP](https://www.openldap.org/) client for accessing the information on an LDAP server. An LDAP server provides directory services for finding network resources such as users and their associated permissions.
 
