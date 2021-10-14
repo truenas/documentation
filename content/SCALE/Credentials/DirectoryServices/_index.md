@@ -44,6 +44,7 @@ Another option is to use `host -t srv _ldap._tcp.domainname.com` to check the ne
 If the ping fails, go to **Network** and click *Settings* in the *Global Configuration* window. Update the *DNS Servers* and *Default Gateway* settings so the connection to your Active Directory Domain Controller can start.
 Use more than one *Nameserver* for the AD domain controllers so DNS queries for requisite SRV records can succeed.
 Using more than one *Nameserver* helps maintain the AD connection whenever a domain controller becomes unavailable.
+{{< /expand >}}
 
 ### Time Synchronization
 
