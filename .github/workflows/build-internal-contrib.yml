@@ -53,9 +53,9 @@ jobs:
       - name: Get the preview_url
         run: echo "url => ${{ steps.preview_step.outputs.preview_url }}"
 
-      # - name: Sleep for 30 seconds
-      #   run: sleep 30s
-      #   shell: bash
+      - name: Sleep for 30 seconds
+        run: sleep 30s
+        shell: bash
 
       # - name: Check links using container
       #   uses: ruzickap/action-my-broken-link-checker@v2
