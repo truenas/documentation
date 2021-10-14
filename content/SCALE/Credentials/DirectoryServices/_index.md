@@ -212,14 +212,14 @@ To further modify the LDAP configuration, click *Advanced Options*.
 | Certificate | Certificate to use when performing LDAP certificate-based authentication. To configure LDAP certificate-based authentication, create a Certificate Signing Request for the LDAP provider to sign. TrueNAS does not need a certificate when using username/password or Kerberos authentication. To configure LDAP certificate-based authentication, [create a Certificate Signing Request]({{< relref "CertificatesSCALE.md" >}}) for the LDAP provider to sign. |
 | Validate Certificates | Verify certificate authenticity. |
 | Disable LDAP User/Group Cache | Disable caching LDAP users and groups in large LDAP environments. When caching is disabled, LDAP users and groups do not appear in drop-down menus but are still accepted when manually entered. |
-| Kerberos Realm | Select an existing realm from [Kerberos Realms]({{< relref "KerberosSCALE.md" >}}). |
-| Kerberos Principal | Select the location of the principal in the keytab created in [Kerberos Keytab]({{< relref "KerberosSCALE.md" >}}). |
+| Kerberos Realm | Select an existing realm from *Kerberos Realms*. |
+| Kerberos Principal | Select the location of the principal in the keytab created in *Kerberos Keytab*. |
 | LDAP timeout | LDAP timeout in seconds. Increase this value if a Kerberos ticket timeout occurs. |
 | DNS timeout | DNS timeout in seconds. Increase this value if DNS queries timeout. |
 | Samba Schema | Only set if you configured the LDAP server with Samba attributes and it requires LDAP authentication for SMB shares. |
 | Auxiliary Parameters | You can specify additional options for [nslcd.conf](https://arthurdejong.org/nss-pam-ldapd/nslcd.conf.5). |
 | Schema  | Schema to use with Samba Schema. |
-| Edit Idmap  | The *Edit Idmap* button takes users to the [Idmap configuration]({{< relref "IdmapSCALE.md" >}}) screen. |
+| Edit Idmap  | The *Edit Idmap* button takes users to the *Idmap* configuration screen. |
 
 {{< hint warning >}} 
 **DEPRECATED:** Samba Schema support is deprecated in Samba 4.13. We will remove this feature after Samba 4.14. Users should begin upgrading legacy Samba domains to Samba AD domains. 
