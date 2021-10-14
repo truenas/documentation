@@ -39,7 +39,7 @@ jobs:
         run: hugo -d public --gc --minify
 
       - name: Preview
-        uses: afc163/surge-preview@v1
+        uses: afc163/surge-preview@v1.6.0
         id: preview_step
         with:
           surge_token: ${{ secrets.SURGE_TOKEN }}
