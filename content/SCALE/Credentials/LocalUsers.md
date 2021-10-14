@@ -14,7 +14,7 @@ Doing so makes tuning permissions for large numbers of users more efficient.
 Only the *root* user account can log in to the TrueNAS web interface.
 {{< /hint >}}
 
-When the network uses a directory service, import the existing account information using the instructions in [Directory Services]({{< relref "\content\SCALE\Credentials\DirectoryServices\_index.md" >}}.
+When the network uses a directory service, import the existing account information using the instructions in [Directory Services]({{< relref "/content/SCALE/Credentials/DirectoryServices/_index.md" >}}.
 
 Using [Active Directory]({{< relref "ActiveDirectorySCALE.md" >}}) requires setting Windows user passwords inside Windows.
 
@@ -106,6 +106,6 @@ Setting *Lock User* disables all password-based functionality for the account un
 If the user will access TrueNAS data using *Windows 8* or newer, set *Microsoft Account* to enable those systems' additional authentication methods.
 
 By default, *Samba Authentication* is enabled.
-This allows using the account credentials to access data shared with [SMB]({{< relref "\documentation\content\SCALE\Shares\_index.md" >}}).
+This allows using the account credentials to access data shared with [SMB]({{< relref "/documentation/content/SCALE/Shares/_index.md" >}}).
 {{< /tab >}}
 {{< /tabs >}}
