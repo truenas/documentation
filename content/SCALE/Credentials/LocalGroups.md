@@ -1,7 +1,7 @@
 ---
 title: "Local Groups"
 geekdocCollapseSection: true
-weight: 10
+weight: 20
 ---
 
 {{< toc >}}
