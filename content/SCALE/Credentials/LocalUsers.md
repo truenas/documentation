@@ -106,6 +106,6 @@ Setting *Lock User* disables all password-based functionality for the account un
 If the user will access TrueNAS data using *Windows 8* or newer, set *Microsoft Account* to enable those systems' additional authentication methods.
 
 By default, *Samba Authentication* is enabled.
-This allows using the account credentials to access data shared with [SMB]({{< relref "/documentation/content/SCALE/Shares/_index.md" >}}).
+This allows using the account credentials to access data shared with [SMB]({{< relref "/content/SCALE/Shares/_index.md" >}}).
 {{< /tab >}}
 {{< /tabs >}}
