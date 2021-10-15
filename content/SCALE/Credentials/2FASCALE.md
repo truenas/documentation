@@ -79,7 +79,7 @@ Enabling 2FA changes the login process for both the TrueNAS web interface and SS
   Set *Log in as Root with Password*, then click *Save*.
   Toggle the SSH* service and wait for the status to show that it is *Running*.
 * Open the Google Authentication app on your mobile device.
-* Open a Terminal window and SSH into the system using its hostname or IP address, *root* account username and password, and the 2FA code.
+* Open a terminal and SSH into the system using its hostname or IP address, *root* account username and password, and the 2FA code.
   
   ![2FASSHSCALE](/images/SCALE/2FASSHSCALE.png "2FA SSH Connection")
 {{< /tab >}}
