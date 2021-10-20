@@ -43,5 +43,3 @@ Deploy a single hyperconverged node in a home/office or a cluster with hundreds 
 With support for KVM VMs, Kubernetes, and Docker containers, it’s easy to add applications to suit your every need.
 {{< /tab >}}
 {{< /tabs >}}
-
-<img src="https://www.truenas.com/wp-content/uploads/2020/11/TrueNAS_SCALE_Software_Features_Data_Sheet_2020_image-scaled.jpg">
