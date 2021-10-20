@@ -14,9 +14,11 @@ Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i
 FTP requires a new dataset and local user account.
 
 Go to **Storage > Pools** to add a new dataset.
+
 ![StoragePoolsAddDataset](</images/CORE/12.0/StoragePoolsAddDataset.png "Adding a new Dataset")
 
 Next, go to **Accounts > Users > Add** to create a local user on the TrueNAS.
+
 ![AccountsUsersAdd](</images/CORE/12.0/AccountsUsersAdd.png "Adding a new User Account")
 
 Assign a user name, password, and link the newly created dataset for the FTP share as the home directory of the user.
@@ -115,6 +117,7 @@ Type `service sshd enabled` to enable the service (enabled vs start indicates wh
 Using an FTP client, such as FileZilla, log in with the jail IP address and user credentials. Like with SSH on TrueNAS, browsing to other folders and locations beyond the user's home directory is possible, but unlike running on TrueNAS directly, only the components of the jail are available.
 
 ![FilezillaJailConnectSFTP](/images/CORE/FilezillaJailConnectSFTP.png "Filezilla SFTP Connect to TrueNAS Jail")
+
 {{< /tab >}}
 {{< tab "TFTP" >}}
 The Trivial File Transfer Protocol (TFTP) is a light-weight version of FTP typically used to transfer configuration or boot files between machines, such as routers, in a local environment.
