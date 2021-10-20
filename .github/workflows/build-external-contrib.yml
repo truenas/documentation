@@ -43,7 +43,7 @@ jobs:
         uses: afc163/surge-preview@v1
         id: preview_step
         with:
-          surge_token: ${{ secrets.CI_SURGE_TOKEN }}
+          surge_token: ${{ secrets.QA_SURGE_TOKEN }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
           dist: public
           failOnError: 'true'
