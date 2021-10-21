@@ -7,6 +7,11 @@ weight: 10
 
 Now that the <file>.iso</file> file is [downloaded](https://www.truenas.com/download-truenas-core/), you can start installing TrueNAS!
 
+{{< expand "Major Upgrades" "v" >}}
+The install process can be repeated with newer installation files when the system already has TrueNAS installed.
+This is used for [major version upgrades]({{< relref "MajorUpgrade.md" >}})
+{{< /expand >}}
+
 {{< expand "ISO Verification" "v" >}}
 The iXsystems Security Team cryptographically signs TrueNAS ISO files so that users can verify the integrity of their downloaded file.
 This section demonstrates how to verify an ISO file using the [Pretty Good Privacy (PGP)](https://tools.ietf.org/html/rfc4880) and [SHA256](https://tools.ietf.org/html/rfc6234) methods.
@@ -297,4 +302,4 @@ CLick *Add* and create a new tunable with the *Variable* `if_vmx_load`, *Value* 
 
 Congratulations, TrueNAS is now installed!
 
-The next step is to log in to the web interface and begin [storing data]({{< relref "StoringData.md" >}}).
+The next step is to [log in to the web interface]({{< relref "LoggingIn.md" >}}) and begin configuring the system.
