@@ -119,8 +119,8 @@ Here is an example of setting up a virtual CD-ROM with a SUPERMICRO IPMI:
 
 1. From the **Virtual Media** menu, select *CD-ROM Image*.
 2. Fill in the details:
-   i. **Shared Host**: The IP address of the system storing the <file>.iso</file>.
-   ii. **Path to Image**: The path to the image file. Example: *install\iso\SCALEAngelfish.iso*
+   1. **Shared Host**: The IP address of the system storing the <file>.iso</file>.
+   2. **Path to Image**: The path to the image file. Example: *install/iso/SCALEAngelfish.iso*
 3. Click **Mount**.
 4. Click **Refresh Status** and confirm a disk is being emulated.
 5. Click **Save**.
