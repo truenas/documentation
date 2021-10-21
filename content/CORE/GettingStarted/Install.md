@@ -73,7 +73,7 @@ If you're still researching what kind of hardware to use with TrueNAS, read over
 
 Physical hardware typically requires burning the TrueNAS installer to a physical device. In general a CD or removable USB device is used. This device is temporarily attached to the system to install TrueNAS to the system's permanent boot device.
 
-Headless, or remote, installation can be done using the .iso file by setting up a virtual media CD-ROM in the IPMI.
+Headless, or remote, installation is possible when the system has IPMI available and can create a virtual media CD-ROM using a locally stored <file>.iso</file>.
 
 The method of writing the installer to a device varies between operating systems.
 Click **Windows** or **Linux** to see instructions for your Operating System, or **CD** for generic CD burning guidance.
@@ -106,17 +106,19 @@ Enter `dd status=progress if=path/to/.iso of=path/to/USB` in the CLI.
 If this results in a “permission denied” error, use `sudo dd` with the same parameters and enter the administrator password.
 {{< /expand >}}
 
-{{< expand "IPMI Virtual Media" "v" >}}
-The Virtual Media function, in the IPMI, can be used to set up a virtual boot device for installation (using an <file>.iso</file>) instead of using a physical device. Once the <file>.iso</file> file has been mounted in a virtual cd rom, it can be used to install or update headless servers remotely through the console.
+{{< expand "Headless Install" "v" >}}
+Systems with IPMI connectivity, like the TrueNAS Mini, can use the Virtual Media feature with an <file>.iso</file> to create a virtual boot device for installation.
+Mounting the <file>.iso</file> in a virtual CD-ROM, allows installing or updating headless servers remotely through the console.
 
-The following is an example of how a virtual CD-ROM was set up from a SUPERMICRO IPMI:
+Here is an example of setting up a virtual CD-ROM with a SUPERMICRO IPMI:
 
-* From the **Virtual Media** menu select *CD-ROM Image*.
-* Shared Host: The IP of the system the .iso file has been downloaded to.
-* Path to Image: The path to the image file. (Example: install\iso\<name of .iso file>)
-* Click *Mount*.
-* Click *Refresh Status* and confirm a disk is being emulated.
-* Click *Save*.
+1. From the **Virtual Media** menu, select *CD-ROM Image*.
+2. Fill in the details:
+   i. **Shared Host**: The IP address of the system storing the <file>.iso</file>.
+   ii. **Path to Image**: The path to the image file. Example: *install\iso\SCALEAngelfish.iso*
+3. Click **Mount**.
+4. Click **Refresh Status** and confirm a disk is being emulated.
+5. Click **Save**.
 {{< /expand >}}
 
 ## Install Process
