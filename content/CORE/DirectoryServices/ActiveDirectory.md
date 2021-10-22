@@ -95,6 +95,10 @@ TrueNAS automatically begins using this default keytab and removes any administr
 | EDIT IDMAP | Navigates to **Directory Services > Idmap** so the user can edit the Active Directory's Idmap |
 | LEAVE DOMAIN | Disconnects the TrueNAS system from the Active Directory. |
 
+## AD FTP Access
+
+Joined system allows FTP access with the following caveats:
+
 ## Troubleshooting
 
 If the cache becomes out of sync or fewer users than expected are available in the permissions editors, resync it using **Directory Service > Active Directory > REBUILD DIRECTORY SERVICE CACHE**.
