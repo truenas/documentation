@@ -97,7 +97,14 @@ TrueNAS automatically begins using this default keytab and removes any administr
 
 ## AD FTP Access
 
-Joined system allows FTP access with the following caveats:
+AD joined systems allows FTP access with the following caveats:
+* Authentication by fault will use "DOMAIN\username" as the username.
+* A user home directory should exist.
+* Local user auth for FTP should be enabled since you can't add an AD user to the FTP group.
+* If you have a samba "homes" share created in the GUI it will be set as the "template homer" for AD users. This means that their home directory will be set inside that path. Proper permissions on this are vital.
+* It is generally better to use SFTP.
+* We make no guarentees about how profited handles ACL's.
+* If the admin is pulling home directories from their LDAP schema then extra caution should be taken that users aren't writing files to the boot device.
 
 ## Troubleshooting
 
