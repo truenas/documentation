@@ -48,7 +48,7 @@ p,h1,h2,h3,h4,th,td,a {
   border-radius: 5px;
 }
 .stickyelement {
-	background: white;
+	background: black;
 }
 .gdoc-header__link {
 	float:left;
@@ -115,26 +115,39 @@ p,h1,h2,h3,h4,th,td,a {
 	display: block;
 }
 .nested-menubutton {
-    font-family: "din-2014";
+  font-family: "din-2014";
   font-weight: 500;
   font-size: 19px;
   color: white;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
+  border: none;
+  background-color: #0095d5;
 }
+.truenas-nested-menudropdown {
+  display: none;
+  position: absolute;
+  background-color: #0095d5;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 10;
+}
+
 .truenas-menudropdown a:hover {color: #bbb;}
 .truenas-menuitem:hover .truenas-menudropdown {display: block;}
 .truenas-menuitem:hover .truenas-menubutton {background-color: #0e0e0e;color:#31beec;}
 .truenas-menuitem:hover .truenasdownload-menudropdown {display: block;}
+.nested-menubutton:hover .truenas-nested-menudropdown {display: block;}
 .truenasdownload-menudropdown a:hover {color: #DFDFDF;}
 .truenas-downloadbutton {
 	background:#71bf44;
-	padding: 5px 25px!important;
-    margin: 10px;
-    border-radius: 15px;
-    border: none;
-	color: white;
+  color: white;
+  padding: 13px;
+  border: none;
+  font-family: "din-2014";
+  font-weight: normal;
+  font-size: 19px;
  }
 .truenas-downloadbutton:hover {
   background-color: #71bf44;
