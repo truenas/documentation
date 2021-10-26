@@ -22,11 +22,9 @@ p,h1,h2,h3,h4,th,td,a {
 .iconsbar {
 	background: #0e0e0e;
 	text-align: right !important;
-	max-width: 100% !important;
   font-family: "Inter", sans-serif;
   font-weight: 500;
   font-size: 12px;
-  padding-right: 10%;
 }
 .iconsbar a {
 	color: #fff;
@@ -54,13 +52,10 @@ p,h1,h2,h3,h4,th,td,a {
 }
 .gdoc-header__link {
 	float:left;
-	margin-right: 18rem;
 }
 .truenas-menubar {
 	float: right;
 	display: flex;
-	margin-left: 1rem;
-	max-width: 90rem;
   font-family: "din-2014";
   font-weight: 500;
 }
@@ -93,7 +88,6 @@ p,h1,h2,h3,h4,th,td,a {
 .truenas-menubutton:hover {
   color: #31beec;
 }
-
 .truenas-menubutton,.truenas-menubutton a {color:#white;cursor:pointer;}
 .truenas-menulink {
 	background-color: #0e0e0e;
@@ -120,9 +114,20 @@ p,h1,h2,h3,h4,th,td,a {
 	text-decoration: none;
 	display: block;
 }
+.nested-menubutton {
+    font-family: "din-2014";
+  font-weight: 500;
+  font-size: 19px;
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
 .truenas-menudropdown a:hover {color: #bbb;}
 .truenas-menuitem:hover .truenas-menudropdown {display: block;}
 .truenas-menuitem:hover .truenas-menubutton {background-color: #0e0e0e;color:#31beec;}
+.truenas-menuitem:hover .truenasdownload-menudropdown {display: block;}
+.truenasdownload-menudropdown a:hover {color: #DFDFDF;}
 .truenas-downloadbutton {
 	background:#71bf44;
 	padding: 5px 25px!important;
@@ -147,7 +152,7 @@ p,h1,h2,h3,h4,th,td,a {
 .truenasdownload-menudropdown {
 	display: none;
 	position: absolute;
-	background-color: #0095d5;
+	background-color: #71bf44;
 	min-width: 160px;
 	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 	z-index: 10;

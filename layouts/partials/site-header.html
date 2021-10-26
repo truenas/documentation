@@ -3,7 +3,7 @@
     <div class="container iconsbar">
             <a href="tel:4089434100" title="iXsystems Sales Phoneline"> <i class="fa fa-phone" aria-hidden="true"></i>&nbsp;&nbsp;(408) 943-4100</a>&nbsp;&nbsp;
             <a href="https://www.facebook.com/truenascommunity" target="_blank" title="FreeNAS Community (Facebook)"> <i class="fa fa-facebook" aria-hidden="true"></i></a>&nbsp;&nbsp;
-            <a href="https://twitter.com/freenas" target="_blank" title="FreeNAS Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>&nbsp;&nbsp;
+            <a href="https://twitter.com/TrueNAS" target="_blank" title="TrueNAS Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>&nbsp;&nbsp;
             <a href="https://www.youtube.com/user/freenasteam?sub_confirmation=1" target="_blank" title="TrueNAS Youtube"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>&nbsp;&nbsp;
             <a href="https://www.linkedin.com/company/ixsystems/" target="_blank" title="iXsystems LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i></a>&nbsp;&nbsp;
             <a href="https://discord.gg/Q3St5fPETd/" target="_blank" title="TrueNAS Discord"><img src="/favicon/Discord-Logo-White.png" style="width:14px;" aria-hidden="true"></img></a>&nbsp;&nbsp;
@@ -91,28 +91,59 @@
                     </div>
                 </div>
                 <div class="truenas-menuitem">
-                    <a href="https://www.truenas.com/community/"><button class="truenas-menubutton">Community</button></a>
+                    <button class="truenas-menubutton">Community <i class="fa fa-angle-down"></i></button>
+                    <div class="truenas-menudropdown">
+                        <a href="https://www.github.com/truenas">TrueNAS GitHub</a>
+                        <a href="https://www.truenas.com/community/">Community Forum</a>
+                        <a href="https://discord.gg/Q3St5fPETd/">Discord</a>
+                        <a href="https://www.truenas.com/store/">TrueNAS Merch Store</a>
+                    </div>
+                </div>
+                <div class="truenas-menuitem">
+                    <button class="truenas-menubutton">Solutions<i class="fa fa-angle-down"></i></button>
+                    <div class="truenas-menudropdown">
+                        <a class="nested-menubutton">Application <i class="fa fa-angle-right" style="padding-left:.5rem;"></i></a>
+                        <!--<div class="truenas-menudropdown">
+                            <a href="https://www.truenas.com/asigra-truenas-solution/">Asigra TrueNAS Solution</a>
+                            <a href="https://www.truenas.com/backup/">Backup</a>
+                            <a href="https://www.truenas.com/big-data/">Big Data</a>
+                            <a href="https://www.truenas.com/cloud/">Cloud</a>
+                            <a href="https://www.truenas.com/media-entertainment/">Multimedia</a>
+                            <a href="https://www.truenas.com/virtualization/">Virtualization</a>
+                        </div>-->
+                        <a class="nested-menubutton">Industry <i class="fa fa-angle-right" style="padding-left:.5rem;"></i></a>
+                    </div>
+                    <!--
+                    <div class="truenas-menudropdown">
+                        <a href="https://www.truenas.com/education/">Education</a>
+                        <a href="https://www.truenas.com/finance/">Finance</a>
+                        <a href="https://www.truenas.com/government/">Government</a>
+                        <a href="https://www.truenas.com/healthcare/">Healthcare</a>
+                        <a href="https://www.truenas.com/high-tech/">High-Tech</a>
+                        <a href="https://www.truenas.com/media-entertainment/">Media & Entertainment</a>
+                    </div>-->
                 </div>
                 <div class="truenas-menuitem">
                     <button class="truenas-menubutton">Resources <i class="fa fa-angle-down"></i></button>
                     <div class="truenas-menudropdown">
-                        <a href="https://security.truenas.com">TrueNAS Security</a>
+                        <a href="https://www.ixsystems.com/support">Support</a>
                         <a href="https://www.truenas.com/docs/">Documentation</a>
-                        <a href="https://www.ixsystems.com/library">Information Library</a>
-                        <a href="https://www.ixsystems.com/white-papers/">White Papers</a>
+                        <a href="https://security.ixsystems.com">TrueNAS Security</a>
+                        <a href="https://www.ixsystems.com/blog">Blog</a>
                         <a href="https://www.ixsystems.com/case-studies/">Case Studies</a>
+                        <a href="https://www.ixsystems.com/white-papers/">White Papers</a>
                         <a href="https://www.ixsystems.com/solution-briefs/">Solution Briefs</a>
-                        <a href="https://portal.ixsystems.com/portal/login/index.php">iX Portal</a>
-                        <a href="https://www.truenas.com/plugins/">Plugins</a>
+                        <a href="https://portal.ixsystems.com/portal/login/index.php#login">iX Portal</a>
+                        <a href="https://www.truenas.com/apps/">Plugins & Apps</a>
                         <a href="https://www.truenas.com/zfs/">ZFS</a>
                     </div>
                 </div>
                 <div class="truenas-menuitem">
                     <button class="truenas-downloadbutton">Get TrueNAS <i class="fa fa-angle-down"></i></button>
-		    <div class="truenasdownload-menudropdown">
-                        <a href="https://www.truenas.com/download-tn-core/">Download TrueNAS CORE</a>
-                        <a href="https://www.truenas.com/download-truenas-scale/">Download TrueNAS SCALE</a>
-                        <a href="https://www.truenas.com/truenas-enterprise/">Get TrueNAS Enterprise</a>
+		            <div class="truenasdownload-menudropdown">
+                        <a href="https://www.truenas.com/download-tn-core/"><img src="favicon/core-icon.png" style="width:2.5rem;padding-right:1rem">Download TrueNAS CORE</a>
+                        <a href="https://www.truenas.com/download-truenas-scale/"><img src="favicon/scale-icon.png" style="width:2.5rem;padding-right:1rem">Download TrueNAS SCALE</a>
+                        <a href="https://www.truenas.com/truenas-enterprise/"><img src="favicon/enterprise-icon.png" style="width:2.5rem;padding-right:1rem">Get TrueNAS Enterprise</a>
                     </div>
                 </div>
             </div>
