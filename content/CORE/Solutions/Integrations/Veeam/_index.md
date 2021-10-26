@@ -141,7 +141,7 @@ For rough calculations, additional resources are listed below.
 ## Advantages
 
 TrueNAS is a robust, unified storage system well-suited for nearly any environment.
-For backups, the platform takes advantage of the data integrity offered by ZFS that includes features such as copy-on-write, unlimited 
+For backups, the platform takes advantage of the data integrity offered by ZFS that includes features such as copy-on-write, 
 snapshots, and checksums that prevent bit-rot.
 TrueNAS appliances can also be expanded at any time simply by adding more drives so datasets can grow to keep pace with your data.
 Here are additional key features that are offered out-of-the-box at no extra cost to the user:
