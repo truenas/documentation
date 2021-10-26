@@ -30,6 +30,6 @@ If you want to update TrueNAS manually, click *Install Manual Update File*. True
 
 ![ManualUpdateSCALE](/images/SCALE/ManualUpdateSCALE.png "Manually Update SCALE")
 
-Select a temporary location to store the update file and click *Choose File*. Select the <file>.iso<file> you want to upgrade to and click *Apply Update*.
+Select a temporary location to store the update file and click **Choose File**. Select the <file>.iso</file> you want to upgrade to and click **Apply Update**.
 
 TrueNAS SCALE update files can be found [here](https://www.truenas.com/download-tn-scale).
