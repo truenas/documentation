@@ -11,6 +11,13 @@ aliases:
 
 {{< toc >}}
 
+## Preparing Systems for Updates and Upgrades
+
+No matter wether you are updating or upgrading a system there are several things that need to be addressed before you proceed.
+
+{{< tabs "Prep for Updating and Upgrading Systems" >}}
+{{< tab "Preparing for CORE Update" >}}
+
 ## TrueNAS CORE
 
 TrueNAS CORE has an integrated update system to make it easy to keep up to date.
@@ -52,6 +59,9 @@ Before using a non-production train, be prepared to experience bugs or problems.
 Testers are encouraged to submit bug reports at https://jira.ixsystems.com.
 {{< /hint >}}
 
+{{< /tab >}}
+{{< tab "Preparing for ENTERPRISE (HA) Update" >}}
+
 ## TrueNAS Enterprise (HA)
 
 Updating a TrueNAS Enterprise system that is configured for High Availability (HA) has a slightly different flow from non-HA systems or TrueNAS Core.
@@ -81,6 +91,10 @@ When a ZFS version upgrade is available, an <i class="material-icons" aria-hidde
 Upgrading the ZFS version on storage drives is not recommended until it has been verified that rolling back to previous versions of the operating system is not necessary and that swapping the storage drives with another system that has an earlier ZFS version is not needed.
 After a ZFS version upgrade, the storage devices will not be accessible by earlier TrueNAS versions.
 {{< /hint >}}
+
+{{< /tab >}}
+{{< tab "Preparing for Major System Upgrades" >}}
+
 
 ## Major Version Upgrades
 
@@ -135,6 +149,9 @@ Before upgrading the operating system, follow these steps:
 3. Warn users that TrueNAS shared data will be unavailable during the upgrade.
    It is recommended to schedule the upgrade for a time that will least impact users.
 4. Stop all system **Services**.
+
+{{< /tab >}}
+{{< /tabs >}}
 
 ## Update and Upgrade Instructions
 
