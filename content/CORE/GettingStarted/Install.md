@@ -7,6 +7,11 @@ weight: 10
 
 Now that the <file>.iso</file> file is [downloaded](https://www.truenas.com/download-truenas-core/), you can start installing TrueNAS!
 
+{{< expand "Major Upgrades" "v" >}}
+The install process can be repeated with newer installation files when the system already has TrueNAS installed.
+This is used for [major version upgrades]({{< relref "MajorUpgrade.md" >}})
+{{< /expand >}}
+
 {{< expand "ISO Verification" "v" >}}
 The iXsystems Security Team cryptographically signs TrueNAS ISO files so that users can verify the integrity of their downloaded file.
 This section demonstrates how to verify an ISO file using the [Pretty Good Privacy (PGP)](https://tools.ietf.org/html/rfc4880) and [SHA256](https://tools.ietf.org/html/rfc6234) methods.
@@ -71,8 +76,9 @@ If you're still researching what kind of hardware to use with TrueNAS, read over
 
 ## Prepare the Install File
 
-Physical hardware requires burning the TrueNAS installer to a device, typically a CD or removable USB device.
-This device is temporarily attached to the system to install TrueNAS to the system's permanent boot device.
+Physical hardware typically requires burning the TrueNAS installer to a physical device. In general a CD or removable USB device is used. This device is temporarily attached to the system to install TrueNAS to the system's permanent boot device.
+
+Headless, or remote, installation is possible when the system has IPMI available and can create a virtual media CD-ROM using a locally stored <file>.iso</file>.
 
 The method of writing the installer to a device varies between operating systems.
 Click **Windows** or **Linux** to see instructions for your Operating System, or **CD** for generic CD burning guidance.
@@ -104,10 +110,26 @@ Be very careful when using dd, as choosing the wrong *of=* device path can resul
 Enter `dd status=progress if=path/to/.iso of=path/to/USB` in the CLI.
 If this results in a “permission denied” error, use `sudo dd` with the same parameters and enter the administrator password.
 {{< /expand >}}
+
+{{< expand "Headless Install" "v" >}}
+Systems with IPMI connectivity, like the TrueNAS Mini, can use the Virtual Media feature with an <file>.iso</file> to create a virtual boot device for installation.
+Mounting the <file>.iso</file> in a virtual CD-ROM, allows installing or updating headless servers remotely through the console.
+
+Here is an example of setting up a virtual CD-ROM with a SUPERMICRO IPMI:
+
+1. From the **Virtual Media** menu, select *CD-ROM Image*.
+2. Fill in the details:
+   1. **Shared Host**: The IP address of the system storing the <file>.iso</file>.
+   2. **Path to Image**: The path to the image file. Example: *install/iso/SCALEAngelfish.iso*
+3. Click **Mount**.
+4. Click **Refresh Status** and confirm a disk is being emulated.
+5. Click **Save**.
+{{< /expand >}}
+
 ## Install Process
 
 With the installer added to a device, you can now install TrueNAS onto the desired system.
-Insert the install media and reboot or boot the system.
+Insert the install media, or load the iso using IPMI, and reboot or boot the system.
 At the motherboard splash screen, use the hotkey defined by your motherboard manufacturer to boot into the motherboard UEFI/BIOS.
 
 Choose to boot in UEFI mode or legacy CSM/BIOS mode.
@@ -280,4 +302,4 @@ CLick *Add* and create a new tunable with the *Variable* `if_vmx_load`, *Value* 
 
 Congratulations, TrueNAS is now installed!
 
-The next step is to log in to the web interface and begin [storing data]({{< relref "StoringData.md" >}}).
+The next step is to [log in to the web interface]({{< relref "LoggingIn.md" >}}) and begin configuring the system.
