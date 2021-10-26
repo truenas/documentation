@@ -9,7 +9,7 @@ Now that the <file>.iso</file> file is [downloaded](https://www.truenas.com/down
 
 {{< expand "Major Upgrades" "v" >}}
 The install process can be repeated with newer installation files when the system already has TrueNAS installed.
-This is used for [major version upgrades]({{< relref "MajorUpgrade.md" >}})
+This is used for [major version upgrades](https://www.truenas.com/docs/core/system/update/)
 {{< /expand >}}
 
 {{< expand "ISO Verification" "v" >}}
