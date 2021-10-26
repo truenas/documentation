@@ -26,7 +26,7 @@ If an update is available, you can click *Apply Pending Update* to install it.
 
 ## Manual
 
-If you want to update TrueNAS manually, click *Install Manual Update File*. TrueNAS will prompt you to save your current configuration before you continue.
+To manually update TrueNAS, click **Install Manual Update File** and save your configuration.
 
 ![ManualUpdateSCALE](/images/SCALE/ManualUpdateSCALE.png "Manually Update SCALE")
 
