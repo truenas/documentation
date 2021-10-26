@@ -13,7 +13,7 @@ aliases:
 
 ## Preparing Systems for Updates and Upgrades
 
-No matter wether you are updating or upgrading a system there are several things that need to be addressed before you proceed.
+Preperation and precautions for a system upgrade, or update, vary. CORE Updates, ENTERPRISE (HA) Updates, and Major Version Upgrades each have several specific things that should be addressed before you proceed.
 
 {{< tabs "Prep for Updating and Upgrading Systems" >}}
 {{< tab "Preparing for CORE Update" >}}
