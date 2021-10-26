@@ -16,7 +16,7 @@ Only the *root* user account can log in to the TrueNAS web interface.
 
 When the network uses a directory service, import the existing account information using the instructions in [Directory Services]({{< relref "/content/SCALE/Credentials/DirectoryServices/_index.md" >}}.
 
-Using [Active Directory]({{< relref "ActiveDirectorySCALE.md" >}}) requires setting Windows user passwords inside Windows.
+Using [Active Directory]({{< relref "/content/SCALE/Credentials/DirectoryServices/_index.md" >}}) requires setting Windows user passwords inside Windows.
 
 To see user accounts, go to **Credentials > Local Users**.
 
