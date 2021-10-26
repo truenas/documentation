@@ -53,7 +53,7 @@ All TrueNAS Minis ship with WD Red™ Plus drives unless requested otherwise.
 {{< /tab >}}
 {{< tab "Nearline SAS Disks" >}}
 Nearline NAS (NL-SAS) disks are 7200 RPM enterprise SATA disks with the industry-standard SAS interface found in the majority of enterprise storage systems.
-SAS stands for <b>Serial Attached SCSI<\b>, with the traditional SCSI disk interface in serial form.
+SAS stands for **Serial Attached SCSI**, with the traditional SCSI disk interface in serial form.
 SAS systems, designed for data center storage applications, have accurate, verbose error handling, predictable failure behavior, reliable hot swapping, and the added feature of multipath support.
 Multipath access means that each drive has two interfaces and can connect to either two storage controllers, or one controller over two cables.
 This redundancy protects against cable, controller card, or complete system failure in the case of the TrueNAS high-availability architecture in which each controller is an independent server that accesses the same set of NL-SAS drives.
