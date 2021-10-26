@@ -191,7 +191,7 @@ The security information in the configuration file could be used for unauthorize
 
 ## Applying Updates
 
-Make sure the system is in a low-usage state as described above in [Preparing for Updates](#preparing-for-updates).
+Make sure the system is in a low-usage state as described above in [Preparing for Updates](##preparing-systems-for-updates-and-upgrades).
 Click *DOWNLOAD UPDATES* to immediately download and install an update.
 
 The *Save Configuration* dialog appears so the current configuration can be saved to external media.
