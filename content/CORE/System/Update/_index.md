@@ -95,7 +95,7 @@ TrueNAS provides flexibility for keeping the operating system up-to-date:<br>
    Boot environments provide the option to return to the previous version of the operating system by rebooting the system and selecting the previous boot environment from the **System > Boot** menu.
    
 The [upgrade instructions](#update-and-upgrade-instructions) describe how to use an <file>.iso</file> file to perform a major version upgrade from an earlier version of FreeNAS/TrueNAS.
-See the [Updating]({{< relref "UpdateCORE.md" >}}) article for instructions about using the web interface to keep the system updated.
+See the [Updating]({{< relref "/core/system/update/#truenas-core" >}}) article for instructions about using the web interface to keep the system updated.
 
 The upgrade path for major versions of FreeNAS/TrueNAS is **9.3 > 9.10 > 11.1 > 11.3 > 12.0**.
 It is always recommended to upgrade to a [supported version]({{< relref "SofDevLifecycle.md" >}}) of the software.
