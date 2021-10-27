@@ -143,6 +143,9 @@ If the system does not boot into TrueNAS SCALE, there are several things that ca
 {{< /expand >}}
 {{< /tab >}}
 {{< tab "Virtual Machine" >}}
+
+{{< embed-video name="ScaleAngelfishVMInstall" >}}
+
 Because TrueNAS SCALE is built and provided as an <file>.iso</file> file, it works on all virtual machine solutions (VMware, VirtualBox, Citrix Hypervisor, etc).
 This section demonstrates installing with [VMware Workstation Player](https://www.vmware.com/products/workstation-player/workstation-player-evaluation.html) on Windows.
 
