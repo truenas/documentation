@@ -95,7 +95,7 @@ TrueNAS automatically begins using this default keytab and removes any administr
 | EDIT IDMAP | Navigates to **Directory Services > Idmap** so the user can edit the Active Directory's Idmap |
 | LEAVE DOMAIN | Disconnects the TrueNAS system from the Active Directory. |
 
-## AD FTP Access
+## FTP Access
 
 Joined systems allows FTP access with the following caveats:
 * Authentication by default will use "DOMAIN\username" as the username.
@@ -104,7 +104,7 @@ Joined systems allows FTP access with the following caveats:
 * If you have a samba "homes" share created in the GUI it will be set as the "template homedir" for AD users. This means that their home directory will be set inside that path. Proper permissions are vital.
 * It is generally better to use SFTP.
 * We make no guarentees about how proftpd handles ACL's.
-* Ensuring that paths existid users have populated homedir information in their LDAP schema, in AD, will be an exercise left up to the admin (or pam_mkhomedir).
+* Ensuring that paths exist if users have populated homedir information in their LDAP schema, in AD, will be an exercise left up to the admin (or pam_mkhomedir).
 * Extra caution should be taken if the admin is pulling home directories from their LDAP schema to insure that users aren't writing files to the boot device.
 
 ## Troubleshooting
