@@ -83,5 +83,5 @@ TrueCommand's individual indicators provide a better, "at-a-glance", indication 
 ![DashboardSystemCardMultipleIndicators](/images/TrueCommand/2.0/TC20MultipleActivityIndicators.png "System Card Multiple Indicators")
 
 * Update: ![DashboardSystemUpdateIndicator](/images/TrueCommand/2.0/TC20UpgradeIndicator.png "System Update")
-* Replication: 
+* Replication: ![DashboardSystemReplicationIndicator](/images/TrueCommand/2.0/TC20ReplicationIndicator.png "Replication")
 * Resilver/Scrub : ![DashboardSystemResilverScrubIndicator](/images/TrueCommand/2.0/TC20ResilverScrubIndicator.png "System Resilver/Scrub")
