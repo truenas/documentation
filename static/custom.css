@@ -225,19 +225,27 @@ p,h1,h2,h3,h4,th,td,a {
 /* Site footer */
 
 .gdoc-footer {
-	background: #0095d5;
 	max-width: 100%;
   font-family: "Inter", sans-serif;
   font-weight: 600;
   font-size: 16px;
+  background-color: #000000;
+  color: #8e8e8e;
 }
 .gdoc-footer__link {
-	color: white;
+	color: #23afe4;
 }
 .gdoc-footer__link:visited {
-	color: white;
+	color: #23afe4;
 }
-
+.gdoc-footer__item{
+  padding-left: .5rem;
+}
+.footer-icons {
+  display: flex;
+  float: right;
+  color: white;
+}
 /* End site footer */
 
 /* Styling images in the Topics Tab Boxes */
