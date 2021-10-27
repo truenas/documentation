@@ -18,7 +18,7 @@ To see saved groups, go to **Credentials > Local Groups**.
 ![LocalGroupsSCALE](/images/SCALE/LocalGroupsSCALE.png "Local Groups List")
 
 By default, TruNAS hides the system's built-in groups.
-To see built-in groups, click <i class="material-icons" aria-hidden="true" title="Settings">settings</i>, then click *Show*.
+To see built-in groups, click <i class="material-icons" aria-hidden="true" title="Settings">settings</i> then click *Show*.
 
 ## Add a New Group
 
@@ -29,7 +29,7 @@ To create a group, go to **Credentials > Local Groups** and click *Add*.
 | Setting | Description |
 |------|------|
 | GID | The Group ID (*GID*) is a unique number TrueNAS uses to identify a Unix group. Enter a number above *1000* for a group with user accounts (you cannot change the *GID* later). If a system service uses a group, the group ID must match the service's default port number. |
-| Name | Group name cannot begin with a hyphen `(-)`. Group name cannot contain a space, tab, or these characters: `, : + & # % ^ ( ) ! @ ~ * ? < > =`. You may only use `$` as a username's last character. |
+| Name | Group name cannot begin with a hyphen `(-)`. Group name cannot contain a space, tab, or any of these characters: `, : + & # % ^ ( ) ! @ ~ * ? < > =`. You may only use `$` as a username's last character. |
 | Permit Sudo | Allow group members to use [sudo](https://www.sudo.ws/man/1.8.3/sudo.man.html). TrueNAS prompts group members for their password when using sudo. Leave *Permit Sudo* disabled for better security. |
 | Samba Authentication | Set to let Samba permissions and authentication use group. |
 | *Allow Duplicate GIDs* | Allows more than one group to have the same group ID. **We do not recommend enabling this.** |
