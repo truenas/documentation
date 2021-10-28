@@ -46,7 +46,7 @@ While consumer desktop SATA disks don't have the problematic overall reliability
 Enterprise SATA disks address the 'always-on' factor, vibration tolerance, and drive error handling required in storage systems, but the price delta between desktop and enterprise SATA drives is vast enough that it drives users to push their consumer drives into 24/7 service in pursuit of cost savings.
 
 Drive vendors, likely tired of honoring warranties for failed desktop drives used in incorrect applications, responded to this gap in the market by producing NAS drives, made famous by the original Western Digital (WD) Red™ drives with CMR/PMR technology (now called WD Red Plus).
-Western Digital Designed the WD Red™ Plus NAS drives (non-SMR) for use in systems with up to eight hard drives, or for up to 16 drives the [WD Red™ Pro](https://www.westerndigital.com/products/internal-drives/wd-red-pro-sata-hdd#WD2002FFSX) drives, and the [WD UltraStar™](https://www.westerndigital.com/products/data-center-platforms) drives for systems beyond 16 drives.
+Western Digital Designed the WD Red™ Plus NAS drives (non-SMR) for use in systems with up to eight hard drives, or for up to 16 drives the [WD Red™ Pro](https://www.westerndigital.com/products/internal-drives/wd-red-pro-sata-hdd) drives, and the [WD UltraStar™](https://www.westerndigital.com/products/data-center-platforms) drives for systems beyond 16 drives.
 
 WD drives are known among the iXsystems Community Forum as the preferred hard drives for TrueNAS builds due to their exceptional quality and reliability.
 All TrueNAS Minis ship with WD Red™ Plus drives unless requested otherwise.
