@@ -7,5 +7,3 @@ To allow Google created files to become readable, allow link sharing to access t
 ![GoogleDriveShareLink](/images/TrueNASCommon/GoogleDriveShareLink.png "Google Drive Share Link")
 
 TrueNAS is perfect for storing content, including cloud-based content, for the long-term. Not only is it simple to sync and backup from the cloud, but users can rest assured that their data is safe, with snapshots, copy-on-write, and built-in replication functionality. 
-
-Click these links For more information about [TrueNAS Core]({{< relref "/CORE/Storage/Snapshots.md" >}}) or [TrueNAS SCALE]({{< relref "/SCALE/Storage/Snapshots.md" >}}) Snapshots.

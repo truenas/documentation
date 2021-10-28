@@ -11,7 +11,8 @@ Snapshots are one of ZFS's most powerful features.
 Snapshots create a read-only point-in-time copy of a file system or volume.
 The copy does not consume extra space in the ZFS pool.
 Snapshots only record the differences between storage block references when the data is modified.
-{{< include file="/_includes/<SnapshotSnippet>.md" type="page" >}}
+
+{{< include file="/_includes/SnapshotsSnippet.md" type="page" >}}
 
 {{< expand "Why do I want to keep snapshots?" "v" >}}
 Snapshots keep a history of files and provide a way to recover older or even deleted files.
