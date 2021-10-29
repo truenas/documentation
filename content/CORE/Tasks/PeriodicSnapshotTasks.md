@@ -5,18 +5,18 @@ weight: 50
 
 {{< toc >}}
 
-A periodic snapshot task allows scheduling the creation of read-only versions of pools and datasets at a given point in time.
+A periodic snapshot task allows scheduling the creation of read only versions of pools and datasets at a given point in time.
 
 {{< expand "How should I use snapshots?" "v" >}}
-Snapshots are created quickly and, if little data changes, new snapshots take very little space, since snapshots do not make new copies of the data.
-It is quite common to take snapshots as frequently as every 15 minutes, even for large and active pools.
-A snapshot where no files have changed takes no storage space, but as changes are made to files, the snapshot size changes to reflect the size of the changes.
-Space is recovered in the same way as all pool data, when the last reference to the data is destroyed.
+Snapshots do not make not copies of the data so creating one is quick and if little data changed, they take very little space.
+It is common to take frequent snapshots as soon as every 15 minutes, even for large and active pools.
+A snapshot where no files changed takes no storage space, but as files changes happen, the snapshot size changes to reflect the size of the changes.
+In the same way as all pool data, after deleting the last reference to the data you recover the space.
 
 Snapshots keep a history of files, providing a way to recover an older copy or even a deleted file.
-For this reason, many administrators take snapshots often, store them for a period of time, and store them on another system, typically using Replication Tasks.
+For this reason, many administrators take snapshots often, store them for a period of time, and store them on another system, typically using **Replication Tasks**.
 Such a strategy allows the administrator to roll the system back to a specific point in time.
-If there is a catastrophic loss, an off-site snapshot can be used to restore data up to the time of the last snapshot.
+If there is a catastrophic loss, an off-site snapshot can restore data up to the time of the last snapshot.
 {{< /expand >}}
 
 ## Creating a Periodic Snapshot Task
@@ -25,25 +25,25 @@ Any required datasets or zvols must exist before creating a snapshot task.
 
 ### Process
 
-Go to **Tasks > Periodic Snapshot Tasks** and click *ADD*.
+Go to **Tasks > Periodic Snapshot Tasks** and click **ADD**.
 
 ![TasksPeriodicSnapshotAdd](/images/CORE/12.0/TasksPeriodicSnapshotAdd.png "Creating a new Snapshot Task")
 
-Choose the dataset (or zvol) to regularly back up with snapshots and how long to store snapshots.
+Choose the dataset (or zvol) to schedule as a regular back up with snapshots and how long to store snapshots.
 Define the task **Schedule**.
-When a specific *Schedule* is required, choose *Custom* and use the **Advanced Scheduler**.
+If you need a specific schedule, choose **Custom** and use the **Advanced Scheduler**.
 
 {{< expand "Advanced Scheduler" "v" >}}
 {{< include file="static/includes/CORE/AdvancedScheduler.md.part" markdown="true" >}}
 {{< /expand >}}
 
-Configure the remaining options to your use case.
+Configure the remaining options for your use case.
 {{< expand "Specific Options" "v" >}}
 {{< include file="static/includes/Reference/TasksPeriodicSnapshotAddFields.md.part" markdown="true" >}}
 
 ### Naming Schemas
 
-The *Naming Schema* determines how automated snapshot names are generated.
+The *Naming Schema* determines how automated snapshot names generate.
 A valid schema requires the *%Y* (year), *%m* (month), *%d* (day), *%H* (hour), and *%M* (minute) time strings, but you can add more identifiers to the schema too, using any identifiers from the Python [strptime function](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior).
 
 This uses some letters differently from POSIX (Unix) time functions.
@@ -57,22 +57,22 @@ Examples:
 | autosnap_%Y.%m.%d-%H.%M.%S-%z | `autosnap_2021.01.20-00.00.00-EST`, `autosnap_2021.01.20-06.00.00-EST` |
 
 {{< hint warning >}}
-When snapshots are to be referenced from a Windows computer, avoid using characters like `:` that are invalid in a Windows file path.
-Some applications filename or path length limits, and there may be limitations related to spaces and other characters.
-Carefully consider future uses and ensure the names given to periodic snapshots are acceptable.
+When referencing snapshots from a Windows computer, avoid using characters like `:` that are invalid in a Windows file path.
+Some applications limit filename or path length, and there might be limitations related to spaces and other characters.
+Always consider future uses and ensure the name given to a periodic snapshot is acceptable.
 {{< /hint >}}
 
 ### Snapshot Lifetimes
 
-TrueNAS automatically deletes snapshots when they reach the end of their life and preserves snapshots when at least one periodic task requires it.
-For example, suppose two schedules are created, one that takes a snapshot every hour and keeps them for a week, and one that takes a snapshot every day and keeps them for 3 years.
-A snapshot is taken every hour.
-After a week, snapshots created at *01.00* through *23.00* are deleted, but snapshots timed at *00.00* are kept because they are needed for the second periodic task.
-These snapshots are destroyed at the end of 3 years.
+TrueNAS deletes snapshots when they reach the end of their life and preserves snapshots when at least one periodic task requires it.
+For example, you have two schedules created where one schedule takes a snapshot every hour and keeps them for a week, and the other takes a snapshot every day and keeps them for 3 years.
+Each has an hourly snapshot taken.
+After a week, snapshots created at *01.00* through *23.00* get deleted, but you keep snapshots timed at *00.00* because they are necessary for the second periodic task. 
+These snapshots get destroyed at the end of 3 years.
 
 {{< /expand >}}
 
-Click *SUBMIT* to save this task and add it to the list in **Tasks > Periodic Snapshot Tasks**.
-Any snapshots taken using this task are found in **Storage > Snapshots**.
+Click **SUBMIT** to save this task and add it to the list in **Tasks > Periodic Snapshot Tasks**.
+You'll find any snapshots taken using this task in **Storage > Snapshots**.
 
 To check the log for a saved snapshot schedule, go to **Tasks > Periodic Snapshot Tasks** and click the task **State**.
