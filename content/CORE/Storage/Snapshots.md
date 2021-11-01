@@ -7,8 +7,6 @@ weight: 20
 
 {{< include file="/_includes/SnapshotsIntroSnippet.md" type="page" >}}
 
-{{< /expand >}}
-
 Taking snapshots requires the system have all [pools]({{< relref "/CORE/Storage/Pools/_index.md" >}}), [datasets]({{< relref "" >}}), and [zvols]({{< relref "" >}}) already configured.
 
 ## Creating a Single Snapshot

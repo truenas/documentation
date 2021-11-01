@@ -11,3 +11,5 @@ Snapshots keep a history of files and provide a way to recover an older or even 
 For this reason, many administrators take regular snapshots, store them for some time, and copy them to a different system.
 This strategy allows an administrator to roll the system data back to a specific point in time.
 In the event of catastrophic system or disk failure, off-site snapshots can restore data up to the most recent snapshot.
+
+{{< /expand >}}
