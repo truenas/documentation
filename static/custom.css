@@ -20,13 +20,11 @@ p,h1,h2,h3,h4,th,td,a {
   width:  1.5rem;
 }
 .iconsbar {
-	background: #0095d5;
+	background: #000;
 	text-align: right !important;
-	max-width: 100% !important;
   font-family: "Inter", sans-serif;
   font-weight: 500;
   font-size: 12px;
-  padding-right: 10%;
 }
 .iconsbar a {
 	color: #fff;
@@ -50,20 +48,18 @@ p,h1,h2,h3,h4,th,td,a {
   border-radius: 5px;
 }
 .stickyelement {
-	background: white;
+	background: black;
 }
 .gdoc-header__link {
 	float:left;
-	margin-right: 18rem;
 }
 .truenas-menubar {
 	float: right;
 	display: flex;
-	margin-left: 1rem;
-	max-width: 90rem;
   font-family: "din-2014";
   font-weight: 500;
 }
+
 /* Remove stickybar for small screens and use default GeekDoc menu */
 @media screen and (max-width:39rem) {
 	.stickyelement {
@@ -73,37 +69,37 @@ p,h1,h2,h3,h4,th,td,a {
 /* End sticky top menu */
 .container{
 	max-width: 90rem;
+  padding: 0;
 }
 .gdoc-header {
-	background: #ffffff;
+	background: #000000;
 	border: none;
   padding-bottom: .5rem;
 }
+
 .truenas-menuitem {
 }
 .truenas-menubutton {
-	background-color: #ffffff;
-	color: black;
+	background-color: #000;
+	color: white;
 	padding: 13px;
 	border: none;
   font-family: "din-2014";
   font-weight: normal;
   font-size: 19px;
-  color: #666666;
 }
 .truenas-menubutton:hover {
-  color: #31beec;
+  color: #000000;
 }
-
-.truenas-menubutton,.truenas-menubutton a {color:#black;cursor:pointer;}
+.truenas-menubutton,.truenas-menubutton a {color:#white;cursor:pointer;}
 .truenas-menulink {
-	background-color: #ffffff;
-	color: black;
+	background-color: #000;
+	color: white;
 	padding: 16px;
 	font-size: 16px;
 	border: none;
 }
-.truenas-menulink a {color:#black;}
+.truenas-menulink a {color:#000000;}
 .truenas-menudropdown {
 	display: none;
 	position: absolute;
@@ -123,16 +119,20 @@ p,h1,h2,h3,h4,th,td,a {
 }
 .truenas-menudropdown a:hover {color: #bbb;}
 .truenas-menuitem:hover .truenas-menudropdown {display: block;}
-.truenas-menuitem:hover .truenas-menubutton {background-color: #ffffff;color:#31beec;}
+.truenas-menuitem:hover .truenas-menubutton {background-color: #0e0e0e;color:#31beec;}
+.truenas-menuitem:hover .truenasdownload-menudropdown {display: block;}
+.truenasdownload-menudropdown a:hover {color: #DFDFDF;}
 .truenas-downloadbutton {
-	background:#a5ce3c;
-	padding: 5px 25px!important;
-    margin: 10px;
-    border-radius: 15px;
-    border: none;
+	background:#71bf44;
+  color: white;
+  padding: 13px;
+  border: none;
+  font-family: "din-2014";
+  font-weight: normal;
+  font-size: 19px;
  }
 .truenas-downloadbutton:hover {
-  background-color: #a5ce3c;
+  background-color: #71bf44;
 }
 .truenas-downloadbutton a {
   font-family: "din-2014";
@@ -144,20 +144,107 @@ p,h1,h2,h3,h4,th,td,a {
   color: #00597f;
   text-decoration: none;
 }
+.truenasdownload-menudropdown {
+	display: none;
+	position: absolute;
+	background-color: #71bf44;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 10;
+}
+.truenasdownload-menudropdown a {
+	font-family: "din-2014";
+  font-weight: 500;
+  font-size: 19px;
+  color: white;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+.truenas-menudropdown {
+	display: none;
+	position: absolute;
+	background-color: #0095d5;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 10;
+}
+
+.truenasdownload-menudropdown a {
+	font-family: "din-2014";
+  font-weight: 500;
+  font-size: 19px;
+  color: white;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+
+/* Nested Menu items */
+.nested-menubutton {
+  font-family: "din-2014";
+  font-weight: 500;
+  font-size: 19px;
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  border: none;
+  background-color: #0095d5;;
+}
+.truenas-nested-menudropdown {
+  display: none;
+  position: absolute;
+  background-color: #0095d5;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 10;
+  margin-top: -.5em;
+  margin-left: -1.5em;
+}
+.nested-menubutton:hover + .truenas-nested-menudropdown {display: block;}
+.truenas-nested-menudropdown:hover {
+}
+
+.truenas-nested-menudropdown a {
+  font-family: "din-2014";
+  font-weight: 500;
+  font-size: 19px;
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.nested-menubutton a {
+  margin-left: 2rem;
+
+}
+
 /* End site header */
 /* Site footer */
+
 .gdoc-footer {
-	background: #0095d5;
 	max-width: 100%;
   font-family: "Inter", sans-serif;
   font-weight: 600;
   font-size: 16px;
+  background-color: #000000;
+  color: #8e8e8e;
 }
 .gdoc-footer__link {
-	color: white;
+	color: #23afe4;
 }
 .gdoc-footer__link:visited {
-	color: white;
+	color: #23afe4;
+}
+.gdoc-footer__item{
+  padding-left: .5rem;
+}
+.footer-icons {
+  display: flex;
+  float: right;
+  color: white;
 }
 /* End site footer */
 

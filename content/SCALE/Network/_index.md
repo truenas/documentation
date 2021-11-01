@@ -168,7 +168,7 @@ Alternately, TrueNAS can integrate into a private network, even when the system 
 
 ![OpenVPNSCALE](/images/SCALE/OpenVPNSCALE.png "OpenVPN")
 
-Before configuring TrueNAS as either an OpenVPN Server or Client, you will need an existing public key infrastructure (PKI) with [Certificates]({{< relref "CertificatesSCALE.md #certificates" >}}) and [Certificate Authorities]({{< relref "CertificatesSCALE.md #certificate-authorities" >}}) created in or imported to TrueNAS.
+Before configuring TrueNAS as either an OpenVPN Server or Client, you will need an existing public key infrastructure (PKI) with [Certificates]({{< relref "CertificatesSCALE.md#certificates" >}}) and [Certificate Authorities]({{< relref "CertificatesSCALE.md#certificate-authorities" >}}) created in or imported to TrueNAS.
 
 {{< expand "What does a PKI do?" "v" >}}
 A PKI allows TrueNAS to authenticate with clients or servers by confirming a valid master Certificate Authority (CA) signed the network credentials.
