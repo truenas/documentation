@@ -1,6 +1,8 @@
 ---
 title: "Software Development Life Cycle"
-weight: 20
+weight: 6
+aliases:
+  - /core/introduction/sofdevlifecycle/
 ---
 
 {{< toc >}}
