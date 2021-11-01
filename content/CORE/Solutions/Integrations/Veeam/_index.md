@@ -39,7 +39,7 @@ When deploying TrueNAS with Veeam users should prepare the following:
 * All appropriate licenses
 * Backup proxies as defined by Veeam - they can be virtual machines or physical machines or the backup server itself for low workloads
 
-[Update the TrueNAS systems]({{< relref "/CORE/System/Update/UpdateEnterprise.md" >}}) to the latest version before beginning deployment.
+[Update the TrueNAS systems]({{< relref "/CORE/System/Update/" >}}) to the latest version before beginning deployment.
 This ensures the appliance has the latest bug fixes, security updates and software enhancements to ensure maximum performance and security.
 If deploying on a closed network (LAN) without access to the Internet, users can also obtain and apply an update manually.
 For assistance, please contact TrueNAS support.
@@ -141,7 +141,7 @@ For rough calculations, additional resources are listed below.
 ## Advantages
 
 TrueNAS is a robust, unified storage system well-suited for nearly any environment.
-For backups, the platform takes advantage of the data integrity offered by ZFS that includes features such as copy-on-write, unlimited 
+For backups, the platform takes advantage of the data integrity offered by ZFS that includes features such as copy-on-write, 
 snapshots, and checksums that prevent bit-rot.
 TrueNAS appliances can also be expanded at any time simply by adding more drives so datasets can grow to keep pace with your data.
 Here are additional key features that are offered out-of-the-box at no extra cost to the user:
