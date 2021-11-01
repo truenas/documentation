@@ -3,85 +3,155 @@ title: "Post-install Configuration"
 weight: 12
 ---
 
+{{< toc >}}
+
+
 The Console Setup menu displays at the end of the boot process.
 If the TrueNAS system has a keyboard and monitor, you can use this menu to administer the system.
 
-When connecting with SSH or the web shell, the Console Setup menu is not shown by default.
-It can be started by the `root` user or another user with root permissions by entering `/etc/netcli`.
+By default, TrueNAS doesn't display the Console Setup menu when you connect via SSH or the web shell.
+The `root` user or another user with root permissions can start the Console Setup menu by entering `/etc/netcli`.
 
-To disable the Console Setup menu, go to **System > Advanced** and unset *Show Text Console without Password Prompt*.
-
-![ConsoleSetupMenu](/images/CORE/ConsoleSetupMenu.png "TrueNAS Console Setup Menu")
-
-On HA systems, some of these menu options are not available unless HA has been administratively disabled.
+![ConsoleSetupMenuSCALE](/images/SCALE/ConsoleSetupMenuSCALE.png "TrueNAS Console Setup Menu")
 
 The menu provides these options:
 
-1) **Configure Network Interfaces** provides a configuration wizard to set up the system’s network interfaces. If the system has been licensed for High Availability (HA), the wizard prompts for IP addresses for both “This Controller” and “TrueNAS Controller 2”.
+1) **Configure network interfaces** provides options to set up network interfaces.
 
-2) **Configure Link Aggregation** is for creating or deleting link aggregations.
+2) **Reset root password** resets the `root` user password.
 
-3) **Configure VLAN Interface** is used to create or delete VLAN interfaces.
+3) **Reset configuration to defaults** resets the system to default settings.
 
-4) **Configure Default Route** is used to set the IPv4 or IPv6 default gateway. When prompted, enter the IP address of the default gateway.
+4) **Open TrueNAS CLI Shell** starts a shell for running TrueNAS commands. Type `exit` to leave the shell.
 
-5) **Configure Static Routes** prompts for the destination network and gateway IP address. Re-enter this option for each static route needed.
+5) **Open Linux Shell** starts a shell for running Linux commands. Type `exit` to leave the shell.
 
-6) **Configure DNS** prompts for the name of the DNS domain and the IP address of the first DNS server. When adding multiple DNS servers, press Enter to enter the next one. Press Enter twice to leave this option.
+6) **Reboot** reboots the system.
 
-7) **Reset Root Password** is used to reset a lost or forgotten root password. Select this option and follow the prompts to set the password.
+7) **Shut Down** shuts down the system.
 
-8) **Reset Configuration to Defaults** *Caution!* This option deletes all of the configuration settings made in the administrative GUI and is used to reset  TrueNAS® back to defaults. Before selecting this option, make a full backup of all data and make sure all encryption keys and passphrases are known! After this option is selected, the configuration is reset to defaults and the system reboots. Navigate to **Storage** and click *Import* to re-import pools.
+Console Setup menu options may change with software updates, service agreements, etc.
 
-9) **Shell** starts a shell for running Linux commands. To leave the shell, type exit.
+During boot, TrueNAS attempts to connect to a DHCP server from all live interfaces.
+If it receives an IP address, the Console Setup menu displays it so you can access the Web UI.
+In the picture above, the TrueNAS web UI is at `10.0.2.15`.
 
-10) **Reboot** reboots the system.
+You may be able to access the web UI using `hostname.domain` (default is `truenas.local`) if your system:
+* Doesn't have a monitor.
+* Is on a network that supports Multicast DNS (mDNS).
 
-11) **Shut Down** shuts down the system.
+## Configuring Network Interfaces
 
-The numbering and quantity of options on this menu can change due to software updates, service agreements, or other factors.
-Please carefully check the menu before selecting an option, and keep this in mind when writing local procedures.
+{{< tabs "Configurations" >}}
+{{< tab "Simple Network Interface Configuration" >}}
+### Simple Network Configuration
 
-During boot, TrueNAS automatically attempts to connect to a DHCP server from all live interfaces.
-If it successfully receives an IP address, the address is displayed so it can be used to access the graphical user interface.
-In the example shown above, TrueNAS is accessible at `10.238.15.194`.
+Enter `4` to open the TrueNAS CLI Shell.
 
-Some TrueNAS systems are set up without a monitor, making it challenging to determine which IP address has been assigned.
-On networks that support Multicast DNS (mDNS), the hostname and domain can be entered into the address bar of a browser. (`truenas.local` by default).
+![ConsoleNetworkConfig1SCALE](/images/SCALE/ConsoleNetworkConfig1SCALE.png "TrueNAS SCALE Console Setup Menu")
+<br><br>
+#### Select an Interface
 
-Web Interface Configuration Options
-{{< tabs "Web Interface Access Options" >}}
-{{< tab "Fresh SCALE Installs" >}}
-If TrueNAS is not connected to a network with a DHCP server, use the console network configuration menu to manually configure the interface as shown here.
-In this example, the TrueNAS system has one network interface, `em0`.
+1. Enter `network interface`, then enter `query` to display available physical system interfaces.
 
-```
-Enter an option from 1-12: 1
-1) em0
-Select an interface (q to quit): 1
-Remove the current settings of this interface? (This causes a momentary disconnec
-tion of the network.) (y/n) n
-Configure interface for DHCP? (y/n) n
-Configure IPv4? (y/n) y
-Interface name:     (press enter, the name can be blank)
-Several input formats are supported
-Example 1 CIDR Notation:
-    192.168.1.1/24
-Example 2 IP and Netmask separate:
-    IP: 192.168.1.1
-    Netmask: 255.255.255.0, or /24 or 24
-IPv4 Address: 192.168.1.108/24
-Saving interface configuration: Ok
-Configure IPv6? (y/n) n
-Restarting network: ok
+2. Once you know which interface you want to update, enter `update interface aliases=["ipaddress"] ipv4_dhcp=false`.  
+   Example: `update eno1 aliases=["10.0.2.15"] ipv4_dhcp=false`
 
-...
+3. Enter `commit` to apply the pending changes.
 
-The web user interface is at
-http://192.168.1.108
-```
+4. Enter `checkin`, then enter `query` to show the updated interfaces.
+
+![ConsoleNetworkConfig2SCALE](/images/SCALE/ConsoleNetworkConfig2SCALE.png "TrueNAS SCALE Network Configuration")
+<br><br>
+#### Configure the Default Gateway
+
+1. Enter `..` to go back to the `network>` prompt, then enter `configuration`.
+
+2. Enter `update ipv4gateway="ipaddress"`. After you execute the command, the Console Setup menu displays the new web UI address.  
+   Example: `update ipv4gateway="10.0.2.15"`
+
+![ConsoleNetworkConfig3SCALE](/images/SCALE/ConsoleNetworkConfig3SCALE.png "TrueNAS SCALE Network Configuration")
+
+3. Enter `exit` to go back to the Console Setup menu.
 {{< /tab >}}
-{{< tab "SCALE Installations Upgraded From CORE" >}}
-Information coming soon.
+
+{{< tab "Configuring LAGG and VLAN" >}}
+### Configure LAGG
+
+1. Enter `4` to open the TrueNAS CLI Shell.
+
+2. Enter `network interface`, then enter `query` to display available physical system interfaces.  
+
+3. Once you know the interface names, enter `create type=LINK_AGGREGATION lag_ports=["interface1","interface2"] lag_protocol=LACP`  
+   Example: `network interface create type=LINK_AGGREGATION lag_ports=["eno1","eno2"] lag_protocol=LACP`
+
+![ConsoleLAGGConfigSCALE](/images/SCALE/ConsoleLAGGConfigSCALE.png "TrueNAS SCALE LAGG Configuration")
+<br><br>
+### Configure VLAN
+
+1. Enter `create type=VLAN vlan_parent_interface=bond# vlan_tag=#### aliases=[{"address": "ipaddress", "netmask": "bitlength"}]`  
+   Example: `create type=VLAN vlan_parent_interface=bond0 vlan_tag=1022 aliases=[{"address": "10.0.2.15", "netmask": "32"}]`
+
+![ConsoleVLANConfigSCALE](/images/SCALE/ConsoleVLANConfigSCALE.png "TrueNAS SCALE VLAN Configuration")
+
+2. Enter `commit` to apply the pending changes.
+
+3. Enter `exit` to return to the Console Setup menu.
+
+4. Enter `5` to open the Linux Shell, then enter `ip addr show` to ensure you set the correct IP address.
+
+5. Enter `exit` to go back to the Console Setup menu.
+<br><br>
+### Configure Gateway
+
+1. Enter `4` to open the TrueNAS CLI Shell.
+
+2. Enter `network configuration update ipv4gateway="ipaddress"`  
+   Example: `network configuration update ipv4gateway="10.0.2.15"`
+
+![ConsoleGatewayConfigSCALE](/images/SCALE/ConsoleGatewayConfigSCALE.png "TrueNAS SCALE Gateway Configuration")
+
+3. Enter `exit` to go back to the Console Setup menu.
+
+4. Enter `5` to open the Linux Shell.
+
+5. Enter `ping ipaddress` to ping the gateway.  
+   Example: `ping 10.0.2.15`
+
+6. When you are ready to stop pinging, type <kbd>Ctrl+C<kbd> to view the statistics.
+
+![ConsoleGatewayPingSCALE](/images/SCALE/ConsoleGatewayPingSCALE.png "TrueNAS SCALE Pinging the Gateway")
+
+7. Enter `exit` to go back to the Console Setup menu.
+{{< /tab >}}
+
+{{< tab "Configuring Static Route" >}}
+1. Enter `4` to open the TrueNAS CLI Shell, then enter `network interface`
+
+2. Enter `update interface1 aliases="ipaddress"`  
+   Example: `update eno1 aliases="10.0.2.15"`
+
+![ConsoleStaticConfigSCALE](/images/SCALE/ConsoleStaticConfigSCALE.png "TrueNAS SCALE Static Route Configuration")
+
+3. Enter `commit`, then `checkin` to apply the changes.
+
+4. Enter `exit` to go back to the Console Setup menu.
 {{< /tab >}}
 {{< /tabs >}}
+
+## Changing the Root Password
+
+Enter `2` in the Console Setup menu, then enter and re-enter the new password you want to use.
+
+{{< hint warning >}}
+Changing the root password disables 2FA (Two-Factor Authentication).
+{{< /hint >}}
+
+## Resetting the System Configuration
+
+Enter `3` in the Console Setup menu, then enter `y` to reset the system configuration. The system will reboot and revert to default settings.
+
+{{< hint danger >}}
+**Caution!**
+Resetting the configuration deletes all settings and reverts TrueNAS to default settings. Before resetting the system, back up all data and encryption keys/passphrases! After the system resets and reboots, you can go to **Storage** and click *Import* to re-import pools.
+{{< /hint >}}
