@@ -33,7 +33,7 @@ jobs:
         run: pnpm i
 
       - name: Print PNPM modules after install
-        run: du -d 0 -h ~/.pnpm-store/** || true
+        run: du -d 0 -h ~/.pnpm-store/**/* || true
 
       - name: Build Hugo Site
         run: hugo -d public --gc --minify
