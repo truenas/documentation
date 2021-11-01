@@ -33,7 +33,7 @@ jobs:
         run: pnpm i
 
       - name: Print PNPM modules after install
-        run: du -d 0 -h ~/.pnpm-store/* || true
+        run: du -d 0 -h ~/.pnpm-store/** || true
 
       - name: Build Hugo Site
         run: hugo -d public --gc --minify
@@ -45,7 +45,8 @@ jobs:
           surge_token: ${{ secrets.QA_SURGE_TOKEN }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
           dist: public
-          teardown: 'false'
+          # teardown option remove the PR surge.sh after the PR is merged
+          teardown: 'true'
           failOnError: 'true'
           build: |
             echo Deploying to surge.sh
