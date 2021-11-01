@@ -62,7 +62,6 @@ New snapshots or clones reference the same amount of space as the file system or
 
 {{< include file="/_includes/DeletingSnapshots.md" type="page" >}}
 
-{{< /expand >}}
 {{< /tab >}}
 {{< tab "CLONE TO NEW DATASET" >}}
 Creates a new snapshot *clone* (dataset) from the snapshot contents.
