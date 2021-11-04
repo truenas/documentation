@@ -10,7 +10,7 @@ The **Reports** page customizes system metrics charts for data analysis.
 
 ![ReportsList](/images/TrueCommand/2.0/ReportsList.png "Reports List")
 
-You must [create a report]({{< relref "Generation.md" >}}) before you can run the report.
+You must [create a report]({{< relref "creation.md" >}}) before you can run the report.
 
 ## Generating a report
 
