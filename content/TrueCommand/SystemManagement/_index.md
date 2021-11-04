@@ -45,9 +45,16 @@ Clicking *APPS* (Scale) or *Jails* (TrueNAS 12.x) opens a window that allows use
 
 #### Options Menu
 
-![DashboardSystemOptions](/images/TrueCommand/2.0/DashboardSystemOptions.png "Dashboard System Options")
+![DashboardSystemOptions](/images/TrueCommand/2.0/DashboardSystemOptions202.png "Dashboard System Options")
 
-The Options menu gives you several shortcuts to simple tasks.  **Edit** opens the edit window for the TrueNAS connection details and nickname.  **Update** updates the TrueNAS system.  **NAS Portal** opens a new tab for the full TrueNAS Web UI.  **iSCSI Volumes** opens the specific TrueNAS's iSCSI management page.  **Services** opens the services page, which allows users to directly control current service status and autostart.  **Delete** removes the system from TrueCommand. **Delete** will not delete any data stored on the TrueNAS system, however it will delete all system metrics history saved in TrueCommand's database.
+The *Options* menu has several shortcuts to simple tasks.
+
+* **Edit** opens the edit window for the TrueNAS connection details and nickname.
+* **Update** updates the TrueNAS system.
+* **Launch TrueNAS Interface** opens a new tab for the full TrueNAS Web UI.
+* **iSCSI Volumes** opens the specific TrueNAS's iSCSI management page.
+* **Services** opens the services page, which allows users to directly control current service status and autostart.
+* **Delete** removes the system from TrueCommand. This does not delete any data stored on the TrueNAS system. However, it does delete all system metrics that are saved in TrueCommand's database.
 
 #### Services
 ![DashboardServices](/images/TrueCommand/2.0/DashboardServices.png "Dashboard Services")
@@ -69,8 +76,12 @@ Clicking on the values for CPU, Disk, and Network will open small popup windows 
 ![DashboadNetworkGraph](/images/TrueCommand/2.0/DashboadNetworkGraph.png "Dashboad Network Graph")
 
 
-#### Activity Wheel
+#### Activity Indicator Icons
 
-When a TrueNAS is updating, a small rotating activity wheel will be visible to the right of the system nickname.
+TrueCommand's individual indicators provide a better, "at-a-glance", indication of what the system is up to. The indicators will be visible to the right of the system nickname.
 
-![DashboardSystemCardUpdating](/images/TrueCommand/2.0/DashboardSystemCardUpdating.png "Dashboard System Card Updating")
+![DashboardSystemCardMultipleIndicators](/images/TrueCommand/2.0/TC20MultipleActivityIndicators.png "System Card Multiple Indicators")
+
+* Update: ![DashboardSystemUpdateIndicator](/images/TrueCommand/2.0/TC20UpgradeIndicator.png "System Update")
+* Replication: ![DashboardSystemReplicationIndicator](/images/TrueCommand/2.0/TC20ReplicationIndicator.png "Replication")
+* Resilver/Scrub : ![DashboardSystemResilverScrubIndicator](/images/TrueCommand/2.0/TC20ResilverScrubIndicator.png "System Resilver/Scrub")

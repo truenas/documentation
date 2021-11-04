@@ -122,15 +122,15 @@ Data is identical in each disk.
 Requires at least two disks, has the most redundancy, and the least capacity.
 {{< /tab >}}
 {{< tab "RAIDZ1" >}}
-One disk maintains data and all other disks store data.
+Uses one disk for parity while all other disks store data.
 Requires at least three disks.
 {{< /tab >}}
 {{< tab "RAIDZ2" >}}
-Two disks maintain data and all other disks store data.
+Uses two disks for parity while all other disks store data.
 Requires at least four disks.
 {{< /tab >}}
 {{< tab "RAIDZ3" >}}
-Three disks maintain data and all other disks store data.
+Uses three disks for parity while all other disks store data.
 Requires at least five disks.
 {{< /tab >}}
 {{< /tabs >}}
