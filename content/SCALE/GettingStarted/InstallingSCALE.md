@@ -143,6 +143,9 @@ If the system does not boot into TrueNAS SCALE, there are several things that ca
 {{< /expand >}}
 {{< /tab >}}
 {{< tab "Virtual Machine" >}}
+
+{{< embed-video name="scaleangelfishvminstall" >}}
+
 Because TrueNAS SCALE is built and provided as an <file>.iso</file> file, it works on all virtual machine solutions (VMware, VirtualBox, Citrix Hypervisor, etc).
 This section demonstrates installing with [VMware Workstation Player](https://www.vmware.com/products/workstation-player/workstation-player-evaluation.html) on Windows.
 
@@ -247,6 +250,12 @@ The [Console Setup Menu]({{< relref "ConsoleSetupMenu.md" >}}) displays when the
 {{< /tab >}}
 {{< tab "Migrating from TrueNAS CORE" >}}
 To migrate from TrueNAS CORE to SCALE, use a TrueNAS SCALE <file>.iso</file> file. This is currently the only method to migrate a CORE system to SCALE.
+
+{{< hint danger >}}
+#### Migrating GELI-encrypted Pools to SCALE
+TrueNAS SCALE is based on Linux, which does not support FreeBSD GELI encryption.
+If you have GELI-encrypted pools on your system that you plan to import into SCALE, you must migrate your data from the GELI pool to a non-GELI encrypted pool *before* sidegrading to SCALE. 
+{{< /hint >}}
 
 Start by saving the [SCALE ISO file](https://www.truenas.com/download-tn-scale/) to a USB drive (detailed in the Physical Hardware tab). Plug the USB drive into the CORE system that you want to sidegrade and boot or reboot the system. 
 

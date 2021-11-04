@@ -14,7 +14,6 @@
     <!-- End Google Tag Manager -->
     {{ partial "head" . }}
 </head>
-
 <body>
     <!-- Define feature image for search results or linking -->
     <a href="#" style="display: none;" class="image featured">{{ with .Site.Params.featured_image }}<img src="{{ . }}"></img>{{end}}</a>
@@ -46,3 +45,12 @@
     {{ partial "foot" . }}
 </body>
 </html>
+<script>
+  function loadtheme(){
+    let html = document.documentElement;
+    let cur=localStorage.getItem("hugo-geekdoc");
+    html.setAttribute("color-mode", cur);  
+  }
+  document.addEventListener('DOMContentLoaded',loadtheme())
+  
+</script>

@@ -4,8 +4,6 @@ geekdocCollapseSection: true
 weight: 20
 ---
 
-
-
 Various Jail Plugins will require permissions to be set on datasets so that they can access them. 
 
 Unless otherwise modified, dataset will be owned by the user `root` and group `wheel`.  
