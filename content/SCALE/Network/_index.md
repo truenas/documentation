@@ -136,6 +136,8 @@ TrueNAS displays the *Hostname* and *Domain* in the **Dashboard** *System Inform
 | Netwait IP List | Only appears when *Enable Netwait Feature* is set. Enter a list of IP addresses to [ping](https://www.freebsd.org/cgi/man.cgi?query=ping). Separate entries by pressing <kbd>Enter</kbd>. Each address is tried until one is successful or the list is exhausted. Leave empty to use the default gateway.
 | Host Name Database | Additional hosts to be appended to */etc/hosts*. Separate entries by pressing. Separate entries by pressing <kbd>Enter</kbd>.  Use the format *`IP_address space hostname`* where multiple hostnames can be used if separated by a space. Hosts defined here are still accessible by name even when DNS is not available. See <a href="https://www.freebsd.org/cgi/man.cgi?query=hosts">hosts</a> for additional information. |
 
+{{< embed-video name="scaleangelfishstaticipglobalnetworking" >}}
+
 {{< /tab >}}
 {{< tab "Static Routes" >}}
 ## Static Routes
