@@ -76,8 +76,12 @@ Clicking on the values for CPU, Disk, and Network will open small popup windows 
 ![DashboadNetworkGraph](/images/TrueCommand/2.0/DashboadNetworkGraph.png "Dashboad Network Graph")
 
 
-#### Activity Wheel
+#### Activity Indicator Icons
 
-When a TrueNAS is updating, a small rotating activity wheel will be visible to the right of the system nickname.
+TrueCommand's individual indicators provide a better, "at-a-glance", indication of what the system is up to. The indicators will be visible to the right of the system nickname.
 
-![DashboardSystemCardUpdating](/images/TrueCommand/2.0/DashboardSystemCardUpdating.png "Dashboard System Card Updating")
+![DashboardSystemCardMultipleIndicators](/images/TrueCommand/2.0/TC20MultipleActivityIndicators.png "System Card Multiple Indicators")
+
+* Update: ![DashboardSystemUpdateIndicator](/images/TrueCommand/2.0/TC20UpgradeIndicator.png "System Update")
+* Replication: ![DashboardSystemReplicationIndicator](/images/TrueCommand/2.0/TC20ReplicationIndicator.png "Replication")
+* Resilver/Scrub : ![DashboardSystemResilverScrubIndicator](/images/TrueCommand/2.0/TC20ResilverScrubIndicator.png "System Resilver/Scrub")

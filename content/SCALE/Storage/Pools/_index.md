@@ -107,9 +107,9 @@ For example, *pool1* has a data vdev in a *mirror* layout, so create *pool2* for
 
 * *Stripe*: Each disk stores data. A *Stripe* requires at least one disk and has no data redundancy.
 * *Mirror*: Data is identical in each disk. A *Mirror* requires at least two disks, provides the most redundancy, and has the least capacity.
-* *RAIDZ1*: One disk maintains data while all other disks store data. *RAIDZ1* requires at least three disks.
-* *RAIDZ2*: Two disks maintain data while all other disks store data. *RAIDZ2* requires at least four disks.
-* *RAIDZ3*: Three disks maintain data while all other disks store data. *RAIDZ3* requires at least five disks.
+* *RAIDZ1*: Uses one disk for parity while all other disks store data. *RAIDZ1* requires at least three disks.
+* *RAIDZ2*: Uses two disks for parity while all other disks store data. *RAIDZ2* requires at least four disks.
+* *RAIDZ3*: Uses three disks for parity while all other disks store data. *RAIDZ3* requires at least five disks.
 
 {{< hint danger >}}
 Never use a *Stripe* to store critical data! A single disk failure results in losing all data in the vdev.

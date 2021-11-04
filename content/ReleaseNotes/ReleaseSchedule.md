@@ -15,7 +15,7 @@ TrueNAS SCALE tickets are also tracked in the TrueNAS Jira Project.
 
 | Version                                                                   | Scheduled Release Date |
 |---------------------------------------------------------------------------|------------------------|
-| [TrueNAS 12.0-U6](https://jira.ixsystems.com/projects/NAS/versions/13105) | 2021/10/06 |
+|                                                                           |                        |
 
 {{< /tab >}}
 {{< tab "TrueNAS SCALE" >}}
