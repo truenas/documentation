@@ -46,6 +46,10 @@ After creating a report, you can click **GENERATE** to [generate the report]({{<
 
 ![ReportsGenerate](/images/TrueCommand/2.0/ReportsGenerate.png "Reports Generate")
 
+## Edit a Report
+
+To edit a report click <i class="material-icons" aria-hidden="true" title="edit">edit</i>.
+
 ## Share Report
 
 By default, the reports created by a user are available only to that user.
@@ -54,3 +58,5 @@ To share a report with other users or teams, open the Reports page and click the
 ![ReportsSharing](/images/TrueCommand/2.0/ReportsShareReport.png "Reports Sharing")
 
 You can share reports with individual users or entire teams.
+
+## Delete a Report
