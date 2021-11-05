@@ -48,7 +48,7 @@ After creating a report, you can click **GENERATE** to [generate the report]({{<
 
 ## Edit a Report
 
-Rename a report, add a description, or add/delete a Widget by clicking <i class="material-icons" aria-hidden="true" title="edit">edit</i>.
+Open the Reports page and click <i class="material-icons" aria-hidden="true" title="edit">edit</i> next to the report name to rename a report, add a description, or add/delete a Widget.
 
 ## Share Report
 
@@ -61,4 +61,4 @@ You can share reports with individual users or entire teams.
 
 ## Delete a Report
 
-Delete a report by clicking the trash can icon. Once a report has been deleted it isn't recoverable, it will have to be recreated if it is needed.
+Delete a report by clicking <i class="material-icons" aria-hidden="true" title="Delete">delete</i>. this will permenently delete the report but it it can be recreated as needed.
