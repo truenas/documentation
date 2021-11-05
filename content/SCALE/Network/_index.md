@@ -60,6 +60,8 @@ Users may also select how many bits will be a part of the network address.
 {{< tab "Global Configuration" >}}
 ## Global Configuration
 
+{{< embed-video name="scaleangelfishstaticipglobalnetworking" >}}
+
 The *Global Configuration* section has all the general TrueNAS networking settings *not* specific to any interfaces.
 
 ![GlobalConfigurationSCALE](/images/SCALE/GlobalConfigurationSCALE.png "Global Configuration")

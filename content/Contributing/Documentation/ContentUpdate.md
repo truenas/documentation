@@ -16,7 +16,7 @@ The preview updates with any changes to the pull request, so you can always see 
 
 ## Making Quick Changes to an Article
 
-{{< embed-video name="DocsQuickEdit" >}}
+{{< embed-video name="docsquickedit" >}}
 
 If you find text that needs to be fixed or improved in an article, click *Edit this page* to view the article source text in a new browser tab.
 To check your changes for bugs in the Markdown or HTML syntax, switch to the **Preview changes** tab.
