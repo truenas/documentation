@@ -13,7 +13,7 @@ TrueCommand lets you create NAS users and groups across multiple systems.
 
 To add a NAS user to one or more systems, go to your dashboard and click the <i class="material-icons" aria-hidden="true" >more_vert</i> in a system's window, then select **Users and Groups**.
 
-![NASUsersAndGroups2](/images/TrueCommand/2.0/TCUsersAndGroups2.png "Users and Groups Screen")
+![NASUsersAndGroups2](/images/TrueCommand/2.0/NASUsersAndGroups2.png "Users and Groups Screen")
 
 Click the **+ User** button to open the user creation wizard.
 
@@ -81,7 +81,7 @@ To delete multiple users, check every user you want to delete and click **REMOVE
 
 ### Adding a New Group
 
-To add a NAS group, go to your dashboard and click the <i class="material-icons" aria-hidden="true" >more_vert</i> in a system's window and select **Users and Groups**, then click the **USERS** drop-down and selects **GROUPS**. 
+Go to the dashboard and click the <i class="material-icons" aria-hidden="true" >more_vert</i> in a system's window and select **Users and Groups**, then click the **USERS** drop-down and select **GROUPS**. 
 
 ![NASGroup1](/images/TrueCommand/2.0/NASGroup1.png "Creating a New NAS Group")
 
