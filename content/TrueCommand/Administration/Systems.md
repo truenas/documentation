@@ -57,7 +57,7 @@ Clicking the edit button <i class="material-icons" aria-hidden="true" title="Con
 {{< /tab >}}
 {{< tab "Delete" >}}
 
-Clicking the <i class="material-icons" aria-hidden="true" title="Delete">delete</i> button will initiate a popup confirmation box to delete a group. 
+Clicking the <i class="material-icons" aria-hidden="true" title="Delete">delete</i> button initiates a popup confirmation box to delete a group. 
 
 ![Groups Delete](/images/TrueCommand/2.0/SystemsGroupsDeleteGroup.png "Group Delete")
 {{< /tab >}}
