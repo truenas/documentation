@@ -28,7 +28,7 @@ Fill out the New System form and click **ADD SYSTEM**.
 
 ![SystemsAddFirstSystemCloudAccount](/images/TrueCommand/2.0/SystemsAddFirstSystemCloudAccount.png "Connecting from TrueCommand Cloud")
 
-Log into your [ixSystems cloud account](https://portal.ixsystems.com/portal/login/index.php#login) and click **Manage** next to your TrueCommand subscription.
+Log into your [ixSystems cloud account](https://portal.ixsystems.com) and click **Manage** next to your TrueCommand subscription.
 
 ![SystemsAddFirstSystemAPIKey](/images/TrueCommand/2.0/SystemsAddFirstSystemAPIKey.png "Connecting from TrueCommand Cloud")
 
