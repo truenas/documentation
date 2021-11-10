@@ -42,7 +42,7 @@ Log into a TrueNAS system and click the TrueCommand icon in the upper right.
 
 Paste the TrueCommand API Key copied from the iXsystems Account Portal into the TrueNAS dialog window. 
 
-![SystemsAddFirstSystemTCConnect](/images/SCALE/SystemsAddFirstSystemTCConnect.png "Connecting TrueNAS to TrueCommand Cloud")
+![SystemsAddFirstSystemTCConnect](/images/TrueCommand/2.0/SystemsAddFirstSystemTCConnect.png "Connecting TrueNAS to TrueCommand Cloud")
 
 ### Approve the Connection Request
 
