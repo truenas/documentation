@@ -20,11 +20,14 @@ When setting up directory services in TrueNAS, you can connect TrueNAS to either
 The Active Directory (AD) service shares resources in a Windows network.
 AD provides authentication and authorization services for the users in a network, eliminating the need to recreate the user accounts on TrueNAS.
 
-Users can configure AD services on: 
-* A Windows Server running 2000 or later. 
-* A Unix-like OS running [Samba version 4](https://wiki.samba.org/index.php/Setting_up_Samba_as_an_Active_Directory_Domain_Controller#Provisioning_a_Samba_Active_Directory).
+Once joined to an AD domain, you can use domain users and groups in local ACLs on files and directories. 
+You can also set up shares to act as a file server.
 
-To configure a connection, you will need to know the Active Directory domain and its account credentials.
+Joining an AD domain also configures the Privileged Access Manager (PAM) to let domain users log on via SSH or authenticate to local services.
+
+Users can configure AD services on Windows or Unix-like operating systems running [Samba version 4](https://wiki.samba.org/index.php/Setting_up_Samba_as_an_Active_Directory_Domain_Controller#Provisioning_a_Samba_Active_Directory).
+
+To configure a connection, you will need to know the Active Directory domain controller's domain and that system's account credentials.
 
 ## Preparation
 
@@ -113,7 +116,7 @@ TrueNAS automatically begins using this default keytab and removes any administr
 {{< expand "Resync the Cache" "v" >}}
 If the cache becomes out of sync or fewer users than expected are available in the permissions editors, resync it by clicking *Settings* in the *Active Directory* window and selecting *Rebuild Directory Service Cache*.
 
-If the Windows Server version is older than 2008 R2, try creating a **Computer** entry on the Windows server Organizational Unit (OU).
+If you are using Windows Server with 2008 R2 or older,, try creating a **Computer** entry on the Windows server Organizational Unit (OU).
 
 When creating the entry, enter the TrueNAS hostname in the name field and make sure it matches the:
 
