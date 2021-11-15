@@ -423,7 +423,7 @@ Lastly, go back to the extent in **Shares >** *Block (iSCSI) Shares Targets* and
 {{< tab "Windows (SMB) Shares" >}}
 ## SMB Shares
 
-{{< embed-video name="scaleangelfishstaticipglobalnetworking" >}}
+{{< embed-video name="scaleangelfishsmbshare" >}}
 
 SMB (also known as CIFS) is the native file sharing system in Windows.
 SMB shares can connect to most operating systems, including Windows, macOS, and Linux.
