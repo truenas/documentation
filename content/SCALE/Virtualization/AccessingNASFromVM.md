@@ -11,12 +11,17 @@ Go to **Virtualization**, find the VM you will use to access TrueNAS storage, an
 
 ![AccessNASfromVM1](/images/SCALE/AccessNASfromVM1.png "Toggle off VM")
 
-Go to **Network**, find the active interface that you used as the VM's parent interface. Make note of the interface's IP Address and subnet mask, then click it. Uncheck the **DHCP** box, then click **Apply**.
+Go to **Network** and find the active interface you used as the VM's parent interface. Note the interface's IP Address and subnet mask.
+
+{{< hint info >}}
+You can also get the IP address and subnet mask by going to **Shell** and entering `ip a`.
+{{< /hint >}}
+
+Click the interface. Uncheck the **DHCP** box, then click **Apply**.
 
 ![AccessNASfromVM2](/images/SCALE/AccessNASfromVM2.png "Turn off DHCP")
 
-Click **Add** in the **Interfaces** window. Select **Bridge** for the **Type** and give it a name (must be in *brX* format). Check the **DHCP** box, then select the active interface in the **Bridge Members** drop-down. Under **IP Addresses**, click **Add** and enter the active interface's IP and subnet mask that you noted earlier. 
-You can also get the IP address and subnet mask by going to **Shell** and entering `ip a`.
+Click **Add** in the **Interfaces** window. Select **Bridge** for the **Type** and give it a name (must be in *brX* format). Check the **DHCP** box, then select the active interface in the **Bridge Members** drop-down. Click **Add** under **IP Addresses** and enter the active interface's IP and subnet mask.
 
 ![AccessNASfromVM3](/images/SCALE/AccessNASfromVM3.png "Add IP and Subnet Mask")
 
@@ -37,7 +42,7 @@ You can now access your TrueNAS storage from the VM. You may have to set up [sha
 {{< tab "Linux" >}}
 Linux VMs can access TrueNAS storage using FTP, SMB, and NFS.
 
-In the example below, the Linux VM is using ftp to access a user's home directory on TrueNAS.
+In the example below, the Linux VM is using FTP to access a user's home directory on TrueNAS.
 
 ![AccessNASfromVM6](/images/SCALE/AccessNASfromVM7.png "Connecting to FTP Path")
 
