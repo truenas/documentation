@@ -44,7 +44,7 @@ Linux VMs can access TrueNAS storage using FTP, SMB, and NFS.
 
 In the example below, the Linux VM is using FTP to access a user's home directory on TrueNAS.
 
-![AccessNASfromVM6](/images/SCALE/AccessNASfromVM7.png "Connecting to FTP Path")
+![AccessNASfromVM6](/images/SCALE/AccessNASfromVM6.png "Connecting to FTP Path")
 
 ![AccessNASfromVM7](/images/SCALE/AccessNASfromVM7.png "FTP Home Directory")
 {{< /tab >}}
