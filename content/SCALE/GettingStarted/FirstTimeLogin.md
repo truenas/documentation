@@ -124,6 +124,20 @@ The *Set Warning Level* drop-downs customize alert importance. Each warning leve
 
 The *Set Frequency* drop-downs adjust how often the system sends alert notifications. Setting the *Frequency* to *NEVER* prevents that alert from being in the *Alerts* menu, but it will still pop up in the UI if triggered.
 
+#### Alert Warning Levels
+
+Each warning level has a different icon and color to express its urgency. To make the system email you when alerts with a specific warning level trigger, set up an email Alert Service with that warning level. 
+
+| Level | Icon | Alert Notification? |
+|-------|------|-------------|
+| 1 INFO | ![AlertLevelInfoNoticeAlertEmergency](/images/SCALE/AlertLevelInfoNoticeAlertEmergency.png "Alert Levels") | No |
+| 2 NOTICE | ![AlertLevelInfoNoticeAlertEmergency](/images/SCALE/AlertLevelInfoNoticeAlertEmergency.png "Alert Levels") | Yes |
+| 3 WARNING | ![AlertLevelWarning](/images/SCALE/AlertLevelWarning.png "Alert Levels") | Yes |
+| 4 ERROR | ![AlertLevelErrorCritical](/images/SCALE/AlertLevelErrorCritical.png "Alert Levels") | Yes |
+| 5 CRITICAL | ![AlertLevelErrorCritical](/images/SCALE/AlertLevelErrorCritical.png "Alert Levels") | Yes |
+| 6 ALERT | ![AlertLevelInfoNoticeAlertEmergency](/images/SCALE/AlertLevelInfoNoticeAlertEmergency.png "Alert Levels") | Yes |
+| 7 EMERGENCY | ![AlertLevelInfoNoticeAlertEmergency](/images/SCALE/AlertLevelInfoNoticeAlertEmergency.png "Alert Levels") | Yes |
+
 ### Alert Services
 
 The *Alert Services* screen has options to create and edit alert services. The *Alert Services* screen displays existing alert services in a list that users can filter by *Type*, *Level*, and *Enabled*.
