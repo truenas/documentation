@@ -17,13 +17,13 @@ Go to **Network** and find the active interface you used as the VM's parent inte
 You can also get the IP address and subnet mask by going to **Shell** and entering `ip a`.
 {{< /hint >}}
 
+![AccessNASfromVM3](/images/SCALE/AccessNASfromVM3.png "Add IP and Subnet Mask")
+
 Click the interface. Uncheck the **DHCP** box, then click **Apply**.
 
 ![AccessNASfromVM2](/images/SCALE/AccessNASfromVM2.png "Turn off DHCP")
 
 Click **Add** in the **Interfaces** window. Select **Bridge** for the **Type** and give it a name (must be in *brX* format). Check the **DHCP** box, then select the active interface in the **Bridge Members** drop-down. Click **Add** under **IP Addresses** and enter the active interface's IP and subnet mask.
-
-![AccessNASfromVM3](/images/SCALE/AccessNASfromVM3.png "Add IP and Subnet Mask")
 
 Click **Apply**, then click **Test Changes**. Once TrueNAS finishes testing the interface, click **Save Changes**.
 
