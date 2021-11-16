@@ -123,7 +123,7 @@ For example, alerts that are related to pools appear in the **Storage** alert se
 
 Changing any of these options affects every configured alert service.
 
-## Alert Warning Levels
+### Alert Warning Levels
 
 Each warning level has a different icon and color to express its importance. To make the system email you when alerts with a specific warning level trigger, set up an email [Alert Service](https://www.truenas.com/docs/core/system/alert/#alert-services) with that warning level. 
 
