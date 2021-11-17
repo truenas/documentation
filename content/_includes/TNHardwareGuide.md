@@ -15,8 +15,8 @@ The recommended system requirements to install TrueNAS:
 
 The TrueNAS CORE installer recommends 8 GB of RAM. TrueNAS CORE installs, runs, operates a jail, hosts a SMB share, and replicates TBs of data with less. iXsystem recommends the above for better performance and fewer issues.
 
-A SSD isn't required as a boot device. iXSystems discourages using either a spinner or a USB stick for obvious reasons.
-iXSystems discourages installing TrueNAS CORE on a single disk or striped pool unless there is a good reason to do so. TrueNAS CORE can install and run without any data device but this is also discouraged.
+A SSD isn't required as a boot device. iXsystems discourages using either a spinner or a USB stick for obvious reasons.
+iXsystems discourages installing TrueNAS CORE on a single disk or striped pool unless there is a good reason to do so. TrueNAS CORE can install and run without any data device but this is also discouraged.
 
 Two cores aren't required as most halfway-modern 64-bit CPUs likely already have at least two cores.
 
