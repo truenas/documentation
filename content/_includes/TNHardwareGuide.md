@@ -43,7 +43,7 @@ TrueNAS Mini systems ship with Western Digital NAS and NL-SAS for good reason, a
 Serial Advanced Technology Attachment (SATA) is still the de facto standard disk interface found in many desktop/laptop computers, servers, and some non-enterprise storage arrays.
 SATA disks first arrived offering double-digit gigabyte capacities and are now produced to meet a myriad of capacity, reliability, and performance goals.
 While consumer desktop SATA disks don't have the problematic overall reliability issues they once had, they are still not designed or warrantied for continuous operation or use in RAID groups.
-Enterprise SATA disks address the 'always-on' factor, vibration tolerance, and drive error handling required in storage systems, but the price delta between desktop and enterprise SATA drives is vast enough that it drives users to push their consumer drives into 24/7 service in pursuit of cost savings.
+Enterprise SATA disks address the always-on factor, vibration tolerance, and drive error handling required in storage systems, but the price delta between desktop and enterprise SATA drives is vast enough that it drives users to push their consumer drives into 24/7 service in pursuit of cost savings.
 
 Drive vendors, likely tired of honoring warranties for failed desktop drives used in incorrect applications, responded to this gap in the market by producing NAS drives, made famous by the original Western Digital (WD) Red™ drives with CMR/PMR technology (now called WD Red Plus).
 Western Digital Designed the WD Red™ Plus NAS drives (non-SMR) for use in systems with up to eight hard drives, or for up to 16 drives the [WD Red™ Pro](https://www.westerndigital.com/products/internal-drives/wd-red-pro-sata-hdd) drives, and the [WD UltraStar™](https://www.westerndigital.com/products/data-center-platforms) drives for systems beyond 16 drives.
@@ -120,7 +120,7 @@ Keep in mind that for every data block in the L2ARC, the primary ARC needs an 88
 For example, a 480GB L2ARC filled with 4KiB blocks needs more than 10GiB of metadata storage in the primary ARC.
 {{< /tab >}}
 {{< tab "Self Encrypting Drives" >}}
-TrueNAS supports two forms of data encryption at rest to achieve privacy and compliance objectives: [Native ZFS encryption]({{< relref "StorageEncryption.md" >}})and [Self Encrypting Drives (SEDs)]({{< relref "SED.md" >}}).
+TrueNAS supports two forms of data encryption at rest to achieve privacy and compliance objectives: [Native ZFS encryption]({{< relref "StorageEncryption.md" >}}) and [Self Encrypting Drives (SEDs)]({{< relref "SED.md" >}}).
 SEDs do not experience the performance overhead introduced by software partition encryption but aren’t as readily-available as non-SED drives (and thus can cost a little bit more).
 {{< /tab >}}
 {{< tab "Boot Devices" >}}
@@ -143,7 +143,7 @@ Note that hot-swapping PCIe NVMe devices is not currently supported.
 
 ### Storage Device Sizing
 
-[Zpool layout]({{< relref "PoolCreate.md#vdev-layout" >}}) (the organization of LUNs and volumes, in TrueNAS/ZFS parlance) is outside of the scope of this guide. The availability of double-digit terabyte drives raises a question TrueNAS users now have the luxury of asking. hHw many drives should I use to achieve my desired capacity?
+[Zpool layout]({{< relref "PoolCreate.md#vdev-layout" >}}) (the organization of LUNs and volumes, in TrueNAS/ZFS parlance) is outside of the scope of this guide. The availability of double-digit terabyte drives raises a question TrueNAS users now have the luxury of asking. How many drives should I use to achieve my desired capacity?
 While you can mirror two 16TB drives to achieve 16TB of available capacity it doesn’t mean that you should.
 Mirroring two large drives offers the advantage of redundancy and balancing reads between the two devices which could lower power draw, but little else.
 The write performance of two large drives at most is that of a single drive.
@@ -166,7 +166,7 @@ Spinning disk hard drives have moving parts, by definition. These parts are high
 
 Take time before deploying the system to create a pool. Subject it to as close to real-world workload as possible to reveal individual drive issues and help determine if an alternative pool layout is better suited to that workload.
 Be cautious of used drives as vendors may not be honest or informed about the age and health of any given drive.
-Check the number of hours on all 'new' drives using `smartctl(8)` to verify they aren't recertified.
+Check the number of hours on all new drives using `smartctl(8)` to verify they aren't recertified.
 A drive vendor could also zero the hours of a drive during recertification, masking its true age.
 iXsystems tests all storage devices it sells for at least 48 hours before shipment.
 
@@ -175,7 +175,7 @@ iXsystems tests all storage devices it sells for at least 48 hours before shipme
 The uncontested most popular storage controllers used with TrueNAS are the 6 and 12 Gbps (Gigabits per second, sometimes expressed as Gb/s) Broadcom (formerly Avago, formerly LSI) SAS host bus adapters (HBA).
 These ship as embedded controllers on some motherboards but are generally PCIe cards with four or more internal or external SATA/SAS ports.
 The 6 Gbps LSI 9211 and its rebranded siblings that also use the LSI SAS2008 chip, such as the IBM M1015 and Dell H200, are legendary among TrueNAS users who build systems using parts from the second-hand market. 
-Flash using the latest IT or Target Mode firmware to disable the optional RAID functionality found in the "IR" firmware on Broadcom controllers.
+Flash using the latest IT or Target Mode firmware to disable the optional RAID functionality found in the IR firmware on Broadcom controllers.
 For those with the budget, newer models like the Broadcom 9300/9400 series give 12 Gbps SAS capabilities and even NVMe to SAS translation abilities with the 9400 series.
 TrueNAS includes the `sas2flash`, `sas3flash`, and `storcli` commands to flash or to perform re-flashing operations on 9200, 9300, and 9400 series cards.
 
@@ -188,7 +188,7 @@ There are countless warnings against using hardware RAID cards with TrueNAS.
 ZFS and TrueNAS provide built-in RAID that protects your data better than any hardware RAID card eliminating the need for one.
 Use a hardware RAID card if it’s all you have, but there are limitations.
 First and most important, do not use their RAID facility (there is one caveat in the bullets below).
-If the chosen hardware RAID card supports HBA mode, also known as 'passthrough' or 'JBOD' mode. When used it allows it to perform indistinguishable from a standard HBA.
+If the chosen hardware RAID card supports HBA mode, also known as passthrough or JBOD mode. When used it allows it to perform indistinguishable from a standard HBA.
 If your RAID card does not have this mode, you can configure a RAID0 for every single disk in your system.
 It’s not ideal, but it works in a pinch.
 If repurposing hardware RAID cards with TrueNAS, be aware that some hardware RAID cards:
@@ -271,14 +271,14 @@ Exactly what CPU to choose can come down to a short list of key factors:
 * A Xeon E5 CPU (or similar) is best and recommended for use with software-encrypted pools.
 * An Intel Ivy Bridge CPU or later is best and recommended for virtual machine use.
 
-Watch for  VT-d/AMD-Vi device virtualization support on the CPU and motherboard to pass PCIe devices to virtual machines.
+Watch for VT-d/AMD-Vi device virtualization support on the CPU and motherboard to pass PCIe devices to virtual machines.
 Be aware if a given CPU contains a GPU or requires an external one. Also, note that many server motherboards include a BMC chip with a built-in GPU. See below for more details on BMCs.
 
 AMD CPUs are making a comeback thanks to the Ryzen and EPYC (Naples/Rome) lines. Support for these platforms is rather limited on FreeBSD and, by extension, TrueNAS CORE. But there is significant Linux support and TrueNAS SCALE should work with AMD CPUs without issue.
 
 ### Remote Management: IPMI
 
-As a courtesy to *further* limit the motherboard choices, consider the Intelligent Platform Management Interface or IPMI, a.k.a. *baseboard management controller* (or BMC, iLo, iDrac, and other names depending on the vendor) if you need:
+As a courtesy to further limit the motherboard choices, consider the Intelligent Platform Management Interface or IPMI, a.k.a. baseboard management controller (or BMC, iLo, iDrac, and other names depending on the vendor) if you need:
 
 * Remote power control and monitoring of remote systems
 * Remote console shell access for configuration or data recovery
