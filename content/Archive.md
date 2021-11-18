@@ -2,7 +2,7 @@
 title: "Documentation Archive"
 ---
 
-Welcome to the Documentation Archive!
+Welcome to the Documentation Archive! TEST CHANGE
 
 {{< hint warning >}}
 All documentation provided here is End of Life (EoL) and no longer receives **any** updates.
@@ -25,7 +25,7 @@ All documentation provided here is End of Life (EoL) and no longer receives **an
 </div>
 
 <div class="dropdown">
-  <button class="dropbtn">Legacy FreeNAS TEST CHANGE</button>
+  <button class="dropbtn">Legacy FreeNAS</button>
   <div class="dropdown-content">
     <a href="https://www.ixsystems.com/documentation/freenas/11.3-U5/FreeNAS-11.3-U5-User-Guide_screen.pdf">11.3</a>
     <a href="https://www.ixsystems.com/documentation/freenas/11.2-U8/FreeNAS-11.2-U8-User-Guide_screen.pdf">11.2 (New GUI)</a>
