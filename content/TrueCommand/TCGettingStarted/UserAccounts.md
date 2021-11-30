@@ -33,6 +33,10 @@ The administrator has to provide these credentials to the intended user.
 
 ![UsersAdd](/images/TrueCommand/2.0/UsersNewUser.png "Adding a new user")
 
+## Two Factor Authentication
+
+Enabling Two Factor Authentication requires an email address that has been Authenticated. To Authenticate an email address requires that SMTP Email as been set up in Settings -> Alert Services.
+
 ## Automatic Creation with LDAP
 
 {{< include file="static/includes/TrueCommand/2.0/TrueCommandLDAP.md.part" markdown="true" >}}
