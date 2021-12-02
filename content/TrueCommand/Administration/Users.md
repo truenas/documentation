@@ -37,11 +37,11 @@ To edit a user click the Edit button <i class="material-icons" aria-hidden="true
 
 ![Users Edit](/images/TrueCommand/2.0/UsersEditUser.png "Users Edit")
 
-There are several different elements that you can configure for a user, including the user's avatar, personal details, Team membership, and System permissions.
+There are several different elements that you can configure for a user, including the user's avatar, add a contact email address, personal details, Team membership, and System permissions.
 
 ### User Details
 
-You can add personal details about the user in this form. You may also designate the account as TrueCommand administrator or change the account password.
+You can add personal details about the user in this form. You may also designate the account as TrueCommand administrator, set Two Factor Authentication for the user, or change the account password.
 Saving changes to a user's password requires entering the current password for that user.
 To go back to the original contents of the fields, click RESET FORM.
 
