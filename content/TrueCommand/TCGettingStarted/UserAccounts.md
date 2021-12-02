@@ -43,7 +43,6 @@ To verify the users email address and set 2FA:
 
 ![2faSet](/images/TrueCommand/2.0/2fa_setup.png "Setting Two Factor Authentication")
 
-* Go to The User Profile.
 * Enter the email address for the User and click **Save Changes**.
 * Check the User's email account for the verification code. Copy the code from the email.
 * Paste the code in the *Confirmation code* field in the Confirmation window. Click **OK**.
