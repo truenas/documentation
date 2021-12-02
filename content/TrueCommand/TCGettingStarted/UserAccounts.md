@@ -35,7 +35,9 @@ The administrator has to provide these credentials to the intended user.
 
 ## Two Factor Authentication
 
-Enabling Two Factor Authentication requires an email address that has been Authenticated. To Authenticate an email address requires that SMTP Email as been set up in Settings -> Alert Services.
+Two-factor authentication is an used to double check the authentication of an account user. The first verification occurs whent he user logs in with a username and a password. Two-factor authentication adds an extra step in the process, a second security layer, that re-confirms their identity. If you already follow basic password security measures, two-factor authentication will make it more difficult for unverified users to log in to your account.
+
+Enabling Two Factor Authentication requires an email address that has been Authenticated. To Authenticate an email address requires that [SMTP Email]({{<relref "/TrueCommand/alerts/alertmanage.md" >}}) has been set up in Settings -> Alert Services.
 
 ## Automatic Creation with LDAP
 
