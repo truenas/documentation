@@ -35,9 +35,18 @@ The administrator has to provide these credentials to the intended user.
 
 ## Two Factor Authentication
 
-Two-factor authentication is an used to double check the authentication of an account user. The first verification occurs whent he user logs in with a username and a password. Two-factor authentication adds an extra step in the process, a second security layer, that re-confirms their identity. If you already follow basic password security measures, two-factor authentication will make it more difficult for unverified users to log in to your account.
+Two-factor authentication is an used to double check the authentication of an account user. The first verification occurs when the user logs in with a username and a password. Two-factor authentication adds an extra step in the process, a second security layer, that re-confirms their identity. If basic password security measures are in place, two-factor authentication will make it more difficult for unverified users to log in to your account.
 
-Enabling Two Factor Authentication requires an email address that has been Authenticated. To Authenticate an email address requires that [SMTP Email]({{<relref "/TrueCommand/alerts/alertmanage.md" >}}) has been set up in Settings -> Alert Services.
+Enabling Two Factor Authentication requires an email address that has been Authenticated. Authenticating a User's email address requires that [SMTP Email]({{<relref "/TrueCommand/alerts/alertmanage.md" >}}) has been set up in Settings -> Alert Services.
+
+To verify the users email address and set 2FA:
+
+Go to The User Profile
+Enter the email address for the User and click Save Changes.
+Check the User's email for the verification code. Copy the code from the email.
+Paste the code in the Confirmation code field in the Confirmation window. Click OK.
+Set Enable 2FA and click Save Changes.
+
 
 ## Automatic Creation with LDAP
 
