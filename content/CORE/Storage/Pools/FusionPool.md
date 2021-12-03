@@ -2,7 +2,10 @@
 title: "Fusion Pools"
 weight: 30
 ---
+{{< include file="content/includes/FusionPools.md.part" markdown="true" >}}
 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - -
 Fusion Pools are also known as **ZFS Allocation Classes**, **ZFS Special vdevs**, and **Metadata vdevs**.
 
 {{< expand "What's a special vdev?" "v" >}}
