@@ -2,7 +2,9 @@
 title: "Fusion Pools"
 weight: 30
 ---
-{{< include file="content/includes/FusionPools.md" markdown="true" >}}
+
+
+{{< include file="/_includes/FusionPools.md" markdown="true" >}}
 
 
 - - - - - - - - - - - - - - - - - - - - - - - - - -
