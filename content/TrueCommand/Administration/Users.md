@@ -41,7 +41,7 @@ There are several different elements that you can configure for a user, includin
 
 ### User Details
 
-You can add personal details about the user in this form. You may also designate the account as TrueCommand administrator, set Two Factor Authentication for the user, or change the account password.
+You can add personal details about the user in this form. You may also designate the account as TrueCommand administrator, set [Two Factor Authentication]({{< relref "truecommand/tcgettingstarted/useraccounts.md" >}}) for the user, or change the account password.
 Saving changes to a user's password requires entering the current password for that user.
 To go back to the original contents of the fields, click RESET FORM.
 
