@@ -33,7 +33,7 @@ The metadata special vdev is critical for pool operation and data integrity, so 
 When using SSDs with an internal cache, add Uninterruptible Power Supply (UPS) to the system to help minimize the risk from power loss.
 {{< /expand >}}
 
-Using special vdevs identical to the data vdevs (so they can use the same hot spares) is recommended, but for performance reasons you can make a different type of vdev (like a mirror of SSDs). In that case you must provide hot spare(s) for that drive type as well. If the special vdev fails and there is no redundancy, the pool becomes corrupted and prevents access to stored data.
+Using special vdevs identical to the data vdevs (so they can use the same hot spares) is recommended, but for performance reasons you can make a different type of vdev (like a mirror of SSDs). In that case you must provide hot spare(s) for that drive type as well. Otherwise, if the special vdev fails and there is no redundancy, the pool becomes corrupted and prevents access to stored data.
 
 {{< hint warning >}}
 Drives added to a metadata vdev cannot be removed from the pool.
