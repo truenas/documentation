@@ -14,7 +14,7 @@ Click **ADD SERVER** to begin configuring LDAP in TrueCommand. The screen change
 To configure LDAP, type the LDAP server IP address or DNS hostname into the **LDAP Server URL** field, type the domain name in the **Domain**field, and click **ADD SERVER**.
 You can add multiple LDAP servers and domains. 
 
-The **Test LDAP Config** <mat-icon role="img" fontset="mdi" fonticon="mdi-test-tube" class="mat-icon mat-icon-no-color" aria-hidden="true"></mat-icon> icon opens a window that allows you to test your connection to the LDAP server. The trash icon removes the selected LDAP server. 
+The **Test LDAP Config** <mat-icon _ngcontent-krf-c204="" role="img" fxflex="24px" fontset="mdi" fonticon="mdi-test-tube" mattooltip="Test LDAP Config" class="mat-icon notranslate mat-tooltip-trigger cursor-pointer test-icon mdi mdi-test-tube mat-icon-no-color ng-star-inserted" aria-hidden="true" ix-auto="form_user-auth_ldap_button-delete" data-mat-icon-type="font" data-mat-icon-name="mdi-test-tube" data-mat-icon-namespace="mdi" style="flex: 1 1 24px; box-sizing: border-box; margin-bottom: var(--space-md); max-height: 24px; min-height: 24px;" aria-describedby="cdk-describedby-message-15" cdk-describedby-host=""></mat-icon> icon opens a window that allows you to test your connection to the LDAP server. The trash icon removes the selected LDAP server. 
 
 ![Add LDAP Server](/images/TrueCommand/2.1/AdministrationConfigurationLDAPAddServer.png "Add LDAP Server")
 
