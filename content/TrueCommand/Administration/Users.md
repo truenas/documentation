@@ -31,11 +31,11 @@ When the form is completed, click **Create User**.
 
 To configure account details and permissions, open the *Configure* <i class="material-icons" aria-hidden="true" title="Settings">settings</i>menu and click **Users**.
 
-![UsersList](/images/TrueCommand/2.0/UsersList.png "List of Users")
+![UsersList](/images/TrueCommand/2.0/UsersList21.png "List of Users")
 
 To edit a user click the Edit button <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
 
-![Users Edit](/images/TrueCommand/2.0/UsersEditUser.png "Users Edit")
+![Users Edit](/images/TrueCommand/2.0/UsersEditUser21.png "Users Edit")
 
 There are several different elements that you can configure for a user, including the user's avatar, add a contact email address, personal details, Team membership, and System permissions.
 
