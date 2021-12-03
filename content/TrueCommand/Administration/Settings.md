@@ -42,7 +42,7 @@ The **Configuration** tab contains options to configure various features of True
 * SAML
 * Telemetry
 
-![Administration About](/images/TrueCommand/2.1/AdministrationConfiguration1.jpg "Administration: Configuration1")
+![Administration About](/images/TrueCommand/2.1/AdministrationConfiguration1.png "Administration: Configuration1")
 
 Scroll down to reveal all options on the **Configuration** tab.
 
