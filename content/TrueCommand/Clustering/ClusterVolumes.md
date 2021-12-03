@@ -49,7 +49,7 @@ Once the volume is made, you can view its status.
 
 {{< /tab >}}
 {{< tab "Replicated" >}}
-In a Replicated Volume, the risk of data loss in a distributed volume is overome. Exact copies of the all of the data are maintained on all bricks. The number of replicas in the volume is determined when creating the volume. At least three bricks are needed to create a volume.  For further redundancy, add more bricks.  A three brick volume will have 3 replicas, while a four brick volume will contain 4 replicas. A replicated volume will allow data to still be accessed even if a single brick fails. A Replicated volume is used for better reliability and data redundancy.
+In a Replicated Volume, the risk of data loss in a distributed volume is overcome. Exact copies of the all of the data are maintained on all bricks. The number of replicas in the volume is determined when creating the volume. At least three bricks are needed to create a volume.  For further redundancy, add more bricks.  A three brick volume will have 3 replicas, while a four brick volume will contain 4 replicas. A replicated volume will allow data to still be accessed even if a single brick fails. A Replicated volume is used for better reliability and data redundancy.
 
 Click the *Brick Choices* drop down and check the locations to use for bricks.
 
