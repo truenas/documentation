@@ -16,21 +16,21 @@ To streamline creating simple replication configurations, the replication wizard
 ## Process Summary
 
 * **Data Protection > Replication Tasks**
-  1. Choose sources for snapshot replication.
+  * Choose sources for snapshot replication.
     * Remote sources require an SSH connection.
     * TrueNAS shows the number snapshots available to replicate.
-  2. Define the snapshot destination.
+ * Define the snapshot destination.
     * A remote destination requires an SSH connection.
     * Choose destination or define manually by typing a path.
       * Adding a new name on the end of the path creates a new dataset.
-  3. Choose replication security.
+  * Choose replication security.
     * iXsystems always recommend replication with encryption.
     * Disabling encryption is only meant for absolutely secure and trusted destinations.
-  4. Schedule the replication.
+  * Schedule the replication.
     * You can schedule standardized presets or a custom defined schedule.
     * Running once runs the replication immediately after creation.
       * Task is still saved and you can rerun or edit it.
-  5. Choose how long to keep the replicated snapshots.
+  * Choose how long to keep the replicated snapshots.
 {{< /expand >}}
 
 {{< expand "Replication Tutorial" "v" >}}
