@@ -10,11 +10,9 @@ Scrubs identify data integrity problems, detect silent data corruptions caused b
 
 ## Default Scrub Tasks
 
-![ScrubTaskDefaultSCALE](/images/SCALE/ScrubTaskDefaultSCALE.png "Default Scrub Task")
-
 TrueNAS generates a default scrub task when you create a new pool and sets it to run every Sunday at 12:00 AM.
 
-![ScrubTaskEditSCALE](/images/SCALE/ScrubTaskEditSCALE.png "Edit Scrub Task")
+![ScrubTaskDefaultSCALE](/images/SCALE/ScrubTaskDefaultSCALE.png "Default Scrub Task")
 
 ## Creating New Scrub Tasks
 
@@ -27,8 +25,6 @@ To create a scrub task for a pool, go to **Data Protection** and click **ADD** i
 {{< include file="static/includes/Reference/TasksScrubTasksAddFields.md.part" markdown="true" >}}
 
 {{< expand "Advanced Scheduler" "v" >}}
-{{< include file="static/includes/CORE/AdvancedScheduler.md.part" markdown="true" >}}
-{{< /expand >}}
 
 ![ScrubTaskCustomSCALE](/images/SCALE/ScrubTaskCustomSCALE.png "Custom Scrub Task")
 
@@ -54,7 +50,7 @@ For example, entering `*` in *Days* will run the task every day of the month. En
 
 Combining the above examples creates a schedule running a task each minute from 1:30-1:35 AM and 2:30-2:35 PM every other day.
 
-There is an option to select which *Months* the task runs.
+TrueNAS has an option to select which *Months* the task runs.
 Leaving each month unset is the same as selecting every month.
 
 The *Days of Week* schedules the task to run on specific days in addition to any listed *Days*.
@@ -93,7 +89,7 @@ The **Schedule Preview** shows when the current settings mean the task runs.
 
 You can specify days of the month or days of the week.
 
-With these options, flexible schedules can be created similar to these examples:
+TrueNAS lets users create flexible schedules using the available options. The table below has some examples:
 
 <table>
 	<thead>
@@ -108,7 +104,7 @@ With these options, flexible schedules can be created similar to these examples:
 			<td>months=*; days=*; hours=0/8 or 0,8,16; minutes=0<br/>(Meaning: every day of every month, when hours=0/8/16 and minutes=0)</td>
 		</tr>
 		<tr>
-			<td>Every Monday, Wednesday and Friday, at 8.30 pm</td>
+			<td>Every Monday/Wednesday/Friday, at 8.30 pm</td>
 			<td>months=*; days=mon,wed,fri; hours=20; minutes=30</td>
 		</tr>
 		<tr>
@@ -121,7 +117,10 @@ With these options, flexible schedules can be created similar to these examples:
 		</tr>
 	</tbody>
 </table>
+{{< /expand >}}
 
 ## Editing Scrub Tasks
 
 To edit a scrub, go to **Data Protection** and click the scrub task you want to edit.
+
+![ScrubTaskEditSCALE](/images/SCALE/ScrubTaskEditSCALE.png "Edit Scrub Task")
