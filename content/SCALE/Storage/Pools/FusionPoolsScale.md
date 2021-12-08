@@ -6,4 +6,4 @@ weight: 70
 
 {{< include file="/_includes/FusionPools.md" type="page" >}}
 
-See [Managing Pools]({{< relref "Pools/_index.md" >}}).
+See [Pool Operations)](https://www.truenas.com/docs/scale/storage/pools/#pool-operations "pool operations").
