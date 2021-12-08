@@ -34,7 +34,8 @@ To streamline creating simple replication configurations, the replication wizard
 {{< /expand >}}
 
 {{< expand "Replication Tutorial" "v" >}}
-This video {{< embed-video name="angelfishreplication" >}} tutorial presents a simple example of setting up replication.
+This video tutorial presents a simple example of setting up replication.
+{{< embed-video name="scaleangelfishreplication" >}}
 {{< /expand >}}
 
 ## Creating a Remote Replication Task
