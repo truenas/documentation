@@ -17,6 +17,11 @@ To get started with iSCSI shares, make sure you have created a [zvol]({{< relref
 
 Go to **Shares** and click **Configure** in the **Block (iSCSI) Shares Targets** window. You can either use the creation wizard or set one up manually.
 
+{{< expand "Configuring an iSCSI Share Tutorial Video" "v" >}}
+This short tutorial video demonstrates basic steps to set up an iSCSI share configuration. 
+{{< embed-video name="scaleangelfishiscsi" >}}
+{{< /expand >}}
+
 ## Wizard Setup
 
 {{< expand "Block Device" "v" >}}
@@ -59,11 +64,6 @@ Confirm the settings are correct and click **Submit**.
 {{< /expand >}}
 
 ## Manual Setup
-
-{{< expand "Configuring an iSCSI Share Tutorial Video" "v" >}}
-This short tutorial video demonstrates basic steps to set up an iSCSI share configuration. 
-{{< embed-video name="scaleangelfishiscsi" >}}
-{{< /expand >}}
 
 {{< expand "Target Global Configuration" "v" >}}
 The **Target Global Configuration** tab lets users configure settings that apply to all iSCSI shares.
