@@ -34,7 +34,7 @@ Next, enter a descriptive group *Name*.
 Group names cannot begin with a hyphen (`-`) or contain a space, tab, or these characters: `, : + & # % ^ ( ) ! @ ~ * ? < > =`.
 
 By default, the *Permit Sudo* option is unset.
-Setting allows group members to act as the root account by using [sudo](https://www.sudo.ws/man/1.8.3/sudo.man.html).
+Setting allows group members to act as the root account by using [sudo](https://www.sudo.ws/).
 A common security practice is to leave this disabled.
 
 The option **Samba Authentication** is set by default.
