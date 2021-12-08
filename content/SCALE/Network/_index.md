@@ -16,7 +16,10 @@ Each networking configurable is a separate widget on the overview screen. Click 
 
 Select a networking section in the box below to see more details about specific configuration options.
 
+{{< expand "Networking Tour Video" "v" >}}
+This video demonstrates configuring networking settings.
 {{< embed-video name="scaleangelfishnetworking" >}}
+{{< /expand >}}
 
 {{< tabs "Network Options" >}}
 {{< tab "Interfaces" >}}
