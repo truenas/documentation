@@ -16,16 +16,16 @@ All added systems are listed in the **Systems** tab with the current connection 
 
 To connect a new system, click **+ NEW SYSTEM**.
 
-Enter the system IP address or DNS hostname, the nickname, and the password.
-If a mistake is made, the form can be reset by clicking **RESET FORM**.
+Enter the system IP address or DNS hostname, type a system nickname, and the system password.
+If you make a mistake, click **RESET FORM** to clear all entries and start over. .
 
-![Systems List](/images/TrueCommand/2.0/SystemsPage.png "Systems List")
+![Systems List](/images/TrueCommand/2.1/SystemsPage.png "Systems List")
 
 ### Adjusting Systems
 
-Systems that are misconfigured (e.g. if you entered an incorrect password) appear offline in both the TrueCommand **Dashboard** and **Systems** list.
+Systems that are misconfigured (e.g. if you entered an incorrect password) appear offline on both the TrueCommand **Dashboard** and **Systems** list.
 
-You can edit a system from the Systems list and enter new connection details. To go back to the original contents of the fields, click **RESET FORM**.
+You can edit a system from the **Systems** list by clicking the edit icon <i class="material-icons" aria-hidden="true" title="edit">edit</i> and then enter new connection details. To go back to the original contents of the fields, click **RESET FORM**.
 
 To remove a system from TrueCommand monitoring, click **Delete**.
 
@@ -43,15 +43,15 @@ When all the desired systems are added to the group, click *CREATE GROUP*.
 
 Editing a group allows you to update the group name or change which systems are members of that group.
 
-To delete a system group, click *Delete* <i class="material-icons" aria-hidden="true" title="Delete">delete</i>.
-Confirm the deletion by clicking *YES*.
+To delete a system group, click **Delete** <i class="material-icons" aria-hidden="true" title="Delete">delete</i>.
+Click **Yes** to confirm the deletion.
 
 ## Connecting Systems to a TrueCommand Cloud Instance
 
 ### Get an API Key
 
-Log into the ixSystems cloud account and click *Manage*.
-Under **Service Details**, copy the *TrueCommand API Key*.
+Log into the ixSystems cloud account and click **Manage**.
+Under **Service Details**, copy the **TrueCommand API Key**.
 
 ![CloudSubscriptionServiceDetailsWireGuardClient](/images/TrueCommand/Cloud/CloudSubscriptionServiceDetailsWireGuardClient.png "Account Services: TrueCommand API Key")
 
@@ -66,7 +66,7 @@ Paste the TrueCommand API Key copied from the iXsystems Account Portal into the 
 ### Approve the Connection Request
 
 When the True Command logo starts moving, check the TrueCommand Cloud email address for a verification message.
-The email contains a link to the Portal to confirm the connection and activate the TrueNAS system.
+The email contains a link to the portal to confirm the connection and activate the TrueNAS system.
 
 Click on the **New System** alert, fill in the information from the TrueNAS system, and click *Add System*.
 
@@ -77,14 +77,14 @@ When all systems are connected to TrueCommand Cloud, refer to the [TrueCommand A
 
 ## Manual Connections
 
-To connect a system to TrueCommand, open the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and click *Systems*.
+To connect a system to TrueCommand, open the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and click **Systems**.
 This menu is organized into two tabs: **Systems** and **System Groups**.
 These tabs contain all the options to connect and organize systems in TrueCommand.
-All added systems are listed in the **Systems** tab with the current connection status.
+All added systems are listed on the **Systems** tab with the current connection status.
 
-To connect a new system, click *+ NEW SYSTEM*.
+To connect a new system, click **+ NEW SYSTEM**.
 
-Enter the system IP address or DNS hostname, nickname, and password.
-If a mistake is made, the contents of the fields can be reset by clicking *RESET FORM*.
+Enter the system IP address or DNS hostname, a system nickname, and the system password.
+Click **RESET FORM** to clear the fields and reset the form if you make a mistake.
 
-![Systems List](/images/TrueCommand/2.0/SystemsPage.png "Systems List")
+![Systems List](/images/TrueCommand/2.1/SystemsPage.png "Systems List")
