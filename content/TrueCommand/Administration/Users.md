@@ -43,7 +43,7 @@ There are several different elements that you can configure for a user, includin
 
 You can add personal details about the user in this form. You may also designate the account as TrueCommand administrator or change the account password.
 Saving changes to a user's password requires entering the current password for that user.
-To go back to the original contents of the fields, click RESET FORM.
+To go back to the original contents of the fields, click **RESET FORM**.
 
 ### Joined Teams
 
@@ -56,22 +56,22 @@ Team Configuration can be accomplished in the Team Page.
 
 ### System Permissions
 
-To limit the access that non-administrative accounts have to the connected systems, configure the **System Access** and/or **System Groups** sections.
-This requires [system connections]({{< relref "ConnectingTrueNAS.md" >}}) and/or [system groups]({{< relref "ConnectingTrueNAS.md" >}}) have already been configured in TrueCommand.
+To limit the access that non-administrative accounts have to connected systems, configure the **System Access** and/or **System Groups** sections.
+This requires [system connections]({{< relref "ConnectingTrueNAS.md" >}}) and/or [system groups]({{< relref "ConnectingTrueNAS.md" >}}) to already be configured in TrueCommand.
 
 Click **ADD SYSTEM** and select a system from the drop-down to give the user access to that system.
-To restrict the user to only viewing details about the system, set the *read* permission.
-To remove a user’s access to a particular system, click minus on the desired system.
+To restrict the user to only viewing details about the system, set the **read** permission.
+To remove a user’s access to a particular system, click **-** minus on the desired system.
 
-When system groups are available, an *ADD GROUP* button appears.
+When system groups are available, an **ADD GROUP** button displays.
 Click **ADD GROUP** and select a group from the drop-down to give the user access to all the systems in that group.
-To assign user's type of access to the group, choose *read* or *read/write* permissions.
-To remove a user’s access to a particular system group, click *- (minus)* on the desired group.
+To assign user's type of access to the group, choose **read** or **read/write** permissions.
+To remove a user’s access to a particular system group, click **-** (minus) on the desired group.
 
 ## Resetting a User Password from the Command Line
 
 The Docker version of TrueCommand allows you to reset user passwords from the command line.
-Open the shell on the system running the TrueCommand Container and use the following command, replacing the values in brackets with their appropriate values. 
+Open the shell on the system running the TrueCommand container and use the following command, replacing the values in brackets with their appropriate values. 
 
 ```
 docker exec -it [docker instance ID] resetpw [username]
@@ -79,9 +79,10 @@ docker exec -it [docker instance ID] resetpw [username]
 
 ## Deleting User Accounts
 
-To delete an account details and permissions, open the *Configure* <i class="material-icons" aria-hidden="true" title="Settings">settings</i>menu and click **Users**.
-When the users page loads, click the delete button <i class="material-icons" aria-hidden="true" title="Delete">delete</i> to the right of the user you wish to delete.
-A popup will appear to confirm deletion of the user.
+To delete an account details and permissions, open the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and click **Users**.
+When the users page loads, click the delete button <i class="material-icons" aria-hidden="true" title="Delete">delete</i> to the right of the user you want to delete.
+A popup displays to confirm deletion of the user.
+
 ![Users Delete](/images/TrueCommand/2.0/UsersDeleteUser.png "Users Delete")
 
 ## Organizing Users into Teams
