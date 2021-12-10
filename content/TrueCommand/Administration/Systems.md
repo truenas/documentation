@@ -7,73 +7,82 @@ weight: 10
 
 ## Connecting Systems to TrueCommand
 
-To connect a system to TrueCommand, open the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and click *Systems*.
+To connect a system to TrueCommand, open the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and click **Systems**.
 This menu is organized into two tabs: **Systems** and **System Groups**.
 The **Systems** and **System Groups** tabs contain all the options to connect and organize systems in TrueCommand.
 All added systems are listed in the **Systems** tab with the current connection status.
 
-![Systems List](/images/TrueCommand/2.0/SystemsPage.png "Systems List")
-
+![Systems List](/images/TrueCommand/2.1/SystemsPage.png "Systems List")
 
 ### Adding a System Manually
 
 To connect a new system, click **+ NEW SYSTEM**.
 
 Enter the system IP address or DNS hostname, the nickname, and the password.
-If you make a mistake, you can reset the form by clicking *RESET FORM*.
+If you make a mistake, you can reset the form by clicking **RESET**.
 
-![Systems Add](/images/TrueCommand/2.0/SystemsAddNew.png "Systems Add")
+![Systems Add](/images/TrueCommand/2.1/SystemsAddNew.png "Systems Add")
+
+If the system has alerts or alarms a blue circle with the number of current alerts displays to the right of the system name.
 
 ### Adjusting Systems
 
-Each system has its own control area with what options are available.
+Each TrueNAS system listed on the **Systems** screen has an options menu that allows you to edit, delete or modify configuration settings for that system.
+Click the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> for the system to display the options menu.
 
-+ Pause Data Polling : <i class="material-icons" aria-hidden="true" title="Pause Data Polling">pause</i>
-+ Start Data Polling : <i class="material-icons" aria-hidden="true" title="Start Data Polling">play_arrow</i>
-+ Edit System : <i class="material-icons" aria-hidden="true" title="Configure">edit</i>
-+ Update System : <i class="material-icons" aria-hidden="true" title="System Update">system_update_alt</i>
-+ Reconnect System : <i class="material-icons" aria-hidden="true" title="Refresh">refresh</i>
-+ Delete System : <i class="material-icons" aria-hidden="true" title="Delete">delete</i>
+![Systems Options Menu](/images/TrueCommand/2.1/SystemScreenSystemActionsMenu.png "Systems Options Menu")
+
++ **Edit**: <i class="material-icons" aria-hidden="true" title="Configure">edit</i>
++ **Users and Groups**: <mat-icon _ngcontent-igf-c221="" role="img" fontset="mdi" class="mat-icon notranslate mdi mdi-account-group mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" data-mat-icon-name="mdi-account-group" data-mat-icon-namespace="mdi"></mat-icon>
++ **Update** : <i class="material-icons" aria-hidden="true" title="Update">updatet</i>
++ **Launch TrueNAS Interface**: <mat-icon _ngcontent-igf-c221="" role="img" fontset="mdi" class="mat-icon notranslate mdi mdi-monitor-screenshot mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" data-mat-icon-name="mdi-monitor-screenshot" data-mat-icon-namespace="mdi"></mat-icon>
++ **iSCSI Volumes**: <mat-icon role="img" fontset="mdi" fonticon="mdi-database" class="mat-icon mdi mdi-database mat-icon-no-color" aria-hidden="true"></mat-icon>
++ **Services**: <mat-icon _ngcontent-igf-c221="" role="img" fontset="mdi" class="mat-icon notranslate mdi mdi-toolbox-outline mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" data-mat-icon-name="mdi-toolbox-outline" data-mat-icon-namespace="mdi"></mat-icon>
++ **Delete**: <i class="material-icons" aria-hidden="true" title="Delete">delete</i>
 
 {{< tabs "System Control Options" >}}
-{{< tab "Pause" >}}
-
-If the pause button <i class="material-icons" aria-hidden="true" title="Pause Data Polling">pause</i> is visible, TrueCommand is actively polling data from the NAS.  Clicking this button will stop data collection until it is manually restarted.
-
-![Systems Pause Polling](/images/TrueCommand/2.0/SystemsPausePollingSystem.png "Systems Pause Polling")
-
-{{< /tab >}}
-{{< tab "Start" >}}
-If the play button <i class="material-icons" aria-hidden="true" title="Start Data Polling">play_arrow</i> is visible, TrueCommand is not collecting any data from the NAS.  To start data polling, click the play button.
-
-![Systems Start Polling](/images/TrueCommand/2.0/SystemsStartPollingSystem.png "Systems Start Polling")
-
-{{< /tab >}}
 {{< tab "Edit" >}}
-Clicking the edit button <i class="material-icons" aria-hidden="true" title="Configure">edit</i> opens a side bar menu.  Adjustments can be made to the system in this meny.  Click **Save Changes** to update the system to the new values entered. 
-Clicking **Reset Form** will reset the form to the previous saved settings for the NAS.
+Clicking the edit button <i class="material-icons" aria-hidden="true" title="Configure">edit</i> opens a panel on the right of the screen that displays the system setting fields you can edit. After making your changes, click **Save Changes** to update the system with the new values entered. 
+Click **Reset** to clear the form and reset values to the previously saved settings for the NAS.
 
-![Systems Edit](/images/TrueCommand/2.0/SystemsEditSystem.png "Systems Edit")
+![Systems Edit](/images/TrueCommand/2.1/SystemsEditSystem.png "Systems Edit")
+
+{{< /tab >}}
+{{< tab "Users and Groups" >}}
+Click the **Users and Groups** button to display the list of users and/or groups for the selected system.
+
+![Systems Users and Groups](/images/TrueCommand/2.1/SystemsUsersAndGroups.png "Systems Users and Groups")
 
 {{< /tab >}}
 {{< tab "Update" >}}
-If updates are available on the system, the Update column will say *Available* and the update button <i class="material-icons" aria-hidden="true" title="System Update">system_update_alt</i> will be visible. 
-Clicking the update button will open a popup window requiring you to confirm your desire to update the system.
+If the system has **Available** in the **Updates** column, the **Update** option opens a window with details about the pending update. Click the **Update** button <i class="material-icons" aria-hidden="true" title="System Update">system_update_alt</i> on the action option menu to update that system. Select the **Confirm** checkbox and then **OK** to launch the update. Click **Cancel** to close the window without updating.
 
-![Systems Update](/images/TrueCommand/2.0/SystemsUpdateNAS.png "Systems Update")
+![Systems Update](/images/TrueCommand/2.1/SystemsUpdateNAS.png "Systems Update")
 
 {{< /tab >}}
-{{< tab "Reconnect" >}}
-If a system has lost its connection to TrueCommand either through maintainence or being powered off, click the reconnect button <i class="material-icons" aria-hidden="true" title="Refresh">refresh</i> to trigger TrueCommand to reconnect with the NAS.  Reconnecting may take several minutes.  If data polling was paused before the system was disconnected, data polling will remain paused. Data polling must be manually restarted with the play button.
+{{< tab "Launch TrueNAS Interface" >}}
+Use the **Launch TrueNAS Interface** button <mat-icon _ngcontent-igf-c221="" role="img" fontset="mdi" class="mat-icon notranslate mdi mdi-monitor-screenshot mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" data-mat-icon-name="mdi-monitor-screenshot" data-mat-icon-namespace="mdi"></mat-icon> to open a new browser tab with the TrueNAS dashboard for the system selected on the **System** screen.  
+
+{{< /tab >}}
+{{< tab "iSCSI Volumes" >}}
+If a system is configures with iSCSI volumes, click the <mat-icon role="img" fontset="mdi" fonticon="mdi-database" class="mat-icon mdi mdi-database mat-icon-no-color" aria-hidden="true"></mat-icon> **iSCSI Volumes** button to displays the iSCSI volumes page for the selected server.
+
+![Systems iSCSI Volumes](/images/TrueCommand/2.1/SystemsiSCSIoption.png "Systems iSCSI Volumes")
+
+{{< /tab >}}
+{{< tab "Services" >}}
+Click the **Services** button to display the **Services** window with a list of services running or stopped for the selected system. The options for services are adding it to start on boot-up, stopping or starting/restarting. Click the **START ON BOOT** checkbox to add the selection to the services started at boot-up. Click the stop icon <i class="fa fa-square" aria-hidden="true" title="square"></i> to stop a running service. Click the start/restart icon <i class="material-icons" aria-hidden="true" title="Refresh">refresh</i> to start a stopped service. 
+
+![Systems Services](/images/TrueCommand/2.1/SystemsServicesOption.png "Systems Services")
 
 {{< /tab >}}
 {{< tab "Delete" >}}
-Clicking the <i class="material-icons" aria-hidden="true" title="Delete">delete</i> button will initiate a popup confirmation box to delete a system.
+Clicking the <i class="material-icons" aria-hidden="true" title="Delete">delete</i> button displays a popup window to confirm you want to delete a selected system.
 
 ![Systems Delete](/images/TrueCommand/2.0/SystemsDeleteSystem.png "Systems Delete")
 
 {{< hint warning >}}
-Deleting a system will purge all collected data from the database.
+Deleting a system purges all collected data from the database.
 {{< /hint >}}
 {{< /tab >}}
 {{< /tabs >}}
@@ -85,13 +94,13 @@ Grouping systems allows you to efficiently manage system permissions and reporti
 
 Open the **System Groups** tab to view the list of created groups and the systems they contain.
 
-![SystemsGroups](/images/TrueCommand/2.0/SystemsGroups.png "System Groups")
+![SystemsGroups](/images/TrueCommand/2.1/SystemsGroups.png "System Groups")
 
-Create a Group by clicking **Configure <i class="material-icons" aria-hidden="true" title="Settings">settings</i>&nbsp; > Systems > + NEW GROUP**.
-Enter a name for the new group and click *ADD SYSTEM* to add a system to the group.
-When you've added all the desired systems to the group, click *CREATE GROUP*.
+Create a group by clicking **Configure <i class="material-icons" aria-hidden="true" title="Settings">settings</i>&nbsp; > Systems > + NEW GROUP**.
+Type a name for the new group and click **ADD SYSTEM** to add a system to the group.
+After adding all the desired systems to the group, click **CREATE GROUP**.
 
-![SystemsNewGroup](/images/TrueCommand/2.0/SystemsGroupsNewGroup.png "New System Group")
+![SystemsNewGroup](/images/TrueCommand/2.1/SystemsGroupsNewGroup.png "New System Group")
 
 ### Adjusting Groups
 
@@ -102,14 +111,14 @@ Each group has its own control area with what options are available.
 
 {{< tabs "Group Control Options" >}}
 {{< tab "Edit" >}}
-Clicking the edit button <i class="material-icons" aria-hidden="true" title="Configure">edit</i> opens a side bar menu.  Adjustments can be made to the Group in this manner.  Systems can be added or removed from the group by using the **Add System** button or the Remove <i class="material-icons" aria-hidden="true" title="Delete">delete</i> button.  Click **Save Changes** when finished with your changes to update the Group to the new group settings.
+Clicking the edit button <i class="material-icons" aria-hidden="true" title="Configure">edit</i> opens a side bar menu.  You can make adjustments to the Group in this manner.  Add or remove systems from the group by using the **Add System** button or the remove <i class="material-icons" aria-hidden="true" title="Delete">delete</i> button.  Click **Save Changes** when finished with your changes to update the group to the new group settings.
 
-![Groups Edit](/images/TrueCommand/2.0/SystemsGroupsEditGroup.png "Groups Edit")
+![Groups Edit](/images/TrueCommand/2.1/SystemsGroupsEditGroup.png "Groups Edit")
 
 {{< /tab >}}
 {{< tab "Delete" >}}
 
-Clicking the <i class="material-icons" aria-hidden="true" title="Delete">delete</i> button will initiate a popup confirmation box to delete a group. 
+Clicking the <i class="material-icons" aria-hidden="true" title="Delete">delete</i> button displayss a popup confirmation box to delete a group. 
 
 ![Groups Delete](/images/TrueCommand/2.0/SystemsGroupsDeleteGroup.png "Group Delete")
 
