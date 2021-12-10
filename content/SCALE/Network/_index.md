@@ -246,7 +246,7 @@ TrueNAS automatically applies the **Topology** selection to any connected client
 
 #### TLS Crypt Auth
 
-When users enable **TLS Crypt Auth Enabled**, TrueNAS generates a static key for the **TLS Crypt Aut*h* field after saving the options.
+When users enable **TLS Crypt Auth Enabled**, TrueNAS generates a static key for the **TLS Crypt Auth** field after saving the options.
 To change this key, click **Renew Static Key**.
 Clients connecting to the server require the static key.
 TrueNAS stores the keys in the system database and automatically includes them in a generated client config file. We always recommend users back up keys in a secure location.
