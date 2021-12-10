@@ -34,7 +34,7 @@ Click the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> fo
 
 + **Edit**: <i class="material-icons" aria-hidden="true" title="Configure">edit</i>
 + **Users and Groups**: <mat-icon _ngcontent-igf-c221="" role="img" fontset="mdi" class="mat-icon notranslate mdi mdi-account-group mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" data-mat-icon-name="mdi-account-group" data-mat-icon-namespace="mdi"></mat-icon>
-+ **Update** : <i class="material-icons" aria-hidden="true" title="Update">updatet</i>
++ **Update** : <i class="material-icons" aria-hidden="true" title="Update">update</i>
 + **Launch TrueNAS Interface**: <mat-icon _ngcontent-igf-c221="" role="img" fontset="mdi" class="mat-icon notranslate mdi mdi-monitor-screenshot mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" data-mat-icon-name="mdi-monitor-screenshot" data-mat-icon-namespace="mdi"></mat-icon>
 + **iSCSI Volumes**: <mat-icon role="img" fontset="mdi" fonticon="mdi-database" class="mat-icon mdi mdi-database mat-icon-no-color" aria-hidden="true"></mat-icon>
 + **Services**: <mat-icon _ngcontent-igf-c221="" role="img" fontset="mdi" class="mat-icon notranslate mdi mdi-toolbox-outline mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" data-mat-icon-name="mdi-toolbox-outline" data-mat-icon-namespace="mdi"></mat-icon>
@@ -55,7 +55,10 @@ Click the **Users and Groups** button to display the list of users and/or groups
 
 {{< /tab >}}
 {{< tab "Update" >}}
-If the system has **Available** in the **Updates** column, the **Update** option opens a window with details about the pending update. Click the **Update** button <i class="material-icons" aria-hidden="true" title="System Update">system_update_alt</i> on the action option menu to update that system. Select the **Confirm** checkbox and then **OK** to launch the update. Click **Cancel** to close the window without updating.
+If the system has **Available** in the **Updates** column, it has system updates ready to apply.
+Click the **Update** button <i class="material-icons" aria-hidden="true" title="Update">update</i> on the option menu to open a dialog window with information on the update. 
+To update that system, click the **Confirm** checkbox and then **OK**. 
+Click **Cancel** to close the window without updating.
 
 ![Systems Update](/images/TrueCommand/2.1/SystemsUpdateNAS.png "Systems Update")
 
@@ -71,7 +74,12 @@ If a system is configures with iSCSI volumes, click the <mat-icon role="img" fon
 
 {{< /tab >}}
 {{< tab "Services" >}}
-Click the **Services** button to display the **Services** window with a list of services running or stopped for the selected system. The options for services are adding it to start on boot-up, stopping or starting/restarting. Click the **START ON BOOT** checkbox to add the selection to the services started at boot-up. Click the stop icon <i class="fa fa-square" aria-hidden="true" title="square"></i> to stop a running service. Click the start/restart icon <i class="material-icons" aria-hidden="true" title="Refresh">refresh</i> to start a stopped service. 
+Click the **Services** button <mat-icon _ngcontent-igf-c221="" role="img" fontset="mdi" class="mat-icon notranslate mdi mdi-toolbox-outline mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" data-mat-icon-name="mdi-toolbox-outline" data-mat-icon-namespace="mdi"></mat-icon> to display the **Services** window with a list of services running or stopped for the selected system. 
+
+The options for services are adding it to start on boot-up, stopping or starting/restarting. 
+Click the **START ON BOOT** checkbox to add the selection to the services started at boot-up. 
+Click the stop icon <i class="fa fa-stop" aria-hidden="true" title="stop"></i> to stop a running service. 
+Click the start/restart icon <i class="material-icons" aria-hidden="true" title="Refresh">refresh</i> to start a stopped service. 
 
 ![Systems Services](/images/TrueCommand/2.1/SystemsServicesOption.png "Systems Services")
 
