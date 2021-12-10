@@ -8,30 +8,30 @@ weight: 20
 TrueCommand has a robust user management system designed to allow TrueCommand administrators to personalize the TrueCommand experience for each user account.
 You can create user accounts in the TrueCommand interface. Alternatively, LDAP can automatically create new user accounts when someone logs into TrueCommand with their LDAP credentials.
 
-User accounts also organize into "Teams" for simultaneous management of large numbers or related user accounts.
+User accounts also organize into Teams for simultaneous management of large numbers or related user accounts.
 
 ## Adding Local User Accounts
 
-To create a new user account, open the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and click *Users > + NEW USER*.
+To create a new user account, open the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and click **Users > + NEW USER**.
 Enter a descriptive user name and an authentication method for the user.
 
-TrueCommand uses the *DEFAULT* authentication method to create unique credentials for logging in to the web interface.
-The administrator has to provide these credentials to the intended user.
+TrueCommand uses the default authentication method to create unique credentials for logging in to the web interface.
+The administrator must provide log in credentials to the intended user.
 
 ![UsersAdd](/images/TrueCommand/2.0/UsersNewUser.png "Adding a new user")
 
-You can assign users to existing *Teams* by selecting a team from the drop-down to add the user to that team.
+You can assign users to existing teams. After creating the team, you can add the user in the **New User** configuration panel by selecting **Teams** on the drop-down menu.
 You can assign users to multiple teams.
 
-If the user needs to be an Administrator, check the *TrueCommand Administrator* box.
+If the user needs to be an administrator, check the **TrueCommand Administrator** box.
 
 When the form is completed, click **Create User**.
 
 ## Configuring User Accounts
 
-To configure account details and permissions, open the *Configure* <i class="material-icons" aria-hidden="true" title="Settings">settings</i>menu and click **Users**.
+To configure account details and permissions, open the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and click **Users**.
 
-![UsersList](/images/TrueCommand/2.0/UsersList.png "List of Users")
+![UsersList](/images/TrueCommand/2.1/UsersList.png "List of Users")
 
 To edit a user click the Edit button <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
 
@@ -88,36 +88,37 @@ A popup will appear to confirm deletion of the user.
 
 To create a team, open the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and click **TEAMS**.
 
-![TeamsList](/images/TrueCommand/2.0/TeamsList.png "Teams List")
+![TeamsList](/images/TrueCommand/2.1/TeamsList.png "Teams List")
 
-Clicking **NEW TEAM** will open a popout menu.
+Clicking **NEW TEAM** displays the **New Team** configuration panel.
 
 ![TeamsAdd](/images/TrueCommand/2.0/TeamsNewTeam.png "Teams: Add")
 
-Enter a name and select an avatar for the new team.
+Type a name and select an avatar for the new team.
 You can edit the permissions for a team after creating it.
 
 ### Configuring Teams
 
-To configure a team, open the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and click **TEAMS**.
-To adjust the team members or permissions, click the Edit button <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
+To configure a team, click on the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> icon and then click **Teams**. 
+To change team members or permissions, click on the edit icon <i class="material-icons" aria-hidden="true" title="Configure">edit</i> for the team you selected on the list. 
 
 ![Teams Edit](/images/TrueCommand/2.0/TeamsEdit.png "Teams Edit")
 
-You can adjust the team profile with a new avatar, change the team name, or grant team members permission to create new TrueCommand Alert Rules.
+You can change a team profile avatar, the team name, or grant team members permission to create new TrueCommand alert rules by selecting the **Enable alert creation** checkbox.
 
 The **Members** section shows which user accounts are included in the team.
-To add users to the team, click *ADD USER* and choose them from the drop-down.
-To remove users from the team, click *- (minus)* on the desired user.
+To add users to the team, click **ADD USER** and choose select users from the drop-down list.
+To remove users from the team, click the **-** (minus) for the desired user.
 
 System permissions are configured exactly the same way as described above for individual user accounts.
 Note that individual user account permissions can override team permissions.
 
 ## Deleting Teams
 
-To delete an account details and permissions, open the *Configure* <i class="material-icons" aria-hidden="true" title="Settings">settings</i>menu and click **Teams**.
-When the users page loads, click the delete button <i class="material-icons" aria-hidden="true" title="Delete">delete</i> to the right of the user you wish to delete.
-A popup will appear to confirm deletion of the Team.
+To delete an account details and permissions, open the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and click **Teams**.
+After the users page loads, click the delete button <i class="material-icons" aria-hidden="true" title="Delete">delete</i> to the right of the user you want to delete.
+A popup displays to confirm deletion of the Team.
+
 ![Teams Delete](/images/TrueCommand/2.0/TeamsDeleteTeam.png "Teams Delete")
 
 {{< hint info>}}
