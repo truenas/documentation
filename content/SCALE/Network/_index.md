@@ -292,7 +292,7 @@ When finished configuring the server or client service, click **Save**.
 Start the service by clicking the play button next to it in the **OpenVPN** window. 
 
 You may also start the service by going to **System Settings > Services** and clicking the **State** toggle.
-Setting *S*tart Automatically** starts the service when TrueNAS completes booting and runs the network and data pools.
+Setting **Start Automatically** starts the service when TrueNAS completes booting and runs the network and data pools.
 {{< /tab >}}
 {{< tab "IPMI" >}}
 ## IPMI
