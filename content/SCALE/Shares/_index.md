@@ -5,7 +5,7 @@ weight: 40
 ---
 
 File sharing is one of the primary benefits of a NAS. TrueNAS helps foster collaboration between users through network shares.  
-TrueNAS SCALE allows users to create and configure Block (iSCSI) shares targets, Windows SMB shares, Unix (NFS) shares, and WebDAV shares. 
+TrueNAS SCALE allows users to create and configure block (iSCSI) shares targets, Windows SMB shares, Unix (NFS) shares, and WebDAV shares. 
 
 ![SharingSCALE](/images/SCALE/SharingSCALE.png "SCALE Sharing Screen")
 
@@ -15,14 +15,19 @@ TrueNAS SCALE allows users to create and configure Block (iSCSI) shares targets,
 
 To get started with iSCSI shares, make sure you have created a [zvol]({{< relref "ZVolsSCALE.md" >}}) or a [dataset]({{< relref "DatasetsSCALE.md" >}}) with at least one file to share.
 
-Go to **Shares** and click *Configure* in the *Block (iSCSI) Shares Targets* window. You can either use the creation wizard or set one up manually.
+Go to **Shares** and click **Configure** in the **Block (iSCSI) Shares Targets** window. You can either use the creation wizard or set one up manually.
+
+{{< expand "Configuring an iSCSI Share Tutorial Video" "v" >}}
+This short tutorial video demonstrates basic steps to set up an iSCSI share configuration. 
+{{< embed-video name="scaleangelfishiscsi" >}}
+{{< /expand >}}
 
 ## Wizard Setup
 
 {{< expand "Block Device" "v" >}}
 ![SharingISCSIWizardDeviceSCALE](/images/SCALE/SharingISCSIWizardDeviceSCALE.png "iSCSI Wizard: Block Device")
 
-First, enter a name. It can only contain lowercase alphanumeric characters plus a dot (.), dash (-), or colon (:). We recommend keeping it short or at most 63 characters. Next, choose the *Extent Type*.
+First, enter a name. It can only contain lowercase alphanumeric characters plus a dot (.), dash (-), or colon (:). We recommend keeping it short or at most 63 characters. Next, choose the **Extent Type**.
 
 * If the **Extent Type** is **Device**, select the Zvol to share from the ***Device** menu.
 
@@ -73,7 +78,7 @@ The **Target Global Configuration** tab lets users configure settings that apply
 {{< /expand >}}
 
 {{< expand "Portals" "v" >}}
-The *Portals* tab lets users create new portals or edit existing ones in the list.
+The **Portals** tab lets users create new portals or edit existing ones in the list.
 
 ![SharingISCSIManualPortalsSCALE](/images/SCALE/SharingISCSIManualPortalsSCALE.png "iSCSI Portal")
 

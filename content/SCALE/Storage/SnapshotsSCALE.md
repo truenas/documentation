@@ -21,6 +21,10 @@ Taking snapshots requires the system have all [pools]({{< relref "/SCALE/Storage
 Consider making a [Periodic Snapshot Task]({{< relref "/SCALE/DataProtection/_index.md" >}}) to save time and create regular, fresh snapshots.
 {{< /hint >}}
 
+{{< expand "Video Tutorial" "v" >}}
+This short video demonstrates manually adding a snapshot {{< embed-video name="scaleangelfishmanualsnapshots" >}}
+{{< /expand >}}
+
 Go to **Storage** and click **Snapshots**, then click **ADD**.
 
 ![AddSnapshotSCALE](/images/SCALE/AddSnapshotSCALE.png "Create a New Snapshot")
