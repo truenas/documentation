@@ -39,12 +39,14 @@ Scroll down to view all edit fields. Click **SAVE** to keep changes or **CANCEL*
 
 The **Update** button <i class="material-icons" aria-hidden="true" title="Update">update</i> in the system settings menu allows users to update the system to the latest build. Click the **Update** button displays an update window with system and update information. Click **Confirm** and then **OK** to begin the update, or click **CANCEL** to exit without updating. During a system update the system card changes to indicate that the system is offline and finishing the update.
 
+![SystemUpdate](/images/TrueCommand/2.1/SystemSettingUpdate.png "System Update")
+
 {{< /tab >}}
 {{< tab "Launch TrueNAS Interface" >}} 
 
 Click the **Launch TrueNAS Interface** button <mat-icon _ngcontent-igf-c221="" role="img" fontset="mdi" class="mat-icon notranslate mdi mdi-monitor-screenshot mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" data-mat-icon-name="mdi-monitor-screenshot" data-mat-icon-namespace="mdi"></mat-icon> on the system settings menu to open a new browser tab pointed at the selected system's web interface.
 
-![SystemUpdate](/images/TrueCommand/2.1/SystemSettingsUpdate.png "System Update")
+
 {{< /tab >}}
 {{< tab "iSCSI Volumes" >}} 
 
@@ -68,7 +70,7 @@ Users can't currently edit service parameters, but can set them to start on boot
 
 Click the **Delete** button <i class="material-icons" aria-hidden="true" title="Delete">delete</i> on the system settings menu to delete the selected system from TrueCommand. A confirmation window displays prompting you to confirm by selecting the **Confirm** checkbox and then click **OK** to delete the system. Click **CANCEL** to close the window without deleting the selected system.
 
-![TrueCommandSystemSettingsDelete](/images/TrueCommand/T2.1/SystemSettingsDelete.png "System Settings Delete")
+![TrueCommandSystemSettingsDelete](/images/TrueCommand/2.1/SystemSettingsDelete.png "System Settings Delete")
 
 {{< /tab >}}
 {{< /tabs >}}
