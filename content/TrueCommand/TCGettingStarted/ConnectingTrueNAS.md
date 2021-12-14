@@ -36,8 +36,8 @@ Grouping systems allows efficient management of system permissions and reporting
 
 Open the **System Groups** tab to view the list of created groups and the systems they contain.
 Create a Group by clicking **Configure <i class="material-icons" aria-hidden="true" title="Settings">settings</i>&nbsp; > Systems > + NEW GROUP**.
-Enter a name for the new group and click *ADD SYSTEM* to add a system to the group.
-When all the desired systems are added to the group, click *CREATE GROUP*.
+Enter a name for the new group and click **ADD SYSTEM** to add a system to the group.
+When all the desired systems are added to the group, click **CREATE GROUP**.
 
 ![SystemsNewGroup](/images/TrueCommand/2.0/SystemsGroupsNewGroup.png "New System Group")
 
@@ -68,7 +68,7 @@ Paste the TrueCommand API Key copied from the iXsystems Account Portal into the 
 When the True Command logo starts moving, check the TrueCommand Cloud email address for a verification message.
 The email contains a link to the portal to confirm the connection and activate the TrueNAS system.
 
-Click on the **New System** alert, fill in the information from the TrueNAS system, and click *Add System*.
+Click on the **New System** alert, fill in the information from the TrueNAS system, and click **Add System**.
 
 ![NewSystemCreds](/images/TrueCommand/1.3/NewSystemCreds.png "Registering TrueNAS in TrueCommand Cloud")
 
