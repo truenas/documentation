@@ -8,7 +8,7 @@ TrueCommand allows users to manage certain settings when managing a single syste
 ![TrueCommandSystemSettingsMenu](/images/TrueCommand/2.1/TrueCommandSystemSettingsMenu.png "System Settings Menu")
 
 {{< tabs "System Menu" >}}
-{{< Tab "Edit" >}}
+{{< tab "Edit" >}}
 
 To edit a systems general settings, click the **Edit** button in the system settings menu.
 
