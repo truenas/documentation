@@ -21,8 +21,12 @@ Click off the window back to dashboard to close the edit window without making c
 {{< /tab >}}
 {{< tab "Users and Groups" >}}
 
-To displays a list of users or groups on the selected system, click the **Users and Groups** button <mat-icon _ngcontent-igf-c221="" role="img" fontset="mdi" class="mat-icon notranslate mdi mdi-account-group mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" data-mat-icon-name="mdi-account-group" data-mat-icon-namespace="mdi"></mat-icon> to display the list of users on that system. 
+To displays a list of users or groups on the selected system, click the **Users and Groups** button <mat-icon _ngcontent-igf-c221="" role="img" fontset="mdi" class="mat-icon notranslate mdi mdi-account-group mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" data-mat-icon-name="mdi-account-group" data-mat-icon-namespace="mdi"></mat-icon>.  
 Click the **Users** dropdown to select **Groups** to change the list to groups on the system.
+
+{{< hint info >}}
+Note: This new 2.1 Users And Groups function is experimental feature that could be radically changed or removed in future releases. Use with caution!
+{{< /hint >}}
 
 ![SystemSettingsUsersAndGroups](/images/TrueCommand/2.1/SystemUsersAndGroups.png "System Settings Users and Groups")
 
@@ -37,7 +41,7 @@ Scroll down to view all edit fields. Click **SAVE** to keep changes or **CANCEL*
 {{< /tab >}}
 {{< tab "Update" >}}
 
-The **Update** button <i class="material-icons" aria-hidden="true" title="Update">update</i> in the system settings menu allows users to update the system to the latest build. Click the **Update** button displays an update window with system and update information. Click **Confirm** and then **OK** to begin the update, or click **CANCEL** to exit without updating. During a system update the system card changes to indicate that the system is offline and finishing the update.
+Click the **Update** button <i class="material-icons" aria-hidden="true" title="Update">update</i> in the system settings menu to update the system to the latest build. After clicking the **Update** button, an update window with system and update information displays. Click **Confirm** and then **OK** to begin the update, or click **CANCEL** to exit without updating. During a system update the system card changes to indicate that the system is offline and finishing the update.
 
 ![SystemUpdate](/images/TrueCommand/2.1/SystemSettingUpdate.png "System Update")
 
@@ -46,11 +50,12 @@ The **Update** button <i class="material-icons" aria-hidden="true" title="Update
 
 Click the **Launch TrueNAS Interface** button <mat-icon _ngcontent-igf-c221="" role="img" fontset="mdi" class="mat-icon notranslate mdi mdi-monitor-screenshot mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" data-mat-icon-name="mdi-monitor-screenshot" data-mat-icon-namespace="mdi"></mat-icon> on the system settings menu to open a new browser tab pointed at the selected system's web interface.
 
+From the interface, you can create and manage storage, shapshots, and shares using File Explorer. You can create and/or delete datasets, zvols, shapshots and shares.
 
 {{< /tab >}}
 {{< tab "iSCSI Volumes" >}} 
 
-Click the **iSCSI Volumes** button <mat-icon role="img" fontset="mdi" fonticon="mdi-database" class="mat-icon mdi mdi-database mat-icon-no-color" aria-hidden="true"></mat-icon> oin the system settings menu to display the **iSCSI Volumes** screen. It allows users to filter, create, and delete one or more iSCSI volumes.
+Click the **iSCSI Volumes** button <mat-icon role="img" fontset="mdi" fonticon="mdi-database" class="mat-icon mdi mdi-database mat-icon-no-color" aria-hidden="true"></mat-icon> on the system settings menu to display the **iSCSI Volumes** screen. It allows users to filter, create, and delete one or more iSCSI volumes.
 
 ![TrueCommandSystemSettingsiSCSI](/images/TrueCommand/2.1/SystemSettingsiSCSI.png "System Settings iSCSI")
 
