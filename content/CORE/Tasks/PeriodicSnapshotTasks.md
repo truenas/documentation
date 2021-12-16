@@ -46,6 +46,10 @@ Configure the remaining options for your use case.
 The *Naming Schema* determines how automated snapshot names generate.
 A valid schema requires the *%Y* (year), *%m* (month), *%d* (day), *%H* (hour), and *%M* (minute) time strings, but you can add more identifiers to the schema too, using any identifiers from the Python [strptime function](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior).
 
+{{< hint warning >}}
+If the **Periodic Task** being added will be used for a **Replication Task** avoid using a custom naming schema. Go to [Using a Custom Schema]({{< relref "/CORE/Tasks/ReplicationTasks/TroubleshootingTips.md" >}}) for additional information.
+{{< /hint >}}
+
 This uses some letters differently from POSIX (Unix) time functions.
 For example, including `%z` (time zone) ensures that snapshots do not have naming conflicts when daylight time starts and ends, and *%S* (second) adds finer time granularity.
 
