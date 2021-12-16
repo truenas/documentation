@@ -8,7 +8,7 @@ weight: 10
 ## Connecting Systems to TrueCommand
 
 To connect a system to TrueCommand, open the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and click **Systems**.
-This menu is organized into two tabs: **Systems** and **System Groups**.
+The **Systems** menu has two tabs: **Systems** and **System Groups**.
 The **Systems** and **System Groups** tabs contain all the options to connect and organize systems in TrueCommand.
 All added systems are listed in the **Systems** tab with the current connection status.
 
@@ -97,8 +97,8 @@ Deleting a system purges all collected data from the database.
 
 ## Organizing Systems into Groups
 
-Groups are collections of systems that are organized by TrueCommand administrators.
-Grouping systems allows you to efficiently manage system permissions and reporting.
+TrueCommand administrators can organize systems into collections called Groups.
+Grouping systems lets you efficiently manage system permissions and reporting.
 
 Open the **System Groups** tab to view the list of created groups and the systems they contain.
 
@@ -112,7 +112,7 @@ After adding all the desired systems to the group, click **CREATE GROUP**.
 
 ### Adjusting Groups
 
-Each group has its own control area with what options are available.
+Each group has two management options:
 
 + Edit System : <i class="material-icons" aria-hidden="true" title="Configure">edit</i>
 + Delete System : <i class="material-icons" aria-hidden="true" title="Delete">delete</i>
