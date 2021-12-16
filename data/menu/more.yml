@@ -4,7 +4,7 @@ more:
   - name: Security Reports
     ref: "https://security.truenas.com"
     external: true
-    icon: "gdoc_bookmark"
+    icon: "#gdoc_shield"
   - name: Documentation Archive
     ref: "https://truenas.com/docs/archive/"
     external: true
