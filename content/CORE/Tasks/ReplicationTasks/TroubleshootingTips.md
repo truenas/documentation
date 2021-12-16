@@ -9,9 +9,10 @@ This article contains some advice for investigating or solving issues with a Rep
 
 ## Using a Custom Schema
 
-If a custom schema has been set up for a replication task that doesn't match the TrueNAS schema list a full backup replication will occur. There is no way to edit or create an incremental Replication task.
+If a custom schema has been set up for a replication task that doesn't match the TrueNAS schema list do a a full backup replication, an incremental Replication will not work.
 
 One way a custom schema is created is if a ZFS datasets with snapshots has been imported into TrueNAS with a schema that doesn't match the Truenas schema.
+Another way that a custom schema field is created is if the *Naming Schema* field in a **Periodic Snapshot Task** was used to make name a schema something other than the deafult.
 
 ## Replication Task Log
 
