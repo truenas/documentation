@@ -18,7 +18,7 @@ Select a networking section in the box below to see more details about specific 
 
 {{< expand "Networking Tour Video" "v" >}}
 This video demonstrates configuring networking settings.
-{{< embed-video name="scaleangelfishnetworking" >}}
+{{< embed-video name="scaleangelfishgeneralnetworktour" >}}
 {{< /expand >}}
 
 {{< tabs "Network Options" >}}
