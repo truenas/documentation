@@ -7,6 +7,12 @@ weight: 40
 
 This article contains some advice for investigating or solving issues with a Replication task.
 
+## Using a Custom Schema
+
+If a custom schema has been set up for a replication task that doesn't match the TrueNAS schema list a full backup replication will occur. There is no way to edit or create an incremental Replication task.
+
+One way a custom schema is created is if a ZFS datasets with snapshots has been imported into TrueNAS with a schema that doesn't match the Truenas schema.
+
 ## Replication Task Log
 
 To view and download the replication task log, go to **Tasks > Replication Tasks**.
