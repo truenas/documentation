@@ -48,7 +48,7 @@ A valid schema requires the *%Y* (year), *%m* (month), *%d* (day), *%H* (hour), 
 
 {{< hint warning >}}
 For **Periodic Snapshots** that will be used in a **Replication Task**:
-Use a custom naming schema for full **Replication Task**'s only. If you are going to create an incremental **Replication Task**, use the default naming schema.
+Use a custom naming schema for "full backup" **Replication Task**'s only. If you are going to create an incremental **Replication Task**, use the default naming schema.
 Go to [Using a Custom Schema]({{< relref "/CORE/Tasks/ReplicationTasks/TroubleshootingTips.md" >}}) for additional information.
 {{< /hint >}}
 
