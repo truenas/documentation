@@ -9,7 +9,7 @@ This article contains some advice for investigating or solving issues with a Rep
 
 ## Using a Custom Schema
 
-**Snapshot Tasks** that have been set up, or imported, with a custom schema name will only be able to do a a "full backup" replication, an incremental replication will not work.
+**Snapshot Tasks** that have been set up, or imported, with a custom schema name can be used for "full backup" replication tasks. Incremental replication tasks will not work.
 
 There are several ways that a custom schema can be created:
 * A ZFS dataset with snapshots has been imported into TrueNAS with a schema that doesn't match the Truenas schema.
