@@ -50,11 +50,9 @@ This procedure assumes the Windows administrator user is QE. Substitute your sys
 
     1.  Access theTrue Command web interface via http://IP:PORT where IP:PORT is the IP address and port number assigned to your TrueCommand system. 
 
-    2. Go to Config > Administration and select  the Configuration tab.
-
-Enter http://ds.yourcompany.net/FederationMetadata/2007-06/FederationMetadata.xml in the SAML Identity Provider URL field, then click Save. The URL is from Active Directory
-
-    a. Click Start the SAML service checkbox and click Save to start the service.
+    2. Go to Config > Administration and select the Configuration tab.
+       a. Enter http://ds.yourcompany.net/FederationMetadata/2007-06/FederationMetadata.xml in the SAML Identity Provider URL field, then click Save. The URL is from Active Directory.
+       b. Click Start the SAML service checkbox and click Save to start the service.
 
     3.  Log out of TrueCommand
 
