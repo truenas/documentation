@@ -85,7 +85,7 @@ Each TrueCommand has a unique certificate. To be certain you have the correct ce
 
     3. Modify the TrueCommand Certificate (tc.cer).
 
-    a. Open PowerShell and type Invoke -webRequest -uri http://IP:Port/saml/metadata -outfile tc.cer where IP:Port is your TrueCommand system’s IP address/port number.
+    a. Open PowerShell and type Invoke -webRequest -uri http://IP:PORT/saml/metadata -outfile tc.cer where IP:PORT is your TrueCommand system’s IP address/port number.
 
 ![OpenPowershellTypeInvokeCommand](/images/SAML/OpenPowershellTypeInvokeCommand.png "Open Powershell Type Invoke Command")
 
@@ -117,7 +117,7 @@ Each TrueCommand has a unique certificate. To be certain you have the correct ce
         
 ![WizardSelectEnableSupportForSAML2_0WebSSOProtocolCropped](/images/SAML/WizardSelectEnableSupportForSAML2_0WebSSOProtocolCropped.png "Wizard Select Enable Support For SAML 2.0 Web SSO Protocol Cropped")
         
-        b. Type or copy/paste the TrueCommand login URL http://IP:port/saml/acs in the Relying party SAML 2.0 SSO service URL field. Where IP:port is your TrueCommand system IP and port address.
+        b. Type or copy/paste the TrueCommand login URL http://IP:PORT/saml/acs in the Relying party SAML 2.0 SSO service URL field. Where IP:PORT is your TrueCommand system IP and port address.
         c. Click Next. The Configure Identifiers window displays.
 
     5. Configure the SAML identifiers.
@@ -233,7 +233,7 @@ Log out of TrueCommand.
     
 ![GAAddCustomSAMLAppAddServiceProviderDetailsCropped](/images/SAML/GAAddCustomSAMLAppAddServiceProviderDetailsCropped.jpg "GA Add Custom SAML App Add Service Provider Details Cropped")
     
-    a. Type or copy/paste the TrueCommand login URL http://IP:PORTt/saml/acs in the into the ACS Url field. Where IP:PORT is your TrueCommand system IP and port address. 
+    a. Type or copy/paste the TrueCommand login URL http://IP:PORT/saml/acs in the into the ACS Url field. Where IP:PORT is your TrueCommand system IP and port address. 
     b. Type any name you want to use into the Entity ID field. For example, truecommand-saml.
     c. Type the https://IP:PORT/saml/helloURL into the Start URL field. Where IP:PORT is your TrueCommand system IP and port address.
     d. Set Name ID format to PERSISTENT.
