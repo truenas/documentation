@@ -174,11 +174,11 @@ Each TrueCommand has a unique certificate. To be certain you have the correct ce
 
 ![EditClaimIssuancePolicyAddLDAPAttributesCropped](/images/SAML/EditClaimIssuancePolicyAddLDAPAttributesCropped.png "Edit Claim Issuance Policy Add LDAP Attributes Cropped")
 
-       | E-Mail-Addresses | email |
-       | Display-Name | given_name |
-       |User-Principal-Name | unique_name |
-       | Telephone-Number | telephoneNumber |
-       | Title | title |
+   | E-Mail-Addresses | email |
+   | Display-Name | given_name |
+   |User-Principal-Name | unique_name |
+   | Telephone-Number | telephoneNumber |
+   | Title | title |
 
     i. Click **Finish**, **Apply**, and **OK**.
 
@@ -245,11 +245,11 @@ Log out of TrueCommand.
     
     g. Enter the Attributes. Select the attribute using the Google Directory attributes dropdown menus and then type the attributes exactly as below into the App attribute fields:
 
-       | E-Mail-Addresses | email |
-       | Display-Name | given_name |
-       |User-Principal-Name | unique_name |
-       | Telephone-Number | telephoneNumber |
-       | Title | title |
+   | E-Mail-Addresses | email |
+   | Display-Name | given_name |
+   |User-Principal-Name | unique_name |
+   | Telephone-Number | telephoneNumber |
+   | Title | title |
 
     h. Click FINISH.
     6. Verify the information is correct. Select TEST SAML LOGIN in the tcsaml area on the left side of the screen and where tcsaml is the name of the SAML app you set up. The TrueCommand SAML Test screen displays.
