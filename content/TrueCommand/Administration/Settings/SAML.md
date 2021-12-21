@@ -51,45 +51,46 @@ This procedure assumes the Windows administrator user is QE. Substitute your sys
 1.  Access theTrue Command web interface via http://IP:PORT where IP:PORT is the IP address and port number assigned to your TrueCommand system. 
 
 2. Go to Config > Administration and select the Configuration tab.
+
    a. Enter http://ds.yourcompany.net/FederationMetadata/2007-06/FederationMetadata.xml in the SAML Identity Provider URL field, then click Save. The URL is from Active Directory.
+   
    b. Click Start the SAML service checkbox and click Save to start the service.
 
 3.  Log out of TrueCommand
 
 ## Configure your Active Directory Server (Identity Server for SAML service)
 
-    1. Log into your Microsoft AD system as the Windows administrator user (e.g. *QE* which is the example name for the administrator user in this example procedure).
+1. Log into your Microsoft AD system as the Windows administrator user (e.g. *QE* which is the example name for the administrator user in this example procedure).
 
-    2. Create an AD FS Relying Party Trust. Go to Tools and select AD FS Management. 
+2. Create an AD FS Relying Party Trust. Go to Tools and select AD FS Management. 
 
-    a. Go to Trust Relationships > Relying Party Trusts and then delete any entries found. 
+   a. Go to Trust Relationships > Relying Party Trusts and then delete any entries found.
+    Each TrueCommand has a unique certificate. To be certain you have the correct certificate for your TrueCommand, delete existing certificates and obtain a new one.
 
-Each TrueCommand has a unique certificate. To be certain you have the correct certificate for your TrueCommand, delete existing certificates and obtain a new one.
+   b. Select Add Relying Party Trust on the AD FS menu. The Add Relying Party Trust Wizard displays. 
 
-    b. Select Add Relying Party Trust on the AD FS menu. The Add Relying Party Trust Wizard displays. 
+      ![AddRelyingPartyTrustWizardWelcome](/images/SAML/AddRelyingPartyTrustWizardWelcome.png "Add Relying Party Trust Wizard Welcome")
+      Click Start.
 
-![AddRelyingPartyTrustWizardWelcome](/images/SAML/AddRelyingPartyTrustWizardWelcome.png "Add Relying Party Trust Wizard Welcome")
-    Click Start.
+   c. Select Enter data about the relying party manually and then click Next.
 
-    c. Select Enter data about the relying party manually and then click Next. 
+      ![WizardSelectEnterDataAboutRelyingPartyManuallyCropped](/images/SAML/WizardSelectEnterDataAboutRelyingPartyManuallyCropped.png "Wizard Select Enter Data About Relying Party Manually Cropped")
 
-![WizardSelectEnterDataAboutRelyingPartyManuallyCropped](/images/SAML/WizardSelectEnterDataAboutRelyingPartyManuallyCropped.png "Wizard Select Enter Data About Relying Party Manually Cropped")
+   d. Enter the name for the Relying Party Trust in the Display Name field. For this example we use QE SAML as the new Relying Party Trust name. QE is the Windows administrator name and SAML as the service name.
+      
+      ![WizardTypeDisplayNameCropped](/images/SAML/WizardTypeDisplayNameCropped.png "Wizard Type Display Name Cropped")
+   
+   e. Click Next. The Configure Certificate window displays.
 
-    d. Enter the name for the Relying Party Trust in the Display Name field. For this example we use QE SAML as the new Relying Party Trust name. QE is the Windows administrator name and SAML as the service name.
+3. Modify the TrueCommand Certificate (tc.cer).
 
-![WizardTypeDisplayNameCropped](/images/SAML/WizardTypeDisplayNameCropped.png "Wizard Type Display Name Cropped")
+   a. Open PowerShell and type Invoke -webRequest -uri http://IP:PORT/saml/metadata -outfile tc.cer where IP:PORT is your TrueCommand system’s IP address/port number.
 
-    e. Click Next. The Configure Certificate window displays.
+      ![OpenPowershellTypeInvokeCommand](/images/SAML/OpenPowershellTypeInvokeCommand.png "Open Powershell Type Invoke Command")
 
-    3. Modify the TrueCommand Certificate (tc.cer).
+   b. Edit the certificate as follows:
 
-    a. Open PowerShell and type Invoke -webRequest -uri http://IP:PORT/saml/metadata -outfile tc.cer where IP:PORT is your TrueCommand system’s IP address/port number.
-
-![OpenPowershellTypeInvokeCommand](/images/SAML/OpenPowershellTypeInvokeCommand.png "Open Powershell Type Invoke Command")
-
-    b. Edit the certificate as follows:
-
-        1. Open a file Explorer window and locate the tc.cer file in c:/local data/user/QE.
+      1. Open a file Explorer window and locate the tc.cer file in c:/local data/user/QE.
     
 ![LocateTcCertificateWithFileExplorer](/images/SAML/LocateTcCertificateWithFileExplorer.png "Locate TC Certificate With File Explorer")
         
