@@ -153,7 +153,7 @@ Each TrueCommand has a unique certificate. To be certain you have the correct ce
 
         a. Select Edit Claim Issuance Policy on the Actions menu. The Edit Claim Issuance Policy for QE SAML window displays. Note the QE SAML is the name you gave your new SAML Relying Party Trust in the preceding steps.
 
-![EditQESAMLClaim IssuancePolicyWindowCropped](/images/SAML/EditQESAMLClaim IssuancePolicyWindowCropped.png "Edit QE SAML Claim Issuance Policy Window Cropped")
+![EditQESAMLClaim IssuancePolicyWindowCropped](/images/SAML/EditQESAMLClaimIssuancePolicyWindowCropped.png "Edit QE SAML Claim Issuance Policy Window Cropped")
         
         b. Click Add Rule and select Transform an Incoming Claim, and then click Next. 
 
