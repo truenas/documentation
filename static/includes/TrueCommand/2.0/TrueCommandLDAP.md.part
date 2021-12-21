@@ -41,7 +41,7 @@ Example:
 * Domain: *dc=mycorp,dc=com*
 * User ID Field: *uid* 
 
-When user *bobby.singer* attempts to login, TrueCommand establishs an SSL-secure connection to the LDAP server and then attempt to bind with the static domain *uid=bobby.singer,dc=mycorp,dc=com* and the user-provided password. If successful, then the user authentication is verified and Bobby Singer is allowed access to TrueCommand.
+When user *bobby.singer* attempts to login, TrueCommand establishes an SSL-secure connection to the LDAP server and then attempt to bind with the static domain *uid=bobby.singer,dc=mycorp,dc=com* and the user-provided password. If successful, then the user authentication is verified and Bobby Singer is allowed access to TrueCommand.
 
 #### Indirect Bind
 The indirect BIND authentication method is much more dynamic and searches for the proper user domain settings rather than making assumptions about the format. 
