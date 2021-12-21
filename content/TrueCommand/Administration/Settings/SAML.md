@@ -65,8 +65,9 @@ This procedure assumes the Windows administrator user is QE. Substitute your sys
 2. Create an AD FS Relying Party Trust. Go to Tools and select AD FS Management. 
 
    a. Go to Trust Relationships > Relying Party Trusts and then delete any entries found.
+
       {{< hint info >}}
-Each TrueCommand has a unique certificate. To be certain you have the correct certificate for your TrueCommand, delete existing certificates and obtain a new one.
+      Each TrueCommand has a unique certificate. To be certain you have the correct certificate for your TrueCommand, delete existing certificates and obtain a new one.
       {{< /hint >}}
 
    b. Select Add Relying Party Trust on the AD FS menu. The Add Relying Party Trust Wizard displays. 
