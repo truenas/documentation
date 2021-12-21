@@ -65,9 +65,8 @@ This procedure assumes the Windows administrator user is QE. Substitute your sys
 2. Create an AD FS Relying Party Trust. Go to Tools and select AD FS Management. 
 
    a. Go to Trust Relationships > Relying Party Trusts and then delete any entries found.
-   
       {{< hint info >}}
-      Each TrueCommand has a unique certificate. To be certain you have the correct certificate for your TrueCommand, delete existing certificates and obtain a new one.
+Each TrueCommand has a unique certificate. To be certain you have the correct certificate for your TrueCommand, delete existing certificates and obtain a new one.
       {{< /hint >}}
 
    b. Select Add Relying Party Trust on the AD FS menu. The Add Relying Party Trust Wizard displays. 
@@ -95,25 +94,25 @@ This procedure assumes the Windows administrator user is QE. Substitute your sys
 
       1. Open a file Explorer window and locate the tc.cer file in c:/local data/user/QE.
     
-![LocateTcCertificateWithFileExplorer](/images/SAML/LocateTcCertificateWithFileExplorer.png "Locate TC Certificate With File Explorer")
+         ![LocateTcCertificateWithFileExplorer](/images/SAML/LocateTcCertificateWithFileExplorer.png "Locate TC Certificate With File Explorer")
         
-        2. Select the tc.cer file, right click and select Open with Notepad.
-        3. Delete everything before the <x509Certificate> tag, and everything after the </x509Certificate> tag.
+      2. Select the tc.cer file, right click and select Open with Notepad.
+      3. Delete everything before the <x509Certificate> tag, and everything after the </x509Certificate> tag.
 
-![OpenTcCertificate](/images/SAML/OpenTcCertificate.png "OpenTcCertificate")
+         ![OpenTcCertificate](/images/SAML/OpenTcCertificate.png "OpenTcCertificate")
         
-        4. Type the following string exactly as -----BEGIN CERTIFICATE----- before the certificate with five dashes before and after..
-        5. Type the following string exactly as -----END CERTIFICATE----- after the certificate with five dashes before and after.[insert image 08b EditedTcCertificate
-        6. Select Save (or Ctrl-S) and then close Notepad.
+      4. Type the following string exactly as -----BEGIN CERTIFICATE----- before the certificate with five dashes before and after..
+      5. Type the following string exactly as -----END CERTIFICATE----- after the certificate with five dashes before and after.[insert image 08b EditedTcCertificate
+      6. Select Save (or Ctrl-S) and then close Notepad.
 
-    c. Close Powershell.
-    d. Select Browse on the Configure Certificate window. The Encryption Certificate window opens. 
+   c. Close Powershell.
+   d. Select Browse on the Configure Certificate window. The Encryption Certificate window opens. 
 
-![WizardConfigureCertificateSelectBrowseCropped](/images/SAML/WizardConfigureCertificateSelectBrowseCropped.png "Wizard Configure Certificate Select Browse Cropped")
+      ![WizardConfigureCertificateSelectBrowseCropped](/images/SAML/WizardConfigureCertificateSelectBrowseCropped.png "Wizard Configure Certificate Select Browse Cropped")
     
-    e. Locate the tc.cer file (c:/local disk/users/QE and then select the tc file. Click Open. The Configure Certificate window displays information about the certificate. Click Next The Configure URL window displays.
+   e. Locate the tc.cer file (c:/local disk/users/QE and then select the tc file. Click Open. The Configure Certificate window displays information about the certificate. Click **Next** and the Configure URL window displays.
 
-    4. Configure the URL. On the Configure URL window:
+4. Configure the URL. On the Configure URL window:
 
         a. Select Enable support for the SAML 2.0 webSSO protocol. 
         
