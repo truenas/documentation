@@ -48,15 +48,15 @@ Each of these top-level steps are described in detail in the example provided be
 
 This procedure assumes the Windows administrator user is QE. Substitute your system addresses (URLs,IP address, port number, names, etc.) where variables are present.
 
-1.  Access theTrue Command web interface via http://IP:PORT where IP:PORT is the IP address and port number assigned to your TrueCommand system. 
+1. Access theTrue Command web interface via http://IP:PORT where IP:PORT is the IP address and port number assigned to your TrueCommand system. 
 
 2. Go to Config > Administration and select the Configuration tab.
 
    a. Enter http://ds.yourcompany.net/FederationMetadata/2007-06/FederationMetadata.xml in the SAML Identity Provider URL field, then click Save. The URL is from Active Directory.
-   
+
    b. Click Start the SAML service checkbox and click Save to start the service.
 
-3.  Log out of TrueCommand
+3. Log out of TrueCommand
 
 ## Configure your Active Directory Server (Identity Server for SAML service)
 
@@ -65,7 +65,10 @@ This procedure assumes the Windows administrator user is QE. Substitute your sys
 2. Create an AD FS Relying Party Trust. Go to Tools and select AD FS Management. 
 
    a. Go to Trust Relationships > Relying Party Trusts and then delete any entries found.
-    Each TrueCommand has a unique certificate. To be certain you have the correct certificate for your TrueCommand, delete existing certificates and obtain a new one.
+   
+      {{< hint info >}}
+      Each TrueCommand has a unique certificate. To be certain you have the correct certificate for your TrueCommand, delete existing certificates and obtain a new one.
+      {{< /hint >}}
 
    b. Select Add Relying Party Trust on the AD FS menu. The Add Relying Party Trust Wizard displays. 
 
