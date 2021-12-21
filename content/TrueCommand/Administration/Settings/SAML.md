@@ -174,7 +174,8 @@ Each TrueCommand has a unique certificate. To be certain you have the correct ce
 
 ![EditClaimIssuancePolicyAddLDAPAttributesCropped](/images/SAML/EditClaimIssuancePolicyAddLDAPAttributesCropped.png "Edit Claim Issuance Policy Add LDAP Attributes Cropped")
 
-| | | 
+| Parameter | Value |
+|---|---|
 | E-Mail-Addresses | email |
 | Display-Name | given_name |
 |User-Principal-Name | unique_name |
@@ -246,7 +247,8 @@ Log out of TrueCommand.
     
     g. Enter the Attributes. Select the attribute using the Google Directory attributes dropdown menus and then type the attributes exactly as below into the App attribute fields:
 
-| | | 
+| Parameter | Value |
+|---|---|
 | E-Mail-Addresses | email |
 | Display-Name | given_name |
 |User-Principal-Name | unique_name |
