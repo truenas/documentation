@@ -4,118 +4,121 @@ p,h1,h2,h3,h4,th,td,a {
 }
 /* Adjust overall site height */
 .wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 10vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Site header */
 .gdoc-brand__img {
-	max-width: 7em;
-	width: auto;
-	height: auto;
+    max-width: 7em;
+    width: auto;
+    height: auto;
 }
 .gdoc-header .icon {
-  height: 1.5rem;
-  width:  1.5rem;
+    height: 1.5rem;
+    width:  1.5rem;
 }
 .iconsbar {
-	background: #000;
-	text-align: right !important;
-  font-family: "Inter", sans-serif;
-  font-weight: 500;
-  font-size: 12px;
+    background: #000;
+    text-align: right !important;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 12px;
 }
 .iconsbar a {
-	color: #fff;
+    color: #fff;
 }
 /* Sticky top menu */
 .sticky {
-  position: fixed;
-  top: 0;
-  left: 50%;
-    -ms-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
-  z-index: 5;
-  margin: 0 auto;
-  width: 100%;
-  max-width: 90rem;
-  padding-left: 1rem;
-  padding-top: .5rem;
-  padding-bottom: .5rem;
-  border-radius: 5px;
+    position: fixed;
+    top: 0;
+    left: 50%;
+        -ms-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    z-index: 5;
+    margin: 0 auto;
+    width: 100%;
+    padding: .5rem 1rem .5rem 1rem;
+    border-radius: 5px;
 }
 .stickyelement {
-	background: black;
+    background: black;
 }
 .gdoc-header__link {
-	float:left;
+    float:left;
 }
 .truenas-menubar {
-	float: right;
-	display: flex;
-  font-family: "din-2014";
-  font-weight: 500;
+    float: right;
+    display: flex;
+    font-family: "din-2014";
+    font-weight: 500;
 }
 
 /* Remove stickybar for small screens and use default GeekDoc menu */
-@media screen and (max-width:39rem) {
-	.stickyelement {
-		display: none;
-	}
+@media screen and (max-width:46.5rem) {
+    .stickyelement {
+        display: none;
+    }
 }
 /* End sticky top menu */
+/* Fix Nav sidebar padding */
+.gdoc-nav, .nav {
+    padding: 1rem 1.5rem 1rem 1rem;
+}
+.gdoc-page {
+    padding: 1rem 1rem 0rem 0rem;
+}
 .container{
-	max-width: 90rem;
-  padding: 0;
+    max-width: 90rem;
+    padding: 0;
 }
 .gdoc-header {
-	background: #000000;
-	border: none;
-  padding-bottom: .5rem;
+    background: #000000;
+    border: none;
+    padding: .5rem 1rem .5rem 1rem;
 }
 
 .truenas-menuitem {
 }
 .truenas-menubutton {
-	background-color: #000;
-	color: white;
-	padding: 13px;
-	border: none;
-  font-family: "din-2014";
-  font-weight: normal;
-  font-size: 19px;
+    background-color: #000;
+    color: white;
+    padding: 13px;
+    border: none;
+    font-family: "din-2014";
+    font-weight: normal;
+    font-size: 19px;
 }
 .truenas-menubutton:hover {
   color: #000000;
 }
 .truenas-menubutton,.truenas-menubutton a {color:#white;cursor:pointer;}
 .truenas-menulink {
-	background-color: #000;
-	color: white;
-	padding: 16px;
-	font-size: 16px;
-	border: none;
+    background-color: #000;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
 }
 .truenas-menulink a {color:#000000;}
 .truenas-menudropdown {
-	display: none;
-	position: absolute;
-	background-color: #0095d5;
-	min-width: 160px;
-	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-	z-index: 10;
+    display: none;
+    position: absolute;
+    background-color: #0095d5;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 10;
 }
 .truenas-menudropdown a {
-	font-family: "din-2014";
-  font-weight: 500;
-  font-size: 19px;
-  color: white;
-	padding: 12px 16px;
-	text-decoration: none;
-	display: block;
+    font-family: "din-2014";
+    font-weight: 500;
+    font-size: 19px;
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
 }
 .truenas-menudropdown a:hover {color: #bbb;}
 .truenas-menuitem:hover .truenas-menudropdown {display: block;}
@@ -123,295 +126,297 @@ p,h1,h2,h3,h4,th,td,a {
 .truenas-menuitem:hover .truenasdownload-menudropdown {display: block;}
 .truenasdownload-menudropdown a:hover {color: #DFDFDF;}
 .truenas-downloadbutton {
-	background:#71bf44;
-  color: white;
-  padding: 13px;
-  border: none;
-  font-family: "din-2014";
-  font-weight: normal;
-  font-size: 19px;
+    background:#71bf44;
+    color: white;
+    padding: 13px;
+    border: none;
+    font-family: "din-2014";
+    font-weight: normal;
+    font-size: 19px;
  }
 .truenas-downloadbutton:hover {
-  background-color: #71bf44;
+    background-color: #71bf44;
 }
 .truenas-downloadbutton a {
-  font-family: "din-2014";
-  font-weight: normal;
-  font-size: 19px;
-  color:#ffffff;
+    font-family: "din-2014";
+    font-weight: normal;
+    font-size: 19px;
+    color:#ffffff;
 }
 .truenas-downloadbutton a:hover {
-  color: #00597f;
-  text-decoration: none;
+    color: #00597f;
+    text-decoration: none;
 }
 .truenasdownload-menudropdown {
-	display: none;
-	position: absolute;
-	background-color: #71bf44;
-	min-width: 160px;
-	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-	z-index: 10;
+    display: none;
+    position: absolute;
+    background-color: #71bf44;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 10;
 }
 .truenasdownload-menudropdown a {
-	font-family: "din-2014";
-  font-weight: 500;
-  font-size: 19px;
-  color: white;
-	padding: 12px 16px;
-	text-decoration: none;
-	display: block;
+    font-family: "din-2014";
+    font-weight: 500;
+    font-size: 19px;
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
 }
 .truenas-menudropdown {
-	display: none;
-	position: absolute;
-	background-color: #0095d5;
-	min-width: 160px;
-	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-	z-index: 10;
+    display: none;
+    position: absolute;
+    background-color: #0095d5;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 10;
 }
 
 .truenasdownload-menudropdown a {
-	font-family: "din-2014";
-  font-weight: 500;
-  font-size: 19px;
-  color: white;
-	padding: 12px 16px;
-	text-decoration: none;
-	display: block;
+    font-family: "din-2014";
+    font-weight: 500;
+    font-size: 19px;
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
 }
 
 /* Nested Menu items */
 .nested-menubutton {
-  font-family: "din-2014";
-  font-weight: 500;
-  font-size: 19px;
-  color: white;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  border: none;
-  background-color: #0095d5;;
+    font-family: "din-2014";
+    font-weight: 500;
+    font-size: 19px;
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border: none;
+    background-color: #0095d5;;
 }
 .truenas-nested-menudropdown {
-  display: none;
-  position: absolute;
-  background-color: #0095d5;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 10;
-  margin-top: -.5em;
-  margin-left: -1.5em;
+    display: none;
+    position: absolute;
+    background-color: #0095d5;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 10;
+    margin-top: -.5em;
+    margin-left: -1.5em;
 }
 .nested-menubutton:hover + .truenas-nested-menudropdown {display: block;}
 .truenas-nested-menudropdown:hover {
 }
 
 .truenas-nested-menudropdown a {
-  font-family: "din-2014";
-  font-weight: 500;
-  font-size: 19px;
-  color: white;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
+    font-family: "din-2014";
+    font-weight: 500;
+    font-size: 19px;
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
 }
 
 .nested-menubutton a {
-  margin-left: 2rem;
-
+    margin-left: 2rem;
 }
 
 /* End site header */
 /* Site footer */
 
 .gdoc-footer {
-	max-width: 100%;
-  font-family: "Inter", sans-serif;
-  font-weight: 600;
-  font-size: 16px;
-  background-color: #000000;
-  color: #8e8e8e;
+    max-width: 100%;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    background-color: #000000;
+    color: #8e8e8e;
 }
 .gdoc-footer__link {
-	color: #23afe4;
+    color: #23afe4;
 }
 .gdoc-footer__link:visited {
-	color: #23afe4;
+    color: #23afe4;
 }
 .gdoc-footer__item{
-  padding-left: .5rem;
+    padding-left: .5rem;
 }
 .footer-icons {
-  display: flex;
-  float: right;
-  color: white;
+    display: flex;
+    float: right;
+    color: white;
 }
 /* End site footer */
 
 /* Styling images in the Topics Tab Boxes */
 .topic-image {
-	float:left;
-	padding-right:20px;
-	max-width: 25% !important;
+    float:left;
+    padding-right:20px;
+    max-width: 25% !important;
 }
 /* Make Readtime and lastmod less visible */
 .reading-time {
-	opacity: 0.5;
+    opacity: 0.5;
 }
 /* Site directory for mobile browsing */
 .truenas-mediamenu {
-	display: none;
+    display: none;
 }
-@media screen and (max-width:39rem) {
-	.truenas-mediamenu {
-		display: inline-block;
-		position: relative;
-	}
-	.truenas-menubutton {
-		padding: 0px 15px 15px 0px;
-	}
-	.truenas-mediamenu:hover .truenas-menudropdown {display: block;}
-	.truenas-mediamenu:hover .truenas-menubutton {background-color: #ffffff;color:#31beec;}	
+@media screen and (max-width:46rem) {
+    .truenas-mediamenu {
+        display: inline-block;
+        position: relative;
+    }
+    .truenas-menubutton {
+        padding: 0px 15px 15px 0px;
+    }
+    .truenas-mediamenu:hover .truenas-menudropdown {display: block;}
+    .truenas-mediamenu:hover .truenas-menubutton {background-color: #ffffff;color:#31beec;}
+    .gdoc-nav__control {
+        display: inline-block;
+    }
 }
 /* End site directory for mobile browsing */
 /* Styling for fade-in on image download links */
 .container-image-download {
-  position: relative;
-  width: 50%;
+    position: relative;
+    width: 50%;
 }
 .container-image-download:hover .image {
-  opacity: 0.3;
-  -webkit-transition:.5s ease;
-  -o-transition:.5s ease;
-  transition:.5s ease;
+    opacity: 0.3;
+    -webkit-transition:.5s ease;
+    -o-transition:.5s ease;
+    transition:.5s ease;
 }
 .container-image-download:hover .middle {
-  opacity: 1;
-  -webkit-transition:.5s ease;
-  -o-transition:.5s ease;
-  transition:.5s ease;
+    opacity: 1;
+    -webkit-transition:.5s ease;
+    -o-transition:.5s ease;
+    transition:.5s ease;
 }
 .image-download-text {
-  background-color: #0095D5;
-  color: white;
-  font-size: 16px;
-  padding: 16px 32px;
+    background-color: #0095D5;
+    color: white;
+    font-size: 16px;
+    padding: 16px 32px;
 }
 .middle {
-  -webkit-transition:.5s ease;
-  -o-transition:.5s ease;
-  transition:.5s ease;
-  opacity:0;
-  position:absolute;
-  top:50%;
-  left:50%;
-  -webkit-transform:translate(-50%,-50%);
-  -o-transform:translate(-50%,-50%);
-  transform:translate(-50%,-50%);
-  -ms-transform:translate(-50%,-50%)
+    -webkit-transition:.5s ease;
+    -o-transition:.5s ease;
+    transition:.5s ease;
+    opacity:0;
+    position:absolute;
+    top:50%;
+    left:50%;
+    -webkit-transform:translate(-50%,-50%);
+    -o-transform:translate(-50%,-50%);
+    transform:translate(-50%,-50%);
+    -ms-transform:translate(-50%,-50%)
  }
 .linkbutton{
-  min-width:180px;border-radius:5px;
-  background-color:#0095d5;
-  -webkit-box-shadow:3px 3px #d1d1d1;
-  box-shadow:3px 3px #d1d1d1;
-  color:#fff;
-  padding:14px 25px;
-  text-align:center;
-  text-decoration:none;
-  position:relative;
-  display:block;
-  margin-left:auto;
-  margin-right:auto;
-  width:20%
+    min-width:180px;border-radius:5px;
+    background-color:#0095d5;
+    -webkit-box-shadow:3px 3px #d1d1d1;
+    box-shadow:3px 3px #d1d1d1;
+    color:#fff;
+    padding:14px 25px;
+    text-align:center;
+    text-decoration:none;
+    position:relative;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    width:20%
 }
 .linkbutton:hover{
-  color:#fff;
-  background-color:#1eaedb;
-  border-color:#1eaedb
+    color:#fff;
+    background-color:#1eaedb;
+    border-color:#1eaedb
 }
 
 /* End styling for fade-in on image download links */
 /* Begin print view styling */
 .content-print {
-  min-width: 10rem;
-  max-width: 80rem;
-  margin: 0rem 5rem 0rem 5rem;
-  font-family: "Inter", sans-serif;
+    min-width: 10rem;
+    max-width: 80rem;
+    margin: 0rem 5rem 0rem 5rem;
+    font-family: "Inter", sans-serif;
 }
 .content-print .gdoc_link{
-  max-height: 1rem;
-  max-width: 1rem;
+    max-height: 1rem;
+    max-width: 1rem;
 }
 .content-print img {
-  max-width: 800px;
+    max-width: 800px;
 }
 .content-print .gdoc-tabs input[type="radio" i] {
-  display: none;
+    display: none;
 }
 .content-print .gdoc-tabs label{
-  display: none;
+    display: none;
 }
 .content-print input[type="checkbox" i] {
-  display: none;
+    display: none;
 }
 .content-print input[type="radio" i] {
-  display: none;
+    display: none;
 }
 .content-print .gdoc-tabs__label {
-  font-weight: bold;
+    font-weight: bold;
 }
 .content-print .gdoc-expand {
-  border: 1px solid black;
-  margin-bottom: 1rem;
-  padding: 5px;
-  background-color: #f2f2f2;
+    border: 1px solid black;
+    margin-bottom: 1rem;
+    padding: 5px;
+    background-color: #f2f2f2;
 }
 .content-print .gdoc-expand__head.flex.justify-between{
-font-weight: bold;
+    font-weight: bold;
 }
 .td-content-print{
-  min-width: 10rem;
-	max-width: 80rem;
-	margin: 0rem 5rem 0rem 5rem;
-  font-family: "Inter", sans-serif;
+    min-width: 10rem;
+    max-width: 80rem;
+    margin: 0rem 5rem 0rem 5rem;
+    font-family: "Inter", sans-serif;
 }
 .td-content-print img{
-	max-width: 800px;
+    max-width: 800px;
 }
 .td-content-print .gdoc_link{
-  max-height: 1rem;
-  max-width: 1rem;
+    max-height: 1rem;
+    max-width: 1rem;
 }
 .td-content-print table, th, td{
-  border: 1px solid black;
-  border-collapse: collapse;
-  padding: 5px;
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px;
 }
 .td-content-print th{
-  background-color: #31beec;
-  color: white;
+    background-color: #31beec;
+    color: white;
 }
 .td-content-print tr:nth-child(even) {
-  background-color: #f2f2f2;
+    background-color: #f2f2f2;
 }
 .td-content-print input[type="checkbox" i] {
-  display: none;
+    display: none;
 }
 .td-content-print input[type="radio" i] {
-  display: none;
+    display: none;
 }
 .td-content-print .gdoc-tabs__label {
-  font-weight: bold;
+    font-weight: bold;
 }
 .td-content-print .gdoc-expand {
-  border: 1px solid black;
-  padding: 5px;
-  background-color: #f2f2f2;
-  margin-bottom: 1rem;
+    border: 1px solid black;
+    padding: 5px;
+    background-color: #f2f2f2;
+    margin-bottom: 1rem;
 }
 .td-content-print .gdoc-expand__head.flex.justify-between{
-font-weight: bold;
+    font-weight: bold;
 }
 .td-content-print blockquote {
     margin: 1rem 0;
@@ -435,43 +440,43 @@ font-weight: bold;
 /* Begin archive drop down styling */
 /* Dropdown Button */
 .dropbtn {
-  background-color: #3498DB;
-  color: white;
-  padding: 8px;
-  font-size: 14px;
-  border: none;
-  cursor: pointer;
-  margin-right: 1rem;
+    background-color: #3498DB;
+    color: white;
+    padding: 8px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    margin-right: 1rem;
 }
 
 /* Dropdown button on hover & focus */
 .dropbtn:hover, .dropbtn:focus {
-  background-color: #3498DB;
+    background-color: #3498DB;
 }
 
 .dropdown {
-  position: relative;
-  display: inline-block;
+    position: relative;
+    display: inline-block;
 }
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-  height: 9rem;
-  overflow-y: scroll;
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    height: 9rem;
+    overflow-y: scroll;
 }
 
 /* Links inside the dropdown */
 .dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
 }
 
 .dropdown-content a:hover {background-color: #ddd;}
