@@ -17,11 +17,15 @@ When accessing the interface for the first time you need to create an admin acco
 
 * Read the Terms of Service, set **I have read and agree to the terms of service**, and click **SIGN UP**.
 
-* The admin login credentials are created and you are presented with the login page.
+TrueCommand creates the admin login credentials and displays the login page.
 
 ![TrueCommand Admin Sign In](/images/TrueCommand/2.0/LoginAdmin.png "TrueCommand Admin Sign In")
 
 You can now log in to the TrueCommand web interface with the new administrator account credentials.
+
+### Resetting a User Password on the Login Screen
+
+{{< include file="static/includes/TrueCommand/2.1/ResettingUserPassword.md.part" markdown="true" >}}
 
 ## Top Bar
 
@@ -72,16 +76,12 @@ The Settings menu has the following options:
 + Clicking <mat-icon role="img" class="mat-icon material-icons mat-icon-no-color" aria-hidden="true">short_text</mat-icon> opens the [Logs]({{< relref "/TrueCommand/Administration/SystemLog.md" >}}) page.
 + Clicking <mat-icon role="img" class="mat-icon material-icons mat-icon-no-color" aria-hidden="true">vpn_key</mat-icon> opens the [Administration]({{< relref "/TrueCommand/Administration/Settings.md" >}}) page.
 
-
 ### User Menu
 
 The user menu (avatar) has the following options:
 
 + Clicking <mat-icon role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true">person</mat-icon> opens the [**Users**]({{< relref "/TrueCommand/Administration/Users.md" >}}) page.
-
 + Clicking <mat-icon role="img" fontset="mdi" fonticon="mdi-swap-vertical-bold" class="mat-icon mdi mdi-swap-vertical-bold mat-icon-no-color" aria-hidden="true"></mat-icon> opens the [**API Interface**]({{< relref "/TrueCommand/API/_index.md" >}}) testing page.
-
 + Clicking <mat-icon role="img" fontset="mdi" fonticon="mdi-file-document-edit" class="mat-icon notranslate mdi mdi-file-document-edit mat-icon-no-color" aria-hidden="true"></mat-icon> opens the [TrueCommand EULA]({{< relref "/TrueCommand/Notices/TCTermsOfService.md" >}}).
-
 + Clicking <mat-icon role="img" class="mat-icon material-icons mat-icon-no-color" aria-hidden="true">exit_to_app</mat-icon> logs the user out of TrueCommand.
 
