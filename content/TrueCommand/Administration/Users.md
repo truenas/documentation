@@ -68,6 +68,10 @@ Click **ADD GROUP** and select a group from the drop-down to give the user acces
 To assign user's type of access to the group, choose **read** or **read/write** permissions.
 To remove a user’s access to a particular system group, click **-** (minus) on the desired group.
 
+## Resetting a User Password
+
+{{< include file="static/includes/TrueCommand/2.1/ResettingUserPassword.md.part" markdown="true" >}}
+
 ## Resetting a User Password from the Command Line
 
 The Docker version of TrueCommand allows you to reset user passwords from the command line.
