@@ -239,7 +239,7 @@ Manual updates cannot be used to upgrade from older major versions.
 {{< /hint >}}
 
 Go to https://download.freenas.org/ and find an update file of the desired version.
-Manual update file names end with <file>manual-update-unsigned.tar</file>.
+Manual update file names end with <file>manual-update.tar</file>.
 
 Download the desired update file to your local system.
 Log in to the TrueNAS web interface and go to **System > Update**.
