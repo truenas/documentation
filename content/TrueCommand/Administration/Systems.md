@@ -110,7 +110,7 @@ After adding all the desired systems to the group, click **CREATE GROUP**.
 
 ![SystemsNewGroup](/images/TrueCommand/2.1/SystemsGroupsNewGroup.png "New System Group")
 
-### Adjusting Groups
+### Managing Groups
 
 Each group has two management options:
 
@@ -129,6 +129,5 @@ Clicking the edit button <i class="material-icons" aria-hidden="true" title="Con
 Clicking the <i class="material-icons" aria-hidden="true" title="Delete">delete</i> button displayss a popup confirmation box to delete a group. 
 
 ![Groups Delete](/images/TrueCommand/2.0/SystemsGroupsDeleteGroup.png "Group Delete")
-
 {{< /tab >}}
 {{< /tabs >}}
