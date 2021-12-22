@@ -83,5 +83,5 @@ TrueCommand's activity icons provide an at-a-glance indication of what the syste
 ![DashboardSystemCardMultipleIndicators](/images/TrueCommand/2.0/TC20MultipleActivityIndicators.png "System Card Multiple Indicators") 
 
 * Update: ![DashboardSystemUpdateIndicator](/images/TrueCommand/2.0/TC20UpgradeIndicator.png "System Update")
-* Replication: ![DashboardSystemReplicationIndicator](/images/TrueCommand/2.0/TC20ReplicationIndicator.png "Replication")
+* Replication: ![DashboardSystemReplicationIndicator](/images/TrueCommand/2.0/DashboardSystemReplicationIndicator.png "Replication")
 * Resilver/Scrub : ![DashboardSystemResilverScrubIndicator](/images/TrueCommand/2.0/TC20ResilverScrubIndicator.png "System Resilver/Scrub")
