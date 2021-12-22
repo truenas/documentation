@@ -31,17 +31,17 @@ When the form is completed, click **Create User**.
 
 To configure account details and permissions, open the *Configure* <i class="material-icons" aria-hidden="true" title="Settings">settings</i>menu and click **Users**.
 
-![UsersList](/images/TrueCommand/2.0/UsersList.png "List of Users")
+![UsersList](/images/TrueCommand/2.0/UsersList21.png "List of Users")
 
 To edit a user click the Edit button <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
 
-![Users Edit](/images/TrueCommand/2.0/UsersEditUser.png "Users Edit")
+![Users Edit](/images/TrueCommand/2.0/UsersEditUser21.png "Users Edit")
 
-There are several different elements that you can configure for a user, including the user's avatar, personal details, Team membership, and System permissions.
+There are several different elements that you can configure for a user, including the user's avatar, add a contact email address, personal details, Team membership, and System permissions.
 
 ### User Details
 
-You can add personal details about the user in this form. You may also designate the account as TrueCommand administrator or change the account password.
+You can add personal details about the user in this form. You may also designate the account as TrueCommand administrator, set [Two Factor Authentication]({{< relref "truecommand/tcgettingstarted/useraccounts.md" >}}) for the user, or change the account password.
 Saving changes to a user's password requires entering the current password for that user.
 To go back to the original contents of the fields, click RESET FORM.
 
