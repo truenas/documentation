@@ -1,0 +1,1 @@
+remove this file when 13.0 images start going in the folder.
