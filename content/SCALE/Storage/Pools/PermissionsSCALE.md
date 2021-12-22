@@ -5,26 +5,26 @@ weight: 50
 
 {{< toc >}}
 
-TrueNAS SCALE has a simple permissions manager and a full Access Control List (ACL) editor for defining dataset permissions.
+TrueNAS SCALE has a simple permissions manager and a full Access Control List (ACL) editor that defines dataset permissions.
 Permissions control the actions users can perform on dataset contents.
 
 ## ACL Types in SCALE
 
-TrueNAS SCALE offers two types of ACLs: POSIX, which is the SCALE default, and NSFv4.
+TrueNAS SCALE offers two ACL types: POSIX (SCALE default) and NSFv4.
 
-Users can select what ACL type they'd like a new dataset to use while creating it. 
+You can select which ACL types you want new datasets to use while creating them.
 To change an existing dataset's ACL type, click the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> button next to the intended dataset and select *Edit Options*. Next, click *Advanced Options*and scroll down to the *ACL Type* drop-down. 
 
 {{< hint warning >}}
-**WARNING: Changing the ACL type affects how on-disk ZFS ACL is written and read.**
+**WARNING: Changing the ACL type affects how TrueNAS writes and reads on-disk ZFS ACL.**
 
 When the ACL type changes from POSIX to NFSv4, internal ZFS ACLs do not migrate by default, and access ACLs encoded in posix1e extended attributes convert to native ZFS ACLs. 
 
 When the ACL type changes from NFSv4 to POSIX, native ZFS ACLs do not convert to posix1e extended attributes, but ZFS will use the native ACL for access checks.    
 
-Users must manually set new ACLs recursively on the dataset after changing the ACL type to avoid unexpected permissions behavior.   
+To prevent unexpected permissions behavior, you must manually set new dataset ACLs recursively after changing the ACL type.   
 
-Setting new ACLs recursively is destructive, so we suggest creating a ZFS snapshot of the dataset before changing the ACL type or modifying permissions.
+Setting new ACLs recursively is destructive. We suggest creating a ZFS snapshot of the dataset before changing the ACL type or modifying permissions.
 {{< /hint >}}
 
 For a more in-depth explanation of ACLs and configurations in TrueNAS SCALE, see our [ACL Primer]({{< relref "ACLPrimer.md" >}}).
@@ -50,18 +50,17 @@ The *Owner* section controls which TrueNAS *User* and *Group* has full control o
 
 | Field | Description |
 |------|-------------|
-| User | Select the user to control the dataset. Users created manually or imported from a directory service appear in the drop-down menu. |
-| Apply User | Confirms changes to *User*. To prevent errors, changes to the *User* are submitted only when this box is set. |
-| Group | Select the group to control the dataset. Groups created manually or imported from a directory service appear in the drop-down menu. |
-| Apply Group | Confirms changes to *Group*. To prevent errors, changes to the *Group* are submitted only when this box is set. |
+| User | Select a user to control the dataset. Users created manually or imported from a directory service appear in the menu. |
+| Apply User | Confirms changes to *User*. To prevent errors, TrueNAS only submits *User* changes when you set this box. |
+| Group | Select the group to control the dataset. Groups created manually or imported from a directory service appear in the menu. |
+| Apply Group | Confirms changes to *Group*. To prevent errors, TrueNAS only submits *Group* changes when you set this box. |
 
 {{< /tab >}}
 {{< tab "Access" >}}
 The *Access* section lets users define the basic *Read*, *Write*, and *Execute* permissions for the *User*, *Group*, and *Other* accounts that might access this dataset.
 {{< /tab >}}
 {{< tab "Advanced" >}}
-The *Advanced* section allows users to *Apply Permissions Recursively* to all directories, files, and child datasets within the current dataset, or *Traverse*, which applies permissions recursively to all child datasets
-of the current dataset.
+The *Advanced* section lets users *Apply Permissions Recursively* to all directories, files, and child datasets within the current dataset. Users may also set *Traverse*, which applies permissions recursively to all child datasets in the current dataset.
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -72,10 +71,11 @@ An Access Control List (ACL) is a set of account permissions associated with a d
 TrueNAS uses ACLs to manage user interactions with shared datasets and creates them when users add a dataset to a pool.
 {{< /hint >}}
 
-The option to *Select a preset ACL* or *Create a custom ACL* are available. Preset ACL's available from the dropdown menu are *POSIX_OPEN*, *POSIX_RESTRICTED*, or *POSIX_HOME*.  
+The TrueNAS has options to *Select a preset ACL* or *Create a custom ACL*. The available preset ACLs are *POSIX_OPEN*, *POSIX_RESTRICTED*, or *POSIX_HOME*.
+
 ![ACLPresetsSCALE](/images/SCALE/ACLPresetsSCALE.png "ACL Presets")
 
-When creating a custom ACL, Use *Add Item* to apply additional permissions to the *Access Control List*.
+When creating a custom ACL, use *Add Item* to apply additional permissions to the *Access Control List*.
 
 {{< tabs "POSIX Edit ACL" >}}
 {{< tab "POSIX ACL Editor" >}}
@@ -86,18 +86,18 @@ When creating a custom ACL, Use *Add Item* to apply additional permissions to th
 | Owner | User who controls the dataset. This user always has permissions to read or write the ACL and read or write attributes. Users created manually or imported from a directory service appear in the drop-down menu. |
 | Owner Group | The group which controls the dataset. This group has the same permissions as granted to the group@ Who. Groups created manually or imported from a directory service appear in the drop-down menu. |
 
-Any user accounts or groups imported from a directory service can be selected as the primary *User* or *Group*.
+You can select any user accounts or groups imported from a directory service as the primary *User* or *Group*.
 {{< /tab >}}
 {{< tab "Access Control List" >}}
-Define *Who* the Access Control Entry (ACE) applies to, and configure permissions and inheritance flags for the ACE.
+Define *Who* the Access Control Entry (ACE) applies to and configure permissions and inheritance flags for the ACE.
 
 
 | Field | Description |
 |------|-------------|
-| Who | Access Control Entry (ACE) user or group. Select a specific User or Group for this entry, owner@ to apply this entry to the user that owns the dataset, group@ to apply this entry to the group that owns the dataset, or everyone@ to apply this entry to all users and groups. See [nfs4_setfacl(1) NFSv4 ACL ENTRIES](https://manpages.debian.org/testing/nfs4-acl-tools/nfs4_setfacl.1.en.html). |
+| Who | Access Control Entry (ACE) user or group. Select a specific User or Group for this entry. **Owner@** applies this entry to the user that owns the dataset. **Group@** applies this entry to the group that owns the dataset. **Everyone@** applies this entry to all users and groups. See [nfs4_setfacl(1) NFSv4 ACL ENTRIES](https://manpages.debian.org/testing/nfs4-acl-tools/nfs4_setfacl.1.en.html). |
 | User | User account to which this ACL entry applies. |
 | Permissions | Select permissions to apply to the chosen Who. Choices change depending on the Permissions Type. |
-| Flags | How this ACE is applied to newly created directories and files within the dataset. Basic flags enable or disable ACE inheritance. Advanced flags allow further control of how the ACE is applied to files and directories in the dataset. |
+| Flags | How this ACE applies to newly created directories and files within the dataset. Basic flags enable or disable ACE inheritance. Advanced flags allow further control of how the ACE applies to files and directories in the dataset. |
 
 {{< /tab >}}
 {{< /tabs >}}
@@ -119,28 +119,28 @@ Select <i class="material-icons" aria-hidden="true" title="edit">edit</i> and yo
 | Owner | User who controls the dataset. This user always has permissions to read or write the ACL and read or write attributes. Users created manually or imported from a directory service appear in the drop-down menu. |
 | Owner Group | The group which controls the dataset. This group has the same permissions as granted to the group@ Who. Groups created manually or imported from a directory service appear in the drop-down menu. |
 
-Any user accounts or groups imported from a directory service can be selected as the primary *User* or *Group*.
+You can select any user accounts or groups imported from a directory service as the primary *User* or *Group*.
 {{< /tab >}}
 {{< tab "Access Control List" >}}
-To add a new item to the ACL click *Add Item*, define *Who* the Access Control Entry (ACE) applies to, and configure permissions and inheritance flags for the ACE.
+To add a new item to the ACL, click *Add Item*, define *Who* the Access Control Entry (ACE) applies to, and configure permissions and inheritance flags for the ACE.
 
 | Field | Description |
 |------|-------------|
 | Add Item | Adds a new ACE to the Access Control List. |
-| Who | Access Control Entry (ACE) user or group. Select a specific User or Group for this entry, owner@ to apply this entry to the user that owns the dataset, group@ to apply this entry to the group that owns the dataset, or everyone@ to apply this entry to all users and groups. See [nfs4_setfacl(1) NFSv4 ACL ENTRIES](https://manpages.debian.org/testing/nfs4-acl-tools/nfs4_setfacl.1.en.html). |
-| ACL Type | How the Permissions are applied to the chosen Who. Choose Allow to grant the specified permissions and Deny to restrict the specified permissions. |
-| Permissions Type | Choose the type of permissions. Basic shows general permissions. Advanced shows each specific type of permission for finer control. |
+| Who | Access Control Entry (ACE) user or group. Select a specific User or Group for this entry. **Owner@** applies this entry to the user that owns the dataset. **Group@** applies this entry to the group that owns the dataset. **Everyone@** applies this entry to all users and groups. See [nfs4_setfacl(1) NFSv4 ACL ENTRIES](https://manpages.debian.org/testing/nfs4-acl-tools/nfs4_setfacl.1.en.html). |
+| ACL Type | How the Permissions apply to the chosen Who. Choose Allow to grant the specified permissions and Deny to restrict the specified permissions. |
+| Permissions Type | **Basic** shows general permissions. **Advanced** shows each permission type for finer control. |
 | Permissions | Select permissions to apply to the chosen Who. Choices change depending on the Permissions Type. |
 | Flags Type | Select the set of ACE inheritance Flags to display. Basic shows nonspecific inheritance options. Advanced shows specific inheritance settings for finer control. |
-| Flags | How this ACE is applied to newly created directories and files within the dataset. Basic flags enable or disable ACE inheritance. Advanced flags allow further control of how the ACE is applied to files and directories in the dataset. |
-| Strip ACL | This action removes all ACLs from the current dataset and any directories or files contained within this dataset. Stripping the ACL resets dataset permissions. This can make data inaccessible until new permissions are created. |
-| Use ACL Preset | Choosing an entry loads a preset ACL that is configured to match general permissions situations. The chosen preset ACL will **REPLACE** the ACL currently displayed in the form and delete any unsaved changes. The preset options are *NFS4_OPEN*, *NFS4_RESTRICTED*, or *NFS4_HOME*.
+| Flags | How this ACE applies to newly created directories and files within the dataset. Basic flags enable or disable ACE inheritance. Advanced flags allow further control of how the ACE applies to files and directories in the dataset. |
+| Strip ACL | This action removes all ACLs from the current dataset and any directories or files contained within this dataset. Stripping the ACL resets dataset permissions and can make data inaccessible until you create new permissions. |
+| Use ACL Preset | Choosing an entry loads a preset ACL configured to match general permissions situations. The chosen preset will **REPLACE** the ACL currently displayed in the form and delete any unsaved changes. The preset options are *NFS4_OPEN*, *NFS4_RESTRICTED*, or *NFS4_HOME*.
 {{< /tab >}}
 {{< /tabs >}}
 
 ### Permissions and Flags
 
-Permissions are divided between Basic and Advanced options. The basic options are commonly used groups of the advanced options.
+TrueNAS divides permissions into Basic and Advanced options. The basic options are commonly-used groups of advanced options.
 
 Basic inheritance flags only enable or disable ACE inheritance. Advanced flags offer finer control for applying an ACE to new files or directories.
 
@@ -183,7 +183,9 @@ Basic inheritance flags only enable or disable ACE inheritance. Advanced flags o
 | File Inherit (`f`) | The ACE is inherited with subdirectories and files. It applies to new files. | 
 | Directory Inherit (`d`) | New subdirectories inherit the full ACE. | 
 | No Propagate Inherit (`n`) | The ACE can only be inherited once. | 
-| Inherit Only (`i`) | Remove the ACE from permission checks but allow it to be inherited by new files or subdirectories. Inherit Only is removed from these new objects. | 
-| Inherited (`I`) | Set when the ACE has been inherited from another dataset. | 
+| Inherit Only (`i`) | Remove the ACE from permission checks but allow new files or subdirectories to inherit it. Inherit Only is removed from these new objects. | 
+| Inherited (`I`) | Set when this dataset inherits the ACE from another dataset. | 
 {{< /tab >}}
 {{< /tabs >}}
+
+
