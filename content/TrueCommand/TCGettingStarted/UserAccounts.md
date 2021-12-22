@@ -33,6 +33,22 @@ The administrator has to provide these credentials to the intended user.
 
 ![UsersAdd](/images/TrueCommand/2.0/UsersNewUser.png "Adding a new user")
 
+## Two Factor Authentication
+
+Two-factor authentication is an used to double check the authentication of an account user. The first verification occurs when the user logs in with a username and a password. Two-factor authentication adds an extra step in the process, a second security layer, that re-confirms their identity. If basic password security measures are in place, two-factor authentication will make it more difficult for unverified users to log in to your account.
+
+Enabling Two Factor Authentication requires an email address that has been Authenticated. Authenticating a User's email address requires that [SMTP Email]({{<relref "/TrueCommand/alerts/alertmanage.md" >}}) has been set up in Settings -> Alert Services.
+
+To verify the users email address and set 2FA:
+
+![2faSet](/images/TrueCommand/2.0/2fa_setup.png "Setting Two Factor Authentication")
+
+* Enter the email address for the User and click **Save Changes**.
+* Check the User's email account for the verification code. Copy the code from the email.
+* Paste the code in the *Confirmation code* field in the Confirmation window. Click **OK**.
+* Set *Enable 2FA* and click **Save Changes**.
+
+
 ## Automatic Creation with LDAP
 
 {{< include file="static/includes/TrueCommand/2.0/TrueCommandLDAP.md.part" markdown="true" >}}
@@ -45,7 +61,7 @@ TrueCommand applies team permissions to any user added to a team, but setting a 
 For more indepth information regarding teams, see the [Teams Documentation]({{< relref "/TrueCommand/Administration/Users.md" >}}).
 
 To limit the access that non-administrative accounts have to the connected systems, configure the **System Access** and/or **System Groups** sections.
-This requires that [system connections]({{< relref "/TrueCommand/TCGettingStarted/ConnectingTrueNAS.md#connecting-systems-to-truecommand" >}}) and/or system groups have already been configured in TrueCommand.
+This requires that [system connections]({{< relref "/content/TrueCommand/Administration/Systems.md" >}}) and/or system groups have already been configured in TrueCommand.
 
 Click *ADD SYSTEM* and select a system from the drop-down to give the user access to that system.
 To restrict the user to only viewing details about the system, set the *read* permission.

@@ -1,20 +1,24 @@
 ---
-title: "Connecting TrueNAS Systems"
+title: "Connecting Your First TrueNAS System"
 weight: 40
 ---
 
 {{< toc >}}
 
-## Connecting Systems to TrueCommand
+## Connecting Your First TrueNAS System
 
-To connect a system to TrueCommand, open the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and click **Systems**.
-This menu is organized into two tabs: **Systems** and **System Groups**.
-The **Systems** and **System Groups** tabs contain all the options to connect and organize systems in TrueCommand.
-All added systems are listed in the **Systems** tab with the current connection status.
+![SystemsAddFirstSystem](/images/TrueCommand/2.0/SystemsAddFirstSystem.png "Adding Your First System")
 
-### Adding a System Manually
+To connect your first system to TrueCommand, click **NEW SYSTEM** on the dashboard.
 
-To connect a new system, click **+ NEW SYSTEM**.
+![SystemsAddFirstSystemForm](/images/TrueCommand/2.0/SystemsAddFirstSystemForm.png "Adding Your First System")
+
+| Setting | Description |
+|------|------|
+| IP Address or Hostname | The system's IP address or DNS hostname. |
+| Nickname | Required short-form identifier for this system. You cannot use system nicknames more than once. |
+| Password / API Key | New password or API key. TrueCommand hades characters for security. |
+| Password / API Key Confirm | Re-enter the password or API key. |
 
 Enter the system IP address or DNS hostname, type a system nickname, and the system password.
 If you make a mistake, click **RESET FORM** to clear all entries and start over. .
@@ -53,15 +57,23 @@ Click **Yes** to confirm the deletion.
 Log into the ixSystems cloud account and click **Manage**.
 Under **Service Details**, copy the **TrueCommand API Key**.
 
-![CloudSubscriptionServiceDetailsWireGuardClient](/images/TrueCommand/Cloud/CloudSubscriptionServiceDetailsWireGuardClient.png "Account Services: TrueCommand API Key")
+![SystemsAddFirstSystemCloudAccount](/images/TrueCommand/2.0/SystemsAddFirstSystemCloudAccount.png "Connecting from TrueCommand Cloud")
+
+Log into your [ixSystems cloud account](https://portal.ixsystems.com) and click **Manage** next to your TrueCommand subscription.
+
+![SystemsAddFirstSystemAPIKey](/images/TrueCommand/2.0/SystemsAddFirstSystemAPIKey.png "Connecting from TrueCommand Cloud")
+
+Copy the **API Key** under **Service Details**.
 
 ### Connecting from the TrueNAS UI
 
 Log into a TrueNAS system and click the TrueCommand icon in the upper right.
 
+![SystemsAddFirstSystemTCButton](/images/TrueCommand/2.0/SystemsAddFirstSystemTCButton.png "Connecting from TrueNAS")
+
 Paste the TrueCommand API Key copied from the iXsystems Account Portal into the TrueNAS dialog window. 
 
-![TrueCommandCloudConnectAPIKey](/images/SCALE/TrueCommandCloudConnectAPIKey.png "Connecting TrueNAS to TrueCommand Cloud")
+![SystemsAddFirstSystemTCConnect](/images/TrueCommand/2.0/SystemsAddFirstSystemTCConnect.png "Connecting TrueNAS to TrueCommand Cloud")
 
 ### Approve the Connection Request
 

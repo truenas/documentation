@@ -10,7 +10,7 @@ The **Reports** page customizes system metrics charts for data analysis.
 
 ![ReportsList](/images/TrueCommand/2.0/ReportsList.png "Reports List")
 
-You must [create a report]({{< relref "Generation.md" >}}) before you can run the report.
+You must [create a report]({{< relref "creation.md" >}}) before you can run the report.
 
 ## Generating a report
 
@@ -26,7 +26,7 @@ Select the beginning and end dates for the report using the dropdown.
 
 ![ReportsGenerateDateWidgetSelectDate](/images/TrueCommand/2.0/ReportsGenerateDateWidgetSelectDate.png "Reports Generate Date Widget Select Date")
 
-Once the date range is set, use the dropdown to select which systems you want included in the report.
+Once the date range is set, use the **systems** dropdown to select which systems you want included in the report.
 
 ![ReportsGenerateDateWidgetSelectSystems](/images/TrueCommand/2.0/ReportsGenerateDateWidgetSelectSystems.png "Reports Generate Date Widget Select Systems")
 
