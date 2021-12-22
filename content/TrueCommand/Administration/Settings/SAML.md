@@ -101,6 +101,9 @@ This procedure assumes the Windows administrator user is QE. Substitute your sys
         
       4. Type the following string exactly as `-----BEGIN CERTIFICATE-----` before the certificate with five dashes before and after..
       5. Type the following string exactly as `-----END CERTIFICATE-----` after the certificate with five dashes before and after.
+      
+         ![EditedTcCertificate](/images/SAML/EditedTcCertificate.png "Edited Tc Certificate")
+      
       6. Select Save (or Ctrl-S) and then close Notepad.
 
    c. Close Powershell.
