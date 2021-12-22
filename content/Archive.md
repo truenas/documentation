@@ -46,6 +46,7 @@ All documentation provided here is End of Life (EoL) and no longer receives **an
 <div class="dropdown">
   <button class="dropbtn">TrueCommand</button>
   <div class="dropdown-content">
+    <a href="https://www.truenas.com/docs/files/TrueCommand2.0Documentation.pdf">2.0</a>
     <a href="https://www.truenas.com/docs/files/TrueCommand1.3Docs.pdf">1.3</a>
     <a href="https://www.ixsystems.com/documentation/truecommand/1.2/TrueCommand-Guide-1.2_screen.pdf">1.2</a>
     <a href="https://www.ixsystems.com/documentation/truecommand/1.1/TrueCommand-Guide-1.1_screen.pdf">1.1</a>
