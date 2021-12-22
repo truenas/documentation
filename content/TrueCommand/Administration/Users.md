@@ -37,7 +37,7 @@ To edit a user click the edit icon <i class="material-icons" aria-hidden="true" 
 
 ![Users Edit](/images/TrueCommand/2.0/UsersEditUser21.png "Users Edit")
 
-There are several different elements that you can configure for a user, including the user's avatar, personal details, team membership, and system permissions.
+There are several different elements that you can configure for a user, including the user's avatar, personal details, add a contact email address, team membership, and system permissions.
 
 ### User Details
 
@@ -58,6 +58,11 @@ You can change the account password by typing the new password into both the **P
 {{< tab "Email" >}}
 
 You can set up or change a user's email on this screen. If [SMTP]({{< relfef "TrueCommand/Alerts/AlertManage.md" >}}) is not set up an error message displays at the bottom of the screen stating **Failed to send email. Are your SMTP settings configured?** Admins can click the **CONFIGURE** button to open the SMTP settings window. Note, before adding a user's email here verify the SMTP service is set up on the **Alert Services** screen.
+
+{{< /tab >}}
+{{< "Two Factor Authentication" >}}
+
+You can set [Two Factor Authentication]({{< relref "truecommand/tcgettingstarted/useraccounts.md" >}}) for the user which requires the user to enter a validation code emailed to them after they enter their username, password and click **SIGN IN** on the login screen.
 
 {{< /tab >}}
 {{< /tabs >}}
