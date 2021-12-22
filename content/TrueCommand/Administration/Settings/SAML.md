@@ -84,7 +84,7 @@ This procedure assumes the Windows administrator user is QE. Substitute your sys
 
 3. Modify the TrueCommand Certificate (tc.cer).
 
-   a. Open PowerShell and type Invoke -webRequest -uri http://IP:PORT/saml/metadata -outfile tc.cer where IP:PORT is your TrueCommand system’s IP address/port number.
+   a. Open PowerShell and type `Invoke -webRequest -uri http://IP:PORT/saml/metadata -outfile tc.cer` where IP:PORT is your TrueCommand system’s IP address/port number.
 
       ![OpenPowershellTypeInvokeCommand](/images/SAML/OpenPowershellTypeInvokeCommand.png "Open Powershell Type Invoke Command")
 
@@ -166,7 +166,7 @@ This procedure assumes the Windows administrator user is QE. Substitute your sys
    c. Click the down arrow for the Incoming claim type field and select Windows account type on the list of displayed options.
 
    d. Click the down arrow for the Outgoing claim type field and select Name ID on the list of displayed options.
-   
+
    e. Select Persistent Identifier on the Outgoing name ID format list. Click Finish.
 
    ![EditClaimIssuancePolicySetPersistentIdentifierCropped](/images/SAML/EditClaimIssuancePolicySetPersistentIdentifierCropped.png "Edit Claim Issuance Policy Set Persistent Identifier Cropped")
