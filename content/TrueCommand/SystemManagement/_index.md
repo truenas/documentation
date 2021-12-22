@@ -50,6 +50,7 @@ Clicking *APPS* (Scale) or *Jails* (TrueNAS 12.x) opens a window that allows use
 The *Options* menu has several shortcuts to simple tasks.
 
 * **Edit** opens the edit window for the TrueNAS connection details and nickname.
+* **Users and Groups** lets users manage NAS users and groups.
 * **Update** updates the TrueNAS system.
 * **Launch TrueNAS Interface** opens a new tab for the full TrueNAS Web UI.
 * **iSCSI Volumes** opens the specific TrueNAS's iSCSI management page.
