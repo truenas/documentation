@@ -8,7 +8,13 @@ weight: 10
 The Active Directory (AD) service shares resources in a Windows network.
 AD provides authentication and authorization services for the users in a network, eliminating the need to recreate the user accounts on TrueNAS.
 
-Users can configure AD services on a Windows server running Windows Server 2000 or later, or on a Unix-like operating system running [Samba version 4](https://wiki.samba.org/index.php/Setting_up_Samba_as_an_Active_Directory_Domain_Controller#Provisioning_a_Samba_Active_Directory).
+Once joined to an AD domain, you can use domain users and groups in local ACLs on files and directories. 
+You can also set up shares to act as a file server.
+
+Joining an AD domain also configures the Privileged Access Manager (PAM) to let domain users log on via SSH or authenticate to local services.
+
+Users can configure AD services on Windows or Unix-like operating systems running [Samba version 4](https://wiki.samba.org/index.php/Setting_up_Samba_as_an_Active_Directory_Domain_Controller#Provisioning_a_Samba_Active_Directory).
+
 To configure a connection, you will need to know the Active Directory domain controller's domain and that system's account credentials.
 
 ## Preparation
@@ -110,7 +116,7 @@ While SFTP is recommended over FTP, joined systems do allow FTP access. Please k
 
 If the cache becomes out of sync or fewer users than expected are available in the permissions editors, resync it using **Directory Service > Active Directory > REBUILD DIRECTORY SERVICE CACHE**.
 
-If the Windows server version is lower than 2008 R2, try creating a **Computer** entry on the Windows server Organizational Unit (OU).
+If you are using Windows Server with 2008 R2 or older, try creating a **Computer** entry on the Windows server Organizational Unit (OU).
 When creating this entry, enter the TrueNAS hostname in the name field.
 Make sure it is the same name as the one set in the *Hostname* field in **Network > Global Configuration**, and the *NetBIOS alias* from **Directory Service > Active Directory > Advanced Options**.
 

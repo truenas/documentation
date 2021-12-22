@@ -56,9 +56,7 @@ There are two options after clicking *SAVE CONFIG*:
 ## Backup Contents
 
 Backup configs store information for accounts, network, services, and system settings, as well as settings for tasks and virtual machines.   
-  
 Backup configs also index ID's and credentials for account, network, and system services.
-
 Users can view the contents of the backup config using database viewing software like [SQLite DB Browser](https://sqlitebrowser.org/dl/).
 
 ## Resetting and Restoring Configurations
