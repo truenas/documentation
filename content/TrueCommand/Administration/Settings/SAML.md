@@ -104,6 +104,7 @@ This procedure assumes the Windows administrator user is QE. Substitute your sys
       6. Select Save (or Ctrl-S) and then close Notepad.
 
    c. Close Powershell.
+
    d. Select Browse on the Configure Certificate window. The Encryption Certificate window opens. 
 
       ![WizardConfigureCertificateSelectBrowseCropped](/images/SAML/WizardConfigureCertificateSelectBrowseCropped.png "Wizard Configure Certificate Select Browse Cropped")
@@ -117,6 +118,7 @@ This procedure assumes the Windows administrator user is QE. Substitute your sys
    ![WizardSelectEnableSupportForSAML2_0WebSSOProtocolCropped](/images/SAML/WizardSelectEnableSupportForSAML2_0WebSSOProtocolCropped.png "Wizard Select Enable Support For SAML 2.0 Web SSO Protocol Cropped")
         
    b. Type or copy/paste the TrueCommand login URL http://IP:PORT/saml/acs in the Relying party SAML 2.0 SSO service URL field. Where IP:PORT is your TrueCommand system IP and port address.
+
    c. Click **Next**. The Configure Identifiers window displays.
 
 5. Configure the SAML identifiers.
@@ -126,6 +128,7 @@ This procedure assumes the Windows administrator user is QE. Substitute your sys
    ![WizardConfigureIdentifiersTypeNameCropped](/images/SAML/WizardConfigureIdentifiersTypeNameCropped.png "Wizard Configure Identifiers Type Name Cropped")
         
    b. Click **Next**. The Choose Access Control Party window displays. 
+
    c. Click **Next**. The Ready to Add Trust window displays. Click **Next** and then click **Finish**. 
 
    ![WizardClickFinishCropped](/images/SAML/WizardClickFinishCropped.png "Wizard Click Finish Cropped")
@@ -137,11 +140,13 @@ This procedure assumes the Windows administrator user is QE. Substitute your sys
    ![SelectRelyingPartyTrustAndProperties](/images/SAML/SelectRelyingPartyTrustAndProperties.png "Select Relying Party Trust And Properties")
         
    b. Select the Endpoints tab and click **Edit**. The Edit Endpoint window displays.
+
    c. Change the Index value to 1 and click **OK**. 
 
    ![EditPropertiesEndpointsChangeIndexValueCropped](/images/SAML/EditPropertiesEndpointsChangeIndexValueCropped.png "Edit Properties Endpoints Change Index Value Cropped")
        
    d. Click the **Add SAML** button. The Add Endpoint window displays.
+
    e. Type or use copy/paste to input the TrueCommand URL http://IP:PORT/saml/slo in the Trusted URL field.
 
    ![EditPropertiesEndpointsEnterTrustedURLSLOCropped](/images/SAML/EditPropertiesEndpointsEnterTrustedURLSLOCropped.png "Edit Properties Endpoints Enter Trusted URL SLO Cropped")
@@ -159,7 +164,9 @@ This procedure assumes the Windows administrator user is QE. Substitute your sys
    ![EditClaimIssuancePolicyAddRuleTransformAnIncomingClaimCropped](/images/SAML/EditClaimIssuancePolicyAddRuleTransformAnIncomingClaimCropped.png "Edit Claim Issuance Policy Add Rule Transform An Incoming Claim Cropped")
         
    c. Click the down arrow for the Incoming claim type field and select Windows account type on the list of displayed options.
+
    d. Click the down arrow for the Outgoing claim type field and select Name ID on the list of displayed options.
+   
    e. Select Persistent Identifier on the Outgoing name ID format list. Click Finish.
 
    ![EditClaimIssuancePolicySetPersistentIdentifierCropped](/images/SAML/EditClaimIssuancePolicySetPersistentIdentifierCropped.png "Edit Claim Issuance Policy Set Persistent Identifier Cropped")
