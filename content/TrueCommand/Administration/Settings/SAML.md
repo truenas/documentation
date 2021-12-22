@@ -100,7 +100,7 @@ This procedure assumes the Windows administrator user is QE. Substitute your sys
          ![OpenTcCertificate](/images/SAML/OpenTcCertificate.png "OpenTcCertificate")
         
       4. Type the following string exactly as `-----BEGIN CERTIFICATE-----` before the certificate with five dashes before and after..
-      5. Type the following string exactly as `-----END CERTIFICATE-----` after the certificate with five dashes before and after.[insert image 08b EditedTcCertificate
+      5. Type the following string exactly as `-----END CERTIFICATE-----` after the certificate with five dashes before and after.
       6. Select Save (or Ctrl-S) and then close Notepad.
 
    c. Close Powershell.
