@@ -7,43 +7,51 @@ geekdocCollapseSection: true
 
 {{< toc >}}
 
-The **Administration** page shows additional system details and offers a variety of TrueCommand configuration options.
-This page is available to users with administrator permissions by opening the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and clicking *Administration*.
-The page is organized into **About**, **Certificates**, and **Configuration** tabs.
+The **Administration** page, available to users with administrator permissions, displays additional system details and offers a variety of TrueCommand configuration options.
+Click the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> Icon and select **Administration** to access the **Administration** page. It is organized into function tabs **About**, **Certificates**, and **Configuration**.
 
 {{< tabs "Administration Tabs" >}}
 {{< tab "About" >}}
-The **About** tab contains the current TrueCommand system ID and version, license details, and contact information for iXsystems.
+The **About** tab contains the current TrueCommand system ID and version, contact information for iXsystems and license details. 
 
 ![AdministrationAbout](/images/TrueCommand/1.3/AdministrationAbout.png "Administration Configuration")
 
 ### Updating the License
 
 You can expand TrueCommand to monitor more disks by upgrading or purchasing a license from iXsystems.
-Clicking *GET A LICENSE* opens a new browser tab to purchase a TrueCommand license.
+Click **GET A LICENSE** to open a new browser tab to purchase a TrueCommand license.
 You can also contact iXsystems to upgrade the current license.
 
 After you purchase or upgrade the license, you must upload the new license to TrueCommand.
-Click *Browse…* to open a file browser on your local system.
-Select the new license file to upload and click *UPLOAD LICENSE* to apply the new license to TrueCommand.
+Click **Browse…** to open a file browser on your local system.
+Select the new license file to upload and click **UPLOAD LICENSE** to apply the new license to TrueCommand.
 {{< /tab >}}
 {{< tab "Certificates" >}}
 The **Certificates** tab shows the certificates and Certificate Authorities (CAs) TrueCommand uses and has options to upload or import a certificate or CA.
 
 ![AdministrationCertificates](/images/TrueCommand/1.3/AdministrationCertificates.png "Administration: Certificates")
 
-Clicking *Browse...* opens a dialog to upload a file from the local system.
-Selecting *Plain text* allows you to copy and paste the file raw text instead of uploading a file.
+Clicking **Browse...** opens a dialog to upload a file from the local system.
+Selecting **Plain text** allows you to copy and paste the file raw text instead of uploading a file.
 {{< /tab >}}
 {{< tab "Configuration" >}}
-The Configuration tab contains options to configure various features of TrueCommand.
+The **Configuration** tab contains options to configure various features of TrueCommand. The configuration options accessible are: 
 
-![Administration About](/images/TrueCommand/1.3/AdministrationConfiguration.png "Administration: Configuration")
+* General Options
+* SSL Options
+* Alert Options
+* LDAP
+* SAML
+* Telemetry
 
-Changing any options requires clicking *SAVE* to save the new system configuration.
-To reset fields back to their previous values, click *CANCEL*.
+![Administration About](/images/TrueCommand/2.1/AdministrationConfiguration1.png "Administration: Configuration1")
 
-General options include how frequently TrueCommand measures systems statistics, how long to store system statistics, and the number of database backups from an iXsystems NAS to store.
+Scroll down to reveal all options on the **Configuration** tab.
+
+After changing any options, click ***SAVE** at the bottom of the tab to save the new system configuration.
+To reset fields back to their previous values, click **CANCEL**.
+
+General options include how long TrueCommand stores system statistics and the number of database backups from an iXsystems NAS to store.
 
 ### SSL options
 
@@ -55,24 +63,20 @@ This feature is only available for local installations or containerized TrueComm
 
 ### Alert Options
 
-You can adjust the alert levels that TrueCommand shows from a connected NAS to tune the system messages shown according to your use case.
+You can adjust the alert levels that TrueCommand shows from a connected NAS to tune the system messages displayed according to your use case.
 Choose an alert category to ignore.
-Multiple categories can be selected.
+You can select multiple categories.
 
 ### LDAP
 
 {{< include file="static/includes/TrueCommand/2.0/TrueCommandLDAP.md.part" markdown="true" >}}
 
-
-Enabling *Allow LDAP user creation* means TrueCommand creates user accounts when someone logs in to the User Interface with their LDAP credentials.
-*JOIN TEAM* automatically adds LDAP users to specific TrueCommand teams.
-
 ### Telemetry
 
 TrueCommand reports some basic usage telemetry back to iXsystems for product improvement analysis. These metrics are completely anonymous.
 
-Click the *PREVIEW* button to see exactly what your system is sending.<br>
-Check the *Disable Telemetry* check box and click the *SAVE* button to disable this feature.
+Click the **PREVIEW** button to see exactly what your system is sending.<br>
+To disable this feature, select the **Disable Telemetry** checkbox and click the**SAVE** button.
 
 {{< /tab >}}
 {{< /tabs >}}
