@@ -45,7 +45,7 @@ To view all alerts from the **Systems** screen system list, click the **Configur
 
 Just as with the systems detail alerts, click on the <mat-icon _ngcontent-bbg-c138="" role="img" fontset="mdi" fonticon="mdi-comment-text-multiple" class="mat-icon notranslate mdi mdi-comment-text-multiple mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" data-mat-icon-name="mdi-comment-text-multiple" data-mat-icon-namespace="mdi"></mat-icon> icon in the **COMMENTS** column to display the **Notice Details** side panel with information about the alert and any user comments made.
 
-### Resolving Alerts
+## Resolving Alerts
 
 You can move an alert in the **All Alerts** screen to the **RESOLVED** column by clicking the **Resolve** <i class="material-icons" aria-hidden="true" title="Check">check</i> to the right of the delete icon.
 
@@ -59,7 +59,7 @@ To resolve an alert on the system detail screen, click on the **Resolve alert no
 
 ![SystemResolveAlertNotice](/images/TrueCommand/2.1/SystemResolveAlertNotice.png "System Resolve Alert Notice")
 
-### Deleting Alerts
+## Deleting Alerts
 
 Administrator accounts can delete an alert by clicking the delete icon <i class="material-icons" aria-hidden="true" title="Delete">delete</i>.
 Deleting an alert cannot be undone.
@@ -76,12 +76,11 @@ To view all TrueCommand alert rules, open the **Configure** <i class="material-i
 
 ![AlertRulesScreen](/images/TrueCommand/2.1/AlertRulesScreen.png "Alert Rules Screen")
 
-Details about each TrueCommand alert rule display on this page, including the user account that created the rule.
+Details about each TrueCommand alert rule displays on this page, including the user account that created the rule.
 
 ## Managing Alert Rules
 
 Users can activate, suspend, edit, or delete alert rules using either an administrator account, or the account that created the rule.
-
 Users can create new TrueCommand alert rules to monitor a wide variety of system information and generate a TrueCommand alert if specific conditions occur.
 To create a new alert rule, click **+ NEW ALERT RULE** and follow the creation wizard:
 
@@ -91,8 +90,8 @@ To create a new rule:
 
 * Specify the **Alert Options**:
   * Give it a name by typing into the **Alert Rule Name** field.
-  * Select a system from the **System** dropdown list. 
-    {{< hint info >}} 
+  * Select a system from the **System** dropdown list.
+    {{< hint info >}}
     The rule applies to the selected system(s). Appropriate system permissions are required for non-administrative user accounts.
     {{< /hint >}}
   * Select the alert type on the **Priority** dropdown list. Choose **Information**, **Warning**, or **Critical**.
@@ -122,8 +121,8 @@ Individual user accounts can use these services to manage how that account is no
 
 To configure an alert service plugin, open the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and click **Alert Services**. There are two services listed:
 
-* PagerDuty to configure a pager to receive an alert
-* SMTP Email to configure system and user email services
+* **PagerDuty** to configure a pager to receive an alert
+* **SMTP Email** to configure system and user email services
 
 ![Alert Services Screen](/images/TrueCommand/2.1/AlertServiceScreen.png "Alert Services")
 
@@ -133,11 +132,11 @@ Each plugin has three options:
 * **Configure plugin** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> 
 * **Clear plugin configuration** <mat-icon _ngcontent-ath-c200="" role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true">remove_circle</mat-icon> 
 
-{{< tabs "Services" >}}
-{{< tab "SMTP Email" >}}
+
+## Configurtion SMTP Email
  
 {{< hint info >}}
-Before proceding, verify that the sending mailserver has TLS enabled.  
+Before proceeding, verify that the sending mailserver has TLS enabled.  
 TrueCommand cannot send emails through a mailserver without TLS.
 An email address must exist on the users profile page to recieve emails.
 {{< /hint >}}
@@ -148,15 +147,15 @@ To properly configure SMTP email:
    
    ![AlertServicesSMTPEmailptions](/images/TrueCommand/2.0/AlertServicesSMTPEmailptions.png "Alert Services: SMTP Email options")
 
-   * **Mailserver** for exampel *smtp.gmail.com*
+   * **Mailserver** for example *smtp.gmail.com*
    * **Mailserver port** number
    * **Auth user** email address for plain authentication, for example, *adminuser@yourmail.com*
    * **Auth pass** password for the plain authentication; for a *No-Auth* SMTP configuration, leave the password field blank
    * **From** is the what sends the eamil (i.e., no-reply@TrueCommand.io),or allows you to customize the sender field of the email 
-  
+
   Click **Test** on the **SMTP Email** configuration screen to verify that the configuarion is correct.
-If you did not receive a test alert email, check the values entered for accuracy.
-  
+  If you did not receive a test alert email, check the values entered for accuracy.
+
 2. Click on the avatar to the right of the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and then click **Profile** from the dropdown list.
      
    ![EditUserProfile](/images/TrueCommand/2.1/EditUserProfile.png "Edit User Profile")
@@ -170,8 +169,7 @@ If you did not receive a test alert email, check the values entered for accuracy
    
    ![SMTPSetupVerifyEmail](/images/TrueCommand/2.1/SMTPSetupVerifyEmail.png "SMTP Setup Verify Email")
 
-{{< /tab >}}
-{{< tab "PagerDuty" >}}
+## Configuring PagerDuty
 
 Open the **Configure Plugin** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> for PagerDuty. In the
 **Authtoken** section, enter your **Service Integration Key from PagerDuty**.  If you have an active subscription with PagerDuty, this key should be available to you. 
@@ -185,8 +183,5 @@ You should see the triggered test alert from TrueCommand.
 ![PagerDutyTestConfirm](/images/TrueCommand/2.1/PagerDutyTestConfirm.png "Confirming the Pager Duty test")
 
 If you did not receive a test alert, check the **Service Integration Key from PagerDuty** for accuracy in the plugin configuration section of the alert service.
-{{< /tab >}}
-{{< /tabs >}}
-
 {{< /tab >}}
 {{< /tabs >}}
