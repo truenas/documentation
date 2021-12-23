@@ -46,7 +46,6 @@ To verify the users email address and set 2FA:
 * Paste the code in the **Confirmation code** field in the confirmation window. Click **OK**.
 * Set **Enable 2FA** and click **Save Changes**.
 
-
 ## Automatic Creation with LDAP
 
 {{< include file="static/includes/TrueCommand/2.0/TrueCommandLDAP.md.part" markdown="true" >}}
