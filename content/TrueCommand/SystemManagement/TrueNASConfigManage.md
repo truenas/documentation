@@ -18,7 +18,7 @@ Click on the system name of a TrueNAS server to open the single system view.
 
 Click the **Config Backups** button to open the config backup window.
 
-The **Configuration Backup Window** displays a list of backups along with the time and date of their creation.
+The **Configuration Backup** window displays a list of backups along with the time and date of their creation.
 
 
 ### Create a Config Backup
@@ -28,12 +28,12 @@ To create a new backup, click **Create Backup**.
 ![ConfigBackupsCreate](/images/TrueCommand/2.0/ConfigBackupsCreate.png "Config Backups Create")
 
 A maximum of one config backup per day can exist.  
-If a prior config backup for the current day exists, creating a new one will overwrite the previous backup.
+If a prior config backup for the current day exists, creating a new one overwrites the previous backup.
 
 {{< hint info >}}
 By default, TrueCommand retains seven backups.
 Local instances of TrueCommand can raise or lower this figure as desired. 
-This can be changed in the **Configuration** Tab of the **Administration** Page.
+To change this go to the **Configuration** tab of the **Administration** Page.
 {{< /hint >}}
 
 ### Apply a Config Backup
