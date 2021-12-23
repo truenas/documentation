@@ -92,7 +92,7 @@ To create a new rule:
 * Specify the **Alert Options**:
   * Give it a name by typing into the **Alert Rule Name** field.
   * Select a system from the **System** dropdown list. 
-    {{< hint info >}}
+    {{< hint info >}} 
     The rule applies to the selected system(s). Appropriate system permissions are required for non-administrative user accounts.
     {{< /hint >}}
   * Select the alert type on the **Priority** dropdown list. Choose **Information**, **Warning**, or **Critical**.
@@ -139,7 +139,6 @@ Each plugin has three options:
 {{< hint info >}}
 Before proceding, verify that the sending mailserver has TLS enabled.  
 TrueCommand cannot send emails through a mailserver without TLS.
-
 An email address must exist on the users profile page to recieve emails.
 {{< /hint >}}
 
@@ -163,14 +162,12 @@ If you did not receive a test alert email, check the values entered for accuracy
    ![EditUserProfile](/images/TrueCommand/2.1/EditUserProfile.png "Edit User Profile")
 
 3. Type the email for that user in the **Email** field and click **SAVE CHANGES**.
-   
    {{< hint info >}}
    The first time you set up SMTP email a **VERIFY EMAIL** button displays below the **Email** field to the left of the **Enable 2FA** checkbox.
    {{< /hint >}}
-
    The system should automatically send a test email to the specified email address but if not click **VERIFY EMAIL**.  
    A **Confirmation** dialog box displays with a field where you type or copy/paste the code sent in the email. Doing this verifies the email.
-
+   
    ![SMTPSetupVerifyEmail](/images/TrueCommand/2.1/SMTPSetupVerifyEmail.png "SMTP Setup Verify Email")
 
 {{< /tab >}}
@@ -184,11 +181,12 @@ Enter a **Title for incident reports** if desired. Click **TEST**.
 
 Login to your PagerDuty account and check for open incidents.
 You should see the triggered test alert from TrueCommand.
+
+![PagerDutyTestConfirm](/images/TrueCommand/2.1/PagerDutyTestConfirm.png "Confirming the Pager Duty test")
+
 If you did not receive a test alert, check the **Service Integration Key from PagerDuty** for accuracy in the plugin configuration section of the alert service.
-
-![PagerDutyTestConfirm](/images/TrueCommand/2.0/PagerDutyTestConfirm.png "Confirming the Pager Duty test")
-
 {{< /tab >}}
 {{< /tabs >}}
+
 {{< /tab >}}
 {{< /tabs >}}
