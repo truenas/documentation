@@ -1,6 +1,8 @@
 ---
 title: "Settings"
-weight: 50
+description: "TrueCommand configuration."
+weight: 30
+geekdocCollapseSection: true
 ---
 
 {{< toc >}}
