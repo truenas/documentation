@@ -47,7 +47,7 @@ To go back to the original contents of the fields, click **RESET FORM** before y
 
 {{< tabs "User Options Tabs" >}}
 {{< tab "Administrator" >}}
-You can select the **TureCommand Administrator** checkbox to designate the account as an administrator. 
+You can select the **TrueCommand Administrator** checkbox to designate the account as an administrator. 
 
 {{< /tab >}}
 {{< tab "Change Password" >}}
@@ -57,10 +57,10 @@ You can change the account password by typing the new password into both the **P
 {{< /tab >}}
 {{< tab "Email" >}}
 
-You can set up or change a user's email on this screen. If [SMTP]({{< relfef "TrueCommand/Alerts/AlertManage.md" >}}) is not set up an error message displays at the bottom of the screen stating **Failed to send email. Are your SMTP settings configured?** Admins can click the **CONFIGURE** button to open the SMTP settings window. Note, before adding a user's email here verify the SMTP service is set up on the **Alert Services** screen.
+You can set up or change a user's email on this screen. If [SMTP]({{< relref "TrueCommand/Alerts/AlertManage.md" >}}) is not set up an error message displays at the bottom of the screen stating **Failed to send email. Are your SMTP settings configured?** Admins can click the **CONFIGURE** button to open the SMTP settings window. Note, before adding a user's email here verify the SMTP service is set up on the **Alert Services** screen.
 
 {{< /tab >}}
-{{< "Two Factor Authentication" >}}
+{{< tab "Two Factor Authentication" >}}
 
 You can set [Two Factor Authentication]({{< relref "truecommand/tcgettingstarted/useraccounts.md" >}}) for the user which requires the user to enter a validation code emailed to them after they enter their username, password and click **SIGN IN** on the login screen.
 
@@ -149,6 +149,6 @@ A popup displays to confirm deletion of the Team.
 
 ![Teams Delete](/images/TrueCommand/2.0/TeamsDeleteTeam.png "Teams Delete")
 
-{{< hint info>}}
+{{< hint info >}}
 Deleting a team does not remove users or systems assigned to that team.
 {{< /hint >}}
