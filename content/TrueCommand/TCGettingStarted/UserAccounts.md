@@ -33,7 +33,11 @@ The administrator must provide these credentials to the intended user.
 
 ## Two Factor Authentication
 
-Two-factor authentication is used to double check the authentication of an account user. The first verification occurs when the user logs in with a username and a password. Two-factor authentication adds an extra step in the process, a second security layer, that re-confirms their identity. If basic password security measures are in place, two-factor authentication makes it more difficult for unverified users to log in to your account.
+
+Two-factor authentication is used to double check the authentication of an account user.
+The first verification occurs when the user logs in with a username and a password.
+Two-factor authentication adds an extra step in the process, a second security layer, that re-confirms their identity.
+If basic password security measures are in place, two-factor authentication makes it more difficult for unverified users to log in to your account.
 
 Enabling Two Factor Authentication requires an email address that has been authenticated. Authenticating a user's email address requires first setting up [SMTP Email]({{<relref "/TrueCommand/alerts/alertmanage.md" >}}) in **Settings -> Alert Services**.
 
@@ -52,7 +56,7 @@ To verify the users email address and set 2FA:
 
 ## Teams and Permissions
 
-You can assign users to existing team by selecting one from from the **Teams** drop-down list which adds the user to that team.
+You can assign users to existing teams by selecting a team from the **Teams** drop-down to add the user to that team.
 You can assign users to multiple teams.
 TrueCommand applies team permissions to any user added to a team, but setting a specific permission for the user can override a related team permission.
 For more indepth information regarding teams, see the [Teams Documentation]({{< relref "/TrueCommand/Administration/Users.md" >}}).
