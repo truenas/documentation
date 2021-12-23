@@ -16,7 +16,7 @@ TrueCommand provides three alert screen options:
 
 Alerts inidications display on the **All Alerts**, **Dashboard** and **Systems** screens. 
 
-{{< tabs "Alert Screens >}}
+{{< tabs "Alert Screens" >}}
 {{< tab "All Alerts" >}}
 
 ## Viewing Alerts
