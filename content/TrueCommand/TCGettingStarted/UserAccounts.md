@@ -10,10 +10,9 @@ You can create user accounts in the TrueCommand interface. Alternatively, LDAP c
 
 User accounts also organize into *teams* for simultaneous management of large numbers or related user accounts.
 
-
 ## Administrator Accounts
 
-TrueCommand has two levels of accounts - Administrators and Users:
+TrueCommand has two levels of accounts - administrators and users:
 
 Administrators can add and remove users and servers.
 Administrators can also assign users to teams and servers to groups.
@@ -22,8 +21,7 @@ Administrators have full access to all alerts and reports.
 Users on the other other hand can only interact with the servers they are assigned by an administrator.  
 Users can configure alerts and generate reports on their respective systems.
 
-
-## Users and Teams
+## Users Accounts
 
 To create a new user account, open the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and click **Users > + NEW USER**.
 Enter a descriptive user name and an authentication method for the user.
@@ -35,7 +33,11 @@ The administrator must provide these credentials to the intended user.
 
 ## Two Factor Authentication
 
-Two-factor authentication is an used to double check the authentication of an account user. The first verification occurs when the user logs in with a username and a password. Two-factor authentication adds an extra step in the process, a second security layer, that re-confirms their identity. If basic password security measures are in place, two-factor authentication makes it more difficult for unverified users to log in to your account.
+
+Two-factor authentication is used to double check the authentication of an account user.
+The first verification occurs when the user logs in with a username and a password.
+Two-factor authentication adds an extra step in the process, a second security layer, that re-confirms their identity.
+If basic password security measures are in place, two-factor authentication makes it more difficult for unverified users to log in to your account.
 
 Enabling Two Factor Authentication requires an email address that has been authenticated. Authenticating a user's email address requires first setting up [SMTP Email]({{<relref "/TrueCommand/alerts/alertmanage.md" >}}) in **Settings -> Alert Services**.
 
@@ -48,14 +50,13 @@ To verify the users email address and set 2FA:
 * Paste the code in the **Confirmation code** field in the confirmation window. Click **OK**.
 * Set **Enable 2FA** and click **Save Changes**.
 
-
 ## Automatic Creation with LDAP
 
 {{< include file="static/includes/TrueCommand/2.0/TrueCommandLDAP.md.part" markdown="true" >}}
 
 ## Teams and Permissions
 
-You can assign users to existing *teams* by selecting a team from the **Teams** drop-down to add the user to that team.
+You can assign users to existing teams by selecting a team from the **Teams** drop-down to add the user to that team.
 You can assign users to multiple teams.
 TrueCommand applies team permissions to any user added to a team, but setting a specific permission for the user can override a related team permission.
 For more indepth information regarding teams, see the [Teams Documentation]({{< relref "/TrueCommand/Administration/Users.md" >}}).
@@ -69,5 +70,9 @@ To remove a user’s access to a particular system, click **-** (minus) on the d
 
 When system groups are available, an **ADD GROUP** button appears.
 Click **ADD GROUP** and select a group from the drop-down to give the user access to all the systems in that group.
-To assign user's type of access to the group, choose **read** or **read/write** permissions.
+To assign user's type of access to the group, choose *read* or ***read/write** permissions.
 To remove a user’s access to a particular system group, click **-** (minus) on the desired group.
+
+## Resetting a User Password at Login 
+
+{{< include file="static/includes/TrueCommand/2.1/ResettingUserPassword.md.part" markdown="true" >}}
