@@ -126,7 +126,7 @@ To configure an alert service plugin, open the **Configure** <i class="material-
 
 Each plugin has three options:
 
-* **Send test email** <mat-icon _ngcontent-ath-c575="" role="img" fontset="mdi" fonticon="mdi-test-tube" class="mat-icon notranslate mdi mdi-test-tube mat-icon-no-color" aria-hidden="true" ng-reflect-font-set="mdi" ng-reflect-font-icon="mdi-test-tube"></mat-icon> 
+* **Send test email** <span class="iconify" data-icon="mdi:test-tube"></span>
 * **Configure plugin** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> 
 * **Clear plugin configuration** <mat-icon _ngcontent-ath-c200="" role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true">remove_circle</mat-icon> 
 
