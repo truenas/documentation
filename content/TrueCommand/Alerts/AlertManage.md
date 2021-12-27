@@ -167,8 +167,8 @@ To properly configure SMTP email:
 
 ## Configuring PagerDuty
 
-Open the **Configure Plugin** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> for PagerDuty. In the
-**Authtoken** section, enter your **Service Integration Key from PagerDuty**.  If you have an active subscription with PagerDuty, this key should be available to you. 
+Open the **Configure Plugin** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> for PagerDuty.
+In the **Authtoken** section, enter your **Service Integration Key from PagerDuty**. If you have an active subscription with PagerDuty, this key should be available to you. 
 Enter a **Title for incident reports** if desired. Click **TEST**.
 
 ![AlertServicesPagerDutyOptions](/images/TrueCommand/2.0/AlertServicesPagerDutyOptions.png "Alert Services: Pager Duty options")
