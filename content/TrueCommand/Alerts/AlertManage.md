@@ -14,7 +14,7 @@ TrueCommand provides three alert screen options:
 * **Alert Rules** which allows adminstrators and users with permissions to configure alerts for monitored systems.
 * **Alert Services** which allows adminstrators to configure communication plugins.
 
-Alerts inidications display on the **All Alerts**, **Dashboard** and **Systems** screens. 
+Alerts indications display on the **All Alerts**, **Dashboard** and **Systems** screens. 
 
 {{< tabs "Alert Screens" >}}
 {{< tab "All Alerts" >}}
