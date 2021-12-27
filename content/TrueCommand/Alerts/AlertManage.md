@@ -37,7 +37,7 @@ To view all alerts for a single system, from the **Dashboard** and click on a sy
 
 ![DashboardSystemDetailAlerts](/images/TrueCommand/2.1/DashboardSystemDetailAlerts.png "Dashboard System Detail Alerts")
 
-Click the <mat-icon _ngcontent-bbg-c138="" role="img" fontset="mdi" fonticon="mdi-comment-text-multiple" class="mat-icon notranslate mdi mdi-comment-text-multiple mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" data-mat-icon-name="mdi-comment-text-multiple" data-mat-icon-namespace="mdi"></mat-icon> icon in the **Alerts** area of the system detail screen to display the **Notice Details** side panel with information about the alert and any user comments made.
+Click the <span class="iconify" data-icon="mdi:mdi-comment-text-multiple"></span> icon in the **Alerts** area of the system detail screen to display the **Notice Details** side panel with information about the alert and any user comments made.
 
 To view all alerts from the **Systems** screen system list, click the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and then click **Systems**.
 
