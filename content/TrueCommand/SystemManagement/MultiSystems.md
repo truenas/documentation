@@ -7,7 +7,7 @@ weight: 30
 
 TrueCommand has several multisystem management capabilities with more in development for future releases.
 
-TrueCommand 2.0 added cluster capability , as well as applying TrueNAS configurations to multiuple systems at once. 
+TrueCommand 2.0 added cluster capability, as well as applying TrueNAS configurations to multiuple systems at once. 
 
 ## Config Management
 
