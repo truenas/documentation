@@ -148,7 +148,7 @@ To properly configure SMTP email:
    * **Mailserver port** number
    * **Auth user** email address for plain authentication, for example, *adminuser@yourmail.com*
    * **Auth pass** password for the plain authentication; for a *No-Auth* SMTP configuration, leave the password field blank
-   * **From** is the what sends the eamil (i.e., no-reply@TrueCommand.io),or allows you to customize the sender field of the email 
+   * **From** is what sends the email (i.e., no-reply@TrueCommand.io), or allows you to customize the sender field of the email 
 
   Click **Test** on the **SMTP Email** configuration screen to verify that the configuarion is correct.
   If you did not receive a test alert email, check the values entered for accuracy.
