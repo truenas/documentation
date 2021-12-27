@@ -43,7 +43,7 @@ To view all alerts from the **Systems** screen system list, click the **Configur
 
 ![SystemsList](/images/TrueCommand/2.1/SystemsList.png "Systems List")
 
-Just as with the systems detail alerts, click on the <mat-icon _ngcontent-bbg-c138="" role="img" fontset="mdi" fonticon="mdi-comment-text-multiple" class="mat-icon notranslate mdi mdi-comment-text-multiple mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" data-mat-icon-name="mdi-comment-text-multiple" data-mat-icon-namespace="mdi"></mat-icon> icon in the **COMMENTS** column to display the **Notice Details** side panel with information about the alert and any user comments made.
+Just as with the systems detail alerts, click on the <span class="iconify" data-icon="mdi:comment-text-multiple"></span> icon in the **COMMENTS** column to display the **Notice Details** side panel with information about the alert and any user comments made.
 
 ## Resolving Alerts
 
