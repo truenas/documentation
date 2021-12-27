@@ -51,7 +51,7 @@ You can move an alert in the **All Alerts** screen to the **RESOLVED** column by
 
 To resolve multiple alerts, select each alert checkbox and then click **RESOLVE SELECTED**.
 
-Click the <mat-icon _ngcontent-bbg-c138="" role="img" fontset="mdi" fonticon="mdi-comment-text-multiple" class="mat-icon notranslate mdi mdi-comment-text-multiple mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" data-mat-icon-name="mdi-comment-text-multiple" data-mat-icon-namespace="mdi"></mat-icon> icon in the **COMMENTS** column to display the **Notice Details** side panel with information about the alert and any user comments made.
+Click the <span class="iconify" data-icon="mdi:comment-text-multiple"></span> icon in the **COMMENTS** column to display the **Notice Details** side panel with information about the alert and any user comments made.
 
 ![AllAlertDetails](/images/TrueCommand/2.1/AllAlertDetails.png "All Alert Details")
 
