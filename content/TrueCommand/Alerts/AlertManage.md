@@ -150,7 +150,7 @@ To properly configure SMTP email:
    * **Auth pass** password for the plain authentication; for a *No-Auth* SMTP configuration, leave the password field blank
    * **From** is what sends the email (i.e., no-reply@TrueCommand.io), or allows you to customize the sender field of the email 
 
-  Click **Test** on the **SMTP Email** configuration screen to verify that the configuarion is correct.
+  Click **Test** on the **SMTP Email** configuration screen to verify that the configuration is correct.
   If you did not receive a test alert email, check the values entered for accuracy.
 
 2. Click on the avatar to the right of the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and then click **Profile** from the dropdown list.
