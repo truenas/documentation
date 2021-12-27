@@ -61,7 +61,7 @@ To resolve an alert on the system detail screen **Alerts** area, click on the **
 
 ## Deleting Alerts
 
-Administrator accounts can delete an alert by clicking the delete icon <i class="material-icons" aria-hidden="true" title="Delete">delete</i>.
+Administrator accounts can delete an alert by clicking the <i class="material-icons" aria-hidden="true" title="Delete">delete</i> icon.
 Deleting an alert cannot be undone.
 To delete multiple alerts, select each alert checkbox and click **DELETE SELECTED** <i class="material-icons" aria-hidden="true" title="Delete">delete</i>.
 
