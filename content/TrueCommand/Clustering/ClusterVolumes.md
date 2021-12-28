@@ -6,13 +6,13 @@ weight: 10
 {{< toc >}}
 
 {{< hint danger >}}
-Cluster Volume management is a BETA feature in TrueCommand 2.0. 
+Cluster volume management is a BETA feature in TrueCommand 2.0. 
 Before attempting to use such features, please ensure that your data is backed up. 
 Do not rely on this for critical data.
 {{< /hint >}}
 
 {{< hint info >}}
-Gluster requires TrueNAS systems to have a static IP.  TrueNAS with DHCP enabled can not be part of a Cluster Volume.
+Gluster requires TrueNAS systems to have a static IP. TrueNAS with DHCP enabled can not be part of a cluster volume.
 {{< /hint >}}
 
 To create a cluster volume, click the **Cluster Volume** icon <mat-icon role="img" fontset="mdi" aria-hidden="true" class="mat-icon mdi mdi-server-network mat-icon-no-color"></mat-icon> in the top left of the top menu bar or the **Cluster Volume** button on the **Settings** menu <i class="material-icons" aria-hidden="true" title="Settings">settings</i> dropdown.
@@ -86,7 +86,7 @@ Select the **Replica Count** from the list. When finished click **Next**.
 
 ![DistributedReplicatedClusterCreate](/images/TrueCommand/2.0/DistributedReplicatedClusterCreate.png "DistributedReplicatedClusterCreate")
 
-Review the configuration and click **Create** to create the Volume. 
+Review the configuration and click **Create** to create the volume. 
 
 ![DistributedReplicatedClusterReview](/images/TrueCommand/2.0/DistributedReplicatedClusterReview.png "DistributedReplicatedClusterReview")
 
