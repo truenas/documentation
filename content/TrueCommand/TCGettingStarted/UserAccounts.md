@@ -70,7 +70,7 @@ To remove a user’s access to a particular system, click **-** (minus) on the d
 
 When system groups are available, an **ADD GROUP** button appears.
 Click **ADD GROUP** and select a group from the drop-down to give the user access to all the systems in that group.
-To assign user's type of access to the group, choose *read* or ***read/write** permissions.
+To assign user's type of access to the group, choose **read** or **read/write** permissions.
 To remove a user’s access to a particular system group, click **-** (minus) on the desired group.
 
 ## Resetting a User Password at Login 
