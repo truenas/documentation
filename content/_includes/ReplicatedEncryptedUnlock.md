@@ -9,7 +9,6 @@
    `{"tank/share01": "57112db4be777d93fa7b76138a68b790d46d6858569bf9d13e32eb9fda72146b"}`
 5. Save this file with the extension <file>.json<file>. 
 6. On the remote system, unlock the dataset(s) using properly constructed <file>json<file> files.
-
 {{< /tab >}}
 {{< tab "Method 2: Replicate Encrypted Dataset/zvol Without Properties" >}}
 Uncheck properties when replicating so that the destination dataset will not be encrypted on the remote side and will not require a key to unlock.
@@ -17,6 +16,5 @@ Uncheck properties when replicating so that the destination dataset will not be 
 2. Click *Advanced Replication Creation*.
 3. Fill out the form as needed and make sure *Include Dataset Properties* is **NOT** checked.
 4. Click *Save*.
-
 {{< /tab >}}
 {{< /tabs >}}
