@@ -360,4 +360,10 @@ Setting **Only Replicate Snapshots Matching Schedule** restricts the replication
 {{< /tab >}}
 {{< /tabs >}}
 
-Instructions to unlock a replicated encrypted dataset or zvol without a passphrase is located [here](https://www.truenas.com/docs/scale/storage/pools/encryptionscale/#unlocking-a-replicated-encrypted-dataset-or-zvol-without-a-passphrase)
+## Unlocking a Replicated Encrypted Dataset or Zvol Without a Passphrase
+
+TrueNAS SCALE users should either replicate the dataset/Zvol without properties to disable encryption at the remote end or construct a special json manifest to unlock each child dataset/zvol with a unique key.
+
+{{< expand "Unlocking Methods" "v" >}}
+{{< include file="static/includes/SCALE/SCALE/UnlockReplicatedEncrypted.md.part" markdown="true" >}}
+{{< /expand >}}
