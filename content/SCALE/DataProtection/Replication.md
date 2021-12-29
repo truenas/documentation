@@ -365,7 +365,5 @@ Setting **Only Replicate Snapshots Matching Schedule** restricts the replication
 TrueNAS SCALE users should either replicate the dataset/Zvol without properties to disable encryption at the remote end or construct a special json manifest to unlock each child dataset/zvol with a unique key.
 
 {{< expand "Unlocking Methods" "v" >}}
-
-{{< include file="static/includes/SCALE/UnlockReplicatedEncrypted.md.part" markdown="true" >}}
-
+{{< include file="/content/_includes/ReplicatedEncryptedUnlock.md" type="page" >}}
 {{< /expand >}}
