@@ -359,3 +359,5 @@ Setting **Only Replicate Snapshots Matching Schedule** restricts the replication
 ![SCALEReplicationAdvancedScheduleOptions](/images/SCALE/SCALEAdvSchedule.png "Advanced Replication: Schedule")
 {{< /tab >}}
 {{< /tabs >}}
+
+Instructions to unlock a replicated encrypted dataset or zvol without a passphrase is located [here](https://www.truenas.com/docs/scale/storage/pools/encryptionscale/#unlocking-a-replicated-encrypted-dataset-or-zvol-without-a-passphrase)
