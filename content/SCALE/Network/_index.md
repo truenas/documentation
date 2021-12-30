@@ -32,7 +32,17 @@ The **Interfaces** section displays network port names and IP addresses, as well
 Users can edit interfaces by clicking on them, delete them by clicking the <i class="material-icons" aria-hidden="true" title="delete">delete</i> icon next to them, or add new ones by clicking **Add**.
 
 {{< expand "Why should I use different interface types?" "v" >}}
-{{< include file="/_includes/NetworkInterfaceTypes.md" type="page" }} 
+**LAGG (Link Aggregation)**
+
+You should use [LAGG]({{< relref "LAGGCreate.md" >}}) if you want to optimize multi-user performance, balance network traffic, or have network failover protection.
+
+For example, Failover LAGG prevents a network outage by dynamically reassigning traffic to another interface when one physical link (a cable or NIC) fails.
+
+**Network Bridge**
+
+You should use a [Bridge]({{< relref "BridgeCreate.md" >}}) if you want to enable communication between two networks and provide a way for them to work as a single network.
+
+For example, bridges can serve IPs to multiple VMs on one interface, which allows your VMs to be on the same network as the host.
 {{< /expand >}}
 
 ![AddInterfaceSCALE](/images/SCALE/AddInterfaceSCALE.png "Add Interface Form")
