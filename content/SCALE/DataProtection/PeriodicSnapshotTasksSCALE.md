@@ -25,16 +25,20 @@ Any required datasets or zvols must exist before creating a snapshot task.
 
 ### Process
 
-Go to **Tasks > Periodic Snapshot Tasks** and click **ADD**.
+{{< expand "Video Tutorial" "v" >}}
+This short video demonstrates adding a periodic snapshot task {{< embed-video name="scaleangelfishperiodicsnapshottasks" >}}
+{{< /expand >}} 
 
-![TasksPeriodicSnapshotAdd](/images/CORE/12.0/TasksPeriodicSnapshotAdd.png "Creating a new Snapshot Task")
+Go to **Data Protection > Periodic Snapshot Tasks** and click **Add**.
+
+![DataProtectionAddPeriodicSnapshotTask](/images/SCALE/DataProtectionAddPeriodicSnapshotTask.png "Adding a new Periodic Snapshot Task")
 
 Choose the dataset (or zvol) to schedule as a regular back up with snapshots and how long to store snapshots.
 Define the task **Schedule**.
 If you need a specific schedule, choose **Custom** and use the Advanced Scheduler section below.
 
 {{< expand "Advanced Scheduler" "v" >}}
-{{< include file="static/includes/CORE/AdvancedScheduler.md.part" markdown="true" >}}
+{{< include file="static/includes/SCALE/SCALEAdvancedScheduler.md.part" markdown="true" >}}
 {{< /expand >}}
 
 Configure the remaining options for your use case.
@@ -47,10 +51,9 @@ The **Naming Schema** determines how automated snapshot names generate.
 A valid schema requires the *%Y* (year), *%m* (month), *%d* (day), *%H* (hour), and *%M* (minute) time strings, but you can add more identifiers to the schema too, using any identifiers from the Python [strptime function](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior).
 
 {{< hint warning >}}
-
 For **Periodic Snapshot Tasks** used to set up a replication task with the **Replication Task** function:
 
-You can use custom naming schemas for full backup replication tasks. If you are going to use the snapshot for an incremental replication tasks, use the default naming schema. Go to [Using a Custom Schema]({{< relref "/CORE/Tasks/ReplicationTasks/TroubleshootingTips.md" >}}) for additional information.
+You can use custom naming schema for full backup replication tasks. If you are going to use the snapshot for an incremental replication task, use the default naming schema. Go to [Using a Custom Schema]({{< relref "/CORE/Tasks/ReplicationTasks/TroubleshootingTips.md" >}}) for additional information.
 {{< /hint >}}
 
 This uses some letters differently from POSIX (Unix) time functions.
@@ -79,7 +82,7 @@ These snapshots get destroyed at the end of 3 years.
 
 {{< /expand >}}
 
-Click **SUBMIT** to save this task and add it to the list in **Tasks > Periodic Snapshot Tasks**.
-You'll find any snapshots taken using this task in **Storage > Snapshots**.
+Click **Save** to save this task and add it to the list in **Data Protection > Periodic Snapshot Tasks**.
+You can find any snapshots taken using this task in **Storage > Snapshots**.
 
-To check the log for a saved snapshot schedule, go to **Tasks > Periodic Snapshot Tasks** and click the task **State**.
+To check the log for a saved snapshot schedule, go to **Data Protection > Periodic Snapshot Tasks** and click on the task. The **Edit Periodic Snapshot Tasks** screen displays where you can modify any settings for the task.
