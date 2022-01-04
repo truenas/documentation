@@ -3,7 +3,8 @@
 | Name | Description |
 |------|-------------|
 | Show Text Console without Password Prompt | Unset to add a login prompt to the system before the console menu is shown. |
-| Enable Serial Console | Do not set this if the Serial Port is disabled. |
+| Enable Serial Console | Do not set this if the Serial Port is disabled. *Serial Port* and *Serial Speed options* are visible when this is set. |
+| Serial Speeds |   |
 | MOTD Banner | The message to show when a user logs in with SSH. |
 
 **Storage**
