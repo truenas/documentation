@@ -21,7 +21,7 @@ To connect your first system to TrueCommand, click **NEW SYSTEM** on the dashboa
 | Password / API Key Confirm | Re-enter the password or API key. |
 
 Enter the system IP address or DNS hostname, type a system nickname, and the system password.
-If you make a mistake, click **RESET FORM** to clear all entries and start over. .
+If you make a mistake, click **RESET FORM** to clear all entries and start over.
 
 ![Systems List](/images/TrueCommand/2.1/SystemsPage.png "Systems List")
 
