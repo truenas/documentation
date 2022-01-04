@@ -23,7 +23,7 @@ Additional requirements are listed further down for either rsync module and SSH 
 
 ## Creating an Rsync Task
 
-{{< Expand "Tutorial Video" >}}
+{{< expand "Tutorial Video" >}}
 {{< embed-video name="scaleangelfishrsync" >}}
 {{< /expand >}}
 
