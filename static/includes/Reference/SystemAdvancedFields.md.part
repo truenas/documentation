@@ -4,8 +4,8 @@
 |------|-------------|
 | Show Text Console without Password Prompt | Unset to add a login prompt to the system before the console menu is shown. |
 | Enable Serial Console | Do not set this if the Serial Port is disabled. *Serial Port* and *Serial Speed* options are visible when this is set. |
-| Serial Port | the available serial port addresses, in hex, are 0x2F8 or 0x3f8. |
-| Serial Speeds | The avaialble serial speed used by the serial port are 9600 bps, 19200 bps, 38400 bps, 57600 bps, or 115200bps |
+| Serial Port | When *Enable Serial Console* is set, the available serial port hex addresses are 0x2F8 or 0x3f8. |
+| Serial Speeds | When *Enable Serial Console* is set, the available serial speeds that can be used by the serial port are 9600 bps, 19200 bps, 38400 bps, 57600 bps, or 115200bps |
 | MOTD Banner | The message to show when a user logs in with SSH. |
 
 **Storage**
