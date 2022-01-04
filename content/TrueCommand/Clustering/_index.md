@@ -4,7 +4,7 @@ weight: 60
 geekdocCollapseSection: true
 ---
 
-TrueCommand 2.1 in conjuction with TrueNAS SCALE has the ability to create clustered volumes that span across multiple volumes. 
+TrueCommand 2.1, in conjunction with TrueNAS SCALE, can create clustered volumes that span across multiple volumes. 
 
 There are five volume types:
 
@@ -17,12 +17,12 @@ There are five volume types:
 
 {{< hint danger >}}
 Cluster volume management is a BETA feature in TrueCommand 2.0 and 2.1. 
-Before attempting to use such features, please ensure that your data is backed up. 
+Before using such features, please back up all your data. 
 Do not rely on this for critical data.
 {{< /hint >}}
 
 {{< hint warning >}}
-Distributed dispersed volumes are not implemented at this time.
+TrueNAS does not support distributed dispersed volumes at this time.
 {{< /hint >}} 
 
 
