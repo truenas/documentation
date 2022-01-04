@@ -12,7 +12,7 @@ Click the **Configure** <i class="material-icons" aria-hidden="true" title="Sett
 
 {{< tabs "Administration Tabs" >}}
 {{< tab "About" >}}
-The **About** tab contains the current TrueCommand system ID and version, contact information for iXsystems and license details. 
+The **About** tab contains the current TrueCommand system ID and version, contact information for iXsystems, and license details. 
 
 ![AdministrationAbout](/images/TrueCommand/1.3/AdministrationAbout.png "Administration Configuration")
 
@@ -22,7 +22,7 @@ You can expand TrueCommand to monitor more disks by upgrading or purchasing a li
 Click **GET A LICENSE** to open a new browser tab to purchase a TrueCommand license.
 You can also contact iXsystems to upgrade the current license.
 
-After you purchase or upgrade the license, you must upload the new license to TrueCommand.
+After you upgrade or purchase a new license, you must upload it to TrueCommand.
 Click **Browse…** to open a file browser on your local system.
 Select the new license file to upload and click **UPLOAD LICENSE** to apply the new license to TrueCommand.
 {{< /tab >}}
@@ -32,7 +32,7 @@ The **Certificates** tab shows the certificates and Certificate Authorities (CAs
 ![AdministrationCertificates](/images/TrueCommand/1.3/AdministrationCertificates.png "Administration: Certificates")
 
 Clicking **Browse...** opens a dialog to upload a file from the local system.
-Selecting **Plain text** allows you to copy and paste the file raw text instead of uploading a file.
+Selecting **Plain text** allows you to copy and paste the raw text instead of uploading a file.
 {{< /tab >}}
 {{< tab "Configuration" >}}
 The **Configuration** tab contains options to configure various features of TrueCommand. The configuration options accessible are: 
@@ -73,10 +73,11 @@ You can select multiple categories.
 
 ### Telemetry
 
-TrueCommand reports some basic usage telemetry back to iXsystems for product improvement analysis. These metrics are completely anonymous.
+TrueCommand reports some (completely anonymous) basic usage telemetry back to iXsystems for product improvement analysis.
 
-Click the **PREVIEW** button to see exactly what your system is sending.<br>
-To disable this feature, select the **Disable Telemetry** checkbox and click the**SAVE** button.
+Click the **PREVIEW** button to see what your system is sending.
+
+You can disable telemetry by checking the **Disable Telemetry** box and clicking **SAVE**.
 
 {{< /tab >}}
 {{< /tabs >}}
