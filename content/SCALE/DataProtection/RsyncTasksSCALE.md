@@ -29,7 +29,7 @@ Additional requirements are listed further down for either rsync module and SSH 
 
 Go to **Data Protection > Rsync Tasks** and click **Add**. The **Add Rsync Task** configuration screen displays.
 
-![DataProtectionAddRsyncTask](/images/Scale/DataProtectionAddRsyncTask.png "Data Protection Add Rsync Task")
+![DataProtectionAddRsyncTask](/images/SCALE/DataProtectionAddRsyncTask.png "Data Protection Add Rsync Task")
 
 The **Rsync Mode** field has two primary rsync modes: **Module** and **SSH**.
 Each mode has different requirements.
@@ -46,9 +46,9 @@ See the specific configuration instructions in the [Rsync Service section](#rsyn
 
 ### Rsync Module Process
 
-Log in to the host system interface, go to **Data Protection > Rsync Tasks**, and click **Add**. The **Add Rsync Task** configuration panel displays. A scroll bar displays at the right to allow you to access all configuration fields.
+Log in to the host system interface, go to **Data Protection > Rsync Tasks**, and click **Add**. The **Add Rsync Task** configuration panel displays. Use the scroll bar displayed at the right to access all configuration fields.
 
-![TasksRsyncTasksAddModeModule](/images/Scale/TasksRsyncTasksAddModeModule.png "Rsync Task: Module Mode")
+![DataProtectionAddRsyncTask](/images/SCALE/DataProtectionAddRsyncTask.png "Data Protection Add Rsync Task")
 
 Select the source dataset to use with the rsync task and a user account to run the rsync task.
 Choose a direction for the rsync task.
@@ -130,7 +130,7 @@ Example: `ssh-keyscan -t rsa 192.168.2.6 >> /root/.ssh/known_hosts`.
 
 Go to **Data Protection > Rsync Tasks** and click **Add**.
 
-![TasksRsyncTasksAddModeSSH](/images/CORE/12.0/TasksRsyncTasksAddModeSSH.png "Rsync Task: SSH Mode")
+![DataProtectionAddRsyncTaskSshMode](/images/SCALE/DataProtectionAddRsyncTaskSshMode.png "Data Protection Add Rsync Task: SSH Mode")
 
 Configure the rsyn task SSH settings by selecting **SSH** on the **Rsync Mode** drop-down. Type the **Port** number and **Remote Path**.
 
@@ -169,7 +169,7 @@ The rsync task does not work unless the related system service is turned on.
 To turn the rsync service on, go to **System > Services** and toggle the **Rsync** on.
 To activate the service whenever TrueNAS boots, select the **Start Automatically** checkbox.
 
-![SystemServicesRsyncOn](/images/Scale/SystemServicesRsyncOn.png "System Services Rsync On")
+![SystemServicesRsyncOn](/images/SCALE/SystemServicesRsyncOn.png "System Services Rsync On")
 
 Click the <i class="material-icons" aria-hidden="true" title="edit">edit</i> to configure the service on the 
  **Services > RSYNC > Rsync** screen.
@@ -189,15 +189,15 @@ Remember to click **Save** after changing any settings.
 
 All created modules are listed on the **Rsync Module** tab. 
 
-![SystemServicesRsyncRsyncModuleTab](/images/Scale/SystemServicesRsyncRsyncModuleTab.png "Services Rsync Rsync Module Tab")
+![SystemServicesRsyncRsyncModuleTab](/images/SCALE/SystemServicesRsyncRsyncModuleTab.png "Services Rsync Rsync Module Tab")
 
 If an rsync module is not listed, click **Add RSYNC Modules** or **Add** at the top right of the screen to add one. The **SERVICE > RSYNC > RSYNC MODULE Add** screen displays. 
 
-![AddRsyncModuleScreenTop](/images/Scale/AddRsyncModuleScreenTop.png "Add Rsync Module Screen Top")
+![AddRsyncModuleScreenTop](/images/SCALE/AddRsyncModuleScreenTop.png "Add Rsync Module Screen Top")
 
 Scroll down to see all configuration fields.
 
-![AddRsyncModuleScreenBottom](/images/Scale/AddRsyncModuleScreenBottom.png "Add Rsync Module Screen Bottom")
+![AddRsyncModuleScreenBottom](/images/SCALE/AddRsyncModuleScreenBottom.png "Add Rsync Module Screen Bottom")
 
 {{< include file="static/includes/Reference/ServicesRsyncConfigureRsyncModuleAdd.md.part" markdown="true" >}}
 
