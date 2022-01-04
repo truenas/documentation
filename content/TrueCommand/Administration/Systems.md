@@ -10,7 +10,7 @@ weight: 10
 To connect a system to TrueCommand, open the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and click **Systems**.
 The **Systems** menu has two tabs: **Systems** and **System Groups**.
 The **Systems** and **System Groups** tabs contain all the options to connect and organize systems in TrueCommand.
-All added systems are listed in the **Systems** tab with the current connection status.
+The **Systems** tab lists all added systems and their current connection statuses.
 
 ![Systems List](/images/TrueCommand/2.1/SystemsPage.png "Systems List")
 
@@ -23,7 +23,7 @@ If you make a mistake, you can reset the form by clicking **RESET**.
 
 ![Systems Add](/images/TrueCommand/2.1/SystemsAddNew.png "Systems Add")
 
-If the system has alerts or alarms a blue circle with the number of current alerts displays to the right of the system name.
+If the system has alerts or alarms, a blue circle with the number of current alerts displays to the right of the system name.
 
 ### Adjusting Systems
 
@@ -49,7 +49,7 @@ Click **Reset** to clear the form and reset values to the previously saved setti
 
 {{< /tab >}}
 {{< tab "Users and Groups" >}}
-Click the **Users and Groups** button to display the list of users and/or groups for the selected system.
+Click the **Users and Groups** button to display the list of users or groups for the selected system.
 
 ![Systems Users and Groups](/images/TrueCommand/2.1/SystemsUsersAndGroups.png "Systems Users and Groups")
 
@@ -57,7 +57,7 @@ Click the **Users and Groups** button to display the list of users and/or groups
 {{< tab "Update" >}}
 If the system has **Available** in the **Updates** column, it has system updates ready to apply.
 Click the **Update** button <i class="material-icons" aria-hidden="true" title="Update">update</i> on the option menu to open a dialog window with information on the update. 
-To update that system, click the **Confirm** checkbox and then **OK**. 
+Check the **Confirm** box, then click **OK** to update the system.   
 Click **Cancel** to close the window without updating.
 
 ![Systems Update](/images/TrueCommand/2.1/SystemsUpdateNAS.png "Systems Update")
@@ -76,7 +76,7 @@ If a system is configures with iSCSI volumes, click the <mat-icon role="img" fon
 {{< tab "Services" >}}
 Click the **Services** button <mat-icon _ngcontent-igf-c221="" role="img" fontset="mdi" class="mat-icon notranslate mdi mdi-toolbox-outline mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" data-mat-icon-name="mdi-toolbox-outline" data-mat-icon-namespace="mdi"></mat-icon> to display the **Services** window with a list of services running or stopped for the selected system. 
 
-The options for services are adding it to start on boot-up, stopping or starting/restarting. 
+The options for services are adding it to start on boot-up, stopping, or starting/restarting. 
 Click the **START ON BOOT** checkbox to add the selection to the services started at boot-up. 
 Click the stop icon <i class="fa fa-stop" aria-hidden="true" title="stop"></i> to stop a running service. 
 Click the start/restart icon <i class="material-icons" aria-hidden="true" title="Refresh">refresh</i> to start a stopped service. 
