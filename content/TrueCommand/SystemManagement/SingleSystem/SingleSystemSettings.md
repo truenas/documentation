@@ -3,44 +3,79 @@ title: "System Settings"
 weight: 10
 ---
 
-{{< toc >}}
+TrueCommand allows users to manage certain settings when managing a single system. To see the system settings menu, click the three-dot icon in a system card window on the TrueCommand dashboard to display the menu.
 
-TrueCommand allows users to manage certain settings when managing a single system. To see the system settings menu, click the three-dot menu in a system's window on the TrueCommand dashboard.
+![TrueCommandSystemSettingsMenu](/images/TrueCommand/2.1/TrueCommandSystemSettingsMenu.png "System Settings Menu")
 
-![TrueCommandSystemSettingsMenu](/images/TrueCommand/2.0/TrueCommandSystemSettingsMenu.png "System Settings Menu")
+{{< tabs "System Menu" >}}
+{{< tab "Edit" >}}
 
-## Edit
+To edit a systems general settings, click the **Edit** button in the system settings menu.
 
-To edit a systems general settings, click the *Edit* button in the system settings menu.
+The **General Settings** window lets users edit the system's IP address/hostname, nickname, password/API key, and alert options. 
+Click **SAVE CHANGES** to keep your changes or **RESET** reset and start over. 
+Click off the window back to dashboard to close the edit window without making changes. 
 
-The *General Settings* window lets users edit the system's IP address/hostname, nickname, password/API key, and alert options.
+![TrueCommandSystemSettingsEdit](/images/TrueCommand/2.1/TrueCommandSystemSettingsEdit.png "System Settings Edit")
 
-![TrueCommandSystemSettingsEdit](/images/TrueCommand/TrueCommandSystemSettingsEdit.png "System Settings Edit")
+{{< /tab >}}
+{{< tab "Users and Groups" >}}
 
-## Update
+To displays a list of users or groups on the selected system, click the **Users and Groups** button <mat-icon _ngcontent-igf-c221="" role="img" fontset="mdi" class="mat-icon notranslate mdi mdi-account-group mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" data-mat-icon-name="mdi-account-group" data-mat-icon-namespace="mdi"></mat-icon>.  
+Click the **Users** dropdown to select **Groups** to change the list to groups on the system.
 
-The update button in the system settings menu allows users to update the system to the latest build. During a system update the system card will change to indicate that the system is offline and finishing the update.
+{{< hint info >}}
+Note: This new 2.1 Users And Groups function is experimental feature that could be radically changed or removed in future releases. Use with caution!
+{{< /hint >}}
 
-## Launch TrueNAS Interface
+![SystemSettingsUsersAndGroups](/images/TrueCommand/2.1/SystemUsersAndGroups.png "System Settings Users and Groups")
 
-**Launch TrueNAS Interface** in the system settings menu opens a new browser tab pointed at the system's web interface.
+Click the edit icon <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to display the edit user window. 
 
-## iSCSI Volumes
+![SystemSettingsEditUser](/images/TrueCommand/2.1/SystemSettingsEditUser.png "System Settings Edit User")
 
-The *iSCSI Volumes* button in the system settings menu allows users to filter, create, and delete one or more iSCSI volumes.
+Scroll down to view all edit fields. Click **SAVE** to keep changes or **CANCEL** to discard any changes made. Click the **X** to close the window.
 
-![TrueCommandSystemSettingsiSCSI](/images/TrueCommand/TrueCommandSystemSettingsiSCSI.png "System Settings iSCSI")
+![SystemSettingsEditUserSave](/images/TrueCommand/2.1/SystemSettingsEditUserSave.png "System Settings Edit User Save")
+
+{{< /tab >}}
+{{< tab "Update" >}}
+
+Click the **Update** button <i class="material-icons" aria-hidden="true" title="Update">update</i> in the system settings menu to update the system to the latest build. After clicking the **Update** button, an update window with system and update information displays. Click **Confirm** and then **OK** to begin the update, or click **CANCEL** to exit without updating. During a system update the system card changes to indicate that the system is offline and finishing the update.
+
+![SystemUpdate](/images/TrueCommand/2.1/SystemSettingUpdate.png "System Update")
+
+{{< /tab >}}
+{{< tab "Launch TrueNAS Interface" >}} 
+
+Click the **Launch TrueNAS Interface** button <mat-icon _ngcontent-igf-c221="" role="img" fontset="mdi" class="mat-icon notranslate mdi mdi-monitor-screenshot mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" data-mat-icon-name="mdi-monitor-screenshot" data-mat-icon-namespace="mdi"></mat-icon> on the system settings menu to open a new browser tab pointed at the selected system's web interface.
+
+From the interface, you can create and manage storage, shapshots, and shares using File Explorer. You can create and/or delete datasets, zvols, shapshots and shares.
+
+{{< /tab >}}
+{{< tab "iSCSI Volumes" >}} 
+
+Click the **iSCSI Volumes** button <mat-icon role="img" fontset="mdi" fonticon="mdi-database" class="mat-icon mdi mdi-database mat-icon-no-color" aria-hidden="true"></mat-icon> on the system settings menu to display the **iSCSI Volumes** screen. It allows users to filter, create, and delete one or more iSCSI volumes.
+
+![TrueCommandSystemSettingsiSCSI](/images/TrueCommand/2.1/SystemSettingsiSCSI.png "System Settings iSCSI")
 
 See the full [iSCSI Management]({{< relref "iSCSIManagement.md" >}}) article for more information.
 
-## Services
+{{< /tab >}}
+{{< tab "Services" >}}
 
-TrueCommand offers limited control over system services. Users can't currently edit service parameters, but can set them to start on boot, as well as start, stop, and restart them.
+TrueCommand offers limited control over system services. Click on the **Services** button <mat-icon _ngcontent-igf-c221="" role="img" fontset="mdi" class="mat-icon notranslate mdi mdi-toolbox-outline mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" data-mat-icon-name="mdi-toolbox-outline" data-mat-icon-namespace="mdi"></mat-icon> on the system settings menu to display the list of services on the selected system. The **Services** window displays the current status of the service.
 
-![TrueCommandSystemSettingsServices](/images/TrueCommand/TrueCommandSystemSettingsServices.png "System Settings Services")
+Users can't currently edit service parameters, but can set them to start on boot, stop, start and restart them.
 
-## Delete
+![TrueCommandSystemSettingsServices](/images/TrueCommand/2.1/SystemSettingsServices.png "System Settings Services")
 
-TrueCommand offers limited control over system services. Users can't currently edit service parameters, but can set them to start on boot, as well as start, stop, and restart them.
+{{< /tab >}}
+{{< tab "Delete" >}}
 
-![TrueCommandSystemSettingsDelete](/images/TrueCommand/TrueCommandSystemSettingsDelete.png "System Settings Delete")
+Click the **Delete** button <i class="material-icons" aria-hidden="true" title="Delete">delete</i> on the system settings menu to delete the selected system from TrueCommand. A confirmation window displays prompting you to confirm by selecting the **Confirm** checkbox and then click **OK** to delete the system. Click **CANCEL** to close the window without deleting the selected system.
+
+![TrueCommandSystemSettingsDelete](/images/TrueCommand/2.1/SystemSettingsDelete.png "System Settings Delete")
+
+{{< /tab >}}
+{{< /tabs >}}
