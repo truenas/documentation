@@ -42,7 +42,7 @@ If you do not save the system configuration before resetting it, you may lose da
 
 ## Support
 
-The *Support* window in the Advenced Settings screen displays the systems genreal hardware and software specs and contains links to the Documentation Hub, TrueNAS Forums, and enterprise licensing information. 
+The *Support* window in the Advanced Settings screen displays the systems general hardware and software specs and contains links to the Documentation Hub, TrueNAS Forums, and enterprise licensing information. 
 
 There are also buttons that allow users to add an enterprise license or report bugs via a Jira support ticket.
 
