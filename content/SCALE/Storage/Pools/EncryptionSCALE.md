@@ -157,7 +157,7 @@ A second confirmation window displays confirming the datasets are unlocked.
 Click **CLOSE**. 
 TrueNAS displays the dataset with the unlocked icon.
 
-## Encryption Management
+## Managing Encryption Credentials
 
 There are two ways to manage the encryption credentials, with a key file or passphrase.
 
