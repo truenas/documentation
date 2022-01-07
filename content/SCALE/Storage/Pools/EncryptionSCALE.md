@@ -32,7 +32,7 @@ The SCALE encryption warning dialog box displays.
 
 Read the warning, select the **Confirm** checkbox, and click **I UNDERSTAND**.
 
-You can select any of the other encryption ciphers listted but we recommend using the default encryption cipher.
+You can select any of the other encryption ciphers listed but we recommend using the default encryption cipher.
 
 ![CiphersSCALE](/images/SCALE/CiphersSCALE.png "Choosing an encryption cipher")
 
@@ -45,8 +45,8 @@ These algorithms provide authenticated encryption with block ciphers.
 
 You can create new datasets within an existing storage pool as either encrypted or non-encryted. 
 A mix of encrypted and non-encrypted datasets can exist in a single storage pool.
-
-To encrypt a single dataset, [create a new datasetl]({{< relref "/SCALE/Storage/Pools/datasetsscale.md" >}} and after naming the dataset scroll down to the **Encryption Options** secton of the page.
+ 
+To encrypt a single dataset, [create a new dataset]({{< relref "/SCALE/Storage/Pools/datasetsscale.md" >}}) and after naming the dataset scroll down to the **Encryption Options** secton of the page.
 Encryption options displayed on the **Add Dataset** configuration page change with the selections made.
 
 {{< tabs "Dataset Encryption Options" >}}
@@ -90,10 +90,10 @@ You can change the **Encryption Type** to **Passphrase** and this displays new *
 
 ![AddDatasetEncryptionSelectedPassphraseType](/images/SCALE/AddDatasetEncryptionSelectedPassphraseType.png "Dataset Encryption Type Passphrase")
 
-Using the passphrase option might be easier to manage, but Make the phrase complex enough to not easily guess.
+Using the passphrase option might be easier to manage but make the phrase complex and not easy to guess.
 
 {{< hint danger>}}
-Keep both encryption keys and/or passphrases safeguarded and stored in such a way they won't get lost. 
+Keep both encryption keys and/or passphrases safeguarded in a secure and protected place. 
 Losing encryption keys or passphrases can result in permanent data loss!
 {{< /hint >}}
 
@@ -127,7 +127,7 @@ Remember to save any change to the encryption key or passphrase, update your sav
 TrueNAS displays a dataset's status with an icon:
 
 * Dataset unlocked icon: <span class="iconify" data-icon="mdi:lock-open-variant"></span>
-* Dataset locked icon: <span class="iconify" data-icon="fluent:lock-closed-16-regular"></span>
+* Dataset locked icon: <i class="material-icons" aria-hidden="true" title="<locked>">lock</i>
 
 You use a passphrase instead of a key to lock or unlock encrypted datasets.
 Before locking a dataset, verify that it is not currently in use, then click the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> icon for the dataset to display the **Dataset Actions** menu and click on **Lock**. The **Lock Dataset *datasetname*** dialog box displays.
@@ -139,9 +139,7 @@ Click on the **Confirm** checkbox to check-mark it and click **LOCK**.
 After locking a dataset, the unlock icon changes to a locked icon.
 
 {{< hint info >}}
-
 You *cannot* use locked datasets.
-
 {{< /hint >}}
 
 To unlock a dataset, click on the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> icon and display the **Dataset Actions** menu and then click on **Unlock**.
@@ -199,7 +197,7 @@ Change the **Encryption Type** from **Key** to **Passphrase**.
 Set the rest of the options:
 * **Passphrase**: Type a user-defined string of at least eight characthers in length into the **Passphrase** and  **Confirm Passphrase** fields. This passphrase decrypts the dataset. Passphrases must be longer than eight characters.
   {{< hint warning >}}
-  The passphrase is the only means to decrypt the information stored in this dataset. 
+  The passphrase is the only means to decrypt the information stored in this dataset.
   Be sure to create a memorable passphrase or physically secure the passphrase.
   {{< /hint >}}
 * **pbkdf2iters**: Number of password-based key derivation function 2 ([PBKDF2](https://tools.ietf.org/html/rfc2898#appendix-A.2)) iterations to use for reducing vulnerability to brute-force attacks. Users must enter a number greater than *100000*.
