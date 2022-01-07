@@ -70,15 +70,26 @@ jobs:
             --color=always
             --exclude docs/
             --exclude=docs/files/
-            --exclude=files/TrueNASCollection.vssx --exclude=update.freenas.org
-            --exclude=microsoft.com --exclude=oracle.com --exclude=amazon.com
-            --exclude=apple.com --exclude=fastmail.com --exclude=linode.com
-            --exclude=community.openvpn.net --exclude=tools.ietf.org
-            --exclude=github.com --exclude=freebsd.org
-            --exclude=jira.ixsystems.com --exclude=linkedin.com
-            --exclude=googletagmanager.com --exclude=youtube.com
-            --exclude=vmware.com --exclude=cyberciti.biz
-            --exclude=truenas-documentation-deploy.surge.sh --exclude=tc2api.html
+            --exclude=files/TrueNASCollection.vssx
+            --exclude=update.freenas.org
+            --exclude=microsoft.com
+            --exclude=oracle.com
+            --exclude=amazon.com
+            --exclude=apple.com
+            --exclude=fastmail.com
+            --exclude=linode.com
+            --exclude=community.openvpn.net
+            --exclude=tools.ietf.org
+            --exclude=github.com
+            --exclude=freebsd.org
+            --exclude=jira.ixsystems.com
+            --exclude=linkedin.com
+            --exclude=googletagmanager.com
+            --exclude=youtube.com
+            --exclude=vmware.com
+            --exclude=cyberciti.biz
+            --exclude=truenas-documentation-deploy.surge.sh
+            --exclude=tc2api.html
             --exclude=/docs/images/tn-openstorage-logo.png
             --exclude=https://www.backblaze.com/
             --exclude=https://discord.com/invite/Q3St5fPETd
