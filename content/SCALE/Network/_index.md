@@ -32,7 +32,7 @@ The **Interfaces** section displays network port names and IP addresses, as well
 Users can edit interfaces by clicking on them, delete them by clicking the <i class="material-icons" aria-hidden="true" title="delete">delete</i> icon next to them, or add new ones by clicking **Add**.
 
 {{< expand "Why should I use different interface types?" "v" >}}
-{{< include file="/_includes/NetworkInterfaceTypes.md" type="page" }}
+{{< include file="/_includes/NetworkInterfaceTypes.md" type="page" >}}
 {{< /expand >}}
 
 ![AddInterfaceSCALE](/images/SCALE/AddInterfaceSCALE.png "Add Interface Form")
