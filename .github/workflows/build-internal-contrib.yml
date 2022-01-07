@@ -63,7 +63,13 @@ jobs:
         with:
           url: "https://${{ steps.preview_step.outputs.preview_url }}"
           cmd_params: >
-            "--buffer-size=8192 --skip-tls-verification --timeout=60 --rate-limit=30 --color=always --exclude docs/ --exclude=docs/files/
+            --buffer-size=8192 
+            --skip-tls-verification
+            --timeout=60
+            --rate-limit=30
+            --color=always
+            --exclude docs/
+            --exclude=docs/files/
             --exclude=files/TrueNASCollection.vssx --exclude=update.freenas.org
             --exclude=microsoft.com --exclude=oracle.com --exclude=amazon.com
             --exclude=apple.com --exclude=fastmail.com --exclude=linode.com
@@ -76,6 +82,6 @@ jobs:
             --exclude=/docs/images/tn-openstorage-logo.png
             --exclude=https://www.backblaze.com/
             --exclude=https://discord.com/invite/Q3St5fPETd
-            --exclude=https://www.veeam.com/documentation-guides-datasheets.html"
+            --exclude=https://www.veeam.com/documentation-guides-datasheets.html
           run_timeout: 300
           debug: true
