@@ -6,16 +6,19 @@ geekdocCollapseSection: true
 
 While TrueCommand allows users to manage all of their systems on a single dashboard, it also lets users view single systems at a time. 
 
-To manage a single system either click the name of the system in the system card or click the dashboard drop-down menu, hover over *Ungrouped*, and select the system you want to manage.
+To manage a single system click on the name of the system in the system card or click on the dashboard drop-down menu, and then hover over **Ungrouped** to see the list of systems. 
+Select the system you want to manage.
 
-While viewing a single system, users can see various statistics like CPU, Memory, and Storage usage, as well as existing datasets and [alerts]({{< relref "AlertManage.md" >}}).
+![TrueCommandSelectSingleSystem](/images/TrueCommand/2.1/DashboardSelectSingleSystem.png "Select Single System")
 
-Users can create and manage storage, snapshots, and shares using the File Explorer. 
+While viewing a single system, users can see various statistics like CPU, memory, disk, network and storage usage, as well as existing datasets and [alerts]({{< relref "AlertManage.md" >}}).
 
-Users can also view the TrueNAS system's Manufacturer, Serial Numbers, Support Tier, Support Expiration date, Hostname, CPU, CPU Cores, Physical Memory, OS, and Uptime by clicking on the double arrows located at the lower right corner of the System Card.
+Users can create and manage storage, snapshots, and shares using the **File Explorer**. 
+
+Users can view expanded TrueNAS information details by clicking on the double arrows located at the lower right corner of the system card. Information details are system's manufacturer, serial numbers, support tier, support expiration date, hostname, CPU, CPU cores, physical memory, OS, and uptime.
 
 ![TrueCommandSingleSystemhardware](/images/TrueCommand/2.0/TCHardwareDash.png "Single System Hardware Information")
 
-Users with adequate permissions may update the system, [configure backups]({{< relref "TrueNASConfigManage.md" >}}), and generate system audits and [reports]({{< relref "Creation.md" >}}).
+Users with adequate permissions can update the system, [configure backups]({{< relref "TrueNASConfigManage.md" >}}), and generate system audits and [reports]({{< relref "Creation.md" >}}). If a system update is available, the **Update** label and icon turn green. You can also see which systems have updates pending on the **Systems** screen.
 
 ![TrueCommandSingleSystemDashboard](/images/TrueCommand/TrueCommandSingleSystemDashboard.png "Single System Dashboard")
