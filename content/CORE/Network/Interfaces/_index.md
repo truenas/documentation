@@ -27,7 +27,7 @@ Be careful when configuring the network interface that controls the TrueNAS® we
 ## Creating LAGG, Bridge, and VLAN Interfaces
 
 {{< expand "Why should I use different interface types?" "v" >}}
-{{< include file="/_includes/NetworkInterfaceTypes.md" type="page" }}
+{{< include file="/_includes/NetworkInterfaceTypes.md" type="page" >}}
 {{< /expand >}}
 
 {{< tabs "Interfaces" >}}
