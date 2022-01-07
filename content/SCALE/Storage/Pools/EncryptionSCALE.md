@@ -25,8 +25,7 @@ The [Key Management Interface Protocol (KMIP)](https://docs.oasis-open.org/kmip/
 
 {{< include file="/_includes/EncryptionWarning.md" type="page" >}}
 
-Encrypting the root dataset of a new storage pool further increases data security.
-[Create a new pool]({{< relref "/SCALE/Storage/Pools/_index.md" >}}) and check the **Encryption** box in the **Pool Manager**. 
+Encrypting the root dataset of a new storage pool further increases data security. [Create a new pool]({{< relref "/SCALE/Storage/Pools/_index.md" >}}) and check the **Encryption** box on the **Pool Manager** screen. 
 The SCALE encryption warning dialog box displays.
 
 ![EncryptionWarningSCALE](/images/SCALE/EncryptionWarningSCALE.png "SCALE Encryption Warning")
@@ -79,7 +78,7 @@ If you uncheck the **Encryption** checkbox on the **Add Dataset** configuration 
 **Encryption Options** fields change based on the **Encryption Type** selected. 
 There are two options, **Key** or **Passphrase**. The default setting is **Key**.
 
-![AddDatasetEncryptionSelectedkeyType](/images/SCALE/AddDatasetEncryptionSelectedkeyType.png "Dataset Encryption Checkbox")
+![AddDatasetEncryptionSelectedkeyType](/images/SCALE/AddDatasetEncryptionSelectedkeyType.png "Dataset Encryption Type Key")
 
 The **Generate Key** checkbox defaults to check-marked. 
 If you uncheck it, the **Key*** text field displays below it. 
@@ -89,7 +88,7 @@ Type the encryption key you want to use into this field.
 
 You can change the **Encryption Type** to **Passphrase** and this displays new **Encryption Options** fields.
 
-![AddDatasetEncryptionSelectedPassphraseType](/images/SCALE/AddDatasetEncryptionSelectedPassphraseType.png "Dataset Encryption Checkbox")
+![AddDatasetEncryptionSelectedPassphraseType](/images/SCALE/AddDatasetEncryptionSelectedPassphraseType.png "Dataset Encryption Type Passphrase")
 
 Using the passphrase option might be easier to manage, but Make the phrase complex enough to not easily guess.
 
@@ -128,14 +127,14 @@ Remember to save any change to the encryption key or passphrase, update your sav
 TrueNAS displays a dataset's status with an icon:
 
 * Dataset unlocked icon: <span class="iconify" data-icon="mdi:lock-open-variant"></span>
-* Dataset locked icon: <mat-icon _ngcontent-dog-c483="" role="img" svgicon="anti-lock" class="mat-icon notranslate mat-tooltip-trigger mat-icon-no-color ng-star-inserted" aria-hidden="true" data-mat-icon-type="svg" data-mat-icon-name="anti-lock">
+* Dataset locked icon: <span class="iconify" data-icon="fluent:lock-closed-16-regular"></span>
 
 You use a passphrase instead of a key to lock or unlock encrypted datasets.
-Before locking a dataset, verify that it is not currently in use, then click the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; for the dataset to display the **Dataset Actions** menu and click on **Lock**. The **Lock Dataset *datasetname*** dialog box displays.
+Before locking a dataset, verify that it is not currently in use, then click the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> icon for the dataset to display the **Dataset Actions** menu and click on **Lock**. The **Lock Dataset *datasetname*** dialog box displays.
 
 ![LockDatasetSCALE](/images/SCALE/LockDatasetSCALE.png "Dataset Locking Options")
 
-Use the **Force unmount** option only if you are certain no one is currently accessing the dataset. 
+Use the **Force unmount** option only if you are certain no one is currently accessing the dataset.
 Click on the **Confirm** checkbox to check-mark it and click **LOCK**.
 After locking a dataset, the unlock icon changes to a locked icon.
 
@@ -180,11 +179,11 @@ To manually back up a root dataset key file, open the pool <i class="material-ic
 
 ![ExportKeySCALE](/images/SCALE/ExportKeySCALE.png "Export a Key")
 
-To change the key, click the dataset <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> and **Encryption Options**.
+To change the key, click the dataset <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> and then click on **Encryption Options**.
 
 ![EncryptionOptionsButtonSCALE](/images/SCALE/EncryptionOptionsButtonSCALE.png "Encryption Options")
 
-TTo type your custom key click the **Generate Key** checkbox to uncheck it and display the **Key** text entry field, or to generate a random encryption key that displays in the **Key** field leave the **Generate Key** checkmarked. 
+To enter your custom key click the **Generate Key** checkbox to uncheck it and display the **Key** text entry field, or leave the **Generate Key** checkmarked to generate a random encryption key that displays in the **Key** field. 
 Click **Save** to complete the process and close the window.
 
 ![EncryptionOptionsSCALE](/images/SCALE/EncryptionOptionsSCALE.png "Encryption Options Menu")
