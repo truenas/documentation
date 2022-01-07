@@ -5,10 +5,10 @@ weight: 20
 
 {{< toc >}}
 
-Clustered Volumes have differing management options based on cluster type.
+Clustered volumes have differing management options based on the cluster type.
 
 {{< hint danger >}}
-Removing and/or Replacing bricks from a clustered volume may lead to data corruption.  Do not attempt to utilize this feature at the current time. 
+Removing and/or replacing bricks from a clustered volume can lead to data corruption. Do not attempt to use this feature at this time. 
 {{< /hint >}}
 
 {{< tabs "Types of Clustered Volumes" >}}
@@ -16,138 +16,137 @@ Removing and/or Replacing bricks from a clustered volume may lead to data corrup
 
 ![DistributedClusterCard](/images/TrueCommand/2.0/DistributedClusterCard.png "DistributedClusterCard")
 
-In a Distributed Volume the editing options are, adding a brick, replacing a brick, and to delete the cluster.
+**Distributed-Cluster** volume the editing options are, **Add Brick**, **Replace Brick**, and **Delete** the cluster.
 
 ![DistributedClusterOptions](/images/TrueCommand/2.0/DistributedClusterOptions.png "DistributedClusterOptions")
 
 ### Add a brick to a Distributed Cluster
 
-Click the three dots icon in the cluster overview card and select the **+ Add Brick** option to open the *Add Brick* menu.
+Click the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> icon on the cluster overview card and select the **+ Add Brick** option to open the **Add Brick** menu.
 
 ![DistributedClusterOptionsAdd](/images/TrueCommand/2.0/DistributedClusterOptionsAdd.png "DistributedClusterOptionsAdd")
 
-Click *Brick Choices* to display the list of systems available.
+Click **Brick Choices** to display the list of available systems.
 
 ![DistributedClusterOptionsAddBrick](/images/TrueCommand/2.0/DistributedClusterOptionsAddBrick.png "DistributedClusterOptionsAddBrick")
 
-Selecting a system will display the options for the brick that will be created. It is strongly recommended that the size matches the existing bricks, but this can be changed if required.
+Selecting a system displays options for the created brick. iXsystems strongly recommends that you match the size of the existing bricks but you can change this if required.
 
 ![DistributedClusterOptionsAddBrickOptions](/images/TrueCommand/2.0/DistributedClusterOptionsAddBrickOptions.png "DistributedClusterOptionsAddBrickOptions")
 
-When you are satisfied with the settings, click **SAVE** to add the brick.  TrueCommmand and TrueNAS SCALE will now add the brick to the cluster.
+When you are satisfied with the settings, click **SAVE** to add the brick. TrueCommmand and TrueNAS SCALE adds the brick to the cluster.
 
 ![DistributedClusterOptionsAddProcessing](/images/TrueCommand/2.0/DistributedClusterOptionsAddProcessing.png "DistributedClusterOptionsAddProcessing")
 
-When the new brick has been added, the cluster card will reflect the change.
+After adding the new brick the cluster card reflects the change.
 
 ![DistributedClusterOptionsAddBrickCompleted](/images/TrueCommand/2.0/DistributedClusterOptionsAddBrickCompleted.png "DistributedClusterOptionsAddBrickCompleted")
 
 ### Removing a brick in a Distributed Cluster
 
 {{< hint info >}}
-This option is only avilable if a cluster has 4 or more bricks.
+This option is only avilable if a cluster has four or more bricks.
 {{< /hint >}}
 
 {{< hint warning >}}
-This Feature is not fully implemented yet.
+This feature is not yet fully implemented.
 {{< /hint >}}
 
-Click the three dots icon in the cluster overview card and hover the **Remove Brick** option for the list of bricks to appear.
+Click the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> icon on the cluster overview card and hover the mouse over the **Remove Brick** option to display the list of bricks.
 
 ![DistributedClusterOptions](/images/TrueCommand/2.0/DistributedClusterOptions.png "DistributedClusterOptions")
 
-Hover the mouse over the bricks listed to display their bricks. Click the IP to remove the brick.
+Hover the mouse over the listed bricks to display their bricks. Click on the IP to remove the brick.
 
 ![DistributedClusterOptionsRemove](/images/TrueCommand/2.0/DistributedClusterOptionsRemove.png "DistributedClusterOptionsRemove")
 
-A confirmation box will appear and the deletion must be confirmed before proceeding.
+A confirmation box displays and you must confirm the deletion to proceed.
 
 ![DistributedClusterOptionsRemoveConfirm](/images/TrueCommand/2.0/DistributedClusterOptionsRemoveConfirm.png "DistributedClusterOptionsRemoveConfirm")
 
-After checking the confirm box, Click **OK** to remove the brick.
-
+After checking the confirm box, click **OK** to remove the brick.
 
 ### Deleting a Distributed Cluster
 
-Click the three dots icon in the cluster overview card and select **Delete**. A confirmation box will appear and the deletion must be confirmed before proceeding.
+Click the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> icon on the cluster overview card and select **Delete**. A confirmation box displays. You must confirm the deletion to proceed.
 
 ![DistributedClusterDelete](/images/TrueCommand/2.0/DistributedClusterDelete.png "DistributedClusterDelete")
 
-After checking the confirm box, Click **OK** to delete the cluster.
+After checking the confirm box, click **OK** to delete the cluster.
 
 {{< /tab >}}
 {{< tab "Replicated" >}}
 
 ![ReplicatedClusterCard](/images/TrueCommand/2.0/ReplicatedClusterCard.png "ReplicatedClusterCard")
 
-In a Replicated Volume the editing options are replacing a brick and deleting the cluster.
+**Replicated-Cluster** volume editing options are **Replace Brick** and **Delete** the cluster.
 
 ### Replacing a Brick in a Replicated Cluster
 
 {{< hint warning >}}
-This Feature is not fully implemented yet.
+This feature is not fully implemented yet.
 {{< /hint >}}
 
 ![DistributedReplicatedClusterOptions](/images/TrueCommand/2.0/DistributedReplicatedClusterOptions.png "DistributedReplicatedClusterOptions")
 
 ### Deleting a Replicated Cluster
 
-Click the three dots icon in the cluster overview card and select **Delete**. A confirmation box will appear and the deletion must be confirmed before proceeding.
+Click the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> icon on the cluster overview card and select **Delete**. A confirmation box displays and you must confirm the deletion to proceed.
 
 ![ReplicatedClusterDelete](/images/TrueCommand/2.0/ReplicatedClusterDelete.png "ReplicatedClusterDelete")
 
-After checking the confirm box, Click **OK** to delete the cluster.
+After checking the confirm box, click **OK** to delete the cluster.
 
 {{< /tab >}}
 {{< tab "Distributed Replicated" >}}
 
 ![DistributedReplicatedClusterCard](/images/TrueCommand/2.0/DistributedReplicatedClusterCard.png "DistributedReplicatedClusterCard")
 
-In a Distributed Replicated the editing options are replacing a brick and deleting the cluster.
+**Distributed-Replicated-Cluster** editing options are **Replace Brick** and **Delete** the cluster.
 
 ### Replacing a Brick in a Distributed Replicated Cluster
 
 {{< hint warning >}}
-This Feature is not fully implemented yet.
+This feature is not fully implemented yet.
 {{< /hint >}}
 
 ![DistributedReplicatedClusterOptions](/images/TrueCommand/2.0/DistributedReplicatedClusterOptions.png "DistributedReplicatedClusterOptions")
 
 ### Deleting a Distributed Replicated Cluster
 
-Click the three dots icon in the cluster overview card and select **Delete**. A confirmation box will appear and the deletion must be confirmed before proceeding.
+Click the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> icon on the cluster overview card and select **Delete**. A confirmation box displays and you must confirm the deletion to proceed.
 
 ![DistributedReplicatedClusterDelete](/images/TrueCommand/2.0/DistributedReplicatedClusterDelete.png "DistributedReplicatedClusterDelete")
 
-After checking the confirm box, Click **OK** to delete the cluster.
+After checking the confirm box, click **OK** to delete the cluster.
 
 {{< /tab >}}
 {{< tab "Dispersed" >}}
 
 ![DispersedClusterCard](/images/TrueCommand/2.0/DispersedClusterCard.png "DispersedClusterCard")
 
-In a Dispersed Volume the editing options are replacing a brick and deleting the cluster.
+**Dispersed-Cluster** volume editing options are **Replace Brick** and **Delete** the cluster.
 
 ### Replacing a Brick in a Dispersed Cluster
 
 {{< hint warning >}}
-This Feature is not fully implemented yet.
+This feature is not fully implemented yet.
 {{< /hint >}}
 
 ![DispersedClusterOptions](/images/TrueCommand/2.0/DispersedClusterOptions.png "DispersedClusterOptions")
 
 ### Deleting a Dispersed Cluster
 
-Click the three dots icon in the cluster overview card and select **Delete**. A confirmation box will appear and the deletion must be confirmed before proceeding.
+Click the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> icon oin the cluster overview card and select **Delete**. A confirmation box displays and you must confirm the deletion to proceed.
 
 ![DispersedClusterDelete](/images/TrueCommand/2.0/DispersedClusterDelete.png "DispersedClusterDelete")
 
-After checking the confirm box, Click **OK** to delete the cluster.
+After checking the confirm box, click **OK** to delete the cluster.
 {{< /tab >}}
 {{< tab "Distributed Dispersed" >}}
 
 {{< hint warning >}}
-Distributed Dispersed Volumes are not implemented at this time.
+Distributed dispersed volumes are not implemented at this time.
 {{< /hint >}} 
 
 {{< /tab >}}

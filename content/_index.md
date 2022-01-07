@@ -45,7 +45,7 @@ Documentation articles follow the latest supported software releases, with previ
 |----------|-------------------------------|
 | TrueNAS CORE & Enterprise | 13.0 |
 | TrueNAS SCALE | BETA (In Development) |
-| TrueCommand | 2.0 |
+| TrueCommand | 2.1 |
   
 The navigation pane to the left has topics that you can expand to find the specific knowledge you're looking for. You can also use the search bar above the navigation pane if you know specific keywords for what you're looking for.   
 
