@@ -47,7 +47,7 @@ To encrypt a dataset, [create a new dataset]({{< relref "/SCALE/Storage/Pools/da
 Encryption options on the **Add Dataset** configuration page change with the selections made.
 
 {{< tabs "Dataset Encryption Options" >}}
-{{< tab Inherit Checkbox>}}
+{{< tab "Inherit Checkbox" >}}
 
 Child datasets inherit settings from the parent dataset.
 The **Add Dataset** configuration screen displays with the inherit checkbox already check-marked. 
@@ -64,7 +64,7 @@ The child dataset encryption settings match the parent encryption settings.
 You can change inherited encrypted/non-encrypted by unchecking the inherit box. 
 
 {{< /tab >}}
-{{< tab Encryption Checkbox>}}
+{{< tab "Encryption Checkbox" >}}
 
 Click on the **Inherit (*encryption-state*)** checkbox with the checkmark to turn off the inherited encryption state. 
 This displays the **Encryption** checkbox already check-marked. 
