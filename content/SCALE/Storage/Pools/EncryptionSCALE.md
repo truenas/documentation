@@ -7,7 +7,7 @@ weight: 60
 
 TrueNAS SCALE offers ZFS encryption for your sensitive data in pools and datasets or zvols.
 
-{< include file="/_includes/EncryptionBackupKeys.md" type="page" >}}
+{{< include file="/_includes/EncryptionBackupKeys.md" type="page" >}}
 
 Data-at-rest encryption is available with:
 
@@ -166,7 +166,7 @@ Encryption is for securing sensitive data.
 Encrypting a zvol is an option only if you create the zvol from a dataset with encryption.
 {{< /hint >}}
 
-{< include file="/_includes/EncryptionBackupKeys.md" type="page" >}}
+{{< include file="/_includes/EncryptionBackupKeys.md" type="page" >}}
 
 Zvols, like datasets, inherit encryption settings from its parent dataset. 
 To encrypt a zvol, [create a new zvol]({{< relref "/SCALE/Storage/Pools/zvolsscale.md" >}}) from a dataset with encrytion configured.
