@@ -20,7 +20,7 @@ A SAML configuration requires an Identity Provider (IdP) and Service Provider (S
 
 Log in to your TrueCommand system (i.e., server, container, VM). Go to **Config > Administration** and then click on the **Configuration** tab.
 
-Enter http://ds.*yourcompany.net*/FederationMetadata/2007-06/FederationMetadata.xml in the **SAML Identity Provider URL** field, then click **Save**. The URL is from Active Directory.
+Enter `http://ds.*yourcompany.net*/FederationMetadata/2007-06/FederationMetadata.xml` in the **SAML Identity Provider URL** field, then click **Save**. The URL is from Active Directory.
 
 Click **Start the SAML service** checkbox and click **Save** to start the service.
 
