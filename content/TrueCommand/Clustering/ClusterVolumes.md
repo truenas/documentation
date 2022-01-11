@@ -18,7 +18,7 @@ Gluster requires TrueNAS systems to have a static IP. TrueNAS with DHCP enabled 
 To create a cluster volume, click the **Cluster Volume** icon <mat-icon role="img" fontset="mdi" aria-hidden="true" class="mat-icon mdi mdi-server-network mat-icon-no-color"></mat-icon> in the top left of the top menu bar or the **Cluster Volume** button on the **Settings** menu <i class="material-icons" aria-hidden="true" title="Settings">settings</i> dropdown.
 
 Click **Create** on the **Cluster Volumes** page.
-Type a name for the cluster, select the desired type on the **Volume Type** drop-down list, and then set the redundancy level for distributed replicated and dispersed volume
+Type a name for the cluster, select the desired type on the **Volume Type** drop-down list, and then set the redundancy level for distributed replicated and dispersed volumes.
 
 ![ClusterVolumeTypeSelection](/images/TrueCommand/2.0/ClusterVolumeTypeSelection.png "Cluster Volume Type Selection")
 
@@ -26,7 +26,7 @@ There are five types of clustered volumes.
 
 {{< tabs "Types of Clustered Volumes" >}}
 {{< tab "Distributed" >}}
-Select **DISTRIBUTED** volume to distribute files across the various bricks in the volume. *File-A* can be stored only in *Brick-1* or *Brick-2* but not on both. As a result, there is no data redundancy. The purpose of a distributed volume is to easily and cheaply scale the volume size.Distributed volumes can suffer significant data loss during a disk or server failure because directory contents are spread randomly across the bricks in the volume. 
+Select **DISTRIBUTED** volume to distribute files across the various bricks in the volume. *File-A* can be stored only in *Brick-1* or *Brick-2* but not on both. As a result, there is no data redundancy. The purpose of a distributed volume is to easily and cheaply scale the volume size. Distributed volumes can suffer significant data loss during a disk or server failure because directory contents are spread randomly across the bricks in the volume. 
 
 {{< hint danger >}}
 Warning: This means that a brick failure leads to complete loss of data.
