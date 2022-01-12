@@ -43,7 +43,7 @@ Documentation articles follow the latest supported software releases, with previ
 
 | Software | Current Documented Version |
 |----------|-------------------------------|
-| TrueNAS CORE & Enterprise | 12.0 |
+| TrueNAS CORE & Enterprise | 13.0 |
 | TrueNAS SCALE | BETA (In Development) |
 | TrueCommand | 2.1 |
   
