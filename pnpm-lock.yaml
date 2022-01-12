@@ -87,7 +87,7 @@ packages:
       colorette: 1.2.2
       normalize-range: 0.1.2
       num2fraction: 1.2.2
-      postcss: 7.0.36
+      postcss: 8.2.13
       postcss-value-parser: 4.1.0
     dev: true
 
@@ -556,7 +556,7 @@ packages:
       fs-extra: 9.0.1
       get-stdin: 8.0.0
       globby: 11.0.1
-      postcss: 7.0.36
+      postcss: 8.2.13
       postcss-load-config: 2.1.2
       postcss-reporter: 6.0.1
       pretty-hrtime: 1.0.3
@@ -579,14 +579,14 @@ packages:
       chalk: 2.4.2
       lodash: 4.17.21
       log-symbols: 2.2.0
-      postcss: 7.0.36
+      postcss: 8.2.13
     dev: true
 
   /postcss-value-parser/4.1.0:
     resolution: {integrity: sha512-97DXOFbQJhk71ne5/Mt6cOu6yxsSfM0QGQyl0L25Gca4yGWEGJaig7l7gbCX623VqTBNGLRLaVUCnNkcedlRSQ==}
     dev: true
 
-  /postcss/7.0.36:
+  /postcss/8.2.13:
     resolution: {integrity: sha512-BebJSIUMwJHRH0HAQoxN4u1CN86glsrwsW0q7T+/m44eXOUAxSNdHRkNZPYz5vVUbg17hFgOQDE7fZk7li3pZw==}
     engines: {node: '>=6.0.0'}
     dependencies:
