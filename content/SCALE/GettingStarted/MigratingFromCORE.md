@@ -13,7 +13,7 @@ TrueNAS SCALE is based on Linux, which does not support FreeBSD GELI encryption.
 If you have GELI-encrypted pools on your system that you plan to import into SCALE, you must migrate your data from the GELI pool to a non-GELI encrypted pool *before* sidegrading to SCALE. 
 {{< /hint >}}
 
-Start by saving the [SCALE ISO file](https://www.truenas.com/download-tn-scale/) to a USB drive (see the **Physical Hardware tab** in {{< relref "InstallingSCALE.md" >}}). Plug the USB drive into the CORE system that you want to sidegrade and boot or reboot the system. 
+Start by saving the [SCALE ISO file](https://www.truenas.com/download-tn-scale/) to a USB drive (see the **Physical Hardware tab** in [Installing SCALE]({{< relref "InstallingSCALE.md" >}})). Plug the USB drive into the CORE system that you want to sidegrade and boot or reboot the system. 
 
 At the motherboard splash screen, use the hotkey defined by your motherboard manufacturer to select a boot device, then select the USB drive with the SCALE <file>.iso<file>.
   
