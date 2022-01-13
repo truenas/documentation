@@ -15,7 +15,7 @@ These are the public release trains that contain the most tested and stable vers
 * TrueNAS CORE: **12.0**
 * TrueNAS Enterprise: **12.0**
 
-## Prelease Trains
+## Prerelease Trains
 
 These trains have the various preview / early build releases of the software.
 
