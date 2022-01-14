@@ -7,7 +7,6 @@ weight: 16
 When a pool is created, a root dataset is also automatically created with the same name as the pool. The root dataset's permissions can't be changed.
 {{< /hint >}}
 
-
 After creating a data storage pool, there are a variety of options to change the initial configuration of that pool.
 Changing a pool can be disruptive, so make sure you are aware of existing resources on the system and consider backing up any stored data before changing the pool.
 To find an existing pool, log in to the web interface and go to **Storage > Pools**.
