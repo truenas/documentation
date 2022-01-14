@@ -136,8 +136,7 @@ You can only lock and unlock an encrypted dataset when it is secured with a pass
 Before locking a dataset, verify that it is not currently in use.
 {{< /hint >}}
 
-{{< tabs "Locking Options" >}}
-{{< tab "Locking a Dataset" >}}
+#### Locking a Dataset
 
 Click the  dataset's <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> icon to display the **Dataset Actions** menu and then click on **Lock**. The **Lock Dataset** dialog box displays and includes the dataset full path name.
 
@@ -150,8 +149,8 @@ A confirmation window diplays indicating the dataset is locked and the unlock ic
 {{< hint info >}}
 You *cannot* use locked datasets.
 {{< /hint >}}
-{{< /tab >}}
-{{< tab "Unlocking a Dataset >}}
+
+#### Unlocking a Dataset
 
 To unlock a dataset, click on the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> icon to display the **Dataset Actions** menu and then click on **Unlock**.
 
@@ -167,8 +166,6 @@ Click **CONTINUE** to confirm you want to unlock the datasets or **CANCEL** to e
 A second confirmation window displays confirming the datasets are unlocked. 
 Click **CLOSE**. 
 TrueNAS displays the dataset with the unlocked icon.
-{{< /tab >}}
-{{< /tabs >}}
 
 ## Encrypting a Zvol
 
