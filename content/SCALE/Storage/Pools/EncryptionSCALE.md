@@ -129,7 +129,7 @@ TrueNAS displays a dataset status with icons:
 
 {{< hint info>}}
 The locked icon displayed beside the root dataset after adding a dataset with encryption and also beside a dataset where the pool encryption properties don't match the root dataset is: ![UnecryptedPoolEncryptionDatasetIcon](/images/CORE/12.0/unecrypted_pool_encrypted_dataset.png "Unencrypted Storage Pool with an Unencrypted Dataset")
-{{< /hint >}}.
+{{< /hint >}}
 
 {{< hint warning >}}
 You can only lock and unlock an encrypted dataset when it is secured with a passphrase instead of a key file.
