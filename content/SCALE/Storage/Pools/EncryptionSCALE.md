@@ -88,7 +88,7 @@ If you change the **Encryption Type** to **Passphrase** new passphrase fields di
 
 ![AddDatasetEncryptionSelectedPassphraseType](/images/SCALE/AddDatasetEncryptionSelectedPassphraseType.png "Dataset Encryption Type Passphrase")
 
-If using the passphrase option might choose a complex phrase not easy to guess.
+If using the passphrase option choose a complex phrase not easy to guess.
 
 {{< hint danger>}}
 Keep both encryption keys and/or passphrases safeguarded in a secure and protected place. 
