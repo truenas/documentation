@@ -14,11 +14,10 @@ These instructions assume that both sides of the rsync task, host and remote, us
 Rysnc requires a [dataset]({{< relref "Datasets.md" >}}) with the needed data on the host or remote system.
 Rsync provides the ability to either push or pull data.
 When using the **Rsync Tasks** function to push, data is copied from a host system to a remote system.
-When using **Rsync Tasks** function to pull, data is pulled from a remote system and put on the host system.
+When using the Rsync Tasks function to pull, it pulls data from a remote system and puts it on the host system.
 
 The remote system must have the rsync service activated.
 Additional requirements are listed further down for either rsynch module or SSH tasks.
-
 
 ## Creating an Rsync Task
 
