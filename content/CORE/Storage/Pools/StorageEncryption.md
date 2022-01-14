@@ -412,10 +412,10 @@ Receieving Dataset = dataset_2
 6. If desired, you can convert the dataset to use a key file instead of a passphrase.
    To use a key file, click the dataset <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; (Options) and click **Encryption Options**.
    Change the **Encryption Type** from **Passphrase** to **Key** and save.
-   {{< hint danger >}}
-   Back up your key file immediately!
-   {{< /hint >}}
 7. Repeat this process for every dataset in the pool that you need to migrate.
 
+{{< hint danger >}}
+Back up your key file immediately!
+{{< /hint >}}
 {{< /tab >}}
 {{< /tabs >}}
