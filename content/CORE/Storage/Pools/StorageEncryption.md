@@ -414,7 +414,7 @@ Receieving Dataset = dataset_2
    Change the **Encryption Type** from **Passphrase** to **Key** and save.
    {{< hint danger >}}
    Back up your key file immediately!
-   {{< /hink >}}
+   {{< /hint >}}
 7. Repeat this process for every dataset in the pool that you need to migrate.
 
 {{< /tab >}}
