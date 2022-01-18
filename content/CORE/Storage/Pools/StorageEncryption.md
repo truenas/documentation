@@ -217,7 +217,7 @@ Next, click the <i class="material-icons" aria-hidden="true" title="Options">mor
 
 ![AddZvolActionsMenuWithEncryptionOptions](/images/CORE/12.0/AddZvolActionsMenuWithEncryptionOptions.png "Zvol Actions with Encryption Options")
 
-If you do not see encryption options on the menu you created the zvol from a dataset not configured with encryption. You can delete the zvol and start over.
+If you do not see encryption options on the menu then you created the zvol from a dataset not configured with encryption. You can delete the zvol and start over.
 
 Click **Encryption Options**. 
 The **Edit Encryption Options** configuration window displays with the **Inherit encryption properties from parent** checkbox check-marked. 
