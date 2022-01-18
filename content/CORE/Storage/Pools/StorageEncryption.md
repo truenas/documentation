@@ -349,7 +349,7 @@ There are a few options to migrate data from a GELI-encrypted pool to a new ZFS-
 {{< tabs "GELI Migration Methods" >}}
 {{< tab "Replication Wizard" >}}
 {{< expand "Using the Replication Wizard" "v" >}}
-TrueNAS web interface continues to detect and suppot GELI encrypted pools as *Legacy Encrypted* pools. As of TrueNAS version 12.0-U1, a decrypted GELI pool can migrate data to a new ZFS encrypted pool using the Replication Wizard.
+The TrueNAS web interface continues to detect and support GELI encrypted pools as *Legacy Encrypted* pools. As of TrueNAS version 12.0-U1, a decrypted GELI pool can migrate data to a new ZFS encrypted pool using the Replication Wizard.
  
 Start the Replication Wizard by selecting **Tasks** -> **Replication Task** -> **ADD**
 
