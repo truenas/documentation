@@ -200,6 +200,7 @@ To unlock all the datasets, click on the **Unlock Children** checkbox to check-m
 
 Click the **CONTINUE** button on both confirmation windows to successfully unlock the datasets. 
 The datasets display the unlocked icon.
+
 ## Encrypting a Zvol
 
 Encryption is for securing sensitive data. 
