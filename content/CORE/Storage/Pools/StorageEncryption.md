@@ -365,7 +365,7 @@ Start the Replication Wizard by selecting **Tasks** -> **Replication Task** -> *
  * In **Destination**, select the dataset to replicate the files to.
  * Set **Encryption**.
  * Choose either **PASSPHRASE** or **HEX** for the **Encryption Key Format**.
- * If you selected PASSPHRASE, type the passphrase. If you selected HEX, set *G*enerate Encryption Key**.
+ * If you selected PASSPHRASE, type the passphrase. If you selected HEX, set **Generate Encryption Key**.
  * Set **Store Encryption key in Sending TrueNAS database**.
  * Click **Next**
  
