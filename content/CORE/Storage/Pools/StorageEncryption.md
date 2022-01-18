@@ -185,10 +185,10 @@ TrueNAS displays the dataset with the unlocked icon.
 
 ![StoragePoolsDatasetUnlockexample1](/images/CORE/12.0/EncrytionExample1.png "Encrypted locked Datasets")
 
-The parent dataset is media. 
-It has three child datasets. 
-The `documents` child datasetinherits the parent encryption settings and its password. 
-The other two child datasets (`audio` and `video`) have their own passphrases. 
+The parent dataset is **media**.
+It has three child datasets.
+The **documents** child dataset inherits the parent encryption settings and its password.
+The other two child datasets (**audio** and **video**) have their own passphrases.
 After locking the parent dataset all child datasets lock too.
 
 ![StoragePoolsDatasetUnlockexample2](/images/CORE/12.0/EncrytionExample2.png "Password for locked Datasets")
