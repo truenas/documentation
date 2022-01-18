@@ -206,7 +206,7 @@ The datasets display the unlocked icon.
 Encryption is for securing sensitive data. 
 
 {{< hint info >}}
-You can only encrypting a zvol if you create the zvol from a dataset with encryption.
+You can only encrypt a zvol if you create the zvol from a dataset with encryption.
 {{< /hint >}}
 
 {{< include file="/_includes/EncryptionBackupKeys.md" type="page" >}}
