@@ -16,7 +16,7 @@ Data-at-rest encryption is available with:
 
 The local TrueNAS system manages keys for data-at-rest.
 The user is responsible for storing and securing their keys.
-TrueNAS, as of 12., includes the [Key Management Interface Protocol (KMIP)](https://docs.oasis-open.org/kmip/spec/v1.1/os/kmip-spec-v1.1-os.html).
+TrueNAS 12.0 and newer includes the [Key Management Interface Protocol (KMIP)](https://docs.oasis-open.org/kmip/spec/v1.1/os/kmip-spec-v1.1-os.html).
 
 {{< expand "Encryption Drawbacks and Considerations" "v" >}}
 Always consider the following drawbacks/considerations when encrypting data:
