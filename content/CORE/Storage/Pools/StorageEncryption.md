@@ -279,7 +279,7 @@ Type your custom key or click **Generate Key**.
 {{< /tab >}}
 {{< tab "Passphrases" >}}
 
-To use a passphrase instead of a keyfile, click the dataset <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> icon to dispaly the **Dataset Actions** menu and then click **Encryption Options**.
+To use a passphrase instead of a keyfile, click the dataset <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> icon to display the **Dataset Actions** menu and then click **Encryption Options**.
 Change the **Encryption Type** from **Key** to **Passphrase**.
 
 ![Storage Pools Dataset Encryption Passphrase](/images/CORE/12.0/StoragePoolsDatasetEncryptionPassphrase.png "Dataset Encryption Passphrase Options")
