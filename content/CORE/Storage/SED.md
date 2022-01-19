@@ -5,7 +5,7 @@ weight: 40
 
 {{< toc >}}
 
-[TrueNAS version 11.1-U5]({{< relref "/ReleaseNotes/CORE/TrueNAS/11.1/11.1U5.md" >}}) introduced Self-Encrypting Drive (SED) support.
+[TrueNAS version 11.1-U5]({{< relref "/CORE/ReleaseNotes/TrueNAS/11.1/11.1U5.md" >}}) introduced Self-Encrypting Drive (SED) support.
 
 ## Supported Specifications
 

@@ -34,7 +34,7 @@ Specifically, any Windows system from the above list that installs the March 202
 
 For more details about this change to Windows, please see [Microsoft’s article about LDAP Channel Binding and LDAP Signing Requirements](https://techcommunity.microsoft.com/t5/core-infrastructure-and-security/ldap-channel-binding-and-ldap-signing-requirements-march-update/ba-p/921536).
 
-This Microsoft change to the default behavior has been addressed in the [FreeNAS/TrueNAS 11.2-U8]({{< relref "/ReleaseNotes/CORE/TrueNAS/11.2/11.2U8.md" >}}) and newer releases.
+This Microsoft change to the default behavior has been addressed in the [FreeNAS/TrueNAS 11.2-U8]({{< relref "CORE/ReleaseNotes/TrueNAS/11.2/11.2U8.md" >}}) and newer releases.
 The methods of communicating with the Domain Controller now use strong authentication.
 The strong authentication methods are either SSL-encrypted transport or signed *sasl_gssapi bind* (Kerberos).
 
