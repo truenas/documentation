@@ -1,6 +1,6 @@
 ---
 title: "Developer's Notes"
-weight: 2
+weight: 9
 ---
 
 NOTE: This page is retired, please use the official documentation instead for TrueNAS SCALE 21.08 and later. Want to get involved in helping to collaborate on TrueNAS SCALE? Join our [Official Discord Server.](https://discord.com/invite/Q3St5fPETd)
