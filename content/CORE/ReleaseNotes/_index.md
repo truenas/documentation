@@ -4,11 +4,8 @@ geekdocCollapseSection: true
 weight: 19
 ---
 
-The release notes will include general information on the release.  
-Additional information that may also be included would be:
+{{< include file="_includes/ReleaseNotesPages.md" >}}
 
-+ changes since the prior release.
-+ a list of JIRA tickets resolved.
-+ any known existing issues that have not been resolved yet.
+Additionally, notes for the legacy FreeNAS & TrueNAS releases are included in this section.
 
 {{< include file="static/includes/General/MenuNav.md.part" markdown="true" >}}
