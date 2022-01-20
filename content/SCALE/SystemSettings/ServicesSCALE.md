@@ -6,7 +6,7 @@ weight: 50
 
 {{< toc >}}
 
-**System Settings > Services** displays each system component that runs continuously in the background. These typically control data-sharing or other external access to the system. Individual services have their own configuration screens and activation toggles, and can be set to run automatically.
+**System Settings > Services** displays each system component that runs continuously in the background. These typically control data-sharing or other external access to the system. Individual services have configuration screens and activation toggles, and you can set them to run automatically.
 
 We have documented services related to data sharing or automated tasks in their respective [Shares]({{< relref "/SCALE/Shares/_index.md" >}}) and [Tasks]({{< relref "/SCALE/DataProtection/_index.md" >}}) articles.
 
@@ -33,7 +33,7 @@ Start the DDNS service after choosing your *Provider* options and saving the set
 
 {{< tab "FTP, SFTP, and TFTP" >}}
 The [File Transfer Protocol (FTP)](https://tools.ietf.org/html/rfc959) is a simple option for data transfers.
-The additional SSH and Trivial FTP options provide secure or simple config file transfer methods, respectively.
+The SSH and Trivial FTP options provide secure or simple config file transfer methods respectively.
 
 Options for configuring **FTP**, **SSH**, and **TFTP** are in **System Settings > Services**.
 Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to configure the related service.
@@ -71,13 +71,13 @@ Configure the options according to your environment and security considerations.
 Ensure *chroot* is enabled and allow *Local User Login*. Doing so confines FTP sessions to a local user's home directory.
 
 Unless necessary, do NOT allow anonymous or root access.
-For better security, enable TLS when possible (especially when FTP is exposed to a WAN).
+For better security, enable TLS when possible (especially when exposing FTP to a WAN).
 TLS effectively makes this [FTPS](https://tools.ietf.org/html/rfc4217).
 
 ### FTP Connection
 
 Use a browser or FTP client to connect to the TrueNAS FTP share.
-The images here show using [FileZilla](https://sourceforge.net/projects/filezilla/), a free option.
+The images below use [FileZilla](https://sourceforge.net/projects/filezilla/), a free option.
 
 The user name and password are those of the local user account on the TrueNAS.
 The default directory is the same as the user's <file>/home</file> directory.
@@ -102,12 +102,12 @@ Review the remaining options and configure them according to your environment or
 
 ### SFTP Connections
 
-Similar to the FTP setup, open an FTP client (like FileZilla) or command line.
+Open an FTP client (like FileZilla) or command line.
 This article shows using FileZilla as an example.
 Using FileZilla, enter *SFTP://'TrueNAS IP'*, *'username'*, *'password'*, and port **22** to connect.
 
 {{< hint warning >}}
-SFTP does not have chroot locking.
+SFTP does not offer chroot locking.
 While chroot is not 100% secure, lacking chroot lets users move up to the root directory and view internal system information.
 If this level of access is a concern, FTP with TLS may be the more secure choice.
 {{< /hint >}}
@@ -153,7 +153,7 @@ Certificates allow TrueNAS to authenticate with clients or servers by confirming
 To read more about the required PKI for OpenVPN, see the [OpenVPN PKI Overview](https://community.openvpn.net/openvpn/wiki/HOWTO?__cf_chl_jschl_tk__=92022277e38bff707b1684f49a2af61f5eb4c632-1605712222-0-AQxKxUAlHKMcfHHNdSMOLL25Lr3e8icKHu3CgjMFRe6GXS1Z72EgXMieNrGaBdWa0m3R5CEZcxwGdwhgaRO392FTivdOQis5Pa2Bm-4jEzydUBTqhx_F4XWN7ujVee5CUxG6AoyOet91SaWM-siqV0_d0ppGnSsfwX9HFOmKuAnJexAjqpofUlP6xjru4Qujw72uR-yUT3fuFDMyukAAtEAP_zPXtewdS_kcSC5eSdf-RC6V8T_QZ2UT6GfqxxSr5shwe0rFkNinTCOKLk_67UIU2zEkpuiQ8C7p3ysh1DS_ONAzR2pfwdgetKm3HiBJ38C86956W6D8-mpOulfP26E#Overview).
 {{< /expand >}}
 
-The general TrueNAS OpenVPN configuration process (server or client) is to select the networking credentials, set the connection details, and choose any additional security or protocol options.
+In general, configuring TrueNAS OpenVPN (server or client) includes selecting networking credentials, setting connection details, and choosing additional security or protocol options.
 
 ## OpenVPN Client
 
@@ -209,7 +209,7 @@ To generate the configuration file, click *Download Client Config* and select th
 Many OpenVPN Server or Client configuration fields are identical.
 This section covers these fields and lists specific configuration options in the [Server](#openvpn-server) and [Client](#openvpn-client) sections.
 
-The *Additional Parameters* field manually sets any of the core OpenVPN config file options.
+The *Additional Parameters* field manually sets any core OpenVPN config file options.
 See the OpenVPN [Reference Manual](https://openvpn.net/community-resources/reference-manual-for-openvpn-2-4/) for descriptions of each option.
 
 ### Connection Settings
@@ -220,7 +220,7 @@ See the OpenVPN [Reference Manual](https://openvpn.net/community-resources/refer
 | Port | The port that the OpenVPN connection will use. |
 | Compression | Choose a compression algorithm for traffic. Leave empty to send data uncompressed.<br><br>*LZO* is a standard compression algorithm that is backward compatible with previous (pre-2.4) versions of OpenVPN.<br><br>*LZ4* is newer and typically faster and requires fewer system resources.|
 | Protocol | Choose between *UDP* or *TCP* OpenVPN protocols. *UDP* sends packets in a continuous stream. *TCP* sends packets sequentially.<br><br>*UDP* is usually faster and less strict about dropped packets than TCP.<br><br>To force the connection to be IPv4 or IPv6, choose one of the `4` or `6` *UDP* or *TCP* options. |
-| Device Type | Use a *TUN* or *TAP* virtual networking device and layer with OpenVPN. Device must be identical between the OpenVPN Server and clients. |
+| Device Type | Use a *TUN* or *TAP* virtual networking device and layer with OpenVPN. The device must be identical between the OpenVPN Server and clients. |
 
 ### Security Options
 
@@ -231,7 +231,7 @@ Security options are not required, but they help protect data users send over th
 |---------|-------|
 | Authentication Algorithm | Validates packets sent over the network connection. Your network environment may require a specific algorithm. If not, *SHA1 HMAC* is a reliable algorithm to use. |
 | Cipher | Encrypts data packets sent through the connection. *Cipher*s aren't required but can increase connection security. You may need to verify which ciphers your networking environment requires. If there are no specific cipher requirements, *AES-256-GCM* is a good default choice. |
-| TLS Encryption | When *TLS Crypt Auth Enabled* is set, OpenVPN adds another layer of security by encrypting all TLS handshake messages. This setting requires sharing a static key between OpenVPN server and clients. |
+| TLS Encryption | When *TLS Crypt Auth Enabled* is set, OpenVPN adds another layer of security by encrypting all TLS handshake messages. This setting requires sharing a static key between the OpenVPN server and clients. |
 
 ## Service Activation
 
@@ -246,9 +246,9 @@ Setting *Start Automatically* starts the service whenever TrueNAS completes boot
 S3 allows you to connect to TrueNAS from a networked client system with the Minio Browser, s3cmd, or S3 Browser.
 
 {{< expand "Background" "v" >}}
-S3 is an object storage protocol used by many major cloud providers including Amazon Web Services™.
-On TrueNAS, the service is another way to store files, and can be viewed with a web browser.
-Because S3 is the de facto standard for cloud-based storage, setting up an S3 service allows organizations or online application developers to use TrueNAS instead of expensive cloud storage.
+S3 is an object storage protocol that many major cloud providers like Amazon Web Services™ use.
+On TrueNAS, the service is another way to store files and can be viewed with a web browser.
+Because S3 is the de facto standard for cloud-based storage, setting up an S3 service allows organizations or online application developers to use TrueNAS to replace or archive expensive cloud storage.
 {{< /expand >}}
 
 ## Setting up the S3 service
@@ -258,24 +258,14 @@ Go to the **System Settings > Services** and find *S3*, then click <i class="mat
 ![ServicesS3SCALE](/images/SCALE/ServicesS3SCALE.png "S3 Service Options")
 
 {{< expand "Field Descriptions" "v" >}}
-**S3 Configuration Options**
-
-| Name | Description |
-|------|-------------|
-| IP Address | Enter the IP address that runs the S3 service. *0.0.0.0* tells the server to listen on all IPv4 addresses. *::* allows the same for any IPv6 address. Select the TrueNAS IP address to constrain it to a specific network. |
-| Port | Enter the TCP port that provides the S3 service. |
-| Access Key | Enter the S3 access ID. See [Access keys](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys) for more information. |
-| Secret Key | Enter the S3 secret access key. See [Access keys](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys) for more information. |
-| Disk | Browse to a directory to define the S3 filesystem path. |
-| Enable Browser | Enables the S3 service web UI. Access the minio web UI by entering the IP address and port number separated by a colon in the browser address bar. Example: *192.168.1.0:9000*. |
-| Certificate | Use an SSL [certificate]({{< relref "CertificatesSCALE.md" >}}) created or imported in **Credentials > Certificates** for secure S3 connections. |
+{{< include file="/_includes/ServicesS3Fields.md" type="page" >}}
 {{< /expand >}}
 
 Select a clean dataset.
 Minio manages files as objects that you CANNOT mix with other dataset files.
 You can create new datasets by going to **Storage** and clicking <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> > *Add Dataset*.
 
-Configure the rest of the options as needed in your environment and start the service after saving any changes.
+Configure the remaining options as needed in your environment and start the service after saving any changes.
 
 ## Minio Connections
 
@@ -288,14 +278,14 @@ Minio supports two different connection methods:
 ### s3cmd
 
 Linux or macOS users must have the [s3cmd](https://s3tools.org/s3cmd) service installed before beginning this setup.
-On Windows, users can also refer to [S3Express](https://www.s3express.com/) for a similar command line experience.
+On Windows, users can also refer to [S3Express](https://www.s3express.com/) for a similar command-line experience.
 
 {{< hint ok >}}
-Ubuntu or other Linux distributions can access the configuration by running `s3cmd --configure` to walk through important settings.
+Ubuntu or other Linux distributions can access the configuration by running `s3cmd --configure` to walk through critical settings.
 {{< /hint >}}
 
 Enter the specified access key and the secret key.
-Under *S3 Endpoint*, enter the TrueNAS IP address followed by TCP port, and reply *N* to the DNS-style bucket+hostname. 
+Under the *S3 Endpoint*, enter the TrueNAS IP address followed by TCP port, and reply *N* to the DNS-style bucket+hostname. 
 
 Save the file.
 On Linux, the default is in the home directory <file>\~/.s3cfg</file>.
@@ -304,7 +294,7 @@ If the connection has any issues, open <file>.s3cfg</file> again to troubleshoot
 In Ubuntu, use `nano .s3cfg` or `vi .s3cfg` or `gedit .s3cfg` depending on the preferred text editor.
 For other operating systems, .s3cfg file location and editing tools may vary. 
 
-Scroll down to the host_bucket area and make sure the %(bucket)s. portion is removed and the address points to the *IP_address:TCP_port* for the system.
+Scroll down to the host_bucket area and ensure the configuration has removed the `%(bucket)s.` portion and the address points to the *IP_address:TCP_port* for the system.
 
 **Correct Example**
 ```
@@ -320,11 +310,11 @@ host_bucket = `%(bucket)s.192.168.123.207`
 
 Poll the buckets using `s3cmd ls` to see the buckets created with the Minio Browser.
 
-See the [Minio s3cmd document](https://docs.minio.io/docs/s3cmd-with-minio.html) and [s3tools site](https://s3tools.org/s3cmd) for more information. 
+For more information on using Minio with `s3cmd`, see https://docs.minio.io/docs/s3cmd-with-minio.html and https://s3tools.org/s3cmd.
 
 ## S3 Browser (Windows)
 
-On Windows PCs, the S3 Browser is a convenient way to connect the TrueNAS system to Minio S3.
+The Windows PC S3 Browser is another convenient way to connect to the Minio S3 from TrueNAS.
 
 To set it up, first [install the S3 Browser](https://s3-browser.en.uptodown.com/windows).
 
@@ -334,7 +324,7 @@ After installation completes, add a new account.
 
 In the settings, select *S3 Compatible Storage* as the *Account Type*, then enter the Minio access point similar to the `s3cmd` setup (TrueNAS_IP_address:9000 or other port if set differently).
 Select the SSL settings appropriate for the particular setup.
-The default assumes SSL in S3 Browser, but for a LAN attached session, this may or may not have been set.
+The S3 Browser assumes SSL by default, but it may be unset for a LAN attached session.
 
 ![AmazonS3EditAccount](/images/CORE/AmazonS3EditAccount.png)
 
@@ -354,7 +344,7 @@ To configure SNMP, go to **System Settings > Services** page, find *SNMP*, and c
 {{< include file="static/includes/Reference/ServicesSNMPFields.md.part" markdown="true" >}}
 {{< /expand >}}
 
-When starting the SNMP service, port *UDP 161* listens for SNMP requests.
+Port *UDP 161* listens for SNMP requests when starting the SNMP service.
 
 ## Management Information Bases (MIBs)
 
@@ -397,7 +387,7 @@ We recommend these additional SSH service options:
 * Increase the *ClientAliveInterval* if SSH connections tend to drop.
 * Increase the *ClientMaxStartup* value (*10* is default) when you need more concurrent SSH connections.
 
-Don't forget to re-enable the SSH service in **System Settings > Services** after making changes.
+Remember to enable the SSH service in **System Settings > Services** after making changes.
 To create and store specific [SSH connections and keypairs]({{< relref "/SCALE/Credentials/BackupCredentials/_index.md" >}}), go to **Credentials > Backup Credentials**.
 {{< /tab >}}
 
@@ -411,7 +401,7 @@ After connecting the TrueNAS system UPS device, configure the UPS service by goi
 {{< include file="static/includes/Reference/ServicesUPSFields.md.part" markdown="true" >}}
 {{< /expand >}}
 
-Some UPS models sre unresponsive with the default polling frequency (default is *two* seconds).
+Some UPS models are unresponsive with the default polling frequency (default is *two* seconds).
 TrueNAS displays the issue in logs as a recurring error like `libusb_get_interrupt: Unknown error`.
 If you get an error, decrease the polling frequency by adding an entry to *Auxiliary Parameters (ups.conf)*: `pollinterval = 10`.
 
