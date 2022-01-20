@@ -18,7 +18,7 @@ A SAML configuration requires an Identity Provider (IdP) and Service Provider (S
 
 Log in to your TrueCommand system (i.e., server, container, VM). Go to **Config > Administration**, then click on the **Configuration** tab.
 
-Enter *http://ds.yourcompany.net/FederationMetadata/2007-06/FederationMetadata.xml* in the **SAML Identity Provider URL** field, then click **Save**. The URL is from Active Directory.
+Enter http://*ds.yourcompany.net*/FederationMetadata/2007-06/FederationMetadata.xml in the **SAML Identity Provider URL** field, then click **Save**. The URL is from Active Directory.
 
 Click the **Start the SAML service** checkbox, then click **Save** to start the service.
 
@@ -46,7 +46,7 @@ The example below describes each top-level step in detail.
 
 This procedure assumes the Windows administrator user is QE. Substitute your system addresses (URLs, IP address, port number, names, etc.) where variables are present.
 
-1. Access the TrueCommand web interface via *http://IP:PORT* where *IP:PORT* is the IP address and port number assigned to your TrueCommand system. 
+1. Access the TrueCommand web interface via http://*IP:PORT* where *IP:PORT* is the IP address and port number assigned to your TrueCommand system. 
 
 2. Go to **Config > Administration** and select the **Configuration** tab.
 
@@ -81,13 +81,13 @@ This procedure assumes the Windows administrator user is QE. Substitute your sys
 
 3. Modify the TrueCommand Certificate (<file>tc.cer</file>).
 
-   a. Open PowerShell and type `Invoke -webRequest -uri http://IP:PORT/saml/metadata -outfile tc.cer` where *IP:PORT* is your TrueCommand system IP address/port number.
+   a. Open PowerShell and type `Invoke -webRequest -uri http://IP:PORT/saml/metadata -outfile tc.cer`. *IP:PORT* is your TrueCommand system IP address/port number.
 
       ![OpenPowershellTypeInvokeCommand](/images/SAML/OpenPowershellTypeInvokeCommand.png "Open Powershell Type Invoke Command")
 
    b. Edit the certificate as follows:
 
-      i. Open a **File Explorer** window and locate the <file>tc.cer</file> file in **C:/local data/user/QE**.
+      i. Open a File Explorer window and locate the <file>tc.cer</file> file in <file>C:/local data/user/QE</file>.
     
          ![LocateTcCertificateWithFileExplorer](/images/SAML/LocateTcCertificateWithFileExplorer.png "Locate TC Certificate With File Explorer")
         
@@ -220,11 +220,11 @@ Log out of TrueCommand.
 
    ![GASelectWebandMobileApps](/images/SAML/GASelectWebandMobileApps.jpg "GA Select Web and Mobile Apps")
     
-2. Click **Add App**, then select **Add custom SAML app**.
+2. Click **Add App**, then select **Add custom SAML app** to open the **App details** screen.
 
    ![GAClickAddApp](/images/SAML/GAClickAddApp.jpg "GAClickAddApp")
     
-3. Configure the SAML app screen settings. 
+3. Configure the SAML app details. 
 
    ![GAAddCustomSAMLAppDetailsCropped](/images/SAML/GAAddCustomSAMLAppDetailsCropped.jpg "GA Add Custom SAML App Details Cropped")
     
@@ -232,25 +232,25 @@ Log out of TrueCommand.
    b. Upload any picture or avatar you want to use into the **App icon** area to identify the app in your Google Admin account.
    c. Click **CONTINUE.** to view the **Google Identity Provider** screen. 
 
-4. Click **CONTINUE** to view the **Service Provider** details screen.
+4. Click **CONTINUE** to view the **Service Provider details** screen.
 
 5. Configure the service provider details. 
     
    ![GAAddCustomSAMLAppAddServiceProviderDetailsCropped](/images/SAML/GAAddCustomSAMLAppAddServiceProviderDetailsCropped.jpg "GA Add Custom SAML App Add Service Provider Details Cropped")
     
-   a. Type or copy/paste the TrueCommand login URL *http://IP:PORT/saml/acs* into the **ACS Url** field. *IP:PORT* is your TrueCommand system IP and port address. 
+   a. Type or copy/paste the TrueCommand login URL http://*IP:PORT*/saml/acs into the **ACS Url** field. *IP:PORT* is your TrueCommand system IP and port address. 
    b. Type any name you want into the **Entity ID** field (ex. truecommand-saml).
-   c. Type the *https://IP:PORT/saml/helloURL* into the **Start URL** field. *IP:PORT* is your TrueCommand system IP and port address. 
+   c. Type the https://*IP:PORT*/saml/helloURL into the **Start URL** field. *IP:PORT* is your TrueCommand system IP and port address. 
    d. Set **Name ID** format to **PERSISTENT**.
 
    ![GAAddCustomSAMLAppDetailsAddedCropped](/images/SAML/GAAddCustomSAMLAppDetailsAddedCropped.jpg "GA Add Custom SAML App Details Added Cropped")
     
-   e. Set Name ID to **Basic Information > Primary Email**.
+   e. Set **Name ID** to **Basic Information > Primary Email**.
    f. Click **CONTINUE** to view the **Attribute Mapping** screen.
 
    ![GAAddCustomSAMLAppAttributeMappingCropped](/images/SAML/GAAddCustomSAMLAppAttributeMappingCropped.jpg "GAA dd Custom SAML App Attribute Mapping Cropped")
     
-   g. Enter the Attributes. Select the attribute using the **Google Directory attributes** drop-down menus and then type the attributes exactly as below into the **App attributes** fields:
+   g. Enter the **Attributes**. Select the attribute using the **Google Directory attributes** drop-down menus, then type the attributes exactly as below into the **App attributes** fields:
 
    | Parameter | Value |
    |---|---|
