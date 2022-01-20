@@ -60,7 +60,7 @@ The command to verify the checksum varies by operating system:
 * BSD: `sha256 isofile`
 * Linux: `sha256sum isofile`
 * Mac: `shasum -a 256 isofile`
-* Windows or Mac users can install additional utilities like [HashCalc](https://hashcalc.soft112.com/) or [HashTab](https://implbits.com/products/hashtab/).
+* Windows or Mac users can install additional utilities like [HashCalc](https://hashcalc.soft112.com/) or [HashTab](https://download.cnet.com/HashTab/3000-2094_4-84837.html).
 
 The value produced by running the command must match the value shown in the <file>sha256.txt</file> file.
 Different checksum values indicate a corrupted installer file that should not be used.
