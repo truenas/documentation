@@ -20,7 +20,7 @@ A SAML configuration requires an Identity Provider (IdP) and Service Provider (S
 
 Log in to your TrueCommand system (i.e., server, container, VM). Go to **Config > Administration** and then click on the **Configuration** tab.
 
-Enter http://ds.*yourcompany.net*/FederationMetadata/2007-06/FederationMetadata.xml in the **SAML Identity Provider URL** field, then click **Save**. The URL is from Active Directory.
+Enter <kbd>http://ds.<i>yourcompany.net</i>/FederationMetadata/2007-06/FederationMetadata.xml</kbd> in the **SAML Identity Provider URL** field, then click **Save**. The URL is from Active Directory.
 
 Click **Start the SAML service** checkbox and click **Save** to start the service.
 
@@ -52,7 +52,7 @@ This procedure assumes the Windows administrator user is QE. Substitute your sys
 
 2. Go to Config > Administration and select the Configuration tab.
 
-   a. Enter http://ds.yourcompany.net/FederationMetadata/2007-06/FederationMetadata.xml in the SAML Identity Provider URL field, then click Save. The URL is from Active Directory.
+   a. Enter <kbd>http://ds.<i>yourcompany.net</i>/FederationMetadata/2007-06/FederationMetadata.xml</kbd> in the SAML Identity Provider URL field, then click Save. The URL is from Active Directory.
 
    b. Click Start the SAML service checkbox and click **Save** to start the service.
 
@@ -71,7 +71,6 @@ This procedure assumes the Windows administrator user is QE. Substitute your sys
 
       ![AddRelyingPartyTrustWizardWelcome](/images/SAML/AddRelyingPartyTrustWizardWelcome.png "Add Relying Party Trust Wizard Welcome")
       
-
    c. Select Enter data about the relying party manually and then click Next.
 
       ![WizardSelectEnterDataAboutRelyingPartyManuallyCropped](/images/SAML/WizardSelectEnterDataAboutRelyingPartyManuallyCropped.png "Wizard Select Enter Data About Relying Party Manually Cropped")
