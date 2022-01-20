@@ -48,9 +48,9 @@ This procedure assumes the Windows administrator user is QE. Substitute your sys
 
 1. Access the TrueCommand web interface via *http://IP:PORT* where *IP:PORT* is the IP address and port number assigned to your TrueCommand system. 
 
-2. Go to Config > Administration and select the Configuration tab.
+2. Go to **Config > Administration** and select the **Configuration** tab.
 
-   a. Enter *http://ds.yourcompany.net/FederationMetadata/2007-06/FederationMetadata.xml* in the SAML Identity Provider URL field, then click Save. The URL is from Active Directory.
+   a. Enter http://*ds.yourcompany.net*/FederationMetadata/2007-06/FederationMetadata.xml in the **SAML Identity Provider URL** field, then click **Save**. The URL is from Active Directory.
 
    b. Click the **Start the SAML service** checkbox, then click **Save** to start the service.
 
@@ -101,15 +101,15 @@ This procedure assumes the Windows administrator user is QE. Substitute your sys
       
          ![EditedTcCertificate](/images/SAML/EditedTcCertificate.png "Edited Tc Certificate")
       
-      vi. Click **Save** (or <kbd>Ctrl-S</kbd>) and then close **Notepad**.
+      vi. Click **Save** (or <kbd>Ctrl-S</kbd>) and then close Notepad.
 
    c. Close Powershell.
 
-   d. Select Browse on the Configure Certificate window. The Encryption Certificate window opens. 
+   d. Select **Browse** in the **Configure Certificate** window. The **Encryption Certificate** window opens. 
 
       ![WizardConfigureCertificateSelectBrowseCropped](/images/SAML/WizardConfigureCertificateSelectBrowseCropped.png "Wizard Configure Certificate Select Browse Cropped")
     
-   e. Locate the <file>tc.cer</file> file (**C:/local disk/users/QE** and then select the <file>tc.cer</file>. Click **Open** to view the **Configure Certificate** window and see information about the certificate. Click **Next** to move on to the **Configure URL** window.
+   e. Locate the <file>tc.cer</file> file (<file>C:/local disk/users/QE</file> and then select the <file>tc.cer</file>). Click **Open** to view the **Configure Certificate** window and see information about the certificate. Click **Next** to move on to the **Configure URL** window.
 
 4. Configure the URL. In the **Configure URL** window:
 
@@ -117,13 +117,13 @@ This procedure assumes the Windows administrator user is QE. Substitute your sys
         
    ![WizardSelectEnableSupportForSAML2_0WebSSOProtocolCropped](/images/SAML/WizardSelectEnableSupportForSAML2_0WebSSOProtocolCropped.png "Wizard Select Enable Support For SAML 2.0 Web SSO Protocol Cropped")
         
-   b. Type or copy/paste the TrueCommand login URL (*http://IP:PORT/saml/acs*) in the **Relying party SAML 2.0 SSO service URL** field. *IP:PORT* is your TrueCommand system IP and port address.
+   b. Type or copy/paste the TrueCommand login URL (http://*IP:PORT*/saml/acs) in the **Relying party SAML 2.0 SSO service URL** field. *IP:PORT* is your TrueCommand system IP and port address.
 
    c. Click **Next** to continue to the **Configure Identifiers** window.
 
 5. Configure the SAML identifiers.
 
-   a. Type *truecommand-sml* into the **Relying party trust identifier** field and click **Add**.
+   a. Type **truecommand-sml** into the **Relying party trust identifier** field and click **Add**.
 
    ![WizardConfigureIdentifiersTypeNameCropped](/images/SAML/WizardConfigureIdentifiersTypeNameCropped.png "Wizard Configure Identifiers Type Name Cropped")
         
@@ -141,13 +141,13 @@ This procedure assumes the Windows administrator user is QE. Substitute your sys
         
    b. Select the **Endpoints** tab, then click **Edit** to open the **Edit Endpoint** window.
 
-   c. Change the **Index** value to *1* and click **OK**. 
+   c. Change the **Index** value to **1** and click **OK**. 
 
    ![EditPropertiesEndpointsChangeIndexValueCropped](/images/SAML/EditPropertiesEndpointsChangeIndexValueCropped.png "Edit Properties Endpoints Change Index Value Cropped")
        
    d. Click the **Add SAML** button to open the **Add an Endpoint** window.
 
-   e. Type or copy/paste the TrueCommand URL *http://IP:PORT/saml/slo* in the **Trusted URL** field.
+   e. Type or copy/paste the TrueCommand URL (http://*IP:PORT*/saml/slo) in the **Trusted URL** field.
 
    ![EditPropertiesEndpointsEnterTrustedURLSLOCropped](/images/SAML/EditPropertiesEndpointsEnterTrustedURLSLOCropped.png "Edit Properties Endpoints Enter Trusted URL SLO Cropped")
         
@@ -163,7 +163,7 @@ This procedure assumes the Windows administrator user is QE. Substitute your sys
 
    ![EditClaimIssuancePolicyAddRuleTransformAnIncomingClaimCropped](/images/SAML/EditClaimIssuancePolicyAddRuleTransformAnIncomingClaimCropped.png "Edit Claim Issuance Policy Add Rule Transform An Incoming Claim Cropped")
         
-   c. Select **Windows accoiunt name** in the **Incoming claim type** drop-down menu.
+   c. Select **Windows account name** in the **Incoming claim type** drop-down menu.
 
    d. Select **Name ID** in the **Outgoing claim type** drop-down menu.
 
@@ -192,7 +192,7 @@ This procedure assumes the Windows administrator user is QE. Substitute your sys
 
 8. Close **Active Directory**.
 
-9. Go to the TrueCommand login page and use the SAML Login.
+9. Go to the TrueCommand login page and use the **SAML Login**.
 {{< /tab >}}
 {{< tab "Google Admin" >}}
 To configure Google Admin as the IdP, you must:
