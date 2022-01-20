@@ -296,5 +296,5 @@ Log out of TrueCommand.
 3. Upload the file to True Command using the **SAML Identity Provider Metadata XML File Upload** box, then click **Save**.
 5. Click the **Start the SAML service** checkbox to enable the service, and click **Save** again.
 6. Log out of TrueCommand.
-7. Login with the SAML Login.
+7. Login with the **SAML Login**.
 {{< /tab >}}
