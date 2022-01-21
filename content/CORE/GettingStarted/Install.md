@@ -22,7 +22,7 @@ You will need an OpenPGP encryption application for this method of ISO verificat
 There are many different free applications available, but the OpenPGP group provides a list of available software for different operating systems at https://www.openpgp.org/software/.
 The examples in this section show verifying the TrueNAS <file>.iso</file> using [gnupg2](https://gnupg.org/software/index.html) in a command prompt, but [Gpg4win](https://www.gpg4win.org/) is also a good option for Windows users.
 
-To verify the <file>.iso</file> source, go to https://www.truenas.com/download-tn-core/ , expand the **Security** option, and click *PGP Signature* to download the Gnu Privacy Guard (<file>.gpg</file>) signature file.  The PGP Public Key can be downloaded from either [pgp.mit.edu](https://pgp.mit.edu/pks/lookup?op=vindex&search=0x358EAA9112CF7946) or [keys.openpgp.org](https://keys.openpgp.org/search?q=security-officer%40ixsystems.com)
+To verify the <file>.iso</file> source, go to https://www.truenas.com/download-tn-core/ , expand the **Security** option, and click *PGP Signature* to download the Gnu Privacy Guard (<file>.gpg</file>) signature file. The PGP Public Key can be downloaded from either [pgp.mit.edu](https://pgp.mit.edu/) (search for `security-officer@ixsystems.com`) or [keys.openpgp.org](https://keys.openpgp.org/search?q=security-officer%40ixsystems.com).
 
 Open the [PGP Public key link](https://keyserver.ubuntu.com/pks/lookup?search=0xC8D62DEF767C1DB0DFF4E6EC358EAA9112CF7946&fingerprint=on&op=index) and note the address in your browser and **Search results for** string .
 
@@ -60,7 +60,7 @@ The command to verify the checksum varies by operating system:
 * BSD: `sha256 isofile`
 * Linux: `sha256sum isofile`
 * Mac: `shasum -a 256 isofile`
-* Windows or Mac users can install additional utilities like [HashCalc](https://hashcalc.soft112.com/) or [HashTab](https://implbits.com/products/hashtab/).
+* Windows or Mac users can install additional utilities like [HashCalc](https://hashcalc.soft112.com/) or [HashTab](https://download.cnet.com/HashTab/3000-2094_4-84837.html).
 
 The value produced by running the command must match the value shown in the <file>sha256.txt</file> file.
 Different checksum values indicate a corrupted installer file that should not be used.
