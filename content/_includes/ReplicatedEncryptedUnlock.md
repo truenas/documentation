@@ -26,10 +26,10 @@ Check **Full Filesystem Replication** so that the destination dataset will use t
 5. Fill out the form as needed and make sure *Full Filesystem Replication* is checked.
 6. Click *Save*.
 7. On the receiving pool/dataset:
-   Click the options next to tank/reptest and select Unlock.
-   Unset Unlock with Key file.
-   Paste the Key Code into Dataset Key. (if there is a space character at the end of the key - delete the space)
-   Click Save.
-   Click Continue.
+  * Click the options next to tank/reptest and select Unlock.
+  * Unset Unlock with Key file.
+  * Paste the Key Code into Dataset Key. (if there is a space character at the end of the key - delete the space)
+  * Click Save.
+  * Click Continue.
 {{< /tab >}}
 {{< /tabs >}}
