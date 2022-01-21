@@ -17,7 +17,7 @@ Uncheck properties when replicating so that the destination dataset will not be 
 3. Fill out the form as needed and make sure *Include Dataset Properties* is **NOT** checked.
 4. Click *Save*.
 {{< /tab >}}
-{{< tab "Method 3: Replicate Encrypted Dataset/zvol in the UI" >}}
+{{< tab "Method 3: Replicate Key Encrypted Dataset/zvol" >}}
 Check **Full Filesystem Replication** so that the destination dataset will use the exported Encryption key from the source pool/dataset to unlock.
 1. Go to **Storage -> pool/root dataset**. Click then click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> and select **Export Key**.
 2. Download the key, open the text file, and copy the Key code.
