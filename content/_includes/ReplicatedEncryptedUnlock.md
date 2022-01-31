@@ -23,7 +23,7 @@ Check **Full Filesystem Replication** so that the destination dataset will use t
 2. Download the key, open the text file, and copy the Key code.
 3. Go to **Data Protection** and click *ADD* in the *Replication Tasks* window.
 4. Click *Advanced Replication Creation*.
-5. Fill out the form as needed and make sure *Full Filesystem Replication* is checked.
+5. Fill out the form as needed and make sure to enable *Full Filesystem Replication*.
 6. Click *Save*.
 7. On the receiving pool/dataset:
   * Click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>  next to pool/dataset and select *Unlock*.
