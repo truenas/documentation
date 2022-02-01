@@ -56,15 +56,15 @@ Set up a second 2FA device as a backup before proceeding.
 
 1 Go to **Credentials > 2FA**.
 
-1 Click **Enable Two Factor Authentication**, then click **Confirm**.
+2 Click **Enable Two Factor Authentication**, then click **Confirm**.
 
-  ![2FAOptionsSCALE](/images/SCALE/2FAOptionsSCALE.png "2FA Options")
+ ![2FAOptionsSCALE](/images/SCALE/2FAOptionsSCALE.png "2FA Options")
 
-1 Click **Show QR**.
+3 Click **Show QR**.
 
-  ![2FAQRSCALE](/images/SCALE/2FAQRSCALE.png "2FA: QR Code")
+ ![2FAQRSCALE](/images/SCALE/2FAQRSCALE.png "2FA: QR Code")
 
-1 Start Google Authenticator on the mobile device and scan the QR code.
+4 Start Google Authenticator on the mobile device and scan the QR code.
 
 ## Using 2FA to Log in to TrueNAS
 
@@ -81,11 +81,11 @@ Enter the code from the mobile device (without the space) in the login window wi
 {{< tab "SSH Logins" >}}
 
 1 Confirm that you set **Enable Two-Factor Auth for SSH** in **Credentials > 2FA**.
-1 Go to **System Settings > Services** and edit the **SSH** service.
+2 Go to **System Settings > Services** and edit the **SSH** service.
   Set **Log in as Root with Password**, then click **Save**.
   Toggle the **SSH** service and wait for the status to show that it is running.
-1 Open the Google Authentication app on your mobile device.
-1 Open a terminal and SSH into the system using its hostname or IP address, *root* account username and password, and the 2FA code.
+3 Open the Google Authentication app on your mobile device.
+4 Open a terminal and SSH into the system using its hostname or IP address, *root* account username and password, and the 2FA code.
   
   ![2FASSHSCALE](/images/SCALE/2FASSHSCALE.png "2FA SSH Connection")
 {{< /tab >}}
