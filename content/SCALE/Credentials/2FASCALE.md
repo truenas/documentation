@@ -45,7 +45,7 @@ Two-factor authentication is time-based and requires that you correctly set the 
 
 ## Enabling Two-Factor Authentication.
 
-{{< Expand "Video Tutorial" "v" >}}
+{{< expand "Video Tutorial" "v" >}}
 This short video demonstrates adding 2FA. 
 {{< embed-video name="scaleangelfish2fa" >}}
 {{< /expand >}}
