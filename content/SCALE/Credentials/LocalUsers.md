@@ -27,7 +27,8 @@ TrueNAS hides all built-in users (except root) by default. Click the <i class="m
 ## Creating User Accounts
 
 {{< expand "Tutorial Video" "v" >}}
-This short video demonstrates adding a local user {{< embed-video name="scaleangelfishlocalusers" >}}
+This short video demonstrates adding a local user.
+{{< embed-video name="scaleangelfishlocalusers" >}}
 {{< /expand >}} 
 
 To create a new user, click **Add**.
