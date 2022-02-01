@@ -92,7 +92,7 @@ After a dataset is created, additional management options are available by going
 * **Edit Options**: opens the [dataset options](#dataset-options) to make adjustments to the dataset configuration.
   The dataset *Name*, *Case Sensitivity*, and *Share Type* cannot be changed.
 * **Edit Permissions**: opens the editor to set access permissions for this dataset.
-  Depending on the dataset creation options, this can be a simple permissions editor or the full ACL editor. For more information about editing permissions, read the [permissions]({{< relref "Permissions.md" >}}) article.
+  Depending on the dataset creation options, this can be a simple permissions editor or the full ACL editor. For more information about editing permissions, read the [permissions]({{< relref "Permissions.md" >}}) article. This option is not available for the root dataset.
 * **User Quotas**: shows options to set data or object quotas for user accounts cached on the system or user accounts that are connected to this system.
 * **Group Quotas**: shows options to set data or object quotas for user groups cached on the system or user groups that are connected to this system. 
 * **Delete Dataset**: removes the dataset, all stored data, and any snapshots of the dataset from TrueNAS.
