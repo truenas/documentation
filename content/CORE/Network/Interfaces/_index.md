@@ -45,23 +45,25 @@ It is also recommended to add any notes or reminders about this particular LAGG 
 
 Under **LAGG Settings**, set the *Lagg Protocol* to configure the interface ports to match your networking needs:
 
-{{< tabs "Lagg Protocol Options" >}}
-{{< tab "LACP" >}}
-The most commonly used LAGG protocol and is one part of [IEEE specification 802.3ad](https://www.ieee802.org/3/hssg/public/apr07/frazier_01_0407.pdf). In LACP mode, negotiation is performed with the network switch to form a group of ports that are all active at the same time. The network switch must support LACP for this option to function.
-{{< /tab >}}
-{{< tab "Failover" >}}
+{{< expand "LACP" "v" >}}
+LACP is the most commonly used LAGG protocol and is one part of [IEEE specification 802.3ad](https://www.ieee802.org/3/hssg/public/apr07/frazier_01_0407.pdf). In LACP mode, negotiation is performed with the network switch to form a group of ports that are all active at the same time. The network switch must support LACP for this option to function.
+{{< /expand >}}
+
+{{< expand "Failover" "v" >}}
 Failover causes traffic to be sent through the primary interface of the group. If the primary interface fails, traffic diverts to the next available interface in the LAGG.
-{{< /tab >}}
-{{< tab "Load Balance" >}}
+{{< /expand >}}
+
+{{< expand "Load Balance" "v" >}}
 Load Balance accepts inbound traffic on any port of the LAGG group and then balances the outgoing traffic on the active ports in the LAGG group. It is a static setup that does not monitor the link state nor does it negotiate with the switch.
-{{< /tab >}}
-{{< tab "RoundRobin" >}}
+{{< /expand >}}
+
+{{< expand "RoundRobin" "v" >}}
 Round robin accepts inbound traffic on any port of the LAGG group and sends outbound traffic using a round robin scheduling algorithm. Traffic is sent out in sequence using each LAGG interface in turn.
-{{< /tab >}}
-{{< tab "None" >}}
+{{< /expand >}}
+
+{{< expand "None" "v" >}}
 This mode disables traffic on the LAGG interface without disabling the LAGG interface.
-{{< /tab >}}
-{{< /tabs >}}
+{{< /expand >}}
 
 Now define the *Lagg Interfaces* and review the remaining interface options.
 
