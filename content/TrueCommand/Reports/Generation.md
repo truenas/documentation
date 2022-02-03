@@ -3,7 +3,6 @@ title: "Generating a System Report"
 weight: 20
 ---
 
-
 {{< toc >}}
 
 The **Reports** page customizes system metrics charts for data analysis.
@@ -22,15 +21,15 @@ Click **Generate** to open the date and system selection window.
 
 ![ReportsGenerateDateWidget](/images/TrueCommand/2.0/ReportsGenerateDateWidget.png "Reports Generate Date Widget")
 
-Select the beginning and end dates for the report using the dropdown.
+Select the report's beginning and end dates using the drop-down.
 
 ![ReportsGenerateDateWidgetSelectDate](/images/TrueCommand/2.0/ReportsGenerateDateWidgetSelectDate.png "Reports Generate Date Widget Select Date")
 
-Once you set the date range, use the **systems** dropdown to select which systems you want to include in the report.
+Once you set the date range, use the **systems** drop-down menu to select which systems you want to include in the report.
 
 ![ReportsGenerateDateWidgetSelectSystems](/images/TrueCommand/2.0/ReportsGenerateDateWidgetSelectSystems.png "Reports Generate Date Widget Select Systems")
 
-With the systems selected, click **Generate**
+Once you have selected the systems, click **Generate**
 
 ![ReportsGenerateDateWidgetGenerate](/images/TrueCommand/2.0/ReportsGenerateDateWidgetGenerate.png "Reports Generate Date Widget Generate")
 
@@ -38,6 +37,6 @@ The report will generate, and the graph will appear.
 
 ![ReportsGenerated](/images/TrueCommand/2.0/ReportsGenerated.png "ReportsGenerated")
 
-To download the report metrics in JSON format, hover your mouse over the report and click the blue down arrow that appears. 
+To download the report metrics in <file>JSON</file> format, hover your cursor over the report and click the blue down-arrow that appears. 
 
 ![ReportsGeneratedDownloadData](/images/TrueCommand/2.0/ReportsGeneratedDownloadData.png "Reports Generated Download Data")
