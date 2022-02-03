@@ -25,7 +25,7 @@ To create a dataset with the default options, enter a name for the dataset and c
 
 If using a specific data sharing option, select the **Share Type** you need as you cannot change the share type after you click **SUBMIT**. 
 
-### Using Dataset Options
+### Dataset Options
 
 ![StoragePoolsAddDatasetOptions](/images/CORE/12.0/StoragePoolsAddDatasetOptions.png "Dataset Creation: Basic Options")
 
