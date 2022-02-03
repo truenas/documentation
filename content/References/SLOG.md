@@ -70,5 +70,4 @@ Set **Sync** to **Always** and click **SAVE**.
 
 ## Resources
 
-* https://www.ixsystems.com/blog/o-slog-not-slog-best-configure-zfs-intent-log/
 * https://www.truenas.com/docs/core/storage/pools/slogoverprovision/
