@@ -19,10 +19,6 @@ TrueNAS SCALE tickets are also tracked in the TrueNAS Jira Project.
 
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
-| 12.0-U8 | Code-freeze | 10 January 2022 |
-| 12.0-U8 | Internal Testing Sprints | 11 January > 01 February 2022 |
-| 12.0-U8 | Tag | 02 February 2022 |
-| 12.0-U8 | Release | 02 February 2022 |
 | 13.0-BETA.1 | Code-freeze | 19 January 2022 |
 | 13.0-BETA.1 | Internal Testing Sprints | 24 January > 04 February 2022 |
 | 13.0-BETA.1 | Tag | 07 February 2022 |

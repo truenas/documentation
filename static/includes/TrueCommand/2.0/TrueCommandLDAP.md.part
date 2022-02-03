@@ -6,7 +6,7 @@ You need the LDAP server IP address, or DNS hostname and domain to use LDAP/AD.
 The LDAP or AD Username (optional) is required when the TrueCommand user name does not match the LDAP or AD credentials.
 
 Click on the **<i class="material-icons" aria-hidden="true" title="Settings">settings</i>&nbsp; (Gear) > Administration**.  
-Click on the **Configuration* tab and scroll down to access the LDAP configuration section.
+Click on the **Configuration** tab and scroll down to access the LDAP configuration section.
 Click **ADD SERVER** to begin configuring LDAP in TrueCommand. The screen changes to display the LDAP configuration settings fields.
 
 ![Configure LDAP](/images/TrueCommand/2.1/AdministrationConfigurationLDAP.png "Configure LDAP")
