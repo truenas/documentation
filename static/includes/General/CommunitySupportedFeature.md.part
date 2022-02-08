@@ -1,2 +1,1 @@
- Enterprise systems require a license to access plugins or vm's. Contact support to request information on these features.
- {{< include file="static/includes/General/iXsystemsSupportContact.html.part" html="true" >}}
+ Enterprise systems require a license to access plugins or vm's. Contact [Support](https://www.truenas.com/docs/core/system/support/) to request information on these features.
