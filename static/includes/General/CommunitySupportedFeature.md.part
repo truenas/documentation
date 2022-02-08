@@ -1,1 +1,2 @@
-This feature is only supported by the TrueNAS CORE community.
+ Enterprise systems require a license to access plugins or vm's. Contact support to request information on these features.
+ {{< include file="static/includes/General/iXsystemsSupportContact.html.part" html="true" >}}
