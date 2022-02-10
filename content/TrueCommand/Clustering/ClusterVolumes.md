@@ -42,7 +42,7 @@ Distributed volumes can suffer significant data loss during a disk or server fai
 Warning: This means that a brick failure leads to complete loss of data.
 {{< /hint >}}
 
-Click the **Brick Choices** <i class="material-icons" aria-hiddent="true" title="arrow_drop_down">arrow_drop_down</i> and select the locations to use for bricks from the dropdown list.
+Click the **Brick Choices** <i class="material-icons" aria-hidden="true" title="arrow_drop_down">arrow_drop_down</i> and select the locations to use for bricks from the dropdown list.
 
 ![DistributedClusterSelectBrickLocations](/images/TrueCommand/2.0/DistributedClusterSelectBrickLocations.png "DistributedClusterSelectBrickLocations")
 
@@ -68,7 +68,7 @@ For further redundancy, add more bricks.
 A three brick volume has three replicas, while a four brick volume contains four replicas. 
 A replicated volume allows data access even if a single brick fails. 
 
-Click the **Brick Choices** down arrow icon and select the locations to use for bricks from the dropdown list.
+Click the **Brick Choices** <i class="material-icons" aria-hidden="true" title="arrow_drop_down">arrow_drop_down</i> and select the locations to use for bricks from the dropdown list.
 
 ![ReplicatedClusterSelectBrickLocations](/images/TrueCommand/2.0/ReplicatedClusterSelectBrickLocations.png "ReplicatedClusterSelectBrickLocations")
 
@@ -103,7 +103,7 @@ A replica count of four creates a 2x4 volume where sets of four bricks replicate
 Using a replica count that is not a divisor of the total number or bricks results in a failed volume creation.
 {{< /hint >}}
 
-Click the **Brick Choices** down arrow icon and select the locations to use for bricks from the dropdown list.
+Click the **Brick Choices** <i class="material-icons" aria-hidden="true" title="arrow_drop_down">arrow_drop_down</i> and select the locations to use for bricks from the dropdown list.
 
 ![DistributedReplicatedClusterSelectBrickLocations](/images/TrueCommand/2.0/DistributedReplicatedClusterSelectBrickLocations.png "DistributedReplicatedClusterSelectBrickLocations")
 
@@ -137,7 +137,7 @@ The data protection offered by erasure coding can be represented in simple form 
 Here *n* is the total number of bricks, we would require any *k* bricks out of *n* bricks for recovery. 
 In other words, we can tolerate failure up to any *m* bricks.
 
-Click the **Brick Choices** down arrow icon and select the locations to use for bricks from the dropdown list.
+Click the **Brick Choices** <i class="material-icons" aria-hidden="true" title="arrow_drop_down">arrow_drop_down</i> and select the locations to use for bricks from the dropdown list.
 
 ![DispersedClusterSelectBrickLocations](/images/TrueCommand/2.0/DispersedClusterSelectBrickLocations.png "DispersedClusterSelectBrickLocations")
 
