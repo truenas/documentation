@@ -42,7 +42,7 @@ Distributed volumes can suffer significant data loss during a disk or server fai
 Warning: This means that a brick failure leads to complete loss of data.
 {{< /hint >}}
 
-Click the **Brick Choices** down arrow icon and select the locations to use for bricks from the dropdown list.
+Click the **Brick Choices** <i class="material-icons" aria-hiddent="true" title="arrow_drop_down">arrow_drop_down</i> and select the locations to use for bricks from the dropdown list.
 
 ![DistributedClusterSelectBrickLocations](/images/TrueCommand/2.0/DistributedClusterSelectBrickLocations.png "DistributedClusterSelectBrickLocations")
 
