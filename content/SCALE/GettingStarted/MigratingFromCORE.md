@@ -46,8 +46,18 @@ When TrueNAS SCALE boots, you might need to [use the Shell to configure networki
 {{< /tab >}}
   
 {{< tab "Manual Upgrade Migration" >}}
+
+  Start by dwnloading the [SCALE manual update file](https://www.truenas.com/download-tn-scale/)
+  The non HA TrueNAS system should be on the latest public 12.0-U8, or better, release.
   
-The TrueNAS system must be on TrueNAS 12.0-U8 or better to use the Manual Upgrade option to migrate from Core to SCALE.
+* Click CHECK FOR UPDATES in the System Information System card on the Dashboard or go to System > Update
+* Click INSTALL MANUAL UPDATE FILE
+* It is advised that SAVE CONFIGURATION is checked but it isn't required.
+* Select a Temporary Storage Location (Memory Device or a Pool)
+* Click Choose File
+* Select the TrueNAS-SCALE.update file you downloaded as a part of the precondition for this test
+* Check Reboot After Update
+* Click APPLY UPDATE
   
 {{< /tab >}}
 {{< /tabs >}}
