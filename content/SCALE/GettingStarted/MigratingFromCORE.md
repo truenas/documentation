@@ -55,12 +55,17 @@ When TrueNAS SCALE boots, you might need to [use the Shell to configure networki
   
 * Click CHECK FOR UPDATES in the System Information System card on the Dashboard or go to System > Update
 * Click INSTALL MANUAL UPDATE FILE
+![SCALEManualSidegrade](/images//SCALE/SidegeadeInstallManualUpdate.png "Install the Manual Upgrade")
 * It is advised that SAVE CONFIGURATION is checked but it isn't required.
+![SCALEConfigSidegrade](/images/SCALE/SidegradeSaveConfig.png "Save the Config file")
 * Select a Temporary Storage Location (Memory Device or a Pool)
 * Click Choose File
 * Select the TrueNAS-SCALE.update file you downloaded as a part of the precondition for this test
 * Check Reboot After Update
+![SCALEFileSidegrade](/images/SCALE/SidegeadeInstallManualUpdate.png "Settings for the Manual Upgrade")
 * Click APPLY UPDATE
+After the Update has been applied confirm reboot
+![SCALESidegradeReboot](/images/SCALE/SidegradeRestart.png  "Reboot to Finish")
   
 {{< /tab >}}
 {{< /tabs >}}
