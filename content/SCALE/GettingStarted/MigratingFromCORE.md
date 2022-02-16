@@ -63,7 +63,7 @@ It is advised to SAVE CONFIGURATION but it isn't required.
   
 Select a Temporary Storage Location (Memory Device or a Pool).
 Click Choose File and select the TrueNAS-SCALE.update file you downloaded.
-![SCALEFileSidegrade](/images/SCALE/SidegeadeInstallManualUpdate.png "Settings for the Manual Upgrade")
+![SCALEFileSidegrade](/images/SCALE/SidegradeSetInstallFile.png "Settings for the Manual Upgrade")
 Then APPLY UPDATE.
   
 After the Update has been applied confirm reboot.
