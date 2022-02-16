@@ -5,6 +5,9 @@ weight: 11
 
 {{< toc >}}
 
+{{< hint warning >}}
+Do not activate a CORE boot environment, and attempt to roll back, after the System has been upgraded from CORE to SCALE.
+{{< /hint >}}
 
 {{< hint danger >}}
 #### Migrating GELI-encrypted Pools to SCALE
