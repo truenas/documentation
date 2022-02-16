@@ -5,8 +5,8 @@ weight: 11
 
 {{< toc >}}
 
-{{< hint Danger >}}
-Once the Trunas System has been upgraded from CORE to SCALE do not activate, and roll back to. a CORE boot environment.
+{{< hint danger >}}
+Once the Trunas System has been upgraded from CORE to SCALE do not activate, or roll back to, a CORE boot environment.
 {{< /hint >}}
 
 {{< hint danger >}}
@@ -51,18 +51,18 @@ When TrueNAS SCALE boots, you might need to [use the Shell to configure networki
 {{< tab "Manual Upgrade Migration" >}}
 
 Start by dwnloading the SCALE manual update file. 
-Confirm that the TrueNAS system is on the latest public 12.0-U8, or better, release.
+Confirm that the TrueNAS system is on the latest public, 12.0-U8 or better, release.
   
 Click CHECK FOR UPDATES in the System Information System card on the Dashboard or go to System > Update.
 
 Click INSTALL MANUAL UPDATE FILE.
 ![SCALEManualSidegrade](/images//SCALE/SidegeadeInstallManualUpdate.png "Install the Manual Upgrade")
   
-It is advised that SAVE CONFIGURATION is checked but it isn't required.
+It is advised to SAVE CONFIGURATION but it isn't required.
 ![SCALEConfigSidegrade](/images/SCALE/SidegradeSaveConfig.png "Save the Config file")
   
-Select a Temporary Storage Location (Memory Device or a Pool)
-Click Choose File abd select the TrueNAS-SCALE.update file you downloaded.
+Select a Temporary Storage Location (Memory Device or a Pool).
+Click Choose File and select the TrueNAS-SCALE.update file you downloaded.
 ![SCALEFileSidegrade](/images/SCALE/SidegeadeInstallManualUpdate.png "Settings for the Manual Upgrade")
 Then APPLY UPDATE.
   
