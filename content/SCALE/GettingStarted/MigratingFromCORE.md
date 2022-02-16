@@ -5,8 +5,8 @@ weight: 11
 
 {{< toc >}}
 
-{{< hint warning >}}
-Do not activate a CORE boot environment, and attempt to roll back, after the System has been upgraded from CORE to SCALE.
+{{< hint Danger >}}
+Once the Trunas System has been upgraded from CORE to SCALE do not activate, and roll back to. a CORE boot environment.
 {{< /hint >}}
 
 {{< hint danger >}}
@@ -50,21 +50,23 @@ When TrueNAS SCALE boots, you might need to [use the Shell to configure networki
   
 {{< tab "Manual Upgrade Migration" >}}
 
-  Start by dwnloading the [SCALE manual update file](https://www.truenas.com/download-tn-scale/)
-  The non HA TrueNAS system should be on the latest public 12.0-U8, or better, release.
+Start by dwnloading the SCALE manual update file. 
+Confirm that the TrueNAS system is on the latest public 12.0-U8, or better, release.
   
-* Click CHECK FOR UPDATES in the System Information System card on the Dashboard or go to System > Update
-* Click INSTALL MANUAL UPDATE FILE
+Click CHECK FOR UPDATES in the System Information System card on the Dashboard or go to System > Update.
+
+Click INSTALL MANUAL UPDATE FILE.
 ![SCALEManualSidegrade](/images//SCALE/SidegeadeInstallManualUpdate.png "Install the Manual Upgrade")
-* It is advised that SAVE CONFIGURATION is checked but it isn't required.
+  
+It is advised that SAVE CONFIGURATION is checked but it isn't required.
 ![SCALEConfigSidegrade](/images/SCALE/SidegradeSaveConfig.png "Save the Config file")
-* Select a Temporary Storage Location (Memory Device or a Pool)
-* Click Choose File
-* Select the TrueNAS-SCALE.update file you downloaded as a part of the precondition for this test
-* Check Reboot After Update
+  
+Select a Temporary Storage Location (Memory Device or a Pool)
+Click Choose File abd select the TrueNAS-SCALE.update file you downloaded.
 ![SCALEFileSidegrade](/images/SCALE/SidegeadeInstallManualUpdate.png "Settings for the Manual Upgrade")
-* Click APPLY UPDATE
-After the Update has been applied confirm reboot
+Then APPLY UPDATE.
+  
+After the Update has been applied confirm reboot.
 ![SCALESidegradeReboot](/images/SCALE/SidegradeRestart.png  "Reboot to Finish")
   
 {{< /tab >}}
