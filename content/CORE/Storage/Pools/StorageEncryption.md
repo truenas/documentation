@@ -12,7 +12,7 @@ TrueNAS supports different encryption options for critical data.
 Data-at-rest encryption is available with:
 
 + [Self Encrypting Drives (SEDs)](https://www.snia.org/sites/default/education/tutorials/2009/fall/security/MichaelWillett-Self_Encrypting_Drives-FINAL.pdf) using OPAL or FIPS 140.2 (Both [AES 256](https://csrc.nist.gov/projects/cryptographic-standards-and-guidelines/archived-crypto-projects/aes-development))
-+ Encryption of specific datasets (AES-256-GCM in TrueNAS 12.0)
++ Encryption of specific datasets (AES-256-GCM in TrueNAS 12.0).
 
 The local TrueNAS system manages keys for data-at-rest.
 Users are responsible for storing and securing their keys.
