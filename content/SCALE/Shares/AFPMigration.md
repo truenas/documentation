@@ -19,4 +19,8 @@ As of SCALE version 21.06, the Netatalk service has been removed. AFP shares wil
 
 Once you have [sidegraded from CORE to SCALE]({{< relref "InstallingSCALE.md" >}}), you can find your migrated AFP in **Shares >** *Windows Shares (SMB)* with the prefix "AFP_".
 
+{{< hint warning >}}
+You will need to start the SMB Service, after the migration, for the AFP share to be accessable.
+{{< /hint >}}
+
 ![MigratedAFPShareSCALE](/images/SCALE/MigratedAFPShareSCALE.png "Migrated AFP Share")
