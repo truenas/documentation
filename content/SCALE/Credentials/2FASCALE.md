@@ -11,8 +11,9 @@ TrueNAS offers 2FA to ensure that entities cannot use a compromised administrato
 
 You need a mobile device with the current time and date and has Google Authenticator installed to use 2FA.
 
-{{< hint info >}}
-TrueNAS does not have to have internet access to use 2FA. It does require that the system time and date is current.
+{{< hint warning >}}
+Two-Factor authentication is time based and requires that the system is set correctly.
+Making sure NTP is functional before enabling is strongly recommended!
 {{< /hint >}}
 
 {{< expand "What is 2FA and why should I enable it?" "v" >}}
@@ -23,6 +24,8 @@ TrueNAS does not have to have internet access to use 2FA. It does require that t
 Unauthorized users can't log in since they won't have the randomized 6-digit code.
 
 Authorized employees can securely access systems from any device or location without jeopardizing sensitive information.
+
+Internet access, on the TrueNAS, is not required to use 2FA.
 
 ### Drawbacks
 
@@ -36,10 +39,6 @@ If the device with the 2FA app isn't available, you can use the system CLI to by
 To unlock 2FA in the CLI, enter:  `midclt call auth.twofactor.update '{ "enabled":false }'`
 {{< /hint >}}
 {{< /expand >}}
-
-{{< hint info >}}
-TrueNAS does not have to have internet access to use 2FA. It does require that the system time and date is accurate.
-{{< /hint >}}
 
 
 ## 2FA Options
