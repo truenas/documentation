@@ -7,7 +7,7 @@ weight: 15
 
 ## TrueNAS CORE/Enterprise ##
 
-**Onboard Ports**
+### **Onboard Ports** ###
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;}
 .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
@@ -53,7 +53,7 @@ weight: 15
 </table>
 
 
-**M-Series Add-on cards**
+### **M-Series Add-on cards** ###
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;}
 .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
@@ -113,7 +113,7 @@ weight: 15
 
 ## TrueNAS SCALE ##
 
-**Onboard Ports**	
+### **Onboard Ports**	###
 |-------------------------------| Port 0 | Port 1 | Port 2 | Port 3 |
 | TrueNAS Mini E/X - onboard | enp3s0f0 | enp3s0f1 | enp5s0f0 | enp5s0f1 |
 | TrueNAS Mini X+/XL+ - onboard | eno1 | eno2 | NA | NA |
@@ -121,7 +121,7 @@ weight: 15
 | TrueNAS M30/M40 - onboard | | NA | NA |
 | TrueNAS M50/M60 - onboard | eno1 | eno2 | NA | NA
 
-**M-Series Add-on cards**
+### **M-Series Add-on cards** ###
 |---------------------| Port 0 | Port 1 | Port 2 | Port 3 |
 | QLE2692 and QLE2742 | | | NA | NA |
 | QLE2692 and QLE2742 - 2nd card | | | NA | NA |
