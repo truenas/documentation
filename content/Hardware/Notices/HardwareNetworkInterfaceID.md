@@ -7,10 +7,10 @@ weight: 15
 
 **Onboard Ports**
 
-|-------------------------------| Port 0 | Port 1 | Port 2 | Port 3 |
+| | Port 0 | Port 1 | Port 2 | Port 3 |
 | TrueNAS Mini E/X - onboard | ix0 | ix1 | ix2 | ix3 |
 | TrueNAS Mini X+/XL+ - onboard | ix0 | ix1 | NA | NA |
-|-------------------------------|--------|--------|--------|--------|
+| | | | | |
 | TrueNAS M30/M40 - onboard | ixl0 | ixl1 | NA | NA |
 | TrueNAS M50/M60 - onboard | ixl0 | ixl1 | NA | NA |
 
