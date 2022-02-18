@@ -7,6 +7,36 @@ weight: 15
 
 ##TrueNAS CORE/Enterprise##
 
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+  <tr>
+    <th class="tg-0pky"><b>System</b></th>
+    <th class="tg-0pky"><b>Port 0</b></th>
+    <th class="tg-0pky"><b>Port 1</b></th>
+    <th class="tg-0pky"><b>Port 2</b></th>
+    <th class="tg-0pky"><b>Port 3</b></th>
+  </tr>
+  <tr>
+    <td class="tg-0pky">TrueNAS Mini E/X - onboard</td>
+    <td class="tg-0pky">ix0</td>
+    <td class="tg-0pky">ix1</td>
+    <td class="tg-0pky">ix2</td>
+    <td class="tg-0pky">ix3</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">TrueNAS Mini X+/XL+ - onboard</td>
+    <td class="tg-0pky">ix0</td>
+    <td class="tg-0pky">ix1</td>
+    <td class="tg-0pky">NA</td>
+    <td class="tg-0pky">NA</td>
+  </tr>
+</table>
+
 **Onboard Ports**
 
 | System | Port 0 | Port 1 | Port 2 | Port 3 |
