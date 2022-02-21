@@ -24,7 +24,7 @@ Two-Factor Authentication (2FA) is an extra layer of security that is added to y
 
 * Increase productivity and flexibility: As the workforce becomes more mobile, employees can securely access systems from virtually any device or location-without putting sensitive information at risk.
 
-* Internet access, on the TrueNAS, is not required to use 2FA.
+* Internet access on the TrueNAS system is not required to use 2FA.
 
 ### Drawbacks
 
