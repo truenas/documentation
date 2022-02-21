@@ -25,7 +25,7 @@ Unauthorized users can't log in since they won't have the randomized 6-digit cod
 
 Authorized employees can securely access systems from any device or location without jeopardizing sensitive information.
 
-Internet access, on the TrueNAS, is not required to use 2FA.
+Internet access on the TrueNAS system is not required to use 2FA.
 
 ### Drawbacks
 
