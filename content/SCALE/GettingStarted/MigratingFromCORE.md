@@ -6,22 +6,22 @@ weight: 11
 {{< toc >}}
 
 {{< hint danger >}}
-Once the Trunas System has been upgraded from CORE to SCALE do not activate, or roll back to, a CORE boot environment.
+Migrating TrueNAS from CORE to SCALE is a one-way operation. Attempting to activate or roll back to a CORE boot environment can break the system.
 {{< /hint >}}
 
 {{< hint danger >}}
 #### Migrating GELI-encrypted Pools to SCALE
 TrueNAS SCALE is based on Linux, which does not support FreeBSD GELI encryption.
-If you have GELI-encrypted pools on your system that you plan to import into SCALE, you must migrate your data from the GELI pool to a non-GELI encrypted pool *before* sidegrading to SCALE. 
+If you have GELI-encrypted pools on your system that you plan to import into SCALE, you must migrate your data from the GELI pool to a non-GELI encrypted pool *before* migrating to SCALE.
 {{< /hint >}}
 
 {{< tabs "Migration Methods" >}}
-{{< tab "Migrate with an iso" >}}
+{{< tab "ISO File" >}}
 
 Start by saving the [SCALE ISO file](https://www.truenas.com/download-tn-scale/) to a USB drive (see the **Physical Hardware tab** in [Installing SCALE]({{< relref "InstallingSCALE.md" >}})). Plug the USB drive into the CORE system that you want to sidegrade and boot or reboot the system. 
 
 At the motherboard splash screen, use the hotkey defined by your motherboard manufacturer to select a boot device, then select the USB drive with the SCALE <file>.iso<file>.
-  
+
 When the SCALE console setup screen appears, select *Install/Upgrade*.
 
 ![SCALEUpgrade1](/images/SCALE/SCALEUpgrade1.png "Install/Upgrade SCALE")
@@ -45,28 +45,29 @@ After choosing to install in new boot environment, the installer warns that SCAL
 Once the installation completes, reboot the system and remove the USB with the SCALE <file>.iso<file> file.
 
 When TrueNAS SCALE boots, you might need to [use the Shell to configure networking interfaces]({{< relref "/SCALE/Network/_index.md" >}}) to enable GUI accessibility.
-  
+
 {{< /tab >}}
-  
-{{< tab "Manual Upgrade Migration" >}}
 
-Start by dwnloading the SCALE manual update file. 
+{{< tab "Manual Update File" >}}
+
+Start by downloading the SCALE manual update file.
 Confirm that the TrueNAS system is on the latest public, 12.0-U8 or better, release.
-  
-Click CHECK FOR UPDATES in the System Information System card on the Dashboard or go to System > Update.
 
-Click INSTALL MANUAL UPDATE FILE.
+Click **CHECK FOR UPDATES** in the **System Information** card on the **Dashboard** or go to **System > Update**.
+
+Click **INSTALL MANUAL UPDATE FILE**.
 ![SCALEManualSidegrade](/images//SCALE/SidegeadeInstallManualUpdate.png "Install the Manual Upgrade")
-  
-It is advised to SAVE CONFIGURATION but it isn't required.
+
+Click **SAVE CONFIGURATION** to download a backup file that can restore the system configuration in the event something goes wrong with the migration.
+This is recommended but it not required.
 ![SCALEConfigSidegrade](/images/SCALE/SidegradeSaveConfig.png "Save the Config file")
-  
-Select a Temporary Storage Location (Memory Device or a Pool).
-Click Choose File and select the TrueNAS-SCALE.update file you downloaded.
+
+Select a **Temporary Storage Location** (Memory Device or a Pool) for the manual update file.
+Click **Choose File** and select the <file>TrueNAS-SCALE.update</file> file you downloaded.
 ![SCALEFileSidegrade](/images/SCALE/SidegradeSetInstallFile.png "Settings for the Manual Upgrade")
-Then APPLY UPDATE.
+Then click **APPLY UPDATE**.
   
-After the Update has been applied confirm reboot.
+After the update completes, reboot the system.
 ![SCALESidegradeReboot](/images/SCALE/SidegradeRestart.png  "Reboot to Finish")
   
 {{< /tab >}}
