@@ -8,13 +8,15 @@
 }
 </style>
 {{ if .IsNamedParams }}
+<a name="{{ .Get "name" }}"></a>
+<a href="{{ .Get "name" }}">Link to this video</a>
 <div class="docvid">
   <video
-    id="my-video"
+    id="{{ .Get "name" }}"
     class="video-js vjs-16-9"
     controls
     preload="auto"
-    poster="https://www.truenas.com/docs/files/TitleCard.jpg"
+    poster=""
     data-setup="{}"
   >
     <source src="https://www.truenas.com/docs/files/{{ .Get "name" }}.mp4" type="video/mp4" />
