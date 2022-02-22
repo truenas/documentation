@@ -10,7 +10,7 @@ Permissions control the actions users can perform on dataset contents.
 
 ## ACL Types in SCALE
 
-TrueNAS SCALE offers two ACL types: POSIX (SCALE default) and NSFv4.
+TrueNAS SCALE offers two ACL types: POSIX (SCALE default) and NFSv4.
 
 You can select which ACL types you want new datasets to use while creating them.
 To change an existing dataset's ACL type, click the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> button next to the intended dataset and select *Edit Options*. Next, click *Advanced Options*and scroll down to the *ACL Type* drop-down. 
@@ -104,7 +104,7 @@ Define *Who* the Access Control Entry (ACE) applies to and configure permissions
 
 ## ACL Manager (NFSv4)
 
-For *NSFv4* share types, click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> for the dataset to edit and choose *View Permissions*.
+For *NFSv4* share types, click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> for the dataset to edit and choose *View Permissions*.
 ![ACLViewPermissionsSCALE](/images/SCALE/ACLViewPermissionsSCALE.png "ACL View Permissions")
 
 Select <i class="material-icons" aria-hidden="true" title="edit">edit</i> and you will be directed to the **Edit ACL** page.
