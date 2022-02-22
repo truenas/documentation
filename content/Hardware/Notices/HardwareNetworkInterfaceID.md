@@ -23,6 +23,13 @@ weight: 15
     <th class="tg-0pky"><b>Port 3</b></th>
   </tr>
   <tr>
+    <td class="tg-0pky">TrueNAS X10/X20 - onboard</td>
+    <td class="tg-0pky">igb0</td>
+    <td class="tg-0pky">igb1</td>
+    <td class="tg-0pky">NA</td>
+    <td class="tg-0pky">NA</td>
+  </tr>
+  <tr>
     <td class="tg-0pky">TrueNAS Mini E/X - onboard</td>
     <td class="tg-0pky">ix0</td>
     <td class="tg-0pky">ix1</td>
@@ -52,6 +59,29 @@ weight: 15
   </tr>
 </table>
 
+### X-Series Add-on cards ###
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+  <tr>
+    <th class="tg-0pky"><b> </b></th>
+    <th class="tg-0pky"><b>Port 0</b></th>
+    <th class="tg-0pky"><b>Port 1</b></th>
+    <th class="tg-0pky"><b>Port 2</b></th>
+    <th class="tg-0pky"><b>Port 3</b></th>
+  </tr>
+  <tr>
+    <td class="tg-0pky">X540-T2</td>
+    <td class="tg-0pky">ixo</td>
+    <td class="tg-0pky">ix1</td>
+    <td class="tg-0pky">NA</td>
+    <td class="tg-0pky">NA</td>
+  </tr>
+  </table>
 
 ### M-Series Add-on cards ###
 <style type="text/css">
@@ -171,6 +201,13 @@ weight: 15
     <th class="tg-0pky"><b>Port 1</b></th>
     <th class="tg-0pky"><b>Port 2</b></th>
     <th class="tg-0pky"><b>Port 3</b></th>
+  </tr>
+  <tr>
+   <td class="tg-0pky">TrueNAS X10/X20 - onboard</td>
+    <td class="tg-0pky">enp5s0</td>
+    <td class="tg-0pky">enp5s1</td>
+    <td class="tg-0pky">NA</td>
+    <td class="tg-0pky">NA</td>
   </tr>
   <tr>
     <td class="tg-0pky">TrueNAS Mini E/X - onboard</td>
