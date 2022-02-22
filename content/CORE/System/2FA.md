@@ -7,7 +7,12 @@ weight: 190
 
 For increased security, two-factor authentication is highly desirable.
 TrueNAS offers Two-Factor Authentication (2FA) to ensure that a compromised administrator (*root*) password cannot be used by itself to gain access to the administrator interface.
-In order to utilize 2FA a mobile device that has Google Authenticator installed is required.
+You need a mobile device with the current time and date that has Google Authenticator installed to use 2FA.
+
+{{< hint warning >}}
+Two-Factor authentication is time based and requires that the system is set correctly.
+Making sure NTP is functional before enabling is strongly recommended!
+{{< /hint >}}
 
 {{< expand "What is 2FA and why would I want to enable it?" "v" >}}
 Two-Factor Authentication (2FA) is an extra layer of security that is added to your system to prevent someone from logging in, even if they have your password. This extra security measure requires you to verify your identity using a randomized 6-digit code that is re-generated every 30 seconds, unless the interval is modified, to use when you to log in.
@@ -18,6 +23,8 @@ Two-Factor Authentication (2FA) is an extra layer of security that is added to y
   An unauthorized user won’t have the second element required to authenticate their login.
 
 * Increase productivity and flexibility: As the workforce becomes more mobile, employees can securely access systems from virtually any device or location-without putting sensitive information at risk.
+
+* Internet access on the TrueNAS system is not required to use 2FA.
 
 ### Drawbacks
 
