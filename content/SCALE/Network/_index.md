@@ -6,9 +6,9 @@ weight: 60
 
 {{< toc >}}
 
-The SCALE Network screen contains network configuration and settings options for active interfaces, static routes, and the global configuration. 
+The SCALE **Network** screen has network configuration and settings options for active interfaces, static routes, and the global configuration. 
 
-The Network screen also displays OpenVPN information and IPMI channels.
+The **Network** screen also displays OpenVPN information and IPMI channels.
 
 ![NetworkSCALE](/images/SCALE/NetworkSCALE.png "SCALE Network Page")
 
@@ -29,7 +29,7 @@ The **Interfaces** section displays network port names and IP addresses, as well
 
 ![InterfacesSCALE](/images/SCALE/InterfacesSCALE.png "Interfaces")
 
-Users can edit interfaces by clicking on them, delete them by clicking the <i class="material-icons" aria-hidden="true" title="delete">delete</i> icon next to them, or add new ones by clicking **Add**.
+Click on an interface to edit it, click the <i class="material-icons" aria-hidden="true" title="delete">delete</i> icon next to the interface to delete it, or click **Add** to add a new one.
 
 {{< expand "Why should I use different interface types?" "v" >}}
 {{< include file="/_includes/NetworkInterfaceTypes.md" type="page" >}}
@@ -44,8 +44,8 @@ Users can edit interfaces by clicking on them, delete them by clicking the <i cl
 | Type | Choose the type of interface. **Bridge** creates a logical link between multiple networks. **Link Aggregation** combines multiple network connections into a single interface. A **Virtual LAN** (VLAN) partitions and isolates a segment of the connection. Read-only when editing an interface. |
 | Name | Enter a name for the interface. Use the format bond*X*, vlan*X*, or br*X* where *X* is a number representing a non-parent interface. Read-only when editing an interface. |
 | Description | Enter a description of the interface. |
-| DHCP | Set to enable DHCP. Leave unset to create a static IPv4 or IPv6 configuration. Only one interface can be configured for DHCP. |
-| Autoconfigure IPv6 | Set to automatically configure the IPv6 address with rtsol(8). Only one interface can be configured this way. |
+| DHCP | Select to enable DHCP. Leave checkbox cleared to create a static IPv4 or IPv6 configuration. Only one interface can be configured for DHCP. |
+| Autoconfigure IPv6 | Set to automatically configure the IPv6 address with [rtsol(8)](https://man.cx/rtsol(8)). Only one interface can be configured this way. |
 
 ### Other Settings
 
@@ -53,7 +53,7 @@ Users can edit interfaces by clicking on them, delete them by clicking the <i cl
 |---------|-------------|
 | Disable Hardware Offloading | Turn off hardware offloading for network traffic processing. |
 | MTU | Maximum Transmission Unit, the largest protocol data unit that can be communicated. The largest workable MTU size varies with network interfaces and equipment. 1500 and 9000 are standard Ethernet MTU sizes. Leaving blank restores the field to the default value of 1500. |
-| Options | Enter additional parameters from [ifconfig(8)](https://www.freebsd.org/cgi/man.cgi?query=ifconfig). |
+| Options | Enter additional parameters from [ifconfig(8)](https://manpages.debian.org/unstable/net-tools/ifconfig.8.en.html). |
 
 {{< hint danger >}}
 *WARNING:* Disabling hardware offloading can reduce network performance. We only recommend disabling hardware offloading when the interface is managing jails, plugins, or virtual machines.
@@ -76,7 +76,7 @@ The **Global Configuration** section has all the general TrueNAS networking sett
 ![GlobalConfigurationSCALE](/images/SCALE/GlobalConfigurationSCALE.png "Global Configuration")
 
 {{< expand "Can I configure these options elsewhere?" "v" >}}
-Users can configure many of these Interface, DNS, and Gateway options in the [Console Setup Menu]({{< relref "Post-installConfiguration.md" >}}).
+Users can configure many of these interface, DNS, and gateway options in the [Console Setup Menu]({{< relref "Post-installConfiguration.md" >}}).
 Be sure to check both locations when troubleshooting network connectivity issues.
 {{< /expand >}}
 
@@ -84,7 +84,7 @@ Be sure to check both locations when troubleshooting network connectivity issues
 **Disruptive Change**
 
 You can lose your TrueNAS connection if you change the network interface that the web interface uses!  
-You may need command line knowledge or physical access to the TrueNAS system to fix misconfigured network settings.
+You might need command line knowledge or physical access to the TrueNAS system to fix misconfigured network settings.
 {{< /hint >}}
 
 ![EditGlobalConfigurationSCALE](/images/SCALE/EditGlobalConfigurationSCALE.png "Global Configuration Options")
@@ -103,7 +103,7 @@ TrueNAS displays the **Hostname** and **Domain** in the **Dashboard** **System I
 |---------|-------------|
 | Hostname | System hostname. |
 | Hostname (TrueNAS Controller 2) | Host name of second TrueNAS controller (for HA only). Upper and lower case alphanumeric, `.`, and `-` characters are allowed. |
-| Hostname (Virtual) | Virtual host name. When using a virtualhost, this is also used as the Kerberos principal name. Enter the fully qualified hostname plus the domain name. Upper and lower case alphanumeric, `.`, and `-` characters are allowed. |
+| Hostname (Virtual) | Virtual host name. When using a virtual host, this is also used as the Kerberos principal name. Enter the fully qualified hostname plus the domain name. Upper and lower case alphanumeric, `.`, and `-` characters are allowed. |
 | Domain | System domain name, like example.com |
 | Additional Domains | Additional domains to search. Separate entries by pressing <kbd>Enter</kbd>. Adding search domains can cause slow DNS lookups |
 
@@ -111,8 +111,8 @@ TrueNAS displays the **Hostname** and **Domain** in the **Dashboard** **System I
 
 | Setting | Description |
 |---------|-------------|
-| NetBIOS-NS | Legacy NetBIOS name server. Advertises the SMB service NetBIOS Name. Can be required for legacy SMB1 clients to discover the server. When advertised, the server appears in Network Neighborhood. |
-| mDNS | Multicast DNS. Uses the system Hostname to advertise enabled and running services. For example, this controls if the server appears under **Network** on MacOS clients.|
+| NetBIOS-NS | Legacy NetBIOS name server. Advertises the SMB service NetBIOS Name. Can be required for legacy SMB1 clients to discover the server. When advertised, the server appears in **Network Neighborhood**. |
+| mDNS | Multicast DNS. Uses the system hostname to advertise enabled and running services. For example, this controls if the server appears under **Network** on MacOS clients.|
 | WS-Discovery | Uses the SMB Service NetBIOS name to advertise the server to WS-Discovery clients. This causes the computer to appear in the **Network Neighborhood** of modern Windows OSes. |
 
 ### DNS Servers
@@ -144,8 +144,8 @@ TrueNAS displays the **Hostname** and **Domain** in the **Dashboard** **System I
 |---------|-------------|
 | HTTP Proxy | When using a proxy, enter the proxy information for the network in the format *`http://my.proxy.server:3128`* or *`http://user:password@my.proxy.server:3128`*.
 | Enable Netwait Feature | Delays the start of network services until pings return from the IP addresses added to the **Netwait IP List**. |
-| Netwait IP List | Only appears when **Enable Netwait Feature** is set. Enter a list of IP addresses to [ping](https://www.freebsd.org/cgi/man.cgi?query=ping). Separate entries by pressing <kbd>Enter</kbd>. Each address is tried until one is successful or the list is exhausted. Leave empty to use the default gateway.
-| Host Name Database | Additional hosts to append to */etc/hosts*. Separate entries by pressing. Separate entries by pressing <kbd>Enter</kbd>.  Use the format *`IP_address space hostname`* where multiple hostnames can be used if separated by a space. Hosts defined here are still accessible by name even when DNS is not available. See <a href="https://www.freebsd.org/cgi/man.cgi?query=hosts">hosts</a> for additional information. |
+| Netwait IP List | Only appears when **Enable Netwait Feature** checkbox is selected. Enter a list of IP addresses to [ping](https://manpages.debian.org/unstable/inetutils-ping/ping.1.en.html). Separate entries by pressing <kbd>Enter</kbd>. Each address is tried until one is successful or the list is exhausted. Leave empty to use the default gateway.
+| Host Name Database | Additional hosts to append to */etc/hosts*. Separate entries by pressing. Separate entries by pressing <kbd>Enter</kbd>.  Use the format *`IP_address space hostname`* where multiple hostnames can be used if separated by a space. Hosts defined here are still accessible by name even when DNS is not available. See [hosts[(https://manpages.debian.org/unstable/bind9-host/host.1.en.html) for additional information. |
 
 {{< /tab >}}
 {{< tab "Static Routes" >}}
@@ -179,7 +179,7 @@ Alternately, TrueNAS can integrate into a private network, even when the system 
 
 ![OpenVPNSCALE](/images/SCALE/OpenVPNSCALE.png "OpenVPN")
 
-Before configuring TrueNAS as either an OpenVPN sServer or client, you need an existing public key infrastructure (PKI) with [Certificates]({{< relref "CertificatesSCALE.md#certificates" >}}) and [Certificate Authorities]({{< relref "CertificatesSCALE.md#certificate-authorities" >}}) created in or imported to TrueNAS.
+Before configuring TrueNAS as either an OpenVPN server or client, you need an existing public key infrastructure (PKI) with [Certificates]({{< relref "CertificatesSCALE.md#certificates" >}}) and [Certificate Authorities]({{< relref "CertificatesSCALE.md#certificate-authorities" >}}) created in or imported to TrueNAS.
 
 {{< expand "What does a PKI do?" "v" >}}
 A PKI allows TrueNAS to authenticate with clients or servers by confirming a valid master Certificate Authority (CA) signed the network credentials.
@@ -196,8 +196,8 @@ Go to **Network** and click **Client** in the **OpenVPN** window to configure th
 
 | Setting | Description |
 |---------|-------------|
-| Client Certificate | Choose a valid client certificate that exists on this system and hasn't been revoked. Find more about generating certificates and CAs for OpenVPN [here](https://community.openvpn.net/openvpn/wiki/HOWTO#SettingupyourownCertificateAuthorityCAandgeneratingcertificatesandkeysforanOpenVPNserverandmultipleclients). |
-| Root CA | Choose the root Certificate Authority that was used to sign the client and server certificates. Find more about generating certificates and CAs for OpenVPN [here](https://community.openvpn.net/openvpn/wiki/HOWTO#SettingupyourownCertificateAuthorityCAandgeneratingcertificatesandkeysforanOpenVPNserverandmultipleclients). |
+| Client Certificate | Choose a valid client certificate that exists on this system and is not revoked. Find more about generating certificates and CAs for OpenVPN [here](https://community.openvpn.net/openvpn/wiki/HOWTO#SettingupyourownCertificateAuthorityCAandgeneratingcertificatesandkeysforanOpenVPNserverandmultipleclients). |
+| Root CA | Choose the root Certificate Authority that you used to sign the client and server certificates. Find more about generating certificates and CAs for OpenVPN [here](https://community.openvpn.net/openvpn/wiki/HOWTO#SettingupyourownCertificateAuthorityCAandgeneratingcertificatesandkeysforanOpenVPNserverandmultipleclients). |
 | Remote | A valid IP address or domain name to which OpenVPN connects. |
 | Port | Enter a port number to use for the connection. |
 | Authentication Algorithm | Choose an algorithm to authenticate packets. |
@@ -218,8 +218,8 @@ Go to **Network** and click **Server** in the **OpenVPN** window to configure th
 
 | Setting | Description |
 |---------|-------------|
-| Server Certificate | Choose a valid client certificate which exists on this system and hasn't been revoked. Find more about generating certificates and CAs for OpenVPN [here](https://community.openvpn.net/openvpn/wiki/HOWTO#SettingupyourownCertificateAuthorityCAandgeneratingcertificatesandkeysforanOpenVPNserverandmultipleclients). |
-| Root CA | Choose the root Certificate Authority that was used to sign the client and server certificates. Find more about generating certificates and CAs for OpenVPN [here](https://community.openvpn.net/openvpn/wiki/HOWTO#SettingupyourownCertificateAuthorityCAandgeneratingcertificatesandkeysforanOpenVPNserverandmultipleclients). |
+| Server Certificate | Choose a valid client certificate which exists on this system and is not revoked. Find more about generating certificates and CAs for OpenVPN [here](https://community.openvpn.net/openvpn/wiki/HOWTO#SettingupyourownCertificateAuthorityCAandgeneratingcertificatesandkeysforanOpenVPNserverandmultipleclients). |
+| Root CA | Choose the root Certificate Authority that you used to sign the client and server certificates. Find more about generating certificates and CAs for OpenVPN [here](https://community.openvpn.net/openvpn/wiki/HOWTO#SettingupyourownCertificateAuthorityCAandgeneratingcertificatesandkeysforanOpenVPNserverandmultipleclients). |
 | Server | Enter the IP address and netmask of the server. |
 | Port | Enter a port number to use for the connection. |
 | Authentication Algorithm | Choose an algorithm to authenticate packets. |
@@ -243,7 +243,7 @@ If you choose the **TUN** as the **Device Type**, you can select a virtual addre
   We only recommend P2P when none of the clients are Windows systems.
 * **SUBNET**: the interface uses an IP address and subnet.
   SUBNET gives each client one IP address.
-  Windows clients require the **TAP-Win32 drive*r* version 8.2 or newer.
+  Windows clients require the **TAP-Win32 driver** version 8.2 or newer.
   **TAP** devices always use the **SUBNET** for **Topology**.
 
 TrueNAS automatically applies the **Topology** selection to any connected clients.
@@ -288,7 +288,7 @@ While not required, these security options help protect the data TrueNAS sends i
 
 * **Authentication Algorithm**: Validates packets that TrueNAS sends over the network connection. Your network environment might require a specific algorithm. If not, **SHA1 HMAC** is a good standard algorithm to use.
 * **Cipher**: Encrypts data packets sent through the connection. While not required, choosing a cipher can increase connection security. You might need to verify which ciphers your networking environment requires. If there are no specific cipher requirements, **AES-256-GCM** is a good default choice.
-* **TLS Encryption**: When **TLS Crypt Auth Enabled** is set, TrueNAS encrypts all TLS handshake messages to add another layer of security. TLS Encryption requires a static key that the OpenVPN server and clients share.
+* **TLS Encryption**: When **TLS Crypt Auth Enabled** is selected, TrueNAS encrypts all TLS handshake messages to add another layer of security. TLS Encryption requires a static key that the OpenVPN server and clients share.
 
 ### Service Activation
 
@@ -327,7 +327,7 @@ Click the channel you wish to edit to open the configuration form.
 
 | Setting | Description |                                                                                                                                   
 |---------|-------------|
-| DHCP | Use DHCP. Unset to manually configure a static IPv4 connection. |
+| DHCP | Use DHCP. Clear checkbox to manually configure a static IPv4 connection. |
 | IPv4 Address | Static IPv4 address of the IPMI web interface. |
 | IPv4 Netmask | Subnet mask of the IPv4 address. |
 | IPv4 Default Gateway | Enter the default gateway of the IPv4 connection. |
