@@ -53,7 +53,7 @@ weight: 15
 </table>
 
 
-### **M-Series Add-on cards** ###
+### M-Series Add-on cards ###
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;}
 .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
@@ -96,24 +96,67 @@ weight: 15
     <td class="tg-0pky">NA</td>
     <td class="tg-0pky">NA</td>
   </tr>
+  <tr>
+    <td class="tg-0pky">T580-LP-CR (4x10G mode) - 2nd card</td>
+    <td class="tg-0pky">ccxl4567</td>
+    <td class="tg-0pky">DISABLED</td>
+    <td class="tg-0pky">NA</td>
+    <td class="tg-0pky">NA</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">T580-LP-CR (40G mode)</td>
+    <td class="tg-0pky">cxl0</td>
+    <td class="tg-0pky">cxl1</td>
+    <td class="tg-0pky">NA</td>
+    <td class="tg-0pky">NA</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">T6225-SO-CR</td>
+    <td class="tg-0pky">cc1</td>
+    <td class="tg-0pky">cc0</td>
+    <td class="tg-0pky">NA</td>
+    <td class="tg-0pky">NA</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">T6225-SO-CR - 2nd card</td>
+    <td class="tg-0pky">cc3</td>
+    <td class="tg-0pky">cc2</td>
+    <td class="tg-0pky">NA</td>
+    <td class="tg-0pky">NA</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">T62100-LP-CR</td>
+    <td class="tg-0pky">cc1</td>
+    <td class="tg-0pky">cc0</td>
+    <td class="tg-0pky">NA</td>
+    <td class="tg-0pky">NA</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">T62100-LP-CR - 2nd card</td>
+    <td class="tg-0pky">cc3</td>
+    <td class="tg-0pky">cc2</td>
+    <td class="tg-0pky">NA</td>
+    <td class="tg-0pky">NA</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">X710-T4</td>
+    <td class="tg-0pky">ixl2</td>
+    <td class="tg-0pky">ixl3</td>
+    <td class="tg-0pky">ixl4</td>
+    <td class="tg-0pky">ixl5</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">X710-T4 - 2nd card</td>
+    <td class="tg-0pky">ixl6</td>
+    <td class="tg-0pky">ixl7</td>
+    <td class="tg-0pky">ixl8</td>
+    <td class="tg-0pky">ixl9</td>
+  </tr>
 </table>
-| | Port 0 | Port 1 | Port 2 | Port 3 |
-| QLE2692 and QLE2742 | isp1 | isp0 | NA | NA |
-| QLE2692 and QLE2742 - 2nd card | isp3 | isp2 | NA | NA |
-| QLE2694L | isp3 | isp2 | isp1 | isp0 |
-| T580-LP-CR (4x10G mode) | cxl0123 | DISABLED | NA | NA |
-| T580-LP-CR (4x10G mode) - 2nd card | cxl4567 | DISABLED | NA | NA |
-| T580-LP-CR (40G mode) | cxl0 | cxl1 | NA | NA |
-| T6225-SO-CR | cc1 | cc0 | NA | NA |
-| T6225-SO-CR - 2nd card | cc3 | cc2 | NA | NA |
-| T62100-LP-CR | cc1 | cc0 | NA | NA |
-| T62100-LP-CR - 2nd card | cc3 | cc2 | NA | NA |
-| X710-T4 | ixl2 | ixl3 | ixl4 | ixl5 |
-| X710-T4 - 2nd card | ixl6 | ixl7 | ixl8 | ixl9 |
 
 ## TrueNAS SCALE ##
 
-### **Onboard Ports**	###
+### Onboard Ports	###
 |-------------------------------| Port 0 | Port 1 | Port 2 | Port 3 |
 | TrueNAS Mini E/X - onboard | enp3s0f0 | enp3s0f1 | enp5s0f0 | enp5s0f1 |
 | TrueNAS Mini X+/XL+ - onboard | eno1 | eno2 | NA | NA |
@@ -121,7 +164,7 @@ weight: 15
 | TrueNAS M30/M40 - onboard | | NA | NA |
 | TrueNAS M50/M60 - onboard | eno1 | eno2 | NA | NA
 
-### **M-Series Add-on cards** ###
+### M-Series Add-on cards ###
 |---------------------| Port 0 | Port 1 | Port 2 | Port 3 |
 | QLE2692 and QLE2742 | | | NA | NA |
 | QLE2692 and QLE2742 - 2nd card | | | NA | NA |
