@@ -6,7 +6,7 @@ weight: 10
 {{< toc >}}
 
 {{< hint info >}}
-{{< include file="static/includes/General/CommunitySupportedFeature.md.part" markdown="true" >}}
+{{< include file="static/includes/General/FeatureSupport.md.part" markdown="true" >}}
 {{< /hint >}}
 
 Plugins allow extending the built-in NAS services by installing additional software.
