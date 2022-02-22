@@ -9,7 +9,12 @@ Two-factor authentication (2FA) is great for increasing security.
 
 TrueNAS offers 2FA to ensure that entities cannot use a compromised administrator *root* password to access the administrator interface.
 
-You need a mobile device with Google Authenticator installed to use 2FA.
+You need a mobile device with the current time and date that has Google Authenticator installed to use 2FA.
+
+{{< hint warning >}}
+Two-Factor authentication is time based and requires that the system is set correctly.
+Making sure NTP is functional before enabling is strongly recommended!
+{{< /hint >}}
 
 {{< expand "What is 2FA and why should I enable it?" "v" >}}
 2FA adds an extra layer of security to your system to prevent someone from logging in, even if they have your password. 2FA requires you to verify your identity using a randomized 6-digit code that regenerates every 30 seconds (unless modified) to use when you log in.
@@ -19,6 +24,8 @@ You need a mobile device with Google Authenticator installed to use 2FA.
 Unauthorized users can't log in since they won't have the randomized 6-digit code.
 
 Authorized employees can securely access systems from any device or location without jeopardizing sensitive information.
+
+Internet access on the TrueNAS system is not required to use 2FA.
 
 ### Drawbacks
 
@@ -32,6 +39,7 @@ If the device with the 2FA app isn't available, you can use the system CLI to by
 To unlock 2FA in the CLI, enter:  `midclt call auth.twofactor.update '{ "enabled":false }'`
 {{< /hint >}}
 {{< /expand >}}
+
 
 ## 2FA Options
 
