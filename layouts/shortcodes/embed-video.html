@@ -9,7 +9,6 @@
 </style>
 {{ if .IsNamedParams }}
 <a name="{{ .Get "name" }}"></a>
-<a href="{{ .Get "name" }}">Link to this video</a>
 <div class="docvid">
   <video
     id="{{ .Get "name" }}"
@@ -29,6 +28,7 @@
       >
     </p>
   </video>
+  <p style="font-size:small;">(Video URL: <a href="https://www.truenas.com/docs/files/{{ .Get "name" }}.mp4">https://www.truenas.com/docs/files/{{ .Get "name" }}.mp4</a>)</p>
  
   <script src="https://vjs.zencdn.net/7.15.4/video.min.js"></script>
 </div>

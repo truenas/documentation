@@ -143,7 +143,7 @@ If the system does not boot into TrueNAS SCALE, there are several things that ca
 {{< /expand >}}
 {{< /tab >}}
 {{< tab "Virtual Machine" >}}
-<a href="#scaleangelfishvminstall">testurl</a>
+
 {{< embed-video name="scaleangelfishvminstall" >}}
 
 Because TrueNAS SCALE is built and provided as an <file>.iso</file> file, it works on all virtual machine solutions (VMware, VirtualBox, Citrix Hypervisor, etc).
