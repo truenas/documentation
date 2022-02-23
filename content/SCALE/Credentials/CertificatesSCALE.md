@@ -58,15 +58,12 @@ Users can also select a predefined certificate extension from the **Profiles** d
 The **Certificate Options** step provides options for choosing what type of private key type to use, the number of bits in the key used by the cryptographic algorithm, and the cryptographic algorithm the CSR uses.
 
 {{< /tab >}}
-{{< /tabs >}}
-
-{{< tab "Certificate Subject" >}}
+{{< tabs "Certificate Subject" >}}
 
 The **Certificate Subject** step lets users define the location, name, and email for the organization using the certificate.    
 Users can also enter the system [fully-qualified hostname (FQDN)](https://kb.iu.edu/d/aiuv) and any additional domains for multi-domain support.
 
 {{< /tab >}}
-
 {{< tab "Extra Constraints" >}}
 
 The **Extra Constraints** step contains certificate extension options.
@@ -89,19 +86,17 @@ The **Identifier and Type** step lets users name the CA and choose whether to cr
 Users can also select a predefined certificate extension from the **Profiles** drop-down list.
 
 {{< /tab >}}
-
 {{< tab "Certificate Options" >}}
 
 The **Certificate Options** step provides options for choosing what type of private key to use (as well as the number of bits in the key used by the cryptographic algorithm), the cryptographic algorithm the CA uses, and how many days the CA lasts.
-{{< /tab >}}
 
+{{< /tab >}}
 {{< tab "Certificate Subject" >}}
 
 The **Certificate Subject** step lets users define the location, name, and email for the organization using the certificate.    
 Users can also enter the system [fully-qualified hostname (FQDN)](https://kb.iu.edu/d/aiuv) and any additional domains for multi-domain support.
 
 {{< /tab >}}
-
 {{< tab "Extra Constraints" >}}
 
 The **Extra Constraints** step contains certificate extension options.
