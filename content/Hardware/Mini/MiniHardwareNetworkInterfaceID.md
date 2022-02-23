@@ -3,7 +3,7 @@ title: "Mini Hardware Network Interface ID"
 weight: 15
 ---
 
-{< toc >}
+{{< toc >}}
 
 ## Core/Enterprise ##
 | Onboard Ports | Port 0 | Port 1 | Port 2 | Port 3 |
