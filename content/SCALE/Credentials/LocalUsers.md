@@ -87,11 +87,11 @@ Setting **Disable Password** to **Yes** disables several options:
 * The **Lock User** and **Permit Sudo** options disappear.
 * The account is restricted from password-based logins for services like SMB shares and SSH sessions.
 
-You can set a specific [shell]({{< relref "ScaleShell.md" >}}) for the user from the **Shell** drop-down:
+You can set a specific [shell]({{< relref "ScaleShell.md" >}}) for the user from the **Shell** drop-down list:
 
 | Shell | Description |
 |-------|-------------|
-| csh	| [C shell](https://docs.freebsd.org/44doc/usd/04.csh/paper.html) for UNIX system interactions. |
+| csh	| [C shell](https://en.wikipedia.org/wiki/C_shell) for UNIX system interactions. |
 | sh	| [Bourne shell](https://www.in-ulm.de/~mascheck/bourne/v7/) |
 | tcsh	| [Enhanced C shell](https://www.tcsh.org) that includes editing and name completion. |
 | bash	| [Bourne Again shell](https://www.gnu.org/software/bash/manual/bash.html) for the GNU operating system. |
