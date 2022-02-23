@@ -25,10 +25,6 @@ Unlike other HCI platforms, a user can get started with TrueNAS SCALE on a singl
 TrueNAS SCALE is true Disaggregated HCI, meaning storage and compute can be scaled independently.
 Each node can support Virtual Machines (with the KVM hypervisor) as well as Docker containers by using native Kubernetes.
 
-{{< hint warning >}}
-TrueNAS SCALE is in early development and is not recommended for production use.
-{{< /hint >}}
-
 {{< tabs "SCALE Features" >}}
 {{< tab "Open Source" >}}
 Free to download and use, TrueNAS SCALE welcomes developers and testers to contribute to its Open Source development model.
