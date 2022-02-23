@@ -43,11 +43,11 @@ FTP requires a new dataset and a local user account.
 
 Go to **Storage** to add a new [dataset](/storage/pools/datasetsscale).
 
-![DatasetAddSCALE](</images/SCALE/DatasetAddSCALE.png "Adding a new Dataset")
+![DatasetAddSCALE](/images/SCALE/DatasetAddSCALE.png "Adding a new Dataset")
 
 Next, go to **Credentials > Local Users**  and click **Add** to create a local user on the TrueNAS.
 
-![AddUserFormSCALE](</images/SCALE/AddUserFormSCALE.png "Adding a new User Account")
+![AddUserFormSCALE](/images/SCALE/AddUserFormSCALE.png "Adding a new User Account")
 
 Assign a user name and password, and link the newly created FTP share dataset as the user home directory.
 You can do this for every user, or create a global account for FTP (for example, *OurOrgFTPacnt*).
@@ -164,11 +164,11 @@ Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i
 
 Choose the certificate to use as an OpenVPN client.
 The certificate must exist in TrueNAS and be active (unrevoked).
-Enter the *Remote* OpenVPN server's hostname or IP address.
+Enter the **Remote** OpenVPN server's hostname or IP address.
 
 Continue to review and choose any other [Connection Settings](#connection-settings) that fit your network environment and performance requirements.
-The *Device Type* must match the OpenVPN server *Device Type*.
-*Nobind* prevents using a fixed port for the client and is enabled by default so the OpenVPN client and server run concurrently.
+The **Device Type** must match the OpenVPN server **Device Type**.
+**Nobind** prevents using a fixed port for the client and is enabled by default so the OpenVPN client and server run concurrently.
 
 Finally, review the [Security Options](#security-options) and ensure they meet your network security requirements.
 If the OpenVPN server uses TLS Encryption, copy the static TLS encryption key and paste it into the **TLS Crypt Auth** field.
@@ -253,7 +253,7 @@ Because S3 is the de facto standard for cloud-based storage, setting up an S3 se
 
 ## Setting up the S3 service
 
-Go to the **System Settings > Services** and find *S3*, then click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to configure the service.
+Go to the **System Settings > Services** and find **S3**, then click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to configure the service.
 
 ![ServicesS3SCALE](/images/SCALE/ServicesS3SCALE.png "S3 Service Options")
 
@@ -336,7 +336,7 @@ It is possible to access, create new buckets, or upload files to created buckets
 {{< tab "SNMP" >}}
 [SNMP (Simple Network Management Protocol)](https://tools.ietf.org/html/rfc1157) monitors network-attached devices for conditions that warrant administrative attention.
 TrueNAS uses [Net-SNMP](https://sourceforge.net/projects/net-snmp/) to provide SNMP.
-To configure SNMP, go to **System Settings > Services** page, find **SNMP**, and click the <i class="fa fa-pencil" aria-hidden="true" title="Configure"></i>.
+To configure SNMP, go to **System Settings > Services** page, find **SNMP**, and click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
 
 ![ServicesSNMPSCALE](/images/SCALE/ServicesSNMPSCALE.png "SNMP Service Options")
 
@@ -370,7 +370,7 @@ Do not enable SSH unless you require external connections.
 
 Activate or configure the SSH service on the **System Settings > Services** page.
 
-To configure SSH, go to **System Settings > Services** and find **SSH**, then click <i class="fa fa-pencil" aria-hidden="true" title="Configure"></i>.
+To configure SSH, go to **System Settings > Services** and find **SSH**, then click <i class="material-icons" aria-hidden="true" title="Configure">edit</i>
 
 ![ServicesSSHSCALE](/images/SCALE/ServicesSSHSCALE.png "SSH Options")
 
@@ -393,7 +393,7 @@ To create and store specific [SSH connections and keypairs]({{< relref "/SCALE/C
 
 {{< tab "UPS" >}}
 TrueNAS uses Network UPS Tools [NUT](https://networkupstools.org/) to provide UPS support.
-After connecting the TrueNAS system UPS device, configure the UPS service by going to **System settings > Services**, finding **UPS**, and clicking <i class="fa fa-pencil" aria-hidden="true" title="Configure"></i>.
+After connecting the TrueNAS system UPS device, configure the UPS service by going to **System settings > Services**, finding **UPS**, and clicking <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
 
 ![ServicesUPSSCALE](/images/SCALE/ServicesUPSSCALE.png "UPS Options")
 

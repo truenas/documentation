@@ -125,7 +125,7 @@ The **Edit User** window lets users edit the **User Data Quota** and **User Obje
 
 **User Data Quota** is the amount of disk space that selected users can use. **User Object Quota** is the number of objects selected users can own.
 
-To edit user quotas in bulk, click **Actions** and select *S*et Quotas (Bulk)**.
+To edit user quotas in bulk, click **Actions** and select **Set Quotas (Bulk)**.
 
 ![DatasetUserQuotasBulkSCALE](/images/SCALE/DatasetUserQuotasBulkSCALE.png "Bulk-Editing User Quotas")
 

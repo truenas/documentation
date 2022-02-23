@@ -29,7 +29,7 @@ This short tutorial video demonstrates basic steps to set up an iSCSI share conf
 
 First, enter a name. It can only contain lowercase alphanumeric characters plus a dot (.), dash (-), or colon (:). We recommend keeping it short or at most 63 characters. Next, choose the **Extent Type**.
 
-* If the **Extent Type** is **Device**, select the Zvol to share from the ***Device** menu.
+* If the **Extent Type** is **Device**, select the Zvol to share from the **Device** menu.
 
 * If the **Extent Type** is **File**, select the path to it and indicate the size.
 
@@ -202,7 +202,7 @@ To edit an existing extent, click <i class="material-icons" aria-hidden="true" t
 **Type**
 | Setting | Description |
 |---------|-------|
-| Extent Type | **Device** provides virtual storage access to zvols, zvol snapshots, or physical devices. ***File** provides virtual storage access to a single file. |
+| Extent Type | **Device** provides virtual storage access to zvols, zvol snapshots, or physical devices. **File** provides virtual storage access to a single file. |
 | Device | Only appears if **Device** is selected. Select the unformatted disk, controller, or zvol snapshot. |
 | Path to the Extent | Only appears if **File** is selected. Browse to an existing file. Create a new file by browsing to a dataset and appending /\{filename.ext\} to the path. Users cannot create extents inside a jail root directory. |
 | Filesize | Only appears if **File** is selected. Entering **0** uses the actual file size and requires that the file already exists. Otherwise, specify the file size for the new file. |
@@ -394,7 +394,7 @@ To expand a Zvol LUN, go to **Storage** and click the <i class="material-icons" 
 
 ![ExpandingZvolLUNListSCALE](/images/SCALE/ExpandingZvolLUNListSCALE.png "Edit the Zvol LUN")
 
-Enter a new size in the **Size for this zvol*** field, then click **SAVE**.
+Enter a new size in the **Size for this zvol** field, then click **SAVE**.
 
 ![ExpandingZvolLUNSizeSCALE](/images/SCALE/ExpandingZvolLUNSizeSCALE.png "Change the Zvol Size")
 
@@ -801,7 +801,7 @@ There are a few caveats about shadow copies to be aware of before activating the
 * Shadow copy cannot be deleted by users with an SMB client. Instead, the administrator uses the TrueNAS web interface to remove snapshots. Shadow copies can be disabled for an SMB share by unsetting **Enable shadow copies** for the SMB share. This does not prevent access to the hidden <file>.zfs/snapshot</file> directory for a ZFS dataset when the directory is located within the path for an SMB share.
   
 To enable shadow copies, go to **Shares > Windows (SMB) Shares** and **Edit** an existing share.
-Open the **Advanced* options** and set **Enable Shadow Copies**.
+Open the **Advanced Options** and set **Enable Shadow Copies**.
 
 {{< expand "Windows 10 v2004 Issue" "v" >}}
 Some users have experienced issues in the Windows 10 v2004 release where network shares can't be accessed. The problem appears to come from a bug in <file>gpedit.msc</file>, the Local Group Policy Editor. Unfortunately, setting the **Allow insecure guest logon** flag value to **Enabled** in **Computer Configuration > Administrative Templates > Network > Lanman Workstation** appears to have no effect on the configuration.
@@ -923,7 +923,7 @@ The default simplifies WebDAV share permission, but is unexpected, so the web in
 
 ![SharingWebdavAddWarningSCALE](/images/SCALE/SharingWebdavAddWarningSCALE.png "Services Webdav Add Warning")
 
-This warning does not show when the ***Change User & Group Ownership** checkbox is cleared.
+This warning does not show when the **Change User & Group Ownership** checkbox is cleared.
 In that situation, you must manually set shared file ownership to the webdav or *www* user and group accounts.
 
 By default, the new WebDAV share is immediately active.

@@ -145,7 +145,7 @@ TrueNAS displays the **Hostname** and **Domain** in the **Dashboard** **System I
 | HTTP Proxy | When using a proxy, enter the proxy information for the network in the format *`http://my.proxy.server:3128`* or *`http://user:password@my.proxy.server:3128`*.
 | Enable Netwait Feature | Delays the start of network services until pings return from the IP addresses added to the **Netwait IP List**. |
 | Netwait IP List | Only appears when **Enable Netwait Feature** checkbox is selected. Enter a list of IP addresses to [ping](https://manpages.debian.org/unstable/inetutils-ping/ping.1.en.html). Separate entries by pressing <kbd>Enter</kbd>. Each address is tried until one is successful or the list is exhausted. Leave empty to use the default gateway.
-| Host Name Database | Additional hosts to append to */etc/hosts*. Separate entries by pressing. Separate entries by pressing <kbd>Enter</kbd>.  Use the format *`IP_address space hostname`* where multiple hostnames can be used if separated by a space. Hosts defined here are still accessible by name even when DNS is not available. See [hosts[(https://manpages.debian.org/unstable/bind9-host/host.1.en.html) for additional information. |
+| Host Name Database | Additional hosts to append to */etc/hosts*. Separate entries by pressing. Separate entries by pressing <kbd>Enter</kbd>.  Use the format *`IP_address space hostname`* where multiple hostnames can be used if separated by a space. Hosts defined here are still accessible by name even when DNS is not available. See [hosts](https://manpages.debian.org/unstable/bind9-host/host.1.en.html) for additional information. |
 
 {{< /tab >}}
 {{< tab "Static Routes" >}}
@@ -310,7 +310,7 @@ Many [TrueNAS Storage Arrays]({{< relref "/Hardware/_index.md" >}}) have a built
 IPMI allows users to check the log, access the BIOS setup, and boot the system without physical access. IPMI also enables users to remotely access the system to assist with configuration or troubleshooting issues.
 
 {{< hint info >}}
-Some IPMI implementations require updates to work with newer versions of Java. See [HERE](https://forums.freenas.org/index.php?threads/psa-java-8-update-131-breaks-asrocks-ipmi-virtual-console.53911/) for more information.
+Some IPMI implementations require updates to work with newer versions of Java. See [here](https://forums.freenas.org/index.php?threads/psa-java-8-update-131-breaks-asrocks-ipmi-virtual-console.53911/) for more information.
 {{< /hint >}}
 
 IPMI is configured in **Network > IPMI**. The IPMI configuration screen provides a shortcut to the most basic IPMI configuration.

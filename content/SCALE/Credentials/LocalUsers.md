@@ -14,7 +14,7 @@ Doing so makes tuning permissions for large numbers of users more efficient.
 Only the *root* user account can log in to the TrueNAS web interface.
 {{< /hint >}}
 
-When the network uses a directory service, import the existing account information using the instructions in [Directory Services]({{< relref "/content/SCALE/Credentials/DirectoryServices/_index.md" >}}.
+When the network uses a directory service, import the existing account information using the instructions in [Directory Services]({{< relref "/content/SCALE/Credentials/DirectoryServices/_index.md" >}}).
 
 Using [Active Directory]({{< relref "/content/SCALE/Credentials/DirectoryServices/_index.md" >}}) requires setting Windows user passwords in Windows.
 
@@ -87,11 +87,11 @@ Setting **Disable Password** to **Yes** disables several options:
 * The **Lock User** and **Permit Sudo** options disappear.
 * The account is restricted from password-based logins for services like SMB shares and SSH sessions.
 
-You can set a specific [shell]({{< relref "ScaleShell.md" >}}) for the user from the **Shell** drop-down list:
+You can set a specific [shell]({{< relref "ScaleShell.md" >}}) for the user from the **Shell** drop-down:
 
 | Shell | Description |
 |-------|-------------|
-| csh	| [C shell](https://en.wikipedia.org/wiki/C_shell) for UNIX system interactions. |
+| csh	| [C shell](https://docs.freebsd.org/44doc/usd/04.csh/paper.html) for UNIX system interactions. |
 | sh	| [Bourne shell](https://www.in-ulm.de/~mascheck/bourne/v7/) |
 | tcsh	| [Enhanced C shell](https://www.tcsh.org) that includes editing and name completion. |
 | bash	| [Bourne Again shell](https://www.gnu.org/software/bash/manual/bash.html) for the GNU operating system. |
