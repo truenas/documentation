@@ -1,12 +1,13 @@
 ---
-title: "M-Series NetworK Interface ID"
+title: "M-Series Network Interface ID"
 weight: 15
 ---
+
 {{< toc >}}
 
-See [Component Naming]({{< relref "SCALE/GettingStarted/ComponentNaming.md" >}}) for information about the differences between Core and Scale interface naming.
+See [Component Naming]({{< relref "SCALE/GettingStarted/ComponentNaming.md" >}}) for information about the differences between CORE and SCALE interface naming.
 
-## Core/Enterprise ##
+## CORE/Enterprise
 
 | Onboard Ports| Port 0 | Port 1 | Port 2 | Port 3 |
 | -------- | -------- | -------- | -------- | -------- |
@@ -28,8 +29,7 @@ See [Component Naming]({{< relref "SCALE/GettingStarted/ComponentNaming.md" >}})
 | X710-T4 | ixl2 | ixl3 | ixl4 | ixl5 |
 | X710-T4 - 2nd card | ixl6 | ixl7 | ixl8 | ixl9 |
 
-
-## SCALE ##
+## SCALE
 
 | Onboard Ports | Port 0 | Port 1 | Port 2 | Port 3 |
 | -------- | -------- | -------- | -------- | -------- |
@@ -50,4 +50,3 @@ See [Component Naming]({{< relref "SCALE/GettingStarted/ComponentNaming.md" >}})
 | T62100-LP-CR - 2nd card | | | NA | NA |
 | X710-T4 | | | | |
 | X710-T4 - 2nd card | | | | |
-
