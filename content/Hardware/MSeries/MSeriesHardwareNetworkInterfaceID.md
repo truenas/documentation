@@ -16,8 +16,9 @@ weight: 15
 
 | | Port 0 | Port 1 | Port 2 | Port 3 | Port 0 | Port 1 | Port 2 | Port 3 |
 | -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- |
-| TrueNAS M30/M40 - onboard | ixl0 | ixl1 | NA | NA | eno1 | eno2 | NA | NA |
-| TrueNAS M50/M60 - onboard | ixl0 | ixl1 | NA | NA | eno1 | eno2 | NA | NA |
+| QLE2692 and QLE2742 | isp1 | isp0 | NA | NA | | | NA | NA |
+| QLE2692 and QLE2742 - 2nd card | isp3 | isp2 | NA | NA | | | NA | NA |
+| QLE2694L | isp3 | isp2 | isp1 | isp0 | | | | |
 
 
 | | Port 0 | Port 1 | Port 2 | Port 3 | Port 0 | Port 1 | Port 2 | Port 3 |
