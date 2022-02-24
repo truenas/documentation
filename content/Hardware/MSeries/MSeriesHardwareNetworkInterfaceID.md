@@ -4,6 +4,8 @@ weight: 15
 ---
 {{< toc >}}
 
+See [Component Naming]({{< relref "SCALE/GettingStarted/ComponentNaming.md" >}}) for information about the differences between Core and Scale interface naming.
+
 ## Core/Enterprise ##
 
 | Onboard Ports| Port 0 | Port 1 | Port 2 | Port 3 |
