@@ -5,9 +5,10 @@ weight: 15
 
 {{< toc >}}
 
-See [Component Naming]({{< relref "SCALE/GettingStarted/ComponentNaming.md" >}}) for information about the differences between Core and Scale interface naming.
+See [Component Naming]({{< relref "SCALE/GettingStarted/ComponentNaming.md" >}}) for information about the differences between CORE and SCALE interface naming.
 
-## Core/Enterprise ##
+## Core/Enterprise
+
 | Onboard Ports | Port 0 | Port 1 | Port 2 | Port 3 |
 |--------|--------|--------|--------|--------|								
 | TrueNAS X10/X20 - onboard |	igbo0 |	igb1 |	NA	| NA |
@@ -23,7 +24,8 @@ See [Component Naming]({{< relref "SCALE/GettingStarted/ComponentNaming.md" >}})
 | QLE2562 | isp0 | isp1 | NA | NA |
 | T6225-SO-CR | cc0 | cc1 | NA | NA |
 
-## SCALE ##
+## SCALE
+
 | Onboard Ports | Port 0 | Port 1 | Port 2 | Port 3 |
 |--------|--------|--------|--------|--------|								
 | TrueNAS X10/X20 - onboard |	enp5s0 | enp5s1 |	NA	| NA |
