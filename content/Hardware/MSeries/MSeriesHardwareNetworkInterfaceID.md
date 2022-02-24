@@ -27,7 +27,7 @@ weight: 15
 | X710-T4 - 2nd card | ixl6 | ixl7 | ixl8 | ixl9 |
 
 
-## Scale ##
+## SCALE ##
 
 | Onboard Ports | Port 0 | Port 1 | Port 2 | Port 3 |
 | -------- | -------- | -------- | -------- | -------- |
