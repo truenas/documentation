@@ -19,13 +19,6 @@ weight: 15
 | QLE2692 and QLE2742 | isp1 | isp0 | NA | NA | | | NA | NA |
 | QLE2692 and QLE2742 - 2nd card | isp3 | isp2 | NA | NA | | | NA | NA |
 | QLE2694L | isp3 | isp2 | isp1 | isp0 | | | | |
-
-
-| | Port 0 | Port 1 | Port 2 | Port 3 | Port 0 | Port 1 | Port 2 | Port 3 |
-| QLE2692 and QLE2742 | isp1 | isp0 | NA | NA | | | NA | NA |
-| QLE2692 and QLE2742 - 2nd card | isp3 | isp2 | NA | NA | | | NA | NA |
-| QLE2694L | isp3 | isp2 | isp1 | isp0 | | | | |
-
 | T580-LP-CR (4x10G mode) | cxl0123 | DISABLED | NA | NA | | | NA | NA |
 | T580-LP-CR (4x10G mode) - 2nd card | cxl4567 | DISABLED | NA | NA | | | NA | NA |
 | T580-LP-CR (40G mode) | cxl0 | cxl1 | NA | NA | enp179s0f4 | enp179s0fd1 | NA | NA |
