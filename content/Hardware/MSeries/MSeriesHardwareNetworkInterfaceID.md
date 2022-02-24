@@ -38,15 +38,6 @@ See [Component Naming]({{< relref "SCALE/GettingStarted/ComponentNaming.md" >}})
 
 | Add-on Cards | Port 0 | Port 1 | Port 2 | Port 3 |
 | -------- | -------- | -------- | -------- | -------- |
-| QLE2692 and QLE2742 | | | NA | NA |
-| QLE2692 and QLE2742 - 2nd card | | | NA | NA |
-| QLE2694L | | | | |
-| T580-LP-CR (4x10G mode) | | | NA | NA |
-| T580-LP-CR (4x10G mode) - 2nd card | | | NA | NA |
 | T580-LP-CR (40G mode) | enp179s0f4 | enp179s0fd1 | NA | NA |
 | T6225-SO-CR | enp1s0f4d1 | enp1s0f4 | NA | NA |
-| T6225-SO-CR - 2nd card | | | NA | NA |
 | T62100-LP-CR | enp134s0f4 | enp134s0f4d1 | NA | NA |
-| T62100-LP-CR - 2nd card | | | NA | NA |
-| X710-T4 | | | | |
-| X710-T4 - 2nd card | | | | |
