@@ -91,7 +91,7 @@ You can set a specific [shell]({{< relref "ScaleShell.md" >}}) for the user from
 
 | Shell | Description |
 |-------|-------------|
-| csh	| [C shell](https://docs.freebsd.org/44doc/usd/04.csh/paper.html) for UNIX system interactions. |
+| csh	| [C shell](https://linux.die.net/man/1/csh) for UNIX system interactions. |
 | sh	| [Bourne shell](https://www.in-ulm.de/~mascheck/bourne/v7/) |
 | tcsh	| [Enhanced C shell](https://www.tcsh.org) that includes editing and name completion. |
 | bash	| [Bourne Again shell](https://www.gnu.org/software/bash/manual/bash.html) for the GNU operating system. |

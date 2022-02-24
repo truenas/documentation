@@ -286,8 +286,8 @@ See the OpenVPN [Reference Manual](https://openvpn.net/community-resources/refer
 Because using a VPN involves connecting to a private network while still sending data over less secure public resources, OpenVPN includes several security options.
 While not required, these security options help protect the data TrueNAS sends into or out of the private network.
 
-* **Authentication Algorithm**: Validates packets that TrueNAS sends over the network connection. Your network environment might require a specific algorithm. If not, **SHA1 HMAC** is a good standard algorithm to use.
-* **Cipher**: Encrypts data packets sent through the connection. While not required, choosing a cipher can increase connection security. You might need to verify which ciphers your networking environment requires. If there are no specific cipher requirements, **AES-256-GCM** is a good default choice.
+* **Authentication Algorithm**: Validates packets that TrueNAS sends over the network connection. Your network environment might require a specific algorithm. If not, SHA1 HMAC is a good standard algorithm to use.
+* **Cipher**: Encrypts data packets sent through the connection. While not required, choosing a cipher can increase connection security. You might need to verify which ciphers your networking environment requires. If there are no specific cipher requirements, AES-256-GCM is a good default choice.
 * **TLS Encryption**: When **TLS Crypt Auth Enabled** is selected, TrueNAS encrypts all TLS handshake messages to add another layer of security. TLS Encryption requires a static key that the OpenVPN server and clients share.
 
 ### Service Activation

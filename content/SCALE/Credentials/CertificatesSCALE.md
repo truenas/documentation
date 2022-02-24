@@ -46,24 +46,27 @@ The **Extra Constraints** step contains certificate extension options.
 
 The **Certificate Signing Requests** section allows users configure the message(s) the system sends to a registration authority of the public key infrastructure to apply for a digital identity certificate. 
 
-{{< tabs "Add Certificate" >}}
+{{< tabs "Add Certificate Singing Requests" >}}
 {{< tab "Identifier and Type" >}}
 
 The **Identifier and Type** step lets users name the certificate signing request (CSR) and choose whether to create a new CSR or import an existing CSR.     
 Users can also select a predefined certificate extension from the **Profiles** drop-down list.
 
 {{< /tab >}}
+
 {{< tab "Certificate Options" >}}
 
 The **Certificate Options** step provides options for choosing what type of private key type to use, the number of bits in the key used by the cryptographic algorithm, and the cryptographic algorithm the CSR uses.
 
 {{< /tab >}}
+
 {{< tabs "Certificate Subject" >}}
 
 The **Certificate Subject** step lets users define the location, name, and email for the organization using the certificate.    
 Users can also enter the system [fully-qualified hostname (FQDN)](https://kb.iu.edu/d/aiuv) and any additional domains for multi-domain support.
 
 {{< /tab >}}
+
 {{< tab "Extra Constraints" >}}
 
 The **Extra Constraints** step contains certificate extension options.
@@ -79,24 +82,27 @@ The **Extra Constraints** step contains certificate extension options.
 
 The Certificate Authorities section lets users set up a certificate authority (CA) that certifies the ownership of a public key by the named subject of the certificate.
 
-{{< tabs "Add Certificate" >}}
+{{< tabs "Add Certificate Authorities" >}}
 {{< tab "Identifier and Type" >}}
 
 The **Identifier and Type** step lets users name the CA and choose whether to create a new CA or import an existing CA.     
 Users can also select a predefined certificate extension from the **Profiles** drop-down list.
 
 {{< /tab >}}
+
 {{< tab "Certificate Options" >}}
 
 The **Certificate Options** step provides options for choosing what type of private key to use (as well as the number of bits in the key used by the cryptographic algorithm), the cryptographic algorithm the CA uses, and how many days the CA lasts.
 
 {{< /tab >}}
+
 {{< tab "Certificate Subject" >}}
 
 The **Certificate Subject** step lets users define the location, name, and email for the organization using the certificate.    
 Users can also enter the system [fully-qualified hostname (FQDN)](https://kb.iu.edu/d/aiuv) and any additional domains for multi-domain support.
 
 {{< /tab >}}
+
 {{< tab "Extra Constraints" >}}
 
 The **Extra Constraints** step contains certificate extension options.
