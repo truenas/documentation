@@ -29,14 +29,3 @@ See [Component Naming]({{< relref "SCALE/GettingStarted/ComponentNaming.md" >}})
 | Onboard Ports | Port 0 | Port 1 | Port 2 | Port 3 |
 |--------|--------|--------|--------|--------|								
 | TrueNAS X10/X20 - onboard |	enp5s0 | enp5s1 |	NA	| NA |
-
-| Add-on Cards | Port 0 | Port 1 | Port 2 | Port 3 |
-|--------|--------|--------|--------|--------|								
-| X540-T2 | | |	NA	| NA |
-| T520-SO-CR | | | NA | NA |
-| T580-SO-CR (4x10G mode) | | | NA | NA |
-| T580-SO-CR (2x40G mode) | | | | |
-| X710-T4 | | | | |
-| i350-T4 | | | | |
-| QLE2562 | | | NA | NA |
-| T6225-SO-CR | | | NA | NA |
