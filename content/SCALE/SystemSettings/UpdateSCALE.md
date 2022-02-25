@@ -22,7 +22,7 @@ We recommend updating TrueNAS when the system is idle (no clients connected, no 
 Update during scheduled maintenance times to avoid disrupting user activities.
 
 
-![UpdateSCALE](/images/SCALE/UpdateSCALE.png "Update SCALE")
+![UpdateSCALE](/images/SCALE/UpdateScale.png "Update SCALE")
 
 ## Automatic
 
