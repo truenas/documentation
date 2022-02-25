@@ -8,8 +8,8 @@ weight: 10
 
 TrueNAS has several software branches (linear update paths) known as trains. Scale is currently a Prerelease Train. Prelease Trains have various preview/early build releases of the software. Although there are several trains available for updates, the web interface only displays trains that can be selected as an upgrade. For more information on other available trains see [Truenas Upgrades](https://www.truenas.com/docs/truenasupgrades/).
 
-{{< hint warning >}}
-The UI shows a warning when the currently selected train is not suited for production use.
+{{< hint danger >}}
+**TrueNAS SCALE train is not suited for production use. Only use SCALE for testing.**
 Before using a non-production train, be prepared to experience bugs or problems.
 Testers are encouraged to submit bug reports at https://jira.ixsystems.com.
 {{< /hint >}}
@@ -21,9 +21,6 @@ We recommend updating TrueNAS when the system is idle (no clients connected, no 
 
 Update during scheduled maintenance times to avoid disrupting user activities.
 
-{{< hint danger >}}
-**TrueNAS SCALE is not currently on a production release. Only use SCALE for testing.**
-{{< /hint >}}
 
 ![UpdateSCALE](/images/SCALE/UpdateSCALE.png "Update SCALE")
 
