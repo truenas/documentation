@@ -9,7 +9,7 @@ weight: 20
 
 ### Creating the Administrator Account
 
-When accessing the interface for the first time you need to create an admin account. 
+When accessing the interface for the first time, you need to create an admin account. 
 
 ![TrueCommand Admin Creation](/images/TrueCommand/2.0/FirstLogin.png "TrueCommand Admin Creation")
 
@@ -43,7 +43,7 @@ The top bar has various quick links, configuration options, alerts, and menus.
 + Clicking <i class="material-icons" aria-hidden="true" title="Settings">settings</i> opens the settings menu dropdown.
 + Clicking the user avatar displays the user **Profile** option where you can set a custom avatar to change the default user gravtar. It also provides access to the **API Interface**, the **EULA** and the **Log Out** options.
 
-### Themeing 
+### Themeing
 
 TrueCommand includes the ability to customize the alert colors to user preferences.
 The **Theme settings** pallet is located in the top banner on the right.
@@ -51,7 +51,7 @@ To open the theme configuration menu, click the <i class="material-icons" aria-h
 
 ![ThemeSelect](/images/TrueCommand/2.0/ThemePallete.png "Theme Select")
 
-To change a color, click on the color to open a selection menu. Select the desired color or enter its HEX color value.
+To change a color, click on the color to open a selection menu, then choose a color or enter its HEX color value.
 
 ![ThemeCustomize](/images/TrueCommand/2.0/ThemePalleteCustom.png "Theme Customize")
 
@@ -84,4 +84,3 @@ The user menu (avatar) has the following options:
 + Clicking <mat-icon role="img" fontset="mdi" fonticon="mdi-swap-vertical-bold" class="mat-icon mdi mdi-swap-vertical-bold mat-icon-no-color" aria-hidden="true"></mat-icon> opens the [**API Interface**]({{< relref "/TrueCommand/API/_index.md" >}}) testing page.
 + Clicking <mat-icon role="img" fontset="mdi" fonticon="mdi-file-document-edit" class="mat-icon notranslate mdi mdi-file-document-edit mat-icon-no-color" aria-hidden="true"></mat-icon> opens the [TrueCommand EULA]({{< relref "/TrueCommand/Notices/TCTermsOfService.md" >}}).
 + Clicking <mat-icon role="img" class="mat-icon material-icons mat-icon-no-color" aria-hidden="true">exit_to_app</mat-icon> logs the user out of TrueCommand.
-

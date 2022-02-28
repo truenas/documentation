@@ -20,28 +20,30 @@ To connect your first system to TrueCommand, click **NEW SYSTEM** on the dashboa
 | Password / API Key | New password or API key. TrueCommand hades characters for security. |
 | Password / API Key Confirm | Re-enter the password or API key. |
 
-Enter the system IP address or DNS hostname, type a system nickname, and the system password.
-If you make a mistake, click **RESET FORM** to clear all entries and start over.
+Enter the system IP address or DNS hostname, then enter a system nickname and password.
+
+Click **RESET FORM** to clear the fields and reset the form if you make a mistake.
 
 ![Systems List](/images/TrueCommand/2.1/SystemsPage.png "Systems List")
 
 ### Adjusting Systems
 
-Systems that are misconfigured (e.g. if you entered an incorrect password) appear offline on both the TrueCommand **Dashboard** and **Systems** list.
+Misconfigured systems (such as one created with an incorrect password) appear offline on both the TrueCommand **Dashboard** and **Systems** list.
 
-You can edit a system from the **Systems** list by clicking the edit icon <i class="material-icons" aria-hidden="true" title="edit">edit</i> and then enter new connection details. To go back to the original contents of the fields, click **RESET FORM**.
+You can edit a system from the **Systems** list by clicking the edit icon <i class="material-icons" aria-hidden="true" title="edit">edit</i> and then enter new connection details. Click **RESET FORM** to clear the fields and reset the form if you make a mistake.
 
 To remove a system from TrueCommand monitoring, click **Delete**.
 
 ## Organizing Systems into Groups
 
-Groups are collections of systems that are organized by TrueCommand administrators.
-Grouping systems allows efficient management of system permissions and reporting.
+TrueCommand administrators can organize systems into collections called Groups.
+
+Grouping systems enables efficient system permissions and reporting management.
 
 Open the **System Groups** tab to view the list of created groups and the systems they contain.
 Create a Group by clicking **Configure <i class="material-icons" aria-hidden="true" title="Settings">settings</i>&nbsp; > Systems > + NEW GROUP**.
 Enter a name for the new group and click **ADD SYSTEM** to add a system to the group.
-When all the desired systems are added to the group, click **CREATE GROUP**.
+Once you've added all the desired systems to the group, click **CREATE GROUP**.
 
 ![SystemsNewGroup](/images/TrueCommand/2.0/SystemsGroupsNewGroup.png "New System Group")
 
@@ -90,13 +92,13 @@ When all systems are connected to TrueCommand Cloud, refer to the [TrueCommand A
 ## Manual Connections
 
 To connect a system to TrueCommand, open the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and click **Systems**.
-This menu is organized into two tabs: **Systems** and **System Groups**.
+The **Systems** menu has two tabs: **Systems** and **System Groups**.
 These tabs contain all the options to connect and organize systems in TrueCommand.
-All added systems are listed on the **Systems** tab with the current connection status.
+TrueCommand lists all added systems and their connection statuses in the **Systems** tab.
 
 To connect a new system, click **+ NEW SYSTEM**.
 
-Enter the system IP address or DNS hostname, a system nickname, and the system password.
+Enter the system IP address or DNS hostname, then enter a system nickname and password.
 Click **RESET FORM** to clear the fields and reset the form if you make a mistake.
 
 ![Systems List](/images/TrueCommand/2.1/SystemsPage.png "Systems List")

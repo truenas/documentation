@@ -38,9 +38,9 @@ Click the checkbox to assign the target to the block device.
 
 Click **NEXT**.
 
-By default, all initiators are granted access to the target.
+By default, TrueCommand grants target access to all initiators.
 To change this, click **+ Initiator**.
-Name the new initiator and click the checkbox to assign the initiator to the target.
+Name the new initiator and click the checkbox to assign it to the target.
 
 ![iSCSICreateInitiator](/images/TrueCommand/2.1/iSCSICreateInitiator.png "iSCSICreateInitiator")
 
@@ -69,5 +69,5 @@ To delete everything click the <i class="fa fa-ellipsis-v" aria-hidden="true" ti
 
 ![iSCSIDeleteTarget](/images/TrueCommand/2.1/iSCSIDeleteTarget.png "iSCSIDeleteTarget")
 
-TrueCommand cannot delete initiators and init groups because they can be tied to multiple targets.
+TrueCommand cannot delete initiators and init groups because they may be tied to multiple targets.
 To remove these settings, delete them from each TrueNAS system.

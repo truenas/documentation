@@ -38,7 +38,7 @@ Clicking **TEMP** displays the CPU Temperature percentages graph.
 
 Clicking  **ISCSI**, **NFS**, and **SMB** opens a **Services** window that allows users to stop/start Services for the system.
 
-Clicking **VM** opens a **Virtual Machines** window that allows users to start/stop VM's on the system.
+Clicking **VM** opens a **Virtual Machines** window that allows users to start/stop VMs on the system.
 
 Clicking **APPS** (SCALE) or **Jails** (CORE 12.x) allows users to start/stop APPS/Jails on the system.
 
@@ -62,7 +62,7 @@ The *Options* menu has several shortcuts to simple tasks.
 
 #### Graphs
 
-Clicking on the values for CPU, Disk, and Network displays the system's statistical history.
+Clicking the CPU, Disk, and Network values displays the system's statistical history.
 
 + CPU
 
