@@ -20,7 +20,7 @@ After the **iSCSI Manager** page opens, click **+ Add System Pool** and select a
 Click **Next**.
 
 Click **+ Block Devices** to add block devices.
-The **count** field creates a batch of ISCSI datastores with identical settings in the number specified.
+The **Count** field creates a batch of ISCSI datastores with identical settings in the number specified.
 
 ![iSCSICreateBlockDevice](/images/TrueCommand/2.1/iSCSICreateBlockDevice.png "iSCSI Create Block Device")
 
