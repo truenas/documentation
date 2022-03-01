@@ -188,7 +188,7 @@ sedutil-cli --setPassword <oldpassword> BandMaster1 "" </dev/device>
 Use **all** of these commands to change the password without destroying data:
 
 ```
-sedutil-cli --setSIDPassword <oldpassword> <newpassword> */dev/device*
+sedutil-cli --setSIDPassword <oldpassword> <newpassword> </dev/device>
 sedutil-cli --setPassword <oldpassword> EraseMaster <newpassword> </dev/device>
 sedutil-cli --setPassword <oldpassword> BandMaster0 <newpassword> </dev/device>
 sedutil-cli --setPassword <oldpassword> BandMaster1 <newpassword> </dev/device>
