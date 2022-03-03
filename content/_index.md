@@ -44,7 +44,7 @@ Documentation articles follow the latest supported software releases, with previ
 | Software | Current Documented Version |
 |----------|-------------------------------|
 | TrueNAS CORE & Enterprise | 12.0 |
-| TrueNAS SCALE | BETA (In Development) |
+| TrueNAS SCALE | 22.02 Angelfish |
 | TrueCommand | 2.1 |
   
 The navigation pane to the left has topics that you can expand to find the specific knowledge you're looking for. You can also use the search bar above the navigation pane if you know specific keywords for what you're looking for.   
