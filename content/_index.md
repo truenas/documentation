@@ -23,7 +23,7 @@ When combined with our high-availability hardware and [**TrueCommand**]({{< relr
 {{< columns >}}
 ![](/favicon/TN-favicon-32x32.png) [**TrueNAS CORE and Enterprise**]({{< relref "/CORE/GettingStarted/Install.md" >}})<br>
 
-![](/favicon/TNScale-favicon-32x32.png) [**TrueNAS SCALE**]({{< relref "/SCALE/GettingStarted/_index.md" >}}) (Coming soon!)
+![](/favicon/TNScale-favicon-32x32.png) [**TrueNAS SCALE**]({{< relref "/SCALE/GettingStarted/_index.md" >}})
 <--->
 ![](/favicon/TC-favicon-32x32.png) [**TrueCommand**]({{< relref "/TrueCommand/TCGettingStarted/_index.md" >}})<br>
 
@@ -44,7 +44,7 @@ Documentation articles follow the latest supported software releases, with previ
 | Software | Current Documented Version |
 |----------|-------------------------------|
 | TrueNAS CORE & Enterprise | 12.0 |
-| TrueNAS SCALE | BETA (In Development) |
+| TrueNAS SCALE | 22.02 Angelfish |
 | TrueCommand | 2.1 |
   
 The navigation pane to the left has topics that you can expand to find the specific knowledge you're looking for. You can also use the search bar above the navigation pane if you know specific keywords for what you're looking for.   
