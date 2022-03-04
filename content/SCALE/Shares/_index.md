@@ -817,7 +817,9 @@ Creating a Network File System (NFS) share on TrueNAS makes a lot of data availa
 Depending on the share's configuration, it can restrict users to read or write privileges.
 
 {{< include file="static/includes/General/SharingPrereqs.md.part" markdown="true" >}}
-<p>
+
+<p></p>
+
 ## Creating an NFS Share
 
 {{< embed-video name="scaleangelfishnfsshare" >}}
