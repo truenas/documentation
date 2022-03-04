@@ -123,7 +123,7 @@ MinIO containers use server port 9000. The MinIO UI communicates using port 9002
 
 ![AppsMinIOConfiguration2](/images/SCALE/22.02/AppsMinIOConfiguration2.png "Configuration Arguments")
 
-Enter the S3 root user in **Root User** and the S3 password in the **Root Password** fields. The **Root User** expects a numeric value.
+Enter the S3 root user in **Root User** and the S3 password in the **Root Password** fields. 
 
 Click the **Add** button to the right of **Container Environment Variables** and enter the MINIO_ROOT_USER and MINIO_ROOT_PASSWORD arguments and values.
 For the ROOT_USER value use a name up to 20 characters, and for the ROOT_Password use 8 to 40 randomize characters. 
