@@ -37,11 +37,11 @@ Datasets typically inherit settings from the root or parent dataset, so you only
 | Name | Unique identifier for the dataset. Cannot change after creating and saving the dataset. |
 | Comments | Notes about the dataset. |
 | Sync | **Standard** uses the sync settings requested by the client software. **Always** waits for data writes to complete, and **Disabled** never waits for writes to complete. |
-| Compression level | drop-down list | Encodes information in less space than the original data occupies. It is recommended to choose a compression algorithm that balances disk performance with the amount of saved space:<br> **lz4** is generally recommended as it maximizes performance and dynamically identifies the best files to compress.<br> **zstd** is the [Zstandard](https://tools.ietf.org/html/rfc8478) compression algorithm that has several options for balancing speed and compression.<br> **gzip** options range from **1** for least compression with best performance, through **9** for maximum compression with greatest performance impact.<br> **zle** is a fast algorithm that only eliminates runs of zeroes.<br>**lzjb** is a legacy algorithm that is not recommended for use. |
-| Enable Atime| drop-down list | **on** updates the access time for files when they are read. **off** disables creating log traffic when reading files to maximize performance. |
+| Compression level | A drop-down list. | Encodes information in less space than the original data occupies. It is recommended to choose a compression algorithm that balances disk performance with the amount of saved space:<br> **lz4** is generally recommended as it maximizes performance and dynamically identifies the best files to compress.<br> **zstd** is the [Zstandard](https://tools.ietf.org/html/rfc8478) compression algorithm that has several options for balancing speed and compression.<br> **gzip** options range from **1** for least compression with best performance, through **9** for maximum compression with greatest performance impact.<br> **zle** is a fast algorithm that only eliminates runs of zeroes.<br>**lzjb** is a legacy algorithm that is not recommended for use. |
+| Enable Atime| A drop-down list. | **on** updates the access time for files when they are read. **off** disables creating log traffic when reading files to maximize performance. |
 
 By default, datasets inherit the encryption settings on the *Encryption Options* form from the root or parent dataset.
-To configure the dataset with different encryption settings, clear th **Inherit** checkbox and enter the new **Encryption Options** form values.
+To configure the dataset with different encryption settings, clear the **Inherit** checkbox and enter the new **Encryption Options** form values.
 For detailed descriptions of the encryption options, see the [Encryption article]({{< relref "EncryptionSCALE.md" >}}).
 
 {{< /tab >}}
