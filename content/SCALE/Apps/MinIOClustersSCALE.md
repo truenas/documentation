@@ -58,9 +58,10 @@ Next, create the **Container Environment Variables** and define the **MINIO_ROOT
 For the ROOT_USER value use a name up to 20 characters, and for the ROOT_PASSWORD use a string of 8 to 40 randomize characters. 
 MinIO recommends using a long password string of unique random characters. 
 Refer to [MinIO User Management](https://docs.min.io/minio/baremetal/security/minio-identity-management/user-management.html) for more information.
-{< hint danger >}
+
+{{< hint danger >}}
 As with all passwords and credentials, record and keep these passwords secure and backed up.
-{< /hint >}
+{{< /hint >}}
 
 For a distributed cluster, make sure these are identical between nodes and fill the **Environment Variable Value** with proper random credentials.
 
@@ -105,7 +106,7 @@ Enter a name for the MinIO cluster. Click **Next**. Type the name in all lowerca
 Select an update strategy. Use **Kill existing pods before creating new ones** to recreate the container or **Create new pods and then kill old ones** if you want rolling upgrades. 
 We recommend **Kill existing pods before creating new ones**. Click **Next**.
 
-![AppsMininIOWorkloadConfiguration](/images/SCALE/22.02/AppsMininIOWorkloadConfiguration.png "Upgrade Strategy")
+![AppsMinIOWorkloadConfiguration](/images/SCALE/22.02/AppsMinIOWorkloadConfiguration.png "Upgrade Strategy")
 
 ### MinIO Configuration
 
@@ -129,11 +130,12 @@ Click the **Add** button to the right of **Container Environment Variables** and
 For the ROOT_USER value use a name up to 20 characters, and for the ROOT_Password use 8 to 40 randomize characters. 
 MinIO recommends using a long password string of unique random characters. 
 Refer to [MinIO User Management](https://docs.min.io/minio/baremetal/security/minio-identity-management/user-management.html) for more information.
-{< hint danger >}
-As with all passwords and credentials, record and keep these passwords secure and backed up.
-{< /hint >}
 
-![AppsContainerEntrypointsMinIO](/images/SCALE/22.02/AppsContainerEntrypointsMinIO.png "Container Entrtpoint Arguments")
+{{< hint danger >}}
+As with all passwords and credentials, record and keep these passwords secure and backed up.
+{{< /hint >}}
+
+![AppsMinIOEnvironmentalVariables](/images/SCALE/22.02/AppsMinIOEnvironmentalVariables.png "Container Entrypoint Arguments")
 
 You can configure the API and UI access node ports, and the MinIO domain name if you have TLS configured for MinIO. You can also configure a MinIO certificate if you wish.
 
