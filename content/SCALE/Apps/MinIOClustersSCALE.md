@@ -15,7 +15,7 @@ Before getting started configuring the MinIO application, you must first create 
 Go to **Storage > Pools** and select the pool you want to place the dataset in. 
 You can use an existing pool or create a new pool. 
 
-After creating the dataset, go to **System > Shell** and create the directory MinIO uses to store information used by and in the application. MinIO uses **/data** but allows users to replace this with the directory of their choice. Use **Service > Shell** to change to the */pool/dataset* directory and then use the `mkdir /mnt/data` command to create the **/data** directory. 
+After creating the dataset, go to **System > Shell** and create the directory MinIO uses to store information used by and in the application. MinIO uses **/data** but allows users to replace this with the directory of their choice. Change to the */pool/dataset* directory and then use the `mkdir /mnt/data` command to create the **/data** directory. 
 
 For a distributed configuration, repeat this on all system notes in advance. 
 
@@ -52,7 +52,7 @@ MinIO containers use server port 9000. The MinIO Console communicates using port
 
 Use the <file>/data</file> path which is set up in the next steps.
 
-![AppsMinioContainerSettings](/images/SCALE/AppsMinioContainerSettings.png "Container Settings")
+![AppsContainerEntrypointsMinIO](/images/SCALE/22.02/AppsContainerEntrypointsMinIO.png "Container Settings")
 
 Next, create the **Container Environment Variables** and define the **MINIO_ROOT USER** and **MINIO_ROOT_PASSWORD** arguments and their values. 
 For the ROOT_USER value use a name up to 20 characters, and for the ROOT_PASSWORD use a string of 8 to 40 randomize characters. 
