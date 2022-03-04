@@ -12,7 +12,7 @@ The table below shows where iSCSI sits in the OSI network stack:
 | OSI Layer Number | OSI Layer Name | Activity as it relates to iSCSI |
 |---------|-------|-------------|
 | 7 | Application | An application tells the CPU that it needs to write data to non-volatile storage. |
-| 6 | Presentation | OSI creates a SCSI Command, SCSI Response, or SCSI data payload to hold the application data and communicate it to non-volatile storage |
+| 6 | Presentation | OSI creates a SCSI Command, SCSI Response, or SCSI data payload to hold the application data and communicate it to non-volatile storage. |
 | 5 | Session | Communication between the source and the destination devices begins. This communication establishes when the conversation starts, what it will talk about, and when the conversion ends. This entire dialogue represents the session. OSI encapsulates the SCSI Command, SCSI Response, or SCSI data payload containing the application data within an iSCSI Protocol Data Unit (PDU). |
 | 4 | Transport | OSI encapsulates the iSCSI PDU within a TCP segment. |
 | 3 | Network | OSI encapsulates the TCP segment within an IP packet. |
