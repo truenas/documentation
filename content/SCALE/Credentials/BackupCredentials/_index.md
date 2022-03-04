@@ -200,7 +200,7 @@ Dolor sit, sumo unique ...
 |------|-------------|
 | OAuth Client ID | The public identifier for the cloud application. |
 | OAuth Client Secret | The secret phrase known only to the cloud application and the authorization server. |
-| Access Token | Yandex [Access Token](https://tech.yandex.com/direct/doc/dg-v4/concepts/auth-token-docpage/). |
+| Access Token | Yandex [Access Token](https://yandex.com/dev/direct/doc/dg-v4/concepts/auth-token.html). |
 {{< /expand >}}
 
 Enter the required *Authentication* strings to enable saving the credential.
