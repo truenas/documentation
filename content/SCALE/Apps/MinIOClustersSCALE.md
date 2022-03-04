@@ -96,7 +96,7 @@ Go to **Apps** and select the **Available Applications** tab to display the MinI
 
 ### Application Name
 
-Enter a name for the MinIO cluster. Click **Next**.
+Enter a name for the MinIO cluster. Click **Next**. Type the name in all lowercase.
 
 ![AppsMinIOApplicationName](/images/SCALE/22.02/AppsMinIOApplicationName.png "Application Name")
 
@@ -133,7 +133,7 @@ Refer to [MinIO User Management](https://docs.min.io/minio/baremetal/security/mi
 As with all passwords and credentials, record and keep these passwords secure and backed up.
 {< /hint >}
 
-![AppsMinioAdvanced3vars](/images/SCALE/AppsMinioAdvanced3vars.png "Application Name")
+![AppsContainerEntrypointsMinIO](/images/SCALE/22.02/AppsContainerEntrypointsMinIO.png "Container Entrtpoint Arguments")
 
 You can configure the API and UI access node ports, and the MinIO domain name if you have TLS configured for MinIO. You can also configure a MinIO certificate if you wish.
 
