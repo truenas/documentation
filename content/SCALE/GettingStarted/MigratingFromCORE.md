@@ -34,7 +34,7 @@ The installer asks if you want to preserve your existing configuration or start 
 
 {{< hint warning>}}
 Although TrueNAS attempts to keep most of your CORE configuration data when upgrading to SCALE, some CORE-specific items do not transfer.
-GELI Encrypted pools, NIS data, metadata, jails, tunables, virtual machines, and boot environments do not migrate from CORE to SCALE. AFP shares also do not transfer, but can be migrated into an SMB share with AFP compatability enabled. Init/shutdown scripts transfer, but can break and should be reviewed before use.
+GELI Encrypted pools, NIS data, metadata, jails, tunables, and boot environments do not migrate from CORE to SCALE. AFP shares also do not transfer, but can be migrated into an SMB share with AFP compatability enabled. Init/shutdown scripts transfer, but can break and should be reviewed before use.
 The CORE netcli utility is also swapped for a new CLI utility that is used for the Console Setup Menu and other commands issued in a CLI.
 {{< /hint >}}
 
@@ -50,7 +50,7 @@ When TrueNAS SCALE boots, you might need to [use the Shell to configure networki
 
 {{< tab "Manual Update File" >}}
 
-Start by downloading the SCALE manual update file.
+Start by downloading the [SCALE manual update file](https://www.truenas.com/download-truenas-scale/).
 Confirm that the TrueNAS system is on the latest public, 12.0-U8 or better, release.
 
 Click **CHECK FOR UPDATES** in the **System Information** card on the **Dashboard** or go to **System > Update**.
