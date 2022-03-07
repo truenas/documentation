@@ -8,7 +8,7 @@ weight: 10
 
 TrueNAS has several software branches (linear update paths) known as trains. SCALE is currently a Prerelease Train. Prerelease Trains have various preview/early build releases of the software. 
 
-There are several trains available for updates, however the web interface only displays trains that can be selected as an upgrade. For more information on other available trains see [Truenas Upgrades](https://www.truenas.com/docs/truenasupgrades/).
+SCALE has several trains available for updates. However, the web interface only displays trains you can select as an upgrade. For more information on other available trains, see [Truenas Upgrades](https://www.truenas.com/docs/truenasupgrades/).
 
 {{< hint danger >}}
 **TrueNAS SCALE train is not suited for production use. Only use SCALE for testing.**
