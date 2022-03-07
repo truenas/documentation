@@ -9,7 +9,7 @@ weight: 40
 
 ## Supported Specifications
 
-* Legacy interface for older ATA devices. **Not recommended for security-critical environments**.
+* Legacy interface for older ATA devices. *Not recommended for security-critical environments*.
 * [TCG Opal 1](https://trustedcomputinggroup.org/wp-content/uploads/Opal_SSC_1.00_rev3.00-Final.pdf) legacy specification.
 * [TCG OPAL 2](https://trustedcomputinggroup.org/wp-content/uploads/TCG_Storage-Opal_SSC_v2.01_rev1.00.pdf) standard for newer consumer-grade devices.
 * [TCG Opalite](https://trustedcomputinggroup.org/wp-content/uploads/TCG_Storage-Opalite_SSC_FAQ.pdf) is a reduced form of OPAL 2.
@@ -32,7 +32,7 @@ By default, SEDs are not locked until the administrator takes ownership of them.
 A password-protected SED protects the data stored on the device when the device is physically removed from the system. This allows secure disposal of the device without having to first wipe the contents. Repurposing a SED on another system requires the SED password.
 
 {{< hint info >}}
-**For TrueNAS High Availability (HA) systems, SED drives are only unlocked on the active controller.**
+For TrueNAS High Availability (HA) systems, SED drives are *only unlocked on the active controller*.
 {{< /hint >}}
 
 ## Deploying SEDs
@@ -67,7 +67,7 @@ TrueNAS supports setting a global password for all detected SEDs or setting indi
 
 ### Setting a Global Password for SEDs
 
-Go to **System > Advanced > SED Password** and enter the password. **Record this password and store it in a safe place!**
+Go to **System > Advanced > SED Password** and enter the password. *Record this password and store it in a safe place!*
 
 Now the SEDs must be configured with this password. Go to the **Shell** and enter `sedhelper setup <password>`, where `<password>` is the global password entered in **System > Advanced > SED Password**.
 
@@ -158,7 +158,7 @@ root@truenas:~ #
 {{< tab "TCG-Opal Instructions" >}}
 Reset the password without losing data: `sedutil-cli --revertNoErase <oldpassword> </dev/device>`
 
-Use **both** of these commands to change the password without destroying data:
+Use *both* of these commands to change the password without destroying data:
 
 ```
 sedutil-cli --setSIDPassword <oldpassword> <newpassword> </dev/device>
@@ -188,7 +188,7 @@ sedutil-cli --setPassword <oldpassword> BandMaster1 "" </dev/device>
 Use **all** of these commands to change the password without destroying data:
 
 ```
-sedutil-cli --setSIDPassword <oldpassword* newpassword */dev/device*
+sedutil-cli --setSIDPassword <oldpassword> <newpassword> </dev/device>
 sedutil-cli --setPassword <oldpassword> EraseMaster <newpassword> </dev/device>
 sedutil-cli --setPassword <oldpassword> BandMaster0 <newpassword> </dev/device>
 sedutil-cli --setPassword <oldpassword> BandMaster1 <newpassword> </dev/device>
