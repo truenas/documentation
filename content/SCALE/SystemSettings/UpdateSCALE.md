@@ -6,7 +6,7 @@ weight: 10
 
 {{< toc >}}
 
-TrueNAS has several software branches (linear update paths) known as trains. Scale is currently a Prerelease Train. Prerelease Trains have various preview/early build releases of the software. 
+TrueNAS has several software branches (linear update paths) known as trains. SCALE is currently a Prerelease Train. Prerelease Trains have various preview/early build releases of the software. 
 
 There are several trains available for updates, however the web interface only displays trains that can be selected as an upgrade. For more information on other available trains see [Truenas Upgrades](https://www.truenas.com/docs/truenasupgrades/).
 
