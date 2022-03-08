@@ -47,7 +47,7 @@ After creating a report, you can click **GENERATE** to [generate the report]({{<
 
 ## Edit a Report
 
-Open the Reports page and click <i class="material-icons" aria-hidden="true" title="edit">edit</i> next to a report name to rename it, add a description, or add/delete a Widget.
+Open the **Reports** page and click <i class="material-icons" aria-hidden="true" title="edit">edit</i> next to a report name to rename it, add a description, or add/delete a widget.
 
 ## Share Report
 
