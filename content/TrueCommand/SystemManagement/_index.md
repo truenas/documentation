@@ -36,7 +36,7 @@ Clicking **CPU** displays the CPU Usage percentages graph.
 
 Clicking **TEMP** displays the CPU Temperature percentages graph.
 
-Clicking  **ISCSI**, **NFS**, and **SMB** opens a **Services** window that allows users to stop/start Services for the system.
+Clicking  **ISCSI**, **NFS**, and **SMB** opens a **Services** window that allows users to stop/start services for the system.
 
 Clicking **VM** opens a **Virtual Machines** window that allows users to start/stop VMs on the system.
 
