@@ -50,7 +50,7 @@ You can view the volume's status after creating it.
 {{< /tab >}}
 
 {{< tab "Replicated" >}}
-**REPLICATED** volumes offer better reliability and data redundancy, and overcome the risk of data loss in a distributed volume. All bricks maintain exact copies of all data. You determine the volume's number of replicas when you create it. Replicated volumes require at least three bricks, but you can add more bricks for additional redundancy. Three-brick volumes have three replicas, and four-brick volumes have four replicas. Replicated volumes allow data access even if a single brick fails. 
+**REPLICATED** volumes offer better reliability and data redundancy, and overcome the risk of data loss in a distributed volume. All bricks maintain exact copies of all data. You determine the number of replicas for the volume when you create it. Replicated volumes require at least three bricks, but you can add more bricks for additional redundancy. Three-brick volumes have three replicas, and four-brick volumes have four replicas. Replicated volumes allow data access even if a single brick fails. 
 
 Click the **Brick Choices** drop-down, then select the locations to use for bricks.
 
