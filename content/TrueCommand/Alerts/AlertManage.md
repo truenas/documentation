@@ -100,7 +100,7 @@ To create a new rule:
    ![AlertTriggerDataSources](/images/TrueCommand/2.1/AlertTriggerDataSources.png "Alert Trigger Data Sources")
 
    * Select the comparison type from the **Comparator** drop-down (**Greater Than**, **Less Than**, or **Not Equals**). The comparison type applies to the data source and comparison value.
-   * Specify the comparison value by entering an integer appropriate for the selected options in the **Value** field. The integer acts as a threshold or limitation for when the rule generates an alert.
+   c. Specify the comparison value by entering an integer appropriate for the selected options in the **Value** field. The integer acts as a threshold or limitation for when the rule generates an alert.
 3. To finish creating the new alert rule, click **CREATE ALERT**. To start over, click **RESET**.
 
 {{< /tab >}}
