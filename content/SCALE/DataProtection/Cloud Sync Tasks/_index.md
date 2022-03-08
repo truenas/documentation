@@ -50,7 +50,7 @@ Sync cannot delete files stored in Amazon S3 Glacier or S3 Glacier Deep Archive.
 {{< /tab >}}
 {{< /tabs >}}
 
-Next, Use the **Control** options. Define when the task runs using **Schedule**. If you need a specific schedule, select **Custom** and use the **Advanced Scheduler**.
+Next, use the **Control** options. Define when the task runs using **Schedule**. If you need a specific schedule, select **Custom** and use the **Advanced Scheduler**.
 
 {{< expand "Advanced Scheduler" "v" >}}
 {{< include file="static/includes/SCALE/SCALEAdvancedScheduler.md.part" markdown="true" >}}
