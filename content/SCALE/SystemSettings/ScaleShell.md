@@ -13,7 +13,7 @@ The **Shell** opens with the root user logged in.
 
 ![Shell](/images/SCALE/shell.png "SCALE Shell")
 
-The *Set font size slider* adjusts the **Shell**'s displayed text size.
+The **Set font size** slider adjusts the **Shell** displayed text size.
 Click *RESTORE DEFAULT* to reset the **Shell** font size.
 
 The **Shell** stores the command history for the current session.
