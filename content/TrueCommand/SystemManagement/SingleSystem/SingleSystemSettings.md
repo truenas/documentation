@@ -12,7 +12,7 @@ TrueCommand lets users customize select settings when managing a single system. 
 
 To edit system general settings, click the **Edit** button in the system settings menu.
 
-The **General Settings** window lets users edit the system's IP address/hostname, nickname, password/API key, and alert options. 
+The **General Settings** window lets users edit the system IP address/hostname, nickname, password/API key, and alert options. 
 Click **SAVE CHANGES** to keep your changes, or **RESET** reset and start over. 
 Click off the window back to the dashboard to close the edit window without making changes. 
 
