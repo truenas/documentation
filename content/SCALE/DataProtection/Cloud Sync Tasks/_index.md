@@ -65,7 +65,7 @@ The remaining options allow tuning the task to your specific requirements.
 
 ### Scripting and Environment Variables
 
-Advanced users can write scripts that run immediately *before* or *after* the Cloud Sync task. The **Post-script** field only runs when the cloud sync task succeeds. You can pass a variety of task environment variables into the **Pre-** and **Post-** script fields:
+Advanced users can write scripts that run immediately before or after the cloud sync task. The **Post-script** field only runs when the cloud sync task succeeds. You can pass a variety of task environment variables into the **Pre-** and **Post-** script fields:
 
 * `CLOUD_SYNC_ID`
 * `CLOUD_SYNC_DESCRIPTION`
