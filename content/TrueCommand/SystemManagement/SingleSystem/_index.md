@@ -15,7 +15,7 @@ While viewing a single system, users can see various statistics like CPU, memory
 
 Users can create and manage storage, snapshots, and shares using the **File Explorer**. 
 
-Users can view expanded TrueNAS information details by clicking on the double arrows located at the lower right corner of the system card. Information includes the system's manufacturer, serial numbers, support tier, support expiration date, hostname, CPU, CPU cores, physical memory, OS, and uptime.
+Users can view expanded TrueNAS information details by clicking on the double arrows located at the lower right corner of the system card. Information includes the system manufacturer, serial numbers, support tier, support expiration date, hostname, CPU, CPU cores, physical memory, OS, and uptime.
 
 ![TrueCommandSingleSystemhardware](/images/TrueCommand/2.0/TCHardwareDash.png "Single System Hardware Information")
 
