@@ -30,7 +30,7 @@ Click **Reconnect** to start a new session.
 
 ## Default Shell
 
-Clicking other web interface menus closes the **Shell** session and stops commands running in the **Shell**.
+Clicking other web interface menus closes the shell session and stops commands running in the **Shell** screen.
 [zsh](https://www.zsh.org/) is the default **Shell**, but you can change this by editing the *root* user in **Credentials > Local Users** and choosing a different option in the *Shell* drop-down. Most Linux command-line utilities are available in the **Shell**.
 
 [Tmux](https://github.com/tmux/tmux/wiki/) allows you to detach  sessions in **Shell** and then reattach them later.
