@@ -48,7 +48,7 @@ You can also allow users to authenticate with Samba, connect from a Windows mach
 
 Check **Locked** to prevent users from logging in or using password-based services. 
 
-After configuring the user's authorization settings, click **NEXT**.
+After configuring the user authorization settings, click **NEXT**.
 {{< /tab >}}
 
 {{< tab "Create" >}}
