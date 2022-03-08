@@ -44,7 +44,7 @@ If you want the user to have a home directory, enter the path to the directory a
 
 You can enter or paste the user public SSH key in the **Sshpubkey** field.
 
-You can also allow them to authenticate with Samba, connect from a Windows machine with their Microsoft account, and use sudo commands. 
+You can also allow users to authenticate with Samba, connect from a Windows machine with their Microsoft account, and use sudo commands. 
 
 Check **Locked** to prevent them from logging in or using password-based services. 
 
