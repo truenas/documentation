@@ -118,27 +118,23 @@ It is always recommended to upgrade to a [supported version]({{< relref "SofDevL
 
 Be aware of these caveats before attempting a major version upgrade:
 
-* **Upgrading a data storage pool can make it impossible to go back to a previous version.**
-  For this reason, the update process does not automatically upgrade storage pools, though the system shows an alert when a pool can be upgraded.
-  Unless new ZFS feature flags are needed, it is safe to leave the pool at the current version.
-  If the pool is upgraded, it isn't possible to boot into a previous TrueNAS version that does not support the newer feature flags.
-* Upgrading the firmware of Broadcom SAS HBAs to the latest version is recommended.
-* When upgrading from 9.3.x to 9.10, read this [changes FAQ](https://www.truenas.com/docs/files/Notice - 9.3 to 9.10 FAQ.pdf) first.
-* **Upgrades from FreeNAS 0.7x are not supported.**
-  The system has no way to import configuration settings from FreeNAS 0.7x versions.
-  The configuration must be manually recreated.
-  If supported, the FreeNAS 0.7x pools or disks must be manually imported.
-* **Upgrades on 32-bit hardware are not supported.**
-  However, if the system is currently running a 32-bit version of FreeNAS/TrueNAS and the hardware supports 64-bit, the system can be upgraded.
-  Any archived reporting graphs will be lost during the upgrade.
-* **UFS is not supported.**
-  If the data currently resides on **one** UFS-formatted disk, [create a ZFS pool]({{< relref "PoolCreate.md" >}}) using other disks after the upgrade, then use the instructions in [Importing a Disk]({{< relref "ImportDisk.md" >}}) to mount the UFS-formatted disk and copy the data to the ZFS pool.
-  With only one disk, back up its data to another system or media before the upgrade, format the disk as `ZFS` after the upgrade, then restore the backup.
-  If the data currently resides on a UFS RAID of disks, it is not possible to directly import that data to the ZFS pool.
-  Instead, back up the data before the upgrade, create a ZFS pool after the upgrade, then restore the data from the backup.
-* **If you have GELI-encrypted pools and are upgrading to TrueNAS 12.0 or newer**, you might want to migrate data out of the GELI-encrypted pools into ZFS-encrypted pools.
-  The GELI pools **cannot be converted**; the data must be migrated to a new ZFS pool.
-  See the [Encryption article]({{< relref "StorageEncryption.md" >}}) for more details.
+**Upgrading a data storage pool can make it impossible to go back to a previous version.**  
+For this reason, the update process does not automatically upgrade storage pools, though the system shows an alert when a pool can be upgraded. Unless new ZFS feature flags are needed, it is safe to leave the pool at the current version. If the pool is upgraded, it isn't possible to boot into a previous TrueNAS version that does not support the newer feature flags.
+
+We recommend upgrading Broadcom SAS HBAs to the latest version.
+
+**When upgrading from 9.3.x to 9.10**, read this [changes FAQ](https://www.truenas.com/docs/files/Notice - 9.3 to 9.10 FAQ.pdf) first.
+
+**TrueNAS does not suppport upgrades from FreeNAS 0.7x**.  
+The system has no way to import configuration settings from FreeNAS 0.7x versions. The configuration must be manually recreated. If supported, the FreeNAS 0.7x pools or disks must be manually imported.
+
+**TrueNAS does not suppport upgrades on 32-bit hardware.**  
+However, if the system is currently running a 32-bit version of FreeNAS/TrueNAS and the hardware supports 64-bit, the system can be upgraded. Any archived reporting graphs will be lost during the upgrade.
+
+**TrueNAS does not suppport UFS.**  
+If the data currently resides on **one** UFS-formatted disk, [create a ZFS pool]({{< relref "PoolCreate.md" >}}) using other disks after the upgrade, then use the instructions in [Importing a Disk]({{< relref "ImportDisk.md" >}}) to mount the UFS-formatted disk and copy the data to the ZFS pool. With only one disk, back up its data to another system or media before the upgrade, format the disk as `ZFS` after the upgrade, then restore the backup. If the data currently resides on a UFS RAID of disks, it is not possible to directly import that data to the ZFS pool. Instead, back up the data before the upgrade, create a ZFS pool after the upgrade, then restore the data from the backup.
+
+**TrueNAS 12.0 or newer does not support GELI-encrypted pools.** If you have GELI-encrypted pools and are upgrading to TrueNAS 12.0 or newer, you might want to migrate data out of the GELI-encrypted pools into ZFS-encrypted pools. The GELI pools **cannot be converted**; the data must be migrated to a new ZFS pool. See the [Encryption article]({{< relref "StorageEncryption.md" >}}) for more details.
 
 ### Preparation
 
