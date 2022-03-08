@@ -99,7 +99,7 @@ A dialog box displays with the test status and allows you to download the task l
 
 Saved tasks activate according to their schedule or by clicking <i class="material-icons" aria-hidden="true" title="Run Now">play_arrow</i>. An in-progress cloud sync must finish before another can begin. Stopping an in-progress task cancels the file transfer and requires starting the file transfer over.
 
-To view logs about a running task, or its most recent run, click *State*.
+To view logs about a running task, or its most recent run, click **State**.
 
 ## Cloud Sync Restore
 
