@@ -29,7 +29,7 @@ Once you set the date range, use the **systems** drop-down menu to select which 
 
 ![ReportsGenerateDateWidgetSelectSystems](/images/TrueCommand/2.0/ReportsGenerateDateWidgetSelectSystems.png "Reports Generate Date Widget Select Systems")
 
-Once you have selected the systems, click **Generate**
+After you select the systems, click **Generate**
 
 ![ReportsGenerateDateWidgetGenerate](/images/TrueCommand/2.0/ReportsGenerateDateWidgetGenerate.png "Reports Generate Date Widget Generate")
 
