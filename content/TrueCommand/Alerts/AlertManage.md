@@ -95,7 +95,7 @@ To create a new rule:
    * Select the alert type on the **Priority** drop-down list. Choose **Information**, **Warning**, or **Critical** to determine which category generated alerts will be.
    * Type a description for the alert.
 2. Specify the **Alert Triggers**:
-   * Select a data source or rule type from the drop-down to determine what can trigger an alert. For example, *cpu_temperature* means the alert rule monitors the temperature of the chosen system. Scroll down the list to find the desired source.
+   Select a data source or rule type from the drop-down list to determine what can trigger an alert. For example, *cpu_temperature* means the alert rule monitors the temperature of the chosen system. Scroll down the list to find the desired source.
 
    ![AlertTriggerDataSources](/images/TrueCommand/2.1/AlertTriggerDataSources.png "Alert Trigger Data Sources")
 
