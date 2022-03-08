@@ -50,7 +50,7 @@ To go back to the original contents of the fields, click **RESET FORM** before y
 You can select the **TrueCommand Administrator** checkbox to designate the account as an administrator. 
 {{< /tab >}}
 {{< tab "Change Password" >}}
-You can change the account password by typing the new password into both the **Password** and **Password Confirm** fields. When prompted, enter the user's existing password. 
+You can change the account password by typing the new password into both the **Password** and **Password Confirm** fields. When prompted, enter the user existing password. 
 Click **SAVE CHANGES** to make the change.
 {{< /tab >}}
 {{< tab "Email" >}}
