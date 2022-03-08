@@ -23,4 +23,4 @@
 
 | Name | Description |
 |------|-------------|
-| Auxiliary Parameters | Add more options from [tftpd](https://www.freebsd.org/cgi/man.cgi?query=tftpd). Add one option on each line. |
+| Auxiliary Parameters | Add more options from [tftpd](https://manpages.debian.org/bullseye/tftpd-hpa/tftpd.8.en.html). Add one option on each line. |
