@@ -60,4 +60,4 @@ You can share reports with individual users or entire teams.
 
 ## Delete a Report
 
-To delete a report click <i class="material-icons" aria-hidden="true" title="Delete">delete</i>. This permanently deletes the report but you can recreate as needed.
+To delete a report click <i class="material-icons" aria-hidden="true" title="Delete">delete</i>. This permanently deletes the report but you can recreate it as needed.
