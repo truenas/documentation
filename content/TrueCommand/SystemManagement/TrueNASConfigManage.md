@@ -46,6 +46,6 @@ You must reset the TrueNAS system to apply the configuration changes.
 
 ### Delete a Config Backup
 
-To delete a backup, click the delete button <i class="material-icons" aria-hidden="true" title="Delete">delete</i> or mark the checkbox and click **Delete Backups**.
+To delete a backup, click the delete <i class="material-icons" aria-hidden="true" title="Delete">delete</i> icon or mark the checkbox and click **Delete Backups**.
 
 ![ConfigBackupDelete](/images/TrueCommand/2.0/ConfigBackupDelete.png "Config Backup Delete")
