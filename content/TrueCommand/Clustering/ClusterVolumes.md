@@ -29,7 +29,7 @@ TrueCommand has five cluster volume types.
 **DISTRIBUTED** volumes distribute files across the various bricks in the volume. *File-A* can be stored in *Brick-1* or *Brick-2* but not on both. As a result, the volume has no data redundancy. A distributed volume's purpose is to cheaply and easily scale the volume size. However, it can suffer significant data loss during a disk or server failure because directory contents are spread randomly across the bricks in the volume. 
 
 {{< hint danger >}}
-**Warning:** Brick failure in a distributed volume results in complete data loss.
+*Warning:* Brick failure in a distributed volume results in complete data loss.
 {{< /hint >}}
 
 Click the **Brick Choices** drop-down, then select the locations to use for bricks.
