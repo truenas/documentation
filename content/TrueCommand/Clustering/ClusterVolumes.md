@@ -44,7 +44,7 @@ Review the configuration and click **Create** to create the volume.
 
 ![DistributedClusterReview](/images/TrueCommand/2.0/DistributedClusterReview.png "DistributedClusterReview")
 
-You can view the volume's status after creating it.
+You can view the volume status after creating it.
 
 ![DistributedClusterCard](/images/TrueCommand/2.0/DistributedClusterCard.png "DistributedClusterCard")
 {{< /tab >}}
