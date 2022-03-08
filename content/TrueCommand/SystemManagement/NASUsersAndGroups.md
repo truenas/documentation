@@ -64,7 +64,7 @@ To manage NAS user accounts, go to your dashboard and click the <i class="materi
 
 To edit a user, click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i> in that user's row.
 
-To delete a single user, click the <i class="material-icons" aria-hidden="true" title="Delete">delete</i> in that user's row.
+To delete a single user, click the <i class="material-icons" aria-hidden="true" title="Delete">delete</i> in that user row.
 
 To delete multiple users, check them and click **REMOVE**.
 
