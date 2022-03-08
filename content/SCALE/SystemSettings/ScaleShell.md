@@ -5,7 +5,7 @@ weight: 60
 ---
 
 The SCALE **Shell** is convenient for running command lines tools, configuring different system settings, or finding log files and debug information.
-The **Shell** opens with the root user logged in.
+The **Shell** screen opens with the root user logged in.
 
 {{< hint danger >}}
 **Warning: the supported mechanisms for making configuration changes are the TrueNAS WebUI, CLI, and API exclusively. ALL OTHERS ARE NOT SUPPORTED AND WILL RESULT IN UNDEFINED BEHAVIOR AND MAY RESULT IN SYSTEM FAILURE.**
