@@ -40,7 +40,7 @@ Clicking  **ISCSI**, **NFS**, and **SMB** opens a **Services** window that allow
 
 Clicking **VM** opens a **Virtual Machines** window that allows users to start/stop VMs on the system.
 
-Clicking **APPS** (SCALE) or **Jails** (CORE 12.x) allows users to start/stop APPS/Jails on the system.
+Clicking **APPS** (SCALE) or **Jails** (CORE 12.x) allows users to start/stop apps/jails on the system.
 
 #### Options Menu
 
