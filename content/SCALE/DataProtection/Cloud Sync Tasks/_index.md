@@ -35,7 +35,7 @@ Type a memorable task description in the **Description** field. Use the **Creden
 
 {{< tabs "Transfer Modes" >}}
 {{< tab "Sync" >}}
-**Sync** keeps all the files identical between the two storage locations. If the sync encounters an error, it will not delete files in the destination.
+**Sync** keeps all the files identical between the two storage locations. If the sync encounters an error, it does not delete files in the destination.
 One common error occurs when the [Dropbox copyright detector](https://techcrunch.com/2014/03/30/how-dropbox-knows-when-youre-sharing-copyrighted-stuff-without-actually-looking-at-your-stuff/) flags a file as copyrighted.
 
 Note that syncing to a Backblaze B2 bucket does not delete files from the bucket, even when you deleted those files locally. Instead, files are tagged with a version number or moved to a hidden state. To automatically delete old or unwanted files from the bucket, adjust the [Backblaze B2 Lifecycle Rules](https://www.backblaze.com/blog/backblaze-b2-lifecycle-rules/).
