@@ -93,7 +93,7 @@ To create a new rule:
    b. Select a system from the **System** drop-down.
      The rule applies to the selected system(s). Non-administrative user accounts require appropriate system permissions.
    c. Select the alert type on the **Priority** drop-down list. Choose **Information**, **Warning**, or **Critical** to determine the alert category generated.
-   * Type a description for the alert.
+   d. Type a description for the alert.
 2. Specify the **Alert Triggers**:
    Select a data source or rule type from the drop-down list to determine what can trigger an alert. For example, *cpu_temperature* means the alert rule monitors the temperature of the chosen system. Scroll down the list to find the desired source.
 
