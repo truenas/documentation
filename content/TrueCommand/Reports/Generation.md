@@ -21,7 +21,7 @@ Click **Generate** to open the date and system selection window.
 
 ![ReportsGenerateDateWidget](/images/TrueCommand/2.0/ReportsGenerateDateWidget.png "Reports Generate Date Widget")
 
-Select the report's beginning and end dates using the drop-down.
+Select the report beginning and end dates using the drop-down.
 
 ![ReportsGenerateDateWidgetSelectDate](/images/TrueCommand/2.0/ReportsGenerateDateWidgetSelectDate.png "Reports Generate Date Widget Select Date")
 
