@@ -89,7 +89,7 @@ To create a new alert rule, click **+ NEW ALERT RULE** and follow the creation w
 To create a new rule:
 
 1. Specify the **Alert Options**:
-   * Enter a name into the **Alert Rule Name** field.
+   a. Enter a name into the **Alert Rule Name** field.
    b. Select a system from the **System** drop-down.
      The rule applies to the selected system(s). Non-administrative user accounts require appropriate system permissions.
    c. Select the alert type on the **Priority** drop-down list. Choose **Information**, **Warning**, or **Critical** to determine the alert category generated.
