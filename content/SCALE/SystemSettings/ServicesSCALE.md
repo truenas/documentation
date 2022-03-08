@@ -41,7 +41,7 @@ Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i
 {{< expand "FTP" "v" >}}
 FTP requires a new dataset and a local user account.
 
-Go to **Storage** to add a new [dataset](https://www.truenas.com/docs/scale/storage/pools/datasetsscale/)
+Go to **Storage** to add a new [dataset](https://www.truenas.com/docs/scale/storage/pools/datasetsscale/).
 
 ![DatasetAddSCALE](/images/SCALE/DatasetAddSCALE.png "Adding a new Dataset")
 
@@ -52,7 +52,7 @@ Next, go to **Credentials > Local Users**  and click **Add** to create a local u
 Assign a user name and password, and link the newly created FTP share dataset as the user home directory.
 You can do this for every user, or create a global account for FTP (for example, *OurOrgFTPacnt*).
 
-Return to **Storage**, find the new dataset, and click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> > **View Permissions**. Next click <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
+Return to **Storage**, find the new dataset, click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i>, and select **View Permissions**. Next click <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
 Set the **Owner** fields (user and group) to the new user account.
 Set **Apply User** and **Apply Group** before saving.
 
@@ -90,12 +90,14 @@ After connecting, you can create directories and upload/download files.
 SFTP (SSH File Transfer Protocol) is available by enabling SSH remote access to the TrueNAS system.
 SFTP is more secure than standard FTP as it applies SSL encryption on all transfers by default.
 
-Go to **Services**, find the **SSH** entry, and click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
+Go to **System Settings > Services**, find the **SSH** entry, and click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
 
 ![ServicesSSHSCALE](/images/SCALE/ServicesSSHSCALE.png "SSH Options")
 
 Set **Allow Password Authentication** and decide if you need **Log in as Root with Password**.
+{{< hint warning >}}
 SSH with root is a security vulnerability. It allows users to fully control the NAS remotely with a terminal instead of providing SFTP transfer access.
+{{< /hint >}
 Review the remaining options and configure them according to your environment or security needs.
 
 {{< include file="static/includes/Reference/ServicesSSHFields.md.part" markdown="true" >}}
