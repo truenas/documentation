@@ -69,7 +69,7 @@ To delete multiple alerts, select each alert checkbox and click **DELETE SELECTE
 {{< tab "Alert Rules" >}}
 
 Alert rules generate alerts in TrueCommand.
-TrueCommand has several default rules built-in.
+TrueCommand has several built-in default rules.
 TrueCommand administrators and [team members]({{< relref "/TrueCommand/TCGettingStarted/UserAccounts.md" >}}) with the appropriate permissions can create new alert rules.
 
 To view all TrueCommand alert rules, open the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and click **Alert Rules**.
