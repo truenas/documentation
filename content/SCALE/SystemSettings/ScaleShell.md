@@ -26,7 +26,7 @@ Type a few letters and press <kbd>Tab</kbd> to complete a command name or filena
 Right-clicking in the terminal window displays a reminder about using <kbd>Command+c</kbd> and <kbd>Command+v</kbd> or <kbd>Ctrl+Insert</kbd> and <kbd>Shift+Insert</kbd> for copy and paste operations in the **Shell**.
 
 Entering `exit` leaves the session.
-Click *Reconnect* to start a new session.
+Click **Reconnect** to start a new session.
 
 ## Default Shell
 
