@@ -41,7 +41,7 @@ TrueCommand administrators can organize systems into collections called *groups*
 Grouping systems enables efficient system permissions and reporting management.
 
 Open the **System Groups** tab to view the list of created groups and the systems they contain.
-Create a Group by clicking **Configure <i class="material-icons" aria-hidden="true" title="Settings">settings</i>&nbsp; > Systems > + NEW GROUP**.
+Create a group by clicking **Configure <i class="material-icons" aria-hidden="true" title="Settings">settings</i>&nbsp; > Systems > + NEW GROUP**.
 Enter a name for the new group and click **ADD SYSTEM** to add a system to the group.
 After you add all the desired systems to the group, click **CREATE GROUP**.
 
