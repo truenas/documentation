@@ -57,7 +57,7 @@ Click **SAVE CHANGES** to make the change.
 You can set up or change user email on this screen. If [SMTP]({{< relref "TrueCommand/Alerts/AlertManage.md" >}}) is not set up, an error message displays at the bottom of the screen stating **Failed to send email. Are your SMTP settings configured?**. Admins can click the **CONFIGURE** button to open the SMTP settings window. Before adding a user email, go to **Alert Services** and verify you have set up the SMTP service.
 {{< /tab >}}
 {{< tab "Two Factor Authentication" >}}
-You can set a user's [Two Factor Authentication]({{< relref "truecommand/tcgettingstarted/useraccounts.md" >}}), which requires them to enter a validation code emailed to them after they enter their username, password, and click **SIGN IN** on the login screen.
+You can set user [Two Factor Authentication]({{< relref "truecommand/tcgettingstarted/useraccounts.md" >}}), which requires they enter a validation code emailed to them after they enter their username, password, and click **SIGN IN** on the login screen.
 {{< /tab >}}
 {{< /tabs >}}
 
