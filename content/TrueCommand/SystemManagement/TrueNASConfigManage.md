@@ -33,7 +33,7 @@ If a prior config backup for the current day exists, creating a new one overwrit
 
 {{< hint info >}}
 By default, TrueCommand retains seven backups. You can increase or decrease the number on the **Administration** page **Configuration** tab.
-Local instances of TrueCommand can raise or lower this figure as desired. 
+Local instances of TrueCommand can increase or decrease this figure as desired. 
 {{< /hint >}}
 
 ### Apply a Config Backup
