@@ -115,7 +115,7 @@ Review the configuration and click **Create** to create the volume.
 
 ![DispersedClusterReview](/images/TrueCommand/2.0/DispersedClusterReview.png "DispersedClusterReview")
 
-You can view the volume's status after creating it.
+You can view the volume status after creating it.
 
 ![DispersedClusterCard](/images/TrueCommand/2.0/DispersedClusterCard.png "DispersedClusterCard")
 {{< /tab >}}
