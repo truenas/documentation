@@ -41,7 +41,7 @@ If basic password security measures are in place, two-factor authentication make
 
 Enabling two-factor authentication requires an email address that has been authenticated. Authenticating a user's email address requires first setting up [SMTP Email]({{<relref "/TrueCommand/alerts/alertmanage.md" >}}) in **Settings -> Alert Services**.
 
-To verify a user's email address and set 2FA:
+To verify a user email address and set 2FA:
 
 ![2faSet](/images/TrueCommand/2.0/2fa_setup.png "Setting Two Factor Authentication")
 
