@@ -12,7 +12,7 @@ The table below shows where iSCSI sits in the OSI network stack:
 | OSI Layer Number | OSI Layer Name | Activity as it relates to iSCSI |
 |---------|-------|-------------|
 | 7 | Application | An application tells the CPU that it needs to write data to non-volatile storage. |
-| 6 | Presentation | OSI creates a SCSI Command, SCSI Response, or SCSI data payload to hold the application data and communicate it to non-volatile storage |
+| 6 | Presentation | OSI creates a SCSI Command, SCSI Response, or SCSI data payload to hold the application data and communicate it to non-volatile storage. |
 | 5 | Session | Communication between the source and the destination devices begins. This communication establishes when the conversation starts, what it will talk about, and when the conversion ends. This entire dialogue represents the session. OSI encapsulates the SCSI Command, SCSI Response, or SCSI data payload containing the application data within an iSCSI Protocol Data Unit (PDU). |
 | 4 | Transport | OSI encapsulates the iSCSI PDU within a TCP segment. |
 | 3 | Network | OSI encapsulates the TCP segment within an IP packet. |
@@ -35,7 +35,7 @@ iSCSI exports disk devices (zvols on TrueNAS) over a network that other iSCSI cl
 
 * **Portal**: indicates which IP addresses and ports to listen on for connection requests.
 
-* **Initiators and Targets**: iSCSI introduces the concept of “initiators” and “targets” which act as sources and destinations respectively. iSCSI initiators and targets follow a client/server model. Below is a diagram of a typical iSCSI network. The TrueNAS storage array acts as the iSCSI target and can be accessed by many of the different iSCSI initiator types, including software and hardware-accelerated initiators.
+* **Initiators and Targets**: iSCSI introduces the concept of *initiators* and *targets* which act as sources and destinations respectively. iSCSI initiators and targets follow a client/server model. Below is a diagram of a typical iSCSI network. The TrueNAS storage array acts as the iSCSI target and can be accessed by many of the different iSCSI initiator types, including software and hardware-accelerated initiators.
 
   ![iSCSIInitiatorsTargets](/images/TrueNASCommon/iSCSIInitiatorsTargets.png "iSCSI Initiators and Targets Example")
 
@@ -43,7 +43,7 @@ iSCSI exports disk devices (zvols on TrueNAS) over a network that other iSCSI cl
 
 * **LUN**: *Logical Unit Number* representing a logical SCSI device. An initiator negotiates with a target to establish connectivity to a LUN. The result is an iSCSI connection that emulates a connection to a SCSI hard disk. Initiators treat iSCSI LUNs as if they were a raw SCSI or SATA hard drive. Rather than mounting remote directories, initiators format and directly manage filesystems on iSCSI LUNs. When configuring multiple iSCSI LUNs, create a new target for each LUN. Since iSCSI multiplexes a target with multiple LUNs over the same TCP connection, there can be TCP contention when more than one target accesses the same LUN. TrueNAS supports up to 1024 LUNs.
 
-* **Jumbo Frames**: “Jumbo frames” are the name given to Ethernet frames that exceed the default 1500 byte size. This parameter is typically referenced by the nomenclature as maximum transmission unit (MTU). MTU that exceeds the default 1500 bytes necessitates that all devices transmitting Ethernet frames between the source and destination support the specific jumbo frame MTU setting, which means that NICs, dependent hardware iSCSI, independent hardware iSCSI cards, ingress and egress Ethernet switch ports, and the NICs of the storage array must all support the same jumbo frame MTU value. So, how does one decide if they should use jumbo frames?
+* **Jumbo Frames**: Jumbo frames are the name given to Ethernet frames that exceed the default 1500 byte size. This parameter is typically referenced by the nomenclature as maximum transmission unit (MTU). MTU that exceeds the default 1500 bytes necessitates that all devices transmitting Ethernet frames between the source and destination support the specific jumbo frame MTU setting, which means that NICs, dependent hardware iSCSI, independent hardware iSCSI cards, ingress and egress Ethernet switch ports, and the NICs of the storage array must all support the same jumbo frame MTU value. So, how does one decide if they should use jumbo frames?
 
   Administrative time is consumed configuring Jumbo Frames and troubleshooting if/when things go sideways. Some network switches might also have ASICs optimized for processing MTU 1500 frames while others might be optimized for larger frames. Systems administrators should also account for the impact on host CPU utilization. Although Jumbo Frames are designed to increase data throughput, it may measurably increase latency (as is the case with some un-optimized switch ASICs); latency is typically more important than throughput in a VMware environment. Some iSCSI applications might see a net benefit running jumbo frames despite possible increased latency. Systems administrators should test jumbo frames on their workload with lab infrastructure as much as possible before updating the MTU on their production network.
 

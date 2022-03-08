@@ -13,7 +13,7 @@ TrueNAS SCALE allows users to create and configure block (iSCSI) shares targets,
 {{< tab "Block (iSCSI) Shares Targets" >}}
 {{< include file="/_includes/iSCSIRef.md" type="page" >}}
 
-To get started with iSCSI shares, make sure you have created a [zvol]({{< relref "ZVolsSCALE.md" >}}) or a [dataset]({{< relref "DatasetsSCALE.md" >}}) with at least one file to share.
+To get started with iSCSI shares, make sure you have already created a [zvol]({{< relref "ZVolsSCALE.md" >}}) or a [dataset]({{< relref "DatasetsSCALE.md" >}}) with at least one file to share.
 
 Go to **Shares** and click **Configure** in the **Block (iSCSI) Shares Targets** window. You can either use the creation wizard or set one up manually.
 
@@ -29,7 +29,7 @@ This short tutorial video demonstrates basic steps to set up an iSCSI share conf
 
 First, enter a name. It can only contain lowercase alphanumeric characters plus a dot (.), dash (-), or colon (:). We recommend keeping it short or at most 63 characters. Next, choose the **Extent Type**.
 
-* If the **Extent Type** is **Device**, select the Zvol to share from the ***Device** menu.
+* If the **Extent Type** is **Device**, select the Zvol to share from the **Device** menu.
 
 * If the **Extent Type** is **File**, select the path to it and indicate the size.
 
@@ -37,17 +37,17 @@ Select the type of platform using the share. For example, if you use an updated 
 {{< /expand >}}
 
 {{< expand "Portal" "v" >}}
-Now you either create a new portal or select an existing one from the drop-down.
+Now you either create a new portal or select an existing one from the dropdown list.
 
 If you create a new portal, you need to select a **Discovery Authentication Method**.
 
-If you set the **Discovery Authentication Method** to **CHAP** or **MUTUAL CHAP**, you also need to select a **Discovery Authentication Group**. If no group exists, click **Create New** from the drop-down and enter a **Group ID**, **User**, and **Secret**.
+If you set the **Discovery Authentication Method** to **CHAP** or **MUTUAL CHAP**, you also need to select a **Discovery Authentication Group**. If no group exists, click **Create New** from the dropdown list and enter a value in **Group ID**, **User**, and **Secret**.
 
 ![SharingISCSIWizardPortalSCALE](/images/SCALE/SharingISCSIWizardPortalSCALE.png "iSCSI Wizard: Portal")
 
 When the **Discovery Authentication Method** is **NONE**, you can leave the **Discovery Authentication Group** empty.
 
-Select **0.0.0.0** or **::** from the **IP Address** dropdown and click **NEXT**. **0.0.0.0** listens on all IPv4 addresses and **::** listens on all IPv6 addresses.
+Select **0.0.0.0** or **::** from the **IP Address** dropdown list and click **NEXT**. **0.0.0.0** listens on all IPv4 addresses and **::** listens on all IPv6 addresses.
 {{< /expand >}}
 
 {{< expand "Initiator" "v" >}}
@@ -72,9 +72,9 @@ The **Target Global Configuration** tab lets users configure settings that apply
 
 | Setting | Description |
 |---------|-------|
-| Base Name | Lowercase alphanumeric characters plus dot (.), dash (-), and colon (:) are allowed. See the Constructing iSCSI names using the *iqn.format* section of [RFC3721](https://tools.ietf.org/html/rfc3721.html). |
+| Base Name | Lowercase alphanumeric characters plus dot (.), dash (-), and colon (:) are allowed. See the "Constructing iSCSI names using the iqn.format" section of [RFC3721](https://tools.ietf.org/html/rfc3721.html). |
 | ISNS Servers | Hostnames or IP addresses of the ISNS servers to register with the iSCSI targets and portals of the system. Separate entries by pressing <kbd>Enter</kbd>. |
-| Pool Available Space Threshold (%) | Generate an alert when the pool has this percent space remaining. This is typically configured at the pool level when using zvols or at the extent level for both file and device-based extents. |
+| Pool Available Space Threshold (%) | Generates an alert when the pool has this percent space remaining. This is typically configured at the pool level when using zvols or at the extent level for both file and device-based extents. |
 {{< /expand >}}
 
 {{< expand "Portals" "v" >}}
@@ -102,7 +102,7 @@ To edit an existing portal, click <i class="material-icons" aria-hidden="true" t
 **IP Address**
 | Setting | Description |
 |---------|-------|
-| IP Address | Select the IP addresses the portal listens to. Click **Add** to add IP addresses with a different network port. **0.0.0.0** listens on all IPv4 addresses and **::** listens on all IPv6 addresses. |
+| IP Address| Select the IP addresses the portal listens to. Click **Add** to add IP addresses with a different network port. **0.0.0.0** listens on all IPv4 addresses and **::** listens on all IPv6 addresses. |
 | Port | TCP port used to access the iSCSI target. Default is **3260**. |
 | ADD | Adds another IP address row. |
 {{< /expand >}}
@@ -138,20 +138,20 @@ To edit an existing authorized access network, click <i class="material-icons" a
 **Group**
 | Setting | Description |
 |---------|-------|
-| Group ID | Allow configuring different groups with different authentication profiles. Example: all users with a group ID of 1 inherits the authentication profile associated with Group 1. |
+| Group ID | Allow configuring different groups with different authentication profiles. Example: all users with a group ID of *1* inherits the authentication profile associated with *Group 1*. |
 
 **User**
 | Setting | Description |
 |---------|-------|
 | User | User account to create for CHAP authentication with the user on the remote system. Many initiators use the initiator name as the user name. |
 | Secret | User password. Must be at least 12 and no more than 16 characters long. |
-| Secret (Confirm) | Confirm the user password. |
+| **Secret (Confirm)** | Confirm the user password. |
 
 **Peer User**
 | Setting | Description |
 |---------|-------|
 | Peer User | Only entered when configuring mutual CHAP. Usually the same value as **User**. |
-| Peer Secret | Mutual secret password. Required when **Peer User** is set. Must be different than the **Secret**. |
+| Peer Secret| Mutual secret password. Required when **Peer User** is set. Must be different than the **Secret**. |
 | Peer Secret (Confirm) | Confirm the mutual secret password. |
 {{< /expand >}}
 
@@ -169,7 +169,7 @@ To edit an existing target, click <i class="material-icons" aria-hidden="true" t
 **Basic Info**
 | Setting | Description |
 |---------|-------|
-| Target Name | The base name is automatically prepended if the target name does not start with iqn. Lowercase alphanumeric characters plus dot (.), dash (-), and colon (:) are allowed. See the Constructing iSCSI names using the iqn.format section of [RFC3721](https://tools.ietf.org/html/rfc3721.html). |
+| Target Name | The base name is automatically prepended if the target name does not start with iqn. Lowercase alphanumeric characters plus dot (.), dash (-), and colon (:) are allowed. See the "Constructing iSCSI names using the iqn.format" section of [RFC3721](https://tools.ietf.org/html/rfc3721.html). |
 | Target Alias | Optional user-friendly name. |
 
 **iSCSI Group**
@@ -202,7 +202,7 @@ To edit an existing extent, click <i class="material-icons" aria-hidden="true" t
 **Type**
 | Setting | Description |
 |---------|-------|
-| Extent Type | **Device** provides virtual storage access to zvols, zvol snapshots, or physical devices. ***File** provides virtual storage access to a single file. |
+| Extent Type | **Device** provides virtual storage access to zvols, zvol snapshots, or physical devices. **File** provides virtual storage access to a single file. |
 | Device | Only appears if **Device** is selected. Select the unformatted disk, controller, or zvol snapshot. |
 | Path to the Extent | Only appears if **File** is selected. Browse to an existing file. Create a new file by browsing to a dataset and appending /\{filename.ext\} to the path. Users cannot create extents inside a jail root directory. |
 | Filesize | Only appears if **File** is selected. Entering **0** uses the actual file size and requires that the file already exists. Otherwise, specify the file size for the new file. |
@@ -214,7 +214,7 @@ To edit an existing extent, click <i class="material-icons" aria-hidden="true" t
 |---------|-------|
 | Enable TPC | Set to allow an initiator to bypass normal access control and access any scannable target. This allows [xcopy](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc771254(v=ws.11)) operations that are otherwise blocked by access control. |
 | Xen initiator compat mode | Set when using Xen as the iSCSI initiator. |
-| LUN RPM | Do *NOT* change this setting when using Windows as the initiator. You only need to change it in large environments where the number of systems using a specific RPM is needed for accurate reporting statistics. |
+| LUN RPM | Do *NOT* change this setting when using Windows as the initiator. You only change it in large environments where the number of systems using a specific RPM is needed for accurate reporting statistics. |
 | Read-only | Set to prevent the initiator from initializing this LUN. |
 {{< /expand >}}
 
@@ -237,14 +237,14 @@ To edit an existing associated target, click <i class="material-icons" aria-hidd
 {{< /expand >}}
 
 {{< expand "Quick iSCSI Target Creation" "v" >}}
-TrueNAS SCALE allows users to quickly add iSCSI targets without having to set up another share. Go to **Shares** and click **Add** in the **Block (iSCSI) Shares Targets** window.
+TrueNAS SCALE allows users to add iSCSI targets without having to set up another share. Go to **Shares** and click **Add** in the **Block (iSCSI) Shares Targets** window.
 
 ![QuickiSCSITargetSCALE](/images/SCALE/QuickiSCSITargetSCALE.png "Quick iSCSI Target")
 
 **Basic Info**
 | Setting | Description |
 |---------|-------|
-| Target Name | The base name is automatically prepended if the target name does not start with iqn. Lowercase alphanumeric characters plus dot (.), dash (-), and colon (:) are allowed. See the Constructing iSCSI names using the iqn.format section of [RFC3721](https://tools.ietf.org/html/rfc3721.html). |
+| Target Name | The base name is automatically prepended if the target name does not start with iqn. Lowercase alphanumeric characters plus dot (.), dash (-), and colon (:) are allowed. See the "Constructing iSCSI names using the iqn.format" section of [RFC3721](https://tools.ietf.org/html/rfc3721.html). |
 | Target Alias | Optional user-friendly name. |
 
 **iSCSI Group**
@@ -258,7 +258,7 @@ TrueNAS SCALE allows users to quickly add iSCSI targets without having to set up
 
 ## Starting the iSCSI Service
 
-To turn on the iSCSI service, go to **Services** and toggle **iSCSI**.
+To turn on the iSCSI service, go to **Services** and toggle on **iSCSI**.
 Set **Start Automatically** to start it when TrueNAS boots up.
 
 ![ServicesISCSIEnableSCALE](/images/SCALE/ServicesISCSIEnableSCALE.png "Starting the iSCSI Service")
@@ -267,15 +267,15 @@ Clicking the <i class="material-icons" aria-hidden="true" title="Configure">edit
 
 ## Using the iSCSI Share
 
-Connecting to and using an iSCSI share can differ between operating systems:
+Connecting to and using an iSCSI share can differ between operating systems.
 
 {{< expand "Linux" "v" >}}
 ### iSCSI Utilities and Service
 
 First, open the command line and ensure you have installed the `open-iscsi` utility.
 To install the utility on an Ubuntu/Debian distribution, enter `sudo apt update && sudo apt install open-iscsi`.
-After the installation completes, ensure the *iscsid* service is running: `sudo service iscsid start`.
-With the *iscsid* service started, run the `iscsiadm` command with the discovery arguments and get the necessary information to connect to the share.
+After the installation completes, ensure the iscsid service is running: `sudo service iscsid start`.
+With the iscsid service started, run the `iscsiadm` command with the discovery arguments and get the necessary information to connect to the share.
 
 ![LinuxISCSIAppInstall](/images/CORE/LinuxISCSIAppInstall.png "Linux ISCSI App Install")
 
@@ -295,7 +295,7 @@ discovery.sendtargets.auth.authmethod = CHAP
 discovery.sendtargets.auth.username = user
 discovery.sendtargets.auth.password = secret
 ```
-The user for `discovery.sendtargets.auth.username` is set in the **Authorized Access** used by the iSCSI share **Portal**. Likewise, the password to use for `discovery.sendtargets.auth.password` is the **Authorized Access** secret. Without those lines, the iscsiadm does not discover the Portal with the CHAP authentication method.
+The user for `discovery.sendtargets.auth.username` is set in the **Authorized Access** used by the iSCSI share **Portal**. Likewise, the password to use for `discovery.sendtargets.auth.password` is the **Authorized Access** secret. Without those lines, the iscsiadm does not discover the portal with the CHAP authentication method.
 
 Next, enter `sudo iscsiadm \--mode node \--targetname {BASENAME}:{TARGETNAME} \--portal {IPADDRESS} \--login`, where *{BASENAME}* and *{TARGETNAME}* is the discovery command information.
 
@@ -354,7 +354,7 @@ Next, go to the **Configuration** tab and click **Change** to replace the iSCSI 
 
 Next, switch to the **Discovery Tab**, click **Discover Portal**, and type in the TrueNAS IP address.
 
-* If TrueNAS changed the port number from the default *3260*, enter the new port number.
+* If TrueNAS changed the port number from the default **3260**, enter the new port number.
 
 * If you set up CHAP when creating the iSCSI share, click **Advanced...**, set **Enable CHAP log on**, and enter the initiator name and the same target/secret set earlier in TrueNAS.
 
@@ -368,11 +368,11 @@ Go to the **Targets** tab, highlight the iSCSI target, and click **Connect**.
 
 After Windows connects to the iSCSI target, you can partition the drive.
 
-Search for and open the *Disk Management* app.
+Search for and open the **Disk Management** app.
 
 ![WindowsISCSIDiskManagementApp](/images/CORE/WindowsISCSIDiskManagementApp.png "Windows ISCSI Disk Management App")
 
-Your drive should currently be *unallocated*. Right-click the drive and click **New Simple Volume...**.
+The current state of your drive should be **unallocated**. Right-click the drive and click **New Simple Volume...**.
 
 ![WindowsISCSIDiskNewVolume](/images/CORE/WindowsISCSIDiskNewVolume.png "Windows ISCSI Disk New Volume")
 
@@ -380,7 +380,7 @@ Complete the Wizard to format the drive and assign a drive letter and name.
 
 ![WindowsISCSIDiskNewVolumeOptions](/images/CORE/WindowsISCSIDiskNewVolumeOptions.png "Windows ISCSI Disk New Volume Options")
 
-Finally, go to **This PC** or **My Computer** in File Explorer. The new iSCSI volume should display under the list of drives. You should now be able to add, delete, and modify files and folders on your iSCSI drive.
+Finally, go to **This PC** or **My Computer** in **File Explorer**. The new iSCSI volume should display under the list of drives. You should now be able to add, delete, and modify files and folders on your iSCSI drive.
 
 ![WindowsiSCSIVolumeLocation](/images/CORE/WindowsiSCSIVolumeLocation.png "Windows iSCSI Volume Location")
 {{< /expand >}}
@@ -394,13 +394,13 @@ To expand a Zvol LUN, go to **Storage** and click the <i class="material-icons" 
 
 ![ExpandingZvolLUNListSCALE](/images/SCALE/ExpandingZvolLUNListSCALE.png "Edit the Zvol LUN")
 
-Enter a new size in the **Size for this zvol*** field, then click **SAVE**.
+Enter a new size in the **Size for this zvol** field, then click **SAVE**.
 
 ![ExpandingZvolLUNSizeSCALE](/images/SCALE/ExpandingZvolLUNSizeSCALE.png "Change the Zvol Size")
 
 {{< hint ok >}}
-TrueNAS prevents data loss by not allowing users to reduce the Zvol's size. 
-TrueNAS also does not allow users to increase the Zvol's size past 80% of the pool size.
+TrueNAS prevents data loss by not allowing users to reduce the Zvol size. 
+TrueNAS also does not allow users to increase the Zvol size past 80% of the pool size.
 {{< /hint >}}
 {{< /expand >}}
 
@@ -413,7 +413,7 @@ Click the <i class="material-icons" aria-hidden="true" title="Options">more_vert
 
 Highlight and copy the path, then click **Cancel**.
 
-Go to **Shell** and input `truncate -s +[size] [path to file]`, then press **<kbd>Enter</kbd>**.
+Go to **Shell** and input `truncate -s +[size] [path to file]`, then press <kbd>Enter</kbd>.
 
 The *[size]* is how much space you want to grow the file by, and the *[path to file]* is the file path you copied earlier. 
 
@@ -421,7 +421,7 @@ The *[size]* is how much space you want to grow the file by, and the *[path to f
 
 An example command could look like this: `truncate -s +2g /mnt/Pool1/Dataset1/File LUN`
 
-Lastly, go back to the extent in **Shares >** **Block (iSCSI) Shares Targets** and make sure the **Filesize** is set to **0** so that the share uses the actual file size.
+Lastly, go back to the extent in **Shares > Block (iSCSI) Shares Targets** and make sure the **Filesize** is set to **0** so that the share uses the actual file size.
 {{< /expand >}}
 {{< /tab >}}
 
@@ -442,7 +442,7 @@ The SMB protocol has multiple versions. An SMB client typically negotiates the h
 However, most SMB clients support SMB 2 or 3 protocols, even when they are not default.
 
 {{< hint info >}}
-Legacy SMB clients rely on NetBIOS Name Resolution to discover SMB servers on a network. TrueNAS disables the NetBIOS Name Server (nmbd) by default. Enabled in **Network** if you require its functionality.
+Legacy SMB clients rely on NetBIOS name resolution to discover SMB servers on a network. TrueNAS disables the NetBIOS Name Server (nmbd) by default. Enabled in **Network** if you require its functionality.
 
 MacOS clients use mDNS to discover SMB servers present on the network. TrueNAS enables the mDNS server (avahi) by default.
 
@@ -455,32 +455,39 @@ Discoverability through broadcast protocols is a convenience feature and not req
 
 ### Create a Dataset
 
-It is recommended to create a new dataset and set the **Share Type** to **SMB** for the new SMB share.
+It is recommended to create a new dataset and set the **Share Type** to **SMB** for the new SMB share. 
+
 {{< expand "What does this do?" "v" >}}
 TrueNAS creates the ZFS dataset with these settings:
 
- * **aclmode** = *restricted*
- * **case sensitivity** = *insensitive*
+ * **aclmode** = **restricted**
+ * **case sensitivity** = **insensitive**
 
- TrueNAS also applies a default Access Control List to the dataset.
+ TrueNAS also applies a default access control list to the dataset.
  This default ACL is restrictive and only allows access to the dataset owner and group.
  You can modify the ACL later according to your use case.
 {{< /expand >}}
 
 ### Create Local User Accounts
 
-By default, all new local users are members of a built-in SMB group called *builtin users*. You can use the group to grant access to all local users on the server or add more groups to fine-tune permissions to large numbers of users. You cannot access SMB shares with user accounts built-in to TrueNAS or those without the ***smb** flag.
+By default, all new local users are members of a built-in SMB group called **builtin users**. 
+You can use the group to grant access to all local users on the server or add more groups to fine-tune permissions to large numbers of users. 
+You cannot access SMB shares with user accounts built-in to TrueNAS or those without the **smb** flag.
 {{< expand "Why not just allow anonymous access to the share?" "v" >}}
-Anonymous or guest access to the share is possible, but it is a security vulnerability. Major SMB client vendors are deprecating it, partly because signing and encryption are not possible for guest sessions.
+Anonymous or guest access to the share is possible, but it is a security vulnerability. 
+Major SMB client vendors are deprecating it, partly because signing and encryption are not possible for guest sessions.
 {{< /expand >}}
 {{< expand "What about LDAP users?" "v" >}}
-If you want LDAP server users to access the SMB share, go to **Credentials > Directory Services**. Click **Settings** in the **LDAP window**, then click **Advanced Options** and set **Samba Schema**. Local TrueNAS user accounts no longer have access to the share.
+If you want LDAP server users to access the SMB share, go to **Credentials > Directory Services**. 
+Click **Settings** in the **LDAP window**, then click **Advanced Options** and set **Samba Schema**. 
+Local TrueNAS user accounts no longer have access to the share.
 {{< /expand >}}
 
 ### Tune the Dataset ACL
 
-After creating a dataset and accounts, you need to investigate your access requirements and adjust the dataset ACL to match. Go to **Storage**, open the options for the new dataset, and click **Edit Permissions**.
-Many home users typically add a new entry that grants *FULL_CONTROL* to the *builtin_users* group with the flags set to **INHERIT**.
+After creating a dataset and accounts, you need to investigate your access requirements and adjust the dataset ACL to match. 
+Go to **Storage**, open the options for the new dataset, and click **Edit Permissions**.
+Many home users typically add a new entry that grants **FULL_CONTROL** to the **builtin_users** group with the flags set to **INHERIT**.
 See the [Permissions article]({{< relref "Permissions.md" >}}) for more details.
 
 ## Creating the SMB Share
@@ -489,9 +496,9 @@ To create a Windows SMB share, go to **Sharing > Windows Shares (SMB)** and clic
 
 ![SharingSMBAddSCALE](/images/SCALE/SharingSMBAddSCALE.png "Basic SMB Share Options")
 
-The SMB share **Path** and **Name** define the absolute minimum amount of information required to create a new SMB share. The **Path** is the directory tree on the local filesystem that TrueNAS exports over the SMB protocol. The **Name** is the SMB share name, which forms part of the full share pathname when SMB clients perform an SMB tree connect. Because of how the SMB protocol uses the Name, it must be less than or equal to 80 characters. It cannot have any invalid characters as specified in Microsoft documentation MS-FSCC section 2.1.6. If a Name is not supplied, then the last component of the Path is used as the share name.
+The SMB share **Path** and **Name** define the absolute minimum amount of information required to create a new SMB share. The **Path** is the directory tree on the local filesystem that TrueNAS exports over the SMB protocol. The **Name** is the SMB share name, which forms part of the full share pathname when SMB clients perform an SMB tree connect. Because of how the SMB protocol uses the name, it must be less than or equal to 80 characters. It cannot have any invalid characters as specified in Microsoft documentation MS-FSCC section 2.1.6. If a name is not supplied, then the last component of the path is used as the share name.
 
-You can set a share ***Purpose** to apply and lock pre-determined advanced options for the share.
+You can set a share **Purpose** to apply and lock pre-determined advanced options for the share.
 To retain control over all the share **Advanced Options**, choose **No presets**.
 
 {{< expand "What do all the presets do?" "v" >}}
@@ -532,12 +539,12 @@ Options are divided into **Access** and **Other Options** groups.
 
 | Setting                        | Description  |
 |--------------------------------|--------------|
-| Enable ACL                     | Enable ACL support for the SMB share. |
+| Enable ACL                     | Enables ACL support for the SMB share. |
 | Export Read Only               | Prohibits writes to the share. |
 | Browsable to Network Clients   | Determine whether this share name is included when browsing shares. Home shares are only visible to the owner regardless of this setting.
-| Allow Guest Access             | Privileges are the same as the guest account. Guest access is disabled by default in Windows 10 version 1709 and Windows Server version 1903. Additional client-side configuration is required to provide guest access to these clients.<br><br> *MacOS clients*: Attempting to connect as a user that does not exist in FreeNAS *does not* automatically connect as the guest account. The *Connect As: Guest* option must be specifically chosen in macOS to log in as the guest account. See the [Apple documentation](https://support.apple.com/guide/mac-help/connect-mac-shared-computers-servers-mchlp1140/mac) for more details. |
+| Allow Guest Access             | Privileges are the same as the guest account. Guest access is disabled by default in Windows 10 version 1709 and Windows Server version 1903. Additional client-side configuration is required to provide guest access to these clients.<br><br> **MacOS clients**: Attempting to connect as a user that does not exist in FreeNAS *does not* automatically connect as the guest account. The **Connect As: Guest** option must be specifically chosen in macOS to log in as the guest account. See the [Apple documentation](https://support.apple.com/guide/mac-help/connect-mac-shared-computers-servers-mchlp1140/mac) for more details. |
 | Access Based Share Enumeration | Restrict share visibility to users with read or write access to the share. See the [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) manual page. |
-| Hosts Allow                    | Enter a list of allowed hostnames or IP addresses. Separate entries by pressing <kbd>Enter</kbd>. You can finde a more detailed description with examples [here](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html#HOSTSALLOW).
+| Hosts Allow                    | Enter a list of allowed hostnames or IP addresses. Separate entries by pressing <kbd>Enter</kbd>. You can find a more detailed description with examples [here](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html#HOSTSALLOW).
 | Hosts Deny                     | Enter a list of denied hostnames or IP addresses. Separate entries by pressing <kbd>Enter</kbd>. |
 
 The **Hosts Allow** and **Hosts Deny** fields work together to produce different situations:
@@ -550,15 +557,15 @@ The **Other Options** have settings for improving Apple software compatibility, 
 
 | Setting                            | Description  |
 |------------------------------------|--------------|
-| Use as Home Share                  | Allows the share to host user home directories. Each user is given a personal home directory when connecting to the share which is not accessible by other users. This allows for a personal, dynamic share. Only one share can be used as the home share. See the Home Shares section below. |
+| Use as Home Share                  | Allows the share to host user home directories. Each user is given a personal home directory when connecting to the share which is not accessible by other users. This allows for a personal, dynamic share. Only one share can be used as the home share. See the [**SMB Home Shares**](#smb-home-shares) section below. |
 | Time Machine                       | Enables [Apple Time Machine](https://support.apple.com/en-us/HT201250) backups on this share. |
-| Legacy AFP Compatibility           | This controls how the SMB share reads and writes data. Leave unset for the share to behave like a normal SMB share and set for the share to behave like the deprecated Apple Filing Protocol (AFP). This should only be set when this share originated as an AFP sharing configuration. This is not required for pure SMB shares or macOS SMB clients. |
+| Legacy AFP Compatibility           | This controls how the SMB share reads and writes data. Leave unset for the share to behave like a normal SMB share and set for the share to behave like the deprecated Apple Filing Protocol (AFP). Only set this when this share originated as an AFP sharing configuration. This is not required for pure SMB shares or macOS SMB clients. |
 | Enable Shadow Copies               | Export ZFS snapshots as [Shadow Copies](https://docs.microsoft.com/en-us/windows/win32/vss/shadow-copies-and-shadow-copy-sets) for Microsoft Volume Shadow Copy Service (VSS) clients. |
-| Export Recycle Bin                 | Files that are deleted from the same dataset are moved to the Recycle Bin and do not take any additional space. *Deleting files over NFS removes the files permanently.* When the files are in a different dataset or a child dataset, they are copied to the dataset where the Recycle Bin is located. To prevent excessive space usage, files larger than *20 MiB* are deleted rather than moved. Adjust the **Auxiliary Parameter** `crossrename:sizelimit=` setting to allow larger files. For example, <code>crossrename:sizelimit=<i>50</i></code> allows moves of files up to *50 MiB* in size. This means files can be permanently deleted or moved from the recycle bin. *This is not a replacement for ZFS snapshots.* |
+| Export Recycle Bin                 | Files that are deleted from the same dataset are moved to the **Recycle Bin** and do not take any additional space. *Deleting files over NFS removes the files permanently.* When the files are in a different dataset or a child dataset, they are copied to the dataset where the recycle bin is located. To prevent excessive space usage, files larger than 20 MiB are deleted rather than moved. Adjust the **Auxiliary Parameter** `crossrename:sizelimit=` setting to allow larger files. For example, <code>crossrename:sizelimit=<i>50</i></code> allows moves of files up to 50 MiB in size. This means files can be permanently deleted or moved from the recycle bin. *This is not a replacement for ZFS snapshots.* |
 | Use Apple-style Character Encoding | By default, Samba uses a hashing algorithm for NTFS illegal characters. Enabling this option converts NTFS illegal characters in the same manner as macOS SMB clients. |
 | Enable Alternate Data Streams      | Allows multiple [NTFS data streams](https://www.ntfs.com/ntfs-multiple.htm). Disabling this option causes macOS to write streams to files on the filesystem. |
 | Enable SMB2/3 Durable Handles      | Allow using open file handles that can withstand short disconnections. Support for POSIX byte-range locks in Samba is also disabled. This option is not recommended when configuring multi-protocol or local access to files. |
-| Enable FSRVP                       | Enable support for the File Server Remote VSS Protocol ([FSVRP](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-fsrvp/dae107ec-8198-4778-a950-faa7edad125b)). This protocol allows Remote Procedure Call (RPC) clients to manage snapshots for a specific SMB share. The share path must be a dataset mount point. Snapshots have the prefix `fss-` followed by a snapshot creation timestamp. A snapshot must have this prefix for an RPC user to delete it. |
+| Enable FSRVP                       | Enable support for the File Server Remote VSS Protocol ([FSVRP](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-fsrvp/dae107ec-8198-4778-a950-faa7edad125b)). This protocol allows remote procedure call (RPC) clients to manage snapshots for a specific SMB share. The share path must be a dataset mount point. Snapshots have the prefix `fss-` followed by a snapshot creation timestamp. A snapshot must have this prefix for an RPC user to delete it. |
 | Path Suffix                        | Appends a suffix to the share connection path. This is used to provide unique shares on a per-user, per-computer, or per-IP address basis. Suffixes can contain a macro. See the [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) manual page for a list of supported macros. The connectpath must be preset before a client connects. |
 | Auxiliary Parameters               | Additional [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) settings. |
 {{< /expand >}}
@@ -571,7 +578,7 @@ You can also choose to enable the SMB service at this time.
 After creating the SMB share, additional management options are available by going to the **Shares** screen and clicking <i class="material-icons" aria-hidden="true">open_in_new</i> in the **Windows (SMB) Shares** window. Click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> next to the share you want to manage.
 
 * **Edit**: Opens the [share creation screen](#creating-the-smb-share) to reconfigure the share or disable it.
-* **Edit Share ACL**: Opens a screen to configure an Access Control List (ACL) for the share. This screen is separate from filesystem permissions and applies at the entire SMB share level. Other filesharing protocol clients or other SMB shares that export the same share **Path** do not interpret these permissions. Open is the default. This ACL determines the browse list if *Access Based Share Enumeration* is enabled.
+* **Edit Share ACL**: Opens a screen to configure an Access Control List (ACL) for the share. This screen is separate from filesystem permissions and applies at the entire SMB share level. Other filesharing protocol clients or other SMB shares that export the same share **Path** do not interpret these permissions. Open is the default. This ACL determines the browse list if **Access Based Share Enumeration** is enabled.
 * **Edit Filesystem ACL**: Opens a screen to configure an Access Control List (ACL) for the path defined in the share **Path**.
 * **Delete**: Remove the share configuration from TrueNAS. Shared data is unaffected.
 
@@ -587,10 +594,10 @@ Click **Add** to register a new entry.
 
 | Setting    | Description  |
 |------------|--------------|
-| SID        | Who this ACL entry (ACE) applies to, shown as a [Windows Security Identifier](https://docs.microsoft.com/en-us/windows/win32/secauthz/security-identifiers). Either a *SID* or a *Domain* with *Name* is required for the ACL. |
-| Domain     | Domain for the user **Name**. Required when a *SID* is not entered. Local users have the SMB server NetBIOS name: *truenas\\smbusers*.
+| SID        | Who this ACL entry (ACE) applies to, shown as a [Windows Security Identifier](https://docs.microsoft.com/en-us/windows/win32/secauthz/security-identifiers). Values in either **SID** or **Domain** with **Name** is required for the ACL. |
+| Domain     | Domain for the user specified in **Name**. Required when a **SID** value is not entered. Local users have the SMB server NetBIOS name: *truenas\\smbusers*.
 | Permission | Predefined permission combinations.<br>**Read**: Read access and Execute permission on the object (RX).<br>**Change**: Read access, Execute permission, Write access, and Delete object (RXWD).<br>**Full**: Read access, Execute permission, Write access, Delete object, change Permissions, and take Ownership (RXWDPO).<br><br>For more details, see [smbacls(1)](https://www.samba.org/samba/docs/current/man-html/smbcacls.1.html). |
-| Name       | Who this ACL entry applies to, shown as a user name. Requires adding the user **Domain**. |
+| Name      | Who this ACL entry applies to, shown as a user name. Requires adding the user **Domain**. |
 | Type       | How permissions are applied to the share. **Allowed** denies all permissions by default except those that are manually defined. **Denied** allows all permissions by default except those that are manually defined. |
 
 Clicking **Save** stores the share ACL and applies it to the share immediately.
@@ -606,7 +613,7 @@ Since SCALE gives users the option to use either POSIX or NFSv4 share [ACL types
 
 The filesystem ACL defines the user accounts or groups that own or have specific [permissions]({{< relref "PermissionsSCALE.md" >}}) to the shared dataset.
 The **User** and **Group** values show which accounts *own* or have full permissions to the dataset.
-Change the default settings to your preferred primary account and group and set the **Apply permissions recursively** check box before saving any changes.
+Change the default settings to your preferred primary account and group and set the **Apply permissions recursively** checkbox before saving any changes.
 
 #### ACL Presets
 
@@ -619,7 +626,7 @@ To rewrite the current ACL with a standardized preset, click **Use ACL Preset** 
 #### Adding ACL Entries (ACEs)
 
 To define permissions for a specific user account or group, click **Add Item**.
-Open the **Who** drop-down, select **User** or **Group**, and choose a specific User or Group account.
+Open the **Who** drop-down, select **User** or **Group**, and choose a specific user or group account.
 Define how the settings apply to the account, then choose which permissions to apply.
 For example, to only allow the *newuser* user permission to view dataset contents but not make changes, set the **ACL Type** to **Allow** and **Permissions** to **Read**.
 
@@ -632,7 +639,7 @@ For example, to only allow the *newuser* user permission to view dataset content
 The filesystem ACL defines the user accounts or groups that own or have specific [permissions]({{< relref "PermissionsSCALE.md" >}}) to the shared dataset.
 
 The **User** and **Group** values show which accounts own, or have full permissions to the dataset.
-Change the default settings to your preferred primary account and group and set the **Apply permissions recursively** check box before saving any changes.
+Change the default settings to your preferred primary account and group and set the **Apply permissions recursively** checkbox before saving any changes.
 
 #### ACL Presets
 
@@ -655,7 +662,7 @@ For example, to only allow the *newuser* user permission to view dataset content
 ## Activate the SMB Service
 
 Connecting to an SMB share does not work when the related system service is not activated.
-To make SMB share available on the network, go to **System Settings > Services** and click the toggle for **SMB**.
+To make SMB share available on the network, go to **System Settings > Services** and click the toggle to running for **SMB**.
 Set **Start Automatically** if you want the service to activate when TrueNAS boots.
 
 ### Service Configuration
@@ -667,7 +674,7 @@ Unless you need a specific setting or are configuring a unique network environme
 
 | Setting             | Description  |
 |---------------------|--------------|
-| NetBIOS Name        | Automatically populated with the system's original hostname. This name is limited to 15 characters and cannot be the *Workgroup* name. |
+| NetBIOS Name        | Automatically populated with the system's original hostname. This name is limited to 15 characters and cannot be the **Workgroup** name. |
 | NetBIOS Alias       | Enter any aliases, separated by spaces. Each alias can be up to 15 characters long. |
 | Workgroup           | Must match the Windows workgroup name. When this is unconfigured and Active Directory or LDAP is active, TrueNAS detects and sets the correct workgroup from these services. |
 | Description         | This allows entering any notes or descriptive details about the service configuration. |
@@ -680,16 +687,16 @@ Unless you need a specific setting or are configuring a unique network environme
 | Setting                                 | Description  |
 |-----------------------------------------|--------------|
 | UNIX Charset                            | Character set used internally. **UTF-8** is standard for most systems as it supports all characters in all languages. |
-| Log Level                               | Record SMB service messages up to the specified log level. By default, error and warning level messages are logged. It is not recommended to use a log level above MINIMUM for production servers. |
+| Log Level                               | Record SMB service messages up to the specified log level. By default, error and warning level messages are logged. It is not recommended to use a log level above minimum for production servers. |
 | Use Syslog Only                         | Set to log authentication failures in */var/log/messages* instead of the default */var/log/samba4/log.smbd*. |
-| Local Master                            | Set to determine if the system participates in a browser election. Unset when the network contains an AD or LDAP server, or when Vista or Windows 7 machines are present. |
+| Local Master                            | Set to determine if the system participates in a browser election. Clear the setting when the network contains an AD or LDAP server, or when Vista or Windows 7 machines are present. |
 | Enable Apple SMB2/3 Protocol Extensions | These [protocol extensions](https://support.apple.com/en-us/HT210803) can be used by macOS to improve the performance and behavioral characteristics of SMB shares. This is required for Time Machine support. |
 | Administrators Group                    | Members of this group are local administrators and automatically have privileges to take ownership of any file in an SMB share, reset permissions, and administer the SMB server through the Computer Management MMC snap-in. |
 | Guest Account                           | Account used for guest access. Default is **nobody**. The chosen account is required to have permissions to the shared pool or dataset. To adjust permissions, edit the dataset Access Control List (ACL), add a new entry for the chosen guest account, and configure the permissions in that entry. If the selected **Guest Account** is deleted the field resets to **nobody**. |
 | File Mask                               | Overrides default **0666** file creation mask which creates files with read and write access for everybody. |
 | Directory Mask                          | Overrides default directory creation mask of **0777** which grants directory read, write and execute access for everybody. |
 | Bind IP Addresses                       | Static IP addresses which SMB listens on for connections. Leaving all unselected defaults to listening on all active interfaces.
-| Auxiliary Parameters                    | Stores additional [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html). Auxiliary parameters may be used to override the default SMB server configuration, but such changes may adversely affect SMB server stability or behavior. |
+| Auxiliary Parameters                    | Stores additional [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html). Auxiliary parameters can be used to override the default SMB server configuration, but such changes may adversely affect SMB server stability or behavior. |
 {{< /expand >}}
 
 ## Mounting SMB Share on another machine.
@@ -744,7 +751,7 @@ Name the dataset and set the **Share Type** to **SMB**.
 
 After creating the dataset, go to **Storage** and open <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> next to the new dataset. Select **View Permissions**, then click <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
 
-Click the **Group** drop-down menu and change the owning group to your Active Directory's domain admins.
+Click the **Group** drop-down list and change the owning group to your Active Directory's domain admins.
 
 ![GroupDomainAdminsSCALE](/images/SCALE/GroupDomainAdminsSCALE.png "Set the owning group to Domain Admins")
 
@@ -794,7 +801,7 @@ There are a few caveats about shadow copies to be aware of before activating the
 * Shadow copy cannot be deleted by users with an SMB client. Instead, the administrator uses the TrueNAS web interface to remove snapshots. Shadow copies can be disabled for an SMB share by unsetting **Enable shadow copies** for the SMB share. This does not prevent access to the hidden <file>.zfs/snapshot</file> directory for a ZFS dataset when the directory is located within the path for an SMB share.
   
 To enable shadow copies, go to **Shares > Windows (SMB) Shares** and **Edit** an existing share.
-Open the **Advanced* options** and set **Enable Shadow Copies**.
+Open the **Advanced Options** and set **Enable Shadow Copies**.
 
 {{< expand "Windows 10 v2004 Issue" "v" >}}
 Some users have experienced issues in the Windows 10 v2004 release where network shares can't be accessed. The problem appears to come from a bug in <file>gpedit.msc</file>, the Local Group Policy Editor. Unfortunately, setting the **Allow insecure guest logon** flag value to **Enabled** in **Computer Configuration > Administrative Templates > Network > Lanman Workstation** appears to have no effect on the configuration.
@@ -811,6 +818,8 @@ Depending on the share's configuration, it can restrict users to read or write p
 
 {{< include file="static/includes/General/SharingPrereqs.md.part" markdown="true" >}}
 
+<p></p>
+
 ## Creating an NFS Share
 
 {{< embed-video name="scaleangelfishnfsshare" >}}
@@ -820,7 +829,7 @@ Go to **Shares > Unix (NFS) Shares** and click **Add**.
 ![SharingNFSAddSCALE](/images/SCALE/SharingNFSAddSCALE.png "Services NFS Add")
 
 Use the file browser to select the dataset to be shared.
-You can enter an optional text to help identify the share in **Descritpion**.
+You can enter an optional text to help identify the share in **Description**.
 Clicking **Save** creates the share.
 At the time of creation, you can select **Enable Service** for the service to start and to automatically start after any reboots.
 If you wish to create the share but not immediately enable it, select **Cancel**.
@@ -854,8 +863,8 @@ The options available are identical to the share creation options.
 
 ## Configure the NFS Service
 
-To begin sharing, go to **System Settings > Services** and click the **NFS** toggle.
-Set **Start Automatically** if you want NFS to activate when TrueNAS boots.
+To begin sharing, go to **System Settings > Services** and click the **NFS** toggle to running.
+Select **Start Automatically** if you want NFS to activate when TrueNAS boots.
 
 NFS service settings can be configured by clicking <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
 
@@ -869,9 +878,9 @@ NFS service settings can be configured by clicking <i class="material-icons" ari
 | Require Kerberos for NFSv4        | Set to force NFS shares to fail if the Kerberos ticket is unavailable. |
 | Serve UDP NFS clients             | Set if NFS clients need to use the User Datagram Protocol (UDP). |
 | Support >16 groups                | Set when a user is a member of more than 16 groups. This assumes group membership is configured correctly on the NFS server. |
-| mountd(8) bind port               | Enter a number to bind [mountd](https://www.freebsd.org/cgi/man.cgi?query=mountd) only to that port. |
-| rpc.statd(8) bind port            | Enter a number to bind [rpc.statd](https://www.freebsd.org/cgi/man.cgi?query=rpc.statd) only to that port. |
-| rpc.lockd(8) bind port            | Enter a number to bind [rpc.lockd](https://www.freebsd.org/cgi/man.cgi?query=rpc.lockd) only to that port. |
+| mountd(8) bind port               | Enter a number to bind [mountd](https://manpages.debian.org/testing/mount/mount.8.en.html) only to that port. |
+| rpc.statd(8) bind port            | Enter a number to bind [rpc.statd](https://manpages.debian.org/testing/nfs-common/statd.8.en.html) only to that port. |
+| rpc.lockd(8) bind port            | Enter a number to bind [rpc.lockd](https://manpages.debian.org/testing/manpages-ja/rpc.lockd.8.ja.html) only to that port. |
 
 Unless you need a specific setting, we recommend using the default NFS settings.
 
@@ -911,12 +920,12 @@ An optional **Description** helps to identify the share.
 To prevent user accounts from modifying the shared data, set **Read Only**.
 
 By default, **Change User & Group Ownership** is set.
-This changes existing ownership of *ALL* files in the share to the **webdav** user and group accounts.
+This changes existing ownership of *all* files in the share to the **webdav** user and group accounts.
 The default simplifies WebDAV share permission, but is unexpected, so the web interface shows a warning:
 
 ![SharingWebdavAddWarningSCALE](/images/SCALE/SharingWebdavAddWarningSCALE.png "Services Webdav Add Warning")
 
-This warning does not show when ***Change User & Group Ownership** is unset.
+This warning does not show when the **Change User & Group Ownership** checkbox is cleared.
 In that situation, you must manually set shared file ownership to the webdav or *www* user and group accounts.
 
 By default, the new WebDAV share is immediately active.
