@@ -372,7 +372,7 @@ Do not enable SSH unless you require external connections.
 
 Activate or configure the SSH service on the **System Settings > Services** page.
 
-To configure SSH, go to **System Settings > Services** and find **SSH**, then click <i class="material-icons" aria-hidden="true" title="Configure">edit</i>
+To configure SSH go to **System Settings > Services**, find **SSH**, and click <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
 
 ![ServicesSSHSCALE](/images/SCALE/ServicesSSHSCALE.png "SSH Options")
 
