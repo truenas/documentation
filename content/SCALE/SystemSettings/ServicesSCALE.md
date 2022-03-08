@@ -41,7 +41,8 @@ Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i
 {{< expand "FTP" "v" >}}
 FTP requires a new dataset and a local user account.
 
-Go to **Storage** to add a new [dataset]{{< relref "SCALE/Storage/Pools/DatasetsSCALE.md" >}}.
+Go to **Storage** to add a new [dataset]{{< relref "Storage/Pools/datasetsscale/index.md" >}}.
+[SCALENewDataset]({{< relref "scale/storage/pools/datasetsscale.md" >}})
 
 ![DatasetAddSCALE](/images/SCALE/DatasetAddSCALE.png "Adding a new Dataset")
 
