@@ -41,7 +41,7 @@ Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i
 {{< expand "FTP" "v" >}}
 FTP requires a new dataset and a local user account.
 
-Go to **Storage** to add a new [dataset](https://www.truenas.com/docs/scale/storage/pools/datasetsscale/).
+Go to **Storage** to add a new [dataset](https://www.truenas.com/docs/scale/storage/pools/datasetsscale).
 
 ![DatasetAddSCALE](/images/SCALE/DatasetAddSCALE.png "Adding a new Dataset")
 
