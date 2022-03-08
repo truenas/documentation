@@ -25,7 +25,7 @@ Select the report beginning and end dates using the drop-down.
 
 ![ReportsGenerateDateWidgetSelectDate](/images/TrueCommand/2.0/ReportsGenerateDateWidgetSelectDate.png "Reports Generate Date Widget Select Date")
 
-Once you set the date range, use the **systems** drop-down menu to select which systems you want to include in the report.
+After you set the date range, use the **systems** drop-down menu to select the systems you want to include in the report.
 
 ![ReportsGenerateDateWidgetSelectSystems](/images/TrueCommand/2.0/ReportsGenerateDateWidgetSelectSystems.png "Reports Generate Date Widget Select Systems")
 
