@@ -7,7 +7,7 @@ weight: 10
 
 {{< hint danger >}}
 Cluster volume management is a BETA feature in TrueCommand 2.0. 
-**Please back up your data before using BETA features.** 
+Back up your data *before* using BETA features. 
 Do not rely on cluster volume management for critical data.
 {{< /hint >}}
 
