@@ -5,7 +5,7 @@ title: "Documentation Archive"
 Welcome to the Documentation Archive!
 
 {{< hint warning >}}
-All documentation provided here is End of Life (EoL) and no longer receives **any** updates.
+All documentation provided here is end-of-life (EoL) and no longer receives *any* updates.
 {{< /hint >}}
 
 {{< tabs "EOL Versions" >}}
