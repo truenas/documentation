@@ -5,19 +5,21 @@ weight: 20
 
 {{< toc >}}
 
-TrueNAS can send, receive, or synchronize data with a cloud storage provider. Cloud sync tasks allow for single time transfers or recurring transfers on a schedule and are an effective method to back up data to a remote location.
+TrueNAS can send, receive, or synchronize data with a cloud storage provider. Cloud sync tasks allow for single-time transfers or recurring transfers on a schedule. They are an effective method to back up data to a remote location.
 
 {{< hint warning >}}
-Using the cloud means that data can go to a third party commercial vendor not directly affiliated with iXsystems. Investigate and fully understand that cloud vendor’s pricing policies and services before creating any cloud sync task. iXsystems is not responsible for any charges incurred from the use of third party vendors with the Cloud Sync feature.
+Using the cloud means data can go to a third-party commercial vendor not directly affiliated with iXsystems. You should fully understand vendor pricing policies and services before using them for cloud sync tasks.
+
+ iXsystems is not responsible for any charges incurred from using third-party vendors with the cloud sync feature.
 {{< /hint >}}
 
-TrueNAS supports major providers like Amazon S3, Google Cloud, and Microsoft Azure, along with a variety of other vendors. To see the full list of supported vendors, go to **Credentials > Backup Credentials > Cloud Credentials** click **Add** and open the **Provider** dropdown.
+TrueNAS supports major providers like Amazon S3, Google Cloud, and Microsoft Azure. It also supports many other vendors. To see the full list of supported vendors, go to **Credentials > Backup Credentials > Cloud Credentials** click **Add** and open the **Provider** drop-down list.
 
 ## Requirements
 
-* All system [Storage](/scale/storage/) must be configured and ready to receive or send data.
-* A cloud storage provider account and a cloud storage location, like an Amazon S3 bucket, must be available.
-* A cloud storage account credentials must be saved to **System > Cloud Credentials** before creating the sync task. See *Cloud Credentials* for specific instructions.
+* You must have all system [storage](/scale/storage/) configured and ready to receive or send data.
+* You must have a cloud storage provider account and location (like an Amazon S3 bucket).
+* You must have cloud storage account credentials saved to **System > Cloud Credentials** before creating the sync task. See [Cloud Credentials]({{< relref "/SCALE/Credentials/BackupCredentials/_index.md" >}}) for specific instructions.
 
 ## Creating a Cloud Sync Task
 
@@ -29,32 +31,32 @@ Go to **Data Protection > Cloud Sync Tasks** and click **Add**.
 
 ![DataProtectionCloudSyncAdd](/images/SCALE/DataProtectionCloudSyncAdd.png "Creating a Cloud Sync Task")
 
-Type a memorable task description in the **Description** field and select an existing cloud on the **Credential** dropdown list. TrueNAS connects to the chosen cloud storage provider and shows the available storage locations. Select the option if data is transferring to (**PUSH**) or from (**PULL**) the cloud storage location (**Remote**). Select a **Transfer Mode**:
+Type a memorable task description in the **Description** field. Use the **Credential** dropdown list to select an existing cloud or create a new one with the **+ Add a backup credential** option. TrueNAS connects to the chosen cloud storage provider and shows the available storage locations. Select the option if data is transferring to (**PUSH**) or from (**PULL**) the cloud storage location (**Remote**). Select a **Transfer Mode**:
 
 {{< tabs "Transfer Modes" >}}
 {{< tab "Sync" >}}
-**Sync** keeps all the files identical between the two storage locations. If the sync encounters an error, files are not deleted in the destination.
-This includes a common error when the [Dropbox copyright detector](https://techcrunch.com/2014/03/30/how-dropbox-knows-when-youre-sharing-copyrighted-stuff-without-actually-looking-at-your-stuff/) flags a file as copyrighted.
+**Sync** keeps all the files identical between the two storage locations. If the sync encounters an error, it does not delete files in the destination.
+One common error occurs when the [Dropbox copyright detector](https://techcrunch.com/2014/03/30/how-dropbox-knows-when-youre-sharing-copyrighted-stuff-without-actually-looking-at-your-stuff/) flags a file as copyrighted.
 
-Note that syncing to a Backblaze B2 bucket does not delete files from the bucket, even when those files were deleted locally. Instead, files are tagged with a version number or moved to a hidden state. To automatically delete old or unwanted files from the bucket, adjust the [Backblaze B2 Lifecycle Rules](https://www.backblaze.com/blog/backblaze-b2-lifecycle-rules/).
+Note that syncing to a Backblaze B2 bucket does not delete files from the bucket, even when you deleted those files locally. Instead, files are tagged with a version number or moved to a hidden state. To automatically delete old or unwanted files from the bucket, adjust the [Backblaze B2 Lifecycle Rules](https://www.backblaze.com/blog/backblaze-b2-lifecycle-rules/).
 
-Files stored in Amazon S3 Glacier or S3 Glacier Deep Archive cannot be deleted by a sync. These files must first be restored by another means, like the [Amazon S3 console](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/restore-archived-objects.html).
+Sync cannot delete files stored in Amazon S3 Glacier or S3 Glacier Deep Archive. These files must first be restored by another means, like the [Amazon S3 console](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/restore-archived-objects.html).
 {{< /tab >}}
 {{< tab "Copy" >}}
-**Copy** duplicates each source file into the destination, _overwriting_ any files in the destination that have the same name as the source. Copying is the least potentially destructive option.
+**Copy** duplicates each source file into the destination, overwriting any destination files using the same name as the source. Copying is the least potentially destructive option.
 {{< /tab >}}
 {{< tab "Move" >}}
-**Move** transfers the files from the source to the destination and _deletes_ the original source files. Files with the same names on the destination are overwritten.
+**Move** transfers the files from the source to the destination and deletes the source files. **Move** also overwrites files with the same names on the destination.
 {{< /tab >}}
 {{< /tabs >}}
 
-Next, Use the **Control** options. Define when the task runs using **Schedule**. When a specific schedule is required, select **Custom** and use the **Advanced Scheduler**.
+Next, use the **Control** options. Define when the task runs using **Schedule**. If you need a specific schedule, select **Custom** and use the **Advanced Scheduler**.
 
 {{< expand "Advanced Scheduler" "v" >}}
 {{< include file="static/includes/SCALE/SCALEAdvancedScheduler.md.part" markdown="true" >}}
 {{< /expand >}}
 
-Remove the checkmark from the **Enable** checkbox to make the configuration available without allowing the specified schedule to run the task. To manually activate a saved task, go to **Data Protection > Cloud Sync Tasks**, click <i class="fa fa-play" aria-hidden="true"></i> for the cloud sync task you want to run.  You are prompted to **CONTINUE** or **CANCEL** the **Run Now** operation.
+Clear the **Enable** checkbox to make the configuration available without allowing the specified schedule to run the task. To manually activate a saved task, go to **Data Protection > Cloud Sync Tasks**, click <i class="fa fa-play" aria-hidden="true"></i> for the cloud sync task you want to run.  You are prompted to **CONTINUE** or **CANCEL** the **Run Now** operation.
 
 The remaining options allow tuning the task to your specific requirements.
 
@@ -63,7 +65,7 @@ The remaining options allow tuning the task to your specific requirements.
 
 ### Scripting and Environment Variables
 
-Advanced users can write scripts that run immediately *before* or *after* the Cloud Sync task. The **Post-script** field is only run when the cloud sync task successfully completes. You can pass a variety of task environment variables into the **Pre-** and **Post-** script fields:
+Advanced users can write scripts that run immediately before or after the cloud sync task. The **Post-script** field only runs when the cloud sync task succeeds. You can pass a variety of task environment variables into the **Pre-** and **Post-** script fields:
 
 * `CLOUD_SYNC_ID`
 * `CLOUD_SYNC_DESCRIPTION`
@@ -88,8 +90,8 @@ Local storage settings:
 
 ### Testing Settings
 
-To test the settings before saving, click **Dry Run**. TrueNAS connects to the cloud storage provider and simulates a file transfer. No data is sent or received.
-A dialog box displays with the test status and allows you to download the task logs. You can also run this by clicking <i class="material-icons" aria-hidden="true" title="Dry Run">loop</i> after the task is created.
+To test the settings before saving, click **Dry Run**. TrueNAS connects to the cloud storage provider and simulates a file transfer but does not send or receive data.
+A dialog box displays with the test status and allows you to download the task logs. You can also run this by clicking <i class="material-icons" aria-hidden="true" title="Dry Run">loop</i> after creating the task.
 
 ![DataProtectionCloudSyncAddBoxDryRun](/images/SCALE/DataProtectionCloudSyncDryRun.png "Example: Box Drive Test")
 
@@ -97,7 +99,7 @@ A dialog box displays with the test status and allows you to download the task l
 
 Saved tasks activate according to their schedule or by clicking <i class="material-icons" aria-hidden="true" title="Run Now">play_arrow</i>. An in-progress cloud sync must finish before another can begin. Stopping an in-progress task cancels the file transfer and requires starting the file transfer over.
 
-To view logs about a running or the most recent run of a task, click the task *State*.
+To view logs about a running task, or its most recent run, click **State**.
 
 ## Cloud Sync Restore
 
@@ -105,8 +107,8 @@ To quickly create a new cloud sync that uses the same options but reverses the d
 
 ![DataProtectionsCloudSyncRestore](/images/SCALE/DataProtectionCloudSyncRestore.png "Cloud Sync Restore")
 
-Type a new description for this reversed task, define the path to a storage location for the transferred data and click **Restore**.
+Type a new description for this reversed task, then define the path to a storage location for the transferred data and click **Restore**.
 
-The restored cloud sync is saved as another entry in **Data protection > Cloud Sync Tasks**.
+TrueNAS saves the restored cloud sync as another entry in **Data protection > Cloud Sync Tasks**.
 
-In case the restore destination dataset is the same as the original source dataset, the restored files might have their ownership altered to *root*. If the original files were not created by *root* and a different owner is required, you can recursively reset ACL permissions of the restored dataset through the GUI or by running `chown` from the CLI.
+If you set the restore destination to the source dataset, TrueNAS may alter ownership of the restored files to *root*. If *root* did not create the original files and you need them to have a different owner, you can recursively reset their ACL permissions through the GUI or run `chown` from the CLI.
