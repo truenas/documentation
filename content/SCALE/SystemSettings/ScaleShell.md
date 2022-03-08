@@ -38,7 +38,7 @@ Commands continue to run in a detached session.
 
 ## Experimental CLI
 
-The experimental SCALE command-line interface (CLI) lets you configure SCALE features directly.
+The experimental SCALE command-line interface (CLI) lets you directly configure SCALE features.
 
 {{< hint danger >}}
 SCALE CLI is experimental and still in active development.
