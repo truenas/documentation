@@ -69,5 +69,5 @@ To delete everything click the <i class="fa fa-ellipsis-v" aria-hidden="true" ti
 
 ![iSCSIDeleteTarget](/images/TrueCommand/2.1/iSCSIDeleteTarget.png "iSCSIDeleteTarget")
 
-TrueCommand cannot delete initiators and init groups because they may be tied to multiple targets.
+TrueCommand cannot delete initiators and init groups because they might be tied to multiple targets.
 To remove these settings, delete them from each TrueNAS system.
