@@ -37,6 +37,6 @@ The report will generate, and the graph will appear.
 
 ![ReportsGenerated](/images/TrueCommand/2.0/ReportsGenerated.png "ReportsGenerated")
 
-To download the report metrics in <file>JSON</file> format, hover your cursor over the report and click the blue down-arrow that appears. 
+To download the report metrics in <file>JSON</file> format, hover your cursor over the report and click the blue down-arrow that displays. 
 
 ![ReportsGeneratedDownloadData](/images/TrueCommand/2.0/ReportsGeneratedDownloadData.png "Reports Generated Download Data")
