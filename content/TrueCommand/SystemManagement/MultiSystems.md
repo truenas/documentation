@@ -54,7 +54,7 @@ There are three inventory information tabs:
 
 {{< tabs "System Inventory" >}}
 {{< tab "System" >}}
-The **System** tab provides information on the **Manufacturer**, the controllers' **Serial** numbers, the system's **Support Tier**, the support Contract's expiration date, the active controller's **Hostname**, the **CPU**, the number of **CPU Cores**, the amount of **Physical Memory**, what **OS** the system is running, and the **Uptime**.
+The **System** tab provides information on the **Manufacturer**, the controllers' **Serial** numbers, the system **Support Tier**, the support Contract expiration date, the active controller **Hostname**, the **CPU**, the number of **CPU Cores**, the amount of **Physical Memory**, what **OS** the system is running, and the **Uptime**.
 
 ![SystemInventorySystem](/images/TrueCommand/2.0/SystemInventorySystem.png "System Information")
 {{< /tab >}}
