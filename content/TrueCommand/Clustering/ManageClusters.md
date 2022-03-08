@@ -34,7 +34,7 @@ Selecting a system displays options for the brick. iXsystems strongly recommends
 
 ![DistributedClusterOptionsAddBrickOptions](/images/TrueCommand/2.0/DistributedClusterOptionsAddBrickOptions.png "DistributedClusterOptionsAddBrickOptions")
 
-Once you are satisfied with the settings, click **SAVE** to add the brick to the cluster.
+After you are satisfied with the settings, click **SAVE** to add the brick to the cluster.
 
 ![DistributedClusterOptionsAddProcessing](/images/TrueCommand/2.0/DistributedClusterOptionsAddProcessing.png "DistributedClusterOptionsAddProcessing")
 
