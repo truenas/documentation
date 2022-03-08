@@ -43,7 +43,7 @@ Grouping systems enables efficient system permissions and reporting management.
 Open the **System Groups** tab to view the list of created groups and the systems they contain.
 Create a Group by clicking **Configure <i class="material-icons" aria-hidden="true" title="Settings">settings</i>&nbsp; > Systems > + NEW GROUP**.
 Enter a name for the new group and click **ADD SYSTEM** to add a system to the group.
-Once you've added all the desired systems to the group, click **CREATE GROUP**.
+After you add all the desired systems to the group, click **CREATE GROUP**.
 
 ![SystemsNewGroup](/images/TrueCommand/2.0/SystemsGroupsNewGroup.png "New System Group")
 
