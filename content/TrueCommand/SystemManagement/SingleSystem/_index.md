@@ -6,7 +6,7 @@ geekdocCollapseSection: true
 
 While TrueCommand allows users to manage all of their systems on a single dashboard, it also lets users view single systems at a time. 
 
-To manage a single system, click on the system's name in its card or click on the dashboard drop-down menu, and hover over **Ungrouped** to see the systems list. 
+To manage a single system, click on the system name in its card or click on the dashboard drop-down menu, and hover over **Ungrouped** to see the systems list. 
 Select the system you want to manage.
 
 ![TrueCommandSelectSingleSystem](/images/TrueCommand/2.1/DashboardSelectSingleSystem.png "Select Single System")
