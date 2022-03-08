@@ -33,7 +33,7 @@ After you select the systems, click **Generate**
 
 ![ReportsGenerateDateWidgetGenerate](/images/TrueCommand/2.0/ReportsGenerateDateWidgetGenerate.png "Reports Generate Date Widget Generate")
 
-The report will generate, and the graph will appear. 
+The report generates, and the graph displays. 
 
 ![ReportsGenerated](/images/TrueCommand/2.0/ReportsGenerated.png "ReportsGenerated")
 
