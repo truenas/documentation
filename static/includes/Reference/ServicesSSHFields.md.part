@@ -5,7 +5,7 @@
 | TCP Port | Open a port for SSH connection requests. |
 | Log in as Root with Password | Root logins are discouraged. Allows root logins. A password must be set for the root user account. |
 | Allow Password Authentication | Enabling allows SSH login authentication using a password. Warning: when directory services are enabled, this setting grants access to all users the directory service imported. When disabled, authentication requires keys for all users (requires additional SSH client and server setup). |
-| Allow Kerberos Authentication | Before enabling, ensure valid entries exist in **Directory Services** (Kerberos Realms and Keytabs) and the system can communicate with the Kerberos Domain Controller . |
+| Allow Kerberos Authentication | Before enabling, ensure valid entries exist in **Directory Services** (Kerberos Realms and Keytabs) and the system can communicate with the Kerberos Domain Controller. |
 | Allow TCP Port Forwarding | Set to let users bypass firewall restrictions using the SSH port [forwarding feature](https://www.symantec.com/connect/articles/ssh-port-forwarding). |
 
 **Advanced Options**
