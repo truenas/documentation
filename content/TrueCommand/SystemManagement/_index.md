@@ -62,7 +62,7 @@ The *Options* menu has several shortcuts to simple tasks.
 
 #### Graphs
 
-Clicking the CPU, Disk, and Network values displays the system's statistical history.
+Click on the **CPU**, **Disk**, and **Network** values displays the system statistical history.
 
 + CPU
 
