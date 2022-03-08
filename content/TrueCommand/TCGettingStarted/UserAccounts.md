@@ -68,7 +68,7 @@ Click **ADD SYSTEM** and select a system from the drop-down to give the user acc
 To restrict the user to only viewing details about the system, set the **read** permission.
 To remove a user’s access to a particular system, click **-** (minus) on that system.
 
-When system groups are available, an **ADD GROUP** button appears.
+When system groups are available, an **ADD GROUP** button displays.
 Click **ADD GROUP** and select a group from the drop-down list to give the user access to all the systems in that group.
 To assign a user a type of access to the group, choose **read** or **read/write** permissions.
 To remove user access to a particular system group, click **-** (minus) on the desired group.
