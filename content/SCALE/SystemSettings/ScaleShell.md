@@ -17,7 +17,7 @@ The **Set font size** slider adjusts the **Shell** displayed text size.
 Click *RESTORE DEFAULT* to reset the **Shell** font size.
 
 The **Shell** stores the command history for the current session.
-Use the <kbd>Up</kbd> and <kbd>Down</kbd> arrow keys to scroll through previously entered commands.
+Use the keyboard up and down arrow keys to scroll through previously entered commands.
 Edit the command if desired, then press <kbd>Enter</kbd> to re-enter the command.
 Leaving the **Shell** screen clears the command history.
 
