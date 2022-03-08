@@ -66,7 +66,7 @@ This requires first configuring [system connections]({{< relref "/content/TrueCo
 
 Click **ADD SYSTEM** and select a system from the drop-down to give the user access to that system.
 To restrict the user to only viewing details about the system, set the **read** permission.
-To remove a user’s access to a particular system, click **-** (minus) on that system.
+To remove user access to a particular system, click **-** (minus) on that system.
 
 When system groups are available, an **ADD GROUP** button displays.
 Click **ADD GROUP** and select a group from the drop-down list to give the user access to all the systems in that group.
