@@ -36,7 +36,7 @@ To remove a system from TrueCommand monitoring, click **Delete**.
 
 ## Organizing Systems into Groups
 
-TrueCommand administrators can organize systems into collections called Groups.
+TrueCommand administrators can organize systems into collections called *groups*.
 
 Grouping systems enables efficient system permissions and reporting management.
 
