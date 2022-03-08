@@ -46,7 +46,7 @@ You can enter or paste the user public SSH key in the **Sshpubkey** field.
 
 You can also allow users to authenticate with Samba, connect from a Windows machine with their Microsoft account, and use sudo commands. 
 
-Check **Locked** to prevent them from logging in or using password-based services. 
+Check **Locked** to prevent users from logging in or using password-based services. 
 
 After configuring the user's authorization settings, click **NEXT**.
 {{< /tab >}}
