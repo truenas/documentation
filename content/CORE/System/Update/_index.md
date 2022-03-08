@@ -121,7 +121,7 @@ Be aware of these caveats before attempting a major version upgrade:
 * **Upgrading a data storage pool can make it impossible to go back to a previous version.**
   For this reason, the update process does not automatically upgrade storage pools, though the system shows an alert when a pool can be upgraded.
   Unless new ZFS feature flags are needed, it is safe to leave the pool at the current version.
-  If the pool is upgraded, it will not be possible to boot into a previous TrueNAS version that does not support the newer feature flags.
+  If the pool is upgraded, it isn't possible to boot into a previous TrueNAS version that does not support the newer feature flags.
 * Upgrading the firmware of Broadcom SAS HBAs to the latest version is recommended.
 * When upgrading from 9.3.x to 9.10, read this [changes FAQ](https://www.truenas.com/docs/files/Notice - 9.3 to 9.10 FAQ.pdf) first.
 * **Upgrades from FreeNAS 0.7x are not supported.**
