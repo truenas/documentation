@@ -56,7 +56,7 @@ Next, use the **Control** options. Define when the task runs using **Schedule**.
 {{< include file="static/includes/SCALE/SCALEAdvancedScheduler.md.part" markdown="true" >}}
 {{< /expand >}}
 
-Uncheck the **Enable** checkbox to make the configuration available without allowing the specified schedule to run the task. To manually activate a saved task, go to **Data Protection > Cloud Sync Tasks**, click <i class="fa fa-play" aria-hidden="true"></i> for the cloud sync task you want to run.  You are prompted to **CONTINUE** or **CANCEL** the **Run Now** operation.
+Clear the **Enable** checkbox to make the configuration available without allowing the specified schedule to run the task. To manually activate a saved task, go to **Data Protection > Cloud Sync Tasks**, click <i class="fa fa-play" aria-hidden="true"></i> for the cloud sync task you want to run.  You are prompted to **CONTINUE** or **CANCEL** the **Run Now** operation.
 
 The remaining options allow tuning the task to your specific requirements.
 
