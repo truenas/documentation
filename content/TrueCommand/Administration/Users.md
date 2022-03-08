@@ -82,7 +82,7 @@ To remove their access to a particular system, click **-** minus on that system.
 
 When TrueCommand has system groups, the **ADD GROUP** button displays.
 Click **ADD GROUP** and select a group from the drop-down to give the user access to all the systems in that group.
-To choose a user's group permissions, select **read** or **read/write**.
+To choose the user group permissions, select **read** or **read/write**.
 To remove their access to a particular system group, click **-** (minus) on that group.
 
 ## Resetting a User Password at Login
