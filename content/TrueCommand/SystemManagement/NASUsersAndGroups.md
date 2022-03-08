@@ -74,7 +74,7 @@ To delete multiple users, check them and click **REMOVE**.
 
 ### Adding a New Group
 
-Go to the dashboard and click the <i class="material-icons" aria-hidden="true" >more_vert</i> in a system's card and select **Users and Groups**, then click the **USERS** drop-down and select **GROUPS**. 
+Go to the dashboard and click the <i class="material-icons" aria-hidden="true" >more_vert</i> in a system card and select **Users and Groups**, then click the **USERS** drop-down and select **GROUPS**. 
 
 ![NASGroup1](/images/TrueCommand/2.0/NASGroup1.png "Creating a New NAS Group")
 
