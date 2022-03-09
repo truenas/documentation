@@ -7,42 +7,32 @@ weight: 10
 
 {{< hint danger >}}
 Cluster volume management is a BETA feature in TrueCommand 2.0. 
-Before attempting to use such features, please ensure that your data is backed up. 
-Do not rely on this for critical data.
+Back up your data *before* using BETA features. 
+Do not rely on cluster volume management for critical data.
 {{< /hint >}}
 
 {{< hint info >}}
-Gluster requires TrueNAS systems to have a static IP. TrueNAS with DHCP enabled can not be part of a cluster volume.
+Gluster requires TrueNAS systems to have a static IP. TrueNAS systems with DHCP enabled can not be part of a cluster volume.
 {{< /hint >}}
 
-{{< hint warning >}}
-TrueNAS does not support distributed dispersed volumes at this time.
-
-The cluster feature uses reverse DNS lookup. A valid reverse lookup is required.
-{{< /hint >}} 
-
-To create a cluster volume, click the **Cluster Volume** icon <mat-icon role="img" fontset="mdi" aria-hidden="true" class="mat-icon mdi mdi-server-network mat-icon-no-color"></mat-icon> in the top left of the top menu bar or the **Cluster Volume** button on the **Settings** menu <i class="material-icons" aria-hidden="true" title="Settings">settings</i> dropdown.
+To create a cluster volume, click the **Cluster Volume** <mat-icon role="img" fontset="mdi" aria-hidden="true" class="mat-icon mdi mdi-server-network mat-icon-no-color"></mat-icon> icon in the top left of the top menu bar or the **Cluster Volume** button on the **Settings** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu drop-down.
 
 Click **Create** on the **Cluster Volumes** page.
-Type a name for the cluster, select the desired type on the **Volume Type** drop-down list, and then set the redundancy level for distributed replicated and dispersed volumes.
+Name the cluster, select the desired type in the **Volume Type** drop-down list, then set the redundancy level for distributed replicated and dispersed volumes.
 
 ![ClusterVolumeTypeSelection](/images/TrueCommand/2.0/ClusterVolumeTypeSelection.png "Cluster Volume Type Selection")
 
-There are five types of clustered volumes.
+TrueCommand has five cluster volume types.
 
 {{< tabs "Types of Clustered Volumes" >}}
 {{< tab "Distributed" >}}
-Select **DISTRIBUTED** volume to distribute files across the various bricks in the volume. 
-You can only store *File-A* in *Brick-1* or *Brick-2* but not on both. 
-As a result, there is no data redundancy. 
-The purpose of a distributed volume is to easily and cheaply scale the volume size. 
-Distributed volumes can suffer significant data loss during a disk or server failure because directory contents are spread randomly across the bricks in the volume. 
+**DISTRIBUTED** volumes distribute files across the various bricks in the volume. *File-A* can be stored in *Brick-1* or *Brick-2* but not on both. As a result, the volume has no data redundancy. A distributed volume's purpose is to cheaply and easily scale the volume size. However, it can suffer significant data loss during a disk or server failure because directory contents are spread randomly across the bricks in the volume. 
 
 {{< hint danger >}}
-Warning: This means that a brick failure leads to complete loss of data.
+*Warning:* Brick failure in a distributed volume results in complete data loss.
 {{< /hint >}}
 
-Click the **Brick Choices** <i class="material-icons" aria-hidden="true" title="arrow_drop_down">arrow_drop_down</i> and select the locations to use for bricks from the dropdown list.
+Click the **Brick Choices** drop-down, then select the locations to use for bricks.
 
 ![DistributedClusterSelectBrickLocations](/images/TrueCommand/2.0/DistributedClusterSelectBrickLocations.png "DistributedClusterSelectBrickLocations")
 
@@ -54,25 +44,19 @@ Review the configuration and click **Create** to create the volume.
 
 ![DistributedClusterReview](/images/TrueCommand/2.0/DistributedClusterReview.png "DistributedClusterReview")
 
-After making the volume you can view its status.
+You can view the volume status after creating it.
 
 ![DistributedClusterCard](/images/TrueCommand/2.0/DistributedClusterCard.png "DistributedClusterCard")
-
 {{< /tab >}}
-{{< tab "Replicated" >}}
-Select **REPLICATED** volume for better reliability and data redundancy, and overcome the risk of data loss in a distributed volume. 
-Exact copies of the all of the data are maintained on all bricks. 
-The number of replicas in the volume is determined when creating the volume. 
-At least three bricks are needed to create a volume. 
-For further redundancy, add more bricks. 
-A three brick volume has three replicas, while a four brick volume contains four replicas. 
-A replicated volume allows data access even if a single brick fails. 
 
-Click the **Brick Choices** <i class="material-icons" aria-hidden="true" title="arrow_drop_down">arrow_drop_down</i> and select the locations to use for bricks from the dropdown list.
+{{< tab "Replicated" >}}
+**REPLICATED** volumes offer better reliability and data redundancy, and overcome the risk of data loss in a distributed volume. All bricks maintain exact copies of all data. You determine the number of replicas for the volume when you create it. Replicated volumes require at least three bricks, but you can add more bricks for additional redundancy. Three-brick volumes have three replicas, and four-brick volumes have four replicas. Replicated volumes allow data access even if a single brick fails. 
+
+Click the **Brick Choices** drop-down, then select the locations to use for bricks.
 
 ![ReplicatedClusterSelectBrickLocations](/images/TrueCommand/2.0/ReplicatedClusterSelectBrickLocations.png "ReplicatedClusterSelectBrickLocations")
 
-When finished click **Next**.
+When finished, click **Next**.
 
 ![ReplicatedClusterCreate](/images/TrueCommand/2.0/ReplicatedClusterCreate.png "ReplicatedClusterCreate")
 
@@ -80,34 +64,24 @@ Review the configuration and click **Create** to create the volume.
 
 ![ReplicatedClusterReview](/images/TrueCommand/2.0/ReplicatedClusterReview.png "ReplicatedClusterReview")
 
-After making the volume you can view its status.
+You can view the volume status after creating it. 
 
 ![ReplicatedClusterCard](/images/TrueCommand/2.0/ReplicatedClusterCard.png "ReplicatedClusterCard")
-
 {{< /tab >}}
-{{< tab "Distributed Replicated" >}}
-Select **DISTRIBUTED REPLICATED** volume to distribute data across replicated sets of bricks. 
-The number of bricks must be a multiple of the replica count. 
-The order in which bricks are specified is important because adjacent bricks become replicas of each other. 
-This type of volume is best used when high availability of data due to redundancy and scaling storage is required. 
-For example, an eight brick volume with a replica count of two would result in the first two bricks becoming replicas of each other, and then the next two and so on. 
-This volume can be referred to as 4x2. 
-By contrast, in this eight brick example, a replica count of four results in four bricks becoming replica of each other and this volume can be referred to as 2x4 volume.
 
-The **Replica value** for a distributed replicated volume must be a divisor of the total number of bricks selected. 
-If eight bricks are selected, the replica count can be either two or four. 
-A replica count of two creates a 4x2 volume where pairs of bricks replicate each other. 
-A replica count of four creates a 2x4 volume where sets of four bricks replicate each other.
+{{< tab "Distributed Replicated" >}}
+**DISTRIBUTED REPLICATED** volumes distribute data across replicated sets of bricks. The brick number must be a multiple of the replica count. The order in which you specify bricks is important because adjacent bricks become replicas of each other. Distributed replicated volumes are best when you need high data availability due to redundancy and scaling storage. For example, an eight-brick volume with a replica count of two would result in the first two bricks becoming replicas of each other, and then the next two and so on. This volume is called a 4x2. By contrast, in this eight brick example, a replica count of four results in four bricks becoming replicas of each other. This volume is called a 2x4.
+The distributed replicated volume's **Replica value** must be a divisor of the total number of bricks selected. If you use eight bricks, the replica count can be two or four. A replica count of two creates a 4x2 volume where pairs of bricks replicate each other. A replica count of four generates a 2x4 volume where sets of four bricks replicate each other.
 
 {{< hint warning >}}
-Using a replica count that is not a divisor of the total number or bricks results in a failed volume creation.
+Using a replica count that is not a divisor of the total brick number will cause volume creation to fail.
 {{< /hint >}}
 
-Click the **Brick Choices** <i class="material-icons" aria-hidden="true" title="arrow_drop_down">arrow_drop_down</i> and select the locations to use for bricks from the dropdown list.
+Click the **Brick Choices** drop-down, then select the locations to use for bricks.
 
 ![DistributedReplicatedClusterSelectBrickLocations](/images/TrueCommand/2.0/DistributedReplicatedClusterSelectBrickLocations.png "DistributedReplicatedClusterSelectBrickLocations")
 
-Select the **Replica Count** from the list. When finished click **Next**.
+Select the **Replica Count** from the list. When finished, click **Next**.
 
 ![DistributedReplicatedClusterCreate](/images/TrueCommand/2.0/DistributedReplicatedClusterCreate.png "DistributedReplicatedClusterCreate")
 
@@ -115,33 +89,25 @@ Review the configuration and click **Create** to create the volume.
 
 ![DistributedReplicatedClusterReview](/images/TrueCommand/2.0/DistributedReplicatedClusterReview.png "DistributedReplicatedClusterReview")
 
-After making the volume you can view its status.
+You can view the volume status after creating it.
 
 ![DistributedReplicatedClusterCard](/images/TrueCommand/2.0/DistributedReplicatedClusterCard.png "DistributedReplicatedClusterCard")
-
-
 {{< /tab >}}
+
 {{< tab "Dispersed" >}}
-Select **DISPERSED** volume to disperse data across the bricks. 
-It is based on erasure coding. 
-Erasure coding (EC) is a method of data protection in which data is broken into fragments, expanded and encoded with redundant data pieces and stored across a set of different locations. 
-This allows the recovery of the data stored on one or more bricks in case of failure. 
-The number of bricks that can fail without losing data is configured by setting the redundancy count. 
-Dispersed volumes allow a configurable level of reliability with minimal storage space waste. 
-The number of redundant bricks in the volume is determined when creating the volume. 
-The number of redundant bricks determines how many bricks can be lost without interrupting the operation of the volume.
+**DISPERSED** volumes disperse data across the bricks. Dispersed volumes use Erasure Coding (EC), a data protection method in which data is broken into fragments, expanded and encoded with redundant data pieces, and stored across a set of different locations. EC lets users recover the data stored on one or more bricks in case of failure. The redundancy count setting determines the number of bricks that can fail without losing data. Dispersed volumes allow a configurable level of reliability with minimal storage space waste. You define the number of redundant bricks in the volume when you create it. The number of redundant bricks determines how many bricks the volume can lose without interrupting operation.
 
-The **Redundancy value** for a dispersed volume must be greater than 0 and less than n minus 1 or n-1. 
-Think of the redundancy value as the number of bricks you can lose before data loss occurs. 
-The data protection offered by erasure coding can be represented in simple form by the following equation: *n* = *k* + *m*. 
-Here *n* is the total number of bricks, we would require any *k* bricks out of *n* bricks for recovery. 
-In other words, we can tolerate failure up to any *m* bricks.
+The dispersed volume's **Redundancy value** must be greater than 0 and less than n-1. Think of the redundancy value as the number of bricks you can lose before data loss occurs. 
 
-Click the **Brick Choices** <i class="material-icons" aria-hidden="true" title="arrow_drop_down">arrow_drop_down</i> and select the locations to use for bricks from the dropdown list.
+The data protection offered by erasure coding can be represented in simple form by the following equation: *n = k + m*. 
+
+Here, *n* is the total number of bricks. We would require any *k* bricks out of *n* bricks for recovery. In other words, we can tolerate failure up to any *m* bricks.
+
+Click the **Brick Choices** drop-down, then select the locations to use for bricks.
 
 ![DispersedClusterSelectBrickLocations](/images/TrueCommand/2.0/DispersedClusterSelectBrickLocations.png "DispersedClusterSelectBrickLocations")
 
-Select the **Redundancy value**. When finished click **Next**.
+Select the **Redundancy value**. When finished, click **Next**.
 
 ![DispersedClusterCreate](/images/TrueCommand/2.0/DispersedClusterCreate.png "DispersedClusterCreate")
 
@@ -149,16 +115,15 @@ Review the configuration and click **Create** to create the volume.
 
 ![DispersedClusterReview](/images/TrueCommand/2.0/DispersedClusterReview.png "DispersedClusterReview")
 
-After making the volume you can view its status.
+You can view the volume status after creating it.
 
 ![DispersedClusterCard](/images/TrueCommand/2.0/DispersedClusterCard.png "DispersedClusterCard")
-
 {{< /tab >}}
 
 {{< tab "Distributed Dispersed" >}}
 
 {{< hint warning >}}
-Distributed dispersed volumes are not implemented at this time.
+We have not implemented Distributed Dispersed volumes yet.
 {{< /hint >}} 
 
 {{< /tab >}}
