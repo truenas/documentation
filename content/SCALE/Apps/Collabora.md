@@ -45,7 +45,7 @@ Confirm your Collabora container options and click **Save** to complete setup.
 
 ![Collabora6](/images/SCALE/Collabora6.png "Confirm Collabora Options")
 
-After a few minutes, the Collabora container will display as **ACTIVE**. 
+After a few minutes, the Collabora container displays as **ACTIVE**. 
 
 ![Collabora7](/images/SCALE/Collabora7.png "Collabora Active")
 
