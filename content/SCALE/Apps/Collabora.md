@@ -17,7 +17,7 @@ To integrate Collabora correctly, you must have a [Nextcloud account with Collab
 
 Click on the Collabora app **Install** button in the **Available Applications** list.
 
-Name your App and click **Next**. In this example, the name is *collabora1*.
+Name your app and click **Next**. In this example, the name is *collabora1*.
 
 ![Collabora1](/images/SCALE/Collabora1.png "Install Collabora")
 
