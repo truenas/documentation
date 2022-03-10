@@ -41,7 +41,7 @@ Configure extra host path volumes for Collabora as you see fit, then click **Nex
 
 ![Collabora5](/images/SCALE/Collabora5.png "Configure Collabora Extra Host Path Volumes")
 
-Confirm your Collabora container's options and click **Save** to complete setup.
+Confirm your Collabora container options and click **Save** to complete setup.
 
 ![Collabora6](/images/SCALE/Collabora6.png "Confirm Collabora Options")
 
