@@ -9,7 +9,7 @@ SCALE includes Chia in its Official Apps catalog. Chia Blockchain is a new crypt
 
 ## Install the Chia App
 
-Click on the Chia app's **Install** button in the *Available Applications* list.
+Click on the Chia app **Install** button in the **Available Applications** list.
 
 ![ChiaInstall](/images/SCALE/chia_Install.png "Install Chia")
 
