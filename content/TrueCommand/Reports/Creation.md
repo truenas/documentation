@@ -15,7 +15,7 @@ The **Reports** page customizes system metrics charts for data analysis.
 ## Creating a Report
 
 Click **+ CREATE REPORT** to create a customizable report.
-Enter a report name and an optional description for the report.
+Give the report a name and an optional description.
 
 ![ReportsCreate](/images/TrueCommand/2.0/ReportsCreateReportNameDescription.png "Create a new report")
 
@@ -35,10 +35,9 @@ Fill in the following options when adding a custom chart:
 * Data sources: Add data sources to the chart by expanding a category and selecting which sources you want.
   You can add multiple data sources to one chart.
 * Summary: This step shows all chosen values.
-  Click **SAVE** to add the custom chart to the report, or **BACK** to change a setting or data source.
+  Click **SAVE** to add the custom chart to the report. Click **BACK** to change a setting or data source.
 
-After adding charts to the report, click **SAVE** to make this report available for use.
-
+After adding charts to the report, click **SAVE** to make it available for use.
 
 ![ReportsCreateReportSave](/images/TrueCommand/2.0/ReportsCreateReportSave.png "Reports Create Report Save")
 
@@ -48,7 +47,7 @@ After creating a report, you can click **GENERATE** to [generate the report]({{<
 
 ## Edit a Report
 
-Open the Reports page and click <i class="material-icons" aria-hidden="true" title="edit">edit</i> next to the report name to rename a report, add a description, or add/delete a Widget.
+Open the **Reports** page and click <i class="material-icons" aria-hidden="true" title="edit">edit</i> next to a report name to rename it, add a description, or add/delete a widget.
 
 ## Share Report
 
@@ -61,4 +60,4 @@ You can share reports with individual users or entire teams.
 
 ## Delete a Report
 
-Delete a report by clicking <i class="material-icons" aria-hidden="true" title="Delete">delete</i>. This will permenently delete the report but it it can be recreated as needed.
+To delete a report click <i class="material-icons" aria-hidden="true" title="Delete">delete</i>. This permanently deletes the report but you can recreate it as needed.

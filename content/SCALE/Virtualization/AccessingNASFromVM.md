@@ -7,11 +7,11 @@ weight: 20
 
 If you want to access your TrueNAS SCALE directories from a VM, you must create a bridge interface for the VM to use. 
 
-Go to **Virtualization**, find the VM you will use to access TrueNAS storage, and toggle it off.
+Go to **Virtualization**, find the VM you want to use to access TrueNAS storage, and toggle it off.
 
 ![AccessNASfromVM1](/images/SCALE/AccessNASfromVM1.png "Toggle off VM")
 
-Go to **Network** and find the active interface you used as the VM's parent interface. Note the interface's IP Address and subnet mask.
+Go to **Network** and find the active interface you used as the VM parent interface. Note the interface IP Address and subnet mask.
 
 {{< hint info >}}
 You can also get the IP address and subnet mask by going to **Shell** and entering `ip a`.
@@ -23,18 +23,18 @@ Click the interface. Uncheck the **DHCP** box, then click **Apply**.
 
 ![AccessNASfromVM2](/images/SCALE/AccessNASfromVM2.png "Turn off DHCP")
 
-Click **Add** in the **Interfaces** window. Select **Bridge** for the **Type** and give it a name (must be in *brX* format). Check the **DHCP** box, then select the active interface in the **Bridge Members** drop-down. Click **Add** under **IP Addresses** and enter the active interface's IP and subnet mask.
+Click **Add** in the **Interfaces** window. Select **Bridge** for the **Type** and give it a name (must be in *brX* format). Check the **DHCP** box, then select the active interface on the **Bridge Members** drop-down list. Click **Add** under **IP Addresses** and enter the active interface's IP and subnet mask.
 
 Click **Apply**, then click **Test Changes**. Once TrueNAS finishes testing the interface, click **Save Changes**.
 
 ![AccessNASfromVM4](/images/SCALE/AccessNASfromVM4.png "Save Network Changes")
 
-Go to **Virtualization**, expand the VM you will use to access TrueNAS storage, and click **Devices**. Click <i class="material-icons" aria-hidden="true" title="System Update">more_vert</i> in the **NIC** row and select **Edit**.
-Select the new bridge interface from the **Nic to attach:** drop-down, then click **Save**.
+Go to **Virtualization**, expand the VM you want to use to access TrueNAS storage, and click **Devices**. Click <i class="material-icons" aria-hidden="true" title="System Update">more_vert</i> in the **NIC** row and select **Edit**.
+Select the new bridge interface from the **Nic to attach:** drop-down list, then click **Save**.
 
 ![AccessNASfromVM5](/images/SCALE/AccessNASfromVM5.png "Save Network Changes")
 
-You can now access your TrueNAS storage from the VM. You may have to set up [shares]({{< relref "/content/SCALE/Shares/_index.md" >}}) or [users]({{< relref "LocalUsers.md" >}}) with home directories to access certain files.
+You can now access your TrueNAS storage from the VM. You might have to set up [shares]({{< relref "/content/SCALE/Shares/_index.md" >}}) or [users]({{< relref "LocalUsers.md" >}}) with home directories to access certain files.
 
 **Examples**
 

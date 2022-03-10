@@ -20,31 +20,30 @@ TrueNAS SCALE tickets are also tracked in the TrueNAS Jira Project.
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
 | 13.0-RC.1 | Code-freeze | 23 February 2022 |
-| 13.0-RC.1 | Internal Testing Sprints | 28 February > 04 March 2022 |
-| 13.0-RC.1 | Tag | 07 March 2022 |
-| 13.0-RC.1 | Release | 08 March 2022 |
-| 13.0-RELEASE | Code-freeze | 30 March 2022 |
-| 13.0-RELEASE | Internal Testing Sprints | 04 April > 08 April 2022 |
-| 13.0-RELEASE | Tag | 11 April 2022 |
-| 13.0-RELEASE | Release | 12 April 2022 |
-| 13.0-U1 | Code-freeze | 20 April 2022 |
-| 13.0-U1 | Internal Testing Sprints | 25 April > 29 April 2022 |
-| 13.0-U1 | Tag | 02 May 2022 |
-| 13.0-U1 | Release | 03 May 2022 |
-| 13.0-U2 | Code-freeze | 15 June 2022 |
-| 13.0-U2 | Internal Testing Sprints | 20 June > 24 June 2022 |
-| 13.0-U2 | Tag | 27 June 2022 |
-| 13.0-U2 | Release | 28 June 2022 |
+| 13.0-RC.1 | Internal Testing Sprint 1 | 28 February > 04 March 2022 |
+| 13.0-RC.1 | Development Resumes | 07 March 2022
+| 13.0-RC.1 | Code-freeze | 30 March 2022 |
+| 13.0-RC.1 | Internal Testing Sprint 2 | 04 April > 08 April 2022 |
+| 13.0-RC.1 | Tag | 11 April 2022 |
+| 13.0-RC.1 | Release | 12 April 2022 |
+| 13.0-RELEASE | Code-freeze | 20 April 2022 |
+| 13.0-RELEASE | Internal Testing Sprints | 25 April > 29 April 2022 |
+| 13.0-RELEASE | Tag | 02 May 2022 |
+| 13.0-RELEASE | Release | 03 May 2022 |
+| 13.0-U1 | Code-freeze | 15 June 2022 |
+| 13.0-U1 | Internal Testing Sprints | 20 June > 24 June 2022 |
+| 13.0-U1 | Tag | 27 June 2022 |
+| 13.0-U1 | Release | 28 June 2022 |
+| 13.0-U2 | Code-freeze | Q2 2022 |
+| 13.0-U2 | Internal Testing Sprints | Q2 2022 |
+| 13.0-U2 | Tag | Q2 2022 |
+| 13.0-U2 | Release | Q2 2022 |
 
 {{< /tab >}}
 {{< tab "TrueNAS SCALE" >}}
 
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
-| SCALE 22.02.0 | Code-freeze | 02 February 2022 |
-| SCALE 22.02.0 | Internal Testing Sprints | 07 February > 18 February 2022 |
-| SCALE 22.02.0 | Tag | 21 February 2022 |
-| SCALE 22.02.0 | Release | 22 February 2022 |
 | SCALE 22.02.1 | Code-freeze | 06 April 2022 |
 | SCALE 22.02.1 | Internal Testing Sprints | 11 April > 22 April 2022 |
 | SCALE 22.02.1 | Tag | 25 April 2022 |
@@ -59,7 +58,10 @@ TrueNAS SCALE tickets are also tracked in the TrueNAS Jira Project.
 
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
-| 2.1.1   | Release    | TBD            |
+| 2.1.1   | Code-freeze | 16 Mar 2022 |
+| 2.1.1   | Internal Testing Sprints | 21 March 2022 - 25 March 2022 |
+| 2.1.1   | Tag | 28 March 2022 |
+| 2.1.1   | Release | 29 March 2022 |
 | 2.2.0-BETA.1 | Internal Testing Sprints | 04 April > 08 April 2022 |
 | 2.2.0-RC.1 | Internal Testing Sprints | 25 April > 29 April 2022 |
 | 2.2.0 | Code-freeze | 27 April 2022 |

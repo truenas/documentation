@@ -3,18 +3,18 @@ title: "System Settings"
 weight: 10
 ---
 
-TrueCommand allows users to manage certain settings when managing a single system. To see the system settings menu, click the three-dot icon in a system card window on the TrueCommand dashboard to display the menu.
+TrueCommand lets users customize select settings when managing a single system. To see the system settings menu, click the three-dot icon in a system card window on the TrueCommand dashboard to display the menu.
 
 ![TrueCommandSystemSettingsMenu](/images/TrueCommand/2.1/TrueCommandSystemSettingsMenu.png "System Settings Menu")
 
 {{< tabs "System Menu" >}}
 {{< tab "Edit" >}}
 
-To edit a systems general settings, click the **Edit** button in the system settings menu.
+To edit system general settings, click the **Edit** button in the system settings menu.
 
-The **General Settings** window lets users edit the system's IP address/hostname, nickname, password/API key, and alert options. 
-Click **SAVE CHANGES** to keep your changes or **RESET** reset and start over. 
-Click off the window back to dashboard to close the edit window without making changes. 
+The **General Settings** window lets users edit the system IP address/hostname, nickname, password/API key, and alert options. 
+Click **SAVE CHANGES** to keep your changes, or **RESET** reset and start over. 
+Click off the window back to the dashboard to close the edit window without making changes. 
 
 ![TrueCommandSystemSettingsEdit](/images/TrueCommand/2.1/TrueCommandSystemSettingsEdit.png "System Settings Edit")
 
@@ -24,8 +24,8 @@ Click off the window back to dashboard to close the edit window without making c
 To displays a list of users or groups on the selected system, click the **Users and Groups** button <mat-icon _ngcontent-igf-c221="" role="img" fontset="mdi" class="mat-icon notranslate mdi mdi-account-group mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" data-mat-icon-name="mdi-account-group" data-mat-icon-namespace="mdi"></mat-icon>.  
 Click the **Users** dropdown to select **Groups** to change the list to groups on the system.
 
-{{< hint info >}}
-Note: This new 2.1 Users And Groups function is experimental feature that could be radically changed or removed in future releases. Use with caution!
+{{< hint warning >}}
+This new 2.1 Users And Groups function is an experimental feature that could be radically changed or removed in future releases. Use with caution!
 {{< /hint >}}
 
 ![SystemSettingsUsersAndGroups](/images/TrueCommand/2.1/SystemUsersAndGroups.png "System Settings Users and Groups")
@@ -41,7 +41,7 @@ Scroll down to view all edit fields. Click **SAVE** to keep changes or **CANCEL*
 {{< /tab >}}
 {{< tab "Update" >}}
 
-Click the **Update** button <i class="material-icons" aria-hidden="true" title="Update">update</i> in the system settings menu to update the system to the latest build. After clicking the **Update** button, an update window with system and update information displays. Click **Confirm** and then **OK** to begin the update, or click **CANCEL** to exit without updating. During a system update the system card changes to indicate that the system is offline and finishing the update.
+Click the **Update** button <i class="material-icons" aria-hidden="true" title="Update">update</i> in the system settings menu to update the system to the latest build. After clicking the **Update** button, an update window with system and update information displays. Click **Confirm** and then **OK** to begin the update, or click **CANCEL** to exit without updating. During a system update, the system card changes to indicate that the system is offline and finishing the update.
 
 ![SystemUpdate](/images/TrueCommand/2.1/SystemSettingUpdate.png "System Update")
 
@@ -49,8 +49,6 @@ Click the **Update** button <i class="material-icons" aria-hidden="true" title="
 {{< tab "Launch TrueNAS Interface" >}} 
 
 Click the **Launch TrueNAS Interface** button <mat-icon _ngcontent-igf-c221="" role="img" fontset="mdi" class="mat-icon notranslate mdi mdi-monitor-screenshot mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" data-mat-icon-name="mdi-monitor-screenshot" data-mat-icon-namespace="mdi"></mat-icon> on the system settings menu to open a new browser tab pointed at the selected system's web interface.
-
-From the interface, you can create and manage storage, shapshots, and shares using File Explorer. You can create and/or delete datasets, zvols, shapshots and shares.
 
 {{< /tab >}}
 {{< tab "iSCSI Volumes" >}} 
@@ -66,7 +64,7 @@ See the full [iSCSI Management]({{< relref "iSCSIManagement.md" >}}) article for
 
 TrueCommand offers limited control over system services. Click on the **Services** button <mat-icon _ngcontent-igf-c221="" role="img" fontset="mdi" class="mat-icon notranslate mdi mdi-toolbox-outline mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" data-mat-icon-name="mdi-toolbox-outline" data-mat-icon-namespace="mdi"></mat-icon> on the system settings menu to display the list of services on the selected system. The **Services** window displays the current status of the service.
 
-Users can't currently edit service parameters, but can set them to start on boot, stop, start and restart them.
+You cannot edit service parameters with TrueCommand, but you can set them to start automatically on boot, stop, and start.
 
 ![TrueCommandSystemSettingsServices](/images/TrueCommand/2.1/SystemSettingsServices.png "System Settings Services")
 
