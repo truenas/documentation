@@ -25,7 +25,7 @@ Select a **Timezone** and, if you wish, enter a custom **Username** and **Passwo
 
 You can also add extra parameters to your container as you see fit. See The [LibreOffice GitHub Parameters](https://github.com/LibreOffice/online/blob/master/loolwsd.xml.in) page for more.
 
-Once you've selected your container settings, choose a **Certificate** and click **Next**.
+After you select your container settings, choose a **Certificate** and click **Next**.
 
 ![Collabora2](/images/SCALE/Collabora2.png "Configure Collabora Container")
 
