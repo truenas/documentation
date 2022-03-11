@@ -31,7 +31,7 @@ They are organized into broad categories and incorporate a community rating syst
 You are always welcome to network with other TrueNAS users using the various social media platforms!
 
 * [Reddit](https://www.reddit.com/r/truenas/)
-* [Twitter](https://mobile.twitter.com/freenas)
+* [Twitter](https://twitter.com/TrueNAS)
 * [LinkedIn](https://www.linkedin.com/groups/3903140/)
 * [Facebook](https://www.facebook.com/freenascommunity)
 
