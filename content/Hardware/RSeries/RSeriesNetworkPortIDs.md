@@ -16,17 +16,17 @@ This table lists the default identification for R-Series systems and any add-on 
 
 | Model | CORE/Enterprise Installed | SCALE Installed |
 |-------|---------------------------|-----------------|
-| R10   | Port 0: `ixl0` | Port 0: `en01` |
-|       | Port 1: `ixl1` | Port 1: `en02` |
-| R20   | Port 0: `ixl0` | Port 0: `en01` |
-|       | Port 1: `ixl1` | Port 1: `en02` |
-| R20A  | Port 0: `ixl0` | Port 0: `en01` |
-|       | Port 1: `ixl1` | Port 1: `en02` |
-| R20B  | Port 0: `ixl0` | Port 0: `en01` |
-|       | Port 1: `ixl1` | Port 1: `en02` |
-| R40   | Port 0: `ixl0` | Port 0: `en01` |
-|       | Port 1: `ixl1` | Port 1: `en02` |
-| R50   | Port 0: `ixl0` | Port 0: `en01` |
-|       | Port 1: `ixl1` | Port 1: `en02` |
-| R50B  | Port 0: `ixl0` | Port 0: `en01` |
-|       | Port 1: `ixl1` | Port 1: `en02` |
+| R10   | Port 0: `ixl0` | Port 0: `eno1` |
+|       | Port 1: `ixl1` | Port 1: `eno2` |
+| R20   | Port 0: `ixl0` | Port 0: `eno1` |
+|       | Port 1: `ixl1` | Port 1: `eno2` |
+| R20A  | Port 0: `ixl0` | Port 0: `eno1` |
+|       | Port 1: `ixl1` | Port 1: `eno2` |
+| R20B  | Port 0: `ixl0` | Port 0: `eno1` |
+|       | Port 1: `ixl1` | Port 1: `eno2` |
+| R40   | Port 0: `ixl0` | Port 0: `eno1` |
+|       | Port 1: `ixl1` | Port 1: `eno2` |
+| R50   | Port 0: `ixl0` | Port 0: `eno1` |
+|       | Port 1: `ixl1` | Port 1: `eno2` |
+| R50B  | Port 0: `ixl0` | Port 0: `eno1` |
+|       | Port 1: `ixl1` | Port 1: `eno2` |
