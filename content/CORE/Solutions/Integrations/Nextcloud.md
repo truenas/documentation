@@ -10,7 +10,7 @@ The [NextCloud](https://nextcloud.com/) plugin is a suite of client-server softw
 ### Plugins Catalog
 
 {{< expand "Before getting started..." "v" >}}
-* A [data pool]({{< relref "PoolCreate.md" >}}) must be available for plugin storage.
+* You must have a [data pool]({{< relref "PoolCreate.md" >}}) available for plugin storage.
 * The system must be connected to the internet.
 * Go to **Network > Interfaces**, edit the intended plugin interface, and set *Disable Hardware Offloading*.
 {{< /expand >}}
@@ -57,7 +57,7 @@ Click **MANAGE** to access the Nextcloud login page within your browser.
 
 ![NextcloudLogin](/images/CORE/12.0/SolutionsIntegrationsNextcloudLogin.png "Nextcloud Login")
 
-Enter the credentials obtained from **POST INSTALL NOTES** and click **Log in** to access the Nextcloud Hub.
+Enter the credentials from **POST INSTALL NOTES** and click **Log in** to access the Nextcloud Hub.
 
 ![NextcloudHub](/images/CORE/12.0/SolutionsIntegrationsNextcloudLogin.png "Nextcloud Hub")
 {{< /tab >}}
@@ -72,13 +72,13 @@ Select an **IPv4 Netmask** (iX recommends 24), then click **SAVE**.
 
 ![NextcloudStatic1](/images/CORE/NextcloudStatic1.png "Nextcloud Static Setup")
 
-Once Nextcloud installs successfully, you must add your Nextcloud IP to your Nextcloud jail trusted domains.
+Once Nextcloud installs, you must add your Nextcloud IP to your Nextcloud jail trusted domains.
 
 Go to **Jails** and expand your Nextcloud jail, then click **> SHELL**.
 
 Enter `ee /usr/local/www/nextcloud/config/config.php` to edit your Nextcloud config file.
 
-Scroll to the `trusted_domains` section and type your Nextcloud IP as a new item. Use the image below for reference.
+Scroll to the `trusted_domains` section and type your Nextcloud IP as a new line item. Use the image below for reference.
 
 ![NextcloudTrustedDomain](/images/CORE/NextcloudTrustedDomain.png "Nextcloud Add Trusted Domain")
 
@@ -89,7 +89,7 @@ Click **POST INSTALL NOTES** to obtain your *Nextcloud Admin User* and *Nextclou
 
 ![NextcloudLogin](/images/CORE/12.0/SolutionsIntegrationsNextcloudLogin.png "Nextcloud Login")
 
-Enter the credentials obtained from **POST INSTALL NOTES** and click **Log in**.  You will be directed to the Nextcloud Hub.
+Enter the credentials from **POST INSTALL NOTES** and click **Log in**.  You will be directed to the Nextcloud Hub.
 {{< /tab >}}
 {{< /tabs >}}
 
