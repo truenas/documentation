@@ -94,6 +94,6 @@ jobs:
             --exclude=https://www.backblaze.com/
             --exclude=https://discord.com/invite/Q3St5fPETd
             --exclude=https://www.veeam.com/documentation-guides-datasheets.html
-            --exclude=https://www.twitter.com/TrueNAS
+            --exclude=https://twitter.com/TrueNAS
           run_timeout: 300
           debug: true
