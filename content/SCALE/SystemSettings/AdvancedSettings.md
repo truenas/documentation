@@ -95,7 +95,7 @@ The *Init/Shutdown Scripts* window allows users to schedule commands or scripts 
 
 Users can move the system dataset to unencrypted pools or encrypted pools without passphrases.
 
-Users can move the system dataset to a key encrypted pool but, after the move, that pool's encryption type can't be changed to passphrase. If the encrypted pool already has a passphrase set, you cannot move the system dataset to that pool.
+Users can move the system dataset to a key encrypted pool but, after the move, the pool encryption type can't be changed to passphrase. If the encrypted pool already has a passphrase set, you cannot move the system dataset to that pool.
 
 ## Isolated GPU Device(s)
 
