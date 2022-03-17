@@ -51,7 +51,7 @@ The **Sysctl** window allows users set up tunables that configure kernel paramet
 
 ## Kernel
 
-The *Kernel* window contains options for system optimization and kernel debugging.
+The **Kernel** window contains options for system optimization and kernel debugging.
 
 | Name | Description |
 |------|-------------|
@@ -60,7 +60,7 @@ The *Kernel* window contains options for system optimization and kernel debuggin
 
 ## Cron Jobs
 
-The *Cron Jobs* window allows users to configure jobs that run specific commands or scripts on a regular schedule using [cron(8)](https://manpages.debian.org/testing/cron/cron.8.en.html "Cron Man Page"). Cron Jobs help run repetitive tasks.
+The **Cron Jobs** window allows users to configure jobs that run specific commands or scripts on a regular schedule using [cron(8)](https://manpages.debian.org/testing/cron/cron.8.en.html "Cron Man Page"). Cron Jobs help run repetitive tasks.
 
 | Name | Description |
 |------|-------------|
@@ -74,7 +74,7 @@ The *Cron Jobs* window allows users to configure jobs that run specific commands
 
 ## Init/Shutdown Scripts
 
-The *Init/Shutdown Scripts* window allows users to schedule commands or scripts to run at system startup or shutdown. 
+The **Init/Shutdown Scripts** window allows users to schedule commands or scripts to run at system startup or shutdown. 
 
 | Name | Description |
 |------|-------------|
@@ -99,7 +99,7 @@ Users can move the system dataset to a key encrypted pool but, after the move, t
 
 ## Isolated GPU Device(s)
 
-The *Isolated GPU Device(s)* window allows users to isolate additional GPU devices for GPU passthrough.
+The **Isolated GPU Device(s)** window allows users to isolate additional GPU devices for GPU passthrough.
 
 GPU passthrough allows the TrueNAS SCALE kernel to directly present an internal PCI GPU to a virtual machine (VM).
 
