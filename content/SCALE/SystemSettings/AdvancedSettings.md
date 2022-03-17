@@ -91,7 +91,7 @@ The *Init/Shutdown Scripts* window allows users to schedule commands or scripts 
 
 ## System Dataset Pool
 
-*System Dataset Pool* allows users select the storage pool to hold the system dataset. The system dataset stores debugging core files, encryption keys for encrypted pools, and Samba4 metadata such as the user and group cache and share level permissions.
+**System Dataset Pool** allows users select the storage pool to hold the system dataset. The system dataset stores debugging core files, encryption keys for encrypted pools, and Samba4 metadata such as the user and group cache and share level permissions.
 
 Users can move the system dataset to unencrypted pools or encrypted pools without passphrases.
 
