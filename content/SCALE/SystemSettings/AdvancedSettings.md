@@ -40,7 +40,7 @@ The **Syslog** window allows users configure how and when the system sends log m
 
 ## Sysctl
 
-The *Sysctl* window allows users set up tunables that configure kernel parameters at runtime.
+The **Sysctl** window allows users set up tunables that configure kernel parameters at runtime.
 
 | Name | Description |
 |------|-------------|
