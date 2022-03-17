@@ -28,7 +28,7 @@ The *Console* window allows users to configure the [Console Setup menu]({{< relr
 
 ## Syslog
 
-The *Syslog* window lets users configure how and when the system sends log messages to the Syslog server.
+The *Syslog* window allows users configure how and when the system sends log messages to the Syslog server.
 
 | Name | Description |
 |------|-------------|
@@ -40,7 +40,7 @@ The *Syslog* window lets users configure how and when the system sends log messa
 
 ## Sysctl
 
-The *Sysctl* window lets users set up tunables that configure kernel parameters at runtime.
+The *Sysctl* window allows users set up tunables that configure kernel parameters at runtime.
 
 | Name | Description |
 |------|-------------|
@@ -91,7 +91,7 @@ The *Init/Shutdown Scripts* window allows users to schedule commands or scripts 
 
 ## System Dataset Pool
 
-*System Dataset Pool* lets users select the storage pool to hold the system dataset. The system dataset stores debugging core files, encryption keys for encrypted pools, and Samba4 metadata such as the user and group cache and share level permissions.
+*System Dataset Pool* allows users select the storage pool to hold the system dataset. The system dataset stores debugging core files, encryption keys for encrypted pools, and Samba4 metadata such as the user and group cache and share level permissions.
 
 Users can move the system dataset to unencrypted pools or encrypted pools without passphrases.
 
