@@ -106,4 +106,4 @@ GPU passthrough allows the TrueNAS SCALE kernel to directly present an internal 
 The GPU device acts like the VM is driving it, and the VM detects the GPU as if it is physically connected.
 
 ## Replication
-The *Replication* window allows users to limit the maximum number of replication tasks being executed simultaneously.
+The **Replication** window allows users to limit the maximum number of replication tasks executed simultaneously.
