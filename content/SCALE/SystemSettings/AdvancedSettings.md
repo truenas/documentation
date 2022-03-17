@@ -16,7 +16,7 @@ Advanced Settings have reasonable defaults in place. Changing advanced settings 
 
 ## Console
 
-The *Console* window allows users to configure the [Console Setup menu]({{< relref "Post-installConfiguration.md" >}}).
+The **Console** window allows users to configure the [Console Setup menu]({{< relref "Post-installConfiguration.md" >}}).
 
 | Name | Description |
 |------|-------------|
@@ -28,7 +28,7 @@ The *Console* window allows users to configure the [Console Setup menu]({{< relr
 
 ## Syslog
 
-The *Syslog* window allows users configure how and when the system sends log messages to the Syslog server.
+The **Syslog** window allows users configure how and when the system sends log messages to the Syslog server.
 
 | Name | Description |
 |------|-------------|
