@@ -103,7 +103,7 @@ The *Isolated GPU Device(s)* window allows users to isolate additional GPU devic
 
 GPU passthrough allows the TrueNAS SCALE kernel to directly present an internal PCI GPU to a virtual machine (VM).
 
-The GPU device will act like the VM is driving it, and the VM detects the GPU as if it were physically connected.
+The GPU device acts like the VM is driving it, and the VM detects the GPU as if it is physically connected.
 
 ## Replication
 The *Replication* window allows users to limit the maximum number of replication tasks being executed simultaneously.
