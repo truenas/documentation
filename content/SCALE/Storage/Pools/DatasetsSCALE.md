@@ -18,7 +18,7 @@ To create a dataset in the desired pool, go to **Storage**.
 
 Select the pool top-level (root) dataset, and then click the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; and select **Add Dataset**.
 
-![DatasetAddSCALE](/images/SCALE/SCALEDatasetOptions.png "Add Dataset")
+![DatasetAddSCALE22](/images/SCALE/22.02/SCALE22DatasetOptions.png "Add Dataset")
 
 To create a dataset with the default options, enter a name and click **Submit**.
 
