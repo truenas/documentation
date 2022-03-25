@@ -22,7 +22,7 @@ Customers who purchase iXystems hardware or that want additional support must ha
 ### TrueNAS Community
 
 The [TrueNAS Community](https://www.truenas.com/community/) is an active online resource for asking questions, troubleshooting issues, and sharing information with other TrueNAS users.
-[Registering](https://www.truenas.com/community/register/) is required for posting.
+[Registration](https://www.truenas.com/community/register/) is required for posting.
 New users are encouraged to privide a brief [introduction](https://www.truenas.com/community/forums/introductions.25/) of themselves and to review the [forum rules](https://www.truenas.com/community/threads/forum-rules.45124/) before posting.
 
 [Community Resources](https://www.truenas.com/community/resources/) are user contributed articles about every facet of using TrueNAS.

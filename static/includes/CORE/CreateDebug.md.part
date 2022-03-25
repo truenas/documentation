@@ -1,6 +1,6 @@
 The TrueNAS web interface allows users to save debugging information to a text file.
 
-Go to **System > Advanced** (**System Settings > Advanced** in TrueNAS SCALE) and click **SAVE DEBUG**.
+Go to **System > Advanced** (or **System Settings > Advanced** in TrueNAS SCALE) and click **SAVE DEBUG**.
 Click **PROCEED** to generate the debug file. You cannot click options in the web interface while generating the debug file.
 A dialogue box displays debug file creation progress.
 
