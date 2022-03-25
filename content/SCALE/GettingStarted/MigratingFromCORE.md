@@ -12,7 +12,7 @@ Migrating TrueNAS from CORE to SCALE is a one-way operation. Attempting to activ
 {{< hint danger >}}
 #### Migrating GELI-encrypted Pools to SCALE
 TrueNAS SCALE is based on Linux, which does not support FreeBSD GELI encryption.
-If you have GELI-encrypted pools on your system that you plan to import into SCALE, you must migrate your data from the GELI pool to a non-GELI encrypted pool *before* migrating to SCALE.
+If you have GELI-encrypted pools on your system that you plan to import into SCALE, you must migrate your data from the GELI pool to a non-GELI encrypted pool *before* migrating to SCALE. Refer to the [encryption](/CORE/Storage/Pools/StorageEncryption.md) article for more information. 
 {{< /hint >}}
 
 {{< tabs "Migration Methods" >}}
@@ -34,11 +34,13 @@ The installer asks if you want to preserve your existing configuration or start 
 
 {{< hint warning>}}
 Although TrueNAS attempts to keep most of your CORE configuration data when upgrading to SCALE, some CORE-specific items do not transfer.
-GELI Encrypted pools, NIS data, metadata, jails, tunables, and boot environments do not migrate from CORE to SCALE. AFP shares also do not transfer, but can be migrated into an SMB share with AFP compatability enabled. Init/shutdown scripts transfer, but can break and should be reviewed before use.
+GELI Encrypted pools, NIS data, metadata, jails, tunables, and boot environments do not migrate from CORE to SCALE.
+AFP shares also do not transfer, but can be migrated into an SMB share with AFP compatability enabled. 
+Init/shutdown scripts transfer, but can break and should be reviewed before use.
 The CORE netcli utility is also swapped for a new CLI utility that is used for the Console Setup Menu and other commands issued in a CLI.
 {{< /hint >}}
 
-After choosing to install in new boot environment, the installer warns that SCALE installs into the boot pool previously used for CORE. Select *Yes*.
+After choosing to install in new boot environment, the installer warns that SCALE installs into the boot pool previously used for CORE. Select **Yes**.
 
 ![SCALEUpgrade4](/images/SCALE/SCALEUpgrade4.png "Proceed with the upgrade")
 
@@ -70,5 +72,23 @@ Then click **APPLY UPDATE**.
 After the update completes, reboot the system.
 ![SCALESidegradeReboot](/images/SCALE/SidegradeRestart.png  "Reboot to Finish")
   
+{{< /tab >}}
+{{< tab "SCALE CLI Commands" >}}
+
+The following CLI commands are available after migrating from CORE to SCALE. The CORE equivalent CLI command is provided for reference.
+
+| CORE CLI Comand | SCALE CLI Command | Description |
+| [camcontrol devlist](https://www.freebsd.org/cgi/man.cgi?query=camcontrol&sektion=8) | [lshw -class disk -short sfdisk -l](https://linux.die.net/man/1/lshw) | `lshw -class disk -short sfdisk -l` provides detailed information on hardware (disk) configuration and can include memory, mainboard and cache cofiguration, firmware version, CPU version and speed. |
+| [geom disk list](https://www.freebsd.org/cgi/man.cgi?geom(4)) | [lsblk](https://manpages.debian.org/testing/util-linux/lsblk.8.en.html), [hdparm](https://manpages.debian.org/bullseye/hdparm/hdparm.8.en.html) | `lsblk` lists block devices. `hwparm` to get or set SATA/IDE device parameters. |
+| [glabel status](https://www.freebsd.org/cgi/man.cgi?glabel(8)) | [blkid](https://linux.die.net/man/8/blkid) | Use `blkid` to locate or print block device attributes. |
+| [gstat gstat -pods](https://www.freebsd.org/cgi/man.cgi?gstat(8)) | [iostat](https://manpages.debian.org/testing/sysstat/iostat.1.en.html) iostat -dtx | `iostat -dtx` displays the device utiilization report with the time for each report displayed and includes extended statistics. |
+| [ifconfig](https://www.freebsd.org/cgi/man.cgi?ifconfig(8)) ifconfig -l | [ip addr](https://linux.die.net/man/8/ip) <br>[ifconfig -s](https://linux.die.net/man/8/ifconfig)</br> <br>[lshw -class network -short](https://linux.die.net/man/1/lshw)</br> <br>[ethtool *devname*](https://linux.die.net/man/8/ethtool)</br> | Use `ip addr` to show or manipulate routing, devices, or policy routing and tunnels. <br>Use `ifconfig -s` cofigure a network interface.</br><br> Use `lshw -class network -short` to display a network device tree showing hardware paths.</br><br>Use `ethtool *devnam*` to query or control network driver and hardware settings.</br> |
+| [netstat -i](https://www.freebsd.org/cgi/man.cgi?query=netstat&sektion=1) | [ifstat -i](https://linux.die.net/man/1/ifstat) | Use `ifstat -i` to get interface statisitcs on a list of interfaces to monitor. |
+| [nvmecontrol devlist](https://www.freebsd.org/cgi/man.cgi?query=nvme&sektion=4) | [nvme list](https://manpages.org/nvme-list-ctrl) | Use `nvme list` to identify the list of NVMe devices on your system. |
+| [pmcstat](https://www.freebsd.org/cgi/man.cgi?query=pmcstat&sektion=8) | [profile-bpfcc](https://manpages.debian.org/unstable/bpfcc-tools/profile-bpfcc.8.en.html) | Use `profile-bpfcc` to profile the CPU usage by sampling stack traces. |
+| [systat -ifstat](https://www.freebsd.org/cgi/man.cgi?query=systat&sektion=1&manpath=FreeBSD+4.9-RELEASE) | [iftop](https://linux.die.net/man/8/iftop) <br>[netstat](https://linux.</br>die.net/man/8/netstat) | Use `iftop` to display interface bandwidth usage by host and `netstat` to print network connections, routing tables, interface statistics, masquerade connections, and multicast memberships. |
+| [top -SHIzP](https://www.freebsd.org/cgi/man.cgi?top(1)) | [top -Hi](https://linux.die.net/man/1/top) | `top -Hi` displays Linux tasks for all individual threads and starts with the last remembered *i* state reversed. |
+| [vmstat -P](https://www.freebsd.org/cgi/man.cgi?query=vmstat&apropos=0&sektion=0&manpath=2.8+BSD&format=html) | [sar -P ALL](https://linux.die.net/man/1/sar) | `sar -P ALL` reports statistics for each individual processor and global statistics among all processors. |
+
 {{< /tab >}}
 {{< /tabs >}}
