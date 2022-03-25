@@ -18,7 +18,7 @@ The **About** tab contains the current TrueCommand system ID and version, contac
 
 ### Updating the License
 
-You can expand TrueCommand to monitor more disks by upgrading or purchasing a license from iXsystems.
+TrueCommand can be expanded to monitor more disks by upgrading or purchasing a license from iXsystems.
 Click **GET A LICENSE** to open a new browser tab to purchase a TrueCommand license.
 You can also contact iXsystems to upgrade the current license.
 
