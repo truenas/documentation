@@ -23,7 +23,7 @@ For **Nextcloud Configuration** the **Username** value defaults to **admin** and
 
 ![SCALENextcloudConfiguration](/images/SCALE/SCALENextcloudConfiguration.png "SCALE Nextcloud Configuration")
 
-For *Storage*, *Scaling/Upgrading Policy* and *Advanced DNS Settings* the defaults can be used for basic installation by clicking *Next* or bypassing and going directly to *Confirm Options*.  To *Confirm Options*, review the information presented and ensure that it is all correct.  Click *Submit*.
+For the **Storage**, **Scaling/Upgrading Policy** and **Advanced DNS Settings** you can use the defaults for basic installation by clicking **Next** or bypassing and going directly to **Confirm Options**.  To *Confirm Options*, review the information presented and ensure that it is all correct.  Click *Submit*.
 
 ![SCALENextcloudConfirmOptions](/images/SCALE/SCALENextcloudConfirmOptions.png "SCALE Nextcloud Confirm Options")
 
