@@ -73,9 +73,11 @@ After the update completes, reboot the system.
 ![SCALESidegradeReboot](/images/SCALE/SidegradeRestart.png  "Reboot to Finish")
   
 {{< /tab >}}
-{{< tab "SCALE CLI Commands" >}}
+{{< /tabs >}}
+  
+## Parallel SCALE CLI Commands
 
-The following CLI commands are available after migrating from CORE to SCALE. The CORE equivalent CLI command is provided for reference.
+The following CLI commands are available after migrating from CORE to SCALE. The CORE equivalent CLI command is provided for reference. These commands are intended for diagnostic use. Making configuration changes using the SCALE OS CLI is not recommended.
 
 | CORE CLI Comand | SCALE CLI Command | Description |
 |-----------------|-------------------|-------------|
@@ -92,4 +94,4 @@ The following CLI commands are available after migrating from CORE to SCALE. The
 | [vmstat -P](https://www.freebsd.org/cgi/man.cgi?query=vmstat&apropos=0&sektion=0&manpath=2.8+BSD&format=html) | [sar -P ALL](https://linux.die.net/man/1/sar) | Use `sar -P ALL` to get reports with statistics for each individual processor and global statistics among all processors. |
 
 {{< /tab >}}
-{{< /tabs >}}
+
