@@ -52,7 +52,7 @@ Enter your Jira information in the **Username** and **Password** fields to verif
 The **Category** dropdown list has a large number of options.
 Choose the category that best fits where you encountered the issue.
 
-Attach a debug file and any screenshot to your bug ticket is helps speed up the response and resolution to find and fix the bug.
+Attach a debug file and any screenshot to your bug ticket helps speed up the response and resolution to find and fix the bug.
 Debug files are always attached to the ticket privately and are deleted when the ticket is resolved.
 
 Keep the information in **Subject** brief and informative.
