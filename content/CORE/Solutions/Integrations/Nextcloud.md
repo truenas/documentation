@@ -89,7 +89,7 @@ Click **POST INSTALL NOTES** to obtain your Nextcloud admin user and Nextcloud a
 
 ![NextcloudLogin](/images/CORE/12.0/SolutionsIntegrationsNextcloudLogin.png "Nextcloud Login")
 
-Enter the credentials from **POST INSTALL NOTES** and click **Log in**.  You will be directed to the Nextcloud Hub.
+Enter the credentials from **POST INSTALL NOTES** and click **Log in**.  You are directed to the Nextcloud Hub.
 {{< /tab >}}
 {{< /tabs >}}
 
