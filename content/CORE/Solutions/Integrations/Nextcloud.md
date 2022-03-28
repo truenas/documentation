@@ -52,7 +52,7 @@ After Nextcloud installs successfully, you can manage your instance of the plugi
 
 ![NextcloudPostInstall](/images/CORE/12.0/SolutionsIntegrationsNextcloudPostInstall.png "Nextcloud Post Install")
 
-Click **POST INSTALL NOTES** to obtain your *Nextcloud Admin User* and *Nextcloud Admin Password* information. 
+Click **POST INSTALL NOTES** to obtain your Nextcloud admin user and  Nextcloud admin password information. 
 Click **MANAGE** to access the Nextcloud login page within your browser.
 
 ![NextcloudLogin](/images/CORE/12.0/SolutionsIntegrationsNextcloudLogin.png "Nextcloud Login")
