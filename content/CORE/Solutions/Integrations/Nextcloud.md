@@ -72,7 +72,7 @@ Select an **IPv4 Netmask** (iX recommends 24), then click **SAVE**.
 
 ![NextcloudStatic1](/images/CORE/NextcloudStatic1.png "Nextcloud Static Setup")
 
-Once Nextcloud installs, you must add your Nextcloud IP to your Nextcloud jail trusted domains.
+After Nextcloud installs, you must add your Nextcloud IP to your Nextcloud jail trusted domains.
 
 Go to **Jails** and expand your Nextcloud jail, then click **> SHELL**.
 
