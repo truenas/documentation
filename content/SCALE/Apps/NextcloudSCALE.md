@@ -31,7 +31,7 @@ The Nextcloud application is now present on the **Installed Applications** page.
 
 ![SCALENextcloudLogin](/images/SCALE/SCALENextcloudLogin.png "SCALE Nextcloud Login")
 
-Enter the credentials specified during installation and click *Log in*.  You will be directed to the *Nextcloud Hub*.
+Enter the credentials specified during installation and click *Log in**.  You are directed to the **Nextcloud Hub**.
 
 ![NextcloudHub](/images/CORE/12.0/SolutionsIntegrationsNextcloudLogin.png "Nextcloud Hub")
 
