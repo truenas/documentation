@@ -27,7 +27,7 @@ For the **Storage**, **Scaling/Upgrading Policy** and **Advanced DNS Settings** 
 
 ![SCALENextcloudConfirmOptions](/images/SCALE/SCALENextcloudConfirmOptions.png "SCALE Nextcloud Confirm Options")
 
-The Nextcloud application will now be present on the *Installed Applications* page.  Select *Portal* and you will be directed to the *Nextcloud* login page within your browser.
+The Nextcloud application is now present on the **Installed Applications** page.  Select **Portal** and you are directed to the **Nextcloud** login page within your browser.
 
 ![SCALENextcloudLogin](/images/SCALE/SCALENextcloudLogin.png "SCALE Nextcloud Login")
 
