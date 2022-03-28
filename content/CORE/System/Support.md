@@ -56,7 +56,7 @@ Attach a debug file and any screenshot to your bug ticket helps speed up the res
 Debug files are always attached to the ticket privately and are deleted when the ticket is resolved.
 
 Keep the information in **Subject** brief and informative.
-Providing a short, descriptive subject allows the community to better find and respond to your issue.
+Provide a short, descriptive subject to help the community find and respond to your issue.
 The information in **Description** should contain more details about the problem.
 It is recommended to keep the description less than three paragraphs and include any steps to reproduce the issue or error.
 
