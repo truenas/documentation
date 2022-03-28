@@ -15,7 +15,7 @@ The [NextCloud](https://nextcloud.com/) plugin is a suite of client-server softw
 Official containers are pre-configured to only require a name during deployment.
 {{< /hint >}}
 
-Go to **Apps** and click the *INSTALL* button.  Enter an *Application Name* and click *Next*.
+Go to **Apps** and click the **INSTALL* button.  Enter an **Application Name** and click **Next**.
 
 ![SCALENextcloudInstall](/images/SCALE/SCALENextcloudInstall.png "SCALE Nextcloud Install")
 
