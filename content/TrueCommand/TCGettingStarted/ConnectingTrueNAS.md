@@ -84,7 +84,7 @@ The email contains a link to the portal to confirm the connection and activate t
 
 Click on the **New System** alert, fill in the information from the TrueNAS system, and click **Add System**.
 
-![NewSystemCreds](/images/TrueCommand/1.3/NewSystemCreds.png "Registering TrueNAS in TrueCommand Cloud")
+![ConnNewSystemCreds](/images/TrueCommand/2.0/TC20NewSystemCreds.png "Registering TrueNAS in TrueCommand Cloud")
 
 It can take 10 to 15 minutes for the TrueNAS instance to fully sync up with TrueCommand Cloud.
 When all systems are connected to TrueCommand Cloud, refer to the [TrueCommand Administration articles]({{< relref "/TrueCommand/Administration/_index.md" >}}) for more instructions about setting up configuration backups, alerts, reports, and role-based access control.
