@@ -85,7 +85,7 @@ Scroll to the `trusted_domains` section and type your Nextcloud IP as a new line
 Type <kdb>CTRL+C</kdb> to close the editor, then type **exit** to close the config file.
 
 Go back to **Plugins** and expand your Nextcloud instance. 
-Click **POST INSTALL NOTES** to obtain your *Nextcloud Admin User* and *Nextcloud Admin Password* information. Click **MANAGE** to access the Nextcloud login page within your browser.
+Click **POST INSTALL NOTES** to obtain your Nextcloud admin user and Nextcloud admin password information. Click **MANAGE** to access the Nextcloud login page within your browser.
 
 ![NextcloudLogin](/images/CORE/12.0/SolutionsIntegrationsNextcloudLogin.png "Nextcloud Login")
 
