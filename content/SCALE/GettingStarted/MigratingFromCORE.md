@@ -12,7 +12,7 @@ Migrating TrueNAS from CORE to SCALE is a one-way operation. Attempting to activ
 {{< hint danger >}}
 #### Migrating GELI-encrypted Pools to SCALE
 TrueNAS SCALE is based on Linux, which does not support FreeBSD GELI encryption.
-If you have GELI-encrypted pools on your system that you plan to import into SCALE, you must migrate your data from the GELI pool to a non-GELI encrypted pool *before* migrating to SCALE.  
+If you have GELI-encrypted pools on your system that you plan to import into SCALE, you must migrate your data from the GELI pool to a non-GELI encrypted pool *before* migrating to SCALE.
 {{< /hint >}}
 
 {{< tabs "Migration Methods" >}}
