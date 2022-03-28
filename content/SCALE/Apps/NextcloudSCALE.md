@@ -19,7 +19,7 @@ Go to **Apps** and click the **INSTALL* button.  Enter an **Application Name** a
 
 ![SCALENextcloudInstall](/images/SCALE/SCALENextcloudInstall.png "SCALE Nextcloud Install")
 
-For *Nextcloud Configuration* the *Username* defaults to *admin* and *Password* defaults to *changeme*.  It is recommended that you change both of these fields to entries specific to you as the user.  Ensure you employ a password that is both strong and can be remembered.
+For **Nextcloud Configuration** the **Username** value defaults to **admin** and the **Password** value defaults to **changeme**.  We recommend that you change both of these fields to entries specific to you as the user.  Ensure you employ a password that is both strong and memorable.
 
 ![SCALENextcloudConfiguration](/images/SCALE/SCALENextcloudConfiguration.png "SCALE Nextcloud Configuration")
 
