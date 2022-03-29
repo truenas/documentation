@@ -24,8 +24,8 @@ To view the web interface IP address or reconfigure web interface access, connec
 
 When powering on a TrueNAS system, the system attempts to connect to a DHCP server from all live interfaces to access the web UI.
 On networks that support Multicast Domain Name Services (mDNS), the system can use a hostname and domain to access the TrueNAS web interface.
-By default, TrueNAS uses the hostname and domain *truenas.local*.
-To change the hostname and domain in the web interface, go to **Network** and click *Settings* in the *Global Configuration* window.
+By default, TrueNAS uses the hostname and domain truenas.local.
+To change the hostname and domain in the web interface, go to **Network** and click **Settings** in the **Global Configuration** window.
 
 To access the web interface using an IP address, use the one that the Console Setup Menu generated after installing SCALE, or use the one you configured in the [Post-install Configuration article]({{< relref "Post-installConfiguration.md" >}}) if you upgraded from CORE.
 
@@ -38,7 +38,7 @@ On a computer with access to the same network as the TrueNAS system, enter the h
 
 ![LoginSCALE](/images/SCALE/LoginSCALE.png "TrueNAS SCALE Login Screen")
 
-Enter the `root` username and account password that you created during installation.
+Enter the `root` username and account password you created during installation.
 
 {{< expand "Troubleshooting" "v" >}}
 If the user interface is not accessible by IP address from a browser, check these things:
@@ -59,7 +59,7 @@ If the UI becomes unresponsive after an upgrade or other system operation, clear
 {{< embed-video name="scaletour" >}}
 
 After logging in, you will see the system **Dashboard**.
-The dashboard displays basic information about the installed version, systems component usage, and network traffic. For users with compatible TrueNAS
+**Dashboard** displays basic information about the installed version, systems component usage, and network traffic. For users with compatible TrueNAS
 Hardware, clicking the system image will take you to the **System Settings > Enclosure** page. 
 
 ![DashboardSCALE](/images/SCALE/DashboardSCALE.png "TrueNAS SCALE Dashboard")
@@ -68,7 +68,7 @@ The **Dashboard** provides access to all TrueNAS management options.
 The top row has links to outside resources and buttons to control the system.
 The left-hand column lets users navigate to the various TrueNAS Configuration screens.
 
-Users can select which widgets appear on the dashboard by clicking *Configure*.
+You can reorder dashboard widgets by clicking **Reorder** and then dragging them into your preferred order. You can also choose which widgets appear on the dashboard by clicking **Configure**.
 
 ![ConfigureWidgetsSCALE](/images/SCALE/ConfigureWidgetsSCALE.png "Dashboard Configuration")
 
@@ -80,21 +80,21 @@ Buttons in the top bar menu link to the iXsystems site, display the status of Tr
 
 {{< tabs "Top Row Menu" >}}
 {{< tab "iXsystems" >}}
-The iXsystems button opens the [iXsystems home page](https://www.ixsystems.com/) where users can find information about storage and server systems.
+The iXsystems button opens the [iXsystems home page](https://www.ixsystems.com/). There, users can find information about storage and server systems.
 
 Users can also use the iXsystems home page to access their customer portal and community section for support.
 {{< /tab >}}
 
 {{< tab "Status of TrueCommand" >}}
-The *Status of TrueCommand* button lets users sign up with and connect to [TrueCommand Cloud]({{< relref "/content/TrueCommand/_index.md" >}}).
+The **Status of TrueCommand** button lets users sign up with and connect to [TrueCommand Cloud]({{< relref "/content/TrueCommand/_index.md" >}}).
 
 ![StatusOfTrueCommandSCALE](/images/SCALE/StatusOfTrueCommandSCALE.png "Status of TrueCommand")
 
-Clicking *SIGNUP* will open the TrueCommand signup page in a new tab.
+Clicking **SIGNUP** will open the TrueCommand signup page in a new tab.
 
 ![SignUpTrueCommandSCALE](/images/SCALE/SignUpTrueCommandSCALE.png "TrueCommand Cloud Signup")
 
-Once users have signed up, they can click the *CONNECT* button and enter their API key to connect SCALE to TrueCommand Cloud.
+Once users have signed up, they can click the **CONNECT** button and enter their API key to connect SCALE to TrueCommand Cloud.
 
 ![ConnectToTrueCommandSCALE](/images/SCALE/ConnectToTrueCommandSCALE.png "Connect to TrueCommand Cloud")
 {{< /tab >}}
@@ -104,25 +104,25 @@ The Task Manager displays all running and failed jobs/processes.
 
 ![TaskManagerSCALE](/images/SCALE/TaskManagerSCALE.png "TrueNAS SCALE Task Manager")
 
-Users can click the *History* button to open the **Jobs** screen. **Jobs** lists all *Successful*, *Active*, and *Failed* jobs. Users can also click *View Logs* next to a failed process to view its log information and error message.
+Users can click the **History** button to open the **Jobs** screen. **Jobs** lists all Successful, Active, and Failed jobs. Users can also click **View Logs** next to a failed process to view its log information and error message.
 
 ![TaskManagerHistorySCALE](/images/SCALE/TaskManagerHistorySCALE.png "Task Manager History")
 {{< /tab >}}
 
 {{< tab "Alerts" >}}
-The *Alerts* button displays the *Alerts* menu, which shows all current alerts. Users may dismiss alerts individually, or all at once.
+The **Alerts** button displays the **Alerts** menu, which shows all current alerts. Users may dismiss them individually or all at once.
 
-The *Alerts* menu also lets users configure *Alert Settings*, *Alert Services*, and *Email*.
+The **Alerts** menu also lets users configure **Alert Settings**, **Alert Services**, and **Email**.
 
 ### Alert Settings
 
-The *Alert Settings* screen has options for setting the warning level and frequency for alerts specific to application actions.
+The **Alert Settings** screen has options for setting the warning level and frequency for alerts specific to application actions.
 
 ![AlertSettingsSCALE](/images/SCALE/AlertSettingsSCALE.png "TrueNAS SCALE Alert Settings")
 
-The *Set Warning Level* drop-downs customize alert importance. Each warning level has an icon and color to express its urgency.
+The **Set Warning Level** drop-downs customize alert importance. Each warning level has an icon and color to express its urgency.
 
-The *Set Frequency* drop-downs adjust how often the system sends alert notifications. Setting the *Frequency* to *NEVER* prevents that alert from being in the *Alerts* menu, but it will still pop up in the UI if triggered.
+The **Set Frequency** drop-downs adjust how often the system sends alert notifications. Setting the **Frequency** to *NEVER* prevents that alert from being in the **Alerts** menu, but it will still pop up in the UI if triggered.
 
 #### Alert Warning Levels
 
@@ -140,11 +140,11 @@ Each warning level has a different icon and color to express its urgency. To mak
 
 ### Alert Services
 
-The *Alert Services* screen has options to create and edit alert services. The *Alert Services* screen displays existing alert services in a list that users can filter by *Type*, *Level*, and *Enabled*.
+The **Alert Services** screen has options to create and edit alert services. The **Alert Services** screen displays existing services in a list that users can filter by *Type*, *Level*, and *Enabled*.
 
 ![AlertServicesSCALE](/images/SCALE/AlertServicesSCALE.png "TrueNAS SCALE Alert Services")
 
-To create a new alert service, click *Add* and fill out the form, then click *Save*.
+To create a new alert service, click **Add** and fill out the form, then click **Save**.
 
 ![NewAlertServiceSCALE](/images/SCALE/NewAlertServiceSCALE.png "New TrueNAS SCALE Alert Service")
 
@@ -166,11 +166,11 @@ To create a new alert service, click *Add* and fill out the form, then click *Sa
 | Key ID | Access Key ID for the linked AWS account. |
 | Secret Key | Secret Access Key for the linked AWS account. |
 
-The *SEND TEST ALERT* button generates a test alert to confirm the alert service will work correctly.
+The **SEND TEST ALERT** button generates a test alert to confirm the alert service will work correctly.
 
 ### Email
 
-The *Email* screen has options for users to set up a system email address.
+The **Email** screen lets you set up a system email address.
 
 ![AlertEmailSCALE](/images/SCALE/AlertEmailSCALE.png "Email General Options")
 
@@ -185,11 +185,11 @@ The *Email* screen has options for users to set up a system email address.
 | Security | [Email encryption](https://www.fastmail.com/help/technical/ssltlsstarttls.html) type. Choices are Plain (No Encryption), SSL (Implicit TLS), or TLS (STARTTLS). |
 | SMTP Authentication | Enable [SMTP AUTH](https://en.wikipedia.org/wiki/SMTP_Authentication) using PLAIN SASL. Requires a valid Username and Password. |
 
-The *Send Test Mail* button generates a test email to confirm the system email works correctly.
+The **Send Test Mail** button generates a test email to confirm the system email works correctly.
 {{< /tab >}}
 
 {{< tab "Settings" >}}
-The *Settings* button has options for passwords, web interface preferences, API Keys, and TrueNAS information.
+The **Settings** button has options for passwords, web interface preferences, API Keys, and TrueNAS information.
 
 ### Change Password
 
@@ -207,27 +207,27 @@ Clicking **Preferences** lets users select general preferences for the system.
 | Prefer buttons with icons only | Preserve screen space with icons and tooltips instead of text labels. |
 | Enable Password Toggle | When set, an eye icon appears next to password fields. Clicking the icon reveals the password. |
 | Reset Table Columns to Default | Reset all tables to display default columns. |
-| Retro Logo | Revert branding back to FreeNAS. |
+| Retro Logo | Revert branding to FreeNAS. |
 | Reset All Preferences to Default | Reset all user preferences to their default values (custom themes are preserved). |
 
 ### API Keys
 
-The *API Keys* section lets users add API Keys that identify outside resources and applications without a principal.
+The **API Keys** section lets users add API Keys that identify outside resources and applications without a principal.
 
-Users may also click *DOCS* to access their system's API documentation.
+Users may also click **DOCS** to access their system API documentation.
 
 ### Guide and About
 
-Clicking the *Guide* button opens the TrueNAS Documentation Hub in a new tab.
+Clicking the **Guide** button opens the TrueNAS Documentation Hub in a new tab.
 
-Clicking the *About* button brings up links to the TrueNAS Documentation Hub, the TrueNAS Community Forums, the FreeNAS Open Source Storage Appliance GitHub repository, and the iXsystems homepage.
+Clicking the **About** button displays links to the TrueNAS Documentation Hub, the TrueNAS Community Forums, the FreeNAS Open Source Storage Appliance GitHub repository, and the iXsystems homepage.
 {{< /tab >}}
 
 {{< tab "Power" >}}
-The *Power* button lets the user log out of, restart, or shut down the system.
+The **Power** button lets the user log out of, restart, or shut down the system.
 {{< /tab >}}
 {{< /tabs >}}
 
 ## Storing Data
 
-Now that you can access the TrueNAS web interface and see all the management options, it's time to begin [storing data]({{< relref "/SCALE/Storage/_index.md" >}})!
+Now that you can access the TrueNAS web interface and see all the management options, you can begin [storing data]({{< relref "/SCALE/Storage/_index.md" >}})!
