@@ -14,7 +14,7 @@ Click the **Configure** <i class="material-icons" aria-hidden="true" title="Sett
 {{< tab "About" >}}
 The **About** tab contains the current TrueCommand system ID and version, contact information for iXsystems, and license details. 
 
-![AdministrationAbout](/images/TrueCommand/1.3/AdministrationAbout.png "Administration Configuration")
+![AdministrationAbout](/images/TrueCommand/2.0/TC20AdministrationAbout.png "Administration Configuration")
 
 ### Updating the License
 
@@ -29,7 +29,7 @@ Select the new license file to upload and click **UPLOAD LICENSE** to apply the 
 {{< tab "Certificates" >}}
 The **Certificates** tab shows the certificates and Certificate Authorities (CAs) TrueCommand uses and has options to upload or import a certificate or CA.
 
-![AdministrationCertificates](/images/TrueCommand/1.3/AdministrationCertificates.png "Administration: Certificates")
+![AdministrationCertificates](/images/TrueCommand/2.0/TC20AdministrationCertificates.png "Administration: Certificates")
 
 Clicking **Browse...** opens a dialog to upload a file from the local system.
 Selecting **Plain text** allows you to copy and paste the raw text instead of uploading a file.
