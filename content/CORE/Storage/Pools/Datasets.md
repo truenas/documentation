@@ -52,6 +52,8 @@ The **Other Options** help tune the dataset for particular data sharing protocol
 | Case Sensitivity | drop-down list | **Sensitive** assumes filenames are case sensitive. **Insensitive** assumes filenames are not case sensitive. **Mixed** understands both types of filenames. You cannot change this setting after the dataset is created. |
 | Share Type | drop-down list | Define the type of data sharing the dataset uses to optimize the dataset for that sharing protocol. You cannot change this setting after the dataset is created. If creating an AFP share use **Generic**. For SMB shares select **SMB**|
 
+### Advanced Dataset Options
+
 {{< expand "Advanced Options" "v" >}}
 
 Clicking **ADVANCED OPTIONS** adds dataset quota management tools and a few additional fields to the **Other Options**:
