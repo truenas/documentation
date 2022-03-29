@@ -10,7 +10,7 @@ These options have reasonable defaults in place.
 Make sure you are comfortable with ZFS, FreeBSD, and system [configuration backup and restoration]({{< relref "ConfigBackup.md" >}}) before making any changes.
 {{< /hint >}}
 
-![System Advanced](/images/CORE/12.0/SystemAdvanced.png "Advanced Settings")
+![System Advanced13](/images/CORE/13.0/SystemAdvanced13.png "Advanced Settings")
 
 {{< include file="static/includes/Reference/SystemAdvancedFields.md.part" markdown="true" >}}
 
