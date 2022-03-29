@@ -343,7 +343,7 @@ To configure SNMP, go to **System Settings > Services** page, find **SNMP**, and
 ![ServicesSNMPSCALE](/images/SCALE/ServicesSNMPSCALE.png "SNMP Service Options")
 
 {{< expand "Field Descriptions" "v" >}}
-{{< include file="static/includes/Reference/ServicesSNMPFields.md.part" markdown="true" >}}
+{{< include file="static/includes/Reference/SCALEServicesSNMPFields.md.part" markdown="true" >}}
 {{< /expand >}}
 
 Port **UDP 161** listens for SNMP requests when starting the SNMP service.
