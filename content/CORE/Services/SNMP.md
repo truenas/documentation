@@ -7,7 +7,7 @@ weight: 60
 TrueNAS uses [Net-SNMP](https://sourceforge.net/projects/net-snmp/) to provide SNMP.
 To configure SNMP, go to the **Services** page, find the **SNMP** entry, and click the <i class="fa fa-pencil" aria-hidden="true" title="Configure"></i>.
 
-![ServicesSNMPOptions](/images/CORE/12.0/ServicesSNMPOptions.png "SNMP Service Options")
+![ServicesSNMPOptions](/images/CORE/13.0/SNMPOptions13.png "SNMP Service Options")
 
 {{< expand "Field Descriptions" "v" >}}
 {{< include file="static/includes/Reference/ServicesSNMPFields.md.part" markdown="true" >}}
