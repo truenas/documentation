@@ -58,7 +58,7 @@ The **Other Options** help tune the dataset for particular data sharing protocol
 
 Clicking **ADVANCED OPTIONS** adds dataset quota management tools and a few additional fields to the **Other Options**:
 
-![StoragePoolsAddDatasetOptions](/images/CORE/12.0/StoragePoolsAddDatasetOptions.png "Dataset Creation: Basic Options")
+![StoragePoolsAddDatasetOptions](/images/CORE/12.0-U8/COREAdvancedDatasetOptions.png "Dataset Creation: Advanced Options")
 
 Setting a quota defines the maximum allowed space for the dataset.
 You can also reserve a defined amount of pool space for the dataset to help prevent situations where automatically generated data like system logs consume all space on the dataset.
