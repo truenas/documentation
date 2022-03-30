@@ -16,7 +16,7 @@ Advanced Settings have reasonable defaults in place. Changing advanced settings 
 
 ## Console
 
-The *Console* window allows users to configure the [Console Setup menu]({{< relref "Post-installConfiguration.md" >}}).
+The **Console** window allows users to configure the [Console Setup menu]({{< relref "Post-installConfiguration.md" >}}).
 
 | Name | Description |
 |------|-------------|
@@ -28,7 +28,7 @@ The *Console* window allows users to configure the [Console Setup menu]({{< relr
 
 ## Syslog
 
-The *Syslog* window lets users configure how and when the system sends log messages to the Syslog server.
+The **Syslog** window allows users configure how and when the system sends log messages to the Syslog server.
 
 | Name | Description |
 |------|-------------|
@@ -40,7 +40,7 @@ The *Syslog* window lets users configure how and when the system sends log messa
 
 ## Sysctl
 
-The *Sysctl* window lets users set up tunables that configure kernel parameters at runtime.
+The **Sysctl** window allows users set up tunables that configure kernel parameters at runtime.
 
 | Name | Description |
 |------|-------------|
@@ -51,7 +51,7 @@ The *Sysctl* window lets users set up tunables that configure kernel parameters 
 
 ## Kernel
 
-The *Kernel* window contains options for system optimization and kernel debugging.
+The **Kernel** window contains options for system optimization and kernel debugging.
 
 | Name | Description |
 |------|-------------|
@@ -60,7 +60,7 @@ The *Kernel* window contains options for system optimization and kernel debuggin
 
 ## Cron Jobs
 
-The *Cron Jobs* window allows users to configure jobs that run specific commands or scripts on a regular schedule using [cron(8)](https://manpages.debian.org/testing/cron/cron.8.en.html "Cron Man Page"). Cron Jobs help run repetitive tasks.
+The **Cron Jobs** window allows users to configure jobs that run specific commands or scripts on a regular schedule using [cron(8)](https://manpages.debian.org/testing/cron/cron.8.en.html "Cron Man Page"). Cron Jobs help run repetitive tasks.
 
 | Name | Description |
 |------|-------------|
@@ -74,7 +74,7 @@ The *Cron Jobs* window allows users to configure jobs that run specific commands
 
 ## Init/Shutdown Scripts
 
-The *Init/Shutdown Scripts* window allows users to schedule commands or scripts to run at system startup or shutdown. 
+The **Init/Shutdown Scripts** window allows users to schedule commands or scripts to run at system startup or shutdown. 
 
 | Name | Description |
 |------|-------------|
@@ -91,16 +91,19 @@ The *Init/Shutdown Scripts* window allows users to schedule commands or scripts 
 
 ## System Dataset Pool
 
-*System Dataset Pool* lets users select the storage pool to hold the system dataset. The system dataset stores debugging core files, encryption keys for encrypted pools, and Samba4 metadata such as the user and group cache and share level permissions.
+**System Dataset Pool** allows users select the storage pool to hold the system dataset. The system dataset stores debugging core files, encryption keys for encrypted pools, and Samba4 metadata such as the user and group cache and share level permissions.
 
 Users can move the system dataset to unencrypted pools or encrypted pools without passphrases.
 
-If you move the system dataset to an encrypted pool, that pool is no longer allowed to have a passphrase. If the encrypted pool already has a passphrase set, you cannot move the system dataset to that pool.
+Users can move the system dataset to a key encrypted pool but, after the move, the pool encryption type can't be changed to passphrase. If the encrypted pool already has a passphrase set, you cannot move the system dataset to that pool.
 
 ## Isolated GPU Device(s)
 
-The *Isolated GPU Device(s)* window allows users to isolate additional GPU devices for GPU passthrough.
+The **Isolated GPU Device(s)** window allows users to isolate additional GPU devices for GPU passthrough.
 
 GPU passthrough allows the TrueNAS SCALE kernel to directly present an internal PCI GPU to a virtual machine (VM).
 
-The GPU device will act like the VM is driving it, and the VM detects the GPU as if it were physically connected.
+The GPU device acts like the VM is driving it, and the VM detects the GPU as if it is physically connected.
+
+## Replication
+The **Replication** window allows users to limit the maximum number of replication tasks executed simultaneously.
