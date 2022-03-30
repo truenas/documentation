@@ -9,15 +9,15 @@ weight: 40
 
 To view a system's already existing snapshots, click *EXPLORE* in that system's window and select a storage pool. Once the pool loads, select the *Snapshots* tab.
 
-![TrueCommandSelectPool](/images/TrueCommand/TrueCommandSelectPool.png "Select a Pool") 
+![TrueCommandSelectPool](/images/TrueCommand/2.0/TC20TrueCommandSelectPool.png "Select a Pool") 
 
-![TrueCommandViewSnapshots](/images/TrueCommand/TrueCommandViewSnapshots.png "View Snapshots")
+![TrueCommandViewSnapshots](/images/TrueCommand/2.0/TC20TrueCommandViewSnapshots.png "View Snapshots")
 
 ## Create Single Snapshots
 
 To create single snapshots, select a pool in the system's *EXPLORE* menu and click *CREATE SNAPSHOTS*, then select *Create One-Time Snapshot*.
 
-![TrueCommandCreateOneTimeSnapshot](/images/TrueCommand/TrueCommandCreateOneTimeSnapshot.png "Create One-time Snapshot")
+![TrueCommandCreateOneTimeSnapshot](/images/TrueCommand/2.0/TC20TrueCommandCreateOneTimeSnapshot.png "Create One-time Snapshot")
 
 Name the snapshot and click *CONFIRM*.
 
@@ -25,7 +25,7 @@ Name the snapshot and click *CONFIRM*.
 
 To create recurring snapshot tasks, select a pool in the system's *EXPLORE* menu and click *CREATE SNAPSHOTS*, then select *Create Snapshot Task*.
 
-![TrueCommandCreateSnapshotTask](/images/TrueCommand/TrueCommandCreateSnapshotTask.png "Create Snapshot Task")
+![TrueCommandCreateSnapshotTask](/images/TrueCommand/2.0/TC20TrueCommandCreateSnapshotTask.png "Create Snapshot Task")
 
 Set the task's schedule and determine the snapshot lifetime, then click *CONFIRM*.
 
@@ -39,4 +39,4 @@ To see what timezone a system is in, go to that system's UI and navigate to **Sy
 
 That system's timezone information is in the *Localization* section. Administrators can change the system's timezone using the drop-down menu. 
 
-![TrueCommandTimezone](/images/TrueCommand/TrueCommandTimezone.png "Timezones")
+![TrueCommandTimezone](/images/TrueCommand/2.0/TC20TrueCommandTimezone.png "Timezones")
