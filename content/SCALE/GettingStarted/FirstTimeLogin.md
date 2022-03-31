@@ -212,7 +212,7 @@ Clicking **Preferences** lets users select general preferences for the system.
 
 ### API Keys
 
-The **API Keys** section lets users add API Keys that identify outside resources and applications without a principal.
+The **API Keys** section lets users add API keys that identify outside resources and applications without a principal.
 
 Users may also click **DOCS** to access their system API documentation.
 
