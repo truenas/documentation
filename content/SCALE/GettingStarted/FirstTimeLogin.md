@@ -214,7 +214,7 @@ Clicking **Preferences** lets users select general preferences for the system.
 
 The **API Keys** section lets users add API keys that identify outside resources and applications without a principal.
 
-Users may also click **DOCS** to access their system API documentation.
+Users can also click **DOCS** to access their system API documentation.
 
 ### Guide and About
 
