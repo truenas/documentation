@@ -110,7 +110,7 @@ Users can click the **History** button to open the **Jobs** screen. **Jobs** lis
 {{< /tab >}}
 
 {{< tab "Alerts" >}}
-The **Alerts** button displays the **Alerts** menu, which shows all current alerts. Users may dismiss them individually or all at once.
+The **Alerts** button displays the **Alerts** menu, which shows all current alerts. Users can dismiss them individually or all at once.
 
 The **Alerts** menu also lets users configure **Alert Settings**, **Alert Services**, and **Email**.
 
