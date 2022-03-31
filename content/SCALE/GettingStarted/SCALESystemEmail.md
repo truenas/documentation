@@ -25,8 +25,6 @@ For the next step, you must go to the **System Email** screen.
 
 Click the **Alerts** <span class="iconify" data-icon="mdi:bell"></span> icon in the top right of the UI, then click the gear <span class="iconify" data-icon="mdi:cog"></span> icon and select **Email**.
 
-{{< include file="static/includes/Reference/SystemEmailFields.md.part" markdown="true" >}}
-
 Changing the *Send Mail Method* shows different options:
 
 {{< tabs "Send Mail Methods" >}}
