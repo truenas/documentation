@@ -25,7 +25,7 @@ To view the web interface IP address or reconfigure web interface access, connec
 When powering on a TrueNAS system, the system attempts to connect to a DHCP server from all live interfaces to access the web UI.
 On networks that support Multicast Domain Name Services (mDNS), the system can use a hostname and domain to access the TrueNAS web interface.
 By default, TrueNAS uses the hostname and domain truenas.local.
-To change the hostname and domain in the web interface, go to **Network** and click **Settings** in the **Global Configuration** window.
+To change the hostname and domain in the web interface, go to **Network** and click **Settings** in the **Global Configuration** pane.
 
 To access the web interface using an IP address, use the one that the Console Setup Menu generated after installing SCALE, or use the one you configured in the [Post-install Configuration article]({{< relref "Post-installConfiguration.md" >}}) if you upgraded from CORE.
 
