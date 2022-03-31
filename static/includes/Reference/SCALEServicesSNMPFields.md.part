@@ -12,7 +12,7 @@
 |------|-------------|
 | SNMP v3 Support | Set to to enable support for [SNMP version 3](https://tools.ietf.org/html/rfc3410). See [snmpd.conf(5)](https://net-snmp.sourceforge.io/docs/man/snmpd.conf.html) for configuration details. |
 | Username | Enter a username to register with this service. |
-| Authentication Type | Choose an authentication method: `---` for none, *[SHA](https://tools.ietf.org/html/rfc4634)*, or *[MD5](https://tools.ietf.org/html/rfc1321)*|
+| Authentication Type | Choose an authentication method: `---` for none, **[SHA](https://tools.ietf.org/html/rfc4634)**, or **[MD5](https://tools.ietf.org/html/rfc1321)**|
 | Password | Enter a password of at least eight characters. |
 | Privacy Protocol | Choose a privacy protocol: `---` for none, *[AES](https://tools.ietf.org/doc/tcllib/html/aes.html)*, or *[DES](https://tools.ietf.org/doc/tcllib/html/des.html)* |
 | Privacy Passphrase | Enter a separate privacy passphrase. *Password* is used when this is left empty. |
