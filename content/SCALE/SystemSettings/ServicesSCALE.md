@@ -340,10 +340,10 @@ It is possible to access, create new buckets, or upload files to created buckets
 TrueNAS uses [Net-SNMP](https://sourceforge.net/projects/net-snmp/) to provide SNMP.
 To configure SNMP, go to **System Settings > Services** page, find **SNMP**, and click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
 
-![ServicesSNMPSCALE](/images/SCALE/ServicesSNMPSCALE.png "SNMP Service Options")
+![ServicesSNMPSCALE](/images/SCALE/22.02/SCALESNMPOptions.png "SCALE SNMP Service Options")
 
 {{< expand "Field Descriptions" "v" >}}
-{{< include file="static/includes/Reference/ServicesSNMPFields.md.part" markdown="true" >}}
+{{< include file="static/includes/Reference/SCALEServicesSNMPFields.md.part" markdown="true" >}}
 {{< /expand >}}
 
 Port **UDP 161** listens for SNMP requests when starting the SNMP service.
