@@ -15,7 +15,7 @@ Uncheck properties when replicating so that the destination dataset will not be 
 1. Go to **Data Protection** and click *ADD* in the *Replication Tasks* window.
 2. Click *Advanced Replication Creation*.
 3. Fill out the form as needed and make sure *Include Dataset Properties* is **NOT** checked.
-4. Click *Save*.
+4. Click **Save**.
 {{< /tab >}}
 {{< tab "Method 3: Replicate Key Encrypted Dataset/zvol" >}}
 1. Go to **Storage -> pool/root dataset** on the replication system. Click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>  and select **Export Key**.
