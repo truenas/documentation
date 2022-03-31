@@ -23,6 +23,6 @@ Uncheck properties when replicating so that the destination dataset will not be 
 3. On the receiving pool/dataset: Click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> next to pool/dataset and select **Unlock**.
 4. There are two ways to unlock the dataset. Either Unset Unlock with Key file. Paste the Key Code into Dataset Key field. (if there is a space character at the end of the key - delete the space.) or Select the Key file that was downloaded and edited.
 5. Click **Save**.
-5. Click *Continue*.
+5. Click **Continue**.
 {{< /tab >}}
 {{< /tabs >}}
