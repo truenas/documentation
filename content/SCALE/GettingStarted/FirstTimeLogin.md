@@ -140,7 +140,7 @@ Each warning level has a different icon and color to express its urgency. To mak
 
 ### Alert Services
 
-The **Alert Services** screen has options to create and edit alert services. The **Alert Services** screen displays existing services in a list that users can filter by *Type*, *Level*, and *Enabled*.
+The **Alert Services** screen has options to create and edit alert services. The **Alert Services** screen displays existing services in a list that users can filter by **Type**, **Level**, and **Enabled**.
 
 ![AlertServicesSCALE](/images/SCALE/AlertServicesSCALE.png "TrueNAS SCALE Alert Services")
 
