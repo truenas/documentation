@@ -4,7 +4,7 @@
 |------|-------------|
 | Location | Enter the location of the system. |
 | Contact | E-mail address that receives SNMP service messages. |
-| Community | Change from *public* to increase system security. Can only contain alphanumeric characters, underscores (`_`), dashes (`-`), periods (`.`), and spaces. This can be left empty for SNMPv3 networks. |
+| Community | Change from **public** to increase system security. Can only contain alphanumeric characters, underscores (`_`), dashes (`-`), periods (`.`), and spaces. This can be left empty for SNMPv3 networks. |
 
 **SNMP v3 Options**
 
