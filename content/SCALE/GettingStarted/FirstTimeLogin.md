@@ -104,7 +104,7 @@ The Task Manager displays all running and failed jobs/processes.
 
 ![TaskManagerSCALE](/images/SCALE/TaskManagerSCALE.png "TrueNAS SCALE Task Manager")
 
-Users can click the **History** button to open the **Jobs** screen. **Jobs** lists all Successful, Active, and Failed jobs. Users can also click **View Logs** next to a failed process to view its log information and error message.
+Users can click the **History** button to open the **Jobs** screen. **Jobs** lists all successful, active, and failed jobs. Users can also click **View Logs** next to a failed process to view its log information and error message.
 
 ![TaskManagerHistorySCALE](/images/SCALE/TaskManagerHistorySCALE.png "Task Manager History")
 {{< /tab >}}
