@@ -94,7 +94,7 @@ Clicking **SIGNUP** opens the TrueCommand signup page in a new tab.
 
 ![SignUpTrueCommandSCALE](/images/SCALE/SignUpTrueCommandSCALE.png "TrueCommand Cloud Signup")
 
-Once users have signed up, they can click the **CONNECT** button and enter their API key to connect SCALE to TrueCommand Cloud.
+After users sign up, they can click the **CONNECT** button and enter their API key to connect SCALE to TrueCommand Cloud.
 
 ![ConnectToTrueCommandSCALE](/images/SCALE/ConnectToTrueCommandSCALE.png "Connect to TrueCommand Cloud")
 {{< /tab >}}
