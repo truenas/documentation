@@ -120,7 +120,7 @@ The **Alert Settings** screen has options for setting the warning level and freq
 
 ![AlertSettingsSCALE](/images/SCALE/AlertSettingsSCALE.png "TrueNAS SCALE Alert Settings")
 
-The **Set Warning Level** drop-downs customize alert importance. Each warning level has an icon and color to express its urgency.
+The **Set Warning Level** drop-downs customize alert importance. Each warning level has an icon and color to express the level of urgency.
 
 The **Set Frequency** drop-downs adjust how often the system sends alert notifications. Setting the **Frequency** to *NEVER* prevents that alert from being in the **Alerts** menu, but it will still pop up in the UI if triggered.
 
