@@ -166,7 +166,7 @@ To create a new alert service, click **Add** and fill out the form, then click *
 | Key ID | Access Key ID for the linked AWS account. |
 | Secret Key | Secret Access Key for the linked AWS account. |
 
-The **SEND TEST ALERT** button generates a test alert to confirm the alert service will work correctly.
+The **SEND TEST ALERT** button generates a test alert to confirm the alert service works correctly.
 
 ### Email
 
