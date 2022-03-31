@@ -19,11 +19,10 @@ Uncheck properties when replicating so that the destination dataset will not be 
 {{< /tab >}}
 {{< tab "Method 3: Replicate Key Encrypted Dataset/zvol" >}}
 1. Go to **Storage -> pool/root dataset** on the replication system. Click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>  and select **Export Key**.
-2. Either download the Key file, open the text file, and copy the Key code or copy the Key code provided in the Key window.
-3. On the receiving pool/dataset:
-  * Click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>  next to pool/dataset and select *Unlock*.
-  * Unset Unlock with Key file.
-  * Paste the Key Code into Dataset Key field. (if there is a space character at the end of the key - delete the space.)
+2. Either download the Key file, open the file, and change the poolname/dataset to the recieving poolname/dataset or copy the Key code provided in the Key window.
+3. On the receiving pool/dataset: Click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>  next to pool/dataset and select *Unlock*. There are two ways to unlock the dataset.
+  a. Unset Unlock with Key file. Paste the Key Code into Dataset Key field. (if there is a space character at the end of the key - delete the space.)
+  b. Select the Key file that was downloaded and edited.
   * Click *Save*.
   * Click *Continue*.
 {{< /tab >}}
