@@ -49,6 +49,6 @@ After a few minutes, the Collabora container displays as **ACTIVE**.
 
 ![Collabora7](/images/SCALE/Collabora7.png "Collabora Active")
 
-Once it does, you can click **Web Portal** to access the Admin console.
+After it does, you can click **Web Portal** to access the admin console.
 
 ![Collabora8](/images/SCALE/Collabora8.png "Collabora Admin Console")
