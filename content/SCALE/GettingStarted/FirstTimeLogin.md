@@ -90,7 +90,7 @@ The **Status of TrueCommand** button lets users sign up with and connect to [Tru
 
 ![StatusOfTrueCommandSCALE](/images/SCALE/StatusOfTrueCommandSCALE.png "Status of TrueCommand")
 
-Clicking **SIGNUP** will open the TrueCommand signup page in a new tab.
+Clicking **SIGNUP** opens the TrueCommand signup page in a new tab.
 
 ![SignUpTrueCommandSCALE](/images/SCALE/SignUpTrueCommandSCALE.png "TrueCommand Cloud Signup")
 
