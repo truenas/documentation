@@ -182,7 +182,7 @@ The **Email** screen lets you set up a system email address.
 | GMail OAuth | Enable GMail OAuth authentication. |
 | Outgoing Mail Server | Hostname or IP address of SMTP server to use for sending this email. |
 | Mail Server Port | MTP port number. Typically 25,465 (secure SMTP), or 587 (submission). |
-| Security | [Email encryption](https://www.fastmail.com/help/technical/ssltlsstarttls.html) type. Choices are Plain (No Encryption), SSL (Implicit TLS), or TLS (STARTTLS). |
+| Security | [Email encryption](https://www.fastmail.com/help/technical/ssltlsstarttls.html) type. Choices are **Plain (No Encryption)**, **SSL (Implicit TLS)**, or **TLS (STARTTLS)**. |
 | SMTP Authentication | Enable [SMTP AUTH](https://en.wikipedia.org/wiki/SMTP_Authentication) using PLAIN SASL. Requires a valid Username and Password. |
 
 The **Send Test Mail** button generates a test email to confirm the system email works correctly.
