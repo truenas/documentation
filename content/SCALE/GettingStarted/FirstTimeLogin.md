@@ -99,6 +99,12 @@ After users sign up, they can click the **CONNECT** button and enter their API k
 ![ConnectToTrueCommandSCALE](/images/SCALE/ConnectToTrueCommandSCALE.png "Connect to TrueCommand Cloud")
 {{< /tab >}}
 
+{{< tab "Directory Services Monitor" >}}
+The Directory Services Monitor displays the status of Active Directory and LDAP. Clicking them takes you to their respective configuration screens. 
+
+![DirectoryServicesMonitorSCALE](/images/SCALE/DirectoryServicesMonitorSCALE.png "Directory Services Monitor")
+{{< /tab >}}
+
 {{< tab "Task Manager" >}}
 The Task Manager displays all running and failed jobs/processes. 
 
