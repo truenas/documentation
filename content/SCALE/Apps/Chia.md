@@ -1,15 +1,15 @@
 ---
 title: "Chia App"
-weight: 20
+weight: 30
 ---
 
 {{< toc >}}
 
 SCALE includes Chia in its Official Apps catalog. Chia Blockchain is a new cryptocurrency that uses Proof of Space and Time. Instead of using expensive hardware that consumes exorbitant amounts of electricity to mine cryptos, it leverages existing empty hard disk space on your computer(s) to farm cryptos with minimal resources, such as electricity.
 
-## install the Chia App
+## Install the Chia App
 
-Click on the Chia app's **Install** button in the *Available Applications* list.
+Click on the Chia app **Install** button in the **Available Applications** list.
 
 ![ChiaInstall](/images/SCALE/chia_Install.png "Install Chia")
 
