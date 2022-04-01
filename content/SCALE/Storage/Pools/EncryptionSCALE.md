@@ -224,7 +224,7 @@ Creating a new encrypted pool automatically generates a new key file and prompts
 
 ![DownloadEncryptionKeySCALE](/images/SCALE/DownloadEncryptionKeySCALE.png "Encryption Backup Warning")
 
-To manually back up a root dataset key file, open the pool <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and select **Export Key**. Next type the root user password to authorize the export.
+To manually back up a root dataset key file, open the pool <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and select **Export Key**.
 
 ![ExportKeySCALE](/images/SCALE/ExportKeySCALE.png "Export a Key")
 
