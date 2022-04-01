@@ -1,6 +1,6 @@
 ---
 title: "MinIO Clusters"
-weight: 30
+weight: 40
 ---
 
 {{< toc >}}
