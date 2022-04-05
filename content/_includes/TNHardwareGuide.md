@@ -127,7 +127,7 @@ Poorly-designed systems can cause an unexpected fill-up in the ARC and reduce pe
 For example, a 480 GB L2ARC filled with 4KiB blocks needs more than 10GiB of metadata storage in the primary ARC.
 {{< /tab >}}
 {{< tab "Self Encrypting Drives" >}}
-TrueNAS supports two forms of data encryption at rest to achieve privacy and compliance objectives: [Native ZFS encryption]({{< relref "StorageEncryption.md" >}}) and [Self Encrypting Drives (SEDs)]({{< relref "SED.md" >}}).
+TrueNAS supports two forms of data encryption at rest to achieve privacy and compliance objectives: [Native ZFS encryption]({{< relref "CORE/UIReference/Storage/Pools/StorageEncryption.md" >}}) and [Self Encrypting Drives (SEDs)]({{< relref "/CORE/UIReference/Storage/SED.md" >}}).
 SEDs do not experience the performance overhead introduced by software partition encryption but aren’t as readily available as non-SED drives (and thus can cost a little more).
 {{< /tab >}}
 {{< tab "Boot Devices" >}}

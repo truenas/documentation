@@ -1,5 +1,5 @@
 ---
-title: "API"
+title: "API Reference"
 geekdocCollapseSection: true
 weight: 160
 ---

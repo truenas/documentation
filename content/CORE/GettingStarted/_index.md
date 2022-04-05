@@ -1,7 +1,7 @@
 ---
 title: "Getting Started"
 geekdocCollapseSection: true
-weight: 20
+weight: 10
 ---
 
 <div style="float: left;margin-right: 1rem;">
