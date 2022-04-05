@@ -1,6 +1,6 @@
 ---
 title: UI Reference Guide
-weight: 
+weight: 50
 geekdocCollapseSection: true
 ---
 

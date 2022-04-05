@@ -1,7 +1,7 @@
 ---
 title: "Solutions"
 geekdocCollapseSection: true
-weight: 150
+weight: 30
 ---
 
 This topic covers the various third party solutions that TrueNAS can integrate with or be optimized for.

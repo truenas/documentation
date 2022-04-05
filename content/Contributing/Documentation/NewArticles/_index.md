@@ -50,7 +50,7 @@ Be sure to have unique names for each image file.
 
 ## Uploading the Article Bundle
 
-Open the [User Recommendations]({{< relref "/CORE/Tutorials/UserRecommends/_index.md" >}}) section of the repository.
+Open the [User Recommendations]({{< relref "/CORE/CORETutorials/UserRecommends/_index.md" >}}) section of the repository.
 
 ![UploadImages](/images/Contribute/UploadingNewArticleBundle.png "Uploading Images")
 

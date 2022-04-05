@@ -1,5 +1,7 @@
 ---
 title: Configuration Tutorials
 geekdocCollapseSection: true
-weight: 20
+weight: 40
 ---
+
+Placeholder for introduction article
