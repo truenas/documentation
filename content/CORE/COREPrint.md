@@ -1,5 +1,5 @@
 ---
-title: "⎙ Print Preview"
+title: "⎙ Download or Print"
 weight: 1
 no_print: "true"
 ---
