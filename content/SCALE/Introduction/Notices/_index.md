@@ -1,7 +1,7 @@
 ---
 title: "Notices"
 geekdocCollapseSection: true
-weight: 130
+weight: 40
 ---
 
 Official statements from iXsystems, Inc.

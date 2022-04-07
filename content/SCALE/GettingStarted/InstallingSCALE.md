@@ -67,7 +67,7 @@ Choose the install type to see specific instructions:
 {{< expand "Hardware Considerations" "v" >}}
 TrueNAS SCALE is very flexible and can run on any x86_64 compatible (Intel or AMD) processor.
 SCALE requires at least 8GB of RAM (more is better) and a 20GB Boot Device.
-If you're still researching what kind of hardware to use with SCALE, read over the very detailed [SCALE Developer's Notes]({{< relref "/SCALE/DevNotes.md" >}}).
+If you're still researching what kind of hardware to use with SCALE, read over the very detailed [SCALE Developer's Notes]({{< relref "/SCALE/Introduction/DevNotes.md" >}}).
 {{< /expand >}}
 
 ## Prepare the Install File

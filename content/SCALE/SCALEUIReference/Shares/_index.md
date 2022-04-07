@@ -743,9 +743,9 @@ The **Use as Home Share** feature is available for a single TrueNAS SMB share. Y
 
 ### Create a Pool and Join Active Directory
 
-First, go to **Storage** and [create a pool]({{< relref "/SCALE/Storage/Pools/_index.md" >}}).
+First, go to **Storage** and [create a pool]({{< relref "/SCALE/SCALEUIReference/Storage/Pools/_index.md" >}}).
 
-Next, [set up the Active Directory]({{< relref "/content/SCALE/Credentials/DirectoryServices/_index.md" >}}) that you want to share resources with over your network.
+Next, [set up the Active Directory]({{< relref "/content/SCALE/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}) that you want to share resources with over your network.
 
 ### Prepare a Dataset
 
@@ -888,7 +888,7 @@ NFS service settings can be configured by clicking <i class="material-icons" ari
 
 Unless you need a specific setting, we recommend using the default NFS settings.
 
-When TrueNAS is already connected to [Active Directory]({{< relref "/content/SCALE/Credentials/DirectoryServices/_index.md" >}}), setting **NFSv4** and **Require Kerberos for NFSv4** also requires a [Kerberos Keytab]({{< relref "/content/SCALE/Credentials/DirectoryServices/_index.md" >}}). 
+When TrueNAS is already connected to [Active Directory]({{< relref "/content/SCALE/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}), setting **NFSv4** and **Require Kerberos for NFSv4** also requires a [Kerberos Keytab]({{< relref "/content/SCALE/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}). 
 
 ## Connecting to the NFS Share
 

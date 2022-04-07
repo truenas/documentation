@@ -1,6 +1,6 @@
 ---
 title: "SCALE Hardware Guide"
-weight: 20
+weight: 10
 ---
 
 {{< include file="/_includes/TNHardwareGuide.md" type="page" >}}

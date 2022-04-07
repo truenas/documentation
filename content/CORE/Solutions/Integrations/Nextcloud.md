@@ -66,7 +66,7 @@ Enter the credentials obtained from *POST INSTALL NOTES* and click *Log in*.  Yo
 ### Applications 
 
 {{< expand "Before getting started..." "v" >}}
-* A [data pool]({{< relref "SCALE/Storage/Pools/_index.md" >}}) must be available for application storage.
+* A [data pool]({{< relref "SCALE/SCALEUIReference/Storage/Pools/_index.md" >}}) must be available for application storage.
 * The system must be connected to the internet.
 * Go to **Network > Interfaces**, edit the intended application interface, and set *Disable Hardware Offloading*.
 {{< /expand >}}

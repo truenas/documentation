@@ -8,7 +8,7 @@ weight: 50
 
 **System Settings > Services** displays each system component that runs continuously in the background. These typically control data-sharing or other external access to the system. Individual services have configuration screens and activation toggles, and you can set them to run automatically.
 
-Documented services related to data sharing or automated tasks are in their respective [Shares]({{< relref "/SCALE/Shares/_index.md" >}}) and [Tasks]({{< relref "/SCALE/DataProtection/_index.md" >}}) articles.
+Documented services related to data sharing or automated tasks are in their respective [Shares]({{< relref "/SCALE/SCALEUIReference/Shares/_index.md" >}}) and [Tasks]({{< relref "/SCALE/SCALEUIReference/DataProtection/_index.md" >}}) articles.
 
 ![ServicesSCALE](/images/SCALE/ServicesSCALE.png "SCALE Service Screen")
 
@@ -390,7 +390,7 @@ We recommend these additional SSH service options:
 * Increase the **ClientMaxStartup** value (**10** is default) when you need more concurrent SSH connections.
 
 Remember to enable the SSH service in **System Settings > Services** after making changes.
-To create and store specific [SSH connections and keypairs]({{< relref "/SCALE/Credentials/BackupCredentials/_index.md" >}}), go to **Credentials > Backup Credentials**.
+To create and store specific [SSH connections and keypairs]({{< relref "/SCALE/SCALEUIReference/Credentials/BackupCredentials/_index.md" >}}), go to **Credentials > Backup Credentials**.
 {{< /tab >}}
 
 {{< tab "UPS" >}}

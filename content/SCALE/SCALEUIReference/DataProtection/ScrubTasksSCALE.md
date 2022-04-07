@@ -16,7 +16,7 @@ TrueNAS generates a default scrub task when you create a new pool and sets it to
 
 ## Creating New Scrub Tasks
 
-TrueNAS needs at least one data [pool]({{< relref "/content/SCALE/Storage/Pools/_index.md" >}}) to create scrub task.
+TrueNAS needs at least one data [pool]({{< relref "/content/SCALE/SCALEUIReference/Storage/Pools/_index.md" >}}) to create scrub task.
 
 To create a scrub task for a pool, go to **Data Protection** and click **ADD** in the **Scrub Tasks** window.
 

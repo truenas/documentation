@@ -22,7 +22,7 @@ TrueNAS SCALE includes the [Key Management Interface Protocol (KMIP)](https://do
 
 {{< include file="/_includes/EncryptionWarning.md" type="page" >}}
 
-Encrypting the root dataset of a new storage pool further increases data security. [Create a new pool]({{< relref "/SCALE/Storage/Pools/_index.md" >}}) and check the **Encryption** box on the **Pool Manager** screen. 
+Encrypting the root dataset of a new storage pool further increases data security. [Create a new pool]({{< relref "/SCALE/SCALEUIReference/Storage/Pools/_index.md" >}}) and check the **Encryption** box on the **Pool Manager** screen. 
 The SCALE encryption warning dialog box displays.
 
 ![PoolEncryptionWarningSCALE](/images/SCALE/PoolEncryptionWarningSCALE.png "SCALE Pool Encryption Warning")
@@ -43,7 +43,7 @@ These algorithms provide authenticated encryption with block ciphers.
 You can create new datasets within an existing storage pool as either encrypted or non-encrypted. 
 A mix of encrypted and non-encrypted datasets can exist in a single storage pool.
  
-To encrypt a dataset, [create a new dataset]({{< relref "/SCALE/Storage/Pools/datasetsscale.md" >}}) and after typing a name scroll down to **Encryption Options**.
+To encrypt a dataset, [create a new dataset]({{< relref "DatasetsSCALE.md" >}}) and after typing a name scroll down to **Encryption Options**.
 The **Add Dataset** configuration screen encryption fields change based on the **Encryption Type** selected.
 
 {{< tabs "Dataset Encryption Options" >}}
@@ -178,7 +178,7 @@ You can only encrypting a zvol if you create the zvol from a dataset with encryp
 {{< include file="/_includes/EncryptionBackupKeys.md" type="page" >}}
 
 Zvols, like datasets, inherit encryption settings from the parent dataset. 
-To encrypt a zvol, select a dataset configured with encryption and then [create a new zvol]({{< relref "/SCALE/Storage/Pools/zvolsscale.md" >}}).
+To encrypt a zvol, select a dataset configured with encryption and then [create a new zvol]({{< relref "ZvolsSCALE.md" >}}).
 Next, click the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> icon to display the **Zvol Actions** menu.  
  
 ![AddZvolActionsMenuWithEncryptionOptions](/images/SCALE/AddZvolActionsMenuWithEncryptionOptions.png "Zvol Actions with Encryption Options")

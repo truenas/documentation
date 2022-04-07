@@ -1,6 +1,6 @@
 ---
 title: "TrueNAS SCALE EULA"
-weight: 1
+weight: 30
 aliases:
   - /scale/introduction/scaleeula/
 ---

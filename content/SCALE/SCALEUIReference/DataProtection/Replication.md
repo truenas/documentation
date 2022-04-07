@@ -3,9 +3,6 @@ title: "Replication"
 weight: 100
 ---
 
-## Remote Replication
-
-
 {{< toc >}}
 
 Configure SSH in TrueNAS before creating a remote replication task. This ensures that new snapshots are regularly available for replication.
@@ -33,10 +30,9 @@ To streamline creating simple replication configurations, the replication wizard
   * Choose how long to keep the replicated snapshots.
 {{< /expand >}}
 
-{{< expand "Replication Tutorial" "v" >}}
-This video tutorial presents a simple example of setting up replication.
+This video tutorial presents a simple example of setting up replication:
+
 {{< embed-video name="scaleangelfishreplication" >}}
-{{< /expand >}}
 
 ## Creating a Remote Replication Task
 
@@ -312,7 +308,7 @@ This prevents the source TrueNAS from automatically deleting any snapshots that 
 {{< /tab >}}
 {{< tab "Destination" >}}
 Use **Destination** to specify where replicated data is stored.
-Choosing a remote destination requires an *[SSH Connection]({{< relref "/content/SCALE/Credentials/BackupCredentials/_index.md" >}}) to that system.
+Choosing a remote destination requires an *[SSH Connection]({{< relref "/content/SCALE/SCALEUIReference/Credentials/BackupCredentials/_index.md" >}}) to that system.
 Expanding the file browser shows the current datasets that are available on the destination system.
 You can click a destination or manually type a path in the field.
 Adding a name to the end of the path creates a new dataset in that location.

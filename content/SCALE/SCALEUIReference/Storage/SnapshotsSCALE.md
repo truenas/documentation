@@ -8,7 +8,7 @@ weight: 20
 
 {{< include file="/_includes/SnapshotsIntroSnippet.md" type="page" >}}
 
-Taking snapshots requires the system have all [pools]({{< relref "/SCALE/Storage/Pools/_index.md" >}}), [datasets]({{< relref "DatasetsSCALE.md" >}}), and [zvols]({{< relref "ZvolsSCALE.md" >}}) already configured.
+Taking snapshots requires the system have all [pools]({{< relref "/SCALE/SCALEUIReference/Storage/Pools/_index.md" >}}), [datasets]({{< relref "DatasetsSCALE.md" >}}), and [zvols]({{< relref "ZvolsSCALE.md" >}}) already configured.
 
 ## Snapshot Creation Options
 
@@ -18,7 +18,7 @@ Taking snapshots requires the system have all [pools]({{< relref "/SCALE/Storage
 ### Creating a Single Snapshot
 
 {{< hint ok >}}
-Consider making a [Periodic Snapshot Task]({{< relref "/SCALE/DataProtection/_index.md" >}}) to save time and create regular, fresh snapshots.
+Consider making a [Periodic Snapshot Task]({{< relref "/SCALE/SCALEUIReference/DataProtection/_index.md" >}}) to save time and create regular, fresh snapshots.
 {{< /hint >}}
 
 {{< expand "Video Tutorial" "v" >}}
