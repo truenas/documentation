@@ -39,7 +39,7 @@ When combined with our high-availability hardware and [**TrueCommand**]({{< relr
 </div>
 
 The Documentation Hub has all of the information you need to set up and manage your TrueNAS system.
-Documentation articles follow the latest supported software releases, with previous version documentation available from the [Docs Archive]({{< relref "Archive.md" >}}):
+Documentation articles follow the latest supported software releases, with previous version documentation available in the [Docs Archive]({{< relref "Archive.md" >}}):
 
 | Software | Current Documented Version |
 |----------|-------------------------------|
