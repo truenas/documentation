@@ -43,7 +43,7 @@ Documentation articles follow the latest supported software releases, with previ
 
 | Software | Current Documented Version |
 |----------|-------------------------------|
-| TrueNAS CORE & Enterprise | 12.0 |
+| TrueNAS CORE & Enterprise | 12.0 ([13.0 Documentation](https://github.com/truenas/documentation/pull/1211) is in development!) |
 | TrueNAS SCALE | 22.02 Angelfish |
 | TrueCommand | 2.1 |
   
