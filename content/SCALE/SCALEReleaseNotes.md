@@ -1,6 +1,9 @@
 ---
 title: SCALE Angelfish Release Notes
 weight: 5
+aliases:
+  - /releasenotes/
+  - /releasenotes/releaseschedule/
 ---
 
 {{< toc >}}

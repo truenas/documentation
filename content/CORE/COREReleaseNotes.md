@@ -1,6 +1,8 @@
 ---
 title: CORE 13.0 Release Notes
 weight: 2
+aliases:
+  - /releasenotes/core/13.0beta1/
 ---
 
 {{< toc >}}
