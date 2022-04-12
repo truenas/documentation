@@ -106,20 +106,34 @@ If the web interface is shown but seems unresponsive or incomplete:
 If the UI becomes unresponsive after an upgrade or other system operation, clear the site data and refresh the browser (<kbd>Shift</kbd>+<kbd>F5</kbd>).
 {{< /expand >}}
 
+After logging in, the TrueNAS web interface present options across the top and left side of the screen.
+
+### Top Menu
+
+The horizontal menu at the top of the web interface contains status indicators, system alerts, UI theme options, and system power options.
+
+{{< expand "Top Menu Details" >}}
+
+{{< include file="/_includes/CORETopMenu.md" type="page" >}}
+
+{{< /expand >}}
+
+### Side Menu
+
+The column on the left side of the screen contains some information about the system and links to the various TrueNAS configuration screens.
+The box at the top of the columns shows the current logged in user account and the system host name.
+
+Configuration screens are organized by feature.
+For example, to find options related to storing data, click the **Storage** option and to make data stored in TrueNAS available to client systems, go to the **Sharing** section.
+
 ## Dashboard
 
-After logging in, the system **Dashboard** is shown.
-Basic information about the installed version, systems component usage and network traffic are all presented on this screen.  For users with compatible TrueNAS
-Hardware, clicking the system image will take you to the **System > View Enclosure** page. 
+The system **Dashboard** is the default screen when logging in to TrueNAS.
+Basic information about the installed version, systems component usage and network traffic are all presented on this screen.
+For users with compatible TrueNAS Hardware, clicking the system image goes to the **System > View Enclosure** page.
 
 ![DashboardCORE](/images/CORE/12.0/DashboardCORE.png "TrueNAS CORE Dashboard")
 
 The **Dashboard** provides access to all TrueNAS management options.
-
-There is also a column of options at the left hand side of the screen for accessing the various TrueNAS Configuration screens.
-
-## Top Menu
-
-{{< include file="/_includes/CORETopMenu.md" type="page" >}}
 
 Now that you can access the TrueNAS web interface and see all the management options, it's time to begin [storing data]({{< relref "StoringData.md" >}})!

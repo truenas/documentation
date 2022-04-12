@@ -24,13 +24,15 @@ Clicking the iXsystems logo opens a new browser tab for the iXsystems corporate 
 
 The remaining icons in the top menu indicate various statuses and show system options.
 
-The button next to the iXsystems logo shows [TrueCommand](https://www.truenas.com/truecommand/) connection options.
+The ![TrueCommand Logo](/favicon/tc-favicon-black-32x32.png) icon next to the iXsystems logo shows [TrueCommand Cloud](https://www.truenas.com/truecommand/) connection options.
+Clicking the icon shows options for signing up or connecting/disconnecting from TrueCommand Cloud.
+The icon is grayed out when the system in not connected to TrueCommand Cloud.
 
 TrueNAS Enterprise compatible hardware has a <span class="iconify" data-icon="ic:baseline-cloud"></span> (cloud with HA text) icon that shows the current status of High Availability (HA) on the system.
 A checkmark (<span class="iconify" data-icon="ic:sharp-cloud-done"></span>) cloud icon indicates HA is functional.
 An <span class="iconify" data-icon="bi:x"></span> on top of the cloud icon indicates HA is disabled or otherwise unavailable.
 
-### Task Manager
+#### Task Manager
 
 The <span class="iconify" data-icon="ic:baseline-assignment"></span> (clipboard icon) is the system **Task Manager**.
 Click the icon to show a list of running or completed TrueNAS tasks.
@@ -38,7 +40,7 @@ Tasks are sortable by their success or error **State**, task **Method**, and **P
 Typing text in the <span class="iconify" data-icon="fa:search"></span> *Filter* field shows only those tasks that match the characters typed into the field.
 Clicking an entry shows more details about that task, including start and end timestamps.
 
-### Alerts
+#### Alerts
 
 The <span class="iconify" data-icon="clarity:bell-solid"></span> (bell icon) contains system notification messages.
 The icon changes to <span class="iconify" data-icon="clarity:bell-solid-badged"></span> when TrueNAS creates a new alert.
