@@ -46,6 +46,10 @@ Refer to the [Encryption article]({{< relref "EncryptionSCALE.md" >}}) for more 
 
 Next, configure the virtual devices (vdevs) that make up the pool.
 
+{{< hint info >}}
+If the disks being used have non-unique serial numbers, they will not populate the *Available Disks* section until *Show disk with non-unique serial numbers* is checked.
+{{< /hint >}}
+
 ### Suggested Layout
 
 Clicking **Suggest Layout** allows TrueNAS to review all available disks and populate the primary **Data VDevs** with identically sized drives in a configuration balanced between storage capacity and data redundancy.
