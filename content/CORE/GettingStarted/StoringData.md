@@ -29,6 +29,10 @@ Set *Create a new pool* and click *CREATE POOL*
 
 For the *Name*, enter *tank* or any other preferred name.
 In the **Available Disks**, set two identical disks and click the <right arrow icon> to move them to the **Data VDevs** area.
+  
+{{< hint info >}}
+If the disks being used have non-unique serial numbers, they will not populate the *Available Disks* section until *Show disk with non-unique serial numbers* is checked.
+{{< /hint >}}
 
 ![StoragePoolsAddCreateTank](/images/CORE/12.0/StoragePoolsAddCreateTank.png "Creating the tank pool")
 
