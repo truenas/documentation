@@ -31,7 +31,7 @@ For the *Name*, enter *tank* or any other preferred name.
 In the **Available Disks**, set two identical disks and click the <right arrow icon> to move them to the **Data VDevs** area.
   
 {{< hint info >}}
-If the disks being used have non-unique serial numbers, they will not populate the *Available Disks* section until *Show disk with non-unique serial numbers* is checked.
+If the disks used have non-unique serial numbers, they do not populate the **Available Disks** section until the **Show disk with non-unique serial numbers** checkbox is selected.
 {{< /hint >}}
 
 ![StoragePoolsAddCreateTank](/images/CORE/12.0/StoragePoolsAddCreateTank.png "Creating the tank pool")
