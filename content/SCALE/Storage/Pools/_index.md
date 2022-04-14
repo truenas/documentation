@@ -47,7 +47,7 @@ Refer to the [Encryption article]({{< relref "EncryptionSCALE.md" >}}) for more 
 Next, configure the virtual devices (vdevs) that make up the pool.
 
 {{< hint info >}}
-If the disks being used have non-unique serial numbers, they will not populate the *Available Disks* section until *Show disk with non-unique serial numbers* is checked.
+If the disks used have non-unique serial numbers, they do not populate the **Available Disks** section until the **Show disk with non-unique serial numbers** checkbox is selected.
 {{< /hint >}}
 
 ### Suggested Layout
