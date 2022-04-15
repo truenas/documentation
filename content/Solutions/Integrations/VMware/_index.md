@@ -5,6 +5,7 @@ weight: 50
 aliases:
   - /core/solutions/integrations/vmware/vmwarebestpractices/
   - /core/solutions/integrations/vmware/truenasforvmware/
+  - /core/solutions/integrations/vmware/
 ---
 
 {{< toc >}}

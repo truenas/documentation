@@ -1,6 +1,8 @@
 ---
 title: "Asigra Plugin"
 weight: 10
+aliases:
+  - /core/solutions/integrations/asigraplugin/
 ---
 
 [Asigra](https://www.asigra.com/) provides a TrueNAS plugin to simplify cloud storage backups with their service.

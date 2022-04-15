@@ -1,6 +1,8 @@
 ---
 title: "Containers"
 weight: 25
+aliases:
+  - /core/solutions/integrations/containers/
 ---
 
 {{< toc >}}

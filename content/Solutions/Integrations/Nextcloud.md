@@ -1,6 +1,8 @@
 ---
 title: "Nextcloud"
 weight: 26
+aliases:
+  - /core/solutions/integrations/nextcloud/
 ---
 
 ## NextCloud Plugin ##

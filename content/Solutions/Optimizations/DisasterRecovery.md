@@ -1,6 +1,8 @@
 ---
 title: "Cross-Site Disaster Recovery"
 weight: 10
+aliases:
+  - /core/solutions/optimizations/disasterrecovery/
 ---
 
 {{< toc >}}

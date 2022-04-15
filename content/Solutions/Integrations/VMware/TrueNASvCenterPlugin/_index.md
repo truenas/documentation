@@ -9,6 +9,7 @@ aliases:
   - /core/solutions/integrations/vmware/truenasvcenterplugin/datastore/
   - /core/solutions/integrations/vmware/truenasvcenterplugin/snapshot/
   - /core/solutions/integrations/vmware/truenasvcenterplugin/rbac/
+  - /core/solutions/integrations/vmware/truenasvcenterplugin/
 ---
 
 {{< toc >}}

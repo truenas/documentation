@@ -1,6 +1,8 @@
 ---
 title: "Media Workflows"
 weight: 20
+aliases:
+  - /core/solutions/optimizations/mediaentertainment/
 ---
 
 {{< toc >}}

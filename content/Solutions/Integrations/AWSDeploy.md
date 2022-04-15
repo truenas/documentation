@@ -1,6 +1,8 @@
 ---
 title: "AWS Images"
 weight: 5
+aliases:
+  - /core/solutions/integrations/awsdeploy/
 ---
 
 {{< toc >}}

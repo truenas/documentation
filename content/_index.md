@@ -5,10 +5,13 @@ geekdocCollapseSection: true
 
 # TrueNAS: Open Storage
 
-TrueNAS is the world's most popular Open Source storage operating system and is the most efficient solution for managing and sharing data over a network. It is the simplest way to create a safe, secure, centralized, and easily accessible place for your data. TrueNAS Open Storage provides unified ZFS-based storage for file, block, object, and application data.
+TrueNAS is the world's most popular Open Source storage operating system and is the most efficient solution for managing and sharing data over a network.
+It is the simplest way to create a safe, secure, centralized, and easily accessible place for your data.
+TrueNAS Open Storage provides unified ZFS-based storage for file, block, object, and application data.
 
 Whether you're looking to protect and share your company data or your family photos, [**TrueNAS CORE**]({{< relref "/CORE/_index.md" >}}) provides a secure, centralized, and easily accessible place for your data.
-When combined with our high-availability hardware and [**TrueCommand**]({{< relref "/TrueCommand/_index.md" >}}) single interface management solution, TrueNAS Enterprise ensures that your data is always safe, secure, and available. Later, [**TrueNAS SCALE**]({{< relref "/SCALE/_index.md" >}}) will evolve NAS functionality even further with container support, dual active system configurations, and hyper-converged architecture.
+When combined with our high-availability hardware and [**TrueCommand**]({{< relref "/TrueCommand/_index.md" >}}) single interface management solution, TrueNAS Enterprise ensures that your data is always safe, secure, and available.
+[**TrueNAS SCALE**]({{< relref "/SCALE/_index.md" >}}) evolves NAS functionality even further with container support, dual active system configurations, and hyper-converged architecture.
 
 ## First Steps
 
@@ -47,16 +50,32 @@ Documentation articles follow the latest supported software releases, with previ
 | TrueNAS SCALE | 22.02 Angelfish |
 | TrueCommand | 2.1 |
   
-The navigation pane to the left has topics that you can expand to find the specific knowledge you're looking for.
-You can also use the search bar above the navigation pane if you know specific keywords for what you're looking for.   
+The navigation pane to the left is sorted into several topics that you can expand to find the specific knowledge you're looking for:
+
+* **[TrueNAS CORE and Enterprise]({{< ref "/core/" >}})** contains content specific to the FreeBSD-based CORE software.
+  This includes a **Getting Started Guide**, **Configuration Tutorials**, and reference documentation for the **UI** and **API**.
+* **[TrueNAS SCALE]({{< ref "/scale/" >}})** contains content specific to the Linux-based SCALE software.
+  This includes a **Getting Started Guide**, **Configuration Tutorials**, and reference documentation for the **UI** and **API**.
+* **[TrueNAS Upgrades]({{< ref "/truenasupgrades/" >}})** documents current upgrade information for both CORE and SCALE, including the active update trains and developer images for upcoming versions.
+* **[Solutions]({{< ref "/solutions/" >}})** provides version-agnostic background information and tutorials about general system use cases or integrations with other vendor solutions.
+* **[TrueCommand]({{< ref "/truecommand/" >}})** contains content specific to the latest support release of TrueCommand.
+  This includes installation instructions, reference information about each section of the TrueCommand web interface, and tutorials for specific use-cases.
+* **[TrueNAS Systems]({{< ref "/hardware/" >}})** has content specific to the various hardware platforms that iXsystems builds and sells specifically for use with TrueNAS.
+* **[Contributing]({{< ref "/contributing/" >}})** provides guidance for those seeking to contribute to the open-source projects.
+* **[References]({{< ref "/references/" >}})** provides general background knowledge about concepts and terms and some of the underlying technologies that are used in TrueNAS.
+
+The **More** menu in the lower-left side of the screen has links to security notices, archived documentation, and the GitHub source repository for this website.
+An RSS feed is also available here.
+
+You can also use the search bar above the navigation pane if you know specific keywords for what you're looking for.
 
 We encourage all users to provide feedback about the Documentation Hub and TrueNAS by [**Reporting Issues**]({{< relref "/Contributing/IssueReporting/_index.md" >}}) or suggesting [**updates**]({{< relref "ContentUpdate.md" >}}) and [**new articles**]({{< relref "/Contributing/Documentation/NewArticles/_index.md" >}}).  
-  
+
 Can't find what you're looking for? Just want to be part of the TrueNAS community? Join our [**Community Forums**](https://www.truenas.com/community/) or the [**TrueNAS subreddit**](https://www.reddit.com/r/truenas/).
 
 ## What's New on the Documentation Hub?
 
-The Documentation Hub has had some changes for the CORE 13.0 release!
+Based on your feedback and additional effort to prepare for more content, the Documentation Hub has had some changes for the CORE 13.0 release!
 
 ### Software Release Notes Rework
 
@@ -80,6 +99,14 @@ To better provide purposeful and direct documentation, content is reorganized in
 * **UI Reference Guide** ([CORE](/core/uireference/), [SCALE](/scale/scaleuireference/)): This is a descriptive guide of the various menus and options you will encounter when using the software.
   The structure of this section *parallels* the layout of the TrueNAS web interface.
 
+No content was removed with these changes, but is now recategorized as either tutorial or descriptive.
+This is intended to help readers sort and find their desired content faster, provide an improved experience for readers that are looking for either simple descriptive content or specific use-case tutorials, and better organize for future content expansion.
+
+#### Solutions Guide Rework
+
+The [Solutions]({{< ref "/solutions/" >}}) articles are elevated out of the CORE documentation area and is refocusing on providing version-agnostic background information and tutorials about general system use cases or integrations with other vendor solutions.
+
+### Expanded Download or Print Options
+
 Each top-level section of CORE and SCALE documentation also has a **Download or Print** option.
 This combines all the individual articles in that section into a single document format that can be downloaded as a PDF, physically printed, or saved as HTML.
-  

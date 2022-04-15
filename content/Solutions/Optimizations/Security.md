@@ -1,6 +1,8 @@
 ---
 title: "Security Recommendations"
 weight: 30
+aliases:
+  - /core/solutions/optimizations/security/
 ---
 
 {{< toc >}}
