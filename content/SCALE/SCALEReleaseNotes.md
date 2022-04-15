@@ -3050,7 +3050,7 @@ With TrueNAS SCALE 21.06 and the recent release of [TrueCommand 2.0](https://www
 * **Scale-Out ZFS**: TrueCommand 2.0 provides a cluster volumes interface for TrueNAS SCALE systems. This 
  enables ZFS datasets to be pooled together as cluster volumes which span multiple nodes. Cluster volumes can have a variety of redundancy properties including 3-way Mirrors, N+1, and N+2. Each cluster volume can then be shared with GlusterFS natively. Support for clustered SMB access will be available in August with SCALE 21.08.
 
-[TrueNAS SCALE documentation](https://www.truenas.com/docs/scale/) has also reached its BETA phase. It is based on the greatly improved documentation of TrueNAS CORE. In addition, there are [Developer Notes](/introduction/devnotes) and Release Notes. Even if you aren’t ready to make the leap, please review the docs and let us know if you have any questions.
+[TrueNAS SCALE documentation](https://www.truenas.com/docs/scale/) has also reached its BETA phase. It is based on the greatly improved documentation of TrueNAS CORE. In addition, there are Developer Notes (retired) and Release Notes. Even if you aren’t ready to make the leap, please review the docs and let us know if you have any questions.
 
 We appreciate the [community feedback](https://www.truenas.com/community/forums/truenas-scale-discussion/) and [bug reports](https://jira.ixsystems.com/) and hope to get all those features to RELEASE quality faster. A special thanks also goes to the large number of awesome community members who joined the development and test team. We’ve really appreciated your contributions and teamwork and it has greatly contributed to the accelerated development process.  
 
@@ -3075,7 +3075,7 @@ The UI, while similar to TrueNAS CORE, has also been improved with some new UX e
 
 In the 21.02 version, we also introduced the new [TrueNAS CLI](https://www.truenas.com/community/threads/introducing-the-new-truenas-cli.90741/) that uses the API and persists all changes. This CLI will make it easier to script the set-up and configuration of TrueNAS.  Feedback on the CLI has been very positive and provided much help in us rapidly maturing it for field-use.
 
-In March, the [TrueNAS CORE documentation](https://www.truenas.com/docs/hub/) received a major facelift which greatly improved navigation and ease of use. TrueNAS SCALE documentation is taking shape as a clone of TrueNAS CORE. [TrueNAS SCALE documentation](https://www.truenas.com/docs/hub/scale/) is minimal at the moment and relies on its similarity to TrueNAS CORE in addition to the [Developer Notes]({{< relref "/SCALE/Introduction/DevNotes.md" >}}) and Release Notes. 
+In March, the [TrueNAS CORE documentation](https://www.truenas.com/docs/hub/) received a major facelift which greatly improved navigation and ease of use. TrueNAS SCALE documentation is taking shape as a clone of TrueNAS CORE. [TrueNAS SCALE documentation](https://www.truenas.com/docs/hub/scale/) is minimal at the moment and relies on its similarity to TrueNAS CORE in addition to the Developer Notes (retired) and Release Notes. 
 
 We appreciate the [community feedback](https://www.ixsystems.com/community/forums/truenas-scale-discussion/) and [bug reports](https://jira.ixsystems.com/) and hope to get SCALE to production quality faster. A special thanks also goes to the large number of community members who joined the development and test team. We’ve really enjoyed your contributions and teamwork and it has greatly contributed to the accelerated development process.
 
@@ -3768,7 +3768,7 @@ The major features of SCALE are represented in the application acronym:
 	<li><b>E</b>asy to Manage</li>
 </ul>
 
-Initial [developer’s notes]({{< relref "/SCALE/Introduction/DevNotes.md" >}}) for TrueNAS SCALE are available in the TrueNAS Documentation Hub.
+Initial developer’s notes (retired) for TrueNAS SCALE are available in the TrueNAS Documentation Hub.
 Note that because SCALE shares a similar user interface as the FreeBSD-based TrueNAS CORE, many of the current documentation articles also apply to SCALE.
 SCALE feature-specific articles will be added to the [SCALE section]({{< relref "/SCALE/_index.md" >}}) as the software approaches its first full release.
 
@@ -4266,7 +4266,7 @@ The major features of SCALE are represented in the application acronym:
 	<li><b>E</b>asy to Manage</li>
 </ul>
 
-Initial [developer’s notes]({{< relref "/SCALE/Introduction/DevNotes.md" >}}) for TrueNAS SCALE are available on the TrueNAS Documentation Hub.
+Initial developer’s notes (retired) for TrueNAS SCALE are available on the TrueNAS Documentation Hub.
 Note that because SCALE shares a similar user interface as the FreeBSD-based TrueNAS CORE, many of the current documentation articles also apply to SCALE.
 SCALE feature-specific articles will be added to the [SCALE section]({{< relref "/SCALE/_index.md" >}}) as the software approaches its first full release.
 
@@ -4313,7 +4313,7 @@ Please use only with caution.
   * Periodic Snapshots
   * Rsync
   * Scrub
-* [Docker Images deployed as Helm Charts with Kubernetes NVIDIA / Intel Quicksync GPU passthrough (CLI)]({{ relref "/SCALE/Introduction/DevNotes#kubernetes-integration-information" >}})
+* Docker Images deployed as Helm Charts with Kubernetes NVIDIA / Intel Quicksync GPU passthrough (CLI)
 * Wireguard (CLI)
 * Networking and Settings UX Refresh
 * OpenVPN Client and Server
@@ -4749,7 +4749,8 @@ The major features of SCALE are represented in the application acronym:
 	<li><b>E</b>asy to Manage</li>
 </ul>
 
-Initial developer’s notes for TrueNAS SCALE are available on the [TrueNAS Documentation Hub]({{< relref "/SCALE/Introduction/DevNotes.md" >}}).
+Initial developer’s notes for TrueNAS SCALE are available on the TrueNAS Documentation Hub.
+(developer's notes are now retired, please see the SCALE documentation content instead.)
 Note that because SCALE shares the same UI as the FreeBSD-based TrueNAS CORE, many of the current documentation articles also apply to SCALE.
 SCALE feature-specific articles will be added to the [TrueNAS SCALE]({{< relref "/SCALE/_index.md" >}}) page as the software approaches its first full release.
 
