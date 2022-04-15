@@ -901,6 +901,11 @@ After installing the module, connect to an NFS share by entering `sudo mount -t 
 In the above example, *{IPaddressOfTrueNASsystem}* is the remote TrueNAS system's IP address that contains the NFS share, *{path/to/nfsShare}* is the path to the NFS share on the TrueNAS system, and *{localMountPoint}* is a local directory on the host system configured for the mounted NFS share.
 For example, `sudo mount -t nfs 10.239.15.110:/mnt/Pool1/NFS_Share /mnt` mounts the NFS share **NFS_Share** to the local directory `/mnt`.
 
+You can also use the linux `nconnect` function to let your NFS mount to support multiple TCP connections. 
+To enable `nconnect`, enter `sudo mount -t nfs -o rw,nconnect=16 {IPaddressOfTrueNASsystem}:{path/to/nfsShare} {localMountPoint}`. 
+Use the same *{IPaddressOfTrueNASsystem}*, *{path/to/nfsShare}*, and *{localMountPoint}* you used when connecting to the share.
+For example, `sudo mount -t nfs -o rw,nconnect=16 10.239.15.110:/mnt/Pool1/NFS_Share /mnt`.
+
 By default, anyone that connects to the NFS share only has read permission.
 To change the default permissions, edit the share, open the **Advanced Options**, and change the **Access** settings.
 
