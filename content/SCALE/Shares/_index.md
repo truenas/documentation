@@ -898,7 +898,7 @@ This can be done using the installed distribution's package manager.
 For example, on Ubuntu/Debian, enter `sudo apt-get install nfs-common` in the terminal.
 
 After installing the module, connect to an NFS share by entering `sudo mount -t nfs {IPaddressOfTrueNASsystem}:{path/to/nfsShare} {localMountPoint}`.
-In the above example, *{IPaddressOfTrueNASsystem}* is the remote TrueNAS system's IP address that contains the NFS share, *{path/to/nfsShare}* is the path to the NFS share on the TrueNAS system, and *{localMountPoint}* is a local directory on the host system configured for the mounted NFS share.
+In the above example, *{IPaddressOfTrueNASsystem}* is the remote TrueNAS system IP address that contains the NFS share, *{path/to/nfsShare}* is the path to the NFS share on the TrueNAS system, and *{localMountPoint}* is a local directory on the host system configured for the mounted NFS share.
 For example, `sudo mount -t nfs 10.239.15.110:/mnt/Pool1/NFS_Share /mnt` mounts the NFS share **NFS_Share** to the local directory `/mnt`.
 
 You can also use the linux `nconnect` function to let your NFS mount to support multiple TCP connections. 
