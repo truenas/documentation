@@ -37,7 +37,7 @@ Changing the **Send Mail Method** shows different options:
 | From Name | The friendly name to show in front of the sending email address. Example: *Storage System 01<it@example.com>* |
 | Outgoing Mail Server | Hostname or IP address of SMTP server used for sending email. |
 | Mail Server Port | SMTP port number. Typically 25/465 (secure SMTP), or 587 (submission). |
-| Security | Choose an encryption type. Choices are *Plain (No Encryption)*, *SSL (Implicit TLS)*, or *TLS (STARTTLS)*. |
+| Security | Choose an encryption type. Choices are **Plain (No Encryption)**, **SSL (Implicit TLS)**, or **TLS (STARTTLS)**. |
 | SMTP Authentication | Set when the SMTP server uses authentication credentials. Shows additional credentials options. |
 {{< /tab >}}
 {{< tab "GMail OAuth" >}}
