@@ -5,7 +5,7 @@ weight: 26
 
 ## NextCloud Plugin
 
-The [NextCloud](https://nextcloud.com/) plugin is a suite of client-server software for creating and using file hosting services. 
+The [Nextcloud](https://nextcloud.com/) plugin is a suite of client-server software for creating and using file hosting services. 
 
 ### Plugins Catalog
 
