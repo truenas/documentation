@@ -236,7 +236,7 @@ The requirements to run TrueCommand in Docker Desktop for Windows are:
 
 ### Enable Hyper-V
 
-Open the Start menu and search for Apps & Features.
+Open the **Start** menu and search for **Apps & Features**.
 Select Programs and Features under Related settings and Turn Windows Features on or off (Administrator action).
 Set the Hyper-V option and click **Ok**.
 Restart your computer for the change to take effect.
