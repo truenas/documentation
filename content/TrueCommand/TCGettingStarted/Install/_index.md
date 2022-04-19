@@ -158,7 +158,8 @@ Run this command (as root) from a system terminal:
 
 If you don't already have it, download the VM image [here](https://www.microsoft.com/en-us/software-download/windows10).
 
-1. On your Windows platform (VM or Bare-Metal) install [Docker for Windows](https://hub.docker.com/editions/community/docker-ce-desktop-windows/).
+On your Windows platform (VM or Bare-Metal):
+1. Install [Docker for Windows](https://hub.docker.com/editions/community/docker-ce-desktop-windows/).
 2. Open Windows PowerShell (**Start > Windows Power Shell > Windows Power Shell**)
 3. Run the following command inside powershell to start TrueCommand:   
 `docker run --pull=always --restart unless-stopped --detach -v "[hostdirectory]:/data" -p [portnumber]:80 -p [sslportnumber]:443 ixsystems/truecommand`
