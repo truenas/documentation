@@ -95,5 +95,7 @@ jobs:
             --exclude=https://discord.com/invite/Q3St5fPETd
             --exclude=https://www.veeam.com/documentation-guides-datasheets.html
             --exclude=https://twitter.com/TrueNAS
+            --exclude=https://www.openpgp.org/software/
+            --exclude=https://gohugo.io/
           run_timeout: 300
           debug: true
