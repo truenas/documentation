@@ -301,7 +301,7 @@ Hover over the **ixsystems/truecommand** entry to show the **Run** button, then 
 ![DockerDesktopImages](/images/TrueCommand/DockerDesktopImages.png "Docker Desktop: Starting the TrueCommand Container")
 
 Open the **Optional Settings** drop-down list, name the container, and set the port values listed below.
-Investigate your network environment or check with your IT department to ensure that these ports will not conflict with other running services.
+Investigate your network environment or check with your IT department to ensure that these ports do not conflict with other running services.
 
 * Local Host Port: `9005`
 * Container Port `443`
