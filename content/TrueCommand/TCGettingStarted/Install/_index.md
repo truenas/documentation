@@ -260,7 +260,7 @@ Run the installer after the download completes.
 When the installer finishes, reboot the system.
 
 {{< expand "Different Admin accounts?" "v" >}}
-If the admin account is different from your Windows user account, you must add the user to the `docker-users` group.
+If the admin account is different from your Windows user account, you must add the user to the docker-users group.
 Run Computer Management as an administrator and go to **Local Users and Groups > Groups > docker-users** to add the user to the group.
 Changes take effect after logging out and back in.
 {{< /expand >}}
