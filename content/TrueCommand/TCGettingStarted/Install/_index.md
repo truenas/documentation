@@ -120,17 +120,16 @@ For example, Docker Desktop and VMware Workstation Player cannot simultaneously 
 {{< /hint >}}
 
 Before fetching the TrueCommand docker image, create a local directory.
-Enter `mkdir directory` replacing *directory* with the new name.
+Enter `mkdir directory`, replacing *directory* with the new name.
 
 After creating the new directory, fetch and run the TrueCommand Docker image.
-Open a Command Line Interface (CLI) and enter `docker run \--detach -v "/hostdir:/data" -p port:80 -p
-ssl:443 ixsystems/truecommand:latest`.
+
+Open a terminal and enter `docker run \--detach -v "/hostdir:/data" -p port:80 -p ssl:443 ixsystems/truecommand:latest`.
+
 *hostdir* is a directory on the host machine for Docker container data, *port* is the TrueCommand web interface port number, and *ssl* is the port number for secure web interface access.
 
-To install the container with an earlier TrueCommand release, replace *latest* with the desired TrueCommand version tag:
-```
-docker run \--detach -v "/DockerDir:/data" -p 9004:80 -p 9005:443 ixsystems/truecommand:1.3.2
-```
+To install the container with an earlier TrueCommand release, replace *latest* with the desired TrueCommand version tag:  
+`docker run \--detach -v "/DockerDir:/data" -p 9004:80 -p 9005:443 ixsystems/truecommand:1.3.2`
 
 {{< hint info >}}
 Use [Windows compatible syntax](https://docs.microsoft.com/en-us/dotnet/standard/io/file-path-formats) when specifying paths in the Windows file system.
@@ -154,8 +153,8 @@ After fetching the TrueCommand Docker container, enter `docker ps` to see detail
 
 Use the port assigned to the container to access the web interface.
 The list from `docker ps` contains a **PORTS** column.
-Find the port associated with the `ixsystems/truecommand:latest` **IMAGE**.
-The **PORTS** entry is listed as `0.0.0.0:port->80/tcp`, `0.0.0.0:sslport->443/tcp` where *port* and *sslport* are the ports specified earlier.
+Find the port associated with the **ixsystems/truecommand:latest** **IMAGE**.
+The **PORTS** entry is listed as **0.0.0.0:port->80/tcp**, **0.0.0.0:sslport->443/tcp** where *port* and *sslport* are the ports specified earlier.
 
 To access the web interface with no encryption, enter `hostsystemIPaddress:port` in a browser address bar, where *hostsystemIPaddress* is the IP address of the host system that is running the TrueCommand Docker container.
 To access the web interface with standard SSL encryption, enter `https://hostsystemIPaddress:sslport` in a browser address bar.
@@ -183,8 +182,8 @@ Restart your computer for the change to take effect.
 
 ![EnableHyperV](/images/TrueCommand/EnableHyperV.png "Enable HyperV")
 
-Alternatively, you can enable Hyper-V with Powershell.
-Run Powershell as a Windows administrator and enter `Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All`.
+Alternatively, you can enable Hyper-V with Powershell.  
+Run Powershell as a Windows administrator and enter `Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All`.  
 If Powershell returns an error saying it couldn't find the command, verify that you are running PowerShell as administrator.
 After the command successfully runs, reboot the computer.
 
@@ -256,7 +255,7 @@ Click the **+** sign to add a second set of ports.
 Setting the **Volume** is not usually required for TrueCommand.
 Click **RUN** after configuring the settings.
 
-When Docker Desktop shows the container status as **RUNNING**, open a new browser tab and go to https://127.0.0.1:9005.
+When Docker Desktop shows the container status as **RUNNING**, open a new browser tab and go to [https://127.0.0.1:9005](https://127.0.0.1:9005).
 
 ![DockerDesktopTrueCommandRunning](/images/TrueCommand/DockerDesktopTrueCommandRunning.png "TrueCommand Container is running")
 {{< /tab >}}
