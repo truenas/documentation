@@ -244,7 +244,7 @@ Restart your computer for the change to take effect.
 ![EnableHyperV](/images/TrueCommand/EnableHyperV.png "Enable HyperV")
 
 Alternatively, you can enable Hyper-V with Powershell.
-Run Powershell as a Windows Administrator and enter `Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All`.
+Run Powershell as a Windows administrator and enter `Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All`.
 If Powershell returns an error saying it couldn't find the command, verify that you are running PowerShell as the Administrator.
 After the command successfully runs, reboot the computer.
 
