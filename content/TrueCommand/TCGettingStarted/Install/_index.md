@@ -162,7 +162,7 @@ On your Windows platform (VM or Bare-Metal):
 1. Install [Docker for Windows](https://hub.docker.com/editions/community/docker-ce-desktop-windows/).
 2. Open Windows PowerShell (**Start > Windows Power Shell > Windows Power Shell**)
 3. Run the following command inside powershell to start TrueCommand:   
-`docker run --pull=always --restart unless-stopped --detach -v "[hostdirectory]:/data" -p [portnumber]:80 -p [sslportnumber]:443 ixsystems/truecommand`
+    `docker run --pull=always --restart unless-stopped --detach -v "[hostdirectory]:/data" -p [portnumber]:80 -p [sslportnumber]:443 ixsystems/truecommand`
 
 {{< hint info >}}
 Replace `[hostdirectory]` with a path to where you want TrueCommand to store its local database. Replace `[portnumber]` and `[sslportnumber]` with the ports you wish to expose for TC access.
