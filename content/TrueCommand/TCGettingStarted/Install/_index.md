@@ -136,7 +136,7 @@ If you don't already have it, download the VM image [here](https://alpinelinux.o
 {{< hint info >}}
 Ensure you have the wget utility installed first: `apk add wget`.   
 Ensure that you have the community package repository enabled:
-* Edit the */etc/apk/repositories* file as root and uncomment the community repository line.
+* Edit the /etc/apk/repositories file as root and uncomment the community repository line.
 * Run `apk update` to refresh the list of available packages.
 {{< /hint >}}
 
