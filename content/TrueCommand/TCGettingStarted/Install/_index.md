@@ -276,7 +276,7 @@ The update package downloads from a [Windows storage location](https://wslstores
 
 Microsoft has additional documentation available to assist with [downloading the Linux kernel update](https://docs.microsoft.com/en-us/windows/wsl/install-win10#step-4---download-the-linux-kernel-update-package).
 
-After installing the kernel update, set the WSL default version to `version 2` by opening the Powershell and entering `wsl --set-default-version 2`.
+After installing the kernel update, set the WSL default version by opening the Powershell and entering `wsl --set-default-version 2`.
 
 ![DockerDesktopSetWSLDefault](/images/TrueCommand/DockerDesktopSetWSLDefault.png "Docker Desktop Set WSL Default")
 
