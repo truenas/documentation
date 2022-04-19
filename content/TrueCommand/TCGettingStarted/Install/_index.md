@@ -148,7 +148,7 @@ Run this command (as root) from a system terminal:
 If you don't already have it, download the VM image [here](https://voidlinux.org/download/).
 
 {{< hint info >}}
-Ensure you have the "wget" utility installed first: `xbps-install -y wget`
+Ensure you have the wget utility installed first: `xbps-install -y wget`
 {{< /hint >}}
 
 Run this command (as root) from a system terminal:   
