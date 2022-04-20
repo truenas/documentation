@@ -1,13 +1,8 @@
 ---
-<<<<<<< HEAD:content/CORE/COREReleaseNotes.md
 title: CORE 13.0 Release Notes
 weight: 2
 aliases:
   - /releasenotes/core/13.0beta1/
-=======
-title: "13.0-BETA1"
-weight: 20
->>>>>>> 13.0-Documentation:content/_includes/COREReleaseNotes/13.0/13.0Beta1.md
 ---
 
 {{< toc >}}
