@@ -25,6 +25,7 @@ Open https://portal.ixsystems.com and click **Register**.
 Fill out the form using the email address you want to use. 
 
 ![PortalAccountCreate](/images/TrueCommand/Cloud/PortalAccountCreate.png "Portal Account Create")
+
 Check the address spam folder if the email does not arrive within a few minutes.
 If the email is in the spam folder, mark it as *not spam* and add the account to the address book.
 After receiving the verification email, open the link provided to verify the account.
@@ -114,10 +115,17 @@ When all systems are connected to TrueCommand Cloud, refer to the [TrueCommand A
 {{< tab "Docker (Linux)" >}}
 ## Installing the TrueCommand Container
 
-{{< hint warning >}}
-Docker Desktop for Windows uses Hyper-V, which interferes with other virtualization applications.
-For example, Docker Desktop and VMware Workstation Player cannot simultaneously run.
+{{< hint info >}}
+If you haven't already installed Docker on your machine, install the [Docker Engine](https://docs.docker.com/engine/install/debian/), then install [Docker Desktop](https://docs.docker.com/desktop/linux/).
 {{< /hint >}}
+
+To run TrueCommand in Docker Desktop for Windows, you must have:
+
+* 64-bit Debian or 64-bit Ubuntu 21.x (we recommend Debian) 
+* Linux Kernel Support: 4.x+
+* 1 CPU with 2 GiB RAM
+* 1 Hard Disk with 10 - 50 GiB storage space
+* Customer networking settings and internet access
 
 Before fetching the TrueCommand docker image, create a local directory.
 Enter `mkdir directory`, replacing *directory* with the new name.
@@ -130,13 +138,6 @@ Open a terminal and enter `docker run \--detach -v "/hostdir:/data" -p port:80 -
 
 To install the container with an earlier TrueCommand release, replace *latest* with the desired TrueCommand version tag:  
 `docker run \--detach -v "/DockerDir:/data" -p 9004:80 -p 9005:443 ixsystems/truecommand:1.3.2`
-
-{{< hint info >}}
-Use [Windows compatible syntax](https://docs.microsoft.com/en-us/dotnet/standard/io/file-path-formats) when specifying paths in the Windows file system.
-For example, if you created the TrueCommand image directory in the Windows <file>Documents</file> folder, the command would be:
-`docker run \--detach -v C:\Users\\Example\\Documents\\DockerDir`.
-*C* is the drive letter, *Example* is the current user name, and *DockerDir* is the TrueCommand image directory.
-{{< /hint >}}
 
 Although Docker containers have several run methods, TrueCommand requires`-v /hostdirectory:/data` to function.
 
@@ -163,7 +164,14 @@ To access the web interface with standard SSL encryption, enter `https://hostsys
 When a connection to the web interface cannot be established, add the container ports as an exception to the host system firewall.
 {{< /expand >}}
 {{< /tab >}}
+
 {{< tab "Docker Desktop (Windows)" >}}
+
+{{< hint warning >}}
+Docker Desktop for Windows uses Hyper-V, which interferes with other virtualization applications.
+For example, Docker Desktop and VMware Workstation Player cannot simultaneously run.
+{{< /hint >}}
+
 To run TrueCommand in Docker Desktop for Windows, you must have:
 
 * Windows 10 Enterprise, Pro, or Education editions
