@@ -62,7 +62,7 @@ Dolor sit, sumo unique ...
 |------|-------------|
 | OAuth Client ID | The public identifier for the cloud application. |
 | OAuth Client Secret | The secret phrase known only to the cloud application and the authorization server. |
-| Access Token | A User Access Token for [Box](https://developer.box.com/). An [access token](https://developer.box.com/reference) enables Box to verify a request belongs to an authorized session. Example token: T9cE5asGnuyYCCqIZFoWjFHvNbvVqHjl. |
+| Access Token | A User Access Token for [Box](https://developer.box.com/). An [access token](https://developer.box.com/reference/) enables Box to verify a request belongs to an authorized session. Example token: T9cE5asGnuyYCCqIZFoWjFHvNbvVqHjl. |
 {{< /expand >}}
 
 {{< expand "DropBox" "v" >}}

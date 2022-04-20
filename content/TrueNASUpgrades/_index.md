@@ -35,7 +35,8 @@ See [CORE Updates]({{< relref "/content/CORE/UIReference/System/Update/_index.md
 ## Migrating from CORE to SCALE
 
 {{< hint danger >}}
-SCALE is still pre-release software.
+SCALE is a new and maturing software.
+CORE systems with High Availability enabled (HA) can not be upgraded to SCALE with HA.
 It is not suitable for TrueNAS Enterprise customers and CORE users should always exercise caution and back up their data and system configuration before starting an upgrade.
 {{< /hint >}}
 

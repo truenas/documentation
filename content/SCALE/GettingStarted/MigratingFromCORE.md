@@ -7,6 +7,7 @@ weight: 11
 
 {{< hint danger >}}
 Migrating TrueNAS from CORE to SCALE is a one-way operation. Attempting to activate or roll back to a CORE boot environment can break the system.
+CORE systems with High Availability enabled (HA) can not be upgraded to SCALE HA.
 {{< /hint >}}
 
 {{< hint danger >}}

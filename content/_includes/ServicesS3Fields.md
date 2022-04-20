@@ -13,4 +13,4 @@
 | Disk | Browse to a directory to define the S3 filesystem path. |
 | Enable Browser | Enables the S3 service web UI. Access the MinIO web UI by entering the IP address and port number separated by a colon in the browser address bar. Example: *192.168.1.0:9000*. |
 | Certificate | Use an SSL [certificate]({{< relref "CertificatesSCALE.md" >}}) created or imported in **Credentials > Certificates** for secure S3 connections. |
-| TLS Server URI  | If using an SSL certificate, enter the MinIO server's proxy-able address |
+| TLS Server Hostname / TLS Server URI  | If using an SSL certificate, enter the MinIO server's proxy-able address |

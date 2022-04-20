@@ -48,6 +48,10 @@ To clear the suggestion, click *RESET LAYOUT*.
 To manually configure the pool, add vdevs according to your use case.
 Set the **Disk** boxes and click the <i class="fa fa-arrow-right" aria-hidden="true" title="Right Arrow"></i>&nbsp; to move the disks into a vdev.
 
+{{< hint warning >}}
+**Warning:** USB-connected disks may report their serial numbers inaccurately, making them indistinguishable from each other.
+{{< /hint >}}
+
 ### Vdev Types
 
 Pools have many different kinds of vdevs available.

@@ -60,7 +60,7 @@ The rest of the options change according to the chosen *Provider*:
 
 | Name | Description |
 |------|-------------|
-| Access Token | A User Access Token for [Box](https://developer.box.com/). An [access token](https://developer.box.com/reference) enables Box to verify a request belongs to an authorized session. Example token: T9cE5asGnuyYCCqIZFoWjFHvNbvVqHjl. |
+| Access Token | A User Access Token for [Box](https://developer.box.com/). An [access token](https://developer.box.com/reference/) enables Box to verify a request belongs to an authorized session. Example token: T9cE5asGnuyYCCqIZFoWjFHvNbvVqHjl. |
 
 {{< /tab >}}
 {{< tab "DropBox" >}}

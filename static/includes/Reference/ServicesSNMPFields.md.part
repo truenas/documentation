@@ -24,4 +24,3 @@
 | Auxiliary Parameters | Enter any additional [snmpd.conf](https://net-snmp.sourceforge.io/docs/man/snmpd.conf.html) options. Add one option for each line. |
 | Expose zilstat via SNMP | Enabling this option may have performance implications on your pools. |
 | Log Level | Choose how many log entries to create. Choices range from least (Emergency) to most (Debug). |
-| Enable Network Performance Statistics | Include [iftop](https://linuxcommandlibrary.com/man/iftop) network performance statistics in SNMP messages. |

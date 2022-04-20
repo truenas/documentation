@@ -46,6 +46,10 @@ Refer to the [Encryption article]({{< relref "EncryptionSCALE.md" >}}) for more 
 
 Next, configure the virtual devices (vdevs) that make up the pool.
 
+{{< hint info >}}
+If the disks used have non-unique serial numbers, they do not populate the **Available Disks** section until the **Show disk with non-unique serial numbers** checkbox is selected.
+{{< /hint >}}
+
 ### Suggested Layout
 
 Clicking **Suggest Layout** allows TrueNAS to review all available disks and populate the primary **Data VDevs** with identically sized drives in a configuration balanced between storage capacity and data redundancy.
@@ -53,6 +57,10 @@ Click **Reset Layout** to clear the suggestion.
 
 To manually configure the pool, add vdevs according to your use case.
 Check the **Disk** checkboxes and click the <i class="fa fa-arrow-right" aria-hidden="true" title="Right Arrow"></i>&nbsp; to move the disks into a vdev.
+
+{{< hint warning >}}
+**Warning:** USB-connected disks may report their serial numbers inaccurately, making them indistinguishable from each other.
+{{< /hint >}}
 
 ### Vdev Types
 

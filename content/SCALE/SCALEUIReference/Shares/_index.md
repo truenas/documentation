@@ -333,7 +333,7 @@ Enter `fdisk -l` to see the new partition slice.
 
 ### Make a Filesystem on the iSCSI Disk
 
-Finally, use `mkfs` to make a filesystem on the device's new partition slice.
+Finally, use `mkfs` to make a filesystem on the new partition slice.
 To create the default filesystem (ext2), enter `sudo mkfs {/PATH/TO/iSCSIDEVICEPARTITIONSLICE}`.
 
 ![LinuxISCSIFilesystem](/images/CORE/LinuxISCSIFilesystem.png "Linux ISCSI Filesystem")
@@ -530,7 +530,7 @@ A <i class="material-icons" aria-hidden="true" title="System Update">check_box</
 | Auxiliary Parameters               | [ ]                                                                               | [ ]                                                                       | [ ]                                                                               | [ ]                                                                      | [ ]                                                                      |
 {{< /expand >}}
 
-You can specify an optional **Description** to help explain the share's purpose.
+You can specify an optional **Description** to help explain the share purpose.
 
 **Enabled** allows this path to be shared when the SMB service is activated.
 Unsetting **Enabled** disables the share without deleting the configuration.
@@ -755,7 +755,7 @@ Name the dataset and set the **Share Type** to **SMB**.
 
 After creating the dataset, go to **Storage** and open <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> next to the new dataset. Select **View Permissions**, then click <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
 
-Click the **Group** drop-down list and change the owning group to your Active Directory's domain admins.
+Click the **Group** drop-down list and change the owning group to your Active Directory domain admins.
 
 ![GroupDomainAdminsSCALE](/images/SCALE/GroupDomainAdminsSCALE.png "Set the owning group to Domain Admins")
 
@@ -779,11 +779,11 @@ Enable the **SMB** service in **System Settings > Services** to make the share i
 
 Go to **Credentials > Local Users** and click **Add**. Create a new user name and password. By default, the user **Home Directory** is titled from the user account name and added as a new subdirectory of **Home_Share_Dataset**.
 
-![AccountsUsersEditHomeDirSCALE](/images/SCALE/AccountsUsersEditHomeDirSCALE.png "Editing a User's Home Directory")
+![AccountsUsersEditHomeDirSCALE](/images/SCALE/AccountsUsersEditHomeDirSCALE.png "Editing a User Home Directory")
 
 If existing users require access to the home share, go to **Credentials > Local Users** and edit an existing account.
 
-Adjust the user's home directory to the appropriate dataset and give it a name to create their own directory.
+Adjust the user home directory to the appropriate dataset and give it a name to create their own directory.
 
 After adding the user accounts and configuring permissions, users can log in to the share and see a folder matching their username.
 
@@ -792,7 +792,7 @@ After adding the user accounts and configuring permissions, users can log in to 
 [Shadow Copies](https://docs.microsoft.com/en-us/windows-server/storage/file-server/volume-shadow-copy-service), also known as the Volume Shadow Copy Service (VSS) or Previous Versions, is a Microsoft service for creating volume snapshots.
 You can use shadow copies to restore previous versions of files from within Windows Explorer.
 
-By default, all ZFS snapshots for a dataset underlying an SMB share path are presented to SMB clients through the volume shadow copy service or are accessible directly with SMB when the hidden ZFS snapshot directory is within the SMB share's path.
+By default, all ZFS snapshots for a dataset underlying an SMB share path are presented to SMB clients through the volume shadow copy service or are accessible directly with SMB when the hidden ZFS snapshot directory is within the SMB share path.
 
 There are a few caveats about shadow copies to be aware of before activating the feature in TrueNAS:
 
@@ -818,7 +818,7 @@ You can use a Group Policy Update to apply this  to a fleet of Windows machines.
 
 {{< tab "UNIX (NFS) Shares" >}}
 Creating a Network File System (NFS) share on TrueNAS makes a lot of data available for anyone with share access.
-Depending on the share's configuration, it can restrict users to read or write privileges.
+Depending on the share configuration, it can restrict users to read or write privileges.
 
 {{< include file="static/includes/General/SharingPrereqs.md.part" markdown="true" >}}
 
@@ -894,12 +894,17 @@ When TrueNAS is already connected to [Active Directory]({{< relref "/content/SCA
 
 Although you can connect to an NFS share with various operating systems, it is recommended to use a Linux/Unix operating system.
 First, download the `nfs-common` kernel module.
-This can be done using the installed distribution's package manager.
+This can be done using the installed distribution package manager.
 For example, on Ubuntu/Debian, enter `sudo apt-get install nfs-common` in the terminal.
 
 After installing the module, connect to an NFS share by entering `sudo mount -t nfs {IPaddressOfTrueNASsystem}:{path/to/nfsShare} {localMountPoint}`.
-In the above example, *{IPaddressOfTrueNASsystem}* is the remote TrueNAS system's IP address that contains the NFS share, *{path/to/nfsShare}* is the path to the NFS share on the TrueNAS system, and *{localMountPoint}* is a local directory on the host system configured for the mounted NFS share.
+In the above example, *{IPaddressOfTrueNASsystem}* is the remote TrueNAS system IP address that contains the NFS share, *{path/to/nfsShare}* is the path to the NFS share on the TrueNAS system, and *{localMountPoint}* is a local directory on the host system configured for the mounted NFS share.
 For example, `sudo mount -t nfs 10.239.15.110:/mnt/Pool1/NFS_Share /mnt` mounts the NFS share **NFS_Share** to the local directory `/mnt`.
+
+You can also use the linux `nconnect` function to let your NFS mount to support multiple TCP connections. 
+To enable `nconnect`, enter `sudo mount -t nfs -o rw,nconnect=16 {IPaddressOfTrueNASsystem}:{path/to/nfsShare} {localMountPoint}`. 
+Use the same *{IPaddressOfTrueNASsystem}*, *{path/to/nfsShare}*, and *{localMountPoint}* you used when connecting to the share.
+For example, `sudo mount -t nfs -o rw,nconnect=16 10.239.15.110:/mnt/Pool1/NFS_Share /mnt`.
 
 By default, anyone that connects to the NFS share only has read permission.
 To change the default permissions, edit the share, open the **Advanced Options**, and change the **Access** settings.

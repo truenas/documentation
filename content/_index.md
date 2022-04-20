@@ -42,7 +42,7 @@ When combined with our high-availability hardware and [**TrueCommand**]({{< relr
 </div>
 
 The Documentation Hub has all of the information you need to set up and manage your TrueNAS system.
-Documentation articles follow the latest supported software releases, with previous version documentation available from the [Docs Archive]({{< relref "Archive.md" >}}):
+Documentation articles follow the latest supported software releases, with previous version documentation available in the [Docs Archive]({{< relref "Archive.md" >}}):
 
 | Software | Current Documented Version |
 |----------|-------------------------------|
@@ -69,7 +69,7 @@ An RSS feed is also available here.
 
 You can also use the search bar above the navigation pane if you know specific keywords for what you're looking for.
 
-We encourage all users to provide feedback about the Documentation Hub and TrueNAS by [**Reporting Issues**]({{< relref "/Contributing/IssueReporting/_index.md" >}}) or suggesting [**updates**]({{< relref "ContentUpdate.md" >}}) and [**new articles**]({{< relref "/Contributing/Documentation/NewArticles/_index.md" >}}).  
+Contributors welcome! Anyone can contribute new content or feedback about the Documentation Hub and TrueNAS by [**Reporting Issues**]({{< relref "/Contributing/IssueReporting/_index.md" >}}) or suggesting [**updates**]({{< relref "ContentUpdate.md" >}}) and [**new articles**]({{< relref "/Contributing/Documentation/NewArticles/_index.md" >}}).  
 
 Can't find what you're looking for? Just want to be part of the TrueNAS community? Join our [**Community Forums**](https://www.truenas.com/community/) or the [**TrueNAS subreddit**](https://www.reddit.com/r/truenas/).
 
