@@ -38,9 +38,9 @@ TrueNAS SCALE tickets are also tracked in the TrueNAS Jira Project.
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
 | SCALE 22.02.1 | Code-freeze | 06 April 2022 |
-| SCALE 22.02.1 | Internal Testing Sprints | 11 April > 22 April 2022 |
-| SCALE 22.02.1 | Tag | 25 April 2022 |
-| SCALE 22.02.1 | Release | 26 April 2022 |
+| SCALE 22.02.1 | Internal Testing Sprints | 11 April > 29 April 2022 |
+| SCALE 22.02.1 | Tag | 02 May 2022 |
+| SCALE 22.02.1 | Release | 03 May 2022 |
 | SCALE 22.02.2 | Code-freeze | 08 June 2022 |
 | SCALE 22.02.2 | Internal Testing Sprints | 13 June > 17 June 2022 |
 | SCALE 22.02.2 | Tag | 20 June 2022 |
@@ -55,11 +55,11 @@ TrueNAS SCALE tickets are also tracked in the TrueNAS Jira Project.
 
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
-| 2.2.0-BETA.1 | Internal Testing Sprints | 04 April > 08 April 2022 |
-| 2.2.0-RC.1 | Internal Testing Sprints | 25 April > 29 April 2022 |
-| 2.2.0 | Code-freeze | 27 April 2022 |
-| 2.2.0 | Internal Testing Sprints | 02 May 2022 > 06 May 2022 |
-| 2.2.0 | Release | 17 May 2022 |
+| 2.2.0-RC.1 | Internal Testing Sprints | 30 May > 03 June 2022 |
+| 2.2.0 | Code-freeze | 08 June 2022 |
+| 2.2.0 | Internal Testing Sprints | 09 June 2022 > 17 June 2022 |
+| 2.2.0 | Tag | 20 June 2022 |
+| 2.2.0 | Release | 21 June 2022 |
 
 {{< /tab >}}
 {{< /tabs >}}
