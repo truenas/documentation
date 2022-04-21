@@ -119,7 +119,7 @@ When all systems are connected to TrueCommand Cloud, refer to the [TrueCommand A
 If you haven't already installed Docker on your machine, install the [Docker Engine](https://docs.docker.com/engine/install/debian/), then install [Docker Desktop](https://docs.docker.com/desktop/linux/).
 {{< /hint >}}
 
-To run TrueCommand in Docker Desktop on Linux, you must have:
+To run TrueCommand in Docker on Linux, you must have:
 
 * A 64-bit Linux distro (we recommend Debian) 
 * Linux Kernel Support: 4.x+
