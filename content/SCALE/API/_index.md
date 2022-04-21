@@ -1,7 +1,7 @@
 ---
 title: "SCALE API"
 geekdocCollapseSection: true
-weight: 125
+weight: 50
 ---
 
 You can access TrueNAS SCALE API documentation in the web interface by clicking **<i class="material-icons" aria-hidden="true">account_circle</i> > API Keys > DOCS**.

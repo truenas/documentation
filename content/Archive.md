@@ -4,67 +4,148 @@ title: "Documentation Archive"
 
 Welcome to the Documentation Archive!
 
+{{< toc >}}
+
 {{< hint warning >}}
 All documentation provided here is end-of-life (EoL) and no longer receives *any* updates.
 {{< /hint >}}
 
-{{< tabs "EOL Versions" >}}
-{{< tab "TrueNAS (Unified)" >}}
-{{< expand "TrueNAS CORE 12.x" "v" >}}
+## TrueNAS (Unified)
+
+{{< expand "TrueNAS CORE 12.0" "v" >}}
+
+Archived documentation coming soon!
+<!-- add pdf file name here and uncomment when static docs are generated. <a href="https://www.ixsystems.com/docs/files/placeholder.pdf">TrueNAS CORE 12.0</a> -->
+
+Release Notes:
+* [12.0-U8]({{< ref "/_includes/COREReleaseNotes/12.0/12.0U8.md" >}})
+* [12.0-U7]({{< ref "/_includes/COREReleaseNotes/12.0/12.0U7.md" >}})
+* [12.0-U6.1]({{< ref "/_includes/COREReleaseNotes/12.0/12.0U6.1.md" >}})
+* [12.0-U6]({{< ref "/_includes/COREReleaseNotes/12.0/12.0U6.md" >}})
+* [12.0-U5.1]({{< ref "/_includes/COREReleaseNotes/12.0/12.0U5.1.md" >}})
+* [12.0-U5]({{< ref "/_includes/COREReleaseNotes/12.0/12.0U5.md" >}})
+* [12.0-U4.1]({{< ref "/_includes/COREReleaseNotes/12.0/12.0U4.1.md" >}})
+* [12.0-U4]({{< ref "/_includes/COREReleaseNotes/12.0/12.0U4.md" >}})
+* [12.0-U3.1]({{< ref "/_includes/COREReleaseNotes/12.0/12.0U3.1.md" >}})
+* [12.0-U3]({{< ref "/_includes/COREReleaseNotes/12.0/12.0U3.md" >}})
+* [12.0-U2.1]({{< ref "/_includes/COREReleaseNotes/12.0/12.0U2.1.md" >}})
+* [12.0-U2]({{< ref "/_includes/COREReleaseNotes/12.0/12.0U2.md" >}})
+* [12.0-U1.1]({{< ref "/_includes/COREReleaseNotes/12.0/12.0U1.1.md" >}})
+* [12.0-U1]({{< ref "/_includes/COREReleaseNotes/12.0/12.0U1.md" >}})
+* [12.0-Release]({{< ref "/_includes/COREReleaseNotes/12.0/12.0Release.md" >}})
+* [12.0-RC1]({{< ref "/_includes/COREReleaseNotes/12.0/12.0RC1.md" >}})
+* [12.0-BETA2]({{< ref "/_includes/COREReleaseNotes/12.0/12.0Beta2.md" >}})
+* [12.0-BETA1]({{< ref "/_includes/COREReleaseNotes/12.0/12.0Beta1.md" >}})
+
 <a href="https://www.truenas.com/docs/files/Notice - Persistent L2ARC in TrueNAS 12.0.pdf">Notice - Persistent L2ARC in TrueNAS 12.0</a>
 {{< /expand >}}
-{{< /tab >}}
 
-{{< tab "TrueCommand" >}}
+## TrueCommand
+
 {{< expand "TrueCommand 2.x" "v" >}}
 <a href="https://www.truenas.com/docs/files/TrueCommand2.0Documentation.pdf">TrueCommand 2.0</a>
+Release Notes:
+* [2.0]({{< ref "/_includes/TCReleaseNotes/2.0.md" >}})
+* [2.0-BETA]({{< ref "/_includes/TCReleaseNotes/2.0-Beta.md" >}})
+
+
 {{< /expand >}}
 {{< expand "TrueCommand 1.x" "v" >}}
+
 <a href="https://www.truenas.com/docs/files/TrueCommand1.3Docs.pdf">TrueCommand 1.3</a>
+
+Release Notes:
+* [1.3.2]({{< ref "/_includes/TCReleaseNotes/1.3.2.md" >}})
+* [1.3.1]({{< ref "/_includes/TCReleaseNotes/1.3.1.md" >}})
+* [1.3]({{< ref "/_includes/TCReleaseNotes/1.3.md" >}})
 
 <a href="https://www.ixsystems.com/documentation/truecommand/1.2/TrueCommand-Guide-1.2_screen.pdf">TrueCommand 1.2</a>
 
+Release Notes:
+* [1.2.3 Release Notes]({{< ref "/_includes/TCReleaseNotes/1.2.3.md" >}})
+* [1.2.2 Release Notes]({{< ref "/_includes/TCReleaseNotes/1.2.2.md" >}})
+* [1.2.1 Release Notes]({{< ref "/_includes/TCReleaseNotes/1.2.1.md" >}})
+* [1.2 Release Notes]({{< ref "/_includes/TCReleaseNotes/1.2.md" >}})
+
 <a href="https://www.ixsystems.com/documentation/truecommand/1.1/TrueCommand-Guide-1.1_screen.pdf">TrueCommand 1.1</a>
+
+[1.1 Release Notes]({{< ref "/_includes/TCReleaseNotes/1.1.md" >}})
 
 <a href="https://www.ixsystems.com/documentation/truecommand/1.0/TrueCommand-Guide-1.0-RELEASE.pdf">TrueCommand 1.0</a>
 
+Release Notes:
+* [1.0U1]({{< ref "/_includes/TCReleaseNotes/1.0U1.md" >}})
+* [1.0]({{< ref "/_includes/TCReleaseNotes/1.0.md" >}})
+
 {{< /expand >}}
-{{< /tab >}}
 
-{{< tab "Legacy TrueNAS" >}}
-{{< expand "TrueNAS CORE 11.x" "v" >}}
-<a href="https://www.truenas.com/docs/files/TrueNAS-11.3-U5-User-Guide.pdf">TrueNAS CORE 11.3</a>
+## Legacy Documentation
 
-<a href="https://www.ixsystems.com/documentation/truenas/11.2-U8-legacy/TrueNAS-11.2-U8-Legacy-User-Guide_screen.pdf">TrueNAS CORE 11.2</a>
+The documentation, release notes, and notices provided in this section follow the major and minor releases of the previous FreeNAS and TrueNAS projects, before their unification under the TrueNAS name.
+FreeNAS would publish first and TrueNAS followed later in the FreeNAS lifecycle with occasional simultaneous releases.
+TrueNAS releases took all the FreeNAS changes up to that point and added a few Enterprise feature-specific (High Availability) changes.
 
-<a href="https://www.ixsystems.com/documentation/truenas/11.1/TrueNAS.pdf">TrueNAS CORE 11.1</a>
+### Legacy FreeNAS
 
-<a href="https://www.truenas.com/docs/files/Notice - Microsoft LDAP Defaults 2020.pdf">Notice - Microsoft LDAP Defaults 2020</a>
-
-<a href="https://www.truenas.com/docs/files/Notice - Recommended ZFS Update.pdf">Notice - Recommended ZFS Update</a>
-
-<a href="https://www.truenas.com/docs/files/Notice - ZFS Pool Corruption Issue.pdf">Notice - ZFS Pool Corruption Issue</a>
-{{< /expand >}}
-{{< /tab >}}
-
-{{< tab "Legacy FreeNAS" >}}
-{{< expand "FreeNAS 11.x" "v" >}}
+{{< expand "FreeNAS 11.3" "v" >}}
 <a href="https://www.ixsystems.com/documentation/freenas/11.3-U5/FreeNAS-11.3-U5-User-Guide_screen.pdf">FreeNAS 11.3</a>
 
-<a href="https://www.ixsystems.com/documentation/freenas/11.2-U8/FreeNAS-11.2-U8-User-Guide_screen.pdf">FreeNAS 11.2 (New GUI)</a>
+11.3 Release Notes:
+* [11.3-U5]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.3/11.3U5.md" >}})
+* [11.3-U4]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.3/11.3U4.md" >}})
+* [11.3-U3.2]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.3/11.3U3.2.md" >}})
+* [11.3-U3.1]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.3/11.3U3.1.md" >}})
+* [11.3-U3]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.3/11.3U3.md" >}})
+* [11.3-U2.1]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.3/11.3U2.1.md" >}})
+* [11.3-U2]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.3/11.3U2.md" >}})
+* [11.3-U1]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.3/11.3U1.md" >}})
+* [11.3]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.3/11.3.md" >}})
+* [11.3-RC2]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.3/11.3RC2.md" >}})
+* [11.3-RC1]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.3/11.3RC1.md" >}})
+* [11.3-BETA1]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.3/11.3Beta1.md" >}})
 
+{{< /expand >}}
+{{< expand "FreeNAS 11.2" "v" >}}
+
+<a href="https://www.ixsystems.com/documentation/freenas/11.2-U8/FreeNAS-11.2-U8-User-Guide_screen.pdf">FreeNAS 11.2 (New GUI)</a>
 <a href="https://www.ixsystems.com/documentation/freenas/11.2-U8-legacy/FreeNAS-11.2-U8-Legacy-User-Guide_screen.pdf">FreeNAS 11.2 (Legacy GUI)</a>
+
+11.2 Release Notes:
+* [11.2-U8]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.2/11.2U8.md" >}})
+* [11.2-U7]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.2/11.2U7.md" >}})
+* [11.2-U6]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.2/11.2U6.md" >}})
+* [11.2-U5]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.2/11.2U5.md" >}})
+* [11.2-U4.1]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.2/11.2U4.1.md" >}})
+* [11.2-U4]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.2/11.2U4.md" >}})
+* [11.2-U3]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.2/11.2U3.md" >}})
+* [11.2-U2.1]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.2/11.2U2.1.md" >}})
+* [11.2-U2]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.2/11.2U2.md" >}})
+* [11.2-U1]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.2/11.2U1.md" >}})
+* [11.2]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.2/11.2.md" >}})
+* [11.2-RC2]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.2/11.2RC2.md" >}})
+* [11.2-RC1]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.2/11.2RC1.md" >}})
+* [11.2-BETA3]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.2/11.2Beta3.md" >}})
+* [11.2-BETA2]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.2/11.2Beta2.md" >}})
+* [11.2-BETA1]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.2/11.2Beta1.md" >}})
+
+{{< /expand >}}
+{{< expand "FreeNAS 11.1" "v" >}}
 
 <a href="https://www.ixsystems.com/documentation/freenas/11.1/FreeNAS.pdf">FreeNAS 11.1</a>
 
-<a href="https://www.truenas.com/docs/files/Notice - Microsoft LDAP Defaults 2020.pdf">Notice - Microsoft LDAP Defaults 2020</a>
+11.1 Release Notes:
+* [11.1-U7]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.1/11.1U7.md" >}})
+* [11.1-U6.3]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.1/11.1U6.3.md" >}})
+* [11.1-U6]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.1/11.1U6.md" >}})
+* [11.1-U5]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.1/11.1U5.md" >}})
+* [11.1-U4]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.1/11.1U4.md" >}})
+* [11.1-U3]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.1/11.1U3.md" >}})
+* [11.1-U2]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.1/11.1U2.md" >}})
+* [11.1-U1]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.1/11.1U1.md" >}})
+* [11.1]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.1/11.1.md" >}})
 
-<a href="https://www.truenas.com/docs/files/Notice - Sequential Scrub and Resilver Adjustments.pdf">Notice - Sequential Scrub and Resilver Adjustments</a>
-
-<a href="https://www.truenas.com/docs/files/Notice - Recommended ZFS Update.pdf">Notice - Recommended ZFS Update</a>
-
-<a href="https://www.truenas.com/docs/files/Notice - ZFS Pool Corruption Issue.pdf">Notice - ZFS Pool Corruption Issue</a>
 {{< /expand >}}
+
 {{< expand "FreeNAS 9.x" "v" >}}
 <a href="https://www.ixsystems.com/documentation/freenas/9.10/freenas.html">FreeNAS 9.10 (HTML)</a>
 
@@ -87,5 +168,64 @@ All documentation provided here is end-of-life (EoL) and no longer receives *any
 
 <a href="https://www.ixsystems.com/documentation/freenas/8.0.3/freenas8.0.3_guide.pdf">FreeNAS 8.0</a>
 {{< /expand >}}
-{{< /tab >}}
-{{< /tabs >}}
+
+Notices:
+
+<ul>
+  <li><a href="https://www.truenas.com/docs/files/Notice - Microsoft LDAP Defaults 2020.pdf">Microsoft LDAP Defaults 2020</a></li>
+  <li><a href="https://www.truenas.com/docs/files/Notice - Sequential Scrub and Resilver Adjustments.pdf">Sequential Scrub and Resilver Adjustments</a></li>
+  <li><a href="https://www.truenas.com/docs/files/Notice - Recommended ZFS Update.pdf">Recommended ZFS Update</a></li>
+  <li><a href="https://www.truenas.com/docs/files/Notice - ZFS Pool Corruption Issue.pdf">ZFS Pool Corruption Issue</a></li>
+</ul>
+
+### Legacy TrueNAS
+
+{{< expand "TrueNAS CORE 11.3" "v" >}}
+<a href="https://www.truenas.com/docs/files/TrueNAS-11.3-U5-User-Guide.pdf">TrueNAS CORE 11.3</a></li>
+
+11.3 Release Notes:
+* [11.3-U5]({{< ref "/_includes/COREReleaseNotes/TrueNAS/11.3/11.3U5.md" >}})
+* [11.3-U4.1]({{< ref "/_includes/COREReleaseNotes/TrueNAS/11.3/11.3U4.1.md" >}})
+* [11.3-U3.2]({{< ref "/_includes/COREReleaseNotes/TrueNAS/11.3/11.3U3.2.md" >}})
+* [11.3-U2.2]({{< ref "/_includes/COREReleaseNotes/TrueNAS/11.3/11.3U2.2" >}})
+* [11.3-U2.1]({{< ref "/_includes/COREReleaseNotes/TrueNAS/11.3/11.3U2.1.md" >}})
+* [11.3-U2]({{< ref "/_includes/COREReleaseNotes/TrueNAS/11.3/11.3U2.md" >}})
+* [11.3-RC1]({{< ref "/_includes/COREReleaseNotes/TrueNAS/11.3/11.3RC1.md" >}})
+
+{{< /expand >}}
+{{< expand "TrueNAS CORE 11.2" "v" >}}
+
+<a href="https://www.ixsystems.com/documentation/truenas/11.2-U8-legacy/TrueNAS-11.2-U8-Legacy-User-Guide_screen.pdf">TrueNAS CORE 11.2</a>
+
+11.2 Release Notes:
+* [11.2-U8.1]({{< ref "/_includes/COREReleaseNotes/TrueNAS/11.2/11.2U8.1.md" >}})
+* [11.2-U8]({{< ref "/_includes/COREReleaseNotes/TrueNAS/11.2/11.2U8.md" >}})
+* [11.2-U7]({{< ref "/_includes/COREReleaseNotes/TrueNAS/11.2/11.2U7.md" >}})
+* [11.2-U6.1]({{< ref "/_includes/COREReleaseNotes/TrueNAS/11.2/11.2U6.1.md" >}})
+* [11.2-U6]({{< ref "/_includes/COREReleaseNotes/TrueNAS/11.2/11.2U6.md" >}})
+* [11.2-U5.1]({{< ref "/_includes/COREReleaseNotes/TrueNAS/11.2/11.2U5.1.md" >}})
+* [11.2-U5]({{< ref "/_includes/COREReleaseNotes/TrueNAS/11.2/11.2U5.md" >}})
+
+{{< /expand >}}
+{{< expand "TrueNAS CORE 11.1" "v" >}}
+
+<a href="https://www.ixsystems.com/documentation/truenas/11.1/TrueNAS.pdf">TrueNAS CORE 11.1</a>
+
+11.1 Release Notes:
+* [11.1-U7.1]({{< ref "/_includes/COREReleaseNotes/TrueNAS/11.1/11.1U7.1.md" >}})
+* [11.1-U7]({{< ref "/_includes/COREReleaseNotes/TrueNAS/11.1/11.1U7.md" >}})
+* [11.1-U6.3]({{< ref "/_includes/COREReleaseNotes/TrueNAS/11.1/11.1U6.3.md" >}})
+* [11.1-U6.2]({{< ref "/_includes/COREReleaseNotes/TrueNAS/11.1/11.1U6.2.md" >}})
+* [11.1-U6]({{< ref "/_includes/COREReleaseNotes/TrueNAS/11.1/11.1U6.md" >}})
+* [11.1-U5]({{< ref "/_includes/COREReleaseNotes/TrueNAS/11.1/11.1U5.md" >}})
+* [11.1-U4]({{< ref "/_includes/COREReleaseNotes/TrueNAS/11.1/11.1U4.md" >}})
+{{< /expand >}}
+
+Notices:
+<ul>
+  <li><a href="https://www.truenas.com/docs/files/Notice - Microsoft LDAP Defaults 2020.pdf">Microsoft LDAP Defaults 2020</a></li>
+  <li><a href="https://www.truenas.com/docs/files/Notice - Recommended ZFS Update.pdf">Recommended ZFS Update</a></li>
+  <li><a href="https://www.truenas.com/docs/files/Notice - ZFS Pool Corruption Issue.pdf">ZFS Pool Corruption Issue</a></li>
+</ul>
+
+
