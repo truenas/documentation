@@ -263,7 +263,7 @@ Click the **+** sign to add a second set of ports.
 Setting the **Volume** is not usually required for TrueCommand.
 Click **RUN** after configuring the settings.
 
-When Docker Desktop shows the container status as **RUNNING**, open a new browser tab and go to [https://127.0.0.1:9005](https://127.0.0.1:9005).
+When Docker Desktop shows the container status as **RUNNING**, open a new browser tab and go to `https://127.0.0.1:9005`.
 
 ![DockerDesktopTrueCommandRunning](/images/TrueCommand/DockerDesktopTrueCommandRunning.png "TrueCommand Container is running")
 {{< /tab >}}
