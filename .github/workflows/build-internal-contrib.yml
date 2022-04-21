@@ -46,7 +46,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           dist: public
           # teardown option remove the PR surge.sh after the PR is merged
-          teardown: 'true'
+          teardown: 'false'
           failOnError: 'true'
           build: |
             echo Deploying to surge.sh
