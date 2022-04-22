@@ -1,6 +1,7 @@
 ---
 title: Top Menu
 weight: 2
+geekdocCollapseSection: true
 ---
 
 {{< toc >}}
