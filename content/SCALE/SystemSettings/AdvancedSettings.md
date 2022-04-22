@@ -6,7 +6,7 @@ weight: 30
 
 {{< toc >}}
 
-TrueNAS SCALE Advanced Settings provide configuration options for the Console, Syslog, Sysctl, Kernel, Cron Jobs, Init/Shutdown Scripts, System Dataset Pool, and Isolated GPU Device(s).
+TrueNAS SCALE Advanced Settings provide configuration options for the Console, Syslog, Sysctl, Kernel, Cron Jobs, Init/Shutdown Scripts, System Dataset Pool, Isolated GPU Device(s), and Self-Encrypting Drives.
 
 {{< hint warning >}} 
 Advanced Settings have reasonable defaults in place. Changing advanced settings can be dangerous when done incorrectly. Please use caution before saving. Make sure you are comfortable with ZFS, Linux, and system [configuration backup and restoration]({{< relref "GeneralSettings.md" >}}) before making any changes. 
@@ -26,6 +26,7 @@ The **Console** window allows users to configure the [Console Setup menu]({{< re
 | Serial Speed | The speed (in bits per second) the serial port uses. |
 | MOTD Banner | The message that displays when a user logs in with SSH. |
 
+
 ## Syslog
 
 The **Syslog** window allows users configure how and when the system sends log messages to the Syslog server.
@@ -38,6 +39,7 @@ The **Syslog** window allows users configure how and when the system sends log m
 | Syslog Transport | [Transport Protocol](https://tools.ietf.org/html/rfc8095) for the remote system log server connection. Choosing Transport Layer Security (TLS) also requires selecting a preconfigured system Certificate. |
 | Use System Dataset | Store system logs on the system dataset. Unset to store system logs in /var/ on the operating system device. |
 
+
 ## Sysctl
 
 The **Sysctl** window allows users set up tunables that configure kernel parameters at runtime.
@@ -49,6 +51,7 @@ The **Sysctl** window allows users set up tunables that configure kernel paramet
 | Description | Enter a description of the tunable. |
 | Enabled | Enable this tunable. Unset to disable this tunable without deleting it. |
 
+
 ## Kernel
 
 The **Kernel** window contains options for system optimization and kernel debugging.
@@ -57,6 +60,7 @@ The **Kernel** window contains options for system optimization and kernel debugg
 |------|-------------|
 | Enable Autotune | Activates a tuning script that attempts to optimize the system depending on the installed hardware. Warning: Autotuning is a temporary measure and is not a permanent fix for system hardware issues. |
 | Enable Debug Kernel | Set to boot a debug kernel after the next system reboot. |
+
 
 ## Cron Jobs
 
@@ -71,6 +75,7 @@ The **Cron Jobs** window allows users to configure jobs that run specific comman
 | Hide Standard Output | Hide standard output (stdout) from the command. When unset, TrueNAS mails any standard output to the user account cron that ran the command. |
 | Hide Standard Error | Hide error output (stderr) from the command. When unset, TrueNAS mails any error output to the user account cron that ran the command. |
 | Enabled | Enable this cron job. When unset, disable the cron job without deleting it. |
+
 
 ## Init/Shutdown Scripts
 
@@ -89,6 +94,7 @@ The **Init/Shutdown Scripts** window allows users to schedule commands or script
 | Enabled | Enable this cron job. When unset, disable the cron job without deleting it. |
 | Timeout | Automatically stop the script or command after the specified seconds. |
 
+
 ## System Dataset Pool
 
 **System Dataset Pool** allows users select the storage pool to hold the system dataset. The system dataset stores debugging core files, encryption keys for encrypted pools, and Samba4 metadata such as the user and group cache and share level permissions.
@@ -96,6 +102,7 @@ The **Init/Shutdown Scripts** window allows users to schedule commands or script
 Users can move the system dataset to unencrypted pools or encrypted pools without passphrases.
 
 Users can move the system dataset to a key encrypted pool but, after the move, the pool encryption type can't be changed to passphrase. If the encrypted pool already has a passphrase set, you cannot move the system dataset to that pool.
+
 
 ## Isolated GPU Device(s)
 
@@ -105,5 +112,18 @@ GPU passthrough allows the TrueNAS SCALE kernel to directly present an internal 
 
 The GPU device acts like the VM is driving it, and the VM detects the GPU as if it is physically connected.
 
+
 ## Replication
+
 The **Replication** window allows users to limit the maximum number of replication tasks executed simultaneously.
+
+
+## Self-Encrypting Drive
+
+The **Self-Encrypting Drive** (SED) pane lets users set the ATA Security User and create an SED global password.
+
+| Name | Description |
+|------|-------------|
+| ATA Security User | User passed to camcontrol security -u to unlock SEDs |
+| SED Password | Global password to unlock SEDs |
+| Confirm SED Password | Re-enter global password to unlock SEDs |
