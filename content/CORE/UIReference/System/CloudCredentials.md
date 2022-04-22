@@ -191,7 +191,7 @@ The rest of the options change according to the chosen *Provider*:
 
 | Name | Description |
 |------|-------------|
-| Access Token | Yandex [Access Token](https://tech.yandex.com/direct/doc/dg-v4/concepts/auth-token-docpage/). |
+| Access Token | Yandex [Access Token](https://yandex.com/dev/direct/doc/dg-v4/concepts/auth-token.html). |
 
 {{< /tab >}}
 {{< /tabs >}}
