@@ -19,10 +19,10 @@ To see the full list of supported vendors, go to **System > Cloud Credentials > 
 
 ## Requirements
 
-* All system [Storage](/core/storage/) must be configured and ready to receive or send data.
+* All system [Storage]({{< relref "/CORE/UIReference/Storage/_index.md" >}}) must be configured and ready to receive or send data.
 * A Cloud Storage provider account and a cloud storage location must be available, like an Amazon S3 bucket.
 * Cloud Storage account credentials must be saved to **System > Cloud Credentials** before creating the sync task.
-  See [Cloud Credentials](/core/system/cloudcredentials/) for specific instructions.
+  See [Cloud Credentials]({{< relref "/CORE/UIReference/System/CloudCredentials.md" >}}) for specific instructions.
 
 ## Creating a Cloud Sync Task
 

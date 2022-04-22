@@ -17,7 +17,7 @@ TrueNAS supports major providers like Amazon S3, Google Cloud, and Microsoft Azu
 
 ## Requirements
 
-* You must have all system [storage](/scale/storage/) configured and ready to receive or send data.
+* You must have all system [storage]({{< relref "/SCALE/SCALEUIReference/Storage/_index.md" >}}) configured and ready to receive or send data.
 * You must have a cloud storage provider account and location (like an Amazon S3 bucket).
 * You must have cloud storage account credentials saved to **System > Cloud Credentials** before creating the sync task. See [Cloud Credentials]({{< relref "/SCALE/SCALEUIReference/Credentials/BackupCredentials/_index.md" >}}) for specific instructions.
 
