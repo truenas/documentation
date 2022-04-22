@@ -18,6 +18,14 @@ Release notes and notices that are relevent to previous major versions are avail
 Each new unified release notes article for CORE, SCALE, and TrueCommand also contains the development roadmap for each major version.
 The current minor release notes are placed at the top of the article and previous minor release notes placed behind an expandable element, so alleviate vertical scrolling.
 
+#### CORE and SCALE Next Version Articles
+
+Information about upcoming CORE and SCALE major versions is being placed in two new locations:
+* CORE: https://www.truenas.com/docs/core/corenextversion/
+* SCALE: https://www.truenas.com/docs/scale/scalenextversion/
+
+These sections are dynamically updated with development notes, early release notes, and instructions for obtaining builds of the next release.
+
 ### Topical Organization for Software Documentation
 
 To better provide purposeful and direct documentation, CORE and SCALE content is reorganized into three primary subsections:
@@ -38,3 +46,8 @@ The [Solutions]({{< ref "/solutions/" >}}) articles are elevated out of the CORE
 
 Each top-level section of CORE and SCALE documentation also has a **Download or Print** option.
 This combines all the individual articles in that section into a single document format that can be downloaded as a PDF, physically printed, or saved as HTML.
+
+### Community Contribution Threads
+
+<expand with commento description and usage recommendations>
+

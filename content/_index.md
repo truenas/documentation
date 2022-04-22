@@ -5,6 +5,10 @@ geekdocCollapseSection: true
 
 # TrueNAS: Open Storage
 
+{{< hint info >}}
+There are some [updates](#whats-new-on-the-documentation-hub) to the Docs Hub!
+{{< /hint >}}
+
 TrueNAS is the world's most popular Open Source storage operating system and is the most efficient solution for managing and sharing data over a network.
 It is the simplest way to create a safe, secure, centralized, and easily accessible place for your data.
 TrueNAS Open Storage provides unified ZFS-based storage for file, block, object, and application data.
