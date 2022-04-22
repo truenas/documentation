@@ -17,25 +17,18 @@ aliases:
 
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
-| 13.0-RC.1 | Code-freeze | 23 February 2022 |
-| 13.0-RC.1 | Internal Testing Sprint 1 | 28 February > 04 March 2022 |
-| 13.0-RC.1 | Development Resumes | 07 March 2022
-| 13.0-RC.1 | Code-freeze | 30 March 2022 |
-| 13.0-RC.1 | Internal Testing Sprint 2 | 04 April > 08 April 2022 |
-| 13.0-RC.1 | Tag | 11 April 2022 |
-| 13.0-RC.1 | Release | 12 April 2022 |
-| 13.0-RELEASE | Code-freeze | 20 April 2022 |
-| 13.0-RELEASE | Internal Testing Sprints | 25 April > 29 April 2022 |
-| 13.0-RELEASE | Tag | 02 May 2022 |
-| 13.0-RELEASE | Release | 03 May 2022 |
+| 13.0-RELEASE | Code-freeze | 27 April 2022 |
+| 13.0-RELEASE | Internal Testing Sprints | 28 April > 06 May 2022 |
+| 13.0-RELEASE | Tag | 09 May 2022 |
+| 13.0-RELEASE | Release | 10 May 2022 |
 | 13.0-U1 | Code-freeze | 15 June 2022 |
 | 13.0-U1 | Internal Testing Sprints | 20 June > 24 June 2022 |
 | 13.0-U1 | Tag | 27 June 2022 |
 | 13.0-U1 | Release | 28 June 2022 |
-| 13.0-U2 | Code-freeze | Q2 2022 |
-| 13.0-U2 | Internal Testing Sprints | Q2 2022 |
-| 13.0-U2 | Tag | Q2 2022 |
-| 13.0-U2 | Release | Q2 2022 |
+| 13.0-U2 | Code-freeze | 13 July 2022 |
+| 13.0-U2 | Internal Testing Sprints | 18 July - 19 July 2022 |
+| 13.0-U2 | Tag | 01 August 2022 |
+| 13.0-U2 | Release | 02 August 2022 |
 
 ## 13.0-RC1
 

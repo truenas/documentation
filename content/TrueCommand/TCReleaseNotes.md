@@ -15,11 +15,11 @@ weight: 5
 
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
-| 2.2.0-BETA.1 | Internal Testing Sprints | 04 April > 08 April 2022 |
-| 2.2.0-RC.1 | Internal Testing Sprints | 25 April > 29 April 2022 |
-| 2.2.0 | Code-freeze | 27 April 2022 |
-| 2.2.0 | Internal Testing Sprints | 02 May 2022 > 06 May 2022 |
-| 2.2.0 | Release | 17 May 2022 |
+| 2.2.0-RC.1 | Internal Testing Sprints | 30 May > 03 June 2022 |
+| 2.2.0 | Code-freeze | 08 June 2022 |
+| 2.2.0 | Internal Testing Sprints | 09 June 2022 > 17 June 2022 |
+| 2.2.0 | Tag | 20 June 2022 |
+| 2.2.0 | Release | 21 June 2022 |
 
 ## 2.1.1
 
