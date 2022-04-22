@@ -16,7 +16,7 @@ Advanced Settings have reasonable defaults in place. Changing advanced settings 
 
 ## Console
 
-The **Console** window allows users to configure the [Console Setup menu]({{< relref "Post-installConfiguration.md" >}}).
+**Console** lets users configure the [Console Setup menu]({{< relref "Post-installConfiguration.md" >}}).
 
 | Name | Description |
 |------|-------------|
@@ -29,7 +29,7 @@ The **Console** window allows users to configure the [Console Setup menu]({{< re
 
 ## Syslog
 
-The **Syslog** window allows users configure how and when the system sends log messages to the Syslog server.
+**Syslog** lets users determine how and when the system sends log messages to the Syslog server.
 
 | Name | Description |
 |------|-------------|
@@ -42,7 +42,7 @@ The **Syslog** window allows users configure how and when the system sends log m
 
 ## Sysctl
 
-The **Sysctl** window allows users set up tunables that configure kernel parameters at runtime.
+**Sysctl** lets users set up tunables that configure kernel parameters at runtime.
 
 | Name | Description |
 |------|-------------|
@@ -54,7 +54,7 @@ The **Sysctl** window allows users set up tunables that configure kernel paramet
 
 ## Kernel
 
-The **Kernel** window contains options for system optimization and kernel debugging.
+**Kernel** contains options for system optimization and kernel debugging.
 
 | Name | Description |
 |------|-------------|
@@ -64,7 +64,7 @@ The **Kernel** window contains options for system optimization and kernel debugg
 
 ## Cron Jobs
 
-The **Cron Jobs** window allows users to configure jobs that run specific commands or scripts on a regular schedule using [cron(8)](https://manpages.debian.org/testing/cron/cron.8.en.html "Cron Man Page"). Cron Jobs help run repetitive tasks.
+**Cron Jobs** lets users configure jobs that run specific commands or scripts on a regular schedule using [cron(8)](https://manpages.debian.org/testing/cron/cron.8.en.html "Cron Man Page"). Cron Jobs help users run repetitive tasks.
 
 | Name | Description |
 |------|-------------|
@@ -79,14 +79,14 @@ The **Cron Jobs** window allows users to configure jobs that run specific comman
 
 ## Init/Shutdown Scripts
 
-The **Init/Shutdown Scripts** window allows users to schedule commands or scripts to run at system startup or shutdown. 
+**Init/Shutdown Scripts** lets users schedule commands or scripts to run at system startup or shutdown. 
 
 | Name | Description |
 |------|-------------|
 | Description | Comments about this script. |
 | Type | Select Command for an executable or Script for an executable script. |
 | Command | Enter the command with any options. |
-| Script | Select the script. The script will be run using [dash(1)](https://manpages.debian.org/testing/dash/sh.1.en.html "dash(1) Page"). |
+| Script | Select the script. The script runs using [dash(1)](https://manpages.debian.org/testing/dash/sh.1.en.html "dash(1) Page"). |
 | When | Select when the command or script runs:
 *Pre Init* is early in the boot process, after mounting filesystems and starting networking.
 *Post Init* is at the end of the boot process, before FreeNAS services start.
@@ -97,16 +97,16 @@ The **Init/Shutdown Scripts** window allows users to schedule commands or script
 
 ## System Dataset Pool
 
-**System Dataset Pool** allows users select the storage pool to hold the system dataset. The system dataset stores debugging core files, encryption keys for encrypted pools, and Samba4 metadata such as the user and group cache and share level permissions.
+**System Dataset Pool** lets users select which storage pool holds the system dataset. The system dataset stores debugging core files, encryption keys for encrypted pools, and Samba4 metadata, such as the user and group cache and share level permissions.
 
 Users can move the system dataset to unencrypted pools or encrypted pools without passphrases.
 
-Users can move the system dataset to a key encrypted pool but, after the move, the pool encryption type can't be changed to passphrase. If the encrypted pool already has a passphrase set, you cannot move the system dataset to that pool.
+Users can move the system dataset to a key-encrypted pool, but cannot change the pool encryption type aftwerward. If the encrypted pool already has a passphrase set, you cannot move the system dataset to that pool.
 
 
 ## Isolated GPU Device(s)
 
-The **Isolated GPU Device(s)** window allows users to isolate additional GPU devices for GPU passthrough.
+**Isolated GPU Device(s)** lets users isolate additional GPU devices for GPU passthrough.
 
 GPU passthrough allows the TrueNAS SCALE kernel to directly present an internal PCI GPU to a virtual machine (VM).
 
@@ -115,15 +115,15 @@ The GPU device acts like the VM is driving it, and the VM detects the GPU as if 
 
 ## Replication
 
-The **Replication** window allows users to limit the maximum number of replication tasks executed simultaneously.
+**Replication** lets users limit the maximum number of replication tasks executed simultaneously.
 
 
 ## Self-Encrypting Drive
 
-The **Self-Encrypting Drive** (SED) pane lets users set the ATA Security User and create an SED global password.
+The **Self-Encrypting Drive** (SED) pane lets users set the ATA Security User and create a SED global password.
 
 | Name | Description |
 |------|-------------|
 | ATA Security User | User passed to camcontrol security -u to unlock SEDs |
 | SED Password | Global password to unlock SEDs |
-| Confirm SED Password | Re-enter global password to unlock SEDs |
+| Confirm SED Password | Re-enter the global password to unlock SEDs |
