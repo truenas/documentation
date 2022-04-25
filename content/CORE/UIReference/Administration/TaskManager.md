@@ -3,11 +3,17 @@ title: "Task Manager"
 weight: 14
 ---
 
-The task manager shows a list of tasks performed by the TrueNAS system starting with the most recent.
-Click a task name to display its start time, progress, finish time, and whether the task succeeded.
-If a task fails, the error status shows.
+The **Task Manager** displays a list of tasks performed by the TrueNAS system starting with the most recent. Click the <i class="material-icons">assignment</i> to open the **Task Manager**.
 
-Tasks with log file output have a *View Logs* button to show the log files.
+![TaskManager](/images/CORE/13.0/TaskManager.png "Task Manager")
 
-The task manager is opened by clicking <i class="material-icons">assignment</i>.
-Close the task manager by clicking *CLOSE*, clicking anywhere outside the task manager dialog, or by pressing <kbd>Esc</kbd>.
+| UI Element | Description |
+|------------|-------------|
+| **Filter** | Search function to locate or filter the list for a particular a running task. |
+| **View Logs** | Displays the log for a task with a log file. |
+| **State** | Column header for tasks that indicates whether the task completed or is still in progress. Click on **State** to sort by this column. |
+| **Method** | Column header for tasks that indicates both the name of the task and the method used. Click **Method** to sort by this column. |
+| **Progress** | Column header for tasks that indicates the percent complete progress for the the task from start to complete. Click **Progress** to sort by this column. |
+| **CLOSE** | Closes the **Task Manager** dialog. Click anywhere off the dialog or use the <kbd>Esc</kbd> also closes this dialog. |
+
+For more information on using the **Task Manager** refer to [Using Task Manager]({{< relfef "/Core/CoreTutorials/UsingTaskManager.md >}).
