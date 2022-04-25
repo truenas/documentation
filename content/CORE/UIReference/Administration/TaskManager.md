@@ -15,5 +15,3 @@ The **Task Manager** displays a list of tasks performed by the TrueNAS system st
 | **Method** | Column header for tasks that indicates both the name of the task and the method used. Click **Method** to sort by this column. |
 | **Progress** | Column header for tasks that indicates the percent complete progress for the the task from start to complete. Click **Progress** to sort by this column. |
 | **CLOSE** | Closes the **Task Manager** dialog. Click anywhere off the dialog or use the <kbd>Esc</kbd> also closes this dialog. |
-
-For more information on using the **Task Manager** refer to [Using Task Manager]({{< relref "/Core/CoreTutorials/UsingTaskManager.md" >}).
