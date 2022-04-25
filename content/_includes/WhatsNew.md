@@ -5,6 +5,16 @@ Based on your feedback and also to prepare for even more content creation, the D
 
 {{< toc >}}
 
+### Text Suggestions are Live!
+
+As the Docs Hub matures, we are excited to continue providing more opportunities for Open Source contribution and even further reduce the barrier to [contributing documentation]({{< relref "ContentUpdate.md" >}})!
+For the CORE 13.0 release, the Docs Hub expanded to allow readers to suggest new text to the content.
+The only requirement is logging in with a [Google](https://support.google.com/accounts/answer/27441?hl=en) or [GitHub](https://github.com/signup) account.
+
+The website uses [Commento](https://commento.io/) to add a Reddit-style comment thread after the content of each article.
+This allows suggesting new content on that page and readers interacting with each other and upvoting suggestions.
+A team of moderators periodically reviews the suggestions and integrates them into the content when enough upvotes are accumulated and the suggestion is validated.
+
 ### Software Release Notes Rework
 
 As part of unifying content, release notes for the different software applications are now available with the related documentation:
@@ -46,8 +56,3 @@ The [Solutions]({{< ref "/solutions/" >}}) articles are elevated out of the CORE
 
 Each top-level section of CORE and SCALE documentation also has a **Download or Print** option.
 This combines all the individual articles in that section into a single document format that can be downloaded as a PDF, physically printed, or saved as HTML.
-
-### Community Contribution Threads
-
-<expand with commento description and usage recommendations>
-
