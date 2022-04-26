@@ -6,7 +6,7 @@ weight: 30
 
 {{< toc >}}
 
-TrueNAS SCALE Advanced Settings provide configuration options for the Console, Syslog, Sysctl, Kernel, Cron Jobs, Init/Shutdown Scripts, System Dataset Pool, and Isolated GPU Device(s).
+TrueNAS SCALE Advanced Settings provide configuration options for the Console, Syslog, Sysctl, Kernel, Cron Jobs, Init/Shutdown Scripts, System Dataset Pool, Isolated GPU Device(s), and Self-Encrypting Drives.
 
 {{< hint warning >}} 
 Advanced Settings have reasonable defaults in place. Changing advanced settings can be dangerous when done incorrectly. Please use caution before saving. Make sure you are comfortable with ZFS, Linux, and system [configuration backup and restoration]({{< relref "GeneralSettings.md" >}}) before making any changes. 
@@ -16,7 +16,7 @@ Advanced Settings have reasonable defaults in place. Changing advanced settings 
 
 ## Console
 
-The **Console** window allows users to configure the [Console Setup menu]({{< relref "Post-installConfiguration.md" >}}).
+**Console** lets users configure the [Console Setup menu]({{< relref "Post-installConfiguration.md" >}}).
 
 | Name | Description |
 |------|-------------|
@@ -26,9 +26,10 @@ The **Console** window allows users to configure the [Console Setup menu]({{< re
 | Serial Speed | The speed (in bits per second) the serial port uses. |
 | MOTD Banner | The message that displays when a user logs in with SSH. |
 
+
 ## Syslog
 
-The **Syslog** window allows users configure how and when the system sends log messages to the Syslog server.
+**Syslog** lets users determine how and when the system sends log messages to the Syslog server.
 
 | Name | Description |
 |------|-------------|
@@ -38,9 +39,10 @@ The **Syslog** window allows users configure how and when the system sends log m
 | Syslog Transport | [Transport Protocol](https://tools.ietf.org/html/rfc8095) for the remote system log server connection. Choosing Transport Layer Security (TLS) also requires selecting a preconfigured system Certificate. |
 | Use System Dataset | Store system logs on the system dataset. Unset to store system logs in /var/ on the operating system device. |
 
+
 ## Sysctl
 
-The **Sysctl** window allows users set up tunables that configure kernel parameters at runtime.
+**Sysctl** lets users set up tunables that configure kernel parameters at runtime.
 
 | Name | Description |
 |------|-------------|
@@ -49,18 +51,20 @@ The **Sysctl** window allows users set up tunables that configure kernel paramet
 | Description | Enter a description of the tunable. |
 | Enabled | Enable this tunable. Unset to disable this tunable without deleting it. |
 
+
 ## Kernel
 
-The **Kernel** window contains options for system optimization and kernel debugging.
+**Kernel** contains options for system optimization and kernel debugging.
 
 | Name | Description |
 |------|-------------|
 | Enable Autotune | Activates a tuning script that attempts to optimize the system depending on the installed hardware. Warning: Autotuning is a temporary measure and is not a permanent fix for system hardware issues. |
 | Enable Debug Kernel | Set to boot a debug kernel after the next system reboot. |
 
+
 ## Cron Jobs
 
-The **Cron Jobs** window allows users to configure jobs that run specific commands or scripts on a regular schedule using [cron(8)](https://manpages.debian.org/testing/cron/cron.8.en.html "Cron Man Page"). Cron Jobs help run repetitive tasks.
+**Cron Jobs** lets users configure jobs that run specific commands or scripts on a regular schedule using [cron(8)](https://manpages.debian.org/testing/cron/cron.8.en.html "Cron Man Page"). Cron Jobs help users run repetitive tasks.
 
 | Name | Description |
 |------|-------------|
@@ -72,16 +76,17 @@ The **Cron Jobs** window allows users to configure jobs that run specific comman
 | Hide Standard Error | Hide error output (stderr) from the command. When unset, TrueNAS mails any error output to the user account cron that ran the command. |
 | Enabled | Enable this cron job. When unset, disable the cron job without deleting it. |
 
+
 ## Init/Shutdown Scripts
 
-The **Init/Shutdown Scripts** window allows users to schedule commands or scripts to run at system startup or shutdown. 
+**Init/Shutdown Scripts** lets users schedule commands or scripts to run at system startup or shutdown. 
 
 | Name | Description |
 |------|-------------|
 | Description | Comments about this script. |
 | Type | Select Command for an executable or Script for an executable script. |
 | Command | Enter the command with any options. |
-| Script | Select the script. The script will be run using [dash(1)](https://manpages.debian.org/testing/dash/sh.1.en.html "dash(1) Page"). |
+| Script | Select the script. The script runs using [dash(1)](https://manpages.debian.org/testing/dash/sh.1.en.html "dash(1) Page"). |
 | When | Select when the command or script runs:
 *Pre Init* is early in the boot process, after mounting filesystems and starting networking.
 *Post Init* is at the end of the boot process, before FreeNAS services start.
@@ -89,21 +94,36 @@ The **Init/Shutdown Scripts** window allows users to schedule commands or script
 | Enabled | Enable this cron job. When unset, disable the cron job without deleting it. |
 | Timeout | Automatically stop the script or command after the specified seconds. |
 
+
 ## System Dataset Pool
 
-**System Dataset Pool** allows users select the storage pool to hold the system dataset. The system dataset stores debugging core files, encryption keys for encrypted pools, and Samba4 metadata such as the user and group cache and share level permissions.
+**System Dataset Pool** lets users select which storage pool holds the system dataset. The system dataset stores debugging core files, encryption keys for encrypted pools, and Samba4 metadata, such as the user and group cache and share level permissions.
 
 Users can move the system dataset to unencrypted pools or encrypted pools without passphrases.
 
-Users can move the system dataset to a key encrypted pool but, after the move, the pool encryption type can't be changed to passphrase. If the encrypted pool already has a passphrase set, you cannot move the system dataset to that pool.
+Users can move the system dataset to a key-encrypted pool, but cannot change the pool encryption type aftwerward. If the encrypted pool already has a passphrase set, you cannot move the system dataset to that pool.
+
 
 ## Isolated GPU Device(s)
 
-The **Isolated GPU Device(s)** window allows users to isolate additional GPU devices for GPU passthrough.
+**Isolated GPU Device(s)** lets users isolate additional GPU devices for GPU passthrough.
 
 GPU passthrough allows the TrueNAS SCALE kernel to directly present an internal PCI GPU to a virtual machine (VM).
 
 The GPU device acts like the VM is driving it, and the VM detects the GPU as if it is physically connected.
 
+
 ## Replication
-The **Replication** window allows users to limit the maximum number of replication tasks executed simultaneously.
+
+**Replication** lets users limit the maximum number of replication tasks executed simultaneously.
+
+
+## Self-Encrypting Drive
+
+The **Self-Encrypting Drive** (SED) pane lets users set the ATA Security User and create a SED global password.
+
+| Name | Description |
+|------|-------------|
+| ATA Security User | User passed to camcontrol security -u to unlock SEDs |
+| SED Password | Global password to unlock SEDs |
+| Confirm SED Password | Re-enter the global password to unlock SEDs |
