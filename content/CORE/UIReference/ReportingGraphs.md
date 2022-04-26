@@ -1,5 +1,5 @@
 ---
-title: "Statistics Reporting"
+title: "Reporting"
 weight: 20
 Aliases: /core/system/reporting/
 ---
