@@ -1,23 +1,24 @@
 ---
 title: "Reporting"
 weight: 80
+aliases: /core/administration/reporting/
 ---
 
-{{< toc >}}
-
-TrueNAS has a built in reporting engine that gives helpful graphs and information about the system.
-
-{{< expand "What does TrueNAS use for reporting?" "v" >}}
+TrueNAS has a built in reporting engine that displays helpful graphs and information about the system processes.
 TrueNAS uses [Graphite](https://graphiteapp.org/ "Graphite Homepage") for metric gathering and visualizations.
-{{< /expand >}}
 
-The options in **System > Reporting** control how the graphs in **Reporting** appear:
+Configure system reporting on the **System > Reporting** screen.
+
+![SystemReporting](/images/CORE/12.0/SystemReporting.png "Reporting Options")
 
 {{< include file="static/includes/Reference/SystemReportingFields.md.part" markdown="true" >}}
 
 {{< hint warning >}}
-Report history is cleared when *Report CPU*, *Graph Age*, or *Graph Points* are changed.
+Report history is cleared after changing and saving CPU reporting, graph age, or graph points.
 {{< /hint >}}
+
+For more information on using TrueNAS reports, see [Working with TrueNAS Reports]({{< relref "/ " >}}).
+For information on how the system displays system reporting in the graphs see [System Reporting]({{< relref "/UIReference/System/Reporing.md >}}). 
 
 Reporting data is saved and preserved across system upgrades and reboots.
 This allows viewing usage trends over time.
