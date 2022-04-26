@@ -4,6 +4,9 @@ weight: 30
 Aliases: /core/administration/shell/
 ---
 
+{{< toc >}}
+
+
 The web interface has a web shell that makes it convenient to run command line tools from the web browser as the root user.
 
 ![UIShell](/images/CORE/12.0/UIShell.png "TrueNAS Shell")

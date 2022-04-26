@@ -8,7 +8,7 @@ Aliases:
 The default shell for a new installations is `zsh`.
 
 You can change the default shell  in **Accounts > Users**.
-1. Click <i class="fa fa-chevron-right" aria-hidden="true">fa-chevron-right</i> for the root user and click **Edit**. 
+1. Click <i class="fa fa-chevron-right" aria-hidden="true"></i> for the root user and click **Edit**. 
    
    ![AccountsUsersEditRootShell](/images/CORE/12.0/AccountsUsersEditRootShell.png "Shell Options")
    
