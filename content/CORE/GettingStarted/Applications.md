@@ -1,6 +1,6 @@
 ---
 title: "Applications"
-weight: 50
+weight: 90
 ---
 
 {{< toc >}}

@@ -1,6 +1,6 @@
 ---
 title: "Logging In"
-weight: 15
+weight: 50
 ---
 
 Now that TrueNAS is installed, it's time to log in to the web interface and begin managing data!

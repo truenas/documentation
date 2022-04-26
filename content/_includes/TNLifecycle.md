@@ -1,15 +1,9 @@
 ---
-title: "Software Development Life Cycle"
-weight: 4
-aliases:
-  - /core/introduction/sofdevlifecycle/
 ---
 
 {{< toc >}}
 
-The TrueNAS (and FreeNAS) Software Development Life Cycle (SDLC) is the process of planning, creating, testing, deploying, and maintaining TrueNAS releases.
-
-There are five stages to the TrueNAS SDLC: requirement analysis, design and development, testing and evaluation, documentation, and maintenance.
+The TrueNAS Software Development Life Cycle (SDLC) is the process of planning, creating, testing, deploying, and maintaining TrueNAS releases.
 
 {{< tabs "SDLC Stages" >}}
 {{< tab "Requirement Analysis" >}}
@@ -44,7 +38,7 @@ During this stage, security patches and software erratum are corrected, updated 
 The TrueNAS SDLC applies to the latest two release branches.
 As new releases are created for TrueNAS, the oldest TrueNAS release branch is dropped out of the SDLC and labeled as End of Life (EoL).
 For example, TrueNAS/FreeNAS 11.3 and TrueNAS 12.0 were in active development under the SDLC in August 2020.
-In early 2021, TrueNAS Core/Enterprise 12.0 and 12.1 branches were in active development under the SDLC.
+In early 2021, TrueNAS Core/Enterprise 12.0 and 13.0 branches were in active development under the SDLC.
 These versions of the software are in active development and maintenance.
 We encourage users to actively keep their software updated to an active development version to continue to receive security patches and other software improvements.
 
@@ -53,5 +47,3 @@ We encourage users to actively keep their software updated to an active developm
 TrueNAS releases follow a general adoption guideline for their lifetime.
 Starting with the NIGHTLY builds, each stage of a major release incorporates more testing cycles and bug fixes that represent a maturation of the release.
 With each version release stage, users are encouraged to install, upgrade, or otherwise begin using the major version, depending on the specific TrueNAS deployment and use case:
-
-{{< include file="static/includes/General/TNQualityLifecycle.html.part" markdown="true" >}}

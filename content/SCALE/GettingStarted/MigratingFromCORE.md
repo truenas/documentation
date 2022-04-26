@@ -1,6 +1,6 @@
 ---
 title: "Migrating from TrueNAS CORE"
-weight: 11
+weight: 45
 ---
 
 {{< toc >}}

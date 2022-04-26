@@ -4853,4 +4853,4 @@ Packages downloaded via apt are not persistent. They will not survive an upgrade
 
 ### Technical details behind the change
 
-See the [ZFS Feature Flags Removal article]({{< relref "SCALE/Introduction/Notices/SCALEZFSFlagRemoval.md" >}}) for more information. 
+See the [ZFS Feature Flags Removal article]({{< relref "SCALEZFSFlagRemoval.md" >}}) for more information.

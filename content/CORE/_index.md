@@ -39,9 +39,9 @@ The current major version of CORE/Enterprise is **13.0**.
 The content in this section documents this version.
 Documentation for previous major versions is available in the [Documentation Archive](/archive).
 
-## Documentation Options
+## Documentation Sections
 
-TrueNAS CORE/Enterprise documentation is divided into several categories or books:
+TrueNAS CORE/Enterprise documentation is divided into several sections or books:
 
 * The [Getting Started Guide](/core/gettingstarted) provides the first steps for your experience with TrueNAS CORE/Enterprise:
   * Recommendations and considerations when selecting hardware for CORE.

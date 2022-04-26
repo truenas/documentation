@@ -1,6 +1,6 @@
 ---
 title: "Installing SCALE"
-weight: 10
+weight: 40
 ---
 
 {{< toc >}}
