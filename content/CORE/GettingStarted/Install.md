@@ -1,6 +1,6 @@
 ---
 title: "Install"
-weight: 10
+weight: 30
 ---
 
 {{< toc >}}

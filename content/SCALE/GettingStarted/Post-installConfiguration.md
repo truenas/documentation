@@ -1,10 +1,9 @@
 ---
 title: "Post-install Configuration"
-weight: 12
+weight: 50
 ---
 
 {{< toc >}}
-
 
 The Console Setup menu displays at the end of the boot process.
 If the TrueNAS system has a keyboard and monitor, you can use this menu to administer the system.

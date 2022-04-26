@@ -1,6 +1,6 @@
 ---
 title: "Storage Configuration"
-weight: 20
+weight: 60
 ---
 
 {{< toc >}}

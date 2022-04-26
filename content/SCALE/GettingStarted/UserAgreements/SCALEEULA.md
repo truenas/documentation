@@ -1,8 +1,9 @@
 ---
 title: "TrueNAS SCALE EULA"
-weight: 30
+weight: 10
 aliases:
   - /scale/introduction/scaleeula/
+  - /scale/notices/scaleeula/
 ---
 
 ## TrueNAS SCALE End User License Agreement

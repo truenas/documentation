@@ -1,7 +1,7 @@
 ---
 title: "Sharing Storage"
 geekdocCollapseSection: true
-weight: 30
+weight: 70
 ---
 
 {{< toc >}}

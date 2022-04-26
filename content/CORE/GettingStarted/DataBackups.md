@@ -1,7 +1,7 @@
 ---
 title: "Data Backups"
 geekdocCollapseSection: true
-weight: 40
+weight: 80
 ---
 
 With storage created and shared, it's time to ensure TrueNAS data is effectively backed up.

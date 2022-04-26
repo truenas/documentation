@@ -1,6 +1,6 @@
 ---
 title: "Console Setup Menu"
-weight: 11
+weight: 40
 ---
 
 The Console Setup menu displays at the end of the boot process.

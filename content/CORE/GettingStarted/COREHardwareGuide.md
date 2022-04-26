@@ -1,6 +1,6 @@
 ---
 title: "CORE Hardware Guide"
-weight: 8
+weight: 20
 aliases:
   - /core/introduction/corehardwareguide/
 ---

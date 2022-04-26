@@ -1,6 +1,6 @@
 ---
 title: "First Time Login"
-weight: 14
+weight: 60
 ---
 
 Now that you have installed and configured TrueNAS SCALE, you can log in to the web interface and begin managing data!
