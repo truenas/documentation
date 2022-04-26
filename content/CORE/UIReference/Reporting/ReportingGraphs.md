@@ -23,7 +23,7 @@ Data files are saved in <file>/var/db/collectd/rrd/</file>.
 Because reporting data is frequently written it should not be stored on the boot pool or operating system device.
 {{< /hint >}}
 
-![ReportingScreenDisplayOptions](/images/CORE/13.0/ReportingScreenDisplayOptions.png "Reporting Screen Display Options")
+![ReportingScreenDisplayOptions](/images/CORE/12.0/ReportingScreenDisplayOptions.png "Reporting Screen Display Options")
 
 ## Reporting Screen Display Options
 
@@ -42,10 +42,14 @@ Because reporting data is frequently written it should not be stored on the boot
 
 ## Interacting with Graphs
 
-Click on and drag a certain range of the graph to expand the information displayed in that selected area in the Graph.
+Click on and drag a certain range of the graph to expand the information displayed in that selected area in the graph.
+
 Click on the <i class="fa fa-search-plus" aria-hidden="true"></i> icon to zoom in on the graph.
+
 Click on the <i class="fa fa-search-minus" aria-hidden="true"></i> icon to zoom out on the graph.
+
 Click the <i class="fa fa-forward" aria-hidden="true" title="Forward"></i> to move the graph forward.
+
 Click the <i class="fa fa-backward" aria-hidden="true" title="Backward"></i> to move the graph backward.
 
 ## Graphs
