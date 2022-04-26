@@ -17,8 +17,7 @@ Configure system reporting on the **System > Reporting** screen.
 Report history is cleared after changing and saving CPU reporting, graph age, or graph points.
 {{< /hint >}}
 
-For more information on using TrueNAS reports, see [Working with TrueNAS Reports]({{< relref "/ " >}}).
-For information on how the system displays system reporting in the graphs see [System Reporting]({{< relref "/UIReference/System/Reporing.md >}}). 
+For information on the **Reporting** screen graphs see [System Reporting]({{< relref "/UIReference/System/Reporing.md" >}}). 
 
 Reporting data is saved and preserved across system upgrades and reboots.
 This allows viewing usage trends over time.
