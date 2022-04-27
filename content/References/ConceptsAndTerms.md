@@ -20,7 +20,7 @@ While TrueNAS is designed for and ever-evolving towards increased user friendlin
 
 * Software as a Service (SaaS): Software as a service (SaaS) is a software licensing and delivery model in which software is licensed on a subscription basis and is centrally hosted. It is sometimes referred to as "on-demand software".
 
-* SSD Metadata: Filesystem metadata can be stored on SDs for faster performance while large data files can be stored on HDDs for lower costs.
+* SSD Metadata: Filesystem metadata that can be stored on SDs for faster performance while large data files can be stored on HDDs for lower costs.
 
 * Storage: Computer data storage is a technology consisting of computer components and recording media that are used to retain digital data.
 
@@ -68,9 +68,9 @@ While TrueNAS is designed for and ever-evolving towards increased user friendlin
 
 * [Fusion Pool]({{< relref "FusionPool.md" >}}) (or metadata vdev): is a special class of vdev. This special vdev can store meta data such as file locations and allocation tables. Using a special vdev drastically speeds up random I/O and can cut the average number of spinning-disk I/Os needed to find and access a file by up to half.
 
-* Checksum: As ZFS writes data, it creates a checksum for each disk block it writes. As ZFS reads data, it validates the checksum for each disk block it reads.
+* [Checksum]({{< relref "zfsprimer.md" >}}): As ZFS writes data, it creates a checksum for each disk block it writes. As ZFS reads data, it validates the checksum for each disk block it reads.
 
-* Self-healing: Media errors or “bit rot” can cause data to change, and the checksum no longer matches. When ZFS identifies a disk block checksum error on a pool that is mirrored or uses RAIDZ, it replaces the corrupted data with the correct data.
+* [Self-healing]({{< relref "zfsprimer.md" >}}): Media errors or “bit rot” can cause data to change, and the checksum no longer matches. When ZFS identifies a disk block checksum error on a pool that is mirrored or uses RAIDZ, it replaces the corrupted data with the correct data.
 
 * [ZFS Snapshots]({{< relref "Snapshots.md" >}}): read-only copy of a file system or volume. When a snapshot of a dataset is made, ZFS records the timestamp of when the snapshot was made. No data is copied and no extra storage is consumed. Only when changes occur in the filesystem and the data in it diverges from the snapshot does the snapshot start using additional storage.
 
