@@ -26,8 +26,6 @@ While TrueNAS is designed for and ever-evolving towards increased user friendlin
 
 * File System: A file system or filesystem (fs) controls how data is stored and retrieved. Without a file system, data placed in a storage medium would be one large body of data with no way to tell where one piece of data stops and the next begins.
 
-* SSD Metadata: Filesystem metadata can be stored on SDs for faster performance while large data files can be stored on HDDs for lower costs.
-
 * Networking: A computer network is a group of computers that use a set of common communication protocols over digital interconnections for the purpose of sharing resources located on or provided by the network nodes.
 
 * Sharing: File sharing is the public or private sharing of computer data or space in a network of multiple systems.
