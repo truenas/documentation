@@ -20,12 +20,13 @@ While TrueNAS is designed for and ever-evolving towards increased user friendlin
 
 * Software as a Service (SaaS): Software as a service (SaaS) is a software licensing and delivery model in which software is licensed on a subscription basis and is centrally hosted. It is sometimes referred to as "on-demand software".
 
+* SSD Metadata: Filesystem metadata can be stored on SDs for faster performance while large data files can be stored on HDDs for lower costs.
+
 * Storage: Computer data storage is a technology consisting of computer components and recording media that are used to retain digital data.
 
 * File System: A file system or filesystem (fs) controls how data is stored and retrieved. Without a file system, data placed in a storage medium would be one large body of data with no way to tell where one piece of data stops and the next begins.
 
-* Checksum: (Note: Our Docs don't define checksum and the Marketing DOC has a good explanation of what the Checksum is/does)
-As ZFS writes data, it creates a checksum for each disk block it writes. As ZFS reads data, it validates the checksum for each disk block it reads.
+* SSD Metadata: Filesystem metadata can be stored on SDs for faster performance while large data files can be stored on HDDs for lower costs.
 
 * Networking: A computer network is a group of computers that use a set of common communication protocols over digital interconnections for the purpose of sharing resources located on or provided by the network nodes.
 
