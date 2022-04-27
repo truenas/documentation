@@ -16,7 +16,7 @@ The **Groups** screen lets you create and manage UNIX-style groups.
 | Filter Groups | Filters groups by keyword. |
 | COLUMNS | Lets users display/hide list columns. |
 | ADD | Opens the **Group Configuration** form  |
-| <i class="material-icons" aria-hidden="true" title="Settings"> | Displays/hides built-in groups |
+| <span class="iconify" data-icon="mdi:cog"></span> | Displays/hides built-in groups |
 | Group | Group name. |
 | GID | Group ID number. |
 | Builtin | Whether or not the group is built-in. |

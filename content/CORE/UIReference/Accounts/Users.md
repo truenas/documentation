@@ -16,7 +16,7 @@ The **Users** screen lets you create and manage user accounts.
 | Filter Users | Filters users by keyword. |
 | COLUMNS | Lets users display/hide list columns. Username, UID, Builtin, and Full Name are default. |
 | ADD | Opens the **User ID and Groups** form  |
-| <i class="material-icons" aria-hidden="true" title="Settings"> | Displays/hides built-in users |
+| <span class="iconify" data-icon="mdi:cog"></span> | Displays/hides built-in users |
 | Username | Descriptive name for the user. |
 | UID | User ID number. |
 | Builtin | Whether or not the user is built-in. |

@@ -1,6 +1,6 @@
 ---
 title: "Setting Up Users and Groups"
-weight: 10
+weight: 19
 aliases:
   - /core/accounts/users
   - /core/accounts/groups
