@@ -285,7 +285,7 @@ zfs hold LOCKED tank1/veeam@LOCKED
 {{< hint info >}}
 Description of shell commands
 1. Create a snapshot named **LOCKED** on **tank1/veeam**.
-1. Hold a lock named **LOCKED** on the snapshot. Indeed The name of the snapshot and the name of the lock
+1. Hold a lock named **LOCKED** on the snapshot. Indeed the name of the snapshot and the name of the lock
 can be different, but it is easier to use twice the same name.
 {{< /hint >}}
 
@@ -384,7 +384,7 @@ Go to *System Settings | Services | SMB* and click on the pencil (<i class="fa f
 
 ## Configure Samba share for Veeam
 Go to *Shares | Windows (SMB) Shares | ADD*
-* Click on **ADVANCED OPTIONS*
+* Click on **ADVANCED OPTIONS**
   * *Basic*
     * *Path*: **/mnt/tank1/veeam**
     * *Name*: veeam
