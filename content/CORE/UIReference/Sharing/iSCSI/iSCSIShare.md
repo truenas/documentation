@@ -1,402 +1,284 @@
 ---
 title: "iSCSI Shares"
 weight: 10
+alias: /core/sharing/iscsi/iscsishare/
 ---
 
 {{< toc >}}
 
-To get started, make sure you have created a [zvol]({{< relref "ZVols.md" >}}) or a [dataset]({{< relref "CORE/UIReference/Storage/Pools/Datasets.md" >}}) with at least one file to share.
+Users can configure an iSCSI block share using either the wizard or the individual configuration screens. The wizard steps users through the configuration process in an ordered sequence. Using the seven tabs on the **iSCSI** screen allows users to configure settings in any order they choose (a manual process). 
 
-Go to **Sharing > Block Shares (iSCSI)**. You can either set one up manually or use the wizard to guide you through creation.
+## iSCSI Wizard Configuration Screens
 
-## Wizard Setup
+The iSCSI Wizard configuration forms guide users through the process of setting up an iSCSI block share. Click **WIZARD** to display the first configuration screen.
 
-{{< tabs "Wizard Setup" >}}
-{{< tab "Block Device" >}}
-First, enter a name for the iSCSI share. It can only contain lowercase alphanumeric characters plus a dot (.), dash (-), or colon (:). We recommend keeping the name short or at most 63 characters. Next, choose the *Extent Type*.
+### Wizard Navigation
 
-* If the *Extent Type* is *Device*, select the Zvol to share from the *Device* menu.
+Use **Next** to advance to the next wizard configuration form.
+Use **Back** to return to a previous wizard configuration form.
+Use **Cancel** to exit the configuration wizard.
 
-* If the *Extent Type* is *File*, select the path to the Extent and indicate the file size.
-
-Select the type of platform that will be using the share. For example, if using the share from an updated Linux OS, choose *Modern OS*.
+{{< expand "Wizard Configuration Screens and Settings" >}}
+{{< expand "Create or Choose Block Device Screen Settings">}} 
+### Create or Choose Block Device
 
 ![SharingISCSIWizardDevice](/images/CORE/12.0/SharingISCSIWizardDevice.png "iSCSI Wizard: Block Device")
-{{< /tab >}}
 
-{{< tab "Portal" >}}
-Now you will either create a new portal or select an existing one from the dropdown.
-
-If you create a new portal, you will need to select a *Discovery Authentication Method*.
-
-If you set the *Discovery Authentication Method* to *CHAP* or *MUTUAL CHAP*, you will also need to select a *Discovery Authentication Group*. If no group exists, click *Create New* from the drop-down and enter a *Group ID*, *User*, and *Secret*.
-
-![SharingISCSIWizardPortal](/images/CORE/12.0/SharingISCSIWizardPortal.png "iSCSI Wizard: Portal")
-
-When the *Discovery Authentication Method* is *NONE*, the *Discovery Authentication Group* can be left empty.
-
-Select *0.0.0.0* or *::* from the *IP Address* dropdown and click *NEXT*.
-
-{{< expand "What are these options?" "v" >}}
-*0.0.0.0* listens on all IPv4 addresses and *::* listens on all IPv6 addresses.
+| Setting | Description |
+|---------|-------------|
+| **Name** | Type a lower case alphanumeric character string that can include a dot (.), dash (-), or colon (:). Keep the string short and do not exceed 63 characters. |
+| **Extent Type** | Choose either **Device** or **File**. If selecting **Device** use a zvol created for the share. If selecting **File** also select the path to the extent and include the file size. |
+| **Device** | Required field. Create New or select from devices listed |
+| **Sharing Platform** | Select from the options provided:<br> **VMware: extent block size 512b, TCP enabled, no Xen compat mode, SSD speed** <br> **Xen: Extent block size 512b, TCP enabled, Xen compat mode enabled, SSD speed** <br> **Legacy OS: Extent block size 512b, TCP enabled, no Xen compat mode, SSD speed** <br> **Modern OS: Extent block size 4k, TCP enabled, no Xen compat mode, SSD speed** <br> Use Moderon OS for updated operating systems like Linux OS. |
 {{< /expand >}}
-{{< /tab >}}
+{{< expand "Portal Screen Settings" >}}
+### Portal 
 
-{{< tab "Initiator" >}}
-Decide which initiators or networks can use the iSCSI share.
-Leave the list empty to allow all initiators or networks, or add entries to the list to limit access to those systems.
+The Wizard **Portal** configuration form includes only the **Portal** field unless you select **Create New** on the dropdown list. 
+
+![iSCSIWizardPortalAfterCreateNewAndAddIPAddress](/images/CORE/12.0/iSCSIWizardPortalAfterCreateNewAndAddIPAddress.png "iSCSI Wizard: Portal")  
+
+| Setting | Description |
+|---------|-------------|
+| **Portal** | Select either **Create New** or an existing portal from the dropdown list. Selecting **Create New** displays the **Discovery Authentication Method**, **Discovery Authentication Group**, **IP Address** and **Port** fields. |
+| **Discovery Authentication Method** | Required if creating a new portal. Select either **NONE**, **CHAP** or **Mutual CHAP** from the dropdown list. If **NONE** you can leave **Discovery Authentication Group** set to **NONE** as well. |
+| **Discovery Authentication Group** | Required if the discovery authentication method is set to CHAP or MUTUAL CHAP. Select either **NONE** or **Create New** on the dropdown list. If **Discovery Authentication Method** is set to **NONE** you can select **NONE** here but if **Discovery Authentication Method** is set to **CHAP** or **MUTUAL CHAP** select **CREATE NEW**. This displays the **Group ID**, **User**, **Secret** and **Secret (Confirm)** configuration fields. | 
+| **Group ID** | Displays after selecting **Create New** in the **Discovery Authentication Group** field. Group IDs allow you to configure different groups with different authentication profiles. For example, all users with a group ID of 1 inherits the authentication profile associated with group 1. Type a number for the group ID. |
+| **User** | Displays after selecting **Create New** in for the discovery authentication group. Type the name of the user account to create for the CHAP authentication with the user on the remote system. For example, you could use the initiator name as the user name. |
+| **Secret** | Displays after selecting **Create New** as the discovery authentication group. Type a user password of at least 12 but no more than 16 characters. |
+| **Secret (Confirm)** | Displays after selecting **Create New** as the discovery authentication group. Retype the user password entered into the **Secret** field. Click the <i class="fa fa-eye-slash" aria-hidden="true"></i> icon to display the characters you typed to verify you typed the desired password string. Click <i class="fa fa-eye" aria-hidden="true"></i> to hide the password string. |
+| **IP Address** | Select the IP address from the dropdown list. This is the IP address to list on the portal. Click **ADD** to add more IP addresses if desired or necessary. Click **DELETE** to remove any IP addresses and ports you added after clicking **ADD**. Use **0.0.0.0** to listen on all IPv4 addresses or use **::** to listen on all IPv6 IP addresses. |
+| **Port** | Type the TCP port used to access the iSCSI target. The default port is **3260**. |
+| **ADD** | Saves the selected IP address and allows the user to add another IP address. New IP address and port entry fields includes the **DELETE** button allows you to remove the new entry if necessary. |
+| **DELETE** | Displays after clicking **ADD**. Removes the new IP address and port line created after clicking **ADD**. |
+{{< /expand >}}
+{{< expand "Initiator Screen Settings" >}}
+### Initiator 
 
 ![SharingISCSIWizardInitiator](/images/CORE/12.0/SharingISCSIWizardInitiator.png "iSCSI Wizard: Initiator")
-{{< /tab >}}
 
-{{< tab "Confirm" >}}
-Confirm the settings are correct and click *SUBMIT*.
+| Setting | Description |
+|---------|-------------|
+| **Initiators** | Leave blank to allow all host names or to enter a list of initiator host names. Use the keyboard <kbd>Enter</kbd> after entering each host name to save. |
+| **Authorized Networks** | Network addresses allowed to use this initiator. Leave blank to allow all networks or list all network addresses with a CIDR mask. Separate each entry with the keyboard  <kbd>Enter</kbd>. |
+{{< /expand >}}
+{{< expand "Confirm Options Screen Settings" >}}
+### Confirm Options Form
 
 ![SharingISCSIWizardSummary](/images/CORE/12.0/SharingISCSIWizardSummary.png "iSCSI Wizard: Summary")
-{{< /tab >}}
-{{< /tabs >}}
 
-## Manual Setup
+Use **Back** to return to a previous configuration form to make any changes on that form.
+Use **SUBMIT** to save the settings and the new iSCSI share.
+{{< /expand >}}
+{{< /expand >}}
 
-{{< tabs "Manual Setup" >}}
-{{< tab "Target Global Configuration" >}}
-The *Target Global Configuration* tab lets users configure settings that will apply to all iSCSI shares.
+## Manual Setup Screens
+
+The manual configuration screens allow you to add or edit an iSCSI block share. 
+There are seven configuration screens accessed from tabs at the top of the **iSCSI** screen. 
+Unlike the wizard configuration option, you can move from one screen to another in any sequence.
+
+{{< expand "Manual Configuration Screens and Settings" >}}
+{{< expand "Target Global Configuration Tab" >}}
+
+The **Target Global Configuration** screen allows user to add or edit global configuration settings that apply to all iSCSI shares. 
 
 ![SharingISCSIManualTargetGlobalConfig](/images/CORE/12.0/SharingISCSIManualTargetGlobalConfig.png "iSCSI Target Global Configuration")
 
 | Setting | Description |
-|---------|-------|
-| Base Name | Lowercase alphanumeric characters plus dot (.), dash (-), and colon (:) are allowed. See the Constructing iSCSI names using the *iqn.format* section of [RFC3721](https://tools.ietf.org/html/rfc3721.html). |
-| ISNS Servers | Hostnames or IP addresses of the ISNS servers to be registered with the iSCSI targets and portals of the system. Separate entries by pressing <kbd>Enter</kbd>. |
-| Pool Available Space Threshold (%) | Generate an alert when the pool has this percent space remaining. This is typically configured at the pool level when using zvols or at the extent level for both file and device-based extents. |
-{{< /tab >}}
+|---------|-------------|
+| **Base Name** | Lowercase alphanumeric characters plus dot (.), dash (-), and colon (:) are allowed. See the "Constructing iSCSI names using the *iqn.format*" section of [RFC3721](https://tools.ietf.org/html/rfc3721.html). |
+| **ISNS Servers** | Host names or IP addresses of the ISNS servers to register with the iSCSI targets and portals of the system. Use keyboard <kbd>Enter</kbd>. to separate entries. |
+| **Pool Available Space Threshold (%)** | Generates an alert when the pool has this percent space remaining. It is typical to configure this at the pool level when using zvols or at the extent level for both file and device-based extents. |
 
-{{< tab "Portals" >}}
-The *Portals* tab lets users create new portals or edit existing ones in the list.
+Click **SAVE** before leaving the global configuration settings screen.
+{{< /expand >}}
+{{< expand "Portals Tab" >}}
+
+The **Portals** screen displays a list of configured portals. It lets users create new portals or edit the existing ones in the list. 
+Use the blue **Columns** dropdown list to display a list of available options to add or remove columns in the **Portals** table. Select from **Unselect All**, **Listen**, **Description**, **Discovery Auth Method**, **Discover Auth Group** or **Reset to Defaults** to reverse any changes you made to the table.
 
 ![SharingISCSIManualPortals](/images/CORE/12.0/SharingISCSIManualPortals.png "iSCSI Portal")
 
-To add a new portal, click *ADD* and enter the basic and IP address information.
-
-To edit an existing portal, click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> next to the portal and select *Edit*.
+Use **ADD** to display the **Portals Add** configuration form. 
+Click the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> icon for the portal and select **Edit** to display the **Portal Edit** configuration form. 
+Both the **Add** and **Edit** forms have the same settings fields.
 
 ![SharingISCSIManualPortalsForm](/images/CORE/12.0/SharingISCSIManualPortalsForm.png "iSCSI Portals Form")
 
 **Basic Info**
 | Setting | Description |
-|---------|-------|
-| Description | Optional description. Portals are automatically assigned a numeric group. |
+|---------|-------------|
+| **Description** | Optional description. Portals are automatically assigned a numeric group. |
 
 **Authentication Method and Group**
 | Setting | Description |
-|---------|-------|
-| Discovery Authentication Method | iSCSI supports multiple authentication methods that the target uses to discover valid devices. *None* allows anonymous discovery while *CHAP* and *Mutual CHAP* require authentication. |
-| Discovery Authentication Group | Group ID created in Authorized Access. Required when the Discovery Authentication Method is CHAP or Mutual CHAP. |
+|---------|-------------|
+| **Discovery Authentication Method** | iSCSI supports multiple authentication methods that the target uses to discover valid devices. **None** allows anonymous discovery while **CHAP** and **Mutual CHAP** require authentication. |
+| **Discovery Authentication Group** | Group ID created in Authorized Access. Required when the discovery authentication method is CHAP or Mutual CHAP. |
 
 **IP Address**
 | Setting | Description |
-|---------|-------|
-| IP Address | Select the IP addresses to be listened on by the portal. Click ADD to add IP addresses with a different network port. *0.0.0.0* listens on all IPv4 addresses and *::* listens on all IPv6 addresses. |
-| Port | TCP port used to access the iSCSI target. Default is *3260*. |
-| ADD | Adds another IP address row. |
-{{< /tab >}}
+|---------|-------------|
+| **IP Address** | Select the IP addresses the portal uses to listened on. Click **ADD** to add IP addresses with a different network port. **0.0.0.0** listens on all IPv4 addresses and **::** listens on all IPv6 addresses. |
+| **Port** | TCP port used to access the iSCSI target. Default is **3260**. |
+| **ADD** | Adds another IP address row. |
+{{< /expand >}}
+{{< expand "Initiators Groups Tab" >}}
 
-{{< tab "Initiators Groups" >}}
-The *Initiators Groups* tab lets users create new authorized access client groups or edit existing ones in the list.
+The **Initiators Groups** screen displays a lis of configured initiators. It lets users create new authorized access client groups or edit existing ones on the list. 
+Use the blue **Columns** dropdown list to display a list of available options to add or remove columns in the **Initiator Groups** table. Select from **Unselect All**, **Initiators**, **Authorized Networks**, **Description** or **Reset to Defaults** to reverse any changes you made to the table.
 
 ![SharingISCSIManualInitiators](/images/CORE/12.0/SharingISCSIManualInitiators.png "iSCSI Initiators Groups")
 
-To add a new initiators group, click *ADD* and either leave *Allow All Initiators* checked or configure your own allowed initiators and authorized networks.
+Use **ADD** to display the **Initiators Add** configuration screen. 
+Click the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> icon for the initiator and select **Edit** to display the **Initiators Edit** configuration form. 
+Both the **Add** and **Edit** forms have the same settings fields.
 
-To edit an existing initiators group, click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> next to the initiators group and select *Edit*.
+![iSCSIAddInitiators](/images/CORE/13.0/iSCSIAddInitiators.png "iSCSI Add Initiators") 
 
 | Setting | Description |
-|---------|-------|
-| Allow All Initiators | Allows All Initiators when checked. |
-| Allowed Initiators (IQN) | Initiators allowed access to this system. Enter an [iSCSI Qualified Name (IQN)](https://tools.ietf.org/html/rfc3720#section-3.2.6) and click *+* to add it to the list. Example: *iqn.1994-09.org.freebsd:freenas.local*. |
-| Authorized Networks | Network addresses allowed use this initiator. Each address can include an optional [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) netmask. Click + to add the network address to the list. Example: *192.168.2.0/24*. |
-| Description | Any notes about initiators. |
-{{< /tab >}}
+|---------|-------------|
+| **Connected Initiators** | Initiators currently connected to the system, displayed in the IQN format with an IP address. Set initiators and click an <i class="fa fa-arrow-right" aria-hidden="true"></i> to add the initiators to either the **Allowed Initiators** or **Authorized Networks** lists. Click **Refresh** to update the list of connected initiators. |
+| **Allow All Initiators** | Allows all initiators when selected. If not selected, configure your own allowed initiators and authorized networks. |
+| **Allowed Initiators (IQN)** | Initiators allowed access to this system. Enter an [iSCSI Qualified Name (IQN)](https://tools.ietf.org/html/rfc3720#section-3.2.6) and click the <i class="fa fa-plus" aria-hidden="true"></i> to add it to the list. Example: *iqn.1994-09.org.freebsd:freenas.local*. |
+| **Authorized Networks** | Network addresses allowed use this initiator. Each address can include an optional [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) netmask. Click <i class="fa fa-plus" aria-hidden="true"></i> to add the network address to the list. Example: *192.168.2.0/24*. |
+| **Description** | Enter any notes about initiators. |
+| **REFRESH** | Refreshes the list displayed in **Connected Initiators**.|
+| **SAVE** | Saves changes made on the **Add** or **Edit** initiator screens. |
+| **CANCEL**| Discards changes made on and closes the **Add** or **Edit** initiator screens. |
+{{< /expand >}}
+{{< expand "Authorized Access Tab" >}}
 
-{{< tab "Authorized Access" >}}
-The *Authorized Access* tab lets users create new authorized access networks or edit existing ones in the list.
+The **Authorized Access** screen displays a list of authorized access networks. It lets users create new authorized access networks or edit existing ones in the list. 
+Use the blue **Columns** dropdown list to display a list of available options to add or remove columns in the **Initiator Groups** table. Select from **Unselect All**, **User**, **Peer User** or **Reset to Defaults** to reverse any changes you made to the table.
 
 ![SharingISCSIManualAuthorizedAccess](/images/CORE/12.0/SharingISCSIManualAuthorizedAccess.png "iSCSI Authorized Access")
 
-To add a new authorized access network, click *ADD* and fill out the group, user, and peer user information.
-
-To edit an existing authorized access network, click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> next to it and select *Edit*.
+Use **ADD** to display the **Authorized Access Add** configuration screen. 
+Click the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> icon for the authorized access and select **Edit** to display the **Authorized Access Edit** configuration form. 
+Both the **Add** and **Edit** forms have the same settings fields.
 
 ![SharingISCSIManualAuthorizedAccessForm](/images/CORE/12.0/SharingISCSIManualAuthorizedAccessForm.png "iSCSI Authorized Access Form")
 
 **Group**
 | Setting | Description |
-|---------|-------|
-| Group ID | Allow different groups to be configured with different authentication profiles. Example: all users with a group ID of 1 will inherit the authentication profile associated with Group 1. |
+|---------|-------------|
+| **Group ID** | Allow you to configure different groups with different authentication profiles. For example, all users with a group ID of *1* inherit the authentication profile associated with Group *1*. |
 
 **User**
 | Setting | Description |
-|---------|-------|
-| User | User account to create for CHAP authentication with the user on the remote system. Many initiators use the initiator name as the user name. |
-| Secret | User password. Must be at least 12 and no more than 16 characters long. |
-| Secret (Confirm) | Confirm the user password. |
+|---------|-------------|
+| **User** | User account to create for CHAP authentication with the user on the remote system. Many initiators use the initiator name as the user name. |
+| **Secret** | User password of at least 12 but no more than 16 characters. Click the <i class="fa fa-eye-slash" aria-hidden="true"></i> icon to display the characters you typed to verify you typed the desired password string. Click <i class="fa fa-eye" aria-hidden="true"></i> to hide the password string. |
+| **Secret (Confirm)** | Confirm the user password. |
 
 **Peer User**
 | Setting | Description |
-|---------|-------|
-| Peer User | Only entered when configuring mutual CHAP. Usually the same value as User. |
-| Peer Secret | Mutual secret password. Required when Peer User is set. Must be different than the Secret. |
-| Peer Secret (Confirm) | Confirm the mutual secret password. |
-{{< /tab >}}
+|---------|-------------|
+| **Peer User** | Only entered when configuring mutual CHAP. Usually the same value as **User**. |
+| **Peer Secret** | Mutual secret password. Required when Peer User is set up. Must be different than the password used in **Secret**. Click the <i class="fa fa-eye-slash" aria-hidden="true"></i> icon to display the characters you typed to verify you typed the desired password string. Click <i class="fa fa-eye" aria-hidden="true"></i> to hide the password string. |
+| **Peer Secret (Confirm)** | Confirm the mutual secret password. |
+{{< /expand >}}
+{{< expand "Targets Tab" >}}
 
-{{< tab "Targets" >}}
-The *Targets* tab lets users create new TrueNAS storage resources or edit existing ones in the list.
+The **Targets** screen displays a list of storage resources configured in the system. It lets users create new TrueNAS storage resources or edit existing ones in the list. 
+Use the blue **Columns** dropdown list to display a list of available options to add or remove columns in the **Targets** table. Select from **Unselect All**, **Target Alias** or **Reset to Defaults** to reverse any changes you made to the table.
 
 ![SharingISCSIManualTargets](/images/CORE/12.0/SharingISCSIManualTargets.png "iSCSI Targets")
 
-To add a new target, click *ADD* and enter the basic and iSCSI group information.
-
-To edit an existing target, click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> next to it and select *Edit*.
+Use **ADD** to display the **Targets Add** configuration screen. 
+Click the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> icon for the target and select **Edit** to display the **Targets Edit** configuration form. 
+Both the **Add** and **Edit** forms have the same settings fields.
 
 ![SharingISCSIManualTargetsForm](/images/CORE/12.0/SharingISCSIManualTargetsForm.png "iSCSI Targets Form")
 
 **Basic Info**
 | Setting | Description |
-|---------|-------|
-| Target Name | The base name is automatically prepended if the target name does not start with iqn. Lowercase alphanumeric characters plus dot (.), dash (-), and colon (:) are allowed. See the Constructing iSCSI names using the iqn.format section of [RFC3721](https://tools.ietf.org/html/rfc3721.html). |
-| Target Alias | Optional user-friendly name. |
+|---------|-------------|
+| **Target Name** | The base name for the target. It is automatically prepended if the target name does not start with **iqn**. Allowed characters are lowercase alphanumeric characters plus dot (.), dash (-), and colon (:). See the "Constructing iSCSI names using the iqn.format" section of [RFC3721](https://tools.ietf.org/html/rfc3721.html). |
+| **Target Alias** | Optional user-friendly name for the **Target Name**. |
 
 **iSCSI Group**
 | Setting | Description |
-|---------|-------|
-| Portal Group ID | Leave empty or select an existing portal to use. |
-| Initiator Group ID | Select which existing initiator group has access to the target. |
-| Authentication Method | Choices are *None*, *Auto*, *CHAP*, or *Mutual CHAP*. |
-| Authentication Group Number | Select *None* or an integer. This value represents the number of existing authorized accesses. |
-{{< /tab >}}
+|---------|-------------|
+| **Portal Group ID** | Leave empty or select an existing portal to use. If you click the dropdown arrow, you must select a portal group ID from the list. |
+| **Initiator Group ID** | Select the existing initiator group that has access to the target. Leave empty if **Portal Group ID** is empty. |
+| **Authentication Method** | Select **None**, **CHAP**, or **Mutual CHAP**. |
+| **Authentication Group Number** | Select **None** or an integer. This value represents the number of existing authorized accesses. |
+{{< /expand >}}
+{{< expand "Extents Tab" >}}
 
-{{< tab "Extents" >}}
-The *Extents* tab lets users create new shared storage units or edit existing ones in the list.
+The **Extents** screen displays a list of available shared storage units configured on the system. It lets users create new shared storage units or edit existing ones in the list.
+Use the blue **Columns** dropdown list to display a list of available options to add or remove columns in the **Extents** table. Select from **Unselect All**, **Description**, **Serial**, **NAA**, **Enabled** or **Reset to Defaults** to reverse any changes you made to the table.
 
 ![SharingISCSIManualExtents](/images/CORE/12.0/SharingISCSIManualExtents.png "iSCSI Extents")
 
-To add a new extent, click *ADD* and enter the basic, type, and compatibility information.
-
-To edit an existing extent, click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> next to it and select *Edit*.
+Use **ADD** to display the **Extents Add** configuration screen. 
+Click the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> icon for the shared storage unit and select **Edit** to display the **Extents Edit** configuration form. 
+Both the **Add** and **Edit** forms have the same settings fields.
 
 ![SharingISCSIManualExtentsForm](/images/CORE/12.0/SharingISCSIManualExtentsForm.png "iSCSI Extents Form")
 
 **Basic Info**
 | Setting | Description |
-|---------|-------|
-| Name | Name of the extent. If the *Extent* size is not 0, it cannot be an existing file within the pool or dataset. |
-| Description | Notes about this extent. |
-| Enabled | Set to enable the iSCSI extent. |
+|---------|-------------|
+| **Name** | Name of the extent. An extent with a size of zero can be an existing file within the pool or dataset. An extent with a size other than zero cannot be an existing file within the pool or dataset. |
+| **Description** | Type any notes about this extent. |
+| **Enabled** | Select to enable the iSCSI extent. |
 
 **Type**
 | Setting | Description |
-|---------|-------|
-| Extent Type | *Device* provides virtual storage access to zvols, zvol snapshots, or physical devices. *File* provides virtual storage access to a single file. |
-| Device | Only appears if *Device* is selected. Select the unformatted disk, controller, or zvol snapshot. |
-| Path to the Extent | Only appears if *File* is selected. Browse to an existing file. Create a new file by browsing to a dataset and appending /\{filename.ext\} to the path. Users cannot create extents inside a jail root directory. |
-| Filesize | Only appears if *File* is selected. Entering 0 uses the actual file size and requires that the file already exists. Otherwise, specify the file size for the new file. |
-| Logical Block Size | Leave at the default of 512 unless the initiator requires a different block size. |
-| Disable Physical Block Size Reporting | Set if the initiator does not support physical block size values over 4K (MS SQL). |
+|---------|-------------|
+| **Extent Type** | Specify the storage unit type. Select **Device** or **File** from the dropdown list. **Device** provides virtual storage access to zvols, zvol snapshots, or physical devices. **File** provides virtual storage access to a single file. |
+| **Device** | Only displays only if **Device** is the selected in **Extent Type**. Select the unformatted disk, controller, or zvol snapshot. |
+| **Path to the Extent** | Only displays if the **Extent Type** is set to **File**. Browse to an existing file. Create a new file by browsing to a dataset and appending /\{filename.ext\} to the path. Users cannot create extents inside a jail root directory. |
+| **Filesize** | Only displays if the **Extent Type** is set to **File**. Enter **0** to use the actual file size and it requires that the file already exists. Otherwise, specify the file size for the new file. |
+| **Logical Block Size** | Leave at the default of **512** unless the initiator requires a different block size. Select from **512**, **1024**, **2048** or **4096** on the dropdown list.|
+| **Disable Physical Block Size Reporting** | Select if the initiator does not support physical block size values over 4K (MS SQL). |
 
 **Compatibility**
 | Setting | Description |
-|---------|-------|
-| Enable TPC | Set to allow an initiator to bypass normal access control and access any scannable target. This allows [xcopy](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc771254(v=ws.11)) operations that are otherwise blocked by access control. |
-| Xen initiator compat mode | Set when using Xen as the iSCSI initiator. |
-| LUN RPM | Do **NOT** change this setting when using Windows as the initiator. Only needs to be changed in large environments where the number of systems using a specific RPM is needed for accurate reporting statistics. |
-| Read-only | Set to prevent the initiator from initializing this LUN. |
-{{< /tab >}}
+|---------|-------------|
+| **Enable TPC** | Select to allow an initiator to bypass normal access control and access any scannable target. This allows [xcopy](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc771254(v=ws.11)) operations that are otherwise blocked by access control. |
+| **Xen initiator compat mode** | Select when using Xen as the iSCSI initiator. |
+| **LUN RPM** | *Do not* change this setting when using Windows as the initiator! Only change the default **SSD** setting if in a large environment where you need a number of systems using a specific RPM for accurate reporting statistics. Options are **SSD**, **5400**, **7200**, **10000** or **15000**. |
+| **Read-only** | Select to prevent the initiator from initializing this LUN. |
+{{< /expand >}}
+{{< expand "Associated Targets Tab" >}}
 
-{{< tab "Associated Targets" >}}
-The *Associated Targets* tab lets users create new associated TrueNAS storage resources or edit existing ones in the list.
+The **Associated Targets** screen displays a list of associated TrueNAS storage resources configured on the system. It lets users create new associated TrueNAS storage resources or edit existing ones in the list.
+Use the blue **Columns** dropdown list to display a list of available options to add or remove columns in the **Associated Targets** table. Select from **Unselect All**, **LUN ID**, **Extent** or **Reset to Defaults** to reverse any changes you made to the table.
 
 ![SharingISCSIManualAssociatedTargets](/images/CORE/12.0/SharingISCSIManualAssociatedTargets.png "iSCSI Associated Targets")
 
-To add a new associated target, click *ADD* and fill out the information.
-
-To edit an existing associated target, click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> next to it and select *Edit*.
+Use **ADD** to display the **Associated Targets Add** configuration screen. 
+Click the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> icon for the associated TrueNAS storage resource and select **Edit** to display the **Associated Targets Edit** configuration form. 
+Both the **Add** and **Edit** forms have the same settings fields.
 
 ![SharingISCSIManualAssociatedTargetsForm](/images/CORE/12.0/SharingISCSIManualAssociatedTargetsForm.png "iSCSI Associated Targets Form")
 
 | Setting | Description |
-|---------|-------|
-| Target | Select an existing target. |
-| LUN ID | Select the value or enter a value between 0 and 1023. Some initiators expect a value below 256. Leave this field blank to automatically assign the next available ID. |
-| Extent | Select an existing extent. |
-{{< /tab >}}
-{{< /tabs >}}
+|---------|-------------|
+| **Target** | Select an existing target. This is a required field. |
+| **LUN ID** | Select the value or enter a value between 0 and 1023. Some initiators expect a value below 256. Leave this field blank to automatically assign the next available ID. |
+| **Extent** | Select an existing extent. This is a required field. |
 
-## Starting the iSCSI Service
+{{< /expand >}}
+{{< /expand >}}
 
-To turn on the iSCSI service, go to **Services** and toggle *iSCSI*.
-Set *Start Automatically* to start it when TrueNAS boots up.
+For more information on iSCSI shares also see:
 
-![ServicesISCSIEnable](/images/CORE/12.0/ServicesISCSIEnable.png "Starting the iSCSI Service")
+[About iSCSI Shares]({{< relref "/CORE/UIReference/Sharing/iSCSI/_index.md" >}})
 
-Clicking the <i class="material-icons" aria-hidden="true" title="Configure">edit</i> returns to the options in **Sharing > iSCSI**.
+[Fibre Channel Ports Screen]({{< relref "/CORE/UIReference/Sharing/iSCSI/FibreChannel.md" >}})
 
-## Using the iSCSI Share
+[Adding an iSCSI Share]({{< relref "/CORE/CORETutorials/AddingiSCSIShare.md" >}}) 
 
-Connecting to and using an iSCSI share can differ between operating systems:
+[Using iSCSI Shares]({{< relref "/CORE/CORETutorials/UsingiSCSIShare.md" >}})
 
-{{< tabs "iSCSI Use: OSes" >}}
-{{< tab "Linux" >}}
-### iSCSI Utilities and Service
+[Increasing iSCSI Share Available Storage]({{< relref "/CORE/CORETutorials/IncreasingiSCSIAvailableStorage.md" >}})
 
-First, open the command line and ensure that the `open-iscsi` utility is installed.
-To install the utility on an Ubuntu/Debian distribution, enter `sudo apt update && sudo apt install open-iscsi`.
-After the installation completes, ensure the *iscsid* service is running: `sudo service iscsid start`.
-With the *iscsid* service started, run the `iscsiadm` command with the discovery arguments and get the necessary information to connect to the share.
+[Setting Up Fibre Channel]({{< relref "/CORE/CORETutorials/SettingUpFibreChannel.md" >}})
 
-![LinuxISCSIAppInstall](/images/CORE/LinuxISCSIAppInstall.png "Linux ISCSI App Install")
-
-### Discover and Log In to the iSCSI Share
-
-Run the command `sudo iscsiadm \--mode discovery \--type sendtargets \--portal {IPADDRESS}`.
-The output provides the basename and target name that TrueNAS configured.
-
-![LinuxISCSIDiscoveryList](/images/CORE/LinuxISCSIDiscoveryList.png "Linux ISCSI Discovery List")
-
-Alternatively, enter `sudo iscsiadm -m discovery -t st -p {IPADDRESS}` to get the same output.
-Note the basename and target name given in the output, since they you need them to log in to the iSCSI share.
-
-When a Portal Discovery Authentication Method is CHAP, add the three following lines to /etc/iscsi/iscsid.conf.
-```
-discovery.sendtargets.auth.authmethod = CHAP
-discovery.sendtargets.auth.username = user
-discovery.sendtargets.auth.password = secret
-```
-The user for `discovery.sendtargets.auth.username` is set in the *Authorized Access* used by the *Portal* of the iSCSI share. Likewise, the password to use for `discovery.sendtargets.auth.password` is the *Authorized Access* secret. Without those lines, the iscsiadm will not discover the Portal with the CHAP authentication method.
-
-Next, enter `sudo iscsiadm \--mode node \--targetname {BASENAME}:{TARGETNAME} \--portal {IPADDRESS} \--login`, where *{BASENAME}* and *{TARGETNAME}* is the information from the discovery command.
-
-![LinuxISCSILogin](/images/CORE/LinuxISCSILogin.png "Linux ISCSI Login")
-
-### Partition iSCSI Disk
-
-When the iSCSI share login succeeds, the device shared through iSCSI shows on the Linux system as an *iSCSI Disk*.
-To view a list of connected disks in Linux, enter `sudo fdisk -l`.
-
-![FDiskList](/images/CORE/FDiskList.png "fdisk -l output")
-
-Because the connected iSCSI disk is raw, you must partition it.
-Identify the iSCSI device in the list and enter `sudo fdisk {/PATH/TO/iSCSIDEVICE}`.
-
-![FDiskPartition](/images/CORE/FDiskPartition.png "fdisk partitioning")
-
-**Shell** lists the iSCSI device path in the `sudo fdisk -l` output.
-Use the `fdisk` command defaults when partitioning the disk.
-
-{{< hint info >}}
-Remember to type <kbd>w</kbd> when finished partitioning the disk.
-The `w` command tells `fdisk` to save any changes before quitting.
-{{< /hint >}}
-
-![LinuxISCSIFilesystemCreated](/images/CORE/LinuxISCSIFilesystemCreated.png "Linux ISCSI Filesystem Created")
-
-After creating the partition on the iSCSI disk, a partition slice displays on the device name.
-For example, <file>/dev/sdb1</file>.
-Enter `fdisk -l` to see the new partition slice.
-
-### Make a Filesystem on the iSCSI Disk
-
-Finally, use `mkfs` to make a filesystem on the device's new partition slice.
-To create the default filesystem (ext2), enter `sudo mkfs {/PATH/TO/iSCSIDEVICEPARTITIONSLICE}`.
-
-![LinuxISCSIFilesystem](/images/CORE/LinuxISCSIFilesystem.png "Linux ISCSI Filesystem")
-
-### Mount the iSCSI Device
-
-Now the iSCSI device can mount and share data.
-Enter `sudo mount {/PATH/TO/iSCSIDEVICEPARTITIONSLICE}`.
-For example, `sudo mount /dev/sdb1 /mnt` mounts the iSCSI device *sdb1* to <file>/mnt</file>.
-{{< /tab >}}
-{{< tab "Windows" >}}
-To access the data on the iSCSI share, clients will need to use iSCSI Initiator software. An iSCSI Initiator client is pre-installed in Windows 7 to 10 Pro, and Windows Server 2008, 2012, and 2019. Windows Professional Edition is usually required.
-
-First, click the Start Menu and search for the *iSCSI Initiator* application.
-
-![WindowsISCSIInitiatorApp](/images/CORE/WindowsISCSIInitiatorApp.png "Windows ISCSI Initiator App")
-
-Next, go to the **Configuration** tab and click **Change** to change the iSCSI initiator to the same name created earlier. Click **OK**.
-
-![Windows ISCSI Initiator Config Name](/images/CORE/WindowsISCSIInitiatorConfigName.png "Windows ISCSI Initiator Config Name")
-
-Next, switch to the **Discovery Tab**, click **Discover Portal**, and type in the TrueNAS IP address.
-
-* If TrueNAS changed the port number from the default *3260*, enter the new port number.
-
-* If you set up CHAP when creating the iSCSI share, click **Advanced...**, set *Enable CHAP log on*, and enter the initiator name and the same target/secret set earlier in TrueNAS.
-
-Click **OK**.
-
-![Windows ISCSI Initiator Discover Portal](/images/CORE/WindowsISCSIInitiatorDiscoverPortal.png "Windows ISCSI Initiator Discover Portal")
-
-Go to the **Targets** tab, highlight the iSCSI target, and click **Connect**.
-
-![Windows ISCSI Initiator Target Connect](/images/CORE/WindowsISCSIInitiatorTargetConnect.png "Windows ISCSI Initiator Target Connect")
-
-After Windows connects to the iSCSI target, you can partition the drive.
-
-Search for and open the *Disk Management* app.
-
-![WindowsISCSIDiskManagementApp](/images/CORE/WindowsISCSIDiskManagementApp.png "Windows ISCSI Disk Management App")
-
-Your drive should currently be *unallocated*. Right-click the drive and click **New Simple Volume...**.
-
-![WindowsISCSIDiskNewVolume](/images/CORE/WindowsISCSIDiskNewVolume.png "Windows ISCSI Disk New Volume")
-
-Complete the Wizard to format the drive and assign a drive letter and name.
-
-![WindowsISCSIDiskNewVolumeOptions](/images/CORE/WindowsISCSIDiskNewVolumeOptions.png "Windows ISCSI Disk New Volume Options")
-
-Finally, go to *This PC* or *My Computer* in File Explorer. The new iSCSI volume should show up under the list of drives. You should now be able to add, delete, and modify files and folders on your iSCSI drive.
-
-![WindowsiSCSIVolumeLocation](/images/CORE/WindowsiSCSIVolumeLocation.png "Windows iSCSI Volume Location")
-{{< /tab >}}
-{{< /tabs >}}
-
-## Expanding LUNs
-
-TrueNAS lets users expand Zvol and file-based LUNs to increase the available storage that the iSCSI shares.
-
-{{< tabs "Expanding LUNs" >}}
-{{< tab "Zvol LUN" >}}
-To expand a Zvol LUN, go to **Storage > Pools** and click the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> next to the Zvol LUN, then select *Edit Zvol*.
-
-![ExpandingZvolLUNList](/images/CORE/ExpandingZvolLUNList.png "Edit the Zvol LUN")
-
-Enter a new size in the *Size for this zvol* field, then click *SAVE*.
-
-![ExpandingZvolLUNSize](/images/CORE/ExpandingZvolLUNSize.png "Change the Zvol Size")
-
-{{< hint ok >}}
-To prevent data loss, the web interface does not allow users to reduce the Zvol's size. 
-TrueNAS also does not allow users to increase the Zvol's size past 80% of the pool size.
-{{< /hint >}}
-{{< /tab >}}
-
-{{< tab "File LUN" >}}
-To expand a file-based LUN, you will need to know the path to the file. You can find the path by going to **Sharing > Block Shares (iSCSI)** and clicking the *Extents* tab. 
-Click the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> next to the file-based LUN and select *Edit*. 
-
-![ExpandingFileLUNPath](/images/CORE/ExpandingFileLUNPath.png "Copy the Path to the File")
-
-Highlight and copy the path, then click *CANCEL*
-
-Go to **Shell** and input `truncate -s +[size] [path to file]`, then press <kbd>Enter</kbd>.
-
-The *[size]* is how much space you want to grow the file by, and the *[path to file]* is the file path you copied earlier. 
-
-![ExpandingFileLUNShell](/images/CORE/ExpandingFileLUNShell.png "Expanding the File Size in Shell")
-
-An example of the command could look like this: `truncate -s +2g /mnt/Shares/Dataset1/FileLun/FileLUN`
-
-Lastly, go back to the extent in **Sharing > Block Shares (iSCSI)** and make sure the *Filesize* is set to *0* so that the share uses the actual file size.
-{{< /tab >}}
-{{< /tabs >}}
+[Setting Up NPIV]({{< relref "/CORE/CORETutorials/SettingUpNPIV.md" >}})
