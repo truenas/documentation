@@ -1,6 +1,7 @@
 ---
 title: "iSCSI Shares"
 weight: 10
+alias: /core/sharing/iscsi/iscsishare/
 ---
 
 {{< toc >}}
@@ -134,7 +135,7 @@ Use **ADD** to display the **Initiators Add** configuration screen.
 Click the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> icon for the initiator and select **Edit** to display the **Initiators Edit** configuration form. 
 Both the **Add** and **Edit** forms have the same settings fields.
 
-![iSCSIAddInitiators](/images/CORE/12.0/iSCSIAddInitiators.png "iSCSI Add Initiators") 
+![iSCSIAddInitiators](/images/CORE/13.0/iSCSIAddInitiators.png "iSCSI Add Initiators") 
 
 | Setting | Description |
 |---------|-------------|
@@ -270,9 +271,14 @@ For more information on iSCSI shares also see:
 
 [About iSCSI Shares]({{< relref "/CORE/UIReference/Sharing/iSCSI/_index.md" >}})
 
+[Fibre Channel Ports Screen]({{< relref "/CORE/UIReference/Sharing/iSCSI/FibreChannel.md" >}})
+
 [Adding an iSCSI Share]({{< relref "/CORE/CORETutorials/AddingiSCSIShare.md" >}}) 
 
 [Using iSCSI Shares]({{< relref "/CORE/CORETutorials/UsingiSCSIShare.md" >}})
 
 [Increasing iSCSI Share Available Storage]({{< relref "/CORE/CORETutorials/IncreasingiSCSIAvailableStorage.md" >}})
 
+[Setting Up Fibre Channel]({{< relref "/CORE/CORETutorials/SettingUpFibreChannel.md" >}})
+
+[Setting Up NPIV]({{< relref "/CORE/CORETutorials/SettingUpNPIV.md" >}})
