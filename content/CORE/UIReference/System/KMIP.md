@@ -1,6 +1,8 @@
 ---
 title: "KMIP"
 weight: 175
+aliases:
+  - /core/system/kmip
 ---
 
 KMIP on TrueNAS Enterprise is used to integrate the system within an existing centralized key management infrastructure and use a single trusted source for creating, using, and destroying SED passwords and ZFS encryption keys.
