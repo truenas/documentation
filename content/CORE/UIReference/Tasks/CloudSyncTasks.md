@@ -6,125 +6,45 @@ weight: 90
 {{< toc >}}
 
 TrueNAS can send, receive, or synchronize data with a Cloud Storage provider.
-Cloud Sync tasks allow for single time transfers or recurring transfers on a schedule, and are an effective method to back up data to a remote location.
-
-{{< hint warning >}}
-Using the Cloud means that data can go to a third party commercial vendor not directly affiliated with iXsystems.
-Please investigate and fully understand that vendor’s pricing policies and services before creating any Cloud Sync task.
-iXsystems is not responsible for any charges incurred from the use of third party vendors with the Cloud Sync feature.
-{{< /hint >}}
-
-TrueNAS supports major providers like Amazon S3, Google Cloud, and Microsoft Azure, along with a variety of other vendors.
-To see the full list of supported vendors, go to **System > Cloud Credentials > Add** and open the *Provider* dropdown.
-
-## Requirements
-
-* All system [Storage]({{< relref "/CORE/UIReference/Storage/_index.md" >}}) must be configured and ready to receive or send data.
-* A Cloud Storage provider account and a cloud storage location must be available, like an Amazon S3 bucket.
-* Cloud Storage account credentials must be saved to **System > Cloud Credentials** before creating the sync task.
-  See [Cloud Credentials]({{< relref "/CORE/UIReference/System/CloudCredentials.md" >}}) for specific instructions.
-
-## Creating a Cloud Sync Task
-
-Go to **Tasks > Cloud Sync Tasks** and click *Add*.
 
 ![TasksCloudSyncAdd](/images/CORE/12.0/TasksCloudSyncAdd.png "Creating a Cloud Sync Task")
 
-Give the task a memorable *Description* and select an existing cloud *Credential*.
-TrueNAS connects to the chosen Cloud Storage Provider and shows the available storage locations.
-Decide if data is transferring to (*PUSH*) or from (*PULL*) the Cloud Storage location (**Remote**).
-Choose a *Transfer Mode*:
+## Transfer
 
-{{< tabs "Transfer Modes" >}}
-{{< tab "Sync" >}}
-*Sync* keeps all the files identical between the two storage locations.
-If the sync encounters an error, files are not deleted in the destination.
-This includes a common error when the [Dropbox copyright detector](https://techcrunch.com/2014/03/30/how-dropbox-knows-when-youre-sharing-copyrighted-stuff-without-actually-looking-at-your-stuff/) flags a file as copyrighted.
+| Name | Description |
+|------|------|
+| Description | Enter a description of the Cloud Sync Task. |
+| Direction | PUSH sends data to cloud storage. PULL receives data from cloud storage. Changing the direction resets the Transfer Mode to COPY. |
+| Transfer Mode | SYNC: Files on the destination are changed to match those on the source. If a file does not exist on the source, it is also deleted from the destination. COPY: Files from the source are copied to the destination. If files with the same names are present on the destination, they are overwritten. MOVE: After files are copied from the source to the destination, they are deleted from the source. Files with the same names on the destination are overwritten. |
+| Directory/Files | Select the directories or files to be sent to the cloud for Push syncs, or the destination to be written for Pull syncs. Be cautious about the destination of Pull jobs to avoid overwriting existing files. |
 
-Note that syncing to a Backblaze B2 bucket does not delete files from the bucket, even when those files have been deleted locally.
-Instead, files are tagged with a version number or moved to a hidden state.
-To automatically delete old or unwanted files from the bucket, adjust the [Backblaze B2 Lifecycle Rules](https://www.backblaze.com/blog/backblaze-b2-lifecycle-rules/).
+## Remote
 
-Files stored in Amazon S3 Glacier or S3 Glacier Deep Archive cannot be deleted by a sync.
-These files must first be restored by another means, like the [Amazon S3 console](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/restore-archived-objects.html).
-{{< /tab >}}
-{{< tab "Copy" >}}
-*Copy* duplicates each source file into the destination, _overwriting_ any files in the destination that have the same name as the source.
-Copying is the least potentially destructive option.
-{{< /tab >}}
-{{< tab "Move" >}}
-*Move* transfers the files from the source to the destination and _deletes_ the original source files.
-Files with the same names on the destination are overwritten.
-{{< /tab >}}
-{{< /tabs >}}
+| Name | Description |
+|------|------|
+| Credential | Select the cloud storage provider credentials from the list of available Cloud Credentials. |
+| Folder | Enter or select the cloud storage location to use for this task. |
 
-Next, **Control** when the task runs by defining a *Schedule*.
-When a specific *Schedule* is required, choose *Custom* and use the **Advanced Scheduler**.
+## Control
 
-{{< expand "Advanced Scheduler" "v" >}}
-{{< include file="static/includes/CORE/AdvancedScheduler.md.part" markdown="true" >}}
-{{< /expand >}}
+| Name | Description |
+|------|------|
+| Schedule | Select a schedule preset or choose Custom to open the advanced scheduler. |
+| Enable | Enable this Cloud Sync Task. Unset to disable this Cloud Sync Task without deleting it. |
 
-Unsetting *Enable* makes the configuration available without allowing the *Schedule* to run the task.
-To manually activate a saved task, go to **Tasks > Cloud Sync Tasks**, click <i class="fa fa-chevron-right"></i> to expand a task, and click *RUN NOW*.
+## Advanced Options
 
-The remaining options allow tuning the task to your specific requirements.
+| Name | Description |
+|------|------|
+| Follow Symlinks | Follow symlinks and copy the items to which they link. |
+| Pre-script | Script to execute before running sync. |
+| Post-script | Script to execute after running sync. |
+| Exclude | List of files and directories to exclude from sync.Separate entries by pressing Enter. See [rclone](https://rclone.org/filtering/) filtering for more details about the --exclude option. |
+| Upload Chunk Size | Files are split into chunks of this size before upload. The number of chunks that can be simultaneously transferred is set by the Transfers number. The single largest file being transferred must fit into no more than 10,000 chunks. |
+| Remote Encryption | Use [rclone crypt](https://rclone.org/crypt/) to manage data encryption during PUSH or PULL transfers:  PUSH: Encrypt files before transfer and store the encrypted files on the remote system. Files are encrypted using the Encryption Password and Encryption Salt values.  PULL: Decrypt files that are being stored on the remote system before the transfer. Transferring the encrypted files requires entering the same Encryption Password and Encryption Salt that was used to encrypt the files.  Additional details about the encryption algorithm and key derivation are available in the [rclone crypt File formats documentation](https://rclone.org/crypt/#file-formats). |
+| Transfers | Number of simultaneous file transfers. Enter a number based on the available bandwidth and destination system performance. See [rclone --transfers](https://rclone.org/docs/#transfers-n). |
+| Bandwidth Limit | A single bandwidth limit or bandwidth limit schedule in rclone format. Separate entries by pressing Enter. Example: 08:00,512 12:00,10MB 13:00,512 18:00,30MB 23:00,off. Units can be specified with the beginning letter: b, k (default), M, or G. See [rclone --bwlimit](https://rclone.org/docs/#bwlimit-bandwidth-spec). |
 
-{{< expand "Specific Options" "v" >}}
-{{< include file="static/includes/Reference//TasksCloudSyncAddFields.md.part" markdown="true" >}}
+## Dry Run
 
-### Scripting and Environment Variables
-
-Advanced users can write scripts that run immediately *before* or *after* the Cloud Sync task.
-The **Post-script** field is only run when the Cloud Sync task successfully completes.
-You can pass a variety of task environment variables into the **Pre-** and **Post-** script fields:
-
-* CLOUD_SYNC_ID
-* CLOUD_SYNC_DESCRIPTION
-* CLOUD_SYNC_DIRECTION
-* CLOUD_SYNC_TRANSFER_MODE
-* CLOUD_SYNC_ENCRYPTION
-* CLOUD_SYNC_FILENAME_ENCRYPTION
-* CLOUD_SYNC_ENCRYPTION_PASSWORD
-* CLOUD_SYNC_ENCRYPTION_SALT
-* CLOUD_SYNC_SNAPSHOT
-
-There also are provider-specific variables like CLOUD_SYNC_CLIENT_ID or CLOUD_SYNC_TOKEN or CLOUD_SYNC_CHUNK_SIZE
-
-Remote storage settings:
-* CLOUD_SYNC_BUCKET
-* CLOUD_SYNC_FOLDER
-
-Local storage settings:
-* CLOUD_SYNC_PATH
-
-{{< /expand >}}
-
-### Testing Settings
-
-Test the settings before saving by clicking *DRY RUN*.
-TrueNAS connects to the Cloud Storage Provider and simulates a file transfer.
-No data is actually sent or received.
-A dialog shows the test status and allows downloading the task logs.
-
-![TasksCloudsyncAddGoogledriveDryrun](/images/CORE/12.0/TasksCloudsyncAddGoogledriveDryrun.png "Example: Google Drive Test")
-
-## Cloud Sync Behavior
-
-Saved tasks are activated according to their schedule or by clicking **RUN NOW**.
-An in-progress cloud sync must finish before another can begin.
-Stopping an in-progress task cancels the file transfer and requires starting the file transfer over.
-
-To view logs about a running or the most recent run of a task, click the task status.
-
-## Cloud Sync Restore
-
-To quickly create a new Cloud Sync that uses the same options but reverses the data transfer, expand (<i class="fa fa-chevron-right"></i>) an existing Cloud Sync and click *RESTORE*.
-
-![TasksCloudSyncRestore](/images/CORE/12.0/TasksCloudSyncRestore.png "Cloud Sync Restore")
-
-Enter a new *Description* for this reversed task and define the path to a storage location for the transferred data.
-
-The restored cloud sync is saved as another entry in **Tasks > Cloud Sync Tasks**.
-
-In case the restore destination dataset is the same as the original source dataset, the restored files might have their ownership altered to _root_. If the original files were not created by _root_ and a different owner is required, you can recursively reset ACL Permissions of the restored dataset through the GUI or by running chown from the CLI.
+TrueNAS connects to the Cloud Storage Provider and simulates a file transfer without sending or receiving data.
