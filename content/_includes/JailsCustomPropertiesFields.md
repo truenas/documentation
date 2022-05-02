@@ -1,4 +1,5 @@
-**Custom Properties**
+---
+---
 
 | Name | Description |
 |------|-------------|

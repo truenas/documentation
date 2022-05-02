@@ -1,11 +1,15 @@
 ---
 title: "Installing Software"
 weight: 20
+Aliases: /core/applications/jails/software/
 ---
+
+{{< toc >}}
+
 
 A jail is created with no software aside from the core packages installed as part of the selected version of FreeBSD.
 To install more software, go to the **Jails** screen and expand the jail entry.
-Start the jail, then click **> SHELL** when the jail has booted.
+Start the jail, then after the jail boots, click **> SHELL**.
 
 ![JailsShellExample](/images/CORE/12.0/JailsShellExample.png "Jail Shell")
 
@@ -23,6 +27,7 @@ For example, to install the **audiotag** package, enter `pkg install audiotag`.
 When prompted, press <kbd>y</kbd> to complete the installation.
 Messages show the download and installation status.
 
+{{< expand "Confirming the Installation" >}}
 A successful installation is confirmed by querying the package database:
 
 ```
@@ -53,6 +58,8 @@ Description:   Audiotag is a command-line tool for mass tagging/renaming of audi
                it supports the vorbis comment, id3 tags, and MP4 tags.
 WWW:           https://github.com/Daenyth/audiotag
 ```
+{{< /expand >}}
+{{< expand "Showing what the Package Installed" >}}
 
 To show what was installed by the package:
 
@@ -67,7 +74,7 @@ audiotag-0.19_1:
 /usr/local/share/licenses/audiotag-0.19_1/LICENSE
 /usr/local/share/licenses/audiotag-0.19_1/catalog.mk
 ```
-
+{{< /expand >}}
 In FreeBSD, third-party software is always stored in <file>/usr/local</file> to differentiate it from the software that came with the operating system.
 Binaries are almost always located in a subdirectory called <file>bin</file> or <file>sbin</file> and configuration files in a subdirectory called <file>etc</file>.
 
@@ -75,7 +82,7 @@ Binaries are almost always located in a subdirectory called <file>bin</file> or 
 
 Compiling a port is another option. Compiling ports offer these advantages:
 
-* Not every port has an available package. This is usually due to licensing restrictions or known, unaddressed security vulnerabilities.
+* Some ports, but not every port, have an available package. This is usually due to licensing restrictions or known, unaddressed security vulnerabilities.
 * Sometimes the package is out-of-date and a feature is needed that only became available in the newer version.
 * Some ports provide compile options that are not available in the pre-compiled package. These options are used to add or remove features or options.
 
@@ -91,8 +98,8 @@ Compiling a port has these disadvantages:
 Packages are built with default options.
 Ports let the user select options.
 
-The FreeBSD Ports Collection must be installed in the jail before ports can be compiled.
-Inside the jail, use the `portsnap` utility.
+You must install the FreeBSD Ports Collection in the jail before ports can be compiled.
+Inside the jail, use the `portsnap` command utility.
 This command downloads the ports collection and extracts it to the <file>/usr/ports/</file> directory of the jail:
 
 ```
@@ -110,20 +117,20 @@ cd /usr/ports/audio/audiotag
 make install clean
 ```
 
-The first time this command is run, the configure screen shown.
+The configure screen displays the first time this command is run.
 
 ![JailsShellAudiotagInstall](/images/CORE/12.0/JailsShellAudiotagInstall.png "AudioTag Configuration")
 
 ### Audiotag Port Configuration Options
 
-This port has several configurable options: *DOCS*, *FLAC*, *ID3*, *MP4*, and *VORBIS*.
+This port has several configurable options: DOCS, FLAC, ID3, MP4, and VORBIS.
 Selected options are shown with a `*`.
 
 Use the arrow keys to select an option and press <kbd>spacebar</kbd> to toggle the value.
 Press <kbd>Enter</kbd> when satisfied with the options.
 The port begins to compile and install.
 
-After options are set, the configuration screen is normally not shown again.
+After options are set, the configuration screen does not normally display again.
 Use `make config` to display the screen and change options before rebuilding the port with `make clean install clean`.
 
 Many ports depend on other ports.
@@ -131,18 +138,18 @@ Those other ports also have configuration screens that are shown before compilin
 It is a good idea to watch the compile until it finishes and the command prompt returns.
 
 Installed ports are registered in the same package database that manages packages.
-`pkg info` determines which ports were installed.
+The `pkg info` command determines which ports installed.
 
 ## Starting Installed Software
 
-After packages or ports are installed, they must be configured and started.
+After packages or ports are installed, you must configure and stare them.
 Configuration files are usually in <file>/usr/local/etc</file> or a subdirectory of it.
 Many FreeBSD packages contain a sample configuration file as a reference.
 Take some time to read the software documentation to learn which configuration options are available and which configuration files require editing.
 
 Most FreeBSD packages that contain a startable service include a startup script that is automatically installed to <file>/usr/local/etc/rc.d/</file>.
-After the configuration is complete, test starting the service by running the script with the *onestart* option.
-For example, when *openvpn* is installed in a jail, these commands verify that the service has started:
+After the configuration is complete, test starting the service by running the script with the onestart option.
+For example, when openvpn is installed in a jail, these commands verify that the service has started:
 
 ```
 /usr/local/etc/rc.d/openvpn onestart
@@ -168,7 +175,7 @@ Enter `tail /var/log/messages` to see any error messages if an issue is found.
 Most startup failures are related to a misconfiguration in a configuration file.
 
 After verifying that the service starts and is working as intended, add a line to <file>/etc/rc.conf</file> to start the service automatically when the jail is started.
-The line to start a service always ends in `_enable=”YES”` and typically starts with the name of the software.
+The line to start a service always ends in `_enable="YES"` and typically starts with the name of the software.
 For example, this is the entry for the *openvpn* service:
 
 `openvpn_enable="YES"`
@@ -212,3 +219,16 @@ The startup script also indicates if any additional parameters are available:
 # NAME_dir="/usr/local/etc/openvpn"
 # --cd directory
 ```
+## Additional Information
+
+For information on Jails screens and how to add or manage jails see:
+
+[Jails Screens]({{< relref "/CORE/UIReference/Applications/Jails/JailsScreens.md" >}})
+
+[Creating Jails]({{< relref "/CORE/CORETutorials/CreatingJails.md" >}})
+
+[Managing Jails]({{< relref "/CORE/CORETutorials/ManagingJails.md" >}})
+
+[Setting Up Jail Storage]({{< relref "/CORE/CORETutorials/SettingUpJailStorage.md" >}})
+
+[Accessing Jails Using SSH]({{< relref "/CORE/CORETutorials/AccessingJailsUsingSSH.md" >}})
