@@ -1,6 +1,7 @@
 ---
-title: "Local"
+title: "Local Replication"
 weight: 10
+Aliases: core/tasks/replicationtasks/local/
 ---
 
 {{< toc >}}
@@ -10,7 +11,7 @@ weight: 10
 
 * Requirements: Storage pools and datasets created in **Storage > Pools**.
 
-* Go to **Tasks > Replication Tasks** and click *ADD*
+* Go to **Tasks > Replication Tasks** and click **ADD**
   * Choose Sources
     * Set the source location to the local system
     * Use the file browser or type paths to the sources
