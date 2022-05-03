@@ -18,7 +18,7 @@ While TrueNAS is designed for and ever-evolving towards increased user friendlin
 
 * Storage Area Network (SAN): A storage area network (SAN) or storage network is a computer network which provides access to consolidated, block-level data storage. SANs are primarily used to access storage devices, such as disk arrays and tape libraries from servers so that the devices appear to the operating system as direct-attached storage.
 
-* Software as a Service (SaaS): Software as a service (SaaS) is a software licensing and delivery model in which software is licensed on a subscription basis and is centrally hosted. It is sometimes referred to as "on-demand software".
+* Software as a Service (SaaS): Software as a service (SaaS) is a software licensing and delivery model in which software is licensed on a subscription basis and is centrally hosted. It is sometimes referred to as *on-demand software*.
 
 * SSD Metadata: Filesystem metadata that can be stored on SDs for faster performance while large data files can be stored on HDDs for lower costs.
 
