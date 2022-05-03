@@ -38,3 +38,33 @@ Configured tunables remain in effect until deleted or **Enabled** is unset.
 
 We recommend restarting the system after making sysctl changes.
 Some sysctls only take effect at system startup, and restarting the system guarantees that the setting values correspond with what the running system uses.
+
+## Autotuning
+
+TrueNAS provides an autotune script that optimizes the system depending on the installed hardware.
+
+{{< expand "Is this script available somewhere?" "v" >}}
+To see which checks are performed, find the autotune script in <file>/usr/local/bin/autotune</file>.
+{{< /expand >}}
+
+For example, if a pool exists on a system with limited RAM, the autotune script automatically adjusts some ZFS sysctl values to minimize memory starvation issues.
+Autotuning can introduce system performance issues. You must only use it as a temporary measure until you address the underlying hardware issue.
+Autotune always slows a RAM-starved system as it caps the ARC.
+
+{{< hint danger>}}
+We do not recommend TrueNAS Enterprise customers use the autotuning script, as it can override any specific tunings made by iXsystems Support.
+{{< /hint >}}
+
+Enabling autotune runs the autotuner script at boot.
+To run the script immediately, reboot the system.
+
+Any tuned settings appear in **System > Tunables**.
+
+{{< expand "Can I manually tune a setting controlled by the autotuner?" "v" >}}
+Deleting tunables created by the autotune only affects the current session.
+Autotune-set tunables regenerate every time the system boots.
+You cannot manually tune any setting the autotuner controlls.
+
+To permanently change a value set by autotune, change the description of the tunable.
+For example, changing the description to "*manual override*" prevents autotune from reverting the tunable back to the autotune default value.
+{{< /expand >}}
