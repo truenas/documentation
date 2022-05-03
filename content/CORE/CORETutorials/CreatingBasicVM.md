@@ -1,6 +1,7 @@
 ---
-title: "Basic Management"
+title: "Basic VM Management"
 weight: 10
+aliases: core/applications/virtualmachines/basic/
 ---
 
 {{< toc >}}
@@ -33,37 +34,35 @@ Production of these processors ceased in 2012-2013.
 
 ## Creating a Virtual Machine
 
-Before creating the virtual machine, you will need an installer <file>.iso</file> or image file for the operating system you intend to install and a [storage pool]({{< relref "PoolCreate.md" >}}) available for both the virtual disk and operating system install file.
+Before creating the virtual machine, you need an installer <file>.iso</file> or image file for the operating system you intend to install and a [storage pool]({{< relref "PoolCreate.md" >}}) available for both the virtual disk and operating system install file.
 
-To create a new VM, go to **Virtual Machines** and click *Add*.
+To create a new VM, go to **Virtual Machines** and click **Add**.
 Configure each category of the VM according to your specifications, starting with the **Operating System**.
 
 ![VMAddOperatingSystem](/images/CORE/12.0/VirtualMachinesAddOperatingSystem.png "VM Add: OS")
 
-{{< expand "Specific Options" "v" >}}
-
-{{< include file="static/includes/Reference/VirtualMachinesAddFields.md.part" markdown="true" >}}
+For information on the Wizard screens and settings see [Virtual Machines]({{< relref "/CORE/UIReference/Applications/VirtualMachines/VirtualMachines.md" >}})
 
 Additional notes:
 
-* The *Grub* *Boot Method* is not supported by *Windows* guest operating systems.
-* Compare the recommended specifications for your guest operating system with the available host system resources when allocating *Virtual CPUs*, *Cores*, *Threads*, and *Memory Size*.
+* The **Grub** boot method is not supported by Windows as the guest operating systems.
+* Compare the recommended specifications for your guest operating system with the available host system resources when allocating values in **Virtual CPUs**, **Cores**, **Threads**, and **Memory Size**.
 * Avoid allocating too much memory to a VM.
   Activating a VM that has all available memory allocated to it can slow the host system or prevent other VMs from starting.
-* *AHCI* is the recommended *Disk Type* for Windows VMs.
-* The *VirtIO* **Network Interface** requires that the chosen guest operating system support VirtIO paravirtualized network drivers.
-{{< /expand >}}
+* **AHCI** is the recommended disk type for Windows VMs.
+* **VirtIO** as network interface requires that the chosen guest operating system support VirtIO paravirtualized network drivers.
+
 
 ### Adding and Removing Devices
 
-After the VM is created, add and remove virtual devices by expanding the VM entry in **Virtual Machines** and clicking <i class="material-icons" aria-hidden="true" title="Devices">device_hub</i>.
+After creating the VM, you can add and remove virtual devices by expanding the VM entry in **Virtual Machines** and clicking the <i class="material-icons" aria-hidden="true" title="Devices">device_hub</i> **Devices** option.
 
 ![VMDevices](/images/CORE/12.0/VirtualMachinesDevices.png "VM Devices")
 
 Device notes:
 
-* The virtual machine attempts to boot from devices according to the *Device Order*, starting with *1000*, then ascending.
-* *CD-ROM* devices allowing booting a VM from a CD-ROM image like an installation CD.
+* The virtual machine attempts to boot from devices according to the the **Device Order** setting, starting with **1000**, then ascending.
+* The **CD-ROM** device option allows booting a VM from a CD-ROM image like an installation CD.
   The CD image must be available in the system storage.
 
 ## Managing the Virtual Machine
@@ -73,13 +72,17 @@ After creating the VM and configuring any devices for it, manage the VM by expan
 ![VMOptions](/images/CORE/12.0/VirtualMachinesOptions.png "VM Options")
 
 Options for <i class="material-icons" aria-hidden="true" title="VNC">settings_ethernet</i> or <i class="material-icons" aria-hidden="true" title="Serial">keyboard_arrow_right</i> connections are available after activating the VM.
-If the *VNC* connection screen appears garbled, try adjusting the VNC device resolution.
+If the **VNC** connection screen appears garbled, try adjusting the VNC device resolution.
 
-Using the *State* toggle or clicking <i class="material-icons" aria-hidden="true" title="Stop Button">stop</i> follows a standard shut down procedure to cleanly shut down the running VM.
+Using the **State** toggle or clicking <i class="material-icons" aria-hidden="true" title="Stop Button">stop</i> follows a standard shut down procedure to do a clean shut down the running VM.
 Clicking <i class="material-icons" aria-hidden="true" title="Power Off Button">power_settings_new</i> immediately halts and deactivates the VM, similar to unplugging a computer.
 
 {{< hint info >}}
-If the VM you created has no Guest OS installed, The VM **State** toggle and <i class="material-icons" aria-hidden="true" title="Stop Button">stop</i> button might not function as expected.
-These buttons try to send an ACPI power down command to the VM operating system, but since no OS is installed, the commands time out.
-Use the *POWER OFF* button instead.
+If the VM you created has no guest OS installed, the VM **State** toggle and <i class="material-icons" aria-hidden="true" title="Stop Button">stop</i> button might not function as expected.
+These buttons try to send an ACPI power-down command to the VM operating system, but since no OS is installed, the commands time out.
+Use the **POWER OFF** button instead.
 {{< /hint >}}
+
+## Additional Information
+
+For more information on virtual machines see [Virutal Machines]({{< relref "CORE/UIReference/Applications/VirtualMachines/VirtualMachines.md" >}})
