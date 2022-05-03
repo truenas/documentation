@@ -14,19 +14,20 @@ jobs:
   deploy:
     if: github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0         # Fetch all history for .GitInfo and .Lastmod
 
-      - uses: pnpm/action-setup@v2.0.1
+      - uses: pnpm/action-setup@v2.2.1
         with:
-          version: 6.0.2
+          version: latest
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2.4.13
         with:
-          hugo-version: '0.81.0'
+          hugo-version: '0.86.0'
           extended: true
 
       - name: Install dependencies
@@ -46,7 +47,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           dist: public
           # teardown option remove the PR surge.sh after the PR is merged
-          teardown: 'true'
+          teardown: 'false'
           failOnError: 'true'
           build: |
             echo Deploying to surge.sh
@@ -95,5 +96,6 @@ jobs:
             --exclude=https://discord.com/invite/Q3St5fPETd
             --exclude=https://www.veeam.com/documentation-guides-datasheets.html
             --exclude=https://twitter.com/TrueNAS
-          run_timeout: 300
+            --exclude=https://www.openpgp.org/software/
+            --exclude=https://gohugo.io/
           debug: true
