@@ -8,7 +8,7 @@ Network devices use the [Link Layer Discovery Protocol (LLDP)](https://tools.iet
 TrueNAS uses the [ladvd](https://github.com/sspans/ladvd) LLDP implementation.
 When the local network contains managed switches, configuring and starting the LLDP service tells the TrueNAS system to advertise itself on the network.
 
-To configure LLDP, go to the **Services** page, find the **LLDP** entry, and click the <span class="iconify" data-icon="ci:edit"></span> icon. 
+To configure LLDP, go to the **Services** page, find the **LLDP** entry, and click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i> icon. 
 
 ![ServicesLLDPOptions](/images/CORE/12.0/ServicesLLDPOptions.png "LLDP Service Options")
 
