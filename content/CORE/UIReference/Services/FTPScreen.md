@@ -1,4 +1,19 @@
-**General Options Settings**
+---
+title: "FTP Screen"
+weight: 20
+---
+
+Use the **FTP** services screen to configure FTP service settings for your TrueNAS system.
+
+![FTPBasicOption](/images/CORE/13.0/FTPBasicOption.png "Services FTP Basic Options")
+
+After making changes to settings use **SAVE** to confirm and save your changes.
+
+Use **ADVANCED OPTIONS** to display advanced settings options, and use **BASIC OPTIONS** to return to the basic settings options.
+
+Use **CANCEL** to exit without saving.
+
+## General Options Settings
 
 | Name | Description |
 |------|-------------|
@@ -9,7 +24,13 @@
 | **Timeout** | Enter the maximum client idle time in seconds before disconnect. Default value is **600** seconds. |
 | Certificate | Select the SSL certificate to use for TLS FTP connections from the dropdown list, which is currently **freenas_default**. To create a certificate, go to **System > Certificates**. |
 
-**Advanced Option Settings**
+## Advanced Option Settings
+
+Use **Advanced Options** if you need to customize your FTP service beyond the settings on the **Basic Options** screen.
+
+### Access and TLS Settings
+
+![FTPAdvancedOptionsAccessTLS](/images/CORE/13.0/FTPAdvancedOptionsAccessTLS.png "Services FTP Advanced Options Access and TLS")
 
 **Access Settings**
 
@@ -23,6 +44,11 @@
 | **File Permissions** | Sets default permissions for newly created directories. |
 
 **TLS Settings**
+
+Unless necessary, do NOT allow anonymous or root access.
+For better security, enable TLS when possible.
+This is effectively [FTPS](https://tools.ietf.org/html/rfc4217).
+When FTP is exposed to a WAN, enable TLS.
 
 | Name | Description |
 |------|-------------|
@@ -38,10 +64,14 @@
 | **TLS No Empty Fragments** | Not recommended. This option bypasses a security mechanism. |
 | **TLS No Session Reuse Required** | This option reduces connection security. Only use it if the client does not understand reused SSL sessions. |
 | **TLS Export Standard Vars** | Selected to set several environment variables. |
-| *TLS DNS Name Required* | Select to require the client DNS name to resolve to its IP address and the cert contain the same DNS name. |
+| **TLS DNS Name Required** | Select to require the client DNS name to resolve to its IP address and the cert contain the same DNS name. |
 | **TLS IP Address Required** | Select to require the client certificate IP address to match the client IP address. |
 
-**Bandwidth Settings**
+### Bandwidth and Other Settings**
+
+![FTPAdvancedOptionsBandwidthOther](/images/CORE/13.0/FTPAdvancedOptionsBandwidthOther.png "Services FTP Advanced Options Bandwidth and Other")
+
+**Bandwitdth Settings**
 
 | Name | Description |
 |------|-------------|
@@ -63,3 +93,8 @@
 | **Display Login** | Specify the message displayed to local login users after authentication. Thi is not displayed to anonymous login users. |
 | **Auxiliary Parameters** | Used to add additional [proftpd(8](https://linux.die.net/man/8/proftpd) parameters. |
 
+## Additional Information
+
+See [Configuring FTP]({{< relref "/CORE/CORETutorials/Services/ConfiguringFTP.md" >}}) for instructions on setting up FTP service for your TrueNAS.
+
+Or see [FTP, SFTP and TFTP Services]({{< relref "/CORE/CORETutorials/Services/FTPTFTP.md" >}}) for more information on other file transfer protocols.

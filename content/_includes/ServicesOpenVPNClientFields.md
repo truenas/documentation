@@ -1,3 +1,5 @@
+---
+---
 **General Options**
 
 | Setting | Description |
@@ -7,7 +9,7 @@
 | **Remote** | Enter a valid IP address or domain name to which OpenVPN connects. |
 | **Port** | Enter a port number to use for the connection. |
 | **Authentication Algorithm** | Select an algorithm to authenticate packets. The dropdown list provides a list of alogorithms to choose from. |
-| **Cipher** | Select a cipher algorithm to encrypt data channel packets. The dropdown list provides a list of encryptiong ciphers to choose from.|
+| **Cipher** | Select a cipher algorithm to encrypt data channel packets. The dropdown list provides a list of encryptiong ciphers to choose from. |
 | **Compression** | Select a compression algorithm from the dropdown list. Dropdown list options are **LZ0** or **LZ4**. |
 | **Protocol** | Select the protocol to use when connecting with the remote system. Select from the dropdown list options **UDP**, **UDP4**, **UDP6**, **TCP**, **TCP4** or **TCP6**. |
 | **Device Type** | Select a virtual network interface from the dropdown list. Options are **TUN** or **TAP**. For information see [here](https://community.openvpn.net/openvpn/wiki/BridgingAndRouting). |
