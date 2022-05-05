@@ -39,7 +39,11 @@ When deploying TrueNAS with Veeam users should prepare the following:
 * All appropriate licenses
 * Backup proxies as defined by Veeam - they can be virtual machines or physical machines or the backup server itself for low workloads
 
-[Update the TrueNAS systems]({{< relref "/CORE/UIReference/System/Update/" >}}) to the latest version before beginning deployment.
+<<<<<<< HEAD
+[Update the TrueNAS systems]({{< relref "UpdatingCORE.md" >}}) to the latest version before beginning deployment.
+=======
+[Update the TrueNAS systems]({{< relref "/CORE/UIReference/System/Update.md" >}}) to the latest version before beginning deployment.
+>>>>>>> f0f437f1abe3b7f334e3b97dffc7aea50bcfff3f
 This ensures the appliance has the latest bug fixes, security updates and software enhancements to ensure maximum performance and security.
 If deploying on a closed network (LAN) without access to the Internet, users can also obtain and apply an update manually.
 For assistance, please contact TrueNAS support.
