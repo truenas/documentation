@@ -1,3 +1,16 @@
+---
+title: "AFP Screen"
+weight: 10
+---
+
+Use the **Services AFP** screen to configure AFP service on your TrueNAS.
+
+![Services AFP Edit](/images/CORE/12.0/ServicesAFPEdit.png "Services AFP Edit")
+
+Use **SAVE** to save settings. 
+
+Use **CANCEL** to exit without saving and return to the **Services** screen.
+
 **General Option**
 
 | Settings | Descritpion |
