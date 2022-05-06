@@ -1,4 +1,8 @@
+---
+---
 **General Options**
+
+These settings display on the **BASIC OPTIONS** screen and after clicking **ADVANCED OPTIONS**.
 
 | Settings | Descritpion |
 |----------|-------------|
@@ -8,7 +12,9 @@
 | **Use as Home Share** | Select to allow the share to host user home directories. Only one share can be the home share. |
 | **Enabled** | Select to enable this AFP share. Clear checkmark to disable this AFP share without deleting it. |
 
-**Advanced Permissions**
+**Permissions**
+
+These settings display after clicking **ADVANCED OPTIONS**.
 
 | Settings | Descritpion |
 |----------|-------------|
@@ -24,6 +30,8 @@
 | **Deny Hosts** | Deny host names or IP addresses access to the share. Click **ADD** to add multiple entries. If neither **Allow Hosts** or **Deny Hosts** contains an entry, then AFP share access is allowed for any host. If there is an entry in **Allow Hosts** list but none in **Deny Hosts** list, then only allow hosts on the **Allow Hosts** list. If there is an entry in **Deny Hosts** list but none in **Allow Hosts** list, then allow all hosts that are not on the **Deny Hosts** list. If there are entries in both **Allow Hosts** and **Deny Hosts** list, then allow all hosts that are on the **Allow Hosts** list. If there is a host not on the **Allow Hosts** and not on the **Deny Hosts** list, then allow it. |
 
 **Other Options**
+
+These settings display after clicking **ADVANCED OPTIONS**.
 
 | Settings | Descritpion |
 |----------|-------------|
