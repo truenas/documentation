@@ -7,7 +7,7 @@ weight: 40
 
 [S.M.A.R.T.](https://en.wikipedia.org/wiki/S.M.A.R.T.) (Self-Monitoring, Analysis and Reporting Technology) is an industry standard for disk monitoring and testing.
 Disks can be monitored for problems using several different kinds of self-tests.
-TrueNAS can adjust when and how [alerts]({{< relref "Alert.md" >}}) for S.M.A.R.T. are issued.
+TrueNAS can adjust when and how [alerts]({{< relref "AlertSettings.md" >}}) for S.M.A.R.T. are issued.
 When S.M.A.R.T. monitoring reports an issue, we recommend you replace that disk.
 Most modern ATA, IDE, and SCSI-3 hard drives support S.M.A.R.T.
 Refer to your respective drive documentation for confirmation.

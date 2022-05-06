@@ -3,12 +3,20 @@ title: "Alert Notifications"
 weight: 15
 ---
 
-The alert system provides a visual warning when system conditions require administrative attention.
-The alert icon in the upper right corner has a notification badge that displays the total number of unread alerts.
+![AlertsPanel](/images/CORE/AlertsPanel.png "Alerts Panel")
 
-Alert icons indicate notification, warning, critical, and one-shot critical alerts. Critical messages are also emailed to the root account. One-shot critical alerts must be dismissed by the user.
+## Alerts Panel Options
 
-| Alert Level | Icon |
+| Name | Description |
+|------|------|
+| Dismiss | Dismisses a single alert. |
+| Re-Open | Re-opens a recently-dismissed alert. |
+| Dismiss All Alerts | Dismisses all alerts. |
+| Re-Open All Alerts | Re-opens dismissed alerts that are still active. |
+
+## Alert Levels
+
+| Level | Icon |
 |-------------|------|
 | Notification | <i class="fa fa-info-circle" aria-hidden="true"></i> |
 | Warning | <i class="fa fa-clock-o" aria-hidden="true"></i> |

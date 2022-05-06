@@ -1,6 +1,6 @@
 ---
 title: "Email"
-weight: 55
+weight: 50
 ---
 
 {{< toc >}}

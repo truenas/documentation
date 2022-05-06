@@ -1,6 +1,6 @@
 ---
 title: "Reporting"
-weight: 80
+weight: 70
 aliases: /core/administration/reporting/
 ---
 
