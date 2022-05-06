@@ -72,7 +72,7 @@ While TrueNAS is designed for and ever-evolving towards increased user friendlin
 
 * [Self-healing]({{< relref "zfsprimer.md" >}}): Media errors or bit rot that can cause data to change, and the checksum no longer matches. When ZFS identifies a disk block checksum error on a pool that is mirrored or uses RAIDZ, it replaces the corrupted data with the correct data.
 
-* [ZFS Snapshots]({{< relref "Snapshots.md" >}}): read-only copy of a file system or volume. When a snapshot of a dataset is made, ZFS records the timestamp of when the snapshot was made. No data is copied and no extra storage is consumed. Only when changes occur in the filesystem and the data in it diverges from the snapshot does the snapshot start using additional storage.
+* [ZFS Snapshots]({{< relref "Snapshots.md" >}}): read-only copy of a file system or volume. When a snapshot of a dataset is made, ZFS records the timestamp of when the snapshot was made. No data is copied and no extra storage is consumed. Only when changes occur in the file system and the data in it diverges from the snapshot does the snapshot start using additional storage.
 
 * [ZFS Scrub]({{< relref "ScrubTasks.md" >}}): the process that ZFS uses to verify the data on disk. All of the data is read and checked against the computed checksums to verify that no corruption has occurred.
 
