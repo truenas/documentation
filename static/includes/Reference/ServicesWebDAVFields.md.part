@@ -1,8 +1,8 @@
 **General Options**
 
-| | |
-|-|-|
-| Protocol | HTTP will keep the connection unencrypted. HTTPS encrypts the connection. HTTP+HTTPS allows both types of connections. |
-| HTTP Port | Specify a port for unencrypted connections. The default port `8080` is recommended. Do not reuse a port. |
-| HTTP Authentication | Basic Authentication is unencrypted. Digest Authentication is encrypted. |
-| Webdav Password | The default of davtest is recommended to change. davtest is a known value. |
+| Settings | Descritpion |
+|----------|-------------|
+| **Protocol** | Select the protocol from the dropdown list. **HTTP** keeps the connection unencrypted. **HTTPS** encrypts the connection. **HTTP+HTTPS** allows both types of connections. |
+| **HTTP Port** | Specify a port for unencrypted connections. The default port **8080** is recommended. Do not reuse a port. |
+| **HTTP Authentication** | Select the HTTP authentication type from the dropdown list. **Basic Authentication** is unencrypted. **Digest Authentication** is encrypted. |
+| **Webdav Password** | Change the default of **davtest** as davtest is a known value. |
