@@ -1,6 +1,8 @@
 ---
 title: "Using Configuration Backups"
 weight: 20
+aliases:
+  - /core/system/general/configbackup
 ---
 
 We highly recommend backing up the system configuration regularly.

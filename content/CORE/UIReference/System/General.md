@@ -1,6 +1,8 @@
 ---
 title: "General"
 weight: 10
+aliases:
+  - /core/system/general/settings
 ---
 
 {{< toc >}}
