@@ -135,7 +135,7 @@ Go to **Data Protection > Rsync Tasks** and click **Add**.
 Configure the rsyn task SSH settings by selecting **SSH** on the **Rsync Mode** drop-down. Type the **Port** number and **Remote Path**.
 
 Next, define the **Source** dataset to use for the rsync task and select a **User** account.
-The **User** field entry must be identical to the [SSH Connection]({{< relref "SystemSSH.md" >}}) **Username**.
+The **User** field entry must be identical to the [SSH Connection]({{< relref "\SCALE\SCALEUIReference\Credentials\BackupCredentials\_index.md" >}}) **Username**.
 
 Choose a **Direction** for the rsync task as either **Push** or **Pull** and then define the task **Schedule**.
 If you need a custom schedule, select **Custom**.
