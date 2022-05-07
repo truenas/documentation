@@ -42,7 +42,7 @@ Set the *Warning Level* and how often the alert notification is sent.
 
 ![TasksSetReplicationAlert](/images/CORE/12.0/AlertTaskReplication.png "Set Replication Alert")
 
-See [**Alert Settings**]({{< relref "CORE/UIReference/System/Alert.md" >}}) for more information about this UI screen.
+See [**Alert Settings**]({{< relref "CORE/UIReference/System/AlertSettings.md" >}}) for more information about this UI screen.
 
 ## FAQ
 

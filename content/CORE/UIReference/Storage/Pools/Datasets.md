@@ -63,8 +63,8 @@ Quotas can be configured for either the new dataset or to include all child data
 | Setting | Value | Description |
 |---------|-------|-------------|
 | Quota for this datset | integer | Define the maximum allowed space for the dataset. *0* disables quotas. |
-| Quota warning alert at, % | integer | Generate a warning level [alert]({{< relref "Alert.md" >}}) when consumed space reaches the defined percentage. By default, the dataset will **Inherit** this value from the parent dataset. Unset **Inherit** to change the value. |
-| Quota critical alert at, % | integer | Generate a critical level [alert]({{< relref "Alert.md" >}}) when consumed space reaches the defined percentage. By default, the dataset will **Inherit** this value from the parent dataset. Unset **Inherit** to change the value. |
+| Quota warning alert at, % | integer | Generate a warning level [alert]({{< relref "/CORE/UIReference/System/AlertSettings.md" >}}) when consumed space reaches the defined percentage. By default, the dataset will **Inherit** this value from the parent dataset. Unset **Inherit** to change the value. |
+| Quota critical alert at, % | integer | Generate a critical level [alert]({{< relref "/CORE/UIReference/System/AlertSettings.md" >}}) when consumed space reaches the defined percentage. By default, the dataset will **Inherit** this value from the parent dataset. Unset **Inherit** to change the value. |
 | Reserved space for this dataset | integer | Reserve additional space for datasets that contain logs which could eventually take up all the available free space. *0* is unlimited. |
 
 More fields are added to the **Other Options**.

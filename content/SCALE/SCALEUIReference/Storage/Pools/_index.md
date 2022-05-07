@@ -214,7 +214,7 @@ Vdevs extending examples:
 
 **Scrub Pool** initiates a pool data integrity check.
 
-If TrueNAS detects any problems during the scrub, it either corrects them automatically or generates an [alert]({{< relref "Alert.md" >}}) in the web interface.
+If TrueNAS detects any problems during the scrub, it either corrects them automatically or generates an [alert]({{< relref "/CORE/UIReference/System/AlertSettings.md" >}}) in the web interface.
 
 By default, TrueNAS automatically checks every pool is on a reoccurring [scrub schedule]({{< relref "ScrubTasks.md" >}}).
 {{< /tab >}}

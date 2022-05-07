@@ -56,7 +56,7 @@ Some vdev extending examples:
 {{< /tab >}}
 {{< tab "Scrub Pool" >}}
 Initiate a data integrity check of the pool.
-Any problems detected during the scrub are either automatically corrected or will generate an [alert]({{< relref "Alert.md" >}}) in the web interface.
+Any problems detected during the scrub are either automatically corrected or generates an [alert]({{< relref "CORE/UIReference/System/AlertServices.md" >}}) in the web interface.
 By default, every pool is automatically checked on a reoccurring [scrub schedule]({{< relref "ScrubTasks.md" >}}).
 {{< /tab >}}
 {{< tab "Status" >}}

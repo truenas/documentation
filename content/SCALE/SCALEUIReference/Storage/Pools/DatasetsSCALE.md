@@ -67,8 +67,8 @@ You can configure quotas for only the new dataset or include all child datasets.
 | Setting | Description |
 |---------|-------------|
 | Quota for this dataset | Define the maximum allowed space for the dataset. **0** disables quotas. |
-| Quota warning alert at, %| Generate a warning level [alert]({{< relref "Alert.md" >}}) when consumed space reaches the defined percentage. By default, the dataset inherits this value from the parent dataset. Clear the **Inherit** checkbox to change the value. |
-| Quota critical alert at, % | Generate a critical level [alert]({{< relref "Alert.md" >}}) when consumed space reaches the defined percentage. By default, the dataset inherits this value from the parent dataset. Clear the **Inherit** checkbox to change the value. |
+| Quota warning alert at, %| Generate a warning level [alert]({{< relref "/CORE/UIReference/System/AlertSettings.md" >}}) when consumed space reaches the defined percentage. By default, the dataset inherits this value from the parent dataset. Clear the **Inherit** checkbox to change the value. |
+| Quota critical alert at, % | Generate a critical level [alert]({{< relref "/CORE/UIReference/System/AlertSettings.md" >}}) when consumed space reaches the defined percentage. By default, the dataset inherits this value from the parent dataset. Clear the **Inherit** checkbox to change the value. |
 | Reserved space for this dataset | Reserve additional space for datasets that contain logs which could eventually take up all the available free space. **0** is unlimited. |
 
 TrueNAS adds more fields to the **Other Options**.
