@@ -45,7 +45,7 @@ Use the **Directory Serices Active Directory** screens to set up Active Director
 
 Use **EDIT IDMAP** to navigate to the **Directory Services > Idmap** screen. 
 
-Use **REBUILD DIRECTORY SERVICE CACHE** to resync the cache if it becomes out of sync or fewer users than expected are available in the permissions editors. it .
+Use **REBUILD DIRECTORY SERVICE CACHE** to resync the cache if it becomes out of sync or fewer users than expected are available in the permissions editors. 
 
 ## Additional Information
 

@@ -44,8 +44,6 @@ Use **REBUILD DIRECTORY SERVICE CACHE** to resync the cache if it becomes out of
 | **Auxiliary Parameters** | Enter for [nslcd.conf](https://arthurdejong.org/nss-pam-ldapd/nslcd.conf.5). |
 | **Schema** | Select the Samba schema from the dropdown list. Options are **RFC2307** or **RFC2307BIS**. |
 
-
-
 ## Additional Information
 
 [Idmap Screen]({{< relref "/CORE/UIReference/DirectoryServices/IdmapScreen.md" >}})
