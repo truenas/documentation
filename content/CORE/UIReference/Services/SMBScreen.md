@@ -1,4 +1,14 @@
-**NetBIOS**
+---
+title: "SMB Service Screen"
+weight: 20
+---
+
+Use the **Services SMB** screen to configured SMB service settings. 
+Unless a specific setting is needed or configuring for a specific network environment, it is recommended to use the default settings for the SMB service.
+
+![SMBServiceOptions](/images/CORE/12.0/ServicesSMBOptions.png "SMB Service Options")
+
+## Basic Options
 
 | Settings | Descritpion |
 |----------|-------------|
@@ -9,7 +19,9 @@
 | **Enable SMB1 support** | Select to allow legacy SMB clients to connect to the server. Note that SMB1 is being deprecated and it is advised to upgrade clients to operating system versions that support modern versions of the SMB protocol. |
 | **NTLMv1 Auth** | Select to allow [smbd(8)](https://www.freebsd.org/cgi/man.cgi?query=smbd) attempts to authenticate users with the insecure and vulnerable NTLMv1 encryption. Off by default. This setting allows backward compatibility with older versions of Windows, but is not recommended and should not be used on untrusted networks. |
 
-**Other Options**
+## Advanced Options
+
+![SMBServiceAdvanced](/images/CORE/12.0/ServicesSMBOptionsAdvanced.png "Advanced Options for the SMB Service")
 
 | Settings | Descritpion |
 |----------|-------------|
@@ -24,3 +36,13 @@
 | **Directory Mask** | Overrides default directory creation mask of **0777** which grants directory read, write and execute access for everybody. |
 | **Bind IP Addresses** | Select the static IP addresses which SMB listens on for connections from the dropdown list. Leave unselected defaults to listen on all active interfaces. |
 | **Auxiliary Parameters** | Enter additional smb.conf options. See the [Samba Guide](http://www.oreilly.com/openbook/samba/book/appb_02.html) for more information on these settings. To log more details when a client attempts to authenticate to the share, add **log level = 1, auth_audit:5**. |
+
+## Additional Information
+
+[SMB Share Screen]({{< relref "/CORE/UIReference/Sharing/SMB/SMBShareScreen.md" >}})
+
+[SMB Service Screen]({{< relref "/CORE/UIReference/Services/SMBScreen.md" >}})
+
+[SMB Share Creation]({{< relref "/CORE/CORETutorials/Sharing/SMBShare.md" >}})
+
+[Managing SMB Shares]({{< relref "/CORE/CORETutorials/Sharing/ManagingSMBShares.md" >}})

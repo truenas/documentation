@@ -43,7 +43,7 @@ NFS service settings can be configured by clicking <i class="fa fa-pen" aria-hid
 See [Service NFS screen]({{< relref "/CORE/UIReference/Services/NFSScreen.md" >}})
 
 Unless a specific setting is needed, it is recommended to use the default settings for the NFS service.
-When TrueNAS is already connected to [Active Directory]({{< relref "/CORE/UIReference/DirectoryServices/ActiveDirectory.md" >}}), setting **NFSv4** and **Require Kerberos for NFSv4** also requires a [kerberos keytab]({{< relref "/CORE/UIReference/DirectoryServices/Kerberos.md#kerberos-keytabs" >}}).
+When TrueNAS is already connected to [Active Directory]({{< relref "/CORE/CORETutorials/DirectoryServices/ActiveDirectory.md" >}}), setting **NFSv4** and **Require Kerberos for NFSv4** also requires a [kerberos keytab]({{< relref "/CORE/UIReference/DirectoryServices/Kerberos.md#kerberos-keytabs" >}}).
 
 ## Connecting to the NFS Share with a Linux/Unix OS
 
