@@ -26,4 +26,4 @@ For more information see:
 
 [WebDAV Service Screen]({{< relref "/CORE/UIReference/Services/WebDAVScreen.md" >}})
 
-[WebDAV Share Creation]({{< relref "/CORE/CORETutorials/Sharing/WebDAVShare.md" >}})
+[WebDAV Share Creation]({{< relref "/CORE/CORETutorials/Sharing/WebDAV/WebDAVShare.md" >}})

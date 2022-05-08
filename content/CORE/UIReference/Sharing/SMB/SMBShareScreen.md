@@ -82,7 +82,7 @@ The **Other Options** have settings for improving Apple software compatibility, 
 
 | Setting | Description |
 |---------|-------------|
-| **Use as Home Share** | Select to allow the share to host user home directories. Each user is given a personal home directory when connecting to the share which is not accessible by other users. This allows for a personal, dynamic share. Only one share can be used as the home share. See the configuring [Home Share article]({{< relref "/CORE/CORETutorials/Sharing/HomeShare.md" >}}) for detailed instructions. |
+| **Use as Home Share** | Select to allow the share to host user home directories. Each user is given a personal home directory when connecting to the share which is not accessible by other users. This allows for a personal, dynamic share. Only one share can be used as the home share. See the configuring [Home Share article]({{< relref "/CORE/CORETutorials/Sharing/SMB/HomeShare.md" >}}) for detailed instructions. |
 | **Time Machine** | Select to enable [Apple Time Machine](https://support.apple.com/en-us/HT201250) backups on this share. |
 | **Enable Shadow Copies** | Select to allow export ZFS snapshots as [Shadow Copies](https://docs.microsoft.com/en-us/windows/win32/vss/shadow-copies-and-shadow-copy-sets) for Microsoft Volume Shadow Copy Service (VSS) clients. |
 | **Export Recycle Bin** | Select to allow files that are deleted from the same dataset to moved to the Recycle Bin and not take any additional space. Deleting files over NFS removes the files permanently! When the files are in a different dataset or a child dataset, they are copied to the dataset where the Recycle Bin is located. To prevent excessive space usage, files larger than 20 MiB are deleted rather than moved. Adjust the **Auxiliary Parameter** `crossrename:sizelimit=` setting to allow larger files. For example, <code>crossrename:sizelimit=<i>50</i></code> allows moves of files up to 50 MiB in size. This means files can be permanently deleted or moved from the recycle bin. This is not a replacement for ZFS snapshots! |
@@ -99,6 +99,6 @@ Use **Submit** to save setings, create the share and add it to the **Sharing > W
 
 [SMB Service Screen]({{< relref "/CORE/UIReference/Services/SMBScreen.md" >}})
 
-[SMB Share Creation]({{< relref "/CORE/CORETutorials/Sharing/SMBShare.md" >}})
+[SMB Share Creation]({{< relref "/CORE/CORETutorials/Sharing/SMB/SMBShare.md" >}})
 
-[Managing SMB Shares]({{< relref "/CORE/CORETutorials/Sharing/ManagingSMBShares.md" >}})
+[Managing SMB Shares]({{< relref "/CORE/CORETutorials/Sharing/SMB/ManagingSMBShares.md" >}})

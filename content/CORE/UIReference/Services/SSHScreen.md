@@ -17,3 +17,7 @@ For more information see:
 [FTP, SFTP and TFTP Services]({{< relref "/CORE/CORETutorials/Services/FTPTFTP.md" >}})
 
 [Configuring SFTP]({{< relref "/CORE/CORETutorials/Services/ConfiguringSFTP.md" >}})
+
+[Configuring SSH]({{< relref "/CORE/CORETutorials/Services/ConfiguringSSH.md" >}})
+
+[Configuring SSH Connections]({{< relref "/CORE/CORETutorials/Services/ConfiguringSSHConnections.md" >}})

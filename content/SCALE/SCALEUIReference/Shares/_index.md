@@ -17,7 +17,7 @@ When creating zvols for shares, avoid giving them names with capital letters or 
 {{< tab "Block (iSCSI) Shares Targets" >}}
 {{< include file="/_includes/iSCSIRef.md" type="page" >}}
 
-To get started with iSCSI shares, make sure you have already created a [zvol]({{< relref "ZVolsSCALE.md" >}}) or a [dataset]({{< relref "DatasetsSCALE.md" >}}) with at least one file to share.
+To get started with iSCSI shares, make sure you have already created a [zvol]({{< relref "/SCALE/SCALEUIReference/Storage/Pools/ZVolsSCALE.md" >}}) or a [dataset]({{< relref "/SCALE/SCALEUIReference/Storage/Pools/DatasetsSCALE.md" >}}) with at least one file to share.
 
 Go to **Shares** and click **Configure** in the **Block (iSCSI) Shares Targets** window. You can either use the creation wizard or set one up manually.
 
@@ -442,7 +442,7 @@ SMB supports a wide range of permissions, security settings, and advanced permis
 SMB is suitable for managing and administering large or small pools of data.
 
 TrueNAS uses [Samba](https://www.samba.org/) to provide SMB services.
-The SMB protocol has multiple versions. An SMB client typically negotiates the highest supported SMB protocol during SMB session negotiation. Industry-wide, SMB1 protocol (sometimes referred to as NT1) usage is [being deprecated]({{< relref "SMB1Advisory.md" >}}) for security reasons.
+The SMB protocol has multiple versions. An SMB client typically negotiates the highest supported SMB protocol during SMB session negotiation. Industry-wide, SMB1 protocol (sometimes referred to as NT1) usage is [being deprecated]({{< relref "/CORE/CoreSecurityReports/SMB1Advisory.md" >}}) for security reasons.
 However, most SMB clients support SMB 2 or 3 protocols, even when they are not default.
 
 {{< hint info >}}
@@ -492,7 +492,7 @@ Local TrueNAS user accounts no longer have access to the share.
 After creating a dataset and accounts, you need to investigate your access requirements and adjust the dataset ACL to match. 
 Go to **Storage**, open the options for the new dataset, and click **Edit Permissions**.
 Many home users typically add a new entry that grants **FULL_CONTROL** to the **builtin_users** group with the flags set to **INHERIT**.
-See the [Permissions article]({{< relref "Permissions.md" >}}) for more details.
+See the [Permissions article]({{< relref "/SCALE/SCALEUIReference/Storage/Pools/PermissionsSCALE.md" >}}) for more details.
 
 ## Creating the SMB Share
 
@@ -610,12 +610,12 @@ Clicking **Save** stores the share ACL and applies it to the share immediately.
 
 Selecting **Edit Filesystem ACL** takes you to the **Edit File ACL** screen in **Storage** to edit the dataset ACL.
 
-Since SCALE gives users the option to use either POSIX or NFSv4 share [ACL types]({{< relref "ACLPrimer.md" >}}), the **Edit File ACL** page differs depending on which ACL type the filesystem is using.
+Since SCALE gives users the option to use either POSIX or NFSv4 share [ACL types]({{< relref "/content/References/ACLPrimer.md" >}}), the **Edit File ACL** page differs depending on which ACL type the filesystem is using.
 
 {{< expand "NFSv4 Filesystem ACL" "v" >}}
 ![DatasetACLEditNFSv4](/images/SCALE/DatasetACLEditNFSv4.png "NFSv4 Dataset Permissions Options")
 
-The filesystem ACL defines the user accounts or groups that own or have specific [permissions]({{< relref "PermissionsSCALE.md" >}}) to the shared dataset.
+The filesystem ACL defines the user accounts or groups that own or have specific [permissions]({{< relref "/SCALE/SCALEUIReference/Storage/Pools/PermissionsSCALE.md" >}}) to the shared dataset.
 The **User** and **Group** values show which accounts *own* or have full permissions to the dataset.
 Change the default settings to your preferred primary account and group and set the **Apply permissions recursively** checkbox before saving any changes.
 
@@ -640,7 +640,7 @@ For example, to only allow the *newuser* user permission to view dataset content
 {{< expand "POSIX Filesystem ACL" "v" >}}
 ![DatasetACLEditPOSIX](/images/SCALE/DatasetACLEditPOSIX.png "POSIX Dataset Permissions Options")
 
-The filesystem ACL defines the user accounts or groups that own or have specific [permissions]({{< relref "PermissionsSCALE.md" >}}) to the shared dataset.
+The filesystem ACL defines the user accounts or groups that own or have specific [permissions]({{< relref "/SCALE/SCALEUIReference/Storage/Pools/PermissionsSCALE.md" >}}) to the shared dataset.
 
 The **User** and **Group** values show which accounts own, or have full permissions to the dataset.
 Change the default settings to your preferred primary account and group and set the **Apply permissions recursively** checkbox before saving any changes.
@@ -745,7 +745,7 @@ The **Use as Home Share** feature is available for a single TrueNAS SMB share. Y
 
 First, go to **Storage** and [create a pool]({{< relref "/SCALE/SCALEUIReference/Storage/Pools/_index.md" >}}).
 
-Next, [set up the Active Directory]({{< relref "/content/SCALE/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}) that you want to share resources with over your network.
+Next, [set up the Active Directory]({{< relref "/SCALE/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}) that you want to share resources with over your network.
 
 ### Prepare a Dataset
 
@@ -888,7 +888,7 @@ NFS service settings can be configured by clicking <i class="material-icons" ari
 
 Unless you need a specific setting, we recommend using the default NFS settings.
 
-When TrueNAS is already connected to [Active Directory]({{< relref "/content/SCALE/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}), setting **NFSv4** and **Require Kerberos for NFSv4** also requires a [Kerberos Keytab]({{< relref "/content/SCALE/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}). 
+When TrueNAS is already connected to [Active Directory]({{< relref "/SCALE/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}), setting **NFSv4** and **Require Kerberos for NFSv4** also requires a [Kerberos Keytab]({{< relref "/SCALE/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}). 
 
 ## Connecting to the NFS Share
 

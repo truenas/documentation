@@ -1,5 +1,5 @@
 ---
-title: "NIS"
+title: "NIS Screen"
 weight: 30
 ---
 
@@ -24,6 +24,10 @@ To configure NIS, go to **Directory Services > NIS**.
 
 Enter the **NIS Domain** name and list any **NIS Servers** (host names or IP addresses).
 Press <kbd>Enter</kbd> to separate server entries.
-Configure the remaining options as needed. See [NIS Screen]({{< relref "/CORE/UIReference/DirectoryServices/NISScreen.md" >}}) for more information on configuration settings.
+Configure the remaining options as needed:
+
+* **Secure Mode** : Set to have [ypbind(8)](https://www.freebsd.org/cgi/man.cgi?query=ypbind) refuse to bind to any NIS server not running as *root* on a TCP port over **1024**.
+* **Manycast** : Set for `ypbind` to bind to the fastest responding server.
+* **Enable** : Unset to disable the configuration without deleting it.
 
 When ready, **SAVE** the configuration.

@@ -11,7 +11,7 @@ These instructions assume that TrueNAS systems are being used for both sides of 
 
 ## Basic Requirements
 
-Rysnc requires a [dataset]({{< relref "/CORE/UIReference/Storage/Pools/Datasets.md" >}}) with the needed data on the *host* or *remote* system.
+Rysnc requires a [dataset]({{< relref "/CORE/CORETutorials/Storage/Pools/Datasets.md" >}}) with the needed data on the *host* or *remote* system.
 Rsync provides the ability to either *push* or *pull* data.
 When using rsync to *push*, data is copied from a *host* system to a *remote* system.
 When using rsync to *pull*, data is pulled from a *remote* system and put on the *host* system.
@@ -75,7 +75,7 @@ You can still save the rsync task and run it manually.
 The *remote* system must have *SSH* enabled.
 To enable SSH in TrueNAS, go to **Services** and toggle **SSH**.
 
-The *host* system needs an established [SSH connection]({{< relref "ConfiguringSSHConnections.md" >}}) to the *remote* for the rsync task.
+The *host* system needs an established [SSH connection]({{< relref "/CORE/CORETutorials/Services/ConfiguringSSHConnections.md" >}}) to the *remote* for the rsync task.
 To create the connection, go to **System > SSH Connections** and click *Add*.
 Configure a *Semi-automatic* connection and set *Private Key* to *Generate New*.
 
@@ -129,7 +129,7 @@ Go to **Tasks > Rsync Tasks** and click *ADD*.
 Configure the SSH settings first by selecting *SSH* in the *Rsync Mode* dropdown and entering the *Port* number and *Remote Path*.
 
 Next, define the **Source** dataset to use for the rsync task and select a *User* account.
-The *User* must be identical to the [SSH Connection]({{< relref "ConfiguringSSHConnections.md" >}}) *Username*.
+The *User* must be identical to the [SSH Connection]({{< relref "/CORE/CORETutorials/Services/ConfiguringSSHConnections.md" >}}) *Username*.
 
 Choose a direction for the rsync task, either *Push* or *Pull* and then define the task *Schedule*.
 If you need a custom schedule, select *Custom*.

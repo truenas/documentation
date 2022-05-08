@@ -36,3 +36,8 @@ Use **CANCEL** to exit without saving and return to the **Services** screen.
 | **Log Level** | Record AFP service messages up to the specified log level in the system log. By default, severe and warning level messages are logged. |
 | **Bind Interfaces** | Specify the IP addresses to listen for AFP connections. Leave blank to bind to all available IPs. If none are specified, advertise the first IP address of the system, but listen for any incoming request. |
 | **Global Auxiliary** | Additional [afp.conf(5)](http://netatalk.sourceforge.net/3.0/htmldocs/afp.conf.5.html) parameters. |
+
+## Additional Information
+
+
+[Configuring AFP Shares]({{< relref "/CORE/CORETutorials/Sharing/AFP/AFPShare.md" >}})

@@ -15,7 +15,7 @@ There are several configuration recommendations and troubleshooting tips when us
 {{< tabs "iSCSI Recommendations" >}}
 {{< tab "IQN" >}}
 
-[iSCSI]({{< relref "CORE/UIReference/Sharing/iSCSI/_index.md" >}}) IQN is an acronym that stands for “iSCSI Qualified Name”.  It is comprised of the following naming schema with a preamble, node name and unique identifier:
+[iSCSI]({{< relref "CORE/CORETutorials/Sharing/iSCSI/_index.md" >}}) IQN is an acronym that stands for “iSCSI Qualified Name”.  It is comprised of the following naming schema with a preamble, node name and unique identifier:
 
 ![iSCSIQualifiedName](/images/TrueNASCommon/iSCSIQualifiedName.png "iSCSI Qualified Name Components")
 
@@ -61,7 +61,7 @@ Access control policies are set up within a storage array to ensure only certain
 The setup of vCenter iSCSI to TrueNAS requires that ESXi hosts be set up as initiators and TrueNAS storage arrays are set up as targets.
 To configure ESXi hosts with vCenter, see the [VMware vCenter 6.7 documentation](https://docs.vmware.com/en/VMware-vSphere/6.7/vsphere-vcenter-server-67-installation-guide.pdf).
 
-To configure TrueNAS Enterprise storage arrays with vCenter, iXsystems has developed a [vCenter plugin]({{< relref "/Solutions/Integrations/VMware/TrueNASvCenterPlugin/_index.md" >}}).
+To configure TrueNAS Enterprise storage arrays with vCenter, iXsystems has developed a [vCenter plugin]({{< relref "/content/Solutions/Integrations/VMware/TrueNASvCenterPlugin/_index.md" >}}).
 The plugin uses TrueNAS REST APIs to automate LUN creation and assignment.
 When an VMFS (iSCSI) datastore is created using the plugin, the TrueNAS systems automatically activate their iSCSI system services.
 
@@ -85,7 +85,7 @@ When using TrueNAS as a VMware datastore:
 ### VMware Snapshots on TrueNAS
 
 When TrueNAS is used as a VMware datastore, you can coordinate creating and using ZFS and VMware snapshots.
-See [VMware-Snapshots]({{< relref "VMware-Snapshots.md" >}}) for details.
+See [VMware-Snapshots]({{< relref "CORE/CORETutorials/Storage/VMware-Snapshots.md" >}}) for details.
 
 ## vStorage APIs for Array Integration (VAAI) for iSCSI
 

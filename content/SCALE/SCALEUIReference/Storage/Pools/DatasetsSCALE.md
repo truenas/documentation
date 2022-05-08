@@ -42,7 +42,7 @@ Datasets typically inherit settings from the root or parent dataset, so you only
 
 By default, datasets inherit the encryption settings on the *Encryption Options* form from the root or parent dataset.
 To configure the dataset with different encryption settings, clear the **Inherit** checkbox and enter the new **Encryption Options** form values.
-For detailed descriptions of the encryption options, see the [Encryption article]({{< relref "EncryptionSCALE.md" >}}).
+For detailed descriptions of the encryption options, see the [Encryption article]({{< relref "SCALE/SCALEUIReference/Storage/Pools/EncryptionSCALE.md" >}}).
 
 {{< /tab >}}
 {{< tab "Other Options" >}}
@@ -81,9 +81,9 @@ By default, many of these options inherit their values from the parent dataset.
 | Snapshot directory | Controls visibility of the *.zfs* directory on the dataset. Select either **Visible** or **Invisible**. |
 | Copies | Duplicates ZFS user data stored on this dataset. Choose between **1**, **2**, or **3** redundant data copies. This can improve data protection and retention, but is not a substitute for storage pools with disk redundancy. |
 | Record Size | Logical block size in the dataset. Matching the fixed size of data, as in a database, can result in better performance. |
-| ACL Type | **Inherit** preserves ACL type from the parent dataset.<br>**Off** to use neither NFSv4 or POSIX protocols.<br>**NFSv4** use to losslessly migrate Windows-style ACLs across Active Directory domains (or stand-alone servers) that use ACL models richer than POSIX. Since POSIX ACLs are a Linux-specific ZFS feature, administrators should use NFSv4 to maintain compatibility with TrueNAS Core, FreeBSD, or other non-Linux ZFS implementations. <br>**POSIX** use when an organization data backup target does not support native NFSv4 ACLs. Since the Linux platform used POSIX for a long time, many backup products that access the server outside the SMB protocol cannot understand or preserve native NFSv4 ACLs. *All datasets within an SMB share path must have identical ACL types*.<br>For a more in-depth explanation of ACLs and configurations in TrueNAS SCALE, see our [ACL Primer]({{< relref "ACLPrimer.md" >}}). |
-| ACL Mode | Determine how [chmod](https://linux.die.net/man/1/chmod) behaves when adjusting file ACLs. See the [zfs(8)](https://linux.die.net/man/8/zfs) `aclmode` property.<br>**Passthrough** only updates ACL entries that are related to the file or directory mode.<br>**Restricted** does not allow chmod to make changes to files or directories with a non-trivial ACL. An ACL is trivial if it can be fully expressed as a file mode without losing any access rules. Set the ACL Mode to restricted to optimize a dataset for SMB sharing, but it can require further optimizations. For example, configuring an [rsync task]({{< relref "Rsync.md" >}}) with this dataset could require adding `--no-perms` in the task **Auxiliary Parameters** field. |
-| Metadata (Special) Small Block Size | Threshold block size for including small file blocks into the [special allocation class (fusion pools)]({{< relref "FusionPool.md" >}}). Blocks smaller than or equal to this value are assigned to the special allocation class while greater blocks are assigned to the regular class. Valid values are zero or a power of two from 512B up to 1M. The default size **0** means no small file blocks are allocated in the special class. Before setting this property, you must add a [special class vdev]({{< relref "FusionPool.md" >}}) to the pool. |
+| ACL Type | **Inherit** preserves ACL type from the parent dataset.<br>**Off** to use neither NFSv4 or POSIX protocols.<br>**NFSv4** use to losslessly migrate Windows-style ACLs across Active Directory domains (or stand-alone servers) that use ACL models richer than POSIX. Since POSIX ACLs are a Linux-specific ZFS feature, administrators should use NFSv4 to maintain compatibility with TrueNAS Core, FreeBSD, or other non-Linux ZFS implementations. <br>**POSIX** use when an organization data backup target does not support native NFSv4 ACLs. Since the Linux platform used POSIX for a long time, many backup products that access the server outside the SMB protocol cannot understand or preserve native NFSv4 ACLs. *All datasets within an SMB share path must have identical ACL types*.<br>For a more in-depth explanation of ACLs and configurations in TrueNAS SCALE, see our [ACL Primer]({{< relref "/content/References/ACLPrimer.md" >}}). |
+| ACL Mode | Determine how [chmod](https://linux.die.net/man/1/chmod) behaves when adjusting file ACLs. See the [zfs(8)](https://linux.die.net/man/8/zfs) `aclmode` property.<br>**Passthrough** only updates ACL entries that are related to the file or directory mode.<br>**Restricted** does not allow chmod to make changes to files or directories with a non-trivial ACL. An ACL is trivial if it can be fully expressed as a file mode without losing any access rules. Set the ACL Mode to restricted to optimize a dataset for SMB sharing, but it can require further optimizations. For example, configuring an [rsync task]({{< relref "SCALE/SCALEUIReference/DataProtection/RsyncTasksSCALE.md" >}}) with this dataset could require adding `--no-perms` in the task **Auxiliary Parameters** field. |
+| Metadata (Special) Small Block Size | Threshold block size for including small file blocks into the [special allocation class (fusion pools)]({{< relref "SCALE/SCALEUIReference/Storage/Pools/FusionPoolsScale.md" >}}). Blocks smaller than or equal to this value are assigned to the special allocation class while greater blocks are assigned to the regular class. Valid values are zero or a power of two from 512B up to 1M. The default size **0** means no small file blocks are allocated in the special class. Before setting this property, you must add a [special class vdev]({{< relref "SCALE/SCALEUIReference/Storage/Pools/FusionPoolsScale.md" >}}) to the pool. |
 
 {{< /tab >}}
 {{< /tabs >}}
@@ -93,9 +93,9 @@ By default, many of these options inherit their values from the parent dataset.
 After creating a dataset, users can manage additional options by going to **Storage** and selecting the dataset and clicking <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; for that dataset.
 
 * **Add Dataset** creates a new *child* dataset in this dataset. You can continue to layer datasets in this manner.
-* **Add Zvol** creates a new [ZFS block device]({{< relref "ZvolsSCALE.md" >}}) as a child in this dataset.
+* **Add Zvol** creates a new [ZFS block device]({{< relref "SCALE/SCALEUIReference/Storage/Pools/ZvolsSCALE.md" >}}) as a child in this dataset.
 * **Edit Options** allows users to adjust the dataset configuration. Users cannot change the **Name**, **Case Sensitivity**, or **Share Type** after saving the dataset.
-* **Edit Permissions** opens the dataset access permissions editor. Depending on the ACL type users select during dataset creation, the permissions editor is either a simple permissions editor or the full ACL editor. For more information, see the [permissions]({{< relref "PermissionsSCALE.md" >}}) article.
+* **Edit Permissions** opens the dataset access permissions editor. Depending on the ACL type users select during dataset creation, the permissions editor is either a simple permissions editor or the full ACL editor. For more information, see the [permissions]({{< relref "SCALE/SCALEUIReference/Storage/Pools/PermissionsSCALE.md" >}}) article.
 * **User Quotas** lets users set data or object quotas for user accounts cached on or connected to the system.
 * **Group Quotas** lets users set data or object quotas for user groups cached on or connected to the system. 
 * **Delete Dataset** removes the dataset, all stored data, and any snapshots from TrueNAS.
@@ -103,7 +103,7 @@ After creating a dataset, users can manage additional options by going to **Stor
   Deleting datasets can result in unrecoverable data loss!
   Be sure to move or obsolete any critical data off the dataset.
   {{< /hint >}}
-* **Create Snapshot** takes a single dataset [ZFS snapshot]({{< relref "SnapshotsSCALE.md" >}}) to provide additional data protection and mobility. The system lists created snapshots on the **Snapshots** screen.
+* **Create Snapshot** takes a single dataset [ZFS snapshot]({{< relref "SCALE/SCALEUIReference/Storage/SnapshotsSCALE.md" >}}) to provide additional data protection and mobility. The system lists created snapshots on the **Snapshots** screen.
 
 ### Quotas
 

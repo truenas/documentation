@@ -1,5 +1,5 @@
 ---
-title: "SSH"
+title: "SSH Screen"
 weight: 70
 ---
 

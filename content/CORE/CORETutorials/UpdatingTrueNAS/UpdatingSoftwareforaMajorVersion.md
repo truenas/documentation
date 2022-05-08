@@ -20,7 +20,7 @@ The [upgrade instructions](#update-and-upgrade-instructions) describe how to use
 See the [Updating](#truenas-core) section for instructions about using the web interface to keep the system updated.
 
 The upgrade path for major versions of FreeNAS/TrueNAS is **9.3 > 9.10 > 11.1 > 11.3 > 12.0**.
-We always recommend upgrading to a [supported version]({{< relref "SofDevLifecycle.md" >}}) of the software.
+We always recommend upgrading to a [supported version]({{< relref "/CORE/GettingStarted/UserAgreements/SofDevLifecycle.md" >}}) of the software.
 
 ## Caveats
 
@@ -40,13 +40,13 @@ Be aware of these caveats before attempting a major version upgrade:
   However, if the system is currently running a 32-bit version of FreeNAS/TrueNAS and the hardware supports 64-bit, you can upgrade the system.
   Any archived reporting graphs delete during upgrades.
 * **UFS is not supported.**
-  If the data resides on one UFS-formatted disk, [create a ZFS pool]({{< relref "PoolCreate.md" >}}) using other disks after upgrading, then use the instructions in [Importing a Disk]({{< relref "ImportDisk.md" >}}) to mount the UFS-formatted disk and copy the data to the ZFS pool.
+  If the data resides on one UFS-formatted disk, [create a ZFS pool]({{< relref "CORE/CORETutorials/Storage/Pools/PoolCreate.md" >}}) using other disks after upgrading, then use the instructions in [Importing a Disk]({{< relref "CORE/CORETutorials/Storage/ImportDisk.md" >}}) to mount the UFS-formatted disk and copy the data to the ZFS pool.
   With only one disk, back up its data to another system or media before the upgrade, format the disk as `ZFS` after the upgrade, then restore the backup.
   If the data resides on a UFS RAID of disks, you cannot directly import that data to the ZFS pool.
   Instead, back up the data before the upgrade, create a ZFS pool after upgrading, then restore the data from the backup.
 * **If you have GELI-encrypted pools and are upgrading to TrueNAS 12.0 or newer**, you might want to migrate data from the GELI-encrypted pools into ZFS-encrypted pools.
   You CANNOT CONVERT the GELI pools. You must migrate the data to a new ZFS pool.
-  See the [Encryption article]({{< relref "/CORE/UIReference/Storage/Pools/StorageEncryption.md" >}}) for more details.
+  See the [Encryption article]({{< relref "CORE/CORETutorials/Storage/Pools/StorageEncryption.md" >}}) for more details.
 
 ## Prepare the System
 
@@ -76,7 +76,7 @@ The installer presents a screen showing all available drives.
 {{< hint warning >}}
 All drives display, including boot drives and storage drives.
 Only choose boot drives when upgrading.
-**Choosing the wrong drives to upgrade or install will cause data loss.**
+**Choosing the wrong drives to upgrade or install causes data loss.**
 If you are unsure which drives contain the TrueNAS operating system, reboot and remove the install media.
 Log in to the TrueNAS web interface and go to **System > Boot > ACTIONS > Boot Pool Status** to identify the boot drives.
 More than one drive displays when using a mirror.

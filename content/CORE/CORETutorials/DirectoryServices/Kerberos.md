@@ -1,5 +1,5 @@
 ---
-title: "Kerberos"
+title: "Setting Up Kerberos"
 weight: 40
 ---
 

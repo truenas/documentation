@@ -33,7 +33,7 @@ Click the `>` to expand the replication task information, then click **EDIT**.
 
 ![TasksReplicationTasksEdit](/images/CORE/12.0/RepEditTaskCORE.png "Replication Task Edit")
 
-See [**Replication Advanced Options**]({{< relref "/CORE/UIReference/Tasks/ReplicationTasks/Advanced.md" >}}) for descriptions of the available fields.
+See [**Replication Advanced Options**]({{< relref "/CORE/CORETutorials/Tasks/ReplicationTasks/Advanced.md" >}}) for descriptions of the available fields.
 
 ## Replication Task Alert Priorities
 
@@ -42,7 +42,7 @@ Set the *Warning Level* and how often the alert notification is sent.
 
 ![TasksSetReplicationAlert](/images/CORE/12.0/AlertTaskReplication.png "Set Replication Alert")
 
-See [**Alert Settings**]({{< relref "CORE/UIReference/System/AlertSettings.md" >}}) for more information about this UI screen.
+See [**Alert Settings**]({{< relref "/CORE/UIReference/System/AlertSettings.md" >}}) for more information about this UI screen.
 
 ## FAQ
 

@@ -28,6 +28,6 @@ To edit an existing AFP share, go to **Sharing > Apple Shares (AFP)** and click 
 
 ## Additional Information
 
-[Adding an AFP share]({{< relref "/CORE/CORETutorials/Sharing/AFPShare.md" >}})
+[Adding an AFP share]({{< relref "/CORE/CORETutorials/Sharing/AFP/AFPShare.md" >}})
 
 [Adding AFP Service]({{< relref "/CORE/UIReference/Services/AFPScreen.md" >}})

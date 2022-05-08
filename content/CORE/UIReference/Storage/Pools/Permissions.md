@@ -46,7 +46,7 @@ To switch from the basic editor to the advanced ACL editor, click *USE ACL MANAG
 An Access Control List (ACL) is a set of account permissions associated with a dataset and applied to directories or files within that dataset.
 ACLs are typically used to manage user interactions with shared datasets and are created when a dataset is added to a pool.
 
-When [creating a dataset]({{< relref "Datasets.md" >}}), you can choose how the ACL can be modified by selecting an *ACL Mode*:
+When [creating a dataset]({{< relref "/CORE/CORETutorials/Storage/Pools/Datasets.md" >}}), you can choose how the ACL can be modified by selecting an *ACL Mode*:
 
 * *Passthrough* only updates ACL entries (ACEs) that are related to the file or directory mode.
 

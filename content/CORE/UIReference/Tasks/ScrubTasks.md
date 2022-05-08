@@ -16,7 +16,7 @@ To edit the default scrub, go to **Tasks > Scrub Tasks**, click <i class="fa fa-
 
 ## Creating New Scrub Tasks
 
-A data [pool]({{< relref "PoolCreate.md" >}}) must exist before creating a scrub task.
+A data [pool]({{< relref "/CORE/CORETutorials/Storage/Pools/PoolCreate.md" >}}) must exist before creating a scrub task.
 
 To create a scrub task for a pool, go to **Tasks > Scrub Tasks** and click *ADD*.
 

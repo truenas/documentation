@@ -35,4 +35,4 @@ Unless a specific setting is needed, it is recommended to use the default settin
 
 [Sharing NFS screen]({{< relref "/CORE/UIReference/Sharing/NFS/NFSShareScreen.md" >}})
 
-[Configuring an NFS Shares]({{< relref "/CORE/CORETutorials/Sharing/NFSShare.md" >}})
+[Configuring NFS Shares]({{< relref "/CORE/CORETutorials/Sharing/NFS/NFSShare.md" >}})

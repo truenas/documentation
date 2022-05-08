@@ -11,7 +11,7 @@ When the TrueNAS system is connected to a UPS device, configure the UPS service 
 
 ![ServicesUPSScreenBottom](/images/CORE/13.0/ServicesUPSScreenBottom.png "UPS Options")
 
-See [UPS Screen]({{< relref "/CORE/UIReference/Services/UPS.md" >}}) for more information on UPS settings.
+See [UPS Screen]({{< relref "/CORE/UIReference/Services/UPSScreen.md" >}}) for more information on UPS settings.
 Some UPS models can be unresponsive with the default polling frequency.
 This shows in TrueNAS logs as a recurring error like `libusb_get_interrupt: Unknown error`.
 If this log error occurs, decrease the polling frequency by adding an entry to **Auxiliary Parameters (ups.conf)**: `pollinterval = 10`.

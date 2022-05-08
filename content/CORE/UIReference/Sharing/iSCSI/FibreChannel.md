@@ -64,12 +64,12 @@ For more information on iSCSI see:
 
 [Fibre Channel Ports Screen]({{< relref "/CORE/UIReference/Sharing/iSCSI/FibreChannel.md" >}})
 
-[Adding an iSCSI Share]({{< relref "/CORE/CORETutorials/AddingiSCSIShare.md" >}}) 
+[Adding an iSCSI Share]({{< relref "/CORE/CORETutorials/Sharing/iSCSI/AddingiSCSIShare.md" >}}) 
 
-[Using iSCSI Shares]({{< relref "/CORE/CORETutorials/UsingiSCSIShare.md" >}})
+[Using iSCSI Shares]({{< relref "/CORE/CORETutorials/Sharing/iSCSI/UsingiSCSIShare.md" >}})
 
-[Increasing iSCSI Share Available Storage]({{< relref "/CORE/CORETutorials/IncreasingiSCSIAvailableStorage.md" >}})
+[Increasing iSCSI Share Available Storage]({{< relref "/CORE/CORETutorials/Sharing/iSCSI/IncreasingiSCSIAvailableStorage.md" >}})
 
-[Setting Up Fibre Channel]({{< relref "/CORE/CORETutorials/SettingUpFibreChannel.md" >}})
+[Setting Up Fibre Channel]({{< relref "/CORE/CORETutorials/Sharing/iSCSI/SettingUpFibreChannel.md" >}})
 
-[Setting Up NPIV]({{< relref "/CORE/CORETutorials/SettingUpNPIV.md" >}})
+[Setting Up NPIV]({{< relref "/CORE/CORETutorials/Applications/VirtualMachines/SettingUpNPIV.md" >}})

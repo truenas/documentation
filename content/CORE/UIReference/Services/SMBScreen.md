@@ -43,6 +43,6 @@ Unless a specific setting is needed or configuring for a specific network enviro
 
 [SMB Service Screen]({{< relref "/CORE/UIReference/Services/SMBScreen.md" >}})
 
-[SMB Share Creation]({{< relref "/CORE/CORETutorials/Sharing/SMBShare.md" >}})
+[SMB Share Creation]({{< relref "/CORE/CORETutorials/Sharing/SMB/SMBShare.md" >}})
 
-[Managing SMB Shares]({{< relref "/CORE/CORETutorials/Sharing/ManagingSMBShares.md" >}})
+[Managing SMB Shares]({{< relref "/CORE/CORETutorials/Sharing/SMB/ManagingSMBShares.md" >}})

@@ -52,6 +52,6 @@ The options available are identical to the **ADD** share setting options.
 
 ## Additional Information
 
-[Configuring an NFS Share]({{< relref "/CORE/CORETutorials/Sharing/NFSShare.md" >}})
+[Configuring an NFS Share]({{< relref "/CORE/CORETutorials/Sharing/NFS/NFSShare.md" >}})
 
 [NFS Service]({{< relref "/CORE/UIReference/Services/NFSScreen.md" >}})

@@ -77,8 +77,8 @@ By default, many of these options *Inherit* their values from the parent dataset
 | Snapshot directory | drop down | Controls visibility of the *.zfs* directory on the dataset. Choose between *Visible* or *Invisible*. |
 | Copies | drop down | Duplicates ZFS user data stored on this dataset. Choose between *1*, *2*, or *3* redundant data copies. This can improve data protection and retention, but is not a substitute for storage pools with disk redundancy. |
 | Record Size | drop down | Logical block size in the dataset. Matching the fixed size of data, as in a database, could result in better performance. |
-| ACL Mode | drop down | Determine how [chmod](https://www.freebsd.org/cgi/man.cgi?query=chmod) behaves when adjusting file ACLs. See the [zfs](https://www.freebsd.org/cgi/man.cgi?query=zfs) `aclmode` property.<br>*Passthrough* only updates ACL entries that are related to the file or directory mode.<br>*Restricted* does not allow chmod to make changes to files or directories with a non-trivial ACL. An ACL is trivial if it can be fully expressed as a file mode without losing any access rules. Setting the ACL Mode to *Restricted* is typically used to optimize a dataset for SMB sharing, but can require further optimizations. For example, configuring an [rsync task]({{< relref "/CORE/UIReference/Tasks/Rsync.md" >}}) with this dataset could require adding `--no-perms` in the task **Auxiliary Parameters** field. |
-| Metadata (Special) Small Block Size | integer   | Threshold block size for including small file blocks into the [special allocation class (fusion pools)]({{< relref "FusionPool.md" >}}). Blocks smaller than or equal to this value will be assigned to the special allocation class while greater blocks will be assigned to the regular class. Valid values are zero or a power of two from 512B up to 1M. The default size *0* means no small file blocks will be allocated in the special class. Before setting this property, a [special class vdev]({{< relref "FusionPool.md" >}}) must be added to the pool. |
+| ACL Mode | drop down | Determine how [chmod](https://www.freebsd.org/cgi/man.cgi?query=chmod) behaves when adjusting file ACLs. See the [zfs](https://www.freebsd.org/cgi/man.cgi?query=zfs) `aclmode` property.<br>*Passthrough* only updates ACL entries that are related to the file or directory mode.<br>*Restricted* does not allow chmod to make changes to files or directories with a non-trivial ACL. An ACL is trivial if it can be fully expressed as a file mode without losing any access rules. Setting the ACL Mode to *Restricted* is typically used to optimize a dataset for SMB sharing, but can require further optimizations. For example, configuring an [rsync task]({{< relref "/CORE/CORETutorials/Tasks/Rsync.md" >}}) with this dataset could require adding `--no-perms` in the task **Auxiliary Parameters** field. |
+| Metadata (Special) Small Block Size | integer   | Threshold block size for including small file blocks into the [special allocation class (fusion pools)]({{< relref "/CORE/CORETutorials/Storage/Pools/FusionPool.md" >}}). Blocks smaller than or equal to this value will be assigned to the special allocation class while greater blocks will be assigned to the regular class. Valid values are zero or a power of two from 512B up to 1M. The default size *0* means no small file blocks will be allocated in the special class. Before setting this property, a [special class vdev]({{< relref "/CORE/CORETutorials/Storage/Pools/FusionPool.md" >}}) must be added to the pool. |
 
 {{< /expand >}}
 
@@ -88,11 +88,11 @@ After a dataset is created, additional management options are available by going
 
 * **Add Dataset**: create a new dataset that is a "child" of this dataset.
   Datasets can be continuously layered in this manner.
-* **Add Zvol**: create a new [ZFS block device]({{< relref "Zvols.md" >}}) as a "child" of this dataset.
+* **Add Zvol**: create a new [ZFS block device]({{< relref "/CORE/CORETutorials/Storage/Pools/Zvols.md" >}}) as a "child" of this dataset.
 * **Edit Options**: opens the [dataset options](#dataset-options) to make adjustments to the dataset configuration.
   The dataset *Name*, *Case Sensitivity*, and *Share Type* cannot be changed.
 * **Edit Permissions**: opens the editor to set access permissions for this dataset.
-  Depending on the dataset creation options, this can be a simple permissions editor or the full ACL editor. For more information about editing permissions, read the [permissions]({{< relref "Permissions.md" >}}) article.
+  Depending on the dataset creation options, this can be a simple permissions editor or the full ACL editor. For more information about editing permissions, read the [permissions]({{< relref "/CORE/CORETutorials/Storage/Pools/Permissions.md" >}}) article.
 * **User Quotas**: shows options to set data or object quotas for user accounts cached on the system or user accounts that are connected to this system.
 * **Group Quotas**: shows options to set data or object quotas for user groups cached on the system or user groups that are connected to this system. 
 * **Delete Dataset**: removes the dataset, all stored data, and any snapshots of the dataset from TrueNAS.
@@ -100,7 +100,7 @@ After a dataset is created, additional management options are available by going
   Deleting datasets can result in unrecoverable data loss!
   Be sure that any critical data is moved off the dataset or is otherwise obsolete.
   {{< /hint >}}
-* **Create Snapshot**: take a single [ZFS snapshot]({{< relref "Snapshots.md" >}}) of the dataset to provide additional data protection and mobility.
+* **Create Snapshot**: take a single [ZFS snapshot]({{< relref "/CORE/CORETutorials/Storage/Snapshots.md" >}}) of the dataset to provide additional data protection and mobility.
   Created snapshots are listed in **Storage > Snapshots**.
 
 ### Quotas

@@ -11,7 +11,7 @@ These instructions assume that both sides of the rsync task, host and remote, us
 
 ## Basic Requirements
 
-Rysnc requires a [dataset]({{< relref "DatasetsSCALE.md" >}}) with the needed data on either the host or remote system.
+Rysnc requires a [dataset]({{< relref "/SCALE/SCALEUIReference/Storage/Pools/DatasetsSCALE.md" >}}) with the needed data on either the host or remote system.
 Rsync provides the ability to either push or pull data.
 When using the **Rsync Tasks** function to push, data is copied from a host system to a remote system.
 When using the **Rsync Tasks** function to pull, data is pulled from a remote system and put on the host system.
@@ -135,7 +135,7 @@ Go to **Data Protection > Rsync Tasks** and click **Add**.
 Configure the rsyn task SSH settings by selecting **SSH** on the **Rsync Mode** drop-down. Type the **Port** number and **Remote Path**.
 
 Next, define the **Source** dataset to use for the rsync task and select a **User** account.
-The **User** field entry must be identical to the [SSH Connection]({{< relref "\SCALE\SCALEUIReference\Credentials\BackupCredentials\_index.md" >}}) **Username**.
+The **User** field entry must be identical to the [SSH Connection]({{< relref "/SCALE/SCALEUIReference/Credentials/BackupCredentials/_index.md" >}}) **Username**.
 
 Choose a **Direction** for the rsync task as either **Push** or **Pull** and then define the task **Schedule**.
 If you need a custom schedule, select **Custom**.

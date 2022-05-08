@@ -41,7 +41,7 @@ First, enter a pool name.
 {{< expand "Encryption?" "v" >}}
 TrueNAS offers several encryption algorithms to maximize security.
 However, encryption also complicates data retrieval and risks permanent data loss!
-Refer to the [Encryption article]({{< relref "EncryptionSCALE.md" >}}) for more details and decide if encryption is necessary for your use case before setting any **Encryption** option.
+Refer to the [Encryption article]({{< relref "/SCALE/SCALEUIReference/Storage/Pools/EncryptionSCALE.md" >}}) for more details and decide if encryption is necessary for your use case before setting any **Encryption** option.
 {{< /expand >}}
 
 Next, configure the virtual devices (vdevs) that make up the pool.
@@ -89,14 +89,14 @@ We do not recommend having multiple data vdevs with different numbers of disks i
 
 #### Additional Types
 
-* **Cache**: [ZFS L2ARC]({{< relref "L2ARC.md" >}}) read-cache used with fast devices to accelerate read operations. Users can add or remove Cache VDevs after creating the pool.
-* **Log**: [ZFS LOG]({{< relref "SLOG.md" >}}) device that improves synchronous write speeds. Users can add or remove Log VDevs after creating the pool.
+* **Cache**: [ZFS L2ARC]({{< relref "/Content/References/L2ARC.md" >}}) read-cache used with fast devices to accelerate read operations. Users can add or remove Cache VDevs after creating the pool.
+* **Log**: [ZFS LOG]({{< relref "/content/References/SLOG.md" >}}) device that improves synchronous write speeds. Users can add or remove Log VDevs after creating the pool.
 * **Hot Spare**: Drives reserved for inserting into **Data** vdevs when an active drive fails.
 The system uses hot spares as temporary replacements for failed drives to prevent larger pool and data loss scenarios.
 When a user replaces a failed drive with a new one, the hot spare reverts to an inactive state and becomes available again as a hot spare.
 If a user detaches the failed drive from the pool without adding a new one, the system promotes the temporary hot spare to a full Data vdev member.
 * **Metadata**: Special allocation class used to create Fusion Pools for increased metadata and small block I/O performance.
-* **Dedup**: Stores [ZFS de-duplication]({{< relref "ZFSDeduplication.md" >}}).
+* **Dedup**: Stores [ZFS de-duplication]({{< relref "/content/References/ZFSDeduplication.md" >}}).
 Requires allocating X GiB for every X TiB of general storage.
 Example: 1 GiB of *Dedup* vdev capacity for every 1 TiB of *Data* vdev availability.
 
@@ -156,7 +156,7 @@ Review the Pool Import Summary and click **Import**.
 
 {{< expand "Can I import GELI-encrypted pools?" "v" >}}
 Since GELI encryption is specific to FreeBSD, TrueNAS SCALE cannot import GELI-encrypted pools. 
-See the **Migrating GELI-encrypted Pools to SCALE** section in the [Installing SCALE]({{< relref "InstallingSCALE.md" >}}) article.
+See the **Migrating GELI-encrypted Pools to SCALE** section in the [Installing SCALE]({{< relref "SCALE/GettingStarted/InstallingSCALE.md" >}}) article.
 {{< /expand >}}
 {{< /tab >}}
 {{< /tabs >}}
@@ -216,7 +216,7 @@ Vdevs extending examples:
 
 If TrueNAS detects any problems during the scrub, it either corrects them automatically or generates an [alert]({{< relref "/CORE/UIReference/System/AlertSettings.md" >}}) in the web interface.
 
-By default, TrueNAS automatically checks every pool is on a reoccurring [scrub schedule]({{< relref "ScrubTasks.md" >}}).
+By default, TrueNAS automatically checks every pool is on a reoccurring [scrub schedule]({{< relref "/CORE/CORETutorials/Tasks/ScrubTasks.md" >}}).
 {{< /tab >}}
 
 {{< tab "Status" >}}
@@ -224,14 +224,14 @@ By default, TrueNAS automatically checks every pool is on a reoccurring [scrub s
 
 **Status** displays the state of the last scrub and disks in the pool.
 
-The **Pool Status** screen has additional [disk management]({{< relref "DisksSCALE.md" >}}) options.
+The **Pool Status** screen has additional [disk management]({{< relref "/SCALE/SCALEUIReference/Storage/DisksSCALE.md" >}}) options.
 {{< /tab >}}
 
 {{< tab "Expand Pool" >}}
 **Expand Pool** increases the pool size to match all available disk space. A user typically expands a pool when virtual disks are resized apart from TrueNAS.
 {{< /tab >}}
 {{< tab "Upgrade Pool" >}}
-The **Upgrade Pool** option only appears when TrueNAS can upgrade the pool to use new [ZFS feature flags]({{< relref "ZFSPrimer.md" >}}).
+The **Upgrade Pool** option only appears when TrueNAS can upgrade the pool to use new [ZFS feature flags]({{< relref "/content/References/ZFSPrimer.md" >}}).
 
 Before upgrading an existing pool, be aware of these caveats:
 
@@ -247,4 +247,4 @@ Upgrading suspends I/O for a short period, but is nearly instantaneous on a quie
 
 ## Encryption Actions
 
-See the [SCALE Encryption]({{< relref "EncryptionSCALE.md" >}}) page for detailed encryption information.
+See the [SCALE Encryption]({{< relref "/SCALE/SCALEUIReference/Storage/Pools/EncryptionSCALE.md" >}}) page for detailed encryption information.

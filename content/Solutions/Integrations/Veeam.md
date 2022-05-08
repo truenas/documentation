@@ -25,7 +25,7 @@ These TrueNAS products are certified by Veeam:
 {{< /expand >}}
 
 This article discusses some of the best practices when deploying TrueNAS with Veeam, specific considerations users must be aware of, and some tips to help with performance.
-The focus will be on capabilities native to TrueNAS, and users are encouraged to also review relevant Veeam documentation, such as their [help center](https://www.veeam.com/documentation-guides-datasheets.html) and [best practices](https://bp.veeam.com/vbr) for more information about using and optimizing Veeam.
+The focus is on capabilities native to TrueNAS, and users are encouraged to also review relevant Veeam documentation, such as their [help center](https://www.veeam.com/documentation-guides-datasheets.html) and [best practices](https://bp.veeam.com/vbr) for more information about using and optimizing Veeam.
 
 ## What is Needed?
 
@@ -39,7 +39,7 @@ When deploying TrueNAS with Veeam users should prepare the following:
 * All appropriate licenses
 * Backup proxies as defined by Veeam - they can be virtual machines or physical machines or the backup server itself for low workloads
 
-[Update the TrueNAS systems]({{< relref "UpdatingCORE.md" >}}) to the latest version before beginning deployment.
+[Update the TrueNAS systems]({{< relref "CORE/CORETutorials/UpdatingTrueNAS/UpdatingCORE.md" >}}) to the latest version before beginning deployment.
 
 This ensures the appliance has the latest bug fixes, security updates and software enhancements to ensure maximum performance and security.
 If deploying on a closed network (LAN) without access to the Internet, users can also obtain and apply an update manually.
@@ -58,17 +58,17 @@ backup demands must be considered.
 {{< tab "Define Your Storage Usage" >}}
 
 While this guide focuses on Veeam, the unified design of TrueNAS allows it to multitask.
-If TrueNAS will be handling more than backup jobs, other usage needs should be taken into account.
+If TrueNAS is handling more than backup jobs, other usage needs should be taken into account.
 For example, if the storage appliance has one LUN (dataset or zvol) set as a VMware datastore for hosting VMs, and another LUN set to be used for backups, both capacities must be considered.
 
 {{< /tab >}}
 {{< tab "Estimate Capacity" >}}
 
 The first step when estimating required capacity is to understand how much capacity is currently used by existing VMs and by files that users need to back up.
-Veeam and the TrueNAS appliance will both apply data compression, though different file types and the structure of the data in those files will affect the achieved compression levels.
+Veeam and the TrueNAS appliance both apply data compression, though different file types and the structure of the data in those files affect the achieved compression levels.
 Some tools for capacity estimation are listed at the end of this section, but it is always good to err on the side of caution and 3x the current storage used is not unreasonable.
 ZFS performs best with utilization below 80%.
-Snapshots, full backups, and incremental backups will all require more storage than primary storage being used today.
+Snapshots, full backups, and incremental backups all require more storage than primary storage being used today.
 
 {{< /tab >}}
 {{< tab "Estimate Network Bandwidth" >}}
@@ -131,7 +131,7 @@ In addition to the above considerations, there are many tools, forums, and other
 the amount of storage needed for Veeam backup. In many sites, Veeam compression or deduplication is around 
 1.5x to 2x, but this is more a reference than a rule. Backup types, applications, and the diversity of VMs can all 
 factor into the true amount of storage needed. Capacity must also be considered alongside desired performance, 
-as a smaller quantity of large drives often will not yield the same performance as a larger number of small drives. 
+as a smaller quantity of large drives often does not yield the same performance as a larger number of small drives. 
 For rough calculations, additional resources are listed below.
 
 * [Estimate Veeam space - Veeam Knowledge Space](https://helpcenter.veeam.com/evaluation/vbms/step_1_estimate_vm_change_rate.html)
@@ -160,8 +160,8 @@ correctly and preserved.
 ## Setting Up TrueNAS as a Veeam Repository
 
 Veeam Backup & Replication runs on a Windows operating system, typically Windows Server 2012 or newer, and can connect to a variety of storage systems.
-iXsystems recommends using [iSCSI]({{< relref "CORE/UIReference/Sharing/iSCSI/_index.md" >}}) with a [Veeam scale-out repository](https://bp.veeam.com/vbr/VBP/3_Build_structures/B_Veeam_Components/B_backup_repositories/scaleout.html) architecture.
-Users can also use [SMB]({{< relref "CORE/UIReference/Sharing/SMB/_index.md" >}}) to mount the volume to the backup server directly.
+iXsystems recommends using [iSCSI]({{< relref "CORE/CORETutorials/Sharing/iSCSI/_index.md" >}}) with a [Veeam scale-out repository](https://bp.veeam.com/vbr/VBP/3_Build_structures/B_Veeam_Components/B_backup_repositories/scaleout.html) architecture.
+Users can also use [SMB]({{< relref "CORE/CORETutorials/Sharing/SMB/_index.md" >}}) to mount the volume to the backup server directly.
 With support for SMB/CIFS, NFS, AFP, iSCSI, and FC, TrueNAS offers many ways to connect to Veeam backup servers.
 
 ![VeeamBackupRepository](/images/Veeam/VeeamBackupRepository.png "Configuring Veeam Backup Repository")
@@ -170,8 +170,8 @@ With support for SMB/CIFS, NFS, AFP, iSCSI, and FC, TrueNAS offers many ways to 
 
 **Test environment:**
 
-* A 2TB datastore must be configured on TrueNAS System 1 utilizing the iSCSI wizard using default values.  This will be the backup source.
-* A 2TB datastore must be configured on TrueNAS System 2 utilizing the iSCSI wizard using default values.  This will be the backup target. 
+* A 2TB datastore must be configured on TrueNAS System 1 utilizing the iSCSI wizard using default values.  This is the backup source.
+* A 2TB datastore must be configured on TrueNAS System 2 utilizing the iSCSI wizard using default values.  This is the backup target. 
 * Connect the source datastore to the Hypervisor.
 * Ensure the NFS ISO datastore is mounted. 
 * A 64-bit Microsoft Windows Server 2019 Standard VM should be constructed for Veaam Backup & Replication Server. 

@@ -131,4 +131,4 @@ The **STOP** button and the system **State** toggle both try to send an ACPI pow
 
 For more information on virtual machines see:
 
-[Basic VM Management]({{< relref "/CORE/CORETutorials/CreatingBasicVM.md" >}})
+[Basic VM Management]({{< relref "/CORE/CORETutorials/Applications/VirtualMachines/CreatingBasicVM.md" >}})
