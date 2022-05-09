@@ -1,6 +1,7 @@
 ---
 title: "Zvols"
 weight: 19
+aliases: /core/storage/pools/zvols/
 ---
 
 {{< toc >}}
@@ -20,12 +21,12 @@ To quickly create a Zvol with the default options, enter a name for the Zvol, a 
 |---------|-------|-------------|
 | Zvol name | string | Enter a short name for the zvol. Using a zvol name longer than 63-characters can prevent accessing zvols as devices. For example, a zvol with a 70-character filename or path cannot be used as an iSCSI extent. This setting is mandatory. |
 | Comments | string | Enter any notes about this zvol. |
-| Size for this zvol | integer | Specify size and value. Units like `t`, `TiB`, and `G` can be used. The size of the zvol can be increased later, but cannot be reduced. If the size is more than 80% of the available capacity, the creation will fail with an “out of space” error unless `Force size` is also enabled. |
-| Force size | checkbox | By default, the system will not create a zvol if that operation will bring the pool to over 80% capacity. **While NOT recommended**, enabling this option will force the creation of the zvol. |
-| Sync | drop-down menu | Sets the data write synchronization. *Inherit* inherits the sync settings from the parent dataset, *Standard* uses the sync settings that have been requested by the client software, *Always* waits for data writes to complete, and *Disabled* never waits for writes to complete. |
+| Size for this zvol | integer | Specify size and value. Units like `t`, `TiB`, and `G` can be used. The size of the zvol can be increased later, but cannot be reduced. If the size is more than 80% of the available capacity, the creation fails with an **out of space** error unless **Force size** is also enabled. |
+| Force size | checkbox | By default, the system does not create a zvol if that operation brings the pool to over 80% capacity. **While NOT recommended**, enabling this option forces the creation of the zvol. |
+| Sync | drop-down menu | Sets the data write synchronization. **Inherit** inherits the sync settings from the parent dataset, **Standard** uses the sync settings that have been requested by the client software, **Always** waits for data writes to complete, and **Disabled** never waits for writes to complete. |
 | Compression level  | drop-down menu | Compress data to save space. Refer to Compression for a description of the available algorithms. |
 | ZFS Deduplication | drop-down menu | Do not change this setting unless instructed to do so by your iXsystems support engineer. |
-| Sparse | checkbox | Used to provide thin provisioning. Use with caution as writes will fail when the pool is low on space. |
+| Sparse | checkbox | Used to provide thin provisioning. Use with caution as writes fail when the pool is low on space. |
 | Read-only | drop-down menu | Set to prevent the zvol from being modified. |
 | Inherit (Encryption Options) | checkbox | Enabling causes the zvol to use the encryption properties of the root dataset. |
 

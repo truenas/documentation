@@ -1,6 +1,7 @@
 ---
 title: "Creating Datasets"
 weight: 17
+Aliases: /core/storage/pools/datasets/
 ---
 
 {{< toc >}}

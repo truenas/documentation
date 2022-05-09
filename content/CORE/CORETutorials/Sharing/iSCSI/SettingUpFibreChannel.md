@@ -1,6 +1,7 @@
 ---
 title: "Fibre Channel"
 weight: 20
+aliases: /core/sharing/iscsi/fibrechannel/
 ---
 
 {{< toc >}}

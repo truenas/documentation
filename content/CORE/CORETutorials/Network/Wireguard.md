@@ -1,6 +1,7 @@
 ---
 title: "Enabling WireGuard"
 weight: 50
+aliases: /core/network/wireguard/
 ---
 
 [WireGuard](https://www.wireguard.com/) is a popular option in the VPN marketplace due to its speed, simplicity, and modern cryptography standards.
@@ -24,7 +25,7 @@ Next, create another tunable to define the networking interface:
 
 ![WireguardInterface](/images/CORE/12.0/wireguard_interfaces.png "Wireguard Interfaces")
 
-When finished, you will have these two variables set and enabled:
+When finished, these two variables are set and enabled:
 
 ![WireguardVariables](/images/CORE/12.0/wireguard_variables.png "Wireguard Variables")
 
@@ -51,7 +52,7 @@ Now create the `/root/wg0.conf` that contains the specific WireGuard configurati
 This file settings are dependent on your specific networking environment and requirements, which is beyond the scope of this article.
 There are [quickstart guides](https://www.wireguard.com/quickstart/) and [tutorials](https://www.linode.com/docs/networking/vpn/set-up-wireguard-vpn-on-ubuntu/) available online as well as the built-in `wg-quick` manpage.
 
-Once you have a valid `/root/wg0.conf`, rebooting the system brings up the WireGuard interface and you’ll see a `wg0` device in the output of `ifconfig`.
+Once you have a valid `/root/wg0.conf`, rebooting the system brings up the WireGuard interface and you see a `wg0` device in the output of `ifconfig`.
 
 ![wg0DeviceOutput](/images/CORE/12.0/wg0DeviceOutput.png "wg0 device output")
 

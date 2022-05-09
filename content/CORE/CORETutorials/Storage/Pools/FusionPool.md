@@ -1,6 +1,7 @@
 ---
 title: "Fusion Pools"
 weight: 30
+aliases: /core/storage/pools/fusionpool/
 ---
 
 

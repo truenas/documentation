@@ -1,7 +1,7 @@
 ---
 title: "Custom Plugins"
 weight: 20
-Aliases: core/applications/plugins/createplugin/
+Aliases: /core/applications/plugins/createplugin/
 ---
 
 {{< toc >}}

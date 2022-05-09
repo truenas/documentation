@@ -1,6 +1,7 @@
 ---
 title: "Self-Encrypting Drives"
 weight: 40
+aliases: /core/storage/sed/
 ---
 
 {{< toc >}}

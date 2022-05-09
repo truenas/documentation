@@ -1,7 +1,7 @@
 ---
 title: "Configuring UPS Service"
 weight: 80
-alias: core/services/ups/
+alias: /core/services/ups/
 ---
 
 TrueNAS uses [NUT](https://networkupstools.org/) (Network UPS Tools) to provide UPS support.

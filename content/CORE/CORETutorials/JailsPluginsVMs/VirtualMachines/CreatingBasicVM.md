@@ -1,7 +1,7 @@
 ---
 title: "Basic VM Management"
 weight: 10
-aliases: core/applications/virtualmachines/basic/
+aliases: /core/applications/virtualmachines/basic/
 ---
 
 {{< toc >}}

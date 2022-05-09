@@ -1,6 +1,7 @@
 ---
 title: "Creating Pools"
 weight: 10
+aliases: /core/storage/pools/poolcreate/
 ---
 
 {{< toc >}}

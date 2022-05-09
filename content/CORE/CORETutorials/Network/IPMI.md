@@ -1,10 +1,11 @@
 ---
 title: "IPMI"
 weight: 50
+aliases: /core/network/ipmi/
 ---
 
 {{< hint info >}}
-IPMI requires compatible hardware! Refer to your hardware documentation to determine if this option will appear in the TrueNAS web interface.
+IPMI requires compatible hardware! Refer to your hardware documentation to determine if this option display in the TrueNAS web interface.
 {{< /hint >}}
 
 Many [TrueNAS Storage Arrays]({{< relref "/Content/Hardware/_index.md" >}}) provide a built-in out-of-band management port which can be used to provide side-band management should the system become unavailable through the web interface. This allows for a few vital functions, such as checking the log, accessing the BIOS setup, and powering on the system without requiring physical access to the system. It can also be used to allow another person remote access to the system to assist with a configuration or troubleshooting issue.

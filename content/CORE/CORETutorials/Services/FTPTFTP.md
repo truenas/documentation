@@ -1,7 +1,7 @@
 ---
 title: "FTP, SFTP, and TFTP"
 weight: 20
-aliases: core/services/ftptftp/
+aliases: /core/services/ftptftp/
 ---
 
 The [File Transfer Protocol (FTP)](https://tools.ietf.org/html/rfc959) is a simple option for data transfers.

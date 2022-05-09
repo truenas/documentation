@@ -1,6 +1,7 @@
 ---
 title: "VMware-Snapshots"
 weight: 30
+aliases: /core/storage/vmware-snapshots/
 ---
  
 **Storage** > **VMware-Snapshots** coordinates ZFS snapshots when using TrueNAS as a VMware datastore.
@@ -11,7 +12,7 @@ The temporary VMware snapshots are then deleted on the VMware side but still exi
 These coordinated snapshots go in the **Storage > Snapshots** list.
 
 {{< hint info >}}
-You need a paid-edition for VMware ESXi to use VMware-Snapshots. If you try to use them with ESXi free then you will see the following error message: **"Error: Can’t create snapshot, current license or ESXi version prohibits execution of the requested operation.”**. Indeed ESXi free has locked (read-only) API that prevents using TrueNAS VMware-Snapshots. The cheapest ESXi edition that is compatible with TrueNAS VMware-Snapshots is *VMware vSphere Essentials Kit*.
+You need a paid-edition for VMware ESXi to use VMware-Snapshots. If you try to use them with ESXi free then you see the following error message: **Error: Can’t create snapshot, current license or ESXi version prohibits execution of the requested operation.**. Indeed ESXi free has locked (read-only) API that prevents using TrueNAS VMware-Snapshots. The cheapest ESXi edition that is compatible with TrueNAS VMware-Snapshots is *VMware vSphere Essentials Kit*.
 {{< /hint >}}
 
 ## Create a VMware Snapshot

@@ -1,6 +1,7 @@
 ---
 title: "Wipe"
 weight: 10
+aliases: /core/storage/disks/diskwipe/
 ---
 
 The wipe function deletes obsolete data off an unused disk.

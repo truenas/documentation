@@ -1,6 +1,7 @@
 ---
 title: "Setting Up Kerberos"
 weight: 40
+aliases: /core/directoryservices/kerberos/
 ---
 
 {{< toc >}}

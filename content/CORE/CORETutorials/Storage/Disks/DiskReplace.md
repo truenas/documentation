@@ -1,6 +1,7 @@
 ---
 title: "Replacement"
 weight: 20
+aliases: /core/storage/disks/diskreplace/
 ---
 
 {{< toc >}}

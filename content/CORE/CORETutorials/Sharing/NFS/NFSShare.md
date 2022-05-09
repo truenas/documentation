@@ -1,7 +1,7 @@
 ---
 title: "NFS Share Creation"
 weight: 10
-aliases: core/sharing/nfs/nfsshare/
+aliases: /core/sharing/nfs/nfsshare/
 ---
 
 {{< toc >}}

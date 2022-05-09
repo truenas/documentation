@@ -1,6 +1,7 @@
 ---
 title: "Home Shares"
 weight: 20
+aliases: /core/sharing/smb/homeshare/
 ---
 
 {{< toc >}}

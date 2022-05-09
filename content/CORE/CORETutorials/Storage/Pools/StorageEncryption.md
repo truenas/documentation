@@ -1,6 +1,7 @@
 ---
 title: "Storage Encryption"
 weight: 25
+aliases: /core/storage/pools/storageencryption/
 ---
 
 {{< toc >}}
@@ -26,7 +27,7 @@ Always consider the following drawbacks/considerations when encrypting data:
 * Losing encryption keys and passwords means losing your data.
 * Unrelated encrypted datasets [do not support deduplication](https://github.com/openzfs/zfs/discussions/9423).
 * We do not recommend using GELI or ZFS encryption with deduplication because of the sizable performance impact. 
-* Be cautious when using many encryption and deduplication features at once since they will all compete for the same CPU cycles.
+* Be cautious when using many encryption and deduplication features at once since they all compete for the same CPU cycles.
 {{< /expand >}}
 
 ## Encrypting a Storage Pool
@@ -72,7 +73,7 @@ The dataset status is determined from an icon:
 * A Dataset on an encrypted pool with encryption properties that don't match the root dataset have this icon: ![UnecryptedPoolEncryptionDatasetIcon](/images/CORE/12.0/unecrypted_pool_encrypted_dataset.png "Unencrypted Storage Pool with an Unencrypted Dataset").
 
 {{< hint info>}}
-NOTE: An unencrypted pool  with an encrypted dataset will also show this icon: ![UnecryptedPoolEncryptionDatasetIcon](/images/CORE/12.0/unecrypted_pool_encrypted_dataset.png "Unencrypted Storage Pool with an Unencrypted Dataset")
+NOTE: An unencrypted pool with an encrypted dataset also shows this icon: ![UnecryptedPoolEncryptionDatasetIcon](/images/CORE/12.0/unecrypted_pool_encrypted_dataset.png "Unencrypted Storage Pool with an Unencrypted Dataset")
 {{< /hint >}}.
  
 Encrypted datasets can only be locked and unlocked when secured with a passphrase instead of a keyfile.
@@ -160,9 +161,9 @@ Set the rest of the options:
 
 ## Unlocking a Replicated Encrypted Dataset or Zvol Without a Passphrase
 
-TrueNAS Enterprise users may connect a Key Management Interoperability Protocol ([KMIP]({{< relref "KMIP.md" >}})) server to centralize keys when they are not using passphrases to unlock a dataset or zvol. 
+TrueNAS Enterprise users may connect a Key Management Interoperability Protocol ([KMIP]({{< relref "/CORE/UIReference/System/KMIP.md" >}})) server to centralize keys when they are not using passphrases to unlock a dataset or zvol. 
 
-Users with TrueNAS CORE or Enterprise installations without [KMIP]({{< relref "KMIP.md" >}}) should either replicate the dataset or zvol without properties to disable encryption at the remote end or construct a special json manifest to unlock each child dataset/zvol with a unique key.
+Users with TrueNAS CORE or Enterprise installations without [KMIP]({{< relref "/CORE/UIReference/System/KMIP.md" >}}) should either replicate the dataset or zvol without properties to disable encryption at the remote end or construct a special json manifest to unlock each child dataset/zvol with a unique key.
 
 {{< tabs "Unlocking Methods" >}}
 {{< tab "Method 1: Construct JSON Manifest" >}}
@@ -175,17 +176,17 @@ Users with TrueNAS CORE or Enterprise installations without [KMIP]({{< relref "K
 
 {{< /tab >}}
 {{< tab "Method 2: Replicate Encrypted Dataset/zvol Without Properties" >}}
-Uncheck properties when replicating so that the destination dataset will not be encrypted on the remote side and will not require a key to unlock.
+Uncheck properties when replicating so that the destination dataset is not be encrypted on the remote side and does not require a key to unlock.
 1. Go to **Tasks > Replication Tasks** and click *ADD*.
-2. Click *ADVANCED REPLICATION CREATION*.
+2. Click **ADVANCED REPLICATION CREATION**.
 3. Fill out the form as needed and make sure *Include Dataset Properties* is **NOT** checked.
-4. Click *SUBMIT*.
+4. Click **SUBMIT**.
 
 {{< /tab >}}
 {{< /tabs >}}
 
 {{< hint info >}}
-**NOTE:** This does not affect TrueNAS Enterprise installs with [KMIP]({{< relref "KMIP.md" >}}).
+**NOTE:** This does not affect TrueNAS Enterprise installs with [KMIP]({{< relref "/CORE/UIReference/System/KMIP.md" >}}).
 {{< /hint >}}
 
 ## Legacy GELI Encryption
@@ -199,71 +200,68 @@ You must migrate data out of the GELI pool and into a ZFS encrypted pool.
 
 ### GELI Pool Migrations
 
-Data can be *migrated* from the GELI-encrypted pool to a new ZFS-encrypted pool.
+Data can be migrated from the GELI-encrypted pool to a new ZFS-encrypted pool.
 Be sure to unlock the GELI-encrypted pool before attempting any data migrations.
 The new ZFS-encrypted pool must be at least the same size as the previous GELI-encrypted pool.
 Do not delete the GELI dataset until you have verified the data migration.
 
 There are a few options to migrate data from a GELI-encrypted pool to a new ZFS-encrypted pool:
 
-{{< tabs "GELI Migration Methods" >}}
-{{< tab "Replication Wizard" >}}
+#### GELI Migration Methods
 {{< expand "Using the Replication Wizard" "v" >}}
-GELI encrypted pools continue to be detected and supported in the TrueNAS web interface as "Legacy Encrypted" pools. As of TrueNAS version 12.0-U1, a decrypted GELI pool can migrate data to a new ZFS encrypted pool using the Replication Wizard.
+GELI encrypted pools continue to be detected and supported in the TrueNAS web interface as **Legacy Encrypted** pools. As of TrueNAS version 12.0-U1, a decrypted GELI pool can migrate data to a new ZFS encrypted pool using the Replication Wizard.
  
-Start the Replication Wizard by selecting **Tasks** -> **Replication Task** -> *ADD*
+Start the Replication Wizard by selecting **Tasks** -> **Replication Task** -> **ADD**
 
 **Source Location**:
- * Select *On this System*.
+ * Select **On this System**.
  * Set the dataset to transfer.
  
 **Destination Location**:
- * Select *On a Different System*.
+ * Select **On a Different System**.
  
 **SSH Connection**:
- * Either Created the ssh connection by clicking *Create New* or select the destination system's ssh connection.
- * In *Destination*, select the dataset to replicate the files to.
- * Set *Encryption*.
- * Choose either PASSPHRASE or HEX for the *Encryption Key Format*.
- * If you selected PASSPHRASE, enter the passphrase. If you selected HEX, set *Generate Encryption Key*.
- * Set *Store Encryption key in Sending TrueNAS database*.
- * Click Next
+ * Either Created the ssh connection by clicking **Create New** or select the destination system ssh connection.
+ * In **Destination**, select the dataset to replicate the files to.
+ * Set **Encryption**.
+ * Choose either **PASSPHRASE** or **HEX** for the **Encryption Key Format**.
+ * If you selected PASSPHRASE, enter the passphrase. If you selected HEX, set **Generate Encryption Key**.
+ * Set **Store Encryption key in Sending TrueNAS database**.
+ * Click **Next**
  
  **Replication Schedule**:
- * Set *Run Once* in Replication Schedule.
- * Unset *Make Destination Dataset Read-Only*.
+ * Set **Run Once** in Replication Schedule.
+ * Clear the checkmark in **Make Destination Dataset Read-Only**.
  
- * Click *START REPLICATION*
+ * Click **START REPLICATION**
 {{< /expand >}}
-{{< /tab >}}
-{{< tab "File Transfer" >}}
+{{< expand "File Transfer" >}}
 {{< hint warning >}}
 This method does not preserve file ACLs.
 {{< /hint >}}
 
 The web interface supports using **Tasks > Rsync Tasks** to transfer files out of the GELI pool.
 In the **Shell**, `rsync` and other file transfer mechanisms (`scp`, `cp`, `sftp`, `ftp`, `rdiff-backup`) are available for copying data between pools.
-{{< /tab >}}
-{{< tab "ZFS Send and Receive" >}}
+{{< /expand >}}
+{{< expand "ZFS Send and Receive" >}}
 {{< hint warning >}}
-These instructions are an example walkthrough.
+These instructions are an example walk-through.
 It is not an exact step-by-step guide for all situations.
 Research ZFS [send](https://openzfs.github.io/openzfs-docs/man/8/zfs-send.8.html)/[receive](https://openzfs.github.io/openzfs-docs/man/8/zfs-receive.8.html) before attempting this.
 A simple example cannot cover every edge case.
 {{< /hint >}}
 
 Legend:
-```
-GELI Pool = pool_a
-Origin Dataset = dataset_1
-Latest Snapshot of GELI Pool = snapshot_name
-ZFS Native Encrypted Pool = pool_b
-Receieving Dataset = dataset_2
-```
+
+* GELI Pool = pool_a
+* Origin Dataset = dataset_1
+* Latest Snapshot of GELI Pool = snapshot_name
+* ZFS Native Encrypted Pool = pool_b
+* Receieving Dataset = dataset_2
 
 1. Create a new encrypted pool in **Storage > Pools**.
 2. Open the **Shell**.
-   Make a new snapshot of the GELI pool and dataset with the data to be migrated: `zfs snapshot -r pool_a/dataset_1@snapshot_name`.
+   Make a new snapshot of the GELI pool and dataset with the data to migrate: `zfs snapshot -r pool_a/dataset_1@snapshot_name`.
 3. Create a passphrase: `echo passphrase > /tmp/pass`.
 4. Use ZFS send/receive to transfer the data between pools: `zfs send -Rv pool_a/dataset_1@snapshot_name | zfs recv -o encryption=on -o keyformat=passphrase -o keylocation=file:///tmp/pass pool_b/dataset_2`.
 5. When the transfer is complete, go to **Storage > Pools** and lock the new dataset.
@@ -271,10 +269,10 @@ Receieving Dataset = dataset_2
    TrueNAS prompts for the passphrase.
    After entering the passphrase and unlocking the pool, you can delete the `/tmp/pass` file used for the transfer.
 6. If desired, you can convert the dataset to use a keyfile instead of a passphrase.
-   To use a key file, click the dataset <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; (Options) and click *Encryption Options*.
-   Change the *Encryption Type* from *Passphrase* to *Key* and save.
+   To use a key file, click the dataset <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; (Options) and click **Encryption Options**.
+   Change the **Encryption Type** from **Passphrase** to **Key** and save.
    Back up your key file immediately!
 7. Repeat this process for every dataset in the pool that you need to migrate.
 
-{{< /tab >}}
-{{< /tabs >}}
+{{< /expand >}}
+

@@ -1,6 +1,7 @@
 ---
 title: "Creating Jails"
 weight: 5
+aliases: /core/appliations/jails/create/
 ---
 
 {{< toc >}}

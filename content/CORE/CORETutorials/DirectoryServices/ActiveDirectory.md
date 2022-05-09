@@ -1,6 +1,7 @@
 ---
 title: "Setting Up Active Directory"
 weight: 10
+aliases: /core/directoryservices/activedirectory/
 ---
 
 {{< toc >}}

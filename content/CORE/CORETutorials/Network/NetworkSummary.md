@@ -1,6 +1,7 @@
 ---
 title: "Network Summary"
 weight: 10
+aliases: /core/network/networksummary/
 ---
 
 It is recommended to set up your system connections before setting up data sharing.
