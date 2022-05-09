@@ -4,4 +4,4 @@ resources/
 node_modules/
 tech-doc-hugo
 .vscode
-.hugo_build.lock
+*.lock
