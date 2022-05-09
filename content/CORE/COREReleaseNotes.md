@@ -1,5 +1,5 @@
 ---
-title: CORE 13.0 Release Notes
+title: 13.0 Release Notes
 weight: 2
 aliases:
   - /releasenotes/core/13.0beta1/
@@ -11,7 +11,7 @@ aliases:
 
 {{< include file="/static/includes/General/LifecycleTable.html.part" html="true" >}}
 
-## CORE Schedule
+## Schedule
 
 {{< include file="/content/_includes/ReleaseScheduleWarning.md" type="page" >}}
 
@@ -591,46 +591,6 @@ This is a an early release meant for previewing and testing features and is **no
             <td>Due to numerous improvements in the replication engine and ZFS, TrueNAS 9.10 systems (or earlier) cannot replicate to or from TrueNAS 13.0-BETA1. Update the legacy TrueNAS system to 11.3 first, then 12.0, and then 13.0-BETA1.</td>
           </tr>
 		</tbody>
-      </table>
-    </body>
-  </html>
-  
-  ## Known Issues
-
-<body class="ql-editor ql-editor-view" style="font-size:14px;">
-  <html>
-    <body>
-      <table width="100%">
-        <thead>
-          <tr>
-            <th>Key</th>
-            <th>Summary</th>
-            <th>Workaround</th>
-          </tr>
-        </thead>
-        <tbody>
-
-          <tr>
-	    <td><a href="https://jira.ixsystems.com/browse/NAS-114160" target="_blank">NAS-114160</a></td>
-	    <td>Connection interrupt when managing jails or plugins.</td>
-	    <td>This behavior was seen in early testing and is still being investigated. No workaround is necessary as the connection resumes after a brief interruption.</td>
-	  </tr>
-	  <tr>
-	    <td><a href="https://jira.ixsystems.com/browse/NAS-114595" target="_blank">NAS-114595</a></td>
-	    <td>VNC can't connect to bhyve VMs.</td>
-	    <td>Update to 13.0 Nightlies or 13.0-Release (when released).</td>
-	  </tr>
-	  <tr>
-            <td></td>
-            <td>TrueNAS 12 can not replicate to or from TrueNAS 13</td>
-            <td>By default, TrueNAS 12 cannot initiate a replication to or from TrueNAS 13 due to an outdated SSH client library. Allowing replication to or from TrueNAS 13 to TrueNAS 12 requires allowing ssh.rsa algorithms. See <a href="https://www.openssh.com/txt/release-8.2" target="_blank">OpenSSH 8.2 Release</a> for security considerations. Log into the TrueNAS 13 system and go to <b>Services->SSH</b>. Add the <b>SSH Auxiliary Parameter</b>: <code>PubkeyAcceptedAlgorithms +ssh-rsa</code>.</td>
-          </tr>
-          <tr>
-            <td><a href="https://jira.ixsystems.com/browse/NAS-107151" target="_blank">NAS-107151</a></td>
-            <td>Replication fails between legacy TrueNAS 9.10 systems and 13.0-BETA1 systems</td>
-            <td>Due to numerous improvements in the replication engine and ZFS, TrueNAS 9.10 systems (or earlier) cannot replicate to or from TrueNAS 13.0-BETA1. Update the legacy TrueNAS system to 11.3 first, then 12.0, and then 13.0-BETA1.</td>
-          </tr>
-		 </tbody>
       </table>
     </body>
   </html>
