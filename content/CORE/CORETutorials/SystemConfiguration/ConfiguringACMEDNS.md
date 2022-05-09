@@ -1,6 +1,6 @@
 ---
 title: "Configuring ACME DNS"
-weight: 54
+weight: 160
 aliases:
   - /core/system/acmedns
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Setting the System Dataset"
-weight: 88
+weight: 70
 aliases:
   - /core/system/systemdataset
 ---

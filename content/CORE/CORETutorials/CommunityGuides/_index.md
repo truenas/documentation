@@ -1,7 +1,7 @@
 ---
 title: "Community Guides"
 geekdocCollapseSection: true
-weight: 22
+weight: 30
 ---
 
 Because TrueNAS is both Open Source and complicated, the massive user community often creates recommendations for specific hardware or environments.

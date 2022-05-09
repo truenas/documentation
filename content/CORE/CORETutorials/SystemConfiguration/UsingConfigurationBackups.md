@@ -1,6 +1,6 @@
 ---
 title: "Using Configuration Backups"
-weight: 20
+weight: 10
 aliases:
   - /core/system/general/configbackup
 ---

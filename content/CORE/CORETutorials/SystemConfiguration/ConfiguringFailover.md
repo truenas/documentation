@@ -1,6 +1,6 @@
 ---
 title: "Configuring Failover (HA)"
-weight: 50
+weight: 150
 ---
 
 {{< toc >}}
