@@ -1,6 +1,6 @@
 ---
 title: "Getting Support"
-weight: 40
+weight: 16
 aliases:
   - /core/system/support
 ---
