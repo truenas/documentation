@@ -1,6 +1,7 @@
 ---
 title: "Managing Pools"
 weight: 16
+Aliases: /core/storage/pools/managingpools/
 ---
 
 After creating a data storage pool, there are a variety of options to change the initial configuration of that pool.
@@ -13,8 +14,8 @@ The current status and storage usage of each pool is shown.
 To see more details about a pool, click the **v** symbol on the right side of the pool entry.
 Click the <i class="material-icons" aria-hidden="true" title="Settings">settings</i> for all pool management options.
 
-{{< tabs "Pool Actions" >}}
-{{< tab "Pool Options" >}}
+## Pool Actions
+{{< expand "Pool Options" >}}
 Contains any additional high-level settings for the pool.
 
 ![StoragePoolsPoolOptions](/images/CORE/12.0/StoragePoolsPoolOptions.png "StoragePoolsPoolOptions")
@@ -22,8 +23,8 @@ Contains any additional high-level settings for the pool.
 *Auto TRIM* allows TrueNAS to periodically check the pool disks for storage blocks that can be reclaimed.
 This can have a performance impact on the pool, so the option is disabled by default.
 For more details about TRIM in ZFS, see the `autotrim` property description in [zpool.8](https://zfsonlinux.org/manpages/0.8.1/man8/zpool.8.html).
-{{< /tab >}}
-{{< tab "Export/Disconnect" >}}
+{{< /expand >}}
+{{< expand "Export/Disconnect" >}}
 Removes the pool from the system.
 Can be used to prepare drives for transfer to a new system and import the pool or completely delete the pool and any data stored on it.
 A dialog warns about the risks of disconnecting the pool and shows any system services that are affected by removing the pool.
@@ -32,8 +33,8 @@ A dialog warns about the risks of disconnecting the pool and shows any system se
 
 Because this is a destructive action, additional checkboxes must be set and the name of the pool manually entered when also deleting stored data.
 Existing shares to this data can also be removed when the pool is disconnected.
-{{< /tab >}}
-{{< tab "Add Vdevs" >}}
+{{< /expand >}}
+{{< expand "Add Vdevs" >}}
 This opens the **Pool Manager** to add more vdevs to the pool.
 
 ![Storage Pools Add Create Vdevs](/images/CORE/12.0/StoragePoolsAddCreateVdevs.png "Storage Pools Add Create Vdevs")
@@ -53,34 +54,34 @@ Some vdev extending examples:
 * to extend a three-drive RAIDZ1, add another three drives. The resulting pool is a stripe of two RAIDZ1 vdevs, similar to RAID 50 on a hardware controller.
 * to extend a four-drive RAIDZ2, add another four drives. The result is a stripe of RAIDZ2 vdevs, similar to RAID 60 on a hardware controller.
 * adding a disk as a *hot spare* to the pool.
-{{< /tab >}}
-{{< tab "Scrub Pool" >}}
+{{< /expand >}}
+{{< expand "Scrub Pool" >}}
 Initiate a data integrity check of the pool.
 Any problems detected during the scrub are either automatically corrected or generates an [alert]({{< relref "CORE/UIReference/System/AlertServices.md" >}}) in the web interface.
 By default, every pool is automatically checked on a reoccurring [scrub schedule]({{< relref "/CORE/CORETutorials/Tasks/ScrubTasks.md" >}}).
-{{< /tab >}}
-{{< tab "Status" >}}
+{{< /expand >}}
+{{< expand "Status" >}}
 Opens the **Pool Status** screen to show the state of the last scrub and disks in the pool.
 
 ![Storage Pools Status](/images/CORE/12.0/StoragePoolsStatus.png "Storage Pools Status")
 
 Additional options for [managing connected disks]({{< relref "/CORE/CORETutorials/Storage/Disks/DiskReplace.md" >}}) are available in this screen.
-{{< /tab >}}
-{{< tab "Expand Pool" >}}
+{{< /expand >}}
+{{< expand "Expand Pool" >}}
 Increases the size of the pool to match all available disk space.
 This option is typically used when virtual disks are resized apart from TrueNAS.
-{{< /tab >}}
-{{< tab "Upgrade Pool" >}}
+{{< /expand >}}
+{{< expand "Upgrade Pool" >}}
 This option only appears when the pool can be upgraded to use new [ZFS feature flags]({{< relref "/content/References/ZFSPrimer.md" >}}).
 Before upgrading an existing pool, be aware of these caveats:
 
 * Upgrading a pool is one-way, meaning that if you change your mind you cannot go back to an earlier ZFS version or downgrade to an earlier version of the software that does not support those ZFS features.
-* Before performing any operation that can affect the data on a storage disk, always back up all data first and verify the integrity of the backup. While it is unlikely that the pool upgrade will affect the data, it is always better to be safe than sorry.
-* Upgrading a ZFS pool is optional. Do not upgrade the pool if the possibility of reverting to an earlier version of TrueNAS or repurposing the disks in another operating system that supports ZFS is desired. It is not necessary to upgrade the pool unless the end user has a specific need for the newer ZFS Feature Flags. If a pool is upgraded to the latest feature flags, it will not be possible to import that pool into another operating system that does not yet support those feature flags.
+* Before performing any operation that can affect the data on a storage disk, always back up all data first and verify the integrity of the backup. While it is unlikely that the pool upgrade affects the data, it is always better to be safe than sorry.
+* Upgrading a ZFS pool is optional. Do not upgrade the pool if the possibility of reverting to an earlier version of TrueNAS or repurposing the disks in another operating system that supports ZFS is desired. It is not necessary to upgrade the pool unless the end user has a specific need for the newer ZFS Feature Flags. If a pool is upgraded to the latest feature flags, it is not be possible to import that pool into another operating system that does not yet support those feature flags.
 
 The upgrade itself only takes a few seconds and is non-disruptive.
 It is not necessary to stop any sharing services to upgrade the pool.
 However, it is best to upgrade when the pool is not being heavily used.
-The upgrade process will suspend I/O for a short period, but is nearly instantaneous on a quiet pool.
-{{< /tab >}}
-{{< /tabs >}}
+The upgrade process suspends I/O for a short period, but is nearly instantaneous on a quiet pool.
+{{< /expand >}}
+

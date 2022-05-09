@@ -1,6 +1,7 @@
 ---
 title: "Configuring S3"
 weight: 50
+aliases: /core/services/s3/
 ---
 
 {{< toc >}}

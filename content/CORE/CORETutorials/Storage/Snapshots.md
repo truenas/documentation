@@ -1,6 +1,7 @@
 ---
 title: "Snapshots"
 weight: 20
+aliases: /core/storage/snapshots/
 ---
 
 {{< toc >}}

@@ -1,6 +1,7 @@
 ---
 title: "SMB Share Creation"
 weight: 10
+aliases: /core/sharing/smb/smbshare/
 ---
 
 {{< toc >}}

@@ -1,6 +1,7 @@
 ---
 title: "Setting a Static IP Address for the TrueNAS UI"
 weight: 40
+aliases: /core/network/interfaces/settingstaticip/
 ---
 
 {{< hint warning >}}

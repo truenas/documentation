@@ -1,6 +1,7 @@
 ---
 title: "WebDav Share Creation"
 weight: 10
+aliases: /core/sharing/webdav/webdavshare/
 ---
 
 {{< toc >}}

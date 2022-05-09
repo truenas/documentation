@@ -1,6 +1,7 @@
 ---
 title: "Import Disk"
 weight: 50
+aliases: /core/storage/importdisk/
 ---
  
 Use **Storage > Import Disk** to integrate UFS (BSD Unix), NTFS (Windows), MSDOS (FAT), or EXT2 (Linux) formatted disks into TrueNAS.

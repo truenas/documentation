@@ -1,6 +1,7 @@
 ---
 title: "Editing a Physical Interface"
 weight: 50
+aliases: /core/network/interfaces/editingphysicalinterface/
 ---
 
 {{<toc>}}

@@ -1,6 +1,7 @@
 ---
 title: "Configuring SNMP"
 weight: 60
+aliases: /core/services/snmp/
 ---
 
 [SNMP (Simple Network Management Protocol)](https://tools.ietf.org/html/rfc1157) monitors network-attached devices for conditions that warrant administrative attention.

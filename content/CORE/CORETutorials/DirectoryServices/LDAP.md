@@ -1,6 +1,7 @@
 ---
 title: "Setting Up LDAP"
 weight: 20
+aliases: /core/directoryservices/ldap/
 ---
  
 

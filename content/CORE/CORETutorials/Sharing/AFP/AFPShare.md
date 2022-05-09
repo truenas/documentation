@@ -1,6 +1,7 @@
 ---
 title: "AFP Share Creation"
 weight: 10
+aliases: /core/sharing/afp/afpshare/
 ---
 
 {{< toc >}}

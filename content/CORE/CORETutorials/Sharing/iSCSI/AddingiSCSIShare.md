@@ -1,6 +1,7 @@
 ---
 title: "Adding an iSCSI Share"
 weight: 10
+aliases: /core/sharing/iscsi/iscsishare/
 ---
 
 {{< toc >}}

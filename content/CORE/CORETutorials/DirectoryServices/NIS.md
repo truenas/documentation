@@ -1,6 +1,7 @@
 ---
 title: "NIS Screen"
 weight: 30
+aliases: /core/directoryservices/nis/
 ---
 
 {{< toc >}}
