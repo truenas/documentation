@@ -10,7 +10,7 @@ The Asigra plugin connects TrueNAS to a third party service and is subject to li
 TrueNAS must have a public static IP address for Asigra services to function.
 Please read the [Asigra Software License Agreement](https://www.asigra.com/legal/software-license-agreement) before using this plugin.
 
-Follow the instructions in the Plugins section to [install the Asigra Plugin]({{< relref "CORE/CORETutorials/Applications/Plugins/_index.md" >}}).
+Follow the instructions in the Plugins section to [install the Asigra Plugin]({{< relref "CORE/CORETutorials/JailsPluginsVMs/Plugins/_index.md" >}}).
 To begin using Asigra services after installing the plugin, expand the plugin options and click *Register*.
 A new browser tab opens to [register a user with Asigra](https://licenseportal.asigra.com/licenseportal/user-registration.do).
 

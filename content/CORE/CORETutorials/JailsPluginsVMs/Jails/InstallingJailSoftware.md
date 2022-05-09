@@ -223,12 +223,12 @@ The startup script also indicates if any additional parameters are available:
 
 For information on Jails screens and how to add or manage jails see:
 
-[Jails Screens]({{< relref "/CORE/UIReference/Applications/Jails/JailsScreens.md" >}})
+[Jails Screens]({{< relref "/CORE/UIReference/JailsPluginsVMs/Jails/JailsScreens.md" >}})
 
-[Creating Jails]({{< relref "/CORE/CORETutorials/Applications/Jails/CreatingJails.md" >}})
+[Creating Jails]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Jails/CreatingJails.md" >}})
 
-[Managing Jails]({{< relref "/CORE/CORETutorials/Applications/Jails/ManagingJails.md" >}})
+[Managing Jails]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Jails/ManagingJails.md" >}})
 
-[Setting Up Jail Storage]({{< relref "/CORE/CORETutorials/Applications/Jails/SettingUpJailStorage.md" >}})
+[Setting Up Jail Storage]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Jails/SettingUpJailStorage.md" >}})
 
-[Accessing Jails Using SSH]({{< relref "/CORE/CORETutorials/Applications/Jails/AccessingJailsUsingSSH.md" >}})
+[Accessing Jails Using SSH]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Jails/AccessingJailsUsingSSH.md" >}})

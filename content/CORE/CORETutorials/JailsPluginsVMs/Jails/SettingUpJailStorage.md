@@ -75,7 +75,7 @@ Click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i>
 {{< hint warning >}}
 Remember that added storage is just a pointer to the selected storage directory on the TrueNAS system.
 It does not copy that data to the jail.
-Files that are deleted from the *Destination* directory in the jail are also deleted from the *Source* directory on the TrueNAS system.
+Files that are deleted from the **Destination** directory in the jail are also deleted from the **Source** directory on the TrueNAS system.
 However, removing the jail storage entry only removes the pointer.
 This leaves the data intact but no longer accessible to the jail.
 {{< /hint >}}
@@ -83,12 +83,12 @@ This leaves the data intact but no longer accessible to the jail.
 ## Additional Information
 For information on Jails screens and how to add or manage jails see:
 
-[Jails Screens]({{< relref "/CORE/UIReference/Applications/Jails/JailsScreens.md" >}})
+[Jails Screens]({{< relref "/CORE/UIReference/JailsPluginsVMs/Jails/JailsScreens.md" >}})
 
-[Creating Jails]({{< relref "/CORE/CORETutorials/Applications/Jails/CreatingJails.md" >}})
+[Creating Jails]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Jails/CreatingJails.md" >}})
 
-[Managing Jails]({{< relref "/CORE/CORETutorials/Applications/Jails/ManagingJails.md" >}})
+[Managing Jails]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Jails/ManagingJails.md" >}})
 
-[Accessing Jails Using SSH]({{< relref "/CORE/CORETutorials/Applications/Jails/AccessingJailsUsingSSH.md" >}})
+[Accessing Jails Using SSH]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Jails/AccessingJailsUsingSSH.md" >}})
 
-[Installing Jail Software]({{< relref "/CORE/CORETutorials/Applications/Jails/InstallingJailSoftware.md" >}})
+[Installing Jail Software]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Jails/InstallingJailSoftware.md" >}})

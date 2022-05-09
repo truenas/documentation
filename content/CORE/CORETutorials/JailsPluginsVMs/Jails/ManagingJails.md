@@ -29,7 +29,7 @@ After selecting one or more jails, icons display which can be used on the select
 To see more information such as **IPV4**, **IPV6**, jail **TYPE**, and whether it is a **TEMPLATE** or **BASEJAIL** click **>** to expand a jail. 
 Additional options for that jail also display.
 
-For more information on jail options see [Creating Jails]({{< relref "CreatingJails.md" >}})
+For more information on jail options see [Creating Jails]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Jails/CreatingJails.md" >}})
 
 ## Modifying Jail IP Addresses
 
@@ -56,12 +56,12 @@ The release must not be in use by any jail on the system!
 ## Additional Information
 For information on Jails screens and how to add or manage jails see:
 
-[Jails Screens]({{< relref "/CORE/UIReference/Applications/Jails/JailsScreens.md" >}})
+[Jails Screens]({{< relref "/CORE/UIReference/JailsPluginsVMs/Jails/JailsScreens.md" >}})
 
-[Creating Jails]({{< relref "/CORE/CORETutorials/Applications/Jails/CreatingJails.md" >}})
+[Creating Jails]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Jails/CreatingJails.md" >}})
 
-[Setting Up Jail Storage]({{< relref "/CORE/CORETutorials/Applications/Jails/SettingUpJailStorage.md" >}})
+[Setting Up Jail Storage]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Jails/SettingUpJailStorage.md" >}})
 
-[Accessing Jails Using SSH]({{< relref "/CORE/CORETutorials/Applications/Jails/AccessingJailsUsingSSH.md" >}})
+[Accessing Jails Using SSH]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Jails/AccessingJailsUsingSSH.md" >}})
 
-[Installing Jail Software]({{< relref "/CORE/CORETutorials/Applications/Jails/InstallingJailSoftware.md" >}})
+[Installing Jail Software]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Jails/InstallingJailSoftware.md" >}})

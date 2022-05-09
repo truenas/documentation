@@ -61,7 +61,7 @@ You can rename the backup file to <file>config.json</file> to restore previous j
 
 ## Creating Jails
 
-TrueNAS has two options to create a jail. The Jail **Wizard** makes it easy to create a jail or the **ADVANCED JAIL CREATION** alternate method, where every possible jail option is configurable. See [Jails Screen]({{< relref "/CORE/UIReference/Applications/Jails/JailsScreens.md" >}} for more information on the Jails screens and configuration settings.
+TrueNAS has two options to create a jail. The Jail **Wizard** makes it easy to create a jail or the **ADVANCED JAIL CREATION** alternate method, where every possible jail option is configurable. See [Jails Screen]({{< relref "/CORE/UIReference/JailsPluginsVMs/Jails/JailsScreens.md" >}} for more information on the Jails screens and configuration settings.
 
 To add a new jail, click **Jails > ADD**. The wizard provides the simplest process to create and configure a new jail. The advanced configuration method is recommended for only advanced users with very specific use applications.
 
@@ -127,7 +127,7 @@ Configure the remaining **Basic Properties** when the jail needs to communicate 
 
 If you are an experienced user you can access additional advanced configuration settings in the **Jail Properties**, **Network Properties**, and **Custom Properties** sections.
 
-For more information on the configuration screens see [Jails Screens]({{< relref "/CORE/UIReference/Applications/Jails/JailsScreens.md" >}})
+For more information on the configuration screens see [Jails Screens]({{< relref "/CORE/UIReference/JailsPluginsVMs/Jails/JailsScreens.md" >}})
 
 ## Creating Template Jails
 
@@ -155,10 +155,10 @@ These steps create a template jail:
 ## Additional Information
 For information on Jails screens and how to add or manage jails see:
 
-[Jails Screens]({{< relref "/CORE/UIReference/Applications/Jails/JailsScreens.md" >}})
+[Jails Screens]({{< relref "/CORE/UIReference/JailsPluginsVMs/Jails/JailsScreens.md" >}})
 
-[Managing Jails]({{< relref "/CORE/CORETutorials/Applications/Jails/ManagingJails.md" >}})
+[Managing Jails]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Jails/ManagingJails.md" >}})
 
-[Setting Up Jail Storage]({{< relref "/CORE/CORETutorials/Applications/Jails/SettingUpJailStorage.md" >}})
+[Setting Up Jail Storage]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Jails/SettingUpJailStorage.md" >}})
 
-[Accessing Jails Using SSH]({{< relref "/CORE/CORETutorials/Applications/Jails/AccessingJailsUsingSSH.md" >}})
+[Accessing Jails Using SSH]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Jails/AccessingJailsUsingSSH.md" >}})

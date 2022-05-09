@@ -139,5 +139,5 @@ For more information on iSCSI shares also see:
 
 [Setting Up Fibre Channel]({{< relref "/CORE/CORETutorials/Sharing/iSCSI/SettingUpFibreChannel.md" >}})
 
-[Setting Up NPIV]({{< relref "/CORE/CORETutorials/Applications/VirtualMachines/SettingUpNPIV.md" >}})
+[Setting Up NPIV]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/VirtualMachines/SettingUpNPIV.md" >}})
 

@@ -135,12 +135,12 @@ Use **Next** to advance to the next configuration settings section, or click the
 ## Additional Information
 For information on Jails screens and how to add or manage jails see:
 
-[Creating Jails]({{< relref "/CORE/CORETutorials/Applications/Jails/CreatingJails.md" >}})
+[Creating Jails]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Jails/CreatingJails.md" >}})
 
-[Managing Jails]({{< relref "/CORE/CORETutorials/Applications/Jails/ManagingJails.md" >}})
+[Managing Jails]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Jails/ManagingJails.md" >}})
 
-[Setting Up Jail Storage]({{< relref "/CORE/CORETutorials/Applications/Jails/SettingUpJailStorage.md" >}})
+[Setting Up Jail Storage]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Jails/SettingUpJailStorage.md" >}})
 
-[Accessing Jails Using SSH]({{< relref "/CORE/CORETutorials/Applications/Jails/AccessingJailsUsingSSH.md" >}})
+[Accessing Jails Using SSH]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Jails/AccessingJailsUsingSSH.md" >}})
 
-[Installing Jail Software]({{< relref "/CORE/CORETutorials/Applications/Jails/InstallingJailSoftware.md" >}})
+[Installing Jail Software]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Jails/InstallingJailSoftware.md" >}})
