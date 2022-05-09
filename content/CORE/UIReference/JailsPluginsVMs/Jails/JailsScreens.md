@@ -93,6 +93,7 @@ Displays a screen that summarizes the Jail settings entered or selected on the W
 {{< /expand >}}
 
 {{< expand "Advanced Jail Creation Screens and Settings" "v" >}}
+
 The **Advanced Jail Creation** screens include four expandable configuration areas:
 * Basic Properties
 * Jail Properties
