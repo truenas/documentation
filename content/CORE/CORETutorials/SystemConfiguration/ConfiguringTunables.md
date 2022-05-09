@@ -1,6 +1,6 @@
 ---
 title: "Configuring Tunables"
-weight: 140
+weight: 120
 ---
 
 {{< hint danger >}}

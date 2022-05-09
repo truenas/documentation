@@ -1,6 +1,6 @@
 ---
 title: "Configuring KMIP"
-weight: 55
+weight: 170
 ---
 
 {{< hint info >}}

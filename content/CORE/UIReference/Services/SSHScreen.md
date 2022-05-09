@@ -20,4 +20,4 @@ For more information see:
 
 [Configuring SSH]({{< relref "/CORE/CORETutorials/Services/ConfiguringSSH.md" >}})
 
-[Configuring SSH Connections]({{< relref "/CORE/CORETutorials/Services/ConfiguringSSHConnections.md" >}})
+[Configuring SSH Connections]({{< relref "/CORE/CORETutorials/SystemConfiguration/ConfiguringSSHConnections.md" >}})

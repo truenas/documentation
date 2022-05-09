@@ -49,7 +49,7 @@ See [LDAP Screen]({{< relref "/CORE/UIReference/DirectoryServices/LDAPScreen.md"
 
 See [Kerberos]({{< relref "/CORE/CORETutorials/DirectoryServices/Kerberos.md" >}}) for more information on using Kerberos..
 
-To configure LDAP certificate-based authentication for the LDAP provider to sign, see [Certificate Signing Requests]({{< relref "/CORE/CORETutorials/CreatingCAsandCertificates/CreatingCertificates.md" >}}).
+To configure LDAP certificate-based authentication for the LDAP provider to sign, see [Certificate Signing Requests]({{< relref "CORE/CORETutorials/SystemConfiguration/CreatingCAsandCertificates/CreatingCertificates.md" >}}).
 
 {{< hint warning >}}
 **Samba Schema** is deprecated in [Samba 4.13.0](https://www.samba.org/samba/history/samba-4.13.0.html).

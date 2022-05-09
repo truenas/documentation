@@ -1,6 +1,6 @@
 ---
 title: "Configuring SSH Connections"
-weight: 120
+weight: 110
 aliases:
   - /core/system/systemssh
 ---

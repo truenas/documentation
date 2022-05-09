@@ -1,6 +1,6 @@
 ---
 title: "Configuring the System Email"
-weight: 87
+weight: 60
 aliases:
   - /core/system/email
 ---

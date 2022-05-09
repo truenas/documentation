@@ -7,7 +7,7 @@ weight: 40
 
 {{< hint warning >}}
 These options have reasonable defaults in place.
-Make sure you are comfortable with ZFS, FreeBSD, and system [configuration backup and restoration]({{< relref "UsingConfigurationBackups.md" >}}) before making any changes.
+Make sure you are comfortable with ZFS, FreeBSD, and system [configuration backup and restoration]({{< relref "CORE\CORETutorials\SystemConfiguration\UsingConfigurationBackups.md" >}}) before making any changes.
 {{< /hint >}}
 
 ![System Advanced13](/images/CORE/13.0/SystemAdvanced13.png "Advanced Settings")

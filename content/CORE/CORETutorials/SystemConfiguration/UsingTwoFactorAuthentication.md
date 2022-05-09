@@ -1,6 +1,6 @@
 ---
 title: "Using Two-Factor Authentication"
-weight: 35
+weight: 180
 aliases:
   - /core/system/2fa
 ---
