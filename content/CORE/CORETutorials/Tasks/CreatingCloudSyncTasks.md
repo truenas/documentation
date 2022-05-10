@@ -1,6 +1,6 @@
 ---
 title: "Creating Cloud Sync Tasks"
-weight: 100
+weight: 90
 aliases:
   - /core/system/cloudcredentials
   - /core/system/cloudsynctasks
