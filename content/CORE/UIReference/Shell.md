@@ -1,6 +1,6 @@
 ---
 title: "Shell"
-weight: 30
+weight: 140
 ---
 
 The web interface has a web shell that makes it convenient to run command line tools from the web browser as the root user.
