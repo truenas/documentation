@@ -17,6 +17,7 @@ All documentation provided here is end-of-life (EoL) and no longer receives *any
 <a href="https://www.truenas.com/docs/files/CORE12.0Docs.pdf">TrueNAS CORE 12.0</a>
 
 Release Notes:
+* [12.0-U8.1]({{< ref "/_includes/COREReleaseNotes/12.0/12.0U8.1.md" >}})
 * [12.0-U8]({{< ref "/_includes/COREReleaseNotes/12.0/12.0U8.md" >}})
 * [12.0-U7]({{< ref "/_includes/COREReleaseNotes/12.0/12.0U7.md" >}})
 * [12.0-U6.1]({{< ref "/_includes/COREReleaseNotes/12.0/12.0U6.1.md" >}})
