@@ -76,7 +76,7 @@ While TrueNAS is designed for and ever-evolving towards increased user friendlin
 
 * [ZFS Scrub]({{< relref "CORE/CORETutorials/Tasks/CreatingScrubTasks.md" >}}): the process that ZFS uses to verify the data on disk. All of the data is read and checked against the computed checksums to verify that no corruption has occurred.
 
-* [ZFS Resilver]({{< relref "CORE/CORETutorials/Tasks/ResilverPriority.md" >}}): process to reconstruct data on a disk when that disk has replaced a failed disk.
+* [ZFS Resilver]({{< relref "CORE/CORETutorials/Tasks/UsingResilverPriority.md" >}}): process to reconstruct data on a disk when that disk has replaced a failed disk.
 
 * [ZFS Replication]({{< relref "/CORE/UIReference/Tasks/ReplicationTasks/_index.md" >}}): copying a ZFS dataset to another dataset. The receiving dataset can be on the same machine or on another machine in a remote location. Replication works with snapshots so only the changes to the stored data need to be sent to the receiving dataset.
 
