@@ -7,11 +7,11 @@ aliases:
 
 {{< toc >}}
 
-ZFS has several features to help improve performance for frequent access data read operations. One is Adaptive Replacement Cache (ARC), which uses the server memory (RAM). The other is Second-level Adaptive Replacement Cache (L2ARC), or cache drives added to ZFS storage pools. These cache drives are multi-level cell (MLC) SSD drives and, while slower than system memory, still much faster than standard hard drives. ZFS (and TrueNAS) uses all of the RAM installed in a system to make the ARC as large as possible, but this can be very expensive. Cache drives provide a cheaper alternative to RAM for frequently accessed data.
+ZFS has several features to help improve performance for frequent access data read operations. One is Adaptive Replacement Cache (ARC), which uses the server memory (RAM). The other is second level adaptive replacement cache (L2ARC), which uses cache drives added to ZFS storage pools. These cache drives are multi-level cell (MLC) SSD drives and, while slower than system memory, are still much faster than standard hard drives. ZFS (including TrueNAS) uses all of the RAM installed in a system to make the ARC as large as possible, but this can be very expensive. Cache drives provide a cheaper alternative to RAM for frequently accessed data.
 
 ## How Does L2ARC Work?
 
-When a system gets read requests, ZFS uses ARC (RAM) to serve those requests. When the ARC is full and the system has L2ARC drives allocated to a ZFS pool, ZFS uses the L2ARC to fulfill the read requests that "overflowed" from the ARC. L2ARC minimizes how often the system accesses slower hard drives and increases system performance.
+When a system gets read requests, ZFS uses ARC (RAM) to serve those requests. When the ARC is full and there are L2ARC drives allocated to a ZFS pool, ZFS uses the L2ARC to serve the read requests that overflowed from the ARC. This reduces the use of slower hard drives and therefore increases system performance.
 
 ## Implementation in TrueNAS
 
