@@ -721,54 +721,12 @@ This is a an early release meant for previewing and testing features and is **no
 
 ## Known Issues
 
-<body class="ql-editor ql-editor-view" style="font-size:14px;">
-  <html>
-    <body>
-      <table width="100%">
-        <thead>
-          <tr>
-            <th>Key</th>
-            <th>Summary</th>
-            <th>Workaround</th>
-          </tr>
-        </thead>
-        <tbody>
-		  <tr>
-	        <td><a href="https://jira.ixsystems.com/browse/NAS-116090" target="_blank">NAS-116090</a></td>
-	        <td>Mini 3.0 E+ View Enclosure showing populated drive bay as empty.</td>
-	        <td>The enclosure view for all Mini 3.0 platforms will show the top bay as unpopulated even when a drive is inserted.  This issue will be resolved in the TrueNAS 13.0-U1 release.</td>
-	      </tr>
-		  <tr>
-			<td><a href="https://jira.ixsystems.com/browse/NAS-115838" target="_blank">NAS-115838</a> and <a href="https://jira.ixsystems.com/browse/NAS-115847" target="_blank">NAS-115847</a></td>
-			<td>Plugin install failures due to end of life (EoL) 12.2 FreeBSD release.</td>
-			<td>Official and community plugins began failing to install when the FreeBSD 12.2 release was marked EoL. Official plugins are already fixed and available for download and community plugins are being fixed separately from the TrueNAS release cycles.</td>
-		  </tr>
-          <tr>
-			<td><a href="https://jira.ixsystems.com/browse/NAS-114160" target="_blank">NAS-114160</a></td>
-			<td>Connection interrupt when managing jails or plugins.</td>
-			<td>This behavior was seen in early testing and is still being investigated. No workaround is necessary as the connection resumes after a brief interruption.</td>
-		  </tr>
-		  <tr>
-			<td><a href="https://jira.ixsystems.com/browse/NAS-114480" target="_blank">NAS-114480</a></td>
-			<td>Unable to connect to TrueCommand Cloud</td>
-			<td>Avoid connecting 13.0-BETA1 systems to TrueCommand Cloud while this issue is investigated.</td>
-		  </tr>
-		  <tr>
-			<td><a href="https://jira.ixsystems.com/browse/NAS-114595" target="_blank">NAS-114595</a></td>
-			<td>VNC can't connect to bhyve VMs.</td>
-			<td>Update to 13.0 Nightlies or 13.0-Release (when available).</td>
-		  </tr>
-		  <tr>
-            <td></td>
-            <td>TrueNAS 12 can not replicate to or from TrueNAS 13</td>
-            <td>By default, TrueNAS 12 cannot initiate a replication to or from TrueNAS 13 due to an outdated SSH client library.  Allowing replication to or from TrueNAS 13 to TrueNAS 12 requires allowing ssh.rsa algorithms. See <a href="https://www.openssh.com/txt/release-8.2" target="_blank">OpenSSH 8.2 Release</a> for security considerations. Log into the TrueNAS 13 system and go to <b>Services->SSH</b>.  Add the <b>SSH Auxiliary Parameter</b>: <code>PubkeyAcceptedAlgorithms +ssh-rsa</code>.</td>
-          </tr>
-          <tr>
-            <td><a href="https://jira.ixsystems.com/browse/NAS-107151" target="_blank">NAS-107151</a></td>
-            <td>Replication fails between legacy TrueNAS 9.10 systems and 13.0-BETA1 systems</td>
-            <td>Due to numerous improvements in the replication engine and ZFS, TrueNAS 9.10 systems (or earlier) cannot replicate to or from TrueNAS 13.0-BETA1. Update the legacy TrueNAS system to 11.3 first, then 12.0, and then 13.0-BETA1.</td>
-          </tr>
-		</tbody>
-      </table>
-    </body>
-  </html>
+| Seen In | Key | Summary | Workaround | Resolved In |
+|---------|-----|---------|------------|-------------|
+| 13.0-Release | [NAS-116090](https://jira.ixsystems.com/browse/NAS-116090) | Mini 3.0 E+ View Enclosure showing populated drive bay as empty. | The enclosure view for all Mini 3.0 platforms will show the top bay as unpopulated even when a drive is inserted. | 13.0-U1 release (targeted) |
+| 13.0-BETA1 | [NAS-114160](https://jira.ixsystems.com/browse/NAS-114160) | Connection interrupt when managing jails or plugins. | This behavior was seen in early testing and is still being investigated. No workaround is necessary as the connection resumes after a brief interruption. | 13.0-U1 release (targeted) |
+| 13.0-BETA1 | [NAS-114595](https://jira.ixsystems.com/browse/NAS-114595) | VNC can't connect to bhyve VMs. | Update to 13.0 Nightlies or 13.0-U1 (when available). | 13.0-U1 (targeted) |
+| 12.0-U8.1 and 13.0-BETA1 | [NAS-115838](https://jira.ixsystems.com/browse/NAS-115838) | Plugin install failures due to end of life (EoL) 12.2 FreeBSD release. | Resolved separately from TrueNAS releases on April 19, 2022. |
+| 13.0-BETA1 | [NAS-114480](https://jira.ixsystems.com/browse/NAS-114480) | Unable to connect to TrueCommand Cloud. | Avoid connecting 13.0-BETA1 systems to TrueCommand Cloud while this issue is investigated. | 13.0-RC1 |
+| N/A | N/A | TrueNAS 12 cannot replicate to or from TrueNAS 13 | By default, TrueNAS 12 cannot initiate a replication to or from TrueNAS 13 due to an outdated SSH client library. Allowing replication to or from TrueNAS 13 to TrueNAS 12 requires allowing ssh.rsa algorithms. See [OpenSSH 8.2 Release](https://www.openssh.com/txt/release-8.2) for security considerations. Log into the TrueNAS 13 system and go to **Services->SSH**. Add the **SSH Auxiliary Parameter**: `PubkeyAcceptedAlgorithms +ssh-rsa`. | N/A |
+| 12.0-BETA2 | [NAS-107151](https://jira.ixsystems.com/browse/NAS-107151) | Replication fails between legacy TrueNAS 9.10 systems and 13.0-BETA1 systems. | Due to numerous improvements in the replication engine and ZFS, TrueNAS 9.10 systems (or earlier) cannot replicate to or from TrueNAS 13.0-BETA1. Update the legacy TrueNAS system to 11.3 first, then 12.0, and then 13.0. | N/A |
