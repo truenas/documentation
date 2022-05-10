@@ -14,8 +14,7 @@ All documentation provided here is end-of-life (EoL) and no longer receives *any
 
 {{< expand "TrueNAS CORE 12.0" "v" >}}
 
-Archived documentation coming soon!
-<!-- add pdf file name here and uncomment when static docs are generated. <a href="https://www.ixsystems.com/docs/files/placeholder.pdf">TrueNAS CORE 12.0</a> -->
+<a href="https://www.truenas.com/docs/files/CORE12.0Docs.pdf">TrueNAS CORE 12.0</a>
 
 Release Notes:
 * [12.0-U8]({{< ref "/_includes/COREReleaseNotes/12.0/12.0U8.md" >}})
