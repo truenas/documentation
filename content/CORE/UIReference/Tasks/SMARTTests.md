@@ -15,7 +15,7 @@ Refer to your respective drive documentation for confirmation.
 S.M.A.R.T. tests are run on a disk.
 Running tests can reduce drive performance, so we recommend scheduling tests when the system is in a low-usage state.
 Avoid scheduling disk-intensive tests at the same time!
-For example, S.M.A.R.T. tests should not be scheduled on the same day as a disk [scrub]({{< relref "CORE/CORETutorials/Tasks/CreatingScrubTasks.md" >}}) or [resilver]({{< relref "/CORE/CORETutorials/Tasks/ResilverPriority.md" >}}).
+For example, S.M.A.R.T. tests should not be scheduled on the same day as a disk [scrub]({{< relref "CORE/CORETutorials/Tasks/CreatingScrubTasks.md" >}}) or [resilver]({{< relref "/CORE/CORETutorials/Tasks/UsingResilverPriority.md" >}}).
 
 
 
