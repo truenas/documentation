@@ -1,5 +1,5 @@
 ---
-title: "Core Security Reports"
+title: "CORE Security Reports"
 geekdocCollapseSection: true
 weight: 175
 ---

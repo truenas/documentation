@@ -5,7 +5,7 @@ Every kind of network interface has common settings:
 ![NetworkInterfacesAddOtherSettings](/images/CORE/12.0/NetworkInterfacesAddOtherSettings.jpg "Common Interface Settings")
 
 Disabling *Hardware Offloading* is discouraged as it can reduce network performance.
-However, disabling this option might be needed when the interface is managing [Jails](/core/applications/jails/create/), [Plugins](/core/applications/plugins/manageplugins/), or [Virtual Machines](/core/applications/virtualmachines/basic/).
+However, disabling this option might be needed when the interface is managing [Jails]({{< relref "Create.md" >}}), [Plugins]({{< relref "ManagePlugins.md" >}}), or [Virtual Machines]({{< relref "Basic.md" >}}).
 
 The Maximum Transmission Unit (MTU) is the largest protocol data unit that can be communicated.
 What the largest workable MTU size can be will change according to your available network interfaces and other physical hardware.

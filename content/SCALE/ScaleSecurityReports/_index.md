@@ -1,7 +1,7 @@
 ---
 title: "SCALE Security Reports"
 geekdocCollapseSection: true
-weight: 135
+weight: 60
 ---
 
 TrueNAS SCALE is not currently an enterprise release. We only recommended SCALE for early adopters who have a backup plan.

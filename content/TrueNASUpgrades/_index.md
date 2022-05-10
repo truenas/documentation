@@ -30,7 +30,8 @@ These trains have the various preview / early build releases of the software.
 
 TrueNAS offers "nightly" images which allow adventurous users and developers to participate in early testing and feedback of future versions of TrueNAS.
 These images should not be used in production, and users are required to roll back to a previous "released" version before upgrading again to a stable release.
-See [CORE Updates]({{< relref "/content/CORE/System/Update/_index.md" >}}) for more information about how to use nightly images.
+
+See [CORE Updates]({{< relref "UpdatingCORE.md" >}}) for more information about how to use nightly images.
 
 ## Migrating from CORE to SCALE
 
@@ -42,4 +43,4 @@ It is not suitable for TrueNAS Enterprise customers and CORE users should always
 
 TrueNAS CORE 12.0 and later users can now migrate to SCALE!
 This update can be performed with an <file>.iso</file> and USB stick and preserves much of your existing CORE configuration.
-See [Migrating from CORE]({{< relref "MigratingFromCORE.md" >}}) for the USB migration process.
+See [Migrating from CORE]({{< relref "/Content/SCALE/GettingStarted/MigratingFromCORE.md" >}}) for the USB migration process.

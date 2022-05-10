@@ -1,6 +1,6 @@
 ---
 title: "First Time Login"
-weight: 14
+weight: 60
 ---
 
 Now that you have installed and configured TrueNAS SCALE, you can log in to the web interface and begin managing data!
@@ -236,4 +236,4 @@ The **Power** button lets the user log out of, restart, or shut down the system.
 
 ## Storing Data
 
-Now that you can access the TrueNAS web interface and see all the management options, you can begin [storing data]({{< relref "/SCALE/Storage/_index.md" >}})!
+Now that you can access the TrueNAS web interface and see all the management options, you can begin [storing data]({{< relref "/SCALE/SCALEUIReference/Storage/_index.md" >}})!

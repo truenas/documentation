@@ -1,6 +1,6 @@
 ---
 title: "Component Naming"
-weight: 60
+weight: 25
 ---
 
 {{< toc >}}

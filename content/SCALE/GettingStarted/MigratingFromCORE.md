@@ -1,6 +1,6 @@
 ---
 title: "Migrating from TrueNAS CORE"
-weight: 11
+weight: 45
 ---
 
 {{< toc >}}
@@ -47,7 +47,7 @@ After choosing to install in new boot environment, the installer warns that SCAL
 
 Once the installation completes, reboot the system and remove the USB with the SCALE <file>.iso<file> file.
 
-When TrueNAS SCALE boots, you might need to [use the Shell to configure networking interfaces]({{< relref "/SCALE/Network/_index.md" >}}) to enable GUI accessibility.
+When TrueNAS SCALE boots, you might need to [use the Shell to configure networking interfaces]({{< relref "/SCALE/SCALEUIReference/Network/_index.md" >}}) to enable GUI accessibility.
 
 {{< /tab >}}
 

@@ -18,7 +18,7 @@ Samba supports server-side copy of files on the same share with clients from Win
 Copying between two different shares is not server-side.
 Windows 7 clients support server-side copying with [Robocopy](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc733145(v=ws.11)).
 
-[SMB Tips and Tricks](https://forums.freenas.org/index.php?resources/smb-tips-and-tricks.15/) shows helpful hints for configuring and managing SMB networking.
+[SMB Tips and Tricks](https://www.truenas.com/community/resources/smb-tips-and-tricks.15/) shows helpful hints for configuring and managing SMB networking.
 
 This video explains the process of setting up ACLs with the new UI in FreeNAS 11.3:
 {{< youtube mCfX4sqDmzs >}}
@@ -26,10 +26,10 @@ This video explains the process of setting up ACLs with the new UI in FreeNAS 11
 Tom from Lawrence Systems explains setting SMB ACLs in TrueNAS Core 12.0 in this video:
 {{< youtube R-5jbDTCsOE >}}
 
-Another helpful reference is [Methods For Fine-Tuning Samba Permissions](https://forums.freenas.org/index.php?threads/methods-for-fine-tuning-samba-permissions.50739/).
+Another helpful reference is [Methods For Fine-Tuning Samba Permissions](https://www.truenas.com/community/threads/methods-for-fine-tuning-samba-permissions.50739/).
 
 {{< hint warning >}}
-[The SMB1 protocol is disabled by default for security](/core/notices/smb1advisory/).
+[The SMB1 protocol is disabled by default for security]({{< relref "/CORE/CORESecurityReports/SMB1Advisory.md" >}}).
 {{< /hint >}}
 
 By default, Samba disables NTLMv1 authentication for security.

@@ -26,3 +26,9 @@
 |------|-------------|
 | Crash reporting | Send failed HTTP request data which can include client and server IP addresses, failed method call tracebacks, and middleware log file contents to iXsystems. |
 | Usage collection | Enable sending anonymous usage statistics to iXsystems. |
+
+**SAVE CONFIG**: Saves a backup copy of the current configuration database in the format *hostname-version-architecture*.
+
+**UPLOAD CONFIG**: Browse to a previously saved configuration file to restore that configuration.
+
+**RESET CONFIG**: Reset the configuration database to the default base version.

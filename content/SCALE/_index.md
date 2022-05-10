@@ -2,9 +2,13 @@
 title: "TrueNAS SCALE"
 geekdocCollapseSection: true
 weight: 20
+aliases:
+  - /scale/devnotes/
+  - /scale/introduction/
 ---
-
-<img src="/images/truenas_scale-logo-full-color-rgb.png" style="size:50%;"> <br><br>
+<p style="text-align:center;">
+<img src="/images/truenas_scale-logo-full-color-rgb.png" style="width:50%;">
+</p>
 
 **TrueNAS SCALE** is the latest member of the TrueNAS family and provides Open Source HyperConverged Infrastructure (HCI) including Linux containers and VMs.
 TrueNAS SCALE includes the ability to cluster systems and provide scale-out storage with capacities of up to hundreds of Petabytes.
@@ -36,6 +40,27 @@ OpenZFS and Gluster combine to enable scale-out ZFS capabilities with excellent 
 Deploy a single hyperconverged node in a home/office or a cluster with hundreds of compute and storage nodes in a datacenter.
 {{< /tab >}}
 {{< tab "Virtualization" >}}
+
 With support for KVM VMs, Kubernetes, and Docker containers, it’s easy to add applications to suit your every need.
 {{< /tab >}}
 {{< /tabs >}}
+
+## Documentation Sections
+
+TrueNAS SCALE documentation is divided into several sections or books:
+
+* The [Getting Started Guide](/scale/gettingstarted) provides the first steps for your experience with TrueNAS SCALE:
+  * Software Licensing information.
+  * Recommendations and considerations when selecting hardware.
+  * Installation tutorials.
+  * First-time software configuration instructions.
+
+* [Configuration Tutorials](/scale/scaletutorials) have many community and iXsystems -provided procedural how-tos for specific software use-cases.
+
+* The [UI Reference Guide](/scale/scaleuireference) describes each section of the SCALE web interface, including descriptions for each configuration option.
+
+* [API Reference](/scale/api) describes how to access the API documentation on a live system and includes a static copy of the API documentation.
+
+* [CORE Security Reports](/scale/scalesecurityreports) links to the TrueNAS Security Hub and also contains any additional security-related notices.
+
+{{< include file="static/includes/General/MenuNav.md.part" markdown="true" >}}

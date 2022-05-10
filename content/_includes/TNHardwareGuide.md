@@ -27,7 +27,7 @@ For help building a system according to your unique performance, storage, and ne
 The heart of any storage system is the symbiotic pairing of its file system and physical storage devices.
 The ZFS file system in TrueNAS provides the [best available data protection of any file system at any cost](https://www.ixsystems.com/blog/openzfs-vs-the-competition/) and makes very effective use of both spinning-disk and all-flash storage or a mix of the two.
 ZFS is prepared for the eventual failure of storage devices. It is highly configurable to achieve the perfect balance of redundancy and performance to meet any storage goal.
-A properly-configured TrueNAS system can tolerate the failure of multiple storage devices and even recreate its boot media with a copy of the [configuration file]({{< relref "ConfigBackup.md" >}}).
+A properly-configured TrueNAS system can tolerate the failure of multiple storage devices and even recreate its boot media with a copy of the [configuration file]({{< relref "/content/CORE/CORETutorials/SystemConfiguration/UsingConfigurationBackups.md" >}}).
 
 ### Storage Media
 
@@ -127,7 +127,7 @@ Poorly-designed systems can cause an unexpected fill-up in the ARC and reduce pe
 For example, a 480 GB L2ARC filled with 4KiB blocks needs more than 10GiB of metadata storage in the primary ARC.
 {{< /tab >}}
 {{< tab "Self Encrypting Drives" >}}
-TrueNAS supports two forms of data encryption at rest to achieve privacy and compliance objectives: [Native ZFS encryption]({{< relref "StorageEncryption.md" >}}) and [Self Encrypting Drives (SEDs)]({{< relref "SED.md" >}}).
+TrueNAS supports two forms of data encryption at rest to achieve privacy and compliance objectives: [Native ZFS encryption]({{< relref "CORE/UIReference/Storage/Pools/StorageEncryption.md" >}}) and [Self Encrypting Drives (SEDs)]({{< relref "/CORE/CORETutorials/Storage/SED.md" >}}).
 SEDs do not experience the performance overhead introduced by software partition encryption but aren’t as readily available as non-SED drives (and thus can cost a little more).
 {{< /tab >}}
 {{< tab "Boot Devices" >}}
