@@ -52,3 +52,17 @@ The navigation pane to the left has topics that you can expand to find the speci
 Contributors welcome! Anyone can contribute new content or feedback about the Documentation Hub and TrueNAS by [**Reporting Issues**]({{< relref "/Contributing/IssueReporting/_index.md" >}}) or suggesting [**updates**]({{< relref "ContentUpdate.md" >}}) and [**new articles**]({{< relref "/Contributing/Documentation/NewArticles/_index.md" >}}).  
   
 Can't find what you're looking for? Just want to be part of the TrueNAS community? Join our [**Community Forums**](https://www.truenas.com/community/) or the [**TrueNAS subreddit**](https://www.reddit.com/r/truenas/).
+
+{{< expand "testexpand" "v" >}}
+
+Text
+
+{{< expand "testnestexpand" "v" >}}
+
+testexpand
+
+{{< /expand >}}
+
+text2
+
+{{< /expand >}}
