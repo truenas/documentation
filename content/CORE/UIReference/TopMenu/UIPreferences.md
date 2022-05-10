@@ -1,6 +1,6 @@
 ---
 title: "Interface Preferences"
-weight: 10
+weight: 30
 aliases: /core/administration/uipreferences/
 ---
 

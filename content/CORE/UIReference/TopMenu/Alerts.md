@@ -1,6 +1,6 @@
 ---
 title: "Alert Notifications"
-weight: 15
+weight: 20
 ---
 
 ![AlertsPanel](/images/CORE/AlertsPanel.png "Alerts Panel")

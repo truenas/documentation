@@ -79,7 +79,7 @@ The security information in the configuration file can grant unauthorized access
 
 ## Update the System
 
-Ensure the system is in a low-usage state as described above in [Preparing for Updates](#preparing-systems-for-updates-and-upgrades).
+Ensure the system is in a low-usage state as described above in [Preparing for Updates](#prepare-the-system).
 Click **DOWNLOAD UPDATES** to download and install an update.
 
 The **Save Configuration** dialog appears so you can save the current configuration to external media.

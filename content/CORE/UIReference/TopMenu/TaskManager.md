@@ -1,6 +1,6 @@
 ---
 title: "Task Manager"
-weight: 14
+weight: 10
 ---
 
 The **Task Manager** displays a list of tasks performed by the TrueNAS system starting with the most recent. Click the <i class="material-icons">assignment</i> to open the **Task Manager**.

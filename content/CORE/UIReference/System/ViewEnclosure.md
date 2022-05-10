@@ -1,6 +1,6 @@
 ---
 title: "View Enclosure"
-weight: 50
+weight: 45
 ---
 
 {{< hint ok >}}

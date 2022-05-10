@@ -1,6 +1,6 @@
 ---
 title: "Reporting"
-weight: 20
+weight: 135
 Aliases: /core/system/reporting/
 ---
 
@@ -84,7 +84,7 @@ Temperature monitoring for the disk is disabled if **HDD Standby** is enabled. C
 
 {{< /expand >}}
 {{< expand "Network Graphs" "v" >}}
-[Network](https://collectd.org/wiki/index.php/Plugi:Interface) graphs report received and transmitted traffic in megabytes per second for each configured interface.
+[Network](https://collectd.org/wiki/index.php/Plugin:Interface) graphs report received and transmitted traffic in megabytes per second for each configured interface.
 
 ![ReportingNetworkTab](/images/CORE/12.0/ReportingNetworkTab.png "Network Reporting")
 
