@@ -58,7 +58,7 @@ Some vdev extending examples:
 {{< expand "Scrub Pool" >}}
 Initiate a data integrity check of the pool.
 Any problems detected during the scrub are either automatically corrected or generates an [alert]({{< relref "CORE/UIReference/System/AlertServices.md" >}}) in the web interface.
-By default, every pool is automatically checked on a reoccurring [scrub schedule]({{< relref "/CORE/CORETutorials/Tasks/ScrubTasks.md" >}}).
+By default, every pool is automatically checked on a reoccurring [scrub schedule]({{< relref "/CORE/CORETutorials/Tasks/CreatingScrubTasks.md" >}}).
 {{< /expand >}}
 {{< expand "Status" >}}
 Opens the **Pool Status** screen to show the state of the last scrub and disks in the pool.

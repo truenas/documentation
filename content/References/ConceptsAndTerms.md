@@ -74,7 +74,7 @@ While TrueNAS is designed for and ever-evolving towards increased user friendlin
 
 * [ZFS Snapshots]({{< relref "CORE/CORETutorials/Storage/Snapshots.md" >}}): read-only copy of a file system or volume. When a snapshot of a dataset is made, ZFS records the timestamp of when the snapshot was made. No data is copied and no extra storage is consumed. Only when changes occur in the filesystem and the data in it diverges from the snapshot does the snapshot start using additional storage.
 
-* [ZFS Scrub]({{< relref "CORE/CORETutorials/Tasks/ScrubTasks.md" >}}): the process that ZFS uses to verify the data on disk. All of the data is read and checked against the computed checksums to verify that no corruption has occurred.
+* [ZFS Scrub]({{< relref "CORE/CORETutorials/Tasks/CreatingScrubTasks.md" >}}): the process that ZFS uses to verify the data on disk. All of the data is read and checked against the computed checksums to verify that no corruption has occurred.
 
 * [ZFS Resilver]({{< relref "CORE/CORETutorials/Tasks/ResilverPriority.md" >}}): process to reconstruct data on a disk when that disk has replaced a failed disk.
 

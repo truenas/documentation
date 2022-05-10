@@ -1,5 +1,5 @@
 ---
-title: "Scrub Tasks"
+title: "Creating Scrub Tasks"
 weight: 80
 ---
 
