@@ -1,5 +1,5 @@
 ---
-title: "How To Back Up Google Drive to TrueNAS CORE"
+title: "Backing Up Google Drive to TrueNAS"
 weight: 100
 ---
 
