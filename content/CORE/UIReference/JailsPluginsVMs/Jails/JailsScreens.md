@@ -130,7 +130,7 @@ Use **Next** to advance to the next configuration settings section, or click the
 
 ![AdvancedJailCreationCustomProperties](/images/CORE/13.0/AdvancedJailCreationCustomProperties.png "Advanced Jail Creation Custom Properties")  
 
-{{< include file="_includes/JailsCustomPropertiesFields.md." markdown="true" >}}
+{{< include file="_includes/JailsCustomPropertiesFields.md" markdown="true" >}}
 
 {{< /expand >}}
 
