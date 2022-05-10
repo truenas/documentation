@@ -75,7 +75,7 @@ You can still save the rsync task and run it manually.
 The *remote* system must have *SSH* enabled.
 To enable SSH in TrueNAS, go to **Services** and toggle **SSH**.
 
-The *host* system needs an established [SSH connection]({{< relref "CORE\CORETutorials\SystemConfiguration\ConfiguringSSHConnections.md" >}}) to the *remote* for the rsync task.
+The *host* system needs an established [SSH connection]({{< relref "CORE/CORETutorials/SystemConfiguration/ConfiguringSSHConnections.md" >}}) to the *remote* for the rsync task.
 To create the connection, go to **System > SSH Connections** and click *Add*.
 Configure a *Semi-automatic* connection and set *Private Key* to *Generate New*.
 
@@ -129,7 +129,7 @@ Go to **Tasks > Rsync Tasks** and click *ADD*.
 Configure the SSH settings first by selecting *SSH* in the *Rsync Mode* dropdown and entering the *Port* number and *Remote Path*.
 
 Next, define the **Source** dataset to use for the rsync task and select a *User* account.
-The *User* must be identical to the [SSH Connection]({{< relref "CORE\CORETutorials\SystemConfiguration\ConfiguringSSHConnections.md" >}}) *Username*.
+The *User* must be identical to the [SSH Connection]({{< relref "CORE/CORETutorials/SystemConfiguration/ConfiguringSSHConnections.md" >}}) *Username*.
 
 Choose a direction for the rsync task, either *Push* or *Pull* and then define the task *Schedule*.
 If you need a custom schedule, select *Custom*.
