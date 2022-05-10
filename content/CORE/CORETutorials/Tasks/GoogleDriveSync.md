@@ -11,7 +11,6 @@ For example, companies using G Suite for important work may need to keep records
 
 TrueNAS can easily back up Google Drive using its built-in cloud sync.
 
-
 ### Set up Google Drive Credentials
 
 Go to **System > Cloud Credentials** and click **ADD**.
