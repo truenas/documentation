@@ -9,7 +9,7 @@ ZFS has several features to help improve performance for frequent access data re
 
 ## How Does L2ARC Work?
 
-When a system gets read requests, ZFS uses ARC (RAM) to serve those requests. When the ARC is full and there are L2ARC drives allocated to a ZFS pool, ZFS uses the L2ARC to serve the read requests that "overflowed" from the ARC. This reduces the use of slower hard drives and therefore increases system performance.
+When a system gets read requests, ZFS uses ARC (RAM) to serve those requests. When the ARC is full and there are L2ARC drives allocated to a ZFS pool, ZFS uses the L2ARC to serve the read requests that overflowed from the ARC. This reduces the use of slower hard drives and therefore increases system performance.
 
 ### Implementation in TrueNAS
 
