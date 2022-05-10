@@ -90,9 +90,10 @@ Displays a screen that summarizes the Jail settings entered or selected on the W
 ![JailsWizardConfirmOptions](/images/CORE/13.0/JailsWizardConfirmOptions.png "Jails Wizard Confirm Options")
 
 {{< /expand >}}
+
 {{< /expand >}}
 
-{{< expand "Advanced Jail Creation Screens and Settings" "v" >}}
+{{< expand "Advanced Jail Creation" "v" >}}
 
 The **Advanced Jail Creation** screens include four expandable configuration areas:
 * Basic Properties
@@ -129,8 +130,10 @@ Use **Next** to advance to the next configuration settings section, or click the
 
 ![AdvancedJailCreationCustomProperties](/images/CORE/13.0/AdvancedJailCreationCustomProperties.png "Advanced Jail Creation Custom Properties")  
 
-{{< include file="content/_includes/JailsCustomPropertiesFields.md." markdown="true" >}}
+{{< include file="_includes/JailsCustomPropertiesFields.md" markdown="true" >}}
+
 {{< /expand >}}
+
 {{< /expand >}}
 
 ## Additional Information

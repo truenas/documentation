@@ -23,7 +23,7 @@ Transferring data from TrueNAS to the Cloud requires saving Cloud Storage Provid
 
 {{< expand "Is this secure?" "v" >}}
 To maximize security, TrueNAS encrypts credentials after saving.
-However, this means that to restore any cloud credentials from a TrueNAS configuration file, you must enable **Export Password Secret Seed** when generating that [configuration backup]({{< relref "CORE\CORETutorials\SystemConfiguration\UsingConfigurationBackups.md" >}}).
+However, this means that to restore any cloud credentials from a TrueNAS configuration file, you must enable **Export Password Secret Seed** when generating that [configuration backup]({{< relref "/content/CORE/CORETutorials/SystemConfiguration/UsingConfigurationBackups.md" >}}).
 Remember to protect any downloaded TrueNAS configuration files.
 {{< /expand >}}
 

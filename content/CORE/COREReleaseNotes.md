@@ -1,5 +1,5 @@
 ---
-title: CORE 13.0 Release Notes
+title: 13.0 Release Notes
 weight: 2
 aliases:
   - /releasenotes/core/13.0beta1/
@@ -11,16 +11,12 @@ aliases:
 
 {{< include file="/static/includes/General/LifecycleTable.html.part" html="true" >}}
 
-## CORE Schedule
+## Schedule
 
 {{< include file="/content/_includes/ReleaseScheduleWarning.md" type="page" >}}
 
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
-| 13.0-RELEASE | Code-freeze | 27 April 2022 |
-| 13.0-RELEASE | Internal Testing Sprints | 28 April > 06 May 2022 |
-| 13.0-RELEASE | Tag | 09 May 2022 |
-| 13.0-RELEASE | Release | 10 May 2022 |
 | 13.0-U1 | Code-freeze | 15 June 2022 |
 | 13.0-U1 | Internal Testing Sprints | 20 June > 24 June 2022 |
 | 13.0-U1 | Tag | 27 June 2022 |
@@ -30,8 +26,183 @@ aliases:
 | 13.0-U2 | Tag | 01 August 2022 |
 | 13.0-U2 | Release | 02 August 2022 |
 
+## 13.0-RELEASE
+
+**May 10, 2022**
+
+iXsystems is pleased to announce the release of TrueNAS 13.0-RELEASE.
+
+## TrueNAS 13.0-RELEASE Changelog
+
+### Improvement
+
+<ul>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-102782'>NAS-102782</a>] -         Allow Default or Previous ZVol Location in VM wizard
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-105814'>NAS-105814</a>] -         Dashboard grouping for Credentials section
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-105815'>NAS-105815</a>] -         Dashboard grouping for Storage section
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-105816'>NAS-105816</a>] -         Improvements to main dashboard
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-105817'>NAS-105817</a>] -         Dashboard grouping for Data protection section
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-105818'>NAS-105818</a>] -         Dashboard grouping for Network section
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-105819'>NAS-105819</a>] -         Dashboard grouping for Applications section
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-105820'>NAS-105820</a>] -         Dashboard grouping for Shares section
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-105821'>NAS-105821</a>] -         Dashboard grouping for System settings section
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-105822'>NAS-105822</a>] -         Dashboard grouping for Reporting
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-105868'>NAS-105868</a>] -         CPU dash widget, temperature colors
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-110523'>NAS-110523</a>] -         When ZFS dedup is enabled on a pool, use SHA512 as the checksum algorithm
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-111124'>NAS-111124</a>] -         cache static info and optimize system.info on TN CORE
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-111972'>NAS-111972</a>] -         enclosure rewrite on CORE
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-111974'>NAS-111974</a>] -         get/set SES cython module for CORE
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-113285'>NAS-113285</a>] -         Use O_EMPTY_PATH when converting pathref FSP to IO FSP
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115640'>NAS-115640</a>] -         Use NDFREE_PNBUF if available on FreeBSD
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115700'>NAS-115700</a>] -         Add "zpool list -v" output to debug
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115720'>NAS-115720</a>] -         Azure Custom Endpoint
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115743'>NAS-115743</a>] -         Move plugins using 12.2-RELEASE to consume 12.3-RELEASE
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115880'>NAS-115880</a>] -         update intel-pcm port fbsd 13
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115928'>NAS-115928</a>] -         bsd.geom eating too much memory for no benefit
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115931'>NAS-115931</a>] -         use defaultdict in geom.cache plugin
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115970'>NAS-115970</a>] -         fix restart_services method in pool.py
+</li>
+</ul>
+
+### New Feature
+
+<ul>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-100422'>NAS-100422</a>] -         rsync task on a single file
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-102185'>NAS-102185</a>] -         Add ability to view that VM's logs to UI
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-113617'>NAS-113617</a>] -         Update iconik plugin
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-114888'>NAS-114888</a>] -         Update Asigra plugin
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115502'>NAS-115502</a>] -         Help Widget for TrueNAS dashboard in CORE
+</li>
+</ul>
+
+### Epic
+
+<ul>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-102089'>NAS-102089</a>] -         Improvements to Account pages
+</li>
+</ul>
+
+### Bug
+
+<ul>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-106381'>NAS-106381</a>] -         get rid of /tmp/failover.json
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-108666'>NAS-108666</a>] -         netcli operation hangs on uniq
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-108777'>NAS-108777</a>] -         replication allows mountroot to be set to /
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-112460'>NAS-112460</a>] -         fix memory leak in py-bsd/enclosure.pyx
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-112465'>NAS-112465</a>] -         fix edge-case memory leak in py-bsd/enclosures.pyx
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-112480'>NAS-112480</a>] -         failover.internal_interface.detect broken on 13
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-113211'>NAS-113211</a>] -         Merge FreeBSD and Linux samba repos
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-113284'>NAS-113284</a>] -         Samba CVE-2021-20316. Symlink race error can allow metadata read and modify outside of the exported share.
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-113368'>NAS-113368</a>] -         Jail stopped working after upgrade to 12.0-U6.1 with utf-8 decoding error
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-114261'>NAS-114261</a>] -         Fix KeyError for edge case where backup of domain secrets is incomplete
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-114370'>NAS-114370</a>] -         MacOS SMB clients may behave badly on inode reuse
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-114380'>NAS-114380</a>] -         ctl collectd plugin has static sized arrays based on CTL_MAX_PORTS
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-114778'>NAS-114778</a>] -         atime not handled properly in SMB transfers
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-114952'>NAS-114952</a>] -         WS-Discovery not working after reboot
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-114960'>NAS-114960</a>] -         Long SMART Extended Self Test stuck at 90% for more than 48 hours
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-114986'>NAS-114986</a>] -         Replication fails with: can't compare offset-naive and offset-aware datetimes
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-114987'>NAS-114987</a>] -         Can not create pool
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115011'>NAS-115011</a>] -         13.0 beta 1: Configuration file format is too old
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115110'>NAS-115110</a>] -         Webui userquotas / groupquotas improperly requires users to exist on server in order to remove a quota in bulk change tool
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115426'>NAS-115426</a>] -         Active Directory doesn't allow saving or warn when NetBIOS name > 15 characters
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115511'>NAS-115511</a>] -         SMB GUI for Recycle Bin Advising Bad Config
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115514'>NAS-115514</a>] -         Incorrect Units used in Network Repoting (Octets vs Mb)
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115607'>NAS-115607</a>] -         Kernel panics on I/O to spun down disks
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115633'>NAS-115633</a>] -         Network graph: incorrect legend units
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115639'>NAS-115639</a>] -         scale - zfs recordsize artificially capped at 1M. Should be tunable to 16M
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115663'>NAS-115663</a>] -         in Sharing / SMB / Edit Share ACL, first entry cannot be deleted even if multiple present
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115790'>NAS-115790</a>] -         Backport FreeBSD VOP error code fixes
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115847'>NAS-115847</a>] -         Community plugins may fail due to 12.2-RELEASE EOL
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115863'>NAS-115863</a>] -         13.0-RC1 did not attach my geli data drives
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115865'>NAS-115865</a>] -         `middleware.block_hooks`
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115881'>NAS-115881</a>] -         fix recordsize schema
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115913'>NAS-115913</a>] -         Secure temporary dir with `generate_ssh_key_pair`
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115915'>NAS-115915</a>] -         Reduce the vulnerability to timing attacks
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115938'>NAS-115938</a>] -         Tryinto replicate ix-systems
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115947'>NAS-115947</a>] -         Ignore I101 in flake8 linter
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115952'>NAS-115952</a>] -         Update samba to 4.15.7
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115956'>NAS-115956</a>] -         SMBD Core Dump after transfer of huge data volume (time machine backup 800GB)
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115964'>NAS-115964</a>] -         Fix integration tests
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115969'>NAS-115969</a>] -         Permit case-insensitive renames in Samba 4.15
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115977'>NAS-115977</a>] -         Add `ReplicationContext.remove_dataset` so we don't forget to update …
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116024'>NAS-116024</a>] -         net/netatalk3 - enable debugging
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116028'>NAS-116028</a>] -         Netatalk asserts on symlink reads due to uninitialized adouble metadata
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116089'>NAS-116089</a>] -         import by name on failover event
+</li>
+</ul>
+
 ## 13.0-RC1
 
+{{< expand "13.0-RC1" >}}
 **April 19, 2022**
 
 iXsystems is pleased to announce the release of TrueNAS 13.0-RC1.
@@ -227,6 +398,8 @@ This is a an early release meant for previewing and testing features and is **no
 <li>[<a href='https://jira.ixsystems.com/browse/NAS-115604'>NAS-115604</a>] -         connecting to TC is broken on 13 (potentially stable/master too)
 </li>
 </ul>
+
+{{< /expand >}}
 
 ## 13.0-BETA1
 
@@ -561,6 +734,11 @@ This is a an early release meant for previewing and testing features and is **no
         </thead>
         <tbody>
 		  <tr>
+	        <td><a href="https://jira.ixsystems.com/browse/NAS-116090" target="_blank">NAS-116090</a></td>
+	        <td>Mini 3.0 E+ View Enclosure showing populated drive bay as empty.</td>
+	        <td>The enclosure view for all Mini 3.0 platforms will show the top bay as unpopulated even when a drive is inserted.  This issue will be resolved in the TrueNAS 13.0-U1 release.</td>
+	      </tr>
+		  <tr>
 			<td><a href="https://jira.ixsystems.com/browse/NAS-115838" target="_blank">NAS-115838</a> and <a href="https://jira.ixsystems.com/browse/NAS-115847" target="_blank">NAS-115847</a></td>
 			<td>Plugin install failures due to end of life (EoL) 12.2 FreeBSD release.</td>
 			<td>Official and community plugins began failing to install when the FreeBSD 12.2 release was marked EoL. Official plugins are already fixed and available for download and community plugins are being fixed separately from the TrueNAS release cycles.</td>
@@ -591,46 +769,6 @@ This is a an early release meant for previewing and testing features and is **no
             <td>Due to numerous improvements in the replication engine and ZFS, TrueNAS 9.10 systems (or earlier) cannot replicate to or from TrueNAS 13.0-BETA1. Update the legacy TrueNAS system to 11.3 first, then 12.0, and then 13.0-BETA1.</td>
           </tr>
 		</tbody>
-      </table>
-    </body>
-  </html>
-  
-  ## Known Issues
-
-<body class="ql-editor ql-editor-view" style="font-size:14px;">
-  <html>
-    <body>
-      <table width="100%">
-        <thead>
-          <tr>
-            <th>Key</th>
-            <th>Summary</th>
-            <th>Workaround</th>
-          </tr>
-        </thead>
-        <tbody>
-
-          <tr>
-	    <td><a href="https://jira.ixsystems.com/browse/NAS-114160" target="_blank">NAS-114160</a></td>
-	    <td>Connection interrupt when managing jails or plugins.</td>
-	    <td>This behavior was seen in early testing and is still being investigated. No workaround is necessary as the connection resumes after a brief interruption.</td>
-	  </tr>
-	  <tr>
-	    <td><a href="https://jira.ixsystems.com/browse/NAS-114595" target="_blank">NAS-114595</a></td>
-	    <td>VNC can't connect to bhyve VMs.</td>
-	    <td>Update to 13.0 Nightlies or 13.0-Release (when released).</td>
-	  </tr>
-	  <tr>
-            <td></td>
-            <td>TrueNAS 12 can not replicate to or from TrueNAS 13</td>
-            <td>By default, TrueNAS 12 cannot initiate a replication to or from TrueNAS 13 due to an outdated SSH client library. Allowing replication to or from TrueNAS 13 to TrueNAS 12 requires allowing ssh.rsa algorithms. See <a href="https://www.openssh.com/txt/release-8.2" target="_blank">OpenSSH 8.2 Release</a> for security considerations. Log into the TrueNAS 13 system and go to <b>Services->SSH</b>. Add the <b>SSH Auxiliary Parameter</b>: <code>PubkeyAcceptedAlgorithms +ssh-rsa</code>.</td>
-          </tr>
-          <tr>
-            <td><a href="https://jira.ixsystems.com/browse/NAS-107151" target="_blank">NAS-107151</a></td>
-            <td>Replication fails between legacy TrueNAS 9.10 systems and 13.0-BETA1 systems</td>
-            <td>Due to numerous improvements in the replication engine and ZFS, TrueNAS 9.10 systems (or earlier) cannot replicate to or from TrueNAS 13.0-BETA1. Update the legacy TrueNAS system to 11.3 first, then 12.0, and then 13.0-BETA1.</td>
-          </tr>
-		 </tbody>
       </table>
     </body>
   </html>
