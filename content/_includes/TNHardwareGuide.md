@@ -27,7 +27,7 @@ For help building a system according to your unique performance, storage, and ne
 The heart of any storage system is the symbiotic pairing of its file system and physical storage devices.
 The ZFS file system in TrueNAS provides the [best available data protection of any file system at any cost](https://www.ixsystems.com/blog/openzfs-vs-the-competition/) and makes very effective use of both spinning-disk and all-flash storage or a mix of the two.
 ZFS is prepared for the eventual failure of storage devices. It is highly configurable to achieve the perfect balance of redundancy and performance to meet any storage goal.
-A properly-configured TrueNAS system can tolerate the failure of multiple storage devices and even recreate its boot media with a copy of the [configuration file]({{< relref "CORE\CORETutorials\SystemConfiguration\UsingConfigurationBackups.md" >}}).
+A properly-configured TrueNAS system can tolerate the failure of multiple storage devices and even recreate its boot media with a copy of the [configuration file]({{< relref "/content/CORE/CORETutorials/SystemConfiguration/UsingConfigurationBackups.md" >}}).
 
 ### Storage Media
 
