@@ -1,6 +1,6 @@
-**Add**
+**Cron Job**
 
-| | |
+| Name | Description |
 |-|-|
 | Description | Enter a description of the cron job. |
 | Command | Enter the full path to the command or script to be run. |
