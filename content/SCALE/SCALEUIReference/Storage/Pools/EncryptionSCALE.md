@@ -1,6 +1,8 @@
 ---
 title: "Encryption"
 weight: 60
+aliases:
+  - /scale/storage/encryptionscale/
 ---
 
 {{< toc >}}
