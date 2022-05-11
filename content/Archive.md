@@ -1,5 +1,8 @@
 ---
 title: "Documentation Archive"
+aliases:
+  - /additional-topics/legacy/fn-legacy-docs/release-notes/fn-11.3-u2/
+  - /core/notices/scrubresilveradjustments/
 ---
 
 Welcome to the Documentation Archive!
@@ -159,7 +162,7 @@ TrueNAS releases took all the FreeNAS changes up to that point and added a few E
 
 <a href="https://www.ixsystems.com/documentation/freenas/9.1.1/freenas9.1.1_guide.pdf">FreeNAS 9.1</a>
 
-<a href="https://www.truenas.com/docs/files/Notice - 9.3 to 9.10 FAQ.pdf">Notice - 9.3 to 9.10 FAQ</a>
+<a href="https://www.truenas.com/docs/files/Notice9.3to9.10FAQ.pdf">Notice - 9.3 to 9.10 FAQ</a>
 {{< /expand >}}
 {{< expand "FreeNAS 8.x" "v" >}}
 <a href="https://www.ixsystems.com/documentation/freenas/8.3.1/freenas8.3.1_guide.pdf">FreeNAS 8.3</a>
@@ -172,10 +175,10 @@ TrueNAS releases took all the FreeNAS changes up to that point and added a few E
 Notices:
 
 <ul>
-  <li><a href="https://www.truenas.com/docs/files/Notice - Microsoft LDAP Defaults 2020.pdf">Microsoft LDAP Defaults 2020</a></li>
-  <li><a href="https://www.truenas.com/docs/files/Notice - Sequential Scrub and Resilver Adjustments.pdf">Sequential Scrub and Resilver Adjustments</a></li>
-  <li><a href="https://www.truenas.com/docs/files/Notice - Recommended ZFS Update.pdf">Recommended ZFS Update</a></li>
-  <li><a href="https://www.truenas.com/docs/files/Notice - ZFS Pool Corruption Issue.pdf">ZFS Pool Corruption Issue</a></li>
+  <li><a href="https://www.truenas.com/docs/files/NoticeMicrosoftLDAPDefaults2020.pdf">Microsoft LDAP Defaults 2020</a></li>
+  <li><a href="https://www.truenas.com/docs/files/NoticeSequentialScrubandResilverAdjustments.pdf">Sequential Scrub and Resilver Adjustments</a></li>
+  <li><a href="https://www.truenas.com/docs/files/NoticeRecommendedZFSUpdate.pdf">Recommended ZFS Update</a></li>
+  <li><a href="https://www.truenas.com/docs/files/NoticeZFSPoolCorruptionIssue.pdf">ZFS Pool Corruption Issue</a></li>
 </ul>
 
 ### Legacy TrueNAS
@@ -223,9 +226,9 @@ Notices:
 
 Notices:
 <ul>
-  <li><a href="https://www.truenas.com/docs/files/Notice - Microsoft LDAP Defaults 2020.pdf">Microsoft LDAP Defaults 2020</a></li>
-  <li><a href="https://www.truenas.com/docs/files/Notice - Recommended ZFS Update.pdf">Recommended ZFS Update</a></li>
-  <li><a href="https://www.truenas.com/docs/files/Notice - ZFS Pool Corruption Issue.pdf">ZFS Pool Corruption Issue</a></li>
+  <li><a href="https://www.truenas.com/docs/files/NoticeMicrosoftLDAPDefaults2020.pdf">Microsoft LDAP Defaults 2020</a></li>
+  <li><a href="https://www.truenas.com/docs/files/NoticeRecommendedZFSUpdate.pdf">Recommended ZFS Update</a></li>
+  <li><a href="https://www.truenas.com/docs/files/NoticeZFSPoolCorruptionIssue.pdf">ZFS Pool Corruption Issue</a></li>
 </ul>
 
 
