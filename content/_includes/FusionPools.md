@@ -1,7 +1,7 @@
 ---
 ---
 
-Fusion Pools are also known as **ZFS Allocation Classes**, **ZFS Special vdevs**, and **Metadata vdevs**.
+Fusion Pools are also known as ZFS allocation classes, ZFS special vdevs, and metadata vdevs (**Metadata** vdev type on the **Pool Manager** screen.).
 
 {{< expand "What's a special vdev?" "v" >}}
 A special vdev can store meta data such as file locations and allocation tables.
@@ -14,12 +14,14 @@ Using a special vdev drastically speeds up random I/O and cuts the average spinn
 
 ## Creating a Fusion Pool
 
-Go to **Storage > Pools**, click *ADD*, and select *Create new pool*.
+Go to **Storage > Pools**, click **ADD**, and select **Create new pool**.
 
-![StoragePoolsAddCreateManager](/images/CORE/12.0/StoragePoolsAddCreateManager.png "TrueNAS Pool Manager")
+![CreateImportPoolScreen](/images/CORE/13.0/CreateImportPoolScreen.png "Create or Import Pool Screen")
 
 A pool must always have one normal (non-dedup/special) vdev before other devices can be assigned to the special class.
-Configure the **Data VDevs**, then click *ADD VDEV* and select *Metadata*.
+Configure the **Data VDevs**, then click **ADD VDEV** and select **Metadata**.
+
+![CreateMetadataVdev](/images/CORE/13.0/CreateMetadataVdev.png "Create Metadata VDev Screen")
 
 Add SSDs to the new **Metadata VDev** and select the same layout as the **Data VDevs**.
 
@@ -28,7 +30,7 @@ The metadata special vdev is critical for pool operation and data integrity, so 
 {{< /hint >}}
 
 {{< expand "UPS Recommendation" "v" >}}
-When using SSDs with an internal cache, add Uninterruptible Power Supply (UPS) to the system to help minimize the risk from power loss.
+When using SSDs with an internal cache, add uninterruptible power supply (UPS) to the system to help minimize the risk from power loss.
 {{< /expand >}}
 
 Using special vdevs identical to the data vdevs (so they can use the same hot spares) is recommended, but for performance reasons you can make a different type of vdev (like a mirror of SSDs).
