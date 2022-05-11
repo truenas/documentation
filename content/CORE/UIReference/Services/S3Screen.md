@@ -1,6 +1,6 @@
 ---
 title: "S3 Screen"
-weight: 50
+weight: 100
 ---
 
 Use the **S3** screen to configure your TrueNAS S3 service.

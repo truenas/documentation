@@ -1,6 +1,6 @@
 ---
 title: "Configuring SSH"
-weight: 70
+weight: 130
 ---
 
 The SSH service allows connections to TrueNAS with the [Secure SHell Transport Layer Protocol](https://tools.ietf.org/html/rfc4253).

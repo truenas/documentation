@@ -1,6 +1,6 @@
 ---
 title: "Configuring SNMP"
-weight: 60
+weight: 120
 aliases: /core/services/snmp/
 ---
 

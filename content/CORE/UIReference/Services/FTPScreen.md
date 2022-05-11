@@ -1,6 +1,6 @@
 ---
 title: "FTP Screen"
-weight: 20
+weight: 30
 ---
 
 Use the **FTP** services screen to configure FTP service settings for your TrueNAS system.

@@ -1,6 +1,6 @@
 ---
 title: "Configuring UPS Service"
-weight: 80
+weight: 150
 alias: /core/services/ups/
 ---
 

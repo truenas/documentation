@@ -1,6 +1,6 @@
 ---
 title: "SNMP Screen"
-weight: 60
+weight: 120
 aliases: /core/services/snmp/
 ---
 

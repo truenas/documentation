@@ -1,6 +1,6 @@
 ---
 title: "TFTP Screen"
-weight: 20
+weight: 140
 ---
 
 The **TFTP** service screen configures the directory, connection, access and other auxillary parameters for TFPT service on the TrueNAS.

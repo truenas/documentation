@@ -1,6 +1,6 @@
 ---
 title: "Configuring FTP"
-weight: 20
+weight: 30
 ---
 
 

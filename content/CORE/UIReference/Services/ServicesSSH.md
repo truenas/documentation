@@ -1,6 +1,6 @@
 ---
 title: "SSH Screen"
-weight: 70
+weight: 130
 ---
 
 Use the **SSH** services screen to configure SSH service on your TrueNAS.

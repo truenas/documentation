@@ -1,6 +1,6 @@
 ---
 title: "WebDAV Services Screen"
-weight: 10
+weight: 160
 ---
 
 Use the **Services WebDAV** screen to enable WebDAV services on your TrueNAS.

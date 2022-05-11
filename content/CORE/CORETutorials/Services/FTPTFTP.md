@@ -1,6 +1,6 @@
 ---
 title: "FTP, SFTP, and TFTP"
-weight: 20
+weight: 160
 aliases: /core/services/ftptftp/
 ---
 

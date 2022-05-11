@@ -1,6 +1,6 @@
 ---
 title: "Configuring LLDP"
-weight: 30
+weight: 50
 aliases: /core/services/lldp/
 ---
 

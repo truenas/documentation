@@ -1,6 +1,6 @@
 ---
 title: "Configuring TFTP "
-weight: 20
+weight: 140
 ---
 
 

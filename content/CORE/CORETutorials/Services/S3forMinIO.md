@@ -1,6 +1,6 @@
 ---
 title: "S3 for MinIO"
-weight: 50
+weight: 105
 ---
 
 MinIO connections and service is configured using the **Services** [S3 screen]({{< relref "/CORE/UIReference/Services/S3Screen.md" >}}).
