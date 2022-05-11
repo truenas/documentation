@@ -1,6 +1,8 @@
 ---
 title: "WD Red SMR Drive Compatibility with ZFS"
 weight: 30
+aliases:
+  - /hardware/notices/componentarticles/wd-smr/
 ---
 
 ## WD Red SMR Drive Compatibility with ZFS
