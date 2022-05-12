@@ -1,6 +1,8 @@
 ---
 title: "Advanced"
 weight: 30
+aliases:
+  - /core/coretutorials/tasks/replicationtasks/advanced
 ---
 
 {{< toc >}}

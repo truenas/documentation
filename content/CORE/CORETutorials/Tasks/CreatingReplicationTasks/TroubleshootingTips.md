@@ -1,6 +1,8 @@
 ---
 title: "Troubleshooting Tips"
 weight: 40
+aliases:
+  - /core/coretutorials/tasks/replicationtasks/troubleshootingtips
 ---
 
 {{< toc >}}
