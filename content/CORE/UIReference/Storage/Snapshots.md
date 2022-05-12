@@ -12,7 +12,7 @@ Taking snapshots requires the system have all [pools]({{< relref "/CORE/CORETuto
 ## Creating a Single Snapshot
 
 {{< hint ok >}}
-Consider making a [Periodic Snapshot Task]({{< relref "CORE/CORETutorials/Tasks/PeriodicSnapshotTasks.md" >}}) to save time and create regular, fresh snapshots.
+Consider making a [Periodic Snapshot Task]({{< relref "CreatingPeriodicSnapshotTasks.md" >}}) to save time and create regular, fresh snapshots.
 {{< /hint >}}
 
 To quickly snapshot existing storage, go to **Storage > Snapshots** and click **ADD**.
