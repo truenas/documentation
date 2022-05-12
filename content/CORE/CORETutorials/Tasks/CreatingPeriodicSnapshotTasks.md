@@ -66,6 +66,6 @@ Always consider future uses and ensure the name given to a periodic snapshot is 
 ## Managing Periodic Snapshot Tasks
 
 Click **SUBMIT** to save the task in **Tasks > Periodic Snapshot Tasks**.
-You'll find any snapshots from this task in **Storage > Snapshots**.
+You can find any snapshots from this task in **Storage > Snapshots**.
 
 To check the log for a saved snapshot schedule, go to **Tasks > Periodic Snapshot Tasks** and click the task **State**.
