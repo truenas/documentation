@@ -306,4 +306,4 @@ As always, we welcome and encourage contributions from the community!
 
 - https://github.com/democratic-csi/democratic-csi/blob/master/README.md
 - https://github.com/democratic-csi/democratic-csi/blob/master/docs/nomad.md
-- https://jonathangazeley.com/2021/01/05/using-truenas-to-provide-persistent-storage-for-kubernetes/
+- https://www.lisenet.com/2021/moving-to-truenas-and-democratic-csi-for-kubernetes-persistent-storage/
