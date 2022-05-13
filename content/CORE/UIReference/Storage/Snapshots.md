@@ -22,7 +22,7 @@ To quickly snapshot existing storage, go to **Storage > Snapshots** and click **
 Use the **Dataset** drop-down list to select an existing ZFS pool, dataset, or zvol to snapshot.
 
 The TrueNAS software displays a suggested name that you can override with any custom string.
-To include the snapshot in [Replication Tasks]({{< relref "/CORE/CORETutorials/Tasks/ReplicationTasks/_index.md" >}}) choose a proper naming schema. The **Naming Schema** drop-down list populates with schemas already created from periodic snapshot tasks.
+To include the snapshot in [local]({{< relref "LocalReplication.md" >}}) or [remote]({{< relref "RemoteReplication.md" >}}) replication tasks  choose a proper naming schema. The **Naming Schema** drop-down list populates with schemas already created from periodic snapshot tasks.
 
 To include child datasets with the snapshot, set **Recursive**.
 

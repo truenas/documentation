@@ -44,7 +44,7 @@ A valid schema requires the *%Y* (year), *%m* (month), *%d* (day), *%H* (hour), 
 
 For **Periodic Snapshot Tasks** used to set up a replication task with the **Replication Task** function:
 
-You can use custom naming schemas for full backup replication tasks. If you are using the snapshot for incremental replication tasks, use the default naming schema. Go to [Using a Custom Schema]({{< relref "CORE/CORETutorials/Tasks/ReplicationTasks/TroubleshootingTips.md" >}}) for additional information.
+You can use custom naming schemas for full backup replication tasks. If you are using the snapshot for incremental replication tasks, use the default naming schema. Go to [Using a Custom Schema]({{< relref "TroubleshootingTips.md" >}}) for additional information.
 {{< /hint >}}
 
 This uses some letters differently from POSIX (Unix) time functions.
