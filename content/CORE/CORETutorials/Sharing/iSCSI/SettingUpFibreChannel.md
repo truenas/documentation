@@ -63,7 +63,15 @@ This procedure uses an example to illustrate each step.
 
 3. Set **Fibre Channel Ports**.
 
-   Click <i class="material-icons" aria-hidden="true" title="Expand">chevron_right</i> to expand the option, select options as presented under test data, and **Save**.
+   a. Click <i class="material-icons" aria-hidden="true" title="Expand">chevron_right</i> to expand the option for the port you want to select. 
+   
+   b. Select the **Mode** as either **Initiators** or **Targets**. The **Targets** dropdown field displays on the right side of the screen.
+   
+   c. Select the target from the list. A list of **Connected Initiators displays below the **Targets** dropdown list field.
+      
+      ![Sharing ISCSI Targets Add Fibre](/images/CORE/12.0/SharingISCSITargetsAddFibre.png "ISCSI Targets: Fibre")
+
+   d. Select the initiator you want to use and then click **Save**.
 
 4. Start the iSCSI service. Go to **Services** and click the **iSCSI** toggle until the **Running** status message displays.
 
