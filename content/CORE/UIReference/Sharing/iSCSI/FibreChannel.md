@@ -31,7 +31,7 @@ Only TrueNAS systems licensed for Fibre Channel have the **Fibre Channel Ports**
 ## Fibre Channel Ports
 The **Fibre Channel Ports** screen displays a table of ports configured on the TrueNAS.
 
-![FiberChannelPortsScreen](/images/CORE/13.0/FiberChannelPortsScreen.png "Fiber Channel Ports Screen")
+![FibreChannelPortsScreen](/images/CORE/13.0/FibreChannelPortsScreen.png "Fibre Channel Ports Screen")
 
 Use the blue **Columns** button to display options to can change the **Fibre Channel** table display. Options are **Unselect All**, **WWPN**, **State** or **Reset to Defaults**.
 
@@ -42,7 +42,7 @@ Click <i class="material-icons" aria-hidden="true" title="Expand">chevron_right<
 ### Fibre Channel Mode Settings
 The **Mode** radio buttons display additional information on the screen based on the selection made.
 
-![FiberChannelPortConnectedInitiators12U8](/images/CORE/13.0/FiberChannelPortConnectedInitiators12U8.png "Fiber Channel Port Connected Initiators")
+![FibreChannelPortConnectedInitiators12U8](/images/CORE/13.0/FibreChannelPortConnectedInitiators12U8.png "Fibre Channel Port Connected Initiators")
 
 | Setting | Description |
 |---------|-------------|
