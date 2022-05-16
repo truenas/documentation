@@ -166,3 +166,14 @@ Remember to put a link to your newly created artifact repository in the comments
 This way a moderator can fork your repository and can make available in the community list of plugins.
 
 For guides on how to use Github, see [Github Guides](https://guides.github.com/).
+
+## Additional Information
+For information on Plugins and Jails screens and how to add or manage jails see:
+
+[Plugins Screens]({{< relref "/CORE/UIReference/JailsPluginsVMs/Plugins/PluginsScreens.md" >}})
+
+[Jails Screens]({{< relref "/CORE/UIReference/JailsPluginsVMs/Jails/JailsScreens.md" >}})
+
+[Creating Jails]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Jails/CreatingJails.md" >}})
+
+[Managing Plugins]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Plugins/ManagingPlugins.md" >}})
