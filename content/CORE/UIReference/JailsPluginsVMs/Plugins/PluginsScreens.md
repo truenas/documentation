@@ -70,7 +70,6 @@ Use **Next** to advance to the next configuration settings section, or click the
 
 ![PluginsAdvancedAddBasicProperties](/images/CORE/13.0/PluginsAdvancedAddBasicProperties.png "Plugins Advanced Add Basic Properties") 
 
-
 | Name | Description |
 |------|-------------|
 | **Plugins Name** | Displays the name of the Plugin highlighed on the **Plugins** screen. This field is not editable. |
