@@ -83,29 +83,29 @@ Use **Next** to advance to the next configuration settings section, or click the
 | **IPv4 Interface** | Select the IPv4 interface for the jail from the dropdown list. |
 | **IPv4 Address** | Enter the IPv4 address for [VNET(9)](https://www.freebsd.org/cgi/man.cgi?query=vnet) and shared IP jails. |
 | **IPv4 Netmask** | Select the IPv4 netmask for the jail from the dropdown list. |
-| IPv4 Default Router | Enter a valid IPv4 address to use as the default route. Enter **none** to configure the jail with no IPv4 default route. A jail without a default route is not be able to access any networks. |
+| **IPv4 Default Router** | Enter a valid IPv4 address to use as the default route. Enter **none** to configure the jail with no IPv4 default route. A jail without a default route is not be able to access any networks. |
 | **AutoConfigure IPv6** | Select to use Stateless Address Auto Configuration (SLAAC) to autoconfigure IPv6 in the jail. |
-| IPv6 Interface | Select the IPv6 interface for the jail from the dropdown list. |
-| IPv6 Address | Enter the IPv6 address for [VNET(9)](https://www.freebsd.org/cgi/man.cgi?query=vnet) and shared IP jails. |
-| IPv6 Netmask | Select the IPv6 prefix for the jail from the drowdown list. |
-| IPv6 Default Router | Enter a valid IPv6 address to use as the default route. Enter **none** to configure the jail without an IPv6 default route. A jail without a default route is not be able to access any networks. |
+| **IPv6 Interface** | Select the IPv6 interface for the jail from the dropdown list. |
+| **IPv6 Address** | Enter the IPv6 address for [VNET(9)](https://www.freebsd.org/cgi/man.cgi?query=vnet) and shared IP jails. |
+| **IPv6 Netmask** | Select the IPv6 prefix for the jail from the drowdown list. |
+| **IPv6 Default Router** | Enter a valid IPv6 address to use as the default route. Enter **none** to configure the jail without an IPv6 default route. A jail without a default route is not be able to access any networks. |
 | **Auto Start** | Select to auto-start the jail at system boot time. Jails are started and stopped based on iocage priority. Set in the **Custom Properties priority** field. |
 {{< /expand >}}
 {{< expand "Jail Properties Screen" "v" >}}
 
-![AdvancedJailCreationJailProperties](/images/CORE/13.0/AdvancedJailCreationJailProperties.png "Advanced Jail Creation Jail Properties") 
+![PluginsAdvancedAddJailProperties](/images/CORE/13.0/PluginsAdvancedAddJailProperties.png "Plugins Advanced Add Jail Properties") 
 
 {{< include file="content/_includes/JailsPropertiesFields.md" markdown="true" >}}
 {{< /expand >}}
 {{< expand "Network Properties Screen" "v" >}}
 
-![AdvancedJailCreationNetworkProperties](/images/CORE/13.0/AdvancedJailCreationNetworkProperties.png "Advanced Jail Creation Network Properties") 
+![PluginsAdvancedAddNetworkProperties](/images/CORE/13.0/PluginsAdvancedAddNetworkProperties.png "Plugins Advanced Add Network Properties") 
 
 {{< include file="content/_includes/JailNetworkPropertiesFields.md" markdown="true" >}}
 {{< /expand >}}
 {{< expand "Custom Properties Screen" "v" >}}
 
-![AdvancedJailCreationCustomProperties](/images/CORE/13.0/AdvancedJailCreationCustomProperties.png "Advanced Jail Creation Custom Properties")  
+![PluginsAdvancedAddCustomProperties](/images/CORE/13.0/PluginsAdvancedAddCustomProperties.png "Plugins Advanced Add Custom Properties")  
 
 {{< include file="_includes/JailsCustomPropertiesFields.md" markdown="true" >}}
 {{< /expand >}}
