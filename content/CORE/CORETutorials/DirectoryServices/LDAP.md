@@ -14,7 +14,7 @@ The LDAP server must support SSL/TLS and the certificate for the LDAP server CA 
 Non-CA certificates are not currently supported.
 {{< /expand >}}
 
-## Integrating an LDAP Sever with TrueNAS
+## Integrating an LDAP Server with TrueNAS
 
 To integrate an LDAP server with TrueNAS, go to **Directory Services > LDAP**.
 
