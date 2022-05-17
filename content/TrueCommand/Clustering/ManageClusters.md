@@ -72,6 +72,8 @@ Click the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> ic
 
 Check the **Confirm** box, then click **OK** to delete the cluster.
 
+On the Dashboard, click the three dot icon and select Services. Stop the Gluster service and uncheck START On BOOT..
+
 {{< /tab >}}
 {{< tab "Replicated" >}}
 
