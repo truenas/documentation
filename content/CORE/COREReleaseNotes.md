@@ -4,6 +4,7 @@ weight: 2
 aliases:
   - /releasenotes/core/13.0beta1/
   - /releasenotes/core/13.0rc1/
+  - /releasenotes/core/
 ---
 
 {{< toc >}}
