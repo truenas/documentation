@@ -1,5 +1,5 @@
 ---
-title: "Network Summary Screem"
+title: "Network Summary Screen"
 weight: 10
 aliases: /core/network/networksummary/
 ---

@@ -5,7 +5,7 @@ weight: 10
 
 Use the **Network > Interface** Screen to add various network interfaces to your TrueNAS. 
 
-![NetworkInterfacesScreenn](/images/CORE/13.0/NetworkInterfacesScreen.png "Network Interface Screen")
+![NetworkInterfacesScreen](/images/CORE/13.0/NetworkInterfacesScreen.png "Network Interfaces Screen")
 
 Use the **COLUMNS** button to display options to modify the information displayed in the **Interfaces** table. Options are **Type**, **Link State**, **DHCP**, **IPv6 Auto Configure**, **IP Addresses**, **Description**, **Active Media Type**, **Active Media Subtype**, **VLAN Tag**, **VLAN Parent Interface**, **Bridge Members**, **LAGG Ports**, **LAGG Protocol**, **MAC Address**, **MTU** or **Reset to Defaults**.
 
