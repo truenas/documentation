@@ -95,7 +95,7 @@ Go to **Storage > Disks**. Click the three dot menu (Options) for the confirmed 
 
 The **Storage > Disks** screen shows which disks have a configured SED password. The `SED Password` column shows a mark when the disk has a password. Disks that are not a SED or are unlocked using the global password are not marked in this column.
 
-The SED must be configured to use the new password. Go to the **Shell** and enter command `sedhelper setup --disk <da1> <password>`, where `<da1>` is the SED to configure and `<password>` is the created password from **Storage > Disks > Edit Disks > SED Password**.
+You must configure the SED to use the new password. Go to the **Shell** and enter command `sedhelper setup --disk <da1> <password>`, where `<da1>` is the SED to configure and `<password>` is the created password from **Storage > Disks > Edit Disks > SED Password**.
 
 Repeate this process for each SED and any SEDs added to the system in the future.
 
