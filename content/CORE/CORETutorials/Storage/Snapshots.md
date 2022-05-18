@@ -8,7 +8,7 @@ aliases: /core/storage/snapshots/
 
 {{< include file="/_includes/SnapshotsIntroSnippet.md" type="page" >}}
 
-Taking snapshots requires the system have all [pools]({{< relref "/CORE/UIReference/Storage/Pools/_index.md" >}}), [datasets]({{< relref "/CORE/UIReference/Storage/Pools/datasets.md" >}}), and [zvols]({{< relref "/CORE/UIReference/Storage/Pools/zvols.md" >}}) already configured.
+Taking snapshots requires the system have all [pools]({{< relref "/CORE/CORETutorials/Storage/Pools/PoolCreate.md" >}}), [datasets]({{< relref "/CORE/CORETutorials/Storage/Pools/datasets.md" >}}), and [zvols]({{< relref "/CORE/CORETutorials/Storage/Pools/zvols.md" >}}) already configured.
 
 ## Creating a Single Snapshot
 
