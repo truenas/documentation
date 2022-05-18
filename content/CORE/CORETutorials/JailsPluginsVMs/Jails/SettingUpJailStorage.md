@@ -52,10 +52,10 @@ Here is the typical workflow for adding jail storage:
 
 3. Decide if the jail needs access to existing data or if a new storage area should be created.
 
-4. If the jail needs to access existing data, [edit the permissions]({{< relref "/CORE/UIReference/Storage/Pools/Permissions.md" >}}) of the pool or dataset so the user and group accounts have the desired read and write access.
+4. If the jail needs to access existing data, [edit the permissions]({{< relref "/CORE/CORETutorials/Storage/Pools/Permissions.md" >}}) of the pool or dataset so the user and group accounts have the desired read and write access.
    When multiple applications or jails need access to the same data, create a new group and add each new user account to that group.
 
-5. If a new storage area is being set aside for that jail or application, [create a dataset]({{< relref "CORE/UIReference/Storage/Pools/Datasets.md" >}}).
+5. If you are setting aside a new storage area for that jail or application, [create a dataset]({{< relref "CORE/CORETutorials/Storage/Pools/Datasets.md" >}}).
    Edit the dataset permissions so the user and group account has the desired read and write access.
 
 6. Use the jail <i class="material-icons" aria-hidden="true" title="Expand">chevron_right</i> and then select **MOUNT POINTS > ACTIONS > Add Mount Point** to select the data **Source** and the jail mount **Destination**.
