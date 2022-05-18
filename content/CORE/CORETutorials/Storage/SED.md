@@ -21,7 +21,7 @@ TrueNAS version 11.1-U5 introduced Self-Encrypting Drive (SED) support.
   Pyrite Version 1 SEDs do not have PSID support and can become unusable if the password is lost.
   {{< /hint >}}
 * [TCG Enterprise](https://trustedcomputinggroup.org/wp-content/uploads/TCG_Storage-SSC_Enterprise-v1.01_r1.00.pdf) designed for systems with many data disks
-  These SEDs do not have the functionality to be unlocked before the operating system boots.
+  These SEDs cannot unlock before the operating system boots.
 
 See this Trusted Computing Group and NVM Express® [joint white paper](https://nvmexpress.org/wp-content/uploads/TCGandNVMe_Joint_White_Paper-TCG_Storage_Opal_and_NVMe_FINAL.pdf) for more details about these specifications.
 
