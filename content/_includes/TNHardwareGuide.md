@@ -127,7 +127,7 @@ Poorly-designed systems can cause an unexpected fill-up in the ARC and reduce pe
 For example, a 480 GB L2ARC filled with 4KiB blocks needs more than 10GiB of metadata storage in the primary ARC.
 {{< /tab >}}
 {{< tab "Self Encrypting Drives" >}}
-TrueNAS supports two forms of data encryption at rest to achieve privacy and compliance objectives: [Native ZFS encryption]({{< relref "CORE/UIReference/Storage/Pools/StorageEncryption.md" >}}) and [Self Encrypting Drives (SEDs)]({{< relref "/CORE/CORETutorials/Storage/SED.md" >}}).
+TrueNAS supports two forms of data encryption at rest to achieve privacy and compliance objectives: [Native ZFS encryption]({{< relref "CORE/CORETutorials/Storage/Pools/StorageEncryption.md" >}}) and [Self Encrypting Drives (SEDs)]({{< relref "/CORE/CORETutorials/Storage/SED.md" >}}).
 SEDs do not experience the performance overhead introduced by software partition encryption but aren’t as readily available as non-SED drives (and thus can cost a little more).
 {{< /tab >}}
 {{< tab "Boot Devices" >}}
@@ -135,9 +135,9 @@ Booting legacy FreeNAS systems from 8 GB or larger USB flash drives was once ver
 We recommend looking at other options since USB drive quality varies widely and modern TrueNAS versions perform increased drive writes to the boot pool.
 For this reason, all pre-built [TrueNAS Systems]({{< relref "/hardware/_index.md" >}}) ship with either M.2 drives or SATA DOMs.
 
-SATA DOMs, or disk-on-modules, offer reliability close to that of consumer 2.5” SSDs with a smaller form factor that mounts to an internal SATA port and doesn’t use a drive bay.
-Because SATA DOMs and motherboards with m.2 slots are not as common as the other storage devices mentioned here, users often boot TrueNAS systems from 2.5” SSDs and HDDs (often mirrored for added redundancy).
-The recommended size for the TrueNAS boot volume is 8 GB, but using 16 or 32 GB (or a 120 GB 2.5” SATA SSD) provides room for more boot environments.
+SATA DOMs, or disk-on-modules, offer reliability close to that of consumer 2.5" SSDs with a smaller form factor that mounts to an internal SATA port and doesn't use a drive bay.
+Because SATA DOMs and motherboards with m.2 slots are not as common as the other storage devices mentioned here, users often boot TrueNAS systems from 2.5" SSDs and HDDs (often mirrored for added redundancy).
+The recommended size for the TrueNAS boot volume is 8 GB, but using 16 or 32 GB (or a 120 GB 2.5" SATA SSD) provides room for more boot environments.
 {{< /tab >}}
 {{< tab "Hot Swapability" >}}
 TrueNAS systems come in all shapes and sizes. 
