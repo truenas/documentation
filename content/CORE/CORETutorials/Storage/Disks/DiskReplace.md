@@ -1,5 +1,5 @@
 ---
-title: "Replacement"
+title: "Disk Replacement"
 weight: 20
 aliases: /core/storage/disks/diskreplace/
 ---
@@ -31,21 +31,29 @@ Clicking <i class="material-icons" aria-hidden="true" title="Options">more_vert<
 
 ![StoragePoolsStatusDiskFailedOptions](/images/CORE/12.0/StoragePoolsStatusDiskFailedOptions.png "Options for a Failed Disk")
 
-It is recommended to *Offline* the disk before starting the replacement.
-This removes the device from the pool and can prevent swap issues.
+We recommend you *offline* the disk before starting the replacement. 
+This removes the device from the pool and can prevent swap issues. To offline a disk:
+
+Go to **Storage > Pools** screen. 
+
+Click on the <i class="material-icons" aria-hidden="true" title="Settings">settings</i> settings icon, and then select **Pool Status** to display the list of disks in the pools.
+
+Click the <span class="material-icons">chevron_right</span> icon for the disk you plan to remove, and then select **Offline**.
+
+Select **Confirm** to activate the **OFFLINE** button, then click **OFFLINE**. The disk should now be offline.
 
 {{< expand "Can I use a disk that is failing but still active?" "v" >}}
 There are some situations where a disk that has not completely failed can be left online to provide additional redundancy during the replacement procedure.
-**This is not recommended unless the exact condition of the failing disk is known.**
+We don't recommend leaving failed disks online unless you know the exact condition of the failing disk!
 Attempting to replace a heavily degraded disk without off-lining it first results in a significantly slower replacement process.
 {{< /expand >}}
 
 {{< expand "The offline failed?" "v" >}}
-If the *Offline* operation fails with a "Disk offline failed - no valid replicas" message, go to **Storage > Pools**, click the <i class="material-icons" aria-hidden="true" title="Settings">settings</i> for the degraded pool, and select *Scrub Pool*.
-When the scrub operation finishes, reopen the pool *Status* and try to *Offline* the disk again.
+If the offline operation fails with a **Disk offline failed - no valid replicas** message, go to **Storage > Pools**, click the <i class="material-icons" aria-hidden="true" title="Settings">settings</i> for the degraded pool, and select **Scrub Pool**.
+When the scrub operation finishes, reopen the pool **Status** and try to offline the disk again.
 {{< /expand >}}
 
-When the disk status shows as *Offline*, physically remove the disk from the system.
+When the disk status shows as **Offline**, physically remove the disk from the system.
 
 ![StoragePoolsStatusOffline](/images/CORE/12.0/StoragePoolsStatusOffline.png "Disk Offline Status")
 
@@ -53,14 +61,14 @@ If the replacement disk is not already physically added to the system, add it no
 
 ### Online the New Disk
 
-In the **Pool Status**, open the options for the *Offline* disk and click *Replace*
+In the **Pool Status**, open the options for the offline disk and click **Replace**
 
 ![StoragePoolsStatusDiskReplace](/images/CORE/12.0/StoragePoolsStatusDiskReplace.png "Disk Replace Options")
 
-Select a new member disk and click *Replace Disk*.
-The new disk must have the same or greater capacity as the disk being replaced.
+Select a new member disk and click **Replace Disk**.
+The new disk must have the same or greater capacity as the disk you are replacing.
 The replacement fails when the chosen disk has partitions or data present.
-To **destroy** any data on the replacement disk and allow the replacement to continue, set the *Force* option.
+To destroy any data on the replacement disk and allow the replacement to continue, set the **Force** option.
 
 When the disk wipe completes and TrueNAS starts replacing the failed disk, the **Pool Status** changes to show the in-progress replacement.
 
