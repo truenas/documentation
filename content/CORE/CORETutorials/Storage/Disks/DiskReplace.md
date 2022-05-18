@@ -31,7 +31,7 @@ Clicking <i class="material-icons" aria-hidden="true" title="Options">more_vert<
 
 ![StoragePoolsStatusDiskFailedOptions](/images/CORE/12.0/StoragePoolsStatusDiskFailedOptions.png "Options for a Failed Disk")
 
-It is recommended to *offline* the disk before starting the replacement. 
+We recommend you *offline* the disk before starting the replacement. 
 This removes the device from the pool and can prevent swap issues. To offline a disk:
 
 Go to **Storage > Pools** screen. 
