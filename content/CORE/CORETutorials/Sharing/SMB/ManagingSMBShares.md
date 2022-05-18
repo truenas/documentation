@@ -40,7 +40,7 @@ Click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i>
 
 ![DatasetACLEdit](/images/CORE/12.0/StoragePoolsEditACLOwner.png "Dataset Permissions Options")
 
-This ACL defines the user accounts or groups that own or have specific [permissions]({{< relref "/CORE/UIReference/Storage/Pools/Permissions.md" >}}) to the shared dataset.
+This ACL defines the user accounts or groups that own or have specific [permissions]({{< relref "/CORE/CORETutorials/Storage/Pools/Permissions.md" >}}) to the shared dataset.
 The **User** and **Group** values show which accounts own, or have full permissions to the dataset.
 Change the default settings to your preferred primary account and group and select the **Apply** checkboxes before saving any changes.
 
