@@ -13,4 +13,4 @@ When creating a snapshot, permissions or ACLs set on files within that snapshot 
 
 Snapshots are read-only, so users do not have permission to modify a snapshot or its files, even if they had write permissions when creating the snapshot.
 
-The ZFS `zfs diff` command, which can run in the **Shell**, lists all changed files between any two snapshot versions within a dataset, or between any snapshot and the current data.
+The `zfs diff` ZFS command, which can run in the **Shell**, lists all changed files between any two snapshot versions within a dataset, or between any snapshot and the current data.
