@@ -86,7 +86,7 @@ Before upgrading an existing pool, be aware of these caveats:
   While it is unlikely that the pool upgrade affects the data, it is always better to be safe than sorry.
 * Upgrading a ZFS pool is optional. Do not upgrade the pool if the possibility of reverting to an earlier version of TrueNAS or repurposing the disks in another operating system that supports ZFS is desired. 
   It is not necessary to upgrade the pool unless the end user has a specific need for the newer ZFS Feature Flags. 
-  If a pool is upgraded to the latest feature flags, it is not possible to import that pool into another operating system that does not yet support those feature flags.
+  If you upgrade a pool to the latest feature flags, you cannot import that pool into another operating system that does not yet support those feature flags.
 
 The upgrade itself only takes a few seconds and is non-disruptive.
 It is not necessary to stop any sharing services to upgrade the pool.
