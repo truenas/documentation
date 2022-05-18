@@ -1,6 +1,9 @@
 ---
 title: TrueCommand 2.1 Release Notes
 weight: 5
+aliases:
+  - /releasenotes/truecommand/2.1.1/
+  - /releasenotes/truecommand/2.1/
 ---
 
 {{< toc >}}
@@ -232,23 +235,7 @@ This will automatically fetch and start the latest Docker image of TrueCommand w
 
 ## Known Issues
 
-<body class="ql-editor ql-editor-view" style="font-size:14px;">
-  <html>
-    <body>
-      <table width="100%">
-        <thead>
-          <tr>
-            <th>Key</th>
-            <th>Summary</th>
-			<th>Seen In</th>
-            <th>Workaround</th>
-			<th>Fix Target</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-          </tr>
-        </tbody>
-      </table>
-    </body>
-  </html>
+| Seen In | Key | Summary | Workaround | Resolved In |
+|---------|-----|---------|------------|-------------|
+| | | | | |
+

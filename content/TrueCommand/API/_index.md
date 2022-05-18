@@ -2,6 +2,8 @@
 title: "API Guide"
 weight: "105"
 geekdocCollapseSection: true
+aliases:
+  - /truecommand/tc_api/
 ---
 
 TrueCommand API documentation is available from the web interface by opening the user menu and clicking **API**.

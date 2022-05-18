@@ -3,7 +3,23 @@ title: SCALE Angelfish Release Notes
 weight: 5
 aliases:
   - /releasenotes/
+  - /releasenotes/scale/
   - /releasenotes/releaseschedule/
+  - /releasenotes/scale/22.02.1/
+  - /releasenotes/scale/22.02.0.1/
+  - /releasenotes/scale/22.02.0/
+  - /releasenotes/scale/22.02-rc.2/
+  - /releasenotes/scale/22.02-rc.1-2/
+  - /releasenotes/scale/22.02-rc.1-1/
+  - /releasenotes/scale/22.02-rc.1/
+  - /releasenotes/scale/21.08-beta.2/
+  - /releasenotes/scale/21.08-beta.1/
+  - /releasenotes/scale/21.06-beta.1/
+  - /releasenotes/scale/21.04-alpha.1/
+  - /releasenotes/scale/21.02-alpha.1/
+  - /releasenotes/scale/20.12-alpha/
+  - /releasenotes/scale/20.10-alpha/
+
 ---
 
 {{< toc >}}
