@@ -16,7 +16,7 @@ TrueNAS version 11.1-U5 introduced Self-Encrypting Drive (SED) support.
 * [TCG Opalite](https://trustedcomputinggroup.org/wp-content/uploads/TCG_Storage-Opalite_SSC_FAQ.pdf) which is a reduced form of OPAL 2
 * TCG Pyrite [Version 1](https://trustedcomputinggroup.org/wp-content/uploads/TCG_Storage-Pyrite_SSC_v1.00_r1.00.pdf) and 
   [Version 2](https://trustedcomputinggroup.org/wp-content/uploads/TCG_Storage-Pyrite_SSC_v2.00_r1.00_PUB.pdf) are similar to Opalite, but with hardware encryption removed
-  Pyrite provides a logical equivalent of the legacy ATA security for non-ATA devices. Only the drive firmware is used to protect the device.
+  Pyrite provides a logical equivalent of the legacy ATA security for non-ATA devices. Only the drive firmware protects the device.
   {{< hint danger >}}
   Pyrite Version 1 SEDs do not have PSID support and can become unusable if the password is lost.
   {{< /hint >}}
