@@ -100,7 +100,7 @@ You must configure the SED to use the new password. Go to the **Shell** and ente
 Repeate this process for each SED and any SEDs added to the system in the future.
 
 {{< hint danger >}}
-Remember SED passwords! If the SED password is lost, SEDs cannot be unlocked and their data is unavailable. 
+Remember SED passwords! If you lose the SED password, you cannot unlock SEDs or access their data.
 Always record SED passwords whenever they are configured or modified and store them in a secure place!
 {{< /hint >}}
 
