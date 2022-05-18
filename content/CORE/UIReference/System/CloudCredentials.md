@@ -42,7 +42,7 @@ weight: 100
 
 | Name | Description |
 |------|-------------|
-| Access Token | Access Token for a Dropbox account. A [token must be generated](https://blogs.dropbox.com/developers/2014/05/generate-an-access-token-for-your-own-account/) by the [Dropbox account](https://www.dropbox.com/) before adding it here. |
+| Access Token | Access Token for a Dropbox account. A [token must be generated](https://dropbox.tech/developers/generate-an-access-token-for-your-own-account) by the [Dropbox account](https://www.dropbox.com/) before adding it here. |
 
 ### FTP
 
