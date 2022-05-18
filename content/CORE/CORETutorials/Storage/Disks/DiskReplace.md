@@ -44,7 +44,7 @@ Select **Confirm** to activate the **OFFLINE** button, then click **OFFLINE**. T
 
 {{< expand "Can I use a disk that is failing but still active?" "v" >}}
 There are some situations where a disk that has not completely failed can be left online to provide additional redundancy during the replacement procedure.
-This is not recommended unless the exact condition of the failing disk is known!
+We don't recommend leaving failed disks online unless you know the exact condition of the failing disk!
 Attempting to replace a heavily degraded disk without off-lining it first results in a significantly slower replacement process.
 {{< /expand >}}
 
