@@ -84,7 +84,7 @@ Go to the **Services** screen and check the **SSH** service configuration. Start
 By default, replication tasks use snapshots to quickly transfer data to the receiving system.
 When **Full Filesystem Replication** is set, the chosen **Source** completely replicates, including all dataset properties, snapshots, child datasets, and clones.
 When choosing this option, we recommend allocating additional time for the replication task to run.
-Leaving **Full Filesystem Replication** unset but setting **Include Dataset Properties** will include just the dataset properties in the snapshots to be replicated.
+Leaving **Full Filesystem Replication** unset but setting **Include Dataset Properties** includes just the dataset properties in the snapshots to be replicated.
 Additional options allow you to recursively replicate child dataset snapshots or exclude specific child datasets or properties from the replication.
 
 Local sources replicate by snapshots you generated from a periodic snapshot task or from a defined naming schema that matches manually created snapshots.
