@@ -128,7 +128,7 @@ This can be a destructive option, so be sure that any snapshots that the task de
 {{< /hint >}}
 
 Defining the **Snapshot Retention Policy** is generally recommended to prevent cluttering the system with obsolete snapshots.
-Choosing *Same as Source* will keep the snapshots on the destination system for the same duration as the defined *Snapshot Lifetime* from the source system periodic snapshot task.
+Choosing **Same as Source** keeps the snapshots on the destination system for the same duration as the defined snapshot lifetime from the source system periodic snapshot task.
 You can also define your own *Custom* lifetime for snapshots on the destination system.
 
 ### Schedule
