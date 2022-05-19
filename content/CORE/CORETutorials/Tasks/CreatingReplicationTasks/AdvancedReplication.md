@@ -124,7 +124,7 @@ The encryption key can be stored in the TrueNAS system database or in a custom-d
 {{< hint warning >}}
 **Synchronizing Destination Snapshots With Source** destroys any snapshots in the destination that do not match the source snapshots.
 TrueNAS also fully replicates the source snapshots as if the replication task had never run before, which leads to excessive bandwidth consumption.
-This can be a destructive option, so be sure that any snapshots that the task will delete from the destination are obsolete or otherwise backed up in a different location.
+This can be a destructive option, so be sure that any snapshots that the task deletes from the destination are obsolete or otherwise backed up in a different location.
 {{< /hint >}}
 
 Defining the **Snapshot Retention Policy** is generally recommended to prevent cluttering the system with obsolete snapshots.
