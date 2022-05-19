@@ -12,4 +12,4 @@ weight: 100
 | Hours | Hours when the task runs. |
 | Days | Days when the task runs. |
 | Months | Months when the task runs. |
-| Days of Week | Days of the week when the task will run. |
+| Days of Week | Days of the week when the task runs. |
