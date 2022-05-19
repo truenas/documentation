@@ -29,7 +29,7 @@ Determining your specific storage requirements is a critical step before creatin
 To create a new pool, go to **Storage > Pools** and click **ADD**. The **Create or Import Pool** screen of the pool creation screens displays.
 Select **Create new pool** and click **CREATE POOL** to open the **Pool Manager**.
 
-![StoragePoolsAddCreateManager](/images/CORE/12.0/StoragePoolsAddCreateManager.png "TrueNAS Pool Manager")
+![CreatePoolScreen](/images/CORE/13.0/CreatePoolScreen.png "Create Pool Manager")
 
 To begin, enter a name for the pool in **Name**. Do not include spaces in the pool name as this could cause problems with other functions.
 
@@ -144,3 +144,15 @@ For example, if two disks are added, TrueNAS automatically configures the vdev a
 ![StoragePoolsAddCreateMirror](/images/CORE/12.0/StoragePoolsAddCreateMirror.png "Mirrored Vdev")
 
 To change the vdev layout, open the **Data VDevs** list and select the desired layout.
+
+## Additional Information
+
+[Dataset Screens]({{< relref "/CORE/UIReference/Storage/Pools/DatasetsScreen.md" >}})
+
+[Pools Screens]({{< relref "/CORE/UIReference/Storage/Pools/PoolsScreens.md" >}})
+
+[Managing Pools]({{< relref "/CORE/CORETutorials/Storage/Pools/ManagingPools.md" >}})
+
+[Importing Pools]({{< relref "/CORE/CORETutorials/Storage/Pools/PoolImport.md" >}})
+
+[Setting Up Permissions]({{< relref "/CORE/CORETutorials/Storage/Pools/Permissions.md" >}}) 
