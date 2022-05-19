@@ -29,28 +29,38 @@ Only TrueNAS systems licensed for Fibre Channel have the **Fibre Channel Ports**
 {{< /hint >}}
 
 ## Fibre Channel Ports
+The **Fibre Channel Ports** screen displays a table of ports configured on the TrueNAS.
 
-
-![iSCSWithFiberChannelPorts](/images/CORE/12.0/iSCSWithFibreChannelPorts.png "ISCSI with Fibre Channel Ports")
+![FibreChannelPortsScreen](/images/CORE/13.0/FibreChannelPortsScreen.png "Fibre Channel Ports Screen")
 
 Use the blue **Columns** button to display options to can change the **Fibre Channel** table display. Options are **Unselect All**, **WWPN**, **State** or **Reset to Defaults**.
 
-Click <i class="material-icons" aria-hidden="true" title="Expand">chevron_right</i> to expand the **Fibre Channel** options. 
+Click <i class="material-icons" aria-hidden="true" title="Expand">chevron_right</i> to expand the **Fibre Channel Ports** options. 
 
-![iSCSIFibreChannelPorts](/images/CORE/13.0/iSCSIFibreChannelPorts.png "iSCSI Fiber Channel Ports")
+![FibreChannelPortsScreenExpanded](/images/CORE/13.0/FibreChannelPortsScreenExpanded.png "Fibre Channel Ports Screen Expanded")
 
 ### Fibre Channel Mode Settings
+The **Mode** radio buttons display additional information on the screen based on the selection made.
+
+![FibreChannelPortConnectedInitiators12U8](/images/CORE/13.0/FibreChannelPortConnectedInitiators12U8.png "Fibre Channel Port Connected Initiators")
+
 | Setting | Description |
 |---------|-------------|
-| **Initiator** | Sets the port as an initiator.  |
-| **Target** | Sets the port as a target.  |
-| **Disabled** | Disables  |
+| **Initiator** | Sets the port as an initiator. Displays Connected Initiators on the right side of the screen for the selected target. |
+| **Target** | Sets the port as a target. Dipslays the **Targets** dropdown list field on the right side of the screen. Select the port from the list. Connected Initiators for the selected targe display below the dropdown field. |
+| **Disabled** | Disables the selected Fibre Channel port. |
 
 **SAVE** after making any setting change.
 
 ## Targets Settings for Fibre Channels 
 
 ![Sharing ISCSI Targets Add Fibre](/images/CORE/12.0/SharingISCSITargetsAddFibre.png "ISCSI Targets: Fibre")
+
+The **Targets > Add** screen **Target Mode** dropdown list includes options to select **iSCSI**, **Fibre Channel**, or **Both**.
+
+## Associated Target Settings for Fibre Channels 
+
+![FibreChannelAssoicatedTargetsScreen](/images/CORE/13.0/FibreChannelAssoicatedTargetsScreen.png "Fibre Channel Assoicated Targets Screen")
 
 The **Targets > Add** screen **Target Mode** dropdown list includes options to select **iSCSI**, **Fibre Channel**, or **Both**.
 
