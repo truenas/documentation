@@ -12,6 +12,7 @@ To view a pool's already existing shares, click *EXPLORE* in your system's windo
 Once the pool's datasets load, Click the dataset being shared, then click the *Shares* tab to view its existing shares.
 
 ![TrueCommandViewShares](/images/TrueCommand/2.0/TC20TrueCommandViewShares.png "View a Share")
+![TrueCommandViewShares](/images/TrueCommand/2.2/TC_22_ViewShares.png "View a Share")
 
 ## Add NFS Shares
 
