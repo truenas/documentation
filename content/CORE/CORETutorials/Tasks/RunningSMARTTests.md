@@ -36,7 +36,7 @@ Each test type can be slightly different based on the drive connection, ATA or S
 
 ### ATA Connection
 
-* *Long* - runs SMART Extended Self Test. This will scan the entire disk surface and can take many hours on large-volume disks.
+* *Long* - runs SMART Extended Self Test. This scans the entire disk surface and can take many hours on large-volume disks.
 * *Short* - runs SMART Short Self Test (usually under ten minutes). These are basic disk tests that vary by manufacturer.
 * *Conveyance* - runs a SMART Conveyance Self Test.
   This self-test routine is intended to identify damage incurred during transporting of the device.
