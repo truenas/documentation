@@ -46,7 +46,7 @@ See [**Alert Settings**]({{< relref "CORE/UIReference/System/AlertSettings.md" >
 
 ## FAQ
 
-**Question**: If the internet connection goes down for a while, will the replication restart where it left off - including any intermediate snapshots?
+**Question**: If the internet connection goes down for a while, does the replication restart where it left off - including any intermediate snapshots?
 
 **Answer**: Yes.
 
