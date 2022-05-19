@@ -95,7 +95,7 @@ Enter `cat ~/.ssh/id_rsa.pub` to see the key and copy the file contents.
 Copy it to the corresponding user account on the **Remote** system in **Accounts > Users**.
 Click **EDIT** and paste the key into **SSH Public Key**.
 
-Next, copy the host key from the **Remote** system to the **Host** system user's <file>.ssh/known_hosts</file> directory, using `ssh-keyscan`.
+Next, copy the host key from the **Remote** system to the **Host** system user <file>.ssh/known_hosts</file> directory, using `ssh-keyscan`.
 
 On the **Host** system, open the **Shell** and enter `ssh-keyscan -t rsa {remoteIPaddress} >> {userknown_hostsDir}` where *remoteIPaddress* is the **Remote** system IP address and *userknown_hostsDir* is the <file>known_hosts</file> directory on the **Host** system.
 Example: `ssh-keyscan -t rsa 192.168.2.6 >> /root/.ssh/known_hosts`.
