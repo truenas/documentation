@@ -110,7 +110,7 @@ Go to **Tasks > Rsync Tasks** and click **ADD**.
 Configure the SSH settings first by selecting **SSH** in the **Rsync Mode** dropdown and entering the **Port** number and **Remote Path**.
 
 Next, define the **Source** dataset for the rsync task and select an account in **User**.
-The **User** must be identical to the [SSH Connection]({{< relref "CORE/CORETutorials/SystemConfiguration/ConfiguringSSHConnections" >}}) **Username**.
+The name in **User** must be identical to the [SSH Connection]({{< relref "CORE/CORETutorials/SystemConfiguration/ConfiguringSSHConnections" >}}) **Username**.
 
 Choose a direction for the rsync task, either **Push** or **Pull**, and define the task **Schedule**.
 
