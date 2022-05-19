@@ -13,7 +13,7 @@
 |------|------|
 | Source | Define the path to a system location that has snapshots to replicate. Click the folder to see all locations on the source system or click in the field to manually type a location (Example: pool1/dataset1). Multiple source locations can be selected or manually defined with a comma (,) separator.  Selecting a location displays the number of existing snapshots that can be replicated. Selecting a location that has no snapshots configures the replication task to take a manual snapshot of that location and replicate it to the destination. |
 | Recursive | Set to also replicate all snapshots contained within the selected source dataset snapshots. Unset to only replicate the selected dataset snapshots. |
-| Replicate Custom Snapshots | Replicate snapshots that have not been created by an automated snapshot task. Requires setting a naming schema for the custom snapshots. |
+| Replicate Custom Snapshots | Replicate snapshots that are not created by an automated snapshot task. Requires setting a naming schema for the custom snapshots. |
 | Naming Schema | Pattern of naming custom snapshots to be replicated. Enter the name and [strftime(3)](https://www.freebsd.org/cgi/man.cgi?query=strftime) {0}, {1}, {2}, {3}, and {4} strings that match the snapshots to include in the replication. Separate entries by pressing Enter. The number of snapshots matching the patterns are shown. |
 
 **Source Location: On a Different System**
