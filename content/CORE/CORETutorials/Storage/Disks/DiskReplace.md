@@ -89,11 +89,11 @@ Please use CLI commands carefully and **always back up critical data** before at
 
 1. On a system with 13.0-RELEASE installed, access the TrueNAS shell either by logging in to the web interface and clicking **Shell** or accessing the CLI remotely using [SSH]({{< relref "ConfiguringSSH.md" >}}).
 2. Find the pool and disk to replace:
-   a. `zpool list` shows the name of the pools on the system.
-   b. `zpool status <pool name>` shows the specific pool and disk state for the pool. Replace *<pool name>* with the name of your specific pool.
-   c. copy or note the `gptid/####` identifier for the disk to replace.
-   d. Example:
-      ```
+   - `zpool list` shows the name of the pools on the system.
+   - `zpool status <pool name>` shows the specific pool and disk state for the pool. Replace *<pool name>* with the name of your specific pool.
+   - copy or note the `gptid/####` identifier for the disk to replace.
+   - Example:
+     ```
 	  root@examplemini[~]# zpool list
 	  NAME	SIZE	ALLOC	FREE	CKPOINT	EXPANDSZ	FRAG	CAP	DEDUP	HEALTH
 	  tank	2.72T	444K	2.72T	      -	       -	  0%	 0%	1.00x	ONLINE
@@ -103,18 +103,18 @@ Please use CLI commands carefully and **always back up critical data** before at
 	  config:
 	  
 		NAME											STATE	READ	WRITE	CKS
-	UM
+	 UM
 		tank											ONLINE	   0	    0
-	0
+	 0
 		  mirror-0										ONLINE	   0	    0
-	0
+	 0
 			gptid/c7a10e6d-ca3d-11ec-8ec6-d05099c356a4					ONLINE	   0	    0
-	0
+	 0
 			gptid/c7acbd9e-ca3d-11ec-8ec6-d05099c356a4					ONLINE	   0	    0
-	0
+	 0
 	
-	errors: No known data errors
-      ```
+	 errors: No known data errors
+     ```
 3. `curl -s https://raw.githubusercontent.com/truenas/gist/main/replace_disk.py -o replace_disk.py` downloads the disk replacement tool.
 4. `python3 replace_disk.py <pool_name> <gptid/####> <ada#>` replaces the named disk in the pool with the designated spare. Replace *<pool_name>* with the name of the pool with the disk to be replaced, *<gptid/####>* with the disk identifier noted above in step 2, and *<ada#>* with the name of the unused disk to use as the replacement.
    Example:
