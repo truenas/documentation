@@ -98,7 +98,7 @@ Expand the **iocage** and **jails** datasets to find the plugin jail storage dat
 
 ![StoragePoolsJailsDatasetLocation](/images/CORE/12.0/StoragePoolsJailsDatasetLocation.png "Storage Pools Jails Dataset Location")
 
-One option to back up this stored data is to create a [local replication]({{< relref "CORE/CORETutorials/Tasks/ReplicationTasks/LocalReplication.md" >}}).
+One option to back up this stored data is to create a [local replication]({{< relref "LocalReplication.md" >}}).
 The replication task can even be configured to run periodically and automatically back up new changes to the jail dataset.
 
 To convert a jail snapshot into a new storage dataset, go to **Storage > Snapshots** and find a snapshot of the jail dataset.
