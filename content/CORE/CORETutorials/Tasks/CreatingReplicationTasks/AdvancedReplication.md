@@ -68,7 +68,7 @@ For *SSH+NETCAT* replications, you also need to define the addresses and ports t
 
 {{< hint warning >}}
 **Allow Blocks Larger than 128KB** is a one-way toggle.
-Replication tasks using large block replication will only continue to work as long as this option remains enabled.
+Replication tasks using large block replication only continue to work as long as this option remains enabled.
 {{< /hint >}}
 
 ### Source
