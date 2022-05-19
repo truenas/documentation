@@ -15,7 +15,7 @@ These areas are not editable.
 
 ![**Network Summary**](/images/CORE/12.0/NetworkSummary.png "Network Summary")
 
-* [**Interfaces**]({{< relref "/CORE/UIReference/Network/Interfaces/_index.md" >}}) shows any configured physical, [bridge]({{< relref "/CORE/CORETutorials/Network/Interfaces/BridgeCreate.md" >}}), [LAGG]({{< relref "/CORE/CORETutorials/Network/Interfaces/LAGGCreate.md" >}}), and [vlan]({{< relref "/CORE/CORETutorials/Network/Interfaces/VLANCreate.md" >}}) interfaces.
+* [**Interfaces**]({{< relref "/CORE/CORETutorials/Network/Interfaces/_index.md" >}}) shows any configured physical, [bridge]({{< relref "/CORE/CORETutorials/Network/Interfaces/BridgeCreate.md" >}}), [LAGG]({{< relref "/CORE/CORETutorials/Network/Interfaces/LAGGCreate.md" >}}), and [vlan]({{< relref "/CORE/CORETutorials/Network/Interfaces/VLANCreate.md" >}}) interfaces.
   All detected physical interfaces are listed, even when unconfigured.
   The IPv4 or IPv6 address displays when a [Static IP]({{< relref "/CORE/CORETutorials/Network/Interfaces/SettingStaticIP.md" >}}) is saved for an interface.
 

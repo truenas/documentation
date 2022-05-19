@@ -70,7 +70,7 @@ Dolor sit, sumo unique ...
 |------|-------------|
 | OAuth Client ID | The public identifier for the cloud application. |
 | OAuth Client Secret | The secret phrase known only to the cloud application and the authorization server. |
-| Access Token | Access Token for a Dropbox account. You must create a [token](https://blogs.dropbox.com/developers/2014/05/generate-an-access-token-for-your-own-account/) from the [Dropbox account](https://www.dropbox.com/) before adding it here. |
+| Access Token | Access Token for a Dropbox account. You must create a [token](https://dropbox.tech/developers/generate-an-access-token-for-your-own-account) from the [Dropbox account](https://www.dropbox.com/) before adding it here. |
 {{< /expand >}}
 
 {{< expand "FTP" "v" >}}

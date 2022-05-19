@@ -73,7 +73,7 @@ Users can also create their own boot environments in TrueNAS as needed, for exam
 This way, the system can be rebooted into a snapshot of the system that did not include the new configuration changes.
 
 **ZFS provides a write cache** in RAM as well as a ZFS Intent Log ([ZIL](/references/slog/).
-The ZIL is a storage area that [temporarily holds synchronous writes until they are written to the ZFS pool](https://pthree.org/2013/04/19/zfs-administration-appendix-a-visualizing-the-zfs-intent-log/).
+The ZIL is a storage area that [temporarily holds synchronous writes until they are written to the ZFS pool](https://technotes.seastrom.com/assets/2018-11-13-ZFS-reading-list/Aaron_Toponce_ZFS_Administration_Appendices.pdf).
 Adding a fast (low-latency), power-protected SSD as a SLOG (*Separate Log*) device permits much higher performance. This is a necessity for NFS over ESXi, and highly recommended for database servers or other applications that depend on synchronous writes.
 More detail on SLOG benefits and usage is available in these blog and forum posts:
 
