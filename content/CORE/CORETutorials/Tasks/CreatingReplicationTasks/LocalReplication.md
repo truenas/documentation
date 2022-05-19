@@ -65,7 +65,7 @@ Choosing to keep snapshots indefinitely can require you to manually clean old on
 ![TasksReplicationTasksAddLocalSourceLocalDestCustomLife](/images/CORE/12.0/TasksReplicationTasksAddLocalSourceLocalDestCustomLife.png "Custom Lifetime")
 
 Clicking **START REPLICATION** saves the new task and immediately attempts to replicate snapshots to the **Destination**.
-When TrueNAS detects that the **Destination** already has unrelated snapshots, it will ask to delete the unrelated ones and do a full copy of the new ones.
+When TrueNAS detects that the **Destination** already has unrelated snapshots, it asks to delete the unrelated ones and do a full copy of the new ones.
 **START REPLICATION** can delete data, so be sure you are okay with deleting any existing snapshots. Alternatively, back them up in another location.
 
 The simple replication is added to the Replication task list and will show that it is currently running.
