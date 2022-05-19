@@ -68,7 +68,7 @@ Clicking **START REPLICATION** saves the new task and immediately attempts to re
 When TrueNAS detects that the **Destination** already has unrelated snapshots, it asks to delete the unrelated ones and do a full copy of the new ones.
 **START REPLICATION** can delete data, so be sure you are okay with deleting any existing snapshots. Alternatively, back them up in another location.
 
-The simple replication is added to the Replication task list and will show that it is currently running.
+The simple replication is added to the replication task list and shows that it is currently running.
 Clicking the task state shows the replication log with an option to download it to your local system.
 
 ![TasksReplicationTasksLocalLogs](/images/CORE/12.0/TasksReplicationTasksLocalLogs.png "Local Replication Log")
