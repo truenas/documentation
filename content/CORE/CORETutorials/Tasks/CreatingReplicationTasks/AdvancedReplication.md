@@ -95,7 +95,7 @@ Multiple schemas can be entered by pressing <kbd>Enter</kbd> to separate each sc
 
 To define specific snapshots from the periodic task to replicate, set **Replicate Specific Snapshots** and enter a schedule.
 The only periodically generated snapshots in the replication task are those that match your defined schedule.
-Alternately, you can use your **Replication Schedule** to determine which snapshots replicate by setting **Run Automatically**, **Only Replicate Snapshots Matching Schedule**, and defining when the replication task will run.
+Alternately, you can use your **Replication Schedule** to determine which snapshots replicate by setting **Run Automatically**, **Only Replicate Snapshots Matching Schedule**, and defining when the replication task runs.
 
 When a replication task has difficulty completing, set **Save Pending Snapshots**.
 **Save Pending Snapshots** prevents the source TrueNAS from automatically deleting any snapshots that fail to replicate to the destination system.
