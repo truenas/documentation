@@ -114,7 +114,7 @@ The name in **User** must be identical to the [SSH Connection]({{< relref "CORE/
 
 Choose a direction for the rsync task, either **Push** or **Pull**, and define the task **Schedule**.
 
-Next, enter the **Remote** host IP address or hostname.
+Next, enter the **Remote** host IP address or host name.
 Use the format *username@remote_host* if the username differs on the **Remote** host.
 Configure the remaining options according to your specific needs.
 
