@@ -77,7 +77,7 @@ Your identification has been saved in /root/.ssh/id_rsa.
 Your public key has been saved in /root/.ssh/id_rsa.pub.
 The key fingerprint is:
 SHA256:NZMgbuPvTHeEqi3SA/U5wW8un6AWrx8ZsRQdbJJHmR4 tester@truenas.local
-The key's randomart image is:
+The key randomart image is:
 +---[RSA 2048]----+
 |      . o=o+     |
 |     . .ooE.     |
