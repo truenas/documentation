@@ -3,7 +3,7 @@
 | Name | Desciption |
 |------|------|
 | Load Previous Replication Task | Use settings from a saved replication. |
-| Source Location | Storage location for the original snapshots that will be replicated. |
+| Source Location | Storage location for the original snapshots that are replicated. |
 | Destination Location | Storage location for the replicated snapshots. |
 | Task Name | Name of this replication configuration. |
 
