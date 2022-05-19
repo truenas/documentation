@@ -46,10 +46,10 @@ See [**Alert Settings**]({{< relref "CORE/UIReference/System/AlertSettings.md" >
 
 ## FAQ
 
-**Question**: If the internet connection goes down for a while, will the replication restart where it left off - including any intermediate snapshots?
+**Question**: If the internet connection goes down for a while, does the replication restart where it left off - including any intermediate snapshots?
 
 **Answer**: Yes.
 
-**Question**: If a site changes a lot of data at once and the internet bandwidth is not enough to finish sending the snapshot before the next one begins, will the replication jobs run one after the other and not stomp on each other?
+**Question**: If a site changes a lot of data at once and the internet bandwidth is not enough to finish sending the snapshot before the next one begins, do the replication jobs run one after the other and not stomp on each other?
 
 **Answer**: Yes.

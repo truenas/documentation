@@ -20,7 +20,7 @@ aliases:
     * Set the destination location to the local system.
      * Select or manually define a path to the single destination location for the snapshot copies.
   * Set the Replication schedule to run once.
-  * Define how long the snapshots will store in the **Destination**.
+  * Define how long the snapshots is stored in the **Destination**.
   * Clicking **START REPLICATION** immediately snapshots the chosen. Sources and copies those snapshots to the **Destination**.
     * Dialog might ask to delete existing snapshots from the **Destination**. Be sure to protect that all-important data before deleting anything.
 * Clicking the task **State** shows the logs for that replication task.
@@ -65,10 +65,10 @@ Choosing to keep snapshots indefinitely can require you to manually clean old on
 ![TasksReplicationTasksAddLocalSourceLocalDestCustomLife](/images/CORE/12.0/TasksReplicationTasksAddLocalSourceLocalDestCustomLife.png "Custom Lifetime")
 
 Clicking **START REPLICATION** saves the new task and immediately attempts to replicate snapshots to the **Destination**.
-When TrueNAS detects that the **Destination** already has unrelated snapshots, it will ask to delete the unrelated ones and do a full copy of the new ones.
+When TrueNAS detects that the **Destination** already has unrelated snapshots, it asks to delete the unrelated ones and do a full copy of the new ones.
 **START REPLICATION** can delete data, so be sure you are okay with deleting any existing snapshots. Alternatively, back them up in another location.
 
-The simple replication is added to the Replication task list and will show that it is currently running.
+The simple replication is added to the replication task list and shows that it is currently running.
 Clicking the task state shows the replication log with an option to download it to your local system.
 
 ![TasksReplicationTasksLocalLogs](/images/CORE/12.0/TasksReplicationTasksLocalLogs.png "Local Replication Log")

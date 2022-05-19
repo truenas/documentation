@@ -59,7 +59,7 @@ The **Transport** selector determines the method to use for the replication:
 *SSH* is the standard option for sending or receiving data from a remote system, but *SSH+NETCAT* is  faster for replications within completely secure networks.
 *Local* is only used for replicating data to another location on the same system.
 
-With *SSH*-based replications, configure the transport method by selecting the **SSH Connection** to the remote system that will send or receive snapshots.
+With SSH-based replications, configure the transport method by selecting the **SSH Connection** to the remote system that sends or receives snapshots.
 Options for compressing data, adding a bandwidth limit, or other data stream customizations are available.  **Stream Compression** options are only available when using SSH. Before enabling **Compressed WRITE Records**, verify that the destination system supports compressed WRITE records. 
 
 ![TasksReplicationAddAvancedTransportOptions](/images/CORE/12.0/TasksReplicationAddAdvancedTransportOptions.png "Advanced Replication: Transport")
@@ -68,7 +68,7 @@ For *SSH+NETCAT* replications, you also need to define the addresses and ports t
 
 {{< hint warning >}}
 **Allow Blocks Larger than 128KB** is a one-way toggle.
-Replication tasks using large block replication will only continue to work as long as this option remains enabled.
+Replication tasks using large block replication only continue to work as long as this option remains enabled.
 {{< /hint >}}
 
 ### Source
@@ -84,7 +84,7 @@ Go to the **Services** screen and check the **SSH** service configuration. Start
 By default, replication tasks use snapshots to quickly transfer data to the receiving system.
 When **Full Filesystem Replication** is set, the chosen **Source** completely replicates, including all dataset properties, snapshots, child datasets, and clones.
 When choosing this option, we recommend allocating additional time for the replication task to run.
-Leaving **Full Filesystem Replication** unset but setting **Include Dataset Properties** will include just the dataset properties in the snapshots to be replicated.
+Leaving **Full Filesystem Replication** unset but setting **Include Dataset Properties** includes just the dataset properties in the snapshots to be replicated.
 Additional options allow you to recursively replicate child dataset snapshots or exclude specific child datasets or properties from the replication.
 
 Local sources replicate by snapshots you generated from a periodic snapshot task or from a defined naming schema that matches manually created snapshots.
@@ -95,7 +95,7 @@ Multiple schemas can be entered by pressing <kbd>Enter</kbd> to separate each sc
 
 To define specific snapshots from the periodic task to replicate, set **Replicate Specific Snapshots** and enter a schedule.
 The only periodically generated snapshots in the replication task are those that match your defined schedule.
-Alternately, you can use your **Replication Schedule** to determine which snapshots replicate by setting **Run Automatically**, **Only Replicate Snapshots Matching Schedule**, and defining when the replication task will run.
+Alternately, you can use your **Replication Schedule** to determine which snapshots replicate by setting **Run Automatically**, **Only Replicate Snapshots Matching Schedule**, and defining when the replication task runs.
 
 When a replication task has difficulty completing, set **Save Pending Snapshots**.
 **Save Pending Snapshots** prevents the source TrueNAS from automatically deleting any snapshots that fail to replicate to the destination system.
@@ -124,11 +124,11 @@ The encryption key can be stored in the TrueNAS system database or in a custom-d
 {{< hint warning >}}
 **Synchronizing Destination Snapshots With Source** destroys any snapshots in the destination that do not match the source snapshots.
 TrueNAS also fully replicates the source snapshots as if the replication task had never run before, which leads to excessive bandwidth consumption.
-This can be a destructive option, so be sure that any snapshots that the task will delete from the destination are obsolete or otherwise backed up in a different location.
+This can be a destructive option, so be sure that any snapshots that the task deletes from the destination are obsolete or otherwise backed up in a different location.
 {{< /hint >}}
 
 Defining the **Snapshot Retention Policy** is generally recommended to prevent cluttering the system with obsolete snapshots.
-Choosing *Same as Source* will keep the snapshots on the destination system for the same duration as the defined *Snapshot Lifetime* from the source system periodic snapshot task.
+Choosing **Same as Source** keeps the snapshots on the destination system for the same duration as the defined snapshot lifetime from the source system periodic snapshot task.
 You can also define your own *Custom* lifetime for snapshots on the destination system.
 
 ### Schedule
