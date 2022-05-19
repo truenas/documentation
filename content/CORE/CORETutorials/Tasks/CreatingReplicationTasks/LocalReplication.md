@@ -20,7 +20,7 @@ aliases:
     * Set the destination location to the local system.
      * Select or manually define a path to the single destination location for the snapshot copies.
   * Set the Replication schedule to run once.
-  * Define how long the snapshots will store in the **Destination**.
+  * Define how long the snapshots is stored in the **Destination**.
   * Clicking **START REPLICATION** immediately snapshots the chosen. Sources and copies those snapshots to the **Destination**.
     * Dialog might ask to delete existing snapshots from the **Destination**. Be sure to protect that all-important data before deleting anything.
 * Clicking the task **State** shows the logs for that replication task.
