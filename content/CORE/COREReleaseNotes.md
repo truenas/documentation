@@ -725,6 +725,7 @@ This is a an early release meant for previewing and testing features and is **no
 
 | Seen In | Key | Summary | Workaround | Resolved In |
 |---------|-----|---------|------------|-------------|
+| 13.0-Release | [NAS-116217](https://jira.ixsystems.com/browse/NAS-116217) | Disk replacement fails with JavaScript error. | Use the CLI to manually replace the disk: [CLI method]({{< relref "/content/CORE/CORETutorials/Storage/Disks/DiskReplace.md#cli-method" >}}). | 13.0-U1 (targeted) |
 | 13.0-Release | [NAS-116262](https://jira.ixsystems.com/browse/NAS-116262) | NFS nconnect feature not stable on 13.0 | During multi-client usage with the client-side nconnect option used, the NFS server becomes unstable. This feature has been verified to work on SCALE, but resolution ETA is unknown for 13.0. | SCALE |
 | 13.0-Release, 12.0-U8.1 | [NAS-116160](https://jira.ixsystems.com/browse/NAS-116160) | Netatalk 3.1.13 introduced an edge-case bug where AFP metadata could be stripped unexpectedly on file read | Deployments that rely on AFP sharing should avoid upgrading to 13.0 until the 13.0-U1 release. Snapshot any AFP-shared datasets before attempting to upgrade to a 13.0 release. | 13.0-U1 (targeted) |
 | 13.0-Release | [NAS-116090](https://jira.ixsystems.com/browse/NAS-116090) | Mini 3.0 E+ View Enclosure showing populated drive bay as empty. | The enclosure view for all Mini 3.0 platforms will show the top bay as unpopulated even when a drive is inserted. | 13.0-U1 release (targeted) |
