@@ -9,7 +9,7 @@ weight: 100
 |------|------|
 | Choose a preset | Populates the rest of the fields. |
 | Minutes | Minutes when the task runs. |
-| Hours | Hours when the task will run. |
+| Hours | Hours when the task runs. |
 | Days | Days when the task will run. |
 | Months | Months when the task will run. |
 | Days of Week | Days of the week when the task will run. |
