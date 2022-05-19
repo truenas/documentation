@@ -67,7 +67,7 @@ Some options only display when the appropriate hardware is present.
 
 | Setting | Description |
 |---------|-------------|
-| **HTTP Proxy** | Enter the proxy information for the network in the format *http://my.proxy.server:3128* or *http://user:password@my.proxy.server:3128*. |
+| **HTTP Proxy** | Enter the proxy information for the network in the format http://*my.proxy.server:3128* or http://*user:password@my*.*proxy.server:3128*. |
 | **Enable Netwait Feature** | Select to prevents network services from starting until the interface can ping the addresses listed in the **Netwait IP list**. |
 | **Netwait IP List** | Select only appears when **Enable Netwait Feature** is set. Enter a list of IP addresses to ping. Separate entries by pressing <kbd>Enter</kbd>. Each address is tried until one is successful or the list is exhausted. Leave empty to use the default gateway. |
 | **Host Name Database** | Enter the database host name. Used to add one entry per line which is appended to <file>/etc/hosts</file>. Separate entries by pressing <kbd>Enter</kbd>. Use the format *IP_address space hostname* where multiple host names can be used if separated by a space. Hosts defined here are still accessible by name even when DNS is not available. See <a href="https://www.freebsd.org/cgi/man.cgi?query=hosts">hosts</a> for additional information. |
