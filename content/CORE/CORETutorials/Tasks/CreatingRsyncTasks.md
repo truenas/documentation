@@ -39,7 +39,7 @@ Choose a direction for the rsync task.
 Select a schedule for the rsync task.
 
 Next, enter the **Remote Host** IP address or hostname.
-Use the format **username@remote_host** when the username differs on the **Remote** host.
+Use the format **username@remote_host** when the user name differs on the **Remote** host.
 Select **Module** in the **Rsync Mode** dropdown. 
 Enter the **Remote Module Name** as it appears on the **Remote** system.
 
