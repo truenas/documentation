@@ -15,7 +15,7 @@ Go to **Tasks > Cron Jobs** and click **ADD**.
 
 ![TasksCronJobsAdd](/images/CORE/12.0/TasksCronJobsAdd.png "Creating a new Cron Job")
 
-The **Description** helps identify the cron job's purpose and is optional.
+The **Description** helps identify the purpose of the cron job and is optional.
 
 Enter the **Command** to run on the **Schedule**.
 Alternately, enter the path to a script file to run instead of a specific command.
