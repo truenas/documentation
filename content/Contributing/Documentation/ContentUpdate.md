@@ -42,7 +42,7 @@ Some article content comes from a separate *include* statement.
 This statement pulls in content from a different location and allows using common text in many different website article simultaneously.
 Updating an <file>include/</file> file updates the content in every single affected article!
 
-An example of this is in the [Cron Jobs]({{< relref "/CORE/CORETutorials/Tasks/CronJobs.md" >}}) article.
+An example of this is in the [Cron Jobs]({{< relref "/CORE/CORETutorials/Tasks/CreatingCronJobs.md" >}}) article.
 The expandable *Advanced Scheduler* content is pulled from another location in the repository (<file>static/includes/AdvancedScheuler.md.part</file>).
 The <file>AdvancedScheuler.md.part</file> is included in the [Cloud Sync Tasks]({{< relref "/CORE/CORETutorials/Tasks/CreatingCloudSyncTasks.md" >}}) and other **Tasks** content.
 
