@@ -1,6 +1,8 @@
 ---
 title: "RMA Policy"
 weight: 10
+aliases:
+  - /hardware/notices/rma-policy/
 ---
 
  All warranted systems inherit the iXsystems RMA policy. The details of the policy vary depending upon the type of system and whether or not it is located in the continental US.

@@ -1,6 +1,8 @@
 ---
 title: "IPMI Frequently Asked Questions"
 weight: 25
+aliases:
+  - /hardware/notices/faqs/ipmi-faq/
 ---
 
 **How do I connect to Remote Management?**
