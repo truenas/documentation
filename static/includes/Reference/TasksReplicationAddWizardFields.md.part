@@ -38,7 +38,7 @@
 | Name | Desciption |
 |------|------|
 | SSH Connections | Select a saved remote system SSH connection or choose Create New to create a new SSH connection. |
-| Destination | Define the path to a system location that will store replicated snapshots. Click the folder to see all locations on the destination system or click in the field to manually type a location path (Example: pool1/dataset1). Selecting a location defines the full path to that location as the destination. Appending a name to the path will create new zvol at that location. For example, selecting pool1/dataset1 will store snapshots in dataset1, but clicking the path and typing /zvol1 after dataset1 will create zvol1 for snapshot storage. |
+| Destination | Define the path to a system location that stores replicated snapshots. Click the folder to see all locations on the destination system or click in the field to manually type a location path (Example: pool1/dataset1). Selecting a location defines the full path to that location as the destination. Appending a name to the path creates a new zvol at that location. For example, selecting pool1/dataset1 stores snapshots in dataset1, but clicking the path and typing /zvol1 after dataset1 creates zvol1 for snapshot storage. |
 | Encryption | Set to use encryption when replicating data. Additional encryption options will appear. |
 
 ### When
