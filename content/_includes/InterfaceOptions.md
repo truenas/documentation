@@ -1,3 +1,6 @@
+---
+---
+
 ## Other Settings
 
 Every kind of network interface has common settings:
