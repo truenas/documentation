@@ -7,16 +7,16 @@ weight: 70
 TrueNAS includes an easy to use interface for common tasks a sysadmin needs to preform on a NAS on a regular basis.  These can roughly be broken down into three groups.
 
 **System level Tasks**
-* [Cron Jobs]({{< relref "CreatingCronJobs.md" >}})
-* [Init and Shutdown Scripts]({{< relref "CreatingInitShutdownScripts.md" >}})
-* [S.M.A.R.T. tests]({{< relref "RunningSMARTTests.md" >}})
+* [Cron Jobs]({{< relref "/CORE/CORETutorials/Tasks/CreatingCronJobs.md" >}})
+* [Init and Shutdown Scripts]({{< relref "/CORE/CORETutorials/Tasks/CreatingInitShutdownScripts.md" >}})
+* [S.M.A.R.T. tests]({{< relref "/CORE/CORETutorials/Tasks/SMARTTests.md" >}})
 
 **Data Backup Tasks**
-* [Rsync Tasks]({{< relref "CreatingRsyncTasks.md" >}})
-* [Cloud Sync Tasks]({{< relref "CreatingCloudSyncTasks.md" >}})
+* [Rsync Tasks]({{< relref "/CORE/CORETutorials/Tasks/CreatingRsyncTasks.md" >}})
+* [Cloud Sync Tasks]({{< relref "/CORE/CORETutorials/Tasks/CreatingCloudSyncTasks.md" >}})
 
 **ZFS Tasks**
-* [Periodic Snapshot Tasks]({{< relref "CreatingPeriodicSnapshotTasks.md" >}})
-* [Resilver Priority]({{< relref "UsingResilverPriority.md" >}})
-* [Scrub Tasks]({{< relref "CreatingScrubTasks.md" >}})
-* [Replication Tasks]({{< relref "CreatingReplicationTasks.md" >}})
+* [Periodic Snapshot Tasks]({{< relref "/CORE/CORETutorials/Tasks/CreatingPeriodicSnapshotTasks.md" >}})
+* [Resilver Priority]({{< relref "/CORE/CORETutorials/Tasks/UsingResilverPriority.md" >}})
+* [Scrub Tasks]({{< relref "/CORE/CORETutorials/Tasks/CreatingScrubTasks.md" >}})
+* [Replication Tasks]({{< relref "/CORE/CORETutorials/Tasks/CreatingReplicationTasks/_index.md" >}})
