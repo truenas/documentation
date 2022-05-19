@@ -20,7 +20,7 @@ Define the **Difference** in degrees of Celsius. S.M.A.R.T. sends alerts if the 
 
 Define the **Threshold** in degrees of Celsius. S.M.A.R.T. sends messages with a log level of LOG_INFO if the temperature exceeds the threshold.
 
-Define the **Threshold** in degrees of Celsius. S.M.A.R.T. will message with a log level of LOG_CRIT if the temperature exceeds
+Define the **Threshold** in degrees of Celsius. S.M.A.R.T. sends messages with a log level of LOG_CRIT if the temperature exceeds
 
 ## Service Activation
 
