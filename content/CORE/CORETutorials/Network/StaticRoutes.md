@@ -1,5 +1,5 @@
 ---
-title: "Static Routes"
+title: "Define Static Routes"
 weight: 40
 ---
 

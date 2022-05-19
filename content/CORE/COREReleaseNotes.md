@@ -4,6 +4,7 @@ weight: 2
 aliases:
   - /releasenotes/core/13.0beta1/
   - /releasenotes/core/13.0rc1/
+  - /releasenotes/core/
 ---
 
 {{< toc >}}
@@ -724,7 +725,10 @@ This is a an early release meant for previewing and testing features and is **no
 
 | Seen In | Key | Summary | Workaround | Resolved In |
 |---------|-----|---------|------------|-------------|
+| 13.0-Release | [NAS-116262](https://jira.ixsystems.com/browse/NAS-116262) | NFS nconnect feature not stable on 13.0 | During multi-client usage with the client-side nconnect option used, the NFS server becomes unstable. This feature has been verified to work on SCALE, but resolution ETA is unknown for 13.0. | SCALE |
+| 13.0-Release, 12.0-U8.1 | [NAS-116160](https://jira.ixsystems.com/browse/NAS-116160) | Netatalk 3.1.13 introduced an edge-case bug where AFP metadata could be stripped unexpectedly on file read | Deployments that rely on AFP sharing should avoid upgrading to 13.0 until the 13.0-U1 release. Snapshot any AFP-shared datasets before attempting to upgrade to a 13.0 release. | 13.0-U1 (targeted) |
 | 13.0-Release | [NAS-116090](https://jira.ixsystems.com/browse/NAS-116090) | Mini 3.0 E+ View Enclosure showing populated drive bay as empty. | The enclosure view for all Mini 3.0 platforms will show the top bay as unpopulated even when a drive is inserted. | 13.0-U1 release (targeted) |
+| 13.0-Release | [NAS-116185](https://jira.ixsystems.com/browse/NAS-116185) | 13.0 Train shows Community Release Only - Not Enterprise Supported. | While core users can use this train to upgrade from the UI this release is not suitable for enterprise customers, and no support will be provided for enterprise customers.  This notice will be removed in a future release.  | 13.0-U2 release (targeted) |
 | 13.0-BETA1 | [NAS-114160](https://jira.ixsystems.com/browse/NAS-114160) | Connection interrupt when managing jails or plugins. | This behavior was seen in early testing and is still being investigated. No workaround is necessary as the connection resumes after a brief interruption. | 13.0-U1 release (targeted) |
 | 13.0-BETA1 | [NAS-114595](https://jira.ixsystems.com/browse/NAS-114595) | VNC can't connect to bhyve VMs. | Update to 13.0 Nightlies or 13.0-U1 (when available). | 13.0-U1 (targeted) |
 | 12.0-U8.1 and 13.0-BETA1 | [NAS-115838](https://jira.ixsystems.com/browse/NAS-115838) | Plugin install failures due to end of life (EoL) 12.2 FreeBSD release. | Resolved separately from TrueNAS releases on April 19, 2022. |
