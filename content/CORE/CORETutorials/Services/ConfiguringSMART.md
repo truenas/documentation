@@ -16,7 +16,7 @@ Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i
 
 Define a number of minutes for smartd to wake up and check for configured to run in **Check Interval** and select a **Power Mode** (tests only run with *Never*).
 
-Define the **Difference** in degrees of Celsius. S.M.A.R.T. will alert if the temperature of a drive changes by N degrees Celsius since the last report.
+Define the **Difference** in degrees of Celsius. S.M.A.R.T. sends alerts if the temperature of a drive changes by N degrees Celsius since the last report.
 
 Define the **Threshold** in degrees of Celsius. S.M.A.R.T. will message with a log level of LOG_INFO if the temperature exceeds the threshold.
 
