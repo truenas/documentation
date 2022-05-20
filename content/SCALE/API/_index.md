@@ -13,3 +13,7 @@ Alternatively, append `/api/docs/` to your TrueNAS hostname or IP address in a b
 For convenience, we store static builds of the current 2.0 API documentation on the Docs Hub:
 * [Websocket Protocol](/api/scale_websocket_api.html)
 * [RESTful](/api/scale_rest_api.html)
+
+## SCALE Documentation Sections
+
+{{< include file="/_includes/SCALEDocsSections.md" type="page" >}}
