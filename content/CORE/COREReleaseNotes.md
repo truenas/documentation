@@ -725,6 +725,7 @@ This is a an early release meant for previewing and testing features and is **no
 
 | Seen In | Key | Summary | Workaround | Resolved In |
 |---------|-----|---------|------------|-------------|
+| 13.0-Release | [NAS-116217](https://jira.ixsystems.com/browse/NAS-116217) | Disk replacement fails with JavaScript error. | Use the CLI to manually replace the disk: [CLI method](#cli-disk-replacements). | 13.0-U1 (targeted) |
 | 13.0-Release | [NAS-116262](https://jira.ixsystems.com/browse/NAS-116262) | NFS nconnect feature not stable on 13.0 | During multi-client usage with the client-side nconnect option used, the NFS server becomes unstable. This feature has been verified to work on SCALE, but resolution ETA is unknown for 13.0. | SCALE |
 | 13.0-Release, 12.0-U8.1 | [NAS-116160](https://jira.ixsystems.com/browse/NAS-116160) | Netatalk 3.1.13 introduced an edge-case bug where AFP metadata could be stripped unexpectedly on file read | Deployments that rely on AFP sharing should avoid upgrading to 13.0 until the 13.0-U1 release. Snapshot any AFP-shared datasets before attempting to upgrade to a 13.0 release. | 13.0-U1 (targeted) |
 | 13.0-Release | [NAS-116090](https://jira.ixsystems.com/browse/NAS-116090) | Mini 3.0 E+ View Enclosure showing populated drive bay as empty. | The enclosure view for all Mini 3.0 platforms will show the top bay as unpopulated even when a drive is inserted. | 13.0-U1 release (targeted) |
@@ -735,3 +736,69 @@ This is a an early release meant for previewing and testing features and is **no
 | 13.0-BETA1 | [NAS-114480](https://jira.ixsystems.com/browse/NAS-114480) | Unable to connect to TrueCommand Cloud. | Avoid connecting 13.0-BETA1 systems to TrueCommand Cloud while this issue is investigated. | 13.0-RC1 |
 | N/A | N/A | TrueNAS 12 cannot replicate to or from TrueNAS 13 | By default, TrueNAS 12 cannot initiate a replication to or from TrueNAS 13 due to an outdated SSH client library. Allowing replication to or from TrueNAS 13 to TrueNAS 12 requires allowing ssh.rsa algorithms. See [OpenSSH 8.2 Release](https://www.openssh.com/txt/release-8.2) for security considerations. Log into the TrueNAS 13 system and go to **Services->SSH**. Add the **SSH Auxiliary Parameter**: `PubkeyAcceptedAlgorithms +ssh-rsa`. | N/A |
 | 12.0-BETA2 | [NAS-107151](https://jira.ixsystems.com/browse/NAS-107151) | Replication fails between legacy TrueNAS 9.10 systems and 13.0-BETA1 systems. | Due to numerous improvements in the replication engine and ZFS, TrueNAS 9.10 systems (or earlier) cannot replicate to or from TrueNAS 13.0-BETA1. Update the legacy TrueNAS system to 11.3 first, then 12.0, and then 13.0. | N/A |
+
+
+## CLI Disk Replacements
+
+{{< hint warning >}}
+These instructions apply to systems installed with 13.0-Release only.
+
+CLI commands are meant for advanced users and, when improperly applied, can result in serious system instability or production down scenarios.
+Please use CLI commands carefully and **always back up critical data** before attempting this kind of procedure.
+{{< /hint >}}
+
+1. On a system with 13.0-RELEASE installed, access the TrueNAS shell either by logging in to the web interface and clicking **Shell** or accessing the CLI remotely using [SSH]({{< relref "ConfiguringSSH.md" >}}).
+   Type in the commands formatted in these code blocks and replace any `<text>` strings with data unique to your system.
+2. Find the pool and disk to replace:
+   - `zpool list` shows the name of the pools on the system.
+   - `zpool status <pool name>` shows the specific pool and disk state for the pool. Replace *<pool name>* with the name of your specific pool.
+   - copy or note the `gptid/####` identifier for the disk to replace.
+   - Example:
+     ```
+	  root@examplemini[~]# zpool list
+	  NAME	SIZE	ALLOC	FREE	CKPOINT	EXPANDSZ	FRAG	CAP	DEDUP	HEALTH
+	  tank	2.72T	444K	2.72T	      -	       -	  0%	 0%	1.00x	ONLINE
+	  root@examplemini[~]# zpool status tank
+	    pool: tank
+	   state: ONLINE
+	  config:
+	  
+		NAME											STATE	READ	WRITE	CKS
+	 UM
+		tank											ONLINE	   0	    0
+	 0
+		  mirror-0										ONLINE	   0	    0
+	 0
+			gptid/c7a10e6d-ca3d-11ec-8ec6-d05099c356a4					ONLINE	   0	    0
+	 0
+			gptid/c7acbd9e-ca3d-11ec-8ec6-d05099c356a4					ONLINE	   0	    0
+	 0
+	
+	 errors: No known data errors
+     ```
+3. `curl -s https://raw.githubusercontent.com/truenas/gist/main/replace_disk.py -o replace_disk.py` downloads the disk replacement tool.
+4. `python3 replace_disk.py <pool_name> <gptid/####> <ada#>` replaces the named disk in the pool with the designated spare. Replace *<pool_name>* with the name of the pool with the disk to be replaced, *<gptid/####>* with the disk identifier noted above in step 2, and *<ada#>* with the name of the unused disk to use as the replacement.
+   Example:
+   ```
+   root@examplemini[~]# python3 replace_disk.py disk gptid/c7acbd9e-ca3d-11ec-8ec6-d05099c356a4 ada3
+   Replace initiated.
+   root@examplemini[~]#zpool status tank
+   	    pool: tank
+	   state: ONLINE
+	    scan: resilvered 13.0M in 00:00:01 with 0 errors on Thu May 19 14:12:21 2022
+	  config:
+	  
+		NAME											STATE	READ	WRITE	CKS
+	UM
+		tank											ONLINE	   0	    0
+	0
+		  mirror-0										ONLINE	   0	    0
+	0
+			gptid/c7a10e6d-ca3d-11ec-8ec6-d05099c356a4					ONLINE	   0	    0
+	0
+			gptid/5e10e97f-d7b8-11ec-889a-d05099c356a4					ONLINE	   0	    0
+	0
+	
+	errors: No known data errors
+	root@examplemini[~]#
+   ```
