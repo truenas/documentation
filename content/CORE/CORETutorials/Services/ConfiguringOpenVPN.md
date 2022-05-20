@@ -1,6 +1,6 @@
 ---
 title: "Configuring OpenVPN"
-weight: 40
+weight: 70
 aliases: /core/services/openvpn/
 ---
 

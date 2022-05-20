@@ -1,6 +1,6 @@
 ---
 title: "Dynamic DNS Screen"
-weight: 10
+weight: 20
 aliases: core/services/dynamicdns/
 ---
 
