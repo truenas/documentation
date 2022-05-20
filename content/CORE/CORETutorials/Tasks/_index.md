@@ -8,8 +8,8 @@ TrueNAS includes an easy to use interface for common tasks a sysadmin needs to p
 
 **System level Tasks**
 * [Cron Jobs]({{< relref "/CORE/CORETutorials/Tasks/CreatingCronJobs.md" >}})
-* [Init and Shutdown Scripts]({{< relref "/CORE/CORETutorials/Tasks/InitShutdownScripts.md" >}})
-* [S.M.A.R.T. tests]({{< relref "/CORE/CORETutorials/Tasks/SMARTTests.md" >}})
+* [Init and Shutdown Scripts]({{< relref "/CORE/CORETutorials/Tasks/CreatingInitShutdownScripts.md" >}})
+* [S.M.A.R.T. tests]({{< relref "/CORE/CORETutorials/Tasks/RunningSMARTTests.md" >}})
 
 **Data Backup Tasks**
 * [Rsync Tasks]({{< relref "/CORE/CORETutorials/Tasks/CreatingRsyncTasks.md" >}})
