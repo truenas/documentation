@@ -14,6 +14,10 @@ On TrueNAS, the service is another way to store files, you can viewd with a web 
 Because S3 is the de facto standard for cloud-based storage, setting up an S3 service allows organizations or online application developers to use TrueNAS to replace or archive expensive cloud storage.
 {{< /expand >}}
 
+{{< hint warning >}}
+Exceeding the limit of 100K files in a single bucket (With no sub-directories) can harm performance and cause stability issues.
+{{< /hint >}}
+
 ## Setting up the S3 service
 
 Go to the **Services** page and find the **S3** on the list.
