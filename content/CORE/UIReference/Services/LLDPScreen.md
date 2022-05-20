@@ -1,6 +1,6 @@
 ---
 title: "LLDP Screen"
-weight: 30
+weight: 50
 ---
 
 Use the **LLDP** services screen to configure Link Layer Discovery Protocol (LLDP) service on your TrueNAS.

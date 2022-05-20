@@ -1,6 +1,6 @@
 ---
 title: "Configuring Dynamic DNS"
-weight: 10
+weight: 20
 aliases: /core/services/dynamicdns/
 ---
 
