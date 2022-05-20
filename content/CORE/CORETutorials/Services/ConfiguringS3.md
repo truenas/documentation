@@ -15,7 +15,7 @@ Because S3 is the de facto standard for cloud-based storage, setting up an S3 se
 {{< /expand >}}
 
 {{< hint warning >}}
-Exceeding the limit of 100K files in a single bucket (With no sub-directories) can harm performance and cause stability issues.
+Having large numbers of files (>100K for instance) in a single bucket with no sub-directories can harm performance and cause stability issues.
 {{< /hint >}}
 
 ## Setting up the S3 service
