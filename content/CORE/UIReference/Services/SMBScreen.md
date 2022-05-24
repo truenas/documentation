@@ -1,6 +1,6 @@
 ---
 title: "SMB Service Screen"
-weight: 20
+weight: 110
 ---
 
 Use the **Services SMB** screen to configured SMB service settings. 
