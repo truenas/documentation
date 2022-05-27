@@ -24,6 +24,7 @@ To add an NFS share to a pool, open the pool using the **EXPLORE** menu in your 
 
 ## Add SMB Shares
 
-To add an SMB share to a pool, open the pool using the *EXPLORE* menu in your system's window then select the pool. Once the pool loads, select the dataset you want to share and then click *CREATE SHARE* and select *Create SMB Share*.
+To add an SMB share to a pool, open the pool using the **EXPLORE** menu in your system window then select the pool. Once the pool loads, select the dataset you want to share and then click* *CREATE SHARE** and select **Create SMB Share**.
+
 
 ![TrueCommandCreateNFS](/images/TrueCommand/2.2/tc22addsmbshare.png "Create SMB Share")
