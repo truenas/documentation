@@ -16,7 +16,8 @@ Once the pool datasets load, click the dataset being shared, then click the **Sh
 
 ## Add NFS Shares
 
-To add an NFS share to a pool, open the pool using the *EXPLORE* menu in your system's window. Once the pool's datasets load, click on the dataset you want share. Click *CREATE SHARE* and select *Create NFS Share*.
+To add an NFS share to a pool, open the pool using the **EXPLORE** menu in your system window. Once the pool datasets load, click on the dataset you want share. Click **CREATE SHARE** and select **Create NFS Share**.
+
 
 ![TrueCommandCreateNFS](/images/TrueCommand/2.2/TC22addnfsshare.png "Create NFS Share")
 
