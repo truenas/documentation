@@ -9,7 +9,8 @@ weight: 50
 
 To view a pool's already existing shares, click *EXPLORE* in your system's window, then select the pool.
 
-Once the pool's datasets load, Click the dataset being shared, then click the *Shares* tab to view its existing shares.
+Once the pool datasets load, click the dataset being shared, then click the **Shares** tab to view the existing shares.
+
 
 ![TrueCommandViewShares](/images/TrueCommand/2.2/TC_22_ViewShares.png "View a Share")
 
