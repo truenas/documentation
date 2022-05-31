@@ -255,6 +255,10 @@ Because S3 is the de facto standard for cloud-based storage, setting up an S3 se
 
 ## Setting up the S3 service
 
+{{< hint warning >}}
+Having large numbers of files (>100K for instance) in a single bucket with no sub-directories can harm performance and cause stability issues.
+{{< /hint >}}
+
 Go to the **System Settings > Services** and find **S3**, then click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to configure the service.
 
 ![ServicesS3SCALE](/images/SCALE/ServicesS3SCALE.png "S3 Service Options")
