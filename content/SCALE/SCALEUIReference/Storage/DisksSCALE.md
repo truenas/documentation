@@ -55,7 +55,7 @@ Clicking *Edit* allows users to configure general disk settings, as well as powe
 | Setting | Description |
 |---------|-------------|
 | Enable S.M.A.R.T. | Enabling allows the system to conduct periodic [S.M.A.R.T. tests]({{< relref "/SCALE/SCALEUIReference/DataProtection/_index.md" >}}). |
-| S.M.A.R.T. extra options | Additional [smartctl(8)](https://www.smartmontools.org/browser/trunk/smartmontools/smartctl.8.in) options. |
+| S.M.A.R.T. extra options | Additional [smartctl(8)](https://linux.die.net/man/8/smartctl) options. |
 | SED Password | Set or change the password of this SED. This password is used instead of the global SED password. |
 | Clear SED Password | Clear the SED password for this disk. |
 
