@@ -29,7 +29,21 @@ Go to **Data Protection > Cloud Sync Tasks** and click **Add**.
 
 ![DataProtectionCloudSyncAdd](/images/SCALE/DataProtectionCloudSyncAdd.png "Creating a Cloud Sync Task")
 
-Type a memorable task description in the **Description** field. Use the **Credential** dropdown list to select an existing cloud or create a new one with the **+ Add a backup credential** option. TrueNAS connects to the chosen cloud storage provider and shows the available storage locations. Select the option if data is transferring to (**PUSH**) or from (**PULL**) the cloud storage location (**Remote**). Select a **Transfer Mode**:
+Type a memorable task description in the **Description** field. Use the **Credential** dropdown list to select an existing cloud or create a new one with the **+ Add a backup credential** option. 
+
+{{< expand "What happens if my cloud sync credentials are invalid?" "v" >}}
+Once you chose a cloud credential from the dropdown list, TrueNAS automatically validates access to that cloud sync provider.  Invalid credentials will result in the following Alert: 
+
+![DataProtectionCloudSyncInvalidAlert](/images/SCALE/DataProtectionCloudSyncInvalidAlert.png "Invalid Credentials Alert")
+
+Click **FIX CREDENTIAL**.  You will be directed to the Cloud Credentials entry view.  
+
+![DataProtectionCloudSyncInvalidFix](/images/SCALE/DataProtectionCloudSyncInvalidFix.png "Name and Provider View")
+
+Check your provider credentials and update the applicable fields within the ***Authentication*** section, click ***Verify Credential***.  *The Credential is valid* will be displayed if TrueNAS successfully accessed your provider.  Click ***Save*** and return to **Data Protection > Cloud Sync Tasks > Add**.
+{{< /expand >}}
+
+TrueNAS connects to the chosen cloud storage provider and shows the available storage locations. Select the option if data is transferring to (**PUSH**) or from (**PULL**) the cloud storage location (**Remote**). Select a **Transfer Mode**:
 
 {{< tabs "Transfer Modes" >}}
 {{< tab "Sync" >}}
