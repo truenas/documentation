@@ -50,7 +50,7 @@ Each test type can be slightly different based on the drive connection, ATA or S
 * *Offline* - runs the default self test in foreground.
   No entry is placed in the self test log.
 
-For more information, refer to [smartctl(8)](https://www.smartmontools.org/browser/trunk/smartmontools/smartctl.8.in).
+For more information, refer to [smartctl(8)](https://linux.die.net/man/8/smartctl).
 
 Click **START** to begin the test.
 Depending on the test type you choose, the test can take some time to complete.
