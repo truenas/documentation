@@ -97,5 +97,6 @@ jobs:
             --exclude=https://twitter.com/TrueNAS
             --exclude=https://www.openpgp.org/software/
             --exclude=https://gohugo.io/
+            --exclude=https://www.unix.com/
           run_timeout: 300
           debug: true
