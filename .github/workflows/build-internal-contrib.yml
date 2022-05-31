@@ -98,4 +98,5 @@ jobs:
             --exclude=https://twitter.com/TrueNAS
             --exclude=https://www.openpgp.org/software/
             --exclude=https://gohugo.io/
+            --exclude=https://www.unix.com/
           debug: true
