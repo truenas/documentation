@@ -6,13 +6,17 @@ aliases: /core/services/s3/
 
 {{< toc >}}
 
-This tutorial describes how to start a local S3 service on TrueNAS and connect to it from a networked client system with the Minio Browser, s3cmd, and S3 Browser.
+This tutorial describes how to start a local S3 service on TrueNAS and connect to it from a networked client system with the MinIO Browser, s3cmd, and S3 Browser.
 
 {{< expand "Background" "v" >}}
 S3 is an object storage protocol used by many major cloud providers including Amazon Web Services™.
-On TrueNAS, the service is another way to store files, you can viewd with a web browser.
+On TrueNAS, the service is another way to store files, you can view with a web browser.
 Because S3 is the de facto standard for cloud-based storage, setting up an S3 service allows organizations or online application developers to use TrueNAS to replace or archive expensive cloud storage.
 {{< /expand >}}
+
+{{< hint warning >}}
+Having large numbers of files (>100K for instance) in a single bucket with no sub-directories can harm performance and cause stability issues.
+{{< /hint >}}
 
 ## Setting up the S3 service
 
