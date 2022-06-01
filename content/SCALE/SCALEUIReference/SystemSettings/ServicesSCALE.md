@@ -62,7 +62,6 @@ Set **Apply User** and **Apply Group** before saving.
 
 To configure FTP, go to **System Settings > Services** and find **FTP**, then click <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
 
-![ServicesFTPSCALE](/images/SCALE/ServicesFTPSCALE.png "Services FTP Options")
 ![ServicesFTPSCALE](/images/SCALE/ServicesFTPSCALE2202.png "Services FTP Options")
 
 Configure the options according to your environment and security considerations.
