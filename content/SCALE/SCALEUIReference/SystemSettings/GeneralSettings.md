@@ -42,9 +42,41 @@ If you do not save the system configuration before resetting it, you may lose da
 
 ## Support
 
-The *Support* window in the Advanced Settings screen displays the systems general hardware and software specs and contains links to the Documentation Hub, TrueNAS Forums, and enterprise licensing information. 
+The *Support* window displays the systems general hardware and software specs and contains links to the [Documentation Hub](https://www.truenas.com/docs/), [TrueNAS Forums](https://www.truenas.com/community/), and offers [TrueNAS Licensing](https://www.ixsystems.com/support/) information. 
 
-There are also buttons that allow users to add an enterprise license or report bugs via a Jira support ticket.
+![GeneralSettingsSCALESupport](/images/SCALE/GeneralSettingsSCALESupport.png "SCALE General Settings Support View")
+
+{{< tabs "Support Options" >}}
+{{< tab "Add License" >}}
+
+For users with valid TrueNAS license, click **Add License**.  Copy your license into the box and click **Save**.  
+
+![GeneralSettingsSCALESupportLicenseEntry](/images/SCALE/GeneralSettingsSCALESupportLicenseEntry.png "SCALE General Settings Support License Entry")
+
+You will be prompted to reload the page for the license to take effect, click **RELOAD NOW**.  Log back into the WebUI where the End User License Agreement (EULA) will be displayed.  Read it thoroughly and completely.  Once finished, click **I AGREE**.  The system information will now be updated to reflect the licensing specifics for your system.
+
+![GeneralSettingsSCALESupportLicenseComplete](/images/SCALE/GeneralSettingsSCALESupportLicenseComplete.png "SCALE General Settings Support License Entry Complete")
+
+Silver and Gold level Support customers can also enable Proactive Support on their hardware to automatically notify iXsystems if an issue occurs. To find more details about the different Warranty and Service Level Agreement (SLA) options available, see [iXsystems Support](https://www.ixsystems.com/support/).
+
+Once the system is ready to be in production, update the status by checking the **This is a production system** checkbox and click the **Proceed** button. This will send an email to iXsystems declaring that the system is in production. TrueNAS has an option to include a initial debug with the email that could assist support in the future.
+
+{{< /tab >}}
+{{< tab "File Ticket" >}}
+
+TrueNAS SCALE users are welcome to report bugs and vote for or suggest new TrueNAS features in the project Jira instance. Have questions? We recommend searching through the software documentation and community resources for answers.
+
+If you encounter a bug or other issue while using TrueNAS SCALE, create a bug report in the [TrueNAS Jira Project](https://jira.ixsystems.com/projects/NAS/). The web interface provides a form to report issues without logging out. We recommend searching the project first to see if aother user already reported the issue. You must have [a Jira account](https://jira.ixsystems.com/secure/Signup!default.jspa) to create a bug ticket.
+
+To report an issue using the web interface, click **File Ticket**.
+
+![GeneralSettingsSCALESupportJiraTicketCreate](/images/SCALE/GeneralSettingsSCALEJiraTicketCreate.png "SCALE General Settings Jira Ticket Creation")
+
+{{< /tab >}}
+{{< tab "Proactive Support" >}}
+
+{{< /tab >}}
+{{< /tabs >}}
 
 ## GUI 
 
