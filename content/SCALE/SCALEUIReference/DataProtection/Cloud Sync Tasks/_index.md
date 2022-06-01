@@ -40,7 +40,7 @@ Click **FIX CREDENTIAL**.  TrueNAS directs you to the Cloud Credentials entry vi
 
 ![DataProtectionCloudSyncInvalidFix](/images/SCALE/DataProtectionCloudSyncInvalidFix.png "Name and Provider View")
 
-Check your provider credentials and update the applicable fields within the ***Authentication*** section, click ***Verify Credential***.  *The Credential is valid* will be displayed if TrueNAS successfully accessed your provider.  Click ***Save*** and return to **Data Protection > Cloud Sync Tasks > Add**.
+Check your provider credentials and update the applicable fields within the ***Authentication*** section, then click ***Verify Credential***.  *The Credential is valid* will display if TrueNAS successfully accesses your provider.  Click ***Save*** and return to **Data Protection > Cloud Sync Tasks > Add**.
 {{< /expand >}}
 
 TrueNAS connects to the chosen cloud storage provider and shows the available storage locations. Select the option if data is transferring to (**PUSH**) or from (**PULL**) the cloud storage location (**Remote**). Select a **Transfer Mode**:
