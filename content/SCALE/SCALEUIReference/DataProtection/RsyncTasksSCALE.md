@@ -169,7 +169,7 @@ The rsync task does not work unless the related system service is turned on.
 To turn the rsync service on, go to **System > Services** and toggle the **Rsync** on.
 To activate the service whenever TrueNAS boots, select the **Start Automatically** checkbox.
 
-![SystemServicesRsyncOn](/images/SCALE/SystemServicesRsyncOn.png "System Services Rsync On")
+![SystemServicesRsyncOn](/images/SCALE/SystemServicesRsyncOnUpdate.png "System Services Rsync On")
 
 Click the <i class="material-icons" aria-hidden="true" title="edit">edit</i> to configure the service on the 
  **Services > RSYNC > Rsync** screen.
