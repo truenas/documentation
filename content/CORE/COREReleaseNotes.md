@@ -200,6 +200,8 @@ iXsystems is pleased to announce the release of TrueNAS 13.0-RELEASE.
 </li>
 <li>[<a href='https://jira.ixsystems.com/browse/NAS-116089'>NAS-116089</a>] -         import by name on failover event
 </li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116493)'>NAS-116493</a>] -        Nextcloud (official) plugin does not install truenas 13.0
+</li>
 </ul>
 
 ## 13.0-RC1
