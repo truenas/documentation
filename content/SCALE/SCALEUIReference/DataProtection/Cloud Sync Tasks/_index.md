@@ -32,7 +32,7 @@ Go to **Data Protection > Cloud Sync Tasks** and click **Add**.
 Type a memorable task description in the **Description** field. Use the **Credential** dropdown list to select an existing cloud or create a new one with the **+ Add a backup credential** option. 
 
 {{< expand "What happens if my cloud sync credentials are invalid?" "v" >}}
-Once you chose a cloud credential from the dropdown list, TrueNAS automatically validates access to that cloud sync provider.  Invalid credentials will result in the following Alert: 
+Once you choose a cloud credential from the dropdown list, TrueNAS automatically validates access to that cloud sync provider.  Invalid credentials results in the following Alert: 
 
 ![DataProtectionCloudSyncInvalidAlert](/images/SCALE/DataProtectionCloudSyncInvalidAlert.png "Invalid Credentials Alert")
 
