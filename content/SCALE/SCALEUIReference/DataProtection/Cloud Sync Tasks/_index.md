@@ -36,7 +36,7 @@ Once you choose a cloud credential from the dropdown list, TrueNAS automatically
 
 ![DataProtectionCloudSyncInvalidAlert](/images/SCALE/DataProtectionCloudSyncInvalidAlert.png "Invalid Credentials Alert")
 
-Click **FIX CREDENTIAL**.  You will be directed to the Cloud Credentials entry view.  
+Click **FIX CREDENTIAL**.  TrueNAS directs you to the Cloud Credentials entry view.  
 
 ![DataProtectionCloudSyncInvalidFix](/images/SCALE/DataProtectionCloudSyncInvalidFix.png "Name and Provider View")
 
