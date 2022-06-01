@@ -72,6 +72,12 @@ To report an issue using the web interface, click **File Ticket**.
 
 ![GeneralSettingsSCALESupportJiraTicketCreate](/images/SCALE/GeneralSettingsSCALEJiraTicketCreate.png "SCALE General Settings Jira Ticket Creation")
 
+Click **Login to JIRA** and enter your credentials in the fields provided.  After successfully logging in, choose **Allow** for TrueNAS to have read and write access to your data on the Jira site.  A token will be added to the OAuth section of this form.  
+
+![GeneralSettingsSCALESupportJiraLogin](/images/SCALE/GeneralSettingsSCALEJiraLogin.png "SCALE General Settings Jira Login")
+
+![GeneralSettingsSCALESupportJiraLogin2](/images/SCALE/GeneralSettingsSCALEJiraLogin2.png "SCALE General Settings Jira Login Token")
+
 {{< /tab >}}
 {{< tab "Proactive Support" >}}
 
