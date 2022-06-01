@@ -104,7 +104,7 @@ Example: 1 GiB of *Dedup* vdev capacity for every 1 TiB of *Data* vdev availabil
 
 Disks added to a vdev arrange in different layouts, according to the specific pool use case.
 
-{{< expand "Can different sized disks be used when creating a pool?" "v" >}}
+{{< expand "Can I use different-sized disks when creating a pool?" "v" >}}
 Mixing disks of different sizes in a vdev is not recommended.  If this configuration is used you will be required to **Force** this action and override the **One or more data vdevs has disks of different sizes** error. 
 
 ![PoolCreateForceSCALE](/images/SCALE/PoolCreateForceSCALE.png "Pool Create Force Option")
