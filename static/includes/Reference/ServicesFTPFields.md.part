@@ -6,6 +6,7 @@
 | **Clients** | Enter the maximum number of simultaneous clients. |
 | **Connections** | Enter the maximum number of connections per IP address. **0** is unlimited. |
 | **Login Attempts** | Enter the maximum attempts before client is disconnected. Increase if users are prone to misspellings or typos. |
+| **Notransfer Timeout** | Enter the Maximum number of seconds a client is allowed to spend connected, after authentication, without issuing a command which results in creating an active or passive data connection (i.e. sending/receiving a file, or receiving a directory listing). |
 | **Timeout** | Enter the maximum client idle time in seconds before disconnect. Default value is **600** seconds. |
 | Certificate | Select the SSL certificate to use for TLS FTP connections from the dropdown list, which is currently **freenas_default**. To create a certificate, go to **System > Certificates**. |
 
