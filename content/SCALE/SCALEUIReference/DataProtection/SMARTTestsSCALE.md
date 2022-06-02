@@ -51,7 +51,7 @@ Test types differ based on the drive connection, ATA or SCSI:
 {{< /tab >}}
 {{< /tabs >}}
 
-For more information, refer to [smartctl(8)](https://www.smartmontools.org/browser/trunk/smartmontools/smartctl.8.in).
+For more information, refer to [smartctl(8)](https://www.unix.com/man-page/suse/8/smartctl/).
 
 Click **START** to begin the test.
 Test duration varies based on the test type you chose.
