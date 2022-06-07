@@ -115,6 +115,6 @@ This allows using the account credentials to access data shared with [SMB]({{< r
 {{< /tab >}}
 {{< /tabs >}}
 
-### Editing User Accounts
+## Editing User Accounts
 
-To edit a User account, go to **Credentials > Local Users**, expand the User entry, and click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> **Edit**:
+To edit an existing User account, go to **Credentials > Local Users**, expand the User entry, and click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> **Edit**:
