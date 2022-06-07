@@ -40,7 +40,7 @@ Release Notes:
 * [12.0-BETA2]({{< ref "/_includes/COREReleaseNotes/12.0/12.0Beta2.md" >}})
 * [12.0-BETA1]({{< ref "/_includes/COREReleaseNotes/12.0/12.0Beta1.md" >}})
 
-<a href="https://www.truenas.com/docs/files/Notice - Persistent L2ARC in TrueNAS 12.0.pdf">Notice - Persistent L2ARC in TrueNAS 12.0</a>
+<a href="https://www.truenas.com/docs/files/NoticePersistentL2ARCinTrueNAS12.0.pdf">Notice - Persistent L2ARC in TrueNAS 12.0</a>
 {{< /expand >}}
 
 ## TrueCommand

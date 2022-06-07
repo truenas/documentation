@@ -37,7 +37,7 @@ To create a group, go to **Credentials > Local Groups** and click *Add*.
 ## Group Member Management
 
 Register user accounts to a group to simplify permissions and access to large numbers of user accounts.
-To manage group membership, go to **Credentials > Local Groups**, click the <i class="material-icons" aria-hidden="true" title="Expand/Collapse Row">navigate_next</i> next to a group, and click <i class="material-icons" aria-hidden="true" title="Group">group</i> **Members**:
+To manage group membership, go to **Credentials > Local Groups**, expand the group entry, and click <i class="material-icons" aria-hidden="true" title="Group">group</i> **Members**:
 
 ![GroupMembersSCALE](/images/SCALE/GroupMembersSCALE.png "Managing Group Members")
 
