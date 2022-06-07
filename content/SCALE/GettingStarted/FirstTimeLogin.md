@@ -106,7 +106,7 @@ The Directory Services Monitor displays the status of Active Directory and LDAP.
 {{< /tab >}}
 
 {{< tab "Task Manager" >}}
-The Task Manager displays all running and failed jobs/processes. 
+The Task Manager displays all running and failed jobs/processes. Error and Alert dialog boxes that were manually closed can be accessed in the Task Manager.
 
 ![TaskManagerSCALE](/images/SCALE/TaskManagerSCALE.png "TrueNAS SCALE Task Manager")
 
