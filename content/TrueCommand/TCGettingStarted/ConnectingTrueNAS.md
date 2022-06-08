@@ -14,13 +14,13 @@ To connect your first system to TrueCommand, click **NEW SYSTEM** on the dashboa
 ![SystemsAddFirstSystemForm](/images/TrueCommand/2.0/SystemsAddFirstSystemForm.png "Adding Your First System")
 
 | Setting | Description |
-|------|------|
-| IP Address or Hostname | The system's IP address or DNS hostname. |
-| Nickname | Required short-form identifier for this system. You cannot use system nicknames more than once. |
-| Password / API Key | New password or API key. TrueCommand hades characters for security. |
-| Password / API Key Confirm | Re-enter the password or API key. |
+|---------|-------------|
+| **IP Address or Hostname** | The system's IP address or DNS host name. |
+| **Nickname** | Required short-form identifier for this system. You cannot use system nicknames more than once. |
+| **Password / API Key** | New password or API key. TrueCommand hades characters for security. |
+| **Password / API Key Confirm** | Re-enter the password or API key. |
 
-Enter the system IP address or DNS hostname, then enter a system nickname and password.
+Enter the system IP address or DNS host name, then enter a system nickname and password.
 
 Click **RESET FORM** to clear the fields and reset the form if you make a mistake.
 
@@ -54,7 +54,7 @@ Click **Yes** to confirm the deletion.
 
 ## Connecting Systems to a TrueCommand Cloud Instance
 
-### Get an API Key
+### Getting an API Key
 
 Log into the ixSystems cloud account and click **Manage**.
 Under **Service Details**, copy the **TrueCommand API Key**.
@@ -77,9 +77,9 @@ Paste the TrueCommand API Key copied from the iXsystems Account Portal into the 
 
 ![SystemsAddFirstSystemTCConnect](/images/TrueCommand/2.0/SystemsAddFirstSystemTCConnect.png "Connecting TrueNAS to TrueCommand Cloud")
 
-### Approve the Connection Request
+### Approving the Connection Request
 
-When the True Command logo starts moving, check the TrueCommand Cloud email address for a verification message.
+When the TrueCommand logo starts moving, check the TrueCommand Cloud email address for a verification message.
 The email contains a link to the portal to confirm the connection and activate the TrueNAS system.
 
 Click on the **New System** alert, fill in the information from the TrueNAS system, and click **Add System**.
@@ -89,7 +89,7 @@ Click on the **New System** alert, fill in the information from the TrueNAS syst
 It can take 10 to 15 minutes for the TrueNAS instance to fully sync up with TrueCommand Cloud.
 When all systems are connected to TrueCommand Cloud, refer to the [TrueCommand Administration articles]({{< relref "/TrueCommand/Administration/_index.md" >}}) for more instructions about setting up configuration backups, alerts, reports, and role-based access control.
 
-## Manual Connections
+## Making Manual Connections
 
 To connect a system to TrueCommand, open the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and click **Systems**.
 The **Systems** menu has two tabs: **Systems** and **System Groups**.
@@ -98,7 +98,7 @@ TrueCommand lists all added systems and their connection statuses in the **Syste
 
 To connect a new system, click **+ NEW SYSTEM**.
 
-Enter the system IP address or DNS hostname, then enter a system nickname and password.
+Enter the system IP address or DNS host name, then enter a system nickname and password.
 Click **RESET FORM** to clear the fields and reset the form if you make a mistake.
 
 ![Systems List](/images/TrueCommand/2.1/SystemsPage.png "Systems List")

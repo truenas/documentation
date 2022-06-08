@@ -14,8 +14,8 @@ TrueCommand Cloud is the preferred method for using TrueCommand since it require
 
 ## Install Options
 
-{{< tabs "TrueCommand Install Options" >}}
-{{< tab "Cloud Deployment" >}}
+{{< expand "TrueCommand Install Options" >}}
+{{< expand "Cloud Deployment" >}}
 TrueCommand Cloud is a SaaS offering of TrueCommand with a WireGuard VPN capability to connect TrueNAS systems through firewalls.
 TrueCommand Cloud is compatible with TrueNAS version v12.0 and newer.
 
@@ -114,8 +114,8 @@ Click the **Discovered Systems** icon and select the TrueNAS system. TrueCommand
 The TrueNAS instance can take 10 to 15 minutes to fully sync up with TrueCommand Cloud.
 When all systems are connected to TrueCommand Cloud, refer to the [TrueCommand Administration articles]({{< relref "/TrueCommand/Administration/_index.md" >}}) for more instructions about setting up configuration backups, alerts, reports, and role-based access control.
 
-{{< /tab >}}
-{{< tab "Docker (Linux)" >}}
+{{< /expand >}}
+{{< expand "Docker (Linux)" >}}
 ## Installing the TrueCommand Container
 
 {{< hint info >}}
@@ -166,35 +166,34 @@ To access the web interface with standard SSL encryption, enter `https://hostsys
 {{< expand "The connection can't be established?" "v" >}}
 When a connection to the web interface cannot be established, add the container ports as an exception to the host system firewall.
 {{< /expand >}}
-{{< /tab >}}
-{{< /tabs >}}
+{{< /expand >}}
+{{< /expand >}}
 
 ## Adding Browser Security Exceptions
 
 TrueCommand uses a [self signed certificate](https://tools.ietf.org/html/rfc8705) for a secure connection.
-Because of this, many Internet browsers consider the IP address or DNS hostname untrustworthy.
-In these cases, the IP address or DNS hostname must be added as an exception to the browser to access the web interface.
+Because of this, many Internet browsers consider the IP address or DNS host name untrustworthy.
+In these cases, the IP address or DNS host name must be added as an exception to the browser to access the web interface.
 Adding an exception is shown here for two different browsers, but the procedure is similar for most browsers.
 
-{{< tabs "Browser Security Exceptions" >}}
-{{< tab "Chrome" >}}
+### Browser Security Exceptions
+{{< expand "Chrome" >}}
 Click **Advanced** to view information about the error code.
 Click **Proceed to hostname (unsafe)**.
 
 ![ChromeWarning](/images/TrueCommand/2.0/ChromeWarning.png "Chrome Warning")
-{{< /tab >}}
-{{< tab "Firefox" >}}
+{{< /expand >}}
+{{< expand "Firefox" >}}
 Click **Advanced** to view information about the error code.
 
 ![FirefoxWarning](/images/TrueCommand/2.0/FirefoxWarning.png "Firefox Warning")
 
 Click **Add Exception...**.
-Set **Permanently store this exception** to permanently store the IP address or DNS hostname in Firefox.
+Set **Permanently store this exception** to permanently store the IP address or DNS host name in Firefox.
 Click **Confirm Security Exception**.
 
 ![FirefoxExceptionAdd](/images/TrueCommand/2.0/FirefoxExceptionAdd.png "Adding a security exception")
-{{< /tab >}}
-{{< /tabs >}}
+{{< /expand >}}
 
 ## Creating the Administrator Account
 
