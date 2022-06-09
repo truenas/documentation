@@ -18,7 +18,7 @@ Use the **UPS** services screen to configure a UPS for your TrueNAS.
 | **Identifier** | Type a description for the UPS device. You can use alphanumeric, period (.), comma (,), hyphen (-), and underscore (_) characters. This is a required field. |
 | **UPS Mode** | Select the mode from the dropdown list. Options are **Master** if the UPS is plugged directly into the system serial port, or **Slave** to have this system shut down before the master system. The UPS remains the last item to shut down. See the [Network UPS Tools Overview](http://networkupstools.org/docs/user-manual.chunked/ar01s02.html#_monitoring_client). |
 | **Driver** | Select the device driver from the dropdown list. See the [Network UPS Tools compatibility list](http://networkupstools.org/stable-hcl.html)for a list of supported UPS devices. This is a required field. |
-| **Port or Hostname** | Select the serial or USB port connected to the UPS from the dropdown list. Options include a list of port on your system and **auto**. Select **auto** to automatically detect and manage the USB port settings.<br> When an SNMP driver is selected, enter the IP address or host name of the SNMP UPS device. This is a required field.|
+| **Port or Hostname** | Select the serial or USB port connected to the UPS from the dropdown list. Options include a list of port on your system and **auto**. Select **auto** to automatically detect and manage the USB port settings. When an SNMP driver is selected, enter the IP address or host name of the SNMP UPS device.  If the **UPS Mode** field is set as **Master**, this is a required field. If set to **Slave** this field can be left empty and is not required. |
 
 **Monitor**
 
