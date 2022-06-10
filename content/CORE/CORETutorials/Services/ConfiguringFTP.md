@@ -7,6 +7,7 @@ weight: 30
 ## FTP Services Configurations
 
 FTP requires a new dataset and local user account.
+Please create a individual account for FTP connection as it cannot be shared with other accounts, such as SMB connections.
 
 Go to **Storage > Pools** to add a new dataset.
 
