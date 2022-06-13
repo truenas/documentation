@@ -52,4 +52,4 @@ After connecting, you can create directories and upload or download files.
 
 ![FilezillaFTPConnect](/images/CORE/FilezillaFTPConnect.png "Filezilla FTP Connection")
 
-See [FTP Screen]({{< relref "/CORE/UIReference/Services/FTPScreen.md" >}}) more information on the **FTP** service screen. 
+See [FTP Screen]({{< relref "/CORE/UIReference/Services/FTPScreen.md" >}}) for more information on the **FTP** service screen. 
