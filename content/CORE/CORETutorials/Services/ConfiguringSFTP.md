@@ -1,6 +1,8 @@
 ---
 title: "Configuring SFTP"
 weight: 20
+tags:
+- coreftp
 ---
 
 
