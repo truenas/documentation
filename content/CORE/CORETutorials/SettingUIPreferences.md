@@ -20,7 +20,7 @@ This removes all the <i class="material-icons" aria-hidden="true" title="Visibil
 ## Creating a Custom Theme
 
 If one of the included themes doesn't satisfy your preference, a fully custom theme can be created.
-Click *CREATE NEW THEME* to start configuring the theme.
+Click **CREATE NEW THEME** to start configuring the theme.
 
 ![Preferences Custom Theme](/images/CORE/12.0/PreferencesCustomTheme.png "Custom UI Theme")
 
