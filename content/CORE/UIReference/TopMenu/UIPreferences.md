@@ -30,7 +30,7 @@ aliases: /core/administration/uipreferences/
 
 ## Custom Theme Editor
 
-![Preferences Custom Theme](/images/CORE/12.0/PreferencesCustomTheme.png "Custom UI Theme")
+![Preferences Custom Theme](/images/CORE/13.0/PreferencesCustomTheme.png "Custom UI Theme")
 
 ### Create Theme
 
