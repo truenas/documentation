@@ -48,7 +48,11 @@ Set the **Purpose** to **No presets**, then click **ADVANCED OPTIONS** and check
 
 ![SharingSMBAddHomeShareExample](/images/CORE/12.0/SharingSMBAddHomeShareExample.png "Example Home Share")
 
-Click **SAVE** and enable the **SMB** service in **Services** to make the share is available on your network.
+The ACL Editor opens, displaying the Home ACL preset values.
+
+![HomeShareACLEditor](/images/CORE/13.0/HomeShareACLEditor.png "Home Share ACL Editor")
+
+Click **SAVE**. Enable the **SMB** service in **Services** to make the share available on your network.
 
 ## Add Users
 
