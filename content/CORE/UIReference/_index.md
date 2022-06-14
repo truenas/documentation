@@ -6,7 +6,13 @@ geekdocCollapseSection: true
 
 {{< include file="/_includes/UIReferenceIntro.md" type="page" >}}
 
-## CORE Documentation Sections
+---
+
+{{< expand "Table of Contents (click to expand)" "v" >}}
+{{< children depth="2" >}}
+{{< /expand >}}
+
+## CORE Guides
 
 {{< include file="/_includes/COREDocsSections.md" type="page" >}}
 

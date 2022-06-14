@@ -2,6 +2,8 @@
 title: "FTP, SFTP, and TFTP"
 weight: 160
 aliases: /core/services/ftptftp/
+tags:
+- coreftp
 ---
 
 The [File Transfer Protocol (FTP)](https://tools.ietf.org/html/rfc959) is a simple option for data transfers.
