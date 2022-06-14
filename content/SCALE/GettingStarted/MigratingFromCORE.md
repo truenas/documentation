@@ -35,7 +35,7 @@ The installer asks if you want to preserve your existing configuration or start 
 
 {{< hint warning>}}
 Although TrueNAS attempts to keep most of your CORE configuration data when upgrading to SCALE, some CORE-specific items do not transfer.
-GELI Encrypted pools, NIS data, metadata, jails, tunables, and boot environments do not migrate from CORE to SCALE.
+GELI Encrypted pools, NIS data, jails, tunables, and boot environments do not migrate from CORE to SCALE.
 AFP shares also do not transfer, but can be migrated into an SMB share with AFP compatability enabled. 
 Init/shutdown scripts transfer, but can break and should be reviewed before use.
 The CORE netcli utility is also swapped for a new CLI utility that is used for the Console Setup Menu and other commands issued in a CLI.
