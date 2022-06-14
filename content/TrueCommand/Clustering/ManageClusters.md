@@ -22,7 +22,7 @@ Removing or replacing bricks from a clustered volume can lead to data corruption
 
 ### Add a brick to a Distributed Cluster
 
-Click the <span class="material-icons-outlined">more_horiz</span> icon on the cluster overview card and select the **+ Add Brick** option to open the **Add Brick to Distributed-Cluster** menu.
+Click the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> icon on the cluster overview card and select the **+ Add Brick** option to open the **Add Brick to Distributed-Cluster** menu.
 
 ![DistributedClusterOptionsAdd](/images/TrueCommand/2.0/DistributedClusterOptionsAdd.png "DistributedClusterOptionsAdd")
 
@@ -52,7 +52,7 @@ This option is only available if a cluster has four or more bricks.
 This feature is not yet fully implemented.
 {{< /hint >}}
 
-Click the <span class="material-icons-outlined">more_horiz</span> icon on the cluster overview card and hover your cursor over the **Remove Brick** option to display the list of bricks.
+Click the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> icon on the cluster overview card and hover your cursor over the **Remove Brick** option to display the list of bricks.
 
 ![DistributedClusterOptions](/images/TrueCommand/2.0/DistributedClusterOptions.png "DistributedClusterOptions")
 
@@ -66,13 +66,13 @@ Check the **Confirm** box, then click **OK** to remove the brick.
 
 ### Deleting a Distributed Cluster
 
-Click the <span class="material-icons-outlined">more_horiz</span> icon on the cluster overview card and select **Delete**.
+Click the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> icon on the cluster overview card and select **Delete**.
 
 ![DistributedClusterDelete](/images/TrueCommand/2.0/DistributedClusterDelete.png "DistributedClusterDelete")
 
 Check the **Confirm** box, then click **OK** to delete the cluster.
 
-On the **Dashboard**, click the <span class="material-icons-outlined">more_horiz</span> icon and select **Services**. Stop the **Gluster** service and clear the **START ON BOOT** checkbox.
+On the **Dashboard**, click the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> icon and select **Services**. Stop the **Gluster** service and clear the **START ON BOOT** checkbox.
 
 {{< /tab >}}
 {{< tab "Replicated" >}}
@@ -91,13 +91,13 @@ This feature is not yet fully implemented.
 
 ### Deleting a Replicated Cluster
 
-Click the <span class="material-icons-outlined">more_horiz</span> icon on the cluster overview card and select **Delete**.
+Click the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> icon on the cluster overview card and select **Delete**.
 
 ![ReplicatedClusterDelete](/images/TrueCommand/2.0/ReplicatedClusterDelete.png "ReplicatedClusterDelete")
 
 Check the **Confirm** box, then click **OK** to delete the cluster.
 
-On the **Dashboard**, click the <span class="material-icons-outlined">more_horiz</span> icon and select **Services**. Stop the **Gluster** service and clear the **START ON BOOT** checkbox.
+On the **Dashboard**, click the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> icon and select **Services**. Stop the **Gluster** service and clear the **START ON BOOT** checkbox.
 
 {{< /tab >}}
 {{< tab "Distributed Replicated" >}}
