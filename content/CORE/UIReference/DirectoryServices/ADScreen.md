@@ -4,7 +4,7 @@ weight: 10
 ---
 
 
-Use the **Directory Serices Active Directory** screens to set up Active Directory (AD) on your TrueNAs.
+Use the **Directory Serices Active Directory** screens to set up Active Directory (AD) on your TrueNAS.
 
 ![ActiveDirectoryScreen](/images/CORE/13.0/ActiveDirectoryScreen.png "Active Directory Screen")
 

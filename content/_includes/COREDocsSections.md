@@ -1,4 +1,4 @@
-TrueNAS CORE/Enterprise documentation is divided into several sections or books:
+Each major section of TrueNAS CORE/Enterprise documentation is organized as a standalone book:
 
 * The [Getting Started Guide](/core/gettingstarted) provides the first steps for your experience with TrueNAS CORE/Enterprise:
   * Recommendations and considerations when selecting hardware for CORE.

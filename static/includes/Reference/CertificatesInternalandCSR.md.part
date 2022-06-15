@@ -4,7 +4,7 @@
 |------|-------------|
 | Signing Certificate Authority (Internal Certificate) | Select a previously imported or created CA. |
 | Key Type | See [Why is elliptic curve cryptography not widely used, compared to RSA?](https://crypto.stackexchange.com/questions/1190/why-is-elliptic-curve-cryptography-not-widely-used-compared-to-rsa) for more information about key types. |
-| EC Curve | Brainpool curves can be more secure, while secp curves can be faster. See [Elliptic Curve performance: NIST vs Brainpool](https://tls.mbed.org/kb/cryptography/elliptic-curve-performance-nist-vs-brainpool) for more information. |
+| EC Curve | Brainpool curves can be more secure, while secp curves can be faster. |
 | Key Length | The number of bits in the key used by the cryptographic algorithm. For security reasons, a minimum key length of 2048 is recommended. |
 | Digest Algorithm | The cryptographic algorithm to use. The default SHA256 only needs to be changed if the organization requires a different algorithm. |
 | Lifetime | The lifetime of the CA specified in days. |

@@ -5,7 +5,7 @@ alias: /core/services/ups/
 ---
 
 TrueNAS uses [NUT](https://networkupstools.org/) (Network UPS Tools) to provide UPS support.
-When the TrueNAS system is connected to a UPS device, configure the UPS service by going to **Services**, finding the **UPS** entry, and clicking <i class="fa fa-pencil" aria-hidden="true" title="Configure"></i>.
+When the TrueNAS system is connected to a UPS device, configure the UPS service by going to **Services**, finding the **UPS** entry, and clicking <span class="material-icons">edit</span> edit icon.
 
 ![ServicesUPSScreenTop](/images/CORE/13.0/ServicesUPSScreenTop.png "UPS Options")
 
@@ -37,3 +37,5 @@ This primary system makes UPS status available on the network for other computer
 The secondary computers are powered by the UPS, but receive UPS status data from the primary computer.
 See the [NUT User Manual](https://networkupstools.org/docs/user-manual.chunked/index.html) and [NUT User Manual Pages](https://networkupstools.org/docs/man/index.html#User_man).
 {{< /expand >}}
+
+See [UPS screen]({{< relref "/CORE/UIReference/Services/UPSScreen.md" >}}) for more information on setting up a UPS.
