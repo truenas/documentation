@@ -28,7 +28,7 @@ Name the dataset (this article uses *Home_Share_Dataset* as an example) and set 
 
 After creating the dataset, go to **Storage > Pools** and open <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> next to the new dataset. Select **Edit Permissions**.
 
-Click the **Group** drop-down menu and change the owning group to your Active Directory domain admins.
+Click the **Group** dropdown menu and change the owning group to your Active Directory domain admins.
 
 ![GroupDomainAdmins](/images/CORE/12.0/GroupDomainAdmins.png "Set the owning group to Domain Admins")
 
@@ -48,7 +48,7 @@ Set the **Purpose** to **No presets**, then click **ADVANCED OPTIONS** and check
 
 ![SharingSMBAddHomeShareExample](/images/CORE/12.0/SharingSMBAddHomeShareExample.png "Example Home Share")
 
-The ACL Editor opens, displaying the Home ACL preset values.
+The ACL editor opens, displaying the home ACL preset values.
 
 ![HomeShareACLEditor](/images/CORE/13.0/HomeShareACLEditor.png "Home Share ACL Editor")
 
