@@ -1,6 +1,6 @@
 ---
 title: "Setting Up System Email"
-weight: 70
+weight: 40
 ---
 
 {{< toc >}}
@@ -14,14 +14,14 @@ Configure the system to send these emails to the administrator remote email acco
 {{< /hint >}}
 ## Setting up User Accounts
 
-You should configure the email address for the system root user as part of your initial system setup. 
+Configure the email address for the system root user as part of your initial system setup. 
 You can also configure email adddresses for additional user accounts as needed.
 
 ### Configuring the Root User Email Address
 
 Before configuring anything else, set the root account email address.
 {{< expand "Click here for instructions" "v" >}}
-Go to **Credentials > Local Users**, select the  click <span class="material-icons">expand_more</span> to expand the root user information. Select **Edit** to display the Edit User configuration screen.
+Go to **Credentials > Local Users**, select the  click <span class="material-icons">expand_more</span> to expand the root user information. Select **Edit** to display the **Edit User** configuration screen.
 In the **Email** field, enter a remote email address that the system administrator regularly monitors (like *admin@example.com*) and click **Save**.
 {{< /expand >}}
 ### Configuring User Email

@@ -5,7 +5,7 @@ weight: 4
 ---
 
 
-{{< toc >}}
+{{< children depth="2" >}} 
 
 The top toolbar icon buttons provide access to the iXsystems website, displays the status of TrueCommand and directory services configured on your system, and displays other configuration menu options.
 
@@ -16,8 +16,8 @@ The top toolbar icon buttons provide access to the iXsystems website, displays t
 | Icon | Name | Description |
 |------|------|-------------|
 | <span class="iconify" data-icon="bytesize:menu"></span> | Toggle Collapse | Click to expand or collapse the main menu panel on the left side of the screen. |
-| <img src="/images/SCALE/22.02/iXsystemsLogo.jpg" alt="iXsystems Website" width="150" height="60">  | iXsystems Website | Opens the [iXsystems home page](https://www.ixsystems.com/) website where users can find information about storage and server systems. Users can also use the iXsystems home page to access their customer portal and community section for support. |
-| <img src="/images/SCALE/22.02/TrueCommandIcon.jpg" alt="TrueCommand Status" width="50" height="60"> | TrueCommand Status | Displays either the status of a TrueCommand cloud connection or a dialog that allows users to [sign up for a new TrueCommand cloud connection]({{< relref "/content/truecommand/tcgettingstarted/install/_index.md" >}}). Instructions are found in the **Cloud Deployment** section. |
+|  | iXsystems Website | Opens the [iXsystems home page](https://www.ixsystems.com/) website where users can find information about storage and server systems. Users can also use the iXsystems home page to access their customer portal and community section for support. |
+|  | TrueCommand Status | Displays either the status of a TrueCommand cloud connection or a dialog that allows users to [sign up for a new TrueCommand cloud connection]({{< relref "/content/truecommand/tcgettingstarted/install/_index.md" >}}). Instructions are found in the **Cloud Deployment** section. |
 | <span class="material-icons">info</span> | Directory Services Monitor | Displays a dialog with the status of Active Directory and LDAP directory servers configured on the TrueNAS. |
 | <span class="material-icons">assignment</span> | Task Manager | Displays the Task Manager dialog. Click the **History** button to display the **Jobs** screen with a list of **All**, **Active** or **Failed** jobs or processes. |
 | <span class="material-icons">notifications</span> | Alerts | Displays a list of system alerts and a dropdown list the alert options **Alert Settings**, **Alert Services** and **Email**. |
@@ -47,9 +47,9 @@ The options are **Change Password**, **Preferences**, **API Keys**, **Guide** an
 
 The <span class="material-icons">dialpad</span> **Change Password** icon button displays a dialog where you can change the login password for the currently logged-in administrator password.
 
-The <span class="material-icons">settings_applications</span> **Preferences** icon button displays the [Web Interface Preferences screen]({{< relref "/SCALEUIReference/TopToolbar/Settings/WebUIPreferences.md" >}}) where you can select general preferences for the system, such as a color theme. 
+The <span class="material-icons">settings_applications</span> **Preferences** icon button displays the [Web Interface Preferences screen]({{< relref "WebUIPreferences.md" >}}) where you can select general preferences for the system, such as a color theme. 
 
-The <span class="material-icons">laptop</span> **API Keys** icon button displays the [API Keys screen]({{< relref "/SCALEUIReference/TopToolbar/Settings/APIKeysScreen.md" >}}) that lists current API keys and where you can add or manage API keys that identify outside resources and applications without a principal. 
+The <span class="material-icons">laptop</span> **API Keys** icon button displays the [API Keys screen]({{< relref "APIKeysScreen.md" >}}) that lists current API keys and where you can add or manage API keys that identify outside resources and applications without a principal. 
 
 The <span class="material-icons">library_books</span> **Guide** icon button opens the TrueNAS Documentation Hub website in a new tab. 
 

@@ -4,10 +4,10 @@ weight: 40
 ---
 
 
-The **Email** screens lets you set up a system email address. The screen provides the option to select either an **SMTP** or **GMail OAuth** send-mail setup. The screen changes based on the selected radio button. **Gmail OAutH** is the default screen and option.
+The **Email** screens lets you set up a system email address using one of two options to set up email. Select either an **SMTP** or **GMail OAuth** setup. The screen changes based on the selected radio button. **Gmail OAutH** is the default screen and option.
 
 ## Email GMail OAuth Screen
-The default **GMail OAuth** screen display changes after you select **Login In To GMail** and complete the authentication process for Gmail. See xxx for more information.
+The default **GMail OAuth** screen display changes after you select **Login In To GMail** and complete the authentication process for Gmail. 
 
 ![AlertEmailScreen](/images/SCALE/22.02/AlertEmailScreen.png "Alert Email Screen")
 
@@ -16,7 +16,6 @@ The **Send Test Mail** button generates a test email to confirm the system email
 ## Email SMTP Screen
 
 ![AlertEmailSMTPScreen](/images/SCALE/22.02/AlertEmailSMTPScreen.png "Alert Email SMTP Screen")
-
 
 | Setting | Description |
 |---------|-------------|
@@ -27,6 +26,4 @@ The **Send Test Mail** button generates a test email to confirm the system email
 | **Security** | Select the securty option from the dropdown list. Options are **Plain (No Encryption)**, **SSL (Implicit TLS)**, or **TLS (STARTTLS)**. See [email encryption](https://www.fastmail.com/help/technical/ssltlsstarttls.html) for more information on types. |
 | **SMTP Authentication** | Select to enable [SMTP AUTH](https://en.wikipedia.org/wiki/SMTP_Authentication) using PLAIN SASL. Requires a valid user name and password. |
 
-## Additional Information
 
-See [Setting Up System Email]({{< relref "/SCALE/GettingStarted/SettingUpSystemEmail.md" >}})

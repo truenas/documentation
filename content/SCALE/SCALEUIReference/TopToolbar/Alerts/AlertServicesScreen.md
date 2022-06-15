@@ -5,15 +5,15 @@ weight: 20
 
 {{< toc >}}
 
-The **Alert Services** screen has options to create and edit alert services. The **Alert Services** screen displays a list of existing services that users can filter by **Type**, **Level**, and **Enabled**.
+The **Alert Services** screen has options to create and edit alert services. 
 
 ![AlertServicesScreen](/images/SCALE/22.02/AlertServicesScreen.png "TrueNAS SCALE Alert Services")
 
-Use **Columns** to change the information displayed in the table of services. Options are **Unselect All**, **Type**, **Level**, **Enabled** and **Reset to Defaults**.
+Use **Columns** to change the information displayed in the list of alert services. Options are **Unselect All**, **Type**, **Level**, **Enabled** and **Reset to Defaults**.
 
 ## Add Alert Service Screen
 
-To create a new alert service, click **Add** and fill out the form, then click **Save**.
+Use **Add** to create a new alert service using the **Add Alert Service** screen. 
 
 ![AddAlertServiceScreen](/images/SCALE/22.02/AddAlertServiceScreen.png "Add Alert Service")
 
@@ -37,9 +37,11 @@ Use **SEND TEST ALERT** to generate a test alert to confirm the alert service wo
 
 **Cancel** exist to the **Alert Services** screen without saving.
 
+Use **Save** to add the new service with the settings you specify to the list of alert services.
+
 ## Edit Alert Service Screen
 
-Use the **Edit Alert Service** screen to modify settings for a service. Select the <span class="material-icons">more_vert</span> icon for the service, and then **Edit** to display the **Edit Alert Service** screen
+Use the **Edit Alert Service** screen to modify settings for a service. Select the <span class="material-icons">more_vert</span> icon for the service, and then click **Edit** to display the **Edit Alert Service** screen.
 
 ![AddAlertServiceScreen](/images/SCALE/22.02/AddAlertServiceScreen.png "Edit Alert Service")
 
@@ -59,3 +61,5 @@ Use the **Edit Alert Service** screen to modify settings for a service. Select t
 Use **SEND TEST ALERT** to generate a test alert to confirm the alert service works correctly.
 
 **Cancel** exist to the **Alert Services** screen without saving.
+
+Use **Save** to keep any changes made.

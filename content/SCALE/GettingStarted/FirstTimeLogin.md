@@ -3,6 +3,7 @@ title: "First Time Login"
 weight: 60
 ---
 
+
 Now that you have installed and configured TrueNAS SCALE, you can log in to the web interface and begin managing data!
 
 {{< expand "Can I configure TrueNAS SCALE using a CLI?" "v" >}}
@@ -65,7 +66,7 @@ After logging in, you see the system **Dashboard** screen.
 **Dashboard** displays basic information about the installed version, systems component usage, and network traffic. For users with compatible TrueNAS
 hardware, clicking the system image takes you to the **System Settings > Enclosure** page. 
 
-![DashboardSCALE](/images/SCALE/DashboardSCALE.png "TrueNAS SCALE Dashboard")
+![DashboardScreenTrueNASHardware](/images/SCALE/22.02/DashboardScreenTrueNASHardware.png "TrueNAS SCALE Dashboard")
 
 The **Dashboard** provides access to all TrueNAS management options.
 The top row has links to outside resources and buttons to control the system.
@@ -73,7 +74,7 @@ The left-hand column lets users navigate to the various TrueNAS Configuration sc
 
 You can reorder dashboard widgets by clicking **Reorder** and then dragging them into your preferred order. You can also choose which widgets appear on the dashboard by clicking **Configure**.
 
-![ConfigureWidgetsSCALE](/images/SCALE/ConfigureWidgetsSCALE.png "Dashboard Configuration")
+![DashboardConfigureOptions](/images/SCALE/22.02/DashboardConfigureOptions.png "Dashboard Configuration Options")
 
 ## Top Bar Menu
 
@@ -93,19 +94,18 @@ Users can also use the iXsystems home page to access their customer portal and c
 {{< include file="/content/_includes/StatusOfTrueCommand.md" type="page" >}}
 
 {{< /expand >}}
-
 {{< expand "Directory Services Monitor" "v" >}}
 
 {{< include file="/content/_includes/DirectoryServicesMonitor.md" type="page" >}}
 
 {{< /expand >}}
-
 {{< expand "Task Manager" "v" >}}
 
 {{< include file="/content/_includes/TaskManagerScale.md" type="page" >}}
 
+{{< /expand >}}
 {{< expand "Alerts" "v" >}}
-The **Alerts** button displays a list of current alerts for your TrueNAS system. Users can dismiss them individually or all at once.
+The **Alerts** <span class="material-icons">notifications</span> icon button displays a list of current alerts for your TrueNAS system. Users can dismiss them individually or all at once.
 
 It also provides an **Alerts** menu you access by clicking the <span class="material-icons">settings</span> icon. From this menu users can configure **Alert Settings**, **Alert Services**, and **Email**.
 
@@ -114,7 +114,7 @@ It also provides an **Alerts** menu you access by clicking the <span class="mate
 {{< expand "Alert Settings" "v" >}}
 The **Alert Settings** screen has options for setting the warning level and frequency for alerts specific to application actions.
 
-![AlertSettingsScreen](/images/SCALE22.02/AlertSettingsScreen.png "TrueNAS SCALE Alert Settings")
+![AlertSettingsScreen](/images/SCALE/22.02/AlertSettingsScreen.png "TrueNAS SCALE Alert Settings")
 
 Use the **Set Warning Level** dropdown list options to customize alert importance. Each warning level has an icon and color to express the level of urgency.
 
@@ -124,7 +124,6 @@ Each warning level has a different icon and color to express its urgency. To mak
 
 See [Alert Settings Screen]({{< relref "/SCALE/SCALEUIReference/Toptoolbar/Alerts/AlertSettingsScreen.md" >}}) for more information on settings.
 {{< /expand >}}
-
 {{< expand "Alert Services" "v" >}}
 The **Alert Services** screen has options to create and edit alert services. It also displays existing services in a list that users can filter by **Type**, **Level**, and **Enabled**.
 
@@ -136,7 +135,6 @@ Click **SEND TEST ALERT** to generate a test alert to confirm the alert service 
 
 See [Alert Services Screen]({{< relref "/SCALE/SCALEUIReference/Toptoolbar/Alerts/AlertServicesScreen.md" >}}) for more information on settings.
 {{< /expand >}}
-
 {{< expand "Email" "v" >}}
 The **Email** screen lets you set up a system email address.
 
@@ -149,32 +147,29 @@ See [System Email]({{< relref "/SCALE/GettingStarted/SettingUpSystemEmail.md" >}
 {{< /expand >}}
 
 {{< expand "Settings" "v" >}}
-The **Settings** icon button has options for passwords, web interface preferences, API Keys, and TrueNAS information.
+The **Settings** <span class="material-icons">account_circle</span> icon button has options for passwords, web interface preferences, API Keys, and TrueNAS information.
 {{< expand "Change Password" >}}
 
 {{< include file="/content/_includes/ChangeLoggedInUserPassword.md" type="page" >}}
 
 {{< /expand >}}
-
 {{< expand "Preferences" "v" >}}
-Click on **Preferences** to select general preferences for the system that unclude changing the display color theme and other display options.
+Click on **Preferences** <span class="material-icons">settings_applications</span> to select general preferences for the system that unclude changing the display color theme and other display options.
 
 ![WebUIPreferencesScreen](/images/SCALE/22.02/WebUIPreferencesScreen.png "Web Interface Preferences")
 
 See [Web Interface Preferences Screen]({{< relref "/SCALE/SCALEUIReference/TopToolbar/Settings/WebUIPreferences.md" >}}) for more information on settings.
 {{< /expand >}}
-
-{{< expand "API Keys"v"v" >}}
-Click on **API Keys** to add API keys that identify outside resources and applications without a principal. 
+{{< expand "API Keys" "v" >}}
+Click on **API Keys** <span class="material-icons">laptop</span> to add API keys that identify outside resources and applications without a principal. 
 Users can also click **DOCS** to access their system API documentation.
 
-See [API Keys]({{< relref "/SCALE/SCALEUIReference/TopToolbar/Settings/APIKeyScreen.md" >}}) for more information on adding or managing API keys.
+See [API Keys]({{< relref "/SCALE/SCALEUIReference/TopToolbar/Settings/APIKeysScreen.md" >}}) for more information on adding or managing API keys.
 {{< /expand >}}
-
 {{< expand "Guide and About" "v" >}}
-Click on **Guide** to open the TrueNAS Documentation Hub in a new tab.
+Click on **Guide** <span class="material-icons">library_books</span> to open the TrueNAS Documentation Hub in a new tab.
 
-Click on **About** to display the information window with links to the TrueNAS Documentation Hub, TrueNAS Community Forums, FreeNAS Open Source Storage Appliance GitHub repository, and iXsystems home page.
+Click on **About** <span class="material-icons-outlined">info</span> to display the information window with links to the TrueNAS Documentation Hub, TrueNAS Community Forums, FreeNAS Open Source Storage Appliance GitHub repository, and iXsystems home page.
 
 ![AboutWindow](/images/SCALE/22.02/AboutWindow.png "About Window")
 
@@ -182,7 +177,7 @@ Click on **About** to display the information window with links to the TrueNAS D
 {{< /expand >}}
 
 {{< expand "Power Options" "v" >}}
-Click the **Power** icon button to either log out of, restart, or shut down the system.
+Click the **Power** <span class="material-icons">power_settings_new</span> icon button to either log out of, restart, or shut down the system.
 {{< /expand >}}
 
 ## Storing Data
