@@ -82,6 +82,8 @@ While SSDs pretending to be HDDs made sense for rapid adoption, the Non-Volatile
 The main advantage of NVMe is generally its low-latency performance, and it’s becoming a mainstream option for boot and other tasks. At first, NVMe was limited to expansion-card form factors such as PCIe and M.2. The new U.2 interface offers a universal solution that includes the 2.5” drive form factor and an externally accessible (but generally not hot-swappable) NVMe interface.
 
 Note: NVMe devices can run quite hot and may need dedicated heat sinks.
+
+Note: We currently do not support manual S.M.A.R.T. tests on NVMe devices.
 {{< /tab >}}
 {{< tab "USB Hard Disks" >}}
 Avoid using USB-connected hard disks for primary storage with TrueNAS. You can use USB Hard Disks for very basic backups in a pinch.
