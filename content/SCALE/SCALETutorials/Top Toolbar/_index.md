@@ -5,5 +5,4 @@ weight: 4
 ---
 
 
-
-{{< children depth="2" >}} 
+{{< children sort="name" depth="2" >}} 

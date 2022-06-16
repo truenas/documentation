@@ -1,11 +1,14 @@
 ---
 title: Top Toolbar Options
 geekdocCollapseSection: true
+tags:
+- scaletaskmgr
+- scalejobs
 weight: 4
 ---
 
 
-{{< children depth="2" >}} 
+{{< toc >}}
 
 The top toolbar icon buttons provide access to the iXsystems website, displays the status of TrueCommand and directory services configured on your system, and displays other configuration menu options.
 
@@ -15,10 +18,10 @@ The top toolbar icon buttons provide access to the iXsystems website, displays t
 
 | Icon | Name | Description |
 |------|------|-------------|
-| <span class="iconify" data-icon="bytesize:menu"></span> | Toggle Collapse | Click to expand or collapse the main menu panel on the left side of the screen. |
-|  | iXsystems Website | Opens the [iXsystems home page](https://www.ixsystems.com/) website where users can find information about storage and server systems. Users can also use the iXsystems home page to access their customer portal and community section for support. |
-|  | TrueCommand Status | Displays either the status of a TrueCommand cloud connection or a dialog that allows users to [sign up for a new TrueCommand cloud connection]({{< relref "/content/truecommand/tcgettingstarted/install/_index.md" >}}). Instructions are found in the **Cloud Deployment** section. |
-| <span class="material-icons">info</span> | Directory Services Monitor | Displays a dialog with the status of Active Directory and LDAP directory servers configured on the TrueNAS. |
+| <span class="iconify" data-icon="bytesize:menu"></span> | Toggle collapse | Click to expand or collapse the main menu panel on the left side of the screen. |
+| ![iXsystemsLogo](/images/SCALE/22.02/iXsystemsLogo.png "iXsystem Logo") | iXsystems Website | Opens the [iXsystems home page](https://www.ixsystems.com/) website where users can find information about storage and server systems. Users can also use the iXsystems home page to access their customer portal and community section for support. |
+| ![TrueCommandIcon](/images/SCALE/22.02/TrueCommandIcon.png "TrueCommand Icon") | TrueCommand status | Displays either the status of a TrueCommand cloud connection or a dialog that allows users to [sign up for a new TrueCommand cloud connection]({{< relref "/content/truecommand/tcgettingstarted/install/_index.md" >}}). Instructions are found in the **Cloud Deployment** section. |
+| <span class="material-icons">info</span> | Directory Services status | Displays a dialog with the status of Active Directory and LDAP directory servers configured on the TrueNAS. |
 | <span class="material-icons">assignment</span> | Task Manager | Displays the Task Manager dialog. Click the **History** button to display the **Jobs** screen with a list of **All**, **Active** or **Failed** jobs or processes. |
 | <span class="material-icons">notifications</span> | Alerts | Displays a list of system alerts and a dropdown list the alert options **Alert Settings**, **Alert Services** and **Email**. |
 | <span class="material-icons">account_circle</span> | Settings | Displays a dropdown menu of setting options **Change Password**, **Preferences**, **API Keys**, **Guide** and **About**. |
@@ -60,3 +63,7 @@ The <span class="material-icons-outlined">info</span> **About** icon button disp
 ### Power
 
 The **Power** button provides three options that lets the user log out of the web UI, restart, or shut down their TrueNAS system.
+
+## Related Information
+
+{{< children sort="name" depth="2" >}} 

@@ -9,4 +9,4 @@ Users can click the **History** button to open the **Jobs** screen. **Jobs** lis
 
 ![JobsScreen](/images/SCALE/22.02/JobsScreen.png "Task Manager Jobs")
 
-See [Jobs Screens]({{< relref "/Content/SCALE/SCALEUIReference/TopToolbar/JobsScreens.md" >}}) for more information.
+For more information see the **Jobs Screens** article.

@@ -1,6 +1,8 @@
 ---
 title: Alert Services Screens
 weight: 20
+tags:
+- scalealerts
 ---
 
 {{< toc >}}

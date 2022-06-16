@@ -1,6 +1,10 @@
 ---
 title: "Connecting Your First TrueNAS System"
 weight: 40
+tags:
+- tccloud
+- scaletoptoolbar
+- coretoptoolbar
 ---
 
 {{< toc >}}

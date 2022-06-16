@@ -1,6 +1,8 @@
 ---
 title: "Setting Up System Email"
 weight: 40
+tags:
+- scaleemail
 ---
 
 {{< toc >}}
@@ -87,9 +89,6 @@ Click **Save**.
 
 Click **Send Test Email** to verify you receive an email.
 {{< /expand >}}
-## Additional Information
-
-See [Email Screens]({{< relref "/SCALE/SCALEUIReference/TopToolbar/Alerts/EmailScreens.md" >}}) for more information on email settings.
 
 
 

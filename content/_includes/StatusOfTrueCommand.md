@@ -1,12 +1,11 @@
 ---
 ---
 
-
-The **Status of TrueCommand** icon lets users sign up with and connect to [TrueCommand Cloud]({{< relref "/content/TrueCommand/_index.md" >}}).
+The **Status of TrueCommand** ![TrueCommandIcon](/images/SCALE/22.02/TrueCommandIcon.png "TrueCommand Icon") icon lets users sign up with and connect to [TrueCommand Cloud]({{< relref "/content/TrueCommand/_index.md" >}}).
 
 ![ConnectOrSignUpTrueCommandCloud](/images/SCALE/22.02/ConnectOrSignUpTrueCommandCloud.png "Status of TrueCommand")
 
-Clicking **SIGNUP** opens the TrueCommand signup page in a new tab.
+Clicking **SIGNUP** opens the TrueCommand sign-up page in a new tab.
 
 ![SignUpTrueCommandSCALE](/images/SCALE/SignUpTrueCommandSCALE.png "TrueCommand Cloud Signup")
 

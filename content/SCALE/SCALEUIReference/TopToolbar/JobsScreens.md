@@ -1,6 +1,10 @@
 ---
 title: Jobs Screens
 weight: 40
+tags:
+- scaletaskmgr
+- scaletasks
+- scalejobs
 ---
 
 

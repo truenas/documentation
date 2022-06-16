@@ -1,7 +1,20 @@
 ---
 title: "First Time Login"
 weight: 60
+tags:
+- scaletaskmgr
+- scaleuiprefs
+- scaletc
+- scaledsstatus
+- scalealerts
+- scaleapikeys
+- scalelogin
+- scalechangepw
+- scaledashboard
+- scaleemail
 ---
+
+{{< toc >}}
 
 
 Now that you have installed and configured TrueNAS SCALE, you can log in to the web interface and begin managing data!
@@ -142,7 +155,7 @@ The **Email** screen lets you set up a system email address.
 
 Click on **Send Test Mail** to generate a test email to confirm the system email works correctly.
 
-See [System Email]({{< relref "/SCALE/GettingStarted/SettingUpSystemEmail.md" >}}) for more information on setting up the system email or [Email Screens]({{< relref "/SCALE/SCALEUIReference/TopToolbar/Alerts/EmailScreens.md" >}}) for information on email settings.
+See [Email Screens]({{< relref "/SCALE/SCALEUIReference/TopToolbar/Alerts/EmailScreens.md" >}}) for information on email settings.
 {{< /expand>}}
 {{< /expand >}}
 
@@ -169,7 +182,7 @@ See [API Keys]({{< relref "/SCALE/SCALEUIReference/TopToolbar/Settings/APIKeysSc
 {{< expand "Guide and About" "v" >}}
 Click on **Guide** <span class="material-icons">library_books</span> to open the TrueNAS Documentation Hub in a new tab.
 
-Click on **About** <span class="material-icons-outlined">info</span> to display the information window with links to the TrueNAS Documentation Hub, TrueNAS Community Forums, FreeNAS Open Source Storage Appliance GitHub repository, and iXsystems home page.
+Click on **About** <span class="iconify" data-icon="ant-design:info-circle-outlined"></span> to display the information window with links to the TrueNAS Documentation Hub, TrueNAS Community Forums, FreeNAS Open Source Storage Appliance GitHub repository, and iXsystems home page.
 
 ![AboutWindow](/images/SCALE/22.02/AboutWindow.png "About Window")
 
@@ -183,3 +196,4 @@ Click the **Power** <span class="material-icons">power_settings_new</span> icon 
 ## Storing Data
 
 Now that you can access the TrueNAS web interface and see all the management options, you can begin [storing data]({{< relref "/SCALE/SCALEUIReference/Storage/_index.md" >}})!
+

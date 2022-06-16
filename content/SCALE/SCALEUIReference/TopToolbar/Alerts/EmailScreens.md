@@ -1,6 +1,8 @@
 ---
 title: Email Screens
 weight: 40
+tags:
+- scaleemail
 ---
 
 

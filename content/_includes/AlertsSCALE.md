@@ -15,6 +15,4 @@ Select **Alert Services** to add or edit existing system alert services.
 See [Alerts Services Screen]({{< relref "AlertServicesScreen.md" >}}) for more infomation on **Alert Services** screens and settings.
 
 Select **Email** to configure the email service and account to receive alerts from the TrueNAS. 
-See [Email Screens]({{< relref "EmailScreens.md" >}}) for information on **Email** screens and settings.
-
-See [System Email]({{< relref "/content/SCALE/GettingStarted/SettingUpSystemEmail.md" >}}) for general information about setting up the system email.
+See [Email Screens]({{< relref "EmailScreens.md" >}}) for information on **Email** screens and settings, or see [Setting Up System Email]({{< relref "SettingUpSystemEmail.md" >}}) for general information about setting up the system email.
