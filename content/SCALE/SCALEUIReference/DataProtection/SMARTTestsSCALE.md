@@ -36,6 +36,8 @@ To quickly test one or more disk for errors, select the disks you want to test a
 
 Next, select the test **Type**.
 Test types differ based on the drive connection, ATA or SCSI:
+
+Note: We currently do not support manual S.M.A.R.T. tests on NVMe devices.
 {{< tabs "Tests by Drive Connection" >}}
 {{< tab "ATA" >}}
 * **Long** runs a S.M.A.R.T. Extended Self Test that scans the entire disk surface, which may take hours on large-volume disks.
