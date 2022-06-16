@@ -781,7 +781,7 @@ Please use CLI commands carefully and **always back up critical data** before at
 4. `python3 replace_disk.py <pool_name> <gptid/####> <ada#>` replaces the named disk in the pool with the designated spare. Replace *<pool_name>* with the name of the pool with the disk to be replaced, *<gptid/####>* with the disk identifier noted above in step 2, and *<ada#>* with the name of the unused disk to use as the replacement.
    Example:
    ```
-   root@examplemini[~]# python3 replace_disk.py disk gptid/c7acbd9e-ca3d-11ec-8ec6-d05099c356a4 ada3
+   root@examplemini[~]# python3 replace_disk.py tank gptid/c7acbd9e-ca3d-11ec-8ec6-d05099c356a4 ada3
    Replace initiated.
    root@examplemini[~]#zpool status tank
    	    pool: tank
