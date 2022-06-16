@@ -58,8 +58,433 @@ To upgrade an existing SCALE install, log in to your SCALE web interface and go 
 SCALE is developed as an appliance that uses specific Linux packages with each release. Attempting to update SCALE with `apt` or methods other than the SCALE web interface can result in a nonfunctional system.
 {{< /hint >}}
 
+## 22.02.2
+
+**June 21, 2022**
+
+iXsystems is excited to announce the release of TrueNAS SCALE 22.02.2!
+
+### Enclosure Management
+
+As TrueNAS SCALE continues to progress, so has Enclosure view functionality.  With this release, the Enclosure view is available on the following TrueNAS platforms:
+* R10
+* R20B
+* R40
+* R50B
+* Mini 3.0 X
+* Mini 3.0 X+
+* Mini 3.0 XL+
+
+Functionality is still improving for these platforms and we are working to add additional platforms in future releases.
+
+### Improvement
+<ul>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-110523'>NAS-110523</a>] -         When ZFS dedup is enabled on a pool, use SHA512 as the checksum algorithm
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-111673'>NAS-111673</a>] -         ZFS debuginfo RPM conversion to DEB
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-112058'>NAS-112058</a>] -         [ SCALE ] Multiple containers cannot use the same intel GPU
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-113866'>NAS-113866</a>] -         create trunas-devel metapackage SCALE
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-114918'>NAS-114918</a>] -         Help dialog under System/Certificates/Add mostly quite useless
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115659'>NAS-115659</a>] -         Set ZFS module parameter spl_panic_halt
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115713'>NAS-115713</a>] -         new api endpoint to be used for recordsize choices for webUI
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115720'>NAS-115720</a>] -         Azure Custom Endpoint
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115740'>NAS-115740</a>] -         Azure Custom Endpoint
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116049'>NAS-116049</a>] -         cache dmidecode -t0 data in dmidecode plugin
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116053'>NAS-116053</a>] -         cache truenas.get_chassis_hardware results
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116154'>NAS-116154</a>] -         Improve error message when quota cannot be set on user/group
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116203'>NAS-116203</a>] -         TrueNAS Capacity Monitoring via Proactive Support
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116248'>NAS-116248</a>] -         Cannot restore a PUSH replication
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116265'>NAS-116265</a>] -         Merge truenas/zfs-2.1-release into stable/angelfish
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116269'>NAS-116269</a>] -         Validate that all groups / users in a proposed ACL can chdir into the path prior to actually setting it
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116387'>NAS-116387</a>] -         Remove unused trueview.stats event
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116388'>NAS-116388</a>] -         Allow custom reporting.realtime time
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116475'>NAS-116475</a>] -         better exceptions in py-nvme/py-sgio (get errno) on SCALE
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116484'>NAS-116484</a>] -         optimize disk.sync_all on SCALE
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116566'>NAS-116566</a>] -         using glob.glob in disk code on SCALE is painful
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116624'>NAS-116624</a>] -         update scst with upstream
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116637'>NAS-116637</a>] -         Build Core samba vfs modules on SCALE
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116641'>NAS-116641</a>] -         Merge truenas/zfs-2.1.5-release into stable/angelfish
+</li>
+</ul>
+
+### New Feature
+
+<ul>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-114311'>NAS-114311</a>] -         ImageInspectError for all pods in kube-system namespace
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115707'>NAS-115707</a>] -         Expose info about gluster network interface
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116303'>NAS-116303</a>] -         add r50b nvme rear drive bays mapping support
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116304'>NAS-116304</a>] -         add r50 nvme rear drive bays mapping support
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116447'>NAS-116447</a>] -         &quot;Proactive support&quot; checkbox for &quot;Alert Settings&quot;
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116670'>NAS-116670</a>] -         Branch out for 22.02.2
+</li>
+</ul>
+
+### Bug
+
+<ul>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-106532'>NAS-106532</a>] -         M50 and M60 rear nvme drive bay mapping
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-112562'>NAS-112562</a>] -         Attempt to add third SSD to mirrored pool fails
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-113532'>NAS-113532</a>] -         Cannot re-import zpool from GUI
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-114143'>NAS-114143</a>] -         Dashboard: Interface names cut off
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-114235'>NAS-114235</a>] -         Need better Linux kernel config procedure
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-114924'>NAS-114924</a>] -         Import CSR errors out on passphrase
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-114942'>NAS-114942</a>] -         Rclone fails with Scaleway S3 storage due to incorrect region
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-114960'>NAS-114960</a>] -         Long SMART Extended Self Test stuck at 90% for more than 48 hours
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-114984'>NAS-114984</a>] -         Core files for the following executables were found
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-114987'>NAS-114987</a>] -         Can not create pool
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115025'>NAS-115025</a>] -         UPS Shutdown occurs when Power Off UPS is not set
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115050'>NAS-115050</a>] -         Unhandled exception in dataset size observer
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115094'>NAS-115094</a>] -         Allow /cluster locations to be used for CloudSync Tasks
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115102'>NAS-115102</a>] -         SMB stops when changes to the LDAP configuration are made
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115176'>NAS-115176</a>] -         SNMP Monitoring of the pools fail
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115306'>NAS-115306</a>] -         NextCloud hits the SQL connection limit
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115334'>NAS-115334</a>] -         CPU widget reporting Hottest CPU wrong when there are 2 CPUs
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115394'>NAS-115394</a>] -         Apps : Search field default text gets outside the field when not selected
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115425'>NAS-115425</a>] -         Rebooting Cluster Node does not restart smbd properly
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115426'>NAS-115426</a>] -         Active Directory doesn&#39;t allow saving or warn when NetBIOS name &gt; 15 characters
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115435'>NAS-115435</a>] -         Falls off LDAP
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115478'>NAS-115478</a>] -         SMB_ASSERT() on failure to get ZFS dataset information
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115541'>NAS-115541</a>] -         adding description to an interface causes unhandled exception
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115544'>NAS-115544</a>] -         adjusting lagg/bond membership excludes existing members 22.02.0.1
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115578'>NAS-115578</a>] -         Rebooting TrueNAS Scale does not cleanly shut down VMs
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115602'>NAS-115602</a>] -         Cannot remove netbios alias when updating AD config
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115611'>NAS-115611</a>] -         Server does not boot in degraded state after loosing one boot-pool drive
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115616'>NAS-115616</a>] -         CPU usage is wrong
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115628'>NAS-115628</a>] -         Device list in iSCSI Extents is empty 
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115633'>NAS-115633</a>] -         Network graph: incorrect legend units
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115639'>NAS-115639</a>] -         scale - zfs recordsize artificially capped at 1M. Should be tunable to 16M
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115663'>NAS-115663</a>] -         in Sharing / SMB / Edit Share ACL, first entry cannot be deleted even if multiple present
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115675'>NAS-115675</a>] -         Dashboard does not provide storage widget for pool named &quot;temp&quot;
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115689'>NAS-115689</a>] -         Corrupted zpool may cause smbd service to crash
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115738'>NAS-115738</a>] -         No &quot;overview&quot; information in &quot;Interface&quot; widget in dashboard, Chinese, Germen language are affected.
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115770'>NAS-115770</a>] -         Fix `pool.dataset.processes_using_paths` for datasets that have nested zvols
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115783'>NAS-115783</a>] -         Generated dhclient.conf files in BlueFIN nightlies are broken
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115787'>NAS-115787</a>] -         After configuring LAGG, dashboard UI is broken and apps don&#39;t show
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115796'>NAS-115796</a>] -         [SCALE] UI becomes unresponsive when installing some apps
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115798'>NAS-115798</a>] -         Nextcloud missing configuration to prevent locks
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115802'>NAS-115802</a>] -         TrueNAS Scale doesn&#39;t automatically use new LetsEncrypt certificate
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115812'>NAS-115812</a>] -         When using Kubernetes GUI slows down to a crawl after a few minutes
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115833'>NAS-115833</a>] -         VM clone of a clone zvol name length issue
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115850'>NAS-115850</a>] -         22.12 - Mapping loginShell to /bin/sh enables nologin users to log in
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115854'>NAS-115854</a>] -         Can&#39;t change SMB admin group due to typo
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115856'>NAS-115856</a>] -         [CLI] print created API key
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115860'>NAS-115860</a>] -         Failed Upgrade to SCALE 22.02.0.1 - Zpool Wont Import
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115865'>NAS-115865</a>] -         `middleware.block_hooks`
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115872'>NAS-115872</a>] -         `zfs send -V` prints a per-second report of how much data has been sent (like `-v` does)
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115887'>NAS-115887</a>] -         No System Dataset Option
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115902'>NAS-115902</a>] -         [SCALE] Quota critical/warning alert cannot  be 0 
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115913'>NAS-115913</a>] -         Secure temporary dir with `generate_ssh_key_pair`
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115915'>NAS-115915</a>] -         Reduce the vulnerability to timing attacks
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115935'>NAS-115935</a>] -         Fix unit tests
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115938'>NAS-115938</a>] -         Tryinto replicate ix-systems
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115942'>NAS-115942</a>] -         Port NAS-115110 to Scale
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115952'>NAS-115952</a>] -         Update samba to 4.15.7
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115954'>NAS-115954</a>] -         GeckoMain filling /var/db/system/cores (Container/App core!?)
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115956'>NAS-115956</a>] -         SMBD Core Dump after transfer of huge data volume (time machine backup 800GB)
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115964'>NAS-115964</a>] -         Fix integration tests
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115969'>NAS-115969</a>] -         Permit case-insensitive renames in Samba 4.15
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115975'>NAS-115975</a>] -         Unable to connect to KMIP server
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115976'>NAS-115976</a>] -         Add tests for renames over SMB protocol
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115977'>NAS-115977</a>] -         Add `ReplicationContext.remove_dataset` so we don&#39;t forget to update …
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115980'>NAS-115980</a>] -         add ctdb.shared.volume.teardown method
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115981'>NAS-115981</a>] -         store cython-generated c files when making builds
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-115983'>NAS-115983</a>] -         missing f in f-string
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116017'>NAS-116017</a>] -         Syncthing host paths are not mounted
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116029'>NAS-116029</a>] -         smb.sharesec.query returns list index out of range
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116030'>NAS-116030</a>] -         `truenas-devel` package is not available on the apt
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116033'>NAS-116033</a>] -         Fix unlocking readonly datasets
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116063'>NAS-116063</a>] -         optimize system_is_enterprise_ix_hardware calls
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116068'>NAS-116068</a>] -         Pod/Application logs do not display
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116072'>NAS-116072</a>] -         `middlewared.utils.functools.cache`
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116074'>NAS-116074</a>] -         Maintain equal `--ignore` option for both flake8 invocations
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116082'>NAS-116082</a>] -         Sysctl &quot;Variable&quot; tooltip is outdated
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116092'>NAS-116092</a>] -         System dataset update validation errors are not displayed
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116093'>NAS-116093</a>] -         k3s uses system configured proxy for internal/localhost calls
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116094'>NAS-116094</a>] -         [SCALE] UPS Reporting is empty
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116097'>NAS-116097</a>] -         Bettet diagnostics for system dataset umount failures
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116099'>NAS-116099</a>] -         Fix `pool.dataset.processes` returning bogus paths for locked datasets
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116105'>NAS-116105</a>] -         The process asyncio_loop occupies the CPU for a long time
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116108'>NAS-116108</a>] -         crash during session teardown after failure to create recycle bin
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116116'>NAS-116116</a>] -         Kubernetes service is not running
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116118'>NAS-116118</a>] -         Include lsblk -f output in Hardware debug
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116119'>NAS-116119</a>] -         zv exists but no pv/pvc linked impossible to delete
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116121'>NAS-116121</a>] -         Apps can&#39;t create PVC and stuck on deploying
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116128'>NAS-116128</a>] -         Include rpc-statd and rpc-gssd status in debug output
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116130'>NAS-116130</a>] -         Plex (official) doesn&#39;t start automatically after reboot
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116134'>NAS-116134</a>] -         Device list in iSCSI Extents UX issues
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116135'>NAS-116135</a>] -         fix changing hostname on standby node on HA
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116140'>NAS-116140</a>] -         iSCSI wizard breaks down when middleware returns errors
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116157'>NAS-116157</a>] -         Fix system_/dmi.py comparing a list to an int
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116163'>NAS-116163</a>] -         SCALE: multiple machines get the same MAC address for LACP interfaces
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116170'>NAS-116170</a>] -         retry git commands on failure
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116207'>NAS-116207</a>] -         smbd crash due to SMB_ASSERT() being triggered in vfs_recycle
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116208'>NAS-116208</a>] -         i225 FW1.79 support issues in Core and Scale, fixes in Freebsd 14 and Ubuntu 22.05
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116220'>NAS-116220</a>] -         Cannot update dataset options in UI
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116225'>NAS-116225</a>] -         Smart can&#39;t load
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116231'>NAS-116231</a>] -         after Update 22.02.1 My app can not gpu passthrough anymore
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116233'>NAS-116233</a>] -         Fix alternate code path for SMB connection rename in tests
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116242'>NAS-116242</a>] -         Add initial Windows SD conversion regression tests
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116244'>NAS-116244</a>] -         Reporting shows null data
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116252'>NAS-116252</a>] -         Blacklist wide links related parameters
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116253'>NAS-116253</a>] -         Remove crossrename from vfs objects when recycle enabled (#8967)
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116264'>NAS-116264</a>] -         fix NO_VIP check on SCALE HA
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116266'>NAS-116266</a>] -         Disable vfs_shadow_copy_zfs if snapdir is visible
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116273'>NAS-116273</a>] -         remove nonexistent entry point for middlewared
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116279'>NAS-116279</a>] -         Only the first selected dataset obey snapshot retention policy on replication
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116283'>NAS-116283</a>] -         fix pool.is_upgraded_by_name
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116288'>NAS-116288</a>] -         Use /proc/spl/kstat/zfs for quick zpool checks
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116289'>NAS-116289</a>] -         [EFAULT] Unable to define domain for cloud: operation failed: domain &#39;xxx is already defined with uuid 
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116300'>NAS-116300</a>] -         Long replication output runs off of the screen and can&#39;t be scrolled
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116310'>NAS-116310</a>] -         Remove automatic quota on TM preset
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116324'>NAS-116324</a>] -         filesystem.can_access_as_user is broken. May be impacting vm plugin access checks
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116326'>NAS-116326</a>] -         Significantly increase maxPods per node
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116346'>NAS-116346</a>] -         Not able to retrieve logs for a successful cloud sync task
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116349'>NAS-116349</a>] -         Do not send events for transient jobs
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116350'>NAS-116350</a>] -         `pool.is_upgraded` minor performance improvements and tests
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116351'>NAS-116351</a>] -         Reporting/rrd loging issues with .zfs snapshot set as visible
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116362'>NAS-116362</a>] -         iptables-restore fails do to unquoted comments
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116365'>NAS-116365</a>] -         Exception while calling periodic task (smb.sharesec.synchronize_acls)
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116373'>NAS-116373</a>] -         include file type in filesystem.stat output
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116379'>NAS-116379</a>] -         kernel bug at startup (ntb_hw_plx)
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116424'>NAS-116424</a>] -         Clean up created replication tasks after replication test
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116425'>NAS-116425</a>] -         Do not crash `zettarepl_schedule` if `begin` or `end` are not specified
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116433'>NAS-116433</a>] -         device.get_disks() optimizations
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116454'>NAS-116454</a>] -         Add mount flags to filesystem.statfs() output
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116470'>NAS-116470</a>] -         Ensure disk_choices methods don&#39;t show in-use zvols
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116480'>NAS-116480</a>] -         Fix migrations
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116486'>NAS-116486</a>] -         Simplify process of adding NFS SPNs
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116490'>NAS-116490</a>] -         Raise validation errors on ZFS ctldir and snapdir
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116496'>NAS-116496</a>] -         Raise validation error on permissions changes to .zfs
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116500'>NAS-116500</a>] -         Remove widelinks from list of sample aux params for CI
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116518'>NAS-116518</a>] -         Upgrade from Core 12.0-U8.1 to Scale 22.02.1 - NFS &amp; iSCSI Fail
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116520'>NAS-116520</a>] -         Allow setting gid 0 on new groups
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116522'>NAS-116522</a>] -         remove sockstat dependency
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116530'>NAS-116530</a>] -         Do not allow port forwarding in ix-chart/minio app with hostnetworking
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116531'>NAS-116531</a>] -         Fix AD debug script
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116532'>NAS-116532</a>] -         Remove FreeBSD debug scripts
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116540'>NAS-116540</a>] -         disk.get_unused traceback
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116545'>NAS-116545</a>] -         Add key to SMB share presets to indicate cluster-safety
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116546'>NAS-116546</a>] -         SCST rotational config option is 0 or 1
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116567'>NAS-116567</a>] -         Fix `rmtree_one_filesystem` error reporting
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116568'>NAS-116568</a>] -         fix typo causing exorbitant memory usage
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116569'>NAS-116569</a>] -         Fix typo in SMB presets
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116575'>NAS-116575</a>] -         Expose ZFS dosmodes in filesystem plugin
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116584'>NAS-116584</a>] -         Add initial bunch of returns decorators to DS-related plugins
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116586'>NAS-116586</a>] -         Libvirt guests are not gracefully terminating at shutdown
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116596'>NAS-116596</a>] -         fix AttributeError in disabled_reasons
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116600'>NAS-116600</a>] -         Fix mseries nvme mapping
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116602'>NAS-116602</a>] -         catch proper pyudev exception
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116613'>NAS-116613</a>] -         Fix async path validator
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116630'>NAS-116630</a>] -         fix disk serial detection when SCALE is installed on bhyve
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116631'>NAS-116631</a>] -         `wait_to_hang_and_dump_core` script
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116646'>NAS-116646</a>] -         ctdb teardown method to resync interfaces
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116650'>NAS-116650</a>] -         fix NO_VIP check when bond iface is empty
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116651'>NAS-116651</a>] -         Improve error messages for invalid AD accounts
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116652'>NAS-116652</a>] -         fix SCALE HA detection on BHYVE VMs
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116657'>NAS-116657</a>] -         Fix `EventSource` error handling
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116658'>NAS-116658</a>] -         resolve uid -1 and gid -1 prior to perm_check
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116659'>NAS-116659</a>] -         Fix iSCSI disk tests
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116660'>NAS-116660</a>] -         Ensure that SMB service stays running after AD stop
+</li>
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-116671'>NAS-116671</a>] -         optimize ctdb.general.healthy
+</li>
+</ul>
+
+
+
+
 ## 22.02.1
 
+{{< expand "22.02.1" >}}
 **May 3, 2022**
 
 iXsystems is pleased to announce the release of TrueNAS SCALE 22.02.1! 
@@ -556,6 +981,8 @@ iXsystems is pleased to announce the release of TrueNAS SCALE 22.02.1!
 <li>[<a href='https://jira.ixsystems.com/browse/NAS-115935'>NAS-115935</a>] -         Fix unit tests
 </li>
 </ul>
+
+{{< /expand >}}
 
 ## 22.02.0.1
 
