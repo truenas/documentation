@@ -68,12 +68,16 @@ iXsystems is excited to announce the release of TrueNAS SCALE 22.02.2!
 
 As TrueNAS SCALE continues to progress, so has Enclosure view functionality.  With this release, the Enclosure view is available on the following TrueNAS platforms:
 * R10
+* R20
 * R20B
 * R40
 * R50B
 * Mini 3.0 X
 * Mini 3.0 X+
 * Mini 3.0 XL+
+* Mini 3.0 E
+* Mini 3.0 E+
+* M50
 
 Functionality is still improving for these platforms and we are working to add additional platforms in future releases.
 
