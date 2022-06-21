@@ -5771,6 +5771,7 @@ Packages downloaded via apt are not persistent. They will not survive an upgrade
         	<table width="100%">
             	<thead><tr><th>Key</th><th>Summary</th><th>Workaround</th></tr></thead>
                	<tbody>
+				    <tr><td>Possible issue with large drive counts. iX is investigating isuses with booting SCALE on systems with more than 100 Disks.</td></tr>
 				    <tr><td><a href="https://jira.ixsystems.com/browse/NAS-115238" target="_blank">NAS-115238</a></td><td>Removed drive from pool does not degrade pool status (SCALE).</td><td>Issue is being investigated and a fix provided in a future release.</td></tr>
 					<tr><td></td><td>Cosmetic issue with update trains when updating from SCALE 22.02.0-RC.2.</td><td>After updating from 22.02.0-RC.2, the previous update train might show in <b>System Settings > Update</b>. This is a cosmetic issue only and can be ignored.</td></tr>
 					<tr><td></td><td>Unable to mount an NFS export after migrating from CORE > SCALE or updating to 22.02.0.</td><td>The <file>/etc/exports</file> file is no longer generated when the NFS configuration contains <i>mapall</i> or <i>maproot</i> entries for unknown users or groups. This can impact users who previously had a mapping group set to <i>wheel</i>, which does not exist in SCALE. If you are unable to mount an NFS export, review your NFS share configuration and change any <i>wheel</i> entries to something specific for your environment or <i>root</i>.</td></tr>
