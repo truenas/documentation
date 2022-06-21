@@ -38,7 +38,7 @@ Next, select the test **Type**.
 Test types differ based on the drive connection, ATA or SCSI:
 
 {{< hint info >}}
-Note: We currently do not support manual S.M.A.R.T. tests on NVMe devices.
+Manual S.M.A.R.T. tests on NVMe devices is currently not supported.
 {{< /hint >}}
 {{< tabs "Tests by Drive Connection" >}}
 {{< tab "ATA" >}}
