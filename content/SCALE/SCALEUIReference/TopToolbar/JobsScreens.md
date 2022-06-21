@@ -28,3 +28,4 @@ The **Failed** screen displays the list of failed jobs.
 
 Use the **View Logs** button to display the task log. The system error for this failed job displays at the bottom of the log file.
 
+{{< taglist tag="scaletaskmgr" limit="10" >}}

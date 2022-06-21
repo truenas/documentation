@@ -25,7 +25,8 @@ The **Send Test Mail** button generates a test email to confirm the system email
 | **From Name** | The friendly name to show in front of the sending email address. Example: *Storage System 01<it@example.com>* |
 | **Outgoing Mail Server** | Host name or IP address of SMTP server to use for sending this email. |
 | **Mail Server Port** | MTP port number. Typically 25,465 (secure SMTP), or 587 (submission). |
-| **Security** | Select the securty option from the dropdown list. Options are **Plain (No Encryption)**, **SSL (Implicit TLS)**, or **TLS (STARTTLS)**. See [email encryption](https://www.fastmail.com/help/technical/ssltlsstarttls.html) for more information on types. |
+| **Security** | Select the security option from the dropdown list. Options are **Plain (No Encryption)**, **SSL (Implicit TLS)**, or **TLS (STARTTLS)**. See [email encryption](https://www.fastmail.com/help/technical/ssltlsstarttls.html) for more information on types. |
 | **SMTP Authentication** | Select to enable [SMTP AUTH](https://en.wikipedia.org/wiki/SMTP_Authentication) using PLAIN SASL. Requires a valid user name and password. |
 
 
+{{< taglist tag="scaleemail" limit="10" >}}

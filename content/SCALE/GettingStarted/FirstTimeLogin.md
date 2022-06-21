@@ -2,16 +2,10 @@
 title: "First Time Login"
 weight: 60
 tags:
-- scaletaskmgr
-- scaleuiprefs
-- scaletc
-- scaledsstatus
-- scalealerts
-- scaleapikeys
 - scalelogin
-- scalechangepw
+- scalesettings
+- scaleinstall
 - scaledashboard
-- scaleemail
 ---
 
 {{< toc >}}
@@ -93,7 +87,7 @@ You can reorder dashboard widgets by clicking **Reorder** and then dragging them
 
 The icon buttons in the top toolbar menu link to the iXsystems site, display the status of TrueCommand and directory servers, and show system processes, and configuration menus. You can also collapse and expand the main function menu on the left side of the screen. 
 
-![TopToolbar](/images/SCALE/22.02/TopToolbar.png "TrueNAS SCALE Top Toobar Icons")
+![TopToolbar](/images/SCALE/22.02/TopToolbar.png "TrueNAS SCALE Top Toolbar Icons")
 
 ### Top Toolbar Icons
 {{< expand "iXsystems" "v" >}}
@@ -144,7 +138,7 @@ The **Alert Services** screen has options to create and edit alert services. It 
 
 To create a new alert service, click **Add** and fill out the form, then click **Save**. 
 
-Click **SEND TEST ALERT** to generate a test alert to confirm the alert service works correctly.
+Click **SEND TEST ALERT** to generate a test alert to confirm the alert service works.
 
 See [Alert Services Screen]({{< relref "/SCALE/SCALEUIReference/Toptoolbar/Alerts/AlertServicesScreen.md" >}}) for more information on settings.
 {{< /expand >}}
@@ -153,7 +147,7 @@ The **Email** screen lets you set up a system email address.
 
 ![AlertEmailScreen](/images/SCALE/22.02/AlertEmailScreen.png "Email General Options")
 
-Click on **Send Test Mail** to generate a test email to confirm the system email works correctly.
+Click on **Send Test Mail** to generate a test email to confirm the system email works.
 
 See [Email Screens]({{< relref "/SCALE/SCALEUIReference/TopToolbar/Alerts/EmailScreens.md" >}}) for information on email settings.
 {{< /expand>}}
@@ -167,7 +161,7 @@ The **Settings** <span class="material-icons">account_circle</span> icon button 
 
 {{< /expand >}}
 {{< expand "Preferences" "v" >}}
-Click on **Preferences** <span class="material-icons">settings_applications</span> to select general preferences for the system that unclude changing the display color theme and other display options.
+Click on **Preferences** <span class="material-icons">settings_applications</span> to select general preferences for the system that include changing the display color theme and other display options.
 
 ![WebUIPreferencesScreen](/images/SCALE/22.02/WebUIPreferencesScreen.png "Web Interface Preferences")
 

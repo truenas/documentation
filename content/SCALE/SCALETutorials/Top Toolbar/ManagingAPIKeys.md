@@ -1,6 +1,8 @@
 ---
 title: "Managing API Keys"
 weight: 30
+tags:
+- scaleapikeys
 ---
 
 The **API Keys** option on the top toolbar **Settings** dropdown menu displays the **API Keys** screen. This screen displays a list of API keys added to your TrueNAS.
@@ -34,3 +36,6 @@ To delete, select **Confirm** on the delete dialog to activate the **Delete** bu
 ## API Key Documentation
 
 Click **DOCS** to access API documentation for your system.
+
+{{< taglist tag="scaleapikeys" limit="10" >}}
+

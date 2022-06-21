@@ -7,6 +7,6 @@ weight: 2
 
 {{< include file="/content/_includes/AlertsSCALE.md" type="page" >}}
 
-## Releated Articles
+## Related Articles
 
 {{< children sort="name" depth="2" >}} 

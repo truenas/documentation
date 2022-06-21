@@ -1,6 +1,8 @@
 ---
 title: Web Interface Preference Screen
 weight: 2
+tags:
+- scalesettings
 ---
 
 Use the **Web Interface Preferences** screen, accessed from the top toolbar **Settings** menu, to select general system preferences for your TrueNAS system.
@@ -17,3 +19,5 @@ Use the **Web Interface Preferences** screen, accessed from the top toolbar **Se
 | **Reset All Preferences to Default** | Select to reset all user preferences to their default values (custom themes are preserved). |
 
 Use **Update Preferences** to save changes. A green circle with a checkmark briefly displays to validate the changes made are saved and implemented.  
+
+{{< taglist tag="scalesettings" limit="10" >}}

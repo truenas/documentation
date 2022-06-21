@@ -2,6 +2,8 @@
 title: Settings Options
 geekdocCollapseSection: true
 weight: 2
+tags:
+- scalesettings
 ---
 
 

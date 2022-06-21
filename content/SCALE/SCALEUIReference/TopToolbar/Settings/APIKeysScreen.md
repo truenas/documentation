@@ -1,6 +1,8 @@
 ---
 title: "API Keys Screen"
 weight: 20
+tags:
+- scaleapikeys
 ---
 
 The **API Keys** option on the top toolbar **Settings** dropdown menu displays the **API Keys** screen. This screen displays a list of API keys added to your TrueNAS.
@@ -20,3 +22,5 @@ Always back up and secure keys. The key string displays only one time, at creati
 ## API Key Documentation
 
 Click **DOCS** to access API documentation for your system.
+
+{{< taglist tag="scaleapikeys" limit="10" >}}

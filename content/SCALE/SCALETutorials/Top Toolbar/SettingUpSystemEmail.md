@@ -17,7 +17,7 @@ Configure the system to send these emails to the administrator remote email acco
 ## Setting up User Accounts
 
 Configure the email address for the system root user as part of your initial system setup. 
-You can also configure email adddresses for additional user accounts as needed.
+You can also configure email addresses for additional user accounts as needed.
 
 ### Configuring the Root User Email Address
 
@@ -56,15 +56,20 @@ To use the **GMail OAuth** send method:
 ![AlertEmailScreen](/images/SCALE/22.02/AlertEmailScreen.png "Alert Email Screen")
 
 Click on **Log In To GMail**. 
-The GMail **Authorizationg** window displays. 
+
+The GMail **Authorization** window displays. 
+
+![EmailGmailAuthorization](/images/SCALE/22.02/EmailGmailAuthorization.png "Email Gmail Authorization")
 
 Click **Proceed** to display the **Sign in with Google** window.
 
 ![EmailGmailSignIn](/images/SCALE/22.02/EmailGmailSignIn.png "Email GMail Sign In")
 
-Type in the GMail account to use and click **Next**. 
+Enter the Gmail account credentials. Type in the GMail account to use and click **Next**. 
 Enter the password for the GMail account you entered. 
 When the **TrueNAS wants to access your Google Account** window displays, scroll down and click **Allow** to complete the set up or **Cancel** to exit set up and close the window.
+
+![EmailGmailConfirmation](/images/SCALE/22.02/EmailGmailConfirmation.png "Email GMail Confirmation")
 
 ![EmailGmailAllow](/images/SCALE/22.02/EmailGmailAllow.png "Email GMail Allow")
 
@@ -90,5 +95,18 @@ Click **Save**.
 Click **Send Test Email** to verify you receive an email.
 {{< /expand >}}
 
+## Setting up the Email Alert Service
 
+The final step to setting up system email and have alerts sent to that system email is to configure the email alert.
 
+From the **Alerts** panel, select the <span class="material-icons">settings</span> icon and then **Alert Services**.
+
+Change the **Type** field to **Email** and then populate the **Add Alert Service** form.
+
+![AddAlertServiceEmailScreen](/images/SCALE/22.02/AddAlertServiceEmailScreen.png "Add Email Alert Service")
+
+Add the system email address in the **Email Address** field.
+
+Use **SEND TEST ALERT** to generate a test alert and confirm the email address and alert service works.
+
+{{< taglist tag="scaleemail" limit="10" >}}

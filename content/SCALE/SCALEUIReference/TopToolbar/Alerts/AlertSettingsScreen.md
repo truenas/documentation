@@ -1,16 +1,18 @@
 ---
 title: Alert Settings Screens
 weight: 10
+tags:
+- scalealerts
 ---
 
 
 {{< toc >}}
 
-The **Alert Settings** screen displays options to set the warning level and frequency for alerts specific to application actions. 
+The **Alert Settings** screen displays options to set the warning level and frequency. 
 
 ![AlertSettingsScreen](/images/SCALE/22.02/AlertSettingsScreen.png "TrueNAS SCALE Alert Settings")
 
-To access this screen, click the <span class="material-icons">notifications</span> icon, and then click the <span class="material-icons">settings</span> icon and select **Alert Settings** on the dropdown menu.
+To access this screen, click the <span class="material-icons">notifications</span> icon, and then click the <span class="material-icons">settings</span> icon and select **Alert Settings** on the dropdown list.
 
 ## Alert Categories
 
@@ -22,15 +24,15 @@ Use the **Category** dropdown list to displays alert settings for each category.
 
 ![AlertSettingsScreen](/images/SCALE/22.02/AlertSettingsScreen.png "TrueNAS SCALE Alert Settings")
 
-Setting options are **Application Update Available**, **Catalog Not Healthy**, **Unable to Configure Applications**, **Unable to Start Applications** and **Unable to Sync Catalog**.
+Options cover available updates, health of the catalog, ability to configure or start applications, and ability to sync the catalog.
 {{< /expand >}}
 ### Certificate Alert Settings
-**Certificates** alert ssettings apply to certificates you add through the **Credentials > Certificates** screen.
+**Certificates** alert settings apply to certificates you add through the **Credentials > Certificates** screen.
 {{< expand "Click here for more information" >}}
 
 ![AlertSettingsCertificates](/images/SCALE/22.02/AlertSettingsCertificates.png "Certificates Alert Settings")
 
-Setting options are **Certificate has Expired**, **Certificate is Expiring**, **Certificate is Expriring Soon**, **Certificate Parsing Failed**, **Certificate Revoked** and **Web UI HTTPS Certificate Setup Failed**.
+Options cover certificate expiration, parsing, and revoke status> Status cover expired, expiring or expiring soon, revoked, parsing failed and web UI HTTPS certificate setup failed. 
 {{< /expand >}}
 ### Directory Services Alert Settings
 **Directory Services** alert settings apply to the Active Directory and LDAP servers configured on your TrueNAS.
@@ -38,91 +40,91 @@ Setting options are **Certificate has Expired**, **Certificate is Expiring**, **
 
 ![AlertSettingsDirectoryServices](/images/SCALE/22.02/AlertSettingsDirectoryServices.png "Directory Services Alert Settings")
 
-Settings options are **Active Directory Bind is not Healthy**, **Active Directory Domain Validation Failed**, **Domain Offline**, and **LDAP Bind is not Healthy**.
+Options cover the health of Active Directory bind, if Active Directory domain validation failed, or the domain is offline, and the health of LDAP bind.
 {{< /expand >}}
 ### Hardware Alert Settings
-**Hardware** alert settings apply to the IPMI network connections, and S.M.A.R.T. and smartd that monitores the hard drives installed on your TrueNAS system.
+**Hardware** alert settings apply to the IPMI network connections, and S.M.A.R.T. and smartd that monitors the hard drives installed on your TrueNAS system.
 {{< expand "Click here for more information" >}}
 
-![AlertServicesHardware](/images/SCALE/22.02/AlertServicesHardware.png "Hardware Alert Settings")
+![AlertSettingsHardware](/images/SCALE/22.02/AlertSettingsHardware.png "Hardware Alert Settings")
 
-Setting options are **IPMI system Event**, **IPMI System Event Log Low Space Left**, **S.M.A.R.T. Error** and **smartd is not Running**.
+Setting cover IPMI system events, system event log space, S.M.A.R.T. error and smartd running status.
 {{< /expand >}}
 ### Key Management Interoperability Protocol (KMIP) Alert Settings
 **Key Management Interoperability Protocol (KMIP)** alert settings only apply to KMIP configured on a TrueNAS Enterprise system.
 {{< expand "Click here for more information" >}}
 
-![AlertServicesKMIP](/images/SCALE/22.02/AlertServicesKMIP.png "KMIP Alert Settings")
+![AlertSettingsKMIP](/images/SCALE/22.02/AlertSettingsKMIP.png "KMIP Alert Settings")
 
-Setting options are **Failed to Communicate with KMIP Server**, **Failed to Syncv SED Global Password with KMIP Server**, **Failed to Sync Keys with KMIP Server** and **Failed to Synch ZFS with KMIP Server**.
+Options cover communication failures with KMIP server, failure to sync SED Global Password, keys, and ZFS with the KMIP server.
 {{< /expand >}}
 ### Plugins Alert Settings
 **Plugins** alert settings apply to plugins installed on your TrueNAS.
 {{< expand "Click here for more information" >}}
 
-![AlertServicesPlugins](/images/SCALE/22.02/AlertServicesPlugins.png "Plugin Alert Settings")
+![AlertSettingsPlugins](/images/SCALE/22.02/AlertSettingsPlugins.png "Plugin Alert Settings")
 
-Setting option is **Plugin Update Available**.
+Option is **Plugin Update Available**.
 {{< /expand >}}
 ### Network Alert Settings
 **Network** alert settings applies to network interfaces configured on your TrueNAS.
 {{< expand "Click here for more information" >}}
 
-![AlertServicesNetwork](/images/SCALE/22.02/AlertServicesNetwork.png "Network Alert Settings")
+![AlertSettingsNetwork](/images/SCALE/22.02/AlertSettingsNetwork.png "Network Alert Settings")
 
-Setting options are **Ports are Not ACTIVE on LAGG Interface** and **There are No ACTIVE Ports on the LAGG Interface**.
+Options cover LAGG interface ports status.
 {{< /expand >}}
 ### Reporting Alert Settings
 **Reporting** alert settings apply to collectd, reporting database and syslog processes on your TrueNAS.
 {{< expand "Click here for more information" >}}
 
-![AlertServicesReporting](/images/SCALE/22.02/AlertServicesReporting.png "Reporting Alert Settings")
+![AlertSettingsReporting](/images/SCALE/22.02/AlertSettingsReporting.png "Reporting Alert Settings")
 
-Options are **Collectd Critical Alert**, **Collectd Warning**, **Reporting Database Size Exceeds Threshold** and **syslog-ng iIs Not Running**.
+Options cover collectd critical alerts and warnings, reporting database size threshold exceeded and syslog-ng is not running.
 {{< /expand >}}
 ### Sharing Alert Settings
 **Sharing** alert settings apply to iSCSI, NFS or SMB shares and connections configured on your TrueNAS.
 {{< expand "Click here for more information" >}}
 
-![AlertServicesSharing](/images/SCALE/22.02/AlertServicesSharing.png "Sharing Alert Settings")
+![AlertSettingsSharing](/images/SCALE/22.02/AlertSettingsSharing.png "Sharing Alert Settings")
 
-Setting options are **IP Addresses Bound to an iSCSI Porta Were Not Found**, **NFS Services Cound Not Bind to Specific IP Addresses Using 0.0.0.0**, **NFS share references hosts that could not be resoloved**, **NTLMv1 authentication has been attempted in the last 24hours**, **SMB1 connections to TrueNAS server have been performed in last 24 hous** and **Share is Unavailable Because It Uses A Locked Dataset**.
+Options cover IP addresses bound to an iSCSI ports not found, NFS services not bound to specific IP addresses using 0.0.0.0, NFS share references hosts that cannot b resolved, NTLMv1 authentication attempted in the last 24hours, SMB1 connections to TrueNAS server performed in last 24 hous and share unavailable because it uses a locked dataset.
 {{< /expand >}}
 ### Storage Alert Settings
 **Storage** alert settings apply to quotas, pools, snapshots, and scrub processes on your TrueNAS.
 {{< expand "Click here for more information" >}}
 
-![AlertServicesStorage](/images/SCALE/22.02/AlertServicesStorage.png "Storage Alert Settings")
+![AlertSettingsStorage](/images/SCALE/22.02/AlertSettingsStorage.png "Storage Alert Settings")
 
-Setting options are **Critical Quota Exceeded on Dataset**, **New Feature Flags are Available for Pool**, **Pool Space Usage is above 80%**, **Pool Space Usage is above 90%**, **Pool Status Is Not Healthy**, **Qutoa Exceeded on Dataset**, **Scrub Is Paused**, **Too Many Snapsots Exist** and **Too Many Snapshots Exist for Dataset**.
+Options cover critical quota exceeded on dataset, new feature flags available for pools, pool space usage above 80% or 90%, pool status not healthy, quota exceeded on dataset, paused scrub, too many snapshots exist and too many snapshots exist for dataset.
 {{< /expand >}}
 ### System Alert Settings
 **System** alert settings apply to system processes, system dataset, TrueCommand API Key, SSH logins, system reboots, updates and the web interface.
 {{< expand "Click here for more information" >}}
 
-![AlertServicesSystem1](/images/SCALE/22.02/AlertServicesSystem1.png "System Alert Settings")
+![AlertSettingsSystem1](/images/SCALE/22.02/AlertSettingsSystem1.png "System Alert Settings")
 
-![AlertServicesSystem2](/images/SCALE/22.02/AlertServicesSystem2.png "System Alert Settings")
+![AlertSettingsSystem2](/images/SCALE/22.02/AlertSettingsSystem2.png "System Alert Settings")
 
-Setting options are **Boot Pool Is Not Healthy**, **Core Files Found in System Dataset**, **Device Is Causing Slow I/O on Pool**, **NTP Health Check Failed**, **SSH Login Failures**, **System Not Ready for Kdump**, **The Web Interface Could Not Bind to Configured Address**, **TrueCommand API Key Disabled by iX Portal**, **TrueCommand Service Failed Scheduled Health Check**, **Unscheduled System Reboot**, **Update Available**, **Update Failed** and **Update Not Applied**.
+Options cover boot pool health, core files found in system dataset, device causing slow I/O on pool, failed NTP health checks, SSH login failures, system not ready for Kdump, web interface bind to configured address, TrueCommand API key disabled by iX portal, TrueCommand service failed scheduled health check, unscheduled system reboot, update available and failed and update not applied.
 {{< /expand >}}
 ### Task Alert Settings
 **Task** alert settings apply to cloud sync, VMWare snapshots, replication, rsync, scrub and snapshot tasks scheduled on your TrueNAS.
 {{< expand "Click here for more information" >}}
 
-![AlertServicesTasks1](/images/SCALE/22.02/AlertServicesTasks1.png "Task Alert Settings")
+![AlertSettingsTasks1](/images/SCALE/22.02/AlertSettingsTasks1.png "Task Alert Settings")
 
-![AlertServicesTasks2](/images/SCALE/22.02/AlertServicesTasks2.png "Task Alert Settings")
+![AlertSettingsTasks2](/images/SCALE/22.02/AlertSettingsTasks2.png "Task Alert Settings")
 
-The settings options are **Cloud Sync Task Failed**, **Creating VMWare Snapshot Failed**, **Replication Failed**, **Replication Succeeded**, **Rsync Task Failed**, **Rsync Task Succeeded**, **Scrub Failed to Start**, **Scrub Finished**, **Scrub Started**, **Snapshot Task Failed**, **Task Is Unavailable Because It Uses A Locked Dataset**, **VMWare Login Failed** and **VMWare Snapshot Deletion Failed**.
+Options cover failed cloud sync, creating VMWare snapshot, replication, rsync, scrub and snapshot tasks, replication, rsync tasks succeeded, scrub task failed to start, it started or finished, a task is unavailable because it uses a locked dataset, VMWare login failed and VMWare snapshot deletion failed.
 {{< /expand >}}
 ### UPS Alert Settings
 **UPS** alert settings apply to a UPS connected to your TrueNAS.
 {{< expand "Click here for more information" >}}
 
-![AlertServicesUPS](/images/SCALE/22.02/AlertServicesUPS.png "UPS Alert Settings")
+![AlertSettingsUPS](/images/SCALE/22.02/AlertSettingsUPS.png "UPS Alert Settings")
 
-Setting options are **UPS Batter LOW**, **UPS Battery Needs Replacement**, **UPS Communication Established**, **UPS Communication Lost**, **UPS on Battery** and **UPS On Line Power**.
+Options cover UPS battery low, needs replacement, or that it is on batter power or line power, and lost or established UPS communication status.
 {{< /expand >}}
 
 ## Alert Warning Levels
@@ -145,4 +147,6 @@ To make the system email you when alerts with a specific warning level trigger, 
 
 Use the **Set Frequency** dropdown list to adjust how often the system sends or displays alert notifications. 
 
-Alert frequences options are **Immediately (Default)**, **Hourly**, **Daily** or **Never**. Setting the **Frequency** to **Never** prevents that alert from displaying in the **Alerts Notification** dialog, but it still pops up in the UI if triggered.
+Alert frequencies options are **Immediately (Default)**, **Hourly**, **Daily** or **Never**. Setting the **Frequency** to **Never** prevents that alert from displaying in the **Alerts Notification** dialog, but it still pops up in the UI if triggered.
+
+{{< taglist tag="scalealerts" limit="10" >}}

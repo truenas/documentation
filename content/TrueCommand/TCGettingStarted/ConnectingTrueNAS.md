@@ -3,8 +3,6 @@ title: "Connecting Your First TrueNAS System"
 weight: 40
 tags:
 - tccloud
-- scaletoptoolbar
-- coretoptoolbar
 ---
 
 {{< toc >}}
@@ -21,12 +19,12 @@ To connect your first system to TrueCommand, click **NEW SYSTEM** on the dashboa
 |---------|-------------|
 | **IP Address or Hostname** | The system's IP address or DNS host name. |
 | **Nickname** | Required short-form identifier for this system. You cannot use system nicknames more than once. |
-| **Password / API Key** | New password or API key. TrueCommand hades characters for security. |
+| **Password / API Key** | New password or API key. TrueCommand hides characters for security. |
 | **Password / API Key Confirm** | Re-enter the password or API key. |
 
 Enter the system IP address or DNS host name, then enter a system nickname and password.
 
-Click **RESET FORM** to clear the fields and reset the form if you make a mistake.
+Click **RESET FORM** to clear the fields and reset the form if you make a mistake. To display the list of systems in TrueCommand, click the <span class="material-icons">settings</span> icon and select either **System Inventory** or **Systems**.
 
 ![Systems List](/images/TrueCommand/2.1/SystemsPage.png "Systems List")
 
