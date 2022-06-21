@@ -84,7 +84,7 @@ The main advantage of NVMe is generally its low-latency performance, and it’s 
 Note: NVMe devices can run quite hot and may need dedicated heat sinks.
 
 {{< hint info >}}
-Note: We currently do not support manual S.M.A.R.T. tests on NVMe devices.
+Manual S.M.A.R.T. tests on NVMe devices is currently not supported.
 {{< /hint >}}
 {{< /tab >}}
 {{< tab "USB Hard Disks" >}}
