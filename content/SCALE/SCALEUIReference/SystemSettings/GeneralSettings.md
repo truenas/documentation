@@ -49,11 +49,11 @@ The *Support* window displays the systems general hardware and software specs an
 {{< tabs "Support Options" >}}
 {{< tab "Add License" >}}
 
-For users with valid TrueNAS license, click **Add License**.  Copy your license into the box and click **Save**.  
+For users with a valid TrueNAS license, click **Add License**.  Copy your license into the box and click **Save**.  
 
 ![GeneralSettingsSCALESupportLicenseEntry](/images/SCALE/GeneralSettingsSCALESupportLicenseEntry.png "SCALE General Settings Support License Entry")
 
-You will be prompted to reload the page for the license to take effect, click **RELOAD NOW**.  Log back into the WebUI where the End User License Agreement (EULA) will be displayed.  Read it thoroughly and completely.  Once finished, click **I AGREE**.  The system information will now be updated to reflect the licensing specifics for your system.
+You will be prompted to reload the page for the license to take effect, click **RELOAD NOW**.  Log back into the WebUI where the **End User License Agreement (EULA)** will be displayed.  Read it thoroughly and completely.  Once finished, click **I AGREE**.  The system information will be updated to reflect the licensing specifics for the system.
 
 ![GeneralSettingsSCALESupportLicenseComplete](/images/SCALE/GeneralSettingsSCALESupportLicenseComplete.png "SCALE General Settings Support License Entry Complete")
 
@@ -64,7 +64,7 @@ Once the system is ready to be in production, update the status by checking the 
 {{< /tab >}}
 {{< tab "File Ticket" >}}
 
-TrueNAS SCALE users are welcome to report bugs and vote for or suggest new TrueNAS features in the project Jira instance. Have questions? We recommend searching through the software documentation and community resources for answers.
+TrueNAS SCALE users are encouraged to report bugs and vote for or suggest new TrueNAS features in the project Jira instance. Have questions? We recommend searching through the software documentation and community resources for answers.
 
 If you encounter a bug or other issue while using TrueNAS SCALE, create a bug report in the [TrueNAS Jira Project](https://jira.ixsystems.com/projects/NAS/). The web interface provides a form to report issues without logging out. We recommend searching the project first to see if aother user already reported the issue. You must have [a Jira account](https://jira.ixsystems.com/secure/Signup!default.jspa) to create a bug ticket.
 
@@ -74,12 +74,32 @@ To report an issue using the web interface, click **File Ticket**.
 
 Click **Login to JIRA** and enter your credentials in the fields provided.  After successfully logging in, choose **Allow** for TrueNAS to have read and write access to your data on the Jira site.  A token will be added to the OAuth section of this form.  
 
-![GeneralSettingsSCALESupportJiraLogin](/images/SCALE/GeneralSettingsSCALEJiraLogin.png "SCALE General Settings Jira Login")
+![GeneralSettingsSCALESupportJiraLogin](/images/SCALE/GeneralSettingsSCALESupportJiraLogin.png "SCALE General Settings Jira Login")
 
-![GeneralSettingsSCALESupportJiraLogin2](/images/SCALE/GeneralSettingsSCALEJiraLogin2.png "SCALE General Settings Jira Login Token")
+![GeneralSettingsSCALESupportJiraLogin2](/images/SCALE/GeneralSettingsSCALESupportJiraLogin2.png "SCALE General Settings Jira Login Token")
+
+Once logged into Jira, select either *Bug* or *Feature* as the **Type** of ticket to create, then choose the appropriate *Category* for your request. *Attach Debug* should be checked whenever possible as this gives the TrueNAS Team pertinent information about the system and what could be causing any issues.  If the debug file is too large to attach to your ticket, the following will be displayed:
+
+![GeneralSettingsSCALEJiraTicketDebugToLarge](/images/SCALE/GeneralSettingsSCALEJiraTicketDebugToLarge.png "SCALE General Settings Debug To Large To Attach")  
+
+Provide a brief summary of the issue under *Subject*. For *Description*, outline as thoroughly as possible the reason for submitting the ticket.  Attach any applicable screenshots and click **Save**.
+
+![GeneralSettingsSCALEJiraTicketCompletion](/images/SCALE/GeneralSettingsSCALEJiraTicketCompletion.png "SCALE General Settings Jira Ticket Completion")
+
+Once the ticket has been successfully generated, view it by clicking the link provided in the WebUI.
+
+![GeneralSettingsSCALEJiraTicketLink](/images/SCALE/GeneralSettingsSCALEJiraTicketLink.png "SCALE General Settings Jira Ticket Link")
 
 {{< /tab >}}
 {{< tab "Proactive Support" >}}
+
+Silver/Gold Coverage Customers can enable iXsystems Proactive Support.  This feature automatically emails iXsystems when certain conditions occur in a TrueNAS system.  To configure Proactive Support, click the **Get Support** dropdown and select *Proactive Support*.
+
+![GeneralSettingsSCALEProactiveSupport](/images/SCALE/GeneralSettingsSCALEProactiveSupport.png "SCALE General Settings Proactive Support")
+
+Complete all available fields and ensure the **Enable iXsystems Proactive Support** box is checked, click **Save**.
+
+![GeneralSettingsSCALEProactiveSupportForm](/images/SCALE/GeneralSettingsSCALEProactiveSupportForm.png "SCALE General Settings Proactive Support Form")
 
 {{< /tab >}}
 {{< /tabs >}}
