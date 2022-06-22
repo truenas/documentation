@@ -5,13 +5,13 @@ weight: 5
 
 # How to Contribute CORE Text String Translations
 
-Users can contribute text string translations for the CORE project. The first step is to sign into GitHub, and then to navigate to the trueNAS webui.
+Users can contribute text string translations for the CORE project. The first step is to sign into GitHub, and then to navigate to the TrueNAS webui.
 
-## Fork the trueNAS webui
+## Fork the TrueNAS webui
 
-Once located, create a new repo fork from the trueNAS webui by selecting **Fork** from the list of options at the top.
+Once located, create a new repo fork from the TrueNAS webui by selecting **Fork** from the list of options at the top.
 
-This will be a screen shot of how to fork the trueNAS webui repository:
+This will be a screen shot of how to fork the TrueNAS webui repository:
 ![Image Name Text](/images/CORE/13.0/imagename.png "Image Name Text")
 
 Navigate to this location in the new fork: /webui/src/assets/i18n/. The .po language conversion files are located within the "src/assets/i18n" directory. Choose the language .po file that represents the translation language.
