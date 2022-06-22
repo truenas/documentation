@@ -18,7 +18,7 @@ Select **Start Automatically** for any service you configured and want to start 
 
 Click the toggle to start or stop the service, depending on the current state. Hover the mouse over the toggle to see the current state of that service. The toggle turns blue when it is running.
 
-Click the <i class="fa fa-pencil" aria-hidden="true" title="Configure"></i> icon to display the settings screen for a service.
+Click the <span class="material-icons">edit</span> icon to display the settings screen for a service.
 
 Services related to data sharing or automated tasks are documented in their respective [Sharing]({{< relref "/CORE/UIReference/Sharing/_index.md" >}}) or [Tasks]({{< relref "/CORE/UIReference/Tasks/_index.md" >}}).
 

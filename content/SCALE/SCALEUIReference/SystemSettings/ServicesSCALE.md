@@ -62,7 +62,7 @@ Set **Apply User** and **Apply Group** before saving.
 
 To configure FTP, go to **System Settings > Services** and find **FTP**, then click <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
 
-![ServicesFTPSCALE](/images/SCALE/ServicesFTPSCALE.png "Services FTP Options")
+![ServicesFTPSCALE](/images/SCALE/ServicesFTPSCALE2202.png "Services FTP Options")
 
 Configure the options according to your environment and security considerations.
 
@@ -254,6 +254,10 @@ Because S3 is the de facto standard for cloud-based storage, setting up an S3 se
 {{< /expand >}}
 
 ## Setting up the S3 service
+
+{{< hint warning >}}
+Having large numbers of files (>100K for instance) in a single bucket with no sub-directories can harm performance and cause stability issues.
+{{< /hint >}}
 
 Go to the **System Settings > Services** and find **S3**, then click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to configure the service.
 

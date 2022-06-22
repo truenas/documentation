@@ -38,7 +38,7 @@ TrueNAS CORE software is made available as Open Source Software, subject to the 
 
 ### 3.0 License Restrictions
 
-TrueNAS CORE Software is authorized for use on any TrueNAS Device. TrueNAS Devices can include hardware provided by iXsystems or third parties. TrueNAS Devices may also include virtual machines and cloud instances. TrueNAS CORE software may not be commercially distributed or sold without an addendum license agreement and express written consent from iXsystems. .
+TrueNAS CORE Software is authorized for use on any TrueNAS Device. TrueNAS Devices can include hardware provided by iXsystems or third parties. TrueNAS Devices may also include virtual machines and cloud instances. TrueNAS CORE software may not be commercially distributed or sold without an addendum license agreement and express written consent from iXsystems.
 
 The TrueNAS CORE Software is protected by copyright laws and international treaties, as well as other intellectual property laws, statutes, and treaties. The TrueNAS CORE Software is licensed, not sold to You, the end user. You do not acquire any ownership interest in the TrueNAS CORE Software, or any other rights to the TrueNAS CORE Software, other than to use the TrueNAS CORE Software in accordance with the license granted under this Agreement, subject to all terms, conditions, and restrictions. iXsystems reserves and shall retain its entire right, title, and interest in and to the TrueNAS CORE Software, and all intellectual property rights arising out of or relating to the TrueNAS CORE Software, subject to the license expressly granted to You in this Agreement.
 

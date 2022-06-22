@@ -1,0 +1,18 @@
+{{ $currPermalink := .Page.RelPermalink }}
+{{- $title := $.Params.title -}}
+{{- $tag := $.Params.tag -}}
+{{- $limit := int ($.Params.limit) -}}
+{{- $tags := (index site.Taxonomies.tags $tag) -}}
+{{- if (eq $limit -1) -}}
+  {{- $limit = len site.Taxonomies.tags -}}
+{{- end -}}
+<h2>{{- $title| default "Related Content" -}}</h2>
+<ul>
+{{- range (first $limit $tags.Pages) -}}
+  {{ if not (eq .RelPermalink $currPermalink) }}
+  <li>
+    <a href="{{- .Permalink -}}">{{- .Title -}}</a>
+  </li>
+  {{- end -}}
+{{- end -}}
+</ul>
