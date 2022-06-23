@@ -24,7 +24,7 @@ Use **CANCEL** to exit without saving.
 | **Connections** | Enter the maximum number of connections per IP address. **0** is unlimited. |
 | **Login Attempts** | Enter the maximum attempts before client is disconnected. Increase if users are prone to misspellings or typos. |
 | **Timeout** | Enter the maximum client idle time in seconds before disconnect. Default value is **600** seconds. |
-| Certificate | Select the SSL certificate to use for TLS FTP connections from the dropdown list, which is currently **freenas_default**. To create a certificate, go to **System > Certificates**. |
+| **Certificate** | Select the SSL certificate to use for TLS FTP connections from the dropdown list, which is currently **freenas_default**. To create a certificate, go to **System > Certificates**. |
 
 ## Advanced Option Settings
 
@@ -55,7 +55,7 @@ When FTP is exposed to a WAN, enable TLS.
 | Name | Description |
 |------|-------------|
 | **Enable TLS** | Select to allow encrypted connections. Requires a certificate (created or imported using **System > Certificates**. |
-| **TLS Policy** | Select the policy from the dropdown list of options. Options are **On**, **off**, **Data**, **!Data**, **Auth**, **Ctrl**, **Ctrl + Data**, **Ctrl +!Data**, **Auth + Data** or **Auth +!Data**. Defines whether the control channel, data channel, both channels, or neither channel of an FTP session must occur over SSL/TLS. The policies are described [here](http://www.proftpd.org/docs/directives/linked/config_ref_TLSRequired.html). |
+| **TLS Policy** | Select the policy from the dropdown list of options. Options are **On**, **off**, **Data**, **!Data**, **Auth**, **Ctrl**, **Ctrl + Data**, **Ctrl +!Data**, **Auth + Data** or **Auth +!Data**. Defines whether the control channel, data channel, both channels, or neither channel of an FTP session must occur over SSL/TLS. The policies are described [here](http://www.proftpd.org/docs/howto/TLS.html). |
 | **TLS Allow Client Renegotiations** | Select to allow client renegotiations. This option is not recommended. Setting this option breaks several security measures. See [mod_tls](http://www.proftpd.org/docs/contrib/mod_tls.html) for details. |
 | **TLS Allow Dot Login** | If select, TrueNAS checks the user home directory for a .tlslogin file containing one or more PEM-encoded certificates. If not found, the user is prompted for password authentication. |
 | **TLS Allow Per User** | If set, allows sending a user password unencrypted. |
