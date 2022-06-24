@@ -6,7 +6,7 @@
 |------|-------------|
 | **Location** | Enter the location of the system. |
 | **Contact** | Enter the email address tot receive SNMP service messages. |
-| **Community** | Enter a communit other than the default **public** to increase system security. Value can only contain alphanumeric characters, underscores (_), dashes (-), periods (.), and spaces. Not required and can leave this empty for SNMPv3 networks. |
+| **Community** | Enter a community other than the default **public** to increase system security. Value can only contain alphanumeric characters, underscores (_), dashes (-), periods (.), and spaces. Not required and can leave this empty for SNMPv3 networks. |
 
 **SNMP v3 Options**
 
