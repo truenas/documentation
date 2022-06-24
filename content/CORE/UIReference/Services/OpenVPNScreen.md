@@ -1,6 +1,8 @@
 ---
 title: "OpenVPN Screen"
 weight: 70
+tags:
+- coreopenvpn
 ---
 
 {{< toc >}}
