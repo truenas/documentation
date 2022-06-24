@@ -2,6 +2,8 @@
 title: "SNMP Screen"
 weight: 120
 aliases: /core/services/snmp/
+tags:
+- coresnmp
 ---
 
 Use the **SNMP** screen configure SNMP service on your TrueNAS.
