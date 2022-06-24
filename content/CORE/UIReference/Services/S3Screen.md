@@ -1,6 +1,9 @@
 ---
 title: "S3 Screen"
 weight: 100
+tags:
+- cores3
+- cores3minio
 ---
 
 {{< hint warning >}}
