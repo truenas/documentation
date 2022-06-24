@@ -2,6 +2,8 @@
 title: "Configuring OpenVPN"
 weight: 70
 aliases: /core/services/openvpn/
+tags:
+- coreopenvpn
 ---
 
 {{< toc >}}
