@@ -3,6 +3,10 @@ title: "S3 Screen"
 weight: 100
 ---
 
+{{< hint warning >}}
+Having large numbers of files (>100K for instance) in a single bucket with no sub-directories can harm performance and cause stability issues.
+{{< /hint >}}
+
 Use the **S3** screen to configure your TrueNAS S3 service.
 
 ![ServicesS3Options](/images/CORE/12.0/ServicesS3Options.png "S3 Service Options")

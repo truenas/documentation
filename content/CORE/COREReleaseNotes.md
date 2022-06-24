@@ -725,6 +725,7 @@ This is a an early release meant for previewing and testing features and is **no
 
 | Seen In | Key | Summary | Workaround | Resolved In |
 |---------|-----|---------|------------|-------------|
+| 13.0-Release | [NAS-116493](https://jira.ixsystems.com/browse/NAS-116493) | Nextcloud (official) plugin does not install . |  | 13.0-U2 (targeted) |
 | 13.0-Release | [NAS-116217](https://jira.ixsystems.com/browse/NAS-116217) | Disk replacement fails with JavaScript error. | Use the CLI to manually replace the disk: [CLI method](#cli-disk-replacements). | 13.0-U1 (targeted) |
 | 13.0-Release | [NAS-116262](https://jira.ixsystems.com/browse/NAS-116262) | NFS nconnect feature not stable on 13.0 | During multi-client usage with the client-side nconnect option used, the NFS server becomes unstable. This feature has been verified to work on SCALE, but resolution ETA is unknown for 13.0. | SCALE |
 | 13.0-Release, 12.0-U8.1 | [NAS-116160](https://jira.ixsystems.com/browse/NAS-116160) | Netatalk 3.1.13 introduced an edge-case bug where AFP metadata could be stripped unexpectedly on file read | Deployments that rely on AFP sharing should avoid upgrading to 13.0 until the 13.0-U1 release. Snapshot any AFP-shared datasets before attempting to upgrade to a 13.0 release. | 13.0-U1 (targeted) |
@@ -780,7 +781,7 @@ Please use CLI commands carefully and **always back up critical data** before at
 4. `python3 replace_disk.py <pool_name> <gptid/####> <ada#>` replaces the named disk in the pool with the designated spare. Replace *<pool_name>* with the name of the pool with the disk to be replaced, *<gptid/####>* with the disk identifier noted above in step 2, and *<ada#>* with the name of the unused disk to use as the replacement.
    Example:
    ```
-   root@examplemini[~]# python3 replace_disk.py disk gptid/c7acbd9e-ca3d-11ec-8ec6-d05099c356a4 ada3
+   root@examplemini[~]# python3 replace_disk.py tank gptid/c7acbd9e-ca3d-11ec-8ec6-d05099c356a4 ada3
    Replace initiated.
    root@examplemini[~]#zpool status tank
    	    pool: tank
