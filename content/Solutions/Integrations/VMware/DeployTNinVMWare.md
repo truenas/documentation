@@ -20,19 +20,19 @@ Before starting configuration work in VMWare:
 * Allocate a drive or a few drives in your server cluster for the TrueNAS virtual machine. 
   The anticipated storage needs for your deployment determines the size and number of drives you need.
 
-* Download the CORE 13.0 iso file from the TrueNAS.com/downloads web page [download from here](https://www.truenas.com/download-truenas-core/).
+* Download the CORE 13.0 iso file from the [TrueNAS.com/downloads web page](https://www.truenas.com/download-truenas-core/).
 
 * Visit the [TrueNAS CORE Hardware Guide]({{< relref "/content/core/gettingstarted/corehardwareguide.md" >}}) and take note of the minimal system requirements.
   Also note the information in the **Memory** and **Storage Device Sizing** sections.
 
-  This provides guidance on how much memory, the number of CPUs, and drive size you need to configure. For example, you need a minumum of 2 CPUS, 16 GB memory, and two drives each with at least 16 GB storage but you can increase if you want to improve performance. 
+  The hardware guide provides guidance on how much memory, the number of CPUs, and drive size you need to configure. For example, you need a minimum of 2 CPUS, 8 GB memory, and two drives each with at least 16 GB storage. You can increase memory and drive sizes if you want to improve performance. 
 
 * Determine your data storage requirements. Consider the number of storage pools and the type of storage you need for your deployment or how you plan to use the TrueNAS. 
   See [Storage Configuration]({{< relref "/content/CORE/GettingStarted/StoringData.md" >}}) for information on pool layouts. 
 
-  This provides guidance for the number of virtual hard drives (vmdks) you want to create when setting up your virtual machine. 
-  For example, if you want a mirror layout you need a minimum of three drives. One for the boot drive and two for the mirrored storage.
-  If you want a mirror with a hot spare, you need a minimum of four drives. One for the boot drive, two for the mirroed storage and one for the hot spare.
+  This article provides guidance on the number of virtual hard drives (vmdks) you want to create when setting up your virtual machine. 
+  For example, if you want a mirror layout you need to add a minimum of three drives. One for the boot drive and two for the mirrored storage.
+  If you want a mirror with a hot spare, you need to add a minimum of four drives. One for the boot drive, two for the mirrored storage and one for the hot spare.
 
 * Configure your network per your system requirements. Have the information ready when you configure your TrueNAS global network settings in the web interface.
 
@@ -43,8 +43,9 @@ Launch your VMware ESXi interface using your login credentials.
 ![LoginScreen](/images/VMWareESXi/LoginScreen.png "VMWare ESXi Login Screen")
 
 ### Setting Up Storage
-Next set up the storage needed for the new VM. First select **Storage** and then the drive allocated for TrueNAS. Create the datastore directories for the ISO media and the TrueNAS virtual machine. 
-{{< expand "Need more help creating directories? Click here." "v" >}}
+Set up the storage needed for the new VM. First click on **Storage** and then the drive allocated for TrueNAS. Create the datastore directories for the ISO media and the TrueNAS virtual machine. 
+
+{{< expand "Need more help setting up storage? Click here." "v" >}}
 1. Select **Storage** on the navigation panel on the left side of the screen. 
    
    ![StorageDatastoresTab](/images/VMWareESXi/StorageDatastoresTab.png "Storage Datastores Tab")
@@ -78,7 +79,7 @@ Select the directory created for the iso file and then click **Upload**.
 ### Creating the Virtual Machine
 
 After setting up the storage needs, create the new virtual machine. 
-Select **Virtual Machines** on the  navigation pannel on the left side of the screen. 
+Select **Virtual Machines** on the  navigation panel on the left side of the screen. 
 
 ![VirtualMachinesScreen](/images/VMWareESXi/VirtualMachinesScreen.png "Virtual Machines Screen")
 
@@ -89,9 +90,9 @@ Use these settings:
 
 * On the **Customize settings** wizard screen set **CPU** to **2**, set **Memory** to **16 GB**, and **Hard disk 1** to **16 GB**.
 
-  You need a minium of two drives set to at least **16 GB**. To add a drive, click **Add hard disk**. 
+  You need a minimum of two drives set to at least **16 GB**. To add a drive, click **Add hard disk**. 
 
-  You can add additional hard drive now or use the **Edit** option to add drives later after saving the new virtual machine. 
+  You can add more hard drive now or use the **Edit** option to add drives later after saving the new virtual machine. 
   To create a mirror layout you need at least three hard drives, one for boot and two to create the mirrored storage. 
   Add as many hard drives as you need to create your desired storage layout. You can add more drives later after you install TrueNAS.
 
@@ -119,7 +120,7 @@ To create the virtual machine for your TrueNAS, from the **Virtual Machines** sc
    | Setting | Value Description |
    |---------|-------------------|
    | **CPU** | 2 |
-   | **Memeory** | 16 GB |
+   | **Memory** | 8 GB |
    | **Hard disk 1** | 16 GB. This first disk is the boot disk. |
    | **CD/DVD Drive 1** | Select **Datastore ISO file** from the dropdown list of options. |
 
@@ -133,7 +134,7 @@ To create the virtual machine for your TrueNAS, from the **Virtual Machines** sc
 
    Change any other disk drive settings you want or need to change for your hard disk drive hardware.
 
-   At this time you can click **Add hard disk** again to add additional hard drives or you can click **Next** to finish creating the VM. You can use the **Edit** option later to add more drives to support your TrueNAS deployment. 
+   You can click **Add hard disk** again to add more hard drives or you can click **Next** to finish creating the VM. You can use the **Edit** option later to add more drives to support your TrueNAS deployment. 
 
    Each storage layout has different disk minimum disk requirements. 
    Visit [Storage Configuration]({{< relref "/content/Core/GettingStarted/StoringData.md" >}}) for information on pool layouts
@@ -142,16 +143,16 @@ To create the virtual machine for your TrueNAS, from the **Virtual Machines** sc
    
    ![VMWizardReadyToComplete](/images/VMWareESXi/VMWizardReadyToComplete.png "Ready to Complete")
 
-   Click **Finish**. The new Truenas VM is added to the list of virtual machines. 
+   Click **Finish**. The new Truenas VM displays on the list of virtual machines. 
 
 {{< /expand >}}
-### Reviwing the New TrueNAS VM
+### Reviewing the New TrueNAS VM
 
 To view the VM details screen click on the VM name.
 
-![VMDetailsScreen](/images/VMWareESXi/VMDetailsScreen.png "TrueNAS VM Details")
+![TrueNASVMDetails](/images/VMWareESXi/TrueNASVMDetails.png "TrueNAS VM Details")
 
-You can now edit your TrueNAS VM to change any setting or add additional hard drives to support your deployment, or you can proceed to installing TrueNAS. 
+You can now edit your TrueNAS VM to change any setting or add more hard drives to support your deployment, or you can proceed to installing TrueNAS. 
 
 ### Installing TrueNAS CORE
 
@@ -166,9 +167,14 @@ Follow the instructions documented in [Console Setup Menu]({{< relref "/content/
 
 You can edit your VM settings after you complete the initial setup. You can add new hard drives to your VM using the **Edit** option found on the VM details screen. Click **Edit** to display the **Editing Settings** screen.
 
+{{< hint warning >}}
+The **Edit Settings** screen resets the **Memory** setting back to MB so you must re-enter your 8 GB setting before you save and exit.
+{{< /hint >}}
+
 ![EditSettingsForTruenas1](/images/VMWareESXi/EditSettingsForTruenas1.png "Truenas VM Details")
 
-From here you can add more hard drives to your VM. Click **Add hard disk** and select the option you want to use. For a new drive select **New standard hard disk**. A **New hard disk** row displays highlighted in green.
+After you re-enter 8 GB in the **Memory** fields, you can add more hard drives to your VM. 
+Click **Add hard disk** and select the option you want to use. For a new drive select **New standard hard disk**. A **New hard disk** row displays highlighted in green.
 
 ![EditSettingsNewHardDiskRow](/images/VMWareESXi/EditSettingsNewHardDiskRow.png "New Hard Disk Row")
 
