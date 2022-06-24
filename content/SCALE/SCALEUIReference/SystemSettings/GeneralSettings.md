@@ -46,8 +46,8 @@ The *Support* window displays the systems general hardware and software specs an
 
 ![GeneralSettingsSCALESupport](/images/SCALE/GeneralSettingsSCALESupport.png "SCALE General Settings Support View")
 
-{{< tabs "Support Options" >}}
-{{< tab "Add License" >}}
+### Add License
+{{< expand "Click to expand" "v" >}}
 
 For users with a valid TrueNAS license, click **Add License**.  Copy your license into the box and click **Save**.  
 
@@ -61,8 +61,9 @@ Silver and Gold level Support customers can also enable Proactive Support on the
 
 Once the system is ready to be in production, update the status by checking the **This is a production system** checkbox and click the **Proceed** button. This will send an email to iXsystems declaring that the system is in production. TrueNAS has an option to include a initial debug with the email that could assist support in the future.
 
-{{< /tab >}}
-{{< tab "File Ticket" >}}
+{{< /expand >}}
+### File Ticket
+{{< expand "Click to expand" "v" >}}
 
 TrueNAS SCALE users are encouraged to report bugs and vote for or suggest new TrueNAS features in the project Jira instance. Have questions? We recommend searching through the software documentation and community resources for answers.
 
@@ -90,8 +91,10 @@ Once the ticket has been successfully generated, view it by clicking the link pr
 
 ![GeneralSettingsSCALEJiraTicketLink](/images/SCALE/GeneralSettingsSCALEJiraTicketLink.png "SCALE General Settings Jira Ticket Link")
 
-{{< /tab >}}
-{{< tab "Proactive Support" >}}
+{{< /expand >}}
+
+### Proactive Support
+{{< expand "Click to expand" "v" >}}
 
 Silver/Gold Coverage Customers can enable iXsystems Proactive Support.  This feature automatically emails iXsystems when certain conditions occur in a TrueNAS system.  To configure Proactive Support, click the **Get Support** dropdown and select *Proactive Support*.
 
@@ -101,8 +104,7 @@ Complete all available fields and ensure the **Enable iXsystems Proactive Suppor
 
 ![GeneralSettingsSCALEProactiveSupportForm](/images/SCALE/GeneralSettingsSCALEProactiveSupportForm.png "SCALE General Settings Proactive Support Form")
 
-{{< /tab >}}
-{{< /tabs >}}
+{{< /expand >}}
 
 ## GUI 
 
