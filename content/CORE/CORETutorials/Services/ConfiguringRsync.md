@@ -12,12 +12,14 @@ Don't forget to click **SAVE** after changing any settings.
 
 Enter the **TCP Port** you want Rsync to listen on, then enter any [rsyncd.conf(5)](https://www.samba.org/ftp/rsync/rsyncd.conf.html) **Auxiliary Parameters**.
 
+![RsyncConfig](/images/CORE/13.0/RsyncConfig.png "Configuring rsync")
+
 **Rsync Module**
 
 TrueNAS lists all created modules here.
 To create a new module, click **ADD**.
 
-![ServicesRsyncModuleAdd](/images/CORE/12.0/ServicesRsyncModuleAdd.png "Creating a rsync module")
+![RsyncModuleAdd](/images/CORE/13.0/RsyncModuleAdd.png "Creating a rsync module")
 
 **Name** to module and select a **Path** to store it in. Select an **Access Mode** and fill out the rest of the fields to your needs.
 
