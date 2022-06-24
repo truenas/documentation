@@ -3,6 +3,7 @@ title: "TFTP Screen"
 weight: 140
 tags:
 - coreftp
+- coretftp
 ---
 
 The **TFTP** service screen configures the directory, connection, access and other auxillary parameters for TFPT service on the TrueNAS.
