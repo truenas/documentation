@@ -21,7 +21,7 @@ To create a new module, click **ADD**.
 
 ![RsyncModuleAdd](/images/CORE/13.0/RsyncModuleAdd.png "Creating a rsync module")
 
-**Name** to module and select a **Path** to store it in. Select an **Access Mode** and fill out the rest of the fields to your needs.
+**Name** the module and select a **Path** to store it in. Select an **Access Mode** and fill out the rest of the fields to your needs.
 
 {{< hint info >}}
 When a **Hosts Allow** list is defined, **only** the IPs and hostnames on the list are able to connect to the module.
