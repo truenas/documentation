@@ -1,6 +1,8 @@
 ---
 title: "UPS Screen"
 weight: 150
+tags:
+- coreups
 ---
 
 Use the **UPS** services screen to configure a UPS for your TrueNAS.
