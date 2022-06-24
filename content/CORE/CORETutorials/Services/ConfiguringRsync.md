@@ -3,6 +3,9 @@ title: "Configuring Rsync"
 weight: 43
 aliases: 
   - /core/services/rsync/
+tags:
+- corersync
+
 ---
 
 Use the default settings unless you require a specific change.
