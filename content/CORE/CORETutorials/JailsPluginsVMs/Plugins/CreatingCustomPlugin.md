@@ -21,7 +21,7 @@ Jails are the FreeBSD container technology and are:
 * secure
 * flexible with networking infrastructure
 
-Additionally, TrueNAS integrates the [iocage](https://iocage.io/) application for its jail container management framework.
+Additionally, TrueNAS integrates the [iocage](https://github.com/iocage/iocage) application for its jail container management framework.
 
 Each of the most popular TrueNAS plugins such as Plex Media Server, NextCloud, and SyncThing begin as FreeBSD ports: [multimedia/plexmediaserver/](https://www.freshports.org/multimedia/plexmediaserver/), [deskutils/nextcloudclient/](https://www.freshports.org/deskutils/nextcloudclient/), and [net/syncthing/](https://www.freshports.org/net/syncthing/) respectively.
 These install to a FreeBSD system using the command `pkg` package manager.
