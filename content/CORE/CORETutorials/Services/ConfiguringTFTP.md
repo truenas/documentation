@@ -3,6 +3,7 @@ title: "Configuring TFTP"
 weight: 140
 tags:
 - coreftp
+- coretftp
 ---
 
 
