@@ -12,7 +12,7 @@ After selecting **SNMP v3 Support** additional configuration fields display.
 
 ![ServicesSNMPScreenSNMPv3.png](/images/CORE/13.0/ServicesSNMPScreenSNMPv3.png "SNMP Screen SNMPv3")
 
-**SAVE** activates after all required fields are populated with appropriate values. Ue to save settings. 
+**SAVE** activates after all required fields are populated with appropriate values. Use to save settings. 
 
 Use **CANCEL** to exit without saving and display the **Services** screen.
 
