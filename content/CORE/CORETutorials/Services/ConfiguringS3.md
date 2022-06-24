@@ -2,6 +2,8 @@
 title: "Configuring S3"
 weight: 100
 aliases: /core/services/s3/
+tags:
+- cores3
 ---
 
 {{< toc >}}
