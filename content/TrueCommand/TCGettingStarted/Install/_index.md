@@ -146,12 +146,21 @@ Open a terminal and enter `docker run \--detach -v "/hostdir:/data" -p port:80 -
 To install the container with an earlier TrueCommand release, replace *latest* with the desired TrueCommand version tag:  
 `docker run \--detach -v "/DockerDir:/data" -p 9004:80 -p 9005:443 ixsystems/truecommand:1.3.2`
 
+To install the container with the nightly TrueCommand release, replace *latest* with *nightly*:  
+`docker run \--detach -v "/DockerDir:/data" -p 9004:80 -p 9005:443 ixsystems/truecommand:nightly`
+
+{{< hint warning >}}
+Only use the nightly version on test systems.
+{{< /hint >}}
+
 Although Docker containers have several run methods, TrueCommand requires`-v /hostdirectory:/data` to function.
 
 {{< hint warning >}}
 Do not try to use the same *hostdirectory* for two different containers!
 Doing so results in file conflicts and database corruption.
 {{< /hint >}}
+
+For a list of TrueCommand versions and tags, see the [Truecommand Docker](https://hub.docker.com/r/ixsystems/truecommand/tags) page.
 
 ## Accessing the TrueCommand Web Interface
 
