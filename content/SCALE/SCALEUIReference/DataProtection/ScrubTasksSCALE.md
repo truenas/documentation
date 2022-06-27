@@ -14,6 +14,9 @@ TrueNAS generates a default scrub task when you create a new pool and sets it to
 
 ![ScrubTaskDefaultSCALE](/images/SCALE/ScrubTaskDefaultSCALE.png "Default Scrub Task")
 
+## Adjust Scrub/Resilver Priority
+
+
 ## Creating New Scrub Tasks
 
 TrueNAS needs at least one data [pool]({{< relref "/content/SCALE/SCALEUIReference/Storage/Pools/_index.md" >}}) to create scrub task.
