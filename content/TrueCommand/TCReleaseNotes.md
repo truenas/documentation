@@ -20,9 +20,9 @@ aliases:
 |---------|------------|----------------|
 | 2.2.0-RC.1 | Internal Testing Sprints | 30 May > 03 June 2022 |
 | 2.2.0 | Code-freeze | 08 June 2022 |
-| 2.2.0 | Internal Testing Sprints | 09 June 2022 > 17 June 2022 |
-| 2.2.0 | Tag | 20 June 2022 |
-| 2.2.0 | Release | 21 June 2022 |
+| 2.2.0 | Internal Testing Sprints | 09 June 2022 > 01 July 2022 |
+| 2.2.0 | Tag | 05 July 2022 |
+| 2.2.0 | Release | 05 July 2022 |
 
 ## 2.1.1
 
