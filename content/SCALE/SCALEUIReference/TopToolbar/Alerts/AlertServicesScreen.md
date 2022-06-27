@@ -81,8 +81,8 @@ Select **Mattermost** from the **Type** dropdown list to display Mattermost auth
 |---------|-------------|
 |  **Webhoot URL** | Enter or past the [incoming webhook](https://docs.mattermost.com/developer/webhooks-incoming.html) URL assoicated with this service.  |
 | **Username** | Enter the Mattermost user name. |
-| **Channel** | Enter the name of the [channel](https://docs.mattermost.com/help/getting-started/organizing-conversations.html#managing-channels) to receive notifications. This overrides the default channel in the incoming webhot settings. |
-| **Icon URL** | Enter the icon file to use as the profile picture for new messages. For example, *https://mattermost.org/wp-content/uploads/2016/04/icon.png*. Requires configuring Mattermost to [override profile picture icons](https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-icons). |
+| **Channel** | Enter the name of the [channel](https://docs.mattermost.com/guides/channels.html#work-with-channels) to receive notifications. This overrides the default channel in the incoming webhot settings. |
+| **Icon URL** | Enter the icon file to use as the profile picture for new messages. For example, *https://mattermost.org/wp-content/uploads/2016/04/icon.png*. Requires configuring Mattermost to [override profile picture icons](https://docs.mattermost.com/configure/configuration-settings.html#enable-integrations-to-override-profile-picture-icons). |
 {{< /expand >}}
 
 ### OpsGenie Authentication Settings
@@ -95,7 +95,7 @@ Select **OpsGenie** from the **Type** dropdown list to display OpsGenie authenti
 | Setting | Description |
 |---------|-------------|
 |  **API Key** | Enter the [API key](https://docs.opsgenie.com/v1.0/docs/api-integration). Find the API key by signing into the OpsGenie web interface and going to **Integrations/Configured Integrations**. Click the desired integration, **Settings**, and read the **API Key** field. |
-| **API URL** | Leave empty for default [(OpsGenie API)](https://api.opsgenie.com/). |
+| **API URL** | Leave empty for default [(OpsGenie API)](https://docs.opsgenie.com/docs/migration-guide-for-alert-rest-api). |
 {{< /expand >}}
 
 ### PagerDuty Authentication Settings
@@ -148,7 +148,7 @@ Select **Telegram** from the **Type** dropdown list to display Telegram authenti
 | Setting | Description |
 |---------|-------------|
 |  **Bot API Token** | Enter the Telegram Bot API Token [How to create a Telegram Bot](https://core.telegram.org/bots#3-how-do-i-create-a-bot). |
-| **List of chat IDs** | Enter a list of chat IDs separated by space ( ), comma (,) or semicolon (;). To find your chat ID send a message to the bot, group or channel and visit https://api.telegram.org/bot%3CBOT_TOKEN%3E/getUpdates. |
+| **List of chat IDs** | Enter a list of chat IDs separated by space ( ), comma (,) or semicolon (;). To find your chat ID send a message to the bot, group or channel and visit https://core.telegram.org/bots/api#getting-updates. |
 {{< /expand >}}
 
 ### VictorOPS Authentication Settings
@@ -161,7 +161,7 @@ Select **VictorOps** from the **Type** dropdown list to display VictorOps authen
 | Setting | Description |
 |---------|-------------|
 |  **API Key** | Enter or paste the [VictorOps API key](https://help.victorops.com/knowledge-base/api/). |
-| **Routing Key** | Enter or past the [VictorOps routing key](https://portal.victorops.com/public/api-docs.html#/Routing32Keys). |
+| **Routing Key** | Enter or past the [VictorOps routing key](https://portal.victorops.com/public/api-docs.html). |
 {{< /expand >}}
 ## Edit Alert Service Screen
 
