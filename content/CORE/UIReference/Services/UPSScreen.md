@@ -1,5 +1,6 @@
 ---
 title: "UPS Screen"
+description: "How to configure a UPS for your TrueNAS"
 weight: 150
 tags:
 - coreups
@@ -60,4 +61,4 @@ Use the **UPS** services screen to configure a UPS for your TrueNAS.
 | **Auxiliary Parameters (ups.conf)** | Enter any extra options from [ups.conf](http://networkupstools.org/docs/man/ups.conf.html). |
 | **Auxiliary Parameters (upsd.conf)** | Enter any extra options from [upsd.conf](http://networkupstools.org/docs/man/upsd.conf.html). |
 
-See [Configuring a UPS]({{< relref "/CORE/CORETutorials/Services/ConfigureUPS.md" >}}) for more information on setting up a UPS.
+{{< taglist tag="coreups" limit="10" title="Related UPS Articles" >}}
