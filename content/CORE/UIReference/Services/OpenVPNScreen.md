@@ -1,5 +1,6 @@
----
+--- 
 title: "OpenVPN Screen"
+description: "Information about the OpenVPN Client and Server screens"
 weight: 70
 tags:
 - coreopenvpn
@@ -62,4 +63,4 @@ Use **Client Certificate** to generate the configuration file you need from the 
 | **Additional Parameters** | Enter any additional parameters. |
 | **TLS Crypt Auth** | All TLS handshake messages are encrypted to add another layer of security. This requires a static key that is shared between OpenVPN server and clients. When tls_crypt_auth_enabled is enabled and tls_crypt_auth is not provided, a static key is automatically generated to use with OpenVPN client. Enter that key here. |
 
-See [Configuring OpenVPN]({{< relref "/CORE/CORETutorials/Services/ConfiguringOpenVPN.md" >}})
+{{< taglist tag="coreopenvpn" limit="10" title="Related OpenVPN Articles" >}}
