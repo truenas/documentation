@@ -18,8 +18,5 @@ Use the **SSH** screen to configure SSH File Transfer Protocol (SFTP). SFTP is a
 
 {{< include file="content/_includes/ServicesSSHFields.md" markdown="true" >}}
 
-{{< taglist tag="coresftp" limit="10" title="Related SFTP Articles" >}}
+{{< taglist tag="coresftp" limit="10" title="Related Articles" >}}
 
-{{< taglist tag="coretftp" limit="10" title="Related TFTP and SFTP Articles" >}}
-
-{{< taglist tag="coressh" limit="10" title="Related SSH Articles" >}}
