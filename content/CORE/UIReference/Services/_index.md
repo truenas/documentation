@@ -4,6 +4,8 @@ geekdocCollapseSection: true
 weight: 120
 ---
 
+{{< children depth=”2” sort=”name” description="false" >}}
+
 The **Services** screen lists all services available on the TrueNAS.
 
 Activate or configure a service on the **Services** page.
