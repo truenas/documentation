@@ -1,9 +1,11 @@
 ---
 title: "Configuring S3"
+description: "How to start a local S3 service on TrueNAS"
 weight: 100
 aliases: /core/services/s3/
 tags:
 - cores3
+- cores3minio
 ---
 
 {{< toc >}}
@@ -46,8 +48,4 @@ Files are managed by MinIO as objects, and cannot be mixed with other dataset fi
 Configure the rest of the options as needed in your environment.
 Make sure to start the service after saving any changes.
 
-## Additional Information
-
-[S3 screen]({{< relref "/CORE/UIReference/Services/S3Screen.md" >}}) 
-
-[S3 for MinIO]({{< relref "/CORE/CORETutorials/Services/S3forMinIO.md" >}})
+{{< taglist tag="cores3" limit="10" title="Related S3 Articles" >}}
