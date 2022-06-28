@@ -1,6 +1,10 @@
 ---
 title: "Configuring SSH"
+description: "Configuring SSH on your TrueNAS"
 weight: 130
+tags:
+- coresftp
+- coressh
 ---
 
 The SSH service allows connections to TrueNAS with the [Secure SHell Transport Layer Protocol](https://tools.ietf.org/html/rfc4253).
