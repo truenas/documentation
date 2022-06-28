@@ -1,5 +1,6 @@
 ---
 title: "Configuring FTP"
+description: "Configuring FTP on your TrueNAS"
 weight: 30
 tags:
 - coreftp
@@ -53,7 +54,5 @@ The default directory is the same as the user <file>/home</file> directory.
 After connecting, you can create directories and upload or download files.
 
 ![FilezillaFTPConnect](/images/CORE/FilezillaFTPConnect.png "Filezilla FTP Connection")
-
-See [FTP Screen]({{< relref "/CORE/UIReference/Services/FTPScreen.md" >}}) for more information on the **FTP** service screen. 
-
+ 
 {{< taglist tag="coreftp" limit="10" title="Related FTP Articles" >}}
