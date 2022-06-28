@@ -1,8 +1,11 @@
 ---
 title: "Configuring SSH Connections"
+description: "Configuring SSH connections on your TrueNAS"
 weight: 110
 aliases:
   - /core/system/systemssh
+tags:
+- coressh
 ---
 
 {{< toc >}}
