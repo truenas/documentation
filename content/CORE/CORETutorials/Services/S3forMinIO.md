@@ -80,6 +80,5 @@ It is possible to access, create new buckets, or upload files to created buckets
 ![AmazonS3Browser](/images/CORE/AmazonS3Browser.png "S3 Browser")
 {{< /expand >}}
 
-## Additional Information
-
-[S3 screen]({{< relref "/CORE/UIReference/Services/S3Screen.md" >}}) 
+{{< taglist tag="cores3" limit="10" title="Related S3 Articles" >}}
+ 
