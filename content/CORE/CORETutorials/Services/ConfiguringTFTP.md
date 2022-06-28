@@ -1,9 +1,11 @@
 ---
 title: "Configuring TFTP"
+description: "Setting up TFTP"
 weight: 140
 tags:
 - coreftp
 - coretftp
+- coresftp
 ---
 
 
@@ -17,6 +19,5 @@ Starting the TFTP service opens UDP port **69**.
 
 ![ServicesTFTPOptions](/images/CORE/12.0/ServicesTFTPOptions.png "TFTP Service Options")
 
-Use the **TFTP** screen to configure the system for SFTP. See [TFTP Screen]({{< relref "/CORE/UIReference/Services/TFTPScreen.md" >}}) for information on TFTP screen settings.
+{{< taglist tag="coretftp" limit="10" title="Related TFTP and SFTP Articles" >}}
 
-See [TFTP Screen]({{< relref "/CORE/UIReference/Services/TFTPScreen.md" >}}) for more information on TFTP screen settings.
