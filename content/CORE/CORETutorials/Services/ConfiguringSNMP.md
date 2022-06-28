@@ -1,5 +1,6 @@
 ---
 title: "Configuring SNMP"
+description: "SNMP service options"
 weight: 120
 aliases: /core/services/snmp/
 tags:
@@ -24,3 +25,5 @@ Check the directory on your system by clicking **Shell** and entering comnmand `
 Here is a sample of the directory contents:
 
 ![ServicesSNMPMibSample](/images/CORE/12.0/ServicesSNMPMibSample.png "Services SNMP Mib Sample")
+
+{{< taglist tag="coresnmp" limit="10" title="Related SNMP Articles" >}}
