@@ -1,8 +1,11 @@
 ---
 title: "Configuring SFTP"
+description: "Configuring SFTP service"
 weight: 20
 tags:
 - coreftp
+- coresftp
+- coressh
 ---
 
 
@@ -68,6 +71,4 @@ Using an FTP client, such as FileZilla, log in with the jail IP address and user
 ![FilezillaJailConnectSFTP](/images/CORE/FilezillaJailConnectSFTP.png "Filezilla SFTP Connect to TrueNAS Jail")
 {{< /expand >}}
 
-## Additional Information
-
-[SSH Screen]({{< relref "/CORE/UIReference/Services/SSHScreen.md" >}})
+{{< taglist tag="coressh" limit="10" title="Related SSH Articles" >}}
