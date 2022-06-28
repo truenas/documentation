@@ -1,5 +1,6 @@
 ---
 title: "Configuring UPS Service"
+description: "How to configure UPS service for your TrueNAS"
 weight: 150
 alias: /core/services/ups/
 tags:
@@ -40,4 +41,4 @@ The secondary computers are powered by the UPS, but receive UPS status data from
 See the [NUT User Manual](https://networkupstools.org/docs/user-manual.chunked/index.html) and [NUT User Manual Pages](https://networkupstools.org/docs/man/index.html#User_man).
 {{< /expand >}}
 
-See [UPS screen]({{< relref "/CORE/UIReference/Services/UPSScreen.md" >}}) for more information on setting up a UPS.
+{{< taglist tag="coreups" limit="10" title="Related UPS Articles" >}}
