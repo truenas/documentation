@@ -1,5 +1,6 @@
 ---
 title: "FTP Screen"
+description: "Use the FTP services screen to configure FTP service settings for your TrueNAS system"
 weight: 30
 tags:
 - coreftp
@@ -95,8 +96,6 @@ When FTP is exposed to a WAN, enable TLS.
 | **Display Login** | Specify the message displayed to local login users after authentication. Thi is not displayed to anonymous login users. |
 | **Auxiliary Parameters** | Used to add additional [proftpd(8](https://linux.die.net/man/8/proftpd) parameters. |
 
-## Additional Information
+{{< taglist tag="coreftp" limit="10" title="Related FTP Articles" >}}
 
-See [Configuring FTP]({{< relref "/CORE/CORETutorials/Services/ConfiguringFTP.md" >}}) for instructions on setting up FTP service for your TrueNAS.
-
-Or see [FTP, SFTP and TFTP Services]({{< relref "/CORE/CORETutorials/Services/FTPTFTP.md" >}}) for more information on other file transfer protocols.
+{{< taglist tag="coretftp" limit="10" title="Information on other file transfer protocols" >}}
