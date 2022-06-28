@@ -1,9 +1,11 @@
 ---
 title: "TFTP Screen"
+description: "TFTP service on the TrueNAS"
 weight: 140
 tags:
 - coreftp
 - coretftp
+- coresftp
 ---
 
 The **TFTP** service screen configures the directory, connection, access and other auxillary parameters for TFPT service on the TrueNAS.
@@ -14,6 +16,8 @@ The **TFTP** service screen configures the directory, connection, access and oth
 
 {{< include file="content/_includes/ServicesTFTPFields.md" markdown="true" >}}
 
-See [Configuring TFTP]({{< relref "/CORE/CORETutorials/Services/ConfiguringTFTP.md" >}}) for more information on setting up TFTP service.
+{{< taglist tag="coreftp" limit="10" title="Related FTP Articles" >}}
+
+{{< taglist tag="coretftp" limit="10" title="Related TFTP and SFTP Articles" >}}
 
 Or see [FTP, SFTP and TFTP Services]({{< relref "/CORE/CORETutorials/Services/FTPTFTP.md" >}}) for more information on other file transfer protocols.
