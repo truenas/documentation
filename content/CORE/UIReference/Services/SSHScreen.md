@@ -1,6 +1,12 @@
 ---
 title: "SSH Screen"
+description: "SSH screen configuration"
 weight: 20
+tags:
+- coreftp
+- coretftp
+- coresftp
+- coressh
 ---
 
 
@@ -12,12 +18,8 @@ Use the **SSH** screen to configure SSH File Transfer Protocol (SFTP). SFTP is a
 
 {{< include file="content/_includes/ServicesSSHFields.md" markdown="true" >}}
 
-For more information see:
+{{< taglist tag="coresftp" limit="10" title="Related SFTP Articles" >}}
 
-[FTP, SFTP and TFTP Services]({{< relref "/CORE/CORETutorials/Services/FTPTFTP.md" >}})
+{{< taglist tag="coretftp" limit="10" title="Related TFTP and SFTP Articles" >}}
 
-[Configuring SFTP]({{< relref "/CORE/CORETutorials/Services/ConfiguringSFTP.md" >}})
-
-[Configuring SSH]({{< relref "/CORE/CORETutorials/Services/ConfiguringSSH.md" >}})
-
-[Configuring SSH Connections]({{< relref "/CORE/CORETutorials/SystemConfiguration/ConfiguringSSHConnections.md" >}})
+{{< taglist tag="coressh" limit="10" title="Related SSH Articles" >}}
