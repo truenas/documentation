@@ -1,5 +1,6 @@
 ---
 title: "SNMP Screen"
+description: "Configure SNMP on your TrueNAS"
 weight: 120
 aliases: /core/services/snmp/
 tags:
@@ -22,6 +23,4 @@ Use **CANCEL** to exit without saving and display the **Services** screen.
 
 {{< include file="content/_includes/ServicesSNMPFields.md" markdown="true" >}}
 
-## Additional Information
-
-[Configuring SNMP]({{< relref "/CORE/CORETutorials/Services/ConfiguringSNMP.md" >}})
+{{< taglist tag="coresnmp" limit="10" title="Related SNMP Articles" >}}
