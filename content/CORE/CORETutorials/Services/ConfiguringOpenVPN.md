@@ -1,5 +1,6 @@
 ---
 title: "Configuring OpenVPN"
+description: "How to configure OpenVPN"
 weight: 70
 aliases: /core/services/openvpn/
 tags:
@@ -102,3 +103,5 @@ Start the service by clicking the related toggle in **Services**.
 To check the current state of the service, hover over the toggle.
 
 Setting **Start Automatically** means the service starts whenever TrueNAS completes booting and the network and data pools are running.
+
+{{< taglist tag="coreopenvpn" limit="10" title="Related OpenVPN Articles" >}}
