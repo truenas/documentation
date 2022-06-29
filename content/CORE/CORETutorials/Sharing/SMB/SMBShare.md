@@ -1,7 +1,10 @@
 ---
 title: "SMB Share Creation"
+description: "SMB Share Creation on your TrueNAS"
 weight: 10
 aliases: /core/sharing/smb/smbshare/
+tags:
+- coresmb
 ---
 
 {{< toc >}}
@@ -123,11 +126,4 @@ Mount the volume. `sudo mount_smbfs -I computer_name\share_name /mnt/smb_share`.
 {{< /expand >}}
 {{< /expand >}}
 
-
-## Additional Information
-
-[SMB Share Screen]({{< relref "/CORE/UIReference/Sharing/SMB/SMBShareScreen.md" >}})
-
-[SMB Service Screen]({{< relref "/CORE/UIReference/Services/SMBScreen.md" >}})
-
-[Managing SMB Shares]({{< relref "/CORE/CORETutorials/Sharing/SMB/ManagingSMBShares.md" >}})
+{{< taglist tag="coresmb" limit="10" title="Related Articles" >}}
