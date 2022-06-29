@@ -1,6 +1,9 @@
 ---
 title: "Managing SMB Shares"
+description: "Managing SMB Shares on your TrueNAS"
 weight: 10
+tags:
+- coresmb
 ---
 
 {{< toc >}}
@@ -78,10 +81,4 @@ For example, to only allow the *tmoore* user permission to view dataset contents
 
 ![ExampleACE](/images/CORE/12.0/StoragePoolsEditACLExample.png "Sample ACE")
 
-## Additional Information
-
-[SMB Share Screen]({{< relref "/CORE/UIReference/Sharing/SMB/SMBShareScreen.md" >}})
-
-[SMB Service Screen]({{< relref "/CORE/UIReference/Services/SMBScreen.md" >}})
-
-[SMB Share Creation]({{< relref "/CORE/CORETutorials/Sharing/SMB/SMBShare.md" >}})
+{{< taglist tag="coresmb" limit="10" title="Related Articles" >}}
