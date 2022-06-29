@@ -1,7 +1,10 @@
 ---
 title: "Configuring LLDP"
+description: "Configuring Link Layer Discovery Protocol (LLDP)"
 weight: 50
 aliases: /core/services/lldp/
+tags:
+- corelldp
 ---
 
 Network devices use the [Link Layer Discovery Protocol (LLDP)](https://tools.ietf.org/html/rfc4957) to advertise their identity, capabilities, and neighbors on an Ethernet network.
@@ -16,4 +19,4 @@ Select **Interface Description** and enter a **Country Code**. The location of t
 
 Turn on the LLDP service on.
 
-See [LLDP Screen]({{< relref "/CORE/UIReference/Services/LLDPScreen.md" >}}) for more information on the settings.
+{{< taglist tag="corelldp" limit="10" title="Related Articles" >}}
