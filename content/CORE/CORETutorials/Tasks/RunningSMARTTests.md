@@ -1,6 +1,9 @@
 ---
 title: "Running S.M.A.R.T. Tests"
+description: "Running S.M.A.R.T. tests on your TrueNAS"
 weight: 40
+tags:
+- coresmart
 ---
 
 {{< toc >}}
@@ -87,3 +90,5 @@ You must [enable S.M.A.R.T. service]({{< relref "CORE/CORETutorials/Services/Con
 Disable the S.M.A.R.T. service when disks are controlled by a RAID controller.
 The controller monitors S.M.A.R.T. separately and marks disks as a **Predictive Failure** on a test failure.
 {{< /expand >}}
+
+{{< taglist tag="coresmart" limit="10" title="Related Articles" >}}
