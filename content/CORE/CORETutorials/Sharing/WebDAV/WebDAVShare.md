@@ -1,7 +1,10 @@
 ---
 title: "WebDav Share Creation"
+description: "Web-based Distributed Authoring and Versioning (WebDAV) on your TrueNAS"
 weight: 10
 aliases: /core/sharing/webdav/webdavshare/
+tags:
+- corewebdav
 ---
 
 {{< toc >}}
@@ -62,10 +65,4 @@ Example: *https://10.2.1.1:8081/newdataset*
 When the **Authentication** WebDAV service option is set to either **Basic** or **Digest**, a user name and password is required.
 Enter the user name **webdav** and the password defined in the WebDAV service.
 
-## Additional Information
-
-For more information see:
-
-[WebDAV Service Screen]({{< relref "/CORE/UIReference/Services/WebDAVScreen.md" >}})
-
-[WebDAV Share Screen]({{< relref "/CORE/UIReference/Sharing/WebDAV/WebDAVShareScreen.md" >}})
+{{< taglist tag="corewebdav" limit="10" title="Related Articles" >}}
