@@ -1,7 +1,10 @@
 ---
 title: "Configuring S.M.A.R.T."
+description: "Configurinng S.M.A.R.T. on your TrueNAS"
 weight: 90
 aliases: /core/services/smart/
+tags:
+- coresmart
 ---
 
 {{< toc >}}
@@ -29,3 +32,5 @@ Start the service by clicking the related toggle in **Services**.
 To check the current state of the service, hover over the toggle.
 
 Setting **Start Automatically** starts the service whenever TrueNAS completes booting and the network and data pools are running.
+
+{{< taglist tag="coresmart" limit="10" title="Related Articles" >}}
