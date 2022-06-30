@@ -1,6 +1,9 @@
 ---
 title: "Sharing NFS Screens"
+description: "Network File System (NFS) sharing on TrueNAS"
 weight: 10
+tags:
+- corenfs
 ---
 
 {{< toc >}}
@@ -50,8 +53,4 @@ Use **ADVANCED OPTIONS** to display additional settings that allows tuning the s
 To edit an existing NFS share click the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> for the share and select **Edit**.
 The options available are identical to the **ADD** share setting options.
 
-## Additional Information
-
-[Configuring an NFS Share]({{< relref "/CORE/CORETutorials/Sharing/NFS/NFSShare.md" >}})
-
-[NFS Service]({{< relref "/CORE/UIReference/Services/NFSScreen.md" >}})
+{{< taglist tag="corenfs" limit="10" title="Related Articles" >}}
