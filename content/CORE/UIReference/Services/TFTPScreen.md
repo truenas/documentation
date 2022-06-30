@@ -1,6 +1,6 @@
 ---
 title: "TFTP Screen"
-description: "TFTP service on the TrueNAS"
+description: "Use the TFTP screen to configure Trivial File Transfer Protocol (TFTP) and related service options on your TrueNAS"
 weight: 140
 tags:
 - coreftp
