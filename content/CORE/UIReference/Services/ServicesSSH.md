@@ -1,6 +1,9 @@
 ---
 title: "SSH Screen"
+description: "Use the SSH services screen to configure SSH service on your TrueNAS"
 weight: 130
+tags:
+- coressh
 ---
 
 Use the **SSH** services screen to configure SSH service on your TrueNAS.
@@ -15,6 +18,4 @@ Use the **SSH** services screen to configure SSH service on your TrueNAS.
 
 {{< include file="content/_includes/ServicesSSHAdvancedFields.md" markdown="true" >}}
 
-## Additional Information
-
-[Configuring SSH]({{< relref "/CORE/CORETutorials/Services/ConfiguringSSH.md" >}})
+{{< taglist tag="coressh" limit="10" title="Related Articles" >}}
