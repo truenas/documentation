@@ -1,10 +1,10 @@
 --- 
 title: "OpenVPN Screen"
-description: "Information about the OpenVPN Client and Server screens"
+description: "Use the OpenVPN screen to configure OpenVPN and related service options on your TrueNAS"
 weight: 70
 tags:
 - coreopenvpn
----
+--- 
 
 {{< toc >}}
 
