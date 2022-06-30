@@ -34,7 +34,7 @@ aliases:
 
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
-| SCALE 22.02.2.1 | Code-freeze | Unscheduled hotpatch. Expected July 2022. |
+| SCALE 22.02.2.1 | Code-freeze | 07 July 2022 |
 | SCALE 22.02.3 | Code-freeze | 20 July 2022 |
 | SCALE 22.02.3 | Internal Testing Sprints | 25 July > 05 August 2022 |
 | SCALE 22.02.3 | Tag | 08 August 2022 |
