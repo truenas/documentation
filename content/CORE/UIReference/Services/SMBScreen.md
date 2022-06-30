@@ -1,12 +1,12 @@
 ---
 title: "SMB Service Screen"
-description: "Use the Services SMB screen to configured SMB service settings"
+description: "Use the SMB screen to configure Server Message Block (SMB) and related service options on your TrueNAS"
 weight: 110
 tags:
 - coresmb
 ---
 
-Use the **Services SMB** screen to configured SMB service settings. 
+Use the **Services SMB** screen to configure SMB service settings. 
 Unless a specific setting is needed or configuring for a specific network environment, it is recommended to use the default settings for the SMB service.
 
 ![SMBServiceOptions](/images/CORE/12.0/ServicesSMBOptions.png "SMB Service Options")
