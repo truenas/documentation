@@ -1,6 +1,6 @@
 ---
 title: "FTP Screen"
-description: "Use the FTP services screen to configure FTP service settings for your TrueNAS system"
+description: "Use the FTP screen to configure File Transfer Protocol (FTP) and related service options on your TrueNAS"
 weight: 30
 tags:
 - coreftp
