@@ -1,6 +1,6 @@
 ---
 title: "WebDAV Services Screen"
-description: "Use the Services WebDAV screen to enable WebDAV services on your TrueNAS"
+description: "Use the WebDAV screen to configure Web Distributed Authoring and Versioning (WebDAV) and related service options on your TrueNAS"
 weight: 160
 tags:
 - corewebdav
