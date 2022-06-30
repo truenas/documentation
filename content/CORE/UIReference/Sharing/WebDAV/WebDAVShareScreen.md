@@ -1,6 +1,9 @@
 ---
 title: "WebDAV Screen"
+description: "Use the Sharing WebDAV screen to configure WebDAV on your TrueNAS"
 weight: 10
+tags:
+- corewebdav
 ---
 
 Use the **Sharing WebDAV** screen to configure WebDAV on your TrueNAS.
@@ -22,8 +25,4 @@ Use **ADD** to open the WebDAV configuration screen.
 | **Change User & Group Ownership** | Change existing ownership of all files in the share to user webdav and group webdav. If checkmark cleared, you must manually set ownership of files accessed through WebDAV to the **webdav** or **www** user/group. |
 | **Enabled** | Select to enable this WebDAV share. Leave checkbox clear to disable this WebDAV share without deleting it. |
 
-For more information see:
-
-[WebDAV Service Screen]({{< relref "/CORE/UIReference/Services/WebDAVScreen.md" >}})
-
-[WebDAV Share Creation]({{< relref "/CORE/CORETutorials/Sharing/WebDAV/WebDAVShare.md" >}})
+{{< taglist tag="corewebdav" limit="10" title="Related Articles" >}}
