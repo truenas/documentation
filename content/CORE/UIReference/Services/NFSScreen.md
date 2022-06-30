@@ -1,6 +1,9 @@
 ---
 title: "NFS Screen"
+description: "Use the Services NFS screen to enable NFS services on your TrueNAS"
 weight: 60
+tags:
+- corenfs
 ---
 
 {{< toc >}}
@@ -31,8 +34,4 @@ Use **CANCEL** to exit without saving and return to the **Services** screen.
 
 Unless a specific setting is needed, it is recommended to use the default settings for the NFS service.
 
-## Additional Information
-
-[Sharing NFS screen]({{< relref "/CORE/UIReference/Sharing/NFS/NFSShareScreen.md" >}})
-
-[Configuring NFS Shares]({{< relref "/CORE/CORETutorials/Sharing/NFS/NFSShare.md" >}})
+{{< taglist tag="corenfs" limit="10" title="Related Articles" >}}
