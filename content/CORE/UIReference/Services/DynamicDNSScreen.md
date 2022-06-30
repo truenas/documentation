@@ -1,7 +1,10 @@
 ---
 title: "Dynamic DNS Screen"
+description: "Configuring Dynamic Domain Name Service (DDNS) service for your TrueNAS"
 weight: 20
 aliases: core/services/dynamicdns/
+tags:
+- coreddns
 ---
 
 Use the **Services > Dynamic DNS** screen to configure [Dynamic Domain Name Service (DDNS)](https://tools.ietf.org/html/rfc2136) service for your TrueNAS. This is useful when TrueNAS is connected to an ISP that periodically changes the IP address of the system. 
@@ -14,4 +17,4 @@ The **SAVE** button activates after you enter your domain name in **Domain Name*
 
 After configuration your DDNS service, turn on the service on the **Services** screen.
 
-For more information on see [Configuration Dynamic DNS]({{< relref "/CORE/CORETutorials/Services/ConfigureDynamicDNS.md" >}})
+{{< taglist tag="coreddns" limit="10" title="Related Articles" >}}
