@@ -4,8 +4,6 @@ geekdocCollapseSection: true
 weight: 120
 ---
 
-{{< children depth=”2” sort=”name” description="false" >}}
-
 The **Services** screen lists all services available on the TrueNAS.
 
 Activate or configure a service on the **Services** page.
@@ -24,3 +22,6 @@ Click the <span class="material-icons">edit</span> icon to display the settings 
 
 Services related to data sharing or automated tasks are documented in their respective [Sharing]({{< relref "/CORE/UIReference/Sharing/_index.md" >}}) or [Tasks]({{< relref "/CORE/UIReference/Tasks/_index.md" >}}).
 
+## Additional Service Articles ##
+
+{{< children depth=”2” sort=”name” description="false" >}}
