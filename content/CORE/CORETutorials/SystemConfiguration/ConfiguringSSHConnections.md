@@ -70,3 +70,5 @@ Log back into the local TrueNAS system and go to **System > SSH Connections**. A
 ![SystemSSHConnectionsAddManual](/images/CORE/12.0/SystemSSHConnectionsAddManual.png "SSH Connections: Manual Options")
 
 Select the private key from the SSH keypair you used to transfer the public key on the remote NAS.
+
+{{< taglist tag="coressh" limit="10" title="Related Articles" >}}
