@@ -1,6 +1,6 @@
 ---
 title: "S3 Screen"
-description: "Use the S3 screen to configure your TrueNAS S3 service"
+description: "Use the S3 screen to configure Amazon Simple Storage Service (S3) and related service options on your TrueNAS"
 weight: 100
 tags:
 - cores3
