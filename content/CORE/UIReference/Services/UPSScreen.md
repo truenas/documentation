@@ -1,6 +1,6 @@
 ---
 title: "UPS Screen"
-description: "How to configure a UPS for your TrueNAS"
+description: "Use the UPS screen to configure a Uninterruptible Power Supply (UPS) and related service options on your TrueNAS"
 weight: 150
 tags:
 - coreups
