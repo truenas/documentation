@@ -1,6 +1,6 @@
 ---
 title: "S.M.A.R.T."
-description: "S.M.A.R.T. options on your TrueNAS"
+description: "Use the S.M.A.R.T. screen to configure Self-Monitoring, Analysis and Reporting Technology (S.M.A.R.T.) and related service options on your TrueNAS"
 weight: 100
 tags:
 - coresmart
