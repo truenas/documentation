@@ -1,6 +1,6 @@
 ---
 title: "NFS Screen"
-description: "Use the Services NFS screen to enable NFS services on your TrueNAS"
+description: "Use the NFS screen to configure Network File System (NFS) and related service options on your TrueNAS"
 weight: 60
 tags:
 - corenfs
