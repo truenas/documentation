@@ -38,7 +38,7 @@ Saving any changes redeploys the container.
 
 ## Custom Applications
 
-To deploy a custom application container in the Scale web interface, go to **Apps** and click *Launch Docker Image*.
+To deploy a custom application container in the Scale web interface, go to **Apps** and click **Launch Docker Image**.
 
 ![AppsLaunchDockerImage](/images/SCALE/AppsLaunchDockerImage.png)
 
