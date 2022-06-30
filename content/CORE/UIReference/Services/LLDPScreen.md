@@ -1,6 +1,6 @@
 ---
 title: "LLDP Screen"
-description: "Use the LLDP services screen to configure Link Layer Discovery Protocol (LLDP) service on your TrueNAS"
+description: "Use the LLDP screen to configure Link Layer Discovery Protocol (LLDP) and related service options on your TrueNAS"
 weight: 50
 tags:
 - corelldp
