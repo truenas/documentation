@@ -1,6 +1,9 @@
 ---
 title: "SMB Share Screen"
+description: "Use the Sharing SMB screen to setup SMB shares on your TrueNAS"
 weight: 10
+tags:
+- coresmb
 ---
 
 {{< toc >}}
@@ -95,10 +98,4 @@ The **Other Options** have settings for improving Apple software compatibility, 
 
 Use **Submit** to save setings, create the share and add it to the **Sharing > Windows Shares (SMB)** list.
 
-## Additional Information
-
-[SMB Service Screen]({{< relref "/CORE/UIReference/Services/SMBScreen.md" >}})
-
-[SMB Share Creation]({{< relref "/CORE/CORETutorials/Sharing/SMB/SMBShare.md" >}})
-
-[Managing SMB Shares]({{< relref "/CORE/CORETutorials/Sharing/SMB/ManagingSMBShares.md" >}})
+{{< taglist tag="coresmb" limit="10" title="Related Articles" >}}
