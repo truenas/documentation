@@ -1,6 +1,6 @@
 ---
 title: "SNMP Screen"
-description: "Configure SNMP on your TrueNAS"
+description: "Use the SNMP screen to configure Simple Network Management Protocol (SNMP) and related service options on your TrueNAS"
 weight: 120
 aliases: /core/services/snmp/
 tags:
