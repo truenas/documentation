@@ -12,7 +12,13 @@ Scrubs identify data integrity problems, detect silent data corruptions caused b
 
 TrueNAS generates a default scrub task when you create a new pool and sets it to run every Sunday at 12:00 AM.
 
-![ScrubTaskDefaultSCALE](/images/SCALE/ScrubTaskDefaultSCALE.png "Default Scrub Task")
+![ScrubTaskDefaultSCALE](/images/SCALE/22.02/scrubtaskpriority.png "Default Scrub Task")
+
+## Adjust Scrub/Resilver Priority
+
+![ScrubTaskPrioritySCALE](/images/SCALE/22.02/resilverscrubedit.png "Default Scrub Task")
+
+{{< include file="static/includes/Reference/TasksResilverPriorityFields.md.part" markdown="true" >}}
 
 ## Creating New Scrub Tasks
 
