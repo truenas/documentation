@@ -53,7 +53,7 @@ The alert system is configured in [System > Alert Settings]({{< relref "AlertSet
 
 The <span class="iconify" data-icon="fa6-solid:gear"></span> (gear icon) contains links to various system specific options.
 
-<span class="iconify" data-icon="ic:baseline-dialpad"></span> **Change Password** is a shortcut for changing the administor (*root*) account password.
+<span class="iconify" data-icon="ic:baseline-dialpad"></span> **Change Password** is a shortcut for changing the administrator (*root*) account password.
 This password is required to log in to the TrueNAS web interface.
 Please back up or otherwise memorize the updated password when changing it.
 
@@ -61,13 +61,13 @@ Please back up or otherwise memorize the updated password when changing it.
 
 | Option | Description |
 |--------|-------------|
-| Choose Theme | Choose a preferred theme. There are several built-in themes designed for light and dark modes and high contrast viewing of the web interface. |
-| Prefer buttons with icons only | Preserve screen space with icons and tooltips instead of text labels. |
-| Enable Password Toggle | When set, an eye icon appears next to password fields. Clicking the icon reveals the password. |
-| Reset Table Columns to Default | Reset all tables to display default columns. |
-| Retro Logo | Revert branding back to FreeNAS. |
-| Reset All Preferences to Default | Reset all user preferences to their default values. (Custom themes are preserved) |
-| Update Preferences | Save changes to the **General Preferences**. |
+| **Choose Theme** | Choose a preferred theme. There are several built-in themes designed for light and dark modes and high contrast viewing of the web interface. |
+| **Prefer buttons with icons only** | Preserve screen space with icons and tooltips instead of text labels. |
+| **Enable Password Toggle** | When set, an eye icon appears next to password fields. Clicking the icon reveals the password. |
+| **Reset Table Columns to Default** | Reset all tables to display default columns. |
+| **Retro Logo** | Revert branding back to FreeNAS. |
+| **Reset All Preferences to Default** | Reset all user preferences to their default values. (Custom themes are preserved) |
+| **Update Preferences** | Save changes to the **General Preferences**. |
 
 Custom themes can also be created and managed on this screen.
 
