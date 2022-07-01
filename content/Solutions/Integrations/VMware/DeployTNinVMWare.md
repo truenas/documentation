@@ -134,7 +134,7 @@ To create the virtual machine for your TrueNAS, from the **Virtual Machines** sc
 
    Change any other disk drive settings you want or need to change for your hard disk drive hardware.
 
-   You can click **Add hard disk** again to add more hard drives or you can click **Next** to finish creating the VM. You can use the **Edit** option later to add more drives to support your TrueNAS deployment. 
+   You can click **Add hard disk** again to add more hard drives if you want to equip your VM with more hard drives than the minimum required number of hard drives or you can click **Next** to finish creating the VM. You can use the **Edit** option later to add more drives to support your TrueNAS deployment. 
 
    Each storage layout has different disk minimum disk requirements. 
    Visit [Storage Configuration]({{< relref "/content/Core/GettingStarted/StoringData.md" >}}) for information on pool layouts
