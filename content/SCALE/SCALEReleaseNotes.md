@@ -34,18 +34,11 @@ aliases:
 
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
-| SCALE 22.02.1 | Code-freeze | 06 April 2022 |
-| SCALE 22.02.1 | Internal Testing Sprints | 11 April > 29 April 2022 |
-| SCALE 22.02.1 | Tag | 02 May 2022 |
-| SCALE 22.02.1 | Release | 03 May 2022 |
-| SCALE 22.02.2 | Code-freeze | 08 June 2022 |
-| SCALE 22.02.2 | Internal Testing Sprints | 13 June > 17 June 2022 |
-| SCALE 22.02.2 | Tag | 20 June 2022 |
-| SCALE 22.02.2 | Release | 21 June 2022 |
-| SCALE 22.02.3 | Code-freeze | 03 August 2022 |
-| SCALE 22.02.3 | Internal Testing Sprints | 08 August > 19 August 2022 |
-| SCALE 22.02.3 | Tag | 22 August 2022 |
-| SCALE 22.02.3 | Release | 23 August 2022 |
+| SCALE 22.02.2.1 | Code-freeze | 07 July 2022 |
+| SCALE 22.02.3 | Code-freeze | 20 July 2022 |
+| SCALE 22.02.3 | Internal Testing Sprints | 25 July > 05 August 2022 |
+| SCALE 22.02.3 | Tag | 08 August 2022 |
+| SCALE 22.02.3 | Release | 09 August 2022 |
 
 ## Obtaining the Release
 
