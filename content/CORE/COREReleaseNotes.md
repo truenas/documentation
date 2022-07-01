@@ -21,12 +21,12 @@ aliases:
 |---------|------------|----------------|
 | 13.0-U1 | Code-freeze | 15 June 2022 |
 | 13.0-U1 | Internal Testing Sprints | 20 June > 24 June 2022 |
-| 13.0-U1 | Tag | 27 June 2022 |
-| 13.0-U1 | Release | 28 June 2022 |
-| 13.0-U2 | Code-freeze | 13 July 2022 |
-| 13.0-U2 | Internal Testing Sprints | 18 July - 19 July 2022 |
-| 13.0-U2 | Tag | 01 August 2022 |
-| 13.0-U2 | Release | 02 August 2022 |
+| 13.0-U1 | Tag | 05 July 2022 |
+| 13.0-U1 | Release | 05 July 2022 |
+| 13.0-U2 | Code-freeze | 24 August 2022 |
+| 13.0-U2 | Internal Testing Sprints | 25 August - 02 September 2022 |
+| 13.0-U2 | Tag | 05 September 2022 |
+| 13.0-U2 | Release | 06 September 2022 |
 
 ## 13.0-RELEASE
 
@@ -781,7 +781,7 @@ Please use CLI commands carefully and **always back up critical data** before at
 4. `python3 replace_disk.py <pool_name> <gptid/####> <ada#>` replaces the named disk in the pool with the designated spare. Replace *<pool_name>* with the name of the pool with the disk to be replaced, *<gptid/####>* with the disk identifier noted above in step 2, and *<ada#>* with the name of the unused disk to use as the replacement.
    Example:
    ```
-   root@examplemini[~]# python3 replace_disk.py disk gptid/c7acbd9e-ca3d-11ec-8ec6-d05099c356a4 ada3
+   root@examplemini[~]# python3 replace_disk.py tank gptid/c7acbd9e-ca3d-11ec-8ec6-d05099c356a4 ada3
    Replace initiated.
    root@examplemini[~]#zpool status tank
    	    pool: tank

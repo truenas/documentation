@@ -12,6 +12,10 @@ weight: 20
 
 This section guides you through installing and accessing TrueNAS SCALE, storing, backing up, and sharing data, and expanding TrueNAS with different applications solutions.
 
+{{< expand "Table of Contents (click to expand)" "v" >}}
+{{< children depth="2" >}}
+{{< /expand >}}
+
 ## SCALE Documentation Sections
 
 For more detailed interface reference articles, configuration instructions, and tuning recommendations, see the remaining sections in this topic.

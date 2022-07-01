@@ -1,12 +1,15 @@
 ---
 title: "Configuring FTP"
 weight: 30
+tags:
+- coreftp
 ---
 
 
 ## FTP Services Configurations
 
 FTP requires a new dataset and local user account.
+Please create a individual account for FTP connection as it cannot be shared with other accounts, such as SMB connections.
 
 Go to **Storage > Pools** to add a new dataset.
 
@@ -51,4 +54,6 @@ After connecting, you can create directories and upload or download files.
 
 ![FilezillaFTPConnect](/images/CORE/FilezillaFTPConnect.png "Filezilla FTP Connection")
 
-See [FTP Screen]({{< relref "/CORE/UIReference/Services/FTPScreen.md" >}}) more information on the **FTP** service screen. 
+See [FTP Screen]({{< relref "/CORE/UIReference/Services/FTPScreen.md" >}}) for more information on the **FTP** service screen. 
+
+{{< taglist tag="coreftp" limit="10" title="Related FTP Articles" >}}

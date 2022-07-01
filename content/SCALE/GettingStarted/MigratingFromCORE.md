@@ -35,7 +35,7 @@ The installer asks if you want to preserve your existing configuration or start 
 
 {{< hint warning>}}
 Although TrueNAS attempts to keep most of your CORE configuration data when upgrading to SCALE, some CORE-specific items do not transfer.
-GELI Encrypted pools, NIS data, metadata, jails, tunables, and boot environments do not migrate from CORE to SCALE.
+GELI Encrypted pools, NIS data, jails, tunables, and boot environments do not migrate from CORE to SCALE.
 AFP shares also do not transfer, but can be migrated into an SMB share with AFP compatability enabled. 
 Init/shutdown scripts transfer, but can break and should be reviewed before use.
 The CORE netcli utility is also swapped for a new CLI utility that is used for the Console Setup Menu and other commands issued in a CLI.
@@ -85,7 +85,7 @@ The following CLI commands are available after migrating from CORE to SCALE. The
 | [camcontrol devlist](https://www.freebsd.org/cgi/man.cgi?query=camcontrol&sektion=8) | [lshw -class disk -short sfdisk -l](https://linux.die.net/man/1/lshw) | Use `lshw -class disk -short sfdisk -l` to get detailed information on hardware (disk) configuration that includes memory, mainboard and cache cofiguration, firmware version, CPU version and speed. |
 | [geom disk list](https://www.freebsd.org/cgi/man.cgi?geom(4)) | [lsblk](https://manpages.debian.org/testing/util-linux/lsblk.8.en.html), [hdparm](https://manpages.debian.org/bullseye/hdparm/hdparm.8.en.html) | Use `lsblk` to lists block devices or `hwparm` to get or set SATA/IDE device parameters. |
 | [glabel status](https://www.freebsd.org/cgi/man.cgi?glabel(8)) | [blkid](https://linux.die.net/man/8/blkid) | Use `blkid` to locate or print block device attributes. |
-| [gstat gstat -pods](https://www.freebsd.org/cgi/man.cgi?gstat(8)) | [iostat](https://manpages.debian.org/testing/sysstat/iostat.1.en.html)<br> iostat -dtx | Use `iostat -dtx` to display the device utiilization report with the time for each report displayed and includes extended statistics. |
+| [gstat -pods](https://www.freebsd.org/cgi/man.cgi?gstat(8)) | [iostat](https://manpages.debian.org/testing/sysstat/iostat.1.en.html)<br> iostat -dtx | Use `iostat -dtx` to display the device utiilization report with the time for each report displayed and includes extended statistics. |
 | [ifconfig](https://www.freebsd.org/cgi/man.cgi?ifconfig(8))<br>ifconfig -l | [ip addr](https://linux.die.net/man/8/ip) <br>[ifconfig -s](https://linux.die.net/man/8/ifconfig) <br> [lshw -class network -short](https://linux.die.net/man/1/lshw) <br>[ethtool *devname*](https://linux.die.net/man/8/ethtool) | Use `ip addr` to show or manipulate routing, devices, or policy routing and tunnels. <br>Use `ifconfig -s` cofigure a network interface. <br>Use `lshw -class network -short` to display a network device tree showing hardware paths. <br>Use `ethtool *devnam*` to query or control network driver and hardware settings. |
 | [netstat -i](https://www.freebsd.org/cgi/man.cgi?query=netstat&sektion=1) | [ifstat -i](https://linux.die.net/man/1/ifstat) | Use `ifstat -i` to get interface statisitcs on a list of interfaces to monitor. |
 | [nvmecontrol devlist](https://www.freebsd.org/cgi/man.cgi?query=nvme&sektion=4) | [nvme list](https://manpages.org/nvme-list-ctrl) | Use `nvme list` to identify the list of NVMe devices on your system. |
