@@ -24,4 +24,4 @@ Services related to data sharing or automated tasks are documented in their resp
 
 ## Additional Services Articles ##
 
-{{< children depth=”2” sort=”name” description="false" >}}
+{{< children depth="2" sort="Name" description="true" >}}
