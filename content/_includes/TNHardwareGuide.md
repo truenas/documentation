@@ -327,7 +327,7 @@ The 80 plus rating indicates the power drawn from the wall is lost as heat, nois
 If a power supply needs to draw 600 watts from the wall to provide 500 watts of power to your components, it is operating at 500/600 = \~83% efficiency.
 The other 100 watts get lost as heat, noise, and vibration.
 Power supplies with higher ratings are more efficient but also far more expensive.
-Do some return-on-investment calculations if you're unsure what efficiency to buy.
+Do some return-on-investment calculations if you are unsure what efficiency to buy.
 For example, if an 80 Plus Platinum PSU costs $50 more than the comparable 80 Plus Gold, it should save you at least $10 per year on your power bill for that investment to pay off over five years.
 You can read more about 80 Plus ratings in [this post](https://www.tomshardware.com/news/what-80-plus-levels-mean,36721.html).
 
