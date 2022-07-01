@@ -21,7 +21,7 @@ To configure SSH, disable the service and click <i class="fa fa-pencil" aria-hid
 
 Configure the options as needed to match your network environment.
 
-See [SSH Screen]({{< relref "/CORE/UIReference/Services/SSHScreen.md" >}})
+See [SSH Screen]({{< relref "/CORE/UIReference/Services/ServicesSSH.md" >}})
 
 Remote systems could require *root* access to the system, but make sure to have all security precautions in place before allowing root access.
 
