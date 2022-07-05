@@ -112,6 +112,10 @@ iXsystems is pleased to announce the release of TrueNAS 13.0-U1.
 * [NAS-112049](https://ixsystems.atlassian.net/browse/NAS-112049) - Properly initialize service announcements on boot </br>
 * [NAS-109751](https://ixsystems.atlassian.net/browse/NAS-109751) - regression: folders with / \(slash\) in name appear empty over SMB shares </br>
 
+### Security 
+
+[13.0-U1 Security Report](https://security.truenas.com/articles/2022-07-05-Security-Report-13-0-U1/)
+
 ## 13.0-RELEASE
 
 {{< expand "13.0-RELEASE" >}}
