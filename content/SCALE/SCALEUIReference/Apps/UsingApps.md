@@ -34,9 +34,11 @@ A button to open the application web interface will appear when the container is
 Users can adjust the container settings by editing a deployed official container.
 Saving any changes redeploys the container.
 
+{{< embed-video name="docs-3795-install-official-app-plex" >}}
+
 ## Custom Applications
 
-To deploy a custom application container in the Scale web interface, go to **Apps** and click *Launch Docker Image*.
+To deploy a custom application container in the Scale web interface, go to **Apps** and click **Launch Docker Image**.
 
 ![AppsLaunchDockerImage](/images/SCALE/AppsLaunchDockerImage.png)
 
