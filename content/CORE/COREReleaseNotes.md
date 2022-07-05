@@ -110,7 +110,7 @@ iXsystems is pleased to announce the release of TrueNAS 13.0-U1.
 
 ### Security 
 
-[13.0-U1 Security Report](https://security.truenas.com/articles/2022-07-05-Security-Report-13-0-U1/)
+[13.0-U1 Security Report](https://security.truenas.com/articles/2022-07-05-security-report-13-0-u1/)
 
 ## 13.0-RELEASE
 
