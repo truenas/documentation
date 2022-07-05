@@ -1,6 +1,9 @@
 ---
 title: Setting UI Preferences
+description: "Use the Interface Preferences screen to display a list of general preferences for your TrueNAS"
 weight: 1000
+tags:
+- coreinterfacepref
 ---
 
 {{< toc >}}
@@ -31,3 +34,5 @@ Click **CREATE NEW THEME** to start configuring the theme.
    The **Preview** updates to reflect your current choices. If you want to turn this off and compare with the currently active theme, click the **PREVIEW** tab and toggle **Global Preview**.
 3. Go to the **GENERAL** tab and choose the primary, accent, and topbar colors for the theme. These options are based off the color selections you made in the **COLORS** tab.
 4. Name and label the theme and click **SUBMIT** to save it and add it to the options on the **Preferences** page.
+
+{{< taglist tag="coreinterfacepref" limit="10" title="Related Articles" >}}
