@@ -1,6 +1,10 @@
 ---
 title: "NIS Screen"
+description: "Use the NIS screen to configure Network Information System (NIS) and related service options on your TrueNAS"
 weight: 30
+tags:
+- coredirectoryservices
+- corenis
 ---
 
 
@@ -20,4 +24,4 @@ Use **SAVE** save configuration settings.
 
 Use **REBUILD DIRECTORY SERVICE CACHE** to resync the cache if it becomes out of sync or fewer users than expected are available in the permissions editors. 
 
-For more information see [Setting NIS]({{< relref "/CORE/CORETutorials/DirectoryServices/NIS.md" >}}).
+{{< taglist tag="coredirectoryservices" limit="10" title="Related Articles" >}}
