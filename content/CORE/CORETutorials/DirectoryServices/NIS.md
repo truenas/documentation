@@ -1,7 +1,11 @@
 ---
 title: "NIS Screen"
+description: "Use the NIS screen to configure Network Information System (NIS) and related service options on your TrueNAS"
 weight: 30
 aliases: /core/directoryservices/nis/
+tags:
+- coredirectoryservices
+- corenis
 ---
 
 {{< toc >}}
@@ -27,8 +31,10 @@ Enter the **NIS Domain** name and list any **NIS Servers** (host names or IP add
 Press <kbd>Enter</kbd> to separate server entries.
 Configure the remaining options as needed:
 
-* **Secure Mode** : Set to have [ypbind(8)](https://www.freebsd.org/cgi/man.cgi?query=ypbind) refuse to bind to any NIS server not running as *root* on a TCP port over **1024**.
-* **Manycast** : Set for `ypbind` to bind to the fastest responding server.
-* **Enable** : Unset to disable the configuration without deleting it.
+* **Secure Mode** : Select to have [ypbind(8)](https://www.freebsd.org/cgi/man.cgi?query=ypbind) refuse to bind to any NIS server not running as *root* on a TCP port over **1024**.
+* **Manycast** : Select for `ypbind` to bind to the fastest responding server.
+* **Enable** : Leave the checkbox clear to disable the configuration without deleting it.
 
 When ready, **SAVE** the configuration.
+
+{{< taglist tag="coredirectoryservices" limit="10" title="Related Articles" >}}
