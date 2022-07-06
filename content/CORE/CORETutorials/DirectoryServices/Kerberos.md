@@ -1,7 +1,11 @@
 ---
 title: "Setting Up Kerberos"
+description: "Use the Kerberos screen to configure to configure Kerberos realms and keytabs on your TrueNAs"
 weight: 40
 aliases: /core/directoryservices/kerberos/
+tags:
+- coredirectoryservices
+- corekerberos
 ---
 
 {{< toc >}}
@@ -74,3 +78,4 @@ To instruct LDAP to use a principal from the keytab,  go to **Directory Services
 
 For more information on additional Kerberos options that are in **Directory Services > Kerberos Settings** see [Kerberos Screens]({{< relref "/CORE/UIReference/DirectoryServices/KerberosScreens.md" >}}).
 
+{{< taglist tag="coredirectoryservices" limit="10" title="Related Articles" >}}
