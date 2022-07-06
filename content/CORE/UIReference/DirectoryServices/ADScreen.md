@@ -1,6 +1,10 @@
 ---
 title: "Active Directory Screen"
+description: "Use the AD screen to configure Active Directory (AD) and related service options on your TrueNAS"
 weight: 10
+tags:
+- coredirectoryservices
+- coread
 ---
 
 
@@ -15,10 +19,10 @@ Use the **Directory Serices Active Directory** screens to set up Active Director
 
 | Setting | Description |
 |---------|-------------|
-| **Domain Name** | enter the Active Directory domain (*exmple.com*) or child domain (*sales.example.com*). Required field. |
-| **Domain Account Name** | SEnter the Active Directory administrator account name. Required field. |
-| **Domain Accunt Password** | LEnter the password for the Active Directory administrator account. Required the first time a domain is configured. After initial configuration, the password is not needed to edit, start or stop the service. |
-| **Enable (requires password or Kerberos principle** | Enable the Active Directory services. The first time this option is selected, the **Domain Account Password** must be entered. |
+| **Domain Name** | Enter the Active Directory domain (*example.com*) or child domain (*sales.example.com*). Required field. |
+| **Domain Account Name** | Enter the Active Directory administrator account name. Required field. |
+| **Domain Accunt Password** | Enter the password for the Active Directory administrator account. Required the first time a domain is configured. After initial configuration, the password is not needed to edit, start or stop the service. |
+| **Enable (requires password or Kerberos principle)** | Enable the Active Directory services. The first time this option is selected, the **Domain Account Password** must be entered. |
 
 ## Advanced Options
 
@@ -47,8 +51,4 @@ Use **EDIT IDMAP** to navigate to the **Directory Services > Idmap** screen.
 
 Use **REBUILD DIRECTORY SERVICE CACHE** to resync the cache if it becomes out of sync or fewer users than expected are available in the permissions editors. 
 
-## Additional Information
-
-[Idmap Screen]({{< relref "/CORE/UIReference/DirectoryServices/IdmapScreen.md" >}})
-
-[Setting Up Active Directory]({{< relref "/CORE/CORETutorials/DirectoryServices/ActiveDirectory.md" >}})
+{{< taglist tag="coredirectoryservices" limit="10" title="Related Articles" >}}
