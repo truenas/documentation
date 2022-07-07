@@ -16,16 +16,16 @@ jobs:
     environment: CI
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0         # Fetch all history for .GitInfo and .Lastmod
 
-      - uses: pnpm/action-setup@v2.0.1
+      - uses: pnpm/action-setup@v2.2.2
         with:
           version: 6.0.2
 
       - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2.4.13
+        uses: peaceiris/actions-hugo@v2.5.0
         with:
           hugo-version: '0.81.0'
           extended: true
