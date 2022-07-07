@@ -34,7 +34,7 @@ aliases:
 
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
-| SCALE 22.02.2.1 | Code-freeze | 07 July 2022 |
+| SCALE 22.02.2.1 | Release | 07 July 2022 |
 | SCALE 22.02.3 | Code-freeze | 20 July 2022 |
 | SCALE 22.02.3 | Internal Testing Sprints | 25 July > 05 August 2022 |
 | SCALE 22.02.3 | Tag | 08 August 2022 |
@@ -50,6 +50,22 @@ To upgrade an existing SCALE install, log in to your SCALE web interface and go 
 {{< hint warning >}}
 SCALE is developed as an appliance that uses specific Linux packages with each release. Attempting to update SCALE with `apt` or methods other than the SCALE web interface can result in a nonfunctional system.
 {{< /hint >}}
+
+## 22.02.2.1 Hotpatch
+
+**July 7, 2022**
+
+iXsystems is excited to announce the release of TrueNAS SCALE 22.02.2.1!
+This is a small hotpatch meant to address a few bugs found after release, primarily with Enclosure Management, memory usage, and the Launch Docker button.
+
+### Bug
+
+* [NAS-117061](https://ixsystems.atlassian.net/browse/NAS-117061) - netif.list\_interfaces\(\) leaks small amount of memory on scale stable
+* [NAS-117044](https://ixsystems.atlassian.net/browse/NAS-117044) - Do not expose user certificate's keys in debug
+* [NAS-117038](https://ixsystems.atlassian.net/browse/NAS-117038) - Upgrade pool menu item is not visible
+* [NAS-116909](https://ixsystems.atlassian.net/browse/NAS-116909) - LDAP fails with START\_TLS and Validate certificates.
+* [NAS-116837](https://ixsystems.atlassian.net/browse/NAS-116837) - Launch Docker Image Button disabled and other UI bugs
+* [NAS-116821](https://ixsystems.atlassian.net/browse/NAS-116821) - BUG: kernel NULL pointer dereference after SCALE 22.02.2 upgrade
 
 ## 22.02.2
 
