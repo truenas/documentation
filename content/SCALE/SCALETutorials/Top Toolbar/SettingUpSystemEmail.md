@@ -3,6 +3,8 @@ title: "Setting Up System Email"
 weight: 40
 tags:
 - scaleemail
+aliases:
+ - /scale/gettingstarted/scalesystememail/
 ---
 
 {{< toc >}}
