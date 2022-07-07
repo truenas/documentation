@@ -4,6 +4,8 @@ geekdocCollapseSection: true
 tags:
 - scaletaskmgr
 - scalejobs
+aliases:
+ - /scale/scaleuireference/scaletopbar/
 weight: 4
 ---
 
