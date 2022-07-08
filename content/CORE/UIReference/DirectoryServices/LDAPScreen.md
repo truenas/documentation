@@ -3,17 +3,17 @@ title: "LDAP Screen"
 description: "Use the LDAP screen to configure Lightweight Directory Access Protocol (LDAP) server settings on your TrueNAS"
 weight: 20
 tags:
-- coredirectoryservices
 - coreldap
+- coreidmap
 ---
 
-Use the **Directory Services LDAP** screen to configure LDAP server settings on your TrueNAS.
+Use the **Directory Services LDAP** screen to configure LDAP server settings on your TrueNAS. Lightweight Directory Access Protocol (LDAP) is an industry standard for directory information services deployed over an Internet Protocol (IP) network.
 
 ![DirectoryServicesLDAPScreen](/images/CORE/13.0/DirectoryServicesLDAPScreen.png "Directory Services LDAP Screen")
 
 Use **SAVE** to save settings.
 
-Use **EDIT IDMAP** to navigate to the **Directory Services > Idmap** screen. 
+Use **ADVANCED OPTIONS** to display additional **LDAP** configuration options. 
 
 Use **REBUILD DIRECTORY SERVICE CACHE** to resync the cache if it becomes out of sync or fewer users than expected are available in the permissions editors.
 
@@ -48,4 +48,12 @@ Use **REBUILD DIRECTORY SERVICE CACHE** to resync the cache if it becomes out of
 | **Auxiliary Parameters** | Enter for [nslcd.conf](https://arthurdejong.org/nss-pam-ldapd/nslcd.conf.5). |
 | **Schema** | Select the Samba schema from the dropdown list. Options are **RFC2307** or **RFC2307BIS**. |
 
-{{< taglist tag="coredirectoryservices" limit="10" title="Related Articles" >}}
+Use **SAVE** to save settings and return to the **LDAP** screen.
+
+Use **BASIC OPTIONS** to return to the **LDAP** display of basic options only.
+
+Use **EDIT IDMAP** to navigate to the **Directory Services > Idmap** screen.
+
+{{< taglist tag="coreldap" limit="10" >}}
+
+{{< taglist tag="coreidmap" limit="10" title="Related Idmap Articles" >}}
