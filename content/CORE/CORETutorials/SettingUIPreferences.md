@@ -35,4 +35,4 @@ Click **CREATE NEW THEME** to start configuring the theme.
 3. Go to the **GENERAL** tab and choose the primary, accent, and topbar colors for the theme. These options are based off the color selections you made in the **COLORS** tab.
 4. Name and label the theme and click **SUBMIT** to save it and add it to the options on the **Preferences** page.
 
-{{< taglist tag="coreinterfacepref" limit="10" title="Related Articles" >}}
+{{< taglist tag="coreinterfacepref" limit="10" >}}
