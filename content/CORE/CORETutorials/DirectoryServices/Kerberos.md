@@ -4,7 +4,6 @@ description: "Use the Kerberos screen to configure to configure Kerberos realms 
 weight: 40
 aliases: /core/directoryservices/kerberos/
 tags:
-- coredirectoryservices
 - corekerberos
 ---
 
@@ -68,14 +67,10 @@ Specifying cryptographic types creates a keytab with sufficient privileges to gr
 
 After generating the keytab, add it to the TrueNAS system in **Directory Services > Kerberos Keytabs > Add Kerberos Keytab**.
 
-To instruct the Active Directory service to use the keytab, go to **Directory Services > Active Directory** and click **Advanced Options**. Select the installed keytab using the **Kerberos Principal** drop-down.
+To instruct the Active Directory service to use the keytab, go to **Directory Services > Active Directory** and click **Advanced Options**. Select the installed keytab using the **Kerberos Principal** dropdown list.
 
 When using a keytab with Active Directory, **username** and **userpass** in the keytab should match the **Domain Account Name** and **Domain Account Password** fields in **Directory Services > Active Directory**.
 
-To instruct LDAP to use a principal from the keytab,  go to **Directory Services > Active Directory** and click **Advanced Options**, then select the installed keytab using the **Kerberos Principal** drop-down.
+To instruct LDAP to use a principal from the keytab,  go to **Directory Services > Active Directory** and click **Advanced Options**, then select the installed keytab using the **Kerberos Principal** dropdown list.  
 
-## Kerberos Settings
-
-For more information on additional Kerberos options that are in **Directory Services > Kerberos Settings** see [Kerberos Screens]({{< relref "/CORE/UIReference/DirectoryServices/KerberosScreens.md" >}}).
-
-{{< taglist tag="coredirectoryservices" limit="10" title="Related Articles" >}}
+{{< taglist tag="corekerberos" limit="10" >}}
