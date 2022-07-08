@@ -14,7 +14,7 @@ tags:
 | Name | Description |
 |------|------|
 | **Dismiss** | Dismisses a single alert. |
-| **Re-Open** | Re-opens a recently-dismissed alert. |
+| **Re-Open** | Displays after dismissing an alert and if that alert is still active on the system. Click to re-open the alert. |
 | **Dismiss All Alerts** | Dismisses all alerts. |
 | **Re-Open All Alerts** | Re-opens dismissed alerts that are still active. |
 
