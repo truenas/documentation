@@ -1,6 +1,6 @@
 ---
 title: "Task Manager"
-description: "Use the Task Manager screen to display a list of tasks performed by your TrueNAS"
+description: "Use the Task Manager screen to display a list of tasks performed by your TrueNAS and to view logs related to system tasks."
 weight: 14
 aliases: [/administration/taskmanager/]
 tags:
@@ -19,4 +19,4 @@ Tasks with log file output have a **View Logs** button to show the log files.
 
 Click **CLOSE** or anywhere outside the **Task Manager** dialog to close it, or press <kbd>Esc</kbd>.
 
-{{< taglist tag="coretopmenu" limit="10" title="Related Articles" >}}
+{{< taglist tag="coretopmenu" limit="10" >}}
