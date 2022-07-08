@@ -4,7 +4,6 @@ description: "Use the LDAP screen to configure Lightweight Directory Access Prot
 weight: 20
 aliases: /core/directoryservices/ldap/
 tags:
-- coredirectoryservices
 - coreldap
 ---
  
@@ -61,4 +60,4 @@ Set **Samba Schema** if LDAP authentication for SMB shares is required and the L
 If **Samba Schema** is set, select the type of schema from the **Schema** dropdown.
 {{< /hint >}}
 
-{{< taglist tag="coredirectoryservices" limit="10" title="Related Articles" >}}
+{{< taglist tag="coreldap" limit="10" >}}
