@@ -3,7 +3,6 @@ title: "Kerberos Screens"
 description: "Use the Kerberos screen to configure to configure Kerberos realms and keytabs on your TrueNAs"
 weight: 40
 tags:
-- coredirectoryservices
 - corekerberos
 ---
 
@@ -73,4 +72,4 @@ Use the  **Directory Services > Kerberos Settings** screen to enter an additiona
 | **Appdefaults Auxiliary Parameters** | Define any additional settings for use by some Kerberos applications. The available settings and syntax are listed in the [[appdefaults] section of krb.conf(5)](https://web.mit.edu/kerberos/krb5-1.12/doc/admin/conf_files/krb5_conf.html#appdefaults). |
 | **Libdefaults Auxiliary Parameters** | Define any settings used by the Kerberos library. The available settings and their syntax are listed in the [[libdefaults] section of krb.conf(5)](https://web.mit.edu/kerberos/krb5-1.12/doc/admin/conf_files/krb5_conf.html#libdefaults). |
 
-{{< taglist tag="coredirectoryservices" limit="10" title="Related Articles" >}}
+{{< taglist tag="corekerberos" limit="10" >}}
