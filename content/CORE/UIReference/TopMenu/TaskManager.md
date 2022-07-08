@@ -1,6 +1,6 @@
 ---
 title: "Task Manager"
-description: "Use the Task Manager screen to display a list of tasks performed by your TrueNAS"
+description: "Use the Task Manager screen to display a list of tasks performed by your TrueNAS."
 weight: 10
 tags:
 - coretopmenu
@@ -20,4 +20,4 @@ The **Task Manager** displays a list of tasks performed by the TrueNAS system st
 | **Progress** | Column header for tasks that indicates the percent complete progress for the the task from start to complete. Click **Progress** to sort by this column. |
 | **CLOSE** | Closes the **Task Manager** dialog. Click anywhere off the dialog or use the <kbd>Esc</kbd> to close this dialog. |
 
-{{< taglist tag="coretopmenu" limit="10" title="Related Articles" >}}
+{{< taglist tag="coretopmenu" limit="10" >}}
