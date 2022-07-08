@@ -1,11 +1,11 @@
 ---
-title: "NIS Screen"
-description: "Use the NIS screen to configure Network Information System (NIS) and related service options on your TrueNAS"
+title: "Setting up NIS"
+description: "Use the NIS screen to configure Network Information System (NIS) on your TrueNAS"
 weight: 30
 aliases: /core/directoryservices/nis/
 tags:
-- coredirectoryservices
 - corenis
+- coreldap
 ---
 
 {{< toc >}}
@@ -37,4 +37,4 @@ Configure the remaining options as needed:
 
 When ready, **SAVE** the configuration.
 
-{{< taglist tag="coredirectoryservices" limit="10" title="Related Articles" >}}
+{{< taglist tag="corenis" limit="10" >}}  
