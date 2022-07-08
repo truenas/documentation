@@ -1,6 +1,6 @@
 ---
 title: "Interface Preferences"
-description: "Use the Interface Preferences screen to display a list of general preferences for your TrueNAS"
+description: "Use the Interface Preferences screen to display a list of general preferences for your TrueNAS."
 weight: 30
 aliases: /core/administration/uipreferences/
 tags:
@@ -94,4 +94,4 @@ tags:
 | **Buttons** | tab | Shows examples of web interface buttons with the current theme settings applied. |
 | **Forms** | tab | Shows examples of web interface form options with the current theme settings applied. |
 
-{{< taglist tag="coretopmenu" limit="10" title="Related Articles" >}}
+{{< taglist tag="coretopmenu" limit="10" >}}
