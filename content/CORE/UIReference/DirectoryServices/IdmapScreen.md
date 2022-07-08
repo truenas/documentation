@@ -1,15 +1,15 @@
 ---
 title: "Idmap Screen"
-description: "Use the Idmap screen to configure Identity Mapping (Idmap) and related service options on your TrueNAS"
+description: "Use the Idmap screen to configure Identity Mapping (Idmap) on your TrueNAS"
 weight: 10
 tags:
-- coredirectoryservices
 - coreidmap
+- coread
 ---
 
 ## Idmap Screen
 
-The **Edit Idmap** screen displays after clicking **Edit IDMAP** on the **Active Directory Advanced Options** screen. It lists all domains configured on the TrueNAS.
+The **Edit Idmap** screen displays after clicking **Edit IDMAP** on the **Active Directory > Advanced Options** screen. It lists all domains configured on the TrueNAS.
 
 ![DirectoryServicesldmapScreenn](/images/CORE/13.0/DirectoryServicesldmapScreen.png "Directory Services Idmap Screen")
 
@@ -34,4 +34,6 @@ Use **SAVE** to save settings and return to the **Idmap** screen.
 
 Use **CANCEL** to exit without saving and return to the **Idmap** screen.
 
-{{< taglist tag="coredirectoryservices" limit="10" title="Related Articles" >}}
+{{< taglist tag="coreidmap" limit="10" >}}
+
+{{< taglist tag="coread" limit="10" title="Related Articles" >}}
