@@ -18,7 +18,7 @@ tags:
 |--------|-------|-------------|
 | **Choose Theme** | dropdown list | Choose a preferred theme. Prebuilt and custom created themes are visible here. |
 | **Prefer buttons with icons only** | checkbox | Preserve screen space with icons and tooltips instead of text labels. |
-| **Enable Password Toggle** | checkbox | When set, an eye icon appears next to password fields. Clicking the icon reveals the password. |
+| **Enable Password Toggle** | checkbox | Select to make an eye icon appear next to password fields. Click the icon to reveal the password. |
 | **Reset Table Columns to Default** | checkbox | Reset all tables to display the system default columns. |
 | **Retro Logo** | checkbox | Revert branding back to FreeNAS. |
 | **Reset All Preferences to Default** | checkbox | Reset all user preferences to their default values. (Custom themes are preserved) |
