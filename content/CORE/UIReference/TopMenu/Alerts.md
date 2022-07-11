@@ -18,7 +18,7 @@ The **Alert Notifications** panel displays system alerts and provides options to
 | **Dismiss** | Dismisses a single alert. |
 | **Re-Open** | Re-opens a recently-dismissed alert. |
 | **Dismiss All Alerts** | Dismisses all alerts. |
-| **Re-Open All Alerts** | Re-opens dismissed alerts that are still active. |
+| **Re-Open All Alerts** | Displays at the bottom of the panel if you dismiss more than one alert. Click to re-open all dismissed alerts if they are still active. |  
 
 ## Alert Levels
 
