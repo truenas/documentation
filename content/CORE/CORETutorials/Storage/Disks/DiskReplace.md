@@ -19,6 +19,10 @@ Another disk of the same or greater capacity is required to replace a failed dis
 This disk must be installed in the TrueNAS system and not part of an existing storage pool.
 Any data on the replacement disk is wiped as part of the process.
 
+{{< expand "Can I replace a disk in a GELI-encrypted (Legacy) pool?" "v" >}}
+Yes. In a GELI-Encrypted (Legacy) pool TrueNAS will still implement GELI-encryption during a disk replacement. That will continue for the "remaining life" of the pool.
+{{< /expand >}}
+
 The TrueNAS **Dashboard** shows when a disk failure degrades a pool.
 
 ![DashboardPoolDegraded](/images/CORE/12.0/DashboardPoolDegraded.png "Degraded Pool on the Dashboard")
@@ -51,10 +55,6 @@ Attempting to replace a heavily degraded disk without off-lining it first result
 {{< expand "The offline failed?" "v" >}}
 If the offline operation fails with a **Disk offline failed - no valid replicas** message, go to **Storage > Pools**, click the <i class="material-icons" aria-hidden="true" title="Settings">settings</i> for the degraded pool, and select **Scrub Pool**.
 When the scrub operation finishes, reopen the pool **Status** and try to offline the disk again.
-{{< /expand >}}
-
-{{< expand "Can I replace a disk in a GELI-encrypted (Legacy) pool?" "v" >}}
-Yes. In a GELI-Encrypted (Legacy) pool TrueNAS will still implement GELI-encryption during a disk replacement. That will continue for the "remaining life" of the pool.
 {{< /expand >}}
 
 When the disk status shows as **Offline**, physically remove the disk from the system.
