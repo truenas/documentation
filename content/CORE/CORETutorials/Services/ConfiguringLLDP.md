@@ -1,6 +1,6 @@
 ---
 title: "Configuring LLDP"
-description: "Configuring Link Layer Discovery Protocol (LLDP)"
+description: "This article provides information on how to configure Link Layer Discovery Protocol (LLDP) on your TrueNAS."
 weight: 50
 aliases: /core/services/lldp/
 tags:
@@ -15,8 +15,8 @@ To configure LLDP, go to the **Services** page, find the **LLDP** entry, and cli
 
 ![ServicesLLDPOptions](/images/CORE/12.0/ServicesLLDPOptions.png "LLDP Service Options")
 
-Select **Interface Description** and enter a **Country Code**. The location of the system is optional.
+Select **Interface Description** and enter a **Country Code**. The location of the system is optional. Click **SAVE** to save the current selections and return to the **Services** screen.
 
-Turn on the LLDP service on.
+Click the toggle on the **Services** screen to turn the LLDP service on. The toggle turns blue when it is running.
 
 {{< taglist tag="corelldp" limit="10" title="Related Articles" >}}
