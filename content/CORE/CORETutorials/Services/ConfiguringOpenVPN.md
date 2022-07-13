@@ -1,6 +1,6 @@
 ---
 title: "Configuring OpenVPN"
-description: "How to configure OpenVPN"
+description: "This article provices information on how to configure Open Virtual Private Network (OpenVPN) services on your TrueNAS."
 weight: 70
 aliases: /core/services/openvpn/
 tags:
@@ -9,11 +9,11 @@ tags:
 
 {{< toc >}}
 
-A virtual private network (VPN) is an extension of a private network over public resources.
-It allows clients to securely connect to a private network even when they are remotely using a public network.
-TrueNAS provides [OpenVPN](https://openvpn.net/) as a system level service to provide VPN server or client functionality.
-This means TrueNAS can act as a primary VPN server to allow remote clients access to data stored on the system using a single TCP or UDP port.
-Alternately, TrueNAS can integrate into a private network, even when the system is in a separate physical location or only has access to publicly visible networks.
+## About OpenVPN
+
+A virtual private network (VPN) is an extension of a private network over public resources. It allows remote clients on a public network to access a private network via a secure connection. TrueNAS provides [OpenVPN](https://openvpn.net/) as a system level service to provide VPN server or client functionality, and can act as a primary VPN server to allow remote clients access to data stored on the system using a single TCP or UDP port. TrueNAS can also integrate into a private network, even when the system is in a separate physical location or only has access to publicly visible networks.
+
+## Obtaining a Public Key Infrastructure (PKI)
 
 Before configuring TrueNAS as either an OpenVPN server or client, you need an existing public key infrastructure (PKI) with [certificates]({{< relref "Certificates.md" >}}) and [certificate authorities]({{< relref "CAs.md" >}}) created in or imported to TrueNAS.
 {{< expand "What does this do?" "v" >}}
@@ -21,12 +21,14 @@ This allows TrueNAS to authenticate with clients or servers by confirming networ
 To read more about the required PKI for OpenVPN, see the [OpenVPN PKI Overview](https://community.openvpn.net/openvpn/wiki/HOWTO?__cf_chl_jschl_tk__=92022277e38bff707b1684f49a2af61f5eb4c632-1605712222-0-AQxKxUAlHKMcfHHNdSMOLL25Lr3e8icKHu3CgjMFRe6GXS1Z72EgXMieNrGaBdWa0m3R5CEZcxwGdwhgaRO392FTivdOQis5Pa2Bm-4jEzydUBTqhx_F4XWN7ujVee5CUxG6AoyOet91SaWM-siqV0_d0ppGnSsfwX9HFOmKuAnJexAjqpofUlP6xjru4Qujw72uR-yUT3fuFDMyukAAtEAP_zPXtewdS_kcSC5eSdf-RC6V8T_QZ2UT6GfqxxSr5shwe0rFkNinTCOKLk_67UIU2zEkpuiQ8C7p3ysh1DS_ONAzR2pfwdgetKm3HiBJ38C86956W6D8-mpOulfP26E#Overview).
 {{< /expand >}}
 
+## Configuring OpenVPN: Process Overview
+
 The general process to configure OpenVPN (server or client) on TrueNAS is to:
 * Select the networking credentials
 * Set the connection detail
 * Choose any additional security or protocol options
 
-## Configuring the OpenVPN Client
+### Configuring OpenVPN Client
 
 Go to the **Services** page and find the **OpenVPN Client** entry.
 Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to configure the service.
@@ -46,7 +48,7 @@ This is enabled by default to allow the OpenVPN client and server to run concurr
 Finally, review the [Security Options](#security-options) and choose settings that meet your network security requirements.
 When the OpenVPN server is using TLS Encryption, copy the static TLS encryption key and paste into the **TLS Crypt Auth** field.
 
-## OpenVPN Server
+### OpenVPN Server
 
 Go to the **Services** page and find the **OpenVPN Server** entry.
 Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to configure the service.
@@ -83,17 +85,17 @@ After configuring and saving your OpenVPN server settings, generate client confi
 You need the client certificate from the client system previously imported to that system.
 To generate the configuration file, click **DOWNLOAD CLIENT CONFIG** and select the **Client Certificate**.
 
-### Connection Settings
+## Connection Settings
 
 See [OpenVPN Screens]({{< relref "/CORE/UIReference/Services/OpenVPNScreen.md" >}}) for more information on the client and server settings.
 
-### Security Options
+## Security Options
 
 Because using a VPN involves connecting to a private network while still sending data over less secure public resources, OpenVPN includes several security options.
 While not required, these security options help protect the data sent into or out of the private network.
 
-* **Authentication Algorithm**: This is used to validate packets that are sent over the network connection. Your network environment might require a specific algorithm. If no specific algorithm is required, *SHA1 HMAC* is a good standard algorithm to use.
-* **Cipher**: This is an algorithm to encrypt data packets sent through the connection. While not required, choosing a *Cipher* can increase connection security. You might need to verify which ciphers are required for your networking environment. If there are no specific cipher requirements, *AES-256-GCM* is a good default choice.
+* **Authentication Algorithm**: This is used to validate packets that are sent over the network connection. Your network environment might require a specific algorithm. If no specific algorithm is required, SHA1 HMAC is a good standard algorithm to use.
+* **Cipher**: This is an algorithm to encrypt data packets sent through the connection. While not required, choosing a cipher can increase connection security. You might need to verify which ciphers are required for your networking environment. If there are no specific cipher requirements, AES-256-GCM is a good default choice.
 * **TLS Encryption**: When **TLS Crypt Auth Enabled** is set, all TLS handshake messages are encrypted to add another layer of security. This requires a static key that is shared between OpenVPN server and clients.
 
 ## Service Activation
@@ -102,6 +104,6 @@ When finished configuring the server or client service, click **SAVE**.
 Start the service by clicking the related toggle in **Services**.
 To check the current state of the service, hover over the toggle.
 
-Setting **Start Automatically** means the service starts whenever TrueNAS completes booting and the network and data pools are running.
+Selecting **Start Automatically** means the service starts whenever TrueNAS completes booting and the network and data pools are running.
 
-{{< taglist tag="coreopenvpn" limit="10" title="Related OpenVPN Articles" >}}
+{{< taglist tag="coreopenvpn" limit="10" >}}
