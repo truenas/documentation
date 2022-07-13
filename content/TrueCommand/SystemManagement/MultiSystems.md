@@ -7,7 +7,7 @@ weight: 30
 
 TrueCommand has several multisystem management capabilities with more in development for future releases.
 
-TrueCommand 2.0 added cluster capability. It can also apply TrueNAS configurations to multiple systems at once. 
+TrueCommand 2.0 added cluster capability. It can also apply TrueNAS configurations to multiple systems at once.
 
 ## Config Management
 
@@ -76,9 +76,3 @@ The **Storage** tab provides information about the **Drives**, such as **Name**,
 
 With TrueCommand, you can configure iSCSI volumes on multiple systems simultaneously.
 Refer to the [iSCSI section]({{< relref "iscsimanagement.md" >}}) for more information.
-
-## Cluster Management
-
-By definition, clusters span across multiple systems.
-TrueCommand instances with three or more connected TrueNAS SCALE systems can create clustered volumes.
-Refer to the [Clustering section]({{< relref "TrueCommand/Clustering/_index.md" >}}) for more information.

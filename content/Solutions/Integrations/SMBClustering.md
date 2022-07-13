@@ -1,9 +1,13 @@
 ---
 title: Clustering and Sharing SCALE Volumes with TrueCommand
 description: Requirements and process description for using TrueCommand to cluster and share data from TrueNAS SCALE systems.
-weight:50
+weight: 50
 tags:
  - scaleclustering
+aliases:
+ - /truecommand/clustering/clustervolumes/
+ - /truecommand/clustering/manageclusters/
+ - /truecommand/clustering/mountingclustervolumes/
 ---
 
 {{< toc >}}
@@ -13,7 +17,7 @@ These clusters can then create new volumes within the existing SCALE storage poo
 Data stored in a clustered volume is shared between the clustered systems and can add additional redundancy or performance to the environment.
 Currently, data stored in a clustered volume is shareable using Active Directory (AD) and the SMB protocol.
 
-{{< hint warning >}}
+{{< hint danger >}}
 This feature is considered experimental and should not be used in a production environment or for handling critical data!
 {{< /hint >}}
 
@@ -73,7 +77,7 @@ Repeat this procedure for each SCALE system to be clustered.
 
 ### TrueCommand Container
 
-1. If not already completed, [deploy TrueCommand 2.2 or later in a Docker container]({{< relref "content/TrueCommand/TCGettingStarted/Install/_index.md" >}}).
+1. If not already completed, [deploy TrueCommand 2.2 or later in a Docker container]({{< relref "/content/TrueCommand/TCGettingStarted/Install/_index.md" >}}).
    The system used for the TrueCommand container cannot be any of the TrueNAS SCALE systems intended for the cluster.
 2. In a browser, enter the TrueCommand IP address and create the first user. Log in with these user credentials to see the **Dashboard**.
 3. Click **New System** and add the credentials for the first SCALE system. Use the SCALE **root** account password. When ready, click **ADD AND CONTINUE** and repeat the process for each SCALE system intended for the cluster.
@@ -123,11 +127,11 @@ The command returns the list of SCALE IP addresses and current connection status
 
    ### Volume Types
 
-   {{< expand "Click to expand" "v" >}}
-   * Distributed - Distribute files across the bricks in the volume. You can use distributed volumes where the requirement is to scale storage and the redundancy is either not important or is provided by other hardware/software layers.
-   * Replicated - Replicate files across bricks in the volume. You can use replicated volumes in environments where high-availability and high-reliability are critical.
-   * Distributed Replicated - Distribute files across replicated bricks in the volume. You can use distributed replicated volumes in environments where the requirement is to scale storage and high-reliability is critical. Distributed replicated volumes also offer improved read performance in most environments. Requires setting an additional **Replica Count**
-   * Dispersed - Dispersed volumes are based on erasure codes, providing space-efficient protection against disk or server failures. It stores an encoded fragment of the original file to each brick in a way that only a subset of the fragments is needed to recover the original file. The number of bricks that can be missing without losing access to data is configured by the administrator on volume creation time. Requires setting an additional **Redundancy Count**.
+   {{< expand "Current Types (click to expand)" "v" >}}
+   * **Distributed** - Distribute files across the bricks in the volume. You can use distributed volumes where the requirement is to scale storage and the redundancy is either not important or is provided by other hardware/software layers.
+   * **Replicated** - Replicate files across bricks in the volume. You can use replicated volumes in environments where high-availability and high-reliability are critical.
+   * **Distributed** Replicated - Distribute files across replicated bricks in the volume. You can use distributed replicated volumes in environments where the requirement is to scale storage and high-reliability is critical. Distributed replicated volumes also offer improved read performance in most environments. Requires setting an additional **Replica Count**
+   * **Dispersed** - Dispersed volumes are based on erasure codes, providing space-efficient protection against disk or server failures. It stores an encoded fragment of the original file to each brick in a way that only a subset of the fragments is needed to recover the original file. The number of bricks that can be missing without losing access to data is configured by the administrator on volume creation time. Requires setting an additional **Redundancy Count**.
    {{< /expand >}}
 
 3. After configuring the **Type**, enter a **Brick Size** based on the available storage from the clustered pools and your storage requirements.
@@ -148,9 +152,9 @@ Share a cluster volume by going to the TrueCommand **Clusters** screen, finding 
 Click **CREATE SHARE**:
 1. Enter a unique **Name** for the share.
 2. Choose an **ACL** to apply to the share.
-   {{< expand "click to expand" "v" >}}
-   * POSIX_OPEN - Template that grants read, write, and execute permissions to all users.
-   * POSIX_RESTRICTED - Template that grants read, write, and execute to owner and group, but not other. The template may optionally include the special-purpose 'builtin_users' and 'builtin_administrators' groups as well as Domain Users and Domain Admins groups in Active Directory environments.
+   {{< expand "Current Options (click to expand)" "v" >}}
+   * **POSIX_OPEN** - Template that grants read, write, and execute permissions to all users.
+   * **POSIX_RESTRICTED** - Template that grants read, write, and execute to owner and group, but not other. The template may optionally include the special-purpose 'builtin_users' and 'builtin_administrators' groups as well as Domain Users and Domain Admins groups in Active Directory environments.
    {{< /expand >}}
 3. Setting **Readonly** prevents users from making any changes to the cluster volume contents.
 4. Click **CONFIRM** to create the SMB share and make it immediately active.
@@ -165,8 +169,10 @@ Attempting to manage the share from the SCALE UI is not recommended.
 There are many different ways to access an SMB share, but this article demonstrates using the Windows 10 File Explorer.
 
 1. From a Windows 10 system that is connected to the same network as the clustering environment, open File Explorer.
-2. In the Navigation bar, clear the contents and enter the `\\` followed by the IP address or hostname of one of the clustered SCALE systems. Press <kbd>Enter</kbd>.
+2. In the Navigation bar, clear the contents and enter `\\` followed by the IP address or hostname of one of the clustered SCALE systems. Press <kbd>Enter</kbd>.
 3. When prompted, enter user name and password for an Active Directory user account. Be sure to enter the Active Directory system name before the user account name (example: `AD01\sampuser`).
 4. Browse to the cluster volume folder to view or modify files.
 
 ## See Also
+
+{{< taglist tag="scaleclustering" limit="10" title=" " >}}
