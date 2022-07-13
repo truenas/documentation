@@ -20,7 +20,7 @@ This disk must be installed in the TrueNAS system and not part of an existing st
 Any data on the replacement disk is wiped as part of the process.
 
 {{< expand "Can I replace a disk in a GELI-encrypted (Legacy) pool?" "v" >}}
-Yes. In a GELI-Encrypted (Legacy) pool TrueNAS will still implement GELI-encryption during a disk replacement. That will continue for the "remaining life" of the pool.
+Although GELI-encryption has been depreciated, TrueNAS will still implement GELI-encryption during a "GELI-Encrypted (Legacy) pool" disk replacement. That will continue for the remaining life of the pool.
 {{< /expand >}}
 
 The TrueNAS **Dashboard** shows when a disk failure degrades a pool.
