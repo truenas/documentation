@@ -53,6 +53,10 @@ If the offline operation fails with a **Disk offline failed - no valid replicas*
 When the scrub operation finishes, reopen the pool **Status** and try to offline the disk again.
 {{< /expand >}}
 
+{{< expand "Can I replace a disk in a GELI-encrypted (Legacy) pool?" "v" >}}
+Yes. In a GELI-Encrypted (Legacy) pool TrueNAS will still implement GELI-encryption during a disk replacement. That will continue for the "remaining life" of the pool.
+{{< /expand >}}
+
 When the disk status shows as **Offline**, physically remove the disk from the system.
 
 ![StoragePoolsStatusOffline](/images/CORE/12.0/StoragePoolsStatusOffline.png "Disk Offline Status")
