@@ -2,36 +2,36 @@
 
 | Name | Description |
 |------|-------------|
-| Path | Browse to the path to be copied. FreeBSD file path limits apply. Other operating systems can have different limits which might affect how they can be used as sources or destinations. |
-| User | Select the user to run the rsync task. The user selected must have permissions to write to the specified directory on the remote host. |
-| Direction | Direct the flow of data to the remote host. During a *push*, the dataset transfers to the remote module. During a *pull*, the dataset stores files from the *remote* system. |
-| Description | Enter a description of the rsync task. |
+| **Path** | Browse to the path to be copied. FreeBSD file path limits apply. Other operating systems can have different limits which might affect how they can be used as sources or destinations. |
+| **User** | Select the user to run the rsync task. The user selected must have permissions to write to the specified directory on the remote host. |
+| **Direction** | Direct the flow of data to the remote host. During a *push*, the dataset transfers to the remote module. During a *pull*, the dataset stores files from the *remote* system. |
+| **Description** | Enter a description of the rsync task. |
 
 **Schedule**
 
 | Name | Description |
 |------|-------------|
-| Schedule | Select a schedule preset or choose Custom to open the advanced scheduler. |
-| Recursive | Set to include all subdirectories of the specified directory. When unset, only the specified directory is included. |
+| **Schedule** | Select a schedule preset or choose Custom to open the advanced scheduler. |
+| **Recursive** | Set to include all subdirectories of the specified directory. When unset, only the specified directory is included. |
 
 **Remote**
 
 | Name | Description |
 |------|-------------|
-| Remote Host | Enter the IP address or hostname of the remote system that will store the copy. Use the format username@remote_host if the username differs on the remote host. |
-| Rsync Mode | Choose to either use a custom-defined remote module of the rsync server or to use an SSH configuration for the rsync task. |
+| **Remote Host** | Enter the IP address or hostname of the remote system that will store the copy. Use the format username@remote_host if the username differs on the remote host. |
+| **Rsync Mode** | Choose to either use a custom-defined remote module of the rsync server or to use an SSH configuration for the rsync task. |
 
 **More Options**
 
 | Name | Description |
 |------|-------------|
-| Times | Set to preserve modification times of files. |
-| Compress | Set to reduce the size of data to transmit. Recommended for slow connections. |
-| Archive | When set, rsync is run recursively, preserving symlinks, permissions, modification times, group, and special files. When run as root, owner, device files, and special files are also preserved. Equivalent to passing the flags `-rlptgoD` to rsync. |
-| Delete | Delete files in the destination directory that do not exist in the source directory. |
-| Quiet | Set to suppress informational messages from the remote server. |
-| Preserve Permissions | Set to preserve original file permissions. This is useful when the user is set to root. |
-| Preserve Extended Attributes | [Extended attributes](https://en.wikipedia.org/wiki/Extended_file_attributes) are preserved, but must be supported by both systems. |
-| Delay Updates | Set to save the temporary file from each updated file to a holding directory until the end of the transfer when all transferred files are renamed into place. |
-| Auxiliary Parameters | Additional [rsync(1)](https://rsync.samba.org/ftp/rsync/rsync.html) options to include. Separate entries by pressing Enter. Note: The "*" character must be escaped with a backslash (\\*.txt) or used inside single quotes ('*.txt'). |
-| Enabled | Enable this rsync task. Unset to disable this rsync task without deleting it. |
+| **Times** | Set to preserve modification times of files. |
+| **Compress** | Set to reduce the size of data to transmit. Recommended for slow connections. |
+| **Archive** | When set, rsync is run recursively, preserving symlinks, permissions, modification times, group, and special files. When run as root, owner, device files, and special files are also preserved. Equivalent to passing the flags `-rlptgoD` to rsync. |
+| **Delete** | Delete files in the destination directory that do not exist in the source directory. |
+| **Quiet** | Set to suppress informational messages from the remote server. |
+| **Preserve Permissions** | Set to preserve original file permissions. This is useful when the user is set to root. |
+| **Preserve Extended Attributes** | [Extended attributes](https://en.wikipedia.org/wiki/Extended_file_attributes) are preserved, but must be supported by both systems. |
+| **Delay Updates** | Set to save the temporary file from each updated file to a holding directory until the end of the transfer when all transferred files are renamed into place. |
+| **Auxiliary Parameters** | Additional [rsync(1)](https://rsync.samba.org/ftp/rsync/rsync.html) options to include. Separate entries by pressing Enter. Note: The "*" character must be escaped with a backslash (\\*.txt) or used inside single quotes ('*.txt'). |
+| **Enabled** | Enable this rsync task. Unset to disable this rsync task without deleting it. |
