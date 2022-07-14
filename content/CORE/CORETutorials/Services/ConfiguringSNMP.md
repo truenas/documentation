@@ -1,6 +1,6 @@
 ---
 title: "Configuring SNMP"
-description: "SNMP service options"
+description: "This article provides information on how to configure Simple Network Management Protocol (SNMP) on your TrueNAS."
 weight: 120
 aliases: /core/services/snmp/
 tags:
@@ -26,4 +26,4 @@ Here is a sample of the directory contents:
 
 ![ServicesSNMPMibSample](/images/CORE/12.0/ServicesSNMPMibSample.png "Services SNMP Mib Sample")
 
-{{< taglist tag="coresnmp" limit="10" title="Related SNMP Articles" >}}
+{{< taglist tag="coresnmp" limit="10" >}}
