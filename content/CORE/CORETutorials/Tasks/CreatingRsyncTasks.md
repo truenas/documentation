@@ -1,6 +1,9 @@
 ---
 title: "Creating Rsync Tasks"
+description: "This article provides information on how to create an remote sync (rsync) task on your TrueNAS."
 weight: 30
+tags:
+- corersync
 ---
 
 {{< toc >}}
@@ -126,3 +129,5 @@ You can still run the rsync task by going to **Tasks > Rsync Tasks** and clickin
 The rsync task does not work when the related system service is off.
 To turn the rsync service on, go to **Services** and toggle **rsync**.
 See [ConfiguringRsync]({{< relref "ConfiguringRsync.md" >}}) for more information on rsync configuration and module creation.
+
+{{< taglist tag="corersync" limit="10" >}}
