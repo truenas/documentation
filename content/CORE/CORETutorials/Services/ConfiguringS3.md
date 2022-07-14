@@ -1,6 +1,6 @@
 ---
 title: "Configuring S3"
-description: "How to start a local S3 service on TrueNAS"
+description: "This article provides information on how to start a local S3 service on your TrueNAS."
 weight: 100
 aliases: /core/services/s3/
 tags:
@@ -24,7 +24,7 @@ Having large numbers of files (>100K for instance) in a single bucket with no su
 
 ## Setting up the S3 service
 
-Go to the **Services** page and find the **S3** on the list.
+Go to the **Services** page and find **S3** on the list.
 
 ![ServicesS3Enable](/images/CORE/12.0/ServicesS3Enable.png "Services S3 Enable")
 
@@ -42,10 +42,10 @@ The IP address **0.0.0.0** allows the service to listen on any IPv4 address.
 Select the TrueNAS IP address to constrain it to a specific network.
 
 Select a clean dataset. 
-If there is no dataset, click **CANCEL** and then go to **Storage > Pools** and clicking <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> > **Add Dataset**.
+If there is no dataset, click **CANCEL** and then go to **Storage > Pools** and clicking <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> **> Add Dataset**.
 Files are managed by MinIO as objects, and cannot be mixed with other dataset files.
 
 Configure the rest of the options as needed in your environment.
 Make sure to start the service after saving any changes.
 
-{{< taglist tag="cores3" limit="10" title="Related S3 Articles" >}}
+{{< taglist tag="cores3" limit="10" >}}
