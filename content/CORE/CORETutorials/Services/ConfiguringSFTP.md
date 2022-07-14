@@ -1,6 +1,6 @@
 ---
 title: "Configuring SFTP"
-description: "Configuring SFTP service"
+description: "Configuring SSH File Transfer Protocol (SFTP) service on your TrueNAS."
 weight: 20
 tags:
 - coreftp
@@ -24,7 +24,7 @@ Review the remaining options and configure according to your environment or secu
 
 ### SSH Service Options
 
-Use the **SSH** screen to configure the system for SFTP. See [SSH Screen]({{< relref "/CORE/UIReference/Services/ServicesSSH.md" >}}) for information on SSH screen settings.
+Use the **SSH** screen to configure the system for SFTP. See [ServicesSSH]({{< relref "/CORE/UIReference/Services/ServicesSSH.md" >}}) for information on SSH screen settings.
 
 ### SFTP Connections
 
@@ -71,4 +71,4 @@ Using an FTP client, such as FileZilla, log in with the jail IP address and user
 ![FilezillaJailConnectSFTP](/images/CORE/FilezillaJailConnectSFTP.png "Filezilla SFTP Connect to TrueNAS Jail")
 {{< /expand >}}
 
-{{< taglist tag="coressh" limit="10" title="Related SSH Articles" >}}
+{{< taglist tag="coressh" limit="10" >}}
