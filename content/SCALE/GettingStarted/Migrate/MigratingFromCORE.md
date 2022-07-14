@@ -1,23 +1,31 @@
 ---
 title: "Migrating from TrueNAS CORE"
-weight: 45
+description: "This article provides instructions on migrating from TrueNAS CORE to SCALE. Migration methods include using an ISO file or amanual update file."
+weight: 20
+aliases:
+ - /docs/scale/gettingstarted/migratingfromcore/
+tags:
+- scalemigrate
+- scaleinstall
 ---
 
 {{< toc >}}
 
 {{< hint danger >}}
 Migrating TrueNAS from CORE to SCALE is a one-way operation. Attempting to activate or roll back to a CORE boot environment can break the system.
-CORE systems with High Availability enabled (HA) can not be upgraded to SCALE HA.
+You cannot upgrade CORE systems with High Availability enabled (HA) to SCALE HA.
 {{< /hint >}}
 
 {{< hint danger >}}
 #### Migrating GELI-encrypted Pools to SCALE
-TrueNAS SCALE is based on Linux, which does not support FreeBSD GELI encryption.
+TrueNAS SCALE is Linux based, so it does not support FreeBSD GELI encryption.
 If you have GELI-encrypted pools on your system that you plan to import into SCALE, you must migrate your data from the GELI pool to a non-GELI encrypted pool *before* migrating to SCALE.
 {{< /hint >}}
 
-{{< tabs "Migration Methods" >}}
-{{< tab "ISO File" >}}
+## Migration Methods
+
+You can migrate from CORE to SCALE using an <file>iso</file> file or a manual update file.
+### ISO File Method
 
 Start by saving the [SCALE ISO file](https://www.truenas.com/download-tn-scale/) to a USB drive (see the **Physical Hardware tab** in [Installing SCALE]({{< relref "InstallingSCALE.md" >}})). Plug the USB drive into the CORE system that you want to sidegrade and boot or reboot the system. 
 
@@ -27,7 +35,7 @@ When the SCALE console setup screen appears, select **Install/Upgrade**.
 
 ![SCALEUpgrade1](/images/SCALE/SCALEUpgrade1.png "Install/Upgrade SCALE")
 
-The installer asks if you want to preserve your existing configuration or start with a fresh installation. We recommend selecting *Upgrade Install* when migrating from CORE to SCALE to keep your configuration data. Then select **Install in new boot environment**.
+The installer asks if you want to preserve your existing configuration or start with a fresh installation. We recommend selecting **Upgrade Install** when migrating from CORE to SCALE to keep your configuration data. Then select **Install in new boot environment**.
 
 ![SCALEUpgrade2](/images/SCALE/SCALEUpgrade2.png "Preserve Existing Configuration")
 
@@ -35,10 +43,10 @@ The installer asks if you want to preserve your existing configuration or start 
 
 {{< hint warning>}}
 Although TrueNAS attempts to keep most of your CORE configuration data when upgrading to SCALE, some CORE-specific items do not transfer.
-GELI Encrypted pools, NIS data, jails, tunables, and boot environments do not migrate from CORE to SCALE.
-AFP shares also do not transfer, but can be migrated into an SMB share with AFP compatability enabled. 
-Init/shutdown scripts transfer, but can break and should be reviewed before use.
-The CORE netcli utility is also swapped for a new CLI utility that is used for the Console Setup Menu and other commands issued in a CLI.
+GELI encrypted pools, NIS data, jails, tunables, and boot environments do not migrate from CORE to SCALE.
+AFP shares also do not transfer, but you can migrate them into an SMB share with AFP compatibility enabled. 
+Init/shutdown scripts transfer, but can break. Review them before use.
+The CORE netcli utility is also swapped for a new CLI utility to use for the Console Setup Menu and other commands issued in a CLI.
 {{< /hint >}}
 
 After choosing to install in new boot environment, the installer warns that SCALE installs into the boot pool previously used for CORE. Select **Yes**.
@@ -49,9 +57,7 @@ Once the installation completes, reboot the system and remove the USB with the S
 
 When TrueNAS SCALE boots, you might need to [use the Shell to configure networking interfaces]({{< relref "/SCALE/SCALEUIReference/Network/_index.md" >}}) to enable GUI accessibility.
 
-{{< /tab >}}
-
-{{< tab "Manual Update File" >}}
+### Manual Update File Method
 
 Start by downloading the [SCALE manual update file](https://www.truenas.com/download-truenas-scale/).
 Confirm that the TrueNAS system is on the latest public, 12.0-U8 or better, release.
@@ -73,12 +79,9 @@ Then click **APPLY UPDATE**.
 After the update completes, reboot the system.
 ![SCALESidegradeReboot](/images/SCALE/SidegradeRestart.png  "Reboot to Finish")
   
-{{< /tab >}}
-{{< /tabs >}}
-  
 ## Parallel SCALE CLI Commands
 
-The following CLI commands are available after migrating from CORE to SCALE. The CORE equivalent CLI command is provided for reference. These commands are intended for diagnostic use. Making configuration changes using the SCALE OS CLI is not recommended.
+The following CLI commands are available after migrating from CORE to SCALE. The CORE equivalent CLI commands are for reference. These commands are for diagnostic use. Making configuration changes using the SCALE OS CLI is not recommended.
 
 | CORE CLI Comand | SCALE CLI Command | Description |
 |-----------------|-------------------|-------------|
@@ -93,3 +96,6 @@ The following CLI commands are available after migrating from CORE to SCALE. The
 | [systat -ifstat](https://www.freebsd.org/cgi/man.cgi?query=systat&sektion=1&manpath=FreeBSD+4.9-RELEASE) | [iftop](https://linux.die.net/man/8/iftop) <br>[netstat](https://linux.die.net/man/8/netstat) | Use `iftop` to display interface bandwidth usage by host and `netstat` to print network connections, routing tables, interface statistics, masquerade connections, and multicast memberships. |
 | [top -SHIzP](https://www.freebsd.org/cgi/man.cgi?top(1)) | [top -Hi](https://linux.die.net/man/1/top) | Use `top -Hi` to display Linux tasks for all individual threads and starts with the last remembered *i* state reversed. |
 | [vmstat -P](https://www.freebsd.org/cgi/man.cgi?query=vmstat&apropos=0&sektion=0&manpath=2.8+BSD&format=html) | [sar -P ALL](https://linux.die.net/man/1/sar) | Use `sar -P ALL` to get reports with statistics for each individual processor and global statistics among all processors. |
+
+{{< taglist tag="scalemigrate" limit="10" >}}
+{{< taglist tag="scaleinstall" limit="10" title="Related Installation Articles" >}}

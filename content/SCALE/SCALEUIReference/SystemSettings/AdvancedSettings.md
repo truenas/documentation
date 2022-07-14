@@ -16,7 +16,7 @@ Advanced Settings have reasonable defaults in place. Changing advanced settings 
 
 ## Console
 
-**Console** lets users configure the [Console Setup menu]({{< relref "Post-installConfiguration.md" >}}).
+**Console** lets users configure the [Console Setup menu]({{< relref "/SCALE/GettingStarted/Install/ConsoleSetupMenuSCALE.md" >}}).
 
 | Name | Description |
 |------|-------------|
