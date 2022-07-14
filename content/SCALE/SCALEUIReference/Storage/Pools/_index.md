@@ -2,8 +2,6 @@
 title: "Pools"
 geekdocCollapseSection: true
 weight: 10
-tags:
- - scaleclustering
 ---
 
 {{< toc >}}

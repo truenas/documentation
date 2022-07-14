@@ -2,8 +2,6 @@
 title: "Shares"
 geekdocCollapseSection: true
 weight: 40
-tags:
- - scaleclustering
 ---
 
 File sharing is one of the primary benefits of a NAS. TrueNAS helps foster collaboration between users through network shares.  
