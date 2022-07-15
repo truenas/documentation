@@ -1,6 +1,6 @@
 ---
 title: "WebDav Share Creation"
-description: "Web-based Distributed Authoring and Versioning (WebDAV) on your TrueNAS"
+description: "This article contains information on how to create a Web-based Distributed Authoring and Versioning (WebDAV) share on your TrueNAS."
 weight: 10
 aliases: /core/sharing/webdav/webdavshare/
 tags:
@@ -28,7 +28,7 @@ The default simplifies WebDAV share permission, but is unexpected, so the web in
 
 ![Webdav Add Warning](/images/CORE/12.0/SharingWebdavAddWarning.png "Services Webdav Add Warning")
 
-This warning does not display when the check mark in **Change User & Group Ownsership** is cleared.
+This warning does not display when the check mark in **Change User & Group Ownership** is cleared.
 In that situation, you must manually set shared file ownership to the **webdav** or **www** user and group accounts.
 
 By default, the new WebDAV share is immediately active.
@@ -65,4 +65,4 @@ Example: *https://10.2.1.1:8081/newdataset*
 When the **Authentication** WebDAV service option is set to either **Basic** or **Digest**, a user name and password is required.
 Enter the user name **webdav** and the password defined in the WebDAV service.
 
-{{< taglist tag="corewebdav" limit="10" title="Related Articles" >}}
+{{< taglist tag="corewebdav" limit="10" >}}
