@@ -180,13 +180,16 @@ At the shell prompt:
 * Type **grubx64.efi** <kbd>Return</kbd>.
 
 {{< hint warning >}}
-To insure it starts automatically, you need to create the startup.nsh file at the root directory on the vm. At the shell prompt type **edit startup.nsh**. In the editor type:
-* Type **FS0:** <kbd>Return</kbd>.
-* Type **cd EFI** <kbd>Return</kbd>.
-* Type **cd Debian** <kbd>Return</kbd>.
-* Type **grubx64.efi** <kbd>Return</kbd>.
-* Type the <kbd>Control+s</kbd> keys(Command+s for Mac OS) <kbd>Return</kbd>.
-* Type the <kbd>Control+q</kbd> keys to quit.
+To insure it starts automatically, you need to create the startup.nsh file at the root directory on the vm. To create the file:
+* Go to the **Shell**.
+* At the shell prompt type **edit startup.nsh**.
+* In the editor type:
+  * Type **FS0:** <kbd>Return</kbd>.
+  * Type **cd EFI** <kbd>Return</kbd>.
+  * Type **cd Debian** <kbd>Return</kbd>.
+  * Type **grubx64.efi** <kbd>Return</kbd>.
+  * Type the <kbd>Control+s</kbd> keys(Command+s for Mac OS) <kbd>Return</kbd>.
+  * Type the <kbd>Control+q</kbd> keys to quit.
  
 Close the display window
 
