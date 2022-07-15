@@ -111,7 +111,7 @@ Here is an example of installing a Debian OS in a TrueNAS VM. The Debian `.iso` 
 * Leave the default values.
 
 **Confirm Options**
-* Verify the information is correct and then click **Submit**.
+* Verify the information is correct and then click **Save**.
 
 {{< /expand >}}
 
@@ -174,14 +174,10 @@ Installing Software
 
 *The grub file does not run when you start the VM. This can be done manually after each start.*
 At the shell prompt:
-* Type *exit* <kbd>Return</kbd>.
-* Select **Boot Manager** <kbd>Return</kbd>.
-* Select **Boot Maintenance Manager** <kbd>Return</kbd>.
-* Select **Boot From File** <kbd>Return</kbd>.
-* Select the boot volume from the list <kbd>Return</kbd>.
-* Select **EFI** <kbd>Return</kbd>.
-* Select **debian** <kbd>Return</kbd>.
-* Select **grubx64.efi** <kbd>Return</kbd>.
+* Type **FS0:** <kbd>Return</kbd>.
+* Type **cd EFI** <kbd>Return</kbd>.
+* Type **cd Debian** <kbd>Return</kbd>.
+* Type **grubx64.efi**  <kbd>Return</kbd>.
 
 {{< hint warning >}}
 To insure it starts automatically, you need to create the startup.nsh file at the root directory on the vm. To create the file:
