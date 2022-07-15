@@ -1,6 +1,6 @@
 ---
 title: "SMB Share Creation"
-description: "SMB Share Creation on your TrueNAS"
+description: "This article provides information on how to create Server Message Block (SMB) shares on your TrueNAS."
 weight: 10
 aliases: /core/sharing/smb/smbshare/
 tags:
@@ -77,7 +77,7 @@ To retain full control over all the share **Advanced Options**, choose **No pres
 You can specify an optional value in **Description** to help explain the purpose of the share.
 
 **Enabled** allows this path to be shared when the SMB service is activated.
-Unsetting **Enabled** disables the share without deleting the configuration.
+Clearing **Enabled** disables the share without deleting the configuration.
 
 See [SMB Share Screen]({{< relref "/CORE/UIReference/Sharing/SMB/SMBShareScreen.md" >}}) for more information on SMB Share settings.
 
@@ -126,4 +126,4 @@ Mount the volume. `sudo mount_smbfs -I computer_name\share_name /mnt/smb_share`.
 {{< /expand >}}
 {{< /expand >}}
 
-{{< taglist tag="coresmb" limit="10" title="Related Articles" >}}
+{{< taglist tag="coresmb" limit="10" >}}
