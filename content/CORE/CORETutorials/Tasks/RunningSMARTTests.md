@@ -1,6 +1,6 @@
 ---
 title: "Running S.M.A.R.T. Tests"
-description: "Running S.M.A.R.T. tests on your TrueNAS"
+description: "This article provides information on how to run Self-Monitoring, Analysis and Reporting Technology (S.M.A.R.T.) tests on your TrueNAS."
 weight: 40
 tags:
 - coresmart
@@ -91,4 +91,4 @@ Disable the S.M.A.R.T. service when disks are controlled by a RAID controller.
 The controller monitors S.M.A.R.T. separately and marks disks as a **Predictive Failure** on a test failure.
 {{< /expand >}}
 
-{{< taglist tag="coresmart" limit="10" title="Related Articles" >}}
+{{< taglist tag="coresmart" limit="10" >}}
