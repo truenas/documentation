@@ -1,6 +1,6 @@
 ---
 title: "Configuring SSH"
-description: "Configuring SSH on your TrueNAS"
+description: "This article provides instructions on configuring Secure Shell (SSH) on your TrueNAS."
 weight: 130
 tags:
 - coresftp
@@ -15,7 +15,7 @@ Allowing external connections to TrueNAS is a security vulnerability!
 Do not enable SSH unless external connections are required.
 {{< /hint>}}
 
-To configure SSH, disable the service and click <i class="fa fa-pencil" aria-hidden="true" title="Configure"></i>.
+To configure SSH, disable the service and click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
 
 ![ServicesSSHOptions](/images/CORE/12.0/ServicesSSHOptions.png "SSH Options")
 
@@ -27,7 +27,7 @@ Remote systems could require *root* access to the system, but make sure to have 
 
 There are some additional options recommendations for the SSH service:
 
-* Add ***NoneEnabled no** to the **Auxiliary Parameters** to disable the insecure **none** cipher.
+* Add **NoneEnabled no** to the **Auxiliary Parameters** to disable the insecure **none** cipher.
 * Increase the **ClientAliveInterval** if SSH connections tend to drop.
 * **ClientMaxStartup** defaults to **10**.
   Increase this value when more concurrent SSH connections are required.
@@ -55,4 +55,4 @@ Test the configuration from another system by running the `sftp`, `ssh`, and `sc
 `sftp` and `scp` work but `ssh` fails.
 {{< /expand >}}
 
-{{< taglist tag="coressh" limit="10" title="Related Articles" >}}
+{{< taglist tag="coressh" limit="10" >}}
