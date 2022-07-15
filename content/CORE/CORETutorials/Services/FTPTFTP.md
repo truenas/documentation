@@ -1,6 +1,6 @@
 ---
 title: "FTP, SFTP, and TFTP"
-description: "FTP, SFTP and TFTP on your TrueNAS"
+description: "Configuring FTP, SFTP and TFTP on your TrueNAS."
 weight: 160
 aliases: /core/services/ftptftp/
 tags:
@@ -16,4 +16,4 @@ The additional SSH and Trivial FTP options provide secure or simple config file 
 Options for configuring **FTP**, **SSH**, and **TFTP** are in the system **Services**.
 Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to configure the related service.
 
-{{< taglist tag="coreftp" limit="10" title="Related Articles" >}}
+{{< taglist tag="coreftp" limit="10" >}}
