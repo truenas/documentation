@@ -73,7 +73,7 @@ The command returns the list of SCALE IP addresses and current connection status
    
 2. Enter a unique name for the cluster and select a **Type**.
 
-   ### Volume Types
+  **Volume Types**
 
    {{< expand "Current Types (click to expand)" "v" >}}
    {{< include file="/content/_includes/ClusterTypes.md" type="page" >}}
@@ -84,7 +84,7 @@ The command returns the list of SCALE IP addresses and current connection status
 5. Click **NEXT**.
 6. Review the settings for the new volume and click **CREATE** when ready.
 
-New cluster volumes are added to the individual Cluster cards on the TrueCommand **Clusters** screen.
+New cluster volumes are added to the individual cluster cards on the TrueCommand **Clusters** screen.
 
 {{< hint info >}}
 The web interface for the individual SCALE systems does not show any datasets created for cluster volumes.
