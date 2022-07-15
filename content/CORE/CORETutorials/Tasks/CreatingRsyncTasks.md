@@ -121,7 +121,7 @@ Next, enter the **Remote** host IP address or host name.
 Use the format *username@remote_host* if the user name differs on the **Remote** host.
 Configure the remaining options according to your specific needs.
 
-Unsetting **Enabled** disables the task schedule without deleting the configuration.
+Clearing **Enabled** disables the task schedule without deleting the configuration.
 You can still run the rsync task by going to **Tasks > Rsync Tasks** and clicking <i class="fa fa-chevron-right"></i>, then **RUN NOW**.
 
 ## Rsync Service and Modules
