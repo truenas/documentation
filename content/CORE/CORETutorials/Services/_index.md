@@ -1,5 +1,6 @@
 ---
 title: "Services"
+description: "This article provides instructions concerning the Services screen on your TrueNAS."
 geekdocCollapseSection: true
 weight: 120
 ---
@@ -18,7 +19,10 @@ Select **Start Automatically** for any service you configured and want to start 
 
 Click the toggle to start or stop the service, depending on the current state. Hover the mouse over the toggle to see the current state of that service. The toggle turns blue when it is running.
 
-Click the <span class="material-icons">edit</span> icon to display the settings screen for a service.
+Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i> icon to display the settings screen for a service.
 
-Services related to data sharing or automated tasks are documented in their respective [Sharing]({{< relref "/CORE/UIReference/Sharing/_index.md" >}}) or [Tasks]({{< relref "/CORE/UIReference/Tasks/_index.md" >}}).
+Services related to data sharing or automated tasks are documented in their respective [Sharing]({{< relref "/CORE/UIReference/Sharing/_index.md" >}}) or [Tasks]({{< relref "/CORE/UIReference/Tasks/_index.md" >}}).  
 
+## Additional Services Articles ##
+
+{{< children depth="2" sort="Name" description="true" >}}
