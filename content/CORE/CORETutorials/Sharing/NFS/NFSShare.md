@@ -1,6 +1,6 @@
 ---
 title: "NFS Share Creation"
-description: "Creating a Network File Share (NFS) on TrueNAS"
+description: "This article provides information on how to create a Network File Share (NFS) on your TrueNAS."
 weight: 10
 aliases: /core/sharing/nfs/nfsshare/
 tags:
@@ -66,4 +66,4 @@ To change the default permissions, edit the share, open the **Advanced Options**
 ESXI 6.7 or later is required for read/write functionality with NFSv4 shares.
 {{< /hint >}}
 
-{{< taglist tag="corenfs" limit="10" title="Related Articles" >}}
+{{< taglist tag="corenfs" limit="10" >}}
