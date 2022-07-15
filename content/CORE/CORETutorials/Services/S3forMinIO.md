@@ -1,5 +1,6 @@
 ---
 title: "S3 for MinIO"
+description: "This article provides information on how to configure S3 for MinIO on your TrueNAS."
 weight: 105
 tags:
 - cores3
@@ -9,7 +10,7 @@ tags:
 MinIO connections and service is configured using the **Services** [S3 screen]({{< relref "/CORE/UIReference/Services/S3Screen.md" >}}).
 
 {{< hint warning >}}
-MinIO deprecated Access key and Secret key replacing them respectively with the MINIO_ROOT USER and MINIO_ROOT_PASSWORD arguments and their values. For the ROOT_USER value, use a name up to 20 characters. For the ROOT_PASSWORD, use a string of 8 to 40 randomized characters. MinIO recommends using a long password string of unique random characters.
+MinIO deprecated Access key and Secret key. MinIO now utilizes MINIO_ROOT USER and MINIO_ROOT_PASSWORD arguments and their values. For the ROOT_USER value, use a name up to 20 characters. For the ROOT_PASSWORD, use a string of 8 to 40 randomized characters. MinIO recommends using a long password string of unique random characters.
 {{< /hint >}}
 
 ## Testing Minio Connections
@@ -80,5 +81,5 @@ It is possible to access, create new buckets, or upload files to created buckets
 ![AmazonS3Browser](/images/CORE/AmazonS3Browser.png "S3 Browser")
 {{< /expand >}}
 
-{{< taglist tag="cores3" limit="10" title="Related S3 Articles" >}}
+{{< taglist tag="cores3" limit="10" >}}
  
