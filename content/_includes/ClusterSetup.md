@@ -23,9 +23,24 @@ Repeat this procedure for each SCALE system to be clustered.
 ### Microsoft Active Directory
 
 1. Verify that the Active Directory (AD) environment to pair with the cluster is available and administratively accessible on the same network as the TrueCommand and TrueNAS SCALE systems.
-2. Log in to the AD environment and open the **DNS Manager**.
-   Select the **Reverse Lookup Zones** and ensure there are entries present for each TrueNAS SCALE system.
-   See [Microsoft's DNS module](https://docs.microsoft.com/en-us/learn/modules/implement-windows-server-dns/3-work-dns-zones-records) for more details about changing DNS records.
+2. Log in to the Windows Server system and open the **Server Manager**.
+   Click **Tools** > **DNS** to open the **DNS Manager**.
+   
+   ![WindowsServerManagerToolsDNS](/images/TrueCommand/2.2/WindowsServerManagerToolsDNS.png "Opening the DNS Manager")
+   
+3. In the left side menu, expand **Reverse Lookup Zones** and select the **Active Directory-Integrated Primary** zone to use for the cluster.
+
+   ![WindowsServerDNSManagerReverseLookupZones](/images/TrueCommand/2.2/WindowsServerDNSManagerReverseLookupZones.png "Finding the Reverse Lookup Zone")
+   If no zone exists, see Microsoft's guide for [creating DNS Zones](https://docs.microsoft.com/en-us/learn/modules/implement-windows-server-dns/3-work-dns-zones-records).
+   
+4. Click **Action** > **New Pointer (PTR...)** and configure the **New Resource Record**. Enter the SCALE system IP address, host name, and click **OK**.
+
+   ![WindowsServerDNSManagerReverseLookupZonesPointersAdd](/images/TrueCommand/2.2/WindowsServerDNSManagerReverseLookupZonesPointersAdd.png "WindowsServerDNSManagerReverseLookupZonesPointersAdd")
+
+Repeat this process for each system intended for clustering.
+The new records appear inside the zone as they are saved.
+
+![WindowsServerDNSManagerReverseLookupZonesPointers](/images/TrueCommand/2.2/WindowsServerDNSManagerReverseLookupZonesPointers.png "Pointers added to the Zone")
 
 ### TrueCommand Container
 
@@ -42,3 +57,5 @@ This opens a detailed view of that system.
 Click **Config Backups** and **CREATE BACKUP** to store the SCALE configuration file with TrueCommand.
 This allows quickly restoring the system configuration to the initial working state, should something go wrong.
 {{< /hint >}}
+
+![](/images/TrueCommand/2.2/.png "")
