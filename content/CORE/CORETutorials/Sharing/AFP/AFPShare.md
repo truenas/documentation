@@ -1,5 +1,6 @@
 ---
 title: "AFP Share Creation"
+description: "This article provides information on how to create Apple Filing Protocol (AFP) shares on your TrueNAS."
 weight: 10
 aliases: /core/sharing/afp/afpshare/
 tags:
@@ -65,4 +66,4 @@ For example, entering `afp://192.168.2.2` connects to the TrueNAS AFP share at 1
 
 ![Apple AFP Connect](/images/CORE/AppleAFPConnect.png "Apple AFP Connect")
 
-{{< taglist tag="coreafp" limit="10" title="Related Articles" >}}
+{{< taglist tag="coreafp" limit="10" >}}
