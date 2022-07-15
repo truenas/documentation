@@ -1,6 +1,6 @@
 ---
 title: "Managing SMB Shares"
-description: "Managing SMB Shares on your TrueNAS"
+description: "This article provides information on how to manage Server Message Block (SMB) shares on your TrueNAS."
 weight: 10
 tags:
 - coresmb
@@ -31,9 +31,9 @@ Click **ADD** to register a new entry.
 |---------|------|-------------|
 | **SID** | string  Who this ACL entry (ACE) applies to, shown as a [Windows Security Identifier](https://docs.microsoft.com/en-us/windows/win32/secauthz/security-identifiers). Either a **SID** or a **Domain** with **Name** is required for the ACL. |
 | **Domain** | string | Domain for the user **Name**. Required when a **SID** is not entered. Local users have the SMB server NetBIOS name: **truenas\\smbusers**.
-| **Permission** | drop down | Predefined permission combinations:<br> Select **Read** for read access and execute permission on the object (RX).<br> Select **Change** for read access, execute permission, write access, and delete object (RXWD).<br> Select **Full** for read access, execute permission, write access, delete object, change Permissions, and take ownership (RXWDPO).<br><br>For more details, see [smbacls(1)](https://www.samba.org/samba/docs/current/man-html/smbcacls.1.html). |
+| **Permission** | dropdown list | Predefined permission combinations:<br> Select **Read** for read access and execute permission on the object (RX).<br> Select **Change** for read access, execute permission, write access, and delete object (RXWD).<br> Select **Full** for read access, execute permission, write access, delete object, change Permissions, and take ownership (RXWDPO).<br><br>For more details, see [smbacls(1)](https://www.samba.org/samba/docs/current/man-html/smbcacls.1.html). |
 | **Name** | string | Who this ACL entry applies to, shown as a user name. Requires adding the user **Domain**. |
-| **Type** | drop down | Select how permissions are applied to the share. Select **Allowed** to deny all permissions by default except those that are manually defined. Select **Denied** to allow all permissions by default except those that are manually defined. |
+| **Type** | dropdown list | Select how permissions are applied to the share. Select **Allowed** to deny all permissions by default except those that are manually defined. Select **Denied** to allow all permissions by default except those that are manually defined. |
 
 Clicking **SAVE** stores the share ACL and applies it to the share immediately.
 
@@ -81,4 +81,4 @@ For example, to only allow the *tmoore* user permission to view dataset contents
 
 ![ExampleACE](/images/CORE/12.0/StoragePoolsEditACLExample.png "Sample ACE")
 
-{{< taglist tag="coresmb" limit="10" title="Related Articles" >}}
+{{< taglist tag="coresmb" limit="10" >}}
