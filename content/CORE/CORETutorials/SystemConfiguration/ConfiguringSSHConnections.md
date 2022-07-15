@@ -1,6 +1,6 @@
 ---
 title: "Configuring SSH Connections"
-description: "Configuring SSH connections on your TrueNAS"
+description: "This article provides information on how to configure Secure Socket Shell (SSH) connections on your TrueNAS."
 weight: 110
 aliases:
   - /core/system/systemssh
@@ -71,4 +71,4 @@ Log back into the local TrueNAS system and go to **System > SSH Connections**. A
 
 Select the private key from the SSH keypair you used to transfer the public key on the remote NAS.
 
-{{< taglist tag="coressh" limit="10" title="Related Articles" >}}
+{{< taglist tag="coressh" limit="10" >}}
