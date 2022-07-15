@@ -1,6 +1,6 @@
 ---
 title: "Configuring TFTP"
-description: "Setting up TFTP"
+description: "Configuring Trivial File Transfer Protocol (TFTP) on your TrueNAS."
 weight: 140
 tags:
 - coreftp
@@ -19,5 +19,6 @@ Starting the TFTP service opens UDP port **69**.
 
 ![ServicesTFTPOptions](/images/CORE/12.0/ServicesTFTPOptions.png "TFTP Service Options")
 
-{{< taglist tag="coretftp" limit="10" title="Related TFTP and SFTP Articles" >}}
+Use the **TFTP** screen to configure the system for SFTP.  
 
+{{< taglist tag="coretftp" limit="10" >}}
