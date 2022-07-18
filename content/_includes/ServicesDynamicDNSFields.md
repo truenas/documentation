@@ -18,5 +18,5 @@
 
 | Name | Description |
 |------|-------------|
-| Username | User name for logging in to the provider and updating the record. |
-| Password | Password for logging in to the provider and updating the record. |
+| **Username** | User name for logging in to the provider and updating the record. |
+| **Password** | Password for logging in to the provider and updating the record. |
