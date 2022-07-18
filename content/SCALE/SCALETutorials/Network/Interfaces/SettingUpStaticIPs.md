@@ -1,15 +1,16 @@
 ---
 title: "Setting Up Static IPs"
 description: "This article provides instructions on setting up a network interface static IP address."
-weight: 10
+weight: 45
 tags:
 - scalenetwork
 - scaleinterface
+- scalestaticip
 ---
 
 {{< toc >}}
 
-This article provides instructions to set up a static IP address for a new interface or to change the main interface from a DHCP assigned to a manually-entered static IP address, DNS nameservers and default gateway.
+This article provides instructions on setting up a network interface with a static IP address or changing the main interface from a DHCP-assigned to a manually-entered static IP address. You must know the DNS name server and default gateway addresses for your IP address.
 
 {{< hint danger >}}
 **Disruptive Change!**
@@ -55,6 +56,8 @@ To change an interface from using DHCP to a static IP address:
 2. Check the name servers and default router information in the **Global Information** card. 
    If the current settings are not on the same network click **Settings** and modify each as needed to allow the static IP to communicate over the network. 
 
+   For home users, use **8.8.8.8** for a DNS name sever address so you can communicate with external networks.
+
 {{< expand "Click here for more help with this." "v" >}}
    a. Add the IP addresses for the DNS name servers in the **Nameserver 1**, **Nameserver2**, and **Nameserver3** fields.
       
@@ -65,7 +68,8 @@ To change an interface from using DHCP to a static IP address:
    c. Click **Save**.
 
 {{< /expand >}}
-5. Test the network changes. Click **Test Changes**. Select **Confirm** to activate **Test Changes** button. Click the button and then click **Save** on the **Save Changes** dialog. 
+5. Test the network changes. Click **Test Changes**. Select **Confirm** to activate **Test Changes** button. 
+   Click the button and then click **Save** on the **Save Changes** dialog. 
    
    ![InterfaceTestStaticIPChange](/images/SCALE/22.02/InterfaceTestStaticIPChange.png "Test Changes")
 
@@ -80,7 +84,9 @@ To change an interface from using DHCP to a static IP address:
 
 ## Changing from Static IP to DHCP
 
-To return to using DHCP for your network interface:
+Only one interface can use DHCP to assign the IP address and that is likely the primary network interface. If you do not have a existing network interface set to use DHCP you can use it to convert from static IP to DHCP.
+
+To return to using DHCP:
 
 1. Click **Settings** on the **Global Configuration** widget.
 
@@ -88,13 +94,18 @@ To return to using DHCP for your network interface:
 
 3. Click on the interface to display the **Edit Interface** screen.
 
-4. Select the **DHCP** checkbox.
+4. Select **DHCP**.
 
 5. Remove the static IP address from the **IP Address** field.
 
 6. Click **Apply**.
 
-7. Click **Test Change**. If the network settings are correct, the screen displays the **Save Changes** widget. Click **Save Changes** to return to using DHCP to assign the IP address, nameserver and default gateway addresses.
+7. Click **Settings** to display the **Global Configuration** configuration form and enter name server and default gateway addresses for the new DHCP-provided IP address.
+   Home user can enter 8.8.8.8 in the **Nameserver 1** field.
+
+7. Click **Test Change**. If the network settings are correct, the screen displays the **Save Changes** widget. Click **Save Changes**. 
+
+   If the test network operation fails or the system times out, your system returns to the network settings before you attempted the change. Verify the name server and default gateway information to try again.
 
 {{< taglist tag="scaleinterface" limit="10" >}}
 {{< taglist tag="scalenetwork" limit="10" "Related Network Articles" >}}

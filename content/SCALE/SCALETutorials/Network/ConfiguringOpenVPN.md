@@ -1,6 +1,6 @@
 ---
 title: "Configuring OpenVPN"
-description: "This article provides instructions on configuring OpenVPN client and server service."
+description: "This article provides OpenVPN client and server configuring instructions for TrueNAS SCALE."
 weight: 40
 tags:
 - scalenetwork
@@ -33,7 +33,7 @@ To configure OpenVPN (server or client) on TrueNAS you:
 
 * Select the networking credentials
 * Set the connection details
-* Select additional security or protocol options
+* Select security or protocol options
 
 ### Obtaining the OpenVPN Root Certificate Authority
 
@@ -51,6 +51,9 @@ Enter a name, select the **Type** and then select **Openvpn Root CA** in the **P
 
 Complete the rest of the form and click **Save**.
 
+## Adding the OpenVPN Root CA Certificate to SCALE [need instructions here]
+
+
 ### Configuring OpenVPN Client
 
 To configure the OpenVPN client, go to **Network** and click on **Client** in the **OpenVPN** widget. The **OpenVPN Client** settings screen displays.
@@ -63,9 +66,9 @@ To configure the OpenVPN client, go to **Network** and click on **Client** in th
 
 2. Select the OpenVPN root CA you added to your system as the **Root CA**.
 
-3. Select the **Device Type** from the dropdown list. The topology is assigned by TrueNAS so the field does not display in the **OpenVPN Client** configuration form.
+3. Select the **Device Type** from the dropdown list. TrueNAS SCALE assigns the topology for the client so this field does not display in the **OpenVPN Client** configuration form.
 
-4. Decide on the level of security you want to implement for the OpenVPN server. Security options settings:
+4. Decide on the level of security you want for the OpenVPN server. Security options settings:
 
    *  **Authentication Algorithm** which validates packets that TrueNAS sends over the network connection. Your network environment might require a specific algorithm. 
       If not, **SHA1 HMAC** is a good standard algorithm to use.
@@ -123,7 +126,7 @@ To configure the OpenVPN server, go to **Network** and click on **Server** in th
 
    If you select **TAP**, also select **SUBNET** in **Topology**.
 
-4. Decide on the level of security you want to implement for the OpenVPN server. Security options settings:
+4. Decide on the level of security you want for the OpenVPN server. Security options settings:
 
    *  **Authentication Algorithm** which validates packets that TrueNAS sends over the network connection. Your network environment might require a specific algorithm. 
       If not, **SHA1 HMAC** is a good standard algorithm to use.
@@ -159,15 +162,13 @@ See [OpenVPN Screens]){{< relref "/SCALE/SCALEUIReference/Network/OpenVPNScreens
 You can use the **Additional Parameters** field to manually set any of the core OpenVPN config file options.
 See the OpenVPN [Reference Manual](https://openvpn.net/community-resources/reference-manual-for-openvpn-2-4/) for option descriptions.
 
-
 ### Activating OpenVPN Services
 
 After configuring the server or client service, click **Save**.
 
-Start the service by clicking the <span class="iconify" data-icon="bxs:right-arrow"></span> arrow icon button next for **Client** and **Server** in the **OpenVPN** widget on the **Network**8* screen.. 
+Start the service by clicking the <span class="iconify" data-icon="bxs:right-arrow"></span> arrow icon button next for **Client** and **Server** in the **OpenVPN** widget on the **Network** screen. 
 
-You can also start the service by going to **System Settings > Services** and clicking the **State** toggle.
+You can also start the service by going to **System Settings > Services** and clicking the **State** toggle for both **OpenVPN Client** and **OpenVPN Server**.
 Select **Start Automatically** on the **Services** screen to start the service when TrueNAS completes booting and runs the network and data pools.
 
 {{< taglist tag="scaleopenvpn" limit="10" >}}
-{{< taglist tag="scaleservices" limit="10" "Related Service Articles" >}}

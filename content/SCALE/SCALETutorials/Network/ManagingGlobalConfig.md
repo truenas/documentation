@@ -1,17 +1,16 @@
 ---
-title: "Managing Global Configuration"
+title: "Managing Network Global Configurations"
 description: "This article provides instructions on configuring or managing global configuration settings."
-weight: 30
+weight: 20
 tags:
 - scalenetwork
-- scalestaticip
 ---
 
 
 {{< toc >}}
 
 
-Use the **Global Configuration Settings** screen to configure or manage general network settings like the default gateway, DNS servers, set DHCP to assign the IP address or to set a static IP address, add IP address aliases, and set up services to allow external communication.
+Use the **Global Configuration Settings** screen to manage existing general network settings like the default gateway, DNS servers, set DHCP to assign the IP address or to set a static IP address, add IP address aliases, and set up services to allow external communication.
 
 {{< hint danger >}}
 **Disruptive Change**
@@ -27,7 +26,7 @@ You might need command line knowledge or physical access to the TrueNAS system t
 {{< /expand >}}
 
 {{< expand "Can I configure these options elsewhere?" "v" >}}
-Users can configure many of these interface, DNS, and gateway options in the [Console Setup Menu]({{< relref "Post-installConfiguration.md" >}}).
+Users can configure many of these interface, DNS, and gateway options in the [Console setup menu]({{< relref "/install/ConsoleSetupMenuSCALE.md" >}}).
 Be sure to check both locations when troubleshooting network connectivity issues.
 {{< /expand >}}
 
@@ -69,4 +68,3 @@ To set up Netwait, from the **Network** screen:
 
 
 {{< taglist tag="scalenetwork" limit="10" >}}
-{{< taglist tag="scalestaticip" limit="10" >}}

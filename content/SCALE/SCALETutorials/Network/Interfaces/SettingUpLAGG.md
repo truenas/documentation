@@ -1,7 +1,7 @@
 ---
 title: "Setting Up a Link Aggregation"
 description: "This article provides instructions on setting up a network link aggregation (LAGG) interface."
-weight: 10
+weight: 25
 tags:
 - scalenetwork
 - scaleinterface
