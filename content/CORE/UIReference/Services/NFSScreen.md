@@ -1,6 +1,6 @@
 ---
 title: "NFS Screen"
-description: "Use the NFS screen to configure Network File System (NFS) and related service options on your TrueNAS"
+description: "Use the NFS screen to configure Network File System (NFS) on your TrueNAS"
 weight: 60
 tags:
 - corenfs
@@ -8,7 +8,7 @@ tags:
 
 {{< toc >}}
 
-Use the **Services NFS** screen to enable NFS services on your TrueNAS.
+Network File System (NFS) is an open IETF standard remote file access protocol. Use the **Services NFS** screen to enable NFS services on your TrueNAS.
 
 ![NFSServicesScreen](/images/CORE/13.0/NFSServicesScreen.png "Services NFS Add")
 
@@ -34,4 +34,4 @@ Use **CANCEL** to exit without saving and return to the **Services** screen.
 
 Unless a specific setting is needed, it is recommended to use the default settings for the NFS service.
 
-{{< taglist tag="corenfs" limit="10" title="Related Articles" >}}
+{{< taglist tag="corenfs" limit="10" >}}
