@@ -1,6 +1,6 @@
 ---
 title: "Dynamic DNS Screen"
-description: "Use the DDNS screen to configure Dynamic Domain Name Service (DDNS) and related service options on your TrueNAS"
+description: "Use the DDNS screen to configure Dynamic Domain Name Service (DDNS) on your TrueNAS"
 weight: 20
 aliases: core/services/dynamicdns/
 tags:
@@ -17,4 +17,4 @@ The **SAVE** button activates after you enter your domain name in **Domain Name*
 
 After configuration your DDNS service, turn on the service on the **Services** screen.
 
-{{< taglist tag="coreddns" limit="10" title="Related Articles" >}}
+{{< taglist tag="coreddns" limit="10" >}}
