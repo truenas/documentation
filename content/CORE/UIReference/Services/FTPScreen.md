@@ -1,12 +1,12 @@
 ---
 title: "FTP Screen"
-description: "Use the FTP screen to configure File Transfer Protocol (FTP) and related service options on your TrueNAS"
+description: "Use the FTP screen to configure File Transfer Protocol (FTP) on your TrueNAS."
 weight: 30
 tags:
 - coreftp
 ---
 
-Use the **FTP** services screen to configure FTP service settings for your TrueNAS system.
+File Transfer Protocol is a communication protocol used to transfer data across a computer network. Use the **FTP** services screen to configure FTP service settings for your TrueNAS system.
 
 ![FTPBasicOption](/images/CORE/13.0/FTPBasicOption.png "Services FTP Basic Options")
 
@@ -48,10 +48,12 @@ Use **Advanced Options** if you need to customize your FTP service beyond the se
 
 **TLS Settings**
 
-Unless necessary, do NOT allow anonymous or root access.
+{{< hint warning >}}
+Unless necessary, do not allow anonymous or root access.
 For better security, enable TLS when possible.
 This is effectively [FTPS](https://tools.ietf.org/html/rfc4217).
 When FTP is exposed to a WAN, enable TLS.
+{{< /hint >}}
 
 | Name | Description |
 |------|-------------|
@@ -93,7 +95,7 @@ When FTP is exposed to a WAN, enable TLS.
 | **Allow Transfer Resumption** | Select to allow FTP clients to resume interrupted transfers. |
 | **Perform Reverse DNS Lookups** | Select to allow performing reverse DNS lookups on client IPs. Causes long delays if reverse DNS isn't configured. |
 | **Masquerade Address** | Public IP address or host name. Set if FTP clients cannot connect through a NAT device. |
-| **Display Login** | Specify the message displayed to local login users after authentication. Thi is not displayed to anonymous login users. |
+| **Display Login** | Specify the message displayed to local login users after authentication. This is not displayed to anonymous login users. |
 | **Auxiliary Parameters** | Used to add additional [proftpd(8](https://linux.die.net/man/8/proftpd) parameters. |
 
-{{< taglist tag="coreftp" limit="10" title="Related FTP Articles" >}}
+{{< taglist tag="coreftp" limit="10" >}}
