@@ -1,6 +1,6 @@
 ---
 title: "SMB Service Screen"
-description: "Use the SMB screen to configure Server Message Block (SMB) and related service options on your TrueNAS"
+description: "Use the SMB screen to configure Server Message Block (SMB) on your TrueNAS."
 weight: 110
 tags:
 - coresmb
@@ -13,7 +13,7 @@ Unless a specific setting is needed or configuring for a specific network enviro
 
 ## Basic Options
 
-| Settings | Descritpion |
+| Name | Description |
 |----------|-------------|
 | **NetBIOS Name** | Automatically populated with the original host name of the system **truenas**. This name is limited to 15 characters and cannot be the same name in **Workgroup**. |
 | **NetBIOS Alias** | Enter any aliases, separated by spaces. Each alias can be up to 15 characters long. |
@@ -26,7 +26,7 @@ Unless a specific setting is needed or configuring for a specific network enviro
 
 ![SMBServiceAdvanced](/images/CORE/12.0/ServicesSMBOptionsAdvanced.png "Advanced Options for the SMB Service")
 
-| Settings | Descritpion |
+| Name | Description |
 |----------|-------------|
 | **Unix Charset** | Select an option from the dropdown list. Default is **UTF-8** which supports all characters in all languages. |
 | **Log Level** | Select an option from the dropdown list. Options are **None**, **Minimum**, **Normal**, **Full** or **Debug**. Records SMB service messages up to the specified log level. By default, error and warning level messages are logged. |
@@ -40,4 +40,4 @@ Unless a specific setting is needed or configuring for a specific network enviro
 | **Bind IP Addresses** | Select the static IP addresses which SMB listens on for connections from the dropdown list. Leave unselected defaults to listen on all active interfaces. |
 | **Auxiliary Parameters** | Enter additional smb.conf options. See the [Samba Guide](http://www.oreilly.com/openbook/samba/book/appb_02.html) for more information on these settings. To log more details when a client attempts to authenticate to the share, add **log level = 1, auth_audit:5**. |
 
-{{< taglist tag="coresmb" limit="10" title="Related Articles" >}}
+{{< taglist tag="coresmb" limit="10" >}}
