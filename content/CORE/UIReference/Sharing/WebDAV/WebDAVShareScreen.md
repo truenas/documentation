@@ -1,11 +1,12 @@
 ---
 title: "WebDAV Screen"
-description: "Use the Sharing WebDAV screen to configure WebDAV on your TrueNAS"
+description: "Use the Sharing WebDAV screen to configure Web Distributed Authoring and Versioning (WebDAV) on your TrueNAS."
 weight: 10
 tags:
 - corewebdav
 ---
 
+Web Distributed Authoring and Versioning (WebDAV) is an extension of the HTTP protocol designed to facilitate web content authoring and management.
 Use the **Sharing WebDAV** screen to configure WebDAV on your TrueNAS.
 
 ![WebDAVShareScreen](/images/CORE/13.0/WebDAVShareScreen.png "Sharing WebDAV Screen")
@@ -16,7 +17,7 @@ Use **ADD** to open the WebDAV configuration screen.
 
 ![WebDAVAddScreen](/images/CORE/13.0/WebDAVAddScreen.png "Sharing WebDAV Add Screen")
 
-| Settings | Descritpion |
+| Name | Description |
 |----------|-------------|
 | **Name** | Enter a name for the share. |
 | **Description** | Optional. |
@@ -25,4 +26,4 @@ Use **ADD** to open the WebDAV configuration screen.
 | **Change User & Group Ownership** | Change existing ownership of all files in the share to user webdav and group webdav. If checkmark cleared, you must manually set ownership of files accessed through WebDAV to the **webdav** or **www** user/group. |
 | **Enabled** | Select to enable this WebDAV share. Leave checkbox clear to disable this WebDAV share without deleting it. |
 
-{{< taglist tag="corewebdav" limit="10" title="Related Articles" >}}
+{{< taglist tag="corewebdav" limit="10" >}}
