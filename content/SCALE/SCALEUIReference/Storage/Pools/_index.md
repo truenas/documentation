@@ -232,7 +232,7 @@ By default, TrueNAS automatically checks every pool is on a reoccurring scrub sc
 
 **Status** displays the state of the last scrub and disks in the pool.
 
-The **Pool Status** screen has additional [disk management]({{< relref "/SCALE/SCALEUIReference/Storage/DisksSCALE.md" >}}) options.
+The **Pool Status** screen has additional [disk management]({{< relref "/SCALE/SCALEUIReference/Storage/Disks/DisksScreens.md" >}}) options.
 {{< /tab >}}
 
 {{< tab "Expand Pool" >}}
