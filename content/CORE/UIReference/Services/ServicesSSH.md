@@ -1,6 +1,6 @@
 ---
 title: "SSH Screen"
-description: "Use the SSH screen to configure Secure Socket Shell (SSH) and related service options on your TrueNAS"
+description: "Use the SSH screen to configure Secure Socket Shell (SSH) on your TrueNAS."
 weight: 130
 tags:
 - coreftp
@@ -9,17 +9,23 @@ tags:
 - coressh
 ---
 
-Use the **SSH** services screen to configure SSH service on your TrueNAS.
+Secure Socket Shell is a network communication protocol that provides encryption to secure data. Use the **SSH** services screen to configure SSH service on your TrueNAS.
+
+{{< hint warning >}}
+Allowing external connections to TrueNAS is a security vulnerability!
+Do not enable SSH unless external connections are required.
+{{< /hint>}}
+
+To configure SSH, disable the service and click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
 
 ![SSHBasicOptionsScreen](/images/CORE/13.0/SSHBasicOptionsScreen.png "SSH Basic Options")
 
 {{< include file="content/_includes/ServicesSSHFields.md" markdown="true" >}}
 
 **ADVANCED OPTIONS** displays additional configuration fields to set up SSH for specific uses cases.  
-Use the SSH screen to configure SSH File Transfer Protocol (SFTP). SFTP is available by enabling SSH remote access to the TrueNAS system.
 
 ![SSHAdvancedOptionsScreen](/images/CORE/13.0/SSHAdvancedOptionsScreen.png "SSH Advanced Options")
 
 {{< include file="content/_includes/ServicesSSHAdvancedFields.md" markdown="true" >}}
 
-{{< taglist tag="coressh" limit="10" title="Related Articles" >}}
+{{< taglist tag="coressh" limit="10" >}}
