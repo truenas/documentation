@@ -1,6 +1,6 @@
 ---
 title: "Replacing Disks"
-description: "This article provides disk replacement instructions that includes offlinging the failed disk and onlining the replacement disk."
+description: "This article provides disk replacement instructions that includes offlining the failed disk and onlining the replacement disk."
 weight: 50
 tags:
 - scaledisks
