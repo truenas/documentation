@@ -1,11 +1,12 @@
 ---
 title: "AFP Share Screen"
-description: "Set up an AFP Share"
+description: "Use the AFP share screen to set up an Apple Filing Protocol (AFP) shares on your TrueNAS."
 weight: 10
 tags:
 - coreafp
 ---
 
+Apple Filing Protocol (AFP) facilitates workgroup and Internet file sharing in a mixed-platform environment. 
 
 Use the **Sharing > AFP** screen to set up an AFP share.
 
@@ -29,4 +30,4 @@ Use **CANCEL** to exit the **Add** screen without saving and return to the **AFP
 
 To edit an existing AFP share, go to **Sharing > Apple Shares (AFP)** and click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>.
 
-{{< taglist tag="coreafp" limit="10" title="Related Articles" >}}
+{{< taglist tag="coreafp" limit="10" >}}
