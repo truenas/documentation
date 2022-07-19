@@ -1,12 +1,12 @@
 ---
 title: "UPS Screen"
-description: "Use the UPS screen to configure a Uninterruptible Power Supply (UPS) and related service options on your TrueNAS"
+description: "Use the UPS screen to configure a Uninterruptible Power Supply (UPS) on your TrueNAS."
 weight: 150
 tags:
 - coreups
 ---
 
-Use the **UPS** services screen to configure a UPS for your TrueNAS.
+An uninterruptible power supply is a hardware device that provides a backup source of power in the event of a power outtage. Use the **UPS** services screen to configure a UPS for your TrueNAS.
 
 **SAVE** activates after all required fields are populated.
 
@@ -21,7 +21,7 @@ Use the **UPS** services screen to configure a UPS for your TrueNAS.
 | **Identifier** | Type a description for the UPS device. You can use alphanumeric, period (.), comma (,), hyphen (-), and underscore (_) characters. This is a required field. |
 | **UPS Mode** | Select the mode from the dropdown list. Options are **Master** if the UPS is plugged directly into the system serial port, or **Slave** to have this system shut down before the master system. The UPS remains the last item to shut down. See the [Network UPS Tools Overview](http://networkupstools.org/docs/user-manual.chunked/ar01s02.html#_monitoring_client). |
 | **Driver** | Select the device driver from the dropdown list. See the [Network UPS Tools compatibility list](http://networkupstools.org/stable-hcl.html)for a list of supported UPS devices. This is a required field. |
-| **Port or Hostname** | Select the serial or USB port connected to the UPS from the dropdown list. Options include a list of port on your system and **auto**. Select **auto** to automatically detect and manage the USB port settings. When an SNMP driver is selected, enter the IP address or host name of the SNMP UPS device.  If the **UPS Mode** field is set as **Master**, this is a required field. If set to **Slave** this field can be left empty and is not required. |
+| **Port or Hostname** | Select the serial or USB port connected to the UPS from the dropdown list. Options include a list of ports on your system and **auto**. Select **auto** to automatically detect and manage the USB port settings. When an SNMP driver is selected, enter the IP address or host name of the SNMP UPS device.  If the **UPS Mode** field is set as **Master**, this is a required field. If set to **Slave** this field can be left empty and is not required. |
 
 **Monitor**
 
@@ -40,7 +40,7 @@ Use the **UPS** services screen to configure a UPS for your TrueNAS.
 |------|-------------|
 | **Shutdown Mode** | Select the battery option to used when the UPS initiates shutdown. Dropdown list options are **UPS reaches low battery** or **UPS goes on battery**. |
 | **Shutdown Timer** | Enter a value in seconds for the UPS to wait before initiating shutdown. Shutdown does not occur if power is restored while the timer is counting down. This value only applies when **Shutdown Mode** is set to **UPS goes on battery**. |
-| **Shutdown Comman** | Enter a command to shut down the system when either battery power is low or the shutdown timer ends. |
+| **Shutdown Command** | Enter a command to shut down the system when either battery power is low or the shutdown timer ends. |
 | **Power off UPS** | Select for the UPS to power off after shutting down the system. |
 
 **Email**
@@ -61,4 +61,4 @@ Use the **UPS** services screen to configure a UPS for your TrueNAS.
 | **Auxiliary Parameters (ups.conf)** | Enter any extra options from [ups.conf](http://networkupstools.org/docs/man/ups.conf.html). |
 | **Auxiliary Parameters (upsd.conf)** | Enter any extra options from [upsd.conf](http://networkupstools.org/docs/man/upsd.conf.html). |
 
-{{< taglist tag="coreups" limit="10" title="Related UPS Articles" >}}
+{{< taglist tag="coreups" limit="10" >}}
