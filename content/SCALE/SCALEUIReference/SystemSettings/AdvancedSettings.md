@@ -112,6 +112,7 @@ GPU passthrough allows the TrueNAS SCALE kernel to directly present an internal 
 
 The GPU device acts like the VM is driving it, and the VM detects the GPU as if it is physically connected.
 
+Isolating the GPU will prevent Apps and the System from accessing it.
 
 ## Replication
 

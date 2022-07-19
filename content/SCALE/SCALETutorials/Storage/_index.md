@@ -7,10 +7,10 @@ weight: 30
 {{< toc >}}
 
 The SCALE Storage section has controls for pool, snapshot, and disk management.
+The storage section also has options for datasets, zvols, and permissions.
 
-The storage section also has options for datasets, Zvols, and permissions.
-
-SCALE supports clustering storage across multiple systems. See [TrueCommand Clustering]({{< relref "/TrueCommand/Clustering/_index.md" >}}) for more details.
+SCALE supports clustering storage across multiple systems.
+See [TrueCommand Clustering]({{< relref "/TrueCommand/Clustering/_index.md" >}}) for more details.
 
 ## Storage Overview
 
@@ -29,3 +29,7 @@ The *Disks* drop-down lets users manage, wipe, and import storage disks that Tru
 The Storage screen displays the pools, datasets, and zvols users have created on the system. Users may perform actions to root pools or specific datasets using the *Pool Actions* and *Dataset Actions* menus.
 
 {{< include file="static/includes/General/MenuNav.md.part" markdown="true" >}}
+
+## Storage Articles
+
+{{< children depth="2" description="true" >}}
