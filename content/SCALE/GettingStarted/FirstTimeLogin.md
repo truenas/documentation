@@ -1,6 +1,6 @@
 ---
 title: "First Time Login"
-weight: 60
+weight: 50
 tags:
 - scalelogin
 - scalesettings
