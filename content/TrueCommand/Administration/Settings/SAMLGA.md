@@ -26,7 +26,7 @@ To configure Google Admin as the IdP, you must:
 * Add the TrueCommand IP and port number as the ACS URL.
 * Configure the SAML app LDAP attributes properties
 
-After you configure SAML in Google Admin you then configure and start TrueCommand SAML service.
+After you configure SAML in Google Admin, you configure and start the TrueCommand SAML service.
 
 ## Configuring a Google Admin SAML App
 
