@@ -3,7 +3,7 @@ title: "Console Setup Menu Configuration"
 description: "This article provides instructions on configuration network settings using the Console setup menu after you install TrueNAS SCALE from the iso file."
 weight: 20
 aliases:
- - /docs/scale/gettingstarted/post-installconfiguration/
+ - /scale/gettingstarted/post-installconfiguration/
 tags:
 - scaleinstall
 - scalenetwork
