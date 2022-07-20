@@ -230,7 +230,7 @@ Note that the opposite is not true: you cannot use a SAS drive in a port designe
 
 A much-cited study floating around the Internet asserts that drive temperature has little impact on drive reliability.
 The study makes for a great headline or conversation starter, but carefully reading the report indicates that the drives were tested under optimal environmental conditions.
-The average temperature that a well-cooled spinning hard disk reaches in production is around 28 °C, and [one study](https://en.wikibooks.org/wiki/Minimizing_Hard_Disk_Drive_Failure_and_Data_Loss/Environmental_Control) found that disks experience twice the number of failures for every 12&deg; increase in temperature.
+The average temperature that a well-cooled spinning hard disk reaches in production is around 28 °C, and [one study](https://en.wikibooks.org/wiki/Minimizing_Hard_Disk_Drive_Failure_and_Data_Loss/Environmental_Control) found that disks experience twice the number of failures for every 12 °C increase in temperature.
 Before adding drive cooling that often comes with added noise (especially on older systems), know that you risk throwing money away by running a server in a data center or closet without noticing that the internal cooling fans are set to their lowest setting.
 Pay close attention to drive temperature in any chassis that supports 16 or more drives, especially if they are exotic, high-density designs.
 Every chassis has certain areas that are warmer for whatever reason. Watch for fan failures and the tendency for some models of 8TB drives to run hotter than other drive capacities.
