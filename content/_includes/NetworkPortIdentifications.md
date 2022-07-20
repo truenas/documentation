@@ -7,4 +7,4 @@ TrueNAS CORE utilizes driver information and enumeration to assign an interface 
 
 TrueNAS SCALE uses PCI location to assign an interface name.
 
-![ComponentNamingInterfacesSCALE](/images/SCALE/ComponentNamingInterfacesSCALE.png "TrueNAS SCALE Interface Listing")
+![ComponentNamingInterfacesSCALE](/images/SCALE/22.02/ComponentNamingInterfacesSCALE.png "TrueNAS SCALE Interface Listing")

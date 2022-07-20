@@ -164,7 +164,7 @@ Review the Pool Import Summary and click **Import**.
 
 {{< expand "Can I import GELI-encrypted pools?" "v" >}}
 Since GELI encryption is specific to FreeBSD, TrueNAS SCALE cannot import GELI-encrypted pools. 
-See the **Migrating GELI-encrypted Pools to SCALE** section in the [Installing SCALE]({{< relref "SCALE/GettingStarted/InstallingSCALE.md" >}}) article.
+See the **Migrating GELI-encrypted Pools to SCALE** section in the [Installing SCALE]({{< relref "SCALE/GettingStarted/Install/InstallingSCALE.md" >}}) article.
 {{< /expand >}}
 {{< /tab >}}
 {{< /tabs >}}
@@ -232,7 +232,7 @@ By default, TrueNAS automatically checks every pool is on a reoccurring scrub sc
 
 **Status** displays the state of the last scrub and disks in the pool.
 
-The **Pool Status** screen has additional [disk management]({{< relref "/SCALE/SCALEUIReference/Storage/DisksSCALE.md" >}}) options.
+The **Pool Status** screen has additional [disk management]({{< relref "/SCALE/SCALEUIReference/Storage/Disks/DisksScreens.md" >}}) options.
 {{< /tab >}}
 
 {{< tab "Expand Pool" >}}
