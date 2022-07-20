@@ -24,7 +24,7 @@ This can be done on a per user basis, or create a global account for FTP, for ex
 
 Return to **Storage > Pools**, find the new dataset, and click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i>**> Edit Permissions**.
 Set the **Owner** fields (user and group) to the newly created user account.
-Be sure to click **Apply User** and **Apply Group** before saving.
+Be sure to select **Apply User** and **Apply Group** before saving.
 
 ![StoragePoolsEditPermissionsACL](/images/CORE/13.0/StoragePoolsEditPermissionsACL.png "Basic Permissions Editor")
 
