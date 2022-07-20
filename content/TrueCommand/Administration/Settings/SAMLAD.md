@@ -27,7 +27,7 @@ This article provides instructions for setting up SAML service in TrueCommand an
 
    {{< hint ok >}}
    The **SSL Options** on the **Configuration** settings form has **Accept self-signed certificates** selected by default. 
-   Keep this setting to be able to use a self-signed certificate. It also helps prevent issues with http verses https URLs.
+   Keep this setting to be able to use a self-signed certificate. It also helps prevent issues with HTTP versus HTTPS URLs.
    {{< /hint >}}
 
 3. Enter the URL from Active Directory.
