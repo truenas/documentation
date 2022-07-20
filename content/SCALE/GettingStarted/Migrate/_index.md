@@ -1,7 +1,7 @@
 ---
 title: "Migrating Instructions"
 geekdocCollapseSection: true
-weight: 10
+weight: 40
 ---
 
 This section provides information for CORE users migrating to SCALE.

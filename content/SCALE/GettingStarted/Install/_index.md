@@ -1,7 +1,7 @@
 ---
 title: "Installation Instructions"
 geekdocCollapseSection: true
-weight: 10
+weight: 30
 ---
 
 This section provides instructions for users that are installing TrueNAS SCALE for the first time on their own system hardware and for users that need to do a clean install of SCALE.
