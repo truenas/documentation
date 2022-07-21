@@ -42,7 +42,7 @@ The TrueNAS system database stores the password for that account.
 
 To create the keytab on a Windows Server system, open a command prompt and use the [`ktpass`](https://techjogging.com/create-keytab-file-for-kerberos-authentication-in-windows.html) command:
 
-`ktpass -princ USERNAME@REALM.COM -pass PASSWORD -crypto ENCRYPTION TYPE -ptype KRB5_NT_PRINCIPAL -kvno 0 -out c:\PATH\KEYTABNAME.KEYTAB` where `USERNAME@REALM.COM` is the Windows Server user and principal name written in the format username@KERBEROS.REALM.
+`ktpass -princ USERNAME@REALM.COM -pass PASSWORD -crypto ENCRYPTION TYPE -ptype KRB5_NT_PRINCIPAL -kvno 0 -out c:\PATH\KEYTABNAME.KEYTAB` where `USERNAME@REALM.COM` is the Windows Server user and principal name written in the format `username@KERBEROS.REALM`.
 The Kerberos realm is typically in all caps, but the Kerberos realm case should match the realm name.
 Refer tp [this note](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/ktpass#BKMK_remarks) about using `/princ` for more details.
 
