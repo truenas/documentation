@@ -1,6 +1,6 @@
 ---
 title: "Setting Up Kerberos"
-description: "Use the Kerberos screen to configure to configure Kerberos realms and keytabs on your TrueNAs"
+description: "Use the Kerberos screen to configure Kerberos realms and keytabs on your TrueNAS"
 weight: 40
 aliases: /core/directoryservices/kerberos/
 tags:
