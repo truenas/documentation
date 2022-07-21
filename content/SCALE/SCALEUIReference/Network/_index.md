@@ -78,7 +78,7 @@ The **Global Configuration** section has all the general TrueNAS networking sett
 ![GlobalConfigurationSCALE](/images/SCALE/GlobalConfigurationSCALE.png "Global Configuration")
 
 {{< expand "Can I configure these options elsewhere?" "v" >}}
-Users can configure many of these interface, DNS, and gateway options in the [Console Setup Menu]({{< relref "Post-installConfiguration.md" >}}).
+Users can configure many of these interface, DNS, and gateway options in the [Console Setup Menu]({{< relref "/SCALE/GettingStarted/Install/ConsoleSetupMenuScale.md" >}}).
 Be sure to check both locations when troubleshooting network connectivity issues.
 {{< /expand >}}
 

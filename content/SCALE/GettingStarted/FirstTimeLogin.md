@@ -1,11 +1,12 @@
 ---
 title: "First Time Login"
-weight: 60
+weight: 50
 tags:
 - scalelogin
 - scalesettings
 - scaleinstall
 - scaledashboard
+- scalemigrate
 ---
 
 {{< toc >}}
@@ -17,7 +18,7 @@ Now that you have installed and configured TrueNAS SCALE, you can log in to the 
 After installing TrueNAS, you can configure and use the system through the web interface.
 
 {{< hint warning >}}
-**Important:** Use only the web interface to make configuration changes to the system.
+Important! Use only the web interface to make configuration changes to the system.
 {{< /hint >}}
 
 By default, using the command-line interface (CLI) to modify the system *does not* modify the settings database.
@@ -35,7 +36,7 @@ On networks that support Multicast Domain Name Services (mDNS), the system can u
 By default, TrueNAS uses the host name and domain truenas.local.
 To change the host name and domain in the web interface, go to **Network** and click **Settings** in the **Global Configuration** card.
 
-To access the web interface using an IP address, use the one that the Console Setup Menu generated after installing SCALE, or use the one you configured in the [Post-install Configuration article]({{< relref "Post-installConfiguration.md" >}}) if you upgraded from CORE.
+To access the web interface using an IP address, use the one that the Console Setup Menu generated after installing SCALE, or use the one you configured in the [Post-install Configuration article]({{< relref "/SCALE/GettingStarted/install/ConsoleSetupMenuSCALE.md" >}}) if you upgraded from CORE.
 
 Create a strong login password!
 You can reset the root password in the TrueNAS console setup menu or web interface by going to **Credentials > Local Users** and editing the **root** user.
@@ -112,7 +113,7 @@ Users can also use the iXsystems home page to access their customer portal and c
 
 {{< /expand >}}
 {{< expand "Alerts" "v" >}}
-The **Alerts** <span class="material-icons">notifications</span> icon button displays a list of current alerts for your TrueNAS system. Users can dismiss them individually or all at once.
+The **Alerts** <span class="material-icons">notifications</span> icon button displays a list of current alerts for your TrueNAS system. Users can dismiss them one at a time or all at once.
 
 It also provides an **Alerts** menu you access by clicking the <span class="material-icons">settings</span> icon. From this menu users can configure **Alert Settings**, **Alert Services**, and **Email**.
 
@@ -191,3 +192,5 @@ Click the **Power** <span class="material-icons">power_settings_new</span> icon 
 
 Now that you can access the TrueNAS web interface and see all the management options, you can begin [storing data]({{< relref "/SCALE/SCALEUIReference/Storage/_index.md" >}})!
 
+{{< taglist tag="scaleinstall" limit="10" title="Related Installation Articles" >}}
+{{< taglist tag="scalemigrate" limit="10" title="Related Migration Articles" >}}
