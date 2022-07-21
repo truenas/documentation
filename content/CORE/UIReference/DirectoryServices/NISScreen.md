@@ -1,6 +1,9 @@
 ---
 title: "NIS Screen"
+description: "Use the NIS screen to configure Network Information System (NIS) on your TrueNAS"
 weight: 30
+tags:
+- corenis
 ---
 
 
@@ -16,8 +19,8 @@ Use the **Directory Services > NIS** screen to configure [Network Information Se
 | **Manycast** | Select for `ypbind` to bind to the fastest responding server. |
 | **Enable** | Select to enable the configuration. Leave checkbox clear to disable the configuration without deleting it. |
 
-Use **SAVE** save configuration settings.
+Use **SAVE** to save configuration settings.
 
 Use **REBUILD DIRECTORY SERVICE CACHE** to resync the cache if it becomes out of sync or fewer users than expected are available in the permissions editors. 
 
-For more information see [Setting NIS]({{< relref "/CORE/CORETutorials/DirectoryServices/NIS.md" >}}).
+{{< taglist tag="corenis" limit="10" >}}
