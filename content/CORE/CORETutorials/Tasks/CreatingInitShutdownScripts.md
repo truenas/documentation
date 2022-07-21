@@ -37,7 +37,7 @@ Select when you want the **Command** to run and fill out the rest of the fields 
 
 ### Script Type
 
-Select the path to the **Script**. The **Script** runs using [sh(1)](https://www.freebsd.org/cgi/man.cgi?query=sh). You can fins some helpful scripts on our [Community Forums](https://www.truenas.com/community/).
+Select the path to the **Script**. The **Script** runs using [sh(1)](https://www.freebsd.org/cgi/man.cgi?query=sh). You can find some helpful scripts on our [Community Forums](https://www.truenas.com/community/).
 
 Select when you want the **Script** to run and fill out the rest of the fields to your needs, then click **SUBMIT**.
 
