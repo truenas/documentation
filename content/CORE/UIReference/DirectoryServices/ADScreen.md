@@ -12,7 +12,7 @@ Use the **Directory Serices > Active Directory** screens to set up Active Direct
 
 Use **ADVANCED OPTIONS** to access additional options shown below.  
 
-Use **REBUILD DIRECTORY SERVICE CACHE** to resync the cache if it becomes out of sync  or  fewer users than expected are available in the permissions editors.  
+Use **REBUILD DIRECTORY SERVICE CACHE** to resync the cache if it becomes out of sync or fewer users than expected are available in the permissions editors.  
 
 ![ActiveDirectoryScreen](/images/CORE/13.0/ActiveDirectoryScreen.png "Active Directory Screen")
 
