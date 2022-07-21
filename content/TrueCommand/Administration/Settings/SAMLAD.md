@@ -211,6 +211,6 @@ This process is described in detail in the next section.
 
 ## Logging into TrueCommand SAML
 
-Go to the TrueCommand login page and click on **SAML Login** option to log in.
+Go to the TrueCommand login page and click the **SAML Login** option to log in.
 
 {{< taglist tag="tcsaml" limit="10" >}}
