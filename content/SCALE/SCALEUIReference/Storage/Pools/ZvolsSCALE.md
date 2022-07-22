@@ -1,39 +1,40 @@
 ---
-title: "Zvols"
-geekdocCollapseSection: true
+title: "Zvol Screens"
+descritpion: "This article provides information on Zvol screen settings and functions."
 weight: 40
+aliases: /
+tags:
+ - scalezvols
+ - scalestorage
 ---
 
 {{< toc >}}
 
-A ZFS Volume (zvol) is a [dataset]({{< relref "DatasetsSCALE.md" >}}) that represents a block device.
-TrueNAS requires a zvol when configuring [iSCSI Shares]({{< relref "/SCALE/SCALEUIReference/Shares/_index.md" >}}).
+To access the Zvol screens, from the **Storage** screen click on the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; for a pool or dataset, then click **Add Zvol** to display the **Add Zvol** screen. To edit a zvol, click the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; for a zvol, then click **Edit Zvol** to display the **Edit Zvol** screen.
 
-To create a zvol in a pool, go to **Storage** and click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; on a pool or dataset, then select *Add Zvol*.
+## Add Zvol Screen
+The **Add Zvol** has two screens, basic options and advanced options. The basic options display by default. Click **Advanced Options** to expand the settings to include the block size setting.
 
-## Zvol Creation Options
+## Basic Options Settings
 
 ![ZvolsCreateSCALE](/images/SCALE/ZvolsCreateSCALE.png "Creating a new Zvol")
 
-To create a zvol with default options, enter a name and size for the zvol and click *Save*.
-
-{{< tabs "zvol Options" >}}
-{{< tab "Basic Options" >}}
 | Setting | Description |
 |---------|-------------|
-| Zvol name | Enter a short name for the zvol. Using a zvol name longer than 63-characters can prevent accessing zvols as devices. For example, a zvol with a 70-character filename or path cannot be used as an iSCSI extent. This setting is mandatory. |
-| Comments | Enter any notes about this zvol. |
-| Size for this zvol | Specify size and value. Units like `t`, `TiB`, and `G` can be used. The size of the zvol can be increased later, but cannot be reduced. If the size is more than 80% of the available capacity, the creation will fail with an “out of space” error unless `Force size` is also enabled. |
-| Force size | By default, the system will not create a zvol if that operation brings the pool to over 80% capacity. **While NOT recommended**, enabling this option will force the creation of the zvol. |
-| Sync | Sets the data write synchronization. *Inherit* gets the sync settings from the parent dataset. *Standard* uses the sync settings requested by the client software. *Always* waits for data writes to complete. *Disabled* never waits for writes to complete. |
-| Compression level  | Compress data to save space. Refer to Compression for a description of the available algorithms. |
+|** Zvol name** | Requrired setting. Enter a short name for the zvol. Using a zvol name longer than 63-characters can prevent accessing zvols as devices. For example, you cannot use a zvol with a 70-character file name or path as an iSCSI extent. |
+| **Comments** | Enter any notes about this zvol. |
+| **Size for this zvol** | Specify size and value. You can include units like **t** as in TiB, and **G**. You can increase the size of the zvol later, but you cannot reduce size. If the size is more than 80% of the available capacity, the creation fails with an out-of-space error unless you select **Force size**. |
+| **Force size** | Select to enable the system to create a zvol where the size is over 80% capacity. By default, the system does not create a zvol of this size. While notrecommended, enabling this option forces the creation of the zvol. |
+| **Sync** | Select the data write synchronization option from the dropdown list. **Inherit** gets the sync settings from the parent dataset. **Standard** uses the sync settings requested by the client software. **Always** waits for data writes to complete. **Disabled** never waits for writes to complete. |
+| **Compression level**  | Select the option from the dropdown list for the type of data compression to use. Compressing data saves space. Compression algorithm options include **Inherit (lz4)**, **Off**, **Lz4(recommended)** and several others. |
 | ZFS Deduplication | Do not change this setting unless instructed to do so by your iXsystems support engineer. |
 | Sparse | Used to provide thin provisioning. Use with caution as writes will fail when the pool is low on space. |
 | Read-only | Set to prevent the zvol from being modified. |
 | Inherit (Encryption Options) | Enabling causes the zvol to use the encryption properties of the root dataset. |
 
-{{< /tab >}}
-{{< tab "Advanced Options" >}}
+### Advanced Options Settings
+
+![ZvolsCreateSCALE](/images/SCALE/ZvolsCreateSCALE.png "Creating a new Zvol")
 
 | Setting | Description |
 |---------|-------------|
@@ -61,8 +62,24 @@ Use the *Block size* drop-down to change the value.
 
 Depending on their workload, zvols can require additional tuning for optimal performance.
 See the OpenZFS handbook [workload tuning chapter](https://openzfs.github.io/openzfs-docs/Performance%20and%20Tuning/Workload%20Tuning.html) for more information.
-{{< /tab >}}
-{{< /tabs >}}
+
+### Data Compression Algorithms
+
+| Compression | Descripton |
+|-------------|------------|
+| **Inherit (lz4)** |  |
+| **Off** |  |
+| **Lz4 (recommended)** |  |
+| **zstd-5 (default level, 3)**  |  |
+| **zstd-5 (slow)** |  |
+| **sztd-7 (very slow)** |  |
+| **zstd-fast (default level, 1)** |  |
+| **gzip (defaul level, 6)** |  |
+| **gzip-1 (fastet)** |  |
+| **gzip-9 (maximum, slow)**|  |
+| **zle (runs of zeros)** |  |
+| **lzjb (Legacy, not recommended)** |  |
+
 
 ## Managing Zvols
 
