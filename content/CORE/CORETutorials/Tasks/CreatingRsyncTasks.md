@@ -8,59 +8,52 @@ tags:
 
 {{< toc >}}
 
-Users often have to copy data to another system for backup or migrating to a new system.
-A fast and secure way of doing this is by using [rsync](https://rsync.samba.org/).
-These instructions assume that you are using TrueNAS systems for both sides of the rsync task: **Host** and **Remote**.
-
-## Basic Requirements
+Rsync is a fast and secure way to copy data to another system, either for backup or data migration purposes.
+An [rsync](https://rsync.samba.org/) task requires configuration of both a **Host** and **Remote** system. These instructions assume that you are using TrueNAS systems for both the **Host** and **Remote** sides of an rsync task.
 
 Rysnc requires a [dataset]({{< relref "CORE/CORETutorials/Storage/Pools/Datasets.md" >}}) with the needed data on the **Host** or **Remote** system.
-Rsync provides the ability to either **Push** or **Pull** data.
-When using rsync to **Push**, data copies from a **Host** system to a **Remote** system.
-When using rsync to **Pull**, data is pulled from a **Remote** system and put on the **Host** system.
+Rsync provides the ability to either push or pull data.
+When using rsync to push, data copies from a **Host** system to a **Remote** system.
+When using rsync to pull, data is pulled from a **Remote** system and put on the **Host** system.
 
-The **Remote** system must have the rsync service activated.
 TrueNAS has additional requirements depending on if you choose the **Module** or **SSH** rsync mode.
 
-## Creating a Module Rsync Task
+### Rsync Services Requirements
 
-### Module Requirements
+Before you create an rsync task on the **Host** system, you must create a module on the **Remote** system. The **Remote** system must have rsync service activated. 
+When TrueNAS is the **Remote** system, create a module by going to **Services** and clicking <i class="material-icons" aria-hidden="true" title="edit">edit</i> for the rsync service. Click the **Rsync Module** tab, then click **ADD**. See [ConfiguringRsync]({{< relref "ConfiguringRsync.md" >}}) for more information.
 
-Before you create an rsync task on the **Host** system, you must create a module on the **Remote** system.
-When TrueNAS is the **Remote** system, create a module by going to **Services** and clicking <i class="material-icons" aria-hidden="true" title="edit">edit</i> for the rsync service.
-Click the **Rsync Module** tab, then click **ADD**.
-
-### Module Mode Process
+## Creating a Module Mode Rsync Task
 
 Log in to the **Host** system interface, go to **Tasks > Rsync Tasks**, and click **ADD**.
 
 ![TasksRsyncTasksAddModeModule](/images/CORE/12.0/TasksRsyncTasksAddModeModule.png "Rsync Task: Module Mode")
 
-Select the source dataset to use with the rsync task and a user account to run the rsync task.
-Choose a direction for the rsync task.
+Select the **Source** dataset to use with the rsync task and a **User** account to run the rsync task.
+Choose a **Direction** for the rsync task.
 
-Select a schedule for the rsync task.
+Select a **Schedule** for the rsync task.
 
-Next, enter the **Remote Host** IP address or hostname.
-Use the format **username@remote_host** when the user name differs on the **Remote** host.
-Select **Module** in the **Rsync Mode** dropdown. 
+Next, enter the **Remote Host** IP address or host name.
+Use the format `username@remote_host` when the user name differs on the **Remote** host.
+Select **Module** in the **Rsync Mode** dropdown list. 
 Enter the **Remote Module Name** as it appears on the **Remote** system.
 
 Configure the remaining options according to your specific needs.
 
-Unsetting **Enabled** disables the task schedule.
+Clearing **Enabled** disables the task schedule.
 You can still save the rsync task and run it manually.
 
-## Creating an SSH Rsync Task
+## Creating an SSH Mode Rsync Task
 
 ### SSH Requirements
 
 The **Remote** system must have **SSH** enabled.
-To enable SSH in TrueNAS, go to **Services** and toggle **SSH**.
+To enable SSH in TrueNAS, go to **Services** and click the **SSH** toggle button. The toggle button turns blue when the service is on.
 
 The **Host** system needs an established [SSH connection]({{< relref "CORE/CORETutorials/SystemConfiguration/ConfiguringSSHConnections.md" >}}) to the **Remote** for the rsync task.
 To create the connection, go to **System > SSH Connections** and click **ADD**.
-Configure a **Semi-automatic** connection and set **Private Key** to *Generate New*.
+Configure a **Semi-automatic** connection and from the **Private Key** dropdown list select **Generate New**.
 
 {{< expand "Can this be set up in a command line instead?" "v" >}}
 Go to the **Shell** on the **Host** system.
@@ -110,7 +103,7 @@ Go to **Tasks > Rsync Tasks** and click **ADD**.
 
 ![TasksRsyncTasksAddModeSSH](/images/CORE/12.0/TasksRsyncTasksAddModeSSH.png "Rsync Task: SSH Mode")
 
-Configure the SSH settings first by selecting **SSH** in the **Rsync Mode** dropdown and entering the **Port** number and **Remote Path**.
+Configure the SSH settings first by selecting **SSH** in the **Rsync Mode** dropdown list and entering the **Port** number and **Remote Path**.
 
 Next, define the **Source** dataset for the rsync task and select an account in **User**.
 The name in **User** must be identical to the [SSH Connection]({{< relref "CORE/CORETutorials/SystemConfiguration/ConfiguringSSHConnections" >}}) **Username**.
@@ -118,16 +111,16 @@ The name in **User** must be identical to the [SSH Connection]({{< relref "CORE/
 Choose a direction for the rsync task, either **Push** or **Pull**, and define the task **Schedule**.
 
 Next, enter the **Remote** host IP address or host name.
-Use the format *username@remote_host* if the user name differs on the **Remote** host.
+Use the format `username@remote_host` if the user name differs on the **Remote** host.
 Configure the remaining options according to your specific needs.
 
-Clearing **Enabled** disables the task schedule without deleting the configuration.
+Clearing the **Enabled** checkbox disables the task schedule without deleting the configuration.
 You can still run the rsync task by going to **Tasks > Rsync Tasks** and clicking <i class="fa fa-chevron-right"></i>, then **RUN NOW**.
 
 ## Rsync Service and Modules
 
 The rsync task does not work when the related system service is off.
-To turn the rsync service on, go to **Services** and toggle **rsync**.
+To turn the rsync service on, go to **Services** and click the **rsync** toggle button. The toggle button turns blue when the service is on.
 See [ConfiguringRsync]({{< relref "ConfiguringRsync.md" >}}) for more information on rsync configuration and module creation.
 
 {{< taglist tag="corersync" limit="10" >}}
