@@ -1,6 +1,6 @@
 ---
 title: "Creating and Managing Snapshots"
-description: "This article provides instructions on managing ZFS snapshots in TrueNAS Scale which includes adding, deleting and cloning snapshots, and reverting back to the point-in-time when a snapshot is taken."
+description: "This article provides instructions on managing ZFS snapshots in TrueNAS Scale."
 weight: 20
 aliases: /docs/scale/scaleuireference/storage/snapshotsscale/
 tag: 

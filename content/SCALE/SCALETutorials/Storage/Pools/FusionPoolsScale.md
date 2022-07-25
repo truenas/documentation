@@ -1,6 +1,10 @@
 ---
 title: "Fusion Pools"
 weight: 70
+alias: /scale/scaleuireference/storage/pools/fusionpoolsscale/
+tags:
+ - scalestorage
+ - scalepools
 ---
 
 

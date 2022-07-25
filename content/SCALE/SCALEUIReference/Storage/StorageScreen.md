@@ -33,7 +33,7 @@ The storage pool displays in a header row that includes the status as online, of
 This same information displays on both the **Storage** widget and a pool widget you can add to the **Dashboard**. 
 The pool header includes the **Pool Operations** <span class="iconify" data-icon="mdi:database-cog"></span> icon that displays the **Pool Actions** dropdown list of options you can use for storage pools.
 
-## Pool Actions Dropdown List
+## Pool Actions List
 
 The **Pool Actions** dropdown list options are **Pool Options**, **Export/Disconnect**, **Add Vdevs**, **Scrub Pool**, **Status** and **Expand Pool**.
 
@@ -79,7 +79,7 @@ By default, TrueNAS automatically checks every pool to verify it is on a reoccur
 ### Expand Pool
 **Expand** increases the pool size to match all available disk space. A user typically expands a pool when virtual disks are resized apart from TrueNAS. A dialog displays when the process completes.
 
-## Dataset Actions
+## Dataset Actions List
 
 The **Dataset Actions** dropdown list options for the root dataset are **Add Dataset**, **Add Zvol**, **Edit Options**, **View Permissions**, **User Quotas**, **Group Quotas** and **Create Snapshot**.
 
@@ -114,9 +114,9 @@ The **Dataset Permissions** widget is read-only.
 **Group Quotas** displays the **[Group Qutoas]({{< relref "/SCALEUIReference/Storage/GroupQutoasScreen.md" >}})** screen.
 
 ### Create Snapshot
-**Create Snapshot** displays the **One time snapshot of *poolname*** dialog where you can create a manual snapshot of the selected pool.
+**Create Snapshot** displays the **One time snapshot of *datasetname*** dialog where you can create a manual snapshot of the selected dataset.
 {{< expand "Click here for more information" "v" >}}
-The *poolname* part of the dialog name changes based on the name of the selected pool.
+The *datasetname* part of the dialog name changes based on the name of the selected dataset.
 
 ![OneTimeSnapshotDialog](/images/SCALE/22.02/OneTimeSnapshotDialog.png "Create One Time Snapshot")
 
@@ -127,14 +127,21 @@ Select **Recursive** to include child datasets or zvols in the snapshot of the p
 Click **Create Snapshot** to create the manual snapshot.
 {{< /expand >}}
 
-## Zvol Actions
+## Zvol Actions List
 The **Zvol Actions** dropdown list options for the selected zvol are **Delete Zvol**, **Edit Zvol** and **Create Snapshot**.
 
 ### Delete Zvol
 **Delete Zvol** displays a confirmation dialog where you enter the name of the zvol and select **Confirm** to activate the **Delete Zvol** button.
 
 ### Edit Zvol
+**Edit Zvol** displays the **[Edit Zvol]({{< relref "/SCALEUIReference/Storage/Pools/ZvolsScreens.md" >}})** screen where you can modify current settings.
 
 ### Create Snapshot
+**Create Snapshot** displays a **One time snapshot *zvol*** dialog where you can create a manual snapshot of the selected zvol.
+
+## Encryption Options
+If you create a pool to use encryption, the root and child datasets or zvols have the option to inherit the encryption, modify the type of encryption, or not use encryption at all. For more information see [Storage Encryption]({{< relref "SCALETutorials/Storage/StorageEncryption.md" >}}).
+
+If encryption is enabled, the **Dataset Actions** and **Zvol Actions** menus include the **Encryption Options** list item you use to configure encryption type and other settings for that dataset or zvol.
 
 {{< taglist tag="scalestorage" limit="10" >}}
