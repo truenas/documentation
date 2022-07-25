@@ -7,21 +7,21 @@ tags:
 - coreidmap
 ---
 
-Use the **Directory Services LDAP** screen to configure LDAP server settings on your TrueNAS. Lightweight Directory Access Protocol (LDAP) is an industry standard for directory information services deployed over an Internet Protocol (IP) network.
+Lightweight Directory Access Protocol (LDAP) is an industry standard for directory information services deployed over an Internet Protocol (IP) network. Use the **Directory Services LDAP** screen to configure LDAP server settings on your TrueNAS.  
 
 ![DirectoryServicesLDAPScreen](/images/CORE/13.0/DirectoryServicesLDAPScreen.png "Directory Services LDAP Screen")
 
-Use **SAVE** to save settings.
+Click **SAVE** to save settings.
 
-Use **ADVANCED OPTIONS** to display additional **LDAP** configuration options. 
+Click **ADVANCED OPTIONS** to display additional **LDAP** configuration options. 
 
-Use **REBUILD DIRECTORY SERVICE CACHE** to resync the cache if it becomes out of sync or fewer users than expected are available in the permissions editors.
+Click **REBUILD DIRECTORY SERVICE CACHE** to resync the cache if it becomes out of sync or fewer users than expected are available in the permissions editors.
 
 ## Basic Options
 
 ![LDAPBasicOptions](/images/CORE/13.0/LDAPBasicOptions.png "LDAP Basic Options")
 
-| Setting | Description |
+| Name | Description |
 |---------|-------------|
 | **Hostname** | Enter the LDAP server host names or IP addresses. Separate entries with an empty space. Mutltiple host names or IP addresses entered can be used to create an LDAP failover priority list. If a host does not respond, the next host on the list is tried until a new connection is established. |
 | **Base DN** | Top level of the LDAP directory tree to use when searching for resources. For example, *dc=test,dc=org*. |
@@ -33,7 +33,7 @@ Use **REBUILD DIRECTORY SERVICE CACHE** to resync the cache if it becomes out of
 
 ![LDAPAdvancedOptions](/images/CORE/13.0/LDAPAdvancedOptions.png "LDAP Advanced Options")
 
-| Setting | Description |
+| Name | Description |
 |---------|-------------|
 | **Allow Anonymous Binding** | Select to disable authentication and allow read and write access to any client. |
 | **Kerberos Realm** | Select an option configured on your system from the dropdown list. |
@@ -48,12 +48,12 @@ Use **REBUILD DIRECTORY SERVICE CACHE** to resync the cache if it becomes out of
 | **Auxiliary Parameters** | Enter for [nslcd.conf](https://arthurdejong.org/nss-pam-ldapd/nslcd.conf.5). |
 | **Schema** | Select the Samba schema from the dropdown list. Options are **RFC2307** or **RFC2307BIS**. |
 
-Use **SAVE** to save settings and return to the **LDAP** screen.
+Click **SAVE** to save settings and return to the **LDAP** screen.
 
-Use **BASIC OPTIONS** to return to the **LDAP** display of basic options only.
+Click **BASIC OPTIONS** to return to the **LDAP** display of basic options only.
 
-Use **EDIT IDMAP** to navigate to the **Directory Services > Idmap** screen.
+Click **EDIT IDMAP** to navigate to the **Directory Services > Idmap** screen.
 
-{{< taglist tag="coreldap" limit="10" >}}
+{{< taglist tag="coreldap" limit="10" title="Related LDAP Articles" >}}
 
-{{< taglist tag="coreidmap" limit="10" title="Related Idmap Articles" >}}
+{{< taglist tag="coreidmap" limit="10" >}}

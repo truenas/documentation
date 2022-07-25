@@ -35,6 +35,8 @@ Configure the remaining options as needed:
 * **Manycast** : Select for `ypbind` to bind to the fastest responding server.
 * **Enable** : Leave the checkbox clear to disable the configuration without deleting it.
 
-When ready, **SAVE** the configuration.
+Click **SAVE** to save configuration settings.
+
+Click **REBUILD DIRECTORY SERVICE CACHE** to resync the cache if it becomes out of sync or fewer users than expected are available in the permissions editors.  
 
 {{< taglist tag="corenis" limit="10" >}}  

@@ -7,7 +7,7 @@ tags:
 - coreldap
 ---
  
-
+Lightweight Directory Access Protocol (LDAP) is an open and cross platform protocol typically used to centralize authentication.
 TrueNAS includes an [Open LDAP](https://www.openldap.org/) client for accessing information from an LDAP server. An LDAP server provides directory services for finding network resources such as users and their associated permissions.
 
 {{< expand "Does LDAP work with SMB?" "v" >}}
@@ -39,11 +39,11 @@ Enter the **Bind DN**.
 This is the administrative account name on the LDAP server.
 For example, `cn=Manager,dc=test,dc=org`.
 
-Next, enter the **Bind Password**.
+Enter the **Bind Password**.
 This is the password associated with the account in **Bind DN**.
 
 The final basic option is **Enable**.
-Leaving the **Enable** checkbox clear disables the LDAP configuration without deleting it.
+Clearing the **Enable** checkbox disables the LDAP configuration without deleting it.
 It can be enabled at a later time without reconfiguring the options.
 
 To further modify the LDAP configuration, click **ADVANCED OPTIONS**.

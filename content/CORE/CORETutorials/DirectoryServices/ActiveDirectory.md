@@ -10,11 +10,11 @@ tags:
 
 {{< toc >}}
 
-The Active Directory (AD) service shares resources in a Windows network. AD provides authentication and authorization services for the users in a network, eliminating the need to recreate the user accounts on TrueNAS. Once joined to an AD domain, you can use domain users and groups in local ACLs on files and directories. You can also set up shares to act as a file server.  
+The Active Directory (AD) service shares resources in a Windows network. AD provides authentication and authorization services for the users in a network, eliminating the need to recreate the user accounts on TrueNAS. Domain users and groups in local ACLs are accessible after joining AD. Setting up shares acts as a file server.  
 
-Joining an AD domain also configures the Privileged Access Manager (PAM) to let domain users log on via SSH or authenticate to local services.
+Joining an AD domain configures the Privileged Access Manager (PAM) to let domain users log on via SSH or authenticate to local services.
 
-Users can configure AD services on Windows or Unix-like operating systems running [Samba version 4](https://wiki.samba.org/index.php/Setting_up_Samba_as_an_Active_Directory_Domain_Controller#Provisioning_a_Samba_Active_Directory).
+AD services can be configured on Windows, or on Unix-like operating systems running [Samba version 4](https://wiki.samba.org/index.php/Setting_up_Samba_as_an_Active_Directory_Domain_Controller#Provisioning_a_Samba_Active_Directory).
 
 To configure a connection, you need to know the Active Directory domain controller domain and the account credentials for that system.
 
@@ -75,9 +75,9 @@ To check the AD join progress, open the <i class="material-icons" aria-hidden="t
 TrueNAS displays any errors during the join process in the **Task Manager**.
 {{< /expand >}}
 
-When the import completes, AD users and groups become available while configuring basic dataset permissions or an [Access Control List (ACL)]({{< relref "/CORE/CORETutorials/Storage/Pools/Permissions.md" >}}) with TrueNAS cache enabled (which is the default setting).
+When the import completes, AD users and groups become available. These have basic dataset permissions or an [Access Control List (ACL)]({{< relref "/CORE/CORETutorials/Storage/Pools/Permissions.md" >}}). TrueNAS cache is enabled by default.
 
-Joining AD also adds default [Kerberos]({{< relref "/CORE/CORETutorials/DirectoryServices/Kerberos.md" >}}) realms and generates a default `AD_MACHINE_ACCOUNT` keytab.
+Joining AD adds default [Kerberos]({{< relref "/CORE/CORETutorials/DirectoryServices/Kerberos.md" >}}) realms and generates a default `AD_MACHINE_ACCOUNT` keytab.
 TrueNAS automatically begins using this default keytab and removes any administrator credentials stored in the TrueNAS configuration file.
 
 ## Related Services: FTP Access
@@ -97,7 +97,7 @@ While SFTP is recommended over FTP, joined systems do allow FTP access. Keep the
 If the cache becomes out of sync or fewer users than expected are available in the permissions editors, resync it using **Directory Service > Active Directory > REBUILD DIRECTORY SERVICE CACHE**.
 
 If you are using Windows Server with 2008 R2 or older, try creating a **Computer** entry on the Windows server Organizational Unit (OU).
-When creating this entry, enter the TrueNAS hostname in the name field.
+When creating this entry, enter the TrueNAS host name in the name field.
 Make sure it is the same name as the one set in the **Hostname** field in **Network > Global Configuration**, and the **NetBIOS alias** from **Directory Service > Active Directory > Advanced Options**.
 
 {{< expand "Shell Commands" "v" >}}
