@@ -33,7 +33,8 @@ This article provides instructions for setting up SAML service in TrueCommand an
 3. Enter the URL from Active Directory.
    Enter http://*ds.yourcompany.net*/FederationMetadata/2007-06/FederationMetadata.xml in the **SAML Identity Provider URL** field, then click **Save**. 
 
-https://ds-dc01.ad01.qe.ixsystems.net/FederationMetadata/2007-06/FederationMetadata.xml used in test
+   ![TC2.2SAMLSettings](/images/SAML/TC2.2SAMLSettings.png "TrueCommand SAML Service Settings")
+
 4. Click **Configure** again, scroll down and select **Start the SAML service**, then click **Save** to start the service.
 
 5. Click **Configure** again, click **DOWNLOAD SERVICE PROVIDER METADATA**. 
