@@ -1,18 +1,17 @@
 ---
 title: "Active Directory Screen"
-description: "Use the AD screen to configure Active Directory (AD) and related service options on your TrueNAS"
+description: "Use the AD screen to configure Active Directory (AD) on your TrueNAS"
 weight: 10
 tags:
 - coredirectoryservices
 - coread
 ---
 
+The Active Directory (AD) service shares resources in a Windows network environment. Use the **Directory Serices > Active Directory** screens to set up Active Directory (AD) on your TrueNAS. The first Active Directory screen is a list of basic options.  
 
-Use the **Directory Serices > Active Directory** screens to set up Active Directory (AD) on your TrueNAS. The Active Directory (AD) service shares resources in a Windows network. The first Active Directory screen is a list of basic options.  
+Click **ADVANCED OPTIONS** to access additional options shown below.  
 
-Use **ADVANCED OPTIONS** to access additional options shown below.  
-
-Use **REBUILD DIRECTORY SERVICE CACHE** to resync the cache if it becomes out of sync or fewer users than expected are available in the permissions editors.  
+Click **REBUILD DIRECTORY SERVICE CACHE** to resync the cache if it becomes out of sync or fewer users than expected are available in the permissions editors.  
 
 ![ActiveDirectoryScreen](/images/CORE/13.0/ActiveDirectoryScreen.png "Active Directory Screen")
 
@@ -21,7 +20,7 @@ Use **REBUILD DIRECTORY SERVICE CACHE** to resync the cache if it becomes out of
 
 ![ActiveDirectoryScreenBasicOptions](/images/CORE/13.0/ActiveDirectoryScreenBasicOptions.png "Active Directory Basic Options")
 
-| Setting | Description |
+| Name | Description |
 |---------|-------------|
 | **Domain Name** | Enter the Active Directory domain (*example.com*) or child domain (*sales.example.com*). Required field. |
 | **Domain Account Name** | Enter the Active Directory administrator account name. Required field. |
@@ -32,7 +31,7 @@ Use **REBUILD DIRECTORY SERVICE CACHE** to resync the cache if it becomes out of
 
 ![ActiveDirectoryScreenAdvancedOptions](/images/CORE/13.0/ActiveDirectoryScreenAdvancedOptions.png "Active Directory Advanced Options")
 
-| Setting | Description |
+| Name | Description |
 |---------|-------------|
 | **Verbose logging** | Select to log attempts to join the domain to <file>/var/log/messages</file>. |
 | **Allow Trusted Domains** | Select to not include a domain name in user names. Leave checkbox clear to force domain names to prepend to user names. One possible reason for not setting this value is to prevent user name collisions when **Allow Trusted Domains** is selected and there are identical user names in more than one domain. |
@@ -51,12 +50,12 @@ Use **REBUILD DIRECTORY SERVICE CACHE** to resync the cache if it becomes out of
 | **NetBIOS alias** | Alternative names that SMB clients can use when connecting to this NAS. Can be no greater than 15 characters. |
 | **LEAVE DOMAIN** | Disconnects the TrueNAS system from the Active Directory. |
 
-Use **SAVE** to save settings. 
+Click **SAVE** to save settings. 
 
-Use **BASIC OPTIONS** to return to the **Active Directory** display of basic options only.  
+Click **BASIC OPTIONS** to return to the **Active Directory** display of basic options only.  
 
-Use **EDIT IDMAP** to navigate to the **Directory Services > Idmap** screen. 
+Click **EDIT IDMAP** to navigate to the **Directory Services > Idmap** screen. 
 
-Use **REBUILD DIRECTORY SERVICE CACHE** to resync the cache if it becomes out of sync or fewer users than expected are available in the permissions editors. 
+Click **REBUILD DIRECTORY SERVICE CACHE** to resync the cache if it becomes out of sync or fewer users than expected are available in the permissions editors. 
 
 {{< taglist tag="coread" limit="10" >}}  
