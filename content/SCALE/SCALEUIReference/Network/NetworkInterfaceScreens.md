@@ -1,14 +1,13 @@
 ---
 title: "Network Interface Screens"
-description: "This article provides information on the **Network** screen **Interfaces** widget and configuration screens.
+description: "This article provides information on the **Network** screen **Interfaces** widget and configuration screens."
 weight: 10
 tags:
-- scalenetwork
-- scaleinterface
+ - scalenetwork
+ - scaleinterface
 ---
 
 {{< toc >}}
-
 
 The **Interfaces** widget on the **Network** screen displays interface port names and IP addresses configured on your TrueNAS system, as well as their upload/download rates.
 
@@ -112,4 +111,5 @@ Use the **IP Address** **Add** to define an alias for the interface on the TrueN
 Users may also select how many bits are a part of the network address from the dropdown list of options.
 
 {{< taglist tag="scaleinterface" limit="10" >}}
-{{< taglist tag="scalenetwork" limit="10" "Related Network Articles" >}}
+
+{{< taglist tag="scalenetwork" limit="10" title="Related Network Articles" >}}

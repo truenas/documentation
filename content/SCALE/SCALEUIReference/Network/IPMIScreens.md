@@ -7,9 +7,7 @@ tags:
 - scaleipmi
 ---
 
-
 {{< toc >}}
-
 
 The **IPMI** widget on the **Network** screen displays the available IPMI channels. 
 
@@ -43,4 +41,5 @@ Click on the channel you wish to edit to open the configuration screen.
 | **Manage** | Like the <span class="iconify" data-icon="ic:round-launch"></span> button on the **IPMI** widget, this opens the same IPMI manager in a new browser tab where users can communicate with the server without having direct to the hardware. |
 
 {{< taglist tag="scaleipmi" limit="10" >}}
-{{< taglist tag="scalenetwork" limit="10" "Related Network Articles" >}}
+
+{{< taglist tag="scalenetwork" limit="10" title="Related Network Articles" >}}

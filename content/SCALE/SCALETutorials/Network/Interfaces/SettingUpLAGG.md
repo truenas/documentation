@@ -49,4 +49,5 @@ To set up a LAGG interface, from the **Network** screen:
 6. Click **Apply** when finished.
 
 {{< taglist tag="scaleinterface" limit="10" >}}
-{{< taglist tag="scalenetwork" limit="10" "Related Network Articles" >}}
+
+{{< taglist tag="scalenetwork" limit="10" title="Related Network Articles" >}}

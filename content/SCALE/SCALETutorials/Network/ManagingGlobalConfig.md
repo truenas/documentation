@@ -6,9 +6,7 @@ tags:
 - scalenetwork
 ---
 
-
 {{< toc >}}
-
 
 Use the **Global Configuration Settings** screen to manage existing general network settings like the default gateway, DNS servers, set DHCP to assign the IP address or to set a static IP address, add IP address aliases, and set up services to allow external communication.
 
@@ -26,7 +24,7 @@ You might need command line knowledge or physical access to the TrueNAS system t
 {{< /expand >}}
 
 {{< expand "Can I configure these options elsewhere?" "v" >}}
-Users can configure many of these interface, DNS, and gateway options in the [Console setup menu]({{< relref "/install/ConsoleSetupMenuSCALE.md" >}}).
+Users can configure many of these interface, DNS, and gateway options in the [Console setup menu]({{< relref "ConsoleSetupMenuSCALE.md" >}}).
 Be sure to check both locations when troubleshooting network connectivity issues.
 {{< /expand >}}
 

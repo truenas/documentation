@@ -33,7 +33,7 @@ Lost communicatation could require you to reconfigure your network settings usin
 
 ## Changing the Interface to a Static IP Address
 
-To view a demonstration of this procedure see the tutorial video in the [Managing Global Configuration]({{< relref "/SCALETutorials/Network/ManagingGlobalConfig.md" >}}) article.
+To view a demonstration of this procedure see the tutorial video in the [Managing Global Configuration]({{< relref "ManagingGlobalConfig.md" >}}) article.
 
 To change an interface from using DHCP to a static IP address:
 
@@ -108,4 +108,5 @@ To return to using DHCP:
    If the test network operation fails or the system times out, your system returns to the network settings before you attempted the change. Verify the name server and default gateway information to try again.
 
 {{< taglist tag="scaleinterface" limit="10" >}}
-{{< taglist tag="scalenetwork" limit="10" "Related Network Articles" >}}
+
+{{< taglist tag="scalenetwork" limit="10" title="Related Network Articles" >}}

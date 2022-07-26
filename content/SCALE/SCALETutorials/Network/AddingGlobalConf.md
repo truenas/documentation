@@ -10,7 +10,7 @@ tags:
 
 Use the **Global Configuration Settings** screen to add general network settings like the default gateway, DNS name servers to allow external communication.
 
-To add new or change existing network interfaces see [Managing Interfaces]({{< relref "/SCALETutorials/Network/Interfaces/ManagingInterfaces.md" >}}).
+To add new or change existing network interfaces see [Managing Interfaces]({{< relref "ManagingInterfaces.md" >}}).
 
 {{< hint danger >}}
 **Disruptive Change**

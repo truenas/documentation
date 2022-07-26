@@ -38,4 +38,5 @@ To set up a VLAN interface, from the **Network** screen:
 8. Click **Apply** when finished.
 
 {{< taglist tag="scaleinterface" limit="10" >}}
-{{< taglist tag="scalenetwork" limit="10" "Related Network Articles" >}}
+
+{{< taglist tag="scalenetwork" limit="10" title="Related Network Articles" >}}

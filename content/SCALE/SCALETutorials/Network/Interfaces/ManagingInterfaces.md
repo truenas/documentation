@@ -1,5 +1,6 @@
 ---
 title: "Managing Interfaces"
+description: "This article describes how to add, edit, and delete a network interface."
 weight: 15
 tags:
 - scalenetwork
@@ -35,7 +36,7 @@ Both of these fields are editable only on the **Add Interface** panel before you
 
 Because you cannot edit the interface type or name after you click **Save**, if you make a mistake with either field you can only delete that interface and create a new one with the desired type. 
 
-If you want to change from DHCP to a static IP, you must also add the new default gateway and DNS nameservers that work with the new IP address. See [Setting Up a Static IP]({{< relref "/SCALETutorials/Network/Interfaces/SettingUpStaticIPs.md" >}}) for more information.
+If you want to change from DHCP to a static IP, you must also add the new default gateway and DNS nameservers that work with the new IP address. See [Setting Up a Static IP]({{< relref "SettingUpStaticIPs.md" >}}) for more information.
 
 {{< hint danger >}}
 If you delete the primary network interface you can lose your TrueNAS connection and the ability to communicate with the TrueNAS through the web interface!
