@@ -16,16 +16,16 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0         # Fetch all history for .GitInfo and .Lastmod
 
-      - uses: pnpm/action-setup@v2.2.1
+      - uses: pnpm/action-setup@v2.2.2
         with:
           version: latest
 
       - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2.4.13
+        uses: peaceiris/actions-hugo@v2.5.0
         with:
           hugo-version: '0.91.0'
           extended: true
@@ -54,49 +54,3 @@ jobs:
 
       - name: Get the preview_url
         run: echo "url => ${{ steps.preview_step.outputs.preview_url }}"
-
-      - name: Sleep for 30 seconds
-        run: sleep 30s
-        shell: bash
-
-      - name: Check links using container
-        uses: ruzickap/action-my-broken-link-checker@v2
-        with:
-          url: "https://${{ steps.preview_step.outputs.preview_url }}"
-          cmd_params: >
-            --buffer-size=8192 
-            --skip-tls-verification
-            --timeout=60
-            --rate-limit=30
-            --color=always
-            --exclude docs/
-            --exclude=docs/files/
-            --exclude=files/TrueNASCollection.vssx
-            --exclude=update.freenas.org
-            --exclude=microsoft.com
-            --exclude=oracle.com
-            --exclude=amazon.com
-            --exclude=apple.com
-            --exclude=fastmail.com
-            --exclude=linode.com
-            --exclude=community.openvpn.net
-            --exclude=tools.ietf.org
-            --exclude=github.com
-            --exclude=freebsd.org
-            --exclude=jira.ixsystems.com
-            --exclude=linkedin.com
-            --exclude=googletagmanager.com
-            --exclude=youtube.com
-            --exclude=vmware.com
-            --exclude=cyberciti.biz
-            --exclude=truenas-documentation-deploy.surge.sh
-            --exclude=tc2api.html
-            --exclude=/docs/images/tn-openstorage-logo.png
-            --exclude=https://www.backblaze.com/
-            --exclude=https://discord.com/invite/Q3St5fPETd
-            --exclude=https://www.veeam.com/documentation-guides-datasheets.html
-            --exclude=https://twitter.com/TrueNAS
-            --exclude=https://www.openpgp.org/software/
-            --exclude=https://gohugo.io/
-            --exclude=https://www.unix.com/
-          debug: true

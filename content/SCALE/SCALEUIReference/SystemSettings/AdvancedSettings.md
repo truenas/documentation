@@ -16,7 +16,7 @@ Advanced Settings have reasonable defaults in place. Changing advanced settings 
 
 ## Console
 
-**Console** lets users configure the [Console Setup menu]({{< relref "Post-installConfiguration.md" >}}).
+**Console** lets users configure the [Console Setup menu]({{< relref "/SCALE/GettingStarted/Install/ConsoleSetupMenuSCALE.md" >}}).
 
 | Name | Description |
 |------|-------------|
@@ -112,6 +112,7 @@ GPU passthrough allows the TrueNAS SCALE kernel to directly present an internal 
 
 The GPU device acts like the VM is driving it, and the VM detects the GPU as if it is physically connected.
 
+Isolating the GPU will prevent Apps and the System from accessing it.
 
 ## Replication
 

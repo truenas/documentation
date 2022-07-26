@@ -1,6 +1,8 @@
 ---
 title: "Console Setup Menu"
 weight: 40
+tags:
+- coreconsole
 ---
 
 The Console Setup menu displays at the end of the boot process.
