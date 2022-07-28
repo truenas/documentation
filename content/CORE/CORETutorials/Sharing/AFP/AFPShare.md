@@ -24,15 +24,15 @@ To configure the new share, go to **Sharing > Apple Shares (AFP)** and click **A
 Because AFP sharing is deprecated, confirm that you intend to create an AFP share.
 Next, use the file browser to select a dataset to share and enter a descriptive name for the share in **Name**.
 
-When the share is to have Apple Time Machine backups, set **Time Machine**.
+Select **Time Machine** if the share is to have Apple Time Machine backups. 
 This advertises the share to other Mac systems as a disk that stores Time Machine backups.
 It is not recommended to have multiple AFP shares configured for Time Machine backups.
 
-Setting **Use as Home Share** creates home directories for users that connect to the share.
+Select **Use as Home Share** to create home directories for users that connect to the share.
 Only one AFP share can be a home share.
 
 The AFP share is enabled by default.
-To create the share but not immediately enable it, unset **Enable**.
+To create the share but not immediately enable it, clear **Enabled**.
 Clicking **SUBMIT** creates the share.
 
 ![Sharing AFP Add](/images/CORE/12.0/SharingAFPAdd.png "Sharing AFP Add")
@@ -43,15 +43,15 @@ To edit an existing AFP share, go to **Sharing > Apple Shares (AFP)** and click 
 
 ## Start or Stop AFP Service
 
-To begin advertising the AFP shared location, go to **Services** and click the **AFP** toggle to start if not running or if running, to stop it.
-To automatically start the service after TrueNAS boots, set **Start Automatically**.
+To begin advertising the AFP shared location, go to **Services** and click the toggle to start or stop the **AFP** service, depending on the current state. Hover the mouse over the toggle to see the current state of the service. The toggle turns blue when it is running. 
+To automatically start the service after TrueNAS boots, select **Start Automatically**.
 
 ### Changing AFP Service settings
 
 If the AFP service is running, stop it before attempting to edit settings.
 
 It is recommended to use the default settings for the AFP service.
-However, to adjust the service settings, click <i class="fa fa-pencil" aria-hidden="true" title="Configure"></i>.
+To adjust the service settings, click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i> icon.
 
 ![Services AFP Edit](/images/CORE/12.0/ServicesAFPEdit.png "Services AFP Edit")
 
@@ -60,8 +60,8 @@ See [Adding AFP Service]({{< relref "/CORE/UIReference/Services/AFPScreen.md" >}
 ## Connecting to the AFP Share
 
 Use an Apple operating system to connect to the share.
-First, open the **Finder** app on the Mac and click **Go > Connect to Server...** in the top menu bar on the Mac.
-Next, enter `afp://{IPofTrueNASsystem}` and click **Connect**.
+Open the **Finder** app on the Mac and click **Go > Connect to Server...** in the top menu bar on the Mac.
+Enter `afp://{IPofTrueNASsystem}` and click **Connect**.
 For example, entering `afp://192.168.2.2` connects to the TrueNAS AFP share at 192.168.2.2.
 
 ![Apple AFP Connect](/images/CORE/AppleAFPConnect.png "Apple AFP Connect")
