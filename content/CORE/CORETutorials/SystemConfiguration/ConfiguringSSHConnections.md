@@ -11,7 +11,7 @@ tags:
 {{< toc >}}
 
 [Secure Socket Shell (SSH)](https://searchsecurity.techtarget.com/definition/Secure-Shell) is a network protocol that provides a secure method to access and transfer files between two hosts while using an unsecured network.
-SSH can use user account credentials to establish secure connections but often uses key pairs shared between host systems for authentication.
+SSH can use user account credentials to establish secure connections or key pairs shared between host systems for authentication.
 
 ## Create SSH Keypairs
 
