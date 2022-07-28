@@ -22,9 +22,9 @@ For example, S.M.A.R.T. tests should not be scheduled on the same day as a disk 
 
 {{< expand "How do I check or change S.M.A.R.T. testing for a disk?" "v" >}}
 Go to **Storage > Disks** and click <i class="material-icons" aria-hidden="true" title="Expand">chevron_right</i> to expand an entry.
-*Enable S.M.A.R.T.* shows as *true* or *false*.
+**Enable S.M.A.R.T.** shows as **true** or **false**.
 
-To enable or disable testing, click **EDIT DISK(S)** and find the *Enable S.M.A.R.T.* option.
+To enable or disable testing, click **EDIT DISK(S)** and find the **Enable S.M.A.R.T.** option.
 {{< /expand >}}
 
 ## Manual S.M.A.R.T. Tests
@@ -39,19 +39,19 @@ Each test type can be slightly different based on the drive connection, ATA or S
 
 ### ATA Connection
 
-* *Long* - runs SMART Extended Self Test. This scans the entire disk surface and can take many hours on large-volume disks.
-* *Short* - runs SMART Short Self Test (usually under ten minutes). These are basic disk tests that vary by manufacturer.
-* *Conveyance* - runs a SMART Conveyance Self Test.
+* **Long** - runs SMART Extended Self-Test. This scans the entire disk surface and can take many hours on large-volume disks.
+* **Short** - runs SMART Short Self-Test (usually under ten minutes). These are basic disk tests that vary by manufacturer.
+* **Conveyance** - runs a SMART Conveyance Self-Test.
   This self-test routine is intended to identify damage incurred during transporting of the device.
   This self-test routine requires only minutes to complete.
-* *Offline* - runs SMART Immediate Offline Test.
+* **Offline** - runs SMART Immediate Offline Test.
   The effects of this test are visible only in that it updates the SMART Attribute values, and if the test finds errors, they appear in the SMART error log.
 
 ### SCSI Connection
-* *Long* - runs the "Background long" self-test.
-* *Short* - runs the "Background short" self-test.
-* *Offline* - runs the default self test in foreground.
-  No entry is placed in the self test log.
+* **Long** - runs the *Background long* self-test.
+* **Short** - runs the *Background short* self-test.
+* **Offline** - runs the default self-test in foreground.
+  No entry is placed in the self-test log.
 
 For more information, refer to [smartctl(8)](https://www.unix.com/man-page/suse/8/smartctl/).
 
