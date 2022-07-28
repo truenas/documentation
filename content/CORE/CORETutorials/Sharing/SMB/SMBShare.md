@@ -18,9 +18,11 @@ SMB can be used in TrueNAS to share files among single or multiple users or devi
 SMB shares allow a wide range of permissions and security settings, and can support advanced permissions (ACLs) on Windows and other systems, as well as Windows Alternate Streams and Extended Metadata.
 SMB is suitable for the management and administration of large or small pools of data.
 
+{{< hint warning >}}
 TrueNAS uses [Samba](https://www.samba.org/) to provide SMB services.
 There are multiple versions of the SMB protocol. An SMB client typically negotiates the highest supported SMB protocol during SMB session negotiation. Industry-wide, the usage of the SMB1 protocol (sometimes referred to as NT1) is [being deprecated]({{< relref "/CORE/CoreSecurityReports/SMB1Advisory.md" >}}). This deprecation is for security reasons.
 However, most SMB clients support SMB 2 or 3 protocols, even when they are not the default protocols.
+{{< /hint >}}
 
 {{< hint info >}}
 Legacy SMB clients rely on NetBIOS name resolution to discover SMB servers on a network. The NetBIOS name server (nmbd) is disabled by default in TrueNAS. You can enable it in **Network > Global Configuration** if this functionality is required.
@@ -59,7 +61,7 @@ When LDAP is configured and you want users from the LDAP server to have access t
 
 ### Tune the Dataset ACL
 
-After a dataset and accounts are created, you will need to investigate your access requirements and adjust the dataset ACL to match. To edit the ACL, go to **Storage > Pools**, open the options for the new dataset, and click *Edit Permissions*.
+After a dataset and accounts are created, determine your access requirements and adjust the dataset ACL to match. To edit the ACL, go to **Storage > Pools**, open the options for the new dataset, and click **Edit Permissions**.
 Many home users typically add a new entry that grants *FULL_CONTROL* to the *builtin_users* group with the flags set to *INHERIT*.
 See the [Permissions article]({{< relref "/CORE/CORETutorials/Storage/Pools/Permissions.md" >}}) for more details.
 
@@ -84,8 +86,8 @@ See [SMB Share Screen]({{< relref "/CORE/UIReference/Sharing/SMB/SMBShareScreen.
 ## Activate the SMB Service
 
 Connecting to an SMB share does not work when the related system service is not activated.
-To make SMB share available on the network, **Services** and click the **SMB** toggle to start the service.
-If you want the service to activate whenever TrueNAS boots, set **Start Automatically**.
+To make SMB share available on the network, go to **Services** and click the **SMB** toggle to start the service.
+If you want the service to activate whenever TrueNAS boots, select **Start Automatically**.
 
 See [SMB Service Screen]({{< relref "/CORE/UIReference/Services/SMBScreen.md" >}}) for more information on SMB services settings.
 
