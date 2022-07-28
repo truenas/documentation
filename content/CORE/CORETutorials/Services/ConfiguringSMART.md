@@ -12,25 +12,26 @@ tags:
 [S.M.A.R.T.](https://en.wikipedia.org/wiki/S.M.A.R.T.) (Self-Monitoring, Analysis and Reporting Technology) is an industry standard for disk monitoring and testing.
 Disks can be monitored for problems using several different kinds of self-tests.
 
-Go to the **Services** page and find the **S.M.A.R.T.** entry.
-Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to configure the service.
+Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i> in **Services > S.M.A.R.T.** to configure the service.
 
-![ServicesSMARTOptions](/images/CORE/12.0/ServicesSMARTOptions.png "S.M.A.R.T. Options")
+![ServicesSMARTOptions](/images/CORE/13.0/ServicesSMARTOptions.png "S.M.A.R.T. Options")
 
-Define a number of minutes for smartd to wake up and check for configured to run in **Check Interval** and select a **Power Mode** (tests only run with *Never*).
+**General Options**
 
-Define the **Difference** in degrees of Celsius. S.M.A.R.T. sends alerts if the temperature of a drive changes by N degrees Celsius since the last report.
-
-Define the **Threshold** in degrees of Celsius. S.M.A.R.T. sends messages with a log level of LOG_INFO if the temperature exceeds the threshold.
-
-Define the **Threshold** in degrees of Celsius. S.M.A.R.T. sends messages with a log level of LOG_CRIT if the temperature exceeds
+| Name | Description |
+|------|-------------|
+| **Check Interval** | Enter number of minutes to determine how often the smartd daemon monitors for configured tests to be run. |
+| **Power Mode** | Select from dropdown list: **Never**, **Sleep**, **Standby** or **Idle**. Tests only run with **Never**. |
+| **Difference** | Enter in degrees Celsius. S.M.A.R.T. sends alerts if the temperature of a drive changes by N degrees Celsius since the last report. |
+| **Informational** | Enter in degrees Celsius. S.M.A.R.T. sends messages with a log level of LOG_INFO if the temperature exceeds the threshold. |
+| **Critical** | Enter in degrees Celsius. S.M.A.R.T. sends messages with a log level of LOG_CRIT if the temperature exceeds the threshold. |
 
 ## Service Activation
 
-When finished configuring the server or client service, click **SAVE**.
+Click **SAVE** when finished configuring the server or client service.
 Start the service by clicking the related toggle in **Services**.
 To check the current state of the service, hover over the toggle.
 
-Setting **Start Automatically** starts the service whenever TrueNAS completes booting and the network and data pools are running.
+Selecting **Start Automatically** starts the service whenever TrueNAS completes booting and the network and data pools are running.
 
 {{< taglist tag="coresmart" limit="10" >}}
