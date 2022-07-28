@@ -23,8 +23,10 @@ Assign a user name, password, and link the newly created dataset for the FTP sha
 This can be done on a per user basis, or create a global account for FTP, for example OurOrgFTPacnt, etc.
 
 Return to **Storage > Pools**, find the new dataset, and click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i>**> Edit Permissions**.
-Set the **Owner** fields (user and group) to the newly created user account.
+Select the **User** from the dropdown list who controls the dataset. Select the **Group** from the dropdown list which controls the dataset. 
 Be sure to select **Apply User** and **Apply Group** before saving.
+
+The **Access Control List** fields should be configured according to your environment and security considerations.
 
 ![StoragePoolsEditPermissionsACL](/images/CORE/13.0/StoragePoolsEditPermissionsACL.png "Basic Permissions Editor")
 
