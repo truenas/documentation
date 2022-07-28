@@ -18,19 +18,25 @@ Go to **Services**, find the **SSH** entry, and click the <i class="material-ico
 
 ![ServicesSSHOptions](/images/CORE/12.0/ServicesSSHOptions.png "SSH Options")
 
-Set **Allow Password Authentication** and decide if **Log in as Root with Password** is needed. 
-SSH with root is a security vulnerability as it allows full remote control over the NAS with a terminal, not just SFTP transfer access. 
+Select **Allow Password Authentication**.  
+
+{{< hint warning >}} 
+Decide if **Log in as Root with Password** is needed: 
+SSH with root is a security vulnerability as it allows full remote control over the NAS with a terminal, not just SFTP transfer access.
+{{< /hint >}}
+
 Review the remaining options and configure according to your environment or security needs.
 
 ### SSH Service Options
 
-Use the **SSH** screen to configure the system for SFTP. See [ServicesSSH]({{< relref "/CORE/UIReference/Services/ServicesSSH.md" >}}) for information on SSH screen settings.
+Use the **SSH** screen to configure the system for SFTP. 
+See [ServicesSSH]({{< relref "/CORE/UIReference/Services/ServicesSSH.md" >}}) for information on SSH screen settings.
 
 ### SFTP Connections
 
-Similar to the FTP setup, open FileZilla or another FTP client, or command line.
+Open FileZilla or another FTP client, or command line.
 This example uses FileZilla.
-Using FileZilla, enter **SFTP://*TrueNAS IP***, *username*, *password*, and port **22** to connect. Where *TrueNAS IP* is the IP address for your system, and *username* and *password* are those you use to connect to the FTP client. Or enter **SFTP://'TrueNAS IP'**, *'username'*, *'password'*, and port **22** to connect.
+Using FileZilla, enter `SFTP://TrueNAS IP`, `username`, `password`, and port `22` to connect. Where `TrueNAS IP` is the IP address for your system, and `username` and `password` are those you use to connect to the FTP client. Or enter `SFTP://'TrueNAS IP'`, `'username'`, `'password'`, and port `22` to connect.
 
 {{< hint warning >}}
 SFTP does not have chroot locking. 
@@ -47,7 +53,7 @@ Go to **Jails > Add**.
 Provide a name for the jail and pick a target FreeBSD image.
 This example uses 11.3.
 
-Set the networking options to either DHCP or a static IP and confirm to create.
+Select the networking options for either DHCP or a static IP and confirm to create.
 
 ![JailsAddNetworking](/images/CORE/12.0/JailsAddNetworking.png "Jail Networking Options")
 
