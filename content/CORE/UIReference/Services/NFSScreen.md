@@ -12,9 +12,9 @@ Network File System (NFS) is an open IETF standard remote file access protocol. 
 
 ![NFSServicesScreen](/images/CORE/13.0/NFSServicesScreen.png "Services NFS Add")
 
-Use **SAVE** to save settings and return to the **Services** screen.
+Click **SAVE** to save settings and return to the **Services** screen.
 
-Use **CANCEL** to exit without saving and return to the **Services** screen.
+Click **CANCEL** to exit without saving and return to the **Services** screen.
 
 | Name | Description |
 |---------|-------------|
