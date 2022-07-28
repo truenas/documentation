@@ -15,13 +15,12 @@ MinIO deprecated Access key and Secret key. MinIO now utilizes MINIO_ROOT USER a
 
 ## Testing Minio Connections
 
-When **Enable Browser** is select, test access to the MinIO Browser by opening a web browser and typing the TrueNAS IP address with the TCP port.
+When **Enable Browser** is selected, access to the MinIO Browser can be tested by opening a web browser and typing the TrueNAS IP address with the TCP port, for example: *https://192.168.0.3:9000*. 
 The port specified in **Port** must be allowed through the network firewall to permit bucket creation and file uploads.
-For example: *https://192.168.0.3:9000*.
 
 ## MinIO Connection Methods
 
-There are different methods for connecting to and using MinIO:
+Different methods are used for connecting to and using MinIO:
 
 {{< expand "s3cmd" >}} 
 
