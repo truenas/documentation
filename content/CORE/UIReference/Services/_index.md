@@ -22,6 +22,6 @@ Click the <span class="material-icons">edit</span> icon to display the settings 
 
 Services related to data sharing or automated tasks are documented in their respective [Sharing]({{< relref "/CORE/UIReference/Sharing/_index.md" >}}) or [Tasks]({{< relref "/CORE/UIReference/Tasks/_index.md" >}}).
 
-## Additional Services Articles ##
+The articles in the **Services** navigation panel are also listed below:
 
 {{< children depth="2" sort="Name" description="true" >}}
