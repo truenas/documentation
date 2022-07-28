@@ -37,7 +37,7 @@ Unless a specific setting is needed or configuring for a specific network enviro
 | **Guest Account** | Select an account to use for guest access from the dropdown list. Default is **nobody**. The selected account is required to have permissions to the shared pool or dataset. To adjust permissions, edit the dataset Access Control List (ACL), add a new entry for the chosen guest account, and configure the permissions in that entry. If the selected user in **Guest Account** is deleted the field resets to **nobody**. |
 | **File Mask** | Overrides default file creation mask of **0666** which creates files with read and write access for everybody. |
 | **Directory Mask** | Overrides default directory creation mask of **0777** which grants directory read, write and execute access for everybody. |
-| **Bind IP Addresses** | Select the static IP addresses which SMB listens on for connections from the dropdown list. Leave unselected defaults to listen on all active interfaces. |
-| **Auxiliary Parameters** | Enter additional smb.conf options. See the [Samba Guide](http://www.oreilly.com/openbook/samba/book/appb_02.html) for more information on these settings. To log more details when a client attempts to authenticate to the share, add **log level = 1, auth_audit:5**. |
+| **Bind IP Addresses** | Select from the dropdown list the static IP addresses which SMB listens on for connections. If not selected, defaults to listen on all active interfaces. |
+| **Auxiliary Parameters** | Enter additional smb.conf options. See the [Samba Guide](http://www.oreilly.com/openbook/samba/book/appb_02.html) for more information on these settings. To log more details when a client attempts to authenticate to the share, add *log level = 1, auth_audit:5*. |
 
 {{< taglist tag="coresmb" limit="10" >}}
