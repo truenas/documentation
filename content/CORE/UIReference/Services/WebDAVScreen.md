@@ -8,7 +8,7 @@ tags:
 
 The WebDAV protocol contains extensions to HTTP that allow a webserver to act as a collaborative authoring and management tool for web content. Use the **Services WebDAV** screen to enable WebDAV services on your TrueNAS.
 
-Use **ADD** to open the WebDAV settings screen.
+Click **ADD** to open the WebDAV settings screen.
 
 ![ServicesWebDAVSettings](/images/CORE/13.0/ServicesWebDAVSettings.png "Services WebDAV Settings Screen")
 
