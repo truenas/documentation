@@ -1,6 +1,12 @@
 ---
 title: Dashboard
+description: "This article provides information on the information cards (widgets) on the **Dashboard** screen and how to customize the display by moving, adding or removing the widgets."
 weight: 3
+tags:
+ - scalereporting
+ - scalepools
+ - scalenetwork
+ - scaleinterfaces
 ---
 
 {{< toc >}}
@@ -134,3 +140,6 @@ The **TrueNAS Help** widget displays links to the TrueNAS Documentation Site and
 ![DashboardHelpWidget](/images/SCALE/22.02/DashboardHelpWidget.png "Dashboard Help Widget")
 
 Click on each link to open it in a new browser tab.
+
+{{< taglist tag="scalepools" depth="10" title"Related Pools Articles" >}}
+{{< taglist tag="scalenetwork" depth="10" title"Related Network Articles" >}}

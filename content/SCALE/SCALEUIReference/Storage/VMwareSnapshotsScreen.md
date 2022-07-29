@@ -1,14 +1,15 @@
 ---
 title: "VMWare Snapshots Screen"
 description: "This article provides information on the VMWare-Snapshot Add screen settings and functions."
-weight: 50 
+weight: 40 
 tags:
 - scalesnapshots
 - scalevmware
 ---
 
 
-Use the **VMware-Snapshots** option on the **Storage** sceen to create snapshots when TrueNAS SCALE is used as a VMWare datastore. Click **Snapshots** and select **VMware-Snapshots** from the dropdown list to display the **Add VMware-Snapshots** screen.
+Use the **VMware-Snapshots** option on the **Storage** sceen to create snapshots when TrueNAS SCALE is used as a VMWare datastore. 
+Click **Snapshots** and select **VMware-Snapshots** from the dropdown list to display the **Add VMware-Snapshots** screen.
 
 ![AddVMwareSnapshotScreen](/images/SCALE/22.02/AddVMwareSnapshotScreen.png "Add VMware- Snapshot Screen")
 
@@ -24,5 +25,5 @@ Use the **VMware-Snapshots** option on the **Storage** sceen to create snapshots
 Click **Fetch DataStores** to connect TrueNAS connects to the VMware host. 
 This synchronizes TrueNAS SCALE with the VMWare host and populates the **ZFS Filesystem** and **Datastore** dropdown lists with the information from the VMware host response.
 
-{{< taglist tag="scalesnapshot" limit="10" >}}
+{{< taglist tag="scalesnapshots" limit="10" >}}
 {{< taglist tag="scalevmware" limit-"10" title="Related VMWare Articles" >}}

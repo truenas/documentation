@@ -1,7 +1,7 @@
 ---
 title: "Creating and Managing Snapshots"
 description: "This article provides instructions on managing ZFS snapshots in TrueNAS Scale."
-weight: 20
+weight: 30
 aliases: /docs/scale/scaleuireference/storage/snapshotsscale/
 tag: 
  - scalesnapshots
@@ -60,6 +60,10 @@ Each snapshot entry in the list includes the dataset and snapshot names. Entries
 
 Click <span class="material-icons">expand_more</span> to view snapshot options.
 
+{{ hint ok }}
+File Explorer he number of snapshots Windows presents to users. If TrueNAS responds with more than the File Explorer limit, File Explorer shows no available snapshots.
+TrueNAS displays a dialog stating the dataset snapshot count has more snapshots than recommended, and states performance or functionality might degrade.
+{{< /hint >}}
 ### Deleting a Snapshot
 
 {{< include file="/_includes/DeletingSnapshots.md" type="page" >}}

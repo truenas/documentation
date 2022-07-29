@@ -1,7 +1,7 @@
 ---
 title: "Snapshots Screens"
 description: "This article provides information on the Snapshots screen settings and functions."
-weight: 55 
+weight: 35 
 tags:
 - scalesnapshots
 - scalestorage
@@ -72,4 +72,4 @@ Click either **Add Snapshots** or **ADD** at the top right of the screen to disp
 
 Use **Save** to retain the settings and return to the **Snapshots** screen.
 
-{{< taglist tag="scalesnapshot" limit="10" >}}
+{{< taglist tag="scalesnapshots" limit="10" >}}

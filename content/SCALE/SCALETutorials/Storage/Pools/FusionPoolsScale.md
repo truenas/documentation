@@ -10,4 +10,4 @@ tags:
 
 {{< include file="/_includes/FusionPools.md" type="page" >}}
 
-See [Pool Operations]({{< relref "SCALE/SCALEUIReference/storage/pools/_index.md" >}}) "Pool Operations" for more information on managing pools.
+See [Creating Pools]({{< relref "CreatePoolscale.md" >}}) for more information on adding vdevs.

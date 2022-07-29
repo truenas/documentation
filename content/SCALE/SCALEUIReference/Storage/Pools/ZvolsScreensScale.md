@@ -2,7 +2,6 @@
 title: "Zvol Screens"
 description: "This article provides information on Zvol screen settings and functions."
 weight: 40
-aliases: 
 tags:
  - scalezvols
  - scalestorage
@@ -26,12 +25,12 @@ The **Add Zvol** has two screens, basic options and advanced options. The basic 
 | **Size for this zvol** | Specify size and value. You can include units like **t** as in TiB, and **G**. You can increase the size of the zvol later, but you cannot reduce size. If the size is more than 80% of the available capacity, the creation fails with an out-of-space error unless you select **Force size**. |
 | **Force size** | Select to enable the system to create a zvol where the size is over 80% capacity. By default, the system does not create a zvol of this size. While not recommended, enabling this option forces the creation of the zvol. |
 | **Sync** | Select the data write synchronization option from the dropdown list. **Inherit** gets the sync settings from the parent dataset. **Standard** uses the sync settings requested by the client software. **Always** waits for data writes to complete. **Disabled** never waits for writes to complete. |
-| **Compression level**  | Select the option from the dropdown list for the type of data compression to use or encoding information in less space than the original data occupies. Select the algorithm that balances disk performance with the amount space saved. See [below](#data-compression-algorithms) for the options. |
-| **ZFS Deduplication** | Do not change this setting unless instructed to do so by your iXsystems support engineer. Select to transparently reuse a single copy of duplicated data to save space. Deduplication can improve storage capacity, but it is RAM intensive. Compressing data is recommended before using deduplication. Deduplicating data is a one-way process. You cannot undeduplicate deduplicated data! |
-| **Sparse** | Used to provide [thin provisioning](https://searchstorage.techtarget.com/definition/thin-provisioning). Use with caution as writes fail when the pool is low on space. |
+| **Compression level** | Select the option from the dropdown list for the type of data compression to use or encoding information in less space than the original data occupies. Select the algorithm that balances disk performance with the amount space saved. See [below](#data-compression-algorithms) for the options. |
+| **ZFS Deduplication** | Do not change this setting unless instructed to do so by your iXsystems support engineer. Select to transparently reuse a single copy of duplicated data to save space. Deduplication can improve storage capacity, but it is RAM intensive. Compressing data is recommended before using deduplication. Deduplicating data is a one-way process. You cannot un-deduplicate deduplicated data! |
+| **Sparse** | Used to provide [thin provisioning](https://searchstorage.techtarget.com/definition/thin-provisioning). Use with caution as writes fail when space is low on a pool. |
 | **Read-only** | Select the option to use to prevent modifying the zvol. Options are **Inherit (off)**, **On** or **Off**. |
 
-Encryption options do not display unless you create the zvol from dataset [using encryption]({{< relref "SCALETutorials/Storage/StorageEncryption.md" >}}).
+Encryption options do not display unless you create the zvol from dataset [using encryption]({{< relref "SCALETutorials/Storage/Pools/EncryptionScale.md" >}}).
 
 ### Advanced Options Settings
 
@@ -66,17 +65,19 @@ See the OpenZFS handbook [workload tuning chapter](https://openzfs.github.io/ope
 
 ### Data Compression Algorithms
 
-Select the compression algorithm that best suits your needs from the **Compression** dropdown list of options.
+{{< include file="/_includes/StorageCompressionLevelsScale.md" type="page" >}}
 
-[LZ4](https://manpages.debian.org/unstable/lz4/lz4.1.en.html) maximizes performance and dynamically identifies the best files to compress. LZ4 provides lightning-fast compression/decompression speeds and comes coupled with a high-speed decoder. This makes it one of the best Linux compression tools for enterprise customers.
+## Zvol Actions List
 
-[ZSTD](https://manpages.debian.org/unstable/zstd/zstd.1.en.html) offers highly configurable compression speeds, with a very fast decoder.
+Click the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; for a dataset to display the **Zvol Actions** dropdown list. The options for the selected zvol are **Delete Zvol**, **Edit Zvol** and **Create Snapshot**.
 
-[Gzip](https://manpages.debian.org/unstable/gzip/gzip.1.en.html) is a standard UNIX compression tool widely used for Linux. It is compatible with every GNU software which makes it a good tool for remote engineers and seasoned Linux users. It offers the maximum compression with the greatest performance impact. The higher the compression level implemented the greater the impact on CPU usage levels. Use with caution especially at higher levels.
+### Delete Zvol
+**Delete Zvol** displays a confirmation dialog where you enter the name of the zvol and select **Confirm** to activate the **Delete Zvol** button.
 
-ZLE or Zero Length Encoding, leaves normal data alone but only compresses continuous runs of zeros. 
+### Edit Zvol
+**Edit Zvol** displays the **[Edit Zvol](#basic-options-settings)** screen where you can modify current settings.
 
-LZJB compresses crash dumps and data in ZFS. LZJB is optimized for performance while providing decent compression. LZ4 compresses roughly 50% faster than LZJB when operating on compressible data, and is greater than three times faster for uncompressible data. LZJB was the original algorithm used by ZFS but it is now deprecated.
+### Create Snapshot
+**Create Snapshot** displays a **One time snapshot *zvol*** dialog where you can create a manual snapshot of the selected zvol.
 
 {{< taglist tag="scalezvols" limit="10" >}}
-{{< taglist tag="scalezvols" limit="10" title="Related Storage Articles" >}}

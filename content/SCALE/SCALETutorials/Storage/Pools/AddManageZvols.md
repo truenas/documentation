@@ -1,7 +1,7 @@
 ---
 title: "Adding and Managing Zvols"
 description: "This article provides instructions on how to create zvols."
-weight: 20
+weight: 40
 aliases: /scale/scaleuireference/storage/pools/zvolsscale/
 tag: 
  - scalezvols
@@ -37,12 +37,12 @@ To see zvol options, click <i class="material-icons" aria-hidden="true" title="O
 
 ### Cloning a Zvol from a Snapshot
 
-If you clone a zvol from an existing [snapshot]({{< relref "SnapshotsSCALE.md" >}}), the cloned zvol that displays on the **Storage** screen includes the option to **Promote Dataset** on the **Zvol Actions** dropdown list. Click to promote the clone. A confirmation dialog displays.
+If you clone a zvol from an existing snapshot, the cloned zvol that displays on the **Storage** screen includes the option to **Promote Dataset** on the **Zvol Actions** dropdown list. Click to promote the clone. A confirmation dialog displays.
 
 After promoting a clone, the original volume becomes a clone of the promoted clone. Promoting a clone allows users to delete the volume that created the clone.
 Otherwise, you cannot delete a clone while the original volume exists.
 
-When a zvol is the child of an [encrypted]({{< relref "EncryptionSCALE.md" >}}) dataset, TrueNAS offers additional **Encryption Actions**. See [Storage Encryption]({{< relref /SCALETutorials/Storage/StorageEncryption.md" >}}) for more information on encryption options and functions.
+When a zvol is the child of an [encrypted]({{< relref "EncryptionSCALE.md" >}}) dataset, TrueNAS offers additional **Encryption Actions**. 
 
 {{< taglist tag="scalezvols" limit="10" >}}
 {{< taglist tag="scalezvols" limit="10" title="Related Storage Articles" >}}

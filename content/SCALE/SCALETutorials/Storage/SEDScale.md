@@ -1,6 +1,6 @@
 ---
 title: "Installing and Managing Self-Encrypting Drives"
-description: "This article provides information self-encrypting disks. Included information covers supported specification, implementing and managing them in TrueNAS, and managing SED passwords and data."
+description: "This article provides information self-encrypting drives. Included information covers supported specification, implementing and managing them in TrueNAS, and managing SED passwords and data."
 weight: 55 
 tags:
 - scalessed
@@ -30,9 +30,9 @@ See this Trusted Computing Group and NVM Express® [joint white paper](https://n
 ## TrueNAS Implementation
 
 TrueNAS implements the security capabilities of [camcontrol](https://manpages.debian.org/unstable/freebsd-utils/camcontrol.8.en.html) for legacy devices and [sedutil-cli](https://www.mankier.com/8/sedutil-cli) for TCG devices. 
-When managing a SED from the command line, it is recommended to use the `sedhelper` wrapper script for `sedutil-cli` to ease SED administration and unlock the full capabilities of the device. Examples of using these commands to identify and deploy SEDs are provided [below](#deploying-seds).
+When managing a SED from the command line, it is recommended to use the `sedhelper` wrapper script for `sedutil-cli` to ease SED administration and unlock the full capabilities of the device. See provided examples of using these commands to identify and deploy SEDs [below](#deploying-seds).
 
-A SED can be configured before or after assigning the device to a pool.
+You can configure a SED before or after assigning the device to a pool.
 
 By default, SEDs are not locked until the administrator takes ownership of them. Ownership is taken by explicitly configuring a global or per-device password in the web interface and adding the password to the SEDs. Adding SED passwords in the web interface also allows TrueNAS to automatically unlock SEDs.
 
@@ -73,7 +73,7 @@ TrueNAS supports setting a global password for all detected SEDs or setting indi
 
 ### Setting a Global Password for SEDs
 
-Go to **System Settings > Advanced > Self-Encrypting Drive** and click **Configure**. A warning displays stating **Changing Advanced settings can be dangerous when done incorrectly. Please use caution before saving.** Click **Close** to display the settings form. Enter the password ine **SED Password** and **Confirm SED Password** and click **Save**. 
+Go to **System Settings > Advanced > Self-Encrypting Drive** and click **Configure**. A warning displays stating **Changing Advanced settings can be dangerous when done incorrectly. Please use caution before saving.** Click **Close** to display the settings form. Enter the password in **SED Password** and **Confirm SED Password** and click **Save**. 
 {{< hint "danger" >}}
 Record this password and store it in a safe place!
 {{< /hint >}}
@@ -100,7 +100,7 @@ Repeat this process for each SED and any SEDs added to the system in the future.
 
 {{< hint danger >}}
 Remember SED passwords! If you lose the SED password, you cannot unlock SEDs or access their data.
-Always record SED passwords whenever they are configured or modified and store them in a secure place!
+After configuring or modifying SED passwords, always record and store them in a secure place!
 {{< /hint >}}
 
 ## Check SED Functionality
@@ -127,7 +127,9 @@ Band[0]:
 
 ## Managing SED Passwords and Data
 
-This section contains command line instructions to manage SED passwords and data. The command used is [sedutil-cli(8)](https://www.mankier.com/8/sedutil-cli). Most SEDs are TCG-E (Enterprise) or TCG-Opal ([Opal v2.0](https://trustedcomputinggroup.org/wp-content/uploads/TCG_Storage-Opal_SSC_v2.01_rev1.00.pdf)). Commands are different for the different drive types, so the first step is identifying which type is used.
+This section contains command line instructions to manage SED passwords and data. The command used is [sedutil-cli(8)](https://www.mankier.com/8/sedutil-cli). 
+Most SEDs are TCG-E (Enterprise) or TCG-Opal ([Opal v2.0](https://trustedcomputinggroup.org/wp-content/uploads/TCG_Storage-Opal_SSC_v2.01_rev1.00.pdf)). 
+Commands are different for the different drive types, so the first step is to identify the type in use.
 
 {{< hint warning >}}
 These commands can be destructive to data and passwords. Keep backups and use the commands with caution.
@@ -183,7 +185,7 @@ Wipe data and reset password using the PSID with this command:
 `sedutil-cli --yesIreallywanttoERASEALLmydatausingthePSID <PSINODASHED> </dev/device>` where <PSINODASHED> is the PSID located on the pysical drive with no dashes (-).
 {{< /expand >}}
 {{< expand "TCG-E Instructions" >}}
-### Changing or Reseting the Password without Destroying Data
+### Changing or Resetting the Password without Destroying Data
 
 Run these commands for every *LockingRange* or *band* on the drive.
 To determine the number of bands on a drive, use command `sedutil-cli -v --listLockingRanges </dev/device>`.
@@ -207,7 +209,7 @@ sedutil-cli --setPassword <oldpassword> BandMaster0 <newpassword> </dev/device>
 sedutil-cli --setPassword <oldpassword> BandMaster1 <newpassword> </dev/device>
 ```
 
-### Reseting Password and Wiping Data
+### Resetting Password and Wiping Data
 
 Reset to default MSID:
 
@@ -226,3 +228,5 @@ If it fails use:
 `sedutil-cli --PSIDrevert <PSIDNODASHS>  /dev/<device>`
 {{< /expand >}}
 {{< /expand >}}
+
+{{< taglist tag="scalesed" limit="10" >}}

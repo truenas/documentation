@@ -1,8 +1,14 @@
 ---
 title: "Storage Encryption"
-weight: 60
-aliases:
-  - /scale/storage/encryptionscale/
+description: "This article provides information on SCALE storage encryption for pools, datasets and zvols."
+weight: 55
+aliases: /scale/storage/encryptionscale/
+tags:
+ - scaleencryption
+ - scaledatasets
+ - scalepools
+ - scalezovls
+ - scalestorage
 ---
 
 {{< toc >}}
@@ -24,12 +30,12 @@ TrueNAS SCALE includes the [Key Management Interface Protocol (KMIP)](https://do
 
 {{< include file="/_includes/EncryptionWarning.md" type="page" >}}
 
-Encrypting the root dataset of a new storage pool further increases data security. [Create a new pool]({{< relref "/SCALE/SCALEUIReference/Storage/Pools/_index.md" >}}) and check the **Encryption** box on the **Pool Manager** screen. 
+Encrypting the root dataset of a new storage pool further increases data security. [Create a new pool]({{< relref "CreatePoolScale.md" >}}) and check the **Encryption** box on the **Pool Manager** screen. 
 The SCALE encryption warning dialog box displays.
 
 ![PoolEncryptionWarningSCALE](/images/SCALE/PoolEncryptionWarningSCALE.png "SCALE Pool Encryption Warning")
 
-Read the warning, select the **Confirm** checkbox, and click **I UNDERSTAND**.
+Read the warning, select **Confirm**, and then click **I UNDERSTAND**.
 
 You can select any of the encryption ciphers listed but we recommend using the default encryption cipher.
 
@@ -180,7 +186,7 @@ You can only encrypting a zvol if you create the zvol from a dataset with encryp
 {{< include file="/_includes/EncryptionBackupKeys.md" type="page" >}}
 
 Zvols, like datasets, inherit encryption settings from the parent dataset. 
-To encrypt a zvol, select a dataset configured with encryption and then [create a new zvol]({{< relref "ZvolsSCALE.md" >}}).
+To encrypt a zvol, select a dataset configured with encryption and then [create a new zvol]({{< relref "AddManageZvols.md" >}}).
 Next, click the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> icon to display the **Zvol Actions** menu.  
  
 ![AddZvolActionsMenuWithEncryptionOptions](/images/SCALE/AddZvolActionsMenuWithEncryptionOptions.png "Zvol Actions with Encryption Options")

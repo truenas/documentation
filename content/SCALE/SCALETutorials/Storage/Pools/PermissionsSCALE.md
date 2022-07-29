@@ -1,6 +1,14 @@
 ---
-title: "Permissions"
+title: "Setting Up Permissions"
+descritpion: ""
 weight: 50
+aliases: /scale/scaleuireference/storage/pools/permissionsscale/
+tags:
+ - scaleacls
+ - scaledatasets
+ - scalepools
+ - scalezovls
+ - scalestorage
 ---
 
 {{< toc >}}

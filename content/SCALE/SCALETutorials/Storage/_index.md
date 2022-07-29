@@ -12,6 +12,6 @@ It also has options for creating and manating datasets, Zvols, and storage encry
 
 SCALE supports clustering storage across multiple systems. See [TrueCommand Clustering]({{< relref "/TrueCommand/Clustering/_index.md" >}}) for more details.
 
-## Storage Articles
+## Storage Article Summaries
 
 {{< children depth="2" description="true" >}}
