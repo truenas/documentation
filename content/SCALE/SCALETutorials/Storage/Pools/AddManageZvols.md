@@ -1,9 +1,9 @@
 ---
 title: "Adding and Managing Zvols"
 description: "This article provides instructions on how to create zvols."
-weight: 40
+weight: 60
 aliases: /scale/scaleuireference/storage/pools/zvolsscale/
-tag: 
+tags: 
  - scalezvols
  - scalestorage
 ---
@@ -45,4 +45,3 @@ Otherwise, you cannot delete a clone while the original volume exists.
 When a zvol is the child of an [encrypted]({{< relref "EncryptionSCALE.md" >}}) dataset, TrueNAS offers additional **Encryption Actions**. 
 
 {{< taglist tag="scalezvols" limit="10" >}}
-{{< taglist tag="scalezvols" limit="10" title="Related Storage Articles" >}}

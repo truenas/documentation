@@ -34,17 +34,17 @@ The pool header includes the **Pool Operations** <span class="iconify" data-icon
 
 ## Pool Actions List
 
-Click the <span class="iconify" data-icon="mdi:database-cog"></span> icon button for the pool to display the **Pool Actions** dropdown list. The options are **Pool Options**, **Export/Disconnect**, **Add Vdevs**, **Scrub Pool**, **Status** and **Expand Pool**. See [Pools Screens]({{< relref "/SCALEUIReference/Pools/PoolsScreens.md" >}}) for more information on the UI screens, dialogs and windows.
+Click the <span class="iconify" data-icon="mdi:database-cog"></span> icon button for the pool to display the **Pool Actions** dropdown list. The options are **Pool Options**, **Export/Disconnect**, **Add Vdevs**, **Scrub Pool**, **Status** and **Expand Pool**. See [Pools Screens]({{< relref "/SCALE/SCALEUIReference/Storage/Pools/PoolsScreens.md" >}}) for more information on the UI screens, dialogs and windows.
 
 ## Dataset Actions List
 
-Click the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; for a dataset to display the **Dataset Actions** dropdown list. The options are **Add Dataset**, **Add Zvol**, **Edit Options**, **View Permissions**, **User Quotas**, **Group Quotas** and **Create Snapshot**. See [Datasets Screens]({{< relref "/SCALEUIReference/Pools/DatasetsScreensScale.md" >}}) for more information on the UI screens, dialogs and windows.
+Click the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; for a dataset to display the **Dataset Actions** dropdown list. The options are **Add Dataset**, **Add Zvol**, **Edit Options**, **View Permissions**, **User Quotas**, **Group Quotas** and **Create Snapshot**. See [Datasets Screens]({{< relref "/SCALE/SCALEUIReference/Storage/Pools/DatasetsScreensScale.md" >}}) for more information on the UI screens, dialogs and windows.
 
 ## Zvol Actions List
-Click the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; for a dataset to display the **Zvol Actions** dropdown list. The options for the selected zvol are **Delete Zvol**, **Edit Zvol** and **Create Snapshot**. See [Zvols Screens]({{< relref "/SCALEUIReference/Pools/ZvolsScreensScale.md" >}}) for more information on the UI screens, dialogs and windows.
+Click the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; for a dataset to display the **Zvol Actions** dropdown list. The options for the selected zvol are **Delete Zvol**, **Edit Zvol** and **Create Snapshot**. See [Zvols Screens]({{< relref "/SCALE/SCALEUIReference/Storage/Pools/ZvolsScreensScale.md" >}}) for more information on the UI screens, dialogs and windows.
 
 ## Encryption Options
-If you use encryption when you create a pool, the root and child datasets or zvols have the option to inherit the encryption, modify the type of encryption, or not use encryption at all. For more information see [Storage Encryption]({{< relref "SCALETutorials/Storage/Pools/EncryptionScale.md" >}}).
+If you use encryption when you create a pool, the root and child datasets or zvols have the option to inherit the encryption, modify the type of encryption, or not use encryption at all. For more information see [Storage Encryption]({{< relref "EncryptionScale.md" >}}).
 
 If encryption is enabled, the **Dataset Actions** and **Zvol Actions** option lists include the **Encryption Options** list item used to configure encryption settings for that dataset or zvol.
 

@@ -34,8 +34,8 @@ If you click in *ZFS Filestore** or **Datastores** before you click **Fetch Data
 {{< /hint >}}
 
 1. Enter the IP address or host name for your VMWare system in **Hostname**.
-
-![AddVMwareSnapshotScreen](/images/SCALE/22.02/AddVMwareSnapshotScreen.png "Add VMware-Snapshot Screen")
+   
+   ![AddVMwareSnapshotScreen](/images/SCALE/22.02/AddVMwareSnapshotScreen.png "Add VMware-Snapshot Screen")
 
 2. Enter the user on the VMware host with permission to snapshot virtual machine for VMWare in **Username** and the the password for that account in **Password**.
 
@@ -54,5 +54,5 @@ You must power on virtual machines before you can copy TrueNAS SCALE snapshots t
 The temporary VMWare snapshots deleted on the VMWare side still exist in the ZFS snapshot and are available as stable restore points.
 Thes coordinated snapshots go on the list found on the **Storage > Snapshots** screen.
 
-{{< taglist tag="scalesnapshot" limit="10" >}}
-{{< taglist tag="scalevmware" limit-"10" title="Related VMWare Articles" >}}
+{{< taglist tag="scalesnapshots" limit="10" >}}
+{{< taglist tag="scalevmware" limit="10" title="Related VMWare Articles" >}}

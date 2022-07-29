@@ -1,13 +1,13 @@
 ---
 title: "Fusion Pools"
-weight: 70
+weight: 109
 alias: /scale/scaleuireference/storage/pools/fusionpoolsscale/
 tags:
- - scalestorage
  - scalepools
+ - scalestorage
 ---
 
 
 {{< include file="/_includes/FusionPools.md" type="page" >}}
 
-See [Creating Pools]({{< relref "CreatePoolscale.md" >}}) for more information on adding vdevs.
+{{< taglist tag="scalepools" limit="10" title="Related Pools Articles" >}}

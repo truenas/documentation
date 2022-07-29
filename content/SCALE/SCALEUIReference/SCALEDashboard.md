@@ -141,5 +141,5 @@ The **TrueNAS Help** widget displays links to the TrueNAS Documentation Site and
 
 Click on each link to open it in a new browser tab.
 
-{{< taglist tag="scalepools" depth="10" title"Related Pools Articles" >}}
-{{< taglist tag="scalenetwork" depth="10" title"Related Network Articles" >}}
+{{< taglist tag="scalepools" depth="10" title="Related Pools Articles" >}}
+{{< taglist tag="scalenetwork" depth="10" title="Related Network Articles" >}}

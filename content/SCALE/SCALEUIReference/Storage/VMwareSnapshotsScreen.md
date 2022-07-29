@@ -26,4 +26,4 @@ Click **Fetch DataStores** to connect TrueNAS connects to the VMware host.
 This synchronizes TrueNAS SCALE with the VMWare host and populates the **ZFS Filesystem** and **Datastore** dropdown lists with the information from the VMware host response.
 
 {{< taglist tag="scalesnapshots" limit="10" >}}
-{{< taglist tag="scalevmware" limit-"10" title="Related VMWare Articles" >}}
+{{< taglist tag="scalevmware" limit="10" title="Related VMWare Articles" >}}

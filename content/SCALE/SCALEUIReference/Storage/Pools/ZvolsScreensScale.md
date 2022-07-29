@@ -30,7 +30,7 @@ The **Add Zvol** has two screens, basic options and advanced options. The basic 
 | **Sparse** | Used to provide [thin provisioning](https://searchstorage.techtarget.com/definition/thin-provisioning). Use with caution as writes fail when space is low on a pool. |
 | **Read-only** | Select the option to use to prevent modifying the zvol. Options are **Inherit (off)**, **On** or **Off**. |
 
-Encryption options do not display unless you create the zvol from dataset [using encryption]({{< relref "SCALETutorials/Storage/Pools/EncryptionScale.md" >}}).
+Encryption options do not display unless you create the zvol from dataset [using encryption]({{< relref "EncryptionScale.md" >}}).
 
 ### Advanced Options Settings
 
@@ -71,13 +71,16 @@ See the OpenZFS handbook [workload tuning chapter](https://openzfs.github.io/ope
 
 Click the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; for a dataset to display the **Zvol Actions** dropdown list. The options for the selected zvol are **Delete Zvol**, **Edit Zvol** and **Create Snapshot**.
 
-### Delete Zvol
+### Delete Zvol Dialog
 **Delete Zvol** displays a confirmation dialog where you enter the name of the zvol and select **Confirm** to activate the **Delete Zvol** button.
 
-### Edit Zvol
+![DeleteZvolDialog](/images/SCALE/22.02/DeleteZvolDialog.png "Delete Zvol")
+
+### Edit Zvol Option
 **Edit Zvol** displays the **[Edit Zvol](#basic-options-settings)** screen where you can modify current settings.
 
-### Create Snapshot
+### Create Snapshot Dialog
+
 **Create Snapshot** displays a **One time snapshot *zvol*** dialog where you can create a manual snapshot of the selected zvol.
 
 {{< taglist tag="scalezvols" limit="10" >}}

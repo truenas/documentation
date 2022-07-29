@@ -1,7 +1,7 @@
 ---
 title: "Managing Pools"
 description: "This article provides instructions on managing storage pools in TrueNAS SCALE."
-weight: 25
+weight: 50
 aliases: 
 tag: 
  - scalepools
@@ -64,7 +64,7 @@ Vdevs extending examples:
 The **Add Vdevs** button opens the **Pool Manager** in the **Add Vdevs to Pool** screen. 
 {{< hint ok >}}
 You cannot change the original encryption or data Vdev configuration.
-{<< /hint >>}
+{{< /hint >}}
 TrueNAS selects data vdevs by default. To add different Vdev types to a pool, select one from the **Add Vdev** dropdown.
 
 ### Using Scrub Pool
@@ -94,7 +94,7 @@ Select the disk from the dropdown list and click **Extend**.
 
 The **Pool Status** screen disks also have [disk management]({{< relref "/SCALE/SCALEUIReference/Storage/Disks/DisksScreens.md" >}}) options.
 
-See [Replacing Disks]({{< relref "/SCALETutorials/Storage/Disks/ReplacingDisks.md" >}}) for more information on the **Offline**, **Replace** and **Online** options.
+See [Replacing Disks]({{< relref "/SCALE/SCALETutorials/Storage/Disks/ReplacingDisks.md" >}}) for more information on the **Offline**, **Replace** and **Online** options.
 
 #### Expand Pool
 

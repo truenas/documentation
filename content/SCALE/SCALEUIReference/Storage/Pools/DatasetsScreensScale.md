@@ -32,7 +32,7 @@ Both the add and edit dataset screens display **Basic Options** settings to set 
 ### Encryption Options Settings
 The default is **Inherit** selected. Clearing the checkbox displays more options. 
 Selections in the **Encryption Type** field also displays additional setting options. 
-See [Storage Encryption]({{< relref "/SCALETutorials/Storage/Pools/EncryptionScale.md" >}}) for more information on encryption.
+See [Storage Encryption]({{< relref "EncryptionScale.md" >}}) for more information on encryption.
 
 | Setting | Description |
 |---------|-------------|
@@ -72,8 +72,8 @@ You can configure quotas for only the new dataset or include all child datasets.
 | Setting | Description |
 |---------|-------------|
 | **Quota for this dataset**<br> **Quota for this dataset and all children** | Enter a value to define the maximum allowed space for the dataset. **0** disables quotas. |
-| **Quota warning alert at, %** | Enter a percentage value to generate a warning level [alert]({{< relref "/SCALEUIReference/TopToolbar/Alerts/AlertSettingsScreen.md" >}}) when consumed space reaches the defined level. By default, the dataset inherits this value from the parent dataset. Clear the **Inherit** checkbox to change the value. |
-| **Quota critical alert at, %** | Enter a percentage value to generate a critical level [alert]({{< relref "/SCALEUIReference/TopToolbar/Alerts/AlertSettingsScreen.md" >}}) when consumed space reaches the defined level. By default, the dataset inherits this value from the parent dataset. Clear the **Inherit** checkbox to change the value. |
+| **Quota warning alert at, %** | Enter a percentage value to generate a warning level [alert]({{< relref "/SCALE/SCALEUIReference/TopToolbar/Alerts/AlertSettingsScreen.md" >}}) when consumed space reaches the defined level. By default, the dataset inherits this value from the parent dataset. Clear the **Inherit** checkbox to change the value. |
+| **Quota critical alert at, %** | Enter a percentage value to generate a critical level [alert]({{< relref "/SCALE/SCALEUIReference/TopToolbar/Alerts/AlertSettingsScreen.md" >}}) when consumed space reaches the defined level. By default, the dataset inherits this value from the parent dataset. Clear the **Inherit** checkbox to change the value. |
 | **Reserved space for this dataset**<br> **Reserved space for this dataset and all children** | Enter a value to reserve additional space for datasets that contain logs which could eventually take up all the available free space. **0** is unlimited. |
 
 ### Advanced Other Option Settings
@@ -96,7 +96,7 @@ Many of the **Other Options** settings inherit their values from the parent data
 | **Record Size** | Select the logical block size in the dataset from the dropdown list of options. Matching the fixed size of data, as in a database, can result in better performance. |
 | **ACL Type** | Select the access control list type from the dropdown list of options. **Inherit** preserves ACL type from the parent dataset.<br>**Off** to use neither NFSv4 or POSIX protocols.<br>**NFSv4** is used to losslessly migrate Windows-style ACLs across Active Directory domains (or stand-alone servers) that use ACL models richer than POSIX. Since POSIX ACLs are a Linux-specific ZFS feature, administrators should use NFSv4 to maintain compatibility with TrueNAS Core, FreeBSD, or other non-Linux ZFS implementations. <br>**POSIX** use when an organization data backup target does not support native NFSv4 ACLs. Since the Linux platform used POSIX for a long time, many backup products that access the server outside the SMB protocol cannot understand or preserve native NFSv4 ACLs. All datasets within an SMB share path must have identical ACL types.<br>For a more in-depth explanation of ACLs and configurations in TrueNAS SCALE, see our [ACL Primer]({{< relref "/content/References/ACLPrimer.md" >}}). |
 | **ACL Mode** | Select the option that determines how [chmod](https://linux.die.net/man/1/chmod) behaves when adjusting file ACLs from the dropdown list. See the [zfs(8)](https://linux.die.net/man/8/zfs) `aclmode` property.<br> **Passthrough** only updates ACL entries that are related to the file or directory mode.<br> **Restricted** does not allow chmod to make changes to files or directories with a non-trivial ACL. An ACL is trivial if it can be fully expressed as a file mode without losing any access rules. Set the ACL Mode to restricted to optimize a dataset for SMB sharing, but it can require further optimizations. For example, configuring an [rsync task]({{< relref "SCALE/SCALEUIReference/DataProtection/RsyncTasksSCALE.md" >}}) with this dataset could require adding `--no-perms` in the task **Auxiliary Parameters** field. |
-| **Metadata (Special) Small Block Size** | Enter a threshold block size for including small file blocks into the [special allocation class (fusion pools)]({{< relref "SCALE/SCALETutorials/Storage/Pools/FusionPoolsScale.md" >}}). Blocks smaller than or equal to this value are assigned to the special allocation class while greater blocks are assigned to the regular class. Valid values are zero or a power of two from 512B up to 1M. The default size **0** means no small file blocks are allocated in the special class. Before setting this property, you must add a [special class vdev]({{< relref "SCALE/SCALETutorials/Storage/Pools/FusionPoolsScale.md" >}}) to the pool. |
+| **Metadata (Special) Small Block Size** | Enter a threshold block size for including small file blocks into the [special allocation class (fusion pools)]({{< relref "FusionPoolsScale.md" >}}). Blocks smaller than or equal to this value are assigned to the special allocation class while greater blocks are assigned to the regular class. Valid values are zero or a power of two from 512B up to 1M. The default size **0** means no small file blocks are allocated in the special class. Before setting this property, you must add a [special class vdev]({{< relref "FusionPoolsScale.md" >}}) to the pool. |
 
 ## Edit Dataset Screens
 Click **Edit Options** on the **Dataset Actions** list of options to access the **Edit Dataset** screens.
@@ -110,7 +110,7 @@ The **Dataset Actions** dropdown list options for child datasets are the same bu
 The **Add Dataset** option displays the **[Add Dataset](#dataset-basic-options)** configuration screen where you can create a child dataset to the root dataset or to another child dataset.
 
 ### Add Zvol
-**Add Zvol** displays the **[Add Zvol]({{< relref "/SCALUIReference/Storage/Pools/ZvolsScreens.md" >}})** where you can create zvols for a root or child dataset.
+**Add Zvol** displays the **[Add Zvol]({{< relref "/ZvolsScreensScale.md" >}})** where you can create zvols for a root or child dataset.
 
 ### Edit Options
 **Edit Options** displays the **[Edit Dataset](#edit-dataset-screens)** screen where you can edit the settings for the selected dataset.
@@ -129,10 +129,10 @@ The **Dataset Permissions** widget is read-only.
 | **Unix Permissions** | Displays three levels of permissions, **Read|Write|Execute** for the root parent, **Read|Execute** for the child of the root parent, and **Read|Execute** for any other storage volume child under the parent root dataset. |
 
 ### User Quotas
-**User Quotas** displays the **[Set User Qutoas]({{< relref "/SCALEUIReference/Storage/QutoasScreens.md" >}})** screen. 
+**User Quotas** displays the **[Set User Qutoas]({{< relref "QuotaScreens.md" >}})** screen. 
 
 ### Group Quotas
-**Group Quotas** displays the **[Set Group Qutoas]({{< relref "/SCALEUIReference/Storage/QutoasScreens.md" >}})** screen.
+**Group Quotas** displays the **[Set Group Qutoas]({{< relref "QuotaScreens.md" >}})** screen.
 
 ### Create Snapshot
 **Create Snapshot** displays the **One time snapshot of *datasetname*** dialog where you can create a manual snapshot of the selected dataset.
@@ -146,5 +146,4 @@ Select **Recursive** to include child datasets or zvols in the snapshot of the p
 
 Click **Create Snapshot** to create the manual snapshot.
 
-{{< taglist tag="scaledatasets" limit="10" >}}
-{{< taglist tag="scalestorage" limit="10" title="Related Storage Articles" >}}
+{{< taglist tag="scaledatasets" limit="10" title="Related Datasets Articles" >}}

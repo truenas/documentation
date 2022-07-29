@@ -28,7 +28,7 @@ This counter keeps track of the total number of available disk in the system whe
 | Settings | Description |
 |----------|-------------|
 | **Name** | Enter the name you want to use for the pool. Choose something that helps you identify this pool and the type of data it stores. This helps with locating data in systems with pages or hundreds of storage pools configured on the system.  |
-| **Encryption** | Select to enable encryption for this pool, the root dataset and if desired, child datasets and zvols in this pool. See [Storage Encryption]({{< relref "SCALETutorials/Storage/StorageEncryption.md" >}}) for more information on using SCALE storage encryption. |
+| **Encryption** | Select to enable encryption for this pool, the root dataset and if desired, child datasets and zvols in this pool. See [Storage Encryption]({{< relref "EncryptionScale.md" >}}) for more information on using SCALE storage encryption. |
 | **Reset Layout** | Click to clear a suggested layout after you click **Suggest Layout**. |
 | **Suggested Layout** | Click to have TrueNAS review all available disks and populate the primary **Data VDev** list with identically-sized drives in a configuration balanced between storage capacity and data redundancy. **Reset Layout** clears the suggested layout. |
 | **Add Vdev** | Click to display the dropdown list of [vdev options](#vdev-options) in the section below. |
@@ -62,7 +62,7 @@ This counter keeps track of the total number of available disk in the system whe
 
 ## Pool Actions List Options
 The **Pool Actions** dropdown list displays options to expand the pool, check the status of disks in the pool, implement ZFS TRIM, perform an integrity check on the pool, and export or disconnect the pool.
-If the pool is configured to use [encryption]({{< relref "/SCALETutorials/Storage/StorageEncryption.md" >}}), the option to export dataset keys also displays on the **Pool Actions** dropdown list.
+If the pool is configured to use [encryption]({{< relref "EncryptionScale.md" >}}), the option to export dataset keys also displays on the **Pool Actions** dropdown list.
 
 To access options for pools listed on the **Storage** screen click on the <span class="iconify" data-icon="mdi:database-cog"></span> icon button to display the **Pool Actions** dropdown list of options.
 
@@ -121,7 +121,7 @@ Select **Scrub Pool** to display the start pool scrub dialog. Select **Confirm**
 ![ScrubPoolSCALE](/images/SCALE/ScrubPoolSCALE.png "Scrub Pool")
 
 **Scrub Pool** initiates a check on pool data integrity.
-If TrueNAS detects any problems during the scrub, it either corrects them automatically or generates an [alert]({{< relref "/CORE/UIReference/System/AlertSettings.md" >}}) in the web interface.
+If TrueNAS detects any problems during the scrub, it either corrects them automatically or generates an [alert]({{< relref "/SCALE/SCALEUIReference/TopToolbar/Alerts/AlertSettingsScreen.md" >}}) in the web interface.
 
 By default, TrueNAS automatically checks every pool to verify it is on a reoccurring scrub schedule.
 
@@ -138,7 +138,7 @@ Use **Refresh** to update the screen after making a change.
 
 Click the <span class="material-icons">more_vert</span> for the pool vdev to display the vdev type actions dropdown list if the type is **Mirror**. Options are **Extend** or **Remove**.
 
-Click the <span class="material-icons">more_vert</span> for a disk to display **Disk Actions** dropdown list. Options are **Edit**, **Offline**, **Online**, **Replace**, **Remove** and **Detach**. See [Disk Screen]({{< relref "/SCALEUIReference/Storage/Disks/DiskScreens.md" >}}) for more information on these options.
+Click the <span class="material-icons">more_vert</span> for a disk to display **Disk Actions** dropdown list. Options are **Edit**, **Offline**, **Online**, **Replace**, **Remove** and **Detach**. See [Disk Screen]({{< relref "/SCALE/SCALEUIReference/Storage/Disks/DisksScreens.md" >}}) for more information on these options.
 
 ### Expand Pool
 Select **Expand Pool** to increase the pool size to match all available disk space. Users with pools using virtual disks use this otpion to resize these virtual disks apart from TrueNAS.
@@ -162,5 +162,5 @@ Use the **Pool Import Summary** dropdown to select the pool to import. Click **N
 
 Click **Import** to begin the pool import process.
 
-{{< taglist tag="scalepools" limit="10" >}}
+{{< taglist tag="scalepools" limit="10" title="Related Pools Articles" >}}
 {{< taglist tag="scalestorage" limit="10" title="Related Storage Articles" >}}

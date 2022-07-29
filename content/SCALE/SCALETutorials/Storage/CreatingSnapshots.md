@@ -13,11 +13,11 @@ tag:
 
 {{< include file="/_includes/SnapshotsIntroSnippet.md" type="page" >}}
 
-Taking snapshots requires the system have all [pools]({{< relref "/SCALETutorials/Storage/Pools/CreatePools.md" >}}), [datasets]({{< relref "/SCALETutorials/Storage/Pools/CreateDatasets.md" >}}), and [zvols]({{< relref "/SCALETutorials/Storage/Pools/CreateZvols.md" >}}) already configured.
+Taking snapshots requires the system have all [pools]({{< relref "CreatePoolScale.md" >}}), [datasets]({{< relref "DatasetsScale.md" >}}), and [zvols]({{< relref "AddManageZvols.md" >}}) already configured.
 
 ## Creating a Snapshot
 
-{{< hint ok >}}
+{{< hint info >}}
 Consider making a [Periodic Snapshot Task]({{< relref "/SCALE/SCALEUIReference/DataProtection/_index.md" >}}) to save time and create regular, fresh snapshots.
 {{< /hint >}}
 
@@ -60,7 +60,7 @@ Each snapshot entry in the list includes the dataset and snapshot names. Entries
 
 Click <span class="material-icons">expand_more</span> to view snapshot options.
 
-{{ hint ok }}
+{{< hint info >}}
 File Explorer he number of snapshots Windows presents to users. If TrueNAS responds with more than the File Explorer limit, File Explorer shows no available snapshots.
 TrueNAS displays a dialog stating the dataset snapshot count has more snapshots than recommended, and states performance or functionality might degrade.
 {{< /hint >}}
@@ -93,6 +93,7 @@ The **Rollback** option reverts the dataset back to the point in time saved by t
 
 {{< hint warning >}}
 Rollback is a dangerous operation that causes any configured replication tasks to fail.
+{{< /hint >}}
 Replications use the existing snapshot when doing an incremental backup, and rolling back can put the snapshots out-of-order.
 To restore the data within a snapshot, the recommended steps are:
 
@@ -102,7 +103,6 @@ To restore the data within a snapshot, the recommended steps are:
 4.  Delete the clone from **Storage**.
 
 This approach does not destroy any on-disk data or impact replication.
-{{< /hint >}}
 
 TrueNAS asks for confirmation before rolling back to the chosen snapshot state. Select the radio button for how you want the rollback to operate.
 

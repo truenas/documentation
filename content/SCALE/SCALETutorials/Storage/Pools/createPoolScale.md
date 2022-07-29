@@ -1,7 +1,7 @@
 ---
 title: "Creating Pools"
 description: "This article provides instructions on creating storage pools in TrueNAS SCALE."
-weight: 20
+weight: 40
 aliases: /scale/scaleuireference/storage/pools/
 tag: 
  - scalepools
@@ -10,7 +10,7 @@ tag:
 
 {{< toc >}}
 
-{< include file="/_includes/StoragePoolsIntroScale.md" type="page" >}}
+{{< include file="/_includes/StoragePoolsIntroScale.md" type="page" >}}
 
 ## Creating a Pool
 
@@ -29,7 +29,7 @@ To create a new pool, go to **Storage** and click **Create Pool**. The **Pool Ma
    {{< expand "Encryption?" "v" >}}
    TrueNAS offers several encryption algorithms to maximize security.
    However, encryption also complicates data retrieval and risks permanent data loss!
-   The [Storage Encryption]({{< relref "/SCALETutorials/Storage/Pools/EncryptionScale.md" >}}) article provides more details to help you decide if encryption is necessary for your use case before selecting the **Encryption** option.
+   The [Storage Encryption]({{< relref "EncryptionScale.md" >}}) article provides more details to help you decide if encryption is necessary for your use case before selecting the **Encryption** option.
    {{< /expand >}}
 
 3. Configure the virtual devices (vdevs) that make up the pool. 
@@ -56,7 +56,7 @@ To create a new pool, go to **Storage** and click **Create Pool**. The **Pool Ma
 
 Pools offer several vdev types. Vdevs store data or enable unique features for the pool.
 
-To add a vdev type during pool creation, click **Add Vdev** and select the [type]({{< relref "/SCALEUIReference/Storage/Pools/PoolsScreens.md" >}}).
+To add a vdev type during pool creation, click **Add Vdev** and select the [type]({{< relref "/SCALE/SCALEUIReference/Storage/Pools/PoolsScreens.md" >}}).
 
 Data is the standard vdev for primary storage operations. Each storage pool requires at least one Data vdev.
 Data vdev configuration typically affects how users can configure other types of vdevs.
@@ -74,7 +74,7 @@ We do not recommend having multiple data vdevs with different numbers of disks i
 {{< /expand >}}
 
 Select a layout for data vdevs. Options vary based on the number of drives. 
-Disks added to a Vdev arrange in different [layouts]({{< relref "/SCALEUIReference/Storage/Pools/PoolsScreens.md" >}}), according to the specific pool use case.
+Disks added to a Vdev arrange in different [layouts]({{< relref "/SCALE/SCALEUIReference/Storage/Pools/PoolsScreens.md" >}}), according to the specific pool use case.
 
 {{< expand "Can I use different-sized disks when creating a pool?" "v" >}}
 We do not recommend mixing disks of different sizes in a vdev. If you do, you must select **Force** to override the **One or more data vdevs has disks of different sizes** error. 
@@ -105,5 +105,5 @@ Never use **Stripe** to store critical data! A single disk failure means losing 
 
 See [SCALE Encryption]({{< relref "/SCALE/SCALETutorials/Storage/Pools/EncryptionSCALE.md" >}}) for detailed encryption information.
 
-{{< taglist tag="scalepools" limit="10" >}}
+{{< taglist tag="scalepools" limit="10" title="Related Pools Articles" >}}
 {{< taglist tag="scalestorage" limit="10" title="Related Storage Articles" >}}

@@ -1,7 +1,7 @@
 ---
 title: "Setting Up Permissions"
 descritpion: ""
-weight: 50
+weight: 65
 aliases: /scale/scaleuireference/storage/pools/permissionsscale/
 tags:
  - scaleacls

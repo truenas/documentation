@@ -1,7 +1,7 @@
 ---
 title: "Importing Pools"
 description: "This article provides instructions on importing storage pools into TrueNAS SCALE. Use importing pools to migrate your storage pools from one server to another."
-weight: 22
+weight: 48
 aliases: 
 tag: 
  - scalepools
@@ -38,7 +38,7 @@ Review the **Pool Import Summary** on the **Confirm Options** screen and click *
 
 {{< expand "Can I import GELI-encrypted pools?" "v" >}}
 Since GELI encryption is specific to FreeBSD, TrueNAS SCALE cannot import GELI-encrypted pools. 
-See the **Migrating GELI-encrypted Pools to SCALE** section in the [Installing SCALE]({{< relref "SCALE/GettingStarted/Install/InstallingSCALE.md" >}}) article.
+See the **Migrating GELI-encrypted Pools to SCALE** section in the [Installing SCALE]({{< relref "/SCALE/GettingStarted/InstallingSCALE.md" >}}) article.
 {{< /expand >}}
 
 {{< taglist tag="scalepools" limit="10" >}}

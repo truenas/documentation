@@ -1,8 +1,8 @@
 ---
 title: "Managing User or Group Quotas"
 description: "This article provides information on managing user and group quotas."
-weight: 60
-tag: 
+weight: 75
+tags: 
  - scalequotas
  - scaledatasets
  - scalestorage
@@ -11,7 +11,7 @@ tag:
 {{< toc >}}
 
 
-TrueNAS allows setting data or object quotas for user accounts and groups cached on or connected to the system. You can use the quota settings on the **Add Dataset** or **Edit Dataset** configuration screens in the **Advanced Options** settings to set up alarms and set aside more space in a dataset. See [Adding and Managing Datasets]({{< relref "/SCALETutorials/Storage/Pools/DatasetsScale.md" >}}) for more information.
+TrueNAS allows setting data or object quotas for user accounts and groups cached on or connected to the system. You can use the quota settings on the **Add Dataset** or **Edit Dataset** configuration screens in the **Advanced Options** settings to set up alarms and set aside more space in a dataset. See [Adding and Managing Datasets]({{< relref "DatasetsScale.md" >}}) for more information.
 
 ## Configuring User Quotas
 
@@ -24,7 +24,7 @@ To view and edit user quotas, go to **Storage** and click <i class="fa fa-ellips
 The **User Quotas** page displays the names and quota data of any user accounts cached on or connected to the system.
 
 To edit individual user quotas, go to the user row and click the <span class="material-icons">expand_more</span> icon to display a detailed individual user quota screen. 
-Click <i class="material-icons" aria-hidden="true" title="edit">edit</i>.
+Click <i class="material-icons" aria-hidden="true" title="edit">edit</i> **Edit**.
 
 ![EditUserQuotaWindow](/images/SCALE/22.02/EditUserQuotaWindow.png "Edit User Quota")
 

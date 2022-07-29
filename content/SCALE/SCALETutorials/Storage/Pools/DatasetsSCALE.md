@@ -1,7 +1,7 @@
 ---
 title: "Adding and Managing Datasets"
 description: "This article provides instructions on creating and managing datasets."
-weight: 30
+weight: 55
 aliases: /scale/scaleuireference/storage/pools/datasetsscale/
 tags:
  - scaledatasets
@@ -25,7 +25,7 @@ To create a dataset using the default settings, go to **Storage**. Default setti
 
 Select a dataset, pool (root) dataset or a child dataset, click the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; and then select **Add Dataset**.
 
-![AddDatasetNameAndOptions](/images/SCALE/22.02/AddDatasetNameAndOptionsDatasetAddSCALE.png "Add Dataset Name and Options")
+![AddDatasetNameAndOptions](/images/SCALE/22.02/AddDatasetNameAndOptions.png "Add Dataset Name and Options")
 
 Enter a name and click **Save**.
 
@@ -53,7 +53,7 @@ You can configure quotas for only the new dataset or include all child datasets.
 
 Define the maximum allowed space for the dataset in either the **Quota for this dataset**. Enter **0** to disable quotas. 
 
-Dataset quota [alert]({{< relref "/SCALEUIReference/TopToolbar/Alerts/AlertSettingsScreen.md" >}}) are based on the percentage of used storage. To set up a quota warning alert enter a percentage value in **Quota warning alert at, %**. When consumed space reaches the defined percentage it sends the alert. To change the setting from the parent dataset warning level, clear the **Inherit** checkbox and then change the value.
+Dataset quota [alert]({{< relref "/SCALE/SCALEUIReference/TopToolbar/Alerts/AlertSettingsScreen.md" >}}) are based on the percentage of used storage. To set up a quota warning alert enter a percentage value in **Quota warning alert at, %**. When consumed space reaches the defined percentage it sends the alert. To change the setting from the parent dataset warning level, clear the **Inherit** checkbox and then change the value.
 
 To set up the quota critical level alerts, enter the percentage value in **Quota critical alert at, %**. Clear the **Inherit** checkbox to change this value to something other than using the parent alert setting.
 
@@ -61,11 +61,11 @@ If setting quotas or changing the alert percentages for both the parent dataset 
 
 Ener a value in **Reserved space for this dataset** to set aside additional space for datasets that contain logs which could eventually take up all the available free space. Enter **0** for unlimited. 
 
-For more information on quotas, see [Managing User or Group Quotas]({{< relref "/SCALETutorials/Storage/Pools/ManageQuotas.md" >}}).
+For more information on quotas, see [Managing User or Group Quotas]({{< relref "ManageQuotas.md" >}}).
 
 ### Changing Dataset Inherited Values
 
-By default, many of dataset options inherit their values from the parent dataset. When the **Inherit** checkbox is selected, whatever setting has this checkbox selected uses the setting of the parent dataset. For example, the encryption settings which are explained in detail in the [Storage Encryption]({{< relref "/SCALETutorials/Storage/Pools/EncryptionScale.md" >}}) article.
+By default, many of dataset options inherit their values from the parent dataset. When the **Inherit** checkbox is selected, whatever setting has this checkbox selected uses the setting of the parent dataset. For example, the encryption settings which are explained in detail in the [Storage Encryption]({{< relref "EncryptionScale.md" >}}) article.
 
 To change any setting that can inherit the parent setting, clear the checkmark, and then you can enter the desired setting values for the child dataset you are configuring.
 
@@ -92,15 +92,15 @@ When set to **Restricted** it optimizes a dataset for SMB sharing, but it can al
 
 For a more in-depth explanation of ACLs and configurations in TrueNAS SCALE, see our [ACL Primer]({{< relref "/content/References/ACLPrimer.md" >}}). 
 
-For more information on ACL settings see [Setting Up Permissions]({{< relref "/SCALETutorials/Storage/Pools/PermissionsSCALE.md" >}}).
+For more information on ACL settings see [Setting Up Permissions]({{< relref "PermissionsSCALE.md" >}}).
 
 ### Creating a Dataset for a Fusion Pool
 
-Use the **Metadata (Special) Small Block Size** setting to set a threshold block size for including small file blocks into the [special allocation class (fusion pools)]({{< relref "SCALE/SCALETutorials/Storage/Pools/FusionPoolsScale.md" >}}). Blocks smaller than or equal to this value are assigned to the special allocation class while greater blocks are assigned to the regular class. Valid values are zero or a power of two from 512B up to 1M. The default size **0** means no small file blocks are allocated in the special class. Before setting this property, you must add a [special class vdev]({{< relref "SCALE/SCALETutorials/Storage/Pools/FusionPoolsScale.md" >}}) to the pool. 
+Use the **Metadata (Special) Small Block Size** setting to set a threshold block size for including small file blocks into the [special allocation class (fusion pools)]({{< relref "FusionPoolsScale.md" >}}). Blocks smaller than or equal to this value are assigned to the special allocation class while greater blocks are assigned to the regular class. Valid values are zero or a power of two from 512B up to 1M. The default size **0** means no small file blocks are allocated in the special class. Before setting this property, you must add a [special class vdev]({{< relref "FusionPoolsScale.md" >}}) to the pool. 
 
 ## Managing Datasets
 
-After creating a dataset, users can manage additional options by going to **Storage** and clicking the dataset <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; icon to display the **Dataset Actions** list. Each option is described in detail in the [Storage Screens]({{< relref "/SCALEUIReference/Storage/StorageScreens.md" >}}) article.
+After creating a dataset, users can manage additional options by going to **Storage** and clicking the dataset <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; icon to display the **Dataset Actions** list. Each option is described in detail in the [Storage Screens]({{< relref "/SCALE/SCALEUIReference/Storage/StorageScreen.md" >}}) article.
 
 ### Editing a Dataset
 Select **Edit Options** to change the dataset configuration settings. You can change all settings except **Name**, **Case Sensitivity**, or **Share Type**.
@@ -110,7 +110,7 @@ The **Edit Dataset** screen settings are identical to the **Add Dataset** screen
 ### Editing Dataset Permissions
 Select **View Permissions** on the **Dataset Actions** list of options to open the **Dataset Permissions** widget. 
 Click <span class="material-icons">mode_edit</span> to display the **Edit Permissions** screen with the **Unix Permissions Editor** you use to configure ACLs. 
-For more information, see the [permissions]({{< relref "SCALE/SCALETutorials/Storage/Pools/PermissionsSCALE.md" >}}) article.
+For more information, see the [permissions]({{< relref "PermissionsSCALE.md" >}}) article.
 
 ### Deleting a Dataset
 Select **Delete Dataset** to remove the dataset, all stored data, and any snapshots from TrueNAS.
@@ -119,4 +119,4 @@ Deleting datasets can result in unrecoverable data loss!
 Move or obsolete any critical data off the dataset before performing the delete operation.
 {{< /hint >}}
 
-{{< taglist tag="scaledatasets" limit="10" >}}
+{{< taglist tag="scaledatasets" limit="10" title="Related Datasets Articles" >}}
