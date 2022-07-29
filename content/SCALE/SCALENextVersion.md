@@ -34,6 +34,10 @@ Nightly images for TrueNAS SCALE are built every 24 hours, at around 2AM Eastern
 
 ### Bluefin Unstable Nightly Images (Unstable Branch, developers and brave testers)
 
+{{< hint info >}}
+Bluefin nightly builds are automatically published when the nightly image passes API testing. Bluefin is currently under heavy development and will have new nightly images publishing as soon as possible.
+{{< /hint >}}
+
 [ISO Installation Files](https://download.truenas.com/truenas-scale-bluefin-nightly/ "SCALE Angelfish Nightly .iso files")
 
 [Manual Update File](https://update.freenas.org/scale/TrueNAS-SCALE-Bluefin-Nightlies/TrueNAS-SCALE-Bluefin-Nightly.update)
