@@ -10,15 +10,13 @@ tags:
 
 Server Message Block (SMB) is a file sharing protocol utilized by Windows and other operating systems. 
 
-Use the **Sharing SMB** screen to setup SMB shares on your TrueNAS. Select **Sharing > Windows Shares (SMB)** to display the **SMB** screen.
+Go to **Sharing > Windows Shares (SMB)** to display the **SMB** screen and setup SMB shares on your TrueNAS.
 
 ![SharingSMBScreen](/images/CORE/13.0/SharingSMBScreen.png "SMB Share Screen")
 
-Use **Columns** to change the information displayed in the table. Options are **Unselect All**, **Path**, **Description**, **Enabled** and **Reset to Defaults**.
+Click **Columns** to change the information displayed in the table. Options are **Unselect All**, **Path**, **Description**, **Enabled** and **Reset to Defaults**.
 
-Use **Add** to display the **BASIC Options** settings screen.
-
-Use **CANCEL** to exit without saving and return to the main **SMB** screen.
+Click **Add** to display the **BASIC Options** settings screen.
 
 ## Basic Options
 
@@ -28,7 +26,7 @@ Use **CANCEL** to exit without saving and return to the main **SMB** screen.
 |---------|--------------|
 | **Path** | Use the file browser or click the **/mnt** to select the pool, dataset or directory to share. |
 | **Name** | Enter a name for the SMB share. |
-| **Purpose** | Select a preset configuration for the share to lock in predetermined values fo rthe share **Advanced Options**, including the **Path Suffix**. Select from the dropdown list. Options are **No presets**, **Default share parameters**, **Multi-user time machine**, **Multi-protocol (AFP/SMB) shares**, **Multi-protocol (NFSv3/SMB) shares**, **Private SMB Datasets and Shares** or **SMB WORM. Files become readonly via SMB after 5 minutes**. See "What do all the presets do?" for more information on presets.|
+| **Purpose** | Select a preset configuration to lock in predetermined values for the share using **Advanced Options**, including the **Path Suffix**. Select from the dropdown list. Options are: **No presets**, **Default share parameters**, **Multi-user time machine**, **Multi-protocol (AFP/SMB) shares**, **Multi-protocol (NFSv3/SMB) shares**, **Private SMB Datasets and Shares** or **SMB WORM. Files become readonly via SMB after 5 minutes**. See "What do all the presets do?" for more information on presets.|
 | **Description** | Optional. Explains the purpose of the share. |
 | **Enabled** | Select to allow this path to be shared when the SMB service is activated. Clear checkbox to disable the share without deleting the configuration. |
 
@@ -67,7 +65,7 @@ Options are divided into **Access** and **Other Options** groups.
 | Name | Description |
 |---------|-------------|
 | **Enable ACL** | Select to add Access Control List (ACL) support to the share. Leaving checkbox cleared disables ACL support and deletes any existing ACL for the share. |
-| **Export Read Only** | Select to prohibit writes to the share. Leave checkbox clear allows writes to the share. |
+| **Export Read Only** | Select to prohibit writes to the share. Leave checkbox clear to allow writes to the share. |
 | **Browsable to Network Clients** | Select to determine whether this share name is included when browsing shares. Home shares are only visible to the owner regardless of this setting. |
 | **Allow Guest Access** | Select to make privileges the same as the guest account. Guest access is disabled by default in Windows 10 version 1709 and Windows Server version 1903. Additional client-side configuration is required to provide guest access to these clients.<br><br> **MacOS clients**: Attempting to connect as a user that does not exist in FreeNAS *does not* automatically connect as the guest account. The **Connect As: Guest** option must be specifically chosen in MacOS to log in as the guest account. See the [Apple documentation](https://support.apple.com/guide/mac-help/connect-mac-shared-computers-servers-mchlp1140/mac) for more details. |
 | **Access Based Share Enumeration** | Select to restrict share visibility to users with read or write access to the share. See the [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) manual page. |
@@ -90,13 +88,15 @@ The **Other Options** have settings for improving Apple software compatibility, 
 | **Time Machine** | Select to enable [Apple Time Machine](https://support.apple.com/en-us/HT201250) backups on this share. |
 | **Enable Shadow Copies** | Select to allow export ZFS snapshots as [Shadow Copies](https://docs.microsoft.com/en-us/windows/win32/vss/shadow-copies-and-shadow-copy-sets) for Microsoft Volume Shadow Copy Service (VSS) clients. |
 | **Export Recycle Bin** | Select to allow files that are deleted from the same dataset to be moved to the Recycle Bin and not take any additional space. Deleting files over NFS removes the files permanently! When the files are in a different dataset or a child dataset, they are copied to the dataset where the Recycle Bin is located. To prevent excessive space usage, files larger than 20 MiB are deleted rather than moved. Adjust the **Auxiliary Parameter** `crossrename:sizelimit=` setting to allow larger files. For example, <code>crossrename:sizelimit=<i>50</i></code> allows moves of files up to 50 MiB in size. This means files can be permanently deleted or moved from the recycle bin. This is not a replacement for ZFS snapshots! |
-| **Use Apple-style Character Encoding** | Select to enable this option converts NTFS illegal characters in the same manner as MacOS SMB clients. By default, Samba uses a hashing algorithm for NTFS illegal characters. |
-| **Enable Alternate Data Streams** | Select to allow multiple [NTFS data streams](https://www.ntfs.com/ntfs-multiple.htm). Leave checkbox clear and this option causes MacOS to write streams to files on the file system. |
+| **Use Apple-style Character Encoding** | Select to convert NTFS illegal characters in the same manner as MacOS SMB clients. By default, Samba uses a hashing algorithm for NTFS illegal characters. |
+| **Enable Alternate Data Streams** | Select to allow multiple [NTFS data streams](https://www.ntfs.com/ntfs-multiple.htm). Disabling this option causes MacOS to write streams to files on the file system. |
 | **Enable SMB2/3 Durable Handles** | Select to allow using open file handles that can withstand short disconnections. Support for POSIX byte-range locks in Samba is also disabled. This option is not recommended when configuring multi-protocol or local access to files. |
 | **Enable FSRVP** | Select to enable support for the File Server Remote VSS Protocol ([FSVRP](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-fsrvp/dae107ec-8198-4778-a950-faa7edad125b)). This protocol allows Remote Procedure Call (RPC) clients to manage snapshots for a specific SMB share. The share path must be a dataset mountpoint. Snapshots have the prefix `fss-` followed by a snapshot creation timestamp. A snapshot must have this prefix for an RPC user to delete it. |
 | **Path Suffix** | Appends a suffix to the share connection path. This provides unique shares on a per-user, per-computer, or per-IP address basis. Suffixes can contain a macro. See the [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) manual page for a list of supported macros. The connectpath must be preset before a client connects. |
 | **Auxiliary Parameters** | Additional [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) settings. |
 
 Use **Submit** to save setings, create the share and add it to the **Sharing > Windows Shares (SMB)** list.
+
+Click **CANCEL** to exit without saving and return to the main **SMB** screen.
 
 {{< taglist tag="coresmb" limit="10" >}}
