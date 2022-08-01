@@ -16,7 +16,7 @@ tags:
 
 | Name | Description |
 |--------|-------------|
-| **Choose Theme** | Choose a preferred theme from the dropdown list. Prebuilt and custom themes are visible here. |
+| **Choose Theme** | Select a preferred theme from the dropdown list. Prebuilt and custom themes are visible here. |
 | **Prefer buttons with icons only** | Select checkbox to preserve screen space. Displays icons and tooltips instead of text labels. |
 | **Enable Password Toggle** | Select checkbox to make an eye icon appear next to password fields. Click the icon to reveal the password. |
 | **Reset Table Columns to Default** | Select checkbox to reset the display of all table columns as system default. |
@@ -28,7 +28,7 @@ tags:
 
 | Name | Description |
 |--------|-------------|
-| **theme name (variable)** | Each custom theme is listed. |
+| **theme name (variable)** | Use checkbox to select a custom theme if listed. |
 | **DELETE SELECTED** | Click button to remove each selected custom theme from the system. |
 | **CREATE NEW THEME** | Click button to open the theme editor. |
 
@@ -40,10 +40,10 @@ tags:
 
 | Name | Description |
 |--------|-------------|
-| **Load colors from existing theme** | Select from dropdown list. Imports the settings from the chosen theme into the **Create Theme** and **Preview** tabs. |
-| **GENERAL** | Primary options for the new theme are listed on this tab. |
-| **COLORS** | Options for setting custom color values are listed on this tab. |
-| **PREVIEW** | Controls for the **Preview** widget are listed on this tab. |
+| **Load colors from existing theme** | Select the theme option from the dropdown list to import settings into the **Create Theme** and **Preview** tabs. |
+| **GENERAL** | Click to display the **GENERAL** tab with the primary options for a new theme. |
+| **COLORS** | Click to display the **COLORS** tab with color options for a new theme. |
+| **PREVIEW** | Click to display the **PREVIEW** tab. The **PREVIEW** updates to reflect current selections. |
 
 #### GENERAL
 
@@ -62,22 +62,22 @@ tags:
 
 | Name | Description |
 |--------|-------------|
-| **Background 1** | Click the swatch to pick a color or enter a color hex. This value is used in for the **bg1** option in the **GENERAL** tab. |
-| **Background 2** | Click the swatch to pick a color or enter a color hex. This value is used in for the **bg2** option in the **GENERAL** tab. |
-| **Foreground 1** | Click the swatch to pick a color or enter a color hex. This value is used in for the **fg1** option in the **GENERAL** tab. |
-| **Foreground 2** | Click the swatch to pick a color or enter a color hex. This value is used in for the **fg2** option in the **GENERAL** tab. |
-| **Alt Background 1** | Click the swatch to pick a color or enter a color hex. This value is used in for the **alt-bg1** option in the **GENERAL** tab. |
-| **Alt Background 2** | Click the swatch to pick a color or enter a color hex. This value is used in for the **alt-bg2** option in the **GENERAL** tab. |
-| **Alt Foreground 1** | Click the swatch to pick a color or enter a color hex. This value is used in for the **alt-fg1** option in the **GENERAL** tab. |
-| **Alt Foreground 2** | Click the swatch to pick a color or enter a color hex. This value is used in for the **alt-fg2** option in the **GENERAL** tab. |
-| **Yellow** | Click the swatch to pick a color or enter a color hex. This value is used in for the **yellow** option in the **GENERAL** tab. |
-| **Orange** | Click the swatch to pick a color or enter a color hex. This value is used in for the **orange** option in the **GENERAL** tab. |
-| **Red** | Click the swatch to pick a color or enter a color hex. This value is used in for the **red** option in the **GENERAL** tab. |
-| **Magenta** | Click the swatch to pick a color or enter a color hex. This value is used in for the **magenta** option in the **GENERAL** tab. |
-| **Violet** | Click the swatch to pick a color or enter a color hex. This value is used in for the **violet** option in the **GENERAL** tab. |
-| **Blue** | Click the swatch to pick a color or enter a color hex. This value is used in for the **blue** option in the **GENERAL** tab. |
-| **Cyan** | Click the swatch to pick a color or enter a color hex. This value is used in for the **cyan** option in the **GENERAL** tab. |
-| **Green** | Click the swatch to pick a color or enter a color hex. This value is used in for the **green** option in the **GENERAL** tab. |
+| **Background 1** | Either click on the color swatch or enter a hex value. This value is used for the **bg1** option in the **GENERAL** tab. |
+| **Background 2** | Either click on the color swatch or enter a hex value. This value is used for the **bg2** option in the **GENERAL** tab. |
+| **Foreground 1** | Either click on the color swatch or enter a hex value. This value is used in the **fg1** option in the **GENERAL** tab. |
+| **Foreground 2** | Either click on the color swatch or enter a hex value. This value is used for the **fg2** option in the **GENERAL** tab. |
+| **Alt Background 1** | Either click on the color swatch or enter a hex value. This value is used for the **alt-bg1** option in the **GENERAL** tab. |
+| **Alt Background 2** | Either click on the color swatch or enter a hex value. This value is use for the **alt-bg2** option in the **GENERAL** tab. |
+| **Alt Foreground 1** | Either click on the color swatch or enter a hex value. This value is used for the **alt-fg1** option in the **GENERAL** tab. |
+| **Alt Foreground 2** | Either click on the color swatch or enter a hex value. This value is used for the **alt-fg2** option in the **GENERAL** tab. |
+| **Yellow** | Either click on the color swatch or enter a hex value. This value is used for the **yellow** option in the **GENERAL** tab. |
+| **Orange** | Either click on the color swatch or enter a hex value. This value is used for the **orange** option in the **GENERAL** tab. |
+| **Red** | Either click on the color swatch or enter a hex value. This value is used for the **red** option in the **GENERAL** tab. |
+| **Magenta** | Either click on the color swatch or enter a hex value. This value is used for the **magenta** option in the **GENERAL** tab. |
+| **Violet** | Either click on the color swatch or enter a hex value. This value is used for the **violet** option in the **GENERAL** tab. |
+| **Blue** | Either click on the color swatch or enter a hex value. This value is used for the **blue** option in the **GENERAL** tab. |
+| **Cyan** | Either click on the color swatch or enter a hex value. This value is used for the **cyan** option in the **GENERAL** tab. |
+| **Green** | Either click on the color swatch or enter a hex value. This value is used for the **green** option in the **GENERAL** tab. |
 | **SUBMIT** | Click the button to save the current selections and create the new theme. |
 | **CANCEL** | Click the button to return to the **Preferences** screen without creating a new theme. |
 
@@ -85,7 +85,7 @@ tags:
 
 | Name | Description |
 |--------|-------------|
-| **Global Preview** | Click the toggle button to control the visibility of the **Preview** widget. |
+| **Global Preview** | Color selections are displayed in the **PREVIEW**. To turn this feature off and compare these selections with the currently active theme, click the toggle to turn the display of the **PREVIEW** widget on or off. |
 
 ### Preview
 
