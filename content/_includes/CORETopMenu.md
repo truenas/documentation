@@ -59,15 +59,15 @@ Please back up or otherwise memorize the updated password when changing it.
 
 <span class="iconify" data-icon="ic:outline-settings-applications"></span> **Preferences** contains theme and other visual options for the web interface:
 
-| Option | Description |
+| Name | Description |
 |--------|-------------|
-| **Choose Theme** | Choose a preferred theme. There are several built-in themes designed for light and dark modes and high contrast viewing of the web interface. |
-| **Prefer buttons with icons only** | Preserve screen space with icons and tooltips instead of text labels. |
-| **Enable Password Toggle** | When set, an eye icon appears next to password fields. Clicking the icon reveals the password. |
-| **Reset Table Columns to Default** | Reset all tables to display default columns. |
-| **Retro Logo** | Revert branding back to FreeNAS. |
-| **Reset All Preferences to Default** | Reset all user preferences to their default values. (Custom themes are preserved) |
-| **Update Preferences** | Save changes to the **General Preferences**. |
+| **Choose Theme** | Select a preferred theme from the dropdown list. There are several built-in themes designed for light and dark modes and high contrast viewing of the web interface. |
+| **Prefer buttons with icons only** | Select to preserve screen space using icons and tooltips instead of text labels. |
+| **Enable Password Toggle** | Select to display an eye icon next to password fields. Clicking the icon reveals the password. |
+| **Reset Table Columns to Default** | Select to reset all tables to display system default table columns. |
+| **Retro Logo** | Select to revert branding back to FreeNAS. |
+| **Reset All Preferences to Default** | Select to reset all user preferences to their default values. (Custom themes are preserved) |
+| **Update Preferences** | Click to save changes to the **General Preferences**. |
 
 Custom themes can also be created and managed on this screen.
 
