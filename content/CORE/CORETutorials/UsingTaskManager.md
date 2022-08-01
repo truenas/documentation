@@ -8,7 +8,9 @@ tags:
 - coretaskmanager
 ---
 
-The **Task Manager** displays a list of tasks performed by the TrueNAS system starting with the most recent. Click the <i class="material-icons">assignment</i> to open the **Task Manager**.
+The **Task Manager** displays a list of tasks performed by the TrueNAS system starting with the most recent.  
+
+Click the <i class="material-icons">assignment</i> to open the **Task Manager**.
 
 ![TaskManager](/images/CORE/13.0/TaskManager.png "Task Manager")
 
