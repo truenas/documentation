@@ -11,7 +11,7 @@ The **Task Manager** displays a list of tasks performed by the TrueNAS system st
 
 ![TaskManager](/images/CORE/13.0/TaskManager.png "Task Manager")
 
-| UI Element | Description |
+| Name | Description |
 |------------|-------------|
 | **Filter** | Search function to locate or filter the list for a particular running task. |
 | **View Logs** | Displays the log for a task with a log file. |
