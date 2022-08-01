@@ -9,7 +9,7 @@ While the current version of TrueNAS SCALE receives maintenance updates, the nex
 This article collects various details about this upcoming major version: early release notes, developer notes, and how to help test the in-development version.
 This is a work in progress and details are added as development progresses on this SCALE release.
 
-{{< hint warning >}}
+{{< hint danger >}}
 Early releases are intended for testing and early feedback purposes only.
 Do not use early release software for critical tasks.
 {{< /hint >}}
@@ -24,7 +24,7 @@ Want to get involved in helping to collaborate on TrueNAS SCALE? Join our [Offic
 
 ## Nightly Status
 
-Nightly images for TrueNAS SCALE are built every 24 hours, at around 2AM Eastern (EDT/EST) time. Online updates are created every 2 hours and are available in the SCALE UI online updating page.
+Nightly images for TrueNAS SCALE are built every 24 hours, at around 2AM Eastern (EDT/EST) time. These images are made publicly available when they pass automated usability testing. This means that during times of heavy development, nightly images might be less frequently available. Online updates are created every 2 hours and are available in the SCALE UI online updating page.
 
 ### Angelfish Stable Nightly Images (Stable Branch, more suitable for testing)
 
@@ -33,10 +33,6 @@ Nightly images for TrueNAS SCALE are built every 24 hours, at around 2AM Eastern
 [Manual Update File](https://update.freenas.org/scale/TrueNAS-SCALE-Angelfish-Nightlies/TrueNAS-SCALE-Angelfish-Nightly.update)
 
 ### Bluefin Unstable Nightly Images (Unstable Branch, developers and brave testers)
-
-{{< hint info >}}
-Bluefin nightly builds are automatically published when the nightly image passes API testing. Bluefin is currently under heavy development and will have new nightly images publishing as soon as possible.
-{{< /hint >}}
 
 [ISO Installation Files](https://download.truenas.com/truenas-scale-bluefin-nightly/ "SCALE Angelfish Nightly .iso files")
 
