@@ -8,4 +8,8 @@ weight: 10
 
 ## Pool Article Summaries
 
+The articles in this section provide information on setting up system storage, which includes adding, importing or mananging pools, adding or managing datasets and zvols. 
+
+## Storage Articles
+
 {{< children depth="2" description="true" >}}
