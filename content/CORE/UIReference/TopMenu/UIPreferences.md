@@ -85,7 +85,7 @@ tags:
 
 | Name | Description |
 |--------|-------------|
-| **Global Preview** | Color selections are displayed in the **PREVIEW**. To turn this feature off and compare these selections with the currently active theme, click the toggle to turn the display of the **PREVIEW** widget on or off. |
+| **Global Preview** | Color selections are displayed in the **PREVIEW**. Click the toggle to turn the display of the **PREVIEW** widget on or off. |
 
 ### Preview
 
