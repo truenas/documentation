@@ -20,7 +20,7 @@ This article provides instructions for setting up SAML service in TrueCommand an
 ## Setting up SMAL in TrueCommand
 
 1. Log in to your TrueCommand system (i.e., server, container, VM). 
-   To access the TrueCommand web interface, enter http://*IP:PORT* where *IP:PORT* is the IP address and port number assigned to your TrueCommand system, into a web browser URL field and then press <kbd>Enter</kbd>. 
+   To access the TrueCommand web interface, enter https://*IP:PORT* where *IP:PORT* is the IP address and port number assigned to your TrueCommand system, into a web browser URL field and then press <kbd>Enter</kbd>. 
 
 2. Go to **Settings > Administration**, then click on **Configure** in the **Configuration** widget. 
    The **Configuration** screen with editable settings displays.
@@ -31,7 +31,7 @@ This article provides instructions for setting up SAML service in TrueCommand an
    {{< /hint >}}
 
 3. Enter the URL from Active Directory.
-   Enter http://*ds.yourcompany.net*/FederationMetadata/2007-06/FederationMetadata.xml in the **SAML Identity Provider URL** field, then click **Save**. 
+   Enter https://*ds.yourcompany.net*/FederationMetadata/2007-06/FederationMetadata.xml in the **SAML Identity Provider URL** field, then click **Save**. 
 
    ![TC2.2SAMLSettings](/images/SAML/TC2.2SAMLSettings.png "TrueCommand SAML Service Settings")
 
@@ -91,7 +91,7 @@ This process is described in the next section.
    a. Open PowerShell and type the command `invoke-webRequest -uri http://IP:PORT/saml/metadata -outfile tc.cer`. 
       *IP:PORT* is your TrueCommand system IP address/port number.
 
-      ![OpenPowershellTypeInvokeCommand](/images/SAML/OpenPowershellTypeInvokeCommand.png "Open Powershell Type Invoke Command")
+      ![TC2.2PowershellInvokeCommand](/images/SAML/TC2.2PowershellInvokeCommand.png "Open Powershell Type Invoke Command")
 
    b. Edit the certificate. 
 
@@ -213,6 +213,6 @@ This process is described in the next section.
 
 ## Logging into TrueCommand SAML
 
-Go to the TrueCommand login page and click the **SAML Login** option to log in. Enter your Active Directory user login credentials.
+Go to the TrueCommand login page and click the **SAML Login** option to log in. Enter your Active Directory user login credentials (for example, *username*@ds.*yourcompany*.net).
 
 {{< taglist tag="tcsaml" limit="10" >}}
