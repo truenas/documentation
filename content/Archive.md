@@ -50,9 +50,10 @@ Release Notes:
 <a href="https://www.truenas.com/docs/files/TC2.1Docs.pdf">TrueCommand 2.1</a>
 
 <a href="https://www.truenas.com/docs/files/TrueCommand2.0Documentation.pdf">TrueCommand 2.0</a>
-Release Notes:
-* [2.0]({{< ref "/_includes/TCReleaseNotes/2.0.md" >}})
-* [2.0-BETA]({{< ref "/_includes/TCReleaseNotes/2.0-Beta.md" >}})
+
+* Release Notes:
+  * [2.0]({{< ref "/_includes/TCReleaseNotes/2.0.md" >}})
+  * [2.0-BETA]({{< ref "/_includes/TCReleaseNotes/2.0-Beta.md" >}})
 
 
 {{< /expand >}}
