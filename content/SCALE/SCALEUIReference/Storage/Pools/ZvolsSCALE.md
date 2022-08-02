@@ -76,7 +76,7 @@ To see zvol options, click <i class="material-icons" aria-hidden="true" title="O
 * *Edit Zvol* opens the zvol creation form for changing the previously saved settings. Users cannot change the name.
 * *Create Snapshot* takes a single current point-in-time image of the zvol and saves it to *Snapshots*. TrueNAS will suggest a *Name* and offer the *Recursive* option.
 
-If you clone a zvol from an existing [snapshot]({{< relref "SnapshotsSCALE.md" >}}), TrueNAS will offer the *Promote Dataset* option.
+If you clone a zvol from an existing [snapshot]({{< relref "/SCALE/SCALEUIReference/Storage/SnapshotsSCALE.md" >}}), TrueNAS will offer the *Promote Dataset* option.
 After promoting a clone, the original volume becomes a clone of the promoted clone. Promoting a clone allows users to delete the volume that created the clone.
 Otherwise, you cannot delete a clone while the original volume exists.
 

@@ -33,7 +33,7 @@ However, this backup does not occur if the system is off at that time.
 If the system dataset is on the boot pool and it becomes unavailable, the backup also loses availability.
 
 {{< hint warning >}}
-You must backup SSH keys separately. TrueNAS does not store themin the configuration database.
+You must backup SSH keys separately. TrueNAS does not store them in the configuration database.
 System host keys are files with names beginning with ssh_host_ in <file>/usr/local/etc/ssh/</file>.
 The root user keys are stored in <file>/root/.ssh</file>.
 {{< /hint >}}
