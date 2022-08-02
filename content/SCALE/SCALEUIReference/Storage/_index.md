@@ -10,8 +10,6 @@ The SCALE Storage section has controls for pool, snapshot, and disk management.
 
 The storage section also has options for datasets, Zvols, and permissions.
 
-SCALE supports clustering storage across multiple systems. See [TrueCommand Clustering]({{< relref "/TrueCommand/Clustering/_index.md" >}}) for more details.
-
 ## Storage Overview
 
 ![StorageSCALE](/images/SCALE/StorageSCALE.png "TrueNAS SCALE Storage")
