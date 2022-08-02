@@ -52,7 +52,7 @@ Documentation articles follow the latest supported software releases, with previ
 |----------|-------------------------------|
 | TrueNAS CORE & Enterprise | 13.0 |
 | TrueNAS SCALE | 22.02 Angelfish |
-| TrueCommand | 2.1 |
+| TrueCommand | 2.2 |
   
 The navigation pane to the left is sorted into several topics that you can expand to find the specific knowledge you're looking for:
 

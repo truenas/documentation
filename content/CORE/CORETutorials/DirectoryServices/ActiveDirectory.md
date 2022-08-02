@@ -1,16 +1,16 @@
 ---
 title: "Setting Up Active Directory"
+description: "Use the AD screen to configure Active Directory (AD) on your TrueNAS"
 weight: 10
 aliases: /core/directoryservices/activedirectory/
+tags:
+- coredirectoryservices
+- coread
 ---
 
 {{< toc >}}
 
-The Active Directory (AD) service shares resources in a Windows network.
-AD provides authentication and authorization services for the users in a network, eliminating the need to recreate the user accounts on TrueNAS.
-
-Once joined to an AD domain, you can use domain users and groups in local ACLs on files and directories. 
-You can also set up shares to act as a file server.
+The Active Directory (AD) service shares resources in a Windows network. AD provides authentication and authorization services for the users in a network, eliminating the need to recreate the user accounts on TrueNAS. Once joined to an AD domain, you can use domain users and groups in local ACLs on files and directories. You can also set up shares to act as a file server.  
 
 Joining an AD domain also configures the Privileged Access Manager (PAM) to let domain users log on via SSH or authenticate to local services.
 
@@ -61,11 +61,13 @@ There are a few options in TrueNAS to ensure both systems are synchronized:
 ## Connect to the Active Directory Domain
 
 To connect to Active Directory, go to **Directory Services > Active Directory** and enter the AD **Domain Name** and account credentials.
-Set **Enable** to attempt to join the AD domain immediately after saving the configuration.
+Select **Enable** to attempt to join the AD domain immediately after saving the configuration.
 
-![DirectoryServicesActiveDirectoryExample](/images/CORE/12.0/DirectoryServicesActiveDirectoryExample.png "Active Directory Example")
+![DirectoryServicesActiveDirectoryExample](/images/CORE/12.0/DirectoryServicesActiveDirectoryExample.png "Active Directory Example")  
 
-Advanced options are available for fine-tuning the AD configuration, but the preconfigured defaults are generally suitable.
+Use **ADVANCED OPTIONS** to access additional options. Advanced options are available for fine-tuning the AD configuration, but the preconfigured defaults are generally suitable.  
+
+Use **REBUILD DIRECTORY SERVICE CACHE** to resync the cache if it becomes out of sync  or  fewer users than expected are available in the permissions editors.  
 
 {{< expand "I don't see any AD information!" "v" >}}
 TrueNAS can take a few minutes to populate the AD information after configuring the Active Directory service.
@@ -78,7 +80,7 @@ When the import completes, AD users and groups become available while configurin
 Joining AD also adds default [Kerberos]({{< relref "/CORE/CORETutorials/DirectoryServices/Kerberos.md" >}}) realms and generates a default `AD_MACHINE_ACCOUNT` keytab.
 TrueNAS automatically begins using this default keytab and removes any administrator credentials stored in the TrueNAS configuration file.
 
-## FTP Access
+## Related Services: FTP Access
 
 While SFTP is recommended over FTP, joined systems do allow FTP access. Keep these caveats in mind:
 * Authentication uses *DOMAIN\username* as the user name by default.
@@ -128,6 +130,4 @@ You can go to the **Shell** and enter various commands to get more details about
 * User connection test to an SMB share: `smbclient '//127.0.0.1/smbshare -U AD01.LAB.IXSYSTEMS.COM\ixuser`, replacing `127.0.0.1` with your server address, `smbshare` with the SMB share name, `AD01.LAB.IXSYSTEMS.COM` with your trusted domain, and `ixuser` with the user account name for authentication testing.
 {{< /expand >}}
 
-## Additional Information
-
-[Active Directory Screen]({{< relref "/CORE/UIReference/DirectoryServices/ADScreen.md" >}})
+{{< taglist tag="coredirectoryservices" limit="10" title="Related Articles" >}}
