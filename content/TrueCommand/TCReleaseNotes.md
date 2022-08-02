@@ -25,7 +25,12 @@ aliases:
 
 ## 2.2
 
-The TrueCommand team is pleased to announce [TrueCommand 2.2](https://www.truenas.com/docs/truecommand/) is now available. 
+The TrueCommand team is pleased to announce [TrueCommand 2.2](https://www.truenas.com/docs/truecommand/) is now available!
+
+{{< hint warning >}}
+Users with TrueCommand deployed in a Docker-style container are advised to back up their TrueCommand `<container>/data` volume before attempting an upgrade to version 2.2.
+See [Back up the Container Volume]({{< relref "UpdateDocker.md" >}}) for specific examples.
+{{< /hint >}}
 
 ### 2.2 Changelog
 
