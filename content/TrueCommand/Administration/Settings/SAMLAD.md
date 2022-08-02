@@ -137,7 +137,7 @@ This process is described in the next section.
 
 5. Configure the SAML identifiers. 
    
-   a. Type **truecommand-sml** into the **Relying party trust identifier** field and click **Add**.
+   a. Type **truecommand-saml** into the **Relying party trust identifier** field and click **Add**.
       
       ![WizardConfigureIdentifiersTypeNameCropped](/images/SAML/WizardConfigureIdentifiersTypeNameCropped.png "Wizard Configure Identifiers Type Name")
    
