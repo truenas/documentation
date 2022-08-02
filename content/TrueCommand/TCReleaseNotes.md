@@ -18,7 +18,6 @@ aliases:
 
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
-| 2.3.0-RC.1 | Internal Testing Sprints | TBD |
 | 2.3.0 | Code-freeze | TBD |
 | 2.3.0 | Internal Testing Sprints | TBD |
 | 2.3.0 | Tag | TBD |
