@@ -1,7 +1,7 @@
 ---
 title: "Installing and Managing Self-Encrypting Drives"
-description: "This article provides information self-encrypting drives. Included information covers supported specification, implementing and managing them in TrueNAS, and managing SED passwords and data."
-weight: 55 
+description: "This article covers self-encrypting drives, including supported specifications, implementing and managing SEDs in TrueNAS, and managing SED passwords and data."
+weight: 55
 tags:
 - scalessed
 - scalestorage

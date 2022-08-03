@@ -9,7 +9,7 @@ tags:
 
 
 You must power on virtual machines for TrueNAS to copy snapshots to VMware.
-The temporary VMware snapshots deleted on the VMware side, still exist in the ZFS snapshot and are available as stable restore points.
+The temporary VMware snapshots deleted on the VMware side still exist in the ZFS snapshot and are available as stable restore points.
 These coordinated snapshots go in the **Snapshots** list.
 
 Use this procedure to create ZFS snapshots when using TrueNAS SCALE as a VMWare datastore. VMware-Snapshots coordinate ZFS snapshots when using TrueNAS as a VMware datastore.
@@ -17,9 +17,9 @@ When creating a ZFS snapshot, TrueNAS SCALE automatically takes a snapshot of an
 
 {{< hint info >}}
 You must have a paid-edition for VMWare ESXi to use the TrueNAS SCALE VMWare-snapshots feature.
-If you try to use them with the free-edition of VMware ESXi, you see the following error message, "Error, Can't create snapshot, current license or ESXi version prohibits execution of the requested operation."
+If you try to use them with the free-edition of VMware ESXi, you see this error message: "Error, Can't create snapshot, current license or ESXi version prohibits execution of the requested operation."
 ESXi free has a locked (read-only) API that prevents using TrueNAS SCALE VMWare-snapshots.
-The cheapest ESXi edition that is compatible with TrueNAS VMware-shapshots is VMWare vShpere Essentials Kit.
+The cheapest ESXi edition that is compatible with TrueNAS VMware-shapshots is VMWare vSphere Essentials Kit.
 {{< /hint >}}
 
 ## Creating a VMWare Snapshot
@@ -29,7 +29,7 @@ Go to **Storage** and click the **Snapshots** button at the top right of the scr
 ![StorageScreenSnapshotOptions](/images/SCALE/22.02/StorageScreenSnapshotOptions.png "Snapshot Options")
 
 {{< hint warning >}}
-You must follow the exact sequence to add the VMware snapshot or the  **ZFS Filesystem** and  **Datastore** fields donot populate with options available on your system.
+You must follow the exact sequence to add the VMware snapshot or the  **ZFS Filesystem** and  **Datastore** fields do not populate with options available on your system.
 If you click in *ZFS Filestore** or **Datastores** before you click **Fetch Datastores** the creation process fails, the two fields do not populate with the information from the VMWare host and you must exit the add form or click **Cancel** and start again.
 {{< /hint >}}
 

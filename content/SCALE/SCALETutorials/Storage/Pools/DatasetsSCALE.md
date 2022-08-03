@@ -33,7 +33,8 @@ Enter a name and click **Save**.
 
 You can create datasets optimized for SMB shares or with customized settings for your dataset use cases.
 {{< hint warning >}}
-Settings to check before you click **Save** are **Share Type** and **Case Sensitivity** on the configuration screen. You cannot change these settings and the **Name** setting after you click **Save**.
+Review the **Share Type** and **Case Sensitivity** options on the configuration screen before clicking **Save**.
+You cannot change these settings and the **Name** setting after clicking **Save**.
 {{< /hint >}}
 
 ### Setting Dataset Compression Levels
@@ -53,21 +54,28 @@ You can configure quotas for only the new dataset or include all child datasets.
 
 Define the maximum allowed space for the dataset in either the **Quota for this dataset**. Enter **0** to disable quotas. 
 
-Dataset quota [alert]({{< relref "/SCALE/SCALEUIReference/TopToolbar/Alerts/AlertSettingsScreen.md" >}}) are based on the percentage of used storage. To set up a quota warning alert enter a percentage value in **Quota warning alert at, %**. When consumed space reaches the defined percentage it sends the alert. To change the setting from the parent dataset warning level, clear the **Inherit** checkbox and then change the value.
+Dataset quota [alerts]({{< relref "/SCALE/SCALEUIReference/TopToolbar/Alerts/AlertSettingsScreen.md" >}}) are based on the percentage of used storage.
+To set up a quota warning alert, enter a percentage value in **Quota warning alert at, %**.
+When consumed space reaches the defined percentage it sends the alert.
+To change the setting from the parent dataset warning level, clear the **Inherit** checkbox and then change the value.
 
-To set up the quota critical level alerts, enter the percentage value in **Quota critical alert at, %**. Clear the **Inherit** checkbox to change this value to something other than using the parent alert setting.
+To set up the quota critical level alerts, enter the percentage value in **Quota critical alert at, %**.
+Clear the **Inherit** checkbox to change this value to something other than using the parent alert setting.
 
-If setting quotas or changing the alert percentages for both the parent dataset and all child datasets, use the fields under **This Dataset and Child Datasets**.
+When setting quotas or changing the alert percentages for both the parent dataset and all child datasets, use the fields under **This Dataset and Child Datasets**.
 
-Ener a value in **Reserved space for this dataset** to set aside additional space for datasets that contain logs which could eventually take up all the available free space. Enter **0** for unlimited. 
+Enter a value in **Reserved space for this dataset** to set aside additional space for datasets that contain logs which could eventually take all available free space.
+Enter **0** for unlimited.
 
 For more information on quotas, see [Managing User or Group Quotas]({{< relref "ManageQuotas.md" >}}).
 
 ### Changing Dataset Inherited Values
 
-By default, many of dataset options inherit their values from the parent dataset. When the **Inherit** checkbox is selected, whatever setting has this checkbox selected uses the setting of the parent dataset. For example, the encryption settings which are explained in detail in the [Storage Encryption]({{< relref "EncryptionScale.md" >}}) article.
+By default, many of dataset options inherit their values from the parent dataset.
+When the **Inherit** checkbox is selected, whatever setting has this checkbox selected uses the settings from the parent dataset.
+For example, the [Storage Encryption]({{< relref "EncryptionScale.md" >}}) settings.
 
-To change any setting that can inherit the parent setting, clear the checkmark, and then you can enter the desired setting values for the child dataset you are configuring.
+To change any setting that can inherit the parent setting, clear the checkmark and then enter the desired setting values for the child dataset you are configuring.
 
 ### Setting Datasets Access Controls
 
@@ -96,7 +104,11 @@ For more information on ACL settings see [Setting Up Permissions]({{< relref "Pe
 
 ### Creating a Dataset for a Fusion Pool
 
-Use the **Metadata (Special) Small Block Size** setting to set a threshold block size for including small file blocks into the [special allocation class (fusion pools)]({{< relref "FusionPoolsScale.md" >}}). Blocks smaller than or equal to this value are assigned to the special allocation class while greater blocks are assigned to the regular class. Valid values are zero or a power of two from 512B up to 1M. The default size **0** means no small file blocks are allocated in the special class. Before setting this property, you must add a [special class vdev]({{< relref "FusionPoolsScale.md" >}}) to the pool. 
+Use the **Metadata (Special) Small Block Size** setting to set a threshold block size for including small file blocks into the [special allocation class (fusion pools)]({{< relref "FusionPoolsScale.md" >}}).
+Blocks smaller than or equal to this value are assigned to the special allocation class while greater blocks are assigned to the regular class.
+Valid values are zero or a power of two from 512B up to 1M.
+The default size **0** means no small file blocks are allocated in the special class.
+Before setting this property, you must add a [special class vdev]({{< relref "FusionPoolsScale.md" >}}) to the pool. 
 
 ## Managing Datasets
 
