@@ -16,8 +16,6 @@ Using a special vdev drastically speeds up random I/O and cuts the average spinn
 
 Go to **Storage > Pools**, click **ADD**, and select **Create new pool**.
 
-![CreateImportPoolScreen](/images/CORE/13.0/CreateImportPoolScreen.png "Create or Import Pool Screen")
-
 A pool must always have one normal (non-dedup/special) vdev before other devices can be assigned to the special class.
 Configure the **Data VDevs**, then click **ADD VDEV** and select **Metadata**.
 

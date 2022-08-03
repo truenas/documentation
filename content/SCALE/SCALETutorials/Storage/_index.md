@@ -29,6 +29,6 @@ The Storage screen displays the pools, datasets, and zvols users have created on
 
 {{< include file="static/includes/General/MenuNav.md.part" markdown="true" >}}
 
-## Storage Articles
+## Storage Article Summaries
 
 {{< children depth="2" description="true" >}}

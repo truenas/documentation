@@ -17,7 +17,7 @@ When creating zvols for shares, avoid giving them names with capital letters or 
 {{< tab "Block (iSCSI) Shares Targets" >}}
 {{< include file="/_includes/iSCSIRef.md" type="page" >}}
 
-To get started with iSCSI shares, make sure you have already created a [zvol]({{< relref "/SCALE/SCALEUIReference/Storage/Pools/ZVolsSCALE.md" >}}) or a [dataset]({{< relref "/SCALE/SCALEUIReference/Storage/Pools/DatasetsSCALE.md" >}}) with at least one file to share.
+To get started with iSCSI shares, make sure you have already created a [zvol]({{< relref "AddManageZvols.md" >}}) or a [dataset]({{< relref "DatasetsSCALE.md" >}}) with at least one file to share.
 
 Go to **Shares** and click **Configure** in the **Block (iSCSI) Shares Targets** window. You can either use the creation wizard or set one up manually.
 
@@ -492,7 +492,7 @@ Local TrueNAS user accounts no longer have access to the share.
 After creating a dataset and accounts, you need to investigate your access requirements and adjust the dataset ACL to match. 
 Go to **Storage**, open the options for the new dataset, and click **Edit Permissions**.
 Many home users typically add a new entry that grants **FULL_CONTROL** to the **builtin_users** group with the flags set to **INHERIT**.
-See the [Permissions article]({{< relref "/SCALE/SCALEUIReference/Storage/Pools/PermissionsSCALE.md" >}}) for more details.
+See the [Permissions article]({{< relref "PermissionsSCALE.md" >}}) for more details.
 
 ## Creating the SMB Share
 
@@ -615,7 +615,7 @@ Since SCALE gives users the option to use either POSIX or NFSv4 share [ACL types
 {{< expand "NFSv4 Filesystem ACL" "v" >}}
 ![DatasetACLEditNFSv4](/images/SCALE/DatasetACLEditNFSv4.png "NFSv4 Dataset Permissions Options")
 
-The filesystem ACL defines the user accounts or groups that own or have specific [permissions]({{< relref "/SCALE/SCALEUIReference/Storage/Pools/PermissionsSCALE.md" >}}) to the shared dataset.
+The filesystem ACL defines the user accounts or groups that own or have specific [permissions]({{< relref "PermissionsSCALE.md" >}}) to the shared dataset.
 The **User** and **Group** values show which accounts *own* or have full permissions to the dataset.
 Change the default settings to your preferred primary account and group and set the **Apply permissions recursively** checkbox before saving any changes.
 
@@ -640,7 +640,7 @@ For example, to only allow the *newuser* user permission to view dataset content
 {{< expand "POSIX Filesystem ACL" "v" >}}
 ![DatasetACLEditPOSIX](/images/SCALE/DatasetACLEditPOSIX.png "POSIX Dataset Permissions Options")
 
-The filesystem ACL defines the user accounts or groups that own or have specific [permissions]({{< relref "/SCALE/SCALEUIReference/Storage/Pools/PermissionsSCALE.md" >}}) to the shared dataset.
+The filesystem ACL defines the user accounts or groups that own or have specific [permissions]({{< relref "PermissionsSCALE.md" >}}) to the shared dataset.
 
 The **User** and **Group** values show which accounts own, or have full permissions to the dataset.
 Change the default settings to your preferred primary account and group and set the **Apply permissions recursively** checkbox before saving any changes.
