@@ -5,7 +5,6 @@ weight: 20
 
 {{< toc >}}
 
-
 Use the **Storage > Snapshots** screens to create and manage snapshots on your TrueNAS.
 
 ![StorageSnapshotsScreen](/images/CORE/13.0/StorageSnapshotsScreen.png "Stprage Snapshots Screen")
