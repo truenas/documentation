@@ -1,172 +1,109 @@
 ---
-title: "Creating Storage Pools"
-description: "This article provides information on creating storage pools and using Vdev layout options in TrueNAS SCALE."
-weight: 45
-aliases:
- - /scale/scaleuireference/storage/pools/
-tags:
-- scaleinstall
-- scalestorage
-- scalepool
+title: "Creating Pools"
+description: "This article provides instructions on creating storage pools in TrueNAS SCALE."
+weight: 40
+aliases: /scale/scaleuireference/storage/pools/
+tag: 
+ - scalepools
+ - scalestorage
 ---
 
 {{< toc >}}
 
-
-TrueNAS uses ZFS data storage *pools* to efficiently store and protect data.
-
-{{< expand "What's a pool?" "v" >}}
-Storage pools attach drives organized into virtual devices called *vdevs*.
-ZFS and TrueNAS periodically review and *heal* when discovering a bad block in a pool.
-Drives arranged inside vdevs provide varying amounts of redundancy and performance.
-Combined, ZFS and vdevs combined create high-performance pools, pools that maximize data lifetime, and all situations in between.
-{{< /expand >}}
-
-## Review Storage Needs
-
-It is strongly recommend that you review the available system resources and plan the storage use case before creating a storage pool.
-* Allocating more drives to a pool increases redundancy when storing critical information.
-* Maximizing total available storage at the expense of redundancy or performance entails allocating large-volume disks and configuring a pool for minimal redundancy.
-* Maximizing pool performance entails installing and allocating high-speed SSD drives to a pool.
-
-Determining your specific storage requirements is a critical step before creating a pool.
+{{< include file="/_includes/StoragePoolsIntroScale.md" type="page" >}}
 
 ## Creating a Pool
 
-{{< expand "Creating a Pool Tutorial" "v" >}}
+{{< expand "Tutorial" "v" >}}
 {{< embed-video name="scaleangelfishpoolcreate" >}}
 {{< /expand >}}
 
-To create a new pool, go to **Storage** and click **Create Pool**.
+To create a new pool, go to **Storage** and click **Create Pool**. The **Pool Manager** screen displays.
 
 ![PoolManagerSCALE](/images/SCALE/PoolManagerSCALE.png "TrueNAS SCALE Pool Manager")
 
-First, enter a pool name.
+1. Enter a pool name. 
 
-{{< expand "Encryption?" "v" >}}
-TrueNAS offers several encryption algorithms to maximize security.
-However, encryption also complicates data retrieval and risks permanent data loss!
-Refer to the [Encryption article]({{< relref "/SCALE/SCALEUIReference/Storage/Pools/EncryptionSCALE.md" >}}) for more details and decide if encryption is necessary for your use case before setting any **Encryption** option.
-{{< /expand >}}
+2. Decide if you want to encrypt data on pool. 
+   
+   {{< expand "Encryption?" "v" >}}
+   TrueNAS offers several encryption algorithms to maximize security.
+   However, encryption also complicates data retrieval and risks permanent data loss!
+   The [Storage Encryption]({{< relref "EncryptionScale.md" >}}) article provides more details to help you decide if encryption is necessary for your use case before selecting the **Encryption** option.
+   {{< /expand >}}
 
-Next, configure the virtual devices (vdevs) that make up the pool.
+3. Configure the virtual devices (vdevs) that make up the pool. 
+   You can allow TrueNAS to suggest and populate the vdevs with identical sized drives or do this manually by selecting the vdevs type. and then selecting and moving the drives to that vdevs.
+   See [Vdev Types](#vdev-types) for more information on vdevs types and [Vdev Layouts](#vdev-layouts) for more information on TrueNAS SCALE vdevs layout options.
 
-{{< hint info >}}
-If the disks used have non-unique serial numbers, they do not populate the **Available Disks** section until you select the **Show disk with non-unique serial numbers** checkbox.
-{{< /hint >}}
+   {{< hint info >}}
+   If the disks have non-unique serial numbers, they do not populate the **Available Disks** section until you select the **Show disk with non-unique serial numbers**.
+   {{< /hint >}}
 
-### Suggested Layout
+   Click **Suggest Layout** to have TrueNAS review all available disks and populate the primary **Data VDevs** with identically sized drives in a configuration balanced between storage capacity and data redundancy. 
+   Click **Reset Layout** to clear the suggestion.
+   
+   To manually configure the pool, Click **Add Vdev** and select vdevs according to your use case.
+   Select the disks and then click the <span class="material-icons">east</span> to move the disks into a vdev. 
+   If you added more than one type of vdevs to the **Data Vdevs** table, select the <span class="material-icons">east</span> for that vdevs to move the disks into that vdevs. 
+   If you make a mistake, move the disks out with the <span class="material-icons">west</span> and then move them to the correct vdevs.
 
-Clicking **Suggest Layout** allows TrueNAS to review all available disks and populate the primary **Data VDevs** with identically sized drives in a configuration balanced between storage capacity and data redundancy.
-Click **Reset Layout** to clear the suggestion.
+   {{< hint warning >}}
+   **Warning:** USB-connected disks might report their serial numbers inaccurately, making them indistinguishable from each other.
+   {{< /hint >}}
 
-To manually configure the pool, add vdevs according to your use case.
-Select the **Disk** checkboxes and click the <i class="fa fa-arrow-right" aria-hidden="true" title="Right Arrow"></i>&nbsp; to move the disks into a vdev.
-
-{{< hint warning >}}
-**Warning:** USB-connected disks might report their serial numbers inaccurately, making them indistinguishable from each other.
-{{< /hint >}}
-
-### Vdev Types
+## Vdev Types
 
 Pools offer several vdev types. Vdevs store data or enable unique features for the pool.
 
-These store data or enable unique features for the pool:
+To add a vdev type during pool creation, click **Add Vdev** and select the [type]({{< relref "/SCALE/SCALEUIReference/Storage/Pools/PoolsScreens.md" >}}).
 
-{{< expand "Data" >}}
-Standard vdev for primary storage operations.
-Each storage pool requires at least one data vdev.
-**Data** vdev configuration typically affects how the other kinds of vdevs get configured.
+Data is the standard vdev for primary storage operations. Each storage pool requires at least one Data vdev.
+Data vdev configuration typically affects how users can configure other types of vdevs.
+
 {{< expand "Duplicating a Data vdev" "v" >}}
-A **Data VDev** with disks is duplicated by clicking **REPEAT**.
-When more disks are available and equal in size, the **REPEAT** button creates another vdev with an identical configuration called a *mirror* of vdevs.
+Users can duplicate a **Data Vdev** by clicking **Repeat**.
+When the system has more available equal-sized disks, the **Repeat** button creates another vdev with an identical configuration called a **Mirror**.
 
 ![PoolRepeatVdevSCALE](/images/SCALE/PoolRepeatVdevSCALE.png "Duplicating a Data VDev")
 
-When even more same-size disks are available, you can create multiple copies of the original vdev.
+When even more same-size disks are available, users can create multiple copies of the original vdev.
 {{< hint warning >}}
-Don't have multiple data vdevs with different numbers of disks in each vdev.
-This complicates and limits the pool capabilities.
+We do not recommend having multiple data vdevs with different numbers of disks in each vdev. Doing so complicates and limits pool capabilities.
 {{< /hint >}}
 {{< /expand >}}
-{{< /expand >}}
-{{< expand "Cache" >}}
-[ZFS L2ARC]({{< relref "/Content/References/L2ARC.md" >}}) read-cache used with fast devices to accelerate read operations.
-You can add or remove this after creating the pool.
-{{< /expand >}}
-{{< expand "Log" >}}
-[ZFS LOG]({{< relref "/Content/References/SLOG.md" >}}) device that improves synchronous write speeds.
-You can add or remove this after creating the pool.
-{{< /expand >}}
-{{< expand "Hot Spare" >}}
-**Hot Spare** are drives reserved to insert into **Data** vdevs when an active drive fails.
-Hot spares are temporarily used as replacements for failed drives to prevent larger pool and data loss scenarios.
 
-When you replace a failed drive with a new drive, the hot spare reverts to an inactive state and is available again as a hot spare.
-
-If you only detach the failed drive from the pool, the temporary hot spare gets promoted to a full data vdev member and is no longer available as a hot spare.
-{{< /expand >}}
-{{< expand "Metadata" >}}
-Special Allocation class used to create [Fusion Pools]({{< relref "/CORE/CORETutorials/Storage/Pools/FusionPool.md" >}}) for increased metadata and small block I/O performance.
-{{< /expand >}}
-{{< expand "Dedup" >}}
-**Dedup** vdevs store [ZFS de-duplication]({{< relref "/Content/References/ZFSDeduplication.md" >}}).
-Requires allocating *X* GiB for every *X* TiB of general storage.
-For example, 1 GiB of Dedup vdev capacity for every 1 TiB of Data vdev availability.
-{{< /expand >}}
-
-To add a vdev type during pool creation, click **Add Vdev** and select the type.
-Select disks from **Available Disks** and use the <i class="fa fa-arrow-right" aria-hidden="true" title="Right Arrow"></i>&nbsp; (right arrow) next to the new VDev to add it to that section.
-
-### Vdev Layouts
-
-Disks added to a vdev arrange in different layouts, according to the specific pool use case.
+Select a layout for data vdevs. Options vary based on the number of drives. 
+Disks added to a Vdev arrange in different [layouts]({{< relref "/SCALE/SCALEUIReference/Storage/Pools/PoolsScreens.md" >}}), according to the specific pool use case.
 
 {{< expand "Can I use different-sized disks when creating a pool?" "v" >}}
-We do not recommend mixing disks of different sizes in a vdev. If you do, you must **Force** the action and override the **One or more data vdevs has disks of different sizes** error. 
+We do not recommend mixing disks of different sizes in a vdev. If you do, you must select **Force** to override the **One or more data vdevs has disks of different sizes** error. 
 
 ![PoolCreateForceSCALE](/images/SCALE/PoolCreateForceSCALE.png "Pool Create Force Option")
 
 ![PoolCreateOverrideSCALE](/images/SCALE/PoolCreateOverrideSCALE.png "Pool Create Override Error")
-
 {{< /expand >}}
+
+The **Pool Manager** suggests a vdev layout from the number of disks added to the vdev.
+For example, if you add two disks, TrueNAS automatically configures the vdev as a **Mirror**. The total available storage is the size of one added disk while the other disk provides redundancy.
+
+![PoolCreateMirrorSCALE](/images/SCALE/PoolCreateMirrorSCALE.png "Creating a Mirror")
+
+To change the vdev layout, open the **Data Vdevs** list and select the desired layout.
 
 {{< expand "Can I create vdevs with different layouts in one pool?" "v" >}}
 TrueNAS SCALE does not support adding multiple vdevs with different layouts to a pool.
 Create a new pool when a different vdev layout is required.
 For example, *pool1* has a data vdev in a *mirror* layout, so create *pool2* for any *raid-z* vdevs.
 {{< /expand >}}
-{{< expand "Stripe" >}}
-Each disk stores data.
-Requires at least one disk and has no data redundancy.
-{{< hint "danger" >}}
-Never use a **Stripe** type vdev to store critical data!
-A single disk failure results in losing all data in the vdev.
+
+{{< hint danger >}}
+Never use **Stripe** to store critical data! A single disk failure means losing all data in the vdev.
 {{< /hint >}}
-{{< /expand >}}
-{{< expand "Mirror" >}}
-Data is identical in each disk.
-Requires at least two disks, has the most redundancy, and the least capacity.
-{{< /expand >}}
-{{< expand "RAIDZ1" >}}
-Uses one disk for parity while all other disks store data.
-Requires at least three disks.
-{{< /expand >}}
-{{< expand "RAIDZ2" >}}
-Uses two disks for parity while all other disks store data.
-Requires at least four disks.
-{{< /expand >}}
-{{< expand "RAIDZ3" >}}
-Uses three disks for parity while all other disks store data.
-Requires at least five disks.
-{{< /expand >}}
 
-The **Pool Manager** suggests a vdev layout from the number of disks added to the vdev.
-For example, if you add two disks, TrueNAS automatically configures the vdev as a Mirror. The total available storage is the size of one added disk while the other disk provides redundancy.
+## Encryption Actions
 
-![PoolCreateMirrorSCALE](/images/SCALE/PoolCreateMirrorSCALE.png "Creating a Mirror")
+See [SCALE Encryption]({{< relref "/SCALE/SCALETutorials/Storage/Pools/EncryptionSCALE.md" >}}) for detailed encryption information.
 
-To change the vdev layout, open the **Data VDevs** list and select the desired layout.
-
-{{< taglist tag="scalepool" limit="10" >}}
+{{< taglist tag="scalepools" limit="10" title="Related Pools Articles" >}}
 {{< taglist tag="scalestorage" limit="10" title="Related Storage Articles" >}}
