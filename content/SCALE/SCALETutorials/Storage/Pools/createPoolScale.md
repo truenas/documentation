@@ -46,7 +46,7 @@ First, enter a pool name.
 {{< expand "Encryption?" "v" >}}
 TrueNAS offers several encryption algorithms to maximize security.
 However, encryption also complicates data retrieval and risks permanent data loss!
-Refer to the [Encryption article]({{< relref "/SCALE/SCALEUIReference/Storage/Pools/EncryptionSCALE.md" >}}) for more details and decide if encryption is necessary for your use case before setting any **Encryption** option.
+Refer to the [Encryption article]({{< relref "EncryptionSCALE.md" >}}) for more details and decide if encryption is necessary for your use case before setting any **Encryption** option.
 {{< /expand >}}
 
 Next, configure the virtual devices (vdevs) that make up the pool.
