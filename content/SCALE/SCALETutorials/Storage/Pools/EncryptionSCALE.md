@@ -216,7 +216,7 @@ You *cannot* use locked datasets.
 
 ### Unlocking a Dataset
 
-To unlock a dataset, click on the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> icon to display the **Dataset Actions** option lit and then click **Unlock**.
+To unlock a dataset, click on the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> icon to display the **Dataset Actions** option list and then click **Unlock**.
 
 ![UnlockDatasetScreen](/images/SCALE/22.02/UnlockDatasetScreen.png "Dataset Unlock Options")
 
