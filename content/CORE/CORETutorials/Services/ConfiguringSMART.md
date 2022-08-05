@@ -9,8 +9,7 @@ tags:
 
 {{< toc >}}
 
-[S.M.A.R.T.](https://en.wikipedia.org/wiki/S.M.A.R.T.) (Self-Monitoring, Analysis and Reporting Technology) is an industry standard for disk monitoring and testing.
-Disks can be monitored for problems using several different kinds of self-tests.
+[S.M.A.R.T.](https://en.wikipedia.org/wiki/S.M.A.R.T.) Self-Monitoring, Analysis and Reporting Technology (SMART) is an industry standard. It performs disk monitoring and testing. Several different kinds of self-tests check disks for problems.
 
 Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i> in **Services > S.M.A.R.T.** to configure the service.
 
@@ -32,6 +31,6 @@ Click **SAVE** when finished configuring the server or client service.
 Start the service by clicking the related toggle in **Services**.
 To check the current state of the service, hover over the toggle.
 
-Selecting **Start Automatically** starts the service whenever TrueNAS completes booting and the network and data pools are running.
+Selecting **Start Automatically** starts the service whenever TrueNAS completes booting. The network and data pools must be running.
 
 {{< taglist tag="coresmart" limit="10" >}}
