@@ -3,6 +3,20 @@ title: "Documentation Archive"
 aliases:
   - /additional-topics/legacy/fn-legacy-docs/release-notes/fn-11.3-u2/
   - /core/notices/scrubresilveradjustments/
+  - /releasenotes/scale/22.02.1/
+  - /releasenotes/scale/22.02.0.1/
+  - /releasenotes/scale/22.02.0/
+  - /releasenotes/scale/22.02-rc.2/
+  - /releasenotes/scale/22.02-rc.1-2/
+  - /releasenotes/scale/22.02-rc.1-1/
+  - /releasenotes/scale/22.02-rc.1/
+  - /releasenotes/scale/21.08-beta.2/
+  - /releasenotes/scale/21.08-beta.1/
+  - /releasenotes/scale/21.06-beta.1/
+  - /releasenotes/scale/21.04-alpha.1/
+  - /releasenotes/scale/21.02-alpha.1/
+  - /releasenotes/scale/20.12-alpha/
+  - /releasenotes/scale/20.10-alpha/
 ---
 
 Welcome to the Documentation Archive!
