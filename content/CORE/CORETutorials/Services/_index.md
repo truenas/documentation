@@ -15,7 +15,7 @@ Use the right slider to scroll down to the bottom of the list of services or cli
 
 To locate a service, type in the **Filter Search** field to narrow down the list of services.
 
-Select **Start Automatically** for any service you configured and want to start after the system boots.
+Select **Start Automatically** for configured services that need to start after the system boots.
 
 Click the toggle to start or stop the service, depending on the current state. Hover the mouse over the toggle to see the current state of that service. The toggle turns blue when it is running.
 
