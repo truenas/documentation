@@ -6,7 +6,7 @@ tags:
 - corersync
 ---
 
-Remote sync is a utility that copies data across a network. Rsync sends only the data that is different between the source and the destination files after the initial data is copied. This reduces network traffic. Rsync is used to create backups, and to synchronize data across systems.
+Remote sync is a utility that copies data across a network. Rsync first copies the initial data. Later copies contain only the data that is different between the source and destination files. This reduces network traffic. Use Rsync to create backups, and to synchronize data across systems.
 
 ## Create a New Rsync Task
 
