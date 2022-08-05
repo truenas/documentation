@@ -21,8 +21,8 @@ Go to **Services**, find the **SSH** entry, and click the <i class="material-ico
 Select **Allow Password Authentication**.  
 
 {{< hint warning >}} 
-Decide if **Log in as Root with Password** is needed: 
-SSH with root is a security vulnerability as it allows full remote control over the NAS with a terminal, not just SFTP transfer access.
+Evaluate **Log in as Root with Password** for your security environment: 
+SSH with root is a security vulnerability. It allows more than SFTP transfer access. SSH with root also allows full remote control over the NAS with a terminal.
 {{< /hint >}}
 
 Review the remaining options and configure according to your environment or security needs.
@@ -39,14 +39,13 @@ This example uses FileZilla.
 Using FileZilla, enter `SFTP://TrueNAS IP`, `username`, `password`, and port `22` to connect. Where `TrueNAS IP` is the IP address for your system, and `username` and `password` are those you use to connect to the FTP client. Or enter `SFTP://'TrueNAS IP'`, `'username'`, `'password'`, and port `22` to connect.
 
 {{< hint warning >}}
-SFTP does not have chroot locking. 
-While chroot is not 100% secure, the lack of chroot allows users to easily move up to the root directory and view internal system information. 
-If this level of access is a concern, FTP with TLS may be the more secure choice.
+Chroot is not 100% secure, but SFTP does not have chroot locking. 
+The lack of chroot allows users to move up to the root directory. They can view internal system information. If this level of access is a concern, FTP with TLS may be the more secure choice.
 {{< /hint >}}
 
 ### SFTP in a TrueNAS Jail
 
-Another way to allow SFTP access without granting read access to other areas of the NAS itself is to set up a jail and enable SSH.
+Setting up a jail and enabling SSH is another way to allow SFTP access. This does not grant read access to other areas of the NAS itself.
 
 {{< expand "Setting up a Jail for SFTP" "v" >}}
 Go to **Jails > Add**.
@@ -60,19 +59,19 @@ Select the networking options for either DHCP or a static IP and confirm to crea
 After the jail is created, click the expand icon **>** on the right-hand side of the jail to open it.
 Click **START** and open **SHELL**.
 
-Similar to the initial FTP setup, create a user in the jail.
-Enter command `adduser` and follow the prompts including the password and home directory location.
+Create a user in the jail. 
+Enter command `adduser`. Follow the prompts. Include the password and home directory location.
 When complete, the jail asks to confirm the credentials.
 
 ![JailsShellUserAdd](/images/CORE/12.0/JailsShellUserAdd.png "Adding a new user to a jail")
 
 Enable SSH by editing the <file>/etc/rc.conf</file> file.
-Type command `vi /etc/rc.conf` or `ee /etc/rc.conf` depending on preference, add `sshd_enable = "YES"` to the file, save, and exit.
-Type command `service sshd enabled` to enable the service (enabled vs start indicates whether sshd starts one time or on every reboot).
+Enter command `vi /etc/rc.conf` or `ee /etc/rc.conf` depending on preference, add `sshd_enable = "YES"` to the file, save, and exit.
+Enter command `service sshd enabled` to enable the service (enabled vs start indicates whether sshd starts one time or on every reboot).
 
 ![JailsShellEditRCConf](/images/CORE/12.0/JailsShellEditRCConf.png "Enabling SSH in a jail")
 
-Using an FTP client, such as FileZilla, log in with the jail IP address and user credentials. Like with SSH on TrueNAS, browsing to other folders and locations beyond the user home directory is possible, but unlike running on TrueNAS directly, only the components of the jail are available.
+Using an FTP client, such as FileZilla, log in with the jail IP address and user credentials. It is like SSH on TrueNAS. Browsing to other folders and locations beyond the user home directory is possible. But unlike running on TrueNAS directly, only the components of the jail are available.
 
 ![FilezillaJailConnectSFTP](/images/CORE/FilezillaJailConnectSFTP.png "Filezilla SFTP Connect to TrueNAS Jail")
 {{< /expand >}}
