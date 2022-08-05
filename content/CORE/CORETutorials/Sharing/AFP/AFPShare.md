@@ -10,10 +10,10 @@ tags:
 {{< toc >}}
 
 The Apple Filing Protocol (AFP) is a network protocol that allows file sharing over a network.
-It is similar to SMB and NFS, but was made specifically for Apple systems.
+It is like SMB and NFS, but it is for Apple systems.
 
 {{< hint warning >}}
-Beginning in 2013, Apple began using the SMB sharing protocol as the default option for file sharing and ceased development of the AFP sharing protocol. It is recommended to use SMB sharing instead of AFP, unless files are being shared with legacy Apple products. Please see https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/APFS_Guide/FAQ/FAQ.html
+Apple began using the SMB sharing protocol as the default option for file sharing in 2013. At that time Apple ceased development of the AFP sharing protocol. The recommendation is to use SMB sharing instead of AFP. AFP sharing is still used if files are being shared with legacy Apple products. Please see https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/APFS_Guide/FAQ/FAQ.html
 {{< /hint >}}
 
 To create a new share, make sure a dataset is available with all the data for sharing.
@@ -26,7 +26,7 @@ Next, use the file browser to select a dataset to share and enter a descriptive 
 
 Select **Time Machine** if the share is to have Apple Time Machine backups. 
 This advertises the share to other Mac systems as a disk that stores Time Machine backups.
-It is not recommended to have multiple AFP shares configured for Time Machine backups.
+Having multiple AFP shares configured for Time Machine backups is not recommended.
 
 Select **Use as Home Share** to create home directories for users that connect to the share.
 Only one AFP share can be a home share.
@@ -43,7 +43,7 @@ To edit an existing AFP share, go to **Sharing > Apple Shares (AFP)** and click 
 
 ## Start or Stop AFP Service
 
-To begin advertising the AFP shared location, go to **Services** and click the toggle to start or stop the **AFP** service, depending on the current state. Hover the mouse over the toggle to see the current state of the service. The toggle turns blue when it is running. 
+To begin advertising the AFP shared location, go to **Services**.  To determine the current state of the AFP service, hover the mouse over the toggle. The toggle turns blue when it is running. Click the AFP toggle to start the service if it is not running, or to stop the service if it is already running.
 To automatically start the service after TrueNAS boots, select **Start Automatically**.
 
 ### Changing AFP Service settings
