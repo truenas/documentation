@@ -11,12 +11,14 @@ tags:
 Rsync is a fast and secure way to copy data to another system, either for backup or data migration purposes.
 An [rsync](https://rsync.samba.org/) task requires configuration of both a **Host** and **Remote** system. These instructions assume that you are using TrueNAS systems for both the **Host** and **Remote** sides of an rsync task.
 
+## Basic Requirements
+
 Rysnc requires a [dataset]({{< relref "CORE/CORETutorials/Storage/Pools/Datasets.md" >}}) with the needed data on the **Host** or **Remote** system.
 Rsync provides the ability to either push or pull data.
 When using rsync to push, data copies from a **Host** system to a **Remote** system.
-When using rsync to pull, data is pulled from a **Remote** system and put on the **Host** system.
+When using rsync to pull, data pulls from a **Remote** system. It is then put on the **Host** system.
 
-TrueNAS has additional requirements depending on if you choose the **Module** or **SSH** rsync mode.
+TrueNAS has extra requirements depending on if you choose the **Module** or **SSH** rsync mode.
 
 ### Rsync Services Requirements
 
@@ -30,11 +32,11 @@ Log in to the **Host** system interface, go to **Tasks > Rsync Tasks**, and clic
 ![TasksRsyncTasksAddModeModule](/images/CORE/12.0/TasksRsyncTasksAddModeModule.png "Rsync Task: Module Mode")
 
 Select the **Source** dataset to use with the rsync task and a **User** account to run the rsync task.
-Choose a **Direction** for the rsync task.
+Select a **Direction** for the rsync task.
 
 Select a **Schedule** for the rsync task.
 
-Next, enter the **Remote Host** IP address or host name.
+Enter the **Remote Host** IP address or host name.
 Use the format `username@remote_host` when the user name differs on the **Remote** host.
 Select **Module** in the **Rsync Mode** dropdown list. 
 Enter the **Remote Module Name** as it appears on the **Remote** system.
@@ -42,7 +44,7 @@ Enter the **Remote Module Name** as it appears on the **Remote** system.
 Configure the remaining options according to your specific needs.
 
 Clearing **Enabled** disables the task schedule.
-You can still save the rsync task and run it manually.
+You can still save the rsync task and run it as a manual task.
 
 ## Creating an SSH Mode Rsync Task
 
@@ -103,14 +105,14 @@ Go to **Tasks > Rsync Tasks** and click **ADD**.
 
 ![TasksRsyncTasksAddModeSSH](/images/CORE/12.0/TasksRsyncTasksAddModeSSH.png "Rsync Task: SSH Mode")
 
-Configure the SSH settings first by selecting **SSH** in the **Rsync Mode** dropdown list and entering the **Port** number and **Remote Path**.
+Configure the SSH settings first by selecting **SSH** in the **Rsync Mode** dropdown list. Enter the **Port** number and **Remote Path**.
 
-Next, define the **Source** dataset for the rsync task and select an account in **User**.
+Define the **Source** dataset for the rsync task and select an account in **User**.
 The name in **User** must be identical to the [SSH Connection]({{< relref "CORE/CORETutorials/SystemConfiguration/ConfiguringSSHConnections" >}}) **Username**.
 
-Choose a direction for the rsync task, either **Push** or **Pull**, and define the task **Schedule**.
+Select a direction for the rsync task, either **Push** or **Pull**, and define the task **Schedule**.
 
-Next, enter the **Remote** host IP address or host name.
+Enter the **Remote** host IP address or host name.
 Use the format `username@remote_host` if the user name differs on the **Remote** host.
 Configure the remaining options according to your specific needs.
 
