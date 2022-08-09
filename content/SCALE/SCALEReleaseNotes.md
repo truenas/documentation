@@ -5,6 +5,7 @@ aliases:
   - /releasenotes/
   - /releasenotes/scale/
   - /releasenotes/releaseschedule/
+  - /releasenotes/scale/22.02.3
   - /releasenotes/scale/22.02.2
   - /releasenotes/scale/22.02.1/
   - /releasenotes/scale/22.02.0.1/
