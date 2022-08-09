@@ -203,6 +203,10 @@ iXsystems is excited to announce the release of TrueNAS SCALE 22.02.3!
 * [NAS-113829](https://ixsystems.atlassian.net/browse/NAS-113829) SCALE: Creating a second time machine share kills mDNS
 * [NAS-113136](https://ixsystems.atlassian.net/browse/NAS-113136) Add check for SMB service being initialized
 
+### Security
+
+* [SCALE 22.02.3 Security Report](https://security.truenas.com/articles/2022-07-20-security-report-scale-22.02.3/)
+
 ## 22.02.2
 {{< expand "22.02.2" "v" >}}
 ## 22.02.2.1 Hotpatch
