@@ -153,7 +153,7 @@ Click the **Basic** radio button to display the **Permissions** dropdown list of
 | **Full Control** | `rwxpDdaARWcCos` | Apply all permissions. | 
 {{< /expand >}}
 #### Permissions Settings - Advanced
-Click the **Advanced** radio button to display the **Permissions** optons to apply to the user or group in **Who**.
+Click the **Advanced** radio button to display the **Permissions** options that apply to the user or group in **Who**.
 {{< expand "Click here for details" "v" >}}
 
 ![EditACLNSFv4AdvancedPermissionsOptions](/images/SCALE/22.02/EditACLNSFv4AdvancedPermissionsOptions.png "NSFv4 Advanced Permissions Options") 
