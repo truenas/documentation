@@ -5934,6 +5934,7 @@ Packages downloaded via apt are not persistent. They will not survive an upgrade
 
 | Seen In | Key | Summary | Workaround | Resolved In |
 |---------|-----|---------|------------|-------------|
+| 22.02.3 | <a href="https://ixsystems.atlassian.net/browse/NAS-117581" target="_blank">NAS-117581</a> | Launch Docker Image button is disabled. | On the <b>Apps</b> page, select the <b>Available Applications</b> tab before trying to click the button. | 22.02.3.1 |
 | 22.02.1 |<a href="https://ixsystems.atlassian.net/browse/NAS-116473" target="_blank">NAS-116473</a> | Large Drive Count Issues | iX is investigating isuses with booting SCALE on systems with more than 100 Disks. | 22.12-RC.1 |
 | 22.02.0 | <a href="https://jira.ixsystems.com/browse/NAS-115238" target="_blank">NAS-115238</a> | Removed drive from pool does not degrade pool status (SCALE). | Issue is being investigated and a fix provided in a future release | Targeted 22.02.4 |
 | 22.02.0-RC.2 |  | Cosmetic issue with update trains when updating from SCALE 22.02.0-RC.2. | After updating from 22.02.0-RC.2, the previous update train might show in <b>System Settings > Update</b>. This is a cosmetic issue only and can be ignored. |  |
