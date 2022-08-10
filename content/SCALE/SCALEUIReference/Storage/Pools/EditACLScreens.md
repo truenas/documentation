@@ -102,7 +102,7 @@ The **Access Control List** section displays the items and a permissions summary
 To add a new item to the ACL, click **Add Item**, define **Who** the Access Control Entry (ACE) applies to, and configure permissions and inheritance flags for the ACE.
 
 ### Edit ACL Functions - POSIX and NFS4
-These functions display on the **Edit ACL** screen for both POSIX and NSFv4 ACL types except for **Strip ACL**, it only displays for NSFv4 types.
+These functions display on the **Edit ACL** screen for both POSIX and NSFv4 ACL types except for **Strip ACL**, which only displays for NSFv4 types.
 {{< expand "Click here for details" "v" >}}
 ![EditACLScreenNFSv4Type](/images/SCALE/22.02/EditACLScreenNFSv4Type.png "NFS4 Edit ACL Screen") 
 
