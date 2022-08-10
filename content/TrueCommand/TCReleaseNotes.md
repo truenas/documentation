@@ -23,7 +23,26 @@ aliases:
 | 2.3.0 | Tag | TBD |
 | 2.3.0 | Release | TBD |
 
+## 2.2.1 Hotpatch
+
+**August 11, 2022**
+
+This is a small hotpatch designed to address some additional cluster issues found between TrueCommand 2.2 and SCALE 22.02.3.
+
+* [TC-2261](https://ixsystems.atlassian.net/browse/TC-2261) Build/publish tags
+* [TC-2247](https://ixsystems.atlassian.net/browse/TC-2247) Generated hostname is longer than 15 charcters preventing clustering setup
+* [TC-2245](https://ixsystems.atlassian.net/browse/TC-2245) RRDcached sockets timeout on read, fork, and fail to reconnect
+* [TC-2262](https://ixsystems.atlassian.net/browse/TC-2262) Unable to log back into TrueCommand after a NAS is powered down
+* [TC-2259](https://ixsystems.atlassian.net/browse/TC-2259) Use cluster name for netbios
+* [TC-2253](https://ixsystems.atlassian.net/browse/TC-2253) TC wizard does not create A records in active directory when 22.02.3 is used
+* [TC-2207](https://ixsystems.atlassian.net/browse/TC-2207) 2FA window pops back up after successful login with Auth code
+* [TC-2200](https://ixsystems.atlassian.net/browse/TC-2200) TC is treating an expired license like it is still valid
+* [TC-2254](https://ixsystems.atlassian.net/browse/TC-2254) Fix middleware logs to be one per line
+* [TC-2248](https://ixsystems.atlassian.net/browse/TC-2248) ctdb.public.ips.create is a job and GlusterSMBConfig atomicity
+
 ## 2.2
+
+**August 02, 2022**
 
 The TrueCommand team is pleased to announce [TrueCommand 2.2](https://www.truenas.com/docs/truecommand/) is now available!
 
@@ -36,156 +55,156 @@ See [Back up the Container Volume]({{< relref "UpdateDocker.md" >}}) for specifi
 
 ### Improvement
 
-[TC-2221](https://ixsystems.atlassian.net/browse/TC-2221) - Remove "Distributed" volume type </br>
-[TC-2203](https://ixsystems.atlassian.net/browse/TC-2203) - make Dispersed the default cluster volume type </br>
-[TC-2174](https://ixsystems.atlassian.net/browse/TC-2174) - update UI text for clustering feature </br>
-[TC-2173](https://ixsystems.atlassian.net/browse/TC-2173) - UI fixes in add-cluster-volume </br>
-[TC-2170](https://ixsystems.atlassian.net/browse/TC-2170) - Show loading spinner in add-cluster-volume </br>
-[TC-2165](https://ixsystems.atlassian.net/browse/TC-2165) - add ACL template choices to cluster volume share creation view </br>
-[TC-2162](https://ixsystems.atlassian.net/browse/TC-2162) - Remove glusterd from services UI </br>
-[TC-2158](https://ixsystems.atlassian.net/browse/TC-2158) - display additional information about cluster volume subvols </br>
-[TC-2148](https://ixsystems.atlassian.net/browse/TC-2148) - Restrict number of nodes allowed in Cluster </br>
-[TC-2141](https://ixsystems.atlassian.net/browse/TC-2141) - add notice about entering clustered SMB mode </br>
-[TC-2131](https://ixsystems.atlassian.net/browse/TC-2131) - Replace rpc/query with proper ping endpoint </br>
-[TC-2122](https://ixsystems.atlassian.net/browse/TC-2122) - push release/\* images on PR merge </br>
-[TC-2106](https://ixsystems.atlassian.net/browse/TC-2106) - split clustering into two wizards </br>
-[TC-2099](https://ixsystems.atlassian.net/browse/TC-2099) - clustered SMB design polish </br>
-[TC-2093](https://ixsystems.atlassian.net/browse/TC-2093) - Minor imporvements to MW connection down alert </br>
-[TC-2080](https://ixsystems.atlassian.net/browse/TC-2080) - tap into gluster/fuse events to maintain a cluster cache </br>
-[TC-2078](https://ixsystems.atlassian.net/browse/TC-2078) - remove code from previous clustering implementation </br>
-[TC-2070](https://ixsystems.atlassian.net/browse/TC-2070) - Open File Explorer \(NAS Manager\) not available on connected SCALE systems </br>
-[TC-2055](https://ixsystems.atlassian.net/browse/TC-2055) - Unit tests for shared utils </br>
-[TC-2039](https://ixsystems.atlassian.net/browse/TC-2039) - endpoints for creating and deleting cluster volumes </br>
-[TC-2035](https://ixsystems.atlassian.net/browse/TC-2035) - remove users/get\_data and users/set\_data </br>
-[TC-2015](https://ixsystems.atlassian.net/browse/TC-2015) - Unit test for sessions module and its components </br>
-[TC-2014](https://ixsystems.atlassian.net/browse/TC-2014) - Remove references to data/curve\_fit API </br>
-[TC-2013](https://ixsystems.atlassian.net/browse/TC-2013) - Remove data/curve\_fit </br>
-[TC-2010](https://ixsystems.atlassian.net/browse/TC-2010) - Unit test for the nas-users components </br>
-[TC-2005](https://ixsystems.atlassian.net/browse/TC-2005) - Unit test for gluster and iscsi components </br>
-[TC-2001](https://ixsystems.atlassian.net/browse/TC-2001) - Move functions into utility subpackage </br>
-[TC-2000](https://ixsystems.atlassian.net/browse/TC-2000) - Move logger into subpackage </br>
-[TC-1994](https://ixsystems.atlassian.net/browse/TC-1994) - Unit tests for hardware and alerts modules and their components </br>
-[TC-1991](https://ixsystems.atlassian.net/browse/TC-1991) - Unit test for reporting module and its components </br>
-[TC-1986](https://ixsystems.atlassian.net/browse/TC-1986) - Unit test for dashboard page and its components </br>
-[TC-1981](https://ixsystems.atlassian.net/browse/TC-1981) - Unit test for the admin page </br>
-[TC-1979](https://ixsystems.atlassian.net/browse/TC-1979) - Unit test for LDAP form and its test dialog </br>
-[TC-1975](https://ixsystems.atlassian.net/browse/TC-1975) - Create API endpoint for starting the iSCSI service of system </br>
-[TC-1974](https://ixsystems.atlassian.net/browse/TC-1974) - Setup unit testing for the UI </br>
-[TC-1964](https://ixsystems.atlassian.net/browse/TC-1964) - Add more error checks, especially to JSON Marshal calls </br>
-[TC-1960](https://ixsystems.atlassian.net/browse/TC-1960) - Refactor uploaders to use a single drag and drop component </br>
-[TC-1959](https://ixsystems.atlassian.net/browse/TC-1959) - Rework NAS routines to handle messages directly as opposed to through a pool </br>
-[TC-1958](https://ixsystems.atlassian.net/browse/TC-1958) - Avert potential mutex copying issues detected by govet </br>
-[TC-1957](https://ixsystems.atlassian.net/browse/TC-1957) - Run "-race" on MW build and correct possible race conditions </br>
-[TC-1956](https://ixsystems.atlassian.net/browse/TC-1956) - Improve LDAP form layout and UX </br>
-[TC-1955](https://ixsystems.atlassian.net/browse/TC-1955) - Middleware LDAP test coverage </br>
-[TC-1947](https://ixsystems.atlassian.net/browse/TC-1947) - UI Lint - add new eslint rules </br>
-[TC-1946](https://ixsystems.atlassian.net/browse/TC-1946) - Break MW file structure into smaller packages </br>
-[TC-1942](https://ixsystems.atlassian.net/browse/TC-1942) - Rework WS Management </br>
-[TC-1933](https://ixsystems.atlassian.net/browse/TC-1933) - Use Jira ticket ID for docker images on GitHub Packages </br>
-[TC-1931](https://ixsystems.atlassian.net/browse/TC-1931) - Disable PR merge until tests pass </br>
-[TC-1929](https://ixsystems.atlassian.net/browse/TC-1929) - Tests: register all NASes at the beginning of the run </br>
-[TC-1928](https://ixsystems.atlassian.net/browse/TC-1928) - Replace all directives and components prefix to `tc` </br>
-[TC-1925](https://ixsystems.atlassian.net/browse/TC-1925) - Show tooltip for the disabled bricks in the Create Cluster Volume. </br>
-[TC-1924](https://ixsystems.atlassian.net/browse/TC-1924) - Adjust log rotation to use max size </br>
-[TC-1923](https://ixsystems.atlassian.net/browse/TC-1923) - Configure linting for the UI </br>
-[TC-1920](https://ixsystems.atlassian.net/browse/TC-1920) - Make the UI dependencies version fixed. </br>
-[TC-1918](https://ixsystems.atlassian.net/browse/TC-1918) - Middleware logging improvements </br>
-[TC-1917](https://ixsystems.atlassian.net/browse/TC-1917) - Split chart generation to avoid frontend configuration in Middleware </br>
-[TC-1915](https://ixsystems.atlassian.net/browse/TC-1915) - Move tests to readonly config file </br>
-[TC-1914](https://ixsystems.atlassian.net/browse/TC-1914) - Add support for YAML configs </br>
-[TC-1909](https://ixsystems.atlassian.net/browse/TC-1909) - Use events to get update on jobs </br>
-[TC-1899](https://ixsystems.atlassian.net/browse/TC-1899) - Build TrueCommand on github PRs </br>
-[TC-1897](https://ixsystems.atlassian.net/browse/TC-1897) - Redo init routines to avoid loops and encourage concurrency </br>
-[TC-1896](https://ixsystems.atlassian.net/browse/TC-1896) - Move middleware-start to Middleware as bootstrap </br>
-[TC-1889](https://ixsystems.atlassian.net/browse/TC-1889) - Fully lint Middleware and corresponding utilities </br>
-[TC-1888](https://ixsystems.atlassian.net/browse/TC-1888) - Update UI dependencies </br>
-[TC-1887](https://ixsystems.atlassian.net/browse/TC-1887) - Update Middleware dependencies </br>
-[TC-1886](https://ixsystems.atlassian.net/browse/TC-1886) - Move wg-mgr to middleware </br>
-[TC-1884](https://ixsystems.atlassian.net/browse/TC-1884) - Safety belt for Clustering feature </br>
-[TC-1882](https://ixsystems.atlassian.net/browse/TC-1882) - Unify regular and SaaS build </br>
-[TC-1878](https://ixsystems.atlassian.net/browse/TC-1878) - Add Experimental flags to Users/Groups\+SAML </br>
-[TC-1874](https://ixsystems.atlassian.net/browse/TC-1874) - Functional tests for iscsivolumes/\* endpoints </br>
-[TC-1873](https://ixsystems.atlassian.net/browse/TC-1873) - Functional tests for utilities/\* endpoints </br>
-[TC-1872](https://ixsystems.atlassian.net/browse/TC-1872) - Functional tests for cluster.cluster\_\* MW endpoints </br>
-[TC-1869](https://ixsystems.atlassian.net/browse/TC-1869) - Add a Confirmation screen when the cluster is successfully deleted </br>
-[TC-1860](https://ixsystems.atlassian.net/browse/TC-1860) - Automated testing infrastructure </br>
-[TC-1841](https://ixsystems.atlassian.net/browse/TC-1841) - Convert LogEntry to use unix for its timestamp </br>
-[TC-1712](https://ixsystems.atlassian.net/browse/TC-1712) - Check iSCSI service status when creating a share </br>
-[TC-1654](https://ixsystems.atlassian.net/browse/TC-1654) - Edit groups window does not have parity with System Edit Window </br>
-[TC-1593](https://ixsystems.atlassian.net/browse/TC-1593) - Swap io/ioutil to other packages once 1.16 is widely adopted </br>
-[TC-1461](https://ixsystems.atlassian.net/browse/TC-1461) - Admin menus have wasted space requiring scrolling </br>
+* [TC-2221](https://ixsystems.atlassian.net/browse/TC-2221) - Remove "Distributed" volume type
+* [TC-2203](https://ixsystems.atlassian.net/browse/TC-2203) - make Dispersed the default cluster volume type
+* [TC-2174](https://ixsystems.atlassian.net/browse/TC-2174) - update UI text for clustering feature
+* [TC-2173](https://ixsystems.atlassian.net/browse/TC-2173) - UI fixes in add-cluster-volume
+* [TC-2170](https://ixsystems.atlassian.net/browse/TC-2170) - Show loading spinner in add-cluster-volume
+* [TC-2165](https://ixsystems.atlassian.net/browse/TC-2165) - add ACL template choices to cluster volume share creation view
+* [TC-2162](https://ixsystems.atlassian.net/browse/TC-2162) - Remove glusterd from services UI
+* [TC-2158](https://ixsystems.atlassian.net/browse/TC-2158) - display additional information about cluster volume subvols
+* [TC-2148](https://ixsystems.atlassian.net/browse/TC-2148) - Restrict number of nodes allowed in Cluster
+* [TC-2141](https://ixsystems.atlassian.net/browse/TC-2141) - add notice about entering clustered SMB mode
+* [TC-2131](https://ixsystems.atlassian.net/browse/TC-2131) - Replace rpc/query with proper ping endpoint
+* [TC-2122](https://ixsystems.atlassian.net/browse/TC-2122) - push release/\* images on PR merge
+* [TC-2106](https://ixsystems.atlassian.net/browse/TC-2106) - split clustering into two wizards
+* [TC-2099](https://ixsystems.atlassian.net/browse/TC-2099) - clustered SMB design polish
+* [TC-2093](https://ixsystems.atlassian.net/browse/TC-2093) - Minor imporvements to MW connection down alert
+* [TC-2080](https://ixsystems.atlassian.net/browse/TC-2080) - tap into gluster/fuse events to maintain a cluster cache
+* [TC-2078](https://ixsystems.atlassian.net/browse/TC-2078) - remove code from previous clustering implementation
+* [TC-2070](https://ixsystems.atlassian.net/browse/TC-2070) - Open File Explorer \(NAS Manager\) not available on connected SCALE systems
+* [TC-2055](https://ixsystems.atlassian.net/browse/TC-2055) - Unit tests for shared utils
+* [TC-2039](https://ixsystems.atlassian.net/browse/TC-2039) - endpoints for creating and deleting cluster volumes
+* [TC-2035](https://ixsystems.atlassian.net/browse/TC-2035) - remove users/get\_data and users/set\_data
+* [TC-2015](https://ixsystems.atlassian.net/browse/TC-2015) - Unit test for sessions module and its components
+* [TC-2014](https://ixsystems.atlassian.net/browse/TC-2014) - Remove references to data/curve\_fit API
+* [TC-2013](https://ixsystems.atlassian.net/browse/TC-2013) - Remove data/curve\_fit
+* [TC-2010](https://ixsystems.atlassian.net/browse/TC-2010) - Unit test for the nas-users components
+* [TC-2005](https://ixsystems.atlassian.net/browse/TC-2005) - Unit test for gluster and iscsi components
+* [TC-2001](https://ixsystems.atlassian.net/browse/TC-2001) - Move functions into utility subpackage
+* [TC-2000](https://ixsystems.atlassian.net/browse/TC-2000) - Move logger into subpackage
+* [TC-1994](https://ixsystems.atlassian.net/browse/TC-1994) - Unit tests for hardware and alerts modules and their components
+* [TC-1991](https://ixsystems.atlassian.net/browse/TC-1991) - Unit test for reporting module and its components
+* [TC-1986](https://ixsystems.atlassian.net/browse/TC-1986) - Unit test for dashboard page and its components
+* [TC-1981](https://ixsystems.atlassian.net/browse/TC-1981) - Unit test for the admin page
+* [TC-1979](https://ixsystems.atlassian.net/browse/TC-1979) - Unit test for LDAP form and its test dialog
+* [TC-1975](https://ixsystems.atlassian.net/browse/TC-1975) - Create API endpoint for starting the iSCSI service of system
+* [TC-1974](https://ixsystems.atlassian.net/browse/TC-1974) - Setup unit testing for the UI
+* [TC-1964](https://ixsystems.atlassian.net/browse/TC-1964) - Add more error checks, especially to JSON Marshal calls
+* [TC-1960](https://ixsystems.atlassian.net/browse/TC-1960) - Refactor uploaders to use a single drag and drop component
+* [TC-1959](https://ixsystems.atlassian.net/browse/TC-1959) - Rework NAS routines to handle messages directly as opposed to through a pool
+* [TC-1958](https://ixsystems.atlassian.net/browse/TC-1958) - Avert potential mutex copying issues detected by govet
+* [TC-1957](https://ixsystems.atlassian.net/browse/TC-1957) - Run "-race" on MW build and correct possible race conditions
+* [TC-1956](https://ixsystems.atlassian.net/browse/TC-1956) - Improve LDAP form layout and UX
+* [TC-1955](https://ixsystems.atlassian.net/browse/TC-1955) - Middleware LDAP test coverage
+* [TC-1947](https://ixsystems.atlassian.net/browse/TC-1947) - UI Lint - add new eslint rules
+* [TC-1946](https://ixsystems.atlassian.net/browse/TC-1946) - Break MW file structure into smaller packages
+* [TC-1942](https://ixsystems.atlassian.net/browse/TC-1942) - Rework WS Management
+* [TC-1933](https://ixsystems.atlassian.net/browse/TC-1933) - Use Jira ticket ID for docker images on GitHub Packages
+* [TC-1931](https://ixsystems.atlassian.net/browse/TC-1931) - Disable PR merge until tests pass
+* [TC-1929](https://ixsystems.atlassian.net/browse/TC-1929) - Tests: register all NASes at the beginning of the run
+* [TC-1928](https://ixsystems.atlassian.net/browse/TC-1928) - Replace all directives and components prefix to `tc`
+* [TC-1925](https://ixsystems.atlassian.net/browse/TC-1925) - Show tooltip for the disabled bricks in the Create Cluster Volume.
+* [TC-1924](https://ixsystems.atlassian.net/browse/TC-1924) - Adjust log rotation to use max size
+* [TC-1923](https://ixsystems.atlassian.net/browse/TC-1923) - Configure linting for the UI
+* [TC-1920](https://ixsystems.atlassian.net/browse/TC-1920) - Make the UI dependencies version fixed.
+* [TC-1918](https://ixsystems.atlassian.net/browse/TC-1918) - Middleware logging improvements
+* [TC-1917](https://ixsystems.atlassian.net/browse/TC-1917) - Split chart generation to avoid frontend configuration in Middleware
+* [TC-1915](https://ixsystems.atlassian.net/browse/TC-1915) - Move tests to readonly config file
+* [TC-1914](https://ixsystems.atlassian.net/browse/TC-1914) - Add support for YAML configs
+* [TC-1909](https://ixsystems.atlassian.net/browse/TC-1909) - Use events to get update on jobs
+* [TC-1899](https://ixsystems.atlassian.net/browse/TC-1899) - Build TrueCommand on github PRs
+* [TC-1897](https://ixsystems.atlassian.net/browse/TC-1897) - Redo init routines to avoid loops and encourage concurrency
+* [TC-1896](https://ixsystems.atlassian.net/browse/TC-1896) - Move middleware-start to Middleware as bootstrap
+* [TC-1889](https://ixsystems.atlassian.net/browse/TC-1889) - Fully lint Middleware and corresponding utilities
+* [TC-1888](https://ixsystems.atlassian.net/browse/TC-1888) - Update UI dependencies
+* [TC-1887](https://ixsystems.atlassian.net/browse/TC-1887) - Update Middleware dependencies
+* [TC-1886](https://ixsystems.atlassian.net/browse/TC-1886) - Move wg-mgr to middleware
+* [TC-1884](https://ixsystems.atlassian.net/browse/TC-1884) - Safety belt for Clustering feature
+* [TC-1882](https://ixsystems.atlassian.net/browse/TC-1882) - Unify regular and SaaS build
+* [TC-1878](https://ixsystems.atlassian.net/browse/TC-1878) - Add Experimental flags to Users/Groups\+SAML
+* [TC-1874](https://ixsystems.atlassian.net/browse/TC-1874) - Functional tests for iscsivolumes/\* endpoints
+* [TC-1873](https://ixsystems.atlassian.net/browse/TC-1873) - Functional tests for utilities/\* endpoints
+* [TC-1872](https://ixsystems.atlassian.net/browse/TC-1872) - Functional tests for cluster.cluster\_\* MW endpoints
+* [TC-1869](https://ixsystems.atlassian.net/browse/TC-1869) - Add a Confirmation screen when the cluster is successfully deleted
+* [TC-1860](https://ixsystems.atlassian.net/browse/TC-1860) - Automated testing infrastructure
+* [TC-1841](https://ixsystems.atlassian.net/browse/TC-1841) - Convert LogEntry to use unix for its timestamp
+* [TC-1712](https://ixsystems.atlassian.net/browse/TC-1712) - Check iSCSI service status when creating a share
+* [TC-1654](https://ixsystems.atlassian.net/browse/TC-1654) - Edit groups window does not have parity with System Edit Window
+* [TC-1593](https://ixsystems.atlassian.net/browse/TC-1593) - Swap io/ioutil to other packages once 1.16 is widely adopted
+* [TC-1461](https://ixsystems.atlassian.net/browse/TC-1461) - Admin menus have wasted space requiring scrolling
 
 ### New Feature
 
-[TC-2092](https://ixsystems.atlassian.net/browse/TC-2092) - add nas/smb\_presets API </br>
-[TC-2084](https://ixsystems.atlassian.net/browse/TC-2084) - cluster/share\_\* endpoints for managing cluster volume shares </br>
-[TC-2065](https://ixsystems.atlassian.net/browse/TC-2065) - automated tests for cluster/create and cluster/delete </br>
-[TC-2062](https://ixsystems.atlassian.net/browse/TC-2062) - endpoint for deleting clusters </br>
-[TC-2060](https://ixsystems.atlassian.net/browse/TC-2060) - endpoint for listing clusters </br>
-[TC-2059](https://ixsystems.atlassian.net/browse/TC-2059) - add endpoint to configure cluster for smb sharing </br>
-[TC-2057](https://ixsystems.atlassian.net/browse/TC-2057) - add cluster/public\_interface endpoint for UI </br>
-[TC-2030](https://ixsystems.atlassian.net/browse/TC-2030) - Add MW support for interface.choices and gluster.peer.ips\_available </br>
-[TC-2025](https://ixsystems.atlassian.net/browse/TC-2025) - Refactor audit logs to use sqlite for backend datastore </br>
-[TC-2024](https://ixsystems.atlassian.net/browse/TC-2024) - Refactor notice management to use sqlite for backend datastore </br>
-[TC-2023](https://ixsystems.atlassian.net/browse/TC-2023) - Write NAS stats to rrd </br>
-[TC-2022](https://ixsystems.atlassian.net/browse/TC-2022) - Add logic for initializing rrds on startup </br>
-[TC-2021](https://ixsystems.atlassian.net/browse/TC-2021) - Add migration logic for notices and audit logs </br>
-[TC-2020](https://ixsystems.atlassian.net/browse/TC-2020) - Implement sqlite subpackage </br>
-[TC-2019](https://ixsystems.atlassian.net/browse/TC-2019) - Implement rrd subpackage </br>
-[TC-2018](https://ixsystems.atlassian.net/browse/TC-2018) - Add sqlite and rrdtool to docker images </br>
-[TC-2017](https://ixsystems.atlassian.net/browse/TC-2017) - Shore up functional tests for audit logs </br>
-[TC-2016](https://ixsystems.atlassian.net/browse/TC-2016) - Shore up functional tests for alert notices </br>
-[TC-1995](https://ixsystems.atlassian.net/browse/TC-1995) - Design SMB Clustering Screens </br>
-[TC-1984](https://ixsystems.atlassian.net/browse/TC-1984) - Validate uploaded certificates </br>
-[TC-1978](https://ixsystems.atlassian.net/browse/TC-1978) - Sync system time via NTP with Chrony </br>
-[TC-1922](https://ixsystems.atlassian.net/browse/TC-1922) - Add unit tests command to TC </br>
-[TC-1898](https://ixsystems.atlassian.net/browse/TC-1898) - Create influx stress test </br>
-[TC-1808](https://ixsystems.atlassian.net/browse/TC-1808) - endpoint for creating clusters </br>
-[TC-1668](https://ixsystems.atlassian.net/browse/TC-1668) - Return to new User after creating a new team from the User Screen </br>
+* [TC-2092](https://ixsystems.atlassian.net/browse/TC-2092) - add nas/smb\_presets API
+* [TC-2084](https://ixsystems.atlassian.net/browse/TC-2084) - cluster/share\_\* endpoints for managing cluster volume shares
+* [TC-2065](https://ixsystems.atlassian.net/browse/TC-2065) - automated tests for cluster/create and cluster/delete
+* [TC-2062](https://ixsystems.atlassian.net/browse/TC-2062) - endpoint for deleting clusters
+* [TC-2060](https://ixsystems.atlassian.net/browse/TC-2060) - endpoint for listing clusters
+* [TC-2059](https://ixsystems.atlassian.net/browse/TC-2059) - add endpoint to configure cluster for smb sharing
+* [TC-2057](https://ixsystems.atlassian.net/browse/TC-2057) - add cluster/public\_interface endpoint for UI
+* [TC-2030](https://ixsystems.atlassian.net/browse/TC-2030) - Add MW support for interface.choices and gluster.peer.ips\_available
+* [TC-2025](https://ixsystems.atlassian.net/browse/TC-2025) - Refactor audit logs to use sqlite for backend datastore
+* [TC-2024](https://ixsystems.atlassian.net/browse/TC-2024) - Refactor notice management to use sqlite for backend datastore
+* [TC-2023](https://ixsystems.atlassian.net/browse/TC-2023) - Write NAS stats to rrd
+* [TC-2022](https://ixsystems.atlassian.net/browse/TC-2022) - Add logic for initializing rrds on startup
+* [TC-2021](https://ixsystems.atlassian.net/browse/TC-2021) - Add migration logic for notices and audit logs
+* [TC-2020](https://ixsystems.atlassian.net/browse/TC-2020) - Implement sqlite subpackage
+* [TC-2019](https://ixsystems.atlassian.net/browse/TC-2019) - Implement rrd subpackage
+* [TC-2018](https://ixsystems.atlassian.net/browse/TC-2018) - Add sqlite and rrdtool to docker images
+* [TC-2017](https://ixsystems.atlassian.net/browse/TC-2017) - Shore up functional tests for audit logs
+* [TC-2016](https://ixsystems.atlassian.net/browse/TC-2016) - Shore up functional tests for alert notices
+* [TC-1995](https://ixsystems.atlassian.net/browse/TC-1995) - Design SMB Clustering Screens
+* [TC-1984](https://ixsystems.atlassian.net/browse/TC-1984) - Validate uploaded certificates
+* [TC-1978](https://ixsystems.atlassian.net/browse/TC-1978) - Sync system time via NTP with Chrony
+* [TC-1922](https://ixsystems.atlassian.net/browse/TC-1922) - Add unit tests command to TC
+* [TC-1898](https://ixsystems.atlassian.net/browse/TC-1898) - Create influx stress test
+* [TC-1808](https://ixsystems.atlassian.net/browse/TC-1808) - endpoint for creating clusters
+* [TC-1668](https://ixsystems.atlassian.net/browse/TC-1668) - Return to new User after creating a new team from the User Screen
 
 ### Epic
 
-[TC-1999](https://ixsystems.atlassian.net/browse/TC-1999) - Refactor MW dependencies into subpackages </br>
-[TC-1890](https://ixsystems.atlassian.net/browse/TC-1890) - Refactor middleware </br>
-[TC-1859](https://ixsystems.atlassian.net/browse/TC-1859) - Functional MW API tests </br>
-[TC-1814](https://ixsystems.atlassian.net/browse/TC-1814) - Clustered SMB Support </br>
+* [TC-1999](https://ixsystems.atlassian.net/browse/TC-1999) - Refactor MW dependencies into subpackages
+* [TC-1890](https://ixsystems.atlassian.net/browse/TC-1890) - Refactor middleware
+* [TC-1859](https://ixsystems.atlassian.net/browse/TC-1859) - Functional MW API tests
+* [TC-1814](https://ixsystems.atlassian.net/browse/TC-1814) - Clustered SMB Support
 
 ### Bug
 
-[TC-2160](https://ixsystems.atlassian.net/browse/TC-2160) - Change email field back to optional in user-edit page </br>
-[TC-2086](https://ixsystems.atlassian.net/browse/TC-2086) - Gross error when clicking on encrypted directory in file manager </br>
-[TC-2081](https://ixsystems.atlassian.net/browse/TC-2081) - Absurdly high stats break data bars on dash/server page </br>
-[TC-2075](https://ixsystems.atlassian.net/browse/TC-2075) - Attempting to delete file in filemanager on NAS Pool </br>
-[TC-2074](https://ixsystems.atlassian.net/browse/TC-2074) - Emails On TrueCommand Cloud Are Not Going Through </br>
-[TC-2073](https://ixsystems.atlassian.net/browse/TC-2073) - TrueCommand Invalid Queue Length API Error </br>
-[TC-2063](https://ixsystems.atlassian.net/browse/TC-2063) - API call to import TLS cert fails with \{"error":"invalid character '\\n' in string literal"\} </br>
-[TC-2058](https://ixsystems.atlassian.net/browse/TC-2058) - iSCSI manager does not create volume after completing </br>
-[TC-2033](https://ixsystems.atlassian.net/browse/TC-2033) - Add System Button Screen Dimming Does Not Go Away </br>
-[TC-1992](https://ixsystems.atlassian.net/browse/TC-1992) - Close down file watcher on shutdown </br>
-[TC-1990](https://ixsystems.atlassian.net/browse/TC-1990) - Trouble With Deleting Alerts </br>
-[TC-1988](https://ixsystems.atlassian.net/browse/TC-1988) - Do not fail deployment if Influx already setup </br>
-[TC-1987](https://ixsystems.atlassian.net/browse/TC-1987) - IPv6 support for TC on-prem </br>
-[TC-1985](https://ixsystems.atlassian.net/browse/TC-1985) - Handle instance where filewatcher util can fail on initialization </br>
-[TC-1983](https://ixsystems.atlassian.net/browse/TC-1983) - Middleware API crash when i try verify email of my profile in truecommand docker version </br>
-[TC-1982](https://ixsystems.atlassian.net/browse/TC-1982) - Cluster Volume not showing in UI </br>
-[TC-1969](https://ixsystems.atlassian.net/browse/TC-1969) - Apply formatter for all html and ts files </br>
-[TC-1967](https://ixsystems.atlassian.net/browse/TC-1967) - Deleting Certificate Authorities not working </br>
-[TC-1966](https://ixsystems.atlassian.net/browse/TC-1966) - Removing Cluster Volume Hangs </br>
-[TC-1952](https://ixsystems.atlassian.net/browse/TC-1952) - TrueCommand Cloud Customers Can Reach The Alert Services Page </br>
-[TC-1948](https://ixsystems.atlassian.net/browse/TC-1948) - Removal of team in edit-user page is not working </br>
-[TC-1943](https://ixsystems.atlassian.net/browse/TC-1943) - TrueCommand Certificate Issues </br>
-[TC-1941](https://ixsystems.atlassian.net/browse/TC-1941) - Unable to open TrueNAS proxy interface on cloud </br>
-[TC-1939](https://ixsystems.atlassian.net/browse/TC-1939) - Filewatcher does not readd deleted files </br>
-[TC-1934](https://ixsystems.atlassian.net/browse/TC-1934) - Mailserver Test Button Lacks Meaningful Output </br>
-[TC-1930](https://ixsystems.atlassian.net/browse/TC-1930) - Upgrade from TrueCommand 1.3 to 2.0/2.1 Breaks LDAP </br>
-[TC-1921](https://ixsystems.atlassian.net/browse/TC-1921) - Imported Certificates Are Not Showing In The WebUI </br>
-[TC-1919](https://ixsystems.atlassian.net/browse/TC-1919) - When creating a replicated volume , the option to specify the replica count doesn't come up </br>
-[TC-1913](https://ixsystems.atlassian.net/browse/TC-1913) - TrueCommand does not start when pointed to a custom certificate </br>
-[TC-1911](https://ixsystems.atlassian.net/browse/TC-1911) - Mismatch between ignore\_alerts in MW and UI </br>
-[TC-1908](https://ixsystems.atlassian.net/browse/TC-1908) - Not deleting or reusing TSP </br>
-[TC-1906](https://ixsystems.atlassian.net/browse/TC-1906) - Reset PW from Login Emailed Credentials not Recognized </br>
-[TC-1881](https://ixsystems.atlassian.net/browse/TC-1881) - Alerts count on the System Dashcard are going up and they are now too big for the alert bubble </br>
-[TC-1846](https://ixsystems.atlassian.net/browse/TC-1846) - Better handling of dropped connection to middleware </br>
+* [TC-2160](https://ixsystems.atlassian.net/browse/TC-2160) - Change email field back to optional in user-edit page
+* [TC-2086](https://ixsystems.atlassian.net/browse/TC-2086) - Gross error when clicking on encrypted directory in file manager
+* [TC-2081](https://ixsystems.atlassian.net/browse/TC-2081) - Absurdly high stats break data bars on dash/server page
+* [TC-2075](https://ixsystems.atlassian.net/browse/TC-2075) - Attempting to delete file in filemanager on NAS Pool
+* [TC-2074](https://ixsystems.atlassian.net/browse/TC-2074) - Emails On TrueCommand Cloud Are Not Going Through
+* [TC-2073](https://ixsystems.atlassian.net/browse/TC-2073) - TrueCommand Invalid Queue Length API Error
+* [TC-2063](https://ixsystems.atlassian.net/browse/TC-2063) - API call to import TLS cert fails with \{"error":"invalid character '\\n' in string literal"\}
+* [TC-2058](https://ixsystems.atlassian.net/browse/TC-2058) - iSCSI manager does not create volume after completing
+* [TC-2033](https://ixsystems.atlassian.net/browse/TC-2033) - Add System Button Screen Dimming Does Not Go Away
+* [TC-1992](https://ixsystems.atlassian.net/browse/TC-1992) - Close down file watcher on shutdown
+* [TC-1990](https://ixsystems.atlassian.net/browse/TC-1990) - Trouble With Deleting Alerts
+* [TC-1988](https://ixsystems.atlassian.net/browse/TC-1988) - Do not fail deployment if Influx already setup
+* [TC-1987](https://ixsystems.atlassian.net/browse/TC-1987) - IPv6 support for TC on-prem
+* [TC-1985](https://ixsystems.atlassian.net/browse/TC-1985) - Handle instance where filewatcher util can fail on initialization
+* [TC-1983](https://ixsystems.atlassian.net/browse/TC-1983) - Middleware API crash when i try verify email of my profile in truecommand docker version
+* [TC-1982](https://ixsystems.atlassian.net/browse/TC-1982) - Cluster Volume not showing in UI
+* [TC-1969](https://ixsystems.atlassian.net/browse/TC-1969) - Apply formatter for all html and ts files
+* [TC-1967](https://ixsystems.atlassian.net/browse/TC-1967) - Deleting Certificate Authorities not working
+* [TC-1966](https://ixsystems.atlassian.net/browse/TC-1966) - Removing Cluster Volume Hangs
+* [TC-1952](https://ixsystems.atlassian.net/browse/TC-1952) - TrueCommand Cloud Customers Can Reach The Alert Services Page
+* [TC-1948](https://ixsystems.atlassian.net/browse/TC-1948) - Removal of team in edit-user page is not working
+* [TC-1943](https://ixsystems.atlassian.net/browse/TC-1943) - TrueCommand Certificate Issues
+* [TC-1941](https://ixsystems.atlassian.net/browse/TC-1941) - Unable to open TrueNAS proxy interface on cloud
+* [TC-1939](https://ixsystems.atlassian.net/browse/TC-1939) - Filewatcher does not readd deleted files
+* [TC-1934](https://ixsystems.atlassian.net/browse/TC-1934) - Mailserver Test Button Lacks Meaningful Output
+* [TC-1930](https://ixsystems.atlassian.net/browse/TC-1930) - Upgrade from TrueCommand 1.3 to 2.0/2.1 Breaks LDAP
+* [TC-1921](https://ixsystems.atlassian.net/browse/TC-1921) - Imported Certificates Are Not Showing In The WebUI
+* [TC-1919](https://ixsystems.atlassian.net/browse/TC-1919) - When creating a replicated volume , the option to specify the replica count doesn't come up
+* [TC-1913](https://ixsystems.atlassian.net/browse/TC-1913) - TrueCommand does not start when pointed to a custom certificate
+* [TC-1911](https://ixsystems.atlassian.net/browse/TC-1911) - Mismatch between ignore\_alerts in MW and UI
+* [TC-1908](https://ixsystems.atlassian.net/browse/TC-1908) - Not deleting or reusing TSP
+* [TC-1906](https://ixsystems.atlassian.net/browse/TC-1906) - Reset PW from Login Emailed Credentials not Recognized
+* [TC-1881](https://ixsystems.atlassian.net/browse/TC-1881) - Alerts count on the System Dashcard are going up and they are now too big for the alert bubble
+* [TC-1846](https://ixsystems.atlassian.net/browse/TC-1846) - Better handling of dropped connection to middleware
 
 ## 2.1.1
 
