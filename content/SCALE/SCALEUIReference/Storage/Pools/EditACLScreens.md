@@ -97,7 +97,7 @@ Select any user account or group manually entered or imported from a directory s
 ![ACLEditorSettings](/images/SCALE/22.02/ACLEditorSettings.png "ACL Editor Settings") 
 
 ### Access Control List - POSIX and NFS4
-The **Access Control List** section displays the items and a permissions summary for the **owner@**, **group@** and **everyone@** for both POSIX and NSFv4 ACL types. The list of items changes based on a selected pre-configured set of permissions.
+The **Access Control List** section displays the items and a permissions summary for the **owner@**, **group@**, and **everyone@** for both POSIX and NSFv4 ACL types. The list of items changes based on a selected pre-configured set of permissions.
 
 To add a new item to the ACL, click **Add Item**, define **Who** the Access Control Entry (ACE) applies to, and configure permissions and inheritance flags for the ACE.
 
