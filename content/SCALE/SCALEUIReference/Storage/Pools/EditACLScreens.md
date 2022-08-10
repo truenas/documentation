@@ -86,7 +86,7 @@ Click **Continue** to display the **Edit ACL** screen.
 
 The **Edit ACL** screen displays different setting options based on the **ACL Type** setting on the **Add Dataset** or **Edit Dataset** screen in the **Advanced Options** section.
 
-The section below describe the differences between screens for each ACL type.
+The section below describes the differences between screens for each ACL type.
 
 ### ACL Editor Settings - POSIX and NFSv4
 
