@@ -16,7 +16,7 @@ tags:
 TrueNAS SCALE offers two ACL types, POSIX which is the SCALE default, and NFSv4. 
 For a more in-depth explanation of ACLs and configurations in TrueNAS SCALE, see our [ACL Primer]({{< relref "ACLPrimer.md" >}}).
 
-The **ACL Type** setting, found in the **Advanced Options** of both the **Add Dataset** and **Edit Dataset** screens, determines the ACL presets available on the **Select a preset ACL** window and also determines which permissions editor screens you see after you click the the <span class="material-icons">edit</span> edit icon on the **Dataset Permissions** widget.
+The **ACL Type** setting, found in the **Advanced Options** of both the **Add Dataset** and **Edit Dataset** screens, determines the ACL presets available on the **Select a preset ACL** window and also determines which permissions editor screens you see after you click the <span class="material-icons">edit</span> edit icon on the **Dataset Permissions** widget.
 
 If **ACL Type** is set to **NSFv4**, you can select the **ACL Mode** you want to use. 
 
