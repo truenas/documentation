@@ -47,7 +47,7 @@ The **Access** section lets users define the basic **Read**, **Write**, and **Ex
 
 {{< hint warning >}}
 A common misconfiguration is removing the **Execute** permission from a dataset that is a parent to other child datasets.
-Removing this permission results lost access to the path.
+Removing this permission results in lost access to the path.
 {{< /hint >}}
 ### Advanced Settings
 The **Advanced** section lets users **Apply Permissions Recursively** to all directories, files, and child datasets within the current dataset. 
