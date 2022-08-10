@@ -140,7 +140,7 @@ TrueNAS divides permissions and inheritance flags into basic and advanced option
 Basic inheritance flags only enable or disable ACE inheritance. Advanced flags offer finer control for applying an ACE to new files or directories.
 
 #### Permissions Settings - Basic
-Click the **Basic** radio button to display the **Permissions** dropdown list of options to apply to the user or group in **Who**.
+Click the **Basic** radio button to display the **Permissions** dropdown list of options that applies to the user or group in **Who**.
 {{< expand "Click here for details" "v" >}}
 
 ![EditACLNFSv4BasicPermissionsOptions](/images/SCALE/22.02/EditACLNFSv4BasicPermissionsOptions.png "NSFv4 Basic Permissions Options") 
