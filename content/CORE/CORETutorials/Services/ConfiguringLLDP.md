@@ -21,4 +21,4 @@ Click **SAVE** to save the current selections and return to the **Services** scr
 
 Click the toggle on the **Services** screen to turn the LLDP service on. The toggle turns blue when it is running.
 
-{{< taglist tag="corelldp" limit="10" title="Related Articles" >}}
+{{< taglist tag="corelldp" limit="10" >}}
