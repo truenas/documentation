@@ -11,16 +11,13 @@ tags:
 
 ## SMB Background
 
-SMB (also known as CIFS) is the native file sharing system in Windows.
-SMB shares can connect to any major operating system, including Windows, MacOS, and Linux.
-SMB can be used in TrueNAS to share files among single or multiple users or devices.
+SMB (also known as CIFS) is the native file sharing system in Windows. SMB shares can connect to any major operating system. This includes Windows, MacOS, and Linux.   
 
-SMB shares allow a wide range of permissions and security settings, and can support advanced permissions (ACLs) on Windows and other systems, as well as Windows Alternate Streams and Extended Metadata.
-SMB is suitable for the management and administration of large or small pools of data.
+TrueNAS can use SMB to share files among one or many users or devices. SMB supports a wide range of permissions and security settings. SMB can support advanced permissions (ACLs) on Windows and other systems. SMB also supports Windows Alternate Streams and Extended Metadata. SMB is suitable for the management and administration of large or small pools of data.  
 
 {{< hint warning >}}
-TrueNAS uses [Samba](https://www.samba.org/) to provide SMB services.
-There are multiple versions of the SMB protocol. An SMB client typically negotiates the highest supported SMB protocol during SMB session negotiation. Industry-wide, the usage of the SMB1 protocol (sometimes referred to as NT1) is [being deprecated]({{< relref "/CORE/CoreSecurityReports/SMB1Advisory.md" >}}). This deprecation is for security reasons.
+TrueNAS uses [Samba](https://www.samba.org/) to provide SMB services. 
+There are many versions of the SMB protocol. During SMB session negotiation, an SMB client attempts to negotiate the highest SMB protocol. Industry-wide, the usage of the SMB1 protocol (sometimes referred to as NT1) is [being deprecated]({{< relref "/CORE/CoreSecurityReports/SMB1Advisory.md" >}}). This deprecation is for security reasons. 
 However, most SMB clients support SMB 2 or 3 protocols, even when they are not the default protocols.
 {{< /hint >}}
 
@@ -29,16 +26,16 @@ Legacy SMB clients rely on NetBIOS name resolution to discover SMB servers on a 
 
 MacOS clients use mDNS to discover the presence of SMB servers on the network. The mDNS server (avahi) is enabled by default on TrueNAS.
 
-Windows clients use [WS-Discovery](https://docs.oasis-open.org/ws-dd/ns/discovery/2009/01) to discover the presence of SMB servers, but depending on the version of the Windows client, network discovery can be disabled by default.
+Windows clients use [WS-Discovery](https://docs.oasis-open.org/ws-dd/ns/discovery/2009/01) to discover the presence of SMB servers. Check the version of the Windows client. In some versions of the Windows client, the default settings disable network discovery.
 
-Discoverability through broadcast protocols is a convenience feature and not required to access a SMB server.
+Discoverability through broadcast protocols is a convenience feature. It is not required to access a SMB server.
 {{< /hint >}}
 
 ## First Steps
 
 ### Create a Dataset
 
-It is recommended you create a new dataset and set the **Share Type** to **SMB** for the new SMB share.
+For the new SMB share, the recommendation is to create a new dataset and set the **Share Type** to **SMB**.
 
 Create the ZFS dataset with these settings:
 
@@ -47,22 +44,22 @@ Create the ZFS dataset with these settings:
 
 A default Access Control List is also applied to the dataset.
 This default ACL is restrictive and only allows access to the dataset owner and group.
-You can modify this ACL later according to your use case.
+You can change this ACL later according to your use case.
 
 ### Create Local User Accounts
 
-By default, all new local users are members of a built in SMB group called **builtin users**. You can use this group to grant access to all local users on the server. You can use additional [groups]({{< relref "/CORE/CORETutorials/SettingUpUsersAndGroups.md" >}}) to fine-tune permissions to large numbers of users. User accounts built-in to TrueNAS or that do not have the **smb** flag set cannot be used for SMB access.
+By default, all new local users are members of a built in SMB group called **builtin users**. You can use this group to grant access to all local users on the server. You can use additional [groups]({{< relref "/CORE/CORETutorials/SettingUpUsersAndGroups.md" >}}) to fine-tune permissions to large numbers of users. User accounts built-in to TrueNAS cannot access SMB. User accounts that do not have the the **smb** flag set cannot access SMB.
 {{< expand "Why not just allow anonymous access to the share?" "v" >}}
-Although anonymous or guest access to the share is possible, this is a security vulnerability and is being deprecated by the major SMB client vendors. This partly because signing and encryption are not possible for guest sessions.
+Anonymous or guest access to the share is possible, but this is a security vulnerability.  Anonymous or guest access is being deprecated by the major SMB client vendors. This partly because signing and encryption are not possible for guest sessions. 
 {{< /expand >}}
 {{< expand "What about LDAP users?" "v" >}}
-When LDAP is configured and you want users from the LDAP server to have access the SMB share, go to **Directory Services > LDAP > ADVANCED MODE** and set **Samba Schema**. However, local TrueNAS user accounts no longer have access to the share.
+With LDAP configured, users from the LDAP server can have access the SMB share. Go to **Directory Services > LDAP > ADVANCED MODE** and set **Samba Schema**. Caution: local TrueNAS user accounts no longer have access to the share. 
 {{< /expand >}}
 
 ### Tune the Dataset ACL
 
-After a dataset and accounts are created, determine your access requirements and adjust the dataset ACL to match. To edit the ACL, go to **Storage > Pools**, open the options for the new dataset, and click **Edit Permissions**.
-Many home users typically add a new entry that grants *FULL_CONTROL* to the *builtin_users* group with the flags set to *INHERIT*.
+After creating a dataset and the needed accounts, determine access requirements. Adjust the dataset ACL to match.  To edit the ACL, go to **Storage > Pools**, open the options for the new dataset, and click **Edit Permissions**.  Many home users often add a new entry that grants the following access:  
+*FULL_CONTROL* to the *builtin_users* group with the flags set to *INHERIT*. 
 See the [Permissions article]({{< relref "/CORE/CORETutorials/Storage/Pools/Permissions.md" >}}) for more details.
 
 ## Creating the SMB Share
@@ -71,14 +68,16 @@ To create a Windows SMB share, go to **Sharing > Windows Shares (SMB)** and clic
 
 ![SMBShareAdd](/images/CORE/12.0/SharingSMBAdd.png "Basic SMB Share Options")
 
-The **Path** and **Name** of the SMB share define the absolute minimum amount of information required to create a new SMB share. The **Path** is the directory tree on the local filesystem that is exported over the SMB protocol, and the **Name** is the name of the SMB share, which forms a part of the full share pathname when SMB clients perform an SMB tree connect. Because of the way that the value in **Name** is used in the SMB protocol, it must be less than or equal to 80 characters in length, and must not contain any invalid characters as specified in Microsoft documentation MS-FSCC section 2.1.6. If **Name** is left blank, then the last component of the value in **Path** is used as the share name.
+The **Path** and **Name** of the SMB share define the smallest amount of information required to create a new SMB share. 
+The **Path** is the directory tree on the local filesystem exported over the SMB protocol. 
+**Name** is the name of the SMB share. This forms a part of the full share path name when SMB clients perform an SMB tree connect. **Name** must be less than or equal to 80 characters in length. **Name** must not contain any invalid characters. Microsoft documentation MS-FSCC section 2.1.6. lists these invalid characters. The last component of the value in **Path** becomes the share name if **Name** is blank or empty.
 
 You can set a share **Purpose** to apply and lock pre-defined advanced options for the share.
-To retain full control over all the share **Advanced Options**, choose **No presets**.
+To keep full control over all the share **Advanced Options**, choose **No presets**.
 
 You can specify an optional value in **Description** to help explain the purpose of the share.
 
-**Enabled** allows this path to be shared when the SMB service is activated.
+**Enabled** shares this path when the SMB service is activated.
 Clearing **Enabled** disables the share without deleting the configuration.
 
 See [SMB Share Screen]({{< relref "/CORE/UIReference/Sharing/SMB/SMBShareScreen.md" >}}) for more information on SMB Share settings.
