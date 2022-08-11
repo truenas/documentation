@@ -9,16 +9,16 @@ tags:
 {{< toc >}}
 
 [S.M.A.R.T.](https://en.wikipedia.org/wiki/S.M.A.R.T.) (Self-Monitoring, Analysis and Reporting Technology) is an industry standard for disk monitoring and testing.
-Disks can be monitored for problems using several different kinds of self-tests.
+Disks are monitored for problems using several different kinds of self-tests.
 TrueNAS can adjust when and how [alerts]({{< relref "CORE/CORETutorials/SystemConfiguration/CreatingAlerts.md" >}}) for S.M.A.R.T. are issued.
 When S.M.A.R.T. monitoring reports an issue, we recommend you replace that disk.
 Most modern ATA, IDE, and SCSI-3 hard drives support S.M.A.R.T.
 Refer to your respective drive documentation for confirmation.
 
-S.M.A.R.T. tests are run on a disk.
+S.M.A.R.T. tests run on a disk.
 Running tests can reduce drive performance, so we recommend scheduling tests when the system is in a low-usage state.
 Avoid scheduling disk-intensive tests at the same time!
-For example, S.M.A.R.T. tests should not be scheduled on the same day as a disk [scrub]({{< relref "CORE/CORETutorials/Tasks/CreatingScrubTasks.md" >}}) or [resilver]({{< relref "CORE/CORETutorials/Tasks/UsingResilverPriority.md" >}}).
+For example, do not schedule S.M.A.R.T. tests on the same day as a disk [scrub]({{< relref "CORE/CORETutorials/Tasks/CreatingScrubTasks.md" >}}) or [resilver]({{< relref "CORE/CORETutorials/Tasks/UsingResilverPriority.md" >}}).
 
 {{< expand "How do I check or change S.M.A.R.T. testing for a disk?" "v" >}}
 Go to **Storage > Disks** and click <i class="material-icons" aria-hidden="true" title="Expand">chevron_right</i> to expand an entry.
@@ -35,17 +35,17 @@ After selecting the desired disks, click **MANUAL TEST**.
 ![StorageDisksManualTest Options](/images/CORE/12.0/StorageDisksManualTestOptions.png "Manual Test Options")
 
 Next, select the test **Type**.
-Each test type can be slightly different based on the drive connection, ATA or SCSI:
+Each test type can differ based on the drive connection, ATA or SCSI:
 
 ### ATA Connection
 
-* **Long** - runs SMART Extended Self-Test. This scans the entire disk surface and can take many hours on large-volume disks.
-* **Short** - runs SMART Short Self-Test (usually under ten minutes). These are basic disk tests that vary by manufacturer.
-* **Conveyance** - runs a SMART Conveyance Self-Test.
-  This self-test routine is intended to identify damage incurred during transporting of the device.
+* **Long** - runs S.M.A.R.T. Extended Self-Test. This scans the entire disk surface and can take many hours on large-volume disks.
+* **Short** - runs S.M.A.R.T. Short Self-Test (usually under ten minutes). These are basic disk tests that vary by manufacturer.
+* **Conveyance** - runs S.M.A.R.T. Conveyance Self-Test.
+  This self-test routine identifies damage incurred during transporting of the device.
   This self-test routine requires only minutes to complete.
-* **Offline** - runs SMART Immediate Offline Test.
-  The effects of this test are visible only in that it updates the SMART Attribute values, and if the test finds errors, they appear in the SMART error log.
+* **Offline** - runs S.M.A.R.T. Immediate Offline Test.
+ Updates the S.M.A.R.T. attribute values. If the test finds errors, the errors only appear in the SMART error log.
 
 ### SCSI Connection
 * **Long** - runs the *Background long* self-test.
@@ -70,7 +70,7 @@ Go to **Tasks > S.M.A.R.T. Tests** and click **ADD**.
 
 ![TasksSMARTTestsAdd](/images/CORE/12.0/TasksSMARTTestsAdd.png "Add recurring S.M.A.R.T. test")
 
-Choose the **Disks** to test, **Type** of test to run, and **Schedule** for the task.
+Select the **Disks** to test, **Type** of test to run, and **Schedule** for the task.
 
 {{< hint warning >}}
 S.M.A.R.T. tests can offline disks! Avoid scheduling S.M.A.R.T. tests simultaneously with scrub or resilver operations.
@@ -87,7 +87,7 @@ To verify the schedule is saved, you can open the [shell]({{< relref "CORE/CORET
 You must [enable S.M.A.R.T. service]({{< relref "CORE/CORETutorials/Services/ConfiguringSMART.md" >}}) to run automatic S.M.A.R.T. tests.
 
 {{< expand "RAID controllers?" "v" >}}
-Disable the S.M.A.R.T. service when disks are controlled by a RAID controller.
+Disable the S.M.A.R.T. service when using a RAID disk controller.
 The controller monitors S.M.A.R.T. separately and marks disks as a **Predictive Failure** on a test failure.
 {{< /expand >}}
 
