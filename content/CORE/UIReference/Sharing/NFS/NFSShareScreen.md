@@ -8,8 +8,7 @@ tags:
 
 {{< toc >}}
 
-The Network File System (NFS) protocol is typically utilized with Unix and Unix-like operating systems to share data across a network as part of a distributed file system. 
-Go to **Sharing > Unix Shares (NFS)** to access the **NFS** screen to create a Network File System (NFS) share on TrueNAS.
+Unix and Unix-like operating systems often use the Network File System (NFS) protocol. NFS shares data across a network as part of a distributed file system. Go to **Sharing > Unix Shares (NFS)** to access the **NFS** screen to create a Network File System (NFS) share on TrueNAS.
 
 ![NFSScreen](/images/CORE/13.0/NFSScreen.png "Sharing NFS Screen")
 
@@ -26,10 +25,10 @@ Click **ADD** to open the **BASIC OPTIONS** configuration screen.
 | **Path** | Type or browse to the full path to the pool or dataset to share. Click **ADD** to add another **Path** setting field. Repeat to configure multiple paths. |
 | **Description** | Enter any notes or reminders about the share. |
 | **All dirs** | Select checkbox to allow the client to mount any subdirectory within the **Path**. Clear to only allow clients to mount the **Path** endpoint. |
-| **Quiet** | Select checkbox to enable and allow inhibiting some syslog diagnostics to avoid error messages. See [exports(5)](https://www.freebsd.org/cgi/man.cgi?query=exports) for examples. Clear checkbox to allow all syslog diagnostics, which can lead to additional cosmetic error messages. |
+| **Quiet** | Select to suppress some syslog diagnostics to avoid error messages. See [exports(5)](https://www.freebsd.org/cgi/man.cgi?query=exports) for examples. Clear checkbox to allow all syslog diagnostics. This can lead to additional cosmetic error messages. |
 | **Enabled** | Select checkbox to enable this NFS share. Clear checkbox to disable this NFS share without deleting the configuration. |  
  
-Click **ADVANCED OPTIONS** to display additional settings that allows tuning the share access permissions and defining authorized networks.
+Click **ADVANCED OPTIONS** to display extra settings. These settings allow tuning the share access permissions and defining authorized networks.
 
 ### NFS Share Advanced Option Settings
 
