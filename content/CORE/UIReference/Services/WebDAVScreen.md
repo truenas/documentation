@@ -6,7 +6,7 @@ tags:
 - corewebdav
 ---
 
-The WebDAV protocol contains extensions to HTTP that allow a webserver to act as a collaborative authoring and management tool for web content. Use the **Services WebDAV** screen to enable WebDAV services on your TrueNAS.
+The WebDAV protocol contains extensions to HTTP. These extensions expand the capabilities of a webserver. It can act as a collaborative authoring and management tool for web content. Use the **Services WebDAV** screen to enable WebDAV services on your TrueNAS.
 
 Click **ADD** to open the WebDAV settings screen.
 
