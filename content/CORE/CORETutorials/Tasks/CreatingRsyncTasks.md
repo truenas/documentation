@@ -9,7 +9,7 @@ tags:
 {{< toc >}}
 
 Rsync is a fast and secure way to copy data to another system, either for backup or data migration purposes.
-An [rsync](https://rsync.samba.org/) task requires configuration of both a **Host** and **Remote** system. These instructions assume that you are using TrueNAS systems for both the **Host** and **Remote** sides of an rsync task.
+An [rsync](https://rsync.samba.org/) task requires configuration of both a **Host** and **Remote** system. These instructions assume a TrueNAS system for both the **Host** and **Remote** configurations.
 
 ## Basic Requirements
 
