@@ -63,7 +63,7 @@ Example: `https://10.2.1.1:8081/newdataset`
 
 TrueNAS requires a username and password when setting the **Authentication** WebDAV service option to **Basic** or **Digest**.
 Enter the user name **webdav** and the password defined in the WebDAV service.
-{{< /tab >}}
+
 
 {{< taglist tag="scalewebdav" limit="10" >}}
 {{< taglist tag="scaleshares" limit="10" title="Related Shares Articles" >}}
