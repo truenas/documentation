@@ -87,7 +87,7 @@ On a computer that can access the same network as the TrueNAS system, enter the 
 
 ![LoginCORE](/images/CORE/12.0/LoginCORE.png "TrueNAS CORE Login Screen")
 
-Only the `root` username is used to log in to the web interface.
+By  default the `root` username is root. Only the `root` username is used to log in to the web interface.
 Enter the `root` account password that was created during installation.
 
 {{< expand "Troubleshooting" "v" >}}
