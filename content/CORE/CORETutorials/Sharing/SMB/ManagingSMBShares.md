@@ -12,10 +12,21 @@ tags:
 
 After creating the SMB share, additional management options are available by going to **Sharing > Windows Shares (SMB)** and clicking <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> for a share entry:
 
-* **Edit**: Opens the [share creation screen]({{< relref "/CORE/CORETutorials/Sharing/SMB/SMBShare.md" >}}) to reconfigure the share or disable it.
-* **Edit Share ACL**: Opens a screen to configure an Access Control List (ACL) for the share. This is separate from file system permissions, and applies at the level of the entire SMB share. Permissions defined here are not interpreted by clients of other file sharing protocols or other SMB shares that export the same share **Path** value. The default is open. This ACL is used to determine the browse list if **Access Based Share Enumeration** is enabled.
-* **Edit Filesystem ACL**: Opens a screen to configure an Access Control List (ACL) for the path defined in the share **Path**.
-* **Delete**: Remove the share configuration from TrueNAS. Shared data is unaffected.
+| Name | Description |
+|---------|-------------|
+| **Edit** | Opens the [share creation screen]({{< relref "/CORE/CORETutorials/Sharing/SMB/SMBShare.md" >}}) to reconfigure the share or disable it. |
+| **Edit Share ACL** | Opens a screen to configure an Access Control List (ACL) for the share. The default is open. |
+
+**Edit Share ACL**  
+* This is separate from file system permissions, and applies at the level of the entire SMB share.
+* Permissions defined here are not interpreted by clients of other file sharing protocols.
+* Permissions defined here are not interpreted by other SMB shares. Even if the other SMB shares export the same share **Path** value.
+* Enabling **Access Based Share Enumeration** uses this ACL to determine the browse list.
+
+| Name | Description |
+|---------|-------------|
+| **Edit Filesystem ACL**| Opens a screen to configure an Access Control List (ACL) for the path defined in the share **Path**. |
+| **Delete** | Remove the share configuration from TrueNAS. Shared data is unaffected. |
 
 ## Configure Share ACL
 
@@ -45,9 +56,9 @@ Click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i>
 
 This ACL defines the user accounts or groups that own or have specific [permissions]({{< relref "/CORE/CORETutorials/Storage/Pools/Permissions.md" >}}) to the shared dataset.
 The **User** and **Group** values show which accounts own, or have full permissions to the dataset.
-Change the default settings to your preferred primary account and group and select the **Apply** checkboxes before saving any changes.
+Change the default settings to your preferred primary account and group. Select the **Apply** checkboxes before saving any changes.
 
-### ACL Presents 
+### ACL Presets 
 
 To rewrite the current ACL with a standardized preset, click **SELECT AN ACL PRESET** and choose an option:
 
@@ -74,10 +85,7 @@ Has three entries:
 
 ### Adding ACL Entries (ACEs)
 
-To define permissions for a specific user account or group, click **ADD ACL ITEM**.
-Open the **Who** dropdown list, select **User** or **Group**, and choose a specific user or group account.
-Define how the settings are applied to the account then choose the permissions to apply to that account.
-For example, to only allow the *tmoore* user permission to view dataset contents but not make changes, set the **ACL Type** to **Allow** and **Permissions** to **Read**.
+To define permissions for a specific user account or group, click **ADD ACL ITEM**. Open the **Who** dropdown list, select **User** or **Group**, and select a specific user or group account. Define the settings for the account. Define the permissions to apply to that account. For example, to allow the *tmoore* user permission to view dataset contents but not make changes, define the **ACL Type** as **Allow**. Define **Permissions** for this user as **Read**.  
 
 ![ExampleACE](/images/CORE/12.0/StoragePoolsEditACLExample.png "Sample ACE")
 
