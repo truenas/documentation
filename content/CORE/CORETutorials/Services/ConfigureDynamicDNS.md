@@ -10,7 +10,7 @@ tags:
 ISPs often change the IP address of the system. With [Dynamic Domain Name Service (DDNS)](https://tools.ietf.org/html/rfc2136) the current IP address continues to point to a domain name to provide access to TrueNAS.
 
 DDNS requires registration with a DDNS service such as [DynDNS](https://dyn.com/dns/) before configuring TrueNAS.
-The DDNS service settings should be available or open in another browser tab.
+Open your specific DDNS service settings in another browser tab for reference while configuring TrueNAS.
 Log in to the TrueNAS web interface and go to **Services > Dynamic DNS**.
 
 ![ServicesDynamicDNSOptions](/images/CORE/13.0/ServicesDynamicDNSOptions.png "Dynamic DNS Service Options")
