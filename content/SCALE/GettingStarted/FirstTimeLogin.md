@@ -47,7 +47,7 @@ On a computer with access to the same network as the TrueNAS system, enter the h
 
 ![LoginSCALE](/images/SCALE/LoginSCALE.png "TrueNAS SCALE Login Screen")
 
-Enter the root user name and account password you created during installation.
+The default `root` username is root. Enter the root user name and the account password you created during installation.
 
 {{< expand "Troubleshooting" "v" >}}
 If the user interface is not accessible by IP address from a browser, check these things:
