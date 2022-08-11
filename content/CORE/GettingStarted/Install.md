@@ -170,6 +170,10 @@ When the operating system device has enough additional space, you can choose to 
 
 Enter a password for the `root` user to log in to the web interface.
 
+{{< hint info >}}
+The root username is root by default.
+{{< /hint >}}
+
 ![InstallPassword](/images/CORE/12.0/InstallPasswordScreen.png "Install Password Screen")
 
 After following the steps to install, reboot the system and remove the install media.
