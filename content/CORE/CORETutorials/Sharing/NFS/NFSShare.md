@@ -1,13 +1,15 @@
 ---
 title: "NFS Share Creation"
+description: "This article provides information on how to create a Network File Share (NFS) on your TrueNAS."
 weight: 10
 aliases: /core/sharing/nfs/nfsshare/
+tags:
+- corenfs
 ---
 
 {{< toc >}}
 
-Creating a Network File System (NFS) share on TrueNAS gives the benefit of making lots of data easily available for anyone with share access.
-Depending how the share is configured, users accessing the share can be restricted to read or write privileges.
+Creating a Network File System (NFS) share on the TrueNAS benefits those with share access. More data becomes available to more users. It is possible to configure the share to restrict users to read or write privileges.
 
 To create a new share, make sure a dataset is available with all the data for sharing.
 
@@ -20,7 +22,7 @@ Go to **Sharing > Unix Shares (NFS)** and click **ADD**.
 Use the file browser to select the dataset to share.
 Enter an optional **Description** to help identify the share.
 Clicking **SUBMIT** creates the share.
-At the time of creation, you can select **ENABLE SERVICE** for the service to start and to automatically start after any reboots.
+There is the option to select **ENABLE SERVICE** while creating the share to start the service. With this option selected, the service starts automatically after any reboots.
 If you wish to create the share but not immediately enable it, select **CANCEL**.
 
 ![Services NFS Add Service Enable](/images/CORE/12.0/SharingNFSAddServiceEnable.png "Services NFS Add Service Enable")
@@ -48,17 +50,16 @@ When TrueNAS is already connected to [Active Directory]({{< relref "/CORE/CORETu
 
 ## Connecting to the NFS Share with a Linux/Unix OS
 
-Although you can connect to an NFS share with various operating systems, it is recommended to use a Linux/Unix operating system.
-First, download the `nfs-common` kernel module.
-This can be done using the package manager of the installed distribution.
+The NFS share connects with various operating systems. The recommendation is to use a Linux/Unix operating system. Using a Linux/Unix operating system, download the `nfs-common` kernel module. Do this using the package manager of the installed distribution.
 For example, on Ubuntu/Debian, enter `sudo apt-get install nfs-common` in the terminal.
 
 After installing the module, connect to an NFS share by entering `sudo mount -t nfs {IPaddressOfTrueNASsystem}:{path/to/nfsShare} {localMountPoint}`, where *{IPaddressOfTrueNASsystem}* is the IP address of the remote TrueNAS system that contains the NFS share, *{path/to/nfsShare}* is the path to the NFS share on the TrueNAS system, and *{localMountPoint}* is a local directory on the host system configured for the mounted NFS share.
 For example, `sudo mount -t nfs 10.239.15.110:/mnt/pool1/photoDataset /mnt` mounts the NFS share *photoDataset* to the local directory `/mnt`.
 
-By default, anyone that connects to the NFS share only has the read permission.
-To change the default permissions, edit the share, open the **Advanced Options**, and change the **Access** settings.
+By default, anyone that connects to the NFS share only has the read permission. To change the default permissions, edit the share. Go to **Advanced Options** and change the **Access** settings.
 
 {{< hint warning >}}
 ESXI 6.7 or later is required for read/write functionality with NFSv4 shares.
 {{< /hint >}}
+
+{{< taglist tag="corenfs" limit="10" >}}
