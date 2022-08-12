@@ -29,16 +29,19 @@ aliases:
 
 This is a small hotpatch designed to address some additional cluster issues found between TrueCommand 2.2 and SCALE 22.02.3.
 
-* [TC-2261](https://ixsystems.atlassian.net/browse/TC-2261) Build/publish tags
-* [TC-2247](https://ixsystems.atlassian.net/browse/TC-2247) Generated hostname is longer than 15 charcters preventing clustering setup
-* [TC-2245](https://ixsystems.atlassian.net/browse/TC-2245) RRDcached sockets timeout on read, fork, and fail to reconnect
-* [TC-2262](https://ixsystems.atlassian.net/browse/TC-2262) Unable to log back into TrueCommand after a NAS is powered down
-* [TC-2259](https://ixsystems.atlassian.net/browse/TC-2259) Use cluster name for netbios
-* [TC-2253](https://ixsystems.atlassian.net/browse/TC-2253) TC wizard does not create A records in active directory when 22.02.3 is used
-* [TC-2207](https://ixsystems.atlassian.net/browse/TC-2207) 2FA window pops back up after successful login with Auth code
-* [TC-2200](https://ixsystems.atlassian.net/browse/TC-2200) TC is treating an expired license like it is still valid
+### Improvement
+
 * [TC-2254](https://ixsystems.atlassian.net/browse/TC-2254) Fix middleware logs to be one per line
 * [TC-2248](https://ixsystems.atlassian.net/browse/TC-2248) ctdb.public.ips.create is a job and GlusterSMBConfig atomicity
+
+### Bug
+
+* [TC-2261](https://ixsystems.atlassian.net/browse/TC-2261) Build/publish tags
+* [TC-2259](https://ixsystems.atlassian.net/browse/TC-2259) Use cluster name for netbios
+* [TC-2253](https://ixsystems.atlassian.net/browse/TC-2253) TC wizard does not create A records in active directory when 22.02.3 is used
+* [TC-2247](https://ixsystems.atlassian.net/browse/TC-2247) Generated hostname is longer than 15 charcters preventing clustering setup
+* [TC-2245](https://ixsystems.atlassian.net/browse/TC-2245) RRDcached sockets timeout on read, fork, and fail to reconnect
+* [TC-2207](https://ixsystems.atlassian.net/browse/TC-2207) 2FA window pops back up after successful login with Auth code
 
 ## 2.2
 
