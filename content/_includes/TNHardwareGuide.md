@@ -31,7 +31,7 @@ A properly-configured TrueNAS system can tolerate the failure of multiple storag
 
 ### Storage Device Quantities
 
-TrueNAS is capable of managing large quantities of storage devices as part of a large storage array.
+TrueNAS is capable of managing large quantities of storage devices as part of a single storage array.
 The community-focused TrueNAS SCALE Angelfish release can manage as many as 400 drives in a single storage array; a significant level of flexibility for home users to larger business deployements.
 With more Enterprise-level tuning in the mature 13.0 release and similar tuning in the upcoming SCALE Bluefin release, TrueNAS can expand even further and manage as many as 1,250 drives in a single storage array!
 
