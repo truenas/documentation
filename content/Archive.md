@@ -89,7 +89,7 @@ Release Notes:
 ## Legacy Documentation
 
 The documentation, release notes, and notices provided in this section follow the major and minor releases of the previous FreeNAS and TrueNAS projects, before their unification under the TrueNAS name.
-FreeNAS would publish first and TrueNAS followed later in the FreeNAS lifecycle with occasional simultaneous releases.
+At that time, FreeNAS published first and TrueNAS followed later in the FreeNAS lifecycle with occasional simultaneous releases.
 TrueNAS releases took all the FreeNAS changes up to that point and added a few Enterprise feature-specific (High Availability) changes.
 
 ### Legacy FreeNAS
