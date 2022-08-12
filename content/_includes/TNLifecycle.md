@@ -42,6 +42,8 @@ In early 2021, TrueNAS Core/Enterprise 12.0 and 13.0 branches were in active dev
 These versions of the software are in active development and maintenance.
 We encourage users to actively keep their software updated to an active development version to continue to receive security patches and other software improvements.
 
+{{< include file="/content/_includes/SoftwareStatusPage.md" type="page" >}}
+
 ## TrueNAS Quality Lifecycle
 
 TrueNAS releases follow a general adoption guideline for their lifetime.

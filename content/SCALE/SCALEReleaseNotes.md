@@ -30,6 +30,8 @@ aliases:
 
 {{< include file="/static/includes/General/LifecycleTable.html.part" html="true" >}}
 
+{{< include file="/content/_includes/SoftwareStatusPage.md" type="page" >}}
+
 ## SCALE Schedule
 
 {{< include file="/content/_includes/ReleaseScheduleWarning.md" type="page" >}}
