@@ -75,8 +75,42 @@ Then save, stop, and restart the SMB service.
 Using Secure Shell (SSH) to connect to your TrueNAS is very helpful when issuing commands through the CLI.
 SSH settings are in **Services** after clicking the <i class="fa fa-pencil" aria-hidden="true" title="Pencil"></i>.
 
-To make sure users cannot connect to the system as `root` and potentially harm the system, leave *Log in as Root with Password* unset.
-It is off by default.
+As a best practice, create and exchange SSH keys between client systems and TrueNAS before attempting to connect with SSH.
+
+{{< hint danger >}}
+Be careful when prompted to overwrite any existing SSH key pairs, as this can disrupt previously configured SSH connections.
+Overwriting an SSH key pair cannot be undone.
+{{< /hint >}}
+
+{{< tabs "SSH Key Generation" >}}
+{{< tab "Windows 10 & 11" >}}
+1. Open Windows **Powershell** or a terminal.
+2. Enter `ssh-keygen.exe`.
+3. Type in a location to store the new key pair or press <kbd>Enter</kbd> to use the default location (recommended) shown in parentheses.
+4. Type in a passphrase (recommended) for the keypair or press <kbd>Enter</kbd> to not use a passphrase. Confirm the passphrase.
+{{< /tab >}}
+{{< tab "MacOS" >}}
+1. Open the Terminal app
+2. Enter `ssh-keygen -t rsa -b 2048`. This uses the RSA algorithm to create key of 2048 bits, which is generally considered acceptible.
+3. Type in a location to store the new key pair or press <kbd>Enter</kbd> to use the default location (recommended).
+4. Type in a passphrase (recommended) for the keypair or press <kbd>Enter</kbd> to not use a passphrase. Confirm the passphrase.
+{{< /tab >}}
+{{< tab "Debian 11" >}}
+1. Open the shell.
+2. Enter `ssh-keygen`. By default, uses the RSA algorithm to create a 3072 bit key pair.
+3. Type in a location to store the new key pair or press <kbd>Enter</kbd> to use the default location (recommended).
+4. Type in a passphrase (recommended) for the keypair or press <kbd>Enter</kbd> to not use a passphrase. Confirm the passphrase.
+{{< /tab >}}
+{{< tab "FreeBSD " >}}
+1. Open the shell.
+2. Enter `ssh-keygen -t rsa`. This uses the RSA algorithm to create the key pair.
+3. Type in a location to store the new key pair or press <kbd>Enter</kbd> to use the default location (recommended).
+4. Type in a passphrase (recommended) for the keypair or press <kbd>Enter</kbd> to not use a passphrase. Confirm the passphrase.
+{{< /tabs >}}
+
+By default, standard non-administrative accounts can connect via SSH.
+To make sure users cannot connect to the system as `root` (default system administrator account) and potentially harm the system, leave the *Log in as Root with Password* option unset.
+If it is a critical situation and root logins must be allowed, set up two-factor authentication ([CORE 2FA]({{< relref "UsingTwoFactorAuthentication.md" >}}), [SCALE 2FA]({{< relref "2FASCALE.md" >}})) as an additional layer of security and disable the setting as soon as the situation is resolved.
 
 Unless it is required, do not set *Allow TCP Port Forwarding*.
 
