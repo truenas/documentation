@@ -19,6 +19,10 @@ Another disk of the same or greater capacity is required to replace a failed dis
 This disk must be installed in the TrueNAS system and not part of an existing storage pool.
 Any data on the replacement disk is wiped as part of the process.
 
+{{< expand "Can I replace a disk in a GELI-encrypted (Legacy) pool?" "v" >}}
+Although GELI encryption is deprecated, TrueNAS implements GELI encryption during a "GELI-Encrypted (Legacy) pool" disk replacement. TrueNAS uses GELI encryption for the lifetime of that pool, even after replacement.
+{{< /expand >}}
+
 The TrueNAS **Dashboard** shows when a disk failure degrades a pool.
 
 ![DashboardPoolDegraded](/images/CORE/12.0/DashboardPoolDegraded.png "Degraded Pool on the Dashboard")

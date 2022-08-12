@@ -26,7 +26,7 @@ Click **Add** to display the **BASIC Options** settings screen.
 |---------|--------------|
 | **Path** | Use the file browser or click the **/mnt** to select the pool, dataset or directory to share. |
 | **Name** | Enter a name for the SMB share. |
-| **Purpose** | Select a preset purpose configuration. This locks in predetermined values for the share. This includes **Advanced Options**, as well as the **Path Suffix**. Select from the dropdown list. Options are:<br>**No presets**<br>**Default share parameters**<br>**Multi-user time machine**<br>**Multi-protocol (AFP/SMB) shares**<br>**Multi-protocol (NFSv3/SMB) shares**<br>**Private SMB Datasets and Shares**<br>**SMB WORM. Files become readonly via SMB after 5 minutes**<br>See "What do all the presets do?" for more information on presets.|
+| **Purpose** | Select a preset purpose configuration. This locks in predetermined values for the share. This includes **Advanced Options**, as well as the **Path Suffix**. Select from the dropdown list. Options are:<br>**No presets**<br>**Default share parameters**<br>**Multi-user time machine**<br>**Multi-protocol (AFP/SMB) shares**<br>**Multi-protocol (NFSv3/SMB) shares**<br>**Private SMB Datasets and Shares**<br>**SMB WORM. Files become readonly via SMB after 5 minutes**<br>See "What do all the presets do?" for more information on presets. |
 | **Description** | Optional. Explains the purpose of the share. |
 | **Enabled** | Select to enable this SMB share. Clear checkbox to disable the share without deleting the configuration. |
 
@@ -69,7 +69,7 @@ An [x] indicates the option is enabled, [ ] means the option is disabled, and [t
 | **Browsable to Network Clients** | Select to include this share name when browsing shares. Home shares are only visible to the owner regardless of this setting. |
 | **Allow Guest Access** | Select to make privileges the same as the guest account. Windows 10 version 1709 and Windows Server version 1903 have disabled guest access. Guest access for these clients requires extra client-side configuration.<br><br> **MacOS clients**: Trying to connect as a user that does not exist in TrueNAS does not default to the guest account. The **Connect As: Guest** option must be specifically chosen in MacOS to log in as the guest account. See the [Apple documentation](https://support.apple.com/guide/mac-help/connect-mac-shared-computers-servers-mchlp1140/mac) for more details. |
 | **Access Based Share Enumeration** | Select to restrict share visibility to users with read or write access to the share. See the [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) manual page. |
-| **Hosts Allow** | Enter a list of allowed host names or IP addresses. Separate entries by pressing <kbd>Enter</kbd>. A more detailed description with examples see [here](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html#HOSTSALLOW).
+| **Hosts Allow** | Enter a list of allowed host names or IP addresses. Separate entries by pressing <kbd>Enter</kbd>. A more detailed description with examples see [here](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html#HOSTSALLOW). |
 | **Hosts Deny** | Enter a list of denied host names or IP addresses. Separate entries by pressing <kbd>Enter</kbd>. |
 
 {{< expand "Host Allow and Hosts Deny Fields" >}}

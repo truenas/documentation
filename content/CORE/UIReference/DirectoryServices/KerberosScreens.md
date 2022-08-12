@@ -1,6 +1,9 @@
 ---
 title: "Kerberos Screens"
+description: "Use the Kerberos screen to configure to configure Kerberos realms and keytabs on your TrueNAS"
 weight: 40
+tags:
+- corekerberos
 ---
 
 
@@ -9,7 +12,7 @@ Kerberos uses realms and keytabs to authenticate clients and servers.
 
 ![KerberosRealmsScreen](/images/CORE/13.0/KerberosRealmsScreen.png "Kerberos Realms Screen")
 
-Both the **Kerberos Realsms** and the **Kerberos Keytabs** screens display a table of what is added to the system. 
+Both the **Kerberos Realms** and the **Kerberos Keytabs** screens display a table of what is added to the system. 
 
 Use the blue **Columns** button to display a list of options to customize the table displays for both the realms and keytabs screens.
 
@@ -31,7 +34,7 @@ Use **ADD** to create a realm on the TrueNAS. Use **SUBMIT** to save changes.
 
 | Setting | Description |
 |---------|-------------|
-| **Realm** | enter a name for the realm. |
+| **Realm** | Enter a name for the realm. |
 
 **Advanced Options**
 | Setting | Description |
@@ -69,6 +72,4 @@ Use the  **Directory Services > Kerberos Settings** screen to enter an additiona
 | **Appdefaults Auxiliary Parameters** | Define any additional settings for use by some Kerberos applications. The available settings and syntax are listed in the [[appdefaults] section of krb.conf(5)](https://web.mit.edu/kerberos/krb5-1.12/doc/admin/conf_files/krb5_conf.html#appdefaults). |
 | **Libdefaults Auxiliary Parameters** | Define any settings used by the Kerberos library. The available settings and their syntax are listed in the [[libdefaults] section of krb.conf(5)](https://web.mit.edu/kerberos/krb5-1.12/doc/admin/conf_files/krb5_conf.html#libdefaults). |
 
-## Additional Information
-
-[Setting Up Kerberos]({{< relref "/CORE/CORETutorials/DirectoryServices/Kerberos.md" >}})
+{{< taglist tag="corekerberos" limit="10" >}}

@@ -11,7 +11,7 @@ These instructions assume that both sides of the rsync task, host and remote, us
 
 ## Basic Requirements
 
-Rysnc requires a [dataset]({{< relref "/SCALE/SCALEUIReference/Storage/Pools/DatasetsSCALE.md" >}}) with the needed data on either the host or remote system.
+Rysnc requires a [dataset]({{< relref "/SCALE/SCALETutorials/Storage/Pools/DatasetsSCALE.md" >}}) with the needed data on either the host or remote system.
 Rsync provides the ability to either push or pull data.
 When using the **Rsync Tasks** function to push, data is copied from a host system to a remote system.
 When using the **Rsync Tasks** function to pull, data is pulled from a remote system and put on the host system.

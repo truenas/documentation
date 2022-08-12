@@ -1,6 +1,8 @@
 ---
 title: "Storage Configuration"
 weight: 60
+tags:
+- corestoredata
 ---
 
 {{< toc >}}
@@ -22,12 +24,12 @@ Backups with Replication requires either additional storage on the TrueNAS syste
 
 ## Simple Storage Setup
 
-Go to **Storage > Pools** and click *ADD*.
-Set *Create a new pool* and click *CREATE POOL*
+Go to **Storage > Pools** and click **ADD**.
+Set **Create a new pool** and click **CREATE POOL**
 
 ![StoragePoolsAddCreateManager](/images/CORE/12.0/StoragePoolsAddCreateManager.png "TrueNAS Pool Manager")
 
-For the *Name*, enter *tank* or any other preferred name.
+For the **Name**, enter *tank* or any other preferred name.
 In the **Available Disks**, set two identical disks and click the <right arrow icon> to move them to the **Data VDevs** area.
   
 {{< hint info >}}
@@ -36,27 +38,29 @@ If the disks used have non-unique serial numbers, they do not populate the **Ava
 
 ![StoragePoolsAddCreateTank](/images/CORE/12.0/StoragePoolsAddCreateTank.png "Creating the tank pool")
 
-TrueNAS automatically suggests *Mirror* as the ideal layout for maximized data storage and protection.
+TrueNAS automatically suggests **Mirror** as the ideal layout for maximized data storage and protection.
 
-Review the **Estimated total raw data capacity** and click *CREATE*.
+Review the **Estimated total raw data capacity** and click **CREATE**.
 TrueNAS wipes the disks and adds *tank* to the **Storage > Pools** list.
 
 ![StoragePoolsListTank](/images/CORE/12.0/StoragePoolsListTank.png "Finding the tank pool")
 
 ### Adding Datasets or Zvols
 
-New pools have a "root" dataset that allows further division into new *datasets* or *zvols*.
+New pools have a root dataset that allows further division into new datasets or zvols.
 A *dataset* is a file system that stores data and has specific permissions.
 A *zvol* is a virtual block device that has a predefined storage size.
-To create either one, go to **Storage > Pools**, click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>, and select *Add Dataset* or *Add Zvol*.
+To create either one, go to **Storage > Pools**, click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>, and select **Add Dataset** or **Add Zvol**.
 
 ![StoragePoolsAddDataset](/images/CORE/12.0/StoragePoolsAddDataset.png "Adding a new dataset or zvol")
 
 These are often created as part of configuring specific data sharing situations:
 
-* Setting a dataset *Share Type* to *SMB* optimizes that dataset for the Windows sharing protocol.
+* A dataset with a **Share Type** set to **SMB** optimizes that dataset for the Windows sharing protocol.
 * Block device sharing (iSCSI) requires a zvol.
 
 Organize the pool with additional datasets or zvols according to your access and data sharing requirements before moving any data into the pool.
 
 When you're finished building and organizing your TrueNAS pools, move on to configuring how the system [shares data]({{< relref "SharingStorage.md" >}})
+
+{{< taglist tag="corestoredata" limit="10" >}}

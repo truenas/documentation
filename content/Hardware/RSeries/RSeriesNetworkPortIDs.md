@@ -30,3 +30,6 @@ This table lists the default identification for R-Series systems and any add-on 
 |       | Port 1: `ixl1` | Port 1: `eno2` |
 | R50B  | Port 0: `ixl0` | Port 0: `eno1` |
 |       | Port 1: `ixl1` | Port 1: `eno2` |
+| R50BM | Port 0: `ixl0` | Port 0: `eno1` |
+|       | Port 1: `ixl1` | Port 1: `eno2` |
+
