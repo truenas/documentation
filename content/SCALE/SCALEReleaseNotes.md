@@ -5,6 +5,8 @@ aliases:
   - /releasenotes/
   - /releasenotes/scale/
   - /releasenotes/releaseschedule/
+  - /releasenotes/scale/22.02.3
+  - /releasenotes/scale/22.02.2
   - /releasenotes/scale/22.02.1/
   - /releasenotes/scale/22.02.0.1/
   - /releasenotes/scale/22.02.0/
@@ -51,6 +53,163 @@ To upgrade an existing SCALE install, log in to your SCALE web interface and go 
 SCALE is developed as an appliance that uses specific Linux packages with each release. Attempting to update SCALE with `apt` or methods other than the SCALE web interface can result in a nonfunctional system.
 {{< /hint >}}
 
+## 22.02.3
+
+**August 9, 2022**
+
+iXsystems is excited to announce the release of TrueNAS SCALE 22.02.3!
+
+### Improvement
+
+* [NAS-117528](https://ixsystems.atlassian.net/browse/NAS-117528) ctdb.public.ips.interface\_choices require interfaces with an IP
+* [NAS-117394](https://ixsystems.atlassian.net/browse/NAS-117394) type object 'FailoverService' has no attribute 'LAST\_DISABLED\_REASONS'
+* [NAS-117269](https://ixsystems.atlassian.net/browse/NAS-117269) failover.disabled\_reasons returns a new NO\_FENCED that webUI needs to account for
+* [NAS-117072](https://ixsystems.atlassian.net/browse/NAS-117072) Include nftables ruleset in network debug dump
+* [NAS-117009](https://ixsystems.atlassian.net/browse/NAS-117009) Only enable wsdd on recovery master when clustered
+* [NAS-116991](https://ixsystems.atlassian.net/browse/NAS-116991) Add python ctdb client
+* [NAS-116981](https://ixsystems.atlassian.net/browse/NAS-116981) Merge truenas/zfs-2.1-release into stable/angelfish
+* [NAS-116979](https://ixsystems.atlassian.net/browse/NAS-116979) Don't activate LVM volume groups before importing boot pool
+* [NAS-116976](https://ixsystems.atlassian.net/browse/NAS-116976) improve boot time on SCALE enterprise hardware
+* [NAS-116857](https://ixsystems.atlassian.net/browse/NAS-116857) Merge zfs 2.1.5
+* [NAS-116836](https://ixsystems.atlassian.net/browse/NAS-116836) Force BSD semantics for group ownership if NFSV4ACL
+* [NAS-116819](https://ixsystems.atlassian.net/browse/NAS-116819) Add ability for xattr handler to "strip" NFSv4 ACL
+* [NAS-116769](https://ixsystems.atlassian.net/browse/NAS-116769) expose snapshot count via stat\(2\) of .zfs/snapshot
+* [NAS-116708](https://ixsystems.atlassian.net/browse/NAS-116708) Under System Settings > General > Support add photo of system platform \(R Series\)
+* [NAS-116685](https://ixsystems.atlassian.net/browse/NAS-116685) Add file size to manifest.json
+* [NAS-111488](https://ixsystems.atlassian.net/browse/NAS-111488) Implement disk\_resize equivalent in SCALE
+
+### Epic
+
+* [NAS-116239](https://ixsystems.atlassian.net/browse/NAS-116239) Enclosure Management for SCALE
+
+### Bug
+
+* [NAS-117467](https://ixsystems.atlassian.net/browse/NAS-117467) Reuse tdb / ctdb handles
+* [NAS-117443](https://ixsystems.atlassian.net/browse/NAS-117443) Fix clustered SMB service management events
+* [NAS-117441](https://ixsystems.atlassian.net/browse/NAS-117441) Added better support for python virtual environment
+* [NAS-117400](https://ixsystems.atlassian.net/browse/NAS-117400) Fix activedirectory join in cluster
+* [NAS-117377](https://ixsystems.atlassian.net/browse/NAS-117377) Fix clustered filesystem test
+* [NAS-117357](https://ixsystems.atlassian.net/browse/NAS-117357) fix typo in disabled\_reasons
+* [NAS-117351](https://ixsystems.atlassian.net/browse/NAS-117351) Update 22.02.3 manifest to use 22.02.3 mirrors
+* [NAS-117329](https://ixsystems.atlassian.net/browse/NAS-117329) Branch out for 22.02.3
+* [NAS-117313](https://ixsystems.atlassian.net/browse/NAS-117313) Active Directory randomly automatically getting disabled during server reboot
+* [NAS-117306](https://ixsystems.atlassian.net/browse/NAS-117306) Fix ctdb jobs on pnn 0
+* [NAS-117293](https://ixsystems.atlassian.net/browse/NAS-117293) Deprecate legacy behavior to allow empty homes path
+* [NAS-117283](https://ixsystems.atlassian.net/browse/NAS-117283) Key error when querying for filesystem.acltemplate.by\_path on a dataset with an NFS acl type
+* [NAS-117276](https://ixsystems.atlassian.net/browse/NAS-117276) migrate shells from core to scale properly
+* [NAS-117267](https://ixsystems.atlassian.net/browse/NAS-117267) Fix multiple issues with failover.disabled\_reasons
+* [NAS-117264](https://ixsystems.atlassian.net/browse/NAS-117264) Updater size estimates seem quite off
+* [NAS-117263](https://ixsystems.atlassian.net/browse/NAS-117263) Add test for disabling ACL auto-inheritance via SMB
+* [NAS-117245](https://ixsystems.atlassian.net/browse/NAS-117245) Running rsync crashes middleware
+* [NAS-117231](https://ixsystems.atlassian.net/browse/NAS-117231) Add CTDB event integration
+* [NAS-117217](https://ixsystems.atlassian.net/browse/NAS-117217) CORE 12.0-U8 to SCALE 22.02.2.1 upgrade: middleware crash loop
+* [NAS-117209](https://ixsystems.atlassian.net/browse/NAS-117209) smb.status parse blocking event loop
+* [NAS-117207](https://ixsystems.atlassian.net/browse/NAS-117207) Submitting a ticket does not work
+* [NAS-117197](https://ixsystems.atlassian.net/browse/NAS-117197) Kerberos: Slave KDC name is not provided as separate config line in /etc/krb5.conf
+* [NAS-117185](https://ixsystems.atlassian.net/browse/NAS-117185) Snapshots Not Deleted After Specified Lifetime Expires
+* [NAS-117181](https://ixsystems.atlassian.net/browse/NAS-117181) Allow setting UID 0 for new users
+* [NAS-117175](https://ixsystems.atlassian.net/browse/NAS-117175) unable to flash chelsio cards on SCALE
+* [NAS-117174](https://ixsystems.atlassian.net/browse/NAS-117174) /usr/local/bin/chelsio\_adapter\_config is FreeBSD specific
+* [NAS-117170](https://ixsystems.atlassian.net/browse/NAS-117170) Unable to manual upgrade due to version comparison \(downgrade error\)
+* [NAS-117155](https://ixsystems.atlassian.net/browse/NAS-117155) Fix bug in `ensure_builtins` option for ACL templates
+* [NAS-117149](https://ixsystems.atlassian.net/browse/NAS-117149) Fix test mail subject
+* [NAS-117141](https://ixsystems.atlassian.net/browse/NAS-117141) Fix `reporting.setup`
+* [NAS-117135](https://ixsystems.atlassian.net/browse/NAS-117135) Add comment field to ACL templates
+* [NAS-117113](https://ixsystems.atlassian.net/browse/NAS-117113) Report S.M.A.R.T. test in progress if there is a \`Self test in progre…
+* [NAS-117097](https://ixsystems.atlassian.net/browse/NAS-117097) regression in cluster api integration tests
+* [NAS-117085](https://ixsystems.atlassian.net/browse/NAS-117085) Cloud Sync doesn't work with Google Cloud Storage buckets which use uniform access
+* [NAS-117081](https://ixsystems.atlassian.net/browse/NAS-117081) Fix regression in clustered timeinfo
+* [NAS-117061](https://ixsystems.atlassian.net/browse/NAS-117061) netif.list\_interfaces\(\) leaks small amount of memory on scale stable
+* [NAS-117058](https://ixsystems.atlassian.net/browse/NAS-117058) Include "df -T" for SMB share paths in debug output
+* [NAS-117049](https://ixsystems.atlassian.net/browse/NAS-117049) improve getting zfs arcstats
+* [NAS-117044](https://ixsystems.atlassian.net/browse/NAS-117044) Do not expose user certificate's keys in debug
+* [NAS-117039](https://ixsystems.atlassian.net/browse/NAS-117039) Failed to check for alert ZpoolCapacity
+* [NAS-117038](https://ixsystems.atlassian.net/browse/NAS-117038) Upgrade pool menu item is not visible
+* [NAS-117032](https://ixsystems.atlassian.net/browse/NAS-117032) No limit on collectd memory cache
+* [NAS-117014](https://ixsystems.atlassian.net/browse/NAS-117014) Replace subprocess calls for clustered tdb backend
+* [NAS-117010](https://ixsystems.atlassian.net/browse/NAS-117010) Provide more detailed ctdb status
+* [NAS-116990](https://ixsystems.atlassian.net/browse/NAS-116990) Fix `etc/initramfs-tools/conf.d/noresume.conf` not being installed
+* [NAS-116988](https://ixsystems.atlassian.net/browse/NAS-116988) Fix `"device": "pmem0p2", "disk": "pmem0p"` in pool topology
+* [NAS-116984](https://ixsystems.atlassian.net/browse/NAS-116984) Switch to using ctdb client python bindings
+* [NAS-116978](https://ixsystems.atlassian.net/browse/NAS-116978) Improve logging for when we disable a directory service
+* [NAS-116955](https://ixsystems.atlassian.net/browse/NAS-116955) SCALE - Official apps' catalog stopped working
+* [NAS-116953](https://ixsystems.atlassian.net/browse/NAS-116953) middlewared/asyncio\_loop memory and cpu leak
+* [NAS-116936](https://ixsystems.atlassian.net/browse/NAS-116936) Remove unnecessary debug statements
+* [NAS-116924](https://ixsystems.atlassian.net/browse/NAS-116924) Pool Offline
+* [NAS-116919](https://ixsystems.atlassian.net/browse/NAS-116919) Constant alert.process\_alerts in Task Manager
+* [NAS-116913](https://ixsystems.atlassian.net/browse/NAS-116913) Cannot Delete Zvol
+* [NAS-116911](https://ixsystems.atlassian.net/browse/NAS-116911) Using netgroups on NFS share exports broke in SCALE 22.02.2
+* [NAS-116910](https://ixsystems.atlassian.net/browse/NAS-116910) Directory Service is sometimes not starting
+* [NAS-116909](https://ixsystems.atlassian.net/browse/NAS-116909) LDAP fails with START\_TLS and Validate certificates.
+* [NAS-116908](https://ixsystems.atlassian.net/browse/NAS-116908) BootPoolStatus Alert
+* [NAS-116904](https://ixsystems.atlassian.net/browse/NAS-116904) rate limit disk.temperatures endpoint
+* [NAS-116900](https://ixsystems.atlassian.net/browse/NAS-116900) Verify that child mounts under SMB path are consistent
+* [NAS-116897](https://ixsystems.atlassian.net/browse/NAS-116897) Process 3569743 \(smartctl\) of user 0 dumped core
+* [NAS-116881](https://ixsystems.atlassian.net/browse/NAS-116881) stop doing file I/O on main event loop
+* [NAS-116879](https://ixsystems.atlassian.net/browse/NAS-116879) zectl snapshot dumps core
+* [NAS-116876](https://ixsystems.atlassian.net/browse/NAS-116876) Reduce some etc-file related log spam
+* [NAS-116875](https://ixsystems.atlassian.net/browse/NAS-116875) TrueNAS Scale kubernetes Error
+* [NAS-116867](https://ixsystems.atlassian.net/browse/NAS-116867) Add filesystem plugin method to get mount\_info
+* [NAS-116865](https://ixsystems.atlassian.net/browse/NAS-116865) Also install `pytest-timeout` in `install-dev-tools`
+* [NAS-116850](https://ixsystems.atlassian.net/browse/NAS-116850) zfs.pool\_events hook traceback
+* [NAS-116837](https://ixsystems.atlassian.net/browse/NAS-116837) Launch Docker Image Button disabled and other UI bugs
+* [NAS-116835](https://ixsystems.atlassian.net/browse/NAS-116835) add ipv6 flags to interfaces
+* [NAS-116834](https://ixsystems.atlassian.net/browse/NAS-116834) Fix regression in s3 attachment
+* [NAS-116832](https://ixsystems.atlassian.net/browse/NAS-116832) Fix setting up reporting database
+* [NAS-116826](https://ixsystems.atlassian.net/browse/NAS-116826) smartd can't start
+* [NAS-116821](https://ixsystems.atlassian.net/browse/NAS-116821) BUG: kernel NULL pointer dereference after SCALE 22.02.2 upgrade
+* [NAS-116820](https://ixsystems.atlassian.net/browse/NAS-116820) Avaliable applications keeps populating and depopulating post 22.02.2 update
+* [NAS-116816](https://ixsystems.atlassian.net/browse/NAS-116816) use statx to retrieve btime for files in filesystem.stat output
+* [NAS-116815](https://ixsystems.atlassian.net/browse/NAS-116815) Going to Catalog Summary produces following error affter 22.02.2 update
+* [NAS-116814](https://ixsystems.atlassian.net/browse/NAS-116814) Catalogs double listed after upgrade to 22.02.2
+* [NAS-116812](https://ixsystems.atlassian.net/browse/NAS-116812) minor improvement to interface.sync
+* [NAS-116810](https://ixsystems.atlassian.net/browse/NAS-116810) Place mako module directory under /run
+* [NAS-116808](https://ixsystems.atlassian.net/browse/NAS-116808) Improve IPMI password validation
+* [NAS-116802](https://ixsystems.atlassian.net/browse/NAS-116802) K3S fail to start cause by SSL issue. APPs module is not available.
+* [NAS-116794](https://ixsystems.atlassian.net/browse/NAS-116794) Official nextcloud app gets stuck during deployment
+* [NAS-116776](https://ixsystems.atlassian.net/browse/NAS-116776) Unable to upgrade from CORE 12.0-U8 to SCALE 22.02.1
+* [NAS-116767](https://ixsystems.atlassian.net/browse/NAS-116767) Add test coverage for SMB ACL "map modify" behavior
+* [NAS-116763](https://ixsystems.atlassian.net/browse/NAS-116763) Can't delete old certificate
+* [NAS-116751](https://ixsystems.atlassian.net/browse/NAS-116751) Expose pool-wide space counters
+* [NAS-116750](https://ixsystems.atlassian.net/browse/NAS-116750) NVIDIA Drivers update to 470.x.x
+* [NAS-116749](https://ixsystems.atlassian.net/browse/NAS-116749) Expose used stats through pool.dataset
+* [NAS-116734](https://ixsystems.atlassian.net/browse/NAS-116734) py-libzfs exceptions missing error action
+* [NAS-116728](https://ixsystems.atlassian.net/browse/NAS-116728) Unable to backup Lightroom Classic Catalog directly to mapped drive on Truenas Scale
+* [NAS-116706](https://ixsystems.atlassian.net/browse/NAS-116706) Core files error on TrueNAS SCALE
+* [NAS-116704](https://ixsystems.atlassian.net/browse/NAS-116704) Fix debug size
+* [NAS-116701](https://ixsystems.atlassian.net/browse/NAS-116701) VM RAW file support does not work because it configures the domain wrong
+* [NAS-116691](https://ixsystems.atlassian.net/browse/NAS-116691) Re-enable rsync task fails
+* [NAS-116683](https://ixsystems.atlassian.net/browse/NAS-116683) Add new helper function to convert mountinfo to dict
+* [NAS-116681](https://ixsystems.atlassian.net/browse/NAS-116681) Remove host path validations temporarily on charts
+* [NAS-116680](https://ixsystems.atlassian.net/browse/NAS-116680) Fix validation error naming schema for chart releases
+* [NAS-116677](https://ixsystems.atlassian.net/browse/NAS-116677) Fix KeyError while collecting coredump info
+* [NAS-116676](https://ixsystems.atlassian.net/browse/NAS-116676) PVC not getting migrated
+* [NAS-116612](https://ixsystems.atlassian.net/browse/NAS-116612) UPS config not working
+* [NAS-116559](https://ixsystems.atlassian.net/browse/NAS-116559) Application / container name validation error message is confusing and lacks helptext
+* [NAS-116547](https://ixsystems.atlassian.net/browse/NAS-116547) Timezones on App \(docker\) creation are not ordered
+* [NAS-116507](https://ixsystems.atlassian.net/browse/NAS-116507) Ensure all official apps have host path validation
+* [NAS-116492](https://ixsystems.atlassian.net/browse/NAS-116492) Bonded interface names are not updated on upgrade from core to scale
+* [NAS-116455](https://ixsystems.atlassian.net/browse/NAS-116455) TrueNAS ignores SMB Path Suffix when "Use as Home Share" is enabled
+* [NAS-116443](https://ixsystems.atlassian.net/browse/NAS-116443) SQLite is compiled without SQLITE\_ENABLE\_DBSTAT\_VTAB
+* [NAS-116422](https://ixsystems.atlassian.net/browse/NAS-116422) cpu and ram usage on dashboard fails on TrueNAS Scale
+* [NAS-116364](https://ixsystems.atlassian.net/browse/NAS-116364) Pool name with spaces produces an error when creating a VM or attempting to start one
+* [NAS-116332](https://ixsystems.atlassian.net/browse/NAS-116332) Upload ISO fails with wrong error when dataset is encrypted
+* [NAS-116212](https://ixsystems.atlassian.net/browse/NAS-116212) SMART tests do not start
+* [NAS-116205](https://ixsystems.atlassian.net/browse/NAS-116205) After reboot SMB will not start automatically
+* [NAS-116071](https://ixsystems.atlassian.net/browse/NAS-116071) On Angelfish Nightly after pressing Failover at the login it display "Failover is in an error state."
+* [NAS-115994](https://ixsystems.atlassian.net/browse/NAS-115994) Idmap issue with "OWNER RIGHTS" SID
+* [NAS-115759](https://ixsystems.atlassian.net/browse/NAS-115759) Do not allow immutable fields to be modified in UI
+* [NAS-115670](https://ixsystems.atlassian.net/browse/NAS-115670) Cannot disable SMB share if "directory does not exist" \(this _is_ a bug, believe me!\)
+* [NAS-113895](https://ixsystems.atlassian.net/browse/NAS-113895) Running zpool clear while a scrub is running effectively locks up entire system
+* [NAS-113829](https://ixsystems.atlassian.net/browse/NAS-113829) SCALE: Creating a second time machine share kills mDNS
+* [NAS-113136](https://ixsystems.atlassian.net/browse/NAS-113136) Add check for SMB service being initialized
+
+### Security
+
+* [SCALE 22.02.3 Security Report](https://security.truenas.com/articles/2022-07-20-security-report-scale-22.02.3/)
+
+## 22.02.2
+{{< expand "22.02.2" "v" >}}
 ## 22.02.2.1 Hotpatch
 
 **July 7, 2022**
@@ -492,8 +651,7 @@ Functionality is still improving for these platforms and we are working to add a
 </li>
 </ul>
 
-
-
+{{< /expand>}}
 
 ## 22.02.1
 
@@ -5774,24 +5932,17 @@ Packages downloaded via apt are not persistent. They will not survive an upgrade
 
 ## Known Issues
 
-<body class="ql-editor ql-editor-view" style="font-size:14px;">
-	<html>
-    	<body>
-        	<table width="100%">
-            	<thead><tr><th>Key</th><th>Summary</th><th>Workaround</th></tr></thead>
-               	<tbody>
-			<tr><td></td><td>Large Drive Count Issues</td><td>iX is investigating isuses with booting SCALE on systems with more than 100 Disks.</td></tr>
-				    <tr><td><a href="https://jira.ixsystems.com/browse/NAS-115238" target="_blank">NAS-115238</a></td><td>Removed drive from pool does not degrade pool status (SCALE).</td><td>Issue is being investigated and a fix provided in a future release.</td></tr>
-					<tr><td></td><td>Cosmetic issue with update trains when updating from SCALE 22.02.0-RC.2.</td><td>After updating from 22.02.0-RC.2, the previous update train might show in <b>System Settings > Update</b>. This is a cosmetic issue only and can be ignored.</td></tr>
-					<tr><td></td><td>Unable to mount an NFS export after migrating from CORE > SCALE or updating to 22.02.0.</td><td>The <file>/etc/exports</file> file is no longer generated when the NFS configuration contains <i>mapall</i> or <i>maproot</i> entries for unknown users or groups. This can impact users who previously had a mapping group set to <i>wheel</i>, which does not exist in SCALE. If you are unable to mount an NFS export, review your NFS share configuration and change any <i>wheel</i> entries to something specific for your environment or <i>root</i>.</td></tr>
-					<tr><td></td><td>ZFS feature flag has been removed.</td><td>See <a href="#zfs-feature-flag-removal">ZFS Feature Flag Removal</a> for more information.</td></tr>
-					<tr><td></td><td>SCALE Gluster/Cluster.</td><td>Gluster/Cluster features are still in testing.  Administrators should use caution when deploying and avoid use with critical data.</td></tr>
-					<tr><td><a href="https://jira.ixsystems.com/browse/NAS-110263" target="_blank">NAS-110263</a></td><td>AFP sharing is removed from TrueNAS SCALE. The protocol is deprecated and no longer receives development effort or security fixes.</td><td>TrueNAS SCALE automatically migrates any existing AFP shares into an SMB configuration that is preset to function like an AFP share.</td></tr>  
-					<tr><td><a href="https://jira.ixsystems.com/browse/NAS-111547" target="_blank">NAS-111547</a></td><td>ZFS shouldn't count vdev IO errors on hotplug removal</td><td>Pool status isn't being updated immediately on disk exchange events.</td></tr>
-				</tbody>
-        	</table>
-    	</body>
-	</html>
+| Seen In | Key | Summary | Workaround | Resolved In |
+|---------|-----|---------|------------|-------------|
+| 22.02.3 | <a href="https://ixsystems.atlassian.net/browse/NAS-117581" target="_blank">NAS-117581</a> | Launch Docker Image button is disabled. | On the <b>Apps</b> page, select the <b>Available Applications</b> tab before trying to click the button. | 22.02.3.1 |
+| 22.02.1 |<a href="https://ixsystems.atlassian.net/browse/NAS-116473" target="_blank">NAS-116473</a> | Large Drive Count Issues | iX is investigating isuses with booting SCALE on systems with more than 100 Disks. | 22.12-RC.1 |
+| 22.02.0 | <a href="https://jira.ixsystems.com/browse/NAS-115238" target="_blank">NAS-115238</a> | Removed drive from pool does not degrade pool status (SCALE). | Issue is being investigated and a fix provided in a future release | Targeted 22.02.4 |
+| 22.02.0-RC.2 |  | Cosmetic issue with update trains when updating from SCALE 22.02.0-RC.2. | After updating from 22.02.0-RC.2, the previous update train might show in <b>System Settings > Update</b>. This is a cosmetic issue only and can be ignored. |  |
+|  |  | Unable to mount an NFS export after migrating from CORE > SCALE or updating to 22.02.0. | The <file>/etc/exports</file> file is no longer generated when the NFS configuration contains <i>mapall</i> or <i>maproot</i> entries for unknown users or groups. This can impact users who previously had a mapping group set to <i>wheel</i>, which does not exist in SCALE. If you are unable to mount an NFS export, review your NFS share configuration and change any <i>wheel</i> entries to something specific for your environment or <i>root</i>. |  |
+|  |  | ZFS feature flag has been removed. | See <a href="#zfs-feature-flag-removal">ZFS Feature Flag Removal</a> for more information. |  |
+|  |  | SCALE Gluster/Cluster. | Gluster/Cluster features are still in testing.  Administrators should use caution when deploying and avoid use with critical data. |  |
+|  | <a href="https://jira.ixsystems.com/browse/NAS-110263" target="_blank">NAS-110263</a> | AFP sharing is removed from TrueNAS SCALE. The protocol is deprecated and no longer receives development effort or security fixes. | TrueNAS SCALE automatically migrates any existing AFP shares into an SMB configuration that is preset to function like an AFP share. | 21.06-BETA.1 |
+| 21.06-BETA.1 | <a href="https://jira.ixsystems.com/browse/NAS-111547" target="_blank">NAS-111547</a> | ZFS shouldn't count vdev IO errors on hotplug removal | Pool status isn't being updated immediately on disk exchange events. | Targeted 22.12 |
 
 ## ZFS Feature Flag Removal 
 
