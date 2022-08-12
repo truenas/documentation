@@ -27,7 +27,7 @@ aliases:
 
 **August 12, 2022**
 
-This is a small hotpatch designed to address some additional cluster issues found between TrueCommand 2.2 and SCALE 22.02.3.
+This is a minor release designed to address some additional cluster issues found between TrueCommand 2.2 and SCALE 22.02.3.
 
 ### Improvement
 
