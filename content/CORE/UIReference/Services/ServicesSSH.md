@@ -2,6 +2,8 @@
 title: "SSH Screen"
 description: "Use the SSH screen to configure Secure Socket Shell (SSH) on your TrueNAS."
 weight: 130
+aliases:
+ - /core/uireference/services/sshscreen/
 tags:
 - coreftp
 - coretftp

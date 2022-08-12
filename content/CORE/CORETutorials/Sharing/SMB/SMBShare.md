@@ -58,8 +58,9 @@ With LDAP configured, users from the LDAP server can have access the SMB share. 
 
 ### Tune the Dataset ACL
 
-After creating a dataset and the needed accounts, determine access requirements. Adjust the dataset ACL to match.  To edit the ACL, go to **Storage > Pools**, open the options for the new dataset, and click **Edit Permissions**.  Many home users often add a new entry that grants the following access:  
-*FULL_CONTROL* to the *builtin_users* group with the flags set to *INHERIT*. 
+After creating a dataset and the needed accounts, determine the access requirements and adjust the dataset ACL to match.
+To edit the ACL, go to **Storage > Pools**, open the options for the new dataset, and click **Edit Permissions**.
+Many home users often add a new entry that grants this access: *FULL_CONTROL* to the *builtin_users* group with the flags set to *INHERIT*.
 See the [Permissions article]({{< relref "/CORE/CORETutorials/Storage/Pools/Permissions.md" >}}) for more details.
 
 ## Creating the SMB Share
