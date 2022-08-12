@@ -29,6 +29,12 @@ The ZFS file system in TrueNAS provides the [best available data protection of a
 ZFS is prepared for the eventual failure of storage devices. It is highly configurable to achieve the perfect balance of redundancy and performance to meet any storage goal.
 A properly-configured TrueNAS system can tolerate the failure of multiple storage devices and even recreate its boot media with a copy of the [configuration file]({{< relref "/content/CORE/CORETutorials/SystemConfiguration/UsingConfigurationBackups.md" >}}).
 
+### Storage Device Quantities
+
+TrueNAS is capable of managing large quantities of storage devices as part of a large storage array.
+The community-focused TrueNAS SCALE Angelfish release can manage as many as 400 drives in a single storage array; a significant level of flexibility for home users to larger business deployements.
+With more Enterprise-level tuning in the mature 13.0 release and similar tuning in the upcoming SCALE Bluefin release, TrueNAS can expand even further and manage as many as 1,250 drives in a single storage array!
+
 ### Storage Media
 
 Choosing storage media is the first step in designing the storage system to meet immediate objectives and prepare for future capacity expansion.
