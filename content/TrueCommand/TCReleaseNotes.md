@@ -23,7 +23,7 @@ aliases:
 | 2.3.0 | Tag | TBD |
 | 2.3.0 | Release | TBD |
 
-## 2.2.1 Hotpatch
+## 2.2.1
 
 **August 12, 2022**
 
