@@ -1,7 +1,7 @@
 | Name | Description |
 |------|-------------|
-| Check Interval | Minutes for [smartd](https://www.freebsd.org/cgi/man.cgi?query=smartd&manpath=FreeBSD+11.1-RELEASE+and+Ports) to wake up and check if any tests should run. |
-| Power Mode | S.M.A.R.T. only tests when the Power Mode is Never. |
-| Difference | Degrees in Celsius. S.M.A.R.T. reports if a drive's temperature has changed by N degrees Celsius since the last report. |
-| Informational | Threshold temperature in Celsius. S.M.A.R.T. will message with a LOG_INFO log level if the temperature is above the threshold. |
-| Critical | Threshold temperature in Celsius. S.M.A.R.T. will message with a LOG_CRIT log level and send an email if the temperature is above the threshold. |
+| **Check Interval** | Minutes for [smartd](https://www.freebsd.org/cgi/man.cgi?query=smartd&manpath=FreeBSD+11.1-RELEASE+and+Ports) to wake up and check if any tests should run. |
+| **Power Mode** | S.M.A.R.T. only tests when the Power Mode is Never. |
+| **Difference** | Degrees in Celsius. S.M.A.R.T. reports if a drive's temperature has changed by N degrees Celsius since the last report. |
+| **Informational** | Threshold temperature in Celsius. S.M.A.R.T. will message with a LOG_INFO log level if the temperature is above the threshold. |
+| **Critical** | Threshold temperature in Celsius. S.M.A.R.T. will message with a LOG_CRIT log level and send an email if the temperature is above the threshold. |
