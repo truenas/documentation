@@ -1,5 +1,5 @@
 ---
-title: "SMB Shares Screens"
+title: SMB Shares Screens"
 description: "This article provides information on SMB share screens and settings."
 weight: 40
 aliases: 
@@ -8,8 +8,6 @@ tags:
  - scalesmb
  - scaleafp
 ---
-
-
 ## Table of Contents
 {{< toc >}}
 
@@ -28,7 +26,7 @@ If you return to the **Share** option (click **Shares** on the main navigation p
 ![SMBServiceWidgetFirstShare](/images/SCALE/22.02/SMBServiceWidgetFirstShare.png "First SMB Share Added Screen")
 
 [Back to Top](#table-of-contents)
-### Windows (SMB) Shares Widget
+### Windows (SMB) Shares <span class="material-icons">launch</span> Widget
 
 The **Windows (SMB) Shares <span class="material-icons">launch</span>** widget after adding SMB shares and every time you click **Shares** on the main navigation panel to return to the **Sharing** screen. 
 
@@ -39,7 +37,7 @@ Each share also has a <span class="material-icons">delete</span> [delete option]
 The SMB share row is a link to the [**Edit SMB** screen](#add-and-edit-smb-screens).
 
 [Back to Top](#table-of-contents)
-#### Windows (SMB) Shares Service Toolbar
+#### Windows (SMB) Shares <span class="material-icons">launch</span> Service Toolbar
 The **Windows (SMB) Shares <span class="material-icons">launch</span>** toolbar displays the status of the SMB service as either **STOPPED** (red) or **RUNNING** (blue).
 Before adding the first share, **STOPPED** status displays in the default color.
 
@@ -49,7 +47,7 @@ Both **Windows (SMB) Shares** and **View Detials** at the bottom of the widget d
 
 The **Add** button displays the **[Add SMB](#add-and-edit-smb-screens)** share configuration screen.
 
-The <span class="material-icons">more_vert</span> displays options turn the SMB service on or off. **Turn Off Service** displays if the service is running or **Turn On Service** if the service is stopped. The **Config Service** option displays the **[System Settings > SMB]({{< relref "SMBServicesScreen.md" >}})** configuration screen. 
+The <span class="material-icons">more_vert</span> displays options turn the SMB service on or off. **Turn Off Service** displays if the service is running or **Turn On Service** if the service is stopped. The **Config Service** option displays the **System Settings > SMB** configuration screen. see [add relref here]
 
 ![SharingSMBServiceOptions](/images/SCALE/22.02/SSharingSMBServiceOptions.png "SMB Service Options")
 
@@ -93,7 +91,7 @@ The **Basic Options** settings in this section display on the **Advanced Options
 | **Name** | Enter a name for this share that is less than or equal to 80 characters. Because of how the SMB protocol uses the name, the name must not exceed 80 characters. The name cannot have invalid characters as specified in Microsoft documentation MS-FSCC section 2.1.6. If not supplied, the share name becomes the last component of the path. This forms part of the full share path name when SMB clients perform and SMB tree connect. |
 | **Purpose** | Select a preset option from the dropdown list. This applies predetermined settings ([presets](#advanced-options-presets)) and disables changing some share setting options. Select **No presets** to retain control over all **Advanced Options** settings. Select  **Default parameters for cluster share** when setting up an SMB cluster share. **Default share parameters** is the default option when you open the **Add SMB** screen and to use for any basic SMB share. Other options are **Multi-User time machine**, **Multi-Protocol (NFSv3/SMB) shares**, **Private SMB Datsets and Shares**, or **SMB WORM. Files become readonly via SMB after 5 minutes**.  |
 | **Description** | Enter a brief description or notes on how you use this share.  |
-| **Enabled** | Selected by default to enable sharing the path when the SMB service is activated. Clear to disable this SMB share without deleting it. |
+| **Enabled** | Selected by default to enable sharing the path when the SMB serive is activeated. Clear to disable this SMB share without deleting it. |
 
 [Back to Top](#table-of-contents)
 ### Advanced Options Settings
@@ -105,7 +103,7 @@ The **Access** settings allow you to customize access to the share, files, and t
 
 | Setting | Description |
 |---------|-------------|
-| **Enable ACL** | Select to enable ACL support for the SMB share. A warning displays if you clear this option and the SMB dataset has a ACL, and you are required to strip the ACL from the dataset prior to creating the SMB share. |
+| **Enable ACL** | Select to enable ACL support for the SMB share. A warning displays if you clear this option and the SMB dataset has a ACL, and you are required to stip the ACL from the dataset prior to creating the SMB share. |
 | **Export Read Only** | Select to prohibit writes to the share. |
 | **Browsable to Network Clients** | Select to determine whether this share name is included when browsing shares. Home shares are only visible to the owner regardless of this setting. Enabled by default. |
 | **Allow Guest Access** | Select to enable. Privileges are the same as the guest account. Guest access is disabled by default in Windows 10 version 1709 and Windows Server version 1903. Additional client-side configuration is required to provide guest access to these clients.<br><br> **MacOS clients**: Attempting to connect as a user that does not exist in FreeNAS *does not* automatically connect as the guest account. You mus specifically select the **Connect As: Guest** option in macOS to log in as the guest account. See the [Apple documentation](https://support.apple.com/guide/mac-help/connect-mac-shared-computers-servers-mchlp1140/mac) for more details. |
@@ -121,11 +119,11 @@ The **Other Options** settings are for improving Apple software compatibility, Z
 
 | Setting | Description |
 |---------|-------------|
-| **Use as Home Share** | Select to allow the share to host user home directories. Each user has a personal home directory they use when connecting to the share that is not accessible by other users. This allows for a personal, dynamic share. Only one share can be used as the home share. See [Adding an SMB Home Share]({{< relref "AddSMBHomeShare.md" >}}) for more information. |
+| **Use as Home Share** | Select to allow the share to host user home directories. Each user has a personal home directory they use when connecting to the share that is not accessible by other users. This allows for a personal, dynamic share. Only one share can be used as the home share. See [Adding an SMB Home Share]({{< relref "/ScaleTutorials/Shares/SMB/AddSMBHomeShare.md" >}}) for more information. |
 | **Time Machine** | Enables [Apple Time Machine](https://support.apple.com/en-us/HT201250) backups on this share. This option requires SMB2/3 protocol extenstion support. You can enable this in the general SMB server configuration. |
 | **Legacy AFP Compatibility** | Select to enable the share to behave like the deprecated Apple Filing Protocol (AFP). Leave cleared for the share to behave like a normal SMB share. This option controls on how the SMB share reads and writes data. Only enable this when this share originated as an AFP sharing configuration. This is not required for pure SMB shares or MacOS SMB clients. This option requires SMB2/3 protocol extenstion support. You can enable this in the general SMB server configuration. |
 | **Enable Shadow Copies** | Select to export ZFS snapshots as [Shadow Copies](https://docs.microsoft.com/en-us/windows/win32/vss/shadow-copies-and-shadow-copy-sets) for Microsoft Volume Shadow Copy Service (VSS) clients. |
-| **Export Recycle Bin** | Select to enable. Deleted files from the same dataset move to the **Recycle Bin** and do not take any additional space. Deleting files over NFS removes the files permanently. Files in a different dataset or a child dataset are copied to the dataset with the recycle bin. To prevent excessive space usage, files larger than 20 MiB are deleted rather than moved. Adjust the **Auxiliary Parameter** by adding the `crossrename:sizelimit=` setting to allow larger files. For example, `crossrename:sizelimit=<i>50</i>` allows moves of files up to 50 MiB in size. This permanently deletes or moves files from the recycle bin. This is not a replacement for ZFS snapshots. |
+| **Export Recycle Bin** | Select to enable. Deleted files that are from the same dataset are moved to the **Recycle Bin** and do not take any additional space. Deleting files over NFS removes the files permanently. When the files are in a different dataset or a child dataset, they are copied to the dataset with the recycle bin. To prevent excessive space usage, files larger than 20 MiB are deleted rather than moved. Adjust the **Auxiliary Parameter** by adding the `crossrename:sizelimit=` setting to allow larger files. For example, `crossrename:sizelimit=<i>50</i>` allows moves of files up to 50 MiB in size. This permanently deletes or moves files from the recycle bin. This is not a replacement for ZFS snapshots. |
 | **Use Apple-style Character Encoding** | Select to converts NTFS illegal characters in the same manner as macOS SMB clients. By default, Samba uses a hashing algorithm for NTFS illegal characters. |
 | **Enable Alternate Data Streams** | Select to allow multiple [NTFS data streams](https://www.ntfs.com/ntfs-multiple.htm). Disabling this option causes macOS to write streams to files on the file system. |
 | **Enable SMB2/3 Durable Handles** | Select to allow using open file handles that can withstand short disconnections. Support for POSIX byte-range locks in Samba is also disabled. This option is not recommended when configuring multi-protocol or local access to files. |
@@ -174,8 +172,7 @@ A <i class="material-icons" aria-hidden="true" title="System Update">check_box</
 {{< /expand >}}
 
 ## SMB Share ACL screen
-The **SMB Share ACL** screen displays when you click **Edit Share ACL** from the <span class="material-icons">more_vert</span> options list on the [**Sharing SMB** details screen](#sharing-smb-details-screen). 
-These settings configure new ACL entries for the selected SMB share and apply at the entire SMB share level, it is separate from file system permissions.
+The **SMB Share ACL** screen displays when you click **Edit Share ACL** from the <span class="material-icons">more_vert</span> options list on the [**Sharing SMB** details screen](#sharing-smb-details-screen). Use these settings to configure new ACL entries for the selected SMB share.
 
 ![SMBShareACLScreen](/images/SCALE/22.02/SMBShareACLScreen.png "SMB Share ACL Screen")
 
@@ -207,9 +204,9 @@ These settings configure new ACL entries for the selected SMB share and apply at
 
 The type of ACL editor screen depends on the SMB dataset **ACL Type** selection. 
 If set to **NFSv4** the editor displayed is an NFSv4 type editor. If set to **POSIX** the first screen displayed is the **Select a preset** window folllowed by the POSIX type editor.
-See [Edit ACL Screens]({{< relref "EditACLScreens.md" >}}) or [Permissions]({{< relref "PermissionsScale.md" >}}) for more information on configuring permissions.
+See [Edit ACL Screens]({{< relref "/ScaleUIReference/Storage/Pools/EditACLScreens.md" >}}) or [Permissions]({{< relref "/SCALETutorials/Storage/Pools/PermissionsScale.md" >}}) for more information on configuring permissions.
 
 [Back to Top](#table-of-contents)
 
 {{< taglist tag="scalesmb" limit="10" >}}
-{{< taglist tag="scaleafp" limit="10" title="Related AFP Articles" >}}
+{{< taglist tag="scaleafp" limit="10" title="Releated AFP Articles" >}}

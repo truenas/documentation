@@ -1,0 +1,78 @@
+---
+title: "Setting Up SMB Home Shares"
+description: "This article provides instructions to set up SMB home shares."
+weight: 40
+aliases: 
+tags:
+ - scaleshares
+ - scalesmb
+---
+
+
+{{< toc >}}
+
+
+## Setting Up SMB Home Shares
+
+**Use as Home Share** allows the share to host user home directories. 
+Each user is given a personal home directory when connecting to the share which is not accessible by other users. 
+This allows for a personal, dynamic share. 
+Only one share can be used as the home share. See the [**SMB Home Shares**](#smb-home-shares) section below. 
+
+TrueNAS offers the **Use as Home Share** option for organizations or SMEs that want to use a single SMB share to provide a personal directory to every user account.
+
+{{< hint warning >}}
+The **Use as Home Share** feature is available for a single TrueNAS SMB share. 
+You can create additional SMB shares without the **Use as Home Share** option enabled.
+{{< /hint >}}
+
+### Create a Pool and Join Active Directory
+
+First, go to **Storage** and [create a pool]({{< relref "/SCALE/SCALETutorials/Storage/Pools/CreatePoolSCALE.md" >}}).
+
+Next, [set up the Active Directory]({{< relref "/SCALE/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}) that you want to share resources with over your network.
+
+### Prepare a Dataset
+
+Go to **Storage** and open the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> next to the root dataset in the pool you just created, then click **Add Dataset**.
+
+Name the dataset and set **Share Type** to **SMB**.
+
+After creating the dataset, go to **Storage** and open <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> next to the new dataset. 
+Select **View Permissions**, then click <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
+
+Click the **Group** dropdown list and change the owning group to your Active Directory domain admins.
+
+![GroupDomainAdminsSCALE](/images/SCALE/GroupDomainAdminsSCALE.png "Set the owning group to Domain Admins")
+
+Click **Use an ACL Preset** and choose **NFS4_HOME**. Then, click **Continue**.
+
+![StoragePoolsOptionsEditPermissionsACLPresetHomeSCALE](/images/SCALE/StoragePoolsOptionsEditPermissionsACLPresetHomeSCALE.png "Set the Home ACL Preset")
+
+### Create the Share
+
+Go to **Shares > Windows (SMB) Shares** and click **Add**. 
+
+Set the **Path** to the prepared dataset. 
+
+The **Name** automatically becomes identical to the dataset. Leave this as the default.
+
+Set the **Purpose** to **No presets**, then click **Advanced Options** and set **Use as Home Share**. Click **Save**.
+
+Enable the **SMB** service in **System Settings > Services** to make the share is available on your network.
+
+### Add Users
+
+Go to **Credentials > Local Users** and click **Add**. 
+Create a new user name and password. 
+By default, the user **Home Directory** title comes from the user account name and is added as a new subdirectory of **Home_Share_Dataset**.
+
+![AccountsUsersEditHomeDirSCALE](/images/SCALE/AccountsUsersEditHomeDirSCALE.png "Editing a User Home Directory")
+
+If existing users require access to the home share, go to **Credentials > Local Users** and edit an existing account.
+
+Adjust the user home directory to the appropriate dataset and give it a name to create their own directory.
+
+After adding the user accounts and configuring permissions, users can log in to the share and see a folder matching their user name.
+
+{{< taglist tag="scalesmb" limit="10" >}}
