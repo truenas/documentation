@@ -51,7 +51,7 @@ The **Add** button displays the **[Add SMB](#add-and-edit-smb-screens)** share c
 
 The <span class="material-icons">more_vert</span> displays options turn the SMB service on or off. **Turn Off Service** displays if the service is running or **Turn On Service** if the service is stopped. The **Config Service** option displays the **[System Settings > SMB]({{< relref "SMBServicesScreen.md" >}})** configuration screen. 
 
-![SharingSMBServiceOptions](/images/SCALE/22.02/SSharingSMBServiceOptions.png "SMB Service Options")
+![SharingSMBOptions](/images/SCALE/22.02/SharingSMBOptions.png "SMB Service Options")
 
 [Back to Top](#table-of-contents)
 #### Delete SMB Share Dialog

@@ -10,6 +10,7 @@ tags:
  - scaleacls
 ---
 
+
 ## Table of Contents
 {{< toc >}}
 
@@ -42,6 +43,7 @@ You have two options that modify ACL permissions for SMB shares:
 
 See both the [Permissions]({{< relref "PermissionsSCALE.md" >}}) article for more details on configuring ACLs and [Edit ACL Screen]({{< relref "/SCALE/SCALEUIReference/Storage/Pools/EditACLScreens.md" >}}) article for more information on the ACL editor screens and setting options.
 
+Also see [Tuning the Dataset ACL]({{< relref "/AddSMBShares.md#Tuning-the-dataset-ACL">}}) for an example of modifying ACL permissions for an SMB share.
 [Back to Top](#table-of-contents)
 ### Configuring SMB Share ACL
 To configure an Access Control List (ACL) entry for an SMB share use the **Edit Share ACL** option. This opens the **SMB> Share ACL** screen. 
@@ -70,7 +72,6 @@ The ACL type setting on the **Add Dataset** or **Edit Dataset** configuration sc
 * If you set the dataset **ACL Type** to **NFSv4**, the NFSv4 type **ACL Editor** displays.
 
 Since SCALE gives users the option to use either POSIX or NFSv4 share [ACL types]({{< relref "/content/References/ACLPrimer.md" >}}), the **ACL Editor** screen differs depending on which ACL type the file system uses. 
-
 
 Both the POSIX and NFSv4 **ACL Editors** allow you to define ACL user accounts or groups that own or have specific permissions to the shared dataset. 
 The **User** and **Group** values show which accounts own or have full permissions to the dataset. 

@@ -51,7 +51,6 @@ The **Basic Options** settings also display on the **Advanced Options** settings
 | **Bind IP Addresses** | Select static IP addresses that SMB listens on for connections from the dropdown list. Leaving all unselected defaults to listening on all active interfaces.
 | **Auxiliary Parameters** | Enter additional [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) options. Refer to the [Samba Guide]9http://www.oreilly.com/openbook/samba/book/appb_02.html) for more information on these settings. You can use **Auxiliary Pparameters** to override the default SMB server configuration, but such changes could adversely affect SMB server stability or behavior. To log more details when a client attempts to authenticate to the share, add `log level = 1, auth_audit:5`. |
 
-
 [Back to Top](#table-of-contents)
-{{< taglist tag="scaleservices" limit="10" >}}
+
 {{< taglist tag="scalesmb" limit="10" title="Releated SMB Articles" >}}
