@@ -6,7 +6,7 @@ tags:
 - corenis
 ---
 
-NIS is a client–server directory service protocol for distributing system configuration data such as user and host names between computers on a computer network. 
+NIS is a client–server directory service protocol. Usage scenarios include the distribution of user and host names between networked computers. 
 Use the **Directory Services > NIS** screen to configure [Network Information Service](https://www.oreilly.com/library/view/practical-unix-and/0596003234/ch14s01.html) on your TrueNAS.  
 
 {{< hint warning >}}
@@ -26,6 +26,6 @@ For modern networks, [LDAP]({{< relref "LDAP.md" >}}) has replaced NIS.
 
 Click **SAVE** to save configuration settings.
 
-Click **REBUILD DIRECTORY SERVICE CACHE** to resync the cache if it becomes out of sync or fewer users than expected are available in the permissions editors. 
+Click **REBUILD DIRECTORY SERVICE CACHE** to resync the cache if it becomes out of sync. Or if fewer users than expected are available in the permissions editors. 
 
 {{< taglist tag="corenis" limit="10" >}}
