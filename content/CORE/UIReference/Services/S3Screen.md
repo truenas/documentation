@@ -1,13 +1,19 @@
 ---
 title: "S3 Screen"
+description: "Use the S3 screen to configure (S3) on your TrueNAS."
 weight: 100
+tags:
+- cores3
+- cores3minio
 ---
 
+S3 manages data using object storage architecture.
+
 {{< hint warning >}}
-Having large numbers of files (>100K for instance) in a single bucket with no sub-directories can harm performance and cause stability issues.
+Having large numbers of files (>100K for instance) in a single bucket with no sub-directories is not recommended. It can harm performance and cause stability issues.
 {{< /hint >}}
 
-Use the **S3** screen to configure your TrueNAS S3 service.
+Use the **S3** screen to configure S3 on your TrueNAS.
 
 ![ServicesS3Options](/images/CORE/12.0/ServicesS3Options.png "S3 Service Options")
 
@@ -18,12 +24,7 @@ The **SAVE** button activates after entering the required settings.
 {{< include file="/content/_includes/ServicesS3Fields.md" type="page" >}}
 
 {{< hint warning >}}
-MinIO deprecated Access key and Secret key replacing them respectively with the MINIO_ROOT USER and MINIO_ROOT_PASSWORD arguments and their values. For the ROOT_USER value, use a name up to 20 characters. For the ROOT_PASSWORD, use a string of 8 to 40 randomized characters. MinIO recommends using a long password string of unique random characters.
+MinIO deprecated Access key and Secret key. MINIO_ROOT USER arguments and their values replace Access key. MINIO_ROOT_PASSWORD arguments and their values replace Secret key. For the ROOT_USER value, use a name up to 20 characters. For the ROOT_PASSWORD, use a string of 8 to 40 randomized characters. MinIO recommends using a long password string of unique random characters.
 {{< /hint >}}
 
-## Additional Information
-
-[S3 for MinIO]({{< relref "/CORE/CORETutorials/Services/S3forMinIO.md" >}})
-
-[Configuring S3]({{< relref "/CORE/CORETutorials/Services/ConfiguringS3.md" >}})
-
+{{< taglist tag="cores3" limit="10" >}}
