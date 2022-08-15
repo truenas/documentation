@@ -10,12 +10,11 @@ tags:
 
 {{< toc >}}
 
-NIS ([Network Information Service](https://www.oreilly.com/library/view/practical-unix-and/0596003234/ch14s01.html)) is a client–server directory service protocol for distributing system configuration data such as user and host names between computers on a computer network.
+NIS ([Network Information Service](https://www.oreilly.com/library/view/practical-unix-and/0596003234/ch14s01.html)) is a client–server directory service protocol. It assists in distributing system configuration data between computers on a network. This data can include user and host names.
 
 {{< expand "What exactly does this do?" "v" >}}
-A NIS system maintains and distributes a central directory of user and group information, host names, e-mail aliases and other text-based tables of information in a computer network.
-In FreeBSD, the list of users is placed in <file>/etc/passwd</file> and authentication hashes in <file>/etc/shadow</file>.
-NIS adds another global user list to identify users on any NIS domain client.
+A NIS system maintains and distributes a central directory. This central directory contains user and group information. It also contains other text-based tables of information. These tables can include host names and e-mail aliases. 
+In FreeBSD, the file <file>/etc/passwd</file> contains the list of users. The file <file>/etc/shadow</file> contains the authentication hashes. NIS adds another global user list to identify users on any NIS domain client.
 {{< /expand >}}
 
 {{< hint warning >}}
@@ -37,6 +36,6 @@ Configure the remaining options as needed:
 
 Click **SAVE** to save configuration settings.
 
-Click **REBUILD DIRECTORY SERVICE CACHE** to resync the cache if it becomes out of sync or fewer users than expected are available in the permissions editors.  
+Click **REBUILD DIRECTORY SERVICE CACHE** to resync the cache if it becomes out of sync. Or if fewer users than expected are available in the permissions editors.  
 
 {{< taglist tag="corenis" limit="10" >}}  
