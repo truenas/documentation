@@ -7,7 +7,7 @@ tags:
 - corealerts
 ---
 
-The **Alert Notifications** panel displays system alerts and provides options to dismiss or reopen dismissed alerts on your TrueNAS.  
+The **Alert Notifications** panel displays system alerts. It provides options to dismiss or reopen dismissed alerts on your TrueNAS.  
 
 ![AlertsPanel](/images/CORE/AlertsPanel.png "Alerts Panel")
 
@@ -16,7 +16,7 @@ The **Alert Notifications** panel displays system alerts and provides options to
 | Name | Description |
 |------|------|
 | **Dismiss** | Dismisses a single alert. |
-| **Re-Open** | Re-opens a recently-dismissed alert. |
+| **Re-Open** | Re-opens a recently dismissed alert. |
 | **Dismiss All Alerts** | Dismisses all alerts. |
 | **Re-Open All Alerts** | Displays at the bottom of the panel if you dismiss more than one alert. Click to re-open all dismissed alerts if they are still active. |  
 
