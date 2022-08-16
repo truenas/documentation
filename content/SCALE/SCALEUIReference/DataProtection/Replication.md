@@ -340,7 +340,7 @@ Adding a name to the end of the path creates a new dataset in that location.
 ![SCALEReplicationAddAdvancedDestination](/images/SCALE/SCALEAdvRepDestination.png "Advanced Replication: Destination")
 
 By default, the destination dataset is set to be read-only* after the replication is complete.
-You can change the **Destination Dataset Read-only Policy** to only start replication when the destination is read-only (***REQUIRE**) or to disable checking the dataset's read-only state (**IGNORE**).
+You can change the **Destination Dataset Read-only Policy** to only start replication when the destination is read-only (**REQUIRE**) or to disable checking the dataset's read-only state (**IGNORE**).
 
 The **Encryption** checkbox adds another layer of security to replicated data by encrypting the data before transfer and decrypting it on the destination system.
 * Setting the checkbox adds more options to choose between using a **HEX** key or defining your own encryption **PASSPHRASE**.
