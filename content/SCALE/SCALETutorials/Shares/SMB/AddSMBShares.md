@@ -1,6 +1,6 @@
 ---
 title: "Adding SMB Shares"
-description: ""
+description: "This article provides instructions to add an SMB share, starting the service, and mounting the share."
 weight: 10
 aliases: /
 tags:
@@ -9,7 +9,6 @@ tags:
  - scaleshares
 ---
 
-## Table of Contents
 {{< toc >}}
 
 
@@ -35,12 +34,10 @@ Windows clients use [WS-Discovery](https://docs.oasis-open.org/ws-dd/ns/discover
 Discoverability through broadcast protocols is a convenience feature and not required to access an SMB server.
 {{< /hint >}}
 
-[Back to Top](#table-of-contents)
 ## Adding SMB Shares Video Tutorial
 
 {{< embed-video name="scaleangelfishsmbshare" >}}
 
-[Back to Top](#table-of-contents)
 ## Adding an SMB Share
 Adding an SMB share to your system involves several steps to add the share and get it working.
 
@@ -54,7 +51,6 @@ Now you [create the SMB share](#creating-the-smb-share). You can create a basic 
 
 After adding the share you [start the service](#starting-the-smb-service) and [mount it](#mounting-the-smb-share) to your other system.
 
-[Back to Top](#table-of-contents)
 ### Adding an SMB Share Dataset
 
 Before creating the SMB share, first add the dataset the share uses for data storage.
@@ -73,7 +69,7 @@ TrueNAS creates the ZFS dataset with these settings:
  This default ACL is restrictive and only allows access to the dataset owner and group.
  You can modify the ACL later according to your use case.
 {{< /expand >}}
-[Back to Top](#table-of-contents)
+
 ### Creating Local User Accounts
 Use **Credentials > Local Users** to add new users to your TrueNAS. 
 
@@ -102,7 +98,7 @@ Users should begin upgrading legacy Samba domains to Samba AD domains.
 {{< /hint >}}
 Local TrueNAS user accounts no longer have access to the share.
 {{< /expand >}}
-[Back to Top](#table-of-contents)
+
 ### Tuning the Dataset ACL
 
 After creating a dataset and accounts, you need to investigate your access requirements and adjust the dataset ACL to match. 
@@ -129,7 +125,6 @@ To change or add permissions for the **builtin_users** group, go to **Storage**,
 See [Permissions]({{< relref "PermissionsScale.md" >}}) for more information on editing dataset permissions.
 {{< /expand >}}
 
-[Back to Top](#table-of-contents)
 ### Creating the SMB Share
 
 To create a basic Windows SMB share, go to **Shares**.
@@ -158,9 +153,7 @@ To create a basic Windows SMB share, go to **Shares**.
 
 You can also choose to enable the SMB service at this time.
 
-[Back to Top](#table-of-contents)
 ### Configuring Share Advanced Options Settings
-
 For a basic SMB share you do not need to use the **Advanced Options** settings, but if you set **Purpose** to **No Presets**, click **Advanced Options** to finish customizing the SMB share for your use case.
 
 The following are possible use cases, but for all settings see [SMB Shares Screens]({{< relref "SMBSharesScreens.md" >}}).
@@ -174,18 +167,18 @@ If you want to allow guest access to the share, select **Allow Guest Access**.
 The privileges are the same as the guest account. 
 Guest access is disabled by default in Windows 10 version 1709 and Windows Server version 1903. 
 Additional client-side configuration is required to provide guest access to these clients.
+
 * **MacOS clients**: Attempting to connect as a user that does not exist in FreeNAS *does not* automatically connect as the guest account. 
+
 * **Connect As: Guest** Specifically choose this option in macOS to log in as the guest account. 
   See the [Apple documentation](https://support.apple.com/guide/mac-help/connect-mac-shared-computers-servers-mchlp1140/mac) for more details.
 {{< /expand >}}
 
-[Back to Top](#table-of-contents)
 #### Setting Up Read or Write Access
 To prohibit writes to the share, select **Export Read Only**.
 
 To restrict share visibility to users with read or write access to the share, select **Access Based Share Enumeration**. See the [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) manual page.
 
-[Back to Top](#table-of-contents)
 #### Setting Up Host Allow and Host Deny
 To control allowed or denied host names or IP addresses, use the **Host Allow** and **Host Deny** options.
 {{< expand "Click here for more information" "v" >}}
@@ -198,7 +191,7 @@ The **Hosts Allow** and **Hosts Deny** fields work together to produce different
 * If there is a Hosts Deny* list but no Hosts Allow list, then allow all hosts on the Hosts Deny list.
 * If there is both a Hosts Allow and Hosts Deny list, then allow all hosts on the Hosts Allow list. If there is a host not on the Hosts Allow and not on the Hosts Deny list, then allow it.
 {{< /expand>}}
-[Back to Top](#table-of-contents)
+
 #### Approving Apple Software Compatibility
 AFP shares are deprecated and not available in SCALE. To customize your SMB share to work with a migraged AFP share or with your MacOS, use the **Advanced Options** settings provided for these uses cases.
 {{< expand "Click here for more information" "v" >}}
@@ -208,37 +201,28 @@ AFP shares are deprecated and not available in SCALE. To customize your SMB shar
 
 **Use Apple-style Character Encoding** converts NTFS illegal characters in the same manner as MacOS SMB clients. By default, Samba uses a hashing algorithm for NTFS illegal characters. 
 {{< /expand >}}
-[Back to Top](#table-of-contents)
+
 ## Starting the SMB Service
-
-To connect to an SMB share you must start the related system service.
-
+To connect to an SMB share you must start the related system service. 
 You can start the service from the **Windows SMB Share** header on the **Sharing** screen or on the **System Settings > Services** screen.
 ### Starting the Service Using the Windows SMB Share 
-{{< expand "Click here for more information" "v" >}}
 From the main **Sharing** screen, click on the **Windows (SMB) Shares** <span class="material-icons">more_vert</span> to display the service options which are **Turn Off Service** if the service is running or **Turn On Service** if the service is stopped.
 
 ![SharingSMBServicesActionOptions](/images/SCALE/22.02/SharingSMBServicesActionOptions.png "SMB Service Options")
 
 Each SMB share on the list also has a toggle you can use to enable or disable the service for that share.   
-{{< /expand >}}
-[Back to Top](#table-of-contents)
+
 ### Starting the Service Using the System Settings
-{{< expand "Click here for more information" "v" >}}
 To make SMB share available on the network, go to **System Settings > Services** and click the toggle to running for **SMB**.
 Set **Start Automatically** if you want the service to activate when TrueNAS boots.
-{{< /expand >}}
-[Back to Top](#table-of-contents)
-### Service Configuration
 
+### Service Configuration
 Configure the SMB service by clicking <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
 Unless you need a specific setting or are configuring a unique network environment, we recommend the default settings.
 
-[Back to Top](#table-of-contents)
 ## Mounting the SMB Share 
 The instructions in this section cover mounting the SMB share on system with the following operating systems.
 
-[Back to Top](#table-of-contents)
 ## Mounting on Linux System
 Verify that your Linux distribution has the required CIFS packages installed.
 {{< expand "Click here for more information" "v" >}}
@@ -248,7 +232,7 @@ Mount the volume. `sudo mount -t cifs //computer_name/share_name /mnt/smb_share`
 
 If your share requires user credentials, add the switch `-o username=` with your username after `cifs` and before the share address.
 {{< /expand >}}
-[Back to Top](#table-of-contents)
+
 ### Mounting on Windows System
 Have the information on the Windows drive letter, computer name and share name ready before you start.
 {{< expand "Click here for more information" "v" >}}
@@ -256,7 +240,7 @@ To mount the SMB share to a drive letter on Windows, open the command line and r
 
 ```net use Z: \\computer_name\share_name /PERSISTENT:YES```
 {{< /expand >}}
-[Back to Top](#table-of-contents)
+
 ### Mounting on Apple System
 Have the user name and password for the user assigned to pool or for the guest if the share has guest access ready before you begin.
 {{< expand "Click here for more information" "v" >}}
@@ -265,16 +249,14 @@ Enter the SMB address: `smb://192.168.1.111`.
 
 Input the username and password for the user assigned to that pool or guest if the share has guest access.
 {{< /expand >}}
-[Back to Top](#table-of-contents)
-### Mounting on FreeBSD System
 
+### Mounting on FreeBSD System
+Mounting on a FreeBSD system involves creating the mount point and then mounting the volume.
 {{< expand "Click here for more information" "v" >}}
 Create a mount point: `sudo mkdir /mnt/smb_share`.
 
 Mount the volume. `sudo mount_smbfs -I computer_name\share_name /mnt/smb_share`.
 {{< /expand >}}
-[Back to Top](#table-of-contents)
-
 
 {{< taglist tag="scalesmb" limit="10" >}}
 {{< taglist tag="scaleafp" limit="10" title="Releated AFP Articles" >}}

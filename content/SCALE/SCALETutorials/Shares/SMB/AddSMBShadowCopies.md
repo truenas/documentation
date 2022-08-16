@@ -8,7 +8,6 @@ tags:
  - scalesmb
 ---
 
-
 {{< toc >}}
 
 **Enable Shadow Copies** exports ZFS snapshots as [Shadow Copies](https://docs.microsoft.com/en-us/windows/win32/vss/shadow-copies-and-shadow-copy-sets) for Microsoft Volume Shadow Copy Service (VSS) clients. 
@@ -31,7 +30,7 @@ Before you activate Shadow Copies in TrueNAS, there are a few caveats:
 
 ## Enabling Shadow Copies
 
-To enable shadow copies, go to **Shares > Windows (SMB) Shares** and click the <span class="material-icons">launch</span> launch icon to display the list view **Sharing > SMB** screen.
+To enable shadow copies, go to **Shares > Windows (SMB) Shares** and click **Windows (SMB) Shares <span class="material-icons">launch</span>** launch icon to display the list view **Sharing > SMB** screen.
 
 1. Click the <span class="material-icons">more_vert</span> for the share you want to change, and then click **Edit**. The **Edit SMB** screen displays.
 

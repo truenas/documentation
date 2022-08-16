@@ -8,7 +8,6 @@ tags:
  - scaleservices
 ---
 
-## Table of Contents
 {{< toc >}}
 
 The **Services > SMB** screen displays after you click the <span class="material-icons">edit</span> edit icon.
@@ -31,7 +30,6 @@ Click **Save** or **Cancel** to close the configuration screen and return to the
 | **Enable SMB1 support** | Select to allow legacy SMB1 clients to connect to the server. Note: SMB1 is being deprecated. We advise you to upgrade clients to operating system versions that support modern SMB protocol versions. |
 | **NTLMv1 Auth** | Off by default. Select to allow [smbd](https://www.samba.org/samba/docs/current/man-html/smbd.8.html) attempts to authenticate users with the insecure and vulnerable NTLMv1 encryption. This setting allows backward compatibility with older versions of Windows, but is not recommended. Do not use on untrusted networks. |
 
-[Back to Top](#table-of-contents)
 ### Advanced Options Settings
 The **Basic Options** settings also display on the **Advanced Options** settings screen with the **Other Options** settings.
 
@@ -50,7 +48,5 @@ The **Basic Options** settings also display on the **Advanced Options** settings
 | **Directory Mask** | Overrides default directory creation mask of **0777** which grants directory read, write and execute access for everybody. |
 | **Bind IP Addresses** | Select static IP addresses that SMB listens on for connections from the dropdown list. Leaving all unselected defaults to listening on all active interfaces.
 | **Auxiliary Parameters** | Enter additional [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) options. Refer to the [Samba Guide]9http://www.oreilly.com/openbook/samba/book/appb_02.html) for more information on these settings. You can use **Auxiliary Pparameters** to override the default SMB server configuration, but such changes could adversely affect SMB server stability or behavior. To log more details when a client attempts to authenticate to the share, add `log level = 1, auth_audit:5`. |
-
-[Back to Top](#table-of-contents)
 
 {{< taglist tag="scalesmb" limit="10" title="Releated SMB Articles" >}}

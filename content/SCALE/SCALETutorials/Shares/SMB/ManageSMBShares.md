@@ -11,7 +11,6 @@ tags:
 ---
 
 
-## Table of Contents
 {{< toc >}}
 
 
@@ -44,7 +43,7 @@ You have two options that modify ACL permissions for SMB shares:
 See both the [Permissions]({{< relref "PermissionsSCALE.md" >}}) article for more details on configuring ACLs and [Edit ACL Screen]({{< relref "/SCALE/SCALEUIReference/Storage/Pools/EditACLScreens.md" >}}) article for more information on the ACL editor screens and setting options.
 
 Also see [Tuning the Dataset ACL]({{< relref "/AddSMBShares.md#Tuning-the-dataset-ACL">}}) for an example of modifying ACL permissions for an SMB share.
-[Back to Top](#table-of-contents)
+
 ### Configuring SMB Share ACL
 To configure an Access Control List (ACL) entry for an SMB share use the **Edit Share ACL** option. This opens the **SMB> Share ACL** screen. 
 This screen is separate from file system permissions and applies at the entire SMB share level. 
@@ -60,7 +59,6 @@ Click the <span class="material-icons">more_vert</span> icon for the SMB share y
 Either select new values for the ACL entry or click **Add** to add a new block of **Add share_ACL** settings. 
 Click **Save** when you finish your changes.
 
-[Back to Top](#table-of-contents)
 ### Configuring Dataset File System ACL
 To configure an Access Control List (ACL) entry for the SMB share the path (defined in **Path**) at the dataset level, use the **Edit Filesystem ACL** option. 
 
@@ -93,8 +91,6 @@ To rewrite the current ACL with a standardized preset, click **Use ACL Preset** 
 
 When finished, click **Save Access Control List** to add this to the **Access Control List**.
 
-[Back to Top](#table-of-contents)
-
 #### Using ACL Entries (ACEs) on a POSIX ACL Editor
 If the file system uses a POSIX ACL, the first option presented is to select a preset. 
 
@@ -103,8 +99,6 @@ To rewrite the current ACL with a standardized preset, click **Use ACL Preset** 
 **POSIX_OPEN** to give owner and group full dataset control. All other accounts can modify the dataset contents.  
 **POSIX_RESTRICTED** to give owner full dataset control. Group can modify the dataset contents.
 **POSIX_HOME** to give owner full dataset control. Group can modify the dataset contents. All other accounts can navigate the dataset.
-
-[Back to Top](#table-of-contents)
 
 {{< taglist tag="scalesmb" limit="10" >}}
 {{< taglist tag="scaleafp" limit="10" title="Releated AFP Articles" >}}

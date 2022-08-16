@@ -10,7 +10,6 @@ tags:
 ---
 
 
-## Table of Contents
 {{< toc >}}
 
 The first SMB share screen to display after you click **Shares** is the **Sharing** screen with the service widgets four share types. 
@@ -27,7 +26,6 @@ If you return to the **Share** option (click **Shares** on the main navigation p
 
 ![SMBServiceWidgetFirstShare](/images/SCALE/22.02/SMBServiceWidgetFirstShare.png "First SMB Share Added Screen")
 
-[Back to Top](#table-of-contents)
 ### Windows (SMB) Shares Widget
 
 The **Windows (SMB) Shares <span class="material-icons">launch</span>** widget after adding SMB shares and every time you click **Shares** on the main navigation panel to return to the **Sharing** screen. 
@@ -38,7 +36,6 @@ Each SMB share toggle provides quick access to enable or disable the share.
 Each share also has a <span class="material-icons">delete</span> [delete option](#delete-smb-share-dialog). 
 The SMB share row is a link to the [**Edit SMB** screen](#add-and-edit-smb-screens).
 
-[Back to Top](#table-of-contents)
 #### Windows (SMB) Shares Service Toolbar
 The **Windows (SMB) Shares <span class="material-icons">launch</span>** toolbar displays the status of the SMB service as either **STOPPED** (red) or **RUNNING** (blue).
 Before adding the first share, **STOPPED** status displays in the default color.
@@ -53,7 +50,6 @@ The <span class="material-icons">more_vert</span> displays options turn the SMB 
 
 ![SharingSMBOptions](/images/SCALE/22.02/SharingSMBOptions.png "SMB Service Options")
 
-[Back to Top](#table-of-contents)
 #### Delete SMB Share Dialog
 The <span class="material-icons">delete</span> trash can icon to displays the **Delete** dialog.
 
@@ -61,7 +57,6 @@ The <span class="material-icons">delete</span> trash can icon to displays the **
 
 Select **Confirm** to activate the **Delete** button.
 
-[Back to Top](#table-of-contents)
 ## Sharing SMB Details Screen 
 **Windows SMB Share <span class="material-icons">launch</span>** or **View Details** displays The **Sharing >SMB** details screen. From this screen you can add or edit an SMB share on the list. 
 
@@ -75,7 +70,6 @@ The **Enabled** checkbox provides status of the share. If selected it indicates 
 
 The <span class="material-icons">more_vert</span> displays a dropdown list of options for each share. The options include **[Edit](#add-and-edit-smb-screens)** that displays the **Edit SMB** screen, **[Edit Share ACL](#smb-share-acl-screen)** that displays the **Edit Share ACL** screen, **[Edit Filesystem ACL](#edit-filesystem-acl-screen)** that opens the **Edit Filesystem ACL** screen, and **[Delete](#delete-smb-share-dialog)** that displays the **Delete** dialog.
 
-[Back to Top](#table-of-contents)
 ## Add and Edit SMB Screens
 The two SMB share configuration screens, **Add SMB** and **Edit SMB**, display the same setting options. 
 
@@ -95,9 +89,9 @@ The **Basic Options** settings in this section display on the **Advanced Options
 | **Description** | Enter a brief description or notes on how you use this share.  |
 | **Enabled** | Selected by default to enable sharing the path when the SMB service is activated. Clear to disable this SMB share without deleting it. |
 
-[Back to Top](#table-of-contents)
 ### Advanced Options Settings
 Click **Advanced Options** to display settings made available or locked based on the option selected in **Purpose**. 
+
 #### Access Settings
 The **Access** settings allow you to customize access to the share, files, and to specify allow or deny access for host names or IP addresses.
 
@@ -113,7 +107,6 @@ The **Access** settings allow you to customize access to the share, files, and t
 | **Hosts Allow** | Enter a list of allowed host names or IP addresses. Separate entries by pressing <kbd>Enter</kbd>. You can find a more detailed description with examples [here](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html#HOSTSALLOW).
 | **Hosts Deny** | Enter a list of denied host names or IP addresses. Separate entries by pressing <kbd>Enter</kbd>. |
 
-[Back to Top](#sharing-smb-screen)
 #### Other Settings
 The **Other Options** settings are for improving Apple software compatibility, ZFS snapshot features, and other advanced features.
 
@@ -131,7 +124,6 @@ The **Other Options** settings are for improving Apple software compatibility, Z
 | **Enable SMB2/3 Durable Handles** | Select to allow using open file handles that can withstand short disconnections. Support for POSIX byte-range locks in Samba is also disabled. This option is not recommended when configuring multi-protocol or local access to files. |
 | **Enable FSRVP** | Select to enable support for the File Server Remote VSS Protocol ([FSVRP](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-fsrvp/dae107ec-8198-4778-a950-faa7edad125b)). This protocol allows remote procedure call (RPC) clients to manage snapshots for a specific SMB share. The share path must be a dataset mount point. Snapshots have the prefix `fss-` followed by a snapshot creation timestamp. A snapshot must have this prefix for an RPC user to delete it. |
 
-[Back to Top](#sharing-smb-screen)
 #### Path Suffix and Auxiliary Parameters Settings
 Use **Path Suffix** to provide unique shares on a per user, computer or IP address basis. Use **Auxiliary Parameters** to enter additional settings.
 
@@ -142,7 +134,6 @@ Use **Path Suffix** to provide unique shares on a per user, computer or IP addre
 | **Path Suffix** | Appends a suffix to the share connection path. Use this to provide unique shares on a per-user, per-computer, or per-IP address basis. Suffixes can contain a macro. See the [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) manual page for a list of supported macros. The connect path must be preset before a client connects. |
 | **Auxiliary Parameters** | Enter additional [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) settings. |
 
-[Back to Top](#sharing-smb-screen)
 #### Advanced Options Presets
 The **Purpose** setting you select in the **Basic Options** affects the **Advanced Options** settings (presets) you can select, making some settings available or locked. 
 The expandable below provides a comparison table that lists these presets and shows whether the option is available or locked.
@@ -171,8 +162,8 @@ A <i class="material-icons" aria-hidden="true" title="System Update">check_box</
 | **Path Suffix** | [ ] (locked) | [%U] (locked) | [%U] | [%U] (locked) | [ ] (locked) |
 | **Auxiliary Parameters** | [ ] | [ ] | [ ] | [ ] | [ ] |
 
+[Back to Advanced Options Settings](#advanced-options-settings)
 {{< /expand >}}
-
 ## SMB Share ACL screen
 The **SMB Share ACL** screen displays when you click **Edit Share ACL** from the <span class="material-icons">more_vert</span> options list on the [**Sharing SMB** details screen](#sharing-smb-details-screen). 
 These settings configure new ACL entries for the selected SMB share and apply at the entire SMB share level, it is separate from file system permissions.
@@ -184,7 +175,6 @@ These settings configure new ACL entries for the selected SMB share and apply at
 |---------|-------------|
 | **Share Name** | Displays the name for the share. This field is read only. |
 
-[Back to Top](#table-of-contents)
 ### ACL Entries Settings
 **ACL Entries** are listed as a block of settings. Click **Add** to add a new entry.
 
@@ -198,8 +188,6 @@ These settings configure new ACL entries for the selected SMB share and apply at
 
 **Save** stores the share ACL and immediately applies it to the share.
 
-[Back to Top](#table-of-contents)
-
 ## Edit Filesystem ACL Screen
 **Edit Filesystem ACL** opens **Storage > Edit *POSIX.1e* ACL** with an **ACL Editor** screen. 
 
@@ -208,8 +196,6 @@ These settings configure new ACL entries for the selected SMB share and apply at
 The type of ACL editor screen depends on the SMB dataset **ACL Type** selection. 
 If set to **NFSv4** the editor displayed is an NFSv4 type editor. If set to **POSIX** the first screen displayed is the **Select a preset** window folllowed by the POSIX type editor.
 See [Edit ACL Screens]({{< relref "EditACLScreens.md" >}}) or [Permissions]({{< relref "PermissionsScale.md" >}}) for more information on configuring permissions.
-
-[Back to Top](#table-of-contents)
 
 {{< taglist tag="scalesmb" limit="10" >}}
 {{< taglist tag="scaleafp" limit="10" title="Related AFP Articles" >}}
