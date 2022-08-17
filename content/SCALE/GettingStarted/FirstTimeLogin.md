@@ -38,16 +38,14 @@ To change the host name and domain in the web interface, go to **Network** and c
 
 To access the web interface using an IP address, use the one that the Console Setup Menu generated after installing SCALE, or use the one you configured in the [Post-install Configuration article]({{< relref "/SCALE/GettingStarted/install/ConsoleSetupMenuSCALE.md" >}}) if you upgraded from CORE.
 
-Create a strong login password!
-You can reset the root password in the TrueNAS console setup menu or web interface by going to **Credentials > Local Users** and editing the **root** user.
-
 ## Logging In
 
 On a computer with access to the same network as the TrueNAS system, enter the host name and domain or IP address in a web browser to connect to the web interface.
 
 ![LoginSCALE](/images/SCALE/LoginSCALE.png "TrueNAS SCALE Login Screen")
 
-Enter the root user name and account password you created during installation.
+Use the administrative account credentials to log in.
+The default administrator username is `root` and the password is created when installing TrueNAS.
 
 {{< expand "Troubleshooting" "v" >}}
 If the user interface is not accessible by IP address from a browser, check these things:
@@ -61,6 +59,8 @@ If the web interface displays but seems unresponsive or incomplete:
 * Try a different browser. We recommend Firefox.
 
 If the UI becomes unresponsive after an upgrade or other system operation, clear the site data and refresh the browser (<kbd>Shift</kbd>+<kbd>F5</kbd>).
+
+If I cannot remember the administrator password to log in to the web interface, connect a keyboard and mouse to the TrueNAS system and open the [console setup menu]({{< relref "ConsoleSetupMenuScale.md#changing-the-root-password" >}}) to reset the `root` account password.
 {{< /expand >}}
 
 ## Dashboard
