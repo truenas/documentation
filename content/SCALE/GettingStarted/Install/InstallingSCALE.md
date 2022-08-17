@@ -151,7 +151,9 @@ After the system boots into the installer, follow these steps.
    
    ![InstallPartition](/images/CORE/12.0/InstallPartitionScreen.png "Install Partition Screen")
 
-4. Enter a password for the root user to log in to the web interface.
+4. Next, set a password for the TrueNAS administrative account, named `root` by default.
+   This account has full control over TrueNAS and is used to log in to the web interface.
+   Set a strong password and protect it.
    
    ![InstallPassword](/images/CORE/12.0/InstallPasswordScreen.png "Install Password Screen")
 
@@ -284,7 +286,9 @@ The machine starts and boots into the TrueNAS installer.
    
    ![InstallVMWarning](/images/CORE/12.0/InstallVMWarningScreen.png "Install VM Warning Screen")
 
-4. Set a password for root login.
+4. Next, set a password for the TrueNAS administrative account, named `root` by default.
+   This account has full control over TrueNAS and is used to log in to the web interface.
+   Set a strong password and protect it.
    
    ![InstallVMPassword](/images/CORE/12.0/InstallVMPasswordScreen.png "Install VM Password Screen")
 
