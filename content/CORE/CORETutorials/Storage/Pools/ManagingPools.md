@@ -89,7 +89,7 @@ Before upgrading an existing pool, be aware of these caveats:
 
 The upgrade itself only takes a few seconds and is non-disruptive.
 It is not necessary to stop any sharing services to upgrade the pool.
-However, it is best to upgrade when the pool is in heavy use.
+However, it is best to upgrade when the pool is not in heavy use.
 The upgrade process suspends I/O for a short period, but is nearly instantaneous on a quiet pool.
 {{< /expand >}}
 
