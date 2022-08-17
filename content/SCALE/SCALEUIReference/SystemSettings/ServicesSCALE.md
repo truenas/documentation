@@ -2,6 +2,8 @@
 title: "Services"
 geekdocCollapseSection: true
 weight: 50
+tags:
+ - scalessh
 ---
 
 {{< toc >}}
@@ -364,14 +366,15 @@ Here is a sample of the directory contents:
 
 {{< tab "SSH" >}}
 
-{{< embed-video name="scaleangelfishsshaccess" >}}
+<!-- {{< embed-video name="scaleangelfishsshaccess" >}} -->
 
 The SSH service lets users connect to TrueNAS with the [Secure SHell Transport Layer Protocol](https://tools.ietf.org/html/rfc4253).
 When using TrueNAS as an SSH server, the users in the network must use [SSH client software](https://www.bing.com/search?q=SSH%20client%20software) to transfer files with SSH.
 
-{{< hint warning >}}
+{{< hint danger >}}
 Allowing external connections to TrueNAS is a security vulnerability!
 Do not enable SSH unless you require external connections.
+See [Security Recommendations]({{< relref "Security.md" >}}) for more security considerations when using SSH.
 {{< /hint>}}
 
 Activate or configure the SSH service on the **System Settings > Services** page.
@@ -385,8 +388,6 @@ Configure the options as needed to match your network environment.
 {{< include file="static/includes/Reference/ServicesSSHFields.md.part" markdown="true" >}}
 {{< /expand >}}
 
-Remote systems may require *root* access. Be sure to have all security precautions in place before allowing *root* access.
-
 We recommend these additional SSH service options:
 
 * Add `NoneEnabled no` to **Auxiliary Parameters** to disable the insecure *none* cipher.
@@ -395,6 +396,9 @@ We recommend these additional SSH service options:
 
 Remember to enable the SSH service in **System Settings > Services** after making changes.
 To create and store specific [SSH connections and keypairs]({{< relref "/SCALE/SCALEUIReference/Credentials/BackupCredentials/_index.md" >}}), go to **Credentials > Backup Credentials**.
+
+{{< taglist tag="scalessh" limit="10" >}}
+
 {{< /tab >}}
 
 {{< tab "UPS" >}}

@@ -7,13 +7,18 @@ tags:
 - coressh
 ---
 
+{{< toc >}}
+
 The SSH service allows connections to TrueNAS with the [Secure SHell Transport Layer Protocol](https://tools.ietf.org/html/rfc4253).
 To use TrueNAS as an SSH server, the users in the network must use [SSH client software](https://www.bing.com/search?q=SSH%20client%20software) to transfer files with SSH.
 
-{{< hint warning >}}
+{{< hint danger >}}
 Allowing external connections to TrueNAS is a security vulnerability!
 Only enable SSH when there is a need for external connections.
+See [Security Recommendations]({{< relref "Security.md" >}}) for more security considerations when using SSH.
 {{< /hint>}}
+
+## Service Configuration
 
 To configure SSH, disable the service and click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
 
@@ -23,11 +28,13 @@ Configure the options as needed to match your network environment.
 
 See [SSH Screen]({{< relref "/CORE/UIReference/Services/ServicesSSH.md" >}})
 
-{{< hint warning >}}
-Remote systems could need *root* access to the system. Make sure to have all security precautions in place before allowing root access.
+{{< hint danger >}}
+Root access to the system from a remote client is never recommended.
+If an unavoidable critical situation requires allowing root access, it is recommended to [configure two-factor authentication]({{< relref "UsingTwoFactorAuthentication.md" >}}) first.
+Also, disable root logins as soon as possible.
 {{< /hint>}}
 
-There are some additional options recommendations for the SSH service:
+There are some additional option recommendations for the SSH service:
 
 * Add **NoneEnabled no** to the **Auxiliary Parameters** to disable the insecure **none** cipher.
 * Increase the **ClientAliveInterval** if SSH connections tend to drop.
