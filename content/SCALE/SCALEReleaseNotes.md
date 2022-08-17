@@ -192,7 +192,6 @@ iXsystems is excited to announce the release of TrueNAS SCALE 22.02.3!
 * [NAS-116507](https://ixsystems.atlassian.net/browse/NAS-116507) Ensure all official apps have host path validation
 * [NAS-116492](https://ixsystems.atlassian.net/browse/NAS-116492) Bonded interface names are not updated on upgrade from core to scale
 * [NAS-116455](https://ixsystems.atlassian.net/browse/NAS-116455) TrueNAS ignores SMB Path Suffix when "Use as Home Share" is enabled
-* [NAS-116443](https://ixsystems.atlassian.net/browse/NAS-116443) SQLite is compiled without SQLITE\_ENABLE\_DBSTAT\_VTAB
 * [NAS-116422](https://ixsystems.atlassian.net/browse/NAS-116422) cpu and ram usage on dashboard fails on TrueNAS Scale
 * [NAS-116364](https://ixsystems.atlassian.net/browse/NAS-116364) Pool name with spaces produces an error when creating a VM or attempting to start one
 * [NAS-116332](https://ixsystems.atlassian.net/browse/NAS-116332) Upload ISO fails with wrong error when dataset is encrypted
