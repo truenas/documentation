@@ -1,5 +1,0 @@
-{{ if .Content }}
-  {{ .Description | chomp }}{{ if .Truncated }}&hellip;{{ end }}
-{{ else if .Params.subtitle }}
-  {{ .Params.subtitle | markdownify | emojify }}
-{{ end }}

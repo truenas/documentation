@@ -79,12 +79,12 @@ enable = true
 
   # (Optional, default true) Enables search function with flexsearch.
   # Index is built on the fly and might slowdown your website.
-  geekdocSearch = false
+  geekdocSearch = true
 
   # (Optional, default false) Display search results with the parent folder as prefix. This
   # option allows you to distinguish between files with the same name in different folders.
   # NOTE: This parameter only applies when 'geekdocSearch = true'.
-  geekdocSearchShowParent = false
+  geekdocSearchShowParent = true
 
   # (Optional, default none) Add a link to your Legal Notice page to the site footer.
   # It can be either a remote url or a local file path relative to your content directory.

@@ -1,8 +1,0 @@
-{{- $result := slice -}}
-
-{{- range (where .Site.RegularPages "Section" "!=" "") -}}
-    {{- $data := dict "title" .Title "content" .Plain "id" .File.UniqueID -}}
-    {{- $result = $result | append $data -}}
-{{- end -}}
-
-{{ jsonify $result }}
