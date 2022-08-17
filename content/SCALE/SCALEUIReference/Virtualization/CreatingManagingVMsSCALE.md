@@ -56,9 +56,9 @@ Device notes:
 
 After creating the VM and configuring any devices for it, manage the VM by expanding its entry in **Virtualization**.
 
-![VirtualMachinesOptionsSCALE](/images/SCALE/VirtualMachinesOptionsSCALE.png "VM Options")
+![VirtualMachinesOptionsSCALE](/images/SCALE/VMRunningOptionsSCALE.png "VM Options")
 
-When the VM is active, it displays options for <i class="material-icons" aria-hidden="true" title="VNC">settings_ethernet</i> **Display** and <i class="material-icons" aria-hidden="true" title="Serial">keyboard_arrow_right</i> **Serial** connections.
+When the VM is active, it displays options for <i class="material-icons" aria-hidden="true" title="VNC">settings_ethernet</i> **Display** and <i class="material-icons" aria-hidden="true" title="Serial Shell">keyboard_arrow_right</i> **Serial Shell** connections.
 
 If the display connection screen appears distorted, try adjusting the display device resolution.
 
@@ -111,7 +111,7 @@ Here is an example of installing a Debian OS in a TrueNAS VM. The Debian `.iso` 
 * Leave the default values.
 
 **Confirm Options**
-* Verify the information is correct and then click **Submit**.
+* Verify the information is correct and then click **Save**.
 
 {{< /expand >}}
 
@@ -180,13 +180,16 @@ At the shell prompt:
 * Type **grubx64.efi** <kbd>Return</kbd>.
 
 {{< hint warning >}}
-To insure it starts automatically, you need to create the startup.nsh file at the root directory on the vm. At the shell prompt type **edit startup.nsh**. In the editor type:
-* Type **FS0:** <kbd>Return</kbd>.
-* Type **cd EFI** <kbd>Return</kbd>.
-* Type **cd Debian** <kbd>Return</kbd>.
-* Type **grubx64.efi** <kbd>Return</kbd>.
-* Type the <kbd>Control+s</kbd> keys(Command+s for Mac OS) <kbd>Return</kbd>.
-* Type the <kbd>Control+q</kbd> keys to quit.
+To insure it starts automatically, you need to create the startup.nsh file at the root directory on the vm. To create the file:
+* Go to the **Shell**.
+* At the shell prompt type **edit startup.nsh**.
+* In the editor type:
+  * Type **FS0:** <kbd>Return</kbd>.
+  * Type **cd EFI** <kbd>Return</kbd>.
+  * Type **cd Debian** <kbd>Return</kbd>.
+  * Type **grubx64.efi** <kbd>Return</kbd>.
+  * Type the <kbd>Control+s</kbd> keys(Command+s for Mac OS) <kbd>Return</kbd>.
+  * Type the <kbd>Control+q</kbd> keys to quit.
  
 Close the display window
 

@@ -1,6 +1,6 @@
 ---
 title: 13.0 Release Notes
-weight: 2
+weight: 3
 aliases:
   - /releasenotes/core/13.0beta1/
   - /releasenotes/core/13.0rc1/
@@ -13,16 +13,34 @@ aliases:
 
 {{< include file="/static/includes/General/LifecycleTable.html.part" html="true" >}}
 
+{{< include file="/content/_includes/SoftwareStatusPage.md" type="page" >}}
+
 ## Schedule
 
 {{< include file="/content/_includes/ReleaseScheduleWarning.md" type="page" >}}
 
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
-| 13.0-U2 | Code-freeze | 24 August 2022 |
-| 13.0-U2 | Internal Testing Sprints | 25 August - 02 September 2022 |
-| 13.0-U2 | Tag | 05 September 2022 |
-| 13.0-U2 | Release | 06 September 2022 |
+| 13.0-U2 | Code-freeze | 17 August 2022 |
+| 13.0-U2 | Internal Testing Sprints | 22 August - 26 August 2022 |
+| 13.0-U2 | Tag | 29 August 2022 |
+| 13.0-U2 | Release | 30 August 2022 |
+
+## 13.0-U1.1
+
+**July 21, 2022**
+
+iXsystems is pleased to announce the release of TrueNAS 13.0-U1.1! This is a hotpatch meant to address a few bugs found after release, primarily in share permissions.
+
+## TrueNAS 13.0-U1.1 Changelog
+
+### Bug
+
+* [NAS-117213](https://ixsystems.atlassian.net/browse/NAS-117213) - Can't change permissions on shares on 13.0-U1
+* [NAS-117163](https://ixsystems.atlassian.net/browse/NAS-117163) - add "Not Installed, Swapped" element status for X
+* [NAS-117071](https://ixsystems.atlassian.net/browse/NAS-117071) - Shadow Copies In Nested Datasets Not Visible in 13.0-U1 vs 12.0-U8.1
+* [NAS-117070](https://ixsystems.atlassian.net/browse/NAS-117070) - Upgrade from 13-U1 breakes SMB Permissions
+* [NAS-117077](https://ixsystems.atlassian.net/browse/NAS-117077) - Some drives not showing in Enclosure View when moved between enclosures
 
 ## 13.0-U1 
 
