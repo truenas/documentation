@@ -1,7 +1,7 @@
 ---
 title: "SMB Service Screen"
 description: "This article provides instructions in the SMB service screen and settings."
-weight: 40
+weight: 20
 aliases: 
 tags:
  - scalesmb
@@ -10,11 +10,12 @@ tags:
 
 {{< toc >}}
 
-The **Services > SMB** screen displays after you click the <span class="material-icons">edit</span> edit icon.
+The **Services > SMB** screen displays after going to the **Shares** screen, finding the **Windows (SMB) Shares** section, and clicking <span class="material-icons">more_vert</span> + **Config Service**.
+Alternately, you can go to **System Settings > Services** and click the <span class="material-icons">edit</span> edit icon for the SMB service.
 
 ## SMB Services Screen
 The **SMB Services** screen displays setting options to configure TrueNAS SMB settings to fit your use case.
-The **Basic Options** settings display on the **Advanced Options** screen.
+The **Basic Options** settings continue to display after selecting the **Advanced Options** screen.
 
 ![SMBServiceOptionsSCALE](/images/SCALE/SMBServiceOptionsSCALE.png "SMB Service Options")
 

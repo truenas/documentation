@@ -10,20 +10,14 @@ tags:
 
 {{< toc >}}
 
-
 ## Setting Up SMB Home Shares
 
-**Use as Home Share** allows the share to host user home directories. 
-Each user is given a personal home directory when connecting to the share which is not accessible by other users. 
-This allows for a personal, dynamic share. 
-Only one share can be used as the home share. See the [**SMB Home Shares**](#smb-home-shares) section below. 
-
 TrueNAS offers the **Use as Home Share** option for organizations or SMEs that want to use a single SMB share to provide a personal directory to every user account.
+Each user is given a personal home directory when connecting to the share.
+These home directories are not accessible by other users.
+Only one share can be used as the home share, but other non-home shares can be created.
 
-{{< hint warning >}}
-The **Use as Home Share** feature is available for a single TrueNAS SMB share. 
-You can create additional SMB shares without the **Use as Home Share** option enabled.
-{{< /hint >}}
+Creating an SMB home share requires configuring the system storage and joining Active Directory.
 
 ### Create a Pool and Join Active Directory
 

@@ -1,7 +1,7 @@
 ---
 title: "SMB Shares Screens"
 description: "This article provides information on SMB share screens and settings."
-weight: 40
+weight: 10
 aliases: 
 tags:
  - scaleshares
@@ -9,13 +9,12 @@ tags:
  - scaleafp
 ---
 
-
 {{< toc >}}
 
-The first SMB share screen to display after you click **Shares** is the **Sharing** screen with the service widgets four share types. 
+The first SMB share screen to display after you click **Shares** is the **Sharing** screen with the service widgets for the four supported share types. 
 
 ## Sharing SMB Screen 
-If you have not added SMB shares to the system, the **Windows SMB Share** option on the **Sharing** screen displays the **No SMB Shares** screen with the **Add SMB Share** button in the center of the screen. 
+If you have not added SMB shares to the system, clicking the **Windows SMB Share** option on the **Sharing** screen displays the **No SMB Shares** screen with the **Add SMB Share** button in the center of the screen. 
 
 ![SMBShareScreenNoShare](/images/SCALE/22.02/SMBShareScreenNoShare.png "Add SMB Share Screen")
 
@@ -28,7 +27,7 @@ If you return to the **Share** option (click **Shares** on the main navigation p
 
 ### Windows (SMB) Shares Widget
 
-The **Windows (SMB) Shares <span class="material-icons">launch</span>** widget after adding SMB shares and every time you click **Shares** on the main navigation panel to return to the **Sharing** screen. 
+The **Windows (SMB) Shares <span class="material-icons">launch</span>** widget updates after adding SMB shares and every time you click **Shares** on the main navigation panel to return to the **Sharing** screen. 
 
 ![SharingSMBServiceStatusScreen](/images/SCALE/22.02/SharingSMBServiceStatusScreen.png "Status of SMB Service Screen")
 

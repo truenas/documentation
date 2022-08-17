@@ -2,7 +2,7 @@
 title: "Adding SMB Shares"
 description: "This article provides instructions to add an SMB share, starting the service, and mounting the share."
 weight: 10
-aliases: /
+aliases:
 tags:
  - scalesmb
  - scaleafp
@@ -10,7 +10,6 @@ tags:
 ---
 
 {{< toc >}}
-
 
 ## About Windows (SMB) Shares
 SMB (also known as CIFS) is the native file sharing system in Windows.
@@ -43,7 +42,8 @@ Adding an SMB share to your system involves several steps to add the share and g
 
 First you [set up the storage](#adding-an-smb-share-dataset) for your new share.
 
-Next you [create local user accounts](#creating-local-user-accounts). 
+Next you [create local user accounts](#creating-local-user-accounts).
+It is also possible to use [Directory Services]({{< relref "/content/SCALE/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}) to provide additional user accounts.
 
 After adding or modifying local users, [modify the dataset ACL](#tuning-the-dataset-acl).
 
@@ -90,10 +90,10 @@ Major SMB client vendors are deprecating it, partly because signing and encrypti
 If you want LDAP server users to access the SMB share, go to **Credentials > Directory Services**. 
 If an LDAP server is configured, select the server and click **Edit** to display the **LDAP** configuration screen. 
 If not configured, click **Configure LDAP** to display the **LDAP** configuration screen.
-Click **Advanced Options** and select **Samba Schema (DEPRECATEDD - see help text**. 
+Click **Advanced Options** and select **Samba Schema (DEPRECATED - see help text**. 
 {{< hint warning >}}
 Only set LDAP authenication for SMB share is required and the LDAP server is already configured with Samba attributes.
-Support for **Samba Schema** is [officially depricated in Samba 4.13](https://www.samba.org/samba/history/samba-4.13.0.html). This feature will be removed after Samba 4.14.
+Support for **Samba Schema** is [officially deprecated in Samba 4.13](https://www.samba.org/samba/history/samba-4.13.0.html). This feature will be removed after Samba 4.14.
 Users should begin upgrading legacy Samba domains to Samba AD domains.
 {{< /hint >}}
 Local TrueNAS user accounts no longer have access to the share.
@@ -144,7 +144,7 @@ To create a basic Windows SMB share, go to **Shares**.
 3. (Optional) Select a preset from the **Purpose** dropdown list to apply and lock or unlock pre-determined **Advanced Options** settings for the share.
    To retain control over all the share **Advanced Options** settings, select **No presets**.
 
-4. (Optional Enter a **Description** to help explain the share purpose.
+4. (Optional) Enter a **Description** to help explain the share purpose.
 
 5. Select **Enabled** to allow sharing of this path when the SMB service is activated. 
    Leave it cleared if you want to disable but not delete the share configuration.
@@ -159,7 +159,7 @@ For a basic SMB share you do not need to use the **Advanced Options** settings, 
 The following are possible use cases, but for all settings see [SMB Shares Screens]({{< relref "SMBSharesScreens.md" >}}).
 
 ####  Enabling ACL Support
-To add ACL support to the share, select **Enable ACL**, and see then [Managing SMB Shares]({{< relref "ManagingSMBShares.md" >}})for more on configuring permissions for the share and the file system.
+To add ACL support to the share, select **Enable ACL**, and then see [Managing SMB Shares]({{< relref "ManagingSMBShares.md" >}}) for more on configuring permissions for the share and the file system.
 
 #### Setting Up Guest Access
 If you want to allow guest access to the share, select **Allow Guest Access**. 
@@ -187,9 +187,9 @@ Use the **Hosts Deny** field to enter a list of denied hostnames or IP addresses
 
 The **Hosts Allow** and **Hosts Deny** fields work together to produce different situations:
 * If neither **Hosts Allow** or **Hosts Deny** contains an entry, then SMB share access is allowed for any host.
-* If there is a Hosts Allow list but no Hosts Deny list, then only allow hosts on the Hosts Allow list.
-* If there is a Hosts Deny* list but no Hosts Allow list, then allow all hosts on the Hosts Deny list.
-* If there is both a Hosts Allow and Hosts Deny list, then allow all hosts on the Hosts Allow list. If there is a host not on the Hosts Allow and not on the Hosts Deny list, then allow it.
+* If there is a **Hosts Allow** list but no **Hosts Deny** list, then only allow hosts on the **Hosts Allow** list.
+* If there is a **Hosts Deny** list but no **Hosts Allow** list, then allow all hosts on the **Hosts Deny** list.
+* If there is both a **Hosts Allow** and **Hosts Deny** list, then allow all hosts on the **Hosts Allow** list. If there is a host not on the **Hosts Allow** and not on the **Hosts Deny** list, then allow it.
 {{< /expand>}}
 
 #### Approving Apple Software Compatibility

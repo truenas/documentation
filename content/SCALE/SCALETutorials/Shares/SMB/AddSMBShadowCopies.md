@@ -1,7 +1,7 @@
 ---
 title: "Using SMB Shadow Copy"
 description: "This article provides information on SMB share shadow copies, enbling shadow copies, and resolving an issue with Microsoft Windows 10 v2004 release."
-weight: 40
+weight: 30
 aliases: 
 tags:
  - scaleshares
@@ -49,6 +49,7 @@ To work around this issue, edit the Windows registry.
 Use **Regedit** and go to **HKLM\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters**.
 The **DWORD AllowInsecureGuestAuth** is an incorrect value: *0x00000000*. Change this value to **0x00000001** (Hexadecimal 1) to allow adjusting the settings in <file>gpedit.msc</file>. 
 You can use a Group Policy Update to apply this to a fleet of Windows machines.
+{{< /expand >}}
 
 ## Deleting Shadow Copies
 Users with an SMB client cannot delete Shadow copies. Instead, the administrator uses the TrueNAS web interface to remove snapshots. 

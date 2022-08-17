@@ -1,8 +1,8 @@
 ---
 title: "Managing SMB Shares"
 description: "This article provides instructions on managing existing SMB shares, adding share ACLs, and managing file system ACLs "
-weight: 10
-aliases: /
+weight: 20
+aliases:
 tags:
  - scalesmb
  - scaleafp
