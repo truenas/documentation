@@ -1,0 +1,29 @@
+{{ define "main" }}
+  {{ $pages := where .Site.RegularPages "Section" "!=" ""}}
+
+  <div id="main" class="search-page">
+    <div class="container">
+      {{ partial "content.html" . }}
+      <div class="input-group mt-5">
+        <div class="input-group-prepend">
+          <div class="input-group-text"><i class="fas fa-search"></i></div>
+        </div>
+        <input type="text" class="form-control" id="search-input" placeholder="Search">
+      </div>
+
+      <p id="search-results-count" class="mt-5 mb-4"></p>
+
+      <div class="search-results">
+        {{ range $pages }}
+          {{ partial "list_item.html" . }}
+        {{ end }}
+      </div>
+
+      <h5 id="search-results-message" class="text-center mt-5"></h5>
+    </div>
+  </div>
+{{ end }}
+
+{{ define "scripts_extra" }}
+  {{ partial "script_async.html" "js/search.js" }}
+{{ end }}
