@@ -9,7 +9,7 @@ In summary, the main required changes to settings are:
 The effect is that any user who can access the dataset contents can view the list of snapshots by going to the dataset <file>.zfs</file> directory.
 Users can browse and search any files they have permission to access throughout the entire dataset snapshot collection.
 
-When creating a snapshot, permissions or ACLs set on files within that snapshot mmight limit access to the files.
+When creating a snapshot, permissions or ACLs set on files within that snapshot might limit access to the files.
 
 Snapshots are read-only, so users do not have permission to modify a snapshot or its files, even if they had write permissions when creating the snapshot.
 

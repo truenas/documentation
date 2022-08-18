@@ -1,7 +1,9 @@
 ---
 title: "Creating VMware-Snapshots"
 weight: 30
-aliases: /core/storage/vmware-snapshots/
+aliases:
+ - /core/storage/vmware-snapshots/
+ - /core/uireference/storage/vmware-snapshots/
 ---
  
 **Storage** > **VMware-Snapshots** coordinates ZFS snapshots when using TrueNAS as a VMware datastore.

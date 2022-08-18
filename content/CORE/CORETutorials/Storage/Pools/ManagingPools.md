@@ -32,15 +32,14 @@ A dialog warns about the risks of disconnecting the pool and shows any system se
 
 ![Storage Pools Export Example](/images/CORE/12.0/StoragePoolsExportExample.png "Storage Pools Export Example")
 
-
 Because this is a destructive action, you must select additional checkboxes and enter the name of the pool when also deleting stored data.
 You can also remove existing shares to this data when the pool is disconnected.
 {{< /expand >}}
 {{< expand "Add Vdevs" >}}
-{{< expand "Add Vdevs" >}}
-This opens the **Pool Manager** to add more vdevs to the pool.
-@ -42,22 +42,23 @@ This opens the **Pool Manager** to add more vdevs to the pool.
+Opens the **Pool Manager** to add more vdevs to the pool.
 Changing the original encryption and data vdev configuration is not allowed.
+
+![Storage Pools Add Create Vdevs](/images/CORE/12.0/StoragePoolsAddCreateVdevs.png "Storage Pools Add Create Vdevs")
 
 A new data vdev is chosen by default.
 
@@ -90,7 +89,7 @@ Before upgrading an existing pool, be aware of these caveats:
 
 The upgrade itself only takes a few seconds and is non-disruptive.
 It is not necessary to stop any sharing services to upgrade the pool.
-However, it is best to upgrade when the pool is in heavy use.
+However, it is best to upgrade when the pool is not in heavy use.
 The upgrade process suspends I/O for a short period, but is nearly instantaneous on a quiet pool.
 {{< /expand >}}
 

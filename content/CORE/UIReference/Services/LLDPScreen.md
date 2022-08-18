@@ -1,10 +1,12 @@
 ---
 title: "LLDP Screen"
+description: "Use the LLDP screen to configure Link Layer Discovery Protocol (LLDP) on your TrueNAS"
 weight: 50
+tags:
+- corelldp
 ---
 
-Use the **LLDP** services screen to configure Link Layer Discovery Protocol (LLDP) service on your TrueNAS.
-
+Network devices often use Link Layer Discovery Protocol (LLDP) to communicate information. This information includes their identities, abilities and peers on a LAN. The LAN is typically wired Ethernet. The TrueNAS **LLDP** services screen configures LLDP on the system.
 
 ![ServicesLLDPOptions](/images/CORE/12.0/ServicesLLDPOptions.png "LLDP Service Options")
 
@@ -12,8 +14,8 @@ Use the **LLDP** services screen to configure Link Layer Discovery Protocol (LLD
 
 | Name | Description |
 |------|-------------|
-| **Interface Description** | Select to enables receive mode. Any received peer information is saved in interface descriptions. |
-| **County Code** | Select the two-letter [ISO 3166-1 alpha-2](https://www.iso.org/obp/ui/) code used to enable LLDP location support. The dropdown list includes a comprehensive list of two-character country codes. |
+| **Interface Description** | Select to enable receive mode. Interface description stores any peer information received. |
+| **County Code** | Select the two-letter [ISO 3166-1 alpha-2](https://www.iso.org/obp/ui/) code used to enable LLDP location support. The dropdown list is a comprehensive list of two-character country codes. |
 | **Location** | Enter the physical location of the host. |
 
-See [Configuring LLDP]({{< relref "/CORE/CORETutorials/Services/ConfiguringLLDP.md" >}})
+{{< taglist tag="corelldp" limit="10" >}}

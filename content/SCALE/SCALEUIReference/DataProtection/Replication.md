@@ -9,8 +9,9 @@ Configure SSH in TrueNAS before creating a remote replication task. This ensures
 
 To streamline creating simple replication configurations, the replication wizard assists with creating a new SSH connection and automatically creates a periodic snapshot task for sources that have no existing snapshots.
 
+## Simple Replications - Process Summary
+
 {{< expand "Process Summary" "v" >}}
-## Process Summary
 
 * **Data Protection > Replication Tasks**
   * Choose sources for snapshot replication.
@@ -44,8 +45,9 @@ You can load any saved replication to prepopulate the wizard with that configura
 Saving changes to the configuration creates a new replication task without altering the task you loaded into the wizard.
 This saves some time when creating multiple replication tasks between the same two systems.
 
-{{< tabs "Replication Task Steps" >}}
-{{< tab "Sources" >}}
+### Set up the Sources
+
+{{< expand "Source" "v" >}}
 Start by configuring the replication sources.
 Sources are the datasets or zvols with snapshots to use for replication.
 Choosing a remote source requires selecting an SSH connection to that system.
@@ -61,9 +63,11 @@ However, when the sources are on the local system and don't have any existing sn
 Local sources can also use a naming schema to identify any custom snapshots to include in the replication.
 Remote sources require entering a *snapshot naming schema* to identify the snapshots to replicate.
 A naming schema is a collection of [strftime](https://www.freebsd.org/cgi/man.cgi?query=strftime) time and date strings and any identifiers that a user might have added to the snapshot name.
+{{< /expand >}}
 
-{{< /tab >}}
-{{< tab "Destination" >}}
+### Configure the Destination
+
+{{< expand "Destination" "v" >}}
 The destination is where replicated snapshots are stored.
 Choosing a remote destination requires an SSH connection to that system.
 Expanding the directory browser shows the current datasets that are available for replication.
@@ -80,8 +84,11 @@ To use encryption when replicating data click the **Encryption** box. After sele
 * **Store Encryption key in Sending TrueNAS database** allows the user to either store the encryption key in the sending TrueNAS database (box checked) or choose a temporary location for the encryption key that decrypts replicated data (box unchecked)
 {{< /hint >}}
 
-{{< /tab >}}
-{{< tab "Security and Task Name" >}}
+{{< /expand >}}
+
+### Security and Task Name
+
+{{< expand "Security and Task Name" "v" >}}
 {{< hint info >}}
 Using encryption for SSH transfer security is always recommended.
 {{< /hint >}}
@@ -94,8 +101,12 @@ Choosing **no encryption** for the task is less secure but faster. This method u
 ![TasksReplicationTaskSecuritySCALE](/images/SCALE/RepSecurityTaskSCALE.png "Replication Security and Task Name")
 
 TrueNAS suggests a name based off the selected sources and destination, but this can be overwritten with a custom name.
-{{< /tab >}}
-{{< tab "Schedule and Lifetime" >}}
+{{< /expand >}}
+
+### Define a Schedule and Snapshot Lifetime
+
+{{< expand "Schedule and Lifetime" "v" >}}
+
 Adding a schedule automates the task to run according to your chosen times.
 You can choose between a number of preset schedules or create a custom schedule for when the replication runs.
 Choosing to run the replication once runs the replication immediately after saving the task, but you must manually trigger any additional replications.
@@ -104,8 +115,11 @@ Finally, define how long you want to keep snapshots on the destination system.
 We generally recommend defining snapshot lifetime to prevent cluttering the system with obsolete snapshots.
 
 ![TasksReplicationTasksScheduleLifeSCALE](/images/SCALE/RepScheduleSCALE.png "Custom Lifetimes")
-{{< /tab >}}
-{{< tab "Starting the Replication" >}}
+{{< /expand >}}
+
+### Starting the Replication
+
+{{< expand "Starting the Replication" "v" >}}
 **Start Replication*** saves the new replication task.
 New tasks are enabled by default and activate according to their schedule or immediately when no schedule is chosen.
 The first time a replication task runs, it takes longer because the snapshots must be copied entirely fresh to the destination.
@@ -116,13 +130,14 @@ Later replications run faster, as only the subsequent changes to snapshots are r
 Clicking the task state opens the log for that task.
 
 ![TasksReplicationTasksLogSCALE](/images/SCALE/RepLogSCALE.png "Replication Log")
-{{< /tab >}}
-{{< /tabs >}}
+
+{{< /expand >}}
 
 ## Local Replication
 
+### Process Summary
+
 {{< expand "Process Summary" "v" >}}
-## Process Summary
 
 * Requirements: Storage pools and datasets created in **Storage > Pools**.
 
@@ -140,7 +155,7 @@ Clicking the task state opens the log for that task.
 * Clicking the task **State** shows the logs for that replication task.
 {{< /expand >}}
 
-## Quick Backups with the Replication Wizard
+### Quick Local Backups with the Replication Wizard
 
 TrueNAS provides a wizard for quickly configuring different simple replication scenarios.
 
@@ -191,13 +206,14 @@ To confirm that snapshots are replicated, go to **Storage > Snapshots >Snapshots
 
 ![TasksReplicationTasksLocalSnapshotsSCALE](/images/SCALE/RepLocalSnaphots.png "Local Replicated Snapshots")
 
-
 ## Advanced Replication
 
 Requirements:
 * Storage pools with datasets and data to snapshot.
 * SSH configured with a connection to the remote system saved in **Credentials > Backup Credentials > SSH Connections**.
 * Dataset snapshot task saved in **Data Protection > Periodic Snapshot Tasks**.
+
+### Process Summary
 
 {{< expand "Process Summary" "v" >}}
 Go to **Data Protection > Replication Tasks** and click *ADD*, then select *ADVANCED REPLICATION CREATION*.
@@ -225,8 +241,6 @@ Go to **Data Protection > Replication Tasks** and click *ADD*, then select *ADVA
   * To automate the task according to its own schedule, set the *schedule* option and define a schedule for the replication task.
 {{< /expand >}}
 
-## Creating an Advanced Replication Task
-
 To use the advanced editor to create a replication task, go to **Data Protection > Replication Tasks**, click **ADD** to open the wizard, then click the **ADVANCED REPLICATION CREATION** button.
 
 Options are grouped together by category.
@@ -248,9 +262,9 @@ Use the **Logging Level** to set the message verbosity level in the replication 
 
 To ensure the replication task is active check the **Enabled** box.
 
+### Transport Options
 
-{{< tabs "Advanced Replication Configuration Sections" >}}
-{{< tab "Transport Options" >}}
+{{< expand "Transport Options" "v" >}}
 The **Transport** selector determines the method to use for the replication:
 **SSH** is the standard option for sending or receiving data from a remote system, but **SSH+NETCAT** is available as a faster option for replications that take place within completely secure networks.
 **Local** is only used for replicating data to another location on the same system.
@@ -266,8 +280,11 @@ For SSH+NETCAT replications, you must define the addresses and ports to use for 
 **Allow Blocks Larger than 128KB** is a one-way toggle.
 Replication tasks using large block replication only continues to work as long as this option remains enabled.
 {{< /hint >}}
-{{< /tab >}}
-{{< tab "Source" >}}
+{{< /expand >}}
+
+### Configure the Source
+
+{{< expand "Source" "v" >}}
 The replication **Source** is the datasets or zvols to use for replication.
 Select the sources to use for this replication task by opening the file browser or entering dataset names in the field.
 Pulling snapshots from a remote source requires a valid **SSH Connection** before the file browser can show any directories.
@@ -305,8 +322,11 @@ Alternately, you can use your **Replication Schedule** to determine which snapsh
 
 When a replication task is having difficulty completing, it is a good idea to set **Save Pending Snapshots**.
 This prevents the source TrueNAS from automatically deleting any snapshots that failg to replicate to the destination system.
-{{< /tab >}}
-{{< tab "Destination" >}}
+{{< /expand >}}
+
+### Set up the Destination
+
+{{< expand "Destination" "v" >}}
 Use **Destination** to specify where replicated data is stored.
 Choosing a remote destination requires an *[SSH Connection]({{< relref "/content/SCALE/SCALEUIReference/Credentials/BackupCredentials/_index.md" >}}) to that system.
 Expanding the file browser shows the current datasets that are available on the destination system.
@@ -320,7 +340,7 @@ Adding a name to the end of the path creates a new dataset in that location.
 ![SCALEReplicationAddAdvancedDestination](/images/SCALE/SCALEAdvRepDestination.png "Advanced Replication: Destination")
 
 By default, the destination dataset is set to be read-only* after the replication is complete.
-You can change the **Destination Dataset Read-only Policy** to only start replication when the destination is read-only (***REQUIRE**) or to disable checking the dataset's read-only state (**IGNORE**).
+You can change the **Destination Dataset Read-only Policy** to only start replication when the destination is read-only (**REQUIRE**) or to disable checking the dataset's read-only state (**IGNORE**).
 
 The **Encryption** checkbox adds another layer of security to replicated data by encrypting the data before transfer and decrypting it on the destination system.
 * Setting the checkbox adds more options to choose between using a **HEX** key or defining your own encryption **PASSPHRASE**.
@@ -337,8 +357,11 @@ Defining the **Snapshot Retention Policy** is generally recommended to prevent c
 Choosing **Same as Source** keeps the snapshots on the destination system for the same amount of time as the defined **Snapshot Lifetime** from the source system periodic snapshot task.
 
 You can use **Custom** to define your own lifetime for snapshots on the destination system.
-{{< /tab >}}
-{{< tab "Schedule" >}}
+{{< /expand >}}
+
+### Schedule the Task
+
+{{< expand "Schedule" "v" >}}
 By default, setting the task to **Run Automatically** starts the replication immediately after the related periodic snapshot task is complete.
 
 Setting the **Schedule** checkbox allows scheduling the replication to run at a separate time.
@@ -353,12 +376,11 @@ Setting the **Schedule** checkbox allows scheduling the replication to run at a 
 Setting **Only Replicate Snapshots Matching Schedule** restricts the replication to only replicate those snapshots created at the same time as the replication schedule.
 
 ![SCALEReplicationAdvancedScheduleOptions](/images/SCALE/SCALEAdvSchedule.png "Advanced Replication: Schedule")
-{{< /tab >}}
-{{< /tabs >}}
+
+{{< /expand >}}
 
 ## Unlocking a Replicated Encrypted Dataset or Zvol Without a Passphrase
 
 TrueNAS SCALE users should either replicate the dataset/Zvol without properties to disable encryption at the remote end or construct a special json manifest to unlock each child dataset/zvol with a unique key.
 
 {{< include file="/_includes/ReplicatedEncryptedUnlock.md" type="page" >}}
-
