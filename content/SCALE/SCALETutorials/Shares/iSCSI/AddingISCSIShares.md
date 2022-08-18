@@ -1,15 +1,13 @@
 ---
 title: "Adding iSCSI Block Shares"
-description: "This article provides instructions on setting up iSCSI block shares manually or using the wizard,and starting the service"
+description: "This article provides instructions on setting up iSCSI block shares manually or using the wizard and starting the service."
 weight: 30
 tags:
  - scaleiSCSI
  - scaleshares
 ---
 
-
 {{< toc >}}
-
 
 To get started with iSCSI shares, make sure you have already created a [zvol]({{< relref "/SCALE/SCALETutorials/Storage/Pools/AddManageZvols.md" >}}) or a [dataset]({{< relref "/SCALE/SCALETutorials/Storage/Pools/DatasetsSCALE.md" >}}) with at least one file to share.
 
@@ -23,18 +21,23 @@ This short tutorial video demonstrates basic steps to set up an iSCSI share conf
 
 ## Adding an iSCSI Block Share
 
-TrueNAS SCALE offers two methods to add an iSCSI block share: the setup wizard or the manual steps using the screen tabs. 
-Both methods cover the same basic steps but the setup wizard requires you to enter some settings before you can move on to the next screen or step in the setup process. 
-This is to ensure you complete the configuration correctly. 
+TrueNAS SCALE offers two methods to add an iSCSI block share: the setup wizard or the manual steps using the screen tabs.
+Both methods cover the same basic steps but have some differences.
 
-The manual process includes a few additional configuration screens and allows you to configure the block share in any order. Use this process to customize your share for special uses cases. 
-If you want to have more flexibility to configure part of the share out of the setup wizard flow use the manual process.
+The setup wizard requires you to enter some settings before you can move on to the next screen or step in the setup process.
+It is designed to ensure you configure the iSCSI share completely so it can be used immediately.
+
+The manual process has more configuration screens over the wizard and allows you to configure the block share in any order.
+Use this process to customize your share for special uses cases.
+It is designed to give you additional flexibility to build or tune a share to your exact requirements.
 
 ### Before you Begin
 
-Have the following ready before you begin adding your iSCSI block shar, create a pool or dataset to use for the iSCSI share. 
+Have the following ready before you begin adding your iSCSI block share:
 
-### Using the Setup Wizard to Add an iSCSI Block Share 
+* Storage pool and dataset.
+
+## iSCSI Wizard
 This section walks you through the setup process using the wizard screens.
 
 To use the setup wizard, 
@@ -85,7 +88,7 @@ To use the setup wizard,
 
 5. click **Save**.
 
-## Adding an iSCSI Block Share - Manual Setup
+## iSCSI Manual Setup
 This procedure walks you through adding each configuration setting on the seven configuration tab screens. While the procedure places each tab screen in order, you can select the tab screen to add settings in any order.
 
 {{< expand "Click here for more information" "v" >}}
@@ -181,9 +184,9 @@ This procedure walks you through adding each configuration setting on the seven 
 
    f. (Optional) Slect the group ID in **Initiator Group ID** or leave it set to **None**.
 
-   G. (Optional) Select the **Authentication Method** from the dropdown list of options.
+   g. (Optional) Select the **Authentication Method** from the dropdown list of options.
    
-   H. (Optional) Select the **Authentication Group Number** from the dropdown list. 
+   h. (Optional) Select the **Authentication Group Number** from the dropdown list. 
       Leave at **None** or enter an integer to represent the number of existing authorized access.
    
    i. Click **Save**.
@@ -227,7 +230,7 @@ This procedure walks you through adding each configuration setting on the seven 
    e. Click **Save**
 {{< /expand >}}
 
-### Creating a Quick iSCSI Target
+## Creating a Quick iSCSI Target
 TrueNAS SCALE allows users to add iSCSI targets without having to set up another share.
 {{< expand "Click here for more information" "v" >}}
 Go to **Shares** and click **Add** in the **Block (iSCSI) Shares Targets** widget.

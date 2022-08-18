@@ -9,7 +9,6 @@ tags:
 
 {{< toc >}}
 
-
 The **Sharing** screen opens after you click **Shares** on the main navigation panel.  
 
 ## Block (iSCSI) Shares Targets Widget
@@ -65,7 +64,7 @@ To display the **iSCSI Group** settings, click **Add**.
 ## iSCSI Configuration Screens
 The iSCSI configuration screens display across seven tabs, one for each of the share configuration areas.  
 
-![SharingISCSIWizardDeviceSCALE](/images/SCALE/22.02/SharingISCSIWizardDeviceSCALE.png "iSCSI Wizard: Block Device") change image
+![SharingISCSIWizardDeviceSCALE](/images/SCALE/SharingISCSIWizardDeviceSCALE.png "iSCSI Wizard: Block Device")
 
 The **Add** button at the top of the **Sharing > iSCSI** screen, when it displays the configuration tabs, works with the tab or screen currently selected. For example, if **Portals** is the current tab/screen selected, the **Add** button opens the **Sharing > iSCSI > Portals > Add** screen.
 
@@ -80,7 +79,7 @@ The **Target Global Configuration** displays configuration settings that apply t
 There are no add, edit or delete options for this screen.
 It opens after you click **Configure** on the **Block (iSCSI) Share Target** widget on the main **Sharing** screen. It also opens when you click **Config Service**.
 
-![SharingISCSIManualTargetGlobalConfigSCALE](/images/SCALE/SharingISCSIManualTargetGlobalConfigSCALE.png "iSCSI Target Global Configuration") change image
+![SharingISCSIManualTargetGlobalConfigSCALE](/images/SCALE/SharingISCSIManualTargetGlobalConfigSCALE.png "iSCSI Target Global Configuration")
 
 | Setting | Description |
 |---------|-------------|

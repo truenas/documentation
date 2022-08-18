@@ -1,5 +1,5 @@
 ---
-title: "Using an ISCSI Share"
+title: "Using an iSCSI Share"
 description: "This article provides information on setting up a Linux or Windows system to use a TrueNAS-configured iSCSI block share."
 weight: 40
 tags:
@@ -8,7 +8,6 @@ tags:
 ---
 
 {{< toc >}}
-
 
 Connecting to and using an iSCSI share can differ between operating systems.
 
@@ -19,9 +18,9 @@ This section describes preparing your system to start the iSCSI service, log in 
 {{< expand "Click here for more information" "v" >}}
 Before you begin, open the command line and ensure you have installed the `open-iscsi` utility.
 To install the utility on an Ubuntu/Debian distribution, enter command `sudo apt update && sudo apt install open-iscsi`.
-After the installation completes, ensure the iscsid service is running using the `sudo service iscsid start` command.
+After the installation completes, ensure the **iscsid** service is running using the `sudo service iscsid start` command.
 
-First, with the iscsid service started, run the `iscsiadm` command with the discovery arguments and get the necessary information to connect to the share.
+First, with the **iscsid** service started, run the `iscsiadm` command with the discovery arguments and get the necessary information to connect to the share.
 
 ![LinuxISCSIAppInstall](/images/CORE/LinuxISCSIAppInstall.png "Linux ISCSI App Install")
 
@@ -44,12 +43,12 @@ Next, discover and log into the iSCSI share.
    ```
 
    The user for `discovery.sendtargets.auth.username` is set in the **Authorized Access** used by the iSCSI share **Portal**. 
-   Likewise, the password to use for `discovery.sendtargets.auth.password` is the **Authorized Access** secret. 
+   Likewise, the password to use for `discovery.sendtargets.auth.password` is the **Authorized Access** secret.
    Without those lines, the iscsiadm does not discover the portal with the CHAP authentication method.
 
-2. Enter comand `sudo iscsiadm \--mode node \--targetname {BASENAME}:{TARGETNAME} \--portal {IPADDRESS} \--login`, 
+2. Enter comand `sudo iscsiadm \--mode node \--targetname {BASENAME}:{TARGETNAME} \--portal {IPADDRESS} \--login`,
    where *{BASENAME}* and *{TARGETNAME}* is the discovery command information.
-   
+
    ![LinuxISCSILogin](/images/CORE/LinuxISCSILogin.png "Linux ISCSI Login")
 
 Now you partition an iSCSI disk.
