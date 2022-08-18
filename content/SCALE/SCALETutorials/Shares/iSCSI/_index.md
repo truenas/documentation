@@ -6,6 +6,9 @@ aliases:
 ---
 
 
+## About Block (iSCSI) Shares Targets
+{{< include file="/_includes/iSCSIRef.md" type="page" >}}
+
 ## Article Summaries
 
 {{< children depth="2" description="true" >}}
