@@ -22,64 +22,64 @@ Depending on the share configuration, it can restrict users to read or write pri
 {{< embed-video name="scaleangelfishnfsshare" >}}
 
 ## Creating an NFS Share
-Go to **Shares > Unix (NFS) Shares** and click **Add**.
+Go to **Shares > Unix (NFS) Shares** and click **Add** to open the **Add NFS** configuration screen.
 
 ![SharingNFSAddSCALE](/images/SCALE/SharingNFSAddSCALE.png "Services NFS Add")
 
-Use the file browser to select the dataset to be shared.
+Click **Add** to display **Add paths** settings, and then enter the path or use the <span class="material-icons">arrow_right</span> icon to the left of **<span class="material-icons">folder</span>/mnt** to locate the dataset and populate the path.
+
 You can enter an optional text to help identify the share in **Description**.
-Clicking **Save** creates the share.
-At the time of creation, you can select **Enable Service** for the service to start and to automatically start after any reboots.
+Click **Save** to create the share.
+
+After adding the first NFS share, the system opens an enable service dialog. 
+
+![SharingNFSEnableServiceDialog](/images/SCALE/22.02/SharingNFSEnableServiceDialog.png "Unix (NFS) Share Widget")
+
+**Enable Service** turns the NFS service on and changes the toolbar status to **Running**. 
 If you wish to create the share but not immediately enable it, select **Cancel**.
 
-### NFS Share Settings
+### Adding NFS Share Network and Hosts
 
-| Setting | Description |
-|---------|---------------|
-| Path | Type or browse to the full path to the pool or dataset to share. Click **Add** to configure multiple paths. |
-| Description | Enter any notes or reminders about the share.   |
-| Enabled | Enable this NFS share. Unset to disable this NFS share without deleting the configuration. |
-| Add networks | Enter an allowed network in network/mask CIDR notation. Click **Add** to define another authorized network. Defining an authorized network restricts access to all other networks. Leave empty to allow all networks. |
-| Add hosts | Enter a hostname or IP address to allow that system access to the NFS share. Click **Add** to define another allowed system. Defining authorized systems restricts access to all other systems. Leave the field empty to allow all systems access to the share. |
+If you want to enter allowed networks, click **Add** to the right of **Add Networks**. 
+Enter an IP address in the **Authorized Networks** field and select the mask CIDR notation. 
+Click **Add** for each network address and CIDR you want to define as an authorized network. 
+Defining an authorized network restricts access to all other networks. Leave empty to allow all networks. 
 
-### Advanced Options Settings 
-{{< expand "Click here for more information" "v" >}}
-Opening the **Advanced Options** allows tuning the share access permissions and defining authorized networks.
+If you want to enter allowed systems, click **Add** to the right of **Add hosts**. 
+Enter a host name or IP address to allow that system access to the NFS share. 
+Click **Add** for each allowed system you want to define. 
+Defining authorized systems restricts access to all other systems. 
+Leave the field empty to allow all systems access to the share. 
 
-![SharingNFSAdvancedSCALE](/images/SCALE/SharingNFSAdvancedSCALE.png "Advanced NFS Share Options")
+### Adjusting Access Permissions
 
-| Setting | Value | Description |
-|---------|-------|-------------|
-| Read Only | checkbox | Prohibits writing to the share when set. |
-| Maproot User | string or drop-down | Select a user to apply that user's permissions to the *root* user. |
-| Maproot Group | string or drop-down | Select a group to apply that group's permissions to the *root* user. |
-| Mapall User | string or drop-down | Permissions for the chosen user applied to all clients. |
-| Mapall Group | string or drop-down | Permissions for the chosen group are applied to all clients. |
-{{< /expand >}}
+If you want to tune the NFS share access permissions or define authorized networks, click **Advanced Options**.
 
-To edit an existing NFS share, go to **Shares > Unix Shares (NFS)** and click the share you want to edit.
-The options available are identical to the share creation options.
+![AddNFSAdvancedOptionsAccessSettings](/images/SCALE/22.02/AddNFSAdvancedOptionsAccessSettings.png "Add NSF Advanced Options Access Settings")
 
-## Configuring the NFS Service
+Select **Read Only** to prohibit writing to the share. 
 
-To begin sharing, go to **System Settings > Services** and click the **NFS** toggle to running.
+To map user permissions to the *root* user, enter a string or select the user from the **Maproot User** dropdown list. To map the user permissions to all clients, enter a string or select the user from the **Mapall User** dropdown list.
+
+To map group permissions to the *root* user, enter a string or select the group from the **Maproot Group** dropdown list. To map the group permissions to all clients, enter a string or select the group from the **Mapall Group** dropdown list.
+
+## Editing an NFS Share
+
+To edit an existing NFS share, go to **Shares > Unix Shares (NFS)** and click the share you want to edit. 
+The **Edit NFS** screen settings are identical to the share creation options.
+
+## Starting the NFS Service
+
+To begin sharing, click the <span class="material-icons">more_vert</span> on the toolbar displays options turn the NFS service on or off. **Turn Off Service** displays if the service is running or **Turn On Service** if the service is stopped. 
+
+![NFSWidgetOptions](/images/SCALE/22.02/NFSWidgetOptions.png "Unix (NFS) Share Widget Options")
+
+Or you can go to **System Settings > Services**, locate **NFS** and click the toggle to running.
 Select **Start Automatically** if you want NFS to activate when TrueNAS boots.
 
-Configure NFS service settings by clicking <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
+### Configuring NFS Service 
 
-![ServicesNFSOptionsSCALE](/images/SCALE/ServicesNFSOptionsSCALE.png "Services NFS Options")
-
-| Setting | Description |
-|---------|-------------|
-| Bind IP Addresses | Select IP addresses to listen to for NFS requests. Leave empty for NFS to listen to all available addresses. |
-| Enable NFSv4 | Set to switch from NFSv3 to NFSv4.  |
-| NFSv3 ownership model for NFSv4 | Set when NFSv4 ACL support is needed without requiring the client and the server to sync users and groups. |
-| Require Kerberos for NFSv4 | Set to force NFS shares to fail if the Kerberos ticket is unavailable. |
-| Serve UDP NFS clients | Set if NFS clients need to use the User Datagram Protocol (UDP). |
-| Support >16 groups | Set when a user is a member of more than 16 groups. This assumes group membership is configured correctly on the NFS server. |
-| mountd(8) bind port | Enter a number to bind [mountd](https://manpages.debian.org/testing/mount/mount.8.en.html) only to that port. |
-| rpc.statd(8) bind port | Enter a number to bind [rpc.statd](https://manpages.debian.org/testing/nfs-common/statd.8.en.html) only to that port. |
-| rpc.lockd(8) bind port | Enter a number to bind [rpc.lockd](https://manpages.debian.org/testing/manpages-ja/rpc.lockd.8.ja.html) only to that port. |
+To configure NFS service settings click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> on the **System Settings > Services** screen.
 
 Unless you need a specific setting, we recommend using the default NFS settings.
 
@@ -88,8 +88,9 @@ When TrueNAS is already connected to [Active Directory]({{< relref "/SCALE/SCALE
 ## Connecting to the NFS Share
 
 Although you can connect to an NFS share with various operating systems, it is recommended to use a Linux/Unix operating system.
+
 First, download the `nfs-common` kernel module.
-This can be done using the installed distribution package manager.
+YOu can do this using the installed distribution package manager.
 For example, on Ubuntu/Debian, enter command `sudo apt-get install nfs-common` in the terminal.
 
 After installing the module, connect to an NFS share by entering command `sudo mount -t nfs {IPaddressOfTrueNASsystem}:{path/to/nfsShare} {localMountPoint}`.
