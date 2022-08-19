@@ -90,7 +90,7 @@ When TrueNAS is already connected to [Active Directory]({{< relref "/SCALE/SCALE
 Although you can connect to an NFS share with various operating systems, it is recommended to use a Linux/Unix operating system.
 
 First, download the `nfs-common` kernel module.
-YOu can do this using the installed distribution package manager.
+You can do this using the installed distribution package manager.
 For example, on Ubuntu/Debian, enter command `sudo apt-get install nfs-common` in the terminal.
 
 After installing the module, connect to an NFS share by entering command `sudo mount -t nfs {IPaddressOfTrueNASsystem}:{path/to/nfsShare} {localMountPoint}`.
