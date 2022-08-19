@@ -16,7 +16,7 @@ The **Sharing** screen opens after you click **Shares** on the main navigation p
 The **Unix (NFS) Share <span class="material-icons">launch</span>** widget includes the widget toolbar that displays the status of the NFS service and the **Add** button. 
 After adding NFS shares, the widget displays a list of the shares below the toolbar.
 
-SharingNFSWidgetWithShare![NFSShareWidgetNoShare](/images/SCALE/22.02/NFSShareWidgetNoShare.png "Unix (NFS) Share Widget")
+![NFSShareWidgetNoShare](/images/SCALE/22.02/NFSShareWidgetNoShare.png "Unix (NFS) Share Widget")
 
 After adding the first NFS share, the system opens an enable service dialog. 
 
