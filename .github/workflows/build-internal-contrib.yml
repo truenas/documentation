@@ -38,19 +38,3 @@ jobs:
 
       - name: Build Hugo Site
         run: hugo -d public --gc --minify
-
-      - name: Preview
-        uses: afc163/surge-preview@v1
-        id: preview_step
-        with:
-          surge_token: ${{ secrets.QA_SURGE_TOKEN }}
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          dist: public
-          # teardown option remove the PR surge.sh after the PR is merged
-          teardown: 'false'
-          failOnError: 'true'
-          build: |
-            echo Deploying to surge.sh
-
-      - name: Get the preview_url
-        run: echo "url => ${{ steps.preview_step.outputs.preview_url }}"
