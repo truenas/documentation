@@ -67,7 +67,7 @@ If I cannot remember the administrator password to log in to the web interface, 
 
 {{< expand "Dashboard Video Tutoral" >}}
 
-{{< embed-video name="ScaleDashboardTour" >}}
+{{< embed-video name="scaledashboardtour" >}}
 
 {{< /expand >}}
 After logging in, you see the system **Dashboard** screen.
