@@ -35,5 +35,4 @@ To prevent unauthorized access to the shared data, set the **HTTP Authentication
 | **WebDAV Password** | Enter a password. **davtest** is the default password, but you should change this as it is a known password. |
 | **Confirm Password** | Reenter the password to confirm it. |
 
-
 {{< taglist tag="scalewebdav" limit="10" title="Related WebDAV Articles" >}}
