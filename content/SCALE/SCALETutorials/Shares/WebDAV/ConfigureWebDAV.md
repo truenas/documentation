@@ -24,7 +24,7 @@ Click **Add WebDAV** to open the **Add WebDAV** configuration screen.
 
 Enter a share **Name**.
 
-Add the path to the pool or dataset in **Path**. Entr or use the <span class="material-icons">arrow_right</span> icon to the left of **<span class="material-icons">folder</span>/mnt** to browse to the dataset and populate the path. 
+Add the path to the pool or dataset in **Path**. Enter or use the <span class="material-icons">arrow_right</span> icon to the left of **<span class="material-icons">folder</span>/mnt** to browse to the dataset and populate the path.
 An optional **Description** helps to identify the share.
 To prevent user accounts from modifying the shared data, set **Read Only**.
 

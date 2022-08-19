@@ -2,7 +2,7 @@
 title: "WebDAV Shares Screens"
 description: "This article provides information on WebDAV screens and settings."
 weight: 70
-aliases: /
+aliases:
 tags:
  - scalewebdav
  - scaleshares

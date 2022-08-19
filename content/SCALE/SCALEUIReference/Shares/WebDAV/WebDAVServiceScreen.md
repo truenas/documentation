@@ -2,7 +2,7 @@
 title: "WebDAV Service Screen"
 description: "This article provides information on WebDAV service screen and settings."
 weight: 80
-aliases: /
+aliases:
 tags:
  - scalewebdav
  - scaleservice
