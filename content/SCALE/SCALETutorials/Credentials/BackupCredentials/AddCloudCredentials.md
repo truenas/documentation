@@ -1,6 +1,6 @@
 ---
 title: "Adding Cloud Credentials"
-description: "This article provides basic instructions on how to add backup cloud credentials, and more detialed instructions for some cloud storage providers."
+description: "This article provides basic instructions on how to add backup cloud credentials, and more detailed instructions for some cloud storage providers."
 weight: 10
 alias:
 tags:
@@ -13,7 +13,6 @@ tags:
 ---
 
 {{< toc >}}
-
 
 The **Cloud Credentials** widget on the **Backup Credentials** screen allows users to integrate TrueNAS with cloud storage providers. 
 
@@ -33,7 +32,7 @@ We recommend users open another browser tab to open and log into the cloud stora
 Some providers require additional information that they generate on the storage provider account page.
 For example, saving an Amazon S3 credential on TrueNAS could require logging in to the S3 account and generating an access key pair found on the **Security Credentials > Access Keys** page.
 
-Have the whatever authentication information your cloud storage provider requires ready to make the process easier. Authentication information could include but are not limited to user credentials, access tokens, and access and security keys.
+Have any authentication information your cloud storage provider requires on-hand to make the process easier. Authentication information could include but are not limited to user credentials, access tokens, and access and security keys.
 
 ## Adding Cloud Credentials
 To set up a cloud credential, go to **Credentials > Backup Credentials** and click **Add** in the **Cloud Credentials** widget.
@@ -55,9 +54,9 @@ If adding an Amazon S3 cloud credential, you can use the default authentication 
 {{< expand "Click here for more information" "v" >}}
 After entering a name and leaving **Amazon S3** as the **Provider** setting:
 
-1. Open a web browser tab open with [Amazon AWS](https://aws.amazon.com/) open.
+1. Open a web browser tab to [Amazon AWS](https://aws.amazon.com/).
 
-2. Navigated to **My account > Security Credentials > Access Keys** to obtain the Amazon S3 secret access key ID.
+2. Navigate to **My account > Security Credentials > Access Keys** to obtain the Amazon S3 secret access key ID.
    Access keys are alphanumeric and between 5 and 20 characters.
 
    If you cannot find or remember the secret access key, go to **My Account > Security Credentials > Access Keys** and create a new key pair.
@@ -66,8 +65,8 @@ After entering a name and leaving **Amazon S3** as the **Provider** setting:
 
 4. Enter or copy/paste the Amazon Web Services alphanumeric password that is between 8 and 40 characters into **Secret Access Key** 
 
-5. (Optional) Enter a value to define the maximum number of chunks for a multipart upload in **Maximum Upload Ports**. 
-   Setting a maximum is necessary if a service does not support the 10,000 chunk AWS S3 specification. 
+5. (Optional) Enter a value to define the maximum number of chunks for a multipart upload in **Maximum Upload Ports**.
+   Setting a maximum is necessary if a service does not support the 10,000 chunk AWS S3 specification.
    
 6. (Optional) Select **Advanced Settings** to display the endpoint settings.
 
@@ -91,7 +90,7 @@ After entering a name and leaving **Amazon S3** as the **Provider** setting:
 8. Click **Save**
 {{< /expand >}}
 
-### Adding Cloud Credentials that  Authenticate with OAuth
+### Adding Cloud Credentials that Authenticate with OAuth
 Cloud storage providers using OAuth as an authentication method are Box, Dropbox, Google Drive, Google Photo, pCloud and Yandex.
 {{< expand "Click here for more information" "v" >}}
 After logging into the provider with the OAuth credentials, the provider provides the access token.
@@ -161,7 +160,7 @@ From the **Cloud Credentials** widget, click **Add** and then:
 {{< /expand >}}
 
 ### Adding Microsoft OneDrive Cloud Credentials
-Microsoft OneDrive Cloud uses OAuth authentication, an access token, and Drives list, account tpye and IDs to authenticate credentials.
+Microsoft OneDrive Cloud uses OAuth authentication, an access token, and Drives list, account type and IDs to authenticate credentials.
 {{< expand "Click here for more information" "v" >}}
 From the **Cloud Credentials** widget, click **Add** and then:
 
@@ -235,4 +234,3 @@ We recommend verifying the credential before saving it.
 
 {{< taglist tag="scalecloud" limit="10" >}}
 {{< taglist tag="scalebackup" limit="10" title="Related Backup Articles" >}}
-
