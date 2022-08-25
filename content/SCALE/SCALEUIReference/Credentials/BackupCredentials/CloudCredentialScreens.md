@@ -9,6 +9,7 @@ tags:
  - scalewebdav
  - scalenextcloud
  - scales3
+ - scalebackup
 ---
 
 
@@ -228,4 +229,5 @@ WebDAV uses the URL, service type and user credentials to authenticate the accou
 {{< /expand >}}
 
 {{< taglist tag="scalecloud" limit="10" >}}
+{{< taglist tag="scalebackup" limit="10" title="Related Backup Articles" >}}
 {{< taglist tag="scalewebdav" limit="10" title="Related WebDAV Articles" >}}

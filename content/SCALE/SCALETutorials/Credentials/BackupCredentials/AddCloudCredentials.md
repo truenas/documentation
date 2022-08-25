@@ -9,6 +9,7 @@ tags:
  - scalewebdav
  - scalenextcloud
  - scales3
+ - scalebackup
 ---
 
 {{< toc >}}
@@ -233,4 +234,5 @@ To automatically configure the credential, click **Login to Provider** and enter
 We recommend verifying the credential before saving it.
 
 {{< taglist tag="scalecloud" limit="10" >}}
+{{< taglist tag="scalebackup" limit="10" title="Related Backup Articles" >}}
 
