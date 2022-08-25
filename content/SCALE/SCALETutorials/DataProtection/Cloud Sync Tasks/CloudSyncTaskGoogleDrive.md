@@ -1,6 +1,7 @@
 ---
 title: "How To Back Up Google Drive to TrueNAS SCALE"
 weight: 10
+alias: /scale/scaleuireference/dataprotection/cloud-sync-tasks/cloudsynctaskgoogledrive/
 ---
 
 Google Drive and G Suite are widely used tools for creating and sharing documents, spreadsheets, and presentations with team members. While cloud-based tools have inherent backups and replications included by the cloud provider, certain users may require additional backup or archive capabilities. For example, companies using G Suite for important work may be required to keep records for years, potentially beyond the scope of the G Suite subscription. TrueNAS offers the ability to easily back up Google Drive by using the built-in cloud sync.
