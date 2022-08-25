@@ -1,5 +1,7 @@
 ---
 title: "SCALE 22.12 Bluefin"
+aliases:
+ - /scale/scalenextversion/
 weight: 1000
 ---
 
