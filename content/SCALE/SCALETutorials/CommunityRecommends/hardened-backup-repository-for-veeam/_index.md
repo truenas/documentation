@@ -671,7 +671,7 @@ You can temporary enable the web interface to change the configuration
 ### Enable the web interface
 Connect to the console and type:
 ```
-systemclt start nginx
+systemctl start nginx
 ```
 
 {{< hint info >}}
@@ -683,7 +683,7 @@ the cron job will do if for you at midnight
 ### Disable the web interface
 To immediately disable the web interface connect to the console and type:
 ```
-systemclt stop nginx
+systemctl stop nginx
 ```
 
 
