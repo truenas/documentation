@@ -639,7 +639,7 @@ To avoid the WebUI stays enabled forever, stop it automatically
 at midnight
 
 Go to *System Settings | Advanded | Cron Job | Add*
-* *Description*: **stop webUIh at midnight**
+* *Description*: **stop webUI at midnight**
 * *Command*: **/usr/bin/systemctl stop nginx**
 * *Run as user*: **root**
 * *Schedule*: **daily (0 0 * * *) at 00:00 (12:AM)**
