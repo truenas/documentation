@@ -50,8 +50,9 @@ iXsystems is pleased to announce the release of TrueNAS 13.0-U2.
 
 ### Bug
 
+[NAS-117897](https://ixsystems.atlassian.net/browse/NAS-117897) webUI isn't showing what controller the alert was generated on
+[NAS-117876](https://ixsystems.atlassian.net/browse/NAS-117876) netif.iface.cloned can set errno 2 \(FileNotFoundError\)
 [NAS-117738](https://ixsystems.atlassian.net/browse/NAS-117738) sysutils/openzfs\*: Revert "Add snapshots\_changed as property"
-
 [NAS-117711](https://ixsystems.atlassian.net/browse/NAS-117711) Increase vfs.zfs.zfetch.max\_distance to 64MB.
 [NAS-117683](https://ixsystems.atlassian.net/browse/NAS-117683) Merge FreeBSD SA-22:09-12 EN-22:16-19
 [NAS-117679](https://ixsystems.atlassian.net/browse/NAS-117679) Kernel module usbhid fails to load
@@ -904,6 +905,8 @@ This is a an early release meant for previewing and testing features and is **no
 
 | Seen In | Key | Summary | Workaround | Resolved In |
 |---------|-----|---------|------------|-------------|
+| 13.0-U2 | [NAS-117891](https://ixsystems.atlassian.net/browse/NAS-117891) | 2FA login fails the first time after failover before succeeding. | It appears the UI presents the sign in screen before the system is ready. Occurs on High Availability systems. Suggest user not immediately attempt logging in, but wait a bit before truomg to signing in with 2FA, or if sign in fails, refresh their screen and retry until the system presents the correct sign in screen with 2fa field. | Target 13.0-U2 |
+| 13.0-U2 | [NAS-117899](https://ixsystems.atlassian.net/browse/NAS-117899) | TrueCommand connection causing a kernel panic with unscheduled system reboots. | Cause of this issue is under investigation. | TBD |
 | 13.0-U1.1 | [NAS-117663](https://ixsystems.atlassian.net/browse/NAS-117663) | iSCSI data corruption with RTL8125 NICs. Unlike FreeBSD native re(4) driver the vendor driver does not properly handle physically non-contiguous mbufs, used by our iSCSI target to avoid extra memory copy in TCP stack transmission path. Some chip models might work due to other workarounds applied, but those are exceptions. | With the lack of time for a fix on a planned 13.0-U2 freeze day, we decided to re-disable the vendor driver to avoid the data corruptions. Unfortunately it means loosing support for 2.5GigE Realtek NICs. People not using iSCSI can still re-enable the driver with loader tunables: <br>if_re_load="YES" <br>if_re_name="/boot/modules/if_re.ko" | Waiting for Realtek solution, TBD |
 | 13.0-U1 | [NAS-117071](https://ixsystems.atlassian.net/browse/NAS-117071) | Shadow Copies in nested datasets not visible. | N/A, possible edge case that is still being investigated. | 13.0-U1.1<br>13.0-U2 |
 | 13.0-Release | [NAS-116493](https://jira.ixsystems.com/browse/NAS-116493) | Nextcloud (official) plugin does not install . | Nexcloud issue could not be reproduced. Recommend users migrate to SCALE which provides a better experience with running applications. | 13.0-U2 |
