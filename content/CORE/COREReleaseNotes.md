@@ -5,7 +5,6 @@ aliases:
   - /releasenotes/core/13.0beta1/
   - /releasenotes/core/13.0rc1/
   - /releasenotes/core/
-  - /core/corereleasenotes/
 ---
 
 {{< toc >}}
