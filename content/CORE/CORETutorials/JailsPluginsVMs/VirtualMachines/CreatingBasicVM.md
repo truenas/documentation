@@ -85,4 +85,4 @@ Use the **POWER OFF** button instead.
 
 ## Additional Information
 
-For more information on virtual machines see [Virutal Machines]({{< relref "CORE/UIReference/JailsPluginsVMs/VirtualMachines/VirtualMachines.md" >}})
+For more information on virtual machines see [Virtual Machines]({{< relref "CORE/UIReference/JailsPluginsVMs/VirtualMachines/VirtualMachines.md" >}})
