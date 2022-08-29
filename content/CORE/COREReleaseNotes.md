@@ -22,10 +22,6 @@ aliases:
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
 | 13.0-U3 | Release | To be determined |
-| 13.0-U2 | Code-freeze | 17 August 2022 |
-| 13.0-U2 | Internal Testing Sprints | 22 August - 26 August 2022 |
-| 13.0-U2 | Tag | 29 August 2022 |
-| 13.0-U2 | Release | 30 August 2022 |
 
 
 ## 13.0-U2
