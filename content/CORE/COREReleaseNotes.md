@@ -22,6 +22,7 @@ aliases:
 
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
+| 13.0-U3 | Release | To be determined |
 | 13.0-U2 | Code-freeze | 17 August 2022 |
 | 13.0-U2 | Internal Testing Sprints | 22 August - 26 August 2022 |
 | 13.0-U2 | Tag | 29 August 2022 |
@@ -905,8 +906,8 @@ This is a an early release meant for previewing and testing features and is **no
 
 | Seen In | Key | Summary | Workaround | Resolved In |
 |---------|-----|---------|------------|-------------|
-| 13.0-U2 | [NAS-117891](https://ixsystems.atlassian.net/browse/NAS-117891) | 2FA login fails the first time after failover before succeeding. | It appears the UI presents the sign in screen before the system is ready. Occurs on High Availability systems. Suggest user not immediately attempt logging in, but wait a bit before truomg to signing in with 2FA, or if sign in fails, refresh their screen and retry until the system presents the correct sign in screen with 2fa field. | Target 13.0-U2 |
-| 13.0-U2 | [NAS-117899](https://ixsystems.atlassian.net/browse/NAS-117899) | TrueCommand connection causing a kernel panic with unscheduled system reboots. | Cause of this issue is under investigation. | TBD |
+| 13.0-U2 | [NAS-117891](https://ixsystems.atlassian.net/browse/NAS-117891) | 2FA login fails the first time after failover before succeeding. | It appears the UI presents the sign in screen before the system is ready. Occurs on High Availability systems. Suggest user not immediately attempt logging in, but wait a bit before truomg to signing in with 2FA, or if sign in fails, refresh their screen and retry until the system presents the correct sign in screen with 2fa field. | Target 13.0-U3 |
+| 13.0-U2 | [NAS-117899](https://ixsystems.atlassian.net/browse/NAS-117899) | TrueCommand connection causing a kernel panic with unscheduled system reboots. | Cause of this issue is under investigation. | Target 13.0-U3 |
 | 13.0-U1.1 | [NAS-117663](https://ixsystems.atlassian.net/browse/NAS-117663) | iSCSI data corruption with RTL8125 NICs. Unlike FreeBSD native re(4) driver the vendor driver does not properly handle physically non-contiguous mbufs, used by our iSCSI target to avoid extra memory copy in TCP stack transmission path. Some chip models might work due to other workarounds applied, but those are exceptions. | With the lack of time for a fix on a planned 13.0-U2 freeze day, we decided to re-disable the vendor driver to avoid the data corruptions. Unfortunately it means loosing support for 2.5GigE Realtek NICs. People not using iSCSI can still re-enable the driver with loader tunables: <br>if_re_load="YES" <br>if_re_name="/boot/modules/if_re.ko" | Waiting for Realtek solution, TBD |
 | 13.0-U1 | [NAS-117071](https://ixsystems.atlassian.net/browse/NAS-117071) | Shadow Copies in nested datasets not visible. | N/A, possible edge case that is still being investigated. | 13.0-U1.1<br>13.0-U2 |
 | 13.0-Release | [NAS-116493](https://jira.ixsystems.com/browse/NAS-116493) | Nextcloud (official) plugin does not install . | Nexcloud issue could not be reproduced. Recommend users migrate to SCALE which provides a better experience with running applications. | 13.0-U2 |
