@@ -86,7 +86,7 @@ These settings can be adjusted later in the various **Network** options availabl
 On a computer that can access the same network as the TrueNAS system, enter the hostname and domain or IP address in a web browser to connect to the web interface.
 
 {{< hint info >}}
-The quality of user experience can be impacted by the browser that you are using. We generally recommend using Firefox, Edge, and Chrome as the browsers of choice.
+The quality of your user experience can be impacted by the browser that you use. We generally recommend using Firefox, Edge, or Chrome.
 {{< /hint >}}
 
 ![LoginCORE](/images/CORE/12.0/LoginCORE.png "TrueNAS CORE Login Screen")
