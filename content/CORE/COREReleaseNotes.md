@@ -21,13 +21,76 @@ aliases:
 
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
-| 13.0-U2 | Code-freeze | 17 August 2022 |
-| 13.0-U2 | Internal Testing Sprints | 22 August - 26 August 2022 |
-| 13.0-U2 | Tag | 29 August 2022 |
-| 13.0-U2 | Release | 30 August 2022 |
+| 13.0-U3 | Release | To be determined |
+
+
+## 13.0-U2
+
+**August 30, 2022**
+
+iXsystems is pleased to announce the release of TrueNAS 13.0-U2.
+This is a maintenance release with some improvements for hardware compatability, community plugins, and updating the version of OpenZFS used by the software.
+There are also bug fixes for various software features, including SMB, replication, plugins, and virtualization.
+
+{{< hint info >}}
+Due to a bug with an upstream networking driver causing data corruption issues with iSCSI sharing configurations, 2.5GigE Realtek NICs are unsupported in 13.0-U2 by default.
+If the system is not used for iSCSI sharing, the offending driver can be manually loaded for the system.
+This is not recommended unless this specific NIC support is required.
+See the [Known Issues entry for NAS-117663](#known-issues) for more details and the workaround.
+{{< /hint >}}
+
+## TrueNAS 13.0-U2 Changelog
+
+## Improvement
+
+* [NAS-117746](https://ixsystems.atlassian.net/browse/NAS-117746) SMB - Shift aio\_cancel\(\) to tevent\_kqueue and add destructor to help cleanup
+* [NAS-117707](https://ixsystems.atlassian.net/browse/NAS-117707) Merge zfs-2.1.6-staging
+* [NAS-117527](https://ixsystems.atlassian.net/browse/NAS-117527) Disable MCA/APEI Corrected/None errors by default
+* [NAS-117515](https://ixsystems.atlassian.net/browse/NAS-117515) Disable kernel MCA errors \(OS\)
+* [NAS-117453](https://ixsystems.atlassian.net/browse/NAS-117453) Update community plugins 13/12 branches from master
+* [NAS-117421](https://ixsystems.atlassian.net/browse/NAS-117421) Intel EPCT and INTEL NVM update for E810
+* [NAS-116857](https://ixsystems.atlassian.net/browse/NAS-116857) Merge zfs 2.1.5
+* [NAS-116632](https://ixsystems.atlassian.net/browse/NAS-116632) Update/improve hwpmc\(4\).
+
+## Bug
+
+* [NAS-117897](https://ixsystems.atlassian.net/browse/NAS-117897) webUI isn't showing what controller the alert was generated on
+* [NAS-117876](https://ixsystems.atlassian.net/browse/NAS-117876) netif.iface.cloned can set errno 2 \(FileNotFoundError\)
+* [NAS-117738](https://ixsystems.atlassian.net/browse/NAS-117738) sysutils/openzfs\*: Revert "Add snapshots\_changed as property"
+* [NAS-117711](https://ixsystems.atlassian.net/browse/NAS-117711) Increase vfs.zfs.zfetch.max\_distance to 64MB.
+* [NAS-117683](https://ixsystems.atlassian.net/browse/NAS-117683) Merge FreeBSD SA-22:09-12 EN-22:16-19
+* [NAS-117679](https://ixsystems.atlassian.net/browse/NAS-117679) Kernel module usbhid fails to load
+* [NAS-117663](https://ixsystems.atlassian.net/browse/NAS-117663) iSCSI data corruption with RTL8125 NICs
+* [NAS-117600](https://ixsystems.atlassian.net/browse/NAS-117600) add back recoverable APEI alert
+* [NAS-117463](https://ixsystems.atlassian.net/browse/NAS-117463) Fixed missing comma in pytest command list
+* [NAS-117441](https://ixsystems.atlassian.net/browse/NAS-117441) Added better support for python virtual environment
+* [NAS-117436](https://ixsystems.atlassian.net/browse/NAS-117436) stop running file IO in main event loop
+* [NAS-117433](https://ixsystems.atlassian.net/browse/NAS-117433) Backport support page OAuth to 13.0
+* [NAS-117396](https://ixsystems.atlassian.net/browse/NAS-117396) error message when changing SMB permissions in share with recent version 13.0-U1.1
+* [NAS-117349](https://ixsystems.atlassian.net/browse/NAS-117349) Missing loader tunable for Intel E810 NIC \(ice\)
+* [NAS-117272](https://ixsystems.atlassian.net/browse/NAS-117272) Unable to supply JIRA credentials via GUI to submit a report
+* [NAS-117263](https://ixsystems.atlassian.net/browse/NAS-117263) Add test for disabling ACL auto-inheritance via SMB
+* [NAS-117244](https://ixsystems.atlassian.net/browse/NAS-117244) 13U1 if 'Additional Domains' are specified, the primary domain is not searched
+* [NAS-117213](https://ixsystems.atlassian.net/browse/NAS-117213) Can't change permissions on shares on 13.0-U1
+* [NAS-117209](https://ixsystems.atlassian.net/browse/NAS-117209) smb.status parse blocking event loop
+* [NAS-117180](https://ixsystems.atlassian.net/browse/NAS-117180) ZFS scrubs can cause very long pool import times
+* [NAS-117163](https://ixsystems.atlassian.net/browse/NAS-117163) add "Not Installed, Swapped" element status for X
+* [NAS-117115](https://ixsystems.atlassian.net/browse/NAS-117115) Upgrade to 13.0u1 fails to detect data drives
+* [NAS-117112](https://ixsystems.atlassian.net/browse/NAS-117112) Failing disk blocks GEOM event thread
+* [NAS-117077](https://ixsystems.atlassian.net/browse/NAS-117077) Some drives not showing in Enclosure View when moved between enclosures
+* [NAS-117075](https://ixsystems.atlassian.net/browse/NAS-117075) NextCloud fails to install TrueNAS Core 13U1
+* [NAS-117071](https://ixsystems.atlassian.net/browse/NAS-117071) Shadow Copies In Nested Datasets Not Visible in 13.0-U1 vs 12.0-U8.1
+* [NAS-117070](https://ixsystems.atlassian.net/browse/NAS-117070) Upgrade to 13.0-U1 breaks SMB Permissions
+* [NAS-117032](https://ixsystems.atlassian.net/browse/NAS-117032) No limit on collectd memory cache
+* [NAS-116920](https://ixsystems.atlassian.net/browse/NAS-116920) S3 service configuration refuses to accept AWS-generated secret key
+* [NAS-116868](https://ixsystems.atlassian.net/browse/NAS-116868) Cloud Sync \(rclone\) fails against newer OpenSSH 8.8\+ servers.
+* [NAS-116767](https://ixsystems.atlassian.net/browse/NAS-116767) Add test coverage for SMB ACL "map modify" behavior
+* [NAS-116270](https://ixsystems.atlassian.net/browse/NAS-116270) Cache reporting is always 0, regardless of state of ARC
+* [NAS-115938](https://ixsystems.atlassian.net/browse/NAS-115938) Tryinto replicate ix-systems
+* [NAS-112995](https://ixsystems.atlassian.net/browse/NAS-112995) Alert reads “…replication from scratch…” but entry is called differently in GUI
 
 ## 13.0-U1.1
-
+{{< expand "13.0-U1.1" >}}
 **July 21, 2022**
 
 iXsystems is pleased to announce the release of TrueNAS 13.0-U1.1! This is a hotpatch meant to address a few bugs found after release, primarily in share permissions.
@@ -41,8 +104,10 @@ iXsystems is pleased to announce the release of TrueNAS 13.0-U1.1! This is a hot
 * [NAS-117071](https://ixsystems.atlassian.net/browse/NAS-117071) - Shadow Copies In Nested Datasets Not Visible in 13.0-U1 vs 12.0-U8.1
 * [NAS-117070](https://ixsystems.atlassian.net/browse/NAS-117070) - Upgrade from 13-U1 breakes SMB Permissions
 * [NAS-117077](https://ixsystems.atlassian.net/browse/NAS-117077) - Some drives not showing in Enclosure View when moved between enclosures
+{{< /expand>}}
 
 ## 13.0-U1 
+{{< expand "13.0-U1" >}}
 
 **July 5, 2022**
 
@@ -129,7 +194,7 @@ iXsystems is pleased to announce the release of TrueNAS 13.0-U1.
 ### Security 
 
 [13.0-U1 Security Report](https://security.truenas.com/articles/2022-07-05-security-report-13-0-u1/)
-
+{{< /expand >}}
 ## 13.0-RELEASE
 
 {{< expand "13.0-RELEASE" >}}
@@ -828,20 +893,25 @@ This is a an early release meant for previewing and testing features and is **no
 {{< /expand >}}
 
 ## Known Issues
+ 
 
 | Seen In | Key | Summary | Workaround | Resolved In |
 |---------|-----|---------|------------|-------------|
-| 13.0-U1 | [NAS-117071](https://ixsystems.atlassian.net/browse/NAS-117071) | Shadow Copies in nested datasets not visible. | N/A, possible edge case that is still being investigated. | TBD |
-| 13.0-Release | [NAS-116493](https://jira.ixsystems.com/browse/NAS-116493) | Nextcloud (official) plugin does not install . |  | 13.0-U2 (targeted) |
-| 13.0-Release | [NAS-116217](https://jira.ixsystems.com/browse/NAS-116217) | Disk replacement fails with JavaScript error. | Use the CLI to manually replace the disk: [CLI method](#cli-disk-replacements). | 13.0-U1 |
+| 13.0-U2 | [NAS-117663](https://ixsystems.atlassian.net/browse/NAS-117663) | 2.5GigE Realtek NICs are unsupported in 13.0-U2. This is due to the Realtek NIC driver causing iSCSI data corruption and the driver is now disabled by default. | When the system is not used for iSCSI sharing and the NIC support is required, enabling the Realtek NIC driver is possible by going to **System > Tunables** and creating two new tunables.<br> Click **ADD**, enter these values:<ul><li>**Variable** : `if_re_load`</li><li>**Value** : `YES`</li><li> **Type** : `loader`</li></ul> and click **SAVE**.<br> Click **ADD** again, enter these values:<ul><li>**Variable** : `if_re_name`</li><li>**Value** : `/boot/modules/if_re.ko`</li><li> **Type** : `loader`</li></ul> and click **SAVE**.<br> To verify the realtek driver is loaded, reboot the system, go to the **Shell**, and type `kldstat -n if_re.ko`. The command returns the file name and details when it has been loaded. | TBD |
+| 13.0-U2 | [NAS-117891](https://ixsystems.atlassian.net/browse/NAS-117891) | 2FA login fails the first time after failover before succeeding. | It appears the UI presents the sign in screen before the system is ready. Occurs on High Availability systems. Suggest user not immediately attempt logging in, but wait a bit before truomg to signing in with 2FA, or if sign in fails, refresh their screen and retry until the system presents the correct sign in screen with 2fa field. | Target 13.0-U3 |
+| 13.0-U2 | [NAS-117899](https://ixsystems.atlassian.net/browse/NAS-117899) | TrueCommand connection causing a kernel panic with unscheduled system reboots. | Cause of this issue is under investigation. | Target 13.0-U3 |
+| 13.0-U1.1 | [NAS-117663](https://ixsystems.atlassian.net/browse/NAS-117663) | iSCSI data corruption with RTL8125 NICs. Unlike FreeBSD native re(4) driver the vendor driver does not properly handle physically non-contiguous mbufs, used by our iSCSI target to avoid extra memory copy in TCP stack transmission path. Some chip models might work due to other workarounds applied, but those are exceptions. | With the lack of time for a fix on a planned 13.0-U2 freeze day, we decided to re-disable the vendor driver to avoid the data corruptions. Unfortunately it means loosing support for 2.5GigE Realtek NICs. People not using iSCSI can still re-enable the driver with loader tunables: <br>if_re_load="YES" <br>if_re_name="/boot/modules/if_re.ko" | Waiting for Realtek solution, TBD |
+| 13.0-U1 | [NAS-117071](https://ixsystems.atlassian.net/browse/NAS-117071) | Shadow Copies in nested datasets not visible. | N/A, possible edge case that is still being investigated. | 13.0-U1.1<br>13.0-U2 |
+| 13.0-Release | [NAS-116493](https://jira.ixsystems.com/browse/NAS-116493) | Nextcloud (official) plugin does not install . | Nexcloud issue could not be reproduced. Recommend users migrate to SCALE which provides a better experience with running applications. | 13.0-U2 |
+| 13.0-Release | [NAS-116217](https://jira.ixsystems.com/browse/NAS-116217) | Disk replacement fails with JavaScript error. | Use the CLI to manually replace the disk: [CLI method](#cli-disk-replacements). | 13.0-U1 | 
 | 13.0-Release | [NAS-116262](https://jira.ixsystems.com/browse/NAS-116262) | NFS nconnect feature not stable on 13.0 | During multi-client usage with the client-side nconnect option used, the NFS server becomes unstable. This feature has been verified to work on SCALE, but resolution ETA is unknown for 13.0. | SCALE |
-| 13.0-Release, 12.0-U8.1 | [NAS-116160](https://jira.ixsystems.com/browse/NAS-116160) | Netatalk 3.1.13 introduced an edge-case bug where AFP metadata could be stripped unexpectedly on file read | Deployments that rely on AFP sharing should avoid upgrading to 13.0 until the 13.0-U1 release. Snapshot any AFP-shared datasets before attempting to upgrade to a 13.0 release. | 13.0-U1 |
+| 13.0-Release, 12.0-U8.1 | [NAS-116160](https://jira.ixsystems.com/browse/NAS-116160) | Netatalk 3.1.13 introduced an edge-case bug where AFP metadata could be stripped unexpectedly on file read | Deployments that rely on AFP sharing should avoid upgrading to 13.0 until the 13.0-U1 release. Snapshot any AFP-shared datasets before attempting to upgrade to a 13.0 release. | 13.0-U1 | 
 | 13.0-Release | [NAS-116090](https://jira.ixsystems.com/browse/NAS-116090) | Mini 3.0 E+ View Enclosure showing populated drive bay as empty. | The enclosure view for all Mini 3.0 platforms will show the top bay as unpopulated even when a drive is inserted. | 13.0-U1 |
 | 13.0-Release | [NAS-116185](https://jira.ixsystems.com/browse/NAS-116185) | 13.0 Train shows Community Release Only - Not Enterprise Supported. | While core users can use this train to upgrade from the UI this release is not suitable for enterprise customers, and no support will be provided for enterprise customers.  This notice will be removed in a future release.  | 13.0-U2 release (targeted) |
 | 13.0-BETA1 | [NAS-114160](https://jira.ixsystems.com/browse/NAS-114160) | Connection interrupt when managing jails or plugins. | This behavior was seen in early testing and is still being investigated. No workaround is necessary as the connection resumes after a brief interruption. | 13.1-ALPHA1 (targeted) |
-| 13.0-BETA1 | [NAS-114595](https://jira.ixsystems.com/browse/NAS-114595) | VNC can't connect to bhyve VMs. | Update to 13.0 Nightlies or 13.0-U1 (when available). | 13.0-U1 |
-| 12.0-U8.1 and 13.0-BETA1 | [NAS-115838](https://jira.ixsystems.com/browse/NAS-115838) | Plugin install failures due to end of life (EoL) 12.2 FreeBSD release. | Resolved separately from TrueNAS releases on April 19, 2022. |
-| 13.0-BETA1 | [NAS-114480](https://jira.ixsystems.com/browse/NAS-114480) | Unable to connect to TrueCommand Cloud. | Avoid connecting 13.0-BETA1 systems to TrueCommand Cloud while this issue is investigated. | 13.0-RC1 |
+| 13.0-BETA1 | [NAS-114595](https://jira.ixsystems.com/browse/NAS-114595) | VNC can't connect to bhyve VMs. | Update to 13.0 Nightlies or 13.0-U1 (when available). | 13.0-U1 | 
+| 12.0-U8.1 and 13.0-BETA1 | [NAS-115838](https://jira.ixsystems.com/browse/NAS-115838) | Plugin install failures due to end of life (EoL) 12.2 FreeBSD release. | Resolved separately from TrueNAS releases on April 19, 2022. | 13.1-RELEASE | 
+| 13.0-BETA1 | [NAS-114480](https://jira.ixsystems.com/browse/NAS-114480) | Unable to connect to TrueCommand Cloud. | Avoid connecting 13.0-BETA1 systems to TrueCommand Cloud while this issue is investigated. | 13.0-RC1 | 
 | N/A | N/A | TrueNAS 12 cannot replicate to or from TrueNAS 13 | By default, TrueNAS 12 cannot initiate a replication to or from TrueNAS 13 due to an outdated SSH client library. Allowing replication to or from TrueNAS 13 to TrueNAS 12 requires allowing ssh.rsa algorithms. See [OpenSSH 8.2 Release](https://www.openssh.com/txt/release-8.2) for security considerations. Log into the TrueNAS 13 system and go to **Services->SSH**. Add the **SSH Auxiliary Parameter**: `PubkeyAcceptedAlgorithms +ssh-rsa`. | N/A |
 | 12.0-BETA2 | [NAS-107151](https://jira.ixsystems.com/browse/NAS-107151) | Replication fails between legacy TrueNAS 9.10 systems and 13.0-BETA1 systems. | Due to numerous improvements in the replication engine and ZFS, TrueNAS 9.10 systems (or earlier) cannot replicate to or from TrueNAS 13.0-BETA1. Update the legacy TrueNAS system to 11.3 first, then 12.0, and then 13.0. | N/A |
 
