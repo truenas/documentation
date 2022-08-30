@@ -70,7 +70,7 @@ However, we have a few recommendations for L2ARC devices:
 
 ## Resources
 
-* "Best Practices for OpenZFS L2ARC in the Era of NVMe" : https://www.snia.org/sites/default/files/SDC/2019/presentations/File_Systems/McKenzie_Ryan_Best_Practices_for_OpenZFS_L2ARC_in_the_Era_of_NVMe.pdf
+* "Best Practices for OpenZFS L2ARC in the Era of NVMe" : https://www.snia.org/sites/default/files/SDC/2019/presentations/File_Systems/McKenzie_Ryan_Best_Practices_for_OpenZFS_L2ARC_in_the_Era_of_NVMe.pdf [Talk Video : Best Practices for OpenZFS L2ARC in the Era of NVMe (SDC 2019)](https://www.youtube.com/watch?v=yHgSU6iqrlE)
 * Open ZFS Repository: https://github.com/openzfs/zfs
 * "ARC: A Self-Tuning, Low Overhead Replacement Cache": https://www.usenix.org/conference/fast-03/arc-self-tuning-low-overhead-replacement-cache
 * "Activity of the ZFS ARC": http://dtrace.org/blogs/brendan/2012/01/09/activity-of-the-zfs-arc/

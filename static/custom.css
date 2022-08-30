@@ -296,6 +296,22 @@ p,h1,h2,h3,h4,th,td,a {
     -o-transition:.5s ease;
     transition:.5s ease;
 }
+.container-image-download-mini {
+    position: relative;
+    width: 18%;
+}
+.container-image-download-mini:hover .image {
+    opacity: 0.3;
+    -webkit-transition:.5s ease;
+    -o-transition:.5s ease;
+    transition:.5s ease;
+}
+.container-image-download-mini:hover .middle {
+    opacity: 1;
+    -webkit-transition:.5s ease;
+    -o-transition:.5s ease;
+    transition:.5s ease;
+}
 .image-download-text {
     background-color: #0095D5;
     color: white;
