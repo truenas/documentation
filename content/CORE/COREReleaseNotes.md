@@ -26,72 +26,61 @@ aliases:
 
 ## 13.0-U2
 
-** August 30, 2022
+**August 30, 2022**
 
 iXsystems is pleased to announce the release of TrueNAS 13.0-U2.
+This is a maintenance release with some improvements for hardware compatability, community plugins, and updating the version of OpenZFS used by the software.
+There are also bug fixes for various software features, including SMB, replication, plugins, and virtualization.
 
 ## TrueNAS 13.0-U2 Changelog
 
-### Improvement
+## Improvement
 
-[NAS-117746](https://ixsystems.atlassian.net/browse/NAS-117746) SMB - Shift aio\_cancel\(\) to tevent\_kqueue and add destructor to help cleanup
-[NAS-117707](https://ixsystems.atlassian.net/browse/NAS-117707) Merge zfs-2.1.6-staging
-[NAS-117527](https://ixsystems.atlassian.net/browse/NAS-117527) Disable MCA/APEI Corrected/None errors by default
-[NAS-117515](https://ixsystems.atlassian.net/browse/NAS-117515) Disable kernel MCA errors \(OS\)
-[NAS-117453](https://ixsystems.atlassian.net/browse/NAS-117453) Update community plugins 13/12 branches from master
-[NAS-117421](https://ixsystems.atlassian.net/browse/NAS-117421) Intel EPCT and INTEL NVM update for E810
-[NAS-116857](https://ixsystems.atlassian.net/browse/NAS-116857) Merge zfs 2.1.5
-[NAS-116632](https://ixsystems.atlassian.net/browse/NAS-116632) Update/improve hwpmc\(4\).
-[NAS-116185](https://ixsystems.atlassian.net/browse/NAS-116185) Enable trains redirect for 12.0 to 13.0
+* [NAS-117746](https://ixsystems.atlassian.net/browse/NAS-117746) SMB - Shift aio\_cancel\(\) to tevent\_kqueue and add destructor to help cleanup
+* [NAS-117707](https://ixsystems.atlassian.net/browse/NAS-117707) Merge zfs-2.1.6-staging
+* [NAS-117527](https://ixsystems.atlassian.net/browse/NAS-117527) Disable MCA/APEI Corrected/None errors by default
+* [NAS-117515](https://ixsystems.atlassian.net/browse/NAS-117515) Disable kernel MCA errors \(OS\)
+* [NAS-117453](https://ixsystems.atlassian.net/browse/NAS-117453) Update community plugins 13/12 branches from master
+* [NAS-117421](https://ixsystems.atlassian.net/browse/NAS-117421) Intel EPCT and INTEL NVM update for E810
+* [NAS-116857](https://ixsystems.atlassian.net/browse/NAS-116857) Merge zfs 2.1.5
+* [NAS-116632](https://ixsystems.atlassian.net/browse/NAS-116632) Update/improve hwpmc\(4\).
 
-### Bug
+## Bug
 
-[NAS-117897](https://ixsystems.atlassian.net/browse/NAS-117897) webUI isn't showing what controller the alert was generated on
-[NAS-117876](https://ixsystems.atlassian.net/browse/NAS-117876) netif.iface.cloned can set errno 2 \(FileNotFoundError\)
-[NAS-117738](https://ixsystems.atlassian.net/browse/NAS-117738) sysutils/openzfs\*: Revert "Add snapshots\_changed as property"
-[NAS-117711](https://ixsystems.atlassian.net/browse/NAS-117711) Increase vfs.zfs.zfetch.max\_distance to 64MB.
-[NAS-117683](https://ixsystems.atlassian.net/browse/NAS-117683) Merge FreeBSD SA-22:09-12 EN-22:16-19
-[NAS-117679](https://ixsystems.atlassian.net/browse/NAS-117679) Kernel module usbhid fails to load
-[NAS-117663](https://ixsystems.atlassian.net/browse/NAS-117663) iSCSI data corruption with RTL8125 NICs
-[NAS-117600](https://ixsystems.atlassian.net/browse/NAS-117600) add back recoverable APEI alert
-[NAS-117463](https://ixsystems.atlassian.net/browse/NAS-117463) Fixed missing comma in pytest command list
-[NAS-117441](https://ixsystems.atlassian.net/browse/NAS-117441) Added better support for python virtual environment
-[NAS-117436](https://ixsystems.atlassian.net/browse/NAS-117436) stop running file IO in main event loop
-[NAS-117433](https://ixsystems.atlassian.net/browse/NAS-117433) Backport support page OAuth to 13.0
-[NAS-117396](https://ixsystems.atlassian.net/browse/NAS-117396) error message when changing SMB permissions in share with recent version 13.0-U1.1
-[NAS-117349](https://ixsystems.atlassian.net/browse/NAS-117349) Missing loader tunable for Intel E810 NIC \(ice\)
-[NAS-117272](https://ixsystems.atlassian.net/browse/NAS-117272) Unable to supply JIRA credentials via GUI to submit a report
-[NAS-117263](https://ixsystems.atlassian.net/browse/NAS-117263) Add test for disabling ACL auto-inheritance via SMB
-[NAS-117251](https://ixsystems.atlassian.net/browse/NAS-117251) Reporting Page Does Not Load Values
-[NAS-117244](https://ixsystems.atlassian.net/browse/NAS-117244) 13U1 if 'Additional Domains' are specified, the primary domain is not searched
-[NAS-117213](https://ixsystems.atlassian.net/browse/NAS-117213) Can't change permissions on shares on 13.0-U1
-[NAS-117209](https://ixsystems.atlassian.net/browse/NAS-117209) smb.status parse blocking event loop
-[NAS-117205](https://ixsystems.atlassian.net/browse/NAS-117205) VNC picture not working on U13-U1
-[NAS-117180](https://ixsystems.atlassian.net/browse/NAS-117180) ZFS scrubs can cause very long pool import times
-[NAS-117163](https://ixsystems.atlassian.net/browse/NAS-117163) add "Not Installed, Swapped" element status for X
-[NAS-117115](https://ixsystems.atlassian.net/browse/NAS-117115) Upgrade to 13.0u1 fails to detect data drives
-[NAS-117112](https://ixsystems.atlassian.net/browse/NAS-117112) Failing disk blocks GEOM event thread
-[NAS-117100](https://ixsystems.atlassian.net/browse/NAS-117100) CLONE - Cache reporting is always 0, regardless of state of ARC
-[NAS-117077](https://ixsystems.atlassian.net/browse/NAS-117077) Some drives not showing in Enclosure View when moved between enclosures
-[NAS-117075](https://ixsystems.atlassian.net/browse/NAS-117075) NextCloud fails to install TrueNAS Core 13U1
-[NAS-117071](https://ixsystems.atlassian.net/browse/NAS-117071) Shadow Copies In Nested Datasets Not Visible in 13.0-U1 vs 12.0-U8.1
-[NAS-117070](https://ixsystems.atlassian.net/browse/NAS-117070) Upgrade to 13.0-U1 breaks SMB Permissions
-[NAS-117032](https://ixsystems.atlassian.net/browse/NAS-117032) No limit on collectd memory cache
-[NAS-116983](https://ixsystems.atlassian.net/browse/NAS-116983) Unable to update Nextcloud plugin 24.0.1 to 24.0.2
-[NAS-116920](https://ixsystems.atlassian.net/browse/NAS-116920) S3 service configuration refuses to accept AWS-generated secret key
-[NAS-116868](https://ixsystems.atlassian.net/browse/NAS-116868) Cloud Sync \(rclone\) fails against newer OpenSSH 8.8\+ servers.
-[NAS-116767](https://ixsystems.atlassian.net/browse/NAS-116767) Add test coverage for SMB ACL "map modify" behavior
-[NAS-116511](https://ixsystems.atlassian.net/browse/NAS-116511) ERROR smbd truenas
-[NAS-116463](https://ixsystems.atlassian.net/browse/NAS-116463) Shares stop showing in macOS 12.4 and prior in TN 13.0, 12.x.U8
-[NAS-116452](https://ixsystems.atlassian.net/browse/NAS-116452) Enclosure alerts not clearing
-[NAS-116270](https://ixsystems.atlassian.net/browse/NAS-116270) Cache reporting is always 0, regardless of state of ARC
-[NAS-116168](https://ixsystems.atlassian.net/browse/NAS-116168) TrueNAS Core 13 - Cannot add 2nd SSD to boot pool \(mirror\)
-[NAS-116000](https://ixsystems.atlassian.net/browse/NAS-116000) RPC failure
-[NAS-115938](https://ixsystems.atlassian.net/browse/NAS-115938) Tryinto replicate ix-systems
-[NAS-115843](https://ixsystems.atlassian.net/browse/NAS-115843) iocage upgrade for a basejail broken?
-[NAS-113507](https://ixsystems.atlassian.net/browse/NAS-113507) After restarting VM all memory becomes used
-[NAS-112995](https://ixsystems.atlassian.net/browse/NAS-112995) Alert reads “…replication from scratch…” but entry is called differently in GUI
-[NAS-110784](https://ixsystems.atlassian.net/browse/NAS-110784) Unable to replicate one pool to other with ZFS encryption
+* [NAS-117897](https://ixsystems.atlassian.net/browse/NAS-117897) webUI isn't showing what controller the alert was generated on
+* [NAS-117876](https://ixsystems.atlassian.net/browse/NAS-117876) netif.iface.cloned can set errno 2 \(FileNotFoundError\)
+* [NAS-117738](https://ixsystems.atlassian.net/browse/NAS-117738) sysutils/openzfs\*: Revert "Add snapshots\_changed as property"
+* [NAS-117711](https://ixsystems.atlassian.net/browse/NAS-117711) Increase vfs.zfs.zfetch.max\_distance to 64MB.
+* [NAS-117683](https://ixsystems.atlassian.net/browse/NAS-117683) Merge FreeBSD SA-22:09-12 EN-22:16-19
+* [NAS-117679](https://ixsystems.atlassian.net/browse/NAS-117679) Kernel module usbhid fails to load
+* [NAS-117663](https://ixsystems.atlassian.net/browse/NAS-117663) iSCSI data corruption with RTL8125 NICs
+* [NAS-117600](https://ixsystems.atlassian.net/browse/NAS-117600) add back recoverable APEI alert
+* [NAS-117463](https://ixsystems.atlassian.net/browse/NAS-117463) Fixed missing comma in pytest command list
+* [NAS-117441](https://ixsystems.atlassian.net/browse/NAS-117441) Added better support for python virtual environment
+* [NAS-117436](https://ixsystems.atlassian.net/browse/NAS-117436) stop running file IO in main event loop
+* [NAS-117433](https://ixsystems.atlassian.net/browse/NAS-117433) Backport support page OAuth to 13.0
+* [NAS-117396](https://ixsystems.atlassian.net/browse/NAS-117396) error message when changing SMB permissions in share with recent version 13.0-U1.1
+* [NAS-117349](https://ixsystems.atlassian.net/browse/NAS-117349) Missing loader tunable for Intel E810 NIC \(ice\)
+* [NAS-117272](https://ixsystems.atlassian.net/browse/NAS-117272) Unable to supply JIRA credentials via GUI to submit a report
+* [NAS-117263](https://ixsystems.atlassian.net/browse/NAS-117263) Add test for disabling ACL auto-inheritance via SMB
+* [NAS-117244](https://ixsystems.atlassian.net/browse/NAS-117244) 13U1 if 'Additional Domains' are specified, the primary domain is not searched
+* [NAS-117213](https://ixsystems.atlassian.net/browse/NAS-117213) Can't change permissions on shares on 13.0-U1
+* [NAS-117209](https://ixsystems.atlassian.net/browse/NAS-117209) smb.status parse blocking event loop
+* [NAS-117180](https://ixsystems.atlassian.net/browse/NAS-117180) ZFS scrubs can cause very long pool import times
+* [NAS-117163](https://ixsystems.atlassian.net/browse/NAS-117163) add "Not Installed, Swapped" element status for X
+* [NAS-117115](https://ixsystems.atlassian.net/browse/NAS-117115) Upgrade to 13.0u1 fails to detect data drives
+* [NAS-117112](https://ixsystems.atlassian.net/browse/NAS-117112) Failing disk blocks GEOM event thread
+* [NAS-117077](https://ixsystems.atlassian.net/browse/NAS-117077) Some drives not showing in Enclosure View when moved between enclosures
+* [NAS-117075](https://ixsystems.atlassian.net/browse/NAS-117075) NextCloud fails to install TrueNAS Core 13U1
+* [NAS-117071](https://ixsystems.atlassian.net/browse/NAS-117071) Shadow Copies In Nested Datasets Not Visible in 13.0-U1 vs 12.0-U8.1
+* [NAS-117070](https://ixsystems.atlassian.net/browse/NAS-117070) Upgrade to 13.0-U1 breaks SMB Permissions
+* [NAS-117032](https://ixsystems.atlassian.net/browse/NAS-117032) No limit on collectd memory cache
+* [NAS-116920](https://ixsystems.atlassian.net/browse/NAS-116920) S3 service configuration refuses to accept AWS-generated secret key
+* [NAS-116868](https://ixsystems.atlassian.net/browse/NAS-116868) Cloud Sync \(rclone\) fails against newer OpenSSH 8.8\+ servers.
+* [NAS-116767](https://ixsystems.atlassian.net/browse/NAS-116767) Add test coverage for SMB ACL "map modify" behavior
+* [NAS-116270](https://ixsystems.atlassian.net/browse/NAS-116270) Cache reporting is always 0, regardless of state of ARC
+* [NAS-115938](https://ixsystems.atlassian.net/browse/NAS-115938) Tryinto replicate ix-systems
+* [NAS-112995](https://ixsystems.atlassian.net/browse/NAS-112995) Alert reads “…replication from scratch…” but entry is called differently in GUI
 
 ## 13.0-U1.1
 {{< expand "13.0-U1.1" >}}
