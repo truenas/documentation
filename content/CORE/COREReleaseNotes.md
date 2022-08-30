@@ -34,8 +34,7 @@ There are also bug fixes for various software features, including SMB, replicati
 
 {{< hint info >}}
 Due to a bug with an upstream networking driver causing data corruption issues with iSCSI sharing configurations, 2.5GigE Realtek NICs are unsupported in 13.0-U2 by default.
-If the system is not used for iSCSI sharing, the offending driver can be manually loaded for the system.
-This is not recommended unless this specific NIC support is required.
+**Warning**: at a risk of data corruption, especially if the system is used for iSCSI sharing, the offending driver can be manually loaded.
 See the [Known Issues entry for NAS-117663](#known-issues) for more details and the workaround.
 {{< /hint >}}
 
