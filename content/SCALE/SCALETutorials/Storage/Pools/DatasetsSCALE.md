@@ -96,7 +96,7 @@ All datasets within an SMB share path must have identical ACL types
 The **ACL Mode** setting determines how [chmod](https://linux.die.net/man/1/chmod) behaves when adjusting file ACLs. See the [zfs(8)](https://linux.die.net/man/8/zfs) `aclmode` property. 
 When **ACL Type** is set to **NFSv4** you can select **Passthrough** to only update ACL entries related to the file or directory mode or **Restricted** which does not allow chmod to make changes to files or directories with a non-trivial ACL. 
 An ACL is trivial if it can be fully expressed as a file mode without losing any access rules. 
-When set to **Restricted** it optimizes a dataset for SMB sharing, but it can also require further optimizations. For example, configuring an [rsync task]({{< relref "SCALE/SCALEUIReference/DataProtection/RsyncTasksSCALE.md" >}}) with this dataset could require adding `--no-perms` in the task **Auxiliary Parameters** field.
+When set to **Restricted** it optimizes a dataset for SMB sharing, but it can also require further optimizations. For example, configuring an [rsync task]({{< relref "SCALE/SCALETutorials/DataProtection/RsyncTasksSCALE.md" >}}) with this dataset could require adding `--no-perms` in the task **Auxiliary Parameters** field.
 
 For a more in-depth explanation of ACLs and configurations in TrueNAS SCALE, see our [ACL Primer]({{< relref "/content/References/ACLPrimer.md" >}}). 
 
