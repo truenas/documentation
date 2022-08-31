@@ -10,7 +10,6 @@ tags:
 
 {{< toc >}}
 
-
 Google Drive and G Suite are widely used tools for creating and sharing documents, spreadsheets, and presentations with team members. 
 While cloud-based tools have inherent backups and replications included by the cloud provider, certain users might require additional backup or archive capabilities. 
 For example, companies using G Suite for important work might be required to keep records for years, potentially beyond the scope of the G Suite subscription. 
