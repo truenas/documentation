@@ -1,93 +1,88 @@
 ---
-title: "How To Back Up Google Drive to TrueNAS SCALE"
+title: "Backing Up Google Drive to TrueNAS SCALE"
+description: "This article provides instructions on adding Google Drives cloud credentials using **Add Cloud Credentials** and **Add Cloud Sync Task** screens. It also provides information on working with Google-created content."
 weight: 10
 alias: /scale/scaleuireference/dataprotection/cloud-sync-tasks/cloudsynctaskgoogledrive/
+tags:
+ - scalecloud
+ - scalebackup
 ---
 
-Google Drive and G Suite are widely used tools for creating and sharing documents, spreadsheets, and presentations with team members. While cloud-based tools have inherent backups and replications included by the cloud provider, certain users may require additional backup or archive capabilities. For example, companies using G Suite for important work may be required to keep records for years, potentially beyond the scope of the G Suite subscription. TrueNAS offers the ability to easily back up Google Drive by using the built-in cloud sync.
+{{< toc >}}
 
+Google Drive and G Suite are widely used tools for creating and sharing documents, spreadsheets, and presentations with team members. While cloud-based tools have inherent backups and replications included by the cloud provider, certain users might require additional backup or archive capabilities. For example, companies using G Suite for important work might be required to keep records for years, potentially beyond the scope of the G Suite subscription. TrueNAS offers the ability to easily back up Google Drive by using the built-in cloud sync.
 
-## Setting up Google Drive credentials
+## Setting up Google Drive Credentials
 
-Set up the credentials under **Credentials > Backup Credentials**.  
+You can add Google Drive credentials using the **Add Cloud Credentials** screen accessed from the **Credentials > Backup Credentials > Cloud Credentials** screen, or you can add them when you create a cloud sync task using the **Add Cloud Sync Task** screen accessed from the **Data Protection > Cloud Sycn Task** screen.
 
-![CredentialsBackupCredentials](/images/SCALE/CredentialsBackupCredentials.png "Credentials Backup Credentials")
+### Adding Google Drive Credentials Using Cloud Credentials
 
-Next click **ADD** for *Cloud Credentials*.
+{{< include file="/content/_includes/AddCloudCredentialStep1.md" type="page" >}}
 
-Name the Credential and select *Google Drive* for the Provider. 
-Click **LOGIN TO PROVIDER** and login with the appropriate Google user account. 
+2. Select **Google Drive** on the **Provider** dropdown list. The Google Drive authentication settings display on the screen.
+   
+3. Enter the Google Drive authentication settings.
+   
+   ![CloudCredentialsAddGoogleDrive](/images/SCALE/CredentialsAddCredentials.png "CredentialsAddCredentials")
 
-![CredentialsAddCredentials](/images/SCALE/CredentialsAddCredentials.png "CredentialsAddCredentials")
+   a. Enter the Google Drive user name and password.
 
-Google will request to allow access to all the Google Drive files for the FreeNAS device.
+   b. Click **Log In To Provider**. The Google **Authentication** window opens. 
+      
+      ![GoogleOAuthProceed](/images/TrueNASCommon/GoogleOAuthProceed.png "Google OAuth Proceed")
+   
+   c. Click **Proceed** to open the **Choose an Account** window.
+      
+      ![GoogleOAuthAccount](/images/TrueNASCommon/GoogleOAuthAccount.png "Google OAuth Account")
+    
+    d. Select the email account to use. Google displays the **Sign In** window. Enter the password and click **Next** to enter the password. Click **Next** again.
+       Google might display a **Verify it's you** window. Enter a phone number where Google can text an verification code, or you can click **Try another way**. 
 
-![GoogleOAuthProceed](/images/TrueNASCommon/GoogleOAuthProceed.png "Google OAuth Proceed")
+    e. Click **Allow** on the **TrueNAS wants to access your Google Account** window. TrueNAS populates **Access Token** with the token Google provides.
+       
+      ![GoogleOAuthPermissions](/images/TrueNASCommon/GoogleOAuthPermissions.png "Google OAuth Permissions")
+    
+4. Click **Verify Credentials** and wait for TrueNAS to display the verification dialog with verified status. Close the dialog.
 
-![GoogleOAuthAccount](/images/TrueNASCommon/GoogleOAuthAccount.png "Google OAuth Account")
+5. Click **Save**. 
+   The **Cloud Credentials** widget displays the new credentials. These are also available for cloud sync tasks to use.
 
-![GoogleOAuthPermissions](/images/TrueNASCommon/GoogleOAuthPermissions.png "Google OAuth Permissions")
+### Adding Cloud Credentials Using Cloud Sync Task
 
-Allow access and the appropriate access key will be inserted to the FreeNAS access token. Assign a Team ID if required, but it is not necessary in all cases. 
+You can add a new cloud credential on the **Add Cloud Sync Task** screen. 
 
-Click **VERIFY CREDENTIAL** and wait for the credential to verify.
+To add a cloud sync task, go to **Data Protection > Cloud Sync Tasks** and click **Add**. The **Add Cloud Sync Task** configuration screen opens.
 
-![CredentialsVerify](/images/TrueNASCommon/CredentialsVerify.png "Credentials Verify")
+![AddCloudSyncTaskTop](/images/SCALE/22.02/AddCloudSyncTaskTop.png "Adding a Cloud Sync Task")
 
- Once successful, click **SUBMIT**. The new cloud credentials will be visible in the web interface.
+1. (Required) Type a memorable task description in **Description**. For example, *googledrivepush* to represent the provider name and transfer direction.
 
-![CredentialsBackupCredentialsNew](/images/SCALE/CredentialsBackupCredentialsNew.png "Credentials Backup Credentials New")
+2. Select **+ Add a backup credential** from the **Credential** dropdown list to add a new backup credential. 
+   **+ Add a backup credential** opens a backup credential configuration window.
 
+   ![AddCloudSyncTaskAddBackupCredentials](/images/SCALE/22.02/AddCloudSyncTaskAddBackupCredentials.png "Adding a Backup Credential Window")
 
-### Set the cloud sync task
+   a. (Required) Enter a name for the backup credential. For example, *googledrive*.
 
-Click on **Data Protection** to open the Tasks page.
-Click on **+** icon for *Cloud Sync Tasks* to create a new Cloud Sync Task.
+   b. Select the **Google Drive** from the **Provider** dropdown list. The Google Drive authentication fields display.
+      See [Adding Cloud Credentials]({{< relref "/SCALE/SCALETutorials/Credentials/BackupCredentials/AddCloudCredentials.md" >}}) for more information on authentication settings for each provider.
 
-Set the backup time frame, frequency, and folders – both the cloud-based folder and TrueNAS dataset. 
-Set whether the synchronization should sync all changes, just copy new files, or move files. 
-Files are removed from the cloud source or TrueNAS source depending on push or pull.
-Add a description for the task and select the cloud credentials.
-Choose the appropriate cloud folder target and TrueNAS storage location.
+      ![CloudSyncAddGoogleDriveAuthentication](/images/SCALE/22.02/CloudSyncAddGoogleDriveAuthentication.png "Add Google Drive Authentication Settings")
+    
+    c. Enter the Google Drive account email and password, then click **Log In To Provider**. 
+       Google displays the authentication windows just as in the process described in [step 3](#adding-google-drive-credentials-using-cloud-credentials) in the cloud credentials procedure above.
 
-Select the file transfer mode: 
+    d. Click **Verify Credentials**. TrueNAS attempts to connect to the selected provider with the authentication settings entered.
 
-+ **Sync**: Keep files newly created or deleted the same.
-+ **Copy**: Copy new files to the appropriate target (i.e., TrueNAS pulls files from Google Drive or pushes files to Google Drive).
-+ **Move**: Copy files to the target and then delete files from the source. Using Move, users can set a folder in Google Drive for archival, and move older documents to that folder from their Drive account. Those files would then automatically get backed up to their TrueNAS storage.
+    e. Click **Save**. The backup credentials window closes and the **Credentials** field displays the newly created backup credential.
+   
+   ![AddGoogleDriveCloudSyncn](/images/SCALE/22.02/AddGoogleDriveCloudSync.png "Add Google Drive Cloud Sync Settings")
 
-![TasksCloudSyncTask](/images/SCALE/TasksCloudSyncTask.png "TasksCloudSyncTask")
+{{< include file="/content/_includes/AddCloudSyncTaskSteps3-8.md" type="page" >}}
 
+See **Using Scripting and Environment Variables** for more information on [environment variables]({{< relref "/SCALE/SCALETutorials/DataProtection/CloudSyncTasks/AddCloudSyncTasks.md" >}}).
 
-Once created, attempt a Dry Run of the task. 
-
-![CloudSyncDryRun](/images/TrueNASCommon/CloudSyncDryRun.png "Cloud Sync Dry Run")
-
-![CloudSyncDryRunLog](/images/CORE/12.0/CloudSyncDryRunLog.png "Cloud Sync Dry Run Log")
-
-If the Dry Run succeeds, click **SUBMIT** to save the task.
-
-![CloudSyncTaskNew](/images/CORE/12.0/CloudSyncTaskNew.png "Cloud Sync Task New")
-
-Expand the section down to see the options for the task.
-
-![CloudSyncTaskNewExpanded](/images/CORE/12.0/CloudSyncTaskNewExpanded.png "Cloud Sync Task New Expanded")
-
-Clicking **RUN NOW** will prompt the task to start immediately.
-
-![CloudSyncRunNow](/images/CORE/12.0/CloudSyncRunNow.png "Cloud Sync Run Now")
-
-![CloudSyncTaskStarted](/images/CORE/12.0/CloudSyncTaskStarted.png "Cloud Sync Task Started")
-
-![CloudSyncTaskRunning](/images/CORE/12.0/CloudSyncTaskRunning.png "Cloud Sync Task Running")
-
-The web interface will show the status as **RUNNING** and **SUCCESS** upon completion. Details can be accessed via the **Task Manager** icon in the upper right-hand corner. 
-
-Once the sync reports a status of *SUCCESS* you can verify this by opening the folder on another computer if it is a share, through SSH access, or by checking the destination directory through the TrueNAS CLI.
-
-![CloudSyncTaskSuccess](/images/CORE/12.0/CloudSyncTaskSuccess.png "Cloud Sync Task Success")
-
-
-### Working with Google created content
+### Working with Google Created Content
 
 {{< include file="static/includes/General/GoogleDriveBadPermissions.md.part" markdown="true" >}}
