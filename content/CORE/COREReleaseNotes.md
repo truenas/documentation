@@ -29,7 +29,7 @@ aliases:
 **August 30, 2022**
 
 iXsystems is pleased to announce the release of TrueNAS 13.0-U2.
-This is a maintenance release with some improvements for hardware compatability, community plugins, and updating the version of OpenZFS used by the software.
+This is a maintenance release with some improvements for pool import and failover times, hardware compatability, community plugins, and updating the version of OpenZFS used by the software.
 There are also bug fixes for various software features, including SMB, replication, plugins, and virtualization.
 
 {{< hint info >}}
