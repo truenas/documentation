@@ -29,7 +29,7 @@ Select the disk(s) you want to perform a S.M.A.R.T. test on and click **Manual T
 
 Click **Start** to begin the test. Depending on the test type you choose, the test can take some time to complete. TrueNAS generates alerts when tests discover issues.
 
-For information on automated S.M.A.R.T. testing, see the [S.M.A.R.T. tests]({{< relref "/SCALE/SCALEUIReference/DataProtection/SMARTTestsSCALE.md" >}}) article.
+For information on automated S.M.A.R.T. testing, see the [S.M.A.R.T. tests]({{< relref "/SCALE/SCALETutorials/DataProtection/SMARTTestsSCALE.md" >}}) article.
 
 ### S.M.A.R.T. Test Results
 
