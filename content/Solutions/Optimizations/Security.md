@@ -118,7 +118,7 @@ Overwriting an SSH key pair cannot be undone.
 
 Root account logins via SSH are never recommended.
 Instead, create new TrueNAS user accounts with limited permissions and log in to these when using SSH.
-If it is a critical and unavoidable situation and root logins must be allowed, first set up two-factor authentication ([CORE 2FA]({{< relref "UsingTwoFactorAuthentication.md" >}}), [SCALE 2FA]({{< relref "/SCALE/SCALEUIReference/Credentials/2FASCALE.md" >}})) as an additional layer of security.
+If it is a critical and unavoidable situation and root logins must be allowed, first set up two-factor authentication ([CORE 2FA]({{< relref "UsingTwoFactorAuthentication.md" >}}), [SCALE 2FA]({{< relref "/SCALE/SCALETutorials/Credentials/2FASCALE.md" >}})) as an additional layer of security.
 Disable the **Log in as Root with Password** setting as soon as the situation is resolved.
 
 Unless it is required, do not set *Allow TCP Port Forwarding*.
