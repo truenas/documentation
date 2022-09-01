@@ -4921,7 +4921,7 @@ Verified Features are generally working in SCALE. Minor bugs could be present.
 * Cloud Sync
 * Replication
 * TrueCommand Cloud connections
-* [Applications UI]({{< relref "UsingApps.md" >}})
+* [Applications UI]({{< relref "/SCALE/SCALETutorials/Apps/UsingApps.md" >}})
 
 ### Provisional
 
@@ -5425,7 +5425,7 @@ Verified Features are generally working in SCALE. Minor bugs could be present.
 These features have been added, but have known issues or are not fully feature-complete.
 Please use only with caution.
 
-* [Applications UI]({{< relref "UsingApps.md" >}})
+* [Applications UI]({{< relref "/SCALE/SCALETutorials/Apps/UsingApps.md" >}})
 * Tasks:
   * Cron
   * Init/Shutdown Scripts
