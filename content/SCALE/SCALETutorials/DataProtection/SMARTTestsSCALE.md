@@ -63,7 +63,7 @@ TrueNAS generates alerts when tests discover issues.
 
 {{< expand "Where can I view the test results?" "v" >}}
 Click the <i class="material-icons" aria-hidden="true">expand_more</i> in a disk's row to expand it, then click **S.M.A.R.T. TEST RESULTS**.
-You can also see results in the **[Shell]({{< relref "SCALEShell.md" >}})** using `smartctl` and the name of the drive: `smartctl -l selftest /dev/ada0`.
+You can also see results in the **[Shell]({{< relref "/content/SCALE/SCALETutorials/SystemSettings/SCALEShell.md" >}})** using `smartctl` and the name of the drive: `smartctl -l selftest /dev/ada0`.
 {{< /expand >}}
 
 ## Automatic S.M.A.R.T. Tests
@@ -90,7 +90,7 @@ If you need the test to run on a specific **Schedule**, choose **Custom** to ope
 Saved schedules appear in the **S.M.A.R.T. Tests** window.
 
 {{< expand "CLI" "v" >}}
-To verify the schedule is saved, you can open the [shell]({{< relref "SCALEShell.md" >}}) and enter `smartd -q showtests`.
+To verify the schedule is saved, you can open the [shell]({{< relref "/content/SCALE/SCALETutorials/SystemSettings/SCALEShell.md" >}}) and enter `smartd -q showtests`.
 {{< /expand >}}
 
 ## Service Options
