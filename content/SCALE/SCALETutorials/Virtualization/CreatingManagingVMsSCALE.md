@@ -39,7 +39,9 @@ Activating a VM with all available memory allocated to it can slow the host syst
 We recommend using **AHCI** as the **Disk Type** for Windows VMs.
 
 The **VirtIO** network interface requires a guest OS that supports VirtIO paravirtualized network drivers.
-
+{{< hint info >}}
+iXsystems does not have a list of approved GPUs at this time but does have drivers and basic support for the  list of [nvidia Supported Products](https://www.nvidia.com/Download/driverResults.aspx/191961/en-us/).
+{{< /hint >}}
 ### Adding and Removing Devices
 
 After creating the VM, add and remove virtual devices by expanding the VM entry on the **Virtual Machines** screen and clicking <i class="material-icons" aria-hidden="true" title="Devices">device_hub</i>**Devices**.
