@@ -9,10 +9,12 @@ tags:
 
 ## How to Contribute CORE and SCALE Text String Translations
 
-{{< hint info >}}
-Users can contribute text string translations for the TrueNAS translation project.  
-The first step is to sign into GitHub. Navigate to the TrueNAS webui directory, the main page of the repository.
-{{< /hint >}}
+By default, TrueNAS is available in English.
+However, users can contribute text string translations for the TrueNAS web interface to help make TrueNAS available in many other languages!
+Contributing requires a GitHub account and the ability to translate English text into other languages.
+
+To translate the TrueNAS web interface, sign into GitHub and go to the TrueNAS **webui** repository. Find the appropriate translation file, edit it, and send a Pull Request with your translations to the project.
+For step-by-step instructions, see the rest of this article.
 
 ### Navigate to the Directory
 
