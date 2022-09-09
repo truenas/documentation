@@ -1,6 +1,12 @@
 ---
 title: "Article Template"
+description: "This article provides a sample article template for contributing TrueNAS documentation."
 weight: 40
+tags:
+- corecontributing
+- scalecontributing
+- corearticletemplate
+- scalearticletemplate
 ---
 
 Every article needs a "front matter" section that contains the article title and a numeric "weight" that orders the article in the table of contents.
@@ -73,3 +79,4 @@ A dialog opens to download the file to your local system."
 
 This is also a good place to put any troubleshooting tips, in case the user isn't seeing the expected result.
 ```
+{{< taglist tag="corecontributing" limit="10" >}}
