@@ -5,6 +5,8 @@ weight: 5
 tags:
 - coretranslate
 - scaletranslate
+- corecontributing
+- scalecontributing
 ---
 
 ## How to Contribute CORE and SCALE Text String Translations
@@ -63,4 +65,4 @@ More information on draft pull requests located at:
 
 * Would you like to submit string translations for a different language file? If so, open a new branch off the original forked repository you created. Begin working on the second language file in this new branch. Complete your changes in this second language file. Merge the second language file back into the branch that has the draft pull request open. This splits up the pull requests by language and can make the approval process go faster.
 
-{{< taglist tag="coredocumentation" limit="10" >}}
+{{< taglist tag="corecontributing" limit="10" >}}
