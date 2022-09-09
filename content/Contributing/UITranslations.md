@@ -19,7 +19,7 @@ For step-by-step instructions, see the rest of this article.
 ### Go to the Localization Directory
 
 Go to this location: [TrueNAS translation directory](https://github.com/truenas/webui/tree/master/src/assets/i18n).  
-The .json language conversion files are located within the "webui/src/assets/i18n" directory.
+The .json language conversion files are located within the **webui/src/assets/i18n** directory.
 
 ![GitHubWebUIDirectory](/images/Contribute/GitHubWebUIDirectory.png "GitHub TrueNAS webui directory")
 
