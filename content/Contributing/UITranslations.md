@@ -16,7 +16,7 @@ Contributing requires a GitHub account and the ability to translate English text
 To translate the TrueNAS web interface, sign into GitHub and go to the TrueNAS **webui** repository. Find the appropriate translation file, edit it, and send a Pull Request with your translations to the project.
 For step-by-step instructions, see the rest of this article.
 
-### Navigate to the Directory
+### Go to the Localization Directory
 
 Navigate to this location: [TrueNAS translation directory](https://github.com/truenas/webui/tree/master/src/assets/i18n).  
 The .json language conversion files are located within the "webui/src/assets/i18n" directory.
