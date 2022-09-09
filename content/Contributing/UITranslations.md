@@ -37,7 +37,7 @@ Click the .json filename. The file opens in GitHub's web-based file editor. Clic
 Work from the last line of code in the file back up to the beginning.
 Start at the last line of the file, and check for a translation. Some files have no translations listed. In this instance, begin with the last line of the file.  
 
-If the last line of the file contains a translation, scroll up (descending numerical order). You are looking to the next available line of code for which there is no language translation listed. Begin translating at this point.
+If the last line of the file contains a translation, scroll up (descending numerical order). Look for the next available line of code for which there is no language translation listed. Begin translating at this point.
 
 Some strings can use [ICU Message Format](https://formatjs.io/docs/core-concepts/icu-syntax/#plural-format) for pluralization. You can move tokens around and adjust them for your language.
 
