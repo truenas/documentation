@@ -51,7 +51,7 @@ Some strings can use [ICU Message Format](https://formatjs.io/docs/core-concepts
 
 ### Begin a New Pull Request
 
- Click **Propose changes** to save the file. This will create a new fork of the repository. It will also open a pull request. A pull request sends the translated text strings to TrueNAS for review. Once approved, these translations get merged into the master branch.
+ Click **Propose changes** to save the file. This creates a new fork of the repository. It also opens a pull request. A pull request sends the translated text strings to TrueNAS for review. Once approved, these translations get merged into the master branch.
 
 Before submitting the pull request, please consider the following:
  * Do you intend to continue working in the same language file? If so, continue working in the same forked repository & branch. Mark the pull request as draft. A draft pull request cannot merge until you mark it ready for review.  
