@@ -1,6 +1,6 @@
 ---
 title: "String Translations"
-description: "How to contribute CORE text string translations."
+description: "How to contribute TrueNAS interface text string translations."
 weight: 5
 tags:
 - coretranslate
