@@ -60,7 +60,7 @@ When TrueNAS SCALE boots, you might need to [use the Shell to configure networki
 ### Manual Update File Method
 
 Start by downloading the [SCALE manual update file](https://www.truenas.com/download-truenas-scale/).
-Confirm that the TrueNAS system is on the latest public, 12.0-U8 or better, release.
+Confirm that the TrueNAS system is on the latest public release, 13.0-U2 or better.
 
 Click **CHECK FOR UPDATES** in the **System Information** card on the **Dashboard** or go to **System > Update**.
 
