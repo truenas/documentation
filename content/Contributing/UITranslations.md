@@ -1,5 +1,5 @@
 ---
-title: "String Translations"
+title: "Web Interface Translations"
 description: "How to contribute TrueNAS interface text string translations."
 weight: 5
 tags:
