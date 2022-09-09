@@ -39,7 +39,7 @@ Start at the last line of the file, and check for a translation. Some files have
 
 If the last line of the file contains a translation, scroll up (descending numerical order). You are looking to the next available line of code for which there is no language translation listed. Begin translating at this point.
 
-Some strings may use [ICU Message Format](https://formatjs.io/docs/core-concepts/icu-syntax/#plural-format) for pluralization. You can move tokens around and adjust them for your language.
+Some strings can use [ICU Message Format](https://formatjs.io/docs/core-concepts/icu-syntax/#plural-format) for pluralization. You can move tokens around and adjust them for your language.
 
 ![GitHubWebUIEditTranslationFile](/images/Contribute/GitHubWebUIEditTranslationFile.png "TrueNAS edit language translation file")
 
