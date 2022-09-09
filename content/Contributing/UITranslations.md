@@ -25,7 +25,7 @@ The .json language conversion files are located within the "webui/src/assets/i18
 
 ### Select the Translation File
 
-Choose the language .json file that represents the translation language.  
+Choose the .json file that represents the specific translation language.
 More information about 2 letter ISO 639-1 codes located at: [ISO 639-1 Codes](https://www.loc.gov/standards/iso639-2/php/code_list.php).
 
 Click the .json filename. The file opens in GitHub's web-based file editor. Click the pencil icon to begin editing the file.  
