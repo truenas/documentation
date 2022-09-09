@@ -16,6 +16,10 @@ Migrating TrueNAS from CORE to SCALE is a one-way operation. Attempting to activ
 You cannot upgrade CORE systems with High Availability enabled (HA) to SCALE HA.
 {{< /hint >}}
 
+{{< hint warning >}}
+TrueNAS systems on 12.0x or lower should update to the latest CORE 13.0 release (e.g 13.0-U2) prior to migrating to SCALE.
+{{< /hint >}}
+
 {{< hint danger >}}
 #### Migrating GELI-encrypted Pools to SCALE
 TrueNAS SCALE is Linux based, so it does not support FreeBSD GELI encryption.
@@ -60,7 +64,7 @@ When TrueNAS SCALE boots, you might need to [use the Shell to configure networki
 ### Manual Update File Method
 
 Start by downloading the [SCALE manual update file](https://www.truenas.com/download-truenas-scale/).
-Confirm that the TrueNAS system is on the latest public, 12.0-U8 or better, release.
+Confirm that the TrueNAS system is on the latest public release, 13.0-U2 or better.
 
 Click **CHECK FOR UPDATES** in the **System Information** card on the **Dashboard** or go to **System > Update**.
 
