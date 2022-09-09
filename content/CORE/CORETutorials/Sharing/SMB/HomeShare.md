@@ -28,7 +28,7 @@ Name the dataset (this article uses *Home_Share_Dataset* as an example) and set 
 
 After creating the dataset, go to **Storage > Pools** and open <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> next to the new dataset. Select **Edit Permissions**.
 
-Click the **Group** dropdown menu and change the owning group to your Active Directory domain admins.
+Click the **Group** dropdown menu and change the owning group to your Active Directory domain admins and check **Apply Group**.
 
 ![GroupDomainAdmins](/images/CORE/12.0/GroupDomainAdmins.png "Set the owning group to Domain Admins")
 

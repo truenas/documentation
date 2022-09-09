@@ -26,7 +26,7 @@ This helps simplify the TrueNAS connection process.
 
 ## Connecting TrueNAS to a KMIP Server
 
-To connect TrueNAS to a KMIP server, import a [Certificate Authority (CA)]({{< relref "CAs.md" >}}) and [Certificate]({{< relref "Certificates.md" >}}) from the KMIP server, then configure the KMIP options.
+To connect TrueNAS to a KMIP server, import a [Certificate Authority (CA)]({{< relref "CAs.md" >}}) and [Certificate]({{< relref "/CORE/UIReference/System/Certificates.md" >}}) from the KMIP server, then configure the KMIP options.
 
 {{< expand "How do I import these?" "v" >}}
 Log in to the TrueNAS web interface and go to **System** > **CAs** and click **ADD**.

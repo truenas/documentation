@@ -296,6 +296,22 @@ p,h1,h2,h3,h4,th,td,a {
     -o-transition:.5s ease;
     transition:.5s ease;
 }
+.container-image-download-mini {
+    position: relative;
+    width: 18%;
+}
+.container-image-download-mini:hover .image {
+    opacity: 0.3;
+    -webkit-transition:.5s ease;
+    -o-transition:.5s ease;
+    transition:.5s ease;
+}
+.container-image-download-mini:hover .middle {
+    opacity: 1;
+    -webkit-transition:.5s ease;
+    -o-transition:.5s ease;
+    transition:.5s ease;
+}
 .image-download-text {
     background-color: #0095D5;
     color: white;
@@ -484,3 +500,27 @@ p,h1,h2,h3,h4,th,td,a {
 .dropdown:hover .dropdown-content {display: block;}
 
 .dropdown:hover .dropbtn {background-color: #3498DB;}
+
+/* Back to Top button */
+.scrollToTopBtn {
+  background-color: black;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 48px;
+  width: 48px;
+  rotate: z -90deg;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 0.3s ease;
+}
+
+.showBtn {
+  opacity: 1;
+  transform: translateY(0);
+}

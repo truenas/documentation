@@ -11,11 +11,11 @@ The recommended system requirements to install TrueNAS:
 
 | Processor | Memory | Boot Device | Storage |
 |-----------|--------|-------------|---------|
-| 2-Core Intel 64-Bit or AMD x86_64 Processor | 16 GiB Memory | 16 GB SSD Boot Device | Two identically-sized devices for a single storage pool |
+| 2-Core Intel 64-Bit or AMD x86_64 processor | 8 GB Memory | 16 GB SSD boot device | Two identically-sized devices for a single storage pool |
 
 The TrueNAS installer recommends 8 GB of RAM. TrueNAS installs, runs, operates jails, hosts SMB shares, and replicates TBs of data with less. iXsystems recommends the above for better performance and fewer issues.
 
-You don't need an SSD boot device, but we discourage using a spinner or a USB stick for obvious reasons.
+You do not need an SSD boot device, but we discourage using a spinner or a USB stick for obvious reasons.
 We do not recommend installing TrueNAS on a single disk or striped pool unless you have a good reason to do so. You can install and run TrueNAS without any data device, but we strongly discourage it.
 
 TrueNAS does not require two cores, as most halfway-modern 64-bit CPUs likely already have at least two.
@@ -28,6 +28,12 @@ The heart of any storage system is the symbiotic pairing of its file system and 
 The ZFS file system in TrueNAS provides the [best available data protection of any file system at any cost](https://www.ixsystems.com/blog/openzfs-vs-the-competition/) and makes very effective use of both spinning-disk and all-flash storage or a mix of the two.
 ZFS is prepared for the eventual failure of storage devices. It is highly configurable to achieve the perfect balance of redundancy and performance to meet any storage goal.
 A properly-configured TrueNAS system can tolerate the failure of multiple storage devices and even recreate its boot media with a copy of the [configuration file]({{< relref "/content/CORE/CORETutorials/SystemConfiguration/UsingConfigurationBackups.md" >}}).
+
+### Storage Device Quantities
+
+TrueNAS is capable of managing large quantities of storage devices as part of a single storage array.
+The community-focused TrueNAS SCALE Angelfish release can manage as many as 400 drives in a single storage array; a significant level of flexibility for home users to larger business deployments.
+With more Enterprise-level tuning in the mature 13.0 release and similar tuning in the upcoming SCALE Bluefin release, TrueNAS can expand even further and manage as many as 1,250 drives in a single storage array!
 
 ### Storage Media
 
@@ -42,7 +48,7 @@ TrueNAS Mini systems ship with Western Digital NAS and NL-SAS for good reason. U
 {{< tab "SATA NAS Disks" >}}
 Serial Advanced Technology Attachment (SATA) is still the de facto standard disk interface found in many desktop/laptop computers, servers, and some non-enterprise storage arrays.
 SATA disks first arrived offering double-digit gigabyte capacities and are now produced to meet many capacity, reliability, and performance goals.
-While consumer desktop SATA disks don't have the problematic overall reliability issues they once had, they are still not designed or warrantied for continuous operation or use in RAID groups.
+While consumer desktop SATA disks do not have the problematic overall reliability issues they once had, they are still not designed or warrantied for continuous operation or use in RAID groups.
 Enterprise SATA disks address the always-on factor, vibration tolerance, and drive error handling required in storage systems. However, the price gap between desktop and enterprise SATA drives is vast enough that it forces users to push their consumer drives into 24/7 service to pursue cost savings.
 
 Drive vendors, likely tired of honoring warranties for failed desktop drives used in incorrect applications, responded to this gap in the market by producing NAS drives. NAS drives achieved fame from the original Western Digital (WD) Red™ drives with CMR/PMR technology (now called WD Red Plus).
@@ -72,16 +78,20 @@ Unlike hard disks, flash storage is not sensitive to vibration and can be much f
 Flash storage remains more expensive per gigabyte, but is becoming more common in TrueNAS systems as the price gap narrows.
 
 The shortest path for introducing flash storage into the mainstream market was for vendors to use standard SATA/SAS hard disk interfaces and form factors that emulate standard hard disks but without moving parts.
-For this reason, flash storage Solid State Disks (SSDs) have SATA interfaces and are the size of 2.5” laptop hard disks, allowing them to be drop-in replacements for traditional hard disks.
+For this reason, flash storage Solid State Disks (SSDs) have SATA interfaces and are the size of 2.5" laptop hard disks, allowing them to be drop-in replacements for traditional hard disks.
 Flash storage SSDs can replace HDDs for primary storage on a TrueNAS system, resulting in a faster, though either a smaller or more expensive storage solution.
 If you plan to go all-flash, buy the highest-quality flash storage SSDs your budget allows with a focus on power, safety, and write endurance that matches your expected write workload.
 {{< /tab >}}
 {{< tab "NVMe" >}}
-While SSDs pretending to be HDDs made sense for rapid adoption, the Non-Volatile Memory Express (NVMe) standard is a native flash protocol that takes full advantage of flash storage's non-linear, parallel nature.
+While SSDs pretending to be HDDs made sense for rapid adoption, the Non-Volatile Memory Express (NVMe) standard is a native flash protocol that takes full advantage of the flash storage non-linear, parallel nature.
 
-The main advantage of NVMe is generally its low-latency performance, and it’s becoming a mainstream option for boot and other tasks. At first, NVMe was limited to expansion-card form factors such as PCIe and M.2. The new U.2 interface offers a universal solution that includes the 2.5” drive form factor and an externally accessible (but generally not hot-swappable) NVMe interface.
+The main advantage of NVMe is generally its low-latency performance, and it is becoming a mainstream option for boot and other tasks. At first, NVMe was limited to expansion-card form factors such as PCIe and M.2. The new U.2 interface offers a universal solution that includes the 2.5" drive form factor and an externally accessible (but generally not hot-swappable) NVMe interface.
 
 Note: NVMe devices can run quite hot and may need dedicated heat sinks.
+
+{{< hint info >}}
+Manual S.M.A.R.T. tests on NVMe devices is currently not supported.
+{{< /hint >}}
 {{< /tab >}}
 {{< tab "USB Hard Disks" >}}
 Avoid using USB-connected hard disks for primary storage with TrueNAS. You can use USB Hard Disks for very basic backups in a pinch.
@@ -107,14 +117,14 @@ On the read side, flash is a level two adaptive replacement (read) cache (L2ARC)
 Workloads with synchronous writes such as NFS and databases benefit from SLOG devices, while workloads with frequently-accessed data might benefit from an L2ARC device.
 An L2ARC device is not always the best choice because the level one ARC in RAM [always provide a faster cache](https://www.ixsystems.com/blog/visualizing-zfs-performance/), and the L2ARC table uses some RAM.
 
-SLOG devices don't need to be large, since they only need to service five seconds of data writes delivered by the network or a local application.
+SLOG devices do not need to be large, since they only need to service five seconds of data writes delivered by the network or a local application.
 A high-endurance, low-latency device between 8 GB and 32 GB in size is adequate for most modern networks, and you can strip or mirror several devices for either performance or redundancy.
-Pay attention to the device's published endurance claims since a SLOG acts as the funnel point for most of the writes made to the system.
+Pay attention to the published endurance claims for the device since a SLOG acts as the funnel point for most of the writes made to the system.
 
 SLOG devices also need power protection.
 The purpose of the ZFS intent log (ZIL), and thus the SLOG, is to keep sync writes safe during a crash or power failure.
-If the SLOG isn’t power-protected and loses data after a power failure, it defeats the purpose of using a SLOG in the first place.
-Check the manufacturer’s specifications to ensure the SLOG device is power-safe or has power loss/failure protection.
+If the SLOG is not power-protected and loses data after a power failure, it defeats the purpose of using a SLOG in the first place.
+Check the manufacturer specifications for the device to ensure the SLOG device is power-safe or has power loss/failure protection.
 
 The most important quality to look for in an L2ARC device is random read performance. 
 The device needs to support more IOPS than the primary storage media it caches.
@@ -128,14 +138,14 @@ For example, a 480 GB L2ARC filled with 4KiB blocks needs more than 10GiB of met
 {{< /tab >}}
 {{< tab "Self Encrypting Drives" >}}
 TrueNAS supports two forms of data encryption at rest to achieve privacy and compliance objectives: [Native ZFS encryption]({{< relref "CORE/CORETutorials/Storage/Pools/StorageEncryption.md" >}}) and [Self Encrypting Drives (SEDs)]({{< relref "/CORE/CORETutorials/Storage/SED.md" >}}).
-SEDs do not experience the performance overhead introduced by software partition encryption but aren’t as readily available as non-SED drives (and thus can cost a little more).
+SEDs do not experience the performance overhead introduced by software partition encryption but are not as readily available as non-SED drives (and thus can cost a little more).
 {{< /tab >}}
 {{< tab "Boot Devices" >}}
 Booting legacy FreeNAS systems from 8 GB or larger USB flash drives was once very popular. 
 We recommend looking at other options since USB drive quality varies widely and modern TrueNAS versions perform increased drive writes to the boot pool.
 For this reason, all pre-built [TrueNAS Systems]({{< relref "/hardware/_index.md" >}}) ship with either M.2 drives or SATA DOMs.
 
-SATA DOMs, or disk-on-modules, offer reliability close to that of consumer 2.5" SSDs with a smaller form factor that mounts to an internal SATA port and doesn't use a drive bay.
+SATA DOMs, or disk-on-modules, offer reliability close to that of consumer 2.5" SSDs with a smaller form factor that mounts to an internal SATA port and does not use a drive bay.
 Because SATA DOMs and motherboards with m.2 slots are not as common as the other storage devices mentioned here, users often boot TrueNAS systems from 2.5" SSDs and HDDs (often mirrored for added redundancy).
 The recommended size for the TrueNAS boot volume is 8 GB, but using 16 or 32 GB (or a 120 GB 2.5" SATA SSD) provides room for more boot environments.
 {{< /tab >}}
@@ -157,7 +167,7 @@ Note that hot-swapping PCIe NVMe devices is not currently supported.
 
 [Zpool layout]({{< relref "PoolCreate.md#vdev-layout" >}}) (the organization of LUNs and volumes, in TrueNAS/ZFS parlance) is outside of the scope of this guide. 
 The availability of double-digit terabyte drives raises a question TrueNAS users now have the luxury of asking: How many drives should I use to achieve my desired capacity?
-You can mirror two 16TB drives to achieve 16TB of available capacity, but that doesn’t mean you should.
+You can mirror two 16TB drives to achieve 16TB of available capacity, but that does not mean you should.
 Mirroring two large drives offers the advantage of redundancy and balancing reads between the two devices, which could lower power draw, but little else.
 The write performance of two large drives, at most, is that of a single drive.
 By contrast, an array of eight 4TB drives offers a wide range of configurations to optimize performance and redundancy at a lower cost.
@@ -181,7 +191,7 @@ Consider pre-flighting every storage device before putting it into production, p
 Take time to create a pool before deploying the system. 
 Subject it to as close to a real-world workload as possible to reveal individual drive issues and help determine if an alternative pool layout is better suited to that workload.
 Be cautious of used drives as vendors may not be honest or informed about their age and health.
-Check the number of hours on all new drives using `smartctl(8)` to verify they aren't recertified.
+Check the number of hours on all new drives using `smartctl(8)` to verify they are not recertified.
 A drive vendor could also zero the hours of a drive during recertification, masking its true age.
 iXsystems tests all storage devices it sells for at least 48 hours before shipment.
 
@@ -201,7 +211,7 @@ Most SATA compatibility-related issues are immediately apparent.
 
 There are countless warnings against using hardware RAID cards with TrueNAS. 
 ZFS and TrueNAS provide a built-in RAID that protects your data better than any hardware RAID card.
-You can use a hardware RAID card if it’s all you have, but there are limitations.
+You can use a hardware RAID card if it is all you have, but there are limitations.
 First and most importantly, do not use their RAID facility if your hardware RAID card supports HBA mode, also known as passthrough or JBOD mode (there is one caveat in the bullets below). When used, it allows it to perform indistinguishably from a standard HBA.
 If your RAID card does not have this mode, you can configure a RAID0 for every single disk in your system.
 While not the ideal setup, it works in a pinch.
@@ -216,11 +226,11 @@ If repurposing hardware RAID cards with TrueNAS, be aware that some hardware RAI
 A direct-attached system, where every disk connects to an interface on the controller card, is optimal but not always possible.
 A SAS expander (a port multiplier or splitter) enables each SAS port on a controller card to service many disks.
 You find SAS expanders only on the drive backplane of servers or JBODs with more than twelve drive bays.
-For example, a [TrueNAS JBOD that eclipses 90 drives]({{< relref "ES102BSG.md" >}}) in only four rack units of space wouldn’t be possible without SAS expanders.
+For example, a [TrueNAS JBOD that eclipses 90 drives]({{< relref "ES102BSG.md" >}}) in only four rack units of space is not possible without SAS expanders.
 Imagine how many eight-port HBAs you would need to access 90 drives without SAS expanders.
 
 While SAS expanders, designed for SAS disks, can often support SATA disks via the SATA Tunneling Protocol or STP, we still prefer SAS disks for reasons mentioned in the NL-SAS section above (SATA disks function on a SAS-based backplane).
-Note that the opposite is not true: you can’t use a SAS drive in a port designed for SATA drives.
+Note that the opposite is not true: you cannot use a SAS drive in a port designed for SATA drives.
 
 ### Storage Device Cooling
 
@@ -230,7 +240,7 @@ The average temperature that a well-cooled spinning hard disk reaches in product
 Before adding drive cooling that often comes with added noise (especially on older systems), know that you risk throwing money away by running a server in a data center or closet without noticing that the internal cooling fans are set to their lowest setting.
 Pay close attention to drive temperature in any chassis that supports 16 or more drives, especially if they are exotic, high-density designs.
 Every chassis has certain areas that are warmer for whatever reason. Watch for fan failures and the tendency for some models of 8TB drives to run hotter than other drive capacities.
-In general, try to keep drive temperatures below the drive vendor’s specification.
+In general, try to keep drive temperatures below the drive specification provided by vendor.
 
 ## Memory, CPU, and Network Considerations
 
@@ -320,10 +330,10 @@ A good, modern PSU is efficient and completely integrates into the IPMI manageme
 
 Most power supplies carry a certified efficiency rating known as an [80 Plus](https://en.wikipedia.org/wiki/80_Plus) rating.
 The 80 plus rating indicates the power drawn from the wall is lost as heat, noise, and vibration, instead of doing useful work like powering your components.
-If a power supply needs to draw 600 watts from the wall to provide 500 watts of power to your components, it’s operating at 500/600 = \~83% efficiency.
+If a power supply needs to draw 600 watts from the wall to provide 500 watts of power to your components, it is operating at 500/600 = \~83% efficiency.
 The other 100 watts get lost as heat, noise, and vibration.
 Power supplies with higher ratings are more efficient but also far more expensive.
-Do some return-on-investment calculations if you’re unsure what efficiency to buy.
+Do some return-on-investment calculations if you are unsure what efficiency to buy.
 For example, if an 80 Plus Platinum PSU costs $50 more than the comparable 80 Plus Gold, it should save you at least $10 per year on your power bill for that investment to pay off over five years.
 You can read more about 80 Plus ratings in [this post](https://www.tomshardware.com/news/what-80-plus-levels-mean,36721.html).
 
@@ -365,7 +375,7 @@ Direct attached copper (DAC) cables could create interoperability issues between
 
 Finally, the ultimate TrueNAS hardware question is whether to use actual hardware or choose a virtualization solution.
 TrueNAS developers [virtualize TrueNAS every day](https://www.ixsystems.com/blog/yes-you-can-virtualize-freenas/) as part of their work, and cloud services are popular among users of all sizes.
-TrueNAS's design has OpenZFS at its heart. The design from day one works with physical storage devices. It is aware of their strengths and compensates for their weaknesses.
+At the heart of the TrueNAS design is OpenZFS. The design from day one works with physical storage devices. It is aware of their strengths and compensates for their weaknesses.
 When the need arises to virtualize TrueNAS:
 
 * Pass hardware disks or the entire storage controller to the TrueNAS VM if possible (requires VT-d/AMD-Vi support).

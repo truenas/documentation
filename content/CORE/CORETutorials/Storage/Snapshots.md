@@ -1,7 +1,9 @@
 ---
 title: "Creating Snapshots"
 weight: 20
-aliases: /core/storage/snapshots/
+aliases:
+ - /core/storage/snapshots/
+ - /core/uireference/storage/snapshots/
 ---
 
 {{< toc >}}

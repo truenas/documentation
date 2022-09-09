@@ -15,6 +15,21 @@ All documentation provided here is end-of-life (EoL) and no longer receives *any
 
 ## TrueNAS (Unified)
 
+{{< hint warning >}}
+**12.0 NVDIMM Alert**
+
+Some TrueNAS M-Series systems installed with 12.0 releases with some 16GB 2666mhz NVDIMMs can see an alert that warns the NVDIMM firmware is out of date:
+
+![NvdimmFirmwareAlert](/images/CORE/NvdimmFirmwareAlert.png "NVDIMM Firmware Alert")
+
+This can be a false positive that has been fixed in TrueNAS 13.0-U1 (see [NAS-116986](https://ixsystems.atlassian.net/browse/NAS-116986)).
+Upgrading to an Enterprise-recommended release of TrueNAS CORE 13.0 resolves this alert.
+To help determine if the deployment is ready to upgrade to TrueNAS CORE 13.0, please refer to the current TrueNAS [Software Status](https://www.truenas.com/software-status/) and, when your use case matches a recommended 13.0 release, contact iXsystems Support to schedule an upgrade.
+{{< expand "iX Support (click to expand)" "v" >}}
+{{< include file="static/includes/General/iXsystemsSupportContact.html.part" >}}
+{{< /expand >}}
+{{< /hint >}}
+
 {{< expand "TrueNAS CORE 12.0" "v" >}}
 
 <a href="https://www.truenas.com/docs/files/CORE12.0Docs.pdf">TrueNAS CORE 12.0</a>
@@ -46,10 +61,14 @@ Release Notes:
 ## TrueCommand
 
 {{< expand "TrueCommand 2.x" "v" >}}
+
+<a href="https://www.truenas.com/docs/files/TC2.1Docs.pdf">TrueCommand 2.1</a>
+
 <a href="https://www.truenas.com/docs/files/TrueCommand2.0Documentation.pdf">TrueCommand 2.0</a>
-Release Notes:
-* [2.0]({{< ref "/_includes/TCReleaseNotes/2.0.md" >}})
-* [2.0-BETA]({{< ref "/_includes/TCReleaseNotes/2.0-Beta.md" >}})
+
+* Release Notes:
+  * [2.0]({{< ref "/_includes/TCReleaseNotes/2.0.md" >}})
+  * [2.0-BETA]({{< ref "/_includes/TCReleaseNotes/2.0-Beta.md" >}})
 
 
 {{< /expand >}}
@@ -85,7 +104,7 @@ Release Notes:
 ## Legacy Documentation
 
 The documentation, release notes, and notices provided in this section follow the major and minor releases of the previous FreeNAS and TrueNAS projects, before their unification under the TrueNAS name.
-FreeNAS would publish first and TrueNAS followed later in the FreeNAS lifecycle with occasional simultaneous releases.
+At that time, FreeNAS published first and TrueNAS followed later in the FreeNAS lifecycle with occasional simultaneous releases.
 TrueNAS releases took all the FreeNAS changes up to that point and added a few Enterprise feature-specific (High Availability) changes.
 
 ### Legacy FreeNAS

@@ -48,12 +48,16 @@ When combined with our high-availability hardware and [**TrueCommand**]({{< relr
 The Documentation Hub has all of the information you need to set up and manage your TrueNAS system.
 Documentation articles follow the latest supported software releases, with previous version documentation available in the [Docs Archive]({{< relref "Archive.md" >}}):
 
-| Software | Current Documented Version |
-|----------|-------------------------------|
-| TrueNAS CORE & Enterprise | 13.0 |
-| TrueNAS SCALE | 22.02 Angelfish |
-| TrueCommand | 2.1 |
-  
+| Software | Current Documented Version | Previous Major Version |
+|----------|----------------------------|------------------------|
+| TrueNAS CORE & Enterprise | 13.0 | [12.0](https://www.truenas.com/docs/files/CORE12.0Docs.pdf) ([Release Notes]({{< relref "Archive.md#truenas-unified" >}})) |
+| TrueNAS SCALE | 22.02 Angelfish | N/A |
+| TrueCommand | 2.2 | [2.1](https://www.truenas.com/docs/files/TC2.1Docs.pdf)  |
+
+{{< hint ok >}}
+Preview builds of the draft SCALE Bluefin documentation are available [here](https://truenas-blufin-beta-docs.netlify.app/)!
+{{< /hint >}}
+
 The navigation pane to the left is sorted into several topics that you can expand to find the specific knowledge you're looking for:
 
 * **[TrueNAS CORE and Enterprise]({{< ref "/core/" >}})** contains content specific to the FreeBSD-based CORE software.

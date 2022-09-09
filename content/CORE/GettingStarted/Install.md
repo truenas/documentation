@@ -168,7 +168,9 @@ When the operating system device has enough additional space, you can choose to 
 
 ![InstallPartition](/images/CORE/12.0/InstallPartitionScreen.png "Install Partition Screen")
 
-Enter a password for the `root` user to log in to the web interface.
+Next, set a password for the TrueNAS administrative account, named `root` by default.
+This account has full control over TrueNAS and is used to log in to the web interface.
+Set a strong password and protect it.
 
 ![InstallPassword](/images/CORE/12.0/InstallPasswordScreen.png "Install Password Screen")
 
@@ -287,7 +289,9 @@ Select **Yes**. This erases all contents on the disk!
 
 ![InstallVMWarning](/images/CORE/12.0/InstallVMWarningScreen.png "Install VM Warning Screen")
 
-Set a password for root login.
+Next, set a password for the TrueNAS administrative account, named `root` by default.
+This account has full control over TrueNAS and is used to log in to the web interface.
+Set a strong password and protect it.
 
 ![InstallVMPassword](/images/CORE/12.0/InstallVMPasswordScreen.png "Install VM Password Screen")
 
@@ -309,4 +313,4 @@ CLick *Add* and create a new tunable with the *Variable* `if_vmx_load`, *Value* 
 
 Congratulations, TrueNAS is now installed!
 
-The next step is to [log in to the web interface]({{< relref "/CORE/GettingStarted/LoggingIn.md" >}}) and begin configuring the system.
+The next step is to [log in to the web interface]({{< relref "/CORE/GettingStarted/LoggingIn.md" >}}) using the administrative account credentials and begin configuring the system.
