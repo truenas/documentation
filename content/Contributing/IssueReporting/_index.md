@@ -1,10 +1,16 @@
 ---
 title: "Issue Reporting"
+description: "This article provides information on how to report issues to TrueNAS."
 weight: 10
 aliases:
   - /contributing/issuereporting/bugsfeatures/
   - /contributing/issuereporting/debug/
   - /contributing/issuereporting/savewebconsolelog/
+tags:
+- corecontributing
+- scalecontributing
+- coreissues
+- scaleissues
 ---
 
 We encourage all users to help us make TrueNAS the best NAS by reporting issues, requesting potentially helpful features, and relaying security vulnerabilities.  
@@ -142,3 +148,5 @@ Go to the [iXsystems Bug Tracker](https://jira.ixsystems.com). Locate an existin
 Attach the console log file to the ticket by dragging it to **Attachments**.
 {{< /tab >}}
 {{< /tabs >}}
+
+{{< taglist tag="corecontributing" limit="10" >}}
