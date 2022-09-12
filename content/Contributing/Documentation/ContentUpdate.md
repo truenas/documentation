@@ -1,6 +1,12 @@
 ---
 title: "Updating Content"
+description: "This article describes how to contribute changes to the TrueNAS documentation."
 weight: 10
+tags:
+- corecontributing
+- scalecontributing
+- corecontentupdate
+- scalecontentupdate
 ---
 
 {{< toc >}}
@@ -120,4 +126,6 @@ As part of the review process, automation builds a preview of the Docs site with
 When the build is completed, a comment appears in the PR that shows the automation result.
 Click on *Show all checks* and *Details* to see a live demo of the site with your changes.
 
-![PullRequestSummary](/images/Contribute/GitHubPullRequestSummary.png)
+![PullRequestSummary](/images/Contribute/GitHubPullRequestSummary.png)  
+
+{{< taglist tag="corecontributing" limit="10" >}}

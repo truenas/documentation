@@ -36,26 +36,26 @@ Want to get involved in helping to collaborate on TrueNAS SCALE? Join our [Offic
 
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
-| SCALE 22.12.BETA.1 | Code-freeze |  |
-| SCALE 22.12.BETA.1 | Internal Testing Sprints |  |
-| SCALE 22.12.BETA.1 | Tag |  |
-| SCALE 22.12.BETA.1 | Release |  |
-| SCALE 22.12.BETA.2 | Code-freeze |  |
-| SCALE 22.12.BETA.2 | Internal Testing Sprints |  |
-| SCALE 22.12.BETA.2 | Tag |  |
-| SCALE 22.12.BETA.2 | Release |  |
-| SCALE 22.12.RC.1 | Code-freeze |  |
-| SCALE 22.12.RC.1 | Internal Testing Sprints |  |
-| SCALE 22.12.RC.1 | Tag |  |
-| SCALE 22.12.RC.1 | Release |  |
-| SCALE 22.12.0 | Code-freeze |  |
-| SCALE 22.12.0 | Internal Testing Sprints |  |
-| SCALE 22.12.0 | Tag |  |
-| SCALE 22.12.0 | Release |  |
-| SCALE 22.12.1 | Code-freeze |  |
-| SCALE 22.12.1 | Internal Testing Sprints |  |
-| SCALE 22.12.1 | Tag |  |
-| SCALE 22.12.1 | Release |  |
+| SCALE 22.12.BETA.1 | Code-freeze | 24 August 2022 |
+| SCALE 22.12.BETA.1 | Internal Testing Sprints | 29 August 2022 - 09 September 2022 |
+| SCALE 22.12.BETA.1 | Tag | 12 September 2022 |
+| SCALE 22.12.BETA.1 | Release | 13 September 2022 |
+| SCALE 22.12.BETA.2 | Code-freeze | 28 September 2022 |
+| SCALE 22.12.BETA.2 | Internal Testing Sprints | 03 October 2022 - 14 October 2022 |
+| SCALE 22.12.BETA.2 | Tag | 17 October 2022 |
+| SCALE 22.12.BETA.2 | Release | 18 October 2022 |
+| SCALE 22.12.RC.1 | Code-freeze | 26 October 2022 |
+| SCALE 22.12.RC.1 | Internal Testing Sprints | 31 October 2022 - 11 November 2022 |
+| SCALE 22.12.RC.1 | Tag | 14 November 2022 |
+| SCALE 22.12.RC.1 | Release | 15 November 2022 |
+| SCALE 22.12.0 | Code-freeze | 23 November 2022 |
+| SCALE 22.12.0 | Internal Testing Sprints | 24 November 2022 - 09 December 2022 |
+| SCALE 22.12.0 | Tag | 12 December 2022 |
+| SCALE 22.12.0 | Release | 13 December 2022 |
+| SCALE 22.12.1 | Code-freeze | 18 January 2023 |
+| SCALE 22.12.1 | Internal Testing Sprints | 19 January 2023 - 03 February 2023 |
+| SCALE 22.12.1 | Tag | 06 February 2023 |
+| SCALE 22.12.1 | Release | 07 February 2023 |
 
 ## Obtaining the Release
 
@@ -483,7 +483,6 @@ With these new features, the first release (“Bluefish”) of TrueNAS SCALE is 
 | 22.02.0 | <a href="https://jira.ixsystems.com/browse/NAS-115238" target="_blank">NAS-115238</a> | Removed drive from pool does not degrade pool status (SCALE). | Issue is being investigated and a fix provided in a future release | Targeted 22.02.4 |
 | 22.02.0-RC.2 |  | Cosmetic issue with update trains when updating from SCALE 22.02.0-RC.2. | After updating from 22.02.0-RC.2, the previous update train might show in <b>System Settings > Update</b>. This is a cosmetic issue only and can be ignored. |  |
 |  |  | Unable to mount an NFS export after migrating from CORE > SCALE or updating to 22.02.0. | The <file>/etc/exports</file> file is no longer generated when the NFS configuration contains <i>mapall</i> or <i>maproot</i> entries for unknown users or groups. This can impact users who previously had a mapping group set to <i>wheel</i>, which does not exist in SCALE. If you are unable to mount an NFS export, review your NFS share configuration and change any <i>wheel</i> entries to something specific for your environment or <i>root</i>. |  |
-|  |  | ZFS feature flag has been removed. | See <a href="#zfs-feature-flag-removal">ZFS Feature Flag Removal</a> for more information. |  |
 |  |  | SCALE Gluster/Cluster. | Gluster/Cluster features are still in testing.  Administrators should use caution when deploying and avoid use with critical data. |  |
 |  | <a href="https://jira.ixsystems.com/browse/NAS-110263" target="_blank">NAS-110263</a> | AFP sharing is removed from TrueNAS SCALE. The protocol is deprecated and no longer receives development effort or security fixes. | TrueNAS SCALE automatically migrates any existing AFP shares into an SMB configuration that is preset to function like an AFP share. | 21.06-BETA.1 |
 | 21.06-BETA.1 | <a href="https://jira.ixsystems.com/browse/NAS-111547" target="_blank">NAS-111547</a> | ZFS shouldn't count vdev IO errors on hotplug removal | Pool status isn't being updated immediately on disk exchange events. | Targeted 22.12 |
@@ -499,28 +498,6 @@ For more details on zpool.features.7 see [OpenZFS zpool-feature.7](https://openz
 | head_errlog | com.delphix:head_errlog | n/a | Enables the upgraded version of `errlog`. The error log of each head dataset is stored separately in the zap object and keyed by the head id. Every dataset affected by an error block is listed in the output of `zpool status`. |
 | zilsaxattr | org.openzfs:zilsaxattr | extensible_dataset | Enables `xattr-sa` extended attribute logging in the ZIL. If enabled, extended attribute changes from both `xattrdir=dir` and `xattr=sa` are guaranteed to be durable if either `sync=always` is set for the dataset when a change is made or sync(2) is called on the dataset after making changes. |
 
-## ZFS Feature Flag Removal 
-{{< expand "Expand if you created or upgraded a pool using a TrueNAS SCALE nightly build dated between June 29, 2021 and July 15, 2021" "v" >}}
-### Executive Summary
-
-* ZFS `xattr_compat` feature flag removed
-
-### How to tell if I'm impacted by this change
-
-* Users who created or upgraded a pool using a TrueNAS SCALE nightly build dated between June 29, 2021 and July 15, 2021 are impacted by this change.
-* Users who have manually set `xattr_compat=all` on a dataset and written an xattr are impacted by this change.
-* If unsure, you can verify a pool's status of the `xattr_compat` feature flag. If the flag is in the active state, you are impacted by this change.
- 
-![ZFSFeatureFlagRemovalExample](/images/SCALE/ZFSFeatureFlagsRemovalExample5.png "Feature Flag Status") 
- 
-### How to resolve this if I am impacted
-
-* Any pool that has had the feature active, must be backed up and restored into a pool created on a version of ZFS without the feature. For details on how to perform data protection procedures, please refer to the TrueNAS SCALE [Data Protection]({{< relref "/content/SCALE/SCALEUIReference/DataProtection/_index.md" >}}) documentation.
-
-### Technical details behind the change
-
-See the [ZFS Feature Flags Removal article]({{< relref "SCALEZFSFlagRemoval.md" >}}) for more information.
-{{< /expand >}}
 
 
 ### Alderlake GPU Support

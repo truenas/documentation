@@ -1,6 +1,12 @@
 ---
 title: "Content Styling"
+description: "This article describes how to syle your documentation contributions to TrueNAS."
 weight: 30
+tags:
+- corecontributing
+- scalecontributing
+- corecontentstyle
+- scalecontentstyle
 ---
 
 {{< toc >}}
@@ -193,7 +199,7 @@ This allows users that require accessibility assistance like screen readers to b
 
 <i class="fa fa-cog" aria-hidden="true" title="Settings"></i> = `<i class="fa fa-cog" aria-hidden="true" title="Settings"></i>`
 
-<i class="fa fa-pencil" aria-hidden="true" title="Pen"></i> = `<i class="fa fa-pencil" aria-hidden="true" title="Pencil"></i>`
+<span class="iconify" data-icon="fa:pencil"></span> = `<i class="fa fa-pencil" aria-hidden="true" title="Pencil"></i>`
 
 <i class="fa fa-bell" aria-hidden="true" title="Alert"></i> = `<i class="fa fa-bell" aria-hidden="true" title="Alert"></i>`
 
@@ -216,3 +222,5 @@ When a specific key or key combination is to be used, use the `<kbd>` HTML code 
 <kbd>Command+c</kbd> = `<kbd>Command+c</kbd>`
 
 <kbd>Shift+Insert</kbd> = `<kbd>Shift+Insert</kbd>`
+
+{{< taglist tag="corecontributing" limit="10" >}}
