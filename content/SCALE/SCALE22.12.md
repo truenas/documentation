@@ -36,26 +36,26 @@ Want to get involved in helping to collaborate on TrueNAS SCALE? Join our [Offic
 
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
-| SCALE 22.12.BETA.1 | Code-freeze |  |
-| SCALE 22.12.BETA.1 | Internal Testing Sprints |  |
-| SCALE 22.12.BETA.1 | Tag |  |
-| SCALE 22.12.BETA.1 | Release |  |
-| SCALE 22.12.BETA.2 | Code-freeze |  |
-| SCALE 22.12.BETA.2 | Internal Testing Sprints |  |
-| SCALE 22.12.BETA.2 | Tag |  |
-| SCALE 22.12.BETA.2 | Release |  |
-| SCALE 22.12.RC.1 | Code-freeze |  |
-| SCALE 22.12.RC.1 | Internal Testing Sprints |  |
-| SCALE 22.12.RC.1 | Tag |  |
-| SCALE 22.12.RC.1 | Release |  |
-| SCALE 22.12.0 | Code-freeze |  |
-| SCALE 22.12.0 | Internal Testing Sprints |  |
-| SCALE 22.12.0 | Tag |  |
-| SCALE 22.12.0 | Release |  |
-| SCALE 22.12.1 | Code-freeze |  |
-| SCALE 22.12.1 | Internal Testing Sprints |  |
-| SCALE 22.12.1 | Tag |  |
-| SCALE 22.12.1 | Release |  |
+| SCALE 22.12.BETA.1 | Code-freeze | 24 August 2022 |
+| SCALE 22.12.BETA.1 | Internal Testing Sprints | 29 August 2022 - 09 September 2022 |
+| SCALE 22.12.BETA.1 | Tag | 12 September 2022 |
+| SCALE 22.12.BETA.1 | Release | 13 September 2022 |
+| SCALE 22.12.BETA.2 | Code-freeze | 28 September 2022 |
+| SCALE 22.12.BETA.2 | Internal Testing Sprints | 03 October 2022 - 14 October 2022 |
+| SCALE 22.12.BETA.2 | Tag | 17 October 2022 |
+| SCALE 22.12.BETA.2 | Release | 18 October 2022 |
+| SCALE 22.12.RC.1 | Code-freeze | 26 October 2022 |
+| SCALE 22.12.RC.1 | Internal Testing Sprints | 31 October 2022 - 11 November 2022 |
+| SCALE 22.12.RC.1 | Tag | 14 November 2022 |
+| SCALE 22.12.RC.1 | Release | 15 November 2022 |
+| SCALE 22.12.0 | Code-freeze | 23 November 2022 |
+| SCALE 22.12.0 | Internal Testing Sprints | 24 November 2022 - 09 December 2022 |
+| SCALE 22.12.0 | Tag | 12 December 2022 |
+| SCALE 22.12.0 | Release | 13 December 2022 |
+| SCALE 22.12.1 | Code-freeze | 18 January 2023 |
+| SCALE 22.12.1 | Internal Testing Sprints | 19 January 2023 - 03 February 2023 |
+| SCALE 22.12.1 | Tag | 06 February 2023 |
+| SCALE 22.12.1 | Release | 07 February 2023 |
 
 ## Obtaining the Release
 
