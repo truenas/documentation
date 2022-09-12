@@ -492,28 +492,6 @@ For more details on zpool.features.7 see [OpenZFS zpool-feature.7](https://openz
 | head_errlog | com.delphix:head_errlog | n/a | Enables the upgraded version of `errlog`. The error log of each head dataset is stored separately in the zap object and keyed by the head id. Every dataset affected by an error block is listed in the output of `zpool status`. |
 | zilsaxattr | org.openzfs:zilsaxattr | extensible_dataset | Enables `xattr-sa` extended attribute logging in the ZIL. If enabled, extended attribute changes from both `xattrdir=dir` and `xattr=sa` are guaranteed to be durable if either `sync=always` is set for the dataset when a change is made or sync(2) is called on the dataset after making changes. |
 
-## ZFS Feature Flag Removal 
-{{< expand "Expand if you created or upgraded a pool using a TrueNAS SCALE nightly build dated between June 29, 2021 and July 15, 2021" "v" >}}
-### Executive Summary
-
-* ZFS `xattr_compat` feature flag removed
-
-### How to tell if I'm impacted by this change
-
-* Users who created or upgraded a pool using a TrueNAS SCALE nightly build dated between June 29, 2021 and July 15, 2021 are impacted by this change.
-* Users who have manually set `xattr_compat=all` on a dataset and written an xattr are impacted by this change.
-* If unsure, you can verify a pool's status of the `xattr_compat` feature flag. If the flag is in the active state, you are impacted by this change.
- 
-![ZFSFeatureFlagRemovalExample](/images/SCALE/ZFSFeatureFlagsRemovalExample5.png "Feature Flag Status") 
- 
-### How to resolve this if I am impacted
-
-* Any pool that has had the feature active, must be backed up and restored into a pool created on a version of ZFS without the feature. For details on how to perform data protection procedures, please refer to the TrueNAS SCALE [Data Protection]({{< relref "/content/SCALE/SCALEUIReference/DataProtection/_index.md" >}}) documentation.
-
-### Technical details behind the change
-
-See the [ZFS Feature Flags Removal article]({{< relref "SCALEZFSFlagRemoval.md" >}}) for more information.
-{{< /expand >}}
 
 
 ### Alderlake GPU Support
