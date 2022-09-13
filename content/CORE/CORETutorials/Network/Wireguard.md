@@ -1,11 +1,14 @@
 ---
 title: "Enabling WireGuard"
+description: "This article provides instructions on setting up WireGuard on TrueNAS CORE."
 weight: 50
 aliases: /core/network/wireguard/
+tags:
+- corewireguard
+- corenetwork
 ---
 
-[WireGuard](https://www.wireguard.com/) is a popular option in the VPN marketplace due to its speed, simplicity, and modern cryptography standards.
-Starting with FreeNAS version 11.3-RC1 and continuing through TrueNAS 12.0, it is possible to connect your NAS directly to a WireGuard network with a few easy steps.
+[WireGuard](https://www.wireguard.com/) is a popular option in the VPN marketplace. It is fast, simple, and uses modern cryptography standards. It is possible to connect your NAS to a WireGuard network in a few easy steps. Systems running FreeNAS version 11.3-RC1 through TrueNAS 13.0 have WireGuard capability.
 
 ## Configure System Tunables for WireGuard
 
@@ -31,7 +34,7 @@ When finished, TrueNAS sets and enables the two variables.
 
 ## Configure a Init/Shutdown Script
 
-Next, create a post-init script that places the WireGuard config in the correct location at startup.
+Next, create a post-init script. This places the WireGuard config in the correct location at startup.
 
 Go to **Tasks > Init/Shutdown Scripts** and click **Add**.
 Configure the script to load the WireGuard <file>.conf</file> file each time the system boots:
@@ -42,8 +45,8 @@ Configure the script to load the WireGuard <file>.conf</file> file each time the
 
 ## Configure the WireGuard File
 
-You can configure the <file>/root/wg0.conf</file> file and apply a WireGuard configuration to attach to whatever WireGuard network you define.
-It can be a single point-to-point to anything running WireGuard or even use full routing.
+You can configure the <file>/root/wg0.conf</file> file. This applies a WireGuard configuration to attach to whatever WireGuard network you define.
+It can be a single point-to-point to anything running WireGuard. It can even use full routing.
 Example use cases are:
 
 * Access data on a NAS from your Remote Laptop
@@ -55,11 +58,13 @@ Example use cases are:
 
 ### Create the File with WireGuard Configuration to Apply at Boot
 
-Now create the <file>/root/wg0.conf</file> with the specific WireGuard configuration to apply at boot.
-These file settings depend on your specific networking environment and requirements, which is beyond the scope of this article.
+Now create the <file>/root/wg0.conf</file>. This is the specific WireGuard configuration to apply at boot.
+These file settings depend on your specific networking environment and requirements. Their configuration is beyond the scope of this article.
 
 There are [quickstart guides](https://www.wireguard.com/quickstart/) and [tutorials](https://www.linode.com/docs/networking/vpn/set-up-wireguard-vpn-on-ubuntu/) available online as well as the built-in wg-quick manpage.
 
-After you have a valid <file>/root/wg0.conf</file>, rebooting the system brings up the WireGuard interface with a wg0 device in the output of `ifconfig`.
+Determine that you have a valid <file>/root/wg0.conf</file>. If so, rebooting the system brings up the WireGuard interface with a wg0 device in the output of `ifconfig`.
 
 ![wg0DeviceOutput](/images/CORE/12.0/wg0DeviceOutput.png "wg0 device output")
+
+{{< taglist tag="corenetwork" limit="10" >}}
