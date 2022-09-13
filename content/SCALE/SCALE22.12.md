@@ -74,11 +74,11 @@ SCALE is developed as an appliance that uses specific Linux packages with each r
 
 TrueNAS SCALE 22.12-BETA.1 has been released and includes many new features and improved functionality. SCALE 22.12-Beta.1 features:
 
-* STIG hardening through limiting web login and API access by restricting access for non-approved IP addresses and ranges. 
-  Additional STIG hardining through disabling root login access and tying user to API ACLs (target SCALE 22.12-Beta.2).  
+* Redesign of Storage web UI including new dashboards for Storage, Pools, Dashboards, Devices and other storage related areas
 * Storj iX Cloud Sync backup solution now available.
-* Apps improvments including adding Storj to the official catalog and adding a default Apps catalog exclusive for Enterprise customers (SCALE 22.12-Beta.1)
-* Redesign of Storage web UI inclduing new dashboards for Storage, Pools, Dashboards, Devices and other storage related areas
+* Apps improvements including adding Storj to the official catalog and adding a default Apps catalog exclusive for Enterprise customers (SCALE 22.12-Beta.1)
+* STIG hardening through limiting web login and API access by restricting access for non-approved IP addresses and ranges. 
+  Additional STIG hardening through disabling root login access and tying user to API ACLs (target SCALE 22.12-Beta.2).  
 * Enclosure management for all iXsystems platforms 
 * Improved clustering over the Angelfish clustered SMB (aka Windows storage).
 
