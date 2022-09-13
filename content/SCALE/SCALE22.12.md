@@ -482,3 +482,18 @@ For more details on zpool.features.7 see [OpenZFS zpool-feature.7](https://openz
 | blake3 | org.openzfs.blake3 | extensible)dataset | Enables use of the BLAKE3 hash algorithmfor checksum and dedup. BLAKE3 is a secure hash algorithm focused on high performance. When enabled, the adminstrator can turn on the blake3 checksum on any dataset using `zfs set checksum=blake dset` [see zfs-set(8)](https://openzfs.github.io/openzfs-docs/man/8/zfs-set.8.html). |
 | head_errlog | com.delphix:head_errlog | n/a | Enables the upgraded version of `errlog`. The error log of each head dataset is stored separately in the zap object and keyed by the head id. Every dataset affected by an error block is listed in the output of `zpool status`. |
 | zilsaxattr | org.openzfs:zilsaxattr | extensible_dataset | Enables `xattr-sa` extended attribute logging in the ZIL. If enabled, extended attribute changes from both `xattrdir=dir` and `xattr=sa` are guaranteed to be durable if either `sync=always` is set for the dataset when a change is made or sync(2) is called on the dataset after making changes. |
+
+## Bluefin Unstable Nightly Images (Unstable Branch, developers and brave testers)
+
+{{< hint danger >}}
+Nightly builds are considered experimental and highly unstable.
+Do not use a nightly build for anything other than testing and development.
+{{< /hint >}}
+
+Nightly images for TrueNAS SCALE are built every 24 hours, at around 2AM Eastern (EDT/EST) time.
+These images are made publicly available when they pass automated basic usability testing.
+This means that during times of heavy development, nightly images might be less frequently available.
+Online updates are created every 2 hours and are available in the SCALE UI online updating page.
+
+* [ISO Installation Files](https://download.truenas.com/truenas-scale-bluefin-nightly/ "SCALE Angelfish Nightly .iso files")
+* [Manual Update File](https://update.freenas.org/scale/TrueNAS-SCALE-Bluefin-Nightlies/TrueNAS-SCALE-Bluefin-Nightly.update)
