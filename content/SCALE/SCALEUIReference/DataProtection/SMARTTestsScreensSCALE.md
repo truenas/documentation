@@ -1,114 +1,52 @@
 ---
-title: "S.M.A.R.T. Tests"
+title: "S.M.A.R.T. Tests Screens"
+description: ""
 weight: 60
+aliases: /scale/scaleuireference/dataprotection/smarttestsscreensscale/
+tags:
+ - scalesmarttests
 ---
 
 {{< toc >}}
 
-[S.M.A.R.T.](https://en.wikipedia.org/wiki/S.M.A.R.T.) (Self-Monitoring, Analysis and Reporting Technology) is a standard for disk monitoring and testing.
-You can monitor disks for problems using different kinds of self-tests.
-TrueNAS can adjust when it issues S.M.A.R.T. alerts.
-When S.M.A.R.T. monitoring reports a disk issue, we recommend you replace that disk.
-Most modern ATA, IDE, and SCSI-3 hard drives support S.M.A.R.T.
-Refer to your respective drive documentation for confirmation.
 
-![SMARTTestsSCALE](/images/SCALE/SMARTTestsSCALE.png "S.M.A.R.T. Tests")
+The **Data Protection** screen **S.M.A.R.T. Tests** widget displays the S.M.A.R.T. tests configured on the system and provides access to create or edit S.M.A.R.T. tests.
 
-TrueNAS runs S.M.A.R.T. tests on disks.
-Running tests can reduce drive performance, so we recommend scheduling tests when the system is in a low-usage state.
-Avoid scheduling disk-intensive tests at the same time!
-For example, don't schedule S.M.A.R.T. tests on the same day as a disk [scrub]({{< relref "ScrubTasksSCALE.md" >}}) or other Data Protection task.
+![DataProtectionSmartTestScreen](/images/SCALE/22.02/DataProtectionSmartTestScreen.png "Data Protection S.M.A.R.T. Tests")
 
-{{< expand "How do I check or change S.M.A.R.T. testing for a disk?" "v" >}}
-Go to **Storage**, then click the **Disks** drop-down and select **Disks**.
+The **S.M.A.R.T. Tests** widget displays **No S.M.A.R.T. Tests configured** when no tests are configured on the system.
 
-Click the <i class="material-icons" aria-hidden="true">expand_more</i> in a disk's row to expand it.
-*Enable S.M.A.R.T.* shows as *true* or *false*.
+![SmartTestsWidgetNoTests](/images/SCALE/22.02/SmartTestsWidgetNoTests.png "S.M.A.R.T. Tests Widget No Tests")
 
-To enable or disable testing, click **EDIT** and find the **Enable S.M.A.R.T.** option.
-{{< /expand >}}
+After adding tests, each becomes a link to open the **[Edit S.M.A.R.T. Tests](#add-and-edit-smart-test-screens)** screen.
 
-## Manual S.M.A.R.T. Test
+![SmartTestsWidgetWithTest](/images/SCALE/22.02/SmartTestsWidgetWithTest.png "S.M.A.R.T. Test Widget with Test")
 
-To quickly test one or more disk for errors, select the disks you want to test and click **MANUAL TEST**.
+Click on **S.M.A.R.T. Tests** widget header to open the **S.M.A.R.T. Tests** list screen.
 
-![SMARTTestsQuickSCALE](/images/SCALE/SMARTTestsQuickSCALE.png "Manual Test Options")
+![SmartTestsListScreen](/images/SCALE/22.02/SmartTestsListScreen.png "S.M.A.R.T. Tests List")
 
-Next, select the test **Type**.
-Test types differ based on the drive connection, ATA or SCSI:
+Use **Columns** to display options to customize the information displayed in the list screen. Options are **Unselect All**, **Description**, **Frequency**, **Next Run**, and **Reset to Defaults**.
 
-{{< hint info >}}
-Manual S.M.A.R.T. tests on NVMe devices is currently not supported.
-{{< /hint >}}
-{{< tabs "Tests by Drive Connection" >}}
-{{< tab "ATA" >}}
-* **Long** runs a S.M.A.R.T. Extended Self Test that scans the entire disk surface, which may take hours on large-volume disks.
-* **Short** runs a basic S.M.A.R.T. Short Self Test (usually under ten minutes) that varies by manufacturer.
-* **Conveyance** runs a S.M.A.R.T. Conveyance Self Test (usually only minutes) that identifies damage incurred while transporting the device.
-* **Offline** runs a S.M.A.R.T. Immediate Offline Test that updates the S.M.A.R.T. Attribute values. Errors will appear in the S.M.A.R.T. error log.
+**Add** opens the **Add S.M.A.R.T. Test** configuration screen.
 
-{{< /tab >}}
-{{< tab "SCSI" >}}
-* **Long** runs the "Background long" self-test.
-* **Short** runs the "Background short" self-test.
-* **Offline** runs the default self-test in the foreground, but doesn't place an entry in the self-test log.
-{{< /tab >}}
-{{< /tabs >}}
+The <span class="material-icons">more_vert</span> for each test has two options, **Edit** and **Delete**. 
+**Edit** opens the **Edit S.M.A.R.T. Test** configuration screen and **Delete** opens a confirmation **Delete** dialog. 
+The <span class="material-icons">delete</span> delete icon on the widget also opens the **Delete** dialog for the selected S.M.A.R.T. test. Click **Confirm** to activate **Delete**.
 
-For more information, refer to [smartctl(8)](https://www.unix.com/man-page/suse/8/smartctl/).
+![DeleteSMARTTest](/images/SCALE/22.02/DeleteSMARTTest.png "Delete S.M.A.R.T. Test")
 
-Click **START** to begin the test.
-Test duration varies based on the test type you chose.
-TrueNAS generates alerts when tests discover issues.
+### Add and Edit SMART Test Screens
+The **Add S.M.A.R.T. Test** and **Edit S.M.A.R.T. Test** configuration screens displays the same settings.
 
-{{< expand "Where can I view the test results?" "v" >}}
-Click the <i class="material-icons" aria-hidden="true">expand_more</i> in a disk's row to expand it, then click **S.M.A.R.T. TEST RESULTS**.
-You can also see results in the **[Shell]({{< relref "SCALEShell.md" >}})** using `smartctl` and the name of the drive: `smartctl -l selftest /dev/ada0`.
-{{< /expand >}}
+![AddSMARTTestsScreen](/images/SCALE/22.02/AddSMARTTestsScreen.png "Add S.M.A.R.T. Test")
 
-## Automatic S.M.A.R.T. Tests
+![EditSMARTTestScreen](/images/SCALE/22.02/EditSMARTTestScreen.png "Edit S.M.A.R.T. Test")
 
-To schedule recurring S.M.A.R.T. tests, go to **Data Protection** and click **ADD** in the **S.M.A.R.T. Tests** window.
-
-![SMARTTestsAddSCALE](/images/SCALE/SMARTTestsAddSCALE.png "Add recurring S.M.A.R.T. test")
-
-{{< expand "Specific Options" "v" >}}
 {{< include file="static/includes/Reference/TasksSMARTAddFields.md.part" markdown="true" >}}
-{{< /expand >}}
 
-Choose the **Disks** to test, the test **Type** to run, and the task's **Schedule**.
-
-{{< hint warning >}}
-S.M.A.R.T. tests can offline disks! Avoid scheduling S.M.A.R.T. tests simultaneously with scrub or other data protection tasks.
-{{< /hint >}}
-
-If you need the test to run on a specific **Schedule**, choose **Custom** to open the advanced scheduler.
 {{< expand "Advanced Scheduler" "v" >}}
 {{< include file="static/includes/SCALE/SCALEAdvancedScheduler.md.part" markdown="true" >}}
 {{< /expand >}}
 
-Saved schedules appear in the **S.M.A.R.T. Tests** window.
-
-{{< expand "CLI" "v" >}}
-To verify the schedule is saved, you can open the [shell]({{< relref "SCALEShell.md" >}}) and enter `smartd -q showtests`.
-{{< /expand >}}
-
-## Service Options
-
-You must enable the S.M.A.R.T. service to run automatic S.M.A.R.T. tests.
-
-{{< expand "RAID controllers?" "v" >}}
-Disable the S.M.A.R.T. service when a RAID controller controlls the disks.
-The controller monitors S.M.A.R.T. separately and marks disks as a **Predictive Failure** on a test failure.
-{{< /expand >}}
-
-To start the S.M.A.R.T. service, go to **System Settings > Services** and toggle **S.M.A.R.T.**.
-To start the service during the TrueNAS boot process, set **Start Automatically**.
-
-Configure the S.M.A.R.T. service by clicking <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
-
-![SMARTTestsOptionsSCALE](/images/SCALE/SMARTTestsOptionsSCALE.png "Services SMART Options")
-
-{{< include file="static/includes/Reference/ServicesSMARTFields.md.part" markdown="true" >}}
-
-Click **Save** after changing any settings.
+{{< taglist tag="scalesmarttests" limit="10" >}}
