@@ -14,7 +14,7 @@ This feature is only available in the open-source supported TrueNAS CORE.
 [Automatic Certificate Management Environment (ACME)](https://ietf-wg-acme.github.io/acme/draft-ietf-acme-acme.html) is available for automating certificate issuing and renewal.
 The user must verify ownership of the domain before certificate automation is allowed.
 
-ACME certificate automation requires an ACME DNS Authenticator and a [Certificate Signing Request]({{< relref "Certificates.md" >}}).
+ACME certificate automation requires an ACME DNS Authenticator and a [Certificate Signing Request]({{< relref "/CORE/UIReference/System/Certificates.md" >}}).
 
 ## Adding ACME DNS Authenticators
 

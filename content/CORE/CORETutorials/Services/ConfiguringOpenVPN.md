@@ -15,7 +15,7 @@ A virtual private network (VPN) is an extension of a private network over public
 
 ## Obtaining a Public Key Infrastructure (PKI)
 
-Public key infrastructure (PKI) must be in place before configuring TrueNAS as either an OpenVPN server or client. PKI utilizes [certificates]({{< relref "Certificates.md" >}}) and [certificate authorities]({{< relref "CAs.md" >}}) created in or imported to TrueNAS.
+Public key infrastructure (PKI) must be in place before configuring TrueNAS as either an OpenVPN server or client. PKI utilizes [certificates]({{< relref "/CORE/UIReference/System/Certificates.md" >}}) and [certificate authorities]({{< relref "CAs.md" >}}) created in or imported to TrueNAS.
 {{< expand "What does this do?" "v" >}}
 TrueNAS authenticates with clients or servers by confirming network credentials. These must be signed by a valid master certificate authority (CA). 
 To read more about the required PKI for OpenVPN, see the [OpenVPN PKI Overview](https://community.openvpn.net/openvpn/wiki/HOWTO?__cf_chl_jschl_tk__=92022277e38bff707b1684f49a2af61f5eb4c632-1605712222-0-AQxKxUAlHKMcfHHNdSMOLL25Lr3e8icKHu3CgjMFRe6GXS1Z72EgXMieNrGaBdWa0m3R5CEZcxwGdwhgaRO392FTivdOQis5Pa2Bm-4jEzydUBTqhx_F4XWN7ujVee5CUxG6AoyOet91SaWM-siqV0_d0ppGnSsfwX9HFOmKuAnJexAjqpofUlP6xjru4Qujw72uR-yUT3fuFDMyukAAtEAP_zPXtewdS_kcSC5eSdf-RC6V8T_QZ2UT6GfqxxSr5shwe0rFkNinTCOKLk_67UIU2zEkpuiQ8C7p3ysh1DS_ONAzR2pfwdgetKm3HiBJ38C86956W6D8-mpOulfP26E#Overview).

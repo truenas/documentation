@@ -2,7 +2,7 @@
 title: "WebDAV Shares Screens"
 description: "This article provides information on WebDAV screens and settings."
 weight: 70
-aliases: /
+aliases:
 tags:
  - scalewebdav
  - scaleshares
@@ -11,59 +11,75 @@ tags:
 {{< toc >}}
 
 A Web-based Distributed Authoring and Versioning (WebDAV) share makes it easy to share a TrueNAS dataset and its contents over the web.
-{{< include file="static/includes/General/SharingPrereqs.md.part" markdown="true" >}}
 
-## Share Configuration
+The **Sharing** screen opens after you click **Shares** on the main navigation panel.  
 
-Go to **Shares > WebDAV Shares** and click **Add**.
+## WebDAV Widget
+The **WebDAV <span class="material-icons">launch</span>** widget includes the widget toolbar that displays the status of the WebDAV service and the **Add** button. 
+After adding WebDAV shares, the widget displays a list of the shares below the toolbar.
 
-![SharingWebdavAddSCALE](/images/SCALE/SharingWebdavAddSCALE.png "Creating a WebDAV Share")
+![SharingWebDAVNoShares](/images/SCALE/22.02/SharingWebDAVNoShares.png "WebDAV Widget No Shares")
 
-Enter a share **Name** and use the file browser to select the dataset to share.
-An optional **Description** helps to identify the share.
-To prevent user accounts from modifying the shared data, set **Read Only**.
+After adding the first WebDAV share, the system opens an enable service dialog. 
 
-By default, **Change User & Group Ownership** is set.
-This changes existing ownership of *all* files in the share to the **webdav** user and group accounts.
-The default simplifies WebDAV share permission, but is unexpected, so the web interface shows a warning:
+![SharingWebDAVEnableServiceDialog](/images/SCALE/22.02/SharingWebDAVEnableServiceDialog.png "Enable WebDAV Service Dialog")
 
-![SharingWebdavAddWarningSCALE](/images/SCALE/SharingWebdavAddWarningSCALE.png "Services Webdav Add Warning")
+**Enable Service** turns the WebDAV service on and changes the toolbar status to **Running**. 
+If you added shares of other types, the widget occupies a quarter of the screen. 
 
-This warning does not show when the **Change User & Group Ownership** checkbox is cleared.
-In that situation, you must manually set shared file ownership to the webdav or *www* user and group accounts.
+The **Enable** toggle for each share shows the current status of the share. When disabled, it disables the share but does not delete the configuration from the system.
 
-By default, the new WebDAV share is immediately active.
-To create the share but not immediately activate it, unset **Enable**.
-Click **Submit** to create the share.
+The shares list on the widget includes a **Read Only** toggle that turns this on or off.
 
-## Service Activation
+The <span class="material-icons">delete</span> delete icon displays a delete confirmation dialog that removes the share from the system.
 
-Creating a share allows users to activate the WebDAV service.
-To enable or disable the WebDAV service, go to **System Settings > Services** and toggle **WebDAV**.
-To automatically start the service when TrueNAS boots, set **Start Automatically**.
-Click <i class="material-icons" aria-hidden="true" title="edit">edit</i> to change the service settings.
+![SharingWebDAVDeleteDialog](/images/SCALE/22.02/SharingWebDAVDeleteDialog.png "WebDAV Share Delete") 
 
-![WebDAVServiceOptionsSCALE](/images/SCALE/WebDAVServiceOptionsSCALE.png "WebDAV Service Options")
+**View Details** and clicking anywhere on **WebDAV <span class="material-icons">launch</span>** the opens the **Sharing > WebDAV** screen with the list view of WebDAV shares. 
 
-For better data security, set the **Protocol** to **HTTPS**.
-If you require it, you must choose an SSL certificate (*freenas_default* is always available).
-All **Protocol** options require you to define a number in the **Port** field.
-Make sure the network is not already using the WebDAV service port.
+The WebDAV share on the widget opens the **[Edit WebDAV](#add-and-edit-webdav-screens)** screen.
 
-To prevent unauthorized access to the shared data, set the **HTTP Authentication** to either **Basic** or **Digest** and create a new **Webdav Password**.
+### WebDAV Widget Toolbar
+The **WebDAV** widget toolbar includes the **Add** button and an actions menu.
 
-Be sure to click **Save** after making any changes.
+![WebDAVWidgetOptions](/images/SCALE/22.02/WebDAVWidgetOptions.png "WebDAV Widget Options") 
 
-## Connecting to the WebDAV Share
+The <span class="material-icons">more_vert</span> on the toolbar displays options turn the WebDAV service on or off. **Turn Off Service** displays if the service is running or **Turn On Service** if the service is stopped. The **Config Service** option opens the **[Services > WebDAV]({{< relref "WebDAVServiceScreen.md" >}})** configuration screen. 
 
-WebDAV shared data is accessible from a web browser.
-To see the shared data, open a new browser tab and enter `{PROTOCOL}://{TRUENASIP}:{PORT}/{SHAREPATH}`.
-Replace the elements in curly brackets `{}` with your chosen WebDAV share and service settings.
-Example: `https://10.2.1.1:8081/newdataset`
+The toolbar displays the **STOPPED** service status in red before you start the service or click **Enable Service** when the dialog displays. When service is started it displays **RUNNING** in blue.
 
-TrueNAS requires a username and password when setting the **Authentication** WebDAV service option to **Basic** or **Digest**.
-Enter the user name **webdav** and the password defined in the WebDAV service.
+**Add** opens the **No WebDAV** screen if no shares exist on the system. 
 
+![SharingNoWebDAVScreen](/images/SCALE/22.02/SharingNoWebDAVScreen.png "No WebDAV Screen") 
+
+**Add WebDAV** opens the **[Add WebDAV](#add-and-edit-webdav-screens)** screen. If the system has WebDAV shares, **Add** opens the **Add WebDAV** screen to add more shares.
+
+## Sharing WebDAV Details Screen
+The **Sharing > WebDAV** details screen displays the same list of shares as the **WebDAV** widget.
+
+![SharingWebDAVDetailsScreen](/images/SCALE/22.02/SharingWebDAVDetailsScreen.png "WebDAV Details Screen") 
+
+Customize the information using the **Columns** dropdown list. Select from the  **Select All,** **Description**, **Path**, **Enabled**, **Read Only**, **Ownership** and **Reset to Defaults** options. 
+
+![SharingWebDAVShareExpanded](/images/SCALE/22.02/SharingWebDAVShareExpanded.png "WebDAV Share Details Screen") 
+
+The <span class="material-icons">expand_more</span> displays share details and the option to **Edit** or **Delete** the share. 
+**Edit** opens the **Edit WebDAV** configuration screen.
+**Delete** opens an **Delete** confirmation dialog.
+Select **Confirm** and then **Delete** to remove the share without affecting the data in the share dataset.
+
+## Add and Edit WebDAV Screens
+The **Add WebDAV** and **Edit WebDAV** display the same settings.
+
+![AddWebDAVScreen](/images/SCALE/22.02/AddWebDAVScreen.png "Add WebDAV Screen") 
+
+| Setting | Description |
+|---------|-------------|
+| **Name** | Required. Enter a name for the share. |
+| **Description** | Enter any notes or reminders about the share.   |
+| **Path** | Enter the path or use the <span class="material-icons">arrow_right</span> icon to the left of **<span class="material-icons">folder</span>/mnt** to locate the dataset and populate the path. **Path** is the directory tree on the local file system. |
+| **Read Only** | Select to prohibit users from writing to this share. The **Read Only** toggle on the **WebDAV** widget displays this setting status. |
+| **Change User & Group Ownership** | Select to change existing ownership of all files in the share to the **webdav** user and group. This displays a warning dialog. If left clear, you must manually set ownership of the files accessed through WebDAV to **webdav** or **www** user and group. |
+| **Enabled** | Select to enable this WebDAV share. Clear the checkbox to disable the share without deleting the configuration. |
 
 {{< taglist tag="scalewebdav" limit="10" >}}
-{{< taglist tag="scaleshares" limit="10" title="Related Shares Articles" >}}
