@@ -21,26 +21,10 @@ aliases:
 
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
-| SCALE 22.12.BETA.1 | Code-freeze |  |
-| SCALE 22.12.BETA.1 | Internal Testing Sprints |  |
-| SCALE 22.12.BETA.1 | Tag |  |
-| SCALE 22.12.BETA.1 | Release |  |
-| SCALE 22.12.BETA.2 | Code-freeze |  |
-| SCALE 22.12.BETA.2 | Internal Testing Sprints |  |
-| SCALE 22.12.BETA.2 | Tag |  |
-| SCALE 22.12.BETA.2 | Release |  |
-| SCALE 22.12.RC.1 | Code-freeze |  |
-| SCALE 22.12.RC.1 | Internal Testing Sprints |  |
-| SCALE 22.12.RC.1 | Tag |  |
-| SCALE 22.12.RC.1 | Release |  |
-| SCALE 22.12.0 | Code-freeze |  |
-| SCALE 22.12.0 | Internal Testing Sprints |  |
-| SCALE 22.12.0 | Tag |  |
-| SCALE 22.12.0 | Release |  |
-| SCALE 22.12.1 | Code-freeze |  |
-| SCALE 22.12.1 | Internal Testing Sprints |  |
-| SCALE 22.12.1 | Tag |  |
-| SCALE 22.12.1 | Release |  |
+| SCALE 22.02.4 | Code-freeze | 14 September 2022 |
+| SCALE 22.02.4 | Internal Testing Sprints | 15 September > 23 September 2022 |
+| SCALE 22.02.4 | Tag | 26 September 2022 |
+| SCALE 22.02.4 | Release | 27 September 2022 |
 
 ## Obtaining the Release
 
@@ -52,6 +36,5 @@ To upgrade an existing SCALE install, log in to your SCALE web interface and go 
 {{< hint warning >}}
 SCALE is developed as an appliance that uses specific Linux packages with each release. Attempting to update SCALE with `apt` or methods other than the SCALE web interface can result in a nonfunctional system.
 {{< /hint >}}
-
 
 ## <version changelog>
