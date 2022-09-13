@@ -18,7 +18,7 @@ The **Cloud Credentials** widget on the **Backup Credentials** screen allows use
 
 {{< expand "Is this secure?" "v" >}}
 To maximize security, TrueNAS encrypts cloud credentials when saving them.
-However, this means that to restore any cloud credentials from a TrueNAS configuration file, you must enable *Export Password Secret Seed* when generating that [configuration backup]({{< relref "GeneralSettings.md" >}}).
+However, this means that to restore any cloud credentials from a TrueNAS configuration file, you must enable **Export Password Secret Seed** when generating that [configuration backup]({{< relref "/SCALE/SCALETutorials/SystemSettings/GeneralSettings.md" >}}).
 Remember to protect any downloaded TrueNAS configuration files.
 {{< /expand >}}
 
@@ -35,12 +35,11 @@ For example, saving an Amazon S3 credential on TrueNAS could require logging in 
 Have any authentication information your cloud storage provider requires on-hand to make the process easier. Authentication information could include but are not limited to user credentials, access tokens, and access and security keys.
 
 ## Adding Cloud Credentials
-To set up a cloud credential, go to **Credentials > Backup Credentials** and click **Add** in the **Cloud Credentials** widget.
 
-![CloudCredentialsAdd](/images/SCALE/22.02/CloudCredentialsAdd.png "Add Cloud Credential")
-
-1. Enter a credential name.
-
+{{< include file="/content/_includes/AddCloudCredentialStep1.md" type="page" >}}
+   
+   ![CloudCredentialsAdd](/images/SCALE/22.02/CloudCredentialsAdd.png "Add Cloud Credential")
+   
 2. Select the cloud service from the **Provider** dropdown list. The provider required authentication option settings display.
    
    For details on each provider authentication settings see [Cloud Credentials Screens]({{< relref "/SCALE/SCALEUIReference/Credentials/BackupCredentials/CloudCredentialScreens.md" >}}).
@@ -114,12 +113,12 @@ Google Drive and pCloud use one more setting to authenticate credentials.
    
    | Provider | Access Token |
    |----------|--------------|
-   | Box | For more information the User Access Token for Box [click here](https://developer.box.com/). An [access token](https://developer.box.com/reference/) enables Box to verify a request belongs to an authorized session. Example token: T9cE5asGnuyYCCqIZFoWjFHvNbvVqHjl. |
+   | Box | For more information the user acess token for Box [click here](https://developer.box.com/). An [access token](https://developer.box.com/reference/) enables Box to verify a request belongs to an authorized session. Example token: T9cE5asGnuyYCCqIZFoWjFHvNbvVqHjl. |
    | Dropbox | Create an access [token](https://dropbox.tech/developers/generate-an-access-token-for-your-own-account) from the [Dropbox account](https://www.dropbox.com/). |
-   | Google Drive | Create the token with [Google Drive](https://developers.google.com/drive/api/v3/about-auth). Access Tokens expire periodically, so you must refresh them. |
+   | Google Drive | The authentication process creates the token for [Google Drive](https://developers.google.com/drive/api/v3/about-auth) and populates the **Access Token** field automatically. Access tokens expire periodically, so you must refresh them. |
    | Google Photo | does not used an access token. |
-   | pCloud | Create the pCloud Access Token [here](https://docs.pcloud.com/methods/intro/authentication.html). These tokens can expire and require an extension. |
-   | Yandex | Create the Yandex Access Token [here](https://yandex.com/dev/direct/doc/dg-v4/concepts/auth-token.html). |
+   | pCloud | Create the pCloud access token [here](https://docs.pcloud.com/methods/intro/authentication.html). These tokens can expire and require an extension. |
+   | Yandex | Create the Yandex access token [here](https://yandex.com/dev/direct/doc/dg-v4/concepts/auth-token.html). |
 
 6. Click **Verify Credentials** to make sure you can connect with the entered credentials.
 

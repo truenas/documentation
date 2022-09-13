@@ -1,5 +1,5 @@
 ---
-title: SCALE Angelfish Release Notes
+title: SCALE 22.02 Angelfish Release Notes
 weight: 5
 aliases:
   - /releasenotes/
@@ -38,11 +38,10 @@ aliases:
 
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
-| SCALE 22.02.2.1 | Release | 07 July 2022 |
-| SCALE 22.02.3 | Code-freeze | 20 July 2022 |
-| SCALE 22.02.3 | Internal Testing Sprints | 25 July > 05 August 2022 |
-| SCALE 22.02.3 | Tag | 08 August 2022 |
-| SCALE 22.02.3 | Release | 09 August 2022 |
+| SCALE 22.02.4 | Code-freeze | 14 September 2022 |
+| SCALE 22.02.4 | Internal Testing Sprints | 15 September > 23 September 2022 |
+| SCALE 22.02.4 | Tag | 26 September 2022 |
+| SCALE 22.02.4 | Release | 27 September 2022 |
 
 ## Obtaining the Release
 
@@ -4921,7 +4920,7 @@ Verified Features are generally working in SCALE. Minor bugs could be present.
 * Cloud Sync
 * Replication
 * TrueCommand Cloud connections
-* [Applications UI]({{< relref "UsingApps.md" >}})
+* [Applications UI]({{< relref "/SCALE/SCALETutorials/Apps/UsingApps.md" >}})
 
 ### Provisional
 
@@ -5425,7 +5424,7 @@ Verified Features are generally working in SCALE. Minor bugs could be present.
 These features have been added, but have known issues or are not fully feature-complete.
 Please use only with caution.
 
-* [Applications UI]({{< relref "UsingApps.md" >}})
+* [Applications UI]({{< relref "/SCALE/SCALETutorials/Apps/UsingApps.md" >}})
 * Tasks:
   * Cron
   * Init/Shutdown Scripts

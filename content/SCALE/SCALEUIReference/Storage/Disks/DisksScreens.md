@@ -66,7 +66,7 @@ The **Edit Pool Disk** screen, accessed from the **Pool Status** screen, display
 
 | Setting | Description |
 |---------|-------------|
-| **Enable S.M.A.R.T.** | Select to enable the system to conduct periodic [S.M.A.R.T. tests]({{< relref "/SCALE/SCALEUIReference/DataProtection/SMARTTestsSCALE.md" >}}). |
+| **Enable S.M.A.R.T.** | Select to enable the system to conduct periodic [S.M.A.R.T. tests]({{< relref "/SCALE/SCALETutorials/DataProtection/SMARTTestsSCALE.md" >}}). |
 | **S.M.A.R.T. extra options** | Enter additional [smartctl(8)](https://www.unix.com/man-page/suse/8/smartctl/) options. |
 | **SED Password** | Enter a password to set or change the password of the SED for this disk and to use instead of the global SED password. |
 | **Clear SED Password** | Select to clear the SED password for this disk. |
