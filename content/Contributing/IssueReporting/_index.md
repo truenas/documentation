@@ -24,7 +24,7 @@ You can view public issues without logging in, but you must create a Jira accoun
 
 ## Bug Reports
 
-Go to the [TrueNAS project on Jira](https://ixsystems.atlassian.net/jira/software/c/projects/NAS/issues) and click *Create* in the top bar.
+Go to the [TrueNAS project on Jira](https://ixsystems.atlassian.net/jira/software/c/projects/NAS/issues) and click **Create** in the top bar.
 
 ![Create Ticket](/images/Contribute/JiraCreate.png "Create Ticket")
 
