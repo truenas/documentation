@@ -9,7 +9,7 @@ tags:
 
 {{< toc >}}
 
-The **Credentials > Groups** screen displays a list of groups configured on the screen. By default built-in groups are hidden until you make them visible. 
+The **Credentials > Groups** screen displays a list of groups configured on the screen. By default, built-in groups are hidden until you make them visible. 
 
 
 ![LocalGroupsSCALE](/images/SCALE/22.02/LocalGroupsSCALE.png "Local Groups Built-in Accounts") 
