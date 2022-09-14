@@ -91,7 +91,7 @@ Temperature monitoring for the disk is disabled if **HDD Standby** is enabled. C
 ### Partition Graphs
 {{< expand "Click Here for More Information" "v" >}}
 
-[Partition](https://collectd.org/wiki/index.php/Plugin:DF) graphs displays free, used, and reserved space for each pool and dataset. However, the disk space used by an individual zvol is not displayed as it is a block device.
+[Partition](https://collectd.org/wiki/index.php/Plugin:DF) graphs display free, used, and reserved space for each pool and dataset. However, the disk space used by an individual zvol is not displayed as it is a block device.
 
 ![ReportingPartitionGraphsSCALE](/images/SCALE/22.02/ReportingPartitionGraphsSCALE.png "Partition Reporting")
 
