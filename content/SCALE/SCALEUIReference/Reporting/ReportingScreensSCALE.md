@@ -38,7 +38,7 @@ The <i class="material-icons" aria-hidden="true" title="Settings">settings</i> o
 | **ZFS**| Displays the **ARC Size**, **ARC Hit Ratio**, **ARC Requests demand_data**, **ARC Requests demand_metadata**, **ARC Requests prefetch_data**, and **ARC Requests prefetch_metadata** graphs with the Arc and L2 gigabytes and hits (%), and the hits, misses and total number of requests. |
 
 ## Report Graphs
-The following sections provide example of each report graph.
+The following sections provide examples of each report graph.
 ### CPU Graphs
 {{< expand "Click Here for More Information" "v" >}}
 [CPU](https://collectd.org/wiki/index.php/Plugin:CPU) graphs shows the amount of time spent by the CPU in various states such as executing user code, executing system code, and being idle.
