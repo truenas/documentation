@@ -98,7 +98,7 @@ Temperature monitoring for the disk is disabled if **HDD Standby** is enabled. C
 {{< /expand >}}
 ### System Graphs
 {{< expand "Click Here for More Information" "v" >}}
-[System](https://collectd.org/wiki/index.php/Plugin:Processes) graphs displays the number of processes grouped by state, sleeping, running, stopped, zombies and blocked, and system uptime.
+[System](https://collectd.org/wiki/index.php/Plugin:Processes) graphs display the number of processes grouped by state, sleeping, running, stopped, zombies and blocked, and system uptime.
 
 ![ReportingSystemGraphsSCALE](/images/SCALE/22.02/ReportingSystemGraphsSCALE.png "System Reporting")
 
