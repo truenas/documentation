@@ -45,7 +45,7 @@ If the 2FA code is not working or users cannot get it, the system is inaccessibl
 
 {{< expand "Video Tutorial" "v" >}}
 This short video demonstrates adding 2FA. 
-{{< embed-video name="scaleangelfish2fa" >}}
+{{< embed-video name="scale2fasetup" >}}
 {{< /expand >}}
 
 {{< hint danger >}}
