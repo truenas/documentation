@@ -15,7 +15,7 @@ The **Credentials > Users** screen displays a list of user accounts added to the
 ![LocalUsersSCALE](/images/SCALE/22.02/LocalUsersSCALE.png "Local User non-Built-in Accounts") 
 
 **Toggle Build-In Users** displays either the **Show Built-In Users** or **Hide Built-in Users** dialogs based on the current **Users** list view. 
-If built-in users are hidden, the **Show Built-in Users** dialog opens. Click **Show** to displays the hidden list of users. 
+The **Show Built-in Users** dialog opens if built-in users are hidden. Click **Show** to display the hidden user list. 
 
 ![LocalUsersBuilt-InUsersSCALE](/images/SCALE/22.02/LocalUsersBuilt-InUsersSCALE.png "Local User Built-in Accounts") 
 
