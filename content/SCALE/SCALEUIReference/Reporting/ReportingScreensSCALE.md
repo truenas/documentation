@@ -118,7 +118,7 @@ Temperature monitoring for the disk is disabled if **HDD Standby** is enabled. C
 {{< /expand >}}
 ### ZFS Graphs
 {{< expand "Click Here for More Information" "v" >}}
-[ZFS](https://collectd.org/wiki/index.php/Plugin:ZFS_ARC) graphs shows compressed physical ARC size, hit ratio, demand data, demand metadata, and prefetch data and metadata.
+[ZFS](https://collectd.org/wiki/index.php/Plugin:ZFS_ARC) graphs show compressed physical ARC size, hit ratio, demand data, demand metadata, and prefetch data and metadata.
 
 ![ReportingZFSGraphs1SCALE](/images/SCALE/22.02/ReportingZFSGraphs1SCALE.png "ZFS Reporting ARC Size and Hit Ratio") 
 
