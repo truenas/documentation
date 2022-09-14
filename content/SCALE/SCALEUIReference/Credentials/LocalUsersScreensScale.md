@@ -29,7 +29,7 @@ The expanded view of each users includes details on that user and provides the o
 
 ![LocalUserDetailsSCALE](/images/SCALE/22.02/LocalUserDetailsSCALE.png "Local User Details") 
 
-**Edit** opens the **[Edit User]()** screen. **Delete** opens a delete confirmation dialog.
+**Edit** opens the **[Edit User](#add-or-edit-user-screens)** screen. **Delete** opens a delete confirmation dialog.
 
 ### Add or Edit User Screens
 
