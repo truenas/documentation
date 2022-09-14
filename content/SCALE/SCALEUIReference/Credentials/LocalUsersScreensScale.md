@@ -25,7 +25,7 @@ To hide the built-in users, click **Toggle Built-In Users** again to open the **
 
 ### User Details Screen
 
-The expanded view of each users includes details on that user and provides the option to edit or delete the user. Click the <span class="material-icons">expand_more</span> arrow to show the user details screen.
+The expanded view of each user includes details on that user and provides the option to edit or delete the user. Click the <span class="material-icons">expand_more</span> arrow to show the user details screen.
 
 ![LocalUserDetailsSCALE](/images/SCALE/22.02/LocalUserDetailsSCALE.png "Local User Details") 
 
