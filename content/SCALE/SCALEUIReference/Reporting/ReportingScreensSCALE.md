@@ -41,7 +41,7 @@ The <i class="material-icons" aria-hidden="true" title="Settings">settings</i> o
 The following sections provide examples of each report graph.
 ### CPU Graphs
 {{< expand "Click Here for More Information" "v" >}}
-[CPU](https://collectd.org/wiki/index.php/Plugin:CPU) graphs shows the amount of time spent by the CPU in various states such as executing user code, executing system code, and being idle.
+[CPU](https://collectd.org/wiki/index.php/Plugin:CPU) graphs show the amount of time spent by the CPU in various states such as executing user code, executing system code, and being idle.
 Graphs of short-, mid-, and long-term load are shown, along with CPU temperature graphs.
 
 ![ReportingCPUGraphs1SCALE](/images/SCALE/22.02/ReportingCPUGraphs1SCALE.png "CPU Reporting Usage and Temperature")
