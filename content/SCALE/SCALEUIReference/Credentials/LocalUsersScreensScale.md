@@ -10,7 +10,7 @@ tags:
 {{< toc >}}
 
 
-The **Credentials > Users** screen displays a list of user accounts added to the system. By default built-in users except for **root** are hidden until you make them visible.
+The **Credentials > Users** screen displays a list of user accounts added to the system. By default, built-in users except for **root** are hidden until you make them visible.
 
 ![LocalUsersSCALE](/images/SCALE/22.02/LocalUsersSCALE.png "Local User non-Built-in Accounts") 
 
