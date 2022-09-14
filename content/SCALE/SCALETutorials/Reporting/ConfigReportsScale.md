@@ -35,7 +35,7 @@ Click the <i class="material-icons" aria-hidden="true" title="Settings">settings
 
 ![ReportsConfigurationSCALE](/images/SCALE/22.02/ReportsConfigurationSCALE.png "Reports Configuration")
 
-Select the general options you want to used in your TrueNAS.
+Select the general options you want to use in your TrueNAS.
 
 Specify either the host name or IP address of the [Graphite](https://graphiteapp.org/) server you want to use.
 
