@@ -109,7 +109,7 @@ Selecting **Lock User** disables all password-based functionality for the accoun
 
 **Permit Sudo** allows the account to act as the system administrator using the `sudo` command. Leave it disabled for better security.
 
-If the user accesses TrueNAS data using Windows 8 or newer, select **Microsoft Account** to enable those systems additional authentication methods.
+If the user accesses TrueNAS data using Windows 8 or newer, select **Microsoft Account** to enable those systems' additional authentication methods.
 
 By default, **Samba Authentication** is enabled.
 This allows using the account credentials to access data shared with [SMB]({{< relref "/content/SCALE/SCALEUIReference/Shares/_index.md" >}}).
