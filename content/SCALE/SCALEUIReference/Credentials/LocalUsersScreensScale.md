@@ -68,7 +68,7 @@ Built-in users (except the **root** user) do not include the **Home Directory Pe
 {{< /expand >}}
 
 ### Directories and Permissions settings
-**Directory and Permissions** settings pecify the user home directory and the permissions for that home directory.
+**Directory and Permissions** settings specify the user home directory and the permissions for that home directory.
 {{< expand "Click Here for More Information" "v" >}}
 
 ![AddUserDirPermsAuthSettings](/images/SCALE/22.02/AddUserDirPermsAuthSettings.png "Add User Directories, Permissions and Authentication Settings") 
