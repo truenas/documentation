@@ -1,5 +1,5 @@
 ---
-title: SCALE Angelfish Release Notes
+title: SCALE 22.02 Angelfish Release Notes
 weight: 5
 aliases:
   - /releasenotes/
