@@ -11,7 +11,7 @@ tags:
 {{< toc >}}
 
 
-The **Reporting** screen displays graphs of system information for CPU, disk, memory, network, NFS, partition, target, UPS, ZFS and system functions. The **CPU** report displays by default.
+The **Reporting** screen displays graphs of system information for CPU, disk, memory, network, NFS, partition, target, UPS, ZFS, and system functions. The **CPU** report displays by default.
 
 The <i class="material-icons" aria-hidden="true" title="Settings">settings</i> opens the **[Reports Configuration](#reports-configuration-screen)** configuration screen.
 
