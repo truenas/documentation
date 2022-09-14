@@ -30,7 +30,7 @@ To create a group, go to **Credentials > Local Groups** and click **Add**.
 
 ![AddGroupSCALE](/images/SCALE/22.02/AddGroupSCALE.png "Add Group") 
 
-Enter a unique number for the group ID in **GID**) that TrueNAS uses to identify a Unix group. Enter a number above 1000 for a group with user accounts or for a system service enter the default port number for the service as the GID.  Enter a name for the group. The group name cannot begin with a hyphen (-) or contain a space, tab, or any of these characters: colon (:), plus (+), ampersand (&), hash (#), percent (%), carat (^), open or close parentheses ( ), exclamation mark (!), at symbol (@), tilde (~), astrick (*), question mark (?) greater or less than (<) (>), equal ). You can only use the dollar sign ($) as the last character in a user name.
+Enter a unique number for the group ID in **GID**) that TrueNAS uses to identify a Unix group. Enter a number above 1000 for a group with user accounts or for a system service enter the default port number for the service as the GID.  Enter a name for the group. The group name cannot begin with a hyphen (-) or contain a space, tab, or any of these characters: colon (:), plus (+), ampersand (&), hash (#), percent (%), carat (^), open or close parentheses ( ), exclamation mark (!), at symbol (@), tilde (~), asterisk (*), question mark (?) greater or less than (<) (>), equal ). You can only use the dollar sign ($) as the last character in a user name.
 
 If giving this group administration permissions, select **Permit Sudo**.
 
