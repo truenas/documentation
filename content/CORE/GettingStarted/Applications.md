@@ -5,6 +5,8 @@ weight: 90
 tags:
 - coregettingstarted
 - coreapplications
+- coreapps
+- coreplugins
 ---
 
 {{< toc >}}
@@ -217,3 +219,5 @@ This example shows using an Ubuntu <file>.iso</file>:
 {{< /tabs >}}
 
 {{< taglist tag="coregettingstarted" limit="10" >}}
+
+{{< taglist tag="coreapps" limit="10" title="Related Plugins Articles" >}}
