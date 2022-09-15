@@ -1,6 +1,9 @@
 ---
 title: "Datasets Screens"
+description: "This article describes how to configure a dataset on TrueNAS CORE."
 weight: 17
+tags:
+- coredataset
 ---
 
 {{< toc >}}
@@ -16,7 +19,7 @@ Use **SUBMIT** without entering settings to quickly create a dataset with the de
 The **Name and Options** fields are required to create the dataset.
 Datasets typically inherit most of these settings from the root or parent dataset, only a dataset name is required before clicking **SUBMIT**.
 
-| Setting | Description |
+| Name | Description |
 |---------|-------------|
 | **Name** | Enter a unique identifier for the dataset. The name cannot be changed after the dataset is created. |
 | **Comments** | Enter notes about the dataset. |
@@ -27,7 +30,7 @@ Datasets typically inherit most of these settings from the root or parent datase
 
 Use the **Other Options** to help tune the dataset for particular data sharing protocols:
 
-| Setting | Description |
+| Name | Description |
 |---------|-------------|
 | **ZFS Deduplication** | Select an option to transparently reuse a single copy of duplicated data to save spacefrom the dropdown list. Options are **Inherit (off)**, **on**, **verify** or **off**. Deduplication can improve storage capacity, but is RAM intensive. Compressing data is generally recommended before using deduplication. Deduplicating data is a one-way process. *Deduplicated data cannot be undeduplicated! |
 | **Case Sensitivity** | Select an option from the dropdown list. **Sensitive** assumes file names are case sensitive. **Insensitive** assumes file names are not case sensitive. **Mixed** understands both types of file names. Case sensitivity cannot be changed after the dataset is created! |
@@ -41,7 +44,7 @@ Use **ADVANCED OPTIONS** to add additional dataset settings such as quota manage
 
 **Quota Settings for this dataset and/or this dataset and its child datasets**
 
-| Setting | Description |
+| Name | Description |
 |---------|-------------|
 | **Quota for this datset** | Enter an integer to define the maximum allowed space for the dataset. **0** disables quotas. |
 | **Quota warning alert at, %** | Enter an integer to generate a warning level [alert]({{< relref "/CORE/UIReference/System/AlertSettings.md" >}}) when consumed space reaches the defined percentage. By default, **Inherit** is selected and the dataset inherits this value from the parent dataset. Clear the checkmark to change the value. |
@@ -52,7 +55,7 @@ Use **ADVANCED OPTIONS** to add additional dataset settings such as quota manage
 
 Additional **Other Options** Settings
 
-| Setting | Description |
+| Name | Description |
 |---------|-------------|
 | **Read-only** | Select an option from the dropdown list. **On** prevents the dataset being modified. **Off** allows users accessing the dataset to modify its contents. |
 | **Exec** | Select an option from the dropdown list. **On** allows processes to executd from within this dataset. **Off** prevents processes from executing in the dataset. It is recommended to set to **On**. |
@@ -72,12 +75,12 @@ Use the **Storage > Pools Edit Permissions** screen to change permissions settin
 
 ![DatasetEditPermissionsScreen](/images/CORE/13.0/DatasetEditPermissionsScreen.png "Edit Permissions Screen")
 
-| Setting | Description |
+| Name | Description |
 |---------|-------------|
 | **Dataset Path** | Displays the dataset path for the selected dataset. |
 
 **Owner Settings** 
-| Setting | Description |
+| Name | Description |
 |---------|-------------|
 | **User** | Either type to search for or use dropdown list to select an existing user on the system that controls this dataset. Dropdown list displays all user on the TrueNAS system. |
 | **Apply User** | Select to confirm selected user. As a check on errors, if not selected the user is not submitted. |
@@ -85,12 +88,12 @@ Use the **Storage > Pools Edit Permissions** screen to change permissions settin
 | **Apply Group** | Select to confirm selected group. As a check on errors, if not selected the group is not submitted. |
 
 **Access Settings**
-| Setting | Description |
+| Name | Description |
 |---------|-------------|
 | **Access Mode** | Select the **Read**, **Write** and **Execute** checkboxes for **User**, **Group**, and **Other** to set the permissions levels.  |
 
 **Advanced Settings**
-| Setting | Description |
+| Name | Description |
 |---------|-------------|
 | **Apply Permissions Recursively** | Select to apply permissions recursively to all directories and files within the current dataset. |
 | **Traverse** | Select to apply permissions recursively to all child datasets of the current dataset. |
@@ -104,7 +107,7 @@ Click **USE ACL MANAGER** to open the ACL editor to further customize permission
 ![StoragePoolsEditACLBottom](/images/CORE/13.0/StoragePoolsEditACLBottom.png "Edit ACL Screen Bottom")
 
 **File Information Settings**
-| Setting | Description |
+| Name | Description |
 |---------|-------------|
 | **Path** | Displays the dataset path for the selected dataset. |
 | **User** | Either type to search for or use dropdown list to select an existing user on the system that controls this dataset. Dropdown list displays all user on the TrueNAS system. |
@@ -113,7 +116,7 @@ Click **USE ACL MANAGER** to open the ACL editor to further customize permission
 | **Apply Group** | Select to confirm selected group. As a check on errors, if not selected the group is not submitted. |
 
 **Access Control List Settings - owner@, group@ and everyone@**
-| Setting | Description |
+| Name | Description |
 |---------|-------------|
 | **Who** | Select from the dropdown list of options. Default for each of the three groups of settings is **owner@**, **group@** and **everyone@** but you can change this to either of these additional options **User** or **Group**. Selection modifies values displayed in other settings. |
 | **ACL Type** | Select either **Allow** or **Deny** from the dropdown list to specify how permissions apply to the value selected in **Who**. Select **Allow** to grant the specified permissions or **Deny** to restrict the specified permissions. |
@@ -139,3 +142,5 @@ Select **Apply permissions recursively** to apply the ACL settings recursively t
 [Importing Pools]({{< relref "/CORE/CORETutorials/Storage/Pools/PoolImport.md" >}})
 
 [Setting Up Permissions]({{< relref "/CORE/CORETutorials/Storage/Pools/Permissions.md" >}}) 
+
+{{< taglist tag="coredataset" limit="10" >}}
