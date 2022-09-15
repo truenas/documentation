@@ -1,8 +1,11 @@
 ---
 title: "Configuring the System Email"
+description: "This article provides information on how to set up system email on TrueNAS CORE."
 weight: 60
 aliases:
   - /core/system/email
+tags:
+- coreemail
 ---
 
 {{< toc >}}
@@ -26,3 +29,5 @@ Next, select a **Send Mail Method** and fill out the remaining fields (SMTP) or 
 
 Click **SEND TEST MAIL** to verify the configured email settings are working.
 If the test email fails, double-check that the root user**Email** field is correctly configured.
+
+{{< taglist tag="coreemail" limit="10" >}}
