@@ -68,4 +68,4 @@ When you're finished building and organizing your TrueNAS pools, move on to conf
 
 {{< taglist tag="corestoredata" limit="10" >}}
 
-{{< taglist tag="coregettingstarted" limit="10" title="Related Articles" >}}
+{{< taglist tag="coregettingstarted" limit="10" title="Getting Started Articles" >}}
