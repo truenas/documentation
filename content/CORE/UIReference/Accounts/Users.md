@@ -67,6 +67,6 @@ The **Users** screen lets you create and manage user accounts.
 | Lock User | Prevents user from logging in or using password-based services. |
 | Permit Sudo | Lets user use `sudo`. |
 | Microsoft Account | Allows Windows authentication methods. |
-| Samba Authentication | Lets user suthenticate to Samba shares. |
+| Samba Authentication | Lets users authenticate to Samba shares. |
 
 {{< taglist tag="coreusers" limit="10" >}}
