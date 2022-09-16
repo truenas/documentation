@@ -85,7 +85,7 @@ S.M.A.R.T. tests can offline disks! Avoid scheduling S.M.A.R.T. tests simultaneo
 
 Start the S.M.A.R.T. service. Go to **System Settings > Services** and scroll down to the **S.M.A.R.T.** service. If not running, click the toggle to turn the service on. Select **Start Automatically** to have this service start after after the system reboots.
 
-If you have not configured the S.M.A.R.T. service yet, while the service is stopped, click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the service configuration form. See [Services S.M.A.R.T. Screen]({{< relref "/SCALE/SCALEUIReference/DataProtection/SMARTServicesScreen.md" >}}) for more information on service settings.
+If you have not configured the S.M.A.R.T. service yet, while the service is stopped, click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the service configuration form. See [Services S.M.A.R.T. Screen]({{< relref "SMARTServicesScreen.md" >}}) for more information on service settings.
 Click **Save** to save settings and return to the **Services** screen.
 
 {{< expand "RAID controllers?" "v" >}}
