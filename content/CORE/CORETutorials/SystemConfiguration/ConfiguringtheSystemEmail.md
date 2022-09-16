@@ -28,6 +28,6 @@ Go to **System > Email** and enter a **From Name** for system emails.
 Next, select a **Send Mail Method** and fill out the remaining fields (SMTP) or log in (GMail OAuth).
 
 Click **SEND TEST MAIL** to verify the configured email settings are working.
-If the test email fails, double-check that the root user**Email** field is correctly configured.
+If the test email fails, double-check that the root user **Email** field is correctly configured.
 
 {{< taglist tag="coreemail" limit="10" >}}
