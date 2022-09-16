@@ -220,4 +220,4 @@ This example shows using an Ubuntu <file>.iso</file>:
 
 {{< taglist tag="coregettingstarted" limit="10" >}}
 
-{{< taglist tag="coreapps" limit="10" title="Related Plugins Articles" >}}
+{{< taglist tag="coreplugins" limit="10" title="Related Plugins Articles" >}}
