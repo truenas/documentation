@@ -128,4 +128,4 @@ For information on Plugins and Jails screens and how to add or manage jails see:
 
 [Setting Up Jail Storage]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Jails/SettingUpJailStorage.md" >}})
 
-{{< taglist tag="coreapps" limit="10" title="Related Plugins Articles" >}}
+{{< taglist tag="coreplugins" limit="10" >}}
