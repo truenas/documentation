@@ -34,4 +34,4 @@ When no size is specified, it reverts the provision back the full size of the de
 
 The `disk_resize` command supports SAS, SATA, SAT (interposer) and NVMe drives. Power cycle SATA drives before a second resize
 
-{{< tagist tag="scaledisks" limit="10" >}}
+{{< taglist tag="scaledisks" limit="10" >}}
