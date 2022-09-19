@@ -93,7 +93,7 @@ Setting **Disable Password** to **Yes** disables several options:
 * The **Lock User** and **Permit Sudo** options disappear.
 * The account is restricted from password-based logins for services like SMB shares and SSH sessions.
 
-You can set a specific [shell]({{< relref "ScaleShell.md" >}}) for the user from the **Shell** dropdown options:
+You can set a specific [shell]({{< relref "UseScaleShell.md" >}}) for the user from the **Shell** dropdown options:
 
 | Shell | Description |
 |-------|-------------|
