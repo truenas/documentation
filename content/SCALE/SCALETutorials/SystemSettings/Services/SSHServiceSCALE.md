@@ -12,7 +12,7 @@ tags:
 {{< toc >}}
 
 
-{{< expand "SSH Vidoeo Tutorial" >}}
+{{< expand "SSH Video Tutorial" >}}
 
 <!-- {{< embed-video name="scaleangelfishsshaccess" >}} -->
 
