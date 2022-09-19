@@ -3,7 +3,6 @@ title: "Storage Configuration"
 description: "This article describes how to configure storage on TrueNAS CORE."
 weight: 60
 tags:
-- corestoredata
 - coregettingstarted
 - corestorage
 ---
