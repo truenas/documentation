@@ -14,8 +14,7 @@ TrueNAS has several software branches (linear update paths) known as trains. SCA
 SCALE has several trains available for updates. However, the web interface only displays trains you can select as an upgrade. For more information on other available trains, see [TrueNAS Upgrades](https://www.truenas.com/docs/truenasupgrades/).
 
 {{< hint danger >}}
-TrueNAS SCALE train is *not* suited for production use. Only use SCALE for testing.
-
+See the [Software Status page](https://www.truenas.com/software-status/) for the latest recommendations for software usage.
 Before using a non-production train, be prepared to experience bugs or problems.
 Testers are encouraged to submit bug reports and debug files at https://jira.ixsystems.com.
 {{< /hint >}}
