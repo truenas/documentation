@@ -62,7 +62,7 @@ For more information, refer to [smartctl(8)](https://www.unix.com/man-page/suse/
 
 {{< expand "Where can I view the test results?" "v" >}}
 Click the <i class="material-icons" aria-hidden="true">expand_more</i> in a disk's row to expand it, then click **S.M.A.R.T. TEST RESULTS**.
-You can also see results in the **[Shell]({{< relref "/content/SCALE/SCALETutorials/SystemSettings/SCALEShell.md" >}})** using `smartctl` and the name of the drive: `smartctl -l selftest /dev/ada0`.
+You can also see results in the **[Shell]({{< relref "UseSCALEShell.md" >}})** using `smartctl` and the name of the drive: `smartctl -l selftest /dev/ada0`.
 {{< /expand >}}
 
 ## Running Automatic S.M.A.R.T. Tests
@@ -95,7 +95,7 @@ The controller monitors S.M.A.R.T. separately and marks disks as a **Predictive 
 
 ## Using Shell to View Scheduled Tests
 {{< expand "CLI" "v" >}}
-To verify the schedule is saved, you can open the [shell]({{< relref "/content/SCALE/SCALETutorials/SystemSettings/SCALEShell.md" >}}) and enter `smartd -q showtests`.
+To verify the schedule is saved, you can open the [shell]({{< relref "UseSCALEShell.md" >}}) and enter `smartd -q showtests`.
 {{< /expand >}}
 
 {{< taglist tag="scalesmarttests" limit="10" >}}
