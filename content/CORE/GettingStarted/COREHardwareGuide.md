@@ -6,7 +6,6 @@ aliases:
   - /core/introduction/corehardwareguide/
 tags:
 - corehwguide
-- corestoredata
 - coregettingstarted
 ---
 
