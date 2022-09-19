@@ -1,8 +1,8 @@
 ---
-title: "S.M.A.R.T. Tests Service Screen"
+title: "S.M.A.R.T. Service Screen"
 description: "This article provides information on S.M.A.R.T. service screen settings."
-weight: 70
-aliases: 
+weight: 40
+aliases: /scale/scaleuireference/dataprotection/smartservicesscreen/
 tags:
  - scalesmarttests
  - scaleservices
