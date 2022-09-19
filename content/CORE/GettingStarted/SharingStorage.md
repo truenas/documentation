@@ -6,7 +6,6 @@ weight: 70
 tags:
 - coregettingstarted
 - corestorage
-- corestoredata
 ---
 
 {{< toc >}}
