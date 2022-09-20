@@ -13,7 +13,9 @@ weight: 10
 This guide introduces TrueNAS and walks you through installing and accessing TrueNAS, storing and backing up data, sharing data over a network, and expanding TrueNAS with different applications solutions.
 
 {{< expand "Table of Contents (click to expand)" "v" >}}
+
 {{< children depth="2" >}}
+
 {{< /expand >}}
 
 ## CORE Documentation Sections

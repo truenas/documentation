@@ -1,9 +1,14 @@
 ---
 title: "Updating CORE"
+description: "This article provides information on how to update TrueNAS CORE."
 geekdocCollapseSection: true
 weight: 10
 aliases:
   - /core/system/update/updatecore/
+tags:
+- coreconfiguration
+- coreconfigbackup
+- coreupdate
 ---
 
 {{< toc >}}
@@ -153,3 +158,5 @@ When an update is in progress, the web interface shows an animated <i class="mat
 Dialogs also appear in every active web interface session to warn that a system update is in progress.
 **Do not** interrupt a system update.
 {{< /hint >}}
+
+{{< taglist tag="coreupdate" limit="10" >}}

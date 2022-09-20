@@ -1,6 +1,9 @@
 ---
 title: "Support"
+description: "This article describes different options for getting support for TrueNAS CORE."
 weight: 180
+tags:
+- coresupport
 ---
 
 {{< toc >}}
@@ -52,3 +55,5 @@ The **Support** screen displays system information. Users may also manage thier 
 | Subject | A descriptive title for the new issue. |
 | Description | A one to three paragraph summary of the issue. |
 | Choose Files | Attaches screenshots that illustrate the problem. |
+
+{{< taglist tag="coresupport" limit="10" >}}
