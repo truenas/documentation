@@ -1,7 +1,7 @@
 ---
-title: "OpenVPN Screens"
+title: "Configurtin OpenVPN Service"
 description: ""
-weight: 40
+weight: 30
 alias: 
 tags:
  - scaleopenvpn

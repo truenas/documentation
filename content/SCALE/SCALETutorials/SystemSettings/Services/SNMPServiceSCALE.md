@@ -1,6 +1,6 @@
 ---
-title: "SNMP Service Screen"
-description: ""
+title: "Configuring SNMP Service"
+description: "This article provides basic information on configuring the SNMP service in SCALE>"
 weight: 55
 alias: 
 tags:
