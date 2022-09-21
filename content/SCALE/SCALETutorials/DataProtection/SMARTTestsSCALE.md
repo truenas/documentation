@@ -36,7 +36,7 @@ To test one or more disk for errors, go to **Storage**, select **Disks** and the
 
 Click **Manual Test**. The **Manual S.M.A.R.T. Test** dialog displays.
 
-![RunManualSmartTests](/images/SCALE/22.02/SRunManualSmartTests.png "Run Manual S.M.A.R.T. Test")
+![RunManualSmartTests](/images/SCALE/22.02/RunManualSmartTests.png "Run Manual S.M.A.R.T. Test")
 
 Next, select the test type from the **Type** dropdown and then click **Start**.
 
