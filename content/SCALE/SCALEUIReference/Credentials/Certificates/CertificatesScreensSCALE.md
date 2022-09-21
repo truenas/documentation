@@ -1,5 +1,5 @@
 ---
-title: "Certificates"
+title: "Certificates Screens"
 description: "This article provides information on SCALE Certificates screens and settings."
 weight: 50
 ---
