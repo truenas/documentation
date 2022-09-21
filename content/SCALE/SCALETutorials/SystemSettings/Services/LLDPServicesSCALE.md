@@ -1,6 +1,6 @@
 ---
-title: "LLDP Services Screen"
-description: ""
+title: "Configuring LLDP Services"
+description: "This article provides instuctions on configuring the Link Layer Discovery Protocol (LLDP) service."
 weight: 20
 alias: 
 tags:
@@ -18,10 +18,16 @@ When the local network contains managed switches, configuring and starting LLDP 
 
 To configure LLDP, go to **System Settings > Services**, find **LLDP** and click the <i class="material-icons" aria-hidden="true">edit</i>.
 
-![ServicesLLDPSCALE](/images/SCALE/ServicesLLDPSCALE.png "LLDP Service Options")
+![LLDPServiceSettings](/images/SCALE/22.02/LLDPServiceSettings.png "Services LLDP Settings")
 
-{{< include file="static/includes/Reference/ServicesLLDPFields.md.part" markdown="true" >}}
+Enter the two-letter country code as found in [ISO 3166-1 alpha-2](https://www.iso.org/obp/ui/) used to enable LLDP location support.
 
-Set **Interface Description** and enter a **Country Code** before enabling the LLDP service.
+Enter the physical location of the host in **Interface Description**.
+
+To save any peer information received, select **Interface Description**.
+
+Click **Save**.
+
+Start the service.
 
 {{< taglist tag="scalelldp" limit="10" >}}
