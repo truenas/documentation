@@ -9,6 +9,9 @@ tags:
 ---
 
 
+{{< toc >}}
+
+
 The **Services > UPS** screen settings specify connection, shutdown and other settings to configure UPS service for servers running TrueNAS SCALE.
 
 Click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the **Services > UPS** configuration screen.
@@ -27,7 +30,7 @@ Click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to
 | **Driver** | Required. Enter or select the device driver from the dropdown list. See the [Network UPS Tools compatibility list](http://networkupstools.org/stable-hcl.html)for a list of supported UPS devices. This field displays only when **UPS Mode** is set to **Master**. |
 | **Port or Hostname** | Required. Enter or select the serial or USB port connected to the UPS from the dropdown list. Options include a list of port on your system and **auto**. Select **auto** to automatically detect and manage the USB port settings.<br> When selecting an SNMP driver, enter the IP address or host name of the SNMP UPS device. |
 
-#### Monitor Settings
+### Monitor Settings
 **Monitor** settings specify the primary user name a password and other users that have administrative access to the UPS service, and whether the default configuration listens on all interfaces.
 
 | Setting | Description |
