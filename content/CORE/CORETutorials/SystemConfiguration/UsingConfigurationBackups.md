@@ -1,8 +1,13 @@
 ---
 title: "Using Configuration Backups"
+description: "This article provides information concerning configuration backups on TrueNAS CORE."
 weight: 10
 aliases:
   - /core/system/general/configbackup
+tags:
+- coreconfiguration
+- coreconfigbackup
+- coreupdate
 ---
 
 We highly recommend backing up the system configuration regularly.
@@ -72,3 +77,5 @@ After resetting the system configuration, the system restarts, and you must set 
 Users can restore configurations by going to **System > General** and clicking **UPLOAD CONFIG**.
 
 When uploading a config, you can select any previously saved config files for their system. 
+
+{{< taglist tag="coreconfigbackup" limit="10" >}}

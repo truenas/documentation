@@ -1,6 +1,10 @@
 ---
 title: "View Enclosure"
+description: "This article provides information about viewing enclosures, disks and hardware on TrueNAS CORE."
 weight: 45
+tags:
+- coreenclosures
+- corehardware
 ---
 
 {{< hint ok >}}
@@ -25,3 +29,5 @@ Click an enclosure to show details about that hardware.
 | SHOW POOLS | Highlights disks in pools. |
 | SHOW STATUS | Highlights failed disks. |
 | SHOW EXPANDER STATUS| Shows SAS expander statuses. |
+
+{{< taglist tag="corehardware" limit="10" >}}

@@ -1,6 +1,10 @@
 ---
 title: "Logging In"
+description: "This article describes how the logging in process on TrueNAS CORE."
 weight: 50
+tags:
+- coregettingstarted
+- coreloggingin
 ---
 
 Now that TrueNAS is installed, it's time to log in to the web interface and begin managing data!
@@ -141,3 +145,5 @@ For users with compatible TrueNAS Hardware, clicking the system image goes to th
 The **Dashboard** provides access to all TrueNAS management options.
 
 Now that you can access the TrueNAS web interface and see all the management options, it's time to begin [storing data]({{< relref "StoringData.md" >}})!
+
+{{< taglist tag="coregettingstarted" limit="10" >}}

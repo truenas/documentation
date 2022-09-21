@@ -36,7 +36,7 @@ To test one or more disk for errors, go to **Storage**, select **Disks** and the
 
 Click **Manual Test**. The **Manual S.M.A.R.T. Test** dialog displays.
 
-![RunManualSmartTests](/images/SCALE/22.02/SRunManualSmartTests.png "Run Manual S.M.A.R.T. Test")
+![RunManualSmartTests](/images/SCALE/22.02/RunManualSmartTests.png "Run Manual S.M.A.R.T. Test")
 
 Next, select the test type from the **Type** dropdown and then click **Start**.
 
@@ -62,7 +62,7 @@ For more information, refer to [smartctl(8)](https://www.unix.com/man-page/suse/
 
 {{< expand "Where can I view the test results?" "v" >}}
 Click the <i class="material-icons" aria-hidden="true">expand_more</i> in a disk's row to expand it, then click **S.M.A.R.T. TEST RESULTS**.
-You can also see results in the **[Shell]({{< relref "/content/SCALE/SCALETutorials/SystemSettings/SCALEShell.md" >}})** using `smartctl` and the name of the drive: `smartctl -l selftest /dev/ada0`.
+You can also see results in the **[Shell]({{< relref "UseSCALEShell.md" >}})** using `smartctl` and the name of the drive: `smartctl -l selftest /dev/ada0`.
 {{< /expand >}}
 
 ## Running Automatic S.M.A.R.T. Tests
@@ -85,7 +85,7 @@ S.M.A.R.T. tests can offline disks! Avoid scheduling S.M.A.R.T. tests simultaneo
 
 Start the S.M.A.R.T. service. Go to **System Settings > Services** and scroll down to the **S.M.A.R.T.** service. If not running, click the toggle to turn the service on. Select **Start Automatically** to have this service start after after the system reboots.
 
-If you have not configured the S.M.A.R.T. service yet, while the service is stopped, click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the service configuration form. See [Services S.M.A.R.T. Screen]({{< relref "/SCALE/SCALEUIReference/DataProtection/SMARTServicesScreen.md" >}}) for more information on service settings.
+If you have not configured the S.M.A.R.T. service yet, while the service is stopped, click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the service configuration form. See [Services S.M.A.R.T. Screen]({{< relref "SMARTServicesScreen.md" >}}) for more information on service settings.
 Click **Save** to save settings and return to the **Services** screen.
 
 {{< expand "RAID controllers?" "v" >}}
@@ -95,7 +95,7 @@ The controller monitors S.M.A.R.T. separately and marks disks as a **Predictive 
 
 ## Using Shell to View Scheduled Tests
 {{< expand "CLI" "v" >}}
-To verify the schedule is saved, you can open the [shell]({{< relref "/content/SCALE/SCALETutorials/SystemSettings/SCALEShell.md" >}}) and enter `smartd -q showtests`.
+To verify the schedule is saved, you can open the [shell]({{< relref "UseSCALEShell.md" >}}) and enter `smartd -q showtests`.
 {{< /expand >}}
 
 {{< taglist tag="scalesmarttests" limit="10" >}}
