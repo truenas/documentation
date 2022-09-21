@@ -1,7 +1,10 @@
 ---
 title: "Creating Datasets"
+description: "This article describes how to create and configure a dataset on TrueNAS CORE."
 weight: 17
-Aliases: /core/storage/pools/datasets/
+aliases: /core/storage/pools/datasets/
+tags:
+- coredataset
 ---
 
 {{< toc >}}
@@ -124,3 +127,5 @@ The same options for single groups are presented, along with choosing groups for
 [Importing Pools]({{< relref "/CORE/CORETutorials/Storage/Pools/PoolImport.md" >}})
 
 [Setting Up Permissions]({{< relref "/CORE/CORETutorials/Storage/Pools/Permissions.md" >}}) 
+
+{{< taglist tag="coredataset" limit="10" >}}

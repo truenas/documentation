@@ -1,6 +1,10 @@
 ---
 title: "Mirroring the Boot Pool"
+description: "This article provides information on how to mirror the boot pool on TrueNAS CORE."
 weight: 35
+tags:
+- coreboot
+- coremirror
 ---
 
 Adding a second storage device to the boot pool changes the configuration to a **Mirror**.
@@ -35,3 +39,5 @@ When you select **Use all disk space**, TrueNAS uses the entire capacity of the 
 If the original operating system device fails and is detached, the boot mirror changes to consist of just the newer device and grows to whatever capacity it provides.
 However, new devices added to this mirror must now be as large as the new capacity.
 {{< /expand >}}
+
+{{< taglist tag="coreboot" limit="10" >}}

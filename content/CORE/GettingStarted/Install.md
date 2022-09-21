@@ -1,6 +1,10 @@
 ---
 title: "Install"
+description: "This article provides installation instructions for TrueNAS CORE."
 weight: 30
+tags:
+- coregettingstarted
+- coreinstall
 ---
 
 {{< toc >}}
@@ -314,3 +318,5 @@ CLick *Add* and create a new tunable with the *Variable* `if_vmx_load`, *Value* 
 Congratulations, TrueNAS is now installed!
 
 The next step is to [log in to the web interface]({{< relref "/CORE/GettingStarted/LoggingIn.md" >}}) using the administrative account credentials and begin configuring the system.
+
+{{< taglist tag="coregettingstarted" limit="10" >}}
