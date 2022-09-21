@@ -1,8 +1,12 @@
 ---
 title: "Creating Certificates"
+description: "This article describes how to create certificates using TrueNAS CORE."
 weight: 20
 aliases:
   - /core/system/certificates
+tags:
+- corecertificates
+- coreca
 ---
 
 {{< toc >}}
@@ -149,4 +153,6 @@ Select *Import Certificate* as the **Type**.
 2. Paste the certificate **Private Key** when available. Provide a key at least 1024 bits long.
 3. Enter and confirm the Private Key **Passphrase**.
 
-![Import CSA Certificate Subject](/images/CORE/12.0/ImportCSACertificateSubject.png)
+![Import CSA Certificate Subject](/images/CORE/12.0/ImportCSACertificateSubject.png)  
+
+{{< taglist tag="corecertificates" limit="10" >}}

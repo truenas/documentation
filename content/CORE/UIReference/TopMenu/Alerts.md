@@ -5,6 +5,7 @@ weight: 20
 tags:
 - coretopmenu
 - corealerts
+- corecreatealerts
 ---
 
 The **Alert Notifications** panel displays system alerts. It provides options to dismiss or reopen dismissed alerts on your TrueNAS.  
@@ -30,3 +31,5 @@ The **Alert Notifications** panel displays system alerts. It provides options to
 | **One-shot Critical** | <i class="fa fa-bell" aria-hidden="true"></i> |
 
 {{< taglist tag="coretopmenu" limit="10" >}}
+
+{{< taglist tag="corecreatealerts" limit="10" title="Related Alerts Articles" >}}
