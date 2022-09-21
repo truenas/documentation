@@ -1,11 +1,13 @@
 ---
-title: "UPS Services Screen"
-description: ""
-weight: 40
+title: "Configuring UPS Service"
+description: "This article provides information on configuring UPS service in SCALE."
+weight: 70
 alias: 
 tags:
- - scale
+ - scaleups
+ - scaleservices
 ---
+
 
 
 {{< toc >}}
@@ -14,14 +16,10 @@ tags:
 TrueNAS uses Network UPS Tools [NUT](https://networkupstools.org/) to provide UPS support.
 After connecting the TrueNAS system UPS device, configure the UPS service by going to **System settings > Services**, finding **UPS**, and clicking <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
 
-![ServicesUPSSCALE](/images/SCALE/ServicesUPSSCALE.png "UPS Options")
+See [UPS Service Screen]({{ relref "UPSServicesScreenSCALE.md" }}) for details on the UPS service settings.
 
-{{< expand "Specific Options" "v" >}}
-{{< include file="static/includes/Reference/ServicesUPSFields.md.part" markdown="true" >}}
-{{< /expand >}}
-
-Some UPS models are unresponsive with the default polling frequency (default is **two** seconds).
-TrueNAS displays the issue in logs as a recurring error like `libusb_get_interrupt: Unknown error`.
+Some UPS models are unresponsive with the default polling frequency (default is two seconds).
+TrueNAS displays the issue in logs as a recurring error like **libusb_get_interrupt: Unknown error**.
 If you get an error, decrease the polling frequency by adding an entry to **Auxiliary Parameters (ups.conf)**: `pollinterval = 10`.
 
 [upsc(8)](https://manpages.debian.org/bullseye/nut-client/upsc.8.en.html) can get status variables like the current charge and input voltage from the UPS daemon.
@@ -45,4 +43,4 @@ See the [NUT User Manual](https://networkupstools.org/docs/user-manual.chunked/i
 {{< /expand >}}
 
 
-{{< taglist tag="scale" limit="10" >}}
+{{< taglist tag="scaleups" limit="10" >}}
