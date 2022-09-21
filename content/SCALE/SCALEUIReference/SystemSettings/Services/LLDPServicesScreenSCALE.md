@@ -1,6 +1,6 @@
 ---
 title: "LLDP Services Screen"
-description: ""
+description: "This article provides information on the LLDP service settings."
 weight: 20
 alias: 
 tags:
@@ -11,17 +11,17 @@ tags:
 
 {{< toc >}}
 
+The **Services > LLDP** screen settings specify settings so TrueNAS can advertise itself on the network.
 
-Network devices use the [Link Layer Discovery Protocol (LLDP)](https://tools.ietf.org/html/rfc4957) to advertise their identity, capabilities, and neighbors on an Ethernet network.
-TrueNAS uses the [ladvd](https://github.com/sspans/ladvd) LLDP implementation.
-When the local network contains managed switches, configuring and starting LLDP tells TrueNAS to advertise itself on the network.
+To configure LLDP, go to **System Settings > Services** and find **LLDP**, then click <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
 
-To configure LLDP, go to **System Settings > Services**, find **LLDP** and click the <i class="material-icons" aria-hidden="true">edit</i>.
+![LLDPServiceSettings](/images/SCALE/22.02/LLDPServiceSettings.png "Services LLDP Settings")
 
-![ServicesLLDPSCALE](/images/SCALE/ServicesLLDPSCALE.png "LLDP Service Options")
+| Settings | Description |
+|----------|-------------|
+| **Interface Description** | Enables receive mode. Any received peer information is saved in interface descriptions. |
+| **County Code** | Two-letter [ISO 3166-1 alpha-2](https://www.iso.org/obp/ui/) code used to enable LLDP location support. |
+| **Location** | The physical location of the host. |
 
-{{< include file="static/includes/Reference/ServicesLLDPFields.md.part" markdown="true" >}}
-
-Set **Interface Description** and enter a **Country Code** before enabling the LLDP service.
 
 {{< taglist tag="scalelldp" limit="10" >}}
