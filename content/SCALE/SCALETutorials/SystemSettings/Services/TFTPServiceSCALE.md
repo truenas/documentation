@@ -1,6 +1,6 @@
 ---
-title: "TFTP Services Screen"
-description: ""
+title: "Configuring TFTP Services"
+description: "This article provides instructions on configuring TFTP service in SCALE."
 weight: 65
 alias: 
 tags:
@@ -25,7 +25,13 @@ Starting the TFTP service opens UDP port **69**.
 
 ![ServicesTFTPSCALE](/images/SCALE/22.02/ServicesTFTPSCALE.png "TFTP Service Options")
 
-{{< include file="static/includes/Reference/ServicesTFTPFields.md.part" markdown="true" >}}
+Select the path to where you want to store files, and then select the file access permissions for both user and group. If you want to allow new file transfers select **Allow new Files**. 
+
+Add the host and port connection settings and select the user that can access TFTP services.
+
+Enter any additional TFTP settings in the **Auxiliary Parameters** field.
+
+Click **Save** and then start the service.
 
 
-{{< taglist tag="scale" limit="10" >}}
+{{< taglist tag="scaletftp" limit="10" >}}
