@@ -1,48 +1,65 @@
 ---
 title: "UPS Services Screen"
-description: ""
-weight: 40
+description: "This article provides information on the UPS service screen settings."
+weight: 70
 alias: 
 tags:
- - scale
+ - scaleups
+ - scaleservices
 ---
 
 
-{{< toc >}}
+The **Services > UPS** screen settings specify connection, shutdown and other settings to configure UPS service for servers running TrueNAS SCALE.
 
+Click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the **Services > UPS** configuration screen.
 
-TrueNAS uses Network UPS Tools [NUT](https://networkupstools.org/) to provide UPS support.
-After connecting the TrueNAS system UPS device, configure the UPS service by going to **System settings > Services**, finding **UPS**, and clicking <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
+### General Options and Monitor Settings
+**General Options** setting specify required UPS mode and connection. These settings change based on the **Master** or **Slave** UPS mode setting. 
 
-![ServicesUPSSCALE](/images/SCALE/ServicesUPSSCALE.png "UPS Options")
+![UPSServiceSettingsGeneralOptions](/images/SCALE/22.02/UPSServiceSettingsGeneralOptions.png "UPS Service General Options")
 
-{{< expand "Specific Options" "v" >}}
-{{< include file="static/includes/Reference/ServicesUPSFields.md.part" markdown="true" >}}
-{{< /expand >}}
+| Setting | Description |
+|---------|-------------|
+| **Identifier** | Required. Type a description for the UPS device. You can use alphanumeric, period (.), comma (,), hyphen (-), and underscore (_) characters. |
+| **UPS Mode** | Select the either **Master** or **Slave** mode from the dropdown list. Select **Master** if the UPS is plugged directly into the system serial port, or **Slave** to shut down this system before the master system. **Slave** displays the **Remote Hostname** and **Remote Port** fields, and removes the **Driver** field. The UPS remains the last item to shut down. See the [Network UPS Tools Overview](http://networkupstools.org/docs/user-manual.chunked/ar01s02.html#_monitoring_client). |
+| **Remote Hostname** | Required. Enter a valid IP address for the remote system with the **UPS Mode** set to **Master**. This field displays only when **UPS Mode** is set to **Slave**. |
+| **Remote Port** | Required. Enter the open network port number of the UPS master system. The default port is 3493. This field displays only when **UPS Mode** is set to **Slave**. |
+| **Driver** | Required. Enter or select the device driver from the dropdown list. See the [Network UPS Tools compatibility list](http://networkupstools.org/stable-hcl.html)for a list of supported UPS devices. This field displays only when **UPS Mode** is set to **Master**. |
+| **Port or Hostname** | Required. Enter or select the serial or USB port connected to the UPS from the dropdown list. Options include a list of port on your system and **auto**. Select **auto** to automatically detect and manage the USB port settings.<br> When selecting an SNMP driver, enter the IP address or host name of the SNMP UPS device. |
 
-Some UPS models are unresponsive with the default polling frequency (default is **two** seconds).
-TrueNAS displays the issue in logs as a recurring error like `libusb_get_interrupt: Unknown error`.
-If you get an error, decrease the polling frequency by adding an entry to **Auxiliary Parameters (ups.conf)**: `pollinterval = 10`.
+#### Monitor Settings
+**Monitor** settings specify the primary user name a password and other users that have administrative access to the UPS service, and whether the default configuration listens on all interfaces.
 
-[upsc(8)](https://manpages.debian.org/bullseye/nut-client/upsc.8.en.html) can get status variables like the current charge and input voltage from the UPS daemon.
-Run this in **System Settings > Shell** using the syntax `upsc ups@localhost`.
-The [upsc(8)](https://manpages.debian.org/bullseye/nut-client/upsc.8.en.html) manual page has other usage examples.
+| Setting | Description |
+|---------|-------------|
+| **Monitor User** | Enter a user to associate with this service. Keeping the default is recommended. |
+| **Monitor Password** | Change the default password to improve system security. The new password cannot include a space or #. |
+| **Extra Users** | Enter accounts that have administrative access. See [upsd.users(5)](https://www.freebsd.org/cgi/man.cgi?query=upsd.users) for examples. |
+| **Remote Monitor** | Select to have the default configuration to listen on all interfaces using the known values of user: **upsmon** and password: **fixmepass**. |
 
-[upscmd(8)](https://manpages.debian.org/bullseye/nut-client/upscmd.8.en.html) can send commands directly to the UPS, assuming the hardware supports it.
-Only users with administrative rights can use this command. You can create them in the **Extra Users** field.
+### Shutdown Settings
+**Shutdown** settings specify the UPS shutdown mode, command, and timer for the UPS service.
 
-{{< expand "How do I find a device name?" "v" >}}
-For USB devices, the easiest way to determine the correct device name is to set **Show console messages** in **System Settings > Advanced**.
-Plug in the USB device and look for a <file>/dev/ugen</file> or <file>/dev/uhid</file> device name in the console messages.
-{{< /expand >}}
+![UPSServicesSettingsShutdown](/images/SCALE/22.02/UPSServicesSettingsShutdown.png "UPS Service Shutdown Settings")
 
-{{< expand "Can I attach Multiple Computers to One UPS?" "v" >}}
-A UPS with adequate capacity can power multiple computers.
-One computer connects to the UPS data port with a serial or USB cable.
-This primary system makes UPS status available on the network for other computers.
-The UPS powers the secondary computers, and they receive UPS status data from the primary system.
-See the [NUT User Manual](https://networkupstools.org/docs/user-manual.chunked/index.html) and [NUT User Manual Pages](https://networkupstools.org/docs/man/index.html#User_man).
-{{< /expand >}}
+| Setting | Description |
+|---------|-------------|
+| **Shutdown Mode** | Select the battery option to used when the UPS initiates shutdown from the dropdown list. Options are **UPS reaches low battery** or **UPS goes on battery**. |
+| **Shutdown Timer** | Enter a value in seconds for the UPS to wait before initiating shutdown. Shutdown does not occur if power is restored while the timer is counting down. This value only applies when **Shutdown Mode** is set to **UPS goes on battery**. |
+| **Shutdown Command** | Enter a command to shut down the system when either battery power is low or the shutdown timer ends. |
+| **Power off UPS** | Select to power off the UPS after shutting down the system. |
 
+### Other Options Settings
+**Other Options** settings specify warning and host sync times, a description for the UPS, and any additional parameters you want to apply to the UPS service.
 
-{{< taglist tag="scale" limit="10" >}}
+![UPSServiceSettingsOtherOptions](/images/SCALE/22.02/UPSServiceSettingsOtherOptions.png "UPS Service Other Options")
+
+| Setting | Description |
+|---------|-------------|
+| **No Communication Warning Time** | Enter the number of seconds to wait before alerting that the service cannot reach any UPS. Warnings continue until the situation is fixed. |
+| **Host Sync** | Upsmon waits up to this many seconds in master mode for the slaves to disconnect during a shutdown situation. |
+| **Description** | Enter a description for this service. |
+| **Auxiliary Parameters (ups.conf)** | Enter any extra options from [ups.conf](http://networkupstools.org/docs/man/ups.conf.html). |
+| **Auxiliary Parameters (upsd.conf)** | Enter any extra options from [upsd.conf](http://networkupstools.org/docs/man/upsd.conf.html). |
+
+{{< taglist tag="scaleups" limit="10" >}}
