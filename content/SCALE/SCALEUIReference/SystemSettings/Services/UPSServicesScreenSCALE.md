@@ -31,7 +31,7 @@ Click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to
 | **Port or Hostname** | Required. Enter or select the serial or USB port connected to the UPS from the dropdown list. Options include a list of port on your system and **auto**. Select **auto** to automatically detect and manage the USB port settings.<br> When selecting an SNMP driver, enter the IP address or host name of the SNMP UPS device. |
 
 ### Monitor Settings
-**Monitor** settings specify the primary user name a password and other users that have administrative access to the UPS service, and whether the default configuration listens on all interfaces.
+**Monitor** settings specify the primary username and password, other users that have administrative access to the UPS service, and whether the default configuration listens on all interfaces.
 
 | Setting | Description |
 |---------|-------------|
