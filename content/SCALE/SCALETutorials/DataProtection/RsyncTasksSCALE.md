@@ -68,7 +68,7 @@ Select the direction. Select **Pull** to copy from the remote server to the True
 Enter the remote host name or IP in **Remote Host**. You need to have the remote server rsync service configured and turned on.
 
 Select the connection mode from the **Rsync Mode** dropdown. Each mode option displays settings for the selected type. 
-You need to have either an rsync module configured or and SSH connection for the remote server already configured.
+You need to have either a rsync module configured or an SSH connection for the remote server already configured.
 
 Set the schedule for when to run this task, and any other options you want to use. 
 If you need a custom schedule, select **Custom** to open the advanced scheduler window.
