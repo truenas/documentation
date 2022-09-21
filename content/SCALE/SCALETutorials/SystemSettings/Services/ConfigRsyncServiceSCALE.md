@@ -22,7 +22,7 @@ Go to **Services** and click the **Configure** icon for **Rsync** to open the **
 
 Enter a new port number if not the default in **TCP Port**. This is the port the rsync server listens on.
 
-Enter any additional parameters from [rsyncd.conf(5)](https://www.samba.org/ftp/rsync/rsyncd.conf.html) you want to use in **Auxillary Parameters**. 
+Enter any additional parameters from [rsyncd.conf(5)](https://www.samba.org/ftp/rsync/rsyncd.conf.html) you want to use in **Auxiliary Parameters**. 
 
 Click **Save**.
 
