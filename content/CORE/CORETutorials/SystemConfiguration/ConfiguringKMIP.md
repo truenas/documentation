@@ -1,6 +1,10 @@
 ---
 title: "Configuring KMIP"
+description: "This article describes how to configure KMIP on TrueNAS CORE Enterprise." 
 weight: 170
+tags:
+- corekmip
+- corelicense
 ---
 
 {{< hint info >}}
@@ -60,3 +64,5 @@ Refresh the **KMIP** screen to show the current **KMIP Key Status**.
 ![SystemKMIPKeyStatus](/images/CORE/12.0/SystemKMIPKeyStatus.png "Example Key Synced")
 
 If you want to cancel a pending key synchronization, set *Force Clear* and click *SAVE*.
+
+{{< taglist tag="corekmip" limit="10" >}}
