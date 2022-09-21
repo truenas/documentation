@@ -32,7 +32,7 @@ Go to the **System Settings > Services** and find **S3**, then click <i class="m
 
 ![S3ServiceSettings(/images/SCALE/22.02/S3ServiceSettings.png "S3 Service Options")
 
-First, select a clean dataset, one that does not have existing data files. If you do not have a clean dataset, [create a dataset]({{< relref "DatasetSCALE.md" >}}).
+First, select a clean dataset, one that does not have existing data files. If you do not have a clean dataset, [create a dataset]({{< relref "DatasetsSCALE.md" >}}).
 MinIO manages files as objects that you *cannot* mix with other dataset files.
 
 Configure the remaining options as needed in your environment and start the service after saving any changes.
