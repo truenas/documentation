@@ -1,8 +1,12 @@
 ---
 title: "Using Two-Factor Authentication"
+description: "This article describes how the use two-factor authentication on TrueNAS CORE."
 weight: 180
 aliases:
   - /core/system/2fa
+tags:
+- core2fa
+- coretwofactorauthentication
 ---
 
 {{< toc >}}
@@ -49,3 +53,6 @@ Set **Enable Two-Factor Auth for SSH** in **System > 2FA**, then go to **Service
 Set **Log in as Root with Password** and click **SAVE**. Toggle the **SSH** service and wait for the status to show that it is **RUNNING**.
 
 Open a Command Prompt or Terminal and SSH into TrueNAS using the system hostname or IP address, *root* account username and password, and the 2FA code from the mobile device.
+{{< /expand >}}
+
+{{< taglist tag="core2fa" limit="10" >}}
