@@ -1,7 +1,7 @@
 ---
 title: "SSH Service Screen"
-description: ""
-weight: 40
+description: "This article provides information on the SSH service screens and settings."
+weight: 60
 alias: 
 tags:
  - scalessh
@@ -12,69 +12,43 @@ tags:
 {{< toc >}}
 
 
-{{< expand "SSH Vidoeo Tutorial" >}}
+The **System Settings > Services > SSH** screen allows you to set up SSH service on TrueNAS SCALE.
 
-<!-- {{< embed-video name="scaleangelfishsshaccess" >}} -->
-
-{{< /expand >}}
-The SSH service lets users connect to TrueNAS with the [Secure SHell Transport Layer Protocol](https://tools.ietf.org/html/rfc4253).
-When using TrueNAS as an SSH server, the users in the network must use [SSH client software](https://www.bing.com/search?q=SSH%20client%20software) to transfer files with SSH.
+Click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the **Services > SSH** configuration screen.
 
 {{< hint danger >}}
 Allowing external connections to TrueNAS is a security vulnerability!
 Do not enable SSH unless you require external connections.
 See [Security Recommendations]({{< relref "Security.md" >}}) for more security considerations when using SSH.
 {{< /hint>}}
+## SSH Basic Settings Options
 
-Activate or configure the SSH service on the **System Settings > Services** page.
+The **Basic Settings** options display by default when you edit the SSH service. 
 
-To configure SSH go to **System Settings > Services**, find **SSH**, and click <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
+![ServicesSSHBasicSettingsGeneralOptions](/images/SCALE/22.02/ServicesSSHBasicSettingsGeneralOptions.png "SSH Basic Settings General Options")
 
-![ServicesSSHSCALE](/images/SCALE/ServicesSSHSCALE.png "SSH Options")
+**General Options**
 
-Configure the options as needed to match your network environment.
-{{< expand "SSH Service Fields" "v" >}}
-{{< include file="static/includes/Reference/ServicesSSHFields.md.part" markdown="true" >}}
-{{< /expand >}}
+| Setting | Description |
+|---------|-------------|
+| **TCP Port** | Enter the port number for SSH connection requests. |
+| **Log in as Root with Password** | Select to allow the root (administration) account to log into TrueNAS with a password. You must set a password for the root user account. Root logins are discouraged! |
+| **Allow Password Authentication** | Select to allow all user accounts to login via SSH and the account password. Leave checkbox clear to disable and require exchanging SSH keypairs for client systems attempting to access this system. Warning: when directory services are enabled, this setting grants access to all users the directory service imported. When disabled, authentication requires keys for all users. This requires [additional SSH client and server setup](http://the.earth.li/~sgtatham/putty/0.55/htmldoc/Chapter8.html). |
+| **Allow Kerberos Authentication** | Select to allow kerberos authentication. Ensure valid entries exist in **Directory Services > Kerberos Realms** and **Directory Services > Kerberos Keytabs** and the system can communicate with the kerberos domain controller before enabling this option. |
+| **Allow TCP Port Forwarding** | Select to allow users to bypass firewall restrictions using the SSH port [forwarding feature](https://www.symantec.com/connect/articles/ssh-port-forwarding). For best security leave this option disabled. |
 
-We recommend these additional SSH service options:
+### SSH Advanced Settings Options
+**Advanced Settings** include the **General Options** settings. Advanced settings specify bind interfaces, SFTP settings, ciphers and any additional parameters you want to use.
 
-* Add `NoneEnabled no` to **Auxiliary Parameters** to disable the insecure *none* cipher.
-* Increase the **ClientAliveInterval** if SSH connections tend to drop.
-* Increase the **ClientMaxStartup** value (**10** is default) when you need more concurrent SSH connections.
+![ServicesSSHAdvancedSettingsOptions](/images/SCALE/22.02/ServicesSSHAdvancedSettingsOptions.png "SSH Advanced Settings Options")
 
-Remember to enable the SSH service in **System Settings > Services** after making changes.
-To create and store specific [SSH connections and keypairs]({{< relref "/SCALE/SCALEUIReference/Credentials/BackupCredentials/_index.md" >}}), go to **Credentials > Backup Credentials**.
-
-## SFTP 
-
-SFTP (SSH File Transfer Protocol) is available by enabling SSH remote access to the TrueNAS system.
-SFTP is more secure than standard FTP as it applies SSL encryption on all transfers by default.
-
-Go to **System Settings > Services**, find the **SSH** entry, and click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
-
-![ServicesSSHSCALE](/images/SCALE/ServicesSSHSCALE.png "SSH Options")
-
-Set **Allow Password Authentication** and decide if you need **Log in as Root with Password**.
-{{< hint warning >}}
-SSH with root is a security vulnerability. It allows users to fully control the NAS remotely with a terminal instead of providing SFTP transfer access.
-{{< /hint >}}
-Review the remaining options and configure them according to your environment or security needs.
-
-{{< include file="static/includes/Reference/ServicesSSHFields.md.part" markdown="true" >}}
-
-### SFTP Connections
-
-Open an FTP client (like FileZilla) or command line. 
-This article shows using FileZilla as an example.
-Using FileZilla, enter *SFTP://'TrueNAS IP'*, *'username'*, *'password'*, and port **22** to connect.
-
-{{< hint warning >}}
-SFTP does not offer chroot locking.
-While chroot is not 100% secure, lacking chroot lets users move up to the root directory and view internal system information.
-If this level of access is a concern, FTP with TLS might be the more secure choice.
-{{< /hint >}}
+| Setting | Description |
+|---------|-------------|
+| **Bind Interfaces** | Select the network interface on your system for SSH to listen on from the dropdown list. Leave all options unselected for SSH to listen on all interfaces. |
+| **Compress Connections** | Select to attempt to reduce latency over slow networks. |
+| **SFTP Log Level** | Select the [syslog(3)](https://manpages.debian.org/bullseye/manpages-dev/syslog.3.en.html) level of the SFTP server from the dropdown list options. Options are **Quiet**, **Fatal**, **Error**, **Info**, **Verbose**, **Debug**, **Debug2** or **Debug3**. |
+| **SFTP Log Facility** | Select the [syslog(3)](https://www.freebsd.org/cgi/man.cgi?query=syslog) facility of the SFTP server option from the dropdown list. Options are **Daemon**, **User**, **Auth** and **Local 0** through **Local7**. |
+| **Weak Ciphers** | Select a cypher from the dropdown list. Options are **None** or **AES128-CBC**. To allow more ciphers for [sshd(8)](https://www.freebsd.org/cgi/man.cgi?query=sshd) in addition to the defaults in [sshd_config(5)](https://www.freebsd.org/cgi/man.cgi?query=sshd_config). Use **None** to allow unencrypted SSH connections. Use **AES128-CBC** to allow the 128-bit [Advanced Encryption Standard](https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.197.pdf).<br>  WARNING: These ciphers are security vulnerabilities. Only allow them in a secure network environment. |
+| **Auxiliary Parameters** | Enter any [sshd_config(5)](https://manpages.debian.org/bullseye/openssh-server/sshd_config.5.en.html) options not covered in this screen. Enter one option per line. Options added are case-sensitive. Misspellings can prevent the SSH service from starting. |
 
 {{< taglist tag="scalessh" limit="10" >}}
-
-{{< taglist tag="scalebackup" limit="10" title="Related Backup Credential Articles" >}}

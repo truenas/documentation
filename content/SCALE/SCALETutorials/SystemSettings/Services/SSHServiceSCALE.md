@@ -1,7 +1,7 @@
 ---
 title: "SSH Service Screen"
-description: ""
-weight: 40
+description: "This article provides information on configuring the SSH service in SCALE, and using an SFTP connection."
+weight: 60
 alias: 
 tags:
  - scalessh
@@ -12,11 +12,6 @@ tags:
 {{< toc >}}
 
 
-{{< expand "SSH Video Tutorial" >}}
-
-<!-- {{< embed-video name="scaleangelfishsshaccess" >}} -->
-
-{{< /expand >}}
 The SSH service lets users connect to TrueNAS with the [Secure SHell Transport Layer Protocol](https://tools.ietf.org/html/rfc4253).
 When using TrueNAS as an SSH server, the users in the network must use [SSH client software](https://www.bing.com/search?q=SSH%20client%20software) to transfer files with SSH.
 
@@ -26,48 +21,49 @@ Do not enable SSH unless you require external connections.
 See [Security Recommendations]({{< relref "Security.md" >}}) for more security considerations when using SSH.
 {{< /hint>}}
 
-Activate or configure the SSH service on the **System Settings > Services** page.
+{{< expand "SSH Tutorial Video" >}}
 
-To configure SSH go to **System Settings > Services**, find **SSH**, and click <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
+<!-- {{< embed-video name="scaleangelfishsshaccess" >}} -->
 
-![ServicesSSHSCALE](/images/SCALE/ServicesSSHSCALE.png "SSH Options")
+{{< /expand >}}
+## Configuring SSH Service
+
+To configure SSH go to **System Settings > Services**, find **SSH**, and click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the basic settings **General Options** configuration screen.
+
+![ServicesSSHBasicSettingsGeneralOptions](/images/SCALE/22.02/ServicesSSHBasicSettingsGeneralOptions.png "SSH Basic Settings General Options")
 
 Configure the options as needed to match your network environment.
-{{< expand "SSH Service Fields" "v" >}}
-{{< include file="static/includes/Reference/ServicesSSHFields.md.part" markdown="true" >}}
-{{< /expand >}}
 
-We recommend these additional SSH service options:
+We recommend you add these SSH service options in **Auxiliary Parameters**:
 
-* Add `NoneEnabled no` to **Auxiliary Parameters** to disable the insecure *none* cipher.
-* Increase the **ClientAliveInterval** if SSH connections tend to drop.
-* Increase the **ClientMaxStartup** value (**10** is default) when you need more concurrent SSH connections.
+* Add `NoneEnabled no` to disable the insecure **none** cipher.
+* Increase the `ClientAliveInterval` if SSH connections tend to drop.
+* Increase the `ClientMaxStartup` value (**10** is default) when you need more concurrent SSH connections.
 
 Remember to enable the SSH service in **System Settings > Services** after making changes.
 To create and store specific [SSH connections and keypairs]({{< relref "/SCALE/SCALEUIReference/Credentials/BackupCredentials/_index.md" >}}), go to **Credentials > Backup Credentials**.
 
-## SFTP 
+## Using SSH File Transfer Protocol (SFTP) 
 
 SFTP (SSH File Transfer Protocol) is available by enabling SSH remote access to the TrueNAS system.
 SFTP is more secure than standard FTP as it applies SSL encryption on all transfers by default.
 
-Go to **System Settings > Services**, find the **SSH** entry, and click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
+Go to **System Settings > Services**, find the **SSH** entry, and click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the **Services > SSH** basic settings configuration screen.
 
-![ServicesSSHSCALE](/images/SCALE/ServicesSSHSCALE.png "SSH Options")
+![ServicesSSHBasicSettingsGeneralOptions](/images/SCALE/22.02/ServicesSSHBasicSettingsGeneralOptions.png "SSH Basic Settings General Options")
 
-Set **Allow Password Authentication** and decide if you need **Log in as Root with Password**.
+Select **Allow Password Authentication** and decide if you need **Log in as Root with Password**.
 {{< hint warning >}}
 SSH with root is a security vulnerability. It allows users to fully control the NAS remotely with a terminal instead of providing SFTP transfer access.
 {{< /hint >}}
 Review the remaining options and configure them according to your environment or security needs.
 
-{{< include file="static/includes/Reference/ServicesSSHFields.md.part" markdown="true" >}}
-
-### SFTP Connections
+### Using SFTP Connections
 
 Open an FTP client (like FileZilla) or command line. 
 This article shows using FileZilla as an example.
-Using FileZilla, enter *SFTP://'TrueNAS IP'*, *'username'*, *'password'*, and port **22** to connect.
+
+Using FileZilla, enter `SFTP://{TrueNAS IP} {username} {password} {port 22}`. Where {TrueNAS IP} is the IP address for your TrueNAS system, {username} is the administrator login user name, and {password} is the adminstrator password, and {port 22} to connect.
 
 {{< hint warning >}}
 SFTP does not offer chroot locking.
@@ -76,5 +72,3 @@ If this level of access is a concern, FTP with TLS might be the more secure choi
 {{< /hint >}}
 
 {{< taglist tag="scalessh" limit="10" >}}
-
-{{< taglist tag="scalebackup" limit="10" title="Related Backup Credential Articles" >}}
