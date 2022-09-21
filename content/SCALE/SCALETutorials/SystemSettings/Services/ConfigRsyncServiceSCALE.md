@@ -10,7 +10,7 @@ tags:
 
 {{< toc >}}
 
-Rsync is a untility that copies data across a network. The **Services > Rsync** screen has two tabs: **Configure** and **Rsync Module**. 
+Rsync is a utility that copies data across a network. The **Services > Rsync** screen has two tabs: **Configure** and **Rsync Module**. 
 Use the **Configure** screen to add the TCP port number for the rsync service. Port 22 is reserved for TrueNAS. 
 Use the **Rsync Module** screen to configure an rsync module on a TrueNAS system. You must configure at least one rsync module. This module is used as the communication mode when you set up a data protection [rsyc task]({{< relref "RsyncTasksSCALE.md" >}}). 
 
