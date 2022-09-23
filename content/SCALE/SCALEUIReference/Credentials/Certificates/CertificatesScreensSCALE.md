@@ -40,7 +40,7 @@ The wizard has five different configuration screens, one for each step in the ce
 {{< hint info >}}
 Before creating a new certificate, configure a new CA if you do not already have one on your system. Creating a internal certificate requires a CA exist on the system.
 {{< /hint >}}
-Many of the settings in the **Add Certificate** wizard are the same as those in the **[Add CA]()** and **[Add Certificate Signing Request]({{< relref "CAScreensSCALE.md" >}})** wizards.
+Many of the settings in the **Add Certificate** wizard are the same as those in the **[Add CA]({{< relref "CAScreensSCALE.md" >}})** and **[Add Certificate Signing Request]({{< relref "CSRScreensSCALE.md" >}})** wizards.
 
 ### Identifier and Type Options 
 The **Identifier and Type** options specify the certificate name and choose whether to use it for internal or local systems, or import an existing certificate.     

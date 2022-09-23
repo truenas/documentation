@@ -1,6 +1,6 @@
 ---
 title: "Certificates"
-description: ""
+description: "This article provides general information about articles that add or manage certificates, CSRs, CAs and ACME DNS-Authenticators in SCALE."
 geekdocCollapseSection: true
 aliases: 
 weight: 50
@@ -9,7 +9,7 @@ tags:
 ---
 
 
-The **Certificates** screen displays widgets for **Certificates**, **Certificate Signing Requests** (CSRs), **Certificate Authorities** (CA), and **ACME DNS-Authenticators** that each provice access to all the information for certificates, certificate signing requests (CSRs), certificate authorities (CA), and ACME DNS-authenticators respectively. 
+Use the **Credentials > Certificates** screen **Certificates**, **Certificate Signing Requests** (CSRs), **Certificate Authorities** (CA), and **ACME DNS-Authenticators** widgets to manage certificates, certificate signing requests (CSRs), certificate authorities (CA), and ACME DNS-authenticators. 
 
 ![CredentialsCertificatesScreen](/images/SCALE/22.02/CredentialsCertificatesScreen.png "Credentials Certificates Screen")
 
@@ -18,4 +18,4 @@ Each TrueNAS comes equipped with an internal, self-signed certificate that enabl
 
 ## Article Summaries
 
-{{< children depth="2" description="true" >}}
+{{< children depth="2" description="true" >}} 
