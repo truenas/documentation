@@ -1,6 +1,10 @@
 ---
 title: "Plugins Screens"
+description: "This article describes how to install and maintain 3rd party applications on TrueNAS CORE."
 weight: 20
+tags:
+- coreapps
+- coreplugins
 ---
 
 Use the **Plugins** screen to install and maintain 3rd party applications on your TrueNAS storage systems.
@@ -123,3 +127,5 @@ For information on Plugins and Jails screens and how to add or manage jails see:
 [Managing Jails]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Jails/ManagingJails.md" >}})
 
 [Setting Up Jail Storage]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Jails/SettingUpJailStorage.md" >}})
+
+{{< taglist tag="coreplugins" limit="10" >}}

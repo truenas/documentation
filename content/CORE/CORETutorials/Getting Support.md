@@ -1,8 +1,11 @@
 ---
 title: "Getting Support"
+description: "This article describes different options for getting support for TrueNAS CORE."
 weight: 16
 aliases:
   - /core/system/support
+tags:
+- coresupport
 ---
 
 {{< toc >}}
@@ -118,3 +121,5 @@ Use the same email address submitted with the ticket when registering.
 ## Contacting iXsystems Support
 
 {{< include file="static/includes/General/iXsystemsSupportContact.html.part" html="true" >}}
+
+{{< taglist tag="coresupport" limit="10" >}}

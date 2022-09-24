@@ -1,6 +1,6 @@
 ---
 title: "Cloud Sync Tasks Screens"
-description: "This article provides information on the **Cloud Sync Task** screens and settings."
+description: "This article provides information on the cloud sync task screens and settings."
 weight: 20
 tags:
  - scalecloud

@@ -1,6 +1,12 @@
 ---
 title: "Adding a New Article"
+description: "This article describes how to contribute a new article to the TrueNAS documentation."
 weight: 20
+tags:
+- corecontributing
+- scalecontributing
+- corearticle
+- scalearticle
 ---
 
 {{< toc >}}
@@ -76,4 +82,6 @@ The link to this preview is added to the Pull Request after the build completes.
 
 ![ArticlePreview](/images/Contribute/NewArticlePreview.png "Article Preview")
 
-Other contributors will review and merge your article!
+Other contributors will review and merge your article!  
+
+{{< taglist tag="corecontributing" limit="10" >}}

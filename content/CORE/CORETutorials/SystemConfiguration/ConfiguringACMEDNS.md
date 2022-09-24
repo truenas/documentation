@@ -1,8 +1,12 @@
 ---
 title: "Configuring ACME DNS"
+description: "This article describes how to configure ACME on the open-source supported TrueNAS CORE."
 weight: 160
 aliases:
   - /core/system/acmedns
+tags:
+- coreacme
+- corecertificates
 ---
 
 {{< toc >}}
@@ -43,3 +47,5 @@ To create a new ACME certificate, go to **System > Certificates**, click <i clas
 Give the ACME certificate an identifier (name), and accept the TOS by setting **Terms of Service**.
 
 For the **Authenticator**, select the ACME DNS authenticator you created, then click **SUBMIT**.
+
+{{< taglist tag="coreacme" limit="10" >}}

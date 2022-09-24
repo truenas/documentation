@@ -1,6 +1,10 @@
 ---
 title: "Certificates"
+description: "This article explains the fields located on the certificates screen in TrueNAS CORE."
 weight: 160
+tags:
+- corecertificates
+- coreca
 ---
 
 {{< toc >}}
@@ -21,4 +25,6 @@ weight: 160
 
 ## Import Certificate and Import Certificate Signing Request
 
-{{< include file="static/includes/Reference/CertificatesImportCertificateCSR.md.part" markdown="true" >}}
+{{< include file="static/includes/Reference/CertificatesImportCertificateCSR.md.part" markdown="true" >}}  
+
+{{< taglist tag="corecertificates" limit="10" >}}

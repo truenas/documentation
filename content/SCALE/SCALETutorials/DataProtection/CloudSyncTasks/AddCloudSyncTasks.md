@@ -10,7 +10,8 @@ tags:
 
 {{< toc >}}
 
-TrueNAS can send, receive, or synchronize data with a cloud storage provider. Cloud sync tasks allow for single-time transfers or recurring transfers on a schedule. They are an effective method to back up data to a remote location.
+TrueNAS can send, receive, or synchronize data with a cloud storage provider. 
+Cloud sync tasks allow for single-time transfers or recurring transfers on a schedule. They are an effective method to back up data to a remote location.
 
 {{< hint warning >}}
 Using the cloud means data can go to a third-party commercial vendor not directly affiliated with iXsystems. You should fully understand vendor pricing policies and services before using them for cloud sync tasks.

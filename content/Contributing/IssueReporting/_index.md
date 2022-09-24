@@ -1,10 +1,16 @@
 ---
 title: "Issue Reporting"
+description: "This article provides information on how to report issues to TrueNAS."
 weight: 10
 aliases:
   - /contributing/issuereporting/bugsfeatures/
   - /contributing/issuereporting/debug/
   - /contributing/issuereporting/savewebconsolelog/
+tags:
+- corecontributing
+- scalecontributing
+- coreissues
+- scaleissues
 ---
 
 We encourage all users to help us make TrueNAS the best NAS by reporting issues, requesting potentially helpful features, and relaying security vulnerabilities.  
@@ -18,7 +24,7 @@ You can view public issues without logging in, but you must create a Jira accoun
 
 ## Bug Reports
 
-Go to the [TrueNAS project on Jira](https://jira.ixsystems.com/browse/NAS) and click *Create* in the top bar.
+Go to the [TrueNAS project on Jira](https://ixsystems.atlassian.net/jira/software/c/projects/NAS/issues) and click **Create** in the top bar.
 
 ![Create Ticket](/images/Contribute/JiraCreate.png "Create Ticket")
 
@@ -138,7 +144,9 @@ After saving the file, open the console with <i class="fa fa-ellipsis-v" aria-hi
 
 ## Attaching a Console Log File to a Report
 
-Go to the [iXsystems Bug Tracker](https://jira.ixsystems.com). Locate an existing ticket or create a new one reporting the problem.
+Go to the [iXsystems Bug Tracker](https://ixsystems.atlassian.net/jira/software/c/projects/NAS/issues). Locate an existing ticket or create a new one reporting the problem.
 Attach the console log file to the ticket by dragging it to **Attachments**.
 {{< /tab >}}
 {{< /tabs >}}
+
+{{< taglist tag="corecontributing" limit="10" >}}
