@@ -1,88 +1,98 @@
 ---
-title: "Periodic Snapshot Tasks"
+title: "Periodic Snapshot Tasks Screens"
+description: "This article provides information on the data protection periodic snapshot task settings and screens."
 weight: 50
+aliases:
+tags:
+ - scalesnapshots
+ - scalereplication
 ---
 
 {{< toc >}}
 
+The **Data Protection** screen **Periodic Snapshot Task** widget displays periodic snapshot tasks created on the system. 
 A periodic snapshot task allows scheduling the creation of read only versions of pools and datasets at a given point in time.
 
-{{< expand "How should I use snapshots?" "v" >}}
-Snapshots do not make not copies of the data so creating one is quick and if little data changed, they take very little space.
-It is common to take frequent snapshots as soon as every 15 minutes, even for large and active pools.
-A snapshot where no files changed takes no storage space, but as files changes happen, the snapshot size changes to reflect the size of the changes.
-In the same way as all pool data, after deleting the last reference to the data you recover the space.
+## Periodic Snapshot Task Widget
 
-Snapshots keep a history of files, providing a way to recover an older copy or even a deleted file.
-For this reason, many administrators take snapshots often, store them for a period of time, and store them on another system, typically using the **Replication Tasks** function.
-Such a strategy allows the administrator to roll the system back to a specific point in time.
-If there is a catastrophic loss, an off-site snapshot can restore data up to the time of the last snapshot.
+The **Periodic Snapshot Task** widget displays a list of tasks configured on the system.
+
+![PeriodicSnapshotTaskWidget](/images/SCALE/22.02/PeriodicSnapshotTaskWidget.png "Periodic Snapshot Task Widget") 
+
+If a periodic snapshot task is not yet configured **No Periodic Snapshot Task configured** displays in the widget.
+
+![PeriodicSnapshotTaskWidgetNoTasks](/images/SCALE/22.02/PeriodicSnapshotTaskWidgetNoTasks.png "No Periodic Snapshot Tasks")
+
+**Add** opens the **[Add Periodic Snapshot Task]()** screen. 
+
+Each task listed is a link that opens the **[Edit Periodic Snapshot Task]()** screen populated with with the settings for that task. Click on the **Description**, **Frequency** or **Next Run** column entry to open the edit task screen.
+
+**State** displays the status of the next cloud sync task. While on the widget, click on the state for the task to display a **Logs** window for that task. Click **Download Logs** to save a copy of the current task logs.
+
+![PeriodicSnapshotTaskLog](/images/SCALE/22.02/PeriodicSnapshotTaskLog.png "Periodic Snapshot Task State Log")
+
+The <span class="material-icons">delete</span> **Delete** icon opens a simple delete dialog where you confirm before the system deletes the saved periodic snapshot task.
+
+## Periodic Snapshot Task List Screen
+Periodic snapshot tasks display on both the **Data Protection** widget and **Periodic Snapshot Tasks** list screen.
+{{< expand "Click Here for More Information" "v" >}}
+Click on the **Periodic Snapshot Task** header to open the **Data Protection > Periodic Snapshot Task** list screen.
+
+![DataProtectionPeriodicSnapshotTasksList](/images/SCALE/22.02/DataProtectionPeriodicSnapshotTasksList.png "Periodic Snapshot Task List")
+
+If a task is not added, the list view displays **Add Periodic Snapshot Tasks** which opens the **[Add Periodic Snapshot Task]()** screen. 
+
+![DataProtectPeriodicSnapshotTasksDetailsNoTasks](/images/SCALE/22.02/DataProtectPeriodicSnapshotTasksDetailsNoTasks.png "Periodic Snapshot Task No Tasks")
+
+**Columns** displays a dropdown list of options to customize the list view. Options are **Select All**, **Recursive**, **Naming Schema**, **When**, **Frequency**, **Next Run**, **Keep snapshot for**, **VMWare Sync**, **Enabled**, **State**, and **Reset to Defaults**.
+
+The **State** on the list view does not link to the log file or anything else, it just displays the current state of the task.
+
+Click the <span class="material-icons">expand_more</span> expand icon at the right of the task opens the details for the selected task.
+
+![DataProtectionPeriodicSnapshotTasksDetails](/images/SCALE/22.02/DataProtectionPeriodicSnapshotTasksDetails.png "Periodic Snapshot Task Details")
+
+**Edit** opens the **[Edit Periodic Snapshot Task]()** screen.
+
+**Delete** opens the delete dialog that removes the task from the system. 
+{{< /expand >}}
+## Add and Edit Periodic Snapshot Screens
+
+The **Add Periodic Snapshot Task** and **Edit Periodic Snapshot Task** display the some of the same settings.
+
+### Dataset Options
+The **Dataset** setting options display on both the add and edit configuration screens.
+{{< expand "Click Here for More Information" "v" >}}
+
+![AddPeriodicSnapshotTaskScreen](/images/SCALE/22.02/AddPeriodicSnapshotTaskScreen.png "Add Periodic Snapshot Task")
+
+| Setting | Description |
+|---------|-------------|
+| **Dataset** | Select a pool, dataset, or zvol. |
+| **Exclude** | Exclude specific child datasets from the snapshot. Use with recursive snapshots. List paths to any child datasets to exclude. Example: `pool1/dataset1/child1`. A recursive snapshot of pool1/dataset1 includes all child datasets except child1. Separate entries by pressing <kbd>Enter</kbd>. |
+| **Recursive** | Select to take separate snapshots of the dataset and each of its child datasets. Leave checkbox clear to take a single snapshot only of the specified dataset without child datasets. |
+{{< /expand >}}
+### Schedule Options
+These **Schedule** setting options display on both the add and edit configuration screens.
+{{< expand "Click Here for More Information" "v" >}}
+| Setting | Description |
+|---------|-------------|
+ **Snapshot Lifetime** | Enter the length of time to retain the snapshot on this system using a numeric value and a single lowercase letter for units. Examples: *3h* is three hours, *1m* is one month, and *1y* is one year. Does not accept minute values. After the time expires, the snapshot is removed. Snapshots replicated to other systems are not affected. |
+| **Naming Schema** | Snapshot name format string. The default is `auto-%Y-%m-%d_%H-%M`. Must include the strings `%Y`, `%m`, `%d`, `%H`, and `%M`, which are replaced with the four-digit year, month, day of month, hour, and minute as defined in [strftime(3)](https://www.freebsd.org/cgi/man.cgi?query=strftime). For example, snapshots of *pool1* with a Naming Schema of `customsnap-%Y%m%d.%H%M` have names like *pool1@customsnap-20190315.0527*. |
+| **Schedule** | Select a presets from the dropdown list. Select *Custom* to open the advanced scheduler. |
+| **Allow Taking Empty Snapshots** | Select to Create dataset snapshots even when there are no changes to the dataset from the last snapshot. Recommended for long-term restore points, multiple snapshot tasks pointed at the same datasets, or compatibility with snapshot schedules or replications created in TrueNAS 11.2 and earlier.  For example, you can set up a monthly snapshot schedule to take monthly snapshots and still have a daily snapshot task taking  snapshots of any changes to the dataset. |
+| **Enabled** | Select to activate this periodic snapshot schedule. To disable this task without deleting it, leave the checkbox cleared. |
+{{< /expand >}}
+### Schedule Options - Edit Periodic Snapshot Task 
+These **Schedule** setting options only display on the **Edit Periodic Snapshot Task** screen.
+{{< expand "Click Here for More Information" "v" >}}
+
+![EditPeriodicSnapshotTaskScreen](/images/SCALE/22.02/EditPeriodicSnapshotTaskScreen.png "Edit Periodic Snapshot Task")
+
+| Setting | Description |
+|---------|-------------|
+| **Begin** | Enter the hour and minute when the system can begin taking snapshots. |
+| **End** | Enter the hour and minute the system must stop creating snapshots. Snapshots already in progress continue until complete. |
 {{< /expand >}}
 
-## Creating a Periodic Snapshot Task
-
-Any required datasets or zvols must exist before creating a snapshot task.
-
-### Process
-
-{{< expand "Video Tutorial" "v" >}}
-This short video demonstrates adding a periodic snapshot task {{< embed-video name="scaleangelfishperiodicsnapshottasks" >}}
-{{< /expand >}} 
-
-Go to **Data Protection > Periodic Snapshot Tasks** and click **Add**.
-
-![DataProtectionAddPeriodicSnapshotTask](/images/SCALE/DataProtectionAddPeriodicSnapshotTask.png "Adding a new Periodic Snapshot Task")
-
-Choose the dataset (or zvol) to schedule as a regular back up with snapshots and how long to store snapshots.
-Define the task **Schedule**.
-If you need a specific schedule, choose **Custom** and use the Advanced Scheduler section below.
-
-{{< expand "Advanced Scheduler" "v" >}}
-{{< include file="static/includes/SCALE/SCALEAdvancedScheduler.md.part" markdown="true" >}}
-{{< /expand >}}
-
-Configure the remaining options for your use case.
-{{< expand "Specific Options" "v" >}}
-{{< include file="static/includes/Reference/TasksPeriodicSnapshotAddFields.md.part" markdown="true" >}}
-
-### Naming Schemas
-
-The **Naming Schema** determines how automated snapshot names generate.
-A valid schema requires the *%Y* (year), *%m* (month), *%d* (day), *%H* (hour), and *%M* (minute) time strings, but you can add more identifiers to the schema too, using any identifiers from the Python [strptime function](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior).
-
-{{< hint warning >}}
-For **Periodic Snapshot Tasks** used to set up a replication task with the **Replication Task** function:
-
-You can use custom naming schema for full backup replication tasks. If you are going to use the snapshot for an incremental replication task, use the default naming schema. Go to [Using a Custom Schema]({{< relref "TroubleshootingTips.md" >}}) for additional information.
-{{< /hint >}}
-
-This uses some letters differently from POSIX (Unix) time functions.
-For example, including `%z` (time zone) ensures that snapshots do not have naming conflicts when daylight time starts and ends, and *%S* (second) adds finer time granularity.
-
-Examples: 
-
-| Naming Scheme | Snapshot Names Look Like |
-|---------------|--------------------------|
-| replicationsnaps-1wklife-%Y%m%d_%H:%M | `replicationsnaps-1wklife-20210120_00:00`, `replicationsnaps-1wklife-20210120_06:00` |
-| autosnap_%Y.%m.%d-%H.%M.%S-%z | `autosnap_2021.01.20-00.00.00-EST`, `autosnap_2021.01.20-06.00.00-EST` |
-
-{{< hint warning >}}
-When referencing snapshots from a Windows computer, avoid using characters like `:` that are invalid in a Windows file path.
-Some applications limit filename or path length, and there might be limitations related to spaces and other characters.
-Always consider future uses and ensure the name given to a periodic snapshot is acceptable.
-{{< /hint >}}
-
-### Snapshot Lifetimes
-
-TrueNAS deletes snapshots when they reach the end of their life and preserves snapshots when at least one periodic task requires it.
-For example, you have two schedules created where one schedule takes a snapshot every hour and keeps them for a week, and the other takes a snapshot every day and keeps them for 3 years.
-Each has an hourly snapshot taken.
-After a week, snapshots created at *01.00* through *23.00* get deleted, but you keep snapshots timed at *00.00* because they are necessary for the second periodic task. 
-These snapshots get destroyed at the end of 3 years.
-
-{{< /expand >}}
-
-Click **Save** to save this task and add it to the list in **Data Protection > Periodic Snapshot Tasks**.
-You can find any snapshots taken using this task in **Storage > Snapshots**.
-
-To check the log for a saved snapshot schedule, go to **Data Protection > Periodic Snapshot Tasks** and click on the task. The **Edit Periodic Snapshot Tasks** screen displays where you can modify any settings for the task.
+{{< taglist tag="scalesnapshots" limit="10" >}}
