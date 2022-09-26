@@ -129,11 +129,11 @@ Manually download a copy of the inherited and non-inherited encrypted dataset ke
 To manually download a back up of a single keyfile for the dataset, click the dataset <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> and select **Export Key**. Enter the root password and click the **CONTINUE** button. Click the **DOWNLOAD KEY** button.
 
 To change the key, click the dataset <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> and **Encryption Options**.
-
+**This will change**
 ![StoragePoolsEncryptedDataset](/images/CORE/12.0/StoragePoolsEncryptedDataset.png "Dataset Options: Encryption Options")
 
 Enter your custom key or click **Generate Key**.
-
+**This will change**
 ![StoragePoolsEncryptedDatasetOptions](/images/CORE/12.0/StoragePoolsEncryptedDatasetOptions.png "Editing Encryption Options")
 {{< /expand >}}
 {{< expand "Passphrases" >}}
