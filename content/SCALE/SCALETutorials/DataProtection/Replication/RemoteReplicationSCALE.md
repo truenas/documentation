@@ -1,6 +1,6 @@
 ---
 title: "Setting Up a Remote Replication Task"
-description: ""
+description: "This article provides instructions on adding a replication task with a remote system (TrueNAS or other)."
 weight: 60
 aliases:
 tags:
@@ -108,3 +108,5 @@ Clicking the task state opens the log for that task.
 ![TasksReplicationTasksLogSCALE](/images/SCALE/RepLogSCALE.png "Replication Log")
 
 {{< /expand >}}
+
+{{< taglist tag="scalereplication" limit="10" >}}

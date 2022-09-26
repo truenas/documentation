@@ -1,6 +1,6 @@
 ---
 title: "Setting Up a Local Replication Task"
-description: ""
+description: "This article provides instructions on adding a replication task on the same TrueNAS system."
 weight: 20
 aliases:
 tags:
@@ -83,3 +83,5 @@ Clicking the task state shows the replication log with an option to download the
 To confirm that snapshots are replicated, go to **Storage > Snapshots >Snapshots** and verify the destination dataset has new snapshots with correct timestamps.
 
 ![TasksReplicationTasksLocalSnapshotsSCALE](/images/SCALE/RepLocalSnaphots.png "Local Replicated Snapshots")
+
+{{< taglist tag="scalereplication" limit="10" >}}

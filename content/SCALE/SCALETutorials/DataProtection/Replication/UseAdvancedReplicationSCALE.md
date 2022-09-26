@@ -1,6 +1,6 @@
 ---
 title: "Setting Up Advanced Replication Tasks"
-description: ""
+description: "This article provides instruction on using the advanced replication task creation screen to add a replication task."
 weight: 30
 aliases:
 tags:
@@ -21,7 +21,7 @@ Requirements:
 ### Process Summary
 
 {{< expand "Process Summary" "v" >}}
-Go to **Data Protection > Replication Tasks** and click *ADD*, then select *ADVANCED REPLICATION CREATION*.
+Go to **Data Protection > Replication Tasks** and click **ADD**, then select **ADVANCED REPLICATION CREATION**.
 
 * General Options:
   * Name the task.
@@ -59,7 +59,7 @@ Each task name must be unique, and we recommend you name it in a way that makes 
 
 **Direction** allows you to choose whether the local system is sending (**Push**) or receiving data (**Pull**).
 
-Decide what **Transport** method (SSH, SSH+NETCAT, or LOCAL) to use for the replication before configuring the other sections.
+Decide what **Transport** method (**SSH**, **SSH+NETCAT**, or **LOCAL**) to use for the replication before configuring the other sections.
 
 Set the **Number of retries for failed replications** before stopping and marking the task as failed (the default is 5).
 
@@ -183,3 +183,5 @@ Setting **Only Replicate Snapshots Matching Schedule** restricts the replication
 ![SCALEReplicationAdvancedScheduleOptions](/images/SCALE/SCALEAdvSchedule.png "Advanced Replication: Schedule")
 
 {{< /expand >}}
+
+{{< taglist tag="scalereplication" limit="10" >}}
