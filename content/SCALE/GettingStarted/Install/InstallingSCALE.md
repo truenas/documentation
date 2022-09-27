@@ -29,12 +29,12 @@ You need an OpenPGP encryption application for this method of ISO verification.
    The examples in this section show verifying the TrueNAS <file>.iso</file> using [gnupg2](https://gnupg.org/software/index.html) in a command prompt, but [Gpg4win](https://www.gpg4win.org/) is also a good option for Windows users.
 
 2. To verify the <file>.iso</file> source, go to https://www.truenas.com/download-tn-scale/, expand the **Security** option, 
-   and click **PGP Signature** to download the Gnu Privacy Guard (<file>.gpg</file>) signature file. 
+   and click **PGP Signature** to download the Gnu Privacy Guard signature file.  This file may be a (<file>.gpg</file>) or a (<file>.sig<file>) file. 
    Open the [PGP Public key link](https://keyserver.ubuntu.com/pks/lookup?search=0xC8D62DEF767C1DB0DFF4E6EC358EAA9112CF7946&fingerprint=on&op=index) and note the address in your browser and **Search results for** string.
 
 3. Use one of the OpenPGP encryption tools mentioned above to import the public key and verify the PGP signature.
 
-   Go to the <file>.iso</file> and <file>.iso.gpg</file> download location and import the public key using the keyserver address and search results string:
+   Go to the <file>.iso</file> and the <file>.iso.gpg</file> or <file>.iso.sig</file> download location and import the public key using the keyserver address and search results string:
    
    ```
    user@ubuntu /tmp> gpg --keyserver keys.gnupg.net --recv-keys 0xc8d62def767c1db0dff4e6ec358eaa9112cf7946
@@ -46,7 +46,7 @@ You need an OpenPGP encryption application for this method of ISO verification.
    user@ubuntu /tmp>
    ```
    
-   Use `gpg --verify` to compare the <file>.iso</file> and <file>.iso.gpg</file> files:
+   Use `gpg --verify` to compare the <file>.iso</file> and the <file>.iso.gpg</file> or <file>.iso.gpg</file> files:
    
    ```
    user@ubuntu /tmp>  gpg --verify TrueNAS-SCALE-21.04-ALPHA.1.iso
