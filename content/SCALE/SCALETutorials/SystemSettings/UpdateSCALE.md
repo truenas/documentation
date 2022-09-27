@@ -25,6 +25,7 @@ We recommend updating TrueNAS when the system is idle (no clients connected, no 
 
 Update during scheduled maintenance times to avoid disrupting user activities.
 
+**This is where the new upgarde with train choices image will go.**
 ![UpdateSCALE](/images/SCALE/UpdateScale.png "Update SCALE")
 
 ## Automatic
