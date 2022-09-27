@@ -46,7 +46,7 @@ You need an OpenPGP encryption application for this method of ISO verification.
    user@ubuntu /tmp>
    ```
    
-   Use `gpg --verify` to compare the <file>.iso</file> and the <file>.iso.gpg</file> or <file>.iso.gpg</file> files:
+   Use `gpg --verify` to compare the <file>.iso</file> and the <file>.iso.gpg</file> or <file>.iso.sig</file> files:
    
    ```
    user@ubuntu /tmp>  gpg --verify TrueNAS-SCALE-21.04-ALPHA.1.iso
