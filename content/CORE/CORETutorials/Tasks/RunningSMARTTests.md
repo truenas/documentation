@@ -4,6 +4,7 @@ description: "This article provides information on how to run Self-Monitoring, A
 weight: 40
 tags:
 - coresmart
+- coresystemleveltasks
 ---
 
 {{< toc >}}
@@ -92,3 +93,5 @@ The controller monitors S.M.A.R.T. separately and marks disks as a **Predictive 
 {{< /expand >}}
 
 {{< taglist tag="coresmart" limit="10" >}}
+
+{{< taglist tag="coresystemleveltasks" limit="10" title="Related System Level Tasks Articles" >}}

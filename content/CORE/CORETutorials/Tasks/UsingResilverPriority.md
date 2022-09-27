@@ -1,6 +1,10 @@
 ---
 title: "Using Resilver Priority"
+description: "This article describes how to configure resliver priority tasks on TrueNAS CORE."
 weight: 70
+tags:
+- corezfstasks
+- coreresilverpriority
 ---
 
 {{< toc >}}
@@ -20,3 +24,7 @@ Set **Enabled**, then use the drop-down menus to select a **Begin** and **End** 
 A resilver process running during the time frame defined between "Begin Time" and "End Time" will likely work faster.
 We advise you avoid putting the system under any intensive activity or heavy loads (replications, SMB transfers, NFS transfers, Rsync transfers, S.M.A.R.T. tests, pool scrubs, etc) during a resilver process. 
 {{< /hint >}}
+
+{{< taglist tag="coreresilverpriority" limit="10" >}}
+
+{{< taglist tag="corezfstasks" limit="10" title="Related ZFS Tasks Articles">}}

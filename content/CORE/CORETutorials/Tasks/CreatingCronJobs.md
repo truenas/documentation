@@ -1,8 +1,12 @@
 ---
 title: "Creating Cron Jobs"
+description: "This article describes how to create a cron job on TrueNAS CORE." 
 weight: 10
 aliases:
   - /core/tasks/cronjobs
+tags:
+- corecronjobs
+- coresystemleveltasks
 ---
 
 {{< toc >}}
@@ -43,3 +47,7 @@ Go to **Tasks > Cron Jobs** and click the <i class="fa fa-chevron-right"></i> ne
 Clicking **RUN NOW** immediately starts the job **Command**, separately from any **Schedule**.
 **EDIT** changes any setting available during task creation.
 **DELETE** removes the cron job from TrueNAS. Once you delete a cron job, you cannot restore the job configuration.
+
+{{< taglist tag="corecronjobs" limit="10" >}}
+
+{{< taglist tag="coresystemleveltasks" limit="10" title="Related System Level Tasks" >}}
