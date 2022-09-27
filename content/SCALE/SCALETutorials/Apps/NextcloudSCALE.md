@@ -105,4 +105,4 @@ Refer to the Nextcloud documentation for details about using the Nextcloud platf
 * [Users Manual](https://docs.nextcloud.com/server/latest/user_manual/en/)
 * [Nextcloud Developer Documentation](https://docs.nextcloud.com/server/latest/developer_manual/)
 
-{{< taglist tag="scalenextcloud" limit="10" title="Related NextCloud Articles" >}}
+{{< taglist tag="scalenextcloud" limit="10" title="Related Nextcloud Articles" >}}
