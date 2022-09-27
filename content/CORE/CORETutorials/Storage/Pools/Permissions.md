@@ -46,9 +46,7 @@ To view an ACL, go to **Storage > Pools >** <i class="material-icons" aria-hidde
 ![ACLManager](/images/CORE/12.0/ACLManager.png)
 
 {{< expand "Tutorial Video" "v" >}}
-The video at https://www.youtube.com/watch?v=p3wn0b_aXNw&t=3s shows editing ACLs for FreeNAS 11.3.
-However, the same process applies for TrueNAS 12.0 and later:
-{{< youtube p3wn0b_aXNw >}}
+{{< embed-video name="userspermissionsacls" >}}
 {{< /expand >}}
 
 ### ACL Inheritance

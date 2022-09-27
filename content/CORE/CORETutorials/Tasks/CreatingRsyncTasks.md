@@ -4,6 +4,7 @@ description: "This article provides information on how to create an remote sync 
 weight: 30
 tags:
 - corersync
+- coredatabackuptasks
 ---
 
 {{< toc >}}
@@ -126,3 +127,5 @@ To turn the rsync service on, go to **Services** and click the **rsync** toggle 
 See [ConfiguringRsync]({{< relref "ConfiguringRsync.md" >}}) for more information on rsync configuration and module creation.
 
 {{< taglist tag="corersync" limit="10" >}}
+
+{{< taglist tag="coredatabackuptasks" limit="10" title="Related Data Backup Articles" >}}

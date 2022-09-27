@@ -1,6 +1,11 @@
 ---
 title: "Periodic Snapshot Tasks"
+description: "This article describes how to create periodic snapshot tasks on TrueNAS CORE."
 weight: 50
+tags:
+- coreperiodicsnapshottasks
+- coresnapshots
+- corezfstasks
 ---
 
 {{< toc >}}
@@ -69,3 +74,7 @@ Click **SUBMIT** to save the task in **Tasks > Periodic Snapshot Tasks**.
 You can find any snapshots from this task in **Storage > Snapshots**.
 
 To check the log for a saved snapshot schedule, go to **Tasks > Periodic Snapshot Tasks** and click the task **State**.
+
+{{< taglist tag="coresnapshots" limit="10" >}}
+
+{{< taglist tag="corezfstasks" limit="10" title="Related ZFS Tasks Articles">}}
