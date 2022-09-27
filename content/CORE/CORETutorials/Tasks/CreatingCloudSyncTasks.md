@@ -1,9 +1,14 @@
 ---
 title: "Creating Cloud Sync Tasks"
+description: "This article describes how to configure cloud storage backup tasks in TrueNAS CORE."
 weight: 90
 aliases:
   - /core/system/cloudcredentials
   - /core/system/cloudsynctasks
+tags:
+- corecloudcredentials
+- corecloudsynctasks
+- coredatabackuptasks
 ---
 
 {{< toc >}}
@@ -140,3 +145,7 @@ Give the new task a **Description** and define the path to a storage location fo
 TrueNAS saves the restored cloud sync task as another entry in **Tasks > Cloud Sync Tasks**.
 
 If the restore destination dataset is the same as the original source dataset, the restored files might have their ownership altered to _root_. If  _root_ did not create the original files and they need a different owner, you can recursively reset ACL Permissions of the restored dataset through the GUI or by running `chown` from the CLI.
+
+{{< taglist tag="corecloudsynctasks" limit="10" >}}
+
+{{< taglist tag="coredatabackuptasks" limit="10" title="Related Data Backup Articles" >}}

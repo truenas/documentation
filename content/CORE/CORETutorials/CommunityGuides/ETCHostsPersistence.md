@@ -1,6 +1,9 @@
 ---
 title: "/etc/hosts IP Persistence"
+description: "This article describes the process of mapping host or domain names on TrueNAS CORE."
 weight: 5
+tags:
+- corecommunityguides
 ---
 
 {{< toc >}}
@@ -28,3 +31,5 @@ To add an entry to the <file>hosts</file> file, log in to the TrueNAS web interf
 3. Scroll down to the *Host name database* field and add an entry for the TrueNAS system in the format *IP_address space hostname*.
 4. Click *Save*.
 {{< /expand >}}
+
+{{< taglist tag="corecommunityguides" limit="10" title="Community Guides Articles" >}}
