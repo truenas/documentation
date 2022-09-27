@@ -1,6 +1,10 @@
 ---
 title: "Configuring Failover (HA)"
+description: "This article describes how to configure failover on TrueNAS CORE."
 weight: 150
+tags:
+- coreha
+- corefailover
 ---
 
 {{< toc >}}
@@ -77,3 +81,5 @@ To have the system wait to failover during a network timeout, replace *0* with a
 Do not sync the TrueNAS configuration unless directed by an iXsystems Support Engineer!
 TrueNAS automatically synchronizes the system configuration. The manual sync options are only for dangerous or high-risk troubleshooting situations.
 {{< /hint >}}
+
+{{< taglist tag="corefailover" limit="10" >}}
