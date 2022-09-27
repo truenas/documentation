@@ -41,7 +41,7 @@ When the SCALE console setup screen appears, select **Install/Upgrade**.
  
  Select your TrueNAS boot disk
  
- **Set Image here**
+![SCALEUpgrade02](/images/SCALE/ScaleSelectBootDrive.png "Select the boot drive")
 
 The installer asks if you want to preserve your existing configuration or start with a fresh installation. We recommend selecting **Upgrade Install** when migrating from CORE to SCALE to keep your configuration data. Then select **Install in new boot environment**.
 
