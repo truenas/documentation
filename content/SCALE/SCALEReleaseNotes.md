@@ -87,6 +87,7 @@ iXsystems is excited to announce the release of TrueNAS SCALE 22.02.4!
 
 ### Bug
 
+[NAS-118288](https://ixsystems.atlassian.net/browse/NAS-118288) fix behavioral change in api_key.create
 [NAS-118268](https://ixsystems.atlassian.net/browse/NAS-118268) Add `.angular/cache` to `.gitignore`
 [NAS-118240](https://ixsystems.atlassian.net/browse/NAS-118240) Branchout for 22.02.4
 [NAS-118239](https://ixsystems.atlassian.net/browse/NAS-118239) Remove redundant debian-security mirror
@@ -2865,7 +2866,7 @@ We appreciate the [community feedback](https://www.truenas.com/community/forums/
 </li>
 </ul>
 
-## Epic
+### Epic
 
 <ul>
 <li>[<a href='https://jira.ixsystems.com/browse/NAS-112342'>NAS-112342</a>] -         remove complexity of network API on SCALE
@@ -5074,7 +5075,7 @@ Code-named Angelfish, TrueNAS SCALE ALPHA follows a *year.month-ALPHA.#* scheme 
 Because this is an ALPHA release of the software, not all planned features are present.
 The status of major features are listed here, along with the full changelog of bug fixes that are part of the SCALE 21.02-ALPHA.1 release.
 
-## Software Features
+### Software Features
 
 ### Verified
 
@@ -5572,7 +5573,7 @@ Code-named Angelfish, TrueNAS SCALE-ALPHA follows a year.month scheme for versio
 Because this is an ALPHA release of the software, not all planned features are present.
 The status of major features are listed here, along with the full changelog of bug fixes that are part of the SCALE 20.12-ALPHA release.
 
-## Software Features
+### Software Features
 
 ### Verified
 
