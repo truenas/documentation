@@ -1,7 +1,12 @@
 ---
 title: "Managing Pools"
+description: "This article describes how to manage storage pools on TrueNAS CORE."
 weight: 16
 Aliases: /core/storage/pools/managingpools/
+tags:
+- coremanagepools
+- corepools
+- corestorage
 ---
 
 After creating a data storage pool, there are a variety of options to change the initial configuration of that pool.
@@ -91,14 +96,6 @@ The upgrade itself only takes a few seconds and is non-disruptive.
 It is not necessary to stop any sharing services to upgrade the pool.
 However, it is best to upgrade when the pool is not in heavy use.
 The upgrade process suspends I/O for a short period, but is nearly instantaneous on a quiet pool.
-{{< /expand >}}
+{{< /expand >}} 
 
-## Additional Information
-
-[Pools Screens]({{< relref "/CORE/UIReference/Storage/Pools/PoolsScreens.md" >}})
-
-[Creating Pools]({{< relref "/CORE/CORETutorials/Storage/Pools/PoolCreate.md" >}})
-
-[Importing Pools]({{< relref "/CORE/CORETutorials/Storage/Pools/PoolImport.md" >}})
-
-[Setting Up Permissions]({{< relref "/CORE/CORETutorials/Storage/Pools/Permissions.md" >}}) 
+{{< taglist tag="corestorage" limit="10" title="Related Storage Articles" >}}
