@@ -99,11 +99,7 @@ Click **Send Test Email** to verify you receive an email.
 
 ## Setting up the Email Alert Service
 
-{{< hint info >}}
-The system/root account will be sent a system health email every night/morning, if that has been set up. 
-{{< /hint >}}
-
-You can add/configuire the Email Alert Service to send timely email warnings, when the system hits a specific state (listed in Alert Settings), to the email specified in the alert service.
+The system email account will be sent a system health email every night/morning, if it has been configured. You can also add/configure the Email Alert Service to send timely email warnings, when the system hits a specific state that is [listed in Alert Settings]({{< relref "scale/scaleuireference/toptoolbar/alerts/alertsettingsscreen.md" >}}), to the email specified in the alert service.
 
 From the **Alerts** panel, select the <span class="material-icons">settings</span> icon and then **Alert Services**.
 
