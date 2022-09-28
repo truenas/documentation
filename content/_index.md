@@ -3,11 +3,11 @@ title: "Documentation Hub"
 geekdocCollapseSection: true
 ---
 
-This is a paragrph of empty text
-it has speling and grammar errors it is intended as an example.
+This is a paragraph of empty text.
+It has spelling and grammar errors it is intended as an example.
 
 This is another paragraph of empty text for multi-line changes.
-Lorum ipsum...
+Lorum ipsum... ... some thing
 
 
 # TrueNAS: Open Storage
