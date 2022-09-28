@@ -99,7 +99,11 @@ Click **Send Test Email** to verify you receive an email.
 
 ## Setting up the Email Alert Service
 
-The final step to setting up system email and have alerts sent to that system email is to configure the email alert. This step will allow you to select the level of severity that will trigger an email to be sent to the email address set in the Email Alert Service.
+{{< hint info >}}
+The system/root account will be sent a system health email every night/morning, if that has been set up. 
+{{< /hint >}}
+
+You can add/configuire the Email Alert Service to send timely email warnings, when the system hits a specific state (listed in Alert Settings), to the email specified in the alert service.
 
 From the **Alerts** panel, select the <span class="material-icons">settings</span> icon and then **Alert Services**.
 
