@@ -99,8 +99,8 @@ The **Certificate Subject** settings do not display if **Type** on the **Identif
 The **Extra Constraints** settings contains certificate extension options:
 * **Basic Constraints** that when enabled limits the path length for a certificate chain.
 * **Authority Key Identifier** that when enabled provides a means of identifying the public key corresponding to the private key used to sign a certificate.
-* **Key Usage** that when enable defines the purpose of the public key contained in a certificate.
-* **Extended Key Usage** that when enable to further refines key usage extensions.
+* **Key Usage** that when enabled defines the purpose of the public key contained in a certificate.
+* **Extended Key Usage** that when enabled further refines key usage extensions.
 
 The **Extra Constraints** settings change based on the selection in **Type** on the **Identifier and Type** screen. 
 
