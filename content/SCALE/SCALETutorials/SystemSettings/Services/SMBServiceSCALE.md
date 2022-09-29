@@ -15,7 +15,7 @@ Alternately, you can go to **System Settings > Services** and click the <span cl
 
 ## Configuring SMB Service
 The **SMB Services** screen displays setting options to configure TrueNAS SMB settings to fit your use case. 
-In most cases you can set the required fields and accept the rest of the setting defaults, but if you have specific needs for your uses case click **Advanced Options** to display more settings.
+In most cases you can set the required fields and accept the rest of the setting defaults. If you have specific needs for your uses case, click **Advanced Options**. This displays more settings
 
 ![SMBServiceOptionsSCALE](/images/SCALE/SMBServiceOptionsSCALE.png "SMB Service Options")
 
