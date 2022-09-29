@@ -1,7 +1,11 @@
 ---
 title: "Plugin Management"
+description: "This article describes how to manage plugins in TrueNAS CORE."
 weight: 10
 aliases: /core/applications/plugins/manageplugins/
+tags:
+- coreplugins
+- corejailspluginsvm
 ---
 
 {{< toc >}}
@@ -118,13 +122,4 @@ Confirm the plugin removal by typing in the name of the plugin jail and setting 
 Uninstalling can take a few moments while the plugin deletes from both **Plugins** and **Jails**.
 The plugin dataset also deletes from <file>{POOL}/iocage/jails/</file> and any jail snapshots from **Storage > Snapshots**.
 
-## Additional Information
-For information on Plugins and Jails screens and how to add or manage jails see:
-
-[Plugins Screens]({{< relref "/CORE/UIReference/JailsPluginsVMs/Plugins/PluginsScreens.md" >}})
-
-[Jails Screens]({{< relref "/CORE/UIReference/JailsPluginsVMs/Jails/JailsScreens.md" >}})
-
-[Creating Jails]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Jails/CreatingJails.md" >}})
-
-[Creating Custom Plugin]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Plugins/CreatingCustomPlugin.md" >}})
+{{< taglist tag="corejailspluginsvm" limit="10" >}}
