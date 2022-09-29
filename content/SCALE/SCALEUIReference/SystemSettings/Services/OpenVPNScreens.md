@@ -1,6 +1,6 @@
 ---
 title: "OpenVPN Screens"
-description: "This article provides information on the OpenVPN Client and Server screen settings."
+description: "This article provides information on OpenVPN client and server screens and settings."
 weight: 30
 alias: 
 tags:
