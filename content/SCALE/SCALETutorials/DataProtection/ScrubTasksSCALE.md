@@ -23,7 +23,7 @@ TrueNAS generates a default scrub task when you create a new pool and sets it to
 
 ![ScrubTaskPrioritySCALE](/images/SCALE/22.02/resilverscrubedit.png "Default Scrub Task")
 
-To schedule a new resilver task to run at a higher priority select the hour and minutes from the **Begin** dropdown list.
+To schedule a new resilver task to run at a higher priority, select the hour and minutes from the **Begin** dropdown list.
 
 To schedule a new resilver task to run at a lower priority to other processes, select the hour and minutes from the **End** dropdown list. Running at a lower priority is a slower process and takes longer to complete. Schedule this for times when your server is at its lowest demand level.
 
