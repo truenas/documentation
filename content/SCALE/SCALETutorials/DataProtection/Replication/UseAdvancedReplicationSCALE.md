@@ -101,19 +101,19 @@ In TrueNAS, do this by going to the **System Settings > Services** screen, check
 ![SCALEReplicationAdvancedSourceOptions](/images/SCALE/SCALEAdvRepSource.png "Advanced Replication: Source")
 
 By default, the replication task uses snapshots to quickly transfer data to the receiving system.
-When **Full Filesystem Replication** is set, the chosen **Source** is completely replicated, including all dataset properties, snapshots, child datasets, and clones. When choosing this option, it is recommended to allocate additional time for the replication task to run.
+When **Full Filesystem Replication** is set, the task completely replicates the chosen **Source**, including all dataset properties, snapshots, child datasets, and clones. When choosing this option, we recommended allocating additional time for the replication task to run.
 
 Leaving **Full Filesystem Replication** unset but setting **Include Dataset Properties** includes just the dataset properties in the snapshots to be replicated.
 
 Checking the **Recursive** check box allows you to recursively replicate child dataset snapshots or exclude specific child datasets or properties from the replication.
 
-Enter new defined properties in the **Properties Override** field to replace existing dataset properties with the newly defined properties in the replicated files.
+Enter newly defined properties in the **Properties Override** field to replace existing dataset properties with the newly defined properties in the replicated files.
 
 List any existing dataset properties to remove from the replicated files in the **Properties Exclude** field.
 
 Local sources are replicated by snapshots that were generated from a periodic snapshot task and/or from a defined naming schema that matches manually created snapshots.
 
-Select a previously configured periodic snapshot task for this replication task in **Periodic Snapshot Tasks** drop down list. The replication task selected must have the same vales in **Recursive** and **Exclude Child Datasets** as the chosen periodic snapshot task. Selecting a periodic snapshot schedule removes the **Schedule** field.
+Select a previously configured periodic snapshot task for this replication task in the **Periodic Snapshot Tasks** drop-down list. The replication task selected must have the same values in **Recursive** and **Exclude Child Datasets** as the chosen periodic snapshot task. Selecting a periodic snapshot schedule removes the **Schedule** field.
 
 To define specific snapshots from the periodic task to use for the replication, set **Replicate Specific Snapshots** and enter a schedule.
 The only periodically generated snapshots included in the replication task are those that match your defined schedule.
@@ -126,7 +126,7 @@ Multiple schemas can be entered by pressing <kbd>Enter</kbd> to separate each sc
 Alternately, you can use your **Replication Schedule** to determine which snapshots are replicated by setting **Run Automatically**, **Only Replicate Snapshots Matching Schedule**, and defining when the replication task runs.
 
 When a replication task is having difficulty completing, it is a good idea to set **Save Pending Snapshots**.
-This prevents the source TrueNAS from automatically deleting any snapshots that failg to replicate to the destination system.
+This prevents the source TrueNAS from automatically deleting any snapshots that failed to replicate to the destination system.
 {{< /expand >}}
 
 ### Set up the Destination
