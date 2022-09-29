@@ -1,6 +1,6 @@
 ---
 title: "SMB Service Screen"
-description: "This article provides instructions in the SMB service screen and settings."
+description: "This article provides information in the SMB service screen and settings."
 weight: 50
 aliases: /scale/scaleuireference/shares/smb/smbservicesscreen/
 tags:
@@ -10,10 +10,6 @@ tags:
 
 {{< toc >}}
 
-The **Services > SMB** screen displays after going to the **Shares** screen, finding the **Windows (SMB) Shares** section, and clicking <span class="material-icons">more_vert</span> + **Config Service**.
-Alternately, you can go to **System Settings > Services** and click the <span class="material-icons">edit</span> edit icon for the SMB service.
-
-## SMB Services Screen
 The **SMB Services** screen displays setting options to configure TrueNAS SMB settings to fit your use case.
 The **Basic Options** settings continue to display after selecting the **Advanced Options** screen.
 
@@ -39,8 +35,8 @@ The **Basic Options** settings also display on the **Advanced Options** settings
 | Setting | Description |
 |---------|-------------|
 | **UNIX Charset** | Select the character set to use internally from the dropdown list of options. **UTF-8** is standard for most systems as it supports all characters in all languages. |
-| **Log Level** | Record SMB service messages up to the specified log level from the dropdown list. Options are **None**, **Nimimum**, **Normal**, **full** and **Debug**. By default, error and warning level messages are logged. It is not recommended to use a log level above **Minimum** for production servers. |
-| **Use Syslog Only** | Selectt to log authentication failures in */var/log/messages* instead of the default */var/log/samba4/log.smbd*. |
+| **Log Level** | Record SMB service messages up to the specified log level from the dropdown list. Options are **None**, **Minimum**, **Normal**, **full** and **Debug**. By default, error and warning level messages are logged. It is not recommended to use a log level above **Minimum** for production servers. |
+| **Use Syslog Only** | Select to log authentication failures in */var/log/messages* instead of the default */var/log/samba4/log.smbd*. |
 | **Local Master** | Selected by default and determines if the system participates in a browser election. Clear this checkbox when the network contains an AD or LDAP server, or when Vista or Windows 7 machines are present. |
 | **Enable Apple SMB2/3 Protocol Extensions** | Select to allow MacOS to use these [protocol extensions](https://support.apple.com/en-us/HT210803) to improve the performance and behavioral characteristics of SMB shares. This is required for Time Machine support. |
 | **Administrators Group** | Enter or select members from the dropdown list. Members of this group are local administrators and automatically have privileges to take ownership of any file in an SMB share, reset permissions, and administer the SMB server through the Computer Management MMC snap-in. |
@@ -48,6 +44,6 @@ The **Basic Options** settings also display on the **Advanced Options** settings
 | **File Mask** | Overrides default **0666** file creation mask which creates files with read and write access for everybody. |
 | **Directory Mask** | Overrides default directory creation mask of **0777** which grants directory read, write and execute access for everybody. |
 | **Bind IP Addresses** | Select static IP addresses that SMB listens on for connections from the dropdown list. Leaving all unselected defaults to listening on all active interfaces.
-| **Auxiliary Parameters** | Enter additional [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) options. Refer to the [Samba Guide]9http://www.oreilly.com/openbook/samba/book/appb_02.html) for more information on these settings. You can use **Auxiliary Pparameters** to override the default SMB server configuration, but such changes could adversely affect SMB server stability or behavior. To log more details when a client attempts to authenticate to the share, add `log level = 1, auth_audit:5`. |
+| **Auxiliary Parameters** | Enter additional [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) options. Refer to the [Samba Guide]9http://www.oreilly.com/openbook/samba/book/appb_02.html) for more information on these settings. You can use **Auxiliary Parameters** to override the default SMB server configuration, but such changes could adversely affect SMB server stability or behavior. To log more details when a client attempts to authenticate to the share, add `log level = 1, auth_audit:5`. |
 
-{{< taglist tag="scalesmb" limit="10" title="Releated SMB Articles" >}}
+{{< taglist tag="scalesmb" limit="10" >}}
