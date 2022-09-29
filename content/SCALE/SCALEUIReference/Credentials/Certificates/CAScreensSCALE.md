@@ -15,7 +15,7 @@ The **Certificate Authorities** widget on the **Credentials > Certificates** scr
 
 ![CertificateAuthoritiesWidgetNoCAs](/images/SCALE/22.02/CertificateAuthoritiesWidgetNoCAs.png "Certificate Authorities Widget No CAs")
 
-The <iconify-icon icon="mdi:tray-arrow-down"></iconify-icon> download icon downloads the CA to your server.
+The <span class="iconify" data-icon="mdi:tray-arrow-down"></span> download icon downloads the CA to your server.
 
 <span class="material-icons">delete</span> deletes the CA from your server.
 
