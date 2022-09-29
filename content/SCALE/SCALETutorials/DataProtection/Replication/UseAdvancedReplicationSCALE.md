@@ -139,7 +139,7 @@ You can click a destination or manually type a path in the field.
 Adding a name to the end of the path creates a new dataset in that location.
 
 {{< hint warning >}}
-*DO NOT* use zvols for a remote destination
+*DO NOT* use zvols as remote destinations.
 {{< /hint >}}
 
 ![SCALEReplicationAddAdvancedDestination](/images/SCALE/SCALEAdvRepDestination.png "Advanced Replication: Destination")
