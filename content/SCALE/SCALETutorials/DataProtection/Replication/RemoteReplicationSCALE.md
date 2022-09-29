@@ -72,7 +72,7 @@ Using encryption for SSH transfer security is always recommended.
 In situations where two systems within an absolutely secure network are used for replication, disabling encryption speeds up the transfer.
 However, the data is completely unprotected from eavesdropping.
 
-Choosing **no encryption** for the task is less secure but faster. This method uses common port settings but these can be overriden by switching to the advanced options screen or editing the task after creation.
+Choosing **no encryption** for the task is less secure but faster. This method uses common port settings but these can be overridden by switching to the advanced options screen or editing the task after creation.
 
 ![TasksReplicationTaskSecuritySCALE](/images/SCALE/RepSecurityTaskSCALE.png "Replication Security and Task Name")
 
