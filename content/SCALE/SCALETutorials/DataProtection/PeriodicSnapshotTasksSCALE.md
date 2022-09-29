@@ -72,7 +72,7 @@ Examples:
 | autosnap_%Y.%m.%d-%H.%M.%S-%z | `autosnap_2021.01.20-00.00.00-EST`, `autosnap_2021.01.20-06.00.00-EST` |
 
 {{< hint warning >}}
-When referencing snapshots from a Windows computer, avoid using characters like  colon (:) that are invalid in a Windows file path.
+When referencing snapshots from a Windows computer, avoid using characters like colon (:) that are invalid in a Windows file path.
 Some applications limit filename or path length, and there might be limitations related to spaces and other characters.
 Always consider future uses and ensure the name given to a periodic snapshot is acceptable.
 {{< /hint >}}
