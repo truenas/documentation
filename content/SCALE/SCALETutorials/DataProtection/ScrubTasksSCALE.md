@@ -33,7 +33,7 @@ TrueNAS needs at least one data [pool]({{< relref "/content/SCALE/SCALEUIReferen
 
 To create a scrub task for a pool, go to **Data Protection** and click **ADD** in the **Scrub Tasks** window.
 
-!AddScrubTaskSCALE](/images/SCALE/22.02/AddScrubTaskSCALE.png "Add New Scrub Task")
+![AddScrubTaskSCALE](/images/SCALE/22.02/AddScrubTaskSCALE.png "Add New Scrub Task")
 
 Select a preset schedule from the dropdown list or click **Custom** to create a new schedule for when to run a scrub task. **Custom** opens the **Advanced Scheduler** window.
 
