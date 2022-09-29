@@ -1,6 +1,6 @@
 ---
-title: "WebDAV Service Screen"
-description: "This article provides information on WebDAV service screen and settings."
+title: "Configuring WebDAV Service"
+description: "This article provides information on configuring the WebDAV service."
 weight: 75
 aliases: /scale/scaleuireference/shares/webdav/webdavservicescreen/
 tags:
@@ -10,7 +10,6 @@ tags:
 
 {{< toc >}}
 
-## WebDAV Service Screen
 The **Services > WebDAV** configuration screen displays settings to customize the TrueNAS WebDAV service.
 
 You can access it from **System Settings > Services** screen. Locate **WebDAV** and click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the screen, or use the **Config Service** option on the **WebDAV** widget options menu found on the main **Sharing** screen.
@@ -23,16 +22,16 @@ If you require it, you must choose an SSL certificate (*freenas_default* is alwa
 All **Protocol** options require you to define a number in the **Port** field.
 Make sure the network is not already using the WebDAV service port.
 
-To prevent unauthorized access to the shared data, set the **HTTP Authentication** to either **Basic** or **Digest** and create a new **Webdav Password**.
+Select the protocol option from the **Protocol** dropdown list. For better security, select **HTTPS**. 
 
-### WebDAV Configuration Settings
+Enter a port number for unencrypted connections in **HTTP Port**. The default **8080** is not recommended. Do not reuse a port number.
 
-| Setting | Description |
-|---------|-------------|
-| **Protocol** | Select the protocol option from the dropdown list. Options are **HTTP**, **HTTPS** or **HTTP+HTTPS**. For better security, select **HTTPS**. |
-| **HTTP Port** | Enter a port number for unencrypted connections. The default **8080** is not recommended. Do not reuse a port number. |
-| **HTTP Authentication** | Select the authentication method from the dropdown list. Select **Basic Authentication** for unencrypted or **Digest Authentication** for encrypted. **No Authentication** to not use any authentication method. |
-| **WebDAV Password** | Enter a password. **davtest** is the default password, but you should change this as it is a known password. |
-| **Confirm Password** | Reenter the password to confirm it. |
+Select the authentication method from the **HTTP Authentication** dropdown list. Select **Basic Authentication** for unencrypted or **Digest Authentication** for encrypted. **No Authentication** to not use any authentication method. To prevent unauthorized access to the shared data, set the **HTTP Authentication** to either **Basic** or **Digest** and create a new **Webdav Password**.
+
+Enter and then confirm a password but do not use the know default **davtest** password. 
+
+Click **Save**.
+
+Start the service.
 
 {{< taglist tag="scalewebdav" limit="10" title="Related WebDAV Articles" >}}
