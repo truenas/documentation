@@ -30,7 +30,7 @@ Having large numbers of files (>100K for instance) in a single bucket with no su
 
 Go to the **System Settings > Services** and find **S3**, then click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the **Services > S3** screen to configure the service.
 
-![S3ServiceSettings(/images/SCALE/22.02/S3ServiceSettings.png "S3 Service Options")
+![S3ServiceSettings](/images/SCALE/22.02/S3ServiceSettings.png "S3 Service Options")
 
 First, select a clean dataset, one that does not have existing data files. If you do not have a clean dataset, [create a dataset]({{< relref "DatasetsSCALE.md" >}}).
 MinIO manages files as objects that you *cannot* mix with other dataset files.
