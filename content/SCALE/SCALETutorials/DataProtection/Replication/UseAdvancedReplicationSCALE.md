@@ -170,7 +170,7 @@ You can use **Custom** to define your own lifetime for snapshots on the destinat
 By default, setting the task to **Run Automatically** starts the replication immediately after the related periodic snapshot task is complete.
 
 Setting the **Schedule** checkbox allows scheduling the replication to run at a separate time.
-* Defining a specific time for the replication task to run is a must do.
+* Defining a specific time for the replication task to run is a must-do.
 * Choose a time frame that both gives the replication task enough time to finish and is during a time of day when network traffic for both source and destination systems is minimal.
 * Use the custom scheduler (recommended) when you need to fine-tune an exact time or day for the replication.
 
