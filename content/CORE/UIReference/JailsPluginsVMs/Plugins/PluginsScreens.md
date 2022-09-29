@@ -5,6 +5,7 @@ weight: 20
 tags:
 - coreapps
 - coreplugins
+- corejailspluginsvm
 ---
 
 Use the **Plugins** screen to install and maintain 3rd party applications on your TrueNAS storage systems.
@@ -113,19 +114,4 @@ Use **Next** to advance to the next configuration settings section, or click the
 {{< include file="_includes/JailsCustomPropertiesFields.md" markdown="true" >}}
 {{< /expand >}}
 
-## Additional Information
-For information on Plugins and Jails screens and how to add or manage jails see:
-
-[Jails Screens]({{< relref "/CORE/UIReference/JailsPluginsVMs/Jails/JailsScreens.md" >}})
-
-[Creating Jails]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Jails/CreatingJails.md" >}})
-
-[Creating Custom Plugin]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Plugins/CreatingCustomPlugin.md" >}})
-
-[Managing Plugins]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Plugins/ManagingPlugins.md" >}})
-
-[Managing Jails]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Jails/ManagingJails.md" >}})
-
-[Setting Up Jail Storage]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Jails/SettingUpJailStorage.md" >}})
-
-{{< taglist tag="coreplugins" limit="10" >}}
+{{< taglist tag="corejailspluginsvm" limit="10" >}}
