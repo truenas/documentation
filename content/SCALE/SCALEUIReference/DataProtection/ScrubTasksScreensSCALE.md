@@ -36,7 +36,7 @@ The **Add Scrub Task** and **Edit Scrub Task** screens display the same settings
 | **Enabled** | Select to enable the scrub task to run. Leave checkbox clear to disable the task without deleting it. |
 
 ## Scrub/Resilver Priority Screen
-The settings specify times when a new resilver tasks can start and run at a higher priority, or when a resilver task cannot run at a lower priority. 
+The settings specify times when new resilver tasks can start, and run, at a higher priority or when a resilver task cannot run at a lower priority. 
 
 ![ScrubTaskPrioritySCALE](/images/SCALE/22.02/resilverscrubedit.png "Default Scrub Task")
 
