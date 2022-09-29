@@ -33,10 +33,10 @@ Go to **Data Protection > Periodic Snapshot Tasks** and click **Add**.
 
 First, choose the dataset (or zvol) to schedule as a regular backup with snapshots, and how long to store the snapshots.
 
-Next define the task **Schedule**.
+Next, define the task **Schedule**.
 If you need a specific schedule, choose **Custom** and use the [Advanced Scheduler](#using-the-advanced-scheduler) section below.
 
-Configure the remaining options for your uses case. 
+Configure the remaining options for your use case. 
 For help with [naming schema](#using-naming-schemas) and [lifetime](#setting-snapshot-lifetimes) settings refer to the sections below.
 
 Click **Save** to save this task and add it to the list in **Data Protection > Periodic Snapshot Tasks**.
