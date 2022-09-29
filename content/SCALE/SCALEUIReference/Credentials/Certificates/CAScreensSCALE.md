@@ -89,7 +89,7 @@ The **Certificate Subject** settings do not display if **Type** on the **Identif
 | **Organizational Unit** | Enter the organizational unit of the entity. |
 | **Email** | Required. Enter the email address of the person responsible for the CA. |
 | **Common Name** | Enter the [fully qualified host name (FQHN)](https://kb.iu.edu/d/aiuv) of the system. This name must be unique within a certificate chain. |
-| **Subject Alternate Names** | Required. Enter additional domains to secure for multi-domain support. Separate each domain by pressing <kbd>Enter</kbd>. For example, if the primary domain is *example.com*, entering *www.example.com** secures both addresses. |
+| **Subject Alternate Names** | Required. Enter additional domains to secure for multi-domain support. Separate each domain by pressing <kbd>Enter</kbd>. For example, if the primary domain is *example.com*, entering *www.example.com* secures both addresses. |
 {{< /expand >}}
 
 ### Extra Constraints Options
