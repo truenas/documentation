@@ -63,7 +63,7 @@ TrueNAS suggests a default name for the task based on the selected source and de
 You can load any saved replication task into the wizard to make creating new replication schedules even easier.
 
 You can define a specific schedule for this replication or choose to run it immediately after saving the new task.
-Unscheduled tasks are saved in the replication task list and you can run saved tasks manually or edit later to add a schedule.
+TrueNAS saves unscheduled tasks in the replication task list. You can run saved tasks manually or edit them later to add a schedule.
 
 The destination lifetime is how long copied snapshots are stored in the destination before they are deleted.
 We usually recommend defining a snapshot lifetime to prevent storage issues.
