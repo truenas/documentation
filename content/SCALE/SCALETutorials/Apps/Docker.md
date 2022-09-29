@@ -1,7 +1,12 @@
 ---
-title: "Using Docker on TrueNAS SCALE"
-geekdocCollapseSection: true
+title: "Adding Pi-Hole Using Docker Image"
+description: "This article provides information on using the Docker image wizard to configure third-party applications in TrueNAS SCALE."
 weight: 25
+aliases: scale/scaleuireference/apps/docker/
+tags:
+ - scaleapps
+ - scaledocker
+ - scalepihole
 ---
 
 
@@ -15,51 +20,54 @@ Docker is an open platform for developing, shipping, and running applications. D
 Kubernetes is a portable, extensible, open-source container-orchestration system for automating computer application deployment, scaling, and management with declarative configuration and automation.
 {{< /expand >}}
 
-
-Always read through the Docker Hub page for the container you are considering installing so that you know all of the settings that need to be configured.
-To Set up a Docker Image, first determine if you wish the container to use its own dataset.  Create a dataset for before hand if desired for host volume paths. 
-
+Always read through the Docker Hub page for the container you are considering installing so that you know all of the settings that you need to configure.
+To set up a Docker image, first determine if you want the container to use its own dataset. If yes, create a dataset for host volume paths before you click **Launch Docker Image**. 
 
 When you are ready to create a container, open the **APPS** page and click **Launch Docker Image**.
 
+![AvailableApplicationsScreen](/images/SCALE/22.02/AvailableApplicationsScreen.png "Available Applications")
 
-![AppsCatalog](/images/SCALE/AppsCatalog.png "Apps Catalog")
+Fill in the **Application Name** and click **Next**. Add the github repository URL in **Image Repository** for the docker container are setting up. For the [PiHole project](https://hub.docker.com/r/pihole/pihole) enter **pihole/pihole**.
 
+![LaunchDockerImagePiholeContainerImage](/images/SCALE/22.02/LaunchDockerImagePiholeContainerImage.png "Pi-Hole Container Image")
 
-Fill in the *Application Name* and *Image Repository* for the docker container you'd like to set up.  This example shows installation of the [PiHole project](https://hub.docker.com/r/pihole/pihole).
+Click **Next** to move to the **Container Environment Variables**. 
+For Pi-Hole, click **Add** then enter **TZ** for timezone, and then **America/NewYork** for the value. 
+Click **Add** again and enter **WEBPASSWORD** and then a secure password like the exaple used, *s3curep4$$word*. 
+Always refer to the docker hub page for information on what the docker container requires.
 
-![Image And Policies](/images/SCALE/SCALEAppsPiHoleImageAndPolicies.png "Image And Policies")
+![LaunchDockerImagePiHoleContainerEnvironmentVariables](/images/SCALE/22.02/LaunchDockerImagePiHoleContainerEnvironmentVariables.png "SCALE Apps Container Settings")
 
-Click **Next** to move to the *Container Settings* section. In this example, PiHole needs the timezone and password set.   Always refer to the dockerhub page for information on what the docker container requires.
+Click **Next** to open **Networking**. If the container needs special networking configuration, enter it here. Click **Next** to open **Port Forwarding** to add the Pi-Hole ports.
 
-![SCALE Apps Container Settings](/images/SCALE/SCALEAppsPiHoleContainerSettings.png "SCALE Apps Container Settings")
+The PiHole Docker Hub page lists a set of four ports and the node port you need to set. Adjust these values if your system configuration requires changes. TrueNAS SCALE requires setting all **Node Ports** above 9000. 
 
-Clicking **Next** will open the Networking section. If the container needs special networking configuration it should be set here.  Ports are configured in the next section.  Once completed, click Next to move forward in the configuration process.
+![LaunchDockerImagePiHolePortForwarding](/images/SCALE/22.02/LaunchDockerImagePiHolePortForwarding.png "Pi-Hole Port Forwarding List")
 
-The PiHole Docker Hub page lists a set of ports that will need to be set.  These values may need to be adjusted depending on the configuration of your system.  TrueNAS SCALE requires all Node Ports to be above 9000. 
+Click **Next** after configuring all the ports to open **Storage**.
 
-![SCALE App Port Forwarding List](/images/SCALE/SCALEAppsPiHolePortForwardingList.png "SCALE App Port Forwarding List")
+Click **Add** twice to add two blocks of host path settings. Browe to the dataset and directory paths you created before beginning the container deployment. 
+PiHole uses volumes store your data between container upgrades. 
 
-Click **Next** when all the ports are configured.
+{{< hint warning>}} 
+You need to create these directories in a dataset on SCALE using **System Settings > Shell** before you begin installing this container.
+{{< /hint >}}
 
-The Host Path volume will be set to a dataset and directory paths which were created before attempting to deploy the container. PiHole uses volumes store your data between container upgrades.  You will need to create these directories in a dataset on SCALE prior to installing this container.
+![LaunchDockerImagePiHoleStorageHostPaths](/images/SCALE/22.02/LaunchDockerImagePiHoleStorageHostPaths.png "Storage Pi-Hole Host Path Volumes")
 
-![SCALE App Host Path Volumes](/images/SCALE/SCALEAppsPiHoleHostPathVolumes.png "SCALE App Host Path Volumes")
+You can add more volumes to the container if needed. 
+When all the settings are entered,click **Next** until you reach **Confirm Options**. Verify the the information on the screen and click **Save**. 
 
-Additional Volumes can be added to the container if needed.
-When all the settings have been entered, verify the Application and Container Name and click **Submit**. 
+![LaunchDockerImagePiHoleConfirmOptions](/images/SCALE/22.02/LaunchDockerImagePiHoleConfirmOptions.png "PiHole Confirm Options")
 
-![SCALEAppsPiHoleConfirmOptions](/images/SCALE/SCALEAppsPiHoleConfirmOptions.png "SCALE Apps PiHole Confirm Options")
+TrueNAS SCALE deploys the container.
+If correctly configured, the Pi-Hole widget displays on the **Installed Applications** screen.
 
-TrueNAS SCALE will deploy the container.
+When the deployment is completed the container becomes active. If the container does not autostart, click **Start** on the widget.
 
-![SCALE App Deploying](/images/SCALE/SCALEAppsPiHoleDeploying.png "SCALE App Deploying")
+![PiHoleWidget](/images/SCALE/22.02/PiHoleWidget.png "SCALE App Active")
 
-When the deployment is completed the container will become active.  If the container does not autostart, click the **START** button.
-
-![SCALE App Active](/images/SCALE/AppsPiHoleActive.png "SCALE App Active")
-
-Clicking on the App card will reveal details.
+Clicking on the App card reveals details.
 
 ![SCALE App Status](/images/SCALE/AppsPiHoleStatus.png "SCALE App Status")
 
@@ -67,4 +75,5 @@ With PiHole as our example we navigate to the IP of our TrueNAS system with the 
 
 ![PiHoleRunning](/images/SCALE/AppsPiHoleRunning.png "PiHole Running")
 
-
+{{< taglist tag="scaledocker" limit="10" >}}
+{{< taglist tag="scaleapps" limit="10" title="Related Apps Articles" >}}
