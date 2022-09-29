@@ -42,7 +42,7 @@ TrueNAS provides a wizard for quickly configuring different simple replication s
 While we recommend regularly scheduled replications to a remote location as the optimal backup scenario, the wizard can very quickly create and copy ZFS snapshots to another location on the same system.
 This is useful when no remote backup locations are available, or when a disk is in immediate danger of failure.
 
-The only thing you need before creating a quick local replication are datasets or zvols in a storage pool to use as the replication source and (preferably) a second storage pool to use for storing replicated snapshots.
+The only things you need before creating a quick local replication are datasets or zvols in a storage pool to use as the replication source and (preferably) a second storage pool to use for storing replicated snapshots.
 You can set up the local replication entirely in the **Replication Wizard**.
 
 To open the **Replication Wizard**, go to **Data Protection > Replication Tasks** and click **ADD**.
