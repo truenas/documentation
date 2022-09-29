@@ -1,6 +1,9 @@
 ---
 title: "Legacy Engine (11.3) Replication"
+description: "This article describes legacy replication on FreeNAS or TrueNAS 11.3"
 weight: 10
+tags:
+- corecommunityguides
 ---
 
 {{< hint info >}}
@@ -38,3 +41,5 @@ To choose the replication target, open the file browser and select the dataset t
 Entering a path to a new dataset creates that target dataset in the defined file path.
 
 The remaining options allow defining how long to keep replicated snapshots, compressing data before replication, and setting a bandwidth limit on the transfer.
+
+{{< taglist tag="corecommunityguides" limit="10" title="Community Guides Articles" >}}

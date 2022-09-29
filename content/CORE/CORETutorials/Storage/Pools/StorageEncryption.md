@@ -128,18 +128,18 @@ Creating a new encrypted pool automatically generates a new key file and prompts
 
 Manually download a copy of the inherited and non-inherited encrypted dataset keyfiles for the pool by opening the pool <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and selecting **Export Dataset Keys**. Enter the root password and click the **CONTINUE** button.
 
-![StoragePoolsEncryptionActionsExportKeys](/images/CORE/12.0/StoragePoolsEncryptionActionsExportKeys.png "Exporting Key Files")
+![13StoragePoolsEncryptionActionsExportKeys](/images/CORE/13.0/storagepoolexportdatasetkeys.png "Exporting Key Files")
 
 ### Dataset Keyfile
 To manually download a back up of a single keyfile for the dataset, click the dataset <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> and select **Export Key**. Enter the root password and click the **CONTINUE** button. Click the **DOWNLOAD KEY** button.
 
 To change the key, click the dataset <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> and **Encryption Options**.
 
-![StoragePoolsEncryptedDataset](/images/CORE/12.0/StoragePoolsEncryptedDataset.png "Dataset Options: Encryption Options")
+![13StoragePoolsEncryptedDataset](/images/CORE/13.0/storagepoolencryptionoptions.png "Dataset Options: Encryption Options")
 
 Enter your custom key or click **Generate Key**.
 
-![StoragePoolsEncryptedDatasetOptions](/images/CORE/12.0/StoragePoolsEncryptedDatasetOptions.png "Editing Encryption Options")
+![13StoragePoolsEncryptedDatasetOptions](/images/CORE/13.0/storagepoolgeneratekey.png "Editing Encryption Options")
 {{< /expand >}}
 {{< expand "Passphrases" >}}
 {{< hint warning >}}

@@ -38,6 +38,10 @@ At the motherboard splash screen, use the hotkey defined by your motherboard man
 When the SCALE console setup screen appears, select **Install/Upgrade**.
 
 ![SCALEUpgrade1](/images/SCALE/SCALEUpgrade1.png "Install/Upgrade SCALE")
+ 
+ Select your TrueNAS boot disk
+ 
+![SCALEUpgrade02](/images/SCALE/ScaleSelectBootDrive.png "Select the boot drive")
 
 The installer asks if you want to preserve your existing configuration or start with a fresh installation. We recommend selecting **Upgrade Install** when migrating from CORE to SCALE to keep your configuration data. Then select **Install in new boot environment**.
 
