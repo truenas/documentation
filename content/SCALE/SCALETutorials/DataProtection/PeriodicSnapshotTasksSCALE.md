@@ -33,10 +33,10 @@ Go to **Data Protection > Periodic Snapshot Tasks** and click **Add**.
 
 First, choose the dataset (or zvol) to schedule as a regular backup with snapshots, and how long to store the snapshots.
 
-Next define the task **Schedule**.
+Next, define the task **Schedule**.
 If you need a specific schedule, choose **Custom** and use the [Advanced Scheduler](#using-the-advanced-scheduler) section below.
 
-Configure the remaining options for your uses case. 
+Configure the remaining options for your use case. 
 For help with [naming schema](#using-naming-schemas) and [lifetime](#setting-snapshot-lifetimes) settings refer to the sections below.
 
 Click **Save** to save this task and add it to the list in **Data Protection > Periodic Snapshot Tasks**.
@@ -72,7 +72,7 @@ Examples:
 | autosnap_%Y.%m.%d-%H.%M.%S-%z | `autosnap_2021.01.20-00.00.00-EST`, `autosnap_2021.01.20-06.00.00-EST` |
 
 {{< hint warning >}}
-When referencing snapshots from a Windows computer, avoid using characters like  colon (:) that are invalid in a Windows file path.
+When referencing snapshots from a Windows computer, avoid using characters like colon (:) that are invalid in a Windows file path.
 Some applications limit filename or path length, and there might be limitations related to spaces and other characters.
 Always consider future uses and ensure the name given to a periodic snapshot is acceptable.
 {{< /hint >}}
