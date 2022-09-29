@@ -1,7 +1,10 @@
 ---
 title: "Setting ACL Permissions for Jailed Applications"
+description: "This article describes how to configure ACL permissions for jailed applications on TrueNAS CORE."
 geekdocCollapseSection: true
 weight: 20
+tags:
+- corecommunityguides
 ---
 
 Various Jail Plugins will require permissions to be set on datasets so that they can access them. 
@@ -41,3 +44,4 @@ Flags: Inherit
 
 If files already exist in the dataset, click the **Apply permissions recursively** checkbox and click **Save**.
 
+{{< taglist tag="corecommunityguides" limit="10" title="Community Guides Articles" >}}

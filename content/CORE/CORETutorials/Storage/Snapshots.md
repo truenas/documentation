@@ -1,9 +1,12 @@
 ---
 title: "Creating Snapshots"
+descripton: "This article describes how to create snapshots on TrueNAS CORE."
 weight: 20
 aliases:
  - /core/storage/snapshots/
  - /core/uireference/storage/snapshots/
+tags:
+- coresnapshots
 ---
 
 {{< toc >}}
@@ -107,3 +110,6 @@ Clicking **Yes** reverts all dataset files to the state they were in at the time
 A user with permission to access the hidden file can view and explore all snapshots for a dataset from the **Shell** or the **Sharing** screen using services like **SMB**, **NFS**, and **SFTP**.
 
 {{< include file="/_includes/BrowsingSnapshotCollections2.md" type="page" >}}
+
+{{< taglist tag="coresnapshots" limit="10" >}}
+
