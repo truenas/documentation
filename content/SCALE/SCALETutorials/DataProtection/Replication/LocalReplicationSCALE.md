@@ -80,7 +80,7 @@ Clicking the task state shows the replication log with an option to download the
 
 ![TasksReplicationTasksLogSCALE](/images/SCALE/RepLogSCALE.png "Replication Log")
 
-To confirm that snapshots are replicated, go to **Storage > Snapshots >Snapshots** and verify the destination dataset has new snapshots with correct timestamps.
+To confirm that snapshots are replicated, go to **Storage > Snapshots > Snapshots** and verify the destination dataset has new snapshots with correct timestamps.
 
 ![TasksReplicationTasksLocalSnapshotsSCALE](/images/SCALE/RepLocalSnaphots.png "Local Replicated Snapshots")
 
