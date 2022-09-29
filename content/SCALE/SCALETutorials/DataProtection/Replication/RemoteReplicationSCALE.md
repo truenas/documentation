@@ -56,7 +56,7 @@ Adding a name to the end of the path creates a new dataset in that location.
 {{< hint info >}}
 To use encryption when replicating data click the **Encryption** box. After selecting the box these additional encryption options  become available:
 
-* **Ecryption Key Format** allows the user to choose between a hex (base 16 numeral) or passphrase (alphanumeric) style encryption key. <br>
+* **Encryption Key Format** allows the user to choose between a hex (base 16 numeral) or passphrase (alphanumeric) style encryption key. <br>
 * **Store Encryption key in Sending TrueNAS database** allows the user to either store the encryption key in the sending TrueNAS database (box checked) or choose a temporary location for the encryption key that decrypts replicated data (box unchecked)
 {{< /hint >}}
 
