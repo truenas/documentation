@@ -192,5 +192,5 @@ The **Portal Configuration** setting specifies whether to **Enable WebUI Portal 
 ## Confirm Options
 The **Confirm Options** screen displays a summary of the image/container configuration. Click **Back** to return to previous screens to make changes and **Next** to advance back to **Confirm Options**. Click **Save** to create the image and add the application to the **Installed Applications** screen.
 
-
 {{< taglist tag="scaledocker" limit="10" >}}
+{{< taglist tag="scaleapps" limit="10" title="Related Apps Articles" >}}
