@@ -46,7 +46,7 @@ Go to **Data Protection > Replication Tasks** and click **ADD**, then select **A
   * To automate the task according to its own schedule, set the *schedule* option and define a schedule for the replication task.
 {{< /expand >}}
 
-To use the advanced editor to create a replication task, go to **Data Protection > Replication Tasks**, click **ADD** to open the wizard, then click the **ADVANCED REPLICATION CREATION** button.
+To use the advanced editor to create a replication task, go to **Data Protection > Replication Tasks**, click **Add** to open the wizard, then click the **Advanced Replication Creation** button.
 
 Options are grouped together by category.
 Options can appear, disappear, or be disabled depending on the configuration choices you make.
