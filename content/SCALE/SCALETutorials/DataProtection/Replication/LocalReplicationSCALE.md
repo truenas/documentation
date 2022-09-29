@@ -29,7 +29,7 @@ tags:
   * Set the **Replication schedule** to run once
   * Define how long the snapshots are stored in the **Destination**
   * Clicking **START REPLICATION** immediately snapshots the chosen sources and copies those snapshots to the destination
-    * Dialog might ask to delete existing snapshots from the destination. Be sure that all important important data is protected before deleting anything.
+    * Dialog might ask to delete existing snapshots from the destination. Be sure that all important data is protected before deleting anything.
 * Clicking the task **State** shows the logs for that replication task.
 {{< /expand >}}
 
