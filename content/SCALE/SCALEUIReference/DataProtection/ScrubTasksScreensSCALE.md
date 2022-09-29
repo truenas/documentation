@@ -23,7 +23,7 @@ Each task is a link that opens the **Edit Scrub Task** Screen.
 The <span class="material-icons">delete</span> icon opens a delete confirmation dialog.
 
 ## Add and Edit Scrub Task Screen
-The **Add Scrub Task** and **Edit Scrub Task** screens display the same settings that specify the pool, threshold and schedule for when to run the ZFS scan on the data in a pool. 
+The **Add Scrub Task** and **Edit Scrub Task** screens display the same settings that specify the pool, threshold, and schedule for when to run the ZFS scan on the data in a pool. 
 
 ![AddScrubTaskSCALE](/images/SCALE/22.02/AddScrubTaskSCALE.png "Add Scrub Task")
 
