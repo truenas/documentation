@@ -25,16 +25,16 @@ Configure SSH in TrueNAS before creating a remote replication task. This ensures
 * **Data Protection > Replication Tasks**
   * Choose sources for snapshot replication.
     * Remote sources require an SSH connection.
-    * TrueNAS shows the number snapshots available to replicate.
+    * TrueNAS shows the number of snapshots available to replicate.
  * Define the snapshot destination.
     * A remote destination requires an SSH connection.
-    * Choose destination or define manually by typing a path.
-      * Adding a new name on the end of the path creates a new dataset.
+    * Choose a destination or define it manually by typing a path.
+      * Adding a new name at the end of the path creates a new dataset.
   * Choose replication security.
     * iXsystems always recommend replication with encryption.
     * Disabling encryption is only meant for absolutely secure and trusted destinations.
   * Schedule the replication.
-    * You can schedule standardized presets or a custom defined schedule.
+    * You can schedule standardized presets or a custom-defined schedule.
     * Running once runs the replication immediately after creation.
       * Task is still saved and you can rerun or edit it.
   * Choose how long to keep the replicated snapshots.
