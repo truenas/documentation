@@ -17,7 +17,7 @@ Each CSR listed is a link that opens the **Edit CA** screen for the selected CSR
 
 ![CertificateSigningRequestWidgetNoCSR](/images/SCALE/22.02/CertificateSigningRequestWidgetNoCSR.png "Certificate Signing Request Widget No CSRs")
 
-The <iconify-icon icon="mdi:tray-arrow-down"></iconify-icon> download icon downloads the CSR to your server.
+The <span class="iconify" data-icon="mdi:tray-arrow-down"></span> download icon downloads the CSR to your server.
 
 <span class="material-icons">delete</span> deletes the CSR from your server.
 
