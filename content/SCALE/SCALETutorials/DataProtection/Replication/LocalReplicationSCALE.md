@@ -73,7 +73,7 @@ Choosing to keep snapshots indefinitely can require you to manually clean old sn
 
 Clicking **START REPLICATION** saves the new task and immediately attempts to replicate snapshots to the destination.
 When TrueNAS detects that the destination already has unrelated snapshots, it asks to delete the unrelated snapshots and do a full copy of the new snapshots.
-This can delete important data, so be sure any existing snapshots can be deleted or are backed up in another location.
+This can delete important data, so ensure you can delete any existing snapshots or back them up in another location.
 
 The simple replication is added to the replication task list and shows that it is currently running.
 Clicking the task state shows the replication log with an option to download the log to your local system.
