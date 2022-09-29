@@ -39,7 +39,7 @@ Lastly, select any extension types you want to apply. Selecting **Extended Key**
 The **Extra Constraints** step contains certificate extension options.
 
 * **Basic Constraints** when enabled this limits the path length for a certificate chain.
-* **Authority Key Identifier** when enable provides a means of identifying the public key corresponding to the private key used to sign a certificate.
+* **Authority Key Identifier** when enabled provides a means of identifying the public key corresponding to the private key used to sign a certificate.
 * **Key Usage** when enabled defines the purpose of the public key contained in a certificate.
 * **Extended Key Usage** when enabled it further refines key usage extensions.
 
