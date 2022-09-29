@@ -25,7 +25,7 @@ Unless a specific setting is required, we recommend using the default NFS settin
 
 First enter the number of servers you want to create in **Number of servers**. 
 
-Select the IP addressed from the **Bind IP Addresses** dropdown list if you want to use a specific static IP address, or to to list on all available addresses leave this blank.
+Select the IP addressed from the **Bind IP Addresses** dropdown list if you want to use a specific static IP address, or to list on all available addresses leave this blank.
 
 If you are using NFSv4 select **Enable NFSv4**. **NFSv3 ownership model for NFSv4** clears, allowing you to select or leave it clear.
 
