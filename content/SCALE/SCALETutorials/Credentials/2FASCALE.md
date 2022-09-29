@@ -17,6 +17,7 @@ Two-factor authentication (2FA) is great for increasing security.
 TrueNAS offers 2FA to ensure that entities cannot use a compromised administrator root password to access the administrator interface.
 ## About SCALE 2FA
 To use 2FA, you need a mobile device with the current time and date, and that has Google Authenticator installed.
+Other authenticator applications can be used, but you will need to confirm the settings and QR codes generated in TrueNAS are compatible with your particular app before permanently activating 2FA.
 
 {{< hint warning >}}
 Two-factor authentication is time-based and requires a correct system time setting. 
