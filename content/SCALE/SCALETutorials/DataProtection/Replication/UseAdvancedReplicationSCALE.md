@@ -94,7 +94,7 @@ The replication **Source** is the datasets or zvols to use for replication.
 Select the sources to use for this replication task by opening the file browser or entering dataset names in the field.
 Pulling snapshots from a remote source requires a valid **SSH Connection** before the file browser can show any directories.
 
-If the file browser shows a connection error after selecting the correct **SSH Connection**, you might need to log in to the remote system and make sure it is configured to allow SSH connections.
+If the file browser shows a connection error after selecting the correct **SSH Connection**, you might need to log in to the remote system and configure it to allow SSH connections.
 
 In TrueNAS, do this by going to the **System Settings > Services** screen, checking the **SSH** service configuration, and starting the service.
 
