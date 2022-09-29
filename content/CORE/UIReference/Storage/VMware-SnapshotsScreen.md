@@ -1,13 +1,16 @@
 ---
 title: "VMware-Snapshots Screen"
+description: "This article describes the fields in the VMware Snapshot screen on TrueNAS CORE."
 weight: 30
+tags:
+- coresnapshots
 ---
  
 Use **Storage** > **VMware-Snapshots** to add a VMWare snapshot that coordinates ZFS snapshots when using TrueNAS as a VMware datastore.
 
 ![StorageVMwareSnapshotsAdd](/images/CORE/12.0/StorageVMwareSnapshotsAdd.png "Creating a VMware Snapshot")
 
-| Setting | Description |
+| Name | Description |
 |---------|-------------|
 | **Hostname** | Enter the IP address or host name of the VMware host. When clustering, use the IP address or host name of the vCenter server for the cluster. |
 | **Username** |Enter a user account name created on the VMware host. The account must have permission to snapshot virtual machines. |
@@ -17,4 +20,4 @@ Use **Storage** > **VMware-Snapshots** to add a VMWare snapshot that coordinates
 
 Use **FETCH DATASTORES** to have TrueNAS connect to the VMware host.
 
-For more informtion see [VMWare Shanpshots]({{< relref "/CORE/CORETutorials/Storage/VMware-Snapshots.md" >}})
+{{< taglist tag="coresnapshots" limit="10" >}}
