@@ -1,8 +1,12 @@
 ---
 title: "Remote Replication"
+description: "This article describes how to create a remote replication task on TrueNAS CORE."
 weight: 20
 aliases:
   - /core/coretutorials/tasks/replicationtasks/remote
+tags:
+- coreremotereplication
+- corereplication
 ---
 
 {{< toc >}}
@@ -115,3 +119,7 @@ Later replications run faster, as only the subsequent changes to snapshots repli
 Clicking the task state opens the log for that task.
 
 ![TasksReplicationTasksRemoteLogs](/images/CORE/12.0/TasksReplicationTasksRemoteLogs.png "Remote Replication Log")
+
+{{< taglist tag="corereplication" limit="10" >}}
+
+{{< taglist tag="coressh" limit="10" title="Related SSH Articles" >}}

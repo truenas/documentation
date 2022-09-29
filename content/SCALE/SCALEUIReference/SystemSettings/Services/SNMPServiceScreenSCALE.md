@@ -19,6 +19,8 @@ Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i
 
 ![SCALESNMPOptions](/images/SCALE/22.02/SCALESNMPOptions.png "SCALE SNMP Service Options")
 
+### SNMP v3 Options
+
 | Setting | Description |
 |---------|-------------|
 | **Location** | Enter the location of the system. |
@@ -46,5 +48,5 @@ Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i
 | **Expose zilstat via SNMP** | Select to enable. If enabled this option might have performance implications on your pools. |
 | **Log Level** | Select how many log entries to create. Dropdown list options are **Emergency**, **Alert**, **Critical**, **Error**, **Warning**, **Notice**, **Info** and **Debug**. |
 
-
 {{< taglist tag="scalesnmp" limit="10" >}}
+

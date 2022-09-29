@@ -1,7 +1,10 @@
 ---
 title: "Changing the Default Shell"
+description: "This article describes how to change the default shell on TrueNAS CORE."
 weight: 30
 Aliases: 
+tags:
+- coreshell
 ---
 
 
@@ -17,3 +20,5 @@ You can change the default shell  in **Accounts > Users**.
 For more information on the web shell see [Shell]({{< relref "/CORE/UIReference/shell.md" >}})
 
 For more information on using the keyboard and CLI commands in the Shell see [Using Shell]({{< relref "/CORE/CORETutorials/UsingShell.md" >}})
+
+{{< taglist tag="coreshell" limit="10" >}}
