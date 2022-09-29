@@ -58,7 +58,7 @@ The **Advanced Settings** option opens the **Kubernetes Settins** configuration 
 | **Route v4 Gateway** | Enter the IP address for the route v4 gateway. |
 | **Enable Container Image Updates** | Select to enable updates of the container image. |
 | **Enable GPU support** | Select to enable GPU support. |
-| **Enable Integrated Loadbalancer** | Select to enable the integrated loadbalancer.  |
+| **Enable Integrated Loadbalancer** | Select to enable the integrated loadbalancer. The default uses servicelb but if disabled, allows using metallb and allows users to speicfy any IP from the local network.  |
 
 **Settings Requiring Re-Initializtion**
 
@@ -228,7 +228,7 @@ The **Official** catalog name is not editable, but you can change the train.
 {{< /expand >}}
 
 ### Refresh Catalog
-Opens a **Refreshing** counter that shows the status of the refresh operation.
+Opens a **Refreshing** counter that shows the status of the refresh operation. You can minimze the counter while the process continues.
 
 ### Delete Catalog
 Opens a confirmation dialog before deleting the catalog. The **Official** catalog **Delete** option is inactive. You cannot delete the official catalog.

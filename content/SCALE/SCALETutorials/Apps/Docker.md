@@ -39,7 +39,7 @@ For Pi-Hole, click **Add** then enter **TZ** for timezone, and then **America/Ne
 
 ![LaunchDockerImagePiHoleContainerEnvironmentVariables](/images/SCALE/22.02/LaunchDockerImagePiHoleContainerEnvironmentVariables.png "SCALE Apps Container Settings")
 
-Click **Next** to advance to each of the **Launch Docker Imagee** configuration screens. Enter information required for the application you are adding on each screen that requires input.
+Click **Next** to advance to each of the **Launch Docker Image** configuration screens. Enter information required for the application you are adding on each screen that requires input.
 
 When you reach **Networking**, if the container needs special networking configuration, enter it here. Click **Next** to open **Port Forwarding** to add ports. Click **Add** for each port you need to enter. 
 The PiHole Docker Hub page lists a set of four ports and the node port you need to set. Adjust these values if your system configuration requires changes. TrueNAS SCALE requires setting all **Node Ports** above 9000. 

@@ -82,6 +82,7 @@ By default, containers use the DNS settings from the host system.
 You can change the DNS policy and define separate nameservers and search domains.
 See the Docker [DNS services documentation](https://docs.docker.com/config/containers/container-networking/#dns-services) for more details.
 
+
 ![LaunchDockerImageNetworkingInterfaceDNSSettings](/images/SCALE/22.02/LaunchDockerImageNetworkingInterfaceDNSSettings.png "Networking Interface and DNS Policy")  
 
 | Setting | Description |
@@ -90,7 +91,7 @@ See the Docker [DNS services documentation](https://docs.docker.com/config/conta
 | **Interface Configuration** | Required. Select an interface from the **Host Interface** dropdown list. |
 | **Host Interface** | Required. Select a host interface on your system from the dropdown list. |
 | **IP Address Management** | Select an option for how to manage the IP address from the **IPAM Type** dropdown list. |
-| **IPAM Type** | Required. Select an option from the dropdown list to specify the type for IPAM. Options are **Use DHCP** or **Use Static IP**. |
+| **IPAM Type** | Required. Select an option from the dropdown list to specify the type for IPAM. Options are **Use DHCP** or **Use Static IP**. To add a default route, select **Add route** allow you to enter route destination IP /subnet 0.0.0.0/0. Enter the gatway (for example, *192.168.1.1*). After submitting the docker image, navigate to **Installed Applications**, locate the docker image you added, select **Edit** and change the route destination/subnet to equal 0.0.0.0 /0. |
 | **DNS Policy** | Select the option from the dropdown list that specifies the policy. Default behavior is where Pod inherits the name resolution configuration from the node that the pods run on. If **None** is specified, it allows a pod to ignore DNS settings from the Kubernetes environment. Options are:<br>Use Default DNS Policy where Pod inherits the name resolution configuration from the node**.<br>**Kubernetes internal DNS is prioritized and resolved first.** If the domain does not resolve with internal kubernetes DNS, the DNS query forwards to the upstream nameserver inherited from the node. This useful if the workload to access other services, workflows, using kubernetes internal DNS.<br>**For Pods running with hostNetwork and wanting to prioritize internal kubernetes DNS should make use of this policy.**<br>**Ignore DNS settings from the Kubernetes cluster**. |
 | **DNS Configuration** | Specify custom DNS configuration to apply to the pod. Click **Add** to dsiplay a **Nameserver** entry field. Click again to add another name server. |
 | **Nameserver** | Enter the IP address of the name server. |
@@ -172,13 +173,13 @@ The **Workload Details** settings specify if containers in a pod run with TTY or
 {{< /expand >}}
 
 ## Scaling/Upgrade Policy
-Use **Kill existing pods before creating new ones** to recreate the container or **Create new pods and then kill old ones** if you want rolling upgrades
+Use **Kill existing pods before creating new ones** to recreate the container or **Create new pods and then kill old ones** if you want rolling upgrades. 
 {{< expand "Click Here for More Information" "v" >}}
 
 ![LaunchDockerImageScalingUpgradePolicy](/images/SCALE/22.02/LaunchDockerImageScalingUpgradePolicy.png "Scaling/Upgrade Policy")  
 
 Select **Create new pods and then kill the old ones** to retain your existing configuration and container until the upgrade completes before removing it.
-Select **Kill existing pods before creating new ones** to remove the exiting pod and start with a new updated pod. This is useful if your old pod was not functioning properly.
+Select **Kill existing pods before creating new ones** to remove the exiting pod and start with a new updated pod. This is useful if your old pod was not functioning properly. For fewer issues, select **Kill existing pods before creating new ones**.
 {{< /expand >}}
 ## Resource Reservation
 The **Resource Reservation** screen specifies the **GPU configuration**.
