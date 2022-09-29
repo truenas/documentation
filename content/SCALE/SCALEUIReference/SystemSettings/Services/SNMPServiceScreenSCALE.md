@@ -17,7 +17,7 @@ Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i
 
 ### General Options
 
-![ServicesSNMPSCALE](/images/SCALE/22.02/SCALESNMPOptions.png "SCALE SNMP Service Options")
+![SCALESNMPOptions](/images/SCALE/22.02/SCALESNMPOptions.png "SCALE SNMP Service Options")
 
 | Setting | Description |
 |---------|-------------|
