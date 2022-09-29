@@ -102,7 +102,7 @@ The first time a replication task runs, it takes longer because the snapshots mu
 
 ![TasksReplicationTasksSuccessSCALE](/images/SCALE/RepSuccessSCALE.png "Remote Replication Success")
 
-Later replications run faster, as only the subsequent changes to snapshots are replicated.
+Later replications run faster since the task only replicates subsequent changes to snapshots.
 Clicking the task state opens the log for that task.
 
 ![TasksReplicationTasksLogSCALE](/images/SCALE/RepLogSCALE.png "Replication Log")
