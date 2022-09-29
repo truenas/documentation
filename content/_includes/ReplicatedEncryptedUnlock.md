@@ -1,7 +1,7 @@
 ---
 ---
 
-### Method 1: Construct JSON Manifest"
+### Method 1: Construct JSON Manifest.
 1. Replicate every encrypted dataset you want to replicate with properties. 
 
 2. Export key for every child dataset that has a unique key. 
@@ -13,7 +13,7 @@
 
 6. On the remote system, unlock the dataset(s) using properly constructed <file>json<file> files.
 
-### Method 2: Replicate Encrypted Dataset/zvol Without Properties"
+### Method 2: Replicate Encrypted Dataset/zvol Without Properties.
 Uncheck properties when replicating so that the destination dataset is not encrypted on the remote side and does not require a key to unlock.
 1. Go to **Data Protection** and click **ADD** in the **Replication Tasks** window.
 
@@ -23,7 +23,7 @@ Uncheck properties when replicating so that the destination dataset is not encry
 
 4. Click **Save**.
 
-### Method 3: Replicate Key Encrypted Dataset/zvol
+### Method 3: Replicate Key Encrypted Dataset/zvol.
 1. Go to **Storage -> pool/root dataset** on the replication system. Click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> and select **Export Key**.
 
 2. Apply the key file or key code to the dataset. 
