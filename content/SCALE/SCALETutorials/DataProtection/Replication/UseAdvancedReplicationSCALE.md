@@ -65,7 +65,7 @@ Set the **Number of retries for failed replications** before stopping and markin
 
 Use the **Logging Level** to set the message verbosity level in the replication task log. 
 
-To ensure the replication task is active check the **Enabled** box.
+To ensure the replication task is active, check the **Enabled** box.
 
 ### Transport Options
 
