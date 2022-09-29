@@ -1,7 +1,7 @@
 ---
 ---
 
-The **Task Manager** <span class="material-icons">assignment</span> icon button displays all running and failed jobs/processes. 
+The **Task Manager** <span class="material-icons">assignment</span> icon button displays all running and failed jobs/processes. Access to minimized jobs/processes can be accessed here.
 
 ![TaskManager](/images/SCALE/22.02/TaskManager.png "TrueNAS SCALE Task Manager")
 
