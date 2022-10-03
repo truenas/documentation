@@ -63,6 +63,9 @@ p,h1,h2,h3,h4,th,td,a {
 	font-size: 16px;
     font-weight: 400;
 }
+.menubar-link {
+	padding-right: 1.5rem;
+}
 
 /* Remove stickybar for small screens and use default GeekDoc menu */
 @media screen and (max-width:46.5rem) {
@@ -116,7 +119,7 @@ p,h1,h2,h3,h4,th,td,a {
     display: none;
     position: absolute;
     background-color: #0095d5;
-    min-width: 160px;
+    min-width: 400px!important;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 10;
 }
@@ -127,8 +130,14 @@ p,h1,h2,h3,h4,th,td,a {
     color: white;
     padding: 12px 16px;
     text-decoration: none;
-    display: block;
+    display: table;
+	line-height: 10px;
 }
+.linkscolumn {
+	width: 50%;
+	float: left;
+}
+
 .truenas-menudropdown a:hover {color: #bbb;}
 .truenas-menuitem:hover .truenas-menudropdown {display: block;}
 .truenas-menuitem:hover .truenas-menubutton {background-color: #0e0e0e;color:#31beec;}
