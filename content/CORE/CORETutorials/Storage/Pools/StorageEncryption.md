@@ -1,7 +1,12 @@
 ---
 title: "Storage Encryption"
+description: "This article describes how to encrypt a storage pool in TrueNAS CORE."
 weight: 25
 aliases: /core/storage/pools/storageencryption/
+tags:
+- corestorage
+- coreencryption
+- coresed
 ---
 
 {{< toc >}}
@@ -271,3 +276,4 @@ Legend:
 
 {{< /expand >}}
 
+{{< taglist tag="corestorage" limit="10" title="Related Storage Articles" >}}

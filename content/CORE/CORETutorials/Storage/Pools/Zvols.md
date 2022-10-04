@@ -1,7 +1,11 @@
 ---
 title: "Adding Zvols"
+description: "This article describes how to create a Zvol on TrueNAS CORE."
 weight: 19
 aliases: /core/storage/pools/zvols/
+tags:
+- corezvol
+- corestorage
 ---
 
 {{< toc >}}
@@ -69,14 +73,4 @@ Otherwise, a clone cannot be deleted while the original volume exists.
 
 When the zvol is created with [encryption]({{< relref "/CORE/CORETutorials/Storage/Pools/StorageEncryption.md" >}}) enabled, additional **Encryption Actions** are displayed.
 
-## Additional Information
-
-[Dataset Screens]({{< relref "/CORE/UIReference/Storage/Pools/DatasetsScreen.md" >}})
-
-[Pools Screens]({{< relref "/CORE/UIReference/Storage/Pools/PoolsScreens.md" >}})
-
-[Zvols Screen]({{< relref "/CORE/UIReference/Storage/Pools/ZvolsScreen.md" >}})
-
-[Creating Pools]({{< relref "/CORE/CORETutorials/Storage/Pools/PoolCreate.md" >}})
-
-[Managing Pools]({{< relref "/CORE/CORETutorials/Storage/Pools/ManagingPools.md" >}})
+{{< taglist tag="corestorage" limit="10" title="Related Storage Articles" >}}
