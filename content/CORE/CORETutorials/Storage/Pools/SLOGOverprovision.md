@@ -1,7 +1,11 @@
 ---
 title: "SLOG Overprovisioning"
+description: "This article describes how to configure SLOG over-provisioning on TrueNAS CORE."
 weight: 50
 aliases: /core/storage/pools/slogoverprovision/
+tags:
+- coreslogoverprovisioning
+- corestorage
 ---
 
 {{< toc >}}
@@ -42,3 +46,4 @@ Example: `disk_resize ada5 16GB`.
 When no size is specified, it reverts the provision back the full size of the device.
 {{< /expand >}}
 
+{{< taglist tag="corestorage" limit="10" >}}

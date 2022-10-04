@@ -1,6 +1,10 @@
 ---
 title: "Pool Screens"
+description: "This article describes the fields on the Storage Pools screen on TrueNAS CORE."
 weight: 10
+tags:
+- corepools
+- corestorage
 ---
 
 {{< toc >}}
@@ -80,14 +84,14 @@ When accessing **Pool Manager** for an existing pool from the **Pool Actions** d
 
 ![CreatePoolScreen](/images/CORE/13.0/CreatePoolScreen.png "Storage Create Pool Screen")
 
-| Setting | Descritpion|
+| Name | Description|
 |---------|------------|
 | **Name** | Displays the name of the pool for which you are adding the vdev. |
 | **RESET LAYOUT** | Click to reset the proposed layout displayed. Click before you save  to remove any vdev types selected and move disks assigned to any vdev back to the **Available Disks** list. |
 | **ADD VDEV** | Displays a dropdown list of the types of vdevs on the system. Vdev types are **Data**, **Cache**, **Log**, **Hot Spare**, **Metadata** or **Dedup**. Click to add vdev types to an existing or new pool vdev setup. |
 | **Available Disks** | List of available disks on the TrueNAS. Select the checkbox to the left of the disk and then select the blue <span class="iconify" data-icon="bytesize:arrow-right"></span> to the right of the vdev type (if more than one vdev type exists or is added with the **ADD VDEV** button) to move the disks to that vdev. To move it back to the **Available Disks** list select the disk checkbox(es) and the blue <span class="iconify" data-icon="bytesize:arrow-left"></span>. |
 | **Data VDevs** | List of disks assigned to the vdev(s). To move disks back to the **Available Disks** list select the disk checkbox(es) and the blue <span class="iconify" data-icon="bytesize:arrow-left"></span> symbol. |
-| vdev type | Displays under the **Data Vdevs** table(s). For an existing pool, the default vdev type is the vdev type for that existing pool. For initial pool creation, the default type is **Stripe**. After adding disks to the **Data VDevs** a <span class="iconify" data-icon="bxs:down-arrow"></span> expand symbol displays with avaialbe options to change the default type of vdev (for example, if two disks are moved to a Data VDev, the **Mirror** option displays along with **Strip**). |
+| **vdev type** | Displays under the **Data Vdevs** table(s). For an existing pool, the default vdev type is the vdev type for that existing pool. For initial pool creation, the default type is **Stripe**. After adding disks to the **Data VDevs** a <span class="iconify" data-icon="bxs:down-arrow"></span> expand symbol displays with avaialbe options to change the default type of vdev (for example, if two disks are moved to a Data VDev, the **Mirror** option displays along with **Strip**). |
 | **Estimated raw capacity: 0 B** | Displays the raw storage capacity of the disks for the Data VDev type.  |
 | **Filter disks by name** | Click on to display the field where you enter the filter or search parameters. |
 | **Filter disks by capacity** | Click on to display the field where you enter the filter or search parameters. |
@@ -128,16 +132,6 @@ Settings on the **Edit Pool Disk** screen are the same as those on the **Storage
 
 Use the **Edit Permissions** option on the parent dataset **Dataset Actions** menu to display the **Edit Permissions** screen. This option is only availble on the parent dataset. See [Dataset Screens]({{< relref "/CORE/UIReference/Storage/Pools/DatasetsScreen.md" >}}) and [Setting Up Permissions]({{< relref "/CORE/CORETutorials/Storage/Pools/Permissions.md" >}}) for more information on pool and dataset permissions.
 
-## Additional Information
+{{< taglist tag="coredataset" limit="10" >}}
 
-[Datasets Screen]({{< relref "/CORE/UIReference/Storage/Pools/DatasetsScreen.md" >}})
-
-[Disks Screens]({{< relref "/CORE/UIReference/Storage/Disks/DisksScreens.md" >}})
-
-[Creating Pools]({{< relref "/CORE/CORETutorials/Storage/Pools/PoolCreate.md" >}})
-
-[Managing Pools]({{< relref "/CORE/CORETutorials/Storage/Pools/ManagingPools.md" >}})
-
-[Importing Pools]({{< relref "/CORE/CORETutorials/Storage/Pools/PoolImport.md" >}})
-
-[Setting Up Permissions]({{< relref "/CORE/CORETutorials/Storage/Pools/Permissions.md" >}}) 
+{{< taglist tag="corestorage" limit="10" title="Related Storage Articles" >}}

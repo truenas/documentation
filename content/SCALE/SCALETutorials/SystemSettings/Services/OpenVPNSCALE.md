@@ -1,7 +1,7 @@
 ---
-title: "OpenVPN Screens"
-description: ""
-weight: 40
+title: "Configuring OpenVPN Service"
+description: "This article provides configuration information for OpenVPN Client and Server services."
+weight: 30
 alias: 
 tags:
  - scaleopenvpn

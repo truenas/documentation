@@ -1,7 +1,12 @@
 ---
 title: "Importing Pools"
+description: "This article describes how to import storage pools on TrueNAS CORE."
 weight: 15
 Aliases: /core/storage/pools/poolimport/
+tags:
+- coreimportpools
+- corepools
+- corestorage
 ---
 
 {{< toc >}}
@@ -98,3 +103,4 @@ Now import the pool again.
 During the import, add the encryption keys as described previously.
 {{< /expand >}}
 
+{{< taglist tag="corestorage" limit="10" title="Related Storage Articles" >}}
