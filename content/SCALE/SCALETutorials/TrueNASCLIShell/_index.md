@@ -12,7 +12,7 @@ Users can configure SCALE in the TrueNAS CLI Shell without using the Web UI. The
 
 To open the TrueNAS CLI Shell, go to the [Console Setup Menu]({{< relref "ConsoleSetupMenuScale.md" >}}) and enter `6`.
 
-![OpenSCALECLIShell](/images/SCALE/OpenSCALECLIShell.png "TrueNAS SCALE CLI Shell")
+![TrueNASCLIlaunch](/images/SCALE/TrueNASCLIlaunch.png "TrueNAS CLI Shell")
 
 To close the TrueNAS CLI Shell, enter `quit`.
 
@@ -26,7 +26,7 @@ Enter `network interface`.
 
 If you don't already know the interface you want to configure, enter `query` to display a list of all physical network interfaces.
 
-![TrueNASCLInetworkinterfacequery](/images/SCALE/CLIShellnetworkinterfacequery.png "Network Interface Query")
+![TrueNASCLInetworkinterfacequery](/images/SCALE/TrueNASCLInetworkinterfacequery.png "Network Interface Query")
 
 To edit the interface, enter `update interfacename aliases=["IP Address/Subnet Mask"] ipv4_dhcp=false`
 
@@ -36,7 +36,7 @@ The CLI displays the message: "You have pending network interface changes. Pleas
 
 Enter `commit`, to apply the changes, then enter `checkin` to make them permanant. 
 
-![TrueNASCLIupdateinterfacealiases](/images/SCALE/CLIShellupdateinterfacealiases.png "Update Interface Aliases")
+![TrueNASCLIupdateinterfacealiases](/images/SCALE/TrueNASCLIupdateinterfacealiases.png "Update Interface Aliases")
 
 Enter `query` to make sure the Truenas applies the changes successfully.
 
@@ -60,7 +60,7 @@ Connect to your system with your choice of FTP program (such as [WinSCP](https:/
 
 Once it finishes uploading, go to the console setup menu and launch the TrueNAS CLI Shell.
 
-Enter `system update manual path="/var/tmp/firmware/updatefilename"
+Enter `system update manual path="/var/tmp/firmware/updatefilename"`
 
 ![TrueNASCLIsystemupdatemanualpath](/images/SCALE/TrueNASCLIsystemupdatemanualpath.png "Manual Update")
 
