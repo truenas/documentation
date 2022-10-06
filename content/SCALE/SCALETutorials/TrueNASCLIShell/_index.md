@@ -1,18 +1,20 @@
 ---
-title: "Using the SCALE CLI Shell"
-description: "This article describes how to use the SCALE CLI Shell for basic networking, updating, oand storage management." 
+title: "Using the TrueNAS CLI Shell"
+description: "This article describes how to use the SCALE CLI Shell for basic networking, updating, and storage management." 
 weight: 130
 ---
 
 {{< toc >}}
 
-Users can configure SCALE in the CLI Shell without using the Web UI. The SCALE CLI Shell functions like a text-based version of the web UI. Users can enter commands to "navigate" to different menus within SCALE. This article covers basic operations like setting up networking, performing updates, and listing storage pools and datasets.
+Users can configure SCALE in the TrueNAS CLI Shell without using the Web UI. The TrueNAS CLI Shell functions like a text-based version of the web UI. Users can enter commands to "navigate" to different menus within SCALE. This article covers basic operations like setting up networking, performing updates, and listing storage pools and datasets.
 
-## Launch the SCALE CLI Shell
+## Launch the TrueNAS CLI Shell
 
-To open the SCALE CLI Shell, go to the [Console Setup Menu]({{< relref "ConsoleSetupMenuScale.md" >}}) and enter `6`.
+To open the TrueNAS CLI Shell, go to the [Console Setup Menu]({{< relref "ConsoleSetupMenuScale.md" >}}) and enter `6`.
 
 ![OpenSCALECLIShell](/images/SCALE/OpenSCALECLIShell.png "TrueNAS SCALE CLI Shell")
+
+To close the TrueNAS CLI Shell, enter `quit`.
 
 ### Basic Networking
 
@@ -24,9 +26,9 @@ Enter `network interface`.
 
 If you don't already know the interface you want to configure, enter `query` to display a list of all physical network interfaces.
 
-![CLIShellnetworkinterfacequery](/images/SCALE/CLIShellnetworkinterfacequery.png "Network Interface Query")
+![TrueNASCLInetworkinterfacequery](/images/SCALE/CLIShellnetworkinterfacequery.png "Network Interface Query")
 
-To edit the interface, enter `update interfacename aliases=["IP Address and Subnet Mask"] ipv4_dhcp=false`
+To edit the interface, enter `update interfacename aliases=["IP Address/Subnet Mask"] ipv4_dhcp=false`
 
 For example: `update ens33 aliases=["192.168.230.129/24"] ipv4_dhcp=false`
 
@@ -34,7 +36,7 @@ The CLI displays the message: "You have pending network interface changes. Pleas
 
 Enter `commit`, to apply the changes, then enter `checkin` to make them permanant. 
 
-![CLIShellupdateinterfacealiases](/images/SCALE/CLIShellupdateinterfacealiases.png "Update Interface Aliases")
+![TrueNASCLIupdateinterfacealiases](/images/SCALE/CLIShellupdateinterfacealiases.png "Update Interface Aliases")
 
 Enter `query` to make sure the Truenas applies the changes successfully.
 
@@ -48,20 +50,30 @@ Enter `configuration` (or `network configuration` if you just opened the CLI She
 
 Enter `update ipv4gateway="ipaddress"`
 
-For example: `update ipv4gateway="192.168.230.124"`
-
 If entered properly, your system networking is now configured.
 
-### Performing Updates
+### Performing Manual Updates
 
-#### Manual Updates
-
-To perform a manual update via the CLI Shell, you will first have to upload a manual update file onto the system.
+To perform a manual update via the TrueNAS CLI Shell, you will first have to upload a manual update file onto the system.
 
 Connect to your system with your choice of FTP program (such as [WinSCP](https://winscp.net/eng/index.php)) and place the manual update file in **/var/tmp/firmware**.
 
-Once it finishes uploading, go to the console setup menu and launch the CLI Shell.
+Once it finishes uploading, go to the console setup menu and launch the TrueNAS CLI Shell.
 
-Enter `system update manual --` to open the directory with the manual update file, then enter `midclt call update.manual /var/tmp/firmware/name-of-file -job` to apply the update. 
+Enter `system update manual path="/var/tmp/firmware/updatefilename"
 
-For example: `midclt call update.manual /var/tmp/firmware/TrueNAS-SCALE-22.02.4.update -job`
+![TrueNASCLIsystemupdatemanualpath](/images/SCALE/TrueNASCLIsystemupdatemanualpath.png "Manual Update")
+
+### Listing Storage Pools and Datasets
+
+To list all configured storage pools, enter `storage pool query`.
+
+![TrueNASCLIstoragepoolquery](/images/SCALE/TrueNASCLIstoragepoolquery.png "Pool Query")
+
+Enter `q` to exit the query.
+
+To list all configured datasets, enter `storage dataset query`.
+
+![TrueNASCLIstoragedatasetquery](/images/SCALE/TrueNASCLIstoragedatasetquery.png "Dataset Query")
+
+Enter `q` to exit the query.
