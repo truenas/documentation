@@ -24,10 +24,15 @@ p,h1,h2,h3,h4,th,td,a {
     font-family: "Inter", sans-serif;
     font-weight: 500;
     font-size: 12px;
+	width: 80%;
 }
 .iconsbar a {
     color: #fff;
 }
+.linksrow {
+	width: 80%;
+}
+
 /* Sticky top menu */
 .sticky {
     position: fixed;
@@ -46,14 +51,20 @@ p,h1,h2,h3,h4,th,td,a {
 .stickyelement {
     background: black;
 }
+
 .gdoc-header__link {
     float:left;
+	
 }
 .truenas-menubar {
     float: right;
     display: flex;
     font-family: "din-2014";
-    font-weight: 500;
+	font-size: 16px;
+    font-weight: 400;
+}
+.menubar-link {
+	padding-right: 1.5rem;
 }
 
 /* Remove stickybar for small screens and use default GeekDoc menu */
@@ -71,13 +82,14 @@ p,h1,h2,h3,h4,th,td,a {
     padding: 1rem 1rem 0rem 0rem;
 }
 .container{
-    max-width: 90rem;
+    max-width: 1920px;
     padding: 0;
 }
 .gdoc-header {
     background: #000000;
-    border: none;
-    padding: .5rem 1rem .5rem 1rem;
+	border-bottom-width: 20px;
+	border-bottom-color: #0095d5;
+    padding: .5rem 1rem 1rem 1rem;
 }
 
 .truenas-menuitem {
@@ -88,8 +100,8 @@ p,h1,h2,h3,h4,th,td,a {
     padding: 13px;
     border: none;
     font-family: "din-2014";
-    font-weight: normal;
-    font-size: 19px;
+	font-size: 16px;
+    font-weight: 400;
 }
 .truenas-menubutton:hover {
   color: #000000;
@@ -107,19 +119,25 @@ p,h1,h2,h3,h4,th,td,a {
     display: none;
     position: absolute;
     background-color: #0095d5;
-    min-width: 160px;
+    min-width: 400px!important;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 10;
 }
 .truenas-menudropdown a {
     font-family: "din-2014";
+	font-size: 16px;
     font-weight: 500;
-    font-size: 19px;
     color: white;
     padding: 12px 16px;
     text-decoration: none;
-    display: block;
+    display: table;
+	line-height: 10px;
 }
+.linkscolumn {
+	width: 50%;
+	float: left;
+}
+
 .truenas-menudropdown a:hover {color: #bbb;}
 .truenas-menuitem:hover .truenas-menudropdown {display: block;}
 .truenas-menuitem:hover .truenas-menubutton {background-color: #0e0e0e;color:#31beec;}
@@ -131,16 +149,16 @@ p,h1,h2,h3,h4,th,td,a {
     padding: 13px;
     border: none;
     font-family: "din-2014";
-    font-weight: normal;
-    font-size: 19px;
+	font-size: 16px;
+    font-weight: 400;
  }
 .truenas-downloadbutton:hover {
     background-color: #71bf44;
 }
 .truenas-downloadbutton a {
     font-family: "din-2014";
-    font-weight: normal;
-    font-size: 19px;
+    font-weight: 500;
+    font-size: 16px;
     color:#ffffff;
 }
 .truenas-downloadbutton a:hover {
@@ -158,7 +176,7 @@ p,h1,h2,h3,h4,th,td,a {
 .truenasdownload-menudropdown a {
     font-family: "din-2014";
     font-weight: 500;
-    font-size: 19px;
+    font-size: 16px;
     color: white;
     padding: 12px 16px;
     text-decoration: none;
@@ -176,7 +194,7 @@ p,h1,h2,h3,h4,th,td,a {
 .truenasdownload-menudropdown a {
     font-family: "din-2014";
     font-weight: 500;
-    font-size: 19px;
+    font-size: 16px;
     color: white;
     padding: 12px 16px;
     text-decoration: none;
@@ -187,7 +205,7 @@ p,h1,h2,h3,h4,th,td,a {
 .nested-menubutton {
     font-family: "din-2014";
     font-weight: 500;
-    font-size: 19px;
+    font-size: 16px;
     color: white;
     padding: 12px 16px;
     text-decoration: none;
@@ -212,7 +230,7 @@ p,h1,h2,h3,h4,th,td,a {
 .truenas-nested-menudropdown a {
     font-family: "din-2014";
     font-weight: 500;
-    font-size: 19px;
+    font-size: 16px;
     color: white;
     padding: 12px 16px;
     text-decoration: none;

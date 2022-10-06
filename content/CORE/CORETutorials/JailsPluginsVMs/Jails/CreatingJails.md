@@ -1,7 +1,11 @@
 ---
 title: "Creating Jails"
+description: "This article describes how to create Jails in TrueNAS CORE."
 weight: 5
 aliases: /core/appliations/jails/create/
+tags:
+- corejails
+- corejailspluginsvm
 ---
 
 {{< toc >}}
@@ -130,7 +134,7 @@ If you are an experienced user you can access additional advanced configuration 
 
 For more information on the configuration screens see [Jails Screens]({{< relref "/CORE/UIReference/JailsPluginsVMs/Jails/JailsScreens.md" >}})
 
-## Creating Template Jails
+### Creating Template Jails
 
 Template jails are *basejails* that can efficiently create jails with the same configuration.
 These steps create a template jail:
@@ -152,14 +156,6 @@ These steps create a template jail:
    Set **Release** to ***basejailname*(template)**, where *basejailname* is the name of the base jail created earlier.
 
 7. Complete the jail creation wizard.
+{{< /expand>}}
 
-## Additional Information
-For information on Jails screens and how to add or manage jails see:
-
-[Jails Screens]({{< relref "/CORE/UIReference/JailsPluginsVMs/Jails/JailsScreens.md" >}})
-
-[Managing Jails]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Jails/ManagingJails.md" >}})
-
-[Setting Up Jail Storage]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Jails/SettingUpJailStorage.md" >}})
-
-[Accessing Jails Using SSH]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Jails/AccessingJailsUsingSSH.md" >}})
+{{< taglist tag="corejails" limit="10" >}}

@@ -114,18 +114,8 @@ To edit group quotas in bulk, click **Actions** and select **Set Quotas (Bulk)**
 
 The same options for single groups are presented, along with choosing groups for these new quota rules.
 {{< /expand >}}
-{{< /expand >}}
-
-## Additional Information
-
-[Pools Screens]({{< relref "/CORE/UIReference/Storage/Pools/PoolsScreens.md" >}})
-
-[Creating Pools]({{< relref "/CORE/CORETutorials/Storage/Pools/PoolCreate.md" >}})
-
-[Managing Pools]({{< relref "/CORE/CORETutorials/Storage/Pools/ManagingPools.md" >}})
-
-[Importing Pools]({{< relref "/CORE/CORETutorials/Storage/Pools/PoolImport.md" >}})
-
-[Setting Up Permissions]({{< relref "/CORE/CORETutorials/Storage/Pools/Permissions.md" >}}) 
+{{< /expand >}} 
 
 {{< taglist tag="coredataset" limit="10" >}}
+
+{{< taglist tag="corepools" limit="10" title="Related Storage Pools Articles" >}}

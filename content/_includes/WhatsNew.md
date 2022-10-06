@@ -50,7 +50,7 @@ This is intended to help readers sort and find their desired content faster, pro
 
 #### Solutions Guide Rework
 
-The [Solutions]({{< ref "/solutions/" >}}) articles are elevated out of the CORE documentation area and is refocusing on providing version-agnostic background information and tutorials about general system use cases or integrations with other vendor solutions.
+The [Solutions]({{< relref "/solutions/_index.md" >}}) articles are elevated out of the CORE documentation area and is refocusing on providing version-agnostic background information and tutorials about general system use cases or integrations with other vendor solutions.
 
 ### Expanded Download or Print Options
 

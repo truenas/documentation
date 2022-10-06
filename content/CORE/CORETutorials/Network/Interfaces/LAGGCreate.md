@@ -56,3 +56,5 @@ See [Interfaces Screen]({{< relref "/CORE/UIReference/Network/InterfacesScreen.m
 [Creating Basic Virtual Machines]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/VirtualMachines/CreatingBasicVM.md" >}})
 
 {{< taglist tag="corenetworkinterfaces" limit="10" >}}
+
+{{< taglist tag="corejailspluginsvm" limit="10" title="Related Articles" >}}
