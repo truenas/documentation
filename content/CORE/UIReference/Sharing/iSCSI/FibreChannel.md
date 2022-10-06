@@ -1,7 +1,11 @@
 ---
 title: "Fibre Channel"
+description: "This article provides information about using Fibre Channel with TrueNAS CORE."
 weight: 20
 alias: /core/sharing/iscsi/fibrechannel/
+tags:
+- coreiscsi
+- corefibrechannel
 ---
 
 {{< toc >}}
@@ -44,7 +48,7 @@ The **Mode** radio buttons display additional information on the screen based on
 
 ![FibreChannelPortConnectedInitiators12U8](/images/CORE/13.0/FibreChannelPortConnectedInitiators12U8.png "Fibre Channel Port Connected Initiators")
 
-| Setting | Description |
+| Name | Description |
 |---------|-------------|
 | **Initiator** | Sets the port as an initiator. Displays Connected Initiators on the right side of the screen for the selected target. |
 | **Target** | Sets the port as a target. Dipslays the **Targets** dropdown list field on the right side of the screen. Select the port from the list. Connected Initiators for the selected targe display below the dropdown field. |
@@ -64,22 +68,4 @@ The **Targets > Add** screen **Target Mode** dropdown list includes options to s
 
 The **Targets > Add** screen **Target Mode** dropdown list includes options to select **iSCSI**, **Fibre Channel**, or **Both**.
 
-## Additional Information
-
-For more information on iSCSI see:
-
-[About iSCSI Shares]({{< relref "/CORE/UIReference/Sharing/iSCSI/_index.md" >}})
-
-[The iSCSI Screen]({{< relref "/CORE/UIReference/Sharing/iSCSI/iSCSIShare.md" >}})
-
-[Fibre Channel Ports Screen]({{< relref "/CORE/UIReference/Sharing/iSCSI/FibreChannel.md" >}})
-
-[Adding an iSCSI Share]({{< relref "/CORE/CORETutorials/Sharing/iSCSI/AddingiSCSIShare.md" >}}) 
-
-[Using iSCSI Shares]({{< relref "/CORE/CORETutorials/Sharing/iSCSI/UsingiSCSIShare.md" >}})
-
-[Increasing iSCSI Share Available Storage]({{< relref "/CORE/CORETutorials/Sharing/iSCSI/IncreasingiSCSIAvailableStorage.md" >}})
-
-[Setting Up Fibre Channel]({{< relref "/CORE/CORETutorials/Sharing/iSCSI/SettingUpFibreChannel.md" >}})
-
-[Setting Up NPIV]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/VirtualMachines/SettingUpNPIV.md" >}})
+{{< taglist tag="coreiscsi" limit="10" >}}

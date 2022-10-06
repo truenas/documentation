@@ -1,6 +1,9 @@
 ---
 title: "Using the Advanced Scheduler"
+description: "This article describes how to use the Advanced Scheduler on TrueNAS CORE."
 weight: 95
+tags:
+- coreadvancedscheduler
 ---
 
 ![Tasks Advanced Scheduler](/images/CORE/12.0/TasksAdvancedScheduler.png "Tasks Advanced Scheduler")
@@ -93,3 +96,5 @@ With these options, you can create flexible schedules similar to these examples:
 	</tbody>
 </table>
 {{< /expand >}}
+
+{{< taglist tag="coreadvancedscheduler" limit="10" >}}
