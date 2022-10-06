@@ -1,6 +1,10 @@
 ---
 title: "Zvols Screen"
+description: "This article describes the fields in the Storage Pools Add Zvol screen in TrueNAS CORE."
 weight: 19
+tags:
+- corezvol
+- corestorage
 ---
 
 Use the **Storage > Pools Add Zvol** screen to add a zvol to a pool.
@@ -32,12 +36,6 @@ Selecting **ADVANCED OPTIONS** adds one additional setting.
 
 Use **CANCEL** to exit without saving settings and display the **Pools** screen.
 
-## Additional Information
+{{< taglist tag="coredataset" limit="10" >}}
 
-[Dataset Screens]({{< relref "/CORE/UIReference/Storage/Pools/DatasetsScreen.md" >}})
-
-[Pools Screens]({{< relref "/CORE/UIReference/Storage/Pools/PoolsScreens.md" >}})
-
-[Creating Pools]({{< relref "/CORE/CORETutorials/Storage/Pools/PoolCreate.md" >}})
-
-[Adding Zvols]({{< relref "/CORE/CORETutorials/Storage/Pools/Zvols.md" >}}) 
+{{< taglist tag="corestorage" limit="10" title="Related Storage Articles" >}}

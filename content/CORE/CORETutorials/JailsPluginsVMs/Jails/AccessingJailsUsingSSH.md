@@ -1,6 +1,9 @@
 ---
 title: "Accessing Jails Using SSH"
+description: "This article describes how to access Jails using SSH in TrueNAS CORE."
 weight: 20
+tags:
+- corejails
 ---
 
 {{< toc >}}
@@ -119,16 +122,4 @@ Password:
 Every jail has its own user accounts and service configuration.
 These steps must be repeated for each jail that requires SSH access.
 
-## Additional information
-
-For information on Jails screens and how to add or manage jails see:
-
-[Jails Screens]({{< relref "/CORE/UIReference/JailsPluginsVMs/Jails/JailsScreens.md" >}})
-
-[Creating Jails]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Jails/CreatingJails.md" >}})
-
-[Managing Jails]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Jails/ManagingJails.md" >}})
-
-[Setting Up Jail Storage]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Jails/SettingUpJailStorage.md" >}})
-
-[Installing Jail Software]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Jails/InstallingJailSoftware.md" >}})
+{{< taglist tag="corejails" limit="10" >}}
