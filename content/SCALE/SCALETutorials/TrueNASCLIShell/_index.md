@@ -6,7 +6,7 @@ weight: 130
 
 {{< toc >}}
 
-Users can configure SCALE in the TrueNAS CLI Shell without using the Web UI. The TrueNAS CLI Shell functions like a text-based version of the web UI. Users can enter commands to "navigate" to different menus within SCALE. This article covers basic operations like setting up networking, performing updates, and listing storage pools and datasets.
+The TrueNAS CLI Shell functions like a text-based version of the web UI. Users can enter commands to "navigate" to different menus within SCALE and perform actions. This article covers basic operations like setting up networking, performing updates, and listing storage pools/datasets.
 
 ## Launch the TrueNAS CLI Shell
 
@@ -28,9 +28,7 @@ If you don't already know the interface you want to configure, enter `query` to 
 
 ![TrueNASCLInetworkinterfacequery](/images/SCALE/TrueNASCLInetworkinterfacequery.png "Network Interface Query")
 
-To edit the interface, enter `update interfacename aliases=["IP Address/Subnet Mask"] ipv4_dhcp=false`
-
-For example: `update ens33 aliases=["192.168.230.129/24"] ipv4_dhcp=false`
+To edit the interface, enter `update interfacename aliases=["ipaddress/subnetmask"] ipv4_dhcp=false`
 
 The CLI displays the message: "You have pending network interface changes. Please run 'network interface commit' to apply them."
 
