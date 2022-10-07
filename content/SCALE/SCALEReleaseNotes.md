@@ -6111,7 +6111,7 @@ Packages downloaded via apt are not persistent. They will not survive an upgrade
 
 | Seen In | Key | Summary | Workaround | Resolved In |
 |---------|-----|---------|------------|-------------|
-| 22.02.4  |  | Upgrading from 22.02.4 to 22.12-BETA.1 is unavailable. | Workaround is to either upgrade from a version before 22.01.4 or to upgrade to 22.12-BETA.2. | 22.12-BETA.2 |
+| 22.02.4  |  | Upgrading from 22.02.4 to 22.12-BETA.1 is known to not work. | Workaround is to either upgrade from a version before 22.02.4 or to upgrade to 22.12-BETA.2. | 22.12-BETA.2 |
 | 22.02.4 | N/A | UPS Reports Disabled | Support for UPS reporting page is temporarily disabled due to an upstream issue with the upstream Debian package. | Unknown |
 | 22.02.3 | <a href="https://ixsystems.atlassian.net/browse/NAS-117581" target="_blank">NAS-117581</a> | Launch Docker Image button is disabled. | On the <b>Apps</b> page, select the <b>Available Applications</b> tab before trying to click the button. | 22.02.3.1 |
 | 22.02.1 |<a href="https://ixsystems.atlassian.net/browse/NAS-116473" target="_blank">NAS-116473</a> | Large Drive Count Issues | iX is investigating isuses with booting SCALE on systems with more than 100 Disks. | 22.12-RC.1 |
