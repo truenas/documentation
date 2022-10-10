@@ -1,6 +1,10 @@
 ---
 title: "Network Summary"
+description: "This article describes the Network Summary screen in TrueNAS CORE."
 weight: 10
+tags:
+- corenetworksummary
+- corenetworkinterfaces
 ---
 
 It is recommended to set up your system connections before setting up data sharing.
@@ -28,3 +32,5 @@ These areas are not editable.
 Define any Static Routes in **Network > [Static Routes]({{< relref "/CORE/CORETutorials/Network/StaticRoutes.md" >}})**.
 
 Out of Band Management is managed from **Network > [IPMI]({{< relref "/CORE/CORETutorials/Network/IPMI.md" >}})**. This option is visible only when TrueNAS detects the appropriate physical hardware.
+
+{{< taglist tag="corenetworkinterfaces" limit="10" >}}
