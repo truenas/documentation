@@ -1,7 +1,11 @@
 ---
 title: "Reporting"
+description: "This article contains information about the Reporting screen on TrueNAS CORE."
 weight: 70
 aliases: /core/administration/reporting/
+tags:
+- corereporting
+- coregraphs
 ---
 
 TrueNAS has a built in reporting engine that displays helpful graphs and information about the system processes.
@@ -23,3 +27,5 @@ Reporting data is saved and preserved across system upgrades and reboots.
 This allows viewing usage trends over time.
 This data is frequently written and should not be stored on the boot pool or operating system device.
 Reporting data is saved in <file>/var/db/collectd/rrd/</file>.
+
+{{< taglist tag="corereporting" limit="10" >}}
