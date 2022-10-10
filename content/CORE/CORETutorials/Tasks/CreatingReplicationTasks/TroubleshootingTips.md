@@ -1,8 +1,12 @@
 ---
 title: "Troubleshooting Tips"
+description: "This article provides troubleshooting tips for replication tasks on TrueNAS CORE."
 weight: 40
 aliases:
   - /core/coretutorials/tasks/replicationtasks/troubleshootingtips
+tags:
+- coretroubleshooting
+- corereplication
 ---
 
 {{< toc >}}
@@ -53,3 +57,5 @@ See [**Alert Settings**]({{< relref "CORE/UIReference/System/AlertSettings.md" >
 **Question**: If a site changes a lot of data at once and the internet bandwidth is not enough to finish sending the snapshot before the next one begins, do the replication jobs run one after the other and not stomp on each other?
 
 **Answer**: Yes.
+ 
+{{< taglist tag="corereplication" limit="10" >}}

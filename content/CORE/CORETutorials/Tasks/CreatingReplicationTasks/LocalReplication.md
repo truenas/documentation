@@ -1,8 +1,12 @@
 ---
 title: "Local Replication"
+description: "This article describes how to create local replication tasks on TrueNAS CORE."
 weight: 10
 aliases:
   - /core/coretutorials/tasks/replicationtasks/localreplication
+tags:
+- corelocalreplication
+- corereplication
 ---
 
 {{< toc >}}
@@ -76,3 +80,5 @@ Clicking the task state shows the replication log with an option to download it 
 To confirm that snapshots replicated, go to **Storage > Snapshots** and verify the destination dataset has new snapshots with correct timestamps.
 
 ![TasksReplicationTasksLocalSnapshots](/images/CORE/12.0/TasksReplicationTasksLocalSnapshots.png "Finding Replicated Snapshots")
+ 
+{{< taglist tag="corereplication" limit="10" >}}

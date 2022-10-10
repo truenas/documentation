@@ -1,7 +1,11 @@
 ---
 title: "Adding an iSCSI Share"
+description: "This article describes how to add an iSCSI share on TrueNAS CORE."
 weight: 10
 aliases: /core/sharing/iscsi/iscsishare/
+tags:
+- coreiscsi
+- corefibrechannel
 ---
 
 {{< toc >}}
@@ -125,19 +129,4 @@ To set it to start automatically when TrueNAS boots up, select the **Start Autom
 
 Click on the <i class="material-icons" aria-hidden="true" title="Configure">edit</i> returns to the options in **Sharing > iSCSI**.
 
-For more information on iSCSI shares also see:
-
-[About iSCSI Shares]({{< relref "/CORE/UIReference/Sharing/iSCSI/_index.md" >}})
-
-[The iSCSI Screen]({{< relref "/CORE/UIReference/Sharing/iSCSI/iSCSIShare.md" >}})
-
-[Fiber Channel Ports Screen]({{< relref "/CORE/UIReference/Sharing/iSCSI/FibreChannel.md" >}})
-
-[Adding an iSCSI Share]({{< relref "/CORE/CORETutorials/Sharing/iSCSI/AddingiSCSIShare.md" >}}) 
-
-[Using iSCSI Shares]({{< relref "/CORE/CORETutorials/Sharing/iSCSI/UsingiSCSIShare.md" >}})
-
-[Setting Up Fibre Channel]({{< relref "/CORE/CORETutorials/Sharing/iSCSI/SettingUpFibreChannel.md" >}})
-
-[Setting Up NPIV]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/VirtualMachines/SettingUpNPIV.md" >}})
-
+{{< taglist tag="coreiscsi" limit="10" >}}
