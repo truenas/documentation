@@ -38,7 +38,7 @@ Enter `commit` to apply the changes, then enter `checkin` to make them permanent
 
 Enter `query` to make sure the Truenas applies the changes successfully.
 
-Enter `..` to exit interface and go up one level to the network menu.
+Enter `..` to exit `interface` and go up one level to the `network` menu.
 
 #### Global Configuration
 
