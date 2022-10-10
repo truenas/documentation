@@ -1,7 +1,11 @@
 ---
 title: "Reporting"
+description: "This article contains information about the graphs displayed on the Reporting screen in TrueNAS CORE."
 weight: 135
 Aliases: /core/system/reporting/
+tags:
+- corereporting
+- coregraphs
 ---
 
 {{< toc >}}
@@ -125,3 +129,5 @@ Temperature monitoring for the disk is disabled if **HDD Standby** is enabled. C
 ![ReportingZFSTab](/images/CORE/12.0/ReportingZFSTab.png "ZFS Reporting")
 
 {{< /expand >}}
+
+{{< taglist tag="corereporting" limit="10" >}}
