@@ -1,6 +1,10 @@
 ---
 title: "IPMI Screen"
+description: "This article describes the fields on the IPMI screen in TrueNAS CORE."
 weight: 50
+tags:
+- coreipmi
+- corenetworkinterfaces
 ---
 
 
@@ -24,3 +28,7 @@ Use the I**Network > IPMI** screen to configure the TrueNAS for an IPMI connecti
 Use **SAVE** to save the IPMI settings.
 
 See [IPMI]({{< relref "/CORE/CORETutorials/Network/IPMI.md" >}})
+
+{{< taglist tag="coreipmi" limit="10" >}}
+
+{{< taglist tag="corenetworkinterfaces" limit="10" title="Related Network Articles" >}}

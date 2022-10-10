@@ -1,9 +1,13 @@
 ---
 title: "Updating CORE ENTERPRISE"
+description: "This article describes how to update TrueNAS CORE ENTERPRISE."
 geekdocCollapseSection: true
 weight: 20
 aliases:
   - /core/system/update/updateenterprise/
+tags:
+- coreenterprise
+- coreupdateenterprise
 ---
 
 {{< toc >}}
@@ -114,3 +118,5 @@ Enterprise customers should contact iX Support for assistance updating their Tru
 * Log into the system.
 * Click **Continue** in the **Pending Upgrade** dialog box. The standby controller reboots completing the upgrade.
 {{< /expand >}}
+
+{{< taglist tag="coreha" limit="10" >}}

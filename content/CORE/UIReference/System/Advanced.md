@@ -1,6 +1,10 @@
 ---
 title: "Advanced"
+description: "This article describes advanced options for configuring system settings on TrueNAS CORE."
 weight: 40
+tags:
+- coreconfiguration
+- coresettings
 ---
 
 **System > Advanced** contains advanced options for configuring system settings.
@@ -15,3 +19,5 @@ Make sure you are comfortable with ZFS, FreeBSD, and system [configuration backu
 {{< include file="static/includes/Reference/SystemAdvancedFields.md.part" markdown="true" >}}
 
 **SAVE DEBUG** generates text files that contain diagnostic information.
+
+{{< taglist tag="coreconfiguration" limit="10" >}}

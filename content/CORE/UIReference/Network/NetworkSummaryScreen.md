@@ -1,7 +1,11 @@
 ---
 title: "Network Summary Screen"
+description: "This article describes the fields in the Network Summary screen in TrueNAS CORE."
 weight: 10
 aliases: /core/network/networksummary/
+tags:
+- corenetworksummary
+- corenetworkinterfaces
 ---
 
 It is recommended to set up your system connections before setting up data sharing.
@@ -30,3 +34,5 @@ The IPv4 or IPv6 address displays when a [static IP]({{< relref "/CORE/CORETutor
 Define any Static Routes in **Network > [Static Routes]({{< relref "/CORE/UIReference/Network/StaticRoutesScreen.md" >}})**.
 
 Out-of-band management is managed from **Network > [IPMI]({{< relref "/CORE/CORETutorials/Network/IPMI.md" >}})**. This option is visible only when TrueNAS detects the appropriate physical hardware.
+
+{{< taglist tag="corenetworkinterfaces" limit="10" >}}
