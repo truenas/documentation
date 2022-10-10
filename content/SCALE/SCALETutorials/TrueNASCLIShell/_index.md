@@ -32,7 +32,7 @@ To edit the interface, enter `update interfacename aliases=["ipaddress/subnetmas
 
 The CLI displays the message: "You have pending network interface changes. Please run 'network interface commit' to apply them."
 
-Enter `commit`, to apply the changes, then enter `checkin` to make them permanant. 
+Enter `commit` to apply the changes, then enter `checkin` to make them permanent. 
 
 ![TrueNASCLIupdateinterfacealiases](/images/SCALE/TrueNASCLIupdateinterfacealiases.png "Update Interface Aliases")
 
