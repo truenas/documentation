@@ -42,7 +42,7 @@ Enter `..` to exit `interface` and go up one level to the `network` menu.
 
 #### Global Configuration
 
-This section covers configuring the defualt gateway.
+This section covers configuring the default gateway.
 
 Enter `configuration` (or `network configuration` if you just opened the CLI Shell).
 
