@@ -1,7 +1,10 @@
 ---
 title: "Update"
+description: "This article describes the fields in the Update screen in TrueNAS CORE."
 geekdocCollapseSection: true
 weight: 150
+tags:
+- coreupdate
 ---
 
 ![System Update](/images/CORE/12.0/SystemUpdate.png "System Update")
@@ -13,3 +16,5 @@ weight: 150
 | Operation | Lists operations TrueNAS performs during the update. |
 | Name | Operation name and version comparison. |
 | Change log | Lists software changes based on [TrueNAS project JIRA tickets](https://jira.ixsystems.com/projects/NAS/issues/NAS-104367?filter=allopenissues). |
+
+{{< taglist tag="coreupdate" limit="10" >}}
