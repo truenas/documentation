@@ -57,6 +57,6 @@ Click **Save**.
 
 ## Adding NTP Servers 
 
-The **NTP Servers** widget allows user to configure Network Time Protocol (NTP) servers, that sync the local system time with an accurate external reference. By default, new installations use several existing NTP servers. TrueNAS SCALE supports adding custom NTP servers.
+The **NTP Servers** widget allows users to configure Network Time Protocol (NTP) servers. These sync the local system time with an accurate external reference. By default, new installations use several existing NTP servers. TrueNAS SCALE supports adding custom NTP servers.
 
 {{< taglist tag="scalesettings" limit="10" >}}
