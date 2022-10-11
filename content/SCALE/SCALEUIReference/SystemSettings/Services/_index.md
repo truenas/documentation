@@ -1,6 +1,6 @@
 ---
 title: "Services"
-description: ""
+description: "This article provides general information on the **Services** screen, and a summary of each indiviual service article in the Services area."
 geekdocCollapseSection: true
 weight: 50
 alias: /scale/scaleuireference/systemsettings/servicesscale/
@@ -15,6 +15,11 @@ Documented services related to data sharing or automated tasks are in their resp
 
 ![ServicesSCALE](/images/SCALE/ServicesSCALE.png "SCALE Service Screen")
 
+Use the <span class="material-icons">edit</span> **Configure** icon to open the service configuration screen.
+
+Select **Start Automatically** to set the service to start after the system reboots.
+
+Click on the **Running** toggle to start the service or to stop it if it is running. Stop services before changing configuration settings.
 
 ## Article Summaries
 

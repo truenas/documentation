@@ -1,5 +1,5 @@
 ---
-title: "SSH Service Screen"
+title: "Configuring SSH Service"
 description: "This article provides information on configuring the SSH service in SCALE, and using an SFTP connection."
 weight: 60
 alias: 

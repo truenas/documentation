@@ -1,6 +1,10 @@
 ---
 title: "Virtual Machines"
+description: "This article describes the fields in the Virtual Machines screen in TrueNAS CORE."
 weight: 10
+tags:
+- corevm
+- corejailspluginsvm
 ---
 
 {{< toc >}}
@@ -127,8 +131,4 @@ The following operations are available on each VM screen:
 The **STOP** button and the system **State** toggle both try to send an ACPI power-down command to the VM operating system. Sometimes the commands time out, so it is better to use the **POWER OFF** button instead.
 {{< /hint >}}
 
-## Additional Information
-
-For more information on virtual machines see:
-
-[Basic VM Management]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/VirtualMachines/CreatingBasicVM.md" >}})
+{{< taglist tag="corejailspluginsvm" limit="10" >}}
