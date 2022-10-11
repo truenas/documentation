@@ -162,7 +162,7 @@ By default, new installations use several existing NTP servers. TrueNAS SCALE su
 | **Address** | Enter the hostname or IP address of the NTP server. |
 | **Burst** | Select to use a non-public NTP server. Recommended when **Max Poll** is greater than **10**. Only use on personal NTP servers or those under direct control. Do not enable when using public NTP servers. |
 | **IBurst** | Select to speed up the initial synchronization (seconds instead of minutes). |
-| **Prefer** | Select when using a highly accurate NTP servers such as those with time monitoring hardware. Only use for these highl accurate NTP servers.  |
+| **Prefer** | Select when using a highly accurate NTP servers such as those with time monitoring hardware. Only use for these highly accurate NTP servers.  |
 | **Min Poll** | Enter the minimum polling interval, in seconds, as a power of 2. For example, 6 means 2^6, or 64 seconds. The default is 6, minimum value is 4. |
 | **Max Poll** | Enter the maximum polling interval, in seconds, as a power of 2. For example, 10 means 2^10, or 1,024 seconds. The default is 10, maximum value is 17. |
 | **Force** | Selce to force the addition of the NTP server, even if it is currently unreachable. |
