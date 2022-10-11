@@ -35,7 +35,7 @@ To redirect HTTP connections to HTTPS, select **Web Interface HTTP -> HTTPS Redi
 Activating this also sets the [HTTP Strict Transport Security (HSTS)](https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security) maximum age to 31536000 seconds (one year). 
 This means that after a browser connects to the web interface for the first time, the browser continues to use HTTPS and renews this setting every year. 
 A warning displays when setting this function. Setting HTTPS redirects can have unintended consequences if an app does not support secure connections. 
-If this occurs, to reset, clear this option and click Save. Then clear the browser cache before trying to connect to the app again.
+If this occurs, to reset, clear this option and click **Save**. Then clear the browser cache before trying to connect to the app again.
 
 To send failed HTTP request data which can include client and server IP addresses, failed method call tracebacks, and middleware log file contents to iXsystems, select **Crash Reporting**.
 
