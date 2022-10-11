@@ -22,7 +22,7 @@ Before you configure MinIO, you must create a dataset and shared directory for t
 Go to **Storage > Pools** and select the pool you want to place the dataset in. 
 You can use an existing pool or create a new one. 
 
-After creating the dataset, go to **System > Shell** and create the directory MinIO store sinformation the application uses. MinIO uses **/data** but allows users to replace this with the directory of their choice. Change to the */pool/dataset* directory and then use the `mkdir /mnt/data` command to create the **/data** directory. 
+After creating the dataset, go to **System > Shell** and create the directory MinIO stores information the application uses. MinIO uses **/data** but allows users to replace this with the directory of their choice. Change to the */pool/dataset* directory and then use the `mkdir /mnt/data` command to create the **/data** directory. 
 
 For a distributed configuration, repeat this on all system nodes in advance. 
 
