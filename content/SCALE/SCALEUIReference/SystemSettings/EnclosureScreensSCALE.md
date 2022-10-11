@@ -1,6 +1,6 @@
 ---
 title: "View Enclosure Screen"
-description: "This article provides information on the TrueNAS **View Enclosure** screen, the information you can find there."
+description: "This article provides information on the TrueNAS **View Enclosure** screen, and the information you can find there."
 weight: 60
 aliases:
 tags:
@@ -12,7 +12,7 @@ tags:
 
 {{< toc >}}
 The **View Enclosure** screen displays an image of the TrueNAS-provided system hardware with drive images you can select. 
-The screen includes information on system pools, disks and their status, details and the HDD stats change with the drive you select on the system image.
+The screen includes information on system pools, disks and their status, HDD details and stats that change with the drive you select on the system image.
 Based on the system hardware, the screen provides additional display and information options that reflects the system hardware model using TrueNAS SCALE.
 
 To access the **System > View Enclosure** screen, either click the image on the main dashboard or go to **System Settings > Enclosure>**.
@@ -37,7 +37,7 @@ TrueNAS Mini systems only display the front view of the system hardware.
 
 Pool information displays at the top of the screen. 
 The drive bay number and disk label displays to the left of the image and the status to the right of the image. 
-Select a disk to change show details for that drive. The **Disk Overview** section provides general details on the system drive hardware and capacity. 
+Select a disk to show details for that drive. The **Disk Overview** section provides general details on the system drive hardware and capacity. 
 The **Drive Temperatures** displays current readings for each drive in the system.
 
 ![ViewEnclosureDiskDetailsMini](/images/SCALE/22.02/ViewEnclosureDiskDetailsMini.png "View Enclosure Disk Details Mini") 

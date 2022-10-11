@@ -16,7 +16,7 @@ TrueNAS SCALE users can engage with the TrueNAS community to answer questions an
 TrueNAS SCALE users are welcome to report bugs and vote for or suggest new TrueNAS features in the project Jira instance.
 Have questions? We recommend searching through the software documentation and community resources for answers.
 
-{{< include file="/_includes/content/_includes/UsingTrueNASCommunityAndSocialMedia.md" type="page" >}}
+{{< include file="/content/_includes/UsingTrueNASCommunityAndSocialMedia.md" type="page" >}}
 
 ![GeneralSettingsSCALESupport](/images/SCALE/GeneralSettingsSCALESupport.png "SCALE General Settings Support View")
 

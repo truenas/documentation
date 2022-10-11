@@ -12,7 +12,7 @@ tags:
 
 {{< toc >}}
 
-The TrueNAS SCALE **System Settings > General** screen includes widgets for **[Support]()**, **[GUI]()**, **[Localization]()**, and **[NTP]()** functions.   
+The TrueNAS SCALE **System Settings > General** screen includes widgets for **[Support](#support-widget)**, **[GUI](#gui)**, **[Localization](#localization)**, and **[NTP](#ntp-servers)** functions.   
 
 ![SystemGeneralScreen](/images/SCALE/22.02/SystemGeneralScreen.png "System General Screen") 
 
@@ -50,7 +50,7 @@ The **Reset to Defaults** option opens the **Reset Configuration** window. This 
 ![SystemGeneralResetConfiguration](/images/SCALE/22.02/SystemGeneralResetConfiguration.png "SCALE General Reset Configuration") 
 
 {{< hint danger >}}
-**Save the system's current configuration with the _Download File_ option before resetting the configuration to default settings.**
+**Save the system current configuration with the _Download File_ option before resetting the configuration to default settings.**
  
 If you do not save the system configuration before resetting it, you may lose data that was not backed up, and you will not be able to revert to the previous configuration.
 {{< /hint >}}
@@ -76,7 +76,7 @@ When the **End User License Agreement (EULA)** opens, read it thoroughly and com
 
 ![GeneralSettingsSCALESupportLicenseComplete](/images/SCALE/GeneralSettingsSCALESupportLicenseComplete.png "SCALE General Settings Support License Entry Complete")
 
-Select the **This is a production system** option and click the **Proceed** to notify iXystems through an email the system sends declaring that the system is in production. 
+Select the **This is a production system** option and click the **Proceed** to notify iXsystems through an email the system sends declaring that the system is in production. 
 {{< /expand >}}
 
 ### File Ticket Screen
@@ -91,9 +91,9 @@ The **File Ticket** screen settings allow you to log into Jira where you can sub
 | **Login to JIRA** | Opens a login widow where you enter your Jira credentials. After logging in to Jira, select **Allow** to give TrueNAS read and write access to your data on the Jira site. This generates token that displays in the **OAuth Token** field. |
 | **Type** | Select the issue type from the dropdown list. Select **Bug** to report a problem, **Feature** to submit a new feature request. |
 | **Category** | Select the option from the dropdown list that best fits your report. Becomes active after logging into Jira. |
-| **Attach Debug** | Select to downloadsand attach a debug file to the issue ticket. If the debug file is too large to attach to your ticket, a window with instructions opens. |
+| **Attach Debug** | Select to downloads and attach a debug file to the issue ticket. If the debug file is too large to attach to your ticket, a window with instructions opens. |
 | **Subject** | Enter a brief summary of the issue as the title or subject of the ticket. |
-| **Description** | Enter detials or an outline that thouroughly describes the reason for submitting the ticket. |
+| **Description** | Enter details or an outline that describes the reason for submitting the ticket. Be complete with your description. |
 | **Choose File** | Opens a file browser that allows you to add any screenshots or log files as attachments. |
 | **Save** | Submits the ticket and then opens a window with a link to the ticket.  |
 {{< /expand >}}
@@ -119,7 +119,7 @@ The **GUI** widget allows users to configure the TrueNAS SCALE web interface add
 {{< expand "Click Here for More Information" "v" >}}
 Click **Settings** to open the **GUI Settings** screen.
 
-![SystemGeneralGuiSettings](/images/SCALE/22.02/SystemGeneralGuiSettings.png "System General GUI Settings") change
+![SystemGeneralGuiSettings](/images/SCALE/22.02/SystemGeneralGuiSettings.png "System General GUI Settings") 
 
 | Setting | Description |
 |---------|-------------|
@@ -165,7 +165,8 @@ By default, new installations use several existing NTP servers. TrueNAS SCALE su
 | **Prefer** | Select when using a highly accurate NTP servers such as those with time monitoring hardware. Only use for these highly accurate NTP servers.  |
 | **Min Poll** | Enter the minimum polling interval, in seconds, as a power of 2. For example, 6 means 2^6, or 64 seconds. The default is 6, minimum value is 4. |
 | **Max Poll** | Enter the maximum polling interval, in seconds, as a power of 2. For example, 10 means 2^10, or 1,024 seconds. The default is 10, maximum value is 17. |
-| **Force** | Selce to force the addition of the NTP server, even if it is currently unreachable. |
+| **Force** | Select to force the addition of the NTP server, even if it is currently unreachable. |
 {{< /expand >}}
 
 {{< taglist tag="scalesettings" limit="10" >}}
+{{< taglist tag="scaleconsole" limit="10" title="Related Console Articles" >}}
