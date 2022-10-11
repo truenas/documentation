@@ -1,6 +1,10 @@
 ---
 title: "Alert Settings"
+description: "This article describes the Alert Settings screen on TrueNAS CORE."
 weight: 90
+tags:
+- corealerts
+- coretopmenu
 ---
 
 {{< toc >}}
@@ -20,3 +24,5 @@ weight: 90
 | 5 CRITICAL | ![COREAlertLevelErrorCritical](/images/CORE/12.0/COREAlertLevelErrorCritical.png "Alert Levels") | Yes |
 | 6 ALERT | ![COREAlertLevelInfoNoticeAlertEmergency](/images/CORE/12.0/COREAlertLevelInfoNoticeAlertEmergency.png "Alert Levels") | Yes |
 | 7 EMERGENCY | ![COREAlertLevelInfoNoticeAlertEmergency](/images/CORE/12.0/COREAlertLevelInfoNoticeAlertEmergency.png "Alert Levels") | Yes |
+
+{{< taglist tag="corealerts" limit="10" >}}
