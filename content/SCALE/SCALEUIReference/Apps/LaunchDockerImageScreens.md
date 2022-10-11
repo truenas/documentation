@@ -8,6 +8,9 @@ tags:
  - scaleapps
 ---
 
+{{< toc >}}
+
+
 **Launch Docker Image** on the **Applications** screen opens a configuration wizard that steps through the application creation process using Docker image when selected while on the **Available Applications** tab.  
 
 ![AppsScreenHeaderSCALE](/images/SCALE/22.02/AppsScreenHeaderSCALE.png "Avalable Application Header Options") 
@@ -91,8 +94,8 @@ See the Docker [DNS services documentation](https://docs.docker.com/config/conta
 | **Interface Configuration** | Required. Select an interface from the **Host Interface** dropdown list. |
 | **Host Interface** | Required. Select a host interface on your system from the dropdown list. |
 | **IP Address Management** | Select an option for how to manage the IP address from the **IPAM Type** dropdown list. |
-| **IPAM Type** | Required. Select an option from the dropdown list to specify the type for IPAM. Options are **Use DHCP** or **Use Static IP**. To add a default route, select **Add route** allow you to enter route destination IP /subnet 0.0.0.0/0. Enter the gatway (for example, *192.168.1.1*). After submitting the docker image, navigate to **Installed Applications**, locate the docker image you added, select **Edit** and change the route destination/subnet to equal 0.0.0.0 /0. |
-| **DNS Policy** | Select the option from the dropdown list that specifies the policy. Default behavior is where Pod inherits the name resolution configuration from the node that the pods run on. If **None** is specified, it allows a pod to ignore DNS settings from the Kubernetes environment. Options are:<br>Use Default DNS Policy where Pod inherits the name resolution configuration from the node**.<br>**Kubernetes internal DNS is prioritized and resolved first.** If the domain does not resolve with internal kubernetes DNS, the DNS query forwards to the upstream nameserver inherited from the node. This useful if the workload to access other services, workflows, using kubernetes internal DNS.<br>**For Pods running with hostNetwork and wanting to prioritize internal kubernetes DNS should make use of this policy.**<br>**Ignore DNS settings from the Kubernetes cluster**. |
+| **IPAM Type** | Required. Select an option from the dropdown list to specify the type for IPAM. Options are **Use DHCP** or **Use Static IP**. To add a default route, select **Add route** allow you to enter route destination IP /subnet 0.0.0.0/0. Enter the gateway (for example, *192.168.1.1*). After submitting the docker image, navigate to **Installed Applications**, locate the docker image you added, select **Edit** and change the route destination/subnet to equal 0.0.0.0 /0. |
+| **DNS Policy** | Select the option from the dropdown list that specifies the policy. Default behavior is where Pod inherits the name resolution configuration from the node that the pods run on. If **None** is specified, it allows a pod to ignore DNS settings from the Kubernetes environment. Options are:<br> **Use Default DNS Policy where Pod inherits the name resolution configuration from the node**.<br> **Kubernetes internal DNS is prioritized and resolved first.** If the domain does not resolve with internal kubernetes DNS, the DNS query forwards to the upstream nameserver inherited from the node. This useful if the workload to access other services, workflows, using kubernetes internal DNS.<br> **For Pods running with hostNetwork and wanting to prioritize internal kubernetes DNS should make use of this policy.**<br> **Ignore DNS settings from the Kubernetes cluster**. |
 | **DNS Configuration** | Specify custom DNS configuration to apply to the pod. Click **Add** to dsiplay a **Nameserver** entry field. Click again to add another name server. |
 | **Nameserver** | Enter the IP address of the name server. |
 
@@ -188,7 +191,7 @@ The **Resource Reservation** screen specifies the **GPU configuration**.
 The **Resource Limits** setting specifies whether to **Enable Pod resource limits**.
 
 ## Portal Configuration
-The **Portal Configuration** setting specifies whether to **Enable WebUI Portal (only supported in TrueNAS SCALE Bluefin)**
+The **Portal Configuration** setting specifies whether to **Enable WebUI Portal (only supported in TrueNAS SCALE Bluefin)**.
 
 ## Confirm Options
 The **Confirm Options** screen displays a summary of the image/container configuration. Click **Back** to return to previous screens to make changes and **Next** to advance back to **Confirm Options**. Click **Save** to create the image and add the application to the **Installed Applications** screen.

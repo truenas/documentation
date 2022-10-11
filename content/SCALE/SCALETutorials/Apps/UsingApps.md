@@ -10,7 +10,7 @@ tags:
 
 {{< toc >}}
 
-Both pre-built official containers and custom application containers can be deployed using the **Applications** page in the ScCALE web interface.
+Both pre-built official containers and custom application containers can be deployed using the **Applications** page in the SCALE web interface.
 
 ![AvailableApplicationsScreen](/images/SCALE/22.02/AvailableApplicationsScreen.png "Apps Catalog")
 

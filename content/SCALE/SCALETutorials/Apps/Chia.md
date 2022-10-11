@@ -22,7 +22,7 @@ Name your App and click **Next**. In this example, the name is *chia1*.
 
 ![AppsInstallChiaEnterName](/images/SCALE/22.02/AppsInstallChiaEnterName.png "Chia Name")
 
-Leave ***Enable Custom Host Path for Chia Configuration Volume*** and ***Enable Custom Host Path for Chia Plots Volume*** unchecked and click **Next**.
+Leave **Enable Custom Host Path for Chia Configuration Volume** and **Enable Custom Host Path for Chia Plots Volume** unchecked and click **Next**.
 
 ![ChiaStorage](/images/SCALE/chia_Storage.png "Chia Storage")
 
@@ -32,15 +32,15 @@ Click **Next** in the Chia Environment Variables screen. You add one later.
 
 Confirm the options and click **Submit**.
 
-![AppsInstallChiaConfirmOptions(/images/SCALE/22.02/AppsInstallChiaConfirmOptions.png "Chia Save")
+![AppsInstallChiaConfirmOptions](/images/SCALE/22.02/AppsInstallChiaConfirmOptions.png "Chia Save")
 
 Continue through the wizard and create the new application. After a minute or two the new Chia container starts and shows ACTIVE status. Click the three-dot menu on the top-right and launch the Shell.
 
-![AppsInstallChiaSelectShell(/images/SCALE/22.02/AppsInstallChiaSelectShell.png "Chia Shell")
+![AppsInstallChiaSelectShell](/images/SCALE/22.02/AppsInstallChiaSelectShell.png "Chia Shell")
 
 Leave the defaults for the pod (there is only one) and use the selected /bin/bash shell.
 
-![AppsInstallChiaChoosePod](/images/SCALE22.02/AppsInstallChiaChoosePod.png "Chia choose Pod")
+![AppsInstallChiaChoosePod](/images/SCALE/22.02/AppsInstallChiaChoosePod.png "Chia choose Pod")
   
 The first time Chia launches, it automatically creates a new private key set (for plotting purposes) and wallet. However, the private key set is not preserved across container restarts. To make sure your keys and wallet persist, save the Mnemonic Seed that was created and make sure it gets used at each container initialization. To do this, start by displaying the current key information by running the following shell command: 
 

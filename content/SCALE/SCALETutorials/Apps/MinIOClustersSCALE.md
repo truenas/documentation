@@ -22,7 +22,7 @@ Before you configure MinIO, you must create a dataset and shared directory for t
 Go to **Storage > Pools** and select the pool you want to place the dataset in. 
 You can use an existing pool or create a new one. 
 
-After creating the dataset, go to **System > Shell** and create the directory MinIO store sinformation the application uses. MinIO uses **/data** but allows users to replace this with the directory of their choice. Change to the */pool/dataset* directory and then use the `mkdir /mnt/data` command to create the **/data** directory. 
+After creating the dataset, go to **System > Shell** and create the directory MinIO stores information the application uses. MinIO uses **/data** but allows users to replace this with the directory of their choice. Change to the */pool/dataset* directory and then use the `mkdir /mnt/data` command to create the **/data** directory. 
 
 For a distributed configuration, repeat this on all system nodes in advance. 
 
@@ -110,7 +110,7 @@ We recommend **Kill existing pods before creating new ones**. Click **Next**.
 
 Now enter the **MinIO Configuration** settings.
 
-If you want to run your MinIO instance to connect to a distributed MinIO cluster, set **Enable Distributed Mode** and input your Distributed Minio Instance URI. See the [Distributed MinIO Quickstart Guide]9https://docs.min.io/docs/distributed-minio-quickstart-guide) for more information.
+If you want to run your MinIO instance to connect to a distributed MinIO cluster, set **Enable Distributed Mode** and input your Distributed Minio Instance URI. See the [Distributed MinIO Quickstart Guide](https://docs.min.io/docs/distributed-minio-quickstart-guide) for more information.
 
 ![AppsMinIOConfiguration](/images/SCALE/22.02/AppsMinIOConfiguration.png "MinIO Configuration")
 

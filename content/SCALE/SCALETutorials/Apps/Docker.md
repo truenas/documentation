@@ -119,7 +119,7 @@ PVs consume space from the pool chosen for Application management.
 You need to name each new dataset and define a path where that dataset appears inside the container.
 
 To view created container datasets, go to **Storage** and expand the pool used for applications.
-Expand `/ix-applications/releases/<ContainerName>/volumes/ix-volumes/`.
+Expand **/ix-applications/releases/<ContainerName>/volumes/ix-volumes/**.
 
 ### Setting Up Persistent Volume Access
 

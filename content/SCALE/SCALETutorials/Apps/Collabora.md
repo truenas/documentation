@@ -1,6 +1,6 @@
 ---
 title: "Collabora App"
-description: "This article provides basic configuration instructions for adding the Collabora app using the TruNAs webUI."
+description: "This article provides basic configuration instructions for adding the Collabora app using the TrueNAs webUI."
 weight: 35
 aliases: /scale/scaleuireference/apps/collabora/
 tags:

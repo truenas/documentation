@@ -32,8 +32,8 @@ The **Bulk Action** option that displays at the top right of the **Installed App
 ### Settings 
 **Settings** displays at the top right of all four **Applications** screens, but they are only functional when on the **Available Applications** screen. Setting options are:
 
-**Choose Pool** opens the **[Choose a pool](#choose-pool-window) window.
-**Advanced Settings** opens the **[Kubernetes Settings](#kubernetes-settings-screen) configuration screen.
+**Choose Pool** opens the **[Choose a pool](#choose-pool-window)** window.
+**Advanced Settings** opens the **[Kubernetes Settings](#kubernetes-settings-screen)** configuration screen.
 **Unset Pool** opens a dialog confirming the pool is unset.
 
 #### Choose Pool Window
@@ -46,7 +46,7 @@ Use the **Settings > Choose Pool** option to change the pool applications use fo
 Select **Migrate applications to the new pool** if you change your applications pool and want to migrate data from the existing pool to the new pool.
 
 #### Kubernetes Settings Screen
-The **Advanced Settings** option opens the **Kubernetes Settins** configuration screen.
+The **Advanced Settings** option opens the **Kubernetes Settings** configuration screen.
 {{< expand "Click Here for More Information" "v" >}}
 
 ![AppsAdvancedSettingsKubernetesSettings](/images/SCALE/22.02/AppsAdvancedSettingsKubernetesSettings.png "Advanced Settings Kubernetes Settings")
@@ -67,7 +67,7 @@ The **Advanced Settings** option opens the **Kubernetes Settins** configuration 
 | Setting | Description |
 |---------|-------------|
 | **Cluster CIDR** | Required. Enter the IP address and CIDR number for the Kubernetes cluster. |
-| **Service CIDR** | Required. Enter the IP address and CIDER number for the Kubernetes service. |
+| **Service CIDR** | Required. Enter the IP address and CIDR number for the Kubernetes service. |
 | **Cluster DNS IP** | Required. Enter the IP address for the cluster DNS. |
 {{< /expand >}}
 
@@ -88,12 +88,12 @@ Click **CONTINUE** to open the **Add Catalog** screen.
 
 ![ManageCatalogsAddCatalogScreen](/images/SCALE/22.02/ManageCatalogsAddCatalogScreen.png "Add Catalog")
 
-| Field | Description | Truecharts |
-|---------|-------|-------------|
+| Field | Description | 
+|---------|-------|
 | **Catalog Name** | enter the name the TrueNAS uses to look up the catalog. For example, *truecharts*. |
 | **Force Create** | Select to add the catalog to the system even if some trains are unhealthy. |
-| **Repository** |  Enter the valid git repository URL. For example,  *https://github.com/truecharts/catalog* |
-| **Preferred Trains** | The trains TrueNAS uses to retrieve available applications for the catalog. Default is **stable** (and optionally: **incubator**) |
+| **Repository** |  Enter the valid git repository URL. For example,  *https://github.com/truecharts/catalog*. |
+| **Preferred Trains** | The trains TrueNAS uses to retrieve available applications for the catalog. Default is **stable** (and optionally: **incubator**). |
 | **Branch** | Specify the git repository branch TrueNAS should use for the catalog. Default is **main**. |
 {{< /expand >}}
 
@@ -238,7 +238,7 @@ The **Summary** option for each catalog listed on **Manage Catalogs** opens the 
 {{< expand "Click Here for More Information" "v" >}}
 **[Add Catalog](#add-catalog)** opens the **Add Catalog** screen.
 
-![ApplicationsEditCatalog](/images/SCALE/22.02/ApplicationsEditCatalog.png "Edit Catalog")
+![AddCatalogScreen](/images/SCALE/22.02/AddCatalogScreen.png "Add Catalog")
 
 | Setting | Description |
 |---------|-------------|
