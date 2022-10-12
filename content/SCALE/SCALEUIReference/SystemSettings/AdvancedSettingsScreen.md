@@ -1,14 +1,17 @@
 ---
-title: "Advanced Settings"
-description: ""
+title: "Advanced Settings Screen"
+description: "This article provides information on the **System > Advanced** screen widgets and configuration screen settings."
 weight: 30
-aliases:
+aliases: /scale/scaleuireference/systemsettings/advancedsettings/
 tags:
  - scalepools
+ - scaledisks
+ - scaledatasets
  - scalesettings
  - scaleconsole
  - scalereplication
  - scalegpu
+ - scalevms
  - scalesed
 ---
 
@@ -20,7 +23,7 @@ TrueNAS SCALE advanced settings screen provides configuration options for the co
 Advanced settings have reasonable defaults in place. A warning message displays for some settings advising of the dangers making changes.
 Changing advanced settings can be dangerous when done incorrectly. Use caution before saving changes. 
 
-![ChangingAdvancedSettingsWarning](/images/SCALE/22.02/ChangingAdvancedSettingsWarning.png "Chaning Advanced Settings Warning") 
+![ChangingAdvancedSettingsWarning](/images/SCALE/22.02/ChangingAdvancedSettingsWarning.png "Changing Advanced Settings Warning") 
 
 Make sure you are comfortable with ZFS, Linux, and system [configuration backup and restoration]({{< relref "GeneralSettings.md" >}}) before making any changes. 
 {{< /hint >}}
@@ -50,7 +53,7 @@ The **Console** widget on the **System Setting > Advanced** screen displays curr
 {{< /expand >}}
 
 ## Syslog Widget
-The **Syslog** widget displays the existing system logging settings that specfy how and when the system sends log messages to the syslog server.
+The **Syslog** widget displays the existing system logging settings that specify how and when the system sends log messages to the syslog server.
 
 ![AdvancedSystemSettingsSyslogWidget](/images/SCALE/22.02/AdvancedSystemSettingsSyslogWidget.png "SCALE Advanced Settings Syslog Widget") 
 
@@ -67,18 +70,18 @@ The **Syslog** configuration screen settings specify the logging level the syste
 | **Use FQDN for Logging** | Select to include the fully-qualified domain name (FQDN) in logs to precisely identify systems with similar host names. |
 | **Syslog Level** | Select the logging level the syslog server uses when creating system logs; the system only sends logs matching this level. |
 | **Syslog Server** | Enter the remote syslog server DNS host name or IP address. add a colon and the port number to the host name to use non-standard port numbers, like *mysyslogserver:1928*. Log entries are written to local logs and sent to the remote syslog server. |
-| **Syslog Transport** | Enter the [transport protocol](https://tools.ietf.org/html/rfc8095) for the remote system log server connection. Selecing Transport Layer Security (TLS) displays the **Syslog TLS Certificate** and **Syslog TSL Certificate Authority** fields. This requires preconfiguringing both the system certificate and the certificate authority (CA) for the server. |
-| **Syslog TLS Certificate** | Displays after selecing **TLS** in **Syslog Transport**. Select the [transport protocol](https://tools.ietf.org/html/rfc8095) for the remote system log server TLS certificate from the dropdown list. Select either the default, or add the certificate and CA for the server using the **Credentials > Certificates** screen **Certificates** widget. |
-| **Syslog TLS Certificate Authority** | Displays after selecing **TLS** in **Syslog Transport**. Select the TLS CA for the TLS server from the dropdown list. If not using the default, create the CA for the systlog server TLS certificate on the **Credentials > Certificates > Certificate Authorities** screen. |
+| **Syslog Transport** | Enter the [transport protocol](https://tools.ietf.org/html/rfc8095) for the remote system log server connection. Selecting Transport Layer Security (TLS) displays the **Syslog TLS Certificate** and **Syslog TSL Certificate Authority** fields. This requires preconfiguring both the system certificate and the certificate authority (CA) for the server. |
+| **Syslog TLS Certificate** | Displays after selecting **TLS** in **Syslog Transport**. Select the [transport protocol](https://tools.ietf.org/html/rfc8095) for the remote system log server TLS certificate from the dropdown list. Select either the default, or add the certificate and CA for the server using the **Credentials > Certificates** screen **Certificates** widget. |
+| **Syslog TLS Certificate Authority** | Displays after selecting **TLS** in **Syslog Transport**. Select the TLS CA for the TLS server from the dropdown list. If not using the default, create the CA for the systlog server TLS certificate on the **Credentials > Certificates > Certificate Authorities** screen. |
 | **Use System Dataset** | Select to store system logs on the system dataset. Leave clear to store system logs in `/var/` on the operating system device. |
 {{< /expand >}}
 
 ## Cron Jobs Widget
-The **Cron Jobs** widget displays **No Cron Jobs configured** unitl you add a cron job, then it displays information on cron job(s) configured on the system.
+The **Cron Jobs** widget displays **No Cron Jobs configured** until you add a cron job, then it displays information on cron job(s) configured on the system.
 
 ![AdvancedSettingsCronJobWidget](/images/SCALE/22.02/AdvancedSettingsCronJobWidget.png "SCALE Advanced Settings Cron Job Widget") 
 
-**Add** opens the **[Add Cron Job](#add-or-edit-cron-job-configuration-screen) configuration sceen.
+**Add** opens the **[Add Cron Job](#add-or-edit-cron-job-configuration-screen) configuration screen.
 Click on any job listed in the widget to open the **[Edit Cron Jobs](#add-or-edit-cron-job-configuration-screen) configuration screen populated with the settings for that cron job.
 
 ### Add or Edit Cron Job Configuration Screen
@@ -99,7 +102,7 @@ The **Add Cron Job** and **Edit Cron Job** configuration screens display the sam
 {{< /expand >}}
 
 ## Init/Shutdown Scripts Widget
-The **Init/Shutdown Scripts** widget displays **No Init/Shutdown Scripts configured** unitl you add either a command or script, then the widget lists the scrips configured on the system.
+The **Init/Shutdown Scripts** widget displays **No Init/Shutdown Scripts configured** until you add either a command or script, then the widget lists the scrips configured on the system.
 
 ![AdvancedSystemInitShutdownScriptWidget](/images/SCALE/22.02/AdvancedSystemInitShutdownScriptWidget.png "SCALE Advanced Settings Init/Shutdown Script Widget") 
 
@@ -128,7 +131,7 @@ The **Sysctl** widget displays either **No Sysctl configured** or the existing s
 
 ![AdvancedSysctlWidgetNoSysctl](/images/SCALE/22.02/AdvancedSysctlWidgetNoSysctl.png "SCALE Advanced Settings Sysctl Widget") 
 
-**Add** to add a tunable tha configures a kernel parameter at runtime.
+**Add** to add a tunable that configures a kernel parameter at runtime.
 
 ### Add or Edit Sysctl Configuration Screen
 The **Add Sysctl** or **Edit Sysctl** configuration screen settings lets users set up tunables that configure kernel parameters at runtime.
@@ -157,7 +160,7 @@ If the system has one pool, TrueNAS configures that pool as the system dataset p
 
 ![SystemDatasetPoolConfigScreen](/images/SCALE/22.02/SystemDatasetPoolConfigScreen.png "SCALE Advanced Settings System Dataset Pool Screen") 
 
-Users can move the system dataset to a key-encrypted pool, but cannot change the pool encryption type aftwerward. If the encrypted pool already has a passphrase set, you cannot move the system dataset to that pool.
+Users can move the system dataset to a key-encrypted pool, but cannot change the pool encryption type afterward. If the encrypted pool already has a passphrase set, you cannot move the system dataset to that pool.
 
 ## Replication
 The **Replication** widget displays the number of replication tasks that can execute simultaneously configured on the system. It allows users to adjust the maximum number of replication tasks the system can execute simultaneously.
@@ -185,7 +188,7 @@ The **Self-Encrypting Drive** configuration screen allows users set the ATA secu
 
 | Settings | Description |
 |----------|-------------|
-| **ATA Security User** | Select the user passed to camcontrol security -u to unlock SEDs from the dropdoan list. Options are **USER** or **MASTER**. |
+| **ATA Security User** | Select the user passed to camcontrol security -u to unlock SEDs from the dropdown list. Options are **USER** or **MASTER**. |
 | **SED Password** | Enter the global password to unlock SEDs. |
 | **Confirm SED Password** | Re-enter the global password to unlock SEDs. |
 {{< /expand >}}
@@ -208,4 +211,11 @@ The GPU device acts like the VM is driving it, and the VM detects the GPU as if 
 To isolate a GPU you must have at least two in your system; one allocated to the host system for system functions and the other available to isolate for use by a VM or application. 
 Isolating the GPU prevents apps and the system from accessing it.
 
-{{< taglist tag="scalesettings" limit="10" >}}
+{{< taglist tag="scalesettings" limit="10" >}} 
+{{< taglist tag="scaleconsole" limit="10" title="Related Console Articles" >}}
+{{< taglist tag="scalecronjob" limit="10" title="Related Cron Job Articles" >}}
+{{< taglist tag="scaleinitshutdown" limit="10" title="Related Init/Shutdown Script Articles" >}}
+{{< taglist tag="scalereplication" limit="10" title="Related Replication Articles" >}}
+{{< taglist tag="scalesed" limit="10" title="Related SED Articles" >}}
+{{< taglist tag="scalegpus" limit="10" title="Related GPU Articles" >}} 
+{{< taglist tag="scalevms" limit="10" title="Related VM Articles" >}} 

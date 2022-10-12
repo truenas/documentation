@@ -1,7 +1,10 @@
 ---
-title: "System Settings"
+title: "Advanced Settings"
 geekdocCollapseSection: true
-weight: 120
+weight: 30
+aliases: 
+tags:
+ - scalesettings
 ---
 
 
