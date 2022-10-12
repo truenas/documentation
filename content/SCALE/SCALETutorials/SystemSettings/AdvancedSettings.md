@@ -9,7 +9,7 @@ weight: 30
 TrueNAS SCALE Advanced Settings provide configuration options for the Console, Syslog, Sysctl, Kernel, Cron Jobs, Init/Shutdown Scripts, System Dataset Pool, Isolated GPU Device(s), and Self-Encrypting Drives.
 
 {{< hint warning >}} 
-Advanced Settings have reasonable defaults in place. Changing advanced settings can be dangerous when done incorrectly. Please use caution before saving. Make sure you are comfortable with ZFS, Linux, and system [configuration backup and restoration]({{< relref "GeneralSettings.md" >}}) before making any changes. 
+Advanced Settings have reasonable defaults in place. Changing advanced settings can be dangerous when done incorrectly. Please use caution before saving. Make sure you are comfortable with ZFS, Linux, and system [configuration backup and restoration]({{< relref "ManageSysConfigSCALE.md" >}}) before making any changes. 
 {{< /hint >}}
 
 ![AdvancedSettingsSCALE](/images/SCALE/AdvancedSettingsSCALE.png "SCALE Advanced Settings Screen")

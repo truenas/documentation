@@ -35,4 +35,6 @@ Save the configuration. Access the IPMI interface using a web browser and the IP
 
 Log in to the management interface. Here you can change the default administrative user name and create extra IPMI users. The appearance of the IPMI utility and the functions that are available vary by hardware.
 
-{{< taglist tag="corenetwork" limit="10" >}}
+{{< taglist tag="coreipmi" limit="10" >}}
+
+{{< taglist tag="corenetwork" limit="10" title="Related Articles" >}}

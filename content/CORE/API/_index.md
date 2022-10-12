@@ -1,7 +1,10 @@
 ---
 title: "API Reference"
+description: "This article describes how to access the API documentation in TrueNAS CORE."
 geekdocCollapseSection: true
 weight: 160
+tags:
+- coreapi
 ---
 
 TrueNAS CORE API documentation is available from the web interface by clicking **<i class="material-icons" aria-hidden="true" title="Settings">settings</i>&nbsp;> API Keys > DOCS**.
@@ -17,3 +20,5 @@ For convenience, static builds of the current 2.0 API documentation stored on th
 ## CORE Documentation Sections
 
 {{< include file="/_includes/COREDocsSections.md" type="page" >}}
+
+{{< taglist tag="coretopmenu" limit="10" >}}
