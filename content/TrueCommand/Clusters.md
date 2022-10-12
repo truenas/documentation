@@ -27,7 +27,7 @@ To see this screen, log in to TrueCommand and click the <span class="iconify" da
 ![ClustersScreen](/images/TrueCommand/2.2/ClustersScreen.png "TrueCommand Clusters Screen")
 
 {{< expand "Option descriptions (click to expand)" "v" >}}
-When no clusters are created, there is a single option on this screen:
+If you have not created a cluster, there is a single option on this screen:
 
 | Setting | Value | Description |
 |---------|-------|-------------|
@@ -37,7 +37,7 @@ When no clusters are created, there is a single option on this screen:
 
 ### Create Cluster
 
-The cluster creation options are split into two pages: system selection and confirmation.
+The cluster creation options split into two pages: **Systems** and **Confirmation**.
 
 #### Systems
 
@@ -84,12 +84,12 @@ There is a single option on this page.
 
 ### Configure Cluster
 
-Successfully creating a cluster immediately adds a cluster widget to the **Clusters** screen and opens options to configure the new cluster.
-These options are split into three screens: **SMB Network**, **Active Directory**, and **Confirmation**.
+Successfully creating a cluster adds a cluster widget to the **Clusters** screen and opens options to configure the new cluster.
+These options split into three screens: **SMB Network**, **Active Directory**, and **Confirmation**.
 
 #### SMB Network
 
-The SMB Network page has general options and fields added for each SCALE system in the cluster.
+The SMB Network page has options and fields added for each SCALE system in the cluster.
 
 ![ConfigureClusterSMBNetwork](/images/TrueCommand/2.2/ConfigureClusterSMBNetwork.png "Configure Cluster SMB Network")
 
@@ -99,14 +99,15 @@ The SMB Network page has general options and fields added for each SCALE system 
 |---------|-------|-------------|
 | NEXT | button | Continues to the next page. |
 | Skip this step | checkbox | Finalize the cluster configuration without registering a network to use for SMB sharing. Setting this permanently removes the ability to share data stored in this cluster. |
-| Interface | dropdown | SCALE system network interface to use for SMB traffic. For best functionality, choose an interface that can communicate between the individual SCALE systems, TrueCommand environment, Active Directory, and and client systems that need to access data shared from this cluster. |
+| Interface | dropdown | SCALE system network interface to use for SMB traffic. For best functionality, choose an interface that can communicate between the individual SCALE systems, TrueCommand environment, Active Directory, and client systems that need to access data shared from this cluster. |
 | Address | dropdown | IP address used for clients to access the SCALE system. |
+| Netmask | dropdown | Netmask for the IP address. |
 
 {{< /expand >}}
 
 #### Active Directory
 
-The options on this page are used to establish a connection between an Active Directory environment, SCALE systems, and TrueCommand.
+The options on this page let you establish a connection between an Active Directory environment, SCALE systems, and TrueCommand.
 
 ![ConfigureClusterActiveDirectory](/images/TrueCommand/2.2/ConfigureClusterActiveDirectory.png "Configure Cluster Active Directory Connection")
 
@@ -123,7 +124,7 @@ The options on this page are used to establish a connection between an Active Di
 
 #### Confirmation
 
-All chosen settings display here for final confirmation before being applied to the cluster.
+All chosen settings display here for you to confirm before being applied to the cluster.
 
 ![ConfigureClusterReview](/images/TrueCommand/2.2/ConfigureClusterReview.png "Configure Cluster: Review and confirm")
 
@@ -137,7 +138,7 @@ All chosen settings display here for final confirmation before being applied to 
 
 ## Manage Clusters
 
-Clusters are shown as standalone cards.
+Clusters display as standalone cards.
 
 ![ClusterCard](/images/TrueCommand/2.2/ClusterCard.png "TrueCommand Cluster View")
 
@@ -158,7 +159,7 @@ Click the **^** or **v** icons to minimize or expand (respectively) the list of 
 ## Cluster Volumes
 
 Clicking **CREATE VOLUME** for an existing cluster shows options to configure new clustered storage.
-The options are split into two pages: **Details** and **Confirmation**.
+The options split into two pages: **Details** and **Confirmation**.
 
 ### Details
 
@@ -183,7 +184,7 @@ The **Type** field has four options:
 
 ### Confirmation
 
-The **Confirmation** page shows details about the chosen volume **Type** and storage makeup of the new clustered volume.
+The **Confirmation** page shows details for the chosen volume **Type** and storage makeup of the new clustered volume.
 
 ![ClustersCreateVolumeConfirmation](/images/TrueCommand/2.2/ClustersCreateVolumeConfirmation.png "Add Cluster Volume: Review and create")
 
@@ -202,7 +203,7 @@ Created cluster volumes display in the related cluster card.
 
 ![ClusterCardwithVolume](/images/TrueCommand/2.2/ClusterCardwithVolume.png "Cluster Volume added to a Cluster")
 
-The name, current used storage, and status of the volume show on the card.
+The card displays the name, used storage, and volume status.
 Click the volume name to expand the details and see more management options.
 
 ![ClustersClusterVolumeExpanded](/images/TrueCommand/2.2/ClustersClusterVolumeExpanded.png "Cluster Volume Details")
@@ -242,8 +243,7 @@ Adding a cluster share shows a few options.
 
 #### Managing Cluster Volume Shares
 
-Open the **Cluster Volume Details** to see any shares.
-Click the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> **Options** icon to see the share options.
+Click the cluster volume name to open the **Cluster Volume Details** and see any shares.
 
 ![ClustersClusterVolumeExpandedShareOptions](/images/TrueCommand/2.2/ClustersClusterVolumeExpandedShareOptions.png "Cluster Volume Share Options")
 
@@ -252,6 +252,7 @@ Click the <i class="material-icons" aria-hidden="true" title="Options">more_vert
 | Setting | Value | Description |
 |---------|-------|-------------|
 | DELETE | button | Remove the share from the Cluster Volume. No data is destroyed in this operation. |
+| CREATE SHARE | button | Opens the form to configure a new SMB share. This allows remote access to this cluster volume. |
 
 {{< /expand >}}
 
