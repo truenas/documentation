@@ -11,14 +11,7 @@ tags:
 
 The **Isolate GPU PCI's ID** widget on the **System > Advanced** screen allows you to isolate a GPU installed in your system for use by a virtual machine (VM).
 
-{{< hint warning >}} 
-Advanced settings have reasonable defaults in place. A warning message displays for some settings advising of the dangers making changes.
-Changing advanced settings can be dangerous when done incorrectly. Use caution before saving changes. 
-
-![ChangingAdvancedSettingsWarning](/images/SCALE/22.02/ChangingAdvancedSettingsWarning.png "Changing Advanced Settings Warning") 
-
-Make sure you are comfortable with ZFS, Linux, and system [configuration backup and restoration]({{< relref "GeneralSettings.md" >}}) before making any changes. 
-{{< /hint >}}
+{{< include file="/_includes/AdvancedSettingsWarningSCALE.md" type="page" >}}
 
 ## Isolated GPU Device(s)
 The **Isolated GPU Device(s)** widget displays an graphics processing unit (GPU) device(s) configured on your system. 
@@ -37,4 +30,3 @@ Isolating the GPU prevents apps and the system from accessing it.
 Click **Save**.
 
 {{< taglist tag="scalegpu" limit="10" >}}
-{{< taglist tag="scalevms" limit="10" title="Related VM Articles" >}} 

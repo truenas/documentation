@@ -11,14 +11,7 @@ tags:
 
 The **Init/Shutdown Scripts** widget on the **System > Advanced** screen allows you to add scripts to run before or after initialization (start-up), or at shutdown. For example, creating a script to backup your system or run a systemd command before exiting and shutting down the system.
 
-{{< hint warning >}} 
-Advanced settings have reasonable defaults in place. A warning message displays for some settings advising of the dangers making changes.
-Changing advanced settings can be dangerous when done incorrectly. Use caution before saving changes. 
-
-![ChangingAdvancedSettingsWarning](/images/SCALE/22.02/ChangingAdvancedSettingsWarning.png "Changing Advanced Settings Warning") 
-
-Make sure you are comfortable with ZFS, Linux, and system [configuration backup and restoration]({{< relref "GeneralSettings.md" >}}) before making any changes. 
-{{< /hint >}}
+{{< include file="/_includes/AdvancedSettingsWarningSCALE.md" type="page" >}}
 
 ## Adding an Init/Shutdown Script
 

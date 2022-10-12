@@ -11,6 +11,8 @@ tags:
 
 Cron jobs allow users to configure jobs that run specific commands or scripts on a regular schedule using [cron(8)](https://manpages.debian.org/testing/cron/cron.8.en.html "Cron Man Page"). Cron Jobs help users run repetitive tasks.
 
+{{< include file="/_includes/AdvancedSettingsWarningSCALE.md" type="page" >}}
+
 The **Cron Jobs** widget on the **System > Advanced** screen displays **No Cron Jobs configured** until you add a cron job, and then it displays information on cron job(s) configured on the system.
 
 ![AdvancedSettingsCronJobWidget](/images/SCALE/22.02/AdvancedSettingsCronJobWidget.png "SCALE Advanced Settings Cron Job Widget") 

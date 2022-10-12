@@ -13,14 +13,7 @@ tags:
 
 TrueNAS SCALE advanced settings screen provides configuration options for the console, syslog, sysctl, replication, cron jobs, init/shutdown scripts, system dataset pool, isolated GPU device(s), and self-encrypting drives.
 
-{{< hint warning >}} 
-Advanced settings have reasonable defaults in place. A warning message displays for some settings advising of the dangers making changes.
-Changing advanced settings can be dangerous when done incorrectly. Use caution before saving changes. 
-
-![ChangingAdvancedSettingsWarning](/images/SCALE/22.02/ChangingAdvancedSettingsWarning.png "Changing Advanced Settings Warning") 
-
-Make sure you are comfortable with ZFS, Linux, and system [configuration backup and restoration]({{< relref "GeneralSettings.md" >}}) before making any changes. 
-{{< /hint >}}
+{{< include file="/_includes/AdvancedSettingsWarningSCALE.md" type="page" >}}
 
 ![SystemAdvancedScreen](/images/SCALE/22.02/SystemAdvancedScreen.png "SCALE Advanced Settings Screen") 
 

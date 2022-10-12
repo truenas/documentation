@@ -4,12 +4,14 @@ description: "This article provides information on the **System > Advanced** scr
 weight: 30
 aliases: /scale/scaleuireference/systemsettings/advancedsettings/
 tags:
+ - scalesettings
  - scalepools
  - scaledisks
  - scaledatasets
- - scalesettings
+ - scalecronjob
  - scaleconsole
  - scalereplication
+ - scaleinitshutdown
  - scalegpu
  - scalevms
  - scalesed
@@ -19,16 +21,9 @@ tags:
 
 TrueNAS SCALE advanced settings screen provides configuration options for the console, syslog, sysctl, replication, cron jobs, init/shutdown scripts, system dataset pool, isolated GPU device(s), and self-encrypting drives.
 
-{{< hint warning >}} 
-Advanced settings have reasonable defaults in place. A warning message displays for some settings advising of the dangers making changes.
-Changing advanced settings can be dangerous when done incorrectly. Use caution before saving changes. 
-
-![ChangingAdvancedSettingsWarning](/images/SCALE/22.02/ChangingAdvancedSettingsWarning.png "Changing Advanced Settings Warning") 
-
-Make sure you are comfortable with ZFS, Linux, and system [configuration backup and restoration]({{< relref "GeneralSettings.md" >}}) before making any changes. 
-{{< /hint >}}
-
 ![SystemAdvancedScreen](/images/SCALE/22.02/SystemAdvancedScreen.png "SCALE Advanced Settings Screen") 
+
+{{< include file="/_includes/AdvancedSettingsWarningSCALE.md" type="page" >}}
 
 ## Console Widget
 The **Console** widget on the **System Setting > Advanced** screen displays current console settings for TrueNAS.
@@ -88,7 +83,7 @@ Click on any job listed in the widget to open the **[Edit Cron Jobs](#add-or-edi
 The **Add Cron Job** and **Edit Cron Job** configuration screens display the same settings. **Cron Jobs** lets users configure jobs that run specific commands or scripts on a regular schedule using [cron(8)](https://manpages.debian.org/testing/cron/cron.8.en.html "Cron Man Page"). Cron Jobs help users run repetitive tasks.
 {{< expand "Click Here for More Information" "v" >}}
 
-![ConsoleConfigScreen](/images/SCALE/22.02/ConsoleConfigScreen.png "SCALE Console Settings Screen") change
+![AddCronJobScreen](/images/SCALE/22.02/AddCronJobScreen.png "SCALE Add Cron Job Screen") 
 
 | Settings | Description |
 |----------|-------------|
@@ -118,7 +113,7 @@ Any script listed is a link that opens the **[Edit Inti/Shutdown Script](#add-or
 | Settings | Description |
 |----------|-------------|
 | **Description** | Comments about this script. |
-| **Type **| Select Command for an executable or Script for an executable script. |
+| **Type** | Select Command for an executable or Script for an executable script. |
 | **Command** | Enter the command with any options. |
 | **Script** | Select the script. The script runs using [dash(1)](https://manpages.debian.org/testing/dash/sh.1.en.html "dash(1) Page"). |
 | **When** | Select when the command or script runs from the dropdown list. Options are **Pre Init** for early in the boot process, after mounting file systems and starting networking. **Post Init** runs at the end of the boot process, before Linux services start. **Shutdown** runs during the system power-off process. |
@@ -212,10 +207,3 @@ To isolate a GPU you must have at least two in your system; one allocated to the
 Isolating the GPU prevents apps and the system from accessing it.
 
 {{< taglist tag="scalesettings" limit="10" >}} 
-{{< taglist tag="scaleconsole" limit="10" title="Related Console Articles" >}}
-{{< taglist tag="scalecronjob" limit="10" title="Related Cron Job Articles" >}}
-{{< taglist tag="scaleinitshutdown" limit="10" title="Related Init/Shutdown Script Articles" >}}
-{{< taglist tag="scalereplication" limit="10" title="Related Replication Articles" >}}
-{{< taglist tag="scalesed" limit="10" title="Related SED Articles" >}}
-{{< taglist tag="scalegpus" limit="10" title="Related GPU Articles" >}} 
-{{< taglist tag="scalevms" limit="10" title="Related VM Articles" >}} 
