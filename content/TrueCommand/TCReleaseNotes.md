@@ -29,28 +29,31 @@ aliases:
 
 ## 2.2.2
 
-**October 18, 2022
+**October 18, 2022**
+
+iXsystems is pleased to release TrueCommand 2.2.2!
+This is a maintenance release of TrueCommand 2.2 that includes some improvements for charts and a variety of bugfixes for licensing, LDAP, reporting, connections, and alerting.
 
 ### Improvement
 
-[TC-2357](https://ixsystems.atlassian.net/browse/TC-2357) Report charts x-axis datapoint sometimes display overlapping labels
-[TC-2274](https://ixsystems.atlassian.net/browse/TC-2274) API endpoint for downloading config backup
-[TC-2215](https://ixsystems.atlassian.net/browse/TC-2215) Change build type from build to runtime
+* [TC-2357](https://ixsystems.atlassian.net/browse/TC-2357) Report charts x-axis datapoint sometimes display overlapping labels
+* [TC-2274](https://ixsystems.atlassian.net/browse/TC-2274) API endpoint for downloading config backup
+* [TC-2215](https://ixsystems.atlassian.net/browse/TC-2215) Change build type from build to runtime
 
 ### Bug
 
-[TC-2325](https://ixsystems.atlassian.net/browse/TC-2325) Disabled importing licenses on Cloud
-[TC-2297](https://ixsystems.atlassian.net/browse/TC-2297) Available servers do not appear in header
-[TC-2294](https://ixsystems.atlassian.net/browse/TC-2294) Unlimited License
-[TC-2293](https://ixsystems.atlassian.net/browse/TC-2293) Proxy NAS interface via ssl redirects to TC
-[TC-2289](https://ixsystems.atlassian.net/browse/TC-2289) LDAP Failing to Connect
-[TC-2288](https://ixsystems.atlassian.net/browse/TC-2288) TrueCommand Drive Count Issue
-[TC-2287](https://ixsystems.atlassian.net/browse/TC-2287) Mismatched internal and NAS alert priority breaks user notices
-[TC-2286](https://ixsystems.atlassian.net/browse/TC-2286) Panic on LDAP user creation
-[TC-2275](https://ixsystems.atlassian.net/browse/TC-2275) Wireguard configuration not applied in TC container
-[TC-2273](https://ixsystems.atlassian.net/browse/TC-2273) Can't Access System Card \(And backed up config files\) when system is offline
-[TC-2268](https://ixsystems.atlassian.net/browse/TC-2268) Health Indicator on Cluster UI widget not responsive
-[TC-2257](https://ixsystems.atlassian.net/browse/TC-2257) Issue Loading Reporting and Cluster UI Pages
+* [TC-2325](https://ixsystems.atlassian.net/browse/TC-2325) Disabled importing licenses on Cloud
+* [TC-2297](https://ixsystems.atlassian.net/browse/TC-2297) Available servers do not appear in header
+* [TC-2294](https://ixsystems.atlassian.net/browse/TC-2294) Unlimited License
+* [TC-2293](https://ixsystems.atlassian.net/browse/TC-2293) Proxy NAS interface via ssl redirects to TC
+* [TC-2289](https://ixsystems.atlassian.net/browse/TC-2289) LDAP Failing to Connect
+* [TC-2288](https://ixsystems.atlassian.net/browse/TC-2288) TrueCommand Drive Count Issue
+* [TC-2287](https://ixsystems.atlassian.net/browse/TC-2287) Mismatched internal and NAS alert priority breaks user notices
+* [TC-2286](https://ixsystems.atlassian.net/browse/TC-2286) Panic on LDAP user creation
+* [TC-2275](https://ixsystems.atlassian.net/browse/TC-2275) Wireguard configuration not applied in TC container
+* [TC-2273](https://ixsystems.atlassian.net/browse/TC-2273) Can't Access System Card \(And backed up config files\) when system is offline
+* [TC-2268](https://ixsystems.atlassian.net/browse/TC-2268) Health Indicator on Cluster UI widget not responsive
+* [TC-2257](https://ixsystems.atlassian.net/browse/TC-2257) Issue Loading Reporting and Cluster UI Pages
 
 ## 2.2.1
 
@@ -73,7 +76,8 @@ This is a minor release designed to address some additional cluster issues found
 * [TC-2247](https://ixsystems.atlassian.net/browse/TC-2247) Generated hostname is longer than 15 charcters preventing clustering setup
 * [TC-2245](https://ixsystems.atlassian.net/browse/TC-2245) RRDcached sockets timeout on read, fork, and fail to reconnect
 * [TC-2207](https://ixsystems.atlassian.net/browse/TC-2207) 2FA window pops back up after successful login with Auth code
-{{< /exapnd >}}
+
+{{< /expand >}}
 
 ## 2.2
 
@@ -242,6 +246,7 @@ See [Back up the Container Volume]({{< relref "UpdateDocker.md" >}}) for specifi
 * [TC-1906](https://ixsystems.atlassian.net/browse/TC-1906) - Reset PW from Login Emailed Credentials not Recognized
 * [TC-1881](https://ixsystems.atlassian.net/browse/TC-1881) - Alerts count on the System Dashcard are going up and they are now too big for the alert bubble
 * [TC-1846](https://ixsystems.atlassian.net/browse/TC-1846) - Better handling of dropped connection to middleware
+
 {{< /expand >}}
 
 ## 2.1.1
