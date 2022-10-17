@@ -31,7 +31,7 @@ If you have not created a cluster, there is a single option on this screen:
 
 | Setting | Description |
 |---------|-------------|
-| CREATE CLUSTER | Button. Opens the form to create a new cluster. |
+| **CREATE CLUSTER** | Button. Opens the form to create a new cluster. |
 
 {{< /expand >}}
 
@@ -49,8 +49,8 @@ The initial form has two fields:
 
 | Setting | Description |
 |---------|-------------|
-| Name | String. Identifies the cluster. |
-| Systems | Dropdown list. Shows all connected TrueNAS SCALE systems available for this cluster. Clusters can consist of between 3 and 20 individual SCALE systems. |
+| **Name** | String. Identifies the cluster. |
+| **Systems** | Dropdown list. Shows all connected TrueNAS SCALE systems available for this cluster. Clusters can consist of between 3 and 20 individual SCALE systems. |
 | Next | Button. Advances the form to the next screen. |
 
 {{< /expand >}}
@@ -63,8 +63,8 @@ Making selections in the **Systems** field adds more options.
 
 | Setting | Description |
 |---------|-------------|
-| Delete | Clicking the  <i class="material-icons" aria-hidden="true" title="Delete">delete</i> **Delete** icon removes the system from the cluster. |
-| Network Address | Dropdown list. Shows available IP addresses to use for cluster traffic. Using private dedicated network addresses is recommended. |
+| **Delete** | Clicking the  <i class="material-icons" aria-hidden="true" title="Delete">delete</i> **Delete** icon removes the system from the cluster. |
+| **Network Address** | Dropdown list. Shows available IP addresses to use for cluster traffic. Using private dedicated network addresses is recommended. |
 
 {{< /expand >}}
 
@@ -78,7 +78,7 @@ There is a single option on this page.
 
 | Setting | Description |
 |---------|-------------|
-| CREATE | Button. Begins the creation process for a cluster. This restricts the SMB functionality on the SCALE systems. |
+| **CREATE** | Button. Begins the creation process for a cluster. This restricts the SMB functionality on the SCALE systems. |
 
 {{< /expand >}}
 
@@ -97,11 +97,11 @@ The SMB Network page has options and fields added for each SCALE system in the c
 
 | Setting | Description |
 |---------|-------------|
-| NEXT | Button. Continues to the next page. |
-| Skip this step | Checkbox. Finalize the cluster configuration without registering a network to use for SMB sharing. Selecting this permanently removes the ability to share data stored in this cluster. |
-| Interface | Dropdown list. SCALE system network interface to use for SMB traffic. For best functionality, choose an interface that can communicate between the individual SCALE systems, TrueCommand environment, Active Directory, and client systems that need to access data shared from this cluster. |
-| Address | Dropdown list. IP address used for clients to access the SCALE system. |
-| Netmask | Dropdown list. Netmask for the IP address. |
+| **NEXT** | Button. Continues to the next page. |
+| **Skip this step** | Checkbox. Finalize the cluster configuration without registering a network to use for SMB sharing. Selecting this permanently removes the ability to share data stored in this cluster. |
+| **Interface** | Dropdown list. SCALE system network interface to use for SMB traffic. For best functionality, choose an interface that can communicate between the individual SCALE systems, TrueCommand environment, Active Directory, and client systems that need to access data shared from this cluster. |
+| **Address** | Dropdown list. IP address used for clients to access the SCALE system. |
+| **Netmask** | Dropdown list. Netmask for the IP address. |
 
 {{< /expand >}}
 
@@ -115,10 +115,10 @@ The options on this page let you establish a connection between an Active Direct
 
 | Setting | Description |
 |---------|-------------|
-| NEXT | Button. Continues to the next page. |
-| Domain Name | String. Microsoft Active Directory (AD) environment host name. Establishes a connection between the entered host and TrueCommand. |
-| Username | String. Account credential used to establish the AD connection. Requires an account with administrative access. |
-| Password | String. Account credential used to establish the AD connection. Requires an account with administrative access. |
+| **NEXT** | Button. Continues to the next page. |
+| **Domain Name** | String. Microsoft Active Directory (AD) environment host name. Establishes a connection between the entered host and TrueCommand. |
+| **Username** | String. Account credential used to establish the AD connection. Requires an account with administrative access. |
+| **Password** | String. Account credential used to establish the AD connection. Requires an account with administrative access. |
 
 {{< /expand >}}
 
@@ -132,7 +132,7 @@ All chosen settings display here for you to confirm before being applied to the 
 
 | Setting | Description |
 |---------|-------------|
-| CONFIRM | Button. Saves the configuration settings and permanently applies them to the cluster. |
+| **CONFIRM** | Button. Saves the configuration settings and permanently applies them to the cluster. |
 
 {{< /expand >}}
 
@@ -150,9 +150,9 @@ Click the **^** or **v** icons to minimize or expand (respectively) the list of 
 
 | Setting | Description |
 |---------|-------------|
-| CREATE VOLUME | Button. Opens the form to create new clustered storage. |
-| Rename | Button. Shows a form to enter a new **Cluster Name**. |
-| Delete | Button. Disconnects each SCALE system from the cluster and removes the card from TrueCommand. Shows a confirmation popup when clicked. |
+| **CREATE VOLUME** | Button. Opens the form to create new clustered storage. |
+| **Rename** | Button. Shows a form to enter a new **Cluster Name**. |
+| **Delete** | Button. Disconnects each SCALE system from the cluster and removes the card from TrueCommand. Shows a confirmation popup when clicked. |
 
 {{< /expand >}}
 
@@ -169,12 +169,12 @@ The options split into two pages: **Details** and **Confirmation**.
 
 | Setting | Description |
 |---------|-------------|
-| NEXT | Button. Continues to the next page. |
-| Name | String. Identifying label for this cluster volume. |
-| Type | Dropdown list. Layout and behavior for the volume. |
-| Cluster | String (disabled). Shows the cluster that controls the new volume. |
-| Brick Size | Integer and dropdown list. Storage capacity. Accepts numeric values and selecting units of size. |
-| Pools | Dropdown list. Storage pool on the individual SCALE system that provides capacity for the cluster volume. |
+| **NEXT** | Button. Continues to the next page. |
+| **Name** | String. Identifying label for this cluster volume. |
+| **Type** | Dropdown list. Layout and behavior for the volume. |
+| **Cluster** | String (disabled). Shows the cluster that controls the new volume. |
+| **Brick Size** | Integer and dropdown list. Storage capacity. Accepts numeric values and selecting units of size. |
+| **Pools** | Dropdown list. Storage pool on the individual SCALE system that provides capacity for the cluster volume. |
 
 The **Type** field has four options:
 
@@ -192,8 +192,8 @@ The **Confirmation** page shows details for the chosen volume **Type** and stora
 
 | Setting | Description |
 |---------|-------------|
-| BACK | Button. Goes to the previous configuration page. |
-| CREATE | Button. Saves the configuration and builds the clustered volume on each system in the cluster. |
+| **BACK** | Button. Goes to the previous configuration page. |
+| **CREATE** | Button. Saves the configuration and builds the clustered volume on each system in the cluster. |
 
 {{< /expand >}}
 
@@ -212,8 +212,8 @@ Click the volume name to expand the details and see more management options.
 
 | Setting | Description |
 |---------|-------------|
-| DELETE | Button. Removes the volume from the cluster. This destroys any stored data. |
-| CREATE SHARE | Button. Opens the form to configure a new SMB share. This allows remote access to this cluster volume. |
+| **DELETE** | Button. Removes the volume from the cluster. This destroys any stored data. |
+| **CREATE SHARE** | Button. Opens the form to configure a new SMB share. This allows remote access to this cluster volume. |
 
 {{< /expand >}}
 
@@ -227,12 +227,12 @@ Adding a cluster share shows a few options.
 
 | Setting | Description |
 |---------|-------------|
-| Cluster | String (disabled). Shows the name of the cluster related to this share. |
-| Cluster Volume | String (disabled). Shows the name of the cluster volume to share. |
-| Name | String. Label for this new cluster share. |
-| ACL | Dropdown list. Access Control List. Sets permissions for the share. |
-| Readonly | Checkbox. Disables or allows file management options for connected users. Set to disable. |
-| CONFIRM | Button. Saves the settings, creates the share, and makes the cluster volume accessible to Active Directory user accounts. |
+| **Cluster** | String (disabled). Shows the name of the cluster related to this share. |
+| **Cluster Volume** | String (disabled). Shows the name of the cluster volume to share. |
+| **Name** | String. Label for this new cluster share. |
+| **ACL** | Dropdown list. Access Control List. Sets permissions for the share. |
+| **Readonly** | Checkbox. Disables or allows file management options for connected users. Set to disable. |
+| **CONFIRM** | Button. Saves the settings, creates the share, and makes the cluster volume accessible to Active Directory user accounts. |
 
 **ACL Options**
 
@@ -251,8 +251,8 @@ Click the cluster volume name to open the **Cluster Volume Details** and see any
 
 | Setting | Description |
 |---------|-------------|
-| DELETE | Button. Remove the share from the Cluster Volume. No data is destroyed in this operation. |
-| CREATE SHARE | Button. Opens the form to configure a new SMB share. This allows remote access to this cluster volume. |
+| **DELETE** | Button. Remove the share from the Cluster Volume. No data is destroyed in this operation. |
+| **CREATE SHARE** | Button. Opens the form to configure a new SMB share. This allows remote access to this cluster volume. |
 
 {{< /expand >}}
 
