@@ -51,7 +51,7 @@ The initial form has two fields:
 |---------|-------------|
 | **Name** | String. Identifies the cluster. |
 | **Systems** | Dropdown list. Shows all connected TrueNAS SCALE systems available for this cluster. Clusters can consist of between 3 and 20 individual SCALE systems. |
-| Next | Button. Advances the form to the next screen. |
+| **Next** | Button. Advances the form to the next screen. |
 
 {{< /expand >}}
 
