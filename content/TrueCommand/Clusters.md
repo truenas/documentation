@@ -231,7 +231,7 @@ Adding a cluster share shows a few options.
 | **Cluster Volume** | String (disabled). Shows the name of the cluster volume to share. |
 | **Name** | String. Label for this new cluster share. |
 | **ACL** | Dropdown list. Access Control List. Sets permissions for the share. |
-| **Readonly** | Checkbox. Disables or allows file management options for connected users. Set to disable. |
+| **Readonly** | Checkbox. Disables or allows file management options for connected users. Select to disable. |
 | **CONFIRM** | Button. Saves the settings, creates the share, and makes the cluster volume accessible to Active Directory user accounts. |
 
 **ACL Options**
