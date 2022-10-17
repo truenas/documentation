@@ -95,7 +95,6 @@ TrueNAS SCALE 22.12-BETA.2 has been released and includes many new features and 
 [NAS-117474](https://ixsystems.atlassian.net/browse/NAS-117474) Replace sticky search with sticky table headers in Datasets
 [NAS-117427](https://ixsystems.atlassian.net/browse/NAS-117427) Fix out of bounds text for the new disks and datasets page
 [NAS-116194](https://ixsystems.atlassian.net/browse/NAS-116194) Review and break down the tasks required to restructure and refactor the storage page
-[NAS-112218](https://ixsystems.atlassian.net/browse/NAS-112218) Add official application for filecoin
 [NAS-110516](https://ixsystems.atlassian.net/browse/NAS-110516) Storage → \(cog\) → Snapshots: New column "retention"
 
 ### Improvement
@@ -135,7 +134,6 @@ TrueNAS SCALE 22.12-BETA.2 has been released and includes many new features and 
 [NAS-117942](https://ixsystems.atlassian.net/browse/NAS-117942) Code cleanup in new Storage module
 [NAS-117937](https://ixsystems.atlassian.net/browse/NAS-117937) Refactor AlertConfigComponent to ix-forms
 [NAS-117932](https://ixsystems.atlassian.net/browse/NAS-117932) Enable more linter rules
-[NAS-117924](https://ixsystems.atlassian.net/browse/NAS-117924) Minor updates to dataset pages
 [NAS-117905](https://ixsystems.atlassian.net/browse/NAS-117905) A way to indicate which "unused" disks are part of importable pools
 [NAS-117892](https://ixsystems.atlassian.net/browse/NAS-117892) Bump up starting range for UIDS / GIDS on SCALE and Core
 [NAS-117887](https://ixsystems.atlassian.net/browse/NAS-117887) hactl needs to be improved on SCALE
@@ -152,10 +150,8 @@ TrueNAS SCALE 22.12-BETA.2 has been released and includes many new features and 
 [NAS-117766](https://ixsystems.atlassian.net/browse/NAS-117766) Extract ix-label from ix-form components
 [NAS-117759](https://ixsystems.atlassian.net/browse/NAS-117759) Investigate setting permissions on /data to 0o700
 [NAS-117699](https://ixsystems.atlassian.net/browse/NAS-117699) add tests for copy\_file\_range \(server-side copy\) for NFSv4.2
-[NAS-117682](https://ixsystems.atlassian.net/browse/NAS-117682) add Storj API integration tests
 [NAS-117618](https://ixsystems.atlassian.net/browse/NAS-117618) Review pickle module usage in middlewared
 [NAS-117614](https://ixsystems.atlassian.net/browse/NAS-117614) middleware files in /var/run should be in dedicated run directory
-[NAS-117541](https://ixsystems.atlassian.net/browse/NAS-117541) Better loading for the Pools Dashboard cards
 [NAS-117445](https://ixsystems.atlassian.net/browse/NAS-117445) Charts MinIO pod does not follow standard min.io folder structure
 [NAS-117372](https://ixsystems.atlassian.net/browse/NAS-117372) Add client side validation for app names
 [NAS-117298](https://ixsystems.atlassian.net/browse/NAS-117298) Expose timemachine\_quota key if users enable time machine on share
@@ -165,8 +161,6 @@ TrueNAS SCALE 22.12-BETA.2 has been released and includes many new features and 
 [NAS-115636](https://ixsystems.atlassian.net/browse/NAS-115636) Expose Cluster Volume Locations
 [NAS-114416](https://ixsystems.atlassian.net/browse/NAS-114416) Document how to start middleware in debug mode
 [NAS-114415](https://ixsystems.atlassian.net/browse/NAS-114415) Document how to build custom SCALE ISO
-[NAS-113426](https://ixsystems.atlassian.net/browse/NAS-113426) remove ha\_propagate from service framework
-[NAS-112507](https://ixsystems.atlassian.net/browse/NAS-112507) Make it clear that snapshots reference space throughout UI
 [NAS-112452](https://ixsystems.atlassian.net/browse/NAS-112452) Hold option for snapshots
 [NAS-111781](https://ixsystems.atlassian.net/browse/NAS-111781) VMware snapshot improvements
 [NAS-111464](https://ixsystems.atlassian.net/browse/NAS-111464) Add who field to filesystem.get\_default\_acl
@@ -234,7 +228,6 @@ TrueNAS SCALE 22.12-BETA.2 has been released and includes many new features and 
 [NAS-118304](https://ixsystems.atlassian.net/browse/NAS-118304) Avoid blocking calls in smb plugin
 [NAS-118302](https://ixsystems.atlassian.net/browse/NAS-118302) netbios\_name\_check\_sid integration test failing on SCALE HA
 [NAS-118297](https://ixsystems.atlassian.net/browse/NAS-118297) Fix keyerror during idmap\_create
-[NAS-118296](https://ixsystems.atlassian.net/browse/NAS-118296) revert 058034a092b8d1d5df55a49c2f0e65dba763e218
 [NAS-118295](https://ixsystems.atlassian.net/browse/NAS-118295) dont run boot\_attach tests on HA VMs
 [NAS-118294](https://ixsystems.atlassian.net/browse/NAS-118294) move test\_008\_hactl to test\_14\_failover\_related
 [NAS-118291](https://ixsystems.atlassian.net/browse/NAS-118291) Data Protection - Replication Tasks - Snapshot Retention
@@ -320,7 +313,6 @@ TrueNAS SCALE 22.12-BETA.2 has been released and includes many new features and 
 [NAS-117987](https://ixsystems.atlassian.net/browse/NAS-117987) certificate verify failed: self signed certificate in certificate chain
 [NAS-117986](https://ixsystems.atlassian.net/browse/NAS-117986) Number in CPU widget looks weird on Safari
 [NAS-117983](https://ixsystems.atlassian.net/browse/NAS-117983) Clickable logo on mobile screens
-[NAS-117981](https://ixsystems.atlassian.net/browse/NAS-117981) Portainer PVC still exists after deletion
 [NAS-117973](https://ixsystems.atlassian.net/browse/NAS-117973) Simplify ixDetailsHeight
 [NAS-117972](https://ixsystems.atlassian.net/browse/NAS-117972) No error message when trying to delete snapshot with hold
 [NAS-117962](https://ixsystems.atlassian.net/browse/NAS-117962) Remove freebsd services
@@ -336,7 +328,6 @@ TrueNAS SCALE 22.12-BETA.2 has been released and includes many new features and 
 [NAS-117926](https://ixsystems.atlassian.net/browse/NAS-117926) fix test\_mountinfo unit test
 [NAS-117925](https://ixsystems.atlassian.net/browse/NAS-117925) Make container.prune a job
 [NAS-117921](https://ixsystems.atlassian.net/browse/NAS-117921) add `reinstall_container` make argument
-[NAS-117920](https://ixsystems.atlassian.net/browse/NAS-117920) Rsync conflicts with Hostpath in Apps
 [NAS-117917](https://ixsystems.atlassian.net/browse/NAS-117917) hitting ctrl \+C via OOB managemnt on truenas console menu locks up console
 [NAS-117916](https://ixsystems.atlassian.net/browse/NAS-117916) NFS does not start on boot
 [NAS-117911](https://ixsystems.atlassian.net/browse/NAS-117911) Samba Share ACL resets to Everyone when disabled and re-enabled
@@ -364,34 +355,23 @@ TrueNAS SCALE 22.12-BETA.2 has been released and includes many new features and 
 [NAS-117710](https://ixsystems.atlassian.net/browse/NAS-117710) ZFS space efficiency on devices with huge physical blocks
 [NAS-117708](https://ixsystems.atlassian.net/browse/NAS-117708) Wireguard setup stuck in loop if wireguard connection is not established with cloud
 [NAS-117688](https://ixsystems.atlassian.net/browse/NAS-117688) Cannot Edit VMs
-[NAS-117686](https://ixsystems.atlassian.net/browse/NAS-117686) VM Wizard Doesn't see Zvols
 [NAS-117674](https://ixsystems.atlassian.net/browse/NAS-117674) Pool import fails randomly
-[NAS-117670](https://ixsystems.atlassian.net/browse/NAS-117670) Alerted of this: Core Files
-[NAS-117667](https://ixsystems.atlassian.net/browse/NAS-117667) Alert from TrueNAS SCALE
 [NAS-117658](https://ixsystems.atlassian.net/browse/NAS-117658) TrueNAS-SCALE-22.02.4-MASTER-20220805-041141 can't start VMs after importing old config or upgrading from 22.02.3 or earlier
 [NAS-117653](https://ixsystems.atlassian.net/browse/NAS-117653) GUI allows creation of SMB shares for nonexistent paths
 [NAS-117631](https://ixsystems.atlassian.net/browse/NAS-117631) Retrieve and display metadata for a single snapshot
 [NAS-117599](https://ixsystems.atlassian.net/browse/NAS-117599) Installing netdata gets stuck at 75%
-[NAS-117567](https://ixsystems.atlassian.net/browse/NAS-117567) SCALE: Snapshot Columns are not Sortable
-[NAS-117538](https://ixsystems.atlassian.net/browse/NAS-117538) My applications wont deploy and I get an error.
 [NAS-117508](https://ixsystems.atlassian.net/browse/NAS-117508) SCALE ACL inheritance not working when migrated from POSIX to NFSv4
-[NAS-117507](https://ixsystems.atlassian.net/browse/NAS-117507) Anytime I add an apps pod it gets stuck at "Container creating" in the k3s kubectl get pods -A
 [NAS-117464](https://ixsystems.atlassian.net/browse/NAS-117464) Network widget does not show active interface
 [NAS-117409](https://ixsystems.atlassian.net/browse/NAS-117409) Unable to isolate GPU or see in apps in SCALE.
-[NAS-117387](https://ixsystems.atlassian.net/browse/NAS-117387) Fix `Maximum number of concurrent calls (20) has exceeded.` on Datasets page
 [NAS-117379](https://ixsystems.atlassian.net/browse/NAS-117379) WS-Discovery Name not using specified hostname
-[NAS-117342](https://ixsystems.atlassian.net/browse/NAS-117342) Updating to TrueNAS-SCALE-22.02.2.1 Breaks Kubernetes
 [NAS-117316](https://ixsystems.atlassian.net/browse/NAS-117316) \[SCALE\] Prevent user from deploying app with port conflicts
 [NAS-117230](https://ixsystems.atlassian.net/browse/NAS-117230) A pool scrub shows up twice in task manager
 [NAS-117104](https://ixsystems.atlassian.net/browse/NAS-117104) PiHole Docker Install
-[NAS-117087](https://ixsystems.atlassian.net/browse/NAS-117087) Core files for the following executables were found: /usr/bin/udevadm
 [NAS-116678](https://ixsystems.atlassian.net/browse/NAS-116678) Refuse to download update if insufficient space avail
 [NAS-116539](https://ixsystems.atlassian.net/browse/NAS-116539) TrueNAS CLI does not provide a pager mechanism
 [NAS-116537](https://ixsystems.atlassian.net/browse/NAS-116537) Replace disk dialog does not include any identifying information about the disk
 [NAS-116495](https://ixsystems.atlassian.net/browse/NAS-116495) Run blocking calls in threads in sysdataset plugin
-[NAS-116460](https://ixsystems.atlassian.net/browse/NAS-116460) Proper handling of datasets encrypted with hex keyformat \+ prompt
 [NAS-116318](https://ixsystems.atlassian.net/browse/NAS-116318) SQL unique constraint error when incorrectly editing an idmap
-[NAS-115923](https://ixsystems.atlassian.net/browse/NAS-115923) zfs is hung, pegging the CPU to 100% and will not obey kill -9
 [NAS-115737](https://ixsystems.atlassian.net/browse/NAS-115737) Space in Pool Name / Path to Zlog kills iSCSI
 [NAS-115648](https://ixsystems.atlassian.net/browse/NAS-115648) Low Encryption Performance on Atom Processors
 [NAS-115586](https://ixsystems.atlassian.net/browse/NAS-115586) Enable `pool.replace_disk` tests
@@ -404,9 +384,9 @@ TrueNAS SCALE 22.12-BETA.2 has been released and includes many new features and 
 [NAS-111962](https://ixsystems.atlassian.net/browse/NAS-111962) "Not an interger" error in Transfers field in Sync Cloud task
 [NAS-110795](https://ixsystems.atlassian.net/browse/NAS-110795) Can't create unencrypted dataset on Encrypted pool
 
-
 ## 22.12-BETA.1 
-{{< expand "" "v">}}
+
+{{< expand "22.12-BETA.1" "v">}}
 **September 13, 2022**
 
 TrueNAS SCALE 22.12-BETA.1 has been released and includes many new features and improved functionality. SCALE 22.12-Beta.1 features:
@@ -795,9 +775,9 @@ Additional feature in future Bluefin releases:
 
 | Seen In | Key | Summary | Workaround | Resolved In |
 |---------|-----|---------|------------|-------------|
-| 22.12-BETA.2 | <a href="https://ixsystems.atlassian.net/browse/NAS-118616" target="_blank">NAS-118616</a> | SMB Share option **Edit Filesystem ACL** does not open the filesystem editor screen. | After adding an SMB share, if you select the option to **Edit Filesystem ACL**, the main Dashboard opens instead of the filesystem ACL editor screen. | Unknown |
-| 22.12-BETA.2 | <a href="https://ixsystems.atlassian.net/browse/NAS-118615" target="_blank">NAS-118615</a> | Network interface create CLI command fails to return the IP addresses in the output of the ip addr command | When setting up a LAGG and VLAN interface using the TrueNAS CLI and after verifing interfaces are shown on the **Network** screen, when returning to **Shell** and entering the `ip addr` command, the output does not include the IP addresses. | Unknown |
+| 22.12-BETA.2 | <a href="https://ixsystems.atlassian.net/browse/NAS-118616" target="_blank">NAS-118616</a> | SMB Share option **Edit Filesystem ACL** does not open the filesystem editor screen. | After adding an SMB share, if you select the option to **Edit Filesystem ACL**, the main Dashboard opens instead of the filesystem ACL editor screen. To workaround this issue, go to the **Storage > Dashboard** screen, select the dataset for the SMB share, scroll down to the **Permissions** widget and click **Edit**. | Unknown |
 | 22.12-BETA.2 | <a href="https://ixsystems.atlassian.net/browse/NAS-118614" target="_blank">NAS-118614</a>| Cloud tasks for Move and Sync transfer modes revert to Copy | When creating a cloud sync task where the Transfer Mode is set to either Move or Sync, when the task completes successfully and runs for the first time, the notification to the user states the transfer mode was reset to Copy. | 22.12-RC.1 |
+| 22.12-BETA.2 | <a href="https://ixsystems.atlassian.net/browse/NAS-118613" target="_blank">NAS-118613</a> | Cannot mount WebDAV share in Windows when WebDAV service is set to Basic Authentication | If the TrueNAS WebDAV service is set to **Basic Authentication**, you cannot mount the share in Windows. | Unknown |
 | 22.12-BETA.2 | n/a | TrueNAS Bluefin no longer supports MS-DOS based SMB clients. | As of SCALE 22.12, Bluefin, TrueNAS now uses Samba 4.17. Samba 4.16 announced in their release notes that they deprecated and disabled the whole SMB1 protocol as of 4.11. If needed for security purposes or code maintenance they contune to remove older protocol commands and unused dialects or that are replaced in more modern SMB1 version. Refer to [Samba](https://www.samba.org/samba/latest_news.html) release notes for more information. | n/a |
 | 22.12-BETA.1  | n/a | Upgrading from 22.02.4 to 22.12-BETA.1 is known to not work. | Workaround is to either upgrade from a version before 22.02.4 or to upgrade to 22.12-BETA.2 when it is [released](#scale-schedule). | Targeted 22.12-BETA.2 |
 | 22.12-BETA.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-117940" target="_blank">NAS-117940</a> | Implements temporary fix for the return from `glfs_open()` to honor `O_DIRECTORY` flag | Pertains to an internal issue in Samba. This temporary fix reverts after gluserfs is fixed with a permanent solution to this issue. | Targeted 22.12 |
