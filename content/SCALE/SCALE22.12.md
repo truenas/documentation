@@ -30,14 +30,6 @@ Want to get involved by collaborating on TrueNAS SCALE? Join our [Official Disco
 
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
-| SCALE 22.12.BETA.1 | Code-freeze | 24 August 2022 |
-| SCALE 22.12.BETA.1 | Internal Testing Sprints | 29 August 2022 - 09 September 2022 |
-| SCALE 22.12.BETA.1 | Tag | 12 September 2022 |
-| SCALE 22.12.BETA.1 | Release | 13 September 2022 |
-| SCALE 22.12.BETA.2 | Code-freeze | 28 September 2022 |
-| SCALE 22.12.BETA.2 | Internal Testing Sprints | 03 October 2022 - 14 October 2022 |
-| SCALE 22.12.BETA.2 | Tag | 17 October 2022 |
-| SCALE 22.12.BETA.2 | Release | 18 October 2022 |
 | SCALE 22.12.RC.1 | Code-freeze | 26 October 2022 |
 | SCALE 22.12.RC.1 | Internal Testing Sprints | 31 October 2022 - 11 November 2022 |
 | SCALE 22.12.RC.1 | Tag | 14 November 2022 |
@@ -75,315 +67,315 @@ TrueNAS SCALE 22.12-BETA.2 has been released and includes many new features and 
 
 ### New Feature
 
-[NAS-118403](https://ixsystems.atlassian.net/browse/NAS-118403) Branchout for BETA2
-[NAS-118325](https://ixsystems.atlassian.net/browse/NAS-118325) Add USB passthrough support in the UI
-[NAS-118303](https://ixsystems.atlassian.net/browse/NAS-118303) Need to add new reasons to FailoverDisabledReason enum in webUI
-[NAS-118270](https://ixsystems.atlassian.net/browse/NAS-118270) Remove old storage pages
-[NAS-118209](https://ixsystems.atlassian.net/browse/NAS-118209) Hold option for snapshots
-[NAS-118147](https://ixsystems.atlassian.net/browse/NAS-118147) Refactor html components, improve readability and restructure Input, Output priorities
-[NAS-118068](https://ixsystems.atlassian.net/browse/NAS-118068) Add R50BM to enclosure mapping code and to keyserver
-[NAS-118050](https://ixsystems.atlassian.net/browse/NAS-118050) Research usage stats for Apps Redesign
-[NAS-118037](https://ixsystems.atlassian.net/browse/NAS-118037) Fix out of bounds text for the Apps page
-[NAS-118036](https://ixsystems.atlassian.net/browse/NAS-118036) Add Ukrainian 🇺🇦 Translations to the APP | 22.12
-[NAS-117938](https://ixsystems.atlassian.net/browse/NAS-117938) Rename storage modules
-[NAS-117867](https://ixsystems.atlassian.net/browse/NAS-117867) Roles card sometimes doesn't match roles cell
-[NAS-117827](https://ixsystems.atlassian.net/browse/NAS-117827) New cloud sync provider: "Storj iX" \(13 and Angelfish\)
-[NAS-117813](https://ixsystems.atlassian.net/browse/NAS-117813) Improve indication for which apps use dataset
-[NAS-117812](https://ixsystems.atlassian.net/browse/NAS-117812) Minor updates to storage pages
-[NAS-117754](https://ixsystems.atlassian.net/browse/NAS-117754) Fix font rendering
-[NAS-117491](https://ixsystems.atlassian.net/browse/NAS-117491) Improve error handling in new storage pages
-[NAS-117474](https://ixsystems.atlassian.net/browse/NAS-117474) Replace sticky search with sticky table headers in Datasets
-[NAS-117427](https://ixsystems.atlassian.net/browse/NAS-117427) Fix out of bounds text for the new disks and datasets page
-[NAS-116194](https://ixsystems.atlassian.net/browse/NAS-116194) Review and break down the tasks required to restructure and refactor the storage page
-[NAS-110516](https://ixsystems.atlassian.net/browse/NAS-110516) Storage → \(cog\) → Snapshots: New column "retention"
+* [NAS-118403](https://ixsystems.atlassian.net/browse/NAS-118403) Branchout for BETA2
+* [NAS-118325](https://ixsystems.atlassian.net/browse/NAS-118325) Add USB passthrough support in the UI
+* [NAS-118303](https://ixsystems.atlassian.net/browse/NAS-118303) Need to add new reasons to FailoverDisabledReason enum in webUI
+* [NAS-118270](https://ixsystems.atlassian.net/browse/NAS-118270) Remove old storage pages
+* [NAS-118209](https://ixsystems.atlassian.net/browse/NAS-118209) Hold option for snapshots
+* [NAS-118147](https://ixsystems.atlassian.net/browse/NAS-118147) Refactor html components, improve readability and restructure Input, Output priorities
+* [NAS-118068](https://ixsystems.atlassian.net/browse/NAS-118068) Add R50BM to enclosure mapping code and to keyserver
+* [NAS-118050](https://ixsystems.atlassian.net/browse/NAS-118050) Research usage stats for Apps Redesign
+* [NAS-118037](https://ixsystems.atlassian.net/browse/NAS-118037) Fix out of bounds text for the Apps page
+* [NAS-118036](https://ixsystems.atlassian.net/browse/NAS-118036) Add Ukrainian 🇺🇦 Translations to the APP | 22.12
+* [NAS-117938](https://ixsystems.atlassian.net/browse/NAS-117938) Rename storage modules
+* [NAS-117867](https://ixsystems.atlassian.net/browse/NAS-117867) Roles card sometimes doesn't match roles cell
+* [NAS-117827](https://ixsystems.atlassian.net/browse/NAS-117827) New cloud sync provider: "Storj iX" \(13 and Angelfish\)
+* [NAS-117813](https://ixsystems.atlassian.net/browse/NAS-117813) Improve indication for which apps use dataset
+* [NAS-117812](https://ixsystems.atlassian.net/browse/NAS-117812) Minor updates to storage pages
+* [NAS-117754](https://ixsystems.atlassian.net/browse/NAS-117754) Fix font rendering
+* [NAS-117491](https://ixsystems.atlassian.net/browse/NAS-117491) Improve error handling in new storage pages
+* [NAS-117474](https://ixsystems.atlassian.net/browse/NAS-117474) Replace sticky search with sticky table headers in Datasets
+* [NAS-117427](https://ixsystems.atlassian.net/browse/NAS-117427) Fix out of bounds text for the new disks and datasets page
+* [NAS-116194](https://ixsystems.atlassian.net/browse/NAS-116194) Review and break down the tasks required to restructure and refactor the storage page
+* [NAS-110516](https://ixsystems.atlassian.net/browse/NAS-110516) Storage → \(cog\) → Snapshots: New column "retention"
 
 ### Improvement
 
-[NAS-118526](https://ixsystems.atlassian.net/browse/NAS-118526) Partially enable no-restricted-syntax
-[NAS-118514](https://ixsystems.atlassian.net/browse/NAS-118514) Remove DocReplaceService
-[NAS-118499](https://ixsystems.atlassian.net/browse/NAS-118499) Extract some VM dialogs into separate components
-[NAS-118480](https://ixsystems.atlassian.net/browse/NAS-118480) Do not spam daemon logs with kube-router logs
-[NAS-118466](https://ixsystems.atlassian.net/browse/NAS-118466) Create RootPath enum with MNT variable to avoid strings '/mnt' in code
-[NAS-118432](https://ixsystems.atlassian.net/browse/NAS-118432) Acpidump on scale
-[NAS-118420](https://ixsystems.atlassian.net/browse/NAS-118420) Extract user/group deletion dialog forms
-[NAS-118412](https://ixsystems.atlassian.net/browse/NAS-118412) Pool process modal width depends on content \[width jumping\]
-[NAS-118411](https://ixsystems.atlassian.net/browse/NAS-118411) Fix swatch colour in space-management-chart
-[NAS-118387](https://ixsystems.atlassian.net/browse/NAS-118387) USB passthrough should allow USB VID/PID and dynamic location
-[NAS-118364](https://ixsystems.atlassian.net/browse/NAS-118364) `make reinstall` of middleware should apply systemd unit changes
-[NAS-118334](https://ixsystems.atlassian.net/browse/NAS-118334) ScreenType across APP => make sure we use `enum` and use in .html instead of just string
-[NAS-118333](https://ixsystems.atlassian.net/browse/NAS-118333) App Icons improvements & text colors near icons
-[NAS-118273](https://ixsystems.atlassian.net/browse/NAS-118273) Refactor some dialog components into separate components
-[NAS-118269](https://ixsystems.atlassian.net/browse/NAS-118269) Improve UI layout on forms, chips
-[NAS-118262](https://ixsystems.atlassian.net/browse/NAS-118262) Improvements for Boot Pool Status page
-[NAS-118216](https://ixsystems.atlassian.net/browse/NAS-118216) Record midclt enclosure.query in debug \(Core/Enterprise/Scale\)
-[NAS-118198](https://ixsystems.atlassian.net/browse/NAS-118198) Tuning to improve Storj / rclone performance
-[NAS-118185](https://ixsystems.atlassian.net/browse/NAS-118185) Reduce number of any's
-[NAS-118151](https://ixsystems.atlassian.net/browse/NAS-118151) Hide Aliases section if DHCP/Autoconfiguration radio box\(es\) is/are checked
-[NAS-118130](https://ixsystems.atlassian.net/browse/NAS-118130) Upgrade rxjs
-[NAS-118101](https://ixsystems.atlassian.net/browse/NAS-118101) Function clean up for Datasets module
-[NAS-118058](https://ixsystems.atlassian.net/browse/NAS-118058) Sync \[visual-ui\] data on the Pool and Storage widgets
-[NAS-118044](https://ixsystems.atlassian.net/browse/NAS-118044) Refactor console message footer
-[NAS-118041](https://ixsystems.atlassian.net/browse/NAS-118041) Do not backup catalogs dataset on kubernetes backup
-[NAS-118039](https://ixsystems.atlassian.net/browse/NAS-118039) Clean up topbar.component
-[NAS-118007](https://ixsystems.atlassian.net/browse/NAS-118007) Remove BaseService
-[NAS-118006](https://ixsystems.atlassian.net/browse/NAS-118006) Refactor ReportsDashboard module
-[NAS-118003](https://ixsystems.atlassian.net/browse/NAS-118003) Refactor Cloud Sync Form to ix-forms
-[NAS-117968](https://ixsystems.atlassian.net/browse/NAS-117968) Add tooltips to status icons on Pools Dashboard
-[NAS-117947](https://ixsystems.atlassian.net/browse/NAS-117947) Add `otp_token` field when creating an SSH connection in semi-automatic mode
-[NAS-117945](https://ixsystems.atlassian.net/browse/NAS-117945) Invert customValidator
-[NAS-117942](https://ixsystems.atlassian.net/browse/NAS-117942) Code cleanup in new Storage module
-[NAS-117937](https://ixsystems.atlassian.net/browse/NAS-117937) Refactor AlertConfigComponent to ix-forms
-[NAS-117932](https://ixsystems.atlassian.net/browse/NAS-117932) Enable more linter rules
-[NAS-117905](https://ixsystems.atlassian.net/browse/NAS-117905) A way to indicate which "unused" disks are part of importable pools
-[NAS-117892](https://ixsystems.atlassian.net/browse/NAS-117892) Bump up starting range for UIDS / GIDS on SCALE and Core
-[NAS-117887](https://ixsystems.atlassian.net/browse/NAS-117887) hactl needs to be improved on SCALE
-[NAS-117874](https://ixsystems.atlassian.net/browse/NAS-117874) Handle incorrectly formatted disks
-[NAS-117870](https://ixsystems.atlassian.net/browse/NAS-117870) Properly handle change of an icon name at `ix-icon`
-[NAS-117859](https://ixsystems.atlassian.net/browse/NAS-117859) Fix sidenav bar overlapping with truenas text at the bottom
-[NAS-117854](https://ixsystems.atlassian.net/browse/NAS-117854) UI should add validate host path attribute in apps settings
-[NAS-117848](https://ixsystems.atlassian.net/browse/NAS-117848) subprocessing 16 times in main event loop on middleware startup
-[NAS-117847](https://ixsystems.atlassian.net/browse/NAS-117847) add endpoint to retrieve VM log files
-[NAS-117846](https://ixsystems.atlassian.net/browse/NAS-117846) Find a better way of handling max concurrent calls errors on storage dashboard
-[NAS-117837](https://ixsystems.atlassian.net/browse/NAS-117837) disk.get\_unused should maybe include info from ID\_FS\_LABEL in output
-[NAS-117836](https://ixsystems.atlassian.net/browse/NAS-117836) Use new method for updating isolating gpu pci ids in UI
-[NAS-117796](https://ixsystems.atlassian.net/browse/NAS-117796) Don't allow unsetting host path validation for enterprise users
-[NAS-117766](https://ixsystems.atlassian.net/browse/NAS-117766) Extract ix-label from ix-form components
-[NAS-117759](https://ixsystems.atlassian.net/browse/NAS-117759) Investigate setting permissions on /data to 0o700
-[NAS-117699](https://ixsystems.atlassian.net/browse/NAS-117699) add tests for copy\_file\_range \(server-side copy\) for NFSv4.2
-[NAS-117618](https://ixsystems.atlassian.net/browse/NAS-117618) Review pickle module usage in middlewared
-[NAS-117614](https://ixsystems.atlassian.net/browse/NAS-117614) middleware files in /var/run should be in dedicated run directory
-[NAS-117445](https://ixsystems.atlassian.net/browse/NAS-117445) Charts MinIO pod does not follow standard min.io folder structure
-[NAS-117372](https://ixsystems.atlassian.net/browse/NAS-117372) Add client side validation for app names
-[NAS-117298](https://ixsystems.atlassian.net/browse/NAS-117298) Expose timemachine\_quota key if users enable time machine on share
-[NAS-117261](https://ixsystems.atlassian.net/browse/NAS-117261) Investigate on reducing usages of IxEntityTreeTable
-[NAS-117134](https://ixsystems.atlassian.net/browse/NAS-117134) Improvement for Bugclerk
-[NAS-115917](https://ixsystems.atlassian.net/browse/NAS-115917) use secrets module instead of random
-[NAS-115636](https://ixsystems.atlassian.net/browse/NAS-115636) Expose Cluster Volume Locations
-[NAS-114416](https://ixsystems.atlassian.net/browse/NAS-114416) Document how to start middleware in debug mode
-[NAS-114415](https://ixsystems.atlassian.net/browse/NAS-114415) Document how to build custom SCALE ISO
-[NAS-112452](https://ixsystems.atlassian.net/browse/NAS-112452) Hold option for snapshots
-[NAS-111781](https://ixsystems.atlassian.net/browse/NAS-111781) VMware snapshot improvements
-[NAS-111464](https://ixsystems.atlassian.net/browse/NAS-111464) Add who field to filesystem.get\_default\_acl
-[NAS-100748](https://ixsystems.atlassian.net/browse/NAS-100748) Remove Internet Explorer support
+* [NAS-118526](https://ixsystems.atlassian.net/browse/NAS-118526) Partially enable no-restricted-syntax
+* [NAS-118514](https://ixsystems.atlassian.net/browse/NAS-118514) Remove DocReplaceService
+* [NAS-118499](https://ixsystems.atlassian.net/browse/NAS-118499) Extract some VM dialogs into separate components
+* [NAS-118480](https://ixsystems.atlassian.net/browse/NAS-118480) Do not spam daemon logs with kube-router logs
+* [NAS-118466](https://ixsystems.atlassian.net/browse/NAS-118466) Create RootPath enum with MNT variable to avoid strings '/mnt' in code
+* [NAS-118432](https://ixsystems.atlassian.net/browse/NAS-118432) Acpidump on scale
+* [NAS-118420](https://ixsystems.atlassian.net/browse/NAS-118420) Extract user/group deletion dialog forms
+* [NAS-118412](https://ixsystems.atlassian.net/browse/NAS-118412) Pool process modal width depends on content \[width jumping\]
+* [NAS-118411](https://ixsystems.atlassian.net/browse/NAS-118411) Fix swatch colour in space-management-chart
+* [NAS-118387](https://ixsystems.atlassian.net/browse/NAS-118387) USB passthrough should allow USB VID/PID and dynamic location
+* [NAS-118364](https://ixsystems.atlassian.net/browse/NAS-118364) `make reinstall` of middleware should apply systemd unit changes
+* [NAS-118334](https://ixsystems.atlassian.net/browse/NAS-118334) ScreenType across APP => make sure we use `enum` and use in .html instead of just string
+* [NAS-118333](https://ixsystems.atlassian.net/browse/NAS-118333) App Icons improvements & text colors near icons
+* [NAS-118273](https://ixsystems.atlassian.net/browse/NAS-118273) Refactor some dialog components into separate components
+* [NAS-118269](https://ixsystems.atlassian.net/browse/NAS-118269) Improve UI layout on forms, chips
+* [NAS-118262](https://ixsystems.atlassian.net/browse/NAS-118262) Improvements for Boot Pool Status page
+* [NAS-118216](https://ixsystems.atlassian.net/browse/NAS-118216) Record midclt enclosure.query in debug \(Core/Enterprise/Scale\)
+* [NAS-118198](https://ixsystems.atlassian.net/browse/NAS-118198) Tuning to improve Storj / rclone performance
+* [NAS-118185](https://ixsystems.atlassian.net/browse/NAS-118185) Reduce number of any's
+* [NAS-118151](https://ixsystems.atlassian.net/browse/NAS-118151) Hide Aliases section if DHCP/Autoconfiguration radio box\(es\) is/are checked
+* [NAS-118130](https://ixsystems.atlassian.net/browse/NAS-118130) Upgrade rxjs
+* [NAS-118101](https://ixsystems.atlassian.net/browse/NAS-118101) Function clean up for Datasets module
+* [NAS-118058](https://ixsystems.atlassian.net/browse/NAS-118058) Sync \[visual-ui\] data on the Pool and Storage widgets
+* [NAS-118044](https://ixsystems.atlassian.net/browse/NAS-118044) Refactor console message footer
+* [NAS-118041](https://ixsystems.atlassian.net/browse/NAS-118041) Do not backup catalogs dataset on kubernetes backup
+* [NAS-118039](https://ixsystems.atlassian.net/browse/NAS-118039) Clean up topbar.component
+* [NAS-118007](https://ixsystems.atlassian.net/browse/NAS-118007) Remove BaseService
+* [NAS-118006](https://ixsystems.atlassian.net/browse/NAS-118006) Refactor ReportsDashboard module
+* [NAS-118003](https://ixsystems.atlassian.net/browse/NAS-118003) Refactor Cloud Sync Form to ix-forms
+* [NAS-117968](https://ixsystems.atlassian.net/browse/NAS-117968) Add tooltips to status icons on Pools Dashboard
+* [NAS-117947](https://ixsystems.atlassian.net/browse/NAS-117947) Add `otp_token` field when creating an SSH connection in semi-automatic mode
+* [NAS-117945](https://ixsystems.atlassian.net/browse/NAS-117945) Invert customValidator
+* [NAS-117942](https://ixsystems.atlassian.net/browse/NAS-117942) Code cleanup in new Storage module
+* [NAS-117937](https://ixsystems.atlassian.net/browse/NAS-117937) Refactor AlertConfigComponent to ix-forms
+* [NAS-117932](https://ixsystems.atlassian.net/browse/NAS-117932) Enable more linter rules
+* [NAS-117905](https://ixsystems.atlassian.net/browse/NAS-117905) A way to indicate which "unused" disks are part of importable pools
+* [NAS-117892](https://ixsystems.atlassian.net/browse/NAS-117892) Bump up starting range for UIDS / GIDS on SCALE and Core
+* [NAS-117887](https://ixsystems.atlassian.net/browse/NAS-117887) hactl needs to be improved on SCALE
+* [NAS-117874](https://ixsystems.atlassian.net/browse/NAS-117874) Handle incorrectly formatted disks
+* [NAS-117870](https://ixsystems.atlassian.net/browse/NAS-117870) Properly handle change of an icon name at `ix-icon`
+* [NAS-117859](https://ixsystems.atlassian.net/browse/NAS-117859) Fix sidenav bar overlapping with truenas text at the bottom
+* [NAS-117854](https://ixsystems.atlassian.net/browse/NAS-117854) UI should add validate host path attribute in apps settings
+* [NAS-117848](https://ixsystems.atlassian.net/browse/NAS-117848) subprocessing 16 times in main event loop on middleware startup
+* [NAS-117847](https://ixsystems.atlassian.net/browse/NAS-117847) add endpoint to retrieve VM log files
+* [NAS-117846](https://ixsystems.atlassian.net/browse/NAS-117846) Find a better way of handling max concurrent calls errors on storage dashboard
+* [NAS-117837](https://ixsystems.atlassian.net/browse/NAS-117837) disk.get\_unused should maybe include info from ID\_FS\_LABEL in output
+* [NAS-117836](https://ixsystems.atlassian.net/browse/NAS-117836) Use new method for updating isolating gpu pci ids in UI
+* [NAS-117796](https://ixsystems.atlassian.net/browse/NAS-117796) Don't allow unsetting host path validation for enterprise users
+* [NAS-117766](https://ixsystems.atlassian.net/browse/NAS-117766) Extract ix-label from ix-form components
+* [NAS-117759](https://ixsystems.atlassian.net/browse/NAS-117759) Investigate setting permissions on /data to 0o700
+* [NAS-117699](https://ixsystems.atlassian.net/browse/NAS-117699) add tests for copy\_file\_range \(server-side copy\) for NFSv4.2
+* [NAS-117618](https://ixsystems.atlassian.net/browse/NAS-117618) Review pickle module usage in middlewared
+* [NAS-117614](https://ixsystems.atlassian.net/browse/NAS-117614) middleware files in /var/run should be in dedicated run directory
+* [NAS-117445](https://ixsystems.atlassian.net/browse/NAS-117445) Charts MinIO pod does not follow standard min.io folder structure
+* [NAS-117372](https://ixsystems.atlassian.net/browse/NAS-117372) Add client side validation for app names
+* [NAS-117298](https://ixsystems.atlassian.net/browse/NAS-117298) Expose timemachine\_quota key if users enable time machine on share
+* [NAS-117261](https://ixsystems.atlassian.net/browse/NAS-117261) Investigate on reducing usages of IxEntityTreeTable
+* [NAS-117134](https://ixsystems.atlassian.net/browse/NAS-117134) Improvement for Bugclerk
+* [NAS-115917](https://ixsystems.atlassian.net/browse/NAS-115917) use secrets module instead of random
+* [NAS-115636](https://ixsystems.atlassian.net/browse/NAS-115636) Expose Cluster Volume Locations
+* [NAS-114416](https://ixsystems.atlassian.net/browse/NAS-114416) Document how to start middleware in debug mode
+* [NAS-114415](https://ixsystems.atlassian.net/browse/NAS-114415) Document how to build custom SCALE ISO
+* [NAS-112452](https://ixsystems.atlassian.net/browse/NAS-112452) Hold option for snapshots
+* [NAS-111781](https://ixsystems.atlassian.net/browse/NAS-111781) VMware snapshot improvements
+* [NAS-111464](https://ixsystems.atlassian.net/browse/NAS-111464) Add who field to filesystem.get\_default\_acl
+* [NAS-100748](https://ixsystems.atlassian.net/browse/NAS-100748) Remove Internet Explorer support
 
 ### Bug
 
-[NAS-118582](https://ixsystems.atlassian.net/browse/NAS-118582) debug symbols for ZFS userspace tools appear to be missing in SCALE
-[NAS-118576](https://ixsystems.atlassian.net/browse/NAS-118576) Correctly whitelist openvpn.client/server namespace when validating port
-[NAS-118575](https://ixsystems.atlassian.net/browse/NAS-118575) Upgraded catalog item\(s\)
-[NAS-118568](https://ixsystems.atlassian.net/browse/NAS-118568) Avoid spamming log files with docker mounts
-[NAS-118565](https://ixsystems.atlassian.net/browse/NAS-118565) Fix vmware migration
-[NAS-118564](https://ixsystems.atlassian.net/browse/NAS-118564) fix iommu number detection
-[NAS-118558](https://ixsystems.atlassian.net/browse/NAS-118558) Update machinaris from 0.8.3 to 0.8.4
-[NAS-118547](https://ixsystems.atlassian.net/browse/NAS-118547) Fix pihole helm test failing
-[NAS-118512](https://ixsystems.atlassian.net/browse/NAS-118512) Cloud Sync Task can no-longer work for onedrive due to missing parameters for --checkers and --tpslimit
-[NAS-118510](https://ixsystems.atlassian.net/browse/NAS-118510) When staying on one page and want to directly change url by hands \(to view another page\), it redirects to previous page
-[NAS-118508](https://ixsystems.atlassian.net/browse/NAS-118508) Editing stopped app configuration starts the app
-[NAS-118500](https://ixsystems.atlassian.net/browse/NAS-118500) Include avahi-utils in the build
-[NAS-118498](https://ixsystems.atlassian.net/browse/NAS-118498) regression: file name search of samba share from macOS Finder no longer works since Core 12 to 13 upgrade
-[NAS-118496](https://ixsystems.atlassian.net/browse/NAS-118496) Fix docs build
-[NAS-118494](https://ixsystems.atlassian.net/browse/NAS-118494) Document how to fake CPU temperature reporting on a VM
-[NAS-118490](https://ixsystems.atlassian.net/browse/NAS-118490) Extract strings from app routes for translations
-[NAS-118478](https://ixsystems.atlassian.net/browse/NAS-118478) fix cluster smb config test
-[NAS-118476](https://ixsystems.atlassian.net/browse/NAS-118476) Override avahi hostname with hostname\_virtual in HA
-[NAS-118471](https://ixsystems.atlassian.net/browse/NAS-118471) Unexpected directory explorer behaviour in Cloud Sync Task
-[NAS-118469](https://ixsystems.atlassian.net/browse/NAS-118469) call ctdb shared vol methods explicitly
-[NAS-118463](https://ixsystems.atlassian.net/browse/NAS-118463) VMware snapshot tests
-[NAS-118459](https://ixsystems.atlassian.net/browse/NAS-118459) Fix and enhance recycle test
-[NAS-118452](https://ixsystems.atlassian.net/browse/NAS-118452) Add git workflows for upgrade strategy / info linting
-[NAS-118450](https://ixsystems.atlassian.net/browse/NAS-118450) optimize zfs.\{pool/dataset\}.query
-[NAS-118447](https://ixsystems.atlassian.net/browse/NAS-118447) During Select an unused disk progress-spinner is not render
-[NAS-118444](https://ixsystems.atlassian.net/browse/NAS-118444) add MISMATCH\_VERSIONS to failover.disabled.reasons
-[NAS-118429](https://ixsystems.atlassian.net/browse/NAS-118429) properly wait on job in dir services
-[NAS-118428](https://ixsystems.atlassian.net/browse/NAS-118428) Add upgrade strategy for storj app
-[NAS-118424](https://ixsystems.atlassian.net/browse/NAS-118424) Improve test\_420\_smb - use python SMB client
-[NAS-118423](https://ixsystems.atlassian.net/browse/NAS-118423) Reporting is broken - Cannot read properties of undefined
-[NAS-118416](https://ixsystems.atlassian.net/browse/NAS-118416) impose limit on max length of pool name
-[NAS-118415](https://ixsystems.atlassian.net/browse/NAS-118415) Tree select sets undefined to form element if clicked twice
-[NAS-118414](https://ixsystems.atlassian.net/browse/NAS-118414) Warning modal icon bug
-[NAS-118413](https://ixsystems.atlassian.net/browse/NAS-118413) \[SCALE\] openEBS crashing - CoreDNS won't start
-[NAS-118393](https://ixsystems.atlassian.net/browse/NAS-118393) Apps -  'NoneType' object is not subscriptable
-[NAS-118391](https://ixsystems.atlassian.net/browse/NAS-118391) Cannot create VM - NoneType object is not subscriptable
-[NAS-118384](https://ixsystems.atlassian.net/browse/NAS-118384) dont block event loop in ws\_can\_access
-[NAS-118383](https://ixsystems.atlassian.net/browse/NAS-118383) \[TrueNAS SCALE-22.12-BETA.1\] Config Import not working
-[NAS-118381](https://ixsystems.atlassian.net/browse/NAS-118381) test\_create\_schema\_formattion unit test failing
-[NAS-118375](https://ixsystems.atlassian.net/browse/NAS-118375) UI Breaks on mobile screens if you have dataset details open and you delete the dataset
-[NAS-118373](https://ixsystems.atlassian.net/browse/NAS-118373) Fix a few HA issues on SCALE
-[NAS-118372](https://ixsystems.atlassian.net/browse/NAS-118372) Add some more delay to fix k8s logs/exec tests
-[NAS-118362](https://ixsystems.atlassian.net/browse/NAS-118362) drammatically optimize retrieving drive temps
-[NAS-118354](https://ixsystems.atlassian.net/browse/NAS-118354) Nextcloud on SCALE crashes when Postgres Backup Volume option is selected
-[NAS-118353](https://ixsystems.atlassian.net/browse/NAS-118353) Fix loading for mobile screens on the Datasets page
-[NAS-118352](https://ixsystems.atlassian.net/browse/NAS-118352) Incorrect current train
-[NAS-118351](https://ixsystems.atlassian.net/browse/NAS-118351) Disable middleware debug mode being the default
-[NAS-118349](https://ixsystems.atlassian.net/browse/NAS-118349) Fix Datasets table to cut off really long dataset names
-[NAS-118348](https://ixsystems.atlassian.net/browse/NAS-118348) ZFS snapdirs stats are gathered by collectd df plugin
-[NAS-118338](https://ixsystems.atlassian.net/browse/NAS-118338) Avoid logging on FileNotFoundError for sysdataset
-[NAS-118331](https://ixsystems.atlassian.net/browse/NAS-118331) fix interface unit tests
-[NAS-118330](https://ixsystems.atlassian.net/browse/NAS-118330) fix m-series nvme unit test
-[NAS-118329](https://ixsystems.atlassian.net/browse/NAS-118329) fix validation error
-[NAS-118328](https://ixsystems.atlassian.net/browse/NAS-118328) Kubernetes migration hangs if encryption is turned on
-[NAS-118326](https://ixsystems.atlassian.net/browse/NAS-118326) Bring back VMware snapshots page
-[NAS-118324](https://ixsystems.atlassian.net/browse/NAS-118324) Fix build
-[NAS-118305](https://ixsystems.atlassian.net/browse/NAS-118305) Changing network settings in CLI on initial install
-[NAS-118304](https://ixsystems.atlassian.net/browse/NAS-118304) Avoid blocking calls in smb plugin
-[NAS-118302](https://ixsystems.atlassian.net/browse/NAS-118302) netbios\_name\_check\_sid integration test failing on SCALE HA
-[NAS-118297](https://ixsystems.atlassian.net/browse/NAS-118297) Fix keyerror during idmap\_create
-[NAS-118296](https://ixsystems.atlassian.net/browse/NAS-118296) revert 058034a092b8d1d5df55a49c2f0e65dba763e218
-[NAS-118295](https://ixsystems.atlassian.net/browse/NAS-118295) dont run boot\_attach tests on HA VMs
-[NAS-118294](https://ixsystems.atlassian.net/browse/NAS-118294) move test\_008\_hactl to test\_14\_failover\_related
-[NAS-118291](https://ixsystems.atlassian.net/browse/NAS-118291) Data Protection - Replication Tasks - Snapshot Retention
-[NAS-118290](https://ixsystems.atlassian.net/browse/NAS-118290) \[SCALE\] Apps logs, keep repeating every few seconds
-[NAS-118289](https://ixsystems.atlassian.net/browse/NAS-118289) fix copy and paste typo....
-[NAS-118283](https://ixsystems.atlassian.net/browse/NAS-118283) fix failover.disabled.reasons
-[NAS-118282](https://ixsystems.atlassian.net/browse/NAS-118282) Unexpected results when filtering datasets
-[NAS-118278](https://ixsystems.atlassian.net/browse/NAS-118278) GUI element “SSH Public Key” incorrectly named
-[NAS-118267](https://ixsystems.atlassian.net/browse/NAS-118267) Disallow mat-icon selector in styles
-[NAS-118261](https://ixsystems.atlassian.net/browse/NAS-118261) Fix `test__get_smartd_config`
-[NAS-118260](https://ixsystems.atlassian.net/browse/NAS-118260) Keep column in Boot Environments in confusing
-[NAS-118258](https://ixsystems.atlassian.net/browse/NAS-118258) Fix icon color in sidebar
-[NAS-118257](https://ixsystems.atlassian.net/browse/NAS-118257) fix mapping rear NVMe on M50/60 HA systems
-[NAS-118252](https://ixsystems.atlassian.net/browse/NAS-118252) Failed to replace route to service VIP
-[NAS-118250](https://ixsystems.atlassian.net/browse/NAS-118250) SMB2 not working unless SMB1 checked
-[NAS-118249](https://ixsystems.atlassian.net/browse/NAS-118249) dont call pool.query in vmware plugin
-[NAS-118244](https://ixsystems.atlassian.net/browse/NAS-118244) Pool creation silently fails on former MDRAID disks
-[NAS-118243](https://ixsystems.atlassian.net/browse/NAS-118243) `boot.attach`/`boot.replace`/`boot.detach` tests
-[NAS-118242](https://ixsystems.atlassian.net/browse/NAS-118242) `boot.replace` is a job now
-[NAS-118241](https://ixsystems.atlassian.net/browse/NAS-118241) Fix boot device replace
-[NAS-118234](https://ixsystems.atlassian.net/browse/NAS-118234) When uploading a manual update file, an accidental click outside the upload progress window cancels the entire job
-[NAS-118228](https://ixsystems.atlassian.net/browse/NAS-118228) Send correct label when replacing a vdev in the boot pool
-[NAS-118227](https://ixsystems.atlassian.net/browse/NAS-118227) Boot pool vdev replace dialog disk dropdown misses disk size
-[NAS-118222](https://ixsystems.atlassian.net/browse/NAS-118222) Fix keyerror in ACL template domain info lookup
-[NAS-118205](https://ixsystems.atlassian.net/browse/NAS-118205) Fix tests Suites
-[NAS-118200](https://ixsystems.atlassian.net/browse/NAS-118200) Hardcoded alert message with old Jira link
-[NAS-118197](https://ixsystems.atlassian.net/browse/NAS-118197) Fix k3s logs/exec issue
-[NAS-118191](https://ixsystems.atlassian.net/browse/NAS-118191) Initialize csource before zfs\_prop\_get
-[NAS-118184](https://ixsystems.atlassian.net/browse/NAS-118184) Fix link to create a new pool
-[NAS-118178](https://ixsystems.atlassian.net/browse/NAS-118178) fix typo in failover\_/event.py
-[NAS-118177](https://ixsystems.atlassian.net/browse/NAS-118177) Storj integration doesn't work with existing accounts
-[NAS-118171](https://ixsystems.atlassian.net/browse/NAS-118171) rsync task remote path widget offers to select a local path
-[NAS-118169](https://ixsystems.atlassian.net/browse/NAS-118169) When I edit an rsync task that uses SSH connection from keychain "SSH connection" field is empty
-[NAS-118168](https://ixsystems.atlassian.net/browse/NAS-118168) Do not require `remotehost` when rsync task is configured using an SS…
-[NAS-118167](https://ixsystems.atlassian.net/browse/NAS-118167) Dashboard crashing due to `WidgetNetworkComponent` bug
-[NAS-118165](https://ixsystems.atlassian.net/browse/NAS-118165) Wrong width of blocks with charts after expansion the sidenav
-[NAS-118164](https://ixsystems.atlassian.net/browse/NAS-118164) fix AttributeError crash in update.get\_trains
-[NAS-118148](https://ixsystems.atlassian.net/browse/NAS-118148) Translate tooltips in navigation and page title
-[NAS-118146](https://ixsystems.atlassian.net/browse/NAS-118146) freenas\_default expiring alert cannot be removed once the certificate is deleted
-[NAS-118141](https://ixsystems.atlassian.net/browse/NAS-118141) allow easy checking of sha256 checksum
-[NAS-118139](https://ixsystems.atlassian.net/browse/NAS-118139) Catalogs need to be synced after restoring k8s backup
-[NAS-118138](https://ixsystems.atlassian.net/browse/NAS-118138) Fix unused disks issue
-[NAS-118136](https://ixsystems.atlassian.net/browse/NAS-118136) fix crash\(es\) in webui\_auth::addr\_in\_allowlist
-[NAS-118135](https://ixsystems.atlassian.net/browse/NAS-118135) fix crash in nginx.get\_remote\_addr\_port
-[NAS-118131](https://ixsystems.atlassian.net/browse/NAS-118131) fix ctdb shared volume teardown integration test
-[NAS-118123](https://ixsystems.atlassian.net/browse/NAS-118123) Alert in TrueNAS Scale won't go away even after clicking on "dismiss"
-[NAS-118117](https://ixsystems.atlassian.net/browse/NAS-118117) move gluster fuse mounts to root cgroups
-[NAS-118113](https://ixsystems.atlassian.net/browse/NAS-118113) \[SCALE\] WebUI cannot get the properties of the dataset correctly
-[NAS-118111](https://ixsystems.atlassian.net/browse/NAS-118111) Fix undefined name in vm/devices.cdrom.py
-[NAS-118110](https://ixsystems.atlassian.net/browse/NAS-118110) move fenced process to root cgroup
-[NAS-118107](https://ixsystems.atlassian.net/browse/NAS-118107) Application Snapshots are getting high
-[NAS-118104](https://ixsystems.atlassian.net/browse/NAS-118104) Allow to subscribe to events for unauthenticated users
-[NAS-118103](https://ixsystems.atlassian.net/browse/NAS-118103) add connect\_timeout to remote client
-[NAS-118098](https://ixsystems.atlassian.net/browse/NAS-118098) improve failover.disabled.reasons
-[NAS-118097](https://ixsystems.atlassian.net/browse/NAS-118097) Allow non-coroutine to be passed to `register_hook` and executed corr…
-[NAS-118094](https://ixsystems.atlassian.net/browse/NAS-118094) Use libwbclient bindings
-[NAS-118093](https://ixsystems.atlassian.net/browse/NAS-118093) Dont block event look in check\_permission hook
-[NAS-118083](https://ixsystems.atlassian.net/browse/NAS-118083) fix AttributeError crash in ha\_permission hook
-[NAS-118080](https://ixsystems.atlassian.net/browse/NAS-118080) fix scale nightlies build \(update collectd to 5.12.0-11\)
-[NAS-118078](https://ixsystems.atlassian.net/browse/NAS-118078) fix test\_is\_outdated\_alert
-[NAS-118076](https://ixsystems.atlassian.net/browse/NAS-118076) Switch to using vfs\_ixnas for default ACL module
-[NAS-118075](https://ixsystems.atlassian.net/browse/NAS-118075) fix ssl integration test \(typo\)
-[NAS-118074](https://ixsystems.atlassian.net/browse/NAS-118074) \(SCALE\) Plugins HPE MicroServer Gen8 not working with more, than 4 Drives
-[NAS-118072](https://ixsystems.atlassian.net/browse/NAS-118072) Update Dataset Roles
-[NAS-118071](https://ixsystems.atlassian.net/browse/NAS-118071) Fix expand button indentation on datasets tree
-[NAS-118065](https://ixsystems.atlassian.net/browse/NAS-118065) Cannot convert stripe to mirror in UI
-[NAS-118064](https://ixsystems.atlassian.net/browse/NAS-118064) cache failover.hardware.detect
-[NAS-118059](https://ixsystems.atlassian.net/browse/NAS-118059) fix blank graphs when UPSBase plugin crashes
-[NAS-118055](https://ixsystems.atlassian.net/browse/NAS-118055) Add ability to configure environment variables for nextcloud application
-[NAS-118053](https://ixsystems.atlassian.net/browse/NAS-118053) Fix CI runs on master
-[NAS-118048](https://ixsystems.atlassian.net/browse/NAS-118048) remove trailing forward slash in corssl package
-[NAS-118040](https://ixsystems.atlassian.net/browse/NAS-118040) Introduce an internal job for retrieving catalog items
-[NAS-118025](https://ixsystems.atlassian.net/browse/NAS-118025) Bluefin \(22.12\) fails to bring up interface
-[NAS-118019](https://ixsystems.atlassian.net/browse/NAS-118019) Prohibit trailing spaces in ZFS dataset names
-[NAS-118015](https://ixsystems.atlassian.net/browse/NAS-118015) prevent blocking event loop when checking updates
-[NAS-118014](https://ixsystems.atlassian.net/browse/NAS-118014) fix failover.get\_ips
-[NAS-118013](https://ixsystems.atlassian.net/browse/NAS-118013) Improve `core.bulk` documentation
-[NAS-118011](https://ixsystems.atlassian.net/browse/NAS-118011) On TrueNAS SCALE, when performing GPU passthrough with high-memory cards QEMU options are required
-[NAS-118004](https://ixsystems.atlassian.net/browse/NAS-118004) Preserve pool disks for Disk Temperature Reports
-[NAS-117997](https://ixsystems.atlassian.net/browse/NAS-117997) Fix hostname spelling
-[NAS-117996](https://ixsystems.atlassian.net/browse/NAS-117996) Inherit border width for inputs on focus
-[NAS-117991](https://ixsystems.atlassian.net/browse/NAS-117991) Use zfs.pool.query\_imported\_fast in failover.status
-[NAS-117987](https://ixsystems.atlassian.net/browse/NAS-117987) certificate verify failed: self signed certificate in certificate chain
-[NAS-117986](https://ixsystems.atlassian.net/browse/NAS-117986) Number in CPU widget looks weird on Safari
-[NAS-117983](https://ixsystems.atlassian.net/browse/NAS-117983) Clickable logo on mobile screens
-[NAS-117973](https://ixsystems.atlassian.net/browse/NAS-117973) Simplify ixDetailsHeight
-[NAS-117972](https://ixsystems.atlassian.net/browse/NAS-117972) No error message when trying to delete snapshot with hold
-[NAS-117962](https://ixsystems.atlassian.net/browse/NAS-117962) Remove freebsd services
-[NAS-117959](https://ixsystems.atlassian.net/browse/NAS-117959) UI Setting automatically switches to browser language
-[NAS-117953](https://ixsystems.atlassian.net/browse/NAS-117953) \[SCALE\] Arrays are getting removed when editing
-[NAS-117952](https://ixsystems.atlassian.net/browse/NAS-117952) \[Apps\] App logs dropdown, doesn't allow selecting initcontainer
-[NAS-117950](https://ixsystems.atlassian.net/browse/NAS-117950) mask ndctl-monitor.service
-[NAS-117944](https://ixsystems.atlassian.net/browse/NAS-117944) Allow passing OTP token to \`keychaincredential.remote\_ssh\_semiautomat…
-[NAS-117943](https://ixsystems.atlassian.net/browse/NAS-117943) Browser navigation doesn't close slide-in
-[NAS-117933](https://ixsystems.atlassian.net/browse/NAS-117933) remove migrate call in make reinstall\_container
-[NAS-117931](https://ixsystems.atlassian.net/browse/NAS-117931) Using HTTP Basic Auth will bypass 2FA
-[NAS-117927](https://ixsystems.atlassian.net/browse/NAS-117927) Remove dead smartctl code and fix functional tests
-[NAS-117926](https://ixsystems.atlassian.net/browse/NAS-117926) fix test\_mountinfo unit test
-[NAS-117925](https://ixsystems.atlassian.net/browse/NAS-117925) Make container.prune a job
-[NAS-117921](https://ixsystems.atlassian.net/browse/NAS-117921) add `reinstall_container` make argument
-[NAS-117917](https://ixsystems.atlassian.net/browse/NAS-117917) hitting ctrl \+C via OOB managemnt on truenas console menu locks up console
-[NAS-117916](https://ixsystems.atlassian.net/browse/NAS-117916) NFS does not start on boot
-[NAS-117911](https://ixsystems.atlassian.net/browse/NAS-117911) Samba Share ACL resets to Everyone when disabled and re-enabled
-[NAS-117903](https://ixsystems.atlassian.net/browse/NAS-117903) CPU Usage graph key shows incorrect values when zooming
-[NAS-117902](https://ixsystems.atlassian.net/browse/NAS-117902) \[SCALE\]: show\_if '!=' does not work, but '=' does work.
-[NAS-117901](https://ixsystems.atlassian.net/browse/NAS-117901) Optimize Zpool related alerts
-[NAS-117897](https://ixsystems.atlassian.net/browse/NAS-117897) webUI isn't showing what controller the alert was generated on
-[NAS-117895](https://ixsystems.atlassian.net/browse/NAS-117895) CRITICAL ERROR ON UPDATE TrueNAS-22.02.0.1 -> TrueNAS-22.02.3
-[NAS-117890](https://ixsystems.atlassian.net/browse/NAS-117890) Truecharts Applications failing to deploy due to snapshot task on latest bluefin nightly
-[NAS-117872](https://ixsystems.atlassian.net/browse/NAS-117872) License Apps and VMs for Enterprise \(Backend\)
-[NAS-117871](https://ixsystems.atlassian.net/browse/NAS-117871) Hide/Disable Apps and VMs based on License for Enterprise \(UI\)
-[NAS-117857](https://ixsystems.atlassian.net/browse/NAS-117857) WebUI shell breaks on long strings
-[NAS-117853](https://ixsystems.atlassian.net/browse/NAS-117853) UI should not specify path attribute when zvol is being created for disk based vm devices
-[NAS-117843](https://ixsystems.atlassian.net/browse/NAS-117843) cli app container config prune failed
-[NAS-117831](https://ixsystems.atlassian.net/browse/NAS-117831) Update on disk GRUB configuration for serial
-[NAS-117800](https://ixsystems.atlassian.net/browse/NAS-117800) Systemd Services fail
-[NAS-117794](https://ixsystems.atlassian.net/browse/NAS-117794) /etc/resolv.conf in Live ISO's filesystem.squash contains development information
-[NAS-117777](https://ixsystems.atlassian.net/browse/NAS-117777) Unable to join active directory if SMB is not started first
-[NAS-117752](https://ixsystems.atlassian.net/browse/NAS-117752) Unable to boot into previous boot environment
-[NAS-117748](https://ixsystems.atlassian.net/browse/NAS-117748) Application States incorrectly reports available update
-[NAS-117747](https://ixsystems.atlassian.net/browse/NAS-117747) vm.stop services do not stop
-[NAS-117736](https://ixsystems.atlassian.net/browse/NAS-117736) Installed chart in TrueNAS SCALE gives Middleware error
-[NAS-117722](https://ixsystems.atlassian.net/browse/NAS-117722) After migrating Core to Scale, cannot resilver boot mirror
-[NAS-117715](https://ixsystems.atlassian.net/browse/NAS-117715) \[SCALE\] Data Protection pages is broken
-[NAS-117710](https://ixsystems.atlassian.net/browse/NAS-117710) ZFS space efficiency on devices with huge physical blocks
-[NAS-117708](https://ixsystems.atlassian.net/browse/NAS-117708) Wireguard setup stuck in loop if wireguard connection is not established with cloud
-[NAS-117688](https://ixsystems.atlassian.net/browse/NAS-117688) Cannot Edit VMs
-[NAS-117674](https://ixsystems.atlassian.net/browse/NAS-117674) Pool import fails randomly
-[NAS-117658](https://ixsystems.atlassian.net/browse/NAS-117658) TrueNAS-SCALE-22.02.4-MASTER-20220805-041141 can't start VMs after importing old config or upgrading from 22.02.3 or earlier
-[NAS-117653](https://ixsystems.atlassian.net/browse/NAS-117653) GUI allows creation of SMB shares for nonexistent paths
-[NAS-117631](https://ixsystems.atlassian.net/browse/NAS-117631) Retrieve and display metadata for a single snapshot
-[NAS-117599](https://ixsystems.atlassian.net/browse/NAS-117599) Installing netdata gets stuck at 75%
-[NAS-117508](https://ixsystems.atlassian.net/browse/NAS-117508) SCALE ACL inheritance not working when migrated from POSIX to NFSv4
-[NAS-117464](https://ixsystems.atlassian.net/browse/NAS-117464) Network widget does not show active interface
-[NAS-117409](https://ixsystems.atlassian.net/browse/NAS-117409) Unable to isolate GPU or see in apps in SCALE.
-[NAS-117379](https://ixsystems.atlassian.net/browse/NAS-117379) WS-Discovery Name not using specified hostname
-[NAS-117316](https://ixsystems.atlassian.net/browse/NAS-117316) \[SCALE\] Prevent user from deploying app with port conflicts
-[NAS-117230](https://ixsystems.atlassian.net/browse/NAS-117230) A pool scrub shows up twice in task manager
-[NAS-117104](https://ixsystems.atlassian.net/browse/NAS-117104) PiHole Docker Install
-[NAS-116678](https://ixsystems.atlassian.net/browse/NAS-116678) Refuse to download update if insufficient space avail
-[NAS-116539](https://ixsystems.atlassian.net/browse/NAS-116539) TrueNAS CLI does not provide a pager mechanism
-[NAS-116537](https://ixsystems.atlassian.net/browse/NAS-116537) Replace disk dialog does not include any identifying information about the disk
-[NAS-116495](https://ixsystems.atlassian.net/browse/NAS-116495) Run blocking calls in threads in sysdataset plugin
-[NAS-116318](https://ixsystems.atlassian.net/browse/NAS-116318) SQL unique constraint error when incorrectly editing an idmap
-[NAS-115737](https://ixsystems.atlassian.net/browse/NAS-115737) Space in Pool Name / Path to Zlog kills iSCSI
-[NAS-115648](https://ixsystems.atlassian.net/browse/NAS-115648) Low Encryption Performance on Atom Processors
-[NAS-115586](https://ixsystems.atlassian.net/browse/NAS-115586) Enable `pool.replace_disk` tests
-[NAS-115238](https://ixsystems.atlassian.net/browse/NAS-115238) Removed drive from pool does not degrade pool status \(SCALE\)
-[NAS-113889](https://ixsystems.atlassian.net/browse/NAS-113889) Remove Microsoft Account in User
-[NAS-113216](https://ixsystems.atlassian.net/browse/NAS-113216) New dataset does not inherit ACL Type from Pool's root dataset.
-[NAS-112650](https://ixsystems.atlassian.net/browse/NAS-112650) Onedrive for Business
-[NAS-112326](https://ixsystems.atlassian.net/browse/NAS-112326) Deprecate and remove "media" user and group
-[NAS-112088](https://ixsystems.atlassian.net/browse/NAS-112088) Don't do validation on empty textboxes if they are not set required: true.
-[NAS-111962](https://ixsystems.atlassian.net/browse/NAS-111962) "Not an interger" error in Transfers field in Sync Cloud task
-[NAS-110795](https://ixsystems.atlassian.net/browse/NAS-110795) Can't create unencrypted dataset on Encrypted pool
+* [NAS-118582](https://ixsystems.atlassian.net/browse/NAS-118582) debug symbols for ZFS userspace tools appear to be missing in SCALE
+* [NAS-118576](https://ixsystems.atlassian.net/browse/NAS-118576) Correctly whitelist openvpn.client/server namespace when validating port
+* [NAS-118575](https://ixsystems.atlassian.net/browse/NAS-118575) Upgraded catalog item\(s\)
+* [NAS-118568](https://ixsystems.atlassian.net/browse/NAS-118568) Avoid spamming log files with docker mounts
+* [NAS-118565](https://ixsystems.atlassian.net/browse/NAS-118565) Fix vmware migration
+* [NAS-118564](https://ixsystems.atlassian.net/browse/NAS-118564) fix iommu number detection
+* [NAS-118558](https://ixsystems.atlassian.net/browse/NAS-118558) Update machinaris from 0.8.3 to 0.8.4
+* [NAS-118547](https://ixsystems.atlassian.net/browse/NAS-118547) Fix pihole helm test failing
+* [NAS-118512](https://ixsystems.atlassian.net/browse/NAS-118512) Cloud Sync Task can no-longer work for onedrive due to missing parameters for --checkers and --tpslimit
+* [NAS-118510](https://ixsystems.atlassian.net/browse/NAS-118510) When staying on one page and want to directly change url by hands \(to view another page\), it redirects to previous page
+* [NAS-118508](https://ixsystems.atlassian.net/browse/NAS-118508) Editing stopped app configuration starts the app
+* [NAS-118500](https://ixsystems.atlassian.net/browse/NAS-118500) Include avahi-utils in the build
+* [NAS-118498](https://ixsystems.atlassian.net/browse/NAS-118498) regression: file name search of samba share from macOS Finder no longer works since Core 12 to 13 upgrade
+* [NAS-118496](https://ixsystems.atlassian.net/browse/NAS-118496) Fix docs build
+* [NAS-118494](https://ixsystems.atlassian.net/browse/NAS-118494) Document how to fake CPU temperature reporting on a VM
+* [NAS-118490](https://ixsystems.atlassian.net/browse/NAS-118490) Extract strings from app routes for translations
+* [NAS-118478](https://ixsystems.atlassian.net/browse/NAS-118478) fix cluster smb config test
+* [NAS-118476](https://ixsystems.atlassian.net/browse/NAS-118476) Override avahi hostname with hostname\_virtual in HA
+* [NAS-118471](https://ixsystems.atlassian.net/browse/NAS-118471) Unexpected directory explorer behaviour in Cloud Sync Task
+* [NAS-118469](https://ixsystems.atlassian.net/browse/NAS-118469) call ctdb shared vol methods explicitly
+* [NAS-118463](https://ixsystems.atlassian.net/browse/NAS-118463) VMware snapshot tests
+* [NAS-118459](https://ixsystems.atlassian.net/browse/NAS-118459) Fix and enhance recycle test
+* [NAS-118452](https://ixsystems.atlassian.net/browse/NAS-118452) Add git workflows for upgrade strategy / info linting
+* [NAS-118450](https://ixsystems.atlassian.net/browse/NAS-118450) optimize zfs.\{pool/dataset\}.query
+* [NAS-118447](https://ixsystems.atlassian.net/browse/NAS-118447) During Select an unused disk progress-spinner is not render
+* [NAS-118444](https://ixsystems.atlassian.net/browse/NAS-118444) add MISMATCH\_VERSIONS to failover.disabled.reasons
+* [NAS-118429](https://ixsystems.atlassian.net/browse/NAS-118429) properly wait on job in dir services
+* [NAS-118428](https://ixsystems.atlassian.net/browse/NAS-118428) Add upgrade strategy for storj app
+* [NAS-118424](https://ixsystems.atlassian.net/browse/NAS-118424) Improve test\_420\_smb - use python SMB client
+* [NAS-118423](https://ixsystems.atlassian.net/browse/NAS-118423) Reporting is broken - Cannot read properties of undefined
+* [NAS-118416](https://ixsystems.atlassian.net/browse/NAS-118416) impose limit on max length of pool name
+* [NAS-118415](https://ixsystems.atlassian.net/browse/NAS-118415) Tree select sets undefined to form element if clicked twice
+* [NAS-118414](https://ixsystems.atlassian.net/browse/NAS-118414) Warning modal icon bug
+* [NAS-118413](https://ixsystems.atlassian.net/browse/NAS-118413) \[SCALE\] openEBS crashing - CoreDNS won't start
+* [NAS-118393](https://ixsystems.atlassian.net/browse/NAS-118393) Apps -  'NoneType' object is not subscriptable
+* [NAS-118391](https://ixsystems.atlassian.net/browse/NAS-118391) Cannot create VM - NoneType object is not subscriptable
+* [NAS-118384](https://ixsystems.atlassian.net/browse/NAS-118384) dont block event loop in ws\_can\_access
+* [NAS-118383](https://ixsystems.atlassian.net/browse/NAS-118383) \[TrueNAS SCALE-22.12-BETA.1\] Config Import not working
+* [NAS-118381](https://ixsystems.atlassian.net/browse/NAS-118381) test\_create\_schema\_formattion unit test failing
+* [NAS-118375](https://ixsystems.atlassian.net/browse/NAS-118375) UI Breaks on mobile screens if you have dataset details open and you delete the dataset
+* [NAS-118373](https://ixsystems.atlassian.net/browse/NAS-118373) Fix a few HA issues on SCALE
+* [NAS-118372](https://ixsystems.atlassian.net/browse/NAS-118372) Add some more delay to fix k8s logs/exec tests
+* [NAS-118362](https://ixsystems.atlassian.net/browse/NAS-118362) drammatically optimize retrieving drive temps
+* [NAS-118354](https://ixsystems.atlassian.net/browse/NAS-118354) Nextcloud on SCALE crashes when Postgres Backup Volume option is selected
+* [NAS-118353](https://ixsystems.atlassian.net/browse/NAS-118353) Fix loading for mobile screens on the Datasets page
+* [NAS-118352](https://ixsystems.atlassian.net/browse/NAS-118352) Incorrect current train
+* [NAS-118351](https://ixsystems.atlassian.net/browse/NAS-118351) Disable middleware debug mode being the default
+* [NAS-118349](https://ixsystems.atlassian.net/browse/NAS-118349) Fix Datasets table to cut off really long dataset names
+* [NAS-118348](https://ixsystems.atlassian.net/browse/NAS-118348) ZFS snapdirs stats are gathered by collectd df plugin
+* [NAS-118338](https://ixsystems.atlassian.net/browse/NAS-118338) Avoid logging on FileNotFoundError for sysdataset
+* [NAS-118331](https://ixsystems.atlassian.net/browse/NAS-118331) fix interface unit tests
+* [NAS-118330](https://ixsystems.atlassian.net/browse/NAS-118330) fix m-series nvme unit test
+* [NAS-118329](https://ixsystems.atlassian.net/browse/NAS-118329) fix validation error
+* [NAS-118328](https://ixsystems.atlassian.net/browse/NAS-118328) Kubernetes migration hangs if encryption is turned on
+* [NAS-118326](https://ixsystems.atlassian.net/browse/NAS-118326) Bring back VMware snapshots page
+* [NAS-118324](https://ixsystems.atlassian.net/browse/NAS-118324) Fix build
+* [NAS-118305](https://ixsystems.atlassian.net/browse/NAS-118305) Changing network settings in CLI on initial install
+* [NAS-118304](https://ixsystems.atlassian.net/browse/NAS-118304) Avoid blocking calls in smb plugin
+* [NAS-118302](https://ixsystems.atlassian.net/browse/NAS-118302) netbios\_name\_check\_sid integration test failing on SCALE HA
+* [NAS-118297](https://ixsystems.atlassian.net/browse/NAS-118297) Fix keyerror during idmap\_create
+* [NAS-118296](https://ixsystems.atlassian.net/browse/NAS-118296) revert 058034a092b8d1d5df55a49c2f0e65dba763e218
+* [NAS-118295](https://ixsystems.atlassian.net/browse/NAS-118295) dont run boot\_attach tests on HA VMs
+* [NAS-118294](https://ixsystems.atlassian.net/browse/NAS-118294) move test\_008\_hactl to test\_14\_failover\_related
+* [NAS-118291](https://ixsystems.atlassian.net/browse/NAS-118291) Data Protection - Replication Tasks - Snapshot Retention
+* [NAS-118290](https://ixsystems.atlassian.net/browse/NAS-118290) \[SCALE\] Apps logs, keep repeating every few seconds
+* [NAS-118289](https://ixsystems.atlassian.net/browse/NAS-118289) fix copy and paste typo....
+* [NAS-118283](https://ixsystems.atlassian.net/browse/NAS-118283) fix failover.disabled.reasons
+* [NAS-118282](https://ixsystems.atlassian.net/browse/NAS-118282) Unexpected results when filtering datasets
+* [NAS-118278](https://ixsystems.atlassian.net/browse/NAS-118278) GUI element “SSH Public Key” incorrectly named
+* [NAS-118267](https://ixsystems.atlassian.net/browse/NAS-118267) Disallow mat-icon selector in styles
+* [NAS-118261](https://ixsystems.atlassian.net/browse/NAS-118261) Fix `test__get_smartd_config`
+* [NAS-118260](https://ixsystems.atlassian.net/browse/NAS-118260) Keep column in Boot Environments in confusing
+* [NAS-118258](https://ixsystems.atlassian.net/browse/NAS-118258) Fix icon color in sidebar
+* [NAS-118257](https://ixsystems.atlassian.net/browse/NAS-118257) fix mapping rear NVMe on M50/60 HA systems
+* [NAS-118252](https://ixsystems.atlassian.net/browse/NAS-118252) Failed to replace route to service VIP
+* [NAS-118250](https://ixsystems.atlassian.net/browse/NAS-118250) SMB2 not working unless SMB1 checked
+* [NAS-118249](https://ixsystems.atlassian.net/browse/NAS-118249) dont call pool.query in vmware plugin
+* [NAS-118244](https://ixsystems.atlassian.net/browse/NAS-118244) Pool creation silently fails on former MDRAID disks
+* [NAS-118243](https://ixsystems.atlassian.net/browse/NAS-118243) `boot.attach`/`boot.replace`/`boot.detach` tests
+* [NAS-118242](https://ixsystems.atlassian.net/browse/NAS-118242) `boot.replace` is a job now
+* [NAS-118241](https://ixsystems.atlassian.net/browse/NAS-118241) Fix boot device replace
+* [NAS-118234](https://ixsystems.atlassian.net/browse/NAS-118234) When uploading a manual update file, an accidental click outside the upload progress window cancels the entire job
+* [NAS-118228](https://ixsystems.atlassian.net/browse/NAS-118228) Send correct label when replacing a vdev in the boot pool
+* [NAS-118227](https://ixsystems.atlassian.net/browse/NAS-118227) Boot pool vdev replace dialog disk dropdown misses disk size
+* [NAS-118222](https://ixsystems.atlassian.net/browse/NAS-118222) Fix keyerror in ACL template domain info lookup
+* [NAS-118205](https://ixsystems.atlassian.net/browse/NAS-118205) Fix tests Suites
+* [NAS-118200](https://ixsystems.atlassian.net/browse/NAS-118200) Hardcoded alert message with old Jira link
+* [NAS-118197](https://ixsystems.atlassian.net/browse/NAS-118197) Fix k3s logs/exec issue
+* [NAS-118191](https://ixsystems.atlassian.net/browse/NAS-118191) Initialize csource before zfs\_prop\_get
+* [NAS-118184](https://ixsystems.atlassian.net/browse/NAS-118184) Fix link to create a new pool
+* [NAS-118178](https://ixsystems.atlassian.net/browse/NAS-118178) fix typo in failover\_/event.py
+* [NAS-118177](https://ixsystems.atlassian.net/browse/NAS-118177) Storj integration doesn't work with existing accounts
+* [NAS-118171](https://ixsystems.atlassian.net/browse/NAS-118171) rsync task remote path widget offers to select a local path
+* [NAS-118169](https://ixsystems.atlassian.net/browse/NAS-118169) When I edit an rsync task that uses SSH connection from keychain "SSH connection" field is empty
+* [NAS-118168](https://ixsystems.atlassian.net/browse/NAS-118168) Do not require `remotehost` when rsync task is configured using an SS…
+* [NAS-118167](https://ixsystems.atlassian.net/browse/NAS-118167) Dashboard crashing due to `WidgetNetworkComponent` bug
+* [NAS-118165](https://ixsystems.atlassian.net/browse/NAS-118165) Wrong width of blocks with charts after expansion the sidenav
+* [NAS-118164](https://ixsystems.atlassian.net/browse/NAS-118164) fix AttributeError crash in update.get\_trains
+* [NAS-118148](https://ixsystems.atlassian.net/browse/NAS-118148) Translate tooltips in navigation and page title
+* [NAS-118146](https://ixsystems.atlassian.net/browse/NAS-118146) freenas\_default expiring alert cannot be removed once the certificate is deleted
+* [NAS-118141](https://ixsystems.atlassian.net/browse/NAS-118141) allow easy checking of sha256 checksum
+* [NAS-118139](https://ixsystems.atlassian.net/browse/NAS-118139) Catalogs need to be synced after restoring k8s backup
+* [NAS-118138](https://ixsystems.atlassian.net/browse/NAS-118138) Fix unused disks issue
+* [NAS-118136](https://ixsystems.atlassian.net/browse/NAS-118136) fix crash\(es\) in webui\_auth::addr\_in\_allowlist
+* [NAS-118135](https://ixsystems.atlassian.net/browse/NAS-118135) fix crash in nginx.get\_remote\_addr\_port
+* [NAS-118131](https://ixsystems.atlassian.net/browse/NAS-118131) fix ctdb shared volume teardown integration test
+* [NAS-118123](https://ixsystems.atlassian.net/browse/NAS-118123) Alert in TrueNAS Scale won't go away even after clicking on "dismiss"
+* [NAS-118117](https://ixsystems.atlassian.net/browse/NAS-118117) move gluster fuse mounts to root cgroups
+* [NAS-118113](https://ixsystems.atlassian.net/browse/NAS-118113) \[SCALE\] WebUI cannot get the properties of the dataset correctly
+* [NAS-118111](https://ixsystems.atlassian.net/browse/NAS-118111) Fix undefined name in vm/devices.cdrom.py
+* [NAS-118110](https://ixsystems.atlassian.net/browse/NAS-118110) move fenced process to root cgroup
+* [NAS-118107](https://ixsystems.atlassian.net/browse/NAS-118107) Application Snapshots are getting high
+* [NAS-118104](https://ixsystems.atlassian.net/browse/NAS-118104) Allow to subscribe to events for unauthenticated users
+* [NAS-118103](https://ixsystems.atlassian.net/browse/NAS-118103) add connect\_timeout to remote client
+* [NAS-118098](https://ixsystems.atlassian.net/browse/NAS-118098) improve failover.disabled.reasons
+* [NAS-118097](https://ixsystems.atlassian.net/browse/NAS-118097) Allow non-coroutine to be passed to `register_hook` and executed corr…
+* [NAS-118094](https://ixsystems.atlassian.net/browse/NAS-118094) Use libwbclient bindings
+* [NAS-118093](https://ixsystems.atlassian.net/browse/NAS-118093) Dont block event look in check\_permission hook
+* [NAS-118083](https://ixsystems.atlassian.net/browse/NAS-118083) fix AttributeError crash in ha\_permission hook
+* [NAS-118080](https://ixsystems.atlassian.net/browse/NAS-118080) fix scale nightlies build \(update collectd to 5.12.0-11\)
+* [NAS-118078](https://ixsystems.atlassian.net/browse/NAS-118078) fix test\_is\_outdated\_alert
+* [NAS-118076](https://ixsystems.atlassian.net/browse/NAS-118076) Switch to using vfs\_ixnas for default ACL module
+* [NAS-118075](https://ixsystems.atlassian.net/browse/NAS-118075) fix ssl integration test \(typo\)
+* [NAS-118074](https://ixsystems.atlassian.net/browse/NAS-118074) \(SCALE\) Plugins HPE MicroServer Gen8 not working with more, than 4 Drives
+* [NAS-118072](https://ixsystems.atlassian.net/browse/NAS-118072) Update Dataset Roles
+* [NAS-118071](https://ixsystems.atlassian.net/browse/NAS-118071) Fix expand button indentation on datasets tree
+* [NAS-118065](https://ixsystems.atlassian.net/browse/NAS-118065) Cannot convert stripe to mirror in UI
+* [NAS-118064](https://ixsystems.atlassian.net/browse/NAS-118064) cache failover.hardware.detect
+* [NAS-118059](https://ixsystems.atlassian.net/browse/NAS-118059) fix blank graphs when UPSBase plugin crashes
+* [NAS-118055](https://ixsystems.atlassian.net/browse/NAS-118055) Add ability to configure environment variables for nextcloud application
+* [NAS-118053](https://ixsystems.atlassian.net/browse/NAS-118053) Fix CI runs on master
+* [NAS-118048](https://ixsystems.atlassian.net/browse/NAS-118048) remove trailing forward slash in corssl package
+* [NAS-118040](https://ixsystems.atlassian.net/browse/NAS-118040) Introduce an internal job for retrieving catalog items
+* [NAS-118025](https://ixsystems.atlassian.net/browse/NAS-118025) Bluefin \(22.12\) fails to bring up interface
+* [NAS-118019](https://ixsystems.atlassian.net/browse/NAS-118019) Prohibit trailing spaces in ZFS dataset names
+* [NAS-118015](https://ixsystems.atlassian.net/browse/NAS-118015) prevent blocking event loop when checking updates
+* [NAS-118014](https://ixsystems.atlassian.net/browse/NAS-118014) fix failover.get\_ips
+* [NAS-118013](https://ixsystems.atlassian.net/browse/NAS-118013) Improve `core.bulk` documentation
+* [NAS-118011](https://ixsystems.atlassian.net/browse/NAS-118011) On TrueNAS SCALE, when performing GPU passthrough with high-memory cards QEMU options are required
+* [NAS-118004](https://ixsystems.atlassian.net/browse/NAS-118004) Preserve pool disks for Disk Temperature Reports
+* [NAS-117997](https://ixsystems.atlassian.net/browse/NAS-117997) Fix hostname spelling
+* [NAS-117996](https://ixsystems.atlassian.net/browse/NAS-117996) Inherit border width for inputs on focus
+* [NAS-117991](https://ixsystems.atlassian.net/browse/NAS-117991) Use zfs.pool.query\_imported\_fast in failover.status
+* [NAS-117987](https://ixsystems.atlassian.net/browse/NAS-117987) certificate verify failed: self signed certificate in certificate chain
+* [NAS-117986](https://ixsystems.atlassian.net/browse/NAS-117986) Number in CPU widget looks weird on Safari
+* [NAS-117983](https://ixsystems.atlassian.net/browse/NAS-117983) Clickable logo on mobile screens
+* [NAS-117973](https://ixsystems.atlassian.net/browse/NAS-117973) Simplify ixDetailsHeight
+* [NAS-117972](https://ixsystems.atlassian.net/browse/NAS-117972) No error message when trying to delete snapshot with hold
+* [NAS-117962](https://ixsystems.atlassian.net/browse/NAS-117962) Remove freebsd services
+* [NAS-117959](https://ixsystems.atlassian.net/browse/NAS-117959) UI Setting automatically switches to browser language
+* [NAS-117953](https://ixsystems.atlassian.net/browse/NAS-117953) \[SCALE\] Arrays are getting removed when editing
+* [NAS-117952](https://ixsystems.atlassian.net/browse/NAS-117952) \[Apps\] App logs dropdown, doesn't allow selecting initcontainer
+* [NAS-117950](https://ixsystems.atlassian.net/browse/NAS-117950) mask ndctl-monitor.service
+* [NAS-117944](https://ixsystems.atlassian.net/browse/NAS-117944) Allow passing OTP token to \`keychaincredential.remote\_ssh\_semiautomat…
+* [NAS-117943](https://ixsystems.atlassian.net/browse/NAS-117943) Browser navigation doesn't close slide-in
+* [NAS-117933](https://ixsystems.atlassian.net/browse/NAS-117933) remove migrate call in make reinstall\_container
+* [NAS-117931](https://ixsystems.atlassian.net/browse/NAS-117931) Using HTTP Basic Auth will bypass 2FA
+* [NAS-117927](https://ixsystems.atlassian.net/browse/NAS-117927) Remove dead smartctl code and fix functional tests
+* [NAS-117926](https://ixsystems.atlassian.net/browse/NAS-117926) fix test\_mountinfo unit test
+* [NAS-117925](https://ixsystems.atlassian.net/browse/NAS-117925) Make container.prune a job
+* [NAS-117921](https://ixsystems.atlassian.net/browse/NAS-117921) add `reinstall_container` make argument
+* [NAS-117917](https://ixsystems.atlassian.net/browse/NAS-117917) hitting ctrl \+C via OOB managemnt on truenas console menu locks up console
+* [NAS-117916](https://ixsystems.atlassian.net/browse/NAS-117916) NFS does not start on boot
+* [NAS-117911](https://ixsystems.atlassian.net/browse/NAS-117911) Samba Share ACL resets to Everyone when disabled and re-enabled
+* [NAS-117903](https://ixsystems.atlassian.net/browse/NAS-117903) CPU Usage graph key shows incorrect values when zooming
+* [NAS-117902](https://ixsystems.atlassian.net/browse/NAS-117902) \[SCALE\]: show\_if '!=' does not work, but '=' does work.
+* [NAS-117901](https://ixsystems.atlassian.net/browse/NAS-117901) Optimize Zpool related alerts
+* [NAS-117897](https://ixsystems.atlassian.net/browse/NAS-117897) webUI isn't showing what controller the alert was generated on
+* [NAS-117895](https://ixsystems.atlassian.net/browse/NAS-117895) CRITICAL ERROR ON UPDATE TrueNAS-22.02.0.1 -> TrueNAS-22.02.3
+* [NAS-117890](https://ixsystems.atlassian.net/browse/NAS-117890) Truecharts Applications failing to deploy due to snapshot task on latest bluefin nightly
+* [NAS-117872](https://ixsystems.atlassian.net/browse/NAS-117872) License Apps and VMs for Enterprise \(Backend\)
+* [NAS-117871](https://ixsystems.atlassian.net/browse/NAS-117871) Hide/Disable Apps and VMs based on License for Enterprise \(UI\)
+* [NAS-117857](https://ixsystems.atlassian.net/browse/NAS-117857) WebUI shell breaks on long strings
+* [NAS-117853](https://ixsystems.atlassian.net/browse/NAS-117853) UI should not specify path attribute when zvol is being created for disk based vm devices
+* [NAS-117843](https://ixsystems.atlassian.net/browse/NAS-117843) cli app container config prune failed
+* [NAS-117831](https://ixsystems.atlassian.net/browse/NAS-117831) Update on disk GRUB configuration for serial
+* [NAS-117800](https://ixsystems.atlassian.net/browse/NAS-117800) Systemd Services fail
+* [NAS-117794](https://ixsystems.atlassian.net/browse/NAS-117794) /etc/resolv.conf in Live ISO's filesystem.squash contains development information
+* [NAS-117777](https://ixsystems.atlassian.net/browse/NAS-117777) Unable to join active directory if SMB is not started first
+* [NAS-117752](https://ixsystems.atlassian.net/browse/NAS-117752) Unable to boot into previous boot environment
+* [NAS-117748](https://ixsystems.atlassian.net/browse/NAS-117748) Application States incorrectly reports available update
+* [NAS-117747](https://ixsystems.atlassian.net/browse/NAS-117747) vm.stop services do not stop
+* [NAS-117736](https://ixsystems.atlassian.net/browse/NAS-117736) Installed chart in TrueNAS SCALE gives Middleware error
+* [NAS-117722](https://ixsystems.atlassian.net/browse/NAS-117722) After migrating Core to Scale, cannot resilver boot mirror
+* [NAS-117715](https://ixsystems.atlassian.net/browse/NAS-117715) \[SCALE\] Data Protection pages is broken
+* [NAS-117710](https://ixsystems.atlassian.net/browse/NAS-117710) ZFS space efficiency on devices with huge physical blocks
+* [NAS-117708](https://ixsystems.atlassian.net/browse/NAS-117708) Wireguard setup stuck in loop if wireguard connection is not established with cloud
+* [NAS-117688](https://ixsystems.atlassian.net/browse/NAS-117688) Cannot Edit VMs
+* [NAS-117674](https://ixsystems.atlassian.net/browse/NAS-117674) Pool import fails randomly
+* [NAS-117658](https://ixsystems.atlassian.net/browse/NAS-117658) TrueNAS-SCALE-22.02.4-MASTER-20220805-041141 can't start VMs after importing old config or upgrading from 22.02.3 or earlier
+* [NAS-117653](https://ixsystems.atlassian.net/browse/NAS-117653) GUI allows creation of SMB shares for nonexistent paths
+* [NAS-117631](https://ixsystems.atlassian.net/browse/NAS-117631) Retrieve and display metadata for a single snapshot
+* [NAS-117599](https://ixsystems.atlassian.net/browse/NAS-117599) Installing netdata gets stuck at 75%
+* [NAS-117508](https://ixsystems.atlassian.net/browse/NAS-117508) SCALE ACL inheritance not working when migrated from POSIX to NFSv4
+* [NAS-117464](https://ixsystems.atlassian.net/browse/NAS-117464) Network widget does not show active interface
+* [NAS-117409](https://ixsystems.atlassian.net/browse/NAS-117409) Unable to isolate GPU or see in apps in SCALE.
+* [NAS-117379](https://ixsystems.atlassian.net/browse/NAS-117379) WS-Discovery Name not using specified hostname
+* [NAS-117316](https://ixsystems.atlassian.net/browse/NAS-117316) \[SCALE\] Prevent user from deploying app with port conflicts
+* [NAS-117230](https://ixsystems.atlassian.net/browse/NAS-117230) A pool scrub shows up twice in task manager
+* [NAS-117104](https://ixsystems.atlassian.net/browse/NAS-117104) PiHole Docker Install
+* [NAS-116678](https://ixsystems.atlassian.net/browse/NAS-116678) Refuse to download update if insufficient space avail
+* [NAS-116539](https://ixsystems.atlassian.net/browse/NAS-116539) TrueNAS CLI does not provide a pager mechanism
+* [NAS-116537](https://ixsystems.atlassian.net/browse/NAS-116537) Replace disk dialog does not include any identifying information about the disk
+* [NAS-116495](https://ixsystems.atlassian.net/browse/NAS-116495) Run blocking calls in threads in sysdataset plugin
+* [NAS-116318](https://ixsystems.atlassian.net/browse/NAS-116318) SQL unique constraint error when incorrectly editing an idmap
+* [NAS-115737](https://ixsystems.atlassian.net/browse/NAS-115737) Space in Pool Name / Path to Zlog kills iSCSI
+* [NAS-115648](https://ixsystems.atlassian.net/browse/NAS-115648) Low Encryption Performance on Atom Processors
+* [NAS-115586](https://ixsystems.atlassian.net/browse/NAS-115586) Enable `pool.replace_disk` tests
+* [NAS-115238](https://ixsystems.atlassian.net/browse/NAS-115238) Removed drive from pool does not degrade pool status \(SCALE\)
+* [NAS-113889](https://ixsystems.atlassian.net/browse/NAS-113889) Remove Microsoft Account in User
+* [NAS-113216](https://ixsystems.atlassian.net/browse/NAS-113216) New dataset does not inherit ACL Type from Pool's root dataset.
+* [NAS-112650](https://ixsystems.atlassian.net/browse/NAS-112650) Onedrive for Business
+* [NAS-112326](https://ixsystems.atlassian.net/browse/NAS-112326) Deprecate and remove "media" user and group
+* [NAS-112088](https://ixsystems.atlassian.net/browse/NAS-112088) Don't do validation on empty textboxes if they are not set required: true.
+* [NAS-111962](https://ixsystems.atlassian.net/browse/NAS-111962) "Not an interger" error in Transfers field in Sync Cloud task
+* [NAS-110795](https://ixsystems.atlassian.net/browse/NAS-110795) Can't create unencrypted dataset on Encrypted pool
 
 ## 22.12-BETA.1 
 
