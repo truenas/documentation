@@ -20,7 +20,7 @@ TrueNAS SCALE advanced settings screen provides configuration options for the co
 This article provides information on sysctl, system dataset pool and setting the maximum number of simultaneous replication tasks the system can perform. 
 
 ## Managing Sysctl Variables
-Use **ADD** on the **Sysctl** widget to add a tunable that configures a kernel parameter at runtime. 
+Use **ADD** on the **Sysctl** widget to add a tunable that configures a kernel module parameter at runtime. 
 
 ![AdvancedSysctlWidgetNoSysctl](/images/SCALE/22.02/AdvancedSysctlWidgetNoSysctl.png "SCALE Advanced Settings Sysctl Widget") 
 
@@ -28,7 +28,7 @@ The **Add Sysctl** or **Edit Sysctl** configuration screens display the settings
 
 ![AddSysctlConfigScreens](/images/SCALE/22.02/AddSysctlConfigScreen.png "SCALE Add Sysctl Screen") 
 
-Enter the sysctl variable name in **Variable**. Sysctl tunables are used to configure kernel parameters while the system is running and generally take effect immediately.
+Enter the sysctl variable name in **Variable**. Sysctl tunables are used to configure kernel module parameters while the system is running and generally take effect immediately.
 
 Enter a [sysctl](https://man7.org/linux/man-pages/man8/sysctl.8.html) value to use for the loader in **Value**. 
 

@@ -126,7 +126,7 @@ The **Sysctl** widget displays either **No Sysctl configured** or the existing s
 
 ![AdvancedSysctlWidgetNoSysctl](/images/SCALE/22.02/AdvancedSysctlWidgetNoSysctl.png "SCALE Advanced Settings Sysctl Widget") 
 
-**Add** to add a tunable that configures a kernel parameter at runtime.
+**Add** to add a tunable that configures a kernel module parameter at runtime.
 
 ### Add or Edit Sysctl Configuration Screen
 The **Add Sysctl** or **Edit Sysctl** configuration screen settings lets users set up tunables that configure kernel parameters at runtime.
