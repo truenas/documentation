@@ -1,6 +1,13 @@
 ---
 title: "Migrate Legacy to 1.2+"
+description: "This article describes how to migrate Legacy versions of TrueCommand."
 weight: 60
+tags:
+- tcinstall
+- tcdocker
+- tcupdate
+- scaletoptoolbar
+- coretoptoolbar
 ---
 
 {{< toc >}}
@@ -59,3 +66,5 @@ To move an existing TrueCommand 1.1 or earlier configuration to a Docker contain
    Then move `ixdb.sql` to the `localhostdirectory/` for the TrueCommand Docker container.
 
 You're now ready to install or start the TrueCommand Docker container. Be sure to specify the `localhostdirectory/` during container installation for TrueCommand to load the migrated data.
+
+{{< taglist tag="tcdocker" limit="10" >}}
