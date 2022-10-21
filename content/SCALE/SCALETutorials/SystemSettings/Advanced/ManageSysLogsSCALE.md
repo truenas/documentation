@@ -27,7 +27,7 @@ The **Syslog** configuration screen settings specify the logging level the syste
 
 Enter the remote syslog server DNS host name or IP address in **Syslog Server**. To use non-standard port numbers like *mysyslogserver:1928*, add a colon and the port number to the host name. Log entries are written to local logs and sent to the remote syslog server.
 
-Enter the [transport protocol](https://tools.ietf.org/html/rfc8095) for the remote system log server connection in **Syslog Transport**. Selecing Transport Layer Security (TLS) displays the **Syslog TLS Certificate** and **Syslog TSL Certificate Authority** fields. 
+Enter the [transport protocol](https://tools.ietf.org/html/rfc8095) for the remote system log server connection in **Syslog Transport**. Selecting Transport Layer Security (TLS) displays the **Syslog TLS Certificate** and **Syslog TSL Certificate Authority** fields. 
 
 Next, select the [transport protocol](https://tools.ietf.org/html/rfc8095) for the remote system log server TLS certificate from the **Syslog TLS Certificate** dropdown list, and select the TLS CA for the TLS server from the **Syslog TLS Certificate Authority** dropdown list. 
 
