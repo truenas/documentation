@@ -23,7 +23,7 @@ The **Self-Encrypting Drive** configuration screen allows users set the ATA secu
 
 ![AdvancedSystemSelfEncryptingDriveConfigScreen](/images/SCALE/22.02/AdvancedSystemSelfEncryptingDriveConfigScreen.png "SCALE Advanced Settings Self-Encrypting Drive screen") 
 
-Select the user passed to camcontrol security -u to unlock SEDs from the **ATA Security User** dropdoan list. Options are **USER** or **MASTER**.
+Select the user passed to *camcontrol security -u* to unlock SEDs from the **ATA Security User** dropdown list. Options are **USER** or **MASTER**.
 
 Enter the global password to unlock SEDs in **SED Password** and in **Confirm SED Password**.
 
