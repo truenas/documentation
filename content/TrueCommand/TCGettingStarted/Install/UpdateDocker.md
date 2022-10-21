@@ -1,6 +1,10 @@
 ---
 title: "Update Docker"
+description: "This article describes how to update TrueCommand installed in a Docker container."
 weight: 50
+tags:
+- tcdocker
+- tcupdate
 ---
 
 {{< toc >}}
@@ -83,3 +87,5 @@ sudo docker run --name TrueCmd_contained -v "/home/joe/Documents/TrueCommandCont
 ```
 When the container is created, Docker will use the image previously downloaded with `docker pull`.
 A page refresh might be required to view the changes, but previous settings and systems remain available due to the volume reference.
+
+{{< taglist tag="tcdocker" limit="10" >}}
