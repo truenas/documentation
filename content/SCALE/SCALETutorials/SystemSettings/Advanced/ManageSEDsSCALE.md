@@ -1,6 +1,6 @@
 ---
 title: "Managing SEDs"
-description: "This article provides information on adding or modifying self-encrypting drive (SED) user and global passwords inSCALE."
+description: "This article provides information on adding or modifying self-encrypting drive (SED) user and global passwords in SCALE."
 weight: 50
 aliases:
 tags:
