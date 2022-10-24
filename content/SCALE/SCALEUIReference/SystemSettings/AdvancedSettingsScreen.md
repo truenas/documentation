@@ -102,7 +102,7 @@ The **Init/Shutdown Scripts** widget displays **No Init/Shutdown Scripts configu
 ![AdvancedSystemInitShutdownScriptWidget](/images/SCALE/22.02/AdvancedSystemInitShutdownScriptWidget.png "SCALE Advanced Settings Init/Shutdown Script Widget") 
 
 **Add** opens the **[Add Init/Shutdown Script](#add-or-edit-initshutdown-script-configuration-screens)** configuration screen.
-Any script listed is a link that opens the **[Edit Inti/Shutdown Script](#add-or-edit-initshutdown-script-configuration-screens)** configuration screen populated with the settings for that script.
+Any script listed is a link that opens the **[Edit Init/Shutdown Script](#add-or-edit-initshutdown-script-configuration-screens)** configuration screen populated with the settings for that script.
 
 ### Add or Edit Init/Shutdown Script Configuration Screens
 **Init/Shutdown Scripts** lets users schedule commands or scripts to run at system startup or shutdown. 
