@@ -25,6 +25,8 @@ TrueNAS SCALE advanced settings screen provides configuration options for the co
 
 {{< include file="/_includes/AdvancedSettingsWarningSCALE.md" type="page" >}}
 
+**Save Debug** saves a system debug file as a downloaded file on your system. 
+
 ## Console Widget
 The **Console** widget on the **System Setting > Advanced** screen displays current console settings for TrueNAS.
 
