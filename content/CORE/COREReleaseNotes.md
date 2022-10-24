@@ -29,7 +29,7 @@ November 1, 2022
 
 iXsystems is pleased to announce the release of TrueNAS 13.0-U3.
 
-This is a maintenance release with some improvements for ACLs, rsync, and updates Samba to 4.15.10. It also updates the Asigra plugin, and adds the R50m to the Enclosure function and Storj as a Cloud sync service.
+This is a maintenance release with some improvements for ACLs and rsync, updates Samba to 4.15.10 and updates the Asigra plugin. It adds the R50m to the Enclosure function and Storj as a Cloud sync service.
 
 ## TrueNAS 13.0-U3 Changelog
 
@@ -941,7 +941,7 @@ This is a an early release meant for previewing and testing features and is **no
 
 | Seen In | Key | Summary | Workaround | Resolved In |
 |---------|-----|---------|------------|-------------|
-| 13.0-U3 |N/A | Netatalk deprection | Netatalk has been deprecated and users should begin migrating away from using it with TrueNAS. Netatalk, like AFP shares, is deprecated in 13.0 and will be completely removed post-CORE 13.0. Users should migrate to SMB shares. | N/A |
+| 13.0-U3 |N/A | Netatalk deprection | Netatalk has been deprecated and users should begin migrating away from using it with TrueNAS. Netatalk is deprecated in 13.0, and like AFP will be completely removed post-CORE 13.0. Users should migrate to SMB shares. | N/A |
 | 13.0-U2 | [NAS-117663](https://ixsystems.atlassian.net/browse/NAS-117663) | 2.5GigE Realtek NICs are unsupported in 13.0-U2. This is due to the Realtek NIC driver causing iSCSI data corruption and the driver is now disabled by default. | When the system is not used for iSCSI sharing and the NIC support is required, enabling the Realtek NIC driver is possible by going to **System > Tunables** and creating two new tunables.<br> Click **ADD**, enter these values:<ul><li>**Variable** : `if_re_load`</li><li>**Value** : `YES`</li><li> **Type** : `loader`</li></ul> and click **SAVE**.<br> Click **ADD** again, enter these values:<ul><li>**Variable** : `if_re_name`</li><li>**Value** : `/boot/modules/if_re.ko`</li><li> **Type** : `loader`</li></ul> and click **SAVE**.<br> To verify the realtek driver is loaded, reboot the system, go to the **Shell**, and type `kldstat -n if_re.ko`. The command returns the file name and details when it has been loaded. | TBD |
 | 13.0-U2 | [NAS-117891](https://ixsystems.atlassian.net/browse/NAS-117891) | 2FA login fails the first time after failover before succeeding. | It appears the UI presents the sign in screen before the system is ready. Occurs on High Availability systems. Suggest user not immediately attempt logging in, but wait a bit before trying to signing in with 2FA, or if sign in fails, refresh their screen and retry until the system presents the correct sign in screen with 2FA field. | Target 13.0-U3 |
 | 13.0-U2 | [NAS-117899](https://ixsystems.atlassian.net/browse/NAS-117899) | TrueCommand connection causing a kernel panic with unscheduled system reboots. | Cause of this issue is under investigation. | Target 13.0-U3 |
