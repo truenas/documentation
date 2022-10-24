@@ -205,5 +205,6 @@ GPU passthrough allows the TrueNAS SCALE kernel to directly present an internal 
 The GPU device acts like the VM is driving it, and the VM detects the GPU as if it is physically connected. Select the GPU device ID from the dropdown list. 
 To isolate a GPU you must have at least two in your system; one allocated to the host system for system functions and the other available to isolate for use by a VM or application. 
 Isolating the GPU prevents apps and the system from accessing it.
+{{< /expand >}}
 
 {{< taglist tag="scalesettings" limit="10" >}} 
