@@ -139,7 +139,7 @@ The **Add Sysctl** or **Edit Sysctl** configuration screen settings lets users s
 | Settings | Description |
 |----------|-------------|
 | **Variable** | Enter the name of the sysctl variable to configure. sysctl tunables are used to configure kernel parameters while the system is running and generally take effect immediately. |
-| **Value** | Enter a [sysctl](https://man7.org/linux/man-pages/man8/sysctl.8.html) value to use for the loader, **sysctl**, or **rc.conf** variable. |
+| **Value** | Enter a [sysctl](https://man7.org/linux/man-pages/man8/sysctl.8.html) value to use for the loader, **sysctl** variable. |
 | **Description** | Enter a description for the tunable. |
 | **Enabled** | Select to enable this tunable. Leave clear to disable this tunable without deleting it. |
 {{< /expand >}}
