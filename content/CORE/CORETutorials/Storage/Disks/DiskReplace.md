@@ -1,7 +1,11 @@
 ---
 title: "Disk Replacement"
+description: "This article describes how to replace a disk in TrueNAS CORE."
 weight: 20
 aliases: /core/storage/disks/diskreplace/
+tags:
+- corediskreplace
+- corerecovery
 ---
 
 {{< toc >}}
@@ -83,3 +87,7 @@ For pools with large amounts of data, this can take a long time.
 When the resilver is complete, the pool status screen updates to show the new disk and the pool status returns to **Online**.
 
 ![Storage Pools Status Replace Complete](/images/CORE/12.0/StoragePoolsStatusReplaceComplete.png "Replacement Complete")
+
+{{< taglist tag="corerecovery" limit="10" >}}
+
+{{< taglist tag="corestorage" limit="10" title= "Related Storage Articles" >}}

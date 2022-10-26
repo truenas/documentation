@@ -1,7 +1,11 @@
 ---
 title: "Wiping a Disk"
+description: "This article describes how to wipe a disk in TrueNAS CORE."
 weight: 10
 aliases: /core/storage/disks/diskwipe/
+tags:
+- corediskwipe
+- corerecovery
 ---
 
 The wipe function deletes obsolete data off an unused disk.
@@ -41,3 +45,7 @@ When satisfied the disk can be wiped, select **Confirm** and click **CONTINUE**.
 A dialog shows the disk wipe progress.
 
 See [Disks Screens]({{< relref "/CORE/UIReference/Storage/Disks/DisksScreens.md" >}}) for more information on Disks screen settings.
+
+{{< taglist tag="corerecovery" limit="10" >}}
+
+{{< taglist tag="corestorage" limit="10" title= "Related Storage Articles" >}}

@@ -1,6 +1,10 @@
 ---
 title: "Disks Screens"
+description: "This article describes the fields in the Disk Screens in TrueNAS CORE."
 weight: 20
+tags:
+- coredisk
+- corestorage
 ---
 
 {{< toc >}}
@@ -40,7 +44,7 @@ The settings on the **Edit Disk** are the same as those on the **Add Disk** scre
 | **Force HDD Standby** | Select to allow the drive to enter standby, even when non-physical S.M.A.R.T. operations could prevent the drive from sleeping. |
 | **Advanced Power Management** | Select an option from the dropdown list to select a power management profile from the menu. Options are **Disabled**, **Level 1 - Minimum power usage with Standby (spindown)**, **Level 64 - Intermediate power usage with Standby**, **Level 127 - Maximum power usage with Standby**, **Level 128 - Minimum with power usage without Standby (no spindown)**, **Level 192 - Intermediate power usage without Standby**, **Level 254 - Maximum performance, maximum power usage**. |
 | **Acoustic Level** | Select the option from the dropdown list to modify disks that understand [AAM](https://en.wikipedia.org/wiki/Automatic_acoustic_management) Options are **Disabled**, **Minimum**, **Medium** or **Maximum**. |
-| **Enable S.M.A.R.T.** | Select to enable allowing the system to conduct periodic [S.M.A.R.T. tests](https://www.truenas.com/docs//tasks.html#s-m-a-r-t-tests). |
+| **Enable S.M.A.R.T.** | Select to enable allowing the system to conduct periodic [S.M.A.R.T. tests](https://www.truenas.com/docs/core/coretutorials/tasks/runningsmarttests/). |
 | **S.M.A.R.T. extra opitons** | Enter additional [smartctl(8)](https://www.unix.com/man-page/suse/8/smartctl/) options. |
 | **Critical** | Enter a numeric value to set the threshold temperature in Celsius. If the drive temperature is higher than this value, a LOG_CRIT level log entry is created and an email i s sent. **0** disables this check. |
 | **Difference** | Enter a value where the the system reports if the drive temperature changed by this many degrees Celsius since the last report. **0** disables the report. |
@@ -65,3 +69,7 @@ Use the **Import Disk** screen to perform a one time disk import, only one disk 
 The **SAVE** button activates after required fields are populated.
 
 See [Import Disks]({{< relref "/CORE/CORETutorials/Storage/ImportDisk.md" >}}) for more information on importing a disk into your TrueNAS.
+
+{{< taglist tag="corerecovery" limit="10" >}}
+
+{{< taglist tag="corestorage" limit="10" title= "Related Storage Articles" >}}

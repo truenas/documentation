@@ -1,6 +1,6 @@
 ---
-title: "SMB Service Screen"
-description: "This article provides instructions in the SMB service screen and settings."
+title: "Configuring SMB Service"
+description: "This article provides instructions on configuring the SMB service in SCALE."
 weight: 50
 aliases: /scale/scaleuireference/shares/smb/smbservicesscreen/
 tags:
@@ -13,41 +13,30 @@ tags:
 The **Services > SMB** screen displays after going to the **Shares** screen, finding the **Windows (SMB) Shares** section, and clicking <span class="material-icons">more_vert</span> + **Config Service**.
 Alternately, you can go to **System Settings > Services** and click the <span class="material-icons">edit</span> edit icon for the SMB service.
 
-## SMB Services Screen
-The **SMB Services** screen displays setting options to configure TrueNAS SMB settings to fit your use case.
-The **Basic Options** settings continue to display after selecting the **Advanced Options** screen.
+## Configuring SMB Service
+The **SMB Services** screen displays setting options to configure TrueNAS SMB settings to fit your use case. 
+In most cases you can set the required fields and accept the rest of the setting defaults. If you have specific needs for your uses case, click **Advanced Options**. This displays more settings
 
 ![SMBServiceOptionsSCALE](/images/SCALE/SMBServiceOptionsSCALE.png "SMB Service Options")
 
-Click **Save** or **Cancel** to close the configuration screen and return to the **Services** screen.
+Enter the name of the TrueNAS host system if not the default displayed in **NetBIOS Name**. This name is limited to 15 characters and cannot be the **Workgroup** name.
 
-### Basic Options Settings
-| Setting | Description |
-|---------|-------------|
-| **NetBIOS Name** | Automatically populated with the original system host name. This name is limited to 15 characters and cannot be the **Workgroup** name. |
-| **NetBIOS Alias** | Enter any alias name that is up to 15 characters long. Separate alias names with a space between them. |
-| **Workgroup** | Enter a name that matches the Windows workgroup name. When unconfigured and Active Directory or LDAP is active, TrueNAS detects and sets the correct workgroup from these services. |
-| **Description** | (Optional) Enter any notes or descriptive details about the service configuration. |
-| **Enable SMB1 support** | Select to allow legacy SMB1 clients to connect to the server. Note: SMB1 is being deprecated. We advise you to upgrade clients to operating system versions that support modern SMB protocol versions. |
-| **NTLMv1 Auth** | Off by default. Select to allow [smbd](https://www.samba.org/samba/docs/current/man-html/smbd.8.html) attempts to authenticate users with the insecure and vulnerable NTLMv1 encryption. This setting allows backward compatibility with older versions of Windows, but is not recommended. Do not use on untrusted networks. |
+Enter any alias name or names that do not exceed 15 characters in **NetBIOS Alias**. Separate alias names with a space between them.
 
-### Advanced Options Settings
-The **Basic Options** settings also display on the **Advanced Options** settings screen with the **Other Options** settings.
+Enter a name that matches the Windows workgroup name in **Workgroup**. When unconfigured and Active Directory or LDAP is active, TrueNAS detects and sets the correct workgroup from these services. 
 
-![SMBServiceAdvancedSCALE](/images/SCALE/SMBServiceAdvancedSCALE.png "Advanced Options for the SMB Service")
+If using SMB1 clients, select **Enable SMB1 support** to allow legacy SMB1 clients to connect to the server. Note: SMB1 is being deprecated. We advise you to upgrade clients to operating system versions that support modern SMB protocol versions.
 
-| Setting | Description |
-|---------|-------------|
-| **UNIX Charset** | Select the character set to use internally from the dropdown list of options. **UTF-8** is standard for most systems as it supports all characters in all languages. |
-| **Log Level** | Record SMB service messages up to the specified log level from the dropdown list. Options are **None**, **Nimimum**, **Normal**, **full** and **Debug**. By default, error and warning level messages are logged. It is not recommended to use a log level above **Minimum** for production servers. |
-| **Use Syslog Only** | Selectt to log authentication failures in */var/log/messages* instead of the default */var/log/samba4/log.smbd*. |
-| **Local Master** | Selected by default and determines if the system participates in a browser election. Clear this checkbox when the network contains an AD or LDAP server, or when Vista or Windows 7 machines are present. |
-| **Enable Apple SMB2/3 Protocol Extensions** | Select to allow MacOS to use these [protocol extensions](https://support.apple.com/en-us/HT210803) to improve the performance and behavioral characteristics of SMB shares. This is required for Time Machine support. |
-| **Administrators Group** | Enter or select members from the dropdown list. Members of this group are local administrators and automatically have privileges to take ownership of any file in an SMB share, reset permissions, and administer the SMB server through the Computer Management MMC snap-in. |
-| **Guest Account** | Select the account to use for guest access from the dropdown list. Default is **nobody**. The selected account must have permissions to the shared pool or dataset. To adjust permissions, edit the dataset Access Control List (ACL), add a new entry for the chosen guest account, and configure the permissions in that entry. If the selected **Guest Account** is deleted the field resets to **nobody**. |
-| **File Mask** | Overrides default **0666** file creation mask which creates files with read and write access for everybody. |
-| **Directory Mask** | Overrides default directory creation mask of **0777** which grants directory read, write and execute access for everybody. |
-| **Bind IP Addresses** | Select static IP addresses that SMB listens on for connections from the dropdown list. Leaving all unselected defaults to listening on all active interfaces.
-| **Auxiliary Parameters** | Enter additional [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) options. Refer to the [Samba Guide]9http://www.oreilly.com/openbook/samba/book/appb_02.html) for more information on these settings. You can use **Auxiliary Pparameters** to override the default SMB server configuration, but such changes could adversely affect SMB server stability or behavior. To log more details when a client attempts to authenticate to the share, add `log level = 1, auth_audit:5`. |
+If you plan to use the insecure and vulnerable NTLMv1 encryption, select **NTLMv1 Auth** to allow [smbd](https://www.samba.org/samba/docs/current/man-html/smbd.8.html) attempts to authenticate users. This setting allows backward compatibility with older versions of Windows, but is not recommended. Do not use on untrusted networks.
+
+Enter any notes about the service configuration in **Description**
+
+For more advanced setting see [SMB Services Screen]({{< relref "SMBServicesScreen.md" >}}).
+
+Use **Auxiliary Parameters** to enter additional [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) options, or to log more details when a client attempts to authenticate to the share, add `log level = 1, auth_audit:5`. Refer to the [Samba Guide]9http://www.oreilly.com/openbook/samba/book/appb_02.html) for more information on these settings. 
+
+Click **Save**.
+
+Start the **SMB** service.
 
 {{< taglist tag="scalesmb" limit="10" title="Releated SMB Articles" >}}

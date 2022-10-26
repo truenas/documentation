@@ -1,7 +1,13 @@
 ---
 title: "Permissions"
+description: "This articled describes permissions configuration on TrueNAS CORE."
 weight: 22
 aliases: /core/storage/pools/permissions/
+tags:
+- corepermissions
+- coredataset
+- coreacls
+- corestorage
 ---
 
 {{< toc >}}
@@ -137,11 +143,6 @@ Advanced flags offer finer control for applying an ACE to new files or directori
 * **Inherit Only** (`i`): Remove the ACE from permission checks but allow it to be inherited by new files or subdirectories. Inherit Only is removed from these new objects.
 * **Inherited** (`I`): set when the ACE has been inherited from another dataset.
 
+{{< taglist tag="coredataset" limit="10" >}}
 
-## Additional Information
-
-[Dataset Screens]({{< relref "/CORE/UIReference/Storage/Pools/DatasetsScreen.md" >}})
-
-[Pools Screens]({{< relref "/CORE/UIReference/Storage/Pools/PoolsScreens.md" >}})
-
-[Creating Pools]({{< relref "/CORE/CORETutorials/Storage/Pools/PoolCreate.md" >}})
+{{< taglist tag="corestorage" limit="10" title="Related Storage Articles" >}}

@@ -1,7 +1,12 @@
 ---
 title: "Creating Pools"
+description: "This article describes how to create pools on TrueNAS CORE."
 weight: 10
 aliases: /core/storage/pools/poolcreate/
+tags:
+- corecreatepools
+- corepools
+- corestorage
 ---
 
 {{< toc >}}
@@ -145,14 +150,6 @@ For example, if two disks are added, TrueNAS automatically configures the vdev a
 
 To change the vdev layout, open the **Data VDevs** list and select the desired layout.
 
-## Additional Information
+{{< taglist tag="coredataset" limit="10" >}}
 
-[Dataset Screens]({{< relref "/CORE/UIReference/Storage/Pools/DatasetsScreen.md" >}})
-
-[Pools Screens]({{< relref "/CORE/UIReference/Storage/Pools/PoolsScreens.md" >}})
-
-[Managing Pools]({{< relref "/CORE/CORETutorials/Storage/Pools/ManagingPools.md" >}})
-
-[Importing Pools]({{< relref "/CORE/CORETutorials/Storage/Pools/PoolImport.md" >}})
-
-[Setting Up Permissions]({{< relref "/CORE/CORETutorials/Storage/Pools/Permissions.md" >}}) 
+{{< taglist tag="corestorage" limit="10" title="Related Storage Articles" >}}

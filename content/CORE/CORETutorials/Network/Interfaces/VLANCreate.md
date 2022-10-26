@@ -30,12 +30,6 @@ See [Interfaces Screen]({{< relref "/CORE/UIReference/Network/InterfacesScreen.m
 
 {{< include file="/content/_includes/InterfaceOptions.md" markdown="true" >}}
 
-## Additional Information
-
-[Managing Jails]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Jails/ManagingJails.md" >}})
-
-[Managing Plugins]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Plugins/ManagingPlugins.md" >}})
-
-[Creating Basic Virtual Machines]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/VirtualMachines/CreatingBasicVM.md" >}})
-
 {{< taglist tag="corenetworkinterfaces" limit="10" >}}
+
+{{< taglist tag="corejailspluginsvm" limit="10" title="Related Articles" >}}
