@@ -4400,7 +4400,7 @@ Verified Features are generally working in SCALE. Minor bugs could be present.
 * Cloud Sync
 * Replication
 * TrueCommand Cloud connections
-* [Applications UI]({{<relref "/SCALE/SCALEUIReference/Apps/UsingApps.md" >}})
+* [Applications UI]({{<relref "/SCALE/SCALETutorials/Apps/UsingApps.md" >}})
 
 #### Provisional
 
