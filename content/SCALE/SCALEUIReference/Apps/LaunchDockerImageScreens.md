@@ -15,7 +15,7 @@ tags:
 
 ![AppsScreenHeaderSCALE](/images/SCALE/22.02/AppsScreenHeaderSCALE.png "Avalable Application Header Options") 
 
-The docker image wizard includes 12 configuration screens and a **[Confirm Options]()** screen that displays a summary of some of the setting options configured.
+The docker image wizard includes 12 configuration screens and a **Confirm Options** screen that displays a summary of some of the setting options configured.
 The **Launch Docker Image** wizard allows you to configure third-party applications using settings based on Kubernetes. You can use the wizard to configure applications not included in the **Official** catalog or to do a more advanced installation of official catalog applications.
 
 ## Application Name Screen
