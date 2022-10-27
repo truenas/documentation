@@ -1,6 +1,6 @@
 ---
 title: "Creating the Admin Account"
-description: "This article describes how to create the Administrator Account in TrueCommand."
+description: "This article describes how to create the administrator account in TrueCommand."
 weight: 30
 tags:
 - tcinstall
