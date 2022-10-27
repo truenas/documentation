@@ -19,7 +19,7 @@ When accessing the interface for the first time, you need to create an admin acc
 
 * Enter a username and password.
 
-* Read the Terms of Service, set **I have read and agree to the terms of service**, and click **SIGN UP**.
+* Read the Terms of Service, select **I have read and agree to the terms of service**, and click **SIGN UP**.
 
 TrueCommand creates the admin login credentials and displays the login page.
 
