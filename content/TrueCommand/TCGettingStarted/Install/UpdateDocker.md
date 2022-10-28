@@ -85,7 +85,7 @@ Example without https:
 ```
 sudo docker run --name TrueCmd_contained -v "/home/joe/Documents/TrueCommandContainer:/data" -p 8080:80 -d ixsystems/truecommand:latest
 ```
-When the container is created, Docker will use the image previously downloaded with `docker pull`.
+When the container is created, Docker uses the image previously downloaded with `docker pull`.
 A page refresh might be required to view the changes, but previous settings and systems remain available due to the volume reference.
 
 {{< taglist tag="tcdocker" limit="10" >}}
