@@ -29,7 +29,7 @@ November 1, 2022
 
 iXsystems is pleased to announce the release of TrueNAS 13.0-U3.
 
-This is a maintenance release with some improvements for ACLs and rsync, updates Samba to 4.15.10 and updates the Asigra plugin. It adds the R50m to the Enclosure function and Storj as a Cloud sync service.
+This is a maintenance release with some improvements for ACLs and rsync, updates Samba to 4.15.10 and updates the Asigra plugin. It adds Enclosure Management integration for the 3rd generation R50 and Storj as a new Cloud Sync provider.
 
 ## TrueNAS 13.0-U3 Changelog
 
