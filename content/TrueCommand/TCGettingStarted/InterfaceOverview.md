@@ -15,7 +15,7 @@ tags:
 
 ![TopBar](/images/TrueCommand/2.1/TopBar.png "Top Bar")
 
-The top bar has various quick links, configuration options, alerts, and menus.
+The top toolbar has various quick links, configuration options, alerts, and menus.
 
 + Clicking <mat-icon role="img" fontset="mdi" aria-hidden="true" class="mat-icon mdi mdi-server-network mat-icon-no-color"></mat-icon> opens the [**Cluster Volume**]({{< relref "/TrueCommand/Clusters.md" >}}) page.
 + Clicking <mat-icon role="img" fontset="mdi" fonticon="mdi-database" class="mat-icon mdi mdi-database mat-icon-no-color" aria-hidden="true"></mat-icon> opens the [**iSCSI Manager**]({{< relref "/TrueCommand/iSCSIManagement.md" >}}) page.
@@ -47,7 +47,7 @@ To reset all colors to the application defaults, click **DEFAULTS**.
 ### Settings Menu
 {{< expand "Settings menu dropdown" >}}
 
-The Settings menu has the following options:
+The **Settings** menu has the following options:
 
 + Clicking <mat-icon role="img" fontset="mdi" fonticon="mdi-view-dashboard" class="mat-icon mdi mdi-view-dashboard mat-icon-no-color" aria-hidden="true" ></mat-icon> opens the main TrueCommand Dashboard.
 + Clicking <mat-icon _ngcontent-ahp-c196="" role="img" fontset="mdi" fonticon="mdi-chip" class="mat-icon notranslate mdi mdi-chip mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" data-mat-icon-name="mdi-chip" data-mat-icon-namespace="mdi"></mat-icon> opens the [**System Inventory**]({{< relref "/TrueCommand/systemmanagement/multisystems.md" >}}) page.
@@ -59,7 +59,7 @@ The Settings menu has the following options:
 + Clicking <mat-icon role="img" fontset="mdi" fonticon="mdi-cloud-alert" class="mat-icon mdi mdi-cloud-alert mat-icon-no-color" aria-hidden="true"></mat-icon> opens the [Alert Services]({{< relref "/TrueCommand/Alerts/AlertManage.md" >}}) page.
 + Clicking <mat-icon role="img" class="mat-icon material-icons mat-icon-no-color" aria-hidden="true">settings_remote</mat-icon> opens the [Systems]({{< relref "/TrueCommand/Administration/Systems.md" >}}) page.
 + Clicking <mat-icon role="img" class="mat-icon material-icons mat-icon-no-color" aria-hidden="true">person</mat-icon> opens the [Users]({{< relref "/TrueCommand/Administration/Users.md" >}}) page.
-+ Clicking <mat-icon role="img" class="mat-icon material-icons mat-icon-no-color" aria-hidden="true">supervised_user_circle</mat-icon>  opens the [Teams]({{< relref "/TrueCommand/Administration/Users.md" >}}) page.
++ Clicking <mat-icon role="img" class="mat-icon material-icons mat-icon-no-color" aria-hidden="true">supervised_user_circle</mat-icon> opens the [Teams]({{< relref "/TrueCommand/Administration/Users.md" >}}) page.
 + Clicking <mat-icon role="img" class="mat-icon material-icons mat-icon-no-color" aria-hidden="true">short_text</mat-icon> opens the [Logs]({{< relref "/TrueCommand/Administration/SystemLog.md" >}}) page.
 + Clicking <mat-icon role="img" class="mat-icon material-icons mat-icon-no-color" aria-hidden="true">vpn_key</mat-icon> opens the [Administration]({{< relref "/TrueCommand/Administration/Settings/_index.md" >}}) page.
 {{< /expand >}}
