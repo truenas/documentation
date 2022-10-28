@@ -20,9 +20,9 @@ A credit card number is required for Cloud Signups.
 If the TrueCommand Cloud license was purchased as part of an Enterprise contract, please contact [**iXSystems Customer Support**]({{< relref "/TrueCommand/Introduction/Support.md" >}}) and a member of the Deployment Team will provide a sign-up code which makes the cost $0 for the duration of the contract.
 {{< /hint >}}
 
-## Begin TrueCommand Cloud Installation
+## Getting Started with Cloud Deployment
 
-{{< expand "TrueCommand Cloud: Register and Create Subscription" >}}
+{{< expand "TrueCommand Cloud: Register and Create Subscription" "v" >}}
 
 TrueCommand Cloud is a SaaS offering of TrueCommand with a WireGuard VPN capability to connect TrueNAS systems through firewalls.
 TrueCommand Cloud is compatible with TrueNAS version v12.0 and newer.
@@ -61,19 +61,19 @@ Next, fill out the payment form.
 
 ![CloudSubscriptionPayment](/images/TrueCommand/Cloud/CloudSubscriptionPayment.png "Cloud Subscription Payment")
 
-Click Subscribe and wait for the form to be accepted. The Account Services window confirms that you have an active TrueNAS Cloud account with an active subscription.
+Click **Subscribe** and wait until the form is accepted. The **Account Services** window confirms that you have an active TrueNAS Cloud account with an active subscription.
 
 ### Provision the Active Subscription
 
-Click the **Provision Now** button which is located to the right of the Active Subscription listing.
+Click the **Provision Now** button located to the right of the **Active Subscription** listing.
 
 ![PortalDashboardActiveSubscription](/images/TrueCommand/Cloud/PortalDashboardActiveSubscription.png "Account Services: Active Subscriptions")
 
-Select a **Subnet** that your network is not using.
+Select a subnet that your network is not using from the **Subnet** dropdown list.
 
 ![TrueCommandProvisionSubnet](/images/TrueCommand/Cloud/TrueCommandProvisionSubnet.png "Account Services: Provisioning TrueCommand")
 
-Click **Create Instance**. This will return you to the Account Services screen.  
+Click **Create Instance**. This returns you to the **Account Services** screen.  
 
 The next step is to add a client and create a WireGuard Config file.
 
@@ -85,7 +85,7 @@ The next step is to add a client and create a WireGuard Config file.
 
 From the account home page, click **Manage**.
 
-You need to add a client in order to obtain a TrueCommand WireGuard Config file.  
+To obtain a TrueCommand WireGuard config file you need to add a client.  
 
 Under **Create Access Client** provide a nickname and click the **Add** button.
 
@@ -95,11 +95,11 @@ After adding the client, click <i class="fa fa-download action-icon clickable" a
 
 ![CloudSubscriptionServiceDetailsWireGuardClient](/images/TrueCommand/Cloud/CloudSubscriptionServiceDetailsWireGuardClient.png "Account Services: Downloading the WireGuard Configuration File")
 
-Open Wireguard on your machine and click **Add Tunnel**.
+Open Wireguard on your system and click **Add Tunnel**.
 
 ![WireGuardTunnels](/images/TrueCommand/WireGuardTunnels.png "WireGuard: Adding Tunnels")
 
-Select the TrueCommand WireGuard Configuration file you downloaded.
+Select the TrueCommand WireGuard configuration file you downloaded.
 
 ![WireGuardTCCloudInactive](/images/TrueCommand/WireGuardTCCloudInactive.png "WireGuard: Tunnel Inactive")
 
@@ -118,7 +118,7 @@ The next step is to add systems to your configuration.
 
 ## Connect Systems to the TrueCommand Cloud Instance
 
-{{< expand "TrueCommand Cloud: Connecting Systems" >}}
+{{< expand "TrueCommand Cloud: Connecting Systems" "v" >}}
 
 Log into the ixSystems cloud account and click **Manage**.
 Under **Service Details**, copy the **TrueCommand API Key**.
@@ -127,7 +127,7 @@ Under **Service Details**, copy the **TrueCommand API Key**.
 
 Log into a TrueNAS system and click the TrueCommand icon in the upper right.
 
-Paste the TrueCommand API Key copied from the iXsystems Account Portal into the TrueNAS dialog window. 
+Paste the TrueCommand API key copied from the iXsystems Account Portal into the TrueNAS dialog window. 
 
 ![TrueCommandCloudConnectAPIKey](/images/SCALE/TrueCommandCloudConnectAPIKey.png "Connecting TrueNAS to TrueCommand Cloud")
 
@@ -141,45 +141,17 @@ Click the **Discovered Systems** icon and select the TrueNAS system. TrueCommand
 The TrueNAS instance can take 10 to 15 minutes to fully sync up with TrueCommand Cloud.
 When all systems are connected to TrueCommand Cloud, refer to the [TrueCommand Administration articles]({{< relref "/TrueCommand/Administration/_index.md" >}}) for more instructions about setting up configuration backups, alerts, reports, and role-based access control.
 {{< /expand >}}
-
-### Adding Browser Security Exceptions
-{{< expand "TrueCommand: Browser Exceptions" >}}
-
-TrueCommand uses a [self signed certificate](https://tools.ietf.org/html/rfc8705) for a secure connection.
-Because of this, many Internet browsers consider the IP address or DNS host name untrustworthy.
-In these cases, the IP address or DNS host name must be added as an exception to the browser to access the web interface.
-Adding an exception is shown here for two different browsers, but the procedure is similar for most browsers.
-
-### Browser Security Exceptions
-{{< expand "Chrome" >}}
-Click **Advanced** to view information about the error code.
-Click **Proceed to hostname (unsafe)**.
-
-![ChromeWarning](/images/TrueCommand/2.0/ChromeWarning.png "Chrome Warning")
-{{< /expand >}}
-{{< expand "Firefox" >}}
-Click **Advanced** to view information about the error code.
-
-![FirefoxWarning](/images/TrueCommand/2.0/FirefoxWarning.png "Firefox Warning")
-
-Click **Add Exception...**.
-Set **Permanently store this exception** to permanently store the IP address or DNS host name in Firefox.
-Click **Confirm Security Exception**.
-
-![FirefoxExceptionAdd](/images/TrueCommand/2.0/FirefoxExceptionAdd.png "Adding a security exception")
-{{< /expand >}}
-{{< /expand >}}
+### Adding Browser Exceptions
+{{< include file="/_includes/TCBrowserExceptions.md" type="page" >}}
 
 ## Create the Administrator Account in TrueCommand Cloud
-{{< expand "TrueCommand Cloud: Create the Admin Account" >}}
+{{< expand "TrueCommand Cloud: Create the Admin Account" "v" >}}
 
 When accessing the interface for the first time, you need to create an admin account. 
 
 ![TrueCommand Admin Creation](/images/TrueCommand/2.0/FirstLogin.png "TrueCommand Admin Creation")
 
-* Enter a username and password.
-
-* Read the Terms of Service, set **I have read and agree to the terms of service**, and click **SIGN UP**.
+Enter a username and password. Read the Terms of Service, select **I have read and agree to the terms of service**, and click **SIGN UP**.
 
 TrueCommand creates the admin login credentials and displays the login page.
 
