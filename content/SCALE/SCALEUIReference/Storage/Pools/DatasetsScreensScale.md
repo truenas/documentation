@@ -5,6 +5,8 @@ weight: 30
 tag: 
  - scaledatasets
  - scalestorage
+ - scaleencryption
+ - scalesnapshots
  - scaleacls
  - scalequotas
 ---
