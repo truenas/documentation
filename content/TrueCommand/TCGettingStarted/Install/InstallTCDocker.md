@@ -43,7 +43,7 @@ Only use the nightly version on test systems.
 Although Docker containers have several run methods, TrueCommand requires`-v /hostdirectory:/data` to function.
 
 {{< hint warning >}}
-Do not try to use the same *hostdirectory* for two different containers!
+Do not try to use the same host directory for two different containers!
 Doing so results in file conflicts and database corruption.
 {{< /hint >}}
 
@@ -56,43 +56,18 @@ After fetching the TrueCommand Docker container, enter `docker ps` to see detail
 ![DockerContainerList](/images/TrueCommand/DockerContainerList.png "Finding the TrueCommand Container")
 
 Use the port assigned to the container to access the web interface.
-The list from `docker ps` contains a **PORTS** column.
-Find the port associated with the **ixsystems/truecommand:latest** **IMAGE**.
-The **PORTS** entry is listed as **0.0.0.0:port->80/tcp**, **0.0.0.0:sslport->443/tcp** where *port* and *sslport* are the ports specified earlier.
+The list from `docker ps` contains a PORTS column.
+Find the port associated with the `ixsystems/truecommand:latest IMAGE`.
+The PORTS entry is listed as `0.0.0.0:port->80/tcp`, `0.0.0.0:sslport->443/tcp` where *port* and *sslport* are the ports specified earlier.
 
 To access the web interface with no encryption, enter `hostsystemIPaddress:port` in a browser address bar, where *hostsystemIPaddress* is the IP address of the host system that is running the TrueCommand Docker container.
 To access the web interface with standard SSL encryption, enter `https://hostsystemIPaddress:sslport` in a browser address bar.
 
 {{< expand "The connection can't be established?" "v" >}}
-When a connection to the web interface cannot be established, add the container ports as an exception to the host system firewall.
+If you cannot establish a connection to the web interface, add the container ports as an exception to the host system firewall.
 {{< /expand >}}
 
-### Adding Browser Security Exceptions
-{{< expand "TrueCommand: Browser Exceptions" >}}
-
-TrueCommand uses a [self signed certificate](https://tools.ietf.org/html/rfc8705) for a secure connection.
-Because of this, many Internet browsers consider the IP address or DNS host name untrustworthy.
-In these cases, the IP address or DNS host name must be added as an exception to the browser to access the web interface.
-Adding an exception is shown here for two different browsers, but the procedure is similar for most browsers.
-
-### Browser Security Exceptions
-{{< expand "Chrome" >}}
-Click **Advanced** to view information about the error code.
-Click **Proceed to hostname (unsafe)**.
-
-![ChromeWarning](/images/TrueCommand/2.0/ChromeWarning.png "Chrome Warning")
-{{< /expand >}}
-{{< expand "Firefox" >}}
-Click **Advanced** to view information about the error code.
-
-![FirefoxWarning](/images/TrueCommand/2.0/FirefoxWarning.png "Firefox Warning")
-
-Click **Add Exception...**.
-Set **Permanently store this exception** to permanently store the IP address or DNS host name in Firefox.
-Click **Confirm Security Exception**.
-
-![FirefoxExceptionAdd](/images/TrueCommand/2.0/FirefoxExceptionAdd.png "Adding a security exception")
-{{< /expand >}}
-{{< /expand >}}
+### Adding Browser Exceptions
+{{< include file="/_includes/TCBrowserExceptions.md" type="page" >}}
 
 {{< taglist tag="tcdocker" limit="10" >}}
