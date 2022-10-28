@@ -35,7 +35,7 @@ This is a maintenance release with some improvements for ACLs and rsync, updates
 
 ### Improvement
 
-[NAS-118437](https://ixsystems.atlassian.net/browse/NAS-118437) Update net/samba to Samba 4.15.10
+* [NAS-118437](https://ixsystems.atlassian.net/browse/NAS-118437) Update net/samba to Samba 4.15.10
 [NAS-118341](https://ixsystems.atlassian.net/browse/NAS-118341) libzfsacl - add function to convert ZFS ACL to string
 [NAS-118216](https://ixsystems.atlassian.net/browse/NAS-118216) Record midclt enclosure.query in debug \(Core/Enterprise/Scale\)
 [NAS-118199](https://ixsystems.atlassian.net/browse/NAS-118199) Update rsync port in 13
