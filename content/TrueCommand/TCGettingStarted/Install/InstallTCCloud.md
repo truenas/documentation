@@ -15,9 +15,9 @@ TrueCommand is versatile and offers several different install options.
 TrueCommand Cloud is the preferred method for using TrueCommand since it requires no local resources or specific hardware requirements to get started!
 
 {{< hint info >}}
-A credit card number is required for Cloud Signups.
+Please note that a credit card number is required for Cloud Signups.
 
-If the TrueCommand Cloud license was purchased as part of an Enterprise contract, please contact [**iXSystems Customer Support**]({{< relref "/TrueCommand/Introduction/Support.md" >}}) and a member of the Deployment Team will provide a sign-up code which makes the cost $0 for the duration of the contract.
+Purchasing a TrueCommand license as part of an Enterprise contract provides special benefits. Contact [**iXsystems Customer Support**]({{< relref "/TrueCommand/Introduction/Support.md" >}}). Request a sign-up code from a member of the Deployment Team. This code provides the TrueCommand Cloud license at no cost for the duration of the contract.
 {{< /hint >}}
 
 ## Getting Started with Cloud Deployment
