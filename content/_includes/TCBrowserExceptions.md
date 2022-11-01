@@ -6,6 +6,8 @@ Because of this, many Internet browsers consider the IP address or DNS host name
 In these cases, you must add the IP address or DNS host name as an exception to the browser to access the web interface.
 Adding an exception is shown here for two different browsers, but the procedure is similar for most browsers.
 
+After the initial login, prevent this in future logins by adding your own certificate keypair and / or certificate authority (CA).
+
 ### Browser Security Exceptions
 {{< expand "Chrome" "v" >}}
 Click **Advanced** to view information about the error code.
