@@ -17,7 +17,7 @@ TrueCommand Cloud is the preferred method for using TrueCommand since it require
 {{< hint info >}}
 Please note that a credit card number is required for Cloud Signups.
 
-Purchasing a TrueCommand license as part of an Enterprise contract provides special benefits. Contact [**iXsystems Customer Support**]({{< relref "/TrueCommand/Introduction/Support.md" >}}). Request a sign-up code from a member of the Deployment Team. This code provides the TrueCommand Cloud license at no cost for the duration of the contract.
+If you're purchasing TrueNAS Enterprise hardware or licenses, you might be eligible to receive an additional TrueCommand license that lasts the duration of the TrueNAS Enterprise contract. Contact [**iXsystems Customer Support**]({{< relref "/TrueCommand/Introduction/Support.md" >}}) for more details about adding TrueCommand to your TrueNAS Enterprise purchase.
 {{< /hint >}}
 
 ## Getting Started with Cloud Deployment
