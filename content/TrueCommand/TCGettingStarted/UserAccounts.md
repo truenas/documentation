@@ -1,7 +1,7 @@
 ---
 title: "Creating User Accounts"
 description: "This article describes how to create user accounts in TrueCommand."
-weight: 30
+weight: 20
 tags:
 - tcinstall
 - tcuser
