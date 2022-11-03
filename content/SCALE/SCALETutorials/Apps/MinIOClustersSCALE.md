@@ -1,6 +1,12 @@
 ---
 title: "MinIO Clusters"
+description: "This article provides information on configuring MinIO using the Docker image or the official application widget for MinIO."
 weight: 40
+aliases: /scale/scaleuireference/apps/minioclustersscale/
+tags:
+ - scaleminio
+ - scaledocker
+ - scaleapps
 ---
 
 {{< toc >}}
@@ -16,7 +22,7 @@ Before you configure MinIO, you must create a dataset and shared directory for t
 Go to **Storage > Pools** and select the pool you want to place the dataset in. 
 You can use an existing pool or create a new one. 
 
-After creating the dataset, go to **System > Shell** and create the directory MinIO will store information the application uses. MinIO uses **/data** but allows users to replace this with the directory of their choice. Change to the */pool/dataset* directory and then use the `mkdir /mnt/data` command to create the **/data** directory. 
+After creating the dataset, go to **System > Shell** and create the directory MinIO stores information the application uses. MinIO uses **/data** but allows users to replace this with the directory of their choice. Change to the */pool/dataset* directory and then use the `mkdir /mnt/data` command to create the **/data** directory. 
 
 For a distributed configuration, repeat this on all system nodes in advance. 
 
@@ -26,8 +32,8 @@ Note the system (node) IP addresses or hostnames and have them ready for configu
 
 You can configure the MinIO application using either the **Launch Docker Image** button or the **Install** button on the MinIO application card on the **Available Applications** tab.
 
-{{< tabs "Setup Methods" >}}
-{{< tab "Setup Using Launch Docker Image" >}}
+### Setting Up Using Launch Docker Image
+{{< expand "Click Here for More Information" "v" >}}
 On your first node, go to **Apps** and click **Launch Docker Image**.
 
 ![AppsLaunchDockerImage](/images/SCALE/22.02/AppsLaunchDockerImage.png "Launching a Docker Image")
@@ -85,33 +91,26 @@ Confirm your options, then click **Save** to complete the first node.
 
 Now that the first node is complete, you can configure any remaining nodes (including datasets and directories).
 
-## Accessing the Minio Setup
+{{< /expand >}}
 
-Once you're done creating datasets, you can navigate to the TrueNAS address at port **:9000** to see the MinIO UI. If you created a distributed setup, you can see all your TrueNAS addresses.
-Log in with the **ROOT_USER** and **ROOT_PASSWORD** keys you created as Container Environment Variables.
-
-![MinioLogin](/images/SCALE/MinioLogin.png "MinIO Login")
-
-{{< /tab >}}
-{{< tab "Setting Up Using MinIO Install" >}}
+### Setting Up Using MinIO Install
+{{< expand "Setting Up Using MinIO Install" "v" >}}
 Go to **Apps** and select the **Available Applications** tab to display the MinIO application card. Click **Install** on the MinIO card to open the MinIO configuration wizard.
 
-### Application Name
-
-Enter a name for the MinIO cluster. Click **Next**. Type the name in all lowercase.
+First, enter a name for the MinIO cluster. Click **Next**. Type the name in all lowercase.
 
 ![AppsMinIOApplicationName](/images/SCALE/22.02/AppsMinIOApplicationName.png "Application Name")
 
-### Workload Configuration
+Next, add the **Workload Configuration** settings.
 
 Select an update strategy. Use **Kill existing pods before creating new ones** to recreate the container or **Create new pods and then kill old ones** if you want rolling upgrades. 
 We recommend **Kill existing pods before creating new ones**. Click **Next**.
 
 ![AppsMinIOWorkloadConfiguration](/images/SCALE/22.02/AppsMinIOWorkloadConfiguration.png "Upgrade Strategy")
 
-### MinIO Configuration
+Now enter the **MinIO Configuration** settings.
 
-If you want to run your MinIO instance to connect to a distributed MinIO cluster, set **Enable Distributed Mode** and input your Distributed Minio Instance URI. See the [Distributed MinIO Quickstart Guide]9https://docs.min.io/docs/distributed-minio-quickstart-guide) for more information.
+If you want to run your MinIO instance to connect to a distributed MinIO cluster, set **Enable Distributed Mode** and input your Distributed Minio Instance URI. See the [Distributed MinIO Quickstart Guide](https://docs.min.io/docs/distributed-minio-quickstart-guide) for more information.
 
 ![AppsMinIOConfiguration](/images/SCALE/22.02/AppsMinIOConfiguration.png "MinIO Configuration")
 
@@ -140,7 +139,7 @@ Keep all passwords and credentials secured and backed up.
 
 You can configure the API and UI access node ports and the MinIO domain name if you have TLS configured for MinIO. You can also configure a MinIO certificate if you wish.
 
-### Storage
+Now enter the **Storage** settings.
 
 If you want to use a host path to store your MinIO data volume, select the **Enable Host Path for MinIO Data Volume** checkbox and select a path. 
 
@@ -148,14 +147,22 @@ Under **Configure Extra Host Path Volumes**, enter the <file>/data</file> direct
 
 ![AppsMinIOStorage](/images/SCALE/22.02/AppsMinIOStorage.png "Storage Host Path")
 
-### Advanced DNS Settings
+Add the **Advanced DNS Settings** next.
 
 You can configure additional DNS options in Advanced DNS Settings. Click **Add** to add more DNS option entries. Click **Next**.
 
 ![AppsMinIOAdvancedDNSSettings](/images/SCALE/22.02/AppsMinIOAdvancedDNSSettings.png "Advanced DNS Options")
 
-### Confirm Options
+Finally, confirm options. Make sure the configuration summary meets your needs, then click **Save**.
+{{< /expand >}}
 
-Make sure the configuration summary meets your needs, then click **Save**.
-{{< /tab >}}
-{{< /tabs >}}
+## Accessing the Minio Setup
+
+Once you're done creating datasets, you can navigate to the TrueNAS address at port **:9000** to see the MinIO UI. If you created a distributed setup, you can see all your TrueNAS addresses.
+Log in with the **ROOT_USER** and **ROOT_PASSWORD** keys you created as Container Environment Variables.
+
+![MinioLogin](/images/SCALE/MinioLogin.png "MinIO Login")
+
+
+{{< taglist tag="scaleminio" limit="10" >}}
+{{< taglist tag="scaleapps" limit="10" title="Related Apps Articles" >}}
