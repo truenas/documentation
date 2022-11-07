@@ -36,13 +36,13 @@ In this case, the HTTP `method` is `CALL`, which is a websocket API method call.
 
 After you enter the command, the **Shell** displays the API Key in the output.
 
-![EditAPIKey](/images/SCALE/22.02/EditAPIKey.png "Edit API Key")
+![CreateAPIKeyInShell](/images/SCALE/CreateAPIKeyInShell.png "Create an API Key in the Shell")
 
 ## Editing or Deleting an API Key
 
 Select the <span class="iconify" data-icon="eva:more-vertical-outline"></span> icon for any API key on the list to display options to manage that API key. Options are **Edit** or **Delete**.
 
-![CreateAPIKeyInShell](/images/SCALE/CreateAPIKeyInShell.png "Create an API Key in the Shell")
+![EditAPIKey](/images/SCALE/22.02/EditAPIKey.png "Edit API Key")
 
 Select the **Reset** to remove the existing API key and generate a new random key. The dialog displays the new key and the **Copy to Clipboard** option to copy the key to the clipboard.
 
