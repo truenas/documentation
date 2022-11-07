@@ -13,7 +13,7 @@ Every NAS user has a unique storage setup, but we can still give general recomme
 
 ### NFS Migration
 
-If you are using computers with Linux OS (or a Unix-like OS), we recommend using [rsync](https://rsync.samba.org/) to transfer files from your current NAS storage into TrueNAS. Rsync is an open-source file transfer utility. You can find usage instructions and tutorials on the rsync website.
+Rsync is an open-source file transfer utility that runs on computers with Linux OS (or a Unix-like OS). Locate usage instructions and tutorials for rsync [here](https://rsync.samba.org/).
 
 {{< hint info >}}
 If you decide to use rsync, be aware that your filesystem must support Access Control Lists (ACLs).
