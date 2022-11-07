@@ -18,7 +18,7 @@ Click **Add** to display a dialog window that lets users add a new API key. API 
 Type a descriptive name and click **Add**. The system displays a confirmation dialog and adds a new API key to the list.
 
 {{< expand "Creating API Keys in the Shell" "v" >}}
-TrueNAS SCALE supports creating API keys in the Shell with an "Allow" list of permissions for the keys.
+TrueNAS SCALE supports creating API keys in the **Shell** with an allow list of permissions for the keys.
 
 Go to **System Settings > Shell** and enter `midclt call api_key.create` followed by your desired call parameters.
 
