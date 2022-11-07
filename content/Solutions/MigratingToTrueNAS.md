@@ -4,6 +4,7 @@ description: "This article describes general recomendations for migrating data i
 weight: 10
 tags:
 - coregettingstarted
+- scalemigrate
 ---
 
 {{< toc >}}
