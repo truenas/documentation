@@ -24,12 +24,12 @@ TrueNAS SCALE supports creating API keys in the **Shell** with an allow list of 
 Go to **System Settings > Shell** and enter `midclt call api_key.create '{"name":"KEYNAME", "allowlist": [{"method": "HTTPMETHOD", "resource": "METHODNAME"}]}'` using your desired `allowlist` parameters.
 
 {{< expand "Example of a Call" "v" >}}
-Example of a call: midclt call api_key.create '{"name":"api key 1", "allowlist": [{"method": "SUBSCRIBE", "resource": "certificate.query"}]}'
+`midclt call api_key.create '{"name":"api key 1", "allowlist": [{"method": "SUBSCRIBE", "resource": "certificate.query"}]}'`
 
 In this case, the HTTP `method` is `SUBSCRIBE`, which is a websocket API event subscription. The `resource` is `certificate.query`, which is the event name. 
 {{< /expand >}}
 {{< expand "Example of a Wildcard Call" "v" >}}
-Example of a wildcard call: `midclt call api_key.create '{"name":"api key 2", "allowlist": [{"method": "CALL", "resource": "zfs.snapshot.*"}]}'`
+`midclt call api_key.create '{"name":"api key 2", "allowlist": [{"method": "CALL", "resource": "zfs.snapshot.*"}]}'`
 
 In this case, the HTTP `method` is `CALL`, which is a websocket API method call. The `resource` is `zfs.snapshot.*`, which is the method name wildcard.
 {{< /expand >}}
