@@ -27,7 +27,7 @@ We recommend migrating via SMB sharing if you use computers with Windows OS (or 
 
 ### iSCSI Migration
 
-If you prefer to use iSCSI (block-level storage) protocols to transfer your files, vMotion may be a potential option to move your data. However, vMotion typically moves virtual machines from one host to another, so we don't know to what extent it can migrate your data.
+vMotion uses block-level storage protocols to move data. If you prefer to use iSCSI (block-level storage) protocols, vMotion might be an option. vMotion is often used to move virtual machines from one host to another. Research whether vMotion is suitable for your setting and use needs.
 
 ### Cloud Migration
 
