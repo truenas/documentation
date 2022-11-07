@@ -29,7 +29,6 @@ Example of a wildcard call: `midclt call api_key.create '{"name":"api key 2", "a
 After you enter the command, the **Shell** displays the API Key in the output.
 
 ![EditAPIKey](/images/SCALE/22.02/EditAPIKey.png "Edit API Key")
-
 {{< /expand >}}
 
 ## Editing or Deleting an API Key
