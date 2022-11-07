@@ -17,19 +17,26 @@ Click **Add** to display a dialog window that lets users add a new API key. API 
 
 Type a descriptive name and click **Add**. The system displays a confirmation dialog and adds a new API key to the list.
 
-{{< expand "Creating API Keys in the Shell" "v" >}}
+### Creating API Keys in the Shell
+
 TrueNAS SCALE supports creating API keys in the **Shell** with an allow list of permissions for the keys.
 
-Go to **System Settings > Shell** and enter `midclt call api_key.create` followed by your desired call parameters.
+Go to **System Settings > Shell** and enter `midclt call api_key.create '{"name":"KEYNAME", "allowlist": [{"method": "HTTPMETHOD", "resource": "METHODNAME"}]}'` using your desired `allowlist` parameters.
 
-Example of a call: `midclt call api_key.create '{"name":"api key 1", "allowlist": [{"method": "CALL", "resource": "system.info"}]}'`
+{{< expand "Example of a Call" "v" >}}
+Example of a call: midclt call api_key.create '{"name":"api key 1", "allowlist": [{"method": "SUBSCRIBE", "resource": "certificate.query"}]}'
 
+In this case, the HTTP `method` is `SUBSCRIBE`, which is a websocket API event subscription. The `resource` is `certificate.query`, which is the event name. 
+{{< /expand >}}
+{{< expand "Example of a Wildcard Call" "v" >}}
 Example of a wildcard call: `midclt call api_key.create '{"name":"api key 2", "allowlist": [{"method": "CALL", "resource": "zfs.snapshot.*"}]}'`
+
+In this case, the HTTP `method` is `CALL`, which is a websocket API method call. The `resource` is `zfs.snapshot.*`, which is the method name wildcard.
+{{< /expand >}}
 
 After you enter the command, the **Shell** displays the API Key in the output.
 
 ![EditAPIKey](/images/SCALE/22.02/EditAPIKey.png "Edit API Key")
-{{< /expand >}}
 
 ## Editing or Deleting an API Key
 
