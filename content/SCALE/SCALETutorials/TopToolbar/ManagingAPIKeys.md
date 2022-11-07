@@ -17,11 +17,26 @@ Click **Add** to display a dialog window that lets users add a new API key. API 
 
 Type a descriptive name and click **Add**. The system displays a confirmation dialog and adds a new API key to the list.
 
+{{< expand "Creating API Keys in the Shell" "v" >}}
+TrueNAS SCALE supports creating API keys in the Shell with an "Allow" list of permissions for the keys.
+
+Go to **System Settings > Shell** and enter `midclt call api_key.create` followed by your desired call parameters.
+
+Example of a call: `midclt call api_key.create '{"name":"api key 1", "allowlist": [{"method": "CALL", "resource": "system.info"}]}'`
+
+Example of a wildcard call: `midclt call api_key.create '{"name":"api key 2", "allowlist": [{"method": "CALL", "resource": "zfs.snapshot.*"}]}'`
+
+After you enter the command, the **Shell** displays the API Key in the output.
+
+![EditAPIKey](/images/SCALE/22.02/EditAPIKey.png "Edit API Key")
+
+{{< /expand >}}
+
 ## Editing or Deleting an API Key
 
 Select the <span class="iconify" data-icon="eva:more-vertical-outline"></span> icon for any API key on the list to display options to manage that API key. Options are **Edit** or **Delete**.
 
-![EditAPIKey](/images/SCALE/22.02/EditAPIKey.png "Edit API Key")
+![CreateAPIKeyInShell](/images/SCALE/CreateAPIKeyInShell.png "Create an API Key in the Shell")
 
 Select the **Reset** to remove the existing API key and generate a new random key. The dialog displays the new key and the **Copy to Clipboard** option to copy the key to the clipboard.
 
@@ -38,4 +53,3 @@ To delete, select **Confirm** on the delete dialog to activate the **Delete** bu
 Click **DOCS** to access API documentation for your system.
 
 {{< taglist tag="scaleapikeys" limit="10" >}}
-
