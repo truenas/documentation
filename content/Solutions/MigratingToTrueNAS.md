@@ -23,7 +23,7 @@ If you decide to use rsync, be aware that your filesystem must support Access Co
 
 We recommend migrating via SMB sharing if you use computers with Windows OS (or if you prefer SMB). 
 
-[Robocopy](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/robocopy) is ideal for users with Windows clients. SMB also allows you to drag & drop files to migrate them from your current NAS storage into TrueNAS, but it will be slower than using a utility like Robocopy.
+[Robocopy](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/robocopy) is ideal for users with Windows clients. SMB also allows you to drag & drop files to migrate them from your current NAS storage into TrueNAS. Using SMB will be slower than using a utility like Robocopy.
 
 ### iSCSI Migration
 
