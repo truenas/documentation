@@ -119,7 +119,7 @@ The next step is to add systems to your configuration.
 ## Connect Systems to the TrueCommand Cloud Instance
 
 {{< expand "TrueCommand Cloud: Connecting Systems" "v" >}}
-{{< include file="/_includes/TCConnectSystems.md" type="page" >}}
+{{< include file="/_includes/TCCloudConnectSystems.md" type="page" >}}
 
 For more information on connecting TrueNAS systems to TrueCommand Cloud, see [Connecting Your First TrueNAS System]({{< relref "/TrueCommand/TCGettingStarted/ConnectingTrueNAS.md" >}}).
  
