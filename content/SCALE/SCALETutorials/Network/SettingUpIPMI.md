@@ -9,7 +9,6 @@ tags:
 
 {{< toc >}}
 
-
 {{< hint info >}}
 IPMI requires compatible hardware! Refer to your hardware documentation to determine if the TrueNAS web interface has IPMI options.
 {{< /hint >}}
@@ -26,8 +25,9 @@ IPMI is configured in **Network > IPMI**. The IPMI configuration screen provides
 
 ![NetworkIPMIWidget](/images/SCALE/22.02/NetworkIPMIWidget.png "IPMI widget")
 
-
 ### IPMI Options
+
+Setting a strong password for IPMI is recommended. IPMI passwords must include at least one upper, lower case letter, one digit, one special character (punctuation i.e., ! # $ %, etc.) and be 8-16 characters in length. Be sure to document your password in a secure way!
 
 After saving the configuration, users can access the IPMI interface using a web browser and the IP address specified in **Network > IPMI**. The management interface prompts for login credentials. Refer to your IPMI device documentation to learn the default administrator account credentials.
 
