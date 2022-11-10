@@ -36,7 +36,7 @@ Click on the channel you wish to edit to open the configuration screen.
 | **IPv4 Netmask** | Enter the subnet mask of the IPv4 address. |
 | **IPv4 Default Gateway** | Enter the default gateway of the IPv4 connection. |
 | **VLAN ID** | Enter the VLAN identifier if the IPMI out-of-band management interface is not on the same VLAN as management networking. |
-| **Password** | Enter the password to use to connect to the IPMI interface from a web browser. The maximum length accepted in the UI is 20 characters, but different hardware might require shorter passwords. |
+| **Password** | Enter the password to use to connect to the IPMI interface from a web browser. Must include at least one upper, lower case letter, one digit, one special character (punctuation i.e., ! # $ %, etc.) and be 8-16 characters in length. |
 | **Identify Light** | Like the <span class="iconify" data-icon="material-symbols:highlight-rounded"></span> button on the **IPMI** widget, displays the same dialog and dropdown list of options users can select for the duration to flash the system IPMI light on the compatible connected hardware. |
 | **Manage** | Like the <span class="iconify" data-icon="ic:round-launch"></span> button on the **IPMI** widget, this opens the same IPMI manager in a new browser tab where users can communicate with the server without having direct to the hardware. |
 
