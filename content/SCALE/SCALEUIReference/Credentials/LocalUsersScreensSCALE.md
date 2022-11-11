@@ -1,7 +1,10 @@
 ---
 title: "Local Users"
+description: "Descriptions for the screens and fields on the Local Users screen."
 geekdocCollapseSection: true
 weight: 10
+tags:
+ - scaleusers
 ---
 
 {{< toc >}}
@@ -109,3 +112,5 @@ This allows using the account credentials to access data shared with [SMB]({{< r
 ## Editing User Accounts
 
 To edit an existing user account, go to **Credentials > Local Users**, expand the User entry, and click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> **Edit**:
+
+{{< taglist tag="scaleusers" limit="10" >}}
