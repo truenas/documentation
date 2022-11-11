@@ -1,5 +1,5 @@
 ---
 title: "Discontinued Expansion Shelves"
 geekdocCollapseSection: true
-weight: 10
+weight: 50
 ---
