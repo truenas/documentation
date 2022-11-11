@@ -1,5 +1,5 @@
 ---
-title: "Mini E/E+/X Out of Band Management"
+title: "Mini E+and X Out of Band Management"
 weight: 50
 ---
 
