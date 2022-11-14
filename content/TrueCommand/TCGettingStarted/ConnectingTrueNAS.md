@@ -47,9 +47,7 @@ TrueCommand lists all added systems and their connection statuses in the **Syste
 
 To connect a new system, click **+ NEW SYSTEM**. Enter the system IP address or DNS host name, then enter a system nickname and password. Click **RESET FORM** to clear the fields and reset the form if you make a mistake.
 
-Clicking the more details icon <span class="material-icons">
-more_vert
-</span> allows you to enter new connection details for a system in the list.
+Clicking the more details icon <span class="material-icons">more_vert</span> allows you to enter new connection details for a system in the list.
 
 ![Systems List](/images/TrueCommand/2.1/SystemsPage.png "Systems List")
 
