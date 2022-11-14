@@ -19,7 +19,7 @@ Paste the TrueCommand API key copied from the iXsystems Account Portal into the 
 When the True Command logo starts moving, check the TrueCommand Cloud email address for a verification message.
 The email contains a link to the portal to confirm the connection and activate the TrueNAS system.
 
-Click the **Discovered Systems** icon and select the TrueNAS system. TrueCommand automatically fills out the IP field using the WiredGuard address. Fill in the TrueNAS system nickname and password information from the TrueNAS system, and click **Add System**.
+Click the **Discovered Systems** icon and select the TrueNAS system. TrueCommand automatically fills out the IP field using the WireGuard address. Fill in the TrueNAS system nickname and password information from the TrueNAS system, then click **Add System**.
 
 ![NewSystemCreds](/images/TrueCommand/2.0/TC20NewSystemCreds.png "Registering TrueNAS in TrueCommand Cloud")
 
