@@ -27,7 +27,7 @@ Add disks to the primary **Data VDevs**, then to the **Metadata** VDEV.
 
 ![AddFusionPoolVDEV](/images/SCALE/22.12/AddFusionPoolVDEV.png "Create Metadata VDEV")
 
-{{< include file="/_includes/FusionPoolsCommonContent.md" type="page" >}
+{{< include file="/_includes/FusionPoolsCommonContent.md" type="page" >}}
 
 {{< taglist tag="scalepools" limit="10" title="Related Pools Articles" >}}
 {{< taglist tag="scalevdevs" limit="10" title="Related VDEV Articles" >}}

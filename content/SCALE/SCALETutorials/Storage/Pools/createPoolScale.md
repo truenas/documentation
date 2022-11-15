@@ -7,7 +7,7 @@ aliases:
 tags:
 - scaleinstall
 - scalestorage
-- scalepool
+- scalepools
 - scalevdevs
 ---
 
@@ -44,7 +44,7 @@ You access the **Pool Manager** from the **Storage Dashboard**.
 Click **Storage** on the main navigation panel on the left of the screen.  
 Click **Create Pool** to open the **Pool Manager** screen for new pools.
 
-![CreatePoolPoolManagerScreen](/images/SCALE/22.01/CreatePoolPoolManagerScreen.png "Crete Pool Pool Manager")
+![CreatePoolPoolManagerScreen](/images/SCALE/22.12/CreatePoolPoolManagerScreen.png "Crete Pool Pool Manager")
 
 If you already have a pool created on your system you can use either the **Create Pool** button at the top right of the screen or click the **Add to a Pool** button on the **Unused Resources** widget to create a new pool.
 
@@ -161,6 +161,6 @@ The **Pool Manager** screen suggests a VDEV layout from the number of disks adde
 For example, if you add two disks, TrueNAS automatically configures the VDEV as a mirror. 
 The total available storage is the size of one added disk while the other disk provides redundancy.
 
-{{< taglist tag="scalepool" limit="10" >}}
+{{< taglist tag="scalepools" limit="10" >}}
 {{< taglist tag="scalevdevs" limit="10" title="Related VDEV Articles" >}}
 {{< taglist tag="scalestorage" limit="10" title="Related Storage Articles" >}}

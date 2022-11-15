@@ -1,7 +1,7 @@
 ---
 title: "Storage Dashboard Screen"
 description: "This article provides information on the **Storage Dashboard** screen widgets and options for pools, devices, datasets and disks listed on this screen."
-weight: 30 
+weight: 10 
 aliases:
 tags:
 - scalepools
@@ -19,7 +19,7 @@ The **Storage Dashboard** displays the **No Pools** screen with a **Create Pool*
 
 ![StorageDashboardNoPools](/images/SCALE/22.12/StorageDashboardNoPools.png "SCALE Storage Dashboard without Pools") 
 
-Both the **Create Pool** button on the top right and at the center of the screen open the **Create Pool > [Pool Manager]({{< relref "SCALEUIReferene/Storage/Pools/PoolsScreens.md" >}})** configuration screen. 
+Both the **Create Pool** button on the top right and at the center of the screen open the **Create Pool > [Pool Manager]({{< relref "PoolManagerScreens.md" >}})** configuration screen. 
 
 After adding a pool, the screen displays five widgets. The **[Unused Resources](#unused-resources)** widget remains at the top of the dashboard and the other four are a set that displays for each pool created on the system. 
 
@@ -27,11 +27,18 @@ After adding a pool, the screen displays five widgets. The **[Unused Resources](
 
 **Import** at the top of the dashboard opens the **[Import Pool](#import-pool-screen)** screen.
 
-**Disks** at the top of the dashboard opens the **[Disks]({{< relref "/SCALEUIReference/Storage/Disks/DisksScreens.md" >}})** screen. The **Manage Disks** button on the **[Disk Health](#disk-health-widget)** widget opens the same **Disks** screen.
+**Disks** at the top of the dashboard opens the **[Disks]({{< relref "DisksScreensSCALE.md" >}})** screen. The **Manage Disks** button on the **[Disk Health](#disk-health-widget)** widget opens the same **Disks** screen.
 
 **Export/Disconnect** opens the **[Export/disconnect pool](#exportdisconnect-window)** window that allows you to either completely remove a pool and deleted all the contents of that pool, or to export the pool to the server and disconnect it in TrueNAS SCALE.
 
 **Expand** opens the **[Expand pool](#expand-dialog)** dialog. Use to expand the selected pool to fit all available disk space.
+
+## Pool Status
+Each widget in the set of four pool widgets includes a color-coded icon just to the right of the header that indicates the status of the pool as healthy (green checkmark), offline (orange triangle), or in a warning state (purple warning sign). 
+
+![StoragePoolWidgetsDegradedState](/images/SCALE/22.12/StoragePoolWidgetsDegradedState.png "Pool Status Indications")
+
+This same information displays on both the **Storage** widget and a pool widget you can add to the **Dashboard**. 
 
 ## Storage Dashboard Widgets
 The **Storage Dashboard** widgets organize storage and related functions for each pool. 
@@ -39,13 +46,6 @@ The **Storage Dashboard** widgets organize storage and related functions for eac
 The **Unassigned Resources** widget remains at the top of the dashboard and provides the number of available disks on the system to use in pools. 
 Each pool has a set of four widgets: **[Topology](#topology-widget)** for managing pool virtual devices or VDEVs, **[Usage](#usage-widget)** for managing datasets and zvols, **[ZFS Health](#zfs-health-widget)** for managing pool health and pool functions like scrub and auto TRIM, and **[Disk Health](#disk-health-widget)** for managing disks and disk health. 
 Each set of pool widgets provide access to screens for each storage type with the information for the pool pre-selected. For example, **Manage Devices** on the **[Topology](#topology-widget)** widget opens the **Devices** screen with the VDEVs configured for that pool and not all pools on the system.
-
-### Pool Status
-Each widget in the set of four pool widgets includes a color-coded icon just to the right of the header that indicates the status of the pool as healthy (green checkmark), offline (orange triangle), or in a warning state (purple warning sign). 
-
-![PoolStatusOnlineOrDegraded](/images/SCALE/22.02/PoolStatusOnlineOrDegraded.png "Pool Status Indications")
-
-This same information displays on both the **Storage** widget and a pool widget you can add to the **Dashboard**. 
 
 ### Unused Resources Widget
 The **Unused Resources Unassigned Disks** widget displays the number of disks available on your system to use in pools. The disk count includes disks assigned in exported pool. If you attempt to use a disk assigned in an exported pool a warning message displays that prompts you to select a different disk.
@@ -57,8 +57,8 @@ To see information on each disk on the system, click **Manage Disks** on the **[
 
 **Add To Pool** opens the **[Add to Pool](#add-to-pool-window)** window. 
 
-**New Pool** opens the **Create Pool > [Pool Manager]({{< relref "/SCALEUIReference/Storage/Pools/PoolScreens.md" >}})** screen. 
-**Existing Pool** opens the **Add VDevs to Pool > [Pool Manager]({{< relref "/SCALEUIReference/Storage/Pools/PoolScreens.md" >}})** screen.
+**New Pool** opens the **Create Pool > [Pool Manager]({{< relref "PoolManagerScreens.md" >}})** screen. 
+**Existing Pool** opens the **Add VDevs to Pool > [Pool Manager]({{< relref "PoolManagerScreens.md" >}})** screen.
 {{< /expand >}}
 
 #### Add To Pool Window
@@ -86,7 +86,7 @@ A **Data VDEV** include the data type (stripe, mirror, RAID, or mixed configurat
 
 ![StorageDashboardTopologyWidget](/images/SCALE/22.12/StorageDashboardTopologyWidget.png "Storage Dashboard Topology Widget") 
 
-**Manage Devices** opens the **[Devices]({{< relref "DevicesScreenSCALE.md" >}})** screen where you can add or manage existing VDEVs.
+**Manage Devices** opens the **[Devices]({{< relref "DevicesScreensSCALE.md" >}})** screen where you can add or manage existing VDEVs.
 {{< /expand >}}
 ### Usage Widget
 The **Usage** widget provides information on the space configured datasets use and the status of pool usage. 
@@ -149,7 +149,7 @@ The details on the widget include the non-dismissed disk temperature alerts for 
 
 ![StorageDashboardDiskHealthWidget](/images/SCALE/22.12/StorageDashboardDiskHealthWidget.png "Storage Dashboard Disk Health Widget") 
 
-**Manage Disks** opens the **Storage > [Disk]({{< relref "/SCALEUIReference/Storage/Disks/DisksScreens.md" >}})** screen.
+**Manage Disks** opens the **Storage > [Disk]({{< relref "DisksScreensSCALE.md" >}})** screen.
 
 **View Reports** opens the **Report** screen for the disks in the selected pool.
 
@@ -201,6 +201,6 @@ Select **Expand Pool** to increase the pool size to match all available disk spa
 
 ![ExpandPoolDialog](/images/SCALE/22.12/ExpandPoolDialog.png "Expand Pool Dialog")
 
-
 {{< taglist tag="scalepools" limit="10" >}}
+{{< taglist tag="scalevdevs" limit="10" title="Related VDEV Articles" >}}
 {{< taglist tag="scalestorage" limit="10" title="Related Storage Articles" >}}

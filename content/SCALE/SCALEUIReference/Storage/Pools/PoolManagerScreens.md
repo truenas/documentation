@@ -4,15 +4,15 @@ description: "This article provides information on VDEV options, data VDEV types
 weight: 20
 aliases: /scale/scaleuireference/storage/pools/poolsscreens/
 tags: 
- - scalepools
- - scalestorage
- - scalevdevs
- - scaledisks
+- scalepools
+- scalestorage
+- scalevdevs
+- scaledisks
 ---
 
 {{< toc >}}
 
-The **[Storage Dashboard]({{< relref "StorageDashboardScreens.md" >}})** screen displays information widgets for all pools configured in your TrueNAS. The **Pool Manager** opens after using several options found on the **Storage Dashboard** and from the **Unused Resources** widget on the dashboard, and the **Add VDEVS** on the **[Devices]({{< relref "DevicesScreens.md" >}}) screen.
+The **[Storage Dashboard]({{< relref "StorageDashboardScreen.md" >}})** screen displays information widgets for all pools configured in your TrueNAS. The **Pool Manager** opens after using several options found on the **Storage Dashboard** and from the **Unused Resources** widget on the dashboard, and the **Add VDEVS** on the **[Devices]({{< relref "DevicesScreensSCALE.md" >}}) screen.
 
 ## Pool Manager Screen
 

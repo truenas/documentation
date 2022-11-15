@@ -1,7 +1,7 @@
 ---
 title: "Pools"
 geekdocCollapseSection: true
-weight: 10
+weight: 15
 ---
 
 {{< include file="/_includes/StoragePoolsIntroScale.md" type="page" >}}

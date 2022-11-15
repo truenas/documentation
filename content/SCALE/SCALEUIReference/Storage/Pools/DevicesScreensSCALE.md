@@ -71,7 +71,7 @@ The widget allows you to set the disk encryption password through the **Manage S
 
 ![ManageSEDPasswordDialog](/images/SCALE/22.12/ManageSEDPasswordDialog.png "Manage Disk SED Encryption Password") 
 
-The widget also provides the status of the **Global SED Password** (set or not set) and the **Manage Global SED Password** link that opens the **[System Settings > Advanced]({{< relref "AdvancedSettingsScreen.md" >}})** screen where you can change the global SED password that overrides the disk passwords.
+The widget also provides the status of the **Global SED Password** (set or not set) and the **Manage Global SED Password** link that opens the **[System Settings > Advanced]({{< relref "/SCALE/SCALEUIReference/SystemSettings/AdvancedSettings.md" >}})** screen where you can change the global SED password that overrides the disk passwords.
 {{< /expand >}}
 
 ### S.M.A.R.T. Info for *Devicename* Widget
@@ -80,7 +80,7 @@ The **S.M.A.R.T. Info for *devicename*** widget, where *devicename* is the name 
 
 ![DeviceDiskSMARTInfoWidget](/images/SCALE/22.12/DeviceDiskSMARTInfoWidget.png "Devices Disk S.M.A.R.T. Info Widget") 
 
-The **Manage SMART Tasks** link opens the **[Data Protection > SMART Tests]({{< relref "SMARTTestScreensSCALE.md" >}})** details screen where you find the list of SMART tests configured on your system. 
+The **Manage SMART Tasks** link opens the **[Data Protection > SMART Tests]({{< relref "SMARTTestsScreensSCALE.md" >}})** details screen where you find the list of SMART tests configured on your system. 
 **Run Manual Test** opens the **Manual S.M.A.R.T. Test** dialog if the disk is compatible with SMART tests or opens an information dialog if it is not. 
 
 ![ManualSMARTTestDialog](/images/SCALE/22.12/ManualSMARTTestDialog.png "Devices Disk S.M.A.R.T. Test Dialog") 
