@@ -25,7 +25,7 @@ aliases:
 
 ## 13.0-U3.1
 
-**November 17, 2022**
+**November 16, 2022**
 
 iXsystems is pleased to release TrueNAS 13.0-U3.1.
 
