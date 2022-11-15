@@ -1,8 +1,11 @@
 ---
 title: "Connecting Your First TrueNAS System"
+description: "This article describes how to connect your first TrueNAS system in TrueCommand."
 weight: 40
 tags:
 - tccloud
+- tcinstall
+- tcconnect
 ---
 
 {{< toc >}}
@@ -104,3 +107,5 @@ Enter the system IP address or DNS host name, then enter a system nickname and p
 Click **RESET FORM** to clear the fields and reset the form if you make a mistake.
 
 ![Systems List](/images/TrueCommand/2.1/SystemsPage.png "Systems List")
+
+{{< taglist tag="tcinstall" limit="10" >}}

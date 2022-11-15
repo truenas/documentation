@@ -1,5 +1,5 @@
 ---
-title: "Z-Series"
+title: "Mini Series"
 geekdocCollapseSection: true
-weight: 30
+weight: 10
 ---
