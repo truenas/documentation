@@ -47,7 +47,7 @@ To access the **System Inventory** page, click the <i class="material-icons" ari
 ![SystemInventoryMenu](/images/TrueCommand/2.1/SystemInventoryMenu.png "Access the System Inventory Page")
 
 {{< hint info >}}
-To download a comma-delimited <file>CVS</file> file for the current inventory page, click **CVS** in the upper-right area of the screen.
+To download a comma-delimited <file>CSV</file> file for the current inventory page, click **CSV** in the upper-right area of the screen.
 {{< /hint >}}
 
 There are three inventory information tabs:
