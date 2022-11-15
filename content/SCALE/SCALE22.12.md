@@ -76,7 +76,7 @@ TrueNAS SCALE 22.12-RC.1 has been released and includes many new features and im
 
 ### New Feature
 
-* [NAS-109036](https://ixsystems.atlassian.net/browse/NAS-109036) Overlayfs support for docker on zfs
+* [NAS-109036](https://ixsystems.atlassian.net/browse/NAS-109036) OverlayFS support for docker on zfs
 * [NAS-116558](https://ixsystems.atlassian.net/browse/NAS-116558) \`special\_small\_block\_size\` dataset option is inheritable
 * [NAS-117028](https://ixsystems.atlassian.net/browse/NAS-117028) Offline/errored out pools on new storage pages
 * [NAS-117236](https://ixsystems.atlassian.net/browse/NAS-117236) Check for keyboard support on new storage pages
