@@ -60,7 +60,7 @@ SCALE is developed as an appliance that uses specific Linux packages with each r
 
 TrueNAS SCALE 22.12-RC.1 has been released and includes many new features and improved functionaltiy. SCALE 22.12-RC.1 features include:
 
-* Adds FIPS-validated SSL module
+* Adds FIPS-validated SSL module (Enterprise Only)
 * Adds the R50M to the Enclosure screen
 * Adds USB passthrough support and allows users to specify USB vendor/product IDs in the UI
 * Adds increased functionality in the new Storage screens that include overprovisioning on zpool creation and the ability to see the full name for datasets with long names
@@ -72,7 +72,7 @@ TrueNAS SCALE 22.12-RC.1 has been released and includes many new features and im
 ### Epic
 
 * [NAS-110327](https://ixsystems.atlassian.net/browse/NAS-110327) WebUI Refactoring
-* [NAS-116607](https://ixsystems.atlassian.net/browse/NAS-116607) FIPS Validated SSL Module
+* [NAS-116607](https://ixsystems.atlassian.net/browse/NAS-116607) FIPS Validated SSL Module (Enterprise Only)
 
 ### New Feature
 
