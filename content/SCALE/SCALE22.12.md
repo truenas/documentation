@@ -88,9 +88,11 @@ TrueNAS SCALE 22.12-RC.1 has been released and includes many new features and im
 * [NAS-118642](https://ixsystems.atlassian.net/browse/NAS-118642) Allow users to specify USB vendor/product id in UI
 * [NAS-118701](https://ixsystems.atlassian.net/browse/NAS-118701) add new public endpoint to return whether or not truenas is clustered
 * [NAS-118749](https://ixsystems.atlassian.net/browse/NAS-118749) Branchout mirrors for RC1
+* [NAS-118923](https://ixsystems.atlassian.net/browse/NAS-118923) Fix broken k3s build
 
 ### Improvement
 
+* [NAS-111509](https://ixsystems.atlassian.net/browse/NAS-111509) Empty job field on replication task after failover
 * [NAS-111781](https://ixsystems.atlassian.net/browse/NAS-111781) VMware snapshot improvements
 * [NAS-116286](https://ixsystems.atlassian.net/browse/NAS-116286) Rework ZFS Log Size Limit
 * [NAS-116557](https://ixsystems.atlassian.net/browse/NAS-116557) Ensure that users have ability to view full dataset names in storage form in webui
@@ -131,7 +133,6 @@ TrueNAS SCALE 22.12-RC.1 has been released and includes many new features and im
 * [NAS-118699](https://ixsystems.atlassian.net/browse/NAS-118699) Use snack bar to inform users about success actions
 * [NAS-118737](https://ixsystems.atlassian.net/browse/NAS-118737) Whitelist cloud sync tasks in docker host path validation
 * [NAS-118783](https://ixsystems.atlassian.net/browse/NAS-118783) update SCST with upstream
-* [NAS-111509](https://ixsystems.atlassian.net/browse/NAS-111509) Empty job field on replication task after failover
 
 ### Bug
 
@@ -207,8 +208,10 @@ TrueNAS SCALE 22.12-RC.1 has been released and includes many new features and im
 * [NAS-118635](https://ixsystems.atlassian.net/browse/NAS-118635) \(py-libzfs\) zed core dump after merging zfs-2.1.6 patchset
 * [NAS-118695](https://ixsystems.atlassian.net/browse/NAS-118695) \[SCALE\] k3s crash loop
 * [NAS-118697](https://ixsystems.atlassian.net/browse/NAS-118697) \(openzfs\) zed core dump after merging zfs-2.1.6 patchset
+* [NAS-118765](https://ixsystems.atlassian.net/browse/NAS-118765) SMB Share ACLs do not open/work on TrueNAS Scale 22.12-BETA.2
 * [NAS-118782](https://ixsystems.atlassian.net/browse/NAS-118782) Update samba to 4.17.2
 * [NAS-118856](https://ixsystems.atlassian.net/browse/NAS-118856) SCALE nightlies includes kernel modules for wrong kernel
+* [NAS-118949](https://ixsystems.atlassian.net/browse/NAS-118949) pywbclient - Fix refcounting on PyUidGid class init error path
 
 
 ## 22.12-BETA.2 
@@ -924,6 +927,13 @@ Additional feature in future Bluefin releases:
 
 | Seen In | Key | Summary | Workaround | Resolved In |
 |---------|-----|---------|------------|-------------|
+| 22.12-RC.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-118922" target="_blank">NAS-118922</a> | Device Screen does't update after replacing a disk | When replacing a disk the UI doesn't update to show the replace operation completed and might display an error message. After replacing a disk, return to the Storage Dashboard and then the Devices screen to see the status of the disk replacement as complete. | Targeted 22.12(Bluefin) | 
+| 22.12-RC.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-118882" target="_blank">NAS-118882</a> | On Enterprise systems, the Open Ticket button doesn't work | On Enterprise systems, when filing a ticket using the Open Ticket button should open an issue reporting screen but it does not. Customers should either contact Support directly or open a ticket directly in Jira. | Targeted 22.12 (Bluefin) |
+| 22.12-RC.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-118854" target="_blank">NAS-118854</a> | iSCSI wizard does not function properly | The Extent Type device dropdown list is empty and the Portal dropdown list does not include the create new option so users can not select or add a new device, or add a new portal. | Targeted 22.12 (Bluefin) | 
+| 22.12-RC.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-118840" target="_blank">NAS-118840</a> | On HA systems, the Dashboard Standby controller and status do not update after changing the system dataset. | Issue is related to another UI screen caching issues where the HA Dashboard does not show updated system information. Clear your browser cache to update the UI. | Targeted 22.12 (Bluefin) | 
+| 22.12-RC.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-118818" target="_blank">NAS-118818</a> | Enclosure view only updates after leaving the page | Related to a known screen caching issue. Either clear your browser cache or change to a different UI screen and return to the Enclosure screen see the updates. | Targeted 22.12.1 (Bluefin) |
+| 22.12-RC.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-118753" target="_blank">NAS-118753</a> | API call 'pool.dataset.details' responds to an object with a field "snapshot_count = 0" | API call to obtain number of zvol snapshots returns an incorrect value of zero when there are two snapshots. | Targeted 22.12.1 (Bluefin) | 
+| 22.12-RC.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-118739" target="_blank">NAS-118739</a> | SCALE drive replacement within a pool produces drive busy error | During HDD testing, replacing a drive in a pool resulted in the Error: [EFAULT] Railed to wipe disk sdb: [Errno 16] Device or resource busy: '/dev/sdb'. Appears to be a ZFS error. | Targeted 22.12(Bluefin) | 
 | 22.12-BETA.2 | <a href="https://ixsystems.atlassian.net/browse/NAS-118632" target="_blank">NAS-118632</a> | Traceback received during pool creation | This is an occasional noncritical race condition with the disk temperatures widget during pool creation. The traceback can be acknowledged and ignored; the issue is temporary and does not impact pool creation.. | Targeted 22.12-RC.1 |
 | 22.12-BETA.2 | <a href="https://ixsystems.atlassian.net/browse/NAS-118616" target="_blank">NAS-118616</a> | SMB Share option Edit Filesystem ACL does not open the filesystem editor screen. | After adding an SMB share, if you select the option to Edit Filesystem ACL, the main Dashboard opens instead of the filesystem ACL editor screen. To workaround this issue, go to the Storage > Dashboard screen, select the dataset for the SMB share, scroll down to the Permissions widget and click Edit. | Unknown |
 | 22.12-BETA.2 | <a href="https://ixsystems.atlassian.net/browse/NAS-118614" target="_blank">NAS-118614</a>| Cloud tasks for Move and Sync transfer modes revert to Copy | When creating a cloud sync task where the Transfer Mode is set to either Move or Sync, when the task completes successfully and runs for the first time, the notification to the user states the transfer mode was reset to Copy. | 22.12-RC.1 |
@@ -959,7 +969,7 @@ For more details on zpool.features.7 see [OpenZFS zpool-feature.7](https://openz
 
 | Feature Flag | GUID | Dependencies | Description |
 |--------------|------|--------------|-------------|
-| blake3 | org.openzfs.blake3 | extensible)dataset | Enables use of the BLAKE3 hash algorithmfor checksum and dedup. BLAKE3 is a secure hash algorithm focused on high performance. When enabled, the adminstrator can turn on the blake3 checksum on any dataset using `zfs set checksum=blake dset` [see zfs-set(8)](https://openzfs.github.io/openzfs-docs/man/8/zfs-set.8.html). |
+| blake3 | org.openzfs.blake3 | extensible)dataset | Enables use of the BLAKE3 hash algorithm for checksum and dedup. BLAKE3 is a secure hash algorithm focused on high performance. When enabled, the administrator can turn on the blake3 checksum on any dataset using `zfs set checksum=blake dset` [see zfs-set(8)](https://openzfs.github.io/openzfs-docs/man/8/zfs-set.8.html). |
 | head_errlog | com.delphix:head_errlog | n/a | Enables the upgraded version of `errlog`. The error log of each head dataset is stored separately in the zap object and keyed by the head id. Every dataset affected by an error block is listed in the output of `zpool status`. |
 | zilsaxattr | org.openzfs:zilsaxattr | extensible_dataset | Enables `xattr-sa` extended attribute logging in the ZIL. If enabled, extended attribute changes from both `xattrdir=dir` and `xattr=sa` are guaranteed to be durable if either `sync=always` is set for the dataset when a change is made or sync(2) is called on the dataset after making changes. |
 
