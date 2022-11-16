@@ -30,6 +30,10 @@ Open a terminal and enter `docker run \--detach -v "/hostdir:/data" -p port:80 -
 
 *hostdir* is a directory on the host machine for Docker container data, *port* is the TrueCommand web interface port number, and *ssl* is the port number for secure web interface access.
 
+{{< hint info >}}
+SSL provides extra security in network communications.
+{{< /hint >}}
+
 To install the container with an earlier TrueCommand release, replace *latest* with the desired TrueCommand version tag:  
 `docker run \--detach -v "/DockerDir:/data" -p 9004:80 -p 9005:443 ixsystems/truecommand:1.3.2`
 
