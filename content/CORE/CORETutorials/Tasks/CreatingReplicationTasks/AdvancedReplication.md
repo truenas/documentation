@@ -1,8 +1,12 @@
 ---
 title: "Advanced Replication"
+description: "This article describes how to configure advanced replication tasks on TrueNAS CORE."
 weight: 30
 aliases:
   - /core/coretutorials/tasks/replicationtasks/advanced
+tags:
+- coreadvancedreplication
+- corereplication
 ---
 
 {{< toc >}}
@@ -140,3 +144,7 @@ Setting the **Schedule** checkbox allows scheduling the replication to run at a 
 Setting **Only Replicate Snapshots Matching Schedule** restricts the replication to only replicate those snapshots created at the same time as the replication schedule.
 
 ![TasksReplicationAddAdvancedSchedule](/images/CORE/12.0/TasksReplicationAddAdvancedSchedule.png "Advanced Replication: Schedule")
+
+{{< taglist tag="corereplication" limit="10" >}}
+
+{{< taglist tag="coressh" limit="10" title="Related SSH Articles" >}}

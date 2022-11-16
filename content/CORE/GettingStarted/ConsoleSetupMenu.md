@@ -1,8 +1,10 @@
 ---
 title: "Console Setup Menu"
+description: "This article describes the Console Setup menu of TrueNAS CORE."
 weight: 40
 tags:
 - coreconsole
+- coregettingstarted
 ---
 
 The Console Setup menu displays at the end of the boot process.
@@ -80,3 +82,5 @@ Restarting network: ok
 The web user interface is at
 http://192.168.1.108
 ```
+
+{{< taglist tag="coregettingstarted" limit="10" >}}

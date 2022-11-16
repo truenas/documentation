@@ -1,9 +1,12 @@
 ---
 title: "Updating Software for a Major Version"
+description: "This article describes options for keeping TrueNAS updated."
 geekdocCollapseSection: true
 weight: 30
 aliases:
   - /core/system/update/majorupgrade/
+tags:
+- coreupdate
 ---
 
 {{< toc >}}
@@ -31,7 +34,7 @@ Be aware of these caveats before attempting a major version upgrade:
   Unless new ZFS feature flags are needed, you can safely leave the pool at the current version.
   If you upgrade the pool, you cannot boot into a previous TrueNAS version that does not support the newer feature flags.
 * Upgrading the firmware of Broadcom SAS HBAs to the latest version is recommended.
-* When upgrading from 9.3.x to 9.10, read this <a href="https://www.truenas.com/docs/files/Notice - 9.3 to 9.10 FAQ.pdf">9.3 to 9.10 FAQ</a> first.
+* When upgrading from 9.3.x to 9.10, read this <a href="https://www.truenas.com/docs/files/Notice9.3to9.10FAQ.pdf">9.3 to 9.10 FAQ</a> first.
 * **Upgrades from FreeNAS 0.7x are not supported.**
   The system cannot import configuration settings from FreeNAS 0.7x versions.
   You must manually recreate the configuration.
@@ -116,3 +119,5 @@ The conversion happens during the reboot `Applying database schema changes` line
 The conversion can take a long time to finish, sometimes fifteen minutes or more, and can cause the system to reboot again.
 The system boots normally afterwards.
 If database errors display but the web interface is accessible, log in, go to **System > General**, and use the **UPLOAD CONFIG** button to upload the configuration backup you downloaded before starting the upgrade.
+
+{{< taglist tag="coreupdate" limit="10" >}}

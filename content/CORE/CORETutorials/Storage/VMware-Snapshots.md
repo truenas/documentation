@@ -1,9 +1,12 @@
 ---
 title: "Creating VMware-Snapshots"
+description: "This article describes how to create a VMWare snapshot on TrueNAS CORE."
 weight: 30
 aliases:
  - /core/storage/vmware-snapshots/
  - /core/uireference/storage/vmware-snapshots/
+tags:
+- coresnapshots
 ---
  
 **Storage** > **VMware-Snapshots** coordinates ZFS snapshots when using TrueNAS as a VMware datastore.
@@ -32,4 +35,4 @@ TrueNAS connects to the VMware host after clicking *FETCH DATASTORES*.
 The **ZFS Filesystem** and **Datastore** drop-down menus populate from the VMware host response.
 Choosing a datastore also selects any previously mapped dataset.
 
-See [VMware Screen]({{< relref "/CORE/UIReference/Storage/VMware-SnapshotsScreen.md" >}})
+{{< taglist tag="coresnapshots" limit="10" >}}

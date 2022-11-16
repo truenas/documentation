@@ -7,4 +7,4 @@ weight: 100
 
 ## Article Summaries
 
-{{< children depth="2" >}}
+{{< children depth="2" description="true" >}}

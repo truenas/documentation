@@ -1,6 +1,12 @@
 ---
 title: "Applications"
+description: "This article describes how to install applications on TrueNAS CORE."
 weight: 90
+tags:
+- coregettingstarted
+- coreapplications
+- coreapps
+- coreplugins
 ---
 
 {{< toc >}}
@@ -211,3 +217,7 @@ This example shows using an Ubuntu <file>.iso</file>:
 
 {{< /tab >}}
 {{< /tabs >}}
+
+{{< taglist tag="coregettingstarted" limit="10" >}}
+
+{{< taglist tag="coreplugins" limit="10" title="Related Plugins Articles" >}}

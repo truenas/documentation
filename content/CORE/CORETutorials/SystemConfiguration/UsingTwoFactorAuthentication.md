@@ -1,8 +1,12 @@
 ---
 title: "Using Two-Factor Authentication"
+description: "This article describes how to use two-factor authentication on TrueNAS CORE."
 weight: 180
 aliases:
   - /core/system/2fa
+tags:
+- core2fa
+- coretwofactorauthentication
 ---
 
 {{< toc >}}
@@ -10,6 +14,7 @@ aliases:
 We recommend two-factor authentication (2FA) for increased security.
 TrueNAS offers 2FA to ensure that a compromised administrator (*root*) password alone cannot grant access to the administrator interface.
 To utilize 2FA, you need a mobile device with Google Authenticator installed.
+Other authenticator applications can be used, but you will need to confirm the settings and QR codes generated in TrueNAS are compatible with your particular app before permanently activating 2FA.
 
 {{< expand "What is 2FA, and why would I want to enable it?" "v" >}}
 Two-factor authentication (2FA) is an extra layer of security that prevents someone from logging in, even if they have your password. This extra security measure requires you to verify your identity using a randomized 6-digit code that regenerates every 30 seconds (unless modified).
@@ -49,3 +54,6 @@ Set **Enable Two-Factor Auth for SSH** in **System > 2FA**, then go to **Service
 Set **Log in as Root with Password** and click **SAVE**. Toggle the **SSH** service and wait for the status to show that it is **RUNNING**.
 
 Open a Command Prompt or Terminal and SSH into TrueNAS using the system hostname or IP address, *root* account username and password, and the 2FA code from the mobile device.
+{{< /expand >}}
+
+{{< taglist tag="core2fa" limit="10" >}}

@@ -1,6 +1,10 @@
 ---
 title: "Increasing iSCSI Share Available Storage"
+description: "This article describes how to increase iSCSI share available storage on TrueNAS CORE."
 weight: 10
+tags:
+- coreiscsi
+- corefibrechannel
 ---
 
 {{< toc >}}
@@ -41,18 +45,4 @@ An example of the command could look like this: `truncate -s +2g /mnt/Shares/Dat
 
 Lastly, go back to the extent in **Sharing > Block Shares (iSCSI)** and make sure the **Filesize** is set to **0** so that the share uses the actual file size.
 
-For more information on iSCSI shares also see:
-
-[About iSCSI Shares]({{< relref "/CORE/UIReference/Sharing/iSCSI/_index.md" >}})
-
-[The iSCSI Screen]({{< relref "/CORE/UIReference/Sharing/iSCSI/iSCSIShare.md" >}})
-
-[Fiber Channel Ports Screen]({{< relref "/CORE/UIReference/Sharing/iSCSI/FibreChannel.md" >}})
-
-[Adding an iSCSI Share]({{< relref "/CORE/CORETutorials/Sharing/iSCSI/AddingiSCSIShare.md" >}}) 
-
-[Using iSCSI Shares]({{< relref "/CORE/CORETutorials/Sharing/iSCSI/UsingiSCSIShare.md" >}})
-
-[Setting Up Fibre Channel]({{< relref "/CORE/CORETutorials/Sharing/iSCSI/SettingUpFibreChannel.md" >}})
-
-[Setting Up NPIV]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/VirtualMachines/SettingUpNPIV.md" >}})
+{{< taglist tag="coreiscsi" limit="10" >}}

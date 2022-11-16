@@ -1,6 +1,9 @@
 ---
 title: "Creating Alerts"
+description: "This article describes how to create an alert on TrueNAS CORE."
 weight: 90
+tags:
+- corecreatealerts
 ---
 
 {{< toc >}}
@@ -30,3 +33,5 @@ Customize each alert **Warning Level** and **Frequency** using the drop-down men
 Changing any of these options affects every configured alert service.
 
 Click **SAVE** before leaving the page.
+
+{{< taglist tag="corecreatealerts" limit="10" >}}

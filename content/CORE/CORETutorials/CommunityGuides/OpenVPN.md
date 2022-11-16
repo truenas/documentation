@@ -1,7 +1,10 @@
 ---
 title: "Configuring a 3rd Party VPN service on TrueNAS"
+description: "This article describes how to configure OpenVPN client on TrueNAS 12.0."
 geekdocCollapseSection: true
 weight: 20
+tags:
+- corecommunityguides
 ---
 
 TrueNAS includes the ability to run OpenVPN.  This is a short tutorial to configure the OpenVPN client on TrueNAS 12.0.
@@ -133,3 +136,4 @@ Test if the connection is working using `curl ifconfig.me` in a terminal for exa
 
 Logs of the OpenVPN client can be found in <file>/var/log/messages</file> and <file>/var/log/daemon</file>.
 
+{{< taglist tag="corecommunityguides" limit="10" title="Community Guides Articles" >}}

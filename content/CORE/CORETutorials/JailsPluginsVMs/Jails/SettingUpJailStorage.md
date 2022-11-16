@@ -1,7 +1,11 @@
 ---
 title: "Setting Up Jail Storage"
+description: "This article describes how to set up Jail Storage in TrueNAS CORE."
 weight: 30
 aliases: /core/applications/jails/storage/
+tags:
+- corejails
+- corejailspluginsvm
 ---
 
 
@@ -80,15 +84,4 @@ However, removing the jail storage entry only removes the pointer.
 This leaves the data intact but no longer accessible to the jail.
 {{< /hint >}}
 
-## Additional Information
-For information on Jails screens and how to add or manage jails see:
-
-[Jails Screens]({{< relref "/CORE/UIReference/JailsPluginsVMs/Jails/JailsScreens.md" >}})
-
-[Creating Jails]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Jails/CreatingJails.md" >}})
-
-[Managing Jails]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Jails/ManagingJails.md" >}})
-
-[Accessing Jails Using SSH]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Jails/AccessingJailsUsingSSH.md" >}})
-
-[Installing Jail Software]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Jails/InstallingJailSoftware.md" >}})
+{{< taglist tag="corejails" limit="10" >}}
