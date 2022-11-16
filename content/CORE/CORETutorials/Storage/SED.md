@@ -1,7 +1,12 @@
 ---
 title: "Self-Encrypting Drives"
+description: "This article describes Self-Encrypting Drive (SED) support on TrueNAS CORE."
 weight: 40
 aliases: /core/storage/sed/
+tags:
+- coresed
+- corestorage
+- coreencryption
 ---
 
 {{< toc >}}
@@ -227,3 +232,5 @@ If it fails use:
 `sedutil-cli --PSIDrevert <PSIDNODASHS>  /dev/<device>`
 {{< /expand >}}
 {{< /expand >}}
+
+{{< taglist tag="corestorage" limit="10" title="Related Storage Articles" >}}

@@ -1,6 +1,10 @@
 ---
 title: "CAs"
+descripiton: "This article describes the fields that are part of the certificate authority screen on TrueNAS CORE."
 weight: 155
+tags:
+- corecertificates
+- coreca
 ---
 
 {{< toc >}}
@@ -24,3 +28,5 @@ weight: 155
 ![CAImport](/images/CORE/13.0/CAImport.png "CA Import")
 
 {{< include file="static/includes/Reference/CertificateAuthorityImport.md.part" markdown="true" >}}
+
+{{< taglist tag="corecertificates" limit="10" >}}

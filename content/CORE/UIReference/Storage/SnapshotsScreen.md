@@ -1,6 +1,9 @@
 ---
 title: "Snapshots Screens"
+description: "This article describes the Snapshots screens on TrueNAS CORE."
 weight: 20
+tags:
+- coresnapshots
 ---
 
 {{< toc >}}
@@ -20,7 +23,7 @@ Use **ADD** to display the **Snapshot > Add** screen.
 
 ![AddSnapShotScreen](/images/CORE/13.0/AddSnapShotScreen.png "Add Snapshot Screen")
 
-| Setting | Description |
+| Name | Description |
 |---------|-------------|
 | **Dataset** | Select a dataset or zvol from the dropdown list to use as the storage location for snapshots.  |
 | **Name** | Enter a unique name. This cannot be used with the value in **Naming Schema** |
@@ -35,7 +38,7 @@ The expanded snapshot view includes date created, space used, and the amount of 
 
 ![StorageSnapshoExpandedtInfoScreen](/images/CORE/13.0/StorageSnapshoExpandedtInfoScreen.png "Snapshot Expanded Screen")
 
-| Setting | Icon | Description |
+| Name | Icon | Description |
 |---------|------|-------------|
 | **Delete** | <span class="material-icons">delete</span> | Displays a delete confirmation dialog. Select **Confirm** to activate the *DELETE** button. |
 | **Clone to New Dataset** | <span class="iconify" data-icon="fa-regular:clone"></span> | Displays the **Clone to New Dataset** screen. |
@@ -50,7 +53,7 @@ Do not roll back until all desired data and snapshots are backed up.
 
 ![DatasetRollbackFromSnapshot](/images/CORE/13.0/DatasetRollbackFromSnapshot.png "Dataset Rollback from Snapshot")
 
-| Setting | Description |
+| Name | Description |
 |---------|-------------|
 | **Stop Roolback if Snapshot Exists** | Select the safety level for the rollback action. Select the radio button that best fits. Rollback is cancelled when the safety check finds additional snapshots that are directly related to the dataset being rolled back. |
 | **Newer intermeidate, Child, and clone** | Select to stop rollback when the safety check finds any related intermediate, child dataset, or clone snapshots that are newer than the rollback snapshots. |
@@ -59,3 +62,5 @@ Do not roll back until all desired data and snapshots are backed up.
 | **Confirm** | Select to confirm the selection and activate the **ROLLBACK** button. |
 
 See [Creating Snapshots]({{< relref "/CORE/CORETutorials/Storage/Snapshots.md" >}}) for more information on creating and managing snapshots.
+
+{{< taglist tag="coresnapshots" limit="10" >}}

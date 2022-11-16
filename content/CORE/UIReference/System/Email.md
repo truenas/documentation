@@ -1,6 +1,9 @@
 ---
 title: "Email"
+description: "This article provides information on how to set up system email on TrueNAS CORE."
 weight: 50
+tags:
+- coreemail
 ---
 
 {{< toc >}}
@@ -29,3 +32,5 @@ weight: 50
 | Name | Description |
 |------|-------------|
 | LOG IN TO GMAIL | Login to Gmail using OAuth. |
+
+{{< taglist tag="coreemail" limit="10" >}}

@@ -1,7 +1,10 @@
 ---
 title: "Replication Tasks"
+description: "This article decribes the fields on the Replication Tasks screen for TrueNAS CORE."
 geekdocCollapseSection: true
 weight: 60
+tags:
+- corereplication
 ---
 
 {{< toc >}}
@@ -19,3 +22,5 @@ weight: 60
 ![TasksReplicationAddAdvanced](/images/CORE/12.0/TasksReplicationAddAdvanced.png "Add Replication Task")
 
 {{< include file="static/includes/Reference/TasksReplicationAddAdvancedFields.md.part" markdown="true" >}}
+
+{{< taglist tag="corereplication" limit="10" >}}

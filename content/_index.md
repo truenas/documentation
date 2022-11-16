@@ -60,17 +60,17 @@ Preview builds of the draft SCALE Bluefin documentation are available [here](htt
 
 The navigation pane to the left is sorted into several topics that you can expand to find the specific knowledge you're looking for:
 
-* **[TrueNAS CORE and Enterprise]({{< ref "/core/" >}})** contains content specific to the FreeBSD-based CORE software.
+* **[TrueNAS CORE and Enterprise]({{< relref "/core/_index.md" >}})** contains content specific to the FreeBSD-based CORE software.
   This includes a **Getting Started Guide**, **Configuration Tutorials**, and reference documentation for the **UI** and **API**.
-* **[TrueNAS SCALE]({{< ref "/scale/" >}})** contains content specific to the Linux-based SCALE software.
+* **[TrueNAS SCALE]({{< relref "/scale/_index.md" >}})** contains content specific to the Linux-based SCALE software.
   This includes a **Getting Started Guide**, **Configuration Tutorials**, and reference documentation for the **UI** and **API**.
-* **[TrueNAS Upgrades]({{< ref "/truenasupgrades/" >}})** documents current upgrade information for both CORE and SCALE, including the active update trains and developer images for upcoming versions.
-* **[Solutions]({{< ref "/solutions/" >}})** provides version-agnostic background information and tutorials about general system use cases or integrations with other vendor solutions.
-* **[TrueCommand]({{< ref "/truecommand/" >}})** contains content specific to the latest support release of TrueCommand.
+* **[TrueNAS Upgrades]({{< relref "/truenasupgrades/_index.md" >}})** documents current upgrade information for both CORE and SCALE, including the active update trains and developer images for upcoming versions.
+* **[Solutions]({{< relref "/solutions/_index.md" >}})** provides version-agnostic background information and tutorials about general system use cases or integrations with other vendor solutions.
+* **[TrueCommand]({{< relref "/truecommand/_index.md" >}})** contains content specific to the latest support release of TrueCommand.
   This includes installation instructions, reference information about each section of the TrueCommand web interface, and tutorials for specific use-cases.
-* **[TrueNAS Systems]({{< ref "/hardware/" >}})** has content specific to the various hardware platforms that iXsystems builds and sells specifically for use with TrueNAS.
-* **[Contributing]({{< ref "/contributing/" >}})** provides guidance for those seeking to contribute to the open-source projects.
-* **[References]({{< ref "/references/" >}})** provides general background knowledge about concepts and terms and some of the underlying technologies that are used in TrueNAS.
+* **[TrueNAS Systems]({{< relref "/hardware/_index.md" >}})** has content specific to the various hardware platforms that iXsystems builds and sells specifically for use with TrueNAS.
+* **[Contributing]({{< relref "/contributing/_index.md" >}})** provides guidance for those seeking to contribute to the open-source projects.
+* **[References]({{< relref "/references/_index.md" >}})** provides general background knowledge about concepts and terms and some of the underlying technologies that are used in TrueNAS.
 
 The **More** menu in the lower-left side of the screen has links to security notices, archived documentation, and the GitHub source repository for this website.
 An RSS feed is also available here.

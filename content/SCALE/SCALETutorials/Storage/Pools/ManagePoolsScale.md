@@ -1,104 +1,122 @@
 ---
 title: "Managing Pools"
-description: "This article provides instructions on managing storage pools in TrueNAS SCALE."
+description: "This article provides instructions on managing storage pools, VDEVS and disks in TrueNAS SCALE."
 weight: 50
 aliases: 
 tag: 
- - scalepools
- - scalestorage
+- scalepools
+- scalestorage
+- scalevdevs
+- scaledisks
 ---
 
 
 {{< toc >}}
 
 
-Use the **Pool Operations** <span class="iconify" data-icon="mdi:database-cog"></span> icon button to manage a pool. Click to display the **Pool Actions** dropdown list.
+Use the **Storage Dashboard** widgets to manage a pool, and the **[Dataset]({{< relref "DatasetsScreensScale.md" >}})** screen to manage dataset functions. 
 
-![PoolOperationsMenuSCALE](/images/SCALE/PoolOperationsMenuSCALE.png "Pool Operations Menu")
+![StorageDashboardWithPool](/images/SCALE/22.12/StorageDashboardWithPool.png "SCALE Storage Dashboard with Pool") 
 
-The options on the **Pool Actions** dropdown list vary based on the pool setup. Only pools with encryption include the **Encryption Actions** **Export Dataset Keys** option. 
+## Setting Up Auto TRIM
 
-### Setting Up Auto TRIM
+Select **Storage** on the main navigation panel and then click the **Edit Auto TRIM** on the **ZFS Health** widget for the selected pool to open the **Pool Options for *poolname*** dialog.
 
-Select **Pool Options** to display the **Edit Pool Options** dialog for the selected pool.
-
-![PoolOptionsSCALE](/images/SCALE/PoolOptionsSCALE.png "Pool Options")
+![PoolOptionsAuotTRIM](/images/SCALE/22.12/PoolOptionsAuotTRIM.png "Pool Edit Auto TRIM Dialog")
 
 Select **Auto TRIM**. 
 
-Select **Confirm** and then **Save**.
+And click **Save**.
 
 With **Auto TRIM** selected and active, TrueNAS periodically checks the pool disks for storage blocks it can reclaim. Auto TRIM can impact pool performance, so the default setting is disabled. 
 
 For more details about TRIM in ZFS, see the `autotrim` property description in [zpool.8](https://zfsonlinux.org/manpages/0.8.1/man8/zpool.8.html).
 
-### Exporting or Disconnecting a Pool
+## Exporting/Disconnecting or Deleting a Pool
 
-The **Export/Disconnect** option disconnects the pool to transfer drives to a new system where you can import the pool. Also use to completely delete the pool and any data stored on it. 
+The **Export/Disconnect** option allows you to disconnect a pool and transfer drives to a new system where you can import the pool or to completely delete the pool and any data stored on it. 
 
-Select **Export/Disconnect** on the **Pool Actions** dropdown list for the selected pool.
+Select **Export/Disconnect** on the **Storage Dashboard**.
 
-![ExportPoolSCALE](/images/SCALE/ExportPoolSCALE.png "Pool Export")
+![ExportDisconnectPoolWindow](/images/SCALE/22.12/ExportDisconnectPoolWindow.png "Export/Disconnect Pool Window")
 
 A dialog box displays with any system services affected by exporting the pool listed in the dialog.
 
-Select **Destroy data on this pool?** to erase all data on the pool. 
+To delete the pool and erase all the data on the pool, select **Destroy data on this pool**. The pool name field displays at the bottom of the window. Type the pool name into this field. To export the pool, do not select this option.
 
-Click **Delete configuration of shares that used this pool?** to delete shares connected to the pool.
+Select **Delete configuration of shares that used this pool?** to delete shares connected to the pool.
 
-### Adding Vdevs
+Select **Confirm Export/Disconnect**
 
-ZFS supports adding vdevs to an existing ZFS pool to increase the capacity of the pool. 
-Use **Add Vdevs** to expand the storage of an existing vdev.
-After creating a vdev, you cannot add more drives to that vdev but you can stripe a new vdev with another of the same type to increase the overall pool size. 
-To extend a pool, you must add a vdev that is the same type as existing vdevs.
+Click **Export/Disconnect**.  A confirmation dialog displays when the export/disconnect completes.
 
-Vdevs extending examples:
+## Adding a VDEV
+
+ZFS supports adding VDEVs to an existing ZFS pool to increase the capacity of the pool. 
+
+{{< hint ok >}}
+You cannot change the original encryption or data VDEV configuration.
+{{< /hint >}}
+
+To add a VDEV to a pool:
+Click **Manage Devices** on the **Topology** widget to open the **[Devices]({{< relref "DevicesScreensSCALE.md" >}})** screen. 
+Click **Add VDEV** on the **Devices** screen. The **Add Vdevs to Pool** version of the **[Pool Manager]({{< relref "PoolManagerScreens.md" >}})** screen opens.
+
+![AddVdevToPoolScreen](/images/SCALE/22.12/AddVdevToPoolScreen.png "Storage Add Vdevs to Pool > Pool Manager") 
+
+Click **Add Vdev** and select the type of VDEV you want to add.
+
+![AddVDEVtoPoolAddVDevOptions](/images/SCALE/22.12/AddVDEVtoPoolAddVDevOptions.png "Add Vdevs to Pool VDEV Options") 
+
+Select the disk(s) you want to move to that VDEV and then click the <i class="fa fa-arrow-right" aria-hidden="true" title="Right Arrow"></i>&nbsp; to the left of the VDEV you just added to them to that VDEV.
+
+Repeat for each type of VDEV you want to add to this pool.
+
+Click **Add Vdevs** at the bottom of the screen to save the changes and close the **Pool Manager** screen. The **Topology** widget displays the newly added VDEVs.
+
+You cannot add more drives to an existing data VDEV but you can stripe a new VDEV of the same type to increase the overall pool size. 
+To extend a pool, you must add a data VDEV that is the same type as existing VDEVs.
+
+To make a hot spare for a VDEV, click **Add VDev** and select **Hot Spare**. Move the disk you want to use to that **Spare VDev** before you click **Add VDevs** to save the changes to the pool.
+
+### Extending VDEV Examples:
 
 * To make a striped mirror, add the same number of drives to extend a ZFS mirror. 
   For example, you start with ten available drives. Begin by creating a mirror of two drives, and then extending the mirror by adding another mirror of two drives. Repeat this three more times until you add all ten drives.
-* To make a stripe of two RAIDZ1 vdevs (similar to RAID 50 on a hardware controller), add another three drives to extend the three-drive RAIDZ1.
-* To make a stripe of RAIDZ2 vdevs (similar to RAID 60 on a hardware controller), add another four drives to extend the four-drive RAIDZ2.
-* To make a hot spare for a vdev, add a disk to the pool using **Hot Spare**.
+* To make a stripe of two RAIDZ1 VDEVs (similar to RAID 50 on a hardware controller), add another three drives to extend the three-drive RAIDZ1.
+* To make a stripe of RAIDZ2 VDEVs (similar to RAID 60 on a hardware controller), add another four drives to extend the four-drive RAIDZ2.
 
-The **Add Vdevs** button opens the **Pool Manager** in the **Add Vdevs to Pool** screen. 
-{{< hint ok >}}
-You cannot change the original encryption or data Vdev configuration.
-{{< /hint >}}
-TrueNAS selects data vdevs by default. To add different Vdev types to a pool, select one from the **Add Vdev** dropdown.
+## Running a Pool Data Integrity Check
 
-### Using Scrub Pool
+Use **Scrub** on the **ZFS Health** pool widget to start a pool data integrity check.
 
-Use **Scrub Pool** to start a pool data integrity check.
+![StorageDashboardDiskHealthWidget](/images/SCALE/22.12/StorageDashboardDiskHealthWidget.png "Storage Dashboard Disk Health Widget") 
 
-![ScrubPoolSCALE](/images/SCALE/ScrubPoolSCALE.png "Scrub Pool")
+Click **Scrub** to open the **Scrub Pool** dialog.
+Select **Confirm**, then click **Start Scrub**.
 
-If TrueNAS detects problems during the scrub operation, it either corrects them or generates an [alert]({{< relref "/CORE/UIReference/System/AlertSettings.md" >}}) in the web interface.
+If TrueNAS detects problems during the scrub operation, it either corrects them or generates an [alert]({{< relref "/SCALE/SCALEUIReference/TopToolbar/Alerts/_index.md" >}}) in the web interface.
 
 By default, TrueNAS automatically checks every pool on a reoccurring scrub schedule.
 
-To check the state of the last scrub or disks in the pool, use **Status**.
-
-### Extending a Vdev
-
-Click **Status** to open the **Pool Status** screen.
-
-![PoolStatusSCALE](/images/SCALE/PoolStatusSCALE.png "Pool Status")
-
-Use the <span class="material-icons">more_vert</span> to display the options for a selected vdev. 
-Click **Extend** to display the **Extend Vdev** dialog. 
-
-Select the disk from the dropdown list and click **Extend**.
+The **ZFS Health** widget displays the state of the last scrub or disks in the pool.
+To view scheduled scrub tasks, click **View all Scrub Tasks** on the **ZFS Health** widget.
 
 ## Managing Pool Disks
 
-The **Pool Status** screen disks also have [disk management]({{< relref "/SCALE/SCALEUIReference/Storage/Disks/DisksScreens.md" >}}) options.
+The **Storage Dashboard** screen **Disks** button and the **Manage Disks** button on the **Disk Health** widget both open the **Disks** screen. 
+
+The **Manage Devices** button on the **Topology** widget opens the **Devices** screen. 
+To manage disks in a pool, click on the VDEV to expand it and show the disks in that VDEV. 
+Click on a disk to see the devices widgets for that disk. You can take a disk offline, detach it, replace it, manage the SED encryption password, and perform other disk management tasks from this screen.
 
 See [Replacing Disks]({{< relref "/SCALE/SCALETutorials/Storage/Disks/ReplacingDisks.md" >}}) for more information on the **Offline**, **Replace** and **Online** options.
 
-#### Expand Pool
+## Expanding a Pool
 
-Click **Expand Pool** to increase the pool size to match all available disk space. An example is expanding a pool when resizing virtual disks apart from TrueNAS.
+Click **Expand** on the **Storage Dashboard** to increase the pool size to match all available disk space. An example is expanding a pool when resizing virtual disks apart from TrueNAS.
 
 {{< taglist tag="scalepools" limit="10" >}}
+{{< taglist tag="scalevdevs" limit="10" title="Related VDEV Articles" >}}
+{{< taglist tag="scaledisks" limit="10" title="Related Disk Articles" >}}
 {{< taglist tag="scalestorage" limit="10" title="Related Storage Articles" >}}

@@ -1,7 +1,11 @@
 ---
 title: "Data Backups"
+description: "This article describes how to configure data backups on TrueNAS CORE."
 geekdocCollapseSection: true
 weight: 80
+tags:
+- coregettingstarted
+- coredatabackups
 ---
 
 With storage created and shared, it's time to ensure TrueNAS data is effectively backed up.
@@ -92,3 +96,5 @@ TrueNAS is now accessible and configured to store, share, and back up your data!
 If you need to expand the system capabilities, see the remaining article about additional [Applications]({{< relref "Applications.md" >}}).
 When you're ready to fine-tune the system configuration or learn more about the advanced features, see the remaining sections in the TrueNAS CORE and Enterprise section.
 These sections are organized in order of appearance in the TrueNAS interface, with additional topics for [3rd party solutions]({{< relref "/Solutions/_index.md" >}}), [API reference guide]({{< relref "/CORE/API/_index.md" >}}), and [community recommendations]({{< ref "/CORE/CORETutorials/CommunityGuides/_index.md" >}}).
+
+{{< taglist tag="coregettingstarted" limit="10" >}}

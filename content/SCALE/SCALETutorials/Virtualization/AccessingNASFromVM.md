@@ -37,7 +37,7 @@ Select the new bridge interface from the **Nic to attach:** dropdown list, then 
 
 ![AccessNASfromVM5](/images/SCALE/AccessNASfromVM5.png "Save Network Changes")
 
-You can now access your TrueNAS storage from the VM. You might have to set up [shares]({{< relref "/SCALE/SCALEUIReference/Shares/_index.md" >}}) or [users]({{< relref "/SCALE/SCALEUIReference/Credentials/LocalUsers.md" >}}) with home directories to access certain files.
+You can now access your TrueNAS storage from the VM. You might have to set up [shares]({{< relref "/SCALE/SCALEUIReference/Shares/_index.md" >}}) or [users]({{< relref "ManageLocalUsersSCALE.md" >}}) with home directories to access certain files.
 
 ### Examples
 

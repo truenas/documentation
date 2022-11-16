@@ -1,6 +1,10 @@
 ---
 title: "Setting Up NPIV"
+description: "This article describes how to configure NPIV on TrueNAS CORE."
 weight: 20
+tags:
+- corenpiv
+- coreiscsi
 ---
 
 
@@ -33,19 +37,4 @@ They are also advertised to the switch so zoning can be configured on the switch
 
 After associating a virtual port with a target, add it to the **Target** tab of [Reporting]({{< relref "/CORE/UIReference/ReportingGraphs.md" >}}) so you can view its bandwidth usage.
 
-
-For more information on iSCSI shares also see:
-
-[About iSCSI Shares]({{< relref "/CORE/UIReference/Sharing/iSCSI/_index.md" >}})
-
-[The iSCSI Screen]({{< relref "/CORE/UIReference/Sharing/iSCSI/iSCSIShare.md" >}})
-
-[Fibre Channel Ports Screen]({{< relref "/CORE/UIReference/Sharing/iSCSI/FibreChannel.md" >}})
-
-[Adding an iSCSI Share]({{< relref "/CORE/CORETutorials/Sharing/iSCSI/AddingiSCSIShare.md" >}}) 
-
-[Using iSCSI Shares]({{< relref "/CORE/CORETutorials/Sharing/iSCSI/UsingiSCSIShare.md" >}})
-
-[Increasing iSCSI Share Available Storage]({{< relref "/CORE/CORETutorials/Sharing/iSCSI/IncreasingiSCSIAvailableStorage.md" >}})
-
-[Setting Up Fibre Channel]({{< relref "/CORE/CORETutorials/Sharing/iSCSI/SettingUpFibreChannel.md" >}})
+{{< taglist tag="coreiscsi" limit="10" >}}

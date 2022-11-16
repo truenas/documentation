@@ -1,6 +1,9 @@
 ---
 title: "Boot"
+description: "This article provides information about the boot screen for the TrueNAS CORE."
 weight: 10
+tags:
+- coreboot
 ---
 
 ![UIRefBootScreen](/images/CORE/13.0/UIRefBootScreen.png "Boot Screen")
@@ -12,4 +15,6 @@ weight: 10
 | Active | Indicates which entry boots by default if a boot environment is not active. |
 | Created | Indicates the boot environment creation date and time. |
 | Space | Shows boot environment size. |
-| Keep | Indicates whether or not TrueNAS deletes this boot environment when a [system update]({{< relref "/CORE/UIReference/System/Update/_index.md" >}}) does not have enough space to proceed. |
+| Keep | Indicates whether or not TrueNAS deletes this boot environment when a [system update]({{< relref "/CORE/UIReference/System/Update.md" >}}) does not have enough space to proceed. |
+
+{{< taglist tag="coreboot" limit="10" >}}

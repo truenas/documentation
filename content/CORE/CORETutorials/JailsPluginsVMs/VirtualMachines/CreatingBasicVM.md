@@ -1,7 +1,11 @@
 ---
 title: "Basic VM Management"
+description: "This article describes how to create a Virtual Machine in TrueNAS CORE."
 weight: 10
 aliases: /core/applications/virtualmachines/basic/
+tags:
+- corevm
+- corejailspluginsvm
 ---
 
 {{< toc >}}
@@ -83,6 +87,4 @@ These buttons try to send an ACPI power-down command to the VM operating system,
 Use the **POWER OFF** button instead.
 {{< /hint >}}
 
-## Additional Information
-
-For more information on virtual machines see [Virtual Machines]({{< relref "CORE/UIReference/JailsPluginsVMs/VirtualMachines/VirtualMachines.md" >}})
+{{< taglist tag="corejailspluginsvm" limit="10" >}}

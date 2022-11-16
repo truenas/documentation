@@ -1,6 +1,9 @@
 ---
 title: "Setting SMB ACLs on Legacy FreeNAS systems"
+descriptions: "This article describes how to configure SMB ACLs on legacy FreeNAS or TrueNAS released before 12.0"
 weight: 20
+tags:
+- corecommunityguides
 ---
 
 {{< hint info >}}
@@ -19,8 +22,4 @@ The complexity of the scenario depends on several factors:
 
 Depending on the specific authentication requirements, it can be necessary to create or import user and group accounts into FreeNAS/TrueNAS.
 
-The videos at https://www.youtube.com/watch?v=RxggaE935PM and https://www.youtube.com/watch?v=QhwOyLtArw0 clarify setting up permissions on SMB shares on legacy (pre-TrueNAS 12.0) versions of FreeNAS:
-
-{{< youtube RxggaE935PM >}}
-<br>
-{{< youtube QhwOyLtArw0>}}
+{{< taglist tag="corecommunityguides" limit="10" title="Community Guides Articles" >}}

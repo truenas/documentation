@@ -1,6 +1,10 @@
 ---
 title: "Creating Scrub Tasks"
+description: "This article describes how to create scrub tasks on TrueNAS CORE."
 weight: 80
+tags:
+- corescrubtasks
+- corescrub
 ---
 
 {{< toc >}}
@@ -21,3 +25,5 @@ To create a scrub task for a pool, go to **Tasks > Scrub Tasks** and click **ADD
 ![TasksScrubTasksAdd](/images/CORE/12.0/TasksScrubTasksAdd.png "Creating a new Scrub Task")
 
 Select a **Pool**, enter the **Threshold** (in days), and give the scrub a description. Assign a **Schedule** and click **SUBMIT**.
+
+{{< taglist tag="corescrub" limit="10" >}}
