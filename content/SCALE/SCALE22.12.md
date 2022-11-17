@@ -67,7 +67,9 @@ TrueNAS SCALE 22.12-RC.1 has been released and includes many new features and im
 * Adds support for creating S3 buckets in Cloud Sync Backups
 * Updates Kubernetes to 1.25 and Samba to 4.17.0.rc5
 
-SCALE 22.12-RC.1 introduces a change in Applications. Users upgrading to RC.1 should now use the Docker overlay2 driver instead of zfs. This change brings a considerable performance boost to applications but if you rollback to any older version of SCALE 22.12, your applications will be incompatible on those earlier versions.
+{{< hint info >}}
+SCALE 22.12-RC.1 introduces a change in Applications. Users upgrading to 22.12-RC.1 now use the [Docker overlay2 driver](https://docs.docker.com/storage/storagedriver/overlayfs-driver/) instead of ZFS. This change brings a considerable performance boost to applications but applications installed in 22.12-RC.1 are incompatible with any previous version of SCALE 22.12.
+{{< /hint >}}
 
 ## 22.12-RC.1 Change Log
 
