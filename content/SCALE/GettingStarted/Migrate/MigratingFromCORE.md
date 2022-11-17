@@ -11,20 +11,19 @@ tags:
 
 {{< toc >}}
 
+## Migration Notes
+
 {{< hint danger >}}
 Migrating TrueNAS from CORE to SCALE is a one-way operation. Attempting to activate or roll back to a CORE boot environment can break the system.
 You cannot upgrade CORE systems with High Availability enabled (HA) to SCALE HA.
 {{< /hint >}}
 
-{{< hint warning >}}
 TrueNAS systems on 12.0x or lower should update to the latest CORE 13.0 release (e.g 13.0-U2) prior to migrating to SCALE.
-{{< /hint >}}
 
-{{< hint danger >}}
-#### Migrating GELI-encrypted Pools to SCALE
 TrueNAS SCALE is Linux based, so it does not support FreeBSD GELI encryption.
 If you have GELI-encrypted pools on your system that you plan to import into SCALE, you must migrate your data from the GELI pool to a non-GELI encrypted pool *before* migrating to SCALE.
-{{< /hint >}}
+
+TrueNAS SCALE validates the system certificates when a CORE system migrates to SCALE. When a malformed certificate is found, SCALE generates a new self-signed certificate to ensure system accessibility.
 
 ## Migration Methods
 
