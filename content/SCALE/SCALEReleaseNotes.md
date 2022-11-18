@@ -231,6 +231,13 @@ iXsystems is excited to announce the release of TrueNAS SCALE 22.02.4!
 * [NAS-113895](https://ixsystems.atlassian.net/browse/NAS-113895) Running zpool clear while a scrub is running effectively locks up entire system
 * [NAS-112995](https://ixsystems.atlassian.net/browse/NAS-112995) Alert reads “…replication from scratch…” but entry is called differently in GUI
 
+### Notice
+
+MinIO has removed backwards compatibility with version 2022-10-24_1.6.58.
+
+MinIO fails to deploy if you update your version 2022-10-24_1.6.58 Minio app to 2022-10-29_1.6.59 or later using the TrueNAS web UI. Use the app roll back function and return to 2022-10-24_1.6.58 to make your MinIO app functional again.
+See the [MinIO Migration documentation](https://min.io/docs/minio/kubernetes/upstream/operations/install-deploy-manage/migrate-fs-gateway.html#procedure) to manually update your MinIO app to the latest version without losing functionality.
+
 ## 22.02.3
 {{< expand "22.02.3" "v" >}}
 **August 9, 2022**
