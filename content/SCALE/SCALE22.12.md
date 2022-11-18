@@ -54,8 +54,178 @@ To upgrade an existing SCALE install, log in to your SCALE web interface and go 
 SCALE is developed as an appliance that uses specific Linux packages with each release. Attempting to update SCALE with `apt` or methods other than the SCALE web interface can result in a nonfunctional system.
 {{< /hint >}}
 
-## 22.12-BETA.2 
+## 22.12-RC.1
 
+**November 15, 2022**
+
+TrueNAS SCALE 22.12-RC.1 has been released and includes many new features and improved functionaltiy. SCALE 22.12-RC.1 features include:
+
+* Adds FIPS-validated SSL module (Enterprise Only)
+* Adds the R50M to the Enclosure screen
+* Adds USB passthrough support and allows users to specify USB vendor/product IDs in the UI
+* Adds increased functionality in the new Storage screens that include overprovisioning on zpool creation and the ability to see the full name for datasets with long names
+* Adds support for creating S3 buckets in Cloud Sync Backups
+* Updates Kubernetes to 1.25 and Samba to 4.17.0.rc5
+
+{{< hint info >}}
+SCALE 22.12-RC.1 introduces a change in Applications. Users upgrading to 22.12-RC.1 now use the [Docker overlay2 driver](https://docs.docker.com/storage/storagedriver/overlayfs-driver/) instead of ZFS. This change brings a considerable performance boost to applications but applications installed in 22.12-RC.1 are incompatible with any previous version of SCALE 22.12.
+{{< /hint >}}
+
+## 22.12-RC.1 Change Log
+
+### Epic
+
+* [NAS-110327](https://ixsystems.atlassian.net/browse/NAS-110327) WebUI Refactoring
+* [NAS-116607](https://ixsystems.atlassian.net/browse/NAS-116607) FIPS Validated SSL Module (Enterprise Only)
+
+### New Feature
+
+* [NAS-109036](https://ixsystems.atlassian.net/browse/NAS-109036) OverlayFS support for docker on zfs
+* [NAS-116558](https://ixsystems.atlassian.net/browse/NAS-116558) \`special\_small\_block\_size\` dataset option is inheritable
+* [NAS-117028](https://ixsystems.atlassian.net/browse/NAS-117028) Offline/errored out pools on new storage pages
+* [NAS-117236](https://ixsystems.atlassian.net/browse/NAS-117236) Check for keyboard support on new storage pages
+* [NAS-117302](https://ixsystems.atlassian.net/browse/NAS-117302) Integrate overprovisioning on zpool creation on SCALE
+* [NAS-118325](https://ixsystems.atlassian.net/browse/NAS-118325) Add USB passthrough support in the UI
+* [NAS-118446](https://ixsystems.atlassian.net/browse/NAS-118446) add MISMATCH\_VERSIONS to webUI
+* [NAS-118505](https://ixsystems.atlassian.net/browse/NAS-118505) R50BM needs to be added to webUI codebase
+* [NAS-118593](https://ixsystems.atlassian.net/browse/NAS-118593) Update kubernetes to 1.25 and related deps
+* [NAS-118642](https://ixsystems.atlassian.net/browse/NAS-118642) Allow users to specify USB vendor/product id in UI
+* [NAS-118701](https://ixsystems.atlassian.net/browse/NAS-118701) add new public endpoint to return whether or not truenas is clustered
+* [NAS-118749](https://ixsystems.atlassian.net/browse/NAS-118749) Branchout mirrors for RC1
+* [NAS-118923](https://ixsystems.atlassian.net/browse/NAS-118923) Fix broken k3s build
+
+### Improvement
+
+* [NAS-111509](https://ixsystems.atlassian.net/browse/NAS-111509) Empty job field on replication task after failover
+* [NAS-111781](https://ixsystems.atlassian.net/browse/NAS-111781) VMware snapshot improvements
+* [NAS-116286](https://ixsystems.atlassian.net/browse/NAS-116286) Rework ZFS Log Size Limit
+* [NAS-116557](https://ixsystems.atlassian.net/browse/NAS-116557) Ensure that users have ability to view full dataset names in storage form in webui
+* [NAS-116675](https://ixsystems.atlassian.net/browse/NAS-116675) Add info about RSS support to interfaces API
+* [NAS-117837](https://ixsystems.atlassian.net/browse/NAS-117837) disk.get\_unused should maybe include info from ID\_FS\_LABEL in output
+* [NAS-117958](https://ixsystems.atlassian.net/browse/NAS-117958) Fix chart colors on different themes
+* [NAS-118073](https://ixsystems.atlassian.net/browse/NAS-118073) Update samba to 4.17.0.rc5 in nightlies
+* [NAS-118077](https://ixsystems.atlassian.net/browse/NAS-118077) Add python bindings for libwbclient
+* [NAS-118088](https://ixsystems.atlassian.net/browse/NAS-118088) Publish unit tests workflow for SCALE master branch
+* [NAS-118101](https://ixsystems.atlassian.net/browse/NAS-118101) Function clean up for Datasets module
+* [NAS-118134](https://ixsystems.atlassian.net/browse/NAS-118134) Add CTDB mutex helper using libgfapi-python
+* [NAS-118176](https://ixsystems.atlassian.net/browse/NAS-118176) Support creating S3 Buckets in CloudSync Backups
+* [NAS-118213](https://ixsystems.atlassian.net/browse/NAS-118213) Wireframes: Apps Available and Apps Discovery
+* [NAS-118256](https://ixsystems.atlassian.net/browse/NAS-118256) Wireframes: App Install Form
+* [NAS-118301](https://ixsystems.atlassian.net/browse/NAS-118301) investigate removing docker on zfs
+* [NAS-118335](https://ixsystems.atlassian.net/browse/NAS-118335) Make spinners look the same across the app
+* [NAS-118341](https://ixsystems.atlassian.net/browse/NAS-118341) libzfsacl - add function to convert ZFS ACL to string
+* [NAS-118387](https://ixsystems.atlassian.net/browse/NAS-118387) USB passthrough should allow USB VID/PID and dynamic location
+* [NAS-118390](https://ixsystems.atlassian.net/browse/NAS-118390) Refactor \`UpdateComponent\` to use ix-form
+* [NAS-118394](https://ixsystems.atlassian.net/browse/NAS-118394) implement get\_real\_filename\_at\_fn\(\) in vfs\_shadow\_copy\_zfs in Samba 4.17
+* [NAS-118408](https://ixsystems.atlassian.net/browse/NAS-118408) Type safety/linter improvements
+* [NAS-118411](https://ixsystems.atlassian.net/browse/NAS-118411) Fix swatch colour in space-management-chart
+* [NAS-118420](https://ixsystems.atlassian.net/browse/NAS-118420) Extract user/group deletion dialog forms
+* [NAS-118432](https://ixsystems.atlassian.net/browse/NAS-118432) Acpidump on scale
+* [NAS-118480](https://ixsystems.atlassian.net/browse/NAS-118480) Do not spam daemon logs with kube-router logs
+* [NAS-118493](https://ixsystems.atlassian.net/browse/NAS-118493) need integration tests for middleware port validation
+* [NAS-118499](https://ixsystems.atlassian.net/browse/NAS-118499) Extract some VM dialogs into separate components
+* [NAS-118514](https://ixsystems.atlassian.net/browse/NAS-118514) Remove DocReplaceService
+* [NAS-118526](https://ixsystems.atlassian.net/browse/NAS-118526) Partially enable no-restricted-syntax
+* [NAS-118543](https://ixsystems.atlassian.net/browse/NAS-118543) Provide better indication when user password is set
+* [NAS-118545](https://ixsystems.atlassian.net/browse/NAS-118545) Make Dataset Space Management chart smaller
+* [NAS-118612](https://ixsystems.atlassian.net/browse/NAS-118612) Linter for attribute order in html
+* [NAS-118662](https://ixsystems.atlassian.net/browse/NAS-118662) Remove \`any\` in chart-form.component
+* [NAS-118668](https://ixsystems.atlassian.net/browse/NAS-118668) Remove usages of any
+* [NAS-118677](https://ixsystems.atlassian.net/browse/NAS-118677) Implement jest eslint rules
+* [NAS-118683](https://ixsystems.atlassian.net/browse/NAS-118683) Extract some dialogs into separate components
+* [NAS-118692](https://ixsystems.atlassian.net/browse/NAS-118692) Whitelist Rsync Module in docker host path validations
+* [NAS-118699](https://ixsystems.atlassian.net/browse/NAS-118699) Use snack bar to inform users about success actions
+* [NAS-118737](https://ixsystems.atlassian.net/browse/NAS-118737) Whitelist cloud sync tasks in docker host path validation
+* [NAS-118783](https://ixsystems.atlassian.net/browse/NAS-118783) update SCST with upstream
+
+### Bug
+
+* [NAS-107288](https://ixsystems.atlassian.net/browse/NAS-107288) GUI slow/consuming GBs of RAM with large number of datasets \(10k\)
+* [NAS-110305](https://ixsystems.atlassian.net/browse/NAS-110305) report page graphs no scroll back
+* [NAS-112088](https://ixsystems.atlassian.net/browse/NAS-112088) Don't do validation on empty textboxes if they are not set required: true.
+* [NAS-112650](https://ixsystems.atlassian.net/browse/NAS-112650) Onedrive for Business
+* [NAS-114884](https://ixsystems.atlassian.net/browse/NAS-114884) WebUI - displayed reorder & configure buttons on the other pages not dashboard
+* [NAS-115225](https://ixsystems.atlassian.net/browse/NAS-115225) "client certificate chain could not be verified with specified root CA."
+* [NAS-115869](https://ixsystems.atlassian.net/browse/NAS-115869) NTP service broken when DHCP provides NTP servers.
+* [NAS-115943](https://ixsystems.atlassian.net/browse/NAS-115943) 3080 GPU not detected / won't install
+* [NAS-116495](https://ixsystems.atlassian.net/browse/NAS-116495) Run blocking calls in threads in sysdataset plugin
+* [NAS-116526](https://ixsystems.atlassian.net/browse/NAS-116526) Enabling the wrong PCI Passthrough bricked host SCALE
+* [NAS-116537](https://ixsystems.atlassian.net/browse/NAS-116537) Replace disk dialog does not include any identifying information about the disk
+* [NAS-116716](https://ixsystems.atlassian.net/browse/NAS-116716) \[SCALE\] OpenEBS failing to start after update
+* [NAS-117316](https://ixsystems.atlassian.net/browse/NAS-117316) \[SCALE\] Prevent user from deploying app with port conflicts
+* [NAS-117392](https://ixsystems.atlassian.net/browse/NAS-117392) Add clustered time health check
+* [NAS-117473](https://ixsystems.atlassian.net/browse/NAS-117473) Scrub causes system to be unresponsive
+* [NAS-117935](https://ixsystems.atlassian.net/browse/NAS-117935) Rootless login: local authentication and authorization
+* [NAS-117941](https://ixsystems.atlassian.net/browse/NAS-117941) Error when going to datasets after removing all pools
+* [NAS-118011](https://ixsystems.atlassian.net/browse/NAS-118011) On TrueNAS SCALE, when performing GPU passthrough with high-memory cards QEMU options are required
+* [NAS-118177](https://ixsystems.atlassian.net/browse/NAS-118177) Storj integration doesn't work with existing accounts
+* [NAS-118210](https://ixsystems.atlassian.net/browse/NAS-118210) webUI making unnecessary calls on reporting page
+* [NAS-118244](https://ixsystems.atlassian.net/browse/NAS-118244) Pool creation silently fails on former MDRAID disks
+* [NAS-118255](https://ixsystems.atlassian.net/browse/NAS-118255) Scale UI shows all VMs in stopped state, but they are running
+* [NAS-118290](https://ixsystems.atlassian.net/browse/NAS-118290) \[SCALE\] Apps logs, keep repeating every few seconds
+* [NAS-118291](https://ixsystems.atlassian.net/browse/NAS-118291) Data Protection - Replication Tasks - Snapshot Retention
+* [NAS-118305](https://ixsystems.atlassian.net/browse/NAS-118305) Changing network settings in CLI on initial install
+* [NAS-118327](https://ixsystems.atlassian.net/browse/NAS-118327) Restore Angular loading indication
+* [NAS-118328](https://ixsystems.atlassian.net/browse/NAS-118328) Kubernetes migration hangs if encryption is turned on
+* [NAS-118339](https://ixsystems.atlassian.net/browse/NAS-118339) No Snapshots are shown
+* [NAS-118348](https://ixsystems.atlassian.net/browse/NAS-118348) ZFS snapdirs stats are gathered by collectd df plugin
+* [NAS-118349](https://ixsystems.atlassian.net/browse/NAS-118349) Fix Datasets table to cut off really long dataset names
+* [NAS-118354](https://ixsystems.atlassian.net/browse/NAS-118354) Nextcloud on SCALE crashes when Postgres Backup Volume option is selected
+* [NAS-118369](https://ixsystems.atlassian.net/browse/NAS-118369) recycle touch file causes SMB assertion on 4.17.0 release
+* [NAS-118375](https://ixsystems.atlassian.net/browse/NAS-118375) UI Breaks on mobile screens if you have dataset details open and you delete the dataset
+* [NAS-118381](https://ixsystems.atlassian.net/browse/NAS-118381) test\_create\_schema\_formattion unit test failing
+* [NAS-118383](https://ixsystems.atlassian.net/browse/NAS-118383) \[TrueNAS SCALE-22.12-BETA.1\] Config Import not working
+* [NAS-118421](https://ixsystems.atlassian.net/browse/NAS-118421) openvpn: Options error: In \[CMD-LINE\]:1: Error opening configuration file: client.conf
+* [NAS-118423](https://ixsystems.atlassian.net/browse/NAS-118423) Reporting is broken - Cannot read properties of undefined 
+* [NAS-118428](https://ixsystems.atlassian.net/browse/NAS-118428) Add upgrade strategy for storj app
+* [NAS-118444](https://ixsystems.atlassian.net/browse/NAS-118444) add MISMATCH\_VERSIONS to failover.disabled.reasons
+* [NAS-118447](https://ixsystems.atlassian.net/browse/NAS-118447) During Select an unused disk progress-spinner is not render
+* [NAS-118464](https://ixsystems.atlassian.net/browse/NAS-118464) \`Metadata \(Special\) Small Block Size\` on the dataset form has a null default value
+* [NAS-118465](https://ixsystems.atlassian.net/browse/NAS-118465) Config upload error message is not displayed
+* [NAS-118470](https://ixsystems.atlassian.net/browse/NAS-118470) Multiselect styles are broken
+* [NAS-118477](https://ixsystems.atlassian.net/browse/NAS-118477) Cleanup all the cluster things
+* [NAS-118478](https://ixsystems.atlassian.net/browse/NAS-118478) fix cluster smb config test
+* [NAS-118513](https://ixsystems.atlassian.net/browse/NAS-118513) prevent swap on data drives on ix enterprise hardware
+* [NAS-118517](https://ixsystems.atlassian.net/browse/NAS-118517) CalledProcessError dialog appears when I open /ui/storage page
+* [NAS-118519](https://ixsystems.atlassian.net/browse/NAS-118519) webUI showing wrong HA status
+* [NAS-118520](https://ixsystems.atlassian.net/browse/NAS-118520) WebUI elements missing from System Settings -> General page after migrating from CORE to SCALE
+* [NAS-118524](https://ixsystems.atlassian.net/browse/NAS-118524) WebUI: Atime is displayed differently.
+* [NAS-118530](https://ixsystems.atlassian.net/browse/NAS-118530) Advanced system settings, a few boxes appear twice
+* [NAS-118535](https://ixsystems.atlassian.net/browse/NAS-118535) Apps stopped working
+* [NAS-118536](https://ixsystems.atlassian.net/browse/NAS-118536) K3s not starting
+* [NAS-118541](https://ixsystems.atlassian.net/browse/NAS-118541) Progress bar overflows jobs dialog
+* [NAS-118546](https://ixsystems.atlassian.net/browse/NAS-118546) Disable some cloud sync buckets
+* [NAS-118557](https://ixsystems.atlassian.net/browse/NAS-118557) Replication: Only Same as Source and None retention policies can be used with Naming regex
+* [NAS-118563](https://ixsystems.atlassian.net/browse/NAS-118563) fix service.restart and journal sync race
+* [NAS-118567](https://ixsystems.atlassian.net/browse/NAS-118567) Allow migrating applications when encrypted
+* [NAS-118573](https://ixsystems.atlassian.net/browse/NAS-118573) Apps lead to deathlocks due to low inotify.max\_user\_watches
+* [NAS-118580](https://ixsystems.atlassian.net/browse/NAS-118580) Remove k8s cronjobs when scaling down apps
+* [NAS-118583](https://ixsystems.atlassian.net/browse/NAS-118583) Time Zone is right. System time is not
+* [NAS-118586](https://ixsystems.atlassian.net/browse/NAS-118586) Fix VMware snapshot delete test
+* [NAS-118594](https://ixsystems.atlassian.net/browse/NAS-118594) Avoid unnecessary avahi reload\_config\(\) calls
+* [NAS-118599](https://ixsystems.atlassian.net/browse/NAS-118599) Do not expose MIXED case sensitivity as user choice
+* [NAS-118614](https://ixsystems.atlassian.net/browse/NAS-118614) Cloud tasks for Move and Sync transfer mode reverts to Copy
+* [NAS-118616](https://ixsystems.atlassian.net/browse/NAS-118616) SMB Share Option Edit FilesystemACL Opens Main Dashboard Not the Edit Filesystem ACL Configuration Form
+* [NAS-118624](https://ixsystems.atlassian.net/browse/NAS-118624) Remove unnecessary freebsd rc files in scale
+* [NAS-118627](https://ixsystems.atlassian.net/browse/NAS-118627) Employ new method of testing if storj bucket is related to iX as conf…
+* [NAS-118628](https://ixsystems.atlassian.net/browse/NAS-118628) Rework UI for replacing an unavailable disk
+* [NAS-118635](https://ixsystems.atlassian.net/browse/NAS-118635) \(py-libzfs\) zed core dump after merging zfs-2.1.6 patchset
+* [NAS-118695](https://ixsystems.atlassian.net/browse/NAS-118695) \[SCALE\] k3s crash loop
+* [NAS-118697](https://ixsystems.atlassian.net/browse/NAS-118697) \(openzfs\) zed core dump after merging zfs-2.1.6 patchset
+* [NAS-118765](https://ixsystems.atlassian.net/browse/NAS-118765) SMB Share ACLs do not open/work on TrueNAS Scale 22.12-BETA.2
+* [NAS-118782](https://ixsystems.atlassian.net/browse/NAS-118782) Update samba to 4.17.2
+* [NAS-118856](https://ixsystems.atlassian.net/browse/NAS-118856) SCALE nightlies includes kernel modules for wrong kernel
+* [NAS-118949](https://ixsystems.atlassian.net/browse/NAS-118949) pywbclient - Fix refcounting on PyUidGid class init error path
+
+### Notice
+
+MinIO has removed backwards compatibility with version 2022-10-24_1.6.58.
+
+MinIO fails to deploy if you update your version 2022-10-24_1.6.58 Minio app to 2022-10-29_1.6.59 or later using the TrueNAS web UI. Use the app roll back function and return to 2022-10-24_1.6.58 to make your MinIO app functional again.
+See the [MinIO Migration documentation](https://min.io/docs/minio/kubernetes/upstream/operations/install-deploy-manage/migrate-fs-gateway.html#procedure) to manually update your MinIO app to the latest version without losing functionality.
+
+## 22.12-BETA.2 
+{{< expand "22.12-BETA.2" "v" >}}
 **October 18, 2022**
 
 TrueNAS SCALE 22.12-BETA.2 has been released and includes many new features and improved functionaltiy. SCALE 22.-BETA.2 features include:
@@ -376,9 +546,9 @@ TrueNAS SCALE 22.12-BETA.2 has been released and includes many new features and 
 * [NAS-112088](https://ixsystems.atlassian.net/browse/NAS-112088) Don't do validation on empty textboxes if they are not set required: true.
 * [NAS-111962](https://ixsystems.atlassian.net/browse/NAS-111962) "Not an interger" error in Transfers field in Sync Cloud task
 * [NAS-110795](https://ixsystems.atlassian.net/browse/NAS-110795) Can't create unencrypted dataset on Encrypted pool
+{{< /expand >}}
 
 ## 22.12-BETA.1 
-
 {{< expand "22.12-BETA.1" "v">}}
 **September 13, 2022**
 
@@ -767,24 +937,31 @@ Additional feature in future Bluefin releases:
 
 | Seen In | Key | Summary | Workaround | Resolved In |
 |---------|-----|---------|------------|-------------|
-| 22.12-BETA.2 | <a href="https://ixsystems.atlassian.net/browse/NAS-118632" target="_blank">NAS-118632</a> | Traceback received during pool creation | This is an occasional noncritical race condition with the disk temperatures widget during pool creation. The traceback can be acknowledged and ignored; the issue is temporary and does not impact pool creation.. | Targeted 22.12-RC.1 |
-| 22.12-BETA.2 | <a href="https://ixsystems.atlassian.net/browse/NAS-118616" target="_blank">NAS-118616</a> | SMB Share option Edit Filesystem ACL does not open the filesystem editor screen. | After adding an SMB share, if you select the option to Edit Filesystem ACL, the main Dashboard opens instead of the filesystem ACL editor screen. To workaround this issue, go to the Storage > Dashboard screen, select the dataset for the SMB share, scroll down to the Permissions widget and click Edit. | Unknown |
+| 22.12-RC.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-118922" target="_blank">NAS-118922</a> | Device Screen does't update after replacing a disk | When replacing a disk the UI doesn't update to show the replace operation completed and might display an error message. After replacing a disk, return to the Storage Dashboard and then the Devices screen to see the status of the disk replacement as complete. | Targeted 22.12(Bluefin) | 
+| 22.12-RC.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-119005" target="_blank">NAS-119005</a> | On Enterprise systems, the Open Ticket button doesn't work | On Enterprise systems, when filing a ticket using the Open Ticket button should open an issue reporting screen but it does not. Customers should either contact Support directly or open a ticket directly in Jira. | Targeted 22.12 (Bluefin) |
+| 22.12-RC.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-119011" target="_blank">NAS-119011</a> | iSCSI wizard does not function properly | The Extent Type device dropdown list is empty and the Portal dropdown list does not include the create new option so users can not select or add a new device, or add a new portal. | Targeted 22.12 (Bluefin) | 
+| 22.12-RC.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-119008" target="_blank">NAS-119008</a> | On HA systems, the Dashboard Standby controller and status do not update after changing the system dataset. | Issue is related to another UI screen caching issues where the HA Dashboard does not show updated system information. Clear your browser cache to update the UI. | Targeted 22.12 (Bluefin) | 
+| 22.12-RC.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-119006" target="_blank">NAS-119006</a> | Enclosure view only updates after leaving the page | Related to a known screen caching issue. Either clear your browser cache or change to a different UI screen and return to the Enclosure screen see the updates. | Targeted 22.12.1 (Bluefin) |
+| 22.12-RC.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-119007" target="_blank">NAS-119007</a> | API call 'pool.dataset.details' responds to an object with a field "snapshot_count = 0" | API call to obtain number of zvol snapshots returns an incorrect value of zero when there are two snapshots. | Targeted 22.12.1 (Bluefin) | 
+| 22.12-RC.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-119010" target="_blank">NAS-119010</a> | SCALE drive replacement within a pool produces drive busy error | During HDD testing, replacing a drive in a pool resulted in the Error: [EFAULT] Railed to wipe disk sdb: [Errno 16] Device or resource busy: '/dev/sdb'. Appears to be a ZFS error. | Targeted 22.12(Bluefin) | 
+| 22.12-BETA.2 | <a href="https://ixsystems.atlassian.net/browse/NAS-118632" target="_blank">NAS-118632</a> | Traceback received during pool creation | This is an occasional noncritical race condition with the disk temperatures widget during pool creation. The traceback can be acknowledged and ignored; the issue is temporary and does not impact pool creation.. | 22.12-RC.1 |
+| 22.12-BETA.2 | <a href="https://ixsystems.atlassian.net/browse/NAS-118616" target="_blank">NAS-118616</a> | SMB Share option Edit Filesystem ACL does not open the filesystem editor screen. | After adding an SMB share, if you select the option to Edit Filesystem ACL, the main Dashboard opens instead of the filesystem ACL editor screen. To workaround this issue, go to the Storage > Dashboard screen, select the dataset for the SMB share, scroll down to the Permissions widget and click Edit. | 22.12-RC.1 |
 | 22.12-BETA.2 | <a href="https://ixsystems.atlassian.net/browse/NAS-118614" target="_blank">NAS-118614</a>| Cloud tasks for Move and Sync transfer modes revert to Copy | When creating a cloud sync task where the Transfer Mode is set to either Move or Sync, when the task completes successfully and runs for the first time, the notification to the user states the transfer mode was reset to Copy. | 22.12-RC.1 |
 | 22.12-BETA.2 | <a href="https://ixsystems.atlassian.net/browse/NAS-118613" target="_blank">NAS-118613</a> | Cannot mount WebDAV share in Windows when WebDAV service is set to Basic Authentication | If the TrueNAS WebDAV service is set to Basic Authentication, you cannot mount the share in Windows. This is a security protection on the part of Windows as Basic Authentication is considered an insecure way to input passwords. While the Windows Registry can be edited to allow for basic authentication, this is not recommended. It is recommended to access WebDAV shares using a browser with https security enabled or mounting shares with Digest Authentication enabled. | N/A |
 | 22.12-BETA.2 | n/a | TrueNAS Bluefin no longer supports MS-DOS based SMB clients. | As of SCALE 22.12, Bluefin, TrueNAS now uses Samba 4.17. Samba 4.16 announced in their release notes that they deprecated and disabled the whole SMB1 protocol as of 4.11. If needed for security purposes or code maintenance they continue to remove older protocol commands and unused dialects or that are replaced in more modern SMB1 version. Refer to [Samba](https://www.samba.org/samba/latest_news.html) release notes for more information. | n/a |
-| 22.12-BETA.1  | n/a | Upgrading from 22.02.4 to 22.12-BETA.1 is known to not work. | Workaround is to either upgrade from a version before 22.02.4 or to upgrade to 22.12-BETA.2 when it is [released](#scale-schedule). | Targeted 22.12-BETA.2 |
-| 22.12-BETA.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-117940" target="_blank">NAS-117940</a> | Implements temporary fix for the return from `glfs_open()` to honor `O_DIRECTORY` flag | Pertains to an internal issue in Samba. This temporary fix reverts after gluserfs is fixed with a permanent solution to this issue. | Targeted 22.12 |
+| 22.12-BETA.1  | n/a | Upgrading from 22.02.4 to 22.12-BETA.1 is known to not work. | Workaround is to either upgrade from a version before 22.02.4 or to upgrade to 22.12-BETA.2 when it is [released](#scale-schedule). | 22.12-BETA.2 |
+| 22.12-BETA.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-117940" target="_blank">NAS-117940</a> | Implements temporary fix for the return from `glfs_open()` to honor `O_DIRECTORY` flag | Pertains to an internal issue in Samba. This temporary fix reverts after gluserfs is fixed with a permanent solution to this issue. | Targeted 22.12 (Bluefin) |
 | 22.12-BETA.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-117974" target="_blank">NAS-117974</a> | Replication Task Wizard Source and Destination fields cut off the path information | The **Source** and **Destination** fields in the **Replication Task Wizard** window are cutoff. UI form issue that positions the paths in the fields such that only part of the value is visible. | Backlog |
 | 22.12-BETA.1 | <a href="xsystems.atlassian.net/browse/NAS-118063" target="_blank">NAS-118063</a> | SCALE Cluster growth/resize features | Currently, there is no way to grow or resize an existing cluster without the user destroying their cluster and starting with a new cluster. This issue looks to implement a solution using TrueCommand and TrueNAS API that provides the ability to have shared volumes that do not occupy all nodes in the cluster, add one or more nodes to a cluster without impacting existing shared volumes, "grow" a shared volume, and temporarily remove nodes from a cluster without destroying the cluster. | Targeted Backlog |
-| 22.12-BETA.1 | <a href="xsystems.atlassian.net/browse/NAS-118066" target="_blank">NAS-118066</a> | UI is not updating or properly showing snapshots | UI isn't showing dataset snapshots without creating one from Shell, but the UI doesn't display this Shell-created snapshot in Manage Snapshots. | Targeted 22.12-BETA.2 |
+| 22.12-BETA.1 | <a href="xsystems.atlassian.net/browse/NAS-118066" target="_blank">NAS-118066</a> | UI is not updating or properly showing snapshots | UI isn't showing dataset snapshots without creating one from Shell, but the UI doesn't display this Shell-created snapshot in Manage Snapshots. | 22.12-BETA.2 |
 | 22.12-BETA.1 | <a href="xsystems.atlassian.net/browse/NAS-118054" target="_blank">NAS-118054</a> | Replication Warning: Cannot receive sharesmb property | Replication created sending from an encrypted dataset to a non-encrypted dataset. After running replication the screen displays an orange warning icon. After clicking on the warning the "cannot receive sharesmb property in *tank/repwizrd/*set: pool and dataset must be upgraded to set this property or value." where *tank/repwizrd* is the pool/dataset path.| Targeted 22.12-BETA.2 |
 | 22.12-BETA.1 | <a href="xsystems.atlassian.net/browse/NAS-118095" target="_blank">NAS-118095</a> | Core dumps on ctdb at startup | Traceback received that indicates ctdb core-dumps when starting nodes after a fresh install. | Unscheduled |
-| 22.02.1 |<a href="https://ixsystems.atlassian.net/browse/NAS-116473" target="_blank">NAS-116473</a> | Large Drive Count Issues | iX is investigating issues with booting SCALE on systems with more than 100 Disks. | 22.12-RC.1 |
-| 22.02.0 | <a href="https://jira.ixsystems.com/browse/NAS-115238" target="_blank">NAS-115238</a> | Removed drive from pool does not degrade pool status (SCALE). | Issue is being investigated and a fix provided in a future release | Targeted 22.02.4 |
+| 22.02.1 |<a href="https://ixsystems.atlassian.net/browse/NAS-116473" target="_blank">NAS-116473</a> | Large Drive Count Issues | iX is investigating issues with booting SCALE on systems with more than 100 Disks. | 23.10-ALPHA.1 (Cobia) |
+| 22.02.0 | <a href="https://jira.ixsystems.com/browse/NAS-115238" target="_blank">NAS-115238</a> | Removed drive from pool does not degrade pool status (SCALE). | Issue is being investigated and a fix provided in a future release | 22.12-BETA.2 |
 |  |  | Unable to mount an NFS export after migrating from CORE > SCALE or updating to 22.02.0. | The <file>/etc/exports</file> file is no longer generated when the NFS configuration contains <i>mapall</i> or <i>maproot</i> entries for unknown users or groups. This can impact users who previously had a mapping group set to <i>wheel</i>, which does not exist in SCALE. If you are unable to mount an NFS export, review your NFS share configuration and change any <i>wheel</i> entries to something specific for your environment or <i>root</i>. |  |
 |  |  | SCALE Gluster/Cluster. | Gluster/Cluster features are still in testing.  Administrators should use caution when deploying and avoid use with critical data. |  |
 |  | <a href="https://jira.ixsystems.com/browse/NAS-110263" target="_blank">NAS-110263</a> | AFP sharing is removed from TrueNAS SCALE. The protocol is deprecated and no longer receives development effort or security fixes. | TrueNAS SCALE automatically migrates any existing AFP shares into an SMB configuration that is preset to function like an AFP share. | 21.06-BETA.1 |
-| 21.06-BETA.1 | <a href="https://jira.ixsystems.com/browse/NAS-111547" target="_blank">NAS-111547</a> | ZFS shouldn't count vdev IO errors on hotplug removal | Pool status isn't being updated immediately on disk exchange events. | Targeted 22.12 |
+| 21.06-BETA.1 | <a href="https://jira.ixsystems.com/browse/NAS-111547" target="_blank">NAS-111547</a> | ZFS shouldn't count vdev IO errors on hotplug removal | Pool status isn't being updated immediately on disk exchange events. | Targeted 22.12 (Bluefin) |
 
 {{< hint ok >}}
 TrueNAS SCALE Bluefin includes Linux Kernel 5.15 which can enable Alderlake GPU acceleration by using the following boot loader tunable and rebooting:
@@ -802,7 +979,7 @@ For more details on zpool.features.7 see [OpenZFS zpool-feature.7](https://openz
 
 | Feature Flag | GUID | Dependencies | Description |
 |--------------|------|--------------|-------------|
-| blake3 | org.openzfs.blake3 | extensible)dataset | Enables use of the BLAKE3 hash algorithmfor checksum and dedup. BLAKE3 is a secure hash algorithm focused on high performance. When enabled, the adminstrator can turn on the blake3 checksum on any dataset using `zfs set checksum=blake dset` [see zfs-set(8)](https://openzfs.github.io/openzfs-docs/man/8/zfs-set.8.html). |
+| blake3 | org.openzfs.blake3 | extensible)dataset | Enables use of the BLAKE3 hash algorithm for checksum and dedup. BLAKE3 is a secure hash algorithm focused on high performance. When enabled, the administrator can turn on the blake3 checksum on any dataset using `zfs set checksum=blake dset` [see zfs-set(8)](https://openzfs.github.io/openzfs-docs/man/8/zfs-set.8.html). |
 | head_errlog | com.delphix:head_errlog | n/a | Enables the upgraded version of `errlog`. The error log of each head dataset is stored separately in the zap object and keyed by the head id. Every dataset affected by an error block is listed in the output of `zpool status`. |
 | zilsaxattr | org.openzfs:zilsaxattr | extensible_dataset | Enables `xattr-sa` extended attribute logging in the ZIL. If enabled, extended attribute changes from both `xattrdir=dir` and `xattr=sa` are guaranteed to be durable if either `sync=always` is set for the dataset when a change is made or sync(2) is called on the dataset after making changes. |
 

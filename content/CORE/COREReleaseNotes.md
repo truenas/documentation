@@ -21,19 +21,37 @@ aliases:
 
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
-| 13.0-U3 | Release | To be determined |
+| 13.0-U4 | Release | To be determined |
+
+## 13.0-U3.1
+
+**November 16, 2022**
+
+iXsystems is pleased to release TrueNAS 13.0-U3.1.
+
+This is a small maintenance release to patch an issue found in the upstream Samba project.
+
+### TrueNAS 13.0-U3.1 Changelog
+
+#### Improvement
+
+* [NAS-118951](https://ixsystems.atlassian.net/browse/NAS-118951) don't SMB\_ASSERT\(\) on mixed case sensitivity settings in vfs\_shadow\_copy\_zfs
+
+#### Bug
+
+* [NAS-118926](https://ixsystems.atlassian.net/browse/NAS-118926) SMB\_ASSERT\(\) on FSCTL on alternate data stream
 
 ## 13.0-U3
 
-November 1, 2022
+**November 1, 2022**
 
 iXsystems is pleased to announce the release of TrueNAS 13.0-U3.
 
 This is a maintenance release with some improvements for ACLs and rsync, updates Samba to 4.15.10 and updates the Asigra plugin. It adds Enclosure Management integration for the 3rd generation R50 and Storj as a new Cloud Sync provider.
 
-## TrueNAS 13.0-U3 Changelog
+### TrueNAS 13.0-U3 Changelog
 
-### Improvement
+#### Improvement
 
 * [NAS-118437](https://ixsystems.atlassian.net/browse/NAS-118437) Update net/samba to Samba 4.15.10
 * [NAS-118341](https://ixsystems.atlassian.net/browse/NAS-118341) libzfsacl - add function to convert ZFS ACL to string
@@ -42,14 +60,14 @@ This is a maintenance release with some improvements for ACLs and rsync, updates
 * [NAS-117828](https://ixsystems.atlassian.net/browse/NAS-117828) Add Storj as Cloud Sync service \(13 and Angelfish\)
 * [NAS-116185](https://ixsystems.atlassian.net/browse/NAS-116185) Enable trains redirect for 12.0 to 13.0
 
-### New Feature
+#### New Feature
 
 * [NAS-118505](https://ixsystems.atlassian.net/browse/NAS-118505) R50BM needs to be added to webUI codebase
 * [NAS-118068](https://ixsystems.atlassian.net/browse/NAS-118068) Add R50BM to enclosure mapping code and to keyserver
 * [NAS-117923](https://ixsystems.atlassian.net/browse/NAS-117923) Upgrade Asigra plugin
 * [NAS-117827](https://ixsystems.atlassian.net/browse/NAS-117827) New cloud sync provider: "Storj iX" \(13 and Angelfish\)
 
-### Bug
+#### Bug
 
 * [NAS-118787](https://ixsystems.atlassian.net/browse/NAS-118787) Asigra Install fails
 * [NAS-118717](https://ixsystems.atlassian.net/browse/NAS-118717) CVE-2022-3437 \(Heimdal des/des3 overflow\) Samba 4.15
