@@ -21,7 +21,7 @@ The **Test LDAP Config** <span class="iconify" data-icon="mdi:test-tube"></span>
 | Field | Value |
 | ----- | ------------- |
 | LDAP Server URL (string, required) | <span>IP or DNS name of the LDAP server, with port number on the end.<br>Example: <i>ldap.mycorp.com:636</i> (SSL port is typically 636 for AD/LDAP)</span> |
-| Domain (string, required) | <span>Base domain settings of the user.<br>Example: <i>dc=mycorp,dc=com</i> for a typical username@mycorp.com user account</span> |
+| Domain (string, required) | Base domain settings of the user.<br>Example: <i>dc=mycorp,dc=com</i> for a typical `username@mycorp.com` user account |
 | Group Domain (string) | The alternative domain setting to use when searching for groups. The default value is the same as **Domain** |
 | Verify SSL (bool) | <span>Require strict SSL certificate verification. The default value is false.<br>Disable this option if the hostname of the system is different than the one listed on the SSL certificate, an IP is used for the connection instead of the DNS hostname, or if a self-signed certificate is used by the LDAP server.</span> |
 | User ID Field (string) | Domain fieldname to use for user-matching. The default value is **uid** (user ID). Another field commonly-used is **cn** (common name) |
