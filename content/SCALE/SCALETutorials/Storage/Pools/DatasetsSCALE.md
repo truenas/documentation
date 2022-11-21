@@ -4,11 +4,10 @@ description: "This article provides instructions on creating and managing datase
 weight: 55
 aliases: /scale/scaleuireference/storage/pools/datasetsscale/
 tags:
- - scaledatasets
- - scalestorage
- - scaleencryption
- - scaleacls
- - scalequotas
+- scaledatasets
+- scalestorage
+- scaleacls
+- scalequotas
 ---
 
 {{< toc >}}
@@ -21,14 +20,16 @@ We recommend organizing your pool with datasets before configuring [data sharing
 
 ## Creating a Generic Dataset
 
-To create a dataset using the default settings, go to **Storage**. Default settings includes settings datasets inherit from the parent dataset.
+To create a dataset using the default settings, go to **Datasets**. Default settings includes settings datasets inherit from the parent dataset.
 
-Select a dataset, pool (root) dataset or a child dataset, click the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; and then select **Add Dataset**.
+Select a dataset (root, parent or child), then click **Add Dataset**.
 
-![AddDatasetNameAndOptions](/images/SCALE/22.02/AddDatasetNameAndOptions.png "Add Dataset Name and Options")
+![AddDatasetNameAndOptions](/images/SCALE/22.12/AddDatasetNameAndOptions.png "Add Dataset Name and Options")
 
-Enter a name and click **Save**.
-
+Enter a name, select either **Sensitive** or **Insensitive** from the **Case Sensitivity** dropdown, and either select **SMB** or leave **Share Type** set to **Generic**, then click **Save**.
+{{< hint info >}}
+You cannot change the dataset name, case sensitivity, or share type after you click save.
+{{< /hint >}}
 ## Creating Custom Datasets
 
 You can create datasets optimized for SMB shares or with customized settings for your dataset use cases.
@@ -46,13 +47,14 @@ We recommended you choose a compression algorithm that balances disk performance
 
 ### Setting Dataset Quotas
 
-Click **Advanced Options** to see the dataset quota management tools.
+You can set dataset quotas when you add a dataset using the **Add Dataset > Advanced Options** quota management options, or to add or edit quotas for a selected dataset, click **Edit** on the **Dataset Space Management** widget to open the **Capacity Settings** screen. 
 
 Setting a quota defines the maximum allowed space for the dataset.
 You can also reserve a defined amount of pool space to prevent automatically generated data like system logs from consuming all of the dataset space.
-You can configure quotas for only the new dataset or include all child datasets.
+You can configure quotas for only the new dataset or for both the new dataset and any child datasets of the new dataset.
 
-Define the maximum allowed space for the dataset in either the **Quota for this dataset**. Enter **0** to disable quotas. 
+Define the maximum allowed space for the dataset in either the **Quota for this dataset** or **Quota for this dataset and all children** field. 
+Enter **0** to disable quotas. 
 
 Dataset quota [alerts]({{< relref "/SCALE/SCALEUIReference/TopToolbar/Alerts/_index.md" >}}) are based on the percentage of used storage.
 To set up a quota warning alert, enter a percentage value in **Quota warning alert at, %**.
@@ -72,35 +74,14 @@ For more information on quotas, see [Managing User or Group Quotas]({{< relref "
 ### Changing Dataset Inherited Values
 
 By default, many of dataset options inherit their values from the parent dataset.
-When the **Inherit** checkbox is selected, whatever setting has this checkbox selected uses the settings from the parent dataset.
+When the **Inherit** is selected, the setting that has this checkbox selected uses the settings from the parent dataset.
 For example, the [Storage Encryption]({{< relref "EncryptionScale.md" >}}) settings.
 
-To change any setting that can inherit the parent setting, clear the checkmark and then enter the desired setting values for the child dataset you are configuring.
+To change any setting that can inherit the parent setting, clear the checkbox and then enter the desired setting values for the child dataset you are configuring.
 
 ### Setting Datasets Access Controls
 
-There are two **Add Dataset** or **Edit Dataset** screen ACL settings in the **Advanced Options** settings that you need to configure to use ACLs, **ACL Type** and **ACL Mode**.
-
-You must select **NFSv4** in **ACL Type** before you can change the **ACL Mode** setting. The system changes the **ACL Mode** setting if you select **POSIX** in **ACL Type**.
-
-Leave the **ACL Type Inherit** checkbox selected to preserve the ACL type from the parent dataset. For SCALE, which is based on Linux, use either **NFSv4** or **POSIX**. 
-Warning dialogs display after selecting either setting. 
-NFSv4 is richer than POSIX and is used to losslessly migrate Windows-style ACLs across Active Directory domains (or stand-alone servers). 
-POSIX ACLs are a Linux-specific ZFS feature, used when an organization data backup target does not support native NFSv4 ACLs. 
-Since the Linux platform used POSIX for a long time, many backup products that access the server outside the SMB protocol cannot understand or preserve native NFSv4 ACLs. 
-
-{{< hint warning >}}
-All datasets within an SMB share path must have identical ACL types
-{{< /hint >}} 
-
-The **ACL Mode** setting determines how [chmod](https://linux.die.net/man/1/chmod) behaves when adjusting file ACLs. See the [zfs(8)](https://linux.die.net/man/8/zfs) `aclmode` property. 
-When **ACL Type** is set to **NFSv4** you can select **Passthrough** to only update ACL entries related to the file or directory mode or **Restricted** which does not allow chmod to make changes to files or directories with a non-trivial ACL. 
-An ACL is trivial if it can be fully expressed as a file mode without losing any access rules. 
-When set to **Restricted** it optimizes a dataset for SMB sharing, but it can also require further optimizations. For example, configuring an [rsync task]({{< relref "SCALE/SCALETutorials/DataProtection/RsyncTasksSCALE.md" >}}) with this dataset could require adding `--no-perms` in the task **Auxiliary Parameters** field.
-
-For a more in-depth explanation of ACLs and configurations in TrueNAS SCALE, see our [ACL Primer]({{< relref "/content/References/ACLPrimer.md" >}}). 
-
-For more information on ACL settings see [Setting Up Permissions]({{< relref "PermissionsSCALE.md" >}}).
+For information on ACL settings see [Setting Up Permissions]({{< relref "PermissionsSCALE.md" >}}).
 
 ### Creating a Dataset for a Fusion Pool
 
@@ -108,27 +89,35 @@ Use the **Metadata (Special) Small Block Size** setting to set a threshold block
 Blocks smaller than or equal to this value are assigned to the special allocation class while greater blocks are assigned to the regular class.
 Valid values are zero or a power of two from 512B up to 1M.
 The default size **0** means no small file blocks are allocated in the special class.
-Before setting this property, you must add a [special class vdev]({{< relref "FusionPoolsScale.md" >}}) to the pool. 
+Before setting this property, you must add a [special class VDEV]({{< relref "FusionPoolsScale.md" >}}) to the pool. 
 
 ## Managing Datasets
 
-After creating a dataset, users can manage additional options by going to **Storage** and clicking the dataset <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; icon to display the **Dataset Actions** list. Each option is described in detail in the [Storage Dashboard Screen]({{< relref "StorageDashboardScreen.md" >}}) article.
+After creating a dataset, users can manage additional options by going to **Datasets**, select the dataset you want to manage, then click **Edit** on the widget for the dataset function you want to manage. Each option is described in detail in the [Datasets Screen]({{< relref "DatasetsScreenSCALE.md" >}}) article.
 
 ### Editing a Dataset
-Select **Edit Options** to change the dataset configuration settings. You can change all settings except **Name**, **Case Sensitivity**, or **Share Type**.
-
-The **Edit Dataset** screen settings are identical to the **Add Dataset** screen.
+Select the dataset on the tree table, then click **Edit** on the **Dataset Details** widget to open the **Edit Dataset** screen and change the dataset configuration settings. You can change all settings except **Name**, **Case Sensitivity**, or **Share Type**.
 
 ### Editing Dataset Permissions
-Select **View Permissions** on the **Dataset Actions** list of options to open the **Dataset Permissions** widget. 
-Click <span class="material-icons">mode_edit</span> to display the **Edit Permissions** screen with the **Unix Permissions Editor** you use to configure ACLs. 
+
+Select **Edit** on the  **Permissions** widget. 
+
+If the **Permissions** widget is for a dataset with an NFSv4 ACL type, each listed ACL item is a button you can click to open a permissions editor for that ACL item. 
+To configure new ACL items for an NFSv4 ACL, click **Edit** to open the **ACL Editor** screen.
+
+To edit a POSIX ACL type, click **Edit** on the **Permissions** widget to open the **Unix Permissions Editor** screen.
+
 For more information, see the [permissions]({{< relref "PermissionsSCALE.md" >}}) article.
 
 ### Deleting a Dataset
-Select **Delete Dataset** to remove the dataset, all stored data, and any snapshots from TrueNAS.
+Select **Delete** on the **Dataset Details** widget to remove the dataset, all stored data, and any snapshots from TrueNAS.
+To delete a root dataset, delete the pool use the **Export/Disconnect** option on the **[Storage Dashboard]({{< relref "ManagePoolsSCALE.md" >}})** screen.
+
 {{< hint danger >}}
 Deleting datasets can result in unrecoverable data loss!
-Move or obsolete any critical data off the dataset before performing the delete operation.
+Move off or obsolete any critical data on the dataset before performing the delete operation.
 {{< /hint >}}
 
-{{< taglist tag="scaledatasets" limit="10" title="Related Datasets Articles" >}}
+{{< taglist tag="scaledatasets" limit="10" >}}
+{{< taglist tag="scaleacls" limit="10" title="Related Permissions Articles" >}}
+{{< taglist tag="scalequotas" limit="10" title="Related Quotas Articles" >}}
