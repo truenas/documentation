@@ -2,7 +2,10 @@
 title: "Using Apps"
 description: "This article provides information on deploying official apps in TrueNAS SCALE."
 weight: 10
-aliases: /scale/scaleuireference/apps/usingapps/
+aliases:
+ - /scale/scaleuireference/apps/usingapps/
+ - /scale/apps/usingapps/
+
 tags:
  - scaleapps
  - scaleplex
