@@ -93,7 +93,7 @@ Before setting this property, you must add a [special class VDEV]({{< relref "Fu
 
 ## Managing Datasets
 
-After creating a dataset, users can manage additional options by going to **Datasets**, select the dataset you want to manage, then click **Edit** on the widget for the dataset function you want to manage. Each option is described in detail in the [Datasets Screen]({{< relref "DatasetsScreenSCALE.md" >}}) article.
+After creating a dataset, users can manage additional options by going to **Datasets**, select the dataset you want to manage, then click **Edit** on the widget for the dataset function you want to manage. Each option is described in detail in the [Datasets Screen]({{< relref "DatasetsScreensSCALE.md" >}}) article.
 
 ### Editing a Dataset
 Select the dataset on the tree table, then click **Edit** on the **Dataset Details** widget to open the **Edit Dataset** screen and change the dataset configuration settings. You can change all settings except **Name**, **Case Sensitivity**, or **Share Type**.

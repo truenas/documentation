@@ -24,9 +24,9 @@ After creating a dataset, the screen displays a tree table with parent and child
 
 ![DatasetsScreenAfterAddingAPool](/images/SCALE/22.12/DatasetsScreenAfterAddingAPool.png "Datasets Screen With a Pool") 
 
-**Import Data** opens the **[Import Data](#import-data-screen) screen. 
+**Import Data** opens the **[Import Data](#import-data-screen)** screen. 
 
-**Add Zvol (New)** opens the **[Add Zvol]({{< relref "ZvolScreensScale.md" >}})** screen, and  **Add Zvol** opens the **[Add Zvol]({{< relref "ZvolScreensScale.md" >}})** screen available in the SCALE 22.02 release.
+**Add Zvol (New)** opens the **[Add Zvol]({{< relref "ZvolsScreensScale.md" >}})** screen, and  **Add Zvol** opens the **[Add Zvol]({{< relref "ZvolsScreensScale.md" >}})** screen available in the SCALE 22.02 release.
 
 **Add Dataset** opens the **[Add Dataset](#add-or-edit-dataset-screens)** screen.
 
@@ -90,7 +90,7 @@ The **Delete** window for a parent dataset (non-root) includes information about
 
 A child dataset that is used by a service displays the service.
 
-![DeleteDatasetChildUsingAService](/images/SCALE/22.12DeleteDatasetChildUsingAService.png "Delete Dataset Child Dataset Using a Service")
+![DeleteDatasetChildUsingAService](/images/SCALE/22.12/DeleteDatasetChildUsingAService.png "Delete Dataset Child Dataset Using a Service")
 
 A child dataset that is not used by a service does not display a service.
 
@@ -133,7 +133,7 @@ It provides access to the tasks found on the **Data Protection** screen through 
 
 **Create Snapshot** opens the **[Add Snapshot]({{< relref "SnapshotsScreens.md" >}})** screen.
 
-**Manage Snapshots** opens the **[Snapshots]({{< relref "PeriodicSnapshotTasksScreens.md" >}})** screen list view where you can manage scheduled snapshot tasks.
+**Manage Snapshots** opens the **[Snapshots]({{< relref "SnapshotsScreens.md" >}})** screen list view where you can manage scheduled snapshot tasks.
 
 **Manage Snapshot Tasks** opens the **Data Protection > [Periodic Snapshot Tasks]({{< relref "PeriodicSnapshotTasksScreensSCALE.md" >}})** screen list view where you can manage the scheduled periodic snapshot tasks.
 
@@ -173,8 +173,8 @@ The **Roles** widget displays information about the service using the dataset an
 
 | Role | Includes Link | Description |
 |------|---------------|-------------|
-| System Dataset | [Manage Advanced Settings]({{< relref "AdvancedSettingsScreen.md" >}}) | Select the option to configure the **System Dataset** |
-| Apps | [Manage Apps Settings({{< relref "ApplicationsScreens.md" >}}) | Displays Kubernetes is using the dataset. Select the option to **Choose Pool** from the **Settings** dropdown list on the **Applications** screen. |
+| System Dataset | [Manage Advanced Settings]() | Select the option to configure the **System Dataset** |
+| Apps | [Manage Apps Settings]() | Displays Kubernetes is using the dataset. Select the option to **Choose Pool** from the **Settings** dropdown list on the **Applications** screen. |
 | SMB share | [Manage SMB Shares]({{< relref "SMBSharesScreens.md" >}}) | Displays the name of the SMB share using the dataset. Select it on the **SMB Shares** screen to edit it. |
 | Other share | Link to the Share type screen | Displays the name of the share using the dataset. Select it on the share screen (NFS, iSCSI or WebDAV) to edit it. |
 | VM | [Manage VM Settings]({{< relref "VirtualizationScreens.md" >}}) | Displays the name of the VM using the dataset(zvol). Select it on the **Virtual Machines** screen to edit it. |
@@ -186,11 +186,11 @@ Displays for root, parent or child datasets configured with encryption. Includes
 {{< expand "Click Here for More Information" "v" >}}
 The root dataset **ZFS Encryption** widget includes the **Export All Keys** and the **Export Key** options, and to **Edit** the encryption settings.
 
-![RolesWidgetRootDataset](/images/SCALE/22.12/RolesWidgetRootDataset.png "Roles Widget Root Dataset")
+![ZFSEncryptionWidgetRootDataset](/images/SCALE/22.12/ZFSEncryptionWidgetRootDataset.png "ZFS Encryption Widget Root Dataset")
 
 Parent or dataset **ZFS Encryption** widgets include the options to **Lock** and **Unlock** the dataset and to **Edit** the encryption settings.
 
-![RolesWidgetRootDataset](/images/SCALE/22.12/RolesWidgetRootDataset.png "Roles Widget Root Dataset")
+![ZFSEncryptionWidgetChildDatasetUnlocked](/images/SCALE/22.12/ZFSEncryptionWidgetChildDatasetUnlocked.png "ZFS Encryption Widget Child Dataset Unlocked")
 
 **Edit** opens the **[Edit Encryption Options](#edit-encryption-options-windows) for *dataset*** window for the selected dataset.
 {{< /expand >}}
@@ -203,14 +203,13 @@ The encryption setting options are the same as those provided on the **Add Datas
 
 ![EditEncryptionOptionsKeyTypeWindow](/images/SCALE/22.12/EditEncryptionOptionsKeyTypeWindow.png "Encryption Options Key Type Window")
 
-| Setting | Description |
-|---------|-------------|
 {{< include file="/_includes/EncryptionSettings.md" type="page" >}}
 
 ## Import Data Screen
+
 The **Import Data** screen allows you to import data from a disk into a dataset.
 {{< expand "Click Here for More Information" "v" >}}
-For more information on importing data see [Importing Disks]({{< relref "/SCALEUIReference/Storage/Disks/ImportingDiks.md" >}}).
+For more information on importing data see [Importing Disks]({{< relref "ImportingDisks.md" >}}).
 
 ![ImportDataScreen](/images/SCALE/22.12/ImportDataScreen.png "Import Data Screen")
 
@@ -223,6 +222,7 @@ For more information on importing data see [Importing Disks]({{< relref "/SCALEU
 {{< /expand >}}
 
 ## Add and Edit Dataset Screens
+
 The **Add Dataset** and **Edit Dataset** screens include the same settings but you cannot change the dataset **Name**, **Share Type** or **Case Sensitivity** settings after you click **Save** on the **Add Dataset** screen.
 To edit encryption options use the **Edit** button on the **ZFS Encryption** widget.
 
@@ -230,9 +230,11 @@ There are two screen options, **Basic Options** and **Advanced Options**.
 The **Advanced Options** screen include all the settings found on the **Basic Options** screen.
 
 ### Dataset Basic Options 
+
 The **Basic Options** include three sections: **[Name and Options](#name-and-options-settings)**, **[Encryption Options](#encryption-options-settings)** and **[Other Options](#other-option-settings---advanced-options)**.
 
 #### Name and Options Settings
+
 These settings are found on both the **Basic Options** and **Advanced Options** screens.
 {{< expand "Click Here for More Information" "v" >}}
 
@@ -249,6 +251,7 @@ These settings are found on both the **Basic Options** and **Advanced Options** 
 {{< /expand >}}
 
 #### Encryption Options Settings
+
 The encryption setting options are the same on the **Basic Options** and **Advanced Options** screens.
 {{< expand "Click Here for More Information" "v" >}}
 The default setting is **Inherit** selected. Clearing the checkbox displays the key encryption options. 
@@ -265,10 +268,13 @@ Selecting other options changes the settings displayed.
 |---------|-------------|
 | **Inherit (non-encrypted)** | Select to clear the checkmark to display more encryption settings. |
 | **Encryption** | Select to clear the checkmark and remove the encryption settings from the **Add Dataset** screen. If the root dataset is not encrypted, leaving **Inherit (non-encrypted)** selected is the same as clearing the **Encryption** checkbox. |
+
 {{< include file="/_includes/EncryptionSettings.md" type="page" >}}
 
 {{< /expand >}}
+
 #### Other Options Settings - Basic Options
+
 The **Basic Options** settings in **Other Options** help tune the dataset for specific data sharing protocols but the basic options only includes a small subset of all the settings on the **Advanced Options** screen.
 {{< expand "Click Here for More Information" "v" >}}
 
