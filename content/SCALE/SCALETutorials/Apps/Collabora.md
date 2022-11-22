@@ -1,6 +1,11 @@
 ---
 title: "Collabora App"
+description: "This article provides basic configuration instructions for adding the Collabora app using the TrueNAS webUI."
 weight: 35
+aliases: /scale/scaleuireference/apps/collabora/
+tags:
+ - scalecollabora
+ - scaleapps
 ---
 
 {{< toc >}}
@@ -52,3 +57,6 @@ After a few minutes, the Collabora container displays as **ACTIVE**.
 After it does, you can click **Web Portal** to access the admin console.
 
 ![Collabora8](/images/SCALE/Collabora8.png "Collabora Admin Console")
+
+{{< taglist tag="scalecollabora" limit="10" >}}
+{{< taglist tag="scalechia" limit="10" title="Related Apps Articles" >}}

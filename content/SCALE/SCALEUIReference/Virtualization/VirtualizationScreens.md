@@ -5,6 +5,7 @@ weight: 20
 alias: /scale/scaleuireference/virtualization/
 tags:
  - scalevm
+ - scalegpu
 ---
 
 {{< toc >}}
@@ -349,3 +350,4 @@ Select **NIC** in the **Add** device screen **Device Type** to configure a new d
 {{< /expand >}}
 
 {{< taglist tag="scalevm" limit="10" >}}
+{{< taglist tag="scalegpu" limit="10" title="Related GPU Articles" >}}

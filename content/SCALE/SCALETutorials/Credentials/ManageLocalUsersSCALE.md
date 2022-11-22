@@ -57,9 +57,10 @@ Set and confirm a password.
 
 ![AddUserUserIDAndGroupsSettings](/images/SCALE/22.02/AddUserUserIDAndGroupsSettings.png "Add User User Id an Groups Settings") 
 
-Next, you must set a user ID.
+Next, you must set a user ID (UID).
 TrueNAS suggests a user ID starting at **1000**, but you can change it if you wish.
 We recommend using an ID of 1000 or greater for non-built-in users.
+New users can be created with a UID of **0**.
 
 By default, TrueNAS creates a new primary group with the same name as the user.
 To add the user to an existing primary group instead, clear the **New Primary Group** checkbox and select a group from the **Primary Group** drop-down list.

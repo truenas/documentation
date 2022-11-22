@@ -16,7 +16,7 @@ This table lists the default identification for each Mini model and any add-on n
 
 | Model | CORE/Enterprise Installed | SCALE Installed |
 |-------|---------------------------|-----------------|
-| E     | Port 0: `ix0` | Port 0: `enp3s0f0` |
+| E (EOL)     | Port 0: `ix0` | Port 0: `enp3s0f0` |
 |       | Port 1: `ix1` | Port 1: `enp3s0f1` |
 |       | Port 2: `ix2` | Port 2: `enp5s0f0` |
 |       | Port 3: `ix3` | Port 3: `enp5s0f0` |
