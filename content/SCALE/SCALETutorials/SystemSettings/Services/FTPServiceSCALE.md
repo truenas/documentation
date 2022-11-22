@@ -23,7 +23,7 @@ Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i
 ## Configuring FTP Services Storage
 FTP requires a new dataset and a local user account.
 
-Go to **Storage** to add a new [dataset](https://www.truenas.com/docs/scale/storage/pools/datasetsscale) to use as storage for files. 
+Go to **Storage** to add a new [dataset](https://www.truenas.com/docs/scale/scaletutorials/storage/pools/datasetsscale/) to use as storage for files. 
 
 Next, add a new user. Go to **Credentials > Local Users**  and click **Add** to create a local user on the TrueNAS.
 
