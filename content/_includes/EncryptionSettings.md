@@ -1,7 +1,7 @@
 ---
 ---
 
-
+| Setting | Description  |
 |---------|-------------|
 | **Encryption Type** | Select the option for the type of encryption to secure the dataset from the dropdown list. Select **Key** to use key-based encryption and display the **Generate Key** option. Select **Passphrase** to enter a user-defined passphrase to secure the dataset. This displays two additional **Passphrase** fields to enter and confirm the passphrase and the **pbkdf2iters** field. |
 | **Generate key** | Selected by default to have the system randomly generate an encryption key for securing this dataset. Clearing the checkbox displays the **Key** field and requires you to enter an encryption key you define. Warning! The encryption key is the only means to decrypt the information stored in this dataset. Store encryption keys in a secure location! Creating a new key file invalidates any previously downloaded key file for this dataset. Delete any previous key file backups and back up the new key file. |

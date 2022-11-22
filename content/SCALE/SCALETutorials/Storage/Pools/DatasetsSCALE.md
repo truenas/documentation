@@ -18,7 +18,7 @@ Datasets can also be [encrypted]({{< relref "EncryptionSCALE.md" >}}), either us
 
 We recommend organizing your pool with datasets before configuring [data sharing]({{< relref "SCALE/SCALEUIReference/Shares/_index.md" >}}), as this allows for more fine-tuning of access permissions and using different sharing protocols.
 
-## Creating a Generic Dataset
+## Creating a Dataset
 
 To create a dataset using the default settings, go to **Datasets**. Default settings includes settings datasets inherit from the parent dataset.
 
@@ -27,15 +27,14 @@ Select a dataset (root, parent or child), then click **Add Dataset**.
 ![AddDatasetNameAndOptions](/images/SCALE/22.12/AddDatasetNameAndOptions.png "Add Dataset Name and Options")
 
 Enter a name, select either **Sensitive** or **Insensitive** from the **Case Sensitivity** dropdown, and either select **SMB** or leave **Share Type** set to **Generic**, then click **Save**.
-{{< hint info >}}
-You cannot change the dataset name, case sensitivity, or share type after you click save.
-{{< /hint >}}
-## Creating Custom Datasets
+
+![AddDatasetEncrytionAndOtherOptionsBasic](/images/SCALE/22.12/AddDatasetEncrytionAndOtherOptionsBasic.png "Add Encryption and Other Options")
 
 You can create datasets optimized for SMB shares or with customized settings for your dataset use cases.
+
 {{< hint warning >}}
 Review the **Share Type** and **Case Sensitivity** options on the configuration screen before clicking **Save**.
-You cannot change these settings and the **Name** setting after clicking **Save**.
+You cannot change these and the **Name** setting after clicking **Save**.
 {{< /hint >}}
 
 ### Setting Dataset Compression Levels
@@ -83,7 +82,7 @@ To change any setting that can inherit the parent setting, clear the checkbox an
 
 For information on ACL settings see [Setting Up Permissions]({{< relref "PermissionsSCALE.md" >}}).
 
-### Creating a Dataset for a Fusion Pool
+## Creating a Dataset for a Fusion Pool
 
 Use the **Metadata (Special) Small Block Size** setting to set a threshold block size for including small file blocks into the [special allocation class (fusion pools)]({{< relref "FusionPoolsScale.md" >}}).
 Blocks smaller than or equal to this value are assigned to the special allocation class while greater blocks are assigned to the regular class.
@@ -93,9 +92,11 @@ Before setting this property, you must add a [special class VDEV]({{< relref "Fu
 
 ## Managing Datasets
 
-After creating a dataset, users can manage additional options by going to **Datasets**, select the dataset you want to manage, then click **Edit** on the widget for the dataset function you want to manage. Each option is described in detail in the [Datasets Screen]({{< relref "DatasetsScreensSCALE.md" >}}) article.
+After creating a dataset, users can manage additional options from the **Datasets** screen.
+Select the dataset you want to manage, then click **Edit** on the widget for the function you want to manage. 
+Each option is described in detail in the [Datasets Screen]({{< relref "DatasetsScreensSCALE.md" >}}) article.
 
-### Editing a Dataset
+## Editing a Dataset
 Select the dataset on the tree table, then click **Edit** on the **Dataset Details** widget to open the **Edit Dataset** screen and change the dataset configuration settings. You can change all settings except **Name**, **Case Sensitivity**, or **Share Type**.
 
 ### Editing Dataset Permissions
@@ -110,12 +111,12 @@ To edit a POSIX ACL type, click **Edit** on the **Permissions** widget to open t
 For more information, see the [permissions]({{< relref "PermissionsSCALE.md" >}}) article.
 
 ### Deleting a Dataset
-Select **Delete** on the **Dataset Details** widget to remove the dataset, all stored data, and any snapshots from TrueNAS.
+Click **Delete** on the **Dataset Details** widget to delete the dataset, all stored data, and any snapshots from TrueNAS. 
 To delete a root dataset, delete the pool use the **Export/Disconnect** option on the **[Storage Dashboard]({{< relref "ManagePoolsSCALE.md" >}})** screen.
 
 {{< hint danger >}}
 Deleting datasets can result in unrecoverable data loss!
-Move off or obsolete any critical data on the dataset before performing the delete operation.
+Move off any critical data on the dataset or obsolete it before performing the delete operation.
 {{< /hint >}}
 
 {{< taglist tag="scaledatasets" limit="10" >}}

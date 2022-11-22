@@ -14,13 +14,14 @@ tag:
 {{< toc >}}
 
 
-The **Datasets** screen and widgets displays information about datasets, data management, and dataset roles, encryption, and permissions. The screen focuses on managing data including user and group quotas, snapshots and other data protection measures, and it provides access to manage both datasets and zvols. 
+The **Datasets** screen and widgets display information about datasets, provide access to data management functions, indicate the dataset roles and what services use the dataset, show the encryption status, and the permissions the dataset has in place. 
+The screen focus is on managing data storage including user and group quotas, and snapshots and other data protection measures. 
 
-The **Datasets** screen displays the **No Datasets** screen with a **Create Pool** button in the center of the screen until you add a pool and the first root or parent dataset.
+The **Datasets** screen displays the **No Datasets** screen with a **Create Pool** button in the center of the screen until you add a pool and the first root dataset.
 
 ![DatasetsScreenBeforeAddingAPool](/images/SCALE/22.12/DatasetsScreenBeforeAddingAPool.png "Datasets Screen Add Pool") 
 
-After creating a dataset, the screen displays a tree table with parent and child datasets (or zvols) on the left side of the screen and a set of dataset widgets in the **Details for *datasetnam*** area on the right side of the screen.
+After creating a dataset, the left side of the screen displays a tree table where any parent or child datasets (or zvols) are listed. The right side of the sceen displays a set of dataset widgets in the **Details for *datasetnam*** area.
 
 ![DatasetsScreenAfterAddingAPool](/images/SCALE/22.12/DatasetsScreenAfterAddingAPool.png "Datasets Screen With a Pool") 
 
@@ -204,6 +205,7 @@ The encryption setting options are the same as those provided on the **Add Datas
 ![EditEncryptionOptionsKeyTypeWindow](/images/SCALE/22.12/EditEncryptionOptionsKeyTypeWindow.png "Encryption Options Key Type Window")
 
 {{< include file="/_includes/EncryptionSettings.md" type="page" >}}
+{{< /expand >}}
 
 ## Import Data Screen
 
@@ -286,11 +288,10 @@ The **Basic Options** settings in **Other Options** help tune the dataset for sp
 | **Case Sensitivity** | Select the option from the dropdown list. **Sensitive** assumes file names are case sensitive. **Insensitive** assumes file names are not case sensitive. You cannot change case sensitivity after the saving the dataset. |
 | **Share Type** | Select the option from the dropdown list to define the type of data sharing the dataset uses to optimize the dataset for that sharing protocol. Select **SMB** if using with an SMB share. Select **Generic** for all other share types. You cannot change this setting after the saving dataset. |
 {{< /expand >}}
+
 ##### Data Compression Algorithms
 
 {{< include file="/_includes/StorageCompressionLevelsScale.md" type="page" >}}
-
-{{< /expand >}}
 
 ### Dataset Advanced Options
 The **Advanced Options** settings include quotas management tools for **This Dataset** and **This Dataset and Child Datasets**, and expand the **Other Options** settings.
@@ -308,6 +309,7 @@ You can also reserve a defined amount of pool space to prevent automatically gen
 You can configure quotas for only the new dataset or include all child datasets.
 
 {{< include file="/_includes/DatasetQuotaSettings.md" type="page" >}}
+
 {{< /expand >}}
 
 ### Other Option Settings - Advanced Options
