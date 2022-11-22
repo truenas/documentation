@@ -230,6 +230,13 @@ iXsystems is excited to announce the release of TrueNAS SCALE 22.02.4!
 * [NAS-113895](https://ixsystems.atlassian.net/browse/NAS-113895) Running zpool clear while a scrub is running effectively locks up entire system
 * [NAS-112995](https://ixsystems.atlassian.net/browse/NAS-112995) Alert reads “…replication from scratch…” but entry is called differently in GUI
 
+### Notice
+
+MinIO has removed backwards compatibility with version 2022-10-24_1.6.58.
+
+MinIO fails to deploy if you update your version 2022-10-24_1.6.58 Minio app to 2022-10-29_1.6.59 or later using the TrueNAS web UI. Use the app roll back function and return to 2022-10-24_1.6.58 to make your MinIO app functional again.
+See the [MinIO Migration documentation](https://min.io/docs/minio/kubernetes/upstream/operations/install-deploy-manage/migrate-fs-gateway.html#procedure) to manually update your MinIO app to the latest version without losing functionality.
+
 ## 22.02.3
 {{< expand "22.02.3" "v" >}}
 **August 9, 2022**
@@ -6122,7 +6129,7 @@ Packages downloaded via apt are not persistent. They will not survive an upgrade
 |  | <a href="https://jira.ixsystems.com/browse/NAS-110263" target="_blank">NAS-110263</a> | AFP sharing is removed from TrueNAS SCALE. The protocol is deprecated and no longer receives development effort or security fixes. | TrueNAS SCALE automatically migrates any existing AFP shares into an SMB configuration that is preset to function like an AFP share. | 21.06-BETA.1 |
 | 21.06-BETA.1 | <a href="https://jira.ixsystems.com/browse/NAS-111547" target="_blank">NAS-111547</a> | ZFS shouldn't count vdev IO errors on hotplug removal | Pool status isn't being updated immediately on disk exchange events. | Targeted 22.12 |
 
-## ZFS Feature Flag Removal 
+## ZFS Feature Flag Removal
 
 ### Executive Summary
 

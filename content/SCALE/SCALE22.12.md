@@ -59,6 +59,10 @@ TrueNAS SCALE 22.12-RC.1 has been released and includes many new features and im
 * Adds support for creating S3 buckets in Cloud Sync Backups
 * Updates Kubernetes to 1.25 and Samba to 4.17.0.rc5
 
+{{< hint info >}}
+SCALE 22.12-RC.1 introduces a change in Applications. Users upgrading to 22.12-RC.1 now use the [Docker overlay2 driver](https://docs.docker.com/storage/storagedriver/overlayfs-driver/) instead of ZFS. This change brings a considerable performance boost to applications but applications installed in 22.12-RC.1 are incompatible with any previous version of SCALE 22.12.
+{{< /hint >}}
+
 ## 22.12-RC.1 Change Log
 
 ### Epic
@@ -205,6 +209,12 @@ TrueNAS SCALE 22.12-RC.1 has been released and includes many new features and im
 * [NAS-118856](https://ixsystems.atlassian.net/browse/NAS-118856) SCALE nightlies includes kernel modules for wrong kernel
 * [NAS-118949](https://ixsystems.atlassian.net/browse/NAS-118949) pywbclient - Fix refcounting on PyUidGid class init error path
 
+### Notice
+
+MinIO has removed backwards compatibility with version 2022-10-24_1.6.58.
+
+MinIO fails to deploy if you update your version 2022-10-24_1.6.58 Minio app to 2022-10-29_1.6.59 or later using the TrueNAS web UI. Use the app roll back function and return to 2022-10-24_1.6.58 to make your MinIO app functional again.
+See the [MinIO Migration documentation](https://min.io/docs/minio/kubernetes/upstream/operations/install-deploy-manage/migrate-fs-gateway.html#procedure) to manually update your MinIO app to the latest version without losing functionality.
 
 ## 22.12-BETA.2 
 {{< expand "22.12-BETA.2" "v" >}}

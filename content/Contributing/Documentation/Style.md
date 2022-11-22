@@ -9,8 +9,6 @@ tags:
 - scalecontentstyle
 ---
 
-{{< toc >}}
-
 This guide has many examples of how to style your documentation contributions.
 TrueNAS documentation uses standardized Markdown, HTML, and Hugo syntax to transform text, add images, and link to other locations.
 The guide is not exhaustive, but contains examples of the elements that are most commonly used when writing TrueNAS documentation.
@@ -23,8 +21,7 @@ To learn more about each markup language, see these resources:
 
 ## Markdown Examples
 
-{{< tabs "MarkdownExamples" >}}
-{{< tab "Headers" >}}
+{{< expand "Headers" "v" >}}
 
 Use hashes (#) to designate a section of content:
 ```
@@ -36,8 +33,8 @@ On this website, the title of the article is designated as a level 1 heading.
 The rest of the content should be organized with level 2 and greater headings.
 This allows the article navigation sidebar to populate with links to the different sections of your article.
 
-{{< /tab >}}
-{{< tab "Inline Text Decoration" >}}
+{{< /expand >}}
+{{< expand "Inline Text Decoration" "v" >}}
 
 * Italics:		`*text*`
 * Bold:			`**text**`
@@ -51,14 +48,15 @@ You can also use standard HTML tags to transform text:
 * Superscripted:		`<sup>TM</sup>`
 * Deleted/Strikethrough:	`<del>text</del>`
 
-{{< /tab >}}
-{{< tab "Escape Characters" >}}
+{{< /expand >}}
+{{< expand "Escape Characters" "v" >}}
 
 To escape a syntax character so that the character is displayed without transformation, use a backslash (`\`).
 You can also use HTML escapes to add comments: `<!-- this text will not be displayed in the rendered article -->`
 
-{{< /tab >}}
-{{< tab "Linking" >}}
+{{< /expand >}}
+
+{{< expand "Linking" "v" >}}
 
 Linking to a site that is outside docs.truenas.com is done with square brackets and parentheses:
 
@@ -70,8 +68,8 @@ HTML linking syntax is also allowed: `<a href="www.example.com">Example Site</a>
 To link to another section of the **same** article, use an anchor (`#`) to refer to that section header.
 The header title needs to be in lower case and spaces replaced with dashes (-): `[Escape Characters](#escape-characters)`
 
-{{< /tab >}}
-{{< tab "Lists" >}}
+{{< /expand >}}
+{{< expand "Lists" "v" >}}
 
 Lists can be ordered or unordered:
 
@@ -85,8 +83,8 @@ Lists can be ordered or unordered:
 * When
 ```
 
-{{< /tab >}}
-{{< tab "Code Blocks" >}}
+{{< /expand >}}
+{{< expand "Code Blocks" "v" >}}
 
 A backtick (\`) starts or stops an inline code-block: Enter `ls` to list directory contents.
 Using three \` backticks on a line starts or stops a multi-line block:
@@ -98,8 +96,8 @@ bar
 baz
 ```
 
-{{< /tab >}}
-{{< tab "Block Quotes" >}}
+{{< /expand >}}
+{{< expand "Block Quotes" "v" >}}
 
 Use the right carat (>) to designate a block quote:
 
@@ -109,8 +107,7 @@ Use the right carat (>) to designate a block quote:
 > You can use a > for every line of the quote or at the beginning of each paragraph of text.
 ```
 
-{{< /tab >}}
-{{< /tabs >}}
+{{< /expand >}}
 
 ## Hugo Style Elements
 
@@ -121,8 +118,7 @@ The documentation website also uses the [Docsy](https://github.com/google/docsy)
 This theme has some additional styling elements that can be used to enhance your article.
 See the [Docsy shortcodes guide](https://www.docsy.dev/docs/adding-content/shortcodes/) for a list of built-in reusable content snippets.
 
-{{< tabs "HugoStyleElements" >}}
-{{< tab "Linking to Other Articles on this Website" >}}
+{{< expand "Linking to Other Articles on this Website" >}}
 
 Internal references use the Hugo `ref` shortcode to look up a file by name:
 ```
@@ -142,8 +138,8 @@ You can also use an anchor to link to a specific section within an article:
 (remove the escaping backslash \)
 ```
 
-{{< /tab >}}
-{{< tab "Images" >}}
+{{< /expand >}}
+{{< expand "Images" "v" >}}
 
 To add an image to your article, you need to add the image file to your article bundle.
 Then use the `figure` shortcode in your article to link to the image and define any additional parameters:
@@ -159,8 +155,8 @@ You can also use HTML to link to an image file that is relative to the site `/st
 <img src="/images/network-interfaces.png" width='700px'>
 ```
 
-{{< /tab >}}
-{{< tab "Admonition Boxes" >}}
+{{< /expand >}}
+{{< expand "Admonition Boxes" "v" >}}
 
 A simple note box is created with the `hint` shortcode:
 
@@ -179,8 +175,8 @@ This is an alert that is titled Warning and uses a red coloration.
 (remove the escaping backslash \)
 ```
 
-{{< /tab >}}
-{{< tab "Graphical Fonts and Icons" >}}
+{{< /expand >}}
+{{< expand "Graphical Fonts and Icons" "v" >}}
 
 You can call either the Font Awesome or Material Design graphical fonts in your text to be more precise about what buttons or icons to click in the TrueNAS web interface.
 Below are examples of icons that are already being used on the Docs website, along with the exact code you would add to the Markdown file to call that icon.
@@ -190,8 +186,7 @@ To find icons that you can include with your text, please refer to the [Material
 To improve accessibility assistance, please be sure to use the `aria-hidden` and `title` fields with your icon.
 This allows users that require accessibility assistance like screen readers to be able to know what icon is being used.
 
-{{< /tab >}}
-{{< /tabs >}}
+{{< /expand >}}
 
 ### Icon Examples
 
