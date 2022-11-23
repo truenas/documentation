@@ -1,6 +1,6 @@
 ---
 title: "Datasets Screen"
-description: "This article provides information on Datasets screens and widgets settings and functions."
+description: "This article provides information on the settings and functions found on the **Datasets** screens and widgets."
 weight: 30
 tag: 
 - scaledatasets
@@ -21,11 +21,11 @@ The **Datasets** screen displays the **No Datasets** screen with a **Create Pool
 
 ![DatasetsScreenBeforeAddingAPool](/images/SCALE/22.12/DatasetsScreenBeforeAddingAPool.png "Datasets Screen Add Pool") 
 
-After creating a dataset, the left side of the screen displays a tree table where any parent or child datasets (or zvols) are listed. The right side of the sceen displays a set of dataset widgets in the **Details for *datasetnam*** area.
+After creating a dataset, the left side of the screen displays a tree table where any parent or child datasets (or zvols) are listed. The right side of the screen displays a set of dataset widgets in the **Details for *datasetnam*** area.
 
 ![DatasetsScreenAfterAddingAPool](/images/SCALE/22.12/DatasetsScreenAfterAddingAPool.png "Datasets Screen With a Pool") 
 
-**Import Data** opens the **[Import Data](#import-data-screen)** screen. 
+**Import Data** opens the **[Import Data]({{< relref "ImportDataScreenSCALE.md" >}})** screen. 
 
 **Add Zvol (New)** opens the **[Add Zvol]({{< relref "ZvolsScreensScale.md" >}})** screen, and  **Add Zvol** opens the **[Add Zvol]({{< relref "ZvolsScreensScale.md" >}})** screen available in the SCALE 22.02 release.
 
@@ -33,15 +33,23 @@ After creating a dataset, the left side of the screen displays a tree table wher
 
 ## Dataset Tree Table
 
-The datasets tree table lists datasets in an expandable tree structure with the root or parent dataset listed first and all the child datasets nested under it. 
+The datasets tree table lists datasets in an expandable hierarchical structure with the root dataset first, which is followed by direct child or non-root parent datasets with their child datasets nested under them. 
 {{< expand "Click Here for More Information" "v" >}}
-Click anywhere on the dataset to expand the row and reveal each level of nested datasets or zvols.
+Click on any root or non-root parent dataset to expand the tree table.
+Click on any dataset to select it and display the dataset widgets for that dataset.
 
 ![DatasetsScreenTreeTableExpanded](/images/SCALE/22.12/DatasetsScreenTreeTableExpanded.png "Dataset Tree Table")
 
-The information included in the table includes storage space used and available for that dataset, the encryption status (locked, unlocked or unencrypted), and the roll of that dataset (system dataset, share, virtual machine, or application using it). 
-Roles in the dataset tree are represented by icons.
-An activity spinner displays for datasets when a task is executing.
+The table includes storage space used and available for that dataset, encryption status (locked, unlocked, or unencrypted), and the role of that dataset or what service uses it (i.e., the system dataset, a share, virtual machine, or application). 
+
+### Tree Table Encryption 
+
+{{< include file="/_includes/EncryptionIconsSCALE.md" type="page" >}}
+
+### Tree Table Roles
+Dataset tree table roles are represented by icons. Hover over the icons to view the description or icon label. 
+Roles in the dataset tree correspond to the **[Roles widget](#roles-widget)**. 
+A dataset with an active task include an activity spinner when that task is in progress.
 
 | Role | Icon | Description |
 |------|------|-------------|
@@ -57,7 +65,7 @@ Each dataset has a set of information cards (widgets) that display in the **Deta
 The set of widgets for a root or parent dataset differs from child datasets or datasets used by another service or with encryption.
 
 Dataset widgets are:
-* **[Dataset Details](#datasets-details-widget)**
+* **[Dataset Details](#datasets-details-widget)** 
 * **[Dataset Space Management](#dataset-space-management-widget)**
 * **[Data Protection](#data-protection-widget)**
 * **[Permissions](#permissions-widget)**
@@ -77,13 +85,13 @@ A child dataset path displays the pool name and parent dataset.
 
 **Edit** opens the **[Edit Dataset](#add-and-edit-dataset-screens)** screen for the selected dataset.
 
-Child dataset versions of the card include the **[Delete](#delete-dataset)** option. 
+Non-root parent and child dataset versions of the card include the **[Delete](#delete-dataset)** option. 
 To delete a root dataset, use the **Disconnect/Export** option for the root dataset that is found on the **[Storage Dashboard]({{< relref "StorageDashboardScreen.md" >}})** screen.
 {{< /expand >}}
 
 #### Delete Dataset
-The **Delete** window includes information about snapshots, shares or other services such as Kubernetes or VMs that use the dataset, or if it is a parent to other datasets, the services child datasets of this parent dataset use.
-Only child datasets include the **Delete** button. 
+The **Delete** button on the **Dataset Details** widget opens a window that includes information about what uses the dataset, for example a parent to other datasets and the services the child datasets of a parent dataset uses. 
+Non-root parent and child datasets include the **Delete** button. 
 {{< expand "Click Here for More Information" "v" >}}
 The **Delete** window for a parent dataset (non-root) includes information about snapshots, shares or other services such as Kubernetes or VMs that use the dataset, or if it is a parent to other datasets, the services child datasets of this parent dataset use.
 
@@ -101,32 +109,23 @@ The window includes field where you type the path for the dataset, and a **Confi
 {{< /expand >}}
 
 ### Dataset Space Management Widget
-The **Dataset Space Management** widget displays for all datasets except locked encrypted datasets. Unlock the encrypted dataset to see this widget. The widget includes a donut graph with at-a-glance information and numeric values for the space allocated and used in the selected dataset. This includes data written and space allocated to child datasets of this dataset. 
+The **Dataset Space Management** widget displays space allocation (reserved, used, available) for all datasets.  
 {{< expand "Click Here for More Information" "v" >}}
+The widget displays after unlocking encrypted datasets. 
+The widget donut graph provides at-a-glance information and numeric values for the space allocated and used in the selected dataset. 
+This includes data written and space allocated to child datasets of this dataset. 
 It provides access to quota configuration options for the parent dataset and the child dataset of the parent, and for users and groups with access to the dataset.
 
 ![DatasetSpaceManagementWidgetRootDataset](/images/SCALE/22.12/DatasetSpaceManagementWidgetRootDataset.png "Dataset Space Management Widget Root Dataset")
 
-To view the **Dataset Space Management** widget for an encrypted locked dataset, unlock the dataset.
-
-**Edit** opens the **[Capacity Settings](#capacity-settings-screen)** screen.
+**Edit** opens the **[Capacity Settings]({{< relref "CapacitySettingsSCALE.md" >}})** screen where you can set quotas for the dataset.
 
 **[Manage User Quotas]({{< relref "ManageQuotas.md" >}})** screen and **Manage Group Quotas** opens the **[Manage Group Quotas]({{< relref "ManageQuotas.md" >}})** screen.
 {{< /expand >}}
 
-#### Capacity Settings Screen
-The **Capaicity Settings** screen allows user to set quotas for the selected dataset and/or for the selected dataset and any of the child datasets for the selected dataset apart from the dataset creation process.
-{{< expand "Click Here for More Information" "v" >}}
-The settings on the **Capacity Settings** screen are the same as those in the quota management section on the **[Add Dataset](#quota-management-settings---advanced-options) > Advanced Options** screen.
-
-![CapacitySettingsScreen](/images/SCALE/22.12/CapacitySettingsScreen.png "Capacity Settings Screen")
-
-{{< include file="/_includes/DatasetQuotaSettings.md" type="page" >}}
-{{< /expand >}}
-
 ### Data Protection Widget
 The **Data Protection** widget displays for all datasets. 
-This widget provides information on the number snapshots and other related scheduled tasks (replication, cloud sync, rsync and snapshots) configured on the system. 
+This widget provides information on the number snapshots and other data protection related scheduled tasks (replication, cloud sync, rsync and snapshots) configured on the system. 
 {{< expand "Click Here for More Information" "v" >}}
 It provides access to the tasks found on the **Data Protection** screen through links. 
 
@@ -147,35 +146,36 @@ It provides access to the tasks found on the **Data Protection** screen through 
 {{< /expand >}}
 
 ### Permissions Widget
-The **Permissions** widget displays for all datasets and displays the dataset owner and group, and Unix permissions for ACL items configured for the dataset.
+The **Permissions** widget displays for all datasets. It indicates the type of ACL as NFSv4 or Unix Permissions (POSIX) and lists access control entities (ACEs) including the dataset owner and group for the dataset.
 {{< expand "Click Here for More Information" "v" >}}
-Root dataset permissions is not editable and includes the predefined ACL items it requires. 
+Root dataset permissions are not editable. Permission screens and widget options vary based on the ACL type. 
 
 ![PermissionsWidgetRootDataset](/images/SCALE/22.12/PermissionsWidgetRootDataset.png "Permissions Widget Root Dataset")
 
-Parent and child dataset permissions are editable and if set to NFSv6 ACL (the default ACL type) the widget includes links for each item that allow your edit each item in a expanded settings window.
+Parent and child dataset permissions are editable. 
 
 ![PermissionsWidgetParentDataset](/images/SCALE/22.12/PermissionsWidgetParentDataset.png "Permissions Widget Parent or Child Dataset")
 
-The ACL items include both **Permissions Advanced** and **Flags Advanced** check-buttons to select or deselect common NFSv4 permission options for each item type.
+If the ACL type is an NFSv4 (the default ACL type) the widget makes the ACE items on the widget buttons that allow you edit the item from the **Permissions** widget. 
+The expanded ACE item include both **Permissions Advanced** and **Flags Advanced** check-buttons to select or deselect common NFSv4 permission options for each item type.
 
 ![PermissionsWidgetOwnerNSFv4Options](/images/SCALE/22.12/PermissionsWidgetOwnerNSFv4Options.png "Permissions Widget Owner NFSv4 Options")
 
 A dataset such as the ix-applications dataset or one with a POSIX ACL type are editable only using the **Edit** button. 
-**Edit** opens the **[Edit ACL]({{< relref "EditACLScreens.md" >}})** screens where you can edit or add new ACL items.
+**Edit** opens the **[Edit ACL]({{< relref "EditACLScreens.md" >}})** screen for NFSv4 ACLs or the where you can edit or add new ACE items.
 {{< /expand >}}
 
 ### Roles Widget
-The **Roles** widget displays the dataset role and if a parent dataset, displays information on child datasets that have roles. Roles include being assigned as the system dataset or is used by a particular service such as a share, applications, or a virtual machine (VM). 
+The **Roles** widget displays the dataset role or the service that uses it (i.e., a share, application, virtual machine, or the system dataset). If it is a parent dataset, it displays information on child datasets that services uses.  
 {{< expand "Click Here for More Information" "v" >}}
 The **Roles** widget displays information about the service using the dataset and provides a link to manage whatever that service is.
 
 ![RolesWidgetRootDataset](/images/SCALE/22.12/RolesWidgetRootDataset.png "Roles Widget Root Dataset")
 
-| Role | Includes Link | Description |
+| Role | Link Included | Description |
 |------|---------------|-------------|
-| System Dataset | [Manage Advanced Settings]() | Select the option to configure the **System Dataset** |
-| Apps | [Manage Apps Settings]() | Displays Kubernetes is using the dataset. Select the option to **Choose Pool** from the **Settings** dropdown list on the **Applications** screen. |
+| System Dataset | [Manage Advanced Settings]({{< relref "AdvancedSettingsScreen.md" >}}) | Select the option to configure the **System Dataset** |
+| Apps | [Manage Apps Settings]({{< relref "AppsScreensSCALE.md" >}}) | Displays Kubernetes is using the dataset. Select the option to **Choose Pool** from the **Settings** dropdown list on the **Applications** screen. |
 | SMB share | [Manage SMB Shares]({{< relref "SMBSharesScreens.md" >}}) | Displays the name of the SMB share using the dataset. Select it on the **SMB Shares** screen to edit it. |
 | Other share | Link to the Share type screen | Displays the name of the share using the dataset. Select it on the share screen (NFS, iSCSI or WebDAV) to edit it. |
 | VM | [Manage VM Settings]({{< relref "VirtualizationScreens.md" >}}) | Displays the name of the VM using the dataset(zvol). Select it on the **Virtual Machines** screen to edit it. |
@@ -183,59 +183,41 @@ The **Roles** widget displays information about the service using the dataset an
 {{< /expand >}}
 
 ### ZFS Encryption Widget
-Displays for root, parent or child datasets configured with encryption. Includes the current state of the dataset encryption, whether the root dataset or pool is encrypted, the key type and algorithm used.
+
+The **ZFS Encryption** widget displays for root, non-root parent, and child datasets configured with encryption. 
+It includes the current state of the dataset encryption, the encryption root, type andalgorithm used.
 {{< expand "Click Here for More Information" "v" >}}
+The **ZFS Encryption** widget displays the **Lock** or **Unlock** options for encrypted non-root parent and child datasets, but not for the root dataset or a child dataset that 
 The root dataset **ZFS Encryption** widget includes the **Export All Keys** and the **Export Key** options, and to **Edit** the encryption settings.
 
 ![ZFSEncryptionWidgetRootDataset](/images/SCALE/22.12/ZFSEncryptionWidgetRootDataset.png "ZFS Encryption Widget Root Dataset")
 
-Parent or dataset **ZFS Encryption** widgets include the options to **Lock** and **Unlock** the dataset and to **Edit** the encryption settings.
+Parent or child dataset **ZFS Encryption** widgets include the options to **Lock** and **Unlock** the dataset and to **Edit** the encryption settings.
 
 ![ZFSEncryptionWidgetChildDatasetUnlocked](/images/SCALE/22.12/ZFSEncryptionWidgetChildDatasetUnlocked.png "ZFS Encryption Widget Child Dataset Unlocked")
 
-**Edit** opens the **[Edit Encryption Options](#edit-encryption-options-windows) for *dataset*** window for the selected dataset.
-{{< /expand >}}
+Child dataset **ZFS Encryption** widgets include the **Go to Encryption Root** when you select **Inherit** as its **Encryption Options** setting. The non-root parent dataset controls the state of the child dataset.
 
-#### Edit Encryption Options Windows
-Encryption is set for a dataset when it is added. The **Edit Encryption Options for *datasetname*** displays the current encryption option settings for the selected encrypted dataset. It allows you to change the encryption type, key or passphrase, settings.
-{{< expand "Click Here for More Information" "v" >}}
-The **Edit Encryption Options for *datasetname*** window opens with the current dataset encryption settings displayed. 
-The encryption setting options are the same as those provided on the **Add Dataset > [Encryption Options]](#edit-encryption-options-windows)**.
+![ZFSEncryptionWidgetWithGoToEncryptionRoot](/images/SCALE/22.12/ZFSEncryptionWidgetWithGoToEncryptionRoot.png "ZFS Encryption Widget with Go To Encryption Root")
 
-![EditEncryptionOptionsKeyTypeWindow](/images/SCALE/22.12/EditEncryptionOptionsKeyTypeWindow.png "Encryption Options Key Type Window")
+**Edit** opens the **[Edit Encryption Options]({{< relref "EncryptionUISCALE.me" >}}) for *dataset*** window for the selected dataset.
 
-{{< include file="/_includes/EncryptionSettings.md" type="page" >}}
-{{< /expand >}}
-
-## Import Data Screen
-
-The **Import Data** screen allows you to import data from a disk into a dataset.
-{{< expand "Click Here for More Information" "v" >}}
-For more information on importing data see [Importing Disks]({{< relref "ImportingDisks.md" >}}).
-
-![ImportDataScreen](/images/SCALE/22.12/ImportDataScreen.png "Import Data Screen")
-
-| Setting | Description |
-|---------|-------------|
-| **Disk** | Select the disk from the dropdown list that has the data you want to import into the dataset. |
-| **Filesystem Type** | Select the radio button for the filesystem type on the disk. Options are **UFS**, **NTFS**, **MSDOSFS**, or **EXT2FS**. |
-| **Destination Path** | Enter or use the <span class="material-icons">arrow_right</span> to the left of the <span class="material-icons">folder</span>**/mnt** to expand each level of the path until you reach the location where you want to import (mount) the data. Click on the dataset to select it and populate the path. |
-| **Import** | Starts the data import process. |
+For more details on encryption windows and functions see [Encryption Settings]({{< relref "EncryptionUISCALE.md" }}).
 {{< /expand >}}
 
 ## Add and Edit Dataset Screens
 
-The **Add Dataset** and **Edit Dataset** screens include the same settings but you cannot change the dataset **Name**, **Share Type** or **Case Sensitivity** settings after you click **Save** on the **Add Dataset** screen.
-To edit encryption options use the **Edit** button on the **ZFS Encryption** widget.
+The **Add Dataset** and **Edit Dataset** screens include the same settings but you cannot change the dataset **Name**, **Share Type** or **Case Sensitivity** settings after you click **Save** on the **Add Dataset** screen. 
+After adding a dataset, to edit encryption options use the **Edit** button on the **ZFS Encryption** widget.
 
 There are two screen options, **Basic Options** and **Advanced Options**. 
 The **Advanced Options** screen include all the settings found on the **Basic Options** screen.
 
-### Dataset Basic Options 
-
 The **Basic Options** include three sections: **[Name and Options](#name-and-options-settings)**, **[Encryption Options](#encryption-options-settings)** and **[Other Options](#other-option-settings---advanced-options)**.
 
-#### Name and Options Settings
+The **Advanced Options** settings include quotas management tools for **This Dataset** and **This Dataset and Child Datasets**, and expand the **Other Options** settings.
+
+### Name and Options Settings
 
 These settings are found on both the **Basic Options** and **Advanced Options** screens.
 {{< expand "Click Here for More Information" "v" >}}
@@ -252,7 +234,10 @@ These settings are found on both the **Basic Options** and **Advanced Options** 
 | **Enable Atime**| Select the access time for files option from the dropdown list. Access time can result in significant performance gains. **Inherit** uses the access time setting of the parent or the root dataset. **On** updates the access time for files when they are read. **Off** disables creating log traffic when reading files to maximize performance. |
 {{< /expand >}}
 
-#### Encryption Options Settings
+#### Data Compression Algorithms
+
+{{< include file="/_includes/StorageCompressionLevelsScale.md" type="page" >}}
+### Encryption Options Settings
 
 The encryption setting options are the same on the **Basic Options** and **Advanced Options** screens.
 {{< expand "Click Here for More Information" "v" >}}
@@ -271,11 +256,12 @@ Selecting other options changes the settings displayed.
 | **Inherit (non-encrypted)** | Select to clear the checkmark to display more encryption settings. |
 | **Encryption** | Select to clear the checkmark and remove the encryption settings from the **Add Dataset** screen. If the root dataset is not encrypted, leaving **Inherit (non-encrypted)** selected is the same as clearing the **Encryption** checkbox. |
 
+#### Edit Encryption Settings
 {{< include file="/_includes/EncryptionSettings.md" type="page" >}}
 
 {{< /expand >}}
 
-#### Other Options Settings - Basic Options
+### Other Options Settings - Basic Options
 
 The **Basic Options** settings in **Other Options** help tune the dataset for specific data sharing protocols but the basic options only includes a small subset of all the settings on the **Advanced Options** screen.
 {{< expand "Click Here for More Information" "v" >}}
@@ -289,15 +275,8 @@ The **Basic Options** settings in **Other Options** help tune the dataset for sp
 | **Share Type** | Select the option from the dropdown list to define the type of data sharing the dataset uses to optimize the dataset for that sharing protocol. Select **SMB** if using with an SMB share. Select **Generic** for all other share types. You cannot change this setting after the saving dataset. |
 {{< /expand >}}
 
-##### Data Compression Algorithms
-
-{{< include file="/_includes/StorageCompressionLevelsScale.md" type="page" >}}
-
-### Dataset Advanced Options
-The **Advanced Options** settings include quotas management tools for **This Dataset** and **This Dataset and Child Datasets**, and expand the **Other Options** settings.
-
-#### Quota Management Settings - Advanced Options
-The **This Dataset** and **This Dataset and Child Datasets** sections include the same setting options. These settings also display on the **[Capacity Settings](#capacity-settings-screen)** screen.
+### Quota Management Settings - Advanced Options
+The **This Dataset** and **This Dataset and Child Datasets** sections include the same setting options. These settings also display on the **[Capacity Settings]({{< relref "CapacitySettingsSCALE.md" >}})** screen.
 {{< expand "Click Here for More Information" "v" >}}
 To apply the settings to only the parent dataset you are creating, enter settings in the **This Dataset** fields. 
 To apply settings to both the parent dataset and any new child datasets you create from this dataset, enter settings in the **This Dataset and Child Datasets** section. 
@@ -337,11 +316,11 @@ The **Basic Options** screen shares the **ZFS Deduplication**, **Case Sensitivit
 | **ACL Type** | Select the access control list type from the dropdown list of options. **Inherit** preserves ACL type from the parent dataset.<br>**Off** to use neither NFSv4 or POSIX protocols.<br>**NFSv4** is used to losslessly migrate Windows-style ACLs across Active Directory domains (or stand-alone servers) that use ACL models richer than POSIX. Since POSIX ACLs are a Linux-specific ZFS feature, administrators should use NFSv4 to maintain compatibility with TrueNAS Core, FreeBSD, or other non-Linux ZFS implementations. <br>**POSIX** use when an organization data backup target does not support native NFSv4 ACLs. Since the Linux platform used POSIX for a long time, many backup products that access the server outside the SMB protocol cannot understand or preserve native NFSv4 ACLs. All datasets within an SMB share path must have identical ACL types.<br>For a more in-depth explanation of ACLs and configurations in TrueNAS SCALE, see our [ACL Primer]({{< relref "/content/References/ACLPrimer.md" >}}). |
 | **ACL Mode** | Select the option that determines how [chmod](https://linux.die.net/man/1/chmod) behaves when adjusting file ACLs from the dropdown list. See the [zfs(8)](https://linux.die.net/man/8/zfs) `aclmode` property.<br> **Passthrough** only updates ACL entries that are related to the file or directory mode.<br> **Restricted** does not allow chmod to make changes to files or directories with a non-trivial ACL. An ACL is trivial if it can be fully expressed as a file mode without losing any access rules. Set the ACL Mode to restricted to optimize a dataset for SMB sharing, but it can require further optimizations. For example, configuring an [rsync task]({{< relref "SCALE/SCALETutorials/DataProtection/RsyncTasksSCALE.md" >}}) with this dataset could require adding `--no-perms` in the task **Auxiliary Parameters** field. |
 | **Case Sensitivity** | Select the option that sets whether filenames are case sensitive. Select **Sensitive** to assume filenames are case sensitive, or **Insensitive** to assume filenames are not case sensitive. Noted: The **Mixed** option no longer exists. |
-| **Metadata (Special) Small Block Size** | Enter a threshold block size for including small file blocks into the [special allocation class (fusion pools)]({{< relref "FusionPoolsScale.md" >}}). Blocks smaller than or equal to this value are assigned to the special allocation class while greater blocks are assigned to the regular class. Valid values are zero or a power of two from 512B up to 1M. The default size **0** means no small file blocks are allocated in the special class. Before setting this property, you must add a [special class vdev]({{< relref "FusionPoolsScale.md" >}}) to the pool. |
+| **Metadata (Special) Small Block Size** | Enter a threshold block size for including small file blocks into the [special allocation class (fusion pools)]({{< relref "FusionPoolsScale.md" >}}). Blocks smaller than or equal to this value are assigned to the special allocation class while greater blocks are assigned to the regular class. Valid values are zero or a power of two from 512B up to 1M. The default size **0** means no small file blocks are allocated in the special class. Before setting this property, you must add a [special class VDEV]({{< relref "FusionPoolsScale.md" >}}) to the pool. |
 | **Share Type** | Select the option from the dropdown list to define the type of data sharing the dataset uses to optimize the dataset for that sharing protocol. Select **SMB** if using with an SMB share. Select **Generic** for all other share types. You cannot change this setting after the saving dataset. |
 {{< /expand >}}
 
 {{< taglist tag="scaledatasets" limit="10" >}}
 {{< taglist tag="scaleencryption" limit="10" title="Related Encryption Articles" >}}
-{{< taglist tag="scaleacss" limit="10" title="Related Permissions Articles" >}}
+{{< taglist tag="scaleacls" limit="10" title="Related Permissions Articles" >}}
 {{< taglist tag="scalequotas" limit="10" title="Related Quotas Articles" >}}

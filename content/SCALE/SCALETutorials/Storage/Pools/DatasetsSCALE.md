@@ -42,11 +42,15 @@ You cannot change these and the **Name** setting after clicking **Save**.
 Compression encodes information in less space than the original data occupies. 
 We recommended you choose a compression algorithm that balances disk performance with the amount of saved space.
 
+![AddDatasetCompressionLevelOptions](/images/SCALE/22.12/AddDatasetCompressionLevelOptions.png "Add Dataset Compression Level Options")
+
 {{< include file="/_includes/StorageCompressionLevelsScale.md" type="page" >}}
 
 ### Setting Dataset Quotas
 
-You can set dataset quotas when you add a dataset using the **Add Dataset > Advanced Options** quota management options, or to add or edit quotas for a selected dataset, click **Edit** on the **Dataset Space Management** widget to open the **Capacity Settings** screen. 
+You can set dataset quotas when you add a dataset using the **Add Dataset > Advanced Options** quota management options, or to add or edit quotas for a selected dataset, click **Edit** on the **Dataset Space Management** widget to open the **[Capacity Settings]({{< relref "CapacitySettingsScreen.md >}})** screen. 
+
+![AddDatasetQuotasManagement](/images/SCALE/22.12/AddDatasetQuotasManagement.png "Add Dataset Advanced Quota Options") 
 
 Setting a quota defines the maximum allowed space for the dataset.
 You can also reserve a defined amount of pool space to prevent automatically generated data like system logs from consuming all of the dataset space.
@@ -73,10 +77,10 @@ For more information on quotas, see [Managing User or Group Quotas]({{< relref "
 ### Changing Dataset Inherited Values
 
 By default, many of dataset options inherit their values from the parent dataset.
-When the **Inherit** is selected, the setting that has this checkbox selected uses the settings from the parent dataset.
-For example, the [Storage Encryption]({{< relref "EncryptionScale.md" >}}) settings.
+When **Inherit** is selected, as a checkbox or option in a dropdown list, the dataset uses the setting from the parent dataset.
+For example, the [Encryption]({{< relref "EncryptionScale.md" >}}) or **ACL Type** settings.
 
-To change any setting that can inherit the parent setting, clear the checkbox and then enter the desired setting values for the child dataset you are configuring.
+To change any setting that can inherit the parent setting, clear the checkbox or select another available option, and then enter the desired setting values for the child dataset.
 
 ### Setting Datasets Access Controls
 
@@ -84,11 +88,18 @@ For information on ACL settings see [Setting Up Permissions]({{< relref "Permiss
 
 ## Creating a Dataset for a Fusion Pool
 
-Use the **Metadata (Special) Small Block Size** setting to set a threshold block size for including small file blocks into the [special allocation class (fusion pools)]({{< relref "FusionPoolsScale.md" >}}).
+First, add a Metadata VDEV to the pool.
+
+![AddMetadataVDEV](/images/SCALE/22.12/AddMetadataVDEV.png "Add Metadata VDEV") 
+
+Then add the dataset. Use the **Metadata (Special) Small Block Size** setting on the **Add Dataset > Advanced Options > Other Options** screen to set a threshold block size for including small file blocks into the [special allocation class (fusion pools)]({{< relref "FusionPoolsScale.md" >}}).
+
+![AddDatasetFusionPoolMetadataOptions](/images/SCALE/22.12/AddDatasetFusionPoolMetadataOptions.png "Add Dataset for Fusion Pool") 
+
 Blocks smaller than or equal to this value are assigned to the special allocation class while greater blocks are assigned to the regular class.
 Valid values are zero or a power of two from 512B up to 1M.
 The default size **0** means no small file blocks are allocated in the special class.
-Before setting this property, you must add a [special class VDEV]({{< relref "FusionPoolsScale.md" >}}) to the pool. 
+Enter a threshold block size for including small file blocks into the [special allocation class (fusion pools)]({{< relref "FusionPoolsScale.md" >}}). 
 
 ## Managing Datasets
 
@@ -111,12 +122,13 @@ To edit a POSIX ACL type, click **Edit** on the **Permissions** widget to open t
 For more information, see the [permissions]({{< relref "PermissionsSCALE.md" >}}) article.
 
 ### Deleting a Dataset
-Click **Delete** on the **Dataset Details** widget to delete the dataset, all stored data, and any snapshots from TrueNAS. 
-To delete a root dataset, delete the pool use the **Export/Disconnect** option on the **[Storage Dashboard]({{< relref "ManagePoolsSCALE.md" >}})** screen.
+Select the dataset on the tree table, then click **Delete** on the **Dataset Details** widget to delete the dataset, all stored data, and any snapshots from TrueNAS. 
+
+To delete a root dataset, use the **Export/Disconnect** option on the **[Storage Dashboard]({{< relref "ManagePoolsSCALE.md" >}})** screen to delete the pool.
 
 {{< hint danger >}}
 Deleting datasets can result in unrecoverable data loss!
-Move off any critical data on the dataset or obsolete it before performing the delete operation.
+Move off any critical data stored on the dataset or obsolete it before performing the delete operation.
 {{< /hint >}}
 
 {{< taglist tag="scaledatasets" limit="10" >}}
