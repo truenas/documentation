@@ -25,7 +25,7 @@ ZFS and VDEVs combined create high-performance pools that maximize data lifetime
 
 ## Review Storage Needs
 
-It is strongly recommended that you review your available system resources and plan your storage use case before creating a storage pool.
+We strongly recommend you review your available system resources and plan your storage use case before creating a storage pool.
 * Allocating more drives to a pool increases redundancy when storing critical information.
 * Maximizing total available storage at the expense of redundancy or performance entails allocating large-volume disks and configuring a pool for minimal redundancy.
 * Maximizing pool performance entails installing and allocating high-speed SSD drives to a pool.
