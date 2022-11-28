@@ -80,7 +80,7 @@ Attempting to replace a heavily degraded disk without off-lining it significantl
 {{< /expand >}}
 
 {{< expand "The offline failed?" "v" >}}
-If the off-line operation fails with a **Disk offline failed - no valid replicas** message, go to **Storage Dashboard**, click **Scrub** on the **ZFS Health** widget for the pool with the degraded disk. The **Scrub Pool** confirmation dialog opens. Select **Confirm** and then click **Start Scrub**.
+If the off-line operation fails with a **Disk offline failed - no valid replicas** message, go to **Storage Dashboard**, and click **Scrub** on the **ZFS Health** widget for the pool with the degraded disk. The **Scrub Pool** confirmation dialog opens. Select **Confirm** and then click **Start Scrub**.
 
 ![StorageZFSHealthScrub](/images/SCALE/22.12/StorageZFSHealthScrub.png "Storage ZFS Health Scrub Pool")
 
