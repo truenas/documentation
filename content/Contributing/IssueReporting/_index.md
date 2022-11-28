@@ -39,7 +39,7 @@ The *Description* lets you enter specific issue details.
 
 A good bug report includes these elements:
 
-* A "to the point" description detailing the problem you encountered.
+* A brief specific description detailing the problem you encountered.
 
 * Steps to reproduce the issue. A simple list of the steps you took to see the issue is fine.
 
@@ -91,7 +91,7 @@ Jira provides a secure area for uploading files with sensitive information like 
 
 ### New Tickets
 
-Drag and drop the file into the **Private Attachment** box:
+Drag and drop public facing files into the **Attachment** box:
 
 ![JiraAttachmentNew](/images/Contribute/JiraAttachmentNew.png "NAS Project Bug Creation Form")
 
@@ -99,7 +99,7 @@ Clicking *browse* opens a local system file browser for selecting files.
 
 ### Existing Tickets
 
-Open the ticket in your browser and find the **Attachments** section.
+For public facing files, open the ticket in your browser and find the **Attachments** section.
 
 ![JiraAttachmentExisting](/images/Contribute/JiraAttachmentExisting.png "Jira Ticket: Private Attachments")
 
@@ -109,7 +109,8 @@ Click the *+* to open a dialog for adding a new file to the secure area.
 
 Drag and drop the file, add any comments about it, then click *Attach*.
 
-Uploads in the **Private** section are only visible to project developers. JIRA removes them when closing the ticket.
+Upload private files to our secure and private upload service located at 
+https://ixsystems.atlassian.net/servicedesk/customer/portal/15/group/37/create/153”. Files uploaded to this service are only visible to project developers. JIRA removes them when closing the ticket.
 {{< /tab >}}
 
 {{< tab "Web Console Log" >}}
