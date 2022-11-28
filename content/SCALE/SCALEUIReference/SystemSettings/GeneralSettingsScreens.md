@@ -114,7 +114,7 @@ Complete all available fields and ensure the **Enable iXsystems Proactive Suppor
 
 {{< /expand >}}
 
-## GUI 
+## GUI
 The **GUI** widget allows users to configure the TrueNAS SCALE web interface address.
 {{< expand "Click Here for More Information" "v" >}}
 Click **Settings** to open the **GUI Settings** screen.
@@ -123,9 +123,11 @@ Click **Settings** to open the **GUI Settings** screen.
 
 | Setting | Description |
 |---------|-------------|
+| **Theme** | Select a preferred color theme from the dropdown list of eight options. |
 | **GUI SSL Certificate** | Select a self-signed certificate from the dropdown list. The system uses a self-signed certificate to enable encrypted web interface connections. |
 | **Web Interface IPv4 Address** | Select a recent IP address from the dropdown list to limit the usage when accessing the administrative GUI. The built-in HTTP server binds to the wildcard address of **0.0.0.0** (any address) and issues an alert if the specified address becomes unavailable. |
 | **Web Interface IPv6 Address** | Select a recent IPv6 address from the dropdown list to limit the usage when accessing the administrative GUI. The built-in HTTP server binds to the wildcard address of **0.0.0.0** (any address) and issues an alert if the specified address becomes unavailable. |
+| **Web Interface HTTP Port** | Enter a port number for an HTTP connection to the web interface. Allow configuring a non-standard port to access the GUI over HTTP. Changing this setting might require changing a [Firefox configuration setting](https://www.redbrick.dcu.ie/~d_fens/articles/Firefox:_This_Address_is_Restricted). |
 | **Web Interface HTTPS Port** | Enter a port number for an HTTPS connection to the web interface. This field allows configuring a non-standard port to access the GUI over HTTPS. |
 | **HTTPS Protocols** | Select the [Transport Layer Security (TLS)](https://en.wikipedia.org/wiki/Transport_Layer_Security) versions TrueNAS SCALE can use for connection security from the dropdown list. Cryptographic protocol  for securing client/server connections. |
 | **Web Interface HTTP -> HTTPS Redirect** | Select to redirect HTTP connections to HTTPS. A GUI SSL Certificate is required for HTTPS. Activating this also sets the [HTTP Strict Transport Security (HSTS)](https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security) maximum age to 31536000 seconds (one year). This means that after a browser connects to the web interface for the first time, the browser continues to use HTTPS and renews this setting every year. |
@@ -134,7 +136,9 @@ Click **Settings** to open the **GUI Settings** screen.
 | **Show Console Messages** | Select to display console messages in real time at the bottom of the browser. |
 {{< /expand >}}
 
-## Localization 
+Allow configuring a non-standard port to access the GUI over HTTP. Changing this setting might require changing a Firefox configuration setting.
+
+## Localization
 The **Localization** widget lets users localize their system to a specific region.
 {{< expand "Click Here for More Information" "v" >}}
 Click **Settings** to open the **Localization Settings** screen.
@@ -150,7 +154,7 @@ Click **Settings** to open the **Localization Settings** screen.
 | **Time Format** | Select a time format from the dropdown list. |
 {{< /expand >}}
 
-## NTP Servers 
+## NTP Servers
 The **NTP Servers** widget allows user to configure Network Time Protocol (NTP) servers, which sync the local system time with an accurate external reference. 
 {{< expand "Click Here for More Information" "v" >}}
 By default, new installations use several existing NTP servers. TrueNAS SCALE supports adding custom NTP servers. Click **Add** to open the **Add NTP Server** screen.
