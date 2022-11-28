@@ -96,7 +96,7 @@ When the scrub operation finishes, return to the **Devices** screen, click on th
    ![ReplaceDiskAndOnline](/images/SCALE/22.12/ReplaceDiskAndOnline.png "Off-Lining A Disk") 
 
 3. You can physically remove the disk from the system when the disk status is **Offline**. 
-   If the replacement disk is not already physically installed in the system, do it now.
+   If you have not already physically installed the replacement disk in the system, do it now.
 
 Use **[Replace](#replacing-a-failed-disk)** to bring the new disk online in the same VDEV.
    
