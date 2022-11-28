@@ -112,7 +112,6 @@ HA migration in Bluefin 22.12.0 is not recommended for critical-use Enterprise H
 * [NAS-109954](https://ixsystems.atlassian.net/browse/NAS-109954) Improve heuristics for vfs\_tmprotect snapshots
 * [NAS-111664](https://ixsystems.atlassian.net/browse/NAS-111664) use path\_local key from sharing.smb.query for filesystem calls related to share
 * [NAS-111965](https://ixsystems.atlassian.net/browse/NAS-111965) APPS: Add bulk upgrade action
-* [NAS-112923](https://ixsystems.atlassian.net/browse/NAS-112923) Add permissions management for gluster volumes
 * [NAS-113218](https://ixsystems.atlassian.net/browse/NAS-113218) Enclosure UI stage left Vdev should show name not type
 * [NAS-113376](https://ixsystems.atlassian.net/browse/NAS-113376) Default app name to chart name
 * [NAS-114204](https://ixsystems.atlassian.net/browse/NAS-114204) Show a warning in the UI for certain VM PCI devices
@@ -147,20 +146,19 @@ HA migration in Bluefin 22.12.0 is not recommended for critical-use Enterprise H
 * [NAS-116756](https://ixsystems.atlassian.net/browse/NAS-116756) Do not exit on first failure in apps CI
 * [NAS-116758](https://ixsystems.atlassian.net/browse/NAS-116758) Add integration tests for authorized networks of targets
 * [NAS-116759](https://ixsystems.atlassian.net/browse/NAS-116759) Add keyboard support for ix-tree
-* [NAS-117546](https://ixsystems.atlassian.net/browse/NAS-117546) Convert TrueNAS SCALE nightlies to use chronyd rather than ntpd for time keeping
 * [NAS-117940](https://ixsystems.atlassian.net/browse/NAS-117940) Revert temporary fix for NAS-117908 once glusterfs is fixed for glfs\_open\(\) on dirs
 * [NAS-118161](https://ixsystems.atlassian.net/browse/NAS-118161) Improvements for Jobs
 * [NAS-118366](https://ixsystems.atlassian.net/browse/NAS-118366) Change font face on headers
 * [NAS-118548](https://ixsystems.atlassian.net/browse/NAS-118548) Improvements for Reports Toolbar
 * [NAS-118602](https://ixsystems.atlassian.net/browse/NAS-118602) Add ability for users to fix clock on NAS
 * [NAS-118612](https://ixsystems.atlassian.net/browse/NAS-118612) Linter for attribute order in html
-* [NAS-118631](https://ixsystems.atlassian.net/browse/NAS-118631) Use overlayfs driver for docker
 * [NAS-118661](https://ixsystems.atlassian.net/browse/NAS-118661) Remove any in CloudsyncFormComponent
 * [NAS-118669](https://ixsystems.atlassian.net/browse/NAS-118669) Extract dialogs from ChartReleasesComponent into separate components
 * [NAS-118683](https://ixsystems.atlassian.net/browse/NAS-118683) Extract some dialogs into separate components
 * [NAS-118766](https://ixsystems.atlassian.net/browse/NAS-118766) Update HaStatus interface to hold boolean for status value
 * [NAS-118768](https://ixsystems.atlassian.net/browse/NAS-118768) Directive to show UI elements on nightlies only
 * [NAS-118777](https://ixsystems.atlassian.net/browse/NAS-118777) Default cloudsync provider name to provider title
+* [NAS-118788](https://ixsystems.atlassian.net/browse/NAS-118788) Remove truecommand\_stats source/package as it is no longer used
 * [NAS-118801](https://ixsystems.atlassian.net/browse/NAS-118801) Remove usages of any
 * [NAS-118811](https://ixsystems.atlassian.net/browse/NAS-118811) remove 3rd party asyncio k8s client \(use upstream proper\)
 * [NAS-118817](https://ixsystems.atlassian.net/browse/NAS-118817) Zvol form refactoring
@@ -168,25 +166,40 @@ HA migration in Bluefin 22.12.0 is not recommended for critical-use Enterprise H
 * [NAS-118821](https://ixsystems.atlassian.net/browse/NAS-118821) Enable additional template linter rules
 * [NAS-118823](https://ixsystems.atlassian.net/browse/NAS-118823) Refactor Display device code in VmListComponent
 * [NAS-118825](https://ixsystems.atlassian.net/browse/NAS-118825) Refactor Create SSH Connection in replication wizard
+* [NAS-118846](https://ixsystems.atlassian.net/browse/NAS-118846) Improve diasbled reasons
 * [NAS-118899](https://ixsystems.atlassian.net/browse/NAS-118899) Refactor VM Edit form
 * [NAS-118900](https://ixsystems.atlassian.net/browse/NAS-118900) Improve return types for appLet directive
 * [NAS-118906](https://ixsystems.atlassian.net/browse/NAS-118906) Refactor dialogs in PodShellComponent and PodLogsComponent
 * [NAS-118907](https://ixsystems.atlassian.net/browse/NAS-118907) Remove \`regexValidator\`
+* [NAS-118910](https://ixsystems.atlassian.net/browse/NAS-118910) add private GlusterBricksService
 * [NAS-118913](https://ixsystems.atlassian.net/browse/NAS-118913) NVDIMM DMA support
+* [NAS-118931](https://ixsystems.atlassian.net/browse/NAS-118931) update and privatize GlusterRebalance service
 * [NAS-118940](https://ixsystems.atlassian.net/browse/NAS-118940) update corssl to 1.1.1s.001
 * [NAS-118946](https://ixsystems.atlassian.net/browse/NAS-118946) Update styles on the Alert Panel
 * [NAS-118951](https://ixsystems.atlassian.net/browse/NAS-118951) don't SMB\_ASSERT\(\) on mixed case sensitivity settings in vfs\_shadow\_copy\_zfs
 * [NAS-118961](https://ixsystems.atlassian.net/browse/NAS-118961) Allow adding more reviewers for app update PRs
+* [NAS-118971](https://ixsystems.atlassian.net/browse/NAS-118971) add CtdbRootDirService class
+* [NAS-118973](https://ixsystems.atlassian.net/browse/NAS-118973) Split up API test protocols into separate files
 * [NAS-118975](https://ixsystems.atlassian.net/browse/NAS-118975) Reduce amount of any
-* [NAS-118993](https://ixsystems.atlassian.net/browse/NAS-118993) Update WebUI for quota API changes
+* [NAS-118985](https://ixsystems.atlassian.net/browse/NAS-118985) Update dataset node
+* [NAS-118988](https://ixsystems.atlassian.net/browse/NAS-118988) Stop any md mirror which might be present on disk
+* [NAS-118990](https://ixsystems.atlassian.net/browse/NAS-118990) add format\_bricks helper function
+* [NAS-118994](https://ixsystems.atlassian.net/browse/NAS-118994) Make python-glfs a middleware build dependency
+* [NAS-119001](https://ixsystems.atlassian.net/browse/NAS-119001) Preselect first option for rollback
+* [NAS-119017](https://ixsystems.atlassian.net/browse/NAS-119017) Add glusterfs filesystem plugin
 * [NAS-119026](https://ixsystems.atlassian.net/browse/NAS-119026) Investigate enhancing node configured functionality in k8s lifecycle
 * [NAS-119027](https://ixsystems.atlassian.net/browse/NAS-119027) Extract dialog in ManagerComponent
 * [NAS-119035](https://ixsystems.atlassian.net/browse/NAS-119035) Enable no-shadow linter rule
 * [NAS-119041](https://ixsystems.atlassian.net/browse/NAS-119041) Restore \`vmware\_sync\` functionality from CreateSnapshotDialogComponent
+* [NAS-119044](https://ixsystems.atlassian.net/browse/NAS-119044) Add endpoint to check service configuration prior to start
 * [NAS-119046](https://ixsystems.atlassian.net/browse/NAS-119046) Remove "Unused Resources" section header on Storage Dashboard
+* [NAS-119056](https://ixsystems.atlassian.net/browse/NAS-119056) Refactor truecommand wireguard interface name
 * [NAS-119059](https://ixsystems.atlassian.net/browse/NAS-119059) Remove numberValidator
 * [NAS-119103](https://ixsystems.atlassian.net/browse/NAS-119103) Highlight degraded vdevs in Devices
+* [NAS-119132](https://ixsystems.atlassian.net/browse/NAS-119132) Allow 3rd party catalogs to benefit from catalog sync performance improvements
+* [NAS-119136](https://ixsystems.atlassian.net/browse/NAS-119136) Add glusterfs.filesystem tests
 * [NAS-119147](https://ixsystems.atlassian.net/browse/NAS-119147) Remove entity-dialog
+* [NAS-119168](https://ixsystems.atlassian.net/browse/NAS-119168) Switch codecov github action to use token
 
 ## Bug
 
