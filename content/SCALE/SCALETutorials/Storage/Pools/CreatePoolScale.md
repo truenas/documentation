@@ -141,7 +141,7 @@ A single disk failure results in losing all data in the vdev.
 {{< /hint >}}
 {{< /expand >}}
 {{< expand "Mirror" >}}
-A **Mirror** VDEV stores on both disks, data is identical in each disk.
+A **Mirror** VDEV stores on both disks, and data is identical on each disk.
 A mirror VDEV requires at least two disks, has the most redundancy, and the least capacity.
 {{< /expand >}}
 {{< expand "RAIDZ1" >}}
