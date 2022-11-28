@@ -82,7 +82,7 @@ If you have discovered a suspected security vulnerability in the latest version 
 
 
 ## Creating a Debug File
-{{< expand "Expand for more information about Creating a debug file" "v" >}}
+{{< expand "Expand for more information about creating a debug file." "v" >}}
 {{< include file="static/includes/CORE/CreateDebug.md.part" markdown="true" >}}
 
 ### Adding a Debug File to a Report
@@ -96,11 +96,9 @@ Drag and drop public facing files into the **Attachment** box when creating a ne
 
 ### Existing Tickets
 
-For public facing files, open the ticket in your browser and either click **Attach**, at the top of the ticket, or click the **+** to open a local system file browser to select the files. Click the **Open** button to add it to the **Attachments** section.
+For public facing files, open the ticket in your browser and either click **Attach**, at the top of the ticket, or click the **+**, in the **Attachments** section, to open a local system file browser to select the files. You can also drag and drop the file onto the **Attacments** box and add any comments about it.
 
-You can also drag and drop the file, add any comments about it, then click **Attach**.
-
-Upload private files to our secure, private, upload service located at 
+Upload private files to our secure private upload service located at 
 https://ixsystems.atlassian.net/servicedesk/customer/portal/15/group/37/create/153”. Files uploaded to this service are only visible to project developers. JIRA removes them when closing the ticket.
 {{< /expand >}}
 
