@@ -25,7 +25,7 @@ ZFS and VDEVs combined create high-performance pools that maximize data lifetime
 
 ## Review Storage Needs
 
-It is strongly recommended that you review your available system resources and plan your storage use case before creating a storage pool.
+We strongly recommend that you review your available system resources and plan your storage use case before creating a storage pool.
 * Allocating more drives to a pool increases redundancy when storing critical information.
 * Maximizing total available storage at the expense of redundancy or performance entails allocating large-volume disks and configuring a pool for minimal redundancy.
 * Maximizing pool performance entails installing and allocating high-speed SSD drives to a pool.
@@ -46,7 +46,7 @@ Click **Create Pool** to open the **Pool Manager** screen for new pools.
 
 ![CreatePoolPoolManagerScreen](/images/SCALE/22.12/CreatePoolPoolManagerScreen.png "Crete Pool Pool Manager")
 
-If you already have a pool created on your system you can use either the **Create Pool** button at the top right of the screen or click the **Add to a Pool** button on the **Unused Resources** widget to create a new pool.
+If you have already created a pool on your system you can use either the **Create Pool** button at the top right of the screen or click the **Add to a Pool** button on the **Unused Resources** widget to create a new pool.
 
 ![AddToPoolWindow](/images/SCALE/22.12/AddToPoolWindow.png "Add To Pool") 
 
@@ -108,7 +108,7 @@ Next, if you want to add another type of VDEV, click **Add Vdev** and select the
 Each VDEV type stores data or enables unique features for the pool.
 For more details on VDEV types and data VDEV layouts see the [Pool Manager Screen]({{< relref "PoolManagerScreens.md" >}}) article.
 
-If you have enough disks of the same size available you can [duplicate](#duplicating-a-data-vdev) the data VDEV.
+If you have enough disks of the same size available, you can [duplicate](#duplicating-a-data-vdev) the data VDEV.
 
 Click **Create** to add the pool.
 
@@ -141,8 +141,8 @@ A single disk failure results in losing all data in the vdev.
 {{< /hint >}}
 {{< /expand >}}
 {{< expand "Mirror" >}}
-A **Mirror** VDEV stores on both disks, data is identical in each disk.
-A mirror VDEV requires at least two disks, has the most redundancy, and the least capacity.
+A **Mirror** VDEV stores on both disks, and data is identical on each disk.
+A mirror VDEV requires at least two disks. It has the most redundancy and the least capacity.
 {{< /expand >}}
 {{< expand "RAIDZ1" >}}
 A **RAIDZ1** uses one disk for parity while all other disks store data.

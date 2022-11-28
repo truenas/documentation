@@ -26,7 +26,7 @@ If your system disks do not have unique serial numbers, the **Pool Manager** scr
 
 Select **Show disks with non-unique serial numbers** to display the system disks.
 The **0 selected/ *#* total** below the **Available Disks** displays a count of the number of disks selected to the total number of disks available on your system. 
-This counter keeps track of the total number of available disk in the system when disks span across several screen pages.
+This counter keeps track of the total number of available disks in the system when disks span across several screen pages.
 
 | Settings | Description |
 |----------|-------------|
