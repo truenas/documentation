@@ -1,12 +1,13 @@
 <script>
 window.store = {
-    {{ range .Site.Pages  }}
+    {{ range .Site.Pages }}
     // You can use any unique identifier here
     "{{ .Permalink }}": {
         // You can customize your searchable fields using any .Page parameters
         "title": "{{ .Title  }}",
         "content": {{ .Params.description | plainify }}, // Strip out HTML tags
-        "url": "{{ .Permalink }}"
+        "url": "{{ .Permalink }}",
+		"path": "{{ .File.Dir }}"
     },
     {{ end }}
 }
