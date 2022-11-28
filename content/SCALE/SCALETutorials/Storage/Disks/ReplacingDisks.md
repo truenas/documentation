@@ -39,7 +39,7 @@ To replace a failed disk:
 
 1. Locate the failed drive.
 
-   a. Go to the **Storage Dashboard** click **Manage Devices** on the **Topology** widget for the degraded pool to open the **Devices** screen for that pool. 
+   a. Go to the **Storage Dashboard** and click **Manage Devices** on the **Topology** widget for the degraded pool to open the **Devices** screen for that pool. 
    b. Click anywhere on the VDEV to expand it and look for the drive with the Offline status.
 
 2. Take the disk offline. 
@@ -48,7 +48,7 @@ To replace a failed disk:
 
    Click **Offline** on the **ZFS Info** widget to take the disk offline. The button toggles to **Online**.
 
-2. Pull the disk from your system and replace with a disk of at least the same or greater capacity as the failed disk. V:
+2. Pull the disk from your system and replace it with a disk of at least the same or greater capacity as the failed disk. V:
    
    ![ReplaceDiskAndOnline](/images/SCALE/22.12/ReplaceDiskAndOnline.png "Replace and Online a Disk")
    
