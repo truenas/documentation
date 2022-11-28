@@ -48,7 +48,7 @@ To replace a failed disk:
 
    Click **Offline** on the **ZFS Info** widget to take the disk offline. The button toggles to **Online**.
 
-2. Pull the disk from your system and replace it with a disk of at least the same or greater capacity as the failed disk. V:
+2. Pull the disk from your system and replace it with a disk of at least the same or greater capacity as the failed disk. 
    
    ![ReplaceDiskAndOnline](/images/SCALE/22.12/ReplaceDiskAndOnline.png "Replace and Online a Disk")
    
