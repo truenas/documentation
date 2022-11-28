@@ -2,7 +2,6 @@ function displayResults (results, store) {
   const searchResults = document.getElementById('results')
   if (results.length) {
     let resultList = ''
-	// Group results by path
     // Iterate and build result list elements
     for (const n in results) {
       const item = store[results[n].ref]
@@ -29,9 +28,7 @@ if (query) {
     this.field('title', {
       boost: 15
     })
-    this.field('tags', {
-	  boost: 5
-	})
+    this.field('tags')
     this.field('content', {
       boost: 10
     })
