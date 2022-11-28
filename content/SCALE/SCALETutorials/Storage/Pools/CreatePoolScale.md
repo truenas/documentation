@@ -80,7 +80,7 @@ The **Available Disks** table lists all available disks detected on the system i
 {{< /hint >}}
 
 {{< hint info >}}
-Disks with non-unique serial number do not populate the **Available Disks** section until you select **Show disk with non-unique serial numbers**.
+Disks with non-unique serial numbers do not populate the **Available Disks** section until you select **Show disk with non-unique serial numbers**.
 {{< /hint >}}
 
 {{< expand "Can I create one pool with different data VDEV layouts?" "v" >}}
