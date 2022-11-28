@@ -85,7 +85,7 @@ Disks with non-unique serial numbers do not populate the **Available Disks** sec
 
 {{< expand "Can I create one pool with different data VDEV layouts?" "v" >}}
 TrueNAS SCALE does not support adding multiple data VDEV layouts (or types) in one pool, for example a mirror data VDEV and a RAID data VDEV in the same pool.
-Create a new pool when a different data VDEV layout is required.
+Create a new pool when you need a different data VDEV layout.
 For example, *pool1* has a data VDEV in a *mirror* layout, so create *pool2* for any *raid-z* VDEVs.
 {{< /expand >}}
 
