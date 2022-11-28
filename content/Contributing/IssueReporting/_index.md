@@ -92,7 +92,7 @@ Jira provides a public facing area for files that do not require privacy. There 
 
 Drag and drop public facing files into the **Attachment** box when creating a new ticket:
 
-![JiraAttachmentNew](/images/Contribute/JiraAttachmentNew.png "NAS Project Bug Creation Form")
+![JiraAttachmentNew](/images/Contribute/newjiraattachments.png "NAS Project Bug Creation Form")
 
 Clicking **+** in the **Attachments** section opens a local system file browser for selecting files.
 
