@@ -87,7 +87,7 @@ If the off-line operation fails with a **Disk offline failed - no valid replicas
 When the scrub operation finishes, return to the **Devices** screen, click on the VDEV and then the disk, and try to offline it again.
 {{< /expand >}}
 
-1. Click on **Manage Devices** to open the **Devices** screen, click anywhere on the VDEV to expand VDEV and show the drives in the VDEV. 
+1. Click on **Manage Devices** to open the **Devices** screen, then click anywhere on the VDEV to expand it and show the drives in the VDEV. 
 
 2. Click **Offline** on the **ZFS Info** widget. A confirmation dialog displays. Click **Confirm** and then **Offline**. 
    The system begins the process to take the disk offline. When complete, the disk displays the status of the failed disk as **Offline**. 
