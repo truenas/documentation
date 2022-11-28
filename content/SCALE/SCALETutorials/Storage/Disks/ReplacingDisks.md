@@ -84,7 +84,7 @@ If the off-line operation fails with a **Disk offline failed - no valid replicas
 
 ![StorageZFSHealthScrub](/images/SCALE/22.12/StorageZFSHealthScrub.png "Storage ZFS Health Scrub Pool")
 
-When the scrub operation finishes, return to the **Devices** screen, click on the VDEV and then the disk and try to off-line it again.
+When the scrub operation finishes, return to the **Devices** screen, click on the VDEV and then the disk, and try to offline it again.
 {{< /expand >}}
 
 1. Click on **Manage Devices** to open the **Devices** screen, click anywhere on the VDEV to expand VDEV and show the drives in the VDEV. 
