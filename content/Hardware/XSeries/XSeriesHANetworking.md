@@ -1,5 +1,5 @@
 ---
-title: "X-Series HA Neworking"
+title: "X-Series HA Networking"
 weight: 16
 ---
 
