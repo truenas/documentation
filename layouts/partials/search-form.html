@@ -1,5 +1,6 @@
 <form id="search"
     action='{{ with .GetPage "/search" }}{{.Permalink}}{{end}}' method="get">
-	<label hidden for="gdoc-search-input">Search site</label>
-	<input style="font-family:FontAwesome" type="search" id="gdoc-search-input" class="gdoc-search__input" name="query" placeholder="&#Xf002;  Search..." maxlength="64">
+    <label hidden for="search-input">Search site</label>
+    <input type="text" id="search-input" name="query"
+    placeholder="Type and Enter to search">
 </form>
