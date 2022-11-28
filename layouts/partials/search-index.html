@@ -7,7 +7,7 @@ window.store = {
         "title": "{{ .Title  }}",
         "content": {{ .Params.description | plainify }}, // Strip out HTML tags
         "url": "{{ .Permalink }}",
-		"path": "{{ .File.Dir }}"
+		"path": "{{ with .File }}{{ .Dir }}{{ end }}"
     },
     {{ end }}
 }
