@@ -15,14 +15,13 @@ tags:
 
 We encourage all users to help us make TrueNAS the best NAS by reporting issues, requesting potentially helpful features, and relaying security vulnerabilities.  
 
-{{< tabs "Issue Reporting" >}}
-{{< tab "Bugs and Features" >}}
+## Issue Reporting
 iXsystems uses [Jira](https://www.atlassian.com/software/jira) to track bugs and develop features.
 You can view public issues without logging in, but you must create a Jira account to report bugs or suggest features.
 
 ![TrueNAS Jira Project](/images/Contribute/Jira.png "TrueNAS Jira Project")
 
-## Bug Reports
+### Bug Reports
 
 Go to the [TrueNAS project on Jira](https://ixsystems.atlassian.net/jira/software/c/projects/NAS/issues) and click **Create** in the top bar.
 
@@ -68,30 +67,30 @@ Developers will review and update the ticket if/when they need additional inform
 The Jira account receives emails about the ticket status.
 Developers may request more details as they work to resolve the issue, so check the ticket periodically.
 
-## Feature Suggestions
+### Feature Suggestions
 
 {{< include file="static/includes/General/CreateJiraSuggestion.md.part" markdown="true" >}}
 
-## Security Issues
+
+### Security Issues
+
 
 We publish previous security reports at https://security.truenas.com/.
 
 Security issues do not appear on public issue trackers due to their sensitive nature.
 If you have discovered a suspected security vulnerability in the latest version of a software release, you can [report this directly to the Security Team](mailto:security-officer@ixsystems.com).
-{{< /tab >}}
 
-{{< tab "TrueNAS Debug" >}}
+
 ## Creating a Debug File
-
+{{< expand "Expand for more information" "v" >}}
 {{< include file="static/includes/CORE/CreateDebug.md.part" markdown="true" >}}
 
-## Adding a Debug File to a Report
-
-Jira provides a secure area for uploading files with sensitive information like a system debug.
+### Adding a Debug File to a Report
+Jira provides a public facing area for files that do not require privacy. There is also a secure developer only area for uploading files with sensitive information like a system debug.
 
 ### New Tickets
 
-Drag and drop public facing files into the **Attachment** box:
+Drag and drop public facing files into the **Attachment** box when creating a new ticket:
 
 ![JiraAttachmentNew](/images/Contribute/JiraAttachmentNew.png "NAS Project Bug Creation Form")
 
@@ -103,7 +102,7 @@ For public facing files, open the ticket in your browser and find the **Attachme
 
 ![JiraAttachmentExisting](/images/Contribute/JiraAttachmentExisting.png "Jira Ticket: Private Attachments")
 
-Click the *+* to open a dialog for adding a new file to the secure area.
+Click the *+* to open a dialog for adding a new file to this area.
 
 ![JiraNASAttachPrivateDialog](/images/Contribute/JiraNASAttachPrivateDialog.png "Attaching a private file")
 
@@ -111,9 +110,8 @@ Drag and drop the file, add any comments about it, then click *Attach*.
 
 Upload private files to our secure and private upload service located at 
 https://ixsystems.atlassian.net/servicedesk/customer/portal/15/group/37/create/153”. Files uploaded to this service are only visible to project developers. JIRA removes them when closing the ticket.
-{{< /tab >}}
+{{< /expand >}}
 
-{{< tab "Web Console Log" >}}
 ## Web Console Log
 Web console logs help diagnose problems with the user interface.
 You can add logs to TrueNAS issues for debugging.
@@ -147,7 +145,6 @@ After saving the file, open the console with <i class="fa fa-ellipsis-v" aria-hi
 
 Go to the [iXsystems Bug Tracker](https://ixsystems.atlassian.net/jira/software/c/projects/NAS/issues). Locate an existing ticket or create a new one reporting the problem.
 Attach the console log file to the ticket by dragging it to **Attachments**.
-{{< /tab >}}
-{{< /tabs >}}
+{{< /expand >}}
 
 {{< taglist tag="corecontributing" limit="10" >}}
