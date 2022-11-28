@@ -1,8 +1,12 @@
 ---
 title: "Managing Boot Environments"
+description: "This article provides information about managing boot environments on TrueNAS CORE."
 weight: 30
 aliases:
   - /core/system/boot/bootscreen
+tags:
+- coreboot
+- coreupdate
 ---
 
 {{< toc >}}
@@ -80,4 +84,6 @@ Click **Boot Pool Status** to see the status of each boot-pool device, including
 
 ### Scrub the Boot Pool
 
-Click **Scrub Boot Pool** to perform a manual (data integrity check) of the operating system device.
+Click **Scrub Boot Pool** to perform a manual (data integrity check) of the operating system device.  
+
+{{< taglist tag="coreboot" limit="10" >}}

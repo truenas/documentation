@@ -1,9 +1,15 @@
 ---
 title: "Setting Up Users and Groups"
+description: "This article describes how to set up users and groups in TrueNAS CORE."
 weight: 19
 aliases:
   - /core/accounts/users
   - /core/accounts/groups
+tags:
+- coreusersandgroups
+- coreusers
+- coregroups
+- coreaccounts
 ---
 
 Creating users and assigning them to groups allows you to efficiently tune permissions and share data for large numbers of users.
@@ -155,3 +161,5 @@ To add user accounts to the group, select them in **All users** and click <i cla
 Select multiple users by holding <kbd>CTRL</kbd> while clicking each entry.
 {{< /tab >}}
 {{< /tabs >}}
+
+{{< taglist tag="coreusers" limit="10" >}}

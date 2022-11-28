@@ -42,6 +42,10 @@ To access the web interface using an IP address, use the one that the Console Se
 
 On a computer with access to the same network as the TrueNAS system, enter the host name and domain or IP address in a web browser to connect to the web interface.
 
+{{< hint info >}}
+The quality of your user experience can be impacted by the browser that you use. We generally recommend using Firefox, Edge, or Chrome.
+{{< /hint >}}
+
 ![LoginSCALE](/images/SCALE/LoginSCALE.png "TrueNAS SCALE Login Screen")
 
 Use the administrative account credentials to log in.
@@ -67,7 +71,7 @@ If I cannot remember the administrator password to log in to the web interface, 
 
 {{< expand "Dashboard Video Tutoral" >}}
 
-{{< embed-video name="scaletour" >}}
+{{< embed-video name="scaledashboardtour" >}}
 
 {{< /expand >}}
 After logging in, you see the system **Dashboard** screen.

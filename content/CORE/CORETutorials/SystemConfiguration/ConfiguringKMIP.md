@@ -1,6 +1,10 @@
 ---
 title: "Configuring KMIP"
+description: "This article describes how to configure KMIP on TrueNAS CORE Enterprise." 
 weight: 170
+tags:
+- corekmip
+- corelicense
 ---
 
 {{< hint info >}}
@@ -26,7 +30,7 @@ This helps simplify the TrueNAS connection process.
 
 ## Connecting TrueNAS to a KMIP Server
 
-To connect TrueNAS to a KMIP server, import a [Certificate Authority (CA)]({{< relref "CAs.md" >}}) and [Certificate]({{< relref "Certificates.md" >}}) from the KMIP server, then configure the KMIP options.
+To connect TrueNAS to a KMIP server, import a [Certificate Authority (CA)]({{< relref "CAs.md" >}}) and [Certificate]({{< relref "/CORE/UIReference/System/Certificates.md" >}}) from the KMIP server, then configure the KMIP options.
 
 {{< expand "How do I import these?" "v" >}}
 Log in to the TrueNAS web interface and go to **System** > **CAs** and click **ADD**.
@@ -60,3 +64,5 @@ Refresh the **KMIP** screen to show the current **KMIP Key Status**.
 ![SystemKMIPKeyStatus](/images/CORE/12.0/SystemKMIPKeyStatus.png "Example Key Synced")
 
 If you want to cancel a pending key synchronization, set *Force Clear* and click *SAVE*.
+
+{{< taglist tag="corekmip" limit="10" >}}

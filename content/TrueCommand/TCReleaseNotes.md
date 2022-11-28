@@ -18,12 +18,46 @@ aliases:
 
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
-| 2.3.0 | Code-freeze | TBD |
-| 2.3.0 | Internal Testing Sprints | TBD |
-| 2.3.0 | Tag | TBD |
-| 2.3.0 | Release | TBD |
+| 2.3-BETA.1 | Code-freeze | 09 November 2022 |
+| 2.3-BETA.1 | Internal Testing Sprints | 14 November 2022 - 25 November 2022 |
+| 2.3-BETA.1 | Tag | 28 November 2022 |
+| 2.3-BETA.1 | Release | 29 November 2022 |
+| 2.3-RC.1 | Code-freeze | 07 December 2022 |
+| 2.3-RC.1 | Internal Testing Sprints | 12 December 2022 - 16 December 2022 |
+| 2.3-RC.1 | Tag | 19 December 2022 |
+| 2.3-RC.1 | Release | 20 December 2022 |
+
+## 2.2.2
+
+**October 18, 2022**
+
+iXsystems is pleased to release TrueCommand 2.2.2!
+This is a maintenance release of TrueCommand 2.2 that includes some improvements for charts and a variety of bugfixes for licensing, LDAP, reporting, connections, and alerting.
+
+### Improvement
+
+* [TC-2357](https://ixsystems.atlassian.net/browse/TC-2357) Report charts x-axis datapoint sometimes display overlapping labels
+* [TC-2274](https://ixsystems.atlassian.net/browse/TC-2274) API endpoint for downloading config backup
+* [TC-2215](https://ixsystems.atlassian.net/browse/TC-2215) Change build type from build to runtime
+
+### Bug
+
+* [TC-2325](https://ixsystems.atlassian.net/browse/TC-2325) Disabled importing licenses on Cloud
+* [TC-2297](https://ixsystems.atlassian.net/browse/TC-2297) Available servers do not appear in header
+* [TC-2294](https://ixsystems.atlassian.net/browse/TC-2294) Unlimited License
+* [TC-2293](https://ixsystems.atlassian.net/browse/TC-2293) Proxy NAS interface via ssl redirects to TC
+* [TC-2289](https://ixsystems.atlassian.net/browse/TC-2289) LDAP Failing to Connect
+* [TC-2288](https://ixsystems.atlassian.net/browse/TC-2288) TrueCommand Drive Count Issue
+* [TC-2287](https://ixsystems.atlassian.net/browse/TC-2287) Mismatched internal and NAS alert priority breaks user notices
+* [TC-2286](https://ixsystems.atlassian.net/browse/TC-2286) Panic on LDAP user creation
+* [TC-2275](https://ixsystems.atlassian.net/browse/TC-2275) Wireguard configuration not applied in TC container
+* [TC-2273](https://ixsystems.atlassian.net/browse/TC-2273) Can't Access System Card \(And backed up config files\) when system is offline
+* [TC-2268](https://ixsystems.atlassian.net/browse/TC-2268) Health Indicator on Cluster UI widget not responsive
+* [TC-2257](https://ixsystems.atlassian.net/browse/TC-2257) Issue Loading Reporting and Cluster UI Pages
 
 ## 2.2.1
+
+{{< expand "2.2.1" "v" >}}
 
 **August 12, 2022**
 
@@ -43,7 +77,11 @@ This is a minor release designed to address some additional cluster issues found
 * [TC-2245](https://ixsystems.atlassian.net/browse/TC-2245) RRDcached sockets timeout on read, fork, and fail to reconnect
 * [TC-2207](https://ixsystems.atlassian.net/browse/TC-2207) 2FA window pops back up after successful login with Auth code
 
+{{< /expand >}}
+
 ## 2.2
+
+{{< expand "2.2" "v" >}}
 
 **August 02, 2022**
 
@@ -208,6 +246,8 @@ See [Back up the Container Volume]({{< relref "UpdateDocker.md" >}}) for specifi
 * [TC-1906](https://ixsystems.atlassian.net/browse/TC-1906) - Reset PW from Login Emailed Credentials not Recognized
 * [TC-1881](https://ixsystems.atlassian.net/browse/TC-1881) - Alerts count on the System Dashcard are going up and they are now too big for the alert bubble
 * [TC-1846](https://ixsystems.atlassian.net/browse/TC-1846) - Better handling of dropped connection to middleware
+
+{{< /expand >}}
 
 ## 2.1.1
 
@@ -426,5 +466,5 @@ This will automatically fetch and start the latest Docker image of TrueCommand w
 
 | Seen In | Key | Summary | Workaround | Resolved In |
 |---------|-----|---------|------------|-------------|
-| | | | | |
+|TC 2.2.2 | <a href="https://ixsystems.atlassian.net/browse/TC-2339" target="_blank">TC-2339</a> | Dashboard System card values for SCALE 22.12 do not populate. | The TrueCommand Dashboard System card values for SCALE 22.12 Bluefin are missing. | Unknown |
 

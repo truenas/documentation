@@ -1,6 +1,10 @@
 ---
 title: "Using the iSCSI Share"
+description: "This article describes how to use the iSCSI share in TrueNAS CORE."
 weight: 10
+tags:
+- coreiscsi
+- corefibrechannel
 ---
 
 {{< toc >}}
@@ -125,19 +129,4 @@ Finally, go to **This PC** or **My Computer** in File Explorer. The new iSCSI vo
 ![WindowsiSCSIVolumeLocation](/images/CORE/WindowsiSCSIVolumeLocation.png "Windows iSCSI Volume Location")
 {{< /expand >}}
 
-For more information on iSCSI shares also see:
-
-[About iSCSI Shares]({{< relref "/CORE/UIReference/Sharing/iSCSI/_index.md" >}})
-
-[The iSCSI Screen]({{< relref "/CORE/UIReference/Sharing/iSCSI/iSCSIShare.md" >}})
-
-[FibreChannel Ports Screen]({{< relref "/CORE/UIReference/Sharing/iSCSI/FibreChannel.md" >}})
-
-[Adding an iSCSI Share]({{< relref "/CORE/CORETutorials/Sharing/iSCSI/AddingiSCSIShare.md" >}}) 
-
-[Increasing iSCSI Share Available Storage]({{< relref "/CORE/CORETutorials/Sharing/iSCSI/IncreasingiSCSIAvailableStorage.md" >}})
-
-[Setting Up Fibre Channel]({{< relref "/CORE/CORETutorials/Sharing/iSCSI/SettingUpFibreChannel.md" >}})
-
-[Setting Up NPIV]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/VirtualMachines/SettingUpNPIV.md" >}})
-
+{{< taglist tag="coreiscsi" limit="10" >}}

@@ -1,6 +1,9 @@
 ---
 title: "Jails Screens"
+description: "This article describes the fields in the Jails screen in TrueNAS CORE."
 weight: 10
+tags:
+- corejails
 ---
 
 The Jails screen displays a list of jails installed on your system. Use to add, edit or delete jails.
@@ -136,15 +139,4 @@ Use **Next** to advance to the next configuration settings section, or click the
 
 {{< /expand >}}
 
-## Additional Information
-For information on Jails screens and how to add or manage jails see:
-
-[Creating Jails]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Jails/CreatingJails.md" >}})
-
-[Managing Jails]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Jails/ManagingJails.md" >}})
-
-[Setting Up Jail Storage]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Jails/SettingUpJailStorage.md" >}})
-
-[Accessing Jails Using SSH]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Jails/AccessingJailsUsingSSH.md" >}})
-
-[Installing Jail Software]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Jails/InstallingJailSoftware.md" >}})
+{{< taglist tag="corejails" limit="10" >}}

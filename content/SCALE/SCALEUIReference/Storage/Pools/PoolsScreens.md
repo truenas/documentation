@@ -4,6 +4,10 @@ description: "This article provides information on Pool screens, settings and fu
 weight: 20
 tag: 
  - scalepools
+ - scaledatasets
+ - scalevdevs
+ - scalezvols
+ - scaleencryption
  - scalestorage
 ---
 
@@ -35,7 +39,7 @@ This counter keeps track of the total number of available disk in the system whe
 | **Available Disks** | Displays the list of disks on your system. Click the <span class="material-icons">chevron_right</span> expand icon to see the disk serial number and model number and where it is on the **Enclosure** screen (the position in the server if using iXsystems-provided hardware). |
 | **Data VDevs** | Default vdev type on the **Pool Manager** screen. After selecting a vdev type from the **Add Vdev** a new list displays under the **Data VDevs** list. |
 | **Repeat** | Click to create another vdev of the same type and configuration below the exiting **Data VDevs** list. |
-| Vdev type | The vdev type dropdown list below the **Data Vdevs** list displays **Stripe** but then changes to **Mirror** after you select two disks and move them to the **Data Vdevs** list. If you select more than two disk you can select different types from this list based on the number of disks moved.  |
+| **Vdev type** | The vdev type dropdown list below the **Data Vdevs** list displays **Stripe** but then changes to **Mirror** after you select two disks and move them to the **Data Vdevs** list. If you select more than two disk you can select different types from this list based on the number of disks moved.  |
 | **Estimated raw capacity** | Displays the raw storage capacity of the disks for the **Data VDev** type. For a mirror, this is the storage of one disk with the other disk provides redundancy. |
 | **Estimated total raw data capacity**<br>**Estimated data capacity available after extension** | The total estimated raw capacity of the disks in the vdev. **Estimated total raw data capacity** changes to **Estimated data capacity available after extension** on the **Add Vdevs to Pool** version of **Pool Manager**. |
 

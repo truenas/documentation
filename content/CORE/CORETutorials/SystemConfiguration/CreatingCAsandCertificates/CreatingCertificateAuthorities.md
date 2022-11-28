@@ -1,8 +1,12 @@
 ---
 title: "Creating Certificate Authorities (CAs)"
+description: "This article describes how to create or import certificates using TrueNAS CORE."
 weight: 10
 aliases:
   - /core/system/cas
+tags:
+- corecertificates
+- coreca
 ---
 
 {{< toc >}}
@@ -131,3 +135,5 @@ Select **Import a CA** as the **Type**.
 3. Enter and confirm the Private Key **Passphrase**.
 
 ![Import CA Certificate Subject](/images/CORE/12.0/ImportCACertificateSubject.png)
+
+{{< taglist tag="corecertificates" limit="10" >}}

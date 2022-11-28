@@ -11,16 +11,19 @@ tags:
 
 {{< toc >}}
 
+## Migration Notes
+
 {{< hint danger >}}
 Migrating TrueNAS from CORE to SCALE is a one-way operation. Attempting to activate or roll back to a CORE boot environment can break the system.
 You cannot upgrade CORE systems with High Availability enabled (HA) to SCALE HA.
 {{< /hint >}}
 
-{{< hint danger >}}
-#### Migrating GELI-encrypted Pools to SCALE
+TrueNAS systems on 12.0x or lower should update to the latest CORE 13.0 release (e.g 13.0-U2) prior to migrating to SCALE.
+
 TrueNAS SCALE is Linux based, so it does not support FreeBSD GELI encryption.
 If you have GELI-encrypted pools on your system that you plan to import into SCALE, you must migrate your data from the GELI pool to a non-GELI encrypted pool *before* migrating to SCALE.
-{{< /hint >}}
+
+TrueNAS SCALE validates the system certificates when a CORE system migrates to SCALE. When a malformed certificate is found, SCALE generates a new self-signed certificate to ensure system accessibility.
 
 ## Migration Methods
 
@@ -34,6 +37,10 @@ At the motherboard splash screen, use the hotkey defined by your motherboard man
 When the SCALE console setup screen appears, select **Install/Upgrade**.
 
 ![SCALEUpgrade1](/images/SCALE/SCALEUpgrade1.png "Install/Upgrade SCALE")
+ 
+ Select your TrueNAS boot disk
+ 
+![SCALEUpgrade02](/images/SCALE/ScaleSelectBootDrive.png "Select the boot drive")
 
 The installer asks if you want to preserve your existing configuration or start with a fresh installation. We recommend selecting **Upgrade Install** when migrating from CORE to SCALE to keep your configuration data. Then select **Install in new boot environment**.
 
@@ -44,6 +51,7 @@ The installer asks if you want to preserve your existing configuration or start 
 {{< hint warning>}}
 Although TrueNAS attempts to keep most of your CORE configuration data when upgrading to SCALE, some CORE-specific items do not transfer.
 GELI encrypted pools, NIS data, jails, tunables, and boot environments do not migrate from CORE to SCALE.
+VM storage and its basic configuration is transferred over during a migration. You need to double-check the VM configuration and the network interface settings specifically before starting the VM.
 AFP shares also do not transfer, but you can migrate them into an SMB share with AFP compatibility enabled. 
 Init/shutdown scripts transfer, but can break. Review them before use.
 The CORE netcli utility is also swapped for a new CLI utility to use for the Console Setup Menu and other commands issued in a CLI.
@@ -60,7 +68,7 @@ When TrueNAS SCALE boots, you might need to [use the Shell to configure networki
 ### Manual Update File Method
 
 Start by downloading the [SCALE manual update file](https://www.truenas.com/download-truenas-scale/).
-Confirm that the TrueNAS system is on the latest public, 12.0-U8 or better, release.
+Confirm that the TrueNAS system is on the latest public release, 13.0-U2 or better.
 
 Click **CHECK FOR UPDATES** in the **System Information** card on the **Dashboard** or go to **System > Update**.
 

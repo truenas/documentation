@@ -1,7 +1,10 @@
 ---
 title: "Using Shell"
+description: "This article describes how to use the shell on TrueNAS CORE."
 weight: 30
 Aliases: /core/administration/shell/
+tags:
+- coreshell
 ---
 
 {{< toc >}}
@@ -56,3 +59,4 @@ Click **Reconnect** to start a new session.
 The CLI `tmux` command provides the ability to detach shell sessions and then reattach to them later.
 Commands continue to run in a detached session.
 
+{{< taglist tag="coreshell" limit="10" >}}

@@ -1,6 +1,10 @@
 ---
 title: "Interfaces Screen"
+description: "This article describes the fields in the Network Interface screen on TrueNAS CORE."
 weight: 10
+tags:
+- corenetworkinterfaces
+- coreinterfaces
 ---
 
 Use the **Network > Interface** Screen to add various network interfaces to your TrueNAS. 
@@ -106,10 +110,4 @@ The **Interface Edit** screen displays only the editable configuration settings 
 
 Use **APPLY** to save changes to settings and return to the **Interfaces** screen.
 
-## Additional Information
-
-[Setting Up a Network Bridge]({{< relref "/CORE/CORETutorials/Network/Interfaces/BridgeCreate.md" >}}) 
-
-[Setting Up Link Aggregations]({{< relref "/CORE/CORETutorials/Network/Interfaces/LAGGCreate.md" >}})
-
-[Setting Up a VLAN]({{< relref "/CORE/CORETutorials/Network/Interfaces/VLANCreate.md" >}})
+{{< taglist tag="corenetworkinterfaces" limit="10" >}}

@@ -1,7 +1,11 @@
 ---
 title: "Installing Software"
+description: "This article describes how to install software using Jails in TrueNAS CORE."
 weight: 20
 Aliases: /core/applications/jails/software/
+tags:
+- corejails
+- corejailspluginsvm
 ---
 
 {{< toc >}}
@@ -219,16 +223,4 @@ The startup script also indicates if any additional parameters are available:
 # NAME_dir="/usr/local/etc/openvpn"
 # --cd directory
 ```
-## Additional Information
-
-For information on Jails screens and how to add or manage jails see:
-
-[Jails Screens]({{< relref "/CORE/UIReference/JailsPluginsVMs/Jails/JailsScreens.md" >}})
-
-[Creating Jails]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Jails/CreatingJails.md" >}})
-
-[Managing Jails]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Jails/ManagingJails.md" >}})
-
-[Setting Up Jail Storage]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Jails/SettingUpJailStorage.md" >}})
-
-[Accessing Jails Using SSH]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Jails/AccessingJailsUsingSSH.md" >}})
+{{< taglist tag="corejails" limit="10" >}}

@@ -1,8 +1,12 @@
 ---
 title: "Managing Enclosures"
+description: "This article provides information about hardware and expansion shelves on TrueNAS CORE."
 weight: 50
 aliases:
   - /core/system/viewenclosure
+tags:
+- coreenclosures
+- corehardware
 ---
 
 {{< hint ok >}}
@@ -29,3 +33,5 @@ You can rename a system by clicking **EDIT LABEL**.
 ## Identifying Disks
 
 In the **Disks** tab, select a disk on the enclosure image and click **IDENTIFY DRIVE**. The drive LED on the physical system flashes so you can find it.
+
+{{< taglist tag="corehardware" limit="10" >}}

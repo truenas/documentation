@@ -14,7 +14,7 @@ Alert events are also emailed to the root user account.
 Configure the system to send these emails to the administrator remote email account for fast awareness and resolution of any critical issues.
 
 {{< hint info >}}
-[Scrub Task]({{< relref "ScrubTasksSCALE.md" >}}) issues and [S.M.A.R.T. reports]({{< relref "SMARTTestsSCALE.md" >}}) are mailed separately to the address configured in those services.
+[Scrub Task]({{< relref "/SCALE/SCALETutorials/DataProtection/ScrubTasksSCALE.md" >}}) issues and [S.M.A.R.T. reports]({{< relref "/SCALE/SCALETutorials/DataProtection/SMARTTestsSCALE.md" >}}) are mailed separately to the address configured in those services.
 {{< /hint >}}
 ## Setting up User Accounts
 
@@ -99,7 +99,7 @@ Click **Send Test Email** to verify you receive an email.
 
 ## Setting up the Email Alert Service
 
-The final step to setting up system email and have alerts sent to that system email is to configure the email alert.
+The system email account is sent a system health email every night/morning, if it is configured. You can also add/configure the **Email Alert Service** to send timely email warnings, when the system hits a specific state that is [listed in Alert Settings]({{< relref "scale/scaleuireference/toptoolbar/alerts/alertsettingsscreen.md" >}}), to the email specified in the alert service.
 
 From the **Alerts** panel, select the <span class="material-icons">settings</span> icon and then **Alert Services**.
 

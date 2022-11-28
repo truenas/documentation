@@ -1,7 +1,10 @@
 ---
 title: "Shadow Copies"
+description: "This article describes how to configure shadow copies on TrueNAS CORE."
 weight: 30
 aliases: /core/sharing/smb/shadowcopies/
+tags:
+- coresmb
 ---
 
 [Shadow Copies](https://docs.microsoft.com/en-us/windows-server/storage/file-server/volume-shadow-copy-service), also known as the Volume Shadow Copy Service (VSS) or Previous Versions, is a Microsoft service for creating volume snapshots.
@@ -18,7 +21,7 @@ There are a few caveats about shadow copies to be aware of before activating the
 
 * Appropriate permissions must be configured on the pool or dataset shared by SMB.
 
-* Users cannot use an SMB client to delete shadow copies. Instead, the administrator use the TrueNAS web interface to remove snapshots. 
+* Users cannot use an SMB client to delete shadow copies. Instead, the administrator uses the TrueNAS web interface to remove snapshots. 
   Shadow copies can be disabled for an SMB share by clearing the checkmark from **Enable shadow copies** for the SMB share. 
   This does not prevent access to the hidden <file>.zfs/snapshot</file> directory for a ZFS dataset when the directory is located within the path for an SMB share.
   
@@ -35,12 +38,4 @@ The **DWORD AllowInsecureGuestAuth** is an incorrect value: **0x00000000**. Chan
 You can apply this to a fleet of Windows machines with a Group Policy Update.
 {{< /expand >}}
 
-## Additional Information
-
-[SMB Share Screen]({{< relref "/CORE/UIReference/Sharing/SMB/SMBShareScreen.md" >}})
-
-[SMB Service Screen]({{< relref "/CORE/UIReference/Services/SMBScreen.md" >}})
-
-[SMB Share Creation]({{< relref "/CORE/CORETutorials/Sharing/SMB/SMBShare.md" >}})
-
-[Managing SMB Shares]({{< relref "/CORE/CORETutorials/Sharing/SMB/ManagingSMBShares.md" >}})
+{{< taglist tag="coresmb" limit="10" >}}

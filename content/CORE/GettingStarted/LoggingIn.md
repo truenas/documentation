@@ -1,6 +1,10 @@
 ---
 title: "Logging In"
+description: "This article describes how the logging in process on TrueNAS CORE."
 weight: 50
+tags:
+- coregettingstarted
+- coreloggingin
 ---
 
 Now that TrueNAS is installed, it's time to log in to the web interface and begin managing data!
@@ -85,6 +89,10 @@ These settings can be adjusted later in the various **Network** options availabl
 
 On a computer that can access the same network as the TrueNAS system, enter the hostname and domain or IP address in a web browser to connect to the web interface.
 
+{{< hint info >}}
+The quality of your user experience can be impacted by the browser that you use. We generally recommend using Firefox, Edge, or Chrome.
+{{< /hint >}}
+
 ![LoginCORE](/images/CORE/12.0/LoginCORE.png "TrueNAS CORE Login Screen")
 
 Enter the administrative account credentials to log in.
@@ -137,3 +145,5 @@ For users with compatible TrueNAS Hardware, clicking the system image goes to th
 The **Dashboard** provides access to all TrueNAS management options.
 
 Now that you can access the TrueNAS web interface and see all the management options, it's time to begin [storing data]({{< relref "StoringData.md" >}})!
+
+{{< taglist tag="coregettingstarted" limit="10" >}}

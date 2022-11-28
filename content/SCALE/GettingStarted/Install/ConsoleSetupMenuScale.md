@@ -8,6 +8,7 @@ tags:
 - scaleinstall
 - scalenetwork
 - scaleinterface
+- scaleconsole
 ---
 
 {{< toc >}}

@@ -1,7 +1,10 @@
 ---
 title: "Home Shares"
+description: "This article describes how to configure a Home Share on TrueNAS CORE."
 weight: 20
 aliases: /core/sharing/smb/homeshare/
+tags:
+- coresmb
 ---
 
 {{< toc >}}
@@ -66,12 +69,4 @@ Adjust the user home directory to the appropriate dataset and give it a name to 
 
 After the user accounts have been added and permissions configured, users can log in to the share and see a folder matching their user name.
 
-## Additional Information
-
-[SMB Share Screen]({{< relref "/CORE/UIReference/Sharing/SMB/SMBShareScreen.md" >}})
-
-[SMB Service Screen]({{< relref "/CORE/UIReference/Services/SMBScreen.md" >}})
-
-[SMB Share Creation]({{< relref "/CORE/CORETutorials/Sharing/SMB/SMBShare.md" >}})
-
-[Managing SMB Shares]({{< relref "/CORE/CORETutorials/Sharing/SMB/ManagingSMBShares.md" >}})
+{{< taglist tag="coresmb" limit="10" >}}

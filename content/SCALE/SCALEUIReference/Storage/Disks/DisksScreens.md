@@ -27,6 +27,15 @@ Click the the <span class="iconify" data-icon="ant-design:down-outlined"></span>
 
 Click **Edit** to display the **Edit Disk** screen.
 
+Click **Manual Test** to initiate a S.M.A.R.T. test of the disk.
+
+Click **S.M.A.R.T. Test Results** to open a new screen to view the results of each S.M.A.R.T. test that has run against that disk.
+In the test results screen, click an entry to view the results of the test:
+![SMARTResultsScreen](/images/SCALE/22.02/SMARTResultsScreen.png "S.M.A.R.T. Results")
+* **Remaining** shows how much of the test is left to perform. If the test encountered an error, the field shows at what point in the test the error occurred. A value of **0** means the test completed and no errors were encountered.
+* **Lifetime** shows the age of the disk when the test ran.
+* **Error** shows **N/A** when no error was encountered during the test. If an error is encountered, this field shows details about the error.
+
 Click **Wipe** to wipe data from the disk. See [Wiping Disks]({{< relref "/SCALE/SCALETutorials/Storage/Disks/WipingDisks.md" >}}) for more information.
 
 ## Edit Disk Screen
@@ -66,7 +75,7 @@ The **Edit Pool Disk** screen, accessed from the **Pool Status** screen, display
 
 | Setting | Description |
 |---------|-------------|
-| **Enable S.M.A.R.T.** | Select to enable the system to conduct periodic [S.M.A.R.T. tests]({{< relref "/SCALE/SCALEUIReference/DataProtection/SMARTTestsSCALE.md" >}}). |
+| **Enable S.M.A.R.T.** | Select to enable the system to conduct periodic [S.M.A.R.T. tests]({{< relref "/SCALE/SCALETutorials/DataProtection/SMARTTestsSCALE.md" >}}). |
 | **S.M.A.R.T. extra options** | Enter additional [smartctl(8)](https://www.unix.com/man-page/suse/8/smartctl/) options. |
 | **SED Password** | Enter a password to set or change the password of the SED for this disk and to use instead of the global SED password. |
 | **Clear SED Password** | Select to clear the SED password for this disk. |

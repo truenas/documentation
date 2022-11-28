@@ -1,8 +1,12 @@
 ---
 title: "Configuring ACME DNS"
+description: "This article describes how to configure ACME on the open-source supported TrueNAS CORE."
 weight: 160
 aliases:
   - /core/system/acmedns
+tags:
+- coreacme
+- corecertificates
 ---
 
 {{< toc >}}
@@ -14,7 +18,7 @@ This feature is only available in the open-source supported TrueNAS CORE.
 [Automatic Certificate Management Environment (ACME)](https://ietf-wg-acme.github.io/acme/draft-ietf-acme-acme.html) is available for automating certificate issuing and renewal.
 The user must verify ownership of the domain before certificate automation is allowed.
 
-ACME certificate automation requires an ACME DNS Authenticator and a [Certificate Signing Request]({{< relref "Certificates.md" >}}).
+ACME certificate automation requires an ACME DNS Authenticator and a [Certificate Signing Request]({{< relref "/CORE/UIReference/System/Certificates.md" >}}).
 
 ## Adding ACME DNS Authenticators
 
@@ -43,3 +47,5 @@ To create a new ACME certificate, go to **System > Certificates**, click <i clas
 Give the ACME certificate an identifier (name), and accept the TOS by setting **Terms of Service**.
 
 For the **Authenticator**, select the ACME DNS authenticator you created, then click **SUBMIT**.
+
+{{< taglist tag="coreacme" limit="10" >}}

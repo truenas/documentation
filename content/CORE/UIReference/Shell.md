@@ -1,6 +1,9 @@
 ---
 title: "Shell"
+description: "This article describes the web interface for the web shell on TrueNAS CORE."
 weight: 140
+tags:
+- coreshell
 ---
 
 The web interface has a web shell that makes it convenient to run command line tools from the web browser as the root user.
@@ -22,3 +25,5 @@ Shell command history is available for the current session.
 The default shell for a new installations is zsh. See [Changing the Default Shell]({{< relref "/CORE/CORETutorials/ChangingDefaultShell.md" >}}) for instructions on changing to a different shell.
 
 See [Using Shell]({{< relref "/CORE/CORETutorials/UsingShell.md" >}}) for information on navigating in shell, typing commands, and other general instructions.
+
+{{< taglist tag="coreshell" limit="10" >}}
