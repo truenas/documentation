@@ -27,7 +27,7 @@ Go to the [TrueNAS project on Jira](https://ixsystems.atlassian.net/jira/softwar
 
 ![Create Ticket](/images/Contribute/JiraCreate.png "Create Ticket")
 
-Set the *Issue Type* to *Bug*. The form will reload with more fields.
+Set the *Issue Type* to *Bug*. The form reloads with more fields.
 Developers use most of them, but you should fill out the *Summary* and *Description* to provide a useable report.
 
 The *Summary* is a short, descriptive title that helps developers find the issue and understand the topic.
@@ -38,7 +38,7 @@ The *Description* lets you enter specific issue details.
 
 A good bug report includes these elements:
 
-* A brief specific description detailing the problem you encountered.
+* A brief, specific, description detailing the problem you encountered.
 
 * Steps to reproduce the issue. A simple list of the steps you took to see the issue is fine.
 
@@ -63,7 +63,7 @@ When finished filling out the *Description*, click *Create* at the bottom of the
 
 ![Submit Ticket](/images/Contribute/JiraCreateBottom.png "Submit Ticket")
 
-Developers will review and update the ticket if/when they need additional information.
+Developers review and update the ticket if/when they need additional information.
 The Jira account receives emails about the ticket status.
 Developers may request more details as they work to resolve the issue, so check the ticket periodically.
 
@@ -82,11 +82,11 @@ If you have discovered a suspected security vulnerability in the latest version 
 
 
 ## Creating a Debug File
-{{< expand "Expand for more information about Creatind a debug file" "v" >}}
+{{< expand "Expand for more information about Creating a debug file" "v" >}}
 {{< include file="static/includes/CORE/CreateDebug.md.part" markdown="true" >}}
 
 ### Adding a Debug File to a Report
-Jira provides a public facing area for files that do not require privacy. There is also a secure developer only area for uploading files with sensitive information like a system debug.
+Jira provides a public facing area for files that do not require privacy. There is also a secure, developer only, area for uploading files with sensitive information like a system debug.
 
 ### New Tickets
 
@@ -98,9 +98,9 @@ Clicking **+** in the **Attachments** section opens a local system file browser 
 
 ### Existing Tickets
 
-For public facing files, open the ticket in your browser and either click **Attach** at the top of the ticket or click the *+* to open a file seletion dialog box. Select the file, and click the **Open** button to add it to the **Attachments** section.
+For public facing files, open the ticket in your browser and either click **Attach**, at the top of the ticket, or click the **+** to open a local system file browser to select the files. Click the **Open** button to add it to the **Attachments** section.
 
-You can also drag and drop the file, add any comments about it, then click *Attach*.
+You can also drag and drop the file, add any comments about it, then click **Attach**.
 
 Upload private files to our secure, private, upload service located at 
 https://ixsystems.atlassian.net/servicedesk/customer/portal/15/group/37/create/153”. Files uploaded to this service are only visible to project developers. JIRA removes them when closing the ticket.
