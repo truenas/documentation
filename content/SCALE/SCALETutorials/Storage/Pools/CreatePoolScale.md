@@ -44,7 +44,7 @@ You access the **Pool Manager** from the **Storage Dashboard**.
 Click **Storage** on the main navigation panel on the left of the screen.  
 Click **Create Pool** to open the **Pool Manager** screen for new pools.
 
-![CreatePoolPoolManagerScreen](/images/SCALE/22.12/CreatePoolPoolManagerScreen.png "Crete Pool Pool Manager")
+![CreatePoolPoolManagerScreen](/images/SCALE/22.12/CreatePoolPoolManagerScreen.png "Create Pool Pool Manager")
 
 If you already have a pool created on your system you can use either the **Create Pool** button at the top right of the screen or click the **Add to a Pool** button on the **Unused Resources** widget to create a new pool.
 
@@ -102,7 +102,7 @@ You must then confirm you understand the warning before you can continue.
 You can add disks to the data VDEV manually or click the **Suggest Layout** button and allow TrueNAS to review all available disks and populate the primary **Data VDevs** with identically sized drives in a configuration balanced between storage capacity and data redundancy. 
 If you don't want to use the suggested layout, click **Reset Layout** to clear the data VDEV layout and move the disks back to the **Available Disks** list. 
 
-To manually add disks, select the checkboxes to the left of each disks you want to add and then click the <i class="fa fa-arrow-right" aria-hidden="true" title="Right Arrow"></i>&nbsp; to the left of the data VDEV to move the disks over. See [About Data VDEV Layouts](#about-data-vdev-layouts) or the [Pool Manager Screen]({{< relref "PoolManagerScreens.md" >}}) for more information on data VDEV layouts.
+To manually add disks, select the checkboxes to the left of each disk you want to add and then click the <i class="fa fa-arrow-right" aria-hidden="true" title="Right Arrow"></i>&nbsp; to the left of the data VDEV to move the disks over. See [About Data VDEV Layouts](#about-data-vdev-layouts) or the [Pool Manager Screen]({{< relref "PoolManagerScreens.md" >}}) for more information on data VDEV layouts.
 
 Next, if you want to add another type of VDEV, click **Add Vdev** and select the VDEV type from the options.
 Each VDEV type stores data or enables unique features for the pool.
