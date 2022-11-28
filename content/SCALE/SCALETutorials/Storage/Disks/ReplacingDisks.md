@@ -25,7 +25,7 @@ TrueNAS wipes the data on the replacement disk as part of the process.
 
 ## Replacing a Failed Disk
 
-If you configure your main SCALE **Dashboard** to include individual **Pool** or the **Storage** widgets they show the status of your system pools as on or offline, degraded or in an error condition. 
+If you configure your main SCALE **Dashboard** to include individual **Pool** widgets or the **Storage** widget, they show the status of your system pools as on or offline, degraded, or in an error condition. 
 
 ![MainDashboardPoolAndStorageWidgetsDegraded](/images/SCALE/22.12/MainDashboardPoolAndStorageWidgetsDegraded.png "Main Dashboard Pool and Storage Widgets Degraded")
 
