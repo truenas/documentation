@@ -82,7 +82,7 @@ If you have discovered a suspected security vulnerability in the latest version 
 
 
 ## Creating a Debug File
-{{< expand "Expand for more information" "v" >}}
+{{< expand "Expand for more information about Creatind a debug file" "v" >}}
 {{< include file="static/includes/CORE/CreateDebug.md.part" markdown="true" >}}
 
 ### Adding a Debug File to a Report
@@ -115,6 +115,8 @@ https://ixsystems.atlassian.net/servicedesk/customer/portal/15/group/37/create/1
 ## Web Console Log
 Web console logs help diagnose problems with the user interface.
 You can add logs to TrueNAS issues for debugging.
+
+{{< expand "Expand for more information about the web console log." "v" >}}
 
 ### Firefox
 
