@@ -94,8 +94,6 @@ Drag and drop public facing files into the **Attachment** box when creating a ne
 
 ![JiraAttachmentNew](/images/Contribute/newjiraattachments.png "NAS Project Bug Creation Form")
 
-Clicking **+** in the **Attachments** section opens a local system file browser for selecting files.
-
 ### Existing Tickets
 
 For public facing files, open the ticket in your browser and either click **Attach**, at the top of the ticket, or click the **+** to open a local system file browser to select the files. Click the **Open** button to add it to the **Attachments** section.
