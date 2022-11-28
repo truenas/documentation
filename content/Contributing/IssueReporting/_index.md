@@ -94,21 +94,15 @@ Drag and drop public facing files into the **Attachment** box when creating a ne
 
 ![JiraAttachmentNew](/images/Contribute/JiraAttachmentNew.png "NAS Project Bug Creation Form")
 
-Clicking *browse* opens a local system file browser for selecting files.
+Clicking **+** in the **Attachments** section opens a local system file browser for selecting files.
 
 ### Existing Tickets
 
-For public facing files, open the ticket in your browser and find the **Attachments** section.
+For public facing files, open the ticket in your browser and either click **Attach** at the top of the ticket or click the *+* to open a file seletion dialog box. Select the file, and click the **Open** button to add it to the **Attachments** section.
 
-![JiraAttachmentExisting](/images/Contribute/JiraAttachmentExisting.png "Jira Ticket: Private Attachments")
+You can also drag and drop the file, add any comments about it, then click *Attach*.
 
-Click the *+* to open a dialog for adding a new file to this area.
-
-![JiraNASAttachPrivateDialog](/images/Contribute/JiraNASAttachPrivateDialog.png "Attaching a private file")
-
-Drag and drop the file, add any comments about it, then click *Attach*.
-
-Upload private files to our secure and private upload service located at 
+Upload private files to our secure, private, upload service located at 
 https://ixsystems.atlassian.net/servicedesk/customer/portal/15/group/37/create/153”. Files uploaded to this service are only visible to project developers. JIRA removes them when closing the ticket.
 {{< /expand >}}
 
