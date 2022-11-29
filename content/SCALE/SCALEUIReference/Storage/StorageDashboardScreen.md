@@ -43,7 +43,7 @@ This same information displays on both the **Storage** widget and a pool widget 
 ## Storage Dashboard Widgets
 The **Storage Dashboard** widgets organize storage and related functions for each pool. 
 
-The **Unassigned Diks** widget remains at the top of the dashboard and provides the number of available disks on the system to use in pools. 
+The **Unassigned Disks** widget remains at the top of the dashboard and provides the number of available disks on the system to use in pools. 
 Each pool has a set of four widgets: **[Topology](#topology-widget)** for managing pool virtual devices or VDEVs, **[Usage](#usage-widget)** for managing datasets and zvols, **[ZFS Health](#zfs-health-widget)** for managing pool health and pool functions like scrub and auto TRIM, and **[Disk Health](#disk-health-widget)** for managing disks and disk health. 
 Each set of pool widgets provide access to screens for each storage type with the information for the pool pre-selected. For example, **Manage Devices** on the **[Topology](#topology-widget)** widget opens the **Devices** screen with the VDEVs configured for that pool and not all pools on the system.
 
