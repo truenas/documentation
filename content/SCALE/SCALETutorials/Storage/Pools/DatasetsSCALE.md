@@ -112,7 +112,7 @@ Before setting this property, you must add a [special class vdev]({{< relref "Fu
 
 ## Managing Datasets
 
-After creating a dataset, users can manage additional options by going to **Storage** and clicking the dataset <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; icon to display the **Dataset Actions** list. We describe each option in detail in the [Storage Dashboard Screen]({{< relref "StorageDashboardScreen.md" >}}) article.
+After creating a dataset, users can manage additional options by going to **Storage** and clicking the dataset <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; icon to display the **Dataset Actions** list. Each option is described in detail in the [Storage Dashboard Screen]({{< relref "StorageDashboardScreen.md" >}}) article.
 
 ### Editing a Dataset
 Select **Edit Options** to change the dataset configuration settings. You can change all settings except **Name**, **Case Sensitivity**, or **Share Type**.

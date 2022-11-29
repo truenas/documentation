@@ -21,7 +21,7 @@ The **Storage Dashboard** displays the **No Pools** screen with a **Create Pool*
 
 Both the **Create Pool** button on the top right and at the center of the screen open the **Create Pool > [Pool Manager]({{< relref "PoolManagerScreens.md" >}})** configuration screen. 
 
-After adding a pool, the screen displays five widgets. The **[Unused Resources](#unused-resources)** widget remains at the top of the dashboard and the other four are a set that displays for each pool created on the system. 
+After adding a pool, the screen displays five widgets. The **[Unassigned Disks](#unassigned-disks-widget)** widget remains at the top of the dashboard and the other four are a set that displays for each pool created on the system. 
 
 ![StorageDashboardWithPool](/images/SCALE/22.12/StorageDashboardWithPool.png "SCALE Storage Dashboard with Pool") 
 
@@ -43,22 +43,19 @@ This same information displays on both the **Storage** widget and a pool widget 
 ## Storage Dashboard Widgets
 The **Storage Dashboard** widgets organize storage and related functions for each pool. 
 
-The **Unassigned Resources** widget remains at the top of the dashboard and provides the number of available disks on the system to use in pools. 
+The **Unassigned Diks** widget remains at the top of the dashboard and provides the number of available disks on the system to use in pools. 
 Each pool has a set of four widgets: **[Topology](#topology-widget)** for managing pool virtual devices or VDEVs, **[Usage](#usage-widget)** for managing datasets and zvols, **[ZFS Health](#zfs-health-widget)** for managing pool health and pool functions like scrub and auto TRIM, and **[Disk Health](#disk-health-widget)** for managing disks and disk health. 
-Each set of pool widgets provides access to screens for each storage type with the information for the pool pre-selected. For example, **Manage Devices** on the **[Topology](#topology-widget)** widget opens the **Devices** screen with the VDEVs configured for that pool and not all pools on the system.
+Each set of pool widgets provide access to screens for each storage type with the information for the pool pre-selected. For example, **Manage Devices** on the **[Topology](#topology-widget)** widget opens the **Devices** screen with the VDEVs configured for that pool and not all pools on the system.
 
-### Unused Resources Widget
-The **Unused Resources Unassigned Disks** widget displays the number of disks available on your system to use in pools. The disk count includes disks assigned in exported pools. If you attempt to use a disk assigned in an exported pool, a warning message displays that prompts you to select a different disk.
+### Unassigned Disks Widget
+The **Unassigned Disks** widget displays the number of disks available on your system to use in pools. The disk count includes disks assigned in exported pool. If you attempt to use a disk assigned in an exported pool a warning message displays that prompts you to select a different disk.
 
 {{< expand "Click Here for More Information" "v" >}}
 To see information on each disk on the system, click **Manage Disks** on the **[Disk health](#disk-health-widget)** widget.
 
-![StorageDashboardUnusedResourcesWidget](/images/SCALE/22.12/StorageDashboardUnusedResourcesWidget.png "Storage Dashboard Unused Resources Widget") 
+![StorageDashboardUnassignedDisksWidget](/images/SCALE/22.12/StorageDashboardUnassignedDisksWidget.png "Storage Dashboard Unassigned Disks Widget") 
 
 **Add To Pool** opens the **[Add to Pool](#add-to-pool-window)** window. 
-
-**New Pool** opens the **Create Pool > [Pool Manager]({{< relref "PoolManagerScreens.md" >}})** screen. 
-**Existing Pool** opens the **Add VDevs to Pool > [Pool Manager]({{< relref "PoolManagerScreens.md" >}})** screen.
 {{< /expand >}}
 
 #### Add To Pool Window
@@ -70,8 +67,9 @@ The **Add to Pool** window allows you to select a disk or disks to add to either
 The **Unassigned Disks** area displays the amount of storage and number of disks that provides that storage.
 
 The **Add Disks To** area includes two radio buttons:
-* **New Pool** adds a new pool.
-* **Existing Pool** adds the **Existing Pool** field where you select the existing pool from the dropdown list.
+
+**New Pool** opens the **Create Pool > [Pool Manager]({{< relref "PoolManagerScreens.md" >}})** screen. 
+**Existing Pool** opens the **Add VDevs to Pool > [Pool Manager]({{< relref "PoolManagerScreens.md" >}})** screen.
    
    ![AddToPool-ExistingWindow](/images/SCALE/22.12/AddToPool-ExistingWindow.png "Add To Existing Pool") 
 
@@ -82,7 +80,7 @@ The **Add Disks To** area includes two radio buttons:
 The **Topology** widget provides information on VDEVS configured on the system and the status on the pool. 
 {{< expand "Click Here for More Information" "v" >}}
 The widget lists each VDEV type (data, metadata, log, cache, spare, and dedup). 
-A **Data VDEV** includes the data type (stripe, mirror, RAID, or mixed configuration), the number of disks (**wide**), and the storage capacity of that VDEV.
+A **Data VDEV** include the data type (stripe, mirror, RAID, or mixed configuration), the number of disks (**wide**), and storage capacity of that VDEV.
 
 ![StorageDashboardTopologyWidget](/images/SCALE/22.12/StorageDashboardTopologyWidget.png "Storage Dashboard Topology Widget") 
 
@@ -92,7 +90,7 @@ A **Data VDEV** includes the data type (stripe, mirror, RAID, or mixed configura
 The **Usage** widget provides information on the space configured datasets use and the status of pool usage. 
 {{< expand "Click Here for More Information" "v" >}}
 The widget includes a donut chart that illustrates the percentage of space used on the pool. 
-This color-coded graph displays space usage in the 0-80% range as blue, and anything above 80% as red.
+This color-coded graph displays space usage in the 0-80% range in blue indicates and anything above 80% in red.
 A warning displays below this donut graph when usage is above 80%. 
 **Usable Capacity** details the selected pool space statistics by **Used**, **Available**, and **Used by Snapshots**. 
 
@@ -168,7 +166,7 @@ The **Import Pool** button opens the **Import Pool** screen.
 
 ![ImportPoolScreen](/images/SCALE/22.12/ImportPoolScreen.png "Import Pool Screen") 
 
-Select a pool from the **Pool** dropdown list that TrueNAS detects as present on the system but not yet connected in TrueNAS. 
+Select a pool from the **Pool** dropdown list TrueNAS detects as present on the system but that is not yet connected in TrueNAS. 
 
 **Import** starts the process to connect the pool in TrueNAS and bring it into SCALE. Import also reconnects pools after users reinstall or upgrade their TrueNAS system.
 
@@ -183,9 +181,9 @@ Exporting/disconnecting can be a destructive process! Back up all data before pe
 
 ![ExportDisconnectPoolWindow](/images/SCALE/22.12/ExportDisconnectPoolWindow.png "Export/Disconnect Pool Window")
 
-If a share uses the pool, this window displays the share type (for example, SMB share, etc.) affected by the export/disconnect operation.
+If a share uses the pool this window displays the share type (for example, SMB share, etc.) affected by the export/disconnect operation.
 
-Disks in an exported pool become available to use in a new pool but remain marked as used by the exported pool. If you select a disk used by an exported pool to use in a new pool, the system displays a warning message about the disk.
+Disks in an exported pool become available to use in a new pool but remain marked as used by an exported pool. If you select a disk used by an exported pool to use in a new pool the system displays a warning message about the disk.
 
 | Setting | Description |
 |---------|-------------|

@@ -24,8 +24,9 @@ Select **Storage** on the main navigation panel and then click the **Edit Auto T
 
 ![PoolOptionsAuotTRIM](/images/SCALE/22.12/PoolOptionsAuotTRIM.png "Pool Edit Auto TRIM Dialog")
 
-Select **Auto TRIM** and click **Save**.. 
+Select **Auto TRIM**. 
 
+And click **Save**.
 
 With **Auto TRIM** selected and active, TrueNAS periodically checks the pool disks for storage blocks it can reclaim. Auto TRIM can impact pool performance, so the default setting is disabled. 
 
@@ -33,7 +34,7 @@ For more details about TRIM in ZFS, see the `autotrim` property description in [
 
 ## Exporting/Disconnecting or Deleting a Pool
 
-The **Export/Disconnect** option allows you to disconnect a pool and transfer drives to a new system where you can import the pool or completely delete the pool and any data stored on it. 
+The **Export/Disconnect** option allows you to disconnect a pool and transfer drives to a new system where you can import the pool or to completely delete the pool and any data stored on it. 
 
 Select **Export/Disconnect** on the **Storage Dashboard**.
 

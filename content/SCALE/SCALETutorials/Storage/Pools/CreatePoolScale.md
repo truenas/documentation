@@ -25,7 +25,7 @@ ZFS and VDEVs combined create high-performance pools that maximize data lifetime
 
 ## Review Storage Needs
 
-We strongly recommend you review your available system resources and plan your storage use case before creating a storage pool.
+It is strongly recommended that you review your available system resources and plan your storage use case before creating a storage pool.
 * Allocating more drives to a pool increases redundancy when storing critical information.
 * Maximizing total available storage at the expense of redundancy or performance entails allocating large-volume disks and configuring a pool for minimal redundancy.
 * Maximizing pool performance entails installing and allocating high-speed SSD drives to a pool.
@@ -44,7 +44,7 @@ You access the **Pool Manager** from the **Storage Dashboard**.
 Click **Storage** on the main navigation panel on the left of the screen.  
 Click **Create Pool** to open the **Pool Manager** screen for new pools.
 
-![CreatePoolPoolManagerScreen](/images/SCALE/22.12/CreatePoolPoolManagerScreen.png "Create Pool Pool Manager")
+![CreatePoolPoolManagerScreen](/images/SCALE/22.12/CreatePoolPoolManagerScreen.png "Crete Pool Pool Manager")
 
 If you already have a pool created on your system you can use either the **Create Pool** button at the top right of the screen or click the **Add to a Pool** button on the **Unused Resources** widget to create a new pool.
 
@@ -80,12 +80,12 @@ The **Available Disks** table lists all available disks detected on the system i
 {{< /hint >}}
 
 {{< hint info >}}
-Disks with non-unique serial numbers do not populate the **Available Disks** section until you select **Show disk with non-unique serial numbers**.
+Disks with non-unique serial number do not populate the **Available Disks** section until you select **Show disk with non-unique serial numbers**.
 {{< /hint >}}
 
 {{< expand "Can I create one pool with different data VDEV layouts?" "v" >}}
 TrueNAS SCALE does not support adding multiple data VDEV layouts (or types) in one pool, for example a mirror data VDEV and a RAID data VDEV in the same pool.
-Create a new pool when you need a different data VDEV layout.
+Create a new pool when a different data VDEV layout is required.
 For example, *pool1* has a data VDEV in a *mirror* layout, so create *pool2* for any *raid-z* VDEVs.
 {{< /expand >}}
 
@@ -102,7 +102,7 @@ You must then confirm you understand the warning before you can continue.
 You can add disks to the data VDEV manually or click the **Suggest Layout** button and allow TrueNAS to review all available disks and populate the primary **Data VDevs** with identically sized drives in a configuration balanced between storage capacity and data redundancy. 
 If you don't want to use the suggested layout, click **Reset Layout** to clear the data VDEV layout and move the disks back to the **Available Disks** list. 
 
-To manually add disks, select the checkboxes to the left of each disk you want to add and then click the <i class="fa fa-arrow-right" aria-hidden="true" title="Right Arrow"></i>&nbsp; to the left of the data VDEV to move the disks over. See [About Data VDEV Layouts](#about-data-vdev-layouts) or the [Pool Manager Screen]({{< relref "PoolManagerScreens.md" >}}) for more information on data VDEV layouts.
+To manually add disks, select the checkboxes to the left of each disks you want to add and then click the <i class="fa fa-arrow-right" aria-hidden="true" title="Right Arrow"></i>&nbsp; to the left of the data VDEV to move the disks over. See [About Data VDEV Layouts](#about-data-vdev-layouts) or the [Pool Manager Screen]({{< relref "PoolManagerScreens.md" >}}) or more information on data VDEV layouts.
 
 Next, if you want to add another type of VDEV, click **Add Vdev** and select the VDEV type from the options.
 Each VDEV type stores data or enables unique features for the pool.
@@ -141,8 +141,8 @@ A single disk failure results in losing all data in the vdev.
 {{< /hint >}}
 {{< /expand >}}
 {{< expand "Mirror" >}}
-A **Mirror** VDEV stores on both disks, and data is identical on each disk.
-A mirror VDEV requires at least two disks. It has the most redundancy and the least capacity.
+A **Mirror** VDEV stores on both disks, data is identical in each disk.
+A mirror VDEV requires at least two disks, has the most redundancy, and the least capacity.
 {{< /expand >}}
 {{< expand "RAIDZ1" >}}
 A **RAIDZ1** uses one disk for parity while all other disks store data.

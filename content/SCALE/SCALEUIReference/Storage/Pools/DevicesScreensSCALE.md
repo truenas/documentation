@@ -27,8 +27,8 @@ Click anywhere on a drive to see the [drive widgets](#disk-widgets).
 
 ## ZFS Info Widget (VDEV)
 
-TrueNAS has two versions of the **ZFS Info** widget, one for the VDEV and the other for each drive in the VDEV. 
-The **ZFS Info** widget for the VDEV displays a count of read, write, and checksum errors for that VDEV, and the **Extend** and **Remove** options. 
+There are two versions of the **ZFS Info** widget, one for the VDEV the other for each drive in the VDEV. 
+The **ZFS Info** widget for the VDEV displays a count of read, write and checksum errors for that VDEV, and the **Extend** and **Remove** options. 
 
 ![DevicesVDEVZFSInfoWidget](/images/SCALE/22.12/DevicesVDEVZFSInfoWidget.png "Devices Details for Mirror ZFS Info Widget")  
 
@@ -37,11 +37,11 @@ The **ZFS Info** widget for the VDEV displays a count of read, write, and checks
 ![DevicesExtendVDEVDialog](/images/SCALE/22.12/DevicesExtendVDEVDialog.png "Devices Extend VDEV Dialog")  
 
 **Remove** opens the **Remove device** dialog where you confirm you want to remove the selected VDEV. 
-To remove a drive from the VDEV, select the drive, then select **Detach** on the **[ZFS Info](#zfs-info-widget-drives)** widget to remove the drive from the VDEV (pool).
+To remove a drive from the VDEV, select the drive then select **Detach** on the **[ZFS Info](#zfs-info-widget-drives)** widget to remove the drive from the VDEV (pool).
 
 ## Disk Widgets
 Each disk in a VDEV has a set of four widgets that provide information on that disk. 
-After selecting a disk, the widgets display on the right side of the screen in the **Details for *diskname*** area of the screen.
+After selecting a disk the widgets display on the right side of the screen in the **Details for *diskname*** area of the screen.
 
 ![DevicesDiskWidgets](/images/SCALE/22.12/DevicesDiskWidgets.png "Devices Disk Widgets") 
 
@@ -103,7 +103,7 @@ The **Disk Info** widget displays information on the **Disk Size**, **Transfer M
 Select the new disk for the pool from the **Member Disk** dropdown list. 
 The system prevents losing existing data by stopping the add operation for the new disk if the disk is already in use or has partitions present.
 
-**Force** overrides the safety check and adds the disk to the pool. Selecting this option erases any data stored on the disk!
+**Force** overrides safety check and adds the disk to the pool. Selecting this option erases any data stored on the disk!
 
 **Replace Disk** adds the new disk to the pool.
 {{< /expand >}}
