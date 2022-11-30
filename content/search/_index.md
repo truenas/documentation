@@ -1,4 +1,0 @@
----
-title: Search
-GeekdocHidden: true
----
