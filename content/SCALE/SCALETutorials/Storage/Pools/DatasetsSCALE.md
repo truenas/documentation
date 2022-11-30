@@ -20,13 +20,18 @@ We recommend organizing your pool with datasets before configuring [data sharing
 
 ## Creating a Dataset
 
-To create a dataset using the default settings, go to **Datasets**. Default settings includes settings datasets inherit from the parent dataset.
+To create a dataset using the default settings, go to **Datasets**. 
+Default settings includes the settings datasets inherit from the parent dataset.
 
 Select a dataset (root, parent or child), then click **Add Dataset**.
 
 ![AddDatasetNameAndOptions](/images/SCALE/22.12/AddDatasetNameAndOptions.png "Add Dataset Name and Options")
 
-Enter a name, select either **Sensitive** or **Insensitive** from the **Case Sensitivity** dropdown, and either select **SMB** or leave **Share Type** set to **Generic**, then click **Save**.
+Enter a value in **Name**.
+
+Select either **Sensitive** or **Insensitive** from the **Case Sensitivity** dropdown.
+
+Select either **SMB** for the **Share Type** or leave set to **Generic**, then click **Save**.
 
 ![AddDatasetEncrytionAndOtherOptionsBasic](/images/SCALE/22.12/AddDatasetEncrytionAndOtherOptionsBasic.png "Add Encryption and Other Options")
 
@@ -112,17 +117,15 @@ Select the dataset on the tree table, then click **Edit** on the **Dataset Detai
 
 ### Editing Dataset Permissions
 
-Select **Edit** on the  **Permissions** widget. 
-
-If the **Permissions** widget is for a dataset with an NFSv4 ACL type, each listed ACL item is a button you can click to open a permissions editor for that ACL item. 
+The **Permissions** widget for a dataset with an NFSv4 ACL type, converts each listed ACL item a button that opens a permissions editor for that ACL item. 
 To configure new ACL items for an NFSv4 ACL, click **Edit** to open the **ACL Editor** screen.
 
 To edit a POSIX ACL type, click **Edit** on the **Permissions** widget to open the **Unix Permissions Editor** screen.
 
-For more information, see the [permissions]({{< relref "PermissionsSCALE.md" >}}) article.
+For more information, see the [Setting Up Permissions]({{< relref "PermissionsSCALE.md" >}}) article.
 
 ### Deleting a Dataset
-Select the dataset on the tree table, then click **Delete** on the **Dataset Details** widget to delete the dataset, all stored data, and any snapshots from TrueNAS. 
+Select the dataset on the tree table, then click **Delete** on the **Dataset Details** widget. This opens a window where you enter the path (parent/child) and select **Confirm** to delete the dataset, all stored data, and any snapshots from TrueNAS. 
 
 To delete a root dataset, use the **Export/Disconnect** option on the **[Storage Dashboard]({{< relref "ManagePoolsSCALE.md" >}})** screen to delete the pool.
 
