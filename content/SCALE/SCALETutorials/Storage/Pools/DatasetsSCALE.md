@@ -53,7 +53,7 @@ We recommended you choose a compression algorithm that balances disk performance
 
 ### Setting Dataset Quotas
 
-You can set dataset quotas when you add a dataset using the **Add Dataset > Advanced Options** quota management options, or to add or edit quotas for a selected dataset, click **Edit** on the **Dataset Space Management** widget to open the **[Capacity Settings]({{< relref "CapacitySettingsScreen.md >}})** screen. 
+You can set dataset quotas when you add a dataset using the **Add Dataset > Advanced Options** quota management options, or to add or edit quotas for a selected dataset, click **Edit** on the **Dataset Space Management** widget to open the **[Capacity Settings]({{< relref "CapacitySettingsSCALE.md" >}})** screen. 
 
 ![AddDatasetQuotasManagement](/images/SCALE/22.12/AddDatasetQuotasManagement.png "Add Dataset Advanced Quota Options") 
 
