@@ -1,6 +1,12 @@
 ---
 title: "Creating User Accounts"
-weight: 30
+description: "This article describes how to create user accounts in TrueCommand."
+weight: 20
+tags:
+- tcinstall
+- tcuser
+- scaletoptoolbar
+- coretoptoolbar
 ---
 
 {{< toc >}}
@@ -39,7 +45,7 @@ The first verification occurs when the user logs in with a username and a passwo
 Two-factor authentication adds an extra step in the process, a second security layer, that re-confirms their identity.
 If basic password security measures are in place, two-factor authentication makes it more difficult for unverified users to log in to your account.
 
-Enabling two-factor authentication requires an already-authenticated email address. Authenticating a user email address requires first setting up [SMTP Email]({{<relref "/TrueCommand/alerts/alertmanage.md" >}}) in **Settings-> Alert Services**.
+Enabling two-factor authentication requires an already-authenticated email address. Authenticating a user email address requires first setting up [SMTP Email]({{< relref "/TrueCommand/Alerts/AlertManage.md" >}}) in **Settings-> Alert Services**.
 
 To verify a user email address and set 2FA:
 
@@ -76,3 +82,5 @@ To remove user access to a particular system group, click **-** (minus) on the d
 ## Resetting a User Password at Login
 
 {{< include file="static/includes/TrueCommand/2.1/ResettingUserPassword.md.part" markdown="true" >}}
+
+{{< taglist tag="tcinstall" limit="10" >}}

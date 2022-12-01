@@ -16,6 +16,7 @@ To create a new user account, open the **Configure** <i class="material-icons" a
 Assign them a descriptive name and authentication method.
 
 TrueCommand uses the default authentication method to create unique credentials for logging in to the web interface.
+User names and passwords are case-sensitive.
 The administrator must provide the user with their login credentials.
 
 ![UsersAdd](/images/TrueCommand/2.0/UsersNewUser.png "Adding a new user")

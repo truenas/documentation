@@ -1,7 +1,10 @@
 ---
 title: "Local Users"
+description: "Descriptions for the screens and fields on the Local Users screen."
 geekdocCollapseSection: true
 weight: 10
+tags:
+ - scaleusers
 ---
 
 {{< toc >}}
@@ -37,8 +40,6 @@ To create a new user, click **Add**.
 
 TrueNAS lets users configure four different user account traits. 
 
-{{< tabs "Account Options" >}}
-{{< tab "Identification" >}}
 ### Identification
 
 Enter the user full name in **Full Name**.
@@ -47,21 +48,18 @@ TrueNAS suggests a simplified name in **Username** derived from the **Full Name*
 You can also assign a user account email address in the **Email** field.
 
 Set and confirm a password.
-{{< /tab >}}
 
-{{< tab "User ID and Groups" >}}
 ### User ID and Groups
 
-Next, you must set a user ID.
+Next, you must set a user ID (UID).
 TrueNAS suggests a user ID starting at **1000**, but you can change it if you wish.
 We recommend using an ID of 1000 or greater for non-built-in users.
+You can create users with a UID of 0.
 
 By default, TrueNAS creates a new primary group with the same name as the user.
 To add the user to an existing primary group instead, clear the **New Primary Group** checkbox and select a group from the **Primary Group** drop-down list.
 You can add the user to more groups using the **Auxiliary Groups** drop-down list.
-{{< /tab >}}
 
-{{< tab "Directories and Permissions" >}}
 ### Directories and Permissions
 
 When creating a user, the home directory path is set to <file>/nonexistent</file>, which does not create a home directory for the user.
@@ -72,9 +70,7 @@ TrueNAS shows the path to the user home directory when editing a user.
 
 You can set the home directory permissions directly under the file browser. 
 You cannot change TrueNAS default user account permissions.
-{{< /tab >}}
 
-{{< tab "Authentication" >}}
 ### Authentication
 You can assign a public SSH key to a user for key-based authentication by pasting the *public* key into the **SSH Public Key** field.
 If you are using an SSH public key, always keep a backup of the key.
@@ -112,9 +108,9 @@ If the user accesses TrueNAS data using *Windows 8* or newer, set **Microsoft Ac
 
 By default, **Samba Authentication** is enabled.
 This allows using the account credentials to access data shared with [SMB]({{< relref "/SCALE/SCALETutorials/Shares/SMB/AddSMBShares.md" >}}).
-{{< /tab >}}
-{{< /tabs >}}
 
 ## Editing User Accounts
 
 To edit an existing user account, go to **Credentials > Local Users**, expand the User entry, and click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> **Edit**:
+
+{{< taglist tag="scaleusers" limit="10" >}}

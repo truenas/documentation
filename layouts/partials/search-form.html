@@ -1,0 +1,6 @@
+<form id="search"
+    action='{{ with .GetPage "/search" }}{{.RelPermalink}}{{end}}' method="get">
+    <label hidden for="search-input">Search site</label>
+    <input style="font-family:FontAwesome,din-2014;width:100%;font-size:larger;" type="text" id="search-input" name="query"
+    placeholder="&#Xf002; Search...">
+</form>

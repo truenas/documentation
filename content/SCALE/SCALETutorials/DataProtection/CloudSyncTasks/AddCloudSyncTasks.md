@@ -2,7 +2,6 @@
 title: "Adding Cloud Sync Tasks"
 description: "This article provides instructions to add a cloud sync task, configure environment variables, run an unscheduled sync task, create a copy of a task with a reversed transfer mode, and troubleshoot common issues with some cloud storage providers."
 weight: 10
-alias: /scale/scaleuireference/dataprotection/cloud-sync-tasks/
 tags:
  - scalecloud
  - scalebackup

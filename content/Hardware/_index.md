@@ -108,7 +108,7 @@ Archived documentation about discontinued iXsystems hardware products.
 
 [FreeNAS Certified]({{< relref "FNCertifiedBSG.md" >}})<br>
 [TrueNAS Z-Series]({{< relref "ZSeriesBSG.md" >}})<br>
-[2nd Generation FreeNAS Minis]({{< relref "/Hardware/LegacyHardware/FNMini/MiniFamilyBSG2.0.md" >}})<br>
+[2nd Generation FreeNAS Minis]({{< relref "/Hardware/LegacyHardware/MiniSeries/FreeNAS Minis (2nd Gen)/MiniFamilyBSG2.0.md" >}})<br>
 [Discontinued Expansion Shelves]({{< relref "/Hardware/LegacyHardware/ExpansionShelves/_index.md" >}})
 {{< /tab >}}
 {{< /tabs >}}

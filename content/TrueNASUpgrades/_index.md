@@ -12,8 +12,8 @@ Here are the current "trains" (linear update paths) for updating TrueNAS and som
 
 These are the public release trains that contain the most tested and stable version of the various softwares to date.
 
-* TrueNAS CORE: **12.0**
-* TrueNAS Enterprise: **12.0**
+* TrueNAS CORE: **13.0**
+* TrueNAS Enterprise: **13.0**
 
 ## Prerelease Trains
 
