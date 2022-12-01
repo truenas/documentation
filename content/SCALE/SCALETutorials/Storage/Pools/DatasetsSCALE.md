@@ -54,7 +54,7 @@ You can configure quotas for only the new dataset or include all child datasets.
 
 Define the maximum allowed space for the dataset in either the **Quota for this dataset**. Enter **0** to disable quotas. 
 
-Dataset quota [alerts]({{< relref "/SCALE/SCALEUIReference/TopToolbar/Alerts/AlertSettingsScreen.md" >}}) are based on the percentage of used storage.
+Dataset quota [alerts]({{< relref "/SCALE/SCALEUIReference/TopToolbar/Alerts/_index.md" >}}) are based on the percentage of used storage.
 To set up a quota warning alert, enter a percentage value in **Quota warning alert at, %**.
 When consumed space reaches the defined percentage it sends the alert.
 To change the setting from the parent dataset warning level, clear the **Inherit** checkbox and then change the value.
@@ -112,7 +112,7 @@ Before setting this property, you must add a [special class vdev]({{< relref "Fu
 
 ## Managing Datasets
 
-After creating a dataset, users can manage additional options by going to **Storage** and clicking the dataset <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; icon to display the **Dataset Actions** list. Each option is described in detail in the [Storage Screens]({{< relref "/SCALE/SCALEUIReference/Storage/StorageScreen.md" >}}) article.
+After creating a dataset, users can manage additional options by going to **Storage** and clicking the dataset <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; icon to display the **Dataset Actions** list. Each option is described in detail in the [Storage Dashboard Screen]({{< relref "StorageDashboardScreen.md" >}}) article.
 
 ### Editing a Dataset
 Select **Edit Options** to change the dataset configuration settings. You can change all settings except **Name**, **Case Sensitivity**, or **Share Type**.
