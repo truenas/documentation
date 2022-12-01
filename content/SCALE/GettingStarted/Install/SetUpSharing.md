@@ -104,9 +104,9 @@ To set up SMB sharing:
 
 To set up NFS sharing:
 
-1. Create a dataset with **Share Type** set to **Generic**. Go to **Storage > Pools** 
+1. Create a dataset with **Share Type** set to **Generic**:  
 
-   a. Go to **Storage > Pools** and click on the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> and click **Add Dataset**.
+   a. Go to **Datasets** and click on the **Add Dataset** button.
 
    b. Enter a name and select **Generic** in the **Share Type** field.
 
