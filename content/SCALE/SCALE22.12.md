@@ -1,5 +1,5 @@
 ---
-title: "SCALE 22.12 Bluefin"
+title: "SCALE 22.12 Bluefin Release Notes"
 aliases:
  - /scale/scalenextversion/
 weight: 1000
@@ -10,9 +10,15 @@ weight: 1000
 {{< hint danger >}}
 Early releases are intended for testing and early feedback purposes only.
 Do not use early release software for critical tasks.
+
+Want to get involved by collaborating on TrueNAS SCALE? Join our [Official Discord Server.](https://discord.com/invite/Q3St5fPETd)
 {{< /hint >}}
 
 {{< include file="/content/_includes/SoftwareStatusPage.md" type="page" >}}
+
+## Software Lifecycle
+
+{{< include file="/static/includes/General/LifecycleTable.html.part" html="true" >}}
 
 ## SCALE Schedule
 
@@ -956,3 +962,30 @@ Additional feature in future Bluefin releases:
 |  |  | SCALE Gluster/Cluster. | Gluster/Cluster features are still in testing.  Administrators should use caution when deploying and avoid use with critical data. |  |
 |  | <a href="https://jira.ixsystems.com/browse/NAS-110263" target="_blank">NAS-110263</a> | AFP sharing is removed from TrueNAS SCALE. The protocol is deprecated and no longer receives development effort or security fixes. | TrueNAS SCALE automatically migrates any existing AFP shares into an SMB configuration that is preset to function like an AFP share. | 21.06-BETA.1 |
 | 21.06-BETA.1 | <a href="https://jira.ixsystems.com/browse/NAS-111547" target="_blank">NAS-111547</a> | ZFS shouldn't count vdev IO errors on hotplug removal | Pool status isn't being updated immediately on disk exchange events. | Targeted 22.12 (Bluefin) |
+
+## OpenZFS Feature Flags
+
+For more details on feature flags see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html).
+
+For more details on zpool.features.7 see [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
+
+| Feature Flag | GUID | Dependencies | Description |
+|--------------|------|--------------|-------------|
+| blake3 | org.openzfs.blake3 | extensible)dataset | Enables use of the BLAKE3 hash algorithm for checksum and dedup. BLAKE3 is a secure hash algorithm focused on high performance. When enabled, the administrator can turn on the blake3 checksum on any dataset using `zfs set checksum=blake dset` [see zfs-set(8)](https://openzfs.github.io/openzfs-docs/man/8/zfs-set.8.html). |
+| head_errlog | com.delphix:head_errlog | n/a | Enables the upgraded version of `errlog`. The error log of each head dataset is stored separately in the zap object and keyed by the head id. Every dataset affected by an error block is listed in the output of `zpool status`. |
+| zilsaxattr | org.openzfs:zilsaxattr | extensible_dataset | Enables `xattr-sa` extended attribute logging in the ZIL. If enabled, extended attribute changes from both `xattrdir=dir` and `xattr=sa` are guaranteed to be durable if either `sync=always` is set for the dataset when a change is made or sync(2) is called on the dataset after making changes. |
+
+## Bluefin Unstable Nightly Images (Unstable Branch, developers and brave testers)
+
+{{< hint danger >}}
+Nightly builds are considered experimental and highly unstable.
+Do not use a nightly build for anything other than testing and development.
+{{< /hint >}}
+
+Nightly images for TrueNAS SCALE are built every 24 hours, at around 2AM Eastern (EDT/EST) time.
+These images are made publicly available when they pass automated basic usability testing.
+This means that during times of heavy development, nightly images might be less frequently available.
+Online updates are created every 2 hours and are available in the SCALE UI online updating page.
+
+* [ISO Installation Files](https://download.truenas.com/truenas-scale-bluefin-nightly/ "SCALE Angelfish Nightly .iso files")
+* [Manual Update File](https://update.freenas.org/scale/TrueNAS-SCALE-Bluefin-Nightlies/TrueNAS-SCALE-Bluefin-Nightly.update)
