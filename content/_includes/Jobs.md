@@ -7,7 +7,7 @@ The **Jobs** <span class="material-icons">assignment</span> icon button displays
 
 Users can minimize a job/process by clicking the **-** in any dialogue or pop-up window.  
 
-Click on a running task to display the dialog window for that running task.
+Click on a running task to display a dialog for that running task.
 
 You can abort active jobs (like a disk wipe for example) by clicking the white circled X next to the active job.
 
