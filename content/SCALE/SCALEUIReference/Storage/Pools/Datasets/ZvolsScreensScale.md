@@ -2,6 +2,8 @@
 title: "Zvol Screens"
 description: "This article provides information on Zvol screen settings and functions."
 weight: 40
+aliases:
+ - /scale/scaleuireference/storage/pools/zvolsscreensscale/
 tags:
  - scalezvols
  - scalestorage
