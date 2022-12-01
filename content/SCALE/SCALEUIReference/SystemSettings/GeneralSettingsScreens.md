@@ -136,7 +136,7 @@ Click **Settings** to open the **GUI Settings** screen.
 | **Show Console Messages** | Select to display console messages in real time at the bottom of the browser. |
 {{< /expand >}}
 
-Allow configuring a non-standard port to access the GUI over HTTP. Changing this setting might require changing a Firefox configuration setting.
+Allows configuring a non-standard port to access the GUI over HTTP. Changing this setting might require changing a Firefox configuration setting.
 
 ## Localization
 The **Localization** widget lets users localize their system to a specific region.
