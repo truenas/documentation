@@ -71,7 +71,7 @@ The widget allows you to set the disk encryption password through the **Manage S
 
 ![ManageSEDPasswordDialog](/images/SCALE/22.12/ManageSEDPasswordDialog.png "Manage Disk SED Encryption Password") 
 
-The widget also provides the status of the **Global SED Password** (set or not set) and the **Manage Global SED Password** link that opens the **[System Settings > Advanced]({{< relref "/AdvancedSettingsScreen.md" >}})** screen where you can change the global SED password that overrides the disk passwords.
+The widget also provides the status of the **Global SED Password** (set or not set) and the **Manage Global SED Password** link that opens the **[System Settings > Advanced]({{< relref "/SCALE/SCALEUIReference/SystemSettings/AdvancedSettingsScreen.md" >}})** screen where you can change the global SED password that overrides the disk passwords.
 {{< /expand >}}
 
 ### S.M.A.R.T. Info for *Devicename* Widget
