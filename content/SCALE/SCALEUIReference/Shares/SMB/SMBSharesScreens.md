@@ -14,7 +14,7 @@ tags:
 The first SMB share screen to display after you click **Shares** is the **Sharing** screen with the service widgets for the four supported share types. 
 
 ## Sharing SMB Screen 
-If you have not added SMB shares to the system, clicking the **Windows SMB Share** option on the **Sharing** screen displays the **No SMB Shares** screen with the **Add SMB Share** button in the center of the screen. 
+If you have not added SMB shares to the system, clicking the **Windows (SMB) Shares** option on the **Sharing** screen displays the **SMB** screen with the **Add SMB Share** button in the center of the screen. 
 
 ![SMBShareScreenNoShare](/images/SCALE/22.02/SMBShareScreenNoShare.png "Add SMB Share Screen")
 
