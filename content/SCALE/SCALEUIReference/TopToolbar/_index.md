@@ -26,7 +26,7 @@ The top toolbar icon buttons provide access to the iXsystems website, displays t
 | <span class="material-icons">info</span> | Directory Services status | Displays a dialog with the status of Active Directory and LDAP directory servers configured on the TrueNAS. |
 | <span class="material-icons">assignment</span> | Jobs | Displays the Jobs dialog. Click the **History** button to display the **Tasks** screen with a list of **All**, **Active** or **Failed** tasks or processes. |
 | <span class="material-icons">notifications</span> | Alerts | Displays a list of system alerts and a dropdown list the alert options **Alert Settings**, **Alert Services** and **Email**. |
-| <span class="material-icons">account_circle</span> | Settings | Displays a dropdown menu of setting options **Change Password**, **API Keys**, **Guide** and **About**. |
+| <span class="material-icons">account_circle</span> | Settings | Displays a dropdown list of setting options **Change Password**, **API Keys**, **Guide** and **About**. |
 | <span class="material-icons">power_settings_new</span> | Power options | Displays the power related options **Log Out**, **Restart** or **Shut Down**. |
 
 ### Status of TrueCommand
