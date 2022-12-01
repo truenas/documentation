@@ -9,7 +9,7 @@ alias: /scale/scaleuireference/jobsscreens/
 ---
 
 
-The **Tasks** screens, accessed from the **Jobs** menu after clicking **History**, displays all jobs executed on the system.
+The **Tasks** screens, accessed from the **Jobs** list after clicking **History**, displays all jobs executed on the system.
 
 There are three tab views, **All**, **Active** and **Failed**. **All** displays by default.
 
