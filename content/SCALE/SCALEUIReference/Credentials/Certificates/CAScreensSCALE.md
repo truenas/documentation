@@ -94,6 +94,7 @@ The **Certificate Subject** settings do not display if **Type** on the **Identif
 
 ### Extra Constraints Options
 The **Extra Constraints** options contain certificate extension options.
+* **Add To Trusted Store** automatically adds the CA to the system trusted store.
 * **Basic Constraints** that when enabled limits the path length for a certificate chain.
 * **Authority Key Identifier** that when enabled provides a means of identifying the public key corresponding to the private key used to sign a certificate.
 * **Key Usage** that when enable defines the purpose of the public key contained in a certificate.
