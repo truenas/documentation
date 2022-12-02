@@ -250,12 +250,9 @@ The encryption setting options are the same on the **Basic Options** and **Advan
 To change encryption settings use the **Edit** button on the **ZFS Encryption** widget.
 {{< expand "Click Here for More Information" "v" >}}
 The default setting is **Inherit** selected. Clearing the checkbox displays the key encryption options. 
-
-![AddDatasetEncrytionOptionsInherit](/images/SCALE/22.12/AddDatasetEncrytionOptionsInherit.png "Add Dataset Encryption Options") 
- 
 Clear the **Inherit(*non-encrypted*)** checkbox to display additional settings.
 
-![AddDatasetEncryptionOptionsInheritCleared](/images/SCALE/22.12/AddDatasetEncryptionOptionsInheritCleared.png "Add Dataset Encryption Options Clear Inherit") 
+![AddDatasetBasicEncryptionAndOtherOptions](/images/SCALE/22.12/AddDatasetBasicEncryptionAndOtherOptions.png "Add Dataset Encryption Options Clear Inherit") 
  
 Selecting other options changes the settings displayed.
 
@@ -267,6 +264,7 @@ Selecting other options changes the settings displayed.
 #### Edit Encryption Settings
 {{< include file="/_includes/EncryptionSettings.md" type="page" >}}
 
+See the list of Related Encryption Articles at the bottom of this article for more on encryption.
 {{< /expand >}}
 
 ### Other Options Settings - Basic Options

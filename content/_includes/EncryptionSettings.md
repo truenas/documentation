@@ -9,5 +9,3 @@
 | **Algorithm** | Displays for both key and passphrase encryption types. Select the mathematical instruction set that determines how plaintext converts into ciphertext from the dropdown list of options. See [Advanced Encryption Standard (AES)](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) for more details. |
 | **Passphrase** <br>**Confirm Passphrase** | Enter the alpha-numeric string or phrase you want to use to secure the dataset. |
 | **pbkdf2iters** | Enter the number of password-based key deviation function 2 (PBKDF2) iterations to use for reducing vulnerability to brute-force attacks. Entering a number larger than 100000 is required. See [PBKDF2](https://en.wikipedia.org/wiki/PBKDF2) for more details. |
-
-See [Storage Encryption]({{< relref "EncryptionScale.md" >}}) for more information on encryption.

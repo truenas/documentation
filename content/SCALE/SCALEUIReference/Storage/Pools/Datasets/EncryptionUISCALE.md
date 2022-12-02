@@ -58,28 +58,34 @@ The **Edit Encryption Options for *datasetname*** displays the current encryptio
 It allows you to change the encryption type from or to key or passphrase, and the related settings.
 {{< expand "Click Here for More Information" "v" >}}
 The **Edit Encryption Options for *datasetname*** window opens with the current dataset encryption settings displayed. 
-The encryption setting options are the same as those provided on the **Add Dataset > [Encryption Options]](#edit-encryption-options-windows)**.
+The encryption setting options are the same as those provided on the **Add Dataset > Encryption Options**.
 
 ![EditEncryptionOptionsKeyTypeWindow](/images/SCALE/22.12/EditEncryptionOptionsKeyTypeWindow.png "Encryption Options Key Type Window")
 
 {{< include file="/_includes/EncryptionSettings.md" type="page" >}}
-
+{{< /expand >}}
 ## Lock Dataset Dialog
-**Lock** displays on encrypted non-root parent or child datasets. 
-An encrypted child that inherits encryption from a non-root parent does not see the **Lock** option on its **ZFS Encryption** widget because the lock state is controlled by the parent. 
+**Lock** displays on encrypted non-root parent or child datasets **ZFS Encryption** widgets. 
+An encrypted child that inherits encryption from a non-root parent does not see the **Lock** option on its **ZFS Encryption** widget because the lock state is controlled by the parent dataset for that child dataset. 
 The locked icon for child datasets that inherit encryption is the locked by ancestor icon.
-
+{{< expand "Click Here for More Information" "v" >}}
 **Lock** opens the **Lock Dataset** confirmation dialog with the option to **Force unmount** and **Lock** the dataset. 
 **Force unmount** disconnects any client system that is accessing the dataset via sharing protocol. Do not select this option unless you are certain the dataset is not used or accessed by a share, application or other system service.
 
 ![LockDatasetDialog](/images/SCALE/22.12/LockDatasetDialog.png "Lock Dataset Dialog")
 
 After locking a dataset, the **ZFS Encryption** screen displays **Locked** as the **Current State** and adds the **Unlock** option.
+{{< /expand >}}
 
 ## Unlock Datasets Screen
-
 **Unlock** on the **ZFS Encryption** widget displays for locked datasets that are not child datasets that inherit encryption from the parent dataset. 
 **Unlock** opens the **Unlock Datasets** screen that allows you to unlock the selected dataset, and to unlock the child datasets at the same time.
+{{< expand "Click Here for More Information" "v" >}}
+If you select a non-root parent dataset, the unlock screen includes two **Dataset Passphrase** fields for two datasets, the non-root parent and the child of that non-root parent, and the option to **Unlock Child Encrypted Roots** pre-selected.
+
+![UnlockDatasetsScreenNonRootParent](/images/SCALE/22.12/UnlockDatasetsScreenNonRootParent.png "Unlock Non-Root Parent and Child Datasets Screen")
+
+If you select child dataset of the root dataset or of a non-root parent, the screen includes only the one **Dataset Passphrase** field, and the option to **Unlock Child Encrypted Roots** pre-selected.
 
 ![UnlockDatasetsScreen](/images/SCALE/22.12/UnlockDatasetsScreen.png "Unlock Datasets Screen")
 
@@ -89,6 +95,7 @@ After locking a dataset, the **ZFS Encryption** screen displays **Locked** as th
 | **Dataset Passphrase**<br> **Dataset Key** | Enter the user-defined string (passphrase) or system-generated or user-created alpha-numeric key you entered at the time you created the dataset. |
 | **Force** | Select to add a force flag to the operation. In some cases it is possible that the provided key/passphrase is valid but the path where the dataset is supposed to be mounted after being unlocked already exists and is not empty. In this case, unlock operation fails. Adding the force flag can override this and when selected, the system renames the existing dataset mount directory/file path and it unlocks the dataset. |
 | **Save** | Starts the unlock process, fetch data, and displays the **Unlock Datasets** dialog with the dataset mount path. Click **Continue** to unlock the dataset. |
+{{< /expand >}}
 
 {{< taglist tag="scaleencryption" limit="10"  >}}
 {{< taglist tag="scaledatasets" limit="10" title="Related Dataset Articles">}}
