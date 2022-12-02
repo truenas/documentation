@@ -23,9 +23,9 @@ Using [Active Directory]({{< relref "/SCALE/SCALETutorials/Credentials/Directory
 
 To see user accounts, go to **Credentials > Local Users**.
 
-![LocalUsersSCALE](/images/SCALE/LocalUsersSCALE.png "List of Local User Accounts")
+![LocalUsersSCALE](/images/SCALE/22.12/LocalUsersSCALE.png "List of Local User Accounts") 
 
-TrueNAS hides all built-in users (except root) by default. Click the <i class="material-icons" aria-hidden="true">settings</i>, then click **SHOW** to see all built-in users.
+TrueNAS hides all built-in users (except root) by default. Click the toggle **Show Built-In Users** to see all built-in users.
 
 ## Creating User Accounts
 
@@ -36,7 +36,7 @@ This short video demonstrates adding a local user.
 
 To create a new user, click **Add**.
 
-![NewUserSCALE](/images/SCALE/NewUserSCALE.png "Adding a New User Account")
+![AddUserIdentificationSettings](/images/SCALE/22.12/AddUserIdentificationSettings.png "Add User Identification Settings") 
 
 TrueNAS lets users configure four different user account traits. 
 
@@ -47,7 +47,14 @@ TrueNAS suggests a simplified name in **Username** derived from the **Full Name*
 
 You can also assign a user account email address in the **Email** field.
 
-Set and confirm a password.
+By default, the **Disable Password** toggle is not enabled. In this case, set and confirm a password.
+
+Setting **Disable Password** toggle to active (blue toggle) disables several options: 
+* The **Password** field becomes unavailable, and TrueNAS removes any existing password from the account.
+* The **Lock User** and **Permit Sudo** options disappear.
+* The account is restricted from password-based logins for services like SMB shares and SSH sessions.
+
+![AddUserUserIDAndGroupsSettings](/images/SCALE/22.12/AddUserUserIDAndGroupsSettings.png "Add User User Id an Groups Settings") 
 
 ### User ID and Groups
 
@@ -56,9 +63,12 @@ TrueNAS suggests a user ID starting at **1000**, but you can change it if you wi
 We recommend using an ID of 1000 or greater for non-built-in users.
 You can create users with a UID of 0.
 
-By default, TrueNAS creates a new primary group with the same name as the user.
-To add the user to an existing primary group instead, clear the **New Primary Group** checkbox and select a group from the **Primary Group** drop-down list.
+By default, TrueNAS creates a new primary group with the same name as the user. This happens when the **Create New Primary Group** toggle is enabled.
+
+To add the user to an existing primary group instead, disable the **Create New Primary Group** toggle and search for a group in the **Primary Group** field.
 You can add the user to more groups using the **Auxiliary Groups** drop-down list.
+
+![AddUserDirPermsAuthSettings](/images/SCALE/22.12/AddUserDirPermsAuthSettings.png "Add User Directories, Permissions and Authentication Settings")
 
 ### Directories and Permissions
 
@@ -72,16 +82,15 @@ You can set the home directory permissions directly under the file browser.
 You cannot change TrueNAS default user account permissions.
 
 ### Authentication
-You can assign a public SSH key to a user for key-based authentication by pasting the *public* key into the **SSH Public Key** field.
+
+You can assign a public SSH key to a user for key-based authentication by entering or pasting the *public* key into the **Authorized Keys** field.
+
+{{< hint warning >}}
+Do *not* paste the private key.
+{{< /hint >}}
+
 If you are using an SSH public key, always keep a backup of the key.
-Click **Download SSH Public Key** to download the pasted key as a <file>.txt</file> file.
 
-By default, **Disable Password** is **No**.
-
-Setting **Disable Password** to **Yes** disables several options: 
-* The **Password** field becomes unavailable, and TrueNAS removes any existing password from the account.
-* The **Lock User** and **Permit Sudo** options disappear.
-* The account is restricted from password-based logins for services like SMB shares and SSH sessions.
 
 You can set a specific [shell]({{< relref "UseScaleShell.md" >}}) for the user from the **Shell** drop-down:
 
@@ -100,14 +109,12 @@ You can set a specific [shell]({{< relref "UseScaleShell.md" >}}) for the user f
 | git-shell | [restricted git shell](https://git-scm.com/docs/git-shell) |
 | nologin | Use when creating a system account or to create a user account that can authenticate with shares but that cannot log in to the TrueNAS system using `ssh`.
 
-Setting **Lock User** disables all password-based functionality for the account until you unset it.
+Selecting **Lock User** disables all password-based functionality for the account until you clear the checkbox.
 
 **Permit Sudo** allows the account to act as the system administrator using the `sudo` command. Leave it disabled for better security.
 
-If the user accesses TrueNAS data using *Windows 8* or newer, set **Microsoft Account** to enable those systems additional authentication methods.
-
 By default, **Samba Authentication** is enabled.
-This allows using the account credentials to access data shared with [SMB]({{< relref "/SCALE/SCALETutorials/Shares/SMB/AddSMBShares.md" >}}).
+This allows using the account credentials to access data shared with [SMB]({{< relref "/content/SCALE/SCALEUIReference/Shares/_index.md" >}}).
 
 ## Editing User Accounts
 

@@ -34,5 +34,9 @@ After selecting the appropriate method, click **Wipe** and confirm the action.
 
 Verify the name to ensure you have chosen the correct disk. When satisfied  you can wipe the disk, set **Confirm** and click **Continue**.
 
+If you need to abort a disk wipe, you can abort it via the jobs manager by clicking the white circled X next to the active job.
+
+![JobsAbort](/images/SCALE/JobsAbort.png "TrueNAS SCALE Task Manager")
+
 {{< taglist tag="scaledisks" limit="10" >}}
 {{< taglist tag="scalestorage" limit="10" title="Related Storage Articles" >}}

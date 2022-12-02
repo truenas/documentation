@@ -122,6 +122,10 @@ To change or add permissions for the **builtin_users** group, go to **Storage**,
 
    d. Click **Save Access Control List** to add the ACE item.
 
+{{< hint info >}}
+If you want to allows users to move through directories within an SMB share without have read or write access, you must use the **Traverse** permission. **Traverse** is useful if you intend to have nested groups within an SMB share that have different levels of access.
+{{< /hint >}}
+
 See [Permissions]({{< relref "PermissionsScale.md" >}}) for more information on editing dataset permissions.
 {{< /expand >}}
 
@@ -158,7 +162,7 @@ For a basic SMB share you do not need to use the **Advanced Options** settings, 
 
 The following are possible use cases, but for all settings see [SMB Shares Screens]({{< relref "SMBSharesScreens.md" >}}).
 
-####  Enabling ACL Support
+#### Enabling ACL Support
 To add ACL support to the share, select **Enable ACL**, and then see [Managing SMB Shares]({{< relref "ManagingSMBShares.md" >}}) for more on configuring permissions for the share and the file system.
 
 #### Setting Up Guest Access
@@ -205,7 +209,7 @@ AFP shares are deprecated and not available in SCALE. To customize your SMB shar
 ## Starting the SMB Service
 To connect to an SMB share you must start the related system service. 
 You can start the service from the **Windows SMB Share** header on the **Sharing** screen or on the **System Settings > Services** screen.
-### Starting the Service Using the Windows SMB Share 
+### Starting the Service Using the Windows SMB Share
 From the main **Sharing** screen, click on the **Windows (SMB) Shares** <span class="material-icons">more_vert</span> to display the service options which are **Turn Off Service** if the service is running or **Turn On Service** if the service is stopped.
 
 ![SharingSMBServicesActionOptions](/images/SCALE/22.02/SharingSMBServicesActionOptions.png "SMB Service Options")
@@ -220,7 +224,7 @@ Set **Start Automatically** if you want the service to activate when TrueNAS boo
 Configure the SMB service by clicking <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
 Unless you need a specific setting or are configuring a unique network environment, we recommend the default settings.
 
-## Mounting the SMB Share 
+## Mounting the SMB Share
 The instructions in this section cover mounting the SMB share on system with the following operating systems.
 
 ## Mounting on Linux System

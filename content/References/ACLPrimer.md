@@ -57,6 +57,8 @@ TrueNAS administrators should also use NFSv4 ACLs if their organization requires
 * NFSv4 can operate alongside CIFS, allowing organizations that use UNIX-based processing systems features to use Windows-based clients. 
 * NFSv4 can also cooperate with CIFS to bypass NFS's 16 group limitation by generating NFS credentials based on Unix *and* Windows groups.
 
+Users should use NFSv4 ACLs when they intend to have nested groups within an SMB share. Since users and nested groups may have different permissions for directories, the NFSv4 Traverse permission can enable users to connect to and move through directories that their nested group may not have read or write access.
+
 ### When to use POSIX ACLs
 
 TrueNAS administrators should use POSIX ACLs when their organization's data backup target does not support native NFSv4 ACLs. Since the Linux platform used POSIX for a long time, many backup products that access the server outside the SMB protocol can't understand or preserve native NFSv4 ACLs.
