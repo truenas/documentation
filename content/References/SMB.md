@@ -20,12 +20,6 @@ Windows 7 clients support server-side copying with [Robocopy](https://docs.micro
 
 [SMB Tips and Tricks](https://www.truenas.com/community/resources/smb-tips-and-tricks.15/) shows helpful hints for configuring and managing SMB networking.
 
-This video explains the process of setting up ACLs with the new UI in FreeNAS 11.3:
-{{< youtube mCfX4sqDmzs >}}
-
-Tom from Lawrence Systems explains setting SMB ACLs in TrueNAS Core 12.0 in this video:
-{{< youtube R-5jbDTCsOE >}}
-
 Another helpful reference is [Methods For Fine-Tuning Samba Permissions](https://www.truenas.com/community/threads/methods-for-fine-tuning-samba-permissions.50739/).
 
 {{< hint warning >}}
@@ -36,6 +30,8 @@ By default, Samba disables NTLMv1 authentication for security.
 Standard configurations of Windows XP and some configurations of later clients like Windows 7 will not be able to connect with NTLMv1 disabled.
 [Security guidance for NTLMv1 and LM network authentication](https://support.microsoft.com/en-us/help/2793313/security-guidance-for-ntlmv1-and-lm-network-authentication) has information about the security implications and ways to enable NTLMv2 on those clients.
 If changing the client configuration is not possible, NTLMv1 authentication can be enabled by selecting the **NTLMv1 auth** option in the SMB service configuration screen.
+
+{{< include file="/_includes/SMBShareMSDOSalert.md" type="page" >}}
 
 To view all active SMB connections and users, enter `smbstatus` in the TrueNAS **Shell**.
 
