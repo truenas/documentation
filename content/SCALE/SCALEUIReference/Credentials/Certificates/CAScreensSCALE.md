@@ -94,11 +94,14 @@ The **Certificate Subject** settings do not display if **Type** on the **Identif
 
 ### Extra Constraints Options
 The **Extra Constraints** options contain certificate extension options.
-* **Add To Trusted Store** automatically adds the CA to the system trusted store.
-* **Basic Constraints** that when enabled limits the path length for a certificate chain.
-* **Authority Key Identifier** that when enabled provides a means of identifying the public key corresponding to the private key used to sign a certificate.
-* **Key Usage** that when enable defines the purpose of the public key contained in a certificate.
-* **Extended Key Usage** that when enable to further refines key usage extensions.
+
+| Setting | Description |
+|---------|-------------|
+| **Add To Trusted Store** | Automatically adds the CA to the system trusted store. |
+| **Basic Constraints** | Limits the path length for a certificate chain.|
+| **Authority Key Identifier** | Provides a means of identifying the public key corresponding to the private key used to sign a certificate.|
+| **Key Usage** | Defines the purpose of the public key contained in a certificate.|
+| **Extended Key Usage** | Further refines key usage extensions. |
 
 The **Extra Constraints** settings change based on the selection in **Type** on the **Identifier and Type** screen. 
 
@@ -122,6 +125,7 @@ After selecting **Basic Constraints**, **Authority Key Identifier**, **Extended 
 | **Key Usage Config** | Displays after selecting **Extended Key Usage** or **Key Usage**. Select the key usage extension from the dropdown list. Options are **Digital Signature**, **Content Commitment**, **Key Encipherment**, **Data Encipherment**, **Key Agreement**, **Key Cert Sign**, **CRL Sign**, **Encipher Only**, **Decipher Only** or **Critical Extension**. The key usage extension defines the purpose (e.g., encipherment, signature, certificate signing) of the key contained in the certificate. The usage restriction might be employed when a key that could be used for more than one operation is to be restricted. For example, when an RSA key should be used only to verify signatures on objects other than public key certificates and CRLs, the **Digital Signature** bits would be asserted. Likewise, when an RSA key should be used only for key management, the **Key Encipherment** bit would be asserted. | 
 See [RFC 3280, section 4.2.1.3](https://www.ietf.org/rfc/rfc3280.txt) for more information.
 {{< /expand >}}
+
 #### Extra Constraints - Import CA
 When **Type** on **Identifier and Type** is set to **Import CA** the **Extra Constraints** screen does not include the options to set extension types.
 {{< expand "Click Here for More Information" "v" >}}
@@ -136,7 +140,7 @@ When **Type** on **Identifier and Type** is set to **Import CA** the **Extra Con
 | **Confirm Passphrase** | Re-enter the passphrase for the private key. |
 {{< /expand >}}
 
-### Confirm Options 
+### Confirm Options
 The final step screen is the **Confirm Options** that displays the CA **Type**, **Key Type**, **Key Length**, **Digest Algorithm**, **Lifetime**, **Country**, and any configured **Usages**.
 For **Import CA** type, the screen displays **Type** and **Certificate**.
 
