@@ -36,6 +36,7 @@ It is designed to give you additional flexibility to build or tune a share to yo
 Have the following ready before you begin adding your iSCSI block share:
 
 * Storage pool and dataset.
+* A path to a Device (zvol or file) that doesn't use capital letters or spaces.
 
 ## iSCSI Wizard
 This section walks you through the setup process using the wizard screens.
