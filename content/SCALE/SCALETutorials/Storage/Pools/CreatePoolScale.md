@@ -46,7 +46,7 @@ Click **Create Pool** to open the **Pool Manager** screen for new pools.
 
 ![CreatePoolPoolManagerScreen](/images/SCALE/22.12/CreatePoolPoolManagerScreen.png "Crete Pool Pool Manager")
 
-If you already have a pool created on your system you can use either the **Create Pool** button at the top right of the screen or click the **Add to a Pool** button on the **Unused Resources** widget to create a new pool.
+If you already have a pool created on your system you can use either the **Create Pool** button at the top right of the screen or click the **Add To Pool** button on the **Unassigned Disks** widget to create a new pool.
 
 ![AddToPoolWindow](/images/SCALE/22.12/AddToPoolWindow.png "Add To Pool") 
 
@@ -84,7 +84,7 @@ Disks with non-unique serial numbers do not populate the **Available Disks** sec
 {{< /hint >}}
 
 {{< expand "Can I create one pool with different data VDEV layouts?" "v" >}}
-TrueNAS SCALE does not support adding multiple data VDEV layouts (or types) in one pool, for example, a mirror data VDEV and a RAID data VDEV in the same pool.
+TrueNAS SCALE does not support adding multiple data VDEV layouts (or types) in one pool, for example a mirror data VDEV and a RAID data VDEV in the same pool.
 Create a new pool when a different data VDEV layout is required.
 For example, *pool1* has a data VDEV in a *mirror* layout, so create *pool2* for any *raid-z* VDEVs.
 {{< /expand >}}
@@ -102,28 +102,28 @@ You must then confirm you understand the warning before you can continue.
 You can add disks to the data VDEV manually or click the **Suggest Layout** button and allow TrueNAS to review all available disks and populate the primary **Data VDevs** with identically sized drives in a configuration balanced between storage capacity and data redundancy. 
 If you don't want to use the suggested layout, click **Reset Layout** to clear the data VDEV layout and move the disks back to the **Available Disks** list. 
 
-To manually add disks, select the checkboxes to the left of each disk you want to add, then click the <i class="fa fa-arrow-right" aria-hidden="true" title="Right Arrow"></i>&nbsp; to the left of the data VDEV to move the disks over. See [About Data VDEV Layouts](#about-data-vdev-layouts) or the [Pool Manager Screen]({{< relref "PoolManagerScreens.md" >}}) or more information on data VDEV layouts.
+To manually add disks, select the checkboxes to the left of each disk you want to add and then click the <i class="fa fa-arrow-right" aria-hidden="true" title="Right Arrow"></i>&nbsp; to the left of the data VDEV to move the disks over. See [About Data VDEV Layouts](#about-data-vdev-layouts) or the [Pool Manager Screen]({{< relref "PoolManagerScreens.md" >}}) or more information on data VDEV layouts.
 
 Next, if you want to add another type of VDEV, click **Add Vdev** and select the VDEV type from the options.
 Each VDEV type stores data or enables unique features for the pool.
 For more details on VDEV types and data VDEV layouts see the [Pool Manager Screen]({{< relref "PoolManagerScreens.md" >}}) article.
 
-If you have enough disks of the same size available you can [duplicate](#duplicating-a-data-vdev) the data VDEV.
+If you have enough disks of the same size available, you can [duplicate](#duplicating-a-data-vdev) the data VDEV.
 
 Click **Create** to add the pool.
 
 #### Duplicating a Data vdev
-To duplicate a data VDEV click **Repeat First Vdev**. 
+To duplicate a data VDEV, click **Repeat First Vdev**. 
 If disks of equal size are available, the **Repeat First VDEV** button opens a window pre-populated or where you enter the number of additional data VDEVs to create. 
 
-The dialog displays information on the data VDEV layout, the storage size of the VDEV, and the number of disks used and remaing for the VDEV you are repeating.
+The dialog displays information on the data VDEV layout, the storage size of the VDEV, and the number of disks used and remaining for the VDEV you are repeating.
 
 ![RepeatDataVDEVWindow](/images/SCALE/22.12/RepeatDataVDEVWindow.png "Duplicating a Data VDev")
 
 Click **Repeat Vdev** to create and populate a duplicated data VDEV. 
 Another VDEV with an identical configuration is called a *mirror* of VDEVs.
 
-If you add more disks of the same size to your system you can add another duplicate data VDEV. 
+If you add more disks of the same size to your system, you can add another duplicate data VDEV. 
 
 {{< hint warning >}}
 Don't have multiple data vdevs with different numbers of disks in each VDEV.
