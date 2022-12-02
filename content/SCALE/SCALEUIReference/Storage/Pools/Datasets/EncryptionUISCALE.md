@@ -36,7 +36,7 @@ Keep the key file in a secure location where you can back it up and keep it prot
 
 ## Export Key Options 
 
-The **ZFS Encryption** widget for root datasets with encryption include the **Export All Keys** and **Export Key** options, but do now include the **Lock** option.
+The **ZFS Encryption** widget for root datasets with encryption includes the **Export All Keys** and **Export Key** options but does not include the **Lock** option.
 
 ### Export All Keys Dialog
 
@@ -70,7 +70,7 @@ An encrypted child that inherits encryption from a non-root parent does not see 
 The locked icon for child datasets that inherit encryption is the locked by ancestor icon.
 {{< expand "Click Here for More Information" "v" >}}
 **Lock** opens the **Lock Dataset** confirmation dialog with the option to **Force unmount** and **Lock** the dataset. 
-**Force unmount** disconnects any client system that is accessing the dataset via sharing protocol. Do not select this option unless you are certain the dataset is not used or accessed by a share, application or other system service.
+**Force unmount** disconnects any client system that is accessing the dataset via sharing protocol. Do not select this option unless you are certain the dataset is not used or accessed by a share, application, or other system services.
 
 ![LockDatasetDialog](/images/SCALE/22.12/LockDatasetDialog.png "Lock Dataset Dialog")
 
@@ -79,13 +79,13 @@ After locking a dataset, the **ZFS Encryption** screen displays **Locked** as th
 
 ## Unlock Datasets Screen
 **Unlock** on the **ZFS Encryption** widget displays for locked datasets that are not child datasets that inherit encryption from the parent dataset. 
-**Unlock** opens the **Unlock Datasets** screen that allows you to unlock the selected dataset, and to unlock the child datasets at the same time.
+**Unlock** opens the **Unlock Datasets** screen that allows you to unlock the selected dataset, and the child datasets at the same time.
 {{< expand "Click Here for More Information" "v" >}}
 If you select a non-root parent dataset, the unlock screen includes two **Dataset Passphrase** fields for two datasets, the non-root parent and the child of that non-root parent, and the option to **Unlock Child Encrypted Roots** pre-selected.
 
 ![UnlockDatasetsScreenNonRootParent](/images/SCALE/22.12/UnlockDatasetsScreenNonRootParent.png "Unlock Non-Root Parent and Child Datasets Screen")
 
-If you select child dataset of the root dataset or of a non-root parent, the screen includes only the one **Dataset Passphrase** field, and the option to **Unlock Child Encrypted Roots** pre-selected.
+If you select a child dataset of the root dataset or of a non-root parent, the screen includes only the one **Dataset Passphrase** field, and the option to **Unlock Child Encrypted Roots** pre-selected.
 
 ![UnlockDatasetsScreen](/images/SCALE/22.12/UnlockDatasetsScreen.png "Unlock Datasets Screen")
 

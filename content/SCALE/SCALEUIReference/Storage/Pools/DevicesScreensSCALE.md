@@ -23,11 +23,11 @@ Click anywhere on the VDEV to see the drives included in it and the **ZFS Info**
 
 Click anywhere on a drive to see the [drive widgets](#disk-widgets).
 
-**Add VDEV** opens the **Add a VDEVs to Pool** screen with the **[Pool Manager]({{< relref "PoolManagerScreens.md" >}})** for the selected pool. For example, click **Manage Devices** on the **Topology** widget for your existing pool (i.e., *tank*) opens the **Pool Manager** with *tank* preselected and uneditible. 
+**Add VDEV** opens the **Add a VDEVs to Pool** screen with the **[Pool Manager]({{< relref "PoolManagerScreens.md" >}})** for the selected pool. For example, click **Manage Devices** on the **Topology** widget for your existing pool (i.e., *tank*) opens the **Pool Manager** with *tank* preselected and uneditable. 
 
 ## ZFS Info Widget (VDEV)
 
-There are two versions of the **ZFS Info** widget, one for the VDEV the other for each drive in the VDEV. 
+There are two versions of the **ZFS Info** widget, one for the VDEV and the other for each drive in the VDEV. 
 The **ZFS Info** widget for the VDEV displays a count of read, write and checksum errors for that VDEV, and the **Extend** and **Remove** options. 
 
 ![DevicesVDEVZFSInfoWidget](/images/SCALE/22.12/DevicesVDEVZFSInfoWidget.png "Devices Details for Mirror ZFS Info Widget")  
@@ -91,7 +91,7 @@ The **Type** dropdown list includes the **LONG**, **SHORT**, **CONVEYANCE**, and
 {{< /expand >}}
 
 ### Disk Info Widget
-The **Disk Info** widget displays information on the **Disk Size**, **Transfer Mode**, the **Serial** and **Model** numbers for the drive, the **Type** of drive it is, the **HDD Standby** setting and any **Description** associated with the selected drive.
+The **Disk Info** widget displays information on the **Disk Size**, **Transfer Mode**, the **Serial** and **Model** numbers for the drive, the **Type** of drive it is, the **HDD Standby** setting, and any **Description** associated with the selected drive.
 {{< expand "Click Here for More Information" "v" >}}
 
 ![DeviceDiskInfoWidget](/images/SCALE/22.12/DeviceDiskInfoWidget.png "Devices Disk Info Widget") 
@@ -103,7 +103,7 @@ The **Disk Info** widget displays information on the **Disk Size**, **Transfer M
 Select the new disk for the pool from the **Member Disk** dropdown list. 
 The system prevents losing existing data by stopping the add operation for the new disk if the disk is already in use or has partitions present.
 
-**Force** overrides safety check and adds the disk to the pool. Selecting this option erases any data stored on the disk!
+**Force** overrides the safety check and adds the disk to the pool. Selecting this option erases any data stored on the disk!
 
 **Replace Disk** adds the new disk to the pool.
 {{< /expand >}}

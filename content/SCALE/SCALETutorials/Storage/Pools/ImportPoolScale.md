@@ -24,7 +24,7 @@ Shut that system down and move the drives to the TrueNAS system.
 Shutting down the original system prevents an **in use by another machine** error during the TrueNAS import.
 {{< /expand >}}
 
-To import a pool, go to the **Storage Dashboard** and click **Import Pool** at the top of the screen to open the **Import Pool** screen.
+To import a pool, go to the **Storage Dashboard** and click **Import Pool** at the top of the screen.
 
 TrueNAS detects any pools that are present but unconnected and adds them to the **Pools** dropdown list.
 

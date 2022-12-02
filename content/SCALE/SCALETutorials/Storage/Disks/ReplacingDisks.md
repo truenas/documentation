@@ -25,7 +25,7 @@ TrueNAS wipes the data on the replacement disk as part of the process.
 
 ## Replacing a Failed Disk
 
-If you configure your main SCALE **Dashboard** to include individual **Pool** or the **Storage** widgets they show the status of your system pools as on or offline, degraded or in an error condition. 
+If you configure your main SCALE **Dashboard** to include individual **Pool** or the **Storage** widgets they show the status of your system pools as on or offline, degraded, or in an error condition. 
 
 ![MainDashboardPoolAndStorageWidgetsDegraded](/images/SCALE/22.12/MainDashboardPoolAndStorageWidgetsDegraded.png "Main Dashboard Pool and Storage Widgets Degraded")
 
@@ -39,7 +39,7 @@ To replace a failed disk:
 
 1. Locate the failed drive.
 
-   a. Go to the **Storage Dashboard** click **Manage Devices** on the **Topology** widget for the degraded pool to open the **Devices** screen for that pool. 
+   a. Go to the **Storage Dashboard** and click **Manage Devices** on the **Topology** widget for the degraded pool to open the **Devices** screen for that pool. 
    b. Click anywhere on the VDEV to expand it and look for the drive with the Offline status.
 
 2. Take the disk offline. 
@@ -48,14 +48,14 @@ To replace a failed disk:
 
    Click **Offline** on the **ZFS Info** widget to take the disk offline. The button toggles to **Online**.
 
-2. Pull the disk from your system and replace with a disk of at least the same or greater capacity as the failed disk. V:
+3. Pull the disk from your system and replace it with a disk of at least the same or greater capacity as the failed disk. V:
    
    ![ReplaceDiskAndOnline](/images/SCALE/22.12/ReplaceDiskAndOnline.png "Replace and Online a Disk")
    
    a. Click **Replace** on the **Disk Info** widget on the **Devices** screen for the disk you off-lined.
    b. Select the new drive from the **Member Disk** dropdown list on the **Replacing disk *diskname*** dialog.
 
-3. Add the new disk to the existing VDEV. Click **Replace Disk** to add the new disk to the VDEV and bring it online.
+4. Add the new disk to the existing VDEV. Click **Replace Disk** to add the new disk to the VDEV and bring it online.
 
    Disk replacement fails when the selected disk has partitions or data present.
    To destroy any data on the replacement disk and allow the replacement to continue, select the **Force** option.
@@ -80,11 +80,11 @@ Attempting to replace a heavily degraded disk without off-lining it significantl
 {{< /expand >}}
 
 {{< expand "The offline failed?" "v" >}}
-If the off-line operation fails with a **Disk offline failed - no valid replicas** message, go to **Storage Dashboard**, click **Scrub** on the **ZFS Health** widget for the pool with the degraded disk. The **Scrub Pool** confirmation dialog opens. Select **Confirm** and then click **Start Scrub**.
+If the off-line operation fails with a **Disk offline failed - no valid replicas** message, go to **Storage Dashboard** and click **Scrub** on the **ZFS Health** widget for the pool with the degraded disk. The **Scrub Pool** confirmation dialog opens. Select **Confirm** and then click **Start Scrub**.
 
 ![StorageZFSHealthScrub](/images/SCALE/22.12/StorageZFSHealthScrub.png "Storage ZFS Health Scrub Pool")
 
-When the scrub operation finishes, return to the **Devices** screen, click on the VDEV and then the disk and try to off-line it again.
+When the scrub operation finishes, return to the **Devices** screen, click on the VDEV and then the disk, and try to off-line it again.
 {{< /expand >}}
 
 1. Click on **Manage Devices** to open the **Devices** screen, click anywhere on the VDEV to expand VDEV and show the drives in the VDEV. 

@@ -1,7 +1,7 @@
 ---
 ---
 
-The Datasets tree table includes lock icons and description that indicate the encryption state of datasets.
+The Datasets tree table includes lock icons and descriptions that indicate the encryption state of datasets.
 
 | Icon | State | Description |
 |------|-------|-------------|
