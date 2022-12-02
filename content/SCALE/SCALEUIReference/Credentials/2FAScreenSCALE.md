@@ -18,6 +18,7 @@ Two-factor authentication is time-based and requires a correct system time setti
 ### User Settings
 
 ![2FAUserSettings](/images/SCALE/22.02/2FAUserSettings.png "2FA User Settings")
+This is going to be the Bluefin image
 
 | Name | Description |
 |------|-------------|
@@ -27,8 +28,6 @@ Two-factor authentication is time-based and requires a correct system time setti
 | **Enable Two-Factor Auth for SSH** | Select to enable 2FA for system SSH access. Leave this disabled until you complete a successful test of 2FA with the UI. |
 
 ### System Generated Settings
-
-![2FASystemGeneratedSettings](/images/SCALE/22.02/2FASystemGeneratedSettings.png "2FA System Generated Settings")
 
 | Name | Description |
 |------|-------------|
