@@ -59,7 +59,7 @@ A good bug report includes these elements:
 
 * Include additional details you think can help the developer investigate.
 
-When finished filling out the *Description*, click **Create** at the bottom of the form.
+When finished filling out the **Description**, click **Create** at the bottom of the form.
 
 ![Submit Ticket](/images/Contribute/JiraCreateBottom.png "Submit Ticket")
 
