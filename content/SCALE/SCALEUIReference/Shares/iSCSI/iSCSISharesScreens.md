@@ -18,7 +18,7 @@ The **Block (iSCSI) Shares Targets** widget displays the widget toolbar with the
 
 After adding a iSCSI target or share, the widget toolbar displays the **STOPPED** service status in red, and it includes the share below it.
 
-Before you add your first iSCSI block share, click anywhere on **Block (iSCSI) Shares Targets <span class="material-icons">launch</span>** to open the **Sharing > iSCSI** screen with **Targets** iSCSI configuration tab displayed. 
+Before you add your first iSCSI block share, click anywhere on **Block (iSCSI) Shares Targets <span class="material-icons">launch</span>** to open the **Sharing > iSCSI** screen with the **Targets** iSCSI configuration tab displayed. 
 The **No Targets** screen opens only when the system does not have an iSCSI target configured on the system.  
 
 ![iSCSINoTargetsScreen](/images/SCALE/22.02/iSCSINoTargetsScreen.png "iSCSI No Targets screen") 
