@@ -7,10 +7,6 @@ weight: 1000
 
 {{< toc >}}
 
-While the current version of TrueNAS SCALE receives maintenance updates, the next major version is in active development.
-This article collects various details about this upcoming major version: early release notes, developer notes, and how to help test the in-development version.
-This is a work in progress and details are added as development progresses on this SCALE release.
-
 {{< hint danger >}}
 Early releases are intended for testing and early feedback purposes only.
 Do not use early release software for critical tasks.
@@ -30,10 +26,6 @@ Want to get involved by collaborating on TrueNAS SCALE? Join our [Official Disco
 
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
-| SCALE 22.12.RC.1 | Code-freeze | 26 October 2022 |
-| SCALE 22.12.RC.1 | Internal Testing Sprints | 31 October 2022 - 11 November 2022 |
-| SCALE 22.12.RC.1 | Tag | 14 November 2022 |
-| SCALE 22.12.RC.1 | Release | 15 November 2022 |
 | SCALE 22.12.0 | Code-freeze | 23 November 2022 |
 | SCALE 22.12.0 | Internal Testing Sprints | 24 November 2022 - 09 December 2022 |
 | SCALE 22.12.0 | Tag | 12 December 2022 |

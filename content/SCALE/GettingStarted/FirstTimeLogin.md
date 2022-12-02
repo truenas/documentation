@@ -111,9 +111,9 @@ Users can also use the iXsystems home page to access their customer portal and c
 {{< include file="/content/_includes/DirectoryServicesMonitor.md" type="page" >}}
 
 {{< /expand >}}
-{{< expand "Task Manager" "v" >}}
+{{< expand "Jobs" "v" >}}
 
-{{< include file="/content/_includes/TaskManagerScale.md" type="page" >}}
+{{< include file="/content/_includes/Jobs.md" type="page" >}}
 
 {{< /expand >}}
 {{< expand "Alerts" "v" >}}
@@ -159,18 +159,11 @@ See [Email Screens]({{< relref "/SCALE/SCALEUIReference/TopToolbar/Alerts/EmailS
 {{< /expand >}}
 
 {{< expand "Settings" "v" >}}
-The **Settings** <span class="material-icons">account_circle</span> icon button has options for passwords, web interface preferences, API Keys, and TrueNAS information.
+The **Settings** <span class="material-icons">account_circle</span> icon button has options for passwords, API Keys, and TrueNAS information.
 {{< expand "Change Password" >}}
 
 {{< include file="/content/_includes/ChangeLoggedInUserPassword.md" type="page" >}}
 
-{{< /expand >}}
-{{< expand "Preferences" "v" >}}
-Click on **Preferences** <span class="material-icons">settings_applications</span> to select general preferences for the system that include changing the display color theme and other display options.
-
-![WebUIPreferencesScreen](/images/SCALE/22.02/WebUIPreferencesScreen.png "Web Interface Preferences")
-
-See [Web Interface Preferences Screen]({{< relref "/SCALE/SCALEUIReference/TopToolbar/Settings/WebUIPreferences.md" >}}) for more information on settings.
 {{< /expand >}}
 {{< expand "API Keys" "v" >}}
 Click on **API Keys** <span class="material-icons">laptop</span> to add API keys that identify outside resources and applications without a principal. 

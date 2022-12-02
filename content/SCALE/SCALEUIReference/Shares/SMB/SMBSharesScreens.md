@@ -11,7 +11,9 @@ tags:
 
 {{< toc >}}
 
-The first SMB share screen to display after you click **Shares** is the **Sharing** screen with the service widgets for the four supported share types. 
+The first SMB share screen to display after you click **Shares** is the **Sharing** screen with the service widgets for the four supported share types.
+
+{{< include file="/_includes/SMBShareMSDOSalert.md" type="page" >}}
 
 ## Sharing SMB Screen
 If you have not added SMB shares to the system, clicking the **Windows (SMB) Shares** option on the **Sharing** screen displays the **No SMB Shares have been configured yet** screen with the **Add SMB Share** button in the center of the screen. 
@@ -108,10 +110,10 @@ The **Access** settings let you customize access to the share and files. They al
 
 | Setting | Description |
 |---------|-------------|
-| **Enable ACL** | Select to enable ACL support for the SMB share. A warning displays if you clear this option and the SMB dataset has an ACL, and you are required to strip the ACL from the dataset before creating the SMB share. |
-| **Export Read-Only** | Select to prohibit writes to the share. |
-| **Browsable to Network Clients** | Select to determine whether to include the share name when browsing shares. Home shares are only visible to the owner regardless of this setting. Enabled by default. |
-| **Allow Guest Access** | Select to enable. Privileges are the same as the guest account. TrueNAS disables guest access by default in Windows 10 version 1709 and Windows Server version 1903. Additional client-side configuration is required to provide guest access to these clients.<br><br> **MacOS clients**: Attempting to connect as a user that does not exist in FreeNAS *does not* automatically connect as the guest account. You must select the **Connect As: Guest** option in macOS to log in as the guest account. See the [Apple documentation](https://support.apple.com/guide/mac-help/connect-mac-shared-computers-servers-mchlp1140/mac) for more details. |
+| **Enable ACL** | Select to enable ACL support for the SMB share. A warning displays if you clear this option and the SMB dataset has a ACL, and you are required to strip the ACL from the dataset prior to creating the SMB share. |
+| **Export Read Only** | Select to prohibit writes to the share. |
+| **Browsable to Network Clients** | Select to determine whether this share name is included when browsing shares. Home shares are only visible to the owner regardless of this setting. Enabled by default. |
+| **Allow Guest Access** | Select to enable. Privileges are the same as the guest account. Guest access is disabled by default in Windows 10 version 1709 and Windows Server version 1903. Additional client-side configuration is required to provide guest access to these clients.<br><br> **MacOS clients**: Attempting to connect as a user that does not exist in FreeNAS *does not* automatically connect as the guest account. You must specifically select the **Connect As: Guest** option in macOS to log in as the guest account. See the [Apple documentation](https://support.apple.com/guide/mac-help/connect-mac-shared-computers-servers-mchlp1140/mac) for more details. |
 | **Access Based Share Enumeration** | Select to restrict share visibility to users with read or write access to the share. See the [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) manual page. |
 | **Hosts Allow** | Enter a list of allowed host names or IP addresses. Separate entries by pressing <kbd>Enter</kbd>. You can find a more detailed description with examples [here](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html#HOSTSALLOW).
 | **Hosts Deny** | Enter a list of denied host names or IP addresses. Separate entries by pressing <kbd>Enter</kbd>. |

@@ -13,4 +13,6 @@ After users sign up, they can click the **CONNECT** button and enter their API k
 
 ![ConnectToTrueCommandCloud](/images/SCALE/22.02/ConnectToTrueCommandCloud.png "Connect to TrueCommand Cloud")
 
+TrueNAS displays a message telling users to check their email for verification instructions.
+
 See [Connecting TrueNAS]({{< relref "/Content/TrueCommand/TCGettingStarted/ConnectingTrueNAS.md" >}}) for more information on configuring a TrueCommand cloud account and getting an API key.
