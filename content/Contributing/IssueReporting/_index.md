@@ -28,11 +28,11 @@ Go to the [TrueNAS project on Jira](https://ixsystems.atlassian.net/jira/softwar
 ![Create Ticket](/images/Contribute/JiraCreate.png "Create Ticket")
 
 Set the **Issue Type** to **Bug**. The form reloads with more fields.
-Developers use most of them, but you should fill out the *Summary* and *Description* to provide a useable report.
+Developers use most of them, but you should fill out the **Summary** and **Description** to provide a useable report.
 
-The *Summary* is a short, descriptive title that helps developers find the issue and understand the topic.
+The **Summary** is a short, descriptive title that helps developers find the issue and understand the topic.
 
-The *Description* lets you enter specific issue details.
+The **Description** lets you enter specific issue details.
 
 ![JiraSummaryDescription](/images/Contribute/JiraSummaryDescription.png "Summary and Description Field")
 
