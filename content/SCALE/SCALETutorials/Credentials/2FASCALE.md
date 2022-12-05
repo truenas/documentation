@@ -98,7 +98,7 @@ The login screen adds another field for the randomized authenticator code. If th
 
 Enter the code from the mobile device (without the space) in the login window and use the root User name and password.
 
-![2FALoginSCALE](/images/SCALE/2FALoginSCALE.png "2FA Login")
+![2FALogin](/images/SCALE/22.02/2FALogin.png "2FA Login"
 
 ### Logging In Using SSH
 
@@ -114,6 +114,5 @@ Enter the code from the mobile device (without the space) in the login window an
 
 4. Open a terminal and SSH into the system using its host name or IP address, the root account user name and password, and the 2FA code.
    
-   ![2FALogin](/images/SCALE/22.02/2FALogin.png "2FA SSH Connection")
 
 {{< taglist tag="scale2fa" limit="10" >}}
