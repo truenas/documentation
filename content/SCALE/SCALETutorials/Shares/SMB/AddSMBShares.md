@@ -79,8 +79,10 @@ For more information on the **builtin_users** group, go to **Credentials > Local
 Scroll down to the **smbguest** user and click on the name. 
 Click **Edit** to view the **Edit User** screen. The **Auxiliary Group** field displays the **builtin_user** group. 
 {{< /expand >}}
-You can use the group to grant access to all local users on the server or add more groups to fine-tune permissions to large numbers of users. 
-You cannot access SMB shares with user accounts built-in to TrueNAS or those without the **smb** flag.
+You can use the group to grant access to all local users on the server or add more groups to fine-tune permissions to large numbers of users.
+{{< hint info >}} 
+You cannot access SMB shares with the root user, or user accounts built-in to TrueNAS or those without the **smb** flag.
+{{< /hint >}}
 
 {{< expand "Why not just allow anonymous access to the share?" "v" >}}
 Anonymous or guest access to the share is possible, but it is a security vulnerability. 
@@ -125,6 +127,10 @@ To change or add permissions for the **builtin_users** group, go to **Storage**,
 See [Permissions]({{< relref "PermissionsScale.md" >}}) for more information on editing dataset permissions.
 {{< /expand >}}
 
+{{< hint info >}} 
+You cannot access SMB shares with the root user. Always change SMB dataset ownership to the intended SMB user. 
+{{< /hint >}}
+
 ### Creating the SMB Share
 
 To create a basic Windows SMB share, go to **Shares**.
@@ -158,7 +164,7 @@ For a basic SMB share you do not need to use the **Advanced Options** settings, 
 
 The following are possible use cases, but for all settings see [SMB Shares Screens]({{< relref "SMBSharesScreens.md" >}}).
 
-####  Enabling ACL Support
+#### Enabling ACL Support
 To add ACL support to the share, select **Enable ACL**, and then see [Managing SMB Shares]({{< relref "ManagingSMBShares.md" >}}) for more on configuring permissions for the share and the file system.
 
 #### Setting Up Guest Access
@@ -205,7 +211,7 @@ AFP shares are deprecated and not available in SCALE. To customize your SMB shar
 ## Starting the SMB Service
 To connect to an SMB share you must start the related system service. 
 You can start the service from the **Windows SMB Share** header on the **Sharing** screen or on the **System Settings > Services** screen.
-### Starting the Service Using the Windows SMB Share 
+### Starting the Service Using the Windows SMB Share
 From the main **Sharing** screen, click on the **Windows (SMB) Shares** <span class="material-icons">more_vert</span> to display the service options which are **Turn Off Service** if the service is running or **Turn On Service** if the service is stopped.
 
 ![SharingSMBServicesActionOptions](/images/SCALE/22.02/SharingSMBServicesActionOptions.png "SMB Service Options")
@@ -220,7 +226,7 @@ Set **Start Automatically** if you want the service to activate when TrueNAS boo
 Configure the SMB service by clicking <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
 Unless you need a specific setting or are configuring a unique network environment, we recommend the default settings.
 
-## Mounting the SMB Share 
+## Mounting the SMB Share
 The instructions in this section cover mounting the SMB share on system with the following operating systems.
 
 ## Mounting on Linux System
