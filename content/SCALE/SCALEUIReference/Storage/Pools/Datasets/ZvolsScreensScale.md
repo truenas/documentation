@@ -50,7 +50,7 @@ If it is a parent to other datasets, the window includes the services a child da
 
 If a zvol uses services the window displays them.
 
-!DeleteZvolWindow](/images/SCALE/22.12/DeleteZvolWindow.png "Delete Zvol")
+![DeleteZvolWindow](/images/SCALE/22.12/DeleteZvolWindow.png "Delete Zvol")
 
 If a zvol is not used by a service, it does not display a service.
 
@@ -65,7 +65,7 @@ The widget donut graph provides at-a-glance information and numeric values for t
 This includes data written and space allocated to child datasets of this dataset. 
 It provides access to quota configuration options for the parent dataset and the child dataset of the parent, and for users and groups with access to the dataset.
 
-![DatasetSpaceManagementWidgetRootDataset](/images/SCALE/22.12/DatasetSpaceManagementWidgetRootDataset.png "Dataset Space Management Widget Root Dataset")
+![ZvolSpaceManagementWidgett](/images/SCALE/22.12/ZvolSpaceManagementWidget.png "Zvol Space Management Widget")
 
 **Edit** opens the **[Capacity Settings]({{< relref "CapacitySettingsSCALE.md" >}})** screen where you can set quotas for the zvol.
 
@@ -121,7 +121,7 @@ The **Basic Options** settings on the **Add Zvol** are the same as those on **Ad
 To open the **Edit Zvol** screen, click **Edit** on the **[Zvol Details](#zvol-details-widget)** widget. 
 The **Name** setting cannot be changed after saving the zvol.
 
-![AddZvolBasicOptions1](/images/SCALE22.12/AddZvolBasicOptions1.png "Add Zvol Name and Size Settings")
+![AddZvolBasicOptions1](/images/SCALE/22.12/AddZvolBasicOptions1.png "Add Zvol Name and Size Settings")
 
 | Setting | Description |
 |---------|-------------|
@@ -130,7 +130,7 @@ The **Name** setting cannot be changed after saving the zvol.
 | **Size for this zvol** | Specify size and value. You can include units like **t** as in TiB, and **G**. You can increase the size of the zvol later, but you cannot reduce size. If the size is more than 80% of the available capacity, the creation fails with an out-of-space error unless you select **Force size**. |
 | **Force size** | Select to enable the system to create a zvol where the size is over 80% capacity. By default, the system does not create a zvol of this size. While not recommended, enabling this option forces the creation of the zvol. |
 
-![AddZvolBasicOptions2](/images/SCALE22.12/AddZvolBasicOptions2.png "Add Zvol Other Settings")
+![AddZvolBasicOptions2](/images/SCALE/22.12/AddZvolBasicOptions2.png "Add Zvol Other Settings")
 
 | Setting | Description |
 |---------|-------------|
