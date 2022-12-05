@@ -55,9 +55,9 @@ Set up a second 2FA device as a backup before proceeding.
 
 Before you begin, download Google Authenticator to your mobile device.
 
-1 Go to **Credentials > 2FA** to open the **Two-Factor Auth** screen and scroll down to the bottom.
+1 Go to **Credentials > 2FA** to open the **Two-Factor Auth** screen.
   
-  ![2FASystemGeneratedSettings](/images/SCALE/22.02/2FASystemGeneratedSettings.png "2FA System Generated Settings")
+![2FAUserSettings](/images/SCALE/2fabluefinscreen.png "2FA User Settings")
 
 2 Click **Enable Two Factor Authentication**. The **Enable Two-Factor Authentication** confirmation dialog opens. Click **Confirm**.
   
@@ -73,7 +73,7 @@ Before you begin, download Google Authenticator to your mobile device.
 
 ### Disabling or Bypassing 2FA
 
-Go to **Credentials > 2FA** to open the **Two-Factor Auth** screen and scroll down to the bottom. Click **Disable Two-Factor Authentication**.
+Go to **Credentials > 2FA** to open the **Two-Factor Auth** screen. Click **Disable Two-Factor Authentication**.
 {{< hint info >}}
 If the device with the 2FA app is not available, you can use the system CLI to bypass 2FA with administrative IPMI or by physically accessing the system. 
 
@@ -82,7 +82,7 @@ To unlock 2FA in the CLI, enter:  `midclt call auth.twofactor.update '{ "enabled
 
 ### Reactivating 2FA
 
-After disabling 2FA, if you want to enable it again at some point in the future, go to **Credentials > 2FA** to open the **Two-Factor Auth** screen and scroll down to the bottom. 
+After disabling 2FA, if you want to enable it again at some point in the future, go to **Credentials > 2FA** to open the **Two-Factor Auth** screen. 
 Click **Enable Two-Factor Authentication**.
 
 To change the system-generated **Secret** and **Provisioning URI** values, click **Renew Secret**. 
