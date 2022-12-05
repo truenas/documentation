@@ -134,9 +134,9 @@ factor into the true amount of storage needed. Capacity must also be considered 
 as a smaller quantity of large drives often does not yield the same performance as a larger number of small drives. 
 For rough calculations, additional resources are listed below.
 
-* [Estimate Veeam space - Veeam Knowledge Space](https://helpcenter.veeam.com/evaluation/vbms/step_1_estimate_vm_change_rate.html)
+* [Veeam Backup Capacity Calculator](https://calculator.veeam.com/)
 * [Sizing from Veeam Best Practices](https://bp.veeam.com/vbr/VBP/3_Build_structures/B_Veeam_Components/B_VBR_Server/Backup_Server.html)
-* [3rd Party Disk Space Calculator](http://rps.dewin.me/)
+* [Veeam Size Estimation Tool](https://vse.veeambp.com/)
 * [3rd Party Bandwidth Calculator](http://rps.dewin.me/bandwidth/)
 
 ## Advantages
