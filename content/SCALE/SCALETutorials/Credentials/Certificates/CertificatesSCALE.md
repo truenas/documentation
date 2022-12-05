@@ -30,11 +30,12 @@ The **Identifier and Type** step lets users name the certificate and choose whet
 Users can select a predefined certificate extension from the **Profiles** dropdown list.
 
 Next, specify the certificate options. Select the **Key Type** as this selection changes the settings displayed.
-The **Certificate Options** step provides options for choosing: 
-The signing certificate authority (CSR) 
-The private key type to use (as well as the number of bits in the key the cryptographic algorithm uses)
-The cryptographic algorithm the certificate uses 
-How many days the certificate authority lasts.
+
+The **Certificate Options** step provides options for choosing:
+* The signing certificate authority (CSR) 
+* The private key type to use (as well as the number of bits in the key the cryptographic algorithm uses)
+* The cryptographic algorithm the certificate uses 
+* How many days the certificate authority lasts.
 
 Now enter the certificate location and basic information. 
 The **Certificate Subject** step lets users define the location, name, and email for the organization using the certificate.    
