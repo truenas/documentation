@@ -1,6 +1,6 @@
 ---
 title: "Users"
-description: "This article describes how to create and manage user accounts on TrueNAS CORE."
+description: "This article describes the fields on the Users screens in TrueNAS CORE."
 weight: 20
 tags:
 - coreusersandgroups
