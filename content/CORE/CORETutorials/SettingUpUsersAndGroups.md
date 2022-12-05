@@ -109,10 +109,6 @@ If the user account is accessing TrueNAS data using a Windows 8 or newer client,
 By default, **Samba Authentication** is enabled.
 It allows users to access [SMB]({{< relref "SMBShare.md" >}}) share data using account credentials.
 
-### User Quotas
-
-
-
 ## Groups
 
 Using groups in TrueNAS is an efficient way to manage permissions for many similar user accounts.
@@ -161,7 +157,5 @@ To manage group membership, go to **Accounts > Groups**, click the <i class="mat
 
 To add user accounts to the group, select them in **All users** and click <i class="fa fa-arrow-right" aria-hidden="true" title="Right Arrow"></i>.
 Select multiple users by holding <kbd>CTRL</kbd> while clicking each entry.
-
-### Group Quotas
 
 {{< taglist tag="coreusers" limit="10" >}}
