@@ -21,7 +21,7 @@ Creating users and assigning them to groups allows you to efficiently tune permi
 Only the root user account can log in to the TrueNAS web interface.
 {{< /hint >}}
 
-When the network uses a directory service, import the existing account information using the instructions in [Directory Services](https://www.truenas.com/docs/core/directoryservices/).
+When the network uses a directory service, import the existing account information using the instructions in [Directory Services]({{< relref "/CORE/CoreTutorials/DirectoryServices/_index.md" >}}).
 Using [Active Directory]({{< relref "ActiveDirectory.md" >}}) requires setting Windows user passwords inside Windows.
 
 To see user accounts, go to **Accounts > Users**.
@@ -35,6 +35,8 @@ TrueNAS hides all built-in users by default. To see all built-in users, click <i
 Go to **Accounts > Users** and click **ADD**.
 
 ![Accounts Users Add](/images/CORE/12.0/AccountsUsersAdd.png "Accounts Users Add")
+
+{{< include file="/_includes/CORERequiredFields.md" type="page" >}}
 
 TrueNAS subdivides account options into groups of similar options.
 
@@ -107,6 +109,10 @@ If the user account is accessing TrueNAS data using a Windows 8 or newer client,
 By default, **Samba Authentication** is enabled.
 It allows users to access [SMB]({{< relref "SMBShare.md" >}}) share data using account credentials.
 
+### User Quotas
+
+
+
 ## Groups
 
 Using groups in TrueNAS is an efficient way to manage permissions for many similar user accounts.
@@ -121,7 +127,6 @@ To see saved groups, go to **Accounts > Groups**
 
 By default, TrueNAS hides built-in groups.
 To see built-in groups, click <i class="material-icons" aria-hidden="true" title="Settings">settings</i> and **SHOW**.
-
 
 ### Add a Group
 
@@ -156,5 +161,7 @@ To manage group membership, go to **Accounts > Groups**, click the <i class="mat
 
 To add user accounts to the group, select them in **All users** and click <i class="fa fa-arrow-right" aria-hidden="true" title="Right Arrow"></i>.
 Select multiple users by holding <kbd>CTRL</kbd> while clicking each entry.
+
+### Group Quotas
 
 {{< taglist tag="coreusers" limit="10" >}}
