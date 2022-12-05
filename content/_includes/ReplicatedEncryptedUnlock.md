@@ -24,15 +24,17 @@ Uncheck properties when replicating so that the destination dataset is not encry
 4. Click **Save**.
 
 ### Method 3: Replicate Key Encrypted Dataset/zvol.
-1. Go to **Storage -> pool/root dataset** on the replication system. Click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> and select **Export Key**.
 
-2. Apply the key file or key code to the dataset. 
-   Either download the key file, open that file and change the *pool name/dataset* to the receiving *pool name/dataset*, or copy the key code provided in the **Key** window.
+1. Go to **Datasets** on the system you are replicating from. 
+   Select the dataset encrypted with a key, click **Export Key** on the **ZFS Encryption** widget to export the key for the dataset.
 
-3. On the receiving pool/dataset: Click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> next to pool/dataset and select **Unlock**.
+2. Apply the JSON key file or key code to the dataset on the system you replicated the dataset to. 
+   Either download the key file, open that file in a text editor and change the *pool name/dataset* part of the string to the *pool name/dataset* for the receiving system. For example, replicating from *tank1/dataset1* on the replicate-from system to *tank2/dataset2* on the replicate-to system. Or you can copy the key code provided in the **Key for *dataset*** window.
+
+3. On the system receiving the replicated pool/dataset, select the receiving dataset and click **Unlock**. 
 
 4. Unlock the dataset. 
-   Either clear the **Unlock with Key file** checkbox, paste the Key Code into **Dataset Key** field (if there is a space character at the end of the key, delete the space), or select the downloaded Key file that was edited.
+   Either clear the **Unlock with Key file** checkbox, paste the key code into **Dataset Key** field (if there is a space character at the end of the key, delete the space), or select the downloaded Key file that you edited.
 
 5. Click **Save**.
 

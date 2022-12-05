@@ -38,6 +38,8 @@ Keep the key file in a secure location where you can back it up and keep it prot
 
 The **ZFS Encryption** widget for root datasets with encryption includes the **Export All Keys** and **Export Key** options but does not include the **Lock** option.
 
+If a dataset is encrypted using a key, the **ZFS Encryption** widget for that dataset includes the **Export Key** option.
+
 ### Export All Keys Dialog
 
 **Export All Keys** opens a confirmation dialog with the **Download Keys** option that exports a JSON file of all encryption keys to the system download folder. 
