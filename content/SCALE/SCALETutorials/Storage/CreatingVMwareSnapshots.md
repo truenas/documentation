@@ -27,7 +27,7 @@ The cheapest ESXi edition that is compatible with TrueNAS VMware-shapshots is VM
 
 Go to **Data Protection** and click the **VMware Snapshot Integration** button in the **Periodic Snapshot Tasks** widget.
 
-![StorageScreenSnapshotOptions](/images/SCALE/22.02/StorageScreenSnapshotOptions.png "Snapshot Options")
+![DataProtectionVMwareSnapshotIntegration](/images/SCALE/22.12/vmwaresnapshottask.png "VMware Snapshot Integration")
 
 {{< hint warning >}}
 You must follow the exact sequence to add the VMware snapshot or the  **ZFS Filesystem** and  **Datastore** fields do not populate with options available on your system.
