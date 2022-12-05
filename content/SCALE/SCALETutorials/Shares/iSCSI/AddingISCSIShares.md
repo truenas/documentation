@@ -36,6 +36,7 @@ It is designed to give you additional flexibility to build or tune a share to yo
 Have the following ready before you begin adding your iSCSI block share:
 
 * Storage pool and dataset.
+* A path to a Device (zvol or file) that doesn't use capital letters or spaces.
 
 ## iSCSI Wizard
 This section walks you through the setup process using the wizard screens.
@@ -112,7 +113,7 @@ This procedure walks you through adding each configuration setting on the seven 
 
    a. Click **Add** at the top of the screen to open the **Sharing > iSCSI > Portals > Add** screen.
       
-      ![SharingiSCSIPortalsAddScreen](/images/SCALE/22.02/SharingiSCSIPortalsAddScreenn.png "iSCSI Portal Add")
+      ![SharingiSCSIPortalsAddScreen](/images/SCALE/22.12/SharingiSCSIPortalsAddScreen.png "iSCSI Portal Add")
 
    b. (Optional) Enter a description. Portals are automatically assigned a numeric group.
 

@@ -41,7 +41,7 @@ Some fields only display in the **Global Configuration** screen when the appropr
 | Setting | Description |
 |---------|-------------|
 | **Hostname** | System host name. |
-| **Inherit domain from DHCP** | When this checkbox is checked, domain is inherited from DHCP. |
+| **Inherit domain from DHCP** | When this checkbox is checked, the domain is inherited from DHCP. |
 | **Hostname (TrueNAS Controller 2)** | System host name for a second controller that displays only for High Availability (HA) systems where there is a second TrueNAS controller. Upper and lower case alphanumeric, (.) and (-) characters are allowed. |
 | **Hostname (Virtual)** | Virtual host name that displays when using a virtual host; this is also used as the Kerberos principal name. Enter the fully qualified host name plus the domain name. Upper and lower case alphanumeric, (.), and (-) characters are allowed. |
 | **Domain** | System domain name, like example.com |
