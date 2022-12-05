@@ -1,6 +1,6 @@
 ---
 title: "Creating Jails"
-description: "This article describes how to create Jails in TrueNAS CORE."
+description: "How to create Jails in TrueNAS CORE."
 weight: 5
 aliases: /core/appliations/jails/create/
 tags:
@@ -70,7 +70,7 @@ TrueNAS has two options to create a jail. The Jail **Wizard** makes it easy to c
 
 To add a new jail, click **Jails > ADD**. The wizard provides the simplest process to create and configure a new jail. The advanced configuration method is recommended for only advanced users with very specific use applications.
 
-Enter a name for the jail. Names can contain letters, numbers, periods (`.`), dashes (`-`), and underscores (`_`).
+Enter a name for the jail. Names can contain letters, numbers, periods (.), dashes (-), and underscores (_).
 
 Select the jail type. **Default (Clone Jail)** or **Basejail**. Clone jails are clones of the specified FreeBSD release. They are linked to that release, even if they are upgraded. Basejails mount the specified release directories as nullfs mounts over the jail directories. Basejails are not linked to the original release when upgraded.
 
@@ -81,15 +81,15 @@ Versions of FreeBSD are downloaded the first time they are used in a jail. Addit
 
 Click **Next** to display the second Wizard screen with a simplified list of networking options.
 
-![JailsAddNetworking](/images/CORE/12.0/JailsAddNetworking.png "Jails Add Networking")
+![JailsAddNetworking](/images/CORE/13.0/JailsAddNetworking.png "Jails Add Networking")
 
 {{< expand "Jail Supported Networking Options" "v" >}}
 Jails support several different networking solutions:
 
 * **VNET** adds a virtual network interface to the jail.
-  This interface can set NAT, DHCP, or static jail network configurations.
+  This interface can select NAT, DHCP, or static jail network configurations.
   Since VNET provides the jail with an independent networking stack, it can broadcast an IP address, which is required by some applications.
-* **NAT** or [Network Address Translation](https://tools.ietf.org/html/rfc2663), uses the TrueNAS IP address and sets a unique port for the jail to use.
+* **NAT** ([Network Address Translation](https://tools.ietf.org/html/rfc2663)) uses the TrueNAS IP address and selects a unique port for the jail to use.
   VNET is required when NAT is selected.
 * **DHCP Autoconfigure IPv4** selected for the jail to receive its IP address from a DHCP server.
 * Configure networking by entering values for the **IPv4 Address** or **IPv6 Address** fields.
@@ -104,11 +104,11 @@ Jails support several different networking solutions:
 Leaving all checkboxes cleared and fields empty initializes the jail without any networking abilities.  
 Add networking to the jail after creation by going to **Jails**, clicking <i class="material-icons" aria-hidden="true" title="Expand/Collapse Row">chevron_right</i> for a jail, then <i class="material-icons" aria-hidden="true" title="edit">edit</i> **> Basic Properties**.
 
-Setting a proxy in the TrueNAS network settings also configures new jails to use the proxy settings, except when performing DNS lookups.
+Selecting a proxy in the TrueNAS network settings also configures new jails to use the proxy settings, except when performing DNS lookups.
 Make sure a firewall is properly configured to maximize system security.
 
 {{< hint warning >}}
-When pairing the jail with a physical interface, edit the network interface and set **Disable Hardware Offloading**.
+When pairing the jail with a physical interface, edit the network interface and select **Disable Hardware Offloading**.
 This prevents a network interface reset when the jail starts.
 {{< /hint >}}
 {{< /expand>}}
@@ -120,21 +120,25 @@ This prevents a network interface reset when the jail starts.
 
 Click **NEXT** to view a summary screen of the chosen jail options. Click **SUBMIT** to create the new jail. After a few moments, the new jail is added to the primary jails list.
 
-{{< expand "Advanced Jail Creation" >}}
+## Advanced Jail Creation
+
 Click **Jails > ADD**, then **ADVANCED JAIL CREATION** to open the advanced jail creation form.
 
 ![AdvancedJailCreationBasicProperties](/images/CORE/13.0/AdvancedJailCreationBasicProperties.png "Jails Add Advanced")
 
 ### Creating a Jail without Networking
+{{< expand "Click for details" "v" >}}
 
-you can createa a usable jail without any networking by setting only the required **Jail Name** and **Release**.
+You can create a a usable jail without any networking by selecting only the required **Jail Name** and **Release**.
 Configure the remaining **Basic Properties** when the jail needs to communicate over the local network or out to the internet.
 
 If you are an experienced user you can access additional advanced configuration settings in the **Jail Properties**, **Network Properties**, and **Custom Properties** sections.
 
 For more information on the configuration screens see [Jails Screens]({{< relref "/CORE/UIReference/JailsPluginsVMs/Jails/JailsScreens.md" >}})
+{{< /expand >}}
 
 ### Creating Template Jails
+{{< expand "Click for details" "v" >}}
 
 Template jails are *basejails* that can efficiently create jails with the same configuration.
 These steps create a template jail:
@@ -143,7 +147,7 @@ These steps create a template jail:
 
 2. Select **Basejail** as the **Jail Type**. Configure the jail with desired options.
 
-3. Set **Template** in the **Custom Properties** section.
+3. Select **Template** in the **Custom Properties** section.
 
 4. Click **SAVE**.
 
@@ -153,9 +157,10 @@ These steps create a template jail:
    
    Leave **Jail Type** as **Default (Clone Jail)**.
    
-   Set **Release** to ***basejailname*(template)**, where *basejailname* is the name of the base jail created earlier.
+   Enter **Release** as the ***basejailname*(template)**, where *basejailname* is the name of the base jail created earlier.
 
 7. Complete the jail creation wizard.
-{{< /expand>}}
+
+{{< /expand >}}
 
 {{< taglist tag="corejails" limit="10" >}}
