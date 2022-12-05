@@ -113,7 +113,7 @@ When SED devices are detected during system boot, TrueNAS checks for configured 
 
 Unlocking SEDs allows a pool to contain a mix of SED and non-SED devices. Devices with individual passwords are unlocked with their password. Devices without a device-specific password are unlocked using the global password.
 
-To verify SED locking is working correctly, go to the **Shell**. Enter command `sedutil-cli --listLockingRange 0 <password> <dev/da1>`, where `<dev/da1>` is the SED and `<password>` is the global or individual password for that SED. The command returns `ReadLockEnabled: 1`, `WriteLockEnabled: 1`, and `LockOnReset: 1` for drives with locking enabled:
+To verify SED locking is working correctly, go to the **Shell**. Enter command `sedutil-cli --listLockingRange 0 <password> </dev/da1>`, where `<dev/da1>` is the SED and `<password>` is the global or individual password for that SED. The command returns `ReadLockEnabled: 1`, `WriteLockEnabled: 1`, and `LockOnReset: 1` for drives with locking enabled:
 
 ```
 root@truenas1:~ # sedutil-cli --listLockingRange 0 abcd1234 /dev/da9
