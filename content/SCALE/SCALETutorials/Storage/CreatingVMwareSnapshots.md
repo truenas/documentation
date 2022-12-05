@@ -29,6 +29,10 @@ Go to **Data Protection** and click the **VMware Snapshot Integration** button i
 
 ![DataProtectionVMwareSnapshotIntegration](/images/SCALE/22.12/vmwaresnapshottask.png "VMware Snapshot Integration")
 
+Click the **Add** button to configure the VMWare Snapshot Task.
+
+![DataProtectionVMwareSnapshotAdd](/images/SCALE/22.12/vmwareaddsnapshottask.png "Add VMware Snapshot Task")
+
 {{< hint warning >}}
 You must follow the exact sequence to add the VMware snapshot or the  **ZFS Filesystem** and  **Datastore** fields do not populate with options available on your system.
 If you click in *ZFS Filestore** or **Datastores** before you click **Fetch Datastores** the creation process fails, the two fields do not populate with the information from the VMWare host and you must exit the add form or click **Cancel** and start again.
