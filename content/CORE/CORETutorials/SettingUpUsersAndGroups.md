@@ -13,6 +13,8 @@ tags:
 - coreaccountstutorials
 ---
 
+{{< toc >}}
+
 Creating users and assigning them to groups allows you to efficiently tune permissions and share data for large numbers of users.
 
 {{< hint info >}}
@@ -22,8 +24,6 @@ Only the root user account can log in to the TrueNAS web interface.
 When the network uses a directory service, import the existing account information using the instructions in [Directory Services](https://www.truenas.com/docs/core/directoryservices/).
 Using [Active Directory]({{< relref "ActiveDirectory.md" >}}) requires setting Windows user passwords inside Windows.
 
-{{< tabs "Accounts" >}}
-{{< tab "Users" >}}
 To see user accounts, go to **Accounts > Users**.
 
 ![AccountsUsersList](/images/CORE/12.0/AccountsUsersList.png "List of User Accounts")
@@ -38,7 +38,6 @@ Go to **Accounts > Users** and click **ADD**.
 
 TrueNAS subdivides account options into groups of similar options.
 
-
 ### Identification
 
 Enter a **Full Name**.
@@ -47,7 +46,6 @@ TrueNAS suggests a simplified **Username** from the **Full Name**, but you overr
 You can associate an **Email** address with a user account.
 
 Set and confirm the user password.
-
 
 ### User ID and Groups
 
@@ -58,7 +56,6 @@ We recommend using an ID of *1000* or more for non-built-in users.
 By default, TrueNAS creates a new primary group with the same name as the user.
 To add the user to an existing primary group instead, unset **New Primary Group** and select a group from the **Primary Group** drop-down.
 You can add the user to more groups using the **Auxiliary Groups** drop-down.
-
 
 ### Directories and Permissions
 
@@ -71,8 +68,8 @@ The full path to the user home directory displays here when editing a user.
 Directly under the file browser, you can set the home directory permissions.
 TrueNAS default user accounts cannot change their permissions.
 
-
 ### Authentication
+
 You can assign a public SSH key to a user for key-based authentication by pasting the public key into the **SSH Public Key** field.
 If you are using an SSH public key, always keep a backup.
 Click **DOWNLOAD SSH PUBLIC KEY** to download the pasted key as a <file>.txt</file> file.
@@ -109,14 +106,14 @@ If the user account is accessing TrueNAS data using a Windows 8 or newer client,
 
 By default, **Samba Authentication** is enabled.
 It allows users to access [SMB]({{< relref "SMBShare.md" >}}) share data using account credentials.
-{{< /tab >}}
 
-{{< tab "Groups" >}}
+## Groups
+
 Using groups in TrueNAS is an efficient way to manage permissions for many similar user accounts.
 The interface lets you manage UNIX-style groups.
 If the network uses a directory service, import the existing account information using the instructions in [Active Directory]({{< relref "ActiveDirectory.md" >}}).
 
-## View Existing Groups
+### View Existing Groups
 
 To see saved groups, go to **Accounts > Groups**
 
@@ -126,7 +123,7 @@ By default, TrueNAS hides built-in groups.
 To see built-in groups, click <i class="material-icons" aria-hidden="true" title="Settings">settings</i> and **SHOW**.
 
 
-## Add a Group
+### Add a Group
 
 Go to **Accounts > Groups** and click **ADD**.
 
@@ -150,8 +147,7 @@ It allows group members to use [SMB]({{< relref "SMBShare.md" >}}) permissions a
 Finally, **Allow Duplicate GIDs** lets you duplicate group IDs but can complicate system configurations.
 We recommend leaving it unset.
 
-
-## Group Member Management
+### Group Member Management
 
 Register user accounts to a group to simplify permissions and access to many user accounts.
 To manage group membership, go to **Accounts > Groups**, click the <i class="material-icons" aria-hidden="true" title="Expand/Collapse Row">navigate_next</i> for a group, then click <i class="material-icons" aria-hidden="true" title="Group">group</i> **MEMBERS**:
@@ -160,7 +156,5 @@ To manage group membership, go to **Accounts > Groups**, click the <i class="mat
 
 To add user accounts to the group, select them in **All users** and click <i class="fa fa-arrow-right" aria-hidden="true" title="Right Arrow"></i>.
 Select multiple users by holding <kbd>CTRL</kbd> while clicking each entry.
-{{< /tab >}}
-{{< /tabs >}}
 
 {{< taglist tag="coreusers" limit="10" >}}
