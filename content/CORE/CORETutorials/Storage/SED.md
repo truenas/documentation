@@ -96,9 +96,7 @@ Rerun command `sedhelper setup <password>` every time a new SED is placed in the
 
 ### Creating Separate Passwords for Each SED
 
-Go to **Storage > Disks**. Click the three dot menu (Options) for the confirmed SED, then **Edit**. Enter and confirm the password in the `SED Password` and `Confirm SED Password fields`.
-
-The **Storage > Disks** screen shows which disks have a configured SED password. The `SED Password` column shows a mark when the disk has a password. Disks that are not a SED or are unlocked using the global password are not marked in this column.
+Go to **Storage > Disks**. Click the **>** next to an SED, then select **Edit**. Enter and confirm the password in the **SED Password** field.
 
 You must configure the SED to use the new password. Go to the **Shell** and enter command `sedhelper setup --disk <da1> <password>`, where `<da1>` is the SED to configure and `<password>` is the created password from **Storage > Disks > Edit Disks > SED Password**.
 
