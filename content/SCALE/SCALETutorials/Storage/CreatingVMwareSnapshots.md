@@ -5,6 +5,7 @@ weight: 40
 tags:
 - scalesnapshots
 - scalevmware
+- scalesnapshots
 ---
 
 
@@ -56,3 +57,4 @@ Thes coordinated snapshots go on the list found on the **Storage > Snapshots** s
 
 {{< taglist tag="scalesnapshots" limit="10" >}}
 {{< taglist tag="scalevmware" limit="10" title="Related VMWare Articles" >}}
+{{< taglist tag="scaledatasets" limit="10" title="Related Datasets Articles" >}}
