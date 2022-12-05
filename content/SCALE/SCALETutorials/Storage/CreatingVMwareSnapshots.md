@@ -25,7 +25,7 @@ The cheapest ESXi edition that is compatible with TrueNAS VMware-shapshots is VM
 
 ## Creating a VMWare Snapshot
 
-Go to **Storage** and click the **Snapshots** button at the top right of the screen. Select **VMware-Snapshots** on the dropdown list.
+Go to **Data Protection** and click the **VMware Snapshot Integration** button in the **Periodic Snapshot Tasks** widget.
 
 ![StorageScreenSnapshotOptions](/images/SCALE/22.02/StorageScreenSnapshotOptions.png "Snapshot Options")
 
