@@ -30,10 +30,7 @@ Click **Configure LDAP** in **Credentials > Directory Services** to open the **L
 | Setting | Description |  
 |-------|-------------|  
 | **Allow Anonymous Binding** | Set for the LDAP server to disable authentication and allow read and write access to any client. |
-| **Encryption Mode** | Options for encrypting the LDAP connection:  
-* *OFF*: do not encrypt the LDAP connection.  
-* * *ON*: encrypt the LDAP connection with SSL on port 636.  
-* * *START_TLS*: encrypt the LDAP connection with STARTTLS on the default LDAP port *389*. |
+| **Encryption Mode** | Options for encrypting the LDAP connection: <br> <br> *OFF*: do not encrypt the LDAP connection. <br> *ON*: encrypt the LDAP connection with SSL on port 636. <br> *START_TLS*: encrypt the LDAP connection with STARTTLS on the default LDAP port *389*. |
 | **Certificate** | Certificate to use when performing LDAP certificate-based authentication. To configure LDAP certificate-based authentication, create a Certificate Signing Request for the LDAP provider to sign. TrueNAS does not need a certificate when using username/password or Kerberos authentication. To configure LDAP certificate-based authentication, [create a Certificate Signing Request]({{< relref "CertificatesSCALE.md" >}}) for the LDAP provider to sign. |
 | **Validate Certificates** | Verify certificate authenticity. |
 | **Disable LDAP User/Group Cache** | Disable caching LDAP users and groups in large LDAP environments. When caching is disabled, LDAP users and groups do not appear in drop-down menus but are still accepted when manually entered. |
