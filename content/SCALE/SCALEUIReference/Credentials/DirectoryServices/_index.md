@@ -15,10 +15,6 @@ The SCALE Directory Services section contains options to edit directory domain a
 
 The Directory Services screen is mostly empty until you connect TrueNAS to either an Active Directory or an LDAP server.
 
-Click **Configure Active Directory** to open the Active Directory form.
-
-![DirectoryServicesActiveDirectoryForm](/images/SCALE/22.02/DirectoryServicesActiveDirectoryForm.png "Active Directory Form")
-
 ![DirectoryServicesScreenEnabled](/images/SCALE/22.02/DirectoryServicesScreenEnabled.png "Directory Services Screen Enabled")
 
 To display Kerberos settings, click **Show** next to Advanced Settings.
