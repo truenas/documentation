@@ -1,7 +1,7 @@
 ---
 title: "VMWare Snapshots Screen"
 description: "This article provides information on the VMWare-Snapshot Add screen settings and functions."
-weight: 40
+weight: 55
 tags:
 - scalesnapshots
 - scalevmware
