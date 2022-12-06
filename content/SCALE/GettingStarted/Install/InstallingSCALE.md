@@ -81,9 +81,9 @@ Different checksum values indicate a corrupted installer file that you should no
 ## Installing SCALE
 You can install SCALE on either physical hardware or a virtual machine.
  
- {{< hint warning >}}
-Prior to updating check to make sure that the system's storage has enough space to handle the update. The update stops if there id insufficent space for it to finish.
- {{< /hint >}}
+{{< hint warning >}}
+Prior to staring the update process, confirm that the system's storage has enough space to handle the update. The update stops if there is insufficent space for it to finish.
+{{< /hint >}}
 
 ### Installing on Physical Hardware 
 
