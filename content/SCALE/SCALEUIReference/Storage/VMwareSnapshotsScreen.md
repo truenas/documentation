@@ -8,10 +8,10 @@ tags:
 ---
 
 
-Use the **VMware-Snapshots** option on the **Storage** sceen to create snapshots when TrueNAS SCALE is used as a VMWare datastore. 
-Click **Snapshots** and select **VMware-Snapshots** from the dropdown list to display the **Add VMware-Snapshots** screen.
+Use the **VMware-Snapshot Integration** option on the **Data Protection > Periodic Snapshot Tasks** widget to create snapshots when TrueNAS SCALE is used as a VMWare datastore. 
+Click  **VMware-Snapshot Integration** to display the **VMware-Snapshots** screen.
 
-![AddVMwareSnapshotScreen](/images/SCALE/22.02/AddVMwareSnapshotScreen.png "Add VMware- Snapshot Screen")
+![AddVMwareSnapshotScreen](/images/SCALE/22.12/emptyvmwaresnapshotadd.png "Add VMware- Snapshot Screen")
 
 
 | Setting | Description |
