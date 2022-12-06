@@ -1,5 +1,5 @@
 ---
-title: "Setting Up Permissions"
+title: "Managing ACL Permissions"
 description: "This article provides instructions on changing dataset-level ACL settings, adding, changing, and viewing a ACL item permissions, using the ACL editor screens, and general information on ACLs."
 weight: 65
 aliases: /scale/scaleuireference/storage/pools/permissionsscale/
@@ -70,8 +70,9 @@ If you add a dataset as a child of a dataset with an NSFv4 ACL and you do not ch
 
 If you add a dataset from the root or a parent dataset with a POSIX ACL, and you change the **ACL Type** setting from **Inherit** to one of the other options, then the **ACL Type** setting and not the parent dataset determines the ACL type added. 
 
-A warning displays every time you change the **ACL Type** setting.
 {{< /expand >}}
+
+A warning displays every time you change the **ACL Type** setting.
 
 If you add child dataset nested under non-root parent with an NFSv4 dataset, and you leave **ACL Type** set to **Inherit**, the system opens the **Set ACL for this dataset** window with the option to return to the **Datasets** screen or to open the ACL manager. 
 Click **Return to Pool List** to return to the **Datasets** screen or click **Go to ACL Manager** to open the **Select a Preset ACL** window and **Edit ACL** screen.
@@ -88,7 +89,7 @@ You can edit the ACL using the **ACL Editor** screen.
 
 The **ACL Type** and **ACL Mode** settings, found on both the **Add Dataset** and **Edit Dataset** screens in the **Advanced Options** settings for non-root datasets, are editable but not advised on production systems with datasets currently in use due to possible production disruptions if you make a mistake.
 
-If you want to change the **ACL Type** and **ACL Mode** settings, do this before you begin using the dataset in your production environments.
+If you want to change the **ACL Type** and **ACL Mode** settings, do it before you begin using the dataset in your production environments.
 
 {{< hint warning >}}
 WARNING: Changing the **ACL Type** affects how TrueNAS writes and reads on-disk ZFS ACL.
@@ -101,7 +102,7 @@ To prevent unexpected permissions behavior, you must manually set new dataset AC
 
 Setting new ACLs recursively is destructive. We suggest creating a ZFS snapshot of the dataset before changing the ACL type or modifying permissions.
 {{< /hint >}}
-
+{{< expand "Click Here for More Information" "v" >}}
 From the **Datasets** screen:
 
 To change the ACL settings on a new dataset, click **Add Dataset**, then click **Advanced Options** and scroll down to the **ACL Type** and **ACL Mode** settings. 
@@ -135,7 +136,7 @@ Select **Passthrough** to only update ACL entries related to the file or directo
 **Restricted** which does not allow chmod to make changes to files or directories with a non-trivial ACL. 
 An ACL is trivial if it can be fully expressed as a file mode without losing any access rules. 
 When set to **Restricted** it optimizes a dataset for SMB sharing, but it can also require further optimizations. For example, configuring an [rsync task]({{< relref "SCALE/SCALETutorials/DataProtection/RsyncTasksSCALE.md" >}}) with this dataset could require adding `--no-perms` in the task **Auxiliary Parameters** field.
-
+{{< /expand >}}
 ### Editing ACL Item Permissions
 
 {{< hint ok >}}
@@ -144,7 +145,7 @@ You can view permissions for any dataset but the edit option only displays on th
 Configuring advanced permissions overrides basic permissions configured on the **Add Dataset** screen.
 {{< /hint >}}
 You can edit ACL item permissions when you create your dataset or modify them after you save the dataset.
-
+{{< expand "Click Here for More Information" "v" >}}
 From the **Datasets** screen, select the dataset on the tree table to display the dataset widgets for it.
 
 If the **Permissions** widget is an NSFv4 ACL, the ACL items are buttons you can use to open an edit expandable with **Permissions Advanced** and **Flags Advanced** options. 
@@ -181,7 +182,7 @@ Removing this permission results lost access to the path.
 If you want to apply these settings to all child datasets, select **Apply permissions recursively**, then click **Confirm** and then **Continue** on the warning dialog.
 
 Click **Save Access Control List** to save the change and if you do not want to use an ACL preset.
-
+{{< /expand >}}
 ### Using Presets
 From the **Edit ACL** configuration screen, click **Use ACL Preset** to open the **Select a preset ACL** window.
 Select the radio button to either use an existing preset or to create a new preset, then select the preset from the dropdown.
@@ -202,7 +203,6 @@ To add a new item to an ACL, first click **Add Item**. Select that item then sel
 
 To modify existing ACL items, first select the item then make your changes to that item.
 
-
 Select the **Who** value from the dropdown list of users on the system if modifying a **User** permission, or from a list of groups on the system if a **Group** permission, and then select the **Permissions** below the **Who** field. 
 
 See [nfs4_setfacl(1) NFSv4 ACL ENTRIES](https://manpages.debian.org/testing/nfs4-acl-tools/nfs4_setfacl.1.en.html).
@@ -214,6 +214,7 @@ Advanced flags allow further control of how the ACE applies to files and directo
 ### Editing POSIX ACL Items
 
 If your dataset uses a POSIX ACL, the **Edit** button on the **Permissions** widget opens the **Unix Permissions Editor** screen.
+{{< expand "Click Here for More Information" "v" >}}
 
 ![EditPermissionsScreenPOSIXACL](/images/SCALE/22.12/EditPermissionsScreenPOSIXACL.png "POSIX Edit Permissions Screen")
 
@@ -235,9 +236,8 @@ If you want to apply this preset to all child datasets select **Apply permission
 To add another item to your ACL, click **Add Item**. To display the ACL presets window, click **Use ACL Preset**.
 
 Click **Save Access Control List** when you finish configuring settings for the user, group or object ACE in the **Who** field.
-
+{{< /expand >}}
 ### Using Shell to View ACL Details
-
 
 To view ACL information from the console, go to **System Settings > Shell** and enter:
 
