@@ -1,7 +1,7 @@
 ---
 title: "Creating VMWare Snapshots"
 description: "This article provides instructions for creating ZFS snapshots when using TrueNAS as a VMWare datastore."
-weight: 40 
+weight: 55 
 tags:
 - scalesnapshots
 - scalevmware
