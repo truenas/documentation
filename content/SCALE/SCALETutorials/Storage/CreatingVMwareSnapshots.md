@@ -40,7 +40,7 @@ If you click in *ZFS Filestore** or **Datastores** before you click **Fetch Data
 
 1. Enter the IP address or host name for your VMWare system in **Hostname**.
    
-   ![AddVMwareSnapshotScreen](/images/SCALE/22.02/AddVMwareSnapshotScreen.png "Add VMware-Snapshot Screen")
+   ![AddVMwareSnapshotScreen](/images/SCALE/22.12/emptyvmwaresnapshotadd.png "Add a new VMware Snapshot Screen")
 
 2. Enter the user on the VMware host with permission to snapshot virtual machine for VMWare in **Username** and the the password for that account in **Password**.
 
