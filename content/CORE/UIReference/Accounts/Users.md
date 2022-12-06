@@ -1,6 +1,6 @@
 ---
 title: "Users"
-description: "This article describes how to create and manage user accounts on TrueNAS CORE."
+description: "This article describes the fields on the Users screens in TrueNAS CORE."
 weight: 20
 tags:
 - coreusersandgroups
@@ -26,10 +26,13 @@ The **Users** screen lets you create and manage user accounts.
 | Username | Descriptive name for the user. |
 | UID | User ID number. |
 | Builtin | Whether or not the user is built-in. |
+| Full Name | Shows the saved **Full Name** of the account. |
 
 ## User Configuration
 
-![UIRefUsersAdd](/images/CORE/13.0/UIRefUsersList.png "Accounts Users List")
+{{< include file="/_includes/CORERequiredFields.md" type="page" >}}
+
+![UIRefUsersAdd](/images/CORE/13.0/UIRefUsersAdd.png "Accounts Users Add or Edit")
 
 ### Identification
 
@@ -62,10 +65,10 @@ The **Users** screen lets you create and manage user accounts.
 | Name | Description |
 |------|------|
 | SSH Public Key | Public SSH key for key-based authentication. |
-| Disable Password | Enables/Disables passwrod field.  |
+| Disable Password | Enables/Disables password field.  |
 | Shell | The shell to use for local and SSH logins. |
 | Lock User | Prevents user from logging in or using password-based services. |
-| Permit Sudo | Lets user use `sudo`. |
+| Permit Sudo | Enable or disable issuing commands as the root account with `sudo`. |
 | Microsoft Account | Allows Windows authentication methods. |
 | Samba Authentication | Lets users authenticate to Samba shares. |
 

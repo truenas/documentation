@@ -26,10 +26,12 @@ The **Groups** screen lets you create and manage UNIX-style groups.
 | **Group** | Group name. |
 | **GID** | Group ID number. |
 | **Builtin** | Whether or not the group is built-in. |
-| **Permit Sudo** | Whether or not the group has PErmit Sudo enabled. |
+| **Permit Sudo** | Whether or not the group has **Permit Sudo** enabled. |
 | **Samba Authentication** | Whether or not the group has Samba Authentication enabled. |
 
 ## Groups Configuration
+
+{{< include file="/_includes/CORERequiredFields.md" type="page" >}}
 
 ![UIRefGroupsAdd](/images/CORE/13.0/UIRefGroupsAdd.png "Accounts Groups Add")
 
@@ -37,7 +39,7 @@ The **Groups** screen lets you create and manage UNIX-style groups.
 |------|------|
 | **GID** | A unique number used to identify a Unix group. |
 | **Name** | Descriptive name for the group. |
-| **Permit Sudo** | Allows group members to use sudo. Group members are prompted for their password when using sudo. |
+| **Permit Sudo** | Allows group members to act as the root account with sudo. Group members are prompted for their password when using sudo. |
 | **Samba Authentication** | Allows group to be used for Samba permissions and authentication. |
 | **Allow Duplicate GIDs** | Allows more than one group to have the same group ID. |
 
