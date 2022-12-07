@@ -85,7 +85,7 @@ As it is offered by hub.docker.com you can simply deploy it via one of the comma
 
 We will configure everything else from the shell TNS has built in, so this is all we have to do here.
 
-After that start your docker image. Open a shell an double check your files accessability. I have mounted my scans folder under /media/scans, so I do a
+After that start your docker image. Open a shell and double check your files accessibility. I have mounted my scans folder under /media/scans, so I do a
 ```ls -lah /media/scans/ ```
 and get something like this:
 
