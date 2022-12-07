@@ -17,7 +17,7 @@ Use this procedure to create ZFS snapshots when using TrueNAS SCALE as a VMWare 
 When creating a ZFS snapshot, TrueNAS SCALE automatically takes a snapshot of any running VMWare virtual machine before taking a scheduled or manual ZFS snapshot of the data or zvol backing that VMWare datastore.
 
 {{< hint info >}}
-You must have a paid-edition for VMWare ESXi to use the TrueNAS SCALE VMWare Snapshots feature.
+You must have a paid edition of VMWare ESXi to use the TrueNAS SCALE VMWare Snapshots feature.
 If you try to use them with the free-edition of VMware ESXi, you see this error message: "Error, Can't create snapshot, current license or ESXi version prohibits execution of the requested operation."
 ESXi free has a locked (read-only) API that prevents using TrueNAS SCALE VMWare Snapshots.
 The cheapest ESXi edition that is compatible with TrueNAS VMware Snapshots is VMWare vSphere Essentials Kit.
