@@ -40,7 +40,7 @@ To create a snapshot, click **Create Snapshot** on the **Data Protection** widge
 
 ### Cloning a Zvol from a Snapshot
 
-If you clone a zvol from an existing snapshot, the cloned zvol that displays on the **Datasets** screen.
+If you clone a zvol from an existing snapshot, the cloned zvol displays on the **Datasets** screen.
 
 {{< taglist tag="scalezvols" limit="10" >}}
 {{< taglist tag="scaledatasets" limit="10" title="Related Dataset Articles" >}}
