@@ -2,10 +2,10 @@
 title: "Creating and Managing Snapshots"
 description: "This article provides instructions on managing ZFS snapshots in TrueNAS Scale."
 weight: 30
-aliases:
- - /scale/scaleuireference/storage/snapshotsscale/
- -/scaletutorials/storage/snapshotsscale/
-tag: 
+aliases: 
+- /scale/scaleuireference/storage/snapshotsscale/
+- /scaletutorials/storage/snapshotsscale/
+tags: 
  - scalesnapshots
  - scalebackup
  - scalestorage
