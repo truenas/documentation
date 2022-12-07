@@ -10,10 +10,9 @@ tags:
 
 {{< toc >}}
 
-
 A jail is created with no software aside from the core packages installed as part of the selected version of FreeBSD.
-To install more software, go to the **Jails** screen and expand the jail entry.
-Start the jail, then after the jail boots, click **> SHELL**.
+To install software into a jail, go to the **Jails** screen and expand the jail entry.
+Start the jail, then after the jail boots, click **SHELL**.
 
 ![JailsShellExample](/images/CORE/12.0/JailsShellExample.png "Jail Shell")
 
@@ -134,7 +133,7 @@ Use the arrow keys to select an option and press <kbd>spacebar</kbd> to toggle t
 Press <kbd>Enter</kbd> when satisfied with the options.
 The port begins to compile and install.
 
-After options are set, the configuration screen does not normally display again.
+After options are selected, the configuration screen does not normally display again.
 Use `make config` to display the screen and change options before rebuilding the port with `make clean install clean`.
 
 Many ports depend on other ports.
@@ -223,4 +222,5 @@ The startup script also indicates if any additional parameters are available:
 # NAME_dir="/usr/local/etc/openvpn"
 # --cd directory
 ```
+
 {{< taglist tag="corejails" limit="10" >}}

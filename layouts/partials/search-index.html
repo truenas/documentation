@@ -1,0 +1,16 @@
+<script>
+window.store = {
+    {{ range .Site.Pages  }}
+    // You can use any unique identifier here
+    "{{ .RelPermalink }}": {
+        // You can customize your searchable fields using any .Page parameters
+        "title": "{{ .Title  }}",
+        "content": {{ .Params.description | plainify }}, // Strip out HTML tags
+        "url": "/docs{{ .RelPermalink }}",
+		"path": "{{ with .File }}{{ .Dir }}{{ end }}"
+    },
+    {{ end }}
+}
+</script>
+<script src="/js/lunr.min.js"></script>
+<script src="/js/search.js"></script>

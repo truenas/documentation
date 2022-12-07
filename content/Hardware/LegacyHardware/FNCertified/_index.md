@@ -1,5 +1,5 @@
 ---
 title: "FreeNAS Certified"
 geekdocCollapseSection: true
-weight: 20
+weight: 40
 ---
