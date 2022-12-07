@@ -29,6 +29,8 @@ You can find additional options for configuring general network interfaces and I
 
 ![AppsAdvancedSettingsKubernetesSettings](/images/SCALE/22.02/AppsAdvancedSettingsKubernetesSettings.png "Apps Advanced Settings")
 
+## App Requirements
+
 ## Official Applications
 
 Official containers are pre-configured to only require a name during deployment.
