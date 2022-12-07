@@ -17,7 +17,7 @@ or in short within this tutorial only "ES" ([Elastic LINK](https://www.elastic.c
 
 ## FS Crawler
 
-is the script that builds the index in the ES database. It can be optimized to index specific values of your files and folders, according to your needs. For example if you prefer to search for titles it mau be better for you to not have a fulltext search enabled. Someone else likes to keep an eye only on the size of the files and wants to search for file and folder size only. If you need more details, feel free to dive deeper into this topic with the fscrawler documentation ([FS Crawler LINK](https://fscrawler.readthedocs.io/en/latest/)). We will use FS Crawler 2.10-SNAPSHOT.
+is the script that builds the index in the ES database. It can be optimized to index specific values of your files and folders, according to your needs. For example if you prefer to search for titles it may be better for you to not have a fulltext search enabled. Someone else likes to keep an eye only on the size of the files and wants to search for file and folder size only. If you need more details, feel free to dive deeper into this topic with the fscrawler documentation ([FS Crawler LINK](https://fscrawler.readthedocs.io/en/latest/)). We will use FS Crawler 2.10-SNAPSHOT.
 
 ## FS Crawler alternative: fs2es-indexer
 
