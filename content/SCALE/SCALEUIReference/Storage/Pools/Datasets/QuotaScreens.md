@@ -20,7 +20,7 @@ Users quotas and group quotas each have their own management screens.
 To manage the dataset overall capacity, use **Edit** to open the **[Capacity Settings]({{< relref "CapacitySettingsSCALE.md" >}})** screen.
 
 ## User Quotas Screen
-{{< includes file="/_includes/UserQuotasScreenSCALE.md" type="page" >}}
+{{< include file="/_includes/UserQuotasScreenSCALE.md" type="page" >}}
 
 The <span class="material-icons">delete</span>icon opens the **Delete User Quota** dialog.
 
@@ -55,7 +55,7 @@ Click anywhere on a user to open the **Edit User Quota** screen with the quota s
 | **User Object Quota** | Enter the number of objects the selected user can own. Entering **0** allows unlimited objects. |
 
 ## Group Quotas Screens
-{{< includes file="/_includes/GroupQuotasScreenSCALE.md" type="page" >}}
+{{< include file="/_includes/GroupQuotasScreenSCALE.md" type="page" >}}
 
 The <span class="material-icons">delete</span>icon opens the **Delete Group Quota** dialog.
 
@@ -79,9 +79,9 @@ The **Add Group Quotas** screen allows you to configure quotas for groups config
 Click **Save** to set the quotas or **Cancel** to exit without saving.
 
 ## Edit Group Quotas
-The **Edit Group Quotas** window allows you to modify the group data quota and group object quota values for an individual group. Click anywhere on a group to open the **Edit Group Quota** screen.
+The **Edit Group Quotas** screen allows you to modify the group data quota and group object quota values for an individual group. Click anywhere on a group to open the **Edit Group Quota** screen.
 
-![EditGroupQuotaWindow](/images/SCALE/22.02/EditGroupQuotaWindow.png "Edit Group Quota")
+![EditGroupQuotasScreen](/images/SCALE/22.12/EditGroupQuotasScreen.png "Edit Group Quota")
 
 | Settings | Description |
 |----------|-------------|
