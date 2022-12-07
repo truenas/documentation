@@ -1,5 +1,6 @@
 ---
 title: "Sharing"
+description: "This section contains tutorials for configuring different storage sharing protocols in TrueNAS."
 geekdocCollapseSection: true
 weight: 110
 ---
@@ -7,4 +8,6 @@ weight: 110
 File sharing is a core benefit of a NAS. TrueNAS helps foster collaboration between users through network shares.  
 TrueNAS can use AFP, iSCSI shares, Unix NFS shares, Windows SMB shares, and WebDAV shares. 
 
-{{< include file="static/includes/General/MenuNav.md.part" markdown="true" >}}
+## Contents
+
+{{< children depth="2" description="true" >}}
