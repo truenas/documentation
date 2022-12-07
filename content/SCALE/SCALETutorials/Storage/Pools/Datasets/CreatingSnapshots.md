@@ -61,7 +61,7 @@ Click the **Show extra columns** toggle to add more information in the table. Cl
 Snapshot details includes the space used, date created, retention policy, and the amount of data the dataset can access. It also includes four options: **Hold**, **Delete**, **Clone To New Dataset**, and **Rollback**. 
 
 {{< hint info >}}
-File Explorer the number of snapshots Windows presents to users. If TrueNAS responds with more than the File Explorer limit, File Explorer shows no available snapshots.
+File Explorer limits the number of snapshots Windows presents to users. If TrueNAS responds with more than the File Explorer limit, File Explorer shows no available snapshots.
 TrueNAS displays a dialog stating the dataset snapshot count has more snapshots than recommended, and states performance or functionality might degrade.
 {{< /hint >}}
 
