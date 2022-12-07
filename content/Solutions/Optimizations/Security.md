@@ -40,7 +40,7 @@ Unless needed for a specific use case, keep the default NFS service settings.
 
 During [Share Creation]({{< relref "/CORE/CORETutorials/Sharing/NFSShare.md" >}}), define which systems are authorized for share connections.
 Leaving the **Authorized Networks** or **Authorized Hosts and IP addresses* lists empty allows any system to connect to the NFS share.
-To define which systems can connect to the share, click the *Advanced Options* and enter all networks, hosts, and IP addresses to have share access.
+To define which systems can connect to the share, click the **Advanced Options** and enter all networks, hosts, and IP addresses to have share access.
 All other systems are denied access.
 
 ## SMB
