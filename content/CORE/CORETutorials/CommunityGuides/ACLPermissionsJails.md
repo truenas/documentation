@@ -13,12 +13,12 @@ Various Plugin jails require permissions to access datasets.
 
 Unless otherwise modified, a dataset is owned by the user **root** and group **wheel**.
 Jailed processes like Plex run as their own user.
-As a result, a default installation of the Plex plugin cannot read or write any datasets and thus not be able to access media files stored in those datasets.
+As a result, a default installation of the Plex plugin cannot read or write any datasets and thus cannot access media files stored in those datasets.
 The TrueNAS user must explicitly configure dataset permissions to allow the plugin to use the dataset.
 
 ## Creating a Dataset Access Control List
 
-To create an dataset Access Control List (ACL) for an application, you need to obtain the Application user ID.
+To create a dataset Access Control List (ACL) for an application, you need to obtain the Application user ID.
 For example, the Plex ID is **972**.
 
 Other popular Plugin user IDs include:
@@ -28,7 +28,7 @@ Other popular Plugin user IDs include:
 * Transmission = **921**
 * Sabnzbd = **350**
 
-To create an ACL for dataset, log in to the UI and go to **Storage > Pools**.
+To create an ACL for a dataset, log in to the UI and go to **Storage > Pools**.
 Click the three dot icon <mat-icon _ngcontent-swc-c471="" role="img" aria-haspopup="true" class="mat-icon notranslate mat-menu-trigger material-icons mat-icon-no-color" aria-hidden="true" style="cursor: pointer;" aria-expanded="true" aria-controls="mat-menu-panel-30">more_vert</mat-icon> and select **Edit Permissions**.
 Click the **Add ACL Item** button to create a new entry.
 New entries appear at the bottom of the list of existing ACL items.
