@@ -17,6 +17,12 @@ tags:
 
 Taking snapshots requires the system have all [pools]({{< relref "CreatePoolScale.md" >}}), [datasets]({{< relref "DatasetsScale.md" >}}), and [zvols]({{< relref "AddManageZvols.md" >}}) already configured.
 
+{{< hint info >}}
+If you plan to access your snapshots using an SMB share in a Windows client, File Explorer limits the number of snapshots Windows presents to you. 
+If TrueNAS responds with more snapshots than the File Explorer limit, File Explorer shows no available snapshots.
+TrueNAS displays a dialog stating the dataset snapshot count has more snapshots than recommended, and states performance or functionality might degrade.
+{{< /hint >}}
+
 ## Creating a Snapshot
 
 {{< hint info >}}
@@ -59,11 +65,6 @@ Select the checkbox to the left of each snapshot to select multiple snapshots an
 Click the **Show extra columns** toggle to add more information in the table. Click **Show** to display extra columns in the table. To hide the added columns, click the toggle again and then click **Hide**. 
 
 Snapshot details includes the space used, date created, retention policy, and the amount of data the dataset can access. It also includes four options: **Hold**, **Delete**, **Clone To New Dataset**, and **Rollback**. 
-
-{{< hint info >}}
-File Explorer limits the number of snapshots Windows presents to users. If TrueNAS responds with more than the File Explorer limit, File Explorer shows no available snapshots.
-TrueNAS displays a dialog stating the dataset snapshot count has more snapshots than recommended, and states performance or functionality might degrade.
-{{< /hint >}}
 
 ### Deleting a Snapshot
 
