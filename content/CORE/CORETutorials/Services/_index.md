@@ -23,6 +23,6 @@ Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i
 
 Services related to data sharing or automated tasks are documented in their respective [Sharing]({{< relref "/CORE/UIReference/Sharing/_index.md" >}}) or [Tasks]({{< relref "/CORE/UIReference/Tasks/_index.md" >}}).  
 
-## Additional Services Articles ##
+## Additional Services Articles
 
 {{< children depth="2" sort="Name" description="true" >}}
