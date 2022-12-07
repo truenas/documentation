@@ -1,5 +1,6 @@
 ---
 title: "TrueNAS Data Collection Statement"
+description: "TrueNAS CORE Data Collection Statement."
 weight: 5
 ---
 
