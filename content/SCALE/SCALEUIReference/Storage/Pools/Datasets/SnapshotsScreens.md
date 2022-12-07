@@ -2,6 +2,8 @@
 title: "Snapshots Screens"
 description: "This article provides information on the snapshots screens, snapshot settings and functions."
 weight: 35 
+aliases: 
+- /scale/scaleuireference/storage/snapshotsscreens/
 tags:
 - scalesnapshots
 - scaledatasets
@@ -34,15 +36,17 @@ If your **Snapshots** screen does not display a list of snapshots and you know y
 ### Show Extra Columns
 
 Click the **Show Extra Columns** toggle to add extra information columns to the list of snapshots. This opens the **Show Extra Columns** dialog.
+{{< expand "Click Here for More Information" "v" >}}
 
 ![SnapshotsScreenShowingExtraColumns](/images/SCALE/22.12/SnapshotsScreenShowingExtraColumns.png "Snapshot Screen Showing Extra Columns")
 
 **Show** adds the extra columns to the list of snapshots. These columns add the space used (**Used**), the snapshot creation date, and the amount of data the dataset can access (**Referenced**).
 
 Click the toggle again to open the **Hide Extra Columns** dialog. **Hide** to return to the default view with only the **Dataset** and **Snapshot** columns.
-
+{{< /expand >}}
 ## Snapshot Details Screen
 Click anywhere on a snapshot to expand it and view more information and options for that snapshot. 
+{{< expand "Click Here for More Information" "v" >}}
 
 ![SnapshotsScreenExpandedSnapshot](/images/SCALE/22.12/SnapshotsScreenExpandedSnapshot.png "Expanded Snapshot Screen")
 
@@ -54,7 +58,7 @@ Select the checkbox to the left of each snapshot to select multiple snapshots an
 | **Clone to New Dataset** | Opens the **[Clone to New Dataset](#clone-snapshot))** window where you enter a new name or clone with the default value in the **Dataset Name** field. |
 | **Rollback** | Opens the **[Dataset Rollback From Snapshot](#dataset-rollback-from-snapshot-dialog)** window with three radio button options. **Confirm** activates the **Rollback** button. |
 | **Hold** | Select to prevent the snapshot from being deleted. If selected and you batch-operation delete datasets, this opens an error displays with the name of the dataset and prevents the delete operation from continuing. |
-
+{{< /expand >}}
 ### Dataset Rollback from Snapshot Window
 The snapshot **Rollback** option replaces the data in the selected dataset with the information saved in the snapshot. 
 {{< hint "danger" >}}
@@ -78,13 +82,14 @@ When the safety check finds additional snapshots that are directly related to th
 
 ### Clone Snapshot
 The **Clone To New Dataset** option creates a new dataset that is a copy of the selected snapshot.
+{{< expand "Click Here for More Information" "v" >}}
 
 ![CloneToDatasetDialog](/images/SCALE/22.12/CloneToDatasetDialog.png "Clone To New Dataset from Snapshot")
 
 Enter a new name in the **Dataset Name** field or leave the default value if you want to keep track of the dataset based on the snapshot it was created from.
 
 **Clone** creates the new dataset on the **Datasets** screen tree table.
-
+{{< /expand >}}
 ### Delete Snapshot
 The snapshot **Delete** option opens a window that lists the snapshot(s) you select. 
 
@@ -100,12 +105,11 @@ To delete more than one snapshot in one operation, select the checkbox beside th
 
 **Batch Operations Delete** opens a window listing all selected snapshots.
 
-![DeleteMultipleSnapshotsWindow](/images/SCALE/22.12/DeleteMultipleSnapshotsWindows.png "Batch Operations Delete Snapshot Window")
+![DeleteMultipleSnapshotsWindow](/images/SCALE/22.12/DeleteMultipleSnapshotsWindow.png "Batch Operations Delete Snapshot Window")
 
 **Confirm** activates the **Delete** button. If a snaphot has the **[Hold](#snapshot-details-screen)** option selected, an error displays to prevent you from deleting that snapshot.
 {{< /expand >}}
 ## Add Snapshot Screen
-
 The **Add Snapshots** screen allows you to create a snapshot while on the **Snapshots** screen. It also opens when you click **Create Snapshot** on the **Dataset Protection** widget on the **Datasets** screen. 
 {{< expand "Click Here for More Information" "v" >}}
 You you open the **Add Snapshot** screen using **Create Snapshot** on the **Dataset Protection** widget, the form pre-populates the **Dataset** field with the name of the dataset you selected on the **Datasets** screen. If you open it using **Add** on the **Snapshots** screen you select the value in the **Dataset** field.
@@ -120,6 +124,7 @@ You you open the **Add Snapshot** screen using **Create Snapshot** on the **Data
 | **Recursive** | Select to include child datasets or zvols in the snapshot. |
 
 Use **Save** to retain the settings and return to the **Snapshots** screen.
+{{< /expand >}}
 
 {{< taglist tag="scalesnapshots" limit="10" >}}
 {{< taglist tag="scaledatasets" limit="10" title="Related Dataset Articles" >}}

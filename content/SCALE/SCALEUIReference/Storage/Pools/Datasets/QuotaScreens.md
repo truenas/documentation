@@ -2,6 +2,8 @@
 title: "User and Group Quota Screens "
 description: "This article provides information on User and Group Quota screen settings and functions."
 weight: 45
+aliases: 
+- /scale/scaleuireference/storage/pools/quotascreens/
 tags: 
  - scalequotas
  - scaledatasets

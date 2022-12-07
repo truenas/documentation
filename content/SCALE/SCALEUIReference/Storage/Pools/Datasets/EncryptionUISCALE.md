@@ -1,7 +1,7 @@
 ---
 title: "Encryption Settings"
 description: "This article provides information on SCALE storage encryption screens and settings."
-weight: 70
+weight: 50
 aliases: 
 tags:
 - scaleencryption

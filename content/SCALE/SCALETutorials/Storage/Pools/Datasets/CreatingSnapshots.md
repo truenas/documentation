@@ -3,8 +3,8 @@ title: "Creating and Managing Snapshots"
 description: "This article provides instructions on managing ZFS snapshots in TrueNAS Scale."
 weight: 30
 aliases:
- - /docs/scale/scaleuireference/storage/snapshotsscale/
- - /scale/scaletutorials/storage/snapshotsscale/
+ - /scale/scaleuireference/storage/snapshotsscale/
+ -/scaletutorials/storage/snapshotsscale/
 tag: 
  - scalesnapshots
  - scalebackup
@@ -80,7 +80,7 @@ To delete more than one snapshot in one operation, select the checkbox beside th
 
 **Batch Operations Delete** opens a window listing all selected snapshots.
 
-![DeleteMultipleSnapshotsWindow](/images/SCALE/22.12/DeleteMultipleSnapshotsWindows.png "Batch Operations Delete Snapshot Window")
+![DeleteMultipleSnapshotsWindow](/images/SCALE/22.12/DeleteMultipleSnapshotsWindow.png "Batch Operations Delete Snapshot Window")
 
 {{< include file="/_includes/SnapshotsBulkOperations.md" type="page" >}} 
 
@@ -122,7 +122,7 @@ To restore the data within a snapshot, the recommended steps are:
 
 This approach does not destroy any on-disk data or impact replication.
 
-TrueNAS asks for confirmation before rolling back to the chosen snapshot state. Select the [radio button]({{< relref "SnapshotsScreens.md >}}) for how you want the rollback to operate.
+TrueNAS asks for confirmation before rolling back to the chosen snapshot state. Select the [radio button]({{< relref "SnapshotsScreens.md" >}}) for how you want the rollback to operate.
 
 ![DatasetRollbackFromSnapshotWindow](/images/SCALE/22.12/DatasetRollbackFromSnapshotWindow.png "Dataset Rollback from Snapshot")
 
