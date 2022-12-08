@@ -29,7 +29,7 @@ For a more in-depth explanation of ACLs and configurations in TrueNAS SCALE, see
 
 ## Viewing ACL Permissions
 
-The **Permissions** widget, shown on the **Datasets** screen after selecting a dataset, displays the ACL owner, group and items for that dataset.
+The **Permissions** widget, shown on the **Datasets** screen after selecting a dataset, displays the ACL owner, group, and items for that dataset.
 
 You can also see the two basic ACL settings (**ACL Type** and **ACL Mode**) on both the **Add Dataset** and **Edit Dataset** screens in the **Advanced Options** settings for non-root datasets. 
 You cannot change the root dataset (pool level) ACL or permissions. 
@@ -62,9 +62,9 @@ When adding an ACL, you can leave the dataset default settings or you can change
 
 {{< expand "What type of ACL is created when adding a new dataset?" "v" >}}
 The default **ACL Type** setting is determined when the dataset is created. 
-If the dataset **Share Type** setting is set to **SMB** it changes adds an NFSv4 ACL but if set to **Generic** it adds a POSIX ACL. 
+If the dataset **Share Type** is  **SMB**, the default ACL type is NFSv4. If the share type is **Generic** the default ACL type is POSIX. 
 
-The **ACL Type** default setting is **Inherit** which means it inherits the ACL type from the parent dataset. 
+The **ACL Type** default setting is **Inherit**, which means it inherits the ACL type from the parent dataset. 
 
 If you add a dataset as a child of a dataset with an NSFv4 ACL and you do not change the **ACL Type** from **Inherit** to **POSIX**, the dataset inherits the NSFv4 ACL type from the parent dataset even if the **Share Type** is set to **Generic**.
 
@@ -74,13 +74,13 @@ If you add a dataset from the root or a parent dataset with a POSIX ACL, and you
 
 A warning displays every time you change the **ACL Type** setting.
 
-If you add child dataset nested under non-root parent with an NFSv4 dataset, and you leave **ACL Type** set to **Inherit**, the system opens the **Set ACL for this dataset** window with the option to return to the **Datasets** screen or to open the ACL manager. 
+If you add a child dataset nested under a non-root parent with an NFSv4 dataset, and you leave **ACL Type** set to **Inherit**, the system opens the **Set ACL for this dataset** window with the option to return to the **Datasets** screen or to open the ACL manager. 
 Click **Return to Pool List** to return to the **Datasets** screen or click **Go to ACL Manager** to open the **Select a Preset ACL** window and **Edit ACL** screen.
 
 ![SelectAPresetACL](/images/SCALE/22.12/SelectAPresetACL.png "Select a preset ACL")
 
-Select the radio button to either use an existing or create a new preset. 
-Because **ACL Type** is set to **Inherit** the child dataset inherits an NSFv4 ACL and the options are all NFSv4 presets.
+Select the radio button to either use an existing preset or create a new one. 
+Since **ACL Type** is set to **Inherit**, the child dataset inherits an NSFv4 ACL, and the options are all NFSv4 presets.
 
 Select the preset, then click **Preset** to load the NSFv4 pre-configured permissions that match the preset you selected and close the window. 
 You can edit the ACL using the **ACL Editor** screen.
@@ -121,7 +121,7 @@ Changing the **ACL Type** from **Inherit** to any other type displays a warning 
 Leave **ACL Type** set to **Inherit** to preserve the ACL type from the parent dataset. For SCALE, which is based on Linux, select either **SMB/NFSv4** or **POSIX** options. 
 
 NFSv4 is richer than POSIX and is used to losslessly migrate Windows-style ACLs across Active Directory domains (or stand-alone servers). 
-POSIX ACLs are a Linux-specific ZFS feature, used when an organization data backup target does not support native NFSv4 ACLs. 
+POSIX ACLs are a Linux-specific ZFS feature used when an organization data backup target does not support native NFSv4 ACLs. 
 Since the Linux platform used POSIX for a long time, many backup products that access the server outside the SMB protocol cannot understand or preserve native NFSv4 ACLs. 
 
 {{< hint warning >}}
@@ -153,7 +153,7 @@ Select the settings to include or exclude. Click on the next item, owner, or gro
 
 ![PermissionsWidgetOwnerNSFv4Options](/images/SCALE/22.12/PermissionsWidgetOwnerNSFv4Options.png "Edit NFSv4 Permissions")
 
-To change a more permissions such as the owner, group, or to add/remove ACL items, click **Edit** to open the **Edit ACL** screen for NSFv4 ACLs or the **Unix Permissions Editor** for POSIX ACLs. 
+To change more permissions, such as the owner or group, or to add/remove ACL items, click **Edit** to open the **Edit ACL** screen for NSFv4 ACLs or the **Unix Permissions Editor** for POSIX ACLs. 
 
 ![EditACLScreen](/images/SCALE/22.12/EditACLScreen.png "Edit ACL NFSv4 Permissions")
 
@@ -171,8 +171,8 @@ Set the read/write/execute permissions in the **Access Control Entry** area of t
 
 ![EditACLScreenEditUser](/images/SCALE/22.12/EditACLScreenEditUser.png "Edit ACL Edit Owner")
 
-Click **Apply User** under the **Owner** and **Group** fields. 
-To prevent errors, TrueNAS only submits changes when selected.
+Click **Apply Owner** and **Apply Group** under the **Owner** and **Group** fields. 
+To prevent errors, TrueNAS only submits changes if you enable **Apply Owner** and **Apply Group**.
 
 {{< hint warning >}}
 A common misconfiguration is removing the **Execute** permission from a dataset that is a parent to other child datasets.
@@ -218,11 +218,11 @@ If your dataset uses a POSIX ACL, the **Edit** button on the **Permissions** wid
 
 ![EditPermissionsScreenPOSIXACL](/images/SCALE/22.12/EditPermissionsScreenPOSIXACL.png "POSIX Edit Permissions Screen")
 
-First select or type the name of the user in **Owner**. The owner controls which TrueNAS user and group has full control of this dataset.
+First, select or type the name of the user in **Owner**. The owner controls which TrueNAS user and group has full control of this dataset.
 
 Next select or type the name of the group in **Owner Group**.
 
-Select the Read, Write, Execute permissions for each User, Group and Other, then click **Apply User** and **Apply Group**.
+Select the Read, Write, and Execute permissions for each User, Group, and Other, then click **Apply User** and **Apply Group**.
 
 To open the POSIX **Edit ACL** screen, click **Set ACL**.
 
@@ -235,7 +235,7 @@ If you want to apply this preset to all child datasets select **Apply permission
 
 To add another item to your ACL, click **Add Item**. To display the ACL presets window, click **Use ACL Preset**.
 
-Click **Save Access Control List** when you finish configuring settings for the user, group or object ACE in the **Who** field.
+Click **Save Access Control List** when you finish configuring settings for the user, group, or object ACE in the **Who** field.
 {{< /expand >}}
 ### Using Shell to View ACL Details
 
