@@ -16,7 +16,7 @@ tags:
 TrueNAS uses Network UPS Tools [NUT](https://networkupstools.org/) to provide UPS support.
 After connecting the TrueNAS system UPS device, configure the UPS service by going to **System settings > Services**, finding **UPS**, and clicking <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
 
-See [UPS Service Screen]({{ relref "UPSServicesScreenSCALE.md" }}) for details on the UPS service settings.
+See [UPS Service Screen]({{< relref "UPSServicesScreenSCALE.md" >}}) for details on the UPS service settings.
 
 Some UPS models are unresponsive with the default polling frequency (default is two seconds).
 TrueNAS displays the issue in logs as a recurring error like **libusb_get_interrupt: Unknown error**.
