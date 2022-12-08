@@ -3,57 +3,156 @@ title: "Disks Screens"
 description: "This article provides information on the settings found on and functions of the Disks Screens."
 weight: 30
 aliases:
- - /scale/scaleuireference/storage/disksscale/
+- /scale/scaleuireference/storage/disksscale/
+- /scale/scaletutorials/storage/disksscale/
 tags:
 - scaledisks
+- scalesmart
+- scaledevices
+- scalepools
+- scalestorage
 ---
 
 
 {{< toc >}}
 
-Use the disk screens to manage disk settings for all physical drives installed in your system.
 
-## Disk Screen
+The **Disks** screen displays a list of the physical drives (disks) installed in the system. 
+The list includes the names, serial numbers, sizes, and pool for each system disk. 
 
-The **Disks** screen displays a list of the physical drives (disks) in the system. The list includes the names, serial numbers, sizes, and pools for the system disks. 
+![DisksScreen](/images/SCALE/22.12/DisksScreen.png "Disks Screen") 
 
-![DisksScreen](/images/SCALE/22.02/DisksScreen.png "Disks Screen")
+Use the **Columns** dropdown list to select options to customize disk the information displayed. 
+Options are **Select All**, **Serial** (the disk serial number), **Disk Size**, **Pool** (where the disk is in use), **Disk Type**, **Description**, **Model**, **Transfer Mode**, **Rotation Rate (RPM)**, **HDD Standby**, **Adv. Power Management**, **Enable S.M.A.R.T.**, **S.M.A.R.T. extra options**, and **Reset to Defaults**. 
+Each option displays the information you enter in the **Edit Disk** screen or when you install the disk. 
 
-Use the **Columns** dropdown list to select options to customize disk columns displayed. Options are **Select All**, **Serial** (the disk serial number), **Disk Size**, **Pool** (where the disk is in use), **Disk Type**, **Description**, **Model**, **Transfer Mode**, **Rotation Rate (RPM)**, **HDD Standby**, **Adv. Power Management**, **Enable S.M.A.R.T.**, **S.M.A.R.T. extra options**, and **Reset to Defaults**. The information you enter in the **Edit Disk** screen or when you install the disk displays for each of these column options. 
+Selecting the checkbox to the left of the disk displays the **[Batch Operations](#batch-operations)** options. 
+The checkbox at the top of the table selects all disks in the system. Select again to clear the checkboxes.
 
-Click the the <span class="iconify" data-icon="ant-design:down-outlined"></span> for a disk to expand it and show the traits specific to that disk. 
+**Storage** at the top of the screen to return to the **[Storage Dashboard]({{< relref "StorageDashboardScreen.md" >}})**.
 
-![DiskScreenWithDiskExpanded](/images/SCALE/22.02/DiskScreenWithDiskExpanded.png "Disk Details")
+## Disks Screen - Expanded Disk 
+Click anywhere on a disk row to expand it and show the traits specific to that disk and available option. 
+{{< expand "Click Here for More Information" "v" >}}
+The expanded view of a disk includes details for the disk and options to edit disk properties, run SMART test and view the test results, and in some instances the ability to wipe the disk.
 
-Click **Edit** to display the **Edit Disk** screen.
+![DisksScreenWithDiskExpanded](/images/SCALE/22.12/DisksScreenWithDiskExpanded.png "Disk Details") 
 
-Click **Manual Test** to initiate a S.M.A.R.T. test of the disk.
+**Edit** opens the **[Edit Disk](#edit-disk-screen)** screen.
 
-Click **S.M.A.R.T. Test Results** to open a new screen to view the results of each S.M.A.R.T. test that has run against that disk.
-In the test results screen, click an entry to view the results of the test:
-![SMARTResultsScreen](/images/SCALE/22.02/SMARTResultsScreen.png "S.M.A.R.T. Results")
-* **Remaining** shows how much of the test is left to perform. If the test encountered an error, the field shows at what point in the test the error occurred. A value of **0** means the test completed and no errors were encountered.
-* **Lifetime** shows the age of the disk when the test ran.
-* **Error** shows **N/A** when no error was encountered during the test. If an error is encountered, this field shows details about the error.
+**Manual Test** opens the **[Manual S.M.A.R.T. test](#manual-test-dialog)** where you can initiate a S.M.A.R.T. test of the disk.
 
-Click **Wipe** to wipe data from the disk. See [Wiping Disks]({{< relref "/SCALE/SCALETutorials/Storage/Disks/WipingDisks.md" >}}) for more information.
+**S.M.A.R.T. Test Results** opens the **[S.M.A.R.T. Test Results if *diskname*](#smart-test-results-if-diskname-screen)** screen with the results of each S.M.A.R.T. test run for that disk.
+
+**Wipe** opens the **[Wipe Disk](#wipe-disk-dialogs)** dialog. 
+{{< /expand >}}
+
+### Batch Operations
+Selecting a checkbox to the left of a disk on the **Disks** screen displays the **Batch Operations** functions: **Edit Disk(s)** and **Manual Test**.
+
+**Edit Disk(s)** opens the **[Bulk Edit Disks](#bulk-edit-disks)** screen.
+
+**Manual Test** opens the **[Manual SMART Test]()** dialog with a list of the disk(s) selected.
+
+#### Bulk Edit Disks
+The **Bulk Edits Disks** screen allows you to make changes to disk settings for multiple disks at the same time.
+{{< expand "Click Here for More Information" "v" >}}
+
+![BulkEditDisksScreen](/images/SCALE/22.12/BulkEditDisksScreen.png "Bulk Edit Disks Screen") 
+
+The screen lists the device names for each selected disk in the **Disks to be edited** section.
+
+| Setting | Description |
+|---------|-------------|
+| **HDD Standby** | Select the minutes of inactivity before the drive enters standby mode from the dropdown list. Options are **Always On** or **5**, **10**, **20**, **30**, **60**, **120**, **240**, **300**, and **330**. For more information read this [forum post|(https://forums.freenas.org/index.php?threads/how-to-find-out-if-a-drive-is-spinning-down-properly.2068/) describing identifying spun down drives. Temperature monitoring is disabled for standby disk. |
+| **Advanced Power Management** | Select the power management profile from the dropdown list. Options are **Disabled**, **Level 1 - Minimum power usage with Standby (spindown)**, **Level 64 - Intermediate power usage with Standby**, **Level 127 - Maximum power usage with Standby**, **Level 128 - Minimum power usage without Standby (no spindown)**, **Level 192 - Intermediate power usage without Standby**, and **Level 254 - Maximum performance, maximum power usage**. |
+| **Enable S.M.A.R.T.**  | Select to enable and allow the system to conduct periodic [S.M.A.R.T. tests](http://10.220.0.219/ui/--docurl--/tasks.html/#s-m-a-r-t-tests). |
+| **S.M.A.R.T. Extra Options** | Ente additional [smartctl(8)](https://www.smartmontools.org/browser/trunk/smartmontools/smartctl.8.in). |
+{{< /expand >}}
+
+### Manual S.M.A.R.T. Test Dialog
+The **Manual S.M.A.R.T. Test** dialog displays the name of selected disk(s) and the option to specify the type of test you want to run outside of a scheduled S.M.A.R.T. test.
+{{< expand "Click Here for More Information" "v" >}}
+
+![ManualSmartTestDialog](/images/SCALE/22.12/ManualSmartTestDialog.png "Manual SMART Test Dialog") 
+
+| Setting | Description |
+|---------|-------------|
+| **Long** | Runs SMART Extended Self Test. This scans the entire disk surface and can take many hours on large-volume disks. |
+| **Short** | Runs SMART Short Self Test (usually under ten minutes). These are basic disk tests that vary by manufacturer. |
+| **Conveyance** | Runs a SMART Conveyance Self Test. This self-test routine is intended to identify damage incurred during transporting of the device. This self-test routine requires only minutes to complete. |
+| **Offline** | Runs SMART Immediate Offline Test. The effects of this test are visible only in that it updates the SMART Attribute values, and if the test finds errors, they appear in the SMART error log. |
+
+**Start** begins the test. Depending on the test type selected, the test can take some time to complete. TrueNAS generates alerts when tests discover issues.
+
+For information on automated S.M.A.R.T. testing, see the [S.M.A.R.T. tests]({{< relref "SMARTTestsSCALE.md" >}}) article.
+{{< /expand >}}
+
+### S.M.A.R.T. Test Results if *diskname* Screen
+The **S.M.A.R.T. Test Results if *diskname*** lists test results for the selected disk.
+{{< expand "Click Here for More Information" "v" >}}
+The **Storage** and **Disks** breadcrumbs return to other storage pages. 
+**Storage** opens the **Storage Dashboard** and **Disks** opens the **Disks** screen.
+
+![SMARTTestResultsofDiskExpanded](/images/SCALE/22.12/SMARTTestResultsofDiskExpanded.png "S.M.A.R.T. Test Results for A Disk Screen") 
+
+Customize the information displayed with the **Columns** option. 
+Options are **Unselect All** (toggles to **Select All**), **Description**, **Status**, **Remaining**, **Lifetime**, **Error**, and **Reset to Defaults**.
+**Unselect All** removes all information except the **ID** number. 
+Expand the row to see the **Description**, Status, Remaining, Lifetime, and Error information for the test ID.
+
+![SMARTTestResultsExpandedAfterUnselectAll](/images/SCALE/22.12/SMARTTestResultsExpandedAfterUnselectAll.png "S.M.A.R.T. Test Results Expanded after Unselect All") 
+
+The **Select All** option displays all information on the table view and eliminates the expand function for the tests listed.
+
+#### SMART Test Result Information
+These options, except the ID, appear on the **Columns** dropdown list.
+
+| Option | Description |
+|--------|-------------|
+| **ID** | The test identification number assigned by the system. |
+| **Description** | Type of test run and the status of the system. For example, **Short offline** indicating the test type is **Short** while the system is **offline** when the test ran. |
+| **Status** | Lists the test status. Options are **Success** or **Fail**. |
+| **Remaining** | How much of the test is left to perform. If the test encounters an error, the field shows at what point in the test the error occurs. A value of **0** means the test completed and with no errors encountered. |
+| **Lifetime** | The age of the disk when the test ran. |
+| **Error** | Displays details about any error encountered during the test. Displays **N/A** if no error was encountered during the test. |
+  
+{{< /expand >}}
+### Wipe Disk Dialogs
+The option to wipe a disk only displays when a disk is unused by a pool. **Wipe** opens three dialogs, one to select the method, a confirmation dialog, and a progress dialog that includes the option to abort the process.
+{{< expand "Click Here for More Information" "v" >}}
+The **Wipe Disk *diskname*** opens after clicking **Wipe** on the expanded view of a disk on the **Disks** screen. 
+
+![WipeDiskDialog](/images/SCALE/22.12/WipeDiskDialog.png "Wipe Disk Dialog") 
+
+**Method** provides options for how you want the system to wipe the disk. Options are **Quick**, **Full with zeros**, or **Full with random data**. 
+See [Wiping Disks]({{< relref "/SCALE/SCALETutorials/Storage/Disks/WipingDisks.md" >}}) for more information.
+
+**Wipe** opens the wipe disk confirmation dialog.
+
+![WipeDiskConfirmationDialog](/images/SCALE/22.12/WipeDiskConfirmationDialog.png "Wipe Disk Confirmation Dialog") 
+
+**Confirm** activates **Continue**, and **Continue** starts the disk wipe process and opens a progress dialog with the **Abort** button. 
+
+![DiskWipeProgressDialog](/images/SCALE/22.12/iskWipeProgressDialog.png "Wipe Disk Progress Dialog") 
+
+**Abort** stops the disk wipe process. At the end of the disk wipe process a success dialog displays. **Close** closes the dialog and returns you to the **Disks** screen.
+{{< /expand >}}
 
 ## Edit Disk Screen
-
 The **Edit Disk** screen allows users to configure general disk, power management, temperature alert, S.M.A.R.T. and SED settings for system disks not assigned to a pool. 
+{{< expand "Click Here for More Information" "v" >}}
 
-![EditDiskScreen](/images/SCALE/22.02/EditDiskScreen.png "Edit Disk Screen")
+![EditDiskScreen](/images/SCALE/22.12/EditDiskScreen.png "Edit Disk Screen")
 
-The **Edit Pool Disk** screen, accessed from the **Pool Status** screen, displays the same settings found on the **Edit Disk** screen you use when editing settings for disks assigned to a storage pool. Click the <span class="material-icons">more_vert</span> for the disk to display the **Disk Actions** menu and select **Edit**.
-
-![EditPoolDiskScreen](/images/SCALE/22.02/EditPoolDiskScreen.png "Edit Pool Disk Screen")
+The **Edit Disk** screen, accessed from the **[Devices]({{< relref "DevicesScreenSCALE.md" >}})** screen, displays the same settings found on the **Edit Disk**.  
 
 ### General Settings
 
 | Setting | Description |
 |---------|-------------|
-| **Name** | Enter a Linux disk device name. |
-| **Serial** | Enter the disk serial number. |
+| **Name** | Displays the current name of the disk. To change, enter a Linux disk device name. |
+| **Serial** | Displays the serial number for the selected disk. To change, enter the disk serial number. |
 | **Description** | Enter notes about this disk. |
 
 ### Power Management Settings
@@ -61,7 +160,7 @@ The **Edit Pool Disk** screen, accessed from the **Pool Status** screen, display
 | Setting | Description |
 |---------|-------------|
 | **HDD Standby** | Select a value from the dropdown list of options or leave set to the default **Always On**. This specifies the minutes of inactivity before the drive enters standby mode. This [forum post](https://www.truenas.com/community/threads/how-to-find-out-if-a-drive-is-spinning-down-properly.2068/) describes identifying spun down drives. Temperature monitoring is disabled for standby disks. |
-| **Advanced Power Management** | Select a power management profile from the dropdown list of options that include **Disabled** (the default setting), **Level 1 - Minimum power usage with Standby (spindown)**, **Level 64 - Intermediate power usage with Standby**, **Level 127 - Maximum power usage with Standby**, **Level 128 - Minimum power usage withoout Standby (no spindown)**, **Level 192 - Intermediate power usage without Standby**, or **Level 254 - Maximum performance, maximum power usage**. |
+| **Advanced Power Management** | Select a power management profile from the dropdown list of options that include **Disabled** (the default setting), **Level 1 - Minimum power usage with Standby (spindown)**, **Level 64 - Intermediate power usage with Standby**, **Level 127 - Maximum power usage with Standby**, **Level 128 - Minimum power usage without Standby (no spindown)**, **Level 192 - Intermediate power usage without Standby**, or **Level 254 - Maximum performance, maximum power usage**. |
 
 ### Temperature Alerts Settings
 
@@ -75,64 +174,12 @@ The **Edit Pool Disk** screen, accessed from the **Pool Status** screen, display
 
 | Setting | Description |
 |---------|-------------|
-| **Enable S.M.A.R.T.** | Select to enable the system to conduct periodic [S.M.A.R.T. tests]({{< relref "/SCALE/SCALETutorials/DataProtection/SMARTTestsSCALE.md" >}}). |
+| **Enable S.M.A.R.T.** | Select to enable the system to conduct periodic [S.M.A.R.T. tests]({{< relref "SMARTTestsSCALE.md" >}}). |
 | **S.M.A.R.T. extra options** | Enter additional [smartctl(8)](https://www.unix.com/man-page/suse/8/smartctl/) options. |
 | **SED Password** | Enter a password to set or change the password of the SED for this disk and to use instead of the global SED password. |
 | **Clear SED Password** | Select to clear the SED password for this disk. |
-
-## Disk Actions Options
-The **Disk Actions** dropdown list provides options to edit, place a disk offline or online, replace, remove or detach a disk associated with a pool. To access these options, from the **Pool Status** screen, click the <span class="material-icons">more_vert</span> for the disk.
-
-**Edit** displays the **Edit Pool Disk** settings screen described in the section above.
-
-### Offline or Online Options
-
-The **Offline** and **Online** options each display a confirmation dialog where you must confirm this action before the system initiates the process to take the disk offline or bring a disk online. Each diplays a status spinner that provides status the operation is in progress. You can also use the **Task Manager** to monitor the process. Both processes can take a while to complete.  
-
-![OfflineAndOnlineConfirmationDialogs](/images/SCALE/22.02/OfflineAndOnlineConfirmationDialogs.png "Offline and Online Confirmation Dialogs")
-
-When the offline or online process completes the **Status** display changes to reflect the new status of that disk.
-
-## Replace Option
-
-The **Replace** option displays a confirmation dialog for the disk selected. Select the disk from the **Member disk** dropdown list that to use as the replacement disk. The disk selected in **Member disk** is stopped if that disk is currently in use or if it has partitions present. To override this protection you must select **Force**. 
-
-{{< hint danger >}}
-Replacing a disk can be a destructive process resulting in lost data especially if you use the **Force** option.
-Always back up all data before performing a replace operation as data might not be recoverable.
-{{< /hint >}}
-
-**Force** overrides the safety checks and adds the disk to the pool. This erases any data on the disk! Be sure you selected the correct disk before you use this option.
-
-![ReplaceDiskDialog](/images/SCALE/22.02/ReplaceDiskDialog.png "Replace Disk Confirmation Dialog")
-
-After you select the disk the **Replace Disk** button activates. Click to begin the replacement process.
-
-### Remove Option
-
-The **Remove** option removes a disk used as a hot spate, cache or log device. A confirmation dialog displays before the system performs the operation. You must select **Confirm** to activate the **Remove** button. 
-
-{{< hint danger >}}
-Removing a disk can be a destructive process resulting in lost data.
-Always back up all data before performing a remove operation as data might not be recoverable.
-{{< /hint >}}
-
-![RemoveDiskDialog](/images/SCALE/22.02/RemoveDiskDialog.png "Remove Disk Confirmation Dialog")
-
-Click **Remove** to execute this operation. If you attempt to remove a disk you should not remove an **Failed** error window displays with information about the failed process.
-
-![RemoveFailedError](/images/SCALE/22.02/RemoveFailedError.png "Remove Disk Failed Error")
-
-### Detach Option
-
-The **Detach** option detaches a disk from a mirror only if another valid replica of the data exists, if not the operation is refused and an error message displays. A confirmation dialog displays where you must select **Confirm** before the **Detach** button activates. Select **Detach** to execute the process.
-
-![DetachDiskDialog](/images/SCALE/22.02/DetachDiskDialog.png "Detach Disk Confirmation Dialog")
-
-{{< hint danger >}}
-Detaching a disk can be a destructive process resulting in lost data.
-Always back up all data before performing a detach operation as data might not be recoverable.
-{{< /hint >}}
+{{< /expand >}}
 
 {{< taglist tag="scaledisks" limit="10" >}}
-{{< taglist tag="scalestorage" limit="10" title="Related Storage Articles" >}}
+{{< taglist tag="scalesmart" limit="10" title="Related SMART Test Articles" >}}
+{{< taglist tag="scalesdevices" limit="10" title="Related Devices Articles" >}}

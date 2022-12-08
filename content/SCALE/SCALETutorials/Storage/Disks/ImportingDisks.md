@@ -32,7 +32,7 @@ To import a disk:
 
 2. Select **Import Disk** to display the **Import Disk** screen.
    
-   ![ImportDiskSCALE](/images/SCALE/ImportDiskSCALE.png "Import Disk Options")
+   ![ImportDataScreen](/images/SCALE/22.12/ImportDataScreen.png "Import Data Screen")
 
 3. Use the **Disk** dropdown list to select the disk you want to import.
    
@@ -52,9 +52,8 @@ Choose the same dataset in **Destination Path** as the interrupted import for Tr
 {{< /expand >}}
 ## Monitoring a Disk Import
 
-To monitor an in-progress import, open the **Task Manager** by clicking the <i class="material-icons" aria-hidden="true" title="Task Manager">assignment</i> in top toolbar.
+To monitor an in-progress import, open the **Jobs Manager** by clicking the <i class="material-icons" aria-hidden="true" title="Task Manager">assignment</i> on the top toolbar.
 The disk unmounts after the copy operation completes.
 A dialog allows viewing or downloading the disk import log.
 
 {{< taglist tag="scaledisks" limit="10" >}}
-{{< taglist tag="scalestorage" limit="10" title="Related Storage Articles" >}}

@@ -1,9 +1,10 @@
 ---
 title: "Managing Disks"
-description: "This article provides information on managing disks, performing manual testing and S.M.A.R.T. test results."
+description: "This article provides information on managing disks, performing manual S.M.A.R.T. testing and viewing S.M.A.R.T. test results."
 weight: 30 
 tags:
 - scaledisks
+- scalesmart
 ---
 
 
@@ -13,11 +14,11 @@ Select the disk on the list, then select **Edit**.
 
 The **Disks** page lets users edit disks, perform manual tests, and view S.M.A.R.T. test results. Users may also delete obsolete data off an unused disk.
 
-## Performing Manual Testing
+## Performing Manual  S.M.A.R.T. Testing
 
 Select the disk(s) you want to perform a S.M.A.R.T. test on and click **Manual Test**. 
 
-![TestDiskSCALE](/images/SCALE/TestDiskSCALE.png "Test Disks")
+![ManualSmartTestDialog](/images/SCALE/22.12/ManualSmartTestDialog.png "Manual SMART Test Dialog") 
 
 * **Long**  runs SMART Extended Self Test. This scans the entire disk surface and can take many hours on large-volume disks.
 * **Short** runs SMART Short Self Test (usually under ten minutes). These are basic disk tests that vary by manufacturer.
@@ -35,9 +36,9 @@ For information on automated S.M.A.R.T. testing, see the [S.M.A.R.T. tests]({{< 
 
 To review test results, expand the disk and click **S.M.A.R.T. Test Results**.
 
-![TestResultsDiskSCALE](/images/SCALE/TestResultsDiskSCALE.png "Disk S.M.A.R.T. Test Results")
+![SMARTTestResultsofDiskExpanded](/images/SCALE/22.12/SMARTTestResultsofDiskExpanded.png "S.M.A.R.T. Test Results for A Disk Screen") 
 
 Users can also view S.M.A.R.T. Test Results in **Shell** using the `smartctl` command and the name of the drive. For example,  `smartctl -l selftest /dev/sdb`.
 
 {{< taglist tag="scaledisks" limit="10" >}}
-{{< taglist tag="scalestorage" limit="10" title="Related Storage Articles" >}}
+{{< taglist tag="scalesmart" limit="10" title="Related S.M.A.R.T. Test Articles" >}}
