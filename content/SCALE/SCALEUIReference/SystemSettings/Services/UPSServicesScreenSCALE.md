@@ -19,16 +19,24 @@ Click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to
 ### General Options and Monitor Settings
 **General Options** setting specify required UPS mode and connection. These settings change based on the **Master** or **Slave** UPS mode setting. 
 
-![UPSServiceSettingsGeneralOptions](/images/SCALE/22.02/UPSServiceSettingsGeneralOptions.png "UPS Service General Options")
+![UPSServicesMtrOptions](/images/SCALE/22.12/UPSServicesMtrOptions.png "UPS Service General Options")
 
 | Setting | Description |
 |---------|-------------|
 | **Identifier** | Required. Type a description for the UPS device. You can use alphanumeric, period (.), comma (,), hyphen (-), and underscore (_) characters. |
-| **UPS Mode** | Select the either **Master** or **Slave** mode from the dropdown list. Select **Master** if the UPS is plugged directly into the system serial port, or **Slave** to shut down this system before the master system. **Slave** displays the **Remote Hostname** and **Remote Port** fields, and removes the **Driver** field. The UPS remains the last item to shut down. See the [Network UPS Tools Overview](http://networkupstools.org/docs/user-manual.chunked/ar01s02.html#_monitoring_client). |
+| **UPS Mode** | Options displayed below if **Master** is the **UPS mode** selected from the dropdown list. Select **Master** if the UPS is plugged directly into the system serial port. Selecting **Master** makes this the last system to shut down before the UPS. The UPS remains the last item to shut down. **Master** displays the **Driver** field, and the **Port or Hostname** field. The **Port or Hostname** field is required when **UPS mode** set to **Master**. See the [Network UPS Tools Overview](http://networkupstools.org/docs/user-manual.chunked/ar01s02.html#_monitoring_client). |
+| **Driver** | Required. Enter or select the device driver from the dropdown list. See the [Network UPS Tools compatibility list](http://networkupstools.org/stable-hcl.html) for a list of supported UPS devices. This field displays only when **UPS Mode** is set to **Master**. |
+| **Port or Hostname** | Required. Enter or select the serial or USB port connected to the UPS from the dropdown list. Options include a list of ports on your system and **auto**. Select **auto** to automatically detect and manage the USB port settings.<br> When selecting an SNMP driver, enter the IP address or host name of the SNMP UPS device. |
+
+![UPSServicesSlOptions](/images/SCALE/22.12/UPSServicesSlOptions.png "UPS Service Options")
+
+| Setting | Description |
+|---------|-------------|
+| **Identifier** | Required. Type a description for the UPS device. You can use alphanumeric, period (.), comma (,), hyphen (-), and underscore (_) characters. |
+| **UPS Mode** | Options displayed below if **Slave** is the **UPS mode** selected from the dropdown list. Select **Slave** to shut down this system before the master system. The UPS remains the last item to shut down. **Slave** displays the **Remote Hostname** and **Remote Port** fields, and removes the **Driver** field. The **Port or Hostname** field is not required when **UPS mode** set to **Slave**. See the [Network UPS Tools Overview](http://networkupstools.org/docs/user-manual.chunked/ar01s02.html#_monitoring_client). |
 | **Remote Hostname** | Required. Enter a valid IP address for the remote system with the **UPS Mode** set to **Master**. This field displays only when **UPS Mode** is set to **Slave**. |
 | **Remote Port** | Required. Enter the open network port number of the UPS master system. The default port is 3493. This field displays only when **UPS Mode** is set to **Slave**. |
-| **Driver** | Required. Enter or select the device driver from the dropdown list. See the [Network UPS Tools compatibility list](http://networkupstools.org/stable-hcl.html)for a list of supported UPS devices. This field displays only when **UPS Mode** is set to **Master**. |
-| **Port or Hostname** | Required. Enter or select the serial or USB port connected to the UPS from the dropdown list. Options include a list of port on your system and **auto**. Select **auto** to automatically detect and manage the USB port settings.<br> When selecting an SNMP driver, enter the IP address or host name of the SNMP UPS device. |
+| **Port or Hostname** | Not required. Enter or select the serial or USB port connected to the UPS from the dropdown list. Options include a list of ports on your system and **auto**. Select **auto** to automatically detect and manage the USB port settings.<br> When selecting an SNMP driver, enter the IP address or host name of the SNMP UPS device. |
 
 ### Monitor Settings
 **Monitor** settings specify the primary username and password, other users that have administrative access to the UPS service, and whether the default configuration listens on all interfaces.
