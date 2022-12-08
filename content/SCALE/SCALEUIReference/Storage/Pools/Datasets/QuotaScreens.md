@@ -9,7 +9,7 @@ tags:
 
 {{< toc >}}
 
-TrueNAS allows administrator users to set data or object quotas for user and groups accounts cached on or connected to the system. View, set or mange quotas from the **Datasets** screen. Select the dataset then use the **Data Space Management** widget to access quotas configured on the system.
+TrueNAS allows administrator users to set data or object quotas for user and groups accounts cached on or connected to the system. View, set, or manage quotas from the **Datasets** screen. Select the dataset then use the **Data Space Management** widget to access quotas configured on the system.
 
 Users quotas and group quotas each have their own management screens.
 

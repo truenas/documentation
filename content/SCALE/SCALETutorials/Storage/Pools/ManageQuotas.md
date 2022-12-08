@@ -45,11 +45,11 @@ Click in the **Group** field to view a list of system groups on the system.
 Begin typing a name to filter all groups on the system to find the desired group, then click on the group to add the name. 
 Add additional groups by repeating the same process. A warning dialog displays if there are not matches found. 
 
-To edit individual group quotas, click anywhwere on a group name to open the **Edit Group Quota** screen where you can edit the **Group Data Quota** and **Group Object Quota** values. 
+To edit individual group quotas, click anywhere on a group name to open the **Edit Group Quota** screen where you can edit the **Group Data Quota** and **Group Object Quota** values. 
 
 ![EditGroupQuotasScreen](/images/SCALE/22.12/EditGroupQuotasScreen.png "Edit Group Quota")
 
-**Group Data Quota** is the amount of disk space that selected group can use. **Group Object Quota** is the number of objects selected group can own.
+**Group Data Quota** is the amount of disk space that the selected group can use. **Group Object Quota** is the number of objects the selected group can own.
 
 {{< taglist tag="scalequotas" limit="10" >}}
 {{< taglist tag="scaledatasets" limit="10" title="Related Dataset Articles" >}}

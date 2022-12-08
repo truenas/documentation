@@ -1,12 +1,12 @@
 ---
 ---
 
-The **User Quotas** screen displays the names and quota data of any user accounts cached on or connected to the system. Before adding a quota the system, the screen displays **No Users Quotas** in the center of the screen. 
+The **User Quotas** screen displays the names and quota data of any user accounts cached on or connected to the system. Before adding a quota to the system, the screen displays **No Users Quotas** in the center of the screen. 
 
 ![UserQuotasNoUserQuotasScreen](/images/SCALE/22.12/UserQuotasNoUserQuotasScreen.png "User Quotas Screen no Quotas")
 
 **Add** opens the **Add User Quotas** screen. 
-The **Show All Users** toggle opens a confirmation dialog with the **Show** button. **Show** then only displays the **root** user if no users quotas are configured. 
+The **Show All Users** toggle opens a confirmation dialog with the **Show** button. **Show** then only displays the **root** user if no user quotas are configured. 
 
 ![UserQuotasScreenWithQuotas](/images/SCALE/22.12/UserQuotasScreenWithQuotas.png "User Quotas Screen with Quotas")
 

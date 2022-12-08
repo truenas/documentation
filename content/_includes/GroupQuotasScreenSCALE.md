@@ -1,11 +1,11 @@
 ---
 ---
 
-The **Group Quotas** screen displays the names and quota data of any group account cached on or connected to the system. Before adding a quota the system, the screen displays **No Group Quotas** in the center of the screen. **Add** opens the **Add Group Quotas** screen.
+The **Group Quotas** screen displays the names and quota data of any group account cached on or connected to the system. Before adding a quota to the system, the screen displays **No Group Quotas** in the center of the screen. **Add** opens the **Add Group Quotas** screen.
 
 ![GroupQuotasScreenWithNoQuotas](/images/SCALE/22.12/GroupQuotasScreenWithNoQuotas.png "User Quotas Screen no Quotas")
 
-The **Show All Users** toggle opens a confirmation dialog with the **Show** button. **Show** then only displays the **root** user if no users quotas are configured. 
+The **Show All Users** toggle opens a confirmation dialog with the **Show** button. **Show** then only displays the **root** user if no user quotas are configured. 
 
 ![GroupQuotasScreenWithQuotas](/images/SCALE/22.12/GroupQuotasScreenWithQuotas.png "Group Quotas Screen with Quotas")
 
