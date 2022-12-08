@@ -20,7 +20,7 @@ Taking snapshots requires the system have all [pools]({{< relref "CreatePoolScal
 {{< hint info >}}
 If you plan to access your snapshots using an SMB share in a Windows client, File Explorer limits the number of snapshots Windows presents to you. 
 If TrueNAS responds with more snapshots than the File Explorer limit, File Explorer shows no available snapshots.
-TrueNAS displays a dialog stating the dataset snapshot count has more snapshots than recommended, and states performance or functionality might degrade.
+TrueNAS displays a dialog stating the dataset snapshot count has more snapshots than recommended, and that performance or functionality might degrade.
 {{< /hint >}}
 
 ## Creating a Snapshot
@@ -29,7 +29,7 @@ TrueNAS displays a dialog stating the dataset snapshot count has more snapshots 
 Consider making a [Periodic Snapshot Task]({{< relref "PeriodicSnapshotTasksScreensSCALE.md" >}}) to save time and create regular, fresh snapshots.
 {{< /hint >}}
 
-From the **Datasets** screen select the dataset you want to snapshot, then click **Create Snapshot** on **Data Protection** widget. 
+From the **Datasets** screen select the dataset you want to snapshot, then click **Create Snapshot** on the **Data Protection** widget. 
 You can also click **Manage Snapshots** to open the **Snapshots** screen and click **Add**.
 
 If you click **Create Snapshot** the **Snapshots** screen opens filtered for the dataset you selected. 
@@ -43,7 +43,7 @@ Clear the dataset from the search field to see all snapshots.
 
 3. Accept the name suggested by the TrueNAS software in the **Name** field or enter any custom string to override the suggested name.
 
-4. (Optional) Select an option from  the **Naming Schema** dropdown list that the TrueNAS software populated with existing periodic snapshot task schemas.  
+4. (Optional) Select an option from the **Naming Schema** dropdown list that the TrueNAS software populated with existing periodic snapshot task schemas.  
    If you select an option, TrueNAS generates a name for the snapshot using that naming schema from the selected Periodic Snapshot and replicates that snapshot. 
 
    You cannot enter a value in **Naming Schema** and in **Name** as selecting or entering a value in **Naming Schema** populates the other field. 
@@ -62,9 +62,9 @@ To manage snapshots, click anywhere on a snapshot to expand it and display the o
 
 Select the checkbox to the left of each snapshot to select multiple snapshots and display the **Batch Operations** option to **Delete** the selected snapshots.
 
-Click the **Show extra columns** toggle to add more information in the table. Click **Show** to display extra columns in the table. To hide the added columns, click the toggle again and then click **Hide**. 
+Click the **Show extra columns** toggle to add more information to the table. Click **Show** to display extra columns in the table. To hide the added columns, click the toggle again and then click **Hide**. 
 
-Snapshot details includes the space used, date created, retention policy, and the amount of data the dataset can access. It also includes four options: **Hold**, **Delete**, **Clone To New Dataset**, and **Rollback**. 
+Snapshot details include the space used, the creation date, the retention policy, and the amount of data the dataset can access. It also includes four options: **Hold**, **Delete**, **Clone To New Dataset**, and **Rollback**. 
 
 ### Deleting a Snapshot
 
@@ -85,7 +85,7 @@ To delete more than one snapshot in one operation, select the checkbox beside th
 
 {{< include file="/_includes/SnapshotsBulkOperations.md" type="page" >}} 
 
-**Confirm** activates the **Delete** button. If a snaphot has the **[Hold](#snapshot-details-screen)** option selected, an error displays to prevent you from deleting that snapshot.
+**Confirm** activates the **Delete** button. If a snapshot has the **[Hold](#snapshot-details-screen)** option selected, an error displays to prevent you from deleting that snapshot.
 
 ### Cloning to a New Dataset
 
@@ -113,7 +113,7 @@ The **Rollback** option reverts the dataset back to the point in time saved by t
 {{< hint warning >}}
 Rollback is a dangerous operation that causes any configured replication tasks to fail.
 {{< /hint >}}
-Replications use the existing snapshot when doing an incremental backup, and rolling back can put the snapshots out-of-order.
+Replications use the existing snapshot when doing an incremental backup, and rolling back can put the snapshots out of order.
 To restore the data within a snapshot, the recommended steps are:
 
 1.  Clone the desired snapshot.
