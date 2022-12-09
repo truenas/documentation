@@ -1,7 +1,7 @@
 ---
 title: "Disks Screens"
 description: "This article provides information on the settings found on and functions of the Disks Screens."
-weight: 30
+weight: 10
 aliases:
 - /scale/scaleuireference/storage/disksscale/
 - /scale/scaletutorials/storage/disksscale/
@@ -145,7 +145,7 @@ The **Edit Disk** screen allows users to configure general disk, power managemen
 
 ![EditDiskScreen](/images/SCALE/22.12/EditDiskScreen.png "Edit Disk Screen")
 
-The **Edit Disk** screen, accessed from the **[Devices]({{< relref "DevicesScreenSCALE.md" >}})** screen, displays the same settings found on the **Edit Disk**.  
+The **Edit Disk** screen, accessed from the **[Devices]({{< relref "DevicesScreensSCALE.md" >}})** screen, displays the same settings found on the **Edit Disk**.  
 
 ### General Settings
 
