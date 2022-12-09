@@ -55,7 +55,7 @@ Each icon displays text labels that explain the state of the dataset when you ho
 
 {{< include file="/_includes/EncryptionIconsSCALE.md" type="page" >}}
 
-If a dataset inherits encryption from either the root or a non-root parent dataset, the locking icons change to a different type and the mouse hover-over label indicates the encryption is **Locked by ancestor** or **Unlocked by ancestor**. 
+If a dataset inherits encryption from either the root or a non-root parent dataset, the locking icons change to a different type, and the mouse hover-over label indicates the encryption is **Locked by ancestor** or **Unlocked by ancestor**. 
 
 Each encrypted dataset includes the **ZFS Encryption** widget on the **Datasets** screen when you select the dataset.
 
