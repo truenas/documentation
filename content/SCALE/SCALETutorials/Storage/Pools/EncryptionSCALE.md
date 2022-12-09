@@ -40,7 +40,7 @@ If your system loses power or you reboot the system the datasets, zvols and all 
 
 The pool and root dataset are unencrypted if you do not select the **Encryption** option on the **Pool Manager** screen. 
 
-You can create an unencrypted dataset on an encrypted pool and you can create an encrypted dataset on an unencrypted pool if you need to protect data with encryption. 
+You can create an unencrypted dataset on an encrypted pool. You can also create an encrypted dataset on an unencrypted pool if you need to protect data with encryption. 
 
 If you add an encrypted dataset under an unencrypted root dataset and then add child datasets under that encrypted dataset it becomes an encrypted non-root parent to any dataset created under it. 
 You can let a nested child dataset inherit the encryption settings from the parent or change the settings for the child dataset.
