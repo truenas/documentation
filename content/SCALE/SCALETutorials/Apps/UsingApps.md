@@ -46,6 +46,16 @@ Saving any changes redeploys the container.
 
 ## Custom Applications
 
-To deploy a custom application container in the Scale web interface, go to **Apps** and click **[Launch Docker Image]({{< relref "LaunchDockerImageScreens.md" >}})** for more on the Docker image wizard screens and settings..
+To deploy a custom application container in the Scale web interface, go to **Apps** and click **[Launch Docker Image]({{< relref "LaunchDockerImageScreens.md" >}})** for more on the Docker image wizard screens and settings.
+
+## Upgrading Apps
+
+You may want to upgrade apps as they receive big-fixing updates or QOL changes. To upgrade an app to the latest version, click the <span class="iconify" data-icon="bi:dots-three-outline-vertical-fill"></span> in an app widget to see the list of app options, then select **<span class="iconify" data-icon="eva:diagonal-arrow-right-up-outline"></span> Upgrade**.
+
+![UpgradeAppSingle](/images/SCALE/22.12/UpgradeAppSingle.png "Upgrade Single App")
+
+To upgrade multiple apps, click the checkbox in the widget oif each app you want to update, then click **Bulk Actions** and select **<span class="iconify" data-icon="ic:outline-update"></span> Upgrade**.
+
+![UpgradeAppBulk](/images/SCALE/22.12/UpgradeAppBulk.png "Upgrade Bulk Apps")
 
 {{< taglist tag="scaleapps" limit="10" >}}
