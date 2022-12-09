@@ -38,7 +38,7 @@ If you select the **Encryption** option for the pool, it forces encryption for a
 If your system loses power or you reboot the system the datasets, zvols and all data in an encrypted pool are automatically locked to protect data in that encrypted pool. 
 {{< /hint >}}
 
-If you do not select the **Encryption** option on the **Pool Manager** screen the pool and root dataset are unenctypted. 
+The pool and root dataset are unencrypted if you do not select the **Encryption** option on the **Pool Manager** screen. 
 
 You can create an unencrypted dataset on an encrypted pool and you can create an encrypted dataset on an unencrypted pool if you need to protect data with encryption. 
 
