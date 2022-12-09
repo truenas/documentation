@@ -1,123 +1,115 @@
 ---
-title: "Local Users"
-description: "Descriptions for the screens and fields on the Local Users screen."
-geekdocCollapseSection: true
+title: "Local Users Screens"
+description: "This article provides information on the user screens and settings, and information on settings for the SCALE **Shell** screen."
 weight: 10
+alias: 
 tags:
- - scaleusers
+- scaleusers
+- scaleshell
 ---
 
 {{< toc >}}
 
-In TrueNAS, user accounts allow flexibility for accessing shared data.
-Typically, administrators create users and assign them to [groups]({{< relref "ManageLocalGroups.md" >}}).
-Doing so makes tuning permissions for large numbers of users more efficient.
 
-{{< hint info >}}
-Only the *root* user account can log in to the TrueNAS web interface.
-{{< /hint >}}
+The **Credentials > Users** screen displays a list of user accounts added to the system. By default built-in users except for **root** are hidden until you make them visible.
 
-When the network uses a directory service, import the existing account information using the instructions in [Directory Services]({{< relref "/SCALE/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}).
+![UsersScreen](/images/SCALE/22.12/UsersScreen.png "Local User non-Built-in Accounts") 
 
-Using [Active Directory]({{< relref "/SCALE/SCALETutorials/Credentials/DirectoryServices/_index.md" >}}) requires setting Windows user passwords in Windows.
+**Toggle Build-In Users** displays either the **Show Built-In Users** or **Hide Built-in Users** dialogs based on the current **Users** list view. 
+If built-in users are hidden, the **Show Built-in Users** dialog opens. Click **Show** to displays the hidden list of users. 
 
-To see user accounts, go to **Credentials > Local Users**.
+![UserScreenWithBuiltinUsers](/images/SCALE/22.12/UserScreenWithBuiltinUsers.png "Local User Built-in Accounts") 
 
-![LocalUsersSCALE](/images/SCALE/22.12/LocalUsersSCALE.png "List of Local User Accounts") 
+To hide the built-in users, click **Toggle Built-In Users** again to open the **Hide Built-in Users** dialog. Click **Hide** to only display non-built-in users again.
 
-TrueNAS hides all built-in users (except root) by default. Click the toggle **Show Built-In Users** to see all built-in users.
+**Add** Opens the **[Add User](#add-or-edit-user-screens)** screen.
 
-## Creating User Accounts
+### User Details Screen
 
-{{< expand "Tutorial Video" "v" >}}
-This short video demonstrates adding a local user.
-{{< embed-video name="scaleangelfishlocalusers" >}}
-{{< /expand >}} 
+The expanded view of each users includes details on that user and provides the option to edit or delete the user. Click the <span class="material-icons">expand_more</span> arrow to show the user details screen.
 
-To create a new user, click **Add**.
+![UserScreenUserDetails](/images/SCALE/22.12/UserScreenUserDetails.png "Local User Details") 
+
+**Edit** opens the **[Edit User](#add-or-edit-user-screens)** screen. **Delete** opens a delete confirmation dialog.
+
+### Add or Edit User Screens
+
+The **Add User** and **Edit User** configuration screens display the same setting options. 
+Built-in users (except the **root** user) do not include the **Home Directory Permissions** settings, but all new users created, such as those for an SMB share like the **smbguest** user do.
+
+### Identification Settings
+**Identification** settings specify the name, user name, password and email for the user.
+{{< expand "Click Here for More Information" "v" >}}
 
 ![AddUserIdentificationSettings](/images/SCALE/22.12/AddUserIdentificationSettings.png "Add User Identification Settings") 
 
-TrueNAS lets users configure four different user account traits. 
+| Setting | Description |
+|---------|-------------|
+| **Full Name** | Required. Enter a name for the user with our without spaces. |  
+| **Username** | Required. Enter a user name of up to 16 characters in length. When using NIS or other legacy software with limited user name lengths, keep names to eight characters or less for compatibility. Do not begin the user name with a hyphen (-), and do not include a space, tab, the comma (,), plus (+), ampersand (&), percent (%), carat (^), open or close parenthesis ( ), exclamation mark (!), at symbol (@), tilde (~), question mark (?), greater or less than symbols (<)(>), or equals (+) in the name. You can use the dollar sign ($) as the last character of the user name. |  
+| **Disable Password** | Use the toggle to disable the password for the selected user. If you disable the admin account the admin user cannot login. If you disable the root and admin user passwords you see a **Set new root account password** signin splash screen. |
+| **Password** | Required. Enter a user password unless **Enable Password login** is set to **No**. The password cannot contain a question mark (?). |  
+| **Confirm Password** | Required. Re-enter the value entered in **Password**. |  
+| **Email** | Enter the email address of the new user. This email address receives notifications, alerts, messages based on the settings configured. |  
 
-### Identification
+{{< /expand >}}
 
-Enter the user full name in **Full Name**.
-TrueNAS suggests a simplified name in **Username** derived from the **Full Name**, but you can override it with your own choice.
+### User ID and Groups Settings
+**User ID and Group** settings specify the user ID and groups this user belongs to.
+{{< expand "Click Here for More Information" "v" >}}
 
-You can also assign a user account email address in the **Email** field.
+![AddUser-UserIDAndGroupSettings](/images/SCALE/22.12/AddUser-UserIDAndGroupSettings.png "Add User User Id an Groups Settings") 
 
-By default, the **Disable Password** toggle is not enabled. In this case, set and confirm a password.
+| Setting | Description |
+|---------|-------------|
+| **User ID** | Required. Enter a number greater than 1000 for user accounts. For system accounts use an ID equal to the default port number used by the service. |  
+| **Primary Group** | Select a group from the dropdown list. New users are not assigned **su** permissions if **wheel** is their primary group. |  
+| **Auxiliary Groups** | Select group(s) from the dropdown list to add this new user to additional groups. |  
+| **New Primary Group** | Click the toggle to create a new primary group with the same name as the user. Clear to select an existing group from the **Primary Group** dropdown list. |  
 
-Setting **Disable Password** toggle to active (blue toggle) disables several options: 
-* The **Password** field becomes unavailable, and TrueNAS removes any existing password from the account.
-* The **Lock User** and **Permit Sudo** options disappear.
-* The account is restricted from password-based logins for services like SMB shares and SSH sessions.
+{{< /expand >}}
 
-![AddUserUserIDAndGroupsSettings](/images/SCALE/22.12/AddUserUserIDAndGroupsSettings.png "Add User User Id an Groups Settings") 
+### Directories and Permissions settings
+**Directory and Permissions** settings pecify the user home directory and the permissions for that home directory.
+{{< expand "Click Here for More Information" "v" >}}
 
-### User ID and Groups
+![AddUserDirPermsAuthSettings](/images/SCALE/22.02/AddUserDirPermsAuthSettings.png "Add User Directories, Permissions and Authentication Settings") 
 
-Next, you must set a user ID (UID).
-TrueNAS suggests a user ID starting at **1000**, but you can change it if you wish.
-We recommend using an ID of 1000 or greater for non-built-in users.
-You can create users with a UID of 0.
+| Setting | Description |
+|---------|-------------|
+| **Home Directory** | Enter or browse to enter the path to the home directory for this user. If the directory exists and matches the **Username**, it is set as the home directory for the user. When the path does not end with a subdirectory matching the username, a new subdirectory is created. The full path to the user home directory displays here on the **Edit User** screen when editing this user. |  
+| **Home Directory Permissions** | Select the permissions checkboxes (**Read**, **Write**, **Execute**) for each (**User**, **Group**, **Other**) to set default Unix permissions for the user home directory. Built-in users are read-only and do not see these permissions settings.|  
 
-By default, TrueNAS creates a new primary group with the same name as the user. This happens when the **Create New Primary Group** toggle is enabled.
+{{< /expand >}}
+### Authentication settings
+**Authentication** settings specify authentication methods, the public SSH key, user administration access, and enables/disables password authentication. It also covers the Shell options.
+{{< expand "Click Here for More Information" "v" >}}
 
-To add the user to an existing primary group instead, disable the **Create New Primary Group** toggle and search for a group in the **Primary Group** field.
-You can add the user to more groups using the **Auxiliary Groups** drop-down list.
+![AddUserDirPermsAuthSettings](/images/SCALE/22.12/AddUserDirPermsAuthSettings.png "Add User Directories, Permissions and Authentication Settings") 
 
-![AddUserDirPermsAuthSettings](/images/SCALE/22.12/AddUserDirPermsAuthSettings.png "Add User Directories, Permissions and Authentication Settings")
+| Setting | Description |
+|---------|-------------|
+| **SSH Public Key** | Enter or paste the **public** SSH key of the user for any key-based authentication. Use **Download SSH Public Key** to obtain a public key text file. Keep a backup copy of the public key! Do not paste the private key in this field! |  
+| **Disable Password** | Select the password option from the dropdown list. Select **Yes** to disable the **Password** and **Confirm Password** fields and remove the password from the account. The account cannot use password-based logins for services. For example, disabling the password prevents using account credentials to log into an SMB share or open and SSH session on the system. This also removes the **Lock User** and **Permit Sudo** options. Select **No** to requires adding a password to the account. The account can us the saved **Password** to authenticate with password-based services. |  
+| **Shell** | Select the [shell](#shell-options) to use for local and SSH logins from the dropdown list. Options are **bash**, **rbash**, **dash**, **sh**, **zsh**, **tmux** and **nologin**. |  
+| **Lock User** | Select to prevent the user from logging in or using password-based services until you clear this checkbox. Locking an account is only possible when **Disable Password** is set to **No** and the account has a created password in **Password**. |  
+| **Permit Sudo** | Select to give this user administrator permissions and the ability to use [sudo](https://www.sudo.ws/). When using sudo, a user is prompted for their account password. |  
+| **Samba Authentication** | Select to allow this user to authenticate to and access data share with [SMB]({{< relref "/SCALE/SCALETutorials/Shares/SMB/AddSMBShares.md" >}}) samba shares. |  
+| **Download SSH Public Key** | Click to generate and download a public key text file to past into **SSH Public Key**. |  
 
-### Directories and Permissions
-
-When creating a user, the home directory path is set to <file>/nonexistent</file>, which does not create a home directory for the user.
-To set a user home directory, select a path using the file browser.
-If the directory exists and matches the user name, TrueNAS sets it as the user home directory.
-When the path does not end with a sub-directory matching the user name, TrueNAS creates a new sub-directory.
-TrueNAS shows the path to the user home directory when editing a user.
-
-You can set the home directory permissions directly under the file browser. 
-You cannot change TrueNAS default user account permissions.
-
-### Authentication
-
-You can assign a public SSH key to a user for key-based authentication by entering or pasting the *public* key into the **Authorized Keys** field.
-
-{{< hint warning >}}
-Do *not* paste the private key.
-{{< /hint >}}
-
-If you are using an SSH public key, always keep a backup of the key.
-
-
-You can set a specific [shell]({{< relref "UseScaleShell.md" >}}) for the user from the **Shell** drop-down:
+#### Shell Options
+You can set a specific [shell]({{< relref "UseScaleShell.md" >}}) for the user from the **Shell** dropdown list options:
 
 | Shell | Description |
 |-------|-------------|
-| csh	| [C shell](https://linux.die.net/man/1/csh) for UNIX system interactions. |
-| sh	| [Bourne shell](https://www.in-ulm.de/~mascheck/bourne/v7/) |
-| tcsh	| [Enhanced C shell](https://www.tcsh.org) that includes editing and name completion. |
 | bash	| [Bourne Again shell](https://www.gnu.org/software/bash/manual/bash.html) for the GNU operating system. |
-| ksh93	| [Korn shell](http://www.kornshell.com) that incorporates features from both *csh* and *sh*. |
-| mksh	| [MirBSD Korn Shell](https://github.com/MirBSD/mksh) |
 | rbash	| [Restricted bash](https://www.gnu.org/software/bash/manual/html_node/The-Restricted-Shell.html) |
-| rzsh	| [Restricted zsh](https://www.csse.uwa.edu.au/programming/linux/zsh-doc/zsh_14.html) |
-| scponly | [scponly](https://github.com/scponly/scponly/wiki) restricts the user's SSH usage to only the `scp` and `sftp` commands. |
+| dash | [Debian Almquist shell](https://man7.org/linux/man-pages/man1/dash.1.html) |
+| sh	| [Bourne shell](https://www.in-ulm.de/~mascheck/bourne/v7/) |
 | zsh	| [Z shell](http://zsh.sourceforge.net/) |
-| git-shell | [restricted git shell](https://git-scm.com/docs/git-shell) |
+| tmux | [terminal multiplexer](https://man7.org/linux/man-pages/man1/tmux.1.html)  |
 | nologin | Use when creating a system account or to create a user account that can authenticate with shares but that cannot log in to the TrueNAS system using `ssh`.
-
-Selecting **Lock User** disables all password-based functionality for the account until you clear the checkbox.
-
-**Permit Sudo** allows the account to act as the system administrator using the `sudo` command. Leave it disabled for better security.
-
-By default, **Samba Authentication** is enabled.
-This allows using the account credentials to access data shared with [SMB]({{< relref "/content/SCALE/SCALEUIReference/Shares/_index.md" >}}).
-
-## Editing User Accounts
-
-To edit an existing user account, go to **Credentials > Local Users**, expand the User entry, and click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> **Edit**:
+{{< /expand >}}
 
 {{< taglist tag="scaleusers" limit="10" >}}
+{{< taglist tag="scaleshell" limit="10" title="Related Shell Articles" >}}
