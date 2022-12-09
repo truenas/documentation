@@ -1,5 +1,6 @@
 ---
 title: "TrueNAS Enterprise EULA"
+description: "TrueNAS Enterprise End User License Agreement"
 weight: 2
 aliases:
   - /core/introduction/enterpriseeula/

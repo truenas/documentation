@@ -1,5 +1,6 @@
 ---
 title: "TrueNAS CORE EULA"
+description: "End User License Agreement for TrueNAS CORE"
 weight: 1
 aliases:
   - /core/introduction/coreeula/

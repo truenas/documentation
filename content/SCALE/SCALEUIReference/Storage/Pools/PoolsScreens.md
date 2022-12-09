@@ -52,7 +52,7 @@ This counter keeps track of the total number of available disk in the system whe
 | **Log** | A log vdev is a [ZFS LOG]({{< relref "/content/References/SLOG.md" >}}) device that improves synchronous write speeds. Users can add or remove log vdevs after creating the pool. |
 | **Hot Spare** | A Hot Spare vdev is a drive or drives reserved for inserting into data vdevs when an active drive fails. The system uses hot spares as temporary replacements for failed drives to prevent larger pool and data loss scenarios. When a user replaces a failed drive with a new one, the hot spare reverts to an inactive state and becomes available again as a hot spare. If a user detaches the failed drive from the pool without adding a new one, the system promotes the temporary hot spare to a full data vdev member. |
 | **Metadata** | A metadata vdev is a special allocation class used to create fusion pools for increased metadata and small block I/O performance. |
-| **Dedup** | A dedup vdev stores [ZFS de-duplication]({{< relref "/content/References/ZFSDeduplication.md" >}}). Requires allocating X GiB for every X TiB of general storage. Example: *1 GiB* of dedup vdev capacity for every *1 TiB* of data vdev availability. |
+| **Dedup** | A dedup vdev stores [ZFS de-duplication]({{< relref "/content/References/ZFSDeduplication.md" >}}) metadata. Requires allocating X GiB of metadata for every X TiB of general storage. Example: *1 GiB* of dedup metadata vdev capacity for every *1 TiB* of data vdev availability. |
 
 ### Vdev Options
 

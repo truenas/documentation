@@ -8,9 +8,9 @@ See the [TrueNAS Security Hub](https://security.truenas.com/products/truenas-12.
 
 ---
 
-{{< expand "Table of Contents (click to expand)" "v" >}}
+## Notices
+
 {{< children depth="2" >}}
-{{< /expand >}}
 
 ## CORE Documentation Sections
 

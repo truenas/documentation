@@ -75,9 +75,6 @@ Choose a **Transfer Mode**:
 Syncing to a Backblaze B2 bucket does not delete files from the bucket, even when you delete those files locally.
 Instead, Backblaze tags files with a version number or moves them to a hidden state.
 To automatically delete old or unwanted files from the bucket, adjust the [Backblaze B2 Lifecycle Rules](https://www.backblaze.com/blog/backblaze-b2-lifecycle-rules/).
-
-A sync cannot delete files stored in Amazon S3 Glacier or S3 Glacier Deep Archive.
-You must first restore the files by another means, like the [Amazon S3 console](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/restore-archived-objects.html).
 {{< /hint >}}
 
 **COPY** duplicates each source file into the destination, overwriting any destination files with the same name as the source.
