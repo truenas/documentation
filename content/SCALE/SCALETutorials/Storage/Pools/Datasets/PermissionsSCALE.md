@@ -1,8 +1,10 @@
 ---
 title: "Managing ACL Permissions"
 description: "This article provides instructions on changing dataset-level ACL settings, adding, changing, and viewing a ACL item permissions, using the ACL editor screens, and general information on ACLs."
-weight: 65
-aliases: /scale/scaleuireference/storage/pools/permissionsscale/
+weight: 55
+aliases: 
+- /scale/scaleuireference/storage/pools/permissionsscale/
+- /scale/scaletutorials/storage/pools/permissionsscale/
 tags:
 - scaleacls
 - scaledatasets

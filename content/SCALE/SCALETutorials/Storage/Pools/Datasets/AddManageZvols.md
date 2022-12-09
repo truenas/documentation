@@ -1,8 +1,10 @@
 ---
 title: "Adding and Managing Zvols"
 description: "This article provides instructions on creating, editing and managing zvols."
-weight: 60
-aliases: /scale/scaleuireference/storage/pools/zvolsscale/
+weight: 25
+aliases: 
+- /scale/scaleuireference/storage/pools/zvolsscale/
+- /scale/scaletutorials/storage/pools/addmanagezvols/
 tags: 
 - scalezvols
 - scaledatasets

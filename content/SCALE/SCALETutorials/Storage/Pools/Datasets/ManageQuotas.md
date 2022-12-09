@@ -1,7 +1,9 @@
 ---
 title: "Managing User or Group Quotas"
 description: "This article provides information on managing user and group quotas."
-weight: 75
+weight: 45
+aliases:
+- /scale/scaletutorials/storage/pools/managequotas/
 tags: 
  - scalequotas
  - scaledatasets

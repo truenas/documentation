@@ -1,7 +1,7 @@
 ---
 title: "Capacity Settings Screen"
 description: "This article provides informaiton on the **Capacity Settings** screen and quota settings."
-weight: 40
+weight: 30
 aliases:
 tags:
 - scalequotas
