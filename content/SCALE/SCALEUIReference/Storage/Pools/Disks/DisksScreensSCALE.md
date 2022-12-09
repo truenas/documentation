@@ -140,7 +140,7 @@ See [Wiping Disks]({{< relref "/SCALE/SCALETutorials/Storage/Pools/Disks/WipingD
 {{< /expand >}}
 
 ## Edit Disk Screen
-The **Edit Disk** screen allows users to configure general disk, power management, temperature alert, S.M.A.R.T. and SED settings for system disks not assigned to a pool. 
+The **Edit Disk** screen allows users to configure general disk, power management, temperature alert, S.M.A.R.T., and SED settings for system disks not assigned to a pool. 
 {{< expand "Click Here for More Information" "v" >}}
 
 ![EditDiskScreen](/images/SCALE/22.12/EditDiskScreen.png "Edit Disk Screen")
