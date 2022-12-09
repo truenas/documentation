@@ -165,7 +165,7 @@ After the system boots into the installer, follow these steps.
    
    ![SCALEInstallerConsoleSetupAdminAccount](/images/scale/22.12/SCALEInstallerConsoleSetupAdminAccount.png "Admin User Screen")
 
-   Next enter a password for the new admin user.
+   Next, enter a password for the new admin user.
 
    ![SCALEInstallerConsoleSetupAdminPassword](/images/SCALE/22.12/SCALEInstallerConsoleSetupAdminPassword.png "Install Password Screen")
 
@@ -306,7 +306,7 @@ The machine starts and boots into the TrueNAS installer.
    
    ![SCALEInstallerConsoleSetupAdminAccount](/images/scale/22.12/SCALEInstallerConsoleSetupAdminAccount.png "Admin User Screen")
 
-   Next enter a password for the new admin user.
+   Next, enter a password for the new admin user.
 
    ![SCALEInstallerConsoleSetupAdminPassword](/images/SCALE/22.12/SCALEInstallerConsoleSetupAdminPassword.png "Install Password Screen")
 
