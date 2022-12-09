@@ -1,7 +1,7 @@
 ---
 title: "Pool Manager Screen"
 description: "This article provides information on VDEV options, data VDEV types and the settings and functions on the **Pool Manager** configuration screen."
-weight: 20
+weight: 25
 aliases: /scale/scaleuireference/storage/pools/poolsscreens/
 tags: 
 - scalepools

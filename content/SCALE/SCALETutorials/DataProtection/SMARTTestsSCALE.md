@@ -4,7 +4,7 @@ description: "This article provides instructions on running S.M.A.R.T. tests man
 weight: 60
 aliases: 
 tags:
- - scalesmarttests
+- scalesmart
 ---
 
 {{< toc >}}
@@ -98,4 +98,4 @@ The controller monitors S.M.A.R.T. separately and marks disks as a **Predictive 
 To verify the schedule is saved, you can open the [shell]({{< relref "UseSCALEShell.md" >}}) and enter `smartd -q showtests`.
 {{< /expand >}}
 
-{{< taglist tag="scalesmarttests" limit="10" >}}
+{{< taglist tag="scalesmart" limit="10" >}}

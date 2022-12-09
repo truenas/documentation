@@ -1,7 +1,7 @@
 ---
 title: "Storage Dashboard Screen"
 description: "This article provides information on the **Storage Dashboard** screen widgets and options for pools, devices, datasets and disks listed on this screen."
-weight: 10 
+weight: 30 
 aliases:
 tags:
 - scalepools

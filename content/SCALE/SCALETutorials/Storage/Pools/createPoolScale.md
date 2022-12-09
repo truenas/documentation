@@ -1,7 +1,7 @@
 ---
 title: "Creating Storage Pools"
 description: "This article provides information on creating storage pools and using VDEV layout options in TrueNAS SCALE."
-weight: 45
+weight: 10
 aliases:
  - /scale/scaleuireference/storage/pools/
 tags:

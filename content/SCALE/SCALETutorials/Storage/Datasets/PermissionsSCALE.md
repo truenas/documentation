@@ -1,7 +1,7 @@
 ---
 title: "Setting Up Permissions"
 description: "This article provides instructions on viewing and edting ACL permissions, using the ACL editor screens, and general information on ACLs."
-weight: 65
+weight: 55
 aliases: /scale/scaleuireference/storage/pools/permissionsscale/
 tags:
  - scaleacls

@@ -1,7 +1,7 @@
 ---
 title: "Edit ACL Screens"
 description: "This article describes the ACL permissions screens and settings for POSIX and NFSv4 ACLs, and the conditions that result in addition setting options."
-weight: 45
+weight: 55
 aliases: 
 tags:
  - scaleacls

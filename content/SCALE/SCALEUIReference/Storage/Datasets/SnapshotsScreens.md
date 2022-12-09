@@ -1,7 +1,7 @@
 ---
 title: "Snapshots Screens"
 description: "This article provides information on the Snapshots screen settings and functions."
-weight: 35 
+weight: 40
 tags:
 - scalesnapshots
 - scalestorage

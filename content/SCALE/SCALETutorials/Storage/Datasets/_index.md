@@ -1,10 +1,10 @@
 ---
 title: "Datasets"
 geekdocCollapseSection: true
-weight: 16
+weight: 20
 ---
 
 
-## Dataset Article Summaries
+## Dataset Tutorial Article Summaries
 
 {{< children depth="2" description="true" >}}

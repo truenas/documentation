@@ -1,7 +1,7 @@
 ---
 title: "User and Group Quota Screens "
 description: "This article provides information on User and Group Quota screen settings and functions."
-weight: 45
+weight: 35
 tags: 
  - scalequotas
  - scaledatasets

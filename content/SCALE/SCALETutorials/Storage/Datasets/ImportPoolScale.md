@@ -1,7 +1,7 @@
 ---
-title: "Importing Storage Pools"
+title: "Importing Data"
 description: "This article provides information on ZFS importing for storage pools in TrueNAS SCALE. It also addresses GELI-encrypted pools."
-weight: 46
+weight: 25
 tags:
 - scaleinstall
 - scalestorage

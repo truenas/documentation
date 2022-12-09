@@ -1,7 +1,7 @@
 ---
 title: "Adding and Managing Zvols"
-description: "This article provides instructions on how to create zvols."
-weight: 60
+description: "This article provides instructions on creating, editing and managing zvols."
+weight: 20
 aliases: /scale/scaleuireference/storage/pools/zvolsscale/
 tags: 
  - scalezvols
@@ -9,7 +9,6 @@ tags:
 ---
 
 {{< toc >}}
-
 
 A ZFS Volume (zvol) is a [dataset]({{< relref "DatasetsSCALE.md" >}}) that represents a block device.
 TrueNAS requires a zvol when configuring [iSCSI Shares]({{< relref "/SCALE/SCALEUIReference/Shares/_index.md" >}}).

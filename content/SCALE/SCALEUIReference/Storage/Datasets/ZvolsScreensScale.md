@@ -1,7 +1,7 @@
 ---
 title: "Zvol Screens"
 description: "This article provides information on Zvol screen settings and functions."
-weight: 40
+weight: 20
 tags:
  - scalezvols
  - scalestorage
