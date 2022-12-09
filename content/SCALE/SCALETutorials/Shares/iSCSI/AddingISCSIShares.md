@@ -9,7 +9,7 @@ tags:
 
 {{< toc >}}
 
-To get started with iSCSI shares, make sure you have already created a [zvol]({{< relref "/SCALE/SCALETutorials/Storage/Pools/AddManageZvols.md" >}}) or a [dataset]({{< relref "/SCALE/SCALETutorials/Storage/Pools/DatasetsSCALE.md" >}}) with at least one file to share.
+To get started with iSCSI shares, make sure you have already created a [zvol]({{< relref "/SCALE/SCALETutorials/Storage/Datasets/AddManageZvols.md" >}}) or a [dataset]({{< relref "DatasetsSCALE.md" >}}) with at least one file to share.
 
 Go to **Shares** and click **Configure** in the **Block (iSCSI) Shares Targets** window. You can either use the creation wizard or set one up manually.
 

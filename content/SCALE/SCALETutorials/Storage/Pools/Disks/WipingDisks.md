@@ -1,7 +1,7 @@
 ---
 title: "Wiping a Disk"
 description: "This article provides instructions for wiping a disk."
-weight: 60
+weight: 25
 tags:
 - scaledisks
 ---

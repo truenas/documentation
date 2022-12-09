@@ -1,7 +1,7 @@
 ---
 title: "Managing Pools"
 description: "This article provides instructions on managing storage pools, VDEVS and disks in TrueNAS SCALE."
-weight: 50
+weight: 20
 aliases: 
 tag: 
 - scalepools
@@ -110,7 +110,7 @@ The **Manage Devices** button on the **Topology** widget opens the **Devices** s
 To manage disks in a pool, click on the VDEV to expand it and show the disks in that VDEV. 
 Click on a disk to see the devices widgets for that disk. You can take a disk offline, detach it, replace it, manage the SED encryption password, and perform other disk management tasks from this screen.
 
-See [Replacing Disks]({{< relref "/SCALE/SCALETutorials/Storage/Disks/ReplacingDisks.md" >}}) for more information on the **Offline**, **Replace** and **Online** options.
+See [Replacing Disks]({{< relref "/SCALE/SCALETutorials/Storage/Pools/Disks/ReplacingDisks.md" >}}) for more information on the **Offline**, **Replace** and **Online** options.
 
 ## Expanding a Pool
 

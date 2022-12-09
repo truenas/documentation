@@ -1,7 +1,7 @@
 ---
 title: "Importing Disks"
 description: "This article provides instructions for importing a disk and monitoring the import progress."
-weight: 40
+weight: 15
 tags:
 - scaledisks
 ---

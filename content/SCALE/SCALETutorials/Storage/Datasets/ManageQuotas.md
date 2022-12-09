@@ -1,7 +1,7 @@
 ---
 title: "Managing User or Group Quotas"
 description: "This article provides information on managing user and group quotas."
-weight: 75
+weight: 35
 tags: 
  - scalequotas
  - scaledatasets
