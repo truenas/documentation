@@ -188,7 +188,7 @@ Select the dataset on the tree table then click **Lock** on the **ZFS Encryption
 ![LockDatasetDialog](/images/SCALE/22.12/LockDatasetDialog.png "Lock Dataset")
 
 Use the **Force unmount** option only if you are certain no one is currently accessing the dataset. 
-**Force unmount** boots anyone using the dataset, like a share, out of the dataset so you can lock it. 
+**Force unmount** boots anyone using the dataset (e.g. someone accessing a share) so you can lock it. 
 Click **Confirm** to activate **Lock**, then click **Lock**.
 
 {{< hint info >}}
