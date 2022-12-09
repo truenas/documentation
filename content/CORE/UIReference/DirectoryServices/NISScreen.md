@@ -11,7 +11,7 @@ Use the **Directory Services > NIS** screen to configure [Network Information Se
 
 {{< hint warning >}}
 NIS is limited in scalability and security.
-For modern networks, [LDAP]({{< relref "LDAP.md" >}}) has replaced NIS.
+For modern networks, [LDAP]({{< relref "/content/CORE/UIReference/DirectoryServices/LDAPScreen.md" >}}) has replaced NIS.
 {{< /hint >}}
 
 ![DirectoryServicesNIS](/images/CORE/12.0/DirectoryServicesNIS.png)

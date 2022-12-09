@@ -21,8 +21,8 @@ Creating users and assigning them to groups allows you to efficiently tune permi
 Only the root user account can log in to the TrueNAS web interface.
 {{< /hint >}}
 
-When the network uses a directory service, import the existing account information using the instructions in [Directory Services]({{< relref "/CORE/CoreTutorials/DirectoryServices/_index.md" >}}).
-Using [Active Directory]({{< relref "ActiveDirectory.md" >}}) requires setting Windows user passwords inside Windows.
+When the network uses a directory service, import the existing account information using the instructions in [Directory Services](https://www.truenas.com/docs/core/coretutorials/directoryservices/).
+Using [Active Directory]({{< relref "/content/CORE/CORETutorials/DirectoryServices/ActiveDirectory.md" >}}) requires setting Windows user passwords inside Windows.
 
 To see user accounts, go to **Accounts > Users**.
 
@@ -113,7 +113,7 @@ It allows users to access [SMB]({{< relref "SMBShare.md" >}}) share data using a
 
 Using groups in TrueNAS is an efficient way to manage permissions for many similar user accounts.
 The interface lets you manage UNIX-style groups.
-If the network uses a directory service, import the existing account information using the instructions in [Active Directory]({{< relref "ActiveDirectory.md" >}}).
+If the network uses a directory service, import the existing account information using the instructions in [Active Directory]({{< relref "/content/CORE/CORETutorials/DirectoryServices/ActiveDirectory.md" >}}).
 
 ### View Existing Groups
 
