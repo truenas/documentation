@@ -29,7 +29,7 @@ Click **Configure Active Directory** in **Credentials > Directory Services** to 
 | Setting | Description |
 |---------|-------------|
 | **Verbose Logging** | Logs attempts to join the domain in /var/log/messages. |
-| **Allow Trusted Domains** | When set, usernames do not include a domain name. Unset to prepend domain names to user names. Unsetting this option prevents username collisions when there are identical usernames across multiple domains. |
+| **Allow Trusted Domains** | When selected, usernames do not include a domain name. Clear to prepend domain names to user names. Clearing this option prevents username collisions when there are identical usernames across multiple domains. |
 | **Use Default Domain** | Unset to prepend the domain name to the username and prevent name collisions when using Allow Trusted Domains with the same username across multiple domains. |
 | **Allow DNS Updates** | Enables Samba to do DNS updates when joining a domain. |
 | **Disable AD User/Group Cache** | Disables caching AD users and groups, which can help when unable to bind to a domain with a lot of users or groups. |
