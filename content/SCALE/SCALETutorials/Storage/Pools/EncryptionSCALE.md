@@ -42,7 +42,7 @@ The pool and root dataset are unencrypted if you do not select the **Encryption*
 
 You can create an unencrypted dataset on an encrypted pool. You can also create an encrypted dataset on an unencrypted pool if you need to protect data with encryption. 
 
-If you add an encrypted dataset under an unencrypted root dataset and then add child datasets under that encrypted dataset it becomes an encrypted non-root parent to any dataset created under it. 
+If you add an encrypted dataset under an unencrypted root dataset and then add child datasets under that encrypted dataset, it becomes an encrypted non-root parent to any dataset created under it. 
 You can let a nested child dataset inherit the encryption settings from the parent or change the settings for the child dataset.
 
 The other datasets created from the unencrypted root dataset can remain unencrypted unless you choose to add it when you create the dataset.
