@@ -200,7 +200,7 @@ Choose a connection method from the **Connect using** dropdown list. The followi
 | Remote Path | Select from options listed. |
 | Validate Remote Path | Set to automatically create the defined **Remote Path** if it does not exist. Checkbox is selected by default. |
 
-If **SSH connection from the keychain** is chosen, the following fields display:
+If you chose **SSH connection from the keychain**, the following fields display:
 
 ![AddRsyncTaskSourceRemoteSSHKeychain](/images/SCALE/22.12/AddRsyncTaskSourceRemoteSSHKeychain.png "Add Rsync Task: SSH Mode")
 
