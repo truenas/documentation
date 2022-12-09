@@ -18,7 +18,7 @@ tags:
 
 
 The **Disks** screen displays a list of the physical drives (disks) installed in the system. 
-The list includes the names, serial numbers, sizes, and pool for each system disk. 
+The list includes the names, serial numbers, sizes, and pools for each system disk. 
 
 ![DisksScreen](/images/SCALE/22.12/DisksScreen.png "Disks Screen") 
 
@@ -71,7 +71,7 @@ The screen lists the device names for each selected disk in the **Disks to be ed
 {{< /expand >}}
 
 ### Manual S.M.A.R.T. Test Dialog
-The **Manual S.M.A.R.T. Test** dialog displays the name of selected disk(s) and the option to specify the type of test you want to run outside of a scheduled S.M.A.R.T. test.
+The **Manual S.M.A.R.T. Test** dialog displays the name of the selected disk(s) and the option to specify the type of test you want to run outside of a scheduled S.M.A.R.T. test.
 {{< expand "Click Here for More Information" "v" >}}
 
 ![ManualSmartTestDialog](/images/SCALE/22.12/ManualSmartTestDialog.png "Manual SMART Test Dialog") 
@@ -140,7 +140,7 @@ See [Wiping Disks]({{< relref "/SCALE/SCALETutorials/Storage/Pools/Disks/WipingD
 {{< /expand >}}
 
 ## Edit Disk Screen
-The **Edit Disk** screen allows users to configure general disk, power management, temperature alert, S.M.A.R.T. and SED settings for system disks not assigned to a pool. 
+The **Edit Disk** screen allows users to configure general disk, power management, temperature alert, S.M.A.R.T., and SED settings for system disks not assigned to a pool. 
 {{< expand "Click Here for More Information" "v" >}}
 
 ![EditDiskScreen](/images/SCALE/22.12/EditDiskScreen.png "Edit Disk Screen")
