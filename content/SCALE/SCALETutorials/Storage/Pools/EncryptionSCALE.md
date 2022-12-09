@@ -206,7 +206,7 @@ Type the passphrase into **Dataset Passphrase** and click **Save**.
 
 Select **Unlock Child Encrypted Roots** to unlock all locked child datasets if they use the same passphrase.
 
-Select **Force** if the path where the dataset mounts exists but is not empty. When this happens the unlock operation fails. Using **Force** allows the system to rename the existing directory and file where the dataset should mount. This prevents the mount operation from failing. 
+Select **Force** if the dataset mount path exists but is not empty. When this happens, the unlock operation fails. Using **Force** allows the system to rename the existing directory and file where the dataset should mount. This prevents the mount operation from failing. 
 A confirmation dialog displays. 
 
 ![UnlockDatasetsContinueDialog](/images/SCALE/22.12/UnlockDatasetsContinueDialog.png "Continue Dataset Unlock Confirmation")
