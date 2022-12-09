@@ -71,7 +71,7 @@ The screen lists the device names for each selected disk in the **Disks to be ed
 {{< /expand >}}
 
 ### Manual S.M.A.R.T. Test Dialog
-The **Manual S.M.A.R.T. Test** dialog displays the name of selected disk(s) and the option to specify the type of test you want to run outside of a scheduled S.M.A.R.T. test.
+The **Manual S.M.A.R.T. Test** dialog displays the name of the selected disk(s) and the option to specify the type of test you want to run outside of a scheduled S.M.A.R.T. test.
 {{< expand "Click Here for More Information" "v" >}}
 
 ![ManualSmartTestDialog](/images/SCALE/22.12/ManualSmartTestDialog.png "Manual SMART Test Dialog") 
