@@ -14,7 +14,7 @@ tags:
 
 After you [download](https://www.truenas.com/download-tn-scale/) the <file>.iso</file> file, you can start installing TrueNAS SCALE!
 
-This article describes verifying the <file>.iso</file> file and installing SCALE using that file, and selecting the type of installation as either on physical hardware or a virtual machine (VM).
+This article describes verifying the <file>.iso</file> file and installing SCALE using that file, and selecting the type of installation as either on [physical hardware](#installing-on-physical-hardware) or a [virtual machine (VM)](#installing-on-a-virtual-machine).
 
 ## ISO Verification
 The iXsystems Security Team cryptographically signs TrueNAS <file>.iso</file> files so that users can verify the integrity of their downloaded file.
@@ -63,6 +63,7 @@ You need an OpenPGP encryption application for this method of ISO verification.
 4. Go back to the browser page that has the **PGP Public key**. 
    Open and manually confirm that the key is issued for `IX SecTeam <security-officer@ixsystems.com>` (iX Security Team) on October 15, 2019 and is signed by an iXsystems account.
 {{< /expand >}}
+
 ### SHA256 Verification
 SHA256 verification uses the checksum to validate/verify the file.
 {{< expand "Click here for the verification process." "v" >}}
@@ -80,6 +81,10 @@ Different checksum values indicate a corrupted installer file that you should no
 
 ## Installing SCALE
 You can install SCALE on either physical hardware or a virtual machine.
+ 
+{{< hint warning >}}
+Prior to starting the update process, confirm that the system storage has enough space to handle the update. The update stops if there is insufficient space for it to finish.
+{{< /hint >}}
 
 ### Installing on Physical Hardware 
 
@@ -106,15 +111,16 @@ Enter command `dd status=progress if=path/to/.iso of=path/to/USB` in the CLI.
 
 If this results in a permission denied error, use command `sudo dd` with the same parameters and enter the administrator password.
 {{< /expand >}}
-#### Installing on Physical Hardware From Device Media
+
+#### Installing From the Device Media
 
 Before you begin:
 
 * Locate the hotkey defined by the manufacturer of your motherboard to uses in this process.
 * Disable SecureBoot if your system supports it so or set it to **Other OS** so you can boot to the install media.
 
-With the installer added to a device (CD or USB), you can now install TrueNAS SCALE onto the desired system.
-{{< expand "Physical Hardware Install Instructions" "v" >}}
+With the installer added to a device (CD or USB), you can now install TrueNAS SCALE onto the desired system using the TrueNAS installer.
+
 Insert the install media and reboot or boot the system.
 At the motherboard splash screen, use the hotkey defined by your motherboard manufacturer to boot into the motherboard UEFI/BIOS.
 
@@ -128,8 +134,9 @@ Select the install device as the boot drive, exit, and reboot the system.
 If the USB stick is not shown as a boot option, try a different USB slot.
 Which slots are available for boot differs by hardware.
 
+#### Using the TrueNAS Installer Console Setup 
 After the system boots into the installer, follow these steps.
-
+{{< expand "TrueNAs Installer Console Setup Instructions" "v" >}}
 1. Select **Install/Upgrade**.
    
    ![SCALEInstallUpgrade](/images/SCALE/SCALEInstallMainScreen.png "SCALE Install Main Screen")
@@ -151,11 +158,16 @@ After the system boots into the installer, follow these steps.
    
    ![InstallPartition](/images/CORE/12.0/InstallPartitionScreen.png "Install Partition Screen")
 
-4. Next, set a password for the TrueNAS administrative account, named `root` by default.
+4. Next, set a password for the TrueNAS administrative account. 
+   SCALE has implemented rootless login. Create an admin account and password. The system retains root as a fallback but it is no longer the default.
    This account has full control over TrueNAS and is used to log in to the web interface.
    Set a strong password and protect it.
    
-   ![InstallPassword](/images/CORE/12.0/InstallPasswordScreen.png "Install Password Screen")
+   ![SCALEInstallerConsoleSetupAdminAccount](/images/scale/22.12/SCALEInstallerConsoleSetupAdminAccount.png "Admin User Screen")
+
+   Next enter a password for the new admin user.
+
+   ![SCALEInstallerConsoleSetupAdminPassword](/images/SCALE/22.12/SCALEInstallerConsoleSetupAdminPassword.png "Install Password Screen")
 
 5. After following the steps to install, reboot the system and remove the install media.
 
@@ -173,10 +185,9 @@ If the system does not boot into TrueNAS SCALE, there are several things you can
   Be very careful to specify the correct USB stick when using a wipe utility!
 {{< /expand >}}
 {{< /expand >}}
+
 ### Installing on a Virtual Machine 
-{{< expand "Installation Tutorial Video" "v" >}}
-{{< embed-video name="scaleangelfishvminstall" >}}
-{{< /expand >}}
+
 Because TrueNAS SCALE is built and provided as an <file>.iso</file> file, it works on all virtual machine solutions (VMware, VirtualBox, Citrix Hypervisor, etc).
 This section describes installing on a VM using [VMware Workstation Player](https://www.vmware.com/products/workstation-player/workstation-player-evaluation.html) on Windows.
 
@@ -220,6 +231,7 @@ For most hypervisors, the procedure for creating a TrueNAS VM is the same.
 
 4. After rebooting into TrueNAS, install VM tools if applicable for your VM, and if they exist for Debian 11, or ensure they loaded on boot.
 {{< /expand >}}
+
 #### Example VMWare Player 15.5 Installation
 This example describes installing TrueNAS SCALE using VMWare Player 15.5.
 {{< expand " Click here for more information." "v" >}}
@@ -250,10 +262,11 @@ Open VMware Player and click **Create a New Virtual Machine** to enter the New V
 
 5. Power on the machine after creation if desired. Select **Power on this virtual machine after creation**.
 {{< /expand >}}
-#### Add Virtual Disks
+
+#### Adding Virtual Disks
 After installing SCALE on a virtual machine (VM), add virtual disks to the VM. You need a minimum of two disks, 16 GB each. 
 One disk is for the boot environment the other for data storage.
-{{< expand "Adding Virtual Disks" "v" >}}
+{{< expand "Click Here for More Information" "v" >}}
 1. After creating the virtual machine, select it from the virtual machine list and click **Edit virtual machine settings**.
 
 2. Click **Add...** and select **Hard Disk**. Select **SCSI** as the virtual disk type.
@@ -268,6 +281,7 @@ One disk is for the boot environment the other for data storage.
 Repeat this process until enough disks are available for TrueNAS to create ideal storage pools. This depends on your specific TrueNAS use case. 
 See [Pool Creation]({{< relref "PoolCreate.md" >}}) for descriptions of the various pool ("vdev") types and layouts. 
 {{< /expand >}}
+
 #### Using the TrueNAS Installer 
 Just as with installing SCALE on physical hardware, you complete the install in the VM by booting into the TrueNAS installer.
 {{< expand "Using the TrueNAS Installer in a Virtual Machine" "v" >}}
@@ -290,7 +304,11 @@ The machine starts and boots into the TrueNAS installer.
    This account has full control over TrueNAS and is used to log in to the web interface.
    Set a strong password and protect it.
    
-   ![InstallVMPassword](/images/CORE/12.0/InstallVMPasswordScreen.png "Install VM Password Screen")
+   ![SCALEInstallerConsoleSetupAdminAccount](/images/scale/22.12/SCALEInstallerConsoleSetupAdminAccount.png "Admin User Screen")
+
+   Next enter a password for the new admin user.
+
+   ![SCALEInstallerConsoleSetupAdminPassword](/images/SCALE/22.12/SCALEInstallerConsoleSetupAdminPassword.png "Install Password Screen")
 
 5. Select **Boot via BIOS**.
    
