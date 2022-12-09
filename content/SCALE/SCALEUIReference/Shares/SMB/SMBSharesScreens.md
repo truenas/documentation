@@ -25,7 +25,7 @@ After adding the first SMB share, the **Sharing SMB** screen displays.
 
 If you return to the **Share** option (click **Shares** on the main navigation panel), the **Windows (SMB) Shares <span class="material-icons">launch</span>** widget displays. It includes the current service status and a list of the SMB shares below it. 
 
-![SMBServiceWidgetFirstShare](/images/SCALE/22.12/SMBServiceWidgetFirstShare.png "First SMB Share Added Screen")
+![SMBServiceWidgetFirstShare](s/images/SCALE/22.12/SMBServiceWidgetFirstShare.png "First SMB Share Added Screen")
 
 ### Windows (SMB) Shares Widget
 

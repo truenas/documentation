@@ -1,9 +1,7 @@
 ---
 title: "Datasets Screen"
 description: "This article provides information on the settings and functions found on the **Datasets** screens and widgets."
-weight: 20
-aliases: 
-- /scale/scaleuireference/storage/pools/datasetsscreensscale/
+weight: 30
 tag: 
 - scaledatasets
 - scalestorage

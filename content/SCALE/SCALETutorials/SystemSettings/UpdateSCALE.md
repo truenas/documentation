@@ -30,10 +30,6 @@ We recommend updating TrueNAS when the system is idle (no clients connected, no 
 
 Update during scheduled maintenance times to avoid disrupting user activities.
 
-{{< hint warning >}}
-Prior to starting the update process, confirm that the system storage has enough space to handle the update. The update stops if there is insufficient space for it to finish.
-{{< /hint >}}
-
 ![UpdateTrainSCALE](/images/SCALE/22.02/ScaleUpdateTrain.png "Scale Update Train")
 
 ## Automatic

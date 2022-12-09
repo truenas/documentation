@@ -1,7 +1,7 @@
 ---
 title: "Import Data Screen"
 description: "This article provides informaiton on the **Import Data** screen and settings."
-weight: 60
+weight: 45
 aliases:
 tags:
 - scaledisks

@@ -15,11 +15,9 @@ To set up a LAGG interface, from the **Network** screen:
 
 1. Click **Add** in the **Interfaces** widget. The **Add Interface** configuration screen displays.
    
-   ![AddInterfaceLinkAggregationTypes](/images/SCALE/22.12/AddInterfaceLinkAggregationType.png "Add LAGG Interface Settings")
+   ![AddInterfaceLinkAggregationTypes](/images/SCALE/22.02/AddInterfaceLinkAggregationType.png "Add LAGG Interface Settings")
 
 2. Select **Link Aggregation** from the **Type** dropdown list. You cannot change the **Type** field value after you click **Apply**.
-
-   ![AddInterfaceLAGGSelected](/images/SCALE/22.12/AddInterfaceLAGGSelected.png "Select Link Aggregation")
 
 3. Enter a name for the interface using the format *laggX* where *X* is a number representing a non-parent interface.
    You cannot change the **Name** of the interface after you click **Apply**.
@@ -48,7 +46,7 @@ To set up a LAGG interface, from the **Network** screen:
 
 5. (Optional) Click **Add** to enter another IP address if desired for this LAGG interface. Click **Add** to display an IP address field for each IP address you want to add.
 
-6. Click **Save** when finished.
+6. Click **Apply** when finished.
 
 {{< taglist tag="scaleinterface" limit="10" >}}
 
