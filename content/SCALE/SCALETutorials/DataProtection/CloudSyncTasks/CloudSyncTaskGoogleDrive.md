@@ -57,8 +57,6 @@ You must add the cloud credential on the **Backup Credentials** screen before yo
 
 To add a cloud sync task, go to **Data Protection > Cloud Sync Tasks** and click **Add**. The **Add Cloud Sync Task** configuration screen opens.
 
-![AddCloudSyncTaskTop](/images/SCALE/22.12/AddCloudSyncTaskTop.png "Adding a Cloud Sync Task")
-
 1. (Required) Type a memorable task description in **Description**. For example, *googledrivepush* to represent the provider name and transfer direction.
 
 2. Select your Google Drive credenital on the **Credential** dropdown list to add a new backup credential. 
