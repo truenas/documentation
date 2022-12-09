@@ -97,7 +97,7 @@ Built-in users (except the **root** user) do not include the **Home Directory Pe
 | **Download SSH Public Key** | Click to generate and download a public key text file to past into **SSH Public Key**. |  
 
 #### Shell Options
-You can set a specific [shell]({{< relref "/SCALE/SCALETutorials/SystemSettings/ScaleShell.md" >}}) for the user from the **Shell** dropdown list options:
+You can set a specific [shell]({{< relref "UseScaleShell.md" >}}) for the user from the **Shell** dropdown list options:
 
 | Shell | Description |
 |-------|-------------|
