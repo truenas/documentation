@@ -26,7 +26,7 @@ The **Rsync > Configure** screen displays the **TCP Port** and **Auxiliary Param
 ## Rsync Module Screen
 
 The **Rsync Module** screen displays a list of current rsync modules configured on the system. 
-When setting up an [rsync task]({{< relref "RsyncTasksSCALE.md" >}}) you have the option to use either SSH or an rsync module as the rsync mode.
+When setting up an [rsync task]({{< relref "RsyncTasksSCALE.md" >}}), you have the option to use either SSH or an rsync module as the rsync mode.
 
 Before an rsync module is configured, the **No RSYNC Modules** screen displays. Click **Add** to configure a module to use as the **Rsync Mode** when you create an **Rsync Task**. 
 
