@@ -32,7 +32,7 @@ TrueNAS SCALE includes the [Key Management Interface Protocol (KMIP)](https://do
 
 Every pool has a *root* dataset that TrueNAS automatically generates when you create the pool. 
 This root dataset indicates the encryption status for the pool based on whether you select the **Encryption** option on the **[Pool Manager]({{< relref "PoolManagerScreen.md" >}})** screen when you create the pool. 
-If you select the **Encryption** option for the pool it forces encryption for all datasets or zvols created on the pool, and all data contained in that pool because encryption is inherited from the parent. 
+If you select the **Encryption** option for the pool, it forces encryption for all datasets, zvols, and data contained in that pool, since they inherit encryption from the parent. 
 
 {{< hint warning >}}
 If your system loses power or you reboot the system the datasets, zvols and all data in an encrypted pool are automatically locked to protect data in that encrypted pool. 
