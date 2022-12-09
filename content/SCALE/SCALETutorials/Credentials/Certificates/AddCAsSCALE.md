@@ -12,7 +12,6 @@ tags:
 {{< toc >}}
 
 
-
 The **Certificate Authorities** widget lets users set up a certificate authority (CA) that certifies the ownership of a public key by the named subject of the certificate.
 
 To add a new CA:
@@ -31,10 +30,13 @@ Users can also enter the system [fully-qualified hostname (FQDN)](https://kb.iu.
 Lastly, enter any extra constraints you need for your scenario. 
 The **Extra Constraints** step contains certificate extension options.
 
-* **Basic Constraints** when enabled this limits the path length for a certificate chain.
-* **Authority Key Identifier** when enable provides a means of identifying the public key corresponding to the private key used to sign a certificate.
-* **Key Usage** when enabled defines the purpose of the public key contained in a certificate.
-* **Extended Key Usage** when enabled it further refines key usage extensions.
+| Setting | Description |
+|---------|-------------|
+| **Add To Trusted Store** | Automatically adds the CA to the system trusted store. |
+| **Basic Constraints** | Limits the path length for a certificate chain.|
+| **Authority Key Identifier** | Provides a means of identifying the public key corresponding to the private key used to sign a certificate.|
+| **Key Usage** | Defines the purpose of the public key contained in a certificate.|
+| **Extended Key Usage** | Further refines key usage extensions. |
 
 Review the CA options. If you want to change something Click **Back** to reach the screen with the setting option you want to change, then click **Next** to advance to the **Confirm Options** step.
 

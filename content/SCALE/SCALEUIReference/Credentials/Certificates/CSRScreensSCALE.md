@@ -97,10 +97,13 @@ The **Certificate Subject** settings do not display if **Type** on the **Identif
 
 ### Extra Constraints Settings
 The **Extra Constraints** settings contains certificate extension options:
-* **Basic Constraints** that when enabled limits the path length for a certificate chain.
-* **Authority Key Identifier** that when enabled provides a means of identifying the public key corresponding to the private key used to sign a certificate.
-* **Key Usage** that when enabled defines the purpose of the public key contained in a certificate.
-* **Extended Key Usage** that when enabled further refines key usage extensions.
+
+| Setting | Description |
+|---------|-------------|
+| **Basic Constraints** | Limits the path length for a certificate chain.|
+| **Authority Key Identifier** | Provides a means of identifying the public key corresponding to the private key used to sign a certificate.|
+| **Key Usage** | Defines the purpose of the public key contained in a certificate.|
+| **Extended Key Usage** | Further refines key usage extensions. |
 
 The **Extra Constraints** settings change based on the selection in **Type** on the **Identifier and Type** screen. 
 
@@ -136,7 +139,7 @@ When **Type** on **Identifier and Type** is set to **Import Certificate Signing 
 | **Confirm Passphrase** | Re-enter the passphrase for the private key. |
 {{< /expand >}}
 
-### Confirm Options 
+### Confirm Options
 The final step screen is the **Confirm Options** that displays the CA **Type**, **Key Type**, **Key Length**, **Digest Algorithm**, **Lifetime**, **Country**, and **Basich Constraints Config**.
 For **Import Certificate Signing Request** type, the screen displays **Type**, **Signing Request** and **Private Key**.
 

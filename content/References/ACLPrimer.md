@@ -5,7 +5,7 @@ weight: 9
 
 {{< toc >}}
 
-[TrueNAS SCALE brings full ACL compatibility]({{< relref "/SCALE/SCALETutorials/Storage/Pools/PermissionsSCALE.md" >}}) between Windows and Linux with NFSv4 ACLs on ZFS and eases the challenges of integrating Unix servers in Windows environments.
+[TrueNAS SCALE brings full ACL compatibility]({{< relref "PermissionsSCALE.md" >}}) between Windows and Linux with NFSv4 ACLs on ZFS and eases the challenges of integrating Unix servers in Windows environments.
 
 ## ACL Overview
 
