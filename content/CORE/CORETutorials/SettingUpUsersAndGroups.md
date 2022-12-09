@@ -21,7 +21,7 @@ Creating users and assigning them to groups allows you to efficiently tune permi
 Only the root user account can log in to the TrueNAS web interface.
 {{< /hint >}}
 
-When the network uses a directory service, import the existing account information using the instructions in [Directory Services](https://www.truenas.com/docs/core/directoryservices/).
+When the network uses a directory service, import the existing account information using the instructions in [Directory Services](https://www.truenas.com/docs/core/coretutorials/directoryservices/).
 Using [Active Directory]({{< relref "/content/CORE/CORETutorials/DirectoryServices/ActiveDirectory.md" >}}) requires setting Windows user passwords inside Windows.
 
 To see user accounts, go to **Accounts > Users**.
