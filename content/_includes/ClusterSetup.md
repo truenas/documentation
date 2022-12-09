@@ -37,7 +37,7 @@ Repeat this procedure for each SCALE system to be clustered.
    ![WindowsServerDNSManagerReverseLookupZones](/images/TrueCommand/2.2/WindowsServerDNSManagerReverseLookupZones.png "Finding the Reverse Lookup Zone")
    If no zone exists, see Microsoft's guide for [creating DNS Zones](https://docs.microsoft.com/en-us/learn/modules/implement-windows-server-dns/3-work-dns-zones-records).
    
-4. Click **Action** > **New Pointer (PTR...)** and configure the **New Resource Record**. Enter the SCALE system IP address and hostname, then click **OK**.
+4. Click **Action** > **New Pointer (PTR...)** and configure the **New Resource Record**. Enter the SCALE system IP address and host name, then click **OK**.
 
    ![WindowsServerDNSManagerReverseLookupZonesPointersAdd](/images/TrueCommand/2.2/WindowsServerDNSManagerReverseLookupZonesPointersAdd.png "WindowsServerDNSManagerReverseLookupZonesPointersAdd")
 
