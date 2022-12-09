@@ -63,7 +63,7 @@ The dataset encryption state is unlocked until you lock it using the **Lock** op
 
 ### Inherit Encryption
 
-Datasets *inherit* encryption which means they use the encryption settings of the parent, whether the parent is the root dataset or a non-root parent dataset with child datasets nested under it.
+Datasets *inherit* encryption, which means they use the encryption settings of the parent, whether the parent is the root dataset or a non-root parent dataset with child datasets nested under it.
 
 You can change inherited settings for a dataset when you add the dataset, or you can change inherited encryption settings for an existing dataset using the **Edit** option on the **ZFS Encryption** widget.
 
@@ -71,12 +71,12 @@ You can change inherited settings for a dataset when you add the dataset, or you
 Before creating a pool with encryption make sure you want to encrypt all datasets and data stored on the pool. 
 
 {{< hint warning>}}
-You cannot change a pool from an encrypted to a non-encrypted, you can only change the dataset encryption type in the encrypted pool.
+You cannot change a pool from encrypted to non-encrypted. You can only change the dataset encryption type in the encrypted pool.
 {{< /hint >}}
 If your system does not have enough disks to allow you to create a second storage pool, we recommend that you not use encryption at the pool level. 
 You can mix encrypted and unencrypted datasets on an unencrypted pool.
 {{< hint warning >}}
-All pool-level encryption is key-based encryption. When prompted, download the encryption key, keep it stored in a safe place and where you can back up the file.
+All pool-level encryption is key-based encryption. When prompted, download the encryption key and keep it stored in a safe place where you can back up the file.
 You cannot use passphrase encryption at the pool level.
 {{< /hint >}}
 ### Adding Encryption to a New Pool
@@ -110,19 +110,19 @@ Click  **Add Dataset** to open the **Add Dataset** screen.
 
 To add a dataset, enter a value in **Name**. 
 
-Next select the type of **Case Sensitivity** and **Share Type** for the dataset.
+Next, select the type of **Case Sensitivity** and **Share Type** for the dataset.
 
 To add encyrption to a dataset, select **Inherit** under **Encryption Options** to clear the checkbox. 
 This displays the **Encryption** checkbox preselected. 
 
 ![AddDatasetEncryptionOptionsInheritCleared](/images/SCALE/22.12/AddDatasetEncryptionOptionsInheritCleared.png "Add Dataset Encryption Options Clear Inherit") 
 
-Now decide if you want to use the default encryption type key, and if you want to let the system genearate the encryption key. 
+Now decide if you want to use the default encryption type key and if you want to let the system generate the encryption key. 
 To use key encryption and your own key, clear the **Generate key** checkbox to display the **Key** field. Enter your key in this field.
 
 ![AddDatasetEncryptionKeyfromNonEncrypted](/images/SCALE/22.12/AddDatasetEncryptionKeyfromNonEncrypted.png "Add Key Encryption") 
 
-To change to a passphrase encryption, click the down arrow and select **Passphrase** from the **Encryption Type** dropdown.
+To change to passphrase encryption, click the down arrow and select **Passphrase** from the **Encryption Type** dropdown.
 
 ![AddDatasetEncryptionOptionsPassphrase](/images/SCALE/22.12/AddDatasetEncryptionOptionsPassphrase.png "Add Passphrase Encryption") 
 
@@ -157,8 +157,8 @@ To change the encryption type, go to **Datasets**:
 
    ![EditEncryptionOptionsInheritedSettings](/images/SCALE/22.12/EditEncryptionOptionsInheritedSettings.png "Edit Encryption Window - Inherited")
 
-2. Change the encryption settings. Key type options are to change the type from **Key** to **Passphrase** or from generated to manually-entered encryption key.
-   After clearing the **Inherits encryption properties from parent** the default settings display with **Encryption Type** set to **Key** and **Genrate Key** pre-selected.
+2. Change the encryption settings. Key type options are to change the type from **Key** to **Passphrase** or from a generated to a manually-entered encryption key.
+   After clearing the **Inherits encryption properties from parent** the default settings display with **Encryption Type** set to **Key** and **Generate Key** pre-selected.
    To manually enter an encryption key, select **Generate Key** to clear the checkmark and display the **Key** field. Enter the new key in this field.
 
    ![EditEncryptionOptionsWindowKeyType](/images/SCALE/22.12/EditEncryptionOptionsWindowKeyType.png "Edit Encryption Key Type") 
@@ -183,7 +183,7 @@ Before locking a dataset, verify that it is not currently in use.
 
 ### Locking a Dataset
 
-Select the dataset on the tree table then click **Lock** on the **ZFS Encryption** widget to open the **Lock Dataset** dialog with the dataset full path name.
+Select the dataset on the tree table, then click **Lock** on the **ZFS Encryption** widget to open the **Lock Dataset** dialog with the dataset full path name.
 
 ![LockDatasetDialog](/images/SCALE/22.12/LockDatasetDialog.png "Lock Dataset")
 
