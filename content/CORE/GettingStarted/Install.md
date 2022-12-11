@@ -35,9 +35,9 @@ Use one of the OpenPGP encryption tools mentioned above to import the public key
 Go to the <file>.iso</file> and <file>.iso.gpg</file> download location and import the public key using the keyserver address and search results string:
 
 ```
-q5sys@athena /tmp>  gpg --keyserver keys.gnupg.net --recv-keys 0xc8d62def767c1db0dff4e6ec358eaa9112cf7946
-gpg: requesting key 12CF7946 from hkp server keys.gnupg.net
-gpg: key 12CF7946: "IX SecTeam <security-officer@ixsystems.com>" not changed
+q5sys@athena /tmp>  gpg --keyserver keys.openpgp.org --recv-keys 0xc8d62def767c1db0dff4e6ec358eaa9112cf7946
+gpg: requesting key 12CF7946 from hkp server keys.openpgp.org
+gpg: key 358EAA9112CF7946: "IX SecTeam <security-officer@ixsystems.com>" not changed
 gpg: Total number processed: 1
 gpg:              unchanged: 1
 q5sys@athena /tmp>
