@@ -16,9 +16,9 @@ The **Backup Credentials** screen displays the **SSH Connections** and **SSH Key
 ## SSH Connection and Keypairs Widgets
 The **SSH Connections** and **SSH Keypairs** widgets display a list of SSH connections and keypairs configured on the system. 
 
-![BackupCredentialsSSHWidgets](/images/SCALE/22.02/BackupCredentialsSSHWidgets.png "SSH Connections and Keypairs Widgets")
+![BackupCredentialsAllCloudSSH](/images/SCALE/22.12/BackupCredentialsAllCloudSSH.png "SSH Connections and Keypairs Widgets")
 
-The **SSH Connections** widget allows users to establish [Secure Socket Shell (SSH)](https://searchsecurity.techtarget.com/definition/Secure-Shell) connections. 
+The **SSH Connections** widget allows users to establish Secure Socket Shell (SSH) connections. 
 The **SSH Keypairs** widget allows users to generate SSH keypairs required to authenticate the identity of a user or process that wants to access the system using SSH protocol.
 
 **Add** button in the **SSH Connections** widget opens the **[SSH Connections](#ssh-connections-screens)** configuration window. 
@@ -29,7 +29,7 @@ The settings displayed on the **SSH Connections** configuration screens are the 
 
 #### Name and Method Settings
 
-![SSHConnectionNameAndMethodSettings](/images/SCALE/22.02/SSHConnectionNameAndMethodSettings.png "SSH Connections Name and Method Settings")
+![NewSSHConnectNameMethodAuto](/images/SCALE/22.12/NewSSHConnectNameMethodAuto.png "SSH Connections Name and Method Settings")
 
 | Name | Description |
 |------|-------------|
@@ -39,20 +39,22 @@ The settings displayed on the **SSH Connections** configuration screens are the 
 #### Authentication Settings - Semi-Automatic Method
 These authentication settings display when **Setup Method** is **Semi-automatic (TrueNAS only)**.
 
-![SSHConnectionAuthenticationSettings](/images/SCALE/22.02/SSHConnectionAuthenticationSettings.png "SSH Connections Authentication Settings") 
+![NewSSHConnectAuthentication](/images/SCALE/22.12/NewSSHConnectAuthentication.png "SSH Connections Authentication Settings") 
 
 | Name | Description |
 |------|-------------|
 | **TrueNAS URL** | Enter the host name or IP address of the remote system. Use a valid URL scheme for the remote TrueNAS URL. IP address example of *https://10.231.3.76*. |
-| **Username** | Enter the user name for logging into the remote system. |
-| **Password** | Enter the user account password for logging into the remote system. |
+| **Admin Username** | Enter the user name for logging into the remote system. |
+| **Admin Password** | Enter the user account password for logging into the remote system. |
+| **One-Time Password (if necessary)** | One-Time Password if two-factor authentication is enabled. |
+| **Username** | Username on the remote system used to login via SSH. |
 | **Private Key** | Select a saved SSH keypair or you can import the private key from a previously created SSH keypair or select **Generate New** to create a new keypair to use for the connection to this remote system. |
 
 #### Authentication Settings - Manual Method
 These authentication settings display when **Setup Method** is **Manual**. You must copy a public encryption key from the local system to the remote system.
 A manual setup allows a secure connection without a password prompt.
 
-![SSHConnectionManualAuthentication](/images/SCALE/22.02/SSHConnectionManualAuthentication.png "SSH Connections Manual Authentication Settings") 
+![NewSSHConnectAuthenticationManual](/images/SCALE/22.12/NewSSHConnectAuthenticationManual.png "SSH Connections Manual Authentication Settings") 
 
 | Name | Description |
 |------|-------------|
@@ -65,7 +67,7 @@ A manual setup allows a secure connection without a password prompt.
 
 #### More Options Settings
 
-![SSHConnectionMoreOptionsSettings](/images/SCALE/22.02/SSHConnectionMoreOptionsSettings.png "SSH Connections More Options Settings") 
+![NewSSHConnectMoreOptions](/images/SCALE/22.12/NewSSHConnectMoreOptions.png "SSH Connections More Options Settings") 
 
 | Name | Description |
 |------|-------------|
@@ -73,6 +75,7 @@ A manual setup allows a secure connection without a password prompt.
 | **Connect Timeout** | Enter time (in seconds) before the system stops attempting to establish a connection with the remote system. |
 
 **Save** automatically opens a connection to the remote TrueNAS and exchanges SSH keys.
+
 ## SSH Keypairs Widget
 The **SSH Keypairs** widget on the **Backup Credentials** screen lists SSH keypairs added to the TrueNAS SCALE system. 
 
@@ -87,7 +90,7 @@ The <span class="material-icons">delete</span> delete icon opens the a delete di
 ### SSH Keypairs Screen
 The **SSH Keypairs** configuration screen displays the same settings for both add and edit options. Click **Add** to open a new configuration form, or click on an existing keypair to open the configuration screen populated with the settings for the selected keypair.
 
-![SSHKeypairsAddScreen](/images/SCALE/22.02/SSHKeypairsAddScreen.png "SSH Keypairs Settings")
+![BackupCredentialsSSHKeypairsAdd](/images/SCALE/22.12/BackupCredentialsSSHKeypairsAdd.png "SSH Keypairs Settings")
 
 | Name | Description |
 |------|-------------|
