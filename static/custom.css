@@ -385,8 +385,8 @@ p,h1,h2,h3,h4,th,td,a {
 .content-print img {
     max-width: 800px;
 }
-.content-print video {
-	display: none;
+.content-print .data-setup {
+	display:none;
 }
 .content-print .gdoc-tabs input[type="radio" i] {
     display: none;
@@ -420,6 +420,12 @@ p,h1,h2,h3,h4,th,td,a {
 }
 .td-content-print img{
     max-width: 800px;
+}
+.td-content-print video {
+	display: none;
+}
+.td-content-print div.docvid {
+	display:none;
 }
 .td-content-print .gdoc_link{
     max-height: 1rem;
