@@ -21,16 +21,11 @@ Do not enable SSH unless you require external connections.
 See [Security Recommendations]({{< relref "Security.md" >}}) for more security considerations when using SSH.
 {{< /hint>}}
 
-{{< expand "SSH Tutorial Video" >}}
-
-<!-- {{< embed-video name="scaleangelfishsshaccess" >}} -->
-
-{{< /expand >}}
 ## Configuring SSH Service
 
 To configure SSH go to **System Settings > Services**, find **SSH**, and click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the basic settings **General Options** configuration screen.
 
-![ServicesSSHBasicSettingsGeneralOptions](/images/SCALE/22.02/ServicesSSHBasicSettingsGeneralOptions.png "SSH Basic Settings General Options")
+![ServicesSSHBasicSettingsGeneralOptions](/images/SCALE/22.12/ServicesSSHBasicSettingsGeneralOptions.png "SSH Basic Settings General Options")
 
 Configure the options as needed to match your network environment.
 
@@ -50,7 +45,7 @@ SFTP is more secure than standard FTP as it applies SSL encryption on all transf
 
 Go to **System Settings > Services**, find the **SSH** entry, and click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the **Services > SSH** basic settings configuration screen.
 
-![ServicesSSHBasicSettingsGeneralOptions](/images/SCALE/22.02/ServicesSSHBasicSettingsGeneralOptions.png "SSH Basic Settings General Options")
+![ServicesSSHBasicSettingsGeneralOptions](/images/SCALE/22.12/ServicesSSHBasicSettingsGeneralOptions.png "SSH Basic Settings General Options")
 
 Select **Allow Password Authentication** and decide if you need **Log in as Root with Password**.
 {{< hint warning >}}

@@ -23,7 +23,7 @@ TFTP provides a limited set of commands and provides no authentication.
 If TrueNAS is only storing images and configuration files for network devices, configure and start the TFTP service.
 Starting the TFTP service opens UDP port **69**.
 
-![ServicesTFTPSCALE](/images/SCALE/22.02/ServicesTFTPSCALE.png "TFTP Service Options")
+![ServicesTFTPSCALE](/images/SCALE/22.12/ServicesTFTPSCALE.png "TFTP Service Options")
 
 Select the path to where you want to store files, and then select the file access permissions for both user and group. If you want to allow new file transfers select **Allow new Files**. 
 

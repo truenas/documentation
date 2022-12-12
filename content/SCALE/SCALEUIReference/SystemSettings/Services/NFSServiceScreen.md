@@ -17,14 +17,14 @@ You can access it from **System Settings > Services** screen. Locate **NFS** and
 
 Select **Start Automatically** to activate NFS service when TrueNAS boots.
 
-![ServicesNFSSettingsScreen](/images/SCALE/22.02/ServicesNFSSettingsScreen.png "Services NFS Options")
+![ServicesNFSSettingsScreen](/images/SCALE/22.12/ServicesNFSSettingsScreen.png "Services NFS Options")
 
 ### General Options Settings
 
 | Setting | Description |
 |---------|-------------|
-| **Number of servers** | Required. Enter the number of servers to create. Increase if NFS client responses are slow. Keep this less than or equal to the number of CPUs reported by `SYSCTL -n kern.smp.cpus` to limit CPU context switching. |
 | **Bind IP Addresses** | Select IP addresses to listen to for NFS requests. Leave empty for NFS to listen to all available addresses. You must configure static IPs on the interface to appear on the dropdown list. |
+| **Number of threads** | Required. Enter an optimal number of threads used by the kernel NFS server. |
 
 ### NFSv4 Settings
 
@@ -39,7 +39,7 @@ Select **Start Automatically** to activate NFS service when TrueNAS boots.
 | Setting | Description |
 |---------|-------------|
 | **mountd(8) bind port** | Enter a port to bind [mountd(8)](https://man7.org/linux/man-pages/man8/mountd.8.html). |
-| **rpc.statd(8) bind port** | Enter a port to bind [rpc.stad(8)](https://man7.org/linux/man-pages/man8/statd.8.html). |
+| **rpc.statd(8) bind port** | Enter a port to bind [rpc.statd(8)](https://man7.org/linux/man-pages/man8/statd.8.html). |
 | **rpc.lockd(8) bind port** | Enter a port to bind [rpc.lockd(8)](https://linux.die.net/man/8/rpc.lockd). |
 
 ### Other Options Settings
@@ -47,8 +47,8 @@ Select **Start Automatically** to activate NFS service when TrueNAS boots.
 | Setting | Description |
 |---------|-------------|
 | **Serve UDP NFS clients** | Select if NFS clients need to use the User Datagram Protocol (UDP). |
-| **Support >16 groups** | Select when a user is a member of more than 16 groups. This assumes group membership is configured correctly on the NFS server. |
-| **Allow non-root mount** | Select only if required by the NFS client to allow serving non-root mount requests. |
+| **Allow non-root mount** | Select only if required by the NFS client to allow serving non-root mount requests. | 
+| **Support >16 groups** | Select when a user is a member of more than 16 groups. This assumes group membership is configured correctly on the NFS server. | 
 
 Unless a specific setting is required, we recommend using the default NFS settings.
 

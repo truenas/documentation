@@ -16,7 +16,7 @@ tags:
 TrueNAS stores cloud backup services credentials, SSH connections, and SSH keypairs configured using the widgets on the **Backup Credentials** screen. 
 Users can set up backup credentials with cloud and SSH clients to back up data in case of drive failure. 
 
-![BackupCredentialsScreen](/images/SCALE/22.02/BackupCredentialsScreen.png "Backup Credentials Screen")
+![BackupCredentialsAllCloudSSH](/images/SCALE/22.12/BackupCredentialsAllCloudSSH.png "Backup Credentials Screen")
 
 ## Article Summaries
 
