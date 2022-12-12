@@ -54,7 +54,7 @@ You may want to upgrade apps as they receive big-fixing updates or QOL changes. 
 
 ![UpgradeAppSingle](/images/SCALE/22.12/UpgradeAppSingle.png "Upgrade Single App")
 
-To upgrade multiple apps, click the checkbox in the widget oif each app you want to update, then click **Bulk Actions** and select **<span class="iconify" data-icon="ic:outline-update"></span> Upgrade**.
+To upgrade multiple apps, click the checkbox in the widget of each app you want to update, then click **Bulk Actions** and select **<span class="iconify" data-icon="ic:outline-update"></span> Upgrade**.
 
 ![UpgradeAppBulk](/images/SCALE/22.12/UpgradeAppBulk.png "Upgrade Bulk Apps")
 
