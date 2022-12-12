@@ -49,6 +49,10 @@ To configure an Access Control List (ACL) entry for an SMB share use the **Edit 
 This screen is separate from file system permissions and applies at the entire SMB share level. 
 Changes made to permissions on this screen for the selected SMB share do not apply to other file sharing protocol clients or other SMB shares that export the same share **Path**. 
 
+{{< hint info >}} 
+You cannot access SMB shares with the root user. Always change SMB dataset ownership to the intended SMB user. 
+{{< /hint >}}
+
 This ACL determines the browse list if you enable **Access Based Share Enumeration**. See [SMB Share Screens]({{< relref "SMBSharesScreens.md" >}}) for more information on settings.
 
 Open is the default. 

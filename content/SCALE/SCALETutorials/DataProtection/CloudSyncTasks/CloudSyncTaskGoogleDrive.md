@@ -51,36 +51,17 @@ You can add Google Drive credentials using the **Add Cloud Credentials** screen 
 5. Click **Save**. 
    The **Cloud Credentials** widget displays the new credentials. These are also available for cloud sync tasks to use.
 
-### Adding Cloud Credentials Using Cloud Sync Task
+### Adding A Google Drive Cloud Sync Task
 
-You can add a new cloud credential on the **Add Cloud Sync Task** screen. 
+You must add the cloud credential on the **Backup Credentials** screen before you create the cloud sync task. 
 
 To add a cloud sync task, go to **Data Protection > Cloud Sync Tasks** and click **Add**. The **Add Cloud Sync Task** configuration screen opens.
 
-![AddCloudSyncTaskTop](/images/SCALE/22.02/AddCloudSyncTaskTop.png "Adding a Cloud Sync Task")
-
 1. (Required) Type a memorable task description in **Description**. For example, *googledrivepush* to represent the provider name and transfer direction.
 
-2. Select **+ Add a backup credential** from the **Credential** dropdown list to add a new backup credential. 
-   **+ Add a backup credential** opens a backup credential configuration window.
+2. Select your Google Drive credential on the **Credential** dropdown list to add a new backup credential. 
 
-   ![AddCloudSyncTaskAddBackupCredentials](/images/SCALE/22.02/AddCloudSyncTaskAddBackupCredentials.png "Adding a Backup Credential Window")
-
-   a. (Required) Enter a name for the backup credential. For example, *googledrive*.
-
-   b. Select the **Google Drive** from the **Provider** dropdown list. The Google Drive authentication fields display.
-      See [Adding Cloud Credentials]({{< relref "/SCALE/SCALETutorials/Credentials/BackupCredentials/AddCloudCredentials.md" >}}) for more information on authentication settings for each provider.
-
-      ![CloudSyncAddGoogleDriveAuthentication](/images/SCALE/22.02/CloudSyncAddGoogleDriveAuthentication.png "Add Google Drive Authentication Settings")
-    
-    c. Enter the Google Drive account email and password, then click **Log In To Provider**. 
-       Google displays the authentication windows just as in the process described in [step 3](#adding-google-drive-credentials-using-cloud-credentials) in the cloud credentials procedure above.
-
-    d. Click **Verify Credentials**. TrueNAS attempts to connect to the selected provider with the authentication settings entered.
-
-    e. Click **Save**. The backup credentials window closes and the **Credentials** field displays the newly created backup credential.
-   
-   ![AddGoogleDriveCloudSyncn](/images/SCALE/22.02/AddGoogleDriveCloudSync.png "Add Google Drive Cloud Sync Settings")
+   ![AddGoogleDriveCloudSyncTask](/images/SCALE/22.12/AddGoogleDriveCloudSyncTask.png "Add Google Drive Cloud Sync Settings")
 
 {{< include file="/content/_includes/AddCloudSyncTaskSteps3-8.md" type="page" >}}
 

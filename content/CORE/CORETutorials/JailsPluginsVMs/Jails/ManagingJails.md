@@ -42,19 +42,4 @@ To modify the IP address information for a jail, click the <i class="material-ic
 This ensures changes are saved and survive a jail or TrueNAS reboot.
 {{< /hint >}}
 
-## Updating and Upgrading Jails
-
-To updata a jail to the most current patch level of the installed FreeBSD release, click **>** to expand the jail and then click **Update**. 
-This does **not** change the release.
-For example, a jail installed with **FreeBSD 11.2-RELEASE** can update to **p15** or the latest patch of 11.2, but not an 11.3-RELEASE-p# version of FreeBSD.
-
-Using **Upgrade** replaces the jail FreeBSD operating system with a new release of FreeBSD, such as taking a jail from FreeBSD 11.2-RELEASE to 11.3-RELEASE.
-To upgrade a jail, stop it, open the TrueNAS **Shell** and enter command `iocage upgrade name -r release`, where *name* is the plugin jail name and *release* is the desired FreeBSD release.
-
-It is possible to manually remove unused releases from the `/iocage/releases/` dataset after upgrading a jail.
-
-{{< hint warning >}}
-The release must not be in use by any jail on the system!
-{{< /hint >}}
-
 {{< taglist tag="corejails" limit="10" >}}

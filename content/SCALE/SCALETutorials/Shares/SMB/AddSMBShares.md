@@ -79,8 +79,10 @@ For more information on the **builtin_users** group, go to **Credentials > Local
 Scroll down to the **smbguest** user and click on the name. 
 Click **Edit** to view the **Edit User** screen. The **Auxiliary Group** field displays the **builtin_user** group. 
 {{< /expand >}}
-You can use the group to grant access to all local users on the server or add more groups to fine-tune permissions to large numbers of users. 
-You cannot access SMB shares with user accounts built-in to TrueNAS or those without the **smb** flag.
+You can use the group to grant access to all local users on the server or add more groups to fine-tune permissions to large numbers of users.
+{{< hint info >}} 
+You cannot access SMB shares with the root user, or user accounts built-in to TrueNAS or those without the **smb** flag.
+{{< /hint >}}
 
 {{< expand "Why not just allow anonymous access to the share?" "v" >}}
 Anonymous or guest access to the share is possible, but it is a security vulnerability. 
@@ -128,6 +130,10 @@ If you want to allows users to move through directories within an SMB share with
 
 See [Permissions]({{< relref "PermissionsScale.md" >}}) for more information on editing dataset permissions.
 {{< /expand >}}
+
+{{< hint info >}} 
+You cannot access SMB shares with the root user. Always change SMB dataset ownership to the intended SMB user. 
+{{< /hint >}}
 
 ### Creating the SMB Share
 

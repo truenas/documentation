@@ -1,6 +1,6 @@
 ---
 title: "Creating Replication Tasks"
-description: "This article lists replication tasks articles on TrueNAS CORE."
+description: "This section contains TrueNAS CORE replication tutorials."
 geekdocCollapseSection: true
 weight: 60
 ---
