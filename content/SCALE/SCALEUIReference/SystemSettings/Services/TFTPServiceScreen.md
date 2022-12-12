@@ -19,7 +19,7 @@ Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i
 ## TFTP Service
 The **TFTPS** screen displays settings that specify the directory location to use for storing files, the connection information, file permissions and any auxiliary parameters you want to use to further customize this service.
 
-![ServicesTFTPSCALE](/images/SCALE/22.02/ServicesTFTPSCALE.png "TFTP Service Options")
+![ServicesTFTPSCALE](/images/SCALE/22.12/ServicesTFTPSCALE.png "TFTP Service Options")
 
 ### Path Settings
 

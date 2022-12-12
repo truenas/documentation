@@ -15,7 +15,7 @@ tags:
 
 The **Services > S3** screen allows you to specify settings to connect to TrueNAS from a networked client system with the Minio browser, s3cmd, or S3 browser.
 
-![S3ServiceSettings(/images/SCALE/22.02/S3ServiceSettings.png "S3 Service Options")
+![S3ServiceSettingsTLS](/images/SCALE/22.12/S3ServiceSettingsTLS.png "S3 Service Options")
 
 | Settings | Description |
 |----------|-------------|
@@ -27,6 +27,6 @@ The **Services > S3** screen allows you to specify settings to connect to TrueNA
 | **Disk** | Enter or use <iconify-icon icon="bxs:right-arrow"></iconify-icon> to the left of <span class="material-icons">folder</span> **/mnt** to browse to a directory to define the S3 file system path. |
 | **Enable Browser** | Enables the S3 service web UI. Access the MinIO web UI by entering the IP address and port number separated by a colon in the browser address bar. Example: *192.168.1.0:9000*. |
 | **Certificate** | Use an SSL [certificate]({{< relref "CertificatesSCALE.md" >}}) created or imported in **Credentials > Certificates** for secure S3 connections. |
-| **TLS Server URI**  | Displays after selecting an SSL certificate. Enter the TLS server host name. Or enter a MinIO server address that can be a proxy. |
+| **TLS Server Hostname**  | Displays after selecting an SSL certificate. Enter the TLS server host name. Or enter a MinIO server address that can be a proxy. |
 
 {{< taglist tag="scales3" limit="10" >}}
