@@ -16,7 +16,7 @@ tags:
 TrueNAS uses [Net-SNMP](https://sourceforge.net/projects/net-snmp/) to provide SNMP.
 To configure SNMP, go to **System Settings > Services** page, find **SNMP**, and click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
 
-![ServicesSNMPSCALE](/images/SCALE/22.02/SCALESNMPOptions.png "SCALE SNMP Service Options")
+![ServicesSNMPSCALE](/images/SCALE/22.12/SCALESNMPOptions.png "SCALE SNMP Service Options")
 
 See [SNMP Service Screen]({{< relref "SNMPServiceScreenSCALE.md" >}}) for setting information. 
 
