@@ -53,7 +53,3 @@ Saving any changes redeploys the container.
 To deploy a custom application container in the Scale web interface, go to **Apps** and click **[Launch Docker Image]({{< relref "LaunchDockerImageScreens.md" >}})** for more on the Docker image wizard screens and settings..
 
 {{< taglist tag="scaleapps" limit="10" >}}
-
-
-When creating an app, if you select a host path that is part of a share, the app does not deploy, s. To configure apps in shared host paths, disable **Enable Host Path Safety Checks** in **Applications > Settings > Advanced Settings**.
-
