@@ -23,10 +23,10 @@ The options at the top right of the **Applications** screen change with the scre
 
 ### Bulk Actions
 
-The **Bulk Action** option that displays at the top right of the **Installed Applications** screen allows you to select more than one, or all  installed apps on your system. After selecting the apps, use the other action buttons to either **Start**, **stop** or **Delete** the selected apps.
+The **Bulk Action** option that displays at the top right of the **Installed Applications** screen allows you to select more than one, or all  installed apps on your system. After selecting the apps, use the other action buttons to either **Start**, **Stop** or **Delete** the selected apps.
 
 **Select All** places a checkmark in the top left corner of the widget for each installed application. Toggles to **Unselect All**.
-**Start** starts all selected apps, and displays s **Success** dialog for each app after it starts without issue.
+**Start** starts all selected apps, and displays **Success** dialog for each app after it starts without issue.
 **Stop** stops all selected apps and displays a **Success** dialog for each app after it stops without issue.
 
 ### Settings
