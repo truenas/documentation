@@ -2,7 +2,9 @@
 title: "Setting Up Let's Encrypt Certificates"
 geekdocCollapseSection: true
 weight: 10
-
+tags:
+- scalecertificates
+- scaleacme
 ---
 
 {{< toc >}}
@@ -37,7 +39,7 @@ You can use default settings except for the **Common Name** and **Subject Altern
 
 Enter your primary domain name in the **Common Name** field, then enter additional domains you wish to secure in the **Subject Alternate Names** field. 
 
-For example, if your primary domain is *domain1.com*, entering *www.domain1.com* secures both addresses.
+For example, if your primary domain is *domain1.com*, entering `www.domain1.com` secures both addresses.
 
 ## Create ACME Certificate
 
@@ -48,3 +50,5 @@ Click the <span class="iconify" data-icon="mdi:wrench"></span> icon next to the 
 Fill out the ACME Certificate form. Under **Domains**, select the ACME DNS Authenticator you created for both domains, then click **Save**.
 
 You can create testing and staging certificates for your domain.
+
+{{< taglist tag="scalecas" limit="10" >}}
