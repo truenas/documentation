@@ -95,17 +95,14 @@ HA migration in Bluefin 22.12.0 is not recommended for critical-use Enterprise H
 * [NAS-117368](https://ixsystems.atlassian.net/browse/NAS-117368) Add missing attributes to \`pool.dataset.details\` response
 * [NAS-117383](https://ixsystems.atlassian.net/browse/NAS-117383) investigate adding io type to VM devices
 * [NAS-117405](https://ixsystems.atlassian.net/browse/NAS-117405) Fix IxDynamicFormItemComponent tests
-* [NAS-117935](https://ixsystems.atlassian.net/browse/NAS-117935) Rootless login: local authentication and authorization
 * [NAS-118581](https://ixsystems.atlassian.net/browse/NAS-118581) Allow creating Storj buckets when creating a cloud sync task
 * [NAS-118725](https://ixsystems.atlassian.net/browse/NAS-118725) Allow Syncing Unsafe Content In Cloud Sync Tasks
 * [NAS-118773](https://ixsystems.atlassian.net/browse/NAS-118773) Export All Dataset Keys button
 * [NAS-118847](https://ixsystems.atlassian.net/browse/NAS-118847) add new failover.disabled.reasons to front-end
-* [NAS-118851](https://ixsystems.atlassian.net/browse/NAS-118851) API authentication using Directory Services
 * [NAS-118861](https://ixsystems.atlassian.net/browse/NAS-118861) Resurrect Import Disks feature from old storage pages
 * [NAS-118901](https://ixsystems.atlassian.net/browse/NAS-118901) Create pool mockups public discussion
 * [NAS-118923](https://ixsystems.atlassian.net/browse/NAS-118923) Fix broken k3s build
 * [NAS-118955](https://ixsystems.atlassian.net/browse/NAS-118955) DFS Proxy Share Feature
-* [NAS-118965](https://ixsystems.atlassian.net/browse/NAS-118965) Document charts and general workflow of how the structure is composed
 * [NAS-118966](https://ixsystems.atlassian.net/browse/NAS-118966) Improve investigating retrieving official catalog performance as we add more apps
 * [NAS-119071](https://ixsystems.atlassian.net/browse/NAS-119071) Rootless login installer changes
 * [NAS-119102](https://ixsystems.atlassian.net/browse/NAS-119102) Allow specifying remote NAS administrator username when setting up an SSH connection using semi-automatic mode
@@ -149,7 +146,6 @@ HA migration in Bluefin 22.12.0 is not recommended for critical-use Enterprise H
 * [NAS-116721](https://ixsystems.atlassian.net/browse/NAS-116721) Allow defining resource limits for apps
 * [NAS-116756](https://ixsystems.atlassian.net/browse/NAS-116756) Do not exit on first failure in apps CI
 * [NAS-116758](https://ixsystems.atlassian.net/browse/NAS-116758) Add integration tests for authorized networks of targets
-* [NAS-116759](https://ixsystems.atlassian.net/browse/NAS-116759) Add keyboard support for ix-tree
 * [NAS-117940](https://ixsystems.atlassian.net/browse/NAS-117940) Revert temporary fix for NAS-117908 once glusterfs is fixed for glfs\_open\(\) on dirs
 * [NAS-118161](https://ixsystems.atlassian.net/browse/NAS-118161) Improvements for Jobs
 * [NAS-118366](https://ixsystems.atlassian.net/browse/NAS-118366) Change font face on headers
@@ -164,6 +160,7 @@ HA migration in Bluefin 22.12.0 is not recommended for critical-use Enterprise H
 * [NAS-118777](https://ixsystems.atlassian.net/browse/NAS-118777) Default cloudsync provider name to provider title
 * [NAS-118788](https://ixsystems.atlassian.net/browse/NAS-118788) Remove truecommand\_stats source/package as it is no longer used
 * [NAS-118801](https://ixsystems.atlassian.net/browse/NAS-118801) Remove usages of any
+* [NAS-118807](https://ixsystems.atlassian.net/browse/NAS-118807) Prevent multiple users from having same homedir
 * [NAS-118811](https://ixsystems.atlassian.net/browse/NAS-118811) remove 3rd party asyncio k8s client \(use upstream proper\)
 * [NAS-118817](https://ixsystems.atlassian.net/browse/NAS-118817) Zvol form refactoring
 * [NAS-118820](https://ixsystems.atlassian.net/browse/NAS-118820) Move AdminLayoutComponent to the Layouts module
@@ -171,6 +168,7 @@ HA migration in Bluefin 22.12.0 is not recommended for critical-use Enterprise H
 * [NAS-118823](https://ixsystems.atlassian.net/browse/NAS-118823) Refactor Display device code in VmListComponent
 * [NAS-118825](https://ixsystems.atlassian.net/browse/NAS-118825) Refactor Create SSH Connection in replication wizard
 * [NAS-118846](https://ixsystems.atlassian.net/browse/NAS-118846) Improve diasbled reasons
+* [NAS-118855](https://ixsystems.atlassian.net/browse/NAS-118855) Dump currently active WebSocket sessions. Allow terminating all excep…
 * [NAS-118899](https://ixsystems.atlassian.net/browse/NAS-118899) Refactor VM Edit form
 * [NAS-118900](https://ixsystems.atlassian.net/browse/NAS-118900) Improve return types for appLet directive
 * [NAS-118906](https://ixsystems.atlassian.net/browse/NAS-118906) Refactor dialogs in PodShellComponent and PodLogsComponent
@@ -197,19 +195,23 @@ HA migration in Bluefin 22.12.0 is not recommended for critical-use Enterprise H
 * [NAS-119041](https://ixsystems.atlassian.net/browse/NAS-119041) Restore \`vmware\_sync\` functionality from CreateSnapshotDialogComponent
 * [NAS-119044](https://ixsystems.atlassian.net/browse/NAS-119044) Add endpoint to check service configuration prior to start
 * [NAS-119046](https://ixsystems.atlassian.net/browse/NAS-119046) Remove "Unused Resources" section header on Storage Dashboard
+* [NAS-119047](https://ixsystems.atlassian.net/browse/NAS-119047) BlueFin Kernel updates to fix several CVEs
 * [NAS-119056](https://ixsystems.atlassian.net/browse/NAS-119056) Refactor truecommand wireguard interface name
 * [NAS-119059](https://ixsystems.atlassian.net/browse/NAS-119059) Remove numberValidator
+* [NAS-119084](https://ixsystems.atlassian.net/browse/NAS-119084) Remove kubernetes asyncio from scale build
 * [NAS-119103](https://ixsystems.atlassian.net/browse/NAS-119103) Highlight degraded vdevs in Devices
 * [NAS-119132](https://ixsystems.atlassian.net/browse/NAS-119132) Allow 3rd party catalogs to benefit from catalog sync performance improvements
 * [NAS-119136](https://ixsystems.atlassian.net/browse/NAS-119136) Add glusterfs.filesystem tests
 * [NAS-119147](https://ixsystems.atlassian.net/browse/NAS-119147) Remove entity-dialog
 * [NAS-119168](https://ixsystems.atlassian.net/browse/NAS-119168) Switch codecov github action to use token
+* [NAS-119186](https://ixsystems.atlassian.net/browse/NAS-119186) Rewording Validate Host Path for Apps and show dialog
 
 ## Bug
 
+* [NAS-119270](https://ixsystems.atlassian.net/browse/NAS-119270) One Time Replication of Same System to A Different System Fails with Traceback
+* [NAS-119296](https://ixsystems.atlassian.net/browse/NAS-119296) fix memory leak in py-libzfs/ZFS.find\_import
 * [NAS-111547](https://ixsystems.atlassian.net/browse/NAS-111547) ZFS shouldn't count vdev IO errors on hotplug removal
 * [NAS-114235](https://ixsystems.atlassian.net/browse/NAS-114235) Need better Linux kernel config procedure
-* [NAS-115141](https://ixsystems.atlassian.net/browse/NAS-115141) Core files for the following executables were found: /usr/bin/qemu-system-x86\_64 
 * [NAS-115181](https://ixsystems.atlassian.net/browse/NAS-115181) Fix "Start Automatically" checkbox for services table
 * [NAS-115186](https://ixsystems.atlassian.net/browse/NAS-115186) Fix close icon on tooltips
 * [NAS-115331](https://ixsystems.atlassian.net/browse/NAS-115331) Initramfs modules for NVIDIA driver version 460.91.03 fail to build with 5.15 kernel
@@ -232,12 +234,10 @@ HA migration in Bluefin 22.12.0 is not recommended for critical-use Enterprise H
 * [NAS-117312](https://ixsystems.atlassian.net/browse/NAS-117312) Scheduled scrub task does not start on one disk pool
 * [NAS-117320](https://ixsystems.atlassian.net/browse/NAS-117320) CLONE - Do not allow immutable fields to be modified in UI - Bluefin
 * [NAS-117845](https://ixsystems.atlassian.net/browse/NAS-117845) Scale's UI freezes and becomes unavailable
-* [NAS-117939](https://ixsystems.atlassian.net/browse/NAS-117939) Catalog validation fails to setup kubernetes cluster in CI
 * [NAS-117990](https://ixsystems.atlassian.net/browse/NAS-117990) Service running toggle state incorrect after canceling
 * [NAS-118236](https://ixsystems.atlassian.net/browse/NAS-118236) Trouble expanding pool, error "\[EZFS\_NOCAP\] cannot relabel '/dev/disk/by-partuuid/905647b7-3ca7-11e9-a8f0-8cae4cfe7d0f': unable to read disk capacity"
 * [NAS-118492](https://ixsystems.atlassian.net/browse/NAS-118492) Datasets detail cards should realign to fill horizontal space first
 * [NAS-118571](https://ixsystems.atlassian.net/browse/NAS-118571) Apps Used port detection, does not read kubernetes services
-* [NAS-118611](https://ixsystems.atlassian.net/browse/NAS-118611) SMBD tained
 * [NAS-118660](https://ixsystems.atlassian.net/browse/NAS-118660) Cloud sync task "Bandwith Limit" pop-up help text appears to be incorrect
 * [NAS-118691](https://ixsystems.atlassian.net/browse/NAS-118691) NoVNC Not working for Some VMS on Scale BlueFin Beta 2
 * [NAS-118738](https://ixsystems.atlassian.net/browse/NAS-118738) \[SCALE\]: svclb pods are getting created on kube-system namespace and there are also couple of stuck svclb pods from previous installation
@@ -250,7 +250,6 @@ HA migration in Bluefin 22.12.0 is not recommended for critical-use Enterprise H
 * [NAS-118830](https://ixsystems.atlassian.net/browse/NAS-118830) Localhost redirects to remote machine when Api Keys page is reloaded
 * [NAS-118845](https://ixsystems.atlassian.net/browse/NAS-118845) failover\_critical as response to failover.disabled.reasons
 * [NAS-118856](https://ixsystems.atlassian.net/browse/NAS-118856) SCALE nightlies includes kernel modules for wrong kernel
-* [NAS-118859](https://ixsystems.atlassian.net/browse/NAS-118859) add minio/operator app and use logsearchapi entrypoint override
 * [NAS-118867](https://ixsystems.atlassian.net/browse/NAS-118867) \[Scale\] Apps does not respect the selected version.
 * [NAS-118868](https://ixsystems.atlassian.net/browse/NAS-118868) \[SCALE\] Apps UI goes into a back and forth loop between tabs.
 * [NAS-118891](https://ixsystems.atlassian.net/browse/NAS-118891) Used snapshot size not showed on the storage page
@@ -259,7 +258,6 @@ HA migration in Bluefin 22.12.0 is not recommended for critical-use Enterprise H
 * [NAS-118898](https://ixsystems.atlassian.net/browse/NAS-118898) \[SCALE\] Editing an app does not show the default values for fields under a checkbox \(subsquestions\)
 * [NAS-118902](https://ixsystems.atlassian.net/browse/NAS-118902) Minio app update to 2022-10-29\_1.6.59 stuck at “Deploying”. Requires Roll Back to 1.6.58
 * [NAS-118905](https://ixsystems.atlassian.net/browse/NAS-118905) Loading indicator is not cleared on error in Permissions card
-* [NAS-118915](https://ixsystems.atlassian.net/browse/NAS-118915) Making network changes on separate interface takes down management network
 * [NAS-118921](https://ixsystems.atlassian.net/browse/NAS-118921) \[Apps\]  Helm charts are recreated/upgraded on restart before cluster is ready
 * [NAS-118922](https://ixsystems.atlassian.net/browse/NAS-118922) Devices Screen Doesn't Update After Replacing a Disk
 * [NAS-118938](https://ixsystems.atlassian.net/browse/NAS-118938) Scale UI Shares NFS clicking enabled toggles incorrect share.
@@ -269,7 +267,6 @@ HA migration in Bluefin 22.12.0 is not recommended for critical-use Enterprise H
 * [NAS-118977](https://ixsystems.atlassian.net/browse/NAS-118977) SCALE scst crash on attaching iscsi zvol
 * [NAS-118979](https://ixsystems.atlassian.net/browse/NAS-118979) Trivial: Display / Numerical Issue wth Dashboatrd display of disks in Pool
 * [NAS-118983](https://ixsystems.atlassian.net/browse/NAS-118983) cron jobs don't work
-* [NAS-118992](https://ixsystems.atlassian.net/browse/NAS-118992) Verify that the update to Syncthing 1.22.0 works out of the box w/latest versions of SCALE
 * [NAS-119000](https://ixsystems.atlassian.net/browse/NAS-119000) \[Scale\] Single app won't update, but bulk does. Also with midclt command works.
 * [NAS-119006](https://ixsystems.atlassian.net/browse/NAS-119006) Enclosure View Only Updates After Leaving Page
 * [NAS-119010](https://ixsystems.atlassian.net/browse/NAS-119010) SCALE drive replacement within a pool produces drive busy error
@@ -287,17 +284,18 @@ HA migration in Bluefin 22.12.0 is not recommended for critical-use Enterprise H
 * [NAS-119058](https://ixsystems.atlassian.net/browse/NAS-119058) UPS Service \( save Setting is greyed out, when IP or Hostname is set in Field "Port or Hostname"\)
 * [NAS-119060](https://ixsystems.atlassian.net/browse/NAS-119060) Installed apps not showing
 * [NAS-119062](https://ixsystems.atlassian.net/browse/NAS-119062) Storage screen will not refresh after successful import of a pool
-* [NAS-119064](https://ixsystems.atlassian.net/browse/NAS-119064) Can not enter Shell \(CLI\) via web-ui
 * [NAS-119079](https://ixsystems.atlassian.net/browse/NAS-119079) Different endpoints disagree on which drives belong to a pool
 * [NAS-119082](https://ixsystems.atlassian.net/browse/NAS-119082) Too many Add Zvol buttons
 * [NAS-119096](https://ixsystems.atlassian.net/browse/NAS-119096) Certificate set to none is not possible
 * [NAS-119098](https://ixsystems.atlassian.net/browse/NAS-119098) Some elements have wrong colors on light themes
 * [NAS-119099](https://ixsystems.atlassian.net/browse/NAS-119099) Loading indicator in permissions card appears outside of the card
 * [NAS-119116](https://ixsystems.atlassian.net/browse/NAS-119116) VM CPU info is N/A
-* [NAS-119121](https://ixsystems.atlassian.net/browse/NAS-119121) Home Assistant from both the official and truecharts catalog will not deploy
 * [NAS-119124](https://ixsystems.atlassian.net/browse/NAS-119124) Fix status icons on storage dashboard
-* [NAS-119138](https://ixsystems.atlassian.net/browse/NAS-119138) Certificate has no \`digest\_algorithm \` property
 * [NAS-119141](https://ixsystems.atlassian.net/browse/NAS-119141) Reduce amount of anys
+* [NAS-119187](https://ixsystems.atlassian.net/browse/NAS-119187) After upgrade from Angelfish to Bluefin, middlewared does not start
+* [NAS-119213](https://ixsystems.atlassian.net/browse/NAS-119213) SMB file moving issues on MacOS
+* [NAS-119274](https://ixsystems.atlassian.net/browse/NAS-119274) After reboot the earlier version \(22.04\) stucked at deploying whereas the new version \(22.12 RC-1\) stopped deploying any application.
+* [NAS-119289](https://ixsystems.atlassian.net/browse/NAS-119289) SMB auth hanging after update to Bluefin 22.12-RC.1 from Angelfish 22.02.4
 
 ## 22.12-RC.1
 
@@ -1184,6 +1182,10 @@ Additional feature in future Bluefin releases:
 
 | Seen In | Key | Summary | Workaround | Resolved In |
 |---------|-----|---------|------------|-------------|
+| 22.12.0 | <a href="https://ixsystems.atlassian.net/browse/NAS-119233" target="_blank">NAS-119233</a> | Validation error received when modifying HTTP/S Port Setting in the Web UI | A validation error can occur if using the iw.iso8 keyboard map where the system interprets digits "81" as the text "us". | Targeteted 22.12.1 |
+| 22.12.0 | <a href="https://ixsystems.atlassian.net/browse/NAS-119279" target="_blank">NAS-119279</a> | Missing an option to promoto dataset | After cloning a snapshot to a dataset, the option to promote that dataset is missing from the UI. | Targeted 22.12.1 |
+| 22.12.0 | <a href="https://ixsystems.atlassian.net/browse/NAS-119270" target="_blank">NAS-119270</a> | One Time Replication of Same System to A Different System Fails with Traceback | Unable to perform a run once operation for a replication task without getting a traceback, or to set an option from the UI replication wants. | Targeted 23.10-ALPHA.1 |
+| 22.12-BETA.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-117437" target="_blank">NAS-117437</a> | Remove Microsoft Account Option | This feature, initially added in FreeNAS 9 for the convenience of home users with Windows 10 was introduced, has been removed as a User authentication method for SMB shares because Windows 11 now defaults to requiring sign-in when using Microsoft accounts for authentication. | N/A |
 | 22.12-RC.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-118922" target="_blank">NAS-118922</a> | Device Screen does't update after replacing a disk | When replacing a disk the UI doesn't update to show the replace operation completed and might display an error message. After replacing a disk, return to the Storage Dashboard and then the Devices screen to see the status of the disk replacement as complete. | Targeted 22.12(Bluefin) | 
 | 22.12-RC.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-119005" target="_blank">NAS-119005</a> | On Enterprise systems, the Open Ticket button doesn't work | On Enterprise systems, when filing a ticket using the Open Ticket button should open an issue reporting screen but it does not. Customers should either contact Support directly or open a ticket directly in Jira. | Targeted 22.12 (Bluefin) |
 | 22.12-RC.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-119011" target="_blank">NAS-119011</a> | iSCSI wizard does not function properly | The Extent Type device dropdown list is empty and the Portal dropdown list does not include the create new option so users can not select or add a new device, or add a new portal. | Targeted 22.12 (Bluefin) | 
