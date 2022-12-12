@@ -16,17 +16,17 @@ The **Credentials > Users** screen displays a list of user accounts added to the
 ![UsersScreen](/images/SCALE/22.12/UsersScreen.png "Local User non-Built-in Accounts") 
 
 **Toggle Build-In Users** displays either the **Show Built-In Users** or **Hide Built-in Users** dialogs based on the current **Users** list view. 
-If built-in users are hidden, the **Show Built-in Users** dialog opens. Click **Show** to displays the hidden list of users. 
+If built-in users are hidden, the **Show Built-in Users** dialog opens. Click **Show** to display the hidden list of users. 
 
 ![UserScreenWithBuiltinUsers](/images/SCALE/22.12/UserScreenWithBuiltinUsers.png "Local User Built-in Accounts") 
 
 To hide the built-in users, click **Toggle Built-In Users** again to open the **Hide Built-in Users** dialog. Click **Hide** to only display non-built-in users again.
 
-**Add** Opens the **[Add User](#add-or-edit-user-screens)** screen.
+**Add** opens the **[Add User](#add-or-edit-user-screens)** screen.
 
 ### User Details Screen
 
-The expanded view of each users includes details on that user and provides the option to edit or delete the user. Click the <span class="material-icons">expand_more</span> arrow to show the user details screen.
+The expanded view of each user includes details on that user and provides the option to edit or delete the user. Click the <span class="material-icons">expand_more</span> arrow to show the user details screen.
 
 ![UserScreenUserDetails](/images/SCALE/22.12/UserScreenUserDetails.png "Local User Details") 
 
@@ -35,7 +35,7 @@ The expanded view of each users includes details on that user and provides the o
 ### Add or Edit User Screens
 
 The **Add User** and **Edit User** configuration screens display the same setting options. 
-Built-in users (except the **root** user) do not include the **Home Directory Permissions** settings, but all new users created, such as those for an SMB share like the **smbguest** user do.
+Built-in users (except the **root** user) do not include the **Home Directory Permissions** settings, but all new users created, such as those for an SMB share like the **smbguest** user, do.
 
 ### Identification Settings
 **Identification** settings specify the name, user name, password and email for the user.
@@ -70,7 +70,7 @@ Built-in users (except the **root** user) do not include the **Home Directory Pe
 {{< /expand >}}
 
 ### Directories and Permissions settings
-**Directory and Permissions** settings pecify the user home directory and the permissions for that home directory.
+**Directory and Permissions** settings specify the user home directory and the permissions for that home directory.
 {{< expand "Click Here for More Information" "v" >}}
 
 ![AddUserDirPermsAuthSettings](/images/SCALE/22.02/AddUserDirPermsAuthSettings.png "Add User Directories, Permissions and Authentication Settings") 
