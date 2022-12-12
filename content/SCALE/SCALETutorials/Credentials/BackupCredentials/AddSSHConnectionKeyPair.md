@@ -14,9 +14,9 @@ tags:
 
 
 The **SSH Connections** and **SSH Keypairs** widgets on the **Backup Credentials** screen display a list of SSH connections and keypairs configured on the system. 
-Using these widgets, users can establish [Secure Socket Shell (SSH)](https://searchsecurity.techtarget.com/definition/Secure-Shell) connections.
+Using these widgets, users can establish Secure Socket Shell (SSH) connections.
 
-![BackupCredentialsSSHWidgets](/images/SCALE/22.02/BackupCredentialsSSHWidgets.png "SSH Connections and Keypairs Widgets")
+![BackupCredentialsAllCloudSSH](/images/SCALE/22.12/BackupCredentialsAllCloudSSH.png "SSH Connections and Keypairs Widgets")
 
 To begin setting up an SSH connection, go to **Credentials > Backup Credentials** and click the **Add** button on the **SSH Connections** widget.
 
@@ -33,24 +33,28 @@ Using the **SSH Connections** configuration screen:
 1. Enter a name and select the **Setup Method**. If establishing an SSH connection to another TrueNAS server use the default **Semi-automatic (TrueNAS only)** option.
    If connecting to a non-TrueNAS server select **Manual** from the dropdown list.
 
-   ![SSHConnectionNameAndMethodSettings](/images/SCALE/22.02/SSHConnectionNameAndMethodSettings.png "SSH Connections Name and Method Settings")
+   ![NewSSHConnectNameMethodAuto](/images/SCALE/22.12/NewSSHConnectNameMethodAuto.png "SSH Connections Name and Method Settings")
 
 2. Enter the authentication settings. 
 
-   ![SSHConnectionAuthenticationSettings](/images/SCALE/22.02/SSHConnectionAuthenticationSettings.png "SSH Connections Authentication Settings")
+   ![NewSSHConnectAuthentication](/images/SCALE/22.12/NewSSHConnectAuthentication.png "SSH Connections Authentication Settings")
 
    a. Enter a valid URL scheme for the remote TrueNAS URL in **TrueNAS URL**. This is a required field.
 
-   b. Enter a user name or leave **Username** set to the default **root** user and enter the user password **Password**.
+   b. Enter an Admin user name, which is the username on the remote system entered to log in via the Web UI to setup the connection. Or, leave **Admin Username** set to the default **root** user and enter the user password in **Admin Password**.
 
-   c. Enter or import the private key from a previously created SSH keypair, or create a new one using the **SSH Keypair** widget.
+   c. If two-factor authentication is enabled, enter the one-time password in **One-Time Password (if neccessary)**. 
+
+   d. Enter a **Username**, which is the user name on the remote system to log in via SSH.
+
+   e. Enter or import the private key from a previously created SSH keypair, or create a new one using the **SSH Keypair** widget.
 
 3. (Optional) Select a security option from the **Cipher** dropdown list. 
    Select **Standard** for the most secure option, but this has the greatest impact on connection speed. 
    Select **Fast** for a less secure option than **Standard** but it can give reasonable transfer rates for devices with limited cryptographic speed. 
    Select **Disabled** to remove all security and maximize connection speed, but only disable security when using this connection within a secure, trusted network.
 
-   ![SSHConnectionMoreOptionsSettings](/images/SCALE/22.02/SSHConnectionMoreOptionsSettings.png "SSH Connections More Options Settings") 
+   ![NewSSHConnectMoreOptions](/images/SCALE/22.12/NewSSHConnectMoreOptions.png "SSH Connections More Options Settings") 
 
 4. (Optional) Enter the number of seconds you want to have SCALE wait for the remote TrueNAS/FreeNAS system to connect in **Connect Timeout**.
 
@@ -67,11 +71,11 @@ Using the **SSH Connections** configuration screen:
 
 1. Enter a name and select **Manual** from the **Setup Method** dropdown list.
 
-   ![SSHConnectionManualMethod](/images/SCALE/22.02/SSHConnectionManualMethod.png "SSH Connections Manual Method")
+   ![NewSSHConnectNameMethodManual](/images/SCALE/22.12/NewSSHConnectNameMethodManual.png "SSH Connections Manual Method")
 
 2. Enter the authentication settings. 
 
-   ![SSHConnectionManualAuthentication](/images/SCALE/22.02/SSHConnectionManualAuthentication.png "SSH Connections Manual Authentication Settings")
+   ![NewSSHConnectAuthenticationManual](/images/SCALE/22.12/NewSSHConnectAuthenticationManual.png "SSH Connections Manual Authentication Settings")
 
    a. Enter a host name or host IP address for the remote non-TruNAS/FreeNAS system as a valid URL. An IP address example is *https://10.231.3.76*. This is a required field.
 
@@ -90,7 +94,7 @@ Using the **SSH Connections** configuration screen:
    Select **Fast** for a less secure option than **Standard** but it can give reasonable transfer rates for devices with limited cryptographic speed. 
    Select **Disabled** to remove all security in favor of maximizing connection speed, but only disable security when usisg this connection within a secure, trusted network.
 
-   ![SSHConnectionMoreOptionsSettings](/images/SCALE/22.02/SSHConnectionMoreOptionsSettings.png "SSH Connections More Options Settings") 
+   ![NewSSHConnectMoreOptions](/images/SCALE/22.12/NewSSHConnectMoreOptions.png "SSH Connections More Options Settings") 
 
 4. (Optional) Enter the number of seconds you want to have SCALE wait for the remote TrueNAS/FreeNAS system to connect in **Connect Timeout**.
 
@@ -115,11 +119,15 @@ This procedure covers adding a public SSH key to the root user account on the Tr
 
    Edit the **root** user account. Click on the <span class="material-icons">expand_more</span> icon and then click **Edit** to open the **Edit User** screen.
 
-   Paste the SSH public key text into the **SSH Public Key** field on the **Edit User** configuration screen in the **Authentication** settings.
+   Paste the SSH public key text into the **Authorized Keys** field on the **Edit User** configuration screen in the **Authentication** settings.
+
+{{< hint warning >}}
+Do not paste the SSH private key.
+{{< /hint >}}
 
    Click **Save**.
 
-   ![SSHEditUserAuthenticationSettings](/images/SCALE/22.02/SSHEditUserAuthenticationSettings.png "Edit Root Users SSH Key")
+   ![SSHEditUserAuthenticationSettings](/images/SCALE/22.12/SSHEditUserAuthenticationSettings.png "Edit Root Users SSH Key")
 
 3. Add a new public SSH key to the remote system.
    
@@ -140,7 +148,7 @@ TrueNAS does not support encrypted keypairs or keypairs with passphrases.
 TrueNAS automatically generates keypairs as needed when creating new **SSH Connections** or **Replication** tasks.
 To manually create a new keypair, click **Add** on the **SSH Keypairs** widget. Click **Generate New** on the **SSH Keypairs** screen. Give the new keypair a unique name and click **Save**. The keypair displays on the **SSH Keypairs** widget. 
 
-![AccountsUsersRootSSHKeySCALE](/images/SCALE/AccountsUsersRootSSHKeySCALE.png "SSH Keypairs Form")
+![BackupCredentialsSSHKeypairsAdd](/images/SCALE/22.12/BackupCredentialsSSHKeypairsAdd.png "SSH Keypairs Form")
 
 Use the <iconify-icon icon="icon-park-outline:download"></iconify-icon> download icon or click the <span class="material-icons">more_vert</span> at the bottom of the **SSH Keypairs** configuration screen to download these strings as text files for later use. 
 
