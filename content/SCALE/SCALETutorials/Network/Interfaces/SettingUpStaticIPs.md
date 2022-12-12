@@ -80,7 +80,7 @@ To change an interface from using DHCP to a static IP address:
 6. Click **Save Changes** to make the change to the static IP address permanent or click **Revert Changes** to discard changes and return to your previous settings.
    The **Save Changes** confirmation dialog displays. Click **SAVE**. The system displays a final confirmation that the change is in effect.
 
-   ![InterfaceStaticIPChangeIsPermanent](/images/SCALE/22.02/InterfaceStaticIPChangeIsPermanent.png "Network Change Made Permanent")
+   ![InterfaceStaticIPChangeIsPermanent](/images/SCALE/22.12/InterfaceStaticIPChangeIsPermanent.png "Network Change Made Permanent")
 
 ## Changing from Static IP to DHCP
 
