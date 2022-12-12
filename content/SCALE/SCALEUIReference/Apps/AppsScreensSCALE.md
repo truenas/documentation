@@ -29,7 +29,7 @@ The **Bulk Action** option that displays at the top right of the **Installed App
 **Start** starts all selected apps, and displays s **Success** dialog for each app after it starts without issue.
 **Stop** stops all selected apps and displays a **Success** dialog for each app after it stops without issue.
 
-### Settings 
+### Settings
 **Settings** displays at the top right of all four **Applications** screens, but they are only functional when on the **Available Applications** screen. Setting options are:
 
 **Choose Pool** opens the **[Choose a pool](#choose-pool-window)** window.
@@ -49,7 +49,7 @@ Select **Migrate applications to the new pool** if you change your applications 
 The **Advanced Settings** option opens the **Kubernetes Settings** configuration screen.
 {{< expand "Click Here for More Information" "v" >}}
 
-![AppsAdvancedSettingsKubernetesSettings](/images/SCALE/22.02/AppsAdvancedSettingsKubernetesSettings.png "Advanced Settings Kubernetes Settings")
+![AppsAdvancedSettingsKubernetesSettings](/images/SCALE/22.12/AppsAdvancedSettingsKubernetesSettings.png "Advanced Settings Kubernetes Settings")
 
 | Setting | Description |
 |---------|-------------|
@@ -59,6 +59,7 @@ The **Advanced Settings** option opens the **Kubernetes Settings** configuration
 | **Enable Container Image Updates** | Select to enable updates of the container image. |
 | **Enable GPU support** | Select to enable GPU support. |
 | **Enable Integrated Loadbalancer** | Select to enable the integrated loadbalancer. The default uses servicelb but if disabled, allows using metallb and allows users to speicfy any IP from the local network.  |
+| **Enable Host Path Safety Checks** | Enabled by defualt. TrueNAS SCALE performs safety checks to ensure app host path volumes are secure. |
 
 **Settings Requiring Re-Initializtion**
 
@@ -74,7 +75,7 @@ The **Advanced Settings** option opens the **Kubernetes Settings** configuration
 #### Unset Pool
 The **Unset Pool** option on the **Settings** list displays a confirmation dialog. Click **UNSET** to unset the pool. When complete a **Success** dialog displays.
 
-### Refresh All 
+### Refresh All
 
 Opens a **Refreshing** counter with status of the refresh options. When complete, the **Task Manager** displays with the status of each app refresh operation.
 
@@ -254,7 +255,7 @@ The **Manage Docker Images** displays a list of Docker image IDs and tags on the
 
 Use the <span class="material-icons">more_vert</span> to display the options for each Docker image listed. Options are **Update Image** or **Delete**. **Update Image** is only available when the Docker image displays **Update Available**.
 
-### Update Image 
+### Update Image
 Select **Update** to open the **Choose a tag** dialog. Select the image tag and click **Choose**. 
 
 ![AppsUpdateDockerImageChooseATag](/images/SCALE/22.02/AppsUpdateDockerImageChooseATag.png "Update Docker Images Choose A Tag")
