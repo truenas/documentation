@@ -61,6 +61,10 @@ Before upgrading the operating system, follow these steps:
    We recommend scheduling the upgrade for a time that will least impact users.
 4. Stop all system **Services**.
 
+{{< hint warning >}}
+All auxiliary parameters are subject to change between major versions of TrueNAS due to security and development issues. We recommend removing all auxiliary parameters from TrueNAS configurations before upgrading.
+{{< /hint >}}
+
 ## Upgrade Via ISO
 
 To upgrade TrueNAS using an <file>.iso</file> file, go to https://www.truenas.com/download-truenas-core/ (TrueNAS CORE latest release) or https://download.freenas.org to download the <file>.iso</file> to the computer that prepares the installation media.
