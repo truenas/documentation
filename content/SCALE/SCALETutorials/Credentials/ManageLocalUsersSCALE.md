@@ -15,6 +15,9 @@ Doing so makes tuning permissions for large numbers of users more efficient.
 
 {{< hint warning >}}
 Only the **root** user account can log in to the TrueNAS web interface until the root user creates an admin user with the same permissions.
+After loggin in as root, TrueNAS alerts you to create the local administrator account.
+
+![RootLoginAlert](/images/SCALE/22.12/RootLoginAlert.png "Root Login Alert") 
 
 As part of security hardening and to comply with Federal Information Processing standards (FIPS), iXsystems plans to completely disable root login in a future release.
 When this occurs, the sign-in screen prompts first-time users to create a new administration account they used in place of the root user.
