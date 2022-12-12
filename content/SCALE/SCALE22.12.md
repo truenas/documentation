@@ -71,13 +71,13 @@ TrueNAS SCALE 22.12.0 has been released and includes many new features and impro
 
 HA migration in Bluefin 22.12.0 is not recommended for critical-use Enterprise HA systems yet. Enterprise General Availability (GA) is planned for the 22.12.2 release. HA migrations from CORE are not recommended before Enterprise GA is announced.
 
-## Change Log
+## 22.12.0 Change Log
 
-## Epic
+### Epic
 
 * [NAS-114687](https://ixsystems.atlassian.net/browse/NAS-114687) WebUI State Management
 
-## New Feature
+### New Feature
 
 * [NAS-114369](https://ixsystems.atlassian.net/browse/NAS-114369) Expand statx output on SCALE
 * [NAS-114618](https://ixsystems.atlassian.net/browse/NAS-114618) Investigate a clean way to clean aptly snapshots
@@ -108,7 +108,7 @@ HA migration in Bluefin 22.12.0 is not recommended for critical-use Enterprise H
 * [NAS-119102](https://ixsystems.atlassian.net/browse/NAS-119102) Allow specifying remote NAS administrator username when setting up an SSH connection using semi-automatic mode
 * [NAS-119158](https://ixsystems.atlassian.net/browse/NAS-119158) Branchout / update mirrors for for 22.12 release
 
-## Improvement
+### Improvement
 
 * [NAS-109954](https://ixsystems.atlassian.net/browse/NAS-109954) Improve heuristics for vfs\_tmprotect snapshots
 * [NAS-111664](https://ixsystems.atlassian.net/browse/NAS-111664) use path\_local key from sharing.smb.query for filesystem calls related to share
@@ -206,7 +206,7 @@ HA migration in Bluefin 22.12.0 is not recommended for critical-use Enterprise H
 * [NAS-119168](https://ixsystems.atlassian.net/browse/NAS-119168) Switch codecov github action to use token
 * [NAS-119186](https://ixsystems.atlassian.net/browse/NAS-119186) Rewording Validate Host Path for Apps and show dialog
 
-## Bug
+### Bug
 
 * [NAS-119270](https://ixsystems.atlassian.net/browse/NAS-119270) One Time Replication of Same System to A Different System Fails with Traceback
 * [NAS-119296](https://ixsystems.atlassian.net/browse/NAS-119296) fix memory leak in py-libzfs/ZFS.find\_import
@@ -1182,6 +1182,7 @@ Additional feature in future Bluefin releases:
 
 | Seen In | Key | Summary | Workaround | Resolved In |
 |---------|-----|---------|------------|-------------|
+| 22.12.0 | <a href="https://ixsystems.atlassian.net/browse/NAS-119335" target="_blank">NAS-119335</a> | Host path validation issue | There is a potential for the system to enter an endless validation loop resulting from an issue with the Kubernetes Setting option to Validate host path if you have an SMB or NFS share using a host path similar to what an application uses, for example the share uses /mnt/tank/media and the app uses /mnt/tank/media/movies.This issue can exist if the share is one directory below the application host path. Work around is to either not use the Validate host path option or to not use a host path too similar, for example use /mnt/tank/media for the share and /mnt/tank/movies for the application. | Targeted 22.12.2 |
 | 22.12.0 | <a href="https://ixsystems.atlassian.net/browse/NAS-119233" target="_blank">NAS-119233</a> | Validation error received when modifying HTTP/S Port Setting in the Web UI | A validation error can occur if using the iw.iso8 keyboard map where the system interprets digits "81" as the text "us". | Targeteted 22.12.1 |
 | 22.12.0 | <a href="https://ixsystems.atlassian.net/browse/NAS-119279" target="_blank">NAS-119279</a> | Missing an option to promoto dataset | After cloning a snapshot to a dataset, the option to promote that dataset is missing from the UI. | Targeted 22.12.1 |
 | 22.12.0 | <a href="https://ixsystems.atlassian.net/browse/NAS-119270" target="_blank">NAS-119270</a> | One Time Replication of Same System to A Different System Fails with Traceback | Unable to perform a run once operation for a replication task without getting a traceback, or to set an option from the UI replication wants. | Targeted 23.10-ALPHA.1 |
