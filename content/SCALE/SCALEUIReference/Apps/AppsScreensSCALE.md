@@ -10,7 +10,7 @@ tags:
 {{< toc >}}
 
 
-The application screen displays with **Installed Applications** displayed by default. 
+The **Applications** screen displays with **Installed Applications** displayed by default. 
 
 The first time time you select **Apps** on the main feature navigation panel, the **Applications** screen displays the **Choose a pool for Apps** dialog. 
 Select a pool from the dropdown list and then click **Choose** to set the selected pool as the one applications use for data storage.
