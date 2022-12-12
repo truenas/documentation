@@ -25,6 +25,10 @@ We recommend users keep the container use case in mind when choosing a pool.
 Select a pool that has enough space for all the application containers you intend to use.
 TrueNAS creates an *ix-applications* dataset on the chosen pool and uses it to store all container-related data.
 
+{{< hint warning >}}
+Since TrueNAS considers shared host paths non-secure, apps that use shared host paths (such as those services like SMB are using) fail to deploy. If you want apps to deploy in shared host paths, disable **Enable Host Path Safety Checks** in **Applications > Settings > Advanced Settings**.
+{{< /hint >}}
+
 You can find additional options for configuring general network interfaces and IP addresses for application containers in **Apps > Settings > Advanced Settings**.
 
 ![AppsAdvancedSettingsKubernetesSettings](/images/SCALE/22.02/AppsAdvancedSettingsKubernetesSettings.png "Apps Advanced Settings")
