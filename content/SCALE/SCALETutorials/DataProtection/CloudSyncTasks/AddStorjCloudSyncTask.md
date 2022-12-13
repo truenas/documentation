@@ -1,6 +1,6 @@
 ---
-title: "Adding Cloud Sync Tasks"
-description: "This article provides instructions on how to set up an iXsystems Storj cloud sync task, and how to configure a Storj account to work with TrueNAS SCALE cloud credentials and cloud sync tasks."
+title: "Adding a Storj Cloud Sync Task"
+description: "This article provides instructions on how to set up an Storj cloud sync task, and how to configure a Storj-TrueNAS account to work with SCALE cloud credentials and cloud sync tasks."
 weight: 30
 tags:
 - scalecloud
@@ -15,13 +15,12 @@ TrueNAS can send, receive, or synchronize data with the cloud storage provider S
 Cloud sync tasks allow for single-time transfers or recurring transfers on a schedule. They are an effective method to back up data to a remote location.
 
 {{< hint warning >}}
-To take advantage of the benefits of the Storj/iXsystems cloud service, you must create your Storj account using the link provided on the **Add Cloud Credentials** screen.
+To take advantage of the lower-cost benefits of the Storj-TrueNAS cloud service, you must create your Storj account using the link provided on the **Add Cloud Credentials** screen.
 
 You must also create add authorize the storage buckets on Storj for use by SCALE.
 
 iXsystems is not responsible for any charges incurred from using a third-party vendor with the cloud sync feature.
-{{< /expand >}}
-
+{{< /hint >}}
 This procedure provides instructions to set up both Storj and SCALE.
 
 TrueNAS supports major providers like Amazon S3, Google Cloud, and Microsoft Azure. It also supports many other vendors. To see the full list of supported vendors, go to **Credentials > Backup Credentials > Cloud Credentials** click **Add** and open the **Provider** dropdown list.
@@ -30,24 +29,56 @@ TrueNAS supports major providers like Amazon S3, Google Cloud, and Microsoft Azu
 
 You must have all system storage (pool and datasets or zvols) configured and ready to receive or send data.
 
-## Adding Storj Cloud Credentials
+## Creating a Storj Cloud Sync Task
 
-In this section you add your cloud service credentials in SCALE and in Storj.
+To create your cloud sync task for a Storj-TrueNAS transfer you:
 
-Go to **Credentials > Backup Credentials** and click **Add** on the **Cloud Credentials** widget. The **Add Cloud Credential** screen opens with Storj displayed as the default provider in the **Provider** field.
+1. Create the SCALE [cloud credential](#adding-storj-cloud-credentials).
 
-![AddStorjCloudCredential](/images/SCALE/22.12/AddStorjCloudCredential.png "Adding Storj Cloud Credential")
+   Adding the cloud credential in SCALE includes using the link to go create the Storj-TrueNAS account, create a new bucket and obtain the S3 authentication credentials you need to complete the process in SCALE.
 
-Enter a descriptive name you want to identify this credential in the **Name** field.
+2. Create the [Storj-TrueNAS account](#creating-the-storj-truenas-scale-account).
 
-Click **Signup for account** to create your Storj/iXsystem account.
+   You must create the new Storj-TrueNAS account to use SCALE to access a Storj account.
 
-{{< hint warning >}} 
-You must use this link to create your Storj account for it to work with TrueNAS SCALE!
-{{< /hint >}}
+3. Add a  new [Storj bucket](#adding-the-storj-truenas-bucket).
+   
+4. [Create Storj S3 access](#setting-up-s3-access-to-the-bucket) for the new bucket.
 
-### Creating the Storj TrueNAS SCALE Account
+5. Finish creating the SCALE [cloud credential](#adding-storj-cloud-credentials) using the S3 access and secret keys provided by Storj. 
 
+6. Create the [cloud sync task](#setting-up-the-storj-cloud-sync-task) for one bucket.
+
+### Adding Storj Cloud Credentials
+
+In this section you add your cloud service credentials in SCALE and in Storj. This process includes going to Storj to create a new Storj-TrueNAS account and retuning to SCALE to enter the S3 credentials provided by Storj for this credential.
+
+Go to **Credentials > Backup Credentials** and click **Add** on the **Cloud Credentials** widget. 
+The **Add Cloud Credential** screen opens with Storj displayed as the default provider in the **Provider** field.
+
+![AddingStorjCloudCredential](/images/SCALE/22.12/AddingStorjCloudCredential.png "Adding Storj Cloud Credential")
+
+1. Enter a descriptive name you want to identify this credential in the **Name** field.
+
+2. Click **Signup for account** to create your Stor-TrueNAS account. This opens the Storj new account screen for TrueNAS.
+
+   {{< hint warning >}} 
+   You must use this link to create your Storj account for it to work with TrueNAS SCALE!
+   {{< /hint >}}
+
+   After setting up your Storj-TrueNAS account, [create your Storj bucket](#adding-the-storj-truenas-bucket) and create the [Storj S3 access](#setting-up-s3-access-to-the-bucket) for the new bucket. 
+
+3. Enter the authentication information provided but Storj in the **Acces Key ID** and **Secret Access Key** fields.
+
+4. Click **Verify Credentials**, and wait for the system to verify the credentials.
+   
+   ![CloudCredentialsVerified](/images/SCALE/22.12/CloudCredentialsVerified.png "Verify Cloud Credentials")
+
+5. Click **Save**.
+
+After completing this configuration form, you can set up the [cloud sync task](#setting-up-the-storj-cloud-sync-task).
+
+### Creating the Storj-TrueNAS SCALE Account
 Click **Signup for account** on the **Add Cloud Credential** screen. The Storj Sign In website opens. 
 
 ![StorjCreateNewTrueNASAccount](/images/SCALE/22.12/StorjCreateNewTrueNASAccount.png "Create Storj Account")
@@ -56,135 +87,109 @@ Enter your information in the fields, select the **I agree to the Terms of Servi
 
 ![StorjMainDashboard](/images/SCALE/22.12/StorjMainDashboard.png "Storj Main Dashboard")
 
-From the Storj main dashboard, click **Buckets** on the navigation panel on the left side of the screen. The **Buckets** screen opens.
+### Adding the Storj-TrueNAS Bucket
+Now add the storage bucket to use in your Storj-TrueNAS account and to add in the SCALE cloud sync task.
 
-![StorjMainDashboard](/images/SCALE/22.12/StorjMainDashboard.png "Storj Main Dashboard")
+From the Storj main dashboard:
 
-Click **New Bucket** to open the **Create Access** configuration screen.
+1. Click **Buckets** on the navigation panel on the left side of the screen to open the **Buckets** screen.
+   
+   ![StorjAddBucket](/images/SCALE/22.12/StorjAddBucket.png "Storj Buckets Screen")
 
-![StorjCreateS3Access](/images/SCALE/22.12/StorjCreateS3Access.png "Storj Add Access")
+2. Click **New Bucket** to open the **Create a bucket** window.
+   
+   ![StorjCreateABucketScreen](/images/SCALE/22.12/StorjCreateABucketScreen.png "Storj Create a bucket")
 
-Select **S3 Credential** as the **Type**.
+3. Enter a name in **Bucket Name** using lower case alphanumeric characters, with no spaces between characters, then click **Continue** to open the **Encrypt your bucket** window.
+   
+   ![StorjEncryptYourBucketScreen](/images/SCALE/22.12/StorjEncryptYourBucketScreen.png "Storj Encrypt your bucket")
 
-Enter a name for your new Storj-TrueNAS bucket. In the example, this *ixbuckettest*.
+4. Select the encryption option you want to use. Select **Generate passphrase** to let Storj provide the encryption or select **Enter Passphrase** to enter your own.
+   If you already have a Storj account and want to use the same passphrase for your new bucket, select **Enter Passphrase**. 
 
-Select the level of permissions you want to grant to this new bucket from the dropdown list. The example uses *All*.
+   ![StorjGenerateAPassphraseScreen](/images/SCALE/22.12/StorjGenerateAPassphraseScreen.png "Storj Generate a Passphrase")
 
-Select the number of buckets you want to create from the **Buckets** dropdown list. The example uses *1*.
+   If you select **Generate a passphrase** Storj presents you with the option to download the encryption keys. 
+   You must keep encryption keys stored in a safe place, and where you can back up the file. 
+   Select **I understand, and I have saved the passphrase** then click **Download**. 
+   
+5. Click **Continue** to complete the process and open the **Buckets** screen with your new bucket.
+   
+   ![StorjBucketAdded](/images/SCALE/22.12/StorjBucketAdded.png "Storj Create a bucket")
 
-StorjCreateAccessSelectBucketsOption
+### Setting up S3 Access to the Bucket
+After creating your bucket, add S3 access for the new bucket(s) you want to use in your Storj-TrueNAS account and use in the SCALE cloud sync task.
 
-Click on **Duration** to show the dropdown list field, then select the length of time you want this bucket to exist. The example selects **Forever**.
+1. Click **Access** to open the** Access Management** dashboard, then click **Create S3 Credentials** on the middle **S3 credentials** widget.
+   
+   ![StorjAccessManagementScreen](/images/SCALE/22.12/StorjAccessManagementScreen.png "Storj Access Management Screen")
 
-Click **Encrypt My Access** to open the xx screen.
+   The **Create Access** window opens with **Type** set to **S3 Credentials**. 
 
-before creating the sync task or add it at the time you create the cloud sync task on **Data Protection > Cloud Sync Task > Add Cloud Sync Task**. See the [Cloud Credentials]({{< relref "/SCALE/SCALETutorials/Credentials/BackupCredentials/AddCloudCredentials.md" >}}) article for instructions on adding a backup credential using cloud credentials.
+2. Enter the name you want to use for this credential. Our example uses the name of the bucket we created.
+   
+   ![StorjCreateAccessWindow](/images/SCALE/22.12/StorjCreateAccessWindow.png "Storj Create Access Window")
 
-## Creating a Cloud Sync Task
-{{< expand "Adding Cloud Sync Tutorial Video" "v" >}}
+3. Select the permissions you want to allow this access from the **Permissions** dropdown, and select the bucket you want to have access to this credential from the dropdown list. 
+   The example selected *All* for **Permissions** and selected the one bucket we created *ixstorj1*.
 
-{{< embed-video name="scaleangelfishcloudsync" >}}
+   ![StorjCreateAccessSelectBuckets](/images/SCALE/22.12/StorjCreateAccessSelectBuckets.png "Storj Create Access Select Buckets")
 
-{{< /expand >}}
-To add a cloud sync task, go to **Data Protection > Cloud Sync Tasks** and click **Add**. The **Add Cloud Sync Task** configuration screen opens.
+4. Select **Add Date (optional)** if you want to set the duration or length of time you want to allow this credential to exist. 
+   This example set this to *Forever*. You can select a preset period of time or use the calendar to set the duration.
 
-![AddCloudSyncTaskTop](/images/SCALE/22.02/AddCloudSyncTaskTop.png "Adding a Cloud Sync Task")
+   ![StorjCreateAccessSelectDuration](/images/SCALE/22.12/StorjCreateAccessSelectDuration.png "Storj Create Access Select Duration")
 
-1. (Required) Type a memorable task description in **Description**. 
+5. Click **Encrypt My Access** to open the **Encryption Information** dialog, then click **Continue** to open the**Select Encryption** options window.
+   
+   ![StorjCreateAccessEncryptionDialog](/images/SCALE/22.12/StorjCreateAccessEncryptionDialog.png "Storj Create Access Encryption Dialog")
 
-2. Select an existing backup credential from the **Credential** dropdown list.
+6. Select the encryption option you want to use. 
+   Select **Generate Passphrase** to allow Storj to provide the encryption passphrase, or select **Create My Own Passphrase** to enter a passphrase of your choice.
 
-See **Using Scripting and Environment Variables** for more information on [environment variables](#using-scripting-and-environment-variables).
+   ![StorjCreateAccessSelectEncryptionOptions](/images/SCALE/22.12/StorjCreateAccessSelectEncryptionOptions.png "Storj Create Access Select Encryption Options")
 
-{{< expand "What happens if my cloud sync credentials are invalid?" "v" >}}
-After you choose a cloud credential from the dropdown list, TrueNAS automatically validates access to that cloud sync provider. 
-Invalid credentials results in the following alert: 
+   Use **Copy to Clipboard** or **Download.txt** to obtain the Storj generated passphrase. Keep this passphrase along with the access keys in a safe place where you can back up the file.
 
-![CloudSyncMalformedHeaderDialog](/images/SCALE/22.02/CloudSyncMalformedHeaderDialog.png "Invalid Credentials Alert")
+   ![StorjCreateAccessDownloadedEncryptionPassphrase](/images/SCALE/22.12/StorjCreateAccessDownloadedEncryptionPassphrase.png "Storj Create Access Encryption Passphrase Downloaded")
 
-Click **FIX CREDENTIAL** opens the **Credentials > Cloud Credentials > Edit Cloud Credentials** screen for the cloud service selected in **Credentials**.  
+   {{< hint danger >}}
+   If you lose your passphrase neither Storj or iXsystems can help you recover your stored data!
+   {{< /hint >}}
 
-![DataProtectionCloudSyncInvalidFix](/images/SCALE/DataProtectionCloudSyncInvalidFix.png "Name and Provider View")
+7 . Click **Create my Access** to obtain the access and secret keys. Use **Download.txt** to save these keys to a text file. 
 
-Check your provider credentials and update the applicable authentication fields on the **Edit Cloud Credentials** screen, and then click **Verify Credential**. 
-If TrueNAS successfully accesses the provider the system displays the **The Credential is valid** dialog. 
-Click **Save** and then return to **Data Protection > Cloud Sync Tasks > Add** to try again.
-{{< /expand >}}
+This completes the process of setting up your Storj buckets and S3 access. Enter these keys in the **Authentication** fields in TrueNAS SCALE on the **[Add Cloud Credential](#adding-storj-cloud-credentials)** screen to complete setting up the SCALE cloud credential.
 
-### Troubleshooting Transfer Mode Problems
-**Sync** keeps all the files identical between the two storage locations. 
-If the sync encounters an error, it does not delete files in the destination.
+### Setting Up the Storj Cloud Sync Task
 
-#### Dropbox Issues
-One common error occurs when the [Dropbox copyright detector](https://techcrunch.com/2014/03/30/how-dropbox-knows-when-youre-sharing-copyrighted-stuff-without-actually-looking-at-your-stuff/) flags a file as copyrighted.
+To add the Storj cloud sync task, go to **Data Protection > Cloud Sync Tasks**:
 
-#### BackBlaze B2 Issues
-Syncing to a Backblaze B2 bucket does not delete files from the bucket, even when you deleted those files locally. 
-Instead, files are tagged with a version number or moved to a hidden state. 
-To automatically delete old or unwanted files from the bucket, adjust the [Backblaze B2 Lifecycle Rules](https://www.backblaze.com/blog/backblaze-b2-lifecycle-rules/).
+1. Click **Add** to open the **Add Cloud Sync Task** screen.
+   
+   ![AddCloudSyncTaskTransferRemoteSettingsp](/images/SCALE/22.12/AddCloudSyncTaskTransferRemoteSettings.png "Adding a Cloud Sync Task Transfer and Remote Settings")
 
-#### Amazon S3 Issues
-Sync cannot delete files stored in Amazon S3 Glacier or S3 Glacier Deep Archive. 
-First restore these files by another means, like the [Amazon S3 console](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/restore-archived-objects.html).
+2. (Required) Type a memorable task description in **Description**. You can use the the name of the Storj-TrueNAS bucket or credential you created as the name of the cloud sync task.
 
-### Using Scripting and Environment Variables
+3. Select the Storj credential you just created from the **Credential** dropdown list.
+   
+   ![CloudSyncTaskSelectStorjCloudCredential](/images/SCALE/22.12/CloudSyncTaskSelectStorjCloudCredential.png "Select Storj Cloud Credential")
 
-Advanced users can write scripts that run immediately before or after the cloud sync task. 
-Using either the **Add Cloud Sync Task** or **Edit Cloud Sync Task** screens, enter environment variables to either the **Pre-script** or **Post-script** fields.
-The **Post-script** field only runs when the cloud sync task succeeds. 
-{{< expand "Click here for Environment Variables" "v" >}}
+3. Set the **Direction** and **Transfer Mode** you want to use.
 
-#### General Environment Variables
+4. Browse to the dataset or zvol you want to use on SCALE for data storage.
 
-* `CLOUD_SYNC_ID`
-* `CLOUD_SYNC_DESCRIPTION`
-* `CLOUD_SYNC_DIRECTION`
-* `CLOUD_SYNC_TRANSFER_MODE`
-* `CLOUD_SYNC_ENCRYPTION`
-* `CLOUD_SYNC_FILENAME_ENCRYPTION`
-* `CLOUD_SYNC_ENCRYPTION_PASSWORD`
-* `CLOUD_SYNC_ENCRYPTION_SALT`
-* `CLOUD_SYNC_SNAPSHOT`
+5. Select the bucket you just created in Storj from the **Bucket** dropdown list. 
+   
+   ![CloudSyncTaskSelectStorjBucket](/images/SCALE/22.12/CloudSyncTaskSelectStorjBucket.png "Select Storj Bucket")
 
-#### Provider-Specific Variables
-There also are provider-specific variables like CLOUD_SYNC_CLIENT_ID or CLOUD_SYNC_TOKEN or CLOUD_SYNC_CHUNK_SIZE.
+   You only see the buckets you granted access to the S3 credential on this list. You cannot create a new bucket here in SCALE!
 
-Remote storage settings:
-* `CLOUD_SYNC_BUCKET`
-* `CLOUD_SYNC_FOLDER`
+6. Set the task schedule when you want this task to run.
 
-Local storage settings:
-* `CLOUD_SYNC_PATH`
+7. Click **Save**.
 
-{{< /expand >}}
-
-## Running an Unscheduled Cloud Sync Task 
-
-Saved tasks activate according to their schedule or you can use the **Run Now** option the **Cloud Sync Task** widget.  
-To run the sync task before the saved schedule for the task, click on the cloud sync task to open the edit configuration screen for that task. 
-If not already cleared, select **Enable** below the **Schedule** field to clear the checkbox, and then click **Save**.
-
-On the **Cloud Sync Task** widget, click the **Run Now** <i class="material-icons" aria-hidden="true" title="Run Now">play_arrow</i> button.
-
-An in-progress cloud sync must finish before another can begin. 
-Stopping an in-progress task cancels the file transfer and requires starting the file transfer over.
-
-To view logs about a running task, or its most recent run, click **State**.
-
-## Using Cloud Sync Task Restore
-
-To create a new cloud sync task that uses the same options but reverses the data transfer, select <i class="material-icons" aria-hidden="true" title="Restore">history</i> for an existing cloud sync on the **Data Protection** page. The **Restore Cloud Sync Task** window opens.
-
-![RestoreCloudSyncTaskWindow](/images/SCALE/22.02/RestoreCloudSyncTaskWindow.png "Cloud Sync Restore")
-
-Enter a name in **Description** for this reversed task.
-
-Select the **Transfer Mode** and then define the path for a storage location on TrueNAS scale for the transferred data.
-
-Click **Restore**.
-
-TrueNAS saves the restored cloud sync as another entry in **Data protection > Cloud Sync Tasks**.
-
-If you set the restore destination to the source dataset, TrueNAS may alter ownership of the restored files to **root**. If root did not create the original files and you need them to have a different owner, you can recursively reset their ACL permissions through the GUI or run `chown` from the CLI.
+The task is added to the **Cloud Sync Task** widget with the **Pending** status until the task runs on schedule. 
+You can click **Dry Run** to test the task or **Run Now** to run the task now and apart from the scheduled time.
 
 {{< taglist tag="scalecloud" limit="10" >}}
