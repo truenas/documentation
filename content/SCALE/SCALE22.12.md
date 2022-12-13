@@ -11,14 +11,12 @@ While the current version of TrueNAS SCALE receives maintenance updates, the nex
 This article collects various details about this upcoming major version: early release notes, developer notes, and how to help test the in-development version.
 This is a work in progress and details are added as development progresses on this SCALE release.
 
-{{< hint warning >}}
-All auxiliary parameters are subject to change between major versions of TrueNAS due to security and development issues. We recommend removing all auxiliary parameters from TrueNAS configurations before upgrading.
-{{< /hint >}}
-
 {{< hint danger >}}
 Early releases are intended for testing and early feedback purposes only.
 Do not use early release software for critical tasks.
 {{< /hint >}}
+
+
 
 Want to get involved by collaborating on TrueNAS SCALE? Join our [Official Discord Server.](https://discord.com/invite/Q3St5fPETd)
 
@@ -34,14 +32,6 @@ Want to get involved by collaborating on TrueNAS SCALE? Join our [Official Disco
 
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
-| SCALE 22.12.RC.1 | Code-freeze | 26 October 2022 |
-| SCALE 22.12.RC.1 | Internal Testing Sprints | 31 October 2022 - 11 November 2022 |
-| SCALE 22.12.RC.1 | Tag | 14 November 2022 |
-| SCALE 22.12.RC.1 | Release | 15 November 2022 |
-| SCALE 22.12.0 | Code-freeze | 23 November 2022 |
-| SCALE 22.12.0 | Internal Testing Sprints | 24 November 2022 - 09 December 2022 |
-| SCALE 22.12.0 | Tag | 12 December 2022 |
-| SCALE 22.12.0 | Release | 13 December 2022 |
 | SCALE 22.12.1 | Code-freeze | 18 January 2023 |
 | SCALE 22.12.1 | Internal Testing Sprints | 19 January 2023 - 03 February 2023 |
 | SCALE 22.12.1 | Tag | 06 February 2023 |
@@ -49,29 +39,30 @@ Want to get involved by collaborating on TrueNAS SCALE? Join our [Official Disco
 
 ## Obtaining the Release
 
+{{< hint warning >}}
+* SCALE is developed as an appliance that uses specific Linux packages with each release. Attempting to update SCALE with `apt` or methods other than the SCALE web interface can result in a nonfunctional system.
+* TrueNAS SCALE has only been validated with systems up to 250 Drives. We currently recommend that users with higher drive counts run TrueNAS Enterprise.
+* HA migration in Bluefin 22.12.0 is not recommended for critical-use Enterprise HA systems yet. Enterprise General Availability (GA) is planned for the 22.12.2 release. HA migrations from CORE are not recommended before Enterprise GA is announced.
+* All auxiliary parameters are subject to change between major versions of TrueNAS due to security and development issues.
+  We recommend removing all auxiliary parameters from TrueNAS configurations before upgrading.
+* New security checks are present for host paths in use by various sytem services. If you have host paths that are shared by multiple system services (e.g. Apps and SMB), please read the 22.12.0 [Known Issues](#known-issues) and take steps to create unique host paths for each in-use system service.
+{{< /hint >}}
+
 To download an <file>.iso</file> file for installing SCALE Bluefin, go to https://www.truenas.com/truenas-scale/ and click **Download**.
 Manual update files are also available at this location.
 
 To upgrade an existing SCALE install, log in to your SCALE web interface and go to **System Settings > Update**.
 
-{{< hint warning >}}
-SCALE is developed as an appliance that uses specific Linux packages with each release. Attempting to update SCALE with `apt` or methods other than the SCALE web interface can result in a nonfunctional system.
-{{< /hint >}}
-
 ## 22.12.0
 
 **December 13, 2022**
 
-TrueNAS SCALE 22.12.0 has been released and includes many new features and improved functionaltiy. SCALE 22.12.0 features include:
+TrueNAS SCALE 22.12.0 has been released and includes many new features and improved functionality. SCALE 22.12.0 features include:
 
-* Improvements to rootless login authentication methods that allow you to specify the username to connect to the remote NAS while automatically setting up keychain SSH connections. 
-  It makes /home/admin always exist and stores the SSH authorized keys in this directory. It adds API authentication when using Directory Services. This feature is a first step toward improving the local accounts feature and additional improvements are being planned for future SCALE updates.
+* Improvements to rootless login authentication methods that allow you to specify the username to connect to the remote NAS while automatically setting up keychain SSH connections.
+  It makes **/home/admin** always exist and stores the SSH authorized keys in this directory. It adds API authentication when using Directory Services. This feature is a first step toward improving the local accounts feature and additional improvements are being planned for future SCALE updates.
 
-* Adds a bulk Upgrade operation that updates installed applications that have available updates, adds new apps to the Available Applications catalog, and implements the overlayfs driver for docker which improves performance over the Linux Kubernetes driver. 
-
-TrueNAS SCALE has only been validated with systems up to 250 Drives. We currently recommend that users with higher drive counts run TrueNAS Enterprise.
-
-HA migration in Bluefin 22.12.0 is not recommended for critical-use Enterprise HA systems yet. Enterprise General Availability (GA) is planned for the 22.12.2 release. HA migrations from CORE are not recommended before Enterprise GA is announced.
+* Adds a bulk Upgrade operation that updates installed applications that have available updates, adds new apps to the Available Applications catalog, and implements the overlayfs driver for Docker which improves performance over the Linux Kubernetes driver.
 
 ## 22.12.0 Change Log
 
