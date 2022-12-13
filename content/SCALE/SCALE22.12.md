@@ -43,6 +43,7 @@ Want to get involved by collaborating on TrueNAS SCALE? Join our [Official Disco
 * All auxiliary parameters are subject to change between major versions of TrueNAS due to security and development issues.
   We recommend removing all auxiliary parameters from TrueNAS configurations before upgrading.
 * New security checks are present for host paths in use by various sytem services. If you have host paths that are shared by multiple system services (e.g. Apps and SMB), please read the 22.12.0 [Known Issues](#known-issues) and take steps to create unique host paths for each in-use system service.
+* As part of security hardening, users upgrading to 22.12.0 Bluefin are prompted to create a separate administrative user for UI logins. TrueNAS shows an informational alert when only the **root** account is present and reminds to create the administrative user for logins. Future security updates to TrueNAS SCALE could remove the root account, please create an administrative user as soon as possible after upgrading. See the [Managing Users Tutorial]({{< relref "ManageLocalUsersSCALE.md" >}}) for more details.
 {{< /hint >}}
 
 To download an <file>.iso</file> file for installing SCALE Bluefin, go to https://www.truenas.com/truenas-scale/ and click **Download**.
