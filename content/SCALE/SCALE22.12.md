@@ -69,6 +69,8 @@ TrueNAS SCALE 22.12.0 has been released and includes many new features and impro
 
 * Adds a bulk Upgrade operation that updates installed applications that have available updates, adds new apps to the Available Applications catalog, and implements the overlayfs driver for docker which improves performance over the Linux Kubernetes driver. 
 
+TrueNAS SCALE has only been validated with systems up to 250 Drives. We currently recommend that users with higher drive counts run TrueNAS Enterprise.
+
 HA migration in Bluefin 22.12.0 is not recommended for critical-use Enterprise HA systems yet. Enterprise General Availability (GA) is planned for the 22.12.2 release. HA migrations from CORE are not recommended before Enterprise GA is announced.
 
 ## 22.12.0 Change Log
