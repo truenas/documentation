@@ -17,7 +17,7 @@ Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i
 
 ### General Options
 
-![SCALESNMPOptions](/images/SCALE/22.02/SCALESNMPOptions.png "SCALE SNMP Service Options")
+![SCALESNMPOptions](/images/SCALE/22.12/SCALESNMPOptions.png "SCALE SNMP Service Options")
 
 ### SNMP v3 Options
 
@@ -27,9 +27,9 @@ Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i
 | **Contact** | Enter the email address to receive SNMP service messages. |
 | **Community** | Enter a community other than the default **public** to increase system security. Value can only contain alphanumeric characters, underscores (_), dashes (-), periods (.), and spaces. Not required and can leave this empty for SNMPv3 networks. |
 
-### SNMP v3 Options
+### SNMP v3 Support Options
 
-![SNMPServiceSettingsV3Options](/images/SCALE/22.02/SNMPServiceSettingsV3Options.png "SCALE SNMP Service SNMP v3 Options")
+![SNMPServiceSettingsV3Options](/images/SCALE/22.12/SNMPServiceSettingsV3Options.png "SCALE SNMP Service SNMP v3 Options")
 
 | Setting | Description |
 |---------|-------------|

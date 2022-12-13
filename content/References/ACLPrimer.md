@@ -5,7 +5,7 @@ weight: 9
 
 {{< toc >}}
 
-[TrueNAS SCALE brings full ACL compatibility]({{< relref "/SCALE/SCALETutorials/Storage/Pools/PermissionsSCALE.md" >}}) between Windows and Linux with NFSv4 ACLs on ZFS and eases the challenges of integrating Unix servers in Windows environments.
+[TrueNAS SCALE brings full ACL compatibility]({{< relref "PermissionsSCALE.md" >}}) between Windows and Linux with NFSv4 ACLs on ZFS and eases the challenges of integrating Unix servers in Windows environments.
 
 ## ACL Overview
 
@@ -56,6 +56,8 @@ TrueNAS administrators should also use NFSv4 ACLs if their organization requires
 * If an organization requires managers to review all data before deletion, administrators can use advanced NFSv4 permissions to let employees access and create files, but not edit or delete existing files.
 * NFSv4 can operate alongside CIFS, allowing organizations that use UNIX-based processing systems features to use Windows-based clients. 
 * NFSv4 can also cooperate with CIFS to bypass NFS's 16 group limitation by generating NFS credentials based on Unix *and* Windows groups.
+
+Users should use NFSv4 ACLs when they intend to have nested groups within an SMB share. Since users and nested groups may have different permissions for directories, the NFSv4 Traverse permission can enable users to connect to and move through directories that their nested group may not have read or write access.
 
 ### When to use POSIX ACLs
 

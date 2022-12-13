@@ -22,7 +22,6 @@ aliases:
   - /releasenotes/scale/21.02-alpha.1/
   - /releasenotes/scale/20.12-alpha/
   - /releasenotes/scale/20.10-alpha/
-
 ---
 
 {{< toc >}}
@@ -46,7 +45,7 @@ aliases:
 
 ## Obtaining the Release
 
-To download an <file>.iso</file> file for installing SCALE Angelfish, go to https://www.truenas.com/truenas-scale/ and click **Download**.
+To download an <file>.iso</file> file for installing SCALE Bluefin, go to https://www.truenas.com/truenas-scale/ and click **Download**.
 Manual update files are also available at this location.
 
 To upgrade an existing SCALE install, log in to your SCALE web interface and go to **System Settings > Update**.

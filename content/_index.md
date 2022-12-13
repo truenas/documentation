@@ -28,7 +28,7 @@ When combined with our high-availability hardware and [**TrueCommand**]({{< relr
 **Ready to get started? Click your platform below to begin setting up your system.**
 
 {{< columns >}}
-![](/favicon/TN-favicon-32x32.png) [**TrueNAS CORE and Enterprise**]({{< relref "/CORE/GettingStarted/Install.md" >}})<br>
+![](/favicon/TN-favicon-32x32.png) [**TrueNAS CORE and Enterprise**]({{< relref "/CORE/GettingStarted/_index.md" >}})<br>
 
 ![](/favicon/TNScale-favicon-32x32.png) [**TrueNAS SCALE**]({{< relref "/SCALE/GettingStarted/_index.md" >}})
 <--->
@@ -51,12 +51,8 @@ Documentation articles follow the latest supported software releases, with previ
 | Software | Current Documented Version | Previous Major Version |
 |----------|----------------------------|------------------------|
 | TrueNAS CORE & Enterprise | 13.0 | [12.0](https://www.truenas.com/docs/files/CORE12.0Docs.pdf) ([Release Notes]({{< relref "Archive.md#truenas-unified" >}})) |
-| TrueNAS SCALE | 22.02 Angelfish | N/A |
+| TrueNAS SCALE | 22.12 Bluefin | [22.02 Angelfish](https://www.truenas.com/docs/files/SCALE22.02Docs.pdf) |
 | TrueCommand | 2.2 | [2.1](https://www.truenas.com/docs/files/TC2.1Docs.pdf)  |
-
-{{< hint ok >}}
-Preview builds of the draft SCALE Bluefin documentation are available [here](https://truenas-blufin-beta-docs.netlify.app/)!
-{{< /hint >}}
 
 The navigation pane to the left is sorted into several topics that you can expand to find the specific knowledge you're looking for:
 

@@ -1,5 +1,6 @@
 ---
 title: "Tasks"
+description: "This section contains reference documentation of screens within the Tasks menu option."
 geekdocCollapseSection: true
 weight: 70
 aliases:
@@ -21,4 +22,6 @@ TrueNAS includes an easy to use interface for common tasks a sysadmin needs to p
    + Scrubs
    + Replication
 
-{{< include file="static/includes/General/MenuNav.md.part" markdown="true" >}}
+## Contents
+
+{{< children depth="2" description="true" >}}

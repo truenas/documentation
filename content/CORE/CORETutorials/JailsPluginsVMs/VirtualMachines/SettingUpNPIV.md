@@ -7,7 +7,6 @@ tags:
 - coreiscsi
 ---
 
-
 ## NPIV (N_Port ID Virtualization)
 
 NPIV allows the administrator to use switch zoning to configure each virtual port as if it was a physical port in order to provide access control.

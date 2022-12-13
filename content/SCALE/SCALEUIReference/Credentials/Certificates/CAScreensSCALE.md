@@ -13,7 +13,7 @@ tags:
 
 The **Certificate Authorities** widget on the **Credentials > Certificates** screen displays certificate authorities(CAs) added to SCALE, and allows you to add new CAs, or download, delete, or edit the name of an existing CA. 
 
-![CertificateAuthoritiesWidgetNoCAs](/images/SCALE/22.02/CertificateAuthoritiesWidgetNoCAs.png "Certificate Authorities Widget No CAs")
+![CertificateAuthoritiesWidgetNoCAs](/images/SCALE/22.12/CertificateAuthoritiesWidgetNoCAs.png "Certificate Authorities Widget No CAs")
 
 The <span class="iconify" data-icon="mdi:tray-arrow-down"></span> download icon downloads the CA to your server.
 
@@ -43,7 +43,7 @@ Users can also select a predefined certificate extension from the **Profiles** d
 {{< expand "Click Here for More Information" "v" >}}
 The selection in **Type** changes setting options on this screen, the **Certificate Options** and **Extra Constraints** screens, and determines if the **Certificate Subject** screen displays at all.
 
-![AddCAIdentifierAndType](/images/SCALE/22.02/AddCAIdentifierAndType.png "Add CA Identifier and Type") 
+![AddCAIdentifierAndType](/images/SCALE/22.12/AddCAIdentifierAndType.png "Add CA Identifier and Type") 
 
 | Setting | Description |
 |---------|-------------|
@@ -60,7 +60,7 @@ The **Certificate Options** settings do not display if **Type** on the **Identif
 The **Key Type** selection changes fields displayed. **RSA** is the default setting in **Key Type**.
 {{< expand "Click Here for More Information" "v" >}}
 
-![AddCACertificateOptionsRSAType](/images/SCALE/22.02/AddCACertificateOptionsRSAType.png "Add CA Certificate Options RSA Type")
+![AddCACertificateOptionsRSAType](/images/SCALE/22.12/AddCACertificateOptionsRSAType.png "Add CA Certificate Options RSA Type")
 
 | Setting | Description |
 |---------|-------------|

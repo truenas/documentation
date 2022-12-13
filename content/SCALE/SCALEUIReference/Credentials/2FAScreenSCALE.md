@@ -10,14 +10,14 @@ tags:
 
 {{< toc >}}
 
-The **Two-Factor Auth** screen displays setting to configure and enable two-factor authentication (2FA) on TrueNAS SCALE.
+The **Two-Factor Auth** screen displays settings to configure and enable two-factor authentication (2FA) on TrueNAS SCALE.
 
 {{< hint warning >}}
 Two-factor authentication is time-based and requires a correct system time setting.
 {{< /hint >}}
 ### User Settings
 
-![2FAUserSettings](/images/SCALE/22.02/2FAUserSettings.png "2FA User Settings")
+![2FAUserSettings](/images/SCALE/2fabluefinscreen.png "2FA User Settings")
 
 | Name | Description |
 |------|-------------|
@@ -27,8 +27,6 @@ Two-factor authentication is time-based and requires a correct system time setti
 | **Enable Two-Factor Auth for SSH** | Select to enable 2FA for system SSH access. Leave this disabled until you complete a successful test of 2FA with the UI. |
 
 ### System Generated Settings
-
-![2FASystemGeneratedSettings](/images/SCALE/22.02/2FASystemGeneratedSettings.png "2FA System Generated Settings")
 
 | Name | Description |
 |------|-------------|

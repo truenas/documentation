@@ -71,7 +71,7 @@ Select **Confirm** and then **Delete** to remove the share without affecting the
 ## Add and Edit WebDAV Screens
 The **Add WebDAV** and **Edit WebDAV** display the same settings.
 
-![AddWebDAVScreen](/images/SCALE/22.02/AddWebDAVScreen.png "Add WebDAV Screen") 
+![AddWebDAVScreen](/images/SCALE/22.12/AddWebDAVScreen.png "Add WebDAV Screen") 
 
 | Setting | Description |
 |---------|-------------|

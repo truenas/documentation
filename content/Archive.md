@@ -3,6 +3,20 @@ title: "Documentation Archive"
 aliases:
   - /additional-topics/legacy/fn-legacy-docs/release-notes/fn-11.3-u2/
   - /core/notices/scrubresilveradjustments/
+  - /releasenotes/scale/22.02.1/
+  - /releasenotes/scale/22.02.0.1/
+  - /releasenotes/scale/22.02.0/
+  - /releasenotes/scale/22.02-rc.2/
+  - /releasenotes/scale/22.02-rc.1-2/
+  - /releasenotes/scale/22.02-rc.1-1/
+  - /releasenotes/scale/22.02-rc.1/
+  - /releasenotes/scale/21.08-beta.2/
+  - /releasenotes/scale/21.08-beta.1/
+  - /releasenotes/scale/21.06-beta.1/
+  - /releasenotes/scale/21.04-alpha.1/
+  - /releasenotes/scale/21.02-alpha.1/
+  - /releasenotes/scale/20.12-alpha/
+  - /releasenotes/scale/20.10-alpha/
 ---
 
 Welcome to the Documentation Archive!
@@ -13,7 +27,14 @@ Welcome to the Documentation Archive!
 All documentation provided here is end-of-life (EoL) and no longer receives *any* updates.
 {{< /hint >}}
 
-## TrueNAS (Unified)
+## TrueNAS SCALE
+
+{{< expand "TrueNAS SCALE 22.02 (Angelfish)" "v" >}}
+Release notes for each minor release of 22.02 Angelfish are included in the archived docs.
+<a href="https://www.truenas.com/docs/files/SCALE22.02Docs.pdf">TrueNAS CORE 12.0</a>
+{{< /expand >}}
+
+## TrueNAS CORE
 
 {{< hint warning >}}
 **12.0 NVDIMM Alert**

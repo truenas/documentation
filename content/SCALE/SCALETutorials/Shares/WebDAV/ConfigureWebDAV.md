@@ -20,7 +20,7 @@ Go to **Shares** and click on **Add** on the **WebDAV <span class="material-icon
 The first WebDAV share added to your system opens the **No WebDAV** screen. 
 Click **Add WebDAV** to open the **Add WebDAV** configuration screen.
 
-![AddWebDAVScreen](/images/SCALE/22.02/AddWebDAVScreen.png "Add WebDAV Screen") 
+![AddWebDAVScreen](/images/SCALE/22.12/AddWebDAVScreen.png "Add WebDAV Screen") 
 
 Enter a share **Name**.
 
@@ -43,7 +43,7 @@ To automatically start the service when TrueNAS boots, select **Start Automatica
 
 Click <i class="material-icons" aria-hidden="true" title="edit">edit</i> to change the service settings.
 
-![ServicesWebDAVScreen](/images/SCALE/22.02/ServicesWebDAVScreen.png "WebDAV Service Options")
+![ServicesWebDAVScreen](/images/SCALE/22.12/ServicesWebDAVScreen.png "WebDAV Service Options")
 
 For better data security, set **Protocol** to **HTTPS**. 
 If you require it, you must choose an SSL certificate (*freenas_default* is always available).

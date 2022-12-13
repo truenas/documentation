@@ -1,5 +1,5 @@
 ---
-title: "Network Screen"
+title: "Network"
 geekdocCollapseSection: true
 weight: 60
 tags:
