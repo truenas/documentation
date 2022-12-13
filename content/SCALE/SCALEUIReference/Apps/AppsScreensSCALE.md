@@ -29,6 +29,8 @@ The **Bulk Action** option that displays at the top right of the **Installed App
 **Start** starts all selected apps, and displays **Success** dialog for each app after it starts without issue.
 **Stop** stops all selected apps and displays a **Success** dialog for each app after it stops without issue.
 
+The **Upgrade** option allows you to select multiple apps, and if there are updates available, you can update the apps to the most recent version of the application.
+
 ### Settings
 **Settings** displays at the top right of all four **Applications** screens, but they are only functional when on the **Available Applications** screen. Setting options are:
 
@@ -57,7 +59,7 @@ The **Advanced Settings** option opens the **Kubernetes Settings** configuration
 | **Route v4 Interface** | Select the network interface from the dropdown list. |
 | **Route v4 Gateway** | Enter the IP address for the route v4 gateway. |
 | **Enable Container Image Updates** | Select to enable updates of the container image. |
-| **Enable GPU support** | Select to enable GPU support. |
+| **Enable GPU support** | Select to enable GPU support. The maximum number of apps that can use an Intel GPU is five. |
 | **Enable Integrated Loadbalancer** | Select to enable the integrated loadbalancer. The default uses servicelb but if disabled, allows using metallb and allows users to speicfy any IP from the local network.  |
 | **Enable Host Path Safety Checks** | Enabled by defualt. TrueNAS SCALE performs safety checks to ensure app host path volumes are secure. |
 
