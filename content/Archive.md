@@ -31,7 +31,7 @@ All documentation provided here is end-of-life (EoL) and no longer receives *any
 
 {{< expand "TrueNAS SCALE 22.02 (Angelfish)" "v" >}}
 Release notes for each minor release of 22.02 Angelfish are included in the archived docs.
-<a href="https://www.truenas.com/docs/files/SCALE22.02Docs.pdf">TrueNAS CORE 12.0</a>
+<a href="https://www.truenas.com/docs/files/SCALE22.02Docs.pdf">TrueNAS SCALE 22.02 (Angelfish)</a>
 {{< /expand >}}
 
 ## TrueNAS CORE
