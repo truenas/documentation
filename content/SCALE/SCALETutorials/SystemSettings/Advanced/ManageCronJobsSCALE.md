@@ -20,7 +20,7 @@ The **Cron Jobs** widget on the **System > Advanced** screen displays **No Cron 
 Click **Add** to open the **Add Cron Job** configuration screen to create a new cron job, or if you want to modify an existing job, click anywhere on the item to open the **Edit Cron Jobs** configuration screen populated with the settings for that cron job. 
 The **Add Cron Job** and **Edit Cron Job** configuration screens display the same settings. 
 
-![AddCronJobsScreen](/images/SCALE/22.02/AddCronJobsScreen.png "SCALE Console Settings Screen") 
+![AddCronJobsScreen](/images/SCALE/22.02/AddCronJobScreen.png "SCALE Console Settings Screen")
 
 Enter a description for the cron job.
 

@@ -256,6 +256,39 @@ Click the cluster volume name to open the **Cluster Volume Details** and see any
 
 {{< /expand >}}
 
+## Replacing Cluster Nodes
+
+{{< hint info >}}
+Cluster node replacement only works if you are using TrueCommand 2.3 or later and SCALE 22.12.0 or later.
+
+New replacement nodes must have the same hardware as the old node you are replacing. The old node must also have a configuration backup that is safe and accessible. 
+{{< /hint >}}
+
+The method you use to replace a cluster node differs depending on whether or not the node has access to the data on the brick.
+
+### The Node Has Access to Brick Data
+
+If the node you are replacing still has access to the data on the brick, you must first install the same SCALE version on the replacement system (node).
+
+After installing SCALE on the new system, access the web UI and go to **System Settings > General**. Click **Manage Configuration**, then select **Upload Config**. Select the configuration file from the node you are replacing and click **Upload**.
+
+After applying the configuration, the system reboots and uses the same configuration as the node you are replacing. The new system automatically joins the cluster and heals damaged data before returning to a healthy state. 
+
+### The Node Does Not Have Access to Brick Data
+
+If the node you are replacing does not have access to the data on the brick, you must first install the same SCALE version on the replacement system (node).
+
+After installing SCALE on the new system, access the web UI and go to **Storage**. Create a pool with the same name as the pool on the node you are replacing. 
+
+Go to **System Settings > Shell** and enter `midclt call gluster.peer.initiate_as_replacement <poolname> <clustervolumename>`
+
+`poolname` is the name of the pool you created.
+`clustervolumename` is the name of the cluster volume you are currently using.
+
+After the command succeeds, go to **System Settings > General**. Click **Manage Configuration**, then select **Upload Config**. Select the configuration file from the node you are replacing and click **Upload**.
+
+After applying the configuration, the system reboots and uses the same configuration as the node you are replacing. The new system automatically joins the cluster and heals damaged data before returning to a healthy state.
+
 ## See Also
 
 {{< taglist tag="scaleclustering" limit="10" title=" " >}}

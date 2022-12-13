@@ -16,10 +16,6 @@ The options are **Change Password**, **Preferences**, **API Keys**, **Guide** an
 
 {{< include file="/content/_includes/ChangeLoggedInUserPassword.md" type="page" >}}
 
-## Preferences
-
-Click on <span class="material-icons">settings_applications</span> **Preferences** to dispaly the **Web Interface Preferneces** screen where you can change general system settings such as the color theme.
-
 ## API Keys
 
 Click on <span class="material-icons">laptop</span> **API Keys** to display the **API Keys** screen where you can add new or manage existing API keys on your system.

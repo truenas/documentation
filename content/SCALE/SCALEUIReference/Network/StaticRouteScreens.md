@@ -1,7 +1,7 @@
 ---
 title: "Static Route Screens"
 description: "The **Static Routes** widget displays existing static routes or to set up new ones."
-weight: 20
+weight: 30
 tags:
 - scalenetwork
 - scalesinterfaces

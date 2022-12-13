@@ -20,7 +20,7 @@ aliases:
 
 ## Requirements
 
-{{< include file="/content/_includes/ClusterRestrictions.md" type="page" >}}
+{{< include file="/content/_includes/ClusterRequirements.md" type="page" >}}
 
 ## Setting up the Environment
 

@@ -24,7 +24,7 @@ Depending on the share configuration, it can restrict users to read or write pri
 ## Creating an NFS Share
 Go to **Shares > Unix (NFS) Shares** and click **Add** to open the **Add NFS** configuration screen.
 
-![SharingNFSAddSCALE](/images/SCALE/SharingNFSAddSCALE.png "Services NFS Add")
+![SharingNFSAddSCALE](/images/SCALE/22.12/SharingNFSAddSCALE.png "Services NFS Add")
 
 Click **Add** to display **Add paths** settings, and then enter the path or use the <span class="material-icons">arrow_right</span> icon to the left of **<span class="material-icons">folder</span>/mnt** to locate the dataset and populate the path.
 
@@ -33,7 +33,7 @@ Click **Save** to create the share.
 
 After adding the first NFS share, the system opens an enable service dialog. 
 
-![SharingNFSEnableServiceDialog](/images/SCALE/22.02/SharingNFSEnableServiceDialog.png "Unix (NFS) Share Widget")
+![SharingNFSEnableServiceDialog](/images/SCALE/22.12/SharingNFSEnableServiceDialog.png "Unix (NFS) Share Widget")
 
 **Enable Service** turns the NFS service on and changes the toolbar status to **Running**. 
 If you wish to create the share but not immediately enable it, select **Cancel**.
@@ -55,7 +55,7 @@ Leave the field empty to allow all systems access to the share.
 
 If you want to tune the NFS share access permissions or define authorized networks, click **Advanced Options**.
 
-![AddNFSAdvancedOptionsAccessSettings](/images/SCALE/22.02/AddNFSAdvancedOptionsAccessSettings.png "Add NSF Advanced Options Access Settings")
+![AddNFSAdvancedOptionsAccessSettings](/images/SCALE/22.12/AddNFSAdvancedOptionsAccessSettings.png "Add NSF Advanced Options Access Settings")
 
 Select **Read Only** to prohibit writing to the share. 
 
@@ -72,7 +72,7 @@ The **Edit NFS** screen settings are identical to the share creation options.
 
 To begin sharing, click the <span class="material-icons">more_vert</span> on the toolbar displays options turn the NFS service on or off. **Turn Off Service** displays if the service is running or **Turn On Service** if the service is stopped. 
 
-![NFSWidgetOptions](/images/SCALE/22.02/NFSWidgetOptions.png "Unix (NFS) Share Widget Options")
+![NFSWidgetOptions](/images/SCALE/22.12/NFSWidgetOptions.png "Unix (NFS) Share Widget Options")
 
 Or you can go to **System Settings > Services**, locate **NFS** and click the toggle to running.
 Select **Start Automatically** if you want NFS to activate when TrueNAS boots.

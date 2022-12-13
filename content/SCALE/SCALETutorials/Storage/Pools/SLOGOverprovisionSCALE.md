@@ -1,7 +1,7 @@
 ---
 title: "SLOG Over-Provisioning"
 description: "This article provides information on the disk_resize command in SCALE."
-weight: 90
+weight: 40
 aliases: 
 tags:
  - scaledisks
