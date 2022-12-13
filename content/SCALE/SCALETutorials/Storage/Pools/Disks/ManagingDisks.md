@@ -18,7 +18,7 @@ The **Disks** page lets users edit disks, perform manual tests, and view S.M.A.R
 
 Select the disk(s) you want to perform a S.M.A.R.T. test on and click **Manual Test**. 
 
-![ManualSmartTestDialog](/images/SCALE/22.12/ManualSmartTestDialog.png "Manual SMART Test Dialog") 
+![ManualSmartTestDialog](/images/SCALE/22.12/ManualSMARTTestDialog.png "Manual SMART Test Dialog") 
 
 * **Long**  runs SMART Extended Self Test. This scans the entire disk surface and can take many hours on large-volume disks.
 * **Short** runs SMART Short Self Test (usually under ten minutes). These are basic disk tests that vary by manufacturer.

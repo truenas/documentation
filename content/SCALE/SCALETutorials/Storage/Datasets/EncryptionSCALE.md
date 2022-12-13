@@ -85,8 +85,6 @@ Go to **Storage** and click **Create Pool** on the **Storage Dashboard** screen.
 Enter a name for the pool, then add the disks to the Data VDEV. Select **Encryption** next to **Name**. 
 A warning dialog displays.
 
-![CreatePoolWithEncryptionWarning](/images/SCALE/22.12/CreatePoolWithEncryptionWarning.png "SCALE Pool Encryption Warning")
-
 Read the warning, select **Confirm**, and then click **I UNDERSTAND**.
 
 A second dialog opens where you click **Download Encryption Key** for the pool encryption key. 
@@ -200,7 +198,7 @@ You *cannot* use locked datasets.
 To unlock a dataset, go to **Datasets** then select the dataset on the tree table. 
 Click **Unlock** on the **ZFS Encryption** widget to open the **Unlock Dataset** screen.
 
-![UnlockDatasetScreen](/images/SCALE/22.12/UnlockDatasetScreen.png "Dataset Unlock Screen")
+![UnlockDatasetsScreen](/images/SCALE/22.12/UnlockDatasetsScreen.png "Dataset Unlock Screen")
 
 Type the passphrase into **Dataset Passphrase** and click **Save**. 
 

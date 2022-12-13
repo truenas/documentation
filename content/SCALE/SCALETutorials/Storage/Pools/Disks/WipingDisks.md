@@ -38,7 +38,7 @@ Verify the name to ensure you have chosen the correct disk. When satisfied  you 
 
 **Continue** starts the disk wipe process and opens a progress dialog with the **Abort** button. 
 
-![DiskWipeProgressDialog](/images/SCALE/22.12/iskWipeProgressDialog.png "Wipe Disk Progress Dialog") 
+![DiskWipeProgressDialog](/images/SCALE/22.12/DiskWipeProgressDialog.png "Wipe Disk Progress Dialog") 
 
 **Abort** stops the disk wipe process. At the end of the disk wipe process a success dialog displays. **Close** closes the dialog and returns you to the **Disks** screen.
 

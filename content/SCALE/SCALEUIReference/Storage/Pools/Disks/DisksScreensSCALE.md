@@ -36,7 +36,7 @@ Click anywhere on a disk row to expand it and show the traits specific to that d
 {{< expand "Click Here for More Information" "v" >}}
 The expanded view of a disk includes details for the disk and options to edit disk properties, run SMART test and view the test results, and in some instances the ability to wipe the disk.
 
-![DisksScreenWithDiskExpanded](/images/SCALE/22.12/DisksScreenWithDiskExpanded.png "Disk Details") 
+![DisksScreenWithDiskExpanded](/images/SCALE/22.12/DiskScreenExpandedDiskWithWipeOption.png "Disk Details") 
 
 **Edit** opens the **[Edit Disk](#edit-disk-screen)** screen.
 
@@ -74,7 +74,7 @@ The screen lists the device names for each selected disk in the **Disks to be ed
 The **Manual S.M.A.R.T. Test** dialog displays the name of the selected disk(s) and the option to specify the type of test you want to run outside of a scheduled S.M.A.R.T. test.
 {{< expand "Click Here for More Information" "v" >}}
 
-![ManualSmartTestDialog](/images/SCALE/22.12/ManualSmartTestDialog.png "Manual SMART Test Dialog") 
+![ManualSmartTestDialog](/images/SCALE/22.12/ManualSMARTTestDialog.png "Manual SMART Test Dialog") 
 
 | Setting | Description |
 |---------|-------------|
@@ -134,7 +134,7 @@ See [Wiping Disks]({{< relref "/SCALE/SCALETutorials/Storage/Pools/Disks/WipingD
 
 **Confirm** activates **Continue**, and **Continue** starts the disk wipe process and opens a progress dialog with the **Abort** button. 
 
-![DiskWipeProgressDialog](/images/SCALE/22.12/iskWipeProgressDialog.png "Wipe Disk Progress Dialog") 
+![DiskWipeProgressDialog](/images/SCALE/22.12/DiskWipeProgressDialog.png "Wipe Disk Progress Dialog") 
 
 **Abort** stops the disk wipe process. At the end of the disk wipe process a success dialog displays. **Close** closes the dialog and returns you to the **Disks** screen.
 {{< /expand >}}

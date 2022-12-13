@@ -163,7 +163,7 @@ After the system boots into the installer, follow these steps.
    This account has full control over TrueNAS and is used to log in to the web interface.
    Set a strong password and protect it.
    
-   ![SCALEInstallerConsoleSetupAdminAccount](/images/scale/22.12/SCALEInstallerConsoleSetupAdminAccount.png "Admin User Screen")
+   ![SCALEInstallerConsoleSetupAdminAccount](/images/SCALE/22.12/SCALEInstallerConsoleSetupAdminAccount.png "Admin User Screen")
 
    Next, enter a password for the new admin user.
 

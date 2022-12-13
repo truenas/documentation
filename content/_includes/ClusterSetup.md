@@ -60,5 +60,3 @@ In the TrueCommand **Dashboard**, click on the name of a connected system to ope
 Click **Config Backups** and **CREATE BACKUP** to store the SCALE configuration file with TrueCommand.
 Backups allow users to quickly restore the system configuration to the initial working state if something goes wrong.
 {{< /hint >}}
-
-![](/images/TrueCommand/2.2/.png "")

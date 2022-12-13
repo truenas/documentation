@@ -70,7 +70,7 @@ You can add to a pre-configured ACL preset on the **Edit ACL** screen.
 
 If using **NFSv4** as the **ACL Type** setting, you access the NFS4 **Select a Preset ACL** window from the **Edit ACL** screen by clicking **Use Preset ACL**.
 
-![NFS4SelectAPresetACLDialog](/images/SCALE/22.02/NFS4SelectAPresetACLDialog.png "NFS4 Select a Preset ACL")
+![NFS4SelectAPresetACLDialog](/images/SCALE/22.02/NFS4SelectAPresetACLWindow.png "NFS4 Select a Preset ACL")
 
 The **ACL Type** setting determines the pre-configured options presented on the **Default ACL Options** dropdown list on each of these windows. 
 For POSIX, the options are **POSIX_OPEN**, **POSIX_RESTRICTED**, or **POSIX_HOME**. For NFSv4, the options are **NFS4_OPEN**, **NFS4_RESTRICTED**, **NFS4_HOME**, and **NFS4_DOMAIN_HOME**.

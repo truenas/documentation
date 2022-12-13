@@ -73,7 +73,7 @@ Confirm that the TrueNAS system is on the latest public release, 13.0-U2 or bett
 Click **CHECK FOR UPDATES** in the **System Information** card on the **Dashboard** or go to **System > Update**.
 
 Click **INSTALL MANUAL UPDATE FILE**.
-![SCALEManualSidegrade](/images//SCALE/SidegeadeInstallManualUpdate.png "Install the Manual Upgrade")
+![SCALEManualSidegrade](/images/SCALE/SidegeadeInstallManualUpdate.png "Install the Manual Upgrade")
 
 Click **SAVE CONFIGURATION** to download a backup file that can restore the system configuration in the event something goes wrong with the migration.
 This is recommended but it not required.

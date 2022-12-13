@@ -81,8 +81,6 @@ Use the **Manage Credentials** link to open the **Backup Credentials** screen wh
 ### Advanced Options Settings
 **Advanced Options** settings include settings for advanced users.
 
-![DataProtectionCloudSyncAdd](/images/SCALE/22.02/DataProtectionCloudSyncAdd.png "Creating a Cloud Sync Task") change image
-
 | Settings | Description |
 |----------|-------------|
 | **Follow Symlinks** | Select to follow symlinks and copy the items to which they link. |

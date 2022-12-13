@@ -196,7 +196,7 @@ The **Add** and **Edit** screens display the same settings.
 
 The **Targets** screen displays settings to create new TrueNAS storage resources or edit existing ones in the list.
 
-![SharingiSCSITargetsScreen](/images/SCALE22.02/SharingiSCSITargetsScreen.png "iSCSI Targets")
+![SharingiSCSITargetsScreen](/images/SCALE/22.02/SharingiSCSITargetsScreen.png "iSCSI Targets")
 
 **ADD** opens the **Add iSCSI Targets** screen. 
 
