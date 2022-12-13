@@ -2,6 +2,7 @@
 title: "SCALE 22.12 Bluefin Release Notes"
 aliases:
  - /scale/scalenextversion/
+ - /scale/scalereleasenotes/
 weight: 1000
 ---
 
