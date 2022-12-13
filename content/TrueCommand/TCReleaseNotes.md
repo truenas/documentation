@@ -1,9 +1,10 @@
 ---
-title: TrueCommand 2.2 Release Notes
+title: TrueCommand 2.3 Release Notes
 weight: 5
 aliases:
-  - /releasenotes/truecommand/2.1.1/
-  - /releasenotes/truecommand/2.1/
+- /truecommand/tcreleasenotes/
+- /releasenotes/truecommand/2.1.1/
+- /releasenotes/truecommand/2.1/
 ---
 
 {{< toc >}}
@@ -27,12 +28,62 @@ aliases:
 | 2.3-RC.1 | Tag | 19 December 2022 |
 | 2.3-RC.1 | Release | 20 December 2022 |
 
+
+## 2.3
+
+**December 20, 2022**
+
+iXsystems is pleased to release TrueCommand 2.3-RC.1!
+
+This is release of TrueCommand 2.3 that includes improvements for NAS API calls and API documentation, makes improvements to the upgrade process, license uploads, alerts, and PagerDuty.
+
+### 2.3-RC.1 Change Log
+
+### Epics
+
+*  [TC-2383](https://ixsystems.atlassian.net/browse/TC-2383) Remove generic nas/send\_method API
+
+### Improvements
+
+*  [TC-1963](https://ixsystems.atlassian.net/browse/TC-1963) Create more structures for NAS API calls
+*  [TC-2089](https://ixsystems.atlassian.net/browse/TC-2089) Remove deprecated API docs
+*  [TC-2284](https://ixsystems.atlassian.net/browse/TC-2284) Avoid reshowing resolved alerts
+*  [TC-2291](https://ixsystems.atlassian.net/browse/TC-2291) Update license information after upload
+*  [TC-2386](https://ixsystems.atlassian.net/browse/TC-2386) Upgrade dependencies
+*  [TC-2393](https://ixsystems.atlassian.net/browse/TC-2393) Deprecate nas/send\_method APIs related to NAS Services
+*  [TC-2395](https://ixsystems.atlassian.net/browse/TC-2395) Deprecate nas/send\_method APIs related to NAS Users & Groups
+*  [TC-2404](https://ixsystems.atlassian.net/browse/TC-2404) Replace send\_method calls with new MW API endpoints
+*  [TC-2409](https://ixsystems.atlassian.net/browse/TC-2409) Remove private rpc/saml\_create and rpc/saml\_login
+*  [TC-2416](https://ixsystems.atlassian.net/browse/TC-2416) move events logic out of root package
+*  [TC-2420](https://ixsystems.atlassian.net/browse/TC-2420) Add root keys to config DB backup. Remove pool\_keys on SCALE and add gluster data
+*  [TC-2428](https://ixsystems.atlassian.net/browse/TC-2428) Deprecate nas/send\_method - Refactoring
+*  [TC-2429](https://ixsystems.atlassian.net/browse/TC-2429) License upload for an invalid license does not update state in UI
+*  [TC-2431](https://ixsystems.atlassian.net/browse/TC-2431) remove errors subpackage
+*  [TC-2441](https://ixsystems.atlassian.net/browse/TC-2441) Replace current PagerDuty library with an official go library
+*  [TC-2442](https://ixsystems.atlassian.net/browse/TC-2442) Remove Jails calls/references from middleware
+
+### Bugs
+
+*  [TC-2147](https://ixsystems.atlassian.net/browse/TC-2147) Leave signup page after initial user creation
+*  [TC-2364](https://ixsystems.atlassian.net/browse/TC-2364) Invalid email settings after 2FA enabled cause login to fail with no message
+*  [TC-2365](https://ixsystems.atlassian.net/browse/TC-2365) Confirm code or 2fa dialog is shown after the user inputs incorrect password.
+*  [TC-2377](https://ixsystems.atlassian.net/browse/TC-2377) Newly created alert rule doesn't show until the page is refreshed
+*  [TC-2406](https://ixsystems.atlassian.net/browse/TC-2406) Email verification returns an error in the edit-user page
+*  [TC-2407](https://ixsystems.atlassian.net/browse/TC-2407) Implement websocket auto reconnection
+*  [TC-2432](https://ixsystems.atlassian.net/browse/TC-2432) Fix integration test failure during dataset and zvol creation on scale systems
+*  [TC-2435](https://ixsystems.atlassian.net/browse/TC-2435) NAS User does not get created when "User Home Directory" not provided from the UI
+*  [TC-2436](https://ixsystems.atlassian.net/browse/TC-2436) Fix the API error response
+*  [TC-2439](https://ixsystems.atlassian.net/browse/TC-2439) Checking or unchecking the "Enable 2FA" changes the verified\_email to null
+
+
 ## 2.2.2
+{{< expand "2.2.2" "v" >}}
 
 **October 18, 2022**
 
 iXsystems is pleased to release TrueCommand 2.2.2!
 This is a maintenance release of TrueCommand 2.2 that includes some improvements for charts and a variety of bugfixes for licensing, LDAP, reporting, connections, and alerting.
+### 2.2.2 Change Log
 
 ### Improvement
 
@@ -54,14 +105,16 @@ This is a maintenance release of TrueCommand 2.2 that includes some improvements
 * [TC-2273](https://ixsystems.atlassian.net/browse/TC-2273) Can't Access System Card \(And backed up config files\) when system is offline
 * [TC-2268](https://ixsystems.atlassian.net/browse/TC-2268) Health Indicator on Cluster UI widget not responsive
 * [TC-2257](https://ixsystems.atlassian.net/browse/TC-2257) Issue Loading Reporting and Cluster UI Pages
+{{< /expand >}}
 
 ## 2.2.1
-
 {{< expand "2.2.1" "v" >}}
 
 **August 12, 2022**
 
 This is a minor release designed to address some additional cluster issues found between TrueCommand 2.2 and SCALE 22.02.3.
+
+## 2.2.1 Change Log
 
 ### Improvement
 
