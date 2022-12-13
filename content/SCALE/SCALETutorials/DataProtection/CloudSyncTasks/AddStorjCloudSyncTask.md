@@ -17,7 +17,7 @@ Cloud sync tasks allow for single-time transfers or recurring transfers on a sch
 {{< hint warning >}}
 To take advantage of the lower-cost benefits of the Storj-TrueNAS cloud service, you must create your Storj account using the link provided on the **Add Cloud Credentials** screen.
 
-You must also create add authorize the storage buckets on Storj for use by SCALE.
+You must also create and authorize the storage buckets on Storj for use by SCALE.
 
 iXsystems is not responsible for any charges incurred from using a third-party vendor with the cloud sync feature.
 {{< /hint >}}
