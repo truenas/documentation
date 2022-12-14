@@ -34,6 +34,23 @@ To see user accounts, go to **Credentials > Local Users**.
 
 TrueNAS hides all built-in users (except root) by default. Click the toggle **Show Built-In Users** to see all built-in users.
 
+## Creating an Admin User Account
+SCALE has implemented rootless login. All systems should create and begin using an admin user as a replacement for the root user. 
+A system warning alert displays until you create the admin user. 
+If you upgraded to a 22.12.0 release instead of installing fresh from an iso file and setting up the admin user in that process, you can create an admin user with this procedure.
+
+Go to **Credentials > Local Users** and click **Add**.
+
+Enter the name you want to use for the administrator account.
+
+Enter and confirm the admin user passwords.
+
+Select **builtin_administrators** on the **Auxiliary Group** dropdown list.
+
+![AddingAdminUserAuxiliaryGroup](/images/SCALE/22.12/AddingAdminUserAuxiliaryGroup.png "Add Admin User to builtin_administrators")
+
+Click **Save**.
+
 ## Creating User Accounts
 
 {{< expand "Tutorial Video" "v" >}}
