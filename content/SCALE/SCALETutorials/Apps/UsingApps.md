@@ -25,6 +25,10 @@ We recommend users keep the container use case in mind when choosing a pool.
 Select a pool that has enough space for all the application containers you intend to use.
 TrueNAS creates an *ix-applications* dataset on the chosen pool and uses it to store all container-related data.
 
+{{< hint warning >}}
+Since TrueNAS considers shared host paths non-secure, apps that use shared host paths (such as those services like SMB are using) fail to deploy. If you want apps to deploy in shared host paths, disable **Enable Host Path Safety Checks** in **Applications > Settings > Advanced Settings**.
+{{< /hint >}}
+
 You can find additional options for configuring general network interfaces and IP addresses for application containers in **Apps > Settings > Advanced Settings**.
 
 ![AppsAdvancedSettingsKubernetesSettings](/images/SCALE/22.02/AppsAdvancedSettingsKubernetesSettings.png "Apps Advanced Settings")
@@ -61,5 +65,15 @@ To deploy a custom application container in the Scale web interface, go to **App
 Custom applications use the system-level Kubernetes Node IP settings by default. You can assign an external interface to custom apps by setting one on the **Networking** section of the **Launch Docker Image** form. However, doing so may lead to configuration issues since Kubernetes is designed to move apps dynamically between hosts. 
 
 Unless you need to run an application seperately from the Web UI, we recommend using the default Kubernetes Node IP (0.0.0.0) to ensure apps function properly.
+
+## Upgrading Apps
+
+You may want to upgrade apps as they receive big-fixing updates or QOL changes. To upgrade an app to the latest version, click the <span class="iconify" data-icon="bi:dots-three-outline-vertical-fill"></span> in an app widget to see the list of app options, then select **<span class="iconify" data-icon="eva:diagonal-arrow-right-up-outline"></span> Upgrade**.
+
+![UpgradeAppSingle](/images/SCALE/22.12/UpgradeAppSingle.png "Upgrade Single App")
+
+To upgrade multiple apps, click the checkbox in the widget of each app you want to update, then click **Bulk Actions** and select **<span class="iconify" data-icon="ic:outline-update"></span> Upgrade**.
+
+![UpgradeAppBulk](/images/SCALE/22.12/UpgradeAppBulk.png "Upgrade Bulk Apps")
 
 {{< taglist tag="scaleapps" limit="10" >}}

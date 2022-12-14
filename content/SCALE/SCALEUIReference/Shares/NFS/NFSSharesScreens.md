@@ -16,11 +16,11 @@ The **Sharing** screen opens after you click **Shares** on the main navigation p
 The **Unix (NFS) Share <span class="material-icons">launch</span>** widget includes the widget toolbar that displays the status of the NFS service and the **Add** button. 
 After adding NFS shares, the widget displays a list of the shares below the toolbar.
 
-![NFSShareWidgetNoShare](/images/SCALE/22.02/NFSShareWidgetNoShare.png "Unix (NFS) Share Widget")
+![NFSShareWidgetNoShare](/images/SCALE/22.12/NFSShareWidgetNoShare.png "Unix (NFS) Share Widget")
 
 After adding the first NFS share, the system opens an enable service dialog. 
 
-![SharingNFSEnableServiceDialog](/images/SCALE/22.02/SharingNFSEnableServiceDialog.png "Unix (NFS) Share Widget")
+![SharingNFSEnableServiceDialog](/images/SCALE/22.12/SharingNFSEnableServiceDialog.png "Unix (NFS) Share Widget")
 
 **Enable Service** turns the NFS service on and changes the toolbar status to **Running**. 
 If you added shares of other types, the widget occupies a quarter of the screen. 
@@ -29,7 +29,7 @@ The **Enable** toggle for each share shows the current status of the share. When
 
 The <span class="material-icons">delete</span> delete icon displays a delete confirmation dialog that removes the share from the system.
 
-![NFSShareWidgetDeleteDialog](/images/SCALE/22.02/NFSShareWidgetDeleteDialog.png "Unix (NFS) Share Delete")
+![NFSShareWidgetDeleteDialog](/images/SCALE/22.12/NFSShareWidgetDeleteDialog.png "Unix (NFS) Share Delete")
 
 **View Details** and clicking anywhere on **Unix (NFS) Share** the opens the **Sharing > NFS** screen with the list view of NFS shares. 
 
@@ -38,7 +38,7 @@ The NFS share on the widget opens the **[Edit NFS](#add-and-edit-nfs-screens)** 
 ### Unix (NFS) Share Widget Toolbar
 The **Unix (NFS) Share** widget toolbar includes the **Add** button and an actions menu.
 
-![NFSWidgetOptions](/images/SCALE/22.02/NFSWidgetOptions.png "Unix (NFS) Share Widget Options")
+![NFSWidgetOptions](/images/SCALE/22.12/NFSWidgetOptions.png "Unix (NFS) Share Widget Options")
 
 The <span class="material-icons">more_vert</span> on the toolbar displays options turn the NFS service on or off. **Turn Off Service** displays if the service is running or **Turn On Service** if the service is stopped. The **Config Service** option opens the **[Services > NFS]({{< relref "NFSServiceScreen.md" >}})** configuration screen. 
 
@@ -53,7 +53,7 @@ The <span class="material-icons">more_vert</span> displays a list of options for
 **Edit** opens the **Edit NFS** configuration screen.
 **Delete** opens an **Unshare *path*** confirmation dialog.
 
-![SharingNFSDeleteDialog](/images/SCALE/22.02/SharingNFSDeleteDialog.png "Sharing NFS Delete")
+![SharingNFSDeleteDialog](/images/SCALE/22.12/SharingNFSDeleteDialog.png "Sharing NFS Delete")
 
 Select **Confirm** and then **UNSHARE** to remove the share without affecting the data in the share dataset.
 
@@ -62,7 +62,7 @@ The **Add NFS** and **Edit NFS** display the same **Basic Options** and **Advanc
 
 ### Basic Options Settings
 
-![AddNFSBasicOptionsScreen](/images/SCALE/22.02/AddNFSBasicOptionsScreen.png "Add NFS Basic Options")
+![SharingNFSAddSCALE](/images/SCALE/22.12/SharingNFSAddSCALE.png "Add NFS Basic Options")
 
 | Setting | Description |
 |---------|-------------|
@@ -76,7 +76,7 @@ The **Add NFS** and **Edit NFS** display the same **Basic Options** and **Advanc
 **Advanced Options** settings tune the share access permissions and define authorized networks.
 **Advanced Options** includes these **Basic Options** settings. Only the **Access** settings display on the **Advanced Options** screen.
 
-![AddNFSAdvancedOptionsAccessSettings](/images/SCALE/22.02/AddNFSAdvancedOptionsAccessSettings.png "Add NSF Advanced Options Access Settings")
+![AddNFSAdvancedOptionsAccessSettings](/images/SCALE/22.12/AddNFSAdvancedOptionsAccessSettings.png "Add NSF Advanced Options Access Settings")
 
 | Setting | Description |
 |---------|-------------|
@@ -84,6 +84,7 @@ The **Add NFS** and **Edit NFS** display the same **Basic Options** and **Advanc
 | **Maproot User** | Enter a string or select a user from the dropdown to apply permissions for that user to the *root* user. |
 | **Maproot Group** | Enter a string or select a group from the dropdown to apply permissions for that group to the *root* user. |
 | **Mapall User** | Enter a string or select a user to apply the permission for the chosen user to all clients. |
-| **Mapall Group** | Enter a string or select a group to apply the permission for the chosen group to all clients. |
+| **Mapall Group** | Enter a string or select a group to apply the permission for the chosen group to all clients. | 
+| **Security** | Choose from dropdown list: **SYS**, **KRB5**, **KRB5I**, **KRB5P**. |
 
 {{< taglist tag="scalenfs" limit="10" >}}

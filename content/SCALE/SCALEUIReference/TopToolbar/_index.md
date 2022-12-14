@@ -24,9 +24,9 @@ The top toolbar icon buttons provide access to the iXsystems website, displays t
 | ![iXsystemsLogo](/images/SCALE/22.02/iXsystemsLogo.png "iXsystem Logo") | iXsystems Website | Opens the [iXsystems home page](https://www.ixsystems.com/) website where users can find information about storage and server systems. Users can also use the iXsystems home page to access their customer portal and community section for support. |
 | ![TrueCommandIcon](/images/SCALE/22.02/TrueCommandIcon.png "TrueCommand Icon") | TrueCommand status | Displays either the status of a TrueCommand cloud connection or a dialog that allows users to [sign up for a new TrueCommand cloud connection]({{< relref "/content/truecommand/tcgettingstarted/install/_index.md" >}}). Instructions are found in the **Cloud Deployment** section. |
 | <span class="material-icons">info</span> | Directory Services status | Displays a dialog with the status of Active Directory and LDAP directory servers configured on the TrueNAS. |
-| <span class="material-icons">assignment</span> | Task Manager | Displays the Task Manager dialog. Click the **History** button to display the **Jobs** screen with a list of **All**, **Active** or **Failed** jobs or processes. |
+| <span class="material-icons">assignment</span> | Jobs | Displays the Jobs dialog. Click the **History** button to display the **Tasks** screen with a list of **All**, **Active** or **Failed** tasks or processes. |
 | <span class="material-icons">notifications</span> | Alerts | Displays a list of system alerts and a dropdown list the alert options **Alert Settings**, **Alert Services** and **Email**. |
-| <span class="material-icons">account_circle</span> | Settings | Displays a dropdown menu of setting options **Change Password**, **Preferences**, **API Keys**, **Guide** and **About**. |
+| <span class="material-icons">account_circle</span> | Settings | Displays a dropdown list of setting options **Change Password**, **API Keys**, **Guide** and **About**. |
 | <span class="material-icons">power_settings_new</span> | Power options | Displays the power related options **Log Out**, **Restart** or **Shut Down**. |
 
 ### Status of TrueCommand
@@ -37,9 +37,9 @@ The top toolbar icon buttons provide access to the iXsystems website, displays t
 
 {{< include file="/content/_includes/DirectoryServicesMonitor.md" type="page" >}}
 
-### Task Manager
+### Jobs
 
-{{< include file="/content/_includes/TaskManagerScale.md" type="page" >}}
+{{< include file="/content/_includes/Jobs.md" type="page" >}}
 
 ### Alerts
 
@@ -51,8 +51,6 @@ The <span class="material-icons">account_circle</span> **Settings** icon button 
 The options are **Change Password**, **Preferences**, **API Keys**, **Guide** and **About**.
 
 The <span class="material-icons">dialpad</span> **Change Password** icon button displays a dialog where you can change the login password for the currently logged-in administrator password.
-
-The <span class="material-icons">settings_applications</span> **Preferences** icon button displays the [Web Interface Preferences screen]({{< relref "WebUIPreferences.md" >}}) where you can select general preferences for the system, such as a color theme. 
 
 The <span class="material-icons">laptop</span> **API Keys** icon button displays the [API Keys screen]({{< relref "APIKeysScreen.md" >}}) that lists current API keys and where you can add or manage API keys that identify outside resources and applications without a principal. 
 

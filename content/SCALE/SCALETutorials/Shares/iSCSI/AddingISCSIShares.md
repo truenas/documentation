@@ -9,7 +9,7 @@ tags:
 
 {{< toc >}}
 
-To get started with iSCSI shares, make sure you have already created a [zvol]({{< relref "/SCALE/SCALETutorials/Storage/Pools/AddManageZvols.md" >}}) or a [dataset]({{< relref "/SCALE/SCALETutorials/Storage/Pools/DatasetsSCALE.md" >}}) with at least one file to share.
+To get started with iSCSI shares, make sure you have already created a [zvol]({{< relref "/SCALE/SCALETutorials/Storage/Datasets/AddManageZvols.md" >}}) or a [dataset]({{< relref "DatasetsSCALE.md" >}}) with at least one file to share.
 
 Go to **Shares** and click **Configure** in the **Block (iSCSI) Shares Targets** window. You can either use the creation wizard or set one up manually.
 
@@ -36,6 +36,7 @@ It is designed to give you additional flexibility to build or tune a share to yo
 Have the following ready before you begin adding your iSCSI block share:
 
 * Storage pool and dataset.
+* A path to a Device (zvol or file) that doesn't use capital letters or spaces.
 
 ## iSCSI Wizard
 This section walks you through the setup process using the wizard screens.
@@ -112,7 +113,7 @@ This procedure walks you through adding each configuration setting on the seven 
 
    a. Click **Add** at the top of the screen to open the **Sharing > iSCSI > Portals > Add** screen.
       
-      ![SharingiSCSIPortalsAddScreen](/images/SCALE/22.02/SharingiSCSIPortalsAddScreenn.png "iSCSI Portal Add")
+      ![SharingiSCSIPortalsAddScreen](/images/SCALE/22.12/SharingiSCSIPortalsAddScreen.png "iSCSI Portal Add")
 
    b. (Optional) Enter a description. Portals are automatically assigned a numeric group.
 

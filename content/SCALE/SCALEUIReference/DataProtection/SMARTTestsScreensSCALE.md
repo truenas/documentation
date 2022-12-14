@@ -4,7 +4,8 @@ description: ""
 weight: 60
 aliases: /scale/scaleuireference/dataprotection/smarttestsscreensscale/
 tags:
- - scalesmarttests
+- scalesmart
+- scaledisks
 ---
 
 {{< toc >}}
@@ -49,4 +50,4 @@ The **Add S.M.A.R.T. Test** and **Edit S.M.A.R.T. Test** configuration screens d
 {{< include file="static/includes/SCALE/SCALEAdvancedScheduler.md.part" markdown="true" >}}
 {{< /expand >}}
 
-{{< taglist tag="scalesmarttests" limit="10" >}}
+{{< taglist tag="scalesmart" limit="10" >}}

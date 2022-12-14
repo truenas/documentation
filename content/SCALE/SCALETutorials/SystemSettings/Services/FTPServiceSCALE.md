@@ -30,12 +30,10 @@ Next, add a new user. Go to **Credentials > Local Users**  and click **Add** to 
 Assign a user name and password, and link the newly created FTP dataset as the user home directory.
 You can do this for every user, or create a global account for FTP (for example, *OurOrgFTPaccnt*).
 
-Edit the file permissions for the new dataset. 
+Edit the file permissions for the new dataset. Go to **Storage** > **Usage** > **Manage Datasets**. Click on the name of the new dataset. Scroll down to **Permissions** and click the **Edit** button.
 
-![EditPermissionsUnixPermissionsEditor](/images/SCALE/22.02/EditPermissionsUnixPermissionsEditor.png "Basic Permissions Editor")
+![EditPermissionsUnixPermissionsEditor](/images/SCALE/22.12/EditPermissionsUnixPermissionsEditor.png "Basic Permissions Editor")
 
-Return to **Storage**, locate the new dataset, click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i>, and then select **View Permissions**. 
-Next click <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
 Enter or select the new user account in the **User** and **Group** fields.
 Select **Apply User** and **Apply Group**.
 Select the **Read**, **Write** and **Execute** for **User**, **Group** and **Other** that you want to apply.
@@ -45,11 +43,11 @@ Click **Save**.
 
 To configure FTP, go to **System Settings > Services** and find **FTP**, then click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the **Services > FTP** screen.
 
-![FTPBasicSettings](/images/SCALE/22.02/FTPBasicSettings.png "Services FTP Basic Settings General Options")
+![FTPBasicSettings](/images/SCALE/22.12/FTPBasicSettings.png "Services FTP Basic Settings General Options")
 
 Configure the options according to your environment and security considerations. Click **Advanced Settings** to display more options.
 
-To confine FTP sessions to the home directory of a local user, select both **chroot** and **Allow *Local User Login**. 
+To confine FTP sessions to the home directory of a local user, select both **chroot** and **Allow Local User Login**. 
 
 Do *not* allow anonymous or root access unless it is necessary. 
 For better security, enable TLS when possible (especially when exposing FTP to a WAN).

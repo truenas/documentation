@@ -1,5 +1,5 @@
 ---
-title: Dashboard
+title: Main Dashboard
 description: "This article provides information on the information cards (widgets) on the **Dashboard** screen and how to customize the display by moving, adding or removing the widgets."
 weight: 3
 tags:

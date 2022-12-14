@@ -15,3 +15,7 @@ Please feel free to propose changes and add new content in these articles to hel
 Want to discuss your in-progress changes or other TrueNAS contributions?
 The TrueNAS contributors `#truenas-docs` Slack workspace is available for contributors to discuss their changes and help each other improve the software.
 You can request to join this workspace at `truenas.slack.com`.
+
+## Contents
+
+{{< children depth="2" description="true" >}}

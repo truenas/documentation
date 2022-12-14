@@ -1,5 +1,6 @@
 ---
 title: 13.0 Release Notes
+description: "This article has notes for the current major version of TrueNAS CORE."
 weight: 3
 aliases:
   - /releasenotes/core/13.0beta1/

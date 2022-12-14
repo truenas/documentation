@@ -17,15 +17,15 @@ You can access it from **System Settings > Services** screen. Locate **NFS** and
 
 Select **Start Automatically** to activate NFS service when TrueNAS boots.
 
-![ServicesNFSSettingsScreen](/images/SCALE/22.02/ServicesNFSSettingsScreen.png "Services NFS Options")
+![ServicesNFSSettingsScreen](/images/SCALE/22.12/ServicesNFSSettingsScreen.png "Services NFS Options")
 
 ### Configuring NFS Service
 
 Unless a specific setting is required, we recommend using the default NFS settings.
 
-First enter the number of servers you want to create in **Number of servers**. 
+Select the IP address from the **Bind IP Addresses** dropdown list if you want to use a specific static IP address, or to list on all available addresses leave this blank.
 
-Select the IP addressed from the **Bind IP Addresses** dropdown list if you want to use a specific static IP address, or to list on all available addresses leave this blank.
+Enter an optimal number of threads used by the kernel NFS server in **Number of threads**. 
 
 If you are using NFSv4 select **Enable NFSv4**. **NFSv3 ownership model for NFSv4** clears, allowing you to select or leave it clear.
 
@@ -34,10 +34,14 @@ If you want to force NFS shares to fail if the Kerberos ticket is unavailable, s
 Next enter a port to bind to in the field that applies:
 
 * Enter a port to bind [mountd(8)](https://man7.org/linux/man-pages/man8/mountd.8.html) in **mountd(8) bind port**. 
-* Enter a port to bind [rpc.stad(8)](https://man7.org/linux/man-pages/man8/statd.8.html)in **rpc.statd(8) bind port**.
+* Enter a port to bind [rpc.statd(8)](https://man7.org/linux/man-pages/man8/statd.8.html)in **rpc.statd(8) bind port**.
 * Enter a port to bind [rpc.lockd(8)](https://linux.die.net/man/8/rpc.lockd) in **rpc.lockd(8) bind port**.
 
+Select **Serve UDP NFS clients** if NFS clients need to use UDP.
+
 Select **Allow non-root mount** only if required by the NFS client to allow serving non-root mount requests. 
+
+Select **Support > 16 groups** when a user is a member of more than 16 groups. This assumes group membership is configured correctly on the NFS server.
 
 Click **Save**.
 

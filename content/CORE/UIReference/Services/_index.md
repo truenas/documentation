@@ -1,5 +1,6 @@
 ---
 title: "Services"
+description: "This section has reference documentation for each item contained within the Services screen."
 geekdocCollapseSection: true
 weight: 120
 ---
