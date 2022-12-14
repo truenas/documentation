@@ -20,7 +20,7 @@ Click the gear icon in the upper toolbar and select **Administration**. Scroll d
 | **Group Domain** | Optional for admins that want to avoid issues with unwanted groups by forcing group searches to start at a deeper domain. |
 | **User ID Field** | Class mapped to login username. The default is uid. |
 | **Group ID Field** | Class for finding groups associated with a user. The default is cn. |
-| **BIND User Domain** | Full user domain for binding before finding user FQID. Optional. |
+| **BIND User Domain** | Full user domain for binding before finding user fully qualified ID (FQID). Optional. |
 | **Realm** | The realm that performs authentication against the LDAP server. |
 | **BIND Password** | If bind user is set, use this password when performing a simple bind on user search. |
 | **KDC** | The Kerberos Key Distribution Center that supplies session tickets and temporary session keys to users and computers within the LDAP server. |
