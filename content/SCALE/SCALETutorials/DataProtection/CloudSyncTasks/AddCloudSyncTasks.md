@@ -2,10 +2,9 @@
 title: "Adding Cloud Sync Tasks"
 description: "This article provides instructions to add a cloud sync task, configure environment variables, run an unscheduled sync task, create a copy of a task with a reversed transfer mode, and troubleshoot common issues with some cloud storage providers."
 weight: 10
-alias: /scale/scaleuireference/dataprotection/cloud-sync-tasks/
 tags:
- - scalecloud
- - scalebackup
+- scalecloud
+- scalebackup
 ---
 
 {{< toc >}}
@@ -40,24 +39,7 @@ To add a cloud sync task, go to **Data Protection > Cloud Sync Tasks** and click
 
 1. (Required) Type a memorable task description in **Description**. 
 
-2. Select an existing backup credential from the **Credential** dropdown list or select **+ Add a backup credential** to add a new backup credential. 
-   **+ Add a backup credential** opens a backup credential configuration window.
-
-   ![AddCloudSyncTaskAddBackupCredentials](/images/SCALE/22.02/AddCloudSyncTaskAddBackupCredentials.png "Adding a Backup Credential Window")
-
-   a. (Required) Enter a name for the backup credential.
-
-   b. Select the cloud storage provider from the **Provider** dropdown list. The authentication fields displayed vary by provider.
-      See [Adding Cloud Credentials]({{< relref "AddCloudCredentials.md" >}}) for more information on authentication settings for each provider.
-    
-    c. Enter the authentication credentials for the selected provider.
-
-    d. Click **Verify Credentials**. TrueNAS attempts to connect to the selected provider with the authentication settings entered.
-
-    e. Click **Save**. The backup credentials window closes and the **Credentials** field displays the newly created backup credential.
-       The **Bucket** field displays if using S3 to connect. 
-
-{{< include file="/content/_includes/AddCloudSyncTaskSteps3-8.md" type="page" >}}
+2. Select an existing backup credential from the **Credential** dropdown list.
 
 See **Using Scripting and Environment Variables** for more information on [environment variables](#using-scripting-and-environment-variables).
 

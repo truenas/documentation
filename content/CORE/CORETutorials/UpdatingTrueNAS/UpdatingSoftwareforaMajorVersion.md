@@ -34,7 +34,7 @@ Be aware of these caveats before attempting a major version upgrade:
   Unless new ZFS feature flags are needed, you can safely leave the pool at the current version.
   If you upgrade the pool, you cannot boot into a previous TrueNAS version that does not support the newer feature flags.
 * Upgrading the firmware of Broadcom SAS HBAs to the latest version is recommended.
-* When upgrading from 9.3.x to 9.10, read this <a href="https://www.truenas.com/docs/files/Notice - 9.3 to 9.10 FAQ.pdf">9.3 to 9.10 FAQ</a> first.
+* When upgrading from 9.3.x to 9.10, read this <a href="https://www.truenas.com/docs/files/Notice9.3to9.10FAQ.pdf">9.3 to 9.10 FAQ</a> first.
 * **Upgrades from FreeNAS 0.7x are not supported.**
   The system cannot import configuration settings from FreeNAS 0.7x versions.
   You must manually recreate the configuration.
@@ -60,6 +60,10 @@ Before upgrading the operating system, follow these steps:
 3. Warn users that TrueNAS shared data is unavailable during the upgrade.
    We recommend scheduling the upgrade for a time that will least impact users.
 4. Stop all system **Services**.
+
+{{< hint warning >}}
+All auxiliary parameters are subject to change between major versions of TrueNAS due to security and development issues. We recommend removing all auxiliary parameters from TrueNAS configurations before upgrading.
+{{< /hint >}}
 
 ## Upgrade Via ISO
 

@@ -15,6 +15,9 @@ Doing so makes tuning permissions for large numbers of users more efficient.
 
 {{< hint warning >}}
 Only the **root** user account can log in to the TrueNAS web interface until the root user creates an admin user with the same permissions.
+After loggin in as root, TrueNAS alerts you to create the local administrator account.
+
+![RootLoginAlert](/images/SCALE/22.12/RootLoginAlert.png "Root Login Alert") 
 
 As part of security hardening and to comply with Federal Information Processing standards (FIPS), iXsystems plans to completely disable root login in a future release.
 When this occurs, the sign-in screen prompts first-time users to create a new administration account they used in place of the root user.
@@ -27,9 +30,9 @@ Using [Active Directory]({{< relref "/content/SCALE/SCALEUIReference/Credentials
 
 To see user accounts, go to **Credentials > Local Users**.
 
-![LocalUsersSCALE](/images/SCALE/22.02/LocalUsersSCALE.png "List of Local User Accounts") 
+![LocalUsersSCALE](/images/SCALE/22.12/LocalUsersSCALE.png "List of Local User Accounts") 
 
-TrueNAS hides all built-in users (except root) by default. Click **Toggle Built-In Users**, then click **SHOW** to see all built-in users.
+TrueNAS hides all built-in users (except root) by default. Click the toggle **Show Built-In Users** to see all built-in users.
 
 ## Creating User Accounts
 
@@ -44,30 +47,34 @@ TrueNAS lets users configure four different user account traits (settings).
 
 ### Configuring User Identification Settings
 
-![AddUserIdentificationSettings](/images/SCALE/22.02/AddUserIdentificationSettings.png "Add User Identification Settings") 
+![AddUserIdentificationSettings](/images/SCALE/22.12/AddUserIdentificationSettings.png "Add User Identification Settings") 
 
 Enter the user full name in **Full Name**.
 TrueNAS suggests a simplified name in **Username** derived from the **Full Name**, but you can override it with your own choice.
 
 You can also assign a user account email address in the **Email** field.
 
-Set and confirm a password.
+By default, the **Disable Password** toggle is not enabled. In this case, set and confirm a password.
+
+Setting **Disable Password** toggle to active (blue toggle) disables several options: 
+* The **Password** field becomes unavailable, and TrueNAS removes any existing password from the account.
+* The **Lock User** and **Permit Sudo** options disappear.
+* The account is restricted from password-based logins for services like SMB shares and SSH sessions.
 
 ### Configuring User ID and Groups Settings
 
-![AddUserUserIDAndGroupsSettings](/images/SCALE/22.02/AddUserUserIDAndGroupsSettings.png "Add User User Id an Groups Settings") 
+![AddUserUserIDAndGroupsSettings](/images/SCALE/22.12/AddUserUserIDAndGroupsSettings.png "Add User User Id an Groups Settings") 
 
-Next, you must set a user ID.
+Next, you must set a user ID (UID).
 TrueNAS suggests a user ID starting at **1000**, but you can change it if you wish.
 We recommend using an ID of 1000 or greater for non-built-in users.
+New users can be created with a UID of **0**.
 
-By default, TrueNAS creates a new primary group with the same name as the user.
-To add the user to an existing primary group instead, clear the **New Primary Group** checkbox and select a group from the **Primary Group** drop-down list.
+By default, TrueNAS creates a new primary group with the same name as the user. This happens when the **Create New Primary Group** toggle is enabled.
+To add the user to an existing primary group instead, disable the **Create New Primary Group** toggle and search for a group in the **Primary Group** field.
 You can add the user to more groups using the **Auxiliary Groups** drop-down list.
 
-### Configuring Directories and Permissions Settings
-
-![AddUserDirPermsAuthSettings](/images/SCALE/22.02/AddUserDirPermsAuthSettings.png "Add User Directories, Permissions and Authentication Settings") 
+### Configuring Directories and Permissions Settings 
 
 When creating a user, the home directory path is set to <file>/nonexistent</file>, which does not create a home directory for the user.
 To set a user home directory, select a path using the file browser.
@@ -80,18 +87,15 @@ You cannot change TrueNAS default user account permissions.
 
 ### Configuring Authentication Settings
 
-![AddUserDirPermsAuthSettings](/images/SCALE/22.02/AddUserDirPermsAuthSettings.png "Add User Directories, Permissions and Authentication Settings") 
+![AddUserDirPermsAuthSettings](/images/SCALE/22.12/AddUserDirPermsAuthSettings.png "Add User Directories, Permissions and Authentication Settings") 
 
-You can assign a public SSH key to a user for key-based authentication by pasting the *public* key into the **SSH Public Key** field.
+You can assign a public SSH key to a user for key-based authentication by entering or pasting the *public* key into the **Authorized Keys** field.
+
+{{< hint warning >}}
+Do *not* paste the private key.
+{{< /hint >}}
+
 If you are using an SSH public key, always keep a backup of the key.
-Click **Download SSH Public Key** to download the pasted key as a <file>.txt</file> file.
-
-By default, **Disable Password** is **No**.
-
-Setting **Disable Password** to **Yes** disables several options: 
-* The **Password** field becomes unavailable, and TrueNAS removes any existing password from the account.
-* The **Lock User** and **Permit Sudo** options disappear.
-* The account is restricted from password-based logins for services like SMB shares and SSH sessions.
 
 You can set a specific [shell]({{< relref "UseScaleShell.md" >}}) for the user from the **Shell** dropdown options:
 
@@ -108,8 +112,6 @@ You can set a specific [shell]({{< relref "UseScaleShell.md" >}}) for the user f
 Selecting **Lock User** disables all password-based functionality for the account until you clear the checkbox.
 
 **Permit Sudo** allows the account to act as the system administrator using the `sudo` command. Leave it disabled for better security.
-
-If the user accesses TrueNAS data using Windows 8 or newer, select **Microsoft Account** to enable those systems' additional authentication methods.
 
 By default, **Samba Authentication** is enabled.
 This allows using the account credentials to access data shared with [SMB]({{< relref "/content/SCALE/SCALEUIReference/Shares/_index.md" >}}).

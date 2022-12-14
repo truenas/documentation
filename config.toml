@@ -9,6 +9,7 @@ enableGitInfo = true
 rssLimit = 10
 languageCode = "en-us"
 copyright = "Documentation distributed under CC BY NC SA 4.0"
+timeout = "30s"
 
 [author]
 name = "iXsystems and TrueNAS Users"
@@ -79,12 +80,12 @@ enable = true
 
   # (Optional, default true) Enables search function with flexsearch.
   # Index is built on the fly and might slowdown your website.
-  geekdocSearch = true
+  geekdocSearch = false
 
   # (Optional, default false) Display search results with the parent folder as prefix. This
   # option allows you to distinguish between files with the same name in different folders.
   # NOTE: This parameter only applies when 'geekdocSearch = true'.
-  geekdocSearchShowParent = true
+  geekdocSearchShowParent = false
 
   # (Optional, default none) Add a link to your Legal Notice page to the site footer.
   # It can be either a remote url or a local file path relative to your content directory.

@@ -1,5 +1,6 @@
 ---
 title: 13.0 Release Notes
+description: "This article has notes for the current major version of TrueNAS CORE."
 weight: 3
 aliases:
   - /releasenotes/core/13.0beta1/
@@ -21,11 +22,74 @@ aliases:
 
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
-| 13.0-U3 | Release | To be determined |
+| 13.0-U4 | Release | To be determined |
 
+## 13.0-U3.1
+
+**November 16, 2022**
+
+iXsystems is pleased to release TrueNAS 13.0-U3.1.
+
+This is a small maintenance release to patch an issue found in the upstream Samba project.
+
+### TrueNAS 13.0-U3.1 Changelog
+
+#### Improvement
+
+* [NAS-118951](https://ixsystems.atlassian.net/browse/NAS-118951) don't SMB\_ASSERT\(\) on mixed case sensitivity settings in vfs\_shadow\_copy\_zfs
+
+#### Bug
+
+* [NAS-118926](https://ixsystems.atlassian.net/browse/NAS-118926) SMB\_ASSERT\(\) on FSCTL on alternate data stream
+
+## 13.0-U3
+
+**November 1, 2022**
+
+iXsystems is pleased to announce the release of TrueNAS 13.0-U3.
+
+This is a maintenance release with some improvements for ACLs and rsync, updates Samba to 4.15.10 and updates the Asigra plugin. It adds Enclosure Management integration for the 3rd generation R50 and Storj as a new Cloud Sync provider.
+
+### TrueNAS 13.0-U3 Changelog
+
+#### Improvement
+
+* [NAS-118437](https://ixsystems.atlassian.net/browse/NAS-118437) Update net/samba to Samba 4.15.10
+* [NAS-118341](https://ixsystems.atlassian.net/browse/NAS-118341) libzfsacl - add function to convert ZFS ACL to string
+* [NAS-118216](https://ixsystems.atlassian.net/browse/NAS-118216) Record midclt enclosure.query in debug \(Core/Enterprise/Scale\)
+* [NAS-118199](https://ixsystems.atlassian.net/browse/NAS-118199) Update rsync port in 13
+* [NAS-117828](https://ixsystems.atlassian.net/browse/NAS-117828) Add Storj as Cloud Sync service \(13 and Angelfish\)
+* [NAS-116185](https://ixsystems.atlassian.net/browse/NAS-116185) Enable trains redirect for 12.0 to 13.0
+
+#### New Feature
+
+* [NAS-118505](https://ixsystems.atlassian.net/browse/NAS-118505) R50BM needs to be added to webUI codebase
+* [NAS-118068](https://ixsystems.atlassian.net/browse/NAS-118068) Add R50BM to enclosure mapping code and to keyserver
+* [NAS-117923](https://ixsystems.atlassian.net/browse/NAS-117923) Upgrade Asigra plugin
+* [NAS-117827](https://ixsystems.atlassian.net/browse/NAS-117827) New cloud sync provider: "Storj iX" \(13 and Angelfish\)
+
+#### Bug
+
+* [NAS-118787](https://ixsystems.atlassian.net/browse/NAS-118787) Asigra Install fails
+* [NAS-118717](https://ixsystems.atlassian.net/browse/NAS-118717) CVE-2022-3437 \(Heimdal des/des3 overflow\) Samba 4.15
+* [NAS-118563](https://ixsystems.atlassian.net/browse/NAS-118563) fix service.restart and journal sync race
+* [NAS-118562](https://ixsystems.atlassian.net/browse/NAS-118562) nameservers not propagating to standby nodes
+* [NAS-118546](https://ixsystems.atlassian.net/browse/NAS-118546) Disable some cloud sync buckets
+* [NAS-118370](https://ixsystems.atlassian.net/browse/NAS-118370) Merge FreeBSD SA-22:13 EN-22:20
+* [NAS-118166](https://ixsystems.atlassian.net/browse/NAS-118166) Box \(TrueNAS 13.0-U2\) spontaneous reboot during install of nextcloud plugin
+* [NAS-117976](https://ixsystems.atlassian.net/browse/NAS-117976) NIS does not start on it's own after failover.
+* [NAS-117975](https://ixsystems.atlassian.net/browse/NAS-117975) hwpmc\(4\) kernel panic on Proxmox
+* [NAS-117972](https://ixsystems.atlassian.net/browse/NAS-117972) No error message when trying to delete snapshot with hold
+* [NAS-117964](https://ixsystems.atlassian.net/browse/NAS-117964) VM created in Truenas 12.0 fails to boot or edit on Truenas 13.0-U2
+* [NAS-117957](https://ixsystems.atlassian.net/browse/NAS-117957) netcli cannot edit lagg interfaces
+* [NAS-117899](https://ixsystems.atlassian.net/browse/NAS-117899) TC Cloud Connection causing a Kernel Panic with R10
+* [NAS-117760](https://ixsystems.atlassian.net/browse/NAS-117760) \[13.0:U1.1\] smbd.core when connecting from a macOS
+* [NAS-117710](https://ixsystems.atlassian.net/browse/NAS-117710) ZFS space efficiency on devices with huge physical blocks
+* [NAS-117290](https://ixsystems.atlassian.net/browse/NAS-117290) NAS-1 had an unscheduled system reboot. The operating system successfully came back online at Fri Jul 22 08:29:53 2022.
+* [NAS-115559](https://ixsystems.atlassian.net/browse/NAS-115559) Use O\_RESOLVE\_BENEATH for opens in FreeBSD
 
 ## 13.0-U2
-
+{{< expand "13.0-U2" "v" >}}
 **August 30, 2022**
 
 iXsystems is pleased to announce the release of TrueNAS 13.0-U2.
@@ -87,6 +151,7 @@ See the [Known Issues entry for NAS-117663](#known-issues) for more details and 
 * [NAS-116270](https://ixsystems.atlassian.net/browse/NAS-116270) Cache reporting is always 0, regardless of state of ARC
 * [NAS-115938](https://ixsystems.atlassian.net/browse/NAS-115938) Tryinto replicate ix-systems
 * [NAS-112995](https://ixsystems.atlassian.net/browse/NAS-112995) Alert reads “…replication from scratch…” but entry is called differently in GUI
+{{< /expand >}}
 
 ## 13.0-U1.1
 {{< expand "13.0-U1.1" >}}
@@ -896,6 +961,9 @@ This is a an early release meant for previewing and testing features and is **no
 
 | Seen In | Key | Summary | Workaround | Resolved In |
 |---------|-----|---------|------------|-------------|
+| 13.0-U3 | [NAS-118832](https://ixsystems.atlassian.net/browse/NAS-118832) | UI Does not show the correct status on HA systems | There is a known UI caching issue that impacts the status of failover in HA systems. The workaround is to refresh the browser screen or clear the cache after failing-over or making any UI change to update the UI screens to show the correct status of the two nodes. Note, this might require logging into the system again if your token has expired. | Targeted 13.0-U4 |
+| 13.0-U3 |[NAS-118787](https://ixsystems.atlassian.net/browse/NAS-118787) | Asigra Install Fail | Configure the Asigra plugin on HA systems requires assigning a static IPs address rather than using DHCP to assign the node IP addresses. The Asigra plugin does not install correctly on HA systems that rely on DHCP-assigned IP addresses. | Targeted 13.0-U4 |
+| 13.0-U3 |N/A | Netatalk deprection | Netatalk has been deprecated and users should begin migrating away from using it with TrueNAS. Netatalk is deprecated in 13.0, and like AFP will be completely removed post-CORE 13.0. Users should migrate to SMB shares. | N/A |
 | 13.0-U2 | [NAS-117663](https://ixsystems.atlassian.net/browse/NAS-117663) | 2.5GigE Realtek NICs are unsupported in 13.0-U2. This is due to the Realtek NIC driver causing iSCSI data corruption and the driver is now disabled by default. | When the system is not used for iSCSI sharing and the NIC support is required, enabling the Realtek NIC driver is possible by going to **System > Tunables** and creating two new tunables.<br> Click **ADD**, enter these values:<ul><li>**Variable** : `if_re_load`</li><li>**Value** : `YES`</li><li> **Type** : `loader`</li></ul> and click **SAVE**.<br> Click **ADD** again, enter these values:<ul><li>**Variable** : `if_re_name`</li><li>**Value** : `/boot/modules/if_re.ko`</li><li> **Type** : `loader`</li></ul> and click **SAVE**.<br> To verify the realtek driver is loaded, reboot the system, go to the **Shell**, and type `kldstat -n if_re.ko`. The command returns the file name and details when it has been loaded. | TBD |
 | 13.0-U2 | [NAS-117891](https://ixsystems.atlassian.net/browse/NAS-117891) | 2FA login fails the first time after failover before succeeding. | It appears the UI presents the sign in screen before the system is ready. Occurs on High Availability systems. Suggest user not immediately attempt logging in, but wait a bit before trying to signing in with 2FA, or if sign in fails, refresh their screen and retry until the system presents the correct sign in screen with 2FA field. | Target 13.0-U3 |
 | 13.0-U2 | [NAS-117899](https://ixsystems.atlassian.net/browse/NAS-117899) | TrueCommand connection causing a kernel panic with unscheduled system reboots. | Cause of this issue is under investigation. | Target 13.0-U3 |

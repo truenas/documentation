@@ -25,7 +25,7 @@ See [Security Recommendations]({{< relref "Security.md" >}}) for more security c
 
 The **Basic Settings** options display by default when you edit the SSH service. 
 
-![ServicesSSHBasicSettingsGeneralOptions](/images/SCALE/22.02/ServicesSSHBasicSettingsGeneralOptions.png "SSH Basic Settings General Options")
+![ServicesSSHBasicSettingsGeneralOptions](/images/SCALE/22.12/ServicesSSHBasicSettingsGeneralOptions.png "SSH Basic Settings General Options")
 
 **General Options**
 
@@ -40,7 +40,7 @@ The **Basic Settings** options display by default when you edit the SSH service.
 ### SSH Advanced Settings Options
 **Advanced Settings** include the **General Options** settings. Advanced settings specify bind interfaces, SFTP settings, ciphers and any additional parameters you want to use.
 
-![ServicesSSHAdvancedSettingsOptions](/images/SCALE/22.02/ServicesSSHAdvancedSettingsOptions.png "SSH Advanced Settings Options")
+![ServicesSSHAdvancedSettingsOptions](/images/SCALE/22.12/ServicesSSHAdvancedSettingsOptions.png "SSH Advanced Settings Options")
 
 | Setting | Description |
 |---------|-------------|

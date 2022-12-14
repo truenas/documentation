@@ -55,7 +55,7 @@ The **Add Rsync Task** and **Edit Rsync Task** display the same settings.
 **Schedule** defines when the remote sync task occurs and **More Options** specify other settings related to when and how the rsync occurs.
 {{< expand "Click Here for More Information" "v" >}}
 
-![AddRsyncTaskScheduleMoreOptionsSettings](/images/SCALE/22.02/AddRsyncTaskScheduleMoreOptionsSettings.png "Add Rsync Task Schedule and Other Options Settings") 
+![AddRsyncTaskSchedOpt](/images/SCALE/22.12/AddRsyncTaskSchedOpt.png "Add Rsync Task Schedule and Other Options Settings")
 
 | Setting | Description |
 |---------|-------------|

@@ -8,6 +8,7 @@ tags:
 - scaleinstall
 - scalenetwork
 - scaleinterface
+- scaleconsole
 ---
 
 {{< toc >}}
@@ -43,6 +44,7 @@ The menu provides these options:
 Console setup menu options can change with software updates, service agreements, etc.
 
 {{< hint ok >}}
+
 During boot, TrueNAS attempts to connect to a DHCP server from all live interfaces.
 If it receives an IP address, the Console setup menu displays it under **The web user interface is at:** so you can access the Web UI.
 {{< /hint>}}
@@ -82,7 +84,12 @@ For home users, use 8.8.8.8 as the DNS nameserver address. This allows you to ac
 
 ## Changing the Root Password
 
-Type **2** while in the Console setup menu. Type the new root user password and then re-enter the new password.
+SCALE has implemented rootless login, making the admin user the default account. Change the admin user password in the UI.
+
+{{< hint warning >}}
+The Reset root password option in the console menu is useless if the admin password is enabled and the root user password is disabled in the **Edit User** screen. 
+Disabling a password in the UI prevents the user from logging in with it. 
+{{< /hint >}}
 
 {{< hint warning >}}
 Changing the root password disables 2FA (Two-Factor Authentication).

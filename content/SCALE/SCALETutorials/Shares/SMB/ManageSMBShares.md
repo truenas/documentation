@@ -40,7 +40,7 @@ You have two options that modify ACL permissions for SMB shares:
 
 * To modify ACL permissions at the dataset level for the users and groups that own or have specific permissions to the shared dataset. 
 
-See both the [Permissions]({{< relref "PermissionsSCALE.md" >}}) article for more details on configuring ACLs and [Edit ACL Screen]({{< relref "/SCALE/SCALEUIReference/Storage/Pools/EditACLScreens.md" >}}) article for more information on the ACL editor screens and setting options.
+See both the [Permissions]({{< relref "PermissionsSCALE.md" >}}) article for more details on configuring ACLs and [Edit ACL Screen]({{< relref "EditACLScreens.md" >}}) article for more information on the ACL editor screens and setting options.
 
 Also see [Tuning the Dataset ACL]({{< relref "/AddSMBShares.md#Tuning-the-dataset-ACL">}}) for an example of modifying ACL permissions for an SMB share.
 
@@ -48,6 +48,10 @@ Also see [Tuning the Dataset ACL]({{< relref "/AddSMBShares.md#Tuning-the-datase
 To configure an Access Control List (ACL) entry for an SMB share use the **Edit Share ACL** option. This opens the **SMB> Share ACL** screen. 
 This screen is separate from file system permissions and applies at the entire SMB share level. 
 Changes made to permissions on this screen for the selected SMB share do not apply to other file sharing protocol clients or other SMB shares that export the same share **Path**. 
+
+{{< hint info >}} 
+You cannot access SMB shares with the root user. Always change SMB dataset ownership to the intended SMB user. 
+{{< /hint >}}
 
 This ACL determines the browse list if you enable **Access Based Share Enumeration**. See [SMB Share Screens]({{< relref "SMBSharesScreens.md" >}}) for more information on settings.
 
@@ -80,7 +84,7 @@ Select a **User** or **Group** from the **Who** dropdown list, then select a spe
 Define how the settings apply to the account, then specify the permissions to apply.
 For example, to only allow the *newuser* user permission to view dataset contents but not make changes, set the **ACL Type** to **Allow** and **Permissions** to **Read**.
 
-See both the [Permissions]({{< relref "PermissionsSCALE.md" >}}) for more details on configuring ACLs and [Edit ACL Screen]({{< relref "/SCALE/SCALEUIReference/Storage/Pools/EditACLScreens.md" >}}) for information on the ACL editor screens and setting options.
+See both the [Permissions]({{< relref "PermissionsSCALE.md" >}}) for more details on configuring ACLs and [Edit ACL Screen]({{< relref "EditACLScreens.md" >}}) for information on the ACL editor screens and setting options.
 
 #### Using Preset ACL Entries (ACEs) on an NFSv4 ACL Editor
 To rewrite the current ACL with a standardized preset, click **Use ACL Preset** and select an option:
