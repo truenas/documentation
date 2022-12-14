@@ -15,7 +15,7 @@ Click the gear icon in the upper toolbar and select **Administration**. Scroll d
 
 | Field | Description |
 |---------|-------------|
-| **Hostname** | Hostname of LDAP/AD server, with optional port. e.g. example.com:636. |
+| **Hostname** | Host name of LDAP/AD server, with optional port. e.g. example.com:636. |
 | **Domain** | LDAP base domain. e.g. dc=example,dc=com. |
 | **Group Domain** | Optional for admins that want to avoid issues with unwanted groups by forcing group searches to start at a deeper domain. |
 | **User ID Field** | Class mapped to login username. The default is uid. |
