@@ -22,11 +22,7 @@ If built-in users are hidden, the **Show Built-in Users** dialog opens. Click **
 
 To hide the built-in users, click **Toggle Built-In Users** again to open the **Hide Built-in Users** dialog. Click **Hide** to only display non-built-in users again.
 
-<<<<<<< HEAD
-**Add** oOpens the **[Add User](#add-or-edit-user-screens)** screen.
-=======
 **Add** opens the **[Add User](#add-or-edit-user-screens)** screen.
->>>>>>> e38ef57888624436a273b1cff8944a4ad075d805
 
 ### User Details Screen
 
