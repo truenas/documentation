@@ -35,7 +35,7 @@ You can find additional options for configuring general network interfaces and I
 
 ## Official Applications
 
-Official containers are pre-configured to only require a name during deployment.
+Official applications are pre-configured and only require a name during deployment.
 
 ![AppPlexApplicationWizard](/images/SCALE/22.02/AppPlexApplicationWizard.png "Plex App Wizard Application Name")
 
@@ -48,9 +48,23 @@ Saving any changes redeploys the container.
 
 {{< embed-video name="docs-3795-install-official-app-plex" >}}
 
+### Networking
+
+Official applications use the default system-level Kubernetes Node IP settings in **Apps > Settings > Advanced Settings**. 
+
+You can change the Kubernetes Node IP to assign an external interface to your apps, seperate from the web UI interface.
+
+We recommend using the default Kubernetes Node IP (0.0.0.0) to ensure apps function properly.
+
 ## Custom Applications
 
 To deploy a custom application container in the Scale web interface, go to **Apps** and click **[Launch Docker Image]({{< relref "LaunchDockerImageScreens.md" >}})** for more on the Docker image wizard screens and settings.
+
+### Networking
+
+Custom applications use the system-level Kubernetes Node IP settings by default. You can assign an external interface to custom apps by setting one on the **Networking** section of the **Launch Docker Image** form. 
+
+Unless you need to run an application seperately from the Web UI, we recommend using the default Kubernetes Node IP (0.0.0.0) to ensure apps function properly.
 
 ## Upgrading Apps
 
