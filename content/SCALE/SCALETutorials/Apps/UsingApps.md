@@ -52,7 +52,7 @@ Saving any changes redeploys the container.
 
 Official applications use the default system-level Kubernetes Node IP settings in **Apps > Settings > Advanced Settings**. 
 
-You can change the Kubernetes Node IP to assign an external interface to your apps, seperate from the web UI interface. However, doing so may cause configuration issues since Kubernetes is designed to move apps dynamically between hosts. 
+You can change the Kubernetes Node IP to assign an external interface to your apps, seperate from the web UI interface.
 
 We recommend using the default Kubernetes Node IP (0.0.0.0) to ensure apps function properly.
 
@@ -62,7 +62,7 @@ To deploy a custom application container in the Scale web interface, go to **App
 
 ### Networking
 
-Custom applications use the system-level Kubernetes Node IP settings by default. You can assign an external interface to custom apps by setting one on the **Networking** section of the **Launch Docker Image** form. However, doing so may lead to configuration issues since Kubernetes is designed to move apps dynamically between hosts. 
+Custom applications use the system-level Kubernetes Node IP settings by default. You can assign an external interface to custom apps by setting one on the **Networking** section of the **Launch Docker Image** form. 
 
 Unless you need to run an application seperately from the Web UI, we recommend using the default Kubernetes Node IP (0.0.0.0) to ensure apps function properly.
 
