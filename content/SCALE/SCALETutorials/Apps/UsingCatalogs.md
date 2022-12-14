@@ -18,6 +18,10 @@ TrueNAS SCALE comes with a pre-built official catalog of iXsystems-approved Dock
 
 Users can also configure custom apps catalogs, although iXsystems does not directly support any non-official apps in a custom catalog.
 
+{{< hint info >}}
+TrueNAS uses outbound ports 80/443 to retrieve the Official catalog.
+{{< /hint >}}
+
 ## Managing Catalogs
 
 To manage and add catalogs, click on the **Manage Catalogs** tab on the **Applications** screen. 
