@@ -25,7 +25,7 @@ Click the gear icon in the upper toolbar and select **Administration**. Scroll d
 | **BIND Password** | If bind user is set, use this password when performing a simple bind on user search. |
 | **KDC** | The Kerberos Key Distribution Center that supplies session tickets and temporary session keys to users and computers within the LDAP server. |
 
-Once you fill the form according to your server, click **ADD SERVER**.
+After you fill the form according to your server, click **ADD SERVER**.
 
 Click **CONFIGURE** in the **Configuration** widget and enable **Allow LDAP user creation**, then click **SAVE**.
 
