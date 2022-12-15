@@ -45,7 +45,7 @@ Enter the name you want to use for the administrator account.
 
 Enter and confirm the admin user passwords.
 
-Select **builtin_administrators** on the **Auxiliary Group** dropdown list.
+Select **builtin_administrators** and **root** groups on the **Auxiliary Group** dropdown list.
 
 ![AddingAdminUserAuxiliaryGroup](/images/SCALE/22.12/AddingAdminUserAuxiliaryGroup.png "Add Admin User to builtin_administrators")
 
