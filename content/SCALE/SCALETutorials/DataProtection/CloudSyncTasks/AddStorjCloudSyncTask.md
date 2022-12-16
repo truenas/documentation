@@ -63,7 +63,7 @@ The **Add Cloud Credential** screen opens with Storj displayed as the default pr
 2. Click **Signup for account** to create your Stor-TrueNAS account. This opens the Storj new account screen for TrueNAS.
 
    {{< hint warning >}} 
-   You must use this link to create your Storj account for it to work with TrueNAS SCALE!
+   You must use this link to create your Storj account to take advantage of the benefits of the Storj-TrueNAS pricing!
    {{< /hint >}}
 
    After setting up your Storj-TrueNAS account, [create your Storj bucket](#adding-the-storj-truenas-bucket) and create the [Storj S3 access](#setting-up-s3-access-to-the-bucket) for the new bucket. 
@@ -130,10 +130,14 @@ After creating your bucket, add S3 access for the new bucket(s) you want to use 
    
    ![StorjCreateAccessWindow](/images/SCALE/22.12/StorjCreateAccessWindow.png "Storj Create Access Window")
 
-3. Select the permissions you want to allow this access from the **Permissions** dropdown, and select the bucket you want to have access to this credential from the dropdown list. 
-   The example selected *All* for **Permissions** and selected the one bucket we created *ixstorj1*.
+3. Select the permissions you want to allow this access from the **Permissions** dropdown and select the bucket you want to have access to this credential from the dropdown list. 
+   The example selects *All* for **Permissions** and selected the one bucket we created *ixstorj1*.
 
    ![StorjCreateAccessSelectBuckets](/images/SCALE/22.12/StorjCreateAccessSelectBuckets.png "Storj Create Access Select Buckets")
+
+   {{< hint info >}}
+   If you want to use the SCALE option to [add new buckets](#creating-a-storj-cloud-sync-task) in SCALE, set Storj **Permissions** to **All** and **Buckets** to **All**.
+   {{< /hint >}}
 
 4. Select **Add Date (optional)** if you want to set the duration or length of time you want to allow this credential to exist. 
    This example set this to *Forever*. You can select a preset period of time or use the calendar to set the duration.
@@ -183,7 +187,8 @@ To add the Storj cloud sync task, go to **Data Protection > Cloud Sync Tasks**:
    
    ![CloudSyncTaskSelectStorjBucket](/images/SCALE/22.12/CloudSyncTaskSelectStorjBucket.png "Select Storj Bucket")
 
-   You only see the buckets you granted access to the S3 credential on this list. You cannot create a new bucket here in SCALE!
+   If you set the Storj S3 access to only apply to the [new bucket created in Storj](#adding-the-storj-truenas-bucket), you can only use that bucket, selecting **Add New** results in an error. 
+   If you set the Storj S3 **Bucket** access to **All** you can either select the new bucket you created in Storj or **Add New** to create a new Storj bucket here in SCALE!
 
 6. Set the task schedule when you want this task to run.
 
