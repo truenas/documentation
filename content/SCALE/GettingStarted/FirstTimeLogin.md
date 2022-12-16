@@ -55,7 +55,7 @@ With the implementation of rootless login and based on your Authentication Metho
 * 3. Configuring a login when you first log into the UI.
 
 Use the administrative account credentials to log in.
-The default administrator username is no longer root but the administrative user creating during installation.
+The default administrator username is no longer root but the administrative user created during installation.
 
 {{< include file="/_includes/RootLoginDeprecatedSCALE.md" type="page" >}}
 
@@ -66,12 +66,12 @@ If you set up the admin user during the installation, enter the admin username a
 ![LoginSCALE](/images/SCALE/LoginSCALE.png "TrueNAS SCALE Login Screen")
 
 Note, the root user still exists but the password is disabled by default so that only the admin user can log into the system. 
-To modify user credentials, go to **Credentials > Local User**, click anywhere on the user row and click **Edit**. For more information see [Managing Users]({{< relref "ManageLocalUsersScale.md" >}}).
+To modify user credentials, go to **Credentials > Local User**, click anywhere on the user row, then click **Edit**. For more information see [Managing Users]({{< relref "ManageLocalUsersScale.md" >}}).
 
 ### Logging In as Root
 {{< include file="/_includes/RootLoginDeprecatedSCALE.md" type="page" >}}
-If you did not set up an admin user during the installation process, log into the UI as the root user with the root password. The system generates and alert stating you need to create an admin user. 
-Go to **Credentials > Local User**, click **Add** to open the **Add User** screen. 
+If you did not set up an admin user during the installation process, log into the UI as the root user with the root password. The system generates an alert stating you need to create an admin user. 
+Go to **Credentials > Local User**, and click **Add** to open the **Add User** screen. 
 Follow the directions in [Managing Users]({{< relref "ManageLocalUsersScale.md" >}}) to create an admin user with all the permissions it requires.
 
 ### Creating a Login at First Login
@@ -81,7 +81,7 @@ The password entered is a one-time user access password.
 You must go to the **Credentials > Local User** screen and [create the admin account]({{< relref "ManageLocalUsersSCALE.md" >}}) immediately after you enter the UI.
 {{< /hint >}}
 
-If you selected the option to create a new user when you log into the web UI the first time, the **Set new root account password** sign in splash screen opens after you enter the system IP address into a browser search bar. 
+If you selected the option to create a new user when you log into the web UI the first time, the **Set new root account password** sign-in splash screen opens after you enter the system IP address into a browser search bar. 
 
 ![CreateAdminAccountAtFirstTimeLogin](/images/SCALE/22.12/CreateAdminAccountAtFirstTimeLogin.png "Set New Root Account Password Sign In Screen")
 
