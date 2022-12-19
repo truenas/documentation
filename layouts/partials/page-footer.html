@@ -59,4 +59,31 @@
     {{ end }}
 </div>
 
+{{ $geekdocRepo := default (default false .Site.Params.GeekdocRepo) .Page.Params.GeekdocRepo }}
+{{ $geekdocEditPath := default (default false .Site.Params.GeekdocEditPath) .Page.Params.GeekdocEditPath }}
+{{ if .File }}
+    {{ $.Scratch.Set "geekdocFilePath" (default .File.Path .Page.Params.GeekdocFilePath) }}
+{{ else }}
+    {{ $.Scratch.Set "geekdocFilePath" false }}
+{{ end }}
+{{ $showEdit := (and ($.Scratch.Get "geekdocFilePath") $geekdocRepo $geekdocEditPath) }}
+
+<div class="content-cta">
+	{{ with .IsPage }}
+	<hr>
+	<p>Still have questions? For further discussion or assistance, see the:</p>
+	<ul>
+	  <li><a href="https://www.truenas.com/community/">TrueNAS Community Forum</a></li>
+	  <li><a href="https://discord.com/invite/Q3St5fPETd">TrueNAS Community Discord</a></li>
+	</ul>
+	<p>Found something to change? You can 
+	  {{ if $showEdit }}
+        <span class="editpage">
+          <a href="{{ $geekdocRepo }}/{{ path.Join $geekdocEditPath ($.Scratch.Get "geekdocFilePath") }}"><b>edit this page</b></a>
+        </span>
+      {{ end }}
+	  directly! To request changes to this content, click the <b>Feedback</b> button.</p>
+	{{ end }}
+</div>
+
 {{ partial "search-index.html" . }}
