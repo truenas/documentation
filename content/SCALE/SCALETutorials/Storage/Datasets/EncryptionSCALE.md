@@ -131,6 +131,10 @@ TrueNAS supports AES [Galois Counter Mode (GCM)](https://csrc.nist.gov/publicati
 These algorithms provide authenticated encryption with block ciphers.
 {{< /expand >}}
 
+{{< hint info>}}
+The passhrase must be longer than 8 and less than 512 characters.
+{{< /hint >}}
+
 {{< hint danger>}}
 Keep encryption keys and/or passphrases safeguarded in a secure and protected place. 
 Losing encryption keys or passphrases can result in permanent data loss!
