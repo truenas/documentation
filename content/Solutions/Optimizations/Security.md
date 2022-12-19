@@ -69,13 +69,6 @@ For example, when selecting *Private SMB Datasets and Shares* from the list, Tru
 To fully customize the share settings, select *No presets* for the *Purpose*.
 Unless a specific purpose for the share is required, it is recommended to select *Default share parameters* as the *Purpose*.
 
-SMB Server Signing is recommended.
-To enable Server Signing, go to **Services > SMB > Edit > Auxiliary Parameters** and add this string to the *Auxilary Parameters* field:
-
-`server signing = mandatory`
-
-Then save, stop, and restart the SMB service.
-
 ## SSH
 
 Using Secure Shell (SSH) to connect to your TrueNAS is very helpful when issuing commands through the CLI.
