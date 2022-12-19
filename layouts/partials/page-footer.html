@@ -71,12 +71,13 @@
 <div class="content-cta">
 	{{ with .IsPage }}
 	<hr>
-	<p>Still have questions? For further discussion or assistance, see the:</p>
+	<p>Have more questions? For further discussion or assistance:</p>
 	<ul>
 	  <li><a href="https://www.truenas.com/community/">TrueNAS Community Forum</a></li>
 	  <li><a href="https://discord.com/invite/Q3St5fPETd">TrueNAS Community Discord</a></li>
+	  <li><a href="https://www.ixsystems.com/support/">iXsystems Enterprise Support (requires paid support contract)</a></li>
 	</ul>
-	<p>Found something to change? You can 
+	<p>Found content that needs an update? You can 
 	  {{ if $showEdit }}
         <span class="editpage">
           <a href="{{ $geekdocRepo }}/{{ path.Join $geekdocEditPath ($.Scratch.Get "geekdocFilePath") }}"><b>edit this page</b></a>
