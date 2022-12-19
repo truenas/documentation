@@ -46,12 +46,46 @@ On a computer with access to the same network as the TrueNAS system, enter the h
 The quality of your user experience can be impacted by the browser that you use. We generally recommend using Firefox, Edge, or Chrome.
 {{< /hint >}}
 
-![LoginSCALE](/images/SCALE/LoginSCALE.png "TrueNAS SCALE Login Screen")
+With the implementation of rootless login and based on your Authentication Method selection in the SCALE [TrueNAS installer]({{< relref "InstallingScale.md" >}}), you could see one of three sign-in options for the web UI:
+
+!![SCALEInstallerConsoleSetupAdminAccount](/images/SCALE/22.12/SCALEInstallerConsoleSetupAdminAccount.png "Admin User Screen")
+
+* 1. Logging in as the new admin user, entering the admin username and password created during installation.
+* 2. Logging in as the root user, entering root as the username and the root password created during installation.
+* 3. Configuring a login when you first log into the UI.
 
 Use the administrative account credentials to log in.
-The default administrator username is `root` and the password is created when installing TrueNAS.
+The default administrator username is no longer root but the administrative user created during installation.
 
-{{< expand "Troubleshooting" "v" >}}
+{{< include file="/_includes/RootLoginDeprecatedSCALE.md" type="page" >}}
+
+### Logging In As Admin
+
+If you set up the admin user during the installation, enter the admin username and password you set up. 
+
+![LoginSCALE](/images/SCALE/LoginSCALE.png "TrueNAS SCALE Login Screen")
+
+Note, the root user still exists but the password is disabled by default so that only the admin user can log into the system. 
+To modify user credentials, go to **Credentials > Local User**, click anywhere on the user row, then click **Edit**. For more information see [Managing Users]({{< relref "ManageLocalUsersScale.md" >}}).
+
+### Logging In as Root
+{{< include file="/_includes/RootLoginDeprecatedSCALE.md" type="page" >}}
+If you did not set up an admin user during the installation process, log into the UI as the root user with the root password. The system generates an alert stating you need to create an admin user. 
+Go to **Credentials > Local User**, and click **Add** to open the **Add User** screen. 
+Follow the directions in [Managing Users]({{< relref "ManageLocalUsersScale.md" >}}) to create an admin user with all the permissions it requires.
+
+### Creating a Login at First Login
+{{< hint warning >}}
+This option does not configure the admin or root user account. 
+The password entered is a one-time user access password. 
+You must go to the **Credentials > Local User** screen and [create the admin account]({{< relref "ManageLocalUsersSCALE.md" >}}) immediately after you enter the UI.
+{{< /hint >}}
+
+If you selected the option to create a new user when you log into the web UI the first time, the **Set new root account password** sign-in splash screen opens after you enter the system IP address into a browser search bar. 
+
+![CreateAdminAccountAtFirstTimeLogin](/images/SCALE/22.12/CreateAdminAccountAtFirstTimeLogin.png "Set New Root Account Password Sign In Screen")
+
+### Troubleshooting Accessing the Web UI
 If the user interface is not accessible by IP address from a browser, check these things:
 
 * If the browser configuration has proxy settings enabled, disable them and try connecting again.
@@ -65,7 +99,7 @@ If the web interface displays but seems unresponsive or incomplete:
 If the UI becomes unresponsive after an upgrade or other system operation, clear the site data and refresh the browser (<kbd>Shift</kbd>+<kbd>F5</kbd>).
 
 If I cannot remember the administrator password to log in to the web interface, connect a keyboard and mouse to the TrueNAS system and open the [console setup menu]({{< relref "ConsoleSetupMenuScale.md#changing-the-root-password" >}}) to reset the `root` account password.
-{{< /expand >}}
+
 
 ## Dashboard
 
