@@ -24,7 +24,7 @@
 | Name | Description |
 |------|------|
 | **Source** | Define the path to a system location that has snapshots to replicate. Click the folder to see all locations on the source system or click in the field to manually type a location (Example: *pool1/dataset1*). Multiple source locations can be selected or manually defined with a comma (,) separator. |
-| **Recusive** | Replicate all child dataset snapshots. When selected, **Exclude Child Datasets** becomes available. |
+| **Recursive** | Replicate all child dataset snapshots. When selected, **Exclude Child Datasets** becomes available. |
 | **Include Dataset Properties** | Include dataset properties with the replicated snapshots. |
 | **Full Filesystem Replication** | Completely replicate the selected dataset. The target dataset will have all of the properties, snapshots, child datasets, and clones from the source dataset. |
 | **Properties Exclude** | List any dataset properties that will not be included with the replication. |
