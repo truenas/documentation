@@ -2,7 +2,8 @@
 title: "SCALE 22.12 Bluefin Release Notes"
 aliases:
  - /scale/scalenextversion/
-weight: 1000
+ - /scale/scalereleasenotes/
+weight: 7
 ---
 
 {{< toc >}}
@@ -11,8 +12,6 @@ weight: 1000
 Early releases are intended for testing and early feedback purposes only.
 Do not use early release software for critical tasks.
 {{< /hint >}}
-
-
 
 Want to get involved by collaborating on TrueNAS SCALE? Join our [Official Discord Server.](https://discord.com/invite/Q3St5fPETd)
 
@@ -42,6 +41,7 @@ Want to get involved by collaborating on TrueNAS SCALE? Join our [Official Disco
 * All auxiliary parameters are subject to change between major versions of TrueNAS due to security and development issues.
   We recommend removing all auxiliary parameters from TrueNAS configurations before upgrading.
 * New security checks are present for host paths in use by various sytem services. If you have host paths that are shared by multiple system services (e.g. Apps and SMB), please read the 22.12.0 [Known Issues](#known-issues) and take steps to create unique host paths for each in-use system service.
+* As part of security hardening, users upgrading to 22.12.0 Bluefin are prompted to create a separate administrative user for UI logins. TrueNAS shows an informational alert when only the **root** account is present and reminds to create the administrative user for logins. Future security updates to TrueNAS SCALE could disable the root account. Please create an administrative user as soon as possible after upgrading. See the [Managing Users Tutorial]({{< relref "ManageLocalUsersSCALE.md" >}}) for more details.
 {{< /hint >}}
 
 To download an <file>.iso</file> file for installing SCALE Bluefin, go to https://www.truenas.com/truenas-scale/ and click **Download**.
@@ -1171,6 +1171,8 @@ Additional feature in future Bluefin releases:
 
 | Seen In | Key | Summary | Workaround | Resolved In |
 |---------|-----|---------|------------|-------------|
+| 22.12.0 |  <a href="https://ixsystems.atlassian.net/browse/NAS-119390" target="_blank">NAS-119390</a> | SMB Access Based Share Enumeration fails due to inaccessible Share ACL DB (share_inf.tdb) | SMB shares with Access Based Share Enumeration enabled and share ACLs are not browsable. Disabling Access Based Share Enumeration makes them browsable. Download the replacement Samba package attached to this ticket to correct this issue and make shares with Access Based Share Enumeration enabled browsible. | Targeted 22.12.1 |
+| 22.12.0 | <a href="https://ixsystems.atlassian.net/browse/NAS-119374" target="_blank">NAS-119374</a> | Non-root administrative users cannot access installed VM or App console. | For Apps console access, log in to the UI as the **root** user. For VM console access, go to **Credentials > Local Users** and edit the non-root administrative user. In the **Auxiliary Groups** field, open the dropdown and select the **root** option. Click **Save**. | Targeted for 22.12.1 (Bluefin) |
 | 22.12.0 | N/A | App deployment can get stuck in validation when the Host Path is used between Apps and TrueNAS sharing services (e.g. SMB and NFS). | Shared host paths are considered insecure and are not recommended. Review host paths used by Apps and Sharing services and adjust paths to be unique. As a last resort that can result in system and app instability, **Host Path Safety Checks** can be disabled in **Apps > Settings > Advanced Settings**. | N/A |
 | 22.12.0 | <a href="https://ixsystems.atlassian.net/browse/NAS-119233" target="_blank">NAS-119233</a> | Validation error received when modifying HTTP/S Port Setting in the Web UI | A validation error can occur if using the iw.iso8 keyboard map where the system interprets digits "81" as the text "us". | Targeteted 22.12.1 |
 | 22.12.0 | <a href="https://ixsystems.atlassian.net/browse/NAS-119279" target="_blank">NAS-119279</a> | Missing an option to promote dataset | After cloning a snapshot to a dataset, the option to promote that dataset is missing from the UI. | Targeted 22.12.1 |

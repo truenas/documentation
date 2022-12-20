@@ -22,11 +22,7 @@ If built-in users are hidden, the **Show Built-in Users** dialog opens. Click **
 
 To hide the built-in users, click **Toggle Built-In Users** again to open the **Hide Built-in Users** dialog. Click **Hide** to only display non-built-in users again.
 
-<<<<<<< HEAD
-**Add** oOpens the **[Add User](#add-or-edit-user-screens)** screen.
-=======
 **Add** opens the **[Add User](#add-or-edit-user-screens)** screen.
->>>>>>> e38ef57888624436a273b1cff8944a4ad075d805
 
 ### User Details Screen
 
@@ -93,8 +89,7 @@ Built-in users (except the **root** user) do not include the **Home Directory Pe
 
 | Setting | Description |
 |---------|-------------|
-| **SSH Public Key** | Enter or paste the **public** SSH key of the user for any key-based authentication. Use **Download SSH Public Key** to obtain a public key text file. Keep a backup copy of the public key! Do not paste the private key in this field! |  
-| **Disable Password** | Select the password option from the dropdown list. Select **Yes** to disable the **Password** and **Confirm Password** fields and remove the password from the account. The account cannot use password-based logins for services. For example, disabling the password prevents using account credentials to log into an SMB share or open and SSH session on the system. This also removes the **Lock User** and **Permit Sudo** options. Select **No** to requires adding a password to the account. The account can us the saved **Password** to authenticate with password-based services. |  
+| **Authorized Keys** | Enter or paste the downloaded SSH public key of the user for any key-based authentication. Use **Download SSH Public Key** to obtain a public key text file. Keep a backup copy of the public key! Do not paste the private key in this field! |  
 | **Shell** | Select the [shell](#shell-options) to use for local and SSH logins from the dropdown list. Options are **bash**, **rbash**, **dash**, **sh**, **zsh**, **tmux** and **nologin**. |  
 | **Lock User** | Select to prevent the user from logging in or using password-based services until you clear this checkbox. Locking an account is only possible when **Disable Password** is set to **No** and the account has a created password in **Password**. |  
 | **Permit Sudo** | Select to give this user administrator permissions and the ability to use [sudo](https://www.sudo.ws/). When using sudo, a user is prompted for their account password. |  
