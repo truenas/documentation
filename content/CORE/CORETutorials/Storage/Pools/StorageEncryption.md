@@ -153,7 +153,7 @@ Change the **Encryption Type** from **Key** to **Passphrase**.
 Set the rest of the options:
 * **Passphrase** is a user-defined string used to decrypt the dataset.
   Can use instead of an encryption key.
-  Must be longer than 8 characters.  
+  Must be longer than 8 and less than 512 characters.  
 * **pbkdf2iters** is the number of password-based key derivation function 2 ([PBKDF2](https://tools.ietf.org/html/rfc2898#appendix-A.2)) iterations to use for reducing vulnerability to brute-force attacks.
   Entering a number greater than **100000** is required.
 {{< /expand >}}
