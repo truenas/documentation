@@ -1,10 +1,11 @@
 ---
 title: "Managing Users"
-description: "This article provides instructions on adding and managing local user accounts."
+description: "This article provides instructions on adding and managing the administrator and local user accounts."
 weight: 10
 alias: /scale/scaleuireference/credentials/localusers/
 tags:
- - scaleusers
+- scaleusers
+- scalelogin
 ---
 
 {{< toc >}}
@@ -45,18 +46,13 @@ Enter the name you want to use for the administrator account.
 
 Enter and confirm the admin user passwords.
 
-Select **builtin_administrators** and **root** groups on the **Auxiliary Group** dropdown list.
+Select the **root** and **builtin_administrators** groups on the **Auxiliary Group** dropdown list.
 
 ![AddingAdminUserAuxiliaryGroup](/images/SCALE/22.12/AddingAdminUserAuxiliaryGroup.png "Add Admin User to builtin_administrators")
 
 Click **Save**.
 
 ## Creating User Accounts
-
-{{< expand "Tutorial Video" "v" >}}
-This short video demonstrates adding a local user.
-{{< embed-video name="scaleangelfishlocalusers" >}}
-{{< /expand >}} 
 
 To create a new user, click **Add**.
 
