@@ -33,7 +33,7 @@ Click **REBUILD DIRECTORY SERVICE CACHE** to resync the cache if it becomes out 
 | Name | Description |
 |---------|-------------|
 | **Verbose logging** | Select to log attempts to join the domain to <file>/var/log/messages</file>. |
-| **Allow Trusted Domains** | Select to not include a domain name in user names. Leave checkbox clear to force domain names to prepend to user names.<br>One possible reason for not setting this value is to prevent user name collisions when **Allow Trusted Domains** is selected and there are identical user names in more than one domain. |
+| **Allow Trusted Domains** | Selected if you do not want the username to include a domain name. Clear the checkbox to force the domain names to be prepended to usernames. One possible reason to not select this value is to prevent username collisions when this is selected and there are identical usernames across multiple domains. |
 | **Use Default Domain** | Leave checkbox clear to prepend the domain name to the user name. When not selected prevents name collisions when **Allow Trusted Domains** is set and multiple domains use the same user name. |
 | **Allow DNS Updates** | Select to enable Samba to do DNS updates when joining a domain. |
 | **Disable FreeNAS Cache** | Select to disable caching AD users and groups. This can help when unable to bind to a domain with a large number of users or groups. |
