@@ -35,6 +35,10 @@ The new **Storage Dashboard** pool widgets also show the status of each of your 
 
 From the main Dashboard, you can click the <i class="fa fa-database" aria-hidden="true" title="Pool Status"></i> on either the **Pool** or **Storage** widget to go to the **Storage Dashboard** screen, or you can click **Storage** on the main navigation menu to open the **Storage Dashboard** and locate the pool in the degraded state.
 
+{{< expand "My disk is faulted. Should I replace it?" "v" >}}
+If a disk shows a faulted state, TrueNAS has detected an issue with that disk and you should replace it.
+{{< /expand >}}
+
 To replace a failed disk:
 
 1. Locate the failed drive.
