@@ -37,10 +37,10 @@ If you have both the root and admin account passwords disabled and the session t
 ![ResetRootAccountPasswordSignIn](/images/SCALE/22.12/ResetRootAccountPasswordSignIn.png "Reset Root Password Sign-In Screen")
 
 Enter and confirm a password to gain access to the UI, but then immediately go to **Credentials > Local Users** to enable either the root or admin password.  
-This password is not saved as a new password and it does it enable the admin or root passwords. 
+This password is not saved as a new password and it does not enable the admin or root passwords. 
 It only gives temporary sign in access if you lock yourself out of the box.
 
-If you disable the password for UI login, it is also disable for ssh access.
+If you disable the password for UI login, it is also disabled for ssh access.
 
 ## Accessing the System Using SSH
 
@@ -59,7 +59,7 @@ If you have the root user configured with a password and enable it, you can SSH 
 
 ## Rootless Login and TrueCommand
 
-At present, rootless log in works with TC but you need to set up and use an [API key]({{< relref "ManagingAPIKeys.md" >}}). Future releases of TrueCommand should eliminate the need for the API key.
+At present, rootless log in works with TrueCommand but you need to set up and use an [API key]({{< relref "ManagingAPIKeys.md" >}}). Future releases of TrueCommand should eliminate the need for the API key.
 
 {{< taglist tag="scalelogin" limit="10" >}}
 {{< taglist tag="scaleusers" limit="10" title="Related User Articles" >}}
