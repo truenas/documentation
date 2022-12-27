@@ -80,11 +80,11 @@ You can use specific keys instead of using **ALL**:
 
 After generating the keytab, go back to **Directory Services** in TrueNAS and click **Add** in the **Kerberos Keytab** window to add it to TrueNAS.
 
-To make AD use the keytab, click **Settings** in the **Active Directory** window and select it using the **Kerberos Principal** drop-down.
+To make AD use the keytab, click **Settings** in the **Active Directory** window and select it using the **Kerberos Principal** dropdown list.
 
 When using a keytab with AD, ensure the keytab **username** and **userpass** match the **Domain Account Name** and **Domain Account Password**.
 
-To make LDAP use a keytab principal, click **Settings** in the **LDAP** window and select the keytab using the **Kerberos Principal** drop-down.
+To make LDAP use a keytab principal, click **Settings** in the **LDAP** window and select the keytab using the **Kerberos Principal** dropdown list.
 
 
 {{< taglist tag="scalekerberos" limit="10" >}}
