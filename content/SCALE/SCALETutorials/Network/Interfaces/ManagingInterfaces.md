@@ -13,6 +13,7 @@ You can add new or edit existing network interfaces on the **Network** screen.
 {{< include file="/_includes/NetworkInterfaceTypes.md" type="page" >}}
 {{< /expand >}}
 
+{{< include file="/_includes/AliasOrStaticIP.md" type="page" >}}
 
 ## Adding an Interface
 
