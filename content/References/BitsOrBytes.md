@@ -12,6 +12,7 @@ tags:
 {{< toc >}}
 
 Which is it, bit or byte? And what is the difference between a bit or a byte?
+
 Both bit and byte are basic measurements for computerized data but they represent different measurements. 
 
 A *bit* is the smallest unit of measure for computerized storage, and when combined with a time measurement such as seconds, becomes the common basis for determining how fast raw data bits transfer across a network as in bits per second (bps). 
@@ -31,17 +32,20 @@ Or for the store/retrieve rate, KBps for kilobytes/second, MBps for megabytes/se
 As a provider of storage, TrueNAS represents storage measures in bytes.
 
 For TrueNAS, which is correct and do they represent the same measurement?
+
 No, it takes eight (8) bits to make a byte, and the bit is used to estimate the speed at which data transmits across a network. 
 The network capacity, or bandwidth, determines how fast the raw data bits transmit across it. 
 TrueNAS refers to bits when discussing the network transmission speed of data from TrueNAS storage to another system across a network. 
 Network provider capacity and other network related devices such as network interface cards (NICs) can either determine or influence the network transmission speeds.
 
-A byte, or eight bits of raw data formed into words to represent characters, and is the unit of measure to estimate local storage capacity (such as on a hard drive or other storage device) and measures the rate computerized data is stored or retrieved on a local storage device or system. 
+A byte, or eight bits of raw data formed into words to represent characters, is the unit of measure to estimate local storage capacity (such as on a hard drive or other storage device) and measures the rate computerized data is stored or retrieved on a local storage device or system. 
 TrueNAS, like other storage providers, uses bytes to quantify the storage capacity it provides based on the system hardware platforms it provides to customers.
 
 Is it *B* or *b*?
+
 Lower case *b* denotes bits. Lower case *b* because a bit is smaller than a byte.
-*B* denotes bytes. Upper case *B* because the byte is larger and it takes eight bits to make a byte.
+
+Upper case *B* denotes bytes. Upper case *B* because the byte is larger and it takes eight bits to make a byte.
 
 {{< taglist tag="scalestorage" limit="10" >}}
 {{< taglist tag="corestorage" limit="10" title="Related Core Storage Articles" >}}
