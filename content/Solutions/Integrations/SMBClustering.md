@@ -1,6 +1,6 @@
 ---
-title: Clustering and Sharing SCALE Volumes with TrueCommand
-description: Requirements and process description for using TrueCommand to cluster and share data from TrueNAS SCALE systems.
+title: "Clustering and Sharing SCALE Volumes with TrueCommand"
+description: "Requirements and process description for using TrueCommand to cluster and share data from TrueNAS SCALE systems."
 weight: 50
 tags:
  - scaleclustering
@@ -122,6 +122,12 @@ There are many different ways to access an SMB share, but this article demonstra
 4. Browse to the cluster volume folder to view or modify files.
 
 ![WindowsFileExplorereAccessClusterShare](/images/TrueCommand/2.2/WindowsFileExplorereAccessClusterShare.png "Cluster Volume Share Options")
+
+## Clustered Back Up Strategies
+TrueNAS Enterprise Customers can contact iX Support to discuss your clustered back up strategy options.
+{{< expand "Contacting iX Support" "v" >}}
+{{< include file="static/includes/General/iXsystemsSupportContact.html.part" html="true" >}}
+{{< /expand >}}
 
 ## See Also
 
