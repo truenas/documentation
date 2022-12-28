@@ -123,7 +123,7 @@ There are many different ways to access an SMB share, but this article demonstra
 
 ![WindowsFileExplorereAccessClusterShare](/images/TrueCommand/2.2/WindowsFileExplorereAccessClusterShare.png "Cluster Volume Share Options")
 
-### Clustered Back Up Strategies
+## Clustered Back Up Strategies
 Contact our Support Staff at http://support.ixsystems.com to discuss your clustered back up strategy options. 
 
 ## See Also
