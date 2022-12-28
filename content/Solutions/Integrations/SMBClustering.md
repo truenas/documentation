@@ -124,7 +124,10 @@ There are many different ways to access an SMB share, but this article demonstra
 ![WindowsFileExplorereAccessClusterShare](/images/TrueCommand/2.2/WindowsFileExplorereAccessClusterShare.png "Cluster Volume Share Options")
 
 ## Clustered Back Up Strategies
-Contact our Support Staff at http://support.ixsystems.com to discuss your clustered back up strategy options. 
+TrueNAS Enterprise Customers can contact iX Support to discuss your clustered back up strategy options.
+{{< expand "Contacting iX Support" "v" >}}
+{{< include file="static/includes/General/iXsystemsSupportContact.html.part" html="true" >}}
+{{< /expand >}}
 
 ## See Also
 
