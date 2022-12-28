@@ -24,9 +24,12 @@ FreeNAS®, TrueNAS®, TrueNAS® SCALE, TrueCommand, and all related logos are re
 * LinkedIn® is a registered trademark of LinkedIn Corporation.
 * Linux® is a registered trademark of Linus Torvalds.
 * Mellanox® is a registered trademark Mellanox Technologies Ltd. which is a subsidiary of Nvidia.
-* NVM Express® is a registered trademark of NVM Express, Inc.
+* Nextcloud® is a registered trademark of Oracle Corporation and/or its affiliates.
+* NVM Express® is a registered trademark of Nextcloud GmbH.
 * OpenStack® is a registered trademark of The OpenStack Foundation.
 * Oracle® is a registered trademark of Oracle Corporation and/or its affiliates.
+* Plex® is a registered trademark of Plex, Inc.
+* Storj® is a registered trademark of Storj Labs Inc.
 * Trusted Computing Group® is a registered trademark of the Trusted Computing Group.
 * Twitter® is a trademark of Twitter, Inc. in the United States and other countries.
 * UNIX® is a registered trademark of The Open Group.
@@ -35,3 +38,5 @@ FreeNAS®, TrueNAS®, TrueNAS® SCALE, TrueCommand, and all related logos are re
 * VMware® and vCenter® is a registered trademark of VMware, Inc.
 * Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
 * Windows® is a registered trademark of Microsoft Corporation in the United States and other countries.
+
+For more information on copyrights and trademarks see [iXsystems Trademarks](https://www.ixsystems.com/trademarks/).
