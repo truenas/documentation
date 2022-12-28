@@ -25,7 +25,7 @@ A *byte* is made up of eight bits and is the basic measurement for estimating st
 When grouped in twos (2s), fours (4s), or eights (8s) they form *words* or groups of bytes, with the machine used determining the grouping size of these words. 
 The byte is the most basic unit of measure on a machine (or device such as a hard disk drive). 
 Bytes contain 256 permutations of eight binary digits to represent the ASCII characters, such as the letter upper or lower case "A" or an @ or other symbol. 
-A byte can represent any number between zero and 255 Think of a byte as representing the characters stored in them.
+A byte can represent any number between zero and 255. Think of a byte as representing the characters stored in them.
 A byte is represented by the upper case *B* as in kilobytes (KBs), megabytes (MBs), gigabytes (GBs).
 A byte is the basic measurement to estimate how long it takes to exchange (store/retrieve) locally-stored information. 
 Or for the store/retrieve rate, KBps for kilobytes/second, MBps for megabytes/second, GBps for gigabytes/second, etc.
@@ -64,7 +64,7 @@ The lower case *i* in the measurement represents the word binary, so a tebibyte 
 
 It comes down to math and the actual equivalent of 2^10^ which nearly equals 1000 but is actually 1024. Most people accept kilo to represent 1000. 
 As the computer industry grew and change, the measurements of capacity grew along with it making gigabyte and terabyte more common and available but these are not based on binary trees.
-ICE developed a standard to address the discrepency between binary arithmetic and decimal arithmetic. 
+IEC developed a standard to address the discrepency between binary arithmetic and decimal arithmetic. 
 While most people understand megabyte to represent a million, computer manufacturers use megabyte to mean 2^20^ or 1,048,576 bytes when discussing memory but use 1,000,000 bytes when talking about computer storage. 
 This can lead to confusion in the consumer mind when trying to sort out available capacity in their computer systems.
 
