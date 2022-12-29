@@ -66,6 +66,8 @@ Enter `2` to display the Network Settings screen where you set up the host name,
 
 Enter `3` to display the Static Route Settings screen where you can set up any static routes. You can also add static routes in the web UI.
 
+{{< include file="/_includes/AliasOrStaticIP.md" type="page" >}}
+
 ### Configuring Required Network Settings 
 
 First, configure your primary network interface. The IP address assigned by DHCP displays in the Console setup menu screen. You can configure the default gateway, host name, domain and DNS name severs using the Console setup menu but you should use the web UI to configure these settings. Go the **Network** screen.
