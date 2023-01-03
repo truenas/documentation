@@ -1,6 +1,6 @@
 ---
-title: "Adding NextCloud for Media Previews"
-description: "This article provides instructions to configure TrueNAS SCALE and install NextCloud to support hosting a wider variety of media file previews such as HEIC, Mp4 and MOV files."
+title: "Adding Nextcloud for Media Previews"
+description: "This article provides instructions to configure TrueNAS SCALE and install Nextcloud to support hosting a wider variety of media file previews such as HEIC, Mp4 and MOV files."
 weight: 30
 alias: /scale/scaleuireference/apps/nextcloudscale/
 tags:
@@ -11,34 +11,30 @@ tags:
 
 {{< toc >}}
 
-NextCloud is a drop-in replacement for many popular cloud services, including file sharing, calendar, groupware and more. 
+Nextcloud is a drop-in replacement for many popular cloud services, including file sharing, calendar, groupware and more. 
 One of its more common uses for the home environment is serving as a media backup, and organizing and sharing service.
-This procedure demonstrates how to set up NextCloud on TrueNAS SCALE, and configure it to support hosting a wider variety of media file previews, including High Efficiency Image Fromat (HEIC), MP4 and MOV files.
+This procedure demonstrates how to set up Nextcloud on TrueNAS SCALE, and configure it to support hosting a wider variety of media file previews, including High Efficiency Image Fromat (HEIC), MP4 and MOV files.
 The instructions in this article apply to SCALE 22.12.0 and later.
 
 ## Before You Begin
 
-Before using SCALE to install the NextCloud application you need to configure TrueNAS SCALE storage for NextCloud application to use. 
+Before using SCALE to install the Nextcloud application you need to configure TrueNAS SCALE storage for Nextcloud application to use. 
 
 Verify the [local administrator]({{< relref "ManageLocalUsersSCALE.md" >}}) account has sudo permissions enabled.
 
-You also use the SCALE Shell to set the ffmpg binary before you begin the NextCloud installation and configuration.
+Set up an account with Nextcloud if you don't already have one.
 
-Set up an account with NextCloud if you don't already have one.
-
-## Installing NextCloud on SCALE
+## Installing Nextcloud on SCALE
 
 In this procedure you:
 
-1. Add the storage NextCloud uses
+1. Add the storage Nextcloud uses
 
-2. Set up the ffmpg binary
+2. Install the Nextcloud app in SCALE
 
-3. Install the NextCloud app in SCALE
+### Adding Nextcloud Storage
 
-### Adding NextCloud Storage
-
-NextCloud needs a primary dataset for the application (nextcloud), and four datasets, one it uses for the primary data volume (data), a postgres data volume (db) and one as a postgres backup volume (dbbackup), and an one for extra mount path volume (opt). 
+Nextcloud needs a primary dataset for the application (nextcloud), and four datasets, one it uses for the primary data volume (data), a postgres data volume (db) and one as a postgres backup volume (dbbackup), and an one for extra mount path volume (opt). 
 
 SCALE Bluefin creates the **ix-applications** dataset in the pool you set as the application pool when you first go to the **Apps** screen. This dataset is internally managed so you cannot use this as the parent when you create the required Nextcloud datasets.
 
@@ -60,34 +56,13 @@ When finished you should have the **nextcloud** parent dataset with four child d
 
 ![AppsAddNextcloudDatasets](/images/SCALE/22.12/AppsAddNextcloudDatasets.png "Add Nextcloud Storage")
 
-### Set Up the ffmpg Binary
-
-To set the ffmp binary, include `sudo` in the command and enter the admin password. 
-Go to **System > Shell** and enter these six commands:
-
-```
-cd /mnt/tank/nextcloud/opt
-
-sudo wget https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz
-
-tar xvf ffmpeg-release-amd64-static.tar.xz --wildcards \*static/ffmpeg
-
-rm ffmpeg-release-amd64-static.tar.xz
-
-mv ffmpeg-*-static/ bin/
-
-chown root:root bin/ffmpeg
-```
-
-With the ffmpeg binary set you can now install NextCloud on your TrueNAS SCALE.
-
-### Installing NextCloud in SCALE
+### Installing Nextcloud in SCALE
 
 Go to **Apps** to open the **Applications** screen and then click on the **Available Applications** tab. 
 
 1. Set the pool SCALE applications use. 
    
-   If you have not installed an application yet, SCALE opens the **Choose a pool for Apps** dialog. Select the pool where you created the NextCloud datasets from the **Pools** dropdown list and then click **Choose** to set the pool for all applications. 
+   If you have not installed an application yet, SCALE opens the **Choose a pool for Apps** dialog. Select the pool where you created the Nextcloud datasets from the **Pools** dropdown list and then click **Choose** to set the pool for all applications. 
 
    ![AppsChooseAPoolForApps](/images/SCALE/22.02/AppsChooseAPoolForApps.png "Choose a Pool for Apps")
 
