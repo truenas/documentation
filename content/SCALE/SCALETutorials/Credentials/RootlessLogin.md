@@ -5,7 +5,7 @@ weight: 5
 aliases:
 tags:
 - scalelogin
-- scaleusers
+- scaleadmin
 - scale2fa
 - scalessh
 ---
@@ -22,10 +22,10 @@ All users should [create the local administrator account]({{< relref "ManageLoca
 Some screens and UI settings still refer to the root account. These references should change to the administrator account in future release of SCALE.
 {{< /hint >}}
 
-##  About Admin and Root Login and Passwords
+##  About Admin and Root Logins and Passwords
 
-At present, SCALE has both the root and local administrator users and passwords. 
-The local administrator (admin) account performs the same functions and has the same access the root user has. 
+At present, SCALE has both the root and local administrator user logins and passwords. 
+If properly set up, the local administrator (admin) account performs the same functions and has the same access the root user has. 
 
 The root user is no longer the default user so you must add a password to use the root user.
 
@@ -57,10 +57,10 @@ If the root password password is disabled in the UI you cannot use it to gain SS
 To use two-factor authentication with the administrator account (root or admin user) first configure and enable SSH service to allow SSH access, then [configure two-factor authentication]({{< relref "2faSCALE.md" >}}). 
 If you have the root user configured with a password and enable it, you can SSH into the system with the root user. Security best practice is to disable the root user password and only use the local administrator account.
 
-## Rootless Login and TrueCommand
+## Rootless Log In and TrueCommand
 
 At present, rootless log in works with TrueCommand but you need to set up and use an [API key]({{< relref "ManagingAPIKeys.md" >}}). Future releases of TrueCommand should eliminate the need for the API key.
 
 {{< taglist tag="scalelogin" limit="10" >}}
-{{< taglist tag="scaleusers" limit="10" title="Related User Articles" >}}
+{{< taglist tag="scaleadmin" limit="10" title="Related Admin User Articles" >}}
 {{< taglist tag="scalessh" limit="10" title="Related SSH Articles" >}}
