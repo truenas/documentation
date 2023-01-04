@@ -203,7 +203,7 @@ The **Hosts Allow** and **Hosts Deny** fields work together to produce different
 {{< /expand>}}
 
 #### Approving Apple Software Compatibility
-AFP shares are deprecated and not available in SCALE. To customize your SMB share to work with a migraged AFP share or with your MacOS, use the **Advanced Options** settings provided for these uses cases.
+AFP shares are deprecated and not available in SCALE. To customize your SMB share to work with a migrated AFP share or with your MacOS, use the **Advanced Options** settings provided for these uses cases.
 {{< expand "Click here for more information" "v" >}}
 **Time Machine** enables [Apple Time Machine](https://support.apple.com/en-us/HT201250) backups on this share. 
 
