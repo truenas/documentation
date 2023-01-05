@@ -67,7 +67,7 @@ To mount the share in Windows:
 
 2. Click **Connect to a Web site that you can use to store your documents and pictures**.
 
-3. Choose a custom network location on **Where do  you want to create this network location?**, then click **Next**.
+3. Choose a custom network location on **Where do you want to create this network location?**, then click **Next**.
 
 4. Click through the screens until you see **Specify the location of your website**, and enter the URL to the configured WebDAV location  (*IP address*:8080/*Sharename*).
 
