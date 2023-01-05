@@ -71,7 +71,7 @@ To mount the share in Windows:
 
 4. Click through the screens until you see **Specify the location of your website**, and enter the URL to the configured WebDAV location  (*IP address*:8080/*Sharename*).
 
-5. enter the WebDAV user name and password.
+5. Enter the WebDAV user name and password.
 
 6. Click through until you can click **Finish**.
 
