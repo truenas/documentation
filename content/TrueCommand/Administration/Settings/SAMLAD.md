@@ -17,7 +17,7 @@ A SAML configuration requires an Identity Provider (IdP) and Service Provider (S
 
 This article provides instructions for setting up SAML service in TrueCommand and then in Active Directory. 
 
-## Setting up SMAL in TrueCommand
+## Setting up SAML in TrueCommand
 
 1. Log in to your TrueCommand system (i.e., server, container, VM). 
    To access the TrueCommand web interface, enter https://*IP:PORT* where *IP:PORT* is the IP address and port number assigned to your TrueCommand system, into a web browser URL field and then press <kbd>Enter</kbd>. 
