@@ -202,7 +202,8 @@ The **Hosts Allow** and **Hosts Deny** fields work together to produce different
 * If there is both a **Hosts Allow** and **Hosts Deny** list, then allow all hosts on the **Hosts Allow** list. If there is a host not on the **Hosts Allow** and not on the **Hosts Deny** list, then allow it.
 {{< /expand>}}
 
-#### Approving Apple Software Compatibility
+#### Apple Filing Protocol (AFP) Compatibility
+
 AFP shares are deprecated and not available in SCALE. To customize your SMB share to work with a migrated AFP share or with your MacOS, use the **Advanced Options** settings provided for these uses cases.
 {{< expand "Click here for more information" "v" >}}
 **Time Machine** enables [Apple Time Machine](https://support.apple.com/en-us/HT201250) backups on this share. 
