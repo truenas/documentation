@@ -79,8 +79,10 @@ For more information on the **builtin_users** group, go to **Credentials > Local
 Scroll down to the **smbguest** user and click on the name. 
 Click **Edit** to view the **Edit User** screen. The **Auxiliary Group** field displays the **builtin_user** group. 
 {{< /expand >}}
-You can use the group to grant access to all local users on the server or add more groups to fine-tune permissions to large numbers of users. 
-You cannot access SMB shares with user accounts built-in to TrueNAS or those without the **smb** flag.
+You can use the group to grant access to all local users on the server or add more groups to fine-tune permissions to large numbers of users.
+{{< hint info >}} 
+You cannot access SMB shares with the root user, or user accounts built-in to TrueNAS or those without the **smb** flag.
+{{< /hint >}}
 
 {{< expand "Why not just allow anonymous access to the share?" "v" >}}
 Anonymous or guest access to the share is possible, but it is a security vulnerability. 
@@ -128,6 +130,10 @@ If you want to allows users to move through directories within an SMB share with
 
 See [Permissions]({{< relref "PermissionsScale.md" >}}) for more information on editing dataset permissions.
 {{< /expand >}}
+
+{{< hint info >}} 
+You cannot access SMB shares with the root user. Always change SMB dataset ownership to the intended SMB user. 
+{{< /hint >}}
 
 ### Creating the SMB Share
 
@@ -196,8 +202,9 @@ The **Hosts Allow** and **Hosts Deny** fields work together to produce different
 * If there is both a **Hosts Allow** and **Hosts Deny** list, then allow all hosts on the **Hosts Allow** list. If there is a host not on the **Hosts Allow** and not on the **Hosts Deny** list, then allow it.
 {{< /expand>}}
 
-#### Approving Apple Software Compatibility
-AFP shares are deprecated and not available in SCALE. To customize your SMB share to work with a migraged AFP share or with your MacOS, use the **Advanced Options** settings provided for these uses cases.
+#### Apple Filing Protocol (AFP) Compatibility
+
+AFP shares are deprecated and not available in SCALE. To customize your SMB share to work with a migrated AFP share or with your MacOS, use the **Advanced Options** settings provided for these uses cases.
 {{< expand "Click here for more information" "v" >}}
 **Time Machine** enables [Apple Time Machine](https://support.apple.com/en-us/HT201250) backups on this share. 
 
@@ -263,4 +270,4 @@ Mount the volume. `sudo mount_smbfs -I computer_name\share_name /mnt/smb_share`.
 {{< /expand >}}
 
 {{< taglist tag="scalesmb" limit="10" >}}
-{{< taglist tag="scaleafp" limit="10" title="Releated AFP Articles" >}}
+{{< taglist tag="scaleafp" limit="10" title="Related AFP Articles" >}}

@@ -10,6 +10,8 @@ tags:
 
 TrueNAS does not have defined static routes by default but TrueNAS administrators can use the **Static Routes** widget on the **Network** screen to manually enter routes so the router can send packets to a destination network.
 
+{{< include file="/_includes/AliasOrStaticIP.md" type="page" >}}
+
 {{< hint info >}}
 If you have a monitor and keyboard connected to the system you can use the [Console setup menu]({{< relref "SCALE/GettingStarted/Install/ConsoleSetupMenuSCALE.md" >}}) to configure static routes during the installation process, but we recommend using the web UI for all configuration tasks.
 {{< /hint >}}

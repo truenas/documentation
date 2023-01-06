@@ -3,10 +3,10 @@ title: "Cloud Sync Tasks Screens"
 description: "This article provides information on the cloud sync task screens and settings."
 weight: 20
 aliases:
-  - /scale/scaleuireference/dataprotection/cloud-sync-tasks/
+- /scale/scaleuireference/dataprotection/cloud-sync-tasks/
 tags:
- - scalecloud
- - scalebackup
+- scalecloud
+- scalebackup
 ---
 
 {{< toc >}}
@@ -25,11 +25,12 @@ If cloud sync task are not yet configured **No Cloud Sync Tasks configured** dis
 Add opens the **[Add Cloud Sync Task](#add-and-edit-cloud-sync-task-screens)** screen. 
 Each task listed is a link that opens the **[Edit Cloud Sync Task](#add-and-edit-cloud-sync-task-screens)** screen populated with with the settings for that task. Click on the **Description**, **Frequency** or **Next Run** column entry to open the edit task screen.
 
-**State** displays the status of the next cloud sync task. Click on the state for the cloud sync task to display a **Logs** window for that task. Click **Download Logs** to save a copy of the current task logs.
+**State** displays the status of the next cloud sync task. Click on the state for the cloud sync task to display a **Logs** dialog for that task. 
+**Download Logs** saves a copy of the current task logs.
 
 ![CloudSyncTaskStateLogDialog](/images/SCALE/22.02/CloudSyncTaskStateLogDialog.png "Cloud Sync Task State Log")
 
-The <i class="material-icons" aria-hidden="true" title="Run Now">play_arrow</i> **Run Now** icon starts the cloud sync, running outside of the time scheduled in the saved configuration. 
+The <i class="material-icons" aria-hidden="true" title="Run Now">play_arrow</i> **Run Now** icon starts the cloud sync, running outside of the time scheduled in the saved configuration. When doing a dry run, you can close the window and monitor the task using the **Jobs** option on the top toolbar.
 
 The <span class="material-icons">loop</span> **Dry Run** icon performs the same function as the **Dry Run** button on the add and edit configuration screens. It performs a test of the configured settings.
 
@@ -48,7 +49,7 @@ The **Add a backup credential** option on the **Credential** dropdown list opens
 ###  Transfer Settings
 **Transfer** setting options change the 
 
-![AddCloudSyncTaskTransferAndRemote](/images/SCALE/22.02/AddCloudSyncTaskTransferAndRemote.png "Add Cloud Sync Task Transfer and Remote Settings") 
+![AddCloudSyncTaskTransferRemoteSettings](/images/SCALE/22.12/AddCloudSyncTaskTransferRemoteSettings.png "Add Cloud Sync Task Remote Settings") 
 
 | Settings | Description |
 |----------|-------------|
@@ -58,13 +59,12 @@ The **Add a backup credential** option on the **Credential** dropdown list opens
 | **Directory/Files** | Enter or click the <span class="material-icons">arrow_right</span> arrow to the left of <span class="material-icons">folder</span>/mnt and at each dataset until you locate the dataset, directory location you want to send to the cloud for push syncs, or the destination to write to for pull syncs. Be cautious with pull destinations to avoid overwriting existing files. Click the <span class="material-icons">arrow_right</span> arrow to the left of <span class="material-icons">folder</span>/mnt again to collapse the directory tree. |
 
 ### Remote Settings
-The option selected in **Credential** changes settings displayed in the **Remote** settings area or it opens a window with [cloud provider settings](#cloud-storage-provider-window). 
-
-![AddCloudSyncTaskRemoteS3Settings](/images/SCALE/22.02/AddCloudSyncTaskRemoteS3Settings.png "Add Cloud Sync Task Remote S3 Settings") 
+The option selected in **Credential** changes settings displayed in the **Remote** settings area. 
+Use the **Manage Credentials** link to open the **Backup Credentials** screen where you can add a new provider credential using the **Cloud Credentials** widget.
 
 | Settings | Description |
 |----------|-------------|
-| **Credential** | Select either **Add a backup credential** or a backup cloud storage provider credential from the dropdown list. **Add a backup credential** opens the cloud service provider settings window. The **Bucket** setting displays after selecting a credential that uses S3, like **Amazon S3**. TrueNAS automatically validates the selected credential. If you select a credential with invalid authentication settings the system displays an error dialog. Click **Fix Credential** opens the **Credentials > Backup Credentials > Cloud Credentials** configuration screen for that backup credential. |
+| **Credential** | Select an exiting backup cloud storage provider credential from the dropdown list. A **Bucket** setting displays after selecting a credential that uses S3, like **Amazon S3**. TrueNAS automatically validates the selected credential. |
 | **Bucket** | Select the pre-defined bucket S3 to use. |
 | **Folder** | Enter or click the <span class="material-icons">arrow_right</span> arrow to the left of the <span class="material-icons">folder</span> icon and at each directory or folder to reach the storage location to uses for this task. |
 
@@ -80,8 +80,6 @@ The option selected in **Credential** changes settings displayed in the **Remote
 
 ### Advanced Options Settings
 **Advanced Options** settings include settings for advanced users.
-
-![DataProtectionCloudSyncAdd](/images/SCALE/22.02/DataProtectionCloudSyncAdd.png "Creating a Cloud Sync Task") change image
 
 | Settings | Description |
 |----------|-------------|

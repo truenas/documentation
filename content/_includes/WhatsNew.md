@@ -5,6 +5,12 @@ The Documentation Hub has had some changes for the SCALE Bluefin release!
 
 {{< toc >}}
 
+### Updated Search
+
+The Docs Hub has replaced the existing search algorithm with a lunr.js implementation that conducts keyword searches through the entire content.
+Search results display in a separate page.
+The full path to each result is visible, along with a description of the content.
+
 ### Table of Contents for Sections with Nested Articles
 
 New functionality allows generating a list of links and showing the article description for articles that are nested within a documentation section.

@@ -2,9 +2,10 @@
 title: "Devices Screens"
 description: "This article provides information on the **Devices** screen and widget settings and functions."
 weight: 30
-aliases:
+aliases: 
 tags:
 - scaledevices
+- scalesmart
 - scaledisks
 - scalevdevs
 - scalesed
@@ -110,4 +111,6 @@ The system prevents losing existing data by stopping the add operation for the n
 
 {{< taglist tag="scaledevices" limit="10" >}}
 {{< taglist tag="scalevdevs" limit="10" title="Related VDEV Articles" >}}
+{{< taglist tag="scalesmart" limit="10" title="Related S.M.A.R.T. Test Articles" >}}
+{{< taglist tag="scaledisks" limit="10" title="Related Disks Articles" >}}
 {{< taglist tag="scalestorage" limit="10" title="Related Storage Articles" >}}

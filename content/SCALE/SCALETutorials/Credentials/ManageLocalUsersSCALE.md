@@ -1,10 +1,11 @@
 ---
 title: "Managing Users"
-description: "This article provides instructions on adding and managing local user accounts."
+description: "This article provides instructions on adding and managing the administrator and local user accounts."
 weight: 10
 alias: /scale/scaleuireference/credentials/localusers/
 tags:
- - scaleusers
+- scaleusers
+- scalelogin
 ---
 
 {{< toc >}}
@@ -15,6 +16,9 @@ Doing so makes tuning permissions for large numbers of users more efficient.
 
 {{< hint warning >}}
 Only the **root** user account can log in to the TrueNAS web interface until the root user creates an admin user with the same permissions.
+After loggin in as root, TrueNAS alerts you to create the local administrator account.
+
+![RootLoginAlert](/images/SCALE/22.12/RootLoginAlert.png "Root Login Alert") 
 
 As part of security hardening and to comply with Federal Information Processing standards (FIPS), iXsystems plans to completely disable root login in a future release.
 When this occurs, the sign-in screen prompts first-time users to create a new administration account they used in place of the root user.
@@ -31,12 +35,24 @@ To see user accounts, go to **Credentials > Local Users**.
 
 TrueNAS hides all built-in users (except root) by default. Click the toggle **Show Built-In Users** to see all built-in users.
 
-## Creating User Accounts
+## Creating an Admin User Account
+SCALE has implemented rootless login. All systems should create and begin using an admin user as a replacement for the root user. 
+A system warning alert displays until you create the admin user. 
+If you upgraded to a 22.12.0 release instead of installing fresh from an iso file and setting up the admin user in that process, you can create an admin user with this procedure.
 
-{{< expand "Tutorial Video" "v" >}}
-This short video demonstrates adding a local user.
-{{< embed-video name="scaleangelfishlocalusers" >}}
-{{< /expand >}} 
+Go to **Credentials > Local Users** and click **Add**.
+
+Enter the name you want to use for the administrator account.
+
+Enter and confirm the admin user passwords.
+
+Select the **root** and **builtin_administrators** groups on the **Auxiliary Group** dropdown list.
+
+![AddingAdminUserAuxiliaryGroup](/images/SCALE/22.12/AddingAdminUserAuxiliaryGroup.png "Add Admin User to builtin_administrators")
+
+Click **Save**.
+
+## Creating User Accounts
 
 To create a new user, click **Add**.
 

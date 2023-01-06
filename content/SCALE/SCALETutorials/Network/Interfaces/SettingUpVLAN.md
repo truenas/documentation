@@ -18,7 +18,7 @@ To set up a VLAN interface, from the **Network** screen:
 
 1. Click **Add** in the **Interfaces** widget. The **Add Interface** configuration screen displays.
    
-   ![AddInterfaceVLANType](/images/SCALE/22.02/AddInterfaceVLANTypes.png "Add VLAN Interface Settings")
+   ![AddInterfaceVLANType](/images/SCALE/22.02/AddInterfaceVLANType.png "Add VLAN Interface Settings")
 
 2. Select **VLAN** from the **Type** dropdown list. You cannot change the **Type** field value after you click **Apply**.
 

@@ -25,14 +25,14 @@ See [Security Recommendations]({{< relref "Security.md" >}}) for more security c
 
 The **Basic Settings** options display by default when you edit the SSH service. 
 
-![ServicesSSHBasicSettingsGeneralOptions](/images/SCALE/22.02/ServicesSSHBasicSettingsGeneralOptions.png "SSH Basic Settings General Options")
+![ServicesSSHBasicSettingsGeneralOptions](/images/SCALE/22.12/ServicesSSHBasicSettingsGeneralOptions.png "SSH Basic Settings General Options")
 
 **General Options**
 
 | Setting | Description |
 |---------|-------------|
 | **TCP Port** | Enter the port number for SSH connection requests. |
-| **Log in as Root with Password** | Select to allow the root (administration) account to log into TrueNAS with a password. You must set a password for the root user account. Root logins are discouraged! |
+| **Log in as Root with Password** | Select to allow the administrator (root or local administrator) account to log into TrueNAS with a password. You must set and enable a password for the administrator account. Create a local administrator account. Root logins are discouraged! |
 | **Allow Password Authentication** | Select to allow all user accounts to login via SSH and the account password. Leave checkbox clear to disable and require exchanging SSH keypairs for client systems attempting to access this system. Warning: when directory services are enabled, this setting grants access to all users the directory service imported. When disabled, authentication requires keys for all users. This requires [additional SSH client and server setup](http://the.earth.li/~sgtatham/putty/0.55/htmldoc/Chapter8.html). |
 | **Allow Kerberos Authentication** | Select to allow kerberos authentication. Ensure valid entries exist in **Directory Services > Kerberos Realms** and **Directory Services > Kerberos Keytabs** and the system can communicate with the kerberos domain controller before enabling this option. |
 | **Allow TCP Port Forwarding** | Select to allow users to bypass firewall restrictions using the SSH port [forwarding feature](https://www.symantec.com/connect/articles/ssh-port-forwarding). For best security leave this option disabled. |
@@ -40,7 +40,7 @@ The **Basic Settings** options display by default when you edit the SSH service.
 ### SSH Advanced Settings Options
 **Advanced Settings** include the **General Options** settings. Advanced settings specify bind interfaces, SFTP settings, ciphers and any additional parameters you want to use.
 
-![ServicesSSHAdvancedSettingsOptions](/images/SCALE/22.02/ServicesSSHAdvancedSettingsOptions.png "SSH Advanced Settings Options")
+![ServicesSSHAdvancedSettingsOptions](/images/SCALE/22.12/ServicesSSHAdvancedSettingsOptions.png "SSH Advanced Settings Options")
 
 | Setting | Description |
 |---------|-------------|

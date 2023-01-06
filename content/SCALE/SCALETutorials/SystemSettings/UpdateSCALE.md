@@ -30,6 +30,10 @@ We recommend updating TrueNAS when the system is idle (no clients connected, no 
 
 Update during scheduled maintenance times to avoid disrupting user activities.
 
+{{< hint warning >}}
+All auxiliary parameters are subject to change between major versions of TrueNAS due to security and development issues. We recommend removing all auxiliary parameters from TrueNAS configurations before upgrading.
+{{< /hint >}}
+
 ![UpdateTrainSCALE](/images/SCALE/22.02/ScaleUpdateTrain.png "Scale Update Train")
 
 ## Automatic

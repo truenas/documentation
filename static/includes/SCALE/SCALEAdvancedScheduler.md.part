@@ -1,6 +1,6 @@
-![AdvancedSchedulerSCALE](/images/SCALE/AdvancedSchedulerSCALE.png "Advanced Scheduler")
+![AddRsyncTaskAdvSched](/images/SCALE/22.12/AddRsyncTaskAdvSched.png "Advanced Scheduler")
 
-Choosing a **Presets** option populatess in the rest of the fields.
+Choosing a **Presets** option populates in the rest of the fields.
 To customize a schedule, enter [crontab](https://www.freebsd.org/cgi/man.cgi?crontab(5)) values for the `Minutes/Hours/Days`.
 
 These fields accept standard [cron](https://www.freebsd.org/cgi/man.cgi?query=cron) values.

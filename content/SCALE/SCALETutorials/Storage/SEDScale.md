@@ -4,7 +4,7 @@ description: "This article covers self-encrypting drives, including supported sp
 weight: 55
 tags:
 - scalessed
-- scalestorage
+- scaledisks
 ---
 
 {{< toc >}}
@@ -230,3 +230,4 @@ If it fails use:
 {{< /expand >}}
 
 {{< taglist tag="scalesed" limit="10" >}}
+{{< taglist tag="scaledisks" limit="10" title="Related Disks Articles" >}}

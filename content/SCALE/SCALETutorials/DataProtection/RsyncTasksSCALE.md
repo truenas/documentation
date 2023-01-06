@@ -20,7 +20,7 @@ The rsync task does not work unless the related system service is turned on.
 To turn the rsync service on, go to **System > Services** and toggle the **Rsync** on.
 To activate the service whenever TrueNAS boots, select the **Start Automatically** checkbox.
 
-![SystemServicesRsyncOn](/images/SCALE/SystemServicesRsyncOnUpdate.png "System Services Rsync On")
+![ServicesRsyncOn](/images/SCALE/22.12/ServicesRsyncOn.png "System Services Rsync On")
 
 Click the <i class="material-icons" aria-hidden="true" title="edit">edit</i> to configure the service on the 
  **Services > RSYNC > Rsync** screen.
@@ -57,7 +57,7 @@ The remote system must have the rsync service activated.
 
 Go to **Data Protection > Rsync Tasks** and click **Add** to open the **Add Rsync Task** configuration screen.
 
-![AddRsyncTaskSourceAndRemoteSettings](/images/SCALE/22.02/AddRsyncTaskSourceAndRemoteSettings.png "Add Rsync Task Source and Remote Settings") 
+![AddRsyncTaskSourceRemoteModule](/images/SCALE/22.12/AddRsyncTaskSourceRemoteModule.png "Add Rsync Task Source and Remote Settings") 
 
 Enter or use the <span class="material-icons">arrow_right</span> to the left of <span class="material-icons">folder</span>**/mnt** to browse to the path to copy.
 
@@ -88,7 +88,7 @@ After adding the rsync module, go to **Data Protection > Rsync Tasks**, and clic
 
 Enter the required information as described in [Creating an Rsync Task](#creating-an-rsync-task) above. 
 
-![AddRsyncTaskSourceAndRemoteSettings](/images/SCALE/22.02/AddRsyncTaskSourceAndRemoteSettings.png "Add Rsync Task Source and Remote Settings") 
+![AddRsyncTaskSourceRemoteModule](/images/SCALE/22.12/AddRsyncTaskSourceRemoteModule.png "Add Rsync Task Source and Remote Settings") 
 
 Select the direction for the rsync task.
 
@@ -172,18 +172,53 @@ After establishing the SSH connection, add the rsync task.
 
 Go to **Data Protection > Rsync Tasks** and click **Add** to open the **Add Rsync Task** configuration screen.
 
-![AddRsyncTaskSSHSettings](/images/SCALE/22.02/AddRsyncTaskSSHSettings.png "Add Rsync Task: SSH Mode")
-
 Enter the required information as described in [Creating an Rsync Task](#creating-an-rsync-task) above. 
 
 Select a **User** account that matches the SSH connection **Username** entry in the **SSH Connections** you set up.
 
 Choose a **Direction** for the rsync task as either **Push** or **Pull** and then define the task **Schedule**.
 
-Next, enter the **Remote Host** IP address or hostname.
-Use the format *username@remote_host* if the username differs on the remote host.
+Provide a **Description** for the rsync task.
 
 Select **SSH** in **Rsync Mode**. The SSH settings fields display.
+
+Choose a connection method from the **Connect using** dropdown list. The following image and fields display if **SSH private key stored in user's home directory** is chosen:
+
+![AddRsyncTaskSourceRemoteSSHDir](/images/SCALE/22.12/AddRsyncTaskSourceRemoteSSHDir.png "Add Rsync Task: SSH Mode")
+
+
+| Setting | Description |
+|---------|-------------|
+| Path | Enter or browse to the path to be copied. |
+| User | Select the user to run the rsync task. The user selected must have permissions to write to the specified directory on the remote host. |
+| Direction | Directs the flow of data to the remote host. Options are **Push** and **Pull**. |
+| Description | Enter a description of the rsync task. |
+| Rsync Mode | Choose to either use a custom-defined remote module of the rsync server or to use an SSH configuration for the rsync task. |
+| Connect using | Use the dropdown list to select. The following fields display when **SSH private key stored in user's home directory** is selected: |
+| Remote Host | Enter the IP address or hostname of the remote system that will store the copy. Use the format `username@remote_host` if the username differs on the remote host. |
+| Remote SSH Port | Enter the SSH Port of the remote system. Default is 22. |
+| Remote Path | Select from options listed. |
+| Validate Remote Path | Set to automatically create the defined **Remote Path** if it does not exist. Checkbox is selected by default. |
+
+If you chose **SSH connection from the keychain**, the following fields display:
+
+![AddRsyncTaskSourceRemoteSSHKeychain](/images/SCALE/22.12/AddRsyncTaskSourceRemoteSSHKeychain.png "Add Rsync Task: SSH Mode")
+
+| Setting | Description |
+|---------|-------------|
+| Path | Enter or browse to the path to be copied. |
+| User | Select the user to run the rsync task. The user selected must have permissions to write to the specified directory on the remote host. |
+| Direction | Directs the flow of data to the remote host. Options are **Push** and **Pull**. |
+| Description | Enter a description of the rsync task. |
+| Rsync Mode | Choose to either use a custom-defined remote module of the rsync server or to use an SSH configuration for the rsync task. |
+| Connect using | Use the dropdown list to select. The following fields display when **SSH SSH connection from the keychain** is selected: |
+| SSH Connection | Select an existing **SSH connection** to a remote system or choose **Create New** to create a new SSH connection. |
+| Remote Path | Select from options listed. |
+| Validate Remote Path | Set to automatically create the defined **Remote Path** if it does not exist. Checkbox is selected by default. |
+
+
+Next, enter the **Remote Host** IP address or hostname.
+Use the format *username@remote_host* if the username differs on the remote host.
 
 Enter the SSH port number in **Remote SSH Port**. By default, **22** is reserved in TrueNAS.
 
@@ -193,12 +228,16 @@ Select **Validate Remote Path** if the remote path location does not exist to cr
 
 Select the schedule to use and configure the remaining options according to your specific needs.
 
-Additional options for the **SSH Rsync Mode**:
+Click **Save**.
+{{< /expand >}}
+
+### Additional Options for Both Module and SSH Rsync Modes:
+
+![AddRsyncTaskSchedOpt](/images/SCALE/22.12/AddRsyncTaskSchedOpt.png "Add Rsync Task Schedule and Other Options Settings")
 
 Clear the **Enabled** checkbox to disable the task schedule without deleting the configuration. 
 You can still run the rsync task by going to **Data Protection > Rsync Tasks** and clicking <i class="fa fa-chevron-right"></i> then the **Run Now** <i class="material-icons" aria-hidden="true" title="play_arrow">play_arrow</i> icon.
 
-Click **Save**.
-{{< /expand >}}
+
 
 {{< taglist tag="scalersync" limit="10" >}}

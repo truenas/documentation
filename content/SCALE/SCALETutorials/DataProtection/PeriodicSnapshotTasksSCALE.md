@@ -5,7 +5,7 @@ weight: 50
 
 {{< toc >}}
 
-Periodic snapshot tasks allow you to schedule creating read-only versions of pools and datasets at a given point in time. You can also configure VMWare Snapshot Integration in the **Periodic Snapshot Tasks** widget.
+A periodic snapshot task allows scheduling the creation of read only versions of pools and datasets at a given point in time.
 
 {{< expand "How should I use snapshots?" "v" >}}
 Snapshots do not make not copies of the data so creating one is quick and if little data changed, they take very little space.

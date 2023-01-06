@@ -38,7 +38,7 @@ It can also be provided with Enterprise-grade support from iXsystems.
 The current major version of CORE/Enterprise is **13.0**.
 The content in this section documents this version.
 Documentation for previous major versions is available in the [Documentation Archive](/archive).
-This includes the [latest 12.0 release notes](_includes/corereleasenotes/12.0/12.0u8.1/).
+This includes the [latest 12.0 release notes](/_includes/corereleasenotes/12.0/12.0u8.1/).
 
 ## Documentation Sections
 

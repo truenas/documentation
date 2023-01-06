@@ -30,12 +30,10 @@ Users can also enter the system [fully-qualified hostname (FQDN)](https://kb.iu.
 Lastly, enter any extra constraints you need for your scenario. 
 The **Extra Constraints** step contains certificate extension options.
 
-| Setting | Description |
-|---------|-------------|
-| **Basic Constraints** | Limits the path length for a certificate chain.|
-| **Authority Key Identifier** | Provides a means of identifying the public key corresponding to the private key used to sign a certificate.|
-| **Key Usage** | Defines the purpose of the public key contained in a certificate.|
-| **Extended Key Usage** | Further refines key usage extensions. |
+* **Basic Constraints** when enabled this limits the path length for a certificate chain.
+* **Authority Key Identifier** when enable provides a means of identifying the public key corresponding to the private key used to sign a certificate.
+* **Key Usage** when enabled defines the purpose of the public key contained in a certificate.
+* **Extended Key Usage** when enabled it further refines key usage extensions.
 
 Review the certificate options. If you want to change something Click **Back** to reach the screen with the setting option you want to change, then click **Next** to advance to the **Confirm Options** step.
 

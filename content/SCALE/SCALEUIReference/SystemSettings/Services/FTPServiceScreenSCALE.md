@@ -24,7 +24,7 @@ Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i
 
 To configure FTP, go to **System Settings > Services** and find **FTP**, then click <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
 
-![FTPBasicSettings](/images/SCALE/22.02/FTPBasicSettings.png "Services FTP Basic Settings General Options")
+![FTPBasicSettings](/images/SCALE/22.12/FTPBasicSettings.png "Services FTP Basic Settings General Options")
 
 | Settings | Description |
 |----------|-------------|
@@ -34,14 +34,13 @@ To configure FTP, go to **System Settings > Services** and find **FTP**, then cl
 | **Login Attempts** | Enter the maximum attempts before client is disconnected. Increase if users are prone to misspellings or typos. |
 | **Notransfer Timeout** | Enter the maximum number of seconds a client is allowed to spend connected, after authentication, without issuing a command which results in creating an active or passive data connection (i.e. sending/receiving a file, or receiving a directory listing). |
 | **Timeout** | Enter the maximum client idle time in seconds before disconnect. Default value is **600** seconds. |
-| Certificate | Select the SSL certificate to use for TLS FTP connections from the dropdown list. To create a certificate, go to **System > Certificates**. |
 
 ## FTP Advanced Settings
 **Advanced Settings** include the **General Options** on the **Basic Settings** configuration screen, and allow you to specify access permissions, TLS settings, bandwidth and other setting to further customize FTP access.
 
 ### Access and TLS Setting Options
 
-![FTPAdvancedSettingsAccessAndTLS](/images/SCALE/22.02/FTPAdvancedSettingsAccessAndTLS.png "Services FTP Advanced Settings Access and TLS Options")
+![FTPAdvancedSettingsAccess](/images/SCALE/22.12/FTPAdvancedSettingsAccess.png "Services FTP Advanced Settings Access Options")
 
 #### Access Settings 
 **Access** settings specify user login, file and directory access permissions.
@@ -57,12 +56,15 @@ For better security, enable TLS when possible (especially when exposing FTP to a
 | **File Permissions** | Select the default permissions for newly created files. |
 | **Directory Permissions** | Select the default permissions for newly created directories. |
 
+![FTPAdvancedSettingsTLS](/images/SCALE/22.12/FTPAdvancedSettingsTLS.png "Services FTP Advanced Settings TLS Options")
+
 #### TLS Settings
 **TLS** settings specify the authentication methods you want to apply and whether you want to encrypt the data you transfer across the Internet.
 
 | Settings | Description |
 |----------|-------------|
-| **Enable TLS** | Select to allow encrypted connections. Requires a certificate (created or imported using **System > Certificates**. |
+| **Enable TLS** | Select to allow encrypted connections. Requires a certificate (created or imported using **System > Certificates**. | 
+| **Certificate** | Select the SSL certificate to use for TLS FTP connections from the dropdown list. To create a certificate, go to **System** > **Certificates**. |
 | **TLS Policy** | Select the policy from the dropdown list of options. Options are **On**, **off**, **Data**, **!Data**, **Auth**, **Ctrl**, **Ctrl + Data**, **Ctrl +!Data**, **Auth + Data** or **Auth +!Data**. Defines whether the control channel, data channel, both channels, or neither channel of an FTP session must occur over SSL/TLS. The policies are described [here](http://www.proftpd.org/docs/directives/linked/config_ref_TLSRequired.html). |
 | **TLS Allow Client Renegotiations** | Select to allow client renegotiations. This option is not recommended. Setting this option breaks several security measures. See [mod_tls](http://www.proftpd.org/docs/contrib/mod_tls.html) for details. |
 | **TLS Allow Dot Login** | If select, TrueNAS checks the user home directory for a <file>.tlslogin</file> file containing one or more PEM-encoded certificates. If not found, the user is prompted for password authentication. |
@@ -80,7 +82,7 @@ For better security, enable TLS when possible (especially when exposing FTP to a
 ### Bandwidth Settings
 **Bandwidth** settings specify the amount of space you want to allocate for local and anonymous user uploads and downloads.
 
-![FTPAdvancedSettingsBandwidth](/images/SCALE/22.02/FTPAdvancedSettingsBandwidth.png "Services FTP Advanced Settings Bandwidth Options")
+![FTPAdvancedSettingsBandwidth](/images/SCALE/22.12/FTPAdvancedSettingsBandwidth.png "Services FTP Advanced Settings Bandwidth Options")
 
 | Settings | Description |
 |----------|-------------|
@@ -92,7 +94,7 @@ For better security, enable TLS when possible (especially when exposing FTP to a
 ### Other Options
 
 
-![FTPAdvancedSettingsOtherOptions](/images/SCALE/22.02/FTPAdvancedSettingsOtherOptions.png "Services FTP Advanced Settings Other Options")
+![FTPAdvancedSettingsOtherOptions](/images/SCALE/22.12/FTPAdvancedSettingsOtherOptions.png "Services FTP Advanced Settings Other Options")
 
 | Settings | Description |
 |----------|-------------|
@@ -103,6 +105,6 @@ For better security, enable TLS when possible (especially when exposing FTP to a
 | **Perform Reverse DNS Lookups** | Select to allow performing reverse DNS lookups on client IPs. Causes long delays if reverse DNS isn't configured. |
 | **Masquerade Address** | Enter a public IP address or host name. Set if FTP clients cannot connect through a NAT device. |
 | **Display Login** | Enter a message that displays to local login users after authentication. Anonymous login users do not see this message. |
-| **Auxiliary Parameters** | Used to add additional [proftpd(8](https://linux.die.net/man/8/proftpd) parameters. |
+| **Auxiliary Parameters** | Used to add additional [proftpd(8)](https://linux.die.net/man/8/proftpd) parameters. |
 
 {{< taglist tag="scaleftp" limit="10" >}}

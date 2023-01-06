@@ -7,10 +7,12 @@ tags:
 - corecommunityguides
 ---
 
-TrueNAS includes the ability to run OpenVPN.  This is a short tutorial to configure the OpenVPN client on TrueNAS 12.0.
+TrueNAS includes the ability to run OpenVPN.
+This is a short tutorial to configure the OpenVPN client on TrueNAS 12.0.
 
 {{< hint info >}}
-Many VPN services are provided by 3rd parties that are unaffiliated with iXsystems. Please verify compatibility and pricing with your provider before integrating with TrueNAS.
+Many VPN services are provided by 3rd parties that are unaffiliated with iXsystems.
+Please verify compatibility and pricing with your provider before integrating with TrueNAS.
 {{< /hint >}}
 
 {{< toc >}}
@@ -77,63 +79,63 @@ c0224e25d9ed3d2b562e94bed507fcac
 ```
 {{< /expand >}}
 
+## Installing the Certificate Authority
 
-## Installing the CA
+1. Open **System > CA**.
+2. Add a new certificate authority.
+   
+   ![CertAuthorityAdd](/images/UserProvided/CertAuthorityAdd.png "Cert Authority Add")
 
-Open **System > CA**.
+   Give it a name (example: `VPN_CA`) and select **Import CA** as the **Type**.
 
-Add a new certificate.
+   ![CertAuthorityImportCA](/images/UserProvided/CertAuthorityImportCA.png "Cert Authority Import CA")
 
-![CertAuthorityAdd](/images/UserProvided/CertAuthorityAdd.png "Cert Authority Add")
+3. Copy and paste the certificate from the configuration file.
+   The certificate is found between the tags **<ca>** and **</ca>** of the OpenVPN config file.
 
-Give it a name (here VPN_CA) and select "Import CA" as type.
-
-![CertAuthorityImportCA](/images/UserProvided/CertAuthorityImportCA.png "Cert Authority Import CA")
-
-Copy/paste the certificate from the configuration file.
-The certificate can be found between the tags `<ca>` and `</ca>` of the OpenVPN config file.
-
-![CertAuthorityImportCACertificate](/images/UserProvided/CertAuthorityImportCACertificate.png "Cert Authority Import CA Certificate")
+   ![CertAuthorityImportCACertificate](/images/UserProvided/CertAuthorityImportCACertificate.png "Cert Authority Import CA Certificate")
 
 ## Installing the Certificate
 
-Open **System > Certificate**.
+1. Open **System > Certificate**.
+2. Add a certificate.
+   
+   ![CertificateAdd](/images/UserProvided/CertificateAdd.png "Certificate Add")
 
-Add a certificate.
+3. Give it a name (example: `VPN`) and select **Import Certificate** as the Type.
+4. Copy and paste the certificate found in the OpenVPN config file between the tags **<cert>** and **</cert>**.
+5. Copy and paste the key between the tags **<key>** and **</key>** from the configuration file.
 
-![CertificateAdd](/images/UserProvided/CertificateAdd.png "Certificate Add")
-
-Give it a name (here VPN) and select "Import Certificate" as type.
-Copy and paste the certificate, it can be found in the OpenVPN config file between the tags `<cert>` and `</cert>`.
-Copy and paste the key between the tags `<key>` and `</key>` from the configuration file.
-
-![CertificateAddDetails](/images/UserProvided/CertificateAddDetails.png "Certificate Add Details")
-
-So now we have a CA and a certificate for the VPN connexion as below:
-
-![CertandCAAdded](/images/UserProvided/CertandCAAdded.png "Cert and CA Added")
+   ![CertificateAddDetails](/images/UserProvided/CertificateAddDetails.png "Certificate Add Details")
 
 ## Configure OpenVPN Service
 
-Go to the **Services** page and find the **OpenVPN Client** entry.
-Click the <i class="fa fa-pencil" aria-hidden="true" title="Configure"></i>&nbsp; to configure the service.
+With a CA and Certificate created, we can configure the VPN connection next.
 
-![OpenVPNServiceEdit](/images/UserProvided/OpenVPNServiceEdit.png "OpenVPN Service Edit")
+![CertandCAAdded](/images/UserProvided/CertandCAAdded.png "Cert and CA Added")
 
-Choose the certificate and Root CA we previously installed.
-The rest of the parameters are found in the OpenVPN configuration file.
-In "Additional parameters" you can add options that are in the configuration files, like the TLS key for authentication or user login/password.
+1. Go to the **Services** page and find the **OpenVPN Client** entry.
+2. Click the <i class="fa fa-pencil" aria-hidden="true" title="Configure"></i>&nbsp; to configure the service.
 
-![OpenVPNServiceConfigure](/images/UserProvided/OpenVPNServiceConfigure.png "OpenVPN Service Configure")
+   ![OpenVPNServiceEdit](/images/UserProvided/OpenVPNServiceEdit.png "OpenVPN Service Edit")
 
-## Start the service
+3. Choose the certificate and Root CA previously installed.
+4. Port the remaining parameters found in the OpenVPN configuration file.
+5. **Additional parameters** stores options from the configuration files, like the TLS key for authentication or user login/password.
 
-Start the service (check automatically if needed).
+   ![OpenVPNServiceConfigure](/images/UserProvided/OpenVPNServiceConfigure.png "OpenVPN Service Configure")
 
-![OpenVPNServiceStart](/images/UserProvided/OpenVPNServiceStart.png "OpenVPN Service Start")
+## Start the Service
 
-Test if the connection is working using `curl ifconfig.me` in a terminal for example.  It should give you the IP from the VPN connection and not from your "local" connection, turn the OpenVPN client service on and off to see the difference.
+1. Go to the **Services** page and find the OpenVPN service.
+2. Toggle the service to start it. If desired, select the **Start Automatically** checkbox to have the service start each time the system boots.
 
-Logs of the OpenVPN client can be found in <file>/var/log/messages</file> and <file>/var/log/daemon</file>.
+   ![OpenVPNServiceStart](/images/UserProvided/OpenVPNServiceStart.png "OpenVPN Service Start")
+
+3. Test if the connection is working using `curl ifconfig.me` in a terminal.
+   It returns the IP from the VPN connection and not from the local connection.
+   Turn the OpenVPN client service on and off to see the difference.
+
+Logs of the OpenVPN client are in **/var/log/messages** and **/var/log/daemon**.
 
 {{< taglist tag="corecommunityguides" limit="10" title="Community Guides Articles" >}}

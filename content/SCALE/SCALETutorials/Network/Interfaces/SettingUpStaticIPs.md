@@ -19,6 +19,8 @@ You can lose your TrueNAS connection if you change the network interface that th
 You might need command line knowledge or physical access to the TrueNAS system to fix misconfigured network settings.
 {{< /hint >}}
 
+{{< include file="/_includes/AliasOrStaticIP.md" type="page" >}}
+
 ## Before you Begin
 
 Have the DNS name server addresses and the default gateway for the new IP address, and the new static IP address on hand to prevent lost communication with the server. 
@@ -80,7 +82,7 @@ To change an interface from using DHCP to a static IP address:
 6. Click **Save Changes** to make the change to the static IP address permanent or click **Revert Changes** to discard changes and return to your previous settings.
    The **Save Changes** confirmation dialog displays. Click **SAVE**. The system displays a final confirmation that the change is in effect.
 
-   ![InterfaceStaticIPChangeIsPermanent](/images/SCALE/22.02/InterfaceStaticIPChangeIsPermanent.png "Network Change Made Permanent")
+   ![InterfaceStaticIPChangeIsPermanent](/images/SCALE/22.12/InterfaceStaticIPChangeIsPermanent.png "Network Change Made Permanent")
 
 ## Changing from Static IP to DHCP
 

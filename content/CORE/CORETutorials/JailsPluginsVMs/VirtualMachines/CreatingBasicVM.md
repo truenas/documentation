@@ -17,7 +17,7 @@ tags:
 A Virtual Machine (VM) is an environment on a host computer that can be used as if it were a separate physical computer.
 VMs can be used to run multiple operating systems simultaneously on a single computer.
 Operating systems running inside a VM see emulated virtual hardware rather than the actual hardware of the host computer.
-This provides more isolation than Jails, but a VM will consume more system resources.
+This provides more isolation than Jails, but a VM consumes more system resources.
 
 {{< expand "What system resources do VMs require?" "v" >}}
 A portion of system RAM and a new zvol is assigned to each VM.
@@ -55,7 +55,9 @@ Additional notes:
   Activating a VM that has all available memory allocated to it can slow the host system or prevent other VMs from starting.
 * **AHCI** is the recommended disk type for Windows VMs.
 * **VirtIO** as network interface requires that the chosen guest operating system support VirtIO paravirtualized network drivers.
-
+  {{< expand "VirtIO compatability with Windows 10 21H1" "v" >}}
+  VirtIO drivers are unstable with Windows 10 21H1 during the installation process and can result in VM install failure. Avoid using VirtIO drivers with Windows 10 21H2 Virtual Machines.
+  {{< /expand >}}
 
 ### Adding and Removing Devices
 

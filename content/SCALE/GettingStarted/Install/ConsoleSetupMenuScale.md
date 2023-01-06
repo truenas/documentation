@@ -19,17 +19,19 @@ If the TrueNAS system has a keyboard and monitor, you can use this menu to admin
 By default, TrueNAS does not display the Console setup menu when you connect via SSH or the web shell.
 The root user or another user with root permissions can start the Console setup menu by entering the `/etc/netcli` command.
 
-![ConsoleSetupMenu](/images/SCALE/22.02/ConsoleSetupMenu.png "TrueNAS Console Setup Menu") 
+![ConsoleSetupMenuSCALE](/images/SCALE/22.12/ConsoleSetupMenuSCALE.png "TrueNAS SCALE Console Setup Menu") 
 
 The menu provides these options:
 
-* **1) Configure network interfaces** which provides options to set up network interfaces. These display in the **Global Configuration** widget on the **Network** screen in the web UI.
+* **1) Configure network interfaces** which provides options to set up network interfaces. 
+  These display in the **Global Configuration** widget on the **Network** screen in the web UI.
 
 * **2) Configure network settings** which provides options to set up the network default gateway, host name, domain, IPv4 gateway and the DNS name servers. 
 
 * **3) Configure static routes** which provides options to setup static routes. Not required as part of the initial configuration setup.
 
-* **4) Reset root password** which resets the root user password. This is the password for the `root` user in the CLI and the root user login password for the web UI.
+* **4) Set up local administrator** which resets the local administrator user password. 
+  This is not the password for the `root` user in the CLI or the root user login password for the web UI.
 
 * **5) Reset configuration to defaults** which resets the system configuration settings back to defaults.
 
@@ -44,6 +46,7 @@ The menu provides these options:
 Console setup menu options can change with software updates, service agreements, etc.
 
 {{< hint ok >}}
+
 During boot, TrueNAS attempts to connect to a DHCP server from all live interfaces.
 If it receives an IP address, the Console setup menu displays it under **The web user interface is at:** so you can access the Web UI.
 {{< /hint>}}
@@ -63,9 +66,11 @@ Enter `2` to display the Network Settings screen where you set up the host name,
 
 Enter `3` to display the Static Route Settings screen where you can set up any static routes. You can also add static routes in the web UI.
 
+{{< include file="/_includes/AliasOrStaticIP.md" type="page" >}}
+
 ### Configuring Required Network Settings 
 
-First, configure your primary network interface. The IP address assigned by DHCP displays in the Console setup menu screen. You can configure the default gateway, host name, domain and DNS name severs using the Console setup menu but you should use the web UI to configure these settings. Go the **Network** screen.
+First, configure your primary network interface. The IP address assigned by DHCP displays in the Console setup menu screen. You can configure the default gateway, host name, domain and DNS name severs using the Console setup menu but you should use the web UI to configure these settings. Go to the **Network** screen.
 
 ![ConsoleNetworkConfig1SCALE](/images/SCALE/ConsoleNetworkConfig1SCALE.png "TrueNAS SCALE Console Setup Menu")
 
@@ -81,12 +86,17 @@ To enter the remaining network settings in the web UI, go to **Network > Global 
 
 For home users, use 8.8.8.8 as the DNS nameserver address. This allows you to access the internet using TrueNAS SCALE.
 
-## Changing the Root Password
+## Changing the Administrator Password
 
-Type **2** while in the Console setup menu. Type the new root user password and then re-enter the new password.
+SCALE has implemented rootless login, making the admin user the default account. Change the admin user password in the UI.
 
 {{< hint warning >}}
-Changing the root password disables 2FA (Two-Factor Authentication).
+Disabling a password in the UI prevents the user from logging in with it. If you disable both the root and local admin user passwords and your session times out with them disabled, a temporary sign-in slash screen allows you to log in.
+Immediately go to the **Credentials > Local User** screen, select the admin user and **Edit** to enable the password.
+{{< /hint >}}
+
+{{< hint warning >}}
+Changing the admin user (or root if you have not created the admin user) password disables 2FA (Two-Factor Authentication).
 {{< /hint >}}
 
 ## Resetting the System Configuration
