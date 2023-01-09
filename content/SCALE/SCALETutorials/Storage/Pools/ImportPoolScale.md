@@ -1,10 +1,13 @@
 ---
-title: "Importing Data"
+title: "Importing a Pool"
 description: "This article provides information on ZFS importing for storage pools in TrueNAS SCALE. It also addresses GELI-encrypted pools."
 weight: 25
+aliases:
+- /scale/scaletutorials/storage/datasets/importpoolscale/
 tags:
 - scaleinstall
-- scalestorage
+- scaledisks
+- scaleimport
 - scalepools
 - scalemigrate
 ---
@@ -37,5 +40,5 @@ Since GELI encryption is specific to FreeBSD, TrueNAS SCALE cannot import GELI-e
 See the **Migrating GELI-encrypted Pools to SCALE** section in the [Installing SCALE]({{< relref "SCALE/GettingStarted/Install/InstallingSCALE.md" >}}) article.
 {{< /expand >}}
 
-{{< taglist tag="scalepools" limit="10" >}}
-{{< taglist tag="scalestorage" limit="10" title="Related Storage Articles" >}}
+{{< taglist tag="scaleimport" limit="10" title="Related Import Articles" >}}
+{{< taglist tag="scalepools" limit="10" title="Related Pools Articles" >}}
