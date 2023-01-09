@@ -72,7 +72,8 @@ Displays a start-scrub confirmation dialog. Select **Confirm** to activate the *
 
 ### Expand Pool
 
-Displays the [**Pool Status**](#pool-status-screen) screen which displays the status of the pool, the datasets and the disks for the selected pool. Select the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; to display the options available to datasets and disks.
+Displays the [**Pool Status**](#pool-status-screen) screen which displays the status of the pool, the datasets and the disks for the selected pool. Select the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; to display the options available to datasets and disks. 
+The Expand Pool function can be used to add a new disk to a single-disk stripe pool in order to create or re-create a mirror pool, if the disk capacity of the new disk meets the requirements. 
 
 ## Pool Manager Screen
 
@@ -80,7 +81,7 @@ The **Pool Manager** screen displays after selecting either the **Create new Poo
 
 **Pool Manager** is used to add the initial vdev when you create the pool or want to add to an existing pool. 
 At initial creation you have the option to select the type of vdev for this pool. 
-When accessing **Pool Manager** for an existing pool from the **Pool Actions** dropdown and selecing **Add Vdev**, the pool vdev type is already specified and limits what you can add as a **Data** type vdev. For example, a pool with a mirror vdev requires you to add a minimum of two disks to the existing mirror. 
+When accessing **Pool Manager** for an existing pool from the **Pool Actions** dropdown and selecing **Add Vdev**, the pool vdev type is already specified and limits what you can add as a **Data** type vdev. For example, a pool with a mirror vdev requires you to add a minimum of two disks to the existing mirror. In order to transform a single disk stripe to a mirror, use the [**Expand Pool**](#expand-pool) 
 
 ![CreatePoolScreen](/images/CORE/13.0/CreatePoolScreen.png "Storage Create Pool Screen")
 
