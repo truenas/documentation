@@ -5,7 +5,7 @@ tags:
 - scaleapikeys
 ---
 
-The **API Keys** option on the top toolbar **Settings** dropdown menu displays the **API Keys** screen. This screen displays a list of API keys added to your TrueNAS.
+The **API Keys** option on the top right toolbar **Settings** (user icon) dropdown menu displays the **API Keys** screen. This screen displays a list of API keys added to your TrueNAS.
 
 ![APIKeysScreen](/images/SCALE/APIKeysScreen.png "API Keys Screen")
 
