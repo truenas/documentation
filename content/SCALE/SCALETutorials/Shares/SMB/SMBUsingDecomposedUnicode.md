@@ -7,7 +7,7 @@ tags:
  - scalesmb
 ---
 
-There are normalize forms for a unicode character with diacritical marks: decomposed (NFC) and pre-composed (NFC). 
+There are normalize forms for a unicode character with diacritical marks: decomposed (NFD) and pre-composed (NFC). 
 
 Take for example the character ä (a + umlaut) and the encoding differences between NFC (b'\xc3\xa4') and NFD (b'a\xcc\x88').
 
