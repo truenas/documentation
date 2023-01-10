@@ -198,6 +198,16 @@ Use the **Set font size** slider to increase or decrease the size of the font di
 **Download Logs** downloads the logs to your server.
 {{< /expand >}}
 
+### Delete Application
+
+The **Delete** dialog for stoppped applications includes two confirmation options, a **Confirm** option and a **Delete docker images used by the app** option.
+
+![DeleteStoppedAppDialog](/images/SCALE/22.12/DeleteStoppedAppDialog.png "Delete Application")
+
+**Delete docker images used by the app** deletes the docker image used by the app when you delete the app. If you do not delete the image it remains on the **Manage Docker Images** list until you [deleted it](#delete-image).
+
+**Confirm** activates the **Delete** button.
+
 ## Available Applications
 The **Available Applications** screen displays the widgets for all applications in the **Official** catalog.
 {{< expand "Click Here for More Information" "v" >}}
@@ -257,6 +267,7 @@ The **Manage Docker Images** displays a list of Docker image IDs and tags on the
 ![ApplicationsManageDockerImagesScreen](/images/SCALE/22.02/ApplicationsManageDockerImagesScreen.png "Applications Manage Docker Images")
 
 Use the <span class="material-icons">more_vert</span> to display the options for each Docker image listed. Options are **Update Image** or **Delete**. **Update Image** is only available when the Docker image displays **Update Available**.
+{{< /expand >}}
 
 ### Update Image
 Select **Update** to open the **Choose a tag** dialog. Select the image tag and click **Choose**. 
