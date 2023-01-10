@@ -4,7 +4,8 @@ description: "This article provide information on application screens and settin
 weight: 10
 aliases:
 tags:
- - scaleapps
+- scaleapps
+- scaledocker
 ---
 
 {{< toc >}}
@@ -60,10 +61,10 @@ The **Advanced Settings** option opens the **Kubernetes Settings** configuration
 | **Route v4 Gateway** | Enter the IP address for the route v4 gateway. |
 | **Enable Container Image Updates** | Select to enable updates of the container image. |
 | **Enable GPU support** | Select to enable GPU support. The maximum number of apps that can use an Intel GPU is five. |
-| **Enable Integrated Loadbalancer** | Select to enable the integrated loadbalancer. The default uses servicelb but if disabled, allows using metallb and allows users to speicfy any IP from the local network.  |
-| **Enable Host Path Safety Checks** | Enabled by defualt. TrueNAS SCALE performs safety checks to ensure app host path volumes are secure. |
+| **Enable Integrated Loadbalancer** | Select to enable the integrated loadbalancer. The default uses servicelb but if disabled, allows using metallb and allows users to specify any IP from the local network.  |
+| **Enable Host Path Safety Checks** | Enabled by default. TrueNAS SCALE performs safety checks to ensure app host path volumes are secure. |
 
-**Settings Requiring Re-Initializtion**
+**Settings Requiring Re-Initialization**
 
 ![AppsAdvancedSettingsKubernetesSettingsReInitialization](/images/SCALE/22.02/AppsAdvancedSettingsKubernetesSettingsReInitialization.png "Advanced Settings Kubernetes Settings 2")
 
@@ -231,7 +232,7 @@ The **Official** catalog name is not editable, but you can change the train.
 {{< /expand >}}
 
 ### Refresh Catalog
-Opens a **Refreshing** counter that shows the status of the refresh operation. You can minimze the counter while the process continues.
+Opens a **Refreshing** counter that shows the status of the refresh operation. You can minimize the counter while the process continues.
 
 ### Delete Catalog
 Opens a confirmation dialog before deleting the catalog. The **Official** catalog **Delete** option is inactive. You cannot delete the official catalog.
@@ -263,5 +264,14 @@ Select **Update** to open the **Choose a tag** dialog. Select the image tag and 
 ![AppsUpdateDockerImageChooseATag](/images/SCALE/22.02/AppsUpdateDockerImageChooseATag.png "Update Docker Images Choose A Tag")
 
 After updating the Docker image, the option becomes inactive until a new update becomes available.
+
+### Delete Image
+The **Delete** dialog for images includes a pre-selected radio button for the docker image you selected to delete, a **Confirm** option, and a **Force delete** option.
+
+![AppsManageDockerImageDelete](/images/SCALE/22.12/AppsManageDockerImageDelete.png "Delete Docker Image")
+
+**Confirm** activates the **Delete** button.
+
+**Force delete** adds the force flag to the delete-image operation. Select to avoid issues deleting an image. Issues can occur if the same Docker image is references in two different ways, for example on the Docker hub registry and the Github container registry.
 
 {{< taglist tag="scaleapps" limit="10" >}}

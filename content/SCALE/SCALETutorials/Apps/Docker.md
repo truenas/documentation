@@ -1,12 +1,12 @@
 ---
-title: "Using Docker Image"
-description: "This article provides information on using the Docker image wizard to configure third-party applications in TrueNAS SCALE."
+title: "Using Launch Docker Image"
+description: "This article provides information on using the Launch Docker Image to configure custom or third-party applications in TrueNAS SCALE."
 weight: 25
 aliases: scale/scaleuireference/apps/docker/
 tags:
- - scaleapps
- - scaledocker
- - scalepihole
+- scaleapps
+- scaledocker
+- scaleicharts
 ---
 
 {{< toc >}}
@@ -22,64 +22,78 @@ Kubernetes is a portable, extensible, open-source container-orchestration system
 {{< /expand >}}
 
 Always read through the Docker Hub page for the container you are considering installing so that you know all of the settings that you need to configure.
-To set up a Docker image, first determine if you want the container to use its own dataset. If yes, create a dataset for host volume paths before you click **Launch Docker Image**. 
+To set up a Docker image, first determine if you want the container to use its own dataset. If yes, [create a dataset]({{< relref "DatasetsSCALE.md" >}}) for host volume paths before you click **Launch Docker Image**. 
 
 ## Adding Custom Applications
 
-When you are ready to create a container, open the **APPS** page, select the **Available Applications** tab, and then click **Launch Docker Image**.
+{{< hint warning >}}
+If your application requires directory paths, specific datasets, or other storage arrangements, configure these before you starting the **Launch Docker Image** wizard. 
+
+You cannot interrupt the configuration wizard and save settings to leave and go create data storage or directories in the middle of the process. 
+
+To create directories in a dataset on SCALE use **System Settings > Shell** before you begin installing the container.
+{{< /hint >}}
+
+When you are ready to create a container, go to the **APPS** screen, select the **Available Applications** tab, and then click **Launch Docker Image**.
 
 ![AvailableApplicationsScreen](/images/SCALE/22.02/AvailableApplicationsScreen.png "Available Applications")
 
-Fill in the **Application Name** and click **Next**. Add the github repository URL in **Image Repository** for the docker container are setting up. For example, to add Pi-Hole in **Launch Docker Image** wizard, enter **pihole/pihole** as the [PiHole project](https://hub.docker.com/r/pihole/pihole) image repository on the **Container Image** configuration screen.
+1. Fill in the **Application Name** and the current version information in **Version**. 
+   Add the Github repository URL in **Image Repository** for the docker container are setting up. 
 
-![LaunchDockerImagePiholeContainerImage](/images/SCALE/22.02/LaunchDockerImagePiholeContainerImage.png "Pi-Hole Container Image")
+   ![LaunchDockerImageAppNameVerContainerImage](/images/SCALE/22.12/LaunchDockerImageAppNameVerContainerImage.png "Launch Docker Image")
 
-Click **Next** to move to the **Container Environment Variables**. Not all applications use environment variables. Check the Docker Hub for details on the application you want to install to verify which variables are required for that particular application. 
-For Pi-Hole, click **Add** then enter **TZ** for timezone, and then **America/NewYork** for the value. And click **Add** again to enter the second required variable **WEBPASSWORD** with a secure password like the exaple used, *s3curep4$$word*. 
+2. Enter the Github repository for the application you want to install in **Image Repository**. 
+   If the application requires it, enter the correct setting values in **Image Tag** and select the **Image Pull Policy** to use. 
 
-![LaunchDockerImagePiHoleContainerEnvironmentVariables](/images/SCALE/22.02/LaunchDockerImagePiHoleContainerEnvironmentVariables.png "SCALE Apps Container Settings")
+   If the application requires it, enter the executables you want or need to run after starting the container in **Container Entrypoint**. Click **Add** for **Container CMD** to add a command, or for **Container Arg** to add a container argument.
 
-Click **Next** to advance to each of the **Launch Docker Image** configuration screens. Enter information required for the application you are adding on each screen that requires input.
+   ![LaunchDockerImageAddContainerEntrypoints](/images/SCALE/22.12/LaunchDockerImageAddContainerEntrypoints.png "Add Container Entrypoints")
 
-When you reach **Networking**, if the container needs special networking configuration, enter it here. Click **Next** to open **Port Forwarding** to add ports. Click **Add** for each port you need to enter. 
-The PiHole Docker Hub page lists a set of four ports and the node port you need to set. Adjust these values if your system configuration requires changes. TrueNAS SCALE requires setting all **Node Ports** above 9000. 
+3. Enter the **Container Environment Variables**. Not all applications use environment variables. 
+   Check the Docker Hub for details on the application you want to install to verify which variables are required for that particular application. 
 
-![LaunchDockerImagePiHolePortForwarding](/images/SCALE/22.02/LaunchDockerImagePiHolePortForwarding.png "Pi-Hole Port Forwarding List")
+   ![LaunchDockerImageAddContainerEnvironmentVariables](/images/SCALE/22.12/LaunchDockerImageAddContainerEnvironmentVariables.png "Add Container Environmental Variables")
 
-Click **Next** after configuring all the ports to open **Storage**. 
-Click **Add** for each host path you need to enter for the application. Pi-Hole uses two blocks of host path settings. 
+4. Enter the networking settings. 
 
-{{< hint warning >}}
-If your application requires directory paths, specific dataset, or storage arrangements, configure these before you starting the **Launch Docker Image** wizard. 
-You cannot interrupt the configuration wizard and save settings to leave and go create data storage or directories in the middle of the process. 
-You need to create these directories in a dataset on SCALE using **System Settings > Shell** before you begin installing this container.
-{{< /hint >}}
+   a. Enter the external network interface to use. 
+      Click **Add** to display the **Host Interface** and **IPAM Type** fields required when setting up networking. 
 
-![LaunchDockerImagePiHoleStorageHostPaths](/images/SCALE/22.02/LaunchDockerImagePiHoleStorageHostPaths.png "Storage Pi-Hole Host Path Volumes")
+      ![LaunchDockerImageAddNetworking](/images/SCALE/22.12/LaunchDockerImageAddNetworking.png "Add Networking")
 
-You can add more volumes to the container later if they are needed. 
+   b. Scroll down to select the **DNS Policy** and enter any DNS configuration settings required for your application. 
+      
+      ![LaunchDockerImageAddDNS](/images/SCALE/22.12/LaunchDockerImageAddDNS.png "Add DNS Policy and Settings")
 
-Click **Next** to move through the configuration screens, entering settings where required for your application. 
+5. Enter the **Port Forwarding** settings. 
+   Click **Add** for each port you need to enter. TrueNAS SCALE requires setting all **Node Ports** above 9000. 
 
-When you reach **Confirm Options**. Verify the the information on the screen and click **Save**. 
+   ![LaunchDockerImageAddPortForwarding](/images/SCALE/22.12/LaunchDockerImageAddPortForwarding.png "Add Port Forwarding")
 
-![LaunchDockerImagePiHoleConfirmOptions](/images/SCALE/22.02/LaunchDockerImagePiHoleConfirmOptions.png "PiHole Confirm Options")
+   Enter the required **Container Port** and **Node Port** settings, and select the protocol to use for these ports. Repeat for each port you need to add.
 
-TrueNAS SCALE deploys the container.
-If correctly configured, the application widget displays on the **Installed Applications** screen.
+6. Add the **Storage** settings. 
+   Click **Add** for each host path you need to enter for the application. Add any memory-backed or other volumes you want to use.
 
-When the deployment is completed the container becomes active. If the container does not autostart, click **Start** on the widget.
+   ![LaunchDockerImageAddStorage](/images/SCALE/22.12/LaunchDockerImageAddStorage.png "Add Storage Paths and Volumes")
 
-![PiHoleWidget](/images/SCALE/22.02/PiHoleWidget.png "SCALE App Active")
+   You can add more volumes to the container later if they are needed. 
 
-Clicking on the App card reveals details.
+7. Enter any additional settings required for your application. Such as workload details or adding container settings for your application. 
 
-![SCALE App Status](/images/SCALE/AppsPiHoleStatus.png "SCALE App Status")
+   Select the **Update Strategy** to use. Default is to **Kill existing pods before creating new ones**.
 
-With PiHole as our example we navigate to the IP of our TrueNAS system with the port and directory address `:9080/admin/`.
+   Set any resource limits you want to impose on this application.
 
-![PiHoleRunning](/images/SCALE/AppsPiHoleRunning.png "PiHole Running")
+8. Enter or select any **Portal Configuration** settings to use.
 
+9. Click **Save** to complete the configuration and deployment. TrueNAS SCALE deploys the container. 
+   If correctly configured, the application widget displays on the **Installed Applications** screen.
+
+   When complete, the container becomes active. If the container does not automatically start, click **Start** on the widget.
+
+Click on the App card reveals details.
 
 ###  Defining Container Settings
 Define any [commands and arguments](https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/) to use for the image.
@@ -87,10 +101,10 @@ These can override any existing commands stored in the image.
 
 You can also [define additional environment variables](https://kubernetes.io/docs/tasks/inject-data-application/define-environment-variable-container/) for the container.
 Some Docker images can require additional environment variables.
-Be sure to check the documentation for the image you're trying to deploy and add any required variables here.
+Be sure to check the documentation for the image you are trying to deploy and add any required variables here.
 
 ### Defining Networking
-To use the system IP address for the container, set *Host Networking*.
+To use the system IP address for the container, set Docker [Host Networking](https://docs.docker.com/network/host/).
 The container is not given a separate IP address and the container port number is appended to the end of the system IP address.
 See the [Docker documentation](https://docs.docker.com/network/host/) for more details.
 
@@ -103,27 +117,28 @@ See the Docker [DNS services documentation](https://docs.docker.com/config/conta
 
 ### Defining Port Forwarding List
 Choose the protocol and enter port numbers for both the container and node.
-Multiple port forwards can be defined.
-The node port number must be over *9000*.
+You can define multiple port forwards.
+{{< hint info >}}
+The node port number must be over **9000**.
 Make sure no other containers or system services are using the same port number.
+{{< /hint >}}
 
 ### Defining Host Path Volumes
-Scale storage locations can be mounted inside the container.
-To mount Scale storage, define the path to the system storage and the container internal path for the system storage location to appear.
-You can also mount the storage as read-only to prevent the container from being used to change any stored data.
+You can mount SCALE storage locations inside the container.
+To mount SCALE storage, define the path to the system storage and the container internal path for the system storage location to appear.
+You can also mount the storage as read-only to prevent using the container to change any stored data.
 For more details, see the [Kubernetes hostPath documentation](https://kubernetes.io/docs/concepts/storage/volumes/#hostpath).
 
 ### Defining Other Volumes
 Users can create additional Persistent Volumes (PVs) for storage within the container.
-PVs consume space from the pool chosen for Application management.
+PVs consume space from the pool chosen for application management.
 You need to name each new dataset and define a path where that dataset appears inside the container.
 
-To view created container datasets, go to **Storage** and expand the pool used for applications.
-Expand **/ix-applications/releases/<ContainerName>/volumes/ix-volumes/**.
+To view created container datasets, go to **Datasets** and expand the dataset tree for the pool you use for applications.
 
 ### Setting Up Persistent Volume Access
 
-Users developing applications should be mindful that if an application uses Persistent Volume Claims (PVC), those datasets won't be mounted on the host, and therefore are not accessible within a file browser. This is upstream zfs-localpv behavior which is being used for managing PVC(s)
+Users developing applications should be mindful that if an application uses Persistent Volume Claims (PVC), those datasets are not mounted on the host, and therefore are not accessible within a file browser. This is upstream zfs-localpv behavior used for managing PVC(s)
 
 If you want to consume or have file browser access to data that is present on the host, set up your custom application to use host path volumes.
 
@@ -153,4 +168,3 @@ To access container shell: `k3s kubectl exec -n <NAMESPACE> --stdin --tty <POD> 
 {{< /expand >}}
 
 {{< taglist tag="scaledocker" limit="10" >}}
-{{< taglist tag="scaleapps" limit="10" title="Related Apps Articles" >}}
