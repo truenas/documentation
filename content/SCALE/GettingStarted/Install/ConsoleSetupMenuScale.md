@@ -70,7 +70,7 @@ Enter `3` to display the Static Route Settings screen where you can set up any s
 
 ### Configuring Required Network Settings 
 
-First, configure your primary network interface. The IP address assigned by DHCP displays in the Console setup menu screen. You can configure the default gateway, host name, domain and DNS name severs using the Console setup menu but you should use the web UI to configure these settings. Go the **Network** screen.
+First, configure your primary network interface. The IP address assigned by DHCP displays in the Console setup menu screen. You can configure the default gateway, host name, domain and DNS name severs using the Console setup menu but you should use the web UI to configure these settings. Go to the **Network** screen.
 
 ![ConsoleNetworkConfig1SCALE](/images/SCALE/ConsoleNetworkConfig1SCALE.png "TrueNAS SCALE Console Setup Menu")
 
