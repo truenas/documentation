@@ -39,7 +39,7 @@ When you are ready to create a container, go to the **APPS** screen, select the 
 ![AvailableApplicationsScreen](/images/SCALE/22.02/AvailableApplicationsScreen.png "Available Applications")
 
 1. Fill in the **Application Name** and the current version information in **Version**. 
-   Add the Github repository URL in **Image Repository** for the docker container are setting up. 
+   Add the Github repository URL in **Image Repository** for the docker container you are setting up. 
 
    ![LaunchDockerImageAppNameVerContainerImage](/images/SCALE/22.12/LaunchDockerImageAppNameVerContainerImage.png "Launch Docker Image")
 
