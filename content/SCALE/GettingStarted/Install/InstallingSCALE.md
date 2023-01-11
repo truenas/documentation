@@ -320,7 +320,7 @@ The [Console Setup Menu]({{< relref "ConsoleSetupMenu.md" >}}) displays when the
 
 Congratulations, TrueNAS SCALE is now installed!
 
-The next step is to boot up the system and configure SCALE network and general settings with the [Console Setup Menu]]({{< relref "ConsoleSetupMenuScale.md" >}}) so you can log into the web UI.
+The next step is to boot up the system and configure SCALE network and general settings with the [Console Setup Menu]({{< relref "ConsoleSetupMenuScale.md" >}}) so you can log into the web UI.
 
 {{< taglist tag="scaleinstall" limit="10" >}}
 {{< taglist tag="scaleupdate" limit="10" title="Related Update Articles" >}}
