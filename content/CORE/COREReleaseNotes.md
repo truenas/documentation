@@ -22,7 +22,7 @@ aliases:
 
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
-| 13.0-U4 | Release | To be determined |
+| 13.0-U4 | Release | Feb 14, 2023 |
 
 ## 13.0-U3.1
 
