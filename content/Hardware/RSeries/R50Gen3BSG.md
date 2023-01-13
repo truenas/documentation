@@ -1,6 +1,6 @@
 ---
 title: "R50 Gen3 Basic Setup Guide"
-weight: 10
+weight: 15
 ---
 
 <object data="https://www.truenas.com/docs/files/R50BSG3.0.pdf" type="application/pdf" width="95%" height="1000">
