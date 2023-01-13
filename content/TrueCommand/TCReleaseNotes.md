@@ -492,15 +492,10 @@ TrueCommand 2.1 is the single pane of glass for:
 
 | Seen In | Key | Summary | Workaround | Resolved In |
 |---------|-----|---------|------------|-------------|
-| TC 2.3.0 |  |  |  |  |
-
-| TC 2.3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2521" target="_blank">TC-2521</a> | Team showing twice for non-admin user on the Users list  | User screen shows the same team twoice for non-admin user if the system is Bluefin and using rootless login. |  |
-| TC 2.3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2520" target="_blank">TC-2520</a> | Restore Config does not work for Bluefin Systems | Backing up and using Restore on a Bluefin system with rootless login in place did not restart or Restore. |  |
-| TC 2.3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2518" target="_blank">TC-2518</a> | A previously configured block device from a different system is listed in the iSCSI Wizard when creating a new one | Using the iSCSI Wizard in TrueCommand for a second system, the Block Device section lists a previously configured device configured on another system. Do not select the previously created block device to create a new block. System UI changes requested to either list all block devices for all systems or only block devices from the selected system. | Targeted 3.0 |
+| TC 2.3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2521" target="_blank">TC-2521</a> | Team showing twice for non-admin user on the Users list | User screen shows the same team twoice for non-admin user if the system is Bluefin and using rootless login. |  |
 | TC 2.3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2515" target="_blank">TC-2515</a> | License Disk Limit is being ignored and Used Disk is Incorrect | On a system licensed for 51 disks, that has 12 disks in the Used Disks category of the TrueCommand license, user can add a system with 47 disks used in some pools on a TrueNAS-SCAL-22.12.0 release. TrueCommand lists the used disks as 58 which is incorrect, and allows adding the system with no errors. | Unknown |
 | TC 2.3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2508" target="_blank">TC-2508</a> | Teams, systems and groups missing in User after migration from 2.2.2 to 2.3.0 | After migrating from 2.2.2. to 2.3.0, users no longer had Teams, Systems or system Groups assigned. The Teams are and system groups are listed in the Systems/System Groups and Teams areas but no longer assigned under the User. | Targeted 2.3.0 |
 | TC 2.3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2505" target="_blank">TC-2505</a> | Logs UI is missing password change Password and User Delete | When the UI test looks for the last user/edit log, there is no password change. After removing a user, the lots do not include the user/remove. | Unknonwn |
-
 |TC 2.2.2 | <a href="https://ixsystems.atlassian.net/browse/TC-2339" target="_blank">TC-2339</a> | Dashboard System card values for SCALE 22.12 do not populate. | The TrueCommand Dashboard System card values for SCALE 22.12 Bluefin are missing. | Fixed in 2.3.3 |
 
 ## To Download this Release
