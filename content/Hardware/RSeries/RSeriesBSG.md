@@ -1,6 +1,6 @@
 ---
 title: "Basic Setup Guide"
-weight: 10
+weight: 5
 ---
 
 <object data="https://www.truenas.com/docs/files/RSeriesBSG1.32.pdf" type="application/pdf" width="95%" height="1000">
