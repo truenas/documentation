@@ -1,5 +1,5 @@
 ---
-title: TrueCommand 2.2 Release Notes
+title: TrueCommand 2.3 Release Notes
 weight: 5
 aliases:
   - /truecommand/tcreleasenotes/2.2
@@ -58,20 +58,23 @@ This release also fixes issues found with team avatars, adding systems to TrueCo
 
 ## Improvements
 
-*  [TC-1932](https://ixsystems.atlassian.net/browse/TC-1932) Show explicit SMTP errors and employ better UX for testing email connections
-*  [TC-2112](https://ixsystems.atlassian.net/browse/TC-2112) add IP or hostname validator in creating new system
-*  [TC-2251](https://ixsystems.atlassian.net/browse/TC-2251) Allow custom NetBIOS name when configuring AD on Clustering
-*  [TC-2311](https://ixsystems.atlassian.net/browse/TC-2311) Add colored logging support
-*  [TC-2387](https://ixsystems.atlassian.net/browse/TC-2387) Add Google Auth support for 2FA
+*  [TC-1932](https://ixsystems.atlassian.net/browse/TC-1932) Show explicit SMTP errors and employ better UX for testing email connections PD issue created
+*  [TC-2107](https://ixsystems.atlassian.net/browse/TC-2107) Merge realtime-chart and dash-system-status (investigate for docs impact)
+*  [TC-2112](https://ixsystems.atlassian.net/browse/TC-2112) add IP or hostname validator in creating new system (doc best practices?)
+*  [TC-2251](https://ixsystems.atlassian.net/browse/TC-2251) Allow custom NetBIOS name when configuring AD on Clustering (incudle in PD-82?)
+*  [TC-2311](https://ixsystems.atlassian.net/browse/TC-2311) Add colored logging support (internal impact, no docs)
+*  [TC-2387](https://ixsystems.atlassian.net/browse/TC-2387) Add Google Auth support for 2FA (PD issue created)
 *  [TC-2394](https://ixsystems.atlassian.net/browse/TC-2394) Deprecate nas/send\_method APIs related to iSCSI, network and others
 *  [TC-2457](https://ixsystems.atlassian.net/browse/TC-2457) drop in GORM/dependencies and migrate cluster\_tsp table
 *  [TC-2458](https://ixsystems.atlassian.net/browse/TC-2458) migrate alert\_rules table to GORM
 *  [TC-2462](https://ixsystems.atlassian.net/browse/TC-2462) migrate logs and ui\_logs tables to GORM
 *  [TC-2484](https://ixsystems.atlassian.net/browse/TC-2484) Changed randomization from internal util to gofakeit
 *  [TC-2486](https://ixsystems.atlassian.net/browse/TC-2486) Add shares data in \`cluster/list\`
-*  [TC-2489](https://ixsystems.atlassian.net/browse/TC-2489) Add the Gin module and start a separate server with it having Caddy on the top
+*  [TC-2489](https://ixsystems.atlassian.net/browse/TC-2489) Add the Gin module and start a separate server with it having Caddy on the top (docs?)
 *  [TC-2501](https://ixsystems.atlassian.net/browse/TC-2501) Update base dependencies
 *  [TC-2503](https://ixsystems.atlassian.net/browse/TC-2503) fix nil user error on signup
+*  [TC-2506](https://ixsystems.atlassian.net/browse/TC-2506) Incorrect display of storage stats in dash-card
+*  [TC-2512](https://ixsystems.atlassian.net/browse/TC-2512) remove extra newlines from MW log download
 
 ## Bugs
 
@@ -79,6 +82,7 @@ This release also fixes issues found with team avatars, adding systems to TrueCo
 *  [TC-2454](https://ixsystems.atlassian.net/browse/TC-2454)  \`Download Service Provider Metadata\` is not working In Admin SAML
 *  [TC-2477](https://ixsystems.atlassian.net/browse/TC-2477) CA not sticking when set via TrueCommand
 *  [TC-2483](https://ixsystems.atlassian.net/browse/TC-2483) Unable to add system to TrueCommand - support case
+*  [TC-2514](https://ixsystems.atlassian.net/browse/TC-2514) Incorrect stats and chart labels in cluster-card
 
 ## 2.2.2
 {{< expand "2.2.2" "v" >}}
@@ -488,7 +492,16 @@ TrueCommand 2.1 is the single pane of glass for:
 
 | Seen In | Key | Summary | Workaround | Resolved In |
 |---------|-----|---------|------------|-------------|
-|TC 2.2.2 | <a href="https://ixsystems.atlassian.net/browse/TC-2339" target="_blank">TC-2339</a> | Dashboard System card values for SCALE 22.12 do not populate. | The TrueCommand Dashboard System card values for SCALE 22.12 Bluefin are missing. | Unknown |
+| TC 2.3.0 |  |  |  |  |
+
+| TC 2.3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2521" target="_blank">TC-2521</a> | Team showing twice for non-admin user on the Users list  | User screen shows the same team twoice for non-admin user if the system is Bluefin and using rootless login. |  |
+| TC 2.3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2520" target="_blank">TC-2520</a> | Restore Config does not work for Bluefin Systems | Backing up and using Restore on a Bluefin system with rootless login in place did not restart or Restore. |  |
+| TC 2.3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2518" target="_blank">TC-2518</a> | A previously configured block device from a different system is listed in the iSCSI Wizard when creating a new one | Using the iSCSI Wizard in TrueCommand for a second system, the Block Device section lists a previously configured device configured on another system. Do not select the previously created block device to create a new block. System UI changes requested to either list all block devices for all systems or only block devices from the selected system. | Targeted 3.0 |
+| TC 2.3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2515" target="_blank">TC-2515</a> | License Disk Limit is being ignored and Used Disk is Incorrect | On a system licensed for 51 disks, that has 12 disks in the Used Disks category of the TrueCommand license, user can add a system with 47 disks used in some pools on a TrueNAS-SCAL-22.12.0 release. TrueCommand lists the used disks as 58 which is incorrect, and allows adding the system with no errors. | Unknown |
+| TC 2.3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2508" target="_blank">TC-2508</a> | Teams, systems and groups missing in User after migration from 2.2.2 to 2.3.0 | After migrating from 2.2.2. to 2.3.0, users no longer had Teams, Systems or system Groups assigned. The Teams are and system groups are listed in the Systems/System Groups and Teams areas but no longer assigned under the User. | Targeted 2.3.0 |
+| TC 2.3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2505" target="_blank">TC-2505</a> | Logs UI is missing password change Password and User Delete | When the UI test looks for the last user/edit log, there is no password change. After removing a user, the lots do not include the user/remove. | Unknonwn |
+
+|TC 2.2.2 | <a href="https://ixsystems.atlassian.net/browse/TC-2339" target="_blank">TC-2339</a> | Dashboard System card values for SCALE 22.12 do not populate. | The TrueCommand Dashboard System card values for SCALE 22.12 Bluefin are missing. | Fixed in 2.3.3 |
 
 ## To Download this Release
 
