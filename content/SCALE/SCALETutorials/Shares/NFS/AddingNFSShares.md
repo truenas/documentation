@@ -53,6 +53,12 @@ Leave the field empty to allow all systems access to the share.
 
 ### Adjusting Access Permissions
 
+{{< hint warning >}}
+You must set either `Maproot User` and `Maproot Group` OR `Mapall User` and `Mapall Group` to be able to write to an NFS share.
+
+This is due to a known issue, see: [DOCS-3171](https://github.com/truenas/documentation/pull/1280)
+{{< /hint >}}
+
 If you want to tune the NFS share access permissions or define authorized networks, click **Advanced Options**.
 
 ![AddNFSAdvancedOptionsAccessSettings](/images/SCALE/22.12/AddNFSAdvancedOptionsAccessSettings.png "Add NSF Advanced Options Access Settings")
