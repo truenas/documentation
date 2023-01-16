@@ -44,11 +44,11 @@ Select the update strategy you want to use from the **Minio update strategy** dr
 
 Select **Enable Distributed Mode** if you want to set up a cluster of SCALE systems in a distributed cluster. 
 A MinIO in distributed mode allows you to pool multiple drives or TrueNAS SCALE systems (even if they are different machines) into a single object storage server for better data protection in the event of single or multiple node failures because MinIO distributes the drives across several nodes. 
-For more information, see the [Distributed MinIO Quickstart Guide (https://docs.min.io/docs/distributed-minio-quickstart-guide).
+For more information, see the [Distributed MinIO Quickstart Guide](https://docs.min.io/docs/distributed-minio-quickstart-guide).
 
 Configure the **Container Entrypoint** arguments. 
 
-!{AppsMinIOConfigurationArgs}](/images/SCALE/22.12/AppsMinIOConfigurationArgse.png "MinIO Container Entrypoint Arguments")
+![AppsMinIOConfigurationArgs](/images/SCALE/22.12/AppsMinIOConfigurationArgs.png "MinIO Container Entrypoint Arguments")
 
 Click **Add** to the right of **Container Args** twice to add two **Arg** fields. 
 In the first **Arg** field type **server**. 
