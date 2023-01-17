@@ -58,20 +58,20 @@ This release also fixes issues found with team avatars, adding systems to TrueCo
 
 ### Improvements
 
-*  [TC-1932](https://ixsystems.atlassian.net/browse/TC-1932) Show explicit SMTP errors and employ better UX for testing email connections PD issue created
-*  [TC-2107](https://ixsystems.atlassian.net/browse/TC-2107) Merge realtime-chart and dash-system-status (investigate for docs impact)
-*  [TC-2112](https://ixsystems.atlassian.net/browse/TC-2112) add IP or hostname validator in creating new system (doc best practices?)
-*  [TC-2251](https://ixsystems.atlassian.net/browse/TC-2251) Allow custom NetBIOS name when configuring AD on Clustering (incudle in PD-82?)
-*  [TC-2311](https://ixsystems.atlassian.net/browse/TC-2311) Add colored logging support (internal impact, no docs)
-*  [TC-2387](https://ixsystems.atlassian.net/browse/TC-2387) Add Google Auth support for 2FA (PD issue created)
+*  [TC-1932](https://ixsystems.atlassian.net/browse/TC-1932) Show explicit SMTP errors and employ better UX for testing email connections
+*  [TC-2107](https://ixsystems.atlassian.net/browse/TC-2107) Merge realtime-chart and dash-system-status
+*  [TC-2112](https://ixsystems.atlassian.net/browse/TC-2112) add IP or hostname validator in creating new system
+*  [TC-2251](https://ixsystems.atlassian.net/browse/TC-2251) Allow custom NetBIOS name when configuring AD on Clustering
+*  [TC-2311](https://ixsystems.atlassian.net/browse/TC-2311) Add colored logging support
+*  [TC-2387](https://ixsystems.atlassian.net/browse/TC-2387) Add Google Auth support for 2FA
 *  [TC-2394](https://ixsystems.atlassian.net/browse/TC-2394) Deprecate nas/send\_method APIs related to iSCSI, network and others
 *  [TC-2457](https://ixsystems.atlassian.net/browse/TC-2457) drop in GORM/dependencies and migrate cluster\_tsp table
 *  [TC-2458](https://ixsystems.atlassian.net/browse/TC-2458) migrate alert\_rules table to GORM
 *  [TC-2462](https://ixsystems.atlassian.net/browse/TC-2462) migrate logs and ui\_logs tables to GORM
+*  [TC-2476](https://ixsystems.atlassian.net/browse/TC-2476) Show expiration warning dialog once a day
 *  [TC-2484](https://ixsystems.atlassian.net/browse/TC-2484) Changed randomization from internal util to gofakeit
 *  [TC-2486](https://ixsystems.atlassian.net/browse/TC-2486) Add shares data in \`cluster/list\`
-*  [TC-2489](https://ixsystems.atlassian.net/browse/TC-2489) Add the Gin module and start a separate server with it having Caddy on the top (docs?)
-*  [TC-2501](https://ixsystems.atlassian.net/browse/TC-2501) Update base dependencies
+*  [TC-2489](https://ixsystems.atlassian.net/browse/TC-2489) Add the Gin module and start a separate server with it having Caddy on the top
 *  [TC-2503](https://ixsystems.atlassian.net/browse/TC-2503) fix nil user error on signup
 *  [TC-2506](https://ixsystems.atlassian.net/browse/TC-2506) Incorrect display of storage stats in dash-card
 *  [TC-2512](https://ixsystems.atlassian.net/browse/TC-2512) remove extra newlines from MW log download
@@ -82,7 +82,7 @@ This release also fixes issues found with team avatars, adding systems to TrueCo
 *  [TC-2454](https://ixsystems.atlassian.net/browse/TC-2454)  \`Download Service Provider Metadata\` is not working In Admin SAML
 *  [TC-2477](https://ixsystems.atlassian.net/browse/TC-2477) CA not sticking when set via TrueCommand
 *  [TC-2483](https://ixsystems.atlassian.net/browse/TC-2483) Unable to add system to TrueCommand - support case
-*  [TC-2514](https://ixsystems.atlassian.net/browse/TC-2514) Incorrect stats and chart labels in cluster-card
+*  [TC-2514](https://ixsystems.atlassian.net/browse/TC-2514) Incorrect stats and chart labels in cluster-
 
 ## 2.2.2
 {{< expand "2.2.2" "v" >}}
