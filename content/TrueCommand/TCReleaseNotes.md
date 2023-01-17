@@ -46,17 +46,17 @@ This release also fixes issues found with team avatars, adding systems to TrueCo
 
 ## 2.3.0 Change Log
 
-## New Features
+### New Features
 
 *  [TC-2239](https://ixsystems.atlassian.net/browse/TC-2239) cluster details panel
 
-## Epics
+### Epics
 
 *  [TC-1891](https://ixsystems.atlassian.net/browse/TC-1891) Refactor UI
 *  [TC-2302](https://ixsystems.atlassian.net/browse/TC-2302) Unit tests improvements and coverage
 *  [TC-2305](https://ixsystems.atlassian.net/browse/TC-2305) Middleware Logging Improvements
 
-## Improvements
+### Improvements
 
 *  [TC-1932](https://ixsystems.atlassian.net/browse/TC-1932) Show explicit SMTP errors and employ better UX for testing email connections PD issue created
 *  [TC-2107](https://ixsystems.atlassian.net/browse/TC-2107) Merge realtime-chart and dash-system-status (investigate for docs impact)
@@ -76,7 +76,7 @@ This release also fixes issues found with team avatars, adding systems to TrueCo
 *  [TC-2506](https://ixsystems.atlassian.net/browse/TC-2506) Incorrect display of storage stats in dash-card
 *  [TC-2512](https://ixsystems.atlassian.net/browse/TC-2512) remove extra newlines from MW log download
 
-## Bugs
+### Bugs
 
 *  [TC-2438](https://ixsystems.atlassian.net/browse/TC-2438) No team avatars on user page
 *  [TC-2454](https://ixsystems.atlassian.net/browse/TC-2454)  \`Download Service Provider Metadata\` is not working In Admin SAML
@@ -492,8 +492,6 @@ TrueCommand 2.1 is the single pane of glass for:
 
 | Seen In | Key | Summary | Workaround | Resolved In |
 |---------|-----|---------|------------|-------------|
-| TC 2.3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2521" target="_blank">TC-2521</a> | Team showing twice for non-admin user on the Users list | User screen shows the same team twoice for non-admin user if the system is Bluefin and using rootless login. |  |
-| TC 2.3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2515" target="_blank">TC-2515</a> | License Disk Limit is being ignored and Used Disk is Incorrect | On a system licensed for 51 disks, that has 12 disks in the Used Disks category of the TrueCommand license, user can add a system with 47 disks used in some pools on a TrueNAS-SCAL-22.12.0 release. TrueCommand lists the used disks as 58 which is incorrect, and allows adding the system with no errors. | Unknown |
 | TC 2.3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2508" target="_blank">TC-2508</a> | Teams, systems and groups missing in User after migration from 2.2.2 to 2.3.0 | After migrating from 2.2.2. to 2.3.0, users no longer had Teams, Systems or system Groups assigned. The Teams are and system groups are listed in the Systems/System Groups and Teams areas but no longer assigned under the User. | Targeted 2.3.0 |
 | TC 2.3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2505" target="_blank">TC-2505</a> | Logs UI is missing password change Password and User Delete | When the UI test looks for the last user/edit log, there is no password change. After removing a user, the lots do not include the user/remove. | Unknonwn |
 |TC 2.2.2 | <a href="https://ixsystems.atlassian.net/browse/TC-2339" target="_blank">TC-2339</a> | Dashboard System card values for SCALE 22.12 do not populate. | The TrueCommand Dashboard System card values for SCALE 22.12 Bluefin are missing. | Fixed in 2.3.3 |
