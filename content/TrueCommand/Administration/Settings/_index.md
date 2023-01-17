@@ -8,13 +8,13 @@ geekdocCollapseSection: true
 {{< toc >}}
 
 The **Administration** page, available to users with administrator permissions, displays additional system details and offers a variety of TrueCommand configuration options.
-Click the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> Icon and select **Administration** to access the **Administration** page. It is organized into function tabs **About**, **Certificates**, and **Configuration**.
+Click the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> Icon and select **Administration** to access the **Administration** page. It is organized into **About**, **Certificates**, and **Configuration** panes.
 
-{{< tabs "Administration Tabs" >}}
-{{< tab "About" >}}
-The **About** tab contains the current TrueCommand system ID and version, contact information for iXsystems, and license details. 
+![AdministrationAbout](/images/TrueCommand/2.2/Administration.png "Administration Configuration")
 
-![AdministrationAbout](/images/TrueCommand/2.0/TC20AdministrationAbout.png "Administration Configuration")
+## About
+
+The **About** pane contains the current TrueCommand system ID and version, contact information for iXsystems, and license details. 
 
 ### Updating the License
 
@@ -25,17 +25,27 @@ You can also contact iXsystems to upgrade the current license.
 After you upgrade or purchase a new license, you must upload it to TrueCommand.
 Click **Browse…** to open a file browser on your local system.
 Select the new license file to upload and click **UPLOAD LICENSE** to apply the new license to TrueCommand.
-{{< /tab >}}
-{{< tab "Certificates" >}}
-The **Certificates** tab shows the certificates and Certificate Authorities (CAs) TrueCommand uses and has options to upload or import a certificate or CA.
 
-![AdministrationCertificates](/images/TrueCommand/2.0/TC20AdministrationCertificates.png "Administration: Certificates")
+## Certificates
+
+The **Certificates** pane shows the certificates and Certificate Authorities (CAs) TrueCommand uses and has options to upload or import a certificate or CA.
+
+![AdministrationCertificates](/images/TrueCommand/2.2/AdministrationCertificates.png "Administration: Certificates")
 
 Clicking **Browse...** opens a dialog to upload a file from the local system.
 Selecting **Plain text** allows you to copy and paste the raw text instead of uploading a file.
-{{< /tab >}}
-{{< tab "Configuration" >}}
-The **Configuration** tab contains options to configure various features of TrueCommand. The configuration options accessible are: 
+
+## Certificate Authorities
+
+You can add certificate authorities (CAs) to TrueCommand by clicking **IMPORT** in the **Certificate Authorities** pane.
+
+![AdministrationCAs](/images/TrueCommand/2.2/AdministrationCAs.png "Administration: Certificates")
+
+The **CA Import** form allows you to give the CA a name and select if you would like to be in plain text before you upload it.
+
+## Configuration
+
+The **Configuration** pane contains options to configure various TrueCommand features. The configuration options accessible are: 
 
 * General Options
 * SSL Options
@@ -44,11 +54,11 @@ The **Configuration** tab contains options to configure various features of True
 * SAML
 * Telemetry
 
-![Administration About](/images/TrueCommand/2.1/AdministrationConfiguration1.png "Administration: Configuration1")
+Click **CONFIGURE** to change feature settings.
 
-Scroll down to reveal all options on the **Configuration** tab.
+![AdministrationConfiguration](/images/TrueCommand/2.2/AdministrationConfiguration.png "Administration: Configuration1")
 
-After changing any options, click ***SAVE** at the bottom of the tab to save the new system configuration.
+After changing any options, click **SAVE** at the bottom of the window to save the new system configuration.
 To reset fields back to their previous values, click **CANCEL**.
 
 General options include how long TrueCommand stores system statistics and the number of database backups from an iXsystems NAS to store.
@@ -71,6 +81,10 @@ You can select multiple categories.
 
 {{< include file="static/includes/TrueCommand/2.0/TrueCommandLDAP.md.part" markdown="true" >}}
 
+### SAML
+
+The SAML service feature allows users to configure TrueCommand SAML for [Active Directory]({{< relref "SAMLAD.md" >}}) or [Google Admin]({{< relref "SAMLGA.md" >}})
+
 ### Telemetry
 
 TrueCommand reports some (completely anonymous) basic usage telemetry back to iXsystems for product improvement analysis.
@@ -79,5 +93,10 @@ Click the **PREVIEW** button to see what your system is sending.
 
 You can disable telemetry by checking the **Disable Telemetry** box and clicking **SAVE**.
 
-{{< /tab >}}
-{{< /tabs >}}
+## LDAP Servers
+
+Users can configure TrueCommand to use [LDAP servers]({{< relref "LDAPServers.md" >}}) for security and authentication management among connected TruNAS systems.
+
+## LDAP Teams
+
+The **LDAP Teams** pane allows you to add TrueCommand teams to your LDAP server by clicking **JOIN** and selecting a team from the list.

@@ -34,7 +34,7 @@ To configure account details and permissions, open the **Configure** <i class="m
 
 ![UsersList](/images/TrueCommand/2.1/UsersList.png "List of Users")
 
-To edit a user click the edit icon <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
+To edit a user, click the edit icon <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
 
 ![Users Edit](/images/TrueCommand/2.0/UsersEditUser21.png "Users Edit")
 
@@ -44,23 +44,19 @@ There are several different user elements that you can configure, including thei
 
 Users or admins can add personal details about the user on this page. 
 
-To go back to the original contents of the fields, click **RESET FORM** before you click **SAVE CHANGES**.
+To revert to the original field contents, click **RESET FORM** before you click **SAVE CHANGES**.
 
-{{< tabs "User Options Tabs" >}}
-{{< tab "Administrator" >}}
-You can select the **TrueCommand Administrator** checkbox to designate the account as an administrator. 
-{{< /tab >}}
-{{< tab "Change Password" >}}
-You can change the account password by typing the new password into both the **Password** and **Password Confirm** fields. When prompted, enter the user existing password. 
-Click **SAVE CHANGES** to make the change.
-{{< /tab >}}
-{{< tab "Email" >}}
-You can set up or change user email on this screen. If [SMTP]({{< relref "TrueCommand/Alerts/AlertManage.md" >}}) is not set up, an error message displays at the bottom of the screen stating **Failed to send email. Are your SMTP settings configured?**. Admins can click the **CONFIGURE** button to open the SMTP settings window. Before adding a user email, go to **Alert Services** and verify you have set up the SMTP service.
-{{< /tab >}}
-{{< tab "Two Factor Authentication" >}}
-You can set user [Two Factor Authentication]({{< relref "truecommand/tcgettingstarted/useraccounts.md" >}}), which requires they enter a validation code emailed to them after they enter their username, password, and click **SIGN IN** on the login screen.
-{{< /tab >}}
-{{< /tabs >}}
+| Setting | Description |
+|---------|-------------|
+| **Username** | Enter or change the username. |
+| **Full Name** | Enter or change the user full name. |
+| **Title** | Enter or change the user title. |
+| **Email** | Enter or change the user email. If [SMTP]({{< relref "TrueCommand/Alerts/AlertManage.md" >}}) is not set up, an error message displays at the bottom of the screen stating **Failed to send email. Are your SMTP settings configured?**. Admins can click the **CONFIGURE** button to open the SMTP settings window. Before adding a user email, go to **Alert Services** and verify you have set up the SMTP service. |
+| **Phone** | Enter or change the user phone number. |
+| **Two Factor Authentication** | Enables [Two Factor Authentication]({{< relref "truecommand/tcgettingstarted/useraccounts.md" >}}), which requires the user to enter a validation code emailed to them after they enter their username, password, and click **SIGN IN** on the login screen. |
+| **TrueCommand Administrator** | Designates the account as an administrator. |
+| **Password** | New user password. |
+| **Password Confirm** | Confirms new user password. |
 
 ### Joined Teams
 
@@ -127,7 +123,7 @@ To change team members or permissions, click on the edit icon <i class="material
 
 ![Teams Edit](/images/TrueCommand/2.0/TeamsEdit.png "Teams Edit")
 
-You can change a team profile avatar, name, or grant team members permission to create new TrueCommand alert rules by selecting the **Enable alert creation** checkbox.
+You can change a team profile avatar or name or grant team members permission to create new TrueCommand alert rules by selecting the **Enable alert creation** checkbox.
 
 The **Members** section shows which accounts are in the team.
 To add users to the team, click **ADD USER** and select users on the drop-down list.
@@ -138,7 +134,7 @@ Note that individual user account permissions can override team permissions.
 
 ## Deleting Teams
 
-To delete an account details and permissions, open the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and click **Teams**.
+To delete account details and permissions, open the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and click **Teams**.
 On the **Users** page, click the delete icon <i class="material-icons" aria-hidden="true" title="Delete">delete</i> to the right of the user you want to delete.
 A popup displays to confirm Team deletion.
 

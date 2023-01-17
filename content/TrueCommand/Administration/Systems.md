@@ -48,7 +48,7 @@ Click <mat-icon _ngcontent-igf-c221="" role="img" fontset="mdi" class="mat-icon 
 
 {{< expand "Update" "v" >}}
 If the system has **Available** in the **Updates** column, it has system updates ready to apply.
-Click <i class="material-icons" aria-hidden="true" title="Update">update</i>  **Update** on the option menu to open a dialog window with information on the update. 
+Click <i class="material-icons" aria-hidden="true" title="Update">update</i>  **Update** on the options menu to open a dialog window with information on the update. 
 Check the **Confirm** box, then click **OK** to update the system.   
 Click **CANCEL** to close the window without updating.
 
@@ -60,7 +60,7 @@ Use <mat-icon _ngcontent-igf-c221="" role="img" fontset="mdi" class="mat-icon no
 {{< /expand >}}
 
 {{< expand "iSCSI Volumes" "v" >}}
-If a system is configures with iSCSI volumes, click <mat-icon role="img" fontset="mdi" fonticon="mdi-database" class="mat-icon mdi mdi-database mat-icon-no-color" aria-hidden="true"></mat-icon> **iSCSI Volumes** to displays the iSCSI volumes page for the selected server.
+If a system has iSCSI volumes, click <mat-icon role="img" fontset="mdi" fonticon="mdi-database" class="mat-icon mdi mdi-database mat-icon-no-color" aria-hidden="true"></mat-icon> **iSCSI Volumes** to display the iSCSI volumes page for the server.
 
 ![Systems iSCSI Volumes](/images/TrueCommand/2.1/SystemsiSCSIoption.png "Systems iSCSI Volumes")
 {{< /expand >}}
@@ -81,7 +81,7 @@ Click <span class="iconify" data-icon="mdi:database-refresh"></span>  **Config B
 
 ![SystemsConfigBackups](/images/TrueCommand/2.2/SystemsConfigBackups.png "Systems Config Backups")
 
-Click **CREATE BACKUP** to create a new backup of the system configuration.
+Click **CREATE BACKUP** to create a new system configuration backup.
 
 Click <span class="iconify" data-icon="ic:file-download"></span> (**Download**) next to a listed config to download that config locally.
 
@@ -93,7 +93,7 @@ If you want to delete config backups in bulk, click the checkbox next to each co
 {{< /expand >}}
 
 {{< expand "Delete" "v" >}}
-Clicking <i class="material-icons" aria-hidden="true" title="Delete">delete</i>  **Delete** displays a popup window to confirm you want to delete a selected system.
+Click <i class="material-icons" aria-hidden="true" title="Delete">delete</i>  **Delete** to display a popup window and confirm you want to delete a selected system.
 
 ![Systems Delete](/images/TrueCommand/2.0/SystemsDeleteSystem.png "Systems Delete")
 
@@ -122,14 +122,14 @@ After adding all the desired systems to the group, click **CREATE GROUP**.
 Each group has two management options:
 
 {{< expand "Edit" "v" >}}
-Clicking the edit button <i class="material-icons" aria-hidden="true" title="Configure">edit</i> opens a side bar menu.  You can make adjustments to the Group in this manner.  Add or remove systems from the group by using the **Add System** button or the remove <i class="material-icons" aria-hidden="true" title="Delete">delete</i> button.  Click **Save Changes** when finished with your changes to update the group to the new group settings.
+Clicking the edit button <i class="material-icons" aria-hidden="true" title="Configure">edit</i> opens a sidebar menu. You can make adjustments to the Group in this manner. Add or remove systems from the group by using the **Add System** button or the remove <i class="material-icons" aria-hidden="true" title="Delete">delete</i> button. Click **Save Changes** when finished with your changes to update the group to the new group settings.
 
 ![Groups Edit](/images/TrueCommand/2.1/SystemsGroupsEditGroup.png "Groups Edit")
 
 {{< /expand >}}
 {{< expand "Delete" "v" >}}
 
-Clicking the <i class="material-icons" aria-hidden="true" title="Delete">delete</i> button displayss a popup confirmation box to delete a group. 
+Clicking the <i class="material-icons" aria-hidden="true" title="Delete">delete</i> button displays a popup confirmation box to delete a group. 
 
 ![Groups Delete](/images/TrueCommand/2.0/SystemsGroupsDeleteGroup.png "Group Delete")
 {{< /expand >}}
