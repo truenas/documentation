@@ -1,5 +1,5 @@
 ---
-title: "Settings"
+title: "Administration"
 description: "TrueCommand configuration."
 weight: 30
 geekdocCollapseSection: true
