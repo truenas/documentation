@@ -33,7 +33,7 @@ You can customize alert settings for when available applications have updates, c
 
 ![AlertSettingsCertificates](/images/SCALE/22.12/AlertSettingsCertificates.png "Certificates Alert Settings")
 
-You can customize alert settings for when a certificate has expired or is expiring, a certificate parsing fails, a certificate revokes, and the web UI HTTPS certificate setup fails. 
+You can customize alert settings for when a certificate expires, a certificate parsing fails, a certificate revokes, and the web UI HTTPS certificate setup fails. 
 {{< /expand >}}
 
 ### Clustering Alert Settings
