@@ -111,7 +111,7 @@ From the **Alerts** panel, select the <span class="material-icons">settings</spa
 
 Change the **Type** field to **Email** and then populate the **Add Alert Service** form.
 
-![AddAlertServiceEmailScreen](/images/SCALE/22.102/AddAlertServiceEmailScreen.png "Add Email Alert Service")
+![AddAlertServiceEmailScreen](/images/SCALE/22.12/AddAlertServiceEmailScreen.png "Add Email Alert Service")
 
 Add the system email address in the **Email Address** field.
 
