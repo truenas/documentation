@@ -1,7 +1,7 @@
 ---
 title: "Configuring TrueCommand SAML Service for Active Directory"
 description: "This article provides detailed instructions on setting up SAML service in TrueCommand and Active Directory."
-weight: 40
+weight: 45
 tags:
  - tcsaml
 ---
