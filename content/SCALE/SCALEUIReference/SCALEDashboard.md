@@ -1,12 +1,9 @@
 ---
 title: Main Dashboard
-description: "This article provides information on the information cards (widgets) on the **Dashboard** screen and how to customize the display by moving, adding or removing the widgets."
+description: "This article provides information on the main Dashboard information cards (widgets) and includes basic instructions on synchronizing  system server and SCALE time, and customizing the display by moving, adding, or removing the widgets."
 weight: 3
 tags:
- - scalereporting
- - scalepools
- - scalenetwork
- - scaleinterfaces
+- scaletimesync
 ---
 
 {{< toc >}}
@@ -48,7 +45,7 @@ Use **Save** to retain any setting changes you make. Click on the **X** or on an
 Click on the <span class="iconify" data-icon="ic:baseline-assessment"></span> icon to display the report screen that corresponds to that widget. For example, clicking the <span class="material-icons-outlined">assessment</span> icon on the **CPU** widget opens the **Reports > CPU** screen. 
 
 ### System Information Widget
-The **System Information** widget displays general information on the SCALE system.   
+The **System Information** widget displays general information on the SCALE system, and includes a option to syncronize the system server time with TrueNAS SCALE time if they get out of sync.   
 {{< expand "Click here for more information" "v" >}}
 If installed on customer-provided servers the widget displays a generic TrueNAS image. 
 If installed on iXsystems-provided hardware, a picture of the iXsystems hardware displays on the card above the **Updates Available** button. Click on the image to display the **System Enclosure** screen.
@@ -57,6 +54,10 @@ If installed on iXsystems-provided hardware, a picture of the iXsystems hardware
 
 ![DashboardSytemInfoWidget](/images/SCALE/22.02/DashboardSytemInfoWidget.png "System Information Widget for iXsystems Hardware")
 
+If TrueNAS SCALE time gets out of sync with the system server time, the **System Information** widget displays a message and provides a **Synchronize Time** link that executes a time-synchronization operation.
+
+![DashboardSytemInfoWidgetTimeSync](/images/SCALE/22.12/DashboardSytemInfoWidgetTimeSync.png "System Information Widget with Time Sync")
+
 | Field | Description |
 |-------|-------------|
 | **Platform** | Displays **Generic** for customer-provided server and hardware, and a TrueNAS logo displays to the left of the **System Information** fields. <br> Displays the TrueNAS model number for the iXsystems-provided server and hardware, and a picture of the server displays in the area to the left of the fields. |
@@ -64,6 +65,7 @@ If installed on iXsystems-provided hardware, a picture of the iXsystems hardware
 | **HostName** | Displays the host name for the TrueNAS system. Configure the host name i on the **Network > Global Configuration** screen. |
 | **Uptime** | Displays the number of consecutive days and the number of hours and minutes the system has run since the last reboot. |
 | **Updates Available** | Click to display the **System Update** screen. You can also display the **System Update** screen by selecting **System > Updates** on the main menu panel on the left side of the screen. |
+| **Synchronize Time** <span class="material-icons">loop</span> | Executes a time-synchronization operation to bring the system server and TrueNAS SCALE time into alignment when time gets out of sync. Designed to correct time discrepencies within an approximate 24 hour period, but does not correct time that is weeks out of sync, and only displays when the system and SCALE time are out of sync. |
 {{< /expand >}}
 
 ### CPU Widget
@@ -141,5 +143,4 @@ The **TrueNAS Help** widget displays links to the TrueNAS Documentation Site and
 
 Click on each link to open it in a new browser tab.
 
-{{< taglist tag="scalepools" depth="10" title="Related Pools Articles" >}}
-{{< taglist tag="scalenetwork" depth="10" title="Related Network Articles" >}}
+{{< taglist tag="scaletimesync" limit="10" >}}
