@@ -127,7 +127,7 @@ You can change alert settings for when a pool consumes USB disks, a scrub pauses
 
 ![AlertSettingsSystem](/images/SCALE/22.12/AlertSettingsSystem.png "System Alert Settings")
 
-You can customize alert settings for when Admin is overriden, the boot pool is unhealthy, the system dataset has core files, a device slows down pool I/O, NTP health checks fail, and TrueCommand API keys are disabled or need confirmation.
+You can customize alert settings for when the admin user is overriden, the boot pool is unhealthy, the system dataset has core files, a device slows down pool I/O, NTP health checks fail, and TrueCommand API keys are disabled or need confirmation.
 
 You can also change alert settings for when SSH logins fail, the system is not ready for Kdump, the web UI cannot bind to a configured address, TrueCommand fails health checks, the system reboots off schedule, and update are available, failed, or not applied.
 {{< /expand >}}
