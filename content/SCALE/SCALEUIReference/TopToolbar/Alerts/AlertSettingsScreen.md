@@ -138,7 +138,7 @@ You can also change alert settings for when SSH logins fail, the system is not r
 
 ![AlertSettingsTasks](/images/SCALE/22.12/AlertSettingsTasks.png "Task Alert Settings")
 
-You can customize alert settings for when cloud sync tasks, VMWare snapshot creation, login, and deletion, replication, Rsync tasks, scrubs, and snapshot tasks fail in general or due to locked datasets.
+You can customize alert settings for when cloud sync tasks, VMWare snapshot creation, login, and deletion, replication, rsync tasks, scrubs, and snapshot tasks fail in general or due to locked datasets.
 
 You can also change alert settings for when replication, rsync tasks, and scrubs succeed.
 {{< /expand >}}
