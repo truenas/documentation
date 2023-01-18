@@ -65,7 +65,7 @@ If TrueNAS SCALE time gets out of sync with the system server time, the **System
 | **HostName** | Displays the host name for the TrueNAS system. Configure the host name i on the **Network > Global Configuration** screen. |
 | **Uptime** | Displays the number of consecutive days and the number of hours and minutes the system has run since the last reboot. |
 | **Updates Available** | Click to display the **System Update** screen. You can also display the **System Update** screen by selecting **System > Updates** on the main menu panel on the left side of the screen. |
-| **Synchronize Time** <span class="material-icons">loop</span> | Executes a time-synchronization operation to bring the system server and TrueNAS SCALE time into alignment when time gets out of sync. Designed to correct time discrepencies within an approximate 24 hour period, but does not correct time that is weeks out of sync, and only displays when the system and SCALE time are out of sync. |
+| **Synchronize Time** <span class="material-icons">loop</span> | Executes a time-synchronization operation to bring the system server and TrueNAS SCALE time into alignment when time gets out of sync. This operation is not designed to correct time that is weeks out of sync, and only displays when the system and SCALE time are out of sync. |
 {{< /expand >}}
 
 ### CPU Widget

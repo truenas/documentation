@@ -1,13 +1,14 @@
 ---
 title: "Synchronizing System and SCALE Time"
-description: "This article provides instructions on syncronization the system server and TrueNAS SCALE time when both are out of alignment with each other."
+description: "This article provides instructions on syncronizating the system server and TrueNAS SCALE time when both are out of alignment with each other."
 weight: 10
 aliases:
 tags:
 - scaletimesync
 ---
 
-TrueNAS SCALE provides the ability to synchronize SCALE and system server time when they get out of sync with each other. This function is limited to approximately a 24 hour period of time, but is not designed to correct time differences weeks out of alignment.
+TrueNAS SCALE provides the ability to synchronize SCALE and system server time when they get out of sync with each other. 
+This function is not designed to correct time differences weeks out of alignment.
 
 The **System Information** widget on the main **[Dashboard]({{< relref "/SCALE/SCALEUIReference/SCALEDashboard.md" >}})** displays a message and provides an icon button that executes the time-synchronization operation only when SCALE detects a diescrepency between SCALE and system server time.
 
