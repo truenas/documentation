@@ -126,7 +126,7 @@ To change team members or permissions, click on the edit icon <i class="material
 You can change a team profile avatar or name or grant team members permission to create new TrueCommand alert rules by selecting the **Enable alert creation** checkbox.
 
 The **Members** section shows which accounts are in the team.
-To add users to the team, click **ADD USER** and select users on the drop-down list.
+To add users to the team, click **ADD USER** and select users on the dropdown list.
 To remove users from the team, click the **-** (minus) next to the users you want to remove.
 
 You can configure system permissions the same way as individual user system access.
