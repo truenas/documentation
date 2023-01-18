@@ -149,7 +149,7 @@ You can also change alert settings for when replication, rsync tasks, and scrubs
 
 ![AlertSettingsUPS](/images/SCALE/22.12/AlertSettingsUPS.png "UPS Alert Settings")
 
-You can customize alert settings for when the UPS battery is low or needs replacement, the UPS establishes or loses communication, and the UPS is on battery or line power
+You can customize alert settings for when the UPS battery is low or needs replacement, the UPS establishes or loses communication, and the UPS is on battery or line power.
 {{< /expand >}}
 
 ## Alert Warning Levels
