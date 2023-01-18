@@ -34,7 +34,7 @@ After setting up Gmail OAuth authentication, the screen displays **Gmail credent
 | Setting | Description |
 |---------|-------------|
 | **From Email** | The user account email address to use for the envelope From email address. You must first [configure the user account email]({{< relref "SettingUpSystemEmail.md" >}}) in **Credentials > Local Users**. |
-| **From Name** | The friendly name to show in front of the sending email address. Example: *Storage System 01<it@example.com>* |
+| **From Name** | The friendly name to show in front of the sending email address. Example: `StorageSystem01it@example.com` |
 | **Outgoing Mail Server** | Host name or IP address of SMTP server to use for sending this email. |
 | **Mail Server Port** | MTP port number. Typically 25, or use 465 (secure SMTP) or 587 (submission). |
 | **Security** | Select the security option from the dropdown list. Options are **Plain (No Encryption)**, **SSL (Implicit TLS)**, or **TLS (STARTTLS)**. See [email encryption](https://www.fastmail.com/help/technical/ssltlsstarttls.html) for more information on types. |
