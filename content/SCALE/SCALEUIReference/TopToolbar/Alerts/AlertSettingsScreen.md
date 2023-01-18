@@ -1,5 +1,6 @@
 ---
 title: Alert Settings Screen
+description: The Alert Settings screen allows users to set the warning levels and frequencies of alerts.
 weight: 10
 tags:
 - scalealerts
