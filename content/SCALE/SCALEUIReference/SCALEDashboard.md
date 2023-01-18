@@ -1,6 +1,6 @@
 ---
 title: Main Dashboard
-description: "This article provides information on the main Dashboard information cards (widgets) and includes basic instructions on synchronizing  system server and SCALE time, and customizing the display by moving, adding, or removing the widgets."
+description: "This article provides information on the main Dashboard information cards (widgets) and includes basic instructions on synchronizing system server and SCALE time, and customizing the display by moving, adding, or removing the widgets."
 weight: 3
 tags:
 - scaletimesync
