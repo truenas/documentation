@@ -122,7 +122,7 @@ After adding all the desired systems to the group, click **CREATE GROUP**.
 Each group has two management options:
 
 {{< expand "Edit" "v" >}}
-Clicking the edit button <i class="material-icons" aria-hidden="true" title="Configure">edit</i> opens a sidebar menu. You can make adjustments to the Group in this manner. Add or remove systems from the group by using the **Add System** button or the remove <i class="material-icons" aria-hidden="true" title="Delete">delete</i> button. Click **Save Changes** when finished with your changes to update the group to the new group settings.
+Clicking the edit button <i class="material-icons" aria-hidden="true" title="Configure">edit</i> opens a sidebar menu. You can make adjustments to the group in this manner. Add or remove systems from the group by using the **Add System** button or the remove <i class="material-icons" aria-hidden="true" title="Delete">delete</i> button. Click **Save Changes** when finished with your changes to update the group to the new group settings.
 
 ![Groups Edit](/images/TrueCommand/2.1/SystemsGroupsEditGroup.png "Groups Edit")
 
