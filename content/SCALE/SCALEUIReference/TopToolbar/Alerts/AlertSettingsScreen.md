@@ -4,6 +4,7 @@ description: The Alert Settings screen allows users to set the warning levels an
 weight: 10
 tags:
 - scalealerts
+- scaleclustering
 ---
 
 
