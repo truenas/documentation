@@ -32,12 +32,12 @@ The **Certificates** pane shows the certificates and Certificate Authorities (CA
 
 ![AdministrationCertificates](/images/TrueCommand/2.2/AdministrationCertificates.png "Administration: Certificates")
 
-Clicking **Browse...** opens a dialog to upload a file from the local system.
+Click **Browse...** to upload a file from the local system.
 Selecting **Plain text** allows you to copy and paste the raw text instead of uploading a file.
 
 ## Certificate Authorities
 
-You can add certificate authorities (CAs) to TrueCommand by clicking **IMPORT** in the **Certificate Authorities** pane.
+Click **IMPORT** in the **Certificate Authorities** pane to add certificate authorities (CAs) to TrueCommand.
 
 ![AdministrationCAs](/images/TrueCommand/2.2/AdministrationCAs.png "Administration: Certificates")
 
