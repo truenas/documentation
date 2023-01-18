@@ -4,8 +4,8 @@ description: "This article provides information on the data protection periodic 
 weight: 50
 aliases:
 tags:
- - scalesnapshots
- - scalereplication
+- scalesnapshots
+- scalereplication
 ---
 
 {{< toc >}}
@@ -17,13 +17,16 @@ A periodic snapshot task allows scheduling the creation of read only versions of
 
 The **Periodic Snapshot Task** widget displays a list of tasks configured on the system.
 
-![PeriodicSnapshotTaskWidget](/images/SCALE/22.02/PeriodicSnapshotTaskWidget.png "Periodic Snapshot Task Widget") 
+![PeriodicSnapshotTasksWidget](/images/SCALE/22.12/PeriodicSnapshotTasksWidget.png "Periodic Snapshot Task Widget") 
 
 If a periodic snapshot task is not yet configured **No Periodic Snapshot Task configured** displays in the widget.
 
-![PeriodicSnapshotTaskWidgetNoTasks](/images/SCALE/22.02/PeriodicSnapshotTaskWidgetNoTasks.png "No Periodic Snapshot Tasks")
+![PeriodicSnapshotTaskWidgetNoTasks](/images/SCALE/22.12/PeriodicSnapshotTaskWidgetNoTasks.png "No Periodic Snapshot Tasks")
 
 **Add** opens the **[Add Periodic Snapshot Task](#add-and-edit-periodic-snapshot-screens)** screen. 
+
+**VMware Snapshot Integration** opens the **[VMware Snapshots]({{< relref "VMwareSnapshotsScreen.md" >}})** screen. 
+**Snapshots** opens the **[Snapshots]({{< relref "SnapshotsScreens.md" >}})** screen.
 
 Each task listed is a link that opens the **[Edit Periodic Snapshot Task](#add-and-edit-periodic-snapshot-screens)** screen populated with with the settings for that task. Click on the **Description**, **Frequency**, or **Next Run** column entry to open the edit task screen.
 
