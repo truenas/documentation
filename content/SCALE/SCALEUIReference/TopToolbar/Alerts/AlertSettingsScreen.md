@@ -107,7 +107,7 @@ You can customize alert settings for when collectd has critical alerts and warni
 
 You can customize alert settings for when a deprecated service is running, IP addresses bound to an iSCSI portal are not found, NFS services cannot bind to specific IP addresses using 0.0.0.0, and the system cannot resolve NFS share references hosts.
 
-You can also customize alerts for when NTLMv1 authentication has attempted in the last 24 hours, SMB1 connections to TrueNAS server have performed in the last 24 hours, and a share is unavailable because it uses a locked dataset.
+You can also customize alerts for when NTLMv1 attempts authentication in the last 24 hours, SMB1 connections to TrueNAS server are performed in the last 24 hours, and a share is unavailable because it uses a locked dataset.
 {{< /expand >}}
 
 ### Storage Alert Settings
