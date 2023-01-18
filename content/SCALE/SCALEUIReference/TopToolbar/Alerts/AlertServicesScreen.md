@@ -1,5 +1,6 @@
 ---
 title: Alert Services Screens
+description: The Alert Services screen allows users to create and modify services that generate alerts for TrueNAS.
 weight: 20
 tags:
 - scalealerts
