@@ -37,7 +37,7 @@ You can customize alert settings for when a certificate has expired or is expiri
 {{< /expand >}}
 
 ### Clustering Alert Settings
-**Clustering** alert settings apply to TrueNAS SCALE clusters you create in [TrueCommand]({{< relref "\TrueCommand\TCGettingStarted\_index.md" >}}).
+**Clustering** alert settings apply to TrueNAS SCALE clusters you create in TrueCommand.
 {{< expand "Click here for more information" >}}
 
 ![AlertSettingsClustering](/images/SCALE/22.12/AlertSettingsClustering.png "Clustering Alert Settings")
