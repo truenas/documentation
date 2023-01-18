@@ -40,7 +40,7 @@ Click **RESET** to clear the form and reset values to the previously saved setti
 {{< /expand >}}
 
 {{< expand "Users and Groups" "v" >}}
-Click <mat-icon _ngcontent-igf-c221="" role="img" fontset="mdi" class="mat-icon notranslate mdi mdi-account-group mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" data-mat-icon-name="mdi-account-group" data-mat-icon-namespace="mdi"></mat-icon>  **Users and Groups** to display the list of users or groups for the selected system.
+Click <mat-icon _ngcontent-igf-c221="" role="img" fontset="mdi" class="mat-icon notranslate mdi mdi-account-group mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" data-mat-icon-name="mdi-account-group" data-mat-icon-namespace="mdi"></mat-icon> **Users and Groups** to display the list of users or groups for the selected system.
 
 ![Systems Users and Groups](/images/TrueCommand/2.1/SystemsUsersAndGroups.png "Systems Users and Groups")
 {{< /expand >}}
