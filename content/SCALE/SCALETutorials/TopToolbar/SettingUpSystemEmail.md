@@ -1,8 +1,10 @@
 ---
 title: "Setting Up System Email"
+description: "This article provides instructions on configuration email using SMTP or GMail OAuth, and setting up the email alert service in SCALE."
 weight: 40
 tags:
 - scaleemail
+- scalealerts
 aliases:
  - /scale/gettingstarted/scalesystememail/
 ---
@@ -14,18 +16,18 @@ Alert events are also emailed to the root user account.
 Configure the system to send these emails to the administrator remote email account for fast awareness and resolution of any critical issues.
 
 {{< hint info >}}
-[Scrub Task]({{< relref "/SCALE/SCALETutorials/DataProtection/ScrubTasksSCALE.md" >}}) issues and [S.M.A.R.T. reports]({{< relref "/SCALE/SCALETutorials/DataProtection/SMARTTestsSCALE.md" >}}) are mailed separately to the address configured in those services.
+[Scrub Task]({{< relref "ScrubTasksSCALE.md" >}}) issues and [S.M.A.R.T. reports]({{< relref "SMARTTestsSCALE.md" >}}) are mailed separately to the address configured in those services.
 {{< /hint >}}
 ## Setting up User Accounts
 
 Configure the email address for the system root user as part of your initial system setup. 
 You can also configure email addresses for additional user accounts as needed.
 
-### Configuring the Root User Email Address
+### Configuring the Adminstration User Email Address
 
-Before configuring anything else, set the root account email address.
+Before configuring anything else, set the local administrator account email address.
 {{< expand "Click here for instructions" "v" >}}
-Go to **Credentials > Local Users**, select the  click <span class="material-icons">expand_more</span> to expand the root user information. Select **Edit** to display the **Edit User** configuration screen.
+Go to **Credentials > Local Users**, select the  click <span class="material-icons">expand_more</span> to expand the admin user information. Select **Edit** to display the **Edit User** configuration screen.
 In the **Email** field, enter a remote email address that the system administrator regularly monitors (like *admin@example.com*) and click **Save**.
 {{< /expand >}}
 ### Configuring User Email
@@ -48,32 +50,36 @@ The **Email** screen configuration options change based on the selected option.
 
 After configuring the send method, click **Send Test Mail** to verify the configured email settings are working.
 If the test email fails, verify that the root user **Email** field is correctly configured for the root user. 
-Return to **Credentials > Users** to select the [root user](#configuring-the-root-user-email-address).
+Return to **Credentials > Users** to select the [admin user](#configuring-the-administration-user-email-address).
 
 ### Setting Up Email Using GMail OAuth
 The **Email** screen displays with **GMail OAuth** preselected as the default send method.
 {{< expand "Click here for more information" "v" >}}
 To use the **GMail OAuth** send method:
 
-![AlertEmailScreen](/images/SCALE/22.02/AlertEmailScreen.png "Alert Email Screen")
+Click the **GMail OAuth** radio button.
+
+![EmailGmailOAuthConfigurationScreen1](/images/SCALE/22.12/EmailGmailOAuthConfigurationScreen1.png "Email Gmail OAuth Screen")
 
 Click on **Log In To GMail**. 
 
-The GMail **Authorization** window displays. 
+The GMail **Authorization** window opens. 
 
-![EmailGmailAuthorization](/images/SCALE/22.02/EmailGmailAuthorization.png "Email Gmail Authorization")
+![EmailGmailAuthorization](/images/SCALE/22.12/EmailGmailAuthorization.png "Email Gmail Authorization Screen")
 
-Click **Proceed** to display the **Sign in with Google** window.
+Click **Proceed** to open the **Sign in with Google** window.
 
-![EmailGmailSignIn](/images/SCALE/22.02/EmailGmailSignIn.png "Email GMail Sign In")
+![EmailGmailChooseAccount](/images/SCALE/22.12/EmailGmailChooseAccount.png "Email GMail Choose Account Screen")
+
+Select the account to use for authentication.
+
+![EmailGmailSignIn](/images/SCALE/22.12/EmailGmailSignIn.png "Email GMail Sign In")
 
 Enter the Gmail account credentials. Type in the GMail account to use and click **Next**. 
 Enter the password for the GMail account you entered. 
 When the **TrueNAS wants to access your Google Account** window displays, scroll down and click **Allow** to complete the set up or **Cancel** to exit set up and close the window.
 
-![EmailGmailConfirmation](/images/SCALE/22.02/EmailGmailConfirmation.png "Email GMail Confirmation")
-
-![EmailGmailAllow](/images/SCALE/22.02/EmailGmailAllow.png "Email GMail Allow")
+![EmailGmailAllow](/images/SCALE/22.12/EmailGmailAllow.png "Email GMail Allow")
 
 {{< /expand >}}
 ## Setting Up Email Using SMTP
@@ -82,7 +88,7 @@ To setup up SMTP service for the system email send method you need the outgoing 
 Enter the email you want to use in **From Email** and the name in **From Name**. 
 This is the email that sends the alerts and the name associated with the email.
 
-![AlertEmailSMTPScreen](/images/SCALE/22.02/AlertEmailSMTPScreen.png "Email SMTP Screen")
+![EmailSMTPConfigurationScreen](/images/SCALE/22.12/EmailSMTPConfigurationScreen.png "Email SMTP Screen")
 
 Enter the host name or IP address of SMTP server sending email.
 Enter the SMTP port number. 
@@ -105,10 +111,12 @@ From the **Alerts** panel, select the <span class="material-icons">settings</spa
 
 Change the **Type** field to **Email** and then populate the **Add Alert Service** form.
 
-![AddAlertServiceEmailScreen](/images/SCALE/22.02/AddAlertServiceEmailScreen.png "Add Email Alert Service")
+![AddAlertServiceEmailScreen](/images/SCALE/22.12/AddAlertServiceEmailScreen.png "Add Email Alert Service")
 
 Add the system email address in the **Email Address** field.
 
-Use **SEND TEST ALERT** to generate a test alert and confirm the email address and alert service works.
+Use **Send Test Alert** to generate a test alert and confirm the email address and alert service works.
 
 {{< taglist tag="scaleemail" limit="10" >}}
+
+{{< taglist tag="scalealerts" limit="10" title="Related Alert Articles" >}}

@@ -18,14 +18,14 @@ aliases:
 
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
-| 2.3-BETA.1 | Code-freeze | 09 November 2022 |
-| 2.3-BETA.1 | Internal Testing Sprints | 14 November 2022 - 25 November 2022 |
-| 2.3-BETA.1 | Tag | 28 November 2022 |
-| 2.3-BETA.1 | Release | 29 November 2022 |
-| 2.3-RC.1 | Code-freeze | 07 December 2022 |
-| 2.3-RC.1 | Internal Testing Sprints | 12 December 2022 - 16 December 2022 |
-| 2.3-RC.1 | Tag | 19 December 2022 |
-| 2.3-RC.1 | Release | 20 December 2022 |
+| 2.3.0 | Code-freeze | 04 January 2023 |
+| 2.3.0 | Internal Testing | 09 January 2023 - 20 January 2023 |
+| 2.3.0 | Tag | 22 January 2023 |
+| 2.3.0 | Release | 23 January 2023 |
+| 2.3.1 | Code-freeze | 15 February 2023 |
+| 2.3.1 | Internal Testing | 20 February 2023 - 24 February 2023 |
+| 2.3.1 | Tag | 27 February 2023 |
+| 2.3.1 | Release | 28 February 2023 |
 
 ## 2.2.2
 
