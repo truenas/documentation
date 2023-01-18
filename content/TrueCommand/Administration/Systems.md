@@ -69,7 +69,7 @@ If a system has iSCSI volumes, click <mat-icon role="img" fontset="mdi" fonticon
 Click <mat-icon _ngcontent-igf-c221="" role="img" fontset="mdi" class="mat-icon notranslate mdi mdi-toolbox-outline mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" data-mat-icon-name="mdi-toolbox-outline" data-mat-icon-namespace="mdi"></mat-icon> **Services** to display the **Services** window with a list of services running or stopped for the selected system. 
 
 The options for services are adding it to start on boot-up, stopping, or starting/restarting. 
-Click the **START ON BOOT** checkbox to add the selection to the services started at boot-up. 
+Select**START ON BOOT** to add the selection to the services started at boot-up. 
 Click the stop icon <i class="fa fa-stop" aria-hidden="true" title="stop"></i> to stop a running service. 
 Click the start/restart icon <i class="material-icons" aria-hidden="true" title="Refresh">refresh</i> to start a stopped service. 
 
