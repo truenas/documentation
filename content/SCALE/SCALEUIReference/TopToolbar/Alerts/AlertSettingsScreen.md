@@ -39,12 +39,12 @@ You can customize alert settings for when a certificate expires, a certificate p
 {{< /expand >}}
 
 ### Clustering Alert Settings
-**Clustering** alert settings apply to TrueNAS SCALE clusters you create in TrueCommand.
+**Clustering** alert settings apply to TrueNAS SCALE [clusters]({{< relref "SMBClustering.md">}}) you create in TrueCommand.
 {{< expand "Click here for more information" >}}
 
 ![AlertSettingsClustering](/images/SCALE/22.12/AlertSettingsClustering.png "Clustering Alert Settings")
 
-You can customize alert settings for when the CTDB and Clustered services fail to initialize, clustered time consistency check fails, a glustered UUID changes, and glustered peer information becomes unavailable.
+You can customize alert settings for when the CTDB (clustered trivial database) and clustered services fail to initialize, clustered time consistency check fails, the universally unique identifier of a clustered system (glustered UUID) changes, and glustered peer (a server in the cluster) information becomes unavailable.
 {{< /expand >}}
 
 ### Directory Service Alert Settings
