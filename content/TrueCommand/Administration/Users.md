@@ -136,7 +136,7 @@ Note that individual user account permissions can override team permissions.
 
 To delete account details and permissions, open the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and click **Teams**.
 On the **Users** page, click the delete icon <i class="material-icons" aria-hidden="true" title="Delete">delete</i> to the right of the user you want to delete.
-A popup displays to confirm Team deletion.
+A popup displays to confirm the team deletion.
 
 ![Teams Delete](/images/TrueCommand/2.0/TeamsDeleteTeam.png "Teams Delete")
 
