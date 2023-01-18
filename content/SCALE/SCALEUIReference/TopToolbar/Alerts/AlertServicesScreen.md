@@ -156,7 +156,7 @@ Select **Telegram** from the **Type** dropdown list to display Telegram authenti
 | Setting | Description |
 |---------|-------------|
 |  **Bot API Token** | Enter the Telegram Bot API Token [How to create a Telegram Bot](https://core.telegram.org/bots#3-how-do-i-create-a-bot). |
-| **List of chat IDs** | Enter a list of chat IDs separated by space ( ), comma (,), or semicolon (;). To find your chat ID, send a message to the bot, group, or channel and visit https://core.telegram.org/bots/api#getting-updates. |
+| **List of chat IDs** | Enter a list of chat IDs separated by a space ( ), comma (,), or semicolon (;). To find your chat ID, send a message to the bot, group, or channel and visit https://core.telegram.org/bots/api#getting-updates. |
 {{< /expand >}}
 
 ### VictorOPS Authentication Settings
