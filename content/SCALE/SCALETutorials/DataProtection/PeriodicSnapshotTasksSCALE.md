@@ -1,11 +1,16 @@
 ---
 title: "Adding Periodic Snapshot Tasks"
+description: "This article provides instructions on creating periodic snapshot tasks in SCALE."
 weight: 50
+aliases:
+tags:
+- scalesnapshots
+- scalereplication
 ---
 
 {{< toc >}}
 
-Periodic snapshot tasks allow you to schedule creating read-only versions of pools and datasets at a given point in time. You can also configure VMWare Snapshot Integration in the **Periodic Snapshot Tasks** widget.
+Periodic snapshot tasks allow you to schedule creating read-only versions of pools and datasets at a given point in time. You can also access VMWare snapshot integration and TrueNAS SCALE storage snapshots from the **Periodic Snapshot Tasks** widget.
 
 {{< expand "How should I use snapshots?" "v" >}}
 Snapshots do not make not copies of the data so creating one is quick and if little data changed, they take very little space.
@@ -22,10 +27,6 @@ If there is a catastrophic loss, an off-site snapshot can restore data up to the
 ## Creating a Periodic Snapshot Task
 
 Create the required datasets or zvols before creating a snapshot task.
-
-{{< expand "Video Tutorial" "v" >}}
-This short video demonstrates adding a periodic snapshot task {{< embed-video name="scaleangelfishperiodicsnapshottasks" >}}
-{{< /expand >}} 
 
 Go to **Data Protection > Periodic Snapshot Tasks** and click **Add**.
 
