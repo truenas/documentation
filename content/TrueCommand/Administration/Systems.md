@@ -66,7 +66,7 @@ If a system has iSCSI volumes, click <mat-icon role="img" fontset="mdi" fonticon
 {{< /expand >}}
 
 {{< expand "Services" "v" >}}
-Click <mat-icon _ngcontent-igf-c221="" role="img" fontset="mdi" class="mat-icon notranslate mdi mdi-toolbox-outline mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" data-mat-icon-name="mdi-toolbox-outline" data-mat-icon-namespace="mdi"></mat-icon> **Services**to display the **Services** window with a list of services running or stopped for the selected system. 
+Click <mat-icon _ngcontent-igf-c221="" role="img" fontset="mdi" class="mat-icon notranslate mdi mdi-toolbox-outline mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" data-mat-icon-name="mdi-toolbox-outline" data-mat-icon-namespace="mdi"></mat-icon> **Services** to display the **Services** window with a list of services running or stopped for the selected system. 
 
 The options for services are adding it to start on boot-up, stopping, or starting/restarting. 
 Click the **START ON BOOT** checkbox to add the selection to the services started at boot-up. 
