@@ -8,7 +8,7 @@ geekdocCollapseSection: true
 {{< toc >}}
 
 The **Administration** page, available to users with administrator permissions, displays additional system details and offers a variety of TrueCommand configuration options.
-Click the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> Icon and select **Administration** to access the **Administration** page. It is organized into **About**, **Certificates**, and **Configuration** panes.
+Click the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> icon and select **Administration** to access the **Administration** page. It is organized into **About**, **Certificates**, and **Configuration** panes.
 
 ![AdministrationAbout](/images/TrueCommand/2.2/Administration.png "Administration Configuration")
 
