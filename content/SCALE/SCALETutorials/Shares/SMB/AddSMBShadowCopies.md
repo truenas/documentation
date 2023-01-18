@@ -4,8 +4,7 @@ description: "This article provides information on SMB share shadow copies, enbl
 weight: 30
 aliases: 
 tags:
- - scaleshares
- - scalesmb
+- scalesmb
 ---
 
 {{< toc >}}
