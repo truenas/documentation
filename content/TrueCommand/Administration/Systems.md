@@ -33,7 +33,7 @@ Click the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> fo
 ![Systems Options Menu](/images/TrueCommand/2.2/SystemScreenSystemActionsMenu.png "Systems Options Menu")
 
 {{< expand "Edit" "v" >}}
-Click <i class="material-icons" aria-hidden="true" title="Configure">edit</i>  **Edit** to open a panel on the right of the screen that displays the system setting fields you can edit. After making your changes, click **SAVE CHANGES** to update the system with the new values entered. 
+Click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> **Edit** to open a panel on the right of the screen that displays the system setting fields you can edit. After making your changes, click **SAVE CHANGES** to update the system with the new values entered. 
 Click **RESET** to clear the form and reset values to the previously saved settings for the NAS.
 
 ![Systems Edit](/images/TrueCommand/2.1/SystemsEditSystem.png "Systems Edit")
