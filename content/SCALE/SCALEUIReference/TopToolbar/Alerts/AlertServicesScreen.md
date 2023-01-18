@@ -143,7 +143,7 @@ Select **SNMP Trap** from the **Type** dropdown list to display SNMP trap authen
 |  **Hostname** | Enter the hostname or IP address of the system to receive SNMP trap notifications. |
 | **Port** | Enter the UDP port number on the system receiving SNMP trap notifications. The default is **162**. |
 | **SNMPv3 Security Model** | Select to enable the SNMPv3 security model. |
-| **SNMP Community** | Enter the network community string. The community string acts like a user ID or password. A user with the correct community string can access network information. the default is *public*. For more information, see [What is an SNMP Community String?](https://community.helpsystems.com/knowledge-base/intermapper/snmp/snmp-community-strings/). |
+| **SNMP Community** | Enter the network community string. The community string acts like a user ID or password. A user with the correct community string can access network information. The default is **public**. For more information, see [What is an SNMP Community String?](https://community.helpsystems.com/knowledge-base/intermapper/snmp/snmp-community-strings/). |
 {{< /expand >}}
 
 ### Telegram Authentication Settings
