@@ -4,8 +4,7 @@ description: "This article provides instructions to set up SMB home shares."
 weight: 40
 aliases: 
 tags:
- - scaleshares
- - scalesmb
+- scalesmb
 ---
 
 {{< toc >}}
@@ -21,13 +20,13 @@ Only one share can be used as the home share, but other non-home shares can be c
 
 Creating an SMB home share requires configuring the system storage and joining Active Directory.
 
-### Create a Pool and Join Active Directory
+### Creating a Pool and Joining Active Directory
 
 First, go to **Storage** and [create a pool]({{< relref "/SCALE/SCALETutorials/Storage/Pools/CreatePoolSCALE.md" >}}).
 
 Next, [set up the Active Directory]({{< relref "/SCALE/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}) that you want to share resources with over your network.
 
-### Prepare a Dataset
+### Preparing a Dataset
 
 Go to **Storage** and open the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> next to the root dataset in the pool you just created, then click **Add Dataset**.
 
@@ -44,19 +43,22 @@ Click **Use an ACL Preset** and choose **NFS4_HOME**. Then, click **Continue**.
 
 ![StoragePoolsOptionsEditPermissionsACLPresetHomeSCALE](/images/SCALE/StoragePoolsOptionsEditPermissionsACLPresetHomeSCALE.png "Set the Home ACL Preset")
 
-### Create the Share
+### Creating the Share
 
 Go to **Shares > Windows (SMB) Shares** and click **Add**. 
 
 Set the **Path** to the prepared dataset. 
 
-The **Name** automatically becomes identical to the dataset. Leave this as the default.
+The **Name** automatically becomes identical to the dataset. Leave this as the default. 
+If you change the name follow the naming conventions for:
+* [Files and directories](https://learn.microsoft.com/en-us/windows/win32/fileio/naming-a-file#naming-conventions)
+* [Share names](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-fscc/dc9978d7-6299-4c5a-a22d-a039cdc716ea) 
 
 Set the **Purpose** to **No presets**, then click **Advanced Options** and set **Use as Home Share**. Click **Save**.
 
 Enable the **SMB** service in **System Settings > Services** to make the share is available on your network.
 
-### Add Users
+### Adding Users
 
 Go to **Credentials > Local Users** and click **Add**. 
 Create a new user name and password. 
