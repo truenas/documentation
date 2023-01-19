@@ -139,7 +139,7 @@ Enter the node port in the **Node Port for Storj** field. In this example, we ar
 
 ![InstallStorjAppAdvDNSSCALE](/images/SCALE/22.12/InstallStorjAppAdvDNSSCALE.png "Advanced DNS Settings Storj App SCALE")
 
-Click the **Add** button to create advanced DNS settings. In this example we are keeping the default settings and not entering any advanced DNS settings.
+Click the **Add** button to create advanced DNS settings. In this example, we are keeping the default settings and not entering any advanced DNS settings.
 
 ### Resource Limits
 
