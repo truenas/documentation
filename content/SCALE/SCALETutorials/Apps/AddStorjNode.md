@@ -28,7 +28,7 @@ Before you can configure your system to act as a Storj node, the following steps
 {{< expand "Click Here for More Information" "v" >}}
 There are several methods available to use in order to create a Storj Eth Wallet address. The following example utilizes the MetaMask Chrome extension, but you can use any method you like:
 
-Click on the MetaMask extension, and *Get Started.* You can either import and existing wallet using the seed phrase or create a new one. Click on *Create Wallet*, and then *I Agree.* Click on *No Thanks* in order to proceed. Click on *Account Details* and then copy the Eth Wallet address.
+Click on the MetaMask extension, and *Get Started.* You can either import an existing wallet using the seed phrase or create a new one. Click on *Create Wallet*, and then *I Agree*. Click on *No Thanks* in order to proceed. Click on *Account Details* and then copy the Eth Wallet address.
 {{< /expand >}}
 ### Generate an Authentication Token for Storj
 
