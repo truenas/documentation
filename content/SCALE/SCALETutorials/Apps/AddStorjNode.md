@@ -155,7 +155,7 @@ When the **Enable Pod resource limits** checkbox is selected, two additional fie
 
 **CPU Limresource limitsit** allows you to enter a plain integer value with the suffix m(milli) to define the CPU resource limit. Example: `1000m`. 
 
-**Memory Limit** allows you to enter a value specified by number of bytes. This value is followed by the quantity suffix such as E,P,T,G,M,k as well as Ei, Pi, Ti, Mi, Gi, and Ki. Example: `129e6`, `129M`, `128974848000m`, `123Mi`.
+**Memory Limit** allows you to enter a value specified by the number of bytes. This value is followed by the quantity suffix such as E,P,T,G,M,k as well as Ei, Pi, Ti, Mi, Gi, and Ki. Example: `129e6`, `129M`, `128974848000m`, `123Mi`.
 
 Review your entries carefully. When you have finished, click **Save** to confirm these settings.
 
