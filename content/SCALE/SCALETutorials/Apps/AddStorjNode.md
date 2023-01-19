@@ -44,7 +44,7 @@ Provide a domain name with which you will access the Storj application. The DDNS
 
 ### Port Forwarding
 {{< expand "Click Here for More Information" "v" >}}
-Your router should have a *Port Forward* section, within which you can add a new rule. For the *Destination Device*, enter the internal IP address of your TrueNAS system. For the *Public* and *Private* port enter `20988`. Select both *TCP* and *UDP* for the *Protocol.* 
+Your router should have a *Port Forward* section within which you can add a new rule. For the *Destination Device*, enter the internal IP address of your TrueNAS system. For the *Public* and *Private* ports, enter `20988`. Select both *TCP* and *UDP* for the *Protocol.* 
 
 This enables *QUIC*, a protocol based on UDP that provides parallel uploads and downloads.
 
