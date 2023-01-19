@@ -117,7 +117,7 @@ Google Drive and pCloud use one more setting to authenticate credentials.
    | Box | For more information the user acess token for Box [click here](https://developer.box.com/). An [access token](https://developer.box.com/reference/) enables Box to verify a request belongs to an authorized session. Example token: T9cE5asGnuyYCCqIZFoWjFHvNbvVqHjl. |
    | Dropbox | Create an access [token](https://dropbox.tech/developers/generate-an-access-token-for-your-own-account) from the [Dropbox account](https://www.dropbox.com/). |
    | Google Drive | The authentication process creates the token for [Google Drive](https://developers.google.com/drive/api/v3/about-auth) and populates the **Access Token** field automatically. Access tokens expire periodically, so you must refresh them. |
-   | Google Photo | does not used an access token. |
+   | Google Photo | Does not use an access token. |
    | pCloud | Create the pCloud access token [here](https://docs.pcloud.com/methods/intro/authentication.html). These tokens can expire and require an extension. |
    | Yandex | Create the Yandex access token [here](https://yandex.com/dev/direct/doc/dg-v4/concepts/auth-token.html). |
 
