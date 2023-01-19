@@ -74,7 +74,7 @@ Name the new dataset. In this example, we entered `identity`. Leave all other se
 
 ![DatasetsDashboardStorjNodeNested](/images/SCALE/22.12/DatasetsDashboardStorjNodeNested.png "Nested Dataset Storj SCALE") 
 
-Now underneath the storj-node dataset you should see 2 nested datasets, which we named for example purposes *config* and *identity*.
+TrueNAS displays two nested datasets underneath the storj-node dataset. In this example, the nested datasets are *config* and *identity*.
 
 ## Install the Storj App on TrueNAS SCALE
 {{< expand "Click Here for More Information" "v" >}}
