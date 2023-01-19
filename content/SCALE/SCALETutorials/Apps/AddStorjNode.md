@@ -85,7 +85,6 @@ TrueNAS displays two nested datasets underneath the storj-node dataset. In this 
 
 Click on **Apps** in the navigation menu of the SCALE UI. **Installed Applications** appears on the first menu tab. Click on the second tab to view the **Available Applications**. Find the Storj App, and click the **Install** button.
 
-
 ![InstallStorjAppNameSCALE](/images/SCALE/22.12/InstallStorjAppNameSCALE.png "Name Storj App SCALE") 
 
 Enter a name for the Storj App. In this example, we entered `storjnode`.
