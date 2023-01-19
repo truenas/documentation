@@ -22,7 +22,9 @@ Before you can configure your system to act as a Storj node, the following steps
 
 * Your router must support DDNS (Dynamic DNS).
 
-* You must have a Storj wallet already set up. There are apps available to do this but there are security risks.
+* You must have a Storj wallet already set up. There are special considerations regarding how to protect and manage your wallet, but they are outside the scope of this article.
+
+* Review the hardware and bandwidth considerations at [Storj Node](https://www.storj.io/node).
 
 ### Getting a Valid Storj Wallet Address
 {{< expand "Click Here for More Information" "v" >}}
@@ -32,7 +34,7 @@ Click on the MetaMask extension, and *Get Started.* You can either import an exi
 {{< /expand >}}
 ### Generate an Authentication Token for Storj
 
-Open a browser window and go to [Storj Host a Node](https://www.storj.io/host-a-node). Enter an email address that you would like associated with the account. Complete the "I'm not a robot" reCAPTCHA. Click **Continue**.
+Open a browser window and go to [Storj Host a Node](https://www.storj.io/host-a-node). Enter an email address that you would like associated with the account. Complete the **I'm not a robot** reCAPTCHA. Click **Continue**.
 
 Copy the auth token and keep it in a secure location.
 
@@ -54,11 +56,11 @@ Your TrueNAS system must be up and running in order to check your open port. If 
 
 ![DatasetsDashboardSCALE](/images/SCALE/22.12/DatasetsDashboardSCALE.png "SCALE Datasets Dashboard") 
 
-Login to TrueNAS SCALE. In the Navigation menu at the left, click **Datasets**. The **Datasets** dashboard displays. With the System Dataset selected, click the **Add Dataset** button located on the right side of the dashboard. 
+Login to TrueNAS SCALE. In the **Navigation** menu at the left, click **Datasets**. The **Datasets** dashboard displays. With the System Dataset selected, click the **Add Dataset** button located on the right side of the dashboard. 
 
 ![AddDatasetStorjSCALE](/images/SCALE/22.12/AddDatasetStorjSCALE.png "Add Dataset Storj SCALE") 
 
-The **Add Dataset** screen appears. In the **Name** field, enter a name for the first dataset to be created under the **System Dataset**. In this example, we entered `storj-node`.
+The **Add Dataset** screen appears. In the **Name** field, enter a name for the first dataset to be created under the System Dataset. In this example, we entered `storj-node`.
 
 Leave all other options at their defaults. Scroll down to the bottom and click **Save**. 
 
