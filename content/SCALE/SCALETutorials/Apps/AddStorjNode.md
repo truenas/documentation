@@ -105,7 +105,7 @@ The next steps relate to the Storj App configuration:
 
 **Owner Group ID**. The default is `568`.
 
-**Storj Extra Environment Variables**. The default setting for this field is empty. To define addtional environment variables, click the **Add** button.
+**Storj Extra Environment Variables**. The default setting for this field is empty. To define additional environment variables, click the **Add** button.
 
 ![InstallStorjAppConfigExtraEnvVariablesSCALE](/images/SCALE/22.12/InstallStorjAppConfigExtraEnvVariablesSCALE.png "Config Extra Environment Variables Storj App SCALE")
 
