@@ -48,7 +48,7 @@ The selection in **Provider** changes the **Authentication** settings.
 | **Name** | Enter a name for this cloud credential. For example, *cloud1* or *amazon1*. |
 
 ### Storj Authentication Settings
-Storj authentication includes going to the Storj-TrueNAS sign-in screen to either create a new Storj-TrueNAS account or log into an existing Storj-TrueNAS account, and thenreturning to SCALE to enter the S3 credentials provided by Storj for this credential.
+Storj authentication includes going to the Storj-TrueNAS sign-in screen to either create a new Storj-TrueNAS account or log into an existing Storj-TrueNAS account, and then returning to SCALE to enter the S3 credentials provided by Storj for this credential.
 {{< expand "Click Here for Settings" "v" >}}
 
 ![CloudCredentialsAdd](/images/SCALE/22.12/CloudCredentialsAdd.png "Cloud Credentials Add for Storj")
@@ -63,7 +63,7 @@ Storj authentication includes going to the Storj-TrueNAS sign-in screen to eithe
 Amazon S3 has basic authentication and advanced authentication settings. This section provides information on the basic authentication settings.
 {{< expand "Click Here for Settings" "v" >}}
 
-![CloudCredentialsAmzon3AuthenticationSettings](/images/SCALE/22.12/CloudCredentialsAmzon3AuthenticationSettings.png "Amazon S3 Authentication Settings")
+![CloudCredentialsAmzon3AuthenticationSetting](/images/SCALE/22.12/CloudCredentialsAmzon3AuthenticationSetting.png "Amazon S3 Authentication Settings")
 
 | Setting | Description |
 |---------|-------------|
