@@ -161,7 +161,7 @@ Review your entries carefully. When you have finished, click **Save** to confirm
 
 ### Using the Web Portal
 
-Clicking **Save** begins the installation. The time required to install the Storj App will vary depending upon your hardware and network configuration. When the installation is complete, clicking the **Installed Applications** tab displays the Storj App. The status of the application should be listed as active. 
+Clicking **Save** begins the installation. The time required to install the Storj App will vary depending on your hardware and network configuration. When the installation is complete, clicking the **Installed Applications** tab displays the Storj App. The status of the application should be listed as active. 
 
 Click the **Web Portal** button to view additional details about the application.
 
