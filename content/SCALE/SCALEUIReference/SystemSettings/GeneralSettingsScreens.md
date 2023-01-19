@@ -88,8 +88,8 @@ The **File Ticket** screen settings allow you to log into Jira where you can sub
 | Setting | Description |
 |---------|-------------|
 | **Name** | Enter the name of the contact person. |
-| **Email** | Enter the email of the contact person. Use the format name@domain.com. |
-| **CC** | Email addresses to receive copies of iXsystems Support messages about this issue. Use the format name@domain.com. Separate entries by pressing <kbd>Enter</kbd>. |
+| **Email** | Enter the email of the contact person. Use the format `name@domain.com`. |
+| **CC** | Email addresses to receive copies of iXsystems Support messages about this issue. Use the format `name@domain.com`. Separate entries by pressing <kbd>Enter</kbd>. |
 | **Phone** | Enter the phone number of the contact person. |
 | **Type** | Select Bug when reporting an issue or Suggestion when requesting new functionality. |
 | **Environment** | Select the appropriate environment. |
