@@ -146,7 +146,7 @@ Click the **Add** button to create advanced DNS settings. In this example, we ar
 
 ![InstallStorjAppResourceLimitsSCALE](/images/SCALE/22.12/InstallStorjAppResourceLimitsSCALE.png "Pod Resource Limits Storj App SCALE")
 
-By default, **Enable Pod resource limits** checkbox is cleared. In this example we are keeping the default setting and not enabling Pod resource limits.
+By default, **Enable Pod resource limits** checkbox is cleared. In this example, we are keeping the default setting and not enabling Pod resource limits.
 
 
 ![InstallStorjAppResourceLimitsSelectedSCALE](/images/SCALE/22.12/InstallStorjAppResourceLimitsSelectedSCALE.png "Pod Resource Limits Selected Storj App SCALE")
