@@ -132,7 +132,7 @@ By default, the **Extra Host Path Volumes** field is empty. Click the **Add** bu
 
 Enter the web port in the **Web Port for Storj** field. In this example we are keeping the default setting `20909`.
 
-Enter the node port in the **Node Port for Storj** field. In this example we are keeping the default setting `20988`.
+Enter the node port in the **Node Port for Storj** field. In this example, we are keeping the default setting `20988`.
 
 ### Advanced DNS Settings
 
