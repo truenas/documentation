@@ -120,7 +120,7 @@ Select the checkbox **Enable Custom Host Path for Storj Configuration Volume**. 
 
 Next, select the checkbox **Configure Identity Volume for Storage Node**. Browse to the host path by clicking on the arrow <span class="material-icons">chevron_right</span> next to the System Dataset Pool icon. A dropdown navigation menu appears. Select the newly created dataset (in our example: identity). This path appears in the **Host Path for Storj Identity Volume** field.
 
-By default, the **Extra Host Path Volumes** field is empty. Clicke the **Add** button to define a **Mount Path in Pod** and a **Host Path**.
+By default, the **Extra Host Path Volumes** field is empty. Click the **Add** button to define a **Mount Path in Pod** and a **Host Path**.
 
 
 ![InstallStorjAppStorageExtraHostPathSCALE](/images/SCALE/22.12/InstallStorjAppStorageExtraHostPathSCALE.png "Storage Extra Host Path Storj App SCALE")
