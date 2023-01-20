@@ -9,7 +9,7 @@ tags:
 
 {{< toc >}}
 
-If you want to access your TrueNAS SCALE directories from a VM, you have multiple options. If your system has more than one physical interface, you can assign your VMs to a NIC other than the primary one your TrueNAS server uses. This method does not offer the potential speed of a bridge, but it increases resilience.
+If you want to access your TrueNAS SCALE directories from a VM, you have multiple options. If your system has more than one physical interface, you can assign your VMs to a NIC other than the primary one your TrueNAS server uses. This method makes communication more flexible, but does not offer the potential speed of a bridge.
 
 If you have only one physical interface, you must create a bridge interface for the VM to use. 
 
