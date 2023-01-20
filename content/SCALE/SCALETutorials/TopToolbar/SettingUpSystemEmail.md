@@ -96,7 +96,7 @@ Typically 25/465 (secure SMTP), or 587 (submission).
 
 Select the level of security from the **Security** dropdown list. Options are **Plain (No Encryption)**, **SSL (Implicit TLS)**, or **TLS (STARTTLS)**.
 
-Select **SMTP Authentication** if you use the SMTP server uses authentication credentials and enter those credentials.
+Select **SMTP Authentication** for TrueNAS to reuse authentication credentials from the SMTP server. Enter the SMTP credentials in the new fields that appear.
 
 Click **Save**.
 
