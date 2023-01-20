@@ -12,7 +12,7 @@ tags:
 
 ## Prerequisites
 
-Storj is an open-source Decentralized Cloud Storage (DCS) platform. Storj permits any computer running its software to be configured to rent that system's unused storage capacity and bandwidth to users. 
+Storj is an open-source Decentralized Cloud Storage (DCS) platform. Storj permits a computer running its software to be configured to rent that system's unused storage capacity and bandwidth to users. 
 
 Before you can configure your system to act as a Storj node, the following steps must be completed:
 
