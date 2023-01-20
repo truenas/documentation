@@ -29,7 +29,7 @@ To set up a VLAN interface, from the **Network** screen:
 
 4. Select the interface in the **Parent Interface** dropdown list. This is typically an Ethernet card connected to a switch port already configured for the VLAN.
 
-5. Enter the numeric tag for the interface in the **Vlan Tab** field. This is typically preconfigured in the switched network.
+5. Enter the numeric tag for the interface in the **Vlan Tag** field. This is typically preconfigured in the switched network.
 
 6. Select the VLAN [Class of Service](https://tools.ietf.org/html/rfc4761#section-4.2.7)  from the **Priority Code Point** dropdown list.
 
