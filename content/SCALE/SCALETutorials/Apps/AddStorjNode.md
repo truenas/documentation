@@ -22,16 +22,10 @@ Before you can configure your system to act as a Storj node, the following steps
 
 * Your router must support DDNS (Dynamic DNS).
 
-* You must have a Storj wallet already set up. There are special considerations regarding how to protect and manage your wallet, but they are outside the scope of this article.
+* You must have a Storj wallet already set up. See [Storj Wallet Configuration](https://support.storj.io/hc/en-us/articles/360026611692-How-do-I-hold-STORJ-What-is-a-valid-address-or-compatible-wallet-). There are special considerations regarding how to protect and manage your wallet, but they are outside the scope of this article.
 
 * Review the hardware and bandwidth considerations at [Storj Node](https://www.storj.io/node).
 
-### Getting a Valid Storj Wallet Address
-{{< expand "Click Here for More Information" "v" >}}
-There are several methods available to use in order to create a Storj Eth Wallet address. The following example utilizes the MetaMask Chrome extension, but you can use any method you like:
-
-Click on the MetaMask extension, and *Get Started.* You can either import an existing wallet using the seed phrase or create a new one. Click on *Create Wallet*, and then *I Agree*. Click on *No Thanks* in order to proceed. Click on *Account Details* and then copy the Eth Wallet address.
-{{< /expand >}}
 ### Generate an Authentication Token for Storj
 
 Open a browser window and go to [Storj Host a Node](https://www.storj.io/host-a-node). Enter an email address that you would like associated with the account. Complete the **I'm not a robot** reCAPTCHA. Click **Continue**.
@@ -42,7 +36,7 @@ Copy the auth token and keep it in a secure location.
 
 ### DDNS Hostname
 
-Provide a domain name with which you will access the Storj application. The DDNS hostname should point to your router WAN IP address.
+Provide a domain name with which you will access the Storj application. You need to have previously set up a DDNS hostname in order to obtain a static IP. The DDNS hostname should point to your router WAN IP address.
 
 ### Port Forwarding
 {{< expand "Click Here for More Information" "v" >}}
@@ -50,7 +44,7 @@ Your router should have a *Port Forward* section within which you can add a new 
 
 This enables *QUIC*, a protocol based on UDP that provides parallel uploads and downloads.
 
-Your TrueNAS system must be up and running in order to check your open port. If your port forwarding is working, port 20988 is open. There are various tools available on the web you can use to check if the port is open.
+Your TrueNAS system must be up and running in order to check your open port. If your port forwarding is working, port 20988 is open.
 {{< /expand >}}
 ## Create the Storj Datasets on TrueNAS SCALE
 
@@ -89,7 +83,9 @@ Click on **Apps** in the navigation menu of the SCALE UI. **Installed Applicatio
 
 ![InstallStorjAppNameSCALE](/images/SCALE/22.12/InstallStorjAppNameSCALE.png "Name Storj App SCALE") 
 
-Enter a name for the Storj App. In this example, we entered `storjnode`.
+{{< hint info >}}
+Enter a name for the Storj App. Lowercase alphanumeric characters can be specified. Name must start with an alphabetic character and can end with an alphanumeric character. Hyphen is allowed, but not as the first or last character. In this example, we entered `storjnode`. 
+{{< /hint >}}
 
 The next steps relate to the Storj App configuration:
 
@@ -101,13 +97,13 @@ The next steps relate to the Storj App configuration:
 
 **Configure Email for Storj**. Enter the email address you associated with the Auth Token created for the Storj Node. 
 
-**Add Your Storage Domain for Storj**. Enter your storage domain for Storj, the public DNS name for your network. If you are using Dynamic DNS, enter that name here as well.
+**Add Your Storage Domain for Storj**. Enter your storage domain for Storj, the public DNS name for your network. If you are using Dynamic DNS (DDNS), enter that name here as well. Example: *name.ddns.net*.
 
 **Owner User ID**. The default is `568`.
 
 **Owner Group ID**. The default is `568`.
 
-**Storj Extra Environment Variables**. The default setting for this field is empty. To define additional environment variables, click the **Add** button.
+**Storj Extra Environment Variables**. The default setting for this field is empty. To define additional environment variables, click the **Add** button. For additional information see [Storj Environment Variables](https://storj.github.io/core/tutorial-environment-variables.html).
 
 ![InstallStorjAppConfigExtraEnvVariablesSCALE](/images/SCALE/22.12/InstallStorjAppConfigExtraEnvVariablesSCALE.png "Config Extra Environment Variables Storj App SCALE")
 
@@ -116,7 +112,7 @@ The next steps relate to the Storj App configuration:
 
 ![InstallStorjAppStorageSCALE](/images/SCALE/22.12/InstallStorjAppStorageSCALE.png "Allocate Storage Storj App SCALE")
 
-In the **Configure Storage Size You Want to Share in GiBs**, enter the amount of space to dedicate to Storj.
+In the **Configure Storage Size You Want to Share in GB's**, enter the amount of space to dedicate to Storj.
 
 Select the checkbox **Enable Custom Host Path for Storj Configuration Volume**. Browse to the host path by clicking on the arrow <span class="material-icons">chevron_right</span> next to the System Dataset Pool icon. A dropdown navigation menu appears. Select the newly created dataset (in our example: config). This path appears in the **Host Path for Storj Configuration Volume** field.
 
@@ -150,16 +146,15 @@ Click the **Add** button to create advanced DNS settings. In this example, we ar
 
 By default, **Enable Pod resource limits** checkbox is cleared. In this example, we are keeping the default setting and not enabling Pod resource limits.
 
+When the **Enable Pod resource limits** checkbox is selected, two additional fields display:
 
 ![InstallStorjAppResourceLimitsSelectedSCALE](/images/SCALE/22.12/InstallStorjAppResourceLimitsSelectedSCALE.png "Pod Resource Limits Selected Storj App SCALE")
 
-When the **Enable Pod resource limits** checkbox is selected, two additional fields display:
-
-**CPU Limresource limitsit** allows you to enter a plain integer value with the suffix m(milli) to define the CPU resource limit. Example: `1000m`. 
+**CPU Limresource limitsit** allows you to enter a plain integer value with the suffix m(milli) to define the CPU resource limit. Example: `1000m`, `100`. 
 
 **Memory Limit** allows you to enter a value specified by the number of bytes. This value is followed by the quantity suffix such as E,P,T,G,M,k as well as Ei, Pi, Ti, Mi, Gi, and Ki. Example: `129e6`, `129M`, `128974848000m`, `123Mi`.
 
-Review your entries carefully. When you have finished, click **Save** to confirm these settings.
+Review your entries carefully. To confirm these settings and begin the Storj app installation, click **Save**.
 
 ### Using the Web Portal
 
