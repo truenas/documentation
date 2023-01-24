@@ -36,7 +36,7 @@ Copy the auth token and keep it in a secure location.
 
 ### DDNS Hostname
 
-Provide a domain name with which you will access the Storj application. You need to have previously set up a DDNS hostname in order to obtain a static IP. The DDNS hostname should point to your router WAN IP address.
+Provide a domain name with which you will access the Storj application. You need to have previously set up a DDNS hostname. The DDNS hostname should point to your router WAN IP address.
 
 ### Port Forwarding
 {{< expand "Click Here for More Information" "v" >}}
