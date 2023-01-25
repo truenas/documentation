@@ -4,9 +4,8 @@ description: "This article provides instructions to add an SMB share, starting t
 weight: 10
 aliases:
 tags:
- - scalesmb
- - scaleafp
- - scaleshares
+- scalesmb
+- scaleafp
 ---
 
 {{< toc >}}
@@ -32,10 +31,6 @@ Windows clients use [WS-Discovery](https://docs.oasis-open.org/ws-dd/ns/discover
 
 Discoverability through broadcast protocols is a convenience feature and not required to access an SMB server.
 {{< /hint >}}
-
-## Adding SMB Shares Video Tutorial
-
-{{< embed-video name="scaleangelfishsmbshare" >}}
 
 ## Adding an SMB Share
 Adding an SMB share to your system involves several steps to add the share and get it working.
@@ -150,6 +145,9 @@ To create a basic Windows SMB share, go to **Shares**.
    The **Name** is the SMB share name, which forms part of the full share pathname when SMB clients perform an SMB tree connect. 
    Because of how the SMB protocol uses the name, it must be less than or equal to 80 characters and it cannot have any invalid characters as specified in Microsoft documentation MS-FSCC section 2.1.6. 
    If you do not enter a name the share name becomes the last component of the path.
+   If you change the name follow the naming conventions for:
+   * [Files and directories](https://learn.microsoft.com/en-us/windows/win32/fileio/naming-a-file#naming-conventions)
+   * [Share names](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-fscc/dc9978d7-6299-4c5a-a22d-a039cdc716ea) 
 
 3. (Optional) Select a preset from the **Purpose** dropdown list to apply and lock or unlock pre-determined **Advanced Options** settings for the share.
    To retain control over all the share **Advanced Options** settings, select **No presets**.

@@ -1,6 +1,6 @@
 ---
 title: "LDAP Servers"
-weight: 40
+weight: 50
 ---
 
 {{< toc >}}
