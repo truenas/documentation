@@ -1,7 +1,8 @@
 ---
-title: TrueCommand 2.2 Release Notes
+title: TrueCommand 2.3 Release Notes
 weight: 5
 aliases:
+  - /truecommand/tcreleasenotes/2.2
   - /releasenotes/truecommand/2.1.1/
   - /releasenotes/truecommand/2.1/
 ---
@@ -18,16 +19,72 @@ aliases:
 
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
-| 2.3.0 | Code-freeze | 04 January 2023 |
-| 2.3.0 | Internal Testing | 09 January 2023 - 20 January 2023 |
-| 2.3.0 | Tag | 22 January 2023 |
-| 2.3.0 | Release | 23 January 2023 |
 | 2.3.1 | Code-freeze | 15 February 2023 |
-| 2.3.1 | Internal Testing | 20 February 2023 - 24 February 2023 |
+| 2.3.1 | Internal Testing Sprints | 20 February 2023 - 23 February 2023 |
 | 2.3.1 | Tag | 27 February 2023 |
 | 2.3.1 | Release | 28 February 2023 |
 
+## 2.3
+
+**January 25, 2023**
+
+iXsystems is pleased to release TrueCommand 2.3.0!
+This release of TrueCommand includes a new cluster details panel, and makes improvements in several areas including:
+
+* Allows adding the IP or host name validators when creating a new system
+* Allows adding custom NetBIOS name when configuring Active Directory on clustering
+* Adds Google authentication support for two-factor authenication (2fa)
+* Improves email connection testing and adds explicit SMTP errors
+* Improves logging and alerts in middleware and the UI
+
+This release also fixes issues found with team avatars, adding systems to TrueCommand, Certificate Authorities (CAs) in TrueCommand, and with downloading the service provider metadata in SAML administration.
+
+## 2.3.0 Change Log
+
+### New Features
+
+* [TC-2239](https://ixsystems.atlassian.net/browse/TC-2239) cluster details panel
+
+### Epics
+
+* [TC-1891](https://ixsystems.atlassian.net/browse/TC-1891) Refactor UI
+* [TC-2302](https://ixsystems.atlassian.net/browse/TC-2302) Unit tests improvements and coverage
+* [TC-2305](https://ixsystems.atlassian.net/browse/TC-2305) Middleware Logging Improvements
+
+### Improvements
+
+* [TC-1932](https://ixsystems.atlassian.net/browse/TC-1932) Show explicit SMTP errors and employ better UX for testing email connections
+* [TC-2107](https://ixsystems.atlassian.net/browse/TC-2107) Merge realtime-chart and dash-system-status
+* [TC-2112](https://ixsystems.atlassian.net/browse/TC-2112) add IP or hostname validator in creating new system
+* [TC-2251](https://ixsystems.atlassian.net/browse/TC-2251) Allow custom NetBIOS name when configuring AD on Clustering
+* [TC-2311](https://ixsystems.atlassian.net/browse/TC-2311) Add colored logging support
+* [TC-2387](https://ixsystems.atlassian.net/browse/TC-2387) Add Google Auth support for 2FA
+* [TC-2394](https://ixsystems.atlassian.net/browse/TC-2394) Deprecate nas/send\_method APIs related to iSCSI, network and others
+* [TC-2457](https://ixsystems.atlassian.net/browse/TC-2457) drop in GORM/dependencies and migrate cluster\_tsp table
+* [TC-2458](https://ixsystems.atlassian.net/browse/TC-2458) migrate alert\_rules table to GORM
+* [TC-2462](https://ixsystems.atlassian.net/browse/TC-2462) migrate logs and ui\_logs tables to GORM
+* [TC-2476](https://ixsystems.atlassian.net/browse/TC-2476) Show expiration warning dialog once a day
+* [TC-2484](https://ixsystems.atlassian.net/browse/TC-2484) Changed randomization from internal util to gofakeit
+* [TC-2486](https://ixsystems.atlassian.net/browse/TC-2486) Add shares data in \`cluster/list\`
+* [TC-2489](https://ixsystems.atlassian.net/browse/TC-2489) Add the Gin module and start a separate server with it having Caddy on the top
+* [TC-2503](https://ixsystems.atlassian.net/browse/TC-2503) fix nil user error on signup
+* [TC-2506](https://ixsystems.atlassian.net/browse/TC-2506) Incorrect display of storage stats in dash-card
+* [TC-2512](https://ixsystems.atlassian.net/browse/TC-2512) remove extra newlines from MW log download
+* [TC-2534](https://ixsystems.atlassian.net/browse/TC-2534) Handle CORS for all TCP API endpoints
+
+### Bugs
+
+* [TC-2438](https://ixsystems.atlassian.net/browse/TC-2438) No team avatars on user page
+* [TC-2454](https://ixsystems.atlassian.net/browse/TC-2454)  \`Download Service Provider Metadata\` is not working In Admin SAML
+* [TC-2477](https://ixsystems.atlassian.net/browse/TC-2477) CA not sticking when set via TrueCommand
+* [TC-2483](https://ixsystems.atlassian.net/browse/TC-2483) Unable to add system to TrueCommand - support case
+* [TC-2514](https://ixsystems.atlassian.net/browse/TC-2514) Incorrect stats and chart labels in cluster-card
+* [TC-2519](https://ixsystems.atlassian.net/browse/TC-2519) Fix cluster/list response when one of the systems is offline
+* [TC-2527](https://ixsystems.atlassian.net/browse/TC-2527) Fix undefined license console error
+* [TC-2532](https://ixsystems.atlassian.net/browse/TC-2532) SAML user creation fails
+
 ## 2.2.2
+{{< expand "2.2.2" "v" >}}
 
 **October 18, 2022**
 
@@ -54,6 +111,7 @@ This is a maintenance release of TrueCommand 2.2 that includes some improvements
 * [TC-2273](https://ixsystems.atlassian.net/browse/TC-2273) Can't Access System Card \(And backed up config files\) when system is offline
 * [TC-2268](https://ixsystems.atlassian.net/browse/TC-2268) Health Indicator on Cluster UI widget not responsive
 * [TC-2257](https://ixsystems.atlassian.net/browse/TC-2257) Issue Loading Reporting and Cluster UI Pages
+{{< /expand >}}
 
 ## 2.2.1
 
@@ -80,7 +138,6 @@ This is a minor release designed to address some additional cluster issues found
 {{< /expand >}}
 
 ## 2.2
-
 {{< expand "2.2" "v" >}}
 
 **August 02, 2022**
@@ -429,6 +486,18 @@ TrueCommand 2.1 is the single pane of glass for:
 
 {{< /expand >}}
 
+
+## Known Issues
+
+| Seen In | Key | Summary | Workaround | Resolved In |
+|---------|-----|---------|------------|-------------|
+| TC 2.3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2538" target="_blank">TC-2538</a> | Licensed Disk Limit is ignored and the Disk Used is not updated | On a system with 12 disks used and shown in the Administration area and for API call, was able to add a system with 46 disks and did received a warning about exceeding the license limit. Disks Used was not updated in the Administration area or for API calls. | Targeted 2.3.1 |
+| TC 2.3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2533" target="_blank">TC-2533</a> | Hook in new servers/limit event sent when license limit is exceeded | This event replaces an error on servers/add, which instead sends max_disks and license_count if the license is executed, but not error. Any time a check fails the servers/limit event is sent as well, for asynchronous occurrences. | Targeted 2.3.1 |
+| TC 2.3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2528" target="_blank">TC-2528</a> | Cannot enable team alert creation | Enabling team alert creation on new teams does not stick as the only way to submit is to update the name, which resets the checkbox after the team object is reloaded. | Unknonwn |
+| TC 2.3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2524" target="_blank">TC-2524</a> | Notices WebSocket test results are unstable | Most tests pass but some are failing but never on the same test. Possible middleware issue. | Targeted 2.3.1 |
+| TC 2.3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2508" target="_blank">TC-2508</a> | Teams, systems and groups missing in User after migration from 2.2.2 to 2.3.0 | After migrating from 2.2.2. to 2.3.0, users no longer had Teams, Systems or system Groups assigned. The Teams are and system groups are listed in the Systems/System Groups and Teams areas but no longer assigned under the User. | Targeted 2.3.0 |
+|TC 2.2.2 | <a href="https://ixsystems.atlassian.net/browse/TC-2339" target="_blank">TC-2339</a> | Dashboard System card values for SCALE 22.12 do not populate. | The TrueCommand Dashboard System card values for SCALE 22.12 Bluefin are missing. | Fixed in 2.3.3 |
+
 ## To Download this Release
 
 Login to the [TrueCommand Account Portal](https://portal.ixsystems.com) for downloads, documentation links, and licensing options.
@@ -461,10 +530,4 @@ Additionally, it is not possible to roll back to TrueCommand v1.3 from v2.1. Ple
 
 **VM Image:** Either reboot the VM or run `systemctl restart truecommand.service`.
 This will automatically fetch and start the latest Docker image of TrueCommand within your VM.
-
-## Known Issues
-
-| Seen In | Key | Summary | Workaround | Resolved In |
-|---------|-----|---------|------------|-------------|
-|TC 2.2.2 | <a href="https://ixsystems.atlassian.net/browse/TC-2339" target="_blank">TC-2339</a> | Dashboard System card values for SCALE 22.12 do not populate. | The TrueCommand Dashboard System card values for SCALE 22.12 Bluefin are missing. | Unknown |
 
