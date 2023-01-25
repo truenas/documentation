@@ -26,7 +26,7 @@ aliases:
 
 ## 2.3
 
-**January 17, 2023**
+**January 25, 2023**
 
 iXsystems is pleased to release TrueCommand 2.3.0!
 This release of TrueCommand includes a new cluster details panel, and makes improvements in several areas including:
