@@ -44,7 +44,7 @@ Define the image tag, when the image is pulled from the remote repository, how t
 {{< /expand >}}
 
 ## Container Entrypoint
-The **Container Entrypoint** settings specify both commands and arguement options the application requires.  
+The **Container Entrypoint** settings specify both commands and argument options the application requires.  
 {{< expand "Click Here for More Information" "v" >}}
 Define any [commands and arguments](https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/) to use for the image.
 These can override any existing commands stored in the image. 
@@ -72,7 +72,7 @@ Be sure to check the documentation for the image you are trying to deploy and ad
 |---------|-------------|
 | **Configure Container Environment Variables** | Click **Add** to display a block of **Container Environment Variables**. Click again to add more blocks for environment variables. |
 | **Container Environment Variables** | Container environmental variable name and value fields. |
-| **Environment Variable Name** | Enter the environment variable name. For example, if installing Pi-Hole enter ***TZ** for timezone. |
+| **Environment Variable Name** | Enter the environment variable name. For example, if installing Pi-Hole enter **TZ** for timezone. |
 | **Environment Variable Value** | Enter the value for the variable specified in **Environment Variable Name**. For example, for Pi-Hole timezone variable, enter *AmericaNewYork*. |
 {{< /expand >}}
 
@@ -168,7 +168,7 @@ The **Workload Details** settings specify if containers in a pod run with TTY or
 | **Enable TTY** | Select to set containers in a pod to run with TTY enabled. Disabled by default. |
 | **enable STDIN** | Select to set containers in a pod to run with STDIN enabled. Disabled by default. |
 | **Privileged Mode** | Select to allow any container in a pod to enable any device on the host, but a **privileged** container is given access to all devices on the host. This allows the container nearly all the same access as processes running on the host. |
-| **Configure Capabilities** | Click **Add** to display a **Add Capability** field**. Click again to add another field. |
+| **Configure Capabilities** | Click **Add** to display a **Add Capability** field. Click again to add another field. |
 | **Add Capability** | Enter a capability. |
 | **Configure Container User and Group ID** | Select to display the **Run Container as User** and **Run Container as Group** settings to add security context (`runAsUser` and `runAsGroup` variables). |
 | **Run Container As User** | Enter a user ID (numeric value) for container. |
