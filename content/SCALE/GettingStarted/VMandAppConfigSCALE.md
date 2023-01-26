@@ -35,17 +35,13 @@ Storage pool creation is part of the initial process of setting up storage for S
 Once the pool and datasets have been created, set up shares to enable data access. Three types of data sharing methods are discussed in 
 [Setting Up Data Sharing]({{< relref "SetUpSharing.md" >}}). More specific coverage of each share should be investigated based on your individual use case. 
 
-A good introduction as to how TrueNAS SCALE handles SMB shares is located at [SMB Shares Screens]({{< relref "SMBSharesScreens.md" >}}) and [Setting Up SMB Home Shares]({{< relref "AddSMBHomeShare.md" >}}). For a better understanding of how to configure Active Directory, see [Active Directory Screen]({{< relref "scale/scaleuireference/credentials/directoryservices/ActiveDirectory.md" >}}). Required Kerberos information is outlined here, but also in this article: [Configuring Kerberos]({{< relref "ConfigKerberosSCALE.md" >}}). Configuring LDAP best practices can be found at: [Configuring LDAP]({{< relref "ConfigLDAPSCALE.md" >}}).
+A good introduction as to how TrueNAS SCALE handles SMB shares is located at [SMB Shares Screens]({{< relref "SMBSharesScreens.md" >}}) and [Setting Up SMB Home Shares]({{< relref "AddSMBHomeShare.md" >}}). For a better understanding of how to configure Active Directory, see [Active Directory Screen]({{< relref "scale/scaleuireference/credentials/directoryservices/ActiveDirectory.md" >}}). Required Kerberos information is outlined here, and also in this article: [Configuring Kerberos]({{< relref "ConfigKerberosSCALE.md" >}}). Configuring LDAP best practices can be found at: [Configuring LDAP]({{< relref "ConfigLDAPSCALE.md" >}}).
 
 NFS basic share creation information can be found here: [Adding NFS Shares]({{< relref "AddingNFSShares.md" >}}). Adjust access permissions using the advanced options. 
 
 ## Virtualization Prerequisites
 
-In order to be able to run a Virtual Machine (VM), hardware requirements include an x86 machine running a recent Linux kernel using an Intel processor with VT extensions, or an AMD processor with SVM extensions (AMD-V). Regardless of virtualization application, use these minimum settings:
-
-* RAM: at least 8192 MB (8GB)
-* DISKS: two virtual disks with at least 16GB, one for the operating system and boot environments and at least one additional disk to use as data storage.
-* NETWORK: Use NAT, bridged, or host-only depending on your host network configuration.
+In order to be able to run a Virtual Machine (VM), hardware requirements include an x86 machine running a recent Linux kernel using an Intel processor with VT extensions, or an AMD processor with SVM extensions (AMD-V). To install a VM on SCALE, you need to first research the minimum and recommended specifications for the OS you plan to use and your full use case for that VM. Overallocating resources to a VM can cause performance on the TrueNAS SCALE system to suffer, so it is recommended to plan ahead and ensure that the SCALE system has the resources to run both itself and a full VM deployment effectively.
 
 Software requirements include an installer for the OS you intend to install on the VM, and a TrueNAS storage pool. It is recommended to have additional datasets created beneath the storage pool to further organize your VM data.
 
