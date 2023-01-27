@@ -145,6 +145,8 @@ To create the virtual machine for your TrueNAS, from the **Virtual Machines** sc
 
    Click **Finish**. The new Truenas VM displays on the list of virtual machines. 
 
+   ![VMWareTrueNASVMCreated](/images/VMWareESXi/VMWareTrueNASVMCreated.png "TrueNAS VM Created")
+
 {{< /expand >}}
 ### Reviewing the New TrueNAS VM
 

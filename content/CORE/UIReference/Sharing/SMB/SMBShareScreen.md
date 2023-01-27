@@ -26,7 +26,7 @@ Click **Add** to display the **BASIC Options** settings screen.
 |---------|--------------|
 | **Path** | Use the file browser or click the **/mnt** to select the pool, dataset or directory to share. |
 | **Name** | Enter a name for the SMB share. |
-| **Purpose** | Select a preset purpose configuration. This locks in predetermined values for the share. This includes **Advanced Options**, as well as the **Path Suffix**. Select from the dropdown list. Options are:<br>**No presets**<br>**Default share parameters**<br>**Multi-user time machine**<br>**Multi-protocol (AFP/SMB) shares**<br>**Multi-protocol (NFSv3/SMB) shares**<br>**Private SMB Datasets and Shares**<br>**SMB WORM. Files become readonly via SMB after 5 minutes**<br>See "What do all the presets do?" for more information on presets. |
+| **Purpose** | Select a preset purpose configuration. This locks in predetermined values for the share. This includes **Advanced Options**, as well as the **Path Suffix**. Select from the dropdown list. Options are:<br>**No presets**<br>**Default share parameters**<br>**Multi-user time machine**<br>**Multi-protocol (AFP/SMB) shares**<br>**Multi-protocol (NFSv3/SMB) shares**<br>**Private SMB Datasets and Shares**<br>**SMB WORM. Files become readonly via SMB after 5 minutes**. Note: The **SMB WORM** preset only impacts writes over the SMB protocol. Prior to deploying this option in a production environment the user needs to determine whether the feature meets his / her requirements.<br>See "What do all the presets do?" for more information on presets. |
 | **Description** | Optional. Explains the purpose of the share. |
 | **Enabled** | Select to enable this SMB share. Clear checkbox to disable the share without deleting the configuration. |
 

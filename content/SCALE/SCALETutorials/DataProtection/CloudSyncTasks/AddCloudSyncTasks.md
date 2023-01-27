@@ -18,7 +18,7 @@ Using the cloud means data can go to a third-party commercial vendor not directl
 iXsystems is not responsible for any charges incurred from using third-party vendors with the cloud sync feature.
 {{< /hint >}}
 
-TrueNAS supports major providers like Amazon S3, Google Cloud, and Microsoft Azure. It also supports many other vendors. To see the full list of supported vendors, go to **Credentials > Backup Credentials > Cloud Credentials** click **Add** and open the **Provider** dropdown list.
+TrueNAS supports major providers like Storj, Amazon S3, Google Cloud, and Microsoft Azure. It also supports many other vendors. To see the full list of supported vendors, go to **Credentials > Backup Credentials > Cloud Credentials** click **Add** and open the **Provider** dropdown list.
 
 ## Cloud Sync Task Requirements
 
@@ -28,35 +28,26 @@ TrueNAS supports major providers like Amazon S3, Google Cloud, and Microsoft Azu
 You can create the cloud storage account credentials using **Credentials > Backup Credentials > Cloud Credentials** before creating the sync task or add it at the time you create the cloud sync task on **Data Protection > Cloud Sync Task > Add Cloud Sync Task**. See the [Cloud Credentials]({{< relref "/SCALE/SCALETutorials/Credentials/BackupCredentials/AddCloudCredentials.md" >}}) article for instructions on adding a backup credential using cloud credentials.
 
 ## Creating a Cloud Sync Task
-{{< expand "Adding Cloud Sync Tutorial Video" "v" >}}
-
-{{< embed-video name="scaleangelfishcloudsync" >}}
-
-{{< /expand >}}
 To add a cloud sync task, go to **Data Protection > Cloud Sync Tasks** and click **Add**. The **Add Cloud Sync Task** configuration screen opens.
 
 ![AddCloudSyncTaskTop](/images/SCALE/22.02/AddCloudSyncTaskTop.png "Adding a Cloud Sync Task")
 
 1. (Required) Type a memorable task description in **Description**. 
 
-2. Select an existing backup credential from the **Credential** dropdown list.
+2. Select an existing backup credential from the **Credential** dropdown list. 
+   If you have not added the cloud credential, click **Manage Credentials** to open the **Backup Credentials** screen. 
 
-See **Using Scripting and Environment Variables** for more information on [environment variables](#using-scripting-and-environment-variables).
+3. Select the option from **Direction** and in **Transfer Mode**.
 
-{{< expand "What happens if my cloud sync credentials are invalid?" "v" >}}
-After you choose a cloud credential from the dropdown list, TrueNAS automatically validates access to that cloud sync provider. 
-Invalid credentials results in the following alert: 
+4. Select the dataset location in **Directory/Files**.
 
-![CloudSyncMalformedHeaderDialog](/images/SCALE/22.02/CloudSyncMalformedHeaderDialog.png "Invalid Credentials Alert")
+5. Cloud provider settings change based on the credential you select. Select or enter the required settings that include where files are stored.
 
-Click **FIX CREDENTIAL** opens the **Credentials > Cloud Credentials > Edit Cloud Credentials** screen for the cloud service selected in **Credentials**.  
+6. Select the time from the **Schedule** options.
 
-![DataProtectionCloudSyncInvalidFix](/images/SCALE/DataProtectionCloudSyncInvalidFix.png "Name and Provider View")
+7. Click **Save** to add the task.
 
-Check your provider credentials and update the applicable authentication fields on the **Edit Cloud Credentials** screen, and then click **Verify Credential**. 
-If TrueNAS successfully accesses the provider the system displays the **The Credential is valid** dialog. 
-Click **Save** and then return to **Data Protection > Cloud Sync Tasks > Add** to try again.
-{{< /expand >}}
+You can use **Dry Run** to test your configuration before you click **Save** or select the option on the **Cloud Sync Task** widget after you click **Save**.
 
 ### Troubleshooting Transfer Mode Problems
 **Sync** keeps all the files identical between the two storage locations. 
@@ -102,7 +93,6 @@ Remote storage settings:
 
 Local storage settings:
 * `CLOUD_SYNC_PATH`
-
 {{< /expand >}}
 
 ## Running an Unscheduled Cloud Sync Task 
