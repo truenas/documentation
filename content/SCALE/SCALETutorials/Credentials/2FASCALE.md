@@ -4,9 +4,9 @@ description: "This article provides information on SCALE two-factor authenticati
 weight: 60
 alias:
 tags:
- - scale2fa
- - scalessh
- - scalecredentials
+- scale2fa
+- scalessh
+- scalecredentials
 ---
 
 
@@ -44,32 +44,31 @@ If the 2FA code is not working or users cannot get it, the system is inaccessibl
 
 ## Enabling 2FA
 
-{{< expand "Video Tutorial" "v" >}}
-This short video demonstrates adding 2FA. 
-{{< embed-video name="scale2fasetup" >}}
-{{< /expand >}}
-
 {{< hint danger >}}
 Set up a second 2FA device as a backup before proceeding.
 {{< /hint >}}
 
 Before you begin, download Google Authenticator to your mobile device.
 
-1 Go to **Credentials > 2FA** to open the **Two-Factor Auth** screen.
-  
-![2FAUserSettings](/images/SCALE/2fabluefinscreen.png "2FA User Settings")
-
-2 Click **Enable Two Factor Authentication**. The **Enable Two-Factor Authentication** confirmation dialog opens. Click **Confirm**.
-  
-  ![Enable2FAConfirmationDialog](/images/SCALE/22.02/Enable2FAConfirmationDialog.png "Enable 2FA")
-
-  **Disable Two-Factor Authentication** displays next to **Save** to turn 2FA off.
-
-3 Click **Show QR**. A QR code dialog opens.
+1. Go to **Credentials > 2FA** to open the **Two-Factor Auth** screen.
    
-   ![2FAQRCodeDialog](/images/SCALE/22.02/2FAQRCodeDialog.png "2FA QR Code")
+   ![Enable2FAScreen](/images/SCALE/22.12/Enable2FAScreen.png "Enable 2FA User Settings")
 
-4 Start Google Authenticator on the mobile device and scan the QR code. After scanning the code click **Close** to close the dialog on the **Two-Factor Auth** screen.
+2. Click **Enable Two Factor Authentication**. The **Enable Two-Factor Authentication** confirmation dialog opens. Click **Confirm**.
+  
+   ![Enable2FAConfirmationDialog](/images/SCALE/22.12/Enable2FAConfirmationDialog.png "Enable 2FA Confirmation")
+
+   **Enable Two Factor Authentication** toggles to **Disable Two-Factor Authentication** to turn 2FA off.
+
+   The **Scan this QR Code** dialog opens. Use Google Authenticator to scan the code.
+
+   ![ScanThisQRCodeDialog](/images/SCALE/22.12/ScanThisQRCodeDialog.png "Scan This QR Code")
+
+3. Click **Save**.
+   If you want to enable two-factor authentication for SSH logins, select **Enable Two-Factor Auth for SSH** before you click **Save**.
+
+4. Start Google Authenticator on the mobile device and scan the QR code. 
+   After scanning the code click **Close** to close the dialog on the **Two-Factor Auth** screen.
 
 ### Disabling or Bypassing 2FA
 
@@ -96,9 +95,11 @@ Enabling 2FA changes the login process for both the TrueNAS web interface and SS
 ### Logging In Using the Web Interface
 The login screen adds another field for the randomized authenticator code. If this field is not immediately visible, try refreshing the browser.
 
-Enter the code from the mobile device (without the space) in the login window and use the root User name and password.
+Enter the code from the mobile device (without the space) in the login window and use the root User name and password. 
 
-![2FALogin](/images/SCALE/22.02/2FALogin.png "2FA Login")
+![2faSigninSplashScreen](/images/SCALE/22.12/2faSigninSplashScreen.png "2FA Sign-In Screen")
+
+If you wait too long, a new number code displays in Google Authenticator so you can retry.
 
 ### Logging In Using SSH
 
@@ -112,7 +113,7 @@ Enter the code from the mobile device (without the space) in the login window an
 
 3.  Open the Google Authentication app on your mobile device.
 
-4. Open a terminal and SSH into the system using its host name or IP address, the root account user name and password, and the 2FA code.
+4. Open a terminal (such as Windows Shell) and SSH into the system using either the host name or IP address, the administrator account user name and password, and the 2FA code.
    
 
 {{< taglist tag="scale2fa" limit="10" >}}

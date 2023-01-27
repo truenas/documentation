@@ -127,7 +127,7 @@ Select *Import Certificate* as the **Type**.
 
 ### Certificate Options
 
-If you want to import an existing CSR, enable **CSR exists on this system**, then select one from the drop-down. 
+If you want to import a certificate for a CSR that was previously added, enable **CSR exists on this system**, then select one from the drop-down. 
 
 ![Import Certificate Certificate Options](/images/CORE/12.0/ImportCertificateCertificateOptions.png)
 

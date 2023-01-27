@@ -51,7 +51,7 @@ To create your cloud sync task for a Storj-TrueNAS transfer you:
 
 ### Adding Storj Cloud Credentials
 
-In this section you add your cloud service credentials in SCALE and in Storj. This process includes going to Storj to create a new Storj-TrueNAS account and retuning to SCALE to enter the S3 credentials provided by Storj for this credential.
+In this section you add your cloud service credentials in SCALE and in Storj. This process includes going to Storj to create a new Storj-TrueNAS account and returning to SCALE to enter the S3 credentials provided by Storj for this credential.
 
 Go to **Credentials > Backup Credentials** and click **Add** on the **Cloud Credentials** widget. 
 The **Add Cloud Credential** screen opens with Storj displayed as the default provider in the **Provider** field.

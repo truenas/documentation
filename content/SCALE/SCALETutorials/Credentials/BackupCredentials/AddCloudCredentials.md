@@ -37,9 +37,7 @@ Have any authentication information your cloud storage provider requires on-hand
 ## Adding Cloud Credentials
 
 {{< include file="/content/_includes/AddCloudCredentialStep1.md" type="page" >}}
-   
-   ![CloudCredentialsAdd](/images/SCALE/22.02/CloudCredentialsAdd.png "Add Cloud Credential")
-   
+ 
 2. Select the cloud service from the **Provider** dropdown list. The provider required authentication option settings display.
    
    For details on each provider authentication settings see [Cloud Credentials Screens]({{< relref "/SCALE/SCALEUIReference/Credentials/BackupCredentials/CloudCredentialScreens.md" >}}).
@@ -47,6 +45,9 @@ Have any authentication information your cloud storage provider requires on-hand
 3. Click **Verify Credentials** to test the entered credentials and verify they work.
 
 4. Click **Save**.
+
+### Adding Storj Cloud Credentials
+The process to set up the Storj-TrueNAS account, buckets, create the S3 access and download the credentials is documented fully in [Adding a Storj Cloud Sync Task]({{< relref "AddStorjCloudSyncTask.md" >}}) in the **Adding Storj Cloud Credentials** section.
 
 ### Adding Amazon S3 Cloud Credentials
 If adding an Amazon S3 cloud credential, you can use the default authentication settings or use advanced settings if you want to include endpoint settings.
@@ -116,7 +117,7 @@ Google Drive and pCloud use one more setting to authenticate credentials.
    | Box | For more information the user acess token for Box [click here](https://developer.box.com/). An [access token](https://developer.box.com/reference/) enables Box to verify a request belongs to an authorized session. Example token: T9cE5asGnuyYCCqIZFoWjFHvNbvVqHjl. |
    | Dropbox | Create an access [token](https://dropbox.tech/developers/generate-an-access-token-for-your-own-account) from the [Dropbox account](https://www.dropbox.com/). |
    | Google Drive | The authentication process creates the token for [Google Drive](https://developers.google.com/drive/api/v3/about-auth) and populates the **Access Token** field automatically. Access tokens expire periodically, so you must refresh them. |
-   | Google Photo | does not used an access token. |
+   | Google Photo | Does not use an access token. |
    | pCloud | Create the pCloud access token [here](https://docs.pcloud.com/methods/intro/authentication.html). These tokens can expire and require an extension. |
    | Yandex | Create the Yandex access token [here](https://yandex.com/dev/direct/doc/dg-v4/concepts/auth-token.html). |
 
@@ -199,37 +200,54 @@ From the **Cloud Credentials** widget, click **Add** and then:
 3. Enter the OS_PASSWORD from an [OpenStack credentials file](https://rclone.org/swift/#configuration-from-an-openstack-credentials-file) in **API Key or Password**.
 
 4. (Optional) Select the version from the **AuthVersion**. For more information see [rclone documentation](https://rclone.org/swift/#standard-options).
-   If set to **v3** the **Advanced Options** settings display. 
 
-   a. (Optional) Enter the user ID to log into OpenStack. Leave blank to log into most Swift systems. (Optional) Enter the **User Domain**.
+   If set to **Auth(vX)**, **V1** or **V2**:
+
+   a. (Required) Enter the OS_TENANT_NAME from an [OpenStack credentials file](https://rclone.org/swift/#configuration-from-an-openstack-credentials-file) in **Tenant Name**.
+
+   b. Enter the ID in **Tenant ID**. Required for **v2**.
+
+   c. (Optional) Enter the alternative authentication token in **Auth Token**.
+
+   d. Enter a region name in **Region Name**
+
+   e. (Optional) Enter the URL in **Storage URL**. 
+
+   f. (Required) Select service catalogue option from the **Endpoint Type** dropdown. Options are **Public**, **Internal** and **Admin**. **Public** is recommended.
+
+   If set to **v3** the **Advanced Options** settings displayed change. 
+
+   a. (Optional) Enter the user ID to log into OpenStack. Leave blank to log into most Swift systems. 
    
-   b. (Required) Enter the OS_TENANT_NAME from an [OpenStack credentials file](https://rclone.org/swift/#configuration-from-an-openstack-credentials-file) in **Tenant Name**.
+   b. (Optional) Enter the **User Domain**.
+   
+   c. (Required) Enter the OS_TENANT_NAME from an [OpenStack credentials file](https://rclone.org/swift/#configuration-from-an-openstack-credentials-file) in **Tenant Name**.
 
-   c. Enter the ID in **Tenant ID**. Required for **v2** and **v3**. (Optional) Enter a **Tenant Domain**.
+   d. Enter the ID in **Tenant ID**. Required for **v2** and **v3** and (optional) enter a **Tenant Domain**.
 
-   d. (Optional) Enter the alternative authentication token in **Auth Token**.
+   e. (Optional) Enter the alternative authentication token in **Auth Token**.
 
-5. (Optional) Enter endpoint settings.
+   f. Enter a region name in **Region Name**
 
-   a. Enter a region name in **Region Name**
+   g. (Optional) Enter the URL in **Storage URL**. 
 
-   b. (Optional) Enter the URL in **Storage URL**. 
+   h. (Required) Select service catalogue option from the **Endpoint Type** dropdown. Options are **Public**, **Internal** and **Admin**. **Public** is recommended.
 
-   c. (Optional) Select service catalogue option from the **Endpoint Type** dropdown. Options are **Public**, **Internal** and **Admin**. **Public** is recommended.
+5. Click **Verify Credentials**.
 
-6. Click **Verify Credentials**.
-
-7. Click **Save**.
+6. Click **Save**.
 {{< /expand >}}
 
 ## Using Automatic Authentication
 
 Some providers can automatically populate the required authentication strings by logging in to the account.
+{{< expand "Click here for more information" "v" >}}
 To automatically configure the credential, click **Login to Provider** and entering your account user name and password.
 
 ![AutomaticAuthenticationSCALE](/images/SCALE/AutomaticAuthenticationSCALE.png "Cloud Automatic Authentication")
 
 We recommend verifying the credential before saving it.
+{{< /expand >}}
 
 {{< taglist tag="scalecloud" limit="10" >}}
-{{< taglist tag="scalebackup" limit="10" title="Related Backup Articles" >}}
+{{< taglist tag="scalebackup" limit="10" title="Related Backup Articles" >}} 

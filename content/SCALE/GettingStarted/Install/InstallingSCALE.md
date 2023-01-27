@@ -209,7 +209,7 @@ Enable **MAC spoofing** and **promiscuous mode** on the switch first, and then t
 #### Installing on a Generic Virtual Machine
 
 For most hypervisors, the procedure for creating a TrueNAS VM is the same.
-{{< expand "Genic VM Install Instructions" "v" >}}
+{{< expand "Generic VM Install Instructions" "v" >}}
 1. Create a new virtual machine as usual, taking note of the following settings.
 
   * The virtual hardware has a bootable CD/DVD device pointed to the TrueNAS SCALE installer image (this is usually an <file>.iso</file>).
@@ -218,7 +218,7 @@ For most hypervisors, the procedure for creating a TrueNAS VM is the same.
     **bridged** mode is optimal as this treats the network card as one plugged into a simple switch on the existing network.
 
    * Some products require you identify the OS you plan to install on the VM. The ideal option is **Debian 11 64 bit**. 
-     If this is not available, try options like **Debian 11**, **Debian 64 bit**, **64 bit OS**, or **Other**. *Do not* choose a Windows, Mac or BSD related OS type!
+     If this is not available, try options like **Debian 11**, **Debian 64 bit**, **64 bit OS**, or **Other**.
 
    * For VMWare hypervisors, install in BIOS mode.
 
@@ -320,7 +320,7 @@ The [Console Setup Menu]({{< relref "ConsoleSetupMenu.md" >}}) displays when the
 
 Congratulations, TrueNAS SCALE is now installed!
 
-The next step is to boot up the system and configure SCALE network and general settings with the [Console Setup Menu]]({{< relref "ConsoleSetupMenuScale.md" >}}) so you can log into the web UI.
+The next step is to boot up the system and configure SCALE network and general settings with the [Console Setup Menu]({{< relref "ConsoleSetupMenuScale.md" >}}) so you can log into the web UI.
 
 {{< taglist tag="scaleinstall" limit="10" >}}
 {{< taglist tag="scaleupdate" limit="10" title="Related Update Articles" >}}
