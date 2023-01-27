@@ -58,7 +58,7 @@ Review [Virtualization Screens]({{< relref "VirtualizationScreens.md" >}}) to de
 
 The first time you open the **Applications** screen, the UI asks you to choose a storage pool for applications. You have the option to cancel out of this screen and select the pool later, after you have all of your storage set up the way you want it. However, a storage pool for applications must be chosen before application installation can begin.
 
-Select a pool that has enough space for all the application containers you intend to use. Set up a new dataset before installing your applications if you want to store your application data in a location separated from other storage on your system.
+Select a pool that has enough space for all the application containers you intend to use. Set up a new dataset before installing your applications if you want to store your application data in a separate location from other storage on your system.
 
 ![AppsSettingsChoosePool](/images/SCALE/22.02/AppsSettingsChoosePool.png "Choosing a Pool for Apps")
 
