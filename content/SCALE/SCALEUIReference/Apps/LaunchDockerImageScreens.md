@@ -45,7 +45,7 @@ Define the image tag, when the image is pulled from the remote repository, how t
 {{< /expand >}}
 
 ## Container Entrypoint
-The **Container Entrypoint** settings specify both commands and arguement options the application requires.  
+The **Container Entrypoint** settings specify both commands and argument options the application requires.  
 {{< expand "Click Here for More Information" "v" >}}
 Define any [commands and arguments](https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/) to use for the image.
 These can override any existing commands stored in the image. 
@@ -73,7 +73,7 @@ Be sure to check the documentation for the image you are trying to deploy and ad
 |---------|-------------|
 | **Configure Container Environment Variables** | Click **Add** to display a block of **Container Environment Variables**. Click again to add more blocks for environment variables. |
 | **Container Environment Variables** | Container environmental variable name and value fields. |
-| **Environment Variable Name** | Enter the environment variable name. For example, if installing Pi-Hole enter ***TZ** for timezone. |
+| **Environment Variable Name** | Enter the environment variable name. For example, if installing Pi-Hole enter **TZ** for timezone. |
 | **Environment Variable Value** | Enter the value for the variable specified in **Environment Variable Name**. For example, for Pi-Hole timezone variable, enter *AmericaNewYork*. |
 {{< /expand >}}
 
