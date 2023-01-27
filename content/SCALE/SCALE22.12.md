@@ -27,10 +27,14 @@ Want to get involved by collaborating on TrueNAS SCALE? Join our [Official Disco
 
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
-| SCALE 22.12.1 | Code-freeze | 18 January 2023 |
-| SCALE 22.12.1 | Internal Testing Sprints | 19 January 2023 - 03 February 2023 |
-| SCALE 22.12.1 | Tag | 06 February 2023 |
-| SCALE 22.12.1 | Release | 07 February 2023 |
+| SCALE 22.12.1 | Code-freeze | 25 January 2023 |
+| SCALE 22.12.1 | Internal Testing Sprints | 26 January 2023 - 11 February 2023 |
+| SCALE 22.12.1 | Tag | 13 February 2023 |
+| SCALE 22.12.1 | Release | 14 February 2023 |
+| SCALE 22.12.2 | Code-freeze | 08 March 2023 |
+| SCALE 22.12.2 | Internal Testing Sprints | 13 March 2023 - 24 March 2023 |
+| SCALE 22.12.2 | Tag | 27 March 2023 |
+| SCALE 22.12.2 | Release | 28 March 2023 |
 
 ## Obtaining the Release
 
@@ -1171,6 +1175,8 @@ Additional feature in future Bluefin releases:
 
 | Seen In | Key | Summary | Workaround | Resolved In |
 |---------|-----|---------|------------|-------------|
+| 22.12.0 | <a href="https://ixsystems.atlassian.net/browse/NAS-119608" target="_blank">NAS-119608</a> | Middleware halt after upgrade from Angelfish to Bluefin due to multiple iSCSI portals with the same IP address. | Before upgrading from SCALE Angelfish, remove any iSCSI portals with duplicate IP addresses. | Targeted 22.12.1 |
+| 22.12.0 | <a href="https://ixsystems.atlassian.net/browse/NAS-119390" target="_blank">NAS-119390</a> | SMB Access Based Share Enumeration fails due to inaccessible Share ACL DB (share_inf.tdb) | SMB shares with Access Based Share Enumeration enabled and share ACLs are not browsable. Disabling Access Based Share Enumeration makes them browsable. Download the replacement Samba package attached to this ticket to correct this issue and make shares with Access Based Share Enumeration enabled browsible. | Targeted 22.12.1 |
 | 22.12.0 | <a href="https://ixsystems.atlassian.net/browse/NAS-119374" target="_blank">NAS-119374</a> | Non-root administrative users cannot access installed VM or App console. | For Apps console access, log in to the UI as the **root** user. For VM console access, go to **Credentials > Local Users** and edit the non-root administrative user. In the **Auxiliary Groups** field, open the dropdown and select the **root** option. Click **Save**. | Targeted for 22.12.1 (Bluefin) |
 | 22.12.0 | N/A | App deployment can get stuck in validation when the Host Path is used between Apps and TrueNAS sharing services (e.g. SMB and NFS). | Shared host paths are considered insecure and are not recommended. Review host paths used by Apps and Sharing services and adjust paths to be unique. As a last resort that can result in system and app instability, **Host Path Safety Checks** can be disabled in **Apps > Settings > Advanced Settings**. | N/A |
 | 22.12.0 | <a href="https://ixsystems.atlassian.net/browse/NAS-119233" target="_blank">NAS-119233</a> | Validation error received when modifying HTTP/S Port Setting in the Web UI | A validation error can occur if using the iw.iso8 keyboard map where the system interprets digits "81" as the text "us". | Targeteted 22.12.1 |
@@ -1198,7 +1204,7 @@ Additional feature in future Bluefin releases:
 | 22.12-BETA.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-118095" target="_blank">NAS-118095</a> | Core dumps on ctdb at startup | Traceback received that indicates ctdb core-dumps when starting nodes after a fresh install. | Unscheduled |
 | 22.02.1 |<a href="https://ixsystems.atlassian.net/browse/NAS-116473" target="_blank">NAS-116473</a> | Large Drive Count Issues | iX is investigating issues with booting SCALE on systems with more than 100 Disks. | 23.10-ALPHA.1 (Cobia) |
 | 22.02.0 | <a href="https://jira.ixsystems.com/browse/NAS-115238" target="_blank">NAS-115238</a> | Removed drive from pool does not degrade pool status (SCALE). | Issue is being investigated and a fix provided in a future release | 22.12-BETA.2 |
-|  |  | Unable to mount an NFS export after migrating from CORE > SCALE or updating to 22.02.0. | The <file>/etc/exports</file> file is no longer generated when the NFS configuration contains <i>mapall</i> or <i>maproot</i> entries for unknown users or groups. This can impact users who previously had a mapping group set to <i>wheel</i>, which does not exist in SCALE. If you are unable to mount an NFS export, review your NFS share configuration and change any <i>wheel</i> entries to something specific for your environment or <i>root</i>. |  |
+|  |  | Unable to mount an NFS export after migrating from CORE > SCALE or updating to 22.02.0. | The <file>/etc/exports</file> file is no longer generated when the NFS configuration contains <i>mapall</i> or <i>maproot</i> entries for unknown users or groups. If you are unable to mount an NFS export, review your NFS share configuration entries to something specific for your environment or <i>wheel</i> or <i>root</i>. |  |
 |  |  | SCALE Gluster/Cluster. | Gluster/Cluster features are still in testing.  Administrators should use caution when deploying and avoid use with critical data. |  |
 |  | <a href="https://jira.ixsystems.com/browse/NAS-110263" target="_blank">NAS-110263</a> | AFP sharing is removed from TrueNAS SCALE. The protocol is deprecated and no longer receives development effort or security fixes. | TrueNAS SCALE automatically migrates any existing AFP shares into an SMB configuration that is preset to function like an AFP share. | 21.06-BETA.1 |
 | 21.06-BETA.1 | <a href="https://jira.ixsystems.com/browse/NAS-111547" target="_blank">NAS-111547</a> | ZFS shouldn't count vdev IO errors on hotplug removal | Pool status isn't being updated immediately on disk exchange events. | Targeted 22.12 (Bluefin) |

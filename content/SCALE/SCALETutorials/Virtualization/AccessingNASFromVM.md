@@ -10,6 +10,14 @@ tags:
 
 If you want to access your TrueNAS SCALE directories from a VM, you must create a bridge interface for the VM to use. 
 
+{{< hint warning >}}
+If the only interface you have is a single physical interface, complete the following steps in order to create a network bridge:
+* If you have apps running, disable them before proceeding. 
+* Clear the DHCP checkbox on the single physical interface you have, but don't apply the changes.
+* Create a bridge interface and add your physical interface as a member. Configure relevant networking options such as DHCP.
+* Then apply the changes and connect to the UI with the new networking settings.
+{{< /hint >}}
+
 Go to **Virtualization**, find the VM you want to use to access TrueNAS storage, and toggle it off.
 
 ![AccessNASfromVM1](/images/SCALE/AccessNASfromVM1.png "Toggle off VM")

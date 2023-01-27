@@ -1,10 +1,12 @@
 ---
 title: "Managing Users"
-description: "This article provides instructions on adding and managing local user accounts."
+description: "This article provides instructions on adding and managing the administrator and local user accounts."
 weight: 10
 alias: /scale/scaleuireference/credentials/localusers/
 tags:
- - scaleusers
+- scaleusers
+- scalelogin
+- scaleadmin
 ---
 
 {{< toc >}}
@@ -35,7 +37,7 @@ To see user accounts, go to **Credentials > Local Users**.
 TrueNAS hides all built-in users (except root) by default. Click the toggle **Show Built-In Users** to see all built-in users.
 
 ## Creating an Admin User Account
-SCALE has implemented rootless login. All systems should create and begin using an admin user as a replacement for the root user. 
+SCALE has implemented rootless log in. All systems should create and begin using an admin user as a replacement for the root user. 
 A system warning alert displays until you create the admin user. 
 If you upgraded to a 22.12.0 release instead of installing fresh from an iso file and setting up the admin user in that process, you can create an admin user with this procedure.
 
@@ -45,18 +47,23 @@ Enter the name you want to use for the administrator account.
 
 Enter and confirm the admin user passwords.
 
-Select **builtin_administrators** and **root** groups on the **Auxiliary Group** dropdown list.
+Select the **root** and **builtin_administrators** groups on the **Auxiliary Group** dropdown list.
 
 ![AddingAdminUserAuxiliaryGroup](/images/SCALE/22.12/AddingAdminUserAuxiliaryGroup.png "Add Admin User to builtin_administrators")
 
 Click **Save**.
 
-## Creating User Accounts
+### Configuring the Admin User Account for Nextcloud App
+The Nextcloud application, configured on the **Apps > Available Applications** screen, requires including sudo permissions for the administrator account. 
+To verify, or manage the local administrator account, go to **Credentials > Local User** and click on the administrator user row to expand it, then click **Edit** to open the **Edit User** configuration screen.
 
-{{< expand "Tutorial Video" "v" >}}
-This short video demonstrates adding a local user.
-{{< embed-video name="scaleangelfishlocalusers" >}}
-{{< /expand >}} 
+Scroll down to the **Authentication** settings and select **Permit Sudo**.
+
+Click **Save**.
+
+For information on adding sudo permissions in cli commands, see [Installing Nextcloud for Media Previews]({{< relref "InstallNextCloudMedia.md" >}}).
+
+## Creating User Accounts
 
 To create a new user, click **Add**.
 

@@ -19,6 +19,8 @@ You can lose your TrueNAS connection if you change the network interface that th
 You might need command line knowledge or physical access to the TrueNAS system to fix misconfigured network settings.
 {{< /hint >}}
 
+{{< include file="/_includes/AliasOrStaticIP.md" type="page" >}}
+
 ## Before you Begin
 
 Have the DNS name server addresses and the default gateway for the new IP address, and the new static IP address on hand to prevent lost communication with the server. 
