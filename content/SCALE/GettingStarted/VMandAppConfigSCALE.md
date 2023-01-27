@@ -33,7 +33,7 @@ Storage pool creation is part of the initial process of setting up storage for S
 ### Set Up Shares
 
 After creating the pool and datasets, set up shares to enable data access. Three types of data sharing methods are discussed in 
-[Setting Up Data Sharing]({{< relref "SetUpSharing.md" >}}). More specific coverage of each share should be investigated based on your individual use case. 
+[Setting Up Data Sharing]({{< relref "SetUpSharing.md" >}}). You should investigate more specific coverage of each share based on your individual use case. 
 
 A good introduction as to how TrueNAS SCALE handles SMB shares is located at [SMB Shares Screens]({{< relref "SMBSharesScreens.md" >}}) and [Setting Up SMB Home Shares]({{< relref "AddSMBHomeShare.md" >}}). For a better understanding of how to configure Active Directory, see [Active Directory Screen]({{< relref "scale/scaleuireference/credentials/directoryservices/ActiveDirectory.md" >}}). Required Kerberos information is outlined here, and also in this article: [Configuring Kerberos]({{< relref "ConfigKerberosSCALE.md" >}}). Configuring LDAP best practices can be found at: [Configuring LDAP]({{< relref "ConfigLDAPSCALE.md" >}}).
 
