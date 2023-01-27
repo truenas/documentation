@@ -1,13 +1,12 @@
 ---
 title: "Managing SMB Shares"
-description: "This article provides instructions on managing existing SMB shares, adding share ACLs, and managing file system ACLs "
+description: "This article provides instructions on managing existing SMB share permissions, adding share ACLs, and managing file system ACLs "
 weight: 20
 aliases:
 tags:
- - scalesmb
- - scaleafp
- - scaleshares
- - scaleacls
+- scalesmb
+- scaleafp
+- scaleacls
 ---
 
 
@@ -27,8 +26,8 @@ Click on the dropdown list option for the operation you want to perform.
 
 * Click **Edit Share ACL** to open the  **Sharing > SMB > Share ACL** screen where you can [add or edit ACL entries](#configuring-smb-share-acl). 
 
-* Click **Edit Filesystem ACL** to open the **Storage > Edit *POSIX.1e* ACL** screen where you can [edit the SMB dataset permissions](#configure-dataset-file-system-acl). 
-  The SMB dataset ACL options you set determine the **ACL Editor** screen displayed.
+* Click **Edit Filesystem ACL** to open the **Storage > Edit ACL** screen. 
+  The dataset **Share Type** option determine the ACL type and therefore the **ACL Editor** screen that opens.
 
 * Click **Delete** to open a delete confirmation dialog where you delete the share and remove it from the system. Delete does not affect shared data.
 
@@ -53,7 +52,8 @@ Changes made to permissions on this screen for the selected SMB share do not app
 You cannot access SMB shares with the root user. Always change SMB dataset ownership to the intended SMB user. 
 {{< /hint >}}
 
-This ACL determines the browse list if you enable **Access Based Share Enumeration**. See [SMB Share Screens]({{< relref "SMBSharesScreens.md" >}}) for more information on settings.
+This ACL determines the browse list if you enable **Access Based Share Enumeration**. 
+See [SMB Share Screens]({{< relref "SMBSharesScreens.md" >}}) for more information on settings.
 
 Open is the default. 
 
@@ -89,9 +89,9 @@ See both the [Permissions]({{< relref "PermissionsSCALE.md" >}}) for more detail
 #### Using Preset ACL Entries (ACEs) on an NFSv4 ACL Editor
 To rewrite the current ACL with a standardized preset, click **Use ACL Preset** and select an option:
 
-**NFS4_OPEN** to give the owner and group full dataset control. All other accounts can modify the dataset contents.  
-**NFS4_RESTRICTED** to give the owner full dataset control. Group can modify the dataset contents.
-**NFS4_HOME** to give the owner full dataset control. Group can modify the dataset contents. All other accounts can navigate the dataset.
+* **NFS4_OPEN** to give the owner and group full dataset control. All other accounts can modify the dataset contents.  
+* **NFS4_RESTRICTED** to give the owner full dataset control. Group can modify the dataset contents.
+* **NFS4_HOME** to give the owner full dataset control. Group can modify the dataset contents. All other accounts can navigate the dataset.
 
 When finished, click **Save Access Control List** to add this to the **Access Control List**.
 
@@ -100,9 +100,9 @@ If the file system uses a POSIX ACL, the first option presented is to select a p
 
 To rewrite the current ACL with a standardized preset, click **Use ACL Preset** and select an option:
 
-**POSIX_OPEN** to give owner and group full dataset control. All other accounts can modify the dataset contents.  
-**POSIX_RESTRICTED** to give owner full dataset control. Group can modify the dataset contents.
-**POSIX_HOME** to give owner full dataset control. Group can modify the dataset contents. All other accounts can navigate the dataset.
+* **POSIX_OPEN** to give owner and group full dataset control. All other accounts can modify the dataset contents.  
+* **POSIX_RESTRICTED** to give owner full dataset control. Group can modify the dataset contents.
+* **POSIX_HOME** to give owner full dataset control. Group can modify the dataset contents. All other accounts can navigate the dataset.
 
 {{< taglist tag="scalesmb" limit="10" >}}
 {{< taglist tag="scaleafp" limit="10" title="Releated AFP Articles" >}}

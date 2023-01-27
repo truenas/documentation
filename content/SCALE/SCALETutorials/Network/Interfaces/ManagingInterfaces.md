@@ -25,7 +25,7 @@ To add another network interface leave the **DHCP** checkbox clear and click the
 
 Click **Add** on the **Interfaces** widget to display the **Add Interface** panel.
 
-You must specify the type of interface you want to create. The **Type** field provides three options: **Bridge**, **Link Aggregation** or LAGG, and **VLAN*** or virtual LAN. You cannot edit the interface type after you click **Save**. 
+You must specify the type of interface you want to create. The **Type** field provides three options: **Bridge**, **Link Aggregation** or LAGG, and **VLAN** or virtual LAN. You cannot edit the interface type after you click **Save**. 
 
 Each interface type displays new fields on the **Add Interface** panel. Links with more information on adding these specific types of interfaces are at the bottom of this article.
 
