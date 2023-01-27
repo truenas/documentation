@@ -47,7 +47,7 @@ Allocating too many resources to a SCALE VM can cause performance to suffer, so 
 
 Software requirements include an installer for the OS you intend to install on the VM, and a TrueNAS storage pool. It is recommended to have additional datasets created beneath the storage pool to further organize your VM data.
 
-Review the [Virtualization Screens]({{< relref "VirtualizationScreens.md" >}}) to determine requirements for VM installation. See [Adding Managing VMs]({{< relref "CreatingManagingVMsSCALE.md" >}}) for more information on adding or managing VMs.
+Review [Virtualization Screens]({{< relref "VirtualizationScreens.md" >}}) to determine requirements for VM installation. See [Adding Managing VMs]({{< relref "CreatingManagingVMsSCALE.md" >}}) for more information on adding or managing VMs.
 
 ## App Installation Prerequisites
 
