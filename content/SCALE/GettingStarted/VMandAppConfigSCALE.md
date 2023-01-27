@@ -49,7 +49,7 @@ Software requirements include an installer for the OS you intend to install on t
 
 Review [Virtualization Screens]({{< relref "VirtualizationScreens.md" >}}) to determine requirements for VM installation. See [Adding Managing VMs]({{< relref "CreatingManagingVMsSCALE.md" >}}) for more information on adding or managing VMs.
 
-## App Installation Prerequisites
+## Application Installation Prerequisites
 
 The first time you open the **Applications** screen, the UI asks you to choose a storage pool for applications. Select a pool that has enough space for all the application containers you intend to use. Set up a new dataset before installing your applications if you want to store your application data in a location separated from other storage on your system.
 
