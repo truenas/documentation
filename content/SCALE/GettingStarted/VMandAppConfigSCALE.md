@@ -16,7 +16,7 @@ Configuring TrueNAS SCALE to work with virtualized features, such as virtual mac
 
 ## Before You Begin
 
-This article assumes that you have the latest release version of TrueNAS SCALE installed on your system. The following steps comprise a list of configuration prerequisites that you have completed and are familiar with before beginning VM and App installation.
+This article assumes that you have the latest release version of TrueNAS SCALE installed on your system. The following steps comprise a list of configuration prerequisites that you have completed and are familiar with before beginning VM and app installations.
 
 ### Network Prerequisites
 
