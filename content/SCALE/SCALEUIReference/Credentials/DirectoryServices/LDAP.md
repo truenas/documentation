@@ -22,7 +22,7 @@ Click **Configure LDAP** in **Credentials > Directory Services** to open the **L
 | **Hostname** | LDAP server hostnames/IP addresses. Separate entries with <kbd>Space</kbd>. You can enter multiple hostnames/IP addresses to create an LDAP failover priority list. If a host does not respond, TrueNAS will try the next host until it establishes a connection. |
 | **Base DN** | Top level of the LDAP directory tree to be used when searching for resources. Example: dc=test,dc=org. |
 | **Bind DN** | Administrative account name on the LDAP server. Example: cn=Manager,dc=test,dc=org. |
-| **Bind** Password | Password for the Bind DN. |
+| **Bind Password** | Password for the Bind DN. |
 | **Enable** | Activates the configuration. Unset to disable the configuration without deleting it. You can re-enable it later without reconfiguring it. |
 
 ### Advanced Options
