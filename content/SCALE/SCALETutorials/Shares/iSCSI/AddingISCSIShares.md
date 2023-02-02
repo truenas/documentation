@@ -41,20 +41,21 @@ Have the following ready before you begin adding your iSCSI block share:
 ## iSCSI Wizard
 This section walks you through the setup process using the wizard screens.
 
+{{< expand "Click here for more information" "v" >}}
 To use the setup wizard, 
 1. Add the block device. 
    
    a. Enter a name using all lowercase alphanumeric characters plus a dot (.), dash (-), or colon (:). We recommend keeping it short or at most 63 characters. 
       
-      ![iSCSIWizardCreateBlockDeviceScreen](/images/SCALE/22.02/iSCSIWizardCreateBlockDeviceScreen.png "iSCSI Wizard: Block Device")
+      ![iSCSIWizardCreateDevice](/images/SCALE/22.12/iSCSIWizardCreateDevice.png "iSCSI Wizard: Block Device")
    
    b. Choose the **Extent Type**. You can select either **Device** or **File**.
 
       If you select **Device**, select the zvol to share from the **Device** dropdown list.
 
-      If you select **File**, file settings display. Browse to the location of the file to populate the path, and then enter the size in **Filesize**.
+      If you select **File**, file settings display. Browse to the location of the file to populate the path, and then enter the size in **Filesize**. Entering 0 uses the actual file size and requires that the file already exists. 
 
-      ![iSCSIWizardCreateBlockDeviceAddFileType](/images/SCALE/22.02/iSCSIWizardCreateBlockDeviceAddFileType.png "iSCSI Wizard: Block File Settings")
+      ![iSCSIWizardCreateFile](/images/SCALE/22.12/iSCSIWizardCreateFile.png "iSCSI Wizard: Block File Settings")
 
    c. Select the type of platform using the share. For example, if you use an updated Linux OS, choose **Modern OS**.
 
@@ -71,23 +72,24 @@ To use the setup wizard,
    If you select either **CHAP** or **MUTUAL CHAP**, you must also to select a **Discovery Authentication Group** from the dropdown list. 
    If no group exists, click **Create New** and enter a value in **Group ID**, **User**, and **Secret**.
    
-   ![iSCSIWizardPortalCreateNewDiscoveryAuthenticationGroup](/images/SCALE/22.02/iSCSIWizardPortalCreateNewDiscoveryAuthenticationGroup.png "iSCSI Wizard: Portals")
+   ![iSCSIWizardPortalChap](/images/SCALE/22.12/iSCSIWizardPortalChap.png "iSCSI Wizard: Portal Chap Authentication")
    
    Select **0.0.0.0** or **::** from the **IP Address** dropdown list. **0.0.0.0** listens on all IPv4 addresses and **::** listens on all IPv6 addresses.
 
     Click **NEXT**
 
-3. Add the Initiator. After adding the portal set up the initiator or networks that use the iSCSI share.
+3. Add the Initiator. After adding the portal set up the initiators that use the iSCSI share.
    
-   Decide which initiators or networks can use the iSCSI share. 
-   Leave the list empty to allow all initiators or networks, or add entries to the list to limit access to those systems.
+   Decide which initiators can use the iSCSI share. 
+   Leave the list empty to allow all initiators, or add entries to the list to limit access to those systems.
 
-   ![iSCSIWizardInitiatorScreen](/images/SCALE/22.02/iSCSIWizardInitiatorScreen.png "iSCSI Wizard: Initiator")
+   ![iSCSIWizardInitiator](/images/SCALE/22.12/iSCSIWizardInitiator.png "iSCSI Wizard: Initiator")
 
 4. Confirm the iSCSI setup. Review your settings.
    If you need or want to change any setting click **Back** until you reach the wizard screen with the setting.
 
 5. click **Save**.
+{{< /expand >}}
 
 ## iSCSI Manual Setup
 This procedure walks you through adding each configuration setting on the seven configuration tab screens. While the procedure places each tab screen in order, you can select the tab screen to add settings in any order.
@@ -98,22 +100,24 @@ This procedure walks you through adding each configuration setting on the seven 
    a. Click **Configure** on the main **Block (iSCSI) Share Targets** widget.
       The **Target Global Configuration** tab screen opens.
 
-      ![SharingiSCSITargetGlobalConfigurationScreen](/images/SCALE/22.02/SharingiSCSITargetGlobalConfigurationScreen.png "iSCSI Target Global Configuration")
+      ![iSCSIManualTargetGlobalConfig](/images/SCALE/22.12/iSCSIManualTargetGlobalConfig.png "iSCSI Target Global Configuration")
 
    b. Enter a name using lowercase alphanumeric characters plus dot (.), dash (-), and colon (:) in **Base Name**. 
       Use the iqn.format for the name. See the "Constructing iSCSI names using the iqn.format" section of [RFC3721](https://tools.ietf.org/html/rfc3721.html).
 
    c. Enter the host names or IP address of the ISNS servers to register with the iSCSI targets and portals of the system. Separate entries by pressing <kbd>Enter</kbd>.
 
-   d. Click **Save**.
+   d. The value entered in **Pool Available Space Threshold** generates an alert when the pool has this percentage of space remaining. This is typically configured at the pool level when using zvols or at the extent level for both file and device based extents. 
 
-2. Add portals. Click **Portals** to open the screen.
-   
-   ![SharingiSCSIPortalsScreen](/images/SCALE/22.02/SharingiSCSIPortalsScreen.png "iSCSI Portal Tab")
+   e. Enter the **iSCSI listen port**. Add the TCP port used to access the iSCSI target. Default is `3260`.
 
-   a. Click **Add** at the top of the screen to open the **Sharing > iSCSI > Portals > Add** screen.
+   f. Click **Save**.
+
+2. Add portals. Click **Portals** tab.
+
+   a. Click **Add** at the top right of the screen to open the **Add Portal** screen.
       
-      ![SharingiSCSIPortalsAddScreen](/images/SCALE/22.12/SharingiSCSIPortalsAddScreen.png "iSCSI Portal Add")
+      ![iSCSIManualAddPortalNoAuth](/images/SCALE/22.12/iSCSIManualAddPortalNoAuth.png "iSCSI Add Portal No Authentication")
 
    b. (Optional) Enter a description. Portals are automatically assigned a numeric group.
 
@@ -125,36 +129,27 @@ This procedure walks you through adding each configuration setting on the seven 
 
    d. (Optional) Based on your **Discovery Authentication Method**, select a group in **Discovery Authentication Group**.
 
-   e. Click **Add** to display the **IP Address** and **Port** fields. Click **Add** for each network IP address and port. 
-
-      Add the IP address. **0.0.0.0** listens on all IPv4 addresses and **::** listens on all IPv6 addresses.
-
-      Add the TCP port used to access the iSCSI target. Default is **3260**.
+   e. Click **Add** to select an **IP Address** to be listened on by the portal from the dropdown list. **0.0.0.0** listens on all IPv4 addresses and **::** listens on all IPv6 addresses. 
 
    f. Click **Save**.
 
 3. Add initiators groups to create authorized access client groups. Click on the **Initiators Groups** tab to open the screen.
-   
-   ![SharingISCSIInitiatorsAddScreen](/images/SCALE/22.02/SharingISCSIInitiatorsAddScreen.png "iSCSI Initiators Groups")
 
-   a. Click **Add** to open the **Sharing > iSCSI > Initiators > Add** screen.
+   a. Click **Add** at the top right of the screen to open the **SHARING > ISCSI > INITIATORS > Add** screen.
+      
+   ![iSCSIManualAddInitiators](/images/SCALE/22.12/iSCSIManualAddInitiators.png "iSCSI Initiators Groups")
 
-   b. Select **Allow All Initiators** or configure your own allowed initiators and authorized networks.
+   b. Select **Allow All Initiators** or configure your own allowed initiators.
 
       Enter the [iSCSI Qualified Name (IQN)](https://tools.ietf.org/html/rfc3720#section-3.2.6) in **Allowed Initiators (IQN)** and click **+** to add it to the list. Example: *iqn.1994-09.org.freebsd:freenas.local*.
-
-      Enter network addresses allowed to use this initiator in **Authorized Networks** and click **+** to add it to the list. Each address can include an optional [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) netmask. Click **+** to add the network address to the list. Example: *192.168.2.0/24*. |
 
    c. Click **Save**.
 
 4. Add network authorized access. Click on the **Authorized Access** tab to open the screen.
-
-   If this is the first iSCSI share, the **No Authorized Access** screen opens. 
    
-   a. Click **Add Authorized Access** in the center of the screen. 
-      To add another network click **Add** at the top of the screen to open the **Sharing > iSCSI > Authorized Access > Add** screen.
-
-      ![SharingiSCSIAuthAccessAddScreen](/images/SCALE/22.02/SharingiSCSIAuthAccessAddScreen.png "iSCSI Add Authorized Access")
+   a. Click **Add** at the top right of the screen. The **Add Authorized Access** screen opens.
+      
+      ![iSCSIManualAddAuthAccess](/images/SCALE/22.12/iSCSIManualAddAuthAccess.png "iSCSI Add Authorized Access")
 
    b. Enter a number in **Group ID**. Each group ID allows configuring different groups with different authentication profiles. 
       Example: all users with a group ID of *1* inherits the authentication profile associated with *Group 1*.   
@@ -168,65 +163,76 @@ This procedure walks you through adding each configuration setting on the seven 
 
    f. Click **Save**.
 
-5. Create storage resources. Click **Targets** tab to open the screen. 
+5. Create storage resources. Click **Targets** tab. 
    
-   ![AddiSCSITargetScreen](/images/SCALE/22.02/AddiSCSITargetScreen.png "iSCSI Add Targets")
+   ![iSCSIManualAddTargets](/images/SCALE/22.12/iSCSIManualAddTargets.png "iSCSI Add Targets")
+   
+   a. Click **Add** at the top right of the screen. The **Add iSCSI Target** screen opens.
 
-   a. Click **Add** at the top of the screen to open the **Add iSCSI Target** screen.
-
-   b. Enter a name using lowercase alphanumeric characters plus dot (.), dash (-), and colon (:) in the iqn.format. 
+   b. Enter a name in **Target Name**. Use lowercase alphanumeric characters plus dot (.), dash (-), and colon (:) in the iqn.format. 
       See the "Constructing iSCSI names using the iqn.format" section of [RFC3721](https://tools.ietf.org/html/rfc3721.html).
 
-   c. (Optional) Enter a user-friendly name.
+   c. (Optional) Enter a user-friendly name in **Target Alias**.
 
-   d. Click **Add** under **iSCSI Group** to display the group settings.
+   d. Click **Add** next to **Authorized Networks** to enter IP address information.
 
-   e. Select the group ID from the **Portal Group ID** dropdown.
+   e. Click **Add** under **iSCSI Group** to display the group settings.
 
-   f. (Optional) Slect the group ID in **Initiator Group ID** or leave it set to **None**.
+   f. Select the group ID from the **Portal Group ID** dropdown.
 
-   g. (Optional) Select the **Authentication Method** from the dropdown list of options.
+   g. (Optional) Select the group ID in **Initiator Group ID** or leave it set to **None**.
+
+   h. (Optional) Select the **Authentication Method** from the dropdown list of options.
+
+   i. (Optional) Select the **Authentication Group Number** from the dropdown list. This value represents the number of existing authorized accesses.
    
-   h. (Optional) Select the **Authentication Group Number** from the dropdown list. 
-      Leave at **None** or enter an integer to represent the number of existing authorized access.
+   j. Click **Save**.
+
+6. Add new share storage units (extents). Click the **Extents** tab.
    
-   i. Click **Save**.
+   ![iSCSIManualAddExtentDevice](/images/SCALE/22.12/iSCSIManualAddExtentDevice.png "iSCSI Extents Add Device")
+ 
+   a. Click **Add** at the top right of the screen. The **Add Extent** screen opens.
 
-6. Add new share storage units (extents). Click **Extents** to open the **Sharing > iSCSI > Extents > Add** screen.
-   
-   ![SharingISCSIExtentsAddScreentop](/images/SCALE/22.02/SharingISCSIExtentsAddScreentop.png "iSCSI Extents")
+   b. Enter a name for the extent. If the extent size is not **0**, it cannot be an existing file within the pool or dataset.
 
-   a. Enter a name for the extent. If the extent size is not **0**, it cannot be an existing file within the pool or dataset.
+   c. Leave **Enabled** selected.
 
-   b. Leave **Enable** selected.
+   d. In the **Compatibility** section, the **Enable TPC** checkbox is selected by default. This allows an initiator to bypass normal access control and access any scannable target.
 
-   c. Select the extent type from the **Extent Type** dropdown. 
+   e. The **Xen initiator compat mode** checkbox is not selected by default. Select when using Xen as the iSCSI initiator.
+
+   f. The **LUN RPM** setting should not be changed when using Windows as the initiator. Only needs to be changed in large environments where the number of systems using a specific RPM is needed for accurate reporting statistics. 
+
+   g. The **Read-only** checkbox is not selected by default. Select to prevent the initiator from initializing this LUN.
+ 
+   h. In the **Type** section, select the extent type from the **Extent Type** dropdown. 
       **Device** provides virtual storage access to zvols, zvol snapshots, or physical devices. 
       **File** provides virtual storage access to a single file.
 
-   d. (Optional) Select the option from the **Device** dropdown. This field only displays when **Extent Type** is set to **Device**.
+   i. (Optional) Select the option from the **Device** dropdown. This field only displays when **Extent Type** is set to **Device**.
       Select the path when **Extent Type** is set to **File**. Browse to the location. 
-      Create a new file by browsing to a dataset and appending /\{filename.ext\} to the path. And Enter the size in **Filesize**.
+      Create a new file by browsing to a dataset and appending /\{filename.ext\} to the path. Enter the size in **Filesize**.
 
-      ![SharingiSCSIExtentAddFilename](/images/SCALE/22.02/SharingiSCSIExtentAddFilename.png "iSCSI Extents Add File Name")
+      ![iSCSIManualAddExtentFile](/images/SCALE/22.12/iSCSIManualAddExtentFile.png "iSCSI Extents Add File Name") 
 
-   e. Select **Disable Physical Block Size Reporting** if the initiator does not support physical block size values over 4K (MS SQL).
+   j. Select the **Logical Block Size** from the dropdown list. Leave at the default of 512 unless the initiator requires a different block size.
 
-   f. (Optional) Select the compatibility settings that apply to your extent. See [iSCSI Share Screens]({{< relref "iSCSISharesScreens.md" >}}) for more information.
+   k. Select **Disable Physical Block Size Reporting** if the initiator does not support physical block size values over 4K (MS SQL).
 
-   g. Click **Save**.
-
-7. Add associated storage resources. Click **Associate Targets** tab to open the screen.
-
-   a. Click **Add** to open the **Sharing > iSCSI > Associated Targets > Add** screen.
+   l. Click **Save**.
+   
+7. Add associated storage resources. Click **Associated Targets** tab.
       
-      ![SharingISCSIAssociatedTargetsAdd](/images/SCALE/22.02/SharingISCSIAssociatedTargetsAdd.png "iSCSI Associated Targets")
+      ![iSCSIManualAddAssocAuthTargets](/images/SCALE/22.12/iSCSIManualAddAssocAuthTargets.png "iSCSI Add Associated Targets")
+
+   a. Click **Add** at the top right of the screen. The **Add Associated Target** screen opens.
 
    b. Select the target from the **Target** dropdown list.
 
-   c. Select the value or enter a value 0 and 1023. Some initiators expect a value below 256. Leave blank to automatically assign the next available ID.
+   c. Enter a value 0 and 1023 for the **LUN ID**. Some initiators expect a value below 256. Leave blank to automatically assign the next available ID.
 
-   d. Select the option from the **Extent** dropdown.
+   d. Select an existing extent from the **Extent** dropdown.
 
    e. Click **Save**
 {{< /expand >}}
@@ -234,27 +240,31 @@ This procedure walks you through adding each configuration setting on the seven 
 ## Creating a Quick iSCSI Target
 TrueNAS SCALE allows users to add iSCSI targets without having to set up another share.
 {{< expand "Click here for more information" "v" >}}
-Go to **Shares** and click **Add** in the **Block (iSCSI) Shares Targets** widget.
+Go to **Shares** and click the **Block (iSCSI) Shares Targets** widget.
 
-![AddiSCSITargetScreen](/images/SCALE/22.02/AddiSCSITargetScreen.png "iSCSI Add Targets")
+   a. Click **Add** at the top right of the screen. The **Add iSCSI Target** screen opens.
 
-1. Enter a name using lowercase alphanumeric characters plus dot (.), dash (-), and colon (:) in the iqn.format. 
-   See the "Constructing iSCSI names using the iqn.format" section of [RFC3721](https://tools.ietf.org/html/rfc3721.html).
+   ![iSCSIManualAddTargets](/images/SCALE/22.12/iSCSIManualAddTargets.png "iSCSI Add Targets")
 
-2. (Optional) Enter a user-friendly name in **Target Alias**.
+   b. Enter a name in **Target Name**. Use lowercase alphanumeric characters plus dot (.), dash (-), and colon (:) in the iqn.format. 
+      See the "Constructing iSCSI names using the iqn.format" section of [RFC3721](https://tools.ietf.org/html/rfc3721.html).
 
-3. Click **Add** under **iSCSI Group** to display the group settings.
+   c. (Optional) Enter a user-friendly name in **Target Alias**.
 
-4. Select the group ID from the **Portal Group ID** dropdown.
+   d. Click **Add** next to **Authorized Networks** to enter IP address information.
 
-5. (Optional) Select the group ID in **Initiator Group ID** or leave it set to **None**.
+   e. Click **Add** under **iSCSI Group** to display the group settings.
 
-6. (Optional) Select the **Authentication Method** from the dropdown list of options.
+   f. Select the group ID from the **Portal Group ID** dropdown.
+
+   g. (Optional) Select the group ID in **Initiator Group ID** or leave it set to **None**.
+
+   h. (Optional) Select the **Authentication Method** from the dropdown list of options.
    
-7. (Optional) Select the **Authentication Group Number** from the dropdown list. 
-   Leave at **None** or enter an integer to represent the number of existing authorized access.
+   i. (Optional) Select the **Authentication Group Number** from the dropdown list. This value represents the number of existing authorized accesses.
    
-8. Click **Save**.
+   j. Click **Save**.
+
 {{< /expand >}}
 
 ## Starting the iSCSI Service
@@ -264,7 +274,7 @@ You can also go to **System Settings > Services** and locate **iSCSI** on the li
 
 Set iSCSI to start when TrueNAS boots up, go to **System Settings > Services** and locate **iSCSI** on the list. Select **Start Automatically**. 
 
-![ServicesISCSIEnableSCALE](/images/SCALE/ServicesISCSIEnableSCALE.png "Starting the iSCSI Service")
+![iSCSISystemServicesSCALE](/images/SCALE/22.12/iSCSISystemServicesSCALE.png "Starting the iSCSI Service")
 
 Clicking the <i class="material-icons" aria-hidden="true" title="Configure">edit</i> returns to the options in **Shares > Block (iSCSI) Shares Targets**.
 
