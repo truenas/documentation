@@ -9,9 +9,7 @@ tags:
  - scalestorage
 ---
 
-
 {{< toc >}}
-
 
 TrueNAS SCALE offers two ACL types: POSIX (the SCALE default) and NFSv4. 
 For a more in-depth explanation of ACLs and configurations in TrueNAS SCALE, see our [ACL Primer]({{< relref "ACLPrimer.md" >}}).
@@ -54,7 +52,7 @@ The **Advanced** section lets users **Apply Permissions Recursively** to all dir
 
 To access advanced POSIX ACL settings, click **Add ACL** on the **Unix Permissions Editor**. The **Select a preset ACL** window displays with two radio buttons. 
 
-## Select A Preset ACL 
+## Select A Preset ACL
 
 {{< hint warning >}}
 Selecting a preset replaces the ACL currently displayed on the Edit ACL screen and deletes any unsaved changes.
@@ -117,22 +115,31 @@ These functions display on the **Edit ACL** screen for both POSIX and NSFv4 ACL 
 {{< /expand >}}
 
 ### POSIX Access Control Entry Settings
-The POSIX **Access Control Entry** settings include **Who**, **Permissions** and **Flags** options.
+The POSIX **Access Control Entry** settings include **Who**, **Permissions**, and **Flags** options.
 {{< expand "Click here for details" "v" >}}
 ![EditACLPOSIXAccessControlEntrySettings](/images/SCALE/22.02/EditACLPOSIXAccessControlEntrySettings.png "POSIX Access Control Entry Settings")
 
 | Setting | Description |
 |---------|-------------|
-| **Who** | Select the user or group from the dropdown list the permissions apply to. |
-| **Permissions** | Select the checkbox for each permission type (**Read**, **Write** and **Execute**) to apply to the user or group in **Who**. "
+| **Who** | Select the user or group from the dropdown list the permissions apply to. <br><br>**User** denotes access rights for users identified by the entry's qualifier.<br>**Group** denotes access rights for the file group.<br>**Other** denotes access rights for processes that do not match any other entry in the ACL.<br>**Group Obj** denotes access rights for the file group.<br>**User Obj** denotes access rights for the file owner.<br>**Mask** denotes the maximum access rights User, Group Obj, or Group type entries can grant. |
+| **Permissions** | Select the checkbox for each permission type (**Read**, **Write** and **Execute**) to apply to the user or group in **Who**.
 | **Flags** | Select the **Default** option to include a flag setting for the user or group in **Who**. |
+
+
 {{< /expand >}}
+
 ### NFS4 Access Control Entry Settings
 There are two **Access Control Entry** settings, **Who** and **ACL Type**. 
 {{< expand "Click here for details" "v" >}}
 The NFSv4 **ACL Type** radio buttons change the **Permissions** and **Flags** setting options. Select **Allow** to grant the specified permissions or **Deny** to restrict the permissions for the user or group in **Who**. 
 
-![EditACLNFSv4AccessControlEntrySettings](/images/SCALE/22.02/EditACLNFSv4AccessControlEntrySettings.png "NSFv4 Access Control Entry Settings") 
+![EditACLNFSv4AccessControlEntrySettings](/images/SCALE/22.02/EditACLNFSv4AccessControlEntrySettings.png "NSFv4 Access Control Entry Settings")
+
+| Setting | Description |
+|---------|-------------|
+| **Who** | Access Control Entry (ACE) user or group. Select a specific User or Group for this entry. See [nfs4_setfacl(1) NFSv4 ACL ENTRIES](https://man7.org/linux/man-pages/man1/nfs4_setfacl.1.html). <br><br>**User** denotes access rights for users identified by the entry's qualifier.<br>**Group** denotes access rights for groups identified by the entry's qualifier.<br>**owner@** applies this entry to the user that owns the dataset.<br>**group@** applies this entry to the group that owns the dataset. <br>**everyone@** applies this entry to all users and groups. |
+| **ACL Type** | Determines how the Permissions are applied to the chosen Who. Choose Allow to grant the specified permissions and Deny to restrict the specified permissions. |
+
 {{< /expand >}}
 ### NFS4 Permissions and Flags
 
