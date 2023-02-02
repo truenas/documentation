@@ -14,13 +14,13 @@ tags:
 TrueNAS lets users expand Zvol and file-based LUNs to increase the available storage that the iSCSI shares.
 
 ### Zvol LUNs
-To expand a Zvol LUN, go to **Storage** and click the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> next to the Zvol LUN, then select **Edit Zvol**.
+To expand a Zvol LUN, go to **Datasets** and click the Zvol LUN name. The **Zvol Details** widget displays. Click the **Edit** button.
 
-![ExpandingZvolLUNListSCALE](/images/SCALE/ExpandingZvolLUNListSCALE.png "Edit the Zvol LUN")
+![DatasetZvolListingSCALE](/images/SCALE/22.12/DatasetZvolListingSCALE.png "Edit the Zvol LUN")
 
 Enter a new size in **Size for this zvol**, then click **SAVE**.
 
-![ExpandingZvolLUNSizeSCALE](/images/SCALE/ExpandingZvolLUNSizeSCALE.png "Change the Zvol Size")
+![DatasetEditZvolListingSizeSCALE](/images/SCALE/22.12/DatasetEditZvolListingSizeSCALE.png "Change the Zvol Size")
 
 {{< hint ok >}}
 TrueNAS prevents data loss by not allowing users to reduce the Zvol size. 
@@ -30,20 +30,24 @@ TrueNAS also does not allow users to increase the Zvol size past 80% of the pool
 ### File LUNs
 You need to know the path to the file to expand a file-based LUN. Go to **Shares** and click **Configure** in the **Block (iSCSI) Shares Targets** window, then select the **Extents** tab. 
 
+![FileLUNsEditExtent](/images/SCALE/22.12/FileLUNsEditExtent.png "File LUNS Edit Extent") 
+
 Click the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> next to the file-based LUN and select **Edit**. 
 
-![ExpandingFileLUNPathSCALE](/images/SCALE/ExpandingFileLUNPathSCALE.png "Copy the Path to the File")
+![FileLUNsEditExtent2](/images/SCALE/22.12/FileLUNsEditExtent2.png "Copy the Path to the File")
 
-Highlight and copy the path, then click **Cancel**.
+Highlight and copy the path to the extent, then click **Cancel**.
 
-Go to **Shell** and input `truncate -s +[size] [path to file]`, then press <kbd>Enter</kbd>.
+Go to **System Settings > Shell** and input `sudo truncate -s +[size] [path to file]`, where *[size]* is how much space you want to grow the file by, and *[path to file]* is the file path you copied earlier. Then press <kbd>Enter</kbd>.
 
-Where *[size]* is how much space you want to grow the file by, and *[path to file]* is the file path you copied earlier. 
+In our example the command looks like this: `sudo truncate -s +1g /mnt/tankgrem3/test83/filelun`
 
-![ExpandingFileLUNShellSCALE](/images/SCALE/ExpandingFileLUNShellSCALE.png "Expanding the File Size in Shell")
+![ShellFileLUNExpandSCALE](/images/SCALE/22.12/ShellFileLUNExpandSCALE.png "Expanding the LUN File Size in Shell")
 
-An example command could look like this: `truncate -s +2g /mnt/Pool1/Dataset1/File LUN`
+Lastly, go back to the extent in **Shares > Block (iSCSI) Shares**.
 
-Lastly, go back to the extent in **Shares > Block (iSCSI) Shares Targets** and make sure the **Filesize** is set to **0** so that the share uses the actual file size.
+Click the **Configure** button in the window header, then click the **Extents** tab. Lastly, click the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> next to the file-based LUN and select **Edit**. Make sure the **Filesize** for the file-based LUN is set to **0** so that the share uses the actual file size. Click **Save** to retain any changes.
+
+![FileLUNsEditExtent3](/images/SCALE/22.12/FileLUNsEditExtent3.png "Expanding the LUN File Size Zero in Shell")
 
 {{< taglist tag="scaleiscsi" limit="10" >}}
