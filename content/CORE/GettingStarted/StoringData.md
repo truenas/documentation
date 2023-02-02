@@ -32,7 +32,7 @@ Set **Create a new pool** and click **CREATE POOL**
 ![StoragePoolsAddCreateManager](/images/CORE/12.0/StoragePoolsAddCreateManager.png "TrueNAS Pool Manager")
 
 For the **Name**, enter *tank* or any other preferred name.
-In the **Available Disks**, set two identical disks and click the <right arrow icon> to move them to the **Data VDevs** area.
+In the **Available Disks**, set two identical disks and click the <span>&#8594;</span> <!-- right arrow icon --> to move them to the **Data VDevs** area.
   
 {{< hint info >}}
 If the disks used have non-unique serial numbers, they do not populate the **Available Disks** section until the **Show disk with non-unique serial numbers** checkbox is selected.
