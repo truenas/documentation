@@ -35,7 +35,7 @@ To test one or more disk for errors, go to **Storage** and click the **Disks** b
 
 ![StorageDashDisksButtonSCALE](/images/SCALE/22.12/StorageDashDisksButtonSCALE.png "Storage Dashboard Disks Button")
 
-Select the disks you want to test using the checkboxes to the left of the disk name. This displays the **Batch Operations** options.
+Select the disks you want to test using the checkboxes to the left of the disk names. Selecting multiple disks displays the **Batch Operations** options.
 
 ![StorageDisksSelectedSCALE](/images/SCALE/22.12/StorageDisksSelectedSCALE.png "Storage Dashboard Disks Selected")
 
