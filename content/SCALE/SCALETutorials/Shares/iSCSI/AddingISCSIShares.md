@@ -129,7 +129,7 @@ This procedure walks you through adding each configuration setting on the seven 
 
    d. (Optional) Based on your **Discovery Authentication Method**, select a group in **Discovery Authentication Group**.
 
-   e. Click **Add** to select an **IP Address** to be listened on by the portal from the dropdown list. **0.0.0.0** listens on all IPv4 addresses and **::** listens on all IPv6 addresses. 
+   e. Click **Add** to select an **IP Address** the portal listens on from the dropdown list. **0.0.0.0** listens on all IPv4 addresses and **::** listens on all IPv6 addresses. 
 
    f. Click **Save**.
 
