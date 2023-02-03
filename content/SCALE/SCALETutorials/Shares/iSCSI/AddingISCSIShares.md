@@ -192,7 +192,7 @@ This procedure walks you through adding each configuration setting on the seven 
    
    ![iSCSIManualAddExtentDevice](/images/SCALE/22.12/iSCSIManualAddExtentDevice.png "iSCSI Extents Add Device")
  
-   a. Click **Add** at the top right of the screen. The **Add Extent** screen opens.
+   a. Click **Add** at the top right of the screen to open the **Add Extent** screen.
 
    b. Enter a name for the extent. If the extent size is not **0**, it cannot be an existing file within the pool or dataset.
 
