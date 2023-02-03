@@ -1,6 +1,6 @@
 ---
 title: "Managing Interfaces"
-description: "This article describes how to add, edit, and delete a network interface."
+description: "This article describes how to add, edit, and delete a network interface, and how to add an alias to an interface."
 weight: 15
 tags:
 - scalenetwork
@@ -13,7 +13,10 @@ You can add new or edit existing network interfaces on the **Network** screen.
 {{< include file="/_includes/NetworkInterfaceTypes.md" type="page" >}}
 {{< /expand >}}
 
+## Static or Aliases IP?
+
 {{< include file="/_includes/AliasOrStaticIP.md" type="page" >}}
+
 
 ## Adding an Interface
 
@@ -55,5 +58,21 @@ Do not delete the primary network interface!
 If you delete the primary network interface you lose your TrueNAS connection and the ability to communicate with the TrueNAS through the web interface!
 You might need command line knowledge or physical access to the TrueNAS system to fix misconfigured network settings. 
 {{< /hint >}}
+
+## Adding Alias IP Addresses
+
+If you want to configure alias IPs for access to internal portions of the network, from the **Network** screen:
+
+1. Click on the interface to open the **Edit Interface** screen for the selected interface. 
+   
+   ![EditInterfaceNicDeviceSCALE](/images/SCALE/22.12/EditInterfaceNicDeviceSCALE.png "Add Alias")
+
+2. Clear the checkmark for **DHCP** to show the **Aliases** fields, and then click **Add** for each alias you want to add to this interface.
+
+3. Enter the IP address and CIDR values for the alias(es) you want to add.
+
+4. Select **DHCP** to control the primary IP for the interface.
+
+5. Click **Save**.
 
 {{< taglist tag="scaleinterface" limit="10" >}}
