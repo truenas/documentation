@@ -27,7 +27,7 @@ The **Support** widget on the **System Settings > General** screen displays the 
 After installing the SCALE <file>iso</file>, the installer displays the IP address for the web UI at the end of the installation process. 
 TrueNAS uses DHCP to assign the primary web UI IP address and the other required global network addresses. 
 With this IP address you can access the web UI to complete any other network or other system configuration you want or need, or you can use the 
-Console setup menu to assign network addresses to network inferfaces or other global network devices [described here]({{< relref "ConsoleSetupMenuSCALE.md" }}) 
+Console setup menu to assign network addresses to network inferfaces or other global network devices [described here]({{< relref "ConsoleSetupMenuSCALE.md" >}}) 
 
 If you make network changes, we recommend using the Web UI to configure your network interfaces as it is designed to make this process easier, and it provides safeguards so you do not break your system network connections. 
 
@@ -65,15 +65,15 @@ After setting up your system storage, you can [configure data sharing]({{< relre
 
 For more information on configuring data sharing and the four share types available in SCALE:
 
-* [SMB shares]({{< relref "/SCALETutorials/Shares/SMB/_index.md" >}}) used for Windows shares and also to set up deprecated AFP sharing
-* [NFS shares]({{< relref "/SCALETutorials/Shares/NFP/_index.md" >}}) used for Linux-based shares
-* [iSCSI shares]({{< relref "/SCALETutorials/Shares/iSCSI/_index.md" >}}) used for block shares
-* [WebDAV shares]({{< relref "/SCALETutorials/Shares/WebDAV/_index.md" >}})
+* [SMB shares]({{< relref "/SCALE/SCALETutorials/Shares/SMB/_index.md" >}}) used for Windows shares and also to set up deprecated AFP sharing
+* [NFS shares]({{< relref "/SCALE/SCALETutorials/Shares/NFS/_index.md" >}}) used for Linux-based shares
+* [iSCSI shares]({{< relref "/SCALE/SCALETutorials/Shares/iSCSI/_index.md" >}}) used for block shares
+* [WebDAV shares]({{< relref "/SCALE/SCALETutorials/Shares/WebDAV/_index.md" >}})
 
 ## Configuring System Services
 Services you want to configure and enable are based on those you want to deploy except for these three:
 
-* [SSH service]({{< relref "SSHServiceSCALE.md>}})
+* [SSH service]({{< relref "SSHServiceSCALE.md" >}})
 
   Set up this service to allow SSH login for administration users (admin, or if also enabled, the root user). Configure this on all SCALE systems.
 
@@ -96,7 +96,7 @@ If your installation includes a UPS, configure and enable the UPS service as wel
 All systems can take advantage of the SMART service and testing if your disks support this service. 
 Disks that do not support SMART testing do not display the option to set up testing.
 
-For more information see [Managing SMART Tests]({{< relref "SmartTestScale.md" >}}) for information on running or managing tests, or [Managing Disks]({{< relref "ManageDisks.md" >}}) for more information on running a manual test from a selected disk.
+For more information see [Managing SMART Tests]({{< relref "SmartTestsScale.md" >}}) for information on running or managing tests, or [Managing Disks]({{< relref "ManagingDisks.md" >}}) for more information on running a manual test from a selected disk.
 
 ## Setting Up Backup Solutions
 
@@ -107,18 +107,18 @@ TrueNAS SCALE provides several cloud storage provider options for storage data.
 Download a system debug file from the **System Settings > Advanced** screen. Click **Save Debug** to begin the download. 
 Keep both the system configuration file and the initial system debug file in a safe location where save regularly backed up important files.
 
-Use the SCALE **Backup Credentials** screen **[Cloud Credentials]({{< relref "AddCloudCredentials.md" >}}**) to configure authentication credentials for the cloud service of your choice and then schedule a **[Cloud Sync Tasks]({{< relref "/SCALETutorials/DataProtection/CloudSynctasks/_index.md" >}})** to run on the schedule you set and to regularly back up your storage data.
+Use the SCALE **Backup Credentials** screen **[Cloud Credentials]({{< relref "AddCloudCredentials.md" >}}**) to configure authentication credentials for the cloud service of your choice and then schedule a **[Cloud Sync Tasks]({{< relref "/SCALE/SCALETutorials/DataProtection/CloudSynctasks/_index.md" >}})** to run on the schedule you set and to regularly back up your storage data.
 
 ## Checking System Alert Settings and Services
 
-The alert icon, on the [top toolbar]({{< relref "/SCALEUIReference/toptoolbar/_index.md" >}}), displays a red circle with a number in it if SCALE encounters a configuration error or exceeds a threshold (such as a temperature or a usage level). 
-The **[Alerts]({{< relref "SCALEUIReference/toptoolbar/alerts/_index.md" >}})** icon number indicates how many new alerts have occurred. Click on the alert icon to open the **Alerts** dropdown panel. 
+The alert icon, on the [top toolbar]({{< relref "/SCALE/SCALEUIReference/toptoolbar/_index.md" >}}), displays a red circle with a number in it if SCALE encounters a configuration error or exceeds a threshold (such as a temperature or a usage level). 
+The **[Alerts]({{< relref "/SCALE/SCALEUIReference/toptoolbar/alerts/_index.md" >}})** icon number indicates how many new alerts have occurred. Click on the alert icon to open the **Alerts** dropdown panel. 
 
 SCALE allows you to configure both alert services and alert settings, and to assign a system email account to receive messages when a system event triggers an alert. 
 Click the gear **Settings** icon the top of the **Alerts** dropdown panel to display a list of configurable alert options.
 
-Click **[Alert Services]({{< relref "AlertServicesScreens.md" >}})** to configure an alert service such as PagerDuty. 
-Click **[Alert Settings]({{< relref "AlertSettingsScreens.md" >}})** to customize alert settings that determine the threshold for trigging an alert. 
+Click **[Alert Services]({{< relref "AlertServicesScreen.md" >}})** to configure an alert service such as PagerDuty. 
+Click **[Alert Settings]({{< relref "AlertSettingsScreen.md" >}})** to customize alert settings that determine the threshold for trigging an alert. 
 Click **[Email]({{< relref "SettingUpSystemEmail.md" >}})** to assign an email address that receives the system alert notification based on the levels and type of alert you configure.
 
 ## Setting Up Directory Services
@@ -126,7 +126,7 @@ TrueNAS SCALE allows you to configure an Active Directory or LDAP server to hand
 
 ## Using Enclosure Management (TrueNAS Servers Only)
 An image of the TrueNAS system server displays on the main **Dashboard > System Information** widget. 
-Click **View Enclosure** on the **System Information** widget to access the **[View Enclosure]({{< relref "EnclosureScreens.md" >}})** screen , or select the **System Settings > Enclosure** option on the main menu navigation panel.. 
+Click **View Enclosure** on the **System Information** widget to access the **[View Enclosure]({{< relref "EnclosureScreensSCALE" >}})** screen , or select the **System Settings > Enclosure** option on the main menu navigation panel.. 
 The **View Enclosure** screen lists details about the system hardware and disks in the system, including the bay the drives is in. 
 If the TrueNAS system is equipped with an expansion shelf, an image of the expansion shelf with the disks populated in it also displays.
 
@@ -140,7 +140,7 @@ You can deploy an application using the **Custom Install** option.
 
 ## Updating SCALE
 There are a few ways to update your instance of TrueNAS SCALE. The main **Dashboard > System Information** widget alerts you when a SCALE update is available to download and install. 
-You can also go to **System Settings > Updates** to see if an update is available. For all update options and procedures see **[Updating SCALE]({{< relref "UpdatingSCALE.md" >}}).
+You can also go to **System Settings > Updates** to see if an update is available. For all update options and procedures see **[Updating SCALE]({{< relref "UpdateSCALE.md" >}}).
 
 ## Getting Support
 Enterprise SCALE customers with support contracts should contact the iXsystems Support using the **[Commercial Support](https://www.truenas.com/commercial-support/)** option on the top header of the TrueNAS Documentation Hub website. 
