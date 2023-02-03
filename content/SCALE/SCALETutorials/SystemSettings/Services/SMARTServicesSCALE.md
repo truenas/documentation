@@ -21,7 +21,7 @@ Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i
 
 Enter the time in minutes [smartd](https://www.freebsd.org/cgi/man.cgi?query=smartd&manpath=FreeBSD+11.1-RELEASE+and+Ports) to wake up and check if any tests are configured to run in **Check Interval**.
 
-Select the **Power Mode** from the dropdown list. Choices include **Never**, **Sleep**, **Standby** and **Idle**. Tests are only performed when **Never** is selected.
+Select the **Power Mode** from the dropdown list. Choices include **Never**, **Sleep**, **Standby**, and **Idle**. TrueNAS only performs tests when you select **Never**.
 
 Set the temperatures that trigger alerts in **Difference**, **Informational** and **Critical**.
 
