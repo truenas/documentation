@@ -147,7 +147,7 @@ This procedure walks you through adding each configuration setting on the seven 
 
 4. Add network authorized access. Click on the **Authorized Access** tab to open the screen.
    
-   a. Click **Add** at the top right of the screen. The **Add Authorized Access** screen opens.
+   a. Click **Add** at the top right of the screen to open the **Add Authorized Access** screen.
       
       ![iSCSIManualAddAuthAccess](/images/SCALE/22.12/iSCSIManualAddAuthAccess.png "iSCSI Add Authorized Access")
 
