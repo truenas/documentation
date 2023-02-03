@@ -32,7 +32,7 @@ Use **Columns** to display options to customize the information displayed in the
 **Add** opens the **Add S.M.A.R.T. Test** configuration screen.
 
 The <span class="material-icons">more_vert</span> for each test has two options, **Edit** and **Delete**. 
-**Edit** opens the **Edit S.M.A.R.T. Test** configuration screen and **Delete** opens a confirmation **Delete** dialog. 
+**Edit** opens the **Edit S.M.A.R.T. Test** configuration screen and **Delete** opens a **Delete** confirmation dialog. 
 The <span class="material-icons">delete</span> delete icon on the widget also opens the **Delete** dialog for the selected S.M.A.R.T. test. Click **Confirm** to activate **Delete**.
 
 ![DeleteSMARTTest](/images/SCALE/22.12/DeleteSMARTTest.png "Delete S.M.A.R.T. Test")
