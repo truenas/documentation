@@ -19,7 +19,7 @@ The **ACL Type** setting, found in the **Advanced Options** of both the **Add Da
 If **ACL Type** is set to **NSFv4**, you can select the **ACL Mode** you want to use. 
 
 {{< hint ok >}}
-NFSv4 is a type of access control list (ACL) that is not related to the type of share you might use (SMB or NFS).
+NFSv4 is an access control list (ACL) type not related to the share type you might use (SMB or NFS).
 {{< /hint >}}
 
 ## Unix Permissions Editor Screen
@@ -31,7 +31,9 @@ If you selected **POSIX** or **Inherit** as your ACL type, the first screen you 
 Use the settings on this screen to configure basic ACL permissions.
 
 ### Owner Settings
+
 The **Owner** section controls which TrueNAS user and group has full control of this dataset.
+
 {{< expand "Click here for details" "v" >}}
 | Setting | Description |
 |---------|-------------|
@@ -40,6 +42,7 @@ The **Owner** section controls which TrueNAS user and group has full control of 
 | **Group** | Enter or select the group to control the dataset. Groups created manually or imported from a directory service appear in the menu. |
 | **Apply Group** | Select to confirm group changes. To prevent errors, TrueNAS only submits changes only after you select this option. |
 {{< /expand >}}
+
 ### Access Settings
 The **Access** section lets users define the basic **Read**, **Write**, and **Execute** permissions for the **User**, **Group**, and **Other** accounts that might access this dataset.
 
@@ -47,7 +50,9 @@ The **Access** section lets users define the basic **Read**, **Write**, and **Ex
 A common misconfiguration is removing the **Execute** permission from a dataset that is a parent to other child datasets.
 Removing this permission results in lost access to the path.
 {{< /hint >}}
+
 ### Advanced Settings
+
 The **Advanced** section lets users **Apply Permissions Recursively** to all directories, files, and child datasets within the current dataset. 
 
 To access advanced POSIX ACL settings, click **Add ACL** on the **Unix Permissions Editor**. The **Select a preset ACL** window displays with two radio buttons. 
@@ -59,6 +64,7 @@ Selecting a preset replaces the ACL currently displayed on the Edit ACL screen a
 {{< /hint >}}
 
 There are two different **Select a preset ACL** windows. 
+
 {{< expand "Click here for details" "v" >}}
 If using **POSIX** or **Inherit** as the **ACL Type** setting, the window with three setting options displays before you see the **Edit ACL** screen. 
 These setting options allow you to select and use a pre-configured set of permissions that match general permissions situations or to create a custom set of permissions. 
@@ -76,13 +82,14 @@ For POSIX, the options are **POSIX_OPEN**, **POSIX_RESTRICTED**, or **POSIX_HOME
 | Setting | Description |
 |---------|-------------|
 | **Select a preset ACL** | Click this radio button to populate the **Default ACL Options** dropdown list with a set of pre-configured POSIX permissions. |
-| **Create a custom ACL** | Click this radio button to display the **Edit ACL** screen with no default permissions, users or groups to configure your own set of permissions after you click **Continue**. |
+| **Create a custom ACL** | Click this radio button to display the **Edit ACL** screen with no default permissions, users, or groups to configure your own set of permissions after you click **Continue**. |
 
 Click **Continue** to display the **Edit ACL** screen.
 {{< /expand >}}
+
 ## Edit ACL Screen
 
-The **Edit ACL** screen displays different setting options based on the **ACL Type** setting on the **Add Dataset** or **Edit Dataset** screen in the **Advanced Options** section.
+The **Edit ACL** screen displays different options based on the **ACL Type** setting on the **Add Dataset** or **Edit Dataset** screen in the **Advanced Options** section.
 
 The section below describes the differences between screens for each ACL type.
 
@@ -95,12 +102,15 @@ Select any user account or group manually entered or imported from a directory s
 ![ACLEditorSettings](/images/SCALE/22.02/ACLEditorSettings.png "ACL Editor Settings") 
 
 ### Access Control List - POSIX and NFS4
+
 The **Access Control List** section displays the items and a permissions summary for the **owner@**, **group@**, and **everyone@** for both POSIX and NSFv4 ACL types. The list of items changes based on a selected pre-configured set of permissions.
 
 To add a new item to the ACL, click **Add Item**, define **Who** the Access Control Entry (ACE) applies to, and configure permissions and inheritance flags for the ACE.
 
 ### Edit ACL Functions - POSIX and NFS4
+
 These functions display on the **Edit ACL** screen for both POSIX and NSFv4 ACL types except for **Strip ACL**, which only displays for NSFv4 types.
+
 {{< expand "Click here for details" "v" >}}
 ![EditACLScreenNFSv4Type](/images/SCALE/22.02/EditACLScreenNFSv4Type.png "NFS4 Edit ACL Screen") 
 
@@ -116,20 +126,21 @@ These functions display on the **Edit ACL** screen for both POSIX and NSFv4 ACL 
 
 ### POSIX Access Control Entry Settings
 The POSIX **Access Control Entry** settings include **Who**, **Permissions**, and **Flags** options.
+
 {{< expand "Click here for details" "v" >}}
 ![EditACLPOSIXAccessControlEntrySettings](/images/SCALE/22.02/EditACLPOSIXAccessControlEntrySettings.png "POSIX Access Control Entry Settings")
 
 | Setting | Description |
 |---------|-------------|
-| **Who** | Select the user or group from the dropdown list the permissions apply to. <br><br>**User** denotes access rights for users identified by the entry's qualifier.<br>**Group** denotes access rights for the file group.<br>**Other** denotes access rights for processes that do not match any other entry in the ACL.<br>**Group Obj** denotes access rights for the file group.<br>**User Obj** denotes access rights for the file owner.<br>**Mask** denotes the maximum access rights User, Group Obj, or Group type entries can grant. |
+| **Who** | Select the user or group from the dropdown list the permissions apply to. <br><br>**User** denotes access rights for users identified by the entry qualifier.<br>**Group** denotes access rights for the filegroup.<br>**Other** denotes access rights for processes that do not match any other entry in the ACL.<br>**Group Obj** denotes access rights for the filegroup.<br>**User Obj** denotes access rights for the file owner.<br>**Mask** denotes the maximum access rights User, Group Obj, or Group type entries can grant. |
 | **Permissions** | Select the checkbox for each permission type (**Read**, **Write** and **Execute**) to apply to the user or group in **Who**.
 | **Flags** | Select the **Default** option to include a flag setting for the user or group in **Who**. |
-
-
 {{< /expand >}}
 
 ### NFS4 Access Control Entry Settings
+
 There are two **Access Control Entry** settings, **Who** and **ACL Type**. 
+
 {{< expand "Click here for details" "v" >}}
 The NFSv4 **ACL Type** radio buttons change the **Permissions** and **Flags** setting options. Select **Allow** to grant the specified permissions or **Deny** to restrict the permissions for the user or group in **Who**. 
 
@@ -137,19 +148,20 @@ The NFSv4 **ACL Type** radio buttons change the **Permissions** and **Flags** se
 
 | Setting | Description |
 |---------|-------------|
-| **Who** | Access Control Entry (ACE) user or group. Select a specific User or Group for this entry. See [nfs4_setfacl(1) NFSv4 ACL ENTRIES](https://man7.org/linux/man-pages/man1/nfs4_setfacl.1.html). <br><br>**User** denotes access rights for users identified by the entry's qualifier.<br>**Group** denotes access rights for groups identified by the entry's qualifier.<br>**owner@** applies this entry to the user that owns the dataset.<br>**group@** applies this entry to the group that owns the dataset. <br>**everyone@** applies this entry to all users and groups. |
-| **ACL Type** | Determines how the Permissions are applied to the chosen Who. Choose Allow to grant the specified permissions and Deny to restrict the specified permissions. |
-
+| **Who** | Access Control Entry (ACE) user or group. Select a specific User or Group for this entry. See [nfs4_setfacl(1) NFSv4 ACL ENTRIES](https://man7.org/linux/man-pages/man1/nfs4_setfacl.1.html). <br><br>**User** denotes access rights for users identified by the qualifier.<br>**Group** denotes access rights for groups identified by the qualifier.<br>**owner@** applies this entry to the user that owns the dataset.<br>**group@** applies this entry to the group that owns the dataset. <br>**everyone@** applies this entry to all users and groups. |
+| **ACL Type** | Determines how the Permissions apply to the chosen Who. Choose Allow to grant the specified permissions and Deny to restrict the specified permissions. |
 {{< /expand >}}
+
 ### NFS4 Permissions and Flags
 
 TrueNAS divides permissions and inheritance flags into basic and advanced options. The basic permissions options are commonly-used groups of advanced options.
 Basic inheritance flags only enable or disable ACE inheritance. Advanced flags offer finer control for applying an ACE to new files or directories.
 
 #### Permissions Settings - Basic
-Click the **Basic** radio button to display the **Permissions** dropdown list of options that applies to the user or group in **Who**.
-{{< expand "Click here for details" "v" >}}
 
+Click the **Basic** radio button to display the **Permissions** dropdown list of options that applies to the user or group in **Who**.
+
+{{< expand "Click here for details" "v" >}}
 ![EditACLNFSv4BasicPermissionsOptions](/images/SCALE/22.02/EditACLNFSv4BasicPermissionsOptions.png "NSFv4 Basic Permissions Options") 
 
 | Permission | CLI Command | Description |
@@ -159,10 +171,12 @@ Click the **Basic** radio button to display the **Permissions** dropdown list of
 | **Traverse** | `--x---a-R-c---` | Execute a file or move through a directory. | 
 | **Full Control** | `rwxpDdaARWcCos` | Apply all permissions. | 
 {{< /expand >}}
-#### Permissions Settings - Advanced
-Click the **Advanced** radio button to display the **Permissions** options that apply to the user or group in **Who**.
-{{< expand "Click here for details" "v" >}}
 
+#### Permissions Settings - Advanced
+
+Click the **Advanced** radio button to display the **Permissions** options for the user or group in **Who**.
+
+{{< expand "Click here for details" "v" >}}
 ![EditACLNSFv4AdvancedPermissionsOptions](/images/SCALE/22.02/EditACLNSFv4AdvancedPermissionsOptions.png "NSFv4 Advanced Permissions Options") 
 
 | Permission | CLI Command | Description |
@@ -182,10 +196,12 @@ Click the **Advanced** radio button to display the **Permissions** options that 
 | **Write Owner** | `o` | Change the user and group owners of the file or directory. | 
 | **Synchronize** | `s` | Synchronous file read/write with the server. This permission does not apply to FreeBSD clients. | 
 {{< /expand >}}
-#### Flag Settings - Basic
-Click the **Basic** radio button to display the flag settings that enable or disable ACE inheritance.
-{{< expand "Click here for details" "v" >}}
 
+#### Flag Settings - Basic
+
+Click the **Basic** radio button to display the flag settings that enable or disable ACE inheritance.
+
+{{< expand "Click here for details" "v" >}}
 ![EditACLNSFv4BasicFlagsOptions](/images/SCALE/22.02/EditACLNSFv4BasicFlagsOptions.png "NSFv4 Basic Flags Options")
 
 | Flag | CLI Command | Description |
@@ -193,10 +209,12 @@ Click the **Basic** radio button to display the flag settings that enable or dis
 | **Inherit** | `fd-----` | Enable ACE inheritance. | 
 | **No Inherit** | `-------` | Disable ACE inheritance. | 
 {{< /expand >}}
-#### Flag Settings - Advanced
-Click the **Advanced** radio button to display the flag settings that not only enable or disable ACE inheritance but also offer finer control for applying an ACE to new files or directories.
-{{< expand "Click here for details" "v" >}}
 
+#### Flag Settings - Advanced
+
+Click the **Advanced** radio button to display the flag settings that enable or disable ACE inheritance and offer finer control for applying an ACE to new files or directories.
+
+{{< expand "Click here for details" "v" >}}
 ![EditACLNSFv4AdvancedFlagsOptionst](/images/SCALE/22.02/EditACLNSFv4AdvancedFlagsOptions.png "NFSv4 Advanced Flags Options") 
 
 | Flag | CLI Command | Description |

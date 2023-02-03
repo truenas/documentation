@@ -1,6 +1,6 @@
 ---
 title: "Setting Up Permissions"
-description: "This article provides instructions on viewing and edting ACL permissions, using the ACL editor screens, and general information on ACLs."
+description: "This article provides instructions on viewing and editing ACL permissions, using the ACL editor screens, and general information on ACLs."
 weight: 55
 aliases: /scale/scaleuireference/storage/pools/permissionsscale/
 tags:
@@ -12,7 +12,7 @@ tags:
 
 {{< toc >}}
 
-TrueNAS SCALE provides basic permissions settings and a full Access Control List (ACL) editor to define dataset permissions.
+TrueNAS SCALE provides basic permissions settings and an Access Control List (ACL) editor to define dataset permissions.
 ACL permissions control the actions users can perform on dataset contents.
 
 {{< hint info >}}
@@ -21,14 +21,14 @@ TrueNAS uses ACLs to manage user interactions with shared datasets and creates t
 {{< /hint >}}
 ## ACL Types in SCALE
 
-TrueNAS SCALE offers two ACL types: POSIX which is the SCALE default, and NFSv4. 
+TrueNAS SCALE offers two ACL types: POSIX (the SCALE default) and NFSv4. 
 For a more in-depth explanation of ACLs and configurations in TrueNAS SCALE, see our [ACL Primer]({{< relref "ACLPrimer.md" >}}).
 
 ## Viewing Permissions
 
 Basic ACL permissions are viewable and configurable on both the **Add Dataset** and **Edit Dataset** screens. Click **Advanced Options** to access the **ACL Type** and **ACL Mode** settings.
 
-Advanced ACL permissions are viewable on the **Dataset Permissions** widget, but only editable for non-root datasets.
+Advanced ACL permissions are viewable on the **Dataset Permissions** widget, but are only editable for non-root datasets.
 
 ![ViewRootDatasetPermissionsWidget](/images/SCALE/22.02/ViewRootDatasetPermissionsWidget.png "View Root Dataset Permissions")
 
@@ -38,12 +38,12 @@ Click the <span class="material-icons">more_vert</span> icon to display the **Da
 
 Click **Advanced Options** and scroll down to the **ACL Type** and **ACL Mode** settings. 
 
-First, select the **ACL Type** from the dropdown list. The option selected changes the **ACL Mode** setting.
+First, select the **ACL Type** from the dropdown list. The type changes the **ACL Mode** setting.
 
 ## Editing ACL Permissions
 
 {{< hint ok >}}
-You can view permissions for any dataset but the edit option only displays on the **Dataset Permissions** widget for non-root datasets.
+You can view permissions for any dataset, but the edit option only displays on the **Dataset Permissions** widget for non-root datasets.
 
 Configuring advanced permissions overrides basic permissions configured on the add and edit dataset screens.
 {{< /hint >}}
@@ -62,11 +62,11 @@ To prevent errors, TrueNAS only submits changes when selected.
 
 {{< hint warning >}}
 A common misconfiguration is removing the **Execute** permission from a dataset that is a parent to other child datasets.
-Removing this permission results lost access to the path.
+Removing this permission results in lost access to the path.
 {{< /hint >}}
 
-Next enter or select the group from the dropdown list, set the read/write/execute permissions, and then select **Apply Group**. 
-The options include groups created manually or imported from a directory service. Click **Apply Group** to confirm changes. 
+Next, enter or select the group from the dropdown list, set the read/write/execute permissions.
+The options include groups created manually or imported from a directory service. Enable **Apply Group** to confirm changes. 
 To prevent errors, TrueNAS only submits changes when selected.
 
 If you want to apply these settings to all child datasets, select **Apply permissions recursively**. 
@@ -75,7 +75,7 @@ Click **Save** if you do not want to use an ACL preset.
 
 ### Configuring an ACL Preset (NFSv4 ACL)
 {{< hint warning >}}
-WARNING: Changing the ACL type affects how TrueNAS writes and reads on-disk ZFS ACL.
+Warning: Changing the ACL type affects how TrueNAS writes and reads on-disk ZFS ACL.
 
 When the ACL type changes from POSIX to NFSv4, internal ZFS ACLs do not migrate by default, and access ACLs encoded in posix1e extended attributes convert to native ZFS ACLs. 
 
@@ -99,12 +99,12 @@ Each default preset loads different permissions to the **Edit ACL** screen. The 
 
 ![CreateCustomACL](/images/SCALE/22.02/CreateCustomACL.png "Edit ACL Create Custom")
 
-First select or type the name of the user in **Owner**. The owner controls which TrueNAS user and group has full control of this dataset.
+First, select or type the user name in **Owner**. The owner controls which TrueNAS user and group has full control of the dataset.
 
-Next select or type the name of the group in **Owner Group**.
+Next, select or type the group name in **Owner Group**.
 
 Select the **Who** ACE value from the dropdown list and then select the **Permissions**. 
-If you select **User** or **Group** you then select the name from **User** or **Group**. 
+If you select **User** or **Group**, choose a name from the **User** or **Group** field. 
 See [nfs4_setfacl(1) NFSv4 ACL ENTRIES](https://manpages.debian.org/testing/nfs4-acl-tools/nfs4_setfacl.1.en.html).
 Whatever you select in **Who** highlights the **Access Control List** entry on the left side of the screen.
 
