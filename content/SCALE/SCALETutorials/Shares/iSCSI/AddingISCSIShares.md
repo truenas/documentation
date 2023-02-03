@@ -202,7 +202,7 @@ This procedure walks you through adding each configuration setting on the seven 
 
    e. **Xen initiator compat mode** is disabled by default. Select when using Xen as the iSCSI initiator.
 
-   f. The **LUN RPM** setting should not be changed when using Windows as the initiator. Only needs to be changed in large environments where the number of systems using a specific RPM is needed for accurate reporting statistics. 
+   f. Do not change **LUN RPM** when using Windows as the initiator. Only change **LUN RPM**  in environments where you need accurate reporting statistics for devices that use a specific RPM. 
 
    g. The **Read-only** checkbox is not selected by default. Select to prevent the initiator from initializing this LUN.
  
