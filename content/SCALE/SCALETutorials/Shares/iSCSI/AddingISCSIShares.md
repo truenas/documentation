@@ -78,7 +78,7 @@ To use the setup wizard,
 
     Click **NEXT**
 
-3. Add the Initiator. After adding the portal set up the initiators that use the iSCSI share.
+3. Add the Initiator. After adding the portal, set up the initiators that use the iSCSI share.
    
    Decide which initiators can use the iSCSI share. 
    Leave the list empty to allow all initiators, or add entries to the list to limit access to those systems.
