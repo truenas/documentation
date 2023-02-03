@@ -26,38 +26,26 @@ For a more in-depth explanation of ACLs and configurations in TrueNAS SCALE, see
 
 ## Viewing Permissions
 
-Basic ACL permissions are viewable and configurable on both the **Add Dataset** and **Edit Dataset** screens. Click **Advanced Options** to access the **ACL Type** and **ACL Mode** settings.
+Basic ACL permissions are viewable and configurable in the **Datasets** screen. Select a dataset to view its permissions in the **Permissions** widget.
 
-Advanced ACL permissions are viewable on the **Dataset Permissions** widget, but are only editable for non-root datasets.
-
-![ViewRootDatasetPermissionsWidget](/images/SCALE/22.02/ViewRootDatasetPermissionsWidget.png "View Root Dataset Permissions")
-
-## Editing Basic ACL Settings
-
-Click the <span class="material-icons">more_vert</span> icon to display the **Dataset Actions** list of options, and then click **Add Dataset** to open the **Add Dataset** configuration screen, or click **Edit Options** to open the **Edit Dataset** configuration screen.
-
-Click **Advanced Options** and scroll down to the **ACL Type** and **ACL Mode** settings. 
-
-First, select the **ACL Type** from the dropdown list. The type changes the **ACL Mode** setting.
+![ViewRootDatasetPermissionsWidget](/images/SCALE/22.12/ViewRootDatasetPermissionsWidget.png "View Root Dataset Permissions")
 
 ## Editing ACL Permissions
 
 {{< hint ok >}}
-You can view permissions for any dataset, but the edit option only displays on the **Dataset Permissions** widget for non-root datasets.
+You can view permissions for any dataset, but the edit option only displays on the **Permissions** widget for non-root datasets.
 
 Configuring advanced permissions overrides basic permissions configured on the add and edit dataset screens.
 {{< /hint >}}
 
-Click the <span class="material-icons">more_vert</span> icon to display the **Dataset Actions** list of options for a non-root dataset, and then click **View Permissions**. 
+Select a non-root dataset, then click **Edit** in the **Permissions** widget.
 
-![ViewDatasetPermissionsWidget](/images/SCALE/22.02/ViewDatasetPermissionsWidget.png "View Child Dataset Permissions")
+![ViewDatasetPermissionsWidget](/images/SCALE/22.12/ViewDatasetPermissionsWidget.png "View Child Dataset Permissions")
 
-Click the <span class="material-icons">edit</span> **Edit** icon. The **Edit Permissions** screen displays with the **Unix Permissions Editor** configuration settings.
+![EditPermissionsUnixPermissionsEditor](/images/SCALE/22.12/EditPermissionsUnixPermissionsEditor.png "Edit Permissions Unix Permissions Editor")
 
-![EditPermissionsUnixPermissionsEditor](/images/SCALE/22.02/EditPermissionsUnixPermissionsEditor.png "Edit Permissions Unix Permissions Editor")
-
-Enter or select the user from the dropdown list, set the read/write/execute permissions, and then select **Apply User**. 
-The options include users created manually or imported from a directory service. Click **Apply User** to confirm changes. 
+Enter or select the user from the dropdown list, set the read/write/execute permissions.
+The options include users created manually or imported from a directory service. Enable **Apply User** to confirm changes. 
 To prevent errors, TrueNAS only submits changes when selected.
 
 {{< hint warning >}}
@@ -93,11 +81,11 @@ From the **Unix Permissions Editor** configuration screen, click **Set ACL** to 
 Click the **Select a present ACL** radio button to use a pre-configured set of permissions, and then select the preset you want to use from the **Default ACL Options** dropdown list, or click **Create a custom ACL** to configure your own set of permissions. 
 Click **Continue**.
 
-![NFS4SelectAPresetACLWindow](/images/SCALE/22.02/NFS4SelectAPresetACLWindow.png "NFS4 Select a preset ACL")
+![NFS4SelectAPresetACLWindow](/images/SCALE/22.12/NFS4SelectAPresetACLWindow.png "NFS4 Select a preset ACL")
 
-Each default preset loads different permissions to the **Edit ACL** screen. The **Create a custom preset** opens the **Edit ACL** screen with no default permission settings.
+Each default preset loads different permissions to the **Edit ACL** screen. The **Create a custom preset** option opens the **Edit ACL** screen with no default permission settings.
 
-![CreateCustomACL](/images/SCALE/22.02/CreateCustomACL.png "Edit ACL Create Custom")
+![CreateCustomACL](/images/SCALE/22.12/CreateCustomACL.png "Edit ACL Create Custom")
 
 First, select or type the user name in **Owner**. The owner controls which TrueNAS user and group has full control of the dataset.
 
@@ -114,7 +102,7 @@ Advanced flags allow further control of how the ACE applies to files and directo
 
 If you want to apply this preset to all child datasets select **Apply permissions recursively**.
 
-To add another item to your ACL, click **Add Item**. To display the ACL presets window, click **Use ACL Preset**.
+To add another item to your ACL, click **Add Item**. To display the ACL presets window, click **Use Preset**.
 
 Click **Save Access Control List** when you finish configuring settings for the user or group in the **Who** field.
 
