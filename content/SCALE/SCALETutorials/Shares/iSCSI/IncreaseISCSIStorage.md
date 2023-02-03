@@ -40,7 +40,7 @@ Highlight and copy the path to the extent, then click **Cancel**.
 
 Go to **System Settings > Shell** and input `sudo truncate -s +[size] [path to file]`, where *[size]* is how much space you want to grow the file by, and *[path to file]* is the file path you copied earlier. Then press <kbd>Enter</kbd>.
 
-In our example the command looks like this: `sudo truncate -s +1g /mnt/tankgrem3/test83/filelun`
+In our example, the command looks like this: `sudo truncate -s +1g /mnt/tankgrem3/test83/filelun`
 
 ![ShellFileLUNExpandSCALE](/images/SCALE/22.12/ShellFileLUNExpandSCALE.png "Expanding the LUN File Size in Shell")
 
