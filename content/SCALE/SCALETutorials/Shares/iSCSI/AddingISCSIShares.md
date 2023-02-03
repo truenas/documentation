@@ -53,7 +53,7 @@ To use the setup wizard,
 
       If you select **Device**, select the zvol to share from the **Device** dropdown list.
 
-      If you select **File**, file settings display. Browse to the location of the file to populate the path, and then enter the size in **Filesize**. Entering 0 uses the actual file size and requires that the file already exists. 
+      If you select **File**, file settings display. Browse to the file location to populate the path, then enter the size in **Filesize**. Enter 0 to use the actual existing file size.
 
       ![iSCSIWizardCreateFile](/images/SCALE/22.12/iSCSIWizardCreateFile.png "iSCSI Wizard: Block File Settings")
 
