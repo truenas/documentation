@@ -36,7 +36,7 @@ Click the <i class="material-icons" aria-hidden="true" title="Options">more_vert
 
 ![FileLUNsEditExtent2](/images/SCALE/22.12/FileLUNsEditExtent2.png "Copy the Path to the File")
 
-Highlight and copy the path to the extent, then click **Cancel**.
+Highlight and copy the path to the extent, then close the **Edit Extent** window.
 
 Go to **System Settings > Shell** and input `sudo truncate -s +[size] [path to file]`, where *[size]* is how much space you want to grow the file by, and *[path to file]* is the file path you copied earlier. Then press <kbd>Enter</kbd>.
 
