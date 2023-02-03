@@ -18,7 +18,7 @@ To expand a Zvol LUN, go to **Datasets** and click the Zvol LUN name. The **Zvol
 
 ![DatasetZvolListingSCALE](/images/SCALE/22.12/DatasetZvolListingSCALE.png "Edit the Zvol LUN")
 
-Enter a new size in **Size for this zvol**, then click **SAVE**.
+Enter a new size in **Size for this zvol**, then click **Save**.
 
 ![DatasetEditZvolListingSizeSCALE](/images/SCALE/22.12/DatasetEditZvolListingSizeSCALE.png "Change the Zvol Size")
 
