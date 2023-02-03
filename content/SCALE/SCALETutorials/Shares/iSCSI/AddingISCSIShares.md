@@ -167,7 +167,7 @@ This procedure walks you through adding each configuration setting on the seven 
    
    ![iSCSIManualAddTargets](/images/SCALE/22.12/iSCSIManualAddTargets.png "iSCSI Add Targets")
    
-   a. Click **Add** at the top right of the screen. The **Add iSCSI Target** screen opens.
+   a. Click **Add** at the top right of the screen to open the **Add iSCSI Target** screen.
 
    b. Enter a name in **Target Name**. Use lowercase alphanumeric characters plus dot (.), dash (-), and colon (:) in the iqn.format. 
       See the "Constructing iSCSI names using the iqn.format" section of [RFC3721](https://tools.ietf.org/html/rfc3721.html).
