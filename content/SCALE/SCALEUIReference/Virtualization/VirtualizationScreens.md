@@ -82,7 +82,7 @@ The **Disks** configuration wizard screen settings specify whether to create a n
 |-------|-------------|
 | **Create new disk image** | Select this radio button to create a new zvol on an existing dataset to use as a virtual hard drive for the VM. |
 | **Use existing disk image** | Select this radio button to use an existing zvol or file for the VM. Displays the **Select Existing Zvol** dropdown list field. |
-| **Select Disk Type** | Select desired disk type as either **AHCI** or **VirtIO** from the dropdown list. Select**AHCI** for Windows VMs. **VirtIO** requires a guest OS that supports VirtIO paravirtualized network drivers. |
+| **Select Disk Type** | Select desired disk type as either **AHCI** or **VirtIO** from the dropdown list. Select **AHCI** for Windows VMs. **VirtIO** requires a guest OS that supports VirtIO paravirtualized network drivers. |
 | **Zvol Location** | Select a dataset for the new zvol from the dropdown list of datasets on the system. |
 | **Size** | Required. Allocate space for the new zvol. (Examples: 500 KiB, 500M, 2 TB). Units smaller than MiB are not allowed. |
 | **Select Existing Zvol** | Displays after selecting the **Use existing disk image** radio button. Select an existing zvol from the dropdown list of zvols on the system. |
@@ -148,7 +148,7 @@ The buttons below the details show the actions options for each VM.
 | **DELETE** | <i class="material-icons" aria-hidden="true" title="Delete">delete</i> | Deletes a VM. Opens a [delete dialog](#delete-virtual-machine-dialog) that allows you to remove the VM from your system. You cannot delete a virtual machine that is running. You must first stop the VM and then you can delete it. |
 | **DEVICES** | <i class="material-icons" aria-hidden="true" title="Devices">device_hub</i> | opens the **[Virtual Machine Devices](#devices-screens)** screen with a list of virtual machine devices configured on the system. |
 | **CLONE** | <span class="iconify" data-icon="cil:clone"></span> | Makes an exact copy or *clone* of the VM that you can select and edit. Opens the **[Clone](#clone-virtual-machine-window)** dialog that allows you to clone the selected VM. Enter a name for the cloned VM. Naming the clone VM is optional. The cloned VM displays on the Virtual Machines list with the extension **_clone0**. If you clone the same VM again the extension for the second clone is **clone1**. |
-| **Display** | <i class="material-icons" aria-hidden="true" title="VNC">settings_ethernet</i> | Opens a **noVCN** window that allows you to connect to a  |
+| **Display** | <i class="material-icons" aria-hidden="true" title="VNC">settings_ethernet</i> | Opens **noVNC** in a browser window that allows you to connect to the remote desktop. |
 | **SERIAL** | <i class="material-icons" aria-hidden="true" title="Serial">keyboard_arrow_right</i> | Opens the TrueNAS **VM Serial Shell** screen. |
 | **Download Logs** | <span class="material-icons">content_paste</span> | Downloads a <file>.log </file> file to the system. |
 {{< /expand >}}

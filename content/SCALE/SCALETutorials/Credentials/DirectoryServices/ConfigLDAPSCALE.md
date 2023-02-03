@@ -22,7 +22,7 @@ Go to **Credentials > Directory Services** and click **Configure LDAP**.
 
 ![LDAPSCALE](/images/SCALE/LDAPSCALE.png "LDAP Options")
 
-Enter your LDAP server hostname, then enter your LDAP server Base and Bind domain names and the bind password. Check the **Enable** box to activate the server, then click **Save**.
+Enter your LDAP server hostname, then enter your LDAP server base and bind distinguished names (DN) and the bind password. Check the **Enable** box to activate the server, then click **Save**.
 
 To further modify the LDAP configuration, click **Advanced Options**. See the [LDAP UI Reference article]({{< relref "/content/SCALE/SCALEUIReference/Credentials/DirectoryServices/LDAP.md" >}}) for details about advanced settings.
 
