@@ -204,7 +204,7 @@ This procedure walks you through adding each configuration setting on the seven 
 
    f. Do not change **LUN RPM** when using Windows as the initiator. Only change **LUN RPM**  in environments where you need accurate reporting statistics for devices that use a specific RPM. 
 
-   g. The **Read-only** checkbox is not selected by default. Select to prevent the initiator from initializing this LUN.
+   g. **Read-only** is disabled by default. Select to prevent the initiator from initializing this LUN.
  
    h. In the **Type** section, select the extent type from the **Extent Type** dropdown. 
       **Device** provides virtual storage access to zvols, zvol snapshots, or physical devices. 
