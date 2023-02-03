@@ -11,7 +11,7 @@ tags:
 
 ## Expanding LUNs
 
-TrueNAS lets users expand Zvol and file-based LUNs to increase the available storage that the iSCSI shares.
+TrueNAS lets users expand Zvol and file-based LUNs to increase the available storage in an iSCSI share.
 
 ### Zvol LUNs
 To expand a Zvol LUN, go to **Datasets** and click the Zvol LUN name. The **Zvol Details** widget displays. Click the **Edit** button.
