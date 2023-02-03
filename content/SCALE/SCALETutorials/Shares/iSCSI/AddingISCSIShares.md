@@ -200,7 +200,7 @@ This procedure walks you through adding each configuration setting on the seven 
 
    d. In the **Compatibility** section, the **Enable TPC** checkbox is selected by default. This allows an initiator to bypass normal access control and access any scannable target.
 
-   e. The **Xen initiator compat mode** checkbox is not selected by default. Select when using Xen as the iSCSI initiator.
+   e. **Xen initiator compat mode** is disabled by default. Select when using Xen as the iSCSI initiator.
 
    f. The **LUN RPM** setting should not be changed when using Windows as the initiator. Only needs to be changed in large environments where the number of systems using a specific RPM is needed for accurate reporting statistics. 
 
