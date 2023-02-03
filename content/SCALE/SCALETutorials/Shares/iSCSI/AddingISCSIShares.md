@@ -242,7 +242,7 @@ TrueNAS SCALE allows users to add iSCSI targets without having to set up another
 {{< expand "Click here for more information" "v" >}}
 Go to **Shares** and click the **Block (iSCSI) Shares Targets** widget.
 
-   a. Click **Add** at the top right of the screen. The **Add iSCSI Target** screen opens.
+   a. Click **Add** at the top right of the screen to open the **Add iSCSI Target** screen.
 
    ![iSCSIManualAddTargets](/images/SCALE/22.12/iSCSIManualAddTargets.png "iSCSI Add Targets")
 
