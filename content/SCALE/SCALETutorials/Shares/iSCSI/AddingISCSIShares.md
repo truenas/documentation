@@ -230,7 +230,7 @@ This procedure walks you through adding each configuration setting on the seven 
 
    b. Select the target from the **Target** dropdown list.
 
-   c. Enter a value 0 and 1023 for the **LUN ID**. Some initiators expect a value below 256. Leave blank to automatically assign the next available ID.
+   c. Select the value or enter a value between 0 and 1023. Some initiators expect a value below 256. Leave this **LUN ID** blank to automatically assign the next available ID.
 
    d. Select an existing extent from the **Extent** dropdown.
 
