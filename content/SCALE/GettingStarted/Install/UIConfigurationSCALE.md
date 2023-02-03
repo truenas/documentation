@@ -12,6 +12,10 @@ tags:
 {{< toc >}}
 
 
+iXsystems TrueNAS Enterprise customers should contact iXsystems Support when their systems arrive to receive additional guidance on their next steps.
+
+All other TrueNAS SCALE users can follow this instruction to complete the set up and configuration of their systems.
+
 ## Applying TrueNAS Licenses (Enterprise Customers Only)
 
 TrueNAS SCALE Enterprise customers should contact iXsystems support to obtain license information for their TrueNAS system. To apply the license information, go to the **System Settings > General** screen and use the **[Update License]({{< relref "GetSupportSCALE.md" >}})** option on the **Support** widget (system information card).
@@ -27,21 +31,22 @@ The **Support** widget on the **System Settings > General** screen displays the 
 After installing the SCALE <file>iso</file>, the installer displays the IP address for the web UI at the end of the installation process. 
 TrueNAS uses DHCP to assign the primary web UI IP address and the other required global network addresses. 
 With this IP address you can access the web UI to complete any other network or other system configuration you want or need, or you can use the 
-Console setup menu to assign network addresses to network inferfaces or other global network devices [described here]({{< relref "ConsoleSetupMenuSCALE.md" >}}) 
+Console setup menu to assign network addresses to network interfaces or other global network devices [described here]({{< relref "ConsoleSetupMenuSCALE.md" >}}). 
 
 If you make network changes, we recommend using the Web UI to configure your network interfaces as it is designed to make this process easier, and it provides safeguards so you do not break your system network connections. 
 
 ### Adding Interfaces
 
-You have the option to [use the Console setup menu]({{< relref "ConsoleSetupMenuSCALE.md" >}}) to add and activate other network interfaces or you can use the SCALE web UI. Other network interfaces include bridge, LAGG, or VLAN interfaces that you might want to use or need for your network setup. 
+You have the option to [use the Console setup menu]({{< relref "ConsoleSetupMenuSCALE.md" >}}) to add other active and physically connected network interfaces to SCALE or you can use the SCALE web UI. 
+You can configure virtual network interfaces that include bridge, LAGG, or VLAN interfaces using either the Console setup menu or SCALE UI. 
 
-We recommend using the web UI to [add or change network interfaces]({{< relref "ManagingInterfaces.md" >}}), set up link aggregate [LAGG]({{< relref "SettingUpLAGG.md" >}}) or virtual LAN [VLAN]({{< relref "SettingUpVLAN.md" >}}) interfaces, change or [configure global network settings]({{< relref "ManagingGlobalConfig.md" >}}), or set up [static IP or alais IP addresses]({{< relref "SettingUpStaticIPs.md" >}}) on the **Network** screen.
+We recommend using the web UI to [add or change network interfaces or aliases]({{< relref "ManagingInterfaces.md" >}}), set up link aggregate [LAGG]({{< relref "SettingUpLAGG.md" >}}) or virtual LAN [VLAN]({{< relref "SettingUpVLAN.md" >}}) interfaces, change or [configure global network settings]({{< relref "ManagingGlobalConfig.md" >}}), or set up [static IP addresses]({{< relref "SettingUpStaticIPs.md" >}}) on the **Network** screen.
 
 ### Adding Aliases or Static IP Addresses
 Static IP addresses and aliases provide different support for various network applications. 
-You configure both static and alias IP addresses on the same screen in the SCALE UI.
+You configure both static and alias IP addresses for an interface on the same screen in the SCALE UI.
 
-For more information on when to use an alias or a static IP address, see [Setting Up Static IPs]({{< relref "SettingUpStaticIPs.md" >}}).
+For more information on when to use an alias or a static IP address, see [Managing Interfaces]({{< relref "ManagingInterfaces.md" >}}).
 
 ## Setting Up Storage
 
@@ -75,7 +80,7 @@ Services you want to configure and enable are based on those you want to deploy 
 
 * [SSH service]({{< relref "SSHServiceSCALE.md" >}})
 
-  Set up this service to allow SSH login for administration users (admin, or if also enabled, the root user). Configure this on all SCALE systems.
+  Set up this service to allow SSH login for administration users (admin or, if also enabled, the root user). Configure this on all SCALE systems.
 
 * SMART service and set up SMART tests
 
@@ -107,7 +112,7 @@ TrueNAS SCALE provides several cloud storage provider options for storage data.
 Download a system debug file from the **System Settings > Advanced** screen. Click **Save Debug** to begin the download. 
 Keep both the system configuration file and the initial system debug file in a safe location where save regularly backed up important files.
 
-Use the SCALE **Backup Credentials** screen **[Cloud Credentials]({{< relref "AddCloudCredentials.md" >}}**) to configure authentication credentials for the cloud service of your choice and then schedule a **[Cloud Sync Tasks]({{< relref "/SCALE/SCALETutorials/DataProtection/CloudSynctasks/_index.md" >}})** to run on the schedule you set and to regularly back up your storage data.
+Use the SCALE **Backup Credentials** screen **[Cloud Credentials]({{< relref "AddCloudCredentials.md" >}})** to configure authentication credentials for the cloud service of your choice and then schedule a **[Cloud Sync Tasks]({{< relref "/SCALE/SCALETutorials/DataProtection/CloudSynctasks/_index.md" >}})** to run on the schedule you set and to regularly back up your storage data.
 
 ## Checking System Alert Settings and Services
 
@@ -149,3 +154,6 @@ Regular SCALE customers experiencing issues should [file an issue ticket](https:
 Support is also available through the TrueNAS Community Forums, blog, and Discord. These options are accessible on the top header of the TrueNAS Documentation Hub website.
 
 When reporting an issue, include a system debug file, downloaded following the issue occurrence. This captures the system logs iXsystems needs to help resolve your issues.
+
+{{< taglist tag="scaleinstall" limit="10" title="Related Installation Articles" >}}
+{{< taglist tag="scalemigrate" limit="10" title="Related Migration Articles" >}}
