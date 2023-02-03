@@ -109,7 +109,7 @@ This procedure walks you through adding each configuration setting on the seven 
 
    d. The value in **Pool Available Space Threshold** generates an alert when the pool has this percentage of space remaining. This is typically configured at the pool level when using zvols or at the extent level for both file and device-based extents. 
 
-   e. Enter the **iSCSI listen port**. Add the TCP port used to access the iSCSI target. Default is `3260`.
+   e. Enter the **iSCSI listen port**.  Add the TCP port used to access the iSCSI target. The default is `3260`.
 
    f. Click **Save**.
 
