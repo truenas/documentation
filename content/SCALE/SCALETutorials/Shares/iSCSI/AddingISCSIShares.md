@@ -226,7 +226,7 @@ This procedure walks you through adding each configuration setting on the seven 
       
       ![iSCSIManualAddAssocAuthTargets](/images/SCALE/22.12/iSCSIManualAddAssocAuthTargets.png "iSCSI Add Associated Targets")
 
-   a. Click **Add** at the top right of the screen. The **Add Associated Target** screen opens.
+   a. Click **Add** at the top right of the screen to open the **Add Associated Target** screen.
 
    b. Select the target from the **Target** dropdown list.
 
