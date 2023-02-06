@@ -78,7 +78,7 @@ Select **Confirm** and then click **Delete**.
 
 ![DeleteBootEnvironmentSCALE](/images/SCALE/22.12/DeleteBootEnvironmentSCALE.png "Delete Boot Environment") 
 
-You cannot delete the default and any active entries. 
+You cannot delete the default or any active entries. 
 Because you cannot delete an activated boot entry, this option does not display for activated boot environments
 To delete the active boot environment, first activate another entry and then delete the environment you want to remove.
 {{< /expand >}}
@@ -125,7 +125,7 @@ To change the default scrub interval, input a different number in **Scrub interv
 ## Checking Boot Pool Status
 You an attach or replace the boot environment.
 {{< expand "Click Here for More Information" "v" >}}
-From the **System Settings > Boot** screen, click **Boot Pool Status** button to open the **Boot Pool Status** screen. This screen shows current operating system device (boot pool), the path for the pool, and the read, write, or checksum errors for the device. 
+From the **System Settings > Boot** screen, click the **Boot Pool Status** button to open the **Boot Pool Status** screen. This screen shows the current operating system device (boot pool), the path for the pool, and the read, write, or checksum errors for the device. 
 
 ![BootPoolStatusListingSCALE](/images/SCALE/22.12/BootPoolStatusListingSCALE.png "Boot Pool Status")
 
@@ -148,7 +148,7 @@ If you want to replace the device, click the <span class="material-icons">more_v
 ## Scrubbing a Boot Pool
 You can perform a manual data integrity check (scrub) of the operating system device at any time.
 {{< expand "Click Here for More Information" "v" >}}
-From the **System Settings > Boot** screen and click **Scrub Boot Pool** to open the **Scrub** dialog.
+On the **System Settings > Boot** screen, and click **Scrub Boot Pool** to open the **Scrub** dialog.
 
 ![ScrubBootPoolNowSCALE](/images/SCALE/22.12/ScrubBootPoolNowSCALE.png "Boot Pool Scrub")
 
