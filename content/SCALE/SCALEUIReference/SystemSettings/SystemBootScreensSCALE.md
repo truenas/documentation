@@ -44,7 +44,7 @@ The vertical ellipsis <i class="fa fa-ellipsis-v" aria-hidden="true" title="Opti
 
 ### System Boot Actions
 
-**System Settings > Boot** screen displays four options at the top right of the screen.
+The **System Settings > Boot** screen displays four options at the top right of the screen.
 
 |Setting | Description |
 |--------|-------------| 
