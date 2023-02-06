@@ -19,10 +19,10 @@ aliases:
 
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
-| 2.3.2 | Code-freeze | 15 February 2023 |
-| 2.3.2 | Internal Testing Sprints | 20 February 2023 - 23 February 2023 |
-| 2.3.2 | Tag | 27 February 2023 |
-| 2.3.2 | Release | 28 February 2023 |
+| 2.3.2 | Code-freeze | 22 February 2023 |
+| 2.3.2 | Internal Testing Sprints | 27 February 2023 - 3 March 2023 |
+| 2.3.2 | Tag | 6 March 2023 |
+| 2.3.2 | Release | 7 March 2023 |
 
 ## 2.3.1
 
@@ -522,7 +522,6 @@ TrueCommand 2.1 is the single pane of glass for:
 
 | Seen In | Key | Summary | Workaround | Resolved In |
 |---------|-----|---------|------------|-------------|
-| TC 2.3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2538" target="_blank">TC-2538</a> | Licensed Disk Limit is ignored and the Disk Used is not updated | On a system with 12 disks used and shown in the Administration area and for API call, was able to add a system with 46 disks and did received a warning about exceeding the license limit. Disks Used was not updated in the Administration area or for API calls. | Fixed in 2.3.1 |
 | TC 2.3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2533" target="_blank">TC-2533</a> | Hook in new servers/limit event sent when license limit is exceeded | This event replaces an error on servers/add, which instead sends max_disks and license_count if the license is executed, but not error. Any time a check fails the servers/limit event is sent as well, for asynchronous occurrences. | Targeted 2.3.2 |
 | TC 2.3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2528" target="_blank">TC-2528</a> | Cannot enable team alert creation | Enabling team alert creation on new teams does not stick as the only way to submit is to update the name, which resets the checkbox after the team object is reloaded. | Unknonwn |
 | TC 2.3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2524" target="_blank">TC-2524</a> | Notices WebSocket test results are unstable | Most tests pass but some are failing but never on the same test. Possible middleware issue. | Targeted 2.3.2 |
