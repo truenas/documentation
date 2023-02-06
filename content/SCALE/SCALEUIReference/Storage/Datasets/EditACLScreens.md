@@ -149,7 +149,7 @@ The NFSv4 **ACL Type** radio buttons change the **Permissions** and **Flags** se
 | Setting | Description |
 |---------|-------------|
 | **Who** | Access Control Entry (ACE) user or group. Select a specific User or Group for this entry. See [nfs4_setfacl(1) NFSv4 ACL ENTRIES](https://man7.org/linux/man-pages/man1/nfs4_setfacl.1.html). <br><br>**User** denotes access rights for users identified by the qualifier.<br>**Group** denotes access rights for groups identified by the qualifier.<br>**owner@** applies this entry to the user that owns the dataset.<br>**group@** applies this entry to the group that owns the dataset. <br>**everyone@** applies this entry to all users and groups. |
-| **ACL Type** | Determines how the Permissions apply to the chosen Who. Choose Allow to grant the specified permissions and Deny to restrict the specified permissions. |
+| **ACL Type** | Determines how the Permissions apply to the chosen **Who**. Choose **Allow** to grant the specified permissions and **Deny** to restrict the specified permissions. |
 {{< /expand >}}
 
 ### NFS4 Permissions and Flags
