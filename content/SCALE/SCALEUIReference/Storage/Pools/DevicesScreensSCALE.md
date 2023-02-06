@@ -14,7 +14,7 @@ tags:
 
 {{< toc >}}
 
-The **Devices** screen lists VDEVS configured for the selected pool. 
+The **Devices** screen lists VDEVS configured for the selected pool. Go to **Storage > Topology > Manage Devices** to view the **Devices** screen. 
 
 ![DevicesScreenDataVdevsUnexpanded](/images/SCALE/22.12/DevicesScreenDataVdevsUnexpanded.png "Devices Data VDEV Unexpanded")  
 
