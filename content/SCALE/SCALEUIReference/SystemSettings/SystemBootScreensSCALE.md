@@ -9,22 +9,22 @@ tags:
 
 {{< toc >}}
 
-The **System > Boot** screen displays a list of boot environments on the TrueNAS system. Each time the system updates to a new software release it creates a new boot environment.
+The **System Settings > Boot** screen displays a list of boot environments on the TrueNAS system. Each time the system updates to a new software release it creates a new boot environment.
 
-![SystemBootScreenSCALE](/images/SCALE/22.02/SystemBootScreenSCALE.png "System Boot Screen")
+![BootEnvironmentListingSCALE](/images/SCALE/22.12/BootEnvironmentListingSCALE.png "System Boot Screen") 
 
 Each boot environment on the list includes:
 
 * **Name** which is the name of the boot entry as it appears in the boot menu
 * **Active** that indicates which entry boots by default if a boot environment is not active. Activated environment displays **Non/Reboot**.
-* **Created** that shows creation date and time, **Space** that shows boot environment size
+* **Date Created** that shows creation date and time, **Space** that shows boot environment size
 * **Keep** that indicates whether TrueNAS deletes this boot environment when a system update does not have enough space to proceed.
 
 ### Batch Operations
 
 Select the checkbox(es) for each boot environment displays the **Batch Operations** that allows you to delete the selected environments at one time.
 
-![BootBatchOperationsOption](/images/SCALE/22.02/BootBatchOperationsOption.png "Batch Operations Boot Screen")
+![BootEnvironmentBatchListingSCALE](/images/SCALE/22.12/BootEnvironmentBatchListingSCALE.png "Batch Operations Boot Screen")
 
 The <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> displays a list of boot environment actions that change based on whether it is activated or not.
 
@@ -43,7 +43,7 @@ The <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> for an e
 
 ### System Boot Actions
 
-**ACTIONS** at the top right corner of the **System > Boot** screen displays four options.
+**ACTIONS** at the top right corner of the **System Settings > Boot** screen displays four options.
 
 |Setting | Description |
 |--------|-------------|
@@ -54,16 +54,16 @@ The <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> for an e
 
 ## Boot Pool Status Screen
 
-The **System > Boot > Status** screen shows the **Boot Pool Status** of the current **boot-pool**. It includes the current status, the path, and the number of read, write and checksum errors.
+The **System Settings > Boot > Boot Pool Status** screen shows the status of the current **boot-pool**. It includes the current status, the path, and the number of read, write and checksum errors.
 
-![BootPoolStatusScreenSCALE](/images/SCALE/22.02/BootPoolStatusScreenSCALE.png "Boot Pool Status")
+![BootPoolStatusListingSCALE](/images/SCALE/22.12/BootPoolStatusListingSCALE.png "Boot Pool Status") 
 
 The <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> displays two options, **Attach** or **Replace**.
 
 ### Attach Screen
 The boot status **Attach** screen settings specify a device as the disk member and how much of the device is used.
 
-![BootStatusAttachScreenSCALE](/images/SCALE/22.02/BootStatusAttachScreenSCALE.png "Boot Status Attach")
+![BootPoolStatusAttachDiskSCALE](/images/SCALE/22.12/BootPoolStatusAttachDiskSCALE.png "Boot Status Attach") 
 
 Select a device from the **Member Disk** dropdown. 
 
@@ -73,8 +73,6 @@ Select **Use all disk space** to use the entire capacity of the new device.
 
 **Replace** settings specify a replacement device from the **Member Disk** dropdown
 
-![BootStatusReplaceScreenSCALE](/images/SCALE/22.02/BootStatusReplaceScreenSCALE.png "Boot Status Replace")
-
-To return to the **System > Boot** screen, click **Boot** in the breadcrumb header.
+![BootPoolStatusReplaceDiskSCALE](/images/SCALE/22.12/BootPoolStatusReplaceDiskSCALE.png "Boot Status Replace")
 
 {{< taglist tag="scaleboot" limit="10" >}}
