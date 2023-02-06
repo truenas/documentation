@@ -173,7 +173,7 @@ Enter **5** in the Console setup menu, then enter <kbd>y</kbd> to reset the syst
 After setting up network requirements, log into the web UI to complete your system setup by:
 * [Setting up storage]({{< relref "SetUpStorageSCALE.md" >}})
 * [Setting up sharing]({{< relref "SetUpSharing.md" >}})
-* [Backing Up your Configuration]({{< relref "SetUpBackupSCALE.md" }})
+* [Backing Up your Configuration]({{< relref "SetUpBackupSCALE.md" >}})
 
 {{< taglist tag="scaleinstall" limit="10" >}}
 {{< taglist tag="scalenetwork" limit="10" title="Related Network Articles" >}}
