@@ -32,7 +32,7 @@ Enter the sysctl variable name in **Variable**. Sysctl tunables configure kernel
 
 Enter a [sysctl](https://man7.org/linux/man-pages/man8/sysctl.8.html) value for the loader in **Value**. 
 
-Enter a description and then select **Enable**. To disable but not delete the variable, clear the **Enable** checkbox.
+Enter a description and then select **Enabled**. To disable but not delete the variable, clear the **Enabled** checkbox.
 
 Click **Save**.
 
