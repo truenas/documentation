@@ -15,7 +15,7 @@ The **Sharing** screen opens after you click **Shares** on the main navigation p
 
 The **Block (iSCSI) Shares Targets** widget displays the widget toolbar with the status of the iSCSI service and two buttons, **Configure** and **Add**. After adding a block share, the widget displays shares below the toolbar.
 
-![BlockiSCSIShareTargetsWidgetToolbar](/images/SCALE/22.02/BlockiSCSIShareTargetsWidgetToolbar.png "Block (iSCSI) Share Target Widget Toolbar") 
+![iSCSIBlockSharesWidget](/images/SCALE/22.12/iSCSIBlockSharesWidget.png "Block (iSCSI) Share Target Widget Toolbar") 
 
 After adding an iSCSI target or share, the widget toolbar displays the **STOPPED** service status in red and includes the share below.
 
@@ -47,7 +47,7 @@ To access this screen from the **Block (iSCSI) Shares Targets** widget toolbar, 
 To access the **Add iSCSI Target** screen from the configuration tabs, while on the **Targets** tab, click **Add** at the top of the screen. 
 To access the **Edit iSCSI Target** screen from the configuration tabs, while on the **Targets** tab, click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> next to the share and then click **Edit**. 
 
-![AddiSCSITargetScreen](/images/SCALE/22.12/AddiSCSITargetScreen.png "Add iSCSI Target Screen") 
+![iSCSIManualAddTargets](/images/SCALE/22.12/iSCSIManualAddTargets.png "Add iSCSI Target Screen") 
 
 ### Basic Info Settings
 
@@ -70,9 +70,9 @@ To display the **iSCSI Group** settings, click **Add**.
 
 The iSCSI configuration screens display seven tabs, one for each of the share configuration areas.  
 
-![SharingISCSIWizardDeviceSCALE](/images/SCALE/SharingISCSIWizardDeviceSCALE.png "iSCSI Wizard: Block Device")
+![iSCSIManualAddPortalNoAuth](/images/SCALE/22.12/iSCSIManualAddPortalNoAuth.png "iSCSI Add Portal")
 
-The **Add** button at the top of the **Sharing > iSCSI** screen works with the currently selected tab or screen. For example, if **Portals** is the current tab/screen, the **Add** button opens the **Sharing > iSCSI > Portals > Add** screen.
+The **Add** button at the top of the **Sharing > iSCSI** screen works with the currently selected tab or screen. For example, if **Portals** is the current tab/screen, the **Add** button opens the **Add Portal** screen.
 
 The <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> on configure tab screens with list views display the **Edit** and **Delete** options. **Edit** opens the **Edit** screen for the selected tab screen. For example, when on the **Portals** tab/screen, the **Sharing > iSCSI > Portals > Edit** screen opens.
 
@@ -88,7 +88,7 @@ It opens after you click **Configure** on the **Block (iSCSI) Share Target** wid
 
 The **System Settings > Services > iSCSI** displays the **Target Global Configuration** and all the other configuration screens after you click the iSCSI **Config** option on the **Services** screen.
 
-![SharingISCSIManualTargetGlobalConfigSCALE](/images/SCALE/22.12/SharingISCSIManualTargetGlobalConfigSCALE.png "iSCSI Target Global Configuration")
+![iSCSIManualTargetGlobalConfig](/images/SCALE/22.12/iSCSIManualTargetGlobalConfig.png "iSCSI Target Global Configuration")
 
 | Setting | Description |
 |---------|-------------|
@@ -108,7 +108,7 @@ The <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> n
 
 **Add** opens the **Sharing > iSCSI > Portals > Add** screen. **Edit** opens the **Sharing > iSCSI > Portals > Edit** screen. Both screens have the same setting options.
 
-![SharingiSCSIPortalsAddScreen](/images/SCALE/22.12/SharingiSCSIPortalsAddScreen.png "Sharing iSCSI Portals Add Screen") 
+![iSCSIManualAddPortalNoAuth](/images/SCALE/22.12/iSCSIManualAddPortalNoAuth.png "Sharing iSCSI Portals Add Screen") 
 
 #### Basic Info Settings
 
@@ -142,13 +142,12 @@ The <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> n
 
 **Add** opens the **Sharing > iSCSI > Initiators > Add** screen. **Edit** opens the **Sharing > iSCSI > Initiators > Edit** screen. Both screens have the same setting options.
 
-![SharingISCSIInitiatorsAddScreen](/images/SCALE/22.12/SharingISCSIInitiatorsAddScreen.png "Sharing iSCSI Initiators Add Screen")
+![iSCSIManualAddInitiators](/images/SCALE/22.12/iSCSIManualAddInitiators.png "Sharing iSCSI Initiators Add Screen")
 
 | Setting | Description |
 |---------|-------------|
 | **Allow All Initiators** | Select to allows all initiators. |
 | **Allowed Initiators (IQN)** | Enter initiators allowed access to this system. Enter an [iSCSI Qualified Name (IQN)](https://tools.ietf.org/html/rfc3720#section-3.2.6) and click **+** to add it to the list. Example: *iqn.1994-09.org.freebsd:freenas.local*. |
-| **Authorized Networks** | Enter network addresses allowed to use this initiator. Each address can include an optional [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) netmask. Click **+** to add the network address to the list. Example: *192.168.2.0/24*. |
 | **Description** | Enter any notes about the initiators. |
 
 ### Authorized Access Screen
@@ -157,7 +156,7 @@ The **Authorized Access** screen displays settings to create new authorized acce
 
 If you have not set up authorized access yet, the **No Authorized Access** screen displays with the **Add Authorized Access** button in the center of the screen. **Add Authorized Access** or **Add** at the top of the screen opens the **Sharing > iSCSI > Authorized Access > Add** screen. 
 
-![SharingiSCSIAuthAccessNoAuthAccess](/images/SCALE/22.02/SharingiSCSIAuthAccessNoAuthAccess.png "iSCSI No Authorized Access")
+![iSCSIManualNoAuthAccess](/images/SCALE/22.12/iSCSIManualNoAuthAccess.png "iSCSI No Authorized Access")
 
 After adding authorized access to the system, the **Authorized Access** screen displays a list of users.
 
@@ -168,7 +167,7 @@ After adding authorized access to the system, the **Authorized Access** screen d
 The <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> next to each entry displays two options, **Edit** and **Delete**. **Edit** opens the **Sharing > iSCSI > Authorized ACcess > Edit** screen, and **Delete** opens a dialog to delete the authorized access for the selected user. 
 The **Add** and **Edit** screens display the same settings.
 
-![SharingiSCSIAuthAccessAddScreen](/images/SCALE/22.12/SharingiSCSIAuthAccessAddScreen.png "iSCSI Authorized Access Add Screen")
+![iSCSIManualAddAuthAccess](/images/SCALE/22.12/iSCSIManualAddAuthAccess.png "iSCSI Authorized Access Add Screen")
 
 #### Group Settings
 
@@ -214,7 +213,7 @@ The **Extents** screen displays settings to create new shared storage units or e
 The <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> next to each entry opens two options, **Edit** and **Delete**. **Edit** opens the **Sharing > iSCSI > Extents > Edit** screen, and **Delete** opens a dialog to delete the extents for the selected user. 
 The **Add** and **Edit** screens display the same settings.
 
-![SharingISCSIExtentsAddScreentop](/images/SCALE/22.12/SharingISCSIExtentsAddScreentop.png "iSCSI Extents Screen Basic")
+![iSCSIManualAddExtentDevice](/images/SCALE/22.12/iSCSIManualAddExtentDevice.png "iSCSI Extents Screen Device")
 
 #### Basic Info Settings
 
@@ -226,11 +225,9 @@ The **Add** and **Edit** screens display the same settings.
 
 #### Type Settings
 
-![SharingiSCSIExtentAddFilename](/images/SCALE/22.02/SharingiSCSIExtentAddFilename.png "iSCSI Extents Adding Filename")
-
 | Setting | Description |
 |---------|-------------|
-| **Extent Type** | elect the extent (zvol) option from the dropdown list. **Device** provides virtual storage access to zvols, zvol snapshots, or physical devices. **File** provides virtual storage access to a single file. **Device** provides virtual storage access to zvols, zvol snapshots, or physical devices. **File** provides virtual storage access to a single file. |
+| **Extent Type** | Select the extent (zvol) option from the dropdown list. **Device** provides virtual storage access to zvols, zvol snapshots, or physical devices. **File** provides virtual storage access to a single file. **Device** provides virtual storage access to zvols, zvol snapshots, or physical devices. **File** provides virtual storage access to a single file. |
 | **Device** | Required. Displays if **Extent Type** is set to **Device**. Select the unformatted disk, controller, or zvol snapshot. |
 | **Path to the Extent** | Displays when **Extent Type** is set to **File**. Click the <span class="material-icons">play_arrow</span> to browse an existing file. Create a new file by browsing to a dataset and appending /\{filename.ext\} to the path. Users cannot create extents inside a jail root directory. |
 | **Filesize** | Only appears if **File** is selected. Entering **0** uses the actual file size and requires that the file already exists. Otherwise, specify the file size for the new file. |
@@ -257,13 +254,12 @@ The **Associated Targets** screen displays settings to create new associated Tru
 The <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> next to each entry displays two options, **Edit** and **Delete**. **Edit** opens the **Sharing > iSCSI >Associated Targets > Edit** screen, and **Delete** opens a dialog to delete the associated targets for the selected user. 
 The **Add** and **Edit** screens display the same settings.
 
-![SharingISCSIAssociatedTargetsAdd](/images/SCALE/22.12/SharingISCSIAssociatedTargetsAdd.png "iSCSI Associated Targets Add")
+![iSCSIManualAddAssocAuthTargets](/images/SCALE/22.12/iSCSIManualAddAssocAuthTargets.png "iSCSI Associated Targets Add") 
 
 | Setting | Description |
 |---------|-------------|
 | **Target** | Required. Select an existing target. |
 | **LUN ID** | Select the value or enter a value between 0 and 1023. Some initiators expect a value below 256. Leave this field blank to automatically assign the next available ID. |
 | **Extent** | Required. Select an existing extent. |
-
 
 {{< taglist tag="scaleiscsi" limit="10" >}}
