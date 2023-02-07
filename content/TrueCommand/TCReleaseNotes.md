@@ -28,7 +28,7 @@ aliases:
 
 February 7, 2023
 
-iXsystems is please to release TrueCommand 2.3.1!
+iXsystems is pleased to release TrueCommand 2.3.1!
 This release is a maintenance release that fixes issues identified in the 2.3.0 release and adds a few new improvements. Changes include:
 
 * Refresh option no longer logs users out of TrueCommand
