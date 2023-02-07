@@ -45,6 +45,7 @@ This release is a maintenance release that fixes issues identified in the 2.3.0 
 * [TC-2511](https://ixsystems.atlassian.net/browse/TC-2511) Add an upgrade available indication to the system Dashcards
 * [TC-2529](https://ixsystems.atlassian.net/browse/TC-2529) Unlimited disk count - do not enforce license
 * [TC-2555](https://ixsystems.atlassian.net/browse/TC-2555) Add port field to servers/add API
+* [TC-2573](https://ixsystems.atlassian.net/browse/TC-2573) Default port to 443 on cloud and 80 on site
 
 ### Bug
 
