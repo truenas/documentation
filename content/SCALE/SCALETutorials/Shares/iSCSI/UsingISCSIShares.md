@@ -14,7 +14,7 @@ Connecting to and using an iSCSI share can differ between operating systems.
 This article provides instructions on setting up a Linux and Windows system to use the TrueNAS iSCSI block share.
 
 ## Using Linux iSCSI Utilities and Service
-This section describes preparing your system to start the iSCSI service, log in to the share and obtian the basename and target TrueNAS configured. It provides information on partitioning the iSCSI disk, making a file system for the share, mounting it, and sharing data.
+In this section, you start the iSCSI service, log in to the share, and obtain the configured basename and target. You also partition the iSCSI disk, make a file system for the share, mount it, and share data.
 {{< expand "Click here for more information" "v" >}}
 Before you begin, open the command line and ensure you have installed the `open-iscsi` utility.
 To install the utility on an Ubuntu/Debian distribution, enter command `sudo apt update && sudo apt install open-iscsi`.
