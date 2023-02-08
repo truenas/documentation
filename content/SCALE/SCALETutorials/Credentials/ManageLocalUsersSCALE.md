@@ -55,7 +55,7 @@ Click **Save**.
 
 ### Configuring the Admin User Account for Nextcloud App
 The Nextcloud application, configured on the **Apps > Available Applications** screen, requires including sudo permissions for the administrator account. 
-To verify, or manage the local administrator account, go to **Credentials > Local User** and click on the administrator user row to expand it, then click **Edit** to open the **Edit User** configuration screen.
+To verify, or manage the local administrator account, go to **Credentials > Local Users** and click on the administrator user row to expand it, then click **Edit** to open the **Edit User** configuration screen.
 
 Scroll down to the **Authentication** settings and select **Permit Sudo**.
 
