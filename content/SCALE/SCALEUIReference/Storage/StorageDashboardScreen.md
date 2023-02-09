@@ -98,6 +98,12 @@ A warning displays below this donut graph when usage is above 80%.
 
 **View Disk Space Reports** opens the pool usage reports for the selected pool.
 
+{{< hint info >}}
+Large petabyte systems may report storage numbers inaccurately. Storage configurations with more than 9,007,199,254,740,992 bytes will round the last 4 digits.
+
+For example, a system with 18,446,744,073,709,551,615 bytes reports the number as 18,446,744,073,709,552,000 bytes.
+{{< /hint >}}
+
 **Manage Datasets** opens the **[Datasets]({{< relref "DatasetsScreensScale.md" >}})** screen that shows the datasets configured for the pool that owns this widget.
 {{< /expand >}}
 
