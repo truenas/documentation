@@ -33,7 +33,7 @@ The menu provides these options:
 
 * **2) Configure network settings** 
   
-  You can use this to set up the network default gateway, host name, domain, IPv4 gateway and the DNS name servers.
+  You can use this to set up the network default gateway, host name, domain, IPv4 gateway and DNS name servers.
   Options configured display in the **Global Configuration** widget on the **Network** screen in the web UI. 
   We recommend you use the SCALE UI to configure network interfaces as it has safeguards to prevent you from breaking network access to SCALE.
 
