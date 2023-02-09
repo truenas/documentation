@@ -148,7 +148,7 @@ For home users, you have a few options to allow Internet access using TrueNAS SC
 
 SCALE has implemented rootless login, making the admin user the default account, and has disabled the root password by default. 
 You can change the admin user password in the UI or from the Console setup menu.
-You can set and enable the root user password in the UI but for security hardening, we recommend you leave it disabled.
+You can set and enable the root user password in the UI, but for security hardening, we recommend you leave it disabled.
 
 {{< hint warning >}}
 Disabling a password in the UI prevents the user from logging in with it. If you disable both the root and local admin user passwords and your session times out with them disabled, a temporary sign-in slash screen allows you to log in.
