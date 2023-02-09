@@ -64,7 +64,7 @@ The menu provides these options:
 * **7) Open Linux Shell** 
   
   Use to start a shell window for running Linux CLI commands. 
-  This is not recommended unless you are an advanced user. Type `exit` to leave the shell.
+  We do not recommend using the shell unless you are an advanced user. Type `exit` to leave the shell.
 
 * **8) Reboot** 
 
