@@ -105,7 +105,7 @@ Enter <kbd>1</kbd> to display the **Configure Network Interfaces** screen where 
 
 Follow the instructions on the screen to configure an IP for a network interface. 
 Type <kbd>n</kbd> to open the new interface screen or press <kbd>Enter</kbd> to edit the existing interface. 
-You can enter aliases for an interface when you create a new or edit an existing interface.
+You can enter aliases for an interface when you create a new one or edit an existing interface.
 
 ![CSMEditInterfaceSettings](/images/SCALE/22.12/CSMEditInterfaceSettings.png "TrueNAS SCALE Console Setup Menu Edit Interface Settings") 
 
