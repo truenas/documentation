@@ -34,22 +34,22 @@ The menu provides these options:
 * **2) Configure network settings** 
   
   You can use this to set up the network default gateway, host name, domain, IPv4 gateway and DNS name servers.
-  Options configured display in the **Global Configuration** widget on the **Network** screen in the web UI. 
-  We recommend you use the SCALE UI to configure network interfaces as it has safeguards to prevent you from breaking network access to SCALE.
+  Configured options display in the **Global Configuration** widget in the web UI **Network** screen. 
+  We recommend you use the SCALE UI to configure network interfaces, as it has safeguards to prevent you from breaking network access to SCALE.
 
 * **3) Configure static routes** 
   
   You can use this to set up static IP routes, but this is not required as part of the initial configuration setup.
-  We recommend you use the SCALE UI to configure network settings as it has safeguards to prevent you from breaking network access to SCALE.
+  We recommend you use the SCALE UI to configure network settings, as it has safeguards to prevent you from breaking network access to SCALE.
 
 * **4) Change local administrator password** 
   
-  Use to change the administrator user password. /usr/bin/cli --menu
-  If you selected option 1 on the iso installer menu you configured the admin user and password. 
+  Use to change the administrator user password. `/usr/bin/cli --menu`
+  If you selected option 1 on the iso installer menu, you already configured the admin user and password. 
   Use can use this to change the admin password before you log into the SCALE UI.
   {{< hint info >}}
   This is not the password for the root user in the CLI or the root user login password for the web UI.
-  The [root user password]({{< relref "rootlessLogin.md" >}}) is disabled by default. You can turn on the root user password in the UI, but this is not recommended.
+  The [root user password]({{< relref "rootlessLogin.md" >}}) is disabled by default. You can turn on the root user password in the UI, but we do not recommend doing that.
   {{< /hint >}}
 
 * **5) Reset configuration to defaults** 
