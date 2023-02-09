@@ -28,7 +28,7 @@ The menu provides these options:
 * **1) Configure network interfaces** 
 
   You can use this to configure the primary network interface with a static IP if you do not want to use the DHCP-assigned IP address TrueNAS provides when the system boots up after installing the SCALE <file>iso</file> file. 
-  You can also use this option to set up other network interfaces, or to add alias IP addresses for the primary interface. 
+  You can also use this option to set up other network interfaces or to add alias IP addresses for the primary interface. 
   We recommend you use the SCALE UI to configure network interfaces as it has safeguards to prevent you from breaking network access to SCALE.
 
 * **2) Configure network settings** 
