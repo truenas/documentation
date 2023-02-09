@@ -132,7 +132,7 @@ For all other users, having this information ready before you begin configuring 
 If you want to use the Console setup menu to change the network interface IP address, type <kbd>1</kbd> and then press <kbd>Enter</kbd> to open the **Configure Network Interfaces** screen. 
 Use either <kbd>Tab</kbd> or the arrow keys to select the interface to use as your primary network interface if you have more than one interface installed and wired to your network. 
 Type in the IP address then use either <kbd>Tab</kbd> or the arrow keys to move through the menu and down to select **Save**, and then press <kbd>Enter</kbd>. 
-After saving and to return to the main Console setup menu type <kbd>q</kbd>. 
+After saving, return to the main Console setup menu by entering <kbd>q</kbd>. 
 If you want to configure the default gateway, host name, domain and DNS name severs using the Console setup menu type <kbd>2</kbd> and then press <kbd>Enter</kbd> to open the **Network Settings** screen. 
 
 To configure network settings in the SCALE UI, enter the IP address displayed on the Console setup menu screen in a browser URL field and press <kbd>Enter</kbd>. 
