@@ -17,7 +17,7 @@ The Console setup menu (CSM) displays at the end of the <file>iso </file> instal
 You can access this menu to administer the TrueNAS system if it has a keyboard and monitor.
 
 By default, TrueNAS does not display the Console setup menu when you connect via SSH or the web shell. 
-The admin user or the root user if enabled, or another user with root permissions can start the Console setup menu by entering this command:
+The admin user, the root user (if enabled), or another user with root permissions can start the Console setup menu by entering this command:
 
 `/usr/bin/cli --menu`  
 
