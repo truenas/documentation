@@ -36,6 +36,7 @@ Customers with appropriate support contracts can configure **[Proactive Support]
 
 The **Support** widget on the **System Settings > General** screen displays the **Proactive Support** option after you enter your system license.
 {{< / expand >}}
+
 ## Setting Up Networking
 
 After installing the SCALE <kbd>iso</kbd> file, the SCALE installer provides the DHCP-assigned IP address for the web UI at the end of the installation process. 
@@ -103,7 +104,7 @@ Configure and enable these three services based on your SCALE system:
 
 * [SSH service]({{< relref "SSHServiceSCALE.md" >}})
 
-  Set up this service to allow SSH login for administration users (admin or, if also enabled, the root user) on all SCALE systems.
+  Set this service to allow SSH login for administration users (admin or, if also enabled, the root user) on all SCALE systems.
 
 * SMART service and SMART tests
 
@@ -114,6 +115,8 @@ Configure and enable these three services based on your SCALE system:
 
   The failover service enables HA systems to fail over the primary system controller to the standby controller if service to the primary is disrupted. 
   This service is not included on non-Enterprise and non-HA systems.
+
+  Enterprise customers should not make chages to failover settings or the service on their own. Contact iXsystems Support for assistance before making any change to failover settings.
 
 When you add data sharing the system prompts you to enable the appropriate sharing service as part of the configuration and set up process.
 
@@ -183,6 +186,8 @@ You can deploy an application using the **Custom Install** option.
 ## Updating SCALE
 There are a few ways to update your instance of TrueNAS SCALE. The main **Dashboard > System Information** widget alerts you when a SCALE update is available to download and install. 
 You can also go to **System Settings > Updates** to see if an update is available. For all update options and procedures see **[Updating SCALE]({{< relref "UpdateSCALE.md" >}}).
+
+When updating to either a new incremental or full release, always save the system configuration file again. It is good practice to download a fresh debug file after a system update.
 
 ## Getting Support
 Enterprise SCALE customers with support contracts should contact the iXsystems Support using the **[Commercial Support](https://www.truenas.com/commercial-support/)** option on the top header of the TrueNAS Documentation Hub website. 
