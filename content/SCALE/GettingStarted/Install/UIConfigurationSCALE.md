@@ -16,7 +16,7 @@ iXsystems TrueNAS Enterprise customers should contact iXsystems Support when the
 
 All other TrueNAS SCALE users can follow these instructions to complete their system set up and configuration.
 
-Use the information mentioned [here]({{< relref "/SCALE/GettingStarted/Install/_index.md" >}}) to configure your network, SMTP, or directory service settings.
+Use the information mentioned in the [Installation Instructions]({{< relref "/Content/SCALE/GettingStarted/Install/_index.md" >}}) overview article to configure your network, SMTP, or directory service settings.
 
 SCALE Bluefin has implemented rootless login and disabled the root user password as a security-hardening measure. 
 After a fresh install from an <kbd>iso</kbd> file, administrators log in with the admin account created during install and no longer log in as the root user. 
@@ -44,9 +44,9 @@ If you have more than one network interface card installed and connected to your
 {{< expand "Configuring Network Settings" "v" >}}
 With the DHCP-assigned IP address, displayed at the top of the Console setup menu screen, you can access the web UI to complete any other network or other system configuration you want or need to configure.
 Users or administrators experienced with the Console setup menu can use it to assign network addresses to network interfaces and configure other global network devices [described here]({{< relref "ConsoleSetupMenuSCALE.md" >}}). 
-If you are not familiar or experienced with using the Console setup menu, we recommend using the Web UI to [configure your network interfaces]({{< relref ">}}) and other network configuration settings as it is designed to make this process easier and it provides safeguards so you do not break your system network connections. 
+If you are not familiar or experienced with using the Console setup menu, we recommend using the Web UI to [configure your network interfaces]({{< relref "ManagingInterfaces.md" >}}) and other network configuration settings as it is designed to make this process easier and it provides safeguards so you do not break your system network connections. 
 
-If you are unfamiliar with network services, devices, configurations, you can find more information [here]({{< relref "/SCALETutorials/Network/_index.md" >}}) to help guide you through this important and required configuration area.
+If you are unfamiliar with network services, devices, configurations, you can find more information [here]({{< relref "/SCALE/SCALETutorials/Network/_index.md" >}}) to help guide you through this important and required configuration area.
 {{< /expand >}}
 
 ### Adding Network Interfaces
@@ -140,7 +140,7 @@ TrueNAS SCALE provides options to back up your stored data:
 * Replication to another system
 * Cloud storage provider options and cloud sycn tasks 
 
-You can take regular [snapshots]({{< relref "CreatingSnapshots.md" >}}) or [schedule snapshot tasks]({{< relref "PeriodicSnapshotTasksSCALE.md" >}} to capture changes to stored data without the storage overhead that comes with backing up through data repelication, or you can use one of the [replication options]({{< relref "/SCALETutorials/DataProtection/Replication/_index.md" >}}) SCALE provides. 
+You can take regular [snapshots]({{< relref "CreatingSnapshots.md" >}}) or [schedule snapshot tasks]({{< relref "PeriodicSnapshotTasksSCALE.md" >}} to capture changes to stored data without the storage overhead that comes with backing up through data replication, or you can use one of the [replication options]({{< relref "/SCALE/SCALETutorials/DataProtection/Replication/_index.md" >}}) SCALE provides. 
 
 Another data storage backup option is to create a cloud storage service account and then use the SCALE to manage the backup. 
 Use the **Backup Credentials** screen **[Cloud Credentials]({{< relref "AddCloudCredentials.md" >}})** to add authentication credentials for a supported cloud service and then schedule a **[Cloud Sync Tasks]({{< relref "/SCALE/SCALETutorials/DataProtection/CloudSynctasks/_index.md" >}})** to regularly back up your storage data to the cloud.
@@ -161,10 +161,10 @@ Click the gear **Settings** icon the top of the **Alerts** dropdown panel to dis
 {{< /expand >}}
 
 ## Setting Up Directory Services
-TrueNAS SCALE allows you to configure an Active Directory or LDAP server to handle authentication and authoriztion services, domain, and other account settings. 
+TrueNAS SCALE allows you to configure an Active Directory or LDAP server to handle authentication and authorization services, domain, and other account settings. 
 
 iXsystems Support can assist Enterprise customers with configuring directory service settings in SCALE with the [information customers provide]({{< relref "/SCALE/GettingStarted/Install/_index.md" >}}), but they do not configure customer Active Directory system settings. 
-Non-Enterprise users can find support for configuring directory services in the TrueNAS Documenation Hub tutorials or in the community forums.
+Non-Enterprise users can find support for configuring directory services in the TrueNAS Documentation Hub tutorials or in the community forums.
 
 ## Using Enclosure Management (Enterprise Only)
 TrueNAS SCALE main **Dashboard** displays an image of the TrueNAS system server on the **System Information** widget. Click on the image to open the **[View Enclosure]({{< relref "EnclosureScreensSCALE" >}})** screen, or select the **System Settings > Enclosure** option on the main menu navigation panel. 
