@@ -123,7 +123,7 @@ This procedure covers adding a public SSH key to the admin account on the TrueNA
 Do not paste the SSH private key.
 {{< /hint >}}
 
-   Click **Save**.
+3. Click **Save**.
 
    ![SSHEditUserAuthenticationSettings](/images/SCALE/22.12/SSHEditUserAuthenticationSettings.png "Edit Root Users SSH Key")
 
