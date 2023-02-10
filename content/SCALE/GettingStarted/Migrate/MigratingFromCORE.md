@@ -28,7 +28,7 @@ If you have GELI-encrypted pools on your system that you plan to import into SCA
 TrueNAS SCALE validates the system certificates when a CORE system migrates to SCALE. When a malformed certificate is found, SCALE generates a new self-signed certificate to ensure system accessibility.
 
 {{< hint warning >}}
-Plugins to not migrate from CORE to SCALE. Save the configuration information for your plugin and back up stored data. 
+Plugins do not migrate from CORE to SCALE. Save the configuration information for your plugin and back up stored data. 
 After completing the SCALE install, add the application using the **Apps** option. 
 If your CORE plugin is not listed as an available application in SCALE, use the **Launch Docker Image** option to add it as and application and import data from the backup into a new SCALE dataset for the application.
 {{< /hint >}}
