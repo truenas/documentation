@@ -5,6 +5,7 @@ weight: 60
 aliases: 
 tags:
 - scalesmart
+- scaledisks
 ---
 
 {{< toc >}}
@@ -22,9 +23,7 @@ Avoid scheduling disk-intensive tests at the same time!
 For example, do not schedule S.M.A.R.T. tests on the same day as a disk [scrub]({{< relref "ScrubTasksSCALE.md" >}}) or other data protection task.
 
 {{< expand "How do I check or change S.M.A.R.T. testing for a disk?" "v" >}}
-Go to **Storage**, then click **Disks** dropdown and select **Disks**.
-
-Click the <i class="material-icons" aria-hidden="true">expand_more</i> to the right of the disk row to expand it.
+Go to **Storage**, then click **Disks** button. Select disks to be examined using the checkbox at left. Click the <i class="material-icons" aria-hidden="true">expand_more</i> to the right of the disk row to expand it.
 **Enable S.M.A.R.T.** shows as **true** or **false**.
 
 To enable or disable testing, click **EDIT** and find the **Enable S.M.A.R.T.** option.
@@ -32,11 +31,21 @@ To enable or disable testing, click **EDIT** and find the **Enable S.M.A.R.T.** 
 
 ## Running a Manual S.M.A.R.T. Test
 
-To test one or more disk for errors, go to **Storage**, select **Disks** and then select the disks you want to test to display the **Batch Operations** options.
+To test one or more disk for errors, go to **Storage** and click the **Disks** button.
 
-Click **Manual Test**. The **Manual S.M.A.R.T. Test** dialog displays.
+![StorageDashDisksButtonSCALE](/images/SCALE/22.12/StorageDashDisksButtonSCALE.png "Storage Dashboard Disks Button")
 
-![RunManualSmartTests](/images/SCALE/22.02/RunManualSmartTests.png "Run Manual S.M.A.R.T. Test")
+Select the disks you want to test using the checkboxes to the left of the disk names. Selecting multiple disks displays the **Batch Operations** options.
+
+![StorageDisksSelectedSCALE](/images/SCALE/22.12/StorageDisksSelectedSCALE.png "Storage Dashboard Disks Selected")
+
+Click **Manual Test**. The **Manual S.M.A.R.T. Test** dialog displays. 
+
+{{< hint info >}}
+Manual S.M.A.R.T. tests on NVMe devices is currently not supported.
+{{< /hint >}}
+
+![StorageDisksManualTestSCALE](/images/SCALE/22.12/StorageDisksManualTestSCALE.png "Run Manual S.M.A.R.T. Test")
 
 Next, select the test type from the **Type** dropdown and then click **Start**.
 
@@ -44,9 +53,6 @@ Test types differ based on the drive connection, ATA or SCSI.
 Test duration varies based on the test type you chose.
 TrueNAS generates alerts when tests discover issues.
 
-{{< hint info >}}
-Manual S.M.A.R.T. tests on NVMe devices is currently not supported.
-{{< /hint >}}
 ### ATA Drive Connection Test Types
 The ATA drive connection test type options are:
 * **Long** runs a S.M.A.R.T. Extended Self Test that scans the entire disk surface, which may take hours on large-volume disks.
@@ -69,7 +75,7 @@ You can also see results in the **[Shell]({{< relref "UseSCALEShell.md" >}})** u
 
 To schedule recurring S.M.A.R.T. tests, go to **Data Protection** and click **ADD** in the **S.M.A.R.T. Tests** widget.
 
-![AddSMARTTestsScreen](/images/SCALE/22.02/AddSMARTTestsScreen.png "Add S.M.A.R.T. Test")
+![DataProtectionAddSMARTTestSCALE](/images/SCALE/22.12/DataProtectionAddSMARTTestSCALE.png "Add S.M.A.R.T. Test")
 
 Select the disks to test from the **Disks** dropdown list, and then select the test type to run from the **Type** dropdown list.
 
@@ -78,12 +84,18 @@ Next select a preset from the **Schedule** dropdown. To create a custom schedule
 {{< expand "Advanced Scheduler" "v" >}}
 {{< include file="static/includes/SCALE/SCALEAdvancedScheduler.md.part" markdown="true" >}}
 {{< /expand >}}
+
+![DataProtectionSMARTTestWidgetSCALE](/images/SCALE/22.12/DataProtectionSMARTTestWidgetSCALE.png "S.M.A.R.T. Test List")
+
 Saved schedules appear in the **S.M.A.R.T. Tests** window.
+
 {{< hint warning >}}
 S.M.A.R.T. tests can offline disks! Avoid scheduling S.M.A.R.T. tests simultaneously with scrub or other data protection tasks.
 {{< /hint >}}
 
 Start the S.M.A.R.T. service. Go to **System Settings > Services** and scroll down to the **S.M.A.R.T.** service. If not running, click the toggle to turn the service on. Select **Start Automatically** to have this service start after after the system reboots.
+
+![SMARTSystemServicesSCALE](/images/SCALE/22.12/SMARTSystemServicesSCALE.png "System Services S.M.A.R.T. Test")
 
 If you have not configured the S.M.A.R.T. service yet, while the service is stopped, click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the service configuration form. See [Services S.M.A.R.T. Screen]({{< relref "SMARTServicesScreen.md" >}}) for more information on service settings.
 Click **Save** to save settings and return to the **Services** screen.
