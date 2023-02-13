@@ -37,4 +37,4 @@ jobs:
         run: du -d 0 -h ~/.pnpm-store/*/*/* || true
 
       - name: Build Hugo Site
-        run: hugo
+        run: hugo -d public --gc --minify
