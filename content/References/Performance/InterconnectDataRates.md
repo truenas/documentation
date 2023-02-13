@@ -26,7 +26,7 @@ A best effort attempt has been made to exclude physical link encoding overheads 
   <tr>
     <td class="tg-1wig">(1024<sup>2</sup> Bytes) MiB/s</td>
     <td class="tg-1wig">(1000<sup>2</sup> Bytes) MB/s</td>
-    <td class="tg-1wig">(1000<sup>3</sup> Bytes) Gb/s</td>
+    <td class="tg-1wig">(1000<sup>3</sup> Bits) Gb/s</td>
     <td class="tg-1wig">Notes</td>
   </tr>
 </thead>
@@ -78,7 +78,7 @@ A best effort attempt has been made to exclude physical link encoding overheads 
   <tr>
     <td class="tg-1wig">(1024<sup>2</sup> Bytes) MiB/s</td>
     <td class="tg-1wig">(1000<sup>2</sup> Bytes) MB/s</td>
-    <td class="tg-1wig">(1000<sup>3</sup> Bytes) Gb/s</td>
+    <td class="tg-1wig">(1000<sup>3</sup> Bits) Gb/s</td>
     <td class="tg-1wig">Notes</td>
   </tr>
 </thead>
@@ -130,7 +130,7 @@ A best effort attempt has been made to exclude physical link encoding overheads 
   <tr>
     <td class="tg-1wig">(1024<sup>2</sup> Bytes) MiB/s</td>
     <td class="tg-1wig">(1000<sup>2</sup> Bytes) MB/s</td>
-    <td class="tg-1wig">(1000<sup>3</sup> Bytes) Gb/s</td>
+    <td class="tg-1wig">(1000<sup>3</sup> Bits) Gb/s</td>
   </tr>
 </thead>
 <tbody>
@@ -164,7 +164,7 @@ A best effort attempt has been made to exclude physical link encoding overheads 
   <tr>
     <td class="tg-1wig">(1024<sup>2</sup> Bytes) MiB/s</td>
     <td class="tg-1wig">(1000<sup>2</sup> Bytes) MB/s</td>
-    <td class="tg-1wig">(1000<sup>3</sup> Bytes) Gb/s</td>
+    <td class="tg-1wig">(1000<sup>3</sup> Bits) Gb/s</td>
   </tr>
 </thead>
 <tbody>
@@ -198,7 +198,7 @@ A best effort attempt has been made to exclude physical link encoding overheads 
   <tr>
     <td class="tg-1wig">(1024<sup>2</sup> Bytes) MiB/s</td>
     <td class="tg-1wig">(1000<sup>2</sup> Bytes) MB/s</td>
-    <td class="tg-1wig">(1000<sup>3</sup> Bytes) Gb/s</td>
+    <td class="tg-1wig">(1000<sup>3</sup> Bits) Gb/s</td>
   </tr>
 </thead>
 <tbody>
@@ -232,7 +232,7 @@ A best effort attempt has been made to exclude physical link encoding overheads 
   <tr>
     <td class="tg-1wig">(1024<sup>2</sup> Bytes) MiB/s</td>
     <td class="tg-1wig">(1000<sup>2</sup> Bytes) MB/s</td>
-    <td class="tg-1wig">(1000<sup>3</sup> Bytes) Gb/s</td>
+    <td class="tg-1wig">(1000<sup>3</sup> Bits) Gb/s</td>
   </tr>
 </thead>
 <tbody>
@@ -290,13 +290,13 @@ A best effort attempt has been made to exclude physical link encoding overheads 
   <tr>
     <td class="tg-1wig">(1024<sup>2</sup> Bytes) MiB/s</td>
     <td class="tg-1wig">(1000<sup>2</sup> Bytes) MB/s</td>
-    <td class="tg-1wig">(1000<sup>3</sup> Bytes) Gb/s</td>
+    <td class="tg-1wig">(1000<sup>3</sup> Bits) Gb/s</td>
   </tr>
   <tr>
     <td class="tg-1wig">8 Gb</td>
-    <td class="tg-1wig">797</td>
-    <td class="tg-1wig">836</td>
-    <td class="tg-1wig">6.7</td>
+    <td class="tg-0lax">797</td>
+    <td class="tg-0lax">836</td>
+    <td class="tg-0lax">6.7</td>
   </tr>
 </thead>
 <tbody>
