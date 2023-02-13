@@ -15,11 +15,7 @@ This article lists some of the alerts and provides direction to tutorials in the
 Enterprise HA customers are urged to contact iXsystems Suppor for assistance with resolving system issues especially with HA and failover issues.
 {{< /hint >}}
 
-## Alerts Services and Settings
-
-## Enterprise System Alerts
-
-### High Availability (HA) Alerts
+## High Availability (HA) Alerts
 
 
 | Alert | Description | Level |
@@ -36,76 +32,6 @@ Enterprise HA customers are urged to contact iXsystems Suppor for assistance wit
 | Syncing KMIP Keys to Peer Failed |  | Critical |
 | TrueNAS Software Versions Must Match Between Storage Controllers |  | Critical |
 
-
-### Directory Serivces Alerts
-
-| Alert | Description | Level |
-|-------|-------------|-------|
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-
-
-### System Alerts
-
-| Alert | Description | Level |
-|-------|-------------|-------|
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-
-
-### Hardware Alerts
-
-| Alert | Description | Level |
-|-------|-------------|-------|
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-
-
-### Certificate Alerts
-
-| Alert | Description | Level |
-|-------|-------------|-------|
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-
-
-
-### Network Alerts
-
-| Alert | Description | Level |
-|-------|-------------|-------|
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-
-
-### Storage Alerts
-
-| Alert | Description | Level |
-|-------|-------------|-------|
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-
-
-### Sharing Alerts
-
-| Alert | Description | Level |
-|-------|-------------|-------|
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
 
 {{< taglist tag="scaleenterprise" limit="10" title="Other Enterprise Articles" >}}
 {{< taglist tag="scalealerts" limit="10" title="Related Alerts Articles" >}}
