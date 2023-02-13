@@ -14,13 +14,14 @@
 <link rel="stylesheet" href="//cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css">
 
 <!-- Add Google reCAPTCHA -->
-<script src="https://www.google.com/recaptcha/enterprise.js?render=6LciZAAkAAAAAFXhesPB7ytcc9743UGZGYFoyOzs"></script>
+<script src="https://www.google.com/recaptcha/enterprise.js?render=6LeA_SkkAAAAADD6tuU8aNvNYRxCohbrq5iDphim"></script>
 <script>
-grecaptcha.enterprise.ready(function() {
-grecaptcha.enterprise.execute('6LciZAAkAAAAAFXhesPB7ytcc9743UGZGYFoyOzs', {action: 'login'}).then(function(token) {
-...
+function onClick(e) {
+e.preventDefault();
+grecaptcha.enterprise.ready(async () => {
+const token = await grecaptcha.enterprise.execute('6LeA_SkkAAAAADD6tuU8aNvNYRxCohbrq5iDphim', {action: 'LOGIN'});
 });
-});
+}
 </script>
 
 <!-- Add all Fonts used on the TrueNAS.com site -->
