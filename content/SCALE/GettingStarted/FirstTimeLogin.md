@@ -57,7 +57,7 @@ With the implementation of rootless login and based on your Authentication Metho
 Use the administrative account credentials to log in.
 The default administrator username is no longer root but the administrative user created during installation.
 
-{{< include file="/_includes/RootLoginDeprecatedSCALE.md" type="page" >}}
+{{< include file="/_includes/RootLoginWarnSCALE.md" type="page" >}}
 
 ### Logging In As Admin
 
@@ -70,7 +70,7 @@ To modify user credentials, go to **Credentials > Local Users**, click anywhere 
 
 ### Logging In as Root
 {{< include file="/_includes/RootLoginDeprecatedSCALE.md" type="page" >}}
-If you did not set up an admin user during the installation process, log into the UI as the root user with the root password. The system generates an alert stating you need to create an admin user. 
+If you did not set up an admin user during the installation process, log into the UI as the root user with the root password. 
 Go to **Credentials > Local Users**, and click **Add** to open the **Add User** screen. 
 Follow the directions in [Managing Users]({{< relref "ManageLocalUsersScale.md" >}}) to create an admin user with all the permissions it requires.
 
