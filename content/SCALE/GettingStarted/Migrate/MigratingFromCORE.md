@@ -60,7 +60,7 @@ Before you attempt to migrate your CORE system to SCALE:
    {{< include file="/_includes/NetworkInstallRequirementsSCALE.md" type="page" >}}
 
 {{< hint warning >}}
-Plugins to not migrate to SCALE. Save plugin (or jails) configuration information and back up stored data. 
+Plugins do not migrate to SCALE. Save plugin (or jails) configuration information and back up stored data. 
 After completing the SCALE migration or installation, add the application using the **Apps** screen. 
 If the CORE plugin is not listed as an available application in SCALE, use the **Launch Docker Image** option to add it and import data from the backup into a new SCALE dataset.
 {{< /hint >}}
