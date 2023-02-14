@@ -1,6 +1,6 @@
 ---
 title: "Setting Up Storage"
-description: "This article provides basic instructions for setting up your first storage pool, and also provides storage requirement information."
+description: "This article provides basic instructions for setting up your first storage pool and dataset or zvol."
 weight: 40
 tags:
 - scaleinstall
@@ -26,48 +26,33 @@ Backing up with replication requires you to have additional storage on the TrueN
 
 ## Setting Up Storage
 
-Go to **Storage > Pools** and click **Add**.
-Select **Create a new pool** and click **Create Pool**
+Click on **Storage** to access the **[Storage]({{< relref "/SCALE/SCALEUIReference/Storage/StorageDashboardScreen.md" >}})** screen and widgets where you create pools and manage your storage pools, disks, and devices.
 
-![PoolManagerScreen](/images/SCALE/22.02/PoolManagerScreen.png "Pool Manager Screen")
-
-Enter a name for your first storage pool in **Name**. For example, *tank* or any other preferred name.
-Select two disks listed under the **Available Disks** section and then click the <span class="material-icons">east</span> to move them to the **Data VDevs** area.
- 
-{{< hint ok >}}
-If the disks used have non-unique serial numbers a warning message displays. To populate the **Available Disks** section with these disk, select the **Show disk with non-unique serial numbers** checkbox.
-{{< /hint >}}
-
-![PoolManagerWithDiskWarning](/images/SCALE/22.02/PoolManagerWithDiskWarning.png "Disk with Non-Unique Serial Numbers")
-
-TrueNAS automatically suggests **Mirror** as the ideal layout for maximized data storage and protection.
-
-Review the **Estimated raw capacity** to the right of the Data Vdev type dropdown list to make sure you have the storage capacity you need, and then click **Create**. 
-A warning dialog displays. Click **Confirm** to activate the **CREATE POOL** button. 
-After you click **CREATE POOL** the system displays a fetching-data dialog and then a status dialog.  
-TrueNAS wipes the disks and adds your pool (*tank* is the example used) to the **Storage > Pools** list.
-
-![StoragePoolCreated](/images/SCALE/22.02/StoragePoolCreated.png "Storage Pool Added to List")
+Click [here]({{< relref "CreatePoolSCALE.md" >}}) for instructions on how to plan for and create pools on SCALE. 
+If you want to create additional pools with other disks not assigned to a pool, you can do that now or as you have a need for them.
 
 ### Adding Datasets or Zvols
 
-New pools have a root dataset that allows further division into new datasets or zvols.
+New pools have a root dataset that allows further division into new non-root parent and child datasets, or into storage volumes (zvols).
 A *dataset* is a file system that stores data and has specific permissions.
-A *zvol* is a virtual block device that has a predefined storage size.
-To create either one, go to **Storage > Pools**, click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>, and select **Add Dataset** or **Add Zvol**.
+A *zvol* is a virtual block device that has a predefined storage size. Zvols are used by virtual machines (VMs) for their data storage needs.
 
-![DatasetActionDropdownList](/images/SCALE/22.02/DatasetActionDropdownList.png "Adding a dataset or zvol")
-
-The two fields that you cannot change after you click **Save** are the dataset **Name** and **Share Type**. 
-**Name** is a required field but **Share Type** is optional. 
-The default setting for **Share Type** is **Generic** which works for any share type you create or you can select **SMB** if you know you want to create an SMB share. 
+To create a dataset click **Datasets** on the main navigation panel or **Manage Datasets** on the **Storage Dashboard > Usage** widget to open the **Datasets** screen. Click **[Add Dataset]({{< relref "DatasetsSCALE.md" >}})** or **[Add Zvol]({{< relref "AddManageZvols.md" >}})**.
+{{< hint info >}}
+The two **Add Dataset** fields that you cannot change after you click **Save** are the dataset **Name** and **Share Type**. 
+**Name** is a required field but setting **Share Type** is optional. 
+The default setting for **Share Type** is **Generic** which works for any share type you create, or if you know you want to set up sharing for Windows, select **SMB** for an SMB share. 
 A dataset with a **Share Type** set to **SMB** optimizes that dataset for the Windows sharing protocol.
+{{< /hint >}}
+Organize the pool with as many datasets or zvols you need according to your access and data sharing requirements before moving data into the pool.
 
-Organize the pool with as many datasets or zvols you need according to your access and data sharing requirements before moving any data into the pool.
+If you plan to deploy container applications, the system automatically creates the **ix-applications** dataset but this is not used for application data storage. If you want to store data by application, create the dataset first and then deploy your application.
 
-If you want to create additional pools with other disks not assigned to a pool, you can do that now or as you have a need for them.
+## Taking the Next Step
 
-When you finish building and organizing your TrueNAS pools, move on to configuring how the system [shares data]({{< relref "SharingStorage.md" >}})
+When you finish building and organizing your TrueNAS pools and datasets, move on to configuring how the system [shares data]({{< relref "SetUpSharing.md" >}})
+
+If you don't plan to set up data sharing, you can [set up backup solutions]({{< relref "SetUpBackupSCALE.md" >}}) for your system and stored data.
 
 {{< taglist tag="scaleinstall" limit="10" >}}
 {{< taglist tag="scalestorage" limit="10" title="Related Storage Articles" >}}
