@@ -34,7 +34,7 @@ If your CORE plugin is not listed as an available application in SCALE, use the 
 {{< /hint >}}
 
 ### Migration Methods
-You can migrate from CORE to SCALE through an upgrade or clean install using and <kbd>iso</kbd> file, or in some CORE 13.0 release you can migrate using the CORE UI Upgrade function with the SCALE update file downloaded from the website. 
+You can migrate from CORE to SCALE through an upgrade or clean install using an <kbd>iso</kbd> file, or in some CORE 13.0 release you can migrate using the CORE UI Upgrade function with the SCALE update file downloaded from the website. 
 The easiest method is to upgrade from the CORE system UI, but your system must be at a CORE 13.0 release to use this method. 
 Note, the CORE 13.0-U3 release might not work when updating from the CORE UI using the Update function.
 
