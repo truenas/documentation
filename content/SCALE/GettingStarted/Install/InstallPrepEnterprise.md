@@ -33,9 +33,12 @@ To make this possible:
   Configure the administrator credentials to access both IP addresses assigned to the HA system controllers.
 
 ### Network Access
-If you have an HA system with two controllers, you must assign an IP address to the second controller in the server. 
 {{< include file="/_includes/NetworkInstallRequirementsSCALE.md" type="page" >}}
-The second controller in an HA system also requires a static IP address.
+
+If you have an HA system with two controllers, you must assign a total of three IP addresses: 
+* A virtual IP for access to the UI no matter which controller is active
+* An IP address for controller A 
+* An IP address controller B 
 
 iXsupport can assist you with any questions you have with these network requirements. Provide the information listed to iXsystems when requested so we can pre-configure your system network settings.
 

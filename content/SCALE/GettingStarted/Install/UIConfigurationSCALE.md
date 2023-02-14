@@ -131,10 +131,23 @@ See [Managing SMART Tests]({{< relref "SmartTestsScale.md" >}}) for information 
 
 ## Setting Up Backup Solutions
 
-After completing your initial system configuration, we recommend you save the system configuration file [described here]]({{< relref "SetUpBackupSCALE.md" >}}) and download a system debug before you begin using SCALE for day to day operations. 
-Download a system debug file from the **System Settings > Advanced** screen. Click **Save Debug** to begin the download. 
-Keep both the system configuration file and the initial system debug file in a safe location where save regularly backed up important files.
+After completing your initial system configuration and any other configuration tasks for backing up data storage, and before you begin day-to-day operations, we recommend you:
+* Save the system configuration file [described here]]({{< relref "SetUpBackupSCALE.md" >}})
+* Save or [create a new boot environment]({{< relref "ManageBootEnvironSCALE.md" >}}) to use as a restore point if system issues cause you lose access to the SCALE UI.
+* Download a system debug capture system information to use as a comparison against future debug files. 
+  To download a system debug file, go to **System Settings > Advanced** and click **Save Debug** to begin the download. 
 
+Keep both the system configuration file and the initial system debug file in a safe location where save regularly backed up important files. 
+You can use the boot environment in and SSH session to retore your system to the point where you completed your system configuration and then import data or pools to recover stored data.
+
+For Enterprise customers with HA systems, the HA restore process requires recovering both controllers. 
+Contact iXsystems Support for assistance before attempting to recovery your system. If you choose to restore access to controller A and the SCALE UI, contact iXsystem Support to get assistance with properly recovering your second controller. 
+{{< hint danger >}}
+Enterprise HA customers should not start issuing CLI commands to recover your system!!
+Contact iX support after you restore access to controller A to request further assistance and before actions taken disrupt or damage system access further and require a complete reinstall to recover.
+{{< /hint >}}
+
+### Data Storage Backup Solutions
 After saving both files, we recommend you set up snapshots, replication, or a cloud storage provider service and cloud sync task to back up your storage data. 
 {{< expand "Backup Solutions" "v" >}}
 
@@ -184,10 +197,17 @@ SCALE Enterprise only offers MinIO as an available application.
 You can deploy an application using the **Custom Install** option.
 
 ## Updating SCALE
-There are a few ways to update your instance of TrueNAS SCALE. The main **Dashboard > System Information** widget alerts you when a SCALE update is available to download and install. 
-You can also go to **System Settings > Updates** to see if an update is available. For all update options and procedures see **[Updating SCALE]({{< relref "UpdateSCALE.md" >}}).
+You can update your system using an <kbd>iso</kbd> file using the system administration console or an update file installed through the SCALE UI.
 
-When updating to either a new incremental or full release, always save the system configuration file again. It is good practice to download a fresh debug file after a system update.
+There are a few ways to update your instance of TrueNAS SCALE: 
+* The main **Dashboard > System Information** widget alerts you when a SCALE update is available to download and install. 
+  Click the update option on to open the **System Settings > Updates** screen. 
+* Go to **System Settings > Updates** to see if an update is available. 
+
+For all update options and procedures using the SCALE UI see **[Updating SCALE]({{< relref "UpdateSCALE.md" >}}).
+
+When updating to either a new incremental or full release, always save the system configuration file again, and save a new boot environment. 
+It is good practice to download a fresh debug file after a system update.
 
 ## Getting Support
 Enterprise SCALE customers with support contracts should contact the iXsystems Support using the **[Commercial Support](https://www.truenas.com/commercial-support/)** option on the top header of the TrueNAS Documentation Hub website. 
