@@ -7,6 +7,7 @@ tags:
 - scaleinstall
 - scaledashboard
 - scalemigrate
+- scaleenterprise
 ---
 
 {{< toc >}}
