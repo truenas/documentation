@@ -52,7 +52,7 @@ Before you attempt to migrate your CORE system to SCALE:
    Lower releases of CORE (12.0-Ux) must do a clean install with the SCALE <kbd>iso</kbd> file.
 2. Verify the root user is not locked. 
    Go to **Accounts > Users**, use **Edit** for the root user to view current settings and confirm **Lock User** is not selected.
-3. After updating to the latest publicly available release of CORE, download your system configuration file and a debug file. 
+3. After updating to the latest publicly-available release of CORE, download your system configuration file and a debug file. 
    Keep these files in a safe place in case you need to revert back to CORE with a clean install of the CORE <kbd>iso</kbd> file.
 4. Back up your stored data files. 
    If you need to do a clean install with the SCALE <kbd>iso</kbd> file, you can import your data into SCALE.
