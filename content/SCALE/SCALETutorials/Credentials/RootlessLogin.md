@@ -12,15 +12,10 @@ tags:
 
 
 The initial implementation of TrueNAS SCALE rootless login still permits users to use the root user but encourages users to create the local administrator account when first [installing SCALE]({{< relref "InstallingSCALE.md" >}}).
+Some screens and UI settings might still refer to the *root* account.
+These references are updating to point to the **administrator account** in future release of SCALE.
 
-{{< include file="/_includes/RootLoginDeprecatedSCALE.md" type="page" >}}
-
-If migrating from CORE to SCALE, when [first logging into SCALE]({{< relref "/SCALE/GettingStarted/FirstTimeLogin.md" >}}) as the root user, and alert displays informing you to create the administrator account. 
-All users should [create the local administrator account]({{< relref "ManageLocalUsersSCALE.md" >}}) and stop using root. 
-
-{{< hint info >}}
-Some screens and UI settings still refer to the root account. These references should change to the administrator account in future release of SCALE.
-{{< /hint >}}
+{{< include file="/_includes/RootLoginWarnSCALE.md" type="page" >}}
 
 ##  About Admin and Root Logins and Passwords
 
@@ -40,7 +35,7 @@ Enter and confirm a password to gain access to the UI, but then immediately go t
 This password is not saved as a new password and it does not enable the admin or root passwords. 
 It only gives temporary sign in access if you lock yourself out of the box.
 
-If you disable the password for UI login, it is also disabled for ssh access.
+If you disable the password for UI login, it is also disabled for SSH access.
 
 ## Accessing the System Using SSH
 
