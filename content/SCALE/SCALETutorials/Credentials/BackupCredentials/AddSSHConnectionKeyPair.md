@@ -85,9 +85,7 @@ Using the **SSH Connections** configuration screen:
 
    c. Select the private key from the SSH keypair that you used to transfer the public key on the remote NAS from the **Private Key** dropdown.
 
-   d. Enter the remote system SSH key for this TrueNAS SCALE system in **Remote Host Key** to authenticate the connection.
-
-   e. Click **Discover Remote Host Key** after properly configuring all other fields to connect to the remote system and attempt to copy the key string to the related SCALE field.
+   d. **Remote Host Key**. Click **Discover Remote Host Key** after properly configuring all other fields to query the remote system and automatically populate this field.
    
 3. (Optional) Select a security option from the **Cipher** dropdown list. 
    Select **Standard** for the most secure option, but this has the greatest impact on connection speed. 
@@ -102,10 +100,10 @@ Using the **SSH Connections** configuration screen:
    The new SSH connection displays on the **SSH Connection** widget. To edit it, click on the name to open the **SSH Connections** configuration screen populated with the saved settings. 
 
 {{< /expand >}}
-### Adding a Public SSH Key to the TrueNAS Root Account
-This procedure covers adding a public SSH key to the root user account on the TrueNAS SCALE system and generating a new SSH Keypair to add to the remote system (TrueNAS or other).
+### Adding a Public SSH Key to the TrueNAS Admin User Account
+This procedure covers adding a public SSH key to the admin account on the TrueNAS SCALE system and generating a new SSH Keypair to add to the remote system (TrueNAS or other). 
 {{< expand "Click here for more information" "v" >}}
-1. Copy the SSH public key text or download it to a text file.
+1. Copy the SSH public key text or download it to a text file:
    
    Log into the TrueNAS system that generated the SSH keypair and go to **Credentials > Backup Credentials**. 
 
@@ -113,11 +111,11 @@ This procedure covers adding a public SSH key to the root user account on the Tr
 
    Copy the text of the public SSH key or download the public key as a text file.
 
-2. Add the public key to the **root** user account on the system where you want to register the public key.
+2. Add the public key to the admin account on the system where you want to register the public key:
    
    Log into the TrueNAS system that you want to register the public key on and go to **Credentials > Local Users**.
 
-   Edit the **root** user account. Click on the <span class="material-icons">expand_more</span> icon and then click **Edit** to open the **Edit User** screen.
+   Edit the admin account. Click on the <span class="material-icons">expand_more</span> icon and then click **Edit** to open the **Edit User** screen.
 
    Paste the SSH public key text into the **Authorized Keys** field on the **Edit User** configuration screen in the **Authentication** settings.
 
@@ -125,17 +123,13 @@ This procedure covers adding a public SSH key to the root user account on the Tr
 Do not paste the SSH private key.
 {{< /hint >}}
 
-   Click **Save**.
+3. Click **Save**.
 
    ![SSHEditUserAuthenticationSettings](/images/SCALE/22.12/SSHEditUserAuthenticationSettings.png "Edit Root Users SSH Key")
 
-3. Add a new public SSH key to the remote system.
-   
-   Generate a new SSH keypair in **Credentials > Backup Credentials**. Click **Add** on the **SSH Keypairs** widget and select **Generate New**.
+If you need to generate a new SSH keypair:
 
-   Copy or download the value for the new public key.
-
-   Add the public key to the remote NAS.
+Go to **Credentials > Backup Credentials**. Click **Add** on the **SSH Keypairs** widget and select **Generate New**. Copy or download the value for the new public key. Add the new public key to the remote NAS.
 
 If the remote NAS is not a TrueNAS system, refer to the documentation for that system, and find their instructions on adding a public SSH key.
 {{< /expand >}}
@@ -150,6 +144,6 @@ To manually create a new keypair, click **Add** on the **SSH Keypairs** widget. 
 
 ![BackupCredentialsSSHKeypairsAdd](/images/SCALE/22.12/BackupCredentialsSSHKeypairsAdd.png "SSH Keypairs Form")
 
-Use the <iconify-icon icon="icon-park-outline:download"></iconify-icon> download icon or click the <span class="material-icons">more_vert</span> at the bottom of the **SSH Keypairs** configuration screen to download these strings as text files for later use. 
+Click the vertical ellipsis <span class="material-icons">more_vert</span> at the bottom of the **SSH Keypairs** configuration screen to download these strings as text files for later use. 
 
 {{< taglist tag="scalessh" limit="10" >}}
