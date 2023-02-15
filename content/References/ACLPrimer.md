@@ -55,16 +55,16 @@ TrueNAS administrators should also use NFSv4 ACLs if their organization requires
 
 * If an organization requires managers to review all data before deletion, administrators can use advanced NFSv4 permissions to let employees access and create files, but not edit or delete existing files.
 * NFSv4 can operate alongside CIFS, allowing organizations that use UNIX-based processing systems features to use Windows-based clients. 
-* NFSv4 can also cooperate with CIFS to bypass NFS's 16 group limitation by generating NFS credentials based on Unix *and* Windows groups.
+* NFSv4 can also cooperate with CIFS to bypass NFS's 16-group limitation by generating NFS credentials based on Unix *and* Windows groups.
 
-Users should use NFSv4 ACLs when they intend to have nested groups within an SMB share. Since users and nested groups may have different permissions for directories, the NFSv4 Traverse permission can enable users to connect to and move through directories that their nested group may not have read or write access.
+Users should use NFSv4 ACLs when they intend to have nested groups within an SMB share. Since users and nested groups may have different permissions for directories, the NFSv4 Traverse permission can enable users to connect to and move through directories that their nested group might not have read or write access to.
 
 ### When to use POSIX ACLs
 
 TrueNAS administrators should use POSIX ACLs when their organization's data backup target does not support native NFSv4 ACLs. Since the Linux platform used POSIX for a long time, many backup products that access the server outside the SMB protocol can't understand or preserve native NFSv4 ACLs.
 
 {{< hint info >}}
-**Note:** When deciding how to configuring ACLs, administrators should verify that they can correctly restore permissions from backups.
+**Note:** When deciding how to configure ACLs, administrators should verify that they can correctly restore permissions from backups.
 {{< /hint >}}
 
 Inversely, TrueNAS administrators should use POSIX ACLs when TrueNAS is the backup target for clients that use POSIX ACLs. Since ZFS provides superb safety and data protection, many administrators use their TrueNAS system as a target for file-based backups from computers on their networks. Using POSIX ACLs preserves POSIX.1e ACLs from client systems.
