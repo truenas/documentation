@@ -116,12 +116,14 @@ These functions display on the **Edit ACL** screen for both POSIX and NSFv4 ACL 
 
 | Setting | Description |
 |---------|-------------|
-| **Apply permissions recursively** | Select to apply all settings or changes on the **Edit ACL** screen to all child datasets in the path in **Dataset**. |
 | **Add Item** | Adds a new ACE to the **Access Control List**. |
+| **Apply permissions recursively** | Select to apply all settings or changes on the **Edit ACL** screen to all child datasets in the path in **Dataset**. |
+| **Save Access Control List** | Saves settings or changes made on the **Edit ACL** screen. |
 | **Strip ACL** | (NSFv4 only) Remove all ACLs from the current dataset and any directories or files contained within this dataset. Stripping the ACL resets dataset permissions and can make data inaccessible until you create new permissions. |
 | **Permissions Editor** | (POSIX only) Displays the **Unix Permissions Editor** screen for POSIX ACL types. |
-| **Use ACL Preset** | Displays the **Select a preset ACL** window. If the **ACL Type** setting, found in the **Advanced Options** of both the **Add Dataset** and **Edit Dataset** screens, is **POSIX** or **Inherit** the **Default ACL Options** dropdown displays POSIX pre-configured options. If set to NFSv4, the preset options displayed are pre-configured NSFv4 options. |
-| **Save Access Control List** | Saves settings or changes made on the **Edit ACL** screen. |
+| **Use Preset** | Displays the **Select a preset ACL** window. If the **ACL Type** setting, found in the **Advanced Options** of both the **Add Dataset** and **Edit Dataset** screens, is **POSIX** or **Inherit**, the **Default ACL Options** dropdown displays POSIX pre-configured options. If set to NFSv4, the preset options displayed are pre-configured NSFv4 options. |
+| **Save As Preset** | Saves the current access control list as a custom preset and adds it to the **Access Control List**. |
+
 {{< /expand >}}
 
 ### POSIX Access Control Entry Settings
