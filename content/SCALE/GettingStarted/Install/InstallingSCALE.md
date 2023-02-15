@@ -147,40 +147,9 @@ Also have your SCALE system configuration file and data backups handy so you can
 {{< /hint >}}
 After the system boots into the installer, follow these steps.
 {{< expand "TrueNAs Installer Console Setup Instructions" "v" >}}
-1. Select **Install/Upgrade**.
-   
-   ![SCALEInstallUpgrade](/images/SCALE/SCALEInstallMainScreen.png "SCALE Install Main Screen")
+{{< include file="/_includes/SCALEInstallerProcedure.md" type="page" >}}
 
-2. Select the desired install drive.
-   
-   ![InstallDrive](/images/CORE/12.0/InstallDriveScreen.png "Install Drive Screen")
-
-   Select **Yes**.
-   
-   ![InstallWarning](/images/CORE/12.0/InstallWarningScreen.png "Install Warning Screen")
-
-3. Select **Fresh Install** to do a clean install of the downloaded version of TrueNAS SCALE.
-   This erases the contents of the selected drive!
-   
-   ![InstallFresh](/images/CORE/12.0/InstallWarningScreen.png "Upgrade or Fresh Install Screen")
-   
-   When the operating system device has enough additional space, you can choose to allocate some space for a swap partition to improve performance.
-   
-   ![InstallPartition](/images/CORE/12.0/InstallPartitionScreen.png "Install Partition Screen")
-
-4. Select option **1 Administrative user (admin)** and then **OK** to install SCALE, and create the admin user account. 
-   SCALE Bluefin has implemented rootless login. Create an admin account and password. The system retains root as a fallback but it is no longer the default.
-   This account has full control over TrueNAS and is used to log in to the web interface.
-   Set a strong password and protect it.
-   
-   ![SCALEInstallerConsoleSetupAdminAccount](/images/SCALE/22.12/SCALEInstallerConsoleSetupAdminAccount.png "Admin User Screen")
-
-   Next, enter a password for the new admin user.
-
-   ![SCALEInstallerConsoleSetupAdminPassword](/images/SCALE/22.12/SCALEInstallerConsoleSetupAdminPassword.png "Install Password Screen")
-
-5. After following the steps to install, reboot the system and remove the install media.
-
+After following the steps to install, reboot the system and remove the install media.
 {{< expand "Troubleshooting" "v">}}
 If the system does not boot into TrueNAS SCALE, there are several things you can check to resolve the situation:
 

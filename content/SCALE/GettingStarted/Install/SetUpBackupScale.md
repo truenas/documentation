@@ -77,7 +77,7 @@ You can configure TrueNAS to send, receive, or synchronize data with a cloud sto
 
 Replication is the process of taking a moment-in-time *snapshot* of the data and copying that snapshot to another location. Snapshots typically use less storage than full file backups and have more management options. This instruction shows using the TrueNAS replication wizard to create a simple replication task.
 
-1. Create a periodic snapshot task using the **[Periodic Snapshot Task]({{< relref "PeriodicSnapshotTaskSCALE.md" >}})**. 
+1. Create a periodic snapshot task using the **[Periodic Snapshot Task]({{< relref "PeriodicSnapshotTasksSCALE.md" >}})**. 
    Replication requires you to configure this task before you can successfully create and run replication tasks.
 
 2. Create the replication task.
