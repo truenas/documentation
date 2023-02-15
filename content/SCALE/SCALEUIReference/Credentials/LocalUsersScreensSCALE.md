@@ -6,6 +6,8 @@ alias:
 tags:
 - scaleusers
 - scaleshell
+- scalelogin
+- scaleadmin
 ---
 
 {{< toc >}}
@@ -48,9 +50,11 @@ Built-in users (except the **root** user) do not include the **Home Directory Pe
 | **Full Name** | Required. Enter a name for the user with our without spaces. |  
 | **Username** | Required. Enter a user name of up to 16 characters in length. When using NIS or other legacy software with limited user name lengths, keep names to eight characters or less for compatibility. Do not begin the user name with a hyphen (-), and do not include a space, tab, the comma (,), plus (+), ampersand (&), percent (%), carat (^), open or close parenthesis ( ), exclamation mark (!), at symbol (@), tilde (~), question mark (?), greater or less than symbols (<)(>), or equals (+) in the name. You can use the dollar sign ($) as the last character of the user name. |  
 | **Disable Password** | Use the toggle to disable the password for the selected user. If you disable the admin account the admin user cannot login. If you disable the root and admin user passwords you see a **Set new root account password** sign-in splash screen. |
-| **Password** | Required. Enter a user password unless **Enable Password login** is set to **No**. The password cannot contain a question mark (?). |  
-| **Confirm Password** | Required. Re-enter the value entered in **Password**. |  
-| **Email** | Enter the email address of the new user. This email address receives notifications, alerts, messages based on the settings configured. |  
+| **Password** | Required. Enter a user password unless **Enable Password login** is set to **No**. The password cannot contain a question mark (?). The **Edit User** screen displays **New Password**. |  
+| **Confirm Password** | Required. Re-enter the value entered in **Password**. The **Edit User** screen displays **Confirm New Password**. |  
+| **Email** | Enter the email address of the new user. This email address receives notifications, alerts, messages based on the settings configured. | 
+
+![EditUserIdentificationSCALE](/images/SCALE/22.12/EditUserIdentificationSCALE.png "Edit User Identification Settings") 
 
 {{< /expand >}}
 
@@ -73,7 +77,7 @@ Built-in users (except the **root** user) do not include the **Home Directory Pe
 **Directory and Permissions** settings specify the user home directory and the permissions for that home directory.
 {{< expand "Click Here for More Information" "v" >}}
 
-![AddUserDirPermsAuthSettings](/images/SCALE/22.02/AddUserDirPermsAuthSettings.png "Add User Directories, Permissions and Authentication Settings") 
+![EditUserDirectoriesPermSCALE](/images/SCALE/22.12/EditUserDirectoriesPermSCALE.png "Edit User Directories, Permissions and Authentication Settings") 
 
 | Setting | Description |
 |---------|-------------|
@@ -85,7 +89,7 @@ Built-in users (except the **root** user) do not include the **Home Directory Pe
 **Authentication** settings specify authentication methods, the public SSH key, user administration access, and enables/disables password authentication. It also covers the Shell options.
 {{< expand "Click Here for More Information" "v" >}}
 
-![AddUserDirPermsAuthSettings](/images/SCALE/22.12/AddUserDirPermsAuthSettings.png "Add User Directories, Permissions and Authentication Settings") 
+![EditUserAuthentication](/images/SCALE/22.12/EditUserAuthentication.png "Edit User Directories, Permissions and Authentication Settings") 
 
 | Setting | Description |
 |---------|-------------|
@@ -94,7 +98,7 @@ Built-in users (except the **root** user) do not include the **Home Directory Pe
 | **Lock User** | Select to prevent the user from logging in or using password-based services until you clear this checkbox. Locking an account is only possible when **Disable Password** is set to **No** and the account has a created password in **Password**. |  
 | **Permit Sudo** | Select to give this user administrator permissions and the ability to use [sudo](https://www.sudo.ws/). When using sudo, a user is prompted for their account password. |  
 | **Samba Authentication** | Select to allow this user to authenticate to and access data share with [SMB]({{< relref "/SCALE/SCALETutorials/Shares/SMB/AddSMBShares.md" >}}) samba shares. |  
-| **Download SSH Public Key** | Click to generate and download a public key text file to past into **SSH Public Key**. |  
+| **Download Authorized Keys** | Click to generate and download a public key text file. Displays on the **Edit User** screen. |  
 
 #### Shell Options
 You can set a specific [shell]({{< relref "UseScaleShell.md" >}}) for the user from the **Shell** dropdown list options:
