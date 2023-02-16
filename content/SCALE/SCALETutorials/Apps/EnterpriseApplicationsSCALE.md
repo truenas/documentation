@@ -12,9 +12,16 @@ tags:
 
 TrueNAS is certified with leading hypervisors and backup solutions to streamline storage operations and ensure compatibility with your existing IT infrastructure. TrueNAS Enterprise storage appliances deliver a wide range of features and scalability for virtualization and private cloud environments, with the ability to create off-site backups with scheduled sync and replication features.
 
-{{< hint info >}}
-TrueNAS applications expand your system's capabilities by adding third-party software. Note that in SCALE Enterprise, third-party applications are hidden behind a license feature that can only be enabled through written agreement with iXsystems Support. Applications should only be installed with the assistance of an iXsystems Support Engineer.
-{{< /hint >}}
+{{< enterprise >}}
+TrueNAS applications expand your system's capabilities by adding third-party software but can add significant risk to system stability and security.
+SCALE Enterprise licensed systems do not have applications available by default.
+This feature can be enabled as part of the Enterprise license after consulting with iXsystems.
+Applications should only be installed with the assistance of an iXsystems Support.
+
+{{< expand "Contacting Support" "v" >}}
+{{< include file="static/includes/General/iXsystemsSupportContact.html.part" html="true" >}}
+{{< /expand >}}
+{{< /enterprise >}}
 
 ![InstalledAppsNoneSCALEEnterprise](/images/SCALE/22.12/InstalledAppsNoneSCALEEnterprise.png "Installed Apps SCALE Enterprise") 
 
