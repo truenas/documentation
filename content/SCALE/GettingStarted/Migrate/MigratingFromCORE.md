@@ -16,34 +16,47 @@ tags:
 This article provides information and instructions for migrating from TrueNAS CORE to SCALE.
 
 {{< hint danger >}}
-Migrating TrueNAS from CORE to SCALE is a one-way operation. Attempting to activate or roll back to a CORE boot environment can break the system.
+Migrating TrueNAS from CORE to SCALE is a one-way operation.
+Attempting to activate or roll back to a CORE boot environment can break the system.
 
-You cannot upgrade CORE Enterprise systems with High Availability enabled (HA) to SCALE Enterprise HA.
-Enterprise customers should contact iXsystems Support for assistance with migrating or upgrading HA systems.
+High Availability systems cannot migrate from CORE to SCALE.
+Enterprise customers should contact iXsystems Support before attempting any migration.
+
+{{< expand "Contacting Support" "v" >}}
+{{< include file="static/includes/General/iXsystemsSupportContact.html.part" html="true" >}}
+{{< /expand >}}
 {{< /hint >}}
 
-TrueNAS SCALE is Linux based, so it does not support FreeBSD GELI encryption.
-If you have GELI-encrypted pools on your system that you plan to import into SCALE, you must migrate your data from the GELI pool to a non-GELI encrypted pool *before* migrating to SCALE.
+### What Can and Can't Migrate?
 
-TrueNAS SCALE validates the system certificates when a CORE system migrates to SCALE. When a malformed certificate is found, SCALE generates a new self-signed certificate to ensure system accessibility.
+Although TrueNAS attempts to keep most of your CORE configuration data when upgrading to SCALE, some CORE-specific items do not transfer.
+These are the items that don't migrate from CORE:
 
-{{< hint warning >}}
-Plugins do not migrate from CORE to SCALE. Save the configuration information for your plugin and back up stored data. 
-After completing the SCALE install, add the application using the **Apps** option. 
-If your CORE plugin is not listed as an available application in SCALE, use the **Launch Docker Image** option to add it as an application and import data from the backup into a new SCALE dataset for the application.
-{{< /hint >}}
+* FreeBSD GELI encryption. If you have GELI-encrypted pools on your system that you plan to import into SCALE, you must migrate your data from the GELI pool to a non-GELI encrypted pool *before* migrating to SCALE.
+* Malformed certificates. TrueNAS SCALE validates the system certificates when a CORE system migrates to SCALE. When a malformed certificate is found, SCALE generates a new self-signed certificate to ensure system accessibility.
+* CORE Plugins and Jails. Save the configuration information for your plugin and back up any stored data. After completing the SCALE install, add the equivalent SCALE application using the **Apps** option. If your CORE plugin is not listed as an available application in SCALE, use the **Launch Docker Image** option to add it as an application and import data from the backup into a new SCALE dataset for the application.
+* NIS data
+* System tunables
+* ZFS Boot Environments
+* AFP shares also do not transfer, but migrate into an SMB share with AFP compatibility enabled. 
+* CORE `netcli` utility. A new CLI utility is used for the [Console Setup Menu]({{< relref "ConsoleSetupMenuSCALE.md" >}}) and other commands issued in a CLI.
+
+VM storage and its basic configuration transfer over during a migration, but you need to double-check the VM configuration and the network interface settings specifically before starting the VM.
+
+Init/shutdown scripts transfer, but can break. Review them before use.
+
+After migration, it is strongly recommended to review each area of the UI that was previously configured in CORE.
 
 ### Migration Methods
-You can migrate from CORE to SCALE through an upgrade or clean install using an <kbd>iso</kbd> file, or in some CORE 13.0 release you can migrate using the CORE UI Upgrade function with the SCALE update file downloaded from the website. 
-The easiest method is to upgrade from the CORE system UI, but your system must be at a CORE 13.0 release to use this method. 
-Note, the CORE 13.0-U3 release might not work when updating from the CORE UI using the Update function.
+You can migrate from CORE to SCALE through an upgrade or clean install using an <kbd>iso</kbd> file.
+Alternately, some CORE 13.0 releases can migrate using the CORE UI Upgrade function with the SCALE update file downloaded from the website.
+The easiest method is to upgrade from the CORE system UI, but your system must have the CORE 13.0 major release installed to use this method.
+Note the CORE 13.0-U3 release might not work when updating from the CORE UI using the Update function.
 
 If you do a clean-install with a SCALE <kbd>iso</kbd> file, you need to reconfigure your CORE settings in SCALE and import your data.
 
 ## Preparing for Migration
-{{< hint danger >}}
-CORE Enterprise and Enterprise (HA) customers should not attempt to migrate from CORE to SCALE Enterprise (HA) by themselves. Contact iXsystems Support for assistance!
-{{< /hint >}}
+
 Before you attempt to migrate your CORE system to SCALE:
 
 1. Upgrade your CORE system to the most recent publicly-available CORE version. 
@@ -58,19 +71,11 @@ Before you attempt to migrate your CORE system to SCALE:
    If you need to do a clean install with the SCALE <kbd>iso</kbd> file, you can import your data into SCALE.
 5. Write down your network configuration information to use if you do a clean install of SCALE from an <kbd>iso</kbd> file.
    {{< include file="/_includes/NetworkInstallRequirementsSCALE.md" type="page" >}}
-
-{{< hint warning >}}
-Plugins do not migrate to SCALE. Save plugin (or jails) configuration information and back up stored data. 
-After completing the SCALE migration or installation, add the application using the **Apps** screen. 
-If the CORE plugin is not listed as an available application in SCALE, use the **Launch Docker Image** option to add it and import data from the backup into a new SCALE dataset.
-{{< /hint >}}
+6. Back up any critical data!
 
 Download the SCALE [SCALE ISO file](https://www.truenas.com/download-tn-scale/) or the SCALE upgrade file and save it to your computer or a USB drive (see the **Physical Hardware tab** in [Installing SCALE]({{< relref "InstallingSCALE.md" >}})) to use if you upgrade from the physical system.  
 
 ## Migrating Using an ISO File to Upgrade
-{{< hint danger >}}
-Upgrading from CORE to SCALE is a one way operation!
-{{< /hint >}}
 
 Start by plugging the USB drive with the saved [SCALE ISO file](https://www.truenas.com/download-tn-scale/) into a USB port on the physical CORE system that you want to sidegrade and then boot or reboot the system. 
 
@@ -90,19 +95,6 @@ The installer asks if you want to preserve your existing configuration or start 
 
 ![SCALEUpgrade3](/images/SCALE/SCALEUpgrade3.png "Install in new boot environment")
 
-{{< hint warning>}}
-Although TrueNAS attempts to keep most of your CORE configuration data when upgrading to SCALE, some CORE-specific items do not transfer. 
-GELI encrypted pools, NIS data, plugins and jails, tunables, and boot environments do not migrate from CORE to SCALE.
-
-VM storage and its basic configuration transfer over during a migration, but you need to double-check the VM configuration and the network interface settings specifically before starting the VM.
-
-AFP shares also do not transfer, but you can migrate them into an SMB share with AFP compatibility enabled. 
-
-Init/shutdown scripts transfer, but can break. Review them before use.
-
-The CORE `netcli` utility is also swapped for a new CLI utility to use for the [Console Setup Menu]({{< relref "ConsoleSetupMenuSCALE.md" >}}) and other commands issued in a CLI.
-{{< /hint >}}
-
 After choosing to install in new boot environment, the installer warns that SCALE installs into the boot pool previously used for CORE. Select **Yes**.
 
 ![SCALEUpgrade4](/images/SCALE/SCALEUpgrade4.png "Proceed with the upgrade")
@@ -117,9 +109,6 @@ This method of using the CORE UI Manual Update to migrate using a SCALE update f
 If it fails, retry using the [iso file upgrade process](#migrating-using-an-iso-file-to-upgrade) in the section above.
 
 Take all the preparation steps mentioned in [Preparing for Migration](#preparing-for-migration).
-{{< hint danger >}}
-Do not use this method to migrate CORE Enterprise (HA) to SCALE Enterprise (HA)! Contact iXsystems Support for assistance!
-{{< /hint >}}
 
 Start by downloading the [SCALE manual update file](https://www.truenas.com/download-truenas-scale/).
 Confirm that the TrueNAS CORE system is on the latest public release, 13.0-U3 or better.
@@ -146,9 +135,7 @@ After the update completes, reboot the system if it does not reboot automaticall
 
 ## Migrating by Clean Install
 
-If it becomes necessary to do a clean install to migrate your CORE system to SCALE using the <kbd>iso</kbd> file, follow the instructions in the [Install]({{< relref "/SCALE/GettingStarted/Install/_index.md" >}}) articles. 
-
-If you are an Enterprise customer please contact iXsupport for assistance.
+If it becomes necessary to do a clean install to migrate your CORE system to SCALE using the <kbd>iso</kbd> file, follow the instructions in the [Install]({{< relref "/SCALE/GettingStarted/Install/_index.md" >}}) articles.
 
 ## Parallel SCALE CLI Commands
 
@@ -170,5 +157,6 @@ The CORE equivalent CLI commands are for reference. These commands are for diagn
 | [top -SHIzP](https://www.freebsd.org/cgi/man.cgi?top(1)) | [top -Hi](https://linux.die.net/man/1/top) | Use `top -Hi` to display Linux tasks for all individual threads and starts with the last remembered *i* state reversed. |
 | [vmstat -P](https://www.freebsd.org/cgi/man.cgi?query=vmstat&apropos=0&sektion=0&manpath=2.8+BSD&format=html) | [sar -P ALL](https://linux.die.net/man/1/sar) | Use `sar -P ALL` to get reports with statistics for each individual processor and global statistics among all processors. |
 {{< /expand >}}
+
 {{< taglist tag="scalemigrate" limit="10" >}}
 {{< taglist tag="scaleinstall" limit="10" title="Related Installation Articles" >}}
