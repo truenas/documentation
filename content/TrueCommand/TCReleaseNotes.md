@@ -26,7 +26,7 @@ aliases:
 
 ## 2.3.1
 
-February 14, 2023
+February 16, 2023
 
 iXsystems is pleased to release TrueCommand 2.3.1!
 This release is a maintenance release that fixes issues identified in the 2.3.0 release and adds a few new improvements. Changes include:
@@ -523,6 +523,7 @@ TrueCommand 2.1 is the single pane of glass for:
 
 | Seen In | Key | Summary | Workaround | Resolved In |
 |---------|-----|---------|------------|-------------|
+| TC 2.3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2609" target="_blank">TC-2609</a> | Unable to recreate a cluster after removing the cluster | After removing a cluster, unable to create a new cluster as not all settings with dropdown lists populate the options preventing configuring required settings. Recommend you not delete your cluster until this is fixed. Underlying issue is identified and will be included in the next release. | Targeted 2.3.2 |
 | TC 2.3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2533" target="_blank">TC-2533</a> | Hook in new servers/limit event sent when license limit is exceeded | This event replaces an error on servers/add, which instead sends max_disks and license_count if the license is executed, but not error. Any time a check fails the servers/limit event is sent as well, for asynchronous occurrences. | Targeted 2.3.2 |
 | TC 2.3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2528" target="_blank">TC-2528</a> | Cannot enable team alert creation | Enabling team alert creation on new teams does not stick as the only way to submit is to update the name, which resets the checkbox after the team object is reloaded. | Unknonwn |
 | TC 2.3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2524" target="_blank">TC-2524</a> | Notices WebSocket test results are unstable | Most tests pass but some are failing but never on the same test. Possible middleware issue. | Targeted 2.3.2 |
