@@ -5,6 +5,16 @@ The Documentation Hub has had some changes for the SCALE Bluefin release!
 
 {{< toc >}}
 
+### Updated Actions for Content
+
+The various options to engage with content are reorganized into a more traditional call to action section.
+The end of each content article now has a small section that presents options for readers to engage further, either by interacting on the community forums, suggesting content changes, or providing feedback about the current content.
+
+A new low-profile Feedback button is added to the side of the screen.
+Clicking the button opens a form for the reader to provide feedback about content or the website.
+
+This gives readers more visibility into opportunities to engage with the wider TrueNAS community.
+
 ### Updated Search
 
 The Docs Hub has replaced the existing search algorithm with a lunr.js implementation that conducts keyword searches through the entire content.

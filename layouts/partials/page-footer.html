@@ -59,4 +59,32 @@
     {{ end }}
 </div>
 
+{{ $geekdocRepo := default (default false .Site.Params.GeekdocRepo) .Page.Params.GeekdocRepo }}
+{{ $geekdocEditPath := default (default false .Site.Params.GeekdocEditPath) .Page.Params.GeekdocEditPath }}
+{{ if .File }}
+    {{ $.Scratch.Set "geekdocFilePath" (default .File.Path .Page.Params.GeekdocFilePath) }}
+{{ else }}
+    {{ $.Scratch.Set "geekdocFilePath" false }}
+{{ end }}
+{{ $showEdit := (and ($.Scratch.Get "geekdocFilePath") $geekdocRepo $geekdocEditPath) }}
+
+<div class="content-cta">
+	{{ with .IsPage }}
+	<hr>
+	<p>Have more questions or want to discuss your specific configuration? For further discussion or assistance, see these resources:</p>
+	<ul>
+	  <li><a href="https://www.truenas.com/community/">TrueNAS Community Forum</a></li>
+	  <li><a href="https://discord.com/invite/Q3St5fPETd">TrueNAS Community Discord</a></li>
+	  <li><a href="https://www.ixsystems.com/support/">iXsystems Enterprise Support (requires paid support contract)</a></li>
+	</ul>
+	<p>Found content that needs an update? You can 
+	  {{ if $showEdit }}
+        <span class="editpage">
+          <a href="{{ $geekdocRepo }}/{{ path.Join $geekdocEditPath ($.Scratch.Get "geekdocFilePath") }}"><b>suggest content changes</b></a>
+        </span>
+      {{ end }}
+	  directly! To request changes to this content, click the <b>Feedback</b> button.</p>
+	{{ end }}
+</div>
+
 {{ partial "search-index.html" . }}
