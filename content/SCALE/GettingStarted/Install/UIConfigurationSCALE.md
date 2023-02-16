@@ -75,7 +75,7 @@ The storage creation process begins with creating a pool and then adding the dat
 You must create at least on storage pool [explained here]]({{< relref "SetUpStorageScale.md" >}}) on your system. 
 
 After adding your first pool, the root parent dataset is automatically created. 
-Select this root parent dataset to when you create your first dataset.
+Select this root parent dataset when you create your first dataset.
 You can create as many datasets as you want or need on your pool and to suit your use case. 
 You can also create virtual storage volumes (zvols) for any virtual machine (VM) you plan to use on SCALE.
 
