@@ -55,7 +55,9 @@ To upgrade an existing SCALE install, log in to your SCALE web interface and go 
 
 ## 22.12.1
 
-TrueNAS SCALE 22.12.1 has been released. It includes many new features and improved functionality that span new high availabiltiy (HA) feature support and improvements, and new or improved features in SCALE appliations, serivces, ACLs, and Shares:
+February 21, 2023
+
+TrueNAS SCALE 22.12.1 has been released. It includes many new features and improved functionality that span new high availability  (HA) feature support and improvements, and new or improved features in SCALE applications, services, ACLs, and Shares:
 
 * New Kubernetes Passthrough functionality in SCALE applications
 * Improvements to the security hardening function, rootless login, in the SCALE installer, SCALE sign-in, and root user administration.
@@ -63,11 +65,12 @@ TrueNAS SCALE 22.12.1 has been released. It includes many new features and impro
 * Improvements to the advanced scheduler used by many of the data protection tasks
 * Ability to manage websocket sessions
 * Improved validation in many areas including applications
-* New SSH service options when logging into an SSH session
+* New SSH service options when logging into an SSH session as admin
 * New and improved Dashboard for SCALE Enterprise HA and Enclosure management
 * Improvement to the Host Path Validation option for SCALE applications
 * Added support for external share paths
 * Added support for Windows 10/11 to address "Fail to Install" issues
+* Changes to the sudo options on the Add User and Add Groups screens, and add sudo to the Replication task wizard 
 
 ## 22.12.1 Change Log
 
@@ -77,9 +80,8 @@ TrueNAS SCALE 22.12.1 has been released. It includes many new features and impro
 * [NAS-118955](https://ixsystems.atlassian.net/browse/NAS-118955) DFS Proxy Share Feature
 * [NAS-119055](https://ixsystems.atlassian.net/browse/NAS-119055) Add new Kubernetes Passthrough Functionality
 * [NAS-119071](https://ixsystems.atlassian.net/browse/NAS-119071) Rootless login installer changes
-* [NAS-119085](https://ixsystems.atlassian.net/browse/NAS-119085) Have unit tests in catalog validation to validate the schema
 * [NAS-119101](https://ixsystems.atlassian.net/browse/NAS-119101) New process for first UI login when root password is not set up
-* [NAS-119180](https://ixsystems.atlassian.net/browse/NAS-119180) Allow users to create and manage ACL presets
+* [NAS-119180](https://ixsystems.atlassian.net/browse/NAS-119180) Allow users to create and manager ACL presets
 * [NAS-119208](https://ixsystems.atlassian.net/browse/NAS-119208) Try to extract /data/update.failed file from all the existing BEs?
 * [NAS-119277](https://ixsystems.atlassian.net/browse/NAS-119277) Dump currently active WebSocket sessions with the ability to terminate all of them except the current one
 * [NAS-119324](https://ixsystems.atlassian.net/browse/NAS-119324) New endpoint to monitor and wait on a \`smart.test\`
@@ -138,7 +140,7 @@ TrueNAS SCALE 22.12.1 has been released. It includes many new features and impro
 * [NAS-118660](https://ixsystems.atlassian.net/browse/NAS-118660) Cloud sync task "Bandwith Limit" pop-up help text appears to be incorrect
 * [NAS-118756](https://ixsystems.atlassian.net/browse/NAS-118756) Deleting a dataset removes snapshot tasks assigned to the parent of a dataset
 * [NAS-118803](https://ixsystems.atlassian.net/browse/NAS-118803) VM deletion performs a check on systems virtualization capability
-* [NAS-118841](https://ixsystems.atlassian.net/browse/NAS-118841) Hot spares can change special vdevs \(SCALE, Clone of NAS-118721\)
+* [NAS-118859](https://ixsystems.atlassian.net/browse/NAS-118859) add minio/operator app and use logsearchapi entrypoint override
 * [NAS-118870](https://ixsystems.atlassian.net/browse/NAS-118870) Sharing/SMB/Add Name field not updated after first folder click
 * [NAS-118895](https://ixsystems.atlassian.net/browse/NAS-118895) \[Apps\] Installing App without kubernetes objects \(empty\), leads to error and middleware lockup
 * [NAS-118921](https://ixsystems.atlassian.net/browse/NAS-118921) \[Apps\]  Helm charts are recreated/upgraded on restart before cluster is ready
@@ -168,7 +170,7 @@ TrueNAS SCALE 22.12.1 has been released. It includes many new features and impro
 * [NAS-119301](https://ixsystems.atlassian.net/browse/NAS-119301) \[SCALE - ACL GUI\] Errors on just switching items \(Ace has errors\)
 * [NAS-119307](https://ixsystems.atlassian.net/browse/NAS-119307) Syncing catalogs <null>?
 * [NAS-119323](https://ixsystems.atlassian.net/browse/NAS-119323) \[SCALE\] UI reports all pools with failed SMART Tests
-* [NAS-119330](https://ixsystems.atlassian.net/browse/NAS-119330) cannot get used/quota for dataset unsupported version or feature
+*[NAS-119330](https://ixsystems.atlassian.net/browse/NAS-119330) cannot get used/quota for dataset unsupported version or feature
 * [NAS-119335](https://ixsystems.atlassian.net/browse/NAS-119335) Apps don't validate whether proposed host path is in use by service
 * [NAS-119336](https://ixsystems.atlassian.net/browse/NAS-119336) midcli still references "change root password"
 * [NAS-119354](https://ixsystems.atlassian.net/browse/NAS-119354) Rsync Tasks always in Waiting status
@@ -215,7 +217,7 @@ TrueNAS SCALE 22.12.1 has been released. It includes many new features and impro
 * [NAS-119668](https://ixsystems.atlassian.net/browse/NAS-119668) Storage Topology card incorrectly reports vdev width
 * [NAS-119670](https://ixsystems.atlassian.net/browse/NAS-119670) IPMI is missing when page is reloaded
 * [NAS-119681](https://ixsystems.atlassian.net/browse/NAS-119681) QEMU guest agent fails to start in guest VM
-* [NAS-119696](https://ixsystems.atlassian.net/browse/NAS-119696) Wrong link in UPS master/slave tooltip
+[NAS-119696](https://ixsystems.atlassian.net/browse/NAS-119696) Wrong link in UPS master/slave tooltip
 * [NAS-119698](https://ixsystems.atlassian.net/browse/NAS-119698) Unsupported type = cron and uri when trying to Launch a docker image
 * [NAS-119701](https://ixsystems.atlassian.net/browse/NAS-119701) Trivial Bug: Display / Text Error
 * [NAS-119707](https://ixsystems.atlassian.net/browse/NAS-119707) \[Bluefin 22.12.0\] Angelfish sysctl values dont persist following Bluefin upgrade 
@@ -239,6 +241,7 @@ TrueNAS SCALE 22.12.1 has been released. It includes many new features and impro
 * [NAS-119941](https://ixsystems.atlassian.net/browse/NAS-119941) Drives disappear when "Suggest Layout" is used in Create Pool
 * [NAS-119996](https://ixsystems.atlassian.net/browse/NAS-119996) Scale Swap field does "nice" UI formatting to B/MiB/GiB, but I am assuming uses the raw value as GiB in back-end.
 * [NAS-120042](https://ixsystems.atlassian.net/browse/NAS-120042) new zfs datasets created with certain samba configurations may not properly inherit parent ACL
+* [NAS-120092](https://ixsystems.atlassian.net/browse/NAS-120092) Cannot edit SMART test task
 * [NAS-120099](https://ixsystems.atlassian.net/browse/NAS-120099) desktop.ini files break permissions
 * [NAS-120126](https://ixsystems.atlassian.net/browse/NAS-120126) Resetting config doesn't properly go to signin page
 
@@ -1366,11 +1369,23 @@ Additional feature in future Bluefin releases:
 
 | Seen In | Key | Summary | Workaround | Resolved In |
 |---------|-----|---------|------------|-------------|
-| 22.12.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-120210" target="_blank">NAS-120210</a> | Enclosure View does not Function Properly on Mini R | View Enclousre only displays the top and bottom rows of slots as active and clickable, but the middle ro is inactive even when loaded with drives. | Targeted 22.12.1<br>23.10-ALPHA.1 (Cobia) |
-| 22.12.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-120191" target="_blank">NAS-120191</a> | Dataset not fully migrated to the pool before starting rrdcached | Collectd can't tal to rrdcached. We automatically move the system dataset to the zpool on first pool creationg and we have a race where the system dataset was not fully migrated to the pool before we tried to start rrdcached. | Targeted 22.12.1 |
+| 22.12.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-120361" target="_blank">NAS-120361</a> | Mini R Enclosure view should not have Identify Drive button | The View Enclosure screen for the Mini R should not have the Identify Drive button on the disk information screen after selecting a drive on the image. | Unassigned |
+| 22.12.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-120348" target="_blank">NAS-120348</a> | Storage and Topology page does not update whan a pool gets degraded | After removing a drive from a pool, the main Storage and the Topology pages do not update the status to show a degraded state unless you do a hard refresh of the screen. | 23.10-ALPHA.2 |
+| 22.12.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-120319" target="_blank">NAS-120319</a> | Cannot Replicate from an Encrypted Dataset to an Unencrypted Dataset | When creating a replication task from an encrypted dataset to a remote system with an unencrypted dataset, and creating a new SSH connection, the task fails with a permissions error. | Unassigned |
+| 22.12.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-120316" target="_blank">NAS-120316</a> | Backblaze Bucket Folders do not Display Properly in Cloud Sync Task Form | When creating a new cloud sync task for Backblaze, after selecting the Bucket the Folders dropdown list only has some of the folders in the selected bucket impacting the ability to properly configure a Backblaze B2 cloud sync task. | Targeted 22.12.2 |
+| 22.12.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-120266" target="_blank">NAS-120266</a> | Stopping VM Popup Does Not Go Away after VM Stops | After clicking Force Stop After Timeout, the Stopping VM dialog does not close after the VM stops. | Targeted 22.12.3<br> 23.10.ALPHA.1 |
+| 22.12.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-120249" target="_blank">NAS-120249</a> | Enclosure View does not update when drive is removed from a pool/system | The image on the View Enclosure screen does not update after removing a drive from a pool or system. This appears to be related to a screen caching issue. | Targeted 22.12.2 |
+| 22.12.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-120243" target="_blank">NAS-120243</a> | Using Non-Supported Characters while creating a Boot Environment Creates a CallError | SCALE allows you to save a new boot environment created with non-supported characters but it results in a call error. Do not use bracket ([]), brace ({}), pipe (|), colon (:), and comma (,) characters in the Name field. | Targeted 22.12.2 |
+| 22.12.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-120232" target="_blank">NAS-120232</a> | Apps not starting after failover | With Apps deployed on an HA system, after failover the apps stick a deploying but never finish and the system generates alerts in the UI. Issue is pools are degraded after failover, and docker is not able to get image details. | Targeted 22.12.2 |
+| 22.12.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-120216" target="_blank">NAS-120216</a> | Need Validation for IP address when setting up Replication | When setting up replication to a remote system, the IP address entered must include http:// as part of the IP address entered. | Unassigned |
+| 22.12.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-120210" target="_blank">NAS-120210</a> | Enclosure View does not Function Properly on Mini R | View Enclosure only displays the top and bottom rows of slots as active and clickable, but the middle ro is inactive even when loaded with drives. | Targeted 22.12.1<br>23.10-ALPHA.1 (Cobia) |
+| 22.12.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-120191" target="_blank">NAS-120191</a> | Dataset not fully migrated to the pool before starting rrdcached | Collectd can't tal to rrdcached. We automatically move the system dataset to the zpool on first pool creating and we have a race where the system dataset was not fully migrated to the pool before we tried to start rrdcached. | Targeted 22.12.2 |
+| 22.12.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-120145" target="_blank">NAS-120145</a> | The web UI isn't updating variouls parts on the screen (Jobs) | On and Enterprise HA system with some alerts, the Jobs screen shows tasks running and trying to gather the information for listed alerts. | Targeted 22.12.2 |
 | 22.12.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-120136" target="_blank">NAS-120136</a> | App Collabora installation failed with error values.config: not a string values.config.extra_params not a string. |  | Targeted 22.12.1 |
+| 22.12.1 |  <a href="https://ixsystems.atlassian.net/browse/NAS-120118" target="_blank">NAS-120118</a> | Network Dashboard Card is missing some Up Interfaces | On an Enterprise HA system with multiple network interfaces configured and active, the Network widget on the main Dashboard does not list all active intefaces and the Reports screen does not include the same missing active interfaces. | Targeted 22.12.2 |
+| 22.12.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-120069" target="_blank">NAS-120069</a> | 2FA SSH not functional for non root users | After installing SCALE using the admin user (non-root option), setting the SSH service to allow admin to log in, and then enabling 2FA. After logging out and verifying 2FA works for the UI, and then changing the 2FA settings to Enable Tow-Factor Auth for SSH, the SSH session asks for the admin password several times before the session disconnects. | Targeted 23.10-ALPHA.1 |
 | 22.12.0 | <a href="https://ixsystems.atlassian.net/browse/NAS-119608" target="_blank">NAS-119608</a> | Middleware halt after upgrade from Angelfish to Bluefin due to multiple iSCSI portals with the same IP address. | Before upgrading from SCALE Angelfish, remove any iSCSI portals with duplicate IP addresses. | 22.12.1<br>23.10-ALPHA.1 (Cobia) |
-| 22.12.0 | <a href="https://ixsystems.atlassian.net/browse/NAS-119390" target="_blank">NAS-119390</a> | SMB Access Based Share Enumeration fails due to inaccessible Share ACL DB (share_inf.tdb) | SMB shares with Access Based Share Enumeration enabled and share ACLs are not browsable. Disabling Access Based Share Enumeration makes them browsable. Download the replacement Samba package attached to this ticket to correct this issue and make shares with Access Based Share Enumeration enabled browsible. | 22.12.1 |
+| 22.12.0 | <a href="https://ixsystems.atlassian.net/browse/NAS-119390" target="_blank">NAS-119390</a> | SMB Access Based Share Enumeration fails due to inaccessible Share ACL DB (share_inf.tdb) | SMB shares with Access Based Share Enumeration enabled and share ACLs are not browsable. Disabling Access Based Share Enumeration makes them browsable. Download the replacement Samba package attached to this ticket to correct this issue and make shares with Access Based Share Enumeration enabled browsable. | 22.12.1 |
 | 22.12.0 | <a href="https://ixsystems.atlassian.net/browse/NAS-119374" target="_blank">NAS-119374</a> | Non-root administrative users cannot access installed VM or App console. | For Apps console access, log in to the UI as the **root** user. For VM console access, go to **Credentials > Local Users** and edit the non-root administrative user. In the **Auxiliary Groups** field, open the dropdown and select the **root** option. Click **Save**. | 22.12.1<br>23.10-ALPHA.1 (Cobia) |
 | 22.12.0 | N/A | App deployment can get stuck in validation when the Host Path is used between Apps and TrueNAS sharing services (e.g. SMB and NFS). | Shared host paths are considered insecure and are not recommended. Review host paths used by Apps and Sharing services and adjust paths to be unique. As a last resort that can result in system and app instability, **Host Path Safety Checks** can be disabled in **Apps > Settings > Advanced Settings**. | N/A |
 | 22.12.0 | <a href="https://ixsystems.atlassian.net/browse/NAS-119233" target="_blank">NAS-119233</a> | Validation error received when modifying HTTP/S Port Setting in the Web UI | A validation error can occur if using the iw.iso8 keyboard map where the system interprets digits "81" as the text "us". | 22.12.1<br>23.10-ALPHA.1 (Cobia) |
