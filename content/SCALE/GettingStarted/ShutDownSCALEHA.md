@@ -10,6 +10,10 @@ tags:
 
 {{< toc >}}
 
+{{< enterprise >}}
+This is SCALE Enterprise specific content. 
+{{< /enterprise >}}
+
 If you need to power down your SCALE Enterprise system, this is the procedure:
 
 ## Shut Down From the SCALE Web UI
