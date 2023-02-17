@@ -1,10 +1,10 @@
 ---
 title: "Updating SCALE"
-description: ""
+description: "This article provides instructions on how to update SCALE releases in the UI."
 weight: 10
 alias: /scale/scaleuireference/systemsettings/updatescale/
 tags:
- - scaleupdate
+- scaleupdate
 ---
 
 {{< toc >}}
