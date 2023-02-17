@@ -15,7 +15,7 @@ The initial implementation of TrueNAS SCALE rootless login still permits users t
 
 {{< include file="/_includes/RootLoginDeprecatedSCALE.md" type="page" >}}
 
-If migrating from CORE to SCALE, when [first logging into SCALE]({{< relref "/SCALE/GettingStarted/FirstTimeLogin.md" >}}) as the root user, and alert displays informing you to create the administrator account. 
+If migrating from CORE to SCALE, when [first logging into SCALE]({{< relref "/SCALE/GettingStarted/FirstTimeLogin.md" >}}) as the root user, you are advised to create the administrator account. 
 All users should [create the local administrator account]({{< relref "ManageLocalUsersSCALE.md" >}}) and stop using root. 
 
 {{< hint info >}}
