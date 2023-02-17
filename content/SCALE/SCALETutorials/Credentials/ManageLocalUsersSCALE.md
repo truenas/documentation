@@ -17,12 +17,10 @@ Doing so makes tuning permissions for large numbers of users more efficient.
 
 {{< hint warning >}}
 Only the **root** user account can log in to the TrueNAS web interface until the root user creates an admin user with the same permissions.
-After loggin in as root, TrueNAS alerts you to create the local administrator account.
-
-![RootLoginAlert](/images/SCALE/22.12/RootLoginAlert.png "Root Login Alert") 
+After logging in as root, TrueNAS alerts you to create the local administrator account.
 
 As part of security hardening and to comply with Federal Information Processing standards (FIPS), iXsystems plans to completely disable root login in a future release.
-When this occurs, the sign-in screen prompts first-time users to create a new administration account they used in place of the root user.
+
 System administrators should create and begin using a new root-level user before this function goes away.
 {{< /hint >}}
 
@@ -55,7 +53,7 @@ Click **Save**.
 
 ### Configuring the Admin User Account for Nextcloud App
 The Nextcloud application, configured on the **Apps > Available Applications** screen, requires including sudo permissions for the administrator account. 
-To verify, or manage the local administrator account, go to **Credentials > Local User** and click on the administrator user row to expand it, then click **Edit** to open the **Edit User** configuration screen.
+To verify, or manage the local administrator account, go to **Credentials > Local Users** and click on the administrator user row to expand it, then click **Edit** to open the **Edit User** configuration screen.
 
 Scroll down to the **Authentication** settings and select **Permit Sudo**.
 
