@@ -1,34 +1,60 @@
 ---
-title: "View Enclosure Screen"
-description: "This article provides information on the TrueNAS **View Enclosure** screen, and the information you can find there."
+title: "View Enclosure Screen (Enterprise Only)"
+description: "This article provides information on the TrueNAS **View Enclosure** screen available only on SCALE Enterprise systems, and the information you can find there."
 weight: 60
 aliases:
 tags:
- - scaleenclosure
- - scalepools
- - scaledisks
- - scaledashboard
+- scaleenclosure
+- scaleenterprise
+- scaledisks
+- scaledashboard
 ---
 
 {{< toc >}}
-The **View Enclosure** screen displays an image of the TrueNAS-provided system hardware with drive images you can select. 
-The screen includes information on system pools, disks and their status, HDD details and stats that change with the drive you select on the system image.
-Based on the system hardware, the screen provides additional display and information options that reflects the system hardware model using TrueNAS SCALE.
 
-To access the **System > View Enclosure** screen, either click the image on the main dashboard or go to **System Settings > Enclosure>**.
+{{< hint info >}}
+The **View Enclosure** screen only displays on TrueNAS SCALE Enterprise systems. It might display for systems with TrueNAS compatible hardware that allows SCALE to communicate with it to display information about that hardware.
+The option to select **System Settings > Enclosure** is not present on non-Enterprise systems.
+{{< /hint >}}
+
+The **System Information** widget on the main **Dashboard** only displays an image of the TrueNAS system for Enterprise systems. Hover the mouse over the image to see the **View Enclosure** label. 
+Click anywhere on the system image to open the **View Enclosure** screen.
 
 ![ViewEnclosureMainDashboard](/images/SCALE/22.02/ViewEnclosureMainDashboard.png "Main Dashboard View Enclosure") 
 
-## System Images
-System images display with the front view shown by default. 
-If the system model includes a rear view, click **Rear** to change the image to the rear view of the system hardware. 
-Click **Front** to switch to the front view of the system chassis. 
+## View Enclosure Screen
+The **View Enclosure** screen displays an image of the TrueNAS-provided system based on the TrueNAS system model number. 
+
+### Elements Options
+
+The **Elements** button at the top right of the **View Enclosure** screen displays a dropdown list of options to view information about the system or expansion shelf. 
+The options vary based on the TrueNAS System model, if the system includes an expansion shelf, and if you have an expansion shelf image selected instead of the main system. 
+All TrueNAS systems include the **Disks** option. TrueNAS systems with expansion shelves include the **Temperature**, **Power Supply**, and **Voltage** options. 
+The expansion shelf  includes the **Disks**, **Cooling**, **Services**, **Power Supply**, **SAS**, **Temperature**, and **Voltage** options. 
+Each option displays a table with readings from the system taken over a period of time.
+
+## System Image Screens
+System images display the front view of the server by default. 
+If the system model includes a rear view, **Rear** changes the image to the rear view of the system hardware. 
+**Front** switches to the front view of the system chassis. 
 **Edit Label** displays for system models other than the Mini. 
 
 ![EnclosureChangeEnclosureLabel](/images/SCALE/22.02/EnclosureChangeEnclosureLabel.png "Change Enclosure Label") 
 
-Click on **Edit Label** to open the **Change Enclosure Label** window. 
-Type a name or description for the system and click **Save** to apply the label. Select **Reset to Default** to restore the default name for the system.
+**Edit Label** opens the **Change Enclosure Label** window. 
+Type a name or description for the system and click **Save** to apply the label. 
+**Reset to Default** restores the default name for the system.
+
+System image screen include two options to change the information on the screen: 
+* **Show Pools** that highlights disks in pools on the system image.
+* **Show Status** that shows healthy disks in the system and a status indicator color legend.
+
+### Disk Image Screens
+Click on a drive image to display a screen with information that drive. Disk drive information includes the system pool, disk status, hardware details, and stats for the drive.
+
+**Identify Drive** on disk detail screens turns on the LED indicator located on a physical drive bay in the system server. 
+This helps to identify the physical drive bay that corresponds to the SCALE identification number for that drive. 
+Select the drive on the image and then click **Identify Drive**. Go to the location of the system server to locate the drive bay with the LED indication turned on then check the drive location on the **View Enclosure** screen.
 
 ### Mini Enclosure Screen Example
 TrueNAS Mini systems only display the front view of the system hardware.
@@ -37,12 +63,13 @@ TrueNAS Mini systems only display the front view of the system hardware.
 
 Pool information displays at the top of the screen. 
 The drive bay number and disk label displays to the left of the image and the status to the right of the image. 
-Select a disk to show details for that drive. The **Disk Overview** section provides general details on the system drive hardware and capacity. 
-The **Drive Temperatures** displays current readings for each drive in the system.
+A disk image screen shows details for the drive you click on. 
+The **Disk Overview** section provides general details about the system drive hardware and capacity. 
+**Drive Temperatures** displays current readings for each drive in the system.
 
 ![ViewEnclosureDiskDetailsMini](/images/SCALE/22.02/ViewEnclosureDiskDetailsMini.png "View Enclosure Disk Details Mini") 
 
-### R20 Enclosure Screen Examples
+### R20 Enclosure Screen Example
 Larger TrueNAS hardware system images include a front and rear view of the chassis to show all drive bays and installed disk drives.
 
 ![ViewEnclosureFrontViewR20](/images/SCALE/22.02/ViewEnclosureFrontViewR20.png "View Enclosure Front View R20") 
@@ -53,12 +80,28 @@ Click on a drive to display details for that selected drive and to access the **
 
 ![ViewEnclosureR20SelectDisk](/images/SCALE/22.02/ViewEnclosureR20SelectDisk.png "View Enclosure Disk Details R20") 
 
-**Identify Drive** helps you identify which physical drive bay corresponds to the SCALE identification number for that drive. 
-Select the drive, click **Identify Drive** and go to the location of the system server to locate the drive bay with the LED indication turned on to identify the physical drive that corresponds to the software drive location.
+### M40 and Expansion Shelf Enclosure Screen Examples 
+The screen opens showing the front view of the main image by default. Both the system and expansion shelf images show the location installed disks. 
 
-Disk details include the pool, drive model and serial number, status, and other options for the selected drive. 
+![ViewEnclosureM40HeadUnit](/images/SCALE/22.12/ViewEnclosureM40HeadUnit.png "View Enclosure Main Chassis") 
 
-{{< taglist tag="scaleenclosure" limit="10" >}}
+The screen includes smaller images of both the main system and expansion shelves connected to the system, on the right side of the screen. A blue vertical line to the left of the small image on the right side of the screen indicates the selected system view.
+
+![ViewEnclosureExpansionShelf](/images/SCALE/22.12/ViewEnclosureExpansionShelf.png "View Enclosure Expansion Shelf") 
+
+The system and expansion shelf image screens include three options to change the information shown on the screen: 
+* **Show Pools** that shows disks in pools on the system or expansion shelf image.
+* **Show Status** that shows healthy disks in the system or expansion shelf image, and a status indicator color legend.
+* **Show Expander Status** that shows the status of SAS expanders in the system or expansion shelf (only systems with an expansion shelf).
+
+Click on a drive image in the system or expansion shelf image to display a drive information screen for that drive. Disk drive information includes the system pool, disk status, hardware details, and stats for the drive.
+
+![ViewEnclosureDiskInfo](/images/SCALE/22.12/ViewEnclosureDiskInfo.png "View Enclosure Main Chassis Disk Information") 
+
+![ViewEnclosureExpansionShelfDiskInfo](/images/SCALE/22.12/ViewEnclosureExpansionShelfDiskInfo.png "View Enclosure Expansion Shelf Disk Information")
+
+The expansion shelf image varies based on the type of expansion shelf installed, but the disk information displayed is the same as for disks in other system disks.
+
+{{< taglist tag="scaleenterprise" limit="10" title="Related Enterprise Articles" >}}
 {{< taglist tag="scaledisks" limit="10" title="Related Disks Articles" >}}
-{{< taglist tag="scalepools" limit="10" title="Related Pools Articles" >}}
 
