@@ -1,5 +1,5 @@
 ---
-title: TrueCommand 2.3 Release Notes
+title: TrueCommand 2.3.1 Release Notes
 weight: 5
 aliases:
   - /truecommand/tcreleasenotes/2.2
@@ -19,12 +19,43 @@ aliases:
 
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
-| 2.3.1 | Code-freeze | 15 February 2023 |
-| 2.3.1 | Internal Testing Sprints | 20 February 2023 - 23 February 2023 |
-| 2.3.1 | Tag | 27 February 2023 |
-| 2.3.1 | Release | 28 February 2023 |
+| 2.3.2 | Code-freeze | 22 February 2023 |
+| 2.3.2 | Internal Testing Sprints | 27 February 2023 - 3 March 2023 |
+| 2.3.2 | Tag | 6 March 2023 |
+| 2.3.2 | Release | 7 March 2023 |
+
+## 2.3.1
+
+February 16, 2023
+
+iXsystems is pleased to release TrueCommand 2.3.1!
+This release is a maintenance release that fixes issues identified in the 2.3.0 release and adds a few new improvements. Changes include:
+
+* Refresh option no longer logs users out of TrueCommand
+* Unlimited disk count license no longer enforced
+* Upgrade available indication added to system dashboard cards
+* Port option added to the Servers Add screen
+* Code field now sends SMTP Configuration Validation 
+
+### 2.3.1 Change Log
+
+### Improvement
+
+* [TC-2399](https://ixsystems.atlassian.net/browse/TC-2399) Use \`code\` field from alert plugin test/send
+* [TC-2511](https://ixsystems.atlassian.net/browse/TC-2511) Add an upgrade available indication to the system Dashcards
+* [TC-2529](https://ixsystems.atlassian.net/browse/TC-2529) Unlimited disk count - do not enforce license
+* [TC-2555](https://ixsystems.atlassian.net/browse/TC-2555) Add port field to servers/add API
+* [TC-2573](https://ixsystems.atlassian.net/browse/TC-2573) Default port to 443 on cloud and 80 on site
+
+### Bug
+
+* [TC-2547](https://ixsystems.atlassian.net/browse/TC-2547) Hitting refresh for a few times will log out the user
+* [TC-2553](https://ixsystems.atlassian.net/browse/TC-2553) Disable strict SNI host matching in Caddyfile
+* [TC-2559](https://ixsystems.atlassian.net/browse/TC-2559) Panic when adding certificate
+* [TC-2560](https://ixsystems.atlassian.net/browse/TC-2560) fix marshaling error for cpu temperature stats
 
 ## 2.3
+{{< expand "2.3.0" "v" >}}
 
 **January 25, 2023**
 
@@ -83,6 +114,7 @@ This release also fixes issues found with team avatars, adding systems to TrueCo
 * [TC-2527](https://ixsystems.atlassian.net/browse/TC-2527) Fix undefined license console error
 * [TC-2532](https://ixsystems.atlassian.net/browse/TC-2532) SAML user creation fails
 
+{{< /expand>}}
 ## 2.2.2
 {{< expand "2.2.2" "v" >}}
 
@@ -491,12 +523,12 @@ TrueCommand 2.1 is the single pane of glass for:
 
 | Seen In | Key | Summary | Workaround | Resolved In |
 |---------|-----|---------|------------|-------------|
-| TC 2.3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2538" target="_blank">TC-2538</a> | Licensed Disk Limit is ignored and the Disk Used is not updated | On a system with 12 disks used and shown in the Administration area and for API call, was able to add a system with 46 disks and did received a warning about exceeding the license limit. Disks Used was not updated in the Administration area or for API calls. | Targeted 2.3.1 |
-| TC 2.3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2533" target="_blank">TC-2533</a> | Hook in new servers/limit event sent when license limit is exceeded | This event replaces an error on servers/add, which instead sends max_disks and license_count if the license is executed, but not error. Any time a check fails the servers/limit event is sent as well, for asynchronous occurrences. | Targeted 2.3.1 |
+| TC 2.3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2609" target="_blank">TC-2609</a> | Unable to recreate a cluster after removing the cluster | After removing a cluster, unable to create a new cluster as not all settings with dropdown lists populate the options preventing configuring required settings. Recommend you not delete your cluster until this is fixed. Underlying issue is identified and will be included in the next release. | Targeted 2.3.2 |
+| TC 2.3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2533" target="_blank">TC-2533</a> | Hook in new servers/limit event sent when license limit is exceeded | This event replaces an error on servers/add, which instead sends max_disks and license_count if the license is executed, but not error. Any time a check fails the servers/limit event is sent as well, for asynchronous occurrences. | Targeted 2.3.2 |
 | TC 2.3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2528" target="_blank">TC-2528</a> | Cannot enable team alert creation | Enabling team alert creation on new teams does not stick as the only way to submit is to update the name, which resets the checkbox after the team object is reloaded. | Unknonwn |
-| TC 2.3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2524" target="_blank">TC-2524</a> | Notices WebSocket test results are unstable | Most tests pass but some are failing but never on the same test. Possible middleware issue. | Targeted 2.3.1 |
-| TC 2.3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2508" target="_blank">TC-2508</a> | Teams, systems and groups missing in User after migration from 2.2.2 to 2.3.0 | After migrating from 2.2.2. to 2.3.0, users no longer had Teams, Systems or system Groups assigned. The Teams are and system groups are listed in the Systems/System Groups and Teams areas but no longer assigned under the User. | Targeted 2.3.0 |
-|TC 2.2.2 | <a href="https://ixsystems.atlassian.net/browse/TC-2339" target="_blank">TC-2339</a> | Dashboard System card values for SCALE 22.12 do not populate. | The TrueCommand Dashboard System card values for SCALE 22.12 Bluefin are missing. | Fixed in 2.3.3 |
+| TC 2.3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2524" target="_blank">TC-2524</a> | Notices WebSocket test results are unstable | Most tests pass but some are failing but never on the same test. Possible middleware issue. | Targeted 2.3.2 |
+| TC 2.3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2508" target="_blank">TC-2508</a> | Teams, systems and groups missing in User after migration from 2.2.2 to 2.3.0 | After migrating from 2.2.2. to 2.3.0, users no longer had Teams, Systems or system Groups assigned. The Teams are and system groups are listed in the Systems/System Groups and Teams areas but no longer assigned under the User. | Fixed in 2.3.0 |
+|TC 2.2.2 | <a href="https://ixsystems.atlassian.net/browse/TC-2339" target="_blank">TC-2339</a> | Dashboard System card values for SCALE 22.12 do not populate. | The TrueCommand Dashboard System card values for SCALE 22.12 Bluefin are missing. | Fixed in 2.2.3 |
 
 ## To Download this Release
 
