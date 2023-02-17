@@ -55,8 +55,10 @@ You can customize alert settings for when the CTDB (clustered trivial database) 
 
 You can customize alert settings for when the Active Directory bind is unhealthy, Active Directory domain validation fails, the domain is offline, and the LDAP bind bind is unhealthy.
 {{< /expand >}}
+### High Availability Settings 
+{{< enterprise >}}
+This section only applies to TrueNAS Enterprise only.
 
-### High Availability Settings (Enterprise Only)
 **High Availability** alert settings apply to TrueNAS Enterprise HA systems and is only displays on the list of alerts for systems with the HA license applied.
 {{< expand "Click here for more information" >}}
 
@@ -66,7 +68,7 @@ You can customize alert settings for when the Active Directory bind is unhealthy
 
 You can customize alert settings for when an automatic sync to peer fails, disks are missing on the active and/or standby controller, the system fails to check failover status with the other controller, syncing operations fail such as encryption keys to peer and KMIP keys to peer, the failover interface is not found, and when failover fails.
 {{< /expand >}}
-
+{{< /enterprise >}}
 ### Hardware Alert Settings
 **Hardware** alert settings apply to the IPMI network connections, and S.M.A.R.T. and smartd that monitors the hard drives installed on your TrueNAS system.
 {{< expand "Click here for more information" >}}
