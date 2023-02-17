@@ -16,13 +16,10 @@ Typically, administrators create users and assign them to [groups]({{< relref "M
 Doing so makes tuning permissions for large numbers of users more efficient.
 
 {{< hint warning >}}
-Only the **root** user account can log in to the TrueNAS web interface until the root user creates an admin user with the same permissions.
-After loggin in as root, TrueNAS alerts you to create the local administrator account.
+Only the **root** user account can log in to the TrueNAS web interface until the root user creates an admin user with the same permissions. After logging in as root, TrueNAS alerts you to create the local administrator account. 
 
-![RootLoginAlert](/images/SCALE/22.12/RootLoginAlert.png "Root Login Alert") 
+As part of security hardening and to comply with Federal Information Processing standards (FIPS), iXsystems plans to completely disable root login in a future release. 
 
-As part of security hardening and to comply with Federal Information Processing standards (FIPS), iXsystems plans to completely disable root login in a future release.
-When this occurs, the sign-in screen prompts first-time users to create a new administration account they used in place of the root user.
 System administrators should create and begin using a new root-level user before this function goes away.
 {{< /hint >}}
 
@@ -32,13 +29,12 @@ Using [Active Directory]({{< relref "/content/SCALE/SCALEUIReference/Credentials
 
 To see user accounts, go to **Credentials > Local Users**.
 
-![LocalUsersSCALE](/images/SCALE/22.12/LocalUsersSCALE.png "List of Local User Accounts") 
+![AllUsersScreenSCALE](/images/SCALE/22.12/AllUsersScreenSCALE.png "Local User non-Built-in Accounts") 
 
 TrueNAS hides all built-in users (except root) by default. Click the toggle **Show Built-In Users** to see all built-in users.
 
 ## Creating an Admin User Account
-SCALE has implemented rootless log in. All systems should create and begin using an admin user as a replacement for the root user. 
-A system warning alert displays until you create the admin user. 
+SCALE has implemented rootless log in. All systems should create and begin using an admin user as a replacement for the root user.  
 If you upgraded to a 22.12.0 release instead of installing fresh from an iso file and setting up the admin user in that process, you can create an admin user with this procedure.
 
 Go to **Credentials > Local Users** and click **Add**.
@@ -47,17 +43,19 @@ Enter the name you want to use for the administrator account.
 
 Enter and confirm the admin user passwords.
 
-Select the **root** and **builtin_administrators** groups on the **Auxiliary Group** dropdown list.
+Select the **root**, **builtin_administrators** and **builtin_users** groups from the **Auxiliary Group** dropdown list.
 
 ![AddingAdminUserAuxiliaryGroup](/images/SCALE/22.12/AddingAdminUserAuxiliaryGroup.png "Add Admin User to builtin_administrators")
 
 Click **Save**.
 
+Log out of the TrueNAS system and then log back in using the admin user credentials. Once you are back in the TrueNAS web UI, determine that the admin user credentials are working properly with your network configuration.
+
 ### Configuring the Admin User Account for Nextcloud App
 The Nextcloud application, configured on the **Apps > Available Applications** screen, requires including sudo permissions for the administrator account. 
 To verify, or manage the local administrator account, go to **Credentials > Local User** and click on the administrator user row to expand it, then click **Edit** to open the **Edit User** configuration screen.
 
-Scroll down to the **Authentication** settings and select **Permit Sudo**.
+Scroll down to the **Authentication** settings and select the proper **Allow sudo** authorization settings.
 
 Click **Save**.
 
@@ -82,7 +80,7 @@ By default, the **Disable Password** toggle is not enabled. In this case, set an
 
 Setting **Disable Password** toggle to active (blue toggle) disables several options: 
 * The **Password** field becomes unavailable, and TrueNAS removes any existing password from the account.
-* The **Lock User** and **Permit Sudo** options disappear.
+* The **Lock User** option disappears.
 * The account is restricted from password-based logins for services like SMB shares and SSH sessions.
 
 ### Configuring User ID and Groups Settings
@@ -111,7 +109,7 @@ You cannot change TrueNAS default user account permissions.
 
 ### Configuring Authentication Settings
 
-![AddUserDirPermsAuthSettings](/images/SCALE/22.12/AddUserDirPermsAuthSettings.png "Add User Directories, Permissions and Authentication Settings") 
+![AddUserDirPermAuthSCALE](/images/SCALE/22.12/AddUserDirPermAuthSCALE.png "Add User Directories, Permissions and Authentication Settings") 
 
 You can assign a public SSH key to a user for key-based authentication by entering or pasting the *public* key into the **Authorized Keys** field.
 
@@ -135,7 +133,7 @@ You can set a specific [shell]({{< relref "UseScaleShell.md" >}}) for the user f
 
 Selecting **Lock User** disables all password-based functionality for the account until you clear the checkbox.
 
-**Permit Sudo** allows the account to act as the system administrator using the `sudo` command. Leave it disabled for better security.
+**Allowed sudo commands**, **Allow all sudo commands**, **Allowed sudo commands with no password** and **Allow all sudo commands with no password** allows the account to act as the system administrator using the [sudo](https://www.sudo.ws/) command. Leave it disabled for better security.
 
 By default, **Samba Authentication** is enabled.
 This allows using the account credentials to access data shared with [SMB]({{< relref "/content/SCALE/SCALEUIReference/Shares/_index.md" >}}).
