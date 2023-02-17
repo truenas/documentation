@@ -1,6 +1,6 @@
 ---
 title: "View Enclosure Screen (Enterprise Only)"
-description: "This article provides information on the TrueNAS **View Enclosure** screen available only on SCALE Enterprise systems, and the information you can find there."
+description: "This article provides information on the TrueNAS **View Enclosure** screen available only on compatible SCALE Enterprise systems, and the information you can find there."
 weight: 60
 aliases:
 tags:
@@ -12,26 +12,27 @@ tags:
 
 {{< toc >}}
 
-{{< hint info >}}
-The **View Enclosure** screen only displays on TrueNAS SCALE Enterprise systems. It might display for systems with TrueNAS compatible hardware that allows SCALE to communicate with it to display information about that hardware.
-The option to select **System Settings > Enclosure** is not present on non-Enterprise systems.
-{{< /hint >}}
+{{< enterprise >}}
+The **View Enclosure** screen only displays on TrueNAS SCALE Enterprise systems with compatible hardware.
+The UI options to select **System Settings > Enclosure** is not present on incompatible non-Enterprise systems.
+{{< /enterprise >}}
 
-The **System Information** widget on the main **Dashboard** only displays an image of the TrueNAS system for Enterprise systems. Hover the mouse over the image to see the **View Enclosure** label. 
+The **System Information** widget on the main **Dashboard** displays an image of the specific TrueNAS system. Hover the mouse over the image to see the **View Enclosure** label.
 Click anywhere on the system image to open the **View Enclosure** screen.
 
 ![ViewEnclosureMainDashboard](/images/SCALE/22.02/ViewEnclosureMainDashboard.png "Main Dashboard View Enclosure") 
 
 ## View Enclosure Screen
-The **View Enclosure** screen displays an image of the TrueNAS-provided system based on the TrueNAS system model number. 
+The **View Enclosure** screen displays an image of the TrueNAS platform.
+Additional information about storage pools, drives, and other hardware components is available through a variety of clickable elements and buttons.
 
 ### Elements Options
 
 The **Elements** button at the top right of the **View Enclosure** screen displays a dropdown list of options to view information about the system or expansion shelf. 
-The options vary based on the TrueNAS System model, if the system includes an expansion shelf, and if you have an expansion shelf image selected instead of the main system. 
+The options vary by TrueNAS platform, if the system is connected to expansion shelves, and if you have an expansion shelf image selected instead of the main system. 
 All TrueNAS systems include the **Disks** option. TrueNAS systems with expansion shelves include the **Temperature**, **Power Supply**, and **Voltage** options. 
 The expansion shelf  includes the **Disks**, **Cooling**, **Services**, **Power Supply**, **SAS**, **Temperature**, and **Voltage** options. 
-Each option displays a table with readings from the system taken over a period of time.
+Each option displays a table with readings from the system's internal components taken over a period of time.
 
 ## System Image Screens
 System images display the front view of the server by default. 
