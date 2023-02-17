@@ -87,22 +87,26 @@ For example, to only allow the *newuser* user permission to view dataset content
 See both the [Permissions]({{< relref "PermissionsSCALE.md" >}}) for more details on configuring ACLs and [Edit ACL Screen]({{< relref "EditACLScreens.md" >}}) for information on the ACL editor screens and setting options.
 
 #### Using Preset ACL Entries (ACEs) on an NFSv4 ACL Editor
-To rewrite the current ACL with a standardized preset, click **Use ACL Preset** and select an option:
+To rewrite the current ACL with a standardized preset, click **Use Preset** and select an option:
 
-* **NFS4_OPEN** to give the owner and group full dataset control. All other accounts can modify the dataset contents.  
-* **NFS4_RESTRICTED** to give the owner full dataset control. Group can modify the dataset contents.
-* **NFS4_HOME** to give the owner full dataset control. Group can modify the dataset contents. All other accounts can navigate the dataset.
+* **NFS4_OPEN** gives the owner and group full dataset control. All other accounts can modify the dataset contents.  
+* **NFS4_RESTRICTED** gives the owner full dataset control. Group can modify the dataset contents.
+* **NFS4_HOME** gives the owner full dataset control. Group can modify the dataset contents. All other accounts can navigate the dataset.
+* **NFS4_DOMAIN_HOME** gives the owner full dataset control. Group can modify the dataset contents. All other accounts can navigate the dataset.
+* **NFS4_ADMIN** gives the admin user and builtin_administrators group full dataset control. All other accounts can navigate the dataset. 
 
 When finished, click **Save Access Control List** to add this to the **Access Control List**.
 
 #### Using ACL Entries (ACEs) on a POSIX ACL Editor
 If the file system uses a POSIX ACL, the first option presented is to select a preset. 
 
-To rewrite the current ACL with a standardized preset, click **Use ACL Preset** and select an option:
+To rewrite the current ACL with a standardized preset, click **Use Preset** and select an option:
 
-* **POSIX_OPEN** to give owner and group full dataset control. All other accounts can modify the dataset contents.  
-* **POSIX_RESTRICTED** to give owner full dataset control. Group can modify the dataset contents.
-* **POSIX_HOME** to give owner full dataset control. Group can modify the dataset contents. All other accounts can navigate the dataset.
+* **POSIX_OPEN** gives owner and group full dataset control. All other accounts can modify the dataset contents.  
+* **POSIX_RESTRICTED** gives owner full dataset control. Group can modify the dataset contents.
+* **POSIX_HOME** gives owner full dataset control. Group can modify the dataset contents. All other accounts can navigate the dataset.
+* **POSIX_ADMIN** gives the admin user and builtin_administrators group full dataset control. All other accounts can navigate the dataset. 
+
 
 {{< taglist tag="scalesmb" limit="10" >}}
 {{< taglist tag="scaleafp" limit="10" title="Releated AFP Articles" >}}

@@ -19,7 +19,7 @@ tags:
 
 {{< toc >}}
 
-The **Advanced** settings screen provides configuration options for the console, syslog, sysctl, replication, cron jobs, init/shutdown scripts, system dataset pool, isolated GPU device(s), and self-encrypting drives.
+The **Advanced** settings screen provides configuration options for the console, syslog, cron jobs, init/shutdown scripts, sysctl, storage (system dataset pool), replication, sessions, self-encrypting drives, and isolated GPU device(s).
 
 ![SystemAdvancedScreen](/images/SCALE/22.12/SystemAdvancedScreen.png "SCALE Advanced Settings Screen") 
 
@@ -57,7 +57,7 @@ The **Syslog** widget displays the existing system logging settings that specify
 **Configure** opens the **[Syslog](#syslog-configuration-screen)** configuration screen.
 
 ### Syslog Configuration Screen
-The **Syslog** settings specify the logging level the system uses to record system events. It also lists the syslog server DNS hostname or IP, the transport protocol it uses, the certificate and certificate authority (CA) for that server (if using TLS) and, finally, if it uses the system dataset to store logs.
+The **Syslog** settings specify the logging level the system uses to record system events. It also lists the syslog server DNS hostname or IP, the transport protocol it uses, the certificate and certificate authority (CA) for that server (if using TLS), and, finally, if it uses the system dataset to store logs.
 {{< expand "Click Here for More Information" "v" >}}
 
 ![SyslogConfigScreen](/images/SCALE/22.12/SyslogConfigScreen.png "SCALE Syslog Settings Screen") 
@@ -74,7 +74,7 @@ The **Syslog** settings specify the logging level the system uses to record syst
 {{< /expand >}}
 
 ## Cron Jobs Widget
-The **Cron Jobs** widget displays **No Cron Jobs configured** until you add a cron job, then it shows information on cron job(s) configured on the system.
+The **Cron Jobs** widget displays **No Cron Jobs configured** until you add a cron job, then it shows the information on cron job(s) configured on the system.
 
 ![AdvancedSettingsCronJobWidget](/images/SCALE/22.02/AdvancedSettingsCronJobWidget.png "SCALE Advanced Settings Cron Job Widget") 
 
@@ -85,7 +85,7 @@ Click on any job listed in the widget to open the **[Edit Cron Jobs](#add-or-edi
 The **Add Cron Job** and **Edit Cron Job** configuration screens display the same settings. **Cron Jobs** lets users configure jobs that run specific commands or scripts on a regular schedule using [cron(8)](https://manpages.debian.org/testing/cron/cron.8.en.html "Cron Man Page"). Cron Jobs help users run repetitive tasks.
 {{< expand "Click Here for More Information" "v" >}}
 
-![AddCronJobScreen](/images/SCALE/22.02/AddCronJobScreen.png "SCALE Add Cron Job Screen") 
+![AddCronJobScreen](/images/SCALE/22.12/AddCronJobScreen.png "SCALE Add Cron Job Screen") 
 
 | Settings | Description |
 |----------|-------------|
@@ -110,7 +110,7 @@ Any script listed is a link that opens the **[Edit Init/Shutdown Script](#add-or
 **Init/Shutdown Scripts** lets users schedule commands or scripts to run at system startup or shutdown. 
 {{< expand "Click Here for More Information" "v" >}}
 
-![AddInitShutdownScriptConfigScreen](/images/SCALE/22.02/AddInitShutdownScriptConfigScreen.png "SCALE Init/Shutdown Script Settings Screen") 
+![AddInitShutdownScriptConfigScreen](/images/SCALE/22.12/AddInitShutdownScriptConfigScreen.png "SCALE Init/Shutdown Script Settings Screen") 
 
 | Settings | Description |
 |----------|-------------|
@@ -134,7 +134,7 @@ The **Sysctl** widget displays either **No Sysctl configured** or the existing s
 The **Add Sysctl** or **Edit Sysctl** configuration screen settings let users set up tunables that configure kernel parameters at runtime.
 {{< expand "Click Here for More Information" "v" >}}
 
-![AddSysctlConfigScreens](/images/SCALE/22.02/AddSysctlConfigScreen.png "SCALE Add Sysctl Screen") 
+![AddSysctlConfigScreens](/images/SCALE/22.12/AddSysctlConfigScreen.png "SCALE Add Sysctl Screen") 
 
 | Settings | Description |
 |----------|-------------|
@@ -144,22 +144,27 @@ The **Add Sysctl** or **Edit Sysctl** configuration screen settings let users se
 | **Enabled** | Select to enable this tunable. Leave clear to disable this tunable without deleting it. |
 {{< /expand >}}
 
-## System Dataset Pool Widget
-**System Dataset Pool** widget displays the pool configured as the system dataset pool and allows users to select the storage pool they want to hold the system dataset. 
+## Storage Widget
+**Storage** widget displays the pool configured as the system dataset pool and allows users to select the storage pool they want to hold the system dataset. 
 The system dataset stores core files for debugging and keys for encrypted pools. It also stores Samba4 metadata, such as the user and group cache and share-level permissions.
 
-![AdvancedSystemDatasetPoolWidget](/images/SCALE/22.02/AdvancedSystemDatasetPoolWidget.png "SCALE Advanced System Dataset Pool Widget") 
+![AdvancedSystemStorageWidget](/images/SCALE/22.12/AdvancedSystemStorageWidget.png "SCALE Advanced System Dataset Pool Widget") 
 
-**Configure** opens the **System Dataset Pool** configuration screen.
+**Configure** opens the **Storage Settings** configuration screen.
 
-### System Dataset Pool Configuration Screen
-If the system has one pool, TrueNAS configures that pool as the system dataset pool. If your system has more than one pool, you can set the system dataset pool using the **Select Pool** dropdown. Users can move the system dataset to an unencrypted pool or an encrypted pool without passphrases.
+### Storage Settings Configuration Screen
+If the system has one pool, TrueNAS configures that pool as the system dataset pool. If your system has more than one pool, you can set the system dataset pool using the **Select Pool** dropdown. Users can move the system dataset to an unencrypted pool, or an encrypted pool without passphrases.
 
-![SystemDatasetPoolConfigScreen](/images/SCALE/22.02/SystemDatasetPoolConfigScreen.png "SCALE Advanced Settings System Dataset Pool Screen") 
+![SystemDatasetPoolConfigScreen](/images/SCALE/22.12/SystemStorageConfigScreen.png "SCALE Advanced Settings System Dataset Pool Screen") 
 
 Users can move the system dataset to a key-encrypted pool, but cannot change the pool encryption type afterward. If the encrypted pool already has a passphrase set, you cannot move the system dataset to that pool.
 
-## Replication
+**Swap Size** lets users enter an amount (in GiB) of hard disk space to use as a substitute for RAM when the system fully utilizes the actual RAM.
+
+By default, the system creates all data disks with the specified swap amount. Changing the value does not affect the amount of swap on existing disks, only disks added after the change. Swap size does not affect log or cache devices.
+
+## Replication Widget
+
 The **Replication** widget displays the number of replication tasks that can execute simultaneously configured on the system. It allows users to adjust the maximum number of replication tasks the system can perform simultaneously.
 
 ![SystemAdvancedSettingsReplicationWidget](/images/SCALE/22.02/SystemAdvancedSettingsReplicationWidget.png "SCALE Advanced Settings Replication Widget") 
@@ -170,7 +175,35 @@ Click **Configure** to open the **Replication** configuration screen.
 
 Enter a number for the maximum number of simultaneous replication tasks you want to allow the system to process and click **Save**.
 
-## Isolated GPU Device(s)
+## Sessions Widget
+
+The **Sessions** widget displays all active sessions in the web UI, along with the user who initiated the session and what time it started.
+
+![SystemAdvancedSettingsSessionsWidget](/images/SCALE/22.12/SystemAdvancedSettingsSessionsWidget.png "SCALE Advanced Settings Sessions Widget") 
+
+The **Terminate Other Sessions** button ends all sessions except for the one you are currently using. You can also end individual sessions by clicking the <span class="iconify" data-icon="bi:box-arrow-in-right"></span> button next to that session. You must check a confirmation box before the system allows you to end sessions.
+
+## Self-Encrypting Drive Widget
+The **Self-Encrypting Drive** (SED) widget displays the system ATA security user and password. 
+
+![AdvancedSystemSEDWidget](/images/SCALE/22.02/AdvancedSystemSEDWidget.png "SCALE Advanced Settings Self-Encrypting Drive Widget") 
+
+**Configure** opens the **[Self-Encrypting Drive](#self-encrypting-drive-configuration-screen)** configuration screen.
+
+### Self-Encrypting Drive Configuration Screen
+The **Self-Encrypting Drive** configuration screen allows users to set the ATA security user and create a SED global password.
+{{< expand "Click Here for More Information" "v" >}}
+
+![AdvancedSystemSelfEncryptingDriveConfigScreen](/images/SCALE/22.02/AdvancedSystemSelfEncryptingDriveConfigScreen.png "SCALE Advanced Settings Self-Encrypting Drive screen") 
+
+| Settings | Description |
+|----------|-------------|
+| **ATA Security User** | Select the user passed to `camcontrol security -u` to unlock SEDs from the dropdown list. Options are **USER** or **MASTER**. |
+| **SED Password** | Enter the global password to unlock SEDs. |
+| **Confirm SED Password** | Re-enter the global password to unlock SEDs. |
+{{< /expand >}}
+
+## Isolated GPU Device(s) Widget
 The **Isolated GPU Device(s)** widget displays any graphics processing unit (GPU) device(s) configured on your system. 
 
 ![AdvancedSettingIsolatedGPUDeviceWidget](/images/SCALE/22.02/AdvancedSettingIsolatedGPUDeviceWidget.png "SCALE Advanced Settings Isolated GPU Device Widget") 
@@ -189,24 +222,5 @@ To isolate a GPU, you must have at least two in your system; one allocated to th
 Isolating the GPU prevents apps and the system from accessing it.
 {{< /expand >}}
 
-## Self-Encrypting Drive
-The **Self-Encrypting Drive** (SED) widget displays the system ATA security user and password. 
-
-![AdvancedSystemSEDWidget](/images/SCALE/22.02/AdvancedSystemSEDWidget.png "SCALE Advanced Settings Self-Encrypting Drive Widget") 
-
-**Configure** opens the **[Self-Encrypting Drive](#self-encrypting-drive-configuration-screen)** configuration screen.
-
-### Self-Encrypting Drive Configuration Screen
-The **Self-Encrypting Drive** configuration screen allows users to set the ATA security user and create a SED global password.
-{{< expand "Click Here for More Information" "v" >}}
-
-![AdvancedSystemSelfEncryptingDriveConfigScreen](/images/SCALE/22.02/AdvancedSystemSelfEncryptingDriveConfigScreen.png "SCALE Advanced Settings Self-Encrypting Drive screen") 
-
-| Settings | Description |
-|----------|-------------|
-| **ATA Security User** | Select the user passed to camcontrol security -u to unlock SEDs from the dropdown list. Options are **USER** or **MASTER**. |
-| **SED Password** | Enter the global password to unlock SEDs. |
-| **Confirm SED Password** | Re-enter the global password to unlock SEDs. |
-{{< /expand >}}
 
 {{< taglist tag="scalesettings" limit="10" >}} 

@@ -64,7 +64,7 @@ To set up SMB sharing:
       
       ![EditACLSMBShare1SCALE](/images/SCALE/22.12/EditACLSMBShare1SCALE.png "Edit ACL SMB Share")
    
-   b. Select **Use ACL Preset** to open the **Select a preset ACL** dialog. Select **NFS4_OPEN** from the dropdown list.
+   b. Select **Use Preset**. The **Select a preset ACL** dialog displays. Select **NFS4_OPEN** from the dropdown list.
       
       ![UseACLPresetSCALE](/images/SCALE/22.12/UseACLPresetSCALE.png "Select Preset ACL NFS4_OPEN")
 
