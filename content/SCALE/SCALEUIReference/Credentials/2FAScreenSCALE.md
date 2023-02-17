@@ -17,7 +17,7 @@ Two-factor authentication is time-based and requires a correct system time setti
 {{< /hint >}}
 ### User Settings
 
-![2FAUserSettings](/images/SCALE/2fabluefinscreen.png "2FA User Settings")
+![Enable2FAScreen](/images/SCALE/22.12/Enable2FAScreen.png "Enable 2FA User Settings")
 
 | Name | Description |
 |------|-------------|
