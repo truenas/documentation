@@ -57,16 +57,16 @@ You can customize alert settings for when the Active Directory bind is unhealthy
 {{< /expand >}}
 ### High Availability Settings 
 {{< enterprise >}}
-This section only applies to TrueNAS Enterprise only.
+This section only applies to TrueNAS Enterprise hardware.
 
-**High Availability** alert settings apply to TrueNAS Enterprise HA systems and is only displays on the list of alerts for systems with the HA license applied.
+**High Availability** alert settings apply to TrueNAS Enterprise HA systems and only displays on the list of alerts for dual-controller High-Availability systems with an Enterprise license applied.
 {{< expand "Click here for more information" >}}
 
 ![AlertSettingsHA1](/images/SCALE/22.12/AlertSettingsHA1.png "High Availability Alert Settings 1")
 
 ![AlertSettingsHA2](/images/SCALE/22.12/AlertSettingsHA2.png "High Availability Alert Settings 2")
 
-You can customize alert settings for when an automatic sync to peer fails, disks are missing on the active and/or standby controller, the system fails to check failover status with the other controller, syncing operations fail such as encryption keys to peer and KMIP keys to peer, the failover interface is not found, and when failover fails.
+You can customize alert settings for when an automatic sync to peer fails, disks are missing on the active and/or standby controller, the system fails to check failover status with the other controller, syncing operations fail such as encryption keys to peer and KMIP keys to peer, the failover interface is not found, and when a failover action fails.
 {{< /expand >}}
 {{< /enterprise >}}
 ### Hardware Alert Settings
