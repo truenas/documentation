@@ -12,29 +12,35 @@ tags:
 
 {{< toc >}}
 
-After you [download](https://www.truenas.com/download-tn-scale/) the <file>.iso</file> file, you can start installing TrueNAS SCALE!
+After you [download](https://www.truenas.com/download-tn-scale/) the <kbd>.iso</kbd> file, you can start installing TrueNAS SCALE!
 
-This article describes verifying the <file>.iso</file> file and installing SCALE using that file, and selecting the type of installation as either on [physical hardware](#installing-on-physical-hardware) or a [virtual machine (VM)](#installing-on-a-virtual-machine).
+This article describes verifying the <kbd>.iso</kbd> file and installing SCALE using that file, and selecting the type of installation as either on [physical hardware](#installing-on-physical-hardware) or a [virtual machine (VM)](#installing-on-a-virtual-machine).
+{{< hint info >}}
+SCALE Enterprise customers should receive their systems already installed and ready for UI configuration. If there are any issues with SCALE that requires you to install or re-install SCALE on your TrueNAS server, contact iXsystems support for assistance.
+{{< /hint >}}
+{{< hint danger >}}
+Enterprise customers with High Availability (HA) systems should not attempt to re-install their systems on their own. The dual controller install process is complicated and the risk of causing serious network issues is high. Contact iXsystems support for assistance!
+{{< /hint >}}
 
 ## ISO Verification
-The iXsystems Security Team cryptographically signs TrueNAS <file>.iso</file> files so that users can verify the integrity of their downloaded file.
-This section demonstrates how to verify an <file>.iso</file> file using the [Pretty Good Privacy (PGP)](https://tools.ietf.org/html/rfc4880) and [SHA256](https://tools.ietf.org/html/rfc6234) methods.
+The iXsystems Security Team cryptographically signs TrueNAS <kbd>.iso</kbd> files so that users can verify the integrity of their downloaded file.
+This section demonstrates how to verify an <kbd>.iso</kbd> file using the [Pretty Good Privacy (PGP)](https://tools.ietf.org/html/rfc4880) and [SHA256](https://tools.ietf.org/html/rfc6234) methods.
 
-### PGP ISO Verification
+### Performing PGP ISO Verification
 
 You need an OpenPGP encryption application for this method of ISO verification.
 {{< expand "Click here for the verification process." "v" >}}
 1. Obtain an OpenPGP encryption application to used. 
    There are many different free applications available, but the OpenPGP group provides a list of available software for different operating systems at https://www.openpgp.org/software/. 
-   The examples in this section show verifying the TrueNAS <file>.iso</file> using [gnupg2](https://gnupg.org/software/index.html) in a command prompt, but [Gpg4win](https://www.gpg4win.org/) is also a good option for Windows users.
+   The examples in this section show verifying the TrueNAS <kbd>.iso</kbd> using [gnupg2](https://gnupg.org/software/index.html) in a command prompt, but [Gpg4win](https://www.gpg4win.org/) is also a good option for Windows users.
 
-2. To verify the <file>.iso</file> source, go to https://www.truenas.com/download-tn-scale/, expand the **Security** option, 
-   and click **PGP Signature** to download the Gnu Privacy Guard signature file.  This file may be a (<file>.gpg</file>) or a (<file>.sig<file>) file. 
+2. To verify the <kbd>.iso</kbd> source, go to https://www.truenas.com/download-tn-scale/, expand the **Security** option, 
+   and click **PGP Signature** to download the Gnu Privacy Guard signature file.  This file may be a (<kbd>.gpg</kbd>) or a (<kbd>.sig<kbd>) file. 
    Open the [PGP Public key link](https://keyserver.ubuntu.com/pks/lookup?search=0xC8D62DEF767C1DB0DFF4E6EC358EAA9112CF7946&fingerprint=on&op=index) and note the address in your browser and **Search results for** string.
 
 3. Use one of the OpenPGP encryption tools mentioned above to import the public key and verify the PGP signature.
 
-   Go to the <file>.iso</file> and the <file>.iso.gpg</file> or <file>.iso.sig</file> download location and import the public key using the keyserver address and search results string:
+   Go to the <kbd>.iso</kbd> and the <kbd>.iso.gpg</kbd> or <kbd>.iso.sig</kbd> download location and import the public key using the keyserver address and search results string:
    
    ```
    user@ubuntu /tmp> gpg --keyserver keys.gnupg.net --recv-keys 0xc8d62def767c1db0dff4e6ec358eaa9112cf7946
@@ -46,7 +52,7 @@ You need an OpenPGP encryption application for this method of ISO verification.
    user@ubuntu /tmp>
    ```
    
-   Use `gpg --verify` to compare the <file>.iso</file> and the <file>.iso.gpg</file> or <file>.iso.sig</file> files:
+   Use `gpg --verify` to compare the <kbd>.iso</kbd> and the <kbd>.iso.gpg</kbd> or <kbd>.iso.sig</kbd> files:
    
    ```
    user@ubuntu /tmp>  gpg --verify TrueNAS-SCALE-21.04-ALPHA.1.iso
@@ -64,7 +70,7 @@ You need an OpenPGP encryption application for this method of ISO verification.
    Open and manually confirm that the key is issued for `IX SecTeam <security-officer@ixsystems.com>` (iX Security Team) on October 15, 2019 and is signed by an iXsystems account.
 {{< /expand >}}
 
-### SHA256 Verification
+### Using SHA256 Verification
 SHA256 verification uses the checksum to validate/verify the file.
 {{< expand "Click here for the verification process." "v" >}}
 The command to verify the checksum varies by operating system:
@@ -75,7 +81,7 @@ The command to verify the checksum varies by operating system:
 
 Windows or Mac users can install additional utilities like [HashCalc](https://hashcalc.soft112.com/) or [HashTab](https://download.cnet.com/HashTab/3000-2094_4-84837.html).
 
-The value produced by running the command must match the value shown in the <file>sha256.txt</file> file.
+The value produced by running the command must match the value shown in the <kbd>sha256.txt</kbd> file.
 Different checksum values indicate a corrupted installer file that you should not use.
 {{< /expand >}}
 
@@ -128,49 +134,22 @@ Choose to boot in **UEFI mode** or **legacy CSM/BIOS mode**.
 When installing TrueNAS, make the matching choice for the installation.
 For Intel chipsets manufactured in 2020 or later, UEFI is likely the only option.
 
-If your system supports SecureBoot, and you haven't disable it or set it to **Other OS**, do it now so you can boot the install media.
+If your system supports SecureBoot, and you have not disable it or set it to **Other OS**, do it now so you can boot the install media.
 
 Select the install device as the boot drive, exit, and reboot the system.
 If the USB stick is not shown as a boot option, try a different USB slot.
-Which slots are available for boot differs by hardware.
+Slots available for boot differs by hardware.
 
 #### Using the TrueNAS Installer Console Setup 
+{{< hint warning >}}
+If you are doing a clean install from the SCALE <kbd>.iso</kbd> file as part of migrating from a different version of TrueNAS CORE or SCALE, or to recover from a serious issue that requires you to re-install SCALE from the <kbd>.iso</kbd>, have your network configuration information ready to use after the installation completes. 
+Also have your SCALE system configuration file and data backups handy so you can recover your system settings and import your data into the recovered SCALE clean-install system.
+{{< /hint >}}
 After the system boots into the installer, follow these steps.
 {{< expand "TrueNAs Installer Console Setup Instructions" "v" >}}
-1. Select **Install/Upgrade**.
-   
-   ![SCALEInstallUpgrade](/images/SCALE/SCALEInstallMainScreen.png "SCALE Install Main Screen")
+{{< include file="/_includes/SCALEInstallerProcedure.md" type="page" >}}
 
-2. Select the desired install drive.
-   
-   ![InstallDrive](/images/CORE/12.0/InstallDriveScreen.png "Install Drive Screen")
-
-   Select **Yes**.
-   
-   ![InstallWarning](/images/CORE/12.0/InstallWarningScreen.png "Install Warning Screen")
-
-3. Select **Fresh Install** to do a clean install of the downloaded version of TrueNAS SCALE.
-   This erases the contents of the selected drive!
-   
-   ![InstallFresh](/images/CORE/12.0/InstallWarningScreen.png "Upgrade or Fresh Install Screen")
-   
-   When the operating system device has enough additional space, you can choose to allocate some space for a swap partition to improve performance.
-   
-   ![InstallPartition](/images/CORE/12.0/InstallPartitionScreen.png "Install Partition Screen")
-
-4. Next, set a password for the TrueNAS administrative account. 
-   SCALE has implemented rootless login. Create an admin account and password. The system retains root as a fallback but it is no longer the default.
-   This account has full control over TrueNAS and is used to log in to the web interface.
-   Set a strong password and protect it.
-   
-   ![SCALEInstallerConsoleSetupAdminAccount](/images/SCALE/22.12/SCALEInstallerConsoleSetupAdminAccount.png "Admin User Screen")
-
-   Next, enter a password for the new admin user.
-
-   ![SCALEInstallerConsoleSetupAdminPassword](/images/SCALE/22.12/SCALEInstallerConsoleSetupAdminPassword.png "Install Password Screen")
-
-5. After following the steps to install, reboot the system and remove the install media.
-
+After following the steps to install, reboot the system and remove the install media.
 {{< expand "Troubleshooting" "v">}}
 If the system does not boot into TrueNAS SCALE, there are several things you can check to resolve the situation:
 
@@ -188,7 +167,7 @@ If the system does not boot into TrueNAS SCALE, there are several things you can
 
 ### Installing on a Virtual Machine 
 
-Because TrueNAS SCALE is built and provided as an <file>.iso</file> file, it works on all virtual machine solutions (VMware, VirtualBox, Citrix Hypervisor, etc).
+Because TrueNAS SCALE is built and provided as an <kbd>.iso</kbd> file, it works on all virtual machine solutions (VMware, VirtualBox, Citrix Hypervisor, etc).
 This section describes installing on a VM using [VMware Workstation Player](https://www.vmware.com/products/workstation-player/workstation-player-evaluation.html) on Windows.
 
 #### Minimum Virtual Machine Settings
@@ -201,7 +180,7 @@ Regardless of virtualization application, use these minimum settings:
 #### Networking Checks for VMWare
 
 When installing TrueNAS in a VMWare VM, double check the virtual switch and VMWare port group.
-A misconfigured virtual switch or VMWare port group can cause network connection errors for plugins or jails inside the TrueNAS VM.
+A misconfigured virtual switch or VMWare port group can cause network connection errors for TrueNAS CORE systems with plugins or jails inside the TrueNAS VM.
 Enable **MAC spoofing** and **promiscuous mode** on the switch first, and then the port group the VM is using.
 
 {{< include file="static/includes/CORE/VirtualMachinesJailNetworking.md.part" markdown="true" >}}
@@ -210,9 +189,9 @@ Enable **MAC spoofing** and **promiscuous mode** on the switch first, and then t
 
 For most hypervisors, the procedure for creating a TrueNAS VM is the same.
 {{< expand "Generic VM Install Instructions" "v" >}}
-1. Create a new virtual machine as usual, taking note of the following settings.
+1. Create a new virtual machine as usual, taking note of the following:
 
-  * The virtual hardware has a bootable CD/DVD device pointed to the TrueNAS SCALE installer image (this is usually an <file>.iso</file>).
+  * The virtual hardware has a bootable CD/DVD device pointed to the TrueNAS SCALE installer image (this is usually an <kbd>.iso</kbd>).
 
   * The virtual network card configuration allows your network to reach it. 
     **bridged** mode is optimal as this treats the network card as one plugged into a simple switch on the existing network.
@@ -239,7 +218,7 @@ Open VMware Player and click **Create a New Virtual Machine** to enter the New V
 
 1. Install disk image file.
 
-   Select the **Installer disk image file (<file>.iso</file>)** option, click **Browse...**, and upload the TrueNAS SCALE <file>.iso</file> downloaded earlier.
+   Select the **Installer disk image file (<kbd>.iso</kbd>)** option, click **Browse...**, and upload the TrueNAS SCALE <kbd>.iso</kbd> downloaded earlier.
 
 2. Name the virtual machine.
 
@@ -300,7 +279,8 @@ The machine starts and boots into the TrueNAS installer.
    
    ![InstallVMWarning](/images/CORE/12.0/InstallVMWarningScreen.png "Install VM Warning Screen")
 
-4. Next, set a password for the TrueNAS administrative account, named `root` by default.
+4. Select option **1 Administrative user (admin)** and then **OK** to install SCALE and create the admin user account. 
+   SCALE Bluefin has implemented rootless login. Create an admin account and password. The system retains root as a fallback but it is no longer the default.
    This account has full control over TrueNAS and is used to log in to the web interface.
    Set a strong password and protect it.
    
@@ -320,7 +300,7 @@ The [Console Setup Menu]({{< relref "ConsoleSetupMenu.md" >}}) displays when the
 
 Congratulations, TrueNAS SCALE is now installed!
 
-The next step is to boot up the system and configure SCALE network and general settings with the [Console Setup Menu]({{< relref "ConsoleSetupMenuScale.md" >}}) so you can log into the web UI.
+The next step is to configure SCALE network and general settings. Experienced users can use the [Console Setup Menu]({{< relref "ConsoleSetupMenuScale.md" >}}) to configure network settings, but if you are unfamiliar with the Console setup menu and how network configuration works, we recommend you use the SCALE UI to [configure settings]({{< relref "UIConfigurationSCALE.md" >}}). TrueNAS SCALE uses DHCP to assign an IP address to the primary system interface and displays it at the top of the Console setup menu screen so you can log into the web UI.
 
 {{< taglist tag="scaleinstall" limit="10" >}}
 {{< taglist tag="scaleupdate" limit="10" title="Related Update Articles" >}}
