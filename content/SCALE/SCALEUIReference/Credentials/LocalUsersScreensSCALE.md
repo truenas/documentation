@@ -62,7 +62,7 @@ Built-in users (except the **root** user) do not include the **Home Directory Pe
 **User ID and Group** settings specify the user ID and groups this user belongs to.
 {{< expand "Click Here for More Information" "v" >}}
 
-![AddUser-UserIDAndGroupSettings](/images/SCALE/22.12/AddUser-UserIDAndGroupSettings.png "Add User User Id and Groups Settings") 
+![AddUser-UserIDAndGroupSettings](/images/SCALE/22.12/AddUser-UserIDAndGroupSettings.png "Add User User ID and Groups Settings") 
 
 | Setting | Description |
 |---------|-------------|
