@@ -26,39 +26,64 @@ Users can configure AD services on Windows or Unix-like operating systems using 
 
 To configure an AD connection, you must know the AD controller domain and the AD system account credentials.
 
-### Preparation
+### Preparing to Configure AD in SCALE
 
-Users can take a few steps before configuring Active Directory to ensure the connection process goes smoothly.
+Users can take a few steps before configuring Active Directory (AD) to ensure the connection process goes smoothly.
+
+* You need the Relative Distinguished Name (RDN) of the site object. This is the first component of the distinguishedName property configured in AD.
+{{< expand "Need AD Help?" "v" >}}
+To locate the distiguished name: 
+
+1. Log into AD.
+2. Click on **View** and select **Advanced Features**.
+3. Navigate to and right-click on the organizational unit (OU) where you want to read users, service or computer accounts, then select **Properties**.
+4. Select the **Attribute Editor** tab on the **OU Properties** window.
+5. Click on **distinguishedName** to highlight it then click **View**.
+{{< /expand >}}
+* You also need the AD admin account name and password.
+
+If you plan to use [Kerberos]({{< relref "ConfigKerberosSCALE.md" >}}), configure the realm and keytabs, change Kerberos settings if required, then edit the Active Directory instance you configured in SCALE (listed on the **Active Directory** widget).
 
 ### Verifying Name Resolution
 
-To confirm that name resolution is functioning, go to **System Settings > Shell** and use `ping` to check the connection to the AD domain controller.
+To confirm that name resolution is functioning, you can use the **Shell** and issue a `ping` command or a command to check network SRV records and verify DNS resolution.
 
-![ShellDomainPingSCALE](/images/SCALE/ShellDomainPingSCALE.png "Pinging a Domain Controller")
+#### Using Ping to Verify Name Resolution
 
-When TrueNAS sends and receives packets without loss, the connection is verified. Press <kbd>Ctrl + C</kbd> to cancel the `ping`.
+1. Go to **System Settings > Shell** and type `ping` to check the connection to the AD domain controller. 
+   The domain controller manages or restricts access to domain resources by authenticating user identity from one domain to the other through a login credentials, and it prevents unauthorized access to these resources. The domain controller applies security policies to request-for-access domain resources.
 
-Another option is to use `host -t srv _ldap._tcp.domainname.com` to check the network SRV records and verify DNS resolution.
+   ![ShellDomainPingSCALE](/images/SCALE/ShellDomainPingSCALE.png "Pinging a Domain Controller")
+
+   When TrueNAS sends and receives packets without loss, the connection is verified.
+2. Press <kbd>Ctrl + C</kbd> to cancel the `ping`.
 
 {{< expand "The ping failed!" "v" >}}
-If the ping fails, go to **Network** and click **Settings** in the **Global Configuration** window. Update the **DNS Servers** and **Default Gateway** settings so the connection to your Active Directory Domain Controller can start.
+If the ping fails:
+
+1. Go to **Network** and click **Settings** in the **Global Configuration** window. 
+2. Update the **DNS Servers** and **Default Gateway** settings so the connection to your Active Directory Domain Controller can start.
 Use more than one **Nameserver** for the AD domain controllers so DNS queries for requisite SRV records can succeed.
 Using more than one Nameserver helps maintain the AD connection whenever a domain controller becomes unavailable.
 {{< /expand >}}
+#### Checking Network SRV Records
+
+To check the network SRV records and verify DNS resolution enter command `host -t srv _ldap._tcp.domainname.com` in Shell.
 
 ### Setting Time Synchronization
 
 Active Directory relies on the time-sensitive [Kerberos](https://tools.ietf.org/html/rfc1510) protocol.
 TrueNAS adds the AD domain controller with the [PDC Emulator FSMO Role](https://support.microsoft.com/en-us/help/197132/active-directory-fsmo-roles-in-windows) as the preferred NTP server during the domain join process. 
-If your environment requires something different, go to **System Settings > General** and add or edit a server in the **NTP Servers** window.
+If your environment requires something different, go to **System Settings > General** to add or edit a server in the **NTP Servers** window.
 
-The local system time cannot be out of sync by more than **five (5) minutes** with the AD domain controller time in a default AD environment.
-Use an external time source when configuring a virtualized domain controller.
+The local system time cannot be out of sync by more than five (5) minutes with the AD domain controller time in a default AD environment.
+
+Use an external time source when configuring a virtualized domain controller. 
 TrueNAS generates alerts if the system time gets out-of-sync with the AD domain controller time.
 
 TrueNAS has a few options to ensure both systems are synchronized:
 
-1. Go to **System Settings > General** and click **Settings** in the **Localization** window to ensure the **Timezone** matches the AD Domain Controller.
+1. Go to **System Settings > General** and click **Settings** in the **Localization** window to select the **Timezone** that matches location of the AD domain controller.
 
 ![LocalizationSCALE](/images/SCALE/LocalizationSCALE.png "Timezone Options")
 
