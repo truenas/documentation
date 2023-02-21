@@ -1,6 +1,6 @@
 ---
 title: "Active Directory Screen"
-descritpion: "This article provides information on the **Active Directory** configuration screen settings."
+description: "This article provides information about Active Directory configuration screen settings."
 weight: 10
 aliases:
   - /scale/credentials/directoryservices/activedirectoryscale/
@@ -52,6 +52,4 @@ Click **Advanced Options** to open the advanced settings screen. The **Advanced 
 | **NetBIOS Alias** | Alternative names (no greater than 15 characters) that SMB clients can use when connecting to this NAS. Can be no greater than 15 characters. |
 | **Leave Domain** | Disconnects the TrueNAS system from the Active Directory. |
 
-
-{{< taglist tag="scalead" limit="10" >}}
 {{< taglist tag="scaledirectoryservices" limit="10" title="Related Directory Services Articles" >}}

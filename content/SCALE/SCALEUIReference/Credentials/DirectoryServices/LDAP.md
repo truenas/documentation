@@ -1,5 +1,6 @@
 ---
 title: "LDAP"
+description: "This article provides information about Lightweight Directory Access Protocol (LDAP) configuration screen settings."
 geekdocCollapseSection: true
 weight: 20
 aliases:
@@ -7,6 +8,9 @@ aliases:
   - /scale/credentials/directoryservices/ldapscale/
   - /scale/credentials/directoryservices/idmapscale/
   - /scale/credentials/directoryservices/kerberosscale/
+tags:
+- scaleldap
+- scaledirectoryservices
 ---
 
 {{< toc >}}
@@ -45,3 +49,5 @@ Click **Configure LDAP** in **Credentials > Directory Services** to open the **L
 {{< hint warning >}} 
 **DEPRECATED:** Samba Schema support is deprecated in Samba 4.13. We will remove this feature after Samba 4.14. Users should begin upgrading legacy Samba domains to Samba AD domains. 
 {{< /hint >}}
+
+{{< taglist tag="scaledirectoryservices" limit="10" title="Related Directory Services Articles" >}}
