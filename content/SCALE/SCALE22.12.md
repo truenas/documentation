@@ -27,10 +27,6 @@ Want to get involved by collaborating on TrueNAS SCALE? Join our [Official Disco
 
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
-| SCALE 22.12.1 | Code-freeze | 25 January 2023 |
-| SCALE 22.12.1 | Internal Testing Sprints | 26 January 2023 - 18 February 2023 |
-| SCALE 22.12.1 | Tag | 203 February 2023 |
-| SCALE 22.12.1 | Release | 21 February 2023 |
 | SCALE 22.12.2 | Code-freeze | 08 March 2023 |
 | SCALE 22.12.2 | Internal Testing Sprints | 13 March 2023 - 24 March 2023 |
 | SCALE 22.12.2 | Tag | 27 March 2023 |
@@ -57,20 +53,20 @@ To upgrade an existing SCALE install, log in to your SCALE web interface and go 
 
 February 21, 2023
 
-TrueNAS SCALE 22.12.1 has been released. It includes many new features and improved functionality that span new high availability  (HA) feature support and improvements, and new or improved features in SCALE applications, services, ACLs, and Shares:
+TrueNAS SCALE 22.12.1 has been released. It includes many new features and improved functionality that span initial effort for high availability (HA) feature support and improvements, and new or improved features in SCALE applications, services, ACLs, and shares:
 
-* New Kubernetes Passthrough functionality in SCALE applications
+* New Kubernetes Passthrough functionality in SCALE applications.
 * Improvements to the security hardening function, rootless login, in the SCALE installer, SCALE sign-in, and root user administration.
-* New ACL function that allows users to create and manage ACL presets, and adding a loading indicator to the Permissions editor
-* Improvements to the advanced scheduler used by many of the data protection tasks
-* Ability to manage websocket sessions
-* Improved validation in many areas including applications
-* New SSH service options when logging into an SSH session as admin
-* New and improved Dashboard for SCALE Enterprise HA and Enclosure management
-* Improvement to the Host Path Validation option for SCALE applications
-* Added support for external share paths
-* Added support for Windows 10/11 to address "Fail to Install" issues
-* Changes to the sudo options on the Add User and Add Groups screens, and add sudo to the Replication task wizard 
+* New ACL function that allows users to create and manage ACL presets, and adding a loading indicator to the Permissions editor.
+* Improvements to the advanced scheduler used by many of the data protection tasks.
+* Ability to manage websocket sessions.
+* Improved validation in many areas including applications.
+* New SSH service options when logging into an SSH session as admin.
+* New and improved Dashboard for SCALE Enterprise HA and Enclosure management.
+* Improvement to the Host Path Validation option for SCALE applications.
+* Added support for external share paths.
+* Added support for Windows 10/11 to address "Fail to Install" issues.
+* Changes to the sudo options on the Add User and Add Groups screens, and add sudo to the Replication task wizard.
 
 ## 22.12.1 Change Log
 
