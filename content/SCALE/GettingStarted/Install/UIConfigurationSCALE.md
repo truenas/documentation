@@ -1,6 +1,6 @@
 ---
 title: "Configuring SCALE Using the UI"
-description: "This article provides a sequential process to complete the SCALE installation and configuration using the SCALE UI."
+description: "This article provides a sequential process to complete SCALE installation and configuration using the SCALE UI."
 weight: 30
 aliases:
 tags:
@@ -11,8 +11,13 @@ tags:
 
 {{< toc >}}
 
-
+{{< enterprise >}}
 iXsystems TrueNAS Enterprise customers should contact iXsystems Support when their systems arrive to receive additional guidance on their next steps.
+
+{{< expand "Contacting Support" "v" >}}
+{{< include file="static/includes/General/iXsystemsSupportContact.html.part" html="true" >}}
+{{< /expand >}}
+{{< /enterprise >}}
 
 All other TrueNAS SCALE users can follow these instructions to complete their system set up and configuration.
 
@@ -23,12 +28,20 @@ After a fresh install from an <kbd>iso</kbd> file, administrators log in with th
 After you log into SCALE with the administrator account you can begin to configure SCALE in the UI.
 For Enterprise customers, iXsystem Support guides you through this process and your first log in.
 
-## Applying TrueNAS Licenses (Enterprise Customers Only)
+## Applying TrueNAS Licenses (Enterprise)
+
+{{< enterprise >}}
+This content applies to TrueNAS Enterprise customers only.
+{{< /enterprise >}}
 
 TrueNAS SCALE Enterprise customers should contact iXsystems support to obtain license information for their TrueNAS system. 
 To apply the license information, go to the **System Settings > General** screen and use the **[Update License]({{< relref "GetSupportSCALE.md" >}})** option on the **Support** widget (system information card).
 
-### Setting up Proactive Support (Enterprise Customers Only)
+### Setting up Proactive Support (Enterprise)
+
+{{< enterprise >}}
+This content applies to TrueNAS Enterprise customers only.
+{{< /enterprise >}}
 
 TrueNAS SCALE Enterprise customers with Silver or Gold Coverage support contracts have the option to configure proactive support.
 {{< expand "Configuring Proactive Support" "v" >}}
@@ -53,7 +66,7 @@ If you are unfamiliar with network services, devices, configurations, you can fi
 ### Adding Network Interfaces
 
 If your system includes more than one network interface card (NIC) installed and connected to your internal network (wired connecting it to your router or Internet access point), you can add an interface in SCALE. 
-You can only use DHCP to provide the IP address to one interface which is the primary interface.
+DHCP is available for only a single interface; any other physical interfaces must be configured with static IP addresses.
 {{< expand "Adding an Interface" "v" >}}
 You can also configure virtual network interfaces such as a [bridge]({{< relref "SettingUpBridge.md" >}}), link aggregate (LAGG), or virtual LAN (VLAN) interface. 
 
@@ -72,16 +85,16 @@ TrueNAS SCALE requires at least one storage pool. We recommend creating the requ
 When planning your data storage, consider the type of data sharing you want to do, any container applications you might want to deploy, and how you want to organize stored data. 
 
 The storage creation process begins with creating a pool and then adding the datasets as needed. 
-You must create at least on storage pool [explained here]]({{< relref "SetUpStorageScale.md" >}}) on your system. 
+You must create at least one storage pool [explained here]]({{< relref "SetUpStorageScale.md" >}}) on your system. 
 
-After adding your first pool, the root parent dataset is automatically created. 
+After adding your first pool, the root parent dataset is automatically created for that pool.
 Select this root parent dataset when you create your first dataset.
-You can create as many datasets as you want or need on your pool and to suit your use case. 
+You can create as many datasets as you want or need on your pool and to suit your use case.
 You can also create virtual storage volumes (zvols) for any virtual machine (VM) you plan to use on SCALE.
 
 ### Setting the System Dataset
 
-SCALE assigns the root parent dataset of the first pool create as the system dataset.  
+SCALE assigns the root parent dataset of the first created pool as the system dataset.
 If your system is equipped with enough disks to add more pools, you can [change the system dataset]({{< relref "AdvancedSettings.md" >}}) to a different root parent dataset for a another pool.
 
 ## Setting Up Shares
@@ -97,7 +110,7 @@ For more information on configuring data sharing and the four share types availa
 ## Configuring System Services
 Services you want to configure and enable are based on those you want to deploy on your SCALE system.
 All SCALE systems should enable SSH service as part of the initial UI configuration.
-Enterprise or SCALE systems with large numbers of disks should also enable SMART service and configure SMART testing. 
+Enterprise or SCALE systems with large numbers of disks should also enable SMART service and configure SMART testing.
 SCALE Enterprise HA systems should enable and configure the failover service.
 {{< expand "Configuring Services" "v" >}}
 Configure and enable these three services based on your SCALE system:
@@ -113,7 +126,7 @@ Configure and enable these three services based on your SCALE system:
 
 * Failover service on SCALE Enterprise High Availability (HA) systems
 
-  The failover service enables HA systems to fail over the primary system controller to the standby controller if service to the primary is disrupted. 
+  The failover service enables HA systems to fail over the primary system controller to the standby controller if service to the primary is disrupted.
   This service is not included on non-Enterprise and non-HA systems.
 
   Enterprise customers should not make chages to failover settings or the service on their own. Contact iXsystems Support for assistance before making any change to failover settings.
@@ -122,8 +135,8 @@ When you add data sharing the system prompts you to enable the appropriate shari
 
 If your installation includes a UPS, configure and enable the UPS service as well.
 {{< /expand >}}
-### Setting up SMART Testing
 
+### Setting up SMART Testing
 All systems can take advantage of the SMART service and testing if your disks support this service. 
 Disks that do not support SMART testing do not display the option to set up testing.
 
@@ -140,15 +153,16 @@ After completing your initial system configuration and any other configuration t
 Keep both the system configuration file and the initial system debug file in a safe location where save regularly backed up important files. 
 You can use the boot environment in and SSH session to retore your system to the point where you completed your system configuration and then import data or pools to recover stored data.
 
-For Enterprise customers with HA systems, the HA restore process requires recovering both controllers. 
+{{< enterprise >}}
+For Enterprise customers with High Availability (HA) systems, the HA restore process requires recovering both controllers.
 Contact iXsystems Support for assistance before attempting to recovery your system. If you choose to restore access to controller A and the SCALE UI, contact iXsystem Support to get assistance with properly recovering your second controller. 
-{{< hint danger >}}
+
 Enterprise HA customers should not start issuing CLI commands to recover your system!!
-Contact iX support after you restore access to controller A to request further assistance and before actions taken disrupt or damage system access further and require a complete reinstall to recover.
-{{< /hint >}}
+Contact iXsystems Support after you restore access to controller A to request further assistance and before actions taken disrupt or damage system access further and require a complete reinstall to recover.
+{{< /enterprise >}}
 
 ### Data Storage Backup Solutions
-After saving both files, we recommend you set up snapshots, replication, or a cloud storage provider service and cloud sync task to back up your storage data. 
+After saving both files, we recommend you set up snapshots, replication, or a cloud storage provider service and cloud sync task to back up your storage data.
 {{< expand "Backup Solutions" "v" >}}
 
 TrueNAS SCALE provides options to back up your stored data:
@@ -156,7 +170,7 @@ TrueNAS SCALE provides options to back up your stored data:
 * Replication to another system
 * Cloud storage provider options and cloud sycn tasks 
 
-You can take regular [snapshots]({{< relref "CreatingSnapshots.md" >}}) or [schedule snapshot tasks]({{< relref "PeriodicSnapshotTasksSCALE.md" >}} to capture changes to stored data without the storage overhead that comes with backing up through data replication, or you can use one of the [replication options]({{< relref "/SCALE/SCALETutorials/DataProtection/Replication/_index.md" >}}) SCALE provides. 
+You can take single [snapshots]({{< relref "CreatingSnapshots.md" >}}) or [schedule snapshot tasks]({{< relref "PeriodicSnapshotTasksSCALE.md" >}} to capture changes to stored data without the storage overhead that comes with backing up through data replication, or you can use one of the [replication options]({{< relref "/SCALE/SCALETutorials/DataProtection/Replication/_index.md" >}}) SCALE provides.
 
 Another data storage backup option is to create a cloud storage service account and then use the SCALE to manage the backup. 
 Use the **Backup Credentials** screen **[Cloud Credentials]({{< relref "AddCloudCredentials.md" >}})** to add authentication credentials for a supported cloud service and then schedule a **[Cloud Sync Tasks]({{< relref "/SCALE/SCALETutorials/DataProtection/CloudSynctasks/_index.md" >}})** to regularly back up your storage data to the cloud.
@@ -177,21 +191,21 @@ Click the gear **Settings** icon the top of the **Alerts** dropdown panel to dis
 {{< /expand >}}
 
 ## Setting Up Directory Services
-TrueNAS SCALE allows you to configure an Active Directory or LDAP server to handle authentication and authorization services, domain, and other account settings. 
+TrueNAS SCALE allows you to configure an Active Directory or LDAP server to handle authentication and authorization services, domain, and other account settings.
 
-iXsystems Support can assist Enterprise customers with configuring directory service settings in SCALE with the [information customers provide]({{< relref "/SCALE/GettingStarted/Install/_index.md" >}}), but they do not configure customer Active Directory system settings. 
+iXsystems Support can assist Enterprise customers with configuring directory service settings in SCALE with the [information customers provide]({{< relref "/SCALE/GettingStarted/Install/_index.md" >}}), but they do not configure customer Active Directory system settings.
 Non-Enterprise users can find support for configuring directory services in the TrueNAS Documentation Hub tutorials or in the community forums.
 
 ## Using Enclosure Management (Enterprise Only)
-TrueNAS SCALE main **Dashboard** displays an image of the TrueNAS system server on the **System Information** widget. Click on the image to open the **[View Enclosure]({{< relref "EnclosureScreensSCALE" >}})** screen, or select the **System Settings > Enclosure** option on the main menu navigation panel. 
+TrueNAS SCALE main **Dashboard** displays an image of the TrueNAS system server on the **System Information** widget. Click on the image to open the **[View Enclosure]({{< relref "EnclosureScreensSCALE" >}})** screen, or select the **System Settings > Enclosure** option on the main menu navigation panel.
 
-The **View Enclosure** screen provides details about the system disks, the pools and VDEVs they are in, the hardware, and the disk status. Click on a drive to view the disk details. 
+The **View Enclosure** screen provides details about the system disks, the pools and VDEVs they are in, the hardware, and the disk status. Click on a drive to view the disk details.
 If the TrueNAS system is equipped with an expansion shelf, an image of the expansion shelf with the disks populated in it also displays.
 
 If using SCALE on servers not provided by TrueNAS, the main **System Information** widget on the main **Dashboard** displays the TrueNAS SCALE logo and the **System Settings > Enclosure** option does not exist on the menu navigation panel.
 
 ## Using Applications in SCALE
-SCALE provides a list of applications you can deploy on the **Apps > Available Applications** screen. 
+SCALE provides a list of applications you can deploy on the **Apps > Available Applications** screen.
 SCALE Enterprise only offers MinIO as an available application.
 
 You can deploy an application using the **Custom Install** option.
@@ -199,10 +213,10 @@ You can deploy an application using the **Custom Install** option.
 ## Updating SCALE
 You can update your system using an <kbd>iso</kbd> file using the system administration console or an update file installed through the SCALE UI.
 
-There are a few ways to update your instance of TrueNAS SCALE: 
-* The main **Dashboard > System Information** widget alerts you when a SCALE update is available to download and install. 
-  Click the update option on to open the **System Settings > Updates** screen. 
-* Go to **System Settings > Updates** to see if an update is available. 
+There are a few ways to update your instance of TrueNAS SCALE:
+* The main **Dashboard > System Information** widget alerts you when a SCALE update is available to download and install.
+  Click the update option on to open the **System Settings > Updates** screen.
+* Go to **System Settings > Updates** to see if an update is available.
 
 For all update options and procedures using the SCALE UI see **[Updating SCALE]({{< relref "UpdateSCALE.md" >}}).
 
@@ -210,9 +224,9 @@ When updating to either a new incremental or full release, always save the syste
 It is good practice to download a fresh debug file after a system update.
 
 ## Getting Support
-Enterprise SCALE customers with support contracts should contact the iXsystems Support using the **[Commercial Support](https://www.truenas.com/commercial-support/)** option on the top header of the TrueNAS Documentation Hub website. 
+Enterprise SCALE customers with support contracts should contact the iXsystems Support using the **[Commercial Support](https://www.truenas.com/commercial-support/)** option on the top header of the TrueNAS Documentation Hub website.
 
-Non-Enterprise SCALE customers experiencing issues should [file an issue ticket](https://www.truenas.com/docs/contributing/issuereporting/) through the Jira ticket reporting system for TrueNAS. 
+Non-Enterprise SCALE customers experiencing software bugs or instability should [file an issue ticket](https://www.truenas.com/docs/contributing/issuereporting/) through the Jira ticket reporting system for TrueNAS.
 When reporting an issue, include a system debug file, downloaded following the issue occurrence. This captures the system logs iXsystems needs to help resolve your issues.
 
 Support is also available through the TrueNAS [Community Forums, blog, and Discord]){{< relref "/content/Contributing/IssueReporting/_index.md" >}}. These options are accessible on the top header of the TrueNAS Documentation Hub website.
