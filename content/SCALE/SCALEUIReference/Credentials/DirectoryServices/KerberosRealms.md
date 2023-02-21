@@ -1,5 +1,6 @@
 ---
 title: "Kerberos Realms"
+description: "This article provides information about Kerberos Realms configuration screen settings."
 geekdocCollapseSection: true
 weight: 50
 aliases:
@@ -7,6 +8,9 @@ aliases:
   - /scale/credentials/directoryservices/ldapscale/
   - /scale/credentials/directoryservices/idmapscale/
   - /scale/credentials/directoryservices/kerberosscale/
+tags:
+- scalekerberos
+- scaledirectoryservices
 ---
 
 {{< toc >}}
@@ -20,4 +24,6 @@ Click a **Kerberos Realm** name to edit a Kerberos Realm, or click **Add** in th
 | **Realm** | Enter the name of the realm. |
 | **KDC** | Enter the name of the Key Distribution Center. Separate multiple values by pressing <kbd>Enter</kbd>. |
 | **Admin Server** | Define the server that performs all database changes. Separate multiple values by pressing <kbd>Enter</kbd>. |
-| **Password Server** | Define the server that performs all password changes. Separate multiple values by pressing <kbd>Enter</kbd>. |
+| **Password Server** | Define the server that performs all password changes. Separate multiple values by pressing <kbd>Enter</kbd>. | 
+
+{{< taglist tag="scaledirectoryservices" limit="10" title="Related Directory Services Articles" >}}
