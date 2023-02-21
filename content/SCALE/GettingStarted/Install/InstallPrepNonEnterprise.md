@@ -1,5 +1,5 @@
 ---
-title: "Preparing for Scale UI Configuration"
+title: "Preparing for SCALE UI Configuration"
 description: "This article provides information you need to complete the SCALE configuration using the SCALE UI."
 weight: 5
 aliases:
@@ -18,10 +18,16 @@ Support options available to assist you include the TrueNAS community forums, bl
 If you are not the administrator responsible for network access in your company, contact your network administrator for assistance. 
 If your company obtains network hardware and support from an Internet or cable service provider, contact them for assistance with where to obtain this information.
 
-## IPMI Access
-Intelligent Platform Management Interface (IPMI) servers provide access to servers and allow remote users to install software and configure or admninister systems at the console level, or as though you are in the room with the server when you are working remotely. Not all companies have or use IPMI servers but companies with multiple server deployments and remote data centers likely do.
+## Physical Access
+When in the same location as the hardware designated for the TrueNAS installation, you can connect a monitor and keyboard to the system to do the initial installation and configuration.
+An additional USB port is required when using a USB storage device to install TrueNAS from <kbd>.iso</kbd> file.
 
-To provide for remote administration of your TrueNAS SCALE system, assign access through your IPMI server to the TrueNAS server. To make this possible assign an IP address to use for access and set up administrator credentials (user name and password) to access the TrueNAS IPMI connections. 
+## IPMI Access
+Intelligent Platform Management Interface (IPMI) servers provide access to servers and allow remote users to install software and configure or admninister systems at the console level, or as though you are in the room with the server when you are working remotely.
+Not all companies have or use IPMI servers but companies with multiple server deployments and remote data centers likely do.
+
+To provide for remote administration of your TrueNAS SCALE system, assign access through your IPMI server to the TrueNAS server.
+To make this possible assign an IP address to use for access and set up administrator credentials (user name and password) to access the TrueNAS IPMI connections. 
 
 ## Network Access
 

@@ -15,12 +15,15 @@ tags:
 After you [download](https://www.truenas.com/download-tn-scale/) the <kbd>.iso</kbd> file, you can start installing TrueNAS SCALE!
 
 This article describes verifying the <kbd>.iso</kbd> file and installing SCALE using that file, and selecting the type of installation as either on [physical hardware](#installing-on-physical-hardware) or a [virtual machine (VM)](#installing-on-a-virtual-machine).
-{{< hint info >}}
-SCALE Enterprise customers should receive their systems already installed and ready for UI configuration. If there are any issues with SCALE that requires you to install or re-install SCALE on your TrueNAS server, contact iXsystems support for assistance.
-{{< /hint >}}
-{{< hint danger >}}
-Enterprise customers with High Availability (HA) systems should not attempt to re-install their systems on their own. The dual controller install process is complicated and the risk of causing serious network issues is high. Contact iXsystems support for assistance!
-{{< /hint >}}
+{{< enterprise >}}
+SCALE Enterprise customers should receive their systems already installed and ready for UI configuration. If there are any issues with SCALE that requires you to install or re-install SCALE on your TrueNAS server, contact iXsystems Support for assistance.
+
+Enterprise customers with High Availability (HA) systems should not attempt to re-install their systems on their own. The dual controller install process is complicated and the risk of causing serious network issues is high. Contact iXsystems Support for assistance!
+
+{{< expand "Contacting Support" "v" >}}
+{{< include file="static/includes/General/iXsystemsSupportContact.html.part" html="true" >}}
+{{< /expand >}}
+{{< /enterprise >}}
 
 ## ISO Verification
 The iXsystems Security Team cryptographically signs TrueNAS <kbd>.iso</kbd> files so that users can verify the integrity of their downloaded file.
@@ -180,7 +183,7 @@ Regardless of virtualization application, use these minimum settings:
 #### Networking Checks for VMWare
 
 When installing TrueNAS in a VMWare VM, double check the virtual switch and VMWare port group.
-A misconfigured virtual switch or VMWare port group can cause network connection errors for TrueNAS CORE systems with plugins or jails inside the TrueNAS VM.
+A misconfigured virtual switch or VMWare port group can cause network connection errors for TrueNAS systems with additional applications installed inside the TrueNAS VM.
 Enable **MAC spoofing** and **promiscuous mode** on the switch first, and then the port group the VM is using.
 
 {{< include file="static/includes/CORE/VirtualMachinesJailNetworking.md.part" markdown="true" >}}

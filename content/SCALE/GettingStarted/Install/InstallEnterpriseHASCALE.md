@@ -31,7 +31,7 @@ This article outlines a procedure to do a clean install of a SCALE Enterprise (H
 HA systems are dual controller systems. Execute this procedure on both controllers in the system. SCALE includes features and functions to help guide you with completing the process after you get to the SCALE UI.
 
 ### Preparing for a Clean Install
-For a list of SCALE Enterprise (HA) preparation information, see [Preparing for Scale UI Configuration (Enterprise)]({{< relref "InstallPrepEnterprise.md" >}}).
+For a list of SCALE Enterprise (HA) preparation information, see [Preparing for SCALE UI Configuration (Enterprise)]({{< relref "InstallPrepEnterprise.md" >}}).
 
 Have this information handy to complete this procedure:
 * All the assigned network addresses and host names (VIP, controller A and B IP addresses)
@@ -129,13 +129,14 @@ To use the Console setup menu to change the primary network interface IP address
 
 1. Type <kbd>1</kbd> and then press <kbd>Enter</kbd> to open the **Configure Network Interfaces** screen.
 2. Use either <kbd>Tab</kbd> or the arrow keys to select the interface assigned as your primary network interface.
-   If you have more than one interface installed and wired to your network, the primary interface is **eno1**.
+   If you have more than one interface installed and wired to your network, the primary interface is typically **eno1**.
 3. Type in the IP address then use either <kbd>Tab</kbd> or the arrow keys to move through the menu and down to select **Save**, and then press <kbd>Enter</kbd>.
 4. Type <kbd>q</kbd> to return to the main Console setup menu.
 
 ### Configuring Settings in the SCALE UI
-After logging into the SCALE UI Enterprise customers see the End User License Agreement (EULA) screen the first time they log in.
-Sign the agreement to open the main SCALE **Dashboard**. Next you must apply the system license.
+SCALE UI Enterprise customers see the End User License Agreement (EULA) screen the first time they log in.
+Sign the agreement to open the main SCALE **Dashboard**.
+Apply the system license next.
 
 Go to **System Settings > General** and click **Add License** on the **Support** widget. Copy your license and paste it into the **License** field, then click **Save License**.
 The **Reload** dialog opens. Click **Reload Now**. Controller A restarts, and displays the EULA for controller B. Sign the EULA agreement for controller B, and add the license.
