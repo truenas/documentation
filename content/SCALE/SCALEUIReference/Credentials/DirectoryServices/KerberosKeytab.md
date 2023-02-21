@@ -1,5 +1,6 @@
 ---
 title: "Kerberos Keytab"
+description: "This article provides information about Kerberos Keytabs configuration screen settings."
 geekdocCollapseSection: true
 weight: 60
 aliases:
@@ -7,6 +8,9 @@ aliases:
   - /scale/credentials/directoryservices/ldapscale/
   - /scale/credentials/directoryservices/idmapscale/
   - /scale/credentials/directoryservices/kerberosscale/
+tags:
+- scalekerberos
+- scaledirectoryservices
 ---
 
 {{< toc >}}
@@ -19,3 +23,5 @@ Click a **Kerberos Keytab** name to edit a Kerberos Realm, or click **Add** in t
 |---------|-------|
 | **Name** | Enter a name for this Keytab. |
 | **Kerberos Keytab** | Browse to the keytab file to upload. |
+
+{{< taglist tag="scaledirectoryservices" limit="10" title="Related Directory Services Articles" >}}
