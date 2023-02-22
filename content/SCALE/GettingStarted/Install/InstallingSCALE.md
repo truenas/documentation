@@ -15,12 +15,15 @@ tags:
 After you [download](https://www.truenas.com/download-tn-scale/) the <kbd>.iso</kbd> file, you can start installing TrueNAS SCALE!
 
 This article describes verifying the <kbd>.iso</kbd> file and installing SCALE using that file, and selecting the type of installation as either on [physical hardware](#installing-on-physical-hardware) or a [virtual machine (VM)](#installing-on-a-virtual-machine).
-{{< hint info >}}
-SCALE Enterprise customers should receive their systems already installed and ready for UI configuration. If there are any issues with SCALE that requires you to install or re-install SCALE on your TrueNAS server, contact iXsystems support for assistance.
-{{< /hint >}}
-{{< hint danger >}}
-Enterprise customers with High Availability (HA) systems should not attempt to re-install their systems on their own. The dual controller install process is complicated and the risk of causing serious network issues is high. Contact iXsystems support for assistance!
-{{< /hint >}}
+{{< enterprise >}}
+SCALE Enterprise customers should receive their systems already installed and ready for UI configuration. If there are any issues with SCALE that requires you to install or re-install SCALE on your TrueNAS server, contact iXsystems Support for assistance.
+
+Enterprise customers with High Availability (HA) systems should not attempt to re-install their systems on their own. The dual controller install process is complicated and the risk of causing serious network issues is high. Contact iXsystems Support for assistance!
+
+{{< expand "Contacting Support" "v" >}}
+{{< include file="static/includes/General/iXsystemsSupportContact.html.part" html="true" >}}
+{{< /expand >}}
+{{< /enterprise >}}
 
 ## ISO Verification
 The iXsystems Security Team cryptographically signs TrueNAS <kbd>.iso</kbd> files so that users can verify the integrity of their downloaded file.
@@ -155,7 +158,7 @@ If the system does not boot into TrueNAS SCALE, there are several things you can
 
 * Check the system BIOS and see if there is an option to change the **USB emulation** from **CD/DVD/floppy** to **hard drive**. 
   If it still does not boot, check to see if the card/drive is UDMA compliant.
-* Check to see if the system BIOS supports **EFI with BIOS emulation**, if not, see if it has an option to boot using **legacy BIOS mode**.
+* Check to see if the system BIOS supports **UEFI with BIOS emulation**, if not, see if it has an option to boot using **legacy BIOS mode**.
 
 * If the system starts to boot but hangs with this repeated error message: `run_interrupt_driven_hooks: still waiting after 60 seconds for xpt_config`, 
   go into the system BIOS and look for an onboard device configuration for a `1394 Controller`. If present, disable that device and try booting again.
@@ -180,7 +183,7 @@ Regardless of virtualization application, use these minimum settings:
 #### Networking Checks for VMWare
 
 When installing TrueNAS in a VMWare VM, double check the virtual switch and VMWare port group.
-A misconfigured virtual switch or VMWare port group can cause network connection errors for TrueNAS CORE systems with plugins or jails inside the TrueNAS VM.
+A misconfigured virtual switch or VMWare port group can cause network connection errors for TrueNAS systems with additional applications installed inside the TrueNAS VM.
 Enable **MAC spoofing** and **promiscuous mode** on the switch first, and then the port group the VM is using.
 
 {{< include file="static/includes/CORE/VirtualMachinesJailNetworking.md.part" markdown="true" >}}
@@ -304,4 +307,3 @@ The next step is to configure SCALE network and general settings. Experienced us
 
 {{< taglist tag="scaleinstall" limit="10" >}}
 {{< taglist tag="scaleupdate" limit="10" title="Related Update Articles" >}}
-{{< taglist tag="scalevm" limit="10" title="Related Virtual Machine Articles" >}}
