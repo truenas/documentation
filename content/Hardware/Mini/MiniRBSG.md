@@ -1,5 +1,6 @@
 ---
 title: "Mini R Basic Setup Guide"
+weight: 13
 ---
 
 <object data="https://truenas.com/docs/files/MiniRBSG1.0.pdf" type="application/pdf" width="95%" height="1000">
