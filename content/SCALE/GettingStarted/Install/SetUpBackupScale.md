@@ -125,9 +125,9 @@ After saving the system configuration, go to **System Settings > Advanced** and 
 
 ## Create a Boot Environment
 
-After installing and completing your SCALE system configuration, [create a boot enviroment]({{< relref "ManageBootEnvironSCALE.md" >}}) to use as a restore point.
-If an issue occurs where  you lose access to the SCALE UI, you can establish an SSH session and restore from the boot environment. 
-You can clone the boot environment listed after the initial/initial enviroment and rename the clone to something you recognize such as the release number with date and time.
+After installing and completing your SCALE system configuration, [create a boot environment]({{< relref "ManageBootEnvironSCALE.md" >}}) to use as a restore point.
+If an issue occurs where you lose access to the SCALE UI, you can establish an SSH session and restore it from the boot environment. 
+You can clone the boot environment listed after the initial/initial environment and rename the clone to something you recognize such as the release number with date and time.
 
 {{< taglist tag="scaleinstall" limit="10" >}}
 {{< taglist tag="scalebackup" limit="10" title="Related Backup Articles" >}}
