@@ -38,19 +38,19 @@ To update your Enterprise (HA) system to the latest SCALE release, log into the 
    If using admin, continue to the next step.
 
 5. Verify the system license after the update. Go to **System Settings > General**.
-   Verify the license information in screenshot of the **Support** widget taken before the update matches the information on the **Support** widget after updating the system.  
+   Verify the license information in the screenshot of the **Support** widget you took before the update matches the information on the **Support** widget after updating the system.  
 
 6. Verify the admin user settings, or if not created, [create the admin user]({{< relref "ManageLocalUsersSCALE.md" >}}) account now. 
    Sudo settings changed in 22.0.1. If you want the admin account to have the ability to execute sudo commands in an SSH session, select the option for the sudo access you want to allow. 
-   Also verify **Shell** is set to **bash** if you want the admin user to have the ability to execute commands in **Shell**. 
-   To set a location where the admin user can save to, browse to and select the dataset in **Home Directory**. If set to the default **/nonexistent** files are not saved for this user.
+   Also, verify **Shell** is set to **bash** if you want the admin user to have the ability to execute commands in **Shell**. 
+   To set a location where the admin user can save to, browse to, and select the dataset in **Home Directory**. If set to the default **/nonexistent** files are not saved for this user.
 
 7. Verify the SSH service settings. Go to **System Settings > Services**, then edit the **SSH** service. 
-   If you just created the admin user, select **Log In As Admin with Password** and clear the **Log In As Root with Password** checkbox. Click **Save**. Select **Start automatically**, which means this service automatically stars after a system reboot.
+   If you just created the admin user, select **Log In As Admin with Password** and clear the **Log In As Root with Password** checkbox. Click **Save**. Select **Start automatically**, which means this service automatically starts after a system reboot.
 
 8. Test the admin user access to the UI and to SSH if you just created it. 
    a. Log out of the UI. 
-   b. Enter the admin user credentials in the sign in splash screen. 
+   b. Enter the admin user credentials in the sign-in splash screen. 
    c. Start an SSH session and log into it with the admin credentials. 
    d. Test access by issuing the `zectl list` command. 
       This should display the list of boot environments. If nothing happens, try `sudo zectl list` and enter the admin password. 
