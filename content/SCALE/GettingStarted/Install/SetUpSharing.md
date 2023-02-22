@@ -22,7 +22,7 @@ TrueNAS SCALE provides four types of sharing methods, but this article only disc
 * NFS for Unix-like sharing
 * ISCSi block shares
 
-## Setting UP SMB for Windows
+## Setting up SMB for Windows
 
 To set up SMB sharing:
 
@@ -46,7 +46,7 @@ To set up SMB sharing:
       
       ![AddUserIdentificationSettings](/images/SCALE/22.12/AddUserIdentificationSettings.png "Add User Identification Settings")
       
-      ![AddUserUserIDAndGroupsSettings](/images/SCALE/22.12/AddUserUserIDAndGroupsSettings.png "Add User User Id an Groups Settings")
+      ![AddUserUserIDAndGroupsSettings](/images/SCALE/22.12/AddUser-UserIDAndGroupSettings.png "Add User User Id an Groups Settings")
           
    b. Enter the values in each required field, and then verify **Samba Authentication** is selected.
       
@@ -98,7 +98,7 @@ To set up SMB sharing:
 
    c. Begin browsing the dataset.
 
-## Setting UP NFS for Unix-Like Share
+## Setting up NFS for Unix-Like Shares
 
 To set up NFS sharing:
 
@@ -145,7 +145,7 @@ To set up NFS sharing:
 
 7. From here, `cd` into the local directory and view or modify the files as needed.
 
-## Setting Up an ISCSi Block Share
+## Setting up an iSCSI Block Share
 
 Setting up block sharing is a complicated scenario that requires detailed configuration steps and knowledge of your network environment.
 A simple configuration is beyond the scope of this getting started guide, but detailed articles are available in the SCALE Tutorials section under Shares.

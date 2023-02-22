@@ -136,7 +136,7 @@ When you add data sharing the system prompts you to enable the appropriate shari
 If your installation includes a UPS, configure and enable the UPS service as well.
 {{< /expand >}}
 
-### Setting up SMART Testing
+### Setting Up SMART Testing
 All systems can take advantage of the SMART service and testing if your disks support this service. 
 Disks that do not support SMART testing do not display the option to set up testing.
 
@@ -168,7 +168,7 @@ After saving both files, we recommend you set up snapshots, replication, or a cl
 TrueNAS SCALE provides options to back up your stored data:
 * Snapshots and periodic snapshot tasks
 * Replication to another system
-* Cloud storage provider options and cloud sycn tasks 
+* Cloud storage provider options and cloud sync tasks 
 
 You can take single [snapshots]({{< relref "CreatingSnapshots.md" >}}) or [schedule snapshot tasks]({{< relref "PeriodicSnapshotTasksSCALE.md" >}} to capture changes to stored data without the storage overhead that comes with backing up through data replication, or you can use one of the [replication options]({{< relref "/SCALE/SCALETutorials/DataProtection/Replication/_index.md" >}}) SCALE provides.
 
@@ -206,7 +206,6 @@ If using SCALE on servers not provided by TrueNAS, the main **System Information
 
 ## Using Applications in SCALE
 SCALE provides a list of applications you can deploy on the **Apps > Available Applications** screen.
-SCALE Enterprise only offers MinIO as an available application.
 
 You can deploy an application using the **Custom Install** option.
 

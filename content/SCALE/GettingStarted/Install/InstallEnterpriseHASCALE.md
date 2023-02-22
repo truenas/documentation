@@ -3,7 +3,7 @@ title: "Installing SCALE Enterprise (HA)"
 description: "This article provides a sequential process to complete the installation of a SCALE Enterprise (HA) dual controller system using an iso file and the SCALE UI."
 weight: 16
 aliases:
-tags:
+tag:
 - scaleinstall
 - scaleenterprise
 ---
@@ -210,5 +210,5 @@ When the system comes back up, log into SCALE using the virtual IP address. The 
 ![HAMainDashboard](/images/SCALE/22.12/HAMainDashboard.png "Main Dashboard for HA Systems")
 {{< /expand >}}
 
-{{< taglist tag="scaleinstall" title="Related Installation Articles" >}}
-{{< taglist tag="scaleenterprise" title="Related Enterprise Articles" >}}
+{{< taglist tag="scaleinstall" title="Related Installation Articles" limit="20" >}}
+{{< taglist tag="scaleenterprise" title="Related Enterprise Articles" limit="20" >}}

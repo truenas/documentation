@@ -158,7 +158,7 @@ If the system does not boot into TrueNAS SCALE, there are several things you can
 
 * Check the system BIOS and see if there is an option to change the **USB emulation** from **CD/DVD/floppy** to **hard drive**. 
   If it still does not boot, check to see if the card/drive is UDMA compliant.
-* Check to see if the system BIOS supports **EFI with BIOS emulation**, if not, see if it has an option to boot using **legacy BIOS mode**.
+* Check to see if the system BIOS supports **UEFI with BIOS emulation**, if not, see if it has an option to boot using **legacy BIOS mode**.
 
 * If the system starts to boot but hangs with this repeated error message: `run_interrupt_driven_hooks: still waiting after 60 seconds for xpt_config`, 
   go into the system BIOS and look for an onboard device configuration for a `1394 Controller`. If present, disable that device and try booting again.
@@ -307,4 +307,3 @@ The next step is to configure SCALE network and general settings. Experienced us
 
 {{< taglist tag="scaleinstall" limit="10" >}}
 {{< taglist tag="scaleupdate" limit="10" title="Related Update Articles" >}}
-{{< taglist tag="scalevm" limit="10" title="Related Virtual Machine Articles" >}}
