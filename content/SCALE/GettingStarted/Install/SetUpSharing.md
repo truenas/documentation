@@ -1,6 +1,6 @@
 ---
 title: "Setting Up Data Sharing"
-description: "This article provides general information on setting up basci data sharing on TrueNAS SCALE."
+description: "This article provides general information on setting up basic data sharing on TrueNAS SCALE."
 weight: 50
 tags:
 - scaleinstall
