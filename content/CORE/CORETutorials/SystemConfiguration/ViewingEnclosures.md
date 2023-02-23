@@ -34,4 +34,8 @@ You can rename a system by clicking **EDIT LABEL**.
 
 In the **Disks** tab, select a disk on the enclosure image and click **IDENTIFY DRIVE**. The drive LED on the physical system flashes so you can find it.
 
+{{< hint info >}}
+The TrueNAS Mini Series models do not support drive light identification. 
+{{< /hint >}}
+
 {{< taglist tag="corehardware" limit="10" >}}
