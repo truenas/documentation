@@ -1,5 +1,5 @@
 ---
-title: "Alert Settings Screen"
+title: "Alert Settings Screens"
 description: "The Alert Settings screen allows users to set the warning levels and frequencies of alerts."
 weight: 10
 tags:
@@ -55,7 +55,20 @@ You can customize alert settings for when the CTDB (clustered trivial database) 
 
 You can customize alert settings for when the Active Directory bind is unhealthy, Active Directory domain validation fails, the domain is offline, and the LDAP bind bind is unhealthy.
 {{< /expand >}}
+### High Availability Settings 
+{{< enterprise >}}
+This section only applies to TrueNAS Enterprise hardware.
 
+**High Availability** alert settings apply to TrueNAS Enterprise HA systems and only displays on the list of alerts for dual-controller High-Availability systems with an Enterprise license applied.
+{{< expand "Click here for more information" >}}
+
+![AlertSettingsHA1](/images/SCALE/22.12/AlertSettingsHA1.png "High Availability Alert Settings 1")
+
+![AlertSettingsHA2](/images/SCALE/22.12/AlertSettingsHA2.png "High Availability Alert Settings 2")
+
+You can customize alert settings for when an automatic sync to peer fails, disks are missing on the active and/or standby controller, the system fails to check failover status with the other controller, syncing operations fail such as encryption keys to peer and KMIP keys to peer, the failover interface is not found, and when a failover action fails.
+{{< /expand >}}
+{{< /enterprise >}}
 ### Hardware Alert Settings
 **Hardware** alert settings apply to the IPMI network connections, and S.M.A.R.T. and smartd that monitors the hard drives installed on your TrueNAS system.
 {{< expand "Click here for more information" >}}
@@ -116,7 +129,9 @@ You can also customize alerts for when NTLMv1 attempts authentication in the las
 **Storage** alert settings apply to quotas, pools, snapshots, and scrub processes on your TrueNAS.
 {{< expand "Click here for more information" >}}
 
-![AlertSettingsStorage](/images/SCALE/22.12/AlertSettingsStorage.png "Storage Alert Settings")
+![AlertSettingsStorage1](/images/SCALE/22.12/AlertSettingsStorage1.png "Storage Alert Settings 1")
+
+![AlertSettingsStorage2](/images/SCALE/22.12/AlertSettingsStorage2.png "Storage Alert Settings 2")
 
 You can customize alert settings for when a dataset exceeds standard and critical quotas, a pool has new available feature flags, pool space usage exceeds 70, 80, or 90 percent, and pool status is not healthy. 
 
@@ -127,7 +142,9 @@ You can change alert settings for when a pool consumes USB disks, a scrub pauses
 **System** alert settings apply to system processes, the system dataset, TrueCommand API Key, SSH logins, system reboots, updates, and the web interface.
 {{< expand "Click here for more information" >}}
 
-![AlertSettingsSystem](/images/SCALE/22.12/AlertSettingsSystem.png "System Alert Settings")
+![AlertSettingsSystem1](/images/SCALE/22.12/AlertSettingsSystem1.png "System Alert Settings 1")
+
+![AlertSettingsSystem2](/images/SCALE/22.12/AlertSettingsSystem2.png "System Alert Settings 2")
 
 You can customize alert settings for when the admin user is overriden, the boot pool is unhealthy, the system dataset has core files, a device slows down pool I/O, NTP health checks fail, and TrueCommand API keys are disabled or need confirmation.
 
@@ -138,7 +155,9 @@ You can also change alert settings for when SSH logins fail, the system is not r
 **Task** alert settings apply to cloud sync, VMWare snapshots, replication, rsync, scrub and snapshot tasks scheduled on your TrueNAS.
 {{< expand "Click here for more information" >}}
 
-![AlertSettingsTasks](/images/SCALE/22.12/AlertSettingsTasks.png "Task Alert Settings")
+![AlertSettingsTasks1](/images/SCALE/22.12/AlertSettingsTasks1.png "Task Alert Settings 1")
+
+![AlertSettingsTasks2](/images/SCALE/22.12/AlertSettingsTasks2.png "Task Alert Settings 2")
 
 You can customize alert settings for when cloud sync tasks, VMWare snapshot creation, login, and deletion, replication, rsync tasks, scrubs, and snapshot tasks fail in general or due to locked datasets.
 

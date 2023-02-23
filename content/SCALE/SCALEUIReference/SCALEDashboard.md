@@ -1,9 +1,11 @@
 ---
 title: Main Dashboard
-description: "This article provides information on the main Dashboard information cards (widgets) and includes basic instructions on synchronizing system server and SCALE time, and customizing the display by moving, adding, or removing the widgets."
+description: "This article provides information on the main **Dashboard** information cards (widgets), and includes basic instructions on synchronizing system server and SCALE time, and on customizing the display by moving, adding, or removing the widgets."
 weight: 3
 tags:
 - scaletimesync
+- scaleenterprise
+- scaledashboard
 ---
 
 {{< toc >}}
@@ -62,7 +64,7 @@ If TrueNAS SCALE time gets out of sync with the system server time, the **System
 |-------|-------------|
 | **Platform** | Displays **Generic** for customer-provided server and hardware, and a TrueNAS logo displays to the left of the **System Information** fields. <br> Displays the TrueNAS model number for the iXsystems-provided server and hardware, and a picture of the server displays in the area to the left of the fields. |
 | **Version** | Displays the currently-installed software release of TrueNAS SCALE. Use the clipboard <span class="material-icons-outlined">assignment</span> icon to display the full name of the release installed and to copy the version to the clipboard. |
-| **HostName** | Displays the host name for the TrueNAS system. Configure the host name i on the **Network > Global Configuration** screen. |
+| **HostName** | Displays the host name for the TrueNAS system. Configure the host name is on the **Network > Global Configuration** screen. |
 | **Uptime** | Displays the number of consecutive days and the number of hours and minutes the system has run since the last reboot. |
 | **Updates Available** | Click to display the **System Update** screen. You can also display the **System Update** screen by selecting **System > Updates** on the main menu panel on the left side of the screen. |
 | **Synchronize Time** <span class="material-icons">loop</span> | Executes a time-synchronization operation to bring the system server and TrueNAS SCALE time into alignment when time gets out of sync. This operation is not designed to correct time that is weeks out of sync, and only displays when the system and SCALE time are out of sync. |
@@ -82,7 +84,7 @@ It also details the number **Cores** as ***x* cores (*y* threads)**, the **Highe
 ### Memory Widget
 The **Memory** widget displays information on the system memory. 
 {{< expand "Click here for more information" "v" >}}
-The widget displays a spinner showing the GiB **Free** in blue, **ZFS Cache** in fuchia pink, and **Services** in orange. 
+The widget displays a spinner showing the GiB **Free** in blue, **ZFS Cache** in fuchsia pink, and **Services** in orange. 
 
 ![DashboardMemoryWidget](/images/SCALE/22.02/DashboardMemoryWidget.png "Dashboard Memory Widget")
 
@@ -112,7 +114,7 @@ Click the <span class="material-icons-outlined">edit</span> to display the **Net
 ### Storage and Pool Widgets
 The **Storage** widget displays information on the root and other storage pools configured on your system.
 {{< expand "Click here for more information" "v" >}}
-The **Storage** widget displays the root pool status, path, and the number of vdevs configured. It also displays the percentage of space it uses, is free and any caches.
+The **Storage** widget displays the root pool status, path, and the number of VDEVs configured. It also displays the percentage of space it uses, is free and any caches.
 It also reports on the number disks with errors, the total number of disks the root pool uses and if a spare exists.
 
 ![DashboardStorageWidget](/images/SCALE/22.02/DashboardStorageWidget.png "Dashboard Storage Widget")
@@ -124,15 +126,15 @@ The **Pool** widget displays information on a single storage pool.
 {{< expand "Click here for more information" "v" >}}
 You can use the **Dashboard Configuration** panel to add a pool widget for each pool you want to include on the **Dashboard**.
 The **Pool** widget displays the total number of disks, pool status and space used by the pool this widget reports on. 
-It also provides the mount path, available space, number of data vdevs, caches, spares and logs configured for this pool.
+It also provides the mount path, available space, number of data VDEVs, caches, spares and logs configured for this pool.
  
 ![DashboardPoolWidget](/images/SCALE/22.02/DashboardPoolWidget.png "Dashboard Pool Widget")
 
 Click on the <span class="iconify" data-icon="clarity:storage-solid"></span> icon to display the **Storage > Pool Status** screen.
 
-Click on the <span class="material-icons-outlined">arrow_forward_ios</span> to display the details on the vdevs.
+Click on the <span class="material-icons-outlined">arrow_forward_ios</span> to display the details on the VDEVs.
 
-![DashboardPoolVDevWidget](/images/SCALE/22.02/DashboardPoolVDevWidget.png "Dashboard Pool Vdev Widget")
+![DashboardPoolVDevWidget](/images/SCALE/22.02/DashboardPoolVDevWidget.png "Dashboard Pool VDEV Widget")
 
 {{< /expand >}}
 
@@ -144,3 +146,4 @@ The **TrueNAS Help** widget displays links to the TrueNAS Documentation Site and
 Click on each link to open it in a new browser tab.
 
 {{< taglist tag="scaletimesync" limit="10" >}}
+{{< taglist tag="scaledashboard" limit="10" title="Related Dashboard Articles" >}}
