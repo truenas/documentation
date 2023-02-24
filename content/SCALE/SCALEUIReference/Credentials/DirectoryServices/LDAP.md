@@ -47,9 +47,9 @@ The settings on the **Basic Options** also display on the **[Advanced Option](#l
 {{< /expand >}}
 ### LDAP Screen - Advanced Options
 The settings on the **Advanced Options** screen include the **[Basic Options](#ldap-screen---basic-options)** screen. 
-{< expand "Advanced Option Settings" "v" >}}
+{{< expand "Advanced Option Settings" "v" >}}
 
-![LDAPAdvancedOptionsSettings](/images/SCALE/22.12/LDAPAdvancedOptionsSetting.png "LDAP Screen Advanced Options")
+![LDAPAdvancedOptionsSettings](/images/SCALE/22.12/LDAPAdvancedOptionsSettings.png "LDAP Screen Advanced Options")
 
 | Setting | Description |  
 |---------|-------------|  
@@ -69,5 +69,6 @@ The settings on the **Advanced Options** screen include the **[Basic Options](#l
 {{< hint warning >}} 
 **DEPRECATED:** Samba Schema support is deprecated in Samba 4.13. We will remove this feature after Samba 4.14. Users should begin upgrading legacy Samba domains to Samba AD domains. 
 {{< /hint >}}
+{{< /expand >}}
 
 {{< taglist tag="scaleldap" limit="10" >}}
