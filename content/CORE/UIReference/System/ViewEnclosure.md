@@ -14,7 +14,9 @@ To learn more about available iXsystems products, see the [TrueNAS Systems Overv
 
 Click an enclosure to show details about that hardware. 
 
-![System View Enclosure ES102](/images/CORE/12.0/SystemViewEnclosureES102.png "System View Enclosure ES102")
+![System View Enclosure ES102](/images/CORE/12.0/SystemViewEnclosureES102.png "System View Enclosure ES102") 
+
+Depending on the level of compatibility of the hardware within your TrueNAS system, some of the categories listed below may not be available.
 
 | Name | Description |
 |------|------|
@@ -28,6 +30,10 @@ Click an enclosure to show details about that hardware.
 | EDIT LABEL | Renames the selected enclosure. |
 | SHOW POOLS | Highlights disks in pools. |
 | SHOW STATUS | Highlights failed disks. |
-| SHOW EXPANDER STATUS| Shows SAS expander statuses. |
+| SHOW EXPANDER STATUS| Shows SAS expander statuses. | 
+
+{{< hint info >}}
+The TrueNAS Mini Series models do not support drive light identification. 
+{{< /hint >}}
 
 {{< taglist tag="corehardware" limit="10" >}}
