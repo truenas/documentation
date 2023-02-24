@@ -44,8 +44,8 @@ The edit version of the **Basic Options** screen only includes the **Domain Name
 |---------|-------------|
 | **Domain Name** | (Required) Enter the Active Directory domain (example.com) or child domain (sales.example.com). Editable after save. |
 | **Domain Account Name** | (Required) Enter the Active Directory administrator account name. Not editable after you save. |
-| **Domain Account Password** | (Required) Password for the Active Directory administrator account. Required the first time you configure a domain. After initial configuration, the password is not needed to edit, start, or stop the service. |
-| **Enable (requires password or Kerberos principal)** | Select to enable the Active Directory service. Clear to disable Active Directory. SCALE creates a Kerberos realm and keytab from what it detects in Active Directory, then populates the **Kerberos Realm** and **Kerberos Principal** settings on the **Advanced Options** screen. |
+| **Domain Account Password** | (Required) Password for the Active Directory administrator account. Required the first time you configure a domain. After initial configuration, the password is not needed to edit, start, or stop the service. After the initial configuration or joining, SCALE uses the **Kerberos Principal** instead of the password. |
+| **Enable (requires password or Kerberos principal)** | Select to enable the Active Directory service. Clear to disable Active Directory. After disabling Active Directory, the **[Directory Services]({{< relref "/SCALE/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}})** screen returns to the default and provides the options to configure AD or LDAP. SCALE creates a Kerberos realm and keytab from what it detects in Active Directory, then populates the **Kerberos Realm** and **Kerberos Principal** settings on the **Advanced Options** screen. |
 {{< /expand >}}
 
 ### Active Directory Advanced Options
