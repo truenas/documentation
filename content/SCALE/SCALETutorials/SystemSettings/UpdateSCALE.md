@@ -13,7 +13,7 @@ TrueNAS has several software branches (linear update paths) known as trains. SCA
 
 SCALE has several trains available for updates. However, the web interface only displays trains you can select as an upgrade. To view a list of the available trains, click on the arrow to the right of your current train.
 
-![ListUpdateTrainSCALE](/images/SCALE/22.02/ScaleTrainSelection.png "Access Scale Update Trains")
+![ListUpdateTrainSCALE](/images/SCALE/22.02/ScaleTrainSelection.png "Access SCALE Update Trains")
 
 For more information on other available trains, see [TrueNAS Upgrades](https://www.truenas.com/docs/truenasupgrades/).
 
@@ -34,7 +34,7 @@ Update during scheduled maintenance times to avoid disrupting user activities.
 All auxiliary parameters are subject to change between major versions of TrueNAS due to security and development issues. We recommend removing all auxiliary parameters from TrueNAS configurations before upgrading.
 {{< /hint >}}
 
-![UpdateTrainSCALE](/images/SCALE/22.02/ScaleUpdateTrain.png "Scale Update Train")
+![UpdateTrainSCALE](/images/SCALE/22.02/ScaleUpdateTrain.png "SCALE Update Train")
 
 ## Automatic
 
