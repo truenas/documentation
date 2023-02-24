@@ -122,7 +122,7 @@ To restore the data within a snapshot, the recommended steps are:
 
 This approach does not destroy any on-disk data or impact replication.
 
-TrueNAS asks for confirmation before rolling back to the chosen snapshot state. Select the [radio button]({{< relref "SnapshotsScreens.md >}}) for how you want the rollback to operate.
+TrueNAS asks for confirmation before rolling back to the chosen snapshot state. Select the [radio button]({{< relref "SnapshotsScreens.md" >}}) for how you want the rollback to operate.
 
 ![DatasetRollbackFromSnapshotWindow](/images/SCALE/22.12/DatasetRollbackFromSnapshotWindow.png "Dataset Rollback from Snapshot")
 
