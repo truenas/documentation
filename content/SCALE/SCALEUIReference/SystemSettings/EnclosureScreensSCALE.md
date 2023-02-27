@@ -56,6 +56,9 @@ Click on a drive image to display a screen with information that drive. Disk dri
 **Identify Drive** on disk detail screens turns on the LED indicator located on a physical drive bay in the system server. 
 This helps to identify the physical drive bay that corresponds to the SCALE identification number for that drive. 
 Select the drive on the image and then click **Identify Drive**. Go to the location of the system server to locate the drive bay with the LED indication turned on then check the drive location on the **View Enclosure** screen.
+{{< hint info >}}
+The disk image for the Mini-R and R30 systems does not include the **Identify Drive** option as they have all flash drives that do not support this function. 
+{{< /hint >}}
 
 ### Mini Enclosure Screen Example
 TrueNAS Mini systems only display the front view of the system hardware.
