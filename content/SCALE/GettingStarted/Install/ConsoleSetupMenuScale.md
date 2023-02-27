@@ -7,7 +7,6 @@ aliases:
 tags:
 - scaleinstall
 - scalenetwork
-- scaleinterface
 - scaleconsole
 ---
 
@@ -97,7 +96,7 @@ We recommend that only experienced administrators familiar with network configur
 The TrueNAS SCALE UI includes safety measures to prevent you from completely disrupting network connectivity for your TrueNAS SCALE if you make a mistake with network interface settings.
 {{< /hint >}}
 
-To use CLI commands, enter `7` to open a Linux shell and then enter commands.
+To use CLI commands, enter `7` to open a Linux shell and then enter commands. 
 
 Enter <kbd>1</kbd> to display the **Configure Network Interfaces** screen where you can select the interface settings. 
 
