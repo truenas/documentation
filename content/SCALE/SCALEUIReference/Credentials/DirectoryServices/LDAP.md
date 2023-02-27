@@ -55,14 +55,14 @@ The settings on the **Advanced Options** screen include the **[Basic Options](#l
 |---------|-------------|  
 | **Allow Anonymous Binding** | Select to enable the LDAP server to disable authentication and allow read and write access to any client. |
 | **Encryption Mode** | Select the options for encrypting the LDAP connection from the dropdown list. <br> <br>Select **OFF** to not encrypt the LDAP connection. <br>Select **ON** to encrypt the LDAP connection with SSL on port 636. <br>Select **START_TLS** to encrypt the LDAP connection with STARTTLS on the default LDAP port *389*. |
-| **Certificate** | Select the certificate to use when performing LDAP certificate-based authentication. To configure LDAP certificate-based authentication, create a Certificate Signing Request for the LDAP provider to sign. TrueNAS does not need a certificate when using username/password or Kerberos authentication. To configure LDAP certificate-based authentication, [create a Certificate Signing Request]({{< relref "CertificatesSCALE.md" >}}) for the LDAP provider to sign. |
+| **Certificate** | Select the certificate to use when performing LDAP certificate-based authentication.  To configure LDAP certificate-based authentication, [create a Certificate Signing Request]({{< relref "CertificatesSCALE.md" >}}) for the LDAP provider to sign. TrueNAS does not need a certificate when using username/password or Kerberos authentication.  |
 | **Validate Certificates** | Select to verify certificate authenticity. |
 | **Disable LDAP User/Group Cache** | Select to disable caching LDAP users and groups in large LDAP environments. When caching is disabled, LDAP users and groups do not appear in drop-down menus but are still accepted when manually entered. |
 | **Kerberos Realm** | Select an existing realm from **Kerberos Realms**. |
 | **Kerberos Principal** | Select the location of the principal in the keytab created in **Kerberos Keytab**. |
 | **LDAP Timeout** | Enter the number of seconds for the LDAP timeout. Increase this value if a Kerberos ticket timeout occurs. |
 | **DNS Timeout** | Enter the number of seconds for the DNS timeout. Increase this value if DNS queries timeout. |
-| **Samba Schema (DEPRECATED - see help text)** | Only select if you configured the LDAP server with Samba attributes and it requires LDAP authentication for SMB shares. |
+| **Samba Schema (DEPRECATED - see help text below)** | Only select if you configured the LDAP server with Samba attributes and it requires LDAP authentication for SMB shares. |
 | **Auxiliary Parameters** | (Optional - only experienced users) Specify additional options for [nslcd.conf](https://arthurdejong.org/nss-pam-ldapd/nslcd.conf.5). |
 | **Schema** | Select the schema to use with Samba Schema. |
 
