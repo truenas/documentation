@@ -13,11 +13,15 @@ FTP connections cannot share connections with other accounts, such as SMB connec
 
 Go to **Storage > Pools** to add a new dataset.
 
-![StoragePoolsImportPools](/images/CORE/13.0/StoragePoolsImportPools.png "Adding a new Dataset")
+![StoragePoolsAddDataset2](/images/CORE/13.0/StoragePoolsAddDataset2.png "Adding a New Dataset")
+
+See [Creating Datasets]({{< relref "CORE/CORETutorials/Storage/Pools/Datasets.md" >}}) for information on how to create the dataset. After this step is completed, the new dataset appears nested beneath the pool.
+
+![StorageAllPoolsDataset](/images/CORE/13.0/StorageAllPoolsDataset.png "New Dataset Listed")
 
 Next, go to **Accounts > Users > Add** to create a local user on the TrueNAS.
 
-![AccountsUsersAdd](/images/CORE/12.0/AccountsUsersAdd.png "Adding a new User Account")
+![AddUserNamedCORE](/images/CORE/13.0/AddUserNamedCORE.png "Adding a New User Account")
 
 Assign a user name and password. Link the new dataset for the FTP share as the home directory of the user.
 Link the new dataset for the FTP share on a per user basis, or create a global account for FTP. Example: OurOrgFTPacnt, etc.
@@ -26,13 +30,13 @@ Return to **Storage > Pools**, find the new dataset, and click <i class="materia
 In the **Owner** fields, select the new user account as the **User** and **Group** from the dropdown list. 
 Be sure to select **Apply User** and **Apply Group** before saving.
 
-![StoragePoolsEditPermissionsBasic](/images/CORE/12.0/StoragePoolsEditPermissionsBasic.png "Basic Permissions Editor")
+![StoragePoolsEditPermissionsCORE](/images/CORE/13.0/StoragePoolsEditPermissionsCORE.png "Basic Permissions Editor")
 
 ### Service Configuration
 
 To configure FTP, go to the **Services** page, find the **FTP** entry, and click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
 
-![Services FTP Options](/images/CORE/12.0/ServicesFTPOptions.png "Services FTP Options")
+![FTPServicesGeneralCORE](/images/CORE/13.0/FTPServicesGeneralCORE.png "Services FTP Options")
 
 Configure the options according to your environment and security considerations. See [FTP Screen]({{< relref "/CORE/UIReference/Services/FTPScreen.md" >}})
 

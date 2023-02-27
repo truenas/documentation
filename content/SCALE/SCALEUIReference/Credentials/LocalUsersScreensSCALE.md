@@ -15,12 +15,12 @@ tags:
 
 The **Credentials > Users** screen displays a list of user accounts added to the system. By default built-in users except for **root** are hidden until you make them visible.
 
-![UsersScreen](/images/SCALE/22.12/UsersScreen.png "Local User non-Built-in Accounts") 
+![AllUsersScreenSCALE](/images/SCALE/22.12/AllUsersScreenSCALE.png "Local User non-Built-in Accounts") 
 
 **Toggle Build-In Users** displays either the **Show Built-In Users** or **Hide Built-in Users** dialogs based on the current **Users** list view. 
 If built-in users are hidden, the **Show Built-in Users** dialog opens. Click **Show** to display the hidden list of users. 
 
-![UserScreenWithBuiltinUsers](/images/SCALE/22.12/UserScreenWithBuiltinUsers.png "Local User Built-in Accounts") 
+![AllUsersScreenBuiltInSCALE](/images/SCALE/22.12/AllUsersScreenBuiltInSCALE.png "Local User Built-in Accounts") 
 
 To hide the built-in users, click **Toggle Built-In Users** again to open the **Hide Built-in Users** dialog. Click **Hide** to only display non-built-in users again.
 
@@ -62,7 +62,7 @@ Built-in users (except the **root** user) do not include the **Home Directory Pe
 **User ID and Group** settings specify the user ID and groups this user belongs to.
 {{< expand "Click Here for More Information" "v" >}}
 
-![AddUser-UserIDAndGroupSettings](/images/SCALE/22.12/AddUser-UserIDAndGroupSettings.png "Add User User Id an Groups Settings") 
+![AddUser-UserIDAndGroupSettings](/images/SCALE/22.12/AddUser-UserIDAndGroupSettings.png "Add User User ID and Groups Settings") 
 
 | Setting | Description |
 |---------|-------------|
@@ -77,7 +77,7 @@ Built-in users (except the **root** user) do not include the **Home Directory Pe
 **Directory and Permissions** settings specify the user home directory and the permissions for that home directory.
 {{< expand "Click Here for More Information" "v" >}}
 
-![EditUserDirectoriesPermSCALE](/images/SCALE/22.12/EditUserDirectoriesPermSCALE.png "Edit User Directories, Permissions and Authentication Settings") 
+![AddUserDirPermAuthSCALE](/images/SCALE/22.12/AddUserDirPermAuthSCALE.png "Add User Directories, Permissions and Authentication Settings") 
 
 | Setting | Description |
 |---------|-------------|
@@ -89,14 +89,18 @@ Built-in users (except the **root** user) do not include the **Home Directory Pe
 **Authentication** settings specify authentication methods, the public SSH key, user administration access, and enables/disables password authentication. It also covers the Shell options.
 {{< expand "Click Here for More Information" "v" >}}
 
-![EditUserAuthentication](/images/SCALE/22.12/EditUserAuthentication.png "Edit User Directories, Permissions and Authentication Settings") 
+![AddUserDirPermAuthSCALE](/images/SCALE/22.12/AddUserDirPermAuthSCALE.png "Add User Directories, Permissions and Authentication Settings") 
 
 | Setting | Description |
 |---------|-------------|
-| **Authorized Keys** | Enter or paste the downloaded SSH public key of the user for any key-based authentication. Use **Download SSH Public Key** to obtain a public key text file. Keep a backup copy of the public key! Do not paste the private key in this field! |  
+| **Authorized Keys** | Enter or paste the downloaded SSH *public* key of the user for any key-based authentication. Use **Download Authorized Keys** to obtain a public key text file. Keep a backup copy of the public key! Do not paste the private key in this field! | 
+| **Upload SSH Key** | Browse to the public key text file. |  
 | **Shell** | Select the [shell](#shell-options) to use for local and SSH logins from the dropdown list. Options are **bash**, **rbash**, **dash**, **sh**, **zsh**, **tmux** and **nologin**. |  
 | **Lock User** | Select to prevent the user from logging in or using password-based services until you clear this checkbox. Locking an account is only possible when **Disable Password** is set to **No** and the account has a created password in **Password**. |  
-| **Permit Sudo** | Select to give this user administrator permissions and the ability to use [sudo](https://www.sudo.ws/). When using sudo, a user is prompted for their account password. |  
+| **Allowed sudo commands** | Enter specific [sudo](https://www.sudo.ws/) commands allowed for this user, grants administrator permissions for this user when using these commands. When using sudo, a user is prompted for their account password. |
+| **Allow all sudo commands** | Select to give this user administrator permissions and the ability to use all [sudo](https://www.sudo.ws/) commands. When using sudo, a user is prompted for their account password. | 
+| **Allowed sudo commands with no password** | Enter specific [sudo](https://www.sudo.ws/) commands allowed with no password required for this user, grants administrator permissions for this user when using these commands. |
+| **Allow all sudo commands with no password** | Select to give this user administrator permissions and the ability to use all [sudo](https://www.sudo.ws/) commands with no password required. |
 | **Samba Authentication** | Select to allow this user to authenticate to and access data share with [SMB]({{< relref "/SCALE/SCALETutorials/Shares/SMB/AddSMBShares.md" >}}) samba shares. |  
 | **Download Authorized Keys** | Click to generate and download a public key text file. Displays on the **Edit User** screen. |  
 
