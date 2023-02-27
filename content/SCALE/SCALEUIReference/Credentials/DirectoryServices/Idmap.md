@@ -36,11 +36,11 @@ The **Idmap** widget header opens the **Idmap** screen.
 
 The **Idmap** screen displays a list view of idmaps configured on your SCALE system.
 
-![IdmapScreen](/images/SCALE/22.12/IdmapScreenn.png "Idmap Screen")
+![IdmapScreen](/images/SCALE/22.12/IdmapScreen.png "Idmap Screen")
 
 **Add** opens the **Add Idmap** screen.
 
-The <span class="material-icons">edit</span> opens the **Edit Idmap** screen for the selected idmap. 
+Click on an Idmap on the widget to open the screen for the selected idmap. 
 
 ## Add and Edit IDMAP Screens
 The settings on the **Add Idmap** and **Edit Idmap** change based on the selection made in both the **Name** and **Idmap Backend** fields. 

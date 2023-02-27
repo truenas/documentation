@@ -1,6 +1,6 @@
 ---
 title: "Kerberos Realms Screens"
-description: "This article provides information on the **Kerberos Realms** widtet and configuration screen settings."
+description: "This article provides information on the **Kerberos Realms** widget and configuration screen settings."
 weight: 50
 aliases:
   - /scale/credentials/directoryservices/activedirectoryscale/
@@ -45,7 +45,7 @@ The settings found on the **Add Kerberos Realm** and **Edit Kerberos Realm** scr
 
 | Setting | Description |
 |---------|-------|
-| **Realm** | (Required) Enter the name of the realm as a domain name, ror example, *example.com*. AD configured SCALE systems pre-populate this field with the required information. |
+| **Realm** | (Required) Enter the name of the realm as a domain name, For example, *example.com*. AD configured SCALE systems pre-populate this field with the required information. |
 | **KDC** | Enter the name of the Key Distribution Center (KDC).The KDC acts as as the third-party authentication service for Kerberos. Separate multiple values by pressing <kbd>Enter</kbd>. For example, *kdc1.example.com* press <kbd>Enter</kbd> then *kdc2.example.com*. |
 | **Admin Server** | Define the server that performs all database changes. Separate multiple values by pressing <kbd>Enter</kbd>. |
 | **Password Server** | Define the server that performs all password changes. Separate multiple values by pressing <kbd>Enter</kbd>. |
