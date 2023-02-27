@@ -17,7 +17,7 @@ tags:
 ## LDAP Widget
 
 The **LDAP** widget displays after you configure SCALE settings for your LDAP instance. 
-The widget includes **Status**, and the **HostName** and **Base DN** and **Bind DN** you configured.   
+The widget includes **Status**, and the **Hostname** and **Base DN** and **Bind DN** you configured.   
 
 ![LDAPwidgett](/images/SCALE/22.12/LDAPwidget.png "LDAP Widget") 
 
