@@ -30,19 +30,7 @@ To configure an AD connection, you must know the AD controller domain and the AD
 
 Users can take a few steps before configuring Active Directory (AD) to ensure the connection process goes smoothly.
 
-1. Locate the Relative Distinguished Name (RDN) of the site object. 
-   This is the first component of the distinguishedName property configured in AD.
-   {{< expand "Need AD Help?" "v" >}}
-   To locate the distinguished name: 
-
-   1. Log into AD.
-   2. Click on **View** and select **Advanced Features**.
-   3. Navigate to and right-click on the organizational unit (OU) where you want to read users, service or computer accounts, then select **Properties**.
-   4. Select the **Attribute Editor** tab on the **OU Properties** window.
-   5. Click on **distinguishedName** to highlight it then click **View**.
-   {{< /expand >}}
-
-2. Obtain the AD admin account name and password.  
+1. Obtain the AD admin account name and password.  
 
 3. [Verify name resolution](#verifying-name-resolution)
 
@@ -54,17 +42,17 @@ After taking these actions, you can [connect to the Active Directory domain](#co
 
 To confirm that name resolution is functioning, you can use the **Shell** and issue a `ping` command and a command to check network SRV records and verify DNS resolution.
 
-To use `ping` to verify name resolution:
+To use `dig` to verify name resolution and return DNS information:
 
-1. Go to **System Settings > Shell** and type `ping` to check the connection to the AD domain controller. 
+1. Go to **System Settings > Shell** and type `dig` to check the connection to the AD domain controller. 
    The domain controller manages or restricts access to domain resources by authenticating user identity from one domain to the other through a login credentials, and it prevents unauthorized access to these resources. The domain controller applies security policies to request-for-access domain resources.
 
-   ![ShellDomainPingSCALE](/images/SCALE/ShellDomainPingSCALE.png "Pinging a Domain Controller")
+   ![DigCommandOutput](/images/scale/22.12/DigCommandOutput.png "Dig Command Output")
 
    When TrueNAS sends and receives packets without loss, the connection is verified.
 2. Press <kbd>Ctrl + C</kbd> to cancel the `ping`.
 
-{{< expand "The ping failed!" "v" >}}
+{{< expand "The dig failed!" "v" >}}
 If the ping fails:
 
 1. Go to **Network** and click **Settings** in the **Global Configuration** window. 
@@ -127,12 +115,7 @@ TrueNAS automatically begins using this default keytab and removes any administr
 ### Troubleshooting - Resyncing the Cache
 If the cache becomes out of sync or fewer users than expected are available in the permissions editors, resync it by clicking **Settings** in the **Active Directory** window and selecting **Rebuild Directory Service Cache**.
 
-If you are using Windows Server with 2008 R2 or older, try creating a **Computer** entry on the Windows server Organizational Unit (OU).
-
-When creating the entry, enter the TrueNAS hostname in the name field and make sure it matches the:
-
-* **Hostname**: Go to **Network** and find **Hostname** in the **Global Configuration** window.
-* **NetBIOS alias**: Go to **Credentials > Directory Services** and click **Settings** in the **Active Directory** window. Click **Advanced Options** and find the **NetBIOS alias**.
+When creating the entry, enter the TrueNAS hostname in the name field and make sure it matches the information on the **Network > Global Configuration** screen in the **Hostname** and **NetBIOS** fields.
 
 ## Disabling Active Directory
 
@@ -140,13 +123,12 @@ You can disable your AD server connection without deleting your configuration or
 Click **Settings** to open the **Active Directory** settings screen, then select the **Enable** checkbox to clear it, and click **Save** to disable SCALE AD service. 
 This returns you to the main **Directory Services** screen where you see the two main directory services configuration options. 
 
-To configure LDAP service, click **Configure LDAP** or To turn AD service back on. 
 Click **Configure Active Directory** to open the **Active Directory** screen with your existing configuration settings. 
 Select **Enable** again, click **Save** to reactivate your connection to your AD server.
 
 ## Leaving Active Directory
 
-TrueNAS SCALE requires users to cleanly leave an Active Directory if you want to delete the configuration. To cleanly leave AD, use the **Leave Domain** button on the **Active Directory Advanced Settings** screen to remove the AD object. 
+TrueNAS SCALE requires users to cleanly leave an Active Directory if you want to delete the configuration. To cleanly leave AD, use the **Leave Domain** button on the **Active Directory Advanced Settings** screen to remove the AD object. Remove the computer account and assoicated DNS records from the Active Directory.
 
 If the AD server moves or shuts down without you using **Leave Domain**, TrueNAS does not remove the AD object, and you have to clean up the Active Directory.
 

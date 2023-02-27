@@ -22,7 +22,7 @@ TrueNAS SCALE allows users to configure general Kerberos settings, as well as re
 
 ## Kerberos Realms
 {{< hint info >}}
-TrueNAS automatically generates a realm after you configure AD or LDAP.
+TrueNAS automatically generates a realm after you configure AD.
 {{< /hint >}}
 
 Users can configure Kerberos realms by navigating to **Directory Services** and clicking **Add** in the **Kerberos Realms** window.
@@ -35,20 +35,16 @@ Click **Save**.
 
 ## Kerberos Keytabs
 {{< hint info >}}
-TrueNAS automatically generates a keytab after you configure AD or LDAP.
+TrueNAS automatically generates a keytab after you configure AD.
 {{< /hint >}}
 
-Kerberos keytabs let you join an Active Directory or LDAP server without a password. 
+A Kerberos keytab replaces the administration credentials for Active Directory after intial configuration. 
 Since TrueNAS does not save the Active Directory or LDAP administrator account password in the system database, keytabs can be a security risk in some environments.
 
 {{< hint info >}}
 When using a keytab, create and use a less-privileged account to perform queries.
 TrueNAS stores that account password in the system database.
 {{< /hint >}}
-
-### Creating a Keytab on Windows
-
-To create a keytab on a Windows system, create a Kerberos <file>keytab</file> file (for a system not running the Windows operating system), then map the principal to the account and set the host principal password. For more information see [ktpass](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/ktpass) instructions provided by Microsoft.
 
 ### Adding the Windows Keytab to TrueNAS
 

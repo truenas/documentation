@@ -9,9 +9,15 @@ tags:
 
 {{< toc >}}
 
-{{< hint danger >}}
+
+Idmap settings exist for the purpose of integration with an existing directory domain to ensure that UIDs and GIDs assinged to Active Directoery users and groups have consistent values domain-wide. 
+The correct configuration therefor relies on details that are entriely external to the TrueNAS server, e.g., how the AD administrator has configured other Unix-like computers in the environment.
+
+The default is to use an algorithmic method of generating IDs based on the RID component of the uer or group SID in Active Directory.
+
+{{< hint warning >}}
 Only administrators experienced with configuring Id mapping should attempt to add new or edit existing idmaps. 
-Misconfiguration can impact system operation.
+Misconfiguration can lead to permissions incorrectly assigned to users or groups in the case where data is transffered to/from external servers via ZFS replication or rsync (or when access is performed via NFS or other protocols that directly access the UIDs/GIDs on files).
 {{< /hint >}}
 
 The **IDdmap** directory service lets users configure and select a backend to map Windows security identifiers (SIDs) to UNIX UIDs and GIDs. Users must enable the **Active Directory** service to configure and use identity mapping (Idmap).
