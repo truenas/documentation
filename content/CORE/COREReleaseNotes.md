@@ -37,7 +37,6 @@ This release includes an update of the Iconik plugin to the latest publicly avai
 
 * Enclosure managment for the Mini R
 * Zfs-2.1.8 and then zfs-2.1.9 merged
-* Change frequency of AFPInfo xatters reads to optional when generating SMB2 AAPL readirattr response
 
 ## TrueNAS 13.0-U4 Changelog
 
