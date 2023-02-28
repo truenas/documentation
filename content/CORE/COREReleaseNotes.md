@@ -83,7 +83,7 @@ This release includes an update of the Iconik plugin to the latest publicly avai
 * [NAS-119612](https://ixsystems.atlassian.net/browse/NAS-119612) extattr\_list\_file\(\) usage in netatalk also does not properly handle truncated returns
 * [NAS-119635](https://ixsystems.atlassian.net/browse/NAS-119635) Limit rx/tx queues to 8 in Aquantia Aqtion driver for FreeBSD
 * [NAS-119657](https://ixsystems.atlassian.net/browse/NAS-119657) minio plugin still uses EOL 12.2 Release
-* [NAS-119692](https://ixsystems.atlassian.net/browse/NAS-119692) LDAP Encyrption not working
+* [NAS-119692](https://ixsystems.atlassian.net/browse/NAS-119692) Fix LDAPError parser issue
 * [NAS-119780](https://ixsystems.atlassian.net/browse/NAS-119780) CamControl Error Expanding Pool
 * [NAS-119781](https://ixsystems.atlassian.net/browse/NAS-119781) The ticket link in alert is incorrect
 * [NAS-119785](https://ixsystems.atlassian.net/browse/NAS-119785) NFSv4 doesn't support >16 groups even if option is selected
