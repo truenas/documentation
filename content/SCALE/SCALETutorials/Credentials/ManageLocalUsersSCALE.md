@@ -87,7 +87,7 @@ Setting **Disable Password** toggle to active (blue toggle) disables several opt
 
 ### Configuring User ID and Groups Settings
 
-![AddUserUserIDAndGroupsSettings](/images/SCALE/22.12/AddUserUserIDAndGroupsSettings.png "Add User User Id an Groups Settings") 
+![AddUser-UserIDAndGroupSettings](/images/SCALE/22.12/AddUser-UserIDAndGroupSettings.png "Add User User Id an Groups Settings") 
 
 Next, you must set a user ID (UID).
 TrueNAS suggests a user ID starting at **1000**, but you can change it if you wish.

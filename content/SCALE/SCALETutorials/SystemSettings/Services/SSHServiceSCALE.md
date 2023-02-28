@@ -27,15 +27,24 @@ To configure SSH go to **System Settings > Services**, find **SSH**, and click <
 
 ![ServicesSSHBasicSettingsGenOptionsSCALE](/images/SCALE/22.12/ServicesSSHBasicSettingsGenOptionsSCALE.png "SSH Basic Settings General Options") 
 
+To allow SSH for the admin user, select **Log in as Admin with Password** if not already selected.
+To allow SSH for the root user, select **Log in as Root with Password**.
+Select **Allow Password Authentication** to allow password authentication for the SSH login.
+
+Click **Save**. Select **Start Automatically** and enable the SSH service.
+
+## Configuring Advanced SSH Settings
+If your configuration requires more advanced settings, click **Advanced Settings**.  The basic options display at the top of the **Advanced Settings** screen. 
 Configure the options as needed to match your network environment.
 
-![ServicesSSHBasicSettingsAdvOptionsSCALE](/images/SCALE/22.12/ServicesSSHBasicSettingsAdvOptionsSCALE.png "SSH Settings Advanced Options") 
+![SSHServicesAdvancedSettings](/images/SCALE/22.12/SSHServicesAdvancedSettings.png "SSH Settings Advanced Options") 
 
 We recommend you add these SSH service options in **Auxiliary Parameters**:
 
-* Add `NoneEnabled no` to disable the insecure **none** cipher.
 * Increase the `ClientAliveInterval` if SSH connections tend to drop.
-* Increase the `ClientMaxStartup` value (**10** is default) when you need more concurrent SSH connections.
+* Increase the `MaxStartups` value (**10** is default) when you need more concurrent SSH connections.
+
+To configure [ciphers](https://man7.org/linux/man-pages/man5/sshd_config.5.html) to allow or disallow use `ssh -Q cipher` to display a list then add them, separating each with a comma (,). Include the dash (-) before the cipher to exclude from the default set. 
 
 Remember to enable the SSH service in **System Settings > Services** after making changes.
 To create and store specific [SSH connections and keypairs]({{< relref "/SCALE/SCALEUIReference/Credentials/BackupCredentials/_index.md" >}}), go to **Credentials > Backup Credentials**.
