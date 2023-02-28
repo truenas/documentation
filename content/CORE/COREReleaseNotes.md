@@ -22,10 +22,10 @@ aliases:
 
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
-| 13.0-U4 | Code Freeze | 15 February 2023 |
-| 13.0-U4 | Internal Testing | 20 February 2023 - 24 February 2023 |
-| 13.0-U4 | Tag | 27 February 2023 |
-| 13.0-U4 | Release | 28 February 2023 |
+| 13.0-U5 | Code Freeze | TBD |
+| 13.0-U5 | Internal Testing | TBD |
+| 13.0-U5 | Tag | TBD |
+| 13.0-U5 | Release | TBD |
 
 ## 13.0-U4
 
@@ -38,7 +38,6 @@ This release includes an update of the Iconik plugin to the latest publicly avai
 * Enclosure managment for the Mini R
 * Zfs-2.1.8 and then zfs-2.1.9 merged
 * Change frequency of AFPInfo xatters reads to optiona when generating SMB2 AAPL readirattr response
-* Fixes issue with using the UI to migrate from CORE 13.0-U3.1 to SCALE  **** Verify this in testing ****
 
 ## TrueNAS 13.0-U4 Changelog
 
@@ -94,9 +93,9 @@ This release includes an update of the Iconik plugin to the latest publicly avai
 * [NAS-120133](https://ixsystems.atlassian.net/browse/NAS-120133) Cloud Sync Task to Google Drive fails 50% of the time
 * [NAS-120245](https://ixsystems.atlassian.net/browse/NAS-120245) UI does not respect user's choice for update file upload location
 
-{{< expand "13.0-U3.1" "v" >}}
-## 13.0-U3.1
 
+## 13.0-U3.1
+{{< expand "13.0-U3.1" "v" >}}
 **November 16, 2022**
 
 iXsystems is pleased to release TrueNAS 13.0-U3.1.
@@ -114,7 +113,7 @@ This is a small maintenance release to patch an issue found in the upstream Samb
 * [NAS-118926](https://ixsystems.atlassian.net/browse/NAS-118926) SMB\_ASSERT\(\) on FSCTL on alternate data stream
 {{< /expand >}}
 ## 13.0-U3
-
+{{< expand "13.0-U3" "v" >}}
 **November 1, 2022**
 
 iXsystems is pleased to announce the release of TrueNAS 13.0-U3.
@@ -158,7 +157,7 @@ This is a maintenance release with some improvements for ACLs and rsync, updates
 * [NAS-117710](https://ixsystems.atlassian.net/browse/NAS-117710) ZFS space efficiency on devices with huge physical blocks
 * [NAS-117290](https://ixsystems.atlassian.net/browse/NAS-117290) NAS-1 had an unscheduled system reboot. The operating system successfully came back online at Fri Jul 22 08:29:53 2022.
 * [NAS-115559](https://ixsystems.atlassian.net/browse/NAS-115559) Use O\_RESOLVE\_BENEATH for opens in FreeBSD
-
+{{< /expand >}}
 ## 13.0-U2
 {{< expand "13.0-U2" "v" >}}
 **August 30, 2022**
