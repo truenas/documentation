@@ -22,6 +22,9 @@ Attempting to activate or roll back to a CORE boot environment can break the sys
 High Availability systems cannot migrate from CORE to SCALE.
 Enterprise customers should contact iXsystems Support before attempting any migration.
 
+Migrating from CORE to SCALE is not recommended when custom modifications have been made to the system database.
+If any such modifications are present in CORE, these must be reverted before attempting a migration to SCALE.
+
 {{< expand "Contacting Support" "v" >}}
 {{< include file="static/includes/General/iXsystemsSupportContact.html.part" html="true" >}}
 {{< /expand >}}
