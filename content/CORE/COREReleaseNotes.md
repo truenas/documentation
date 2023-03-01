@@ -22,13 +22,79 @@ aliases:
 
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
-| 13.0-U4 | Code Freeze | 15 February 2023 |
-| 13.0-U4 | Internal Testing | 20 February 2023 - 24 February 2023 |
-| 13.0-U4 | Tag | 27 February 2023 |
-| 13.0-U4 | Release | 28 February 2023 |
+| 13.0-U5 | Code Freeze | TBD |
+| 13.0-U5 | Internal Testing | TBD |
+| 13.0-U5 | Tag | TBD |
+| 13.0-U5 | Release | TBD |
+
+## 13.0-U4
+
+**February 28, 2023**
+
+iXsystems is pleased to release TrueNAS 13.0-U4!
+
+This release includes an update of the Iconik plugin to the latest publicly available release, several improvements, and fixes many issues found in earlier releases. The improvements cover:
+
+* Enclosure managment for the Mini R
+* Zfs-2.1.8 and then zfs-2.1.9 merged
+
+## TrueNAS 13.0-U4 Changelog
+
+### New Feature
+
+* [NAS-119435](https://ixsystems.atlassian.net/browse/NAS-119435) Update iconik plugin
+
+### Improvement
+
+* [NAS-119744](https://ixsystems.atlassian.net/browse/NAS-119744) Enclosure Management for Mini-R Core/SCALE
+* [NAS-119749](https://ixsystems.atlassian.net/browse/NAS-119749) Enclosure Management for Mini-R Core/SCALE \(UI\)
+* [NAS-119958](https://ixsystems.atlassian.net/browse/NAS-119958) Merge zfs-2.1.8
+* [NAS-120026](https://ixsystems.atlassian.net/browse/NAS-120026) Merge zfs-2.1.9
+* [NAS-120350](https://ixsystems.atlassian.net/browse/NAS-120350) Optionally read AFPInfo xattrs directly when generating SMB2 AAPL readirattr response
+
+### Bug
+
+* [NAS-115994](https://ixsystems.atlassian.net/browse/NAS-115994) Idmap issue with "OWNER RIGHTS" SID
+* [NAS-118439](https://ixsystems.atlassian.net/browse/NAS-118439) IPMI VLAN ID unable to be un-set
+* [NAS-118566](https://ixsystems.atlassian.net/browse/NAS-118566) net/netatalk3 - additional regression fixes
+* [NAS-118660](https://ixsystems.atlassian.net/browse/NAS-118660) Cloud sync task "Bandwith Limit" pop-up help text appears to be incorrect
+* [NAS-118726](https://ixsystems.atlassian.net/browse/NAS-118726) SMB\_ASSERT\(\) during tevent\_aio\_cancel\(\)
+* [NAS-118754](https://ixsystems.atlassian.net/browse/NAS-118754) Dashboard missing widgets when vlan is configured
+* [NAS-118842](https://ixsystems.atlassian.net/browse/NAS-118842) CRITICAL alerts for seemingly nothing on TrueNAS 13.0-U2
+* [NAS-118844](https://ixsystems.atlassian.net/browse/NAS-118844) "name servers not configured" error after reboot \(static IP config\)
+* [NAS-118852](https://ixsystems.atlassian.net/browse/NAS-118852) Merge FreeBSD SA-22:15-23:03 EN-22:21-23:04
+* [NAS-118870](https://ixsystems.atlassian.net/browse/NAS-118870) Sharing/SMB/Add Name field not updated after first folder click
+* [NAS-118887](https://ixsystems.atlassian.net/browse/NAS-118887) Can't remove/change certificate for disabled S3 services with no disk, thereby certificate can't be deleted from System > Certificates
+* [NAS-118903](https://ixsystems.atlassian.net/browse/NAS-118903) Access attempt by unauthorized user may trigger SMB\_ASSERT in vfs\_recycle
+* [NAS-118991](https://ixsystems.atlassian.net/browse/NAS-118991) EC certificates not supported for WebUI
+* [NAS-118999](https://ixsystems.atlassian.net/browse/NAS-118999) impossible to delete old default self signed cert
+* [NAS-119096](https://ixsystems.atlassian.net/browse/NAS-119096) Certificate set to none is not possible
+* [NAS-119178](https://ixsystems.atlassian.net/browse/NAS-119178) HTML in text/plain part of the pool is DEGRADED email
+* [NAS-119201](https://ixsystems.atlassian.net/browse/NAS-119201) Replication tasks “waiting” for unknown reason
+* [NAS-119246](https://ixsystems.atlassian.net/browse/NAS-119246) Don't work Yandex Disk Cloud integration
+* [NAS-119254](https://ixsystems.atlassian.net/browse/NAS-119254) asyncio task references not kept
+* [NAS-119287](https://ixsystems.atlassian.net/browse/NAS-119287) Merge zfs-2.1.7
+* [NAS-119296](https://ixsystems.atlassian.net/browse/NAS-119296) fix memory leak in py-libzfs/ZFS.find\_import
+* [NAS-119354](https://ixsystems.atlassian.net/browse/NAS-119354) Rsync Tasks always in Waiting status
+* [NAS-119407](https://ixsystems.atlassian.net/browse/NAS-119407) Fix panic in ZFS at boot
+* [NAS-119602](https://ixsystems.atlassian.net/browse/NAS-119602) Unhandled exception; Task Manager reports disk.sync\_all failed.
+* [NAS-119609](https://ixsystems.atlassian.net/browse/NAS-119609) bsd\_attr\_list in samba can read off end of buffer
+* [NAS-119612](https://ixsystems.atlassian.net/browse/NAS-119612) extattr\_list\_file\(\) usage in netatalk also does not properly handle truncated returns
+* [NAS-119635](https://ixsystems.atlassian.net/browse/NAS-119635) Limit rx/tx queues to 8 in Aquantia Aqtion driver for FreeBSD
+* [NAS-119657](https://ixsystems.atlassian.net/browse/NAS-119657) minio plugin still uses EOL 12.2 Release
+* [NAS-119692](https://ixsystems.atlassian.net/browse/NAS-119692) Fix LDAPError parser issue
+* [NAS-119780](https://ixsystems.atlassian.net/browse/NAS-119780) CamControl Error Expanding Pool
+* [NAS-119781](https://ixsystems.atlassian.net/browse/NAS-119781) The ticket link in alert is incorrect
+* [NAS-119785](https://ixsystems.atlassian.net/browse/NAS-119785) NFSv4 doesn't support >16 groups even if option is selected
+* [NAS-119905](https://ixsystems.atlassian.net/browse/NAS-119905) atrun is duplicated in /etc/cron.d/at and /etc/crontab
+* [NAS-119906](https://ixsystems.atlassian.net/browse/NAS-119906) Traceback when rejoining domain if Kerberos Realm field isn't cleared
+* [NAS-119908](https://ixsystems.atlassian.net/browse/NAS-119908) SMB\_ASSERT\(\) in vfs\_fruit when connecting user has no share fs access
+* [NAS-120133](https://ixsystems.atlassian.net/browse/NAS-120133) Cloud Sync Task to Google Drive fails 50% of the time
+* [NAS-120245](https://ixsystems.atlassian.net/browse/NAS-120245) UI does not respect user's choice for update file upload location
+
 
 ## 13.0-U3.1
-
+{{< expand "13.0-U3.1" "v" >}}
 **November 16, 2022**
 
 iXsystems is pleased to release TrueNAS 13.0-U3.1.
@@ -44,9 +110,9 @@ This is a small maintenance release to patch an issue found in the upstream Samb
 #### Bug
 
 * [NAS-118926](https://ixsystems.atlassian.net/browse/NAS-118926) SMB\_ASSERT\(\) on FSCTL on alternate data stream
-
+{{< /expand >}}
 ## 13.0-U3
-
+{{< expand "13.0-U3" "v" >}}
 **November 1, 2022**
 
 iXsystems is pleased to announce the release of TrueNAS 13.0-U3.
@@ -90,7 +156,7 @@ This is a maintenance release with some improvements for ACLs and rsync, updates
 * [NAS-117710](https://ixsystems.atlassian.net/browse/NAS-117710) ZFS space efficiency on devices with huge physical blocks
 * [NAS-117290](https://ixsystems.atlassian.net/browse/NAS-117290) NAS-1 had an unscheduled system reboot. The operating system successfully came back online at Fri Jul 22 08:29:53 2022.
 * [NAS-115559](https://ixsystems.atlassian.net/browse/NAS-115559) Use O\_RESOLVE\_BENEATH for opens in FreeBSD
-
+{{< /expand >}}
 ## 13.0-U2
 {{< expand "13.0-U2" "v" >}}
 **August 30, 2022**
@@ -965,11 +1031,11 @@ This is a an early release meant for previewing and testing features and is **no
 | Seen In | Key | Summary | Workaround | Resolved In |
 |---------|-----|---------|------------|-------------|
 | 13.0-U3 | [NAS-118832](https://ixsystems.atlassian.net/browse/NAS-118832) | UI Does not show the correct status on HA systems | There is a known UI caching issue that impacts the status of failover in HA systems. The workaround is to refresh the browser screen or clear the cache after failing-over or making any UI change to update the UI screens to show the correct status of the two nodes. Note, this might require logging into the system again if your token has expired. | Targeted 13.0-U4 |
-| 13.0-U3 |[NAS-118787](https://ixsystems.atlassian.net/browse/NAS-118787) | Asigra Install Fail | Configure the Asigra plugin on HA systems requires assigning a static IPs address rather than using DHCP to assign the node IP addresses. The Asigra plugin does not install correctly on HA systems that rely on DHCP-assigned IP addresses. | Targeted 13.0-U4 |
+| 13.0-U3 |[NAS-118787](https://ixsystems.atlassian.net/browse/NAS-118787) | Asigra Install Fail | Configure the Asigra plugin on HA systems requires assigning a static IPs address rather than using DHCP to assign the node IP addresses. The Asigra plugin does not install correctly on HA systems that rely on DHCP-assigned IP addresses. | 13.0-U3 |
 | 13.0-U3 |N/A | Netatalk deprection | Netatalk has been deprecated and users should begin migrating away from using it with TrueNAS. Netatalk is deprecated in 13.0, and like AFP will be completely removed post-CORE 13.0. Users should migrate to SMB shares. | N/A |
-| 13.0-U2 | [NAS-117663](https://ixsystems.atlassian.net/browse/NAS-117663) | 2.5GigE Realtek NICs are unsupported in 13.0-U2. This is due to the Realtek NIC driver causing iSCSI data corruption and the driver is now disabled by default. | When the system is not used for iSCSI sharing and the NIC support is required, enabling the Realtek NIC driver is possible by going to **System > Tunables** and creating two new tunables.<br> Click **ADD**, enter these values:<ul><li>**Variable** : `if_re_load`</li><li>**Value** : `YES`</li><li> **Type** : `loader`</li></ul> and click **SAVE**.<br> Click **ADD** again, enter these values:<ul><li>**Variable** : `if_re_name`</li><li>**Value** : `/boot/modules/if_re.ko`</li><li> **Type** : `loader`</li></ul> and click **SAVE**.<br> To verify the realtek driver is loaded, reboot the system, go to the **Shell**, and type `kldstat -n if_re.ko`. The command returns the file name and details when it has been loaded. | TBD |
+| 13.0-U2 | [NAS-117663](https://ixsystems.atlassian.net/browse/NAS-117663) | 2.5GigE Realtek NICs are unsupported in 13.0-U2. This is due to the Realtek NIC driver causing iSCSI data corruption and the driver is now disabled by default. | When the system is not used for iSCSI sharing and the NIC support is required, enabling the Realtek NIC driver is possible by going to **System > Tunables** and creating two new tunables.<br> Click **ADD**, enter these values:<ul><li>**Variable** : `if_re_load`</li><li>**Value** : `YES`</li><li> **Type** : `loader`</li></ul> and click **SAVE**.<br> Click **ADD** again, enter these values:<ul><li>**Variable** : `if_re_name`</li><li>**Value** : `/boot/modules/if_re.ko`</li><li> **Type** : `loader`</li></ul> and click **SAVE**.<br> To verify the realtek driver is loaded, reboot the system, go to the **Shell**, and type `kldstat -n if_re.ko`. The command returns the file name and details when it has been loaded. | 13.0-U2 |
 | 13.0-U2 | [NAS-117891](https://ixsystems.atlassian.net/browse/NAS-117891) | 2FA login fails the first time after failover before succeeding. | It appears the UI presents the sign in screen before the system is ready. Occurs on High Availability systems. Suggest user not immediately attempt logging in, but wait a bit before trying to signing in with 2FA, or if sign in fails, refresh their screen and retry until the system presents the correct sign in screen with 2FA field. | Target 13.0-U3 |
-| 13.0-U2 | [NAS-117899](https://ixsystems.atlassian.net/browse/NAS-117899) | TrueCommand connection causing a kernel panic with unscheduled system reboots. | Cause of this issue is under investigation. | Target 13.0-U3 |
+| 13.0-U2 | [NAS-117899](https://ixsystems.atlassian.net/browse/NAS-117899) | TrueCommand connection causing a kernel panic with unscheduled system reboots. | Cause of this issue is under investigation. | 13.0-U3 |
 | 13.0-U1.1 | [NAS-117663](https://ixsystems.atlassian.net/browse/NAS-117663) | iSCSI data corruption with RTL8125 NICs. Unlike FreeBSD native re(4) driver the vendor driver does not properly handle physically non-contiguous mbufs, used by our iSCSI target to avoid extra memory copy in TCP stack transmission path. Some chip models might work due to other workarounds applied, but those are exceptions. | With the lack of time for a fix on a planned 13.0-U2 freeze day, we decided to re-disable the vendor driver to avoid the data corruptions. Unfortunately it means loosing support for 2.5GigE Realtek NICs. People not using iSCSI can still re-enable the driver with loader tunables: <br>if_re_load="YES" <br>if_re_name="/boot/modules/if_re.ko" | Waiting for Realtek solution, TBD |
 | 13.0-U1 | [NAS-117071](https://ixsystems.atlassian.net/browse/NAS-117071) | Shadow Copies in nested datasets not visible. | N/A, possible edge case that is still being investigated. | 13.0-U1.1<br>13.0-U2 |
 | 13.0-Release | [NAS-116493](https://jira.ixsystems.com/browse/NAS-116493) | Nextcloud (official) plugin does not install . | Nexcloud issue could not be reproduced. Recommend users migrate to SCALE which provides a better experience with running applications. | 13.0-U2 |
