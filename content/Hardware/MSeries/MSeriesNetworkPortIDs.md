@@ -40,23 +40,23 @@ Some port identifiers are still being determined.
 |                                        | Port 3: `isp0`     | Port 3: `TBD`          |
 | T580-LP-CR (4x10G mode)                | Port 0: `cxl0123`  | Port 0: `enp175s0f4`   |
 |                                        | Port 1: `DISABLED` | Port 1: `enp175s0f4d1` |
-| T580-LP-CR (4x10G mode) (2nd addition) | Port 0: `cxl4567`  | Port 0: `enp175s0f4`   |
-|                                        | Port 1: `DISABLED` | Port 1: `enp175s0f4d1` |
-| T580-LP-CR (40G mode)                  | Port 0: `cxl0`     | Port 0: `enp175s0f4`   |
-|                                        | Port 1: `cxl1`     | Port 1: `enp175s0f4d1` |
+| T580-LP-CR (4x10G mode) (2nd addition) | Port 0: `cxl4567`  | Port 0: `enp216s0f4`   |
+|                                        | Port 1: `DISABLED` | Port 1: `enp216s0f4d1` |
+| T580-LP-CR (40G mode)                  | Port 0: `cxl0`     | Port 0: `enp179s0f4`   |
+|                                        | Port 1: `cxl1`     | Port 1: `enp179s0fd1` |
 | T6225-SO-CR                            | Port 0: `cc1`      | Port 0: `enp175s0f4`   |
 |                                        | Port 1: `cc0`      | Port 1: `enp175s0f4d1` |
-| T6225-SO-CR (2nd addition)             | Port 0: `cc3`	  | Port 0: `enp175s0f4`   |
-|                                        | Port 1: `cc2`      | Port 1: `enp175s0f4d1` |
+| T6225-SO-CR (2nd addition)             | Port 0: `cc3`	  | Port 0: `enp216s0f4`   |
+|                                        | Port 1: `cc2`      | Port 1: `enp216s0f4d1` |
 | T62100-LP-CR                           | Port 0: `cc1`      | Port 0: `enp175s0f4`   |
 |                                        | Port 1: `cc0`      | Port 1: `enp175s0f4d1` |
-| T62100-LP-CR (2nd addition)            | Port 0: `cc3`      | Port 0: `enp175s0f4`   |
-|                                        | Port 1: `cc2`      | Port 1: `enp175s0f4d1` |
-| X710-T4                                | Port 0: `ixl2`     | Port 0: `enp177s0f0`   |
-|                                        | Port 1: `ixl3`     | Port 1: `enp177s0f1`   |
-|                                        | Port 2: `ixl4`     | Port 2: `enp178s0f0`   |
-|                                        | Port 3: `ixl5`     | Port 3: `enp178s0f1`   |
-| X710-T4 (2nd addition)                 | Port 0: `ixl6`     | Port 0: `enp177s0f0`   |
-|                                        | Port 1: `ixl7`     | Port 1: `enp177s0f1`   |
-|                                        | Port 2: `ixl8`     | Port 2: `enp178s0f0`   |
-|                                        | Port 3: `ixl9`     | Port 3: `enp178s0f1`   |
+| T62100-LP-CR (2nd addition)            | Port 0: `cc3`      | Port 0: `enp216s0f4`   |
+|                                        | Port 1: `cc2`      | Port 1: `enp216s0f4d1` |
+| X710-T4                                | Port 0: `ixl2`     | Port 0: `enp175s0f0`   |
+|                                        | Port 1: `ixl3`     | Port 1: `enp175s0f1`   |
+|                                        | Port 2: `ixl4`     | Port 2: `enp175s0f0`   |
+|                                        | Port 3: `ixl5`     | Port 3: `enp175s0f1`   |
+| X710-T4 (2nd addition)                 | Port 0: `ixl6`     | Port 0: `enp216s0f0`   |
+|                                        | Port 1: `ixl7`     | Port 1: `enp216s0f1`   |
+|                                        | Port 2: `ixl8`     | Port 2: `enp216s0f0`   |
+|                                        | Port 3: `ixl9`     | Port 3: `enp216s0f1`   |
