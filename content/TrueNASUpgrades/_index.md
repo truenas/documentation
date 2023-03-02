@@ -12,19 +12,20 @@ Here are the current "trains" (linear update paths) for updating TrueNAS and som
 
 These are the public release trains that contain the most tested and stable version of the various softwares to date.
 
-* TrueNAS CORE: **13.0**
-* TrueNAS Enterprise: **13.0**
+* TrueNAS CORE: **TrueNAS-13.0-STABLE**
+* TrueNAS Enterprise: **TrueNAS-13.0-STABLE**
+* TrueNAS SCALE: **TrueNAS-SCALE-Bluefin**
 
 ## Prerelease Trains
 
 These trains have the various preview / early build releases of the software.
 
-* TrueNAS SCALE: **22.02.RC.2**
+*Coming Soon*
 
 ## Nightly / Developer Images
 
 * TrueNAS 13.0
-* TrueNAS SCALE "Bluefin"
+* TrueNAS SCALE "Cobia"
 
 ### Upgrading to a Nightly Image
 
@@ -39,6 +40,9 @@ See [CORE Updates]({{< relref "UpdatingCORE.md" >}}) for more information about 
 SCALE is a new and maturing software.
 CORE systems with High Availability enabled (HA) can not be upgraded to SCALE with HA.
 It is not suitable for TrueNAS Enterprise customers and CORE users should always exercise caution and back up their data and system configuration before starting an upgrade.
+
+Migrating from CORE to SCALE is not recommended when custom modifications have been made to the system database.
+If any such modifications are present in CORE, these must be reverted before attempting a migration to SCALE.
 {{< /hint >}}
 
 {{< hint warning >}}
