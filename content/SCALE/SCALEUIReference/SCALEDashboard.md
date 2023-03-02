@@ -46,7 +46,7 @@ Click on the <span class="iconify" data-icon="ic:baseline-assessment"></span> as
 The **System Information** widget displays general information about the SCALE system. It includes an option to synchronize the system server time with TrueNAS SCALE time if they get out of sync.   
 {{< expand "Click here for more information" "v" >}}
 If installed on customer-provided servers the widget displays a generic TrueNAS image. 
-If installed on iXsystems-provided hardware, a picture of the iXsystems hardware displays on the card above the **Check For Updates** button. Click on the image to display the **System Enclosure** screen.
+If installed on iXsystems-provided hardware, a picture of the iXsystems hardware displays on the card above the **Check For Updates** button. Click on the image to display the **View Enclosure** screen.
 
 ![DashboardSystemInfoWidgetGeneric](/images/SCALE/22.02/DashboardSystemInfoWidgetGeneric.png "System Information Widget Generic Hardware")
 
