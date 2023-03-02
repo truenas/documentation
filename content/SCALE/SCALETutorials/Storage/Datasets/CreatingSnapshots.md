@@ -20,9 +20,12 @@ Taking snapshots requires the system have all [pools]({{< relref "CreatePoolScal
 ## Creating a Snapshot
 
 {{< hint info >}}
-Consider making a [Periodic Snapshot Task]({{< relref "/SCALE/SCALEUIReference/DataProtection/_index.md" >}}) to save time and create regular, fresh snapshots.
+Consider making a [Periodic Snapshot Task]({{< relref "PeriodicSnapshotTasksScreensSCALE.md" >}}) to save time and create regular, fresh snapshots.
 {{< /hint >}}
 
+There are two ways to access snapshot creation:
+
+### From the Data Protection Menu
 To access the **Snapshots** screen, go to **Data Protection** > **Periodic Snapshot Tasks** and click the **Snapshots** button in the lower right corner of the widget.
 
 ![DataProtectSnapshotTasksSCALE](/images/SCALE/22.12/DataProtectSnapshotTasksSCALE.png "Create a New Snapshot")
@@ -35,7 +38,18 @@ Existing snapshots display as a list.
    
    ![AddSnapshotSCALE1](/images/SCALE/22.12/AddSnapshotSCALE1.png "Add a New Snapshot")
 
-2. Select an existing ZFS pool, dataset, or zvol to snapshot option from the **Dataset** dropdown list. 
+### From the Datasets Menu
+From the **Datasets** screen select the dataset you want to snapshot, then click **Create Snapshot** on **Data Protection** widget. 
+You can also click **Manage Snapshots** to open the **Snapshots** screen and click **Add**.
+
+If you click **Create Snapshot** the **Snapshots** screen opens filtered for the dataset you selected. 
+Clear the dataset from the search field to see all snapshots.
+
+1. Click either **Add** at the top right of the screen to open the **Add Snapshot** screen.
+   
+   ![AddSnapshotScreen](/images/SCALE/22.12/AddSnapshotScreen.png "Add a New Snapshot")
+
+2. Select dataset or zvol from the **Dataset** dropdown list. 
 
 3. Accept the name suggested by the TrueNAS software in the **Name** field or enter any custom string to override the suggested name.
 
@@ -47,5 +61,5 @@ Existing snapshots display as a list.
 5. (Optional) Select **Recursive** to include child datasets with the snapshot.
 
 6. Click **Save** to create the snapshot.
- 
+
 {{< taglist tag="scalesnapshots" limit="10" >}}
