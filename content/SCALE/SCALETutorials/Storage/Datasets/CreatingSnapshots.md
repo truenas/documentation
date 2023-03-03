@@ -34,27 +34,28 @@ Existing snapshots display as a list.
 
 ![SnapshotsListingSCALE1](/images/SCALE/22.12/SnapshotsListingSCALE1.png "Snapshot Screen")
 
-1. Click **ADD** at the top right of the screen to open the **Add Snapshot** screen.
-   
-   ![AddSnapshotSCALE1](/images/SCALE/22.12/AddSnapshotSCALE1.png "Add a New Snapshot")
-
 ### From the Datasets Menu
 From the **Datasets** screen select the dataset you want to snapshot, then click **Create Snapshot** on **Data Protection** widget. 
-You can also click **Manage Snapshots** to open the **Snapshots** screen and click **Add**.
+
+![DatasetDataProtectManageSnapshotsSCALE](/images/SCALE/22.12/DatasetDataProtectManageSnapshotsSCALE.png "Manage Snapshots") 
 
 If you click **Create Snapshot** the **Snapshots** screen opens filtered for the dataset you selected. 
 Clear the dataset from the search field to see all snapshots.
 
+You can also click the **Manage Snapshots** link on the **Data Protection** widget to open the **Snapshots** screen.
+
+![StorageSnapshotsListedContentSCALE](/images/SCALE/22.12/StorageSnapshotsListedContentSCALE.png "Manage Snapshots") 
+
 1. Click either **Add** at the top right of the screen to open the **Add Snapshot** screen.
-   
-   ![AddSnapshotScreen](/images/SCALE/22.12/AddSnapshotScreen.png "Add a New Snapshot")
+    
+![AddSnapshotSCALE1](/images/SCALE/22.12/AddSnapshotSCALE1.png "Add a New Snapshot")
 
 2. Select dataset or zvol from the **Dataset** dropdown list. 
 
 3. Accept the name suggested by the TrueNAS software in the **Name** field or enter any custom string to override the suggested name.
 
 4. (Optional) Select an option from  the **Naming Schema** dropdown list that the TrueNAS software populated with existing periodic snapshot task schemas.  
-   If you select an option, TrueNAS generates a name for the snapshot using that naming schema from the selected Periodic Snapshot and replicates that snapshot. 
+   If you select an option, TrueNAS generates a name for the snapshot using that naming schema from the selected periodic snapshot and replicates that snapshot. 
 
    You cannot enter a value in both **Naming Schema** and in **Name** as selecting or entering a value in **Naming Schema** populates the other field. 
 
