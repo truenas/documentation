@@ -13,18 +13,24 @@ tags:
 
 {{< toc >}}
 
-## List Snapshots
-
-Go to **Data Protection** and locate the **Periodic Snapshot Tasks** widget. Click the **Snapshots** button in the lower right hand corner of the widget.
-
-![DataProtectSnapshotTasksSCALE](/images/SCALE/22.12/DataProtectSnapshotTasksSCALE.png "Snapshots Button")
+## Viewing the List of Snapshots
 
 {{< hint info >}}
 File Explorer limits the number of snapshots Windows presents to users. If TrueNAS responds with more than the File Explorer limit, File Explorer shows no available snapshots.
 TrueNAS displays a dialog stating the dataset snapshot count has more snapshots than recommended, and states performance or functionality might degrade.
 {{< /hint >}}
 
-The snapshots display as a list. Use the search bar at top to narrow the selection.
+There are two ways to view the list of snapshots:
+
+1. To access the **Snapshots** screen, go to **Datasets** > **Data Protection** widget > **Manage Snapshots** link. 
+
+![DatasetDataProtectManageSnapshotsSCALE](/images/SCALE/22.12/DatasetDataProtectManageSnapshotsSCALE.png "Manage Snapshots") 
+
+2. Alternatively, go to **Data Protection** and locate the **Periodic Snapshot Tasks** widget. Click the **Snapshots** button in the lower right hand corner of the widget.
+
+![DataProtectSnapshotTasksSCALE](/images/SCALE/22.12/DataProtectSnapshotTasksSCALE.png "Snapshots Button")
+
+The snapshots display as a list. Use the search bar at top to narrow the selection, clear the search bar to list all snapshots.
 
 ![SnapshotsListingSCALE1](/images/SCALE/22.12/SnapshotsListingSCALE1.png "Snapshot Screen")
 
@@ -42,7 +48,17 @@ Click <span class="material-icons">expand_more</span> to view snapshot options.
 
 Click the **Delete** button. A confirmation dialog displays. Select **Confirm** to activate the **Delete** button.
 
-### Rollback
+### Deleting with Batch Operations
+
+{{< include file="/_includes/SnapshotsBulkOperations.md" type="page" >}} 
+
+![SnapshotDeleteBatchSCALE](/images/SCALE/22.12/SnapshotDeleteBatchSCALE.png "Delete Batch Operation Select")
+
+![SnapshotDeleteBatchConfirmSCALE](/images/SCALE/22.12/SnapshotDeleteBatchConfirmSCALE.png "Delete Batch Operation Confirm") 
+
+**Confirm** activates the **Delete** button. If the snapshot has the **Hold** options selected, an error displays to prevent you from deleting that snapshot.
+
+### Using Revert
 
 The **Rollback** option reverts the dataset back to the point in time saved by the snapshot.
 
@@ -55,7 +71,7 @@ To restore the data within a snapshot, the recommended steps are:
 1.  Clone the desired snapshot.
 2.  Share the clone with the share type or service running on the TrueNAS system.
 3.  Allow users to recover their needed data.
-4.  Delete the clone from **Storage**.
+4.  Delete the clone from **Datasets**.
 
 This approach does not destroy any on-disk data or impact replication.
 
@@ -64,14 +80,6 @@ TrueNAS asks for confirmation before rolling back to the chosen snapshot state. 
 ![DatasetRollbackSnapshotWarnSCALE](/images/SCALE/22.12/DatasetRollbackSnapshotWarnSCALE.png "Dataset Rollback from Snapshot")
 
 Click **Confirm** to activate the **Rollback** button.
-
-### Deleting with Batch Operations
-
-![SnapshotDeleteBatchSCALE](/images/SCALE/22.12/SnapshotDeleteBatchSCALE.png "Delete Batch Operation Select")
-
-{{< include file="/_includes/SnapshotsBulkOperations.md" type="page" >}} 
-
-![SnapshotDeleteBatchConfirmSCALE](/images/SCALE/22.12/SnapshotDeleteBatchConfirmSCALE.png "Delete Batch Operation Confirm")
 
 ## Browsing a Snapshot Collection
 
