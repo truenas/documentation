@@ -13,22 +13,20 @@ For guidance on clustering storage across multiple SCALE systems, see [Clusterin
 
 ## Storage Overview
 
-![StorageSCALE](/images/SCALE/StorageSCALE.png "TrueNAS SCALE Storage")
+![StorageSCALE](/images/SCALE/22.12/StorageDashboardWithPool.png "TrueNAS SCALE Storage")
 
-The top row of the SCALE storage screen lets users search for existing pools, datasets, and zvols. 
+The **Import Pool** button lets users reconnect pools exported/disconnected from the current system or created on another system.
+This also reconnects pools after users reinstall or upgrade the TrueNAS system.
 
-The *Import* button lets users reconnect pools exported/disconnected from the current system or created on another system. The import button also reconnects pools after users reinstall or upgrade the TrueNAS system.
+The **Disks** button lets users manage, wipe, and import storage disks that TrueNAS will use for ZFS data storage.
 
-The *Create Pool* button creates ZFS data storage “pools” with physical disks to efficiently store and protect data.
+The **Create Pool** button creates ZFS data storage “pools” from physical disks to efficiently store and protect data.
 
-The *Snapshots* drop-down creates snapshots, which provide read-only point-in-time copies of a file system, volume, or a running virtual machine.
+The Storage screen displays all the pools that users have created on the system.
+Statistics and status are shown for each pool, along with buttons to manage the different elements of the pool.
 
-The *Disks* drop-down lets users manage, wipe, and import storage disks that TrueNAS will use for ZFS data storage.
+The articles in this section offer specific guidance for the different storage management options.
 
-The Storage screen displays the pools, datasets, and zvols users have created on the system. Users may perform actions to root pools or specific datasets using the *Pool Actions* and *Dataset Actions* menus.
-
-{{< include file="static/includes/General/MenuNav.md.part" markdown="true" >}}
-
-## Storage Article Summaries
+## Storage Articles
 
 {{< children depth="2" description="true" >}}
