@@ -116,7 +116,7 @@ The **Add Snapshots** screen allows you to create a snapshot while on the **Snap
 | **Naming Schema** | Select an option from the dropdown list or leave this blank to use the system-populated name in the **Name** field. This generates a name for the snapshot using the naming schema from a previously-entered periodic snapshot. This allows replication of the snapshot. You cannot use **Naming Schema** with **Name**. Selecting a schema option overwrites the value in **Name**. |
 | **Recursive** | Select to include child datasets or zvols in the snapshot. |
 
-Use **Save** to retain the settings and return to the **Snapshots** screen. 
+**Save** retains the settings and returns to the **Snapshots** screen. 
 {{< /expand >}}
 
 {{< taglist tag="scalesnapshots" limit="10" >}}
