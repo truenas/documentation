@@ -1,6 +1,11 @@
 ---
-title: "Colors"
+title: "Themes and Colors"
+description: "This article provides basic information on customizing themes or the alert colors to the suit user preference."
 weight: 20
+aliases:
+tags:
+- tcalerts
+- tcthemes
 ---
 
 TrueCommand includes the ability to customize the alert colors to user preferences.
@@ -13,5 +18,7 @@ To change a color, click on the color to open a selection menu. Select the desir
 
 ![ThemeCustomize](/images/TrueCommand/2.0/ThemePalleteCustom.png "Theme Customize")
 
-To remove changes and revert to the currently saved settings, click *Reset*.
-To reset all colors to the application defaults, click *Defaults*.
+To remove changes and revert to the currently saved settings, click **Reset**.
+To reset all colors to the application defaults, click **Defaults**.
+
+{{< taglist tag="tcalerts" limit="10" >}}
