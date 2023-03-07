@@ -105,7 +105,7 @@ To delete more than one snapshot in one operation, select the checkbox beside th
 
 The **Add Snapshots** screen allows you to create a snapshot while on the **Snapshots** screen. It also opens when you click **Create Snapshot** on the **Dataset Protection** widget on the **Datasets** screen. 
 {{< expand "Click Here for More Information" "v" >}}
-You open the **Add Snapshot** screen using **Create Snapshot** on the **Dataset Protection** widget, the form pre-populates the **Dataset** field with the name of the dataset you selected on the **Datasets** screen. If you open it using **Add** on the **Snapshots** screen you select the value in the **Dataset** field.
+**Create Snapshot** on the **Dataset Protection** widget opens the **Add Snapshot** screen. The **Dataset** field is prepopulated with the name of the dataset you selected on the **Datasets** screen. If you open it using **Add** on the **Snapshots** screen you select the value in the **Dataset** field.
 
 ![AddSnapshotScreen](/images/SCALE/22.12/AddSnapshotScreen.png "Add a New Snapshot")
 
