@@ -10,7 +10,6 @@ tags:
 
 {{< toc >}}
 
-
 {{< include file="/content/_includes/KerberosIntroWarnings.md" type="page" >}}
 
 Kerberos uses *realms* and *keytabs* to authenticate clients and servers.
@@ -41,10 +40,8 @@ TrueNAS automatically generates a keytab after you configure AD.
 A Kerberos keytab replaces the administration credentials for Active Directory after intial configuration. 
 Since TrueNAS does not save the Active Directory or LDAP administrator account password in the system database, keytabs can be a security risk in some environments.
 
-{{< hint info >}}
 When using a keytab, create and use a less-privileged account to perform queries.
 TrueNAS stores that account password in the system database.
-{{< /hint >}}
 
 ### Adding the Windows Keytab to TrueNAS
 
@@ -66,8 +63,7 @@ The **Kerberos Settings** screen includes two fields used to configure auxiliary
 
 ![KerberosSettingsScreen](/images/SCALE/22.12/KerberosSettingsScreen.png "Kerberos Settings Screen")
 
-{{< include file="/content/_includes/KerberosWarnings.md" type="page" >}}
-
+{{< include file="/content/_includes/KerberosWarning.md" type="page" >}}
 
 {{< taglist tag="scalekerberos" limit="10" >}}
 {{< taglist tag="scaledirectoryservices" limit="10" title="Related Directory Services Articles" >}}
