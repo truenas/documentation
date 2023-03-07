@@ -1,6 +1,6 @@
 ---
 title: "Setting Up SMB Multichannel"
-description: "This article provides information setting up and using SMB Multichannel."
+description: "This article provides information on setting up SMB Multichannel."
 weight: 60
 aliases:
 tags:
@@ -10,6 +10,10 @@ tags:
 {{< toc >}}
 
 SMB Multichannel allows servers to use multiple network connections simultaneously by combining the bandwidth of several Network Interface Cards (NICs) for better performance.
+
+{{< hint warning >}}
+SMB Multichannel does not function if you combine NICs into a LAGG. 
+{{< /hint >}}
 
 ## Activate Multichannel in TrueNAS Scale
 
@@ -27,7 +31,7 @@ If you already have clients connected to SMB shares, disconnect them all before 
 
 ### Validate Multichannel Activated In TrueNAS
 
-Go to **System Settings > Shell** and enter `midclt call smb.getparm 'server multi channel support' global`. If Multichannel activated correctly, the shell returns `True`.
+Go to **System Settings > Shell** and enter `midclt call smb.getparm 'server multi channel support' global`. If Multichannel is active, the shell returns `True`.
 
 ![SMBMultichannelValidateTrueNAS](/images/SCALE/22.12/SMBMultichannelValidateTrueNAS.png "Validate Multichannel")
 
