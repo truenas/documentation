@@ -22,7 +22,7 @@ TrueNAS displays a dialog stating the dataset snapshot count has more snapshots 
 
 There are two ways to view the list of snapshots:
 
-1. To access the **Snapshots** screen, go to **Datasets** > **Data Protection** widget > **Manage Snapshots** link. 
+* Go to **Datasets** > **Data Protection** widget > **Manage Snapshots** link to open the **Snapshots** screen, 
 
 ![DatasetDataProtectManageSnapshotsSCALE](/images/SCALE/22.12/DatasetDataProtectManageSnapshotsSCALE.png "Manage Snapshots") 
 
