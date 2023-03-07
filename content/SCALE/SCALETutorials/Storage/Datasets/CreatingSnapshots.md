@@ -46,7 +46,7 @@ You can also click the **Manage Snapshots** link on the **Data Protection** widg
 
 ![StorageSnapshotsListedContentSCALE](/images/SCALE/22.12/StorageSnapshotsListedContentSCALE.png "Manage Snapshots") 
 
-1. Click either **Add** at the top right of the screen to open the **Add Snapshot** screen.
+1. Click **Add** at the top right of the screen to open the **Add Snapshot** screen.
     
 ![AddSnapshotSCALE1](/images/SCALE/22.12/AddSnapshotSCALE1.png "Add a New Snapshot")
 
