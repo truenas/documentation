@@ -113,7 +113,7 @@ After logging in, you see the system **Dashboard** screen.
 **Dashboard** displays basic information about the installed version, systems component usage, and network traffic. For users with compatible TrueNAS
 hardware, clicking the system image takes you to the **System Settings > Enclosure** page. 
 
-![DashboardScreenTrueNASHardware](/images/SCALE/22.02/DashboardScreenTrueNASHardware.png "TrueNAS SCALE Dashboard")
+![DashboardMainScreenSCALE](/images/SCALE/22.12/DashboardMainScreenSCALE.png "TrueNAS SCALE Dashboard")
 
 The **Dashboard** provides access to all TrueNAS management options.
 The top row has links to outside resources and buttons to control the system.
@@ -121,13 +121,13 @@ The left-hand column lets users navigate to the various TrueNAS Configuration sc
 
 You can reorder dashboard widgets by clicking **Reorder** and then dragging them into your preferred order. You can also choose which widgets appear on the dashboard by clicking **Configure**.
 
-![DashboardConfigureOptions](/images/SCALE/22.02/DashboardConfigureOptions.png "Dashboard Configuration Options")
+![DashboardConfigureScreenSCALE](/images/SCALE/22.12/DashboardConfigureScreenSCALE.png "Dashboard Configure Panel")
 
 ## Top Bar Menu
 
 The icon buttons in the top toolbar menu link to the iXsystems site, display the status of TrueCommand and directory servers, and show system processes, and configuration menus. You can also collapse and expand the main function menu on the left side of the screen. 
 
-![TopToolbar](/images/SCALE/22.02/TopToolbar.png "TrueNAS SCALE Top Toolbar Icons")
+![TopToolbar](/images/SCALE/22.12/TopToolbar.png "TrueNAS SCALE Top Toolbar Icons")
 
 ### Top Toolbar Icons
 {{< expand "iXsystems" "v" >}}
@@ -156,12 +156,12 @@ The **Alerts** <span class="material-icons">notifications</span> icon button dis
 
 It also provides an **Alerts** menu you access by clicking the <span class="material-icons">settings</span> icon. From this menu users can configure **Alert Settings**, **Alert Services**, and **Email**.
 
-![AlertsNotifications](/images/SCALE/22.02/AlertsNotifications.png "TrueNAS SCALE Alerts")
+![AlertsNotifications](/images/SCALE/22.12/AlertsNotifications.png "TrueNAS SCALE Alerts")
 
 {{< expand "Alert Settings" "v" >}}
 The **Alert Settings** screen has options for setting the warning level and frequency for alerts specific to application actions.
 
-![AlertSettingsScreen](/images/SCALE/22.02/AlertSettingsScreen.png "TrueNAS SCALE Alert Settings")
+![AlertSettingsSCALE](/images/SCALE/22.12/AlertSettingsSCALE.png "TrueNAS SCALE Alert Settings")
 
 Use the **Set Warning Level** dropdown list options to customize alert importance. Each warning level has an icon and color to express the level of urgency.
 
@@ -174,7 +174,7 @@ See [Alert Settings Screen]({{< relref "/SCALE/SCALEUIReference/Toptoolbar/Alert
 {{< expand "Alert Services" "v" >}}
 The **Alert Services** screen has options to create and edit alert services. It also displays existing services in a list that users can filter by **Type**, **Level**, and **Enabled**.
 
-![AlertServicesScreen](/images/SCALE/22.02/AlertServicesScreen.png "TrueNAS SCALE Alert Services")
+![AlertServicesSCALE](/images/SCALE/22.12/AlertServicesSCALE.png "TrueNAS SCALE Alert Services")
 
 To create a new alert service, click **Add** and fill out the form, then click **Save**. 
 
@@ -185,7 +185,7 @@ See [Alert Services Screen]({{< relref "/SCALE/SCALEUIReference/Toptoolbar/Alert
 {{< expand "Email" "v" >}}
 The **Email** screen lets you set up a system email address.
 
-![AlertEmailScreen](/images/SCALE/22.02/AlertEmailScreen.png "Email General Options")
+![AlertsSetupSystemEmailSCALE](/images/SCALE/22.12/AlertsSetupSystemEmailSCALE.png "Email General Options")
 
 Click on **Send Test Mail** to generate a test email to confirm the system email works.
 
@@ -202,7 +202,7 @@ The **Settings** <span class="material-icons">account_circle</span> icon button 
 {{< /expand >}}
 {{< expand "API Keys" "v" >}}
 Click on **API Keys** <span class="material-icons">laptop</span> to add API keys that identify outside resources and applications without a principal. 
-Users can also click **DOCS** to access their system API documentation.
+Users can also click **API Docs** to access their system API documentation.
 
 See [API Keys]({{< relref "/SCALE/SCALEUIReference/TopToolbar/Settings/APIKeysScreen.md" >}}) for more information on adding or managing API keys.
 {{< /expand >}}
@@ -211,7 +211,7 @@ Click on **Guide** <span class="material-icons">library_books</span> to open the
 
 Click on **About** <span class="iconify" data-icon="ant-design:info-circle-outlined"></span> to display the information window with links to the TrueNAS Documentation Hub, TrueNAS Community Forums, FreeNAS Open Source Storage Appliance GitHub repository, and iXsystems home page.
 
-![AboutWindow](/images/SCALE/22.02/AboutWindow.png "About Window")
+![TrueNASAboutScreenSCALE](/images/SCALE/22.12/TrueNASAboutScreenSCALE.png "About TrueNAS Window")
 
 {{< /expand >}}
 {{< /expand >}}
