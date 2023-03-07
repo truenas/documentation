@@ -18,7 +18,7 @@ You can have either Active Directory or LDAP configured on SCALE but not both.
 {{< expand "Does LDAP work with SMB?" "v" >}}
 LDAP authentication for SMB shares is disabled unless you configured and populated the LDAP directory with Samba attributes.
 The most popular script for performing this task is `smbldap-tools`.
-TrueNAS needs to be able to validate the full certifiction chain (no self-signed certificates). 
+TrueNAS needs to be able to validate the full certificate chain (no self-signed certificates). 
 TrueNAS does not support non-CA certificates.
 {{< /expand >}}
 ## Configuring LDAP

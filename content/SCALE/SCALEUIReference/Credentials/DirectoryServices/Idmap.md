@@ -14,7 +14,7 @@ tags:
 
 {{< toc >}}
 
-Idmap in Linux is essentially a translation of a range of IDs into another or the same range of IDs. Idmap works in conjunction with winbind facility of SAMBA to map owner and group SIDs to user IDs (UIDs) and group IDs (GIDs). 
+Idmap in Linux is essentially a translation of a range of IDs into another or the same range of IDs. Idmap works in conjunction with the Winbind facility of SAMBA to map owner and group SIDs to user IDs (UIDs) and group IDs (GIDs). 
 
 {{< hint danger >}}
 Only administrators experienced with configuring Id mapping should attempt to add new or edit existing idmaps. 
@@ -53,19 +53,19 @@ The settings on the **Add Idmap** and **Edit Idmap** change based on the selecti
 |---------|-------------|
 | **Name** | (Required) Select an option from the dropdown list, **SMB - Primary Domain** or **Custom Value**. **SMB - Primary Domain** reduces the fields displayed on the **Add Idmap** screen. Selecting **Custom Value** adds The **Custom Name** field. |
 | **Custom Name** | Displays below the **Name** field after selecting **Custom Value** in the **Name** field. Enter the pre-Windows 2000 domain name. |
-| **Idmap Backend**  |(Required) Select the backend plugin interface for Winbind to use to store SID to UID/GID mapping tables. The correct setting depends on the environment you deployed the NAS in. Options are **AD** for Active Directory, **LDAP** for an LDAP environment. **AUTORID** is similar to RID but it can automatically assign IDs for different domains. **NSS** provides a means to map Unix users and groups to Windows accounts. **RFC2307** provides a way for winbind to read ID mappings from records in an LdAP sever defined in RFC 2307. **RID** provides a way to use an algorithmic mapping scheme to map UIDs/GIDs and SIDs. **TDB** is similar to RID but it is an allocating backend, which means it needs to allocate new users and group IDs in order to create new mappings. The selected option changes the settings displayed on the **Add Idmap** screen. |
+| **Idmap Backend**  |(Required) Select the backend plugin interface for Winbind to use to store SID to UID/GID mapping tables. The correct setting depends on the environment you deployed the NAS in. Options are **AD** for Active Directory, **LDAP** for an LDAP environment. **AUTORID** is similar to RID but it can automatically assign IDs for different domains. **NSS** provides a means to map Unix users and groups to Windows accounts. **RFC2307** provides a way for Winbind to read ID mappings from records in an LDAP server defined in RFC 2307. **RID** provides a way to use an algorithmic mapping scheme to map UIDs/GIDs and SIDs. **TDB** is similar to RID but it is an allocating backend, which means it needs to allocate new users and group IDs in order to create new mappings. The selected option changes the settings displayed on the **Add Idmap** screen. |
 | **DNS Domain Name**  | Enter the DNS name of the domain. |
-| **Range Low** |(Required) Enter a value for the least number of members. Works with the **Range High** to establish the range of UID/GID numbers the IDMap backend translates. If an external credential like a Windows SID maps to a UID or GID number outside this range, TrueNAS ignores it. |
-| **Range High**  | (Required) Enter a value for the greatest number of members. Works with the **Range Low** to establish the range of UID/GID numbers the IDMap backend translates. If an external credential like a Windows SID maps to a UID or GID number outside this range, TrueNAS ignores it. |
+| **Range Low** |(Required) Enter a value for the least number of members. Works with the **Range High** to establish the range of UID/GID numbers the Idmap backend translates. If an external credential like a Windows SID maps to a UID or GID number outside this range, TrueNAS ignores it. |
+| **Range High**  | (Required) Enter a value for the greatest number of members. Works with the **Range Low** to establish the range of UID/GID numbers the Idmap backend translates. If an external credential like a Windows SID maps to a UID or GID number outside this range, TrueNAS ignores it. |
 
 **Options Settings**
 The **Options** settings change based on the selected **Name** and **Idmap Backend** fields.
 
 | Setting | Description |
 |---------|-------|
-| **Schema Mode** | (Rrequired) Select the schema to use with LDAP authentication for SMB shares. You must configure the LDAP server with Samba attributes to use a Samba Schema. Options include **RFC2307** (included in Windows 2003 R2) and Service for Unix (**SFU**). For SFU 3.0 or 3.5, choose **SFU**. For SFU 2.0, choose **SFU20**. |
+| **Schema Mode** | (Required) Select the schema to use with LDAP authentication for SMB shares. You must configure the LDAP server with Samba attributes to use a Samba Schema. Options include **RFC2307** (included in Windows 2003 R2) and Service for Unix (**SFU**). For SFU 3.0 or 3.5, choose **SFU**. For SFU 2.0, choose **SFU20**. |
 | **Unix Primary Group** | Select to fetch the primary group membership from the LDAP attributes (gidNumber). If unselected, the primary group membership is calculated via the primaryGroupID LDAP attribute. |
-| **Unix NSS Info** | Select sets winbind to retrieve the login shell and home directory from the LDAP attributes. If unselected, when the AD LDAP entry lacks the SFU attributes the smb4.conf parameters `template shell` and `template homedir` are used. |
+| **Unix NSS Info** | Select sets Winbind to retrieve the login shell and home directory from the LDAP attributes. If unselected, when the AD LDAP entry lacks the SFU attributes the smb4.conf parameters `template shell` and `template homedir` are used. |
 
 ### Add Idmap Screen for SMB - Primary Domain
 The settings for **Add Idmap** displays a subset of those on the default screen.
@@ -77,8 +77,8 @@ The settings for **Add Idmap** displays a subset of those on the default screen.
 |---------|-------------|
 | **Name** | Displays **SMB - Primary Domain**. |
 | **DNS Domain Name** | Enter the DNS name of the domain. |
-| **Range Low** |(Required) Works with the **Range High** to establish the range of UID/GID numbers the IDMap backend translates. If an external credential like a Windows SID maps to a UID or GID number outside this range, TrueNAS ignores it. |
-| **Range High** | (Required) Works with the **Range Low** to establish the range of UID/GID numbers the IDMap backend translates. If an external credential like a Windows SID maps to a UID or GID number outside this range, TrueNAS ignores it. |
+| **Range Low** |(Required) Works with the **Range High** to establish the range of UID/GID numbers the idmap backend translates. If an external credential like a Windows SID maps to a UID or GID number outside this range, TrueNAS ignores it. |
+| **Range High** | (Required) Works with the **Range Low** to establish the range of UID/GID numbers the idmap backend translates. If an external credential like a Windows SID maps to a UID or GID number outside this range, TrueNAS ignores it. |
 
 **Options** only as the **Read Only** which, when selected, makes the module read-only. No new ranges are allocated or new mappings created in the idmap pool.
 {{< /expand >}}
@@ -126,8 +126,8 @@ The LDAP settings in **Options** are different from other **Idmap Backend** opti
 | Setting | Description |
 |---------|-------------|
 | **Read Only** | Select to make the module read-only. No new ranges are allocated or new mappings created in the idmap pool. | 
-| **Base DN** | (Required) Enter the directory base suffix to use for SID to UID/GID mapping entries. Examples, *dc=test*, *dc=org*. When undefined, idmap_ldap defaluts to using the LDAP idmap suffix option from [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html). | 
-| **LDAP User DN** | (Required)Enter the user distinguished name (DN) to use for authentication. | 
+| **Base DN** | (Required) Enter the directory base suffix to use for SID to UID/GID mapping entries. Examples, *dc=test*, *dc=org*. When undefined, idmap_ldap defaults to using the LDAP idmap suffix option from [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html). | 
+| **LDAP User DN** | (Required) Enter the user distinguished name (DN) to use for authentication. | 
 | **LDAP User DN Password** | Enter the password associated with the LDAP user DN. | 
 | **URL** | (Required) Enter the URL for the LDAP server to use for SID to UID/GID mapping. For example, *ldap://ldap.netscap.com/o=Airus.com*. | 
 | **Encryption Mode** | (Required) Select the encryption mode to use with LDAP from the dropdown list. Options are **On**, **Off**, or **StartTLS**. | 
@@ -152,7 +152,7 @@ The **RFC2307** settings in **Options** share the **Idmap Backend** settings as 
 
 | Setting | Description |
 |---------|-------------|
-| **LDAP User DN** | (Required)Enter the user distinguished name (DN) to use for authentication. | 
+| **LDAP User DN** | (Required) Enter the user distinguished name (DN) to use for authentication. | 
 | **LDAP User DN Password** | Enter the password associated with the LDAP user DN. | 
 | **URL** | (Required) Enter the URL for the LDAP server to use for SID to UID/GID mapping. For example, *ldap://ldap.netscap.com/o=Airus.com*. | 
 | **Encryption Mode** | (Required) Select the encryption mode to use with LDAP from the dropdown list. Options are **On**, **Off**, or **StartTLS**. | 
