@@ -66,7 +66,7 @@ The **Rollback** option reverts the dataset back to the point in time saved by t
 Rollback is a dangerous operation that causes any configured replication tasks to fail.
 {{< /hint >}}
 Replications use the existing snapshot when doing an incremental backup, and rolling back can put the snapshots out-of-order.
-To restore the data within a snapshot, the recommended steps are:
+To restore the data within a snapshot:
 
 1.  Clone the desired snapshot.
 2.  Share the clone with the share type or service running on the TrueNAS system.
