@@ -38,12 +38,12 @@ Some port identifiers are still being determined.
 |                                        | Port 1: `isp2`     | Port 1: `TBD`          |
 |                                        | Port 2: `isp1`     | Port 2: `TBD`          |
 |                                        | Port 3: `isp0`     | Port 3: `TBD`          |
-| T580-LP-CR (4x10G mode)                | Port 0: `cxl0123`  | Port 0: `enp175s0f4`   |
-|                                        | Port 1: `DISABLED` | Port 1: `enp175s0f4d1` |
-| T580-LP-CR (4x10G mode) (2nd addition) | Port 0: `cxl4567`  | Port 0: `enp216s0f4`   |
-|                                        | Port 1: `DISABLED` | Port 1: `enp216s0f4d1` |
-| T580-LP-CR (40G mode)                  | Port 0: `cxl0`     | Port 0: `enp179s0f4`   |
-|                                        | Port 1: `cxl1`     | Port 1: `enp179s0fd1` |
+| T580-LP-CR (4x10G mode)                | Port 0: `cxl0123`  | Port 0: `TBD`   |
+|                                        | Port 1: `DISABLED` | Port 1: `TBD` |
+| T580-LP-CR (4x10G mode) (2nd addition) | Port 0: `cxl4567`  | Port 0: `TBD`   |
+|                                        | Port 1: `DISABLED` | Port 1: `TBD` |
+| T580-LP-CR (40G mode)                  | Port 0: `cxl0`     | Port 0: `TBD`   |
+|                                        | Port 1: `cxl1`     | Port 1: `TBD` |
 | T6225-SO-CR                            | Port 0: `cc1`      | Port 0: `enp175s0f4`   |
 |                                        | Port 1: `cc0`      | Port 1: `enp175s0f4d1` |
 | T6225-SO-CR (2nd addition)             | Port 0: `cc3`	  | Port 0: `enp216s0f4`   |
