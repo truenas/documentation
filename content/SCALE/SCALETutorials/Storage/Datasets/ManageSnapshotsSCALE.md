@@ -30,7 +30,7 @@ There are two ways to view the list of snapshots:
 
 ![DataProtectSnapshotTasksSCALE](/images/SCALE/22.12/DataProtectSnapshotTasksSCALE.png "Snapshots Button")
 
-The snapshots display as a list. Use the search bar at top to narrow the selection, clear the search bar to list all snapshots.
+The **Snapshots** screen displays a list of snapshots on the system. Use the search bar at top to narrow the selection, clear the search bar to list all snapshots.
 
 ![SnapshotsListingSCALE1](/images/SCALE/22.12/SnapshotsListingSCALE1.png "Snapshot Screen")
 
