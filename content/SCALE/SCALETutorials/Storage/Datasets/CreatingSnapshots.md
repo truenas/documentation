@@ -25,7 +25,7 @@ Consider making a [Periodic Snapshot Task]({{< relref "PeriodicSnapshotTasksScre
 
 There are two ways to access snapshot creation:
 
-### From the Data Protection Menu
+### From the Data Protection Screen
 To access the **Snapshots** screen, go to **Data Protection** > **Periodic Snapshot Tasks** and click the **Snapshots** button in the lower right corner of the widget.
 
 ![DataProtectSnapshotTasksSCALE](/images/SCALE/22.12/DataProtectSnapshotTasksSCALE.png "Create a New Snapshot")
