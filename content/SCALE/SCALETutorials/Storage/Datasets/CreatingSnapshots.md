@@ -50,7 +50,7 @@ You can also click the **Manage Snapshots** link on the **Data Protection** widg
     
 ![AddSnapshotSCALE1](/images/SCALE/22.12/AddSnapshotSCALE1.png "Add a New Snapshot")
 
-2. Select dataset or zvol from the **Dataset** dropdown list. 
+2. Select a dataset or zvol from the **Dataset** dropdown list. 
 
 3. Accept the name suggested by the TrueNAS software in the **Name** field or enter any custom string to override the suggested name.
 
