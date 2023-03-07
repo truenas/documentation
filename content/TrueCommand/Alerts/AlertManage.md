@@ -103,12 +103,18 @@ To create a new rule:
    c. Select the alert type on the **Priority** drop-down list. Choose **Information**, **Warning**, or **Critical** to determine the alert category generated.
    d. Type a description for the alert.
 2. Specify the **Alert Triggers**.
-   Select a data source or rule type from the dropdown list to determine what can trigger an alert. For example, *cpu_temperature* means the alert rule monitors the temperature of the chosen system. Scroll down the list to find the desired source.
+
+   a. Select a data source or rule type from the dropdown list to determine what can trigger an alert. 
+      For example, *cpu_temperature* means the alert rule monitors the temperature of the chosen system. Scroll down the list to find the desired source.
 
    ![AlertTriggerDataSources](/images/TrueCommand/2.1/AlertTriggerDataSources.png "Alert Trigger Data Sources")
 
-   b. Select the comparison type from the **Comparator** dropdown list (**Greater Than**, **Less Than**, or **Not Equals**). The comparison type applies to the data source and comparison value.
-   c. Specify the comparison value by entering an integer appropriate for the selected options in the **Value** field. The integer acts as a threshold or limitation for when the rule generates an alert.
+   b. Select the comparison type from the **Comparator** dropdown list (**Greater Than**, **Less Than**, or **Not Equals**). 
+      The comparison type applies to the data source and comparison value. 
+
+   c. Specify the comparison value by entering an integer appropriate for the selected options in the **Value** field. 
+      The integer acts as a threshold or limitation for when the rule generates an alert.
+      
 3. Click **CREATE ALERT** to finish creating the new alert rule. To start over, click **RESET**.
 
 ## Alert Services Screens and Functions
