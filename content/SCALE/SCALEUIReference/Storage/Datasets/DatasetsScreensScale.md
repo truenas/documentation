@@ -19,7 +19,7 @@ The screen focus is on managing data storage including user and group quotas, an
 
 The **Datasets** screen displays **No Datasets** with a **Create Pool** button in the center of the screen until you add a pool and the first root dataset.
 
-![DatasetsScreenBeforeAddingAPool](/images/SCALE/22.12/DatasetsScreenBeforeAddingAPool.png "Datasets Screen Add Pool") 
+![DatasetsScreenBeforeAddingAPool](/images/SCALE/22.12/DatasetsScreenBeforeAddingAPool.png "Datasets Screen Without a Pool") 
 
 After creating a dataset, the left side of the screen displays a tree table that lists parent or child datasets (or zvols). The **Details for *datasetname*** area on the right side of the screen displays a set of dataset widgets.
 
@@ -35,7 +35,7 @@ For example, a system with 18,446,744,073,709,551,615 bytes reports the number a
 
 **Add Zvol** opens the **[Add Zvol]({{< relref "ZvolsScreensScale.md" >}})** screen.
 
-**Add Dataset** opens the **[Add Dataset](#add-or-edit-dataset-screens)** screen.
+**Add Dataset** opens the **[Add Dataset](#add-and-edit-dataset-screens)** screen.
 
 ## Dataset Tree Table
 
@@ -90,6 +90,8 @@ A child dataset path displays the root dataset (pool) name and parent dataset.
 ![DatasetDetailsWidgetChildDataset](/images/SCALE/22.12/DatasetDetailsWidgetChildDataset.png "Dataset Details Widget Child Dataset")
 
 **Edit** opens the **[Edit Dataset](#add-and-edit-dataset-screens)** screen for the selected dataset.
+
+**Promote** appears on the **Dataset Details** widget when you select a cloned snapshot on the dataset tree table. This option promotes the cloned child dataset and allows users to delete the parent volume that created the clone. Otherwise, you cannot delete a clone while the original volume still exists. See [zfs-promote.8](https://openzfs.github.io/openzfs-docs/man/8/zfs-promote.8.html).
 
 Non-root parent and child dataset versions of the card include the **[Delete](#delete-dataset)** option. 
 To delete a root dataset, use the **Disconnect/Export** option on the **[Storage Dashboard]({{< relref "StorageDashboardScreen.md" >}})** screen.
