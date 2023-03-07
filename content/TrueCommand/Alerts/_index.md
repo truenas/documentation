@@ -9,4 +9,4 @@ Method of alert notifications as well as theming of alerts in the TrueCommand in
 
 {{< include file="static/includes/General/MenuNav.md.part" markdown="true" >}}
 
-{{< children description="true" >}}
+{{< children depth="2" description="true" >}}
