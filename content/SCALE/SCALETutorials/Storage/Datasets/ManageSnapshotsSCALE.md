@@ -26,7 +26,7 @@ There are two ways to view the list of snapshots:
 
 ![DatasetDataProtectManageSnapshotsSCALE](/images/SCALE/22.12/DatasetDataProtectManageSnapshotsSCALE.png "Manage Snapshots") 
 
-2. Alternatively, go to **Data Protection** and locate the **Periodic Snapshot Tasks** widget. Click the **Snapshots** button in the lower right hand corner of the widget.
+* Go to **Data Protection**, locate the **Periodic Snapshot Tasks** widget, then click the **Snapshots** button in the lower right hand corner of the widget.
 
 ![DataProtectSnapshotTasksSCALE](/images/SCALE/22.12/DataProtectSnapshotTasksSCALE.png "Snapshots Button")
 
