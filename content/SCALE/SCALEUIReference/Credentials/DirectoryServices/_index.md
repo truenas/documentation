@@ -1,5 +1,5 @@
 ---
-title: "Directory Services"
+title: "Directory Services Screens"
 geekdocCollapseSection: true
 weight: 30
 aliases:
@@ -7,20 +7,40 @@ aliases:
   - /scale/credentials/directoryservices/ldapscale/
   - /scale/credentials/directoryservices/idmapscale/
   - /scale/credentials/directoryservices/kerberosscale/
+tags:
+- scalekerberos
+- scalead
+- scaleidmap
+- scaleldap
+- scaledirserv
 ---
 
 The SCALE Directory Services section contains options to edit directory domain and account settings, set up Idmapping, and configure authentication and authorization services in TrueNAS SCALE. 
 
-![DirectoryServicesScreenDisabled](/images/SCALE/22.02/DirectoryServicesScreenDisabled.png "Directory Services Screen Disabled")
+## Directory Services Screen
 
-The Directory Services screen is mostly empty until you connect TrueNAS to either an Active Directory or an LDAP server.
+The **Directory Services** screen opens with two options, **Active Directory** and **LDAP**. You can configure one or the other but not both.
 
-![DirectoryServicesScreenEnabled](/images/SCALE/22.02/DirectoryServicesScreenEnabled.png "Directory Services Screen Enabled")
+![DirectoryServicesScreen](/images/SCALE/22.12/DirectoryServicesScreen.png "Directory Services")
 
-To display Kerberos settings, click **Show** next to Advanced Settings.
+**Configure Active Directory** opens the **[Active Directory]({{< relref "ActiveDirectory.md" >}})** configuration screen.
+
+**Configure LDAP** opens the **LDAP** configuration screen.
+
+After configuring Active Directory or LDAP, the **Directory Services** screen includes the widgets for each option.
+
+![DirectoryServicesADandLDAPWidgets](/images/SCALE/22.12/DirectoryServicesADandLDAPWidgets.png "Directory Services with Widgets")
+
+**Show** to the right of **Advanced Settings** opens a dialog warning users of the risk incorrect configuration can cause. 
+**Continue** closes the dialog and permits access to **Idmap**, **Kerberos Settings**, **Kerberos Realms**, and **Kerberos Keytabs** configuration widgets.
+
+## Directory Services Advanced Settings 
+The **Advanced Settings** include the **Idmap**, **Kerberos Settings**, **Kerberos Realms,** and **Kerberos Keytab** widgets.
+
+![DirServicesAdvancedSettingsScreen](/images/SCALE/22.12/DirServicesAdvancedSettingsScreen.png "Directory Services Advanced Settings")
 
 {{< hint danger >}} 
-Changing Advanced settings can be dangerous when done incorrectly. Please use caution before saving.
+Changing Advanced settings can be dangerous if done incorrectly. Use caution before saving.
 {{< /hint >}}
 
 ## Article Summaries
