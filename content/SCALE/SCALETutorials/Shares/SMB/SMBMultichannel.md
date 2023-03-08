@@ -1,6 +1,6 @@
 ---
 title: "Setting Up SMB Multichannel"
-description: "This article provides information on setting up SMB Multichannel."
+description: "This article provides information on setting up SMB multichannel."
 weight: 60
 aliases:
 tags:
