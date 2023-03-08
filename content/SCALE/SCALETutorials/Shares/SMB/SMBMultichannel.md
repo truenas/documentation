@@ -15,7 +15,7 @@ SMB multichannel allows servers to use multiple network connections simultaneous
 SMB multichannel does not function if you combine NICs into a LAGG. 
 {{< /hint >}}
 
-## Activate Multichannel in TrueNAS Scale
+## Activating Multichannel in TrueNAS Scale
 
 {{< hint info >}}
 If you already have clients connected to SMB shares, disconnect them all before activating multichannel.
