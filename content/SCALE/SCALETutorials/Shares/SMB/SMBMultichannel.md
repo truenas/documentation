@@ -35,7 +35,7 @@ Go to **System Settings > Shell** and enter `midclt call smb.getparm 'server mul
 
 ![SMBMultichannelValidateTrueNAS](/images/SCALE/22.12/SMBMultichannelValidateTrueNAS.png "Validate Multichannel")
 
-### Validate Multichannel Activated In Windows
+### Validating Multichannel Activated In Windows
 
 Once you have connected a client to their SMB share, open Powershell as an administrator on a client, then enter `Get-SmbMultichannelConnection`. The terminal should list multiple Server IPs.
 
