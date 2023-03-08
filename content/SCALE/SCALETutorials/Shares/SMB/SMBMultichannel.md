@@ -29,7 +29,7 @@ If you already have clients connected to SMB shares, disconnect them all before 
 3. Go back to **System Settings > Services** and start the SMB service.
 4. Connect clients to their SMB shares.
 
-### Validate Multichannel Activated In TrueNAS
+### Validating Multichannel Activated In TrueNAS
 
 Go to **System Settings > Shell** and enter `midclt call smb.getparm 'server multi channel support' global`. If Multichannel is active, the shell returns `True`.
 
