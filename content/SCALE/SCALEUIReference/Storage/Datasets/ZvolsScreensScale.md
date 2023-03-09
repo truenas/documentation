@@ -9,9 +9,6 @@ tags:
 
 {{< toc >}}
 
-
-{{< toc >}}
-
 The zvol screens and widgets, accessed from the **Datasets** screen, allow you to add or edit a zvol and manage the volume storage. 
 Like datasets, zvols are listed on the **Datasets** screen tree table.
 
@@ -68,7 +65,7 @@ The widget donut graph provides at-a-glance information and numeric values for t
 This includes data written and space allocated to child datasets of this dataset. 
 It provides access to quota configuration options for the parent dataset and the child dataset of the parent, and for users and groups with access to the dataset.
 
-![ZvolSpaceManagementWidgett](/images/SCALE/22.12/ZvolSpaceManagementWidget.png "Zvol Space Management Widget")
+![ZvolSpaceManagementWidget](/images/SCALE/22.12/ZvolSpaceManagementWidget.png "Zvol Space Management Widget")
 
 **Edit** opens the **[Capacity Settings]({{< relref "CapacitySettingsSCALE.md" >}})** screen where you can set quotas for the zvol.
 
@@ -188,6 +185,7 @@ Encryption options are the same on both the **Basic Options** and **Advanced Opt
 
 **Encryption Options** only display on the **Add Zvol** screen. 
 To change encryption settings, use the **Edit** button on the **ZFS Encryption** widget.
+
 {{< expand "Click Here for More Information" "v" >}}
 The default setting is **Inherit**. Clearing the checkbox displays the key encryption options. 
 Clear the **Inherit(*non-encrypted*)** checkbox to display additional settings.
@@ -200,13 +198,14 @@ Selecting other options changes the settings displayed.
 |---------|-------------|
 | **Inherit (non-encrypted)** | Select to clear the checkmark to display more encryption settings. |
 | **Encryption** | Select to clear the checkmark and remove the encryption settings from the **Add Zvol** screen. If the root dataset is not encrypted, leaving **Inherit (non-encrypted)** selected is the same as clearing the **Encryption** checkbox. |
-{< /expand >}}
 
 #### Edit Encryption Settings
+
 {{< include file="/_includes/EncryptionSettings.md" type="page" >}}
 
-See the list of Related Encryption Articles at the bottom of this article for more on encryption.
 {{< /expand >}}
+
+See the list of Related Encryption Articles at the bottom of this article for more on encryption.
 
 {{< taglist tag="scalezvols" limit="10" >}}
 {{< taglist tag="scaledatasets" limit="10" title="Related Dataset Articles" >}}
