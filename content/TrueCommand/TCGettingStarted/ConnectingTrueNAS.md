@@ -14,11 +14,11 @@ tags:
 
 To add your first system to TrueCommand, click **NEW SYSTEM** on the dashboard.
 
-![SystemsAddFirstSystem](/images/TrueCommand/2.0/SystemsAddFirstSystem.png "Adding Your First System")
+![TrueCommand231DashboardNoListings](/images/TrueCommand/2.3.1/TrueCommand231DashboardNoListings.png "TrueCommand Dashboard No Systems Configured")
 
 Enter the system IP address or DNS host name, then enter a system nickname and password.
 
-![SystemsAddFirstSystemForm](/images/TrueCommand/2.0/SystemsAddFirstSystemForm.png "Adding Your First System")
+![TrueCommand231AddNewSystem](/images/TrueCommand/2.3.1/TrueCommand231AddNewSystem.png "+ New System Menu")
 
 | Setting | Description |
 |---------|-------------|
