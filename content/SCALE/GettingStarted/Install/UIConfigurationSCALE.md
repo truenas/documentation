@@ -85,7 +85,7 @@ TrueNAS SCALE requires at least one storage pool. We recommend creating the requ
 When planning your data storage, consider the type of data sharing you want to do, any container applications you might want to deploy, and how you want to organize stored data. 
 
 The storage creation process begins with creating a pool and then adding the datasets as needed. 
-You must create at least one storage pool [explained here]]({{< relref "SetUpStorageScale.md" >}}) on your system. 
+You must create at least one storage pool [explained here]({{< relref "SetUpStorageScale.md" >}}) on your system. 
 
 After adding your first pool, the root parent dataset is automatically created for that pool.
 Select this root parent dataset when you create your first dataset.
