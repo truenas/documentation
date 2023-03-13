@@ -57,7 +57,7 @@ Click **IMPORT** in the **Certificate Authorities** screen to add certificate au
 
 ![AdministrationCAs](/images/TrueCommand/2.2/AdministrationCAs.png "Administration: Certificates")
 
-The **CA Import** screen allows you to give the CA a name and select if you would like it to be in plain text before you upload it.
+The **CA Import** screen allows name the CA and to select changing it to plain text before you upload it.
 
 ### Configuration
 
