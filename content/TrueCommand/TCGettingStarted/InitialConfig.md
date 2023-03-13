@@ -107,7 +107,7 @@ TrueCommand reports some (completely anonymous) basic usage telemetry back to iX
 
 Click the **PREVIEW** button to see what your system is sending.
 
-You can disable telemetry by checking the **Disable Telemetry** box and clicking **SAVE**.
+Select **Disable Telemetry** to disable the disable telemetry and click **SAVE**.
 
 ## LDAP Servers
 
