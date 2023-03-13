@@ -61,7 +61,7 @@ The **CA Import** screen allows name the CA and to select changing it to plain t
 
 ### Configuration
 
-The **Configuration** widget contains options to configure various TrueCommand features. The configuration options accessible are: 
+The **Configuration** widget contains options to configure various TrueCommand features. Configuration options are: 
 
 * General Options
 * SSL Options
