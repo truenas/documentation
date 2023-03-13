@@ -3,9 +3,11 @@ title: "Configuring SCALE Using the UI"
 description: "This article provides a sequential process to complete SCALE installation and configuration using the SCALE UI."
 weight: 30
 aliases:
+ - /scale/gettingstarted/install/uiconfigurationscale/
 tags:
 - scaleinstall
 - scalemigrate
+- scaleconfig
 ---
 
 
@@ -230,5 +232,6 @@ When reporting an issue, include a system debug file, downloaded following the i
 
 Support is also available through the TrueNAS [Community Forums, blog, and Discord]){{< relref "/content/Contributing/IssueReporting/_index.md" >}}. These options are accessible on the top header of the TrueNAS Documentation Hub website.
 
+{{< taglist tag="scaleconfig" limit="10" title="Related Configuration Articles" >}}
 {{< taglist tag="scaleinstall" limit="10" title="Related Installation Articles" >}}
 {{< taglist tag="scalemigrate" limit="10" title="Related Migration Articles" >}}
