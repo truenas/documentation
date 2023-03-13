@@ -135,7 +135,7 @@ Clicking the **Configure** button displays the following fields:
 | **Mailserver port** | Port number the SMTP server listens to. |
 | **Auth user** | User name for plain authentication. |
 | **Auth pass** | Password for plain authentication. Leave blank for no-auth. |
-| From | The email address of the sender. |
+| **From** | The email address of the sender. |
 
 {{< taglist tag="tcinstall" limit="10" >}}
 {{< taglist tag="tcconfig" limit="10" title="Related Articles" >}}
