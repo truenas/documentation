@@ -131,7 +131,7 @@ Clicking the **Configure** button displays the following fields:
 
 | Field | Value |
 | ----- | ------------- |
-| Mailserver | Address for the SMTP server. |
+| **Mailserver** | Address for the SMTP server. |
 | Mailserver port | Port number the SMTP server listens to. |
 | Auth user | User name for plain authentication. |
 | Auth pass | Password for plain authentication. Leave blank for no-auth. |
