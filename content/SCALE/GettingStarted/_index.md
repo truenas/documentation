@@ -18,6 +18,7 @@ Configuration includes setting up initial storage, backup, and data sharing, and
 {{< /expand >}}
 
 {{< expand "SCALE Enterprise Getting Started Table of Contents (click to expand)" "v" >}}
+{{< enterprise >}}
 * [Download or Print]({{< relref "/SCALE/GettingStarted/PrintPreview.md" >}})
 * [User Agreements]({{< relref "/content/SCALE/GettingStarted/UserAgreements/_index.md" >}})
   * [TrueNAS SCALE EULA]({{< relref "SCALEEULA.md" >}})
@@ -38,6 +39,7 @@ Configuration includes setting up initial storage, backup, and data sharing, and
   * [Backing Up TrueNAS]({{< relref "SetUpBackupSCALE.md" >}})
   * [Preparing for Clustering]({{< relref "ClusterPreparation.md" >}})
   * [Configuring Virtualization and Apps in TrueNAS SCALE]({{< relref "VMandAppConfigSCALE.md" >}})
+  {{< /enterprise >}}
 {{< /expand >}}
 
 ## SCALE Documentation Sections
