@@ -110,7 +110,9 @@ To mount the SMB share to a drive letter on windows, open the command line and r
 
 ```net use Z: \\computer_name\share_name /PERSISTENT:YES```
 
-In case of Windows reporting an incorrect password, you might have to change your security settings: Local Security Policy  -> Local Policies -> Security Options -> Network security: LAN Manager authentication level -> Send NTLMv2 response only
+{{< hint tip "Troubleshooting Tip" >}}
+In case of Windows reporting an incorrect password, you might have to change your Windows security settings: Local Security Policy  -> Local Policies -> Security Options -> Network security: LAN Manager authentication level -> Send NTLMv2 response only
+{{< /hint >}}
 
 {{< /expand >}}
 {{< expand "Apple" >}}
