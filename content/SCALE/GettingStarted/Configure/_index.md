@@ -20,7 +20,7 @@ Other options include:
 * Configuring virtual machines (VMs) or Apps
 
 If you plan to use this TrueNAS SCALE system as part of a cluster, complete the configuration process and then save the system configuration file. 
-Then set up TrueCommand to manage your TrueSCALE system(s) using the instructions in [Installing TrueCommand Cloud]({{< relref "/content/truecommand/tcgettingstarted/install/installtccloud.md" >}}) or [Installing the TrueCommand Container using Docker on Linux]({{< relref "/content/truecommand/tcgettingstarted/install/installtcdocker.md" >}}). To set up clusters of TrueNAS SCALE systems use TrueCommand to [create and manage the cluster and nodes]({{< relref "/SCALE/GettingStarted/ClusterPreparation.md" >}}).
+Then set up TrueCommand to manage your TrueSCALE system(s) using the instructions in [Installing TrueCommand Cloud]({{< relref "/content/truecommand/tcgettingstarted/install/installtccloud.md" >}}) or [Installing the TrueCommand Container using Docker on Linux]({{< relref "/content/truecommand/tcgettingstarted/install/installtcdocker.md" >}}). To set up clusters of TrueNAS SCALE systems use TrueCommand to [create and manage the cluster and nodes]({{< relref "ClusterPreparation.md" >}}).
 
 ## Configuration Articles
 
