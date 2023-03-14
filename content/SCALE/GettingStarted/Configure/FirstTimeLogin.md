@@ -1,6 +1,8 @@
 ---
 title: "First Time Login"
 weight: 20
+aliases: 
+ - /scale/gettingstarted/firsttimelogin/
 tags:
 - scalelogin
 - scalesettings
