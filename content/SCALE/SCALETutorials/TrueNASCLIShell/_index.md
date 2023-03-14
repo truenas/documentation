@@ -1,12 +1,13 @@
 ---
-title: "Using the TrueNAS CLI Shell"
-description: "This article describes how to use the SCALE CLI Shell for basic networking, updating, and storage management." 
+title: "TrueNAS CLI Shell"
+geekdocCollapseSection: true
+description: "This article describes how to access TrueNAS CLI Shell." 
 weight: 130
 ---
 
 {{< toc >}}
 
-The TrueNAS CLI Shell functions like a text-based version of the web UI. Users can enter commands to "navigate" to different menus within SCALE and perform actions. This article covers basic operations like setting up networking, performing updates, and listing storage pools/datasets.
+The TrueNAS CLI Shell functions like a text-based version of the web UI. Users can enter commands to "navigate" to different namespaces (i.e. screens) within SCALE and perform actions. This article covers basic operations like setting up networking, performing updates, and listing storage pools/datasets.
 
 ## Launch the TrueNAS CLI Shell
 
@@ -14,64 +15,18 @@ To open the TrueNAS CLI Shell, go to the [Console Setup Menu]({{< relref "Consol
 
 ![TrueNASCLIlaunch](/images/SCALE/TrueNASCLIlaunch.png "TrueNAS CLI Shell")
 
-To close the TrueNAS CLI Shell, enter `quit`.
+## Basic Functions
 
-### Basic Networking
+To list the available options for the current namespace, enter `ls`.
 
-#### Interfaces
+After you navigate to a namespace that has available commands, you can view tooltips for using commands by entering `man [command]`
 
-This section covers assigning an IP address to a network interface.
+For example, `account user> man create`
 
-Enter `network interface`.
+To go back one namespace, enter `..`.
 
-If you don't already know the interface you want to configure, enter `query` to display a list of all physical network interfaces.
+To close the TrueNAS CLI Shell, enter `quit` or `exit`.
 
-![TrueNASCLInetworkinterfacequery](/images/SCALE/TrueNASCLInetworkinterfacequery.png "Network Interface Query")
+## Article Summaries
 
-To edit the interface, enter `update interfacename aliases=["ipaddress/subnetmask"] ipv4_dhcp=false`
-
-The CLI displays the message: "You have pending network interface changes. Please run 'network interface commit' to apply them."
-
-Enter `commit` to apply the changes, then enter `checkin` to make them permanent. 
-
-![TrueNASCLIupdateinterfacealiases](/images/SCALE/TrueNASCLIupdateinterfacealiases.png "Update Interface Aliases")
-
-Enter `query` to make sure the Truenas applies the changes successfully.
-
-Enter `..` to exit `interface` and go up one level to the `network` menu.
-
-#### Global Configuration
-
-This section covers configuring the default gateway.
-
-Enter `configuration` (or `network configuration` if you just opened the CLI Shell).
-
-Enter `update ipv4gateway="ipaddress"`
-
-If entered properly, your system networking is now configured.
-
-### Performing Manual Updates
-
-To perform a manual update via the TrueNAS CLI Shell, you will first have to upload a manual update file onto the system.
-
-Connect to your system with your choice of FTP program (such as [WinSCP](https://winscp.net/eng/index.php)) and place the manual update file in **/var/tmp/firmware**.
-
-Once it finishes uploading, go to the console setup menu and launch the TrueNAS CLI Shell.
-
-Enter `system update manual path="/var/tmp/firmware/updatefilename"`
-
-![TrueNASCLIsystemupdatemanualpath](/images/SCALE/TrueNASCLIsystemupdatemanualpath.png "Manual Update")
-
-### Listing Storage Pools and Datasets
-
-To list all configured storage pools, enter `storage pool query`.
-
-![TrueNASCLIstoragepoolquery](/images/SCALE/TrueNASCLIstoragepoolquery.png "Pool Query")
-
-Enter `q` to exit the query.
-
-To list all configured datasets, enter `storage dataset query`.
-
-![TrueNASCLIstoragedatasetquery](/images/SCALE/TrueNASCLIstoragedatasetquery.png "Dataset Query")
-
-Enter `q` to exit the query.
+{{< children depth="2" description="true" >}}
