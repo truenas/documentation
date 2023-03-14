@@ -2,11 +2,13 @@
 title: "Backing Up TrueNAS"
 description: "This article provides general information and instructions on setting up data storage backup solutions and saving the system configuration and initial system debug files, and creating a boot environment."
 weight: 60
+aliases:
+ - /scale/gettingstarted/install/setupbackupscale/
 tags:
 - scaleinstall
 - scalemigrate
 - scalebackup
-- scalecluster
+- scaleconfig
 ---
 
 {{< toc >}}
@@ -129,6 +131,5 @@ After installing and completing your SCALE system configuration, [create a boot 
 If an issue occurs where you lose access to the SCALE UI, you can establish an SSH session and restore it from the boot environment. 
 You can clone the boot environment listed after the initial/initial environment and rename the clone to something you recognize such as the release number with date and time.
 
-{{< taglist tag="scaleinstall" limit="10" >}}
+{{< taglist tag="scaleconfig" limit="10" title="Related Configuration Articles" >}}
 {{< taglist tag="scalebackup" limit="10" title="Related Backup Articles" >}}
-{{< taglist tag="scalecluster" limit="10" title="Related Cluster Articles" >}}

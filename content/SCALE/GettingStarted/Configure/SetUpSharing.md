@@ -2,10 +2,13 @@
 title: "Setting Up Data Sharing"
 description: "This article provides general information on setting up basic data sharing on TrueNAS SCALE."
 weight: 50
+aliases:
+ - /scale/gettingstarted/install/setupsharing/
 tags:
 - scaleinstall
 - scalemigrate
 - scaleshares
+- scaleconfig
 ---
 
 {{< toc >}}
@@ -152,5 +155,5 @@ A simple configuration is beyond the scope of this getting started guide, but de
 
 With simple sharing now set up, you can back up your configuration and set up data backup.
 
-{{< taglist tag="scaleinstall" limit="10" >}}
+{{< taglist tag="scaleconfig" limit="10" title="Related Configuration Articles" >}}
 {{< taglist tag="scaleshares" limit="10" title="Related Shares Articles" >}}

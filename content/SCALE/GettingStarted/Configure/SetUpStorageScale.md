@@ -2,9 +2,12 @@
 title: "Setting Up Storage"
 description: "This article provides basic instructions for setting up your first storage pool and dataset or zvol."
 weight: 40
+aliases:
+ - /scale/gettingstarted/install/setupstoragescale/
 tag:
 - scaleinstall
 - scalestorage
+- scaleconfig
 ---
 
 {{< toc >}}
@@ -54,6 +57,5 @@ When you finish building and organizing your TrueNAS pools and datasets, move on
 
 If you don't plan to set up data sharing, you can [set up backup solutions]({{< relref "SetUpBackupSCALE.md" >}}) for your system and stored data.
 
-{{< taglist tag="scaleinstall" limit="10" >}}
-
+{{< taglist tag="scaleconfig" limit="10" title="Related Configuration Articles" >}}
 {{< taglist tag="scalestorage" limit="10" title="Related Storage Articles" >}}
