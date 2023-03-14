@@ -1,6 +1,8 @@
 ---
 title: "First Time Login"
-weight: 50
+weight: 20
+aliases: 
+ - /scale/gettingstarted/firsttimelogin/
 tags:
 - scalelogin
 - scalesettings
@@ -8,6 +10,7 @@ tags:
 - scaledashboard
 - scalemigrate
 - scaleenterprise
+- scaleconfig
 ---
 
 {{< toc >}}
@@ -224,5 +227,6 @@ Click the **Power** <span class="material-icons">power_settings_new</span> icon 
 
 Now that you can access the TrueNAS web interface and see all the management options, you can begin [storing data]({{< relref "/SCALE/SCALEUIReference/Storage/_index.md" >}})!
 
+{{< taglist tag="scaleconfig" limit="10" title="Related Configuration Articles" >}}
 {{< taglist tag="scaleinstall" limit="10" title="Related Installation Articles" >}}
 {{< taglist tag="scalemigrate" limit="10" title="Related Migration Articles" >}}
