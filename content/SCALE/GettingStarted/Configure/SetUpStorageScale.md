@@ -56,9 +56,6 @@ To create a dataset or zvol, you can click **Datasets** on the main navigation p
 
 Organize the pool with as many datasets or zvols you need according to your access and data sharing requirements before moving data into the pool.
 
-If you plan to deploy container applications, the system automatically creates the **ix-applications** dataset but this is not used for application data storage. 
-If you want to store data by application, create the dataset first and then deploy your application. When creating a dataset for an application, select **App** as the **Share Type** setting.
-
 See [Adding or Managing Datasets]({{< relref "DatasetsSCALE.md" >}}) for more information on configuring datasets, or [Adding or Managing Zvols]({{< relref "AddManageZvols.md" >}}) for more information on zvols.
 
 ## Taking the Next Step
