@@ -25,15 +25,21 @@ TrueNAS SCALE provides four types of sharing methods, but this article only disc
 
 For more information on TrueNAS SCALE shares, see the articles listed at the bottom of this article.
 
+Regardless of what type of share you create, the first step is to create a dataset to use for the share.
+## Creating a Share Dataset
+The share creation process starts with creating a dataset to use for the share. 
+{{< expand "Creating a Basic Dataset for Shares" "v" >}}
+
+{{< include file="/content/CreateDataestScale.md" type="page" >}}
+
+{{< /expand >}}
 ## Setting up SMB Shares for Windows
 
 For more information on adding SMB shares, see [Adding SMB Shares]({{< relref "AddSMBShares.md" >}}).
 {{< expand "Creating a Basic SMB Share" "v" >}}
 To set up a basic SMB share:
 
-1. Create a dataset with **Share Type** set to **SMB**. 
-
-    {{< include file="/content/CreateDataestScale.md" type="page" >}}
+1. [Create a dataset](#creating-a-share-dataset) with **Share Type** set to **SMB**. 
 
 2. Create the TrueNAS user accounts with **Samba Authentication** set.
 
@@ -104,9 +110,7 @@ For more information on creating NFS shares, see [Adding NFS Shares]({{< relref 
 {{< expand "Adding a Basic NFS Share" "v" >}}
 To set up NFS sharing:
 
-1. Create a dataset with **Share Type** set to **Generic**.  
-
-    {{< include file="/content/CreateDataestScale.md" type="page" >}}
+1. [Create a dataset](#creating-a-share-dataset) with **Share Type** set to **Generic**.  
 
 2. Add additional packages like `nfs-common` to any client systems that require them.
 
