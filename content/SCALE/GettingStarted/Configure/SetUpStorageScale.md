@@ -28,6 +28,7 @@ Backing data up in the cloud requires a 3rd party cloud storage provider account
 Backing up with replication requires you to have additional storage on the TrueNAS system or (ideally) another TrueNAS system in a different location.
 
 ## Setting Up Storage
+
 Your system must have one storage pool configured.
 
 After installing SCALE and when you have the IP address assigned by DHCP during the installation process, enter that IP address into a browser window URL address field to access the SCALE sign-in splash screen where you can log into SCALE.
