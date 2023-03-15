@@ -95,7 +95,7 @@ If an LDAP server is configured, select the server and click **Edit** to display
 If not configured, click **Configure LDAP** to display the **LDAP** configuration screen.
 Click **Advanced Options** and select **Samba Schema (DEPRECATED - see the help text**. 
 {{< hint warning >}}
-Only setting LDAP authentication for SMB share is required, and configure the LDAP server with Samba attributes.
+Only enable LDAP authentication for the SMB share if you require it. Your LDAP server must be configured with Samba attributes.
 Support for **Samba Schema** is [officially deprecated in Samba 4.13](https://www.samba.org/samba/history/samba-4.13.0.html). This feature is removed after Samba 4.14.
 Users should begin upgrading legacy Samba domains to Samba AD domains.
 {{< /hint >}}
