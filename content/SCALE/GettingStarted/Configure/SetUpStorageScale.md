@@ -29,33 +29,41 @@ Backing up with replication requires you to have additional storage on the TrueN
 
 ## Setting Up Storage
 
-Click on **Storage** to access the **[Storage]({{< relref "/SCALE/SCALEUIReference/Storage/StorageDashboardScreen.md" >}})** screen and widgets where you create pools and manage your storage pools, disks, and devices.
+Your system must have one storage pool configured.
 
-Click [here]({{< relref "CreatePoolSCALE.md" >}}) for instructions on how to plan for and create pools on SCALE. 
+After installing SCALE and when you have the IP address assigned by DHCP during the installation process, enter that IP address into a browser window URL address field to access the SCALE sign-in splash screen where you can log into SCALE.
+
+Begin by configuring your first storage pool. 
+
+See [Creating Storage Pools]({{< relref "CreatePoolSCALE.md" >}}) for more information on how to plan for and create pools on SCALE. 
 If you want to create additional pools with other disks not assigned to a pool, you can do that now or as you have a need for them.
+### Creating a Storage Pool
+
+{{< include file="/_includes/CreatePool.md" type="page" >}}
+
+The root dataset of the first pool you create automatically becomes the system dataset.
+
+After adding your first pool, you can move on to creating datasets for data sharing, applications you plan to deploy, or other uses cases.
 
 ### Adding Datasets or Zvols
 
 New pools have a root dataset that allows further division into new non-root parent and child datasets, or into storage volumes (zvols).
 A *dataset* is a file system that stores data and has specific permissions.
-A *zvol* is a virtual block device that has a predefined storage size. Zvols are used by virtual machines (VMs) for their data storage needs.
+A *zvol* is a virtual block device (like a virtual disk drive) that has a predefined storage size. Zvols are used by virtual machines (VMs) for their data storage needs.
 
-To create a dataset click **Datasets** on the main navigation panel or **Manage Datasets** on the **Storage Dashboard > Usage** widget to open the **Datasets** screen. Click **[Add Dataset]({{< relref "DatasetsSCALE.md" >}})** or **[Add Zvol]({{< relref "AddManageZvols.md" >}})**.
-{{< hint info >}}
-The two **Add Dataset** fields that you cannot change after you click **Save** are the dataset **Name** and **Share Type**. 
-**Name** is a required field but setting **Share Type** is optional. 
-The default setting for **Share Type** is **Generic** which works for any share type you create, or if you know you want to set up sharing for Windows, select **SMB** for an SMB share. 
-A dataset with a **Share Type** set to **SMB** optimizes that dataset for the Windows sharing protocol.
-{{< /hint >}}
+To create a dataset or zvol, you can click **Datasets** on the main navigation panel or go to **Storage** and click **Manage Datasets** on the **Usage** widget to open the **Datasets** screen. 
+
+{{< include file="/_includes/CreateDatasetSCALE.md" type="page" >}}
+
 Organize the pool with as many datasets or zvols you need according to your access and data sharing requirements before moving data into the pool.
 
-If you plan to deploy container applications, the system automatically creates the **ix-applications** dataset but this is not used for application data storage. If you want to store data by application, create the dataset first and then deploy your application.
+See [Adding or Managing Datasets]({{< relref "DatasetsSCALE.md" >}}) for more information on configuring datasets, or [Adding or Managing Zvols]({{< relref "AddManageZvols.md" >}}) for more information on zvols.
 
 ## Taking the Next Step
 
-When you finish building and organizing your TrueNAS pools and datasets, move on to configuring how the system [shares data]({{< relref "SetUpSharing.md" >}})
+After you finish creating your initial pool and the datasets or zvols, you can continue building and organizing your TrueNAS pools and datasets, or move on to configuring how the system [shares data]({{< relref "SetUpSharing.md" >}})
 
-If you don't plan to set up data sharing, you can [set up backup solutions]({{< relref "SetUpBackupSCALE.md" >}}) for your system and stored data.
+If you do not plan to set up data sharing, you can [set up backup solutions]({{< relref "SetUpBackupSCALE.md" >}}) for your system and stored data.
 
 {{< taglist tag="scaleconfig" limit="10" title="Related Configuration Articles" >}}
 {{< taglist tag="scalestorage" limit="10" title="Related Storage Articles" >}}
