@@ -7,7 +7,7 @@ weight: 130
 
 {{< toc >}}
 
-The TrueNAS CLI Shell functions like a text-based version of the web UI. Users can enter commands to "navigate" to different namespaces (i.e. screens) within SCALE and perform actions. 
+The TrueNAS CLI Shell functions like a text-based version of the web UI. Users can enter commands to navigate to different namespaces (i.e. screens) within SCALE and perform actions. 
 
 ## Launch the TrueNAS CLI Shell
 
