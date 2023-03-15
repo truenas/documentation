@@ -102,6 +102,12 @@ Go to **Apps** to open the **Applications** screen and then click on the **Avail
 
    ![AddNextcloudEnableCronJobs](/images/SCALE/22.12/AddNextcloudEnableCronJobs.png "Nextcloud Enable CronJobs")
 
+{{< expand "Nextcloud Cron Jobs" "v" >}}
+NextCloud Cron Jobs only run while the app is running. If you stop the app, the Cron Job(s) will not run until you start the app again.
+
+For more information on formatting and using Cron Jobs, see [Managing Cron Jobs]({{< relref "ManageCronJobsSCALE.md" >}}).
+{{< /expand >}}
+
 7. Accept the remaining setting defaults on the **Scaling/Upgrade Policy** and **Advanced DNS Settings** screens.
 
 8. Scroll up to review the configuration settings and fix any errors or **Save** to complete the installation.
