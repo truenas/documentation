@@ -9,7 +9,7 @@ weight: 10
 
 ## Performing Manual Updates
 
-To perform a manual update via the TrueNAS CLI Shell, you will first have to upload a manual update file onto the system.
+To perform a manual update via the TrueNAS CLI Shell, you must first upload a manual update file onto the system.
 
 Connect to your system with your choice of FTP program (such as [WinSCP](https://winscp.net/eng/index.php)) and place the manual update file in **/var/tmp/firmware**.
 
