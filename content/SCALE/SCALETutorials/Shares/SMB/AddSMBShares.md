@@ -44,7 +44,7 @@ Adding an SMB share to your system involves several steps to add the share and g
 First, [set up the storage](#adding-an-smb-share-dataset) for your new share.
 
 Next, [create local user accounts](#creating-local-user-accounts).
-It is also possible to use a directory services such as Active Directory or LDAP to provision additional user accounts.
+You can also use directory services like Active Directory or LDAP to provision additional user accounts.
 
 After adding or modifying local users, [modify the dataset ACL](#tuning-the-dataset-acl).
 

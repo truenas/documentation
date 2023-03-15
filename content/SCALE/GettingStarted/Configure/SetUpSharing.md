@@ -75,7 +75,7 @@ To set up a basic SMB share:
 
    d. Click **Save Access Control List**.
 
-   For more information on Access Control Lists and editing permissions see [Setting Up Permissions]({{< relref "PermissionsSCALE.md" >}}).
+   For more information on Access Control Lists and editing permissions, see [Setting Up Permissions]({{< relref "PermissionsSCALE.md" >}}).
 
 4. Create the new SMB share. 
 
