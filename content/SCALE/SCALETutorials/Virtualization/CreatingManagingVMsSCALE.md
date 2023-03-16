@@ -18,45 +18,123 @@ VMs provide more isolation than Jails but also consumes more system resources.
 {{< expand "What system resources do VMs require?" "v" >}}
 {{< include file="static/includes/SCALE/ScaleVMReqResources.md.part" markdown="true" >}}
 {{< /expand >}}
+{{< hint warning >}}
+Before creating a virtual machine, you need an installer <file>.iso</file> or image file for the OS you intend to install, and a [storage pool]({{< relref "CreatePoolSCALE.md" >}}) available for both the virtual disk and OS install file. You should also know which active network interface you want the VM to use. Once you begin working with the Create Virtual Machine Wizard, you cannot go back and create a dataset or upload a <file>.iso</file> without losing your progress in the wizard.
+{{< /hint >}}
+
+Compare the recommended specifications for your guest operating system with the available host system resources when allocating virtual CPUs, cores, threads, and memory size. Do not allocate too much memory to a VM. Activating a VM with all available memory allocated to it can slow the host system or prevent other VMs from starting.
 
 ## Creating a Virtual Machine
 
-Before creating a virtual machine, you need an installer <file>.iso</file> or image file for the OS you intend to install, and a [storage pool]({{< relref "CreatePoolSCALE.md" >}}) available for both the virtual disk and OS install file.
-
+### Choosing the OS
+{{< expand "Click Here for More Information" "v" >}}
 To create a new VM, go to **Virtualization** and click **Add** or **Add Virtual Machines** if you have not yet added a virtual machine to your system.
 Configure each category of the VM according to your specifications, starting with the **Operating System**.
 
-![AddVMOperatingSystemSCALE](/images/SCALE/AddVMOperatingSystemSCALE.png "VM Add: OS")
+![CreateVMWindowsOpSysSCALE](/images/SCALE/22.12/CreateVMWindowsOpSysSCALE.png "VM Add: OS")
 
-For more information see [Virtualization Screens]({{< relref "VirtualizationScreens.md" >}}) for more information on virtual machine screen settings.
+Choose the **Guest Operating System** fro the dropdown list. If you choose Windows, the **Enable Hyper-V Enlightenments** checkbox also displays.
 
-Additional notes:
+Enter a name for the VM, and a description to help you remember its usage. The description is optional.
 
-Compare the recommended specifications for your guest operating system with the available host system resources when allocating virtual CPUs, cores, threads, and memory size.
+The default for the **System Clock** is **Local**. Select **UEFI** for the **Boot Method** unless you need support for older operating systems that only support BIOS booting.
 
-Do not allocate too much memory to a VM. 
-Activating a VM with all available memory allocated to it can slow the host system or prevent other VMs from starting.
+The **Shutdown Timeout** default is 90 seconds. This is the time the system waits for the VM to cleanly shut down. If you want the VM to start when the system boots, leave the **Start on Boot** checkbox selected.
 
-We recommend using **AHCI** as the **Disk Type** for Windows VMs.
+The **Enable Display** checkbox is selected by default. This enables a Virtual Network Computing remote connection,  and requires UEFI booting. The **Display Type** default is **VNC**. To change this to **SPICE**, select **SPICE** from the dropdown list. **Bind**  is the display primary interface IP address. Leave this as 0.0.0.0 unless you know you want to use a different interface IP address.
 
-The **VirtIO** network interface requires a guest OS that supports VirtIO paravirtualized network drivers.
+Click **Next**.
+{{< /expand >}}
+
+### Configuring CPU and Memory
+{{< expand "Click Here for More Information" "v" >}}
+![CreateVMWindowsCPUMemSCALE](/images/SCALE/22.12/CreateVMWindowsCPUMemSCALE.png "VM CPU and Memory")
+
+If you selected Windows as the **Guest Operating System**, the **Virtual CPUs** field displays a default value of 2. Note that the VM operating system might have operational or licensing restrictions on the number of CPUs. The default value for the number of cores per virtual CPU socket is 1, and pre-populates the **Cores** field. The default value for the number of threads per core is also 1, and displays in the **Threads** field.
+
+The next field, **Optional: CPU Set (Examples:0-3.8-11)** defines the CPU set, and is optional. Inputing a value here allows you to specify the logical cores that the VM is allowed to use based on CPU topology.
+
+The checkbox **Pin vcpus** is related to the previous field, **Optional: CPU Set (Examples:0-3.8-11)**, in that each vcpu is pinned (mapped) into a single cpu number by following the order you just defined for the CPU set. The number of vcpus must be equal to the number of cpus in the CPU set. This checkbox is not selected by default.
+
+The **CPU Mode** default is **Custom**. When **Custom** is selected, you have the option of choosing a **CPU Model** from the dropdown list in the next field. You can also choose **Host Model** or **Host Passthrough** as the **CPU Mode**, but in these instances the next field, **CPU Model**, does not apply. 
+
+**Memory Size (Examples: 500KiB, 500M, 2 TB)** is a required field which pre-populates with a value of 4 GiB if you chose a Windows OS. It is recommended that you increase this value, but your configuration will depend on the resources available for your VM.
+
+**Minimum Memory Size** is an optional field. When not specified, the guest system is given the fixed amount of memory specified in **Memory Size (Examples: 500KiB, 500M, 2 TB)**. When **Minimum Memory Size** is specified, the guest system is given memory within the range **Minimum Memory Size** and **Memory Size (Examples: 500KiB, 500M, 2 TB)** as needed.
+
+The next field, **Optional: NUMA nodeset (Example: 0-1)** is also not populated by default as it is not required. If you specified CPU set you can then specify a NUMA nodeset to improve memory locally.
+
+Click **Next**.
+{{< /expand >}}
+
+### Configuring Disks
+{{< expand "Click Here for More Information" "v" >}}
+![CreateVMWindowsDisksSCALE](/images/SCALE/22.12/CreateVMWindowsDisksSCALE.png "VM Disks")
+
+Select **Create new disk image** radio button to create a new zvol on an existing dataset (you define the location of this existing dataset in **Zvol Location**).  Alternatively, you can select **Use existing disk image** if there is an existing zvol you want to use for the VM.
+
+The dropdown list under **Select Disk Type** allows you  to select either **AHCI** or **VirtIO**. We recommend using **AHCI** as the **Disk Type** for Windows VMs. Next, specify the location of the dataset in **Zvol Location**. Here we have specified the pool called *tank*. Enter a value in **Size (Examples: 500KiB, 500M and 2TB)** to indicate the amount of space to allocate for the new zvol.
+
+Click **Next**.
+{{< /expand >}}
+
+### Configuring the Network Interface
+{{< expand "Click Here for More Information" "v" >}}
+![CreateVMWindowsNetworkInterfaceSCALE](/images/SCALE/22.12/CreateVMWindowsNetworkInterfaceSCALE.png "VM Network Interface")
+
+Under **Adapter Type**, select **Intel e82585 (e1000)** from the dropdown list as it offers the higher level of compatiblity with most operating systems. Select **VirtIO** if the guest operating system supports para-virtualized network drivers.
+
+A randomized MAC address displays in the **Mac Address** field. You can change this to suit your needs.
+
+Use the **Attach NIC** dropdown list to select the active interface you wish to use. Active interfaces can be viewed at **Network** > **Interfaces** (note that if you navigate away from the wizard at this point you will lose your progress).
+
+The **Trust Guest Filters** checkbox is not selected by default. Enabling this feature has security risks, because it allows the virtual server to change its MAC address and so receive all frames delivered to this address. More information is available at because it allows the virtual server to change its MAC address and so receive all frames delivered to this address. For more information see [Virtualization Screens]({{< relref "VirtualizationScreens.md#network-interface-screen" >}}).
+
+Click **Next**.
+{{< /expand >}}
+
+### Uploading Installation Media
+{{< expand "Click Here for More Information" "v" >}}
+![CreateVMWindowsInstallMediaSCALE](/images/SCALE/22.12/CreateVMWindowsInstallMediaSCALE.png "VM Installation Media")
+
+The VM can be created initially without an OS installed. To navigate to the location that you have previously uploaded an installation file, use the **Optional: Choose installation media image** dropdown navigation list. Click on the arrow next to the folder icon to expand the directory tree. Select the location of the installation file, which will populate the path in the location field.
+
+The **Upload an installer image file** checkbox is not selected by default. If you select this option, additional fields display:
+![CreateVMWindowsInstallMediaUploadSCALE](/images/SCALE/22.12/CreateVMWindowsInstallMediaUploadSCALE.png "VM Upload Installation Media")
+
+This gives you the option of browsing to select a file. The file is uploaded to the **ISO save location** that you specify.
+
+Click **Upload** to begin the upload process. After the upload is finished, click **Next**.
+{{< /expand >}}
+
+### Specifying a GPU
+{{< expand "Click Here for More Information" "v" >}}
+
 {{< hint info >}}
 iXsystems does not have a list of approved GPUs at this time but does have drivers and basic support for the  list of [nvidia Supported Products](https://www.nvidia.com/Download/driverResults.aspx/191961/en-us/).
 {{< /hint >}}
-### Adding and Removing Devices
+![CreateVMWindowsGPUsSCALE](/images/SCALE/22.12/CreateVMWindowsGPUsSCALE.png "VM GPU")
 
-After creating the VM, add and remove virtual devices by expanding the VM entry on the **Virtual Machines** screen and clicking <i class="material-icons" aria-hidden="true" title="Devices">device_hub</i>**Devices**.
+This next section is optional. The **Hide from MSR** checkbox is not selected by default. Select this option if you want to enable the VM to hide the graphic processing unit (GPU) from the Microsoft Reserved Partition (MSR).
 
-![VirtualMachinesDevicesSCALE](/images/SCALE/VirtualMachinesDevicesSCALE.png "VM Devices")
+The next checkbox is enabled by default. **Ensure Display Device**, when selected, permits the guest operating system to always have access to a video device. It is required for headless insallations such as ubuntu server. Leave the checkbox clear for cases where you want to use a graphic processing unit (GPU) passthrough and do not want a display device added.
 
-Device notes:
+Optional: the **GPUs** dropdown list allows you to select a relevant GPU if at least one relevant GPU is present.
 
-* A virtual machine attempts to boot from devices according to the **Device Order**, starting with **1000**, then ascending.
-* A **CD-ROM** device allow booting a VM from a CD-ROM image like an installation CD.
-  The CD image must be available in the system storage.
+Click **Next**.
+{{< /expand >}}
+
+### Confirming Your Selections
+{{< expand "Click Here for More Information" "v" >}}
+![CreateVMWindowsConfirmSCALE](/images/SCALE/22.12/CreateVMWindowsConfirmSCALE.png "VM Summary")
+
+The **Confirm Options** screen should be reviewed carefully. This is a summary of the values you have input in the previous screens. If all information is correct, click **Save** to create the VM. If you need to make changes, click the **Back** button. Note that if you navigate away from the wizard without clicking **Save** you will lose your progress and need to start again.
+{{< /expand >}}
+
+
+See [Virtualization Screens]({{< relref "VirtualizationScreens.md" >}}) for more information on any of the fields listed in the Create Virtual Machine wizard or other virtual machine screen settings. The next step is to configure devices for the VM. This process is described in [Adding and Managing VM Devices]({{< relref "AddManageVMDevicesSCALE.md" >}}).
 
 ## Managing a Virtual Machine
-
 After creating the VM and configuring devices for it, manage the VM by expanding the entry on the **Virtual Machines** screen.
 
 ![VirtualMachinesOptionsSCALE](/images/SCALE/VMRunningOptionsSCALE.png "VM Options")
