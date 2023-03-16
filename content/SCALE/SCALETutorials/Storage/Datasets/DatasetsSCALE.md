@@ -20,27 +20,7 @@ We recommend organizing your pool with datasets before configuring [data sharing
 
 ## Creating a Dataset
 
-To create a dataset using the default settings, go to **Datasets**. 
-Default settings includes the settings datasets inherit from the parent dataset.
-
-Select a dataset (root, parent or child), then click **Add Dataset**.
-
-![AddDatasetNameAndOptions](/images/SCALE/22.12/AddDatasetNameAndOptions.png "Add Dataset Name and Options")
-
-Enter a value in **Name**.
-
-Select either **Sensitive** or **Insensitive** from the **Case Sensitivity** dropdown.
-
-Select either **SMB** for the **Share Type** or leave set to **Generic**, then click **Save**.
-
-![AddDatasetEncrytionAndOtherOptionsBasic](/images/SCALE/22.12/AddDatasetEncrytionAndOtherOptionsBasic.png "Add Encryption and Other Options")
-
-You can create datasets optimized for SMB shares or with customized settings for your dataset use cases.
-
-{{< hint warning >}}
-Review the **Share Type** and **Case Sensitivity** options on the configuration screen before clicking **Save**.
-You cannot change these and the **Name** setting after clicking **Save**.
-{{< /hint >}}
+{{< include file="/_includes/CreateDatasetSCALE.md" type="page" >}}
 
 ### Setting Dataset Compression Levels
 
@@ -82,7 +62,7 @@ For more information on quotas, see [Managing User or Group Quotas]({{< relref "
 ### Changing Dataset Inherited Values
 
 By default, many of dataset options inherit their values from the parent dataset.
-When **Inherit** is selected, as a checkbox or option in a dropdown list, the dataset uses the setting from the parent dataset.
+When you select **Inherit**, as a checkbox or option in a dropdown list, the dataset uses the setting from the parent dataset.
 For example, the [Encryption]({{< relref "EncryptionScale.md" >}}) or **ACL Type** settings.
 
 To change any setting that can inherit the parent setting, clear the checkbox or select another available option, and then enter the desired setting values for the child dataset.
@@ -110,7 +90,7 @@ Enter a threshold block size for including small file blocks into the [special a
 
 After creating a dataset, users can manage additional options from the **Datasets** screen.
 Select the dataset you want to manage, then click **Edit** on the widget for the function you want to manage. 
-Each option is described in detail in the [Datasets Screen]({{< relref "DatasetsScreensSCALE.md" >}}) article.
+The [Datasets Screen]({{< relref "DatasetsScreensSCALE.md" >}}) article describes each option in detail.
 
 ### Editing a Dataset
 Select the dataset on the tree table, then click **Edit** on the **Dataset Details** widget to open the **Edit Dataset** screen and change the dataset configuration settings. You can change all settings except **Name**, **Case Sensitivity**, or **Share Type**.
