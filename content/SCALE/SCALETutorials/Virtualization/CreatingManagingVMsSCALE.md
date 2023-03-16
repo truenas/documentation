@@ -31,7 +31,7 @@ Compare the recommended specifications for your guest operating system with the 
 To create a new VM, go to **Virtualization** and click **Add** or **Add Virtual Machines** if you have not yet added a virtual machine to your system.
 Configure each category of the VM according to your specifications, starting with the **Operating System**.
 
-![CreateVMWindowsOpSysSCALE](/images/SCALE/22.12/CreateVMWindowsOpSysSCALE.png "VM Add: OS")
+![CreateVMWOpSysSCALE](/images/SCALE/22.12/CreateVMWOpSysSCALE.png "VM Add: OS")
 
 Choose the **Guest Operating System** fro the dropdown list. If you choose Windows, the **Enable Hyper-V Enlightenments** checkbox also displays.
 
@@ -48,7 +48,7 @@ Click **Next**.
 
 ### Configuring CPU and Memory
 {{< expand "Click Here for More Information" "v" >}}
-![CreateVMWindowsCPUMemSCALE](/images/SCALE/22.12/CreateVMWindowsCPUMemSCALE.png "VM CPU and Memory")
+![CreateVMWCPUMemSCALE](/images/SCALE/22.12/CreateVMWCPUMemSCALE.png "VM CPU and Memory")
 
 If you selected Windows as the **Guest Operating System**, the **Virtual CPUs** field displays a default value of 2. Note that the VM operating system might have operational or licensing restrictions on the number of CPUs. The default value for the number of cores per virtual CPU socket is 1, and pre-populates the **Cores** field. The default value for the number of threads per core is also 1, and displays in the **Threads** field.
 
@@ -69,7 +69,7 @@ Click **Next**.
 
 ### Configuring Disks
 {{< expand "Click Here for More Information" "v" >}}
-![CreateVMWindowsDisksSCALE](/images/SCALE/22.12/CreateVMWindowsDisksSCALE.png "VM Disks")
+![CreateVMWDisksSCALE](/images/SCALE/22.12/CreateVMWDisksSCALE.png "VM Disks")
 
 Select **Create new disk image** radio button to create a new zvol on an existing dataset (you define the location of this existing dataset in **Zvol Location**).  Alternatively, you can select **Use existing disk image** if there is an existing zvol you want to use for the VM.
 
@@ -80,7 +80,7 @@ Click **Next**.
 
 ### Configuring the Network Interface
 {{< expand "Click Here for More Information" "v" >}}
-![CreateVMWindowsNetworkInterfaceSCALE](/images/SCALE/22.12/CreateVMWindowsNetworkInterfaceSCALE.png "VM Network Interface")
+![CreateVMWNetworkInterfaceSCALE](/images/SCALE/22.12/CreateVMWNetworkInterfaceSCALE.png "VM Network Interface")
 
 Under **Adapter Type**, select **Intel e82585 (e1000)** from the dropdown list as it offers the higher level of compatiblity with most operating systems. Select **VirtIO** if the guest operating system supports para-virtualized network drivers.
 
@@ -95,12 +95,12 @@ Click **Next**.
 
 ### Uploading Installation Media
 {{< expand "Click Here for More Information" "v" >}}
-![CreateVMWindowsInstallMediaSCALE](/images/SCALE/22.12/CreateVMWindowsInstallMediaSCALE.png "VM Installation Media")
+![CreateVMWInstallMediaSCALE](/images/SCALE/22.12/CreateVMWInstallMediaSCALE.png "VM Installation Media")
 
 The VM can be created initially without an OS installed. To navigate to the location that you have previously uploaded an installation file, use the **Optional: Choose installation media image** dropdown navigation list. Click on the arrow next to the folder icon to expand the directory tree. Select the location of the installation file, which will populate the path in the location field.
 
 The **Upload an installer image file** checkbox is not selected by default. If you select this option, additional fields display:
-![CreateVMWindowsInstallMediaUploadSCALE](/images/SCALE/22.12/CreateVMWindowsInstallMediaUploadSCALE.png "VM Upload Installation Media")
+![CreateVMWInstallMediaUploadSCALE](/images/SCALE/22.12/CreateVMWInstallMediaUploadSCALE.png "VM Upload Installation Media")
 
 This gives you the option of browsing to select a file. The file is uploaded to the **ISO save location** that you specify.
 
@@ -113,7 +113,7 @@ Click **Upload** to begin the upload process. After the upload is finished, clic
 {{< hint info >}}
 iXsystems does not have a list of approved GPUs at this time but does have drivers and basic support for the  list of [nvidia Supported Products](https://www.nvidia.com/Download/driverResults.aspx/191961/en-us/).
 {{< /hint >}}
-![CreateVMWindowsGPUsSCALE](/images/SCALE/22.12/CreateVMWindowsGPUsSCALE.png "VM GPU")
+![CreateVMWGPUsSCALE](/images/SCALE/22.12/CreateVMWGPUsSCALE.png "VM GPU")
 
 This next section is optional. The **Hide from MSR** checkbox is not selected by default. Select this option if you want to enable the VM to hide the graphic processing unit (GPU) from the Microsoft Reserved Partition (MSR).
 
@@ -126,7 +126,7 @@ Click **Next**.
 
 ### Confirming Your Selections
 {{< expand "Click Here for More Information" "v" >}}
-![CreateVMWindowsConfirmSCALE](/images/SCALE/22.12/CreateVMWindowsConfirmSCALE.png "VM Summary")
+![CreateVMWConfirmSCALE](/images/SCALE/22.12/CreateVMWConfirmSCALE.png "VM Summary")
 
 The **Confirm Options** screen should be reviewed carefully. This is a summary of the values you have input in the previous screens. If all information is correct, click **Save** to create the VM. If you need to make changes, click the **Back** button. Note that if you navigate away from the wizard without clicking **Save** you will lose your progress and need to start again.
 {{< /expand >}}
