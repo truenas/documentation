@@ -88,7 +88,7 @@ A randomized MAC address displays in the **Mac Address** field. You can change t
 
 Use the **Attach NIC** dropdown list to select the active interface you wish to use. Active interfaces can be viewed at **Network** > **Interfaces** (note that if you navigate away from the wizard at this point you will lose your progress).
 
-The **Trust Guest Filters** checkbox is not selected by default. Enabling this feature has security risks, because it allows the virtual server to change its MAC address and so receive all frames delivered to this address. More information is available at because it allows the virtual server to change its MAC address and so receive all frames delivered to this address. For more information see [Virtualization Screens]({{< relref "VirtualizationScreens.md#network-interface-screen" >}}).
+The **Trust Guest Filters** checkbox is not selected by default. Enabling this feature has security risks, because it allows the virtual server to change its MAC address and so receive all frames delivered to this address. For more information see [Virtualization Screens]({{< relref "VirtualizationScreens.md#network-interface-screen" >}}).
 
 Click **Next**.
 {{< /expand >}}
@@ -97,7 +97,7 @@ Click **Next**.
 {{< expand "Click Here for More Information" "v" >}}
 ![CreateVMWInstallMediaSCALE](/images/SCALE/22.12/CreateVMWInstallMediaSCALE.png "VM Installation Media")
 
-The VM can be created initially without an OS installed. To navigate to the location that you have previously uploaded an installation file, use the **Optional: Choose installation media image** dropdown navigation list. Click on the arrow next to the folder icon to expand the directory tree. Select the location of the installation file, which will populate the path in the location field.
+The VM can be created initially without an OS installed. To navigate to the location that you have previously uploaded an installation file, use the **Optional: Choose installation media image** dropdown navigation list. Click on the <i class="fa fa-caret-right" aria-hidden="true"></i> to the left of **mnt** and at the pool and dataset levels to expand the options. Select the location of the installation file, which will populate the path in the location field.
 
 The **Upload an installer image file** checkbox is not selected by default. If you select this option, additional fields display:
 ![CreateVMWInstallMediaUploadSCALE](/images/SCALE/22.12/CreateVMWInstallMediaUploadSCALE.png "VM Upload Installation Media")
