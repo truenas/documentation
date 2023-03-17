@@ -26,14 +26,6 @@ The **Encryption** option on the **[Pool Manager]({{< relref "PoolManagerScreens
 
 ![DownloadPoolEncryptionKey](/images/SCALE/22.12/DownloadPoolEncryptionKey.png "Download Pool Encryption Key")
 
-{{< hint warning >}}
-All datasets created in an encrypted pool have encryption. You cannot create an unencrypted dataset in an encrypted pool.
-
-All pool-level encryption is key-based encryption. You cannot use passphrase encryption at the pool/root level.
-
-Keep the key file in a secure location where you can back it up and keep it protected. If you lose the encryption key you cannot unlock the pool and that can result in unrecoverable data.
-{{< /hint >}}
-
 ## Export Key Options 
 
 The **ZFS Encryption** widget for root datasets with encryption includes the **Export All Keys** and **Export Key** options but does not include the **Lock** option.
