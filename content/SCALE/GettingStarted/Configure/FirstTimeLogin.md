@@ -4,11 +4,8 @@ weight: 20
 aliases: 
  - /scale/gettingstarted/firsttimelogin/
 tags:
-- scalelogin
-- scalesettings
-- scaleinstall
+- scalesignin
 - scaledashboard
-- scalemigrate
 - scaleenterprise
 - scaleconfig
 ---
@@ -16,123 +13,143 @@ tags:
 {{< toc >}}
 
 
-Now that you have installed and configured TrueNAS SCALE, you can log in to the web interface and begin managing data!
-
-{{< expand "Can I configure TrueNAS SCALE using a CLI?" "v" >}}
-After installing TrueNAS, you can configure and use the system through the web interface.
-
+Now that you have installed TrueNAS SCALE or migrated from TrueNAS CORE to SCALE, you can log into the SCALE web user interface (UI) to complete your initial system configuration and then begin managing data!
 {{< hint warning >}}
-Important! Use only the web interface to make configuration changes to the system.
+Important! Use only the web user interface (UI) to make configuration changes to the system.
 {{< /hint >}}
 
-By default, using the command-line interface (CLI) to modify the system *does not* modify the settings database.
-The system reverts to the original database settings when it restarts and wipes any user-made command line changes.
-TrueNAS automatically creates several ways to access the web interface, but you might need to adjust the default settings for your network environment.
+{{< expand "Can I configure TrueNAS SCALE using a CLI?" "v" >}}
+After installing TrueNAS, you can configure and use the system through the UI.
+
+By default, using the command-line interface (CLI) to modify the system *does not* modify the settings database. If the system restarts it reverts to the original database settings and wipes any user-made command line changes. 
+
+A future release of SCALE Bluefin will introduce the SCALE CLI that allows administrators, experienced with CLI configuration, to use it to configure SCALE settings just as in the UI.
 {{< /expand >}}
 
 ## Web Interface Access
 
+TrueNAS automatically creates several ways to access the UI, but you might need to adjust the default settings for your network environment.
+
 By default, fresh installs of TrueNAS SCALE provide a default address for logging in to the web interface.
-To view the web interface IP address or reconfigure web interface access, connect a monitor and keyboard to your TrueNAS system or connect with IPMI for out-of-band system management.
+To view the web interface IP address or reconfigure web interface access, either connect a monitor and keyboard to your TrueNAS system or connect with IPMI for out-of-band system management.
 
 When powering on a TrueNAS system, the system attempts to connect to a DHCP server from all live interfaces to access the web UI.
 On networks that support Multicast Domain Name Services (mDNS), the system can use a host name and domain to access the TrueNAS web interface.
-By default, TrueNAS uses the host name and domain truenas.local.
-To change the host name and domain in the web interface, go to **Network** and click **Settings** in the **Global Configuration** card.
+By default, TrueNAS uses the host name and domain **truenas.local**. 
+To change the host name and domain in the web interface, go to **Network** and click **Settings** on the **Global Configuration** card.
 
-To access the web interface using an IP address, use the one that the Console Setup Menu generated after installing SCALE, or use the one you configured in the [Post-install Configuration article]({{< relref "/SCALE/GettingStarted/install/ConsoleSetupMenuSCALE.md" >}}) if you upgraded from CORE.
+To access the web interface using an IP address, either use the IP address displayed at the top of the Console Setup Menu after installing SCALE or use the IP address you assigned in the [Consoled Setup Menu]({{< relref "/SCALE/GettingStarted/install/ConsoleSetupMenuSCALE.md" >}}) article.
 
-## Logging In
+{{< enterprise >}}
+SCALE Enterprise (HA) systems can use the DHCP-assigned IP address for the primary controller to access the UI or, if a static IP is configured using the [Console setup menu]({{< relref "ConsoleSetupMenuSCALE.md" >}}), use that IP address to access to the SCALE UI. 
+{{< /enterprise >}}
 
-On a computer with access to the same network as the TrueNAS system, enter the host name and domain or IP address in a web browser to connect to the web interface.
+## Logging Into the SCALE UI
+
+Using a computer with access to the same network as the TrueNAS system, enter the host name and domain or IP address in a web browser to connect to the SCALE web interface.
 
 {{< hint info >}}
-The quality of your user experience can be impacted by the browser that you use. We generally recommend using Firefox, Edge, or Chrome.
+The browser you use can impact quality of your user experience. We generally recommend using Firefox, Edge, or Chrome.
 {{< /hint >}}
-
-With the implementation of rootless login and based on your Authentication Method selection in the SCALE [TrueNAS installer]({{< relref "InstallingScale.md" >}}), you could see one of three sign-in options for the web UI:
-
-!![SCALEInstallerConsoleSetupAdminAccount](/images/SCALE/22.12/SCALEInstallerConsoleSetupAdminAccount.png "Admin User Screen")
-
-* 1. Logging in as the new admin user, entering the admin username and password created during installation.
-* 2. Logging in as the root user, entering root as the username and the root password created during installation.
-* 3. Configuring a login when you first log into the UI.
-
-Use the administrative account credentials to log in.
-The default administrator username is no longer root but the administrative user created during installation.
 
 {{< include file="/_includes/RootLoginWarnSCALE.md" type="page" >}}
 
-### Logging In As Admin
+With the implementation of rootless login, root is no longer the default administrator username, rather you use the new admin user created during the installation process. 
+We recommend creating the admin user during the installation process and use this to log into SCALE.
 
-If you set up the admin user during the installation, enter the admin username and password you set up. 
+Based on the authentication method selected in step 4 of the SCALE [TrueNAS installer Console Setup]({{< relref "InstallingScale.md" >}}) process, you could see one of three sign-in splash screen options for the web UI.
+
+* Selecting **1. Administrative user (admin)** opens the SCALE sign-in screen to log in with admin username and password created during installation.
+* Selecting **2. Root user (not recommended** opens the SCALE sign-in screen to log in with the root username and the root password created during installation.
+* Selecting **3. Configuring using Web UI** opens a SCALE sign-in screen where you select the option for either the admin or root user and create the password.
+
+If you select option 1, the root user still exists but with the password disabled by default, which means only the admin user can log into the system. 
+You can activate the password for the root user for some limited uses, but you should return to a security-hardened operation by disabling the root password immediately after you finish with the limited use.
+
+### Logging In as Admin
+
+If you set up the admin user during the installation, enter the username **admin** and password you set up. 
 
 ![LoginScreenSCALE](/images/SCALE/22.12/LoginScreenSCALE.png "TrueNAS SCALE Login Screen")
 
-Note, the root user still exists but the password is disabled by default so that only the admin user can log into the system. 
 To modify user credentials, go to **Credentials > Local Users**, click anywhere on the user row, then click **Edit**. For more information see [Managing Users]({{< relref "ManageLocalUsersScale.md" >}}).
 
 ### Logging In as Root
 {{< include file="/_includes/RootLoginDeprecatedSCALE.md" type="page" >}}
-If you did not set up an admin user during the installation process, log into the UI as the root user with the root password. 
-Go to **Credentials > Local Users**, and click **Add** to open the **Add User** screen. 
-Follow the directions in [Managing Users]({{< relref "ManageLocalUsersScale.md" >}}) to create an admin user with all the permissions it requires.
+If installed SCALE and created the root user rather than setting up an admin user during the installation process, log into the UI as the root user with the root password. 
 
-### Creating a Login at First Login
+To create an admin user go to **Credentials > Local Users**, and click **Add** to open the **Add User** screen. 
+Follow the directions in [Managing Users]({{< relref "ManageLocalUsersScale.md" >}}) to create an admin user with all the settings it requires.
+
+### Creating an Administrator Account at First Log in
+Selecting the option to create the root or administration user when you first log into SCALE presents a sign-in splash screen with two radio buttons. Select either the admin or root user option, then enter the password to use with that user. After selecting the option another sign-in splash screen displays where you enter the password for the administration user option you selected.
+
+After creating the login account, go to **Credentials > Local Users** screen. [Create the admin account]({{< relref "ManageLocalUsersSCALE.md" >}}) immediately after you enter the UI. Create or edit the [admin user account settings]({{< relref "ManageLocalUsersSCALE.md" >}}), enable the password and click **Save**. After setting up the admin user, then edit the root user to disable the password and to resume rootless login security hardening.
+
+{{< expand "What happens if I disable both admin and root passwords at the same time?" "V">}}
+If you disabled the root user password and did not create the admin user and enable that password, or you disable both admin and root user passwords and your session times out before you enable one of the passwords, SCALE dispalys a sign-in screen that allows you create a temporary password for one-time access. 
+
+![CreateAdminAccountAtFirstTimeLogin](/images/SCALE/22.12/CreateAdminAccountAtFirstTimeLogin.png "Set New Root Account Password Sign In Screen") change image
+
+### Troubleshooting Accessing the Web UI
+
 {{< hint warning >}}
 This option does not configure the admin or root user account. 
 The password entered is a one-time user access password. 
 You must go to the **Credentials > Local Users** screen and [create the admin account]({{< relref "ManageLocalUsersSCALE.md" >}}) immediately after you enter the UI.
 {{< /hint >}}
-
-If you selected the option to create a new user when you log into the web UI the first time, the **Set new root account password** sign-in splash screen opens after you enter the system IP address into a browser search bar. 
-
-![CreateAdminAccountAtFirstTimeLogin](/images/SCALE/22.12/CreateAdminAccountAtFirstTimeLogin.png "Set New Root Account Password Sign In Screen")
-
-### Troubleshooting Accessing the Web UI
+{{< /expand >}}
+{{< expand "UI is not accessible gy IP address" "V" >}}
 If the user interface is not accessible by IP address from a browser, check these things:
 
 * If the browser configuration has proxy settings enabled, disable them and try connecting again.
 * If the page does not load, ensure a `ping` reaches the TrueNAS system IP address. If the IP address is in a private range, you must access it from within that private network.
-
+{{< /expand >}}
+{{< expand "UI displays but seems unresponsive" "v" >}}
 If the web interface displays but seems unresponsive or incomplete:
 
 * Make sure the browser allows cookies, Javascript, and custom fonts from the TrueNAS system.
 * Try a different browser. We recommend Firefox.
 
 If the UI becomes unresponsive after an upgrade or other system operation, clear the site data and refresh the browser (<kbd>Shift</kbd>+<kbd>F5</kbd>).
+{{< /expand >}}
 
-If you cannot remember the administrator password to log in to the web interface, connect a keyboard and mouse to the TrueNAS system and open the [console setup menu]({{< relref "ConsoleSetupMenuScale.md#changing-the-root-password" >}}) to reset the `root` account password.
+If you cannot remember the administrator password to log in to the web interface, connect a keyboard and mouse to the TrueNAS system and open the [console setup menu]({{< relref "ConsoleSetupMenuScale.md#changing-the-root-password" >}}) to reset the root account password.
 
+## Introducing the Main SCALE Dashboard
 
-## Dashboard
-
-{{< expand "Dashboard Video Tutoral" >}}
+{{< expand "Dashboard Video Tutorial" >}}
 
 {{< embed-video name="scaledashboardtour" >}}
 
 {{< /expand >}}
-After logging in, you see the system **Dashboard** screen.
-**Dashboard** displays basic information about the installed version, systems component usage, and network traffic. For users with compatible TrueNAS
-hardware, clicking the system image takes you to the **System Settings > Enclosure** page. 
+After logging in for the first time, you see the main system **Dashboard** screen. 
+The **Dashboard** displays basic information about the installed version, systems component usage, and network traffic. 
+{{< enterprise >}}
+SCALE Enterprise users with an iXsystems-provided TrueNAS server, displays an image of the system in the **System Information** widget. Click on the system image to open the **System Settings > [View Enclosure]({{< relref "EnclosureScreensSCALE.md" >}})** screen. 
 
 ![DashboardMainScreenSCALE](/images/SCALE/22.12/DashboardMainScreenSCALE.png "TrueNAS SCALE Dashboard")
 
-The **Dashboard** provides access to all TrueNAS management options.
-The top row has links to outside resources and buttons to control the system.
-The left-hand column lets users navigate to the various TrueNAS Configuration screens.
+{{< /enterprise >}}
+The **Dashboard** for non-Enterprise systems displays the TrueNAS logo on the **System Information** widget. 
 
 You can reorder dashboard widgets by clicking **Reorder** and then dragging them into your preferred order. You can also choose which widgets appear on the dashboard by clicking **Configure**.
 
 ![DashboardConfigureScreenSCALE](/images/SCALE/22.12/DashboardConfigureScreenSCALE.png "Dashboard Configure Panel")
 
-## Top Bar Menu
+## Introducing SCALE Navigation Options
+
+The top row (toolbar) has links to outside resources and buttons to control the system.
+The left-hand panel lists the main feature and functional areas and lets users navigate to the various TrueNAS Configuration screens.
+
+### Top Toolbar
 
 The icon buttons in the top toolbar menu link to the iXsystems site, display the status of TrueCommand and directory servers, and show system processes, and configuration menus. You can also collapse and expand the main function menu on the left side of the screen. 
 
 ![TopToolbar](/images/SCALE/22.12/TopToolbar.png "TrueNAS SCALE Top Toolbar Icons")
 
-### Top Toolbar Icons
+The SCALE top navigation top toolbar provides to access functional areas of the UI that you might want to directly access while on other screen in the UI. 
+Icon buttons provide quick access to dropdown lists of options, dropdown panels with information on system alerts or tasks, and can include access to other informational or configuration screens.
 {{< expand "iXsystems" "v" >}}
 The iXsystems logo opens the [iXsystems home page](https://www.ixsystems.com/). There, users can find information about storage and server systems.
 
@@ -155,57 +172,33 @@ Users can also use the iXsystems home page to access their customer portal and c
 
 {{< /expand >}}
 {{< expand "Alerts" "v" >}}
-The **Alerts** <span class="material-icons">notifications</span> icon button displays a list of current alerts for your TrueNAS system. Users can dismiss them one at a time or all at once.
+The **Alerts** <span class="material-icons">notifications</span> icon displays a list of current alerts for your TrueNAS system and provides access alert related settings. 
+Users can dismiss individual alerts or select the option to dismiss all at once.
 
-It also provides an **Alerts** menu you access by clicking the <span class="material-icons">settings</span> icon. From this menu users can configure **Alert Settings**, **Alert Services**, and **Email**.
+The <span class="material-icons">settings</span> icon opens the dropdown list of alert options to view or configure **Alert Settings**, **Alert Services**, and **Email**.
 
 ![AlertsNotifications](/images/SCALE/22.12/AlertsNotifications.png "TrueNAS SCALE Alerts")
 
-{{< expand "Alert Settings" "v" >}}
-The **Alert Settings** screen has options for setting the warning level and frequency for alerts specific to application actions.
+For more information on alert options see [Alerts]({{< relref "/SCALE/SCALEUIReference/TopToolbar/Alerts/_index.md" >}}). The [Alert Services]({{< relref "AlertServicesScreen.md" >}}), [Alert Settings]({{< relref "AlertSettingsScreen.md" >}}), or [Email Screens]({{< relref "EmailScreens.md">}}) articles provide information on the SCALE UI screens. 
 
-![AlertSettingsSCALE](/images/SCALE/22.12/AlertSettingsSCALE.png "TrueNAS SCALE Alert Settings")
-
-Use the **Set Warning Level** dropdown list options to customize alert importance. Each warning level has an icon and color to express the level of urgency.
-
-Use the **Set Frequency** dropdown list options adjust how often the system sends alert notifications. Setting the **Frequency** to **NEVER** prevents that alert from appearing in the **Alerts** list, but it still pops up in the UI if triggered.
-
-Each warning level has a different icon and color to express its urgency. To make the system email you when alerts with a specific warning level trigger, set up an email alert service with that warning level. 
-
-See [Alert Settings Screen]({{< relref "/SCALE/SCALEUIReference/Toptoolbar/Alerts/AlertSettingsScreen.md" >}}) for more information on settings.
-{{< /expand >}}
-{{< expand "Alert Services" "v" >}}
-The **Alert Services** screen has options to create and edit alert services. It also displays existing services in a list that users can filter by **Type**, **Level**, and **Enabled**.
-
-![AlertServicesSCALE](/images/SCALE/22.12/AlertServicesSCALE.png "TrueNAS SCALE Alert Services")
-
-To create a new alert service, click **Add** and fill out the form, then click **Save**. 
-
-Click **SEND TEST ALERT** to generate a test alert to confirm the alert service works.
-
-See [Alert Services Screen]({{< relref "/SCALE/SCALEUIReference/Toptoolbar/Alerts/AlertServicesScreen.md" >}}) for more information on settings.
-{{< /expand >}}
-{{< expand "Email" "v" >}}
-The **Email** screen lets you set up a system email address.
-
-![AlertsSetupSystemEmailSCALE](/images/SCALE/22.12/AlertsSetupSystemEmailSCALE.png "Email General Options")
-
-Click on **Send Test Mail** to generate a test email to confirm the system email works.
-
-See [Email Screens]({{< relref "/SCALE/SCALEUIReference/TopToolbar/Alerts/EmailScreens.md" >}}) for information on email settings.
-{{< /expand>}}
+See [Setting Up Email]({{< relref "SettingUpSystemEmail.md" >}}) for help configuring instructions.
+{{< enterprise >}}
+The [Alert Settings]({{< relref "AlertSettingsScreen.md" >}}) article includes the SCALE Enterprise alert high availability settings.
+{{< /enterprise >}}
 {{< /expand >}}
 
 {{< expand "Settings" "v" >}}
-The **Settings** <span class="material-icons">account_circle</span> icon button has options for passwords, API Keys, and TrueNAS information.
+The **Settings** <span class="material-icons">account_circle</span> icon opens a dropdown list of options for passwords, API keys, and TrueNAS information.
 {{< expand "Change Password" >}}
 
 {{< include file="/content/_includes/ChangeLoggedInUserPassword.md" type="page" >}}
 
 {{< /expand >}}
 {{< expand "API Keys" "v" >}}
-Click on **API Keys** <span class="material-icons">laptop</span> to add API keys that identify outside resources and applications without a principal. 
-Users can also click **API Docs** to access their system API documentation.
+Click on **API Keys** <span class="material-icons">laptop</span> to add an API key. API keys identify an outside resource or application without a principal. 
+For example, when adding a new system to TrueCommand you are required to add an API key to authenticate the system. Use this function to create an API key for this purpose.
+
+Click **API Docs** to access the API documentation portal with information on TrueNAS SCALE API commands.
 
 See [API Keys]({{< relref "/SCALE/SCALEUIReference/TopToolbar/Settings/APIKeysScreen.md" >}}) for more information on adding or managing API keys.
 {{< /expand >}}
@@ -220,13 +213,12 @@ Click on **About** <span class="iconify" data-icon="ant-design:info-circle-outli
 {{< /expand >}}
 
 {{< expand "Power Options" "v" >}}
-Click the **Power** <span class="material-icons">power_settings_new</span> icon button to either log out of, restart, or shut down the system.
+Click the **Power** <span class="material-icons">power_settings_new</span> button open the dropdown list of power options. Options are **Log Out** which logs you out of the SCALE UI but does not power off the system, **Restart** which logs you out of the SCALE UI and restarts the server, or **Shut Down** which logs you out of the SCALE UI and powers off the system as though you pressed the power button on the physical server.
 {{< /expand >}}
 
-## Storing Data
+## Next Steps
 
-Now that you can access the TrueNAS web interface and see all the management options, you can begin [storing data]({{< relref "/SCALE/SCALEUIReference/Storage/_index.md" >}})!
+Now that you can access the TrueNAS SCALE web interface and see all the management options, you can begin [configuring your system]({{< relref "UIConfigurationSCALE.md" >}})!
 
 {{< taglist tag="scaleconfig" limit="10" title="Related Configuration Articles" >}}
-{{< taglist tag="scaleinstall" limit="10" title="Related Installation Articles" >}}
-{{< taglist tag="scalemigrate" limit="10" title="Related Migration Articles" >}}
+

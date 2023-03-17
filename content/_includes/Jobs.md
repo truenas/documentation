@@ -1,20 +1,20 @@
 ---
 ---
 
-The **Jobs** <span class="material-icons">assignment</span> icon button displays all running and failed jobs/processes. Access minimized jobs/processes here.
+The **Jobs** <span class="material-icons">assignment</span> icon button displays all running and failed jobs, taks or processes on a dropdown panel. 
 
 ![JobsMenu](/images/SCALE/JobsMenu.png "TrueNAS SCALE Task Manager")
 
-Users can minimize a job/process by clicking the **-** in any dialogue or pop-up window.  
-
-Click on a running task to display a dialog for that running task.
+Click on a running task to display a dialog for that task.
 
 You can abort active jobs (like a disk wipe for example) by clicking the white circled X next to the active job.
 
 ![JobsAbort](/images/SCALE/JobsAbort.png "TrueNAS SCALE Task Manager")
 
-Click the **History** button to open the **Tasks** screen. **Tasks** lists all successful, active, and failed jobs. Users can also click **View** next to a task to view its log information and error message.
+The **History** button opens the **Tasks** screen that lists all active, complete, and failed jobs. Users can click **View** next to a task to see the log information and error message for that task.
 
 ![TasksScreen](/images/SCALE/TasksScreen.png "Tasks Screen")
 
-For more information see the **Tasks Screens** article.
+Users can minimize a job/process dialog by clicking the **-**.  
+
+For more information see the **[Tasks Screens]({{< relref "TasksScreens.md" >}})** article.
