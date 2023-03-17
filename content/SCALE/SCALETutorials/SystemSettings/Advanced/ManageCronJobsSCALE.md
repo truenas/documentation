@@ -36,9 +36,7 @@ Cron Job schedules use six asterisks that represent minutes, hours, days of the 
 
 For example, a schedule of *1 1 1 * sat,sun* would run at 01:01 AM, on day 1 of the month, and only on Saturday and Sunday.
 
-{{< hint info >}}
 Separate multiple values for a segment with commas, not spaces.
-{{< /hint >}}
 {{< /expand >}}
 
 If you want to hide standard output (stdout) from the command, select **Hide Standard Output**. If left cleared, TrueNAS emails any standard output to the user account cron that ran the command. 
