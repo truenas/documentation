@@ -103,14 +103,14 @@ After creating a dataset and accounts, you need to investigate your access requi
 Many home users typically add a new ACL entry that grants **FULL_CONTROL** to the **builtin_users** group with the flags set to **INHERIT**.
 
 {{< expand "Click here for instructions" "v" >}}
-To change or add permissions for the **builtin_users** group, go to **Storage**, 
-1. Click the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> for your SMB dataset and then click on **View Permissions**.
+To change or add permissions for the **builtin_users** group, go to **Datasets**, 
+1. Click on the name of the dataset that you want to modify in the list of datasets that display. 
 
-2. Click the <span class="material-icons">edit</span> pencil icon. The **Edit ACL** screen for the dataset displays.
+2. Locate the **Permissions** widget. Click the **Edit** button on the widget. The **Edit ACL** screen for the dataset displays.
 
 3. Check the **Access Control List** to see if this user is on the list and has the correct permissions. If not, add this ACE item.
    
-   ![EditACLScreenForSMBPermissions](/images/SCALE/22.02/EditACLScreenForSMBPermissions.png "Updating SMB User ACL Permissions")
+   ![SMBDatasetACLEdit](/images/SCALE/22.12/SMBDatasetACLEdit.png "Updating SMB User ACL Permissions")
    
    a. Enter **Group** in the **Who** field or use the dropdown list to select **Group**.
 
