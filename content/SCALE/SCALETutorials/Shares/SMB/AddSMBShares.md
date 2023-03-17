@@ -182,7 +182,7 @@ The privileges are the same as the guest account.
 Guest access is disabled by default in Windows 10 version 1709 and Windows Server version 1903. 
 Additional client-side configuration is required to provide guest access to these clients.
 
-* **MacOS clients**: Attempting to connect as a user that does not exist in FreeNAS *does not* automatically connect as the guest account. 
+* **MacOS clients**: Attempting to connect as a user that does not exist in TrueNAS *does not* automatically connect as the guest account. 
 
 * **Connect As: Guest** Specifically choose this option in macOS to log in as the guest account. 
   See the [Apple documentation](https://support.apple.com/guide/mac-help/connect-mac-shared-computers-servers-mchlp1140/mac) for more details.
