@@ -45,7 +45,7 @@ If you want to hide standard output (stdout) from the command, select **Hide Sta
 
 To hide error output (stderr) from the command, select **Hide Standard Error**. If left cleared, TrueNAS emails any error output to the user account cron that ran the command. 
 
-Select **Enabled** to enable this cron job. If you leave this checkbox cleared, it disables the cron job without deleting it.
+Select **Enabled** to enable this cron job. Leave this checkbox cleared to disable the cron job without deleting it.
 
 Click **Save**.
 
