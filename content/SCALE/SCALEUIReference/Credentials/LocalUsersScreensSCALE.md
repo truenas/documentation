@@ -109,6 +109,8 @@ You can set a specific [shell]({{< relref "UseScaleShell.md" >}}) for the user f
 
 | Shell | Description |
 |-------|-------------|
+| TrueNAS CLI | Description |
+| TrueNAS Console | Description |
 | bash	| [Bourne Again shell](https://www.gnu.org/software/bash/manual/bash.html) for the GNU operating system. |
 | rbash	| [Restricted bash](https://www.gnu.org/software/bash/manual/html_node/The-Restricted-Shell.html) |
 | dash | [Debian Almquist shell](https://man7.org/linux/man-pages/man1/dash.1.html) |
