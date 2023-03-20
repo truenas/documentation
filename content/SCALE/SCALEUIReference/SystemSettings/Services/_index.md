@@ -3,7 +3,9 @@ title: "Services"
 description: "This article provides general information on the **Services** screen, and a summary of each indiviual service article in the Services area."
 geekdocCollapseSection: true
 weight: 50
-alias: /scale/scaleuireference/systemsettings/servicesscale/
+aliases: 
+ - /scale/scaleuireference/systemsettings/servicesscale/
+ - /scale/scaleuireference/systemsettings/services/lldpservicesscreenscale/
 tags:
  - scaleservices
 ---
