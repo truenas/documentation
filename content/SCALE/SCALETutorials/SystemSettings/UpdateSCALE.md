@@ -58,7 +58,7 @@ Select a temporary location to store the update file and click **Choose File**. 
 
 After updating, you might find that you can update your storage pools and boot-pool to enable some supported and requested features that are not enabled on the pool.
 
-TGo to **System Settings > Shell** and enter `zpool status` to show which pools can be updated.
+Go to **System Settings > Shell** and enter `zpool status` to show which pools you can update.
 
 ![BootPoolUpgradeStatus](/images/SCALE/22.12/BootPoolUpgradeStatus.png "Boot-pool Status")
 
