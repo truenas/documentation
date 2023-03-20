@@ -91,10 +91,7 @@ You might be able to access the web UI using a `hostname.domain` command at the 
 
 You can either use SCALE UI or the Console setup menu to configure your network settings for the primary network interface or other interfaces such as a link aggregate (LAGG) or virtual LAN (VLAN), or aliases for an interface, and to configure global network settings such as the default gateway, host name, domain, and the DNS name servers, or add static routes. 
 
-{{< hint info >}}
-We recommend that only experienced administrators familiar with network configuration and the Console setup menu use it and that less experienced and knowledgeable system administrators use the SCALE UI. 
-The TrueNAS SCALE UI includes safety measures to prevent you from completely disrupting network connectivity for your TrueNAS SCALE if you make a mistake with network interface settings.
-{{< /hint >}}
+{{< include file="/content/_includes/UsingConsoleSetupMenuSCALE.md" type="page" >}}
 
 To use CLI commands, enter `7` to open a Linux shell and then enter commands. 
 
@@ -122,11 +119,7 @@ Enter <kbd>3</kbd> to display the Static Route Settings screen where you can set
 
 ### Configuring Required Network Settings 
 
-TrueNAS uses DHCP to assign the IP address required to access the SCALE UI and displays it on the Console setup menu screen, and it sets the host name to truenas.
-
-If you don't plan to use the DHCP-assigned network addresses provided by SCALE, identify your host and domain names, the static or fixed IP addresses you plan to assign to your network interface card(s), the default gateway, subnet mask(s), and the DNS name servers in your network. 
-For Enterprise systems, have your network information ready to provide iXsystems Support when they step you through your configuration. 
-For all other users, having this information ready before you begin configuring network settings makes the process go faster and reduces the risk of issues when you configure SCALE. 
+{{< include file="/content/_includes/DHCPCreatedNetwork.md" type="page" >}}
 
 If you want to use the Console setup menu to change the network interface IP address, type <kbd>1</kbd> and then press <kbd>Enter</kbd> to open the **Configure Network Interfaces** screen. 
 Use either <kbd>Tab</kbd> or the arrow keys to select the interface to use as your primary network interface if you have more than one interface installed and wired to your network. 
