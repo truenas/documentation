@@ -21,7 +21,7 @@ For more information on other available trains, see [TrueNAS Upgrades](https://w
 See the [Software Status page](https://www.truenas.com/software-status/) for the latest recommendations for software usage.
 Bluefin and Nightlies are non-production trains.
 If you are using a non-production train, be prepared to experience bugs or problems.
-Testers are encouraged to submit bug reports and debug files at https://jira.ixsystems.com.
+Testers are encouraged to submit bug reports and debug files at https://github.com/truenas/documentation/pull/1809/files#diff-ec4462e55ad21a92f5368a10510591a6ae7fe1ed297916798828c05f752ff25fR24.
 {{< /hint >}}
 
 The TrueNAS SCALE **Update** screen lets users update their system using two different methods: manual or automatic.
