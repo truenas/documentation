@@ -54,4 +54,18 @@ To manually update TrueNAS, click **Install Manual Update File** and save your c
 
 Select a temporary location to store the update file and click **Choose File**. Select the <file>.iso</file> you want to upgrade to and click **Apply Update**.
 
+## Updating Pools
+
+After updating, you may find that your storage pools and boot-pool can be updated to enable some supported and requested features are not enabled on the pool.
+
+TGo to **System Settings > Shell** and enter `zpool status` to show which pools can be updated.
+
+![BootPoolUpgradeStatus](/images/SCALE/22.12/BootPoolUpgradeStatus.png "Boot-pool Status")
+
+To update the pools, enter <code>zpool upgrade <i>poolname</i></code>, where *poolname* is the name of the storage pool or boot-pool you want to update.
+
+{{< hint warning >}}
+Upgrading pools is a one-way operation. After upgrading pools to the latest zfs features, you might not be able to boot into older versions of TrueNAS.
+{{< /hint >}}
+
 {{< taglist tag="scaleupdate" limit="10" >}}
