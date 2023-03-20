@@ -57,7 +57,7 @@ The **Support** widget on the **System Settings > General** screen displays the 
 
 After installing the SCALE <file>iso</file> file, the SCALE installer provides the DHCP-assigned IP address for the web UI and displays it at the top of the [Console setup menu]({{< relref "ConsoleSetupMenuSCALE.md" >}}) screen. 
 TrueNAS uses DHCP to assign the primary web UI IP address and provision the other required global network addresses. 
-If you have more than one network interface card installed and connected to your network you need to assign an IP address and configure it in SCALE.
+If you have more than one network interface card installed and connected to your network, you need to assign an IP address and configure it in SCALE.
 
 {{< include file="/content/_includes/DHCPCreatedNetwork.md" type="page" >}}
 
@@ -82,22 +82,22 @@ We recommend using the web UI to [add or change network interfaces or aliases]({
 ### Adding Aliases or Static IP Addresses
 Static IP addresses and aliases provide different support for various network applications. 
 {{< enterprise >}}
-SCALE Enterprise HA systems use a virtual IP (VIP) to maintain access to the UI even if the system fails over to the standby controller. This VIP address might experience a minor blip at failover but you do not need to log in with the standby controller IP address to gain access to the UI after a failover.
+SCALE Enterprise HA systems use a virtual IP (VIP) to maintain access to the UI even if the system fails over to the standby controller. This VIP address might experience a minor blip at failover, but you do not need to log in with the standby controller IP address to gain access to the UI after a failover.
 {{< /enterprise >}}
 You can configure a network interface with a static IP or add an alias IP address on the same screen in the SCALE UI. 
 For more information on when to use an alias or a static IP address, see [Managing Interfaces]({{< relref "ManagingInterfaces.md" >}}).
 
 ## Setting Up Storage
 
-TrueNAS SCALE requires at least one storage pool. We recommend creating the required pool and then planning the rest of your storage needs before you move to adding sharing, container applications, virtual machines, or begin storing data.
+TrueNAS SCALE requires at least one storage pool. We recommend creating the required pool and then planning the rest of your storage needs before you move on to adding sharing, container applications, virtual machines, or begin storing data.
 When planning your data storage, consider the type of data sharing you want to do, any container applications you might want to deploy, and how you want to organize stored data. 
 
-The storage creation process begins with creating a pool and then adding the datasets or zvols as needed. Creating your intial storage is [explained here]({{< relref "SetUpStorageScale.md" >}}). 
+The storage creation process begins with creating a pool and then adding the datasets or zvols as needed. Creating your initial storage is [explained here]({{< relref "SetUpStorageScale.md" >}}). 
 
 ### Setting the System Dataset
 
 SCALE assigns the root parent dataset of the first created pool as the system dataset.
-If your system has enough disks to add more pools, you can [change the system dataset]({{< relref "AdvancedSettings.md" >}}) to a different root parent dataset for a another pool.
+If your system has enough disks to add more pools, you can [change the system dataset]({{< relref "AdvancedSettings.md" >}}) to a different root parent dataset for another pool.
 
 ## Setting Up Shares
 After setting up your system storage, you can [configure data sharing]({{< relref "SetUpSharing.md" >}}) using one of the sharing protocols available in SCALE.
@@ -130,11 +130,11 @@ Configure and enable these services based on your SCALE system:
 
 * Failover service on SCALE Enterprise High Availability (HA) systems
 
-  The failover service enables  an HA system to fail over to the standby system controller after a disruption to the primary controller.   
+  The failover service enables an HA system to fail over to the standby system controller after a disruption to the primary controller.   
   This service is not included on non-Enterprise and non-HA systems.
 
   Enterprise customers should not make changes to failover settings or the service on their own except when disabling failover to make changes to network settings. 
-  Contact iXsystems Support for assistance before making any change to other failover settings.
+  Contact iXsystems Support for assistance before making any changes to other failover settings.
 
 When you add data sharing the system prompts you to enable the appropriate sharing service as part of the configuration and set up process.
 
@@ -149,9 +149,9 @@ See [Managing SMART Tests]({{< relref "SmartTestsScale.md" >}}) for information 
 
 ## Setting Up Backup Solutions
 
-After completing your initial system configuration and before you begin day-to-day operations, we recommend you configure system and data storage backup. These include:
+After completing your initial system configuration and before you begin day-to-day operations, we recommend you configure the system and data storage backup. These include:
 * Saving the system configuration file [described here]]({{< relref "SetUpBackupSCALE.md" >}})
-* Saving or [creating a new boot environment]({{< relref "ManageBootEnvironSCALE.md" >}}) to use as a restore point if system issues cause you lose access to the SCALE UI.
+* Saving or [creating a new boot environment]({{< relref "ManageBootEnvironSCALE.md" >}}) to use as a restore point if system issues cause you to lose access to the SCALE UI.
 * Downloading a system debug to capture system information to use as a comparison against future debug files. 
   To download a system debug file, go to **System Settings > Advanced** and click **Save Debug** to begin the download. 
 
@@ -160,7 +160,7 @@ You can use the boot environment in and SSH session to retore your system to the
 
 {{< enterprise >}}
 For Enterprise customers with High Availability (HA) systems, the HA restore process requires recovering both controllers.
-Contact iXsystems Support for assistance before attempting to recovery your system. If you choose to restore access to controller 1 and the SCALE UI, contact iXsystem Support to get assistance with properly recovering your second controller. 
+Contact iXsystems Support for assistance before attempting to recover your system. If you choose to restore access to controller 1 and the SCALE UI, contact iXsystems Support to get assistance with properly recovering your second controller. 
 
 Enterprise HA customers should not start issuing CLI commands to recover the system!
 
@@ -204,7 +204,7 @@ TrueNAS SCALE allows you to configure an Active Directory or LDAP server to hand
 SCALE allows you to configure either directory server but not both. 
 {{< hint danger >}}
 While unlikely, you can change from either directory service but if you want to migrate from LDAP to Active Directory you must disable LDAP in SCALE and then remove the current directory server settings. To change from Active Directory to LDAP use the **Leave Domain** option and disable the service before attempting to configure and enable LDAP.
-Switching from one service to the other is not recommended and can result in configuration issue that could disrupt your system! 
+Switching from one service to the other is not recommended and can result in configuration issues that could disrupt your system! 
 {{< /hint >}}
 {{< enterprise >}}
 iXsystems Support can assist Enterprise customers with configuring directory service settings in SCALE with the [information customers provide]({{< relref "/SCALE/GettingStarted/Install/_index.md" >}}), but they do not configure customer Active Directory system settings.
@@ -251,7 +251,7 @@ Non-Enterprise SCALE customers experiencing software bugs or instability should 
 
 When reporting an issue, download a system debug file taken immediately following the issue occurrence. 
 This captures the system configuration information and logs iXsystems needs to help resolve your issues. 
-Upload this debug to private attachments area using the link provided when you open a Jira ticket. 
+Upload this debug to the private attachments area using the link provided when you open a Jira ticket. 
 After uploading the file, link the attachment to the Jira ticket number before you click **Save**. 
 
 Support is also available through the TrueNAS [Community Forums, blog, and Discord]){{< relref "/content/Contributing/IssueReporting/_index.md" >}}. 
