@@ -85,31 +85,37 @@ There is a single option on this page.
 ### Configure Cluster
 
 Successfully creating a cluster adds a cluster widget to the **Clusters** screen and opens options to configure the new cluster.
-These options split into three screens: **SMB Network**, **Active Directory**, and **Confirmation**.
+These options split into four screens: **VIPs**, **Accociate VIPs**, **Active Directory**, and **Confirmation**.
 
-#### SMB Network
+#### VIPs
 
-The SMB Network page has options and fields added for each SCALE system in the cluster.
+The VIPs page has options and fields added for each SCALE system in the cluster.
 
-![ConfigureClusterSMBNetwork](/images/TrueCommand/2.2/ConfigureClusterSMBNetwork.png "Configure Cluster SMB Network")
-
-{{< expand "Option descriptions (click to expand)" "v" >}}
+![ConfigureClusterSMBNetwork](/images/TrueCommand/2.3.1/ConfigureClusterSMBNetwork.png "Configure Cluster SMB Network")
 
 | Setting | Description |
 |---------|-------------|
 | **NEXT** | Click button to continue to the next page. |
-| **Skip this step** | Select checkbox to finalize the cluster configuration without registering a network to use for SMB sharing. Selecting this permanently removes the ability to share data stored in this cluster. |
-| **Interface** | Dropdown list shows SCALE system network interface to use for SMB traffic. For best functionality, choose an interface that can communicate between the individual SCALE systems, TrueCommand environment, Active Directory, and client systems that need to access data shared from this cluster. |
-| **Address** | Dropdown list shows IP address used for clients to access the SCALE system. |
-| **Netmask** | Dropdown list shows netmask for the IP address. |
+| **ADD** | Adds another line for IPs and netmasks. |
+| **Address** | Virtual IP address for one of the cluster systems. |
+| **Netmask** | Netmask for the IP address. |
 
-{{< /expand >}}
+#### Associate VIPs
+
+The Associate VIPs page allows you to select interfaces to assign to the VIPs.
+
+![ConfigureClusterAssociateVIPs](/images/TrueCommand/2.3.1/ConfigureClusterAssociateVIPs.png "Configure Associate VIPs")
+
+| Setting | Description |
+|---------|-------------|
+| **NEXT** | Click button to continue to the next page. |
+| **Interface** | Click the Interface drop-down to select an interface and assign it to the VIP |
 
 #### Active Directory
 
 The options on this page let you establish a connection between an Active Directory environment, SCALE systems, and TrueCommand.
 
-![ConfigureClusterActiveDirectory](/images/TrueCommand/2.2/ConfigureClusterActiveDirectory.png "Configure Cluster Active Directory Connection")
+![ConfigureClusterActiveDirectory](/images/TrueCommand/2.3.1/ConfigureClusterActiveDirectory.png "Configure Cluster Active Directory Connection")
 
 {{< expand "Option descriptions (click to expand)" "v" >}}
 
@@ -117,6 +123,7 @@ The options on this page let you establish a connection between an Active Direct
 |---------|-------------|
 | **NEXT** | Click button to continue to the next page. |
 | **Domain Name** | Enter a string for the Microsoft Active Directory (AD) environment host name. Establishes a connection between the entered host and TrueCommand. |
+| **NetBIOS** | Automatically populated with the cluster name. |
 | **Username** | Enter a string for the account credential used to establish the AD connection. Requires an account with administrative access. |
 | **Password** | Enter a string for the account credential used to establish the AD connection. Requires an account with administrative access. |
 
@@ -126,7 +133,7 @@ The options on this page let you establish a connection between an Active Direct
 
 All chosen settings display here for you to confirm before being applied to the cluster.
 
-![ConfigureClusterReview](/images/TrueCommand/2.2/ConfigureClusterReview.png "Configure Cluster: Review and confirm")
+![ConfigureClusterReview](/images/TrueCommand/2.3.1/ConfigureClusterReview.png "Configure Cluster: Review and confirm")
 
 {{< expand "Option descriptions (click to expand)" "v" >}}
 
