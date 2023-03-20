@@ -49,17 +49,17 @@ SCALE Enterprise (HA) systems can use the DHCP-assigned IP address for the prima
 Using a computer with access to the same network as the TrueNAS system, enter the host name and domain or IP address in a web browser to connect to the SCALE web interface.
 
 {{< hint info >}}
-The browser you use can impact quality of your user experience. We generally recommend using Firefox, Edge, or Chrome.
+The browser you use can impact the quality of your user experience. We generally recommend using Firefox, Edge, or Chrome.
 {{< /hint >}}
 
 {{< include file="/_includes/RootLoginWarnSCALE.md" type="page" >}}
 
 With the implementation of rootless login, root is no longer the default administrator username, rather you use the new admin user created during the installation process. 
-We recommend creating the admin user during the installation process and use this to log into SCALE.
+We recommend creating the admin user during the installation process and using it to log into SCALE.
 
 Based on the authentication method selected in step 4 of the SCALE [TrueNAS installer Console Setup]({{< relref "InstallingScale.md" >}}) process, you could see one of three sign-in splash screen options for the web UI.
 
-* Selecting **1. Administrative user (admin)** opens the SCALE sign-in screen to log in with admin username and password created during installation.
+* Selecting **1. Administrative user (admin)** opens the SCALE sign-in screen to log in with the admin username and password created during installation.
 * Selecting **2. Root user (not recommended** opens the SCALE sign-in screen to log in with the root username and the root password created during installation.
 * Selecting **3. Configuring using Web UI** opens a SCALE sign-in screen where you select the option for either the admin or root user and create the password.
 
@@ -84,10 +84,10 @@ Follow the directions in [Managing Users]({{< relref "ManageLocalUsersScale.md" 
 ### Creating an Administrator Account at First Log in
 Selecting the option to create the root or administration user when you first log into SCALE presents a sign-in splash screen with two radio buttons. Select either the admin or root user option, then enter the password to use with that user. After selecting the option another sign-in splash screen displays where you enter the password for the administration user option you selected.
 
-After creating the login account, go to **Credentials > Local Users** screen. [Create the admin account]({{< relref "ManageLocalUsersSCALE.md" >}}) immediately after you enter the UI. Create or edit the [admin user account settings]({{< relref "ManageLocalUsersSCALE.md" >}}), enable the password and click **Save**. After setting up the admin user, then edit the root user to disable the password and to resume rootless login security hardening.
+After creating the login account, go to **Credentials > Local Users** screen. [Create the admin account]({{< relref "ManageLocalUsersSCALE.md" >}}) immediately after you enter the UI. Create or edit the [admin user account settings]({{< relref "ManageLocalUsersSCALE.md" >}}), enable the password, and click **Save**. After setting up the admin user, then edit the root user to disable the password and resume rootless login security hardening.
 
 {{< expand "What happens if I disable both admin and root passwords at the same time?" "V">}}
-If you disabled the root user password and did not create the admin user and enable that password, or you disable both admin and root user passwords and your session times out before you enable one of the passwords, SCALE dispalys a sign-in screen that allows you create a temporary password for one-time access. 
+If you disabled the root user password and did not create the admin user and enable that password, or you disable both admin and root user passwords and your session times out before you enable one of the passwords, SCALE displays a sign-in screen that allows you create a temporary password for one-time access. 
 
 ![CreateAdminAccountAtFirstTimeLogin](/images/SCALE/22.12/CreateAdminAccountAtFirstTimeLogin.png "Set New Root Account Password Sign In Screen") change image
 
@@ -99,7 +99,7 @@ The password entered is a one-time user access password.
 You must go to the **Credentials > Local Users** screen and [create the admin account]({{< relref "ManageLocalUsersSCALE.md" >}}) immediately after you enter the UI.
 {{< /hint >}}
 {{< /expand >}}
-{{< expand "UI is not accessible gy IP address" "V" >}}
+{{< expand "UI is not accessible by IP address" "V" >}}
 If the user interface is not accessible by IP address from a browser, check these things:
 
 * If the browser configuration has proxy settings enabled, disable them and try connecting again.
@@ -126,7 +126,7 @@ If you cannot remember the administrator password to log in to the web interface
 After logging in for the first time, you see the main system **Dashboard** screen. 
 The **Dashboard** displays basic information about the installed version, systems component usage, and network traffic. 
 {{< enterprise >}}
-SCALE Enterprise users with an iXsystems-provided TrueNAS server, displays an image of the system in the **System Information** widget. Click on the system image to open the **System Settings > [View Enclosure]({{< relref "EnclosureScreensSCALE.md" >}})** screen. 
+SCALE Enterprise users with an iXsystems-provided TrueNAS server, also see an image of the system in the **System Information** widget. Click on the system image to open the **System Settings > [View Enclosure]({{< relref "EnclosureScreensSCALE.md" >}})** screen. 
 
 ![DashboardMainScreenSCALE](/images/SCALE/22.12/DashboardMainScreenSCALE.png "TrueNAS SCALE Dashboard")
 
@@ -148,8 +148,8 @@ The icon buttons in the top toolbar menu link to the iXsystems site, display the
 
 ![TopToolbar](/images/SCALE/22.12/TopToolbar.png "TrueNAS SCALE Top Toolbar Icons")
 
-The SCALE top navigation top toolbar provides to access functional areas of the UI that you might want to directly access while on other screen in the UI. 
-Icon buttons provide quick access to dropdown lists of options, dropdown panels with information on system alerts or tasks, and can include access to other informational or configuration screens.
+The SCALE top navigation top toolbar provides access to functional areas of the UI that you might want to directly access while on other screens in the UI. 
+Icon buttons provide quick access to dropdown lists of options, dropdown panels with information on system alerts or tasks, and can include access to other information or configuration screens.
 {{< expand "iXsystems" "v" >}}
 The iXsystems logo opens the [iXsystems home page](https://www.ixsystems.com/). There, users can find information about storage and server systems.
 
@@ -172,8 +172,8 @@ Users can also use the iXsystems home page to access their customer portal and c
 
 {{< /expand >}}
 {{< expand "Alerts" "v" >}}
-The **Alerts** <span class="material-icons">notifications</span> icon displays a list of current alerts for your TrueNAS system and provides access alert related settings. 
-Users can dismiss individual alerts or select the option to dismiss all at once.
+The **Alerts** <span class="material-icons">notifications</span> icon displays a list of current alerts for your TrueNAS system and provides access to alert-related settings. 
+Users can dismiss individual alerts or select the option to dismiss all alerts at once.
 
 The <span class="material-icons">settings</span> icon opens the dropdown list of alert options to view or configure **Alert Settings**, **Alert Services**, and **Email**.
 

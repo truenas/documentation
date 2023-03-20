@@ -1,7 +1,7 @@
 ---
 ---
 
-The **Jobs** <span class="material-icons">assignment</span> icon button displays all running and failed jobs, taks or processes on a dropdown panel. 
+The **Jobs** <span class="material-icons">assignment</span> icon button displays all running and failed jobs, tasks, or processes on a dropdown panel. 
 
 ![JobsMenu](/images/SCALE/JobsMenu.png "TrueNAS SCALE Task Manager")
 
