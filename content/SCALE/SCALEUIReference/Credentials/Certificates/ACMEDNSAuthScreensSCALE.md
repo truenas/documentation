@@ -10,8 +10,12 @@ tags:
 
 {{< toc >}}
 
-The **Certificates** screen includes the **ACME DNS-Authenticators** widget that displays a list of authenticators configured on the screen. 
-The Automatic Certificate Management Environment (ACME) DNS-Authenticators screen allows users to automate certificate issuing and renewal. The user must verify ownership of the domain before certificate automation is allowed.
+The **Certificates** screen includes the **ACME DNS-Authenticators** widget that displays a list of configured authenticators. 
+The Automatic Certificate Management Environment (ACME) DNS-Authenticators screen allows users to automate certificate issuing and renewal. The user must verify ownership of the domain before TrueNAS allows certificate automation.
+
+{{< hint warning >}}
+ACME DNS is an advanced feature intended for network administrators or AWS professionals. Misconfiguring ACME DNS can prevent you from accessing TrueNAS.
+{{< /hint >}}
 
 ![ACMEDNSAuthenticatorWidgetNoAuthtenticators](/images/SCALE/22.02/ACMEDNSAuthenticatorWidgetNoAuthtenticators.png "ACME DNS-Authenticator Widget No Authenticators")
 
@@ -34,7 +38,7 @@ The settings change based on the **Authenticator** selection.
 |---------|-------------|
 | **Name** | Required. Enter an internal identifier for the authenticator. |
 | **Authenticator** | Select a DNS provider from the dropdown list and configure any required authenticator attributes. Options are **[cloudflare](https://www.cloudflare.com)** and Amazont **[route53](https://aws.amazon.com/route53/)**. |
-| **Cloudflaire Email** | Enter the email address for the cloudflare account. |
+| **Cloudflare Email** | Enter the email address for the Cloudflare account. |
 | **API Key** | Displays when **Authenticator** is set to **cloudflare**. Enter the API Key. |
 | **API Token** | Displays when **Authenticator** is set to **cloudflare**. Enter the API token. |
 | **Access Key Id** | Required. Displays when **Authenticator** is set to **route53**. Enter the access key ID.|
