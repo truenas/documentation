@@ -45,7 +45,7 @@ To edit a VM device:
 4. Select the path to the zvol you created when setting up the VM on the **Zvol** dropdown list.
 5. Select the type of hard disk emulation from the **Mode** dropdown list. 
    Select **AHCI** for better software compatibility, or select **VirtIO** for better performance if the guest OS installed in the VM has support for VirtIO disk devices.
-6. (Optional) Specify the dis sector size in bytes in **Disk Sector Size**. 
+6. (Optional) Specify the disk sector size in bytes in **Disk Sector Size**. 
    Leave set to **Default** or select either **512** or **4096** byte values from the dropdown list. 
    If unset, the sector size uses the ZFS volume values. 
 7. Specify the boot order or priority level in **Device Order** to move this device up or or down in the sequence. 
