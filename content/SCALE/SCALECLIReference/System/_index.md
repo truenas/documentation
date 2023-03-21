@@ -2,7 +2,7 @@
 title: "System"
 geekdocCollapseSection: true
 description: "This article describes how to configure the system in the TrueNAS CLI Shell." 
-weight: 10
+weight: 50
 ---
 
 {{< toc >}}

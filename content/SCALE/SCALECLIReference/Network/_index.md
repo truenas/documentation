@@ -2,7 +2,7 @@
 title: "Network"
 geekdocCollapseSection: true
 description: "This article describes how to set up networking in the TrueNAS CLI Shell." 
-weight: 6
+weight: 30
 ---
 
 {{< toc >}}

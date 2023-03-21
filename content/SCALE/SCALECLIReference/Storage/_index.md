@@ -2,7 +2,7 @@
 title: "Storage"
 geekdocCollapseSection: true
 description: "This article describes how to configure storage in the TrueNAS CLI Shell." 
-weight: 9
+weight: 45
 ---
 
 {{< toc >}}
