@@ -109,7 +109,7 @@ The Associate VIPs page allows you to select interfaces to assign to the VIPs.
 | Setting | Description |
 |---------|-------------|
 | **NEXT** | Click button to continue to the next page. |
-| **Interface** | Click the Interface drop-down to select an interface and assign it to the VIP |
+| **Interface** | Select an interface from the dropdown list of interface options and to assign it to the VIP.  |
 
 #### Active Directory
 
