@@ -12,10 +12,8 @@ Follow this procedure for each TrueNAS SCALE system that is to be connected to T
 
 2. Go to the **Network** page and look at the **Interfaces** card.
 
-   <ol type="a">
-   <li>Ensure two interfaces are available and note which is the primary interface that allows SCALE web interface access and access between SCALE systems, TrueCommand, and Active Directory environments. Having two interfaces allows connecting the SCALE systems to Active Directory and using TrueCommand to create and manage the cluster.</li>
-   <li>Ensure the second interface has a static IP address on a different network/subnet that connects all the SCALE systems. This interface securely handles all the data-sharing traffic between the clustered systems.</li>
-   </ol>
+   * Ensure two interfaces are available and note which is the primary interface that allows SCALE web interface access and access between SCALE systems, TrueCommand, and Active Directory environments. Having two interfaces allows connecting the SCALE systems to Active Directory and using TrueCommand to create and manage the cluster.
+   * Ensure the second interface has a static IP address on a different network/subnet that connects all the SCALE systems. This interface securely handles all the data-sharing traffic between the clustered systems.
 
 {{< hint warning >}}
 TrueNAS automatically adds entries to AD DNS for CTDB public IP addresses. Administrators should add the addresses **before** joining AD to prevent significant configuration errors.
