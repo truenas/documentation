@@ -18,7 +18,7 @@ Go to **Virtualization > Virtual Machines** and locate the name of the VM you wa
 
 Click <i class="material-icons" aria-hidden="true" title="Devices">device_hub</i> **Devices** to open the devices screen associated with the VM. 
 From this screen you can edit, add, or delete devices. 
-Click the <span class="material-icons">more_vert</span> icon at the right of each listed device to see device options.
+Click the <span class="material-icons">more_vert</span> icon at the right of each listed device to see device options. 
 
 ![VMRunningOptionsSCALE](/images/SCALE/22.12/VMRunningOptionsSCALE.png "VM Listing Expanded")
 
@@ -32,7 +32,8 @@ Device notes:
 * A **CD-ROM** device allows booting a VM from a CD-ROM image like an installation CD.
   The CD image must be available in the system storage.
 
-Before adding, editing or deleting a device for a VM, first stop the VM if it is running. Click the **State** toggle to stop, or restart, a VM.
+Before adding, editing or deleting a device for a VM, first stop the VM if it is running. 
+Click the **State** toggle to stop, or restart, a VM.
 
 ### Editing a Device
 Select **Edit** to open the **Edit *type* Device** screen where *type* is the device type selected. You you can change the type of virtual hard disk, the storage volume to use, or change the device boot order.
