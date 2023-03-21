@@ -95,7 +95,7 @@ The VIPs page has options and fields added for each SCALE system in the cluster.
 
 | Setting | Description |
 |---------|-------------|
-| **ADD** | Adds another line for IPs and netmasks. |
+| **ADD** | Adds another line under VIPs for IPs and netmasks. |
 | **Address** | Virtual IP address for one of the cluster systems. |
 | **Netmask** | Netmask for the IP address. |
 
