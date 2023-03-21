@@ -3,8 +3,8 @@ title: "TrueNAS SCALE"
 geekdocCollapseSection: true
 weight: 20
 aliases:
-  - /scale/devnotes/
-  - /scale/introduction/
+ - /scale/devnotes/
+ - /scale/introduction/
 ---
 <p style="text-align:center;">
 <img src="/images/truenas_scale-logo-full-color-rgb.png" style="width:50%;">
@@ -41,7 +41,7 @@ Deploy a single hyperconverged node in a home/office or a cluster with hundreds 
 {{< /tab >}}
 {{< tab "Virtualization" >}}
 
-With support for KVM VMs, Kubernetes, and Docker containers, it’s easy to add applications to suit your every need.
+With support for KVM VMs, Kubernetes, and Docker containers, it is easy to add applications to suit your every need.
 {{< /tab >}}
 {{< /tabs >}}
 
