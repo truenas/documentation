@@ -95,7 +95,6 @@ The VIPs page has options and fields added for each SCALE system in the cluster.
 
 | Setting | Description |
 |---------|-------------|
-| **NEXT** | Click button to continue to the next page. |
 | **ADD** | Adds another line for IPs and netmasks. |
 | **Address** | Virtual IP address for one of the cluster systems. |
 | **Netmask** | Netmask for the IP address. |
@@ -108,7 +107,6 @@ The Associate VIPs page allows you to select interfaces to assign to the VIPs.
 
 | Setting | Description |
 |---------|-------------|
-| **NEXT** | Click button to continue to the next page. |
 | **Interface** | Select an interface from the dropdown list of interface options and to assign it to the VIP.  |
 
 #### Active Directory
@@ -121,7 +119,6 @@ The options on this page let you establish a connection between an Active Direct
 
 | Setting | Description |
 |---------|-------------|
-| **NEXT** | Click button to continue to the next page. |
 | **Domain Name** | Enter a string for the Microsoft Active Directory (AD) environment host name. Establishes a connection between the entered host and TrueCommand. |
 | **NetBIOS** | Automatically populated with the cluster name. |
 | **Username** | Enter a string for the account credential used to establish the AD connection. Requires an account with administrative access. |
@@ -176,7 +173,6 @@ The options split into two pages: **Details** and **Confirmation**.
 
 | Setting | Description |
 |---------|-------------|
-| **NEXT** | Click the button to continue to the next page. |
 | **Name** | Enter a string as an identifying label for this cluster volume. |
 | **Type** | Dropdown list. Select layout and behavior for the volume. |
 | **Cluster** | String (disabled). Shows the cluster that controls the new volume. |
