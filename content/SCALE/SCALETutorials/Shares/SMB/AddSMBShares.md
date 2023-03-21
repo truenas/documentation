@@ -6,10 +6,13 @@ aliases:
 tags:
 - scalesmb
 - scaleafp
-- scaleacl
+- scaleshares
 ---
 
 {{< toc >}}
+
+
+{{< include file="/_includes/SMBShareMSDOSalert.md" type="page" >}}
 
 ## About Windows (SMB) Shares
 SMB (also known as CIFS) is the native file-sharing system in Windows.
@@ -20,15 +23,17 @@ SMB supports a wide range of permissions, security settings, and advanced permis
 SMB is suitable for managing and administering large or small pools of data.
 
 TrueNAS uses [Samba](https://www.samba.org/) to provide SMB services.
-The SMB protocol has multiple versions. An SMB client typically negotiates the highest supported SMB protocol during SMB session negotiation. Industry-wide, SMB1 protocol (sometimes referred to as NT1) usage is [being deprecated]({{< relref "/CORE/CoreSecurityReports/SMB1Advisory.md" >}}) for security reasons.
+The SMB protocol has multiple versions. An SMB client typically negotiates the highest supported SMB protocol during SMB session negotiation. 
+Industry-wide, SMB1 protocol (sometimes referred to as NT1) usage is [being deprecated]({{< relref "/CORE/CoreSecurityReports/SMB1Advisory.md" >}}) for security reasons.
 However, most SMB clients support SMB 2 or 3 protocols, even when they are not default.
 
 {{< hint info >}}
-Legacy SMB clients rely on NetBIOS name resolution to discover SMB servers on a network. TrueNAS disables the NetBIOS Name Server (nmbd) by default. Enabled in **Network** if you require its functionality.
+Legacy SMB clients rely on NetBIOS name resolution to discover SMB servers on a network. 
+TrueNAS disables the NetBIOS Name Server (nmbd) by default. Enable it on the **Network > Global Settings** screen if you require this functionality.
 
 MacOS clients use mDNS to discover SMB servers present on the network. TrueNAS enables the mDNS server (avahi) by default.
 
-Windows clients use [WS-Discovery](https://docs.oasis-open.org/ws-dd/ns/discovery/2009/01) to discover the presence of SMB servers, but network discovery can be disabled by default depending on the Windows client version.
+Windows clients use [WS-Discovery](https://docs.oasis-open.org/ws-dd/ns/discovery/2009/01) to discover the presence of SMB servers, but you can disable network discovery by default depending on the Windows client version.
 
 Discoverability through broadcast protocols is a convenience feature and is not required to access an SMB server.
 {{< /hint >}}
@@ -36,27 +41,27 @@ Discoverability through broadcast protocols is a convenience feature and is not 
 ## Adding an SMB Share
 Adding an SMB share to your system involves several steps to add the share and get it working.
 
-First, you [set up the storage](#adding-an-smb-share-dataset) for your new share.
+First, [set up the storage](#adding-an-smb-share-dataset) for your new share.
 
-Next, you [create local user accounts](#creating-local-user-accounts).
-It is also possible to use [Directory Services]({{< relref "/content/SCALE/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}) to provide additional user accounts.
+Next, [create local user accounts](#creating-local-user-accounts).
+You can also use directory services like Active Directory or LDAP to provision additional user accounts.
 
 After adding or modifying local users, [modify the dataset ACL](#tuning-the-dataset-acl).
 
-Now you [create the SMB share](#creating-the-smb-share). You can create a basic SMB share, or for more specific share types or feature requirements, use the [Advanced Options](#configuring-share-advanced-options-settings) instructions before you save the share.
+Now [create the SMB share](#creating-the-smb-share). You can create a basic SMB share, or for more specific share types or feature requirements, use the [Advanced Options](#configuring-share-advanced-options-settings) instructions before saving the share.
 
-After adding the share, you [start the service](#starting-the-smb-service) and [mount it](#mounting-the-smb-share) to your other system.
+After adding the share, [start the service](#starting-the-smb-service) and [mount it](#mounting-the-smb-share) to your other system.
 
 ### Adding an SMB Share Dataset
 
-Before creating the SMB share, add the dataset the share uses for data storage.
+Before creating the SMB share, create the dataset you want the share to use for data storage.
 
 We recommend creating a new dataset with the **Share Type** set to **SMB** for the new SMB share. 
 {{< expand "What does this do?" "v" >}}
 TrueNAS creates the ZFS dataset with these settings:
 
  * **ACL Mode** set to **Restricted**
-   The **ACL Type** influences the **ACL Mode** setting. When **ACL Type** is set to **Inherit** or **POSIX**, you cannot change the **ACL Mode** setting.
+   The **ACL Type** influences the **ACL Mode** setting. When **ACL Type** is set to **Inherit**, you cannot change the **ACL Mode** setting.
    When **ACL Type** is set to **NFSv4**, you can change the **ACL Mode** setting to **Restricted**.
 
  * **Case Sensitivity** set to **Insensitive**
@@ -90,7 +95,7 @@ If an LDAP server is configured, select the server and click **Edit** to display
 If not configured, click **Configure LDAP** to display the **LDAP** configuration screen.
 Click **Advanced Options** and select **Samba Schema (DEPRECATED - see the help text**. 
 {{< hint warning >}}
-Only set LDAP authentication for SMB share is required and the LDAP server is configured with Samba attributes.
+Only enable LDAP authentication for the SMB share if you require it. Your LDAP server must be configured with Samba attributes.
 Support for **Samba Schema** is [officially deprecated in Samba 4.13](https://www.samba.org/samba/history/samba-4.13.0.html). This feature is removed after Samba 4.14.
 Users should begin upgrading legacy Samba domains to Samba AD domains.
 {{< /hint >}}
@@ -177,7 +182,7 @@ The privileges are the same as the guest account.
 Guest access is disabled by default in Windows 10 version 1709 and Windows Server version 1903. 
 Additional client-side configuration is required to provide guest access to these clients.
 
-* **MacOS clients**: Attempting to connect as a user that does not exist in FreeNAS *does not* automatically connect as the guest account. 
+* **MacOS clients**: Attempting to connect as a user that does not exist in TrueNAS *does not* automatically connect as the guest account. 
 
 * **Connect As: Guest** Specifically choose this option in macOS to log in as the guest account. 
   See the [Apple documentation](https://support.apple.com/guide/mac-help/connect-mac-shared-computers-servers-mchlp1140/mac) for more details.

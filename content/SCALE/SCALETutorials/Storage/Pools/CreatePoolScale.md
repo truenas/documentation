@@ -5,7 +5,6 @@ weight: 10
 aliases:
  - /scale/scaleuireference/storage/pools/
 tags:
-- scaleinstall
 - scalestorage
 - scalepools
 - scalevdevs
@@ -33,23 +32,7 @@ We strongly recommend that you review your available system resources and plan y
 Determining your specific storage requirements is a critical step before creating a pool.
 
 ## Creating a Pool
-To create a pool using the **Pool Manager** you:
-
-1. Enter a name.
-2. Move disks to a data VDEV.
-3. Add any other VDEV to the pool you want to include and then add disks to them.
-4. Click **Create**
-
-You access the **Pool Manager** from the **Storage Dashboard**. 
-Click **Storage** on the main navigation panel on the left of the screen.  
-Click **Create Pool** to open the **Pool Manager** screen for new pools.
-
-![CreatePoolPoolManagerScreen](/images/SCALE/22.12/CreatePoolPoolManagerScreen.png "Crete Pool Pool Manager")
-
-If you already have a pool created on your system you can use either the **Create Pool** button at the top right of the screen or click the **Add To Pool** button on the **Unassigned Disks** widget to create a new pool.
-
-![AddToPoolWindow](/images/SCALE/22.12/AddToPoolWindow.png "Add To Pool") 
-
+{{< include file="/_includes/CreatePool.md" type="page" >}}
 ### Naming the Pool
 First, enter a name for the pool using up to 50 lower case alpha-numeric and permitted special characters that conform to [ZFS naming conventions](https://docs.oracle.com/cd/E23824_01/html/821-1448/gbcpt.html). 
 The pool name contributes to the maximum character length for datasets so it is limited to 50 characters. 
