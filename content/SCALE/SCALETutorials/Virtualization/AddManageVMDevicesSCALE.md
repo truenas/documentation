@@ -12,7 +12,9 @@ tags:
 
 ## Adding and Removing Devices
 
-After creating the VM, the next step is to add and remove virtual devices for that VM. Go to **Virtualization** > **Virtual Machines** and locate the name of the VM you want to modify. Expand the VM entry on the **Virtual Machines** widget by clicking the down arrow to the right of the VM name. This displays further details for the VM.
+After creating the VM, the next step is to add virtual devices for that VM.
+
+Go to **Virtualization** > **Virtual Machines** and locate the name of the VM you want to modify. Click anywhere on a VM entry on the **Virtual Machines** widget to expand it and show the options for the VM.
 
 Click the <i class="material-icons" aria-hidden="true" title="Devices">device_hub</i>**Devices** button to view the devices associated with the VM.
 
@@ -25,27 +27,60 @@ The devices for the VM display as a list.
 Device notes:
 
 * A virtual machine attempts to boot from devices according to the **Device Order**, starting with **1000**, then ascending.
-* A **CD-ROM** device allow booting a VM from a CD-ROM image like an installation CD.
+* A **CD-ROM** device allows booting a VM from a CD-ROM image like an installation CD.
   The CD image must be available in the system storage.
 
-The  <span class="material-icons">more_vert</span> vertical elipsis icon displayed on the right side of each listed device provides additional options. These include **Edit**, **Delete** and **Details**.
+The  <span class="material-icons">more_vert</span> vertical ellipsis icon displayed on the right side of each listed device provides additional options. These include **Edit**, **Delete** and **Details**.
 
 ## Device Actions
 
+**Edit** opens the **Edit *type* Device** screen where *type* is the device type selected. Settings displayed vary based on the type of device set when at device creation, and are the same as those displayed on the **[Add Device](#devices-add-screens)** screen except for the **Device Type** field that only displays on the Add Device screens.
+
 ### Edit *type* Device
-**Edit** opens the **Edit *type* Device** screen where *type* is the device type selected. 
-Settings displayed vary based on the type of device set when at device creation, and are the same as those displayed on the **[Add Device](#devices-add-screens)** screen except for the **Device Type** field that only displays on the Add Device screens.
+{{< expand "Click Here for More Information" "v" >}}
+To edit a VM device:
+1. Go to **Virtualization** > **Virtual Machines** and click on the **State** toggle button to stop the VM if it is running.
+2. Click on the name of the VM to expand the menu and view additional options. 
+3. Click on **Devices**. 
+4. Click on the <span class="material-icons">more_vert</span> vertical ellipsis icon displayed on the right side of the listed device you want to edit. Select **Edit**. The **Edit Device** screen displays.
+
+![EditDeviceVMDiskSCALE](/images/SCALE/22.12/EditDeviceVMDiskSCALE.png "Edit Device VM Disk")
+
+5. Select the path to the zvol you created when setting up the VM using the **Zvol** dropdown list.
+6. **Mode** offers two choices of hard disk emulation. Select **AHCI** for better software compatibility. Or, select **VirtIO** for better performance if the guest OS installed in the VM has support for VirtIO disk devices.
+7. **Disk Sector Size** defines a sector size in bytes. Leave this set to **Default**. The sector size remains unset and uses the ZFS volume values. To change this sector size, use the dropdown list. Options are **512** and **4096** byte values. 
+8. The **Device Order** field is used to assign a priority level for the boot sequence for this device. The lower the number the higher the priority in the boot sequence. You can change this number to move a device up or down in the boot sequence.
+9. Click **Save** to retain your changes, click on the X icon to close the screen and return to the VM device listing.
+10. Go to **Virtualization** > **Virtual Machines** and click on the **State** toggle button to start the VM.
+{{< /expand >}}
+
 ### Delete Device
-**Delete** opens a dialog where you click **Delete Device** to confirm you want to delete the device. 
+{{< expand "Click Here for More Information" "v" >}}
+To delete a VM device:
+1. Go to **Virtualization** > **Virtual Machines** and click on the **State** toggle button to stop the VM if it is running.
+2. Click on the name of the VM to expand the menu and view additional options. 
+3. Click on **Devices**. 
+4. Click on the <span class="material-icons">more_vert</span> vertical ellipsis icon displayed on the right side of the listed device you want to edit (In this example we are editing the **Disk** device). Select **Delete**. The **Delete** screen displays. In this example, we are deleting a disk device.
+
+![DeleteDeviceVMDiskSCALE](/images/SCALE/22.12/DeleteDeviceVMDiskSCALE.png "Delete Device VM Disk")
+
+5. The **Delete zvol device** is not selected by default. Select this checkbox to confirm you want to delete the zvol device. The **Force Delete** checkbox is not selected by default. Select this checkbox if you want the system to force the deletion of the zvol device even if there are other devices or services in use or affiliated with the zvol device.
+6. Click **Delete Device** to proceed with the device removal. Click **Cancel** to return to the device listing without saving changes.
+{{< /expand >}}
+
+### Device Details
+{{< expand "Click Here for More Information" "v" >}}
+
+**Details** displays an information dialog for the selected device. Click **Close** to remove the dialog box and return to the device listing.
+{{< /expand >}}
+
 ### Change Device Order
-**Change Device Order** opens a dialog for the selected device. Enter the number that represents the order the VM looks to the device during boot-up. The lower the number places the device earlier in the boot process. 
+To change the device order the VM follows for the device during boot-up, use the **Edit** device process outlined above. The lower the number, the earlier the device is placed in the boot process. 
 Enter the number and click **Save**.
-### Details
-**Details** displays an information dialog for the selected device that lists the port, type, bind IP and other details about the device. Click **Close** to close the dialog.
 
 ## Device Add Screens
 
-The **Add** button on the **Devices** screen opens the **Add Device** configuration screen. Settings change base on the selection in **Device Type**. Configure the following based on your needs:
+The **Add** button on the **Devices** screen opens the **Add Device** configuration screen. Settings change based on the selection in **Device Type**. Configure the following based on your needs:
 
 Select **[CD-ROM](#add-device-type-cd-rom)** to configure a new CD-ROM location and the boot order for that device.
 
@@ -62,69 +97,94 @@ Select **[USB Passthrough Device](#add-device-type-usb-passthrough-device)** to 
 Select **[Display](#add-device-type-display)** to configure a new display device and the boot order for that device.
 
 ### Add Device Type CD-ROM
-Select **CD-ROM** in the **Add** device screen **Device Type** to configure the device setings and boot order.
+Select **CD-ROM** in the **Add** device screen **Device Type** to configure the device settings and boot order.
 {{< expand "Click Here for More Information" "v" >}}
 
-![VMAddDeviceCDROM](/images/SCALE/22.12/VMAddDeviceCDROM.png "Devices Add CD-ROM Type") 
+1. Go to **Virtualization** > **Virtual Machines** and click on the **State** toggle button to stop the VM if it is running.
+2. Click on the name of the VM to expand the menu and view additional options. 
+3. Click on **Devices**. The list of devices for this VM displays.
+4. Click the **Add** button at the top right of the screen. The **Add Device** screen displays.
 
-| Field | Description |
-|-------|-------------|
-| **Type** | Select the device type from the dropdown list. **CD-ROM** is the default setting. |
-| **CD-ROM Path** | Use the <iconify-icon icon="bxs:right-arrow"></iconify-icon> to the left of <iconify-icon icon="bxs:folder"></iconify-icon>**/mnt** to browse to the location of the CD-ROM file on the system. |
-| **Device Order** | Enter the number (such as *1003*) that represents where in the boot order this device should be. The higher the number the later in the boot-up process the device falls. If you want the CD-ROM to be the first device checked assign it a lower number. |
+![VMAddDeviceCDROM](/images/SCALE/22.12/VMAddDeviceCDROM.png "Devices Add CD-ROM Type")
 
+5. In the **Type** field, select **CD-ROM** from the dropdown list.
+6. Click on the <i class="fa fa-caret-right" aria-hidden="true"></i> to the left of **/mnt** and at the pool and dataset levels to expand the directory tree. Select the path to the CD-ROM device, which displays in the field above the tree.
+7. Specify the boot sequence order for the CD-ROM device by typing a value (such as *1003*) in the **Device Order** field. The lower the number, the higher the device is in the boot sequence.
+8. Click **Save** to retain your changes, or click on the X icon to close the screen and return to the VM device listing.
+9. Go to **Virtualization** > **Virtual Machines** and click on the **State** toggle button to start the VM.
 {{< /expand >}}
+
 ### Add Device Type NIC
 Select **NIC** in the **Add** device screen **Device Type** to configure network interface card settings and boot order.
 {{< expand "Click Here for More Information" "v" >}}
 
+1. Go to **Virtualization** > **Virtual Machines** and click on the **State** toggle button to stop the VM if it is running.
+2. Click on the name of the VM to expand the menu and view additional options. 
+3. Click on **Devices**. The list of devices for this VM displays.
+4. Click the **Add** button at the top right of the screen. The **Add Device** screen displays.
+
 ![VMAddDeviceNIC](/images/SCALE/22.12/VMAddDeviceNIC.png "Devices Add NIC") 
 
-| Field | Description |
-|-------|-------------|
-| **Type** | Select the device type from the dropdown list.  |
-| **Adapter Type** | Required. Select the emulator type from the dropdown list. Emulating an **Intel e82545 (e1000)** Ethernet card provides compatibility with most operating systems. Change to **VirtIO** to provide better performance on systems with VirtIO paravirtualized network driver support. |
-| **MAC Address**  | Displays the default auto-generated random MAC address the VM receives. Enter a custom address to override the default.   |
-| **Generate MAC Address** | Click to add a new randomized address in **MAC Address**. |
-| **NIC to attach** | Select a physical interface from the dropdown list to assoicate with the VM. |
-| **Trust Guest Filters** | Default setting is not enabled. Set this attribute to allow the virtual server to change its MAC address. As a consequence, the virtual server can join multicast groups. The ability to join multicast groups is a prerequisite for the IPv6 Neighbor Discovery Protocol (NDP).<br>Setting **Trust Guest Filters** to "yes" has security risks, because it allows the virtual server to change its MAC address and so receive all frames delivered to this address. |
-| **Device Order** | Enter the number (such as *1003*) that represents where in the boot order this device should be. The higher the number the later in the boot-up process the device falls. If you want the CD-ROM to be the first device checked assign it a lower number. |
+5. In the **Type** field, select **NIC** from the dropdown list.
+6. **Adapter Type** is a required field. Choose **Intel e82585(e1000)** for maximum compatibility with most operating systems. If the guest OS supports VirtIO paravirtualized network drivers, choose **VirtIO** for better performance. 
+7. A random MAC address displays by default in the **MAC Address** field. Click the **Generate** button to assign a new random address. Enter your own custom address if you do not want to use a generated address.
+8. Use the dropdown list in the **NIC To Attach** field to select the physical interface you want the VM to use.
+9. The default setting for **Trust Guest Filters** is not enabled. Setting this attribute allows the virtual server to change its MAC address and join multicast groups, which is a prerequisite for the IPv6 Neighbor Discovery Protocol (NDP). Setting this attribute has security risks, because it allows the virtual server to change its MAC address, and so receive all frames delivered to this address. Determine your network setup needs before setting this attribute.
+10. Specify the boot sequence order for the NIC device by typing a value (such as *1002*) in the **Device Order** field. The lower the number, the higher the device is in the boot sequence.
+11. Click **Save** to retain your changes, or click on the X icon to close the screen and return to the VM device listing. 
+12. Go to **Virtualization** > **Virtual Machines** and click on the **State** toggle button to start the VM.
 {{< /expand >}}
 
 ### Add Device Type Disk
-Select **Disk** in the **Add** device screen **Device Type** to configure a new disk location, drive type and disk sector size and boot order.
+Select **Disk** in the **Add** device screen **Device Type** to configure a new disk location, drive type and disk sector size, and boot order.
 {{< expand "Click Here for More Information" "v" >}}
+
+1. Go to **Virtualization** > **Virtual Machines** and click on the **State** toggle button to stop the VM if it is running.
+2. Click on the name of the VM to expand the menu and view additional options. 
+3. Click on **Devices**. The list of devices for this VM displays.
+4. Click the **Add** button at the top right of the screen. The **Add Device** screen displays.
 
 ![VMAddDeviceDisk](/images/SCALE/22.12/VMAddDeviceDisk.png "Devices Add Disk") 
 
-| Field | Description |
-|-------|-------------|
-| **Type** | Select the device type from the dropdown list. |
-| **Zvol** | Select the zvol path from the dropdown list. |
-| **Mode** | Select the drive type from the dropdown list. Options are **AHCI** or **VirtIO**. |
-| **Disk sector size** | Select the disk sector size from the dropdown list or leave set as **Default**. Options are **Default**, **512** or **4096**. |
-| **Device Order** | Enter the number (such as *1003*) that represents where in the boot order this device should be. The higher the number the later in the boot-up process the device falls. If you want the CD-ROM to be the first device checked assign it a lower number. |
+5. In the **Type** field, select **Disk** from the dropdown list.
+6. Select the path to the zvol you created when setting up the VM using the **Zvol** dropdown list.
+7. **Mode** offers two choices of hard disk emulation. Select **AHCI** for better software compatibility. Or, select **VirtIO** for better performance if the guest OS installed in the VM has support for VirtIO disk devices.
+8. **Disk Sector Size** defines a sector size in bytes. Leave this set to **Default**. The sector size remains unset and uses the ZFS volume values. To change this sector size, use the dropdown list. Options are **512** and **4096** byte values. 
+9. Specify the boot sequence order for the disk device by typing a value (such as *1002*) in the **Device Order** field. The lower the number, the higher the device is in the boot sequence.
+10. Click **Save** to retain your changes, or click on the X icon to close the screen and return to the VM device listing.
+11. Go to **Virtualization** > **Virtual Machines** and click on the **State** toggle button to start the VM.
 {{< /expand >}}
 
 ### Add Device Type Raw File
 Select **Raw File** in the **Add** device screen **Device Type** to configure the location and size of the file, disk sector size and type, and boot order.
 {{< expand "Click Here for More Information" "v" >}}
 
-![VMAddDeviceRawFile](/images/SCALE/22.12/VMAddDeviceRawFile.png "Devices Add Raw File") 
+1. Go to **Virtualization** > **Virtual Machines** and click on the **State** toggle button to stop the VM if it is running.
+2. Click on the name of the VM to expand the menu and view additional options. 
+3. Click on **Devices**. The list of devices for this VM displays.
+4. Click the **Add** button at the top right of the screen. The **Add Device** screen displays.
 
-| Field | Description |
-|-------|-------------|
-| **Type** | Select the device type from the dropdown list. |
-| **Raw File** | Enter or use the <iconify-icon icon="bxs:right-arrow"></iconify-icon> to the left of <iconify-icon icon="bxs:folder"></iconify-icon>**/mnt** to browse to the location of the file on the system. |
-| **Disk sector size** | Select the disk sector size from the dropdown list or leave set as **Default**. Options are **Default**, **512** or **4096**. |
-| **Mode** | Select the drive type from the dropdown list. Options are **AHCI** or **VirtIO**. |
-| **Raw filesize** | Enter the size of the file in GiB. |
-| **Device Order** | Enter the number (such as *1003*) that represents where in the boot order this device should be. The higher the number the later in the boot-up process the device falls. If you want the CD-ROM to be the first device checked assign it a lower number. | 
+![VMAddDeviceRawFile](/images/SCALE/22.12/VMAddDeviceRawFile.png "Devices Add Raw File")
+
+5. In the **Type** field, select **Raw File** from the dropdown list.
+6. Click on the <i class="fa fa-caret-right" aria-hidden="true"></i> to the left of **/mnt** and at the pool and dataset levels to expand the directory tree. Select the path to the raw file device, which displays in the field above the tree.
+7. **Disk Sector Size** defines a sector size in bytes. Leave this set to **Default**. The sector size remains unset and uses the ZFS volume values. To change this sector size, use the dropdown list. Options are **512** and **4096** byte values. 
+8. **Mode** offers two choices of hard disk emulation. Select **AHCI** for better software compatibility. Or, select **VirtIO** for better performance if the guest OS installed in the VM has support for VirtIO disk devices.
+9. Enter a file size for the raw file defined in gigabytes (GiB) in **Raw Filesize**. 
+10. Specify the boot sequence order for the raw file device by typing a value (such as *1003*) in the **Device Order** field. The lower the number, the higher the device is in the boot sequence. 
+11. Click **Save** to retain your changes, or click on the X icon to close the screen and return to the VM device listing.
+12. Go to **Virtualization** > **Virtual Machines** and click on the **State** toggle button to start the VM.
 {{< /expand >}}
 
 ### Add Device Type PCI Passthrough Device
 Select **PCI Passthrough Device** in the **Add** device screen **Device Type** to configure the PCI passthrough device and boot order.
 {{< expand "Click Here for More Information" "v" >}}
+
+1. Go to **Virtualization** > **Virtual Machines** and click on the **State** toggle button to stop the VM if it is running.
+2. Click on the name of the VM to expand the menu and view additional options. 
+3. Click on **Devices**. The list of devices for this VM displays.
+4. Click the **Add** button at the top right of the screen. The **Add Device** screen displays.
+5. In the **Type** field, select **PCI Passthrough Device** from the dropdown list.
 
 {{< hint warning >}}
 Depending upon the type of device installed in your system, you may see a warning: PCI device does not have a reset mechanism defined. You may experience inconsistent or degraded behavior when starting or stopping the VM.
@@ -133,43 +193,52 @@ Depending upon the type of device installed in your system, you may see a warnin
 
 ![VMAddDevicePCIpass](/images/SCALE/22.12/VMAddDevicePCIpass.png "Devices Add PCI Passthrough") 
 
-| Field | Description |
-|-------|-------------|
-| **Type** | Select the device type from the dropdown list. |
-| **PCI Passthrough Device** | Enter or select the device from the dropdown list of options. Enter as (bus#/slot#/fcn#). |
-| **Device Order** | Enter the number (such as *1003*) that represents where in the boot order this device should be. The higher the number the later in the boot-up process the device falls. If you want the CD-ROM to be the first device checked assign it a lower number. |
+6. To define a PCI passthrough device, enter a value in **PCI Passthrough Device** using the format of (bus#/slot#/fcn#). 
+7. Specify the boot sequence order for the PCI passthrough device by typing a value (such as *1003*) in the **Device Order** field. The lower the number, the higher the device is in the boot sequence. 
+8. Click **Save** to retain your changes, or click on the X icon to close the screen and return to the VM device listing.
+9. Go to **Virtualization** > **Virtual Machines** and click on the **State** toggle button to start the VM.
 {{< /expand >}}
 
 ### Add Device Type USB Passthrough Device
 Select **USB Passthrough Device** in the **Add** device screen **Device Type** to configure the USB passthrough device and boot order.
 {{< expand "Click Here for More Information" "v" >}}
 
+1. Go to **Virtualization** > **Virtual Machines** and click on the **State** toggle button to stop the VM if it is running.
+2. Click on the name of the VM to expand the menu and view additional options. 
+3. Click on **Devices**. The list of devices for this VM displays.
+4. Click the **Add** button at the top right of the screen. The **Add Device** screen displays.
+5. In the **Type** field, select **USB Passthrough Device** from the dropdown list.
+
 ![VMAddDeviceUSBpass](/images/SCALE/22.12/VMAddDeviceUSBpass.png "Devices Add USB Passthrough") 
 
-| Field | Description |
-|-------|-------------|
-| **Type** | Select the device type from the dropdown list. |
-| **Controller Type** | Required. Choose from **piix3-uhci**, **piix4-uhci**, **ehci**, **ich9-ehci1**, **vt82c686b-uhci**, **pci-ohci**, **nec-xhci**, **qemu-xhci**. |
-| **Device** | Enter or select the device from the dropdown list of options. If **Specify custom** is chosen, enter the required **Vendor ID** and **Product ID**. |
-| **Device Order** | Enter the number (such as *1003*) that represents where in the boot order this device should be. The higher the number the later in the boot-up process the device falls. If you want the CD-ROM to be the first device checked assign it a lower number. |
+6. The **Controller Type** field is required. Use the dropdown list to choose from **piix3-uhci**, **piix4-uhci**, **ehci**, **ich9-ehci1**, **vt82c686b-uhci**, **pci-ohci**, **nec-xhci**, **qemu-xhci**.
+7. **Device** is a required field. Use the dropdown list to select the appropriate hub controller. If **Specify custom** is chosen, enter the required **Vendor ID** and **Product ID**. 
+8. Specify the boot sequence order for the USB passthrough device by typing a value (such as *1003*) in the **Device Order** field. The lower the number, the higher the device is in the boot sequence. 
+9. Click **Save** to retain your changes, or click on the X icon to close the screen and return to the VM device listing.
+10. Go to **Virtualization** > **Virtual Machines** and click on the **State** toggle button to start the VM.
 {{< /expand >}}
 
 ### Add Device Type Display
 Select **Display** in the **Add** device screen **Device Type** to configure a new display device and boot order.
 {{< expand "Click Here for More Information" "v" >}}
 
+1. Go to **Virtualization** > **Virtual Machines** and click on the **State** toggle button to stop the VM if it is running.
+2. Click on the name of the VM to expand the menu and view additional options. 
+3. Click on **Devices**. The list of devices for this VM displays.
+4. Click the **Add** button at the top right of the screen. The **Add Device** screen displays.
+5. In the **Type** field, select **Display** from the dropdown list.
+
 ![VMAddDeviceDisplay](/images/SCALE/22.12/VMAddDeviceDisplay.png "Devices Add Display") 
 
-| Field | Description |
-|-------|-------------|
-| **Type** | Select the device type from the dropdown list. **Display** is the default setting. |
-| **Port** | Enter the port number. You can assign **0**, leave empty for TrueNAS to assign a port when the VM is started, or set to a fixed preferred port number. |
-| **Resolution** | Select a screen resolution to use for VNC sessions. |
-| **Bind** | Select an IP address to use for VNC sessions or use the default **0.0.0.0**. |
-| **Password** | Enter a VNC password of no more than eight characters in length to automatically pass to the VNC session. |
-| **Display Type** | Select the display type from the dropdown list. Options are **VNC** or **SPICE**. |
-| **Web Interface** | Select to enable connecting to the VNC web interface. |
-| **Device Order** | Enter the number (such as *1003*) that represents where in the boot order this device should be. The higher the number the later in the boot-up process the device falls. If you want the CD-ROM to be the first device checked assign it a lower number. |
+6. In the **Port** field, either enter a fixed port number, or set the value to zero (leave the field empty) for TrueNAS to assign a port when the VM is started. 
+7. Use the dropdown list in **Resolution** to select a screen resolution to use for VNC sessions.
+8. In **Bind**, select an IP address to use for the VNC sessions. The default is **0.0.0.0**.
+9. If you choose to enter a password for VNC sessions, specify it here. The password can be no more than eight characters in length.
+10. **Display Type** is a required field. Use the dropdown list to select either **VNC** or **SPICE**. 
+11. The checkbox for **Web Interface** is enabled by default. Leave it selected to allow access to the VNC web interface. 
+12. Specify the boot sequence order for the display device by typing a value (such as *1003*) in the **Device Order** field. The lower the number, the higher the device is in the boot sequence. 
+13. Click **Save** to retain your changes, or click on the X icon to close the screen and return to the VM device listing.
+14. Go to **Virtualization** > **Virtual Machines** and click on the **State** toggle button to start the VM.
 {{< /expand >}}
 
 {{< taglist tag="scalevm" limit="10" >}}
