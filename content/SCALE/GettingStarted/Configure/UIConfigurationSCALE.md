@@ -23,13 +23,12 @@ iXsystems TrueNAS Enterprise customers should contact iXsystems Support when the
 
 All TrueNAS SCALE users should follow these instructions to complete their initial system set up and configuration.
 
-Use the information mentioned in the [installation prepration instructions]({{< relref "/Content/SCALE/GettingStarted/Install/_index.md" >}}) overview article for your SCALE installation type (Enterprise, non-Enterprise,or home use) to configure your network, SMTP, or directory service settings.
+Use the information mentioned in the [installation preparation instructions]({{< relref "/Content/SCALE/GettingStarted/Install/_index.md" >}}) overview article for your SCALE installation type (Enterprise, non-Enterprise,or home use) to configure your network, SMTP, or directory service settings.
 
 {{< include file="/content/_includes/RootLoginWarnSCALE.md" type="page" >}}
 
 After a fresh install from an <file>iso</file> file, administrators log in with the admin account created during install and should no longer log in as the root user. 
-After you log into SCALE with the administrator account you can begin to configure SCALE in the UI.
-For Enterprise customers, iXsystem Support guides you through this process and your first log in.
+After you log into SCALE with the administrator account you can begin to configure SCALE using the web interface.
 
 ## Applying TrueNAS Licenses 
 
@@ -65,7 +64,7 @@ If you have more than one network interface card installed and connected to your
 
 If you are unfamiliar with network services, devices, configurations, you can find more information [here]({{< relref "/SCALE/SCALETutorials/Network/_index.md" >}}) to help guide you through this important and required configuration area.
 {{< enterprise >}}
-You must disable failover in the UI on SCALE Enterprise HA systems to [add or change any network setting]({{< relref "InstallEnterpriseHASCALE.md####Configure Network Settings" >}}). After completing network changes and testing them, then re-enable failover.
+You must disable failover in the UI on SCALE Enterprise HA systems to [add or change any network setting]({{< relref "InstallEnterpriseHASCALE.md#configure-network-settings" >}}). After completing network changes and testing them, then re-enable failover.
 {{< /enterprise >}}
 
 ### Adding Network Interfaces
@@ -150,7 +149,7 @@ See [Managing SMART Tests]({{< relref "SmartTestsScale.md" >}}) for information 
 ## Setting Up Backup Solutions
 
 After completing your initial system configuration and before you begin day-to-day operations, we recommend you configure the system and data storage backup. These include:
-* Saving the system configuration file [described here]]({{< relref "SetUpBackupSCALE.md" >}})
+* Saving the system configuration file [described here]({{< relref "SetUpBackupSCALE.md" >}})
 * Saving or [creating a new boot environment]({{< relref "ManageBootEnvironSCALE.md" >}}) to use as a restore point if system issues cause you to lose access to the SCALE UI.
 * Downloading a system debug to capture system information to use as a comparison against future debug files. 
   To download a system debug file, go to **System Settings > Advanced** and click **Save Debug** to begin the download. 
@@ -213,7 +212,7 @@ Non-Enterprise users can find support for configuring directory services in the 
 
 ## Using Enclosure Management 
 {{< enterprise >}}
-This content applies to TrueNAS Enterprise customers only.
+This content applies to TrueNAS Enterprise customers with compatible hardware.
 
 TrueNAS SCALE main **Dashboard** displays an image of the TrueNAS system server on the **System Information** widget. 
 Click on the image to open the **[View Enclosure]({{< relref "EnclosureScreensSCALE" >}})** screen, or select the **System Settings > Enclosure** option on the main menu navigation panel.
@@ -228,6 +227,7 @@ If using SCALE on servers not provided by TrueNAS, the main **System Information
 SCALE provides a list of applications you can deploy on the **Apps > Available Applications** screen.
 
 You can deploy an application using the **Custom Install** option.
+See the [Apps tutorials]({{< relref "/scale/scaletutorials/apps/_index.md" >}}) for procedures for generically deploying and managing apps, App catalogs, custom apps, and specific app deployment and notes.
 
 ## Updating SCALE
 You can update your system using an <file>iso</file> file using the system administration console or an update file installed through the SCALE UI.
@@ -254,7 +254,7 @@ This captures the system configuration information and logs iXsystems needs to h
 Upload this debug to the private attachments area using the link provided when you open a Jira ticket. 
 After uploading the file, link the attachment to the Jira ticket number before you click **Save**. 
 
-Support is also available through the TrueNAS [Community Forums, blog, and Discord]){{< relref "/content/Contributing/IssueReporting/_index.md" >}}. 
+Support is also available through the TrueNAS [Community Forums, blog, and Discord]({{< relref "/content/Contributing/IssueReporting/_index.md" >}}). 
 These options are accessible on the top header of the TrueNAS Documentation Hub website and from the links at the bottom of all articles.
 
 {{< taglist tag="scaleconfig" limit="10" title="Related Configuration Articles" >}}
