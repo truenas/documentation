@@ -27,12 +27,12 @@ Incorrect use of CLI commands can further disrupt your system access and can pot
 
 ## Installing SCALE for an Enterprise (HA) System
 
-This article outlines a procedure to do a clean install of a SCALE Enterprise (HA) systems using an <file>iso</file> file. 
+This article outlines a procedure to do a clean install of a SCALE Enterprise High Availability (HA) systems using an <file>iso</file> file.
 
 HA systems are dual controller systems with the primary controller referred to as controller 1 (sometimes also as controller A) and controller 2 (or controller B). 
 {{< include file="/content/_includes/HAControllerInstallBestPracticeSCALE.md" type="page" >}}
 
-SCALE includes features and functions to help guide you with completing the process after you get to the SCALE UI.
+SCALE includes features and functions to help guide with completing the configuration process after installing and getting access to the SCALE web interface.
 
 ### Preparing for a Clean Install
 For a list of SCALE Enterprise (HA) preparation information, see [Preparing for SCALE UI Configuration (Enterprise)]({{< relref "InstallPrepEnterprise.md" >}}).
@@ -84,24 +84,28 @@ The sections in this article cover the primary steps as a simultaneous installat
 The sections that follow describe these steps in detail.
 
 #### Overview of the Alternative Installation Process
-Using this method where you install both controllers individually where you to either:
+This process of installing each controller sequentially has two methods:
 
-* Install and configure controller 1 up to the point where you are ready to sync to peer but do not. 
-  You then install controller 2 to the point where the console setup menu displays and stop before you use controller 1 to sync to peer.
+* Install and configure controller 1 up to the point where you are ready to sync to controller 2.
+  Then install controller 2 and reboot. When the console setup menu displays, switch back to controller 1 and sync to peer.
+  This synchronizes the completed configuration from controller 1 to controller 2 and keeps controller 1 designated as the primary controller.
 Or 
-* Install controller 2 at any time up and power it off after the Console setup menu displays. 
-  You then install and configure controller 1 before powering up controller 2, then on controller 1 sync to peer with controller 2.
+* Begin installing controller 2 immediately after installing controller 1. When controller 2 finishes installing, power it off and keep it powered down.
+  When finished configuring controller 1, power up controller 2 and wait for it to finish booting. Switch back to controller 1 and sync the configuration to controller 2.
 
-This section provides an overview of the alternative method to clean install an HA system with controller 2 powered off while installing controller 1. The steps provided in the section above are basically the same but controller 2 is either powered off or not installed when you install and configure controller 1.
+This section provides an overview of the alternative method to clean install an HA system with controller 2 powered off while installing and configuring controller 1.
+These steps are nearly identical to the section above but controller 2 is either powered off or not installed while you install and configure controller 1.
 
-1. Use either the prepared USB flash drives inserted into a USB port for controller 2 or login into an IPMI session for controller 2 to install SCALE. 
-   When the Console setup menu displays power off controller 2. Do not configure network settings for controller 2.
-2. Use either the prepared USB flash drive inserted into a USB port for controller 1 or log into an IPMI session and install SCALE on controller 1. 
+1. Use either the prepared USB flash drive inserted into a USB port for controller 1 or log into an IPMI session and install SCALE on controller 1.
+   Finish the installation and allow controller 1 to complete its first boot.
+2. Use either the prepared USB flash drives inserted into a USB port for controller 2 or login into an IPMI session for controller 2 to install SCALE.
+   When the installation finishes, power down controller 2.  
 3. Configure network settings on controller 1 either with the Console setup menu or using the UI.
 4. Log into controller 1 using the IP address assigned to controller 1.
-   Apply the HA license, sign the EULA, and complete the UI configuration to the point where you are ready to sync to peer on controller 1 but do not sync yet. Log out of the UI.
-5. Power up controller 2.
-6. Log into controller 1 using the VIP address, then sync to peer. SCALE brings controller 2 online as the standby controller.
+   Apply the HA license, sign the EULA, and complete the UI configuration to the point where you are ready to sync to peer on controller 1, but do not sync yet.
+5. Power up controller 2 and wait for it to complete the boot process.
+6. Log into controller 1, go to **System Settings > Failover**, and click **Sync to Peer**.
+   This synchronizes controller 2 with controller 1 and reboots controller 2. Controller 2 becomes the standby controller when it finishes rebooting.
 
 ### Downloading the SCALE Install File
 
