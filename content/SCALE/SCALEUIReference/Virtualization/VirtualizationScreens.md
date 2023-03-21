@@ -13,22 +13,23 @@ tags:
 
 The **Virtualization** option displays the **Virtual Machines** screen that displays the list of VMs configured on the TrueNAS SCALE system.
 
-![VirtualMachinesScreenwithVM](/images/SCALE/22.12/VirtualMachinesScreenwithVM.png "Virtual Machine Screen")
-
 If there are no VMs configured on the system, the **No Virtual Machines** screen displays. This also displays if you delete all VMs on the system.
 
 ![AddVMNoVMs](/images/SCALE/22.12/AddVMNoVMs.png "No Virtual Machine Screen")
 
-**Add Virtual Machines** and the **Add** button in the top right of the screen opens the **[Create Virtual Machine](#create-virtual-machine-wizard-screens)** wizard configuration screens.
-
 After adding virtual machines (VMs) to the system the screen displays a list of the VMs. 
 
-Click on the VM name or the expand <iconify-icon icon="ic:twotone-expand-more"></iconify-icon> down arrow to the right of a VM  to open the details screen for that VM. 
+![VMListedSCALE](/images/SCALE/22.12/VMListedSCALE.png "Virtual Machines Listed")
+
+Click on the VM name or the expand <iconify-icon icon="ic:twotone-expand-more"></iconify-icon> down arrow to the right of a VM to open the details screen for that VM. 
 
 The **State** toggle displays and changes the state of the VM. 
 The **Autostart** checkbox, when selected, automatically starts the VM if the system reboots. When cleared you must manually start the VM.
 
 ## Create Virtual Machine Wizard Screens
+
+**Add Virtual Machines** and the **Add** button in the top right of the screen opens the **[Create Virtual Machine](#create-virtual-machine-wizard-screens)** wizard configuration screens.
+
 The **Create Virtual Machine** configuration wizard displays all settings to set up a new virtual machine.
 
 Use **Next** and **Back** to advance to the next or return to the previous screen to change a setting. 
@@ -38,11 +39,12 @@ Use **Save** to close the wizard screens and add the new VM to the **Virtual Mac
 The **Operating System** configuration screen settings specify the VM operating system type, the time it uses, its boot method, and its display type.
 {{< expand "Click Here for More Information" "v" >}}
 
-![AddVMOperSys](/images/SCALE/22.12/AddVMOperSys.png "Operating System 1") 
+![CreateVMWOpSysSCALE](/images/SCALE/22.12/CreateVMWOpSysSCALE.png "Operating System 1") 
 
 | Field | Description |
 |------|-------------|
 | **Guest Operating System** | Required. Select the VM operating system type from the dropdown list. Select from **Windows**, **Linux** or **FreeBSD**. |
+| **Enable Hyper-V Enlightenments** | Displays when **Guest Operating System** is set to **Windows**. This emulates a Hyper-V compatible hypervisor for the Windows guest operating system and makes some Hyper-V specific features available. |
 | **Name** | Required. Enter an alphanumeric name for the virtual machine. |
 | **Description** | Enter a description (optional). |
 | **System Clock**  | Select the VM system time from the dropdown list. Options are **Local** or **UTC**. Default is **Local**. |
@@ -57,18 +59,19 @@ The **Operating System** configuration screen settings specify the VM operating 
 The **CPU and Memory** configuration wizard screen settings specify the number of virtual CPUs to allocate to the virtual machine, cores per virtual CPU socket, and threads per core. Also to specify the CPU mode and model, and the memory size.
 {{< expand "Click Here for More Information" "v" >}}
 
-![AddVMMemory](/images/SCALE/22.12/AddVMMemory.png "CPU and Memory") 
+![CreateVMWCPUMemSCALE](/images/SCALE/22.12/CreateVMWCPUMemSCALE.png "CPU and Memory") 
 
 | Field | Description |
 |-------|-------------|
-| **Virtual CPUs** | Required. Enter the number of virtual CPUs to allocate to the virtual machine. The maximum is 16, or fewer if the host CPU limits the maximum. The VM operating system might impose operational or licensing restrictions on the number of CPUs. |
+| **Virtual CPUs** | Required. Enter the number of virtual CPUs to allocate to the virtual machine. The maximum is 16, or fewer if the host CPU limits the maximum. The VM operating system might impose operational or licensing restrictions on the number of CPUs. Default setting changes with the option selected in **Guest OS**, for Windows it is 2, for Unix-Type it is 1. |
 | **Cores** | Required. Enter the number of cores per virtual CPU socket. The product of vCPUs, cores, and threads must not exceed 16. |
 | **Threads** | Required. Enter the number of threads per core. A single CPU core can have up to two threads per core. A dual core could have up to four threads. The product of vCPUs, cores, and threads must not exceed 16. |
 | **Optional: CPU Set (Examples: 0-3,8-11)** | Specify the logical cores that VM is allowed to use. Better cache locality can be achieved by setting CPU set base on CPU topology. E.g. to assign cores: 0,1,2,5,9,10,11 you can write: `1-2,5,9-11` |
 | **Pin vcpus** | When number of vcpus is equal to number of cpus in CPU set vcpus can be automatically pinned into CPU set. Pinning is done by mapping each vcpu into single cpu number in following the order in CPU set. This will improve CPU cache locality and can reduce possible stutter in GPU passthrough VMs. |
-| **CPU Mode** | Select the CPU mode attribute from the dropdown list to allow your guest VM CPU to be as close to the host CPU as possible. Select **Custom** to make it so a persistent guest virtual machine sees the same hardware no matter what physical physical machine the guest VM boots on. It is the default if the CPU mode attribute is not specified. This mode describes the CPU presented to the guest.  Select **Host Model** to use this shortcut to copying the physical host machine CPU definition from the capabilities XML into the domain XML. As the CPU definition copies just before starting a domain, a different physical host machine can use the same XML while still providing the best guest VM CPU each physical host machine supports. Select **Host Passthrough** when the CPU visible to the guest VM is exactly the same as the physical host machine CPU, including elements that cause errors  within libvirt. The downside of this is you cannot reproduce the guest VM environment on different hardware. |
-| **CPU Model** | Select a CPU model to emulate. |
+| **CPU Mode** | Select the CPU mode attribute from the dropdown list to allow your guest VM CPU to be as close to the host CPU as possible. Select **Custom** to make it so a persistent guest virtual machine sees the same hardware no matter what physical machine the guest VM boots on. It is the default if the CPU mode attribute is not specified. This mode describes the CPU presented to the guest. Select **Host Model** to use this shortcut to copying the physical host machine CPU definition from the capabilities XML into the domain XML. As the CPU definition copies just before starting a domain, a different physical host machine can use the same XML while still providing the best guest VM CPU each physical host machine supports. Select **Host Passthrough** when the CPU visible to the guest VM is exactly the same as the physical host machine CPU, including elements that cause errors within libvirt. The downside of this is you cannot reproduce the guest VM environment on different hardware. |
+| **CPU Model** | Select a CPU model to emulate when **CPU Mode** is set to **Custom**. |
 | **Memory Size** | Allocate RAM for the VM. Minimum value is 256 MiB. This field accepts human-readable input (Ex. 50 GiB, 500M, 2 TB). If units are not specified, the value defaults to bytes. |
+| **Minimum Memory Size** | When not specified, guest system is given the fixed amount of memory listed in **Memory Size**. When **Minimum Memory Size** is specified, guest system is given memory within the range of **Minimum Memory Size** and **Memory Size** as needed. |
 | **Optional: NUMA nodeset (Example: 0-1)** | Node set allows setting NUMA nodes for multi NUMA processors when CPU set was defined. Better memory locality can be achieved by setting node set based on assigned CPU set. Example: if cpus 0,1 belong to NUMA node 0, then setting nodeset to 0 will improve memory locality. |
 {{< /expand >}}
 
@@ -76,7 +79,7 @@ The **CPU and Memory** configuration wizard screen settings specify the number o
 The **Disks** configuration wizard screen settings specify whether to create a new zvol on an existing dataset for a disk image or use an existing zvol or file for the VM. You also specify the disk type, zvol location and size.
 {{< expand "Click Here for More Information" "v" >}}
 
-![AddVMDisks](/images/SCALE/22.12/AddVMDisks.png "Create VM Disks") 
+![CreateVMWDisksSCALE](/images/SCALE/22.12/CreateVMWDisksSCALE.png "Create VM Disks") 
 
 | Field | Description |
 |-------|-------------|
@@ -91,7 +94,7 @@ The **Disks** configuration wizard screen settings specify whether to create a n
 The **Network Interface** screen settings specify the network adaptor type, mac address and the physical network interface card associated with the VM. 
 {{< expand "Click Here for More Information" "v" >}}
 
-![AddVMNetwork](/images/SCALE/22.12/AddVMNetwork.png "Network Interface") 
+![CreateVMWNetworkInterfaceSCALE](/images/SCALE/22.12/CreateVMWNetworkInterfaceSCALE.png "Network Interface") 
 
 | Field | Description |
 |-------|-------------|
@@ -104,11 +107,11 @@ The **Network Interface** screen settings specify the network adaptor type, mac 
 The **Installation Media** screen settings specify the operation system installation media image on a dataset or upload one from the local machine.
 {{< expand "Click Here for More Information" "v" >}}
 
-![AddVMInstallMedia](/images/SCALE/22.12/AddVMInstallMedia.png "Installation Media") 
+![CreateVMWInstallMediaSCALE](/images/SCALE/22.12/CreateVMWInstallMediaSCALE.png "Installation Media") 
 
 | Field | Description |
 |-------|-------------|
-| **Choose Installation Media Image** | Ether the path or browse to the operating system installer image file. To collapse the browse tree click on the <iconify-icon icon="bxs:right-arrow"></iconify-icon> to the left of <iconify-icon icon="bxs:folder"></iconify-icon>**/mnt**. |
+| **Choose Installation Media Image** | Enter the path or browse to the operating system installer image file. To collapse the browse tree click on the <i class="fa fa-caret-right" aria-hidden="true"></i> to the left of **/mnt**. |
 | **Upload an Installer Image File** | Select to display image upload the **ISO save location** and browse <iconify-icon icon="bxs:folder"></iconify-icon>**/mnt** options that populate the field with the mount path, and the **Choose File** button. |
 | **Choose File** | Click to save the path populated in the **ISO save location** field. |
 | **Upload** | Click to upload the file selected in the **ISO save location** field. |
@@ -117,7 +120,7 @@ The **Installation Media** screen settings specify the operation system installa
 The **GPU** screen settings specify graphic processing unit (GPU) for the VM. It also provides the option to hide the VM from the Microsoft Reserved Partition (MSR) on Windows systems.
 {{< expand "Click Here for More Information" "v" >}}
 
-![AddVMGPU](/images/SCALE/22.12/AddVMGPU.png "GPU Screen")
+![CreateVMWGPUsSCALE](/images/SCALE/22.12/CreateVMWGPUsSCALE.png "GPU Screen")
 
 | Field | Description |
 |-------|-------------|
@@ -127,6 +130,10 @@ The **GPU** screen settings specify graphic processing unit (GPU) for the VM. It
 {{< /expand >}}
 ### Confirm Options Screen
 The **Confirm Options** screen displays the settings selected using the **Create Virtual Machine** wizard screens. It displays the number CPUs, cores, threads, the memory, name of the VM and the disk size.
+{{< expand "Click Here for More Information" "v" >}}
+
+![CreateVMWConfirmSCALE](/images/SCALE/22.12/CreateVMWConfirmSCALE.png "Confirm Screen") 
+{{< /expand >}}
 
 Click **Save** to add the VM to the **Virtual Machines** screen. Click **Back** to return to the previous screens to make changes.
 
@@ -137,7 +144,7 @@ The details view of any VM displays the basic information on the number of virtu
 ![VirtualMachinesScreenwithVMDetails](/images/SCALE/22.12/VirtualMachinesScreenwithVMDetails.png "VM Details Screen")
 
 The buttons below the details show the actions options for each VM.
- 
+
 | Operation | Icon | Description |
 |-----------|------|-------------|
 | **START** | <span class="iconify" data-icon="bxs:right-arrow"></span> | Starts a VM. The toggle turns blue when the VM switches to running. Toggles to **Stop**. After clicking **Start** the **Restart**,**Power Off**, **Display** and **Serial Shell** option buttons display. |
@@ -198,7 +205,6 @@ The **Edit** screen **General Settings** specify the basic settings for the VM. 
 ### Edit CPU and Memory Settings
 The **Edit** screen **CPU and Memory** settings are the same as those in the **Create Virtual Machine** wizard screen.
 {{< expand "Click Here for More Information" "v" >}}
-
 ![EditVMCPUandMemory](/images/SCALE/22.12/EditVMCPUandMemory.png "Virtual Machines Edit CPU and Memory") 
 
 | Field | Description |
@@ -211,6 +217,7 @@ The **Edit** screen **CPU and Memory** settings are the same as those in the **C
 | **CPU Mode** | Select the CPU mode attribute from the dropdown list to allow your guest VM CPU to be as close to the host CPU as possible. Select **Custom** to make it so a persistent guest virtual machine sees the same hardware no matter what physical physical machine the guest VM boots on. It is the default if the CPU mode attribute is not specified. This mode describes the CPU presented to the guest.  Select **Host Model** to use this shortcut to copying the physical host machine CPU definition from the capabilities XML into the domain XML. As the CPU definition copies just before starting a domain, a different physical host machine can use the same XML while still providing the best guest VM CPU each physical host machine supports. Select **Host Passthrough** when the CPU visible to the guest VM is exactly the same as the physical host machine CPU, including elements that cause errors  within libvirt. The downside of this is you cannot reproduce the guest VM environment on different hardware. |
 | **CPU Model** | Select a CPU model to emulate. |
 | **Memory Size** | Allocate RAM for the VM. Minimum value is 256 MiB. This field accepts human-readable input (Ex. 50 GiB, 500M, 2 TB). If units are not specified, the value defaults to bytes. |
+| **Minimum Memory Size** | If this is not specified, guest OS is given the fixed amount of memory defined in **Memory Size**. When **Minimum Memory Size** is specified, guest OS is given memory within a range between **Minimum Memory Size** and **Memory Size** as needed. |
 | **Optional: NUMA nodeset (Example: 0-1)** | Node set allows setting NUMA nodes for multi NUMA processors when CPU set was defined. Better memory locality can be achieved by setting node set based on assigned CPU set. Example: if cpus 0,1 belong to NUMA node 0, then setting nodeset to 0 will improve memory locality. |
 {{< /expand >}}
 ### Edit GPU Settings
