@@ -17,7 +17,7 @@ To access this, after going to **Shares**, click the **Windows (SMB) Shares <spa
 {{< expand "What if my system is clustered" "v" >}}
 ![ClusteredSMBShare](/images/SCALE/22.12/ClusteredSMBShare.png "Clustered SMB Share")
 
-If the system is part of a [cluster]({{< relref "SMBClustering.md" >}}), you cannot add or edit SMB shares. A tooltip in the **SMB Shares** widget states the share is configured through TrueCommand.
+If the system is part of a [cluster]({{< relref "SMBClustering.md" >}}), you cannot add or edit SMB shares. Configure the share through TrueCommand.
 {{< /expand >}}
 
 ## Managing SMB Shares
