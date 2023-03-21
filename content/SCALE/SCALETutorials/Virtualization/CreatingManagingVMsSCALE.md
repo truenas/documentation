@@ -18,33 +18,35 @@ VMs provide more isolation than Jails but also consumes more system resources.
 {{< expand "What system resources do VMs require?" "v" >}}
 {{< include file="static/includes/SCALE/ScaleVMReqResources.md.part" markdown="true" >}}
 {{< /expand >}}
-{{< hint warning >}}
-Before creating a virtual machine, you need an installer <file>.iso</file> or image file for the OS you intend to install, and a [storage pool]({{< relref "CreatePoolSCALE.md" >}}) available for both the virtual disk and OS install file. You should also know which active network interface you want the VM to use. Once you begin working with the Create Virtual Machine Wizard, you cannot go back and create a dataset or upload a <file>.iso</file> without losing your progress in the wizard.
-{{< /hint >}}
-
-Compare the recommended specifications for your guest operating system with the available host system resources when allocating virtual CPUs, cores, threads, and memory size. Do not allocate too much memory to a VM. Activating a VM with all available memory allocated to it can slow the host system or prevent other VMs from starting.
 
 ## Creating a Virtual Machine
 
-### Choosing the OS
-{{< expand "Click Here for More Information" "v" >}}
+Before creating a virtual machine, you need an installer <file>.iso</file> or image file for the OS you intend to install, and a [storage pool]({{< relref "CreatePoolSCALE.md" >}}) available for both the virtual disk and OS install file.
+
 To create a new VM, go to **Virtualization** and click **Add** or **Add Virtual Machines** if you have not yet added a virtual machine to your system.
 Configure each category of the VM according to your specifications, starting with the **Operating System**.
 
 ![CreateVMWOpSysSCALE](/images/SCALE/22.12/CreateVMWOpSysSCALE.png "VM Add: OS")
 
-Choose the **Guest Operating System** fro the dropdown list. If you choose Windows, the **Enable Hyper-V Enlightenments** checkbox also displays.
+Choose the **Guest Operating System** from the dropdown list. If you choose Windows, select **Enable Hyper-V Enlightenments** to implement KVM Hyper-V Enlightenments for Windows guests.
 
 Enter a name for the VM, and a description to help you remember its usage. The description is optional.
 
-The default for the **System Clock** is **Local**. Select **UEFI** for the **Boot Method** unless you need support for older operating systems that only support BIOS booting.
+Set the **System Clock** to the option you want to use. The default is **Local**.
 
-The **Shutdown Timeout** default is 90 seconds. This is the time the system waits for the VM to cleanly shut down. If you want the VM to start when the system boots, leave the **Start on Boot** checkbox selected.
+Select **UEFI** for the **Boot Method** unless you need support for older operating systems that only support BIOS booting.
 
-The **Enable Display** checkbox is selected by default. This enables a Virtual Network Computing remote connection, and requires UEFI booting. The **Display Type** default is **VNC**. To change this to **SPICE**, select **SPICE** from the dropdown list. **Bind** is the display primary interface IP address. Leave this as 0.0.0.0 unless you want to use a different interface IP address.
+Enter the time the system waits for the VM to cleanly shut down in **Shutdown Timeout** or leave set at the default which is 90 seconds.
+
+Leave **Start on Boot** selected if you want the VM to start when the system boots.
+
+(Optional) Leave **Enable Display** selected to enable a Virtual Network Computing remote connection. This requires UEFI booting.
+
+Select the **Display Type**. Default is **VNC** but you can change this to **SPICE**.
+
+Enter the primary interface IP address in **Bind**. Leave this set to 0.0.0.0 unless you know you want to use a different interface IP address.
 
 Click **Next**.
-{{< /expand >}}
 
 ### Configuring CPU and Memory
 {{< expand "Click Here for More Information" "v" >}}
