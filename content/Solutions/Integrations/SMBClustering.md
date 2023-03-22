@@ -135,7 +135,7 @@ Attempting to manage the share from the SCALE UI is not recommended.
 
 There are several ways to access an SMB share, but this article demonstrates using Windows 10 File Explorer.
 
-1. From a Windows 10 system connected to the same network as the clustering environment, open File Explorer.
+1. From a Windows 10 system connected to the same network as the clustering environment, open **File Explorer**.
 2. In the **Navigation** bar, clear the contents and enter `\\` followed by the IP address or host name of one of the clustered SCALE systems. Press <kbd>Enter</kbd>.
 3. When prompted, enter the user name and password for an Active Directory user account. Be sure to enter the Active Directory system name before the user account name (example: `AD01\sampuser`).
 4. Browse to the cluster volume folder to view or modify files.
