@@ -303,6 +303,12 @@ Be aware if a given CPU contains a GPU or requires an external one. Also, note t
 
 AMD CPUs are making a comeback thanks to the Ryzen and EPYC (Naples/Rome) lines. Support for these platforms is limited on FreeBSD and, by extension, TrueNAS CORE. However, Linux has significant support, and TrueNAS SCALE should work with AMD CPUs without issue.
 
+{{< expand "SHA Extensions for x86 instruction set architecture" "v" >}}
+SHA Extensions in x86 instruction set architecture support hardware acceleration of Secure Hash Algorithm (SHA) family.
+
+Intel Goldmont (and later), Ice Lake (and later), and Rocket Lake (and later), as well as AMD Zen (and later) processors support SHA instruction set.
+{{< /expand >}}
+
 ### Remote Management: IPMI
 
 As a courtesy to further limit the motherboard choices, consider the Intelligent Platform Management Interface or IPMI (a.k.a. baseboard management controller, BMC, iLo, iDrac, and other names depending on the vendor) if you need:
