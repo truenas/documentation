@@ -1,9 +1,19 @@
-* **Replicated** - Replicate files across bricks in the volume. 
-You can use replicated volumes in environments where high availability and high reliability are critical.
-* **Distributed Replicated** - Distribute files across replicated bricks in the volume. 
-  You can use distributed replicated volumes in environments where you need to scale storage and high reliability is critical. 
-  Distributed replicated volumes also offer improved read performance in most environments. Requires setting an additional **Replica Count**.
-* **Dispersed** - Dispersed volumes are based on erasure codes, providing space-efficient protection against disk or server failures. 
-  It stores an encoded fragment of the original file in each brick so that only a subset of the fragments are needed to recover the original file. 
-  When creating the volume, the administrator configures the number of bricks that can be missing without losing access to data. 
-  Choosing Dispersed requires setting an additional **Redundancy Count**.
+### Replicated
+
+Replicated volumes are the most similar to ZFS mirrors. They have exact copies of all data on all bricks. Since TrueNAS SCALE’s SMB cluster implementation requires a minimum of three nodes, a replicated volume will have three identical copies of all data. 
+
+A replicated volume can experience multiple brick failures, yet you can still access the data if a single brick is still accessible. Replicated volumes excel in data reliability and data redundancy at the cost of lower overall storage.
+
+### Distributed Replicated
+
+Distributed replicated volumes distribute files across replicated sets of bricks. You set the replica count during the initial volume configuration. 
+
+Distributed replicated volumes require a minimum of three replicas to avoid potential issues with split-brain. The number of bricks must be a multiple of the replica count. The minimum number of nodes for this volume type is six since each replica set requires three nodes.
+
+Distributed replicated volumes are best when you need highly-available data with redundancy protection, although they scale poorly. 
+
+TrueCommand currently allows Distributed Replicated volumes with two replicas. This unintended behavior can lead to potential data loss due to split-brain situations. We are working to resolve this in [TC-2626](https://ixsystems.atlassian.net/browse/TC-2626).
+
+### Dispersed
+
+Dispersed volumes are most similar to Raidz. Data is striped across the bricks with parity added. You configure the number of redundant bricks during volume creation. The number of parity bricks determines the number of bricks the cluster can lose without impacting volume operation.

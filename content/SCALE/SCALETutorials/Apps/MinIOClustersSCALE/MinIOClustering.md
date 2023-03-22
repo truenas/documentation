@@ -13,7 +13,7 @@ tags:
 
 On TrueNAS SCALE 20.12-ALPHA and later, users can create a MinIO S3 distributed instance to scale out and handle individual node failures. A node refers to a single TrueNAS storage system in a cluster.
 
-In the examples below, we use four TrueNAS systems to create a distributed cluster.
+The examples below use four TrueNAS systems to create a distributed cluster.
 For more information on MinIO distributed setups, refer to the [MinIO documentation](https://docs.min.io/docs/distributed-minio-quickstart-guide.html).
 
 ## First Steps
@@ -54,8 +54,7 @@ Click **Add** to the right of **Container Args** twice to add two **Arg** fields
 In the first **Arg** field, type **server**. 
 In the second **Arg** field, type the valid IP or host name of each TrueNAS system on the network, the MinIO port number, and the directory you created for MinIO. Use this format: <file>**http://*0.0.0.0*/9000/data**</file>.
 
-To create a distributed cluster, add all the valid TrueNAS system (node) IP addresses/host names.
-The order is important, so use the same order across all the nodes.
+To create a distributed cluster, add all the valid TrueNAS system (node) IP addresses/host names. Use the same order across all the nodes.
 
 MinIO containers use server port 9000. The MinIO Console communicates using port 9001.
 Use the <file>/data</file> path that the following steps set up.
@@ -92,7 +91,7 @@ Select the dataset you created for the MinIO container for the **Host Path** and
 
 ![AppsMinIOStorage](/images/SCALE/22.12/AppsMinIOStorage.png "Host Path Volumes")
 
-If you want to use a host path to store your MinIO data volume, check **Enable Host Path for MinIO Data Volume** and select a path. 
+If you want to use a host path to store your MinIO data volume, check **Enable Host Path for MinIO Data Volume** and select the path. 
 
 Under **Extra Host Path Volumes**, enter the <file>/data</file> directory under **Mount Path in Pod**, then select the directory or dataset you created earlier and click **Next**.
 
