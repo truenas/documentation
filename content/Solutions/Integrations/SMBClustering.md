@@ -144,6 +144,8 @@ There are several ways to access an SMB share, but this article demonstrates usi
 
 ## Replacing Cluster Nodes
 
+A node is a single TrueNAS storage system in a cluster.
+
 {{< hint info >}}
 Cluster node replacement only works if you are using TrueCommand 2.3 or later and SCALE 22.12.0 or later.
 
