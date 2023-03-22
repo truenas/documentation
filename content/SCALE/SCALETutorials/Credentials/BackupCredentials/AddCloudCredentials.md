@@ -93,37 +93,7 @@ After entering a name and leaving **Amazon S3** as the **Provider** setting:
 ### Adding Cloud Credentials that Authenticate with OAuth
 Cloud storage providers using OAuth as an authentication method are Box, Dropbox, Google Drive, Google Photo, pCloud and Yandex.
 {{< expand "Click here for more information" "v" >}}
-After logging into the provider with the OAuth credentials, the provider provides the access token.
-Google Drive and pCloud use one more setting to authenticate credentials.
-
-1. Enter the name and select the cloud storage provider from the **Provider** dropdown list.
-
-2. Enter the provider account email in **OAuth Client ID** and the password for that user account in **OAuth Client Secret**.
-
-3. Click **Log In To Provider**. The **Authentication** window opens. Click **Proceed** to open the OAuth credential account sign in window.
-
-   Yandex displays a cookies message you must accept before you can enter credentials.
-
-   Enter the provider account user name and password to verify the credentials.
-
-4. (Optional) Enter the value for any additional authentication method. 
-   For pCloud, enter the pCloud host name for the host you connect to in **Hostname**. 
-   For Google Drive when connecting to **Team Drive**, enter the Google Drive top-level folder ID.
-
-5. If not populated by the provider after OAuth authentication, enter the access token from the provider. Obtaining the access token varies by provider.
-   
-   | Provider | Access Token |
-   |----------|--------------|
-   | Box | For more information the user acess token for Box [click here](https://developer.box.com/). An [access token](https://developer.box.com/reference/) enables Box to verify a request belongs to an authorized session. Example token: T9cE5asGnuyYCCqIZFoWjFHvNbvVqHjl. |
-   | Dropbox | Create an access [token](https://dropbox.tech/developers/generate-an-access-token-for-your-own-account) from the [Dropbox account](https://www.dropbox.com/). |
-   | Google Drive | The authentication process creates the token for [Google Drive](https://developers.google.com/drive/api/v3/about-auth) and populates the **Access Token** field automatically. Access tokens expire periodically, so you must refresh them. |
-   | Google Photo | Does not use an access token. |
-   | pCloud | Create the pCloud access token [here](https://docs.pcloud.com/methods/intro/authentication.html). These tokens can expire and require an extension. |
-   | Yandex | Create the Yandex access token [here](https://yandex.com/dev/direct/doc/dg-v4/concepts/auth-token.html). |
-
-6. Click **Verify Credentials** to make sure you can connect with the entered credentials.
-
-7. Click **Save**.
+{{< include file="/content/_includes/OAuthCloudCredentialSetupSCALE.md" type="page" >}}
 {{< /expand >}}
 ### Adding BackBlaze B2 Cloud Credentials
 BackBlaze B2 uses an application key and key ID to authenticate credentials.
