@@ -121,7 +121,7 @@ Click **CREATE SHARE**.
 2. Choose an **ACL** to apply to the share.
    {{< expand "Current Options (click to expand)" "v" >}}
    * **POSIX_OPEN** - Grants read, write, and execute permissions for all users.
-   * **POSIX_RESTRICTED** - Grants read, write, and execute to owner and group, but not others. The template may optionally include the special-purpose 'builtin_users' and 'builtin_administrators' groups and Domain Users and Domain Admins groups in Active Directory environments.
+   * **POSIX_RESTRICTED** - Grants read, write, and execute to owner and group, but not others. The template might optionally include the special-purpose 'builtin_users' and 'builtin_administrators' groups and Domain Users and Domain Admins groups in Active Directory environments.
    {{< /expand >}}
 3. Setting **Readonly** prevents users from changing the cluster volume contents.
 4. Click **CONFIRM** to create the SMB share and make it immediately active.
