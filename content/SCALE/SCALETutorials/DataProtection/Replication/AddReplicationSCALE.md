@@ -1,8 +1,8 @@
 ---
 title: "Adding Replication Tasks"
-description: ""
+description: "This article provides an overview of setting up simple replication and a video demonstration of setting up a remote replication. "
 weight: 10
-aliases:
+aliases: /scale/scaletutorials/dataprotection/addreplicationscale/
 tags:
  - scalereplication
  - scalebackup
@@ -36,11 +36,11 @@ Configure SSH in TrueNAS before creating a remote replication task. This ensures
   * Schedule the replication.
     * You can schedule standardized presets or a custom-defined schedule.
     * Running once runs the replication immediately after creation.
-      * Task is still saved and you can rerun or edit it.
+      * Task is saved, and you can rerun or edit it.
   * Choose how long to keep the replicated snapshots.
 {{< /expand >}}
 
-This video tutorial presents a simple example of setting up replication:
+This video tutorial presents a simple example of setting up remote replication:
 
 {{< embed-video name="scaleangelfishreplication" >}}
 
