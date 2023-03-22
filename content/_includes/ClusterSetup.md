@@ -58,7 +58,7 @@ The new records appear inside the zone as they save.
    When complete, each SCALE system has a card on the TrueCommand **Dashboard** that displays system statistics.
 
 {{< hint info >}}
-we recommend you back up the SCALE system configuration before creating the cluster. 
+We recommend you back up the SCALE system configuration before creating the cluster. 
 Backups allow users to quickly restore the system configuration to the initial working state if something goes wrong.
 
 In the TrueCommand **Dashboard**, click on the name of a connected system to open a detailed view of that system. 
