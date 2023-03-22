@@ -16,4 +16,4 @@ TrueCommand currently allows distributed replicated volumes with two replicas. T
 
 ### Dispersed
 
-Dispersed volumes are most similar to Raidz. Data is striped across the bricks with parity added. You configure the number of redundant bricks during volume creation. The number of parity bricks determines the number of bricks the cluster can lose without impacting volume operation.
+Dispersed volumes are most similar to RAIDZ. Data is striped across the bricks with parity added. You configure the number of redundant bricks during volume creation. The number of parity bricks determines the number of bricks the cluster can lose without impacting volume operation.
