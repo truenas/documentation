@@ -91,7 +91,7 @@ Select the dataset you created for the MinIO container for the **Host Path** and
 
 ![AppsMinIOStorage](/images/SCALE/22.12/AppsMinIOStorage.png "Host Path Volumes")
 
-If you want to use a host path to store your MinIO data volume, check **Enable Host Path for MinIO Data Volume** and select the path. 
+If you want to use a host path to store your MinIO data volume, select **Enable Host Path for MinIO Data Volume** and then select the path. 
 
 Under **Extra Host Path Volumes**, enter the <file>/data</file> directory under **Mount Path in Pod**, then select the directory or dataset you created earlier and click **Next**.
 
