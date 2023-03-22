@@ -29,7 +29,7 @@ You can create the cloud storage account credentials using **Credentials > Backu
 
 ## Creating a Cloud Sync Task
 
-{{< include file="/content/_include/CreateCloudSyncTaskScale.md" type="page" >}}
+{{< include file="/content/_includes/CreateCloudSyncTaskScale.md" type="page" >}}
 
 ### Troubleshooting Transfer Mode Problems
 **Sync** keeps all the files identical between the two storage locations. 
