@@ -15,12 +15,7 @@ tags:
 
 This article provides information and instructions for migrating from TrueNAS CORE to SCALE.
 
-{{< hint danger >}}
-Migrating TrueNAS from CORE to SCALE is a one-way operation.
-Attempting to activate or roll back to a CORE boot environment can break the system.
-
-High Availability systems cannot migrate from CORE to SCALE.
-Enterprise customers should contact iXsystems Support before attempting any migration.
+{{< include file="/content/_includes/MigrateCOREtoSCALEWarning.md" >}}
 
 Migrating from CORE to SCALE is not recommended when custom modifications have been made to the system database.
 If any such modifications are present in CORE, these must be reverted before attempting a migration to SCALE.
