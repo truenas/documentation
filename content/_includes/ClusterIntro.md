@@ -1,8 +1,3 @@
-One unique capability of TrueNAS SCALE is it can cluster groups of systems together.
-These clusters can then create new volumes within the existing SCALE storage pools.
-Data stored in a clustered volume is shared between the clustered systems and can add additional redundancy or performance to the environment.
-Currently, data stored in a clustered volume is shareable using Active Directory (AD) and the SMB protocol.
+TrueNAS SCALE SMB clustering combines the benefits of the self-healing OpenZFS file system with the open-source Gluster scalable network file system.
 
-{{< hint danger >}}
-Clustering is considered experimental and should not be used in a production environment or for handling critical data!
-{{< /hint >}}
+TrueNAS SCALE SMB clustering requires a minimum of three TrueNAS SCALE nodes, but you can scale it to a substantially higher number of physical nodes. Gluster data consists of volumes, which can have multiple SMB shares, stored across bricks, the basic unit of storage in the Gluster File System, on the individual servers. 
