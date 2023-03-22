@@ -12,7 +12,7 @@ Distributed replicated volumes require a minimum of three replicas to avoid pote
 
 Distributed replicated volumes are best when you need highly-available data with redundancy protection, although they scale poorly. 
 
-TrueCommand currently allows Distributed Replicated volumes with two replicas. This unintended behavior can lead to potential data loss due to split-brain situations. We are working to resolve this in [TC-2626](https://ixsystems.atlassian.net/browse/TC-2626).
+TrueCommand currently allows distributed replicated volumes with two replicas. This unintended behavior can lead to potential data loss due to split-brain situations. We are working to resolve this in [TC-2626](https://ixsystems.atlassian.net/browse/TC-2626).
 
 ### Dispersed
 
