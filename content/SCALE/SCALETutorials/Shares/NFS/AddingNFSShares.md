@@ -15,6 +15,12 @@ tags:
 Creating a Network File System (NFS) share on TrueNAS makes a lot of data available for anyone with share access.
 Depending on the share configuration, it can restrict users to read or write privileges.
 
+{{< hint info >}}
+NFS treats each dataset as its own filesystem. When creating the NFS share on the server, the specified dataset is the location which can be accessed by the client. If you specify a parent dataset as the NFS file share location, any nested or child datasets beneath the parent cannot be accessed.
+
+If you need the ability to create shares that include child datasets, SMB sharing is an option. Note that Windows NFS Client versions currently support only NFSv2 and NFSv3.
+{{< /hint >}}
+
 {{< include file="static/includes/General/SharingPrereqs.md.part" markdown="true" >}}
 
 ## Creating an NFS Share Tutorial Video
@@ -22,6 +28,7 @@ Depending on the share configuration, it can restrict users to read or write pri
 {{< embed-video name="scaleangelfishnfsshare" >}}
 
 ## Creating an NFS Share
+
 Go to **Shares > Unix (NFS) Shares** and click **Add** to open the **Add NFS** configuration screen.
 
 ![SharingNFSAddSCALE](/images/SCALE/22.12/SharingNFSAddSCALE.png "Services NFS Add")
