@@ -14,10 +14,10 @@ tags:
 
 After creating the VM, the next step is to add virtual devices for that VM.
 
-Go to **Virtualization > Virtual Machines** and locate the name of the VM you want to modify. Click anywhere on a VM entry on the **Virtual Machines** widget to expand it and show the options for the VM.
+Go to **Virtualization > Virtual Machines** and locate the VM you want to modify. Click anywhere on a VM entry on the **Virtual Machines** widget to expand it and show the options for the VM.
 
 Click <i class="material-icons" aria-hidden="true" title="Devices">device_hub</i> **Devices** to open the devices screen associated with the VM. 
-From this screen you can edit, add, or delete devices. 
+From this screen, you can edit, add, or delete devices. 
 Click the <span class="material-icons">more_vert</span> icon at the right of each listed device to see device options. 
 
 ![VMRunningOptionsSCALE](/images/SCALE/22.12/VMRunningOptionsSCALE.png "VM Listing Expanded")
@@ -32,11 +32,11 @@ Device notes:
 * A **CD-ROM** device allows booting a VM from a CD-ROM image like an installation CD.
   The CD image must be available in the system storage.
 
-Before adding, editing or deleting a device for a VM, first stop the VM if it is running. 
-Click the **State** toggle to stop, or restart, a VM.
+Before adding, editing, or deleting a VM device, stop the VM if it is running. 
+Click the **State** toggle to stop or restart a VM.
 
 ### Editing a Device
-Select **Edit** to open the **Edit *type* Device** screen where *type* is the device type selected. You you can change the type of virtual hard disk, the storage volume to use, or change the device boot order.
+Select **Edit** to open the **Edit *type* Device** screen where *type* is the device type selected. You can change the type of virtual hard disk, the storage volume to use, or change the device boot order.
 {{< expand "Click Here for More Information" "v" >}}
 To edit a VM device:
 1. Stop the VM if it is running.
@@ -51,7 +51,7 @@ To edit a VM device:
 6. (Optional) Specify the dis sector size in bytes in **Disk Sector Size**. 
    Leave set to **Default** or select either **512** or **4096** byte values from the dropdown list. 
    If unset, the sector size uses the ZFS volume values. 
-7. Specify the boot order or priority level in **Device Order** to move this device up or or down in the sequence. 
+7. Specify the boot order or priority level in **Device Order** to move this device up or down in the sequence. 
    The lower the number the higher the priority in the boot sequence. 
 8. Click **Save**.
 
@@ -70,7 +70,7 @@ To delete a VM device:
    ![DeleteDeviceVMDiskSCALE](/images/SCALE/22.12/DeleteDeviceVMDiskSCALE.png "Delete Device VM Disk")
 
 4. Select **Delete zvol device** to confirm you want to delete the zvol device. 
-   Select **Force Delete** if you want the system to force the deletion of the zvol device even if there are other devices or services using or affiliated with the zvol device.
+   Select **Force Delete** if you want the system to force the deletion of the zvol device, even if other devices or services are using or affiliated with the zvol device.
 5. Click **Delete Device**. 
 {{< /expand >}}
 
