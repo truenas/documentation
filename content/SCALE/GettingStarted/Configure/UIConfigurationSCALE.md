@@ -36,7 +36,7 @@ After you log into SCALE with the administrator account you can begin to configu
 This content applies to TrueNAS Enterprise customers only.
 
 TrueNAS SCALE Enterprise customers should contact iXsystems support to obtain license information for their TrueNAS system. 
-To apply the license information, go to the **System Settings > General** screen and use the **[Update License]({{< relref "GetSupportSCALE.md" >}})** option on the **Support** widget (system information card).
+To apply the license information, go to the **System Settings > General** screen and use the **[Update License]({{< relref "AddLicenseProactiveSupport.md" >}})** option on the **Support** widget (system information card).
 {{< /enterprise >}}
 
 ### Setting up Proactive Support 
@@ -45,11 +45,10 @@ To apply the license information, go to the **System Settings > General** screen
 This content applies to TrueNAS Enterprise customers only.
 
 TrueNAS SCALE Enterprise customers with Silver or Gold Coverage support contracts have the option to configure proactive support.
-{{< expand "Configuring Proactive Support" "v" >}}
-Customers with appropriate support contracts can configure **[Proactive Support]({{< relref "GetSupportSCALE.md" >}})** after they apply their system license, and after acknowledging and signing the End User License Agreement (EULA).
+
+Customers with appropriate support contracts can configure **[Proactive Support]({{< relref "AddLicenseProactiveSupport.md" >}})** after they apply their system license, and after acknowledging and signing the End User License Agreement (EULA).
 
 The **Support** widget on the **System Settings > General** screen displays the **Proactive Support** option after you enter your system license.
-{{< / expand >}}
 {{< /enterprise >}}
 
 ## Setting Up Networking
@@ -243,20 +242,4 @@ When updating to either a new incremental or full release, before you update alw
 
 It is also good practice to download a fresh debug file before and after a system update.
 
-## Getting Support
-{{< enterprise >}}
-Enterprise SCALE customers with support contracts should contact the iXsystems Support using the **[Commercial Support](https://www.truenas.com/commercial-support/)** option on the top header of the TrueNAS Documentation Hub website.
-{{< /enterprise >}}
-Non-Enterprise SCALE customers experiencing software bugs or instability should [file an issue ticket](https://www.truenas.com/docs/contributing/issuereporting/) through the Jira ticket reporting system for TrueNAS.
-
-When reporting an issue, download a system debug file taken immediately following the issue occurrence. 
-This captures the system configuration information and logs iXsystems needs to help resolve your issues. 
-Upload this debug to the private attachments area using the link provided when you open a Jira ticket. 
-After uploading the file, link the attachment to the Jira ticket number before you click **Save**. 
-
-Support is also available through the TrueNAS [Community Forums, blog, and Discord]({{< relref "/content/Contributing/IssueReporting/_index.md" >}}). 
-These options are accessible on the top header of the TrueNAS Documentation Hub website and from the links at the bottom of all articles.
-
 {{< taglist tag="scaleconfig" limit="10" title="Related Configuration Articles" >}}
-{{< taglist tag="scaleinstall" limit="10" title="Related Installation Articles" >}}
-{{< taglist tag="scalemigrate" limit="10" title="Related Migration Articles" >}}
