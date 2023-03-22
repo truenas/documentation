@@ -1,3 +1,5 @@
+---
+---
 
 TrueNAS SCALE documentation is divided into several sections or books:
 
@@ -7,7 +9,7 @@ TrueNAS SCALE documentation is divided into several sections or books:
   * Installation tutorials.
   * First-time software configuration instructions.
 
-* [Configuration Tutorials](/scale/scaletutorials) have many community and iXsystems -provided procedural how-tos for specific software use-cases.
+* [Configuration Tutorials](/scale/scaletutorials) have many community and iXsystems-provided procedural how-tos for specific software use-cases.
 
 * The [UI Reference Guide](/scale/scaleuireference) describes each section of the SCALE web interface, including descriptions for each configuration option.
 

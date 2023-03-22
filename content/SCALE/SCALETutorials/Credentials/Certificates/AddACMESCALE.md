@@ -12,7 +12,11 @@ tags:
 
 
 
-Automatic Certificate Management Environment (ACME) DNS authenticators allows users to automate certificate issuing and renewal. The user must verify ownership of the domain before certificate automation is allowed.
+Automatic Certificate Management Environment (ACME) DNS authenticators allow users to automate certificate issuing and renewal. The user must verify ownership of the domain before TrueNAS allows certificate automation.
+
+{{< hint warning >}}
+ACME DNS is an advanced feature intended for network administrators or AWS professionals. Misconfiguring ACME DNS can prevent you from accessing TrueNAS.
+{{< /hint >}}
 
 The system requires an ACME DNS Authenticator and CSR to configure ACME certificate automation.
 
@@ -24,7 +28,7 @@ Enter a name, and select the authenticator you want to configure. The selection 
 
 If you select **[Cloudflare](https://www.cloudflare.com)** as the authenticator, you must enter your Cloudflare account email address, API key, and API token. 
 
-If you select **[Route53](https://aws.amazon.com/route53/)** as the authenticator, you must enter you Route53 Access key ID and secret access key.
+If you select **[Route53](https://aws.amazon.com/route53/)** as the authenticator, you must enter your Route53 Access key ID and secret access key.
 
 Click **Save** to add the authenticator.
 
