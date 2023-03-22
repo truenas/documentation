@@ -18,9 +18,7 @@ Depending on the share configuration, it can restrict users to read or write pri
 {{< hint info >}}
 NFS treats each dataset as its own filesystem. When creating the NFS share on the server, the specified dataset is the location which can be accessed by the client. If you specify a parent dataset as the NFS file share location, any nested or child datasets beneath the parent cannot be accessed.
 
-If you need the ability to share data between child datasets, SMB sharing is an option. Note that Windows NFS Client versions currently support only NFSv2 and NFSv3.
-
-Another consideration when working with NFSv3 and NFSv4 is that these two protocols are not compatible.
+If you need the ability to create shares that include child datasets, SMB sharing is an option. Note that Windows NFS Client versions currently support only NFSv2 and NFSv3.
 {{< /hint >}}
 
 {{< include file="static/includes/General/SharingPrereqs.md.part" markdown="true" >}}
