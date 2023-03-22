@@ -62,7 +62,7 @@ After creating the cluster, TrueCommand opens another sidebar to configure it fo
 ![ConfigureClusterAssociateVIPs](/images/TrueCommand/2.3.1/ConfigureClusterAssociateVIPs.png "Configure Associate VIPs")
 
 1. Select the interfaces to associate with the VIPs. You should select the interface configured for the SCALE system IP address.
-2. Click Next
+2. Click **Next**.
 
 ### Active Directory
 
