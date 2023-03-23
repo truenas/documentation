@@ -16,4 +16,4 @@ New Jira tickets are not marked as **iX Private** so it is possible to search th
 Each Jira ticket sends a link to a private file attachement area to safeguard user personal and private data, or if the attached files do not require privacy, attach them to the Jira ticket. All incoming tickets are triaged. If private files are attached to a new ticket, the ticket or files can be made private at that time. 
 {{< /hint >}}
 
-You must have [a Jira account](https://jira.ixsystems.com/secure/Signup!default.jspa) to create a bug ticket.
+You must have [a Jira account](https://id.atlassian.com/signup?continue=https%3A%2F%2Fid.atlassian.com%2Fjoin%2Fuser-access%3Fresource%3Dari%253Acloud%253Ajira%253A%253Asite%252F94e022be-3595-4f54-979f-780bfeff904d%26continue%3Dhttps%253A%252F%252Fixsystems.atlassian.net%252Fplugins%252Fservlet%252Foauth%252Fauthorize%253Foauth_token%253Dz4KC1gtOt92BMtgTSMeJVf4Ku3sgNIls&application=jira) to create a bug ticket.
