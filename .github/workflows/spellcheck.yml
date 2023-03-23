@@ -1,0 +1,97 @@
+name: Check Spelling
+  # You may pin to the exact commit or the version.
+  # uses: check-spelling/check-spelling@d7cd2973c513e84354f9d6cf50a6417a628a78ce
+  uses: check-spelling/check-spelling@v0.0.21
+  with:
+    # The GITHUB_TOKEN secret
+    GITHUB_TOKEN: # default is ${{ github.token }}
+    # Container for spelling configuration
+    bucket: # optional
+    # Folder/Branch within bucket containing spelling configuration
+    project: # optional
+    # Spelling configuration directory
+    config: # optional, default is .github/actions/spelling
+    # Directory root to check for spelling (note that bucket/project/config are independent of this)
+    experimental_path: # optional, default is .
+    # Location of dictionary (if you aren't providing one in your repository)
+    dictionary_url: # optional, default is https://raw.githubusercontent.com/check-spelling/check-spelling/dictionary-$DICTIONARY_VERSION/dict.txt
+    # Version of the dictionary (only used if the url includes $DICTIONARY_VERSION)
+    dictionary_version: # optional, default is 20200211
+    # Debug
+    debug: # optional
+    # (Experimental) Allow users to quote-reply to the bot comment to update the PR
+    experimental_apply_changes_via_bot: # optional, default is 0
+    # Number of CPUs available for running checks
+    experimental_parallel_jobs: # optional, default is 2
+    # Post comment with report
+    post_comment: # optional, default is 1
+    # 
+    capture_output_unknown_words: # optional, default is 
+    # 
+    capture_output_stale_words: # optional, default is 
+    # 
+    capture_output_skipped_files: # optional, default is 
+    # JSON map of prefixes for dictionary urls
+    dictionary_source_prefixes: # optional, default is {"cspell": "https://raw.githubusercontent.com/check-spelling/cspell-dicts/v20220816/dictionaries/"}
+    # Space delimited list of URLs (or `prefix:`+path) to additional word lists
+    extra_dictionaries: # optional, default is 
+    # Compare unknown tokens against these dictionaries and suggest if applicable
+    check_extra_dictionaries: # optional, default is cspell:ada/ada.txt cspell:aws/aws.txt cspell:bash/bash-words.txt cspell:clojure/src/clojure.txt cspell:companies/src/companies.txt cspell:cpp/src/compiler-clang-attributes.txt cspell:cpp/src/compiler-gcc.txt cspell:cpp/src/compiler-msvc.txt cspell:cpp/src/cpp.txt cspell:cpp/src/ecosystem.txt cspell:cpp/src/lang-jargon.txt cspell:cpp/src/lang-keywords.txt cspell:cpp/src/people.txt cspell:cpp/src/stdlib-c.txt cspell:cpp/src/stdlib-cerrno.txt cspell:cpp/src/stdlib-cmath.txt cspell:cpp/src/stdlib-cpp.txt cspell:cpp/src/template-strings.txt cspell:cryptocurrencies/cryptocurrencies.txt cspell:csharp/csharp.txt cspell:css/css.txt cspell:dart/src/dart.txt cspell:django/django.txt cspell:django/requirements.txt cspell:docker/src/docker-words.txt cspell:dotnet/dotnet.txt cspell:elixir/elixir.txt cspell:filetypes/filetypes.txt cspell:fonts/fonts.txt cspell:fullstack/fullstack.txt cspell:golang/go.txt cspell:haskell/haskell.txt cspell:html-symbol-entities/entities.txt cspell:html/html.txt cspell:java/java.txt cspell:latex/latex.txt cspell:latex/samples/sample-words.txt cspell:lorem-ipsum/dictionary.txt cspell:lua/lua.txt cspell:mnemonics/src/mnemonics.txt cspell:monkeyc/src/monkeyc_keywords.txt cspell:node/additional_words.txt cspell:node/node.txt cspell:node/src/node-old.txt cspell:npm/npm.txt cspell:php/php.txt cspell:powershell/powershell.txt cspell:public-licenses/src/additional-licenses.txt cspell:public-licenses/src/generated/public-licenses.txt cspell:python/src/additional_words.txt cspell:python/src/common/extra.txt cspell:python/src/python/python-lib.txt cspell:python/src/python/python.txt cspell:r/src/r.txt cspell:ruby/ruby.txt cspell:rust/rust.txt cspell:scala/scala.txt cspell:software-terms/src/network-os.txt cspell:software-terms/src/network-protocols.txt cspell:software-terms/src/software-terms.txt cspell:software-terms/src/software-tools.txt cspell:sql/src/sql.txt cspell:sql/src/tsql.txt cspell:swift/src/swift.txt cspell:typescript/typescript.txt cspell:win32/src/win32.txt
+    # Limit the number of suggested extra dictionaries.
+    extra_dictionary_limit: # optional, default is 5
+    # Try to treat a GitHub event "a" as GitHub event "b" (JSON map). If this flag was available before this tool recognized `pull_request_target`, `{"pull_request_target":"pull_request"}` would have mapped it to `pull_request`.
+    event_aliases: # optional, default is 
+    # Shortest word
+    shortest_word: # optional, default is 3
+    # Longest word
+    longest_word: # optional, default is 
+    # If set, commit updates to expect automatically with this note
+    experimental_commit_note: # optional, default is 
+    # If set, do not do work in response to `push` if there is an open `pull` request to the repository for the branch (this assumes there's a `pull_request_target` event configured).
+    suppress_push_for_open_pull_request: # optional, default is 
+    # Suffix for report title (useful if you are using a matrix strategy or are using experimental_path)
+    report_title_suffix: # optional, default is 
+    # If set, only check files changed since the last push
+    only_check_changed_files: # optional, default is 
+    # Run an internal task instead of responding to a GitHub event. Values: "comment"
+    custom_task: # optional, default is 
+    # Used for passing internal state from the (default) check mode to the comment module
+    internal_state_directory: # optional, default is 
+    # Spell check file paths
+    check_file_names: # optional, default is 
+    # List of extra text to check (latest `commit` message, messages for pending `commits`, PR `title`, PR `description`)
+    check_commit_messages: # optional, default is 
+    # Perform secpoll queries via a public dns server
+    anonymize_secpoll_source: # optional, default is 
+    # Set to the value of the current security advisory to accept the reported risk -- value must match -- do not set if there is no current advisory
+    ignore_security_advisory: # optional, default is 
+    # File size limit
+    largest_file: # optional, default is 1048576
+    # Only report an unknown word this many times
+    unknown_word_limit: # optional, default is 5
+    # List of events that are warnings (items that are neither warnings nor notices will result in an :x:)
+    warnings: # optional, default is bad-regex,binary-file,deprecated-feature,large-file,limited-references,no-newline-at-eof,noisy-file,non-alpha-in-dictionary,unexpected-line-ending,whitespace-in-dictionary,minified-file,unsupported-configuration
+    # List of events that are notices (items that are neither warnings nor notices will result in an :x:)
+    notices: # optional, default is candidate-pattern
+    # Suppress failure code exit code -- it will be available via outputs.result_code
+    quit_without_error: # optional, default is 
+    # Repository with default configuration to use if no configuration is found in a .github/actions/spelling directory
+    spell_check_this: # optional, default is 
+    # Key for checking out / pushing to updates (and trigger workflow cascades)
+    ssh_key: # optional, default is 
+    # Whether to check out a repository
+    checkout: # optional, default is 
+    # Task to perform (spelling, comment, ...)
+    task: # optional, default is 
+    # Some heuristics might not do what you want, it may be possible to suppress them
+    disable_checks: # optional, default is 
+    # Alternate engine to use
+    alternate_engine: # optional, default is 
+    # ssh key to retrieve alternate engine
+    alternate_engine_key: # optional, default is 
+    # Publish Sarif report
+    use_sarif: # optional, default is 
+    # Use magic file to skip binary files
+    use_magic_file: # optional, default is 
+    # Hack for nektos/act - pass the outputs.docker_container to give check-spelling a way to retrieve data it needs to report a comment
+    caller_container: # optional
