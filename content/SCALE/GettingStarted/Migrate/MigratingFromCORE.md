@@ -17,14 +17,6 @@ This article provides information and instructions for migrating from TrueNAS CO
 
 {{< include file="/content/_includes/MigrateCOREtoSCALEWarning.md" >}}
 
-Migrating from CORE to SCALE is not recommended when custom modifications have been made to the system database.
-If any such modifications are present in CORE, these must be reverted before attempting a migration to SCALE.
-
-{{< expand "Contacting Support" "v" >}}
-{{< include file="static/includes/General/iXsystemsSupportContact.html.part" html="true" >}}
-{{< /expand >}}
-{{< /hint >}}
-
 ### What Can and Can't Migrate?
 
 Although TrueNAS attempts to keep most of your CORE configuration data when upgrading to SCALE, some CORE-specific items do not transfer.
