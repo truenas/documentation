@@ -236,7 +236,7 @@ There are a few ways to update your instance of TrueNAS SCALE:
   Click the update option on to open the **System Settings > Updates** screen.
 * Go to **System Settings > Updates** to check if an update is available.
 
-For all update options and procedures using the SCALE UI see **[Updating SCALE]({{< relref "UpdateSCALE.md" >}}).
+For all update options and procedures using the SCALE UI see **[Updating SCALE]({{< relref "UpdateSCALE.md" >}})** article.
 
 When updating to either a new incremental or full release, before you update always save the system configuration file again, and save a new boot environment for your current release and configuration. 
 
