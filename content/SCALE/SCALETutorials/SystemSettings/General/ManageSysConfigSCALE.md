@@ -22,13 +22,7 @@ The **Manage Configuration** option on the **system Settings > General** screen 
 ### Downloading the File
 The **Download File** option downloads your TrueNAS SCALE current configuration to the local machine.
 
-When you download the configuration file, you have the option to **Export Password Secret Seed**, which includes encrypted passwords in the configuration file. 
-This allows you to restore the configuration file to a different operating system device where the decryption seed is not already present. 
-Users must physically secure configuration backups containing the seed to prevent unauthorized access or password decryption.
-
-We recommend backing up the system configuration regularly. 
-Doing so preserves settings when migrating, restoring, or fixing the system if it runs into any issues. 
-Save the configuration file each time the system configuration changes.
+{{< include file="/content/_includes/DownloadSystemConfigFileSCALE.md" type="page" >}}
 
 ### Uploading the File
 The **Upload File** option gives users the ability to replace the current system configuration with any previously saved TrueNAS SCALE configuration file.

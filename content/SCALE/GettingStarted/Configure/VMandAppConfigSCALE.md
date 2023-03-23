@@ -1,7 +1,9 @@
 ---
 title: "Configuring Virtualization and Apps in TrueNAS SCALE"
 description: "This article provides general information on setting up virtual machines and applications on TrueNAS SCALE."
-weight: 50
+weight: 80
+aliases: 
+ - /scale/gettingstarted/vmandappconfigscale/
 tags:
 - scalevm
 - scaleapps
@@ -9,6 +11,7 @@ tags:
 - scalevlan
 - scalelagg
 - scaledatashare
+- scaleconfig
 ---
 
 {{< toc >}}

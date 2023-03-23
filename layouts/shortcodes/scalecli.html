@@ -1,0 +1,13 @@
+<!-- Use expand with some specific modifications for standardized CLI command presentation in tutorial content -->
+{{ $id := substr (sha1 .Inner) 0 8 }}
+<div class="gdoc-expand">
+  <label class="gdoc-expand__head flex justify-between" for="{{ $id }}-{{ .Ordinal }}">
+    <span>{{ default "TrueNAS CLI Shell Method (Click to expand)" (.Get 0) }}</span>
+    <span><i class="material-icons" aria-hidden="true" title="Click to expand">expand</i></span>
+  </label>
+  <input id="{{ $id }}-{{ .Ordinal }}" type="checkbox" class="gdoc-expand__control hidden" />
+  <div class="gdoc-markdown--nested gdoc-expand__content" style="background-color:#f0f0f5">
+    <p>From the Console Setup Menu, press <b>6</b> to open the SCALE CLI. From the UI or when connecting with SSH, open the <b>Shell</b> and enter <code>cli</code>.</p><br>
+    {{ .Inner | $.Page.RenderString }}
+  </div>
+</div>

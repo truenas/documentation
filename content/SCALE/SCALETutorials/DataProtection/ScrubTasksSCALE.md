@@ -41,6 +41,8 @@ Select a preset schedule from the dropdown list or click **Custom** to create a 
 {{< include file="static/includes/SCALE/SCALEAdvancedScheduler.md.part" markdown="true" >}}
 {{< /expand >}}
 
+To view the progress of a scrub task, check the status under the **Next Run** column.
+
 ## Editing Scrub Tasks
 
 To edit a scrub, go to **Data Protection** and click the scrub task you want to edit.

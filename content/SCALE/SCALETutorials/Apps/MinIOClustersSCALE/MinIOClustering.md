@@ -11,14 +11,14 @@ tags:
 
 {{< toc >}}
 
-On TrueNAS SCALE 20.12-ALPHA and later, users can create a MinIO S3 distributed instance to scale out and handle individual node failures. A node refers to a single TrueNAS storage system in a cluster.
+On TrueNAS SCALE 20.12-ALPHA and later, users can create a MinIO S3 distributed instance to scale out and handle individual node failures. A node is a single TrueNAS storage system in a cluster.
 
-In the images below, we used four TrueNAS systems to create a distributed cluster.
+The examples below use four TrueNAS systems to create a distributed cluster.
 For more information on MinIO distributed setups, refer to the [MinIO documentation](https://docs.min.io/docs/distributed-minio-quickstart-guide.html).
 
 ## First Steps
 
-Before you configure MinIO, you must create a dataset and shared directory for the persistent MinIO data. 
+Before configuring MinIO, you must create a dataset and shared directory for the persistent MinIO data. 
 Go to **Datasets** and select the pool and dataset where you want to place the MinIO dataset. 
 You can use an existing pool or [create a new one]({{< relref "CreatePoolSCALE.md" >}}). 
 
@@ -32,15 +32,15 @@ Note the system (node) IP addresses or host names and have them ready for config
 
 ## Configuring MinIO
 
-You can configure the MinIO application using either the **Launch Docker Image** option or the **Install** option on the MinIO application widget on the **Available Applications** tab. Best practice is to use the MinIO widget **Install** option which pre-populates the version and other configuration settings the **Launch Docker Image** option requires you to populate.
+You can configure the MinIO application using either the **Launch Docker Image** option or the **Install** option on the MinIO application widget on the **Available Applications** tab. The best practice is to use the MinIO widget **Install** option, which pre-populates the version and other configuration settings the **Launch Docker Image** option requires you to populate.
 
-On your first node, go to **Apps**, click **Available Applications**, locate the MinIO widget and click **Install** to open the **minio** wizard.
+On your first node, go to **Apps**, click **Available Applications**, locate the MinIO widget, and click **Install** to open the **minio** wizard.
 
 ![AppsMinIOAppNameAndScaling](/images/SCALE/22.12/AppsMinIOAppNameAndScaling.png "MinIO Setup Wizard")
 
-First, enter a name in **Application Name** (for example, *minio* for a normal configuration or *minio-distributed* for a distributed MinIO configuration). 
+First, enter a name in **Application Name** (e.g. *minio* for a standard configuration or *minio-distributed* for a distributed MinIO configuration). 
 
-Select the update strategy you want to use from the **Minio update strategy** dropdown list. Best practice is to select **Create new pods and then kill old ones**.
+Select the update strategy you want to use from the **Minio update strategy** dropdown list. The best practice is to select **Create new pods and then kill old ones**.
 
 Select **Enable Distributed Mode** if you want to set up a cluster of SCALE systems in a distributed cluster. 
 A MinIO in distributed mode allows you to pool multiple drives or TrueNAS SCALE systems (even if they are different machines) into a single object storage server for better data protection in the event of single or multiple node failures because MinIO distributes the drives across several nodes. 
@@ -51,14 +51,13 @@ Configure the **Container Entrypoint** arguments.
 ![AppsMinIOConfigurationArgs](/images/SCALE/22.12/AppsMinIOConfigurationArgs.png "MinIO Container Entrypoint Arguments")
 
 Click **Add** to the right of **Container Args** twice to add two **Arg** fields. 
-In the first **Arg** field type **server**. 
+In the first **Arg** field, type **server**. 
 In the second **Arg** field, type the valid IP or host name of each TrueNAS system on the network, the MinIO port number, and the directory you created for MinIO. Use this format: <file>**http://*0.0.0.0*/9000/data**</file>.
 
-For a distributed cluster, add the valid TrueNAS system (node) IP addresses/host names.
-The order is important, so use the same order across all the nodes.
+To create a distributed cluster, add all the valid TrueNAS system (node) IP addresses/host names. Use the same order across all the nodes.
 
 MinIO containers use server port 9000. The MinIO Console communicates using port 9001.
-Use the <file>/data</file> path which is set up in the next steps.
+Use the <file>/data</file> path that the following steps set up.
 
 Enter the S3 root user in **Root User** and the S3 password in the **Root Password** fields. 
 
@@ -67,7 +66,7 @@ Next, create the **Minio Environment Variables**. Click **Add** twice to enter t
 ![AppsMinIOEnvironmentVariables](/images/SCALE/22.12/AppsMinIOEnvironmentVariables.png "MinIO Environment Variables")
 
 Define the **MINIO_ROOT USER** and **MINIO_ROOT_PASSWORD** arguments and their values. 
-For the values, use a name up to 20 characters, and for a password use a string of 8 to 40 randomized characters. 
+For the values, use a name of up to 20 characters. For a password, use a string of 8 to 40 randomized characters. 
 MinIO recommends using a long password string of unique random characters. 
 Refer to [MinIO User Management](https://docs.min.io/minio/baremetal/security/minio-identity-management/user-management.html) for more information.
 
@@ -79,14 +78,20 @@ For a distributed cluster, ensure the values are identical between nodes and fil
 
 ![LaunchDockerImageAddContainerEnvironmentVariables](/images/SCALE/22.12/LaunchDockerImageAddContainerEnvironmentVariables.png "Environment Variables")
 
-You can configure the API and UI access node ports and the MinIO domain name if you have TLS configured for MinIO. You can also configure a MinIO certificate if you wish.
+You can configure the API and UI access node ports and the MinIO domain name if you have TLS configured for MinIO. 
+
+To store your MinIO container audit logs, check the **Enable Log Search API** box and enter the amount of storage space logs may consume.
+
+![AppsMinIOLogSearchAPI](/images/SCALE/22.12/AppsMinIOLogSearchAPI.png "MinIO LogSearchAPI")
+
+You can also configure a MinIO certificate if you wish.
 
 Enter the **Storage** settings. 
 Select the dataset you created for the MinIO container for the **Host Path** and enter the <file>**/data**</file> directory under **Mount Path**.
 
 ![AppsMinIOStorage](/images/SCALE/22.12/AppsMinIOStorage.png "Host Path Volumes")
 
-If you want to use a host path to store your MinIO data volume, select  **Enable Host Path for MinIO Data Volume** and browse to select a path. 
+If you want to use a host path to store your MinIO data volume, select **Enable Host Path for MinIO Data Volume** and then select the path. 
 
 Under **Extra Host Path Volumes**, enter the <file>/data</file> directory under **Mount Path in Pod**, then select the directory or dataset you created earlier and click **Next**.
 
@@ -101,7 +106,7 @@ Now that the first node is complete, you can configure any remaining nodes (incl
 
 ## Accessing the Minio Setup
 
-Once you're done creating datasets, you can navigate to the TrueNAS address at port **:9000** to see the MinIO UI. If you created a distributed setup, you can see all your TrueNAS addresses.
+After you create datasets, you can navigate to the TrueNAS address at port **:9000** to see the MinIO UI. After creating a distributed setup, you can see all your TrueNAS addresses.
 
 Log in with the **ROOT_USER** and **ROOT_PASSWORD** keys you created as Container Environment Variables.
 

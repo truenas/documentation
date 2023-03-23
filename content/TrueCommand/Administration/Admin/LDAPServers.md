@@ -1,6 +1,12 @@
 ---
 title: "LDAP Servers"
+description: "This article describes how to configure LDAP servers for TrueCommand."
+aliases:
 weight: 50
+tags:
+- tcldap
+- tcad
+- tcconfig
 ---
 
 {{< toc >}}
@@ -63,3 +69,4 @@ changetype: modify
 add: password
 password: USER@DOMAIN.DOMAIN
 ```
+{{< taglist tag="tcconfig" limit="10" >}}
