@@ -15,7 +15,7 @@ tags:
 
 This article provides information and instructions for migrating from TrueNAS CORE to SCALE.
 
-{{< include file="/_includes/MigrateCOREtoSCALEWarning.md" >}}
+{{< include file="/_includes/MigrateCOREtoSCALEWarning.md" type="page" >}}
 
 ### What Can and Cannot Migrate?
 

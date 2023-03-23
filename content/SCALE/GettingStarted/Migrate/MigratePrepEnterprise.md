@@ -10,7 +10,7 @@ tags:
 
 {{< toc >}}
 
-{{< include file="/content/_includes/MigrateCOREtoSCALEWarning.md" >}}
+{{< include file="/content/_includes/MigrateCOREtoSCALEWarning.md" type="page" >}}
 
 ## What can or cannot migrate?
 
