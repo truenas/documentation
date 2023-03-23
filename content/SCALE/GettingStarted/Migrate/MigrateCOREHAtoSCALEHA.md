@@ -11,7 +11,7 @@ tags:
 
 {{< toc >}}
 
-{{< include file="/content/_includes/MigrateCOREtoSCALEWarning.md" >}}
+{{< include file="/content/_includes/MigrateCOREtoSCALEWarning.md" type="page" >}}
 
 Customers with CORE Enterprise HA systems that want to upgrade or migrate to SCALE Enterprise HA, cannot migrate their system. 
 You can only do a clean install of SCALE Enterprise HA and import your pools. You cannot migrate the CORE HA system to a SCALE HA system.
