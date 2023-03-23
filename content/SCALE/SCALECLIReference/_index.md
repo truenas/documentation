@@ -5,7 +5,6 @@ description: "This article describes how to access TrueNAS CLI Shell."
 weight: 45
 aliases:
  - /scale/scaletutorials/truenasclishell/
- - /scale/gettingstarted/migrate/migratingfromcore/#parallel-scale-cli-commands
 ---
 
 {{< toc >}}
