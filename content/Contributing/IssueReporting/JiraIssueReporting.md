@@ -55,7 +55,7 @@ In addition to the above information, please also provide:
 * A TrueNAS debug file. This is required to help developers identify and troubleshoot issues on your system. 
 
   Include a console log if the error is a web interface issue. 
-  If unsure how to save these, see the [Adding a Debug File to a Report](#adding-a-debug-file-to-a-report) and [Web Console Log](#obtaining-web-console-logs) sections in this article.
+  If unsure how to save these, see the [Adding a Debug File to a Report](#adding-a-debug-file-to-a-jira-ticket) and [Web Console Log](#obtaining-web-console-logs) sections in this article.
 
 * The core file if your system produces a core file error. Save the file and attach it to your ticket. 
 
@@ -139,7 +139,7 @@ Open the console by clicking <i class="fa fa-ellipsis-v" aria-hidden="true" titl
 
 Click <i class="fa fa-cog" aria-hidden="true" title="Settings"></i> **(Preferences)** and select **Preserve log** and **Show timestamps**. Close the **Preferences** window.
 
-Leave the console open and perform the action that encounters problems. Right-click the console window. Choose ***Save as** and save the file.
+Leave the console open and perform the action that encounters problems. Right-click the console window. Choose **Save as** and save the file.
 
 After saving the file, open the console with <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> **(Options) > More Tools > Developer tools** (<kbd>Ctrl-Shift-I</kbd>) and select **Preserve log** to clear the checkbox.
 {{< /expand >}}
