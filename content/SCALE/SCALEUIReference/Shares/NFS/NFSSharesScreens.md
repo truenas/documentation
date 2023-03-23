@@ -40,9 +40,9 @@ The **Unix (NFS) Share** widget toolbar includes the **Add** button and an actio
 
 ![NFSWidgetOptions](/images/SCALE/22.12/NFSWidgetOptions.png "Unix (NFS) Share Widget Options")
 
-The <span class="material-icons">more_vert</span> on the toolbar displays options turn the NFS service on or off. **Turn Off Service** displays if the service is running or **Turn On Service** if the service is stopped. The **Config Service** option opens the **[Services > NFS]({{< relref "NFSServiceScreen.md" >}})** configuration screen. 
+The <span class="material-icons">more_vert</span> on the toolbar displays options to turn the NFS service on or off. **Turn Off Service** displays if the service is running. **Turn On Service** displays if the service stops. The **Config Service** option opens the **[Services > NFS]({{< relref "NFSServiceScreen.md" >}})** configuration screen. 
 
-The toolbar displays the **STOPPED** service status in red before you start the service or click **Enable Service** when the dialog displays. When service is started it displays **RUNNING** in blue.
+The toolbar displays the **STOPPED** service status in red before you start the service or click **Enable Service** when the dialog displays. When service starts, it displays **RUNNING** in blue.
 
 ## Sharing NFS Details Screen
 The **Sharing > NFS** details screen displays the same list of NFS shares as the **Unix (NFS) Share** widget.
@@ -55,7 +55,7 @@ The <span class="material-icons">more_vert</span> displays a list of options for
 
 ![SharingNFSDeleteDialog](/images/SCALE/22.12/SharingNFSDeleteDialog.png "Sharing NFS Delete")
 
-Select **Confirm** and then **UNSHARE** to remove the share without affecting the data in the share dataset.
+Select **Confirm** and then **UNSHARE** to remove the share without affecting the data in the shared dataset.
 
 ## Add and Edit NFS Screens
 The **Add NFS** and **Edit NFS** display the same **Basic Options** and **Advanced Options** settings.
@@ -72,7 +72,7 @@ The **Add NFS** and **Edit NFS** display the same **Basic Options** and **Advanc
 | **Add networks** | Click **Add** to display the **Authorized Networks** IP address and CIDR fields. Enter an allowed network IP and select the mask CIDR notation. Click **Add** for each network address and CIDR you want to define as an authorized network. Defining an authorized network restricts access to all other networks. Leave empty to allow all networks. |
 | **Add hosts** | Click **Add** to display the **Authorized Hosts and IP addresses** field. Enter a host name or IP address to allow that system access to the NFS share. Click **Add** for each allowed system you want to define. Defining authorized systems restricts access to all other systems. Leave the field empty to allow all systems access to the share. |
 
-### Advanced Options Settings 
+### Advanced Options Settings
 **Advanced Options** settings tune the share access permissions and define authorized networks.
 **Advanced Options** includes these **Basic Options** settings. Only the **Access** settings display on the **Advanced Options** screen.
 
@@ -80,11 +80,20 @@ The **Add NFS** and **Edit NFS** display the same **Basic Options** and **Advanc
 
 | Setting | Description |
 |---------|-------------|
-| **Read Only** | Select to prohibit writing to the share. |
+| **Read-Only** | Select to prohibit writing to the share. |
 | **Maproot User** | Enter a string or select a user from the dropdown to apply permissions for that user to the *root* user. |
 | **Maproot Group** | Enter a string or select a group from the dropdown to apply permissions for that group to the *root* user. |
-| **Mapall User** | Enter a string or select a user to apply the permission for the chosen user to all clients. |
-| **Mapall Group** | Enter a string or select a group to apply the permission for the chosen group to all clients. | 
+| **Mapall User** | Enter a string or select a user to apply permission for the chosen user to all clients. |
+| **Mapall Group** | Enter a string or select a group to apply permission for the chosen group to all clients. | 
 | **Security** | Choose from dropdown list: **SYS**, **KRB5**, **KRB5I**, **KRB5P**. |
+
+{{< expand "Security Types" "v" >}}
+| Setting | Description |
+|---------|-------------|
+| **SYS** | Uses locally acquired UIDs and GIDs. No cryptographic security. |
+| **KRB5** | Uses Kerberos for authentication. |
+| **KRB5I** | Uses Kerberos for authentication and includes a hash with each transaction to ensure integrity. |
+| **KRB5P** | Uses Kerberos for authentication and encrypts all traffic between the client and server. KRB5P is the most secure but also incurs the most load. |
+{{< /expand >}}
 
 {{< taglist tag="scalenfs" limit="10" >}}
