@@ -4,11 +4,11 @@
 
 ### TrueNAS SCALE Systems
 
-Follow this procedure for each TrueNAS SCALE system that is to be connected to TrueCommand and used in the cluster.
+Follow this procedure for each TrueNAS SCALE system you want to connect to TrueCommand and use in the cluster.
 
 1. Log in to the SCALE UI and go to the **Storage** page.
    Ensure a storage pool is available for use in the cluster.
-   If not, click **Create Pool** and make a new pool using any of the available disks.
+   If not, click **Create Pool** and make a new pool using any available disks.
 
 2. Go to the **Network** page and look at the **Interfaces** card.
 
@@ -22,7 +22,7 @@ TrueNAS automatically adds entries to AD DNS for CTDB public IP addresses. Admin
 3. Go to the **Shares** page and look at the **Windows (SMB) Shares** section. 
    Note if there are any critical shares and take steps to ensure that disabling those shares is not disruptive.
 
-Repeat this procedure for each SCALE system to be clustered.
+Repeat this procedure for each SCALE system you want to add to the cluster.
 
 ### Microsoft Active Directory
 
@@ -55,10 +55,10 @@ The new records appear inside the zone as they save.
 2. In a browser, enter the TrueCommand IP address and create the first user. Log in with these user credentials to see the **Dashboard**.
 3. Click **New System** and add the credentials for the first SCALE system. 
    Use the SCALE **root** account password. When ready, click **ADD AND CONTINUE** and repeat the process for each SCALE system intended for the cluster. 
-   When complete, each SCALE system has a card on the TrueCommand **Dashboard** and is actively displaying system statistics.
+   When complete, each SCALE system has a card on the TrueCommand **Dashboard** that displays system statistics.
 
 {{< hint info >}}
-A good practice is to back up the SCALE system configuration before creating the cluster. 
+We recommend you back up the SCALE system configuration before creating the cluster. 
 Backups allow users to quickly restore the system configuration to the initial working state if something goes wrong.
 
 In the TrueCommand **Dashboard**, click on the name of a connected system to open a detailed view of that system. 
