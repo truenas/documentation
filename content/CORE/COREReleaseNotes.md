@@ -35,7 +35,7 @@ iXsystems is pleased to release TrueNAS 13.0-U4!
 
 This release includes an update of the Iconik plugin to the latest publicly available release, several improvements, and fixes many issues found in earlier releases. The improvements cover:
 
-* Enclosure managment for the Mini R
+* Enclosure management for the Mini R
 * Zfs-2.1.8 and then zfs-2.1.9 merged
 
 ## TrueNAS 13.0-U4 Changelog
@@ -149,7 +149,7 @@ This is a maintenance release with some improvements for ACLs and rsync, updates
 * [NAS-117976](https://ixsystems.atlassian.net/browse/NAS-117976) NIS does not start on it's own after failover.
 * [NAS-117975](https://ixsystems.atlassian.net/browse/NAS-117975) hwpmc\(4\) kernel panic on Proxmox
 * [NAS-117972](https://ixsystems.atlassian.net/browse/NAS-117972) No error message when trying to delete snapshot with hold
-* [NAS-117964](https://ixsystems.atlassian.net/browse/NAS-117964) VM created in Truenas 12.0 fails to boot or edit on Truenas 13.0-U2
+* [NAS-117964](https://ixsystems.atlassian.net/browse/NAS-117964) VM created in TrueNAS 12.0 fails to boot or edit on TrueNAS 13.0-U2
 * [NAS-117957](https://ixsystems.atlassian.net/browse/NAS-117957) netcli cannot edit lagg interfaces
 * [NAS-117899](https://ixsystems.atlassian.net/browse/NAS-117899) TC Cloud Connection causing a Kernel Panic with R10
 * [NAS-117760](https://ixsystems.atlassian.net/browse/NAS-117760) \[13.0:U1.1\] smbd.core when connecting from a macOS
@@ -270,7 +270,7 @@ iXsystems is pleased to announce the release of TrueNAS 13.0-U1.
 * [NAS-116850](https://ixsystems.atlassian.net/browse/NAS-116850) - zfs.pool\_events hook traceback </br>
 * [NAS-116739](https://ixsystems.atlassian.net/browse/NAS-116739) - sysutils/openzfs\*: Bump to nearly zfs-2.1.5 </br>
 * [NAS-116735](https://ixsystems.atlassian.net/browse/NAS-116735) - net/samba - fix map\_modify behavior </br>
-* [NAS-116728](https://ixsystems.atlassian.net/browse/NAS-116728) - Unable to backup Lightroom Classic Catalog directly to mapped drive on Truenas Scale </br>
+* [NAS-116728](https://ixsystems.atlassian.net/browse/NAS-116728) - Unable to backup Lightroom Classic Catalog directly to mapped drive on TrueNAS SCALE </br>
 * [NAS-116714](https://ixsystems.atlassian.net/browse/NAS-116714) - net/samba - re-sync with stable/angelfish </br>
 * [NAS-116667](https://ixsystems.atlassian.net/browse/NAS-116667) - Upgrade to 13.0-RELEASE fails to detect data drives </br>
 * [NAS-116654](https://ixsystems.atlassian.net/browse/NAS-116654) - Update fenced to not hold read mode on geom device for NVMe drives </br>
@@ -297,7 +297,7 @@ iXsystems is pleased to announce the release of TrueNAS 13.0-U1.
 * [NAS-116217](https://ixsystems.atlassian.net/browse/NAS-116217) - Replacing a disk in TrueNAS Core 13.0 fails with a JavaScript error </br>
 * [NAS-116208](https://ixsystems.atlassian.net/browse/NAS-116208) - i225 FW1.79 support issues in Core and Scale, fixes in Freebsd 14 and Ubuntu 22.05 </br>
 * [NAS-116178](https://ixsystems.atlassian.net/browse/NAS-116178) - login.conf and motd need updating to FreeBSD 13 </br>
-* [NAS-116142](https://ixsystems.atlassian.net/browse/NAS-116142) - Truenas 13 error upgrading pool xyz </br>
+* [NAS-116142](https://ixsystems.atlassian.net/browse/NAS-116142) - TrueNAS 13 error upgrading pool xyz </br>
 * [NAS-116070](https://ixsystems.atlassian.net/browse/NAS-116070) - SSH login failures notifications </br>
 * [NAS-116066](https://ixsystems.atlassian.net/browse/NAS-116066) - fix IoThreadPoolExecutor </br>
 * [NAS-116063](https://ixsystems.atlassian.net/browse/NAS-116063) - optimize system\_is\_enterprise\_ix\_hardware calls </br>
