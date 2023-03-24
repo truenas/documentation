@@ -94,7 +94,7 @@ A successfully installed Netdata app displays in the **Installed Applications** 
 
    ![InstallNetDAppNetDAgentCropSCALE](/images/SCALE/22.12/InstallNetDAppNetDAgentCropSCALE.png "Netdata Agent Dashboard")
 
-2. The Netdata agent displays a limited portion of the reporting capabilities of the Netdata app. Click on the *Node View* tab to better understand the differences between the Netdata agent and Netdata Cloud. Evaluate your network reporting needs. 
+2. The Netdata agent displays a limited portion of the reporting capabilities of the Netdata app. Click on the *Node View* tab to better understand the differences between the Netdata agent and Netdata Cloud. Evaluate your system reporting needs. 
 
    ![InstallNetDAppNetDAgentDashNoCloudSCALE](/images/SCALE/22.12/InstallNetDAppNetDAgentDashNoCloudSCALE.png "Netdata Agent Node View")
 
