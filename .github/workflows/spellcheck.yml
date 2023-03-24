@@ -1,12 +1,14 @@
-name: Spell Checker
-on: push
+name: 'spellcheck'
+on:
+  pull_request:
+
 jobs:
-  run:
+  spellcheck:
     runs-on: ubuntu-latest
     steps:
-      - uses: wow-actions/spell-checker@v1.0.3
+      - uses: actions/checkout@v3
+      - uses: matheus23/md-spellcheck-action@v4.2.2
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          include: |
-            **/*.md
-            **/*.txt
+          files-to-check: "./content/*/*.md"
+          files-to-exclude: "LICENSE.md" # optional
+          words-to-ignore-file: ./words-to-ignore.txt
