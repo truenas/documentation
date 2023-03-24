@@ -1,5 +1,5 @@
 ---
-title: "Migrating from TrueNAS CORE"
+title: "Migrating from TrueNAS CORE to SCALE"
 description: "This article provides instructions on migrating from TrueNAS CORE to SCALE. Migration methods include using an ISO file or a manual update file."
 weight: 20
 aliases:
@@ -15,68 +15,19 @@ tags:
 
 This article provides information and instructions for migrating from TrueNAS CORE to SCALE.
 
-{{< hint danger >}}
-Migrating TrueNAS from CORE to SCALE is a one-way operation.
-Attempting to activate or roll back to a CORE boot environment can break the system.
+{{< include file="/_includes/MigrateCOREtoSCALEWarning.md" type="page" >}}
 
-High Availability systems cannot migrate from CORE to SCALE.
-Enterprise customers should contact iXsystems Support before attempting any migration.
+### What Can and Cannot Migrate?
 
-Migrating from CORE to SCALE is not recommended when custom modifications have been made to the system database.
-If any such modifications are present in CORE, these must be reverted before attempting a migration to SCALE.
-
-{{< expand "Contacting Support" "v" >}}
-{{< include file="static/includes/General/iXsystemsSupportContact.html.part" html="true" >}}
-{{< /expand >}}
-{{< /hint >}}
-
-### What Can and Can't Migrate?
-
-Although TrueNAS attempts to keep most of your CORE configuration data when upgrading to SCALE, some CORE-specific items do not transfer.
-These are the items that don't migrate from CORE:
-
-* FreeBSD GELI encryption. If you have GELI-encrypted pools on your system that you plan to import into SCALE, you must migrate your data from the GELI pool to a non-GELI encrypted pool *before* migrating to SCALE.
-* Malformed certificates. TrueNAS SCALE validates the system certificates when a CORE system migrates to SCALE. When a malformed certificate is found, SCALE generates a new self-signed certificate to ensure system accessibility.
-* CORE Plugins and Jails. Save the configuration information for your plugin and back up any stored data. After completing the SCALE install, add the equivalent SCALE application using the **Apps** option. If your CORE plugin is not listed as an available application in SCALE, use the **Launch Docker Image** option to add it as an application and import data from the backup into a new SCALE dataset for the application.
-* NIS data
-* System tunables
-* ZFS Boot Environments
-* AFP shares also do not transfer, but migrate into an SMB share with AFP compatibility enabled. 
-* CORE `netcli` utility. A new CLI utility is used for the [Console Setup Menu]({{< relref "ConsoleSetupMenuSCALE.md" >}}) and other commands issued in a CLI.
-
-VM storage and its basic configuration transfer over during a migration, but you need to double-check the VM configuration and the network interface settings specifically before starting the VM.
-
-Init/shutdown scripts transfer, but can break. Review them before use.
-
-After migration, it is strongly recommended to review each area of the UI that was previously configured in CORE.
+{{< include file="/_includes/COREMigratesList.md" type="page" >}}
 
 ### Migration Methods
-You can migrate from CORE to SCALE through an upgrade or clean install using an <kbd>iso</kbd> file.
+You can migrate from CORE to SCALE through an upgrade or clean install using an <file>iso</file> file.
 Alternately, some CORE 13.0 releases can migrate using the CORE UI Upgrade function with the SCALE update file downloaded from the website.
 The easiest method is to upgrade from the CORE system UI, but your system must have the CORE 13.0 major release installed to use this method.
 Note the CORE 13.0-U3 release might not work when updating from the CORE UI using the Update function.
 
-If you do a clean-install with a SCALE <kbd>iso</kbd> file, you need to reconfigure your CORE settings in SCALE and import your data.
-
-## Preparing for Migration
-
-Before you attempt to migrate your CORE system to SCALE:
-
-1. Upgrade your CORE system to the most recent publicly-available CORE version. 
-   TrueNAS systems on 12.0x or lower should update to the latest CORE 13.0 release (e.g 13.0-U2 or U4 when released) prior to migrating to SCALE. 
-   CORE systems at release 13.0-Ux can use the [iso upgrade](#migrating-using-an-iso-file-to-upgrade) method to migrate to SCALE. 
-   Lower releases of CORE (12.0-Ux) must do a clean install with the SCALE <kbd>iso</kbd> file.
-2. Verify the root user is not locked. 
-   Go to **Accounts > Users**, use **Edit** for the root user to view current settings and confirm **Lock User** is not selected.
-3. After updating to the latest publicly-available release of CORE, download your system configuration file and a debug file. 
-   Keep these files in a safe place in case you need to revert back to CORE with a clean install of the CORE <kbd>iso</kbd> file.
-4. Back up your stored data files. 
-   If you need to do a clean install with the SCALE <kbd>iso</kbd> file, you can import your data into SCALE.
-5. Write down your network configuration information to use if you do a clean install of SCALE from an <kbd>iso</kbd> file.
-   {{< include file="/_includes/NetworkInstallRequirementsSCALE.md" type="page" >}}
-6. Back up any critical data!
-
-Download the SCALE [SCALE ISO file](https://www.truenas.com/download-tn-scale/) or the SCALE upgrade file and save it to your computer or a USB drive (see the **Physical Hardware tab** in [Installing SCALE]({{< relref "InstallingSCALE.md" >}})) to use if you upgrade from the physical system.  
+If you do a clean-install with a SCALE <file>iso</file> file, you need to reconfigure your CORE settings in SCALE and import your data.
 
 ## Migrating Using an ISO File to Upgrade
 
@@ -136,30 +87,12 @@ After the update completes, reboot the system if it does not reboot automaticall
 
 ![SCALESidegradeReboot](/images/SCALE/SidegradeRestart.png  "Reboot to Finish")
 
+After migration, we strongly recommend you review each area of the UI that was previously configured in CORE.
+
 ## Migrating by Clean Install
 
-If it becomes necessary to do a clean install to migrate your CORE system to SCALE using the <kbd>iso</kbd> file, follow the instructions in the [Install]({{< relref "/SCALE/GettingStarted/Install/_index.md" >}}) articles.
+If it becomes necessary to do a clean install to migrate your CORE system to SCALE using the <file>iso</file> file, follow the instructions in the [Install]({{< relref "/SCALE/GettingStarted/Install/_index.md" >}}) articles.
 
-## Parallel SCALE CLI Commands
-
-The following CLI commands are available after migrating from CORE to SCALE. 
-{{< expand "List of CLI Commands" "v" >}}
-The CORE equivalent CLI commands are for reference. These commands are for diagnostic use. Making configuration changes using the SCALE OS CLI is not recommended.
-
-| CORE CLI Command | SCALE CLI Command | Description |
-|-----------------|-------------------|-------------|
-| [camcontrol devlist](https://www.freebsd.org/cgi/man.cgi?query=camcontrol&sektion=8) | [lshw -class disk -short sfdisk -l](https://linux.die.net/man/1/lshw) | Use `lshw -class disk -short sfdisk -l` to get detailed information on hardware (disk) configuration that includes memory, mainboard and cache configuration, firmware version, CPU version and speed. |
-| [geom disk list](https://www.freebsd.org/cgi/man.cgi?geom(4)) | [lsblk](https://manpages.debian.org/testing/util-linux/lsblk.8.en.html), [hdparm](https://manpages.debian.org/bullseye/hdparm/hdparm.8.en.html) | Use `lsblk` to lists block devices or `hwparm` to get or set SATA/IDE device parameters. |
-| [glabel status](https://www.freebsd.org/cgi/man.cgi?glabel(8)) | [blkid](https://linux.die.net/man/8/blkid) | Use `blkid` to locate or print block device attributes. |
-| [gstat -pods](https://www.freebsd.org/cgi/man.cgi?gstat(8)) | [iostat](https://manpages.debian.org/testing/sysstat/iostat.1.en.html)<br> iostat -dtx | Use `iostat -dtx` to display the device utiilization report with the time for each report displayed and includes extended statistics. |
-| [ifconfig](https://www.freebsd.org/cgi/man.cgi?ifconfig(8))<br>ifconfig -l | [ip addr](https://linux.die.net/man/8/ip) <br>[ifconfig -s](https://linux.die.net/man/8/ifconfig) <br> [lshw -class network -short](https://linux.die.net/man/1/lshw) <br>[ethtool *devname*](https://linux.die.net/man/8/ethtool) | Use `ip addr` to show or manipulate routing, devices, or policy routing and tunnels. <br>Use `ifconfig -s` configure a network interface. <br>Use `lshw -class network -short` to display a network device tree showing hardware paths. <br>Use `ethtool *devnam*` to query or control network driver and hardware settings. |
-| [netstat -i](https://www.freebsd.org/cgi/man.cgi?query=netstat&sektion=1) | [ifstat -i](https://linux.die.net/man/1/ifstat) | Use `ifstat -i` to get interface statisitcs on a list of interfaces to monitor. |
-| [nvmecontrol devlist](https://www.freebsd.org/cgi/man.cgi?query=nvme&sektion=4) | [nvme list](https://manpages.org/nvme-list-ctrl) | Use `nvme list` to identify the list of NVMe devices on your system. |
-| [pmcstat](https://www.freebsd.org/cgi/man.cgi?query=pmcstat&sektion=8) | [profile-bpfcc](https://manpages.debian.org/unstable/bpfcc-tools/profile-bpfcc.8.en.html) | Use `profile-bpfcc` to get a CPU usage profile obtaine by sampling stack traces. |
-| [systat -ifstat](https://www.freebsd.org/cgi/man.cgi?query=systat&sektion=1&manpath=FreeBSD+4.9-RELEASE) | [iftop](https://linux.die.net/man/8/iftop) <br>[netstat](https://linux.die.net/man/8/netstat) | Use `iftop` to display interface bandwidth usage by host and `netstat` to print network connections, routing tables, interface statistics, masquerade connections, and multicast memberships. |
-| [top -SHIzP](https://www.freebsd.org/cgi/man.cgi?top(1)) | [top -Hi](https://linux.die.net/man/1/top) | Use `top -Hi` to display Linux tasks for all individual threads and starts with the last remembered *i* state reversed. |
-| [vmstat -P](https://www.freebsd.org/cgi/man.cgi?query=vmstat&apropos=0&sektion=0&manpath=2.8+BSD&format=html) | [sar -P ALL](https://linux.die.net/man/1/sar) | Use `sar -P ALL` to get reports with statistics for each individual processor and global statistics among all processors. |
-{{< /expand >}}
 
 {{< taglist tag="scalemigrate" limit="10" >}}
 {{< taglist tag="scaleinstall" limit="10" title="Related Installation Articles" >}}
