@@ -87,7 +87,7 @@ Setting **Disable Password** toggle to active (blue toggle) disables several opt
 
 ### Configuring User ID and Groups Settings
 
-![AddUser-UserIDAndGroupSettings](/images/SCALE/22.12/AddUser-UserIDAndGroupSettings.png "Add User User Id and Groups Settings") 
+![AddUser-UserIDAndGroupSettings](/images/SCALE/22.12/AddUser-UserIDAndGroupSettings.png "Add User Id and Groups Settings") 
 
 Next, you must set a user ID (UID).
 TrueNAS suggests a user ID starting at **1000**, but you can change it if you wish.
@@ -96,14 +96,16 @@ New users can be created with a UID of **0**.
 
 By default, TrueNAS creates a new primary group with the same name as the user. This happens when the **Create New Primary Group** toggle is enabled.
 To add the user to an existing primary group instead, disable the **Create New Primary Group** toggle and search for a group in the **Primary Group** field.
-You can add the user to more groups using the **Auxiliary Groups** drop-down list.
+You can add the user to more groups using the **Auxiliary Groups** drop-down list. 
 
 ### Configuring Directories and Permissions Settings 
 
+![AddUserHomeDirPermSCALE](/images/SCALE/22.12/AddUserHomeDirPermSCALE.png "Add User Home Directory") 
+
 When creating a user, the home directory path is set to <file>/nonexistent</file>, which does not create a home directory for the user.
-To set a user home directory, select a path using the file browser.
+To set a user home directory, enter a path in **Home Directory** or select it using the file browser.
 If the directory exists and matches the user name, TrueNAS sets it as the user home directory.
-When the path does not end with a sub-directory matching the user name, TrueNAS creates a new sub-directory.
+When the path does not end with a sub-directory matching the user name, TrueNAS creates a new sub-directory if the **Create Home Directory** checkbox is enabled.
 TrueNAS shows the path to the user home directory when editing a user.
 
 You can set the home directory permissions directly under the file browser. 
@@ -111,7 +113,7 @@ You cannot change TrueNAS default user account permissions.
 
 ### Configuring Authentication Settings
 
-![AddUserDirPermAuthSCALE](/images/SCALE/22.12/AddUserDirPermAuthSCALE.png "Add User Directories, Permissions and Authentication Settings") 
+![AddUserHomeDirAuthSCALE](/images/SCALE/22.12/AddUserHomeDirAuthSCALE.png "Add User Directories, Permissions and Authentication Settings") 
 
 You can assign a public SSH key to a user for key-based authentication by entering or pasting the *public* key into the **Authorized Keys** field.
 

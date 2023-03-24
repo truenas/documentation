@@ -5,6 +5,8 @@ TrueCommand
 NAS
 CommonMark
 shortcode
+shortcodes
+customizations
 GeekDocs
 css
 WSL

@@ -77,19 +77,20 @@ Built-in users (except the **root** user) do not include the **Home Directory Pe
 **Directory and Permissions** settings specify the user home directory and the permissions for that home directory.
 {{< expand "Click Here for More Information" "v" >}}
 
-![AddUserDirPermAuthSCALE](/images/SCALE/22.12/AddUserDirPermAuthSCALE.png "Add User Directories, Permissions and Authentication Settings") 
+![AddUserHomeDirPermSCALE](/images/SCALE/22.12/AddUserHomeDirPermSCALE.png "Add User Directories, Permissions and Authentication Settings") 
 
 | Setting | Description |
 |---------|-------------|
-| **Home Directory** | Enter or browse to enter the path to the home directory for this user. If the directory exists and matches the **Username**, it is set as the home directory for the user. When the path does not end with a subdirectory matching the username, a new subdirectory is created. The full path to the user home directory displays here on the **Edit User** screen when editing this user. |  
-| **Home Directory Permissions** | Select the permissions checkboxes (**Read**, **Write**, **Execute**) for each (**User**, **Group**, **Other**) to set default Unix permissions for the user home directory. Built-in users are read-only and do not see these permissions settings.|  
+| **Home Directory** | Enter or browse to enter the path to the home directory for this user. If the directory exists and matches the **Username**, it is set as the home directory for the user. When the path does not end with a subdirectory matching the username, a new subdirectory is created if the **Create Home Directory** checkbox is enabled. The full path to the user home directory displays here on the **Edit User** screen when editing this user. |  
+| **Home Directory Permissions** | Select the permissions checkboxes (**Read**, **Write**, **Execute**) for each (**User**, **Group**, **Other**) to set default Unix permissions for the user home directory. Built-in users are read-only and do not see these permissions settings.|
+| **Create Home Directory** | Select to create a home directory for the user when the home directory path for this user does not end in the user name. Creates a home directory for the user within the selected path. |
 
 {{< /expand >}}
 ### Authentication settings
 **Authentication** settings specify authentication methods, the public SSH key, user administration access, and enables/disables password authentication. It also covers the Shell options.
 {{< expand "Click Here for More Information" "v" >}}
 
-![AddUserDirPermAuthSCALE](/images/SCALE/22.12/AddUserDirPermAuthSCALE.png "Add User Directories, Permissions and Authentication Settings") 
+![AddUserHomeDirAuthSCALE](/images/SCALE/22.12/AddUserHomeDirAuthSCALE.png "Add User Directories, Permissions and Authentication Settings") 
 
 | Setting | Description |
 |---------|-------------|
