@@ -15,6 +15,8 @@ Since the Apple Filing Protocol (AFP) for shares is deprecated and no longer rec
 
 However, users can sidegrade a TrueNAS CORE configuration into SCALE, so TrueNAS SCALE migrates previously-saved AFP configurations into SMB configurations.
 
+## Migrating AFP Shares
+
 To prevent data corruption that could result from the sidegrade operation, in SCALE go to **Windows (SMB) Shares** select the <span class="material-icons">more_vert</span> for the share, and then select **Edit** to open the **Edit SMB** screen. 
 Click **Advanced Options** and scroll down to the **Other Options** section. 
 Select **Legacy AFP Compatibility** to enable compatibility for AFP shares migrated to SMB shares. 
@@ -33,6 +35,18 @@ Once you have [sidegraded from CORE to SCALE]({{< relref "MigratingFromCore.md" 
 To make the migrated AFP share accessible, start the SMB service.
 
 ![MigratedAFPShareSCALE](/images/SCALE/MigratedAFPShareSCALE.png "Migrated AFP Share")
+
+## Connecting Migrated Shares
+
+Since AFP shares migrate to SMB in SCALE, you must use SMB syntax to mount them.
+
+On your Apple system, press <kbd><span class="iconify" data-icon="material-symbols:keyboard-command-key"></span>+K</kbd> or go to **Go > Connect to Server...**.
+
+Enter smb://*IPAddress*/mnt/*pool*/*dataset*, where:
+
+* IPAddress* is your TrueNAS IP address
+* *pool* is the name of the pool
+* *dataset* is the name of the shared dataset
 
 {{< taglist tag="scalesmb" limit="10" >}}
 {{< taglist tag="scalemigrate" limit="10" title="Related Migration Articles" >}}

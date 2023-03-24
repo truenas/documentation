@@ -242,7 +242,7 @@ Unless you need a specific setting or are configuring a unique network environme
 ## Mounting the SMB Share
 The instructions in this section cover mounting the SMB share on a system with the following operating systems.
 
-## Mounting on a Linux System
+### Mounting on a Linux System
 Verify that your Linux distribution has the required CIFS packages installed.
 {{< expand "Click here for more information" "v" >}}
 Create a mount point: `sudo mkdir /mnt/smb_share`.
