@@ -17,6 +17,10 @@ You can access it from **System Settings > Services** screen. Locate **NFS** and
 
 Select **Start Automatically** to activate NFS service when TrueNAS boots.
 
+{{< hint info >}}
+The NFS service does not automatically start on boot if all NFS shares are encrypted and locked.
+{{< /hint >}} 
+
 ![ServicesNFSSettingsScreen](/images/SCALE/22.12/ServicesNFSSettingsScreen.png "Services NFS Options")
 
 ### General Options Settings
