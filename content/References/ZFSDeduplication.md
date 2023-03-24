@@ -81,7 +81,7 @@ If deduplication is used in an inadequately built system, these symptoms might b
 {{< /tab >}}
 {{< tab "Disk I/O Slowdown" >}}
 * **Cause**: The system must perform disk I/O to fetch DDT entries, but these are usually 4K I/O and the underlying disk hardware is unable to cope in a timely manner.
-* **Diagnose**: Open the command line and enter `gstat` to show heavy I/O traffic for either DDT or a generic pool, although DDT traffic is more often the cause. `zpool iostat` is another option that can show unexpected or very high disk latencies. When networking slowdowns are also seen, `tcpdump` or an application's TCP monitor can also show a low or zero TCP window for extended durations.
+* **Diagnose**: Open the command line and enter `gstat` to show heavy I/O traffic for either DDT or a generic pool, although DDT traffic is more often the cause. `zpool iostat` is another option that can show unexpected or very high disk latencies. When networking slowdowns are also seen, `tcpdump` or an application's TCP monitor can also show a low or zero TCP window over an extended duration.
 * **Solutions**: Add high quality SSDs as a special vdev and either move the data or rebuild the pool to use the new storage.
 {{< /tab >}}
 {{< tab "Unexpected Disconnections of Networked Resources" >}}
@@ -90,7 +90,7 @@ If deduplication is used in an inadequately built system, these symptoms might b
 {{< tab "CPU Starvation" >}}
 * **Cause**: When ZFS has fast special vdev SSDs, sufficient RAM, and is not limited by disk I/O, then hash calculation becomes the next bottleneck. Most of the ZFS CPU consumption is from attempting to keep hashing up to date with disk I/O. When the CPU is overburdened, the console becomes unresponsive and the web UI fails to connect. Other tasks might not run properly because of timeouts. This is often encountered with [pool scrubs]({{< relref "CORE/CORETutorials/Tasks/CreatingScrubTasks.md" >}}) and it can be necessary to pause the scrub temporarily when other tasks are a priority.
 * **Diagnose**: An easily seen symptom is that console logins or prompts take several seconds to display. Using `top` can confirm the issue. Generally, multiple entries with command *kernel {z_rd_int_[NUMBER]}* can be seen using the CPU capacity, and the CPU is heavily (98%+) used with almost no idle.
-* **Solutions**: Changing to a more performant CPU can help but might have limited benefit. 40 core CPUs have been observed to struggle as much as 4 or 8 core CPUs. A usual workaround is to temporarily pause scrub and other background ZFS activities that generate large amounts of hashing. It can also be possible to limit I/O using tunables that control disk queues and disk I/O ceilings, but this can impact general performance and is not recommended.
+* **Solutions**: Changing to a higher performance CPU can help but might have limited benefit. 40 core CPUs have been observed to struggle as much as 4 or 8 core CPUs. A usual workaround is to temporarily pause scrub and other background ZFS activities that generate large amounts of hashing. It can also be possible to limit I/O using tunables that control disk queues and disk I/O ceilings, but this can impact general performance and is not recommended.
 {{< /tab >}}
 {{< /tabs >}}
 

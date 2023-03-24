@@ -40,7 +40,7 @@ Want to get involved by collaborating on TrueNAS SCALE? Join our [Official Disco
 * HA migration in Bluefin 22.12.0 is not recommended for critical-use Enterprise HA systems yet. Enterprise General Availability (GA) is planned for the 22.12.2 release. HA migrations from CORE are not recommended before Enterprise GA is announced.
 * All auxiliary parameters are subject to change between major versions of TrueNAS due to security and development issues.
   We recommend removing all auxiliary parameters from TrueNAS configurations before upgrading.
-* New security checks are present for host paths in use by various sytem services. If you have host paths that are shared by multiple system services (e.g. Apps and SMB), please read the 22.12.0 [Known Issues](#known-issues) and take steps to create unique host paths for each in-use system service.
+* New security checks are present for host paths in use by various system services. If you have host paths that are shared by multiple system services (e.g. Apps and SMB), please read the 22.12.0 [Known Issues](#known-issues) and take steps to create unique host paths for each in-use system service.
 * As part of security hardening, users upgrading to 22.12.0 Bluefin are prompted to create a separate administrative user for UI logins. TrueNAS shows an informational alert when only the **root** account is present and reminds to create the administrative user for logins. Future security updates to TrueNAS SCALE could disable the root account. Please create an administrative user as soon as possible after upgrading. See the [Managing Users Tutorial]({{< relref "ManageLocalUsersSCALE.md" >}}) for more details.
 {{< /hint >}}
 
@@ -149,7 +149,7 @@ TrueNAS SCALE 22.12.1 has been released. It includes many new features and impro
 * [NAS-119129](https://ixsystems.atlassian.net/browse/NAS-119129) TrueNAS-SCALE-22.12-RC.1 couldn't use Intel 12th gen iGPU and custom Docker Image
 * [NAS-119131](https://ixsystems.atlassian.net/browse/NAS-119131) VM Details are not updated after form submit, page reload helps
 * [NAS-119138](https://ixsystems.atlassian.net/browse/NAS-119138) Certificate has no \`digest\_algorithm \` property
-* [NAS-119141](https://ixsystems.atlassian.net/browse/NAS-119141) Reduce amount of anys
+* [NAS-119141](https://ixsystems.atlassian.net/browse/NAS-119141) Reduce amount of any
 * [NAS-119142](https://ixsystems.atlassian.net/browse/NAS-119142) VirtIO block device serial numbers are not detected on TrueNAS SCALE
 * [NAS-119165](https://ixsystems.atlassian.net/browse/NAS-119165) Custom docker images create two instances?
 * [NAS-119187](https://ixsystems.atlassian.net/browse/NAS-119187) After upgrade from Angelfish to Bluefin, middlewared does not start
@@ -184,9 +184,9 @@ TrueNAS SCALE 22.12.1 has been released. It includes many new features and impro
 * [NAS-119425](https://ixsystems.atlassian.net/browse/NAS-119425) Some apps do not work after update \+ cannot upgrade apps
 * [NAS-119427](https://ixsystems.atlassian.net/browse/NAS-119427) SCALE 22.12.0, /usr/local/bin/snmp-agent.py constantly using high CPU
 * [NAS-119437](https://ixsystems.atlassian.net/browse/NAS-119437) Replication Tasks: Adding faulty SSH connection causes GUI crash and logout
-* [NAS-119438](https://ixsystems.atlassian.net/browse/NAS-119438) Rsync Tasks: Adding faulty SSH connection causes \[Save\] button to grey-out without error message/further informations
+* [NAS-119438](https://ixsystems.atlassian.net/browse/NAS-119438) Rsync Tasks: Adding faulty SSH connection causes \[Save\] button to grey-out without error message/further information
 * [NAS-119455](https://ixsystems.atlassian.net/browse/NAS-119455) Swap doesn't work after upgrade to Bluefin
-* [NAS-119489](https://ixsystems.atlassian.net/browse/NAS-119489) Warning about ZFS upgrade will not disapear after upgrade vom Core to Scale
+* [NAS-119489](https://ixsystems.atlassian.net/browse/NAS-119489) Warning about ZFS upgrade will not disappear after upgrade from Core to Scale
 * [NAS-119500](https://ixsystems.atlassian.net/browse/NAS-119500) Bulk Upgrade window does not generate a scroll bar preventing you from confirming
 * [NAS-119507](https://ixsystems.atlassian.net/browse/NAS-119507) Upgrading from 22.02.4 to 22.12.0 broke \(my\) Active Directory
 * [NAS-119511](https://ixsystems.atlassian.net/browse/NAS-119511) Backup\_chart\_releases Unable to complete
@@ -202,12 +202,12 @@ TrueNAS SCALE 22.12.1 has been released. It includes many new features and impro
 * [NAS-119594](https://ixsystems.atlassian.net/browse/NAS-119594) Cannot disable SMB share
 * [NAS-119602](https://ixsystems.atlassian.net/browse/NAS-119602) Unhandled exception; Task Manager reports disk.sync\_all failed.
 * [NAS-119604](https://ixsystems.atlassian.net/browse/NAS-119604) Design flaw: If the error log is too large, it will be displayed beyond the log window
-* [NAS-119605](https://ixsystems.atlassian.net/browse/NAS-119605) Replication Tasks between two TruenNAS SCALE 22.12: Destination part requires mandatory root user to initiate replication
+* [NAS-119605](https://ixsystems.atlassian.net/browse/NAS-119605) Replication Tasks between two TrueNAS SCALE 22.12: Destination part requires mandatory root user to initiate replication
 * [NAS-119607](https://ixsystems.atlassian.net/browse/NAS-119607) Storage -> Disks if one disk details toggled, all the disks are toggled as well
 * [NAS-119608](https://ixsystems.atlassian.net/browse/NAS-119608) Cannot update 22.02.04->22.12.0 middleware not running- SQL column not present
 * [NAS-119616](https://ixsystems.atlassian.net/browse/NAS-119616) Unable to edit Google Photos credentials
 * [NAS-119622](https://ixsystems.atlassian.net/browse/NAS-119622) Failed to replace route to service VIP
-* [NAS-119630](https://ixsystems.atlassian.net/browse/NAS-119630) Error "The port is being used by 'Openvpn Server Service'" thrown when trying to download client config for OpenVPN
+* [NAS-119630](https://ixsystems.atlassian.net/browse/NAS-119630) Error "The port is being used by 'OpenVPN Server Service'" thrown when trying to download client config for OpenVPN
 * [NAS-119632](https://ixsystems.atlassian.net/browse/NAS-119632) \[Bluefin 22.12.0\] Chart tooltips/descriptions on headers are not rendered in the UI
 * [NAS-119642](https://ixsystems.atlassian.net/browse/NAS-119642) Swap Size field is missing
 * [NAS-119668](https://ixsystems.atlassian.net/browse/NAS-119668) Storage Topology card incorrectly reports vdev width
@@ -216,7 +216,7 @@ TrueNAS SCALE 22.12.1 has been released. It includes many new features and impro
 * [NAS-119696](https://ixsystems.atlassian.net/browse/NAS-119696) Wrong link in UPS master/slave tooltip
 * [NAS-119698](https://ixsystems.atlassian.net/browse/NAS-119698) Unsupported type = cron and uri when trying to Launch a docker image
 * [NAS-119701](https://ixsystems.atlassian.net/browse/NAS-119701) Trivial Bug: Display / Text Error
-* [NAS-119707](https://ixsystems.atlassian.net/browse/NAS-119707) \[Bluefin 22.12.0\] Angelfish sysctl values dont persist following Bluefin upgrade 
+* [NAS-119707](https://ixsystems.atlassian.net/browse/NAS-119707) \[Bluefin 22.12.0\] Angelfish sysctl values don't persist following Bluefin upgrade 
 * [NAS-119713](https://ixsystems.atlassian.net/browse/NAS-119713) Email alerts have 3 destinations
 * [NAS-119716](https://ixsystems.atlassian.net/browse/NAS-119716) \[SCALE/Apps\] Switching a drop down selection, does not "drop" values that are now hidden
 * [NAS-119727](https://ixsystems.atlassian.net/browse/NAS-119727) Job error on new install \(group mapping\)
@@ -228,7 +228,7 @@ TrueNAS SCALE 22.12.1 has been released. It includes many new features and impro
 * [NAS-119792](https://ixsystems.atlassian.net/browse/NAS-119792) Changing user password doesn't work on non-root users
 * [NAS-119793](https://ixsystems.atlassian.net/browse/NAS-119793) Sidebar menu closes if I hit ESC button
 * [NAS-119806](https://ixsystems.atlassian.net/browse/NAS-119806) Save preferences per user
-* [NAS-119838](https://ixsystems.atlassian.net/browse/NAS-119838) \[TrueNas Scale Bluefin\] VM USB Passthru does not see USB device
+* [NAS-119838](https://ixsystems.atlassian.net/browse/NAS-119838) \[TrueNAS Scale Bluefin\] VM USB Passthru does not see USB device
 * [NAS-119844](https://ixsystems.atlassian.net/browse/NAS-119844) When I set "S.M.A.R.T. extra options" for an NVMe drive I receive weird error message
 * [NAS-119879](https://ixsystems.atlassian.net/browse/NAS-119879) Unable to set ACL as preset
 * [NAS-119880](https://ixsystems.atlassian.net/browse/NAS-119880) Failed to replace boot drive
@@ -349,7 +349,7 @@ TrueNAS SCALE 22.12.0 has been released and includes many new features and impro
 * [NAS-118821](https://ixsystems.atlassian.net/browse/NAS-118821) Enable additional template linter rules
 * [NAS-118823](https://ixsystems.atlassian.net/browse/NAS-118823) Refactor Display device code in VmListComponent
 * [NAS-118825](https://ixsystems.atlassian.net/browse/NAS-118825) Refactor Create SSH Connection in replication wizard
-* [NAS-118846](https://ixsystems.atlassian.net/browse/NAS-118846) Improve diasbled reasons
+* [NAS-118846](https://ixsystems.atlassian.net/browse/NAS-118846) Improve disabled reasons
 * [NAS-118855](https://ixsystems.atlassian.net/browse/NAS-118855) Dump currently active WebSocket sessions. Allow terminating all excep…
 * [NAS-118899](https://ixsystems.atlassian.net/browse/NAS-118899) Refactor VM Edit form
 * [NAS-118900](https://ixsystems.atlassian.net/browse/NAS-118900) Improve return types for appLet directive
@@ -794,7 +794,7 @@ TrueNAS SCALE 22.12-BETA.2 has been released and includes many new features and 
 * [NAS-118413](https://ixsystems.atlassian.net/browse/NAS-118413) \[SCALE\] openEBS crashing - CoreDNS won't start
 * [NAS-118393](https://ixsystems.atlassian.net/browse/NAS-118393) Apps -  'NoneType' object is not subscriptable
 * [NAS-118391](https://ixsystems.atlassian.net/browse/NAS-118391) Cannot create VM - NoneType object is not subscriptable
-* [NAS-118384](https://ixsystems.atlassian.net/browse/NAS-118384) dont block event loop in ws\_can\_access
+* [NAS-118384](https://ixsystems.atlassian.net/browse/NAS-118384) don't block event loop in ws\_can\_access
 * [NAS-118383](https://ixsystems.atlassian.net/browse/NAS-118383) \[TrueNAS SCALE-22.12-BETA.1\] Config Import not working
 * [NAS-118381](https://ixsystems.atlassian.net/browse/NAS-118381) test\_create\_schema\_formattion unit test failing
 * [NAS-118375](https://ixsystems.atlassian.net/browse/NAS-118375) UI Breaks on mobile screens if you have dataset details open and you delete the dataset
@@ -819,7 +819,7 @@ TrueNAS SCALE 22.12-BETA.2 has been released and includes many new features and 
 * [NAS-118302](https://ixsystems.atlassian.net/browse/NAS-118302) netbios\_name\_check\_sid integration test failing on SCALE HA
 * [NAS-118297](https://ixsystems.atlassian.net/browse/NAS-118297) Fix keyerror during idmap\_create
 * [NAS-118296](https://ixsystems.atlassian.net/browse/NAS-118296) revert 058034a092b8d1d5df55a49c2f0e65dba763e218
-* [NAS-118295](https://ixsystems.atlassian.net/browse/NAS-118295) dont run boot\_attach tests on HA VMs
+* [NAS-118295](https://ixsystems.atlassian.net/browse/NAS-118295) don't run boot\_attach tests on HA VMs
 * [NAS-118294](https://ixsystems.atlassian.net/browse/NAS-118294) move test\_008\_hactl to test\_14\_failover\_related
 * [NAS-118291](https://ixsystems.atlassian.net/browse/NAS-118291) Data Protection - Replication Tasks - Snapshot Retention
 * [NAS-118290](https://ixsystems.atlassian.net/browse/NAS-118290) \[SCALE\] Apps logs, keep repeating every few seconds
@@ -834,7 +834,7 @@ TrueNAS SCALE 22.12-BETA.2 has been released and includes many new features and 
 * [NAS-118257](https://ixsystems.atlassian.net/browse/NAS-118257) fix mapping rear NVMe on M50/60 HA systems
 * [NAS-118252](https://ixsystems.atlassian.net/browse/NAS-118252) Failed to replace route to service VIP
 * [NAS-118250](https://ixsystems.atlassian.net/browse/NAS-118250) SMB2 not working unless SMB1 checked
-* [NAS-118249](https://ixsystems.atlassian.net/browse/NAS-118249) dont call pool.query in vmware plugin
+* [NAS-118249](https://ixsystems.atlassian.net/browse/NAS-118249) don't call pool.query in vmware plugin
 * [NAS-118244](https://ixsystems.atlassian.net/browse/NAS-118244) Pool creation silently fails on former MDRAID disks
 * [NAS-118243](https://ixsystems.atlassian.net/browse/NAS-118243) `boot.attach`/`boot.replace`/`boot.detach` tests
 * [NAS-118242](https://ixsystems.atlassian.net/browse/NAS-118242) `boot.replace` is a job now
@@ -1349,7 +1349,7 @@ Additional feature in future Bluefin releases:
 * [NAS-115058](https://ixsystems.atlassian.net/browse/NAS-115058) Exception disable\_offload\_capabilities when configuring network interface from CLI
 * [NAS-114575](https://ixsystems.atlassian.net/browse/NAS-114575) \[SCALE\] When using OneDrive as a Backup the Client sends tens of thousands of DNS Requests
 * [NAS-114305](https://ixsystems.atlassian.net/browse/NAS-114305) Network Interfaces - Test/Save Changes bug \(back-end\)
-* [NAS-114064](https://ixsystems.atlassian.net/browse/NAS-114064) IPV6 Neighbor Solicitation if started by TrueNas SCALE fails => NO IPV6
+* [NAS-114064](https://ixsystems.atlassian.net/browse/NAS-114064) IPV6 Neighbor Solicitation if started by TrueNAS SCALE fails => NO IPV6
 * [NAS-113833](https://ixsystems.atlassian.net/browse/NAS-113833) /update/check\_available API call crashes when update-master.ixsystems.com is unavailable
 * [NAS-113830](https://ixsystems.atlassian.net/browse/NAS-113830) SCALE: Time Machine does not work for large source on macOS Monterey \(12.0.1 and 12.1\)
 * [NAS-113534](https://ixsystems.atlassian.net/browse/NAS-113534) sqlilte error creating link aggregation

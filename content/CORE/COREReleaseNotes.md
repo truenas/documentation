@@ -891,7 +891,7 @@ This is a an early release meant for previewing and testing features and is **no
 </li>
 <li>[<a href='https://jira.ixsystems.com/browse/NAS-113280'>NAS-113280</a>] -         `{"ha_sync": False}` option for queries that should not be synchroniz…
 </li>
-<li>[<a href='https://jira.ixsystems.com/browse/NAS-113281'>NAS-113281</a>] -         dont run ssh.save_keys if nothing changed
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-113281'>NAS-113281</a>] -         don't run ssh.save_keys if nothing changed
 </li>
 <li>[<a href='https://jira.ixsystems.com/browse/NAS-113287'>NAS-113287</a>] -         Fix `Attribute` constructor arguments typos and fix the bug that made…
 </li>
