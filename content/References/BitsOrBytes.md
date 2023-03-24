@@ -55,7 +55,7 @@ It comes down to math, the meaning of the prefixes, and changes in the computer 
 
 The original standard, set by the [International System of Units (SI)](https://www.nist.gov/pml/owm/metric-si-prefixes), is based on metric system measurements of multiples where kilo has come to represent 1000, mega a million, giga a billion, tera a trillion, and peta a quadrillion, etc. 
 
-The [International Electrotechnical Commision (IEC)](https://physics.nist.gov/cuu/Units/binary.html) also uses the same prefix syllable of the name but adds the second syllable "bi" (pronounced bee). 
+The [International Electrotechnical Commission (IEC)](https://physics.nist.gov/cuu/Units/binary.html) also uses the same prefix syllable of the name but adds the second syllable "bi" (pronounced bee). 
 These are not part of the International System of Units (SI) but were derived from the SI positive powers of ten. 
 The "bi" recalls the word binary. 
 The lower case *i* in the measurement represents the word binary, so a tebibyte (TiB) is the unit of measure for a trillion, pebibyte for a quadrillion, etc.
@@ -64,7 +64,7 @@ The lower case *i* in the measurement represents the word binary, so a tebibyte 
 
 It comes down to math and the actual equivalent of 2^10^ which nearly equals 1000 but is actually 1024. Most people accept kilo to represent 1000. 
 As the computer industry grew and change, the measurements of capacity grew along with it making gigabyte and terabyte more common and available but these are not based on binary trees.
-IEC developed a standard to address the discrepency between binary arithmetic and decimal arithmetic. 
+IEC developed a standard to address the discrepancy between binary arithmetic and decimal arithmetic. 
 While most people understand megabyte to represent a million, computer manufacturers use megabyte to mean 2^20^ or 1,048,576 bytes when discussing memory but use 1,000,000 bytes when talking about computer storage. 
 This can lead to confusion in the consumer mind when trying to sort out available capacity in their computer systems.
 
