@@ -12,4 +12,4 @@ jobs:
         with:
           files-to-check: "*.md"
           files-to-exclude: "LICENSE.md" # optional
-          words-to-ignore-file: ../words-to-ignore.txt
+          words-to-ignore-file: .github/words-to-ignore.txt
