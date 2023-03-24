@@ -1,7 +1,6 @@
 name: 'spellcheck'
 on:
   pull_request:
-  push:
 
 jobs:
   spellcheck:
@@ -10,6 +9,6 @@ jobs:
       - uses: actions/checkout@v3
       - uses: matheus23/md-spellcheck-action@v4.2.2
         with:
-          files-to-check: "*.md"
+          files-to-check: "./content/*/*.md"
           files-to-exclude: "LICENSE.md" # optional
           words-to-ignore-file: ./words-to-ignore.txt
