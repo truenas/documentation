@@ -1,6 +1,6 @@
 ---
 title: "Preparing for CORE to SCALE Migration (Enterprise HA)"
-description: "This article provides information for CORE Enterprise (HA) users planning to migrate to SCALE Enterprise (HA), and what you need to know and have ready before beginning the one-way process."
+description: "This article provides information for CORE Enterprise (HA) users planning to migrate to SCALE, and what you need to know and have ready before beginning the one-way process."
 weight: 15
 aliases:
 tags:
@@ -16,9 +16,9 @@ tags:
 
 {{< include file="/content/_includes/COREMigratesList.md" type="page" >}}
 
-## Before Migrating to SCALE Enterprise (HA)
+## Before Migrating to SCALE
 
-You cannot directly migrate from CORE Enterprise (HA) to SCALE Enterprise (HA)!
+You cannot directly migrate a TrueNAS Enterprise High Availability (HA) system from CORE to SCALE!
 Instead, the system can be freshly installed with TrueNAS SCALE and storage data pools reimported after the install process is complete.
 
 This section outlines actions to take or consider to prepare for the clean installation of SCALE for an Enterprise (HA) system.
