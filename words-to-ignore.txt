@@ -1,2 +1,10 @@
 TrueNAS
 iXsystems
+README
+TrueCommand
+NAS
+CommonMark
+shortcode
+GeekDocs
+css
+WSL
