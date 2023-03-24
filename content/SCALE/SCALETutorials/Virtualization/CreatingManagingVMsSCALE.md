@@ -26,15 +26,16 @@ Before creating a virtual machine, you need an installer <file>.iso</file> or im
 To create a new VM, go to **Virtualization** and click **Add** or **Add Virtual Machines** if you have not yet added a virtual machine to your system.
 Configure each category of the VM according to your specifications, starting with the **Operating System**.
 
-![CreateVMWOpSysSCALE](/images/SCALE/22.12/CreateVMWOpSysSCALE.png "VM Add: OS")
+![AddVMOperatingSystemSCALE](/images/SCALE/AddVMOperatingSystemSCALE.png "VM Add: OS")
 
-Choose the **Guest Operating System** from the dropdown list. If you choose Windows, select **Enable Hyper-V Enlightenments** to implement KVM Hyper-V Enlightenments for Windows guests.
+For more information see [Virtualization Screens]({{< relref "VirtualizationScreens.md" >}}) for more information on virtual machine screen settings.
 
-Enter a name for the VM, and a description to help you remember its usage. The description is optional.
+Additional notes:
 
-Set the **System Clock** to the option you want to use. The default is **Local**.
+Compare the recommended specifications for your guest operating system with the available host system resources when allocating virtual CPUs, cores, threads, and memory size.
 
-Select **UEFI** for the **Boot Method** unless you need support for older operating systems that only support BIOS booting.
+Do not allocate too much memory to a VM. 
+Activating a VM with all available memory allocated to it can slow the host system or prevent other VMs from starting.
 
 Enter the time the system waits for the VM to cleanly shut down in **Shutdown Timeout** or leave set at the default which is 90 seconds.
 
@@ -112,31 +113,24 @@ Click **Upload** to begin the upload process. After the upload finishes, click *
 ### Specifying a GPU
 {{< expand "Click Here for More Information" "v" >}}
 
+The **VirtIO** network interface requires a guest OS that supports VirtIO paravirtualized network drivers.
 {{< hint info >}}
 iXsystems does not have a list of approved GPUs at this time but does have drivers and basic support for the  list of [nvidia Supported Products](https://www.nvidia.com/Download/driverResults.aspx/191961/en-us/).
 {{< /hint >}}
-![CreateVMWGPUsSCALE](/images/SCALE/22.12/CreateVMWGPUsSCALE.png "VM GPU")
+### Adding and Removing Devices
 
-This next section is optional. The **Hide from MSR** checkbox is not selected by default. Select this option if you want to enable the VM to hide the graphic processing unit (GPU) from the Microsoft Reserved Partition (MSR).
+After creating the VM, add and remove virtual devices by expanding the VM entry on the **Virtual Machines** screen and clicking <i class="material-icons" aria-hidden="true" title="Devices">device_hub</i>**Devices**.
 
-The following checkbox is enabled by default. **Ensure Display Device**, when selected, permits the guest operating system to always have access to a video device. It is required for headless installations such as ubuntu server. Leave the checkbox clear for cases where you want to use a graphic processing unit (GPU) passthrough and do not want a display device added.
+![VirtualMachinesDevicesSCALE](/images/SCALE/VirtualMachinesDevicesSCALE.png "VM Devices")
 
-Optional: the **GPUs** dropdown list allows you to select a relevant GPU if at least one relevant GPU is present.
+Device notes:
 
-Click **Next**.
-{{< /expand >}}
-
-### Confirming Your Selections
-{{< expand "Click Here for More Information" "v" >}}
-![CreateVMWConfirmSCALE](/images/SCALE/22.12/CreateVMWConfirmSCALE.png "VM Summary")
-
-The **Confirm Options** screen should be reviewed carefully. This is a summary of the values you have input in the previous screens. If all information is correct, click **Save** to create the VM. If you need to make changes, click the **Back** button. Note that if you navigate away from the wizard without clicking **Save** you will lose your progress and need to start again.
-{{< /expand >}}
-
-
-See [Virtualization Screens]({{< relref "VirtualizationScreens.md" >}}) for more information on any of the fields listed in the Create Virtual Machine wizard or other virtual machine screen settings. The next step is to configure devices for the VM. This process is described in [Adding and Managing VM Devices]({{< relref "AddManageVMDevicesSCALE.md" >}}).
+* A virtual machine attempts to boot from devices according to the **Device Order**, starting with **1000**, then ascending.
+* A **CD-ROM** device allow booting a VM from a CD-ROM image like an installation CD.
+  The CD image must be available in the system storage.
 
 ## Managing a Virtual Machine
+
 After creating the VM and configuring devices for it, manage the VM by expanding the entry on the **Virtual Machines** screen.
 
 ![VirtualMachinesOptionsSCALE](/images/SCALE/VMRunningOptionsSCALE.png "VM Options")
