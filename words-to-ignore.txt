@@ -1,5 +1,2 @@
 TrueNAS
-CLI
-SCALE
-CORE
 iXsystems
