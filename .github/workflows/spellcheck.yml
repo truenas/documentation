@@ -9,6 +9,6 @@ jobs:
       - uses: actions/checkout@v3
       - uses: matheus23/md-spellcheck-action@v4.2.2
         with:
-          files-to-check: ".README.md" # currently running on a single file to allow the action to trivially complete. Expand to ./content/*/*.md when the ignore list and first full check is complete in master branch
+          files-to-check: "./README.md" # currently running on a single file to allow the action to trivially complete. Expand to ./content/*/*.md when the ignore list and first full check is complete in master branch
           files-to-exclude: "LICENSE.md" # optional
           words-to-ignore-file: ./words-to-ignore.txt
