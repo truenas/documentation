@@ -11,7 +11,7 @@ tags:
 
 
 {{< enterprise >}}
-The instructions in the article only apply to SCALE Enterprise (HA) systems.
+The instructions in the article only applies to SCALE Enterprise (HA) systems.
 {{< /enterprise >}}
 
 {{< include file="/_includes/EnterpriseHANetworkIPs.md" type="page" >}}
