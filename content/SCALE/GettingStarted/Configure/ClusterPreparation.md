@@ -13,31 +13,18 @@ tags:
 
 {{< toc >}}
 
-{{< include file="/content/_includes/ClusterIntro.md" type="page" >}}
+TrueNAS SCALE has the unique ability to cluster groups of systems together. These clusters can then create new volumes within the existing SCALE storage pools. Data stored in a clustered volume is shared between the clustered systems and can add additional redundancy or performance to the environment.
+
+{{< hint danger >}}
+Clustering is considered experimental and should not be used in a production environment or for handling critical data!
+{{< /hint >}}
 
 ## Clustering Options
 
 TrueNAS SCALE provides a few options for setting up system clustering:
 
-* Gluster volume configured with TrueCommand, and shared/accessd via SMB
+* [MinIO-created distributed clustering of TrueNAS SCALE systems]({{< relref "MinIOClustering.md" >}}).
 
-* MinIO-created distributed cluster of TrueNAS SCALE systems
-
-The gluster volume accessed/shared using TrueCommand and SMB with Active Directory is documented in this article.
-
-MinIO-created distributed clustering of TrueNAS SCALE systems is documented [here]({{< relref "MinIOClustering.md" >}}).
-
-## Warnings and Restrictions
-
-{{< include file="/content/_includes/ClusterWarnings.md" type="page" >}}
-
-## Requirements
-
-{{< include file="/content/_includes/ClusterRequirements.md" type="page" >}}
-
-## Setting up the Environment
-
-{{< include file="/content/_includes/ClusterSetup.md" type="page" >}}
-
+* [Clustering and sharing SCALE volumes with TrueCommand]({{< relref "/Solutions/Integrations/SMBClustering.md" >}})
 
 {{< taglist tag="scaleclustering" limit="10" title="Related Clustering Articles" >}}

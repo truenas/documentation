@@ -1,10 +1,17 @@
-To set up clustering with TrueNAS SCALE, you need:
+### Software
 
-* 3-20 TrueNAS SCALE systems (version 22.02.2 or later) on the same network. Each SCALE system must have:
-   * Two network interfaces and subnets.
-      The primary network interface and subnet are for client access to the SCALE system. 
-     The secondary interface and subnet are only for cluster traffic. This interface must use static IP addresses.
-   * Disks available or Storage pools already created and available for use.
-* A TrueCommand 2.2 or later environment on the same network as the SCALE systems.
-* A Microsoft Active Directory environment must be available and connected to the same network as the SCALE systems and TrueCommand environment.
-   You must configure Reverse DNS to allow the SCALE cluster systems to communicate back and forth with the AD environment.
+* 3-20 TrueNAS SCALE systems running 22.12.0 or later
+* A TrueCommand instance (cloud or on-premises) running 2.3.0 or later
+* An AD environment with domain service roles, DNS roles, and reverse lookup zones configured.
+
+### Hardware
+
+Each TrueNAS SCALE system must have two network interfaces:
+
+* One network interface for SMB, AD, and TrueCommand traffic (static IP/DHCP reservation recommended)
+* One network interface for the node-to-node cluster traffic using static IP addresses (private network recommended)
+
+Each TrueNAS SCALE system must also have:
+
+* A third IP address for the cluster VIP outside of DHCP range for users to access clustered shares.
+* Preconfigured storage pools with appropriate performance and parity
