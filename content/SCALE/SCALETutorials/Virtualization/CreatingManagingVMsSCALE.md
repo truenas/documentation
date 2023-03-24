@@ -37,7 +37,81 @@ Compare the recommended specifications for your guest operating system with the 
 Do not allocate too much memory to a VM. 
 Activating a VM with all available memory allocated to it can slow the host system or prevent other VMs from starting.
 
-We recommend using **AHCI** as the **Disk Type** for Windows VMs.
+Enter the time the system waits for the VM to cleanly shut down in **Shutdown Timeout** or leave set at the default which is 90 seconds.
+
+Leave **Start on Boot** selected if you want the VM to start when the system boots.
+
+(Optional) Leave **Enable Display** selected to enable a Virtual Network Computing remote connection. This requires UEFI booting.
+
+Select the **Display Type**. The default is **VNC** but you can change this to **SPICE**.
+
+Enter the primary interface IP address in **Bind**. Leave this set to 0.0.0.0 unless you know you want to use a different interface IP address.
+
+Click **Next**.
+
+### Configuring CPU and Memory
+{{< expand "Click Here for More Information" "v" >}}
+![CreateVMWCPUMemSCALE](/images/SCALE/22.12/CreateVMWCPUMemSCALE.png "VM CPU and Memory")
+
+If you selected Windows as the **Guest Operating System**, the **Virtual CPUs** field displays a default value of 2. Note that the VM operating system might have operational or licensing restrictions on the number of CPUs. The default value for the number of cores per virtual CPU socket is 1 and pre-populates the **Cores** field. The default value for the number of threads per core is also 1, and displays in the **Threads** field.
+
+The following field, **Optional: CPU Set (Examples:0-3.8-11)** defines the CPU set, and is optional. Inputting a value here allows you to specify the logical cores that the VM can use based on CPU topology.
+
+The checkbox **Pin vcpus** is related to the previous field, **Optional: CPU Set (Examples:0-3.8-11)**, in that each vCPU is pinned (mapped) into a single CPU number by following the order you just defined for the CPU set. The number of vCPUs must be equal to the number of CPUs in the CPU set. This checkbox is not selected by default.
+
+The **CPU Mode** default is **Custom**. When **Custom** is selected, you have the option of choosing a **CPU Model** from the dropdown list in the next field. You can also choose **Host Model** or **Host Passthrough** as the **CPU Mode**, but in these instances the next field, **CPU Model**, does not apply. 
+
+**Memory Size (Examples: 500KiB, 500M, 2 TB)** is a required field that pre-populates with a value of 4 GiB if you chose a Windows OS. We recommend that you increase this value, but your configuration will depend on the resources available for your VM.
+
+**Minimum Memory Size** is an optional field. When not specified, the guest system is given the fixed amount of memory specified in **Memory Size (Examples: 500KiB, 500M, 2 TB)**. When **Minimum Memory Size** is specified, the guest system is given memory within the range **Minimum Memory Size** and **Memory Size (Examples: 500KiB, 500M, 2 TB)** as needed.
+
+The next field, **Optional: NUMA nodeset (Example: 0-1)** is also not populated by default as it is not required. If you specified a CPU set, you can then specify a NUMA nodeset to improve memory locally.
+
+Click **Next**.
+{{< /expand >}}
+
+### Configuring Disks
+{{< expand "Click Here for More Information" "v" >}}
+![CreateVMWDisksSCALE](/images/SCALE/22.12/CreateVMWDisksSCALE.png "VM Disks")
+
+Select **Create new disk image** radio button to create a new zvol on an existing dataset (you define the location of this existing dataset in **Zvol Location**).  Alternatively, you can select **Use existing disk image** if there is an existing zvol you want to use for the VM.
+
+The dropdown list under **Select Disk Type** allows you to select either **AHCI** or **VirtIO**. We recommend using **AHCI** as the **Disk Type** for Windows VMs. Next, specify the location of the dataset in **Zvol Location**. Here we have specified the pool called *tank*. Enter a value in **Size (Examples: 500KiB, 500M, and 2TB)** to indicate the amount of space to allocate for the new zvol.
+
+Click **Next**.
+{{< /expand >}}
+
+### Configuring the Network Interface
+{{< expand "Click Here for More Information" "v" >}}
+![CreateVMWNetworkInterfaceSCALE](/images/SCALE/22.12/CreateVMWNetworkInterfaceSCALE.png "VM Network Interface")
+
+Under **Adapter Type**, select **Intel e82585 (e1000)** from the dropdown list as it offers a higher level of compatibility with most operating systems. Select **VirtIO** if the guest operating system supports para-virtualized network drivers.
+
+A randomized MAC address displays in the **Mac Address** field. You can change this to suit your needs.
+
+Use the **Attach NIC** dropdown list to select the active interface you wish to use. You can view active interfaces in **Network** > **Interfaces** (note that if you navigate away from the wizard at this point, you will lose your progress).
+
+The **Trust Guest Filters** checkbox is not selected by default. Enabling this feature has security risks because it allows the virtual server to change its MAC address and so receive all frames delivered to this address. For more information see [Virtualization Screens]({{< relref "VirtualizationScreens.md#network-interface-screen" >}}).
+
+Click **Next**.
+{{< /expand >}}
+
+### Uploading Installation Media
+{{< expand "Click Here for More Information" "v" >}}
+![CreateVMWInstallMediaSCALE](/images/SCALE/22.12/CreateVMWInstallMediaSCALE.png "VM Installation Media")
+
+The VM can be created initially without an OS installed. To navigate to the location where you have previously uploaded an installation file, use the **Optional: Choose installation media image** dropdown navigation list. Click on the <i class="fa fa-caret-right" aria-hidden="true"></i> to the left of **mnt** and at the pool and dataset levels to expand the options. Select the location of the installation file. The path displays in the location field.
+
+The **Upload an installer image file** checkbox is not selected by default. If you select this option, additional fields display:
+![CreateVMWInstallMediaUploadSCALE](/images/SCALE/22.12/CreateVMWInstallMediaUploadSCALE.png "VM Upload Installation Media")
+
+This gives you the option of browsing to select a file. The file uploads to the **ISO save location** that you specify.
+
+Click **Upload** to begin the upload process. After the upload finishes, click **Next**.
+{{< /expand >}}
+
+### Specifying a GPU
+{{< expand "Click Here for More Information" "v" >}}
 
 The **VirtIO** network interface requires a guest OS that supports VirtIO paravirtualized network drivers.
 {{< hint info >}}

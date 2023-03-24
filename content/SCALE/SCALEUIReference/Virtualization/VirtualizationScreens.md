@@ -40,11 +40,12 @@ The **Operating System** configuration screen settings specify the VM operating 
 
 ![AddVMOperSys](/images/SCALE/22.12/AddVMOperSys.png "Operating System 1") 
 
-| Field | Description |
-|------|-------------|
+| Setting | Description |
+|---------|-------------|
 | **Guest Operating System** | Required. Select the VM operating system type from the dropdown list. Select from **Windows**, **Linux** or **FreeBSD**. |
+| **Enable Hyper-V Enlightenments** |Only displays when **Guest Operating System** is set to **Windows**. This emulates a Hyper-V compatible hypervisor for the Windows guest operating system and makes some Hyper-V specific features available. |
 | **Name** | Required. Enter an alphanumeric name for the virtual machine. |
-| **Description** | Enter a description (optional). |
+| **Description** | Optional. Enter a description. |
 | **System Clock**  | Select the VM system time from the dropdown list. Options are **Local** or **UTC**. Default is **Local**. |
 | **Boot Method** | Select the boot method option from the dropdown list. Select **UEFI** for newer operating systems or **Legacy BIOS** for older operating systems that only support BIOS booting. |
 | **Shutdown Timeout** | Enter the time in seconds the system waits for the VM to cleanly shut down. During system shutdown, the system initiates power-off for the VM after the shutdown timeout entered expires. |
@@ -59,9 +60,9 @@ The **CPU and Memory** configuration wizard screen settings specify the number o
 
 ![AddVMMemory](/images/SCALE/22.12/AddVMMemory.png "CPU and Memory") 
 
-| Field | Description |
-|-------|-------------|
-| **Virtual CPUs** | Required. Enter the number of virtual CPUs to allocate to the virtual machine. The maximum is 16, or fewer if the host CPU limits the maximum. The VM operating system might impose operational or licensing restrictions on the number of CPUs. |
+| Setting | Description |
+|---------|-------------|
+| **Virtual CPUs** | Required. Enter the number of virtual CPUs to allocate to the virtual machine. The maximum is 16, or fewer if the host CPU limits the maximum. The VM operating system might impose operational or licensing restrictions on the number of CPUs. Default setting changes with the option selected in **Guest OS**, for Windows it is 2, for Unix-Type it is 1. |
 | **Cores** | Required. Enter the number of cores per virtual CPU socket. The product of vCPUs, cores, and threads must not exceed 16. |
 | **Threads** | Required. Enter the number of threads per core. A single CPU core can have up to two threads per core. A dual core could have up to four threads. The product of vCPUs, cores, and threads must not exceed 16. |
 | **Optional: CPU Set (Examples: 0-3,8-11)** | Specify the logical cores that VM is allowed to use. Better cache locality can be achieved by setting CPU set base on CPU topology. E.g. to assign cores: 0,1,2,5,9,10,11 you can write: `1-2,5,9-11` |
@@ -71,15 +72,14 @@ The **CPU and Memory** configuration wizard screen settings specify the number o
 | **Memory Size** | Allocate RAM for the VM. Minimum value is 256 MiB. This field accepts human-readable input (Ex. 50 GiB, 500M, 2 TB). If units are not specified, the value defaults to bytes. |
 | **Optional: NUMA nodeset (Example: 0-1)** | Node set allows setting NUMA nodes for multi NUMA processors when CPU set was defined. Better memory locality can be achieved by setting node set based on assigned CPU set. Example: if cpus 0,1 belong to NUMA node 0, then setting nodeset to 0 will improve memory locality. |
 {{< /expand >}}
-
 ### Disks Screen
 The **Disks** configuration wizard screen settings specify whether to create a new zvol on an existing dataset for a disk image or use an existing zvol or file for the VM. You also specify the disk type, zvol location and size.
 {{< expand "Click Here for More Information" "v" >}}
 
 ![AddVMDisks](/images/SCALE/22.12/AddVMDisks.png "Create VM Disks") 
 
-| Field | Description |
-|-------|-------------|
+| Setting | Description |
+|---------|-------------|
 | **Create new disk image** | Select this radio button to create a new zvol on an existing dataset to use as a virtual hard drive for the VM. |
 | **Use existing disk image** | Select this radio button to use an existing zvol or file for the VM. Displays the **Select Existing Zvol** dropdown list field. |
 | **Select Disk Type** | Select desired disk type as either **AHCI** or **VirtIO** from the dropdown list. Select **AHCI** for Windows VMs. **VirtIO** requires a guest OS that supports VirtIO paravirtualized network drivers. |
@@ -93,8 +93,8 @@ The **Network Interface** screen settings specify the network adaptor type, mac 
 
 ![AddVMNetwork](/images/SCALE/22.12/AddVMNetwork.png "Network Interface") 
 
-| Field | Description |
-|-------|-------------|
+| Setting | Description |
+|---------|-------------|
 | **Adapter Type** | Select the adaptor type from the dropdown list. **Intel e82545 (e1000)** emulates the same Intel Ethernet card and provides compatibility with most operating systems. **VirtIO** provides better performance when the operating system installed in the VM supports VirtIO para-virtualized network drivers. |
 | **Mac Address** | Enter the desired address into the field to override the randomized MAC address. |
 | **Attach NIC** | Select the physical interface to associate with the VM from the dropdown list. |
@@ -106,9 +106,9 @@ The **Installation Media** screen settings specify the operation system installa
 
 ![AddVMInstallMedia](/images/SCALE/22.12/AddVMInstallMedia.png "Installation Media") 
 
-| Field | Description |
-|-------|-------------|
-| **Choose Installation Media Image** | Ether the path or browse to the operating system installer image file. To collapse the browse tree click on the <iconify-icon icon="bxs:right-arrow"></iconify-icon> to the left of <iconify-icon icon="bxs:folder"></iconify-icon>**/mnt**. |
+| Setting | Description |
+|---------|-------------|
+| **Choose Installation Media Image** | Enter the path or browse to the operating system installer image file. To collapse the browse tree click on the <i class="fa fa-caret-right" aria-hidden="true"></i> to the left of **/mnt**. |
 | **Upload an Installer Image File** | Select to display image upload the **ISO save location** and browse <iconify-icon icon="bxs:folder"></iconify-icon>**/mnt** options that populate the field with the mount path, and the **Choose File** button. |
 | **Choose File** | Click to save the path populated in the **ISO save location** field. |
 | **Upload** | Click to upload the file selected in the **ISO save location** field. |
@@ -119,8 +119,8 @@ The **GPU** screen settings specify graphic processing unit (GPU) for the VM. It
 
 ![AddVMGPU](/images/SCALE/22.12/AddVMGPU.png "GPU Screen")
 
-| Field | Description |
-|-------|-------------|
+| Setting | Description |
+|---------|-------------|
 | **Hide from MSR** | Select to enable the VM to hide the GPU from the Microsoft Reserved Partition (MSR). |
 | **Ensure Display Device** | Select to ensure that the guest always has access to a video device. Required for headless installations like ubuntu server for the guest to operate properly. Leave checkbox clear for cases where want to use a graphic processing unit (GPU) passthrough and do not want a display device added. |
 | **GPU's** | Select a physical GPU on your system from the dropdown list to use for the VM. |
@@ -129,7 +129,6 @@ The **GPU** screen settings specify graphic processing unit (GPU) for the VM. It
 The **Confirm Options** screen displays the settings selected using the **Create Virtual Machine** wizard screens. It displays the number CPUs, cores, threads, the memory, name of the VM and the disk size.
 
 Click **Save** to add the VM to the **Virtual Machines** screen. Click **Back** to return to the previous screens to make changes.
-
 ## Virtual Machine Detail Screen
 The details view of any VM displays the basic information on the number of virtual CPUS, cores, and threads, the amount of memory, boot load and system clock types, the display port number and the shutdown timout in seconds.
 {{< expand "Click Here for More Information" "v" >}}
@@ -140,16 +139,16 @@ The buttons below the details show the actions options for each VM.
  
 | Operation | Icon | Description |
 |-----------|------|-------------|
-| **START** | <span class="iconify" data-icon="bxs:right-arrow"></span> | Starts a VM. The toggle turns blue when the VM switches to running. Toggles to **Stop**. After clicking **Start** the **Restart**,**Power Off**, **Display** and **Serial Shell** option buttons display. |
-| **RESTART** | <span class="material-icons">replay</span> | Retarts the VM. |
-| **POWER OFF** | <span class="material-icons">power_settings_new</span> | Powers off and halts the VM, similar to turning off a computer power switch.  |
+| **Start** | <span class="iconify" data-icon="bxs:right-arrow"></span> | Starts a VM. The toggle turns blue when the VM switches to running. Toggles to **Stop**. After clicking **Start** the **Restart**,**Power Off**, **Display** and **Serial Shell** option buttons display. |
+| **Restart** | <span class="material-icons">replay</span> | Retarts the VM. |
+| **Power Off** | <span class="material-icons">power_settings_new</span> | Powers off and halts the VM, similar to turning off a computer power switch.  |
 | **STOP** | <i class="material-icons" aria-hidden="true" title="Stop">stop</i> | Stops a running VM. Because a virtual machine does not always respond well to **STOP** or the command might time-out if the VM does not have an OS. Use **Power Off** instead. |
-| **EDIT** | <span class="material-icons">mode_edit</span> | Opens the **[Edit Virtual Machine](#edit-virtual-machine-screen)** that displays editable VM settings. You cannot edit a VM while it is running. You must first stop the VM and then you can edit the properties and settings. |
-| **DELETE** | <i class="material-icons" aria-hidden="true" title="Delete">delete</i> | Deletes a VM. Opens a [delete dialog](#delete-virtual-machine-dialog) that allows you to remove the VM from your system. You cannot delete a virtual machine that is running. You must first stop the VM and then you can delete it. |
-| **DEVICES** | <i class="material-icons" aria-hidden="true" title="Devices">device_hub</i> | opens the **[Virtual Machine Devices](#devices-screens)** screen with a list of virtual machine devices configured on the system. |
-| **CLONE** | <span class="iconify" data-icon="cil:clone"></span> | Makes an exact copy or *clone* of the VM that you can select and edit. Opens the **[Clone](#clone-virtual-machine-window)** dialog that allows you to clone the selected VM. Enter a name for the cloned VM. Naming the clone VM is optional. The cloned VM displays on the Virtual Machines list with the extension **_clone0**. If you clone the same VM again the extension for the second clone is **clone1**. |
+| **Edit** | <span class="material-icons">mode_edit</span> | Opens the **[Edit Virtual Machine](#edit-virtual-machine-screen)** that displays editable VM settings. You cannot edit a VM while it is running. You must first stop the VM and then you can edit the properties and settings. |
+| **Delete** | <i class="material-icons" aria-hidden="true" title="Delete">delete</i> | Deletes a VM. Opens a [delete dialog](#delete-virtual-machine-dialog) that allows you to remove the VM from your system. You cannot delete a virtual machine that is running. You must first stop the VM and then you can delete it. |
+| **Devices** | <i class="material-icons" aria-hidden="true" title="Devices">device_hub</i> | opens the **[Virtual Machine Devices](#devices-screens)** screen with a list of virtual machine devices configured on the system. |
+| **Clone** | <span class="iconify" data-icon="cil:clone"></span> | Makes an exact copy or *clone* of the VM that you can select and edit. Opens the **[Clone](#clone-virtual-machine-window)** dialog that allows you to clone the selected VM. Enter a name for the cloned VM. Naming the clone VM is optional. The cloned VM displays on the Virtual Machines list with the extension **_clone0**. If you clone the same VM again the extension for the second clone is **clone1**. |
 | **Display** | <i class="material-icons" aria-hidden="true" title="VNC">settings_ethernet</i> | Opens **noVNC** in a browser window that allows you to connect to the remote desktop. |
-| **SERIAL** | <i class="material-icons" aria-hidden="true" title="Serial">keyboard_arrow_right</i> | Opens the TrueNAS **VM Serial Shell** screen. |
+| **Serial Shell** | <i class="material-icons" aria-hidden="true" title="Serial">keyboard_arrow_right</i> | Opens the TrueNAS **VM Serial Shell** screen. |
 | **Download Logs** | <span class="material-icons">content_paste</span> | Downloads a <file>.log </file> file to the system. |
 {{< /expand >}}
 ### Delete Virtual Machine Dialog
@@ -158,8 +157,8 @@ The buttons below the details show the actions options for each VM.
 
 ![DeleteVirtualMachine](/images/SCALE/22.12/DeleteVirtualMachine.png "Delete Virtual Machine") 
 
-| Field | Description |
-|------|-------------|
+| Setting | Description |
+|---------|-------------|
 | **Delete Virtual Machine Data** | Select to remove the data associated with this virtual machine. This results in data loss if the data is not backed up. Leave unselected to keep the VM data intact. |
 | **Force Delete**| Select to ignore the virtual machine status during the delete operation. Leave unselected to prevent deleting the VM when it is still active or has an undefined state. |
 | **Enter *vmname* below to confirm** | Enter the name of the VM to confirm you want to delete the selected VM. |
@@ -185,8 +184,8 @@ The **Edit** screen **General Settings** specify the basic settings for the VM. 
 
 ![EditVMGeneralSettings](/images/SCALE/22.12/EditVMGeneralSettings.png "Virtual Machines Edit General Settings") 
 
-| Field | Description |
-|------|-------------|
+| Setting | Description |
+|---------|-------------|
 | **Name** | Required. Enter an alphanumeric name for the virtual machine. |
 | **Description** | Enter a description (optional). |
 | **System Clock**  | Select the VM system time from the dropdown list. Options are **Local** or **UTC**. Default is **Local**. |
@@ -201,8 +200,6 @@ The **Edit** screen **CPU and Memory** settings are the same as those in the **C
 
 ![EditVMCPUandMemory](/images/SCALE/22.12/EditVMCPUandMemory.png "Virtual Machines Edit CPU and Memory") 
 
-| Field | Description |
-|-------|-------------|
 | **Virtual CPUs** | Required. Enter the number of virtual CPUs to allocate to the virtual machine. The maximum is 16, or fewer if the host CPU limits the maximum. The VM operating system might impose operational or licensing restrictions on the number of CPUs. |
 | **Cores** | Required. Enter the number of cores per virtual CPU socket. The product of vCPUs, cores, and threads must not exceed 16. |
 | **Threads** | Required. Enter the number of threads per core. A single CPU core can have up to two threads per core. A dual core could have up to four threads. The product of vCPUs, cores, and threads must not exceed 16. |
@@ -219,74 +216,56 @@ The **Edit** screen **GPU** settings are the same as those in the **Create Virtu
 
 ![EditVMGpuSettings](/images/SCALE/22.12/EditVMGpuSettings.png "Virtual Machines Edit GPU") 
 
-| Field | Description |
-|-------|-------------|
+| Setting | Description |
+|---------|-------------|
 | **Hide from MSR** | Select to enable the VM to hide the GPU from the Microsoft Reserved Partition (MSR). |
 | **Ensure Display Device** | Select to ensure that the guest always has access to a video device. Required for headless installations like ubuntu server for the guest to operate properly. Leave checkbox clear for cases where want to use a graphic processing unit (GPU) passthrough and do not want a display device added. |
 | **GPU's** | Select a physical GPU on your system from the dropdown list to use for the VM. |
-
 {{< /expand >}}
 
 ## Devices Screens
-
 The **Virtual Machines > Devices** screen displays a list of VM devices configured on your system.
-{{< expand "Click Here for More Information" "v" >}}
 
 ![VMDevicesListed](/images/SCALE/22.12/VMDevicesListed.png "VM Devices Listed")
 
 **Add** opens the **[Virtual Machine > Devices > Add](#devices-add-screens)** configuration screen. Settings change based on the various device types.
-{{< /expand >}}
+
 ### Device Actions
 The <span class="material-icons">more_vert</span> displays a list of options for each device listed on the **Devices** screen.
 
-#### Edit *type* Device
 **Edit** opens the **Edit *type* Device** screen where *type* is the device type selected. 
-Settings displayed vary based on the type of device set when at device creation, and are the same as those displayed on the **[Add Device](#devices-add-screens)** screen except for the **Device Type** field that only displays on the Add Device screens.
-#### Delete Device
-**Delete** opens a dialog where you click **Delete Device** to confirm you want to delete the device. 
-#### Change Device Order
+Settings vary based on the type of device in **Device Type**, and are the same as those on the **[Add Device](#devices-add-screens)** screen. The **Device Type** setting only displays on the **Add Device** screens.
+
+**Delete** opens a dialog. 
+**Delete Device** confirms you want to delete the device. 
+
 **Change Device Order** opens a dialog for the selected device. Enter the number that represents the order the VM looks to the device during boot-up. The lower the number places the device earlier in the boot process. 
-Enter the number and click **Save**.
-#### Details
+
 **Details** displays an information dialog for the selected device that lists the port, type, bind IP and other details about the device. Click **Close** to close the dialog.
-### Devices Add Screens
-**Add** on the **Devices** screen opens the **Add Device** configuration screen. Settings change base on the selection in **Device Type**.
+## Devices Add Screens
+The **Add Device** screen displays different settings based on the **Device Type** selected. 
 
-Select **[CD-ROM](#add-device-type-cd-rom)** to configure a new CD-ROM location and the boot order for that device.
-
-Select **[NIC](#add-device-type-nic)** to configure a new network adapter and the boot order for that device.
-
-Select **[Disk](#add-device-type-disk)** to configure a new disk location, drive type and sector size, and the boot order for that device.
-
-Select **[Raw File](#add-device-type-raw-file)** to configure a new file location and file size, the disk sector and mode, and the boot order for that device.
-
-Select **[PCI Passthrough Device](#add-device-type-pci-passthrough-device)** to select a PCI Passthrough device from the dropdown list and the boot order for that device.
-
-Select **[USB Passthrough Device](#add-device-type-usb-passthrough-device)** to select a USB Passthrough device from the dropdown list and the boot order for that device.
-
-Select **[Display](#add-device-type-display)** to configure a new display device and the boot order for that device.
-
-#### Add Device Type CD-ROM
-Select **CD-ROM** in the **Add** device screen **Device Type** to configure the device setings and boot order.
+### Add Device Type CD-ROM
+Select **CD-ROM** in **Device Type** in the **Add** device screen to see the CD-ROM settings.
 {{< expand "Click Here for More Information" "v" >}}
 
 ![VMAddDeviceCDROM](/images/SCALE/22.12/VMAddDeviceCDROM.png "Devices Add CD-ROM Type") 
 
-| Field | Description |
-|-------|-------------|
+| Setting | Description |
+|---------|-------------|
 | **Type** | Select the device type from the dropdown list. **CD-ROM** is the default setting. |
 | **CD-ROM Path** | Use the <iconify-icon icon="bxs:right-arrow"></iconify-icon> to the left of <iconify-icon icon="bxs:folder"></iconify-icon>**/mnt** to browse to the location of the CD-ROM file on the system. |
 | **Device Order** | Enter the number (such as *1003*) that represents where in the boot order this device should be. The higher the number the later in the boot-up process the device falls. If you want the CD-ROM to be the first device checked assign it a lower number. |
 
 {{< /expand >}}
-#### Add Device Type NIC
-Select **NIC** in the **Add** device screen **Device Type** to configure network interface card settings and boot order.
+### Add Device Type NIC
+Select **NIC** in **Device Type** in the **Add** device screen to see the VM network interface card settings.
 {{< expand "Click Here for More Information" "v" >}}
 
 ![VMAddDeviceNIC](/images/SCALE/22.12/VMAddDeviceNIC.png "Devices Add NIC") 
 
-| Field | Description |
-|-------|-------------|
+| Setting | Description |
+|---------|-------------|
 | **Type** | Select the device type from the dropdown list.  |
 | **Adapter Type** | Required. Select the emulator type from the dropdown list. Emulating an **Intel e82545 (e1000)** Ethernet card provides compatibility with most operating systems. Change to **VirtIO** to provide better performance on systems with VirtIO paravirtualized network driver support. |
 | **MAC Address**  | Displays the default auto-generated random MAC address the VM receives. Enter a custom address to override the default.   |
@@ -296,14 +275,14 @@ Select **NIC** in the **Add** device screen **Device Type** to configure network
 | **Device Order** | Enter the number (such as *1003*) that represents where in the boot order this device should be. The higher the number the later in the boot-up process the device falls. If you want the CD-ROM to be the first device checked assign it a lower number. |
 {{< /expand >}}
 
-#### Add Device Type Disk
-Select **Disk** in the **Add** device screen **Device Type** to configure a new disk location, drive type and disk sector size and boot order.
+### Add Device Type Disk
+Select **Disk** in **Device Type** in the **Add** device screen to see the disk settings that include disk location, drive type and disk sector size.
 {{< expand "Click Here for More Information" "v" >}}
 
 ![VMAddDeviceDisk](/images/SCALE/22.12/VMAddDeviceDisk.png "Devices Add Disk") 
 
-| Field | Description |
-|-------|-------------|
+| Setting | Description |
+|---------|-------------|
 | **Type** | Select the device type from the dropdown list. |
 | **Zvol** | Select the zvol path from the dropdown list. |
 | **Mode** | Select the drive type from the dropdown list. Options are **AHCI** or **VirtIO**. |
@@ -311,14 +290,14 @@ Select **Disk** in the **Add** device screen **Device Type** to configure a new 
 | **Device Order** | Enter the number (such as *1003*) that represents where in the boot order this device should be. The higher the number the later in the boot-up process the device falls. If you want the CD-ROM to be the first device checked assign it a lower number. |
 {{< /expand >}}
 
-#### Add Device Type Raw File
-Select **Raw File** in the **Add** device screen **Device Type** to configure the location and size of the file, disk sector size and type, and boot order.
+### Add Device Type Raw File
+Select **Raw File** in **Device Type** in the **Add** device screen to see the raw file setings that include location, size of the file, disk sector size, and type.
 {{< expand "Click Here for More Information" "v" >}}
 
 ![VMAddDeviceRawFile](/images/SCALE/22.12/VMAddDeviceRawFile.png "Devices Add Raw File") 
 
-| Field | Description |
-|-------|-------------|
+| Setting | Description |
+|---------|-------------|
 | **Type** | Select the device type from the dropdown list. |
 | **Raw File** | Enter or use the <iconify-icon icon="bxs:right-arrow"></iconify-icon> to the left of <iconify-icon icon="bxs:folder"></iconify-icon>**/mnt** to browse to the location of the file on the system. |
 | **Disk sector size** | Select the disk sector size from the dropdown list or leave set as **Default**. Options are **Default**, **512** or **4096**. |
@@ -327,46 +306,45 @@ Select **Raw File** in the **Add** device screen **Device Type** to configure th
 | **Device Order** | Enter the number (such as *1003*) that represents where in the boot order this device should be. The higher the number the later in the boot-up process the device falls. If you want the CD-ROM to be the first device checked assign it a lower number. | 
 {{< /expand >}}
 
-#### Add Device Type PCI Passthrough Device
-Select **PCI Passthrough Device** in the **Add** device screen **Device Type** to configure the PCI passthrough device and boot order.
-{{< expand "Click Here for More Information" "v" >}}
-
+### Add Device Type PCI Passthrough Device
+Select **PCI Passthrough Device**in **Device Type** in the **Add** device screen to see the PCI passthrough device settings.
 {{< hint warning >}}
-Depending upon the type of device installed in your system, you may see a warning: PCI device does not have a reset mechanism defined. You may experience inconsistent or degraded behavior when starting or stopping the VM.
-<br>Determine if you want to proceed with this action in such an instance.
+Depending upon the type of device installed in your system, you might see a warning: PCI device does not have a reset mechanism defined. You might experience inconsistent or degraded behavior when starting or stopping the VM.
+Determine if you want to proceed with this action in such an instance.
 {{< /hint >}}
+{{< expand "Click Here for More Information" "v" >}}
 
 ![VMAddDevicePCIpass](/images/SCALE/22.12/VMAddDevicePCIpass.png "Devices Add PCI Passthrough") 
 
-| Field | Description |
-|-------|-------------|
+| Setting | Description |
+|---------|-------------|
 | **Type** | Select the device type from the dropdown list. |
 | **PCI Passthrough Device** | Enter or select the device from the dropdown list of options. Enter as (bus#/slot#/fcn#). |
 | **Device Order** | Enter the number (such as *1003*) that represents where in the boot order this device should be. The higher the number the later in the boot-up process the device falls. If you want the CD-ROM to be the first device checked assign it a lower number. |
 {{< /expand >}}
 
-#### Add Device Type USB Passthrough Device
-Select **USB Passthrough Device** in the **Add** device screen **Device Type** to configure the USB passthrough device and boot order.
+### Add Device Type USB Passthrough Device
+Select **USB Passthrough Device** in **Device Type** in the **Add** device screen to see the USB passthrough device settings.
 {{< expand "Click Here for More Information" "v" >}}
 
 ![VMAddDeviceUSBpass](/images/SCALE/22.12/VMAddDeviceUSBpass.png "Devices Add USB Passthrough") 
 
-| Field | Description |
-|-------|-------------|
+| Setting | Description |
+|---------|-------------|
 | **Type** | Select the device type from the dropdown list. |
 | **Controller Type** | Required. Choose from **piix3-uhci**, **piix4-uhci**, **ehci**, **ich9-ehci1**, **vt82c686b-uhci**, **pci-ohci**, **nec-xhci**, **qemu-xhci**. |
 | **Device** | Enter or select the device from the dropdown list of options. If **Specify custom** is chosen, enter the required **Vendor ID** and **Product ID**. |
 | **Device Order** | Enter the number (such as *1003*) that represents where in the boot order this device should be. The higher the number the later in the boot-up process the device falls. If you want the CD-ROM to be the first device checked assign it a lower number. |
 {{< /expand >}}
 
-#### Add Device Type Display
-Select **Display** in the **Add** device screen **Device Type** to configure a new display device and boot order.
+### Add Device Type Display
+Select **Display** in **Device Type** in the **Add** device screen to see the display device settings.
 {{< expand "Click Here for More Information" "v" >}}
 
 ![VMAddDeviceDisplay](/images/SCALE/22.12/VMAddDeviceDisplay.png "Devices Add Display") 
 
-| Field | Description |
-|-------|-------------|
+| Setting | Description |
+|---------|-------------|
 | **Type** | Select the device type from the dropdown list. **Display** is the default setting. |
 | **Port** | Enter the port number. You can assign **0**, leave empty for TrueNAS to assign a port when the VM is started, or set to a fixed preferred port number. |
 | **Resolution** | Select a screen resolution to use for VNC sessions. |
