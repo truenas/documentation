@@ -38,7 +38,7 @@ Select this dataset as the mount path when you create your SMB share that uses t
 
 ### Modify the SMB Service
 
-Go to **System Settings > Services**, scroll down to **SMB**.
+Go to **System Settings > Services** and scroll down to **SMB**.
 
 1. Click the toggle to turn off the SMB service if it is running, then click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> **Configure** to open the **SMB Service** settings screen..
 
