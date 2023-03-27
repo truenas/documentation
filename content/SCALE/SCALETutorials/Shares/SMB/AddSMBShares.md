@@ -129,7 +129,7 @@ To change or add permissions for the **builtin_users** group, go to **Datasets**
    d. Click **Save Access Control List** to add the ACE item or save changes.
 
 {{< hint info >}}
-If you want to allow users to move through directories within an SMB share without having read or write privelidges, you must use the **Traverse** permission. Use **Traverse** if you intend to have nested groups within an SMB share with different access levels.
+If you want to allow users to move through directories within an SMB share without having read or write privileges, you must use the **Traverse** permission. Use **Traverse** if you intend to have nested groups within an SMB share with different access levels.
 {{< /hint >}}
 
 See [Permissions]({{< relref "PermissionsScale.md" >}}) for more information on editing dataset permissions.
