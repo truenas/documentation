@@ -96,7 +96,7 @@ Major SMB client vendors are deprecating it, partly because signing and encrypti
 If you want LDAP server users to access the SMB share, go to **Credentials > Directory Services**. 
 If you configured an LDAP server, select the server and click **Edit** to display the **LDAP** configuration screen. 
 If not configured, click **Configure LDAP** to display the **LDAP** configuration screen.
-Click **Advanced Options** and select **Samba Schema (DEPRECATED - see the help text**. 
+Click **Advanced Options** and select **Samba Schema (DEPRECATED - see the help text**). 
 {{< hint warning >}}
 Only enable LDAP authentication for the SMB share if you require it. Your LDAP server must have Samba attributes.
 Support for **Samba Schema** is [officially deprecated in Samba 4.13](https://www.samba.org/samba/history/samba-4.13.0.html). Samba Schema is no longer in Samba after 4.14.
