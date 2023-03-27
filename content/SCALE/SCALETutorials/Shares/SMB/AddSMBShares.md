@@ -41,14 +41,15 @@ Discoverability through broadcast protocols is a convenience feature and is not 
 ## Adding an SMB Share
 Adding an SMB share to your system involves several steps to add the share and get it working.
 
-First, [set up the storage](#adding-an-smb-share-dataset) for your new share.
+1. [Set up the storage](#adding-an-smb-share-dataset) for the new share. 
 
-Next, [create local user accounts](#creating-local-user-accounts).
-You can also use directory services like Active Directory or LDAP to provision additional user accounts.
+2. [Create local user accounts](#creating-local-user-accounts).
+   You can also use directory services like Active Directory or LDAP to provision additional user accounts.
 
-After adding or modifying local users, [modify the dataset ACL](#tuning-the-dataset-acl).
+3. [Modify the dataset ACL](#tuning-the-dataset-acl). After adding or modifying local users, edit the dataset permissions.
 
-Now [create the SMB share](#creating-the-smb-share). You can create a basic SMB share, or for more specific share types or feature requirements, use the [Advanced Options](#configuring-share-advanced-options-settings) instructions before saving the share.
+4. [Create the SMB share](#creating-the-smb-share). 
+   You can create a basic SMB share, or for more specific share types or feature requirements, use the [Advanced Options](#configuring-share-advanced-options-settings) instructions before saving the share.
 
 After adding the share, [start the service](#starting-the-smb-service) and [mount it](#mounting-the-smb-share) to your other system.
 
@@ -71,12 +72,14 @@ TrueNAS creates the ZFS dataset with these settings:
  You can modify the ACL later according to your use case.
 {{< /expand >}}
 
+{{< include file="/content/_includes/CreateDatasetSCALE.md" type="page" >}}
+
 ### Creating Local User Accounts
 Use **Credentials > Local Users** to add new users to your TrueNAS. 
 
 By default, all new local users are members of a built-in SMB group called **builtin_users**. 
 {{< expand "Click here for more information" "v" >}}
-For more information on the **builtin_users** group, go to **Credentials > Local Users** and click the **Toggle Built-In Users** button at the top right of the screen.
+For more information on the **builtin_users** group, go to **Credentials > Local Users** and click **Toggle Built-In Users** at the top right of the screen.
 Scroll down to the **smbguest** user and click on the name. 
 Click **Edit** to view the **Edit User** screen. The **Auxiliary Group** field displays the **builtin_user** group. 
 {{< /expand >}}
@@ -108,14 +111,14 @@ After creating a dataset and accounts, you need to investigate your access requi
 Many home users typically add a new ACL entry that grants **FULL_CONTROL** to the **builtin_users** group with the flags set to **INHERIT**.
 
 {{< expand "Click here for instructions" "v" >}}
-To change or add permissions for the **builtin_users** group, go to **Datasets**, 
-1. Click on the name of the dataset that you want to modify in the list of datasets that display. 
+To change or add permissions for the **builtin_users** group, go to **Datasets**: 
+1. Click on the name of the dataset you created for the SMB share to use.  
 
-2. Locate the **Permissions** widget. Click the **Edit** button on the widget. The **Edit ACL** screen for the dataset displays.
+2. Scroll down to the **Permissions** widget. Click **Edit** on the widget to open the **Edit ACL** screen.
 
 3. Check the **Access Control List** to see if this user is on the list and has the correct permissions. If not, add this ACE item.
    
-   ![SMBDatasetACLEdit](/images/SCALE/22.12/SMBDatasetACLEdit.png "Updating SMB User ACL Permissions")
+   ![EditACLBuiltin_UserGroupForSMBShare](/images/SCALE/22.12/EditACLBuiltin_UserGroupForSMBShare.png "Updating SMB Builtin_User ACL Permissions")
    
    a. Enter **Group** in the **Who** field or use the dropdown list to select **Group**.
 
@@ -123,7 +126,7 @@ To change or add permissions for the **builtin_users** group, go to **Datasets**
 
    c. Verify **Full Control** displays in **Permissions**. If not, select it from the dropdown list.
 
-   d. Click **Save Access Control List** to add the ACE item.
+   d. Click **Save Access Control List** to add the ACE item or save changes.
 
 {{< hint info >}}
 If you want to allow users to move through directories within an SMB share without having read or write access, you must use the **Traverse** permission. **Traverse** is useful if you intend to have nested groups within an SMB share that have different access levels.
@@ -165,7 +168,7 @@ To create a basic Windows SMB share, go to **Shares**.
 
 6. Click **Save** to create the share and add it to the **Shares > Windows (SMB) Shares** list.
 
-You can also choose to enable the SMB service at this time.
+Enable the SMB service when prompted.
 
 ### Configuring Share Advanced Options Settings
 For a basic SMB share, you do not need to use the **Advanced Options** settings, but if you set **Purpose** to **No Presets**, click **Advanced Options** to finish customizing the SMB share for your use case.
@@ -220,6 +223,7 @@ AFP shares are deprecated and not available in SCALE. To customize your SMB shar
 ## Starting the SMB Service
 To connect to an SMB share you must start the related system service. 
 You can start the service from the **Windows SMB Share** header on the **Sharing** screen or on the **System Settings > Services** screen.
+
 ### Starting the Service Using the Windows SMB Share
 From the main **Sharing** screen, click on the **Windows (SMB) Shares** <span class="material-icons">more_vert</span> to display the service options which are **Turn Off Service** if the service is running or **Turn On Service** if the service is stopped.
 
@@ -227,8 +231,8 @@ From the main **Sharing** screen, click on the **Windows (SMB) Shares** <span cl
 
 Each SMB share on the list also has a toggle you can use to enable or disable the service for that share.   
 
-### Starting the Service Using the System Settings
-To make SMB share available on the network, go to **System Settings > Services** and click the toggle to for **SMB**.
+### Starting the Service Using System Settings
+To make SMB share available on the network, go to **System Settings > Services** and click the toggle for **SMB**.
 Set **Start Automatically** if you want the service to activate when TrueNAS boots.
 
 ### Service Configuration
@@ -238,7 +242,7 @@ Unless you need a specific setting or are configuring a unique network environme
 ## Mounting the SMB Share
 The instructions in this section cover mounting the SMB share on a system with the following operating systems.
 
-## Mounting on Linux System
+## Mounting on a Linux System
 Verify that your Linux distribution has the required CIFS packages installed.
 {{< expand "Click here for more information" "v" >}}
 Create a mount point: `sudo mkdir /mnt/smb_share`.
@@ -248,7 +252,7 @@ Mount the volume. `sudo mount -t cifs //computer_name/share_name /mnt/smb_share`
 If your share requires user credentials, add the switch `-o username=` with your username after `cifs` and before the share address.
 {{< /expand >}}
 
-### Mounting on Windows System
+### Mounting on a Windows System
 Have the information on the Windows drive letter, computer name, and share name ready before you start.
 {{< expand "Click here for more information" "v" >}}
 To mount the SMB share to a drive letter on Windows, open the command line and run the following command with the appropriate drive letter, computer name, and share name.
@@ -256,7 +260,7 @@ To mount the SMB share to a drive letter on Windows, open the command line and r
 ```net use Z: \\computer_name\share_name /PERSISTENT:YES```
 {{< /expand >}}
 
-### Mounting on Apple System
+### Mounting on an Apple System
 Have the user name and password for the user assigned to the pool or for the guest if the share has guest access ready before you begin.
 {{< expand "Click here for more information" "v" >}}
 Open **Finder > Go > Connect To Server**
@@ -265,7 +269,7 @@ Enter the SMB address: `smb://192.168.1.111`.
 Input the username and password for the user assigned to that pool or guest if the share has guest access.
 {{< /expand >}}
 
-### Mounting on FreeBSD System
+### Mounting on a FreeBSD System
 Mounting on a FreeBSD system involves creating the mount point, then mounting the volume.
 {{< expand "Click here for more information" "v" >}}
 Create a mount point: `sudo mkdir /mnt/smb_share`.
