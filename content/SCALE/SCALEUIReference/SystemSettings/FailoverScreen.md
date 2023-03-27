@@ -10,7 +10,7 @@ tags:
 
 
 {{< enterprise >}}
-This article only applies to SCALE Enterprise (HA) systems
+This article only applies to SCALE Enterprise (HA) systems.
 {{< /enterprise >}}
 
 The **System Settings > Failover** screen displays settings used on SCALE Enterprise (HA) systems to turn the failover function on or off, sync the primary and standby controllers, and allow administrator users to configure failover. The main menu option and screen only display on Enterprise (HA) systems with the correct license applied.
