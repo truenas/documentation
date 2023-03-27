@@ -39,6 +39,10 @@ You can find additional options for configuring general network interfaces and I
 
 ![AppsAdvancedSettingsKubernetesSettings](/images/SCALE/22.12/AppsAdvancedSettingsKubernetesSettings.png "Apps Advanced Settings")
 
+{{< include file="/_includes/AppsVMsNoHTTPS.md" type="page" >}}
+
+![SystemSettingsGUISettingsSCALE](/images/SCALE/22.12/SystemSettingsGUISettingsSCALE.png "General System Settings")
+
 ## Deploying Official Applications
 
 Official applications are pre-configured and only require a name during deployment.
