@@ -49,7 +49,7 @@ To configure FTP, go to **System Settings > Services** and find **FTP**, then cl
 | **Allow Root Login** | Select to allow root logins. This option increases security risk, so enabling this is discouraged. Do *not* allow anonymous or root access unless it is necessary. 
 Enable TLS when possible (especially when exposing FTP to a WAN). TLS effectively makes this [FTPS](https://tools.ietf.org/html/rfc4217) for better security. |
 | **Allow Anonymous Login** | Select to allow anonymous FTP logins with access to the directory specified in **Path**. Selecting this displays the **Path** field. Enter or browse the location to populate the field. |
-| **Allow Local User Login** | Select to allow any local user to log in. Only members of the **ftp** group may log in by default. |
+| **Allow Local User Login** | Select to allow any local user to log in. Only members of the **ftp** group can log in by default. |
 | **Require IDENT Authentication** | Select to require IDENT authentication. Setting this option results in timeouts when ident (or in **Shell** `identd`) is not running on the client. |
 | **File Permissions** | Select the default permissions for newly created files. |
 | **Directory Permissions** | Select the default permissions for newly created directories. |
