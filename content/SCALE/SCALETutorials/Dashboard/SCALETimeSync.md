@@ -8,7 +8,7 @@ tags:
 ---
 
 TrueNAS SCALE allows users to synchronize SCALE and system server time when they get out of sync. 
-This function will not correct time differences over 30 days out of alignment.
+This function does not correct time differences over 30 days out of alignment.
 
 The **System Information** widget on the **[Dashboard]({{< relref "/SCALE/SCALEUIReference/SCALEDashboard.md" >}})** displays a message and provides an icon button that executes the time-synchronization operation only when SCALE detects a discrepancy between SCALE and system server time.
 
