@@ -13,109 +13,94 @@ TrueNAS allows setting data or object quotas for user accounts and groups cached
 
 ## User Quotas Screen
 Select **User Quotas** on the **Dataset Actions** list of options to display the **User Quotas** screen.
-The **User Quotas** screen displays the names and quota data of any user accounts cached on or connected to the system. If no users exist, the screen displays the **Add Users Quotas** button in the center of the screen.
+The **User Quotas** screen displays the names and quota data of any user accounts cached on or connected to the system. If no users exist, the screen displays **No User Quotas** in the center of the screen.
 
-![UserQuotasScreenNoQuotas](/images/SCALE/22.02/UserQuotasScreenNoQuotas.png "User Quotas Screen")
+![UserQuotasNoQuotasSCALE](/images/SCALE/22.12/UserQuotasNoQuotasSCALE.png "User Quotas Screen")
 
-The **Actions** button displays two options, **Add** which displays the **Set User Quotas** screen and **Toggle Display**.
-**Toggle Display** changes the view from filter view to a list view. Click when the screen filters out all users except those with quotas. The **Show all Users** confirmation dialog displays. Click **Show** to display the list of all users. 
+![UserQuotasDataQuotaSCALE](/images/SCALE/22.12/UserQuotasDataQuotaSCALE.png "User Quotas List View")
+
+The **Show All Users** toggle button displays all users, or hides built-in users. **Add** displays the **[Set User Quotas](#set-user-quotas-screen)** screen. 
+
 If you have a number of user quotas set up, the **Actions** options include **Set Quotas (Bulk)**.
 
-![UserQuotasScreenListView](/images/SCALE/22.02/UserQuotasScreenListView.png "User Quotas List View")
-
-Use the **Columns** button to displays options to customize the table view to add or remove information. Options are **Select All**, **ID**, **Data Quota**, **DQ Used**, **DQ % Used**, **Object Quota**, **Objects Used**, **OQ % Used**, and **Reset to Defaults**. After selecting **Select All** the option toggles to **Unselect All**.
-
-### User Expanded View
-Click the <span class="material-icons">expand_more</span> icon to display a detailed individual user quota screen.
-
-![UserQuotasRootUserExpanded](/images/SCALE/22.02/UserQuotasRootUserExpanded.png "User Quotas Expanded View")
-
-Click the <span class="material-icons">edit</span> **Edit** button to display the **[Edit User](#edit-user-configuration-window)** window.
+Click on the name of the user to display the **[Edit User](#edit-user-configuration-window)** window.
 
 ### Edit User Configuration Window
-The **Edit User** window allows you to modify the user data quota and user object quota values for an individual user.
+The **Edit User Quota** window allows you to modify the user data quota and user object quota values for an individual user.
 
-![EditUserQuotaWindow](/images/SCALE/22.02/EditUserQuotaWindow.png "Edit User Quota")
+![EditUserQuotasSCALE](/images/SCALE/22.12/EditUserQuotasSCALE.png "Edit User Quota")
 
 | Settings | Description |
 |----------|-------------|
 | **User** | Displays the name of the selected user. |
-| **User Data Quota (Examples: 500KiB, 500M, 2 TB)** | Enter the amount of disk space the selected user can use. Entering **0** allows the user to use all disk space. You can enter human-readable values such as 50 GiB, 500M, 2 TB, etc.). If units are not specified, the value defaults to bytes.  |
+| **User Data Quota (Examples: 500KiB, 500M, 2 TB)** | Enter the amount of disk space the selected user can use. Entering **0** allows the user to use all disk space. You can enter human-readable values such as 50 GiB, 500M, 2 TB, etc. If units are not specified, the value defaults to bytes.  |
 | **User Object Quota** | Enter the number of objects the selected user can own. Entering **0** allows unlimited objects. |
 
-Click **Set Quota** to save changes or **Cancel** to close the window without saving.
+Click **Save** to save changes or click on the "X" to close the window without saving.
 
 ### Set User Quotas Screen
-To display the **Set User Quotas** screen click **Actions** or if the system does not have user quotas configured, click the **Add User Quotas** button.
+To display the **Set User Quotas** screen click the **Add** button.
 
-![SetUserQuotasScreen](/images/SCALE/22.02/SetUserQuotasScreen.png "Set User Quotas")
+![AddUserQuotasSetQuotasSCALE](/images/SCALE/22.12/AddUserQuotasSetQuotasSCALE.png "Set User Quotas")
 
 #### Set Quotas Settings
 | Settings | Description |
 |----------|-------------|
-| **User Data Quota (Examples: 500KiB, 500M, 2 TB)** | Enter the amount of disk space the selected user can use. Entering **0** allows the user to use all disk space. You can enter human-readable values such as 50 GiB, 500M, 2 TB, etc.). If units are not specified, the value defaults to bytes. |
+| **User Data Quota (Examples: 500KiB, 500M, 2 TB)** | Enter the amount of disk space the selected user can use. Entering **0** allows the user to use all disk space. You can enter human-readable values such as 50 GiB, 500M, 2 TB, etc. If units are not specified, the value defaults to bytes. |
 | **User Object Quota** | Enter the number of objects the selected user can own. Entering **0** allows unlimited objects. |
 
 #### Apply Quotas to Selected Users Settings
 | Settings | Description |
 |----------|-------------|
-| **Select Users Cached by this System** | Select the users from the dropdown list of options. |
-| **Search for Connected Users** | Click in the field to see the list of users on the system or type a user name and press <kbd>Enter</kbd>. A clickable list displays of found matches as you type. Click on the user to add the name. A warning dialog displays if there are not matches found. |
+| **Apply To Users** | Select the users from the dropdown list of options. |
 
-Click **Save** to set the quotas or **Cancel** to exit without saving.
+Click **Save** to set the quotas or click the "X" to exit without saving.
 
 ## Group Quotas Screens
-Select **Group Quotas** on the **Dataset Actions** list of options to display the **Edit Group Quotas** screen.
+Select **Group Quotas** on the **Dataset Actions** list of options to display the **Group Quotas** screen.
 
-The **Edit Group Quotas** screen displays the names and quota data of any groups cached on or connected to the system. If no groups exist, the screen displays the **Add Groups Quotas** button in the center of the screen.
+The **Group Quotas** screen displays the names and quota data of any groups cached on or connected to the system. If no groups exist, the screen displays **No Group Quotas** in the center of the screen.
 
-![EditGroupQuotasNoGroups](/images/SCALE/22.02/EditGroupQuotasNoGroups.png "Group Quotas Screen")
+![GroupQuotasNoQuotaSCALE](/images/SCALE/22.12/GroupQuotasNoQuotaSCALE.png "Group Quotas Screen")
 
-The **Actions** button displays two options, **Add** which displays the **Set Group Quotas** screen and **Toggle Display**.
-**Toggle Display** changes the view from filter view to a list view. Click when the screen filters out all groups except those with quotas. The **Show all Groups** confirmation dialog displays. Click **Show** to display the list of all groups. 
+The **Show All Groups** toggle button displays all groups, or hides built-in groups. **Add** displays the **[Set Group Quotas](#set-group-quotas-screen)** screen. 
 
-![EditGroupQuotasListView](/images/SCALE/22.02/EditGroupQuotasListView.png "Group Quotas List View")
+If you have a number of group quotas set up, the **Actions** options include **Set Quotas (Bulk)**.
 
-Use the **Columns** button to displays options to customize the table view to add or remove information. Options are **Select All**, **ID**, **Data Quota**, **DQ Used**, **DQ % Used**, **Object Quota**, **Objects Used**, **OQ % Used**, and **Reset to Defaults**. After selecting **Select All** the option toggles to **Unselect All**.
+Click on the name of the group to display the **[Edit Group](#edit-group-configuration-window)** window.
 
-### Group Expanded View
-Click the <span class="material-icons">expand_more</span> icon to display a detailed individual group quota screen.
-
-![EditGroupQuotasExpandedView](/images/SCALE/22.02/EditGroupQuotasExpandedView.png "Group Quotas Expanded View")
-
-Click the <span class="material-icons">edit</span> **Edit** button to display the **[Edit Group](#edit-group-configuration-window)** window.
+![GroupQuotasVideoQuotaSCALE](/images/SCALE/22.12/GroupQuotasVideoQuotaSCALE.png "Group Quotas List View")
 
 ### Edit Group Configuration Window
 The **Edit Group** window allows you to modify the group data quota and group object quota values for an individual group.
 
-![EditGroupQuotaWindow](/images/SCALE/22.02/EditGroupQuotaWindow.png "Edit Qroup Quota")
+![EditGroupQuotasSCALE](/images/SCALE/22.12/EditGroupQuotasSCALE.png "Edit Qroup Quota")
 
 | Settings | Description |
 |----------|-------------|
 | **Group** | Displays the name of the selected group(s).  |
-| **Group Data Quota (Examples: 500KiB, 500M, 2 TB)** | Enter the amount of disk space the selected group can use. Entering **0** allows the group to use all disk space. You can enter human-readable values such as 50 GiB, 500M, 2 TB, etc.). If units are not specified, the value defaults to bytes. |
+| **Group Data Quota (Examples: 500KiB, 500M, 2 TB)** | Enter the amount of disk space the selected group can use. Entering **0** allows the group to use all disk space. You can enter human-readable values such as 50 GiB, 500M, 2 TB, etc. If units are not specified, the value defaults to bytes. |
 | **Group Object Quota** | Enter the number of objects the selected group can own or use. Entering **0** allows unlimited objects. |
 
-Click **Set Quota** to save changes or **Cancel** to close the window without saving.
+Click **Save** to set the quotas or click the "X" to exit without saving.
 
-### Set User Quotas Screen
-To display the **Set Group Quotas** screen click **Actions** or if the system does not have group quotas configured, click the **Add Group Quotas** button.
+### Set Group Quotas Screen
+To display the **Set Group Quotas** screen, click the **Add** button.
 
-![SetGroupQuotasScreen](/images/SCALE/22.02/SetGroupQuotasScreen.png "Set Group Quotas")
+![AddGroupQuotasSetQuotaSCALE](/images/SCALE/22.12/AddGroupQuotasSetQuotaSCALE.png "Set Group Quotas")
 
 #### Set Quotas Settings
 | Settings | Description |
 |----------|-------------|
-| **Group Data Quota (Examples: 500KiB, 500M, 2 TB)** | Enter the amount of disk space the selected group can use. Entering **0** allows the group to use all disk space. You can enter human-readable values such as 50 GiB, 500M, 2 TB, etc.). If units are not specified, the value defaults to bytes. |
+| **Group Data Quota (Examples: 500KiB, 500M, 2 TB)** | Enter the amount of disk space the selected group can use. Entering **0** allows the group to use all disk space. You can enter human-readable values such as 50 GiB, 500M, 2 TB, etc. If units are not specified, the value defaults to bytes. |
 | **Group Object Quota** | Enter the number of objects the selected group can own or use. Entering **0** allows unlimited objects. |
 
 #### Apply Quotas to Selected Groups Settings
 | Settings | Description |
 |----------|-------------|
-| **Select Groups Cached by this System** | Select the users from the dropdown list of options. |
-| **Search for Connected Groups** | Click in the field to see the list of groups on the system or type a group name and press <kbd>Enter</kbd>. A clickable list displays of found matches as you type. Click on the group to add the name. A warning dialog displays if there are no matches found. |
+| **Apply To Groups** | Select groups from the dropdown list of options. |
 
-Click **Save** to set the quotas or **Cancel** to exit without saving.
+Click **Save** to set the quotas or click the "X" to exit without saving.
 
 {{< taglist tag="scalequotas" limit="10" >}}
 {{< taglist tag="scaledatasets" limit="10" title="Related Dataset Articles" >}}
