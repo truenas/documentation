@@ -90,7 +90,7 @@ Enable TLS when possible (especially when exposing FTP to a WAN). TLS effectivel
 | **Perform Reverse DNS Lookups** | Select to allow performing reverse DNS lookups on client IPs. This option causes long delays if you don't configure reverse DNS. |
 | **Masquerade Address** | Enter a public IP address or host name. Set if FTP clients cannot connect through a NAT device. |
 | **Display Login** | Enter a message that displays to local login users after authentication. Anonymous login users do not see this message. |
-| **Auxiliary Parameters** | Used to add additional [proftpd(8)](https://linux.die.net/man/8/proftpd) parameters. |
+| **Auxiliary Parameters** | Use to add additional [proftpd(8)](https://linux.die.net/man/8/proftpd) parameters. |
 
 ### Bandwidth Settings
 **Bandwidth** settings specify the space you want to allocate for local and anonymous user uploads and downloads.
