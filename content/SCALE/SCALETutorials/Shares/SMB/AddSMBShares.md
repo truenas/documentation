@@ -25,7 +25,7 @@ SMB is suitable for managing and administering large or small pools of data.
 TrueNAS uses [Samba](https://www.samba.org/) to provide SMB services.
 The SMB protocol has multiple versions. An SMB client typically negotiates the highest supported SMB protocol during SMB session negotiation. 
 Industry-wide, SMB1 protocol (sometimes referred to as NT1) usage is [being deprecated]({{< relref "/CORE/CoreSecurityReports/SMB1Advisory.md" >}}) for security reasons.
-However, most SMB clients support SMB 2 or 3 protocols, even when they are not default.
+However, most SMB clients support SMB 2 or 3 protocols, even when not default.
 
 {{< hint info >}}
 Legacy SMB clients rely on NetBIOS name resolution to discover SMB servers on a network. 
@@ -44,7 +44,7 @@ Adding an SMB share to your system involves several steps to add the share and g
 1. [Set up the storage](#adding-an-smb-share-dataset) for the new share. 
 
 2. [Create local user accounts](#creating-local-user-accounts).
-   You can also use directory services like Active Directory or LDAP to provision additional user accounts.
+   You can also use directory services like Active Directory or LDAP to provide additional user accounts.
 
 3. [Modify the dataset ACL](#tuning-the-dataset-acl). After adding or modifying local users, edit the dataset permissions.
 
@@ -63,12 +63,12 @@ TrueNAS creates the ZFS dataset with these settings:
 
  * **ACL Mode** set to **Restricted**
    The **ACL Type** influences the **ACL Mode** setting. When **ACL Type** is set to **Inherit**, you cannot change the **ACL Mode** setting.
-   When **ACL Type** is set to **NFSv4**, you can change the **ACL Mode** setting to **Restricted**.
+   When **ACL Type** is set to **NFSv4**, you can change the **ACL Mode** to **Restricted**.
 
  * **Case Sensitivity** set to **Insensitive**
 
  TrueNAS also applies a default access control list to the dataset.
- This default ACL is restrictive and only allows access to the dataset owner and group.
+ This default ACL is restrictive and only grants access to the dataset owner and group.
  You can modify the ACL later according to your use case.
 {{< /expand >}}
 
@@ -85,24 +85,24 @@ Click **Edit** to view the **Edit User** screen. The **Auxiliary Group** field d
 {{< /expand >}}
 You can use the group to grant access to all local users on the server or add more groups to fine-tune permissions to large numbers of users.
 {{< hint info >}} 
-You cannot access SMB shares with the root user, user accounts built-in to TrueNAS, or those without the **smb** flag.
+You cannot access SMB shares using the root user, TrueNAS built-in user accounts, or those without the **smb** flag.
 {{< /hint >}}
 
 {{< expand "Why not just allow anonymous access to the share?" "v" >}}
 Anonymous or guest access to the share is possible, but it is a security vulnerability. 
-Major SMB client vendors are deprecating it, partly because signing and encryption are not possible for guest sessions.
+Major SMB client vendors are deprecating it, partly because signing and encryption are impossible for guest sessions.
 {{< /expand >}}
 {{< expand "What about LDAP users?" "v" >}}
 If you want LDAP server users to access the SMB share, go to **Credentials > Directory Services**. 
-If an LDAP server is configured, select the server and click **Edit** to display the **LDAP** configuration screen. 
+If you configured an LDAP server, select the server and click **Edit** to display the **LDAP** configuration screen. 
 If not configured, click **Configure LDAP** to display the **LDAP** configuration screen.
-Click **Advanced Options** and select **Samba Schema (DEPRECATED - see the help text**. 
+Click **Advanced Options** and select **Samba Schema (DEPRECATED - see the help text**). 
 {{< hint warning >}}
-Only enable LDAP authentication for the SMB share if you require it. Your LDAP server must be configured with Samba attributes.
-Support for **Samba Schema** is [officially deprecated in Samba 4.13](https://www.samba.org/samba/history/samba-4.13.0.html). This feature is removed after Samba 4.14.
+Only enable LDAP authentication for the SMB share if you require it. Your LDAP server must have Samba attributes.
+Support for **Samba Schema** is [officially deprecated in Samba 4.13](https://www.samba.org/samba/history/samba-4.13.0.html). Samba Schema is no longer in Samba after 4.14.
 Users should begin upgrading legacy Samba domains to Samba AD domains.
 {{< /hint >}}
-Local TrueNAS user accounts no longer have access to the share.
+Local TrueNAS user accounts can no longer access the share.
 {{< /expand >}}
 
 ### Tuning the Dataset ACL
@@ -114,7 +114,7 @@ Many home users typically add a new ACL entry that grants **FULL_CONTROL** to th
 To change or add permissions for the **builtin_users** group, go to **Datasets**: 
 1. Click on the name of the dataset you created for the SMB share to use.  
 
-2. Scroll down to the **Permissions** widget. Click **Edit** on the widget to open the **Edit ACL** screen.
+2. Scroll down to the **Permissions** widget. Click **Edit** to open the **Edit ACL** screen.
 
 3. Check the **Access Control List** to see if this user is on the list and has the correct permissions. If not, add this ACE item.
    
@@ -129,7 +129,7 @@ To change or add permissions for the **builtin_users** group, go to **Datasets**
    d. Click **Save Access Control List** to add the ACE item or save changes.
 
 {{< hint info >}}
-If you want to allow users to move through directories within an SMB share without having read or write access, you must use the **Traverse** permission. **Traverse** is useful if you intend to have nested groups within an SMB share that have different access levels.
+If you want to allow users to move through directories within an SMB share without having read or write privileges, you must use the **Traverse** permission. Use **Traverse** if you intend to have nested groups within an SMB share with different access levels.
 {{< /hint >}}
 
 See [Permissions]({{< relref "PermissionsScale.md" >}}) for more information on editing dataset permissions.
@@ -151,7 +151,7 @@ To create a basic Windows SMB share, go to **Shares**.
 
    The **Path** is the directory tree on the local file system that TrueNAS exports over the SMB protocol. 
 
-   The **Name** is the SMB share name, which forms part of the full share pathname when SMB clients perform an SMB tree connect. 
+   The **Name** is the SMB share name, which forms part of the share pathname when SMB clients perform an SMB tree connect. 
    Because of how the SMB protocol uses the name, it must be less than or equal to 80 characters. It cannot have invalid characters as specified in Microsoft documentation MS-FSCC section 2.1.6. 
    If you do not enter a name, the share name becomes the last component of the path.
    If you change the name, follow the naming conventions for:
@@ -182,7 +182,7 @@ To add ACL support to the share, select **Enable ACL**, and then see [Managing S
 If you want to allow guest access to the share, select **Allow Guest Access**. 
 {{< expand "Click here for more information" "v" >}}
 The privileges are the same as the guest account. 
-Guest access is disabled by default in Windows 10 version 1709 and Windows Server version 1903. 
+Windows 10 version 1709 and Windows Server version 1903 disable guest access by default. 
 Additional client-side configuration is required to provide guest access to these clients.
 
 * **MacOS clients**: Attempting to connect as a user that does not exist in TrueNAS *does not* automatically connect as the guest account. 
@@ -197,16 +197,16 @@ To prohibit writes to the share, select **Export Read-Only**.
 To restrict share visibility to users with read or write access to the share, select **Access Based Share Enumeration**. See the [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) manual page.
 
 #### Setting Up Host Allow and Host Deny
-To control allowed or denied host names or IP addresses, use the **Host Allow** and **Host Deny** options.
+Use the **Host Allow** and **Host Deny** options to allow or deny specific host names and IP addresses.
 {{< expand "Click here for more information" "v" >}}
 Use the **Hosts Allow** field to enter a list of allowed hostnames or IP addresses. Separate entries by pressing <kbd>Enter</kbd>. You can find a more detailed description with examples [here](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html#HOSTSALLOW).
 Use the **Hosts Deny** field to enter a list of denied hostnames or IP addresses. Separate entries by pressing <kbd>Enter</kbd>. 
 
-The **Hosts Allow** and **Hosts Deny** fields work together to produce different situations:
-* If neither **Hosts Allow** nor **Hosts Deny** contains an entry, then SMB share access is allowed for any host.
-* If there is a **Hosts Allow** list but no **Hosts Deny** list, then only allow hosts on the **Hosts Allow** list.
-* If there is a **Hosts Deny** list but no **Hosts Allow** list, then allow all hosts on the **Hosts Deny** list.
-* If there is both a **Hosts Allow** and **Hosts Deny** list, then allow all hosts on the **Hosts Allow** list. If there is a host not on the **Hosts Allow** and not on the **Hosts Deny** list, then allow it.
+**Hosts Allow** and **Hosts Deny** work together to produce different situations:
+* If neither **Hosts Allow** nor **Hosts Deny** contains an entry, any host can access the SMB share.
+* If you create a **Hosts Allow** list, but no **Hosts Deny** list, the share only allows hosts on the **Hosts Allow** list.
+* If you create a **Hosts Deny** list, but no **Hosts Allow** list, the share allows all hosts not on the **Hosts Deny** list.
+* If you create both a **Hosts Allow** and **Hosts Deny** list, the share allows all hosts on the **Hosts Allow** list. The share also allows hosts not on the **Hosts Allow** or **Hosts Deny** list.
 {{< /expand>}}
 
 #### Apple Filing Protocol (AFP) Compatibility
@@ -215,21 +215,21 @@ AFP shares are deprecated and not available in SCALE. To customize your SMB shar
 {{< expand "Click here for more information" "v" >}}
 **Time Machine** enables [Apple Time Machine](https://support.apple.com/en-us/HT201250) backups on this share. 
 
-**Legacy AFP Compatibility** controls how the SMB share reads and writes data. Leave unset for the share to behave like a normal SMB share and set for the share to behave like the deprecated Apple Filing Protocol (AFP). Only set this when this share originated as an AFP sharing configuration. This is not required for pure SMB shares or macOS SMB clients. 
+**Legacy AFP Compatibility** controls how the SMB share reads and writes data. Leave unset for the share to behave like a standard SMB share. Only set this when the share originated as an AFP sharing configuration. Pure SMB shares or macOS SMB clients do not require legacy compatibility. 
 
 **Use Apple-style Character Encoding** converts NTFS illegal characters in the same manner as MacOS SMB clients. By default, Samba uses a hashing algorithm for NTFS illegal characters. 
 {{< /expand >}}
 
 ## Starting the SMB Service
-To connect to an SMB share you must start the related system service. 
-You can start the service from the **Windows SMB Share** header on the **Sharing** screen or on the **System Settings > Services** screen.
+To connect to an SMB share, you must start the related system service. 
+You can start the service from the **Windows SMB Share** header on the **Sharing** screen or in **System Settings > Services**.
 
 ### Starting the Service Using the Windows SMB Share
-From the main **Sharing** screen, click on the **Windows (SMB) Shares** <span class="material-icons">more_vert</span> to display the service options which are **Turn Off Service** if the service is running or **Turn On Service** if the service is stopped.
+From the **Sharing** screen, click on the **Windows (SMB) Shares** <span class="material-icons">more_vert</span> to display the service options, which are **Turn Off Service** if the service is running or **Turn On Service** if the service is not running.
 
 ![SharingSMBServicesActionOptions](/images/SCALE/22.02/SharingSMBServicesActionOptions.png "SMB Service Options")
 
-Each SMB share on the list also has a toggle you can use to enable or disable the service for that share.   
+Each SMB share on the list also has a toggle to enable or disable the service for that share.   
 
 ### Starting the Service Using System Settings
 To make SMB share available on the network, go to **System Settings > Services** and click the toggle for **SMB**.
@@ -242,7 +242,7 @@ Unless you need a specific setting or are configuring a unique network environme
 ## Mounting the SMB Share
 The instructions in this section cover mounting the SMB share on a system with the following operating systems.
 
-## Mounting on a Linux System
+### Mounting on a Linux System
 Verify that your Linux distribution has the required CIFS packages installed.
 {{< expand "Click here for more information" "v" >}}
 Create a mount point: `sudo mkdir /mnt/smb_share`.
