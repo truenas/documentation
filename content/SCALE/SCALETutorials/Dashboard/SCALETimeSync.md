@@ -22,7 +22,7 @@ If your time is off by more than 30 days, TrueNAS SCALE does not allow you to sy
 * The BIOS timezone is incorrect
 * The motherboard CMOS battery is failing
 
-To check the BIOS timezone, reboot your system. During boot, press the indicated key that takes you to the BIOS setup screen. The key differes based on manufacturer (<kbd>F2</kbd>, <kbd>Delete</kbd>, <kbd>Esc</kbd>, etc.). If you don't know which key to use, check the manufacturer documentation for your server.
+To check the BIOS timezone, reboot your system. During boot, press the indicated key that takes you to the BIOS setup screen. The key varies by manufacturer (<kbd>F2</kbd>, <kbd>Delete</kbd>, <kbd>Esc</kbd>, etc.). If you don't know which key to use, check the manufacturer documentation for your server.
 
 Once you have entered the BIOS setup, ensure the timezone is UTC. If not, set it to UTC, save the configuration changes, and reboot the system.
 
