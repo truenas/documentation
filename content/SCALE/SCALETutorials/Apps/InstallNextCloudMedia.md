@@ -78,7 +78,7 @@ Go to **Apps** to open the **Applications** screen and then click on the **Avail
 
 4. Enter a user name and password to use as a Nextcloud login on the **Nextcloud Configuration** settings screen. 
    For a basic installation you can leave the default values in all settings except **Username** and **Password**. This example uses *admin* as the user.
-   TrueNAS populates **Nextcloud host** with the IP address for your server, **Nextcloud data directory** with the correct path. The checkbox for **Install ffmpeg** is not selected by default. If selected, the utility *FFmpeg* is automatically installed when the container starts.
+   TrueNAS populates **Nextcloud host** with the IP address for your server and **Nextcloud data directory** with the correct path. The checkbox for **Install ffmpeg** is not selected by default. If selected, the utility *FFmpeg* is automatically installed when the container starts.
 
    ![AddNextcloudConfigurationSCALE](/images/SCALE/22.12/AddNextcloudConfigurationSCALE.png "Add Nextcloud User Name and Password")
    
