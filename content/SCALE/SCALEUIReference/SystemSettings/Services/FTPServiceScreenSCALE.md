@@ -8,6 +8,7 @@ tags:
  - scaleftp
  - scalesftp
  - scaletftp
+ - scalefiletransfer
 ---
 
 {{< toc >}}
@@ -49,7 +50,7 @@ To configure FTP, go to **System Settings > Services** and find **FTP**, then cl
 | **Allow Root Login** | Select to allow root logins. This option increases security risk, so enabling this is discouraged. Do *not* allow anonymous or root access unless it is necessary. 
 Enable TLS when possible (especially when exposing FTP to a WAN). TLS effectively makes this [FTPS](https://tools.ietf.org/html/rfc4217) for better security. |
 | **Allow Anonymous Login** | Select to allow anonymous FTP logins with access to the directory specified in **Path**. Selecting this displays the **Path** field. Enter or browse the location to populate the field. |
-| **Allow Local User Login** | Select to allow any local user to log in. Only members of the **ftp** group can log in by default. |
+| **Allow Local User Login** | Select to allow any local user to log in. Only members of the **ftp** group may log in by default. |
 | **Require IDENT Authentication** | Select to require IDENT authentication. Setting this option results in timeouts when ident (or in **Shell** `identd`) is not running on the client. |
 | **File Permissions** | Select the default permissions for newly created files. |
 | **Directory Permissions** | Select the default permissions for newly created directories. |
@@ -87,10 +88,10 @@ Enable TLS when possible (especially when exposing FTP to a WAN). TLS effectivel
 | **Maximum Passive Port** | Enter a numeric value. Used by clients in PASV mode. A default of **0** means any port above 1023. |
 | **Enable FXP** | Select to enable the File eXchange Protocol (FXP). We do not recommend FXP since it leaves the server vulnerable to FTP bounce attacks. |
 | **Allow Transfer Resumption** | Select to allow FTP clients to resume interrupted transfers. |
-| **Perform Reverse DNS Lookups** | Select to allow performing reverse DNS lookups on client IPs. This option causes long delays if you don't configure reverse DNS. |
+| **Perform Reverse DNS Lookups** | Select to allow performing reverse DNS lookups on client IPs. This option causes long delays if you do not configure reverse DNS. |
 | **Masquerade Address** | Enter a public IP address or host name. Set if FTP clients cannot connect through a NAT device. |
 | **Display Login** | Enter a message that displays to local login users after authentication. Anonymous login users do not see this message. |
-| **Auxiliary Parameters** | Use to add additional [proftpd(8)](https://linux.die.net/man/8/proftpd) parameters. |
+| **Auxiliary Parameters** | Used to add additional [proftpd(8)](https://linux.die.net/man/8/proftpd) parameters. |
 
 ### Bandwidth Settings
 **Bandwidth** settings specify the space you want to allocate for local and anonymous user uploads and downloads.
@@ -99,9 +100,9 @@ Enable TLS when possible (especially when exposing FTP to a WAN). TLS effectivel
 
 | Settings | Description |
 |----------|-------------|
-| **Local User Upload Bandwidth: (Examples: 500 KiB, 500M, 2 TB)** | Enter a value in KiBs or greater. A default of **0 Kib** means unlimited. If you don't specify a measurement, it defaults to KiB. This field accepts human-readable input in KiBs or greater (M, GiB, TB, etc.). The default **0 KiB** is unlimited. |
-| **Local User Download Bandwidth** | Enter a value in KiBs or greater. A default of **0 Kib** means unlimited. If you don't specify a measurement, it defaults to KiB. This field accepts human-readable input in KiBs or greater (M, GiB, TB, etc.). The default **0 KiB** is unlimited. |
-| **Anonymous User Upload Bandwidth** | Enter a value in KiBs or greater. A default of **0 Kib** means unlimited. If you don't specify a measurement, it defaults to KiB. This field accepts human-readable input in KiBs or greater (M, GiB, TB, etc.). The default **0 KiB** is unlimited. |
-| **Anonymous User Download Bandwidth** | Enter a value in KiBs or greater. A default of **0 Kib** means unlimited. If you don't specify a measurement, it defaults to KiB. This field accepts human-readable input in KiBs or greater (M, GiB, TB, etc.). The default **0 KiB** is unlimited. |
+| **Local User Upload Bandwidth: (Examples: 500 KiB, 500M, 2 TB)** | Enter a value in KiBs or greater. A default of **0 Kib** means unlimited. If you do not specify a measurement, it defaults to KiB. This field accepts human-readable input in KiBs or greater (M, GiB, TB, etc.). The default **0 KiB** is unlimited. |
+| **Local User Download Bandwidth** | Enter a value in KiBs or greater. A default of **0 Kib** means unlimited. If you do not specify a measurement, it defaults to KiB. This field accepts human-readable input in KiBs or greater (M, GiB, TB, etc.). The default **0 KiB** is unlimited. |
+| **Anonymous User Upload Bandwidth** | Enter a value in KiBs or greater. A default of **0 Kib** means unlimited. If you do not specify a measurement, it defaults to KiB. This field accepts human-readable input in KiBs or greater (M, GiB, TB, etc.). The default **0 KiB** is unlimited. |
+| **Anonymous User Download Bandwidth** | Enter a value in KiBs or greater. A default of **0 Kib** means unlimited. If you do not specify a measurement, it defaults to KiB. This field accepts human-readable input in KiBs or greater (M, GiB, TB, etc.). The default **0 KiB** is unlimited. |
 
 {{< taglist tag="scaleftp" limit="10" >}}
