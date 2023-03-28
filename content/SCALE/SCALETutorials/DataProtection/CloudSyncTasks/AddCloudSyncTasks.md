@@ -43,6 +43,9 @@ Syncing to a Backblaze B2 bucket does not delete files from the bucket, even whe
 Instead, files are tagged with a version number or moved to a hidden state. 
 To automatically delete old or unwanted files from the bucket, adjust the [Backblaze B2 Lifecycle Rules](https://www.backblaze.com/blog/backblaze-b2-lifecycle-rules/).
 
+{{< hint info >}}
+A directory, deleted in BackBlaze B2 and notated with an asterisk, do not display in the SCALE UI. These folders are essentially empty directories and Backblaze API restricts these so they do not display.
+{{< /hint >}}
 #### Amazon S3 Issues
 Sync cannot delete files stored in Amazon S3 Glacier or S3 Glacier Deep Archive. 
 First restore these files by another means, like the [Amazon S3 console](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/restore-archived-objects.html).
