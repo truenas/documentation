@@ -10,12 +10,10 @@ tags:
  - scaletftp
 ---
 
-
 {{< toc >}}
 
-
 The [File Transfer Protocol (FTP)](https://tools.ietf.org/html/rfc959) is a simple option for data transfers.
-The SSH options provide secure config file transfer methods, while the Trivial FTP options provide simple config file transfer methods.
+The SSH options provide secure transfer methods for critical objects like configuration files, while the Trivial FTP options provide simple file transfer methods for non-critical files.
 
 The **FTP** service has basic and advanced setting options. 
 Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i> for **FTP** to open the **Basic Settings** configuration screen.
