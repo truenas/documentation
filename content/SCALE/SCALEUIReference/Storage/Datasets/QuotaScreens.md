@@ -63,7 +63,7 @@ The **Group Quotas** screen displays the names and quota data of any groups cach
 
 ![GroupQuotasNoQuotaSCALE](/images/SCALE/22.12/GroupQuotasNoQuotaSCALE.png "Group Quotas Screen")
 
-The **Show All Groups** toggle button displays all groups, or hides built-in groups. **Add** displays the **[Set Group Quotas](#set-group-quotas-screen)** screen. 
+The **Show All Groups** toggle button displays all groups or hides built-in groups. **Add** displays the **[Set Group Quotas](#set-group-quotas-screen)** screen. 
 
 If you have a number of group quotas set up, the **Actions** options include **Set Quotas (Bulk)**.
 
