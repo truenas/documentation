@@ -19,7 +19,7 @@ The **User Quotas** screen displays the names and quota data of any user account
 
 ![UserQuotasDataQuotaSCALE](/images/SCALE/22.12/UserQuotasDataQuotaSCALE.png "User Quotas List View")
 
-The **Show All Users** toggle button displays all users, or hides built-in users. **Add** displays the **[Set User Quotas](#set-user-quotas-screen)** screen. 
+The **Show All Users** toggle button displays all users or hides built-in users. **Add** displays the **[Set User Quotas](#set-user-quotas-screen)** screen. 
 
 If you have a number of user quotas set up, the **Actions** options include **Set Quotas (Bulk)**.
 
