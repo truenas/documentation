@@ -101,7 +101,7 @@ See the Docker [DNS services documentation](https://docs.docker.com/config/conta
 | **DNS Configuration** | Specify custom DNS configuration to apply to the pod. Click **Add** to display a **Nameserver** entry field. Click again to add another name server. |
 | **Nameserver** | Enter the IP address of the name server. |
 | **Searches** | Click **Add** to display a **Search Entry** field to enter the search value you want to configure. |
-| **DSN Options** | Click **Add** to display a block of **Option Entry Configuration** settings. Click again to display another block of settings if needed.  |
+| **DNS Options** | Click **Add** to display a block of **Option Entry Configuration** settings. Click again to display another block of settings if needed.  |
 | **Option Name** | Required. Enter the option name. |
 | **Option Value** | Required. Enter the value for the option name. |
 | **Provide access to node network namespace for the workload** | Select to allow the container to bind to any port. Some ports still require appropriate permissions. Unless you need it, we recommend leaving this setting disabled because app containers might try to bind to arbitrary ports like 80 or 443, which the TrueNAS UI already uses.  |
@@ -116,7 +116,7 @@ Choose the protocol and enter port numbers for both the container and node. You 
 
 | Setting | Description |
 |---------|-------------|
-| **Configure Specify Node ports to forward to workload** | Click **Add** to display a block of **Port Forwarding Configuration** settings. |
+| **Specify Node ports to forward to workload** | Click **Add** to display a block of **Port Forwarding Configuration** settings. |
 | **Container Port** | Required. Do not enter the same port number used by another system service or container. |
 | **Node Port** | Required. Enter a node port number over **9000**. |
 | **Protocol** | Select the protocol from the dropdown list. Options are **TCP Protocol** or **UDP Protocol**.  |
