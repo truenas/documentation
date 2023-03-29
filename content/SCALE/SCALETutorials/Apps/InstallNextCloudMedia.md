@@ -70,17 +70,21 @@ Go to **Apps** to open the **Applications** screen and then click on the **Avail
 
 2. Locate the **nextcloud** widget and then click **Install** to open the **Nextcloud** configuration wizard.
    
-   ![AvailableApplications](/images/SCALE/22.02/AvailableApplications.png "Available Applications")
+   ![AddNextcloudAvailableAppsSCALE](/images/SCALE/22.12/AddNextcloudAvailableAppsSCALE.png "Available Applications")
 
 3. Enter a name for the app in **Application Name** and then click **Next**. This example uses *nextcloud*.   
    
-   ![AddNextcloudEnterApplicationName](/images/SCALE/22.12/AddNextcloudEnterApplicationName.png "Add Nextcloud Application Name")
+   ![AddNextcloudAppNameSCALE](/images/SCALE/22.12/AddNextcloudAppNameSCALE.png "Add Nextcloud Application Name")
 
-4. Enter a user name and password to use as a Nextcloud login on the **Nextcloud Configuration** settings screen, and then click **Next**. 
+4. Enter a user name and password to use as a Nextcloud login on the **Nextcloud Configuration** settings screen. 
    For a basic installation you can leave the default values in all settings except **Username** and **Password**. This example uses *admin* as the user.
-   TrueNAS populates **Nextcloud host** with the IP address for your server, **Nextcloud data directory** with the correct path, and **Node Port to use for Nextcloud** with the correct port number.
+   TrueNAS populates **Nextcloud host** with the IP address for your server and **Nextcloud data directory** with the correct path. The checkbox for **Install ffmpeg** is not selected by default. If selected, the utility *FFmpeg* is automatically installed when the container starts.
 
-   ![AddNextcloudUsernameAndPassword](/images/SCALE/22.12/AddNextcloudUsernameAndPassword.png "Add Nextcloud User Name and Password")
+   ![AddNextcloudConfigurationSCALE](/images/SCALE/22.12/AddNextcloudConfigurationSCALE.png "Add Nextcloud User Name and Password")
+   
+    TrueNAS populates the **Node Port to use for Nextcloud** field with the correct port number. To specify an optional **Nextcloud environment** name and value, click the **Add** button.
+
+   ![AddNextcloudEnvironmentSCALE](/images/SCALE/22.12/AddNextcloudEnvironmentSCALE.png "Add Nextcloud Environment")
 
 5. Enter the storage settings for each of the four datasets created for Nextcloud. 
    
