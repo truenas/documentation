@@ -5,7 +5,7 @@ weight: 50
 ---
 
 The TrueNAS project welcomes all documentation contributions!
-We're using [Hugo](https://gohugo.io/) to create this documentation website and the [Geekdoc theme](https://geekdocs.de) for general website styling.
+We are using [Hugo](https://gohugo.io/) to create this documentation website and the [Geekdoc theme](https://geekdocs.de) for general website styling.
 Articles are written in a combination of [Markdown](https://daringfireball.net/projects/markdown/syntax) and [HTML](https://www.w3schools.com/html/html_intro.asp) syntax.
 
 The tutorials in this section are designed to guide you with different kinds of documentation contributions.
