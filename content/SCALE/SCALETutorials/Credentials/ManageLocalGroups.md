@@ -21,7 +21,7 @@ To see saved groups, go to **Credentials > Local Groups**.
 ![GroupsListedSCALE](/images/SCALE/22.12/GroupsListedSCALE.png "Local Groups Built-In List")
 
 By default, TruNAS hides the system built-in groups.
-To see built-in groups, click the **Show Built-In Groups** toggle. The toggle turns blue and all built-in groups display. Click the **Show Built-In Groups** toggle again to show only non-built-in groups on the system.
+To see built-in groups, click the **Show Built-In Groups** toggle. The toggle turns blue, and all built-in groups display. Click the **Show Built-In Groups** toggle again to show only non-built-in groups on the system.
 
 ## Adding a New Group
 
