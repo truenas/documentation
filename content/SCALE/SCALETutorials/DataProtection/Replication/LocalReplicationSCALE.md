@@ -1,87 +1,112 @@
 ---
 title: "Setting Up a Local Replication Task"
-description: "This article provides instructions on adding a replication task on the same TrueNAS system."
+description: "This article provides instructions on adding a replication task using different pools or datasets on the same TrueNAS system."
 weight: 20
 aliases:
 tags:
- - scalereplication
- - scalebackup
+- scalereplication
+- scalebackup
+- scalesnapshots
 ---
 
 {{< toc >}}
 
 
-## Local Replication
+## Using Local Replication
 
-### Process Summary
+A local replication creates a zfs snapshot and saves it to another location on the same TrueNAS SCALE system either using a different pool, or dataset or zvol. 
+This allows users with only one system to take quick data backups or snapshots of their data when they have only one system.
+In this scenario, create a dataset on the same pool to store the replication snapshots. You can create and use a zvol for this purpose.
 
-{{< expand "Process Summary" "v" >}}
+While we recommend regularly scheduled replications to a remote location as the optimal backup scenario, this is useful when no remote backup locations are available, or when a disk is in immediate danger of failure.
 
-* Requirements: Storage pools and datasets created in **Storage > Pools**.
+{{< include file="/content/_includes/ZvolSpaceWarning.md" type="page" >}}
 
-* Go to **Data Protection > Replication Tasks** and click **ADD**
-  * Choose **Sources**
-    * Set the source location to the local system
-    * Use the file browser or type paths to the sources
-  * Define a **Destination** path
-    * Set the destination location to the local system
-  	 * Select or manually define a path to the single destination location for the snapshot copies.
-  * Set the **Replication schedule** to run once
-  * Define how long the snapshots are stored in the **Destination**
-  * Clicking **START REPLICATION** immediately snapshots the chosen sources and copies those snapshots to the destination
-    * Dialog might ask to delete existing snapshots from the destination. Be sure that all important data is protected before deleting anything.
-* Clicking the task **State** shows the logs for that replication task.
-{{< /expand >}}
+Local replication on systems with more than one pool can also create a dataset to use for the replicated snapshots.
 
-### Quick Local Backups with the Replication Wizard
+With the implementation of rootless login and the admin user, setting up replication tasks as an admin user has a few differences over setting up replication tasks when logged in as root. 
 
-TrueNAS provides a wizard for quickly configuring different simple replication scenarios.
+## Setting Up a Simple Replication Task Overview 
+This section provides a simple overview of setting up a replication task regardless of the type of replication, local or remote. 
+It also covers the related steps you should take prior to configuring a replication task. 
 
-![TasksReplicationTasksAdd](/images/CORE/12.0/TasksReplicationTasksAdd.png "New Replication Task")
+{{< include file="/content/_includes/BasicReplicationProcess.md" type="page" >}}
 
-While we recommend regularly scheduled replications to a remote location as the optimal backup scenario, the wizard can very quickly create and copy ZFS snapshots to another location on the same system.
-This is useful when no remote backup locations are available, or when a disk is in immediate danger of failure.
+## Configuring a Local Replication Task
 
-The only things you need before creating a quick local replication are datasets or zvols in a storage pool to use as the replication source and (preferably) a second storage pool to use for storing replicated snapshots.
-You can set up the local replication entirely in the **Replication Wizard**.
+The replication wizard allows users to create and copy ZFS snapshots to another location on the same system. 
+If you have an existing replication task, you can select it on the **Load Previous Replication Task** dropdown list to load the configuration settings for that task into the wizard, and then make change such as assigning it a different schedule or retention lifetime.
 
-To open the **Replication Wizard**, go to **Data Protection > Replication Tasks** and click **ADD**.
-Set the source location to the local system and pick which datasets to snapshot.
-The wizard takes new snapshots of the sources when no existing source snapshots are found.  
-Enabling **Recursive** replicates all snapshots contained within the selected source dataset snapshots.
-Local sources can also use a naming schema to identify any custom snapshots to include in the replication.
-A naming schema is a collection of [strftime](https://www.freebsd.org/cgi/man.cgi?query=strftime) time and date strings and any identifiers that a user might have added to the snapshot name.
+{{< hint info >}}
+Replication tasks require a periodic snapshot task. Early release of SCALE requires you to create a periodic snapshot task before you create the replication task, but SCALE now creates this task before it runs a replication task.
+{{< /hint >}}
+{{< hint warning >}}
+Before you begin configuring the replication task, first verify the destination dataset you want to use to store the replication snapshots is free of existing snapshots, or that snapshots with critical data are backed up before you create the task.
+{{< /hint >}}
+To create a local replication task:
 
-![TasksReplicationTasksAddLocalSourceSCALE](/images/SCALE/RepWizardLocalSourceSCALE.png "Replication with Local Source")
+1. Create the destination dataset (or Zvol) you want to use to store the replication snapshots.
+   Based on your system configuration and the number of pools on your TrueNAS SCALE system, either [create a dataset]({{< relref "DatasetsSCALE.md" >}}) in your only pool or in one of your other pools.
+  
+2. Verify the admin user home directory setting. 
+   Go to **Credentials > Local User**, click anywhere on the **admin** user row to expand it. 
+   Scroll down to the **Home Directory** setting and verify it is not **/nonexistent** but points to the **/home/admin/** path. In later release of Bluefin, select **Create Home Directory**, then Click **Save**.
 
-Set the destination to the local system and define the path to the storage location for replicated snapshots.
-When manually defining the destination, be sure to type the full path to the destination location.
+   In the early release of Bluefin, the admin user created does not point to **/home/admin/** in the **Home Directory** field. 
+   You need to create a dataset to store user home directories, for example, a dataset named *homedirectories*, then edit the admin user to change this to the path to the dataset you created, for exmaple, */tank/homedirectories*.
 
-![TasksReplicationTasksAddLocalDestSCALE](/images/SCALE/RepWizardLocalDestSCALE.png "Local Destination")
+   ![ChangeAdminUserHomeDirectorySetting](/images/SCALE/22.12/ChangeAdminUserHomeDirectorySetting.png "Home Directory Settings Early Bluefin")
 
-TrueNAS suggests a default name for the task based on the selected source and destination locations, but you can type your own name for the replication.
-You can load any saved replication task into the wizard to make creating new replication schedules even easier.
+   Make sure the home directory is not read only.
+   Click **Save**.
 
-You can define a specific schedule for this replication or choose to run it immediately after saving the new task.
-TrueNAS saves unscheduled tasks in the replication task list. You can run saved tasks manually or edit them later to add a schedule.
+3. Go to **Data Protection** and click **Add** on the **Replication Tasks** widget to open the **Replication Task Wizard**. Configure the following settings:
+   
+   ![CreateLocalReplicationTask](/images/SCALE/22.12/CreateLocalReplicationTask.png "New Local Replication Task")
+   
+   a. Select **On this System** on the **Source Location** dropdown list. 
+      Browse to the location of the pool or dataset you want to replicate and select it so it populates **Source** with the path.
+      Selecting **Recursive** replicates all snapshots contained within the selected source dataset snapshots.
 
-The destination lifetime is how long copied snapshots are stored in the destination before they are deleted.
-We usually recommend defining a snapshot lifetime to prevent storage issues.
-Choosing to keep snapshots indefinitely can require you to manually clean old snapshots from the system if or when the destination fills to capacity.
+   b. Select **On this System** on the **Destination Location** dropdown list. 
+      Browse to the location of the pool or dataset you want to use to store replicated snapshots and select it so it populates the **Destination** with the path.
 
-![TasksReplicationTasksAddLocalSourceLocalDestCustomLife](/images/CORE/12.0/TasksReplicationTasksAddLocalSourceLocalDestCustomLife.png "Custom Lifetime")
+   c. (Optional) Enter a name for the snapshot in **Task Name**. 
+      SCALE populates this field with the default name using the source and destination paths separated by a hyphen, but this default can make locating the snapshot in destination dataset a challenge. 
+      To make it easier to find the snapshot, give it name easy for you to identify. For example, a replicated task named *dailyfull* for a full file system snapshot taken daily. 
+    
+    d. Click **Next** to display the scheduling options.
 
-Clicking **START REPLICATION** saves the new task and immediately attempts to replicate snapshots to the destination.
-When TrueNAS detects that the destination already has unrelated snapshots, it asks to delete the unrelated snapshots and do a full copy of the new snapshots.
-This can delete important data, so ensure you can delete any existing snapshots or back them up in another location.
+    e. Select the **Replication Schedule** radio button you want to use. Select **Run Once** to set up a replication task you run one time.
+       Select **Run On a Schedule** then select when from the **Schedule** dropdown list.
+    
+    ![CreateReplicationTaskSetSchedule](/images/SCALE/22.12/CreateReplicationTaskSetSchedule.png "Set Replication Task Schedule")
 
-TrueNAS adds the simple replication to the replication task list and shows that it is currently running.
-Clicking the task state shows the replication log with an option to download the log to your local system.
+    f. Select the **Destination Snapshot Lifetime** radio button option you want to use. 
+       This specifies how long SCALE should store copied snapshots in the destination dataset before SCALE deletes it.
+       **Same as Source** is selected by default. Select **Never Delete** to keep all snapshots until you delete them manually.
+       Select **Custom** to show two additional settings, then enter the number of the duration you select from the dropdown list. For example, *2 Weeks*.
+  
+  4. Click **START REPLICATION**. 
+     A dialog displays if this is the first snapshot taken using the destination dataset.
+     If SCALE does not find a replicated snapshot in the destination dataset to use to create an incremental snapshot, it deletes any existing snapshots found and creates a full copy of the day snapshot to use as a basis for the future scheduled incremental snapshots for this schedule task. 
+     This operation can delete important data, so ensure you can delete any existing snapshots or back them up in another location.
+     
+     ![ReplicationSnapshotConfirmationDialog](/images/SCALE/22.12/ReplicationSnapshotConfirmationDialog.png "Local Replication Task Confirmation")
 
-![TasksReplicationTasksLogSCALE](/images/SCALE/RepLogSCALE.png "Replication Log")
+     Click **Confirm**, then **Continue** to add the task to the **Replication Task** widget. 
+     The newly added task shows the status as **PENDING** until it runs on the schedule you set. 
+     
+     ![ReplicationTaskWidgetWithPendingTask](/images/SCALE/22.12/ReplicationTaskWidgetWithPendingTask.png "Replication Task in Pending State")
+     
+     Select **Run Now** if you want to run the task immediately.
 
-To confirm that snapshots are replicated, go to **Storage > Snapshots > Snapshots** and verify the destination dataset has new snapshots with correct timestamps.
+To see a log for a task, click the task **State** to open a dialog with the log for that replication task.
 
-![TasksReplicationTasksLocalSnapshotsSCALE](/images/SCALE/RepLocalSnaphots.png "Local Replicated Snapshots")
+To see the replication snapshots, go to **Datasets**, select the destination dataset on the tree table, then select **Manage Snapshots** on the **Data Protection** widget to see the list of snapshots in that dataset. Click **Show extra columns** to add more information columns to the table such as the date created which can help you locate a specific snapshot or enter part of or the full the name in the search field to narrow the list of snapshots.
+
+![ReplicationSnapthotListInDestinationDataset](/images/SCALE/22.12/ReplicationSnapthotListInDestinationDataset.png "Snapshot List in Destination Dataset")
+
 
 {{< taglist tag="scalereplication" limit="10" >}}
+{{< taglist tag="scalesnapshots" limit="10" title="Related Snapshot Articles" >}}
