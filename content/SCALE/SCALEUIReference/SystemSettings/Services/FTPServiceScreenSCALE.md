@@ -74,7 +74,7 @@ Enable TLS when possible (especially when exposing FTP to a WAN). TLS effectivel
 | **TLS No Certificate Request** | Select if the client cannot connect, likely because the client server is not correctly handling the server certificate request. |
 | **TLS No Empty Fragments** | Not recommended. This option bypasses a security mechanism. |
 | **TLS No Session Reuse Required** | This option reduces connection security. Only use it if the client does not understand reused SSL sessions. |
-| **TLS Export Standard Vars** | Selected to set several environment variables. |
+| **TLS Export Standard Vars** | Select to set several environment variables. |
 | **TLS DNS Name Required** | Select to require the client DNS name to resolve to its IP address and the cert contain the same DNS name. |
 | **TLS IP Address Required** | Select to require the client certificate IP address to match the client IP address. |
 
