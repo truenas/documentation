@@ -89,7 +89,7 @@ Enable TLS when possible (especially when exposing FTP to a WAN). TLS effectivel
 | **Enable FXP** | Select to enable the File eXchange Protocol (FXP). We do not recommend FXP since it leaves the server vulnerable to FTP bounce attacks. |
 | **Allow Transfer Resumption** | Select to allow FTP clients to resume interrupted transfers. |
 | **Perform Reverse DNS Lookups** | Select to allow performing reverse DNS lookups on client IPs. This option causes long delays if you do not configure reverse DNS. |
-| **Masquerade Address** | Enter a public IP address or host name. Set if FTP clients cannot connect through a NAT device. |
+| **Masquerade Address** | Enter a public IP address or host name. Use if FTP clients cannot connect through a NAT device. |
 | **Display Login** | Enter a message that displays to local login users after authentication. Anonymous login users do not see this message. |
 | **Auxiliary Parameters** | Used to add additional [proftpd(8)](https://linux.die.net/man/8/proftpd) parameters. |
 
