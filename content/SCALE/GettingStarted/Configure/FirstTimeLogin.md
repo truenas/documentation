@@ -57,10 +57,10 @@ The browser you use can impact the quality of your user experience. We generally
 With the implementation of rootless login, root is no longer the default administrator username, rather you use the new admin user created during the installation process. 
 We recommend creating the admin user during the installation process and using it to log into SCALE.
 
-Based on the authentication method selected in step 4 of the SCALE [TrueNAS installer Console Setup]({{< relref "InstallingScale.md" >}}) process, you could see one of three sign-in splash screen options for the web UI.
+Based on the authentication method selected in step 4 of the SCALE [TrueNAS installer Console Setup]({{< relref "InstallingScale.md#using-the-truenas-installer-console-setup" >}}) process, you could see one of three sign-in splash screen options for the web UI.
 
 * Selecting **1. Administrative user (admin)** opens the SCALE sign-in screen to log in with the admin username and password created during installation.
-* Selecting **2. Root user (not recommended** opens the SCALE sign-in screen to log in with the root username and the root password created during installation.
+* Selecting **2. Root user (not recommended)** opens the SCALE sign-in screen to log in with the root username and the root password created during installation.
 * Selecting **3. Configuring using Web UI** opens a SCALE sign-in screen where you select the option for either the admin or root user and create the password.
 
 If you select option 1, the root user still exists but with the password disabled by default, which means only the admin user can log into the system. 
@@ -68,7 +68,7 @@ You can activate the password for the root user for some limited uses, but you s
 
 ### Logging In as Admin
 
-If you set up the admin user during the installation, enter the username **admin** and password you set up. 
+If you set up the admin user during the installation using the option **1. Administrative user (admin)**, enter the username **admin** and password you set up. 
 
 ![LoginScreenSCALE](/images/SCALE/22.12/LoginScreenSCALE.png "TrueNAS SCALE Login Screen")
 
@@ -82,9 +82,13 @@ To create an admin user go to **Credentials > Local Users**, and click **Add** t
 Follow the directions in [Managing Users]({{< relref "ManageLocalUsersScale.md" >}}) to create an admin user with all the settings it requires.
 
 ### Creating an Administrator Account at First Log in
-Selecting the option to create the root or administration user when you first log into SCALE presents a sign-in splash screen with two radio buttons. Select either the admin or root user option, then enter the password to use with that user. After selecting the option another sign-in splash screen displays where you enter the password for the administration user option you selected.
+Selecting the option **3. Configuring using Web UI** during the installation asks you to create the root or administration user when you first log into SCALE. This option presents a sign-in splash screen with two radio buttons.
 
-After creating the login account, go to **Credentials > Local Users** screen. [Create the admin account]({{< relref "ManageLocalUsersSCALE.md" >}}) immediately after you enter the UI. Create or edit the [admin user account settings]({{< relref "ManageLocalUsersSCALE.md" >}}), enable the password, and click **Save**. After setting up the admin user, then edit the root user to disable the password and resume rootless login security hardening.
+![FirstTimeLoginInstallOpt3SCALE](/images/SCALE/22.12/FirstTimeLoginInstallOpt3SCALE.png "TrueNAS SCALE Login Screen Set Admin Password")
+
+Select either the admin or root user (not recommended) option, then enter the password to use with that user.
+
+If you chose **Root user (not recommended)** as the TrueNAS authentication method, go to the **Credentials > Local Users** screen. [Create the admin account]({{< relref "ManageLocalUsersSCALE.md" >}}) immediately after you enter the UI. Create the [admin user account settings]({{< relref "ManageLocalUsersSCALE.md" >}}), enable the password, and click **Save**. After setting up the admin user, edit the root user to disable the password and resume rootless login security hardening.
 
 {{< expand "What happens if I disable both admin and root passwords at the same time?" "V">}}
 If you disabled the root user password and did not create the admin user and enable that password, or you disable both admin and root user passwords and your session times out before you enable one of the passwords, SCALE displays a sign-in screen that allows you create a temporary password for one-time access. 
