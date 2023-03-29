@@ -29,7 +29,7 @@ To find more details about the different Warranty and Service Level Agreement (S
 
 When the system is ready to be in production, update the status by selecting **This is a production system** and then click the **Proceed** button. This sends an email to iXsystems declaring that the system is in production. 
 
-While not required for declaring the system is in production, TrueNAS has an option to include a initial debug with the email that can assist support in the future.
+While not required for declaring the system is in production, TrueNAS has the option to include an initial debug with the email that can assist support in the future.
 
 ## Setting Up Proactive Support
 Silver/Gold Coverage Customers can enable iXsystems Proactive Support. This feature automatically emails iXsystems when certain conditions occur in a TrueNAS system.

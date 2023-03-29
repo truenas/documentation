@@ -26,7 +26,7 @@ Go to the [TrueNAS project on Jira](https://ixsystems.atlassian.net/jira/softwar
 
 Set the **Issue Type** to **Bug**. The form reloads with more fields. Do not select the **Defect** option which is only for internal use. 
 
-Developers use most of the fields on bug tickets, but you should fill out the **Summary** and **Description** to provide a useable report. 
+Developers use most of the fields on bug tickets, but you should fill out the **Summary** and **Description** to provide a usable report. 
 
 The **Summary** is a short, descriptive title that helps developers find the issue and understand the topic.
 
@@ -44,7 +44,7 @@ A good bug report includes these elements:
 
 * A description of what actually happened while taking the steps listed above.
 
-* The TrueNAS software version you are using which is found on the main **Dashboard**.
+* The TrueNAS software version you are using, which is found on the main **Dashboard**.
 
 * The current service configuration if the bug is service-related to help developers replicate your system.
 
@@ -87,22 +87,22 @@ If you have discovered a suspected security vulnerability in the latest version 
 {{< include file="/content/_includes/CreateDebugSCALE.md" type="page" >}}
 
 ### Adding a Debug File to a Jira Ticket
-Jira provides a public facing area for files that do not require privacy. 
+Jira provides a public-facing area for files that do not require privacy. 
 iXsystems also provides a secure file attachment area that only developers can access, where you can upload files with sensitive information like a system debug or screenshot of network connections.
 
 Debug files attached directly to the Jira issue ticket are visible to other users searching and reading Jira issue tickets. 
 To keep your sensitive information private, use the link in the system-generated message posted to your Jira ticket to upload files to the private attachment area. 
 Be sure to link your file uploads to your Jira ticket number before you click **Save** after uploading your file. 
 
-If you are not concerned about data privacy, you can attach the debug, core, log or other files to the Jira ticket. 
+If you are not concerned about data privacy, you can attach the debug, core, log, or other files to the Jira ticket. 
 
 ### Attaching Files to New Tickets
 
-Drag and drop public facing files into the **Attachment** box when creating a new ticket:
+Drag and drop public-facing files into the **Attachment** box when creating a new ticket:
 
 ![JiraAttachmentNew](/images/Contribute/newjiraattachments.png "NAS Project Bug Creation Form")
 
-To protect your privacy, please use the link in the system generated message to upload your debug or any screenshot with sensitive information to the private file attachment area. 
+To protect your privacy, please use the link in the system-generated message to upload your debug or any screenshot with sensitive information to the private file attachment area. 
 Link this upload to your Jira issue ticket so developers can locate the file. Files uploaded to this service are only visible to project developers. 
 
 ### Attaching Files to Existing Tickets

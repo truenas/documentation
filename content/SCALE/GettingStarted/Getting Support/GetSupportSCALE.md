@@ -19,10 +19,10 @@ Enterprise SCALE hardware customers with support contracts should contact iXsyst
 {{< /expand >}}
 {{< /enterprise >}}
 
-TrueNAS SCALE users are welcome to report bugs, suggest new TrueNAS features, and vote for suggested improvment in the Jira project instance. 
+TrueNAS SCALE users are welcome to report bugs, suggest new TrueNAS features, and vote for suggested improvements in the Jira project instance. 
 Have questions? We recommend searching through the software documentation and community resources for answers. 
 
-Non-Enterprise SCALE customers experiencing software bugs or instability can try to find answers in the various community forums or can [file an issue ticket](https://www.truenas.com/docs/contributing/issuereporting/) through the Jira ticket reporting system for TrueNAS. The [Issue Reporting]({{< relref "/content/Contributing/IssueReporting/_index.md" >}}) article for more information what type of information to include in issue tickets in Jira, and attaching files to issue tickets.
+Non-Enterprise SCALE customers experiencing software bugs or instability can try to find answers in the various community forums, or they can [file an issue ticket](https://www.truenas.com/docs/contributing/issuereporting/) through the Jira ticket reporting system for TrueNAS. The [Issue Reporting]({{< relref "/content/Contributing/IssueReporting/_index.md" >}}) article has more information on what type of information and attachments to include in Jira tickets.
 
 When reporting an issue, download a system debug file taken immediately following the issue occurrence. 
 This captures the system configuration information and logs iXsystems needs to help resolve your issues. 
@@ -40,7 +40,7 @@ The [TrueNAS Community](https://www.truenas.com/community/) is an active online 
 You must [register](https://www.truenas.com/community/register/) to post.
 We encourage new users to briefly [introduce](https://www.truenas.com/community/forums/introductions.25/) themselves and review the [forum rules](https://www.truenas.com/community/threads/forum-rules.45124/) before posting.
 
-[Community Resources](https://www.truenas.com/community/resources/) are user-contributed articles about every facet of using TrueNAS, organized into broad categories,and they incorporate a community rating system to better highlight content that the whole community has found helpful.
+[Community Resources](https://www.truenas.com/community/resources/) are user-contributed articles about every facet of using TrueNAS organized into broad categories. They incorporate a community rating system to better highlight content that the whole community has found helpful.
 
 ### Using TrueNAS Social Media
 

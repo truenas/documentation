@@ -37,7 +37,7 @@ If the debug file is too large to attach to your ticket, the following displays:
 ![GeneralSettingsSCALEJiraTicketDebugToLarge](/images/SCALE/GeneralSettingsSCALEJiraTicketDebugToLarge.png "SCALE General Settings Debug To Large To Attach")  
 
 Provide a brief summary of the issue in **Subject**. 
-Enter much details about the issue as possible as the reason for submitting the ticket in the **Description** field. 
+Enter as many details about the issue as possible and the reason for submitting the ticket in the **Description** field. 
 Attach any applicable screenshots and click **Save**.
 
 ![GeneralSettingsSCALEJiraTicketCompletion](/images/SCALE/GeneralSettingsSCALEJiraTicketCompletion.png "SCALE General Settings Jira Ticket Completion")
