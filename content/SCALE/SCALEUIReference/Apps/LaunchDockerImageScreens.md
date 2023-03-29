@@ -93,7 +93,7 @@ See the Docker [DNS services documentation](https://docs.docker.com/config/conta
 | **Host Interface** | Required. Select a host interface on your system from the dropdown list. |
 | **IPAM Type** | Required. Select an option from the dropdown list to specify the IPAM type. Options are **Use DHCP** or **Use Static IP**. To add a default route, select **Add route**, which allows you to enter route destination IP /subnet 0.0.0.0/0. Enter the gateway (for example, *192.168.1.1*). After submitting the docker image, navigate to **Installed Applications**, locate the docker image you added, select **Edit** and change the route destination/subnet to equal 0.0.0.0 /0. |
 
-![LaunchDockerImageAddDNS](/images/SCALE/22.12.2/LaunchDockerImageAddDNS.png "Add DNS Policy and Settings")  
+![LaunchDockerImageAddDNS](/images/SCALE/22.12/LaunchDockerImageAddDNS.png "Add DNS Policy and Settings")  
 
 | Setting | Description |
 |---------|-------------|
