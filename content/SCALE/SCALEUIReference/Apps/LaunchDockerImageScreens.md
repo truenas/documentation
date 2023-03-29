@@ -134,7 +134,7 @@ For more details, see the [Kubernetes hostPath documentation](https://kubernetes
 Users can create additional Persistent Volumes (PVs) for storage within the container. 
 PVs consume space from the pool chosen for application management. To do this, name each new dataset and define a path where that dataset appears inside the container.
 
-![LaunchDockerImageAddStorage](/images/SCALE/22.12.2/LaunchDockerImageAddStorage.png "Add Storage Paths and Volumes") 
+![LaunchDockerImageAddStorage](/images/SCALE/22.12/LaunchDockerImageAddStorage.png "Add Storage Paths and Volumes") 
 
 | Setting | Description |
 |---------|-------------|
