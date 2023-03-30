@@ -24,7 +24,7 @@ The **Datasets** screen displays **No Datasets** with a **Create Pool** button i
 After creating a dataset, the left side of the screen displays a tree table that lists parent or child datasets (or zvols). The **Details for *datasetname*** area on the right side of the screen displays a set of dataset widgets.
 
 {{< hint info >}}
-Large petabyte systems may report storage numbers inaccurately. Storage configurations with more than 9,007,199,254,740,992 bytes will round the last 4 digits.
+Large petabyte systems might report storage numbers inaccurately. Storage configurations with more than 9,007,199,254,740,992 bytes will round the last 4 digits.
 
 For example, a system with 18,446,744,073,709,551,615 bytes reports the number as 18,446,744,073,709,552,000 bytes.
 {{< /hint >}}
@@ -286,7 +286,7 @@ The **Other Options** help tune the dataset for specific data sharing protocols,
 |---------|-------------|
 | **ZFS Deduplication** | Select the option from the dropdown list to transparently reuse a single copy of duplicated data to save space. Options are **Inherit** to use the parent or root dataset settings. **On** to use deduplication. **Off** to not use deduplication, or **Verify** to do a byte-to-byte comparison when two blocks have the same signature to verify the block contents are identical.<br> Deduplication can improve storage capacity, but is RAM intensive. Compressing data is recommended before using deduplication.<br> Deduplicating data is a one-way process. *Deduplicated data cannot be undeduplicated!* |
 | **Case Sensitivity** | Select the option from the dropdown list. **Sensitive** assumes file names are case sensitive. **Insensitive** assumes file names are not case sensitive. You cannot change case sensitivity after the saving the dataset. |
-| **Share Type** | Select the option from the dropdown list to define the type of data sharing the dataset uses to optimize the dataset for that sharing protocol. Select **SMB** if using with an SMB share. Select **Generic** for all other share types. You cannot change this setting after the saving dataset. |
+| **Share Type** | Select the option from the dropdown list to define the type of data sharing the dataset uses to optimize the dataset for that sharing protocol. Select **SMB** if using with an SMB share. Select **Generic** for all other share types. Select **Apps** when creating a dataset to work an application. If you plan to deploy container applications, the system automatically creates the **ix-applications** dataset but this is not used for application data storage. You cannot change this setting after the saving dataset. |
 {{< /expand >}}
 
 ### Quota Management Settings - Advanced Options
