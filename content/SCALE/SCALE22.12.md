@@ -31,6 +31,14 @@ Want to get involved by collaborating on TrueNAS SCALE? Join our [Official Disco
 | SCALE 22.12.2 | Internal Testing Sprints | 13 March 2023 - 7 April 2023 |
 | SCALE 22.12.2 | Tag | 10 April 2023 |
 | SCALE 22.12.2 | Release | 11 April 2023 |
+| SCALE 22.12.3 | Code-freeze | 10 May 2023 |
+| SCALE 22.12.3 | Internal Testing Sprints | 11 - 26 May 2023 |
+| SCALE 22.12.3 | Tag | 29 May 2023 |
+| SCALE 22.12.3 | Release | 30 May 2023 |
+| SCALE 23.10-BETA.1 (Cobia) | Code-freeze | 13 June 2023
+| SCALE 23.10-BETA.1 (Cobia) | Internal Testing Sprints | 14 - 30 June 2023 |
+| SCALE 23.10-BETA.1 (Cobia) | Tag | 3 July 2023 |
+| SCALE 23.10-BETA.1 (Cobia) | Release | 5 July 2023 |
 
 ## Obtaining the Release
 
