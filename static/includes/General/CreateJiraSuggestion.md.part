@@ -8,6 +8,6 @@ To suggest a new feature, go to https://jira.ixsystems.com/projects/NAS/, log in
 
 ![JiraSuggestionCreate](/images/Contribute/JiraSuggestionCreate.png "Creating a new Suggestion")
 
-Briefly describe the new feature you'd like to see added in the **Summary** section.
+Briefly describe the new feature you would like to see added in the **Summary** section.
 After creating your feature suggestion, it moves to the **Gathering Interest** stage, where the community can review and vote for the feature.
 After gathering enough interest, the TrueNAS Release Council reviews the suggestion for feasibility and determines where to add the feature in the software roadmap.
