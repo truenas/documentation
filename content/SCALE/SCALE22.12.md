@@ -28,9 +28,9 @@ Want to get involved by collaborating on TrueNAS SCALE? Join our [Official Disco
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
 | SCALE 22.12.2 | Code-freeze | 08 March 2023 |
-| SCALE 22.12.2 | Internal Testing Sprints | 13 March 2023 - 24 March 2023 |
-| SCALE 22.12.2 | Tag | 27 March 2023 |
-| SCALE 22.12.2 | Release | 28 March 2023 |
+| SCALE 22.12.2 | Internal Testing Sprints | 13 March 2023 - 7 April 2023 |
+| SCALE 22.12.2 | Tag | 10 April 2023 |
+| SCALE 22.12.2 | Release | 11 April 2023 |
 
 ## Obtaining the Release
 

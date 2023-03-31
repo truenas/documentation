@@ -1,7 +1,7 @@
 ---
 title: "Bits or Bytes?"
 description: "This article provides information on the computerized storage measurements, bits and bytes, and how these apply in TrueNAS products."
-weight: 
+weight: 11
 aliases:
 tags:
 - scalestorage
