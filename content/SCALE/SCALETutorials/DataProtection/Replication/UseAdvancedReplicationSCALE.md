@@ -1,7 +1,7 @@
 ---
 title: "Setting Up Advanced Replication Tasks"
 description: "This article provides instruction on using the advanced replication task creation screen to add a replication task."
-weight: 60
+weight: 30
 aliases:
 tags:
  - scalereplication
