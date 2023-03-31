@@ -10,7 +10,7 @@ tags:
 
 ## Controller or Node?
 
-In general, terms like controller and node are sometimes used to mean the same thing but are different when talking about TrueNAS storage arrays and configuration scenarios.
+The terms controller and node have different meanings when used in reference to TrueNAS storage arrays and their configuration scenarios.
 
 In general, a *node* runs the services or back end applications that access data on shared external disks but it is not the brains of the operation. 
 In networking, a node can refer to a client, server, or peers. 
