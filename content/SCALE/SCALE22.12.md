@@ -132,7 +132,7 @@ TrueNAS SCALE 22.12.1 has been released. It includes many new features and impro
 * [NAS-118508](https://ixsystems.atlassian.net/browse/NAS-118508) Editing stopped app configuration starts the app
 * [NAS-118583](https://ixsystems.atlassian.net/browse/NAS-118583) Time Zone is right. System time is not
 * [NAS-118588](https://ixsystems.atlassian.net/browse/NAS-118588) TrueNAS keeps falling off LDAP
-* [NAS-118611](https://ixsystems.atlassian.net/browse/NAS-118611) SMBD tained
+* [NAS-118611](https://ixsystems.atlassian.net/browse/NAS-118611) SMBD tainted
 * [NAS-118660](https://ixsystems.atlassian.net/browse/NAS-118660) Cloud sync task "Bandwidth Limit" pop-up help text appears to be incorrect
 * [NAS-118756](https://ixsystems.atlassian.net/browse/NAS-118756) Deleting a dataset removes snapshot tasks assigned to the parent of a dataset
 * [NAS-118803](https://ixsystems.atlassian.net/browse/NAS-118803) VM deletion performs a check on systems virtualization capability
@@ -144,7 +144,7 @@ TrueNAS SCALE 22.12.1 has been released. It includes many new features and impro
 * [NAS-119007](https://ixsystems.atlassian.net/browse/NAS-119007) API call "pool.dataset.details" responds to an object with a field "snapshot\_count = 0"
 * [NAS-119037](https://ixsystems.atlassian.net/browse/NAS-119037) Critical alert : Failed to start kubernetes cluster for Applications : \[EFAULT\] Failed to configure PV/PVCs support
 * [NAS-119081](https://ixsystems.atlassian.net/browse/NAS-119081) Do not disallow failover when system versions mismatch
-* [NAS-119110](https://ixsystems.atlassian.net/browse/NAS-119110) Zpool status is not showing the last scheduled Srcub event
+* [NAS-119110](https://ixsystems.atlassian.net/browse/NAS-119110) Zpool status is not showing the last scheduled Scrub event
 * [NAS-119113](https://ixsystems.atlassian.net/browse/NAS-119113) Head template error when reloading the page
 * [NAS-119129](https://ixsystems.atlassian.net/browse/NAS-119129) TrueNAS-SCALE-22.12-RC.1 couldn't use Intel 12th gen iGPU and custom Docker Image
 * [NAS-119131](https://ixsystems.atlassian.net/browse/NAS-119131) VM Details are not updated after form submit, page reload helps
@@ -298,14 +298,14 @@ TrueNAS SCALE 22.12.0 has been released and includes many new features and impro
 * [NAS-113218](https://ixsystems.atlassian.net/browse/NAS-113218) Enclosure UI stage left Vdev should show name not type
 * [NAS-113376](https://ixsystems.atlassian.net/browse/NAS-113376) Default app name to chart name
 * [NAS-114204](https://ixsystems.atlassian.net/browse/NAS-114204) Show a warning in the UI for certain VM PCI devices
-* [NAS-114413](https://ixsystems.atlassian.net/browse/NAS-114413) Porting angelfish changes to bluefin
+* [NAS-114413](https://ixsystems.atlassian.net/browse/NAS-114413) Porting angelfish changes to Bluefin
 * [NAS-114500](https://ixsystems.atlassian.net/browse/NAS-114500) micro optimization in snmp-agent.py get\_Kstat on SCALE
 * [NAS-115010](https://ixsystems.atlassian.net/browse/NAS-115010) Disable the docker-compose binary
 * [NAS-115057](https://ixsystems.atlassian.net/browse/NAS-115057) Provide indication that SED password was set
 * [NAS-115066](https://ixsystems.atlassian.net/browse/NAS-115066) Debug should show if connected to truecommand
 * [NAS-115139](https://ixsystems.atlassian.net/browse/NAS-115139) Create and update SCALE-v5.15-stable to latest
 * [NAS-115222](https://ixsystems.atlassian.net/browse/NAS-115222) Explicitly ask for user's input on websockify port of display devices
-* [NAS-115308](https://ixsystems.atlassian.net/browse/NAS-115308) Update bluefin apt mirrors
+* [NAS-115308](https://ixsystems.atlassian.net/browse/NAS-115308) Update Bluefin apt mirrors
 * [NAS-115390](https://ixsystems.atlassian.net/browse/NAS-115390) Remove repository logic from repo-mgmt as we don't have any anymore
 * [NAS-115402](https://ixsystems.atlassian.net/browse/NAS-115402) Update kubernetes and related dependencies
 * [NAS-115407](https://ixsystems.atlassian.net/browse/NAS-115407) Have automatic updates for collabora app
@@ -927,7 +927,7 @@ TrueNAS SCALE 22.12-BETA.2 has been released and includes many new features and 
 * [NAS-117901](https://ixsystems.atlassian.net/browse/NAS-117901) Optimize Zpool related alerts
 * [NAS-117897](https://ixsystems.atlassian.net/browse/NAS-117897) webUI isn't showing what controller the alert was generated on
 * [NAS-117895](https://ixsystems.atlassian.net/browse/NAS-117895) CRITICAL ERROR ON UPDATE TrueNAS-22.02.0.1 -> TrueNAS-22.02.3
-* [NAS-117890](https://ixsystems.atlassian.net/browse/NAS-117890) Truecharts Applications failing to deploy due to snapshot task on latest bluefin nightly
+* [NAS-117890](https://ixsystems.atlassian.net/browse/NAS-117890) Truecharts Applications failing to deploy due to snapshot task on latest Bluefin nightly
 * [NAS-117872](https://ixsystems.atlassian.net/browse/NAS-117872) License Apps and VMs for Enterprise \(Backend\)
 * [NAS-117871](https://ixsystems.atlassian.net/browse/NAS-117871) Hide/Disable Apps and VMs based on License for Enterprise \(UI\)
 * [NAS-117857](https://ixsystems.atlassian.net/browse/NAS-117857) WebUI shell breaks on long strings
@@ -1088,7 +1088,7 @@ Additional feature in future Bluefin releases:
 * [NAS-117707](https://ixsystems.atlassian.net/browse/NAS-117707) Merge zfs-2.1.6-staging
 * [NAS-117704](https://ixsystems.atlassian.net/browse/NAS-117704) Enforce linting rules in CI
 * [NAS-117699](https://ixsystems.atlassian.net/browse/NAS-117699) add tests for copy\_file\_range \(server-side copy\) for NFSv4.2
-* [NAS-117696](https://ixsystems.atlassian.net/browse/NAS-117696) Update bluefin nightlies mirrors
+* [NAS-117696](https://ixsystems.atlassian.net/browse/NAS-117696) Update Bluefin nightlies mirrors
 * [NAS-117646](https://ixsystems.atlassian.net/browse/NAS-117646) Reduce amount on any's
 * [NAS-117634](https://ixsystems.atlassian.net/browse/NAS-117634) Refactor bootenv-status.component
 * [NAS-117614](https://ixsystems.atlassian.net/browse/NAS-117614) middleware files in /var/run should be in dedicated run directory
