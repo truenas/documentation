@@ -222,7 +222,7 @@ The **Available Applications** screen displays the widgets for all applications 
 
 The **Install** button on each application card opens the configuration wizard for that application.
 
-Click on the application icon or name to open an **appname** Application Summary** window that includes information on the **Catalog**, **Categories**, **Train**, **Status**, and **Versions** for that application.
+Click on the application icon or name to open an ***appname* Application Summary** window that includes information on the **Catalog**, **Categories**, **Train**, **Status**, and **Versions** for that application.
 {{< /expand >}}
 
 ## Manage Catalogs
