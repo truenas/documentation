@@ -15,7 +15,7 @@ Since TrueNAS considers shared host paths non-secure, apps that use shared host 
 
 ## Using Shared Host Paths with Safety Checks Enabled
 
-If you group share and application data under a common dataset (such as *media*) where both use a path such as */tank/media/*, the application will fail to deploy. 
+If you group share and application data under a common dataset (such as *media*) where both use a path such as */tank/media/*, the application fails to deploy. 
 
 You can still group shares and applications under *media*, but you must alter the path for shares and apps, such as */tank/media-shares* or */tank/media/shares/sharename*, and */tank/media-apps* or */tank/media/apps/appname*. 
 
