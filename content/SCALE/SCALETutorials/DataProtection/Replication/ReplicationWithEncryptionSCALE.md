@@ -75,13 +75,13 @@ This saves some time when creating multiple replication tasks between the same t
       If your source is a remote system, select **On a Different System**. The **Destination Location** automatically changes to **On this System**.       
       If your source is the local TrueNAS SCALE system, you must select **On a Different System** from the **Destination Location** dropdown list to do remote replication. 
       
-      TrueNAS shows the number snapshots available for replication.
+      TrueNAS shows the number of snapshots available for replication.
     
-    b. Select an existing SSH connection to the remote system.
+    b. Select an existing SSH connection to the remote system or create a new connection.
        Select **Create New** to open the **[New SSH Connection](#configure-a-new-ssh-connection)** configuration screen.
     
     c. Browse to the source pool/dataset(s), then click on the dataset(s) to populate the **Source** with the path. 
-       You can select multiple sources or manually type the names into the **Source** field. 
+       You can select multiple sources or manually type the names into the **Source** field. Separate multiple entries with commas.
        Selecting **Recursive** replicates all snapshots contained within the selected source dataset snapshots.
 
     d. Repeat to populate the **Destination** field. 
@@ -107,7 +107,7 @@ This saves some time when creating multiple replication tasks between the same t
 
    h. (Optional) Enter a name for the snapshot in **Task Name**. 
       SCALE populates this field with the default name using the source and destination paths separated by a hyphen, but this default can make locating the snapshot in destination dataset a challenge. 
-      To make it easier to find the snapshot, give it name easy for you to identify. For example, a replicated task named *dailyfull* for a full file system snapshot taken daily. 
+      To make it easier to find the snapshot, give it a name that is easy for you to identify. For example, a replicated task named *dailyfull* for a full file system snapshot taken daily. 
     
 {{< include file="/content/_includes/ReplicationScheduleAndRetentionSteps.md" type="page" >}}
 
