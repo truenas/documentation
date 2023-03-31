@@ -350,7 +350,7 @@ TrueNAS SCALE 22.12.0 has been released and includes many new features and impro
 * [NAS-118823](https://ixsystems.atlassian.net/browse/NAS-118823) Refactor Display device code in VmListComponent
 * [NAS-118825](https://ixsystems.atlassian.net/browse/NAS-118825) Refactor Create SSH Connection in replication wizard
 * [NAS-118846](https://ixsystems.atlassian.net/browse/NAS-118846) Improve disabled reasons
-* [NAS-118855](https://ixsystems.atlassian.net/browse/NAS-118855) Dump currently active WebSocket sessions. Allow terminating all excep…
+* [NAS-118855](https://ixsystems.atlassian.net/browse/NAS-118855) Dump currently active WebSocket sessions. Allow terminating all except the current one.
 * [NAS-118899](https://ixsystems.atlassian.net/browse/NAS-118899) Refactor VM Edit form
 * [NAS-118900](https://ixsystems.atlassian.net/browse/NAS-118900) Improve return types for appLet directive
 * [NAS-118906](https://ixsystems.atlassian.net/browse/NAS-118906) Refactor dialogs in PodShellComponent and PodLogsComponent
@@ -377,7 +377,7 @@ TrueNAS SCALE 22.12.0 has been released and includes many new features and impro
 * [NAS-119041](https://ixsystems.atlassian.net/browse/NAS-119041) Restore \`vmware\_sync\` functionality from CreateSnapshotDialogComponent
 * [NAS-119044](https://ixsystems.atlassian.net/browse/NAS-119044) Add endpoint to check service configuration prior to start
 * [NAS-119046](https://ixsystems.atlassian.net/browse/NAS-119046) Remove "Unused Resources" section header on Storage Dashboard
-* [NAS-119047](https://ixsystems.atlassian.net/browse/NAS-119047) BlueFin Kernel updates to fix several CVEs
+* [NAS-119047](https://ixsystems.atlassian.net/browse/NAS-119047) Bluefin Kernel updates to fix several CVEs
 * [NAS-119056](https://ixsystems.atlassian.net/browse/NAS-119056) Refactor truecommand wireguard interface name
 * [NAS-119059](https://ixsystems.atlassian.net/browse/NAS-119059) Remove numberValidator
 * [NAS-119084](https://ixsystems.atlassian.net/browse/NAS-119084) Remove kubernetes asyncio from scale build
@@ -400,8 +400,8 @@ TrueNAS SCALE 22.12.0 has been released and includes many new features and impro
 * [NAS-115389](https://ixsystems.atlassian.net/browse/NAS-115389) Updating apt mirror uri fails to reflect when updating mirrors
 * [NAS-115619](https://ixsystems.atlassian.net/browse/NAS-115619) Don't write to same log file during parallel checkout in builder
 * [NAS-115716](https://ixsystems.atlassian.net/browse/NAS-115716) "Import pool" dialog says "No options"
-* [NAS-115783](https://ixsystems.atlassian.net/browse/NAS-115783) Generated dhclient.conf files in BlueFIN nightlies are broken
-* [NAS-115855](https://ixsystems.atlassian.net/browse/NAS-115855) Incrementals are failing in jenkins
+* [NAS-115783](https://ixsystems.atlassian.net/browse/NAS-115783) Generated dhclient.conf files in Bluefin nightlies are broken
+* [NAS-115855](https://ixsystems.atlassian.net/browse/NAS-115855) Incrementals are failing in Jenkins
 * [NAS-115857](https://ixsystems.atlassian.net/browse/NAS-115857) Investigate scale-pr\* builders as build fails on them
 * [NAS-115878](https://ixsystems.atlassian.net/browse/NAS-115878) CI fails when installing charts like collabora sometimes
 * [NAS-115904](https://ixsystems.atlassian.net/browse/NAS-115904) Machines do not properly retrieve NFS SPN from Active Directory on join 
@@ -421,7 +421,7 @@ TrueNAS SCALE 22.12.0 has been released and includes many new features and impro
 * [NAS-118492](https://ixsystems.atlassian.net/browse/NAS-118492) Datasets detail cards should realign to fill horizontal space first
 * [NAS-118571](https://ixsystems.atlassian.net/browse/NAS-118571) Apps Used port detection, does not read kubernetes services
 * [NAS-118660](https://ixsystems.atlassian.net/browse/NAS-118660) Cloud sync task "Bandwidth Limit" pop-up help text appears to be incorrect
-* [NAS-118691](https://ixsystems.atlassian.net/browse/NAS-118691) NoVNC Not working for Some VMS on Scale BlueFin Beta 2
+* [NAS-118691](https://ixsystems.atlassian.net/browse/NAS-118691) NoVNC Not working for Some VMS on Scale Bluefin Beta 2
 * [NAS-118738](https://ixsystems.atlassian.net/browse/NAS-118738) \[SCALE\]: svclb pods are getting created on kube-system namespace and there are also couple of stuck svclb pods from previous installation
 * [NAS-118756](https://ixsystems.atlassian.net/browse/NAS-118756) Deleting a dataset removes snapshot tasks assigned to the parent of a dataset
 * [NAS-118759](https://ixsystems.atlassian.net/browse/NAS-118759) \[SCALE\] Failed to start kubernetes cluster for Applications
@@ -437,7 +437,7 @@ TrueNAS SCALE 22.12.0 has been released and includes many new features and impro
 * [NAS-118891](https://ixsystems.atlassian.net/browse/NAS-118891) Used snapshot size not showed on the storage page
 * [NAS-118895](https://ixsystems.atlassian.net/browse/NAS-118895) \[Apps\] Installing App without kubernetes objects \(empty\), leads to error and middleware lockup
 * [NAS-118897](https://ixsystems.atlassian.net/browse/NAS-118897) Fix invalid token on the Shell page after manual reload
-* [NAS-118898](https://ixsystems.atlassian.net/browse/NAS-118898) \[SCALE\] Editing an app does not show the default values for fields under a checkbox \(subsquestions\)
+* [NAS-118898](https://ixsystems.atlassian.net/browse/NAS-118898) \[SCALE\] Editing an app does not show the default values for fields under a checkbox
 * [NAS-118902](https://ixsystems.atlassian.net/browse/NAS-118902) Minio app update to 2022-10-29\_1.6.59 stuck at “Deploying”. Requires Roll Back to 1.6.58
 * [NAS-118905](https://ixsystems.atlassian.net/browse/NAS-118905) Loading indicator is not cleared on error in Permissions card
 * [NAS-118921](https://ixsystems.atlassian.net/browse/NAS-118921) \[Apps\]  Helm charts are recreated/upgraded on restart before cluster is ready
@@ -1176,7 +1176,7 @@ Additional feature in future Bluefin releases:
 * [NAS-117777](https://ixsystems.atlassian.net/browse/NAS-117777) Unable to join active directory if SMB is not started first
 * [NAS-117776](https://ixsystems.atlassian.net/browse/NAS-117776) Clean chroot mounts when making update image
 * [NAS-117768](https://ixsystems.atlassian.net/browse/NAS-117768) undefined in filter box on some pages
-* [NAS-117762](https://ixsystems.atlassian.net/browse/NAS-117762) Build with BlueFin with Samba 4.17
+* [NAS-117762](https://ixsystems.atlassian.net/browse/NAS-117762) Build with Bluefin with Samba 4.17
 * [NAS-117761](https://ixsystems.atlassian.net/browse/NAS-117761) fix typo of nft fw rules for SCALE HA
 * [NAS-117755](https://ixsystems.atlassian.net/browse/NAS-117755) \* [SCALE\] Downloading Logs from VMs is not working
 * [NAS-117749](https://ixsystems.atlassian.net/browse/NAS-117749) Unable to select "category" when submitting a bug report from TrueNAS Scale 22.02.3
