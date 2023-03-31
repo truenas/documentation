@@ -61,7 +61,7 @@ The **Interface Add** screen displays additional configuration settings based on
 
 | Settings | Description |
 |----------|-------------|
-| **Bridge Memebers** | Select network interfaces to include in the bridge from the dropdown list. |
+| **Bridge Members** | Select network interfaces to include in the bridge from the dropdown list. |
 
 **Ling Aggreation Settings**
 
@@ -76,7 +76,7 @@ The **Interface Add** screen displays additional configuration settings based on
 |----------|-------------|
 | **Parent Interface** | Select the VLAN parent interface on your TrueNAS from the dropdown list. Usually Ethernet card connected to a switch port configured for the VLAN. New link aggregations are not available until the system is restared. |
 | **Vlan Tag** | Enter the numeric tag configured in the switched network. This is a required field. |
-| **Prioirty Code Point** | Select the [Class of Service](https://tools.ietf.org/html/rfc4761#section-4.2.7) from the dropdown list. The available 802.1p class of service ranges from **Best effort (default) to **Network control (highest)**. |
+| **Priority Code Point** | Select the [Class of Service](https://tools.ietf.org/html/rfc4761#section-4.2.7) from the dropdown list. The available 802.1p class of service ranges from **Best effort (default) to **Network control (highest)**. |
 
 ## Interface Edit Screen
 
@@ -97,7 +97,7 @@ The **Interface Edit** screen displays only the editable configuration settings 
 
 | Settings | Description |
 |----------|-------------|
-| **Dsable Hardware Offloading** | Select to turn off hardware offloading for network traffice processing. Warning! Disabling hardware offloading can reduce network performance, and is only recommended when the interface is managing jails, plugins or virtual machines. |
+| **Disable Hardware Offloading** | Select to turn off hardware offloading for network traffice processing. Warning! Disabling hardware offloading can reduce network performance, and is only recommended when the interface is managing jails, plugins or virtual machines. |
 | **MTU** | A maximum transmission unit (MTU) is the largest protocol data unti that can be communicated. The largest workable MTU size varies with network interfaces and equipment. 1500 and 9000 are standard Ethernet MTU sizes. Leave blank restores this field to the default value of **1500**. |
 | **Options** | Enter additional parameters from [ifconfig(8)](https://www.freebsd.org/cgi/man.cgi?query=ifconfig). |
 
