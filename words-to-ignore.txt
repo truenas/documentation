@@ -1168,3 +1168,5 @@ Nvidia
 Gbps
 Gb
 GbE
+ Gb
+ Gb 
