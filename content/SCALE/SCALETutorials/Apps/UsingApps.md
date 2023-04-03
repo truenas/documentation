@@ -12,7 +12,7 @@ tags:
 
 {{< toc >}}
 
-Use **Applications** screens to deply both pre-built official containers and custom application containers in the SCALE web interface.
+Use **Applications** screens to deploy both pre-built official containers and custom application containers in the SCALE web interface.
 
 ![AvailableApplicationsScreen](/images/SCALE/22.02/AvailableApplicationsScreen.png "Apps Catalog")
 
@@ -20,26 +20,13 @@ The first time you open the **Applications** screen, the UI asks you to choose a
 
 ![AppsSettingsChoosePool](/images/SCALE/22.02/AppsSettingsChoosePool.png "Choosing a Pool for Apps")
 
-We recommend users keep the container use case in mind when choosing a pool. 
-Select a pool that has enough space for all the application containers you intend to use.
-TrueNAS creates an *ix-applications* dataset on the chosen pool and uses it to store all container-related data. This is for internal use only. 
-Set up a new dataset before installing your applications if you want to store your application data in an location separated from other storage on your system. 
-For example, create the datasets for Nextcloud application, and if installing Plex, create the dataset(s) for Plex data storage needs.
+We recommend keeping the container use case in mind when choosing a pool. 
+Select a pool with enough space for all the application containers you intend to use.
+TrueNAS creates an *ix-applications* dataset on the chosen pool and uses it to store all container-related data. The dataset is for internal use only. 
+Set up a new dataset before installing your applications if you want to store your application data in a location separate from other storage on your system. 
+For example, create the datasets for the Nextcloud application, and, if installing Plex, create the dataset(s) for Plex data storage needs.
 
-{{< hint warning >}}
-Since TrueNAS considers shared host paths non-secure, apps that use shared host paths (such as those services like SMB are using) fail to deploy. 
-Best practice is to create datasets for applications that do not share the same host path as an SMB or NFS share. 
-If you want apps to deploy in a shared host path, either disable **Enable Host Path Safety Checks** in **Applications > Settings > Advanced Settings** or alter the path for shares and applications.
-For example, if you want to group the share and application data under a common dataset such as *media*, where both use a path such as */tank/media/*, and you want to enable host path validation, this can result in the application not moving past the deployment stage. 
-You can still group shares and applications under *media* but alter the path for shares and apps, such as */tank/media-shares* or */tank/media/shares/sharename* and */tank/media-apps* or */tank/media/apps/appname*. 
-This differs enough to use host path validation and avoid issues that prevent application deployment. 
-{{< /hint >}}
-
-You can find additional options for configuring general network interfaces and IP addresses for application containers in **Apps > Settings > Advanced Settings**.
-
-![AppsAdvancedSettingsKubernetesSettings](/images/SCALE/22.12/AppsAdvancedSettingsKubernetesSettings.png "Apps Advanced Settings")
-
-{{< include file="/_includes/AppsVMsNoHTTPS.md" type="page" >}}
+{{< include file="/content/_includes/AppsVMsNoHTTPS.md" type="page" >}}
 
 ![SystemSettingsGUISettingsSCALE](/images/SCALE/22.12/SystemSettingsGUISettingsSCALE.png "General System Settings")
 
@@ -49,7 +36,7 @@ Official applications are pre-configured and only require a name during deployme
 
 ![AppAddPlexApplicationName](/images/SCALE/22.12/AppAddPlexApplicationName.png "Plex App Wizard Application Name")
 
-A button to open the application web interface displays when the container is deployed and active.
+A button to open the application web interface displays when the container deploys and activates.
 
 ![AppsInstalledPlexWidgetActive](/images/SCALE/22.12/AppsInstalledPlexWidgetActive.png "Plex App: Active")
 
@@ -68,7 +55,7 @@ Official applications use the default system-level Kubernetes Node IP settings i
 
 You can change the Kubernetes Node IP to assign an external interface to your apps, separate from the web UI interface.
 
-We recommend using the default Kubernetes Node IP (0.0.0.0) to ensure apps function properly.
+We recommend using the default Kubernetes Node IP (0.0.0.0) to ensure apps function correctly.
 
 ## Deploying Custom Application Containers
 
@@ -78,7 +65,7 @@ To deploy a custom application container in the SCALE web interface, go to **App
 
 Custom applications use the system-level Kubernetes Node IP settings by default. You can assign an external interface to custom apps by setting one on the **Networking** section of the **Launch Docker Image** form. 
 
-Unless you need to run an application separately from the Web UI, we recommend using the default Kubernetes Node IP (0.0.0.0) to ensure apps function properly.
+Unless you need to run an application separately from the Web UI, we recommend using the default Kubernetes **Node IP** (0.0.0.0) to ensure apps function correctly.
 
 ## Upgrading Apps
 
@@ -92,7 +79,7 @@ To upgrade multiple apps, select the checkbox in the widget of each app you want
 
 ## Deleting Apps
 
-To delete an application, click **Stop** and wait for the status to change to stopped. 
+To delete an application, click **Stop** and wait for the status to show stopped. 
 Click the <span class="iconify" data-icon="bi:dots-three-outline-vertical-fill"></span> in an app widget to see the list of app options, then select **Delete**. 
 
 ![DeleteStoppedApp](/images/SCALE/22.12/DeleteStoppedApp.png "Delete App in Stopped State")
@@ -103,12 +90,12 @@ If you attempt to delete the application before it fully deploys, a dialog opens
 
 Click **Confirm** and then **OK** to delete the application.
 
-If you only select **Confirm** to delete the selected application and you do not select **Delete docker images used by the app** the docker image remains on the list of images on the **Manage Docker Images** screen. 
+If you only select **Confirm** to delete the application and do not select **Delete docker images used by the app**, the docker image remains on the image list on the **Manage Docker Images** screen. 
 To remove the image, go to **Manage Docker Images**, click the <span class="iconify" data-icon="bi:dots-three-outline-vertical-fill"></span> and then **Delete**. 
 
 ![AppsManageDockerImageDelete](/images/SCALE/22.12/AppsManageDockerImageDelete.png "Delete Docker Image")
 
-Click **Confirm** and **Force delete** then click **Delete** to remove the docker image from the system.
+Click **Confirm** and **Force delete**, then click **Delete** to remove the docker image from the system.
 
 
 {{< taglist tag="scaleapps" limit="10" >}}
