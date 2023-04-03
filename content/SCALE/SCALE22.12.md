@@ -447,7 +447,7 @@ TrueNAS SCALE 22.12.0 has been released and includes many new features and impro
 * [NAS-118941](https://ixsystems.atlassian.net/browse/NAS-118941) \`.system\` dataset is visible in \`pool.dataset.details\`
 * [NAS-118969](https://ixsystems.atlassian.net/browse/NAS-118969) fchmod\(\) on dirs via pyglfs doesn't persist
 * [NAS-118977](https://ixsystems.atlassian.net/browse/NAS-118977) SCALE scst crash on attaching iscsi zvol
-* [NAS-118979](https://ixsystems.atlassian.net/browse/NAS-118979) Trivial: Display / Numerical Issue wth Dashboatrd display of disks in Pool
+* [NAS-118979](https://ixsystems.atlassian.net/browse/NAS-118979) Trivial: Display / Numerical Issue with Dashboard display of disks in Pool
 * [NAS-118983](https://ixsystems.atlassian.net/browse/NAS-118983) cron jobs don't work
 * [NAS-119000](https://ixsystems.atlassian.net/browse/NAS-119000) \[Scale\] Single app won't update, but bulk does. Also with midclt command works.
 * [NAS-119006](https://ixsystems.atlassian.net/browse/NAS-119006) Enclosure View Only Updates After Leaving Page
@@ -463,7 +463,7 @@ TrueNAS SCALE 22.12.0 has been released and includes many new features and impro
 * [NAS-119043](https://ixsystems.atlassian.net/browse/NAS-119043) Fix and improve config.save and config.upload
 * [NAS-119051](https://ixsystems.atlassian.net/browse/NAS-119051) Importing certificate with password may be broken
 * [NAS-119052](https://ixsystems.atlassian.net/browse/NAS-119052) Network Card Statistics
-* [NAS-119058](https://ixsystems.atlassian.net/browse/NAS-119058) UPS Service \( save Setting is greyed out, when IP or Hostname is set in Field "Port or Hostname"\)
+* [NAS-119058](https://ixsystems.atlassian.net/browse/NAS-119058) UPS Service \( save Setting is grayed out, when IP or Hostname is set in Field "Port or Hostname"\)
 * [NAS-119060](https://ixsystems.atlassian.net/browse/NAS-119060) Installed apps not showing
 * [NAS-119062](https://ixsystems.atlassian.net/browse/NAS-119062) Storage screen will not refresh after successful import of a pool
 * [NAS-119079](https://ixsystems.atlassian.net/browse/NAS-119079) Different endpoints disagree on which drives belong to a pool
@@ -473,10 +473,10 @@ TrueNAS SCALE 22.12.0 has been released and includes many new features and impro
 * [NAS-119099](https://ixsystems.atlassian.net/browse/NAS-119099) Loading indicator in permissions card appears outside of the card
 * [NAS-119116](https://ixsystems.atlassian.net/browse/NAS-119116) VM CPU info is N/A
 * [NAS-119124](https://ixsystems.atlassian.net/browse/NAS-119124) Fix status icons on storage dashboard
-* [NAS-119141](https://ixsystems.atlassian.net/browse/NAS-119141) Reduce amount of anys
+* [NAS-119141](https://ixsystems.atlassian.net/browse/NAS-119141) Reduce amount of any
 * [NAS-119187](https://ixsystems.atlassian.net/browse/NAS-119187) After upgrade from Angelfish to Bluefin, middlewared does not start
 * [NAS-119213](https://ixsystems.atlassian.net/browse/NAS-119213) SMB file moving issues on MacOS
-* [NAS-119274](https://ixsystems.atlassian.net/browse/NAS-119274) After reboot the earlier version \(22.04\) stucked at deploying whereas the new version \(22.12 RC-1\) stopped deploying any application.
+* [NAS-119274](https://ixsystems.atlassian.net/browse/NAS-119274) After reboot the earlier version \(22.04\) stuck at deploying whereas the new version \(22.12 RC-1\) stopped deploying any application.
 * [NAS-119289](https://ixsystems.atlassian.net/browse/NAS-119289) SMB auth hanging after update to Bluefin 22.12-RC.1 from Angelfish 22.02.4
 
 {{< /expand >}}
