@@ -747,7 +747,7 @@ This is a an early release meant for previewing and testing features and is **no
 </li>
 <li>[<a href='https://jira.ixsystems.com/browse/NAS-111757'>NAS-111757</a>] -         UEFI console refresh while loading modules
 </li>
-<li>[<a href='https://jira.ixsystems.com/browse/NAS-112445'>NAS-112445</a>] -         Reimplement zilstat SNMP MIBs to avoid using DTrace
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-112445'>NAS-112445</a>] -         Re-implement zilstat SNMP MIBs to avoid using DTrace
 </li>
 <li>[<a href='https://jira.ixsystems.com/browse/NAS-112553'>NAS-112553</a>] -         Number of CPU scheduler improvements
 </li>
@@ -811,7 +811,7 @@ This is a an early release meant for previewing and testing features and is **no
 </li>
 <li>[<a href='https://jira.ixsystems.com/browse/NAS-107884'>NAS-107884</a>] -         &quot;Network connectivity will be interrupted.&quot; message is incorrect
 </li>
-<li>[<a href='https://jira.ixsystems.com/browse/NAS-108939'>NAS-108939</a>] -         Dashboard Memory legend changes colour
+<li>[<a href='https://jira.ixsystems.com/browse/NAS-108939'>NAS-108939</a>] -         Dashboard Memory legend changes color
 </li>
 <li>[<a href='https://jira.ixsystems.com/browse/NAS-109397'>NAS-109397</a>] -         Failed to connect to RRDCacheD
 </li>

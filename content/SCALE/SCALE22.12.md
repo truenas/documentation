@@ -485,7 +485,7 @@ TrueNAS SCALE 22.12.0 has been released and includes many new features and impro
 {{< expand "22.12-RC.1" "v" >}}
 **November 15, 2022**
 
-TrueNAS SCALE 22.12-RC.1 has been released and includes many new features and improved functionaltiy. SCALE 22.12-RC.1 features include:
+TrueNAS SCALE 22.12-RC.1 has been released and includes many new features and improved functionality. SCALE 22.12-RC.1 features include:
 
 * Adds FIPS-validated SSL module (Enterprise Only)
 * Adds the R50M to the Enclosure screen
@@ -545,7 +545,7 @@ SCALE 22.12-RC.1 introduces a change in Applications. Users upgrading to 22.12-R
 * [NAS-118390](https://ixsystems.atlassian.net/browse/NAS-118390) Refactor \`UpdateComponent\` to use ix-form
 * [NAS-118394](https://ixsystems.atlassian.net/browse/NAS-118394) implement get\_real\_filename\_at\_fn\(\) in vfs\_shadow\_copy\_zfs in Samba 4.17
 * [NAS-118408](https://ixsystems.atlassian.net/browse/NAS-118408) Type safety/linter improvements
-* [NAS-118411](https://ixsystems.atlassian.net/browse/NAS-118411) Fix swatch colour in space-management-chart
+* [NAS-118411](https://ixsystems.atlassian.net/browse/NAS-118411) Fix swatch color in space-management-chart
 * [NAS-118420](https://ixsystems.atlassian.net/browse/NAS-118420) Extract user/group deletion dialog forms
 * [NAS-118432](https://ixsystems.atlassian.net/browse/NAS-118432) Acpidump on scale
 * [NAS-118480](https://ixsystems.atlassian.net/browse/NAS-118480) Do not spam daemon logs with kube-router logs
@@ -600,7 +600,7 @@ SCALE 22.12-RC.1 introduces a change in Applications. Users upgrading to 22.12-R
 * [NAS-118354](https://ixsystems.atlassian.net/browse/NAS-118354) Nextcloud on SCALE crashes when Postgres Backup Volume option is selected
 * [NAS-118369](https://ixsystems.atlassian.net/browse/NAS-118369) recycle touch file causes SMB assertion on 4.17.0 release
 * [NAS-118375](https://ixsystems.atlassian.net/browse/NAS-118375) UI Breaks on mobile screens if you have dataset details open and you delete the dataset
-* [NAS-118381](https://ixsystems.atlassian.net/browse/NAS-118381) test\_create\_schema\_formattion unit test failing
+* [NAS-118381](https://ixsystems.atlassian.net/browse/NAS-118381) test\_create\_schema\_formation unit test failing
 * [NAS-118383](https://ixsystems.atlassian.net/browse/NAS-118383) \[TrueNAS SCALE-22.12-BETA.1\] Config Import not working
 * [NAS-118421](https://ixsystems.atlassian.net/browse/NAS-118421) openvpn: Options error: In \[CMD-LINE\]:1: Error opening configuration file: client.conf
 * [NAS-118423](https://ixsystems.atlassian.net/browse/NAS-118423) Reporting is broken - Cannot read properties of undefined 
@@ -609,7 +609,7 @@ SCALE 22.12-RC.1 introduces a change in Applications. Users upgrading to 22.12-R
 * [NAS-118447](https://ixsystems.atlassian.net/browse/NAS-118447) During Select an unused disk progress-spinner is not render
 * [NAS-118464](https://ixsystems.atlassian.net/browse/NAS-118464) \`Metadata \(Special\) Small Block Size\` on the dataset form has a null default value
 * [NAS-118465](https://ixsystems.atlassian.net/browse/NAS-118465) Config upload error message is not displayed
-* [NAS-118470](https://ixsystems.atlassian.net/browse/NAS-118470) Multiselect styles are broken
+* [NAS-118470](https://ixsystems.atlassian.net/browse/NAS-118470) Multi-select styles are broken
 * [NAS-118477](https://ixsystems.atlassian.net/browse/NAS-118477) Cleanup all the cluster things
 * [NAS-118478](https://ixsystems.atlassian.net/browse/NAS-118478) fix cluster smb config test
 * [NAS-118513](https://ixsystems.atlassian.net/browse/NAS-118513) prevent swap on data drives on ix enterprise hardware
@@ -656,10 +656,10 @@ See the [MinIO Migration documentation](https://min.io/docs/minio/kubernetes/ups
 {{< expand "22.12-BETA.2" "v" >}}
 **October 18, 2022**
 
-TrueNAS SCALE 22.12-BETA.2 has been released and includes many new features and improved functionaltiy. SCALE 22.-BETA.2 features include:
+TrueNAS SCALE 22.12-BETA.2 has been released and includes many new features and improved functionality. SCALE 22.-BETA.2 features include:
 
 * Removes old Storage pages, renames storage modules, and makes minor improvements to storage pages
-* Adds the offical Filecoin application to the Apps catalog
+* Adds the official Filecoin application to the Apps catalog
 
 ## 22.12-BETA.2 Change Log
 
@@ -697,7 +697,7 @@ TrueNAS SCALE 22.12-BETA.2 has been released and includes many new features and 
 * [NAS-118432](https://ixsystems.atlassian.net/browse/NAS-118432) Acpidump on scale
 * [NAS-118420](https://ixsystems.atlassian.net/browse/NAS-118420) Extract user/group deletion dialog forms
 * [NAS-118412](https://ixsystems.atlassian.net/browse/NAS-118412) Pool process modal width depends on content \[width jumping\]
-* [NAS-118411](https://ixsystems.atlassian.net/browse/NAS-118411) Fix swatch colour in space-management-chart
+* [NAS-118411](https://ixsystems.atlassian.net/browse/NAS-118411) Fix swatch color in space-management-chart
 * [NAS-118387](https://ixsystems.atlassian.net/browse/NAS-118387) USB passthrough should allow USB VID/PID and dynamic location
 * [NAS-118364](https://ixsystems.atlassian.net/browse/NAS-118364) `make reinstall` of middleware should apply systemd unit changes
 * [NAS-118334](https://ixsystems.atlassian.net/browse/NAS-118334) ScreenType across APP => make sure we use `enum` and use in .html instead of just string
@@ -707,7 +707,7 @@ TrueNAS SCALE 22.12-BETA.2 has been released and includes many new features and 
 * [NAS-118262](https://ixsystems.atlassian.net/browse/NAS-118262) Improvements for Boot Pool Status page
 * [NAS-118216](https://ixsystems.atlassian.net/browse/NAS-118216) Record midclt enclosure.query in debug \(Core/Enterprise/Scale\)
 * [NAS-118198](https://ixsystems.atlassian.net/browse/NAS-118198) Tuning to improve Storj / rclone performance
-* [NAS-118185](https://ixsystems.atlassian.net/browse/NAS-118185) Reduce number of any's
+* [NAS-118185](https://ixsystems.atlassian.net/browse/NAS-118185) Reduce number of any
 * [NAS-118151](https://ixsystems.atlassian.net/browse/NAS-118151) Hide Aliases section if DHCP/Autoconfiguration radio box\(es\) is/are checked
 * [NAS-118130](https://ixsystems.atlassian.net/browse/NAS-118130) Upgrade rxjs
 * [NAS-118101](https://ixsystems.atlassian.net/browse/NAS-118101) Function clean up for Datasets module
@@ -776,7 +776,7 @@ TrueNAS SCALE 22.12-BETA.2 has been released and includes many new features and 
 * [NAS-118490](https://ixsystems.atlassian.net/browse/NAS-118490) Extract strings from app routes for translations
 * [NAS-118478](https://ixsystems.atlassian.net/browse/NAS-118478) fix cluster smb config test
 * [NAS-118476](https://ixsystems.atlassian.net/browse/NAS-118476) Override avahi hostname with hostname\_virtual in HA
-* [NAS-118471](https://ixsystems.atlassian.net/browse/NAS-118471) Unexpected directory explorer behaviour in Cloud Sync Task
+* [NAS-118471](https://ixsystems.atlassian.net/browse/NAS-118471) Unexpected directory explorer behavior in Cloud Sync Task
 * [NAS-118469](https://ixsystems.atlassian.net/browse/NAS-118469) call ctdb shared vol methods explicitly
 * [NAS-118463](https://ixsystems.atlassian.net/browse/NAS-118463) VMware snapshot tests
 * [NAS-118459](https://ixsystems.atlassian.net/browse/NAS-118459) Fix and enhance recycle test
@@ -796,11 +796,11 @@ TrueNAS SCALE 22.12-BETA.2 has been released and includes many new features and 
 * [NAS-118391](https://ixsystems.atlassian.net/browse/NAS-118391) Cannot create VM - NoneType object is not subscriptable
 * [NAS-118384](https://ixsystems.atlassian.net/browse/NAS-118384) don't block event loop in ws\_can\_access
 * [NAS-118383](https://ixsystems.atlassian.net/browse/NAS-118383) \[TrueNAS SCALE-22.12-BETA.1\] Config Import not working
-* [NAS-118381](https://ixsystems.atlassian.net/browse/NAS-118381) test\_create\_schema\_formattion unit test failing
+* [NAS-118381](https://ixsystems.atlassian.net/browse/NAS-118381) test\_create\_schema\_formation unit test failing
 * [NAS-118375](https://ixsystems.atlassian.net/browse/NAS-118375) UI Breaks on mobile screens if you have dataset details open and you delete the dataset
 * [NAS-118373](https://ixsystems.atlassian.net/browse/NAS-118373) Fix a few HA issues on SCALE
 * [NAS-118372](https://ixsystems.atlassian.net/browse/NAS-118372) Add some more delay to fix k8s logs/exec tests
-* [NAS-118362](https://ixsystems.atlassian.net/browse/NAS-118362) drammatically optimize retrieving drive temps
+* [NAS-118362](https://ixsystems.atlassian.net/browse/NAS-118362) dramatically optimize retrieving drive temps
 * [NAS-118354](https://ixsystems.atlassian.net/browse/NAS-118354) Nextcloud on SCALE crashes when Postgres Backup Volume option is selected
 * [NAS-118353](https://ixsystems.atlassian.net/browse/NAS-118353) Fix loading for mobile screens on the Datasets page
 * [NAS-118352](https://ixsystems.atlassian.net/browse/NAS-118352) Incorrect current train
@@ -875,7 +875,7 @@ TrueNAS SCALE 22.12-BETA.2 has been released and includes many new features and 
 * [NAS-118098](https://ixsystems.atlassian.net/browse/NAS-118098) improve failover.disabled.reasons
 * [NAS-118097](https://ixsystems.atlassian.net/browse/NAS-118097) Allow non-coroutine to be passed to `register_hook` and executed corr…
 * [NAS-118094](https://ixsystems.atlassian.net/browse/NAS-118094) Use libwbclient bindings
-* [NAS-118093](https://ixsystems.atlassian.net/browse/NAS-118093) Dont block event look in check\_permission hook
+* [NAS-118093](https://ixsystems.atlassian.net/browse/NAS-118093) Don't block event look in check\_permission hook
 * [NAS-118083](https://ixsystems.atlassian.net/browse/NAS-118083) fix AttributeError crash in ha\_permission hook
 * [NAS-118080](https://ixsystems.atlassian.net/browse/NAS-118080) fix scale nightlies build \(update collectd to 5.12.0-11\)
 * [NAS-118078](https://ixsystems.atlassian.net/browse/NAS-118078) fix test\_is\_outdated\_alert
@@ -911,7 +911,7 @@ TrueNAS SCALE 22.12-BETA.2 has been released and includes many new features and 
 * [NAS-117953](https://ixsystems.atlassian.net/browse/NAS-117953) \[SCALE\] Arrays are getting removed when editing
 * [NAS-117952](https://ixsystems.atlassian.net/browse/NAS-117952) \[Apps\] App logs dropdown, doesn't allow selecting initcontainer
 * [NAS-117950](https://ixsystems.atlassian.net/browse/NAS-117950) mask ndctl-monitor.service
-* [NAS-117944](https://ixsystems.atlassian.net/browse/NAS-117944) Allow passing OTP token to \`keychaincredential.remote\_ssh\_semiautomat…
+* [NAS-117944](https://ixsystems.atlassian.net/browse/NAS-117944) Allow passing OTP token to \`keychaincredential.remote\_ssh\_semiautomatic
 * [NAS-117943](https://ixsystems.atlassian.net/browse/NAS-117943) Browser navigation doesn't close slide-in
 * [NAS-117933](https://ixsystems.atlassian.net/browse/NAS-117933) remove migrate call in make reinstall\_container
 * [NAS-117931](https://ixsystems.atlassian.net/browse/NAS-117931) Using HTTP Basic Auth will bypass 2FA
@@ -919,7 +919,7 @@ TrueNAS SCALE 22.12-BETA.2 has been released and includes many new features and 
 * [NAS-117926](https://ixsystems.atlassian.net/browse/NAS-117926) fix test\_mountinfo unit test
 * [NAS-117925](https://ixsystems.atlassian.net/browse/NAS-117925) Make container.prune a job
 * [NAS-117921](https://ixsystems.atlassian.net/browse/NAS-117921) add `reinstall_container` make argument
-* [NAS-117917](https://ixsystems.atlassian.net/browse/NAS-117917) hitting ctrl \+C via OOB managemnt on truenas console menu locks up console
+* [NAS-117917](https://ixsystems.atlassian.net/browse/NAS-117917) hitting ctrl \+C via OOB management on truenas console menu locks up console
 * [NAS-117916](https://ixsystems.atlassian.net/browse/NAS-117916) NFS does not start on boot
 * [NAS-117911](https://ixsystems.atlassian.net/browse/NAS-117911) Samba Share ACL resets to Everyone when disabled and re-enabled
 * [NAS-117903](https://ixsystems.atlassian.net/browse/NAS-117903) CPU Usage graph key shows incorrect values when zooming
@@ -972,7 +972,7 @@ TrueNAS SCALE 22.12-BETA.2 has been released and includes many new features and 
 * [NAS-112650](https://ixsystems.atlassian.net/browse/NAS-112650) Onedrive for Business
 * [NAS-112326](https://ixsystems.atlassian.net/browse/NAS-112326) Deprecate and remove "media" user and group
 * [NAS-112088](https://ixsystems.atlassian.net/browse/NAS-112088) Don't do validation on empty textboxes if they are not set required: true.
-* [NAS-111962](https://ixsystems.atlassian.net/browse/NAS-111962) "Not an interger" error in Transfers field in Sync Cloud task
+* [NAS-111962](https://ixsystems.atlassian.net/browse/NAS-111962) "Not an integer" error in Transfers field in Sync Cloud task
 * [NAS-110795](https://ixsystems.atlassian.net/browse/NAS-110795) Can't create unencrypted dataset on Encrypted pool
 {{< /expand >}}
 
@@ -999,7 +999,7 @@ Additional feature in future Bluefin releases:
 * FIPS validated SSL Module for SCALE Enterprise (target SCALE 22.12-RC.1)
 * Replacing gluster node API (target SCALE 22.12-RC.1)
 * FIPS 140-3 Level 1 Compliant Crypto Module for Enterprise Only using CorSSL module as a replacement for OpenSSL (target SCALE 22.12-RC.1)
-* Add disk count scalability that includes improved boot time (targe SCALE 22.12-RC.1)
+* Add disk count scalability that includes improved boot time (target SCALE 22.12-RC.1)
 * Replacing nodes (target SCALE 22.12-RC.1)
 * High-Availability Active/Standby (target SCALE 22.12 release)
 * Improved TrueNAS feedback system (target SCALE 22.12 release)
@@ -1027,7 +1027,7 @@ Additional feature in future Bluefin releases:
 * [NAS-117572](https://ixsystems.atlassian.net/browse/NAS-117572) Handle empty states better on new storage pages
 * [NAS-117566](https://ixsystems.atlassian.net/browse/NAS-117566) Add support for snapdev
 * [NAS-117558](https://ixsystems.atlassian.net/browse/NAS-117558) Fix loading progress on storage pages
-* [NAS-117520](https://ixsystems.atlassian.net/browse/NAS-117520) Reimplement disk health card
+* [NAS-117520](https://ixsystems.atlassian.net/browse/NAS-117520) Re-implement disk health card
 * [NAS-117510](https://ixsystems.atlassian.net/browse/NAS-117510) Extract dashboard pool loading into a separate store
 * [NAS-117492](https://ixsystems.atlassian.net/browse/NAS-117492) Adds tests to DatasetDetailsCardComponent
 * [NAS-117475](https://ixsystems.atlassian.net/browse/NAS-117475) Group disks in Unassigned disks dialog
@@ -1089,7 +1089,7 @@ Additional feature in future Bluefin releases:
 * [NAS-117704](https://ixsystems.atlassian.net/browse/NAS-117704) Enforce linting rules in CI
 * [NAS-117699](https://ixsystems.atlassian.net/browse/NAS-117699) add tests for copy\_file\_range \(server-side copy\) for NFSv4.2
 * [NAS-117696](https://ixsystems.atlassian.net/browse/NAS-117696) Update Bluefin nightlies mirrors
-* [NAS-117646](https://ixsystems.atlassian.net/browse/NAS-117646) Reduce amount on any's
+* [NAS-117646](https://ixsystems.atlassian.net/browse/NAS-117646) Reduce amount on any
 * [NAS-117634](https://ixsystems.atlassian.net/browse/NAS-117634) Refactor bootenv-status.component
 * [NAS-117614](https://ixsystems.atlassian.net/browse/NAS-117614) middleware files in /var/run should be in dedicated run directory
 * [NAS-117606](https://ixsystems.atlassian.net/browse/NAS-117606) Refactor Alert Services to ix-forms
@@ -1162,14 +1162,14 @@ Additional feature in future Bluefin releases:
 * [NAS-117864](https://ixsystems.atlassian.net/browse/NAS-117864) Fix edge case for k8s node ca
 * [NAS-117860](https://ixsystems.atlassian.net/browse/NAS-117860) Ensure that we always have a valid krb5.conf during AD start
 * [NAS-117858](https://ixsystems.atlassian.net/browse/NAS-117858) relax zfs\_space VFS object validation
-* [NAS-117852](https://ixsystems.atlassian.net/browse/NAS-117852) Fix path behaviour when disk type vm device is created
+* [NAS-117852](https://ixsystems.atlassian.net/browse/NAS-117852) Fix path behavior when disk type vm device is created
 * [NAS-117842](https://ixsystems.atlassian.net/browse/NAS-117842) fix creating/updating bonds
 * [NAS-117840](https://ixsystems.atlassian.net/browse/NAS-117840) Remove customized nss-pam-ldap from build
 * [NAS-117829](https://ixsystems.atlassian.net/browse/NAS-117829) fix failover.disabled.reasons....again
 * [NAS-117825](https://ixsystems.atlassian.net/browse/NAS-117825) Remove python nslcd client
 * [NAS-117823](https://ixsystems.atlassian.net/browse/NAS-117823) Restore loading indication on Storage pages
 * [NAS-117806](https://ixsystems.atlassian.net/browse/NAS-117806) update network configuration domain to match AD one
-* [NAS-117801](https://ixsystems.atlassian.net/browse/NAS-117801) Add some explicit tests for firstboot
+* [NAS-117801](https://ixsystems.atlassian.net/browse/NAS-117801) Add some explicit tests for first boot
 * [NAS-117795](https://ixsystems.atlassian.net/browse/NAS-117795) Move replace-disk-dialog to storage2
 * [NAS-117789](https://ixsystems.atlassian.net/browse/NAS-117789) Errors in ix-page-title-header on one pages disable header on all pages
 * [NAS-117779](https://ixsystems.atlassian.net/browse/NAS-117779) Enforce passwd/group specified reference files
