@@ -1170,3 +1170,6 @@ Gb
 GbE
  Gb
  Gb 
+Gbps)
+Gb/s
+Gb/s</td>
