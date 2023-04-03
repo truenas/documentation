@@ -18,12 +18,12 @@ FreeNAS®, TrueNAS®, TrueNAS® SCALE, TrueCommand, and all related logos are re
 * Facebook® is a registered trademark of Facebook Inc.
 * FreeBSD® and the FreeBSD® logo are registered trademarks of the FreeBSD Foundation®.
 * Helm® is a registered trademark of The Linux Foundation.
-* Infiniband® is a registered trademark Mellanox Technologies Ltd. which is a subsidiary of Nvidia.
+* Infiniband® is a registered trademark Mellanox Technologies Ltd. which is a subsidiary of NVIDIA.
 * Intel, the Intel logo, Pentium Inside, Pentium, and Xeon are trademarks of Intel Corporation in the U.S. and/or other countries.
 * Kubernetes® is a registered trademark of The Linux Foundation.
 * LinkedIn® is a registered trademark of LinkedIn Corporation.
 * Linux® is a registered trademark of Linus Torvalds.
-* Mellanox® is a registered trademark Mellanox Technologies Ltd. which is a subsidiary of Nvidia.
+* Mellanox® is a registered trademark Mellanox Technologies Ltd. which is a subsidiary of NVIDIA.
 * Nextcloud® is a registered trademark of Oracle Corporation and/or its affiliates.
 * NVM Express® is a registered trademark of Nextcloud GmbH.
 * OpenStack® is a registered trademark of The OpenStack Foundation.
