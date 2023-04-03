@@ -356,7 +356,7 @@ Select **Display** in **Device Type** in the **Add** device screen to see the di
 | **Resolution** | Select a screen resolution to use for VNC sessions. |
 | **Bind** | Select an IP address to use for VNC sessions or use the default **0.0.0.0**. |
 | **Password** | Enter a VNC password of no more than eight characters in length to automatically pass to the VNC session. |
-| **Display Type** | Select the display type from the dropdown list. Options are **VNC** or **SPICE**. VNC is the most widely used option with the best desplay, but is slower than SPICE.
+| **Display Type** | Select the display type from the dropdown list. Options are **VNC** or **SPICE**. VNC is the most widely used option with the best display but is slower than SPICE.
    SPICE has faster data transfer speed but a lower quality display, and is not as secure as VNC. |
 | **Web Interface** | Select to enable connecting to the VNC web interface. |
 | **Device Order** | Enter the number (such as *1003*) that represents where in the boot order this device should be. The higher the number the later in the boot-up process the device falls. If you want the CD-ROM to be the first device checked assign it a lower number. |
