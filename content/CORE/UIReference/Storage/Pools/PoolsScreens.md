@@ -47,7 +47,7 @@ Displays a dialog with the **Auto TRIM** and **Confirm** checkoboxes. Auto TRIM 
 
 Displays a dialog with a warning about unavailable data, backing up data before exporting/disconnecting, and lists services that could be disrupted by the process. Select from the three options:
 
-| Setting | Descritpion|
+| Setting | Description|
 |---------|------------|
 | **Destroy data on this pool?** | Select to destroy data on the pool disks. |
 | **Delete configuration of shares that used this pool?** | Selected by default to delete share configurations listed. |
