@@ -1165,6 +1165,7 @@ Postgres
 DocReplaceService
 Gbps
 GbE
+Gbs
 Gb/s
 10Gb
 OpenEBS
@@ -1176,3 +1177,4 @@ libgfapi-python
 deps
 OverlayFS
 VmListComponent
+Nvidia
