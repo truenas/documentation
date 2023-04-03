@@ -97,7 +97,7 @@ The **Interface Edit** screen displays only the editable configuration settings 
 
 | Settings | Description |
 |----------|-------------|
-| **Disable Hardware Offloading** | Select to turn off hardware offloading for network traffice processing. Warning! Disabling hardware offloading can reduce network performance, and is only recommended when the interface is managing jails, plugins or virtual machines. |
+| **Disable Hardware Offloading** | Select to turn off hardware offloading for network traffic processing. Warning! Disabling hardware offloading can reduce network performance, and is only recommended when the interface is managing jails, plugins, or virtual machines. |
 | **MTU** | A maximum transmission unit (MTU) is the largest protocol data unti that can be communicated. The largest workable MTU size varies with network interfaces and equipment. 1500 and 9000 are standard Ethernet MTU sizes. Leave blank restores this field to the default value of **1500**. |
 | **Options** | Enter additional parameters from [ifconfig(8)](https://www.freebsd.org/cgi/man.cgi?query=ifconfig). |
 
