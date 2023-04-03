@@ -70,7 +70,6 @@ Virtualizing
 OpenZFS
 DAC
 QSFP-DD
-Gb
 QSFP
 Chelsio
 SSD
@@ -300,16 +299,12 @@ scalestorage
 kilobits
 kbs
 Mbs
-Gbs
 Kbps
 Mbps
-Gbps
 KBs
 MBs
-GBs
 KBps
 MBps
-GBps
 Tebibytes
 TiB
 tebibytes
@@ -627,11 +622,9 @@ iSNS
 LANs
 dropdown
 ManagingInterfaces
-Gb
 SFP
 LSO
 LRO
-GbE
 CyberPower
 UPSs
 PSUs
@@ -949,7 +942,6 @@ Caddyfile
 SNI
 Dashcards
 tcreleasenotes
-Gb
 filewatcher
 pagerduty
 DockerHub
@@ -1163,11 +1155,6 @@ CalledProcessError
 CMD-LINE
 Postgres
 DocReplaceService
-Gbps
-GbE
-Gbs
-Gb/s
-10Gb
 OpenEBS
 fn
 UpdateComponent
@@ -1178,4 +1165,3 @@ deps
 OverlayFS
 VmListComponent
 Nvidia
-GB
