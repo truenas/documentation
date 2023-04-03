@@ -24,7 +24,7 @@
 |------|-------------|
 | **Shutdown Mode** | Select the battery option to used when the UPS initiates shutdown. Dropdown list options are **UPS reaches low battery** or **UPS goes on battery**. |
 | **Shutdown Timer** | Enter a value in seconds for the UPS to wait before initiating shutdown. Shutdown does not occur if power is restored while the timer is counting down. This value only applies when **Shutdown Mode** is set to **UPS goes on battery**. |
-| **Shutdown Comman** | Enter a command to shut down the system when either battery power is low or the shutdown timer ends. |
+| **Shutdown Command** | Enter a command to shut down the system when either battery power is low or the shutdown timer ends. |
 | **Power off UPS** | Select for the UPS to power off after shutting down the system. |
 
 **Email**
