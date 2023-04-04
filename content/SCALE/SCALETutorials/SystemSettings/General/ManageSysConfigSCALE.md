@@ -32,14 +32,17 @@ All passwords are reset if the uploaded configuration file was saved without the
 {{< /hint >}}
 
 ### Resetting to Defaults
+
+{{< enterprise >}}
+Enterprise High Availability (HA) systems should never reset their system configuration to defaults.
+[Contact iXsystems Support]({{< relref "GetSupportSCALE.md" >}}) when a system configuration reset is required.
+{{< /enterprise >}}
+
+Save the system current configuration with the **Download File** option before resetting the configuration to default settings!
+If you do not save the system configuration before resetting it, you could lose data that was not backed up, and you cannot revert to the previous configuration.
+
 The **Reset to Defaults** option resets the system configuration to factory settings. 
 After the configuration resets, the system restarts and users must set a new login password.
-
-{{< hint danger >}}
-Save the system current configuration with the **Download File** option before resetting the configuration to default settings!
- 
-If you do not save the system configuration before resetting it, you could lose data that was not backed up, and you cannot revert to the previous configuration.
-{{< /hint >}}
 
 {{< taglist tag="scalesettings" limit="10" >}}
 {{< taglist tag="scalebackup" limit="10" title="Related Backup Articles" >}}
