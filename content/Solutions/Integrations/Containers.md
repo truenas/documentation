@@ -9,7 +9,7 @@ aliases:
 
 TrueNAS CORE & Enterprise can both be used as backing storage for container workloads.
 
-The democratic-csi driver (available at https://github.com/democratic-csi/democratic-csi) allows users to integrate popular container solutions like Kubernetes, Nomad, Cloud Foundry, or Mesos into the TrueNAS CLI. The driver is sponsored by and offically supported by iXsystems for TrueNAS Enterprise Customers.
+The democratic-csi driver (available at https://github.com/democratic-csi/democratic-csi) allows users to integrate popular container solutions like Kubernetes, Nomad, Cloud Foundry, or Mesos into the TrueNAS CLI. The driver is sponsored by and officially supported by iXsystems for TrueNAS Enterprise Customers.
 
 A CSI (Container Storage Interface) is an interface between container workloads and third-party storage that supports creating and configuring persistent storage external to the orchestrator, its input/output (I/O), and its advanced functionality such as snapshots and cloning.
 

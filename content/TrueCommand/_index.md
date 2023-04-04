@@ -24,7 +24,7 @@ TrueCommand includes an auto-discovery tool that expedites identifying and integ
 {{< /expand >}}
 {{< expand "Single Sign-on to all NAS Units" "v" >}}
 Authorized administrators can quickly log into a TrueNAS system through TrueCommand
-This allows for quicker and simpler signons instead of looking up IP addresses and login credentials.
+This allows for quicker and simpler sign-on instead of looking up IP addresses and login credentials.
 This is even more beneficial when using different secure passwords for each TrueNAS instance instead of a single password across multiple systems.
 {{< /expand >}}
 {{< expand "Centralized system updates" "v" >}}

@@ -57,7 +57,7 @@ When a **Hosts Allow** list is defined, *only* the IPs and hostnames on the list
 
 ![AddRsyncModuleOtherOptions](/images/SCALE/22.12/AddRsyncModuleOtherOptions.png "Services Add Rsync Module Other Options Settings")
 
-Enter any additional rsync configuration parameters from [rsyncd.conf(5)](https://www.samba.org/ftp/rsync/rsyncd.conf.html) in **Auxilliary Parameters**.
+Enter any additional rsync configuration parameters from [rsyncd.conf(5)](https://www.samba.org/ftp/rsync/rsyncd.conf.html) in **Auxiliary Parameters**.
 
 Click **Save**.
 

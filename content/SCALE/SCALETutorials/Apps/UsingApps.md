@@ -12,7 +12,7 @@ tags:
 
 {{< toc >}}
 
-Use **Applications** screens to deply both pre-built official containers and custom application containers in the SCALE web interface.
+Use **Applications** screens to deploy both pre-built official containers and custom application containers in the SCALE web interface.
 
 ![AvailableApplicationsScreen](/images/SCALE/22.02/AvailableApplicationsScreen.png "Apps Catalog")
 
