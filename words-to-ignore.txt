@@ -1175,3 +1175,15 @@ PeriodicSnapshotTasksSCALE
 homedirectories
 DatasetsSCALE
 ConsoleSetupMenuSCALE
+mprutil
+eeprom
+elasticsearch
+sas
+nodePort
+emptyDirVolume
+mtime
+subdir
+IntegrityError
+passdb-backed
+netbiosname
+GPUs
