@@ -64,6 +64,28 @@ TrueNAS SCALE 22.12.1 has been released. It includes many new features and impro
 
 It also implements fixes to pool status reporting, application options, reporting functions, cloud sync and replication tasks, iSCSI shares, SMB service in HA systems, various UI issues, UI behavior related to isolated GPU and USB passthrough in VMs, and changes to setting options and failover on HA systems.
 
+### Component Versions
+
+TrueNAS SCALE is built from many different software components.
+This list has up to date information on which versions of Linux, ZFS, and NVIDIA drivers are included with this TrueNAS SCALE release.
+Click the component version number to see the latest release notes for that component.
+
+<table style="max-width:25%;">
+  <tr>
+    <th>Component</th>
+	<th>Version</th>
+  </tr>
+  <tr>
+    <td>Linux Kernel</td><td><a href="https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/diff/?id=v5.15.79&id2=v5.15.78&dt=2">5.15.79</a></td>
+  </tr>
+  <tr>
+	<td>Nvidia Driver</td><td><a href="https://www.nvidia.com/download/driverResults.aspx/191961/en-us/">515.65.01</a></td>
+  </tr>
+  <tr>
+	<td>ZFS</td><td><a href="https://github.com/openzfs/zfs/releases/tag/zfs-2.1.9">2.1.9</a></td>
+  </tr>
+</table>
+
 ## 22.12.2 Change Log
 
 ### New Feature
