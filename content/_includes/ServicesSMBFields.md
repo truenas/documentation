@@ -2,7 +2,7 @@
 ---
 **NetBIOS**
 
-| Settings | Descritpion |
+| Settings | Description |
 |----------|-------------|
 | **NetBIOS Name** | Automatically populated with the original host name of the system **truenas**. This name is limited to 15 characters and cannot be the same name in **Workgroup**. |
 | **NetBIOS Alias** | Enter any aliases, separated by spaces. Each alias can be up to 15 characters long. |
@@ -13,7 +13,7 @@
 
 **Other Options**
 
-| Settings | Descritpion |
+| Settings | Description |
 |----------|-------------|
 | **Unix Charset** | Select an option from the dropdown list. Default is **UTF-8** which supports all characters in all languages. |
 | **Log Level** | Select an option from the dropdown list. Options are **None**, **Minimum**, **Normal**, **Full** or **Debug**. Records SMB service messages up to the specified log level. By default, error and warning level messages are logged. |

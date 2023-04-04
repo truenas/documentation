@@ -55,7 +55,7 @@ Additional notes:
   Activating a VM that has all available memory allocated to it can slow the host system or prevent other VMs from starting.
 * **AHCI** is the recommended disk type for Windows VMs.
 * **VirtIO** as network interface requires that the chosen guest operating system support VirtIO paravirtualized network drivers.
-  {{< expand "VirtIO compatability with Windows 10 21H1" "v" >}}
+  {{< expand "VirtIO compatibility with Windows 10 21H1" "v" >}}
   VirtIO drivers are unstable with Windows 10 21H1 during the installation process and can result in VM install failure. Avoid using VirtIO drivers with Windows 10 21H2 Virtual Machines.
   {{< /expand >}}
 

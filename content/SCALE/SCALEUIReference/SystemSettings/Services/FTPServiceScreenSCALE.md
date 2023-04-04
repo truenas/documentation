@@ -65,7 +65,7 @@ Enable TLS when possible (especially when exposing FTP to a WAN). TLS effectivel
 | **Enable TLS** | Select to allow encrypted connections. Requires a certificate (created or imported using **System > Certificates**. | 
 | **Certificate** | Select the SSL certificate for TLS FTP connections from the dropdown list. To create a certificate, go to **System** > **Certificates**. |
 | **TLS Policy** | Select the policy from the dropdown list of options. Options are **On**, **off**, **Data**, **!Data**, **Auth**, **Ctrl**, **Ctrl + Data**, **Ctrl +!Data**, **Auth + Data** or **Auth +!Data**. Defines whether the control channel, data channel, both channels, or neither channel of an FTP session must occur over SSL/TLS. The policies are described [here](http://www.proftpd.org/docs/directives/linked/config_ref_TLSRequired.html). |
-| **TLS Allow Client Renegotiations** | Select to allow client renegotiations. We do not recommend this option. Setting this option breaks several security measures. See [mod_tls](http://www.proftpd.org/docs/contrib/mod_tls.html) for details. |
+| **TLS Allow Client Renegotiations** | Select to allow client renegotiation. We do not recommend this option. Setting this option breaks several security measures. See [mod_tls](http://www.proftpd.org/docs/contrib/mod_tls.html) for details. |
 | **TLS Allow Dot Login** | TrueNAS checks the user home directory for a <file>.tlslogin</file> file containing one or more PEM-encoded certificates. If not found, the user must enter their password. |
 | **TLS Allow Per User** | If select to allow sending a user password unencrypted. |
 | **TLS Common Name Required** | Select to require the common name in the certificate to match the FQDN of the host. |

@@ -123,7 +123,7 @@ This procedure walks you through adding each configuration setting on the seven 
 
    c. Select the **Discovery Authentication Method** from the dropdown list. 
 
-      **None** alows anonymous discovery and does not require you to select a **Discovery Authentication Group**.
+      **None** allows anonymous discovery and does not require you to select a **Discovery Authentication Group**.
 
       **CHAP** and **Mutual CHAP** require authentication and you to select a group ID in **Discovery Authentication Group**.
 
