@@ -371,12 +371,12 @@ Home labs can now deploy and use 40 GB and higher networking components. Home us
 
 iXsystems recommends using optical fiber over *direct attached copper* (DAC) cables for the high speed interconnects listed below:
 
-* 10 NICs: SFP+ connectors
-* 25 NICs: SFP28 connectors
-* 40 NICs: QSFP+ connectors
-* 100 NICs: QSFP28 connectors
-* 200 NICs: QSFP56 connectors
-* 400 NICs: QSFP-DD connectors
+* 10Gb NICs: SFP+ connectors
+* 25Gb NICs: SFP28 connectors
+* 40Gb NICs: QSFP+ connectors
+* 100Gb NICs: QSFP28 connectors
+* 200Gb NICs: QSFP56 connectors
+* 400Gb NICs: QSFP-DD connectors
 
 iXsystems also recommends using optical fiber for any transceiver form factors mentioned when using fiber channels.
 Direct attached copper (DAC) cables could create interoperability issues between the NIC, cable, and switch.
