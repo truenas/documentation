@@ -31,7 +31,7 @@
 |------|-------------|
 | **Enable TLS** | Select to allow encrypted connections. Requires a certificate (created or imported using **System > Certificates**. |
 | **TLS Policy** | Select the policy from the dropdown list of options. Options are **On**, **off**, **Data**, **!Data**, **Auth**, **Ctrl**, **Ctrl + Data**, **Ctrl +!Data**, **Auth + Data** or **Auth +!Data**. Defines whether the control channel, data channel, both channels, or neither channel of an FTP session must occur over SSL/TLS. The policies are described [here](http://www.proftpd.org/docs/directives/linked/config_ref_TLSRequired.html). |
-| **TLS Allow Client Renegotiations** | Select to allow client renegotiations. This option is not recommended. Setting this option breaks several security measures. See [mod_tls](http://www.proftpd.org/docs/contrib/mod_tls.html) for details. |
+| **TLS Allow Client Renegotiations** | Select to allow client renegotiation. This option is not recommended. Setting this option breaks several security measures. See [mod_tls](http://www.proftpd.org/docs/contrib/mod_tls.html) for details. |
 | **TLS Allow Dot Login** | If select, TrueNAS checks the user home directory for a .tlslogin file containing one or more PEM-encoded certificates. If not found, the user is prompted for password authentication. |
 | **TLS Allow Per User** | If set, allows sending a user password unencrypted. |
 | **TLS Common Name Required** | Select to require the common name in the certificate to match the FQDN of the host. |
@@ -63,6 +63,6 @@
 | **Allow Transfer Resumption** | Select to allow FTP clients to resume interrupted transfers. |
 | **Perform Reverse DNS Lookups** | Select to allow performing reverse DNS lookups on client IPs. Causes long delays if reverse DNS isn't configured. |
 | **Masquerade Address** | Public IP address or host name. Set if FTP clients cannot connect through a NAT device. |
-| **Display Login** | Specify the message displayed to local login users after authentication. Thi is not displayed to anonymous login users. |
+| **Display Login** | Specify the message displayed to local login users after authentication. This is not displayed to anonymous login users. |
 | **Auxiliary Parameters** | Used to add additional [proftpd(8](https://linux.die.net/man/8/proftpd) parameters. |
 

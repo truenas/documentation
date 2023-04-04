@@ -19,7 +19,7 @@ tags:
 
 ## Advanced Creation
 
-![TasksReplicationAddAdvanced](/images/CORE/12.0/TasksReplicationAddAdvanced.png "Add Replication Task")
+![TasksReplicationAddAdvanced](/images/CORE/13.0/TasksReplicationAddAdvanced.png "Add Replication Task")
 
 {{< include file="static/includes/Reference/TasksReplicationAddAdvancedFields.md.part" markdown="true" >}}
 

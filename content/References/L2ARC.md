@@ -23,7 +23,7 @@ You cannot share dedicated L2ARC devices between ZFS pools.
 
 A cache device failure does not affect the integrity of the pool, but it may impact read performance depending on the workload and the dataset size to cache size ratio.
 
-### Persistant L2ARC in CORE and SCALE
+### Persistent L2ARC in CORE and SCALE
 
 By default, the L2ARC cache empties when the system reboots.
 When Persistent L2ARC is enabled, a sysctl repopulates the cache device mapping during the reboot process.

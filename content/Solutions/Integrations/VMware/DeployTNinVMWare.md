@@ -143,7 +143,7 @@ To create the virtual machine for your TrueNAS, from the **Virtual Machines** sc
    
    ![VMWizardReadyToComplete](/images/VMWareESXi/VMWizardReadyToComplete.png "Ready to Complete")
 
-   Click **Finish**. The new Truenas VM displays on the list of virtual machines. 
+   Click **Finish**. The new TrueNAS VM displays on the list of virtual machines. 
 
    ![VMWareTrueNASVMCreated](/images/VMWareESXi/VMWareTrueNASVMCreated.png "TrueNAS VM Created")
 
@@ -173,7 +173,7 @@ You can edit your VM settings after you complete the initial setup. You can add 
 The **Edit Settings** screen resets the **Memory** setting back to MB so you must re-enter your 8 GB setting before you save and exit.
 {{< /hint >}}
 
-![EditSettingsForTruenas1](/images/VMWareESXi/EditSettingsForTruenas1.png "Truenas VM Details")
+![EditSettingsForTrueNAS1](/images/VMWareESXi/EditSettingsForTrueNAS1.png "TrueNAS VM Details")
 
 After you re-enter 8 GB in the **Memory** fields, you can add more hard drives to your VM. 
 Click **Add hard disk** and select the option you want to use. For a new drive select **New standard hard disk**. A **New hard disk** row displays highlighted in green.

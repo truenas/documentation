@@ -94,7 +94,7 @@ While TrueNAS is designed for and ever-evolving towards increased user friendlin
 
 * Default Route: The default route is a configuration of the IP Network that establishes a forwarding rule for packets when no specific address of a next-hop host is available from the routing table or other routing mechanisms.
 
-* Nameserver: A name server refers to the server component of the Domain Name System (DNS). A namserver provides responses to queries against a directory service which translates an often human readable text-based identifier to an numeric identification or addressing component.
+* Nameserver: A name server refers to the server component of the Domain Name System (DNS). A nameserver provides responses to queries against a directory service which translates an often human readable text-based identifier to an numeric identification or addressing component.
 
 * Domain Name System: The Domain Name System (DNS) is a hierarchical and decentralized naming system for computers, services, or other resources connected to the Internet or a private network.
 
@@ -146,7 +146,7 @@ While TrueNAS is designed for and ever-evolving towards increased user friendlin
 
 * AHCI: The Advanced Host Controller Interface (AHCI) is a technical standard defined by Intel that specifies the operation of Serial ATA (SATA) host controllers in a non-implementation-specific manner in its motherboard chipsets. The specification describes a system memory structure for computer hardware to exchange data between host system memory and attached storage devices. For modern solid state drives, the interface has been superseded by NVMe.
 
-* VirtIO: Virtio is a virtualization standard for network and disk device drivers where just the guest's device driver "knows" it is running in a virtual environment, and cooperates with the hypervisor. Virtio was chosen to be the main platform for IO virtualization in KVM.
+* VirtIO: VirtIO is a virtualization standard for network and disk device drivers where just the guest's device driver "knows" it is running in a virtual environment, and cooperates with the hypervisor. VirtIO was chosen to be the main platform for IO virtualization in KVM.
 
 * UEFI: The Unified Extensible Firmware Interface (UEFI) is a specification that defines a software interface between an operating system and platform firmware. UEFI replaces the legacy Basic Input/Output System (BIOS) firmware interface originally present in all IBM PC-compatible personal computers.
 

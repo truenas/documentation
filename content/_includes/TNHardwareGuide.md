@@ -388,7 +388,7 @@ At the heart of the TrueNAS design is OpenZFS. The design from day one works wit
 
 TrueNAS developers [virtualize TrueNAS every day](https://www.ixsystems.com/blog/yes-you-can-virtualize-freenas/) as part of their work and it is intended only for use as a development environment. 
 {{< hint warning >}}
-While possible to deploy TrueNAS in a virtual enviroment this is not recommended for regular deployment of TrueNAS whenever storing production or crtical data. 
+While possible to deploy TrueNAS in a virtual environment this is not recommended for regular deployment of TrueNAS whenever storing production or critical data.
 Virtualizing TrueNAS and using virtual disks for your zpool is fine for ad hoc proof-of-concept, but it is not a supported configuration and it might result in data corruption. 
 {{< /hint >}}
 When the need arises to virtualize TrueNAS (for ad hoc proof-of-concept):
