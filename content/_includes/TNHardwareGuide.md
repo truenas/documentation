@@ -359,7 +359,7 @@ If several SSDs experience simultaneous power loss, it could cause total pool fa
 The network in Network Attached Storage is as important as storage, but the topic reduces to a few key points:
 
 * Simplicity - Simplicity is often the secret to reliability with network configurations.
-* Individual interfaces - Faster individual interfaces such as 10/25/40/100 GbE are preferable to aggregating slower interfaces.
+* Individual interfaces - Faster individual interfaces such as 10/25/40/100GbE are preferable to aggregating slower interfaces.
 * Interface support - Intel and Chelsio interfaces are the best-supported options.
 * Packet fragmentation - Only consider a *jumbo frames* [MTU](https://en.wikipedia.org/wiki/Maximum_transmission_unit) with dedicated connections such as between servers or video editors and TrueNAS that are unlikely to experience packet fragmentation.
 * LRO/LSO offload features - Interfaces with [LRO](https://en.wikipedia.org/wiki/Large_receive_offload) and [LSO](https://en.wikipedia.org/wiki/Large_send_offload) offload features generally alleviates the need for jumbo frames and their use can result in lower CPU overhead.
@@ -371,12 +371,12 @@ Home labs can now deploy and use 40 GB and higher networking components. Home us
 
 iXsystems recommends using optical fiber over *direct attached copper* (DAC) cables for the high speed interconnects listed below:
 
-* 10 Gb NICs: SFP+ connectors
-* 25 Gb NICs: SFP28 connectors
-* 40 Gb NICs: QSFP+ connectors
-* 100 Gb NICs: QSFP28 connectors
-* 200 Gb NICs: QSFP56 connectors
-* 400 Gb NICs: QSFP-DD connectors
+* 10Gb NICs: SFP+ connectors
+* 25Gb NICs: SFP28 connectors
+* 40Gb NICs: QSFP+ connectors
+* 100Gb NICs: QSFP28 connectors
+* 200Gb NICs: QSFP56 connectors
+* 400Gb NICs: QSFP-DD connectors
 
 iXsystems also recommends using optical fiber for any transceiver form factors mentioned when using fiber channels.
 Direct attached copper (DAC) cables could create interoperability issues between the NIC, cable, and switch.

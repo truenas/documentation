@@ -1165,9 +1165,6 @@ deps
 OverlayFS
 VmListComponent
 Nvidia
-Gbs
-GBs
-GBps
 Gbps
 Gb
 GbE
