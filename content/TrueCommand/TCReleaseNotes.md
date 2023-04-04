@@ -33,7 +33,7 @@ This release is a maintenance release that fixes issues identified in earlier re
 
 * Adds TLS for email and SMTP
 * Adds new Order property for Systems and Groups
-* Adds support for IDP-initiated SMAL
+* Adds support for IDP-initiated SAML
 * Improves creating new volumes in the UI 
 * Improves UI cluster creation and adds warning
 * Improves NAS connection validation
@@ -56,7 +56,7 @@ This release is a maintenance release that fixes issues identified in earlier re
 * [TC-2580](https://ixsystems.atlassian.net/browse/TC-2580) Do not force NAS SSL for on-site instances
 * [TC-2581](https://ixsystems.atlassian.net/browse/TC-2581) Populate the Lifetime Unit field with the valid choices
 * [TC-2582](https://ixsystems.atlassian.net/browse/TC-2582) Add \`order\` property in system and groups 
-* [TC-2583](https://ixsystems.atlassian.net/browse/TC-2583) Use cached base images instead of single repo containerfile
+* [TC-2583](https://ixsystems.atlassian.net/browse/TC-2583) Use cached base images instead of single repo container file
 * [TC-2586](https://ixsystems.atlassian.net/browse/TC-2586) Support IDP-initiated SAML
 * [TC-2598](https://ixsystems.atlassian.net/browse/TC-2598) after volume creation, redirect users directly to share panel
 * [TC-2599](https://ixsystems.atlassian.net/browse/TC-2599) expose nas configs from the cluster cards
@@ -567,7 +567,7 @@ Known issues are those found during internal testing or reported by the communit
 
 | Seen In | Key | Summary | Workaround | Resolution Target |
 |---------|-----|---------|------------|-------------------|
-| 2.3.2 | <a href="https://ixsystems.atlassian.net/browse/TC-2712" target="_blank">TC-2712</a> | Public SSH key entered during user creation not loaded into the NAS system after user creation in TrueCommand | When ysing TrueCommand to create a user, the Public SSH key entered does not load into the NAS system. | 2.3.2 |
+| 2.3.2 | <a href="https://ixsystems.atlassian.net/browse/TC-2712" target="_blank">TC-2712</a> | Public SSH key entered during user creation not loaded into the NAS system after user creation in TrueCommand | When using TrueCommand to create a user, the Public SSH key entered does not load into the NAS system. | 2.3.2 |
 | 2.3.2 | <a href="https://ixsystems.atlassian.net/browse/TC-2707" target="_blank">TC-2707</a> | Update icon displays after updating a NAS system just updated | After using TrueCommand to update an NAS system that needs updating, the Update icon displays even though that NAS system does not have more updates available. | 2.3.2 |
 | 2.3.2 | <a href="https://ixsystems.atlassian.net/browse/TC-2706" target="_blank">TC-2706</a> | API error displays after Updating a NAS System with TrueCommand | After logging into TrueCommand and using it to update a NAS system, an API error displays. | TBD |
 | 2.3.2 | <a href="https://ixsystems.atlassian.net/browse/TC-2705" target="_blank">TC-2705</a> | Deleting a volume with the TC iSCSI Manager does not delete iSCSI Initiators Group | After deleting an iSCSI  volume using TC iSCSI Manager does not delete the Initiator Group but does delete the rest of the iSCSI block share. | TBD |
