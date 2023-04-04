@@ -193,7 +193,8 @@ Select **Display** as **Device Type** on the **Add Device** screen to configure 
    a. Select the screen resolution to use for VNC sessions from the **Resolution** dropdown. 
    b. Select an IP address for VNC to use in **Bind**. The default is **0.0.0.0**.
    c. (Optional) Enter a password if you want to use for for VNC sessions. The password must not exceed eight characters in length.
-5. Select either **VNC** or **SPICE** to use as the **Display Type**. 
+5. Select either **VNC** or **SPICE** to use as the **Display Type**. VNC is the most widely used option with the best display but is slower than SPICE.
+   SPICE has faster data transfer speed but a lower quality display, and is not as secure as VNC. 
 6. Select **Web Interface** to allow access to the VNC web interface. 
 7. Click **Save**.
 

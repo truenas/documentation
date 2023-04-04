@@ -98,9 +98,23 @@ The **Basic Options** settings in this section display on the **Advanced Options
 | **Path** | Enter the path or use the <span class="material-icons">arrow_right</span> icon to the left of **<span class="material-icons">folder</span>/mnt** to locate the dataset and populate the path. **Path** is the directory tree on the local file system that TrueNAS exports over the SMB protocol. |
 | **<span class="material-icons">folder</span>/mnt** | Click the <span class="material-icons">arrow_right</span> icon to expand the path at each dataset until you get to the SMB share dataset you want to use. This populates the **Path**. |
 | **Name** | Enter a name for this share that is less than or equal to 80 characters. Because of how the SMB protocol uses the name, the name must not exceed 80 characters. The name cannot have invalid characters as specified in Microsoft documentation MS-FSCC section 2.1.6. If not supplied, the share name becomes the last component of the path. This forms part of the full share path name when SMB clients perform and SMB tree connect. If you change the name, follow the naming conventions for [files and directories](https://learn.microsoft.com/en-us/windows/win32/fileio/naming-a-file#naming-conventions) or [share names](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-fscc/dc9978d7-6299-4c5a-a22d-a039cdc716ea). |
-| **Purpose** | Select a preset option from the dropdown list. The option applies predetermined settings ([presets](#advanced-options-presets)) and disables changing some share setting options. Select **No presets** to retain control over all **Advanced Options** settings. Select  **Default parameters for cluster share** when setting up an SMB cluster share. **Default share parameters** is the default option when you open the **Add SMB** screen and to use for any basic SMB share. Other options are **Multi-User time machine**, **Multi-Protocol (NFSv3/SMB) shares**, **Private SMB Datasets and Shares**, or **SMB WORM. Files become read-only via SMB after 5 minutes**. Note: The **SMB WORM** preset only impacts writes over the SMB protocol. Before deploying this option in a production environment, the user should determine whether the feature meets their requirements. |
+| **Purpose** | Select a [preset option](#purpose-setting-options) from the dropdown list. The option applies predetermined settings ([presets](#advanced-options-presets)) and disables changing some share setting options. |
 | **Description** | Enter a brief description or notes on how you use this share.  |
 | **Enabled** | Selected by default to enable sharing the path when the SMB service is activated. Clear to disable this SMB share without deleting it. |
+
+#### Purpose Setting Options
+This table details the options found on the **Purpose** dropdown list.
+
+| Setting | Description |
+|---------|-------------|
+| **No presets** | Select  to retain control over all **Advanced Options** settings.|
+| **Default parameters for cluster share** | Select when setting up an SMB cluster share. |
+| **Default share parameters** | The default option when you open the **Add SMB** screen and to use for any basic SMB share. |
+| **Basic time machine share** | Select to set up a basic time machine share. |
+| **Multi-User time machine** | Select to set up a multi-user time machine share. |
+|  **Multi-Protocol (NFSv3/SMB) shares**| Select for multi-protocol (NFSv3/SMB) shares. |
+| **Private SMB Datasets and Shares** | Select to use private SMB datasets and shares. |
+| **SMB WORM. Files become read-only via SMB after 5 minutes** | The **SMB WORM** preset only impacts writes over the SMB protocol. Before deploying this option in a production environment, the user should determine whether the feature meets their requirements. |
 {{< /expand >}}
 
 {{< expand "Advanced Options Settings" "v" >}}
