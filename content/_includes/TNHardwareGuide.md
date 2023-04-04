@@ -158,7 +158,7 @@ TrueNAS Mini systems ship with four or more hot-swap bays.
 TrueNAS R-Series systems can support dozens of drives in their head units and external expansion shelves.
 Pre-owned or repurposed hardware is popular among TrueNAS users.  
 Pay attention to the maximum performance offered by the hot-swap backplanes of a given system. 
-Aim for at least 6 SATA III support.
+Aim for at least 6 Gbps SATA III support.
 Note that hot-swapping PCIe NVMe devices is not currently supported.
 {{< /tab >}}
 {{< /tabs >}}
@@ -201,15 +201,15 @@ iXsystems tests all storage devices it sells for at least 48 hours before shipme
 
 ### Storage Controllers
 
-The uncontested most popular storage controllers used with TrueNAS are the 6 and 12 (Gigabits per second, sometimes expressed as ) Broadcom (formerly Avago, formerly LSI) SAS host bus adapters (HBA).
+The uncontested most popular storage controllers used with TrueNAS are the 6 and 12 Gbps (Gigabits per second, sometimes expressed as Gb/s) Broadcom (formerly Avago, formerly LSI) SAS host bus adapters (HBA).
 Controllers ship embedded on some motherboards but are generally PCIe cards with four or more internal or external SATA/SAS ports.
-The 6 LSI 9211 and its rebranded siblings that also use the LSI SAS2008 chip, such as the IBM M1015 and Dell H200, are legendary among TrueNAS users who build systems using parts from the second-hand market. 
+The 6 Gbps LSI 9211 and its rebranded siblings that also use the LSI SAS2008 chip, such as the IBM M1015 and Dell H200, are legendary among TrueNAS users who build systems using parts from the second-hand market. 
 Flash using the latest IT or Target Mode firmware to disable the optional RAID functionality found in the IR firmware on Broadcom controllers.
-For those with the budget, newer models like the Broadcom 9300/9400 series give 12 SAS capabilities and even NVMe to SAS translation abilities with the 9400 series.
+For those with the budget, newer models like the Broadcom 9300/9400 series give 12 Gbps SAS capabilities and even NVMe to SAS translation abilities with the 9400 series.
 TrueNAS includes the `sas2flash`, `sas3flash`, and `storcli` commands to flash or perform re-flashing operations on 9200, 9300, and 9400 series cards.
 
 Onboard SATA controllers are popular with smaller builds, but motherboard vendors are better at catering to the needs of NAS users by including more than the traditional four SATA interfaces.
-Be aware that many motherboards ship with a mix of 3 and 6 onboard SATA interfaces and that choosing the wrong one could impact performance.
+Be aware that many motherboards ship with a mix of 3 Gbps and 6 Gbps onboard SATA interfaces and that choosing the wrong one could impact performance.
 If a motherboard includes hardware RAID functionality, do not use or configure it, but note that disabling it in the BIOS might remove some SATA functionality depending on the motherboard.
 Most SATA compatibility-related issues are immediately apparent.
 
@@ -359,7 +359,7 @@ If several SSDs experience simultaneous power loss, it could cause total pool fa
 The network in Network Attached Storage is as important as storage, but the topic reduces to a few key points:
 
 * Simplicity - Simplicity is often the secret to reliability with network configurations.
-* Individual interfaces - Faster individual interfaces such as 10/25/40/100 are preferable to aggregating slower interfaces.
+* Individual interfaces - Faster individual interfaces such as 10/25/40/100GbE are preferable to aggregating slower interfaces.
 * Interface support - Intel and Chelsio interfaces are the best-supported options.
 * Packet fragmentation - Only consider a *jumbo frames* [MTU](https://en.wikipedia.org/wiki/Maximum_transmission_unit) with dedicated connections such as between servers or video editors and TrueNAS that are unlikely to experience packet fragmentation.
 * LRO/LSO offload features - Interfaces with [LRO](https://en.wikipedia.org/wiki/Large_receive_offload) and [LSO](https://en.wikipedia.org/wiki/Large_send_offload) offload features generally alleviates the need for jumbo frames and their use can result in lower CPU overhead.
