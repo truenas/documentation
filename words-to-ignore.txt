@@ -1171,3 +1171,7 @@ Gbs
 Gbps
 GBs
 GBps
+PeriodicSnapshotTasksSCALE
+homedirectories
+DatasetsSCALE
+ConsoleSetupMenuSCALE
