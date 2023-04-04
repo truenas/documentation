@@ -1165,23 +1165,3 @@ deps
 OverlayFS
 VmListComponent
 Nvidia
-Gbps
-Gb
-GbE
- Gb
- Gb 
-Gbps)
-Gb/s
-Gb/s</td>
-10Gb
-25Gb
-40Gb
-100Gb
-200Gb
-400Gb
-* 10Gb NICs: SFP+ connectors
-* 25Gb NICs: SFP28 connectors
-* 40Gb NICs: QSFP+ connectors
-* 100Gb NICs: QSFP28 connectors
-* 200Gb NICs: QSFP56 connectors
-* 400Gb NICs: QSFP-DD connectors

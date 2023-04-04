@@ -10,5 +10,5 @@ jobs:
       - uses: matheus23/md-spellcheck-action@v4.2.2
         with:
           files-to-check: "./content/*/*.md"
-          files-to-exclude: "LICENSE.md" # optional
+          files-to-exclude: "./content/_includes/TNHardwareGuide.md" # optional
           words-to-ignore-file: ./words-to-ignore.txt
