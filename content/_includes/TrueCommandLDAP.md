@@ -22,17 +22,17 @@ The **Test LDAP Config** <span class="iconify" data-icon="mdi:test-tube"></span>
 | **Hostname** | (Required) Enter the host name, IP or DNS name, of the LDAP server, with port number on the end. For example: *ldap.mycorp.com:636* (SSL port is typically 636 for AD/LDAP). |
 | **Domain** | (Required) Base domain settings of the user. For example: <i>dc=mycorp,dc=com</i> for a typical `username@mycorp.com` user account. |
 | **Group Domain** | Enter the alternative domain setting to use when searching for groups. The default value is the same as **Domain**. |
-| **Verify SSL** | Select to require strict SSL certificate verification. The default value is false. Disable this option if the host name of the system is different than the one listed on the SSL certificate, an IP is used for the connection instead of the DNS host name, or if a self-signed certificate is used by the LDAP server. |
-| **User ID Field** | Enter the user ID for the user that logs in (this is class-matched to the login username). Enter **Domain** name to use for user-matching. The default value is **uid** (user ID). Another field commonly-used is **cn** (common name). |
-| **Group ID Field** | Enter the class for finding groups associated with user. Default is cn (common name). Enter the **Domain** name to use when searching for a group name. |
-| **BIND User Domain** | Enter the full domain setting for a pre-authenticated bind to the server. For example: <i>uid=binduser,cn=read-only-bind,dc=mycorp,dc=com</i>. For an unauthenticated bind enter just a name (example: <i>truecommand-bin</i>). This is sometimes used for logging purposes on the LDAP, but otherwise is not validated. |
+| **Verify SSL** | Select to require strict SSL certificate verification. The default value is false. Disable this option if the system host name is not the one on the SSL certificate, the system uses an IP to connect instead of the DNS host name, or the LDAP server uses a self-signed certificate. |
+| **User ID Field** | Enter the user ID for the user that logs in (this is class-matched to the login username). Enter **Domain** name to use for user-matching. The default value is **uid** (user ID). Another commonly-used field is **cn** (common name). |
+| **Group ID Field** | Enter the class for finding groups associated with a user. The default is cn (common name). Enter the **Domain** name to use when searching for a group name. |
+| **BIND User Domain** | Enter the full domain setting for a pre-authenticated bind to the server. For example: <i>uid=binduser,cn=read-only-bind,dc=mycorp,dc=com</i>. For an unauthenticated bind, enter just a name (example: <i>truecommand-bin</i>). This is sometimes used for logging purposes on the LDAP but otherwise is not validated. |
 | **Realm** | Enter the realm that performs authentication against the LDAP server. |
 | **BIND Password** | Enter the password to use for the bind user. For an unauthenticated bind, leave blank while setting the **BIND User Domain** to a non-empty value. |
 | **KDC** | Enter the key distribution center (KDC) that supplies session tickets and temporary session keys to users and computers within the LDAP server. |
 
 ### LDAP connection options
 
-TrueCommand supports two common methods of validating LDAP user credentials:
+TrueCommand supports two methods of validating LDAP user credentials:
 
 #### Direct Bind
 The direct BIND method uses the **Domain** and **User ID Field** values to create a static domain string for user authentication.
@@ -42,12 +42,12 @@ Example:
 * Domain: *dc=mycorp,dc=com*
 * User ID Field: *uid* 
 
-When *bobby.singer* attempts to log in, TrueCommand establishes an SSL-secure connection to the LDAP server and then attempts to bind with the static domain *uid=bobby.singer,dc=mycorp,dc=com* and the user-provided password. If successful, the user authentication is verified, and Bobby Singer may access TrueCommand.
+When *bobby.singer* attempts to log in, TrueCommand establishes an SSL-secure connection to the LDAP server and attempts to bind with the static domain *uid=bobby.singer,dc=mycorp,dc=com* and the user-provided password. If successful, the user authentication verifies, and Bobby Singer may access TrueCommand.
 
 #### Indirect Bind
 The indirect BIND authentication method is more dynamic and searches for the proper user domain settings rather than making format assumptions. 
 With TrueCommand, indirect BIND configures a *bind user* (typically a read-only, minimal-permissions user account) with a known domain/password to perform the initial bind to the LDAP server. 
-Once logged in, TrueCommand searches for the user domain currently requesting to login. It then attempts a second bind with the user domain and provided password.
+After logging in, TrueCommand searches for the user domain requesting to log in. It then attempts a second bind with the user domain and provided password.
 
 Example:
 

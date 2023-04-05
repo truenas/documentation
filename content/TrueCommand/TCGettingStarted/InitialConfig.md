@@ -34,13 +34,13 @@ To access the **Administration** screen, click the **Configure** <i class="mater
 ![TrueCommand231AdminSystemInfo](/images/TrueCommand/2.3.1/TrueCommand231AdminSystemInfo.png "Administration Configuration")
 
 The screen has seven widgets:
-* **[About](#about-widget)** that covers TrueCommand system information, iXsystem Support Contact information, and TrueCommand licenses.
-* **[Certificates](#certificates-widget)** where you can access system certificates, and upload or reset certificates.
+* **[About](#about-widget)** that covers TrueCommand system information, iXsystems Support Contact information, and TrueCommand licenses.
+* **[Certificates](#certificates-widget)** where you can access system certificates and upload or reset certificates.
 * **[Certificate Authorities](#certificate-authorities-widget)** where you can access or import certificate authorities.
-* **[Configuration](#configuration-widget)** where you configure general, ssl, and alert options, LDAP and SAML service, and Telemetry.
+* **[Configuration](#configuration-widget)** where you configure general, SSL, and alert options, LDAP and SAML service, and Telemetry.
 * **[LDAP Servers](#ldap-servers-widget)** where you configure LDAP server settings.
 * **[LDAP Teams](#ldap-teams-widget)** where you can join LDAP teams.
-* **[Alert Recipients](#alert-recipients-widget)** where you configure users, and their email addreses, that receive system alerts.
+* **[Alert Recipients](#alert-recipients-widget)** where you configure users and their email addresses that receive system alerts.
 
 ## About Widget
 
@@ -59,11 +59,11 @@ Select the new license file to upload and click **UPLOAD LICENSE** to apply the 
 
 ## Certificates Widget
 
-The **Certificates** widget shows the certificates TrueCommand uses, and has options to reset or upload a certificate.
+The **Certificates** widget shows the certificates TrueCommand uses and has options to reset or upload a certificate.
 
 ![AdministrationCertificatesWidget](/images/TrueCommand/2.3.2/AdministrationCertificatesWidget.png "Administration: Certificates Widget")
 
-Click **Upload Certificate** to open the **Upload Certificate** screen where you can either browse to or drag and drop a certificate and a private key file into TrueCommand. 
+Click **Upload Certificate** to open the **Upload Certificate** screen, where you can either browse to or drag and drop a certificate and a private key file into TrueCommand. 
 
 ![AdministrationCertificates](/images/TrueCommand/2.2/AdministrationCertificates.png "Administration: Certificates")
 
@@ -75,7 +75,7 @@ Click **IMPORT** in the **Certificate Authorities** screen to add certificate au
 
 ![AdministrationCertificateAuthoritiesWidget](/images/TrueCommand/2.3.2/AdministrationCertificateAuthoritiesWidget.png "Administration: Certificates Authorities Widget")
 
-Click **Import** to open the **Add Certificate Authority** screen where you enter the name for the CA and either browse to or drag and drop the CA file into TrueCommand.
+Click **Import** to open the **Add Certificate Authority** screen, where you enter the name for the CA and either browse to or drag and drop the CA file into TrueCommand.
 
 ![AdministrationCAs](/images/TrueCommand/2.2/AdministrationCAs.png "Administration: Certificates")
 
@@ -83,7 +83,7 @@ Selecting **Plain Text** allows you to copy and paste the raw text before you up
 
 ## Configuration Widget
 
-The **Configuration** widget displays current general, SSL, and alert options, LDAP, SAML and telemetry service settings, and provides access to a configuration screen to add or make changes to these settings:  
+The **Configuration** widget displays current general, SSL, alert options, LDAP, SAML, and telemetry service settings. It provides access to a configuration screen to add or make changes to these settings:  
 
 * **General Options** 
 * **[SSL Options](#ssl-options)** 
@@ -94,14 +94,14 @@ The **Configuration** widget displays current general, SSL, and alert options, L
 
 ![AdministrationConfigurationWidget](/images/TrueCommand/2.3.2/AdministrationConfigurationWidget.png "Administration Configuration Widget")
 
-Click **CONFIGURE** to  open the **Configuration** screen where you can manage feature settings. After changing any options, click **Save** or **Cancel** to reset fields back to their previous values.
+Click **CONFIGURE** to open the **Configuration** screen where you can manage feature settings. After changing any options, click **Save** or **Cancel** to reset fields back to their previous values.
 
 ### General Options
 General options include how long TrueCommand stores system statistics and the number of database backups from an iXsystems NAS to store.
 
 ![ConfigurationScreenGeneralSSLAlertOptions](/images/TrueCommand/2.3.2/ConfigurationScreenGeneralSSLAlertOptions.png "Configuration General SSL and Alert Options")
 
-Enter numberic values in the **Months** and **Backups** fields.
+Enter numeric values in the **Months** and **Backups** fields.
 
 ### SSL options
 
@@ -126,7 +126,7 @@ The SAML service is an experimental feature that allows users to configure TrueC
 
 ### Telemetry 
 
-TrueCommand reports some completely anonymous basic usage telemetry back to iXsystems for product improvement analysis.
+TrueCommand reports some anonymous basic usage telemetry to iXsystems for product improvement analysis.
 
 Click the **PREVIEW** button to see what your system is sending.
 
@@ -144,7 +144,7 @@ The **LDAP Teams** widget allows you to add TrueCommand teams to your LDAP serve
 
 ## Alert Recipients Widget
 
-The **Alert Recipients** widget allows you to add a recipient email addresses and configure mail list settings.
+The **Alert Recipients** widget allows you to add recipient email addresses and configure mail list settings.
 
 ![AdministrationAlertRecipientsWidget](/images/TrueCommand/2.3.2/AdministrationAlertRecipientsWidget.png "Administration Screen Alert Recipients Widget")
 
