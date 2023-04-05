@@ -12,74 +12,98 @@ tags:
 - coretoptoolbar
 ---
 {{< toc >}}
+
+
 TrueCommand allows you to manage all your TrueNAS systems from one location. This multi-system management increases efficiency and simplifes operations
 
-To get started with the initial configuration of TrueCommand, complete these steps:
+## Getting Started
 
-1. Create the administrator account. See [Creating the Admin Account]({{< relref "/TrueCommand/TCGettingStarted/AdminAccounts.md" >}}) for more information.
-2. Create the necessary user accounts. See [Creating User Accounts]({{< relref "/TrueCommand/TCGettingStarted/UserAccounts.md" >}}).
-3. Become familiar with the interface toolbars and icons. Review them here [Interface Overview]({{< relref "/TrueCommand/TCGettingStarted/InterfaceOverview.md" >}}).
-4. Connect your first TrueNAS system. See [Connecting Your First TrueNAS System]({{< relref "/TrueCommand/TCGettingStarted/ConnectingTrueNAS.md" >}}) for more information.
+To get started with the initial configuration of TrueCommand, you:
 
-The **Administration** page, available to users with administrator permissions, displays additional system details and offers a variety of TrueCommand configuration options.
-Click the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> icon and select **Administration** to access the **Administration** screen. It is organized into **About**, **Certificates**, and **Configuration** widgets (functional and information cards).
-
-![TrueCommand231AdminSystemInfo](/images/TrueCommand/2.3.1/TrueCommand231AdminSystemInfo.png "Administration Configuration")
+1. [Create the administrator account]({{< relref "/TrueCommand/TCGettingStarted/AdminAccounts.md" >}}).
+2. [Create user accounts]({{< relref "/TrueCommand/TCGettingStarted/UserAccounts.md" >}}).
+3. Become familiar with the interface toolbars and icons. Review the [Interface Overview]({{< relref "/TrueCommand/TCGettingStarted/InterfaceOverview.md" >}}) article.
+4. [Connect your first TrueNAS system]({{< relref "/TrueCommand/TCGettingStarted/ConnectingTrueNAS.md" >}}).
 
 ## TrueCommand Administration Overview
 
-### About
+The **Administration** screen, available to users with administrator permissions, displays additional system details and offers a variety of TrueCommand configuration options through the system widgets or information cards.
 
-The **About** widget displays the current TrueCommand system ID and version, contact information for iXsystems, and license details. 
+To access the **Administration** screen, click the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> icon and select **Administration**. 
 
-#### Updating the License
+![TrueCommand231AdminSystemInfo](/images/TrueCommand/2.3.1/TrueCommand231AdminSystemInfo.png "Administration Configuration")
+
+The screen has seven widgets:
+* **[About](#about-widget)** that covers TrueCommand system information, iXsystem Support Contact information, and TrueCommand licenses.
+* **[Certificates](#certificates-widget)** where you can access system certificates, and upload or reset certificates.
+* **[Certificate Authorities](#certificate-authorities-widget)** where you can access or import certificate authorities.
+* **[Configuration](#configuration-widget)** where you configure general, ssl, and alert options, LDAP and SAML service, and Telemetry.
+* **[LDAP Servers](#ldap-servers-widget)** where you configure LDAP server settings.
+* **[LDAP Teams](#ldap-teams-widget)** where you can join LDAP teams.
+* **[Alert Recipients](#alert-recipients-widget)** where you configure users, and their email addreses, that receive system alerts.
+
+## About Widget
+
+The **About** widget displays the current TrueCommand system ID and version information, iXsystems Support contact information, and license details. 
+Click **Get a License** to open a browser file for your system where you can obtain a license and **Upload License** to add it to TrueCommand.
+
+### Updating Licenses
 
 You can expand TrueCommand to monitor more disks by upgrading or purchasing a license from iXsystems.
 Click **GET A LICENSE** to open a new browser tab to purchase a TrueCommand license.
 You can also contact iXsystems to upgrade the current license.
 
-After you upgrade or purchase a new license, you must upload it to TrueCommand.
-Click **Browse…** to open a file browser on your local system.
+After you upgrade or purchase a new license, upload it to TrueCommand.
+Click **Browse** to open a file browser on your local system.
 Select the new license file to upload and click **UPLOAD LICENSE** to apply the new license to TrueCommand.
 
-### Certificates Widget
+## Certificates Widget
 
-The **Certificates** widget shows the certificates and Certificate Authorities (CAs) TrueCommand uses and has options to upload or import a certificate or CA.
+The **Certificates** widget shows the certificates TrueCommand uses, and has options to reset or upload a certificate.
+
+![AdministrationCertificatesWidget](/images/TrueCommand/2.3.2/AdministrationCertificatesWidget.png "Administration: Certificates Widget")
+
+Click **Upload Certificate** to open the **Upload Certificate** screen where you can either browse to or drag and drop a certificate and a private key file into TrueCommand. 
 
 ![AdministrationCertificates](/images/TrueCommand/2.2/AdministrationCertificates.png "Administration: Certificates")
 
-Click **Browse...** to upload a file from the local system.
 Selecting **Plain text** allows you to copy and paste the raw text instead of uploading a file.
 
-### Certificate Authorities
+## Certificate Authorities Widget
 
 Click **IMPORT** in the **Certificate Authorities** screen to add certificate authorities (CAs) to TrueCommand.
 
+![AdministrationCertificateAuthoritiesWidget](/images/TrueCommand/2.3.2/AdministrationCertificateAuthoritiesWidget.png "Administration: Certificates Authorities Widget")
+
+Click **Import** to open the **Add Certificate Authority** screen where you enter the name for the CA and either browse to or drag and drop the CA file into TrueCommand.
+
 ![AdministrationCAs](/images/TrueCommand/2.2/AdministrationCAs.png "Administration: Certificates")
 
-The **CA Import** screen allows name the CA and to select changing it to plain text before you upload it.
+Selecting **Plain Text** allows you to copy and paste the raw text before you upload it.
 
-### Configuration
+## Configuration Widget
 
-The **Configuration** widget contains options to configure various TrueCommand features. Configuration options are: 
+The **Configuration** widget displays current general, SSL, and alert options, LDAP, SAML and telemetry service settings, and provides access to a configuration screen to add or make changes to these settings:  
 
-* General Options
-* SSL Options
-* Alert Options
-* LDAP
-* SAML
-* Telemetry
+* **General Options** 
+* **[SSL Options](#ssl-options)** 
+* **[Alert Options](#alert-options)**
+* **[LDAP](#ldap)**
+* **[SAML](#saml)**
+* **[Telemetry](#telemetry)**
 
-Click **CONFIGURE** to change feature settings.
+![AdministrationConfigurationWidget](/images/TrueCommand/2.3.2/AdministrationConfigurationWidget.png "Administration Configuration Widget")
 
-![AdministrationConfiguration](/images/TrueCommand/2.2/AdministrationConfiguration.png "Administration: Configuration1")
+Click **CONFIGURE** to  open the **Configuration** screen where you can manage feature settings. After changing any options, click **Save** or **Cancel** to reset fields back to their previous values.
 
-After changing any options, click **SAVE** at the bottom of the window to save the new system configuration.
-To reset fields back to their previous values, click **CANCEL**.
-
+### General Options
 General options include how long TrueCommand stores system statistics and the number of database backups from an iXsystems NAS to store.
 
-#### SSL options
+![ConfigurationScreenGeneralSSLAlertOptions](/images/TrueCommand/2.3.2/ConfigurationScreenGeneralSSLAlertOptions.png "Configuration General SSL and Alert Options")
+
+Enter numberic values in the **Months** and **Backups** fields.
+
+### SSL options
 
 {{< hint info >}}
 This feature is only available for local installations or containerized TrueCommand deployments.
@@ -87,55 +111,59 @@ This feature is only available for local installations or containerized TrueComm
 
 {{< include file="static/includes/TrueCommand/2.0/TrueCommandSSL.md.part" markdown="true" >}}
 
-#### Alert Options
+### Alert Options
 
-You can adjust the alert levels that TrueCommand shows from a connected NAS to tune the system messages displayed according to your use case.
-Choose an alert category to ignore.
-You can select multiple categories.
+You can adjust the alert levels that TrueCommand shows from a connected TrueNAS system to tune the system messages displayed according to your use case.
+Select an alert category to ignore. Options are **None**, **Information**, **Warning** and **Critical**. Alerts generated by TrueCommand rules are unaffected.
 
-#### LDAP
+### LDAP
 
-The **Allow LDAP user creation** checkbox is not selected (disabled) by default. If disabled, you can use LDAP to log in with existing users.
+The **Allow LDAP user creation** checkbox is not selected (disabled) by default. When disabled, you can use LDAP to log in with existing users.
 
-#### SAML
+### SAML 
 
-The SAML service feature allows users to configure TrueCommand SAML for [Active Directory]({{< relref "SAMLAD.md" >}}) or [Google Admin]({{< relref "SAMLGA.md" >}})
+The SAML service is an experimental feature that allows users to configure TrueCommand SAML for [Active Directory]({{< relref "SAMLAD.md" >}}) or [Google Admin]({{< relref "SAMLGA.md" >}}). 
 
-#### Telemetry
+### Telemetry 
 
-TrueCommand reports some (completely anonymous) basic usage telemetry back to iXsystems for product improvement analysis.
+TrueCommand reports some completely anonymous basic usage telemetry back to iXsystems for product improvement analysis.
 
 Click the **PREVIEW** button to see what your system is sending.
 
 Select **Disable Telemetry** to disable the disable telemetry and click **SAVE**.
 
-## LDAP Servers
+## LDAP Servers Widget
 
 Users can configure TrueCommand to use [LDAP servers]({{< relref "LDAPServers.md" >}}) for security and authentication management among connected TruNAS systems.
 
-{{< include file="static/includes/TrueCommand/2.0/TrueCommandLDAP.md.part" markdown="true" >}}
+{{< include file="/_includes/TrueCommandLDAP.md" type="page" >}}
 
-## LDAP Teams
+## LDAP Teams Widget
 
 The **LDAP Teams** widget allows you to add TrueCommand teams to your LDAP server by clicking **JOIN** and selecting a team from the list.
 
-## Alert Recipients
+## Alert Recipients Widget
 
-The **Alert Recipients** widget allows you to add email addresses to your LDAP server by clicking **ADD** and entering a valid address.
+The **Alert Recipients** widget allows you to add a recipient email addresses and configure mail list settings.
 
-![TrueCommand231AdminAlertRecipientsNone](/images/TrueCommand/2.3.1/TrueCommand231AdminAlertRecipientsNone.png "Administration: Alert Recipients Widget")
+![AdministrationAlertRecipientsWidget](/images/TrueCommand/2.3.2/AdministrationAlertRecipientsWidget.png "Administration Screen Alert Recipients Widget")
 
-Clicking the **Configure** button displays the following fields:
+Click **Add** to open an add an email address screen. This adds the email address to your LDAP server.
 
-![TrueCommand231AdminAlertRecipientsConfigure](/images/TrueCommand/2.3.1/TrueCommand231AdminAlertRecipientsConfigure.png "Administration: Mailing List Configuration")
+![AddRecipientScreene](/images/TrueCommand/2.3.2/AddRecipientScreen.png "Add Recipients Screen")
 
-| Field | Value |
-| ----- | ------------- |
-| **Mailserver** | Address for the SMTP server. |
-| **Mailserver port** | Port number the SMTP server listens to. |
-| **Auth user** | User name for plain authentication. |
-| **Auth pass** | Password for plain authentication. Leave blank for no-auth. |
-| **From** | The email address of the sender. |
+Click **Configure** to open the **Mailing List Configure** screen. 
+
+![MailingListConfigureScreen](/images/TrueCommand/2.3.2/MailingListConfigureScreen.png "Mailing List Configuration Screen")
+
+| Setting | Description |
+|---------|-------------|
+| **Mailserver** | Enter the address for the SMTP server. |
+| **Mailserver port** | Enter the port number the SMTP server listens to. |
+| **Auth user** | Enter the user name for plain authentication. |
+| **Auth pass** | Enter the password for plain authentication. Leave blank for no-auth. |
+| **From** | Enter the email address of the sender. |
+| **Tls** | Initiates a connection with TLS. Uses system settings. |
 
 {{< taglist tag="tcinstall" limit="10" >}}
 {{< taglist tag="tcconfig" limit="10" title="Related Articles" >}}
