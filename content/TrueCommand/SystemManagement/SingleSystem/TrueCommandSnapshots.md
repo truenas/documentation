@@ -1,42 +1,90 @@
 ---
 title: "TrueCommand Snapshots"
+description: "This article provides instructions on setting up and running snapshots in TrueCommand."
 weight: 40
+aliases:
+tags:
+- tcsnapshots
+- scalesnapshots
+- coresnapshots
 ---
 
 {{< toc >}}
 
-## View Snapshots
 
-To view a system's already existing snapshots, click *EXPLORE* in that system's window and select a storage pool. Once the pool loads, select the *Snapshots* tab.
+## Viewing Snapshots
 
-![TrueCommandSelectPool](/images/TrueCommand/2.0/TC20TrueCommandSelectPool.png "Select a Pool") 
+To view a list of snapshots for a system, click **EXPLORE** on the system widget (information card), then select the pool.
 
-![TrueCommandViewSnapshots](/images/TrueCommand/2.0/TC20TrueCommandViewSnapshots.png "View Snapshots")
+![ExploreSystemSelectPool](/images/TrueCommand/2.3.2/ExploreSystemSelectPool.png "Select a Pool") 
 
-## Create Single Snapshots
+Click **Snapshots** to see a list of snapshots for the root or pool level dataset. 
+To see a list of snapshots for any other dataset, click on the dataset, then on **Snapshots**.
 
-To create single snapshots, select a pool in the system's *EXPLORE* menu and click *CREATE SNAPSHOTS*, then select *Create One-Time Snapshot*.
+![ExploreSystemDatasetSnapshotList](/images/TrueCommand/2.3.2/ExploreSystemDatasetSnapshotList.png "Dataset Snapshot list")
 
-![TrueCommandCreateOneTimeSnapshot](/images/TrueCommand/2.0/TC20TrueCommandCreateOneTimeSnapshot.png "Create One-time Snapshot")
+The header displays the breadcrumb for the system, pool, and dataset. To return to the pool, click the down arrow beside the system name, then select the pool on the dropdown list.
 
-Name the snapshot and click *CONFIRM*.
+## Taking Snapshots
+If the dataset does not have existing snapshots, a blue **CREATE SNAPSHOTS** button displays instead of a list of snapshots. 
 
-## Create Recurring Snapshot Tasks
+![CreateSnapshotButtons](/images/TrueCommand/2.3.2/CreateSnapshotButtons.png "Create Snapshot Buttons")
 
-To create recurring snapshot tasks, select a pool in the system's *EXPLORE* menu and click *CREATE SNAPSHOTS*, then select *Create Snapshot Task*.
+You can use this or the white **CREATE SNAPSHOTS** button under the *pool/dataset* path on the left-side panel. 
+**CREATE SNAPSHOTS** displays two options: 
 
-![TrueCommandCreateSnapshotTask](/images/TrueCommand/2.0/TC20TrueCommandCreateSnapshotTask.png "Create Snapshot Task")
+* **Create One-time Snapshot** to take a single snapshot
+* **Create Snapshot Task** to create a snapshot task to run on a schedule
 
-Set the task's schedule and determine the snapshot lifetime, then click *CONFIRM*.
+### Creating a Single Snapshot
+
+To create single snapshots:
+
+Click **EXPLORE** on the system card found on the dashboard, then select a pool on that system.
+
+Next click on a dataset you want to snapshot, then click **CREATE SNAPSHOTS**.
+
+![CreateSnapshotsOptions](/images/TrueCommand/2.3.2/CreateSnapshotsOptions.png "Create One-time Snapshot")
+
+Select **Create One-Time Snapshot** to open the snapshot dialog. 
+
+![CreateSnapshotDialog](/images/TrueCommand/2.3.2/CreateSnapshotDialog.png "Create Snapshot Dialog")
+
+Enter a name for the snapshot. 
+Select **Recursive** if the dataset selected has other datasets nested under it and you want to include those in the snapshot.
+
+Click **OK**. 
+
+## Creating a Snapshot Task
+
+To create snapshot tasks that occurs on a schedule:
+
+Click **EXPLORE** on the system card found on the dashboard, then select a pool on that system.
+
+Next click on a dataset you want to snapshot, then click **CREATE SNAPSHOTS**.
+
+![CreateSnapshotsOptions](/images/TrueCommand/2.3.2/CreateSnapshotsOptions.png "Create Snapshot Task")
+
+Select **Create Snapshot Task** to open the **Create Snapshot Task** configuration screen.
+If you did not select a dataset in the pool, you can select it from the dropdown list in the **Dataset** section, otherwise this area is not editable.
+
+![CreateSnapshotTaskDataset](/images/TrueCommand/2.3.2/CreateSnapshotTaskDataset.png "Create Snapshot Task Dataset Path")
+
+Set the schedule for the task. Select the frequency from the **Period** dropdown, the day of the week, hour and minute you want to run the task.
+
+![CreateSnapshotTaskScheduleAndLifetime](/images/TrueCommand/2.3.2/CreateSnapshotTaskScheduleAndLifetime.png "Add Snapshot Task Schedule and Lifetime")
+
+Setelect the task lifetime. Enter a number in **Lifetime Value**, then select the unit from the **Lifetime Unit** dropdown list. Options are **Hour**, **Day**, **Week**, **Month**, and **Year**.
+
+Click **OK** to save the task. 
 
 ## Timezones
 
-When you create snapshot tasks, TrueCommand uses the system the dataset is mounted in to determine what timezone it will use. 
+When you create snapshot tasks, TrueCommand uses the system the dataset is mounted in to determine what timezone it uses. 
 
-For example, if you are in New York and the dataset is mounted to a system with a Los Angeles timezone, a snapshot task set to occur at 12:00 P.M. will actually occur at 3:00 P.M. your time.
+For example, if you are in New York and the dataset is mounted to a system with a Los Angeles timezone, a snapshot task set to occur at 12:00 P.M. actually occurs at 3:00 P.M. your time.
 
-To see what timezone a system is in, go to that system's UI and navigate to **System > General** (**System Settings > General** in SCALE). 
+To see what timezone a system is in, go to that TrueNAS system UI and navigate to **System > General** for CORE or **System Settings > General** in SCALE, and find the **Localization** widget or section. 
 
-That system's timezone information is in the *Localization* section. Administrators can change the system's timezone using the drop-down menu. 
+{{< taglist tag="tcsnapshots" limit="10" >}}
 
-![TrueCommandTimezone](/images/TrueCommand/2.0/TC20TrueCommandTimezone.png "Timezones")
