@@ -1169,3 +1169,10 @@ Gbs
 Gbps
 GBs
 GBps
+uid
+cn
+pre-authenticated
+binduser
+pre-shared-key
+mycorp
+pre-known
