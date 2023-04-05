@@ -62,7 +62,7 @@ Click **OK**.
 
 To create snapshot tasks that occurs on a schedule:
 
-Click **EXPLORE** on the system card found on the dashboard, then select a pool on that system.
+Find the system card on the dashboard and click **EXPLORE**, then select a pool.
 
 Next, click on a dataset you want to snapshot, then click **CREATE SNAPSHOTS**.
 
