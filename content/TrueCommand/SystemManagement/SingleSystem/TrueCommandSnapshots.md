@@ -18,8 +18,9 @@ To view a list of snapshots for a system, click **EXPLORE** on the system widget
 
 ![ExploreSystemSelectPool](/images/TrueCommand/2.3.2/ExploreSystemSelectPool.png "Select a Pool") 
 
-Click **Snapshots** to see a list of snapshots for the root or pool level dataset. 
+Click **Snapshots** to see a list of snapshots for the root or pool-level dataset. 
 To see a list of snapshots for any other dataset, click on the dataset, then on **Snapshots**.
+
 
 ![ExploreSystemDatasetSnapshotList](/images/TrueCommand/2.3.2/ExploreSystemDatasetSnapshotList.png "Dataset Snapshot list")
 
@@ -34,7 +35,8 @@ You can use this or the white **CREATE SNAPSHOTS** button under the *pool/datase
 **CREATE SNAPSHOTS** displays two options: 
 
 * **Create One-time Snapshot** to take a single snapshot
-* **Create Snapshot Task** to create a snapshot task to run on a schedule
+* **Create Snapshot Task** to create a snapshot task that runs on a schedule
+
 
 ### Creating a Single Snapshot
 
@@ -42,7 +44,8 @@ To create single snapshots:
 
 Click **EXPLORE** on the system card found on the dashboard, then select a pool on that system.
 
-Next click on a dataset you want to snapshot, then click **CREATE SNAPSHOTS**.
+Next, click on a dataset you want to snapshot, then click **CREATE SNAPSHOTS**.
+
 
 ![CreateSnapshotsOptions](/images/TrueCommand/2.3.2/CreateSnapshotsOptions.png "Create One-time Snapshot")
 
@@ -61,20 +64,24 @@ To create snapshot tasks that occurs on a schedule:
 
 Click **EXPLORE** on the system card found on the dashboard, then select a pool on that system.
 
-Next click on a dataset you want to snapshot, then click **CREATE SNAPSHOTS**.
+Next, click on a dataset you want to snapshot, then click **CREATE SNAPSHOTS**.
+
 
 ![CreateSnapshotsOptions](/images/TrueCommand/2.3.2/CreateSnapshotsOptions.png "Create Snapshot Task")
 
 Select **Create Snapshot Task** to open the **Create Snapshot Task** configuration screen.
-If you did not select a dataset in the pool, you can select it from the dropdown list in the **Dataset** section, otherwise this area is not editable.
+If you did not select a dataset in the pool, you can select one from the dropdown list in the **Dataset** section. Otherwise, this area is not editable.
+
 
 ![CreateSnapshotTaskDataset](/images/TrueCommand/2.3.2/CreateSnapshotTaskDataset.png "Create Snapshot Task Dataset Path")
 
-Set the schedule for the task. Select the frequency from the **Period** dropdown, the day of the week, hour and minute you want to run the task.
+Set the schedule for the task. Select the frequency from the **Period** dropdown, the day of the week, the hour, and the minute you want to run the task.
+
 
 ![CreateSnapshotTaskScheduleAndLifetime](/images/TrueCommand/2.3.2/CreateSnapshotTaskScheduleAndLifetime.png "Add Snapshot Task Schedule and Lifetime")
 
-Setelect the task lifetime. Enter a number in **Lifetime Value**, then select the unit from the **Lifetime Unit** dropdown list. Options are **Hour**, **Day**, **Week**, **Month**, and **Year**.
+Select the task lifetime. Enter a number in **Lifetime Value**, then select the unit from the **Lifetime Unit** dropdown list. Options are **Hour**, **Day**, **Week**, **Month**, and **Year**.
+
 
 Click **OK** to save the task. 
 
@@ -82,9 +89,11 @@ Click **OK** to save the task.
 
 When you create snapshot tasks, TrueCommand uses the system the dataset is mounted in to determine what timezone it uses. 
 
-For example, if you are in New York and the dataset is mounted to a system with a Los Angeles timezone, a snapshot task set to occur at 12:00 P.M. actually occurs at 3:00 P.M. your time.
+For example, if you are in New York and the dataset is mounted to a system with a Los Angeles timezone, a snapshot task set to run at 12:00 P.M. runs at 3:00 P.M. your time.
 
-To see what timezone a system is in, go to that TrueNAS system UI and navigate to **System > General** for CORE or **System Settings > General** in SCALE, and find the **Localization** widget or section. 
+
+To see what timezone a system is in, go to that TrueNAS system UI and navigate to **System > General** for CORE or **System Settings > General** in SCALE, then find the **Localization** widget or section. 
+
 
 {{< taglist tag="tcsnapshots" limit="10" >}}
 
