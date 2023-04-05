@@ -44,7 +44,7 @@ As this tutorial will not cover the basic installation of a TNS I assume you hav
 
 ### Install ES
 
-Now, to get our hands dirty, we install ES as a docker image. Sadly neither TreuNAS SCALE offical 
+Now, to get our hands dirty, we install ES as a docker image. Sadly neither TreuNAS SCALE official 
  repo nor the elastic one provides a docker we can use. So I googled all night and found this beautiful blog ([Heavy Setup LINK](https://heavysetup.info/applications/tube-archivist/es-installation/)). 
  To sum up what we need do:
  -> Add a new catalog (TrueCHARTS, https://github.com/truecharts/charts.git)

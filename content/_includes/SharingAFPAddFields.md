@@ -38,4 +38,4 @@ These settings display after clicking **ADVANCED OPTIONS**.
 | **Descriptions** | Optional description. |
 | **Zero Device Number** | Select to enable when the device number is inconstant across a reboot. |
 | **No Stat** | Select to allow AFP to not stat the pool path when enumerating the pools list. This is useful for automounting or pools created by a preexec script. |
-| **Auxillary Parameters** | Additional [afp.conf](http://netatalk.sourceforge.net/3.1/htmldocs/afp.conf.5.html) parameters not covered by other option fields. |
+| **Auxiliary Parameters** | Additional [afp.conf](http://netatalk.sourceforge.net/3.1/htmldocs/afp.conf.5.html) parameters not covered by other option fields. |

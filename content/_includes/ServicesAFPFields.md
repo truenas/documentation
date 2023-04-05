@@ -2,14 +2,14 @@
 ---
 **General Option**
 
-| Settings | Descritpion |
+| Settings | Description |
 |----------|-------------|
 | **Database Path** | Sets the database information stored in the path. The path must be writable even if the pool is read only. |
 
 **Access**
 
 
-| Settings | Descritpion |
+| Settings | Description |
 |----------|-------------|
 | **Guest Account** | Select an account to use for guest access. This account must have permissions to the shared pool or dataset. The privileges given to this user are also available to any client connecting to the guest service. This user must exist in the password file, but does not require a valid login. The root user cannot be used as guest account. |
 | **Guest Access** | Select to disable the password prompt that displays before clients access AFP shares. |
@@ -20,7 +20,7 @@
 **Other Options**
 
 
-| Settings | Descritpion |
+| Settings | Description |
 |----------|-------------|
 | **Log Level** | Record AFP service messages up to the specified log level in the system log. By default, severe and warning level messages are logged. |
 | **Bind Interfaces** | Specify the IP addresses to listen for AFP connections. Leave blank to bind to all available IPs. If none are specified, advertise the first IP address of the system, but listen for any incoming request. |

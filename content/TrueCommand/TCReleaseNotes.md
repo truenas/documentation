@@ -68,7 +68,7 @@ This release of TrueCommand includes a new cluster details panel, and makes impr
 
 * Allows adding the IP or host name validators when creating a new system
 * Allows adding custom NetBIOS name when configuring Active Directory on clustering
-* Adds Google authentication support for two-factor authenication (2fa)
+* Adds Google authentication support for two-factor authentication (2fa)
 * Improves email connection testing and adds explicit SMTP errors
 * Improves logging and alerts in middleware and the UI
 
@@ -167,7 +167,7 @@ This is a minor release designed to address some additional cluster issues found
 * [TC-2261](https://ixsystems.atlassian.net/browse/TC-2261) Build/publish tags
 * [TC-2259](https://ixsystems.atlassian.net/browse/TC-2259) Use cluster name for netbios
 * [TC-2253](https://ixsystems.atlassian.net/browse/TC-2253) TC wizard does not create A records in active directory when 22.02.3 is used
-* [TC-2247](https://ixsystems.atlassian.net/browse/TC-2247) Generated hostname is longer than 15 charcters preventing clustering setup
+* [TC-2247](https://ixsystems.atlassian.net/browse/TC-2247) Generated hostname is longer than 15 characters preventing clustering setup
 * [TC-2245](https://ixsystems.atlassian.net/browse/TC-2245) RRDcached sockets timeout on read, fork, and fail to reconnect
 * [TC-2207](https://ixsystems.atlassian.net/browse/TC-2207) 2FA window pops back up after successful login with Auth code
 
@@ -203,7 +203,7 @@ See [Back up the Container Volume]({{< relref "UpdateDocker.md" >}}) for specifi
 * [TC-2122](https://ixsystems.atlassian.net/browse/TC-2122) - push release/\* images on PR merge
 * [TC-2106](https://ixsystems.atlassian.net/browse/TC-2106) - split clustering into two wizards
 * [TC-2099](https://ixsystems.atlassian.net/browse/TC-2099) - clustered SMB design polish
-* [TC-2093](https://ixsystems.atlassian.net/browse/TC-2093) - Minor imporvements to MW connection down alert
+* [TC-2093](https://ixsystems.atlassian.net/browse/TC-2093) - Minor improvements to MW connection down alert
 * [TC-2080](https://ixsystems.atlassian.net/browse/TC-2080) - tap into gluster/fuse events to maintain a cluster cache
 * [TC-2078](https://ixsystems.atlassian.net/browse/TC-2078) - remove code from previous clustering implementation
 * [TC-2070](https://ixsystems.atlassian.net/browse/TC-2070) - Open File Explorer \(NAS Manager\) not available on connected SCALE systems
@@ -328,7 +328,7 @@ See [Back up the Container Volume]({{< relref "UpdateDocker.md" >}}) for specifi
 * [TC-1948](https://ixsystems.atlassian.net/browse/TC-1948) - Removal of team in edit-user page is not working
 * [TC-1943](https://ixsystems.atlassian.net/browse/TC-1943) - TrueCommand Certificate Issues
 * [TC-1941](https://ixsystems.atlassian.net/browse/TC-1941) - Unable to open TrueNAS proxy interface on cloud
-* [TC-1939](https://ixsystems.atlassian.net/browse/TC-1939) - Filewatcher does not readd deleted files
+* [TC-1939](https://ixsystems.atlassian.net/browse/TC-1939) - Filewatcher does not re-add deleted files
 * [TC-1934](https://ixsystems.atlassian.net/browse/TC-1934) - Mailserver Test Button Lacks Meaningful Output
 * [TC-1930](https://ixsystems.atlassian.net/browse/TC-1930) - Upgrade from TrueCommand 1.3 to 2.0/2.1 Breaks LDAP
 * [TC-1921](https://ixsystems.atlassian.net/browse/TC-1921) - Imported Certificates Are Not Showing In The WebUI
@@ -529,7 +529,7 @@ TrueCommand 2.1 is the single pane of glass for:
 |---------|-----|---------|------------|-------------|
 | TC 2.3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2609" target="_blank">TC-2609</a> | Unable to recreate a cluster after removing the cluster | After removing a cluster, unable to create a new cluster as not all settings with dropdown lists populate the options preventing configuring required settings. Recommend you not delete your cluster until this is fixed. Underlying issue is identified and will be included in the next release. | Targeted 2.3.2 |
 | TC 2.3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2533" target="_blank">TC-2533</a> | Hook in new servers/limit event sent when license limit is exceeded | This event replaces an error on servers/add, which instead sends max_disks and license_count if the license is executed, but not error. Any time a check fails the servers/limit event is sent as well, for asynchronous occurrences. | Targeted 2.3.2 |
-| TC 2.3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2528" target="_blank">TC-2528</a> | Cannot enable team alert creation | Enabling team alert creation on new teams does not stick as the only way to submit is to update the name, which resets the checkbox after the team object is reloaded. | Unknonwn |
+| TC 2.3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2528" target="_blank">TC-2528</a> | Cannot enable team alert creation | Enabling team alert creation on new teams does not stick as the only way to submit is to update the name, which resets the checkbox after the team object is reloaded. | Unknown |
 | TC 2.3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2524" target="_blank">TC-2524</a> | Notices WebSocket test results are unstable | Most tests pass but some are failing but never on the same test. Possible middleware issue. | Targeted 2.3.2 |
 | TC 2.3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2508" target="_blank">TC-2508</a> | Teams, systems and groups missing in User after migration from 2.2.2 to 2.3.0 | After migrating from 2.2.2. to 2.3.0, users no longer had Teams, Systems or system Groups assigned. The Teams are and system groups are listed in the Systems/System Groups and Teams areas but no longer assigned under the User. | Fixed in 2.3.0 |
 |TC 2.2.2 | <a href="https://ixsystems.atlassian.net/browse/TC-2339" target="_blank">TC-2339</a> | Dashboard System card values for SCALE 22.12 do not populate. | The TrueCommand Dashboard System card values for SCALE 22.12 Bluefin are missing. | Fixed in 2.2.3 |

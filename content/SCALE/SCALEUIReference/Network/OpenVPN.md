@@ -1,5 +1,5 @@
 ---
-title: "OpenVPN"
+title: "OpenVPN Screens"
 description: "This article provides information on the **Network** screen **OpenVPN** widget and configuration screen."
 weight: 40
 tags:
@@ -11,11 +11,15 @@ tags:
 
 The **OpenVPN** widget on the **Network** screen displays OpenVPN Client and Server statuses. Use this to manually stop and start OpenVPN Client and Server services.
 
+![OpenVPNWidget](/images/SCALE/22.12/OpenVPNWidget.png "OpenVPN")
+
 ## OpenVPN Client
 
 Clicking **Client** opens the **Open VPN Client** configuration form. 
 
-![OpenVPNWidget](/images/SCALE/OpenVPNWidget.png "OpenVPN")
+![OpenVPNClientScreen](/images/SCALE/22.12/OpenVPNClientScreen.png "OpenVPN Client Options")
+
+**Manage Certificates** opens the **[Accounts > Certificates]({{< relref "CertificatesScreensSCALE.md" >}})** screen.
 
 | Setting | Description |
 |---------|-------|
@@ -37,7 +41,9 @@ Clicking **Client** opens the **Open VPN Client** configuration form.
 
 Clicking **Server** opens the **Open VPN Server** configuration form.
 
-![OpenVPNServer](/images/SCALE/OpenVPNServer.png "OpenVPN Server Options")
+![OpenVPNServerScreen](/images/SCALE/22.12/OpenVPNServerScreen.png "OpenVPN Server Options")
+
+**Manage Certificates** opens the **[Accounts > Certificates]({{< relref "CertificatesScreensSCALE.md" >}})** screen.
 
 | Setting | Description |
 |---------|-------|
@@ -56,3 +62,5 @@ Clicking **Server** opens the **Open VPN Server** configuration form.
 | **TLS Crypt Auth** | Provide static key for authentication/encryption of all control channel packets when tls_crypt_auth_enabled is enabled. |
 
 The <span class="iconify" data-icon="mdi:play-arrow-rounded"></span> and <span class="iconify" data-icon="mdi:round-stop"></span> buttons start and stop the OpenVPN server and client.
+
+{{< taglist tag="scaleopenvpn" limit="10" >}}

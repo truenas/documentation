@@ -22,7 +22,7 @@ ZFS has direct access to disks and bundles multiple read and write requests into
 Most filesystems cannot do this, as they only have access to disk blocks.
 A transaction either completes or fails, meaning there will never be a [write-hole](https://blogs.oracle.com/bonwick/raid-z) and a filesystem checker utility is not necessary.
 Because of the transactional design, as additional storage capacity is added, it becomes immediately available for writes.
-To rebalance the data, one can copy it to re-write the existing data across all available disks.
+To re-balance the data, one can copy it to re-write the existing data across all available disks.
 As a 128-bit filesystem, the maximum filesystem or file size is 16 exabytes.
 
 **ZFS was designed to be a self-healing filesystem**.
