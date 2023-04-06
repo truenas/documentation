@@ -29,11 +29,25 @@ posts_read_time:
   one: "Eine Minute Lesedauer"
   other: "{{ . }} Minuten Lesedauer"
 posts_update_prefix: Aktualisiert am
+posts_count:
+  one: "Ein Artikel"
+  other: "{{ . }} Artikel"
+posts_tagged_with: Alle Artikel mit dem Tag '{{ . }}'
 
 footer_build_with: >
   Entwickelt mit <a href="https://gohugo.io/" class="gdoc-footer__link">Hugo</a> und
-  <svg class="icon gdoc_heart"><use xlink:href="#gdoc_heart"></use></svg>
+  <svg class="gdoc-icon gdoc_heart"><use xlink:href="#gdoc_heart"></use></svg>
 footer_legal_notice: Impressum
 footer_privacy_policy: Datenschutzerklärung
+footer_content_license_prefix: >
+  Inhalt lizensiert unter
 
 language_switch_no_tranlation_prefix: "Seite nicht übersetzt:"
+
+propertylist_required: erforderlich
+propertylist_optional: optional
+propertylist_default: Standardwert
+
+pagination_page_prev: vorher
+pagination_page_next: weiter
+pagination_page_state: "{{ .PageNumber }}/{{ .TotalPages }}"

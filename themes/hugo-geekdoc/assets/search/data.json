@@ -4,9 +4,10 @@
     {
       "id": {{ $index }},
       "href": "{{ $page.RelPermalink }}",
-      "title": {{ (partial "title" $page) | jsonify }},
-      "parent": {{ with $page.Parent }}{{ (partial "title" .) | jsonify }}{{ else }}""{{ end }},
-      "content": {{ $page.Plain | jsonify }}
+      "title": {{ (partial "utils/title" $page) | jsonify }},
+      "parent": {{ with $page.Parent }}{{ (partial "utils/title" .) | jsonify }}{{ else }}""{{ end }},
+      "content": {{ $page.Plain | jsonify }},
+      "description": {{ $page.Summary | plainify | jsonify }}
     }
   {{ end }}
 ]

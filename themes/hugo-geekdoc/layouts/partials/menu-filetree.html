@@ -40,7 +40,6 @@
 
       {{ range $rangeBy }}
         {{ if not .Params.GeekdocHidden }}
-
           {{ $numberOfPages := (add (len .Pages) (len .Sections)) }}
           {{ $isParent := and (ne $numberOfPages 0) (not .Params.GeekdocFlatSection) }}
           {{ $isCurrent := eq $current . }}
@@ -61,27 +60,29 @@
             />
             <label
               {{ if $doCollapse }}
-                for="{{ printf "navtree-%s" $id }}" class="flex justify-between"
+                for="{{ printf "navtree-%s" $id }}" class="flex justify-between align-center"
               {{ end }}
             >
               {{ if or .Content .Params.GeekdocFlatSection }}
                 <span class="flex">
                   <a
                     href="{{ .RelPermalink }}"
-                    class="gdoc-nav__entry {{ if eq $current . }}is-active{{ end }}"
+                    class="gdoc-nav__entry{{- if eq $current . }}
+                      {{- printf " is-active" }}
+                    {{- end }}"
                   >
-                    {{ partial "title" . }}
+                    {{ partial "utils/title" . }}
                   </a>
                 </span>
               {{ else }}
-                <span class="flex">{{ partial "title" . }}</span>
+                <span class="flex">{{ partial "utils/title" . }}</span>
               {{ end }}
               {{ if $doCollapse }}
-                <svg class="icon toggle gdoc_keyborad_arrow_left">
-                  <use xlink:href="#gdoc_keyborad_arrow_left"></use>
+                <svg class="gdoc-icon toggle gdoc_keyboard_arrow_left">
+                  <use xlink:href="#gdoc_keyboard_arrow_left"></use>
                 </svg>
-                <svg class="icon toggle gdoc_keyborad_arrow_down">
-                  <use xlink:href="#gdoc_keyborad_arrow_down"></use>
+                <svg class="gdoc-icon toggle gdoc_keyboard_arrow_down">
+                  <use xlink:href="#gdoc_keyboard_arrow_down"></use>
                 </svg>
               {{ end }}
             </label>

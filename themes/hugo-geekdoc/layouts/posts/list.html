@@ -2,7 +2,9 @@
   {{ range .Paginator.Pages }}
     <article class="gdoc-markdown gdoc-post">
       <header class="gdoc-post__header">
-        <h1 class="gdoc-post__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
+        <h1 class="gdoc-post__title">
+          <a href="{{ .RelPermalink }}">{{ partial "utils/title" . }}</a>
+        </h1>
       </header>
       <section>
         {{ .Summary }}
@@ -21,10 +23,13 @@
       </div>
 
       <footer class="gdoc-post__footer">
-        {{ partial "posts/metadata.html" . }}
+        <div class="flex flex-wrap align-center gdoc-post__meta">
+          {{ partial "posts/metadata.html" . }}
+        </div>
       </footer>
     </article>
   {{ end }}
+  {{ partial "pagination.html" . }}
 {{ end }}
 
 {{ define "post-tag" }}
@@ -33,7 +38,7 @@
       <a
         class="gdoc-button__link"
         href="{{ .page.RelPermalink }}"
-        title="All posts tagged with '{{ .name }}'"
+        title="{{ i18n "posts_tagged_with" .name }}"
       >
         {{ .name }}
       </a>
