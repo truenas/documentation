@@ -12,7 +12,12 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-P87FM6K');</script>
     <!-- End Google Tag Manager -->
-    {{ partial "head" . }}
+    {{ partial "head/favicons" . }}
+    {{ partial "head/rel-me" . }}
+    {{ partial "head/microformats" . }}
+    {{ partial "head/others" . }}
+    {{ partial "head/schema" . }}
+    {{ partial "head/custom" . }}
 </head>
 <body>
     <!-- Define feature image for search results or linking -->
