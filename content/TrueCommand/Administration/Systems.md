@@ -1,6 +1,6 @@
 ---
 title: "Systems"
-description: "This article provides information on the System screens, settings and options."
+description: "This article provides information on the System screens, settings, and options."
 weight: 10
 aliases:
 tags:
@@ -51,7 +51,7 @@ Click <mat-icon _ngcontent-igf-c221="" role="img" fontset="mdi" class="mat-icon 
 
 
 {{< expand "Update" "v" >}}
-If the system has updates ready to apply, a green updates displays on the system information screen.
+If the system has updates ready to apply, a green **Update** displays on the system information screen.
 
 ![SystenUpdateAvailable](/images/TrueCommand/2.3.2/SystenUpdateAvailable.png "System Update Available")
 
