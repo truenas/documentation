@@ -1175,6 +1175,8 @@ PeriodicSnapshotTasksSCALE
 homedirectories
 DatasetsSCALE
 ConsoleSetupMenuSCALE
+passwordless
+homedirs
 mprutil
 eeprom
 elasticsearch

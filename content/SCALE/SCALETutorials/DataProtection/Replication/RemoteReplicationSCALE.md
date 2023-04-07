@@ -62,10 +62,12 @@ This saves some time when creating multiple replication tasks between the same t
   
    e. Select **Use Sudo for ZFS Commands**. Only displays when logged in as the admin user (or the name of the admin user). 
       This removes the need to issue the cli `zfs allow` command in Shell on the remote system. 
+      When the dialog displays, click **Use Sudo for ZFS Comands**. If you close this dialog, select the option on the **Add Replication Task** wizard screen.
 
-   ![CreateRemoteReplicationTaskSetSudo](/images/SCALE/22.12/CreateRemoteReplicationTaskSetSudo.png "Select Use Sudo for ZFS Commands")
+   ![UseSudoForZFSCommandsDialog](/images/SCALE/22.12/UseSudoForZFSCommandsDialog.png "Select Use Sudo for ZFS Commands")
     
-   f. Select the **Include snapshots with the name** radio button you want to use. If **Naming Schema**, you must enter a schema in **Naming Schema**.
+   f. Select **Replicate Custome Snapshots**, then leave the default value in **Naming Schema**.
+      If you know how to enter the schema you want, enter it in **Naming Schema**.
       Remote sources require entering a snapshot naming schema to identify the snapshots to replicate. 
       A naming schema is a pattern of naming custom snapshots you want to replicate. 
       Enter the name and [strftime(3)](https://man7.org/linux/man-pages/man3/strftime.3.html) %Y, %m, %d, %H, and %M strings that match the snapshots to include in the replication. Separate entries by pressing <kbd>Enter</kbd>. The number of snapshots matching the patterns display.

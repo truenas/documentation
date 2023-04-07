@@ -2,14 +2,21 @@
 ---
 
 {{< expand "Replication Task General Overview" "v" >}}
+If using a TrueNAS SCALE Bluefin system on the early release (22.12.1) you must have the [admin user correctly configured]({{< relref "ManageLocalUsersSCALE.md" >}}) with:
+
+* The **Home Directory** set to something other than **/nonexistent**
+* The admin user in the **builtin_admin** group
+* The admin user passwordless sudo permission enabled
+
+Also verify the SSH service settings to make sure you have **Root with Password**, **Log in as Admin with Password**, and **Allow Password Authentication** selected to enable these capabilities.
+{{< hint warning >}}
+Incorrect SSH service settings can impact the admin user ability to establish an SSH session during replication, and require you to obtain and paste a public SSH key into the admin user settings.
+{{< /hint >}}
 
 1. Set up the data storage for where you want to save replicated snapshots. 
    
-2. Make sure the admin user has a home directory assigned. 
-   In the SCALE Bluefin early release, when creating the admin user at installation the home directory default is set to **/nonexistent**. To create an SSH connection to use in a remote replication you must assign a home directory path.
-
-   Later releases of SCALE Bluefin set the admin user home directory to one created by SCALE during the installation process, but you need to select the option to create the admin user home directory.
-
+2. Make sure the admin user is correctly configured. 
+   
 3. Create an SSH connection between the local SCALE system and the remote system for remote replication tasks. Local replication does not require an SSH connection. 
    You can do this from either **Credentials > Backup Credentials > SSH Connection** and clicking **Add** or from the **Replication Task Wizard** using the **Generate New** option in the settings for the remote system.
 
