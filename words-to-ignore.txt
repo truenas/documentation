@@ -1176,7 +1176,7 @@ homedirectories
 DatasetsSCALE
 ConsoleSetupMenuSCALE
 passwordless
-himdirs
+homedirs
 mprutil
 eeprom
 elasticsearch
