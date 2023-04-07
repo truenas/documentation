@@ -50,11 +50,11 @@ Click **Next** to advance to the **Block Devices** screen, then click **+ Block 
 
 ![iSCSIWizardAddBlockDeviceGroup](/images/TrueCommand/2.3.2/iSCSIWizardAddBlockDeviceGroup.png "iSCSI Add Block Device Group")
 
-To add a block device, enter a name, specify the number of iSCSI datastores you want to create, the size, zvol and logical blocksizes for each. 
+To add a block device, enter a name, specify the number of iSCSI datastores you want to create, the size, zvol and logical block sizes for each. 
 Enter a number in **Count** to tell TrueCommand to create a batch of ISCSI datastores with identical settings for the number specified.
 
 Select **Xen Support** if using Xen, a VM platform, as an initiator. 
-Select **xcopy Suport** to enable allowing an initiator to bypass normal access control and access any scannable target when the TrueNAS system is running CORE, SCALE does not use this function. This allows xcopy operations otherwise blocked by access control.
+Select **xcopy Support** to enable allowing an initiator to bypass normal access control and access any scannable target when the TrueNAS system is running CORE, SCALE does not use this function. This allows xcopy operations otherwise blocked by access control.
 
 Click **SAVE**, then click **NEXT** to advance to the **Targets** screen.
 
