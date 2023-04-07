@@ -1175,3 +1175,5 @@ PeriodicSnapshotTasksSCALE
 homedirectories
 DatasetsSCALE
 ConsoleSetupMenuSCALE
+passwordless
+himdirs
