@@ -70,9 +70,9 @@ To purchase a new [TrueNAS Enterprise system](https://www.truenas.com/truenas-en
 * Adding sudo options to user and replication configuration screens
 * SSH service option for the administration user
 * Application advanced settings changes that add a force flag option
-* Applications new Kubernetes passthrough functionality
 * Replication task improvements that add reasons why tasks are waiting to run
-* New enclosure management for the R30 and Mini R platforms
+* (Enterprise only) Applications new Kubernetes passthrough functionality
+* (Enterprise only) New enclosure management for the R30 and Mini R platforms
 
 It also implements fixes to pool status reporting, application options, reporting functions, cloud sync and replication tasks, iSCSI shares, SMB service in HA systems, various UI issues, UI behavior related to isolated GPU and USB passthrough in VMs, and changes to setting options and failover on HA systems.
 
