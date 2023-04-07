@@ -8,16 +8,16 @@ weight: 7
 
 {{< toc >}}
 
+## Software Lifecycle
+
 {{< hint danger >}}
 Early releases are intended for testing and early feedback purposes only.
 Do not use early release software for critical tasks.
 {{< /hint >}}
 
-Want to get involved by collaborating on TrueNAS SCALE? Join our [Official Discord Server.](https://discord.com/invite/Q3St5fPETd)
-
-## Software Lifecycle
-
 {{< include file="/static/includes/General/LifecycleTable.html.part" html="true" >}}
+
+Want to collaborate on TrueNAS SCALE? Join our [Official Discord Server.](https://discord.com/invite/Q3St5fPETd)
 
 {{< include file="/content/_includes/SoftwareStatusPage.md" type="page" >}}
 
@@ -27,10 +27,6 @@ Want to get involved by collaborating on TrueNAS SCALE? Join our [Official Disco
 
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
-| SCALE 22.12.2 | Code-freeze | 08 March 2023 |
-| SCALE 22.12.2 | Internal Testing Sprints | 13 March 2023 - 7 April 2023 |
-| SCALE 22.12.2 | Tag | 10 April 2023 |
-| SCALE 22.12.2 | Release | 11 April 2023 |
 | SCALE 22.12.3 | Code-freeze | 10 May 2023 |
 | SCALE 22.12.3 | Internal Testing Sprints | 11 - 26 May 2023 |
 | SCALE 22.12.3 | Tag | 29 May 2023 |
@@ -61,7 +57,15 @@ To upgrade an existing SCALE install, log in to your SCALE web interface and go 
 
 **March 28, 2023**
 
-TrueNAS SCALE 22.12.1 has been released. It includes many new features and improved functionality that span SCALE Enterprise High Availability (HA), applications, rootless login administrative user, enclosure management, and replication:
+iXsystems is pleased to release TrueNAS SCALE 22.12.2!
+
+{{< enterprise >}}
+22.12.2 is the first SCALE release that supports TrueNAS Enterprise systems!
+For TrueNAS Enterprise systems that are already deployed with TrueNAS CORE installed, you can [contact iXsystems Support]({{< relref "GetSupportSCALE.md" >}}) to verify SCALE compatibility and schedule a migration.
+To purchase a new [TrueNAS Enterprise system](https://www.truenas.com/truenas-enterprise/), please contact iXsystems for a quote!
+{{< /enterprise >}}
+
+22.12.2 includes many new features and improved functionality that span SCALE Enterprise High Availability (HA), applications, rootless login administrative user, enclosure management, and replication:
 
 * Adding sudo options to user and replication configuration screens
 * SSH service option for the administration user
