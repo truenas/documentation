@@ -3,8 +3,9 @@ title: "Using an iSCSI Share"
 description: "This article provides information on setting up a Linux or Windows system to use a TrueNAS-configured iSCSI block share."
 weight: 40
 tags:
- - scaleiSCSI
- - scaleshares
+- scaleiscsi
+- scaleshares
+- tciscsi
 ---
 
 {{< toc >}}
