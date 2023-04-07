@@ -1192,3 +1192,7 @@ solidigm
 vrrp
 sudoers
 plx
+GetSupportSCALE
+SMR
+ACPI
+nvdimms
