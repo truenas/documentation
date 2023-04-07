@@ -3,8 +3,9 @@ title: "Adding iSCSI Block Shares"
 description: "This article provides instructions on setting up iSCSI block shares manually or using the wizard and starting the service."
 weight: 30
 tags:
- - scaleiSCSI
- - scaleshares
+- scaleiscsi
+- scaleshares
+- tciscsi
 ---
 
 {{< toc >}}

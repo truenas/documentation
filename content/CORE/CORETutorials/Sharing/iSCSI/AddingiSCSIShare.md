@@ -6,6 +6,7 @@ aliases: /core/sharing/iscsi/iscsishare/
 tags:
 - coreiscsi
 - corefibrechannel
+- tciscsi
 ---
 
 {{< toc >}}

@@ -3,8 +3,9 @@ title: "Block (iSCSI) Share Target Screens"
 description: "This article provides information on Block (iSCSI) Share Targets screens and settings."
 weight: 30
 tags:
- - scaleiSCSI
- - scaleshares
+- scaleiscsi
+- scaleshares
+- tciscsi
 ---
 
 {{< toc >}}
