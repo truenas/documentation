@@ -1177,3 +1177,10 @@ pre-shared-key
 mycorp
 pre-known
 ldap
+Xen
+scannable
+tciscsi
+coreiscsi
+scaleiscsi
+xcopy
+blocksize
