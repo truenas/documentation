@@ -1,7 +1,8 @@
 ---
 ---
+When using a TrueNAS system on a different release, like CORE or SCALE Angelfish, the remote or destination system user is always root. 
 
-To configure a new SSH connection in the **Replication Task Wizard**:
+To configure a new SSH connection from the **Replication Task Wizard**:
 
 1. Select **Create New** on the **SSH Connection** dropdown list to open the **New SSH Connection** configuration screen.
 
@@ -19,9 +20,11 @@ To configure a new SSH connection in the **Replication Task Wizard**:
    Enter the password in **Admin Password**.
 
 6. Enter the administration user (i.e., root or admin) for remote system SSH session. 
+   If you clear root as the the user and type any other name the **Enable passwordless sudo for ZFS commands** option displays. 
+   This option does nothing so leave it cleared.
 
 7. Select **Generate New** from the **Private Key** dropdown list.
 
-8. (Optional) Select a cipher from the dropdown list, or enter a new value in seconds for the **Connection Timeout**.
+8. (Optional) Select a cipher from the dropdown list, or enter a new value in seconds for the **Connection Timeout** if you want to change the defaults.
 
-9. Click **Save** to create a new ssh connection and populate the **SSH Connection** field in the **Replication Task Wizard**.
+9. Click **Save** to create a new SSH connection and populate the **SSH Connection** field in the **Replication Task Wizard**.

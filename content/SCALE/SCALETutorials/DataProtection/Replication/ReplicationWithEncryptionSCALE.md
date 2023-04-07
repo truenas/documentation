@@ -71,40 +71,41 @@ This saves some time when creating multiple replication tasks between the same t
    
    ![CreateRemoteReplicationTask](/images/SCALE/22.12/CreateRemoteReplicationTask.png "New Remote Replication Task")
    
-   a. Select either **On this System** or **On a Different System** on the **Source Location** dropdown list. 
-      If your source is a remote system, select **On a Different System**. The **Destination Location** automatically changes to **On this System**.       
+   a. Select **On this System** on the **Source Location** dropdown list. 
       If your source is the local TrueNAS SCALE system, you must select **On a Different System** from the **Destination Location** dropdown list to do remote replication. 
+
+      If your source is a remote system, create the replication task as the root user and select **On a Different System**. The **Destination Location** automatically changes to **On this System**. 
       
       TrueNAS shows the number of snapshots available for replication.
     
-    b. Select an existing SSH connection to the remote system or create a new connection.
-       Select **Create New** to open the **[New SSH Connection](#configure-a-new-ssh-connection)** configuration screen.
+   b. Select an existing SSH connection to the remote system or create a new connection.
+      Select **Create New** to open the **[New SSH Connection](#configure-a-new-ssh-connection)** configuration screen.
     
-    c. Browse to the source pool/dataset(s), then click on the dataset(s) to populate the **Source** with the path. 
-       You can select multiple sources or manually type the names into the **Source** field. Separate multiple entries with commas.
-       Selecting **Recursive** replicates all snapshots contained within the selected source dataset snapshots.
+   c. Browse to the source pool/dataset(s), then click on the dataset(s) to populate the **Source** with the path. 
+      You can select multiple sources or manually type the names into the **Source** field. Separate multiple entries with commas.
+      Selecting **Recursive** replicates all snapshots contained within the selected source dataset snapshots.
 
-    d. Repeat to populate the **Destination** field. 
-       You cannot use zvols as a remote replication destination. 
-       Add a **/*datasetname*** to the end of the destination path to create a new dataset in that location.
+   d. Repeat to populate the **Destination** field. 
+      You cannot use zvols as a remote replication destination. 
+      Add a **/*datasetname*** to the end of the destination path to create a new dataset in that location.
     
-    e. (Optional) Select **Encryption** to add a [second layer of encryption](#adding-additional-encryption) over the already encrypted dataset.
+   e. (Optional) Select **Encryption** to add a [second layer of encryption](#adding-additional-encryption) over the already encrypted dataset.
          
-    f. Select **Use Sudo for ZFS Commands**. A **Sudo Enabled** dialog displays to allow you to select this option, or you can select it on the wizard screen.
+   f. Select **Use Sudo for ZFS Commands**. Only displays when logged in as the admin user (or the name of the admin user). 
+      This removes the need to issue the cli `zfs allow` command in Shell on the remote system. 
+      When the dialog displays, click **Use Sudo for ZFS Comands**. If you close this dialog, select the option on the **Add Replication Task** wizard screen.
     
-    ![UseSudoForZFSCommandsDialog](/images/SCALE/22.12/UseSudoForZFSCommandsDialog.png "Select Use Sudo for ZFS Commands")
+   ![UseSudoForZFSCommandsDialog](/images/SCALE/22.12/UseSudoForZFSCommandsDialog.png "Select Use Sudo for ZFS Commands")
     
-       This option only displays when logged in as the admin user.
-       If not selected you need to issue the cli `zfs allow` command in Shell on the remote system. 
+      This option only displays when logged in as the admin user.
+      If not selected you need to issue the cli `zfs allow` command in Shell on the remote system. 
 
-    g. Select **Replicate Custom Snapshots**, then accept the default value in **Naming Schema**. 
-       Remote sources require entering a snapshot naming schema to identify the snapshots to replicate. 
-       A naming schema is a pattern of naming custom snapshots you want to replicate. 
-       If you want to change the default schema, enter the name and [strftime(3)](https://man7.org/linux/man-pages/man3/strftime.3.html) %Y, %m, %d, %H, and %M strings that match the snapshots to include in the replication. 
-       Separate entries by pressing <kbd>Enter</kbd>. The number of snapshots matching the patterns display.
-    
-    ![RemoteReplicateSnapshotAndNameSchema](/images/SCALE/22.12/RemoteReplicateSnapshotAndNameSchema.png "Replicate Custom Snapshot and Naming Schema")
-
+   g. Select **Replicate Custom Snapshots**, then accept the default value in **Naming Schema**. 
+      Remote sources require entering a snapshot naming schema to identify the snapshots to replicate. 
+      A naming schema is a pattern of naming custom snapshots you want to replicate. 
+      If you want to change the default schema, enter the name and [strftime(3)](https://man7.org/linux/man-pages/man3/strftime.3.html) %Y, %m, %d, %H, and %M strings that match the snapshots to include in the replication. 
+      Separate entries by pressing <kbd>Enter</kbd>. The number of snapshots matching the patterns display.
+   
    h. (Optional) Enter a name for the snapshot in **Task Name**. 
       SCALE populates this field with the default name using the source and destination paths separated by a hyphen, but this default can make locating the snapshot in destination dataset a challenge. 
       To make it easier to find the snapshot, give it a name that is easy for you to identify. For example, a replicated task named *dailyfull* for a full file system snapshot taken daily. 
@@ -114,6 +115,20 @@ This saves some time when creating multiple replication tasks between the same t
 ### Unlocking the Destination Dataset
 
 After the replication task runs and creates the snapshot on the destination, you must unlock it to access the data. Use the encryption key exported from the dataset or pool, or if you use a passphrase to lock the dataset, enter the passphrase to unlock the dataset on the remote destination system.
+
+### Replication to an Unencrypted Destiation Dataset
+
+To replication an encrypted dataset to an unencrypted dataset on the remote destintation system, follow the instructions above to configure the task, then:
+
+1. Select the task on the **Replication Task** widget. The **Edit Replication Task** screen opens.
+
+2. Scroll down to **Include Dataset Properties** and select it to clear the checkbox.
+
+  ![EditReplicationTaskIncludeDatasetProperties](/images/SCALE/22.12/EditReplicationTaskIncludeDatasetProperties.png "Edit Replication Task Include Dataset Properties")
+
+3. Click **Save**.  
+
+This replicates the unlocked encrypted source dataset to an unencrypted destination dataset.
 
 ### Adding Additional Encryption
 When you replicate an encrypted pool or dataset you have one level of encryption applied at the data storage level. Use the passphrase or key created or exported from the dataset or pool to unlock the dataset on the destination server.
