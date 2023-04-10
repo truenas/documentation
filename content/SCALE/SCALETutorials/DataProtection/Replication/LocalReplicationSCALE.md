@@ -57,7 +57,6 @@ Saving changes to the configuration creates a new replication task without alter
       SCALE populates this field with the default name using the source and destination paths separated by a hyphen, but this default can make locating the snapshot in destination dataset a challenge. 
       To make it easier to find the snapshot, give it name easy for you to identify. For example, a replicated task named *dailyfull* for a full file system snapshot taken daily. 
     
-
 {{< include file="/content/_includes/ReplicationScheduleAndRetentionSteps.md" type="page" >}}
 
 {{< taglist tag="scalereplication" limit="10" >}}
