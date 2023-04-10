@@ -79,7 +79,7 @@ It also implements fixes to pool status reporting, application options, reportin
 ### Component Versions
 
 TrueNAS SCALE is built from many different software components.
-This list has up to date information on which versions of Linux, ZFS, and NVIDIA drivers included with this TrueNAS SCALE release.
+This list has up-to-date information on which versions of Linux, ZFS, and NVIDIA drivers are included with this TrueNAS SCALE release.
 Click the component version number to see the latest release notes for that component.
 
 <table style="max-width:25%;">
@@ -1508,6 +1508,7 @@ Known issues are those found during internal testing or reported by the communit
 | TrueNAS Bluefin no longer supports MS-DOS based SMB clients. | As of SCALE 22.12, Bluefin, TrueNAS now uses Samba 4.17. Samba 4.16 announced in their release notes that they deprecated and disabled the whole SMB1 protocol as of 4.11. If needed for security purposes or code maintenance they continue to remove older protocol commands and unused dialects or that are replaced in more modern SMB1 version. Refer to [Samba](https://www.samba.org/samba/latest_news.html) release notes for more information. |
 | Cannot mount WebDAV share in Windows when WebDAV service is set to Basic Authentication | If the TrueNAS WebDAV service is set to Basic Authentication, you cannot mount the share in Windows. This is a security protection on the part of Windows as Basic Authentication is considered an insecure way to input passwords. While the Windows Registry can be edited to allow for basic authentication, this is not recommended. It is recommended to access WebDAV shares using a browser with https security enabled or mounting shares with Digest Authentication enabled. |
 | App deployment can get stuck in validation when the Host Path is used between Apps and TrueNAS sharing services (e.g. SMB and NFS). | Shared host paths are considered insecure and are not recommended. Review host paths used by Apps and Sharing services and adjust paths to be unique. As a last resort that can result in system and app instability, **Host Path Safety Checks** can be disabled in **Apps > Settings > Advanced Settings**. |
+| Apps fail to start | There are known issues where applications fail to start after reboot. The fixed-in release is not known at this time. |
 
 ### Known Issues with a Future Resolution
 
