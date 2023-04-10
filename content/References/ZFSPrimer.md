@@ -34,8 +34,8 @@ A transaction either completes or fails, meaning there are never [write-holes](h
 
 A file system checker utility is not necessary. 
 Because of the transactional design, as you add more storage capacity, it becomes immediately available for writes.
-To rebalance the data, one can copy it to rewrite the existing data across all available disks.
-As a 128-bit file ystem, the maximum file system or file size is 16 exabytes.
+To re-balance the data, one can copy it to rewrite the existing data across all available disks.
+As a 128-bit file system, the maximum file system or file size is 16 exabytes.
 
 ### ZFS Self-Healing File System
 
@@ -113,7 +113,7 @@ See [this discussion about interpreting Zilstat data](https://www.truenas.com/co
 
 ZFS currently uses 16 GiB of space for SLOG.
 You can install larger SSDs, but the extra space is not used. 
-YOu cannot share SLOG devices between pools. 
+You cannot share SLOG devices between pools. 
 Each pool requires a separate SLOG device. 
 Bandwidth and throughput limitations require that you only use a SLOG device for this single purpose. 
 Do not attempt to add other caching functions on the same SSD, or performance suffers.
@@ -176,7 +176,7 @@ These resources can also help determine the RAID configuration best suited to th
 * [A Closer Look at ZFS, Vdevs and Performance](https://constantin.glez.de/2010/06/04/a-closer-look-zfs-vdevs-and-performance/)
 
 {{< hint warning >}}
-RAID and disk redundancy are not a substitue for a reilable backup strategy.
+RAID and disk redundancy are not a substitute for a reliable backup strategy.
 Bad things happen and a good backup strategy is still required to protect valuable data.
 Configuring TrueNAS with periodic snapshots and automated replication is strongly recommended as part of a ZFS snapshot backup strategy.
 {{< /hint >}}
