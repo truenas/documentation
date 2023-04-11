@@ -1202,5 +1202,6 @@ SMR
 ACPI
 nvdimms
 sudoers
+passdb-backed
 
 
