@@ -1190,3 +1190,17 @@ mtime
 subdir
 homedirs
 ConsoleSetupMenuSCALE
+emptyDirVolume
+IntegrityError
+pasdb-backed
+netbiosname
+GPUs
+subquestions
+solidigm
+vrrp
+SMR
+ACPI
+nvdimms
+sudoers
+
+
