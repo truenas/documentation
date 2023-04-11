@@ -26,7 +26,7 @@ aliases:
 
 ## 2.3.2
 
-February 16, 2023
+April 18, 2023
 
 iXsystems is pleased to release TrueCommand 2.3.2!
 This release is a maintenance release that fixes issues identified in earlier releases, improves validation, and adds new functions and improvements to existing functions. Changes include:
@@ -563,10 +563,15 @@ Known issues are those found during internal testing or reported by the communit
 * Issues from a release that will be resolved in a future targeted release(s).
 * Issues resolved in a particular version.
 
+
 ### Known Issues with a Future Resolution
 
 | Seen In | Key | Summary | Workaround | Resolution Target |
 |---------|-----|---------|------------|-------------------|
+| 2.3.2 | <a href="https://ixsystems.atlassian.net/browse/TC-2727" target="_blank">TC-2727</a> | Uploading or resetting certificates closes UI WS connection | Uploading or restting certificates triggers a rewrited of the Caddyfile which closes the UI websocket connection with code 1001. System tries to add an error to uilogs but fails with unknown API as the connection closes. uilogs should not run if the connetion is not up, and the connection closure soud log the user out and not gnerate the unknow API error. The connection should not close during this even but should reconnect immediately. | TBD |
+| 2.3.2 | <a href="https://ixsystems.atlassian.net/browse/TC-2726" target="_blank">TC-2726</a> | Renamed Groups appear as old name and not loading properly when editing |  | TBD |
+| 2.3.2 | <a href="https://ixsystems.atlassian.net/browse/TC-2725" target="_blank">TC-2725</a> | Use ctdb node infor for finding servers (peers) in cache | This fixes edge case where TrueCommand cannot resolve the hostname provided by gluser.peer.query back to an IP it knows about. ctdb endpoints provide the same peer information, but do ot use hostnames. | 2.3.2, 3.0 |
+| 2.3.2 | <a href="https://ixsystems.atlassian.net/browse/TC-2723" target="_blank">TC-2723</a> | R30 System Card System Image and Information Display Issues | The expanded System Card does not show the image of the R30 and the information text displays outside of the card frame. | 2.3.3, 3.0 |
 | 2.3.2 | <a href="https://ixsystems.atlassian.net/browse/TC-2719" target="_blank">TC-2719</a> | Launch TrueNAS Interface option on the System action list does not work | On a system widget in TrueCommand action list, Launch TrueNAS Interface displays This page is not working instead of launching the connection to the TrueNAS UI. | 3.0 |
 | 2.3.2 | <a href="https://ixsystems.atlassian.net/browse/TC-2718" target="_blank">TC-2718</a> | After adding a system that is down, the UI doesn't show a system until an F5 Refresh | If adding a system that is down to TrueCommand, the system does not show in the TrueCommand UI until you refresh the cache using F5. At that point the server displays on the list flagged as Offline. | 3.0 |
 | 2.3.2 | <a href="https://ixsystems.atlassian.net/browse/TC-2715" target="_blank">TC-2715</a> | Home Directory field cursor location is misleading when creating a user in TrueCommand | After adding a system and selecting Users and Groups from the action list, when entering the value in Home Directory the cursor position is not at the beginning of the field but after the /mnt/<pool>/ path implying the user should edit from that point and not able to change the pool and dataset part of the example path. | 2.3.3 |
@@ -575,7 +580,6 @@ Known issues are those found during internal testing or reported by the communit
 | 2.3.2 | <a href="https://ixsystems.atlassian.net/browse/TC-2705" target="_blank">TC-2705</a> | Deleting a volume with the TC iSCSI Manager does not delete iSCSI Initiators Group | After deleting an iSCSI  volume using TC iSCSI Manager does not delete the Initiator Group but does delete the rest of the iSCSI block share. | TBD |
 | 2.3.1 | <a href="https://ixsystems.atlassian.net/browse/TC-2677" target="_blank">TC-2677</a> | Cannot Administer Cluster in TC after creation | Upon cluster creation and registering nodes as gluster peers, the TrueCommand instance does not display the cluster in the UI and API calls do not recognize the cluster. Reinstalling from the 22.12.2 iso file or using 22.12.1 UI did result in a successful cluster creation. | 2.3.2 |
 | 2.3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2609" target="_blank">TC-2609</a> | Unable to recreate a cluster after removing the cluster | After removing a cluster, unable to create a new cluster as not all settings with dropdown lists populate the options preventing configuring required settings. Recommend you not delete your cluster until this is fixed. Underlying issue is identified and will be included in the next release. | 2.3.2 |
-| 2.3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2564" target="_blank">TC-2564</a> | SMB Service no started on the four systems after creating cluster volume/share | SMB service does not start on the four system in a cluster after creating the volume and share. | 2.3.2 |
 | 2.3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2528" target="_blank">TC-2528</a> | Cannot enable team alert creation | Enabling team alert creation on new teams does not stick as the only way to submit is to update the name, which resets the checkbox after the team object is reloaded. | 3.0 |
 | 2.3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2524" target="_blank">TC-2524</a> | Notices WebSocket test results are unstable | Most tests pass but some are failing but never on the same test. Possible middleware issue. | Backlog |
 
@@ -584,7 +588,7 @@ Known issues are those found during internal testing or reported by the communit
 | Seen In | Resolved In | Key | Summary | Workaround |
 |---------|-------------|-----|---------|------------|
 | 2.3.0 | 2.3.2 | <a href="https://ixsystems.atlassian.net/browse/TC-2533" target="_blank">TC-2533</a> | Hook in new servers/limit event sent when license limit is exceeded | This event replaces an error on servers/add, which instead sends max_disks and license_count if the license is executed, but not error. Any time a check fails the servers/limit event is sent as well, for asynchronous occurrences. |
-| 2.3.0 | 2.3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2508" target="_blank">TC-2508</a> | Teams, systems and groups missing in User after migration from 2.2.2 to 2.3.0 | After migrating from 2.2.2. to 2.3.0, users no longer had Teams, Systems or system Groups assigned. The Teams are and system groups are listed in the Systems/System Groups and Teams areas but no longer assigned under the User. |
+| 2.3.0 | 2.3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2508" target="_blank">TC-2508</a> | Teams, systems and groups missing in User after migration from 2.2.2 to 2.3.0 | After migrating from 2.2.2. to 2.3.0, users no longer had Teams, Systems or system Groups assigned. The Teams and system groups are listed in the Systems/System Groups and Teams areas and no longer assigned under the User. |
 
 {{< /expand >}}
 ## To Download this Release
