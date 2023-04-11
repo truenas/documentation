@@ -1174,3 +1174,7 @@ scalezfs
 pre-failover
 InstanceNotFound
 PoolDataset
+passwordless
+DatasetsSCALE
+homdirs
+PeriodicSnapshotTasksSCALE
