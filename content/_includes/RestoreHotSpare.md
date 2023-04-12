@@ -1,5 +1,5 @@
 ---
 ---
 
-After a disk fails and the hot spare takes over, to restore the hot spare to a waiting status after you replace the failed drive, first remove the current hot spare from the pool, then add the spare disk back to the pool as a new hot spare.
+After a disk fails, the hot spare takes over. To restore the hot spare to waiting status after replacing the failed drive, remove the hot spare from the pool, then re-add it to the pool as a new hot spare.
 

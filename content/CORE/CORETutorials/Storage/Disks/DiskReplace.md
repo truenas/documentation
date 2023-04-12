@@ -67,7 +67,7 @@ When the disk status shows as **Offline**, physically remove the disk from the s
 
 If the replacement disk is not already physically added to the system, add it now.
 
-### Brining a New Disk Online
+### Bringing a New Disk Online
 
 In the **Pool Status**, open the options for the offline disk and click **Replace**
 
