@@ -186,7 +186,7 @@ ZFS manages devices.
 When a user replaces a failed drive in a mirror or RAIDZ, ZFS adds the replacement device to the vdev and copies redundant data to it in a process called *resilvering*. 
 Hardware RAID controllers usually do not know which blocks are in use, so they copy every block to the new device. 
 ZFS only copies blocks in use, reducing the time it takes to rebuild the vdev. 
-Resilvering is also interruptible. 
+Resilvering is also interruptable. 
 After an interruption, resilvering resumes where it left off rather than starting from the beginning. 
 
 While ZFS provides many benefits, there are some caveats:
