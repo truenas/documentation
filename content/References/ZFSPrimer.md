@@ -112,7 +112,7 @@ You can run the `zilstat` utility from the TrueNAS **Shell** to determine if the
 See [this discussion about interpreting Zilstat data](https://www.truenas.com/community/threads/how-to-interpret-zilstat-output.70370/) for additional information.
 
 ZFS currently uses 16 GiB of space for SLOG.
-You can install larger SSDs, but the extra space is not used. 
+You can install larger SSDs, but ZFS does not use the extra space.
 You cannot share SLOG devices between pools. 
 Each pool requires a separate SLOG device. 
 Bandwidth and throughput limitations require that you only use a SLOG device for this single purpose. 
