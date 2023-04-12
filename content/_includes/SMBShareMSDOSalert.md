@@ -1,6 +1,20 @@
 ---
 ---
-{{< hint info >}}
-As of SCALE 22.12 (Bluefin), TrueNAS SCALE SMB no longer supports End of Life (EoL) Windows clients, including MS-DOS.
-The Samba project, which TrueNAS SCALE integrates to provide SMB sharing features, had previously deprecated the SMB1 protocol for security concerns. TrueNAS SCALE 22.12 (Bluefin) updated Samba to version 4.17, which eliminated SMB1 support entirely. Client systems that can only use the SMB1 protocol for SMB shares are no longer capable of connecting to SMB shares created in TrueNAS SCALE 22.12 or later. Refer to the [Samba](https://www.samba.org/samba/latest_news.html) release notes for more information.
+
+{{< hint warning >}}
+As of SCALE 22.12 (Bluefin), TrueNAS SCALE SMB does not supports End-of-Life (EoL) Windows clients, including MS-DOS. 
+The Samba project, which TrueNAS SCALE intergrates to provide SMB sharing features, has deprected the SMB1 protocol for security concerns.
+The Samba 4.16 release notes announced that they deprecated and disabled the whole SMB1 protocol as of 4.11, but TrueNAS still has SMB1 protocol support. 
+If needed, for security purposes or code maintenance, Samba continues to remove older protocol commands and unused dialects or those that are replaced in more modern SMB1 versions, refer to [Samba](https://www.samba.org/samba/latest_news.html) release notes for more information.
+
+TrueNAS now uses Samba 4.17, which still has SMB1 protocol support, but:
+
+* MS-DOS-based SMB clients cannot connect to TrueNAS Bluefin. 
+* MS-DOS-based SMB clients are no longer able to connect to TrueNAS servers. 
+* SMB clients determined to be end-of-life (EOL) by their vendor are not supported. 
+
+Administrators should work to phase out any clients using the SMB1 protocol from their environments.
+
+Client systems that can only use the SMB1 protocol for SMB shares are no longer capable of connecting to SMB shares created in TrueNAS SCALE 22.12 or later. 
+Refer to the Samba release notes for more information.
 {{< /hint >}}
