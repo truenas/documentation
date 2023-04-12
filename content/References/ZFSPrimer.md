@@ -30,21 +30,21 @@ Most writes are sequential, and old versions of files are not unlinked until it 
 
 ZFS has direct access to disks and bundles multiple read and write requests into transactions.
 Most file systems cannot do this, as they only have access to disk blocks.
-A transaction either completes or fails, meaning there are never [write-holes](https://blogs.oracle.com/bonwick/raid-z). A *write-hole* is a failure of the traditional parity RAID that applies to any stripe plus parity RAID layout like RAID4, RAID5, etc. 
+A transaction either completes or fails, meaning there are never [write-holes](https://blogs.oracle.com/bonwick/raid-z). A *write-hole* is a traditional parity RAID failure that applies to any stripe plus parity RAID layout like RAID4, RAID5, etc. 
 
-A file system checker utility is not necessary. 
-Because of the transactional design, as you add more storage capacity, it becomes immediately available for writes.
+With ZFS, you do not need file system checker utilities. 
+Because of the transactional design, any storage capacity you add immediately becomes available for writes.
 To re-balance the data, one can copy it to rewrite the existing data across all available disks.
 As a 128-bit file system, the maximum file system or file size is 16 exabytes.
 
 ### ZFS Self-Healing File System
 
-ZFS is designed as a self-healing file system. 
-As ZFS writes data, it creates a checksum for each disk block it writes. 
-As ZFS reads data, it validates the checksum for each disk block it reads. 
-Media errors or bit rot can cause data to change, and the checksum no longer matches.
+ZFS is a self-healing file system. 
+As ZFS writes data, it creates a checksum for each disk block. 
+As ZFS reads data, it validates the checksum for each disk block. 
+Media errors or bit rot can change data and cause unmatched checksums.
 When ZFS identifies a disk block checksum error on a pool that is mirrored or uses RAIDZ, it replaces the corrupted data with the correct data.
-Since some disk blocks are rarely read, schedule regular scrubs so that ZFS can read all of the data blocks to validate their checksums and correct any corrupted blocks.
+Since ZFS rarely reads some disk blocks, you should schedule regular scrubs so that ZFS can read all the data blocks to validate their checksums and correct any corrupted blocks.
 While providing redundancy and data correction requires multiple disks, ZFS still provides data corruption detection to a system with one disk.
 TrueNAS automatically schedules a monthly scrub for each ZFS pool.
 Checking scrub results provides an early indication of potential disk problems.
@@ -52,13 +52,13 @@ Checking scrub results provides an early indication of potential disk problems.
 ### ZFS Partition Sizes and File Systems
 
 ZFS does not need defined partition sizes when creating file systems. 
-Unlike traditional UNIX file systems, it is not necessary to define partition sizes when creating file systems. 
-Instead, a group of disks, known as a *vdev*, are built into a ZFS *pool*. 
-File systems are created from the pool as needed.
+Unlike traditional UNIX file systems, you do not need to define partition sizes when creating file systems. 
+Instead, a ZFS *pool* uses a built-in group of disks called a *vdev*. 
+You can create file systems from the pool as needed.
 As you need more capacity, stripe identical vdevs into the pool.
 After creating a pool, you can divide it into dynamically-sized datasets or fixed-size zvols as needed.
-Use datasets to optimize storage for the type of data stored. You can set permissions and properties such as quotas and compression on a per-dataset level.
-A zvol is essentially a raw, virtual block device which you can use for applications that need raw-device semantics such as iSCSI device extents.
+Use datasets to optimize storage for the type of stored data. You can set permissions and properties such as quotas and compression on a per-dataset level.
+A zvol is a raw, virtual block device that you can use for applications that need raw-device semantics, such as iSCSI device extents.
 
 ### ZFS Real-Time Data Compression 
 
@@ -73,25 +73,25 @@ The LZ4 compression algorithm is generally recommended for new pools.
 ZFS provides low-cost, instantaneous snapshots of a specified pool, dataset, or zvol.
 Due to COW, snapshots initially take no additional space. 
 The size of a snapshot increases over time as changes to the files in the snapshot write to disks.
-You can use snapshots to provide a copy of data at the point in time the snapshot is created. 
-When you delete a file, disk blocks for it are added to the free list. 
-However, the blocks for that file in any existing snapshots are not added to the free list until all referencing snapshots are removed. 
-This makes snapshots a clever way to keep a history of files, and useful for recovering an older copy of a file or a deleted file. 
-For this reason, many administrators take snapshots often, store them for a period of time, and store them on another system. 
+You can use snapshots to provide a copy of data at the point in time you created the snapshot. 
+When you delete a file, ZFS adds the file disk blocks to the free list. 
+However, ZFS does not add the blocks for that file in any existing snapshots to the free list until you remove all referencing snapshots. 
+Snapshots are a clever way to keep a history of files, and they are useful for recovering an older copy of a file or a deleted file. 
+For this reason, many administrators take snapshots often and store them for a period of time on another system. 
 Such a strategy allows the administrator to roll the system back to a specific time. 
-For example, if there is a catastrophic loss, you can use an off-site snapshot to restore the system up to the last snapshot interval, within 15 minutes of the data loss.
+For example, if there is a catastrophic loss, you can use an off-site snapshot to restore the system to the last snapshot interval within 15 minutes of the data loss.
 
-Snapshots are stored locally but you can also replicate them to a remote ZFS pool. 
+ZFS stores snapshots locally, but you can also replicate them to a remote ZFS pool. 
 During replication, ZFS does not do a byte-for-byte copy but instead converts a snapshot into a stream of data. 
 This design means that the ZFS pool on the receiving end does not need to be identical and can use a different RAIDZ level, volume size, or compression settings.
 
 ### ZFS Boot Environments 
 
-ZFS boot environments provide a method for recovering from a failed upgrade. 
-In TrueNAS, a snapshot of the dataset the operating system resides on is automatically taken before an upgrade or a system update. 
-This saved boot environment is automatically added to the GRUB boot loader. 
-Should the upgrade or configuration change fail, just reboot and select the previous boot environment from the boot menu. 
-Users can also create their own boot environments in TrueNAS as needed. For example before making configuration changes. 
+ZFS boot environments allow you to recover from a failed upgrade. 
+TrueNAS automatically takes a snapshot of the dataset the operating system resides on before upgrading or updating a system. 
+TrueNAS automatically saves the boot environment to the GRUB boot loader. 
+If the upgrade or configuration change fails, reboot and select the previous boot environment from the boot menu. 
+Users can also create boot environments in TrueNAS as needed, such as before making configuration changes. 
 This way, you can reboot the system into a snapshot of the system that did not include the new configuration changes.
 
 
@@ -107,8 +107,8 @@ More detail on SLOG benefits and usage is available in these blog and forum post
 
 * [ZFS Intent Log](https://nex7.blogspot.com/2013/04/zfs-intent-log.html)
 
-Synchronous writes are relatively rare with SMB, AFP, and iSCSI, and adding a SLOG to improve performance of these protocols only makes sense in special cases. 
-You an run the `zilstat` utility from the TrueNAS **Shell** to determine if the system can benefit from a SLOG. 
+Synchronous writes are relatively rare with SMB, AFP, and iSCSI, and adding a SLOG to improve the performance of these protocols only makes sense in special cases. 
+You can run the `zilstat` utility from the TrueNAS **Shell** to determine if the system can benefit from a SLOG. 
 See [this discussion about interpreting Zilstat data](https://www.truenas.com/community/threads/how-to-interpret-zilstat-output.70370/) for additional information.
 
 ZFS currently uses 16 GiB of space for SLOG.
@@ -118,7 +118,7 @@ Each pool requires a separate SLOG device.
 Bandwidth and throughput limitations require that you only use a SLOG device for this single purpose. 
 Do not attempt to add other caching functions on the same SSD, or performance suffers.
 
-In mission-critical systems, a mirrored SLOG device is highly recommended. 
+In mission-critical systems, we highly recommend a mirrored SLOG device. 
 ZFS pools at ZFS version 19 or earlier require mirrored SLOG devices.
 Check the ZFS pool version from the TrueNAS Shell with `zpool get version {poolname}`. 
 A version value of `-` means the ZFS pool is version 5000 (also known as *Feature Flags*) or later.
@@ -129,29 +129,28 @@ ZFS provides a read cache in RAM, known as the ARC, which reduces read latency.
 TrueNAS adds ARC stats to [top(1)](https://www.freebsd.org/cgi/man.cgi?query=top) and includes the `arc_summary.py` and `arcstat.py` tools for monitoring the ARC efficiency. 
 If an SSD is dedicated as a cache device, it is known as an [L2ARC](https://www.brendangregg.com/blog/2008-07-22/zfs-l2arc.html). 
 Additional read data is cached here, which can increase random read performance. 
-L2ARC does not reduce the need for sufficient RAM. 
-In fact, L2ARC needs RAM to function. 
-If there is not enough RAM for an adequately-sized ARC, adding an L2ARC does not increase performance. 
-Performance actually decreases in most cases, potentially causing system instability. 
+L2ARC does not reduce the need for sufficient RAM because it needs RAM to function. 
+If the system does not have enough RAM for an adequately-sized ARC, adding an L2ARC does not increase performance. 
+Performance decreases in most cases, potentially causing system instability. 
 RAM is always faster than disks, so always add as much RAM as possible before considering whether the system can benefit from an L2ARC device.
 
 When applications perform large amounts of random reads on a dataset small enough to fit into L2ARC, you can increase read performance by adding a dedicated cache device. 
 SSD cache devices only help if the active data is larger than system RAM but small enough that a significant percentage fits on the SSD. 
-As a general rule, do not add L2ARC to a system with less than 32 GiB of RAM, and the size of an L2ARC should not exceed ten times the amount of RAM. 
-In some cases, it might be more efficient to have two separate pools: one on SSDs for active data, and another on hard drives for rarely used content. 
+Do not add L2ARC to a system with less than 32 GiB of RAM. The size of an L2ARC should not exceed ten times the amount of RAM. 
+In some cases, two separate pools might be more efficient: one on SSDs for active data and another on HDDs for rarely-used content. 
 After adding an L2ARC device, monitor its effectiveness using tools such as `arcstat`.
 To increase the size of an existing L2ARC, stripe another cache device with it. 
-The web interface always stripes L2ARC, it does not mirror it, as the contents of L2ARC are recreated at boot. 
-Failure of an individual SSD from an L2ARC pool does not affect the integrity of the pool, but might have an impact on read performance, depending on the workload and the ratio of dataset size to cache size. 
-Note you cannot share dedicated L2ARC devices between ZFS pools.
+The web interface always stripes L2ARC instead of mirroring it since the system recreates L2ARC contents at boot. 
+If an individual L2ARC pool SSD fails, it will not affect pool integrity, but it might impact read performance depending on the workload and the ratio of dataset size to cache size. 
+You cannot share dedicated L2ARC devices between ZFS pools.
 
 ### ZFS Redundancy and RAID
 
-ZFS was designed to provide redundancy while addressing some of the inherent limitations of hardware RAID such as the write-hole and corrupt data written over time before the hardware controller provides an alert.
+ZFS provides redundancy while addressing some inherent limitations of hardware RAID, such as the write-hole and corrupt data written over time before the hardware controller provides an alert.
 ZFS provides three levels of redundancy, known as RAIDZ, where the number after the RAIDZ indicates how many disks per vdev you can lose without losing data. 
 ZFS also supports mirrors, with no restrictions on the number of disks in the mirror. 
-ZFS was designed for commodity disks so no RAID controller is needed. 
-While you can also use ZFS with a RAID controller, it is recommended that you put the controller into JBOD mode so that ZFS has full control of the disks. 
+ZFS uses commodity disks and does not need a RAID controller. 
+While you can also use ZFS with a RAID controller, we recommend that you put the controller into JBOD mode so that ZFS has full disk control. 
 
 When determining the type of ZFS redundancy to use, consider whether the goal is to maximize disk space or performance: 
 
@@ -162,12 +161,12 @@ When determining the type of ZFS redundancy to use, consider whether the goal is
 * A mirror consumes more disk space but generally performs better with small random reads.
   For better performance, a mirror is strongly favored over any RAIDZ, particularly for large, uncacheable, random read loads.
 
-Using more than 12 disks per vdev is not recommended. 
+We do not recommend using more than 12 disks per vdev.
 The recommended number of disks per vdev is between 3 and 9. 
 With more disks, use multiple vdevs.
 
-Some older ZFS documentation recommends using a certain number of disks for each type of RAIDZ in order to achieve optimal performance.
-On systems using LZ4 compression, which is the default for FreeNAS 9.2.1 and later, this is no longer true.
+Some older ZFS documentation recommends using a certain number of disks for each type of RAIDZ to achieve optimal performance.
+The recommendation is outdated on systems using LZ4 compression, the default for FreeNAS 9.2.1 and later.
 
 These resources can also help determine the RAID configuration best suited to the specific storage requirements:
 
@@ -176,18 +175,18 @@ These resources can also help determine the RAID configuration best suited to th
 * [A Closer Look at ZFS, Vdevs and Performance](https://constantin.glez.de/2010/06/04/a-closer-look-zfs-vdevs-and-performance/)
 
 {{< hint warning >}}
-RAID and disk redundancy are not a substitute for a reliable backup strategy.
-Bad things happen and a good backup strategy is still required to protect valuable data.
-Configuring TrueNAS with periodic snapshots and automated replication is strongly recommended as part of a ZFS snapshot backup strategy.
+RAID and disk redundancy are not substitutes for a reliable backup strategy.
+Bad things happen, so you always need a good backup strategy to protect valuable data.
+We recommend configuring TrueNAS with periodic snapshots and automated replication as part of a ZFS snapshot backup strategy.
 {{< /hint >}}
 
 ### ZFS Device Management
 
-ZFS manage devices. 
-When an individual drive in a mirror or RAIDZ fails and is replaced by the user, ZFS adds the replacement device to the vdev and copies redundant data to it in a process called *resilvering*. 
-Hardware RAID controllers usually have no way of knowing which blocks are in use and must copy every block to the new device. 
-ZFS only copies blocks that are in use, reducing the time it takes to rebuild the vdev. 
-Resilvering is also interruptable. 
+ZFS manages devices. 
+When a user replaces a failed drive in a mirror or RAIDZ, ZFS adds the replacement device to the vdev and copies redundant data to it in a process called *resilvering*. 
+Hardware RAID controllers usually do not know which blocks are in use, so they copy every block to the new device. 
+ZFS only copies blocks in use, reducing the time it takes to rebuild the vdev. 
+Resilvering is also interruptible. 
 After an interruption, resilvering resumes where it left off rather than starting from the beginning. 
 
 While ZFS provides many benefits, there are some caveats:
@@ -207,8 +206,8 @@ While ZFS provides many benefits, there are some caveats:
 
 * Disks size
   
-  Using drives of equal sizes is recommended when creating a vdev. 
-  While ZFS can create a vdev using disks of differing sizes, its capacity is limited by the size of the smallest disk.
+  We recommend using equal-sized drives when creating a vdev. 
+  While ZFS can create a vdev using disks of differing sizes, its capacity is limited by the smallest disk size.
 
 For those new to ZFS, the [Wikipedia entry on ZFS](https://en.wikipedia.org/wiki/Zfs) provides an excellent starting point to learn more about its features. 
 These resources are also useful for reference:
@@ -229,6 +228,6 @@ These resources are also useful for reference:
 
 To differentiate itself from Oracle ZFS version numbers, OpenZFS uses feature flags. 
 Feature flags tag features with unique names to provide portability between OpenZFS implementations running on different platforms, as long as all of the feature flags enabled on the ZFS pool are supported by both platforms. 
-TrueNAS uses OpenZFS and each new version of TrueNAS keeps up-to-date with the latest feature flags and OpenZFS bug fixes. 
+TrueNAS uses OpenZFS, and each new version of TrueNAS keeps up-to-date with the latest feature flags and OpenZFS bug fixes. 
 
 See [zpool-features(7)](https://www.freebsd.org/cgi/man.cgi?query=zpool-features) for a complete listing of all OpenZFS feature flags available on FreeBSD.
