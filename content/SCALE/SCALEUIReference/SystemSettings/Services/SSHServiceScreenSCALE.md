@@ -37,6 +37,7 @@ The **Basic Settings** options display by default when you edit the SSH service.
 | **Allow Kerberos Authentication** | Select to allow Kerberos authentication. Ensure valid entries exist in **Directory Services > Kerberos Realms** and **Directory Services > Kerberos Keytabs** and the system can communicate with the Kerberos domain controller before enabling this option. |
 | **Allow TCP Port Forwarding** | Select to allow users to bypass firewall restrictions using the SSH port [forwarding feature](https://www.symantec.com/connect/articles/ssh-port-forwarding). For best security leave disabled. |
 {{< /expand >}}
+
 ### SSH Advanced Settings Options
 **Advanced Settings** include the **General Options** settings. Advanced settings specify bind interfaces, SFTP settings, ciphers and any additional parameters you want to use.
 {{< expand "Advanced Option Settings" "v" >}}
@@ -51,5 +52,6 @@ The **Basic Settings** options display by default when you edit the SSH service.
 | **SFTP Log Facility** | Select the [syslog(3)](https://www.freebsd.org/cgi/man.cgi?query=syslog) facility of the SFTP server option from the dropdown list. Options are **Daemon**, **User**, **Auth** and **Local 0** through **Local7**. |
 | **Weak Ciphers** | Select a cypher from the dropdown list. Options are **None** or **AES128-CBC**. To allow more ciphers for [sshd(8)](https://man7.org/linux/man-pages/man8/sshd.8.html) in addition to the defaults in [sshd_config(5)](https://man7.org/linux/man-pages/man5/sshd_config.5.html). Use **None** to allow unencrypted SSH connections. Use **AES128-CBC** to allow the 128-bit [Advanced Encryption Standard](https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.197.pdf).<br>  WARNING: These ciphers are security vulnerabilities. Only allow them in a secure network environment. |
 | **Auxiliary Parameters** | Enter any [sshd_config(5)](https://man7.org/linux/man-pages/man5/sshd_config.5.html) options not covered in this screen. Enter one option per line. Options added are case-sensitive. Misspellings can prevent the SSH service from starting. |
+{{< /expand >}}
 
 {{< taglist tag="scalessh" limit="10" >}}

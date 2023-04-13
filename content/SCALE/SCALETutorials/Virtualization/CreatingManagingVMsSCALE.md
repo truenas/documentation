@@ -111,7 +111,6 @@ Click **Upload** to begin the upload process. After the upload finishes, click *
 {{< /expand >}}
 
 ### Specifying a GPU
-{{< expand "Click Here for More Information" "v" >}}
 
 The **VirtIO** network interface requires a guest OS that supports VirtIO paravirtualized network drivers.
 {{< hint info >}}
