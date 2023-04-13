@@ -158,6 +158,7 @@ The details on the widget include the non-dismissed disk temperature alerts for 
 **View Reports** opens the **Report** screen for the disks in the selected pool.
 
 **View all S.M.A.R.T. Tests** opens the **Data Protection > S.M.A.R.T. Tests** screen.
+{{< /expand >}}
 
 ## Pool Manager Screens
 The **Pool Manager({{< relref "PoolManagerScreens.md" >}})** configuration screen displays after clicking **Create Pool** on the **Storage Dashboard** or **Add VDEV** on the **[Devices]({{< relref "DevicesScreensSCALE.md" >}})** screen.
