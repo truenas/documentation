@@ -128,6 +128,7 @@ Device notes:
 * A virtual machine attempts to boot from devices according to the **Device Order**, starting with **1000**, then ascending.
 * A **CD-ROM** device allow booting a VM from a CD-ROM image like an installation CD.
   The CD image must be available in the system storage.
+  {{< /expand >}}
 
 ## Managing a Virtual Machine
 
