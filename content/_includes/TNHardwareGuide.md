@@ -258,7 +258,7 @@ RAM rarely goes unused on a TrueNAS system, and enough RAM is vital to maintaini
 You should have 8 GB of RAM for basic TrueNAS operations with up to eight drives. Other use cases each have distinct RAM requirements:
 
 * Add 1 GB for each drive added after eight to benefit most use cases.
-* Add extra RAM (in general) if more clients will connect to the TrueNAS system. A 20 TB pool backing many high-performance VMs over iSCSI might need more RAM than a 200 TB pool storing archival data. If using iSCSI to back up VMs, plan to use at least 16 GB of RAM for good performance and 32 GB or more for optimal performance.
+* Add extra RAM (in general) if more clients connect to the TrueNAS system. A 20 TB pool backing many high-performance VMs over iSCSI might need more RAM than a 200 TB pool storing archival data. If using iSCSI to back up VMs, plan to use at least 16 GB of RAM for good performance and 32 GB or more for optimal performance.
 * Add 2 GB of RAM for directory services for the Winbind internal cache.
 * Add more RAM for plugins and jails, as each has specific application RAM requirements.
 * Add more RAM for virtual machines with a guest operating system and application RAM requirements.
