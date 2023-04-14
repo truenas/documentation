@@ -299,7 +299,7 @@ Which CPU to choose can come down to a short list of factors:
 * A CPU with AES-NI encryption acceleration support improves the speed of the file system and network encryption.
 * A server-class CPU is recommended for power and ECC memory support.
 * A Xeon E5 CPU (or similar) is recommended for software-encrypted pools.
-* An Intel Ivy Bridge CPU or later recommended for virtual machine use.
+* An Intel Ivy Bridge CPU or later is recommended for virtual machine use.
 
 Watch for VT-d/AMD-Vi device virtualization support on the CPU and motherboard to pass PCIe devices to virtual machines.
 Be aware if a given CPU contains a GPU or requires an external one. Also note that many server motherboards include a BMC chip with a built-in GPU. See below for more details on BMCs.
