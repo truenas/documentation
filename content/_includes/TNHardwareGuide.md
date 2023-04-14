@@ -184,7 +184,7 @@ You might also consider adding a hot-spare drive with any zpool configuration, w
 ### Storage Device Burn-In
 
 Spinning disk hard drives have moving parts that are highly sensitive to shock and vibration and wear out with use. 
-Consider pre-flighting every storage device before putting it into production.
+Consider pre-flighting every storage device before putting it into production, especially:
 
 * Start a long HDD self-test (`smartctl -t long /dev/`), and after the test completes (could take 12+ hrs)
 * Check the results (`smartctl -a /dev/`)
