@@ -339,7 +339,7 @@ Select a PSU rated for the initial and a future load placed on it.
 Have a PSU with adequate power to migrate from a large-capacity chassis to a fully-populated chassis.
 Also, consider a hot-swappable redundant PSU to help guarantee uptime.
 Users on a budget can keep a cold spare PSU to limit their potential downtime to hours rather than days.
-A good, modern PSU is efficient and integrates into the IPMI management system to provide a real-time fan, temperature, and load information. 
+A good, modern PSU is efficient and integrates into the IPMI management system to provide real-time fan, temperature, and load information. 
 
 Most power supplies carry a certified efficiency rating known as an [80 Plus](https://en.wikipedia.org/wiki/80_Plus) rating.
 The 80 plus rating indicates the PSU loses the power drawn from the wall as heat, noise, and vibration instead of powering your components.
