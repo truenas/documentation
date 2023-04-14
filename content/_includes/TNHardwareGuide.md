@@ -197,7 +197,7 @@ Consider pre-flighting every storage device before putting it into production, e
 
 Take time to create a pool before deploying the system. 
 Subject it to as close to a real-world workload as possible to reveal individual drive issues and help determine if an alternative pool layout is better suited to that workload.
-Be cautious of used drives, as vendors may not be honest or informed about their age and health.
+Be cautious of used drives, as vendors might not be honest or informed about their age and health.
 Verify vendors have not recertified all new drives by checking the hours using `smartctl(8)`.
 A drive vendor could also zero the hours of a drive during recertification, masking its age.
 iXsystems tests all storage devices it sells for at least 48 hours before shipment.
