@@ -13,7 +13,7 @@ By default, a TrueNAS R-Series with CORE installed identifies its network ports 
 
 SCALE identifies its network ports with **eno** followed by a number.
 
-The tables within the expandable boxes below list the default identification for R-Series systems and any add-on networking cards that iXsystems has qualified for use with R-Series systems.
+The expandable boxes below contain tables that list the default identification for R-Series systems and any add-on networking cards qualified by iXsystems for use with R-Series systems.
 
 ## R10
 
