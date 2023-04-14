@@ -297,7 +297,7 @@ Which CPU to choose can come down to a short list of factors:
 * A higher-frequency CPU with fewer cores usually performs best for SMB-only workloads because of Samba, the lightly-threaded TrueNAS SMB daemon.
 * A higher-core-count CPU is better suited for parallel encryption and virtualization.
 * A CPU with AES-NI encryption acceleration support improves the speed of the file system and network encryption.
-* A server-class CPU is recommended for its power and ECC memory support.
+* A server-class CPU is recommended for power and ECC memory support.
 * A Xeon E5 CPU (or similar) is recommended for software-encrypted pools.
 * An Intel Ivy Bridge CPU or later recommended for virtual machine use.
 
