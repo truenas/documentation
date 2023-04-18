@@ -26,5 +26,5 @@ Information includes the system manufacturer, serial numbers, support tier, supp
 
 Users with adequate permissions can update the system, [configure backups]({{< relref "TrueNASConfigManage.md" >}}), and generate system audits and [reports]({{< relref "Creation.md" >}}). If a system update is available, the **Update** label and icon turn green. You can also see which systems have updates pending on the **Systems** screen.
 
-![SystenUpdateAvailable](/images/TrueCommand/2.3.2/SystenUpdateAvailable.png "Single System Dashboard")
+![SystemUpdateAvailable](/images/TrueCommand/2.3.2/SystemUpdateAvailable.png "Single System Dashboard")
 
