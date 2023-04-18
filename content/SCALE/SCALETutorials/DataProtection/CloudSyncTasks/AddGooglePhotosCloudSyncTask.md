@@ -24,7 +24,7 @@ After you select your project, click **Enabled APIs & Services** on the left men
 
 ![GooglePhotosAPIEnableAPIsandServices](/images/SCALE/22.12/GooglePhotosAPIEnableAPIsandServices.png "Enable APIs and Services")
 
-Enter *photos library api* in the search bar, then select **Photos Library API** and click **ENABLE**.
+Enter **photos library api** in the search bar, then select **Photos Library API** and click **ENABLE**.
 
 ![GooglePhotosAPIPhotosLibraryAPISearch](/images/SCALE/22.12/GooglePhotosAPIPhotosLibraryAPISearch.png "Photos Library API Search")
 
