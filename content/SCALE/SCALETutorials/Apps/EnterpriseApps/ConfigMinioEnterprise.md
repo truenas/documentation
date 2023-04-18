@@ -24,7 +24,7 @@ We recommend that TrueNAS SCALE Enterprise (HA) systems not deploy applications.
 ## First Steps
 
 If your system has active sharing configurations (SMB, NFS, iSCSI), disable these sharing services in **System Settings > Services** before adding and configuring the MinIO application.
-Start any sharing services after MinIO completes the install and starts.```
+Start any sharing services after MinIO completes the install and starts.
 
 If you created a dataset for the MinIO shares and it has the same path as the MinIO application, disable host path validation. 
 To use host path validation, create a dataset for the application with a unique path. For example, */pool/shares/minio* for the share and */pool/apps/minio* for the application.
