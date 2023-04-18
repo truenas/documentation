@@ -19,7 +19,7 @@ Click the gear icon in the upper toolbar and select **Administration**. Scroll d
 
 ![AddLDAPServer](/images/TrueCommand/AddLDAPServer.png "Add LDAP Servers")
 
-| Field | Description |
+| Setting | Description |
 |---------|-------------|
 | **Hostname** | Host name of LDAP/AD server, with optional port. e.g. example.com:636. |
 | **Domain** | LDAP base domain. e.g. dc=example,dc=com. |

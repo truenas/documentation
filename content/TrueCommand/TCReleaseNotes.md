@@ -23,6 +23,10 @@ aliases:
 | 2.3.2 | Internal Testing Sprints | 27 March 2023 - 07 April 2023 |
 | 2.3.2 | Tag | 10 April 2023 |
 | 2.3.2 | Release | 11 April 2023 |
+| 2.3.3 | Code-freeze | 17 May 2023 |
+| 2.3.3 | Internal Testing Sprints | 18 May - 2 June 2023 |
+| 2.3.3 | Tag | 4 June 2023 |
+| 2.3.3 | Release | 5 June 2023 |
 
 ## 2.3.2
 

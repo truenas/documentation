@@ -1,6 +1,6 @@
 ---
 title: "Adding and Managing VMs"
-description: "This article provides instructions on how to add or manage a virtual machine and installing an operating system in the VM."
+description: "This article provides instructions adding or managing a virtual machine (VM), and installing an operating system in the VM."
 weight: 10
 alias: /scale/scaleuireference/virtualization/creatingmanagingvmsscale/
 tags:
@@ -10,10 +10,10 @@ tags:
 
 {{< toc >}}
 
-A Virtual Machine (VM) is an environment on a host computer that you can use as if it were a separate, physical computer.
+A virtual machine (VM) is an environment on a host computer that you can use as if it is a separate, physical computer.
 Users can use VMs to run multiple operating systems simultaneously on a single computer.
 Operating systems running inside a VM see emulated virtual hardware rather than the host computer physical hardware.
-VMs provide more isolation than Jails but also consumes more system resources.
+VMs provide more isolation than Jails but also consume more system resources.
 
 {{< expand "What system resources do VMs require?" "v" >}}
 {{< include file="static/includes/SCALE/ScaleVMReqResources.md.part" markdown="true" >}}
@@ -21,122 +21,106 @@ VMs provide more isolation than Jails but also consumes more system resources.
 
 ## Creating a Virtual Machine
 
-Before creating a virtual machine, you need an installer <file>.iso</file> or image file for the OS you intend to install, and a [storage pool]({{< relref "CreatePoolSCALE.md" >}}) available for both the virtual disk and OS install file.
+Before creating a VM, you need an installer <file>.iso</file> or image file for the OS you intend to install, and a [zvol]({{< relref "AddManageZvols.md" >}}) on a storage pool that is available for both the virtual disk and OS install file.
 
-To create a new VM, go to **Virtualization** and click **Add** or **Add Virtual Machines** if you have not yet added a virtual machine to your system.
-Configure each category of the VM according to your specifications, starting with the **Operating System**.
+To create a new VM, go to **Virtualization** and click **Add** to open the **Create Virtual Machine** configuration screen. 
+If you have not yet added a virtual machine to your system you can click **Add Virtual Machines** to open the same screen.
 
-![CreateVMWOpSysSCALE](/images/SCALE/22.12/CreateVMWOpSysSCALE.png "VM Add: OS")
+1. Select the operating system you want to use from the **Guest Operating System** dropdown list.
+   
+   ![AddVMOperSys](/images/SCALE/22.12/AddVMOperSys.png "Operating System Settings") 
 
-Choose the **Guest Operating System** from the dropdown list. If you choose Windows, select **Enable Hyper-V Enlightenments** to implement KVM Hyper-V Enlightenments for Windows guests.
+   Compare the recommended specifications for the guest operating system with your available host system resources when allocating virtual CPUs, cores, threads, and memory size.
 
-Enter a name for the VM, and a description to help you remember its usage. The description is optional.
+2. Change other **Operating System** settings per your use case. 
 
-Set the **System Clock** to the option you want to use. The default is **Local**.
+   Select **UTC** as the VM system time from the **System Clock** dropdown if you do not want to use the default **Local** setting. 
 
-Select **UEFI** for the **Boot Method** unless you need support for older operating systems that only support BIOS booting.
+   Select the virtual console option from the **Display Type** dropdown. 
+   VNC is the most widely used option with the best display but is slower than SPICE. 
+   SPICE has faster data transfer speed but a lower quality display, and is not as secure as VNC.
 
-Enter the time the system waits for the VM to cleanly shut down in **Shutdown Timeout** or leave set at the default which is 90 seconds.
+   Change the default IP address in **Bind** if you want use a specific address as the primary network interface, otherwise leave it set to **0.0.0.0**.
 
-Leave **Start on Boot** selected if you want the VM to start when the system boots.
+   Click **Next**.
 
-(Optional) Leave **Enable Display** selected to enable a Virtual Network Computing remote connection. This requires UEFI booting.
+3. Enter the CPU and memory settings for your VM.
 
-Select the **Display Type**. The default is **VNC** but you can change this to **SPICE**.
+   ![CreateVMCPUandMemorySettings](/images/SCALE/22.12/CreateVMCPUandMemorySettings.png "VM CPU and Memory")
+   
+   If you selected Windows as the **Guest Operating System**, the **Virtual CPUs** field displays a default value of 2. 
+   The VM operating system might have operational or licensing restrictions on the number of CPUs.
 
-Enter the primary interface IP address in **Bind**. Leave this set to 0.0.0.0 unless you know you want to use a different interface IP address.
+   Do not allocate too much memory to a VM. Activating a VM with all available memory allocated to it can slow the host system or prevent other VMs from starting.
+   
+   Leave **CPU Mode** set to **Custom** if you want to select a CPU model. 
+   
+   Specify the amount of RAM you want for the VM if you want to use more or less than the default. We recommend increasing this value, but your configuration depends on the resources available for your VM.
 
-Click **Next**.
+   Click **Next**.
 
-### Configuring CPU and Memory
-{{< expand "Click Here for More Information" "v" >}}
-![CreateVMWCPUMemSCALE](/images/SCALE/22.12/CreateVMWCPUMemSCALE.png "VM CPU and Memory")
+4. Configure disk settings.
+   
+   ![CreateVMWDisksSCALE](/images/SCALE/22.12/CreateVMWDisksSCALE.png "VM Disks")
 
-If you selected Windows as the **Guest Operating System**, the **Virtual CPUs** field displays a default value of 2. Note that the VM operating system might have operational or licensing restrictions on the number of CPUs. The default value for the number of cores per virtual CPU socket is 1 and pre-populates the **Cores** field. The default value for the number of threads per core is also 1, and displays in the **Threads** field.
+   Select **Create new disk image** to create a new zvol on an existing dataset.  
+   Select **Use existing disk image** to use an existing zvol for the VM.
 
-The following field, **Optional: CPU Set (Examples:0-3.8-11)** defines the CPU set, and is optional. Inputting a value here allows you to specify the logical cores that the VM can use based on CPU topology.
+   Select either **AHCI** or **VirtIO** from the **Select Disk Type** dropdown list. We recommend using **AHCI** or Windows VMs. 
 
-The checkbox **Pin vcpus** is related to the previous field, **Optional: CPU Set (Examples:0-3.8-11)**, in that each vCPU is pinned (mapped) into a single CPU number by following the order you just defined for the CPU set. The number of vCPUs must be equal to the number of CPUs in the CPU set. This checkbox is not selected by default.
+   Select the location for the new zvol from the **Zvol Location** dropdown list.
+   
+   Enter a value in **Size (Examples: 500KiB, 500M, and 2TB)** to indicate the amount of space to allocate for the new zvol.
 
-The **CPU Mode** default is **Custom**. When **Custom** is selected, you have the option of choosing a **CPU Model** from the dropdown list in the next field. You can also choose **Host Model** or **Host Passthrough** as the **CPU Mode**, but in these instances the next field, **CPU Model**, does not apply. 
+   Click **Next**.
 
-**Memory Size (Examples: 500KiB, 500M, 2 TB)** is a required field that pre-populates with a value of 4 GiB if you chose a Windows OS. We recommend that you increase this value, but your configuration will depend on the resources available for your VM.
+5. Cofigure the network interface.
+   
+   ![CreateVMWNetworkInterfaceSCALE](/images/SCALE/22.12/CreateVMWNetworkInterfaceSCALE.png "VM Network Interface")
 
-**Minimum Memory Size** is an optional field. When not specified, the guest system is given the fixed amount of memory specified in **Memory Size (Examples: 500KiB, 500M, 2 TB)**. When **Minimum Memory Size** is specified, the guest system is given memory within the range **Minimum Memory Size** and **Memory Size (Examples: 500KiB, 500M, 2 TB)** as needed.
+   Select the network interface type from the **Adapter Type** dropdown list. Select **Intel e82585 (e1000)** as it offers a higher level of compatibility with most operating systems, or select **VirtIO** if the guest operating system supports para-virtualized network drivers.
 
-The next field, **Optional: NUMA nodeset (Example: 0-1)** is also not populated by default as it is not required. If you specified a CPU set, you can then specify a NUMA nodeset to improve memory locally.
+   Select the network interface card to use from the **Attach NIC** dropdown list.
 
-Click **Next**.
-{{< /expand >}}
+   Click **Next**.
 
-### Configuring Disks
-{{< expand "Click Here for More Information" "v" >}}
-![CreateVMWDisksSCALE](/images/SCALE/22.12/CreateVMWDisksSCALE.png "VM Disks")
+6. Upload installation media for the operating system you selected.
+   
+   ![CreateVMWInstallMediaSCALE](/images/SCALE/22.12/CreateVMWInstallMediaSCALE.png "VM Installation Media")
 
-Select **Create new disk image** radio button to create a new zvol on an existing dataset (you define the location of this existing dataset in **Zvol Location**).  Alternatively, you can select **Use existing disk image** if there is an existing zvol you want to use for the VM.
+   You can create the VM without an OS installed. To add it either type the path or browse to the location and select it.
+   
+   To upload an <file>iso</file> select **Upload an installer image file** and either enter the path or browse to the location of the file.
 
-The dropdown list under **Select Disk Type** allows you to select either **AHCI** or **VirtIO**. We recommend using **AHCI** as the **Disk Type** for Windows VMs. Next, specify the location of the dataset in **Zvol Location**. Here we have specified the pool called *tank*. Enter a value in **Size (Examples: 500KiB, 500M, and 2TB)** to indicate the amount of space to allocate for the new zvol.
+   ![CreateVMWInstallMediaUploadSCALE](/images/SCALE/22.12/CreateVMWInstallMediaUploadSCALE.png "VM Upload Installation Media")
 
-Click **Next**.
-{{< /expand >}}
+   Click **Upload** to begin the upload process. After the upload finishes, click **Next**.
 
-### Configuring the Network Interface
-{{< expand "Click Here for More Information" "v" >}}
-![CreateVMWNetworkInterfaceSCALE](/images/SCALE/22.12/CreateVMWNetworkInterfaceSCALE.png "VM Network Interface")
+7. Specify a GPU.    
+   The **VirtIO** network interface requires a guest OS that supports VirtIO para-virtualized network drivers.
 
-Under **Adapter Type**, select **Intel e82585 (e1000)** from the dropdown list as it offers a higher level of compatibility with most operating systems. Select **VirtIO** if the guest operating system supports para-virtualized network drivers.
+   {{< hint info >}}
+   iXsystems does not have a list of approved GPUs at this time but does have drivers and basic support for the  list of [nvidia Supported Products](https://www.nvidia.com/Download/driverResults.aspx/191961/en-us/).
+   {{< /hint >}}
 
-A randomized MAC address displays in the **Mac Address** field. You can change this to suit your needs.
+8. Confirm your VM settings, then click **Save**.
 
-Use the **Attach NIC** dropdown list to select the active interface you wish to use. You can view active interfaces in **Network** > **Interfaces** (note that if you navigate away from the wizard at this point, you will lose your progress).
+### Adding and Removing Devices
 
-The **Trust Guest Filters** checkbox is not selected by default. Enabling this feature has security risks because it allows the virtual server to change its MAC address and so receive all frames delivered to this address. For more information see [Virtualization Screens]({{< relref "VirtualizationScreens.md#network-interface-screen" >}}).
+After creating the VM, you can add or remove virtual devices.
 
-Click **Next**.
-{{< /expand >}}
+Expand the VM entry on the **Virtual Machines** screen and click <i class="material-icons" aria-hidden="true" title="Devices">device_hub</i> **Devices**.
 
-### Uploading Installation Media
-{{< expand "Click Here for More Information" "v" >}}
-![CreateVMWInstallMediaSCALE](/images/SCALE/22.12/CreateVMWInstallMediaSCALE.png "VM Installation Media")
+![VirtualMachinesDevicesSCALE](/images/SCALE/VirtualMachinesDevicesSCALE.png "VM Devices")
 
-The VM can be created initially without an OS installed. To navigate to the location where you have previously uploaded an installation file, use the **Optional: Choose installation media image** dropdown navigation list. Click on the <i class="fa fa-caret-right" aria-hidden="true"></i> to the left of **mnt** and at the pool and dataset levels to expand the options. Select the location of the installation file. The path displays in the location field.
+Device notes:
 
-The **Upload an installer image file** checkbox is not selected by default. If you select this option, additional fields display:
-![CreateVMWInstallMediaUploadSCALE](/images/SCALE/22.12/CreateVMWInstallMediaUploadSCALE.png "VM Upload Installation Media")
-
-This gives you the option of browsing to select a file. The file uploads to the **ISO save location** that you specify.
-
-Click **Upload** to begin the upload process. After the upload finishes, click **Next**.
-{{< /expand >}}
-
-### Specifying a GPU
-{{< expand "Click Here for More Information" "v" >}}
-
-{{< hint info >}}
-iXsystems does not have a list of approved GPUs at this time but does have drivers and basic support for the  list of [nvidia Supported Products](https://www.nvidia.com/Download/driverResults.aspx/191961/en-us/).
-{{< /hint >}}
-![CreateVMWGPUsSCALE](/images/SCALE/22.12/CreateVMWGPUsSCALE.png "VM GPU")
-
-This next section is optional. The **Hide from MSR** checkbox is not selected by default. Select this option if you want to enable the VM to hide the graphic processing unit (GPU) from the Microsoft Reserved Partition (MSR).
-
-The following checkbox is enabled by default. **Ensure Display Device**, when selected, permits the guest operating system to always have access to a video device. It is required for headless installations such as ubuntu server. Leave the checkbox clear for cases where you want to use a graphic processing unit (GPU) passthrough and do not want a display device added.
-
-Optional: the **GPUs** dropdown list allows you to select a relevant GPU if at least one relevant GPU is present.
-
-Click **Next**.
-{{< /expand >}}
-
-### Confirming Your Selections
-{{< expand "Click Here for More Information" "v" >}}
-![CreateVMWConfirmSCALE](/images/SCALE/22.12/CreateVMWConfirmSCALE.png "VM Summary")
-
-The **Confirm Options** screen should be reviewed carefully. This is a summary of the values you have input in the previous screens. If all information is correct, click **Save** to create the VM. If you need to make changes, click the **Back** button. Note that if you navigate away from the wizard without clicking **Save** you will lose your progress and need to start again.
-{{< /expand >}}
-
-
-See [Virtualization Screens]({{< relref "VirtualizationScreens.md" >}}) for more information on any of the fields listed in the Create Virtual Machine wizard or other virtual machine screen settings. The next step is to configure devices for the VM. This process is described in [Adding and Managing VM Devices]({{< relref "AddManageVMDevicesSCALE.md" >}}).
+* A virtual machine attempts to boot from devices according to the **Device Order**, starting with **1000**, then ascending.
+* A **CD-ROM** device allow booting a VM from a CD-ROM image like an installation CD.
+  The CD image must be available in the system storage.
 
 ## Managing a Virtual Machine
+
 After creating the VM and configuring devices for it, manage the VM by expanding the entry on the **Virtual Machines** screen.
 
 ![VirtualMachinesOptionsSCALE](/images/SCALE/VMRunningOptionsSCALE.png "VM Options")
@@ -164,93 +148,70 @@ For example, vanilla Debian can require advanced partitioning when installing th
 Refer to the documentation for your chosen operating system for tips and configuration instructions.
 {{< /hint >}}
 
-Here is an example of installing a Debian OS in a TrueNAS VM. The Debian <file>.iso</file> is uploaded to the TrueNAS system and attached to the VM as a CD-ROM device. 
+{{< expand "Debian OS Example" "v" >}}
+Upload the Debian <file>.iso</file>to the TrueNAS system and attached to the VM as a CD-ROM device. 
 
-1. Click on the **Virtualization** menu then click **ADD** to start the VM creation process using the wizard.
+1. Click **Virtualization**, then **ADD** to use the VM wizard.
    
    ![SCALEDebianVMOperatingSystem](/images/SCALE/ScaleDebianVMOsSystem.png "Debian VM Add: OS")
 
-{{< expand "VM Values Entered for the Debian Example" "v" >}}
+   | Wizard Screen | Setting | Description |
+   |---------------|---------|-------------|
+   | **Operating System:** | Guest Operating System |Linux |
+   |  | Name | debianVM |
+   |  | Description | Debian VM |
+   | **CPU and Memory:** | Memory Size | 1024 MiB |
+   | **Disks:** | **Create new disk image** | Selected |
+   |  | Zvol Location | Select pool. |
+   |  | Size | 30 GiB |
+   | **Network Interface:** | Attach NIC | Select the physical interface to associate with the VM. |
+   | **Installation Media:** |  | Installation ISO is uploaded to `/mnt/tank2/isostorage/`.<br>If the ISO is ot uploaded, select **Upload an installer image file**.<br>Select a dataset to store the ISO, click **Choose file**, then click **Upload**. Wait for the upload to complete. |
+   | **GPU:** |  | Leave the default values. |
+   | **Confirm Options** |  | Verify the information is correct and then click **Save**. |
 
-**Operating System:**
-* Guest Operating System: Linux
-* Name: debianVM
-* Description: Debian VM
-
-**CPU and Memory:**
-* Change the memory size to 1024 MiB.
-
-**Disks:**
-* Select **Create new disk image**.
-* Select the Zvol Location.
-* Change the size to 30 GiB.
-
-**Network Interface:**
-* Attach NIC: Select the physical interface to associate with the VM.
-
-**Installation Media:**
-* In this case the installation ISO is uploaded to `/mnt/tank2/isostorage/`. Click on the installation ISO, *debian-11.0.0-amd64-netinst.iso*. 
-* If the ISO is or was not uploaded, you need to set **Upload an installer image file**.
-  Select a dataset to store the ISO, click **Choose file**, then click **Upload**. Wait for the upload to complete (this can take some time).
-
-**GPU:**
-* Leave the default values.
-
-**Confirm Options**
-* Verify the information is correct and then click **Save**.
-
-{{< /expand >}}
-
-2. After the VM is created, start it by expanding the VM entry (select the down-pointing arrow to the right of the VM name) and click **Start**.
+2. After creating the VM, start it. Expand the VM entry and click **Start**.
 
 3. Click **Display** to open a virtual monitor to the VM and see the Debian Graphical Installation screens.
 
-{{< expand "Debian Install Example" "v" >}}
+   {{< expand "Debian Install Example" "v" >}}   
+   **Debian Graphical Install**
+   1. Press <kbd>Return</kbd> to start the Debian Graphical Install.
+   * Language: English
+   * Location: United States
+   * Keymap: American English
 
-**Debian Graphical Install**
-* Press <kbd>Return</kbd> to start the Debian Graphical Install.
-* Language: English
-* Location: United States
-* Keymap: American English
+   Installation begins
+   * Continue if the network configuration fails.   
+   * Do not configure the network at this time.
+   * Enter a name in **Hostname**.
+   * Enter the root password and re-enter the root password.
+   * Enter a name in **New User**.
+   * Select the username for your account (it should already be filled in).
+   * Enter and re-enter the password for the user account.
+   * Choose the time zone, *Eastern* in this case.
 
-Installation begins
+   Disk detection begins
+   * Partition disks: select **Guided - use entire disk**.
+   * Select the available disk.
+   * Select **All files in one partition** (recommended for new users).
+   * Select **Finish partitioning and write changes to disk**.
+   * Select **Yes** to **Write the changes to disks?**.
 
-* Continue if the network configuration fails.
-* Do not configure the network at this time.
-* Enter a name in **Hostname**.
-* Enter the root password and re-enter the root password.
-* Enter a name in **New User**.
-* Select the username for your account (it should already be filled in).
-* Enter and re-enter the password for the user account.
-* Choose the time zone, *Eastern* in this case.
+   Installing the base system begins
+   * Select **No** to the question **Scan extra installation media**.
+   * Select **Yes** when asked **Continue without a network mirror**.
 
-Disk detection should begin
-
-* Partition disks: select **Guided - use entire disk**.
-* Select the available disk.
-* Select **All files in one partition** (recommended for new users).
-* Select **Finish partitioning and write changes to disk**.
-* Select **Yes** to **Write the changes to disks?**.
-
-Installing the base system
-
-* Select **No** to the question **Scan extra installation media**.
-* Select **Yes** when asked **Continue without a network mirror**.
-
-Installing software
-
-* Select **No** when asked **Participate in the package usage survey**.
-* Select **Standard** system utilities.
-* Click **Continue** when the installation finishes.
-{{< /expand >}}
-
+   Installing software begins
+   * Select **No** when asked **Participate in the package usage survey**.
+   * Select **Standard** system utilities.
+   * Click **Continue** when the installation finishes.
+   
    After the Debian installation finishes, close the display window.
- 
+   {{< /expand >}} 
 4. Remove the device. 
    In the expanded section for the VM, click **Power Off** to stop the new VM.
 
     a. Click **Devices**.
-
     b. Remove the CD-ROM from the devices by clicking the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; and selecting **Delete**. Click **Delete Device**.
 
 5. Return to the **Virtual Machines** screen and expand the new VM again.
@@ -258,7 +219,7 @@ Installing software
 6. Click **Start**.
 
 7. Click **Display**.
-
+{{< /expand >}}
 {{< expand "What if the grub file does not run after starting the VM?" "v" >}}
 The grub file does not run when you start the VM, you can do this manually after each start.
 At the shell prompt:
