@@ -1,6 +1,10 @@
 ---
 title: "System Log"
+description: "This article provides information on system logs."
 weight: 30
+aliases:
+tags:
+- tcsystems
 ---
 
 {{< toc >}}
