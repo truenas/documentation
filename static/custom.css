@@ -297,6 +297,22 @@ p,h1,h2,h3,h4,th,td,a {
     }
 }
 /* End site directory for mobile browsing */
+/* Style Hint Boxes */
+.gdoc-hint {
+	font-family: Inter, sans-serif;
+}
+.gdoc-hint__title {
+	font-family: Inter, sans-serif;
+}
+.gdoc-hint__title i.fa {
+	font-family: Inter, sans-serif;
+	background-size: auto 120%;
+	margin-bottom: 5px;
+	text-align: center;
+}
+.gdoc-hint__text {
+	font-family: Inter, sans-serif;
+}
 /* Styling for fade-in on image download links */
 .container-image-download {
     position: relative;
