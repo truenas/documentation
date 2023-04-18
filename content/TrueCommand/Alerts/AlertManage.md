@@ -1,6 +1,6 @@
 ---
 title: "Alert Management"
-description: "This article provides general information on the alert screens and functions in TrueCommand. It also provides basic instructions on managing alerts, and on configuring alert rules, or services in TrueCommand including SMTP and user email, or PagerDuty."
+description: "This article provides information on the alert screens and functions in TrueCommand. It also provides instructions on managing alerts, configuring alert rules, or setting up alert services for SMTP and user email, or PagerDuty in TrueCommand."
 weight: 10
 aliases:
   - /truecommand/alerts/alertmanage/
@@ -152,7 +152,7 @@ To configure SMTP service:
 
 1. Enter values in all fields on the **SMTP Email** screen and then click **SAVE**:
    
-   ![AlertServicesSMTPEmailptions](/images/TrueCommand/2.0/AlertServicesSMTPEmailptions.png "Alert Services: SMTP Email options")
+   ![AlertServiceSMTPEmailScreen](/images/TrueCommand/2.3.2/AlertServiceSMTPEmailScreen.png "Alert Services: SMTP Email options")
 
    * **Mailserver** (*smtp.gmail.com* for example)
    * **Mailserver port** number the mail service uses
@@ -160,6 +160,7 @@ To configure SMTP service:
    * **Auth pass** password for the plain authentication; for a *No-Auth* SMTP configuration, leave the password field blank
      If configuring smtp.gmail.com, create an **App Password** in the gmail account for the gmail account. Enter this passcode here to configure gmail SMTP service authentication,
    * **From** is what sends the email (i.e., no-reply@TrueCommand.io) or allows you to customize the sender field of the email 
+   * **Tls** initiates a connection with TLS, and uses system settings.
 
   Click **Test** on the **SMTP Email** configuration screen to verify that the configuration is correct.
   If you did not receive a test alert email, check the values entered for accuracy.

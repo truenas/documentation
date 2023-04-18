@@ -1,6 +1,10 @@
 ---
 title: "Systems"
+description: "This article provides information on the System screens, settings, and options."
 weight: 10
+aliases:
+tags:
+- tcsystems
 ---
 
 {{< toc >}}
@@ -47,9 +51,12 @@ Click <mat-icon _ngcontent-igf-c221="" role="img" fontset="mdi" class="mat-icon 
 
 
 {{< expand "Update" "v" >}}
-If the system has **Available** in the **Updates** column, it has system updates ready to apply.
-Click <i class="material-icons" aria-hidden="true" title="Update">update</i>  **Update** on the options menu to open a dialog window with information on the update. 
-Check the **Confirm** box, then click **OK** to update the system.   
+If the system has updates ready to apply, a green **Update** displays on the system information screen.
+
+![SystenUpdateAvailable](/images/TrueCommand/2.3.2/SystenUpdateAvailable.png "System Update Available")
+
+Click on the green <span class="material-icons">arrow_circle_up</span> icon to open the **Update** dialog with information on the update. 
+Select **Confirm**, then click **OK** to update the system.   
 Click **CANCEL** to close the window without updating.
 
 ![Systems Update](/images/TrueCommand/2.1/SystemsUpdateNAS.png "Systems Update")
