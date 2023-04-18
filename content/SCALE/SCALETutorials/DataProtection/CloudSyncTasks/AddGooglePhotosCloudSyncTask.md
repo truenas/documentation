@@ -53,7 +53,7 @@ On the **OAuth consent screen**, click **PUBLISH APP** under **Testing** and pus
 ![GooglePhotosAPIPublish](/images/SCALE/22.12/GooglePhotosAPIPublish.png "Publish Status")
 
 {{< expand "Can I leave the app in testing mode?" "v" >}}
-You can leave the app in testing mode, but your cloud sync task will fail after your testing app credentials expire after seven days. 
+You can leave the app in testing mode, but your cloud sync task fails after your testing app credentials expire after seven days. 
 {{< /expand >}}
 
 ### Create Credentials
