@@ -16,7 +16,7 @@ tags:
 Cloud sync tasks let TrueNAS integrate with a Cloud Storage provider for additional backup storage.
 Cloud Sync tasks allow for single time transfers or recurring transfers on a schedule, and are an effective method to back up data to a remote location.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 Using the Cloud means that data can go to a third party commercial vendor not directly affiliated with iXsystems.
 Please investigate and fully understand vendor pricing policies and services before creating any Cloud Sync task.
 iXsystems is not responsible for any charges incurred from the use of third party vendors with the Cloud Sync feature.
@@ -71,7 +71,7 @@ Choose a **Transfer Mode**:
 
 **SYNC** keeps all the files identical between the two storage locations. If a sync encounters an error, the destination does not delete the files.
 
-{{< hint info >}}
+{{< hint type=note >}}
 Syncing to a Backblaze B2 bucket does not delete files from the bucket, even when you delete those files locally.
 Instead, Backblaze tags files with a version number or moves them to a hidden state.
 To automatically delete old or unwanted files from the bucket, adjust the [Backblaze B2 Lifecycle Rules](https://www.backblaze.com/blog/backblaze-b2-lifecycle-rules/).

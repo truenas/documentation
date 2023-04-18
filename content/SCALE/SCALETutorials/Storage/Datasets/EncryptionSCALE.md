@@ -34,7 +34,7 @@ Every pool has a *root* dataset that TrueNAS automatically generates when you cr
 This root dataset indicates the encryption status for the pool based on whether you select the **Encryption** option on the **[Pool Manager]({{< relref "PoolManagerScreens.md" >}})** screen when you create the pool. 
 If you select the **Encryption** option for the pool, it forces encryption for all datasets, zvols, and data contained in that pool, since they inherit encryption from the parent. 
 
-{{< hint warning >}}
+{{< hint type=important >}}
 If your system loses power or you reboot the system, the datasets, zvols, and all data in an encrypted pool automatically lock to protect the data in that encrypted pool. 
 {{< /hint >}}
 
@@ -70,12 +70,12 @@ You can change inherited settings for a dataset when you add the dataset, or you
 ## Implementing Encryption
 Before creating a pool with encryption make sure you want to encrypt all datasets and data stored on the pool. 
 
-{{< hint warning>}}
+{{< hint type=warning >}} 
 You cannot change a pool from encrypted to non-encrypted. You can only change the dataset encryption type in the encrypted pool.
 {{< /hint >}}
 If your system does not have enough disks to allow you to create a second storage pool, we recommend that you not use encryption at the pool level. 
 You can mix encrypted and unencrypted datasets on an unencrypted pool.
-{{< hint warning >}}
+{{< hint type=important >}}
 All pool-level encryption is key-based encryption. When prompted, download the encryption key and keep it stored in a safe place where you can back up the file.
 You cannot use passphrase encryption at the pool level.
 {{< /hint >}}
@@ -131,11 +131,11 @@ TrueNAS supports AES [Galois Counter Mode (GCM)](https://csrc.nist.gov/publicati
 These algorithms provide authenticated encryption with block ciphers.
 {{< /expand >}}
 
-{{< hint info>}}
+{{< hint type=note >}}
 The passhrase must be longer than 8 and less than 512 characters.
 {{< /hint >}}
 
-{{< hint danger>}}
+{{< hint type=warning >}}
 Keep encryption keys and/or passphrases safeguarded in a secure and protected place. 
 Losing encryption keys or passphrases can result in permanent data loss!
 {{< /hint >}}
@@ -178,7 +178,7 @@ To change the encryption type, go to **Datasets**:
 
 ## Locking and Unlocking Datasets
 
-{{< hint warning >}}
+{{< hint type=important >}}
 You can only lock and unlock an encrypted dataset if it is secured with a passphrase instead of a key file.
 Before locking a dataset, verify that it is not currently in use.
 {{< /hint >}}
@@ -193,7 +193,7 @@ Use the **Force unmount** option only if you are certain no one is currently acc
 **Force unmount** boots anyone using the dataset (e.g. someone accessing a share) so you can lock it. 
 Click **Confirm** to activate **Lock**, then click **Lock**.
 
-{{< hint info >}}
+{{< hint type=note >}}
 You *cannot* use locked datasets.
 {{< /hint >}}
 
@@ -222,7 +222,7 @@ TrueNAS displays the dataset with the unlocked icon.
 
 Encryption is for securing sensitive data. 
 
-{{< hint info >}}
+{{< hint type=note >}}
 You can only encrypting a zvol if you create the zvol from a dataset with encryption.
 {{< /hint >}}
 
@@ -262,7 +262,7 @@ There are two ways to manage the encryption credentials, with a key file or pass
 
 Creating a new encrypted pool automatically generates a new key file and prompts users to download it.
 
-{{< hint danger>}}
+{{< hint type=warning >}}
 Always back up the key file to a safe and secure location.
 {{< /hint >}}
 

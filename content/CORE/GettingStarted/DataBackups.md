@@ -13,7 +13,7 @@ TrueNAS offers several options for backing up data.
 
 {{< tabs "Data Management Options" >}}
 {{< tab "Cloud Sync" >}}
-{{< hint info >}}
+{{< hint type=note >}}
 This option requires an account with the Cloud Storage provider and a storage location created with the provider, like an Amazon S3 bucket.
 Major providers like Amazon S3, Google Cloud, Box and Microsoft Azure are supported, along with a variety of other vendors.
 These can charge fees for data transfers and storage, so please review your cloud storage provider's policies before transferring any data.

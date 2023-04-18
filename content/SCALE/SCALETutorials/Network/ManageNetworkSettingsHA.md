@@ -17,7 +17,7 @@ The instructions in the article only apply to SCALE Enterprise (HA) systems.
 {{< include file="/_includes/EnterpriseHANetworkIPs.md" type="page" >}}
 
 ## Configuring Enterprise (HA) Network Settings
-{{< hint warning >}}
+{{< hint type=important >}}
 You must disable the failover before you can configure network settings!
 {{< /hint >}}
 

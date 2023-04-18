@@ -24,7 +24,7 @@ The **Description** helps identify the purpose of the cron job and is optional.
 Enter the **Command** to run on the **Schedule**.
 Alternately, enter the path to a script file to run instead of a specific command.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 Don't forget to define the shell type when using a path to a script file.
 For example, a script written for *sh* must be specified as *sh /mnt/pool1/helloWorld.sh*.
 {{< /hint >}}

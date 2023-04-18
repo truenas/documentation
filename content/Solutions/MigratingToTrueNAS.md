@@ -15,7 +15,7 @@ Every NAS user has a unique storage setup, but we can still give general recomme
 
 Rsync is an open-source file transfer utility that runs on computers with Linux OS (or a Unix-like OS). Locate usage instructions and tutorials for rsync [here](https://rsync.samba.org/).
 
-{{< hint info >}}
+{{< hint type=note >}}
 If you decide to use rsync, be aware that your filesystem must support Access Control Lists (ACLs).
 {{< /hint >}}
 

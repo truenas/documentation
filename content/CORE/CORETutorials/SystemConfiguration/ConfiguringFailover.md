@@ -43,7 +43,7 @@ You can set the host names for both controllers and a virtual host name that rea
 
 Next, go to **Network > Interfaces** and edit the primary interface.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 Editing interfaces is disabled when HA is active.
 To disable HA, go to **System > Failover** and disable failover.
 Edit the interface, then reactivate failover immediately.

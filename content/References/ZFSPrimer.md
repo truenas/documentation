@@ -174,7 +174,7 @@ These resources can also help determine the RAID configuration best suited to th
 
 * [A Closer Look at ZFS, Vdevs and Performance](https://constantin.glez.de/2010/06/04/a-closer-look-zfs-vdevs-and-performance/)
 
-{{< hint warning >}}
+{{< hint type=important >}}
 RAID and disk redundancy are not substitutes for a reliable backup strategy.
 Bad things happen, so you always need a good backup strategy to protect valuable data.
 We recommend configuring TrueNAS with periodic snapshots and automated replication as part of a ZFS snapshot backup strategy.

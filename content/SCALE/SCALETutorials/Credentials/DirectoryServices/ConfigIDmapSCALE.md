@@ -15,7 +15,7 @@ The correct configuration therefore relies on details that are entirely external
 
 The default is to use an algorithmic method of generating IDs based on the RID component of the user or group SID in Active Directory.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 Only administrators experienced with configuring Id mapping should attempt to add new or edit existing idmaps. 
 Misconfiguration can lead to permissions incorrectly assigned to users or groups in the case where data is transferred to/from external servers via ZFS replication or rsync (or when access is performed via NFS or other protocols that directly access the UIDs/GIDs on files).
 {{< /hint >}}

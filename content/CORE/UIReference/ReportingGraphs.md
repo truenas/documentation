@@ -23,7 +23,7 @@ This data is preserved across system upgrades and restarts.
 
 Data files are saved in <file>/var/db/collectd/rrd/</file>.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 Because reporting data is frequently written it should not be stored on the boot pool or operating system device.
 {{< /hint >}}
 
@@ -77,7 +77,7 @@ Use the **Devices** dropdown list to select one or all system disks for which yo
 | **Pending I/O** | Displays then length of pending I/O requests for the selected disk. |
 | **Disk I/O** | Displays the disk read and writed I/O stats in bytes/s. |
 
-{{< hint warning >}}
+{{< hint type=important >}}
 Temperature monitoring for the disk is disabled if **HDD Standby** is enabled. Check the **Storage > Disks** **Edit Disk*** configuration form for any or all disks in the system if you do not see the temperature monitoring graph.
 {{< /hint >}}
 {{< /expand >}}

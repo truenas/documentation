@@ -13,7 +13,7 @@ Click the <span class="iconify" data-icon="eva:more-vertical-outline"></span> ic
 
 Use **Add** to add a new API key to your TrueNAS.
 
-{{< hint "danger" >}}
+{{< hint type=warning >}}
 Always back up and secure keys. The key string displays only one time, at creation!
 {{< /hint >}}
 

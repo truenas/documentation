@@ -89,7 +89,7 @@ These settings can be adjusted later in the various **Network** options availabl
 
 On a computer that can access the same network as the TrueNAS system, enter the hostname and domain or IP address in a web browser to connect to the web interface.
 
-{{< hint info >}}
+{{< hint type=note >}}
 The quality of your user experience can be impacted by the browser that you use. We generally recommend using Firefox, Edge, or Chrome.
 {{< /hint >}}
 

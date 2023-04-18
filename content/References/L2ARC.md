@@ -44,7 +44,7 @@ Make sure **Enabled** is set and click **SUBMIT**.
 ![PersistentL2ARCTunable](/images/CORE/12.0/SystemTunablesL2ARCRebuild.png "Persistent L2ARC Activation")
 
 {{< expand "CLI Instructions" "v" >}}
-{{< hint warning >}}
+{{< hint type=important >}}
 TrueNAS CORE doesn't write settings changed through the CLI to the configuration database. TrueNAS will reset them on reboot.
 {{< /hint >}}
 In a command line, enter `sysctl vfs.zfs.l2arc.rebuild_enabled=1`.

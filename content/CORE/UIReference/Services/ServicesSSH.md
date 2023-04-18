@@ -13,7 +13,7 @@ tags:
 
 Secure Socket Shell (SSH) is a network communication protocol. It provides encryption to secure data. Use the SSH services screen to configure SSH File Transfer Protocol (SFTP). SFTP is available by enabling SSH remote access to the TrueNAS system. 
 
-{{< hint warning >}}
+{{< hint type=important >}}
 Allowing external connections to TrueNAS is a security vulnerability!
 Enable SSH only when there is a need for external connections.
 See [Security Recommendations]({{< relref "Security.md" >}}) for more security considerations when using SSH.

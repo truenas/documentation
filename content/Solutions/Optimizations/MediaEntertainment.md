@@ -25,7 +25,7 @@ A TrueNAS storage system from iXsystems brings an enterprise-grade storage solut
 It is designed to enable M&E customers to address media capacity and performance requirements while reducing total cost of ownership (TCO), consolidating digital assets, accelerating media workflows, and providing the features needed to protect all media assets.
 Read more to learn how TrueNAS can be optimized for typical M&E production house usage.
 
-{{< hint info >}}
+{{< hint type=note >}}
 General tuning recommendations are changing constantly!
 Check back often to see what's changed or [add your own recommendations]({{< relref "/Contributing/_index.md" >}})!
 {{< /hint >}}

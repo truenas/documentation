@@ -73,7 +73,7 @@ Go to **Tasks > S.M.A.R.T. Tests** and click **ADD**.
 
 Select the **Disks** to test, **Type** of test to run, and **Schedule** for the task.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 S.M.A.R.T. tests can offline disks! Avoid scheduling S.M.A.R.T. tests simultaneously with scrub or resilver operations.
 {{< /hint >}}
 

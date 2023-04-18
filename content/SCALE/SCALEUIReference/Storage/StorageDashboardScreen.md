@@ -98,7 +98,7 @@ A warning displays below this donut graph when usage is above 80%.
 
 **View Disk Space Reports** opens the pool usage reports for the selected pool.
 
-{{< hint info >}}
+{{< hint type=note >}}
 Large petabyte systems may report storage numbers inaccurately. Storage configurations with more than 9,007,199,254,740,992 bytes will round the last 4 digits.
 
 For example, a system with 18,446,744,073,709,551,615 bytes reports the number as 18,446,744,073,709,552,000 bytes.
@@ -182,7 +182,7 @@ Select a pool from the **Pool** dropdown list TrueNAS detects as present on the 
 {{< expand "Click Here for More Information" "v" >}}
 The **Export/disconnect pool** window includes a warning that states data becomes unavailable after an export and that selecting **Destroy Data on this pool** destroys data on the pool disks. 
 
-{{< hint warning >}} 
+{{< hint type=important >}} 
 Exporting/disconnecting can be a destructive process! Back up all data before performing this operation. You might not be able to recover data lost through this operation.
 {{< /hint >}}
 

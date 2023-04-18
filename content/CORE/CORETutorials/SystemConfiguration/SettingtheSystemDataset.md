@@ -35,7 +35,7 @@ Moving the system dataset to an encrypted pool disables that volume's passphrase
 
 You cannot move the system dataset to a passphrase-encrypted or read-only pool.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 **Reboots Required**
 
 * The SMB service must restart, which causes a brief outage for any active SMB connections.

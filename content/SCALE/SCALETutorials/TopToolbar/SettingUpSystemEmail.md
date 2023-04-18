@@ -15,7 +15,7 @@ An automatic script sends a nightly email to the administrator root account cont
 Alert events are also emailed to the root user account.
 Configure the system to send these emails to the administrator remote email account for fast awareness and resolution of any critical issues.
 
-{{< hint info >}}
+{{< hint type=note >}}
 [Scrub Task]({{< relref "ScrubTasksSCALE.md" >}}) issues and [S.M.A.R.T. reports]({{< relref "SMARTTestsSCALE.md" >}}) are mailed separately to the address configured in those services.
 {{< /hint >}}
 ## Setting up User Accounts

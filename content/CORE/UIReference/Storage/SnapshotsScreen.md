@@ -45,7 +45,7 @@ The expanded snapshot view includes date created, space used, and the amount of 
 | **Rollback** | <span class="material-icons">restore</span> | Displays the **Dataset Rollback From Snapshot** dialog. |
 
 ### Dataset Rollback from Snapshot Dialog
-{{< hint "danger" >}}
+{{< hint type=warning >}}
 WARNING: Rolling the dataset back destroys data on the dataset and can destroy additional snapshots that are related to the dataset. 
 This can result in permanent data loss!
 Do not roll back until all desired data and snapshots are backed up.

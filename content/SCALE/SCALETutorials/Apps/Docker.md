@@ -26,7 +26,7 @@ To set up a Docker image, first, determine if you want the container to use its 
 
 ## Adding Custom Applications
 
-{{< hint warning >}}
+{{< hint type=important >}}
 If your application requires directory paths, specific datasets, or other storage arrangements, configure these before you start the **Launch Docker Image** wizard. 
 
 You cannot exit the configuration wizard and save settings to create data storage or directories in the middle of the process. If you are unsure about any configuration settings, review the [Launch Docker Image UI reference article]({{< relref "LaunchDockerImageScreens.md" >}}) before creating a Docker image.
@@ -118,7 +118,7 @@ See the Docker [DNS services documentation](https://docs.docker.com/config/conta
 ### Defining Port Forwarding List
 Choose the protocol and enter port numbers for both the container and node.
 You can define multiple ports to forward to the workload.
-{{< hint info >}}
+{{< hint type=note >}}
 The node port number must be over **9000**.
 Ensure no other containers or system services are using the same port number.
 {{< /hint >}}

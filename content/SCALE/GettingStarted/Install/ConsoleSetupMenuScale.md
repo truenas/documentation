@@ -45,7 +45,7 @@ For network configuration options **1**, **2**, and **3**, we recommend using th
   Use to change the administrator user password.
   If you selected option 1 on the iso installer menu, you already configured the admin user and password. 
   Use can use this to change the admin password before you log into the SCALE UI.
-  {{< hint info >}}
+  {{< hint type=note >}}
   This is not the password for the root user in the CLI or the root user login password for the web UI.
   The [root user password]({{< relref "rootlessLogin.md" >}}) is disabled by default. You can turn on the root user password in the UI, but we do not recommend doing that.
   {{< /hint >}}
@@ -73,7 +73,7 @@ For network configuration options **1**, **2**, and **3**, we recommend using th
 
   Use to power down the system.
 
-{{< hint info >}}
+{{< hint type=note >}}
 Console setup menu options can change with software updates, service agreements, etc.
 {{< /hint >}}
 
@@ -141,7 +141,7 @@ You can set and enable the root user password in the UI, but for security harden
 
 Changing the admin user (or root if you have not created the admin user) password disables 2FA (Two-Factor Authentication).
 
-{{< hint warning >}}
+{{< hint type=important >}}
 Disabling a password in the UI prevents the user from logging in with it. When both root and local admin user passwords are disabled and the web interface session times out, a temporary sign-in screen allows logging in.
 Immediately go to the **Credentials > Local User** screen, select the admin user, and then **Edit** to re-enable the password.
 {{< /hint >}}

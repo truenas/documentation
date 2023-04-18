@@ -43,7 +43,7 @@ Go to **Storage > Pools** and create the pools to include in your container.
 Now you need to ensure that a supported shell is used by the user account that your container solution can use to SSH to TrueNAS.
 Go to **Accounts > Users** and set the desired user's *Shell* to either *bash* or *sh*, then click *SAVE*.
 
-{{< hint info >}}
+{{< hint type=note >}}
  
 To use a non-root user for the SSH operations, you can create a `csi` user and then run `visudo` directly from the console. Make sure the line for the `csi` user has `NOPASSWD` added (this can get reset by TrueNAS if you alter the user in the GUI later):
 
@@ -67,7 +67,7 @@ With TrueNAS CORE version 12.0+, you can use an `apiKey` instead of the `root` p
 4. In the *Initiators Groups* tab, click *ADD*. For ease of use, check the *Allow ALL Initiators*, then click *SAVE*. You can make restrictions later using the *Allowed Initiators (IQN)* function.
 5. Kubernetes will create Targets and Extents automatically.
 
-{{< hint info >}}
+{{< hint type=note >}}
  
 When using the TrueNAS API concurrently, the `/etc/ctl.conf` file on the server can become invalid. There are sample scripts in the `contrib` directory to clean things up ie: copy the script to the server and directly and run - `./ctld-config-watchdog-db.sh | logger -t ctld-config-watchdog-db.sh &`. Please read the scripts and set the variables as appropriate for your server.
   - Ensure you have preemptively created portals, initiator groups, and authorizations
@@ -99,7 +99,7 @@ sudo apt-get install -y nfs-common
 {{< tab "iSCSI" >}}
 ### iSCSI
 
-{{< hint info >}}
+{{< hint type=note >}}
 Multipath is supported for the `iscsi`-based drivers. Configure multipath with multiple portals in the configuration as needed.
 
 If you are running Kubernetes with rancher/rke, please see https://github.com/rancher/rke/issues/1846.

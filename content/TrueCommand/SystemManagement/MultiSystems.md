@@ -46,7 +46,7 @@ To access the **System Inventory** page, click the <i class="material-icons" ari
 
 ![SystemInventoryMenu](/images/TrueCommand/2.1/SystemInventoryMenu.png "Access the System Inventory Page")
 
-{{< hint info >}}
+{{< hint type=note >}}
 To download a comma-delimited <file>CSV</file> file for the current inventory page, click **CSV** in the upper-right area of the screen.
 {{< /hint >}}
 

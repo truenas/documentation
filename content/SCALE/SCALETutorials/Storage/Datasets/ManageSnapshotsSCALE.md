@@ -15,7 +15,7 @@ tags:
 
 ## Viewing the List of Snapshots
 
-{{< hint info >}}
+{{< hint type=note >}}
 File Explorer limits the number of snapshots Windows presents to users. If TrueNAS responds with more than the File Explorer limit, File Explorer shows no available snapshots.
 TrueNAS displays a dialog stating the dataset snapshot count has more snapshots than recommended, and states performance or functionality might degrade.
 {{< /hint >}}
@@ -62,7 +62,7 @@ Click the **Delete** button. A confirmation dialog displays. Select **Confirm** 
 
 The **Rollback** option reverts the dataset back to the point in time saved by the snapshot.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 Rollback is a dangerous operation that causes any configured replication tasks to fail.
 {{< /hint >}}
 Replications use the existing snapshot when doing an incremental backup, and rolling back can put the snapshots out-of-order.

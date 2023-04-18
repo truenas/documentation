@@ -9,7 +9,7 @@ If using a TrueNAS SCALE Bluefin system on the early release (22.12.1) you must 
 * The admin user passwordless sudo permission enabled
 
 Also verify the SSH service settings to make sure you have **Root with Password**, **Log in as Admin with Password**, and **Allow Password Authentication** selected to enable these capabilities.
-{{< hint warning >}}
+{{< hint type=important >}}
 Incorrect SSH service settings can impact the admin user ability to establish an SSH session during replication, and require you to obtain and paste a public SSH key into the admin user settings.
 {{< /hint >}}
 

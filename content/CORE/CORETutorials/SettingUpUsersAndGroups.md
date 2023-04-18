@@ -17,7 +17,7 @@ tags:
 
 Creating users and assigning them to groups allows you to efficiently tune permissions and share data for large numbers of users.
 
-{{< hint info >}}
+{{< hint type=note >}}
 Only the root user account can log in to the TrueNAS web interface.
 {{< /hint >}}
 

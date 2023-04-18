@@ -76,7 +76,7 @@ Each dataset is a separate filesystem, so child datasets must each have separate
 
 Click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> and then **Delete** to delete the storage.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 Remember that added storage is just a pointer to the selected storage directory on the TrueNAS system.
 It does not copy that data to the jail.
 Files that are deleted from the **Destination** directory in the jail are also deleted from the **Source** directory on the TrueNAS system.

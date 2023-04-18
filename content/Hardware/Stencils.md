@@ -19,7 +19,7 @@ Visio stores downloaded stencils in the **My Shapes** folder.
 Check your web browser's download settings.
 Determine if your current settings allow you to specify a download folder location.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 **Work in Progress**<br>
 This stencil pack is a work in progress.
 It currently includes the M, Minis, R and X Series systems, as well as TrueNAS ES Expansion Shelves.

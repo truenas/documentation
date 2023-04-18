@@ -47,7 +47,7 @@ Select when you want the **Script** to run and fill out the rest of the fields t
 
 ## Managing an Init/Shutdown Script
 
-{{< hint info >}}
+{{< hint type=note >}}
 Always test the script to verify it executes and achieves the desired results.
 All init/shutdown scripts are run with `sh`.
 {{< /hint >}}

@@ -9,7 +9,7 @@ tags:
 {{< toc >}}
 ## Installing the TrueCommand Container
 
-{{< hint info >}}
+{{< hint type=note >}}
 If you haven't already installed Docker on your machine, install the [Docker Engine](https://docs.docker.com/engine/install/debian/), then install [Docker Desktop](https://docs.docker.com/desktop/linux/).
 {{< /hint >}}
 
@@ -30,7 +30,7 @@ Open a terminal and enter `docker run \--detach -v "/hostdir:/data" -p port:80 -
 
 *hostdir* is a directory on the host machine for Docker container data, *port* is the TrueCommand web interface port number, and *ssl* is the port number for secure web interface access.
 
-{{< hint info >}}
+{{< hint type=note >}}
 SSL provides extra security in network communications.
 {{< /hint >}}
 
@@ -40,13 +40,13 @@ To install the container with an earlier TrueCommand release, replace *latest* w
 To install the container with the nightly TrueCommand release, replace *latest* with *nightly*:  
 `docker run \--detach -v "/DockerDir:/data" -p 9004:80 -p 9005:443 ixsystems/truecommand:nightly`
 
-{{< hint warning >}}
+{{< hint type=important >}}
 Only use the nightly version on test systems.
 {{< /hint >}}
 
 Although Docker containers have several run methods, TrueCommand requires`-v /hostdirectory:/data` to function.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 Do not try to use the same host directory for two different containers!
 Doing so results in file conflicts and database corruption.
 {{< /hint >}}

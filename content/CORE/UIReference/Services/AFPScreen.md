@@ -9,7 +9,7 @@ tags:
 The Apple Filing Protocol (AFP) is a network protocol that allows file sharing over a network.
 It is like SMB and NFS, but it is for Apple systems.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 Apple began using the SMB sharing protocol as the default option for file sharing in 2013. At that time Apple ceased development of the AFP sharing protocol. The recommendation is to use SMB sharing instead of AFP. AFP sharing is still used if files are being shared with legacy Apple products. Please see https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/APFS_Guide/FAQ/FAQ.html
 {{< /hint >}}
 

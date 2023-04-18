@@ -45,7 +45,7 @@ These snapshots get destroyed at the end of 3 years.
 The **Naming Schema** determines how automated snapshot names generate.
 A valid schema requires the *%Y* (year), *%m* (month), *%d* (day), *%H* (hour), and *%M* (minute) time strings, but you can add more identifiers to the schema too, using any identifiers from the Python [strptime function](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior).
 
-{{< hint warning >}}
+{{< hint type=important >}}
 
 For **Periodic Snapshot Tasks** used to set up a replication task with the **Replication Task** function:
 
@@ -62,7 +62,7 @@ Examples:
 | replicationsnaps-1wklife-%Y%m%d_%H:%M | `replicationsnaps-1wklife-20210120_00:00`, `replicationsnaps-1wklife-20210120_06:00` |
 | autosnap_%Y.%m.%d-%H.%M.%S-%z | `autosnap_2021.01.20-00.00.00-EST`, `autosnap_2021.01.20-06.00.00-EST` |
 
-{{< hint warning >}}
+{{< hint type=important >}}
 When referencing snapshots from a Windows computer, avoid using characters like `:` that are invalid in a Windows file path.
 Some applications limit filename or path length, and there might be limitations related to spaces and other characters.
 Always consider future uses and ensure the name given to a periodic snapshot is acceptable.

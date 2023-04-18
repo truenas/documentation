@@ -24,7 +24,7 @@ Because S3 is the de facto standard for cloud-based storage, setting up an S3 se
 
 ## Setting up the S3 service
 
-{{< hint warning >}}
+{{< hint type=important >}}
 Having large numbers of files (>100K for instance) in a single bucket with no sub-directories can harm performance and cause stability issues.
 {{< /hint >}}
 
@@ -50,7 +50,7 @@ MinIO supports two different connection methods.
 Linux or macOS users must have the [s3cmd](https://s3tools.org/s3cmd) service installed before beginning this setup.
 On Windows, users can also refer to [S3Express](https://www.s3express.com/) for a similar command-line experience.
 
-{{< hint ok >}}
+{{< hint type=tip >}}
 Ubuntu or other Linux distributions can access the configuration by running `s3cmd --configure` to walk through critical settings.
 {{< /hint >}}
 

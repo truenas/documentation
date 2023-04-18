@@ -5,7 +5,7 @@ geekdocCollapseSection: true
 
 # TrueNAS: Open Storage
 
-{{< hint info >}}
+{{< hint type=note >}}
 There are some [updates](#whats-new-on-the-documentation-hub) to the Docs Hub!
 {{< /hint >}}
 

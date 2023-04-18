@@ -9,7 +9,7 @@ tags:
 
 S3 manages data using object storage architecture.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 Having large numbers of files (>100K for instance) in a single bucket with no sub-directories is not recommended. It can harm performance and cause stability issues.
 {{< /hint >}}
 
@@ -23,7 +23,7 @@ The **SAVE** button activates after entering the required settings.
 
 {{< include file="/content/_includes/ServicesS3Fields.md" type="page" >}}
 
-{{< hint warning >}}
+{{< hint type=important >}}
 MinIO deprecated Access key and Secret key. MINIO_ROOT USER arguments and their values replace Access key. MINIO_ROOT_PASSWORD arguments and their values replace Secret key. For the ROOT_USER value, use a name up to 20 characters. For the ROOT_PASSWORD, use a string of 8 to 40 randomized characters. MinIO recommends using a long password string of unique random characters.
 {{< /hint >}}
 

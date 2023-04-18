@@ -81,7 +81,7 @@ General options include how long TrueCommand stores system statistics and the nu
 
 #### SSL options
 
-{{< hint info >}}
+{{< hint type=note >}}
 This feature is only available for local installations or containerized TrueCommand deployments.
 {{< /hint >}}
 

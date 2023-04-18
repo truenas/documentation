@@ -16,7 +16,7 @@ This tutorial describes how to start a local S3 service on TrueNAS and connect t
 S3 is an object storage protocol used by many major cloud providers, including Amazon Web Services™. On TrueNAS, the service is another way to store files. You can view these files with a web browser. S3 is the de facto standard for cloud-based storage. Organizations or online application developers can use TrueNAS with an S3 service. This can replace or archive expensive cloud storage.
 {{< /expand >}}
 
-{{< hint warning >}}
+{{< hint type=important >}}
 Having large numbers of files (>100K for instance) in a single bucket with no sub-directories is not recommended. It can harm performance and cause stability issues.
 {{< /hint >}}
 

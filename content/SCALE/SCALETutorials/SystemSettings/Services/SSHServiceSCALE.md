@@ -59,7 +59,7 @@ Go to **System Settings > Services**, find the **SSH** entry, and click the <i c
 ![ServicesSSHBasicSettingsGenOptionsSCALE](/images/SCALE/22.12/ServicesSSHBasicSettingsGenOptionsSCALE.png "SSH Basic Settings General Options") 
 
 Select **Allow Password Authentication** and decide if you need **Log in as Root with Password** and **Log in as Admin with Password**.
-{{< hint warning >}}
+{{< hint type=important >}}
 SSH with root is a security vulnerability. It allows users to fully control the NAS remotely with a terminal instead of providing SFTP transfer access.
 {{< /hint >}}
 Review the remaining options and configure them according to your environment or security needs.
@@ -71,7 +71,7 @@ This article shows using FileZilla as an example.
 
 Using FileZilla, enter `SFTP://{TrueNAS IP} {username} {password} {port 22}`. Where {TrueNAS IP} is the IP address for your TrueNAS system, {username} is the administrator login user name, and {password} is the adminstrator password, and {port 22} to connect.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 SFTP does not offer chroot locking.
 While chroot is not 100% secure, lacking chroot lets users move up to the root directory and view internal system information.
 If this level of access is a concern, FTP with TLS might be the more secure choice.

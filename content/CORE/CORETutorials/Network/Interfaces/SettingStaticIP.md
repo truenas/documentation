@@ -8,7 +8,7 @@ tags:
 - corenetworkinterfaces
 ---
 
-{{< hint warning >}}
+{{< hint type=important >}}
 **Disruptive Change**
 
 It is possible to make changes to the network interface that the web interface uses. But this can result in losing connection to the TrueNAS system!
@@ -42,7 +42,7 @@ Configuring a static IP address involves both the TrueNAS web UI and the Console
 
 TrueNAS can configure physical network interfaces with static IP addresses. Use either the web interface or the system console menu.
 
-{{< hint ok >}}
+{{< hint type=tip >}}
 The recommendation is to use the web interface for this process. There are extra safety features to prevent saving misconfigured interface settings.
 {{< /hint >}}
 
@@ -55,7 +55,7 @@ This contains creation and configuration options for physical and virtual networ
 
 You can configure static IP addresses while creating or editing an interface.
 
-{{< hint ok >}}
+{{< hint type=tip >}}
 To edit an active interface on TrueNAS Enterprise systems, you must first disable [High Availability]({{< relref "CORE/UIReference/System/Failover.md" >}}).
 {{< /hint >}}
 
@@ -63,7 +63,7 @@ To edit an active interface on TrueNAS Enterprise systems, you must first disabl
 
 Type the desired address in the **IP Address** field and select a subnet mask.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 Multiple interfaces cannot be members of the same subnet.
 See [Multiple network interfaces on a single subnet](https://www.ixsystems.com/community/threads/multiple-network-interfaces-on-a-single-subnet.20204/) for more information.
 If an error displays when setting the IP addresses on multiple interfaces, check the subnet.

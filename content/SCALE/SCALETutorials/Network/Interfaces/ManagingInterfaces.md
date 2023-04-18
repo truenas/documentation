@@ -23,7 +23,7 @@ You can add new or edit existing network interfaces on the **Network** screen.
 
 ## Adding an Interface
 
-{{< hint ok >}}
+{{< hint type=tip >}}
 You can only use DHCP to provide the IP address for one network interface and this is most likely for your primary network interface configured during the installation process.
 
 To add another network interface leave the **DHCP** checkbox clear and click the **Add** button near the bottom of the **Add Interface** configuration panel so you can enter a static IP address for the interface.

@@ -12,7 +12,7 @@ tags:
 
 The **Two-Factor Auth** screen displays settings to configure and enable two-factor authentication (2FA) on TrueNAS SCALE.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 Two-factor authentication is time-based and requires a correct system time setting.
 {{< /hint >}}
 ### User Settings

@@ -24,7 +24,7 @@ Click off the window back to the dashboard to close the edit window without maki
 To displays a list of users or groups on the selected system, click the **Users and Groups** button <mat-icon _ngcontent-igf-c221="" role="img" fontset="mdi" class="mat-icon notranslate mdi mdi-account-group mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" data-mat-icon-name="mdi-account-group" data-mat-icon-namespace="mdi"></mat-icon>.  
 Click the **Users** dropdown to select **Groups** to change the list to groups on the system.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 This new 2.1 Users And Groups function is an experimental feature that could be radically changed or removed in future releases. Use with caution!
 {{< /hint >}}
 

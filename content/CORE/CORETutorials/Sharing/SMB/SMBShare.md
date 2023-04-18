@@ -15,13 +15,13 @@ SMB (also known as CIFS) is the native file sharing system in Windows. SMB share
 
 TrueNAS can use SMB to share files among one or many users or devices. SMB supports a wide range of permissions and security settings. SMB can support advanced permissions (ACLs) on Windows and other systems. SMB also supports Windows Alternate Streams and Extended Metadata. SMB is suitable for the management and administration of large or small pools of data.  
 
-{{< hint warning >}}
+{{< hint type=important >}}
 TrueNAS uses [Samba](https://www.samba.org/) to provide SMB services. 
 There are many versions of the SMB protocol. During SMB session negotiation, an SMB client attempts to negotiate the highest SMB protocol. Industry-wide, the usage of the SMB1 protocol (sometimes referred to as NT1) is [being deprecated]({{< relref "/CORE/CoreSecurityReports/SMB1Advisory.md" >}}). This deprecation is for security reasons. 
 However, most SMB clients support SMB 2 or 3 protocols, even when they are not the default protocols.
 {{< /hint >}}
 
-{{< hint info >}}
+{{< hint type=note >}}
 Legacy SMB clients rely on NetBIOS name resolution to discover SMB servers on a network. The NetBIOS name server (nmbd) is disabled by default in TrueNAS. You can enable it in **Network > Global Configuration** if this functionality is required.
 
 MacOS clients use mDNS to discover the presence of SMB servers on the network. The mDNS server (avahi) is enabled by default on TrueNAS.
@@ -110,7 +110,7 @@ To mount the SMB share to a drive letter on windows, open the command line and r
 
 ```net use Z: \\computer_name\share_name /PERSISTENT:YES```
 
-{{< hint tip "Troubleshooting Tip" >}}
+{{< hint type=tip title="Troubleshooting Tip" >}}
 In case of Windows reporting an incorrect password, you might have to change your Windows security settings: Local Security Policy  -> Local Policies -> Security Options -> Network security: LAN Manager authentication level -> Send NTLMv2 response only
 {{< /hint >}}
 

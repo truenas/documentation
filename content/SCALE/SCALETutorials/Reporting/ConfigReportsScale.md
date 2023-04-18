@@ -22,7 +22,7 @@ TrueNAS uses [collectd](https://collectd.org/) to provide reporting statistics.
 Reporting data is saved to permit viewing and monitoring usage trends over time.
 This data is preserved across system upgrades and restarts.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 Because reporting data is written frequently do not store it on the boot pool or operating system device.
 
 TrueNAS clears the report history when you change the report CPU, graph age, or graph points options.

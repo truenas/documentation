@@ -9,7 +9,7 @@ tags:
 NIS is a client–server directory service protocol. Usage scenarios include the distribution of user and host names between networked computers. 
 Use the **Directory Services > NIS** screen to configure [Network Information Service](https://www.oreilly.com/library/view/practical-unix-and/0596003234/ch14s01.html) on your TrueNAS.  
 
-{{< hint warning >}}
+{{< hint type=important >}}
 NIS is limited in scalability and security.
 For modern networks, [LDAP]({{< relref "/content/CORE/UIReference/DirectoryServices/LDAPScreen.md" >}}) has replaced NIS.
 {{< /hint >}}

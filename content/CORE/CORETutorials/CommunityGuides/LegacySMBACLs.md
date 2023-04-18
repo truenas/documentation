@@ -6,7 +6,7 @@ tags:
 - corecommunityguides
 ---
 
-{{< hint info >}}
+{{< hint type=note >}}
 This article only applies to versions of FreeNAS or TrueNAS released before 12.0
 {{< /hint >}}
 

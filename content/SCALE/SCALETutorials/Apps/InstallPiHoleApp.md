@@ -24,7 +24,7 @@ To set up a Docker image, first determine if you want the container to use its o
 
 ## Installing Pi-hole Application
 
-{{< hint info >}}
+{{< hint type=note >}}
 If you want to create a dataset for Pi-hole data storage, you must do this before beginning the Pi-hole application install.
 {{< /hint >}}
 
@@ -50,7 +50,7 @@ Select **Enable Custom Host Path for Pihole Configuration Volume** to add the **
 Click the arrow to the left of **<span class="material-icons">folder</span> /mnt** and at each dataset to expand the tree and browse to the dataset and directory paths you created before beginning the container deployment. 
 Pi-hole uses volumes store your data between container upgrades. 
 
-{{< hint warning>}} 
+{{< hint type=warning >}}  
 You need to create these directories in a dataset on SCALE using **System Settings > Shell** before you begin installing this container.
 {{< /hint >}}
 

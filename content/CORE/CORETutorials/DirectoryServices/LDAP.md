@@ -49,7 +49,7 @@ See [Kerberos]({{< relref "/CORE/CORETutorials/DirectoryServices/Kerberos.md" >}
 
 To configure LDAP certificate-based authentication for the LDAP provider to sign, see [Certificate Signing Requests]({{< relref "CORE/CORETutorials/SystemConfiguration/CreatingCAsandCertificates/CreatingCertificates.md" >}}).
 
-{{< hint warning >}}
+{{< hint type=important >}}
 [Samba 4.13.0](https://www.samba.org/samba/history/samba-4.13.0.html) deprecated **Samba Schema**. Select if SMB shares need LDAP authentication and the LDAP server is already configured with Samba attributes. If selected, specify the type of schema from the **Schema** dropdown list.
 {{< /hint >}}
 

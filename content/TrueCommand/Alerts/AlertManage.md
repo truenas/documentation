@@ -26,7 +26,7 @@ TrueCommand provides three alert screen options:
 The **All Alerts**, **Dashboard**, and **Systems** screens display alert indications.
 
 ## All Alerts Screens and Functions
-{{< hint info >}}
+{{< hint type=note >}}
 TrueCommand discovers and shows alerts from a TrueNAS system if it is created in the last two months. Alerts older than this do not show in TrueCommand.
 {{< /hint >}}
 
@@ -118,7 +118,7 @@ To create a new rule:
 3. Click **CREATE ALERT** to finish creating the new alert rule. To start over, click **RESET**.
 
 ## Alert Services Screens and Functions
-{{< hint info >}}
+{{< hint type=note >}}
 Configurable alert services are only available for local installations or containerized TrueCommand deployments.
 TrueCommand Cloud instances use email alerts by default; PagerDuty is not an option.
 {{< /hint >}}
@@ -142,7 +142,7 @@ Each plugin has three options:
 * **Clear plugin configuration** <mat-icon _ngcontent-ath-c200="" role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true">remove_circle</mat-icon> 
 
 ### Configuring SMTP Email
-{{< hint info >}}
+{{< hint type=note >}}
 Before proceeding, verify that the sending mailserver has TLS enabled.
 TrueCommand cannot send emails through a mailserver without TLS.
 The user profile page must have an email address to receive emails.

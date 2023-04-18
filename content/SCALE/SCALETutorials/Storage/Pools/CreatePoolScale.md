@@ -37,7 +37,7 @@ Determining your specific storage requirements is a critical step before creatin
 First, enter a name for the pool using up to 50 lower case alpha-numeric and permitted special characters that conform to [ZFS naming conventions](https://docs.oracle.com/cd/E23824_01/html/821-1448/gbcpt.html). 
 The pool name contributes to the maximum character length for datasets so it is limited to 50 characters. 
 
-{{< hint info >}}
+{{< hint type=note >}}
 You cannot change the name of the pool after you click **Create**! 
 {{< /hint >}}
 ### Encrypting the Pool
@@ -52,17 +52,17 @@ Next, add disks to your primary data VDEV.
 A data VDEV is the standard VDEV for primary storage operations.
 A data VDEV configuration typically affects how the other types of VDEVs get configured.
 
-{{< hint info >}}
+{{< hint type=note >}}
 All pools must have a data VDEV. 
 You can add as many VDEV types (cache, log, spare, etc.) as you want to the pool for your use case but it must have a data VDEV. 
 {{< /hint >}}
 
 The **Available Disks** table lists all available disks detected on the system including disks for exported pools. 
-{{< hint warning >}}
+{{< hint type=important >}}
 **Warning:** USB-connected disks might report their serial numbers inaccurately, making them indistinguishable from each other.
 {{< /hint >}}
 
-{{< hint info >}}
+{{< hint type=note >}}
 Disks with non-unique serial numbers do not populate the **Available Disks** section until you select **Show disk with non-unique serial numbers**.
 {{< /hint >}}
 
@@ -108,7 +108,7 @@ Another VDEV with an identical configuration is called a *mirror* of VDEVs.
 
 If you add more disks of the same size to your system, you can add another duplicate data VDEV. 
 
-{{< hint warning >}}
+{{< hint type=important >}}
 Don't have multiple data vdevs with different numbers of disks in each VDEV.
 This complicates and limits the pool capabilities.
 {{< /hint >}}
@@ -118,7 +118,7 @@ You can add a data VDEV to a pool in one of several layouts.
 {{< expand "Stripe" >}}
 A **Stripe** VDEV has each disk storing data. A stripe requires at least one disk and has no data redundancy.
 To create a stipe VDEV you must select **Force** to activate the **Create** button on the **Pool Manager** screen.
-{{< hint "danger" >}}
+{{< hint type=warning >}}
 Never use a **Stripe** VDEV to store critical data!
 A single disk failure results in losing all data in the vdev.
 {{< /hint >}}

@@ -83,7 +83,7 @@ Click on **Apps** in the navigation menu of the SCALE UI. **Installed Applicatio
 
 ![InstallStorjAppNameSCALE](/images/SCALE/22.12/InstallStorjAppNameSCALE.png "Name Storj App SCALE") 
 
-{{< hint info >}}
+{{< hint type=note >}}
 Enter a name for the Storj App. Lowercase alphanumeric characters can be specified. Name must start with an alphabetic character and can end with an alphanumeric character. Hyphen is allowed, but not as the first or last character. In this example, we entered `storjnode`. 
 {{< /hint >}}
 

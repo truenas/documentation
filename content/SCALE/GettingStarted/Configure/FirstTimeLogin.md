@@ -14,7 +14,7 @@ tags:
 
 
 Now that you have installed TrueNAS SCALE or migrated from TrueNAS CORE to SCALE, you can log into the SCALE web user interface (UI) to complete your initial system configuration and then begin managing data!
-{{< hint warning >}}
+{{< hint type=important >}}
 Important! Use only the web user interface (UI) to make configuration changes to the system.
 {{< /hint >}}
 
@@ -48,7 +48,7 @@ SCALE Enterprise (HA) systems can use the DHCP-assigned IP address for the prima
 
 Using a computer with access to the same network as the TrueNAS system, enter the host name and domain or IP address in a web browser to connect to the SCALE web interface.
 
-{{< hint info >}}
+{{< hint type=note >}}
 The browser you use can impact the quality of your user experience. We generally recommend using Firefox, Edge, or Chrome.
 {{< /hint >}}
 
@@ -97,7 +97,7 @@ If you disabled the root user password and did not create the admin user and ena
 
 ### Troubleshooting Accessing the Web UI
 
-{{< hint warning >}}
+{{< hint type=important >}}
 This option does not configure the admin or root user account. 
 The password entered is a one-time user access password. 
 You must go to the **Credentials > Local Users** screen and [create the admin account]({{< relref "ManageLocalUsersSCALE.md" >}}) immediately after you enter the UI.

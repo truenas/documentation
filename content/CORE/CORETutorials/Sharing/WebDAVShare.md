@@ -24,7 +24,7 @@ Enter a name for the share in **Name** and use the file browser to select the da
 Enter an optional description for the share in **Description** to help identify it.
 To prevent user accounts from modifying the shared data, select **Read Only**.  
 
-{{< hint warning >}}
+{{< hint type=important >}}
 The default selection is **Change User & Group Ownership**. 
 This changes existing ownership of all files in the share to the **webdav** user and group accounts. 
 The default selection simplifies WebDAV share permission. This unexpected change causes the web interface to display a warning:

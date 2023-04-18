@@ -14,7 +14,7 @@ tags:
 TrueCommand is versatile and offers several different install options.
 TrueCommand Cloud is the preferred method for using TrueCommand since it requires no local resources or specific hardware requirements to get started!
 
-{{< hint info >}}
+{{< hint type=note >}}
 Please note that a credit card number is required for Cloud Signups.
 
 If you're purchasing TrueNAS Enterprise hardware or licenses, you might be eligible to receive an additional TrueCommand license that lasts the duration of the TrueNAS Enterprise contract. Contact [**iXsystems Customer Support**]({{< relref "/TrueCommand/Introduction/Support.md" >}}) for more details about adding TrueCommand to your TrueNAS Enterprise purchase.

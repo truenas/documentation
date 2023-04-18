@@ -62,7 +62,7 @@ TrueNAS uses Extended Key Usage for end-entity certificates.
 1. If you want to utilize **Extended Key Usage**, set it to **Enabled**, then select one or more usages for the public key from the **Usages** drop-down.
 2. Enable **Critical Extension** if you want to identify this extension as critical for the certificate. Do not enable **Critical Extension** if **Usages** contains *ANY_EXTENDED_KEY_USAGE*. 
 
-{{< hint info >}}
+{{< hint type=note >}}
 Using **Extended Key Usage** and **Key Usage** extensions requires that the certificate purpose is consistent with both extensions. See [RFC 3280, section 4.2.1.13](https://www.ietf.org/rfc/rfc3280.txt) for more details.
 {{< /hint >}}
 
@@ -116,7 +116,7 @@ TrueNAS uses Extended Key Usage for end-entity certificates.
 1. If you want to utilize **Extended Key Usage**, set it to **Enabled**, then select one or more usages for the public key from the **Usages** drop-down.
 2. Enable **Critical Extension** if you want to identify this extension as critical for the certificate. Do not enable **Critical Extension** if **Usages** contains *ANY_EXTENDED_KEY_USAGE*. 
 
-{{< hint info >}}
+{{< hint type=note >}}
 Using **Extended Key Usage** and **Key Usage** extensions requires that the certificate purpose is consistent with both extensions. See [RFC 3280, section 4.2.1.13](https://www.ietf.org/rfc/rfc3280.txt) for more details.
 {{< /hint >}}
 

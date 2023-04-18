@@ -51,7 +51,7 @@ Define a number in the **Port** field. But do not use the default **8080** or re
 Make sure the network is not already using the WebDAV service port.
 
 To prevent unauthorized access to the shared data, set **HTTP Authentication** to either **Basic** or **Digest** and create a new **Webdav Password**. Do not use the default password **davtest** as it is a known password.
-{{< hint info >}}
+{{< hint type=note >}}
 Changing the **HTTP Authentication** setting to either **Basic** or **No Authentication** creates security risks, and mounting WebDAV shares in Windows might require adjusting the Windows registry to allow for insecure authentication methods. 
 This is not recommended.
 {{< /hint >}}

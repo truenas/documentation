@@ -41,7 +41,7 @@ By default, SEDs are not locked until the administrator takes ownership of them.
 
 A password-protected SED protects the data stored on the device when the device is physically removed from the system. This allows secure disposal of the device without having to first wipe the contents. Repurposing a SED on another system requires the SED password.
 
-{{< hint info >}}
+{{< hint type=note >}}
 For TrueNAS High Availability (HA) systems, SED drives only unlock on the active controller!
 {{< /hint >}}
 
@@ -78,7 +78,7 @@ TrueNAS supports setting a global password for all detected SEDs or setting indi
 ### Setting a Global Password for SEDs
 
 Go to **System > Advanced > SED Password** and enter the password. 
-{{< hint "danger" >}}
+{{< hint type=warning >}}
 Record this password and store it in a safe place!
 {{< /hint >}}
 Now configure the SEDs with this password. Go to the **Shell** and enter command `sedhelper setup <password>`, where `<password>` is the global password entered in **System > Advanced > SED Password**.
@@ -133,7 +133,7 @@ Band[0]:
 
 This section contains command line instructions to manage SED passwords and data. The command used is [sedutil-cli(8)](https://www.mankier.com/8/sedutil-cli). Most SEDs are TCG-E (Enterprise) or TCG-Opal ([Opal v2.0](https://trustedcomputinggroup.org/wp-content/uploads/TCG_Storage-Opal_SSC_v2.01_rev1.00.pdf)). Commands are different for the different drive types, so the first step is identifying which type is used.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 These commands can be destructive to data and passwords. Keep backups and use the commands with caution.
 {{< /hint >}}
 

@@ -37,7 +37,7 @@ The wizard has five different configuration screens, one for each step in the ce
 
 5 **[Confirm Options](#confirm-options)**
 
-{{< hint info >}}
+{{< hint type=note >}}
 Before creating a new certificate, configure a new CA if you do not already have one on your system. Creating a internal certificate requires a CA exist on the system.
 {{< /hint >}}
 Many of the settings in the **Add Certificate** wizard are the same as those in the **[Add CA]({{< relref "CAScreensSCALE.md" >}})** and **[Add Certificate Signing Request]({{< relref "CSRScreensSCALE.md" >}})** wizards.

@@ -127,7 +127,7 @@ The following operations are available on each VM screen:
 | **VNC** | <i class="material-icons" aria-hidden="true" title="VNC">settings_ethernet</i> | Opens a **noVCN** window that allows you to connect to a  |
 | **SERIAL** | <i class="material-icons" aria-hidden="true" title="Serial">keyboard_arrow_right</i> | Opens the TrueNAS **Shell** screen. |
 
-{{< hint info >}}
+{{< hint type=note >}}
 The **STOP** button and the system **State** toggle both try to send an ACPI power-down command to the VM operating system. Sometimes the commands time out, so it is better to use the **POWER OFF** button instead.
 {{< /hint >}}
 

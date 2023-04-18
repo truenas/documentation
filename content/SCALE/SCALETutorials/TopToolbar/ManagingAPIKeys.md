@@ -46,7 +46,7 @@ Select the <span class="iconify" data-icon="eva:more-vertical-outline"></span> i
 
 Select the **Reset** to remove the existing API key and generate a new random key. The dialog displays the new key and the **Copy to Clipboard** option to copy the key to the clipboard.
 
-{{< hint "danger" >}}
+{{< hint type=warning >}}
 Always back up and secure keys. The key string displays only one time, at creation!
 {{< /hint >}}
 

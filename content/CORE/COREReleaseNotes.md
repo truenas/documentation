@@ -165,7 +165,7 @@ iXsystems is pleased to announce the release of TrueNAS 13.0-U2.
 This is a maintenance release with some improvements for pool import and failover times, hardware compatibility, community plugins, and updating the version of OpenZFS used by the software.
 There are also bug fixes for various software features, including SMB, replication, plugins, and virtualization.
 
-{{< hint info >}}
+{{< hint type=note >}}
 Due to a bug with an upstream networking driver causing data corruption issues with iSCSI sharing configurations, 2.5GigE Realtek NICs are unsupported in 13.0-U2 by default.
 **Warning**: at a risk of data corruption, especially if the system is used for iSCSI sharing, the offending driver can be manually loaded.
 See the [Known Issues entry for NAS-117663](#known-issues) for more details and the workaround.
@@ -513,7 +513,7 @@ iXsystems is pleased to announce the release of TrueNAS 13.0-RELEASE.
 
 iXsystems is pleased to announce the release of TrueNAS 13.0-RC1.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 This is a an early release meant for previewing and testing features and is **not recommended for production use.**
 {{< /hint >}}
 
@@ -720,7 +720,7 @@ Highlights of the 13.0-BETA1 release include:
 * Optimizations for large systems with heavy disk usage (<a href="https://jira.ixsystems.com/browse/NAS-111659" target="_blank">NAS-111659</a> / <a href="https://jira.ixsystems.com/browse/NAS-112553" target="_blank">NAS-112553</a>)
 * Improved Machine Check Architecture support (<a href="https://jira.ixsystems.com/browse/NAS-113731" target="_blank">NAS-113731</a>)
 
-{{< hint warning >}}
+{{< hint type=important >}}
 This is a an early release meant for previewing and testing features and is **not recommended for production use.**
 {{< /hint >}}
 
@@ -1055,7 +1055,7 @@ This is a an early release meant for previewing and testing features and is **no
 
 ## CLI Disk Replacements
 
-{{< hint warning >}}
+{{< hint type=important >}}
 These instructions apply to systems installed with 13.0-Release only.
 
 CLI commands are meant for advanced users and, when improperly applied, can result in serious system instability or production down scenarios.

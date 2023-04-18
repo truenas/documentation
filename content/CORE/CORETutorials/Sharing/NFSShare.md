@@ -60,7 +60,7 @@ For example, `sudo mount -t nfs 10.239.15.110:/mnt/pool1/photoDataset /mnt` moun
 
 By default, anyone that connects to the NFS share only has the read permission. To change the default permissions, edit the share. Go to **Advanced Options** and change the **Access** settings.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 ESXI 6.7 or later is required for read/write functionality with NFSv4 shares.
 {{< /hint >}}
 

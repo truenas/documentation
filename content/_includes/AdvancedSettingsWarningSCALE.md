@@ -1,7 +1,7 @@
 ---
 ---
 
-{{< hint warning >}} 
+{{< hint type=important >}} 
 Advanced settings have reasonable defaults in place. A warning message displays for some settings advising of the dangers making changes.
 Changing advanced settings can be dangerous when done incorrectly. Use caution before saving changes. 
 

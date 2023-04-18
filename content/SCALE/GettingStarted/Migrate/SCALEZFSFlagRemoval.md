@@ -48,7 +48,7 @@ After upgrade to 22.02-RC.1, the only visible artifact of the feature is that th
 
 The unsupported feature will not presented by `zpool status`.
 
-{{< hint info >}}
+{{< hint type=note >}}
 It is not possible to disable the feature once it is enabled; however, having the feature in the enabled state, should not cause a problem. 
 The problem arises when the feature is active.
 There is currently no practical way to tell which datasets or snapshots are keeping the feature active, so while destroying all traces of it should in theory return the feature from active back to enabled, in practice it is hard to know you won't have to end up destroying the whole pool anyway.

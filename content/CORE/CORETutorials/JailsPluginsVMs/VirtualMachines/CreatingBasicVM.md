@@ -10,7 +10,7 @@ tags:
 
 {{< toc >}}
 
-{{< hint info >}}
+{{< hint type=note >}}
 {{< include file="static/includes/General/FeatureSupport.md.part" markdown="true" >}}
 {{< /hint >}}
 
@@ -83,7 +83,7 @@ If the **VNC** connection screen appears garbled, try adjusting the VNC device r
 Using the **State** toggle or clicking <i class="material-icons" aria-hidden="true" title="Stop Button">stop</i> follows a standard shut down procedure to do a clean shut down the running VM.
 Clicking <i class="material-icons" aria-hidden="true" title="Power Off Button">power_settings_new</i> immediately halts and deactivates the VM, similar to unplugging a computer.
 
-{{< hint info >}}
+{{< hint type=note >}}
 If the VM you created has no guest OS installed, the VM **State** toggle and <i class="material-icons" aria-hidden="true" title="Stop Button">stop</i> button might not function as expected.
 These buttons try to send an ACPI power-down command to the VM operating system, but since no OS is installed, the commands time out.
 Use the **POWER OFF** button instead.
