@@ -8,16 +8,16 @@ weight: 7
 
 {{< toc >}}
 
+## Software Lifecycle
+
 {{< hint danger >}}
 Early releases are intended for testing and early feedback purposes only.
 Do not use early release software for critical tasks.
 {{< /hint >}}
 
-Want to get involved by collaborating on TrueNAS SCALE? Join our [Official Discord Server.](https://discord.com/invite/Q3St5fPETd)
-
-## Software Lifecycle
-
 {{< include file="/static/includes/General/LifecycleTable.html.part" html="true" >}}
+
+Want to collaborate on TrueNAS SCALE? Join our [Official Discord Server.](https://discord.com/invite/Q3St5fPETd)
 
 {{< include file="/content/_includes/SoftwareStatusPage.md" type="page" >}}
 
@@ -27,10 +27,6 @@ Want to get involved by collaborating on TrueNAS SCALE? Join our [Official Disco
 
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
-| SCALE 22.12.2 | Code-freeze | 08 March 2023 |
-| SCALE 22.12.2 | Internal Testing Sprints | 13 March 2023 - 7 April 2023 |
-| SCALE 22.12.2 | Tag | 10 April 2023 |
-| SCALE 22.12.2 | Release | 11 April 2023 |
 | SCALE 22.12.3 | Code-freeze | 10 May 2023 |
 | SCALE 22.12.3 | Internal Testing Sprints | 11 - 26 May 2023 |
 | SCALE 22.12.3 | Tag | 29 May 2023 |
@@ -45,11 +41,11 @@ Want to get involved by collaborating on TrueNAS SCALE? Join our [Official Disco
 {{< hint warning >}}
 * SCALE is developed as an appliance that uses specific Linux packages with each release. Attempting to update SCALE with `apt` or methods other than the SCALE web interface can result in a nonfunctional system.
 * TrueNAS SCALE has only been validated with systems up to 250 Drives. We currently recommend that users with higher drive counts run TrueNAS Enterprise.
-* HA migration in Bluefin 22.12.0 is not recommended for critical-use Enterprise HA systems yet. Enterprise General Availability (GA) is planned for the 22.12.2 release. HA migrations from CORE are not recommended before Enterprise GA is announced.
+* HA migration in Bluefin 22.12.0 is not recommended for critical-use Enterprise HA systems yet. Enterprise General Availability (GA) is planned for the 22.12.2 release but HA migrations from CORE are not recommended without consulting with iXsystems Support first.
 * All auxiliary parameters are subject to change between major versions of TrueNAS due to security and development issues.
   We recommend removing all auxiliary parameters from TrueNAS configurations before upgrading.
-* New security checks are present for host paths in use by various system services. If you have host paths that are shared by multiple system services (e.g. Apps and SMB), please read the 22.12.0 [Known Issues](#known-issues) and take steps to create unique host paths for each in-use system service.
-* As part of security hardening, users upgrading to 22.12.0 Bluefin are prompted to create a separate administrative user for UI logins. TrueNAS shows an informational alert when only the **root** account is present and reminds to create the administrative user for logins. Future security updates to TrueNAS SCALE could disable the root account. Please create an administrative user as soon as possible after upgrading. See the [Managing Users Tutorial]({{< relref "ManageLocalUsersSCALE.md" >}}) for more details.
+* New security checks are present for host paths in use by various system services. If you have host paths that are shared by multiple system services (e.g. Apps and SMB), please read the 22.12 [Known Issues](#known-issues-with-a-future-resolution) and take steps to create unique host paths for each in-use system service.
+* As part of security hardening, users upgrading to 22.12 Bluefin are prompted to create a separate administrative user for UI logins. TrueNAS shows an informational alert when only the **root** account is present and reminds to create the administrative user for logins. Future security updates to TrueNAS SCALE could disable the root account. Please create an administrative user as soon as possible after upgrading. See the [Managing Users Tutorial]({{< relref "ManageLocalUsersSCALE.md" >}}) for more details.
 {{< /hint >}}
 
 To download an <file>.iso</file> file for installing SCALE Bluefin, go to https://www.truenas.com/truenas-scale/ and click **Download**.
@@ -57,8 +53,131 @@ Manual update files are also available at this location.
 
 To upgrade an existing SCALE install, log in to your SCALE web interface and go to **System Settings > Update**.
 
-## 22.12.1
+## 22.12.2 
 
+**April 11, 2023**
+
+iXsystems is pleased to release TrueNAS SCALE 22.12.2!
+
+{{< enterprise >}}
+22.12.2 is the first SCALE release that supports TrueNAS Enterprise systems!
+For TrueNAS Enterprise systems that are already deployed with TrueNAS CORE installed, you can [contact iXsystems Support]({{< relref "GetSupportSCALE.md" >}}) to verify SCALE compatibility and schedule a migration.
+To purchase a new [TrueNAS Enterprise system](https://www.truenas.com/truenas-enterprise/), please contact iXsystems for a quote!
+{{< /enterprise >}}
+
+22.12.2 includes many new features and improved functionality that span SCALE Enterprise High Availability (HA), applications, rootless login administrative user, enclosure management, and replication:
+
+* Adding sudo options to user and replication configuration screens
+* SSH service option for the administration user
+* Application advanced settings changes that add a force flag option
+* Replication task improvements that add reasons why tasks are waiting to run
+* (Enterprise only) Applications new Kubernetes passthrough functionality
+* (Enterprise only) New enclosure management for the R30 and Mini R platforms
+
+It also implements fixes to pool status reporting, application options, reporting functions, cloud sync and replication tasks, iSCSI shares, SMB service in HA systems, various UI issues, UI behavior related to isolated GPU and USB passthrough in VMs, and changes to setting options and failover on HA systems.
+
+### Component Versions
+
+TrueNAS SCALE is built from many different software components.
+This list has up-to-date information on which versions of Linux, ZFS, and NVIDIA drivers are included with this TrueNAS SCALE release.
+Click the component version number to see the latest release notes for that component.
+
+<table style="max-width:25%;">
+  <tr>
+    <th>Component</th>
+	<th>Version</th>
+  </tr>
+  <tr>
+    <td>Linux Kernel</td><td><a href="https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/diff/?id=v5.15.79&id2=v5.15.78&dt=2">5.15.79</a></td>
+  </tr>
+  <tr>
+	<td>Nvidia Driver</td><td><a href="https://www.nvidia.com/download/driverResults.aspx/191961/en-us/">515.65.01</a></td>
+  </tr>
+  <tr>
+	<td>ZFS</td><td><a href="https://github.com/openzfs/zfs/releases/tag/zfs-2.1.9">2.1.9</a></td>
+  </tr>
+</table>
+
+## 22.12.2 Change Log
+
+### New Feature
+
+* [NAS-119055](https://ixsystems.atlassian.net/browse/NAS-119055) Add new Kubernetes Passthrough Functionality
+* [NAS-120019](https://ixsystems.atlassian.net/browse/NAS-120019) New SSH service field: \`adminlogin\`
+* [NAS-120049](https://ixsystems.atlassian.net/browse/NAS-120049) Add \`sudo\` field to replication and credentials forms
+* [NAS-120452](https://ixsystems.atlassian.net/browse/NAS-120452) Add MinIO to enterprise train
+* [NAS-120660](https://ixsystems.atlassian.net/browse/NAS-120660) Branch out mirrors for 22.12.2
+
+### Epic
+
+[NAS-120108](https://ixsystems.atlassian.net/browse/NAS-120108) SCALE enterprise enclosure functionality
+
+### Improvement
+
+* [NAS-119244](https://ixsystems.atlassian.net/browse/NAS-119244) Log equivalent info to mprutil output in scale
+* [NAS-119687](https://ixsystems.atlassian.net/browse/NAS-119687) Missing force flag in Apps -> Advanced Settings
+* [NAS-119748](https://ixsystems.atlassian.net/browse/NAS-119748) Partial enclosure Management for R30 SCALE
+* [NAS-119753](https://ixsystems.atlassian.net/browse/NAS-119753) Enclosure Management for R30 SCALE \(UI\)
+* [NAS-120101](https://ixsystems.atlassian.net/browse/NAS-120101) Display waiting reason for WAITING replication task
+* [NAS-120160](https://ixsystems.atlassian.net/browse/NAS-120160) Need plx\_eeprom tool updated for and installed  on scale
+* [NAS-120253](https://ixsystems.atlassian.net/browse/NAS-120253) No need to check update of a dangling image
+* [NAS-120264](https://ixsystems.atlassian.net/browse/NAS-120264) Dataset names don't have to begin with an alphanumeric character.
+* [NAS-120289](https://ixsystems.atlassian.net/browse/NAS-120289) Add min\_memory field to VM edit/create screen in UI
+* [NAS-120424](https://ixsystems.atlassian.net/browse/NAS-120424) Add a migration to add community train to preferred trains in official catalog
+* [NAS-120605](https://ixsystems.atlassian.net/browse/NAS-120605) Add reporting of NVDIMM Operational Statistics.
+* [NAS-120648](https://ixsystems.atlassian.net/browse/NAS-120648) Add deps for building spotlight elasticsearch backend
+* [NAS-121111](https://ixsystems.atlassian.net/browse/NAS-121111) Adapt to IPMI API changes
+* [NAS-121152](https://ixsystems.atlassian.net/browse/NAS-121152) Add sas3flash tool
+
+### Bug
+
+* [NAS-117906](https://ixsystems.atlassian.net/browse/NAS-117906) Cannot clear optional integer value - nodePort
+* [NAS-119427](https://ixsystems.atlassian.net/browse/NAS-119427) SCALE 22.12.0, /usr/local/bin/snmp-agent.py constantly using high CPU
+* [NAS-119431](https://ixsystems.atlassian.net/browse/NAS-119431) Bluefin Apps: Error "\[emptyDirVolume\] A dict was expected" when adding Memory Backed Volume
+* [NAS-119452](https://ixsystems.atlassian.net/browse/NAS-119452) \[Apps\] No GUI option to force selection of "partially initialized" pool
+* [NAS-119515](https://ixsystems.atlassian.net/browse/NAS-119515) hot-spares do not auto detach from zpool after they have been activated and the failed drive replaced
+* [NAS-119605](https://ixsystems.atlassian.net/browse/NAS-119605) Replication Tasks between two TrueNAS SCALE 22.12: Destination part requires mandatory root user to initiate replication
+* [NAS-119682](https://ixsystems.atlassian.net/browse/NAS-119682) scale - ui/credentials/certificates section slide-out window for certificates each have the name "edit certificate authority"
+* [NAS-119707](https://ixsystems.atlassian.net/browse/NAS-119707) \[Bluefin 22.12.0\] Angelfish sysctl values don't persist following Bluefin upgrade 
+* [NAS-119750](https://ixsystems.atlassian.net/browse/NAS-119750) Sorting snapshots by space used not working as intended
+* [NAS-119838](https://ixsystems.atlassian.net/browse/NAS-119838) \[TrueNAS SCALE Bluefin\] VM USB Passthru does not see USB device
+* [NAS-119868](https://ixsystems.atlassian.net/browse/NAS-119868) View Enclosure -> Enclosure label in model "undefined"
+* [NAS-119886](https://ixsystems.atlassian.net/browse/NAS-119886) iSCSI Wizard - Add Listen should be a required field
+* [NAS-119945](https://ixsystems.atlassian.net/browse/NAS-119945) Decimals not saved in quota and reserved fields
+* [NAS-119955](https://ixsystems.atlassian.net/browse/NAS-119955) Network speed mismatch between Key-Max-Mean-Min values
+* [NAS-119980](https://ixsystems.atlassian.net/browse/NAS-119980) Missing icon in dataset details header
+* [NAS-120011](https://ixsystems.atlassian.net/browse/NAS-120011) Do not check for failover.upgrade\_pending on non-HA systems
+* [NAS-120092](https://ixsystems.atlassian.net/browse/NAS-120092) Cannot edit SMART test task
+* [NAS-120113](https://ixsystems.atlassian.net/browse/NAS-120113) Do not toggle ZFS\_ARCHIVE on mtime updates
+* [NAS-120126](https://ixsystems.atlassian.net/browse/NAS-120126) Resetting config doesn't properly go to signin page
+* [NAS-120128](https://ixsystems.atlassian.net/browse/NAS-120128) Static routes added through WebUI are not reflected in kernel
+* [NAS-120133](https://ixsystems.atlassian.net/browse/NAS-120133) Cloud Sync Task to Google Drive fails 50% of the time
+* [NAS-120157](https://ixsystems.atlassian.net/browse/NAS-120157) User creation wizard does in fact not create a subdir if the given path does not end with username
+* [NAS-120246](https://ixsystems.atlassian.net/browse/NAS-120246) IntegrityError ISCSI
+* [NAS-120269](https://ixsystems.atlassian.net/browse/NAS-120269) nss\_winbind can return results for passdb-backed local users
+* [NAS-120296](https://ixsystems.atlassian.net/browse/NAS-120296) remove netbiosname for standby controller from webui for services->SMB.
+* [NAS-120303](https://ixsystems.atlassian.net/browse/NAS-120303) iSCSI Extent not enforcing selected Logical Block Size
+* [NAS-120310](https://ixsystems.atlassian.net/browse/NAS-120310) Jobs dropdown progress bar is broken for very long job descriptions
+* [NAS-120352](https://ixsystems.atlassian.net/browse/NAS-120352) unable to setup SSH over Rsync 
+* [NAS-120372](https://ixsystems.atlassian.net/browse/NAS-120372) High Memory Usage - /usr/bin/python3 /usr/bin/cli --menu --pager
+* [NAS-120376](https://ixsystems.atlassian.net/browse/NAS-120376) Storage - Manage Devices incorrectly presents the "EXTEND" button for member disks in RAIDZ VDEVs
+* [NAS-120387](https://ixsystems.atlassian.net/browse/NAS-120387) When loading currently running jobs for task manager, exclude the ones that have \`transient: true\`
+* [NAS-120403](https://ixsystems.atlassian.net/browse/NAS-120403) GUI behavior for isolated GPUs
+* [NAS-120426](https://ixsystems.atlassian.net/browse/NAS-120426) When creating "admin" user it says "root account password"
+* [NAS-120432](https://ixsystems.atlassian.net/browse/NAS-120432) Replication tasks cannot be edited
+* [NAS-120435](https://ixsystems.atlassian.net/browse/NAS-120435) Button-field for type in "Reporting" disappears when pressing "Reporting" again
+* [NAS-120446](https://ixsystems.atlassian.net/browse/NAS-120446) py-libzfs should have a non-blank default history prefix
+* [NAS-120489](https://ixsystems.atlassian.net/browse/NAS-120489) \[SCALE/Apps\]: Setting \`immutable\` on a \`string\` causes it to be locked even at install time.
+* [NAS-120490](https://ixsystems.atlassian.net/browse/NAS-120490) \[SCALE/Apps\]: Editing an app with a \`type: list\` variable with added items, fails to render
+* [NAS-120492](https://ixsystems.atlassian.net/browse/NAS-120492) \[SCALE/Apps\]: Initial value of a dropdown is null, but after picking something and reverting to empty is no longer null
+* [NAS-120493](https://ixsystems.atlassian.net/browse/NAS-120493) \[SCALE/Apps\]: Weird behavior with show\_if under subquestions
+* [NAS-120498](https://ixsystems.atlassian.net/browse/NAS-120498) Pool reporting as unhealthy due to aborted smart tests, not failures
+* [NAS-120672](https://ixsystems.atlassian.net/browse/NAS-120672) Fix disk\_resize to work with solidigm \(Intel\) P5430 \(D5-P5316\) 30TB NVMe drives
+* [NAS-121074](https://ixsystems.atlassian.net/browse/NAS-121074) Non-critical interfaces may have BACKUP vrrp state on Active Controller
+* [NAS-121133](https://ixsystems.atlassian.net/browse/NAS-121133) Manual reboot of active controller via SSH breaks HA on SCALE
+
+## 22.12.1
+{{< expand "22.12.1" "v">}}
 February 21, 2023
 
 TrueNAS SCALE 22.12.1 has been released. It includes many new features and improved functionality that span initial effort for high availability (HA) feature support and improvements, and new or improved features in SCALE applications, services, ACLs, and shares:
@@ -146,11 +265,11 @@ TrueNAS SCALE 22.12.1 has been released. It includes many new features and impro
 * [NAS-118803](https://ixsystems.atlassian.net/browse/NAS-118803) VM deletion performs a check on systems virtualization capability
 * [NAS-118859](https://ixsystems.atlassian.net/browse/NAS-118859) add minio/operator app and use logsearchapi entrypoint override
 * [NAS-118870](https://ixsystems.atlassian.net/browse/NAS-118870) Sharing/SMB/Add Name field not updated after first folder click
-* [NAS-118895](https://ixsystems.atlassian.net/browse/NAS-118895) \[Apps\] Installing App without kubernetes objects \(empty\), leads to error and middleware lockup
+* [NAS-118895](https://ixsystems.atlassian.net/browse/NAS-118895) \[Apps\] Installing App without Kubernetes objects \(empty\), leads to error and middleware lockup
 * [NAS-118921](https://ixsystems.atlassian.net/browse/NAS-118921) \[Apps\]  Helm charts are recreated/upgraded on restart before cluster is ready
 * [NAS-118992](https://ixsystems.atlassian.net/browse/NAS-118992) Verify that the update to Syncthing 1.22.0 works out of the box w/latest versions of SCALE
 * [NAS-119007](https://ixsystems.atlassian.net/browse/NAS-119007) API call "pool.dataset.details" responds to an object with a field "snapshot\_count = 0"
-* [NAS-119037](https://ixsystems.atlassian.net/browse/NAS-119037) Critical alert : Failed to start kubernetes cluster for Applications : \[EFAULT\] Failed to configure PV/PVCs support
+* [NAS-119037](https://ixsystems.atlassian.net/browse/NAS-119037) Critical alert : Failed to start Kubernetes cluster for Applications : \[EFAULT\] Failed to configure PV/PVCs support
 * [NAS-119081](https://ixsystems.atlassian.net/browse/NAS-119081) Do not disallow failover when system versions mismatch
 * [NAS-119110](https://ixsystems.atlassian.net/browse/NAS-119110) Zpool status is not showing the last scheduled Scrub event
 * [NAS-119113](https://ixsystems.atlassian.net/browse/NAS-119113) Head template error when reloading the page
@@ -249,6 +368,7 @@ TrueNAS SCALE 22.12.1 has been released. It includes many new features and impro
 * [NAS-120099](https://ixsystems.atlassian.net/browse/NAS-120099) desktop.ini files break permissions
 * [NAS-120126](https://ixsystems.atlassian.net/browse/NAS-120126) Resetting config doesn't properly go to signin page
 
+{{< /expand >}}
 ## 22.12.0
 {{< expand "22.12.0" "v" >}}
 
@@ -315,7 +435,7 @@ TrueNAS SCALE 22.12.0 has been released and includes many new features and impro
 * [NAS-115222](https://ixsystems.atlassian.net/browse/NAS-115222) Explicitly ask for user's input on websockify port of display devices
 * [NAS-115308](https://ixsystems.atlassian.net/browse/NAS-115308) Update Bluefin apt mirrors
 * [NAS-115390](https://ixsystems.atlassian.net/browse/NAS-115390) Remove repository logic from repo-mgmt as we don't have any anymore
-* [NAS-115402](https://ixsystems.atlassian.net/browse/NAS-115402) Update kubernetes and related dependencies
+* [NAS-115402](https://ixsystems.atlassian.net/browse/NAS-115402) Update Kubernetes and related dependencies
 * [NAS-115407](https://ixsystems.atlassian.net/browse/NAS-115407) Have automatic updates for collabora app
 * [NAS-115409](https://ixsystems.atlassian.net/browse/NAS-115409) Improve apt sources generation in builder
 * [NAS-115479](https://ixsystems.atlassian.net/browse/NAS-115479) Get usage stats of docker images being used by ix-chart
@@ -388,7 +508,7 @@ TrueNAS SCALE 22.12.0 has been released and includes many new features and impro
 * [NAS-119047](https://ixsystems.atlassian.net/browse/NAS-119047) Bluefin Kernel updates to fix several CVEs
 * [NAS-119056](https://ixsystems.atlassian.net/browse/NAS-119056) Refactor truecommand wireguard interface name
 * [NAS-119059](https://ixsystems.atlassian.net/browse/NAS-119059) Remove numberValidator
-* [NAS-119084](https://ixsystems.atlassian.net/browse/NAS-119084) Remove kubernetes asyncio from scale build
+* [NAS-119084](https://ixsystems.atlassian.net/browse/NAS-119084) Remove Kubernetes asyncio from scale build
 * [NAS-119103](https://ixsystems.atlassian.net/browse/NAS-119103) Highlight degraded vdevs in Devices
 * [NAS-119132](https://ixsystems.atlassian.net/browse/NAS-119132) Allow 3rd party catalogs to benefit from catalog sync performance improvements
 * [NAS-119136](https://ixsystems.atlassian.net/browse/NAS-119136) Add glusterfs.filesystem tests
@@ -427,12 +547,12 @@ TrueNAS SCALE 22.12.0 has been released and includes many new features and impro
 * [NAS-117990](https://ixsystems.atlassian.net/browse/NAS-117990) Service running toggle state incorrect after canceling
 * [NAS-118236](https://ixsystems.atlassian.net/browse/NAS-118236) Trouble expanding pool, error "\[EZFS\_NOCAP\] cannot relabel '/dev/disk/by-partuuid/905647b7-3ca7-11e9-a8f0-8cae4cfe7d0f': unable to read disk capacity"
 * [NAS-118492](https://ixsystems.atlassian.net/browse/NAS-118492) Datasets detail cards should realign to fill horizontal space first
-* [NAS-118571](https://ixsystems.atlassian.net/browse/NAS-118571) Apps Used port detection, does not read kubernetes services
+* [NAS-118571](https://ixsystems.atlassian.net/browse/NAS-118571) Apps Used port detection, does not read Kubernetes services
 * [NAS-118660](https://ixsystems.atlassian.net/browse/NAS-118660) Cloud sync task "Bandwidth Limit" pop-up help text appears to be incorrect
 * [NAS-118691](https://ixsystems.atlassian.net/browse/NAS-118691) NoVNC Not working for Some VMS on Scale Bluefin Beta 2
 * [NAS-118738](https://ixsystems.atlassian.net/browse/NAS-118738) \[SCALE\]: svclb pods are getting created on kube-system namespace and there are also couple of stuck svclb pods from previous installation
 * [NAS-118756](https://ixsystems.atlassian.net/browse/NAS-118756) Deleting a dataset removes snapshot tasks assigned to the parent of a dataset
-* [NAS-118759](https://ixsystems.atlassian.net/browse/NAS-118759) \[SCALE\] Failed to start kubernetes cluster for Applications
+* [NAS-118759](https://ixsystems.atlassian.net/browse/NAS-118759) \[SCALE\] Failed to start Kubernetes cluster for Applications
 * [NAS-118765](https://ixsystems.atlassian.net/browse/NAS-118765) SMB Share ACLs do not open/work on TrueNAS Scale 22.12-BETA.2
 * [NAS-118803](https://ixsystems.atlassian.net/browse/NAS-118803) VM deletion performs a check on systems virtualization capability
 * [NAS-118819](https://ixsystems.atlassian.net/browse/NAS-118819) Apps failing to list any thing, spinning circle, after a reboot
@@ -443,7 +563,7 @@ TrueNAS SCALE 22.12.0 has been released and includes many new features and impro
 * [NAS-118867](https://ixsystems.atlassian.net/browse/NAS-118867) \[Scale\] Apps does not respect the selected version.
 * [NAS-118868](https://ixsystems.atlassian.net/browse/NAS-118868) \[SCALE\] Apps UI goes into a back and forth loop between tabs.
 * [NAS-118891](https://ixsystems.atlassian.net/browse/NAS-118891) Used snapshot size not showed on the storage page
-* [NAS-118895](https://ixsystems.atlassian.net/browse/NAS-118895) \[Apps\] Installing App without kubernetes objects \(empty\), leads to error and middleware lockup
+* [NAS-118895](https://ixsystems.atlassian.net/browse/NAS-118895) \[Apps\] Installing App without Kubernetes objects \(empty\), leads to error and middleware lockup
 * [NAS-118897](https://ixsystems.atlassian.net/browse/NAS-118897) Fix invalid token on the Shell page after manual reload
 * [NAS-118898](https://ixsystems.atlassian.net/browse/NAS-118898) \[SCALE\] Editing an app does not show the default values for fields under a checkbox
 * [NAS-118902](https://ixsystems.atlassian.net/browse/NAS-118902) Minio app update to 2022-10-29\_1.6.59 stuck at “Deploying”. Requires Roll Back to 1.6.58
@@ -465,7 +585,7 @@ TrueNAS SCALE 22.12.0 has been released and includes many new features and impro
 * [NAS-119022](https://ixsystems.atlassian.net/browse/NAS-119022) \[Bluefin RC1\] Sysctl - 'field was not expected' error when trying to disable sysctl
 * [NAS-119025](https://ixsystems.atlassian.net/browse/NAS-119025) Errors not shown when ACME certificate is not created
 * [NAS-119034](https://ixsystems.atlassian.net/browse/NAS-119034) after 22.12-BETA.2 to RC.1 upgrade, can no longer log into web UI
-* [NAS-119037](https://ixsystems.atlassian.net/browse/NAS-119037) Critical alert : Failed to start kubernetes cluster for Applications : \[EFAULT\] Failed to configure PV/PVCs support
+* [NAS-119037](https://ixsystems.atlassian.net/browse/NAS-119037) Critical alert : Failed to start Kubernetes cluster for Applications : \[EFAULT\] Failed to configure PV/PVCs support
 * [NAS-119038](https://ixsystems.atlassian.net/browse/NAS-119038) \[Bluefin RC1\] Chart tooltips/descriptions on headers are not rendered in the UI
 * [NAS-119039](https://ixsystems.atlassian.net/browse/NAS-119039) \[Bluefin RC1\] Pod Shell/Logs applications link incorrectly goes to dashboard
 * [NAS-119043](https://ixsystems.atlassian.net/browse/NAS-119043) Fix and improve config.save and config.upload
@@ -523,7 +643,7 @@ SCALE 22.12-RC.1 introduces a change in Applications. Users upgrading to 22.12-R
 * [NAS-118325](https://ixsystems.atlassian.net/browse/NAS-118325) Add USB passthrough support in the UI
 * [NAS-118446](https://ixsystems.atlassian.net/browse/NAS-118446) add MISMATCH\_VERSIONS to webUI
 * [NAS-118505](https://ixsystems.atlassian.net/browse/NAS-118505) R50BM needs to be added to webUI codebase
-* [NAS-118593](https://ixsystems.atlassian.net/browse/NAS-118593) Update kubernetes to 1.25 and related deps
+* [NAS-118593](https://ixsystems.atlassian.net/browse/NAS-118593) Update Kubernetes to 1.25 and related deps
 * [NAS-118642](https://ixsystems.atlassian.net/browse/NAS-118642) Allow users to specify USB vendor/product id in UI
 * [NAS-118701](https://ixsystems.atlassian.net/browse/NAS-118701) add new public endpoint to return whether or not truenas is clustered
 * [NAS-118749](https://ixsystems.atlassian.net/browse/NAS-118749) Branchout mirrors for RC1
@@ -721,7 +841,7 @@ TrueNAS SCALE 22.12-BETA.2 has been released and includes many new features and 
 * [NAS-118101](https://ixsystems.atlassian.net/browse/NAS-118101) Function clean up for Datasets module
 * [NAS-118058](https://ixsystems.atlassian.net/browse/NAS-118058) Sync \[visual-ui\] data on the Pool and Storage widgets
 * [NAS-118044](https://ixsystems.atlassian.net/browse/NAS-118044) Refactor console message footer
-* [NAS-118041](https://ixsystems.atlassian.net/browse/NAS-118041) Do not backup catalogs dataset on kubernetes backup
+* [NAS-118041](https://ixsystems.atlassian.net/browse/NAS-118041) Do not backup catalogs dataset on Kubernetes backup
 * [NAS-118039](https://ixsystems.atlassian.net/browse/NAS-118039) Clean up topbar.component
 * [NAS-118007](https://ixsystems.atlassian.net/browse/NAS-118007) Remove BaseService
 * [NAS-118006](https://ixsystems.atlassian.net/browse/NAS-118006) Refactor ReportsDashboard module
@@ -1090,7 +1210,7 @@ Additional feature in future Bluefin releases:
 * [NAS-117841](https://ixsystems.atlassian.net/browse/NAS-117841) Ban `res` as variable name
 * [NAS-117803](https://ixsystems.atlassian.net/browse/NAS-117803) Blank dashboard of the first login
 * [NAS-117802](https://ixsystems.atlassian.net/browse/NAS-117802) Use truenas tls endpoint for usage stats
-* [NAS-117775](https://ixsystems.atlassian.net/browse/NAS-117775) Update kubernetes related dependencies from upstream
+* [NAS-117775](https://ixsystems.atlassian.net/browse/NAS-117775) Update Kubernetes related dependencies from upstream
 * [NAS-117769](https://ixsystems.atlassian.net/browse/NAS-117769) Add support for multi selection in ix-explorer
 * [NAS-117719](https://ixsystems.atlassian.net/browse/NAS-117719) Do not run CI checks when only RE tests were changed
 * [NAS-117707](https://ixsystems.atlassian.net/browse/NAS-117707) Merge zfs-2.1.6-staging
@@ -1300,7 +1420,7 @@ Additional feature in future Bluefin releases:
 * [NAS-117307](https://ixsystems.atlassian.net/browse/NAS-117307) Investigate/fix ix-volumes being migrated on apps migration
 * [NAS-117306](https://ixsystems.atlassian.net/browse/NAS-117306) Fix ctdb jobs on pnn 0
 * [NAS-117305](https://ixsystems.atlassian.net/browse/NAS-117305) fill in app information in pool.dataset.details
-* [NAS-117303](https://ixsystems.atlassian.net/browse/NAS-117303) use ejson in kubernetes backup plugin
+* [NAS-117303](https://ixsystems.atlassian.net/browse/NAS-117303) use ejson in Kubernetes backup plugin
 * [NAS-117293](https://ixsystems.atlassian.net/browse/NAS-117293) Deprecate legacy behavior to allow empty homes path
 * [NAS-117289](https://ixsystems.atlassian.net/browse/NAS-117289) Attempting to delete VM causes system crash
 * [NAS-117285](https://ixsystems.atlassian.net/browse/NAS-117285) \[required\] validator from FormsModule conflicts with \* [required\] input ix-\* components
@@ -1371,7 +1491,7 @@ Additional feature in future Bluefin releases:
 
 ## Known Issues 
 Known issues are those found during internal testing or reported by the community and are listed in three tables:
-* Notices that are provided to provide more detail about Bluefin specific changes.
+* Notices that provide more detail about Bluefin specific changes.
 * Issues from a release that will be resolved in a future targeted release(s).
 * Issues resolved in a particular version.
 
@@ -1379,52 +1499,72 @@ Known issues are those found during internal testing or reported by the communit
 
 | Notice or Behavior | Details |
 |--------------------|---------|
-| Unable to mount an NFS export after migrating from CORE > SCALE or updating to 22.02.0. | The <file>/etc/exports</file> file is no longer generated when the NFS configuration contains <i>mapall</i> or <i>maproot</i> entries for unknown users or groups. If you are unable to mount an NFS export, review your NFS share configuration entries to something specific for your environment or <i>wheel</i> or <i>root</i>. |
+| TrueNAS does not create alerts for SMR disks. | TrueNAS SCALE and TrueCommand have never created alerts when SMR disks are used. |
+| TrueNAS SCALE does not support T10-DIF drives. | We are currently working on a procedure to resolve the issue. |
+| Unable to mount an NFS export after migrating from CORE > SCALE or updating to 22.02.0. | The <file>/etc/exports</file> file is no longer generated when the NFS configuration contains <i>mapall</i> or <i>maproot</i> entries for unknown users or groups. If you are unable to mount an NFS export, verify the NFS share configuration is compatible with your network environment. |
 | SCALE Gluster/Cluster. | Gluster/Cluster features are still in testing. Administrators should use caution when deploying and avoid use with critical data. |
 | AFP sharing is removed from TrueNAS SCALE. | The AFP protocol is deprecated and no longer receives development effort or security fixes. TrueNAS SCALE automatically migrates any existing AFP shares into an SMB configuration that is preset to function like an AFP share. |
-| Alderlake GPU acceleration | TrueNAS SCALE Bluefin includes Linux Kernel 5.15 which can enable Alderlake GPU acceleration by using the following boot loader tunable and rebooting: `midclt call system.advanced.update '{"kernel_extra_options": "i915.force_probe=4690" }'`. Replace `4690` with your specific Alderlake GPU version.
+| MS-DOS based SMB clients cannot connect to TrueNAS Bluefin | SMB clients determined to be end-of-life (EOL) by their vendor are not supported in TrueNAS. Administrators should work to phase out any clients using the SMB1 protocol from their environments. |
+| Cannot mount WebDAV share in Windows when WebDAV service is set to Basic Authentication | If the TrueNAS WebDAV service is set to Basic Authentication, you cannot mount the share in Windows. This is a security protection on the part of Windows as Basic Authentication is considered an insecure way to input passwords. While the Windows Registry can be edited to allow for basic authentication, this is not recommended. It is recommended to access WebDAV shares using a browser with https security enabled or mounting shares with Digest Authentication enabled. |
+| App deployment can get stuck in validation when the Host Path is used between Apps and TrueNAS sharing services (e.g. SMB and NFS). | Shared host paths are considered insecure and are not recommended. Review host paths used by Apps and Sharing services and adjust paths to be unique. As a last resort that can result in system and app instability, **Host Path Safety Checks** can be disabled in **Apps > Settings > Advanced Settings**. |
+| Apps fail to start | There are known issues where applications fail to start after reboot. The fixed-in release is not known at this time. |
 
 ### Known Issues with a Future Resolution
 
 | Seen In | Key | Summary | Workaround | Resolution Target |
 |---------|-----|---------|------------|-------------------|
-| 22.12.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-120432" target="_blank">NAS-120432</a> | Existing replication tasks updated from 22.12.0 cannot be edited in 22.12.1 | Replication tasks that can't be edited can be remade as a new replication task to work around this bug. | Targeted 22.12.2 |
-| 22.12.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-120368" target="_blank">NAS-120368</a> | Selecting UI Configuration for User During Fresh Install leads to default login screen instead of User Configuration screen | When doing a fresh install of SCALE using the iso file, when presented with the option to configure the user after completing the install and upon first UI login, the default sign in splash screen displays rather than the user configuration screen. This means the user cannot log in as admin or root because the root user password is disabled by default. Create the admin user as part of the iso installation process. | Targeted 22.12.2 |
-| 22.12.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-120366" target="_blank">NAS-120366</a> | The Available Applications don't load after selecting the pool | On an Enterprise HA system, using the admin user and after creating a pool, Apps were loading until the pool to use for applications was selected. The screen shows a spinner but doesn't load the Available Applications screen. This could be a screen cache issue. Try switching to another screen and back to Apps or clear the browser session cache. | Targeted 22.12.2 |
-| 22.12.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-120361" target="_blank">NAS-120361</a> | TrueNAS Mini Enclosure view should not have Identify Drive button | The View Enclosure screen for TrueNAS Mini should not have the Identify Drive button on the disk information screen after selecting a drive on the image. | Unassigned |
-| 22.12.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-120348" target="_blank">NAS-120348</a> | Storage and Topology page does not update when a pool gets degraded | After removing a drive from a pool, the main Storage and the Topology pages do not update the status to show a degraded state unless you do a hard refresh of the screen. | Targeted 23.10-ALPHA.2 |
-| 22.12.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-120319" target="_blank">NAS-120319</a> | Cannot Replicate from an Encrypted Dataset to an Unencrypted Dataset | When creating a replication task from an encrypted dataset to a remote system with an unencrypted dataset, and creating a new SSH connection, the task fails with a permissions error. | Targeted 22.12.2 |
-| 22.12.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-120316" target="_blank">NAS-120316</a> | Backblaze Bucket Folders do not Display Properly in Cloud Sync Task Form | When creating a new cloud sync task for Backblaze, after selecting the Bucket the Folders dropdown list only has some of the folders in the selected bucket impacting the ability to properly configure a Backblaze B2 cloud sync task. | Targeted 22.12.2 |
-| 22.12.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-120266" target="_blank">NAS-120266</a> | Stopping VM Popup Does Not Go Away after VM Stops | After clicking Force Stop After Timeout, the Stopping VM dialog does not close after the VM stops. | Targeted 22.12.3<br> 23.10.ALPHA.1 |
-| 22.12.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-120249" target="_blank">NAS-120249</a> | Enclosure View does not update when drive is removed from a pool/system | The image on the View Enclosure screen does not update after removing a drive from a pool or system. This appears to be related to a screen caching issue. | Targeted 22.12.2 |
-| 22.12.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-120243" target="_blank">NAS-120243</a> | Using Non-Supported Characters while creating a Boot Environment Creates a CallError | SCALE allows you to save a new boot environment created with non-supported characters but it results in a call error. Do not use bracket ([]), brace ({}), pipe (|), colon (:), and comma (,) characters in the Name field. | Targeted 22.12.2 |
-| 22.12.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-120232" target="_blank">NAS-120232</a> | Apps not starting after failover | With Apps deployed on an HA system, after failover the apps stick a deploying but never finish and the system generates alerts in the UI. Issue is pools are degraded after failover, and docker is not able to get image details. | Targeted 22.12.2 |
-| 22.12.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-120216" target="_blank">NAS-120216</a> | Need Validation for IP address when setting up Replication | When setting up replication to a remote system, the IP address entered must include http:// as part of the IP address entered. | Unassigned |
-| 22.12.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-120210" target="_blank">NAS-120210</a> | Enclosure View does not Function Properly on TrueNAS Minis | View Enclosure only displays the top and bottom rows of slots as active and clickable, but the middle row is inactive even when loaded with drives. | Targeted 22.12.1<br>23.10-ALPHA.1 (Cobia) |
-| 22.12.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-120191" target="_blank">NAS-120191</a> | Dataset not fully migrated to the pool before starting rrdcached | Collectd can't talk to rrdcached. We automatically move the system dataset to the zpool on first pool creating and we have a race where the system dataset was not fully migrated to the pool before we tried to start rrdcached. | Targeted 22.12.2 |
-| 22.12.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-120145" target="_blank">NAS-120145</a> | The web UI isn't updating various parts on the screen (Jobs) | On and Enterprise HA system with some alerts, the Jobs screen shows tasks running and trying to gather the information for listed alerts. | Targeted 22.12.2 |
-| 22.12.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-120136" target="_blank">NAS-120136</a> | App Collabora installation failed with error values.config: not a string values.config.extra_params not a string. |  | Targeted 22.12.2<br>23.10-ALPHA.1 (Cobia) |
-| 22.12.1 |  <a href="https://ixsystems.atlassian.net/browse/NAS-120118" target="_blank">NAS-120118</a> | Network Dashboard Card is missing some Up Interfaces | On an Enterprise HA system with multiple network interfaces configured and active, the Network widget on the main Dashboard does not list all active interfaces and the Reports screen does not include the same missing active interfaces. | Targeted 22.12.2 |
-| 22.12.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-120069" target="_blank">NAS-120069</a> | 2FA SSH not functional for non root users | After installing SCALE using the admin user (non-root option), setting the SSH service to allow admin to log in, and then enabling 2FA. After logging out and verifying 2FA works for the UI, and then changing the 2FA settings to Enable Tow-Factor Auth for SSH, the SSH session asks for the admin password several times before the session disconnects. | Targeted 23.10-ALPHA.1 |
-| 22.12.0 | N/A | TrueNAS SCALE does not support T10-DIF drives. | We are currently working on a procedure to resolve the issue. | Targeted 22.12.2 |
-| 22.12.0 | <a href="https://ixsystems.atlassian.net/browse/NAS-119608" target="_blank">NAS-119608</a> | Middleware halt after upgrade from Angelfish to Bluefin due to multiple iSCSI portals with the same IP address. | Before upgrading from SCALE Angelfish, remove any iSCSI portals with duplicate IP addresses. | 22.12.1<br>23.10-ALPHA.1 (Cobia) |
-| 22.12.0 | <a href="https://ixsystems.atlassian.net/browse/NAS-119374" target="_blank">NAS-119374</a> | Non-root administrative users cannot access installed VM or App console. | For Apps console access, log in to the UI as the **root** user. For VM console access, go to **Credentials > Local Users** and edit the non-root administrative user. In the **Auxiliary Groups** field, open the dropdown and select the **root** option. Click **Save**. | 22.12.1<br>23.10-ALPHA.1 (Cobia) |
-| 22.12.0 | N/A | App deployment can get stuck in validation when the Host Path is used between Apps and TrueNAS sharing services (e.g. SMB and NFS). | Shared host paths are considered insecure and are not recommended. Review host paths used by Apps and Sharing services and adjust paths to be unique. As a last resort that can result in system and app instability, **Host Path Safety Checks** can be disabled in **Apps > Settings > Advanced Settings**. | N/A |
-| 22.12.0 | <a href="https://ixsystems.atlassian.net/browse/NAS-119270" target="_blank">NAS-119270</a> | One Time Replication of Same System to A Different System Fails with Traceback | Unable to perform a run once operation for a replication task without getting a traceback, or to set an option from the UI replication wants. | Targeted 23.10-ALPHA.1 (Cobia) |
-| 22.12-BETA.2 | <a href="https://ixsystems.atlassian.net/browse/NAS-118613" target="_blank">NAS-118613</a> | Cannot mount WebDAV share in Windows when WebDAV service is set to Basic Authentication | If the TrueNAS WebDAV service is set to Basic Authentication, you cannot mount the share in Windows. This is a security protection on the part of Windows as Basic Authentication is considered an insecure way to input passwords. While the Windows Registry can be edited to allow for basic authentication, this is not recommended. It is recommended to access WebDAV shares using a browser with https security enabled or mounting shares with Digest Authentication enabled. | N/A |
-| 22.12-BETA.2 | N/A | TrueNAS Bluefin no longer supports MS-DOS based SMB clients. | As of SCALE 22.12, Bluefin, TrueNAS now uses Samba 4.17. Samba 4.16 announced in their release notes that they deprecated and disabled the whole SMB1 protocol as of 4.11. If needed for security purposes or code maintenance they continue to remove older protocol commands and unused dialects or that are replaced in more modern SMB1 version. Refer to [Samba](https://www.samba.org/samba/latest_news.html) release notes for more information. | N/A |
+| 22.12.2 | <a href="https://ixsystems.atlassian.net/browse/NAS-121383" target="_blank">NAS-121383</a> | Replicating a pull encrypted to existing non-encrypted dataset gets error saying Has Data when the dataset is empty | After correctly configuring a pull replication task with Source set to On a Different System, selecting the SSH Connection and Use Sudo for ZFS Commands, then with Destination set to On this System and selecting Custom Snapshots, set the Destination path to a local unencrypted dataset. After selecting Run Once and Start Replication, the Replication task failed with error but should have succeeded. | 22.12.3<br>23.10.ALPHA.1 |
+| 22.12.2 | <a href="https://ixsystems.atlassian.net/browse/NAS-121378" target="_blank">NAS-121378</a> | Sudo Enabled dialog appears for Local source location replication | When setting up a replication task with the Sources set to On a Different System, then selecting an SSH Connection the Sudo Enable dialog displays allowing selection of the Use Sudo for ZFS Commands. The Source automatically changes to On this System as it should but the Sudo Enable dialog displays when it should not. | TBD |
+| 22.12.2 | <a href="https://ixsystems.atlassian.net/browse/NAS-121371" target="_blank">NAS-121371</a> | Web portal for Apps launches after failover but was closed pre-failover | After installing and successfully deploying the MinIO app on an HA system and with the app active, successfully logged into it, then closed the MinIO web browser. After failing over the HA system and logging into the system, the MinIO web portal automatically launched as expected but the MinIO browser URL contained the VIP address without the :30001 so it had no connection and was blank. | 22.12.3<br>23.10.ALPHA.1 |
+| 22.12.2 | <a href="https://ixsystems.atlassian.net/browse/NAS-121367" target="_blank">NAS-121367</a> | User creation field validation - spaces accepted | When creating a new user a number of fields marked mandatory allow a space character but should not. Fields affected are Full Name and password fields.  | TBD |
+| 22.12.2 | <a href="https://ixsystems.atlassian.net/browse/NAS-121358" target="_blank">NAS-121358</a> | Need method for userspace to report arm status info from ACPI tables | Older Micron nvdimms do not properly report arm information status until the second power cycle occurs and after the nvdimm is unarmed. This unarmed state during power loss can result in data loss. Find a way for userspace to identify and report the ACPI nvdimm arm information status on TrueNAS CORE and SCALE. | 22.12.3<br>23.10.ALPHA.1 |
+| 22.12.2 | <a href="https://ixsystems.atlassian.net/browse/NAS-121356" target="_blank">NAS-121356</a> | Required for starting Kubernetes alert after clean rootless HA install, Apps pool selected and failover. | After an HA clean install as admin user (rootless) and configuring the HA, and then creating a pool for Apps and selecting it in Apps, the MinIO install attempt fails but does not send an alert about the fail to configure Kubernetes cluster for applications until failing over the HA system. At that time when the standby controller is active the critical alert Failed to configure Kubernetes cluster for Applications alert is received. | 22.12.3 |
+| 22.12.2 | <a href="https://ixsystems.atlassian.net/browse/NAS-121333" target="_blank">NAS-121333</a> | Post Reset Network interface cannot be set up blocking bring up of system | On an HA system, after configuring HA license, networking, and confirming failover works, then selecting the option to reset the configuration through an API call, when you change to the Console setup menu, then select option 1 to configure the interface aliases, failover group, failover_aliases, and failover_virtual_aliases, and after save the configuration changes, received an error. The DHCP option on HA system is hidden in Console setup menu so you cannot disable the functionality to allow this change. To work around this issue, use the UI to make network setting changes to the primary interface. | 22.12.3<br>23.10.ALPHA.1 |
+| 22.12.2 | <a href="https://ixsystems.atlassian.net/browse/NAS-121274" target="_blank">NAS-121274</a> | Error when attempting disk wipe post install | On an HA system, after installing SCALE, during the initial system configuration of a new storage pool when performing a Disk Wipe, the operation fails if the disk selected is part of a exported pool. SCALE, by design, prevents this operation to prevent accidental destruction of data on a disk associated with an exported pool. | 22.12.3<br>23.10.ALPHA.1 |
+| 22.12.2 | <a href="https://ixsystems.atlassian.net/browse/NAS-121244" target="_blank">NAS-121244</a> | Custom Schedule window displays partially off screen | The Custom Schedule window displays partially off screen when scheduling a task like a periodic snapshot task on a system with a smaller screen like a laptop and running 125% zoom in Windows. Issue is not present on a normal monitor. | 22.12.3<br>23.10.ALPHA.1 |
+| 22.12.2 | <a href="https://ixsystems.atlassian.net/browse/NAS-121237" target="_blank">NAS-121237</a> | HA system does not fail over and log out after selecting Disable Failover. | On an HA system, after selecting Disable Failover, clearing Default TrueNAS controller, then confirming you want to failover, the system does not failover but does log out of the UI. | 22.12.3 |
+| 22.12.2 | <a href="https://ixsystems.atlassian.net/browse/NAS-121207" target="_blank">NAS-121207</a> | Removed drive from pool does not show attached after reinsertion, spare remains in use | After removing a drive from a mirror pool degrades the poll so the spare attaches, but when reinserting the drive and the pool status changes to healthy, the spare still shows in use status in the Enclosure view and the reinserted drive does not show as part of the pool. | 22.12.3 |
+| 22.12.2 | <a href="https://ixsystems.atlassian.net/browse/NAS-121128" target="_blank">NAS-121128</a> | Reporting CPU chart only ever shows in percentage | Reporting CPU option to report kernel time does not show in the report when selected. Reports only show (%) usage values. | 22.12.3<br>23.10.ALPHA.1 |
+| 22.12.2 | <a href="https://ixsystems.atlassian.net/browse/NAS-121085" target="_blank">NAS-121085</a> | SCALE CLI debug command failure | The SCALE CLI system debug command fails to generate a system debug, and returns errors when attempting the command and the command with additional arguments. | 22.12.3<br>23.10.ALPHA.1  |
+| 22.12.2 | <a href="https://ixsystems.atlassian.net/browse/NAS-121065" target="_blank">NAS-121065</a> | x-series ntb failing to initialize on receive buffer | The SCALE CLI system debug command fails to generate a system debug, and returns errors when attempting the command and the command with additional arguments. | 22.12.3<br>23.10.ALPHA.1 |
+| 22.12.2 | <a href="https://ixsystems.atlassian.net/browse/NAS-121064" target="_blank">NAS-121064</a> | Fix x-series controller logic | Corrects the method of calculating the controller position in the chassis, which prevented IP address assignment of the ntb0 interface. | 22.12.3<br>23.10-ALPHA.1 Cobia |
+| 22.12.2 | <a href="https://ixsystems.atlassian.net/browse/NAS-121035" target="_blank">NAS-121035</a> | Web UI not updating pool column in Storage > Disks page (disk.get_unused) | If a disk, associated with an exported zpool, and where you perform a Disk Wipe operation, the pool table does not update and the disk shows the wrong state. | 22.12.3<br> 23.10-ALPHA.1 Cobia |
+| 22.12.2 | <a href="https://ixsystems.atlassian.net/browse/NAS-121030" target="_blank">NAS-121030</a> | ES12 Enclosure View not updating after drive insertion and recognition (HA/SCALE) | An HA system Enclosure View for an ES12 does not update after drive insertion and recognition by SCALE. | 22.12.3 |
+| 22.12.2 | <a href="https://ixsystems.atlassian.net/browse/NAS-121014" target="_blank">NAS-121014</a> | System configured on LA time but Network dashboard card is in EST | System time configured PST while the main Dashboard Network card displays EST. | 22.12.3<br> 23.10-ALPHA.1 Cobia |
+| 22.12.2 | <a href="https://ixsystems.atlassian.net/browse/NAS-120961" target="_blank">NAS-120961</a> | HA: Connected TrueCommand Cloud status is disabled after HA failover | Add an HA system to TrueCommand, failover of the HA system results in TrueCommand cloud status change to Disabled after the failover. TrueCommand should remain enabled and connected. | 22.12.3 |
+| 22.12.2 | <a href="https://ixsystems.atlassian.net/browse/NAS-120669" target="_blank">NAS-120669</a> | HA: Pending Upgrade screen presented again after upgrade completes | After completing the upgrade, including clicking Continue on the Pending Upgrade window, both controllers show the same version, and HA is up. Later, logged into the system and the Pending Upgrade window still shows up. Clicking Continue results in the error message Failed to Activate the BE. | 22.12.3 |
+| 22.12.2 | <a href="https://ixsystems.atlassian.net/browse/NAS-120594" target="_blank">NAS-120594</a> | After clean install of 22.12.2 build, upon login get InstanceNotFound call err/traceback | After completing a clean install of 22.12.2 build, received the InstanceNotFound error traceback stating PoolDataset does not exist immediately after first log in. When setting up initial storage pool, found two disks associated with a pool. Was able to import (create) the first pool without issue. | 23.10.BETA.1 |
+| 22.12.1<br>22.12.12 | <a href="https://ixsystems.atlassian.net/browse/NAS-121087" target="_blank">NAS-121087</a> | TrueNAS CLI and Console User Shell Options Don't Work | After creating a user and setting Shell type to TrueNAS Console or TrueNAS CLI, then changing SSH service to enable Allow Password Authentication, receive an error when attempting to set up an SSH session. | 22.12.3<br>23.10.ALPHA.1 |
+| 22.12.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-120366" target="_blank">NAS-120366</a> | The Available Applications do not load after selecting the pool | On an Enterprise HA system, using the admin user and after creating a pool, Apps are loading until but stop after selecting the pool to use for applications. The screen shows a spinner but does not load the Available Applications screen. This could be a screen cache issue. Try switching to another screen and back to Apps or clear the browser session cache. | 22.12.3 |
+| 22.12.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-120348" target="_blank">NAS-120348</a> | Storage and Topology page does not update when a pool gets degraded | After removing a drive from a pool, the main Storage and the Topology pages do not update the status to show a degraded state unless you do a hard refresh of the screen. | 23.10-ALPHA.2 |
+| 22.12.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-120238" target="_blank">NAS-120238</a> | Widget Sizes and Fonts Differ Between Web Browsers | Widget sizes and text in the WebUI is different between web browsers. | 23.10-BETA.1 |
+| 22.12.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-120069" target="_blank">NAS-120069</a> | 2FA SSH not functional for non root users | After installing SCALE using the admin user (non-root option), setting the SSH service to allow admin to log in, and then enabling 2FA. After logging out and verifying 2FA works for the UI, and then changing the 2FA settings to Enable Tow-Factor Auth for SSH, the SSH session asks for the admin password several times before the session disconnects. | 23.10-ALPHA.1 |
+| 22.12.0 | <a href="https://ixsystems.atlassian.net/browse/NAS-119270" target="_blank">NAS-119270</a> | One Time Replication of Same System to A Different System Fails with Traceback | Unable to perform a run once operation for a replication task without getting a traceback, or to set an option from the UI replication wants. | 23.10-ALPHA.1 (Cobia) |
+| 22.12.0 | <a href="https://ixsystems.atlassian.net/browse/NAS-115112" target="_blank">NAS-115112</a> | Zpool status upon removal/reinsertion of spare does not update | After removing a spare from a pool the zpool status showed spare as removed, but after reinserting the spare the zpool status does not update and continues to sow the spare as removed. Disk does show as in inventory. | 23.10-ALPHA.1 |
 | 22.12-BETA.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-117974" target="_blank">NAS-117974</a> | Replication Task Wizard Source and Destination fields cut off the path information | The **Source** and **Destination** fields in the **Replication Task Wizard** window are cutoff. UI form issue that positions the paths in the fields such that only part of the value is visible. | Backlog |
-| 22.12-BETA.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-118063" target="_blank">NAS-118063</a> | SCALE Cluster growth/resize features | Currently, there is no way to grow or resize an existing cluster without the user destroying their cluster and starting with a new cluster. This issue looks to implement a solution using TrueCommand and TrueNAS API that provides the ability to have shared volumes that do not occupy all nodes in the cluster, add one or more nodes to a cluster without impacting existing shared volumes, "grow" a shared volume, and temporarily remove nodes from a cluster without destroying the cluster. |  Backlog |
+| 22.12-BETA.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-118063" target="_blank">NAS-118063</a> | SCALE Cluster growth/resize features | Currently, there is no way to grow or resize an existing cluster without the user destroying their cluster and starting with a new cluster. This issue looks to implement a solution using TrueCommand and TrueNAS API that provides the ability to have shared volumes that do not occupy all nodes in the cluster, add one or more nodes to a cluster without impacting existing shared volumes, "grow" a shared volume, and temporarily remove nodes from a cluster without destroying the cluster. | Backlog |
 | 22.12-BETA.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-118095" target="_blank">NAS-118095</a> | Core dumps on ctdb at startup | Traceback received that indicates ctdb core-dumps when starting nodes after a fresh install. | Unscheduled |
-| 22.02.1 |<a href="https://ixsystems.atlassian.net/browse/NAS-116473" target="_blank">NAS-116473</a> | Large Drive Count Issues | iX is investigating issues with booting SCALE on systems with more than 100 Disks. | Targeted 23.10-ALPHA.1 (Cobia) |
+| 22.02.4 | <a href="https://ixsystems.atlassian.net/browse/NAS-118894" target="_blank">NAS-118894</a> | Web UI changes in Data Protection Section | Issues with spacing on Cloud Sync Task and Scrub Task widgets between Nex Run, Enabled and State. The color orange for running tasks is misapplied, pending or aborted tasks display in orange. Make Running tasks blue. | 23.10-BETA.1 (Cobia) |
+| 22.02.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-116473" target="_blank">NAS-116473</a> | Large Drive Count Issues | iX is investigating issues with booting SCALE on systems with more than 100 Disks. | 23.10-ALPHA.1 (Cobia) |
+| 21.06-BETA.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-111805" target="_blank">NAS-111805</a> | Cannot configure static IP on HA B node | On an HA system with the NTB card removed and the interface working with DHCP-assigned IP after a clean install, attempt to set a static IP and test changes results in the network interfaces and default gateway disappearing from the serial console screen, and the system does not respond to a new IP address. After test time expires, these network settings reappear and the system responds to the DHCP-assigned IP address. | 23.10-ALPHA.1 (Cobia) |
+
 
 ### Resolved Known Issues
 {{< expand "Resolved Known Issues List" "v">}}
 | Seen In | Resolved In | Key | Summary | Workaround |
 |---------|-------------|-----|---------|------------|
-| 22.12.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-120136" target="_blank">NAS-120136</a> | App Collabora installation failed with error values.config: not a string values.config.extra_params not a string. |  |  22.12.1 |
+| 22.12.2 | 22.12.2<br> 23.10.ALPHA.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-120623" target="_blank">NAS-120623</a> | Only have one sudoers file entry as only the last one is taken into account | When setting user sudo options, set on only one as the system only takes the last set into account. For example, when setting sudo for replication tasks as the admin user, set only one of the sudo options such as the Allow all sudo commands with no password. |
+| 22.12.1 | 22.12.2<br> 23.10.ALPHA.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-120432" target="_blank">NAS-120432</a> | Existing replication tasks updated from 22.12.0 cannot be edited in 22.12.1 | Replication tasks that can't be edited can be remade as a new replication task to work around this bug. |
+| 22.12.1 | 22.12.2<br> 23.10.ALPHA.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-120361" target="_blank">NAS-120361</a> | TrueNAS Mini Enclosure view should not have Identify Drive button | The View Enclosure screen for TrueNAS Mini should not have the Identify Drive button on the disk information screen after selecting a drive on the image. |
+| 22.12.1 | 22.12.2<br> 23.10.ALPHA.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-120319" target="_blank">NAS-120319</a> | Cannot Replicate from an Encrypted Dataset to an Unencrypted Dataset | When creating a replication task from an encrypted dataset to a remote system with an unencrypted dataset, and creating a new SSH connection, the task fails with a permissions error. |
+| 22.12.1 | 22.12.2<br> 23.10.ALPHA.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-120266" target="_blank">NAS-120266</a> | Stopping VM Popup Does Not Go Away after VM Stops | After clicking Force Stop After Timeout, the Stopping VM dialog does not close after the VM stops. |
+| 22.12.1 | 22.12.2<br>23.10-ALPHA.1 (Cobia | <a href="https://ixsystems.atlassian.net/browse/NAS-120243" target="_blank">NAS-120243</a> | Using Non-Supported Characters while creating a Boot Environment Creates a CallError | SCALE allows you to save a new boot environment created with non-supported characters but it results in a call error. Do not use bracket ([]), brace ({}), pipe (|), colon (:), and comma (,) characters in the Name field. |
+| 22.12.1 | 22.12.2 | <a href="https://ixsystems.atlassian.net/browse/NAS-120232" target="_blank">NAS-120232</a> | Apps not starting after failover | With Apps deployed on an HA system, after failover the apps stick a deploying but never finish and the system generates alerts in the UI. Issue is pools are degraded after failover, and docker is not able to get image details. |
+| 22.12.1 | 22.12.2<br>23.10-ALPHA.1 (Cobia) | <a href="https://ixsystems.atlassian.net/browse/NAS-120145" target="_blank">NAS-120145</a> | The web UI isn't updating various parts on the screen (Jobs) | On and Enterprise HA system with some alerts, the Jobs screen shows tasks running and trying to gather the information for listed alerts. | 
+| 22.12.1 | 22.12.2<br>23.10-ALPHA.1 (Cobia) | <a href="https://ixsystems.atlassian.net/browse/NAS-120136" target="_blank">NAS-120136</a> | App Collabora installation failed with error values.config: not a string values.config.extra_params not a string. | 
+| 22.12.1 | 22.12.1<br>23.10-ALPHA.1 (Cobia) | <a href="https://ixsystems.atlassian.net/browse/NAS-120210" target="_blank">NAS-120210</a> | Enclosure View does not Function Properly on TrueNAS Minis | View Enclosure only displays the top and bottom rows of slots as active and clickable, but the middle row is inactive even when loaded with drives. |
 | 22.12.0 | 22.12.1<br>23.10-ALPHA.1 (Cobia) | <a href="https://ixsystems.atlassian.net/browse/NAS-119608" target="_blank">NAS-119608</a> | Middleware halt after upgrade from Angelfish to Bluefin due to multiple iSCSI portals with the same IP address. | Before upgrading from SCALE Angelfish, remove any iSCSI portals with duplicate IP addresses. |
-| 22.12.0 | <a href="https://ixsystems.atlassian.net/browse/NAS-119390" target="_blank">NAS-119390</a> | SMB Access Based Share Enumeration fails due to inaccessible Share ACL DB (share_inf.tdb) | SMB shares with Access Based Share Enumeration enabled and share ACLs are not browsable. Disabling Access Based Share Enumeration makes them browsable. Download the replacement Samba package attached to this ticket to correct this issue and make shares with Access Based Share Enumeration enabled browsable. | 22.12.1 |
+| 22.12.0 | 22.12.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-119390" target="_blank">NAS-119390</a> | SMB Access Based Share Enumeration fails due to inaccessible Share ACL DB (share_inf.tdb) | SMB shares with Access Based Share Enumeration enabled and share ACLs are not browsable. Disabling Access Based Share Enumeration makes them browsable. Download the replacement Samba package attached to this ticket to correct this issue and make shares with Access Based Share Enumeration enabled browsable. |
 | 22.12.0 | 22.12.1<br>23.10-ALPHA.1 (Cobia) | <a href="https://ixsystems.atlassian.net/browse/NAS-119374" target="_blank">NAS-119374</a> | Non-root administrative users cannot access installed VM or App console. | For Apps console access, log in to the UI as the **root** user. For VM console access, go to **Credentials > Local Users** and edit the non-root administrative user. In the **Auxiliary Groups** field, open the dropdown and select the **root** option. Click **Save**. |
 | 22.12.0 | 22.12.1<br>23.10-ALPHA.1 (Cobia) | <a href="https://ixsystems.atlassian.net/browse/NAS-119233" target="_blank">NAS-119233</a> | Validation error received when modifying HTTP/S Port Setting in the Web UI | A validation error can occur if using the iw.iso8 keyboard map where the system interprets digits "81" as the text "us". |
 | 22.12.0 | 22.12.1<br>23.10-ALPHA.1 (Cobia) | <a href="https://ixsystems.atlassian.net/browse/NAS-119279" target="_blank">NAS-119279</a> | Missing an option to promote dataset | After cloning a snapshot to a dataset, the option to promote that dataset is missing from the UI. |
