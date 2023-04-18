@@ -539,7 +539,7 @@ p,h1,h2,h3,h4,th,td,a {
   width: 48px;
   rotate: z -90deg;
   position: fixed;
-  bottom: 20px;
+  bottom: 80px;
   right: 20px;
   z-index: 100;
   opacity: 0;
