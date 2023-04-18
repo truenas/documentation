@@ -1,6 +1,6 @@
 ---
-title: "Configuring MinIO Enterprise"
-description: "This article provides configuration instructions for MinIO Enterprise using the official MinIO application widget."
+title: "Configuring Enterprise MinIO App"
+description: "This article provides configuration instructions for MinIO using the official TrueNAS Enterprise MinIO application."
 weight: 20
 aliases: 
 tags:
@@ -14,29 +14,28 @@ tags:
 
 
 {{< enterprise >}}
-The instructions in this article apply to the MinIO Official Enterprise application. 
-The MinIO Enterprise application provides limited configuration settings for Enterprise systems. 
-These settings allow Enterprise users to deploy a basic MinIO application in their environments. 
+The instructions in this article apply to the Official TrueNAS Enterprise MinIO application. 
+This is a smaller version of MinIO that has been tested and polished for a safe and supportable experience for TrueNAS Enterprise customers. To use the complete MinIO app without iXsystems support, see the application that is available in the Community Apps catalog.
 
 We recommend that TrueNAS SCALE Enterprise (HA) systems not deploy applications.
-{{< / enterprise >}}
+{{< /enterprise >}}
 
 
 ## First Steps
 
-If your system includes shares (SMB, NFS, iSCSI), disable the share service before adding and configuring a the MinIO application. 
-After completing the installation and starting MinIO, enable the share service.
+If your system has active sharing configurations (SMB, NFS, iSCSI), disable these sharing services in **System Settings > Services** before adding and configuring the MinIO application.
+Start any sharing services after MinIO completes the install and starts.```
 
 If you created a dataset for the MinIO shares and it has the same path as the MinIO application, disable host path validation. 
-To use host path validation create a dataset for the application with a unique path. For example, */pool/shares/minio* for the share and */pool/apps/minio* for the application.
+To use host path validation, create a dataset for the application with a unique path. For example, */pool/shares/minio* for the share and */pool/apps/minio* for the application.
 
 ## Configuring MinIO Enterprise
 {{< hint info >}}
-This basic procedure covers the required MinIO Enterprise settings. 
+This basic procedure covers the required Enterprise MinIO App settings.
 It does not provide instructions for optional settings.
 {{< /hint >}}
 
-SCALE Enterprise single controller systems with the applications and virtual machines license have access to the **MinIO Official Enterprise** widget. Go to **Apps**, select the pool to use for applications, if not already selected, then click on **Available Applications** screen.
+SCALE Enterprise single controller systems with the applications and virtual machines license feature have access to the **MinIO Official Enterprise** widget. Go to **Apps**, select the pool to use for applications, if not already selected, then click on the **Available Applications** screen.
 
 ![MinIOEnterpriseWidget](/images/SCALE/22.12/MinIOEnterpriseWidget.png "MinIO Enterprise Widget")
 
@@ -44,7 +43,7 @@ Click **Install** on the **MinIO Official Enterprise** widget to open the **mini
 
 ![MinIOEnterpriseAppNameAndVersion](/images/SCALE/22.12/MinIOEnterpriseAppNameAndVersion.png "MinIO Enterprise Appliation Name and Version")
 
-Enter a name for your MinIO application deployment if not using the default value. **Version** populates with the current MinIO version.
+Enter a name for your MinIO application deployment. A default value is provided but can be overriden. **Version** populates with the current MinIO version.
 
 Next, enter your MinIO administration user credentials (i.e., root user) in the **Root User** and **Root Password** fields.
 
