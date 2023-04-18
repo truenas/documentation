@@ -12,8 +12,11 @@ tags:
 {{< toc >}}
 
 
+{{< hint info >}}
+This article applies to the public release of the **MinIO Official Charts** application.
+{{< /hint >}}
 
-## Overview
+## Manual Update Overview
 
 MinIO fails to deploy if you update your version 2022-10-24_1.6.58 Minio app to 2022-10-29_1.6.59 or later using the TrueNAS web UI.
 

@@ -62,7 +62,7 @@ The **Advanced Settings** option opens the **Kubernetes Settings** configuration
 | **Enable Container Image Updates** | Select to enable container image updates. |
 | **Enable GPU support** | Select to enable GPU support. The maximum number of apps that can use an Intel GPU is five. |
 | **Enable Integrated Loadbalancer** | Select to enable the integrated loadbalancer. The default uses servicelb. When disabled, you can use metallb and specify any IP from the local network.  |
-| **Enable Host Path Safety Checks** | Enabled by default. TrueNAS SCALE performs safety checks to ensure app host path volumes are secure. |
+| **Enable Host Path Safety Checks** | Enabled by default. Select to enable TrueNAS SCALE to perform safety checks to ensure app host path volumes are secure. |
 
 **Settings Requiring Re-Initialization**
 
@@ -73,7 +73,7 @@ The **Advanced Settings** option opens the **Kubernetes Settings** configuration
 | **Cluster CIDR** | Required. Enter the IP address and CIDR number for the Kubernetes cluster. |
 | **Service CIDR** | Required. Enter the IP address and CIDR number for the Kubernetes service. |
 | **Cluster DNS IP** | Required. Enter the IP address for the cluster DNS. |
-| **Force** | When selected, **Force** bypasses pool validation during Kubernetes reinitialization. |
+| **Force** | Slected to force bypassing pool validation during Kubernetes reinitialization. |
 {{< /expand >}}
 
 #### Unset Pool

@@ -1,7 +1,7 @@
 ---
 title: "MinIO Application"
 geekdocCollapseSection: true
-weight: 40
+weight: 60
 aliases: 
 tags:
 ---
