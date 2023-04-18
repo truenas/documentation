@@ -8,7 +8,10 @@ tags:
 - scaleapps
 ---
 
+
 {{< toc >}}
+
+
 
 ## Overview
 
@@ -20,29 +23,50 @@ Your app logs display an error similar to the following:
 
 If you get this error after upgrading your MinIO app, use the app **Roll Back** function and return to 2022-10-24_1.6.58 to make your MinIO app functional again. 
 
-You will need [WSL2 (Windows Subsystem for Linux)](https://learn.microsoft.com/en-us/windows/wsl/install) if you are using a Windows computer.
+You need [WSL2 (Windows Subsystem for Linux)](https://learn.microsoft.com/en-us/windows/wsl/install) if you are using a Windows computer.
 
 ![MinioRollBack](/images/SCALE/MinioRollBack.png "MinIO Roll Back")
 
-## Manual Update Process
+## Manually Updating MinIO
+If your system has sharing (SMB, NFS, iSCSI) configured, disable the share service before adding and configuring a new MinIO deployment. 
+After completing the installation and starting MinIO, enable the share service.
 
-### Create a New MinIO Deployment
+If the dataset for the MinIO share has the same path as the MinIO application, disable host path validation before starting MinIO. 
+To use host path validation set up a new dataset for the application with a completely different path. For example, for the share */pool/shares/minio* and for the application */pool/apps/minio*.
 
-Follow the instructions [here]({{< relref "/content/SCALE/SCALETutorials/Apps/MinIOClustersSCALE/_index.md" >}}) to make a new, up-to-date MinIO deployment in TrueNAS. Make sure it is version 2022-10-29_1.6.59 or later.
+When adding a new MinIO deployment, verify your storage settings are correct in the MinIO wizard. If not set, click **Add** and enter the required information.
+
+To manually update your MinIO application:
+
+1. [Create a new MinIO deployment](#creating-a-new-minio-deployment).
+2. [Download the MinIO client](#downloading-the-minio-client).
+3. [Add both TrueNAS MinIO deployments to mc.exe](#adding-both-truenas-minio-deployments-to-mc).
+4. [Port both configurations into the new deployment](#porting-configurations-from-old-to-new-minio-deployment).
+5. [Restart the MinIO service](#restarting-the-minio-service).
+6. [Port bucket data into the new deployment](#porting-bucket-data-from-old-to-new-deployment).
+7. [Port Identity and Access Management settings](#porting-identity-and-access-management-iam-settings).
+8. [Move objects and data](#moving-objects-and-data).
+9. [Delete the old app](#deleting-the-old-app).
+
+### Creating a New MinIO Deployment
+
+Follow the instructions [here]({{< relref "/content/SCALE/SCALETutorials/Apps/MinIOClustersSCALE/_index.md" >}}) to make a new, up-to-date MinIO deployment in TrueNAS. 
+Make sure it is version 2022-10-29_1.6.59 or later.
 
 ![MinIOClientISetupNewDeployment](/images/SCALE/MinIOClientISetupNewDeployment.png "Set Up New Deployment")
 
-### Download MinIO Client
+### Downloading the MinIO Client
 
-[Download the MinIO Client here](https://min.io/docs/minio/linux/reference/minio-mc.html?ref=docs) for your OS and follow the installation instructions. The MinIO Client (mc) lets you create and manage MinIO deployments via your system command prompt. 
+[Download the MinIO Client here](https://min.io/docs/minio/linux/reference/minio-mc.html?ref=docs) for your OS and follow the installation instructions. 
+The MinIO Client (mc) lets you create and manage MinIO deployments via your system command prompt. 
 
-### Add both TrueNAS MinIO Deployments to MC
+### Adding both TrueNAS MinIO Deployments to mc.exe
 
 Open a terminal or CLI. 
 
 If you are on a Windows computer, open PowerShell and enter `wsl` to switch to the Linux subsystem.
 
-Change directories to the folder that contains mc.exe.
+Change directories to the folder that contains <file>mc.exe</file>.
 
 Add your old deployment to mc by entering: `./mc alias set old-deployment-name http://IPaddress:port/ rootuser rootpassword`.
 
@@ -72,9 +96,9 @@ Add your new deployment to mc using the same command with the new alias: `./mc a
 ![MinioClientAddDeployment2](/images/SCALE/MinioClientAddDeployment2.png "Add New Deployment")
 {{< /expand >}}
 
-### Port the configurations from the old MinIO deployment into the new one.
+### Porting Configurations from Old to New MinIO Deployment
 
-Export your old MinIO app configurations by entering `./mc.exe admin config export old-deployment-name > config.txt`.
+To port your configuration from your old MinIO deployment to your new, export your old MinIO app configurations by entering `./mc.exe admin config export old-deployment-name > config.txt`.
 
 MinIO Client exports the config file to the current directory path.
 
@@ -86,7 +110,7 @@ MinIO Client exports the config file to the current directory path.
 In this case, the config file exports to the User Downloads folder.
 {{< /expand >}}
 
-Import the old app config file into the new app by entering: `./mc.exe admin config import old-deployment-name < config.txt`.
+Next, import the old app config file into the new app by entering: `./mc.exe admin config import old-deployment-name < config.txt`.
 
 {{< expand "Example" "v" >}}
 `new-deployment-name` is your new MinIO app name in TrueNAS.
@@ -96,7 +120,7 @@ Import the old app config file into the new app by entering: `./mc.exe admin con
 ![MinIOClientConfigImport](/images/SCALE/MinIOClientConfigImport.png "Import Configuration")
 {{< /expand >}}
 
-### Restart the MinIO service
+### Restarting the MinIO Service
 
 Restart the new MinIO app to apply the configuration changes.
 
@@ -108,7 +132,7 @@ Restart the new MinIO app to apply the configuration changes.
 ![MinioClientRestartService](/images/SCALE/MinioClientRestartService.png "Restart MinIO App")
 {{< /expand >}}
 
-### Port bucket data from the old deployment into the new one.
+### Porting Bucket Data from Old to New Deployment
 
 Export the old app bucket metadata by entering `./mc.exe admin cluster bucket export old-minio-deployment`.
 
@@ -126,7 +150,7 @@ Import the metadata into the new app with `./mc.exe admin cluster bucket import 
 ![MinIOClientBucketImport](/images/SCALE/MinIOClientBucketImport.png "Import Bucket Metadata")
 {{< /expand >}}
 
-### Port Identity and Access Management (IAM) Settings
+### Porting Identity and Access Management (IAM) Settings
 
 Export the old app IAM settings by entering `./mc.exe admin cluster iam export old-minio-deployment`.
 
@@ -144,7 +168,7 @@ Import the IAM settings into the new app with `./mc.exe admin cluster iam import
 ![MinIOClientIAMImport](/images/SCALE/MinIOClientIAMImport.png "Import IAM Settings")
 {{< /expand >}}
 
-### Move Objects and Data
+### Moving Objects and Data
 
 Create buckets in your new MinIO app to move data and objects to.
 
@@ -160,12 +184,14 @@ Repeat for every bucket you intend to move.
 ![MinioClientMoveData](/images/SCALE/MinioClientMoveData.png "Move Data to New Deployment")
 {{< /expand >}}
 
-### Delete Old App
+### Deleting the Old App
 
-After you have moved all data from the old app to the new one, return to the TrueNAS UI **Apps** screen and stop both Minio apps.
+After moving all data from the old app to the new one, return to the TrueNAS UI **Apps** screen and stop both MinIO apps.
 
 Delete the old MinIO app. Edit the new one and change the API and UI Access Node Ports to match the old MinIO app.
 
 Restart the new app to finish migrating.
+
+When complete and the app is running, restart any share services.
 
 {{< taglist tag="scaleminio" limit="10" >}}
