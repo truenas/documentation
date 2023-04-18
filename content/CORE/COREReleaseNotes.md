@@ -22,10 +22,10 @@ aliases:
 
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
-| 13.0-U5 | Code Freeze | 26 April 2023 |
-| 13.0-U5 | Internal Testing | 1 - 12 May 2023 |
-| 13.0-U5 | Tag | 15 May 2023 |
-| 13.0-U5 | Release | 16 May 2023 |
+| 13.0-U5 | Code Freeze | 10 May 2023 |
+| 13.0-U5 | Internal Testing | 15 - 26 May 2023 |
+| 13.0-U5 | Tag | 29 May 2023 |
+| 13.0-U5 | Release | 30 May 2023 |
 
 ## 13.0-U4
 

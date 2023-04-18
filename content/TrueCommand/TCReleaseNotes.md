@@ -19,10 +19,10 @@ aliases:
 
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
-| 2.3.3 | Code-freeze | 17 May 2023 |
-| 2.3.3 | Internal Testing Sprints | 18 May - 02 June 2023 |
-| 2.3.3 | Tag | 04 June 2023 |
-| 2.3.3 | Release | 05 June 2023 |
+| 2.3.3 | Code-freeze | 24 May 2023 |
+| 2.3.3 | Internal Testing Sprints | 25 May - 09 June 2023 |
+| 2.3.3 | Tag | 12 June 2023 |
+| 2.3.3 | Release | 13 June 2023 |
 
 ## 2.3.2
 

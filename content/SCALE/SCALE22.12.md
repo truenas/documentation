@@ -27,14 +27,14 @@ Want to collaborate on TrueNAS SCALE? Join our [Official Discord Server.](https:
 
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
-| SCALE 22.12.3 | Code-freeze | 10 May 2023 |
-| SCALE 22.12.3 | Internal Testing Sprints | 11 - 26 May 2023 |
-| SCALE 22.12.3 | Tag | 29 May 2023 |
-| SCALE 22.12.3 | Release | 30 May 2023 |
-| SCALE 23.10-BETA.1 (Cobia) | Code-freeze | 13 June 2023
-| SCALE 23.10-BETA.1 (Cobia) | Internal Testing Sprints | 14 - 30 June 2023 |
-| SCALE 23.10-BETA.1 (Cobia) | Tag | 3 July 2023 |
-| SCALE 23.10-BETA.1 (Cobia) | Release | 5 July 2023 |
+| SCALE 22.12.3 | Code-freeze | 24 May 2023 |
+| SCALE 22.12.3 | Internal Testing Sprints | 25 May - 19 June 2023 |
+| SCALE 22.12.3 | Tag | 12 June 2023 |
+| SCALE 22.12.3 | Release | 13 June 2023 |
+| SCALE 23.10-BETA.1 (Cobia) | Code-freeze | 28 June 2023
+| SCALE 23.10-BETA.1 (Cobia) | Internal Testing Sprints | 03 - 21 July 2023 |
+| SCALE 23.10-BETA.1 (Cobia) | Tag | 24 July 2023 |
+| SCALE 23.10-BETA.1 (Cobia) | Release | 25 July 2023 |
 
 ## Obtaining the Release
 
