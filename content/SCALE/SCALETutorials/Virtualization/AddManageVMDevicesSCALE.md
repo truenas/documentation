@@ -24,8 +24,6 @@ Click the <span class="material-icons">more_vert</span> icon at the right of eac
 
 The devices for the VM display as a list.
 
-![VMDetailsDevicesSCALE](/images/SCALE/22.12/VMDetailsDevicesSCALE.png "VM Devices")
-
 Device notes:
 
 * A virtual machine attempts to boot from devices according to the **Device Order**, starting with **1000**, then ascending.
@@ -43,8 +41,8 @@ To edit a VM device:
 2. Click on the name of the VM to expand it, then click **Devices** to open the list of devices for the selected VM. 
 3. Click on the <span class="material-icons">more_vert</span> icon at the right of the listed device you want to edit, then select **Edit**. The **Edit Device** screen opens.
    
-   ![EditDeviceVMDiskSCALE](/images/SCALE/22.12/EditDeviceVMDiskSCALE.png "Edit Device VM Disk")
-   
+   ![EditDeviceDiskScreen](/images/SCALE/22.12/EditDeviceDiskScreen.png "Edit Device VM Disk")
+      
 4. Select the path to the zvol you created when setting up the VM on the **Zvol** dropdown list.
 5. Select the type of hard disk emulation from the **Mode** dropdown list. 
    Select **AHCI** for better software compatibility, or select **VirtIO** for better performance if the guest OS installed in the VM has support for VirtIO disk devices.
@@ -66,9 +64,9 @@ To delete a VM device:
 2. Click on the name of the VM to expand it, then click **Devices** to open the list of devices for the selected VM. 
 3. Click on the <span class="material-icons">more_vert</span> icon at the right of the listed device you want to edit, then select **Delete**. 
    The **Delete** dialog opens. 
-
-   ![DeleteDeviceVMDiskSCALE](/images/SCALE/22.12/DeleteDeviceVMDiskSCALE.png "Delete Device VM Disk")
-
+   
+   ![EditDeviceDiskScreen](/images/SCALE/22.12/EditDeviceDiskScreen.png "Delete Device VM Disk")
+   
 4. Select **Delete zvol device** to confirm you want to delete the zvol device. 
    Select **Force Delete** if you want the system to force the deletion of the zvol device, even if other devices or services are using or affiliated with the zvol device.
 5. Click **Delete Device**. 
@@ -91,7 +89,7 @@ Select **CD-ROM** in  **Device Type** on the **Add Device** screen and set a boo
 2. Click **Add** and select **CD-ROM** from the **Device Type** dropdown list. 
    
    ![VMAddDeviceCDROM](/images/SCALE/22.12/VMAddDeviceCDROM.png "Devices Add CD-ROM Type")
-   
+      
 3. Specify the mount path. 
    Click on the <i class="fa fa-caret-right" aria-hidden="true"></i> to the left of **/mnt** and at the pool and dataset levels to expand the directory tree. Select the path to the CD-ROM device.
 4. Specify the boot sequence in **Device Order**. 

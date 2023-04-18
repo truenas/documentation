@@ -73,7 +73,8 @@ To replace a failed disk:
 
 ### Taking a Disk Offline 
 
-We recommend users off-line a disk before starting the physical disk replacement. Off-lining a disk removes the device from the pool and can prevent swap issues.
+We recommend users off-line a disk before starting the physical disk replacement. 
+Off-lining a disk removes the device from the pool and can prevent swap issues.
 
 {{< expand "Can I use a disk that is failing but still active?" "v" >}}
 There are situations where  you can leave a disk that has not completely failed online to provide additional redundancy during the replacement procedure.
@@ -103,6 +104,10 @@ When the scrub operation finishes, return to the **Devices** screen, click on th
    If the replacement disk is not already physically installed in the system, do it now.
 
 Use **[Replace](#replacing-a-failed-disk)** to bring the new disk online in the same VDEV.
+
+### Restoring the Hot Spare
+
+{{< include file="/_includes/RestoreHotSpare.md" type="page" >}}
    
 {{< taglist tag="scaledisks" limit="10" >}}
 {{< taglist tag="scaledevices" limit="10" title="Related Devices Articles" >}}

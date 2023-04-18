@@ -1,6 +1,6 @@
 ---
 title: "Disk Replacement"
-description: "This article describes how to replace a disk in TrueNAS CORE."
+description: "This article describes how to replace a disk and restore the hot spare in TrueNAS CORE."
 weight: 20
 aliases: /core/storage/disks/diskreplace/
 tags:
@@ -33,7 +33,7 @@ The TrueNAS **Dashboard** shows when a disk failure degrades a pool.
 
 Click the <i class="material-icons" aria-hidden="true" title="Settings">settings</i> on the pool card to go to the **Storage > Pools > Pool Status** screen and locate the failed disk.
 
-### Offline the Failed Disk
+### Taking a Failed Disk Offline
 
 Clicking <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> for the failed disk shows additional operations.
 
@@ -67,7 +67,7 @@ When the disk status shows as **Offline**, physically remove the disk from the s
 
 If the replacement disk is not already physically added to the system, add it now.
 
-### Online the New Disk
+### Bringing a New Disk Online
 
 In the **Pool Status**, open the options for the offline disk and click **Replace**
 
@@ -87,6 +87,10 @@ For pools with large amounts of data, this can take a long time.
 When the resilver is complete, the pool status screen updates to show the new disk and the pool status returns to **Online**.
 
 ![Storage Pools Status Replace Complete](/images/CORE/12.0/StoragePoolsStatusReplaceComplete.png "Replacement Complete")
+
+### Restoring the Hot Spare
+
+{{< include file="/_includes/RestoreHotSpare.md" type="page" >}}
 
 {{< taglist tag="corerecovery" limit="10" >}}
 
