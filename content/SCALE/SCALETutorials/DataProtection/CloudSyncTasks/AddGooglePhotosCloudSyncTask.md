@@ -86,7 +86,7 @@ Enter the client id and secret you saved when you created the Google Photos API 
 
 Do not edit the advanced config. When prompted about automatically authenticating rclone with the remote, enter `y`.
 
-A browser window opens to authorize rclone access. Click **Allow*.
+A browser window opens to authorize rclone access. Click **Allow**.
 
 In the command line, enter `y` when prompted about media item resolution to complete the configuration.
 
