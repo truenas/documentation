@@ -50,7 +50,7 @@ If your system has sharing (SMB, NFS, iSCSI) configured, disable the share servi
 After completing the installation and starting MinIO, enable the share service.
 
 If the dataset for the MinIO share has the same path as the MinIO application, disable host path validation before starting MinIO. 
-To use host path validation set up a new dataset for the application with a completely different path. For example, for the share */pool/shares/minio* and for the application */pool/apps/minio*.
+To use host path validation, set up a new dataset for the application with a completely different path. For example, for the share */pool/shares/minio* and for the application */pool/apps/minio*.
 
 ### Configuring MinIO Using Install
 {{< hint ok >}}
@@ -70,7 +70,7 @@ Select the update strategy from the **Minio update strategy** dropdown list. The
 
 Next, enter the **MinIO Configuration** settings.
 
-Select **Enable Distributed Mode** if setting up a cluster of SCALE systems in a distributed cluster. 
+Select **Enable Distributed Mode** when setting up a cluster of SCALE systems in a distributed cluster. 
 A MinIO in distributed mode allows you to pool multiple drives or TrueNAS SCALE systems (even if they are different machines) into a single object storage server for better data protection in the event of single or multiple node failures because MinIO distributes the drives across several nodes. 
 For more information, see the [Distributed MinIO Quickstart Guide](https://docs.min.io/docs/distributed-minio-quickstart-guide).
 
