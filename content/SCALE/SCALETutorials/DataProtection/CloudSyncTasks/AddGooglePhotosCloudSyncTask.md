@@ -14,7 +14,7 @@ Google Photos works best in TrueNAS using a Google Photos API key and [rclone](h
 
 ## Creating the API Credentials
 
-On the [Google API dashboard](https://console.cloud.google.com/apis/dashboard), click the dropdown menu next to the Google Cloud logo and select your project. If you do not have a project, click **NEW PROJECT** and enter a **Project name**, **Organization**, and **Location**.
+On the [Google API dashboard](https://console.cloud.google.com/apis/dashboard), click the dropdown menu next to the Google Cloud logo and select your project. If you do not have a project, click **NEW PROJECT** and enter a value in **Project name**, **Organization**, and **Location**.
 
 ![GooglePhotosAPINewProject](/images/SCALE/22.12/GooglePhotosAPINewProject.png "New Project")
 
