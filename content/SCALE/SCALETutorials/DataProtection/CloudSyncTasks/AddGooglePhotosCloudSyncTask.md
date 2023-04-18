@@ -36,7 +36,7 @@ Next, click **OAuth consent screen** on the left menu, select **EXTERNAL**, then
 
 ![GooglePhotosAPICreateExternal](/images/SCALE/22.12/GooglePhotosAPICreateExternal.png "Create External")
 
-Enter an **App name** and **User support email**. 
+Enter a value in **App name** and **User support email**. 
 
 ![GooglePhotosAPIAppInformation](/images/SCALE/22.12/GooglePhotosAPIAppInformation.png "Enter App Information")
 
