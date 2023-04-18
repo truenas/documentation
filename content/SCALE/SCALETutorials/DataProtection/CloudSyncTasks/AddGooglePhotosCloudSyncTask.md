@@ -90,7 +90,7 @@ A browser window opens to authorize rclone access. Click **Allow**.
 
 In the command line, enter `y` when prompted about media item resolution to complete the configuration.
 
-Copy and save the Options (type, client_id, client_secret, token), then enter `y` to keep the new remote.
+Copy and save the type, client_id, client_secret, and token, then enter `y` to keep the new remote.
 
 ![GooglePhotosAPIrcloneConfig3](/images/SCALE/22.12/GooglePhotosAPIrcloneConfig3.png "Configure rclone")
 
