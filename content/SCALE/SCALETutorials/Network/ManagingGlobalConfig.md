@@ -10,7 +10,7 @@ tags:
 
 Use the **Global Configuration Settings** screen to manage existing general network settings like the default gateway, DNS servers, set DHCP to assign the IP address or to set a static IP address, add IP address aliases, and set up services to allow external communication.
 
-{{< hint danger >}}
+{{< hint type=warning >}}
 **Disruptive Change**
 
 You can lose your TrueNAS connection if you change the network interface that the web interface uses!  

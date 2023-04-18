@@ -147,7 +147,7 @@ Immediately go to the **Credentials > Local User** screen, select the admin user
 {{< /hint >}}
 
 ## Resetting the System Configuration
-{{< hint danger >}}
+{{< hint type=warning >}}
 **Caution!**
 Resetting the configuration deletes all settings and reverts TrueNAS to default settings. Before resetting the system, back up all data and encryption keys/passphrases! 
 After the system resets and reboots, you can go to **Storage** and click **Import Pool** to re-import pools.

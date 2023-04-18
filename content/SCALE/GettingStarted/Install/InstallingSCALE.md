@@ -113,7 +113,7 @@ There are many ways to do this in Linux, but a quick option is to enter the comm
 This shows in the **NAME** column of the `lsblk` output.
 
 Next, use command `dd` to write the installer to the USB stick.
-{{< hint danger >}}
+{{< hint type=warning >}}
 Be very careful when using dd, as choosing the wrong *of=* device path can result in irretrievable data loss!
 {{< /hint >}}
 Enter command `dd status=progress if=path/to/.iso of=path/to/USB` in the CLI.

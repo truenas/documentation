@@ -55,7 +55,7 @@ To make LDAP use a keytab principal, click **Settings** in the **LDAP** window a
 
 ### Kerberos Settings
 
-{{< hint danger >}}
+{{< hint type=warning >}}
 If you do not understand Kerberos auxiliary parameters, do not attempt to configure new settings!
 {{< /hint >}}
 

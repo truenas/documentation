@@ -439,7 +439,7 @@ Go to *System Settings | Advanced | Console | Configure*
 ### Disconnect IPMI
 If your server has a [IPMI](https://en.wikipedia.org/wiki/Intelligent_Platform_Management_Interface) interface, **physically disconnect the network cable**.
 
-{{< hint danger >}}
+{{< hint type=warning >}}
 * If a malware takes the control of your management computer,
 it can use the IPMI interface to destroy your backups.
 * Be cautious and just disconnect the cable.

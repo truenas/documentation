@@ -44,7 +44,7 @@ If the 2FA code is not working or users cannot get it, the system is inaccessibl
 
 ## Enabling 2FA
 
-{{< hint danger >}}
+{{< hint type=warning >}}
 Set up a second 2FA device as a backup before proceeding.
 {{< /hint >}}
 

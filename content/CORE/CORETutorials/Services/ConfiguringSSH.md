@@ -12,7 +12,7 @@ tags:
 The SSH service allows connections to TrueNAS with the [Secure SHell Transport Layer Protocol](https://tools.ietf.org/html/rfc4253).
 To use TrueNAS as an SSH server, the users in the network must use [SSH client software](https://www.bing.com/search?q=SSH%20client%20software) to transfer files with SSH.
 
-{{< hint danger >}}
+{{< hint type=warning >}}
 Allowing external connections to TrueNAS is a security vulnerability!
 Only enable SSH when there is a need for external connections.
 See [Security Recommendations]({{< relref "Security.md" >}}) for more security considerations when using SSH.
@@ -28,7 +28,7 @@ Configure the options as needed to match your network environment.
 
 See [SSH Screen]({{< relref "/CORE/UIReference/Services/ServicesSSH.md" >}})
 
-{{< hint danger >}}
+{{< hint type=warning >}}
 Root access to the system from a remote client is never recommended.
 If an unavoidable critical situation requires allowing root access, it is recommended to [configure two-factor authentication]({{< relref "UsingTwoFactorAuthentication.md" >}}) first.
 Also, disable root logins as soon as possible.

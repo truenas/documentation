@@ -20,7 +20,7 @@ When adding a second device to create a mirrored boot pool, consider these cavea
 
 * **Device Type**: We **strongly recommend** using SSDs rather than USB devices when creating a mirrored boot pool.
 
-{{< hint danger >}}
+{{< hint type=warning >}}
 Removing devices from storage pools can result in data loss!
 {{< /hint >}}
 

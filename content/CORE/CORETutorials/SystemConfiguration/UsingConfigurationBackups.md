@@ -64,7 +64,7 @@ There are two options after clicking **SAVE CONFIG**:
 
 To reset the system configuration to factory settings, go to **System > General** and click **RESET CONFIG**.
 
-{{< hint danger >}}
+{{< hint type=warning >}}
 **Save the system's current configuration before resetting.**
  
 If you do not save the system config before resetting it, you may lose any data that you did not back up. You cannot revert to the previous settings.

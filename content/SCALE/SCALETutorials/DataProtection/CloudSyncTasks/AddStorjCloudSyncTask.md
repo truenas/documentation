@@ -157,7 +157,7 @@ After creating your bucket, add S3 access for the new bucket(s) you want to use 
 
    ![StorjCreateAccessDownloadedEncryptionPassphrase](/images/SCALE/22.12/StorjCreateAccessDownloadedEncryptionPassphrase.png "Storj Create Access Encryption Passphrase Downloaded")
 
-   {{< hint danger >}}
+   {{< hint type=warning >}}
    If you lose your passphrase neither Storj or iXsystems can help you recover your stored data!
    {{< /hint >}}
 

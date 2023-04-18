@@ -10,7 +10,7 @@ weight: 7
 
 ## Software Lifecycle
 
-{{< hint danger >}}
+{{< hint type=warning >}}
 Early releases are intended for testing and early feedback purposes only.
 Do not use early release software for critical tasks.
 {{< /hint >}}
@@ -1600,7 +1600,7 @@ For more details on zpool.features.7 see [OpenZFS zpool-feature.7](https://openz
 
 ## Bluefin Unstable Nightly Images (Unstable Branch, developers and brave testers)
 
-{{< hint danger >}}
+{{< hint type=warning >}}
 Nightly builds are considered experimental and highly unstable.
 Do not use a nightly build for anything other than testing and development.
 {{< /hint >}}

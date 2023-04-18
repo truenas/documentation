@@ -144,7 +144,7 @@ Losing encryption keys or passphrases can result in permanent data loss!
 You cannot add encryption to an existing dataset. 
 You can change the encryption type for an already encrypted dataset using the **Edit** option on the **ZFS Encryption** widget for the dataset.
 
-{{< hint danger >}}
+{{< hint type=warning >}}
 Save any change to the encryption key or passphrase, and update your saved passcodes and keys file, and then back up that file. 
 {{< /hint >}} 
 
@@ -252,7 +252,7 @@ If **Encryption Type** is set to**Key**, type an encryption key into the **Key**
 If using **Passphrase**, it should be at least eight characters long. Use a passphrase complex enough to not easily guess. 
 After making any changes, select **Confirm**, and then click **Save**. 
 
-{{< hint danger >}}
+{{< hint type=warning >}}
 Save any change to the encryption key or passphrase, update your saved passcodes and keys file, and back up the file. 
 {{< /hint >}}
 

@@ -39,7 +39,7 @@ The **Upload File** option opens the **Upload Config** window, which allows user
 **Choose File** opens a file browser window where you can locate the downloaded and saved configuration. After selecting the file, it displays in the **Upload Config** window. 
 **Upload** uploads the selected configuration file.
 
-{{< hint danger >}}
+{{< hint type=warning >}}
 All passwords reset if the uploaded configuration file saved without **Export Password Secret Seed** enabled.
 {{< /hint >}}
 
@@ -49,7 +49,7 @@ The **Reset to Defaults** option opens the **Reset Configuration** window, which
 
 ![SystemGeneralResetConfiguration](/images/SCALE/22.12/SystemGeneralResetConfiguration.png "SCALE General Reset Configuration") 
 
-{{< hint danger >}}
+{{< hint type=warning >}}
 **Save the system current configuration with the _Download File_ option before resetting the configuration to default settings.**
  
 If you do not save the system configuration before resetting it, you may lose data that you did not back up, and you will not be able to revert to the previous configuration.

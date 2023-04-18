@@ -12,7 +12,7 @@ tags:
 
 The **Network > Global Configuration** screen has all the general TrueNAS networking settings that *are not* specific to any [interface]({{< relref "/CORE/UIReference/Network/InterfacesScreen.md" >}}).
 
-{{< hint danger >}}
+{{< hint type=warning >}}
 **Disruptive Change**
 
 Making changes to the network interface the web interface uses can result in losing connection to TrueNAS!

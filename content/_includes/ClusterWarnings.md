@@ -1,6 +1,6 @@
 SMB clusters created in TrueNAS SCALE Bluefin are not  available for cluster expansion. Beginning with TrueNAS SCALE Cobia, we plan to implement a method to enable new volumes for SMB cluster expansion.
 
-{{< hint danger >}}
+{{< hint type=warning >}}
 Clustering is considered experimental and should not be used in a production environment or for handling critical data!
 
 Clustering is a back-end feature in TrueNAS SCALE. You should only configure clustering using the TrueCommand web interface.

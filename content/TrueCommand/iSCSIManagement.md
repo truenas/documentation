@@ -3,7 +3,7 @@ title: iSCSI Volume Management
 weight: 70
 ---
 
-{{< hint danger >}}
+{{< hint type=warning >}}
 iSCSI management is a brand new feature in TrueCommand 2.0. 
 Always back up any data intended for storage or sharing!
 {{< /hint >}}

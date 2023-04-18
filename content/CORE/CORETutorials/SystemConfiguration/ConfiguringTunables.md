@@ -7,7 +7,7 @@ tags:
 - coreconfiguration
 ---
 
-{{< hint danger >}}
+{{< hint type=warning >}}
 Be careful when adding or editing the default tunables.
 Changing the default tunables can make the system unusable.
 {{< /hint >}}

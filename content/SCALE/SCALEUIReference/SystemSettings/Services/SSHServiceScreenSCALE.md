@@ -16,7 +16,7 @@ The **System Settings > Services > SSH** screen allows you to set up SSH service
 
 Click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the **Services > SSH** configuration screen.
 
-{{< hint danger >}}
+{{< hint type=warning >}}
 Allowing external connections to TrueNAS is a security vulnerability!
 Do not enable SSH unless you require external connections.
 See [Security Recommendations]({{< relref "Security.md" >}}) for more security considerations when using SSH.

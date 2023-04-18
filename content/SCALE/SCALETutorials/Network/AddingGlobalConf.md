@@ -12,7 +12,7 @@ Use the **Global Configuration Settings** screen to add general network settings
 
 To add new or change existing network interfaces see [Managing Interfaces]({{< relref "ManagingInterfaces.md" >}}).
 
-{{< hint danger >}}
+{{< hint type=warning >}}
 **Disruptive Change**
 
 You can lose your TrueNAS connection if you change the network interface that the web interface uses!  

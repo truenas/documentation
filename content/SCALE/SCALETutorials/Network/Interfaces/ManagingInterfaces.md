@@ -45,7 +45,7 @@ Because you cannot edit the interface type or name after you click **Save**, if 
 
 If you want to change from DHCP to a static IP, you must also add the new default gateway and DNS nameservers that work with the new IP address. See [Setting Up a Static IP]({{< relref "SettingUpStaticIPs.md" >}}) for more information.
 
-{{< hint danger >}}
+{{< hint type=warning >}}
 If you delete the primary network interface you can lose your TrueNAS connection and the ability to communicate with the TrueNAS through the web interface!
 
 You might need command line knowledge or physical access to the TrueNAS system to fix misconfigured network settings. 
@@ -55,7 +55,7 @@ You might need command line knowledge or physical access to the TrueNAS system t
 
 Click the <i class="material-icons" aria-hidden="true" title="delete">delete</i> icon next to the interface. The delete interface confirmation dialog displays.
 
-{{< hint danger >}}
+{{< hint type=warning >}}
 Do not delete the primary network interface!
 
 If you delete the primary network interface you lose your TrueNAS connection and the ability to communicate with the TrueNAS through the web interface!

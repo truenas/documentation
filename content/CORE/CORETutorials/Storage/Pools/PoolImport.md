@@ -55,7 +55,7 @@ Review the Pool Import Summary and click **IMPORT**.
 {{< expand "ZFS Pool with GELI" >}}
 ## Encrypted GELI Pools
 
-{{< hint danger >}}
+{{< hint type=warning >}}
 Importing a GELI-encrypted pool requires using the encryption key file and passphrase to decrypt the pool *before* importing.
 When a pool cannot be decrypted, it cannot be re-imported after a failed upgrade or lost configuration, and the data is *irretrievable*!
 Always have a copy of the pool GELI key file and passphrase available.

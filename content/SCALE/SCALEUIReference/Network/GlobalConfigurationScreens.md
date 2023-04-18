@@ -19,7 +19,7 @@ The SCALE information dislplayed the **Global Configuration** widget is the equi
 
 Use **Settings** to display the **Global Configuration** screen where you can add or change global network settings.
 
-{{< hint danger >}}
+{{< hint type=warning >}}
 **Disruptive Change**
 
 You can lose your TrueNAS connection if you change the network interface that the web interface uses!  

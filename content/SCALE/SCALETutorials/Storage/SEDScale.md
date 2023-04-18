@@ -19,7 +19,7 @@ tags:
 * TCG Pyrite [Version 1](https://trustedcomputinggroup.org/wp-content/uploads/TCG_Storage-Pyrite_SSC_v1.00_r1.00.pdf) and 
   [Version 2](https://trustedcomputinggroup.org/wp-content/uploads/TCG_Storage-Pyrite_SSC_v2.00_r1.00_PUB.pdf) are similar to Opalite, but with hardware encryption removed
   Pyrite provides a logical equivalent of the legacy ATA security for non-ATA devices. Only the drive firmware protects the device.
-  {{< hint danger >}}
+  {{< hint type=warning >}}
   Pyrite Version 1 SEDs do not have PSID support and can become unusable if the password is lost.
   {{< /hint >}}
 * [TCG Enterprise](https://trustedcomputinggroup.org/wp-content/uploads/TCG_Storage-SSC_Enterprise-v1.01_r1.00.pdf) designed for systems with many data disks
@@ -98,7 +98,7 @@ You must configure the SED to use the new password. Go to the **Shell** and ente
 
 Repeat this process for each SED and any SEDs added to the system in the future.
 
-{{< hint danger >}}
+{{< hint type=warning >}}
 Remember SED passwords! If you lose the SED password, you cannot unlock SEDs or access their data.
 After configuring or modifying SED passwords, always record and store them in a secure place!
 {{< /hint >}}

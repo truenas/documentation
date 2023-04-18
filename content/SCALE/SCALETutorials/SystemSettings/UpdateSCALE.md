@@ -17,7 +17,7 @@ SCALE has several trains available for updates. However, the web interface only 
 
 For more information on other available trains, see [TrueNAS Upgrades](https://www.truenas.com/docs/truenasupgrades/).
 
-{{< hint danger >}}
+{{< hint type=warning >}}
 See the [Software Status page](https://www.truenas.com/software-status/) for the latest recommendations for software usage.
 Bluefin and Nightlies are non-production trains.
 If you are using a non-production train, be prepared to experience bugs or problems.
