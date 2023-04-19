@@ -50,7 +50,7 @@ Documentation articles follow the latest supported software releases, with previ
 
 | Software | Current Documented Version | Previous Major Version |
 |----------|----------------------------|------------------------|
-| TrueNAS CORE & Enterprise | 13.0 | [12.0](https://www.truenas.com/docs/files/CORE12.0Docs.pdf) ([Release Notes]({{< relref "Archive.md#truenas-core" >}})) |
+| TrueNAS CORE | 13.0 | [12.0](https://www.truenas.com/docs/files/CORE12.0Docs.pdf) ([Release Notes]({{< relref "Archive.md#truenas-core" >}})) |
 | TrueNAS SCALE | 22.12 Bluefin | [22.02 Angelfish](https://www.truenas.com/docs/files/SCALE22.02Docs.pdf) |
 | TrueCommand | 2.3 | [2.1](https://www.truenas.com/docs/files/TC2.1Docs.pdf)  |
 
