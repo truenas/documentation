@@ -1,7 +1,7 @@
 ---
 title: "Customizing Advanced (Kubernetes) Settings"
 geekdocCollapseSection: true
-weight: 55
+weight: 70
 ---
 
 The **Kubernetes Settings** screen allows users to customize network, system, and cluster settings for all apps in TrueNAS SCALE.
