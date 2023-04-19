@@ -1,7 +1,7 @@
 ---
 title: "Setting Up a Storj Node"
 description: "This article provides information on the steps to set up a Storj node on your TrueNAS SCALE system."
-weight: 30
+weight: 50
 alias: /scale/scaletutorials/dataprotection/cloudsynctasks/
 tags:
  - scalestorj

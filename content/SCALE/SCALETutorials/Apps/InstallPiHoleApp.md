@@ -1,7 +1,7 @@
 ---
 title: "Installing Pi-Hole Application"
 description: "This article provides information on using the Pi-hole widget on the **Available Applications** screen to install third-party applications like Pi-Hole in TrueNAS SCALE."
-weight: 45
+weight: 65
 aliases: 
 tags:
 - scaleapps

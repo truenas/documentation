@@ -1,7 +1,7 @@
 ---
 title: "Collabora App"
 description: "This article provides basic configuration instructions for adding the Collabora app using the TrueNAS webUI."
-weight: 35
+weight: 55
 aliases: /scale/scaleuireference/apps/collabora/
 tags:
  - scalecollabora
