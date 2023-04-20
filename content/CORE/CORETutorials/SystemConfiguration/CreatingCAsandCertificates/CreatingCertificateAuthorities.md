@@ -39,8 +39,8 @@ To create a CA:
 
    ![AddInternalCAOpenVPNRootProfile](/images/CORE/13.0/AddInternalCAOpenVPNRootProfile.png "Add OpenVPN Root CA Profile")
    
-   To add CA certificate select **CA**. 
-   The configuration form populates with default settings, enables **Basic Constraints**, **Authority Key Identifier**, **Extended Key Usage**, and **Key Usage**, and set the options for each extension.
+   To add CA certificate, select **CA**. 
+   The configuration form populates with default settings, enables **Basic Constraints**, **Authority Key Identifier**, **Extended Key Usage**, and **Key Usage**, and sets the options for each extension.
 
    ![AddInternalCAProfile](/images/CORE/13.0/AddInternalCAProfile.png "Add Internal CA Profile")
    
