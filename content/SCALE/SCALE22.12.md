@@ -10,7 +10,7 @@ weight: 7
 
 ## Software Lifecycle
 
-{{< hint danger >}}
+{{< hint type=warning >}}
 Early releases are intended for testing and early feedback purposes only.
 Do not use early release software for critical tasks.
 {{< /hint >}}
@@ -38,7 +38,7 @@ Want to collaborate on TrueNAS SCALE? Join our [Official Discord Server.](https:
 
 ## Obtaining the Release
 
-{{< hint warning >}}
+{{< hint type=important >}}
 * SCALE is developed as an appliance that uses specific Linux packages with each release. Attempting to update SCALE with `apt` or methods other than the SCALE web interface can result in a nonfunctional system.
 * TrueNAS SCALE has only been validated with systems up to 250 Drives. We currently recommend that users with higher drive counts run TrueNAS Enterprise.
 * HA migration in Bluefin 22.12.0 is not recommended for critical-use Enterprise HA systems yet. Enterprise General Availability (GA) is planned for the 22.12.2 release but HA migrations from CORE are not recommended without consulting with iXsystems Support first.
@@ -622,7 +622,7 @@ TrueNAS SCALE 22.12-RC.1 has been released and includes many new features and im
 * Adds support for creating S3 buckets in Cloud Sync Backups
 * Updates Kubernetes to 1.25 and Samba to 4.17.0.rc5
 
-{{< hint info >}}
+{{< hint type=note >}}
 SCALE 22.12-RC.1 introduces a change in Applications. Users upgrading to 22.12-RC.1 now use the [Docker overlay2 driver](https://docs.docker.com/storage/storagedriver/overlayfs-driver/) instead of ZFS. This change brings a considerable performance boost to applications but applications installed in 22.12-RC.1 are incompatible with any previous version of SCALE 22.12.
 {{< /hint >}}
 
@@ -1600,7 +1600,7 @@ For more details on zpool.features.7 see [OpenZFS zpool-feature.7](https://openz
 
 ## Bluefin Unstable Nightly Images (Unstable Branch, developers and brave testers)
 
-{{< hint danger >}}
+{{< hint type=warning >}}
 Nightly builds are considered experimental and highly unstable.
 Do not use a nightly build for anything other than testing and development.
 {{< /hint >}}

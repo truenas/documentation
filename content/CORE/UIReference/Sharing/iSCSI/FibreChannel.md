@@ -28,7 +28,7 @@ The Fibre Channel protocol is fast, cost effective, and reliable over a wide var
 Fibre Channel is a TrueNAS Enterprise feature. 
 Only TrueNAS systems licensed for Fibre Channel have the **Fibre Channel Ports** tab on the **Sharing > Block Shares (iSCSI)** screen.
 
-{{< hint info >}}
+{{< hint type=note >}}
 **Initiators** and **Authorized Access** screens only apply to iSCSI block shares and can be ignored when configuring Fibre Channel ports.
 {{< /hint >}}
 

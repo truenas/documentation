@@ -37,7 +37,7 @@ If you intend to store your application data in a location that is separate from
 
 ## File Sharing
 
-{{< hint warning >}}
+{{< hint type=important >}}
 Since TrueNAS considers shared host paths non-secure, apps that use shared host paths (such as those services like SMB are using) fail to deploy. 
 Best practice is to create datasets for applications that do not share the same host path as an SMB or NFS share. 
 {{< /hint >}}

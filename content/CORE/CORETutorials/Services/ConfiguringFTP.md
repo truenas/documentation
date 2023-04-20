@@ -44,7 +44,7 @@ Configure the options according to your environment and security considerations.
 
 Enable **chroot** to help confine FTP sessions to a local user home directory and allow **Local User Login**.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 Unless necessary, do not allow anonymous or root access. For better security, enable TLS when possible.
 This is effectively [FTPS](https://tools.ietf.org/html/rfc4217). 
 Enable TLS when FTP involves a WAN.  

@@ -18,7 +18,7 @@ These coordinated snapshots go in the **VMware Snapshots** list.
 Use this procedure to create ZFS snapshots when using TrueNAS SCALE as a VMWare datastore. VMware Snapshots coordinate ZFS snapshots when using TrueNAS as a VMware datastore.
 When creating a ZFS snapshot, TrueNAS SCALE automatically takes a snapshot of any running VMWare virtual machine before taking a scheduled or manual ZFS snapshot of the data or zvol backing that VMWare datastore.
 
-{{< hint info >}}
+{{< hint type=note >}}
 You must have a paid edition of VMWare ESXi to use the TrueNAS SCALE VMWare Snapshots feature.
 If you try to use them with the free-edition of VMware ESXi, you see this error message: "Error, Can't create snapshot, current license or ESXi version prohibits execution of the requested operation."
 ESXi free has a locked (read-only) API that prevents using TrueNAS SCALE VMWare Snapshots.
@@ -35,7 +35,7 @@ Click the **Add** button to configure the VMWare Snapshot Task.
 
 ![DataProtectionVMwareSnapshotAdd](/images/SCALE/22.12/vmwareaddsnapshottask.png "Add VMware Snapshot Task")
 
-{{< hint warning >}}
+{{< hint type=important >}}
 You must follow the exact sequence to add the VMware snapshot or the  **ZFS Filesystem** and  **Datastore** fields do not populate with options available on your system.
 If you click in *ZFS Filestore** or **Datastores** before you click **Fetch Datastores** the creation process fails, the two fields do not populate with the information from the VMWare host and you must exit the add form or click **Cancel** and start again.
 {{< /hint >}}

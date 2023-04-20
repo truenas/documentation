@@ -17,7 +17,7 @@ SCALE has several trains available for updates. However, the web interface only 
 
 For more information on other available trains, see [TrueNAS Upgrades](https://www.truenas.com/docs/truenasupgrades/).
 
-{{< hint danger >}}
+{{< hint type=warning >}}
 See the [Software Status page](https://www.truenas.com/software-status/) for the latest recommendations for software usage.
 Bluefin and Nightlies are non-production trains.
 If you are using a non-production train, be prepared to experience bugs or problems.
@@ -30,7 +30,7 @@ We recommend updating TrueNAS when the system is idle (no clients connected, no 
 
 Update during scheduled maintenance times to avoid disrupting user activities.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 All auxiliary parameters are subject to change between major versions of TrueNAS due to security and development issues. We recommend removing all auxiliary parameters from TrueNAS configurations before upgrading.
 {{< /hint >}}
 
@@ -64,7 +64,7 @@ Go to **System Settings > Shell** and enter `zpool status` to show which pools y
 
 To update the pools, enter <code>zpool upgrade <i>poolname</i></code>, where *poolname* is the name of the storage pool or boot-pool you want to update.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 Upgrading pools is a one-way operation. After upgrading pools to the latest zfs features, you might not be able to boot into older versions of TrueNAS.
 {{< /hint >}}
 

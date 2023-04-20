@@ -28,7 +28,7 @@ Migrating data can be done before or after installing the Docker container versi
 
 ## Preparing an Existing Container for Migration
 
-{{< hint warning >}}
+{{< hint type=important >}}
 Migrating the configuration from a previous version of TrueCommand will overwrite any existing configuration! Migrating the configuration before installing the Docker container is recommended, or as soon as possible after installing to prevent making and then losing any new configuration settings.
 {{< /hint >}}
 

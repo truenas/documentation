@@ -9,7 +9,7 @@ tags:
 - corehardware
 ---
 
-{{< hint ok >}}
+{{< hint type=tip >}}
 Only compatible TrueNAS hardware and expansion shelves available from [iXsystems](https://www.ixsystems.com/) allow seeing the **View Enclosure** option.
 To learn more about available iXsystems products, see the [TrueNAS Systems Overview](https://www.truenas.com/systems-overview/) or browse the [Hardware]({{< relref "/Hardware/_index.md" >}}) documentation.
 {{< /hint >}}
@@ -34,7 +34,7 @@ You can rename a system by clicking **EDIT LABEL**.
 
 In the **Disks** tab, select a disk on the enclosure image and click **IDENTIFY DRIVE**. The drive LED on the physical system flashes so you can find it.
 
-{{< hint info >}}
+{{< hint type=note >}}
 The TrueNAS Mini Series models do not support drive light identification. 
 {{< /hint >}}
 

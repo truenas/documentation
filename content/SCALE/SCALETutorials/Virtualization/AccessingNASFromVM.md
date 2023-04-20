@@ -15,7 +15,7 @@ If you have only one physical interface, you must create a bridge interface for 
 
 ## Creating a Bridge: Single Physical Interface
 
-{{< hint warning >}}
+{{< hint type=important >}}
 If the only interface you have is a single physical interface, complete the following steps in order to create a network bridge:
 * If you have apps running, disable them before proceeding. 
 * Clear the DHCP checkbox on the single physical interface you have, but don't apply the changes.

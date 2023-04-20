@@ -10,7 +10,7 @@ tags:
 The SCALE **Shell** is convenient for running command lines tools, configuring different system settings, or finding log files and debug information.
 The **Shell** screen opens with the root user logged in.
 
-{{< hint danger >}}
+{{< hint type=warning >}}
 Warning! The supported mechanisms for making configuration changes are the TrueNAS WebUI, CLI, and API exclusively. 
 All other are not supported and result in undefined behavior that can result in system failure! 
 {{< /hint >}}
@@ -60,7 +60,7 @@ Commands continue to run in a detached session.
 
 The experimental SCALE command-line interface (CLI) lets you directly configure SCALE features.
 
-{{< hint danger >}}
+{{< hint type=warning >}}
 SCALE CLI is experimental and still in active development.
 We are not accepting bug reports or feature requests at this time.
 {{< /hint >}}

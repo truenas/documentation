@@ -1,7 +1,7 @@
 ---
 ---
 
-{{< hint warning >}}
+{{< hint type=important >}}
 
 Starting with SCALE Bluefin 22.12.0, root account logins are deprecated for security hardening and to comply with Federal Information Processing Standards (FIPS).
 All TrueNAS users should [create a local administrator account]({{< relref "/content/SCALE/SCALETutorials/Credentials/ManageLocalUsersSCALE.md" >}}) with all the permissions it requires and begin using it to access TrueNAS.

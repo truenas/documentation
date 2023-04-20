@@ -61,7 +61,7 @@ Before upgrading the operating system, follow these steps:
    We recommend scheduling the upgrade for a time that will least impact users.
 4. Stop all system **Services**.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 All auxiliary parameters are subject to change between major versions of TrueNAS due to security and development issues. We recommend removing all auxiliary parameters from TrueNAS configurations before upgrading.
 {{< /hint >}}
 
@@ -80,7 +80,7 @@ If needed, press <kbd>Spacebar</kbd> to stop the timer and choose another boot o
 After the media finishes booting into the installation menu, press <kbd>Enter</kbd> to select the default option `1 Install/Upgrade`.
 The installer presents a screen showing all available drives.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 All drives display, including boot drives and storage drives.
 Only choose boot drives when upgrading.
 **Choosing the wrong drives to upgrade or install causes data loss.**

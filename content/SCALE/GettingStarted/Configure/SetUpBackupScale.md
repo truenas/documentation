@@ -27,7 +27,7 @@ You should also set up a data storage backup method using either a cloud sync or
 TrueNAS provides for data backup through cloud sync or replication.
 
 ### Using Cloud Sync for Data Backup
-{{< hint info>}}
+{{< hint type=note >}}
 Cloud sync requires an account with a cloud storage provider and a storage location created with that provider, like Amazon S3 bucket.
 SCALE support major providers like Storj, Amazon S3, Google Cloud, Box and Microsoft Azure, along with a variety of other vendors.
 These providers can charge fees for data transfer and storage, so please review the polices of your cloud storage provider before transferring your data.

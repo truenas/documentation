@@ -15,7 +15,7 @@ In TrueNAS, user accounts allow flexibility for accessing shared data.
 Typically, administrators create users and assign them to [groups]({{< relref "ManageLocalGroups.md" >}}).
 Doing so makes tuning permissions for large numbers of users more efficient.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 
 Only the **root** user account can log in to the TrueNAS web interface until the root user creates an admin user with the same permissions.
 After logging in as root, TrueNAS alerts you to create the local administrator account.
@@ -117,7 +117,7 @@ You cannot change TrueNAS default user account permissions.
 
 You can assign a public SSH key to a user for key-based authentication by entering or pasting the *public* key into the **Authorized Keys** field.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 Do *not* paste the private key.
 {{< /hint >}}
 

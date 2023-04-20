@@ -12,7 +12,7 @@ tags:
 
 ## Interface Editing ###
 
-{{< hint warning >}}
+{{< hint type=important >}}
 Be careful when configuring the network interface that controls the TrueNAS® web interface. An error can result in the loss of web connectivity.
 {{< /hint >}}
 
@@ -23,14 +23,14 @@ to your TrueNAS® system.
 
 To edit an interface, click **>** next to it to expand the view. This provides a general description about the chosen interface. Click *EDIT*.
 
-{{< hint info >}}
+{{< hint type=note >}}
 TrueNAS Enterprise customers: you cannot edit an interface with High Availability (HA) enabled.  
 Go to **System > Failover** and check the **Disable Failover** box, then click **SAVE**.
 {{< /hint >}}
 
 ![NetworkInterfaceDescription](/images/CORE/13.0/NetworkInterfaceDescriptionView.png "Network Interface Description")
 
-{{< hint note >}}
+{{< hint type=note >}}
 The **Type** of interface determines the interface editing options available.
 {{< /hint >}}
 

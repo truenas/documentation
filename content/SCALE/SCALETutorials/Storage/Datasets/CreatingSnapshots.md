@@ -19,7 +19,7 @@ Taking snapshots requires the system have all [pools]({{< relref "CreatePoolScal
 
 ## Creating a Snapshot
 
-{{< hint info >}}
+{{< hint type=note >}}
 Consider making a [Periodic Snapshot Task]({{< relref "PeriodicSnapshotTasksScreensSCALE.md" >}}) to save time and create regular, fresh snapshots.
 {{< /hint >}}
 

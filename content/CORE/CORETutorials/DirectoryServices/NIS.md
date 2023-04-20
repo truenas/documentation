@@ -17,7 +17,7 @@ A NIS system maintains and distributes a central directory. This central directo
 In FreeBSD, the file <file>/etc/passwd</file> contains the list of users. The file <file>/etc/shadow</file> contains the authentication hashes. NIS adds another global user list to identify users on any NIS domain client.
 {{< /expand >}}
 
-{{< hint warning >}}
+{{< hint type=important >}}
 NIS is limited in scalability and security.
 For modern networks, [LDAP]({{< relref "LDAP.md" >}}) has replaced NIS.
 {{< /hint >}}

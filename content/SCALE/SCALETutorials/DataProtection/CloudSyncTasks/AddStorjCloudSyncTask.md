@@ -14,7 +14,7 @@ tags:
 TrueNAS can send, receive, or synchronize data with the cloud storage provider Storj. 
 Cloud sync tasks allow for single-time transfers or recurring transfers on a schedule. They are an effective method to back up data to a remote location.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 To take advantage of the lower-cost benefits of the Storj-TrueNAS cloud service, you must create your Storj account using the link provided on the **Add Cloud Credentials** screen.
 
 You must also create and authorize the storage buckets on Storj for use by SCALE.
@@ -62,7 +62,7 @@ The **Add Cloud Credential** screen opens with Storj displayed as the default pr
 
 2. Click **Signup for account** to create your Stor-TrueNAS account. This opens the Storj new account screen for TrueNAS.
 
-   {{< hint warning >}} 
+   {{< hint type=important >}} 
    You must use this link to create your Storj account to take advantage of the benefits of the Storj-TrueNAS pricing!
    {{< /hint >}}
 
@@ -135,7 +135,7 @@ After creating your bucket, add S3 access for the new bucket(s) you want to use 
 
    ![StorjCreateAccessSelectBuckets](/images/SCALE/22.12/StorjCreateAccessSelectBuckets.png "Storj Create Access Select Buckets")
 
-   {{< hint info >}}
+   {{< hint type=note >}}
    If you want to use the SCALE option to [add new buckets](#creating-a-storj-cloud-sync-task) in SCALE, set Storj **Permissions** to **All** and **Buckets** to **All**.
    {{< /hint >}}
 
@@ -157,7 +157,7 @@ After creating your bucket, add S3 access for the new bucket(s) you want to use 
 
    ![StorjCreateAccessDownloadedEncryptionPassphrase](/images/SCALE/22.12/StorjCreateAccessDownloadedEncryptionPassphrase.png "Storj Create Access Encryption Passphrase Downloaded")
 
-   {{< hint danger >}}
+   {{< hint type=warning >}}
    If you lose your passphrase neither Storj or iXsystems can help you recover your stored data!
    {{< /hint >}}
 

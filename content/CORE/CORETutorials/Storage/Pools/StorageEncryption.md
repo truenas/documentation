@@ -13,7 +13,7 @@ tags:
 
 TrueNAS supports different encryption options for critical data.
 
-{{< hint danger>}}
+{{< hint type=warning >}}
 Users are responsible for backing up and securing encryption keys and passphrases!
 Losing the ability to decrypt data is similar to a catastrophic data loss.
 {{< /hint >}}
@@ -77,7 +77,7 @@ The dataset locked/unlocked status is determined from an icon:
 * The dataset locked icon: <i class="material-icons" aria-hidden="true" title="<locked>">lock</i>.
 * A Dataset on an encrypted pool with encryption properties that don't match the root dataset have this icon: ![UnecryptedPoolEncryptionDatasetIcon](/images/CORE/12.0/unecrypted_pool_encrypted_dataset.png "Unencrypted Storage Pool with an Unencrypted Dataset")
 
-{{< hint info>}}
+{{< hint type=note >}}
 NOTE: An unencrypted pool with an encrypted dataset also shows this icon: ![UnecryptedPoolEncryptionDatasetIcon](/images/CORE/12.0/unecrypted_pool_encrypted_dataset.png "Unencrypted Storage Pool with an Unencrypted Dataset")
 {{< /hint >}}
  
@@ -117,7 +117,7 @@ Click the **Continue** button in the dialog window that confirms that the unlock
 ## Encryption Management
 
 There are two ways to manage the encryption credentials: with Key Files or Passphrases:
-{{< hint "danger" >}}
+{{< hint type=warning >}}
 Always back up the key file to a safe and secure location!
 {{< /hint >}}
 {{< expand "Key Files" >}}
@@ -142,7 +142,7 @@ Enter your custom key or click **Generate Key**.
 ![13StoragePoolsEncryptedDatasetOptions](/images/CORE/13.0/storagepoolgeneratekey.png "Editing Encryption Options")
 {{< /expand >}}
 {{< expand "Passphrases" >}}
-{{< hint warning >}}
+{{< hint type=important >}}
 The passphrase is the only means to decrypt the information stored in a dataset using passphrase encryption keys. Be sure to create a memorable passphrase or physically secure the passphrase.
 {{< /hint >}}
 To use a passphrase instead of a keyfile, click the dataset <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> and **Encryption Options**.
@@ -183,7 +183,7 @@ Uncheck properties when replicating so that the destination dataset is not be en
 {{< /expand >}}
 
 
-{{< hint info >}}
+{{< hint type=note >}}
 This does not affect TrueNAS Enterprise installs with [KMIP]({{< relref "/CORE/UIReference/System/KMIP.md" >}}).
 {{< /hint >}}
 
@@ -234,7 +234,7 @@ Start the Replication Wizard by selecting **Tasks** > **Replication Task** > **A
  * Click **START REPLICATION**
 {{< /expand >}}
 {{< expand "File Transfer" >}}
-{{< hint warning >}}
+{{< hint type=important >}}
 This method does not preserve file ACLs.
 {{< /hint >}}
 
@@ -242,7 +242,7 @@ The web interface supports using **Tasks > Rsync Tasks** to transfer files out o
 In the **Shell**, `rsync` and other file transfer mechanisms (`scp`, `cp`, `sftp`, `ftp`, `rdiff-backup`) are available for copying data between pools.
 {{< /expand >}}
 {{< expand "ZFS Send and Receive" >}}
-{{< hint warning >}}
+{{< hint type=important >}}
 These instructions are an example walk-through.
 It is not an exact step-by-step guide for all situations.
 Research ZFS [send](https://openzfs.github.io/openzfs-docs/man/8/zfs-send.8.html)/[receive](https://openzfs.github.io/openzfs-docs/man/8/zfs-receive.8.html) before attempting this.

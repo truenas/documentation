@@ -12,7 +12,7 @@ tags:
 TrueNAS can send, receive, or synchronize data with a cloud storage provider. 
 Cloud sync tasks allow for single-time transfers or recurring transfers on a schedule. They are an effective method to back up data to a remote location.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 Using the cloud means data can go to a third-party commercial vendor not directly affiliated with iXsystems. You should fully understand vendor pricing policies and services before using them for cloud sync tasks.
 
 iXsystems is not responsible for any charges incurred from using third-party vendors with the cloud sync feature.
@@ -43,7 +43,7 @@ Syncing to a Backblaze B2 bucket does not delete files from the bucket, even whe
 Instead, files are tagged with a version number or moved to a hidden state. 
 To automatically delete old or unwanted files from the bucket, adjust the [Backblaze B2 Lifecycle Rules](https://www.backblaze.com/blog/backblaze-b2-lifecycle-rules/).
 
-{{< hint info >}}
+{{< hint type=note >}}
 A directory, deleted in BackBlaze B2 and notated with an asterisk, do not display in the SCALE UI. These folders are essentially empty directories and Backblaze API restricts these so they do not display.
 {{< /hint >}}
 #### Amazon S3 Issues

@@ -86,7 +86,7 @@ Adding a name to the end of the path creates a new dataset in that location.
 
 ### Security and Task Name
 
-{{< hint info >}}
+{{< hint type=note >}}
 Using encryption for SSH transfer security is always recommended.
 {{< /hint >}}
 

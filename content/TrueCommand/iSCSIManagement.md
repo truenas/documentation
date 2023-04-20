@@ -11,12 +11,11 @@ tags:
 
 {{< toc >}}
 
-
-{{< hint danger >}}
+{{< hint type=warning >}}
 Always back up any data intended for storage or sharing!
 {{< /hint >}}
 
-{{< hint info >}}
+{{< hint type=note >}}
 TrueCommand 2.3.2 introduces changes to how iSCSI objects are cached. We no longer cache all objects which fixes timing issues between sync. 
 {{< /hint >}}
 

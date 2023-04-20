@@ -1,10 +1,14 @@
 {{ define "main" }}
-    {{ partial "page-header" . }}
-    <article class="gdoc-markdown">
-        <h1>{{ partial "title" . }}</h1>
-		{{ if (and (not .Params.hide_readingtime) (.Site.Params.ui.readingtime.enable)) }}
-        	{{ partial "reading-time.html" . }}
-    	{{ end }}
-        {{ partial "content" . }}
-    </article>
+  {{ partial "page-header" . }}
+
+
+  <article
+    class="gdoc-markdown gdoc-markdown__align--{{ default "left" (.Page.Params.GeekdocAlign | lower) }}"
+  >
+    <h1>{{ partial "utils/title" . }}</h1>
+	{{ if (and (not .Params.hide_readingtime) (.Site.Params.ui.readingtime.enable)) }}
+       	{{ partial "reading-time.html" . }}
+    {{ end }}
+    {{ partial "utils/content" . }}
+  </article>
 {{ end }}

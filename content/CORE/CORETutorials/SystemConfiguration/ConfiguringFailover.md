@@ -9,7 +9,7 @@ tags:
 
 {{< toc >}}
 
-{{< hint danger >}}
+{{< hint type=warning >}}
 **Warning:**
 To avoid the potential for data loss, [contact iXsystems](https://www.truenas.com/contact-us/) before replacing a controller or upgrading to High Availability.
 {{< /hint >}}
@@ -43,7 +43,7 @@ You can set the host names for both controllers and a virtual host name that rea
 
 Next, go to **Network > Interfaces** and edit the primary interface.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 Editing interfaces is disabled when HA is active.
 To disable HA, go to **System > Failover** and disable failover.
 Edit the interface, then reactivate failover immediately.
@@ -77,7 +77,7 @@ In this situation, the web interface shows an option to force a TrueNAS controll
 
 To have the system wait to failover during a network timeout, replace *0* with a new number of seconds.
 
-{{< hint danger >}}
+{{< hint type=warning >}}
 Do not sync the TrueNAS configuration unless directed by an iXsystems Support Engineer!
 TrueNAS automatically synchronizes the system configuration. The manual sync options are only for dangerous or high-risk troubleshooting situations.
 {{< /hint >}}

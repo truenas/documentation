@@ -200,7 +200,7 @@ The **Alert Settings** screen includes access to the Enterprise HA setting optio
 ## Setting Up Directory Services
 TrueNAS SCALE allows you to configure an Active Directory or LDAP server to handle authentication and authorization services, domain, and other account settings. 
 SCALE allows you to configure either directory server but not both. 
-{{< hint danger >}}
+{{< hint type=warning >}}
 While unlikely, you can change from either directory service but if you want to migrate from LDAP to Active Directory you must disable LDAP in SCALE and then remove the current directory server settings. To change from Active Directory to LDAP use the **Leave Domain** option and disable the service before attempting to configure and enable LDAP.
 Switching from one service to the other is not recommended and can result in configuration issues that could disrupt your system! 
 {{< /hint >}}

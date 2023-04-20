@@ -11,7 +11,7 @@ If you encounter a bug or other issue while using TrueNAS SCALE, you can report 
 
 The web interface provides a form to report issues without logging out of SCALE, and that prompts you to provide the information and attachments we need to assist users. 
 
-{{< hint info >}}
+{{< hint type=note >}}
 New Jira tickets are not marked as **iX Private** so it is possible to search the project first to see if another user already reported the issue. 
 Each Jira ticket sends a link to a private file attachment area to safeguard user personal and private data. If the attached files do not require privacy, attach them to the Jira ticket. All incoming tickets are triaged. If private files are attached to a new ticket, the ticket or files can be made private at that time. 
 {{< /hint >}}

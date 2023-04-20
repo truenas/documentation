@@ -23,7 +23,7 @@ Enter a new size in the **Size for this zvol** field, then click **SAVE**.
 
 ![ExpandingZvolLUNSize](/images/CORE/ExpandingZvolLUNSize.png "Change the Zvol Size")
 
-{{< hint ok >}}
+{{< hint type=tip >}}
 To prevent data loss, the web interface does not allow users to reduce the Zvol size. 
 TrueNAS also does not allow users to increase the Zvol size past 80% of the pool size.
 {{< /hint >}}

@@ -20,7 +20,7 @@ Go to **Tasks > Resilver Priority** to configure the priority to the best time f
 
 Set **Enabled**, then use the drop-down menus to select a **Begin** and **End** time and what days of the week you want the priority to run.
 
-{{< hint info >}} 
+{{< hint type=note >}} 
 A resilver process running during the time frame defined between "Begin Time" and "End Time" will likely work faster.
 We advise you avoid putting the system under any intensive activity or heavy loads (replications, SMB transfers, NFS transfers, Rsync transfers, S.M.A.R.T. tests, pool scrubs, etc) during a resilver process. 
 {{< /hint >}}

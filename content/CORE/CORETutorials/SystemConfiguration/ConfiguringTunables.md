@@ -7,7 +7,7 @@ tags:
 - coreconfiguration
 ---
 
-{{< hint danger >}}
+{{< hint type=warning >}}
 Be careful when adding or editing the default tunables.
 Changing the default tunables can make the system unusable.
 {{< /hint >}}
@@ -20,7 +20,7 @@ Tunables are used to manage TrueNAS [sysctls](https://www.freebsd.org/cgi/man.cg
 * *rc.conf* enables system services and daemons and only takes effect after a reboot.
 * *sysctl* configures kernel parameters while the system is running and generally takes effect immediately.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 Adding a sysctl, loader, or <file>rc.conf</file> option is an advanced feature.
 A sysctl immediately affects the kernel running the TrueNAS system, and a loader can adversely affect the TrueNAS boot process.
 Do not create a tunable on a production system before testing the ramifications of that change.
@@ -55,7 +55,7 @@ For example, if a pool exists on a system with limited RAM, the autotune script 
 Autotuning can introduce system performance issues. You must only use it as a temporary measure until you address the underlying hardware issue.
 Autotune always slows a RAM-starved system as it caps the ARC.
 
-{{< hint danger>}}
+{{< hint type=warning >}}
 We do not recommend TrueNAS Enterprise customers use the autotuning script, as it can override any specific tunings made by iXsystems Support.
 {{< /hint >}}
 

@@ -67,7 +67,7 @@ Now you partition an iSCSI disk.
    **Shell** lists the iSCSI device path in the `sudo fdisk -l` output.
    Use the `fdisk` command defaults when partitioning the disk.
 
-   {{< hint info >}}
+   {{< hint type=note >}}
    Remember to type <kbd>w</kbd> when finished partitioning the disk.
    The `w` command tells `fdisk` to save any changes before quitting.
    {{< /hint >}}

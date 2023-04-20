@@ -10,7 +10,7 @@ tags:
 
 {{< toc >}}
 
-{{< hint info >}}
+{{< hint type=note >}}
 {{< include file="static/includes/General/FeatureSupport.md.part" markdown="true" >}}
 {{< /hint >}}
 
@@ -90,7 +90,7 @@ Click <i class="fa fa-stop" aria-hidden="true" title="Stop"></i>&nbsp; and stop 
 
 ## Removing a Plugin
 
-{{< hint danger >}}
+{{< hint type=warning >}}
 Uninstalling a plugin destroys all datasets or snapshots that are associated with the plugin!
 Back up any important data stored in the plugin jail before deleting it!
 {{< /hint >}}

@@ -169,7 +169,7 @@ Follow the instructions documented in [Console Setup Menu]({{< relref "/content/
 
 You can edit your VM settings after you complete the initial setup. You can add new hard drives to your VM using the **Edit** option found on the VM details screen. Click **Edit** to display the **Editing Settings** screen.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 The **Edit Settings** screen resets the **Memory** setting back to MB so you must re-enter your 8 GB setting before you save and exit.
 {{< /hint >}}
 

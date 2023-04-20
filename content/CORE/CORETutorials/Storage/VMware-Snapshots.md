@@ -16,7 +16,7 @@ To copy TrueNAS snapshots to VMWare, virtual machines must be powered-on.
 The temporary VMware snapshots are then deleted on the VMware side but still exist in the ZFS snapshot and are available as stable restore points.
 These coordinated snapshots go on the **Storage > Snapshots** list.
 
-{{< hint info >}}
+{{< hint type=note >}}
 You need a paid-edition for VMware ESXi to use VMware-Snapshots. 
 If you try to use them with ESXi free edition you see the following error message: **Error: Can't create snapshot, current license or ESXi version prohibits execution of the requested operation.** 
 ESXi free has a locked (read-only) API that prevents using TrueNAS VMware-Snapshots. 

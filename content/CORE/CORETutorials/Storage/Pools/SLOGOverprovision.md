@@ -17,7 +17,7 @@ Over-provisioning an SSD distributes the total number of writes and erases acros
 Seagate provides a thoughtful investigation into over-provisioning SSDs here: 
 https://www.seagate.com/tech-insights/ssd-over-provisioning-benefits-master-ti/.
 
-{{< hint info >}}
+{{< hint type=note >}}
 Some SATA devices are limited to one resize per power cycle.
 Some BIOS can block resize during boot and require a live power cycle.
 {{< /hint >}}
@@ -32,7 +32,7 @@ Enter an over-provision value corresponding to the new size in GB in the **Log (
 When this value is applied, the over-provision value is applied whenever a pool is created with a SLOG device.
 It is impossible to restore an over-provisioned SLOG device back to original capacity without running command `disk_resize` after first destroying the pool it was part of and issuing a full power cycle.
 
-{{< hint info >}}
+{{< hint type=note >}}
 Only one over-provision/under-provision operation occurs per power cycle.
 {{< /hint >}}
 

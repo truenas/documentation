@@ -124,7 +124,7 @@ Choose the protocol and enter port numbers for both the container and node. You 
 
 ## Storage
 The **Storage** settings specify the host path, memory-backed, and storage volumes. 
-{{< hint ok >}}
+{{< hint type=tip >}}
 Exiting the wizard closes it without saving settings, so create the pool, dataset, zvol, or directory for the container to use before you begin configuring an app.
 {{< /hint >}}
 {{< expand "Click Here for More Information" "v" >}}

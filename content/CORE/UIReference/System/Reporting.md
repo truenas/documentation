@@ -17,7 +17,7 @@ Configure system reporting on the **System > Reporting** screen.
 
 {{< include file="static/includes/Reference/SystemReportingFields.md.part" markdown="true" >}}
 
-{{< hint warning >}}
+{{< hint type=important >}}
 Report history is cleared after changing and saving CPU reporting, graph age, or graph points.
 {{< /hint >}}
 

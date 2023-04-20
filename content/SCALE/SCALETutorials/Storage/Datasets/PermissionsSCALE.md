@@ -15,7 +15,7 @@ tags:
 TrueNAS SCALE provides basic permissions settings and an Access Control List (ACL) editor to define dataset permissions.
 ACL permissions control the actions users can perform on dataset contents.
 
-{{< hint info >}}
+{{< hint type=note >}}
 An Access Control List (ACL) is a set of account permissions associated with a dataset and applied to directories or files within that dataset.
 TrueNAS uses ACLs to manage user interactions with shared datasets and creates them when users add a dataset to a pool.
 {{< /hint >}}
@@ -32,7 +32,7 @@ Basic ACL permissions are viewable and configurable in the **Datasets** screen. 
 
 ## Editing ACL Permissions
 
-{{< hint ok >}}
+{{< hint type=tip >}}
 You can view permissions for any dataset, but the edit option only displays on the **Permissions** widget for non-root datasets.
 
 Configuring advanced permissions overrides basic permissions configured on the add and edit dataset screens.
@@ -48,7 +48,7 @@ Enter or select the user from the dropdown list, set the read/write/execute perm
 The options include users created manually or imported from a directory service. Enable **Apply User** to confirm changes. 
 To prevent errors, TrueNAS only submits changes when selected.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 A common misconfiguration is removing the **Execute** permission from a dataset that is a parent to other child datasets.
 Removing this permission results in lost access to the path.
 {{< /hint >}}
@@ -62,7 +62,7 @@ If you want to apply these settings to all child datasets, select **Apply permis
 Click **Save** if you do not want to use an ACL preset.
 
 ### Configuring an ACL Preset (NFSv4 ACL)
-{{< hint warning >}}
+{{< hint type=important >}}
 Warning: Changing the ACL type affects how TrueNAS writes and reads on-disk ZFS ACL.
 
 When the ACL type changes from POSIX to NFSv4, internal ZFS ACLs do not migrate by default, and access ACLs encoded in posix1e extended attributes convert to native ZFS ACLs. 

@@ -10,7 +10,7 @@ tags:
 
 The wipe function deletes obsolete data off an unused disk.
 
-{{< hint danger >}}
+{{< hint type=warning >}}
 This is a destructive action and results in permanent data loss!
 Back up any critical data off the disk to be wiped.
 {{< /hint >}}
@@ -29,7 +29,7 @@ The disk **Name** (da1, da2, ada4) helps confirm that you have selected the righ
 
 The **Method** dropdown list shows the different available wipe options available. Select **Quick** to erase only the partitioning information on a disk, making it easy to reuse but without clearing other old data. Quick wipes take only a few seconds. Select **Full with zeros** to overwrite the entire disk with zeros. This can take several hours to complete. Select **Full with random** to overwrite the entire disk with random binary code and takes even longer than **Full with zeros** to complete.
 
-{{< hint danger >}}
+{{< hint type=warning >}}
 Ensure all data is backed up and the disk is no longer in use.
 Triple check that the correct disk is selected for the wipe.
 Recovering data from a wiped disk is usually impossible.

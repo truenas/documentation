@@ -21,7 +21,7 @@ Two-factor authentication (2FA) is an extra layer of security that prevents some
 
 ## Setting Up Two-Factor Authentication.
 
-{{< hint danger >}}
+{{< hint type=warning >}}
 Set up a second 2FA device as a backup before proceeding.
 {{< /hint >}}
 

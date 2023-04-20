@@ -14,7 +14,7 @@ The SCALE **Apps** catalogue now includes [Collabora](https://nextcloud.com/coll
 
 With Collabora, you can host your online office suite at home.
 
-{{< hint info >}}
+{{< hint type=note >}}
 To integrate Collabora correctly, you must have a [Nextcloud account with Collabora added](https://nextcloud.com/collaboraonline/).
 {{< /hint >}}
 

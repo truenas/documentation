@@ -19,7 +19,7 @@ The **Manage** <span class="iconify" data-icon="ic:round-launch"></span> button 
 
 Click in the IPMI channel to display the **IPMI** configuration screen.
 
-{{< hint info >}}
+{{< hint type=note >}}
 IPMI requires compatible hardware! Refer to your hardware documentation to determine if the TrueNAS web interface has IPMI options.
 {{< /hint >}}
 

@@ -60,7 +60,7 @@ Installing a basic PlexMedia Plugin:
 
  ![PluginsPlexInstallProgress](/images/CORE/12.0/PluginsPlexInstallProgress.png "Plex: Installation Progress")
 
-  {{< hint info >}}
+  {{< hint type=note >}}
   When available, *Plugin Installation Notes* display when the install completes.
   {{< /hint >}}
 

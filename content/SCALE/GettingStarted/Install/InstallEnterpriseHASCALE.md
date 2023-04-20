@@ -43,7 +43,7 @@ Have this information handy to complete this procedure:
 * The IPMI access addresses for each controller and the administration credentials for IPMI access to these addresses
 * SCALE license file provided by iXsystems.
 * SCALE Storage Controller 1 (A) and 2 (B) serial numbers (refer to contracts or documentation provided with the system, or contact iXsystems Support and provide your contract number)
-{{< hint info >}}
+{{< hint type=note >}}
 HA system controllers each have serial numbers, the lower number assigned is for controller 1 (e.g. of two controller serial numbers assigned *A1-12345* and *A1-12346*, the *A1-12345* is for controller 1 and *A1-12346* is for controller 2).
 {{< /hint >}}
 When restoring after a clean install, also have ready:
@@ -51,7 +51,7 @@ When restoring after a clean install, also have ready:
 * System configuration file from the previous TrueNAS install.
 
 ### Overview of the Installation Procedure
-{{< hint warning >}}
+{{< hint type=important >}}
 {{< include file="/content/_includes/HAControllerInstallBestPracticeSCALE.md" type="page" >}}
 {{< /hint >}}
 
@@ -144,7 +144,7 @@ Use this process to install the <file>iso</file> file on both controller 1 and c
    c. Select the **UEFI: ATEN Virtual CDROM** device from the boot list. The bootstrap loader begins. When it ends the SCALE installer opens.
 {{< /expand >}}
 ### Using the SCALE Installer
-{{< hint info >}}
+{{< hint type=note >}}
 If you are doing a clean install from the SCALE <file>.iso</file> file to recover from an issue that requires you to re-install SCALE from the <file>.iso</file>, have your network configuration information ready to use for controller 1 after the installation completes. Do not configure network settings on controller 2.
 Also have your SCALE system configuration file and data backups handy so you can recover your system settings and import your data into the recovered SCALE clean-install system.
 {{< /hint >}}
@@ -162,7 +162,7 @@ SCALE is now installed on controller 1 and repeated for controller 2 starting wi
 ### Configuring the Network with Console Setup Menu
 After installing the both controller 1 and 2 <file>.iso</file> file and finishing the TrueNAS SCALE Installer process, if the TrueNAS SCALE server is connected to the network where DHCP is not enabled, use the Console setup menu to assign controller 1 main network interface the static IP address to allow access to the SCALE UI. 
 TrueNAS SCALE uses DHCP to assign an IP address to the primary network interface to allow access to the SCALE UI.
-{{< hint warning >}}
+{{< hint type=important >}}
 Only users with experience configuring network settings and using the Console setup menu should use it to configure all network settings. All other users should only use the Console setup menu to configure a static IP address for the primary network interface for controller 1 to allow access to the SCALE UI.
 The SCALE UI has safeguards in place to prevent network connectivity issues that could require a clean install of SCALE to restore access.
 {{< /hint >}}
@@ -175,7 +175,7 @@ To use the Console setup menu to change the primary network interface IP address
 4. Type <kbd>q</kbd> to return to the main Console setup menu.
 
 ### Configuring Settings in the SCALE UI
-{{< hint info >}}
+{{< hint type=note >}}
 This section only applies to controller 1. Do not configure settings on controller 2.
 {{< /hint >}}
 SCALE UI Enterprise customers see the End User License Agreement (EULA) screen the first time they log in.
@@ -188,7 +188,7 @@ The **Reload** dialog opens. Click **Reload Now**. Controller 1 restarts, and di
 The controller 1 and 2 (or a and b) serial numbers display on the **Support** widget on the **System Settings > General** screen.
 
 #### Configure Network Settings 
-{{< hint warning >}}
+{{< hint type=important >}}
 You must disable the failover service before you can configure network settings!
 
 Only configure network settings on controller 1! When ready to sync to peer, SCALE applies settings to controller 2 at that time.

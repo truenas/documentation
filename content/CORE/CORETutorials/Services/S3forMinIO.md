@@ -9,7 +9,7 @@ tags:
 
 MinIO connections and service is configured using the **Services** [S3 screen]({{< relref "/CORE/UIReference/Services/S3Screen.md" >}}).
 
-{{< hint warning >}}
+{{< hint type=important >}}
 MinIO deprecated Access key and Secret key. MinIO now utilizes MINIO_ROOT USER and MINIO_ROOT_PASSWORD arguments and their values. For the ROOT_USER value, use a name up to 20 characters. For the ROOT_PASSWORD, use a string of 8 to 40 randomized characters. MinIO recommends using a long password string of unique random characters.
 {{< /hint >}}
 
@@ -26,7 +26,7 @@ Different methods are used for connecting to and using MinIO:
 Linux or macOS users must have the [s3cmd](https://s3tools.org/s3cmd) service installed before beginning this setup.
 On Windows, users can also refer to [S3Express](https://www.s3express.com/) for a similar command line experience.
 
-{{< hint ok >}}
+{{< hint type=tip >}}
 The `s3cmd --configure` command is available for Ubuntu or other Linux distributions. Using this command you can configure important settings step by step.
 {{< /hint >}}
 

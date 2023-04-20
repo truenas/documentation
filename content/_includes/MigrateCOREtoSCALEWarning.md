@@ -1,7 +1,7 @@
 ---
 ---
 
-{{< hint danger >}}
+{{< hint type=warning >}}
 Migrating TrueNAS from CORE to SCALE is a one-way operation.
 Attempting to activate or roll back to a CORE boot environment can break the system.
 {{< /hint >}}

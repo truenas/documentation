@@ -24,7 +24,7 @@ Do not select this option if you want a pure SMB share with no AFP relation.
 
 ![AFPCompatibilityCheckbox](/images/SCALE/AFPCompatibilityCheckbox.png "AFP Compatibility Checkbox")
 
-{{< hint warning >}}
+{{< hint type=important >}}
 Netatalk service is no longer in SCALE as of version 21.06. 
 AFP shares automatically migrate to SMB shares with the **Legacy AFP Compatibility** option enabled. 
 Do not clear the **Legacy AFP Compatibility** checkbox, as it impacts how data is written to and read from shares. 

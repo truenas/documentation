@@ -66,7 +66,7 @@ The settings on the **Advanced Options** screen include the **[Basic Options](#l
 | **Auxiliary Parameters** | (Optional - only experienced users) Specify additional options for [nslcd.conf](https://arthurdejong.org/nss-pam-ldapd/nslcd.conf.5). |
 | **Schema** | Select the schema to use with Samba Schema. |
 
-{{< hint warning >}} 
+{{< hint type=important >}} 
 **DEPRECATED:** Samba Schema support is deprecated in Samba 4.13. We will remove this feature after Samba 4.14. Users should begin upgrading legacy Samba domains to Samba AD domains. 
 {{< /hint >}}
 {{< /expand >}}

@@ -23,7 +23,7 @@ The **Datasets** screen displays **No Datasets** with a **Create Pool** button i
 
 After creating a dataset, the left side of the screen displays a tree table that lists parent or child datasets (or zvols). The **Details for *datasetname*** area on the right side of the screen displays a set of dataset widgets.
 
-{{< hint info >}}
+{{< hint type=note >}}
 Large petabyte systems might report storage numbers inaccurately. Storage configurations with more than 9,007,199,254,740,992 bytes will round the last 4 digits.
 
 For example, a system with 18,446,744,073,709,551,615 bytes reports the number as 18,446,744,073,709,552,000 bytes.

@@ -18,7 +18,7 @@ The **ACL Type** setting, found in the **Advanced Options** of both the **Add Da
 
 If **ACL Type** is set to **NSFv4**, you can select the **ACL Mode** you want to use. 
 
-{{< hint ok >}}
+{{< hint type=tip >}}
 NFSv4 is an access control list (ACL) type not related to the share type you might use (SMB or NFS).
 {{< /hint >}}
 
@@ -46,7 +46,7 @@ The **Owner** section controls which TrueNAS user and group has full control of 
 ### Access Settings
 The **Access** section lets users define the basic **Read**, **Write**, and **Execute** permissions for the **User**, **Group**, and **Other** accounts that might access this dataset.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 A common misconfiguration is removing the **Execute** permission from a dataset that is a parent to other child datasets.
 Removing this permission results in lost access to the path.
 {{< /hint >}}
@@ -59,7 +59,7 @@ To access advanced POSIX ACL settings, click **Add ACL** on the **Unix Permissio
 
 ## Select A Preset ACL
 
-{{< hint warning >}}
+{{< hint type=important >}}
 Selecting a preset replaces the ACL currently displayed on the Edit ACL screen and deletes any unsaved changes.
 {{< /hint >}}
 

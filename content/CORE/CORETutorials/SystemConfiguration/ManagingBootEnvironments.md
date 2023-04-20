@@ -42,7 +42,7 @@ Reboot the system.
 
 When the welcome screen appears, press the key that corresponds with the option **Boot Environments** (usually <kbd>7</kbd>).
 
-{{< hint info >}}
+{{< hint type=note >}}
 The *Boot Environments* options does not appear when no additional boot environments are present.
 {{< /hint >}}
 
@@ -67,7 +67,7 @@ Click Add to make a new boot environment from the active environment.
 
 **Name** the new boot environment and click **SUBMIT**.
 
-{{< hint info >}}
+{{< hint type=note >}}
 You may only use alphanumeric characters, dashes (-), and underscores (_) in the **Name**.
 {{< /hint >}}
 

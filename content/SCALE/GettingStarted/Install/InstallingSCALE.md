@@ -91,7 +91,7 @@ Different checksum values indicate a corrupted installer file that you should no
 ## Installing SCALE
 You can install SCALE on either physical hardware or a virtual machine.
  
-{{< hint warning >}}
+{{< hint type=important >}}
 Prior to starting the update process, confirm that the system storage has enough space to handle the update. The update stops if there is insufficient space for it to finish.
 {{< /hint >}}
 
@@ -113,7 +113,7 @@ There are many ways to do this in Linux, but a quick option is to enter the comm
 This shows in the **NAME** column of the `lsblk` output.
 
 Next, use command `dd` to write the installer to the USB stick.
-{{< hint danger >}}
+{{< hint type=warning >}}
 Be very careful when using dd, as choosing the wrong *of=* device path can result in irretrievable data loss!
 {{< /hint >}}
 Enter command `dd status=progress if=path/to/.iso of=path/to/USB` in the CLI.
@@ -144,7 +144,7 @@ If the USB stick is not shown as a boot option, try a different USB slot.
 Slots available for boot differs by hardware.
 
 #### Using the TrueNAS Installer Console Setup 
-{{< hint warning >}}
+{{< hint type=important >}}
 If you are doing a clean install from the SCALE <kbd>.iso</kbd> file as part of migrating from a different version of TrueNAS CORE or SCALE, or to recover from a serious issue that requires you to re-install SCALE from the <kbd>.iso</kbd>, have your network configuration information ready to use after the installation completes. 
 Also have your SCALE system configuration file and data backups handy so you can recover your system settings and import your data into the recovered SCALE clean-install system.
 {{< /hint >}}

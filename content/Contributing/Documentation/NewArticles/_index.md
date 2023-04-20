@@ -67,7 +67,7 @@ GitHub shows all the files to upload.
 
 ## Opening a Pull Request
 
-{{< hint info >}}
+{{< hint type=note >}}
 [Forking the repository]({{< relref "ContentUpdate.md#forking-the-repo" >}}) might be needed as part of opening a Pull Request.
 {{< /hint >}}
 

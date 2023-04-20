@@ -45,7 +45,7 @@ We use three different terms to describe train types:
 
 **SDK**: Software Developer Kit train has additional tools for testing and debugging TrueNAS.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 The UI shows a warning when the selected train does not suit production use.
 Before using a non-production train, be prepared to experience bugs or problems.
 Testers are encouraged to submit bug reports at https://jira.ixsystems.com.
@@ -62,7 +62,7 @@ The automatic check and download of updates are disabled by unsetting **Check fo
 Click <span class="iconify" data-icon="ci:refresh"></span> (Refresh) to perform another check for updates.
 To change the train, use the drop-down menu to make a different selection.
 
-{{< hint info >}}
+{{< hint type=note >}}
 The train selector does not allow downgrades.
 For example, you cannot select the STABLE train while booted into a Nightly boot environment or a 9.10 train while booted into an 11 boot environment.
 To go back to an earlier version after testing or running a more recent version, reboot and select a boot environment for that earlier version.
@@ -77,7 +77,7 @@ A dialog to save the system configuration file appears before installing updates
 
 ![Save Config](/images/CORE/12.0/SaveConfig.png "Save Config")
 
-{{< hint warning >}}
+{{< hint type=important >}}
 Keep the system configuration file secure after saving it.
 The security information in the configuration file can grant unauthorized access to your TrueNAS system.
 {{< /hint >}}
@@ -96,7 +96,7 @@ The update can be downloaded for a later manual installation by unsetting **Appl
 **APPLY PENDING UPDATE** displays when an update is downloaded and ready to install.
 Setting **Confirm** and clicking **CONTINUE** updates and reboots the system.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 Each update creates a boot environment.
 If the update process needs more space, it attempts to remove old boot environments.
 TrueNAS does not remove boot environments marked with the *Keep* attribute as shown in **System > Boot**.
@@ -126,7 +126,7 @@ When the download completes, the system reboots with the standard configuration.
 
 You can manually download and apply updates in **System > Update**.
 
-{{< hint info >}}
+{{< hint type=note >}}
 You cannot use manual updates to upgrade from older major versions.
 {{< /hint >}}
 
@@ -150,7 +150,7 @@ Select the manual update file saved to your local system using **Browse**.
 Set **Reboot After Update** to reboot the system after the update installs.
 Click **APPLY UPDATE** to begin the update.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 **Update in Progress**
 
 Starting an update shows a progress dialog.

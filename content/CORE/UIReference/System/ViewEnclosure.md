@@ -7,7 +7,7 @@ tags:
 - corehardware
 ---
 
-{{< hint ok >}}
+{{< hint type=tip >}}
 Only compatible TrueNAS hardware and expansion shelves available from [iXsystems](https://www.ixsystems.com/) allow seeing the **View Enclosure** option.
 To learn more about available iXsystems products, see the [TrueNAS Systems Overview](https://www.truenas.com/systems-overview/) or browse the [Hardware]({{< relref "/Hardware/_index.md" >}}) documentation.
 {{< /hint >}}
@@ -32,7 +32,7 @@ Depending on the level of compatibility of the hardware within your TrueNAS syst
 | SHOW STATUS | Highlights failed disks. |
 | SHOW EXPANDER STATUS| Shows SAS expander statuses. | 
 
-{{< hint info >}}
+{{< hint type=note >}}
 The TrueNAS Mini Series models do not support drive light identification. 
 {{< /hint >}}
 

@@ -26,7 +26,7 @@ Go to **System > General** and click **SAVE CONFIG**, then enter your password.
 
 ![SaveUploadResetConfig](/images/CORE/12.0/SaveUploadResetConfig.png "Save, Upload, Reset Config")
 
-{{< hint warning >}}
+{{< hint type=important >}}
 The configuration file contains sensitive data about the TrueNAS system.
 Ensure that it is stored somewhere safe.
 {{< /hint >}}
@@ -37,7 +37,7 @@ TrueNAS automatically backs up the configuration database to the [system dataset
 However, this backup does not occur if the system is off at that time.
 If the system dataset is on the boot pool and it becomes unavailable, the backup also loses availability.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 You must backup SSH keys separately. TrueNAS does not store them in the configuration database.
 System host keys are files with names beginning with ssh_host_ in <file>/usr/local/etc/ssh/</file>.
 The root user keys are stored in <file>/root/.ssh</file>.
@@ -64,7 +64,7 @@ There are two options after clicking **SAVE CONFIG**:
 
 To reset the system configuration to factory settings, go to **System > General** and click **RESET CONFIG**.
 
-{{< hint danger >}}
+{{< hint type=warning >}}
 **Save the system's current configuration before resetting.**
  
 If you do not save the system config before resetting it, you may lose any data that you did not back up. You cannot revert to the previous settings.

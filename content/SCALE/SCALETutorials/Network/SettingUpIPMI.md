@@ -9,7 +9,7 @@ tags:
 
 {{< toc >}}
 
-{{< hint info >}}
+{{< hint type=note >}}
 IPMI requires compatible hardware! Refer to your hardware documentation to determine if the TrueNAS web interface has IPMI options.
 {{< /hint >}}
 
@@ -17,7 +17,7 @@ Many [TrueNAS Storage Arrays]({{< relref "/Hardware/_index.md" >}}) have a built
 
 Intelligent Platform Management Interface (IPMI) allows users to check the log, access the BIOS setup, and boot the system without physical access. IPMI also enables users to remotely access the system to assist with configuration or troubleshooting issues.
 
-{{< hint info >}}
+{{< hint type=note >}}
 Some IPMI implementations require updates to work with newer versions of Java. See [here](https://forums.freenas.org/index.php?threads/psa-java-8-update-131-breaks-asrocks-ipmi-virtual-console.53911/) for more information.
 {{< /hint >}}
 

@@ -47,7 +47,7 @@ TrueNAS administrators should use NFSv4 ACLs to cleanly migrate Windows-style AC
 
 Since POSIX ACLs are a Linux-specific ZFS feature, administrators should use NFSv4 to maintain compatibility with TrueNAS Core, FreeBSD, or other non-Linux ZFS implementations
 
-{{< hint danger >}}
+{{< hint type=warning >}}
 Administrators *must* use NFSv4 if they intend to replicate data from TrueNAS SCALE to a TrueNAS CORE disaster recovery target.
 {{< /hint >}}
 
@@ -63,7 +63,7 @@ Users should use NFSv4 ACLs when they intend to have nested groups within an SMB
 
 TrueNAS administrators should use POSIX ACLs when their organization's data backup target does not support native NFSv4 ACLs. Since the Linux platform used POSIX for a long time, many backup products that access the server outside the SMB protocol can't understand or preserve native NFSv4 ACLs.
 
-{{< hint info >}}
+{{< hint type=note >}}
 **Note:** When deciding how to configure ACLs, administrators should verify that they can correctly restore permissions from backups.
 {{< /hint >}}
 

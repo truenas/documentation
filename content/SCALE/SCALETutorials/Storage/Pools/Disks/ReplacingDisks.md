@@ -17,7 +17,7 @@ We always recommend creating non-stripe storage pools that have disk redundancy.
 To prevent further redundancy loss or eventual data loss, always replace a failed disk as soon as possible!
 TrueNAS integrates new disks into a pool to restore it to full functionality.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 TrueNAS requires you to replace a disk with another disk of the same or greater capacity as a failed disk.
 You must install the disk install in the TrueNAS system and it should not be part of an existing storage pool.
 TrueNAS wipes the data on the replacement disk as part of the process.
@@ -78,7 +78,7 @@ Off-lining a disk removes the device from the pool and can prevent swap issues.
 
 {{< expand "Can I use a disk that is failing but still active?" "v" >}}
 There are situations where  you can leave a disk that has not completely failed online to provide additional redundancy during the replacement procedure.
-{{< hint warning >}}
+{{< hint type=important >}}
 We do not recommend leaving failed disks online unless you know the exact condition of the failing disk.
 {{< /hint >}}
 Attempting to replace a heavily degraded disk without off-lining it significantly slows down the replacement process.
