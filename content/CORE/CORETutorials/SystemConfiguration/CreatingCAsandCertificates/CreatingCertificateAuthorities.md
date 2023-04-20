@@ -32,10 +32,10 @@ To create a CA:
       Select **Intermediate CA** to create an intermediate certificate. This displays the **Signing Certificate Authority** field in **Certificate Options**.
 
 2. Select an option from the **Profiles** dropdown list. 
-   A profile for the CA auto-fills options like **Key Type**, **Key Length**, **Digest Algorithm**. Otherwise, you must set options manually.
+   A profile for the CA auto-fills options like **Key Type**, **Key Length**, and **Digest Algorithm**. Otherwise, you must set options manually.
 
    To add an OpenVPN Root CA, select **OpenVPN Root CA**. 
-   The configuration form populates with default settings, enables **Basic Constraints**, **Authority Key Identifier**, **Extended Key Usage**, and **Key Usage**, and set the options for each extension.
+   The configuration form populates with default settings, enables **Basic Constraints**, **Authority Key Identifier**, **Extended Key Usage**, and **Key Usage**, and sets the options for each extension.
 
    ![AddInternalCAOpenVPNRootProfile](/images/CORE/13.0/AddInternalCAOpenVPNRootProfile.png "Add OpenVPN Root CA Profile")
    
@@ -83,7 +83,7 @@ To create a CA:
    c. Select **Enable**, then enter the extensions for **Extended Key Usage**. Select one or more usages for the public key from the **Usages** dropdown list.
       TrueNAS uses Extended Key Usage for end-entity certificates.
     
-     Enable **Critical Extension** if you want to identify this extension as critical for the certificate. 
+     Enable **Critical Extension** to identify this extension as critical for the certificate. 
      Do not enable **Critical Extension** if **Usages** contains **ANY_EXTENDED_KEY_USAGE**.
 
      Using **Extended Key Usage** and **Key Usage** extensions requires that the certificate purpose is consistent with both extensions. See [RFC 3280, section 4.2.1.13](https://www.ietf.org/rfc/rfc3280.txt) for more details.
@@ -113,7 +113,7 @@ Use this procedure to import a CA.
 
 Before deleting a CA, verify it is not used by another service such as S3, FTP, etc. You cannot delete a CA when in use by other services.
 
-Also, before you can delete a CA you need to delete certificates issued by the CA or those relying on the CA before you can delete it. If you receive an error that mentions foreign keys reference, check the certificates your system for any using the CA you want to delete. 
+Also, before you can delete a CA, you need to delete certificates issued by the CA or those relying on the CA before you can delete it. If you receive an error that mentions foreign keys reference, ensure the certificates on your system do not use the CA you want to delete. 
 
 
 {{< taglist tag="corecertificates" limit="10" >}}
