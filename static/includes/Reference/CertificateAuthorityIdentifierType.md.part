@@ -28,7 +28,7 @@ Certificate options change based on the option selected in **Type**.
 |---------|-------------|
 | **Enabled** | Select to activate this certificate extension. |
 | **Path Length** | Enter the number of non-self-issued intermediate certificates that can follow this certificate in a valid certification path. Entering **0** allows a single additional certificate to follow in the certificate path. Cannot be less than 0. |
-| **Basic Constraints Config** | Select the basic constraints extension that identify whether the subject of the certificate is a CA and the maximum depth of valid certification paths that include this certificate. See [RFC 3280, section 4.2.1.10](https://www.ietf.org/rfc/rfc3280.txt) for more information. |
+| **Basic Constraints Config** | Select the basic constraints extension that identifies whether the subject of the certificate is a CA and the maximum depth of valid certification paths that include this certificate. See [RFC 3280, section 4.2.1.10](https://www.ietf.org/rfc/rfc3280.txt) for more information. |
 
 ### Authority Key Identifier
 
