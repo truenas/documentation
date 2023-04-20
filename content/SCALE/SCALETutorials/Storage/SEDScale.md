@@ -19,7 +19,7 @@ tags:
 * TCG Pyrite [Version 1](https://trustedcomputinggroup.org/wp-content/uploads/TCG_Storage-Pyrite_SSC_v1.00_r1.00.pdf) and 
   [Version 2](https://trustedcomputinggroup.org/wp-content/uploads/TCG_Storage-Pyrite_SSC_v2.00_r1.00_PUB.pdf) are similar to Opalite, but with hardware encryption removed
   Pyrite provides a logical equivalent of the legacy ATA security for non-ATA devices. Only the drive firmware protects the device.
-  {{< hint danger >}}
+  {{< hint type=warning >}}
   Pyrite Version 1 SEDs do not have PSID support and can become unusable if the password is lost.
   {{< /hint >}}
 * [TCG Enterprise](https://trustedcomputinggroup.org/wp-content/uploads/TCG_Storage-SSC_Enterprise-v1.01_r1.00.pdf) designed for systems with many data disks
@@ -38,7 +38,7 @@ By default, SEDs are not locked until the administrator takes ownership of them.
 
 A password-protected SED protects the data stored on the device when the device is physically removed from the system. This allows secure disposal of the device without having to first wipe the contents. Repurposing a SED on another system requires the SED password.
 
-{{< hint info >}}
+{{< hint type=note >}}
 For TrueNAS High Availability (HA) systems, SED drives only unlock on the active controller!
 {{< /hint >}}
 ## Deploying SEDs
@@ -74,7 +74,7 @@ TrueNAS supports setting a global password for all detected SEDs or setting indi
 ### Setting a Global Password for SEDs
 
 Go to **System Settings > Advanced > Self-Encrypting Drive** and click **Configure**. A warning displays stating **Changing Advanced settings can be dangerous when done incorrectly. Please use caution before saving.** Click **Close** to display the settings form. Enter the password in **SED Password** and **Confirm SED Password** and click **Save**. 
-{{< hint "danger" >}}
+{{< hint type=warning >}}
 Record this password and store it in a safe place!
 {{< /hint >}}
 Now configure the SEDs with this password. Go to the **Shell** and enter command `sedhelper setup <password>`, where `<password>` is the global password entered in **System > Advanced > SED Password**.
@@ -98,7 +98,7 @@ You must configure the SED to use the new password. Go to the **Shell** and ente
 
 Repeat this process for each SED and any SEDs added to the system in the future.
 
-{{< hint danger >}}
+{{< hint type=warning >}}
 Remember SED passwords! If you lose the SED password, you cannot unlock SEDs or access their data.
 After configuring or modifying SED passwords, always record and store them in a secure place!
 {{< /hint >}}
@@ -131,7 +131,7 @@ This section contains command line instructions to manage SED passwords and data
 Most SEDs are TCG-E (Enterprise) or TCG-Opal ([Opal v2.0](https://trustedcomputinggroup.org/wp-content/uploads/TCG_Storage-Opal_SSC_v2.01_rev1.00.pdf)). 
 Commands are different for the different drive types, so the first step is to identify the type in use.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 These commands can be destructive to data and passwords. Keep backups and use the commands with caution.
 {{< /hint >}}
 

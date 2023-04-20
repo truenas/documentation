@@ -11,7 +11,7 @@ tags:
 
 {{< toc >}}
 
-{{< hint info >}}
+{{< hint type=note >}}
 This feature is only available in the open-source supported TrueNAS CORE.
 {{< /hint >}}
 
@@ -28,7 +28,7 @@ Go to **System > ACME DNS** and click **ADD**.
 
 Name the authenticator, choose a DNS provider, and configure any required **Authenticator Attributes**:
 
-{{< hint info >}}
+{{< hint type=note >}}
 The Route 53 Amazon DNS web service requires entering an Amazon account **Access ID Key** and **Secret Access Key**.
 See the [AWS documentation](https://aws.amazon.com/premiumsupport/knowledge-center/create-access-key/) for more details about generating these keys.
 {{< /hint >}}

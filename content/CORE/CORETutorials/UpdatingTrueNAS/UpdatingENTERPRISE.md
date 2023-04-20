@@ -33,7 +33,7 @@ If a space warning displays, go to **System > Boot** and remove any unneeded boo
 
 Operating system updates only modify the OS devices and do not affect end-user data on storage drives.
 
-{{< hint info >}}
+{{< hint type=note >}}
 An update could involve upgrading the version of ZFS installed on the storage drives.
 When a ZFS version upgrade is available, an <i class="material-icons" aria-hidden="true" title="Alert">notifications</i> **Alert** appears in the web interface.
 We do not recommend upgrading the ZFS version on storage drives until you verify that you do not need to roll back to previous operating system versions or swap the storage drives with another system with an earlier ZFS version.

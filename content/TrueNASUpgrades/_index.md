@@ -36,7 +36,7 @@ See [CORE Updates]({{< relref "UpdatingCORE.md" >}}) for more information about 
 
 ## Migrating from CORE to SCALE
 
-{{< hint danger >}}
+{{< hint type=warning >}}
 SCALE is a new and maturing software.
 CORE systems with High Availability enabled (HA) can not be upgraded to SCALE with HA.
 It is not suitable for TrueNAS Enterprise customers and CORE users should always exercise caution and back up their data and system configuration before starting an upgrade.
@@ -45,7 +45,7 @@ Migrating from CORE to SCALE is not recommended when custom modifications have b
 If any such modifications are present in CORE, these must be reverted before attempting a migration to SCALE.
 {{< /hint >}}
 
-{{< hint warning >}}
+{{< hint type=important >}}
 Systems on 12.0x or lower should update to the latest CORE 13.0 release (e.g 13.0-U2) prior to migrating to SCALE.
 {{< /hint >}}
 

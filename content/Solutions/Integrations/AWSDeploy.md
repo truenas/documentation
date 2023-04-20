@@ -191,6 +191,6 @@ When using this AMI, login with the default credentials:
 Username: `root`
 Password: `abcd1234`
 
-{{< hint warning >}}
+{{< hint type=important >}}
 To secure the system, change the password after the initial login.
 {{< /hint >}}

@@ -54,7 +54,7 @@ To clear the suggestion, click **RESET LAYOUT**.
 To manually configure the pool, add vdevs according to your use case.
 Select the **Disk** checkboxes and click the <i class="fa fa-arrow-right" aria-hidden="true" title="Right Arrow"></i>&nbsp; to move the disks into the **Data VDevs** list.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 Warning: USB-connected disks might report their serial numbers inaccurately, making them indistinguishable from each other.
 {{< /hint >}}
 
@@ -74,7 +74,7 @@ When more disks are available and equal in size, the **REPEAT** button creates a
 ![StoragePoolsAddCreateVdevRepeat](/images/CORE/12.0/StoragePoolsAddCreateVdevRepeat.png "Duplicating a Data VDev")
 
 When even more same-size disks are available, you can create multiple copies of the original vdev.
-{{< hint warning >}}
+{{< hint type=important >}}
 Don't have multiple data vdevs with different numbers of disks in each vdev.
 This complicates and limits the pool capabilities.
 {{< /hint >}}
@@ -121,7 +121,7 @@ For example, *pool1* has a data vdev in a *mirror* layout, so create *pool2* for
 {{< expand "Stripe" >}}
 Each disk is used to store data.
 Requires at least one disk and has no data redundancy.
-{{< hint "danger" >}}
+{{< hint type=warning >}}
 Never use a **Stripe** type vdev to store critical data!
 A single disk failure results in losing all data in the vdev.
 {{< /hint >}}

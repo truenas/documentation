@@ -98,7 +98,7 @@ For the values, use a name of up to 20 characters. For a password, use a string 
 MinIO recommends using a long password string of unique random characters. 
 Refer to [MinIO User Management](https://docs.min.io/minio/baremetal/security/minio-identity-management/user-management.html) for more information.
 
-{{< hint danger >}}
+{{< hint type=warning >}}
 Keep all passwords and credentials secured and backed up.
 {{< /hint >}}
 

@@ -16,7 +16,7 @@ The **Syslog** widget displays the existing system logging settings.
 
 ![AdvancedSystemSettingsSyslogWidget](/images/SCALE/22.02/AdvancedSystemSettingsSyslogWidget.png "SCALE Advanced Settings Syslog Widget") 
 
-{{< hint info >}}
+{{< hint type=note >}}
 Before configuring your syslog server to use TLS as the **Syslog Transport** method, first make sure you add a certificate and certificate authority (CA) to the TrueNAS system. Go to **Credentials > Certificates** and use the **Certificate Authority (CA)** and **Certificates** widgets to verify you have the required certificates or to add them.
 {{< /hint >}}
 

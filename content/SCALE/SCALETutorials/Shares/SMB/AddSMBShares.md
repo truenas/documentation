@@ -27,7 +27,7 @@ The SMB protocol has multiple versions. An SMB client typically negotiates the h
 Industry-wide, SMB1 protocol (sometimes referred to as NT1) usage is [being deprecated]({{< relref "/CORE/CoreSecurityReports/SMB1Advisory.md" >}}) for security reasons.
 However, most SMB clients support SMB 2 or 3 protocols, even when not default.
 
-{{< hint info >}}
+{{< hint type=note >}}
 Legacy SMB clients rely on NetBIOS name resolution to discover SMB servers on a network. 
 TrueNAS disables the NetBIOS Name Server (nmbd) by default. Enable it on the **Network > Global Settings** screen if you require this functionality.
 
@@ -84,7 +84,7 @@ Scroll down to the **smbguest** user and click on the name.
 Click **Edit** to view the **Edit User** screen. The **Auxiliary Group** field displays the **builtin_user** group. 
 {{< /expand >}}
 You can use the group to grant access to all local users on the server or add more groups to fine-tune permissions to large numbers of users.
-{{< hint info >}} 
+{{< hint type=note >}} 
 You cannot access SMB shares using the root user, TrueNAS built-in user accounts, or those without the **smb** flag.
 {{< /hint >}}
 
@@ -97,7 +97,7 @@ If you want LDAP server users to access the SMB share, go to **Credentials > Dir
 If you configured an LDAP server, select the server and click **Edit** to display the **LDAP** configuration screen. 
 If not configured, click **Configure LDAP** to display the **LDAP** configuration screen.
 Click **Advanced Options** and select **Samba Schema (DEPRECATED - see the help text**). 
-{{< hint warning >}}
+{{< hint type=important >}}
 Only enable LDAP authentication for the SMB share if you require it. Your LDAP server must have Samba attributes.
 Support for **Samba Schema** is [officially deprecated in Samba 4.13](https://www.samba.org/samba/history/samba-4.13.0.html). Samba Schema is no longer in Samba after 4.14.
 Users should begin upgrading legacy Samba domains to Samba AD domains.
@@ -128,14 +128,14 @@ To change or add permissions for the **builtin_users** group, go to **Datasets**
 
    d. Click **Save Access Control List** to add the ACE item or save changes.
 
-{{< hint info >}}
+{{< hint type=note >}}
 If you want to allow users to move through directories within an SMB share without having read or write privileges, you must use the **Traverse** permission. Use **Traverse** if you intend to have nested groups within an SMB share with different access levels.
 {{< /hint >}}
 
 See [Permissions]({{< relref "PermissionsScale.md" >}}) for more information on editing dataset permissions.
 {{< /expand >}}
 
-{{< hint info >}} 
+{{< hint type=note >}} 
 You cannot access SMB shares with the root user. Always change SMB dataset ownership to the intended SMB user. 
 {{< /hint >}}
 

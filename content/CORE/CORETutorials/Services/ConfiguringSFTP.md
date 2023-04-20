@@ -20,7 +20,7 @@ Go to **Services**, find the **SSH** entry, and click the <i class="material-ico
 
 Select **Allow Password Authentication**.  
 
-{{< hint warning >}} 
+{{< hint type=important >}} 
 Evaluate **Log in as Root with Password** for your security environment: 
 SSH with root is a security vulnerability. It allows more than SFTP transfer access. SSH with root also allows full remote control over the NAS with a terminal.
 {{< /hint >}}
@@ -38,7 +38,7 @@ Open FileZilla or another FTP client, or command line.
 This example uses FileZilla.
 Using FileZilla, enter `SFTP://TrueNAS IP`, `username`, `password`, and port `22` to connect. Where `TrueNAS IP` is the IP address for your system, and `username` and `password` are those you use to connect to the FTP client. Or enter `SFTP://'TrueNAS IP'`, `'username'`, `'password'`, and port `22` to connect.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 Chroot is not 100% secure, but SFTP does not have chroot locking. 
 The lack of chroot allows users to move up to the root directory. They can view internal system information. If this level of access is a concern, FTP with TLS may be the more secure choice.
 {{< /hint >}}

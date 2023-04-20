@@ -10,7 +10,7 @@ tags:
 
 {{< toc >}}
 
-{{< hint info >}}
+{{< hint type=note >}}
 Fibre Channel is a TrueNAS Enterprise feature. Only TrueNAS systems licensed for Fibre Channel have the **Fibre Channel Ports** added to **Sharing > Block Shares (iSCSI)** screens.
 
 ![Sharing ISCSI Fibre Channel Ports](/images/CORE/12.0/SharingISCSIFibreChannelPorts.png "Sharing ISCSI Fibre Channel Ports")
@@ -18,7 +18,7 @@ Fibre Channel is a TrueNAS Enterprise feature. Only TrueNAS systems licensed for
 
 ## Setting up a Fibre Channel ISCSI Share 
 
-{{< hint info >}}
+{{< hint type=note >}}
 This procedure uses an example to illustrate each step. 
 {{< /hint >}}
 
@@ -33,7 +33,7 @@ This procedure uses an example to illustrate each step.
 
 2. Configure these iSCSI tabs in **Sharing > Block Shares (iSCSI)**:
    
-   {{< hint info >}}
+   {{< hint type=note >}}
    **Initiators** and **Authorized Access** screens only apply to iSCSI and can be ignored when configuring Fibre Channel.
    {{< /hint >}}
    

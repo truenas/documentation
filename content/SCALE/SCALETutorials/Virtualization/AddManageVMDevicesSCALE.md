@@ -142,7 +142,7 @@ You can now go to **Virtualization > Virtual Machines** to restart the VM.
 
 ### Adding a PCI Passthrough Device
 Select **PCI Passthrough Device** in the **Device Type** on the **Add Device** screen to configure the PCI passthrough device and boot order.
-{{< hint warning >}}
+{{< hint type=important >}}
 Depending upon the type of device installed in your system, you may see a warning: PCI device does not have a reset mechanism defined. 
 You may experience inconsistent or degraded behavior when starting or stopping the VM.
 Determine if you want to proceed with this action in such an instance.

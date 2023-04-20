@@ -23,7 +23,7 @@ The paths differ enough to use host path validation and avoid issues that preven
 
 ## Using Shared Host Paths with Safety Checks Disabled
 
-{{< hint warning >}}
+{{< hint type=important >}}
 We do not recommend disabling host path safety checks since shared host paths are non-secure. 
 {{< /hint >}}
 

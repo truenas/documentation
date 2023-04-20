@@ -57,7 +57,7 @@ Additional tuning might be required for optimal performance, depending on the wo
 To see options for an existing zvol, click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> next to the desired zvol in **Storage** > **Pools**:
 
 Use **Delete zvol** to remove the zvol from TrueNAS.
-{{< hint danger >}}
+{{< hint type=warning >}}
 Deleting zvols can result in unrecoverable data loss!
 Be sure that any critical data is moved off the zvol or is otherwise obsolete.
 {{< /hint >}}

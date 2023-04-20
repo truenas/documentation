@@ -17,7 +17,7 @@ Over-provisioning an SSD distributes the total number of writes and erases acros
 Seagate provides a thoughtful investigation into over-provisioning SSDs here: 
 https://www.seagate.com/tech-insights/ssd-over-provisioning-benefits-master-ti/.
 
-{{< hint info >}}
+{{< hint type=note >}}
 Some SATA devices are limited to one resize per power cycle.
 Some BIOS can block resize during boot and require a live power cycle.
 {{< /hint >}}

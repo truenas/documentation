@@ -83,12 +83,10 @@ To create a CA:
    c. Select **Enable**, then enter the extensions for **Extended Key Usage**. Select one or more usages for the public key from the **Usages** dropdown list.
       TrueNAS uses Extended Key Usage for end-entity certificates.
     
-     Enable **Critical Extension** to identify this extension as critical for the certificate. 
-     Do not enable **Critical Extension** if **Usages** contains **ANY_EXTENDED_KEY_USAGE**.
+      Enable **Critical Extension** to identify this extension as critical for the certificate. 
+      Do not enable **Critical Extension** if **Usages** contains **ANY_EXTENDED_KEY_USAGE**.
 
-     Using **Extended Key Usage** and **Key Usage** extensions requires that the certificate purpose is consistent with both extensions. See [RFC 3280, section 4.2.1.13](https://www.ietf.org/rfc/rfc3280.txt) for more details.
-
-   d. Select **Enable**, then enter the extensions for **Key Usage**. Select any extensions from the **Key Usage Config** dropdown list.
+      Using **Extended Key Usage** and **Key Usage** extensions requires that the certificate purpose is consistent with both extensions. See [RFC 3280, section 4.2.1.13](https://www.ietf.org/rfc/rfc3280.txt) for more details.
 
 6. Click **Submit** to create the CA.
 
@@ -114,6 +112,5 @@ Use this procedure to import a CA.
 Before deleting a CA, verify it is not used by another service such as S3, FTP, etc. You cannot delete a CA when in use by other services.
 
 Also, before you can delete a CA, you need to delete certificates issued by the CA or those relying on the CA before you can delete it. If you receive an error that mentions foreign keys reference, ensure the certificates on your system do not use the CA you want to delete. 
-
 
 {{< taglist tag="corecertificates" limit="10" >}}

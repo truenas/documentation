@@ -39,7 +39,7 @@ The **Advanced Settings** include the **Idmap**, **Kerberos Settings**, **Kerber
 
 ![DirServicesAdvancedSettingsScreen](/images/SCALE/22.12/DirServicesAdvancedSettingsScreen.png "Directory Services Advanced Settings")
 
-{{< hint danger >}} 
+{{< hint type=warning >}} 
 Changing Advanced settings can be dangerous if done incorrectly. Use caution before saving.
 {{< /hint >}}
 

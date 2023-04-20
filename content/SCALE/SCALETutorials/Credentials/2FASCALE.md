@@ -19,7 +19,7 @@ TrueNAS offers 2FA to ensure that entities cannot use a compromised administrato
 To use 2FA, you need a mobile device with the current time and date, and that has Google Authenticator installed.
 Other authenticator applications can be used, but you will need to confirm the settings and QR codes generated in TrueNAS are compatible with your particular app before permanently activating 2FA.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 Two-factor authentication is time-based and requires a correct system time setting. 
 Make sure Network Time Protocol (NTP) is functional before enabling is strongly recommended!
 {{< /hint >}}
@@ -44,7 +44,7 @@ If the 2FA code is not working or users cannot get it, the system is inaccessibl
 
 ## Enabling 2FA
 
-{{< hint danger >}}
+{{< hint type=warning >}}
 Set up a second 2FA device as a backup before proceeding.
 {{< /hint >}}
 
@@ -73,7 +73,7 @@ Before you begin, download Google Authenticator to your mobile device.
 ### Disabling or Bypassing 2FA
 
 Go to **Credentials > 2FA** to open the **Two-Factor Auth** screen. Click **Disable Two-Factor Authentication**.
-{{< hint info >}}
+{{< hint type=note >}}
 If the device with the 2FA app is not available, you can use the system CLI to bypass 2FA with administrative IPMI or by physically accessing the system. 
 
 To unlock 2FA in the CLI, enter:  `midclt call auth.twofactor.update '{ "enabled":false }'`

@@ -15,7 +15,7 @@ Follow this procedure for each TrueNAS SCALE system you want to connect to TrueC
    * Ensure two interfaces are available and note which is the primary interface that allows SCALE web interface access and access between SCALE systems, TrueCommand, and Active Directory environments. Having two interfaces allows connecting the SCALE systems to Active Directory and using TrueCommand to create and manage the cluster.
    * Ensure the second interface has a static IP address on a different network/subnet that connects all the SCALE systems. This interface securely handles all the data-sharing traffic between the clustered systems.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 TrueNAS automatically adds entries to AD DNS for CTDB public IP addresses. Administrators should add the addresses **before** joining AD to prevent significant configuration errors.
 {{< /hint >}}
 
@@ -57,7 +57,7 @@ The new records appear inside the zone as they save.
    Use the SCALE **root** account password. When ready, click **ADD AND CONTINUE** and repeat the process for each SCALE system intended for the cluster. 
    When complete, each SCALE system has a card on the TrueCommand **Dashboard** that displays system statistics.
 
-{{< hint info >}}
+{{< hint type=note >}}
 We recommend you back up the SCALE system configuration before creating the cluster. 
 Backups allow users to quickly restore the system configuration to the initial working state if something goes wrong.
 

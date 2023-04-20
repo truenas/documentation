@@ -31,7 +31,7 @@ To create a new backup, click **Create Backup**.
 A maximum of one config backup per day can exist.  
 If a prior config backup for the current day exists, creating a new one overwrites the previous one.
 
-{{< hint info >}}
+{{< hint type=note >}}
 By default, TrueCommand retains seven backups. You can increase or decrease the number on the **Administration** page **Configuration** tab.
 Local instances of TrueCommand can increase or decrease this figure as desired. 
 {{< /hint >}}

@@ -109,7 +109,7 @@ Select the dataset on the tree table, then click **Delete** on the **Dataset Det
 
 To delete a root dataset, use the **Export/Disconnect** option on the **[Storage Dashboard]({{< relref "ManagePoolsSCALE.md" >}})** screen to delete the pool.
 
-{{< hint danger >}}
+{{< hint type=warning >}}
 Deleting datasets can result in unrecoverable data loss!
 Move off any critical data stored on the dataset or obsolete it before performing the delete operation.
 {{< /hint >}}

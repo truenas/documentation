@@ -248,9 +248,10 @@ p,h1,h2,h3,h4,th,td,a {
     max-width: 100%;
     font-family: "Inter", sans-serif;
     font-weight: 600;
-    font-size: 16px;
-    background-color: #000000;
-    color: #8e8e8e;
+    font-size: 14px;
+    background-color: #151515;
+    color: #666;
+	padding: 1% 0;
 }
 .gdoc-footer__link {
     color: #23afe4;
@@ -261,11 +262,7 @@ p,h1,h2,h3,h4,th,td,a {
 .gdoc-footer__item{
     padding-left: .5rem;
 }
-.footer-icons {
-    display: flex;
-    float: right;
-    color: white;
-}
+
 /* End site footer */
 
 /* Styling images in the Topics Tab Boxes */
@@ -297,6 +294,22 @@ p,h1,h2,h3,h4,th,td,a {
     }
 }
 /* End site directory for mobile browsing */
+/* Style Hint Boxes */
+.gdoc-hint {
+	font-family: Inter, sans-serif;
+}
+.gdoc-hint__title {
+	font-family: Inter, sans-serif;
+}
+.gdoc-hint__title i.fa {
+	font-family: Inter, sans-serif;
+	background-size: auto 120%;
+	margin-bottom: 5px;
+	text-align: center;
+}
+.gdoc-hint__text {
+	font-family: Inter, sans-serif;
+}
 /* Styling for fade-in on image download links */
 .container-image-download {
     position: relative;
@@ -539,7 +552,7 @@ p,h1,h2,h3,h4,th,td,a {
   width: 48px;
   rotate: z -90deg;
   position: fixed;
-  bottom: 20px;
+  bottom: 80px;
   right: 20px;
   z-index: 100;
   opacity: 0;

@@ -186,7 +186,7 @@ Using a Scale-out Backup Repository, users can link multiple backup repositories
 In the topology above, the TrueNAS is broken across four LUNs to act as the scale-out extents.
 Both the FreeNAS datastore and the TrueNAS backup only used one 10GbE link when connecting to the VMware server pool.
 
-{{< hint info >}}
+{{< hint type=note >}}
 Scale-out Backup Repository is only available in Veeam Backup & Replication 9.5 Enterprise and Enterprise Plus editions.
 {{< /hint >}}
 

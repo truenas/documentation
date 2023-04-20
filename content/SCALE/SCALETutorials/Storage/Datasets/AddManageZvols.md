@@ -28,7 +28,7 @@ To create a zvol with default options, enter a name and a value in **Size for th
 Options to manage a zvol are on the zvol widgets found on the **Dataset** screen. Select the zvol to display the zvol widgets.
 
 **Delete Zvol** removes the zvol from TrueNAS. Deleting a zvol also deletes all snapshots of that zvol. Click **Delete** on the **Zvol Details** widget.
-{{< hint danger >}}
+{{< hint type=warning >}}
 Deleting zvols can result in unrecoverable data loss!
 Remove critical data from the zvol or verify it is obsolete before deleting a zvol.
 {{< /hint >}}

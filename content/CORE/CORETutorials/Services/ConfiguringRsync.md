@@ -51,7 +51,7 @@ To create a new module, click **ADD**.
 | **Other Options: Auxiliary Parameters** | Enter any additional parameters from [rsyncd.conf(5)](https://www.samba.org/ftp/rsync/rsyncd.conf.html). |
 {{< /expand >}}
 
-{{< hint info >}}
+{{< hint type=note >}}
 When a **Hosts Allow** list is defined, only the IPs and hostnames on the list are able to connect to the module.
 {{< /hint >}}
 

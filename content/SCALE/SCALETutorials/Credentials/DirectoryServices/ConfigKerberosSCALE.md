@@ -20,7 +20,7 @@ A [keytab ("key table")](https://web.mit.edu/kerberos/krb5-devel/doc/basic/keyta
 TrueNAS SCALE allows users to configure general Kerberos settings, as well as realms and keytabs.
 
 ## Kerberos Realms
-{{< hint info >}}
+{{< hint type=note >}}
 TrueNAS automatically generates a realm after you configure AD.
 {{< /hint >}}
 
@@ -33,7 +33,7 @@ Enter the realm and key distribution (KDC) names, then define the admin and pass
 Click **Save**. 
 
 ## Kerberos Keytabs
-{{< hint info >}}
+{{< hint type=note >}}
 TrueNAS automatically generates a keytab after you configure AD.
 {{< /hint >}}
 
@@ -55,7 +55,7 @@ To make LDAP use a keytab principal, click **Settings** in the **LDAP** window a
 
 ### Kerberos Settings
 
-{{< hint danger >}}
+{{< hint type=warning >}}
 If you do not understand Kerberos auxiliary parameters, do not attempt to configure new settings!
 {{< /hint >}}
 

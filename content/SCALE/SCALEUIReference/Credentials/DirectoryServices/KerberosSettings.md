@@ -33,7 +33,7 @@ The **Kerberos Settings** screen includes two fields used to configure auxiliary
 
 ![KerberosSettingsScreen](/images/SCALE/22.12/KerberosSettingsScreen.png "Kerberos Settings Screen")
 
-{{< hint danger >}}
+{{< hint type=warning >}}
 If you do not understand Kerberos auxiliary parameters, do not attempt to configure new settings!
 {{< /hint >}}
 

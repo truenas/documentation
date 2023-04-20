@@ -27,7 +27,7 @@ The **Download File** option downloads your TrueNAS SCALE current configuration 
 ### Uploading the File
 The **Upload File** option gives users the ability to replace the current system configuration with any previously saved TrueNAS SCALE configuration file.
 
-{{< hint danger >}}
+{{< hint type=warning >}}
 All passwords are reset if the uploaded configuration file was saved without the selecting **Save Password Secret Seed**.
 {{< /hint >}}
 

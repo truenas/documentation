@@ -78,7 +78,7 @@ After creating the cluster, TrueCommand opens another sidebar to configure it fo
 1. Verify the connection details are correct.
 2. Click **CONFIRM** to configure the cluster, or click **BACK** to adjust the settings.
 
-{{< hint info >}}
+{{< hint type=note >}}
 Creating a cluster has no visible effect on each SCALE web interface.
 To verify the cluster is created and active, open the SCALE **Shell** and enter `gluster peer status`.
 The command returns the list of SCALE IP addresses and current connection status.
@@ -105,7 +105,7 @@ The command returns the list of SCALE IP addresses and current connection status
 
 TrueCommand adds new cluster volumes to the individual cluster cards on the **Clusters** screen.
 
-{{< hint info >}}
+{{< hint type=note >}}
 The web interface for the individual SCALE systems does not show any datasets created for cluster volumes.
 To verify the volume created, go to the **Shell** and enter `gluster volume info all`.
 {{< /hint >}}
@@ -126,7 +126,7 @@ Click **CREATE SHARE**.
 3. Setting **Readonly** prevents users from changing the cluster volume contents.
 4. Click **CONFIRM** to create the SMB share and make it immediately active.
 
-{{< hint info >}}
+{{< hint type=note >}}
 The SMB share adds to the SCALE **Shares** > **SMB** section for each system in the cluster.
 Attempting to manage the share from the SCALE UI is not recommended.
 {{< /hint >}}
@@ -146,7 +146,7 @@ There are several ways to access an SMB share, but this article demonstrates usi
 
 A node is a single TrueNAS storage system in a cluster.
 
-{{< hint info >}}
+{{< hint type=note >}}
 Cluster node replacement only works if you are using TrueCommand 2.3 or later and SCALE 22.12.0 or later.
 
 New replacement nodes must have the same hardware as the old node you are replacing. The old node must also have a configuration backup that is safe and accessible. 

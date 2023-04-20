@@ -70,7 +70,7 @@ Table of features and current status (Timestamp references when the item status 
 
 ### Migration Notice
 
-{{< hint warning >}}
+{{< hint type=important >}}
 Due to the change in database between the 1.x and 2.x versions of TrueCommand, there is an automatic database migration routine that will run the first time you start up the v2.0 image of TrueCommand.
 
 Information Migrated:

@@ -1,11 +1,19 @@
 #baseURL = "https://www.truenas.com/docs/"
 title = ""
 theme = ["hugo-geekdoc"]
+
+# Required to get well formatted code blocks
+pygmentsUseClasses = true
+pygmentsCodeFences = true
+enableGitInfo = true
+
+# Required if you want to render robots.txt template
+enableRobotsTXT = true
+
 #disableKinds = ["home"]
 relativeURLs = true
 disablePathToLower = false
 googlefonts = "//fonts.googleapis.com/css?family=Inter|Open+Sans|Merriweather|Fira+Mono|Droid+Sans"
-enableGitInfo = true
 rssLimit = 10
 languageCode = "en-us"
 copyright = "Documentation distributed under CC BY NC SA 4.0"
@@ -22,9 +30,6 @@ isHTML = true
 mediaType = "text/html"
 path = "printview"
 permalinkable = false
-# Required to get well formatted code blocks
-pygmentsUseClasses = true
-pygmentsCodeFences = true
 
 [markup]
   [markup.goldmark.renderer]
@@ -59,6 +64,10 @@ enable = true
   # (Optional, default false) Render menu from data file im 'data/menu/main.yaml'.
   geekdocMenuBundle = false
 
+  # (Optional, default false) Collapse all menu entries, can not be overwritten
+  # per page if enabled. Can be enabled per page via 'geekdocCollapseSection'.
+  geekdocCollapseAllSections = true
+
   # (Optional, default true) Show page navigation links at the bottom of each
   # docs page (bundle menu only).
   geekdocNextPrev = true
@@ -85,7 +94,7 @@ enable = true
   # (Optional, default false) Display search results with the parent folder as prefix. This
   # option allows you to distinguish between files with the same name in different folders.
   # NOTE: This parameter only applies when 'geekdocSearch = true'.
-  geekdocSearchShowParent = false
+  geekdocSearchShowParent = true
 
   # (Optional, default none) Add a link to your Legal Notice page to the site footer.
   # It can be either a remote url or a local file path relative to your content directory.
@@ -103,6 +112,43 @@ enable = true
 
   # Featured image for search results
   featured_image = "/images/tn-openstorage-logo.png"
+  
+  # (Optional, default true) Enable or disable image lazy loading for images rendered
+  # by the 'img' shortcode.
+  geekdocImageLazyLoading = true
+
+  # (Optional, default false) Set HTMl <base> to .Site.BaseURL if enabled. It might be required
+  # if a subdirectory is used within Hugos BaseURL.
+  # See https://developer.mozilla.org/de/docs/Web/HTML/Element/base.
+  geekdocOverwriteHTMLBase = false
+
+  # (Optional, default true) Enable or disable the JavaScript based color theme toggle switch. The CSS based
+  # user preference mode still works.
+  geekdocDarkModeToggle = true
+
+  # (Optional, default false) Auto-decrease brightness of images and add a slightly grayscale to avoid
+  # bright spots while using the dark mode.
+  geekdocDarkModeDim = false
+
+  # (Optional, default false) Enforce code blocks to always use the dark color theme.
+  geekdocDarkModeCode = false
+
+  # (Optional, default true) Display a "Back to top" link in the site footer.
+  geekdocBackToTop = true
+
+  # (Optional, default false) Enable or disable adding tags for post pages automatically to the navigation sidebar.
+  geekdocTagsToMenu = true
+
+  # (Optional, default 'title') Configure how to sort file-tree menu entries. Possible options are 'title', 'linktitle',
+  # 'date', 'publishdate', 'expirydate' or 'lastmod'. Every option can be used with a reverse modifier as well
+  # e.g. 'title_reverse'.
+  geekdocFileTreeSortBy = "title"
+
+  # (Optional, default none) Adds a "Content licensed under <license>" line to the footer.
+  # Could be used if you want to define a default license for your content.
+  [params.geekdocContentLicense]
+    name = "CC BY-SA 4.0"
+    link = "https://creativecommons.org/licenses/by-sa/4.0/"
 
 [frontmatter]
 lastmod = ["lastmod", ":git", ":fileModTime", ":default"]

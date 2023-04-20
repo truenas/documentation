@@ -34,7 +34,7 @@ Set **Create a new pool** and click **CREATE POOL**
 For the **Name**, enter *tank* or any other preferred name.
 In the **Available Disks**, set two identical disks and click the <span class="iconify" data-icon="material-symbols:arrow-forward"></span> to move them to the **Data VDevs** area.
   
-{{< hint info >}}
+{{< hint type=note >}}
 If the disks used have non-unique serial numbers, they do not populate the **Available Disks** section until you enable the **Show disk with non-unique serial numbers** checkbox.
 {{< /hint >}}
 

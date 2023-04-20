@@ -10,7 +10,7 @@ tags:
 TrueNAS includes the ability to run OpenVPN.
 This is a short tutorial to configure the OpenVPN client on TrueNAS 12.0.
 
-{{< hint info >}}
+{{< hint type=note >}}
 Many VPN services are provided by 3rd parties that are unaffiliated with iXsystems.
 Please verify compatibility and pricing with your provider before integrating with TrueNAS.
 {{< /hint >}}

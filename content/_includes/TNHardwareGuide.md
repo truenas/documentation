@@ -91,7 +91,7 @@ The main advantage of NVMe is its low-latency performance. NVMe is becoming a ma
 
 NVMe devices can run quite hot and may need dedicated heat sinks.
 
-{{< hint info >}}
+{{< hint type=note >}}
 Manual S.M.A.R.T. tests on NVMe devices is currently not supported.
 {{< /hint >}}
 {{< /expand >}}
@@ -100,7 +100,7 @@ Manual S.M.A.R.T. tests on NVMe devices is currently not supported.
 Avoid using USB-connected hard disks for primary storage with TrueNAS. You can use USB Hard Disks for very basic backups in a pinch.
 While TrueNAS does not automate this process, you can connect a USB HDD, replicate at the command line, and then take it off-site for safekeeping.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 **Warning:** USB-connected media (including SSDs) may report their serial numbers inaccurately, making them indistinguishable.
 {{< /hint >}}
 {{< /expand >}}
@@ -166,7 +166,7 @@ Aim for at least 6 Gbps SATA III support.
 Note that hot-swapping PCIe NVMe devices is not currently supported.
 {{< /expand >}}
 
-{{< hint warning >}}
+{{< hint type=important >}}
 TrueNAS SCALE does not officially support T10-DIF drives. [Users on our forums have developed a workaround for using T10-DIF drives in TrueNAS SCALE](https://www.truenas.com/community/threads/troubleshooting-disk-format-warnings-in-bluefin.106051/), but using unsupported storage devices imposes data-loss risks.
 {{< /hint >}}
 
@@ -390,7 +390,7 @@ Finally, the ultimate TrueNAS hardware question is whether to use actual hardwar
 At the heart of the TrueNAS design is OpenZFS. OpenZFS works best with physical storage devices. It is aware of their strengths and compensates for their weaknesses.
 
 TrueNAS developers [virtualize TrueNAS every day](https://www.ixsystems.com/blog/yes-you-can-virtualize-freenas/) as part of their work, and it is intended only for use as a development environment. 
-{{< hint warning >}}
+{{< hint type=important >}}
 While possible to deploy TrueNAS in a virtual environment, we do not recommend doing so for regular deployment of TrueNAS when storing production or critical data.
 Virtualizing TrueNAS and using virtual disks for your zpool is fine for ad hoc proof-of-concept, but it is not a supported configuration and might result in data corruption. 
 {{< /hint >}}

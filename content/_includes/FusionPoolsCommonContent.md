@@ -3,7 +3,7 @@
 
 Add SSDs to the new **Metadata VDev** and select the same layout as the **Data VDevs**.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 The metadata special VDEV is critical for pool operation and data integrity, so you must protect it with hot spare(s).
 {{< /hint >}}
 
@@ -14,7 +14,7 @@ When using SSDs with an internal cache, add an uninterruptible power supply (UPS
 Using special VDEVs identical to the data VDEVs (so they can use the same hot spares) is recommended, but for performance reasons, you can make a different type of VDEV (like a mirror of SSDs).
 In that case, you must provide hot spare(s) for that drive type as well. Otherwise, if the special VDEV fails and there is no redundancy, the pool becomes corrupted and prevents access to stored data.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 Drives added to a metadata VDEV cannot be removed from the pool.
 {{< /hint >}}
 

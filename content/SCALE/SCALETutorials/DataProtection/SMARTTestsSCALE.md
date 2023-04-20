@@ -41,7 +41,7 @@ Select the disks you want to test using the checkboxes to the left of the disk n
 
 Click **Manual Test**. The **Manual S.M.A.R.T. Test** dialog displays. 
 
-{{< hint info >}}
+{{< hint type=note >}}
 Manual S.M.A.R.T. tests on NVMe devices is currently not supported.
 {{< /hint >}}
 
@@ -89,7 +89,7 @@ Next select a preset from the **Schedule** dropdown. To create a custom schedule
 
 Saved schedules appear in the **S.M.A.R.T. Tests** window.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 S.M.A.R.T. tests can offline disks! Avoid scheduling S.M.A.R.T. tests simultaneously with scrub or other data protection tasks.
 {{< /hint >}}
 

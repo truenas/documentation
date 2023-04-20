@@ -215,7 +215,7 @@ This is a minor release designed to address some additional cluster issues found
 
 The TrueCommand team is pleased to announce [TrueCommand 2.2](https://www.truenas.com/docs/truecommand/) is now available!
 
-{{< hint warning >}}
+{{< hint type=important >}}
 Users with TrueCommand deployed in a Docker-style container are advised to back up their TrueCommand `<container>/data` volume before attempting an upgrade to version 2.2.
 See [Back up the Container Volume]({{< relref "UpdateDocker.md" >}}) for specific examples.
 {{< /hint >}}
@@ -611,13 +611,13 @@ Due to the changes in integrating with the TrueNAS middleware, the minimum versi
  
 ## To Update to this Release
 
-{{< hint info >}}
+{{< hint type=note >}}
 **Prior To Updating**
  
 As a best practice, TrueCommand admins should backup their instance's data directory before deploying TrueCommand updates. If issues arise after updating, admins can simply pull the previous TC docker image and redeploy with their previous data directory. 
 {{< /hint >}}
 
-{{< hint warning >}}
+{{< hint type=important >}}
 **Important Note for Upgrading from v1.3**
  
 Updating from TrueCommand v1.3 to v2.0 or newer involves a database migration process. This preserves all configuration data, but does not preserve old performance statistics.

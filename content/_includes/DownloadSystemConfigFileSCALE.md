@@ -8,7 +8,7 @@ Users must physically secure configuration backups containing the seed to preven
 We recommend backing up the system configuration regularly. 
 Doing so preserves settings when migrating, restoring, or fixing the system if it runs into any issues. 
 Save the configuration file each time the system configuration changes.
-{{< hint info >}}
+{{< hint type=note >}}
 If you plan to set up a cluster that includes this TrueNAS SCALE, wait to download your system configuration file until after the cluster is set up and working.
 {{< /hint >}}
 Go to System **Settings > General** and click on **Manage Configuration**. Select **Download File**.

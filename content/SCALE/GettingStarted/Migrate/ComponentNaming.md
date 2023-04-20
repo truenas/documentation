@@ -24,7 +24,7 @@ TrueNAS SCALE uses a lettered format for drive identification.
 
 ![ComponentNamingDrivesSCALE](/images/SCALE/ComponentNamingDrivesSCALE.png "TrueNAS SCALE Drive Listing")
 
-{{< hint info >}}
+{{< hint type=note >}}
 SCALE still labels NVMe drives with a numeric value.
 {{< /hint >}}
 

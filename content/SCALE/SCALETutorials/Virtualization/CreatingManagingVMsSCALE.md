@@ -99,7 +99,7 @@ If you have not yet added a virtual machine to your system you can click **Add V
 7. Specify a GPU.    
    The **VirtIO** network interface requires a guest OS that supports VirtIO para-virtualized network drivers.
 
-   {{< hint info >}}
+   {{< hint type=note >}}
    iXsystems does not have a list of approved GPUs at this time but does have drivers and basic support for the  list of [nvidia Supported Products](https://www.nvidia.com/Download/driverResults.aspx/191961/en-us/).
    {{< /hint >}}
 
@@ -132,7 +132,7 @@ If the display connection screen appears distorted, try adjusting the display de
 Use the **State** toggle or click <i class="material-icons" aria-hidden="true" title="Stop Button">stop</i> **Stop** to follow a standard procedure to do a clean shutdown of the running VM. 
 Click <i class="material-icons" aria-hidden="true" title="Power Off Button">power_settings_new</i> **Power Off** to halt and deactivate the VM, which is similar to unplugging a computer.
 
-{{< hint info >}}
+{{< hint type=note >}}
 If the VM you created has no Guest OS installed, The VM **State** toggle and <i class="material-icons" aria-hidden="true" title="Stop Button">stop</i> **Stop** button might not function as expected.
 The **State** toggle and <i class="material-icons" aria-hidden="true" title="Stop Button">stop</i> **Stop** button send an ACPI power down command to the VM operating system, but since an OS is not installed, these commands time out.
 Use the **Power Off** button instead.
@@ -142,7 +142,7 @@ Use the **Power Off** button instead.
 
 When the VM is configured in TrueNAS and has an OS <file>.iso,</file> file attached, you can start the VM and begin installing the operating system.
 
-{{< hint info >}}
+{{< hint type=note >}}
 Some operating systems can require specific settings to function properly in a virtual machine. 
 For example, vanilla Debian can require advanced partitioning when installing the OS. 
 Refer to the documentation for your chosen operating system for tips and configuration instructions.
@@ -228,7 +228,7 @@ At the shell prompt:
 3. Type `cd Debian` <kbd>Return</kbd>.
 4. Type `grubx64.efi` <kbd>Return</kbd>.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 To ensure it starts automatically, you create the startup.nsh file at the root directory on the vm. To create the file:
 
 1. Go to the **Shell**.

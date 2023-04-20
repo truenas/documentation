@@ -144,6 +144,6 @@ A popup displays to confirm the team deletion.
 
 ![Teams Delete](/images/TrueCommand/2.0/TeamsDeleteTeam.png "Teams Delete")
 
-{{< hint info >}}
+{{< hint type=note >}}
 Deleting a team does not remove users or systems assigned to that team.
 {{< /hint >}}

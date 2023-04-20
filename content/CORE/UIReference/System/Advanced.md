@@ -9,7 +9,7 @@ tags:
 
 **System > Advanced** contains advanced options for configuring system settings.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 These options have reasonable defaults in place.
 Make sure you are comfortable with ZFS, FreeBSD, and system [configuration backup and restoration]({{< relref "/content/CORE/CORETutorials/SystemConfiguration/UsingConfigurationBackups.md" >}}) before making any changes.
 {{< /hint >}}

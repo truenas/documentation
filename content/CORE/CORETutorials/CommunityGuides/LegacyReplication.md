@@ -6,7 +6,7 @@ tags:
 - corecommunityguides
 ---
 
-{{< hint info >}}
+{{< hint type=note >}}
 This article only applies to FreeNAS or TrueNAS version 11.3.
 The **Legacy** replication option in this version provides compatibility with the replication engine used in FreeNAS/TrueNAS 11.2 and earlier.
 {{< /hint >}}

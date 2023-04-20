@@ -57,7 +57,7 @@ Select the checkbox to the left of each snapshot to select multiple snapshots an
 
 ### Dataset Rollback from Snapshot Window
 The snapshot **Rollback** option replaces the data in the selected dataset with the information saved in the snapshot. 
-{{< hint "danger" >}}
+{{< hint type=warning >}}
 WARNING: Rolling the dataset back destroys data on the dataset and can destroy additional snapshots that are related to the dataset. 
 This can result in permanent data loss!
 Do not roll back until all desired data and snapshots are backed up.

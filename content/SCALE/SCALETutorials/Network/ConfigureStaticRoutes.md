@@ -12,7 +12,7 @@ TrueNAS does not have defined static routes by default but TrueNAS administrator
 
 {{< include file="/_includes/AliasOrStaticIP.md" type="page" >}}
 
-{{< hint info >}}
+{{< hint type=note >}}
 If you have a monitor and keyboard connected to the system you can use the [Console setup menu]({{< relref "ConsoleSetupMenuSCALE.md" >}}) to configure static routes during the installation process, but we recommend using the web UI for all configuration tasks.
 {{< /hint >}}
 

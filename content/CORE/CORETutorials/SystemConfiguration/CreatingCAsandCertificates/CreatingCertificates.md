@@ -76,10 +76,10 @@ To add an internal certificate:
    c. Select **Enable**, then enter the extensions for **Extended Key Usage**. Select one or more usages for the public key from the **Usages** dropdown list.
       TrueNAS uses Extended Key Usage for end-entity certificates.
     
-     Enable **Critical Extension** if you want to identify this extension as critical for the certificate. 
-     Do not enable **Critical Extension** if **Usages** contains **ANY_EXTENDED_KEY_USAGE**.
+      Enable **Critical Extension** if you want to identify this extension as critical for the certificate. 
+      Do not enable **Critical Extension** if **Usages** contains **ANY_EXTENDED_KEY_USAGE**.
 
-     Using **Extended Key Usage** and **Key Usage** extensions requires that the certificate purpose is consistent with both extensions. See [RFC 3280, section 4.2.1.13](https://www.ietf.org/rfc/rfc3280.txt) for more details.
+      Using **Extended Key Usage** and **Key Usage** extensions requires that the certificate purpose is consistent with both extensions. See [RFC 3280, section 4.2.1.13](https://www.ietf.org/rfc/rfc3280.txt) for more details.
 
    d. Select **Enable**, then enter the extensions for **Key Usage**. Select any extensions from the **Key Usage Config** dropdown list.
 

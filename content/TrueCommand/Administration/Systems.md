@@ -104,7 +104,7 @@ Click <i class="material-icons" aria-hidden="true" title="Delete">delete</i>  **
 
 ![Systems Delete](/images/TrueCommand/2.0/SystemsDeleteSystem.png "Systems Delete")
 
-{{< hint warning >}}
+{{< hint type=important >}}
 Deleting a system purges all collected data from the database.
 {{< /hint >}}
 {{< /expand >}}

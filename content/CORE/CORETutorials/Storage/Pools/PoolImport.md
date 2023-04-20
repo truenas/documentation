@@ -11,7 +11,7 @@ tags:
 
 {{< toc >}}
 
-{{< hint info >}}
+{{< hint type=note >}}
 This procedure only applies to disks with a ZFS storage pool.
 To import disks with different file systems, see [Import Disk]({{< relref "/CORE/CORETutorials/Storage/ImportDisk.md" >}}).
 {{< /hint >}}
@@ -55,7 +55,7 @@ Review the Pool Import Summary and click **IMPORT**.
 {{< expand "ZFS Pool with GELI" >}}
 ## Encrypted GELI Pools
 
-{{< hint danger >}}
+{{< hint type=warning >}}
 Importing a GELI-encrypted pool requires using the encryption key file and passphrase to decrypt the pool *before* importing.
 When a pool cannot be decrypted, it cannot be re-imported after a failed upgrade or lost configuration, and the data is *irretrievable*!
 Always have a copy of the pool GELI key file and passphrase available.
@@ -96,7 +96,7 @@ For security reasons, encrypted pool keys do not save to a configuration backup 
 When TrueNAS is installed to a new device and restored with a saved configuration file, keys for encrypted disks are not present and the system does not request them.
 
 To correct this, export the encrypted pool in **Storage > Pools** with <i class="material-icons" aria-hidden="true" title="Settings">settings</i> > **Export/Disconnect**.
-{{< hint "danger" >}}
+{{< hint type=warning >}}
 Do *not* select **Destroy data on this pool?**.
 {{< /hint >}}
 Now import the pool again.

@@ -54,7 +54,7 @@ Click **Export/Disconnect**.  A confirmation dialog displays when the export/dis
 
 ZFS supports adding VDEVs to an existing ZFS pool to increase the capacity of the pool. 
 
-{{< hint ok >}}
+{{< hint type=tip >}}
 You cannot change the original encryption or data VDEV configuration.
 {{< /hint >}}
 

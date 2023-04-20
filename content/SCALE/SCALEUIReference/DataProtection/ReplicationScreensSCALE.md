@@ -252,7 +252,7 @@ The radio buttons change settings displayed. Select when replicated snapshots ar
 {{< /expand >}}
 ## Advanced Replication Creation Screen
 **Advanced Replication Creation** on the **What and Where** wizard screen opens the **Add Replication Task** advanced creation screen. Click this button before or after adding settings on the wizard screen.
-{{< hint ok >}}
+{{< hint type=tip >}}
 Before adding a replication task, create an SSH connection to use when connecting to a remote system. The **Add Replication Task** wizard provides the option to configure a new SSH connection when adding the task but the advanced creation screen does not.
 
 If adding a local replication task, where you replicate data from one pool and dataset to different pool and dataset on the same system, the SSH connection is not a required element.

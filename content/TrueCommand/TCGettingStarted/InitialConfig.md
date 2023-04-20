@@ -105,7 +105,7 @@ Enter numeric values in the **Months** and **Backups** fields.
 
 ### SSL options
 
-{{< hint info >}}
+{{< hint type=note >}}
 This feature is only available for local installations or containerized TrueCommand deployments.
 {{< /hint >}}
 

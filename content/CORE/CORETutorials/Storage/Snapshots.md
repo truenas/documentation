@@ -17,7 +17,7 @@ Taking snapshots requires the system have all [pools]({{< relref "/CORE/CORETuto
 
 ## Creating a Single Snapshot
 
-{{< hint ok >}}
+{{< hint type=tip >}}
 Consider making a [Periodic Snapshot Task]({{< relref "/CORE/UIReference/Tasks/PeriodicSnapshotTasks.md" >}}) to save time and create regular, fresh snapshots.
 {{< /hint >}}
 
@@ -80,7 +80,7 @@ The suggested name derives from the snapshot name.
 ### Rolling Back
 Reverts the dataset back to the point in time saved by the snapshot.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 Rollback is a dangerous operation that causes any configured replication tasks to fail.
 Replications use the existing snapshot when doing an incremental backup, and rolling back can put the snapshots out of order.
 To restore the data within a snapshot, the recommended steps are:

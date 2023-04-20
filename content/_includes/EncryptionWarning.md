@@ -1,7 +1,7 @@
 ---
 ---
 
-{{< hint info >}}
+{{< hint type=note >}}
 
 Encryption is for users storing sensitive data.
 Pool-level encryption does *NOT* apply to the storage pool or the disks in the pool. 

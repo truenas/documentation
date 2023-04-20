@@ -7,7 +7,7 @@ weight: 20
 
 This article demonstrates how to replace one of the TrueNAS Z-Series removable computing modules called a node.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 **Node Maintenance**
 
 Nodes should only be replaced during a maintenance period, as clients using resources on the system could experience interruptions.
@@ -24,13 +24,13 @@ Identify the node to be replaced by verifying the serial number. The serial numb
 
 ![ZseriesNodeLocation](/images/Hardware/ZseriesNodeLocations.png "Node Location")
 
-{{< hint info >}}
+{{< hint type=note >}}
 Node A is the upper node, with Node B on the bottom. Some systems only have a single node.
 {{< /hint >}}
 
 #### Shut Down Node to be Replaced
 
-{{< hint warning >}}
+{{< hint type=important >}}
 Shutting down the active node on a High Availability system causes the system to *failover*, where the standby node becomes active and takes over system duties.  The node type, *Active* or *Standby* is displayed for HA systems under  the HA status icon in the upper right corner of the TrueNAS web GUI. Shutting down a standby node does not cause a failover.
 {{< /hint >}}
 

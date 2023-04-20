@@ -25,7 +25,7 @@ This article provides instructions for setting up SAML service in TrueCommand an
 2. Go to **Settings > Administration**, then click on **Configure** in the **Configuration** widget. 
    The **Configuration** screen with editable settings displays.
 
-   {{< hint ok >}}
+   {{< hint type=tip >}}
    The **SSL Options** on the **Configuration** settings form has **Accept self-signed certificates** selected by default. 
    Keep this setting to be able to use a self-signed certificate. It also helps prevent issues with HTTP versus HTTPS URLs.
    {{< /hint >}}

@@ -63,11 +63,11 @@ Use the **Select Disks** dropdown list to select the disks and the **Select Repo
 | **Disk Temperature** | Displays the minimum, maximum and mean temperature reading for the disk selected. |
 | **Disk I/O** | Displays the disk read and write I/O stats in bytes/s. |
 
-{{< hint warning >}}
+{{< hint type=important >}}
 Temperature monitoring for the disk is disabled if **HDD Standby** is enabled. Check the **Storage > Disks** **Edit Disk*** configuration form for any or all disks in the system if you do not see the temperature monitoring graph.
 {{< /hint >}}
 
-{{< hint info >}}
+{{< hint type=note >}}
 Large petabyte systems may report storage numbers inaccurately. Storage configurations with more than 9,007,199,254,740,992 bytes will round the last 4 digits.
 
 For example, a system with 18,446,744,073,709,551,615 bytes reports the number as 18,446,744,073,709,552,000 bytes.

@@ -10,7 +10,7 @@ tags:
 
 {{< toc >}}
 
-{{< hint info >}}
+{{< hint type=note >}}
 {{< include file="static/includes/General/FeatureSupport.md.part" markdown="true" >}}
 {{< /hint >}}
 
@@ -107,7 +107,7 @@ Add networking to the jail after creation by going to **Jails**, clicking <i cla
 Selecting a proxy in the TrueNAS network settings also configures new jails to use the proxy settings, except when performing DNS lookups.
 Make sure a firewall is properly configured to maximize system security.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 When pairing the jail with a physical interface, edit the network interface and select **Disable Hardware Offloading**.
 This prevents a network interface reset when the jail starts.
 {{< /hint >}}

@@ -11,7 +11,7 @@ tags:
 
 The **Global Configuration** widget displays the general TrueNAS networking settings *not* specific to any interface. 
 
-{{< hint info >}}
+{{< hint type=note >}}
 The SCALE information dislplayed the **Global Configuration** widget is the equivalent of the information displayed on the TrueNAS CORE **Network Summary** screen. **Global Configuration** settings configuration screens are similar in both SCALE and CORE but SCALE includes external communication settings.
 {{< /hint >}}
 
@@ -19,7 +19,7 @@ The SCALE information dislplayed the **Global Configuration** widget is the equi
 
 Use **Settings** to display the **Global Configuration** screen where you can add or change global network settings.
 
-{{< hint danger >}}
+{{< hint type=warning >}}
 **Disruptive Change**
 
 You can lose your TrueNAS connection if you change the network interface that the web interface uses!  
@@ -34,7 +34,7 @@ Many of these fields have default values, but users can change them to meet loca
 
 TrueNAS displays the **Hostname** and **Domain** in the **Dashboard** **System Information** widget. 
 
-{{< hint info >}}
+{{< hint type=note >}}
 Some fields only display in the **Global Configuration** screen when the appropriate hardware is present.
 {{< /hint >}}  
 

@@ -8,11 +8,11 @@ tags:
 
 Apple Filing Protocol (AFP) facilitates workgroup and Internet file sharing. It does this in a mixed-platform environment. Go to **Sharing > AFP** to set up an AFP share. Click **ADD** to edit AFP share settings.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 AFP share creation is deprecated in CORE 13.0. A **Recommendation** dialog displays when accessing this screen and suggests sharing data with a different protocol.
 {{< /hint >}}
 
-{{< hint info >}}
+{{< hint type=note >}}
 * Click **CREATE AN SMB SHARE** to display the **SMB BASIC OPTIONS** configuration screen.  
 
 * Click **CONTINUE WITH AFP SETUP** to continue to the **AFP > ADD** **BASIC OPTIONS** configuration screen.

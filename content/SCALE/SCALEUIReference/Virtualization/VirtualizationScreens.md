@@ -308,7 +308,7 @@ Select **Raw File** in **Device Type** in the **Add** device screen to see the r
 
 ### Add Device Type PCI Passthrough Device
 Select **PCI Passthrough Device**in **Device Type** in the **Add** device screen to see the PCI passthrough device settings.
-{{< hint warning >}}
+{{< hint type=important >}}
 Depending upon the type of device installed in your system, you might see a warning: PCI device does not have a reset mechanism defined. You might experience inconsistent or degraded behavior when starting or stopping the VM.
 Determine if you want to proceed with this action in such an instance.
 {{< /hint >}}

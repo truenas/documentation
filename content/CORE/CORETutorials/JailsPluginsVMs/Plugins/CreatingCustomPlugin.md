@@ -14,7 +14,7 @@ Plugins are a technology for easily and securely deploying 3rd party application
 The web interface allows users to deploy, start, stop, and update applications, along with configuration tasks such as assigning storage to them.
 Plugins are popular for content, security, development, collaboration, and backup applications for home and business use.
 
-{{< hint info >}}
+{{< hint type=note >}}
 {{< include file="static/includes/General/FeatureSupport.md.part" markdown="true" >}}
 {{< /hint >}}
 
@@ -56,7 +56,7 @@ TrueNAS provides everything necessary for custom plugin development, but a FreeB
 
 ## Creating Each Component
 
-{{< hint warning >}}
+{{< hint type=important >}}
 `//` and `#` comments are not supported in JSON.
 Copy any examples from the files in the [Git repository](https://github.com/ix-plugin-hub) using raw mode.
 {{< /hint >}}

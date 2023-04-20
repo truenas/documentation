@@ -18,7 +18,7 @@ The prompt shows that the current user is *root@truenas*, the host name is *true
 
 The default shell for a new installations is zsh. See [Changing the Default Shell]({{< relref "/CORE/CORETutorials/ChangingDefaultShell.md" >}}) for instructions on changing to a different shell.
 
-{{< hint info >}}
+{{< hint type=note >}}
 Not all shell features render correctly in Chrome. Firefox is the recommended browser when using the shell.
 {{< /hint >}}
 

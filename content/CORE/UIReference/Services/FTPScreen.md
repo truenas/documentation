@@ -49,7 +49,7 @@ Click **Advanced Options** if you need to customize your FTP service. **Advanced
 
 **TLS Settings**
 
-{{< hint warning >}}
+{{< hint type=important >}}
 Unless necessary, do not allow anonymous or root access.
 For better security, enable TLS when possible.
 This is effectively [FTPS](https://tools.ietf.org/html/rfc4217).

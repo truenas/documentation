@@ -56,7 +56,7 @@ To check the log for a saved snapshot schedule, go to **Data Protection > Period
 The **Naming Schema** determines how automated snapshot names generate.
 A valid schema requires the *%Y* (year), *%m* (month), *%d* (day), *%H* (hour), and *%M* (minute) time strings, but you can add more identifiers to the schema too, using any identifiers from the Python [strptime function](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior).
 
-{{< hint warning >}}
+{{< hint type=important >}}
 For **Periodic Snapshot Tasks** used to set up a replication task with the **Replication Task** function:
 
 You can use custom naming schema for full backup replication tasks. If you are going to use the snapshot for an incremental replication task, use the default naming schema. Go to [Using a Custom Schema]({{< relref "TroubleshootingTips.md" >}}) for additional information.
@@ -72,7 +72,7 @@ Examples:
 | replicationsnaps-1wklife-%Y%m%d_%H:%M | `replicationsnaps-1wklife-20210120_00:00`, `replicationsnaps-1wklife-20210120_06:00` |
 | autosnap_%Y.%m.%d-%H.%M.%S-%z | `autosnap_2021.01.20-00.00.00-EST`, `autosnap_2021.01.20-06.00.00-EST` |
 
-{{< hint warning >}}
+{{< hint type=important >}}
 When referencing snapshots from a Windows computer, avoid using characters like colon (:) that are invalid in a Windows file path.
 Some applications limit filename or path length, and there might be limitations related to spaces and other characters.
 Always consider future uses and ensure the name given to a periodic snapshot is acceptable.

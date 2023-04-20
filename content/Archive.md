@@ -23,7 +23,7 @@ Welcome to the Documentation Archive!
 
 {{< toc >}}
 
-{{< hint warning >}}
+{{< hint type=important >}}
 All documentation provided here is end-of-life (EoL) and no longer receives *any* updates.
 {{< /hint >}}
 
@@ -36,7 +36,7 @@ Release notes for each minor release of 22.02 Angelfish are included in the arch
 
 ## TrueNAS CORE
 
-{{< hint warning >}}
+{{< hint type=important >}}
 **12.0 NVDIMM Alert**
 
 Some TrueNAS M-Series systems installed with 12.0 releases with some 16GB 2666mhz NVDIMMs can see an alert that warns the NVDIMM firmware is out of date:

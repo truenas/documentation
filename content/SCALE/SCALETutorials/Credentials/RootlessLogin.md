@@ -19,7 +19,7 @@ If migrating from CORE to SCALE, when [first logging into SCALE]({{< relref "Fir
 All users should [create the local administrator account]({{< relref "ManageLocalUsersSCALE.md" >}}) and use this account for web interface access.
 To improve system security after the local administrator account is created, disable the root account password so that root access to the system is restricted.
 
-{{< hint info >}}
+{{< hint type=note >}}
 Some UI screens and settings still refer to the root account, but these references are updating to the administrator account in future release of SCALE.
 {{< /hint >}}
 

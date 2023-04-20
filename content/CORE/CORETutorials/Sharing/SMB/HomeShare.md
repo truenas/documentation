@@ -11,7 +11,7 @@ tags:
 
 TrueNAS offers the **Use as Home Share** option for organizations or SMEs that want to use a single SMB share to provide a personal directory to every user account.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 The **Use as Home Share** feature is available for a single TrueNAS SMB share. You can create additional SMB shares as described in the [SMB sharing article]({{< relref "/CORE/GettingStarted/SharingStorage.md" >}}) but without the **Use as Home Share** option enabled.
 {{< /hint >}}
 

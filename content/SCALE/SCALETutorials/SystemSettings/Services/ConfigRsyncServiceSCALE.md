@@ -51,7 +51,7 @@ Select the user and group that runs the rsync command during file transfer to an
 
 Enter any allow and or deny hosts. Separate multiple entries by pressing <kbd>Enter</kbd> after each entry in **Hosts Allow** and/or **Hosts Deny**.
 
-{{< hint info >}}
+{{< hint type=note >}}
 When a **Hosts Allow** list is defined, *only* the IPs and hostnames on the list are able to connect to the module.
 {{< /hint >}}
 

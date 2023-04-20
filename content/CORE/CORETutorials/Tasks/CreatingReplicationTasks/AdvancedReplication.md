@@ -70,7 +70,7 @@ Options for compressing data, adding a bandwidth limit, or other data stream cus
 
 For *SSH+NETCAT* replications, you also need to define the addresses and ports to use for the Netcat connection.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 **Allow Blocks Larger than 128KB** is a one-way toggle.
 Replication tasks using large block replication only continue to work as long as this option remains enabled.
 {{< /hint >}}
@@ -112,7 +112,7 @@ Expanding the file browser shows the current available datasets on the destinati
 You can click a destination or manually type a path in the field.
 Adding a name to the end of the path creates a new dataset in that location.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 **DO NOT** use zvols for a remote destination
 {{< /hint >}}
 
@@ -125,7 +125,7 @@ You can change the **Destination Dataset Read-only Policy** to only start replic
 Setting the checkbox allows using a *HEX* key or defining your own encryption *PASSPHRASE*.
 The encryption key can be stored in the TrueNAS system database or in a custom-defined location.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 **Synchronizing Destination Snapshots With Source** destroys any snapshots in the destination that do not match the source snapshots.
 TrueNAS also fully replicates the source snapshots as if the replication task had never run before, which leads to excessive bandwidth consumption.
 This can be a destructive option, so be sure that any snapshots that the task deletes from the destination are obsolete or otherwise backed up in a different location.

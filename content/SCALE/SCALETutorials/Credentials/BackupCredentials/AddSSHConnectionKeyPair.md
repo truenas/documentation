@@ -119,7 +119,7 @@ This procedure covers adding a public SSH key to the admin account on the TrueNA
 
    Paste the SSH public key text into the **Authorized Keys** field on the **Edit User** configuration screen in the **Authentication** settings.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 Do not paste the SSH private key.
 {{< /hint >}}
 

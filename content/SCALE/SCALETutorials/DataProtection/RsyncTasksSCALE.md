@@ -45,7 +45,7 @@ Rsync provides the ability to either push or pull data.
 The **Rsync Tasks** task push function copies data from the TrueNAS host system to a remote system. 
 The **Rsync Tasks** task pull function moves or copies data from a remote system and puts on the TrueNAS host system.
 
-{{< hint info >}}
+{{< hint type=note >}}
 The remote system must have the rsync service activated.
 {{< /hint >}}
 

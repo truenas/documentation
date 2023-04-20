@@ -15,7 +15,7 @@ tags:
 Creating a Network File System (NFS) share on TrueNAS makes a lot of data available for anyone with share access.
 Depending on the share configuration, it can restrict users to read or write privileges.
 
-{{< hint info >}}
+{{< hint type=note >}}
 NFS treats each dataset as its own filesystem. When creating the NFS share on the server, the specified dataset is the location that client accesses. If you choose a parent dataset as the NFS file share location, the client cannot access any nested or child datasets beneath the parent.
 
 If you need to create shares that include child datasets, SMB sharing is an option. Note that Windows NFS Client versions currently support only NFSv2 and NFSv3.
@@ -95,7 +95,7 @@ To begin sharing, click the <span class="material-icons">more_vert</span> on the
 Or you can go to **System Settings > Services**, locate **NFS**, and click the toggle to running.
 Select **Start Automatically** if you want NFS to activate when TrueNAS boots.
 
-{{< hint info >}}
+{{< hint type=note >}}
 The NFS service does not automatically start on boot if all NFS shares are encrypted and locked.
 {{< /hint >}} 
 
@@ -127,7 +127,7 @@ For example, `sudo mount -t nfs -o rw,nconnect=16 10.239.15.110:/mnt/Pool1/NFS_S
 By default, anyone that connects to the NFS share only has read permission.
 To change the default permissions, edit the share, open the **Advanced Options**, and change the **Access** settings.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 You must have ESXI 6.7 or later for read/write functionality with NFSv4 shares.
 {{< /hint >}}
 

@@ -19,7 +19,7 @@ vCenter uses plugins to integrate server management into the vCenter application
 The iXsystems TrueNAS vCenter Plugin activates management options for TrueNAS hardware attached to vCenter Server.
 This enables some management of TrueNAS systems from a single interface.
 
-{{< hint info >}}
+{{< hint type=note >}}
 The current release version of the TrueNAS vCenter Plugin is **3.4.0**.
 This version is only compatible with [VMware vCenter Server version **6.7.0**](https://docs.vmware.com/en/VMware-vSphere/6.7/vsphere-vcenter-server-67-installation-guide.pdf).
 {{< /hint >}}
@@ -192,7 +192,7 @@ Each role gives the user the ability to perform the functions in that role and a
 For example, a user with a *Create Storage* role can create a new datastore and clone existing datastores.
 The vCenter administrator account always has all permissions.
 
-{{< hint info >}}
+{{< hint type=note >}}
 New vCenter users must be created in **Menu > Administration > Single Sign On > Users and Groups**.
 {{< /hint >}}
 

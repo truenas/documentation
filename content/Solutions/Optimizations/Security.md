@@ -77,7 +77,7 @@ SSH settings are in **Services** after clicking the <span class="iconify" data-i
 For best security, disable the **Log in as Root with Password** and **Allow Password Authentication** SSH Service options.
 Instead, create and exchange SSH keys between client systems and TrueNAS before attempting to connect with SSH.
 
-{{< hint danger >}}
+{{< hint type=warning >}}
 Be careful when prompted to overwrite any existing SSH key pairs, as this can disrupt previously configured SSH connections.
 Overwriting an SSH key pair cannot be undone.
 {{< /hint >}}

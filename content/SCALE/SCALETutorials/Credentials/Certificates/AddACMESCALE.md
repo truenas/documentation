@@ -14,7 +14,7 @@ tags:
 
 Automatic Certificate Management Environment (ACME) DNS authenticators allow users to automate certificate issuing and renewal. The user must verify ownership of the domain before TrueNAS allows certificate automation.
 
-{{< hint warning >}}
+{{< hint type=important >}}
 ACME DNS is an advanced feature intended for network administrators or AWS professionals. Misconfiguring ACME DNS can prevent you from accessing TrueNAS.
 {{< /hint >}}
 

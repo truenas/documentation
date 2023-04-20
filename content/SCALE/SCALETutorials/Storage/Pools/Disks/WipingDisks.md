@@ -9,7 +9,7 @@ tags:
 
 The disk wipe option deletes obsolete data from an unused disk.
 
-{{< hint danger >}}
+{{< hint type=warning >}}
 Wipe is a destructive action and results in permanent data loss!
 Back up any critical data before wiping a disk.
 {{< /hint >}}
@@ -18,7 +18,7 @@ TrueNAS only shows the **Wipe** option for unused disks.
 
 ![DiskScreenExpandedDiskWithWipeOption](/images/SCALE/22.12/DiskScreenExpandedDiskWithWipeOption.png "Disk Details") 
 
-{{< hint danger >}}
+{{< hint type=warning >}}
 Ensure you have backed-up all data and are no longer using the disk.
 Triple check that you have selected the correct disk for the wipe.
 Recovering data from a wiped disk is usually impossible.
