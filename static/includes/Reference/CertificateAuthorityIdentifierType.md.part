@@ -43,7 +43,7 @@ Certificate options change based on the option selected in **Type**.
 |---------|-------------|
 | **Enabled** | Select to activate this certificate extension. |
 | **Usages** | Select the options that identify the purpose for this public key from the dropdown list. Is used for end entity certificates. Multiple usages can be selected. Do not mark this extension critical when the **Usage** is **ANY_EXTENDED_KEY_USAGE**. Using both **Extended Key Usage** and **Key Usage** extensions requires that the purpose of the certificate is consistent with both extensions. See [RFC 3280, section 4.2.1.13](https://www.ietf.org/rfc/rfc3280.txt) for more details. |
-| **Critical Extension** | Select to identify this extension as critical for the certificate. Critical extensions must be recognized by the certificate-using system or this certificate is rejected. Extensions identified as not critical can be ignored by the certificate-using system and the certificate still approved. |
+| **Critical Extension** | Select to identify this extension as critical for the certificate. The certificate-using system must recognize critical extensions, or it will reject the certificate. The certificate-using system can ignore non-critical extensions and still approve the certificate. |
 
 ### Key Usage
 
