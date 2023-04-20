@@ -1,10 +1,12 @@
 ---
-title: "Creating CAs and Certificates"
-description: "This section has articles about configuring certificates and certificate authorities in TrueNAS."
+title: "Adding CAs, Certificates, and Certificate Signing Requests"
+description: "This section includes tutorial articles about adding or importing certificates, certificate signing requests (CSRs), and certificate authorities (CAs) in TrueNAS."
 weight: 140
 geekdocCollapseSection: true
 ---
 
-TrueNAS lets users create certificates and certificate authorities (CAs) that enable encrypted connections to the web interface.
+TrueNAS lets users create or import certificates, certificate signing requests (CSRs), and certificate authorities (CAs) that enable encrypted connections to the web interface.
+
+## Article Summaries
 
 {{< children depth="2" description="true" >}}

@@ -1,158 +1,191 @@
 ---
-title: "Creating Certificates"
-description: "This article describes how to create certificates using TrueNAS CORE."
+title: "Adding Certificates"
+description: "This article provides instructions on adding or importing certificates and certificate signing requests (CSRs) in TrueNAS CORE."
 weight: 20
 aliases:
   - /core/system/certificates
 tags:
 - corecertificates
 - coreca
+- corecsr
 ---
 
 {{< toc >}}
 
-By default, TrueNAS comes equipped with an internal, self-signed certificate that enables encrypted access to the web interface. You can either import or create a Certificate or Signing Request by navigating to **System > Certificates** and clicking *ADD*. Enter the name for the certificate, then choose the *Type*. The four options are *Internal Certificate*, *Certificate Signing Request* (CSR), *Import Certificate*, and *Import Certificate Signing Request*. The process for each type is slightly different.
+By default, TrueNAS comes equipped with an internal, self-signed certificate that enables encrypted access to the web interface. 
 
-## Internal Certificate
+You can either import or create a new certificate or signing request by navigating to **System > Certificates** and clicking **ADD**. 
 
-### Identifier and Type
+## Adding Internal Certificates
 
-Select *Internal Certificate* as the **Type**. 
+To add an internal certificate:
 
-You can select a profile for the CA to auto-fill options like **Key Type**, **Key Length**, **Digest Algorithm**. Otherwise, you must set options manually.
+1. Enter the name for the certificate, then select **Internal Certificate** from the **Type** dropdown list.
+   
+   ![Create Certificate Identifier Type](/images/CORE/12.0/CreateCertificateIdentifierType.png)
 
-![Create Certificate Identifier Type](/images/CORE/12.0/CreateCertificateIdentifierType.png)
+2. Select an option from the **Profiles** dropdown list. 
+   A profile for the certificate auto-fills options like **Key Type**, **Key Length**, **Digest Algorithm**. Otherwise, you must set options manually.
 
-### Certificate Options
+   To add an HTTPS RSA certificate, the default certificate type, select **HTTPS RSA Certificate**. 
+   The configuration form populates with default settings, enables **Basic Constraints**, **Authority Key Identifier**, **Extended Key Usage**, and **Key Usage**, and set the options for each extension.
+   
+   To add an elliptical curve certificate select **HTTPS ECC Certificate**. 
+   The configuration form populates with default settings, enables **Basic Constraints**, **Authority Key Identifier**, **Extended Key Usage**, and **Key Usage**, and set the options for each extension.
 
-1. Select a **Signing Certificate Authority** from the drop-down.
-2. Select a **Key Type** from the drop-down. We recommend the *RSA* key type. 
-3. Select the **Key Length**. We recommend a minimum of *2048* for security reasons. 
-4. Select a **Digest Algorithm**. We recommend *SHA256*. 
-5. Enter the **Lifetime** of the CA in days to set how long the CA will remain valid.
+   To add an OpenVPN certificate, select the client or server option that fits the certificate type you want to create. 
+   The configuration form populates with default settings, enables **Basic Constraints**, **Authority Key Identifier**, **Extended Key Usage**, and **Key Usage**, and set the options for each extension.
 
-![Create Certificate Certificate Options](/images/CORE/12.0/CreateCertificateCertificateOptions.png)
+3. Enter or select the **Certificate Options** settings if you did not select a **Profile** option.
+   
+   ![Create Certificate Certificate Options](/images/CORE/12.0/CreateCertificateCertificateOptions.png)
 
-### Certificate Subject
+   a. Select a **Signing Certificate Authority** from the dropdown list. 
+   b. Select a **Key Type** from the dropdown list. We recommend selecting **RSA**.
+   c. Select the **Key Length**. We recommend a minimum of **2048** for security reasons.
+   d. Select a **Digest Algorithm**. We recommend **SHA256**.
+   e. Enter the **Lifetime** of the certificate CA in days to set how long the CA remains valid. 
 
-1. Fill out the geographic information by entering the **Country**, **Locality**, **Organizational Unit** (optional), **Common Name**, **State**, **Organization**, **Email**, and **Subject Alternate Names**. 
-2. The **Common Name** is the [fully-qualified hostname (FQDN)](https://kb.iu.edu/d/aiuv) and must be unique within a certificate chain.
+4. Enter or select the **Certificate Subject** setting options.
+   
+   ![Create Certificate Certificate Options](/images/CORE/12.0/CreateCertificateCertificateOptions.png)
 
-![Create Certificate Certificate Options](/images/CORE/12.0/CreateCertificateCertificateOptions.png)
+   Enter the geographic and other information in **Country**, **Locality**, **Organizational Unit** (optional), **Common Name**, **State**, **Organization**, **Email**, and **Subject Alternate Names**. 
 
-### Basic Constraints
+   Enter a [fully-qualified hostname (FQDN)](https://kb.iu.edu/d/aiuv) that us unique within a certificate chain in **Common Name**.
 
-1. If you would like to have **Basic Constraints**, set **Enabled** to see more options. 
-2. Set a **Path Length** to determine how many non-self-issued intermediate certificates can follow the certificate in a valid certification path. Entering *0* allows a single additional certificate to follow in the certificate path. 
-3. Select one or more **Basic Constraints Config**s.
+5. Select enable and select extensions to use if you did not select an option in **Profiles**. If manually selecting and entering extension:
+   
+   a. Select **Enable**, then enter the extensions for **Basic Constraints**. 
+  
+   ![Create Certificate Basic Constraints](/images/CORE/12.0/CreateCertificateBasicConstraints.png)
 
-![Create Certificate Basic Constraints](/images/CORE/12.0/CreateCertificateBasicConstraints.png)
+      Enter a value in **Path Length** that determines how many non-self-issued intermediate certificates can follow the certificate in a valid certification path. 
+      Entering **0** allows a single additional certificate to follow in the certificate path. Then select the extension(s) to use.
 
-### Authority Key Identifier
+   b. Select **Enable**, then enter the extensions for **Authority Key Identifier**.
+  
+  ![Create Certificate Authority Key Identifier](/images/CORE/12.0/CreateCertificateAuthorityKeyIdentifier.png)
 
-If you want an **Authority Key Identifier**, set it to **Enabled**, then select one or more **Authority Key Config**s.
+   c. Select **Enable**, then enter the extensions for **Extended Key Usage**. Select one or more usages for the public key from the **Usages** dropdown list.
+      TrueNAS uses Extended Key Usage for end-entity certificates.
 
-![Create Certificate Authority Key Identifier](/images/CORE/12.0/CreateCertificateAuthorityKeyIdentifier.png)
+  ![Create Certificate Key Usage](/images/CORE/12.0/CreateCertificateKeyUsage.png)
+     
+     Enable **Critical Extension** if you want to identify this extension as critical for the certificate. 
+     Do not enable **Critical Extension** if **Usages** contains **ANY_EXTENDED_KEY_USAGE**.
 
-### Key Usage
+   {{< hint info >}}
+   Using **Extended Key Usage** and **Key Usage** extensions requires that the certificate purpose is consistent with both extensions. See [RFC 3280, section 4.2.1.13](https://www.ietf.org/rfc/rfc3280.txt) for more details.
+   {{< /hint >}}
 
-TrueNAS uses Extended Key Usage for end-entity certificates. 
+   d. Select **Enable**, then enter the extensions for **Key Usage**. Select any extensions from the **Key Usage Config** dropdown list.
 
-1. If you want to utilize **Extended Key Usage**, set it to **Enabled**, then select one or more usages for the public key from the **Usages** drop-down.
-2. Enable **Critical Extension** if you want to identify this extension as critical for the certificate. Do not enable **Critical Extension** if **Usages** contains *ANY_EXTENDED_KEY_USAGE*. 
+6. Click **Submit**.
 
-{{< hint info >}}
-Using **Extended Key Usage** and **Key Usage** extensions requires that the certificate purpose is consistent with both extensions. See [RFC 3280, section 4.2.1.13](https://www.ietf.org/rfc/rfc3280.txt) for more details.
-{{< /hint >}}
+## Creating a Certificate Signing Request
 
-![Create Certificate Key Usage](/images/CORE/12.0/CreateCertificateKeyUsage.png)
+To add a certificate singing request (CSR) certificate:
 
-## Certificate Signing Request
+1. Enter the name for the certificate, then select **Certificate Signing Request** from the **Type** dropdown list.
+   
+   ![Create CSA Identifier Type](/images/CORE/12.0/CreateCSAIdentifierType.png)
 
-### Identifier and Type
+2. Select **Certificate Signing Request** from the **Profiles** dropdown list. 
+   A profile for the certificate auto-fills options like **Key Type**, **Key Length**, **Digest Algorithm**. Otherwise, you must set options manually.
 
-1. Select *Certificate Signing Request* as the **Type**. 
-2. You can select a profile for the CA to auto-fill options like **Key Type**, **Key Length**, **Digest Algorithm**. Otherwise, you must set options manually.
+   To use an HTTPS RSA certificate, the default certificate type, select **HTTPS RSA Certificate**. 
+   The configuration form populates with default settings, enables **Basic Constraints**, **Authority Key Identifier**, **Extended Key Usage**, and **Key Usage**, and set the options for each extension.
+   
+   To use an elliptical curve certificate, select **HTTPS ECC Certificate**. 
+   The configuration form populates with default settings, enables **Basic Constraints**, **Authority Key Identifier**, **Extended Key Usage**, and **Key Usage**, and set the options for each extension.
 
-![Create CSA Identifier Type](/images/CORE/12.0/CreateCSAIdentifierType.png)
+   To use an OpenVPN certificate, select the client or server option that fits the certificate type. 
+   The configuration form populates with default settings, enables **Basic Constraints**, **Authority Key Identifier**, **Extended Key Usage**, and **Key Usage**, and set the options for each extension.
 
-### Certificate Options
+3. Enter or select the **Certificate Options** settings if you did not select a **Profile** option.
+   
+   ![Create CSA Certificate Options](/images/CORE/12.0/CreateCSACertificateOptions.png)
 
-1. Select a **Key Type** from the drop-down. We recommend the *RSA* key type. 
-2. Select a **Digest Algorithm**. We recommend *SHA256*. 
+   a. Select a **Key Type** from the dropdown list. We recommend selecting **RSA**.
+   b. Select a **Digest Algorithm**. We recommend **SHA256**.
 
-![Create CSA Certificate Options](/images/CORE/12.0/CreateCSACertificateOptions.png)
+4. Enter or select the **Certificate Subject** setting options.
+   
+   ![Create CSA Certificate Subject](/images/CORE/12.0/CreateCSACertificateSubject.png)
 
-### Certificate Subject
+   Enter the geographic and other information in **Country**, **Locality**, **Organizational Unit** (optional), **Common Name**, **State**, **Organization**, **Email**, and **Subject Alternate Names**. 
 
-1. Fill out the geographic information by entering the **Country**, **Locality**, **Organizational Unit** (optional), **Common Name**, **State**, **Organization**, **Email**, and **Subject Alternate Names**. 
-2. The **Common Name** is the [fully-qualified hostname (FQDN)](https://kb.iu.edu/d/aiuv) and must be unique within a certificate chain.
+   Enter a [fully-qualified hostname (FQDN)](https://kb.iu.edu/d/aiuv) that us unique within a certificate chain in **Common Name**.
 
-![Create CSA Certificate Subject](/images/CORE/12.0/CreateCSACertificateSubject.png)
+5. Select enable and select extensions to use if you did not select an option in **Profiles**. If manually selecting and entering extension:
+   
+   a. Select **Enable**, then enter the extensions for **Basic Constraints**. 
+  
+   ![Create CSA Basic Constraints](/images/CORE/12.0/CreateCSABasicConstraints.png)
 
-### Basic Constraints
+      Enter a value in **Path Length** that determines how many non-self-issued intermediate certificates can follow the certificate in a valid certification path. 
+      Entering **0** allows a single additional certificate to follow in the certificate path. Then select the extension(s) to use.
 
-1. If you would like to have **Basic Constraints**, set **Enabled** to see more options. 
-2. Set a **Path Length** to determine how many non-self-issued intermediate certificates can follow the certificate in a valid certification path. Entering *0* allows a single additional certificate to follow in the certificate path. 
-3. Select one or more **Basic Constraints Config**s.
+   b. Select **Enable**, then enter the extensions for **Authority Key Identifier**.
+  
+  ![Create CSA Authority Key Identifier](/images/CORE/12.0/CreateCSAAuthorityKeyIdentifier.png)
 
-![Create CSA Basic Constraints](/images/CORE/12.0/CreateCSABasicConstraints.png)
+   c. Select **Enable**, then enter the extensions for **Extended Key Usage**. Select one or more usages for the public key from the **Usages** dropdown list.
+      TrueNAS uses Extended Key Usage for end-entity certificates.
 
-### Authority Key Identifier
+  ![Create CSA Key Usage](/images/CORE/12.0/CreateCSAKeyUsage.png)
+     
+     Enable **Critical Extension** if you want to identify this extension as critical for the certificate. 
+     Do not enable **Critical Extension** if **Usages** contains **ANY_EXTENDED_KEY_USAGE**.
 
-If you want an **Authority Key Identifier**, set it to **Enabled**, then select one or more **Authority Key Config**s.
+   {{< hint info >}}
+   Using **Extended Key Usage** and **Key Usage** extensions requires that the certificate purpose is consistent with both extensions. See [RFC 3280, section 4.2.1.13](https://www.ietf.org/rfc/rfc3280.txt) for more details.
+   {{< /hint >}}
 
-![Create CSA Authority Key Identifier](/images/CORE/12.0/CreateCSAAuthorityKeyIdentifier.png)
+   d. Select **Enable**, then enter the extensions for **Key Usage**. Select any extensions from the **Key Usage Config** dropdown list.
 
-### Key Usage
+6. Click **Submit**.
 
-TrueNAS uses Extended Key Usage for end-entity certificates. 
+## Importing a Certificate
 
-1. If you want to utilize **Extended Key Usage**, set it to **Enabled**, then select one or more usages for the public key from the **Usages** drop-down.
-2. Enable **Critical Extension** if you want to identify this extension as critical for the certificate. Do not enable **Critical Extension** if **Usages** contains *ANY_EXTENDED_KEY_USAGE*. 
+To import a certificate:
 
-{{< hint info >}}
-Using **Extended Key Usage** and **Key Usage** extensions requires that the certificate purpose is consistent with both extensions. See [RFC 3280, section 4.2.1.13](https://www.ietf.org/rfc/rfc3280.txt) for more details.
-{{< /hint >}}
+1. Select **Import Certificate** as the **Type**. 
+   
+   ![Import Certificate Identifier Type](/images/CORE/12.0/ImportCertificateIdentifierType.png)
 
-![Create CSA Key Usage](/images/CORE/12.0/CreateCSAKeyUsage.png)
+2. Select the **Certificate Options**. 
+   To import a previously-added certificate for a CSR, select **CSR exists on this system**, then select one from the **Signing Certificate Authority** dropdown list. 
 
-## Import Certificate
+   ![Import Certificate Certificate Options](/images/CORE/12.0/ImportCertificateCertificateOptions.png)
 
-### Identifier and Type
+3. Copy the certificate for the CA you want to import and paste it into the **Certificate** field.
+   
+   ![Import Certificate Certificate Subject](/images/CORE/12.0/ImportCertificateCertificateSubject.png)
 
-Select *Import Certificate* as the **Type**. 
+4. Paste the certificate key that is least 1024 bits long into **Private Key** when available. 
 
-![Import Certificate Identifier Type](/images/CORE/12.0/ImportCertificateIdentifierType.png)
+5. Enter and confirm the Private Key **Passphrase**.
 
-### Certificate Options
+6. Click **Submit**.
 
-If you want to import a certificate for a CSR that was previously added, enable **CSR exists on this system**, then select one from the drop-down. 
+## Importing a Certificate Signing Request
 
-![Import Certificate Certificate Options](/images/CORE/12.0/ImportCertificateCertificateOptions.png)
+To import a certificate signing request (CSR):
 
-### Certificate Subject
+1. Select **Import Certificate Signing Request** as the **Type**. 
+   
+   ![Import CSA Identifier Type](/images/CORE/12.0/ImportCSAIdentifierType.png)
 
-1. Copy the certificate for the CA you want to import and paste it into the **Certificate** field.
-2. Paste the certificate **Private Key** when available. Provide a key at least 1024 bits long.
-3. Enter and confirm the Private Key **Passphrase**.
+2. Copy the certificate for the CA you want to import and paste it into the **Certificate** field.
+   
+   ![Import CSA Certificate Subject](/images/CORE/12.0/ImportCSACertificateSubject.png)
 
-![Import Certificate Certificate Subject](/images/CORE/12.0/ImportCertificateCertificateSubject.png)
+3. Paste the certificate key that is least 1024 bits long into **Private Key** when available. 
 
-## Import Certificate Signing Request
+4. Enter and confirm the Private Key **Passphrase**.
 
-### Identifier and Type
-
-Select *Import Certificate* as the **Type**. 
-
-![Import CSA Identifier Type](/images/CORE/12.0/ImportCSAIdentifierType.png)
-
-### Certificate Subject
-
-1. Copy the certificate for the CA you want to import and paste it into the **Certificate** field.
-2. Paste the certificate **Private Key** when available. Provide a key at least 1024 bits long.
-3. Enter and confirm the Private Key **Passphrase**.
-
-![Import CSA Certificate Subject](/images/CORE/12.0/ImportCSACertificateSubject.png)  
+5. Click **Submit**.
 
 {{< taglist tag="corecertificates" limit="10" >}}
