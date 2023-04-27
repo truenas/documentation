@@ -24,13 +24,9 @@ p,h1,h2,h3,h4,th,td,a {
     font-family: "Inter", sans-serif;
     font-weight: 500;
     font-size: 12px;
-	width: 80%;
 }
 .iconsbar a {
     color: #fff;
-}
-.linksrow {
-	width: 80%;
 }
 
 /* Sticky top menu */
