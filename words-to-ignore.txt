@@ -1225,3 +1225,5 @@ nvdimms
 sudoers
 passdb-backed
 nex
+eno
+enp
