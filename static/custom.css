@@ -82,7 +82,7 @@ p,h1,h2,h3,h4,th,td,a {
     padding: 1rem 1rem 0rem 0rem;
 }
 .container{
-    max-width: 1920px;
+    max-width: 100rem;
     padding: 0;
 }
 .gdoc-header {
@@ -561,6 +561,6 @@ p,h1,h2,h3,h4,th,td,a {
 }
 
 .showBtn {
-  opacity: 1;
+  opacity: .75;
   transform: translateY(0);
 }
