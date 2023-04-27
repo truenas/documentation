@@ -46,10 +46,13 @@ p,h1,h2,h3,h4,th,td,a {
     margin: 0 auto;
     width: 100%;
     padding: .5rem 1rem .5rem 1rem;
-    border-radius: 5px;
 }
 .stickyelement {
     background: black;
+}
+.stickybackground {
+	z-index: 1;
+	width: 100%!important;
 }
 
 .gdoc-header__link {
