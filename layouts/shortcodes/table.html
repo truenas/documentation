@@ -1,0 +1,4 @@
+{{ $style := .Get "style" }}
+<div class="table {{ $style }}" role="alert">
+    {{ print .Inner | markdownify }}
+</div>
