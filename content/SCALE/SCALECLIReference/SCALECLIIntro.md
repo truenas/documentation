@@ -55,17 +55,17 @@ Use the list command to view the list of namespaces. Type `ls`, then press <kbd>
 
 | Namespace | Description |
 |-----------|-------------|
-| **account** | Provides access to **user** and **group** child namespaces and commands. In the UI these are found on the **[Credentials]({{< relref "CredentialsScreen.md" >}}). |
+| **account** | Provides access to **user** and **group** child namespaces and commands. In the UI these are found on the **[Credentials]({{< relref "/SCALE/SCALEUIReference/Credentials/_index.md" >}}) screen. |
 | **app** | Provides access to application child namespaces and commands including **catalog**, **chart_release**, **container**, **docker**, and **kubernetes**. |
-| **auth** |  |
-| **directory_service** |  |
-| **filesystem** |  |
-| **network** |  |
-| **service** |  |
-| **sharing** |  |
-| **storage** |  |
-| **system** |  |
-| **task** |  |
+| **auth** | Provides access to authentication child namespaces and commands including **api_key**, **privilege**, **sessions**, and **two_factor**. |
+| **directory_service** | Provides access to directory services child namespaces and commands including **activedirectory**, **idmap**, **kerberos**, and **ldap**. |
+| **filesystem** | Provides access to the **acltemplate** child namespace. |
+| **network** | Provides access to network child namespaces and commands including **configuration**, **dns**, **interface**, **ipmi**, **route**, and **static_route**.|
+| **service** | Provides access to service chile namespaces and commands including **cluster**, **ctdb**, **dyndns**, **ftp**, **gluster**, **ipmi**, **nfs**, **openvpn**, **rsync**, **rsync_mod**,  **s3**, **smart**, **smb**, **snmp**, **ssh**, **tftp**, **vm**, and **webdav**. |
+| **sharing** | Provides access to sharing child namespaces and commands including **iscsi**, **nfs**, **smb**, **webdav**. |
+| **storage** | Provides acces to storage child namespces and commands including **dataset**, **disk**, **enclosure**, **filesystem**, **pool**, **resilver**, **scrub**, **snapshot**, and **vmware**. |
+| **system** | Provides access system child namespaces and commands including **acme**, **advanced**, **alert**, **boot**, **bootenv**, **certificate**, **config**, **core**, **failover**, **general**, **keychain_credential**, **kmip**, **mail**, **ntp_server**, **reporting**, **support**, **system_dataset**, **truecommand**, **truenas**, **tunable**, **update**, and **version**. |
+| **task** | Provides access to task child namespaces and commands including **cloud_sync**, **cron_job**, **replication**, **rsync**, **smart_test**, and **snapshot**. |
 
 The CLI namespaces organize the API commands into different groups that tend to mirror the SCALE UI, with the exception of the system namespace that includes functions accessed from the top toolbar, and those from the **Credentials** area in the UI.
 
