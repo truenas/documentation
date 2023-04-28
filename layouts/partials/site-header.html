@@ -54,11 +54,13 @@
         </div>
     {{ end }}
 		<div class="stickyelement" id="stickymenu">
+		  <div class="stickybackground">
+		    <div class="container">
 			<a class="gdoc-brand gdoc-header__link" href="https://www.truenas.com">
-			<span class="flex align-center">
+				<span class="flex align-center">
 				<img class="gdoc-brand__img" style="display:flex;float:left" src="{{ (default "brand.svg" .Root.Site.Params.GeekdocLogo) | relURL }}" alt=""/>
 				<span class="gdoc-brand__title">{{ .Root.Site.Title }}</span>
-			</span>
+				</span>
 			</a>
 			<div class="truenas-menubar" style="display:flex;float:right">
                 <div class="truenas-menuitem">
@@ -153,7 +155,9 @@
 						<a href="https://www.truenas.com/get-quote/"><img src="/favicon/Where_To_Buy_Icon_White.webp" style="width:2.5rem;padding-right:1rem">Where to Buy</a>
                     </div>
                 </div>
+			</div>
             </div>
+		  </div>
 		</div>
     <div class="gdoc-menu-header">
       <span class="gdoc-menu-header__items">

@@ -24,13 +24,9 @@ p,h1,h2,h3,h4,th,td,a {
     font-family: "Inter", sans-serif;
     font-weight: 500;
     font-size: 12px;
-	width: 80%;
 }
 .iconsbar a {
     color: #fff;
-}
-.linksrow {
-	width: 80%;
 }
 
 /* Sticky top menu */
@@ -46,10 +42,13 @@ p,h1,h2,h3,h4,th,td,a {
     margin: 0 auto;
     width: 100%;
     padding: .5rem 1rem .5rem 1rem;
-    border-radius: 5px;
 }
 .stickyelement {
     background: black;
+}
+.stickybackground {
+	z-index: 1;
+	width: 100%!important;
 }
 
 .gdoc-header__link {
@@ -82,7 +81,7 @@ p,h1,h2,h3,h4,th,td,a {
     padding: 1rem 1rem 0rem 0rem;
 }
 .container{
-    max-width: 1920px;
+    max-width: 100rem;
     padding: 0;
 }
 .gdoc-header {
@@ -561,6 +560,6 @@ p,h1,h2,h3,h4,th,td,a {
 }
 
 .showBtn {
-  opacity: 1;
+  opacity: .75;
   transform: translateY(0);
 }
