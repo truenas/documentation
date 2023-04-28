@@ -1230,5 +1230,5 @@ namespaces
 namespacename
 autofill
 commandname
-
-
+eno
+enp

@@ -1,10 +1,6 @@
 ---
 ---
 
-TrueNAS CORE utilizes driver information and enumeration to assign an interface name.
-
-![ComponentNamingInterfacesCore](/images/CORE/12.0/ComponentNamingInterfacesCore.png "TrueNAS CORE Interface Listing")
-
-TrueNAS SCALE uses PCI location to assign an interface name.
+TrueNAS SCALE enumerates interface names using PCI locations. By default, SCALE systems identify their network ports with **eno** or **enp** followed by a number.
 
 ![ComponentNamingInterfacesSCALE](/images/SCALE/22.02/ComponentNamingInterfacesSCALE.png "TrueNAS SCALE Interface Listing")
