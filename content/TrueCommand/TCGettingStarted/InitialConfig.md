@@ -156,6 +156,7 @@ Click **Configure** to open the **Mailing List Configure** screen.
 
 ![MailingListConfigureScreen](/images/TrueCommand/2.3.2/MailingListConfigureScreen.png "Mailing List Configuration Screen")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Mailserver** | Enter the address for the SMTP server. |
@@ -164,6 +165,7 @@ Click **Configure** to open the **Mailing List Configure** screen.
 | **Auth pass** | Enter the password for plain authentication. Leave blank for no-auth. |
 | **From** | Enter the email address of the sender. |
 | **Tls** | Initiates a connection with TLS. Uses system settings. |
+{{< /truetable >}}
 
 {{< taglist tag="tcinstall" limit="10" >}}
 {{< taglist tag="tcconfig" limit="10" title="Related Articles" >}}

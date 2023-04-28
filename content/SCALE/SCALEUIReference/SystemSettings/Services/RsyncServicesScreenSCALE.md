@@ -18,10 +18,12 @@ The **Rsync > Configure** screen displays the **TCP Port** and **Auxiliary Param
 
 ![ServicesRsyncConf](/images/SCALE/22.12/ServicesRsyncConf.png "Services Rsync Configure Screen")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **TCP Port** | Enter the port **rsyncd** listens on. |
 | **Auxiliary Parameters** | Enter any additional parameters from [rsyncd.conf(5)](https://www.samba.org/ftp/rsync/rsyncd.conf.html). |
+{{< /truetable >}}
 
 ## Rsync Module Screen
 
@@ -50,15 +52,18 @@ The rsync module details screen displays connections, user, group, allow and den
 
 ![AddRsyncModuleGeneral](/images/SCALE/22.12/AddRsyncModuleGeneral.png "Services Add Rsync Module General Settings")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Name** | Enter a module name that matches the name requested by the rsync client. |
 | **Path** | Enter or uses the <span class="material-icons">arrow_right</span> to the left of <span class="material-icons">folder</span>**/mnt** to browse to the pool or dataset to store received data. |
 | **Comment** | Enter a description for this module. |
 | **Enabled** | Select to activate this module for use with Rsync. Leave clear to deactivate the module without completely removing it. |
+{{< /truetable >}}
 
 ![AddRsyncModuleAccess](/images/SCALE/22.12/AddRsyncModuleAccess.png "Services Add Rsync Module Access Settings")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Access Mode** | Select the permission level for this rsync module from the dropdown list. Options are **Read Only**, **Write Only**, or **Read and Write**. |
@@ -67,11 +72,14 @@ The rsync module details screen displays connections, user, group, allow and den
 | **Group** | Enter or select the TrueNAS group account that runs the rsync command during file transfers to and from this module from the dropdown list. |
 | **Hosts Allow** | Enter a list of patterns to match with the host name and IP address of a connecting client (from [rsyncd.conf(5)](https://www.samba.org/ftp/rsync/rsyncd.conf.html). The connection is rejected if no patterns match. Separate entries by pressing <kbd>Enter</kbd>. |
 | **Hosts Deny** | Enter  a list of patterns to match with the hostname and IP address of a connecting client (from [rsyncd.conf(5)](https://www.samba.org/ftp/rsync/rsyncd.conf.html). The connection is rejected when the patterns match. Separate entries by pressing <kbd>Enter</kbd>. |
+{{< /truetable >}}
 
 ![AddRsyncModuleOtherOptions](/images/SCALE/22.12/AddRsyncModuleOtherOptions.png "Services Add Rsync Module Other Options Settings")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Auxiliary Parameters** | Enter any additional parameters from [rsyncd.conf(5)](https://www.samba.org/ftp/rsync/rsyncd.conf.html). |
+{{< /truetable >}}
 {{< /expand >}}
 {{< taglist tag="scalersync" limit="10" >}}

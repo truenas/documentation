@@ -25,34 +25,42 @@ The NFS service does not automatically start on boot if all NFS shares are encry
 
 ### General Options Settings
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Bind IP Addresses** | Select IP addresses to listen to for NFS requests. Leave empty for NFS to listen to all available addresses. You must configure static IPs on the interface to appear on the dropdown list. |
 | **Number of threads** | Required. Enter an optimal number of threads used by the kernel NFS server. |
+{{< /truetable >}}
 
 ### NFSv4 Settings
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Enable NFSv4** | Select to switch from NFSv3 to NFSv4. If selected, **NFSv3 ownership model for NFSv4** clears, allowing you to select or leave it clear. |
 | **NFSv3 ownership model for NFSv4** | Becomes selectable after selecting **Enable NFSv4**. Select when NFSv4 ACL support is needed without requiring the client and the server to sync users and groups. |
 | **Require Kerberos for NFSv4** | Select to force NFS shares to fail if the Kerberos ticket is unavailable. |
+{{< /truetable >}}
 
 ### Ports Settings
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **mountd(8) bind port** | Enter a port to bind [mountd(8)](https://man7.org/linux/man-pages/man8/mountd.8.html). |
 | **rpc.statd(8) bind port** | Enter a port to bind [rpc.statd(8)](https://man7.org/linux/man-pages/man8/statd.8.html). |
 | **rpc.lockd(8) bind port** | Enter a port to bind [rpc.lockd(8)](https://linux.die.net/man/8/rpc.lockd). |
+{{< /truetable >}}
 
 ### Other Options Settings
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Serve UDP NFS clients** | Select if NFS clients need to use the User Datagram Protocol (UDP). |
 | **Allow non-root mount** | Select only if required by the NFS client to allow serving non-root mount requests. | 
 | **Support >16 groups** | Select when a user is a member of more than 16 groups. This assumes group membership is configured correctly on the NFS server. | 
+{{< /truetable >}}
 
 Unless a specific setting is required, we recommend using the default NFS settings.
 

@@ -56,11 +56,13 @@ To move an existing TrueCommand 1.1 or earlier configuration to a Docker contain
    The table lists the default location and required destination for all the different configuration files TrueCommand 1.1 or earlier can create.
    Only files that already exist need to be copied to the new TrueCommand `localhostdirectory/`.
 
+{{< truetable >}}
 | Files from TrueCommand 1.1 and earlier                 | Copy destination in local host directory   | Description                                                       |
 |--------------------------------------------------------|--------------------------------------------|-------------------------------------------------------------------|
 | `/usr/local/etc/truecommand/server.[crt | key].custom` | `localhostdirectory/truecommand/`          | Custom SSL certificate or key that was imported into TrueCommand. |
 | `/var/nas-db-backup`                                   | `localhostdirectory/`                      | Directory tree of NAS configuration backups.                      |
 | `/var/db/.tv_license.sha512`                           | `localhostdirectory/`                      | License and signature for the license.                            |
+{{< /truetable >}}
 
 3. For the TrueCommand 1.1 `/var/db/ixdb/` database, use `pg_dump ixdb > ixdb.sql` to transform the database into a single *.sql* file.
    Then move `ixdb.sql` to the `localhostdirectory/` for the TrueCommand Docker container.

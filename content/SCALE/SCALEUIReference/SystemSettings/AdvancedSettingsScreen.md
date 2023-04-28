@@ -40,6 +40,7 @@ The **Console** widget on the **System Setting > Advanced** screen displays curr
 
 ![ConsoleConfigScreen](/images/SCALE/22.12/ConsoleConfigScreen.png "SCALE Console Settings Screen") 
 
+{{< truetable >}}
 | Settings | Description |
 |----------|-------------|
 | **Show Text Console without Password Prompt** | Select to display the console without being prompted to enter a password. Leave empty to add a login prompt to the system before showing the console menu. |
@@ -47,6 +48,7 @@ The **Console** widget on the **System Setting > Advanced** screen displays curr
 | **Serial Port** | Enter the serial console port address. |
 | **Serial Speed** | Select the speed (in bits per second) the serial port uses from the dropdown list. Options are 9600, 19200, 38400, 57600, or 115200. |
 | **MOTD Banner** | Enter the message you want to display when a user logs in with SSH. |
+{{< /truetable >}}
 {{< /expand >}}
 
 ## Syslog Widget
@@ -62,6 +64,7 @@ The **Syslog** settings specify the logging level the system uses to record syst
 
 ![SyslogConfigScreen](/images/SCALE/22.12/SyslogConfigScreen.png "SCALE Syslog Settings Screen") 
 
+{{< truetable >}}
 | Settings | Description |
 |----------|-------------|
 | **Use FQDN for Logging** | Select to include the fully-qualified domain name (FQDN) in logs to identify systems with similar host names. |
@@ -71,6 +74,7 @@ The **Syslog** settings specify the logging level the system uses to record syst
 | **Syslog TLS Certificate** | Displays after selecting **TLS** in **Syslog Transport**. Select the [transport protocol](https://tools.ietf.org/html/rfc8095) for the remote system log server TLS certificate from the dropdown list. Select the default or add the certificate and CA for the server using the **Credentials > Certificates** screen **Certificates** widget. |
 | **Syslog TLS Certificate Authority** | Displays after selecting **TLS** in **Syslog Transport**. Select the TLS CA for the TLS server from the dropdown list. If not using the default, create the CA for the systlog server TLS certificate on the **Credentials > Certificates > Certificate Authorities** screen. |
 | **Use System Dataset** | Select to store system logs on the system dataset. Leave clear to store system logs in `/var/` on the operating system device. |
+{{< /truetable >}}
 {{< /expand >}}
 
 ## Cron Jobs Widget
@@ -87,6 +91,7 @@ The **Add Cron Job** and **Edit Cron Job** configuration screens display the sam
 
 ![AddCronJobScreen](/images/SCALE/22.12/AddCronJobScreen.png "SCALE Add Cron Job Screen") 
 
+{{< truetable >}}
 | Settings | Description |
 |----------|-------------|
 | **Description** | Enter a description for the cron job. |
@@ -96,6 +101,7 @@ The **Add Cron Job** and **Edit Cron Job** configuration screens display the sam
 | **Hide Standard Output** | Select to hide standard output (stdout) from the command. If left cleared, TrueNAS mails any standard output to the user account cron that ran the command. |
 | **Hide Standard Error** | Select to hide error output (stderr) from the command. If left cleared, TrueNAS mails any error output to the user account cron that ran the command. |
 | **Enabled** | Select to enable this cron job. Leave cleared to disable the cron job without deleting it. |
+{{< /truetable >}}
 {{< /expand >}}
 
 ## Init/Shutdown Scripts Widget
@@ -112,6 +118,7 @@ Any script listed is a link that opens the **[Edit Init/Shutdown Script](#add-or
 
 ![AddInitShutdownScriptConfigScreen](/images/SCALE/22.12/AddInitShutdownScriptConfigScreen.png "SCALE Init/Shutdown Script Settings Screen") 
 
+{{< truetable >}}
 | Settings | Description |
 |----------|-------------|
 | **Description** | Comments about this script. |
@@ -121,6 +128,7 @@ Any script listed is a link that opens the **[Edit Init/Shutdown Script](#add-or
 | **When** | Select when the command or script runs from the dropdown list. Options are **Pre Init** for early in the boot process, after mounting file systems and starting networking. **Post Init** runs at the end of the boot process before Linux services start. **Shutdown** runs during the system power-off process. |
 | **Enabled** | Select to enable this script. When left cleared, it disables the script without deleting it. |
 | **Timeout** | Automatically stop the script or command after the specified number of seconds. |
+{{< /truetable >}}
 {{< /expand >}}
 
 ## Sysctl Widget
@@ -136,12 +144,14 @@ The **Add Sysctl** or **Edit Sysctl** configuration screen settings let users se
 
 ![AddSysctlConfigScreens](/images/SCALE/22.12/AddSysctlConfigScreen.png "SCALE Add Sysctl Screen") 
 
+{{< truetable >}}
 | Settings | Description |
 |----------|-------------|
 | **Variable** | Enter the name of the sysctl variable to configure. Sysctl tunables configure kernel parameters while the system runs and generally take effect immediately. |
 | **Value** | Enter a [sysctl](https://man7.org/linux/man-pages/man8/sysctl.8.html) value to use for the loader, **sysctl** variable. |
 | **Description** | Enter a description for the tunable. |
 | **Enabled** | Select to enable this tunable. Leave clear to disable this tunable without deleting it. |
+{{< /truetable >}}
 {{< /expand >}}
 
 ## Storage Widget
@@ -196,11 +206,13 @@ The **Self-Encrypting Drive** configuration screen allows users to set the ATA s
 
 ![AdvancedSystemSelfEncryptingDriveConfigScreen](/images/SCALE/22.02/AdvancedSystemSelfEncryptingDriveConfigScreen.png "SCALE Advanced Settings Self-Encrypting Drive screen") 
 
+{{< truetable >}}
 | Settings | Description |
 |----------|-------------|
 | **ATA Security User** | Select the user passed to `camcontrol security -u` to unlock SEDs from the dropdown list. Options are **USER** or **MASTER**. |
 | **SED Password** | Enter the global password to unlock SEDs. |
 | **Confirm SED Password** | Re-enter the global password to unlock SEDs. |
+{{< /truetable >}}
 {{< /expand >}}
 
 ## Isolated GPU Device(s) Widget
@@ -222,5 +234,4 @@ To isolate a GPU, you must have at least two in your system; one allocated to th
 Isolating the GPU prevents apps and the system from accessing it.
 {{< /expand >}}
 
-
-{{< taglist tag="scalesettings" limit="10" >}} 
+{{< taglist tag="scalesettings" limit="10" >}}

@@ -154,7 +154,8 @@ Upload the Debian <file>.iso</file>to the TrueNAS system and attached to the VM 
 1. Click **Virtualization**, then **ADD** to use the VM wizard.
    
    ![SCALEDebianVMOperatingSystem](/images/SCALE/ScaleDebianVMOsSystem.png "Debian VM Add: OS")
-
+   
+   {{< truetable >}}
    | Wizard Screen | Setting | Description |
    |---------------|---------|-------------|
    | **Operating System:** | Guest Operating System |Linux |
@@ -168,7 +169,8 @@ Upload the Debian <file>.iso</file>to the TrueNAS system and attached to the VM 
    | **Installation Media:** |  | Installation ISO is uploaded to `/mnt/tank2/isostorage/`.<br>If the ISO is ot uploaded, select **Upload an installer image file**.<br>Select a dataset to store the ISO, click **Choose file**, then click **Upload**. Wait for the upload to complete. |
    | **GPU:** |  | Leave the default values. |
    | **Confirm Options** |  | Verify the information is correct and then click **Save**. |
-
+   {{< /truetable >}}
+   
 2. After creating the VM, start it. Expand the VM entry and click **Start**.
 
 3. Click **Display** to open a virtual monitor to the VM and see the Debian Graphical Installation screens.

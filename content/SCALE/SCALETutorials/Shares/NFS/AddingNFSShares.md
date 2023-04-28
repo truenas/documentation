@@ -73,12 +73,14 @@ To map group permissions to the *root* user, enter a string or select the group 
 If you want security beyond username and password authentication, select an option from the **Security** dropdown.
 
 {{< expand "Security Types" "v" >}}
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **SYS** | Uses locally acquired UIDs and GIDs. No cryptographic security. |
 | **KRB5** | Uses Kerberos for authentication. |
 | **KRB5I** | Uses Kerberos for authentication and includes a hash with each transaction to ensure integrity. |
 | **KRB5P** | Uses Kerberos for authentication and encrypts all traffic between the client and server. KRB5P is the most secure but also incurs the most load. |
+{{< /truetable >}}
 {{< /expand >}}
 
 ## Editing an NFS Share

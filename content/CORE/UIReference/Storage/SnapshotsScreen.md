@@ -23,12 +23,14 @@ Use **ADD** to display the **Snapshot > Add** screen.
 
 ![AddSnapShotScreen](/images/CORE/13.0/AddSnapShotScreen.png "Add Snapshot Screen")
 
+{{< truetable >}}
 | Name | Description |
 |---------|-------------|
 | **Dataset** | Select a dataset or zvol from the dropdown list to use as the storage location for snapshots.  |
 | **Name** | Enter a unique name. This cannot be used with the value in **Naming Schema** |
 | **Naming Schema** |  | Used to generate a name for the snapshot from a previously created periodic snapshot task. This allows replication of the snapshot. Value cannot be used with a value specified in **Name**. 
 | **Recursive** | Select to include child datasets of the selected dataset. |
+{{< /truetable >}}
 
 Use **SUBMIT** to save settings.
 Use **CANCEL** to exit without saving and display the **Snapshots** screen.
@@ -38,11 +40,13 @@ The expanded snapshot view includes date created, space used, and the amount of 
 
 ![StorageSnapshoExpandedtInfoScreen](/images/CORE/13.0/StorageSnapshoExpandedtInfoScreen.png "Snapshot Expanded Screen")
 
+{{< truetable >}}
 | Name | Icon | Description |
 |---------|------|-------------|
 | **Delete** | <span class="material-icons">delete</span> | Displays a delete confirmation dialog. Select **Confirm** to activate the *DELETE** button. |
 | **Clone to New Dataset** | <span class="iconify" data-icon="fa-regular:clone"></span> | Displays the **Clone to New Dataset** screen. |
 | **Rollback** | <span class="material-icons">restore</span> | Displays the **Dataset Rollback From Snapshot** dialog. |
+{{< /truetable >}}
 
 ### Dataset Rollback from Snapshot Dialog
 {{< hint type=warning >}}
@@ -53,6 +57,7 @@ Do not roll back until all desired data and snapshots are backed up.
 
 ![DatasetRollbackFromSnapshot](/images/CORE/13.0/DatasetRollbackFromSnapshot.png "Dataset Rollback from Snapshot")
 
+{{< truetable >}}
 | Name | Description |
 |---------|-------------|
 | **Stop Roolback if Snapshot Exists** | Select the safety level for the rollback action. Select the radio button that best fits. Rollback is cancelled when the safety check finds additional snapshots that are directly related to the dataset being rolled back. |
@@ -60,6 +65,7 @@ Do not roll back until all desired data and snapshots are backed up.
 | **Newer Clone** | Select to stop rollbck when the safety check finds any related clone snapshots that are newer than the rollback snapshot. |
 | **No Safety Check (CAUTION)** | Select to stop rollback if snapshot exists. The rollback destroys any related intermediate, child dataset, and cloned snapshots that are newer than the rollback snapshot.  |
 | **Confirm** | Select to confirm the selection and activate the **ROLLBACK** button. |
+{{< /truetable >}}
 
 See [Creating Snapshots]({{< relref "/CORE/CORETutorials/Storage/Snapshots.md" >}}) for more information on creating and managing snapshots.
 

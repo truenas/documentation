@@ -15,6 +15,7 @@ tags:
 
 **Alert Warning Levels**
 
+{{< truetable >}}
 | Level | Icon | Alert Notification? |
 |-------|------|-------------|
 | 1 INFO | ![COREAlertLevelInfoNoticeAlertEmergency](/images/CORE/12.0/COREAlertLevelInfoNoticeAlertEmergency.png "Alert Levels") | No |
@@ -24,5 +25,6 @@ tags:
 | 5 CRITICAL | ![COREAlertLevelErrorCritical](/images/CORE/12.0/COREAlertLevelErrorCritical.png "Alert Levels") | Yes |
 | 6 ALERT | ![COREAlertLevelInfoNoticeAlertEmergency](/images/CORE/12.0/COREAlertLevelInfoNoticeAlertEmergency.png "Alert Levels") | Yes |
 | 7 EMERGENCY | ![COREAlertLevelInfoNoticeAlertEmergency](/images/CORE/12.0/COREAlertLevelInfoNoticeAlertEmergency.png "Alert Levels") | Yes |
+{{< /truetable >}}
 
 {{< taglist tag="corealerts" limit="10" >}}

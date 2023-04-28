@@ -50,11 +50,13 @@ The selection in **Type** changes setting options on this screen, the **Certific
 
 ![AddCertificateIdentifierAndTypeInternalCert](/images/SCALE/22.02/AddCertificateIdentifierAndTypeInternalCert.png "Add Certificate Internal Certificate") 
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Name** | Required. Enter a descriptive identifier for this certificate. |
 | **Type** | Select the certificate type from the dropdown list. **Internal Certificate** uses system-managed CAs for certificate issuance. **Import Certificate** allows you to import an existing certificate onto the system. **Import Certificate** removes the **Profiles** field, changes other screens and fields displayed on other wizard screens. |
 | **Profiles** | Select a predefined certificate extension. Options are **Openvpn Server Certificate** or **Openvpn Client Certificate**. Choose a profile that best matches your certificate usage scenario. |
+{{< /truetable >}}
 {{< /expand >}}
 
 ### Certificate Options
@@ -70,6 +72,7 @@ If you do not have a Certificate Authority (CA) configured on your system, exit 
 
 ![AddCertificateCertificateOptions](/images/SCALE/22.02/AddCertificateCertificateOptions.png "Add Certificate Certificate Options")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Signing Certificate Authority** | Required. Select a previously imported or created CA from the dropdown list. |
@@ -78,6 +81,7 @@ If you do not have a Certificate Authority (CA) configured on your system, exit 
 | **EC Curve** | Displays when **Key Type** is set to **EC**. Select the Brainpool or SECP curve that fits your scenario. Brainpool curves can be more secure than SECP curves but SECP curves can be faster. Options are **BrainpoolP512R1**, **BrainpoolP384R1**, **BrainpoolP256R1**, **SECP256K1**, **SECP384R1**, **SECP521R1**, and **ed25519**. See [Elliptic Curve performance: NIST vs Brainpool](https://tls.mbed.org/kb/cryptography/elliptic-curve-performance-nist-vs-brainpool) for more information. |
 | **Digest Algorithm** | Required. Select the cryptographic algorithm to use from the dropdown list. Options are **SHA1**, **SHA224**, **SHA256**, **SHA384** or **SHA512**. Only change the default **SHA256** if the organization requires a different algorithm. |
 | **Lifetime** | Required. Enter the number days for the lifetime of the CA. |
+{{< /truetable >}}
 {{< /expand >}}
 
 #### Certificate Options - Import Certificate
@@ -86,10 +90,12 @@ Setting **Type** on the **Identifier and Type** screen to **Import Certificate**
 
 ![AAddCertificateImportCertificateOptions](/images/SCALE/22.02/AddCertificateImportCertificateOptions.png "Add Certificate Import Certificate Options") 
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **CSR exists on this system**| Select if importing a certificate for which a CSR exists on this system. |
 | **Certificate Signing Request** | Select the existing CSR from the dropdown list. |
+{{< /truetable >}}
 {{< /expand >}}
 
 ### Certificate Subject Options
@@ -101,6 +107,7 @@ The **Certificate Subject** screen does not display when **Type** on **Internal 
 
 ![AddCertificateCertifcateSubject](/images/SCALE/22.02/AddCertificateCertifcateSubject.png "Add Certificate Certificate Subject") 
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Country** | Required. Select the country of the organization from the dropdown list. |
@@ -111,6 +118,7 @@ The **Certificate Subject** screen does not display when **Type** on **Internal 
 | **Email** | Required. Enter the email address of the person responsible for the CA. |
 | **Common Name** | Enter the [fully qualified host name (FQHN)](https://kb.iu.edu/d/aiuv) of the system. This mname must be unique within a certificate chain. |
 | **Subject Alternate Names** | Required. Enter additional domains to secure for multi-domain support. Separate each domain by pressing <kbd>Enter</kbd>. For example, if the primary domain is *example.com*, entering *www.example.com** secures both addresses. |
+{{< /truetable >}}
 {{< /expand >}}
 
 ### Extra Constraints Options
@@ -128,6 +136,7 @@ After selecting **Basic Constraints**, **Authority Key Identifier**, **Extended 
 
 ![AddCertificateExtraConstraintsInternalCert](/images/SCALE/22.02/AddCertificateExtraConstraintsInternalCert.png "Add Certificate Extra Constraints Internal Certificate")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Basic Constraints** | Select to activate this extension to identify whether the certificate subject is a CA and the maximum depth of valid certification paths that include this certificate. Options are **CA** or **Critical Extension**. Selecting **Basic Constraints** displays the **Path Length** and **Basic Constraints Config** fields. |
@@ -140,6 +149,7 @@ After selecting **Basic Constraints**, **Authority Key Identifier**, **Extended 
 | **Critical Extension** | Select to identify this extension as critical for the certificate. The certificate-using system must recognize the critical extensions to prevent this certificate being rejected. The certificate-using system can ignore extensions identified as not critical and still approve the certificate. |
 | **Key Usage** | Select to activate this certificate extension. The key usage extension defines the purpose (e.g., encipherment, signature, certificate signing) of the key contained in the certificate. The usage restriction might be employed when a key that can be used for more than one operation is to be restricted. For example, when an RSA key should be used only to verify signatures on objects other than public key certificates and CRLs, the Digital Signature bits are asserted. Likewise, when an RSA key should be used only for key management, the Key Encipherment bit is asserted. See [RFC 3280, section 4.2.1.3](https://www.ietf.org/rfc/rfc3280.txt) for more information. Displays the **Key Usage Config** field. |
 | **Key Usage Config** | Displays after selecting **Extended Key Usage** or **Key Usage**. Select the option that specifies valid key usages for this certificate. Options are **Digital Signature**, **Content Commitment**, **Key Encipherment**, **Data Encipherment**, **Key Agreement**, **Key Cert Sign**, **CRL Sign**, **Encipher Only**, **Decipher Only** or **Critical Extension**. Web certificates typically need at least **Digital Signature** and possibly **Key Encipherment** or **Key Agreement**, while other applications might need other usages.  |
+{{< /truetable >}}
 {{< /expand >}}
 
 #### Extra Constraints - Import Certificate
@@ -148,12 +158,14 @@ When **Type** on **Identifier and Type** is set to **Import Certificate** the **
 
 ![AddCertificateImportExtraConstraints](/images/SCALE/22.02/AddCertificateImportExtraConstraints.png "Add Certificate Extra Constraints Import Certificate") 
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Certificate** | Required. Paste the certificate for the CA into this field. |
 | **Private Key** | Required. Paste the private key associated with the certificate when available. Provide a key at least 1024 bits long. |
 | **Passphrase** | Enter the passphrase for the private key. |
 | **Confirm Passphrase** | Re-enter the passphrase for the private key. |
+{{< /truetable >}}
 {{< /expand >}}
 
 ### Confirm Options 

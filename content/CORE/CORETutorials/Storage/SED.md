@@ -49,6 +49,7 @@ For TrueNAS High Availability (HA) systems, SED drives only unlock on the active
 
 Enter command `sedutil-cli --scan` in the **Shell** to detect and list devices. The second column of the results identifies the drive type:
 
+{{< truetable >}}
 | Character | Standard   |
 |-----------|------------|
 | no        | non-SED device |
@@ -59,6 +60,7 @@ Enter command `sedutil-cli --scan` in the **Shell** to detect and list devices. 
 | p         | Pyrite V1  |
 | P         | Pyrite V2  |
 | r         | Ruby       |
+{{< /truetable >}}
 
 Example:
 

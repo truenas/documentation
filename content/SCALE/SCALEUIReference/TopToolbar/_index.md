@@ -18,6 +18,7 @@ The top toolbar icon buttons provide access to the iXsystems website, displays t
 
 ## Toolbar Icons
 
+{{< truetable >}}
 | Icon | Name | Description |
 |------|------|-------------|
 | <span class="iconify" data-icon="bytesize:menu"></span> | Toggle collapse | Click to expand or collapse the main menu panel on the left side of the screen. |
@@ -28,6 +29,7 @@ The top toolbar icon buttons provide access to the iXsystems website, displays t
 | <span class="material-icons">notifications</span> | Alerts | Displays a list of system alerts and a dropdown list the alert options **Alert Settings**, **Alert Services** and **Email**. |
 | <span class="material-icons">account_circle</span> | Settings | Displays a dropdown list of setting options **Change Password**, **API Keys**, **Guide** and **About**. |
 | <span class="material-icons">power_settings_new</span> | Power options | Displays the power related options **Log Out**, **Restart** or **Shut Down**. |
+{{< /truetable >}}
 
 ### Status of TrueCommand
 

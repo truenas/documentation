@@ -83,12 +83,14 @@ If you select a child dataset of the root dataset or of a non-root parent, the s
 
 ![UnlockDatasetsScreen](/images/SCALE/22.12/UnlockDatasetsScreen.png "Unlock Datasets Screen")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Unlock Child Encrypted Roots** | Select to inlock any encrypted dataset stored within this dataset. |
 | **Dataset Passphrase**<br> **Dataset Key** | Enter the user-defined string (passphrase) or system-generated or user-created alpha-numeric key you entered at the time you created the dataset. |
 | **Force** | Select to add a force flag to the operation. In some cases it is possible that the provided key/passphrase is valid but the path where the dataset is supposed to be mounted after being unlocked already exists and is not empty. In this case, unlock operation fails. Adding the force flag can override this and when selected, the system renames the existing dataset mount directory/file path and it unlocks the dataset. |
 | **Save** | Starts the unlock process, fetch data, and displays the **Unlock Datasets** dialog with the dataset mount path. Click **Continue** to unlock the dataset. |
+{{< /truetable >}}
 {{< /expand >}}
 
 {{< taglist tag="scaleencryption" limit="10"  >}}

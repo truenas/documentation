@@ -13,11 +13,13 @@ tags:
 
 ## Identifier and Type
 
+{{< truetable >}}
 | Name | Description |
 |------|-------------|
 | Name | Descriptive identifier for this certificate. |
 | Type | Internal Certificate is used for internal or local systems. Certificate Signing Request is used to get a CA signature. Import Certificate allows an existing certificate to be imported onto the system. Import Certificate Signing Request allows an existing CSR to be imported onto the system.  |
 | Profiles | Predefined certificate extensions. Choose a profile that best matches your certificate usage scenario. |
+{{< /truetable >}}
 
 ## Internal Certificate and Certificate Signing Request
 

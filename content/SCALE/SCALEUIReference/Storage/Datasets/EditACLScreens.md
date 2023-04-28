@@ -35,12 +35,14 @@ Use the settings on this screen to configure basic ACL permissions.
 The **Owner** section controls which TrueNAS user and group has full control of this dataset.
 
 {{< expand "Click here for details" "v" >}}
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **User** | Enter or select a user to control the dataset. Users created manually or imported from a directory service appear in the menu. |
 | **Apply User** | Select to confirm user changes. To prevent errors, TrueNAS only submits changes only after you select this option. |
 | **Group** | Enter or select the group to control the dataset. Groups created manually or imported from a directory service appear in the menu. |
 | **Apply Group** | Select to confirm group changes. To prevent errors, TrueNAS only submits changes only after you select this option. |
+{{< /truetable >}}
 {{< /expand >}}
 
 ### Access Settings
@@ -79,10 +81,12 @@ If using **NFSv4** as the **ACL Type** setting, you access the NFS4 **Select a P
 The **ACL Type** setting determines the pre-configured options presented on the **Default ACL Options** dropdown list on each of these windows. 
 For POSIX, the options are **POSIX_OPEN**, **POSIX_RESTRICTED**, or **POSIX_HOME**. For NFSv4, the options are **NFS4_OPEN**, **NFS4_RESTRICTED**, **NFS4_HOME**, and **NFS4_DOMAIN_HOME**.
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Select a preset ACL** | Click this radio button to populate the **Default ACL Options** dropdown list with a set of pre-configured POSIX permissions. |
 | **Create a custom ACL** | Click this radio button to display the **Edit ACL** screen with no default permissions, users, or groups to configure your own set of permissions after you click **Continue**. |
+{{< /truetable >}}
 
 Click **Continue** to display the **Edit ACL** screen.
 {{< /expand >}}
@@ -114,6 +118,7 @@ These functions display on the **Edit ACL** screen for both POSIX and NSFv4 ACL 
 {{< expand "Click here for details" "v" >}}
 ![EditACLScreenNFSv4Type](/images/SCALE/22.12/EditACLScreenNFSv4Type.png "NFS4 Edit ACL Screen") 
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Add Item** | Adds a new ACE to the **Access Control List**. |
@@ -123,6 +128,7 @@ These functions display on the **Edit ACL** screen for both POSIX and NSFv4 ACL 
 | **Permissions Editor** | (POSIX only) Displays the **Unix Permissions Editor** screen for POSIX ACL types. |
 | **Use Preset** | Displays the **Select a preset ACL** window. If the **ACL Type** setting, found in the **Advanced Options** of both the **Add Dataset** and **Edit Dataset** screens, is **POSIX** or **Inherit**, the **Default ACL Options** dropdown displays POSIX pre-configured options. If set to NFSv4, the preset options displayed are pre-configured NSFv4 options. |
 | **Save As Preset** | Saves the current access control list as a custom preset and adds it to the **Access Control List**. |
+{{< /truetable >}}
 
 {{< /expand >}}
 
@@ -132,11 +138,14 @@ The POSIX **Access Control Entry** settings include **Who**, **Permissions**, an
 {{< expand "Click here for details" "v" >}}
 ![EditACLPOSIXAccessControlEntrySettings](/images/SCALE/22.12/EditACLPOSIXAccessControlEntrySettings.png "POSIX Access Control Entry Settings")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Who** | Select the user or group from the dropdown list the permissions apply to. <br><br>**User** denotes access rights for users identified by the entry qualifier.<br>**Group** denotes access rights for the filegroup.<br>**Other** denotes access rights for processes that do not match any other entry in the ACL.<br>**Group Obj** denotes access rights for the filegroup.<br>**User Obj** denotes access rights for the file owner.<br>**Mask** denotes the maximum access rights User, Group Obj, or Group type entries can grant. |
 | **Permissions** | Select the checkbox for each permission type (**Read**, **Write** and **Execute**) to apply to the user or group in **Who**.
 | **Flags** | Select the **Default** option to include a flag setting for the user or group in **Who**. |
+{{< /truetable >}}
+
 {{< /expand >}}
 
 ### NFS4 Access Control Entry Settings
@@ -148,10 +157,13 @@ The NFSv4 **ACL Type** radio buttons change the **Permissions** and **Flags** se
 
 ![EditACLNFSv4AccessControlEntrySettings](/images/SCALE/22.12/EditACLNFSv4AccessControlEntrySettings.png "NSFv4 Access Control Entry Settings")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Who** | Access Control Entry (ACE) user or group. Select a specific User or Group for this entry. See [nfs4_setfacl(1) NFSv4 ACL ENTRIES](https://man7.org/linux/man-pages/man1/nfs4_setfacl.1.html). <br><br>**User** denotes access rights for users identified by the qualifier.<br>**Group** denotes access rights for groups identified by the qualifier.<br>**owner@** applies this entry to the user that owns the dataset.<br>**group@** applies this entry to the group that owns the dataset. <br>**everyone@** applies this entry to all users and groups. |
 | **ACL Type** | Determines how the Permissions apply to the chosen **Who**. Choose **Allow** to grant the specified permissions and **Deny** to restrict the specified permissions. |
+{{< /truetable >}}
+
 {{< /expand >}}
 
 ### NFS4 Permissions and Flags
@@ -166,12 +178,14 @@ Click the **Basic** radio button to display the **Permissions** dropdown list of
 {{< expand "Click here for details" "v" >}}
 ![EditACLNFSv4BasicPermissionsOptions](/images/SCALE/22.12/EditACLNFSv4BasicPermissionsOptions.png "NSFv4 Basic Permissions Options") 
 
+{{< truetable >}}
 | Permission | CLI Command | Description |
 |------------|-------------|-------------|
 | **Read** | `r-x---a-R-c---` | View file or directory contents, attributes, named attributes, and ACL. | 
 | **Modify** | `rwxpDdaARWc--s` | Adjust file or directory contents, attributes, and named attributes. Create new files or subdirectories. Includes the *Traverse* permission. | 
 | **Traverse** | `--x---a-R-c---` | Execute a file or move through a directory. | 
 | **Full Control** | `rwxpDdaARWcCos` | Apply all permissions. | 
+{{< /truetable >}}
 {{< /expand >}}
 
 #### Permissions Settings - Advanced
@@ -181,6 +195,7 @@ Click the **Advanced** radio button to display the **Permissions** options for t
 {{< expand "Click here for details" "v" >}}
 ![EditACLNSFv4AdvancedPermissionsOptions](/images/SCALE/22.12/EditACLNSFv4AdvancedPermissionsOptions.png "NSFv4 Advanced Permissions Options") 
 
+{{< truetable >}}
 | Permission | CLI Command | Description |
 |------------|-------------|-------------|
 | **Read Data** | `r` | View file contents or list directory contents. | 
@@ -196,7 +211,8 @@ Click the **Advanced** radio button to display the **Permissions** options for t
 | **Read ACL** | `c` | View the ACL. | 
 | **Write ACL** | `C` | Change the ACL and the ACL mode. | 
 | **Write Owner** | `o` | Change the user and group owners of the file or directory. | 
-| **Synchronize** | `s` | Synchronous file read/write with the server. This permission does not apply to FreeBSD clients. | 
+| **Synchronize** | `s` | Synchronous file read/write with the server. This permission does not apply to FreeBSD clients. |
+{{< /truetable >}}
 {{< /expand >}}
 
 #### Flag Settings - Basic
@@ -206,10 +222,13 @@ Click the **Basic** radio button to display the flag settings that enable or dis
 {{< expand "Click here for details" "v" >}}
 ![EditACLNSFv4BasicFlagsOptions](/images/SCALE/22.12/EditACLNSFv4BasicFlagsOptions.png "NSFv4 Basic Flags Options")
 
+{{< truetable >}}
 | Flag | CLI Command | Description |
 |------|-------------|-------------|
 | **Inherit** | `fd-----` | Enable ACE inheritance. | 
 | **No Inherit** | `-------` | Disable ACE inheritance. | 
+{{< /truetable >}}
+
 {{< /expand >}}
 
 #### Flag Settings - Advanced
@@ -219,13 +238,15 @@ Click the **Advanced** radio button to display the flag settings that enable or 
 {{< expand "Click here for details" "v" >}}
 ![EditACLNSFv4AdvancedFlagsOptionst](/images/SCALE/22.12/EditACLNSFv4AdvancedFlagsOptions.png "NFSv4 Advanced Flags Options") 
 
+{{< truetable >}}
 | Flag | CLI Command | Description |
 |------|-------------|-------------|
 | **File Inherit** | `f` | The ACE is inherited with subdirectories and files. It applies to new files. | 
 | **Directory Inherit** | `d` | New subdirectories inherit the full ACE. | 
 | **No Propagate Inherit** | `n` | The ACE can only be inherited once. | 
 | **Inherit Only** | `i` | Remove the ACE from permission checks but allow new files or subdirectories to inherit it. Inherit Only is removed from these new objects. | 
-| **Inherited** | `I` | Set when this dataset inherits the ACE from another dataset. | 
+| **Inherited** | `I` | Set when this dataset inherits the ACE from another dataset. |
+{{< /truetable >}}
 {{< /expand >}}
 
 

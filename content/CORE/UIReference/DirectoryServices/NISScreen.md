@@ -16,6 +16,7 @@ For modern networks, [LDAP]({{< relref "/content/CORE/UIReference/DirectoryServi
 
 ![DirectoryServicesNIS](/images/CORE/12.0/DirectoryServicesNIS.png)
 
+{{< truetable >}}
 | Name | Description |
 |---------|-------------|
 | **NIS Domain** | Enter a name and list any NIS domain host names or IP addresses. Press <kbd>Enter</kbd> to separate server entries. |
@@ -23,6 +24,7 @@ For modern networks, [LDAP]({{< relref "/content/CORE/UIReference/DirectoryServi
 | **Secure Mode** | Select to have [ypbind(8)](https://www.freebsd.org/cgi/man.cgi?query=ypbind) refuse to bind to any NIS server not running as *root* on a TCP port over **1024**. |
 | **Manycast** | Select for `ypbind` to bind to the fastest responding server. |
 | **Enable** | Select to enable the configuration. Leave checkbox clear to disable the configuration without deleting it. |
+{{< /truetable >}}
 
 Click **SAVE** to save configuration settings.
 

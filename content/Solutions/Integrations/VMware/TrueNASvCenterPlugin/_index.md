@@ -180,6 +180,7 @@ An administrator can grant vCenter users specific role-based access to the TrueN
 
 ![RBACRoles](/images/vCenterPlugin/RBACRoles.png "RBAC Roles")
 
+{{< truetable >}}
 | Role Name       | User is allowed to:            |
 |-----------------|--------------------------------|
 | Discover        | Add TrueNAS systems to vCenter |
@@ -187,6 +188,7 @@ An administrator can grant vCenter users specific role-based access to the TrueN
 | Create Storage  | Create new datastores          |
 | Modify Storage  | Edit existing datastores       |
 | Destroy Storage | Delete datastores              |
+{{< /truetable >}}
 
 Each role gives the user the ability to perform the functions in that role and all of the roles that precede it in the list.
 For example, a user with a *Create Storage* role can create a new datastore and clone existing datastores.

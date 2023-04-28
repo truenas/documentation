@@ -31,9 +31,11 @@ To see this screen, log in to TrueCommand and click the <span class="iconify" da
 {{< expand "Option descriptions (click to expand)" "v" >}}
 If you have not created a cluster, there is a single option on this screen:
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **CREATE CLUSTER** | Opens the form to create a new cluster. |
+{{< /truetable >}}
 
 {{< /expand >}}
 
@@ -49,10 +51,12 @@ The initial form has two fields:
 
 {{< expand "Option descriptions (click to expand)" "v" >}}
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Name** | Enter a string to identify the cluster. |
 | **Systems** | Dropdown list shows all connected TrueNAS SCALE systems available for this cluster. Clusters can consist of between 3 and 20 individual SCALE systems. |
+{{< /truetable >}}
 
 {{< /expand >}}
 
@@ -62,10 +66,12 @@ Making selections in the **Systems** field adds more options.
 
 {{< expand "Option descriptions (click to expand)" "v" >}}
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Delete** | Clicking the  <i class="material-icons" aria-hidden="true" title="Delete">delete</i> **Delete** icon removes the system from the cluster. |
 | **Network Address** | Dropdown list shows available IP addresses to use for cluster traffic. Using private dedicated network addresses is recommended. |
+{{< /truetable >}}
 
 {{< /expand >}}
 
@@ -77,9 +83,11 @@ There is a single option on this page.
 
 {{< expand "Option descriptions (click to expand)" "v" >}}
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **CREATE** | Begins creating the cluster, which restricts the SMB functionality on the SCALE systems. |
+{{< /truetable >}}
 
 {{< /expand >}}
 
@@ -94,11 +102,13 @@ The VIPs page has options and fields added for each SCALE system in the cluster.
 
 ![ConfigureClusterSMBNetwork](/images/TrueCommand/2.3.1/ConfigureClusterSMBNetwork.png "Configure Cluster SMB Network")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **ADD** | Adds another line under VIPs for IPs and netmasks. |
 | **Address** | Virtual IP address for one of the cluster systems. |
 | **Netmask** | Netmask for the IP address. |
+{{< /truetable >}}
 
 #### Associate VIPs
 
@@ -106,9 +116,11 @@ The Associate VIPs page allows you to select interfaces to assign to the VIPs.
 
 ![ConfigureClusterAssociateVIPs](/images/TrueCommand/2.3.1/ConfigureClusterAssociateVIPs.png "Configure Associate VIPs")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Interface** | Select an interface from the dropdown list of interface options and assign it to the VIP.  |
+{{< /truetable >}}
 
 #### Active Directory
 
@@ -118,12 +130,14 @@ The options on this page let you establish a connection between an Active Direct
 
 {{< expand "Option descriptions (click to expand)" "v" >}}
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Domain Name** | Enter a string for the Microsoft Active Directory (AD) environment host name.
 | **NetBIOS** | Automatically populates with the cluster name. |
 | **Username** | Enter a string for the account credential to establish the AD connection. You must use an account with administrative access. |
 | **Password** | Enter a string for the account credential to establish the AD connection. You must use an account with administrative access. |
+{{< /truetable >}}
 
 {{< /expand >}}
 
@@ -135,9 +149,11 @@ All chosen settings display here for you to confirm before being applied to the 
 
 {{< expand "Option descriptions (click to expand)" "v" >}}
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **CONFIRM** | Saves the configuration settings and permanently apply them to the cluster. |
+{{< /truetable >}}
 
 {{< /expand >}}
 
@@ -153,11 +169,13 @@ Click the **^** or **v** icons to minimize or expand (respectively) the list of 
 
 {{< expand "Option descriptions (click to expand)" "v" >}}
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **CREATE VOLUME** | Opens the form to create new clustered storage. |
 | **Rename** | Opens the form to enter a new **Cluster Name**. |
 | **Delete** | Disconnects each SCALE system from the cluster and removes the card from TrueCommand. Shows a confirmation popup when clicked. |
+{{< /truetable >}}
 
 {{< /expand >}}
 
@@ -172,6 +190,7 @@ The options split into two pages: **Details** and **Confirmation**.
 
 {{< expand "Option descriptions (click to expand)" "v" >}}
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Name** | Enter a string as an identifying label for this cluster volume. |
@@ -179,6 +198,7 @@ The options split into two pages: **Details** and **Confirmation**.
 | **Cluster** | String (disabled). Shows the cluster that controls the new volume. |
 | **Brick Size** | Enter an integer and select from the dropdown list to define storage capacity. Allows numeric values and selecting units of size. |
 | **Pools** | Dropdown list. Select a storage pool on the individual SCALE system that provides capacity for the cluster volume. |
+{{< /truetable >}}
 
 The **Type** field has four options:
 
@@ -194,10 +214,12 @@ The **Confirmation** page shows details for the chosen volume **Type** and stora
 
 {{< expand "Option descriptions (click to expand)" "v" >}}
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **BACK** | Click the button to go to the previous configuration page. |
 | **CREATE** | Click the button to save the configuration and build the clustered volume on each system in the cluster. |
+{{< /truetable >}}
 
 {{< /expand >}}
 
@@ -214,10 +236,12 @@ Click the volume name to expand the details and see more management options.
 
 {{< expand "Option descriptions (click to expand)" "v" >}}
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **DELETE** | Click the button to remove the volume from the cluster and destroy stored data. |
 | **CREATE SHARE** | Opens the form to configure a new SMB share for remote access to this cluster volume. |
+{{< /truetable >}}
 
 {{< /expand >}}
 
@@ -229,6 +253,7 @@ Adding a cluster share shows a few options.
 
 {{< expand "Option descriptions (click to expand)" "v" >}}
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Cluster** | String (disabled). Shows the name of the cluster related to this share. |
@@ -237,6 +262,7 @@ Adding a cluster share shows a few options.
 | **ACL** | Dropdown list. Access Control List. Choose permissions for the share. |
 | **Readonly** | Checkbox disables or allows file management options for connected users. Select to disable. |
 | **CONFIRM** | Click the button to save the settings, create the share, and make the cluster volume accessible to Active Directory user accounts. |
+{{< /truetable >}}
 
 **ACL Options**
 
@@ -253,10 +279,12 @@ Click the cluster volume name to open the **Cluster Volume Details** and see any
 
 {{< expand "Option descriptions (click to expand)" "v" >}}
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **DELETE** | Removes the share from the Cluster Volume. This operation does not destroy data. |
 | **CREATE SHARE** | Opens the form to configure a new SMB share for remote access to this cluster volume. |
+{{< /truetable >}}
 
 {{< /expand >}}
 

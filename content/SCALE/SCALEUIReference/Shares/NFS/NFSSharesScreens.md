@@ -64,6 +64,7 @@ The **Add NFS** and **Edit NFS** display the same **Basic Options** and **Advanc
 
 ![SharingNFSAddSCALE](/images/SCALE/22.12/SharingNFSAddSCALE.png "Add NFS Basic Options")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Path** | Click **Add** to display the **Add paths** settings. Enter the path or use the <span class="material-icons">arrow_right</span> icon to the left of **<span class="material-icons">folder</span>/mnt** to locate the dataset and populate the path. **Path** is the directory tree on the local file system that TrueNAS exports over the NFS protocol. Click **Add** for each path you want to add. |
@@ -71,6 +72,7 @@ The **Add NFS** and **Edit NFS** display the same **Basic Options** and **Advanc
 | **Enabled** | Select to enable this NFS share. Clear the checkbox to disable this NFS share without deleting the configuration. |
 | **Add networks** | Click **Add** to display the **Authorized Networks** IP address and CIDR fields. Enter an allowed network IP and select the mask CIDR notation. Click **Add** for each network address and CIDR you want to define as an authorized network. Defining an authorized network restricts access to all other networks. Leave empty to allow all networks. |
 | **Add hosts** | Click **Add** to display the **Authorized Hosts and IP addresses** field. Enter a host name or IP address to allow that system access to the NFS share. Click **Add** for each allowed system you want to define. Defining authorized systems restricts access to all other systems. Leave the field empty to allow all systems access to the share. |
+{{< /truetable >}}
 
 ### Advanced Options Settings
 **Advanced Options** settings tune the share access permissions and define authorized networks.
@@ -78,6 +80,7 @@ The **Add NFS** and **Edit NFS** display the same **Basic Options** and **Advanc
 
 ![AddNFSAdvancedOptionsAccessSettings](/images/SCALE/22.12/AddNFSAdvancedOptionsAccessSettings.png "Add NSF Advanced Options Access Settings")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Read-Only** | Select to prohibit writing to the share. |
@@ -86,14 +89,17 @@ The **Add NFS** and **Edit NFS** display the same **Basic Options** and **Advanc
 | **Mapall User** | Enter a string or select a user to apply permission for the chosen user to all clients. |
 | **Mapall Group** | Enter a string or select a group to apply permission for the chosen group to all clients. | 
 | **Security** | Choose from dropdown list: **SYS**, **KRB5**, **KRB5I**, **KRB5P**. |
+{{< /truetable >}}
 
 {{< expand "Security Types" "v" >}}
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **SYS** | Uses locally acquired UIDs and GIDs. No cryptographic security. |
 | **KRB5** | Uses Kerberos for authentication. |
 | **KRB5I** | Uses Kerberos for authentication and includes a hash with each transaction to ensure integrity. |
 | **KRB5P** | Uses Kerberos for authentication and encrypts all traffic between the client and server. KRB5P is the most secure but also incurs the most load. |
+{{< /truetable >}}
 {{< /expand >}}
 
 {{< taglist tag="scalenfs" limit="10" >}}

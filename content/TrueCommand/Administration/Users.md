@@ -50,6 +50,7 @@ Users or admins can add personal details about the user on this page.
 
 To revert to the original field contents, click **RESET FORM** before you click **SAVE CHANGES**.
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Username** | Enter or change the username. |
@@ -61,6 +62,7 @@ To revert to the original field contents, click **RESET FORM** before you click 
 | **TrueCommand Administrator** | Designates the account as an administrator. |
 | **Password** | New user password. |
 | **Password Confirm** | Confirms new user password. |
+{{< /truetable >}}
 
 ### Joined Teams
 

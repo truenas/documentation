@@ -117,12 +117,14 @@ To create the virtual machine for your TrueNAS, from the **Virtual Machines** sc
    
    ![VMWizardCustomizeSettings](/images/VMWareESXi/VMWizardCustomizeSettings.png "Customize Settings")
 
+   {{< truetable >}}
    | Setting | Value Description |
    |---------|-------------------|
    | **CPU** | 2 |
    | **Memory** | 8 GB |
    | **Hard disk 1** | 16 GB. This first disk is the boot disk. |
    | **CD/DVD Drive 1** | Select **Datastore ISO file** from the dropdown list of options. |
+   {{< /truetable >}}
 
 5. Add the second required disk. Click **Add hard disk** and select either **New standard hard disk** or **Existing hard disk** to add a second hard drive.
    

@@ -186,7 +186,7 @@ Choose a connection method from the **Connect using** dropdown list. The followi
 
 ![AddRsyncTaskSourceRemoteSSHDir](/images/SCALE/22.12/AddRsyncTaskSourceRemoteSSHDir.png "Add Rsync Task: SSH Mode")
 
-
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | Path | Enter or browse to the path to be copied. |
@@ -199,11 +199,13 @@ Choose a connection method from the **Connect using** dropdown list. The followi
 | Remote SSH Port | Enter the SSH Port of the remote system. Default is 22. |
 | Remote Path | Select from options listed. |
 | Validate Remote Path | Set to automatically create the defined **Remote Path** if it does not exist. Checkbox is selected by default. |
+{{< /truetable >}}
 
 If you chose **SSH connection from the keychain**, the following fields display:
 
 ![AddRsyncTaskSourceRemoteSSHKeychain](/images/SCALE/22.12/AddRsyncTaskSourceRemoteSSHKeychain.png "Add Rsync Task: SSH Mode")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | Path | Enter or browse to the path to be copied. |
@@ -215,7 +217,7 @@ If you chose **SSH connection from the keychain**, the following fields display:
 | SSH Connection | Select an existing **SSH connection** to a remote system or choose **Create New** to create a new SSH connection. |
 | Remote Path | Select from options listed. |
 | Validate Remote Path | Set to automatically create the defined **Remote Path** if it does not exist. Checkbox is selected by default. |
-
+{{< /truetable >}}
 
 Next, enter the **Remote Host** IP address or hostname.
 Use the format *username@remote_host* if the username differs on the remote host.
@@ -237,7 +239,5 @@ Click **Save**.
 
 Clear the **Enabled** checkbox to disable the task schedule without deleting the configuration. 
 You can still run the rsync task by going to **Data Protection > Rsync Tasks** and clicking <i class="fa fa-chevron-right"></i> then the **Run Now** <i class="material-icons" aria-hidden="true" title="play_arrow">play_arrow</i> icon.
-
-
 
 {{< taglist tag="scalersync" limit="10" >}}

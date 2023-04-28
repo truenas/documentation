@@ -12,6 +12,7 @@ Use the I**Network > IPMI** screen to configure the TrueNAS for an IPMI connecti
 
 ![NetworkIPMIScreen](/images/CORE/13.0/NetworkIPMIScreen.png "Network IPMI Screen")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **TrueNAS Controller** | Select a TrueNAS controller from the dropdown list. All IPMI changes are applied to that TrueNAS controller. |
@@ -24,6 +25,7 @@ Use the I**Network > IPMI** screen to configure the TrueNAS for an IPMI connecti
 | **VLAN ID** | Enter the VLAN identifier if the IPMI out-of-band management interface is not on the same VLAN as management networking. |
 | **IDENTIFY LIGHT** | Displays a dialog to activate an IPMI identify light on the compatible connected hardware. |
 | **MANAGE** | Connects the TrueNAS to the IPMI web interface login screen. |
+{{< /truetable >}}
 
 Use **SAVE** to save the IPMI settings.
 

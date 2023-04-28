@@ -16,6 +16,7 @@ Click **ADD** to open the WebDAV configuration screen.
 
 ![WebDAVAddScreen](/images/CORE/13.0/WebDAVAddScreen.png "Sharing WebDAV Add Screen")
 
+{{< truetable >}}
 | Name | Description |
 |----------|-------------|
 | **Name** | Enter a name for the share. |
@@ -24,5 +25,6 @@ Click **ADD** to open the WebDAV configuration screen.
 | **Read Only** | Select to prohibit users from writing to this share. |
 | **Change User & Group Ownership** | Change existing ownership of all files in the share to user webdav and group webdav. Clearing the check mark means you must manually set ownership of the files accessed through WebDAV to the **webdav** or **www** user/group. |
 | **Enabled** | Select to enable this WebDAV share. Leave checkbox clear to disable this WebDAV share without deleting it. |
+{{< /truetable >}}
 
 {{< taglist tag="corewebdav" limit="10" >}}

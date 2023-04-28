@@ -44,9 +44,11 @@ The settings found on the **Add Kerberos Keytab** and **Edit Kerberos Keytab** s
 
 ![AddKerberosKeytabScreen](/images/SCALE/22.12/AddKerberosKeytabScreen.png "Add Kerberos Keytab")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Name** | Enter a name for this Keytab. If configured, SCALE populates this field with what it detects in Active Directory. |
 | **Kerberos Keytab** | Browse to the keytab file to upload. |
+{{< /truetable >}}
 
 {{< taglist tag="scalekerberos" limit="10" >}}

@@ -18,6 +18,8 @@ The **Basic Options** settings continue to display after selecting the **Advance
 Click **Save** or **Cancel** to close the configuration screen and return to the **Services** screen.
 
 ### Basic Options Settings
+
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **NetBIOS Name** | Automatically populated with the original system host name. The name is limited to 15 characters and cannot be the **Workgroup** name. |
@@ -26,12 +28,14 @@ Click **Save** or **Cancel** to close the configuration screen and return to the
 | **Description** | (Optional) Enter any notes or descriptive details about the service configuration. |
 | **Enable SMB1 support** | Select to allow legacy SMB1 clients to connect to the server. Note: SMB1 is deprecated. We advise you to upgrade clients to operating system versions that support modern SMB protocol versions. |
 | **NTLMv1 Auth** | Off by default. Select to allow [smbd](https://www.samba.org/samba/docs/current/man-html/smbd.8.html) attempts to authenticate users with the insecure and vulnerable NTLMv1 encryption. This setting allows backward compatibility with older versions of Windows, but we don't recommend it. Do not use on untrusted networks. |
+{{< /truetable >}}
 
 ### Advanced Options Settings
 The **Basic Options** settings also display on the **Advanced Options** settings screen with the **Other Options** settings.
 
 ![SMBServiceAdvancedSCALE](/images/SCALE/SMBServiceAdvancedSCALE.png "Advanced Options for the SMB Service")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **UNIX Charset** | Select the character set to use internally from the dropdown list of options. **UTF-8** is standard for most systems as it supports all characters in all languages. |
@@ -45,5 +49,6 @@ The **Basic Options** settings also display on the **Advanced Options** settings
 | **Directory Mask** | Overrides default directory creation mask of **0777** which grants directory read, write and execute access for everybody. |
 | **Bind IP Addresses** | Select static IP addresses that SMB listens on for connections from the dropdown list. Leaving all unselected defaults to listening on all active interfaces.
 | **Auxiliary Parameters** | Enter additional [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) options. Refer to the [Samba Guide]9http://www.oreilly.com/openbook/samba/book/appb_02.html) for more information on these settings. You can use **Auxiliary Parameters** to override the default SMB server configuration, but such changes could adversely affect SMB server stability or behavior. To log more details when a client attempts to authenticate to the share, add `log level = 1, auth_audit:5`. |
+{{< /truetable >}}
 
 {{< taglist tag="scalesmb" limit="10" >}}

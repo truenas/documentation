@@ -35,6 +35,7 @@ The settings on the **Edit Disk** are the same as those on the **Add Disk** scre
 
 ![StorageDisksEditScreen](/images/CORE/13.0/StorageDisksEditScreen.png "Storage Disks Edit Screen")
 
+{{< truetable >}}
 | Settings | Description|
 |----------|------------|
 | **Name** | Enter the FreeBSD disk device name. For example, *ada0*. |
@@ -51,6 +52,7 @@ The settings on the **Edit Disk** are the same as those on the **Add Disk** scre
 | **Informational** | Enter a value where the system reports if the drive temperature is at or above this temperature in Celsius. **0** disables this report. |
 | **SED Password** | Use to set or change the password of this SED. This password is used insead of the global SED password. |
 | **Clear SED Password** | Select to chear the SED password for this disk. |
+{{< /truetable >}}
 
 Use **SAVE** to save settings and return the **Disks** screen or use **CANCEL** to exit without saving.
 
@@ -60,11 +62,13 @@ Use the **Import Disk** screen to perform a one time disk import, only one disk 
 
 ![StorageImportDiskScreen](/images/CORE/13.0/StorageImportDiskScreen.png "Storage Import Disk Screen") 
 
+{{< truetable >}}
 | Settings | Description|
 |----------|------------|
 | **Disk** | Select the disk to import from the dropdown list. The import copies the data from the selected disk to an existing ZFS dataset. Only one disk can be imported at a time. This is a required field. |
 | **Filesystem type** | Select one radio button option to specity the file system type that is on the disk to import. Options are **UFS**, **NTFS**, **MSDOSFS** or **EXT2FS**. |
 | **Destination Path** | Browse to locate the dataset on the TrueNAS that is to hold the copied data. |
+{{< /truetable >}}
 
 The **SAVE** button activates after required fields are populated.
 

@@ -40,12 +40,14 @@ The edit version of the **Basic Options** screen only includes the **Domain Name
 
 ![ActiveDirectoryBasicOptions](/images/SCALE/22.12/ActiveDirectoryBasicOptions.png "Active Directory Basic Options")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Domain Name** | (Required) Enter the Active Directory domain (example.com) or child domain (sales.example.com). Editable after save. |
 | **Domain Account Name** | (Required) Enter the Active Directory administrator account name. Not editable after you save. |
 | **Domain Account Password** | (Required) Password for the Active Directory administrator account. Required the first time you configure a domain. After initial configuration, the password is not needed to edit, start, or stop the service. After the initial configuration or joining, SCALE uses the **Kerberos Principal** instead of the password. |
 | **Enable (requires password or Kerberos principal)** | Select to enable the Active Directory service. Clear to disable Active Directory. After disabling Active Directory, the **[Directory Services]({{< relref "/SCALE/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}})** screen returns to the default and provides the options to configure AD or LDAP. SCALE creates a Kerberos realm and keytab from what it detects in Active Directory, then populates the **Kerberos Realm** and **Kerberos Principal** settings on the **Advanced Options** screen. |
+{{< /truetable >}}
 {{< /expand >}}
 
 ### Active Directory Advanced Options
@@ -56,6 +58,7 @@ On the edit screen, the **Advanced Options** displays the subset found on the **
 
 ![ActiveDirectoryAdvancedOptions](/images/SCALE/22.12/ActiveDirectoryAdvancedOptions.png "Active Directory Advanced Options")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Site Name** | Enter the Relative Distinguished Name (RDN) of the site object in the AD server. This is the first component of the **distingishedName** in AD. For more info read [Configuring Active Directory]({{< relref "ConfigADSCALE.md" >}}). |
@@ -75,8 +78,8 @@ On the edit screen, the **Advanced Options** displays the subset found on the **
 | **Netbios Name** | (Required) Enter a netbios name of this NAS if not using the default. The name must differ from the Workgroup name and not exceed 15 characters. Default setting is **truenas**. |
 | **NetBIOS Alias** | Alternative names (no greater than 15 characters) that SMB clients can use when connecting to this NAS.  |
 | **Leave Domain** | Disconnects the TrueNAS system from the AD server. |
+{{< /truetable >}}
 {{< /expand >}}
-
 
 {{< taglist tag="scalead" limit="10" >}}
 {{< taglist tag="scaledkerberos" limit="10" title="Related Kerberos Articles" >}}

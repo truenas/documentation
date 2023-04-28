@@ -25,6 +25,7 @@ Want to collaborate on TrueNAS SCALE? Join our [Official Discord Server.](https:
 
 {{< include file="/content/_includes/ReleaseScheduleWarning.md" type="page" >}}
 
+{{< truetable >}}
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
 | SCALE 22.12.3 | Code-freeze | 24 May 2023 |
@@ -35,6 +36,7 @@ Want to collaborate on TrueNAS SCALE? Join our [Official Discord Server.](https:
 | SCALE 23.10-BETA.1 (Cobia) | Internal Testing Sprints | 03 - 21 July 2023 |
 | SCALE 23.10-BETA.1 (Cobia) | Tag | 24 July 2023 |
 | SCALE 23.10-BETA.1 (Cobia) | Release | 25 July 2023 |
+{{< /truetable >}}
 
 ## Obtaining the Release
 
@@ -1497,6 +1499,7 @@ Known issues are those found during internal testing or reported by the communit
 
 ### Notices without a Resolution Release
 
+{{< truetable >}}
 | Notice or Behavior | Details |
 |--------------------|---------|
 | TrueNAS does not create alerts for SMR disks. | TrueNAS SCALE and TrueCommand have never created alerts when SMR disks are used. |
@@ -1508,9 +1511,11 @@ Known issues are those found during internal testing or reported by the communit
 | Cannot mount WebDAV share in Windows when WebDAV service is set to Basic Authentication | If the TrueNAS WebDAV service is set to Basic Authentication, you cannot mount the share in Windows. This is a security protection on the part of Windows as Basic Authentication is considered an insecure way to input passwords. While the Windows Registry can be edited to allow for basic authentication, this is not recommended. It is recommended to access WebDAV shares using a browser with https security enabled or mounting shares with Digest Authentication enabled. |
 | App deployment can get stuck in validation when the Host Path is used between Apps and TrueNAS sharing services (e.g. SMB and NFS). | Shared host paths are considered insecure and are not recommended. Review host paths used by Apps and Sharing services and adjust paths to be unique. As a last resort that can result in system and app instability, **Host Path Safety Checks** can be disabled in **Apps > Settings > Advanced Settings**. |
 | Apps fail to start | There are known issues where applications fail to start after reboot. The fixed-in release is not known at this time. |
+{{< /truetable >}}
 
 ### Known Issues with a Future Resolution
 
+{{< truetable >}}
 | Seen In | Key | Summary | Workaround | Resolution Target |
 |---------|-----|---------|------------|-------------------|
 | 22.12.2 | <a href="https://ixsystems.atlassian.net/browse/NAS-121383" target="_blank">NAS-121383</a> | Replicating a pull encrypted to existing non-encrypted dataset gets error saying Has Data when the dataset is empty | After correctly configuring a pull replication task with Source set to On a Different System, selecting the SSH Connection and Use Sudo for ZFS Commands, then with Destination set to On this System and selecting Custom Snapshots, set the Destination path to a local unencrypted dataset. After selecting Run Once and Start Replication, the Replication task failed with error but should have succeeded. | 22.12.3<br>23.10.ALPHA.1 |
@@ -1547,10 +1552,11 @@ Known issues are those found during internal testing or reported by the communit
 | 22.02.4 | <a href="https://ixsystems.atlassian.net/browse/NAS-118894" target="_blank">NAS-118894</a> | Web UI changes in Data Protection Section | Issues with spacing on Cloud Sync Task and Scrub Task widgets between Nex Run, Enabled and State. The color orange for running tasks is misapplied, pending or aborted tasks display in orange. Make Running tasks blue. | 23.10-BETA.1 (Cobia) |
 | 22.02.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-116473" target="_blank">NAS-116473</a> | Large Drive Count Issues | iX is investigating issues with booting SCALE on systems with more than 100 Disks. | 23.10-ALPHA.1 (Cobia) |
 | 21.06-BETA.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-111805" target="_blank">NAS-111805</a> | Cannot configure static IP on HA B node | On an HA system with the NTB card removed and the interface working with DHCP-assigned IP after a clean install, attempt to set a static IP and test changes results in the network interfaces and default gateway disappearing from the serial console screen, and the system does not respond to a new IP address. After test time expires, these network settings reappear and the system responds to the DHCP-assigned IP address. | 23.10-ALPHA.1 (Cobia) |
-
+{{< /truetable >}}
 
 ### Resolved Known Issues
 {{< expand "Resolved Known Issues List" "v">}}
+{{< truetable >}}
 | Seen In | Resolved In | Key | Summary | Workaround |
 |---------|-------------|-----|---------|------------|
 | 22.12.2 | 22.12.2<br> 23.10.ALPHA.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-120623" target="_blank">NAS-120623</a> | Only have one sudoers file entry as only the last one is taken into account | When setting user sudo options, set on only one as the system only takes the last set into account. For example, when setting sudo for replication tasks as the admin user, set only one of the sudo options such as the Allow all sudo commands with no password. |
@@ -1584,6 +1590,7 @@ Known issues are those found during internal testing or reported by the communit
 | 22.12-BETA.1 | 22.12-RC.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-118054" target="_blank">NAS-118054</a> | Replication Warning: Cannot receive sharesmb property | Replication created sending from an encrypted dataset to a non-encrypted dataset. After running replication the screen displays an orange warning icon. After clicking on the warning the "cannot receive sharesmb property in *tank/repwizrd/*set: pool and dataset must be upgraded to set this property or value." where *tank/repwizrd* is the pool/dataset path.|
 | 22.02.0 | 22.12-BETA.2 | <a href="https://jira.ixsystems.com/browse/NAS-115238" target="_blank">NAS-115238</a> | Removed drive from pool does not degrade pool status (SCALE). | Issue is being investigated and a fix provided in a future release |
 | 21.06-BETA.1 | 22.12.0 | <a href="https://jira.ixsystems.com/browse/NAS-11154" target="_blank">NAS-111547</a> | ZFS shouldn't count vdev IO errors on hotplug removal | Pool status isn't being updated immediately on disk exchange events. |
+{{< /truetable >}}
 {{< /expand >}}
 
 ## OpenZFS Feature Flags
@@ -1592,11 +1599,13 @@ For more details on feature flags see [OpenZFS Feature Flags](https://openzfs.gi
 
 For more details on zpool.features.7 see [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
 
+{{< truetable >}}
 | Feature Flag | GUID | Dependencies | Description |
 |--------------|------|--------------|-------------|
 | blake3 | org.openzfs.blake3 | extensible)dataset | Enables use of the BLAKE3 hash algorithm for checksum and dedup. BLAKE3 is a secure hash algorithm focused on high performance. When enabled, the administrator can turn on the blake3 checksum on any dataset using `zfs set checksum=blake dset` [see zfs-set(8)](https://openzfs.github.io/openzfs-docs/man/8/zfs-set.8.html). |
 | head_errlog | com.delphix:head_errlog | n/a | Enables the upgraded version of `errlog`. The error log of each head dataset is stored separately in the zap object and keyed by the head id. Every dataset affected by an error block is listed in the output of `zpool status`. |
 | zilsaxattr | org.openzfs:zilsaxattr | extensible_dataset | Enables `xattr-sa` extended attribute logging in the ZIL. If enabled, extended attribute changes from both `xattrdir=dir` and `xattr=sa` are guaranteed to be durable if either `sync=always` is set for the dataset when a change is made or sync(2) is called on the dataset after making changes. |
+{{< /truetable >}}
 
 ## Bluefin Unstable Nightly Images (Unstable Branch, developers and brave testers)
 

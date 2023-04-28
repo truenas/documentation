@@ -17,6 +17,7 @@ The **Test LDAP Config** <span class="iconify" data-icon="mdi:test-tube"></span>
 
 ![AddLDAPServerScreen](/images/TrueCommand/2.3.2/AddLDAPServerScreen.png "Add LDAP Server")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Hostname** | (Required) Enter the host name, IP or DNS name, of the LDAP server, with port number on the end. For example: *ldap.mycorp.com:636* (SSL port is typically 636 for AD/LDAP). |
@@ -29,6 +30,7 @@ The **Test LDAP Config** <span class="iconify" data-icon="mdi:test-tube"></span>
 | **Realm** | Enter the realm that performs authentication against the LDAP server. |
 | **BIND Password** | Enter the password to use for the bind user. For an unauthenticated bind, leave blank while setting the **BIND User Domain** to a non-empty value. |
 | **KDC** | Enter the key distribution center (KDC) that supplies session tickets and temporary session keys to users and computers within the LDAP server. |
+{{< /truetable >}}
 
 ### LDAP connection options
 

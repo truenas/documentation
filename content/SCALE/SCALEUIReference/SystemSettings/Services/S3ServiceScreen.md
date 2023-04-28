@@ -17,6 +17,7 @@ The **Services > S3** screen allows you to specify settings to connect to TrueNA
 
 ![S3ServiceSettingsTLS](/images/SCALE/22.12/S3ServiceSettingsTLS.png "S3 Service Options")
 
+{{< truetable >}}
 | Settings | Description |
 |----------|-------------|
 | **IP Address** | Select an IP address from the dropdown list options **0.0.0.0**, **::**, or to enter the IP address that runs the S3 service. Select **0.0.0.0** to tell the server to listen on all addresses. Select the TrueNAS IP address to constrain it to a specific network. |
@@ -28,5 +29,6 @@ The **Services > S3** screen allows you to specify settings to connect to TrueNA
 | **Enable Browser** | Enables the S3 service web UI. Access the MinIO web UI by entering the IP address and port number separated by a colon in the browser address bar. Example: *192.168.1.0:9000*. |
 | **Certificate** | Use an SSL [certificate]({{< relref "CertificatesSCALE.md" >}}) created or imported in **Credentials > Certificates** for secure S3 connections. |
 | **TLS Server Hostname**  | Displays after selecting an SSL certificate. Enter the TLS server host name. Or enter a MinIO server address that can be a proxy. |
+{{< /truetable >}}
 
 {{< taglist tag="scales3" limit="10" >}}

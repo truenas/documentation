@@ -1,7 +1,9 @@
 ---
 ---
+
 **General Options**
 
+{{< truetable >}}
 | Settings | Description |
 |----------|-------------|
 | **Server Certificate** | Select a valid client certificate from the dropdown list. The option is **freenas_default**. A certificate must exists on this system and one that is current and not revoked. Find more about generating certificates and CAs for OpenVPN [here](https://community.openvpn.net/openvpn/wiki/HOWTO#SettingupyourownCertificateAuthorityCAandgeneratingcertificatesandkeysforanOpenVPNserverandmultipleclients). |
@@ -17,3 +19,4 @@
 | **TLS Crypt Auth Enabled** | Select to enable or clear checkbox to disable TLS Web Client Authentication. |
 | **Additional Parameters** | Enter any additional parameters. |
 | **TLS Crypt Auth** | When tls_crypt_auth_enabled is enabled and tls_crypt_auth is not provided, a static key is automatically generated to use with OpenVPN client. Enter that key here. |
+{{< /truetable >}}

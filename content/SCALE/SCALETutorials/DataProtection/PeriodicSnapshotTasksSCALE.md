@@ -67,10 +67,12 @@ For example, including `%z` (time zone) ensures that snapshots do not have namin
 
 Examples: 
 
+{{< truetable >}}
 | Naming Scheme | Snapshot Names Look Like |
 |---------------|--------------------------|
 | replicationsnaps-1wklife-%Y%m%d_%H:%M | `replicationsnaps-1wklife-20210120_00:00`, `replicationsnaps-1wklife-20210120_06:00` |
 | autosnap_%Y.%m.%d-%H.%M.%S-%z | `autosnap_2021.01.20-00.00.00-EST`, `autosnap_2021.01.20-06.00.00-EST` |
+{{< /truetable >}}
 
 {{< hint type=important >}}
 When referencing snapshots from a Windows computer, avoid using characters like colon (:) that are invalid in a Windows file path.
