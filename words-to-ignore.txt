@@ -1225,3 +1225,10 @@ nvdimms
 sudoers
 passdb-backed
 nex
+namespace
+namespaces
+namespacename
+autofill
+commandname
+
+
