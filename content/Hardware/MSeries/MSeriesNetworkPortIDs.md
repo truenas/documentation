@@ -5,57 +5,178 @@ weight: 15
 
 {{< toc >}}
 
-The network ports on a TrueNAS M-Series are identified differently based on what software is installed.
-
 {{< include file="/_includes/NetworkPortIdentifications.md" type="page" >}}
 
-By default, a TrueNAS M-Series with CORE installed identifies its network ports with **ixl** followed by a number.
-With SCALE, **eno** followed by a number.
+The expandable boxes below contain tables that list the default SCALE identification for M-Series systems and any add-on networking cards qualified by iXsystems for use with M-Series systems.
 
-This table lists the default identification for each M-Series model and any add-on networking cards that have been qualified for use with an M-Series system.
-Some port identifiers are still being determined.
+## M30
 
-| Model | CORE/Enterprise Installed | SCALE Installed |
-|-------|---------------------------|-----------------|
-| M30   | Port 0: `ixl0` | Port 0: `eno1` |
-|       | Port 1: `ixl1` | Port 1: `eno2` |
-| M40   | Port 0: `ixl0` | Port 0: `en01` |
-|       | Port 1: `ixl1` | Port 1: `eno2` |
-| M50   | Port 0: `ixl0` | Port 0: `eno1` |
-|       | Port 1: `ixl1` | Port 1: `eno2` |
-| M60   | Port 0: `ixl0` | Port 0: `eno1` |
-|       | Port 1: `ixl1` | Port 1: `eno2` |
-| QLE2692 | Port 0: `isp1` | Port 0: `TBD` |
-|         | Port 1: `isp0` | Port 1: `TBD` |
-| QLE2742 | Port 0: `isp1` | Port 0: `TBD` |
-|         | Port 1: `isp0` | Port 1: `TBD` |
-| QLE2692 (2nd addition) | Port 0: `isp3` | Port 0: `TBD` |
-|                        | Port 1: `isp2` | Port 1: `TBD` |
-| QLE2742 (2nd addition) | Port 0: `isp3` | Port 0: `TBD` |
-|                        | Port 1: `isp2` | Port 1: `TBD` |
-| QLE2694L | Port 0: `isp3` | Port 0: `TBD` |
-|          | Port 1: `isp2` | Port 1: `TBD` |
-|          | Port 2: `isp1` | Port 2: `TBD` |
-|          | Port 3: `isp0` | Port 3: `TBD` |
-| T580-LP-CR (4x10G mode) | Port 0: `cxl0123` | Port 0: `TBD` |
-|                         | Port 1: `DISABLED` | Port 1: `TBD` |
-| T580-LP-CR (4x10G mode) (2nd addition) | Port 0: `cxl4567` | Port 0: `TBD` |
-|                                        | Port 1: `DISABLED` | Port 1: `TBD` |
-| T580-LP-CR (40G mode) | Port 0: `cxl0` | Port 0: `enp179s0f4` |
-|                       | Port 1: `cxl1` | Port 1: `enp179s0fd1` |
-| T6225-SO-CR | Port 0: `cc1` | Port 0: `enp1s0f4d1` |
-|             | Port 1: `cc0` | Port 1: `enp1s0f4` |
-| T6225-SO-CR (2nd addition) | Port 0: `cc3` | Port 0: `TBD` |
-|                            | Port 1: `cc2` | Port 1: `TBD` |
-| T62100-LP-CR | Port 0: `cc1` | Port 0: `enp134s0f4` |
-|              | Port 1: `cc0` | Port 1: `enp134s0f4d1` |
-| T62100-LP-CR (2nd addition) | Port 0: `cc3` | Port 0: `TBD` |
-|                             | Port 1: `cc2` | Port 1: `TBD` |
-| X710-T4 | Port 0: `ixl2` | Port 0: `TBD` |
-|         | Port 1: `ixl3` | Port 1: `TBD` |
-|         | Port 2: `ixl4` | Port 2: `TBD` |
-|         | Port 3: `ixl5` | Port 3: `TBD` |
-| X710-T4 (2nd addition) | Port 0: `ixl6` | Port 0: `TBD` |
-|                        | Port 1: `ixl7` | Port 1: `TBD` |
-|                        | Port 2: `ixl8` | Port 2: `TBD` |
-|                        | Port 3: `ixl9` | Port 3: `TBD` |
+{{< expand "M30 (64G RAM)" "v" >}}
+![M30NetworkPorts](/images/Hardware/Networking/M30NetworkPorts.png "M30 Network Ports")
+
+**Network A**
+
+{{< truetable >}}
+| NIC            | Port 0 ID            | Port 1 ID            | Port 2 ID            | Port 3 ID            |
+|----------------|----------------------|----------------------|----------------------|----------------------|
+| Integrated     | Port 0: eno1         | Port 1: eno2         | -                    | -                    |
+
+**Network B**
+
+| NIC                      | Port 0 ID            | Port 1 ID            | Port 2 ID            | Port 3 ID            |
+|--------------------------|----------------------|----------------------|----------------------|----------------------|
+| Chelsio T580 (4x10 mode) | Port 0: enp101s0f4   | Port 1: enp101s0f4d1 | Port 1: enp101s0f4d2 | Port 1: enp101s0f4d3 |
+| Chelsio T6225            | Port 0: enp101s0f4   | Port 1: enp101s0f4d1 | -                    | -                    |
+| Chelsio T62100           | Port 0: enp101s0f4   | Port 1: enp101s0f4d1 | -                    | -                    |
+| Intel X710-T4            | Port 0: enp101s0f0   | Port 1: enp101s0f1   | Port 2: enp101s0f2   | Port 3: enp101s0f3   |
+
+**Network C**
+
+| NIC            | Port 0 ID           | Port 1 ID            | Port 2 ID            | Port 3 ID            |
+|----------------|---------------------|----------------------|----------------------|----------------------|
+| Chelsio T6225  | Port 0: enp1s0f4    | Port 1: enp1s0f4d1   | -                    | -                    |
+| Intel X710-T4  | Port 0: enp1s0f0    | Port 1: enp1s0f1     | Port 2: enp1s0f2     | Port 3: enp1s0f3     |
+{{< /truetable >}}
+{{< /expand >}}
+
+## M40
+
+{{< expand "M40 (128G RAM)" "v" >}}
+![M40NetworkPorts(128G)](/images/Hardware/Networking/M40NetworkPorts(128G).png "M40 Network Ports")
+
+**Network A**
+
+{{< truetable >}}
+| NIC            | Port 0 ID            | Port 1 ID            | Port 2 ID            | Port 3 ID            |
+|----------------|----------------------|----------------------|----------------------|----------------------|
+| Integrated     | Port 0: eno1         | Port 1: eno2         | -                    | -                    |
+
+**Network B**
+
+| NIC                      | Port 0 ID            | Port 1 ID            | Port 2 ID            | Port 3 ID            |
+|--------------------------|----------------------|----------------------|----------------------|----------------------|
+| Chelsio T580             | Port 0: enp101s0f4   | Port 1: enp101s0f4d1 | -                    | -                    |
+| Chelsio T580 (4x10 mode) | Port 0: enp101s0f4   | Port 1: enp101s0f4d1 | Port 1: enp101s0f4d2 | Port 1: enp101s0f4d3 |
+| Chelsio T6225            | Port 0: enp101s0f4   | Port 1: enp101s0f4d1 | -                    | -                    |
+| Chelsio T62100           | Port 0: enp101s0f4   | Port 1: enp101s0f4d1 | -                    | -                    |
+| Intel X710-T4            | Port 0: enp101s0f0   | Port 1: enp101s0f1   | Port 2: enp101s0f2   | Port 3: enp101s0f3   |
+
+**Network C**
+
+| NIC            | Port 0 ID           | Port 1 ID            | Port 2 ID            | Port 3 ID            |
+|----------------|---------------------|----------------------|----------------------|----------------------|
+| Chelsio T6225  | Port 0: enp1s0f4    | Port 1: enp1s0f4d1   | -                    | -                    |
+| Intel X710-T4  | Port 0: enp1s0f0    | Port 1: enp1s0f1     | Port 2: enp1s0f2     | Port 3: enp1s0f3     |
+{{< /truetable >}}
+{{< /expand >}}
+
+{{< expand "M40 (192G RAM w/NVMe)" "v" >}}
+![M40NetworkPorts(192G)](/images/Hardware/Networking/M40NetworkPorts(192G).png "M40 Network Ports")
+
+**Network A**
+
+{{< truetable >}}
+| NIC            | Port 0 ID            | Port 1 ID            | Port 2 ID            | Port 3 ID            |
+|----------------|----------------------|----------------------|----------------------|----------------------|
+| Integrated     | Port 0: eno1         | Port 1: eno2         | -                    | -                    |
+
+**Network B**
+
+| NIC                      | Port 0 ID            | Port 1 ID            | Port 2 ID            | Port 3 ID            |
+|--------------------------|----------------------|----------------------|----------------------|----------------------|
+| Chelsio T580             | Port 0: enp101s0f4   | Port 1: enp101s0f4d1 | -                    | -                    |
+| Chelsio T580 (4x10 mode) | Port 0: enp101s0f4   | Port 1: enp101s0f4d1 | Port 1: enp101s0f4d2 | Port 1: enp101s0f4d3 |
+| Chelsio T6225            | Port 0: enp101s0f4   | Port 1: enp101s0f4d1 | -                    | -                    |
+| Chelsio T62100           | Port 0: enp101s0f4   | Port 1: enp101s0f4d1 | -                    | -                    |
+| Intel X710-T4            | Port 0: enp101s0f0   | Port 1: enp101s0f1   | Port 2: enp101s0f2   | Port 3: enp101s0f3   |
+{{< /truetable >}}
+{{< /expand >}}
+
+## M50
+
+{{< expand "M50 (256G and 384G RAM)" "v" >}}
+![M50NetworkPorts](/images/Hardware/Networking/M50NetworkPorts.png "M50 Network Ports")
+
+**Network A**
+
+{{< truetable >}}
+| NIC            | Port 0 ID            | Port 1 ID            | Port 2 ID            | Port 3 ID            |
+|----------------|----------------------|----------------------|----------------------|----------------------|
+| Integrated     | Port 0: eno1         | Port 1: eno2         | -                    | -                    |
+
+**Network B**
+
+| NIC                      | Port 0 ID            | Port 1 ID            | Port 2 ID            | Port 3 ID            |
+|--------------------------|----------------------|----------------------|----------------------|----------------------|
+| Chelsio T580             | Port 0: enp175s0f4   | Port 1: enp175s0f4d1 | -                    | -                    |
+| Chelsio T580 (4x10 mode) | Port 0: enp175s0f4   | Port 1: enp175s0f4d1 | Port 1: enp175s0f4d2 | Port 1: enp175s0f4d3 |
+| Chelsio T6225            | Port 0: enp175s0f4   | Port 1: enp175s0f4d1 | -                    | -                    |
+| Chelsio T62100           | Port 0: enp175s0f4   | Port 1: enp175s0f4d1 | -                    | -                    |
+| Intel X710-T4            | Port 0: enp175s0f0   | Port 1: enp175s0f1   | Port 2: enp175s0f2   | Port 3: enp175s0f3   |
+
+**Network C**
+
+| NIC                      | Port 0 ID            | Port 1 ID            | Port 2 ID            | Port 3 ID            |
+|--------------------------|----------------------|----------------------|----------------------|----------------------|
+| Chelsio T580             | Port 0: enp24s0f4    | Port 1: enp24s0f4d1  | -                    | -                    |
+| Chelsio T580 (4x10 mode) | Port 0: enp24s0f4    | Port 1: enp24s0f4d1  | Port 1: enp24s0f4d2  | Port 1: enp24s0f4d3  |
+| Chelsio T6225            | Port 0: enp24s0f4    | Port 1: enp24s0f4d1  | -                    | -                    |
+| Intel X710-T4            | Port 0: enp24s0f0    | Port 1: enp24s0f1    | Port 2: enp24s0      | Port 3: enp24s0f3    |
+{{< /truetable >}}
+{{< /expand >}}
+
+## M60
+
+{{< expand "M60 (768G RAM with up to 8 Expansion Shelves)" "v" >}}
+![M60NetworkPorts(x8ES)](/images/Hardware/Networking/M60NetworkPorts(x8ES).png "M60 Network Ports")
+
+**Network A**
+
+{{< truetable >}}
+| NIC            | Port 0 ID            | Port 1 ID            | Port 2 ID            | Port 3 ID            |
+|----------------|----------------------|----------------------|----------------------|----------------------|
+| Integrated     | Port 0: eno1         | Port 1: eno2         | -                    | -                    |
+
+**Network B**
+
+| NIC                      | Port 0 ID            | Port 1 ID            | Port 2 ID            | Port 3 ID            |
+|--------------------------|----------------------|----------------------|----------------------|----------------------|
+| Chelsio T580             | Port 0: enp175s0f4   | Port 1: enp175s0f4d1 | -                    | -                    |
+| Chelsio T580 (4x10 mode) | Port 0: enp175s0f4   | Port 1: enp175s0f4d1 | Port 1: enp175s0f4d2 | Port 1: enp175s0f4d3 |
+| Chelsio T6225            | Port 0: enp175s0f4   | Port 1: enp175s0f4d1 | -                    | -                    |
+| Chelsio T62100           | Port 0: enp175s0f4   | Port 1: enp175s0f4d1 | -                    | -                    |
+| Intel X710-T4            | Port 0: enp175s0f0   | Port 1: enp175s0f1   | Port 2: enp175s0f2   | Port 3: enp175s0f3   |
+
+**Network C**
+
+| NIC                      | Port 0 ID            | Port 1 ID            | Port 2 ID            | Port 3 ID            |
+|--------------------------|----------------------|----------------------|----------------------|----------------------|
+| Chelsio T580             | Port 0: enp24s0f4    | Port 1: enp24s0f4d1  | -                    | -                    |
+| Chelsio T580 (4x10 mode) | Port 0: enp24s0f4    | Port 1: enp24s0f4d1  | Port 1: enp24s0f4d2  | Port 1: enp24s0f4d3  |
+| Chelsio T6225            | Port 0: enp24s0f4    | Port 1: enp24s0f4d1  | -                    | -                    |
+| Chelsio T62100           | Port 0: enp24s0f4    | Port 1: enp24s0f4d1  | -                    | -                    |
+| Intel X710-T4            | Port 0: enp24s0f0    | Port 1: enp24s0f1    | Port 2: enp24s0      | Port 3: enp24s0f3    |
+{{< /truetable >}}
+{{< /expand >}}
+
+{{< expand "M60 (768G RAM with up to 12 Expansion Shelves)" "v" >}}
+![M60NetworkPorts(x12ES)](/images/Hardware/Networking/M60NetworkPorts(x12ES).png "M60 Network Ports")
+
+**Network A**
+
+{{< truetable >}}
+| NIC            | Port 0 ID            | Port 1 ID            | Port 2 ID            | Port 3 ID            |
+|----------------|----------------------|----------------------|----------------------|----------------------|
+| Integrated     | Port 0: eno1         | Port 1: eno2         | -                    | -                    |
+
+**Network B**
+
+| NIC                      | Port 0 ID            | Port 1 ID            | Port 2 ID            | Port 3 ID            |
+|--------------------------|----------------------|----------------------|----------------------|----------------------|
+| Chelsio T580             | Port 0: enp175s0f4   | Port 1: enp175s0f4d1 | -                    | -                    |
+| Chelsio T580 (4x10 mode) | Port 0: enp175s0f4   | Port 1: enp175s0f4d1 | Port 1: enp175s0f4d2 | Port 1: enp175s0f4d3 |
+| Chelsio T6225            | Port 0: enp175s0f4   | Port 1: enp175s0f4d1 | -                    | -                    |
+| Chelsio T62100           | Port 0: enp175s0f4   | Port 1: enp175s0f4d1 | -                    | -                    |
+| Intel X710-T4            | Port 0: enp175s0f0   | Port 1: enp175s0f1   | Port 2: enp175s0f2   | Port 3: enp175s0f3   |
+{{< /truetable >}}
+{{< /expand >}}
