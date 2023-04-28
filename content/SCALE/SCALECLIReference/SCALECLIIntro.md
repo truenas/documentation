@@ -1,7 +1,7 @@
 ---
 title: "SCALE CLI Introduction"
 description: "This article provides information about the SCALE CLI namespace and command syntax, navigating through the CLI, and basic commands."
-weight: 10
+weight: 50
 aliases:
 tags:
 - scalecli
@@ -82,6 +82,10 @@ Use the `ls` command to view the list of namespaces or commands.
 | **task** | Provides access to task child namespaces and commands including **cloud_sync**, **cron_job**, **replication**, **rsync**, **smart_test**, and **snapshot**. |
 
 ### Entering Namespaces and Commands
+{{< hint info >}}
+CLI namespaces and commands are case sensitive. 
+Enter commands in lower case unless the CLI autofill indicates otherwise. 
+{{< /hint >}}
 
 To enter a namespace or command, begin typing the name. 
 The CLI displays an autofill list that begins with the letter typed and that is available in that part of the CLI. 
