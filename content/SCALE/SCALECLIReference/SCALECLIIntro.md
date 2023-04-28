@@ -3,6 +3,7 @@ title: "SCALE CLI Introduction"
 description: "This article provides information about the SCALE CLI namespace and command syntax, navigating through the CLI, and basic commands."
 weight: 50
 aliases:
+draft: true
 tags:
 - scalecli
 ---
