@@ -84,7 +84,7 @@ TrueNAS SCALE is built from many different software components.
 This list has up-to-date information on which versions of Linux, ZFS, and NVIDIA drivers are included with this TrueNAS SCALE release.
 Click the component version number to see the latest release notes for that component.
 
-<table style="max-width:25%;">
+<table class="truetable" style="max-width:25%;">
   <tr>
     <th>Component</th>
 	<th>Version</th>
