@@ -588,12 +588,24 @@ p,h1,h2,h3,h4,th,td,a {
 }
 /* End standardized table styling */
 /* Standardize image styling */
+.trueimg {
+	justify-content:center;
+}
 .gdoc-markdown img {
-	border: 1px solid #ddd;
-	max-width: 50%;
+	max-width: 75%;
 	height: auto;
+	align-items: center;
 }
 .gdoc-markdown img:hover {
   box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
 }
+.trueimg figcaption {
+	text-align: center;
+}
 /* End standardized image styling */
+/* Adjust inline-code rendering for more contrast*/
+.gdoc-markdown code {
+	color: black;
+	background-color: #e6e6e6;
+}
+/* End adjustment of inline-code rendering */
