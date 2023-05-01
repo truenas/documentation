@@ -24,7 +24,7 @@ There is an [Article Template]({{< relref "/Contributing/Documentation/Template/
 Find a place on your local system to create a directory for your article.
 Name the directory according to the title of your article.
 
-![ArticleBundle](/images/Contribute/HugoNewArticleBundle.png "Creating an Article Bundle")
+[![ArticleBundle](/images/Contribute/HugoNewArticleBundle.png "Creating an Article Bundle")](/images/Contribute/HugoNewArticleBundle.png)
 
 Open the directory and create a new file called <file>index.md</file>.
 This file contains all the text for your article.
@@ -52,18 +52,18 @@ You can generally style the article however you like, but please be aware that o
 If you want to include screenshots of the TrueNAS User Interface with your article, add these files to your article bundle.
 Be sure to have unique names for each image file.
 
-![AddingImages](/images/Contribute/HugoArticleBundle.png "Adding Images")
+[![AddingImages](/images/Contribute/HugoArticleBundle.png "Adding Images")](/images/Contribute/HugoArticleBundle.png)
 
 ## Uploading the Article Bundle
 
 Open the [User Recommendations]({{< ref "/CORE/CORETutorials/CommunityGuides/_index.md" >}}) section of the repository.
 
-![UploadImages](/images/Contribute/UploadingNewArticleBundle.png "Uploading Images")
+[![UploadImages](/images/Contribute/UploadingNewArticleBundle.png "Uploading Images")](/images/Contribute/UploadingNewArticleBundle.png)
 
 Click *Upload files* and drag and drop the article bundle directory into the repository.
 GitHub shows all the files to upload.
 
-![AddNewArticlePhotosRepo](/images/Contribute/AddNewArticlePhotosRepo.png "Adding Images Repo")
+[![AddNewArticlePhotosRepo](/images/Contribute/AddNewArticlePhotosRepo.png "Adding Images Repo")](/images/Contribute/AddNewArticlePhotosRepo.png)
 
 ## Opening a Pull Request
 
@@ -80,7 +80,7 @@ Make sure you're happy with the summary and description of your article, then cl
 After the pull request is created, the repository automatically builds a preview of the documentation site that has your changes included.
 The link to this preview is added to the Pull Request after the build completes.
 
-![ArticlePreview](/images/Contribute/NewArticlePreview.png "Article Preview")
+[![ArticlePreview](/images/Contribute/NewArticlePreview.png "Article Preview")](/images/Contribute/NewArticlePreview.png)
 
 Other contributors will review and merge your article!  
 
