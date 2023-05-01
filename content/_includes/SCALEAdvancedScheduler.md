@@ -28,7 +28,7 @@ Leaving each month unset is the same as selecting every month.
 The **Days of Week** schedules the task to run on specific days in addition to any listed days.
 For example, entering *1* in **Days** and setting *Wed* for **Days of Week** creates a schedule that starts a task on the first day of the month *and* every Wednesday of the month.
 
-The **Schedule Preview** dipslays when the current settings mean the task runs.
+The **Schedule Preview** displays when the current settings mean the task runs.
 
 ### Examples of CRON syntax
 

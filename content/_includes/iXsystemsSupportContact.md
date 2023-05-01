@@ -1,4 +1,4 @@
-Customers who purchase iXystems hardware or that want additional support must have a support contract to use iXystems Support Services. The [TrueNAS Community forums](https://www.truenas.com/community/) provides free support for users without an iXsystems Support contract.
+Customers who purchase iXsystems hardware or that want additional support must have a support contract to use iXsystems Support Services. The [TrueNAS Community forums](https://www.truenas.com/community/) provides free support for users without an iXsystems Support contract.
 
 <table class="truetable">
   <tr>

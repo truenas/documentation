@@ -15,7 +15,7 @@
 | Name | Description |
 |------|-------------|
 | **Schedule** | Select a schedule preset or select **Custom** to open the advanced scheduler. |
-| **Recursive** | Select to include all subdirectories of the specified directory. When cleared, only the specified directory is included. |
+| **Recursive** | Select to include all sub-directories of the specified directory. When cleared, only the specified directory is included. |
 {{< /truetable >}}
 
 **Remote**
