@@ -1,5 +1,5 @@
 ---
-title: "Sessions Namespace"
+title: "Sessions"
 description: "This article provides information about the SCALE CLI authentication **sessions** namespace and command syntax, and includes common commands."
 weight: 30
 aliases:

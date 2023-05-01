@@ -1,5 +1,5 @@
 ---
-title: "Privilege Namespace"
+title: "Privilege"
 description: "This article provides information about the SCALE CLI authentication **privilege** namespace and command syntax, and includes common commands."
 weight: 20
 aliases:

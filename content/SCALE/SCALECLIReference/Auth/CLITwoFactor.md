@@ -1,5 +1,5 @@
 ---
-title: "Two_Factor Namespace"
+title: "Two_Factor"
 description: "This article provides information about the SCALE CLI authentication **two_factor** namespace and command syntax, and includes common commands."
 weight: 10
 aliases:

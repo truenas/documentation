@@ -1,5 +1,5 @@
 ---
-title: "API_Key Namespace"
+title: "API_Key"
 description: "This article provides information about the SCALE CLI authentication **api_key** namespace and command syntax, and includes common commands."
 weight: 10
 aliases:
