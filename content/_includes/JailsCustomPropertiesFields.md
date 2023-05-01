@@ -1,6 +1,7 @@
 ---
 ---
 
+{{< truetable >}}
 | Name | Description |
 |------|-------------|
 | **priority** | Enter a numeric start priority for the jail at boot time. Valid priorities are between 1 and 99. Smaller values are higher priority. At system shutdown the priority is reversed. For example, *99*. |
@@ -15,3 +16,4 @@
 | **Autoconfigure IPv6 with rtsold** | Select to use [rtsold(8)](https://www.freebsd.org/cgi/man.cgi?query=rtsold) as part of IPv6 auto-configuration. Send ICMPv6 router solicitation messages to interfaces to discover new routers. |
 | **ip_hostname** | Select to use DNS records during jail IP configuration to search the resolver and apply the first open IPv4 and IPv6 addresses. See [jail(8)](https://www.freebsd.org/cgi/man.cgi?query=jail). |
 | **assign_localhost** | Select to add network interface lo0 to the jail and assign it the first available localhost address, starting with **127.0.0.2**. The **Basic Properties** **VNET** checkbox must be cleared. Jails using VNET configure a localhost as part of their virtualized network stack. |
+{{< /truetable >}}

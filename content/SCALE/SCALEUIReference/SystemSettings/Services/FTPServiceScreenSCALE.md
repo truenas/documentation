@@ -25,6 +25,7 @@ To configure FTP, go to **System Settings > Services** and find **FTP**, then cl
 
 ![FTPBasicSettings](/images/SCALE/22.12/FTPBasicSettings.png "Services FTP Basic Settings General Options")
 
+{{< truetable >}}
 | Settings | Description |
 |----------|-------------|
 | **Port** | Enter the port the FTP service listens on. |
@@ -33,6 +34,7 @@ To configure FTP, go to **System Settings > Services** and find **FTP**, then cl
 | **Login Attempts** | Enter the maximum attempts before the client disconnects. Increase if users are prone to misspellings or typos. |
 | **Notransfer Timeout** | Enter the maximum number of seconds a client is allowed to spend connected, after authentication, without issuing a command which results in creating an active or passive data connection (sending/receiving a file or receiving a directory listing). |
 | **Timeout** | Enter the maximum client idle time in seconds before disconnecting. The default value is **600** seconds. |
+{{< /truetable >}}
 
 ## FTP Advanced Settings
 **Advanced Settings** include the **General Options** on the **Basic Settings** configuration screen and allow you to specify access permissions, TLS settings, bandwidth, and other settings to customize FTP access.
@@ -44,6 +46,7 @@ To configure FTP, go to **System Settings > Services** and find **FTP**, then cl
 #### Access Settings 
 **Access** settings specify user login, file, and directory access permissions.
 
+{{< truetable >}}
 | Settings | Description |
 |----------|-------------|
 | **Always Chroot** | Only allows users to access their home directory if they are in the **wheel** group. This option increases security risk. To confine FTP sessions to a local user home directory, enable **chroot** and select **Allow Local User Login**. |
@@ -54,12 +57,14 @@ Enable TLS when possible (especially when exposing FTP to a WAN). TLS effectivel
 | **Require IDENT Authentication** | Select to require IDENT authentication. Setting this option results in timeouts when ident (or in **Shell** `identd`) is not running on the client. |
 | **File Permissions** | Select the default permissions for newly created files. |
 | **Directory Permissions** | Select the default permissions for newly created directories. |
+{{< /truetable >}}
 
 ![FTPAdvancedSettingsTLS](/images/SCALE/22.12/FTPAdvancedSettingsTLS.png "Services FTP Advanced Settings TLS Options")
 
 #### TLS Settings
 **TLS** settings specify the authentication methods, such as if you want to encrypt the data you transfer across the Internet.
 
+{{< truetable >}}
 | Settings | Description |
 |----------|-------------|
 | **Enable TLS** | Select to allow encrypted connections. Requires a certificate (created or imported using **System > Certificates**. | 
@@ -77,11 +82,13 @@ Enable TLS when possible (especially when exposing FTP to a WAN). TLS effectivel
 | **TLS Export Standard Vars** | Select to set several environment variables. |
 | **TLS DNS Name Required** | Select to require the client DNS name to resolve to its IP address and the cert contain the same DNS name. |
 | **TLS IP Address Required** | Select to require the client certificate IP address to match the client IP address. |
+{{< /truetable >}}
 
 ### Other Options
 
 ![FTPAdvancedSettingsOtherOptions](/images/SCALE/22.12/FTPAdvancedSettingsOtherOptions.png "Services FTP Advanced Settings Other Options")
 
+{{< truetable >}}
 | Settings | Description |
 |----------|-------------|
 | **Minimum Passive Port** | Enter a numeric value. Used by clients in PASV mode. A default of **0** means any port above 1023. |
@@ -92,17 +99,20 @@ Enable TLS when possible (especially when exposing FTP to a WAN). TLS effectivel
 | **Masquerade Address** | Enter a public IP address or host name. Use if FTP clients cannot connect through a NAT device. |
 | **Display Login** | Enter a message that displays to local login users after authentication. Anonymous login users do not see this message. |
 | **Auxiliary Parameters** | Used to add additional [proftpd(8)](https://linux.die.net/man/8/proftpd) parameters. |
+{{< /truetable >}}
 
 ### Bandwidth Settings
 **Bandwidth** settings specify the space you want to allocate for local and anonymous user uploads and downloads.
 
 ![FTPAdvancedSettingsBandwidth](/images/SCALE/22.12/FTPAdvancedSettingsBandwidth.png "Services FTP Advanced Settings Bandwidth Options")
 
+{{< truetable >}}
 | Settings | Description |
 |----------|-------------|
 | **Local User Upload Bandwidth: (Examples: 500 KiB, 500M, 2 TB)** | Enter a value in KiBs or greater. A default of **0 Kib** means unlimited. If you do not specify a measurement, it defaults to KiB. This field accepts human-readable input in KiBs or greater (M, GiB, TB, etc.). The default **0 KiB** is unlimited. |
 | **Local User Download Bandwidth** | Enter a value in KiBs or greater. A default of **0 Kib** means unlimited. If you do not specify a measurement, it defaults to KiB. This field accepts human-readable input in KiBs or greater (M, GiB, TB, etc.). The default **0 KiB** is unlimited. |
 | **Anonymous User Upload Bandwidth** | Enter a value in KiBs or greater. A default of **0 Kib** means unlimited. If you do not specify a measurement, it defaults to KiB. This field accepts human-readable input in KiBs or greater (M, GiB, TB, etc.). The default **0 KiB** is unlimited. |
 | **Anonymous User Download Bandwidth** | Enter a value in KiBs or greater. A default of **0 Kib** means unlimited. If you do not specify a measurement, it defaults to KiB. This field accepts human-readable input in KiBs or greater (M, GiB, TB, etc.). The default **0 KiB** is unlimited. |
+{{< /truetable >}}
 
 {{< taglist tag="scaleftp" limit="10" >}}

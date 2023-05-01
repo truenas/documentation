@@ -30,11 +30,13 @@ The **Edit User Quota** window allows you to modify the user data quota and user
 
 ![EditUserQuotasSCALE](/images/SCALE/22.12/EditUserQuotasSCALE.png "Edit User Quota")
 
+{{< truetable >}}
 | Settings | Description |
 |----------|-------------|
 | **User** | Displays the name of the selected user. |
 | **User Data Quota (Examples: 500KiB, 500M, 2 TB)** | Enter the amount of disk space the selected user can use. Entering **0** allows the user to use all disk space. You can enter human-readable values such as 50 GiB, 500M, 2 TB, etc. If units are not specified, the value defaults to bytes.  |
 | **User Object Quota** | Enter the number of objects the selected user can own. Entering **0** allows unlimited objects. |
+{{< /truetable >}}
 
 Click **Save** to save changes or click on the "X" to close the window without saving.
 
@@ -44,15 +46,21 @@ To display the **Set User Quotas** screen click the **Add** button.
 ![AddUserQuotasSetQuotasSCALE](/images/SCALE/22.12/AddUserQuotasSetQuotasSCALE.png "Set User Quotas")
 
 #### Set Quotas Settings
+
+{{< truetable >}}
 | Settings | Description |
 |----------|-------------|
 | **User Data Quota (Examples: 500KiB, 500M, 2 TB)** | Enter the amount of disk space the selected user can use. Entering **0** allows the user to use all disk space. You can enter human-readable values such as 50 GiB, 500M, 2 TB, etc. If units are not specified, the value defaults to bytes. |
 | **User Object Quota** | Enter the number of objects the selected user can own. Entering **0** allows unlimited objects. |
+{{< /truetable >}}
 
 #### Apply Quotas to Selected Users Settings
+
+{{< truetable >}}
 | Settings | Description |
 |----------|-------------|
 | **Apply To Users** | Select the users from the dropdown list of options. |
+{{< /truetable >}}
 
 Click **Save** to set the quotas or click the "X" to exit without saving.
 
@@ -76,11 +84,13 @@ The **Edit Group** window allows you to modify the group data quota and group ob
 
 ![EditGroupQuotasSCALE](/images/SCALE/22.12/EditGroupQuotasSCALE.png "Edit Qroup Quota")
 
+{{< truetable >}}
 | Settings | Description |
 |----------|-------------|
 | **Group** | Displays the name of the selected group(s).  |
 | **Group Data Quota (Examples: 500KiB, 500M, 2 TB)** | Enter the amount of disk space the selected group can use. Entering **0** allows the group to use all disk space. You can enter human-readable values such as 50 GiB, 500M, 2 TB, etc. If units are not specified, the value defaults to bytes. |
 | **Group Object Quota** | Enter the number of objects the selected group can own or use. Entering **0** allows unlimited objects. |
+{{< /truetable >}}
 
 Click **Save** to set the quotas or click the "X" to exit without saving.
 
@@ -90,15 +100,21 @@ To display the **Set Group Quotas** screen, click the **Add** button.
 ![AddGroupQuotasSetQuotaSCALE](/images/SCALE/22.12/AddGroupQuotasSetQuotaSCALE.png "Set Group Quotas")
 
 #### Set Quotas Settings
+
+{{< truetable >}}
 | Settings | Description |
 |----------|-------------|
 | **Group Data Quota (Examples: 500KiB, 500M, 2 TB)** | Enter the amount of disk space the selected group can use. Entering **0** allows the group to use all disk space. You can enter human-readable values such as 50 GiB, 500M, 2 TB, etc. If units are not specified, the value defaults to bytes. |
 | **Group Object Quota** | Enter the number of objects the selected group can own or use. Entering **0** allows unlimited objects. |
+{{< /truetable >}}
 
 #### Apply Quotas to Selected Groups Settings
+
+{{< truetable >}}
 | Settings | Description |
 |----------|-------------|
 | **Apply To Groups** | Select groups from the dropdown list of options. |
+{{< /truetable >}}
 
 Click **Save** to set the quotas or click the "X" to exit without saving.
 

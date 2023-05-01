@@ -32,6 +32,7 @@ Select that option that suits the use case or uses the information below to help
 
 TrueNAS automatically recommends a space-efficient block size for new zvols. This table shows the minimum recommended volume block size values. To manually change this value, use the **Block size** dropdown list.
 
+{{< truetable >}}
 | Configuration | Number of Drives | Optimal Block Size | 
 |---------------|------------------|--------------------|
 | Mirror | N/A | 16k |
@@ -47,6 +48,7 @@ TrueNAS automatically recommends a space-efficient block size for new zvols. Thi
 | Raidz-3 | 6/7 | 32k |
 | Raidz-3 | 8/9/10/11 | 64k |
 | Raidz-3 | 12+ | 128k |
+{{< /truetable >}}
 
 Additional tuning might be required for optimal performance, depending on the workload. iXsystems engineers are available to assist [Enterprise](https://www.truenas.com/truenas-enterprise/) customers with tuning their TrueNAS hardware. The [workload tuning chapter](https://openzfs.github.io/openzfs-docs/Performance%20and%20Tuning/Workload%20Tuning.html) of the OpenZFS handbook is also a good resource.
 

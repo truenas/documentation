@@ -20,12 +20,14 @@ aliases:
 
 {{< include file="/content/_includes/ReleaseScheduleWarning.md" type="page" >}}
 
+{{< truetable >}}
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
 | 13.0-U5 | Code Freeze | 10 May 2023 |
 | 13.0-U5 | Internal Testing | 15 - 26 May 2023 |
 | 13.0-U5 | Tag | 29 May 2023 |
 | 13.0-U5 | Release | 30 May 2023 |
+{{< /truetable >}}
 
 ## 13.0-U4
 
@@ -1027,7 +1029,7 @@ This is a an early release meant for previewing and testing features and is **no
 
 ## Known Issues
  
-
+{{< truetable >}}
 | Seen In | Key | Summary | Workaround | Resolved In |
 |---------|-----|---------|------------|-------------|
 | 13.0-U4 | [NAS-120585](https://ixsystems.atlassian.net/browse/NAS-120585) | TrueNAS Mini XL+ does not display on Enclosure Management screen. | No workaround, update to the latest 13.0 release when available. | 13.0-U5 |
@@ -1051,7 +1053,7 @@ This is a an early release meant for previewing and testing features and is **no
 | 13.0-BETA1 | [NAS-114480](https://jira.ixsystems.com/browse/NAS-114480) | Unable to connect to TrueCommand Cloud. | Avoid connecting 13.0-BETA1 systems to TrueCommand Cloud while this issue is investigated. | 13.0-RC1 | 
 | N/A | N/A | TrueNAS 12 cannot replicate to or from TrueNAS 13 | By default, TrueNAS 12 cannot initiate a replication to or from TrueNAS 13 due to an outdated SSH client library. Allowing replication to or from TrueNAS 13 to TrueNAS 12 requires allowing ssh.rsa algorithms. See [OpenSSH 8.2 Release](https://www.openssh.com/txt/release-8.2) for security considerations. Log into the TrueNAS 13 system and go to **Services->SSH**. Add the **SSH Auxiliary Parameter**: `PubkeyAcceptedAlgorithms +ssh-rsa`. | N/A |
 | 12.0-BETA2 | [NAS-107151](https://jira.ixsystems.com/browse/NAS-107151) | Replication fails between legacy TrueNAS 9.10 systems and 13.0-BETA1 systems. | Due to numerous improvements in the replication engine and ZFS, TrueNAS 9.10 systems (or earlier) cannot replicate to or from TrueNAS 13.0-BETA1. Update the legacy TrueNAS system to 11.3 first, then 12.0, and then 13.0. | N/A |
-
+{{< /truetable >}}
 
 ## CLI Disk Replacements
 

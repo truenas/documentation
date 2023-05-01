@@ -15,6 +15,7 @@ KMIP on TrueNAS Enterprise is used to integrate the system within an existing ce
 
 ## KMIP Server
 
+{{< truetable >}}
 | Name | Description |
 |------|------|
 | **Server** | Host name or IP address of the central key server. |
@@ -27,5 +28,6 @@ KMIP on TrueNAS Enterprise is used to integrate the system within an existing ce
 | **Change Server** | Move existing keys from the current key server to a new key server. To switch to a different key server, key synchronization must be Enabled, then enable this setting, update the key server connection configuration, and click SAVE. |
 | **Validate Connection** | Tests the server connection and verifies the chosen Certificate chain. To test, configure the Server and Port values, select a Certificate and Certificate Authority, enable this setting, and click SAVE. |
 | **Force Clear** | Cancel any pending Key synchronization. |
+{{< /truetable >}}
 
 {{< taglist tag="corekmip" limit="10" >}}

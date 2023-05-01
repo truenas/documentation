@@ -47,12 +47,14 @@ Displays a dialog with the **Auto TRIM** and **Confirm** checkoboxes. Auto TRIM 
 
 Displays a dialog with a warning about unavailable data, backing up data before exporting/disconnecting, and lists services that could be disrupted by the process. Select from the three options:
 
+{{< truetable >}}
 | Setting | Description|
 |---------|------------|
 | **Destroy data on this pool?** | Select to destroy data on the pool disks. |
 | **Delete configuration of shares that used this pool?** | Selected by default to delete share configurations listed. |
 | **Confirm Export/Disconnect** | Activates the **Export/Disconnect** button. |
 | **Export/Disconnect** | Use to display the confirmation dialog where you must enter the name of the pool and confirm you want to proceed with this operation. |
+{{< /truetable >}}
 
 Use **CANCEL** to exit the process and close the dialog.
 
@@ -85,6 +87,7 @@ When accessing **Pool Manager** for an existing pool from the **Pool Actions** d
 
 ![CreatePoolScreen](/images/CORE/13.0/CreatePoolScreen.png "Storage Create Pool Screen")
 
+{{< truetable >}}
 | Name | Description|
 |---------|------------|
 | **Name** | Displays the name of the pool for which you are adding the vdev. |
@@ -96,6 +99,7 @@ When accessing **Pool Manager** for an existing pool from the **Pool Actions** d
 | **Estimated raw capacity: 0 B** | Displays the raw storage capacity of the disks for the Data VDev type.  |
 | **Filter disks by name** | Click on to display the field where you enter the filter or search parameters. |
 | **Filter disks by capacity** | Click on to display the field where you enter the filter or search parameters. |
+{{< /truetable >}}
 
 Use **CANCEL** to exit without saving and display the **Pools** screen.
 

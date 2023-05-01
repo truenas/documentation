@@ -12,7 +12,7 @@ tags:
 {{< toc >}}
 
 TrueNAS supports (WebDAV), or Web-based Distributed Authoring and Versioning. WebDAV makes it easy to share a TrueNAS dataset and its contents over the web.
-{{< include file="static/includes/General/SharingPrereqs.md.part" markdown="true" >}}
+{{< include file="content/_includes/SharingPrereqs.md" type="page" >}}
 
 ## Share Configuration
 

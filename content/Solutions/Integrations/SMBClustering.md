@@ -181,7 +181,7 @@ After applying the configuration, the system reboots and uses the same configura
 TrueNAS Enterprise Customers can contact iX Support to discuss your clustered backup strategy options.
 
 {{< expand "Contacting iX Support" "v" >}}
-{{< include file="static/includes/General/iXsystemsSupportContact.html.part" html="true" >}}
+{{< include file="content/_includes/iXsystemsSupportContact.md" type="page" >}}
 {{< /expand >}}
 
 ## See Also

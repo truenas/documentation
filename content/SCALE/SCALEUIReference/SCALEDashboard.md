@@ -56,6 +56,7 @@ If TrueNAS SCALE time gets out of sync with the system server time, the **System
 
 ![DashboardSytemInfoWidgetTimeSync](/images/SCALE/22.12/DashboardSytemInfoWidgetTimeSync.png "System Information Widget with Time Sync")
 
+{{< truetable >}}
 | Field | Description |
 |-------|-------------|
 | **Platform** | Displays **Generic** for customer-provided server and hardware, and a TrueNAS logo displays to the left of the **System Information** fields. <br> Displays the TrueNAS model number for the iXsystems-provided server and hardware, and a picture of the server displays in the area to the left of the fields. |
@@ -64,6 +65,7 @@ If TrueNAS SCALE time gets out of sync with the system server time, the **System
 | **Uptime** | Displays the number of consecutive days and the number of hours and minutes the system has run since the last reboot. |
 | **Check For Updates** | Click to display the **System Update** screen. You can also display the **System Update** screen by selecting **System Settings > Update** on the main menu panel on the left side of the screen. | 
 | **Synchronize Time** <span class="material-icons">loop</span> | Executes a time-synchronization operation to bring the system server and TrueNAS SCALE time into alignment when time gets out of sync. This operation is not designed to correct time that is weeks out of sync, and only displays when the system and SCALE time are out of sync. |
+{{< /truetable >}}
 {{< /expand >}}
 
 ### CPU Widget

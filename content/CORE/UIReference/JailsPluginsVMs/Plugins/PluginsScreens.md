@@ -30,6 +30,7 @@ Click the <span class="material-icons">expand_more</span> icon to collaspe the i
 
 ![PluginDetailScreen](/images/CORE/13.0/PluginDetailScreen.png "Plugin Detail Screen")
 
+{{< truetable >}}
 | Name | Description |
 |------|-------------|
 | **Manage** | Displays the **System Overview** screen for that application. For example, the **netdatajail** system overview with CPU and load graphics and options to view other information about this application. |
@@ -38,6 +39,7 @@ Click the <span class="material-icons">expand_more</span> icon to collaspe the i
 | **STOP** | Stops a plugin and the associated jail. |
 | **UPDATE** | Displays the **Update plugin** dialog where you can select the option to **Update jail as well**. Select  **Confirm** to activate the **UPDATE** button. |
 | **Uninstall** | Displays a verification dialog for the plugin and related jail. Type the name displayed in the dialog and select **Confirm** to activate the **DELETE** button.  |
+{{< /truetable >}}
 
 ## Plugin Add Screen
 Use the **Add** screen to install the plugin highlighted on the **Plugins** screen for a simple basic install of a third party application. Use the
@@ -45,6 +47,7 @@ Use the **Add** screen to install the plugin highlighted on the **Plugins** scre
 
 ![PluginsAddScreen](/images/CORE/13.0/PluginsAddScreen.png "Plugins Add Screen")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Plugin Name** | Displays the name of the plugin highliged on the **Plugin** screen. |
@@ -58,6 +61,7 @@ Use the **Add** screen to install the plugin highlighted on the **Plugins** scre
 | **IPv6 Address** | Enter the IPv6 address for [VNET(9)](https://www.freebsd.org/cgi/man.cgi?query=vnet) and shared IP jails. |
 | **IPv6 Prefix** | Select the IPv6 prefix for the jail from the dropdown list. |
 | **Advanced Plugin Installation** | Opens the advanced configuration screens. This form is recommended only for advanced users with ver specific requirements for a jail |
+{{< /truetable >}}
 
 ## Advanced Plugin Installation
 
@@ -75,6 +79,7 @@ Use **Next** to advance to the next configuration settings section, or click the
 
 ![PluginsAdvancedAddBasicProperties](/images/CORE/13.0/PluginsAdvancedAddBasicProperties.png "Plugins Advanced Add Basic Properties") 
 
+{{< truetable >}}
 | Name | Description |
 |------|-------------|
 | **Plugins Name** | Displays the name of the Plugin highlighed on the **Plugins** screen. This field is not editable. |
@@ -94,6 +99,7 @@ Use **Next** to advance to the next configuration settings section, or click the
 | **IPv6 Netmask** | Select the IPv6 prefix for the jail from the dropdown list. |
 | **IPv6 Default Router** | Enter a valid IPv6 address to use as the default route. Enter **none** to configure the jail without an IPv6 default route. A jail without a default route is not be able to access any networks. |
 | **Auto Start** | Select to auto-start the jail at system boot time. Jails are started and stopped based on iocage priority. Set in the **Custom Properties priority** field. |
+{{< /truetable >}}
 {{< /expand >}}
 {{< expand "Jail Properties Screen" "v" >}}
 

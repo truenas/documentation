@@ -18,6 +18,7 @@ Click an enclosure to show details about that hardware.
 
 Depending on the level of compatibility of the hardware within your TrueNAS system, some of the categories listed below may not be available.
 
+{{< truetable >}}
 | Name | Description |
 |------|------|
 | Disks | Shows a graphic representation of the TrueNAS hardware and details about connected disks. |
@@ -31,6 +32,7 @@ Depending on the level of compatibility of the hardware within your TrueNAS syst
 | SHOW POOLS | Highlights disks in pools. |
 | SHOW STATUS | Highlights failed disks. |
 | SHOW EXPANDER STATUS| Shows SAS expander statuses. | 
+{{< /truetable >}}
 
 {{< hint type=note >}}
 The TrueNAS Mini Series models do not support drive light identification. 

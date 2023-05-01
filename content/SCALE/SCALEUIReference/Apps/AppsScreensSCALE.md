@@ -54,6 +54,7 @@ The **Advanced Settings** option opens the **Kubernetes Settings** configuration
 
 ![AppsAdvancedSettingsKubernetesSettings](/images/SCALE/22.12/AppsAdvancedSettingsKubernetesSettings.png "Advanced Settings Kubernetes Settings")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Node IP** | Select the IP address for the node from the dropdown list. |
@@ -63,17 +64,20 @@ The **Advanced Settings** option opens the **Kubernetes Settings** configuration
 | **Enable GPU support** | Select to enable GPU support. The maximum number of apps that can use an Intel GPU is five. |
 | **Enable Integrated Loadbalancer** | Select to enable the integrated loadbalancer. The default uses servicelb. When disabled, you can use metallb and specify any IP from the local network.  |
 | **Enable Host Path Safety Checks** | Enabled by default. Select to enable TrueNAS SCALE to perform safety checks to ensure app host path volumes are secure. |
+{{< /truetable >}}
 
 **Settings Requiring Re-Initialization**
 
 ![AppsAdvancedSettingsKubernetesSettingsReInitialization](/images/SCALE/22.12/AppsAdvancedSettingsKubernetesSettingsReInitialization.png "Advanced Settings Kubernetes Settings 2")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Cluster CIDR** | Required. Enter the IP address and CIDR number for the Kubernetes cluster. |
 | **Service CIDR** | Required. Enter the IP address and CIDR number for the Kubernetes service. |
 | **Cluster DNS IP** | Required. Enter the IP address for the cluster DNS. |
-| **Force** | Slected to force bypassing pool validation during Kubernetes reinitialization. |
+| **Force** | Select to force bypassing pool validation during Kubernetes reinitialization. |
+{{< /truetable >}}
 {{< /expand >}}
 
 #### Unset Pool
@@ -93,6 +97,7 @@ Click **CONTINUE** to open the **Add Catalog** screen.
 
 ![ManageCatalogsAddCatalogScreen](/images/SCALE/22.02/ManageCatalogsAddCatalogScreen.png "Add Catalog")
 
+{{< truetable >}}
 | Field | Description | 
 |---------|-------|
 | **Catalog Name** | enter the name the TrueNAS uses to look up the catalog. For example, *truecharts*. |
@@ -100,6 +105,7 @@ Click **CONTINUE** to open the **Add Catalog** screen.
 | **Repository** |  Enter the valid git repository URL. For example,  *https://github.com/truecharts/catalog*. |
 | **Preferred Trains** | The trains TrueNAS uses to retrieve available applications for the catalog. The default is **stable** (and optionally: **incubator**). |
 | **Branch** | Specify the git repository branch TrueNAS should use for the catalog. The default is **main**. |
+{{< /truetable >}}
 {{< /expand >}}
 
 ### Pull Image
@@ -108,18 +114,22 @@ The **Pull Image** option at the top right of the **Manage Docker Images** scree
 
 ![AppsManageDockerImagesPullImage](/images/SCALE/22.02/AppsManageDockerImagesPullImage.png "Pull Image")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Image Name** | Enter the name of the image to pull. The format for the name is `registry/repo/image`. |
 | **Image Tag** | Enter the image tag. For example, *latest*. |
+{{< /truetable >}}
 
 #### Docker Registry Authentication Settings
 These settings are optional and only necessary for private images.
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Username** | Enter the input user name. |
 | **Password** | Enter the input user password. |
+{{< /truetable >}}
 {{< /expand >}}
 
 ### Launch Docker Image
@@ -156,11 +166,13 @@ The **Choose Pod Shell** window lets you choose which pod or active container an
 
 ![AppChoosePodWindow](/images/SCALE/22.12/AppChoosePodWindow.png "Choose Pod Window") 
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Pods** | Required. Select the pod installed from the dropdown list. |
 | **Containers** | Required. Select the container from the dropdown list. |
 | **Commands** | Enter the shell command. |
+{{< /truetable >}}
 
 Select **Choose** to open the **Applications > Pod Shell** screen. 
 {{< /expand >}}
@@ -186,11 +198,13 @@ The **Logs** option opens the **Choose Log** window.
 
 ![AppsChooseLogWindow](/images/SCALE/22.12/AppsChooseLogWindow.png "Choose Log Window") 
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Pods** | Select the pod from the dropdown list to open the shell screen with the log for this pod. |
 | **Containers** | Select the containers from the dropdown list to include in the log shell screen. |
 | **Tail Lines** | Enter the number of log file lines to include in the shell screen for the log file. |
+{{< /truetable >}}
 {{< /expand >}}
 
 ### Pod Log Window
@@ -241,10 +255,12 @@ The **Official** catalog name is not editable, but you can change the train.
 
 ![ApplicationsEditCatalog](/images/SCALE/22.02/ApplicationsEditCatalog.png "Edit Catalog")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Catalog Name** | Enter a name TrueNAS should use to look up the catalog. |
 | **Preferred Train** | Select the train(s) the UI should use to retrieve available applications for the catalog from the dropdown list. Options are **charts**, **test**, **enterprise**, and **community**. |
+{{< /truetable >}}
 {{< /expand >}}
 
 ### Refresh Catalog
@@ -260,10 +276,12 @@ The **Summary** option for each catalog listed on **Manage Catalogs** opens the 
 
 ![AddCatalogScreen](/images/SCALE/22.02/AddCatalogScreen.png "Add Catalog")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Train** | Select the trains you want to include in the catalog summary information. Options are **All**, **charts**, **test**, **enterprise** or **community**. |
 | **Status** | Select the statuses you want to include in the catalog summary information. Options are **All**, **Healthy**, or **Unhealthy**. This is useful to filter the summary to locate trains or applications with the **Unhealthy** status. |
+{{< /truetable >}}
 {{< /expand >}}
 
 ## Manage Docker Images

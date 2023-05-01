@@ -20,12 +20,14 @@ Enter the system IP address or DNS host name, then enter a system nickname and p
 
 ![TrueCommand231AddNewSystem](/images/TrueCommand/2.3.1/TrueCommand231AddNewSystem.png "+ New System Menu")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **IP Address or Hostname** | The system's IP address or DNS host name. |
 | **Nickname** | Required short-form identifier for this system. You cannot use system nicknames more than once. |
 | **Password / API Key** | New password or API key. TrueCommand hides characters for security. |
 | **Password / API Key Confirm** | Re-enter the password or API key. |
+{{< /truetable >}}
 
 Click **RESET FORM** to clear the fields and reset the form if you make a mistake. Click **ADD SYSTEM** to add the new system. Click **ADD AND CONTINUE** to add this system and then continue to add more systems.
 

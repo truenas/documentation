@@ -1,7 +1,9 @@
 ---
 ---
+
 **NetBIOS**
 
+{{< truetable >}}
 | Settings | Description |
 |----------|-------------|
 | **NetBIOS Name** | Automatically populated with the original host name of the system **truenas**. This name is limited to 15 characters and cannot be the same name in **Workgroup**. |
@@ -10,9 +12,11 @@
 | **Description** | Optional. Enter a server description. |
 | **Enable SMB1 support** | Select to allow legacy SMB clients to connect to the server. Note that SMB1 is being deprecated and it is advised to upgrade clients to operating system versions that support modern versions of the SMB protocol. |
 | **NTLMv1 Auth** | Select to allow [smbd(8)](https://www.freebsd.org/cgi/man.cgi?query=smbd) attempts to authenticate users with the insecure and vulnerable NTLMv1 encryption. Off by default. This setting allows backward compatibility with older versions of Windows, but is not recommended and should not be used on untrusted networks. |
+{{< /truetable >}}
 
 **Other Options**
 
+{{< truetable >}}
 | Settings | Description |
 |----------|-------------|
 | **Unix Charset** | Select an option from the dropdown list. Default is **UTF-8** which supports all characters in all languages. |
@@ -26,3 +30,4 @@
 | **Directory Mask** | Overrides default directory creation mask of **0777** which grants directory read, write and execute access for everybody. |
 | **Bind IP Addresses** | Select the static IP addresses which SMB listens on for connections from the dropdown list. Leave unselected defaults to listen on all active interfaces. |
 | **Auxiliary Parameters** | Enter additional smb.conf options. See the [Samba Guide](http://www.oreilly.com/openbook/samba/book/appb_02.html) for more information on these settings. To log more details when a client attempts to authenticate to the share, add **log level = 1, auth_audit:5**. |
+{{< /truetable >}}

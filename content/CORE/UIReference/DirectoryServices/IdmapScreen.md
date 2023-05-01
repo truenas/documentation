@@ -21,6 +21,7 @@ Click the <i class="material-icons" aria-hidden="true" title="Options">more_vert
 
 ## Idmap Settings
 
+{{< truetable >}}
 | Name | Description |
 |---------|-------------|
 | **Idmap Backend** | Select the plugin interface for Windbind to use from the dropdown list. Plugin interfaces for Windbind use varying backends. These backends store SID/uid/gid mapping tables. The correct setting depends on the NAS deployment environment. |
@@ -29,6 +30,7 @@ Click the <i class="material-icons" aria-hidden="true" title="Options">more_vert
 | **Range Low** | Determines the range of UID/GID numbers which this Idmap backend translates. External credentials like a Windows SID must map to a UID or GID number inside this range. Ignores external credentials outside this range. |
 | **Range High**  | Determines the range of UID/GID numbers which this Idmap backend translates. External credentials like a Windows SID must map to a UID or GID number inside this range. Ignores external credentials outside this range. |
 | **SSSD Compat** | Select to generate Idmap low range based on same algorithm that SSSD uses by default.  |
+{{< /truetable >}}
 
 Click **SAVE** to save settings and return to the **Idmap** screen.
 

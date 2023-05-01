@@ -12,10 +12,12 @@ Network devices often use Link Layer Discovery Protocol (LLDP) to communicate in
 
 **General Options**
 
+{{< truetable >}}
 | Name | Description |
 |------|-------------|
 | **Interface Description** | Select to enable receive mode. Interface description stores any peer information received. |
 | **County Code** | Select the two-letter [ISO 3166-1 alpha-2](https://www.iso.org/obp/ui/) code used to enable LLDP location support. The dropdown list is a comprehensive list of two-character country codes. |
 | **Location** | Enter the physical location of the host. |
+{{< /truetable >}}
 
 {{< taglist tag="corelldp" limit="10" >}}

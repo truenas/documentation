@@ -59,6 +59,7 @@ Please back up or otherwise memorize the updated password when changing it.
 
 <span class="iconify" data-icon="ic:outline-settings-applications"></span> **Preferences** contains theme and other visual options for the web interface:
 
+{{< truetable >}}
 | Name | Description |
 |--------|-------------|
 | **Choose Theme** | Select a preferred theme from the dropdown list. There are several built-in themes designed for light and dark modes. High contrast viewing options of the web interface are also listed. |
@@ -68,6 +69,7 @@ Please back up or otherwise memorize the updated password when changing it.
 | **Retro Logo** | Select to revert branding back to FreeNAS. |
 | **Reset All Preferences to Default** | Select to reset all user preferences to their default values. Preserves custom themes. |
 | **Update Preferences** | Click to save changes to the **General Preferences**. |
+{{< /truetable >}}
 
 Create and manage custom themes on this screen.
 

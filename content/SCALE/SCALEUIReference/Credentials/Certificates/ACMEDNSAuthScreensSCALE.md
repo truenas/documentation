@@ -34,6 +34,7 @@ The settings change based on the **Authenticator** selection.
 
 ![AddDNSAuthenticatorCloudflare](/images/SCALE/22.02/AddDNSAuthenticatorCloudflare.png "Add ACME DNS-Authenticator Cloudflare")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Name** | Required. Enter an internal identifier for the authenticator. |
@@ -43,5 +44,6 @@ The settings change based on the **Authenticator** selection.
 | **API Token** | Displays when **Authenticator** is set to **cloudflare**. Enter the API token. |
 | **Access Key Id** | Required. Displays when **Authenticator** is set to **route53**. Enter the access key ID.|
 | **Secret Access Key** | Required. Displays when **Authenticator** is set to **route53**. Enter the secret access key. |
+{{< /truetable >}}
 
 {{< taglist tag="scaleacme" limit="10" >}}

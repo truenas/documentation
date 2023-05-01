@@ -18,18 +18,22 @@ Clicking **User Quotas** from the **Dataset Actions** menu shows the **User Quot
 
 ![UserQuotasScreenNoQuotas](/images/CORE/13.0/UserQuotasScreenNoQuotas.png "User Quotas Screen")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | Filter User Quotas | Enter a string to show saved quotas that match the string. |
 | Columns | Displays options to customize the table view to add or remove information. Options are **Select All**, **ID**, **Data Quota**, **DQ Used**, **DQ % Used**, **Object Quota**, **Objects Used**, **OQ % Used**, and **Reset to Defaults**. After selecting **Select All** the option toggles to **Unselect All**. |
 | Actions | Shows additional options to manage or add entries to this screen. |
+{{< /truetable >}}
 
 ### Actions
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | Toggle Display | Changes the view between filter and list views. By default, only user accounts with a quota are shown (filter view). Switching to the list view shows all available users, even if the user has no quota assigned. |
 | Set Quotas (Bulk) | Opens the **Set User Quotas** screen to add quotas. |
+{{< /truetable >}}
 
 ### User Expanded View
 
@@ -45,11 +49,13 @@ The **Edit User** window allows modifying individual user data and object quota 
 
 ![EditUserQuotaWindow](/images/SCALE/22.02/EditUserQuotaWindow.png "Edit User Quota")
 
+{{< truetable >}}
 | Settings | Description |
 |----------|-------------|
 | **User** | Displays the name of the selected user. |
 | **User Data Quota (Examples: 500KiB, 500M, 2 TB)** | Enter the amount of disk space the selected user can use. Entering **0** allows the user to use all disk space. You can enter human-readable values such as 50 GiB, 500M, 2 TB, etc.). If units are not specified, the value defaults to bytes. |
 | **User Object Quota** | Enter the number of objects the selected user can own. Entering **0** allows unlimited objects. |
+{{< /truetable >}}
 
 Click **Set Quota** to save changes or **Cancel** to close the window without saving.
 
@@ -61,17 +67,21 @@ Click **Actions > Set Quotas (Bulk)** to see the **Set User Quotas** screen.
 
 ### Set Quotas Settings
 
+{{< truetable >}}
 | Settings | Description |
 |----------|-------------|
 | **User Data Quota (Examples: 500KiB, 500M, 2 TB)** | Enter the amount of disk space the selected user can use. Entering **0** allows the user to use all disk space. You can enter human-readable values such as 50 GiB, 500M, 2 TB, etc.). If units are not specified, the value defaults to bytes. |
 | **User Object Quota** | Enter the number of objects the selected user can own. Entering **0** allows unlimited objects. |
+{{< /truetable >}}
 
 ### Apply Quotas to Selected Users Settings
 
+{{< truetable >}}
 | Settings | Description |
 |----------|-------------|
 | **Select Users Cached by this System** | Select the users from the dropdown list of options. |
 | **Search for Connected Users** | Click in the field to see the list of users on the system or type a user name and press <kbd>Enter</kbd>. A clickable list displays of found matches as you type. Click on the user to add the name. A warning dialog displays if there are not matches found. |
+{{< /truetable >}}
 
 Click **Submit** to set the quotas or **Cancel** to exit without saving.
 
@@ -83,18 +93,22 @@ Clicking **Group Quotas** from the **Dataset Actions** menu shows the **Edit Gro
 
 The **Edit Group Quotas** screen displays the names and quota data of any groups cached on or connected to the system.
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | Filter Group Quotas | Enter a string to show saved quotas that match the string. |
 | Columns | Displays options to customize the table view to add or remove information. Options are **Select All**, **ID**, **Data Quota**, **DQ Used**, **DQ % Used**, **Object Quota**, **Objects Used**, **OQ % Used**, and **Reset to Defaults**. After selecting **Select All** the option toggles to **Unselect All**. |
 | Actions | Shows additional options to manage or add entries to this screen. |
+{{< /truetable >}}
 
 ### Actions
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | Toggle Display | Changes the view between filter and list views. By default, only group accounts with a quota are shown (filter view). Switching to the list view shows all available groups, even if the group has no quota assigned. |
 | Set Quotas (Bulk) | Opens the **Set Group Quotas** screen to add quotas. |
+{{< /truetable >}}
 
 ### Group Expanded View
 
@@ -109,11 +123,13 @@ The **Edit Group** window allows you to modify the group data quota and group ob
 
 ![EditGroupQuotaWindow](/images/SCALE/22.02/EditGroupQuotaWindow.png "Edit Group Quota")
 
+{{< truetable >}}
 | Settings | Description |
 |----------|-------------|
 | **Group** | Displays the name of the selected group(s).  |
 | **Group Data Quota (Examples: 500KiB, 500M, 2 TB)** | Enter the amount of disk space the selected group can use. Entering **0** allows the group to use all disk space. You can enter human-readable values such as 50 GiB, 500M, 2 TB, etc.). If units are not specified, the value defaults to bytes. |
 | **Group Object Quota** | Enter the number of objects the selected group can own or use. Entering **0** allows unlimited objects. |
+{{< /truetable >}}
 
 Click **Set Quota** to save changes or **Cancel** to close the window without saving.
 
@@ -125,17 +141,21 @@ Click **Actions > Set Quotas (Bulk) ** to see the **Set Group Quotas** screen.
 
 #### Set Quotas Settings
 
+{{< truetable >}}
 | Settings | Description |
 |----------|-------------|
 | **Group Data Quota (Examples: 500KiB, 500M, 2 TB)** | Enter the amount of disk space the selected group can use. Entering **0** allows the group to use all disk space. You can enter human-readable values such as 50 GiB, 500M, 2 TB, etc.). If units are not specified, the value defaults to bytes. |
 | **Group Object Quota** | Enter the number of objects the selected group can own or use. Entering **0** allows unlimited objects. |
+{{< /truetable >}}
 
 #### Apply Quotas to Selected Groups Settings
 
+{{< truetable >}}
 | Settings | Description |
 |----------|-------------|
 | **Select Groups Cached by this System** | Select the users from the dropdown list of options. |
 | **Search for Connected Groups** | Click in the field to see the list of groups on the system or type a group name and press <kbd>Enter</kbd>. A clickable list displays of found matches as you type. Click on the group to add the name. A warning dialog displays if there are no matches found. |
+{{< /truetable >}}
 
 Click **Submit** to set the quotas or **Cancel** to exit without saving.
 

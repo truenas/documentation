@@ -93,6 +93,7 @@ The **Basic Options** settings in this section display on the **Advanced Options
 
 ![AddShareBasicOptions](/images/SCALE/22.02/AddShareBasicOptions.png "Add SMB Basic Options")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Path** | Enter the path or use the <span class="material-icons">arrow_right</span> icon to the left of **<span class="material-icons">folder</span>/mnt** to locate the dataset and populate the path. **Path** is the directory tree on the local file system that TrueNAS exports over the SMB protocol. |
@@ -101,10 +102,12 @@ The **Basic Options** settings in this section display on the **Advanced Options
 | **Purpose** | Select a [preset option](#purpose-setting-options) from the dropdown list. The option applies predetermined settings ([presets](#advanced-options-presets)) and disables changing some share setting options. |
 | **Description** | Enter a brief description or notes on how you use this share.  |
 | **Enabled** | Selected by default to enable sharing the path when the SMB service is activated. Clear to disable this SMB share without deleting it. |
+{{< /truetable >}}
 
 #### Purpose Setting Options
 This table details the options found on the **Purpose** dropdown list.
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **No presets** | Select  to retain control over all **Advanced Options** settings.|
@@ -115,6 +118,8 @@ This table details the options found on the **Purpose** dropdown list.
 |  **Multi-Protocol (NFSv3/SMB) shares**| Select for multi-protocol (NFSv3/SMB) shares. |
 | **Private SMB Datasets and Shares** | Select to use private SMB datasets and shares. |
 | **SMB WORM. Files become read-only via SMB after 5 minutes** | The **SMB WORM** preset only impacts writes over the SMB protocol. Before deploying this option in a production environment, the user should determine whether the feature meets their requirements. |
+{{< /truetable >}}
+
 {{< /expand >}}
 
 {{< expand "Advanced Options Settings" "v" >}}
@@ -128,6 +133,7 @@ The **Access** settings let you customize access to the share and files. They al
 
 ![AddSMBAdvancedAccessSettings](/images/SCALE/22.02/AddSMBAdvancedAccessSettings.png "Add SMB Advanced Options Access")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Enable ACL** | Select to enable ACL support for the SMB share. A warning displays if you clear this option and the SMB dataset has an ACL, and you are required to strip the ACL from the dataset prior to creating the SMB share. |
@@ -137,6 +143,7 @@ The **Access** settings let you customize access to the share and files. They al
 | **Access Based Share Enumeration** | Select to restrict share visibility to users with read or write access to the share. See the [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) manual page. |
 | **Hosts Allow** | Enter a list of allowed host names or IP addresses. Separate entries by pressing <kbd>Enter</kbd>. You can find a more detailed description with examples [here](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html#HOSTSALLOW).
 | **Hosts Deny** | Enter a list of denied host names or IP addresses. Separate entries by pressing <kbd>Enter</kbd>. |
+{{< /truetable >}}
 
 #### Other Settings
 
@@ -144,6 +151,7 @@ The **Other Options** settings are for improving Apple software compatibility, Z
 
 ![AddSMBAdvancedOtherSettings](/images/SCALE/22.02/AddSMBAdvancedOtherSettings.png "Add SMB Advanced Options Other")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Use as Home Share** | Select to allow the share to host user home directories. Each user has a personal home directory they use when connecting to the share that is not accessible by other users. Home Shares allow for personal, dynamic shares. You can only use one share as the home share. See [Adding an SMB Home Share]({{< relref "AddSMBHomeShare.md" >}}) for more information. |
@@ -155,6 +163,7 @@ The **Other Options** settings are for improving Apple software compatibility, Z
 | **Enable Alternate Data Streams** | Select to allow multiple [NTFS data streams](https://www.ntfs.com/ntfs-multiple.htm). Disabling this option causes macOS to write streams to files on the file system. |
 | **Enable SMB2/3 Durable Handles** | Select to allow using open file handles that can withstand short disconnections. Support for POSIX byte-range locks in Samba is also disabled. We don't recommend this option when configuring multi-protocol or local access to files. |
 | **Enable FSRVP** | Select to enable support for the File Server Remote VSS Protocol ([FSVRP](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-fsrvp/dae107ec-8198-4778-a950-faa7edad125b)). This protocol allows remote procedure call (RPC) clients to manage snapshots for a specific SMB share. The share path must be a dataset mount point. Snapshots have the prefix `fss-` followed by a snapshot creation timestamp. A snapshot must have this prefix for an RPC user to delete it. |
+{{< /truetable >}}
 
 #### Path Suffix and Auxiliary Parameters Settings
 
@@ -162,10 +171,12 @@ Use **Path Suffix** to provide individualized shares on a per-user, computer, or
 
 ![AddSMBAdvancedPathSuffixAuxParam](/images/SCALE/22.02/AddSMBAdvancedPathSuffixAuxParam.png "Add SMB Advanced Path Suffix")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Path Suffix** | Appends a suffix to the share connection path. Use this to provide individualized shares on a per-user, per-computer, or per-IP address basis. Suffixes can contain a macro. See the [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) manual page for a list of supported macros. The connect path must be preset before a client connects. |
 | **Auxiliary Parameters** | Enter additional [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) settings. |
+{{< /truetable >}}
 
 #### Advanced Options Presets
 
@@ -176,6 +187,7 @@ The expandable below provides a comparison table that lists these presets and sh
 The following table shows the preset options for the different **Purpose** options and if those are locked.      
 A <i class="material-icons" aria-hidden="true" title="System Update">check_box</i> indicates the option is enabled while <i class="material-icons" aria-hidden="true" title="System Update">check_box_outline_blank</i> means the option is disabled. [ ] indicates empty text fields, and [%U] indicates the option the preset created.
 
+{{< truetable >}}
 | Setting | Default Share Parameters | Multi-User Time Machine | Multi-Protocol (NFSv3/SMB) Shares | Private SMB Datasets and Shares | SMB Files become Read Only after 5 minutes |
 |---------|--------------------------|-------------------------|-----------------------------------|---------------------------------|----------------------------------------|
 | **Enable ACL** | <i class="material-icons" aria-hidden="true">check_box</i> (locked) | <i class="material-icons" aria-hidden="true">check_box</i> | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> (locked) | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> |
@@ -195,6 +207,7 @@ A <i class="material-icons" aria-hidden="true" title="System Update">check_box</
 | **Enable FSRVP** | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> (locked) | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> |
 | **Path Suffix** | [ ] (locked) | [%U] (locked) | [%U] | [%U] (locked) | [ ] (locked) |
 | **Auxiliary Parameters** | [ ] | [ ] | [ ] | [ ] | [ ] |
+{{< /truetable >}}
 
 [Back to Advanced Options Settings](#advanced-options-settings)
 {{< /expand >}}
@@ -212,6 +225,7 @@ These settings configure new ACL entries for the selected SMB share and apply th
 
 **ACL Entries** are listed as a block of settings. Click **Add** to add a new entry.
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **SID** | Enter a SID trustee value (who) this ACL entry (ACE) applies to. SID is a unique value of variable length that identifies the trustee. Shown as a [Windows Security Identifier](https://docs.microsoft.com/en-us/windows/win32/secauthz/security-identifiers). If not specified, you must enter a value in **Domain**. |
@@ -219,6 +233,7 @@ These settings configure new ACL entries for the selected SMB share and apply th
 | **Name** | Enter a user name (who) this ACL entry applies to, shown as a user name. Requires adding the user **Domain**. |
 | **Permission** | Select predefined permission combinations from the dropdown list. Select **Read** to grant read access and execute permission on the object (RX). Select **Change** to grant read access, execute permission, write access, and delete object (RXWD) permissions. Select **Full** to grant read access, execute permission, write access, delete objects, change permissions, and take ownership (RXWDPO) permissions. For more details, see [smbacls(1)](https://www.samba.org/samba/docs/current/man-html/smbcacls.1.html). |
 | **Type** | Select the option from the dropdown list that specifies how TrueNAS applies permissions to the share. Select **Allowed** to deny all permissions by default, except manually defined permissions. Select **Denied** to allow all permissions by default, except manually defined permissions. |
+{{< /truetable >}}
 
 **Save** stores the share ACL and immediately applies it to the share.
 {{< /expand >}}

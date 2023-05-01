@@ -563,3 +563,26 @@ p,h1,h2,h3,h4,th,td,a {
   opacity: .75;
   transform: translateY(0);
 }
+
+/* Standardized table style */
+.truetable {
+  border-collapse: collapse;
+  max-width: 100%;
+}
+
+.truetable td, .truetable th {
+  border: 2px solid #e3e3e2;
+  padding: 8px;
+}
+
+.truetable tr:nth-child(even){background-color: #f6f6f5;}
+.truetable tr:hover {background-color: #e0e7eb!important;color:black;}
+.truetable tr:hover a {}
+
+.truetable th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #0095d5;
+  color: white;
+}

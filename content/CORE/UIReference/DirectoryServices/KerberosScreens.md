@@ -32,16 +32,21 @@ Click **ADD** to create a realm on the TrueNAS. Click **SUBMIT** to save changes
 
 **Basic Options**
 
+{{< truetable >}}
 | Name | Description |
 |---------|-------------|
 | **Realm** | Enter a name for the realm. |
+{{< /truetable >}}
 
 **Advanced Options**
+
+{{< truetable >}}
 | Name | Description |
 |---------|-------------|
 | **KDC** | Enter the name of the Key Distribution Center. If there is more than one value separate the values by pressing <kbd>Enter</kbd>. |
 | **Admin Server** | Define the server that performs all changes to the database. If there is more than one value separate the values by pressing <kbd>Enter</kbd>. |
 | **Password Server** | Define the server that performs all password changes. If there is more than one value separate the values by pressing <kbd>Enter</kbd>. |
+{{< /truetable >}}
 
 ## Kerberos Keytabs
 
@@ -54,10 +59,12 @@ After generating the keytab, use the **Add Kerberos Keytab** screen to add it to
 
 **Kerberos Keytab**
 
+{{< truetable >}}
 | Name | Description |
 |---------|-------------|
 | **Name** | Enter a name for the keytab. |
 | **Choose File** | Opens a file explorer window where you can locate and select the keytab file. |
+{{< /truetable >}}
 
 Click **SUBMIT** to save settings or **CANCEL** to exit without saving.
 
@@ -67,9 +74,11 @@ Use the  **Directory Services > Kerberos Settings** screen to enter any extra se
 
 ![KerberosSettingsScreen](/images/CORE/13.0/KerberosSettingsScreen.png "Kerberos Settings")
 
+{{< truetable >}}
 | Name | Description |
 |---------|-------------|
 | **Appdefaults Auxiliary Parameters** | Define any extra settings for use by some Kerberos applications. [[appdefaults] section of krb.conf(5)](https://web.mit.edu/kerberos/krb5-1.12/doc/admin/conf_files/krb5_conf.html#appdefaults) lists the available settings and syntax. |
 | **Libdefaults Auxiliary Parameters** | Define any settings used by the Kerberos library. [[libdefaults] section of krb.conf(5)](https://web.mit.edu/kerberos/krb5-1.12/doc/admin/conf_files/krb5_conf.html#libdefaults) lists the available settings and their syntax. |
+{{< /truetable >}}
 
 {{< taglist tag="corekerberos" limit="10" >}}

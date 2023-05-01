@@ -199,6 +199,7 @@ This process is described in the next section.
        
     ![EditClaimIssuancePolicyAddLDAPAttributesCropped](/images/SAML/EditClaimIssuancePolicyAddLDAPAttributesCropped.png "Edit Claim Issuance Policy Add LDAP Attributes")
 
+      {{< truetable >}}
       | Parameter | Value |
       |-----------|-------|
       | E-Mail-Addresses | email |
@@ -206,7 +207,8 @@ This process is described in the next section.
       | User-Principal-Name | unique_name |
       | Telephone-Number | telephoneNumber |
       | Title | title |
-      
+      {{< /truetable >}}
+	  
     i. Click **Finish**, then **Apply**, and finally **OK**.
 
 8. Close **Active Directory**.

@@ -27,6 +27,7 @@ The **Add Scrub Task** and **Edit Scrub Task** screens display the same settings
 
 ![AddScrubTaskSCALE](/images/SCALE/22.02/AddScrubTaskSCALE.png "Add Scrub Task")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Pool** | Select the pool to scrub from the dropdown list. |
@@ -34,17 +35,20 @@ The **Add Scrub Task** and **Edit Scrub Task** screens display the same settings
 | **Description** | Enter a description for this scrub tasks. |
 | **Schedule** | Select a preset from the dropdown list that runs the scrub task according to that schedule time. Select **Custom** to use the advanced scheduler. |
 | **Enabled** | Select to enable the scrub task to run. Leave checkbox clear to disable the task without deleting it. |
+{{< /truetable >}}
 
 ## Scrub/Resilver Priority Screen
 The settings specify times when new resilver tasks can start, and run, at a higher priority or when a resilver task cannot run at a lower priority. 
 
 ![ScrubTaskPrioritySCALE](/images/SCALE/22.02/resilverscrubedit.png "Default Scrub Task")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Enabled** | Select to run resilver tasks between the configured times. |
 | **Begin** | Select the hour and minute when a resilver task can start from the dropdown list. The resilver process can run at a higher priority. |
 | **End** | Select the hour and minute when new resilver tasks are not allowed to start. This does not affect active resilver tasks. The resilver process must return to running at a lower priority. A resilver process running after this time likely takes much longer to complete due to running at a lower priority compared to other disk and CPU activities, such as replications, SMB transfers, NFS transfers, Rsync transfers, S.M.A.R.T. tests, pool scrubs, user activity, etc. |
 | **Days of the Week** | Select the days to run resilver tasks from the dropdown list. |
+{{< /truetable >}}
 
 {{< taglist tag="scalescrub" limit="10" >}}

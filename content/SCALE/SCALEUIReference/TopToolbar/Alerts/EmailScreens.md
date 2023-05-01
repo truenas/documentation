@@ -31,6 +31,7 @@ After setting up Gmail OAuth authentication, the screen displays **Gmail credent
 
 ![EmailSMTPConfigurationScreen](/images/SCALE/22.12/EmailSMTPConfigurationScreen.png "Email SMTP Screen")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **From Email** | The user account email address to use for the envelope From email address. You must first [configure the user account email]({{< relref "SettingUpSystemEmail.md" >}}) in **Credentials > Local Users**. |
@@ -39,7 +40,7 @@ After setting up Gmail OAuth authentication, the screen displays **Gmail credent
 | **Mail Server Port** | MTP port number. Typically 25, or use 465 (secure SMTP) or 587 (submission). |
 | **Security** | Select the security option from the dropdown list. Options are **Plain (No Encryption)**, **SSL (Implicit TLS)**, or **TLS (STARTTLS)**. See [email encryption](https://www.fastmail.com/help/technical/ssltlsstarttls.html) for more information on types. |
 | **SMTP Authentication** | Select to enable [SMTP AUTH](https://en.wikipedia.org/wiki/SMTP_Authentication) using PLAIN SASL. Requires a valid user name and password. |
-
+{{< /truetable >}}
 
 {{< taglist tag="scaleemail" limit="10" >}}
 {{< taglist tag="scalealerts" limit="10" title="Related Alert Articles" >}}

@@ -17,6 +17,7 @@ Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i
 
 **General Options**
 
+{{< truetable >}}
 | Name | Description |
 |------|-------------|
 | **Check Interval** | Enter number of minutes to determine how often the smartd daemon monitors for configured tests to be run. |
@@ -24,6 +25,7 @@ Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i
 | **Difference** | Enter in degrees Celsius. S.M.A.R.T. sends alerts if the temperature of a drive changes by N degrees Celsius since the last report. |
 | **Informational** | Enter in degrees Celsius. S.M.A.R.T. sends messages with a log level of LOG_INFO if the temperature exceeds the threshold. |
 | **Critical** | Enter in degrees Celsius. S.M.A.R.T. sends messages with a log level of LOG_CRIT if the temperature exceeds the threshold. |
+{{< /truetable >}}
 
 ## Service Activation
 

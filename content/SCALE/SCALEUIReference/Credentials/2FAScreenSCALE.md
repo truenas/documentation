@@ -19,20 +19,24 @@ Two-factor authentication is time-based and requires a correct system time setti
 
 ![Enable2FAScreen](/images/SCALE/22.12/Enable2FAScreen.png "Enable 2FA User Settings")
 
+{{< truetable >}}
 | Name | Description |
 |------|-------------|
 | **One Time Password (OTP) Digits** | Select the number of digits for the length of the one-time password (OTP). The default is **6**, which is the standard OTP length for Google OTPs. Check your app/device settings before selecting a value. |
 | **Interval** | Enter the number of seconds for the lifespan of each OTP. Default is **30** seconds. The minimum is 5 seconds. |
 | **Window** | Enter the number of valid passwords. Extends password validity beyond the **Interval** setting. For example, *1* means that one password before and after the current password is valid, leaving three valid passwords. Extending the window is useful in high-latency situations. |
 | **Enable Two-Factor Auth for SSH** | Select to enable 2FA for system SSH access. Leave this disabled until you complete a successful test of 2FA with the UI. |
+{{< /truetable >}}
 
 ### System Generated Settings
 
+{{< truetable >}}
 | Name | Description |
 |------|-------------|
 | **Secret (Read-only)** | TrueNAS creates the secret and uses it to generate OTPs when you first enable 2FA. |
 | **Provisioning URI (includes Secret - Read-only)** | TrueNAS created the URI used to provision an OTP. TrueNAS encodes the URI (which contains the secret) in a QR Code. To set up an OTP app like Google Authenticator, use the app to scan the QR code or enter the secret manually into the app. TrueNAS produces the URI when you first activate 2FA. |
-  
+{{< /truetable >}}
+
 **Enable Two Factor Authentication** opens the **Enable Two-Factor Authentication** confirmation dialog. Click **Confirm** to enable 2F. 
 
 ![Enable2FAConfirmationDialog](/images/SCALE/22.02/Enable2FAConfirmationDialog.png "Enable 2FA")

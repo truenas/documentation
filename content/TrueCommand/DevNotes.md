@@ -52,6 +52,7 @@ NAS metrics and state updates in realtime - no more 30s delay!
 
 Table of features and current status (Timestamp references when the item status was last updated):
 
+{{< truetable >}}
 | Feature | Status | Timestamp | Description |
 |:---:|:---:|:---:|:---:|
 |Users | **OK** | 02/26/2021 | Create and manage users and user permissions|
@@ -67,6 +68,7 @@ Table of features and current status (Timestamp references when the item status 
 |NAS Explorer|**OK**|06/07/2021| Detailed inspection/management of storage on individual NAS’s|
 |Cluster Volumes|**OK**|06/07/2021|Create and manage clusters of TrueNAS SCALE systems (glusterfs)|
 |ISCSI Manager|**OK**|06/07/2021|Create and manage ISCSI volumes in bulk|
+{{< /truetable >}}
 
 ### Migration Notice
 

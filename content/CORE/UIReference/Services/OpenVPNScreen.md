@@ -18,6 +18,7 @@ Use **OpenVPN Client** to configure the client settings.
 
 **General Options**
 
+{{< truetable >}}
 | Name | Description |
 |---------|-------------|
 | **Client Certificate** | Select a valid client certificate from the dropdown list. The option is **freenas_default**. A certificate must exist on this system that is current and not revoked. Find more about generating certificates and CAs for OpenVPN [here](https://community.openvpn.net/openvpn/wiki/HOWTO#SettingupyourownCertificateAuthorityCAandgeneratingcertificatesandkeysforanOpenVPNserverandmultipleclients). |
@@ -33,6 +34,7 @@ Use **OpenVPN Client** to configure the client settings.
 | **TLS Crypt Auth Enabled** | Select to enable or clear checkbox to disable TLS Web Client Authentication. |
 | **Additional Parameters** | Enter any extra parameters for the client. This manually configures any of the core OpenVPN config file options. Refer to the OpenVPN [Reference Manual](https://openvpn.net/community-resources/reference-manual-for-openvpn-2-4/) for descriptions of each option. |
 | **TLS Crypt Auth** | Encrypts all TLS handshake messages to add another layer of security. OpenVPN server and clients share a required static key. Enter the static key for authentication/encryption of all control channel packets. Must enable tls_crypt_auth_enabled. |
+{{< /truetable >}}
 
 ## OpenVPN Server
 
@@ -46,6 +48,7 @@ Click **Client Certificate** to generate the configuration file you need from th
 
 **General Options**
 
+{{< truetable >}}
 | Name | Description |
 |----------|-------------|
 | **Server Certificate** | Select a valid server certificate from the dropdown list. The option is **freenas_default**. A certificate must exist on this system that is current and not revoked. Find more about generating certificates and CAs for OpenVPN [here](https://community.openvpn.net/openvpn/wiki/HOWTO#SettingupyourownCertificateAuthorityCAandgeneratingcertificatesandkeysforanOpenVPNserverandmultipleclients). |
@@ -61,6 +64,7 @@ Click **Client Certificate** to generate the configuration file you need from th
 | **TLS Crypt Auth Enabled** | Select to enable or clear checkbox to disable TLS Web Client Authentication. |
 | **Additional Parameters** | Enter any extra parameters. |
 | **TLS Crypt Auth** | Encrypting TLS handshake messages adds another layer of security. OpenVPN server and clients share a required static key. Enabling tls_crypt_auth_enabled generates a static key if tls_crypt_auth is not provided. The generated static key is for use with OpenVPN client. Enter that key here. |
+{{< /truetable >}}
 
 {{< taglist tag="coreopenvpn" limit="10" >}}
 

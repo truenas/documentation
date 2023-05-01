@@ -12,7 +12,7 @@ tags:
 
 
 A Web-based Distributed Authoring and Versioning (WebDAV) share makes it easy to share a TrueNAS dataset and its contents over the web.
-{{< include file="static/includes/General/SharingPrereqs.md.part" markdown="true" >}}
+{{< include file="content/_includes/SharingPrereqs.md" type="page" >}}
 
 ## Configuring a WebDAV Share
 

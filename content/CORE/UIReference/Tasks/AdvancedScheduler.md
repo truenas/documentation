@@ -8,6 +8,7 @@ tags:
 
 ![Tasks Advanced Scheduler](/images/CORE/12.0/TasksAdvancedScheduler.png "Tasks Advanced Scheduler")
 
+{{< truetable >}}
 | Name | Description |
 |------|------|
 | **Choose a preset** | Populates the rest of the fields. |
@@ -16,5 +17,6 @@ tags:
 | **Days** | Days when the task runs. |
 | **Months** | Months when the task runs. |
 | **Days of Week** | Days of the week when the task runs. |
+{{< /truetable >}}
 
 {{< taglist tag="coreadvancedscheduler" limit="10" >}}

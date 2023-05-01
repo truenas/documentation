@@ -17,7 +17,7 @@ SCALE Enterprise customers, or those that purchased systems and service contract
 The iXsystems Support department provides assistance with the configuration areas documented in this section.
 
 {{< expand "Contacting Support" "v" >}}
-{{< include file="static/includes/General/iXsystemsSupportContact.html.part" html="true" >}}
+{{< include file="content/_includes/iXsystemsSupportContact.md" type="page" >}}
 {{< /expand >}}
 
 {{< /enterprise >}}

@@ -49,6 +49,7 @@ The settings on the **Add Idmap** and **Edit Idmap** change based on the selecti
 
 ![AddIdmapDefalutScreen](/images/SCALE/22.12/AddIdmapDefalutScreen.png "Add Idmap Default Screen")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Name** | (Required) Select an option from the dropdown list, **SMB - Primary Domain** or **Custom Value**. **SMB - Primary Domain** reduces the fields displayed on the **Add Idmap** screen. Selecting **Custom Value** adds The **Custom Name** field. |
@@ -57,15 +58,18 @@ The settings on the **Add Idmap** and **Edit Idmap** change based on the selecti
 | **DNS Domain Name**  | Enter the DNS name of the domain. |
 | **Range Low** |(Required) Enter a value for the least number of members. Works with the **Range High** to establish the range of UID/GID numbers the Idmap backend translates. If an external credential like a Windows SID maps to a UID or GID number outside this range, TrueNAS ignores it. |
 | **Range High**  | (Required) Enter a value for the greatest number of members. Works with the **Range Low** to establish the range of UID/GID numbers the Idmap backend translates. If an external credential like a Windows SID maps to a UID or GID number outside this range, TrueNAS ignores it. |
+{{< /truetable >}}
 
 **Options Settings**
 The **Options** settings change based on the selected **Name** and **Idmap Backend** fields.
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------|
 | **Schema Mode** | (Required) Select the schema to use with LDAP authentication for SMB shares. You must configure the LDAP server with Samba attributes to use a Samba Schema. Options include **RFC2307** (included in Windows 2003 R2) and Service for Unix (**SFU**). For SFU 3.0 or 3.5, choose **SFU**. For SFU 2.0, choose **SFU20**. |
 | **Unix Primary Group** | Select to fetch the primary group membership from the LDAP attributes (gidNumber). If unselected, the primary group membership is calculated via the primaryGroupID LDAP attribute. |
 | **Unix NSS Info** | Select sets Winbind to retrieve the login shell and home directory from the LDAP attributes. If unselected, when the AD LDAP entry lacks the SFU attributes the smb4.conf parameters `template shell` and `template homedir` are used. |
+{{< /truetable >}}
 
 ### Add Idmap Screen for SMB - Primary Domain
 The settings for **Add Idmap** displays a subset of those on the default screen.
@@ -73,12 +77,14 @@ The settings for **Add Idmap** displays a subset of those on the default screen.
 
 ![AddIdmapSMBPrimaryDomainScreen](/images/SCALE/22.12/AddIdmapSMBPrimaryDomainScreen.png "Add Idmap SMB - Primary Domain Screen")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Name** | Displays **SMB - Primary Domain**. |
 | **DNS Domain Name** | Enter the DNS name of the domain. |
 | **Range Low** |(Required) Works with the **Range High** to establish the range of UID/GID numbers the idmap backend translates. If an external credential like a Windows SID maps to a UID or GID number outside this range, TrueNAS ignores it. |
 | **Range High** | (Required) Works with the **Range Low** to establish the range of UID/GID numbers the idmap backend translates. If an external credential like a Windows SID maps to a UID or GID number outside this range, TrueNAS ignores it. |
+{{< /truetable >}}
 
 **Options** only as the **Read Only** which, when selected, makes the module read-only. No new ranges are allocated or new mappings created in the idmap pool.
 {{< /expand >}}
@@ -89,9 +95,11 @@ The **Add Idmap** screen with **Name** set to **Custom Value** and **Idmap Backe
 
 ![AddIdmapBackendAD](/images/SCALE/22.12/AddIdmapBackendAD.png "Add Idmap Screen with AD as Idmap Backend")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **DNS Domain Name** | Enter the domain name of the DNS server. |
+{{< /truetable >}}
 {{< /expand >}}
 
 ### Add Idmap Screen with Idmap Backend as AUTORID
@@ -100,11 +108,14 @@ The **Add Idmap** screen with **Name** set to **Custom Value** and **Idmap Backe
 
 ![AddIdmapBackendAD](/images/SCALE/22.12/AddIdmapBackendAD.png "Add Idmap Screen with AUTORID as Idmap Backend")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Range Size** | Enter the number of UIDs/GIDs available per domain range. The minimum number is 2000. The recommended default is 100000. |
 | **Read Only** | Select to make the module read-only. No new ranges are allocated or new mappings created in the idmap pool. |
 | **Ignore Builtin** | Select to ignore mapping requests for the BUILTIN domain. |
+{{< /truetable >}}
+
 {{< /expand >}}
 
 ### Add Idmap Screen with Idmap Backend as LDAP
@@ -113,16 +124,19 @@ The **Add Idmap** screen with **Name** set to **Custom Value** and **Idmap Backe
 
 ![AddIdmapBackendLDAPSettings](/images/SCALE/22.12/AddIdmapBackendLDAPSettings.png "Add Idmap Screen with LDAP as Idmap Backend")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Certificate** | Select the certificate of the Active Directory server if SSL connections are used. When no certificates are available, move to the Active Directory server and create a Certificate Authority and certificate. Import the certificate to SCALE using the **Credentials > Certificates** screen widgets. |
 | **Manage Certificates** | Opens the **Credentials > Certificates** screen. When finished on the **Certificates** screen, navigate back to **Directory Services**, click **Show** and confirm to display the **Idmap** widget again. Click **Add** to begin the configuration again. |
+{{< /truetable >}}
 
 **Options**
 The LDAP settings in **Options** are different from other **Idmap Backend** options except the **RFC2307** option.
 
 ![AddIdmapBackendLDAPOptionsSettings](/images/SCALE/22.12/AddIdmapBackendLDAPOptionsSettings.png "Add Idmap Screen with LDAP as Idmap Backend")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Read Only** | Select to make the module read-only. No new ranges are allocated or new mappings created in the idmap pool. | 
@@ -131,6 +145,8 @@ The LDAP settings in **Options** are different from other **Idmap Backend** opti
 | **LDAP User DN Password** | Enter the password associated with the LDAP user DN. | 
 | **URL** | (Required) Enter the URL for the LDAP server to use for SID to UID/GID mapping. For example, *ldap://ldap.netscap.com/o=Airus.com*. | 
 | **Encryption Mode** | (Required) Select the encryption mode to use with LDAP from the dropdown list. Options are **On**, **Off**, or **StartTLS**. | 
+{{< /truetable >}}
+
 {{< /expand >}}
 
 ### Add Idmap Screen with Idmap Backend as NSS
@@ -138,9 +154,11 @@ The **Add Idmap** screen with **Name** set to **Custom Value** and **Idmap Backe
 {{< expand "Idmap Backend - NSS Settings" "v" >}}
 ![AddIdmapBackendNSSSettings](/images/SCALE/22.12/AddIdmapBackendNSSSettings.png "Add Idmap Screen with RSS as Idmap Backend")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Linked Service** | (Required) Select the option that specifies the auxiliary directory service ID provider from the dropdown list. Options are **Local Account**, **LDAP**, or **NIS**. |
+{{< /truetable >}}
 {{< /expand>}}
 
 ###  Add Idmap Screen with Idmap Backend as RFC2307
@@ -150,6 +168,7 @@ The **RFC2307** settings in **Options** share the **Idmap Backend** settings as 
 
 ![AddIdmapBackendRFC2307Options](/images/SCALE/22.12/AddIdmapBackendRFC2307Options.png "Add Idmap Screen with RFC2307 as Idmap Backend")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **LDAP User DN** | (Required) Enter the user distinguished name (DN) to use for authentication. | 
@@ -163,6 +182,7 @@ The **RFC2307** settings in **Options** share the **Idmap Backend** settings as 
 | **User CN** | Enter the user common name (CN) to query the CN instead of the uid attribute for the user name in LDAP. |
 | **CN Realm** | Append *@realm* to the CN in LDAP queries for both groups and users when you set the **User CN**. |
 | **LDAP Domain** | Enter the domain to access the Active Directory server when using the LDAP server inside the Active Directory server. |
+{{< /truetable >}}
 {{< /expand >}}
 
 ### Add Idmap Screen with Idmap Backend as RID
@@ -171,9 +191,11 @@ The **Add Idmap** screen with **Name** set to **Custom Value** and **Idmap Backe
 
 ![AddIdmapBackendAUTORIDSettings](/images/SCALE/22.12/AddIdmapBackendAUTORIDSettings.png "Add Idmap Screen with RID as Idmap Backend")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **SSSD Compat** | Select to generate the idmap low range based on the same algorithm that SSSD uses by default. |
+{{< /truetable >}}
 {{< /expand>}}
 
 ### Add Idmap Screen with Idmap Backend as TDB
@@ -182,9 +204,11 @@ The **Add Idmap** screen with **Name** set to **Custom Value** and **Idmap Backe
 
 ![AddIdmapBackendTDBSettings](/images/SCALE/22.12/AddIdmapBackendTDBSettings.png "Add Idmap Screen with TDB as Idmap Backend")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Read Only** | Select to make the module read-only. No new ranges are allocated or new mappings created in the idmap pool. | 
+{{< /truetable >}}
 {{< /expand>}}
 
 {{< taglist tag="scaleidmap" limit="10" >}}
