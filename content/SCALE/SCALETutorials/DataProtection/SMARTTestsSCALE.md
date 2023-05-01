@@ -82,7 +82,7 @@ Select the disks to test from the **Disks** dropdown list, and then select the t
 Next select a preset from the **Schedule** dropdown. To create a custom schedule select **Custom** to open the advanced scheduler window where you can define the schedule parameters you want to use.
 
 {{< expand "Advanced Scheduler" "v" >}}
-{{< include file="static/includes/SCALE/SCALEAdvancedScheduler.md.part" markdown="true" >}}
+{{< include file="content/_includes/SCALEAdvancedScheduler.md" type="page" >}}
 {{< /expand >}}
 
 ![DataProtectionSMARTTestWidgetSCALE](/images/SCALE/22.12/DataProtectionSMARTTestWidgetSCALE.png "S.M.A.R.T. Test List")

@@ -17,6 +17,7 @@ The **Users** screen lets you create and manage user accounts.
 
 ![UIRefUsersList](/images/CORE/13.0/UIRefUsersList.png "Accounts Users List")
 
+{{< truetable >}}
 | Name | Description |
 |------|------|
 | Filter Users | Filters users by keyword. |
@@ -27,6 +28,7 @@ The **Users** screen lets you create and manage user accounts.
 | UID | User ID number. |
 | Builtin | Whether or not the user is built-in. |
 | Full Name | Shows the saved **Full Name** of the account. |
+{{< /truetable >}}
 
 ## User Configuration
 
@@ -36,6 +38,7 @@ The **Users** screen lets you create and manage user accounts.
 
 ### Identification
 
+{{< truetable >}}
 | Name | Description |
 |------|------|
 | Full Name | Descriptive name for the user. |
@@ -43,25 +46,31 @@ The **Users** screen lets you create and manage user accounts.
 | Email | User email address. |
 | Password | User login password. |
 | Confirm Password | Reenter user password. |
+{{< /truetable >}}
 
 ### User ID and Groups
 
+{{< truetable >}}
 | Name | Description |
 |------|------|
 | User ID | A unique number used to identify a user. |
 | New Primary Group | Creates a new group with the same name as the user. |
 | Primary Group | Primary group to add the user to. |
 | Auxiliary Groups | Additional groups to add the user to. |
+{{< /truetable >}}
 
 ### Directories and Permissions
 
+{{< truetable >}}
 | Name | Description |
 |------|------|
 | Home Directory | Path to the user home directory. |
 | Home Directory Permissions | Default user home directory Unix permissions.  |
+{{< /truetable >}}
 
 ### Authentication
 
+{{< truetable >}}
 | Name | Description |
 |------|------|
 | SSH Public Key | Public SSH key for key-based authentication. |
@@ -71,5 +80,6 @@ The **Users** screen lets you create and manage user accounts.
 | Permit Sudo | Enable or disable issuing commands as the root account with `sudo`. |
 | Microsoft Account | Allows Windows authentication methods. |
 | Samba Authentication | Lets users authenticate to Samba shares. |
+{{< /truetable >}}
 
 {{< taglist tag="coreusers" limit="10" >}}

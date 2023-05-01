@@ -52,20 +52,24 @@ To access the **Edit iSCSI Target** screen from the configuration tabs, while on
 
 ### Basic Info Settings
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Target Name** | Required. Enter a name using lowercase alphanumeric characters. Allowed characters are plus dot (.), dash (-), and colon (:). A name longer than 63 characters can prevent access to the block. See the "Constructing iSCSI names using the iqn.format" section of [RFC3721](https://tools.ietf.org/html/rfc3721.html). The base name is automatically prepended if the target name does not start with **iqn**. |
 | **Target Alias** | Enter an optional user-friendly name. |
+{{< /truetable >}}
 
 ### iSCSI Group Settings
 
 To display the **iSCSI Group** settings, click **Add**.
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Portal Group ID** | Required. Select the number of the existing portal to use or leave it empty. |
 | **Initiator Group ID** | Select the existing initiator group ID that has access to the target from the dropdown list of options. **None**, **1(init1)**, or **3(ALL initiators Allowed)**. |
 | **Authentication Method** | Select the method from the dropdown list of options. **None**, **CHAP** or **Mutual Chap**. iSCSI supports multiple authentication methods that targets can use to discover valid devices. **None** allows anonymous discovery. If set to **None** you can leave **Discovery Authentication Group** set to **None** or empty. If set to **CHAP** or **Mutual CHAP** you must enter or create a new group in **Discovery Authentication Group**. |
 | **Authentication Group Number** | Select the option from the dropdown list. This is the group ID created in **Authorized Access**. Required when the **Discovery Authentication Method** is set to **CHAP** or **Mutual CHAP**. Select **None** or the value representing the number of the existing authorized accesses. |
+{{< /truetable >}}
 
 ## iSCSI Configuration Screens
 
@@ -91,12 +95,14 @@ The **System Settings > Services > iSCSI** displays the **Target Global Configur
 
 ![iSCSIManualTargetGlobalConfig](/images/SCALE/22.12/iSCSIManualTargetGlobalConfig.png "iSCSI Target Global Configuration")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Base Name** | Enter a name using lowercase alphanumeric characters. Allowed characters include the dot (.), dash (-), and colon (:). See the "Constructing iSCSI names using the iqn.format" section of [RFC3721](https://tools.ietf.org/html/rfc3721.html). |
 | **ISNS Servers** | Enter host names or IP addresses of the ISNS servers to register with the iSCSI targets and portals of the system. Separate entries by pressing <kbd>Enter</kbd>. |
 | **Pool Available Space Threshold (%)** | Enters a value for the threshold percentage that generates an alert when the pool has this percent space remaining. This is typically configured at the pool level when using zvols or at the extent level for both file and device-based extents. |
 | **iSCSI listen port** | The TCP port number that the controller uses to listen for iSCSI logins from host iSCSI initiators. |
+{{< /truetable >}}
 
 ### Portal Screens
 
@@ -113,24 +119,30 @@ The <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> n
 
 #### Basic Info Settings
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Description** | Enter an optional description. Portals are automatically assigned a numeric group. |
+{{< /truetable >}}
 
 #### Authentication Method and Group Settings
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Discovery Authentication Method** | Select the discovery method you want to use for authentication from the dropdown list. iSCSI supports multiple authentication methods that targets can use to discover valid devices. **None** allows anonymous discovery. If set to **None**, you can leave **Discovery Authentication Group** set to **None** or empty. If set to **CHAP** or **Mutual CHAP**, you must enter or create a new group in **Discovery Authentication Group**. |
 | **Discovery Authentication Group** | Select the discovery authentication group you want to use from the dropdown list. This is the group ID created in **Authorized Access**. Required when the **Discovery Authentication Method** is **CHAP** or **Mutual CHAP**. Select **None** or **Create New**. **Create New** displays [additional setting options](#create-new-discovery-authentication-group-settings). |
+{{< /truetable >}}
 
 #### IP Address Settings
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **IP Address** | Select the IP addresses the portal listens to. Click **Add** to add IP addresses with a different network port. **0.0.0.0** listens on all IPv4 addresses, and **::** listens on all IPv6 addresses. |
 | **Port** | TCP port used to access the iSCSI target. The default is **3260**. |
 | **ADD** | Adds another IP address row. |
+{{< /truetable >}}
 
 ### Initiators Groups Screen
 
@@ -145,11 +157,13 @@ The <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> n
 
 ![iSCSIManualAddInitiators](/images/SCALE/22.12/iSCSIManualAddInitiators.png "Sharing iSCSI Initiators Add Screen")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Allow All Initiators** | Select to allows all initiators. |
 | **Allowed Initiators (IQN)** | Enter initiators allowed access to this system. Enter an [iSCSI Qualified Name (IQN)](https://tools.ietf.org/html/rfc3720#section-3.2.6) and click **+** to add it to the list. Example: *iqn.1994-09.org.freebsd:freenas.local*. |
 | **Description** | Enter any notes about the initiators. |
+{{< /truetable >}}
 
 ### Authorized Access Screen
 
@@ -172,25 +186,31 @@ The **Add** and **Edit** screens display the same settings.
 
 #### Group Settings
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------|
 | **Group ID** | Enter a number. This allows configuring different groups with different authentication profiles. Example: all users with a group ID of *1* inherit the authentication profile associated with *Group 1*. |
+{{< /truetable >}}
 
 #### User Settings
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------|
 | **User** | User account to create CHAP authentication with the user on the remote system. Many initiators use the initiator name as the user name. |
 | **Secret** | Enter the user password. Secret must be at least 12 and no more than 16 characters long. The screen displays a "password does not match" error until you enter the same password in **Secret (Confirm)**.  |
 | **Secret (Confirm)** | Enter the same password to confirm the user password. |
+{{< /truetable >}}
 
 #### Peer User Settings
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Peer User** | Optional. Enter only when configuring mutual CHAP. Usually the same value as **User**. |
 | **Peer Secret** | Enter the mutual secret password. Required if entering a **Peer User**. Must be a different password than the password in **Secret**. |
 | **Peer Secret (Confirm)** | Enter the same password to confirm the mutual secret password. |
+{{< /truetable >}}
 
 ### Targets Screen
 
@@ -218,14 +238,17 @@ The **Add** and **Edit** screens display the same settings.
 
 #### Basic Info Settings
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------|
 | **Name** | Enter a name for the extent. An **Extent** where the size is not **0**, cannot be an existing file within the pool or dataset. |
 | **Description** | Enter any notes about this extent. |
 | **Enabled** | Select to enable the iSCSI extent. |
+{{< /truetable >}}
 
 #### Type Settings
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Extent Type** | Select the extent (zvol) option from the dropdown list. **Device** provides virtual storage access to zvols, zvol snapshots, or physical devices. **File** provides virtual storage access to a single file. **Device** provides virtual storage access to zvols, zvol snapshots, or physical devices. **File** provides virtual storage access to a single file. |
@@ -234,15 +257,18 @@ The **Add** and **Edit** screens display the same settings.
 | **Filesize** | Only appears if **File** is selected. Entering **0** uses the actual file size and requires that the file already exists. Otherwise, specify the file size for the new file. |
 | **Logical Block Size** | Enter a new value or leave it at the default of **512** unless the initiator requires a different block size. |
 | **Disable Physical Block Size Reporting** | Select if the initiator does not support physical block size values over 4K (MS SQL). |
+{{< /truetable >}}
 
 #### Compatibility Settings
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Enable TPC** | Select to allow an initiator to bypass normal access control and access any scannable target. This allows [xcopy](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc771254(v=ws.11)) operations that are otherwise blocked by access control. |
 | **Xen initiator compat mode** | Select when using Xen as the iSCSI initiator. |
 | **LUN RPM** | Select the option from the dropdown list. Options are **UNKNOWN**, **5400**, **7200**, **10000** or **15000**. Do *not* change this setting when using Windows as the initiator. Only change LUN RPM in large environments where the number of systems using a specific RPM is needed for accurate reporting statistics. |
 | **Read-only** | Select to prevent the initiator from initializing this LUN. |
+{{< /truetable >}}
 
 ### Associated Targets Screen
 
@@ -257,10 +283,12 @@ The **Add** and **Edit** screens display the same settings.
 
 ![iSCSIManualAddAssocAuthTargets](/images/SCALE/22.12/iSCSIManualAddAssocAuthTargets.png "iSCSI Associated Targets Add") 
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Target** | Required. Select an existing target. |
 | **LUN ID** | Select the value or enter a value between 0 and 1023. Some initiators expect a value below 256. Leave this field blank to automatically assign the next available ID. |
 | **Extent** | Required. Select an existing extent. |
+{{< /truetable >}}
 
 {{< taglist tag="scaleiscsi" limit="10" >}}

@@ -31,6 +31,7 @@ Because reporting data is frequently written it should not be stored on the boot
 
 ## Reporting Screen Display Options
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **CPU** | Displays the **CPU Temperature**, **CPU Usage**, and **System Load** graphs. |
@@ -43,6 +44,7 @@ Because reporting data is frequently written it should not be stored on the boot
 | **Target** | Displays graphs only for systems with iSCSI ports configured and shows the bandwidth statistics for iSCSI ports. |
 | **UPS** | Displays the graphs only if the system is configured for and uses a UPS. |
 | **ZFS**| Displays the **ARC Size**, **ARC Hit Ratio**, **ARC Requests demand_data**, **ARC Requests demand_metadata**, **ARC Requests prefetch_data**, and **ARC Requests prefetch_metadata** graphs with the Arc and L2 gigabytes and hits (%), and the hits, misses and total number of requests. |
+{{< /truetable >}}
 
 ## Interacting with Graphs
 
@@ -67,6 +69,8 @@ Use the **Devices** dropdown list to select one or all system disks for which yo
 ![ReportingDisksTab](/images/CORE/12.0/ReportingDisksTab.png "Disks Reporting")
 
 ### Disk Metrics Options
+
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Select All** | Displays all available graphs for any or all disks selected on the **Devices** dropdown list. |
@@ -76,6 +80,7 @@ Use the **Devices** dropdown list to select one or all system disks for which yo
 | **Disk Operations detailed** | Displays the read, write and delete operations for the selected disk. |
 | **Pending I/O** | Displays then length of pending I/O requests for the selected disk. |
 | **Disk I/O** | Displays the disk read and writed I/O stats in bytes/s. |
+{{< /truetable >}}
 
 {{< hint type=important >}}
 Temperature monitoring for the disk is disabled if **HDD Standby** is enabled. Check the **Storage > Disks** **Edit Disk*** configuration form for any or all disks in the system if you do not see the temperature monitoring graph.

@@ -48,12 +48,14 @@ Click anywhere on a snapshot to expand it and view more information and options 
 
 Select the checkbox to the left of each snapshot to select multiple snapshots and display the **Batch Operations** option to **Delete** the selected snapshots.
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Delete** | Opens a **[Delete](#delete-snapshot)** confirmation dialog for the selected snapshot(s). Select **Confirm** to activate the **Delete** button. |
 | **Clone to New Dataset** | Opens the **[Clone to New Dataset](#clone-snapshot))** window where you enter a new name or clone with the default value in the **Dataset Name** field. |
 | **Rollback** | Opens the **[Dataset Rollback From Snapshot](#dataset-rollback-from-snapshot-dialog)** window with three radio button options. **Confirm** activates the **Rollback** button. |
 | **Hold** | Select to prevent the snapshot from being deleted. If selected and you batch-operation delete datasets, this opens an error displays with the name of the dataset and prevents the delete operation from continuing. |
+{{< /truetable >}}
 
 ### Dataset Rollback from Snapshot Window
 The snapshot **Rollback** option replaces the data in the selected dataset with the information saved in the snapshot. 
@@ -68,12 +70,14 @@ When the safety check finds additional snapshots that are directly related to th
 
 ![DatasetRollbackFromSnapshotWindow](/images/SCALE/22.12/DatasetRollbackFromSnapshotWindow.png "Dataset Rollback from Snapshot")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Newer Intermediate, Child, and clone** | Select to stop rollback when the safety check finds any related intermediate, child dataset, or clone snapshots that are newer than the rollback snapshots. |
 | **Newer Clone** | Select to stop rollback when the safety check finds any related clone snapshots that are newer than the rollback snapshot. |
 | **No Safety Check (CAUTION)** | Select to stop rollback if snapshot exists. The rollback destroys any related intermediate, child dataset, and cloned snapshots that are newer than the rollback snapshot.  |
 | **Confirm** | Select to confirm the selection and activate the **Rollback** button. |
+{{< /truetable >}}
 {{< /expand >}}
 
 ### Clone Snapshot and Promote Dataset
@@ -109,12 +113,14 @@ The **Add Snapshots** screen allows you to create a snapshot while on the **Snap
 
 ![AddSnapshotScreen](/images/SCALE/22.12/AddSnapshotScreen.png "Add a New Snapshot")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Dataset** | Select the dataset or zvol from the dropdown list. The snapshot created is from this dataset or zvol. |
 | **Name** | TrueNAS populates this with a name but you can override the name with any string of your choice. You cannot use **Name** and **Naming Schema** for the same snapshot. |
 | **Naming Schema** | Select an option from the dropdown list or leave this blank to use the system-populated name in the **Name** field. This generates a name for the snapshot using the naming schema from a previously-entered periodic snapshot. This allows replication of the snapshot. You cannot use **Naming Schema** with **Name**. Selecting a schema option overwrites the value in **Name**. |
 | **Recursive** | Select to include child datasets or zvols in the snapshot. |
+{{< /truetable >}}
 
 **Save** retains the settings and returns to the **Snapshots** screen. 
 {{< /expand >}}

@@ -17,6 +17,7 @@ The **Groups** screen lets you create and manage UNIX-style groups.
 
 ![UIRefGroupsList](/images/CORE/13.0/UIRefGroupsList.png "Accounts Groups List")
 
+{{< truetable >}}
 | Name | Description |
 |------|------|
 | **Filter Groups** | Filters groups by keyword. |
@@ -28,6 +29,7 @@ The **Groups** screen lets you create and manage UNIX-style groups.
 | **Builtin** | Whether or not the group is built-in. |
 | **Permit Sudo** | Whether or not the group has **Permit Sudo** enabled. |
 | **Samba Authentication** | Whether or not the group has Samba Authentication enabled. |
+{{< /truetable >}}
 
 ## Groups Configuration
 
@@ -35,6 +37,7 @@ The **Groups** screen lets you create and manage UNIX-style groups.
 
 ![UIRefGroupsAdd](/images/CORE/13.0/UIRefGroupsAdd.png "Accounts Groups Add")
 
+{{< truetable >}}
 | Name | Description |
 |------|------|
 | **GID** | A unique number used to identify a Unix group. |
@@ -42,5 +45,6 @@ The **Groups** screen lets you create and manage UNIX-style groups.
 | **Permit Sudo** | Allows group members to act as the root account with sudo. Group members are prompted for their password when using sudo. |
 | **Samba Authentication** | Allows group to be used for Samba permissions and authentication. |
 | **Allow Duplicate GIDs** | Allows more than one group to have the same group ID. |
+{{< /truetable >}}
 
 {{< taglist tag="coregroups" limit="10" >}}

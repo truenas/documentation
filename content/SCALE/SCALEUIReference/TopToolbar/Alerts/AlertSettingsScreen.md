@@ -179,6 +179,7 @@ Use the **Set Warning Level** dropdown list to customize alert importance. Each 
 
 To make the system email you when alerts with a specific warning level trigger, set up an email alert service with that warning level. 
 
+{{< truetable >}}
 | Level | Icon | Alert Notification? |
 |-------|------|---------------------|
 | **INFO** | ![AlertLevelInfoNoticeAlertEmergency](/images/SCALE/AlertLevelInfoNoticeAlertEmergency.png "Alert Levels") | No |
@@ -188,6 +189,7 @@ To make the system email you when alerts with a specific warning level trigger, 
 | **CRITICAL** | ![AlertLevelErrorCritical](/images/SCALE/AlertLevelErrorCritical.png "Alert Levels") | Yes |
 | **ALERT** | ![AlertLevelInfoNoticeAlertEmergency](/images/SCALE/AlertLevelInfoNoticeAlertEmergency.png "Alert Levels") | Yes |
 | **EMERGENCY** | ![AlertLevelInfoNoticeAlertEmergency](/images/SCALE/AlertLevelInfoNoticeAlertEmergency.png "Alert Levels") | Yes |
+{{< /truetable >}}
 
 ## Alert Frequency
 

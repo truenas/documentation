@@ -17,12 +17,14 @@ aliases:
 
 {{< include file="/content/_includes/ReleaseScheduleWarning.md" type="page" >}}
 
+{{< truetable >}}
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
 | 2.3.3 | Code-freeze | 24 May 2023 |
 | 2.3.3 | Internal Testing Sprints | 25 May - 09 June 2023 |
 | 2.3.3 | Tag | 12 June 2023 |
 | 2.3.3 | Release | 13 June 2023 |
+{{< /truetable >}}
 
 ## 2.3.2
 
@@ -566,6 +568,7 @@ Known issues are those found during internal testing or reported by the communit
 
 ### Known Issues with a Future Resolution
 
+{{< truetable >}}
 | Seen In | Key | Summary | Details / Workaround | Resolution Target |
 |---------|-----|---------|----------------------|-------------------|
 | 2.3.2 | <a href="https://ixsystems.atlassian.net/browse/TC-2733" target="_blank">TC-2733</a> | License has expired but no message in the UI | N/A | 2.3.3 |
@@ -585,15 +588,19 @@ Known issues are those found during internal testing or reported by the communit
 | 2.3.2 | <a href="https://ixsystems.atlassian.net/browse/TC-2705" target="_blank">TC-2705</a> | Deleting a volume with the TC iSCSI Manager does not delete iSCSI Initiators Group | After deleting an iSCSI volume using TC iSCSI Manager does not delete the Initiator Group but does delete the rest of the iSCSI block share. | TBD |
 | 2.3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2609" target="_blank">TC-2609</a> | Unable to recreate a cluster after removing the cluster | After removing a cluster, cannot to create a new cluster because the dropdown list does not populate all settings. This prevents configuring required settings. We recommend that you not delete your cluster until this is fixed. Underlying issue is identified and scheduled for the next release. | TBD |
 | 2.3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2524" target="_blank">TC-2524</a> | Notices WebSocket test results are unstable | Most tests pass while some fail, but fails don't occur on the same test. Possible middleware issue. | Backlog |
+{{< /truetable >}}
 
 ### Resolved Known Issues
 {{< expand "Resolved Known Issues List" "v">}}
+
+{{< truetable >}}
 | Seen In | Resolved In | Key | Summary | Workaround |
 |---------|-------------|-----|---------|------------|
 | 2.3.2 | 2.3.1, 3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2719" target="_blank">TC-2719</a> | Launch TrueNAS Interface option on the System action list does not work | The Launch TrueNAS Interface on a system widget action list in TrueCommand, displays "This page is not working" instead of launching the connection to the TrueNAS UI. |
 | 2.3.2 | 2.3.1, 3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2718" target="_blank">TC-2718</a> | After adding a system that is down, the UI doesn't show a system until an F5 Refresh | If adding an offline or down system to TrueCommand, the system does not show in the TrueCommand UI until you refresh the cache using F5. At that point the server displays on the list flagged as Offline. |
 | 2.3.0 | 2.3.2 | <a href="https://ixsystems.atlassian.net/browse/TC-2533" target="_blank">TC-2533</a> | Hook in new servers/limit event sent when license limit is exceeded | This event replaces an error on servers/add, which instead sends max_disks and license_count if the license is executed, but not error. Any time a check fails the servers/limit event is sent as well, for asynchronous occurrences. |
 | 2.3.0 | 2.3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2508" target="_blank">TC-2508</a> | Teams, systems and groups missing in User after migration from 2.2.2 to 2.3.0 | After migrating from 2.2.2. to 2.3.0, users no longer had Teams, Systems or system Groups assigned. The Teams and system groups are listed in the Systems/System Groups and Teams areas and no longer assigned under the User. |
+{{< /truetable >}}
 
 {{< /expand >}}
 ## To Download this Release

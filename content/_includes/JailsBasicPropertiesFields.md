@@ -1,6 +1,7 @@
 ---
 ---
 
+{{< truetable >}}
 | Name | Description |
 |------|-------------|
 | **Name** | Required field. Enter a name that can include letters, numbers, periods (.), dashes (-), and underscores (_). |
@@ -21,3 +22,4 @@
 | **IPv6 Netmask** | Select the IPv6 prefix for the jail from the dropdown list. |
 | **IPv6 Default Router** | Enter a valid IPv6 address to use as the default route. Enter **none** to configure the jail without an IPv6 default route. A jail without a default route is not be able to access any networks. |
 | **Auto Start** | Select to auto-start the jail at system boot time. Jails are started and stopped based on iocage priority. Set in the **Custom Properties priority** field. |
+{{< /truetable >}}

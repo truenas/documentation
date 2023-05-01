@@ -8,6 +8,6 @@ tags:
 
 ![TasksCronJobsAdd](/images/CORE/12.0/TasksCronJobsAdd.png "Creating a new Cron Job")
 
-{{< include file="static/includes/Reference/TasksCronJobsAddFields.md.part" markdown="true" >}}
+{{< include file="content/_includes/TasksCronJobsAddFields.md" type="page" >}}
 
 {{< taglist tag="corecronjobs" limit="10" >}}

@@ -75,6 +75,7 @@ After you configure SAML in Google Admin, you configure and start the TrueComman
    g. Enter the **Attributes**. 
       Select the attribute using the **Google Directory attributes** dropdown menus, then type the attributes exactly as they are in the table below into the **App attributes** fields:
       
+	  {{< truetable >}}
       | Parameter | Value |
       |-----------|-------|
       | E-Mail-Addresses | email |
@@ -82,7 +83,8 @@ After you configure SAML in Google Admin, you configure and start the TrueComman
       | User-Principal-Name | unique_name |
       | Telephone-Number | telephoneNumber |
       | Title | title |
-   
+      {{< /truetable >}}
+	  
    h. Click **FINISH**.
 
 5. Verify the information is correct. 

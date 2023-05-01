@@ -11,9 +11,11 @@ The system dataset stores debugging core files, encryption keys for encrypted po
 
 ![ConfigureSystemDataset](/images/CORE/12.0/ConfigureSystemDataset.png "Configure System Dataset")
 
+{{< truetable >}}
 | Name | Description |
 |------|------|
 | System Dataset Pool | Select the pool to contain the system dataset. |
 | Syslog | Store system logs on the system dataset. Unset to store system logs in /var/ on the operating system device. |
+{{< /truetable >}}
 
 {{< taglist tag="coredataset" limit="10" >}}

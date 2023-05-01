@@ -85,6 +85,7 @@ The **File Ticket** screen settings allow you to log into Jira where you can sub
 
 ![GeneralSettingsSCALESupportJiraTicketCreate](/images/SCALE/22.12/GeneralSettingsSCALEJiraTicketCreate.png "SCALE General Settings Jira Ticket Creation")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Name** | Enter the name of the contact person. |
@@ -98,6 +99,7 @@ The **File Ticket** screen settings allow you to log into Jira where you can sub
 | **Description** | Enter a one to three paragraph summary of the issue. Describe the problem and provide any steps to replicate the issue. |
 | **Attach Debug** | Set to generate and attach to the new issue a report containing an overview of the system hardware, build string, and configuration. Attaching a debug can take several minutes. |
 | **Choose File** | Select one or more screenshots that illustrate the problem. |
+{{< /truetable >}}
 
 Click **Save** to submit the ticket and open a window with a link to it.
 
@@ -124,6 +126,7 @@ Click **Settings** to open the **GUI Settings** screen.
 
 ![SystemGeneralGuiSettings](/images/SCALE/22.12/SystemGeneralGuiSettings.png "System General GUI Settings") 
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Theme** | Select a preferred color theme from the dropdown list of eight options. |
@@ -137,6 +140,7 @@ Click **Settings** to open the **GUI Settings** screen.
 | **Crash Reporting** | Select to send failed HTTP request data, which can include client and server IP addresses, failed method call tracebacks, and middleware log file contents, to iXsystems. |
 | **Usage Collection** | Select to enable sending anonymous usage statistics to iXsystems. |
 | **Show Console Messages** | Select to display console messages in real-time at the bottom of the browser. |
+{{< /truetable >}}
 {{< /expand >}}
 
 ## Localization
@@ -146,6 +150,7 @@ Click **Settings** to open the **Localization Settings** screen.
 
 ![SystemGeneralLocalizationSettings](/images/SCALE/22.02/SystemGeneralLocalizationSettings.png "Localization Settings")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Language** | Select a language from the dropdown list. |
@@ -153,6 +158,7 @@ Click **Settings** to open the **Localization Settings** screen.
 | **Timezone** | Select a time zone from the dropdown list. |
 | **Date Format** | Select a date format from the dropdown list. |
 | **Time Format** | Select a time format from the dropdown list. |
+{{< /truetable >}}
 {{< /expand >}}
 
 ## NTP Servers
@@ -162,6 +168,7 @@ By default, new installations use several existing NTP servers. TrueNAS SCALE su
 
 ![SystemGeneralAddNTPServer](/images/SCALE/22.02/SystemGeneralAddNTPServer.png "Add NTP Server")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Address** | Enter the hostname or IP address of the NTP server. |
@@ -171,6 +178,7 @@ By default, new installations use several existing NTP servers. TrueNAS SCALE su
 | **Min Poll** | Enter the minimum polling interval, in seconds, as a power of 2. For example, 6 means 2^6, or 64 seconds. The default is 6, and the minimum value is 4. |
 | **Max Poll** | Enter the maximum polling interval, in seconds, as a power of 2. For example, 10 means 2^10, or 1,024 seconds. The default is 10, and the maximum value is 17. |
 | **Force** | Select to force the addition of the NTP server, even if it is currently unreachable. |
+{{< /truetable >}}
 {{< /expand >}}
 
 {{< taglist tag="scalesettings" limit="10" >}}

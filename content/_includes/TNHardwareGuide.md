@@ -9,9 +9,11 @@ From repurposed systems to highly custom builds, the fundamental freedom of True
 
 Our recommended system requirements to install TrueNAS:
 
+{{< truetable >}}
 | Processor | Memory | Boot Device | Storage |
 |-----------|--------|-------------|---------|
 | 2-Core Intel 64-Bit or AMD x86_64 processor | 8 GB Memory | 16 GB SSD boot device | Two identically-sized devices for a single storage pool |
+{{< /truetable >}}
 
 The TrueNAS installer recommends 8 GB of RAM. TrueNAS installs, runs, and operates jails. It also hosts SMB shares and replicates TBs of data with less. iXsystems recommends the above for better performance and fewer issues.
 

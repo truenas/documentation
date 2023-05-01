@@ -15,12 +15,14 @@ The Active Directory (AD) service shares resources in a Windows network environm
 
 ![ActiveDirectoryScreenBasicOptions](/images/CORE/13.0/ActiveDirectoryScreenBasicOptions.png "Active Directory Basic Options")
 
+{{< truetable >}}
 | Name | Description |
 |---------|-------------|
 | **Domain Name** | Enter the Active Directory domain (*example.com*) or child domain (*sales.example.com*). Required field. |
 | **Domain Account Name** | Enter the Active Directory administrator account name. Required field. |
 | **Domain Account Password** | Enter the password for the Active Directory administrator account. Required when configuring a domain for the first time. After initial configuration, the password is not needed to edit, start or stop the service. |
 | **Enable (requires password or Kerberos principle)** | Enable the Active Directory services. Must enter the **Domain Account Password** when selecting this option for the first time. |
+{{< /truetable >}}
 
 Click **ADVANCED OPTIONS** to access extra options shown below.  
 
@@ -30,6 +32,7 @@ Click **REBUILD DIRECTORY SERVICE CACHE** to resync the cache if it becomes out 
 
 ![ActiveDirectoryScreenAdvancedOptions](/images/CORE/13.0/ActiveDirectoryScreenAdvancedOptions.png "Active Directory Advanced Options")
 
+{{< truetable >}}
 | Name | Description |
 |---------|-------------|
 | **Verbose logging** | Select to log attempts to join the domain to <file>/var/log/messages</file>. |
@@ -48,6 +51,7 @@ Click **REBUILD DIRECTORY SERVICE CACHE** to resync the cache if it becomes out 
 | **Netbios Name** | The Netbios name of this NAS is **truenas**. This name must differ from the Workgroup name and be no greater than 15 characters. |
 | **NetBIOS alias** | Alternative names that SMB clients can use when connecting to this NAS. Can be no greater than 15 characters. |
 | **LEAVE DOMAIN** | Disconnects the TrueNAS system from the Active Directory. |
+{{< /truetable >}}
 
 Click **SAVE** to save settings. 
 

@@ -23,13 +23,16 @@ Click **CANCEL** to exit without saving and return to the **Services** screen.
 
 **General Option**
 
+{{< truetable >}}
 | Name | Description |
 |----------|-------------|
 | **Database Path** | The database information stored in the path. If the pool has read-only status, the path must still be writable. |
+{{< /truetable >}}
 
 **Access**
 
 
+{{< truetable >}}
 | Name | Description |
 |----------|-------------|
 | **Guest Account** | Select an account to use for guest access. This account must have permissions to the shared pool or dataset. Any client connecting to the guest service has the privileges of the guest account user. This user must exist in the password file, but does not need a valid login. Root user cannot be the guest account. |
@@ -37,14 +40,16 @@ Click **CANCEL** to exit without saving and return to the **Services** screen.
 | **Max Connections** | Maximum number of simultaneous connections permitted via AFP. The default limit is **50**. |
 | **Chmod Request** | Indicates how to handle access control lists. Select **Ignore** to disregard requests. Selecting **Ignore** also gives the parent directory ACL inheritance full control over new items. Select **Preserve** to preserve ZFS ACEs for named users and groups or the POSIX ACL group mask. Select **Simple** to configure chmod() as requested without any extra steps. |
 | **Map ACLs** | Maps permissions for authenticated users. Select **Rights** (default, Unix-style permissions), **None**, or **Mode (ACLs)**. |
+{{< /truetable >}}
 
 **Other Options**
 
-
+{{< truetable >}}
 | Name | Description |
 |----------|-------------|
 | **Log Level** | Record AFP service messages up to the specified log level in the system log. The system logs severe and warning level messages by default. |
 | **Bind Interfaces** | Specify the IP addresses to listen for AFP connections. Leave blank to bind to all available IPs. If no IP addresses specified, advertise the first IP address of the system. If no IP addresses specified, listen for any incoming request. |
 | **Global Auxiliary** | Additional [afp.conf(5)](http://netatalk.sourceforge.net/3.0/htmldocs/afp.conf.5.html) parameters. |
+{{< /truetable >}}
 
 {{< taglist tag="coreafp" limit="10" >}}

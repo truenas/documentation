@@ -23,10 +23,12 @@ The **Application Name** section is the first step in the **Launch Docker Image*
 
 ![LaunchDockerImageApplicationVersion](/images/SCALE/22.12/LaunchDockerImageApplicationVersion.png "Application Name and Version") 
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Application Name** | Displays **ix-Chart** as the default. Enter a name for the application you are adding. The name must have lowercase alphanumeric characters, must begin with an alphabet character, and can end with an alphanumeric character. The name can contain a hyphen (-) but not as the first or last character in the name. For example, using *chia-1* but not *-chia1* or *1chia-* as a valid name. |
 | **Version** | Displays the current version of the default application. Enter the version of the application you want to install.|
+{{< /truetable >}}
 {{< /expand >}}
 
 ## Container Images
@@ -36,11 +38,13 @@ Define the image tag, when TrueNAS pulls the image from the remote repository, h
 
 ![LaunchDockerImageContainerImage](/images/SCALE/22.12/LaunchDockerImageContainerImage.png "Container Images")  
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Image Repository** | Required. Enter the Docker image repository name. For example, *plexinc/pms-docker* for Plex.|
 | **Image Tag** | Enter the tag for the specified image. For example, *1.20.2.3402-0fec14d92* for Plex. |
 | **Image Pull Policy** | Select the Docker image pull policy from the dropdown list. Options are **Only pull image if not present on host**, **Always pull image even if present on host**, or **Never pull image even if it's not present on host**. |
+{{< /truetable >}}
 {{< /expand >}}
 
 ## Container Entrypoint
@@ -52,12 +56,14 @@ Check the documentation for the application you want to install using a Docker I
 
 ![LaunchDockerImageAddContainerEntrypoints](/images/SCALE/22.12/LaunchDockerImageAddContainerEntrypoints.png "Add Container Entrypoints") 
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Configure Container CMD**| Click **Add** to display a **Command** field. |
 | **Command** | Enter container command. For example, if adding MinIO, enter *SERVER*. |
 | **Configure Container Args** | Click **Add** to display an argument entry **Arg** field. Click again to add more arguments. |
 | **Argument** | Enter an argument. For example, if adding MinIO, enter the IP and port string such as *http://0.0.0.0/9000/data*.|
+{{< /truetable >}}
 {{< /expand >}}
 
 ## Container Environment Variables
@@ -68,12 +74,14 @@ Check the documentation for the image you are trying to deploy and add any requi
 
 ![LaunchDockerImageAddContainerEnvironmentVariables](/images/SCALE/22.12/LaunchDockerImageAddContainerEnvironmentVariables.png "Add Container Environmental Variables") 
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Configure Container Environment Variables** | Click **Add** to display a block of **Container Environment Variables**. Click again to add more blocks for environment variables. |
 | **Container Environment Variables** | Container environmental variable name and value fields. |
 | **Environment Variable Name** | Enter the environment variable name. For example, enter **TZ** for the timezone if installing Pi-Hole. |
 | **Environment Variable Value** | Enter the value for the variable specified in **Environment Variable Name**. For example, for the Pi-Hole timezone variable, enter *AmericaNewYork*. |
+{{< /truetable >}}
 {{< /expand >}}
 
 ## Networking
@@ -87,14 +95,17 @@ See the Docker [DNS services documentation](https://docs.docker.com/config/conta
 
 ![LaunchDockerImageAddNetworking](/images/SCALE/22.12/LaunchDockerImageAddNetworking.png "Add Networking")  
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Add External Interfaces** | Click **Add** to displays a block of interface settings. |
 | **Host Interface** | Required. Select a host interface on your system from the dropdown list. |
 | **IPAM Type** | Required. Select an option from the dropdown list to specify the IPAM type. Options are **Use DHCP** or **Use Static IP**. To add a default route, select **Add route**, which allows you to enter route destination IP /subnet 0.0.0.0/0. Enter the gateway (for example, *192.168.1.1*). After submitting the docker image, navigate to **Installed Applications**, locate the docker image you added, select **Edit** and change the route destination/subnet to equal 0.0.0.0 /0. |
+{{< /truetable >}}
 
 ![LaunchDockerImageAddDNS](/images/SCALE/22.12/LaunchDockerImageAddDNS.png "Add DNS Policy and Settings")  
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **DNS Policy** | Select the option from the dropdown list that specifies the policy. With the default behavior, the pod inherits the name resolution configuration from the node that the pods run on. With **None**,  a pod can ignore DNS settings from the Kubernetes environment. Options are:<br> **Use Default DNS Policy where Pod inherits the name resolution configuration from the node**.<br> **Kubernetes internal DNS is prioritized and resolved first.** If the domain does not resolve with internal Kubernetes DNS, the DNS query forwards to the upstream nameserver inherited from the node, which is useful if the workload needs to access other services using Kubernetes internal DNS.<br> **For Pods running with hostNetwork and wanting to prioritize internal Kubernetes DNS should make use of this policy.**<br> **Ignore DNS settings from the Kubernetes cluster**. |
@@ -105,6 +116,8 @@ See the Docker [DNS services documentation](https://docs.docker.com/config/conta
 | **Option Name** | Required. Enter the option name. |
 | **Option Value** | Required. Enter the value for the option name. |
 | **Provide access to node network namespace for the workload** | Select to allow the container to bind to any port. Some ports still require appropriate permissions. Unless you need it, we recommend leaving this setting disabled because app containers might try to bind to arbitrary ports like 80 or 443, which the TrueNAS UI already uses.  |
+{{< /truetable >}}
+
 {{< /expand >}}
 
 ## Port Forwarding
@@ -114,12 +127,14 @@ Choose the protocol and enter port numbers for both the container and node. You 
 
 ![LaunchDockerImageAddPortForwarding](/images/SCALE/22.12/LaunchDockerImageAddPortForwarding.png "Add Port Forwarding") 
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Specify Node ports to forward to workload** | Click **Add** to display a block of **Port Forwarding Configuration** settings. |
 | **Container Port** | Required. Do not enter the same port number used by another system service or container. |
 | **Node Port** | Required. Enter a node port number over **9000**. |
 | **Protocol** | Select the protocol from the dropdown list. Options are **TCP Protocol** or **UDP Protocol**.  |
+{{< /truetable >}}
 {{< /expand >}}
 
 ## Storage
@@ -136,15 +151,18 @@ PVs consume space from the pool chosen for application management. To do this, n
 
 ![LaunchDockerImageAddStorage](/images/SCALE/22.12/LaunchDockerImageAddStorage.png "Add Storage Paths and Volumes") 
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Host Path Volumes** | Click **Add** to display a block of **Host Path Volume** settings. Click again to add another block of settings. |
 | **Host Path** | Require. Enter or click <span class="material-icons">arrow_right</span> to the left of <span class="material-icons">folder</span> **/mnt** to browse to the location of the host path. Click on the dataset to select and display it in the **Host Path** field. |
 | **Mount Path** | Required. Enter the <file>**/data**</file> directory where the host path mounts inside the pod. |
 | **Read Only** | Select to make the mount path inside the pod read-only and prevent using the container to store data. |
+{{< /truetable >}}
 
 ![LaunchDockerImageStorageAddVolumes](/images/SCALE/22.12/LaunchDockerImageStorageAddVolumes.png "Storage Volume Settings") 
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Memory Backed Volumes** | Click **Add** to display a block of **Memory Backed Volume** settings. Click again to display another block of settings. |
@@ -152,6 +170,8 @@ PVs consume space from the pool chosen for application management. To do this, n
 | **Volumes** | Click **Add** to display a block of **Volume** settings. Click again to add another block of settings.  |
 | **Mount Path** | Required. Enter the path where the volume mounts inside the pod. |
 | **Dataset Name** | Required. Enter the name of the dataset. |
+{{< /truetable >}}
+
 {{< /expand >}}
 
 ## Workload Details
@@ -160,6 +180,7 @@ The **Workload Details** settings specify if containers in a pod run with TTY or
 
 ![LaunchDockerImageAddWorkloadDetails](/images/SCALE/22.12/LaunchDockerImageAddWorkloadDetails.png "Workload Details") 
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Enable TTY** | Select to set containers in a pod to run with TTY enabled. Disabled by default. |
@@ -170,6 +191,7 @@ The **Workload Details** settings specify if containers in a pod run with TTY or
 | **Configure Container User and Group ID** | Select to display the **Run Container as User** and **Run Container as Group** settings to add security context (`runAsUser` and `runAsGroup` variables). |
 | **Run Container As User** | Enter a numeric user ID for the container. |
 | **Run Container as Group** | Enter a numeric group ID for the container. |
+{{< /truetable >}}
 {{< /expand >}}
 
 ## Scaling/Upgrade Policy
@@ -189,11 +211,13 @@ The **Resource Limits** setting specifies the limits you want to place on the Ku
 
 ![LaunchDockerImageResourcesAdd](/images/SCALE/22.12/LaunchDockerImageResourcesAdd.png "Resource Reservation and Limits")  
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Enable Pod resource limits** | Select to enable resource limits and display the **CPU Limit** and **Memory Limit** settings. |
 | **CPU Limit** | Enter the integer values with the suffix m (mill) you want to use to limit the CPU resource. For example, 1000m, 100, etc. |
 | **Memory Limit** | Enter the number of bytes you want to limit memory to. Follow the number with the quantity suffix, like E, P, T, G, M, k or Ei, Pi, Ti, Mi, Gi, Ki. For example, 129e6, 129m, 12897484800m, 123Mi, etc. |
+{{< /truetable >}}
 {{< /expand >}}
 
 ## Portal Configuration

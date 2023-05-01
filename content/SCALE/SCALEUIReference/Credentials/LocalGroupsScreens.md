@@ -35,6 +35,7 @@ Built-in users (except the **root** user) do not include the **Home Directory Pe
 
 ![AddGroupGIDConfigSCALE](/images/SCALE/22.12/AddGroupGIDConfigSCALE.png "Add Group") 
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **GID** | Required. Enter a unique number for the group ID (**GID**) TrueNAS uses to identify a Unix group. Enter a number above 1000 for a group with user accounts (you cannot change the GID later). If a system service uses a group, the group ID must match the default port number for the service. |
@@ -45,6 +46,7 @@ Built-in users (except the **root** user) do not include the **Home Directory Pe
 | **Allow all sudo commands with no password** | Select to give this group member administrator permissions and the ability to use all [sudo](https://www.sudo.ws/) commands with no password required. |
 | **Samba Authentication** | Select to allow this group to authenticate to and access data shares with [SMB]({{< relref "/SCALE/SCALETutorials/Shares/SMB/AddSMBShares.md" >}}) samba shares. |
 | **Allow Duplicate GIDs** | Not recommended. Select to allow more than one group to have the same group ID. |
+{{< /truetable >}}
 
 ## Update Members Screen 
 

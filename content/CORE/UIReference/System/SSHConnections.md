@@ -8,6 +8,6 @@ tags:
 
 ![SystemSSHConnectionsAddSemiAuto](/images/CORE/12.0/SystemSSHConnectionsAddSemiAuto.png "Semi-Auto Connection")
 
-{{< include file="static/includes/Reference/SystemSSHConnectionsAddSemiAutoFields.md.part" markdown="true" >}}
+{{< include file="content/_includes/SystemSSHConnectionsAddSemiAutoFields.md" type="page" >}}
 
 {{< taglist tag="coressh" limit="10" >}}

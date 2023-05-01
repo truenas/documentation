@@ -48,11 +48,13 @@ The selection in **Type** changes setting options on this screen, the **Certific
 
 ![AddCSRIdentifierAndType](/images/SCALE/22.02/AddCSRIdentifierAndType.png "Add CSR Identifier and Type") 
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Name** | Required. Enter a descriptive identifier for this certificate. |
 | **Type** | Select the type of CSR from the dropdown list. Options are **Certificate Signing Request** and **Import Certificate Signing Request**. **Certificate Signing Requests** control when an external CA issues (signs) the certificate. Typically used with ACME or other CAs that most popular browsers trust by default. **Import Certificate Signing Request** lets you import an existing CSR onto the system. Typically used with ACME or internal CAs. Selecting **Import Certificate Signing Request** removes the **Profiles** field. |
 | **Profiles** | Displays if **Certificate Signing Request** is set in **Type**. Select a predefined certificate extension from the dropdown list. Choose a profile that best matches your certificate usage scenario. Options are **Openvpn Server Certificate** and **Openvpn Client Certificate**. |
+{{< /truetable >}}
 {{< /expand >}}
 
 ### Certificate Options
@@ -65,6 +67,7 @@ The **Key Type** selection changes fields displayed. **RSA** is the default sett
 
 ![AddCSRCertificateOptionsRSAType](/images/SCALE/22.02/AddCSRCertificateOptionsRSAType.png "Add CSR Certificate Options RSA Type")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Key Type** | Select the key type from the dropdown list. Options are **RSA** or **EC**. **EC** displays the **EC Curve** field. See [Why is elliptic curve cryptography not widely used, compared to RSA?](https://crypto.stackexchange.com/questions/1190/why-is-elliptic-curve-cryptography-not-widely-used-compared-to-rsa) for more information about key types. |
@@ -72,6 +75,7 @@ The **Key Type** selection changes fields displayed. **RSA** is the default sett
 | **Key Length** | Required. Displays when **RSA** is selected in **Key Type**. Select the number of bits in the key used by the cryptographic algorithm from the dropdown list. Options are **1024**, **2048** or **4096**. For security reasons, a minimum key length of 2048 is recommended. |
 | **Digest Algorithm** | Select the cryptographic algorithm to use from the dropdown list. Options are **SHA1**, **SHA224**, **SHA256**, **SHA384** and **SHA512**. Only change the default **SHA256** if the organization requires a different algorithm. |
 | **Lifetime** | Enter the number of days for the lifetime of the CA. |
+{{< /truetable >}}
 {{< /expand >}}
 
 ### Certificate Subject Settings
@@ -83,6 +87,7 @@ The **Certificate Subject** settings do not display if **Type** on the **Identif
 
 ![AddCSRCertificateSubject](/images/SCALE/22.02/AddCSRCertificateSubject.png "Add CSR Certificate Subject CSR Type") 
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Country** | Required. Select the country of the organization from the dropdown list. |
@@ -93,6 +98,7 @@ The **Certificate Subject** settings do not display if **Type** on the **Identif
 | **Email** | Required. Enter the email address of the person responsible for the CA. |
 | **Common Name** | Enter the [fully qualified host name (FQHN)](https://kb.iu.edu/d/aiuv) of the system. This name must be unique within a certificate chain. |
 | **Subject Alternate Names** | Required. Enter additional domains to secure for multi-domain support. Separate each domain by pressing <kbd>Enter</kbd>. For example, if the primary domain is *example.com*, entering *www.example.com* secures both addresses. |
+{{< /truetable >}}
 {{< /expand >}}
 
 ### Extra Constraints Settings
@@ -110,6 +116,7 @@ After selecting **Basic Constraints**, **Authority Key Identifier**, **Extended 
 
 ![AddCSRExtraConstraintsAllExpanded](/images/SCALE/22.02/AddCSRExtraConstraintsAllExpanded.png "Add CSR Extra Constraints") 
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Basic Constraints** | Select to activate this extension. Basic Constraints extension identifies whether this certificate subject is a CA and the maximum depth of valid certification paths that include this certificate. |
@@ -120,6 +127,7 @@ After selecting **Basic Constraints**, **Authority Key Identifier**, **Extended 
 | **Critical Extension** | Displays after selecting **Extended Key Usage**. Select to identify this extension as critical for the certificate. Critical extensions must be recognized by the certificate-using system or this certificate is rejected. Extensions identified as not critical can be ignored by the certificate-using system and the certificate still approved. |
 | **Key Usage** | Select to activate this certificate extension. Displays the **Key Usage Config** field. The key usage extension defines the purpose (e.g., encipherment, signature, certificate signing) of the key contained in the certificate. The usage restriction might be employed when a key that could be used for more than one operation is to be restricted. For example, when an RSA key should be used only to verify signatures on objects other than public key certificates and CRLs, the **Digital Signature** bits are asserted. Likewise, when an RSA key should be used only for key management, the **Key Encipherment** bit is asserted. See [RFC 3280, section 4.2.13](https://www.ietf.org/rfc/rfc3280.txt) for more information. |
 | **Key Usage Config** | Displays after selecting **Extended Key Usage** or **Key Usage**. Select the key usage extension from the dropdown list. Options are **Digital Signature**, **Content Commitment**, **Key Encipherment**, **Data Encipherment**, **Key Agreement**, **Key Cert Sign**, **CRL Sign**, **Encipher Only**, **Decipher Only** or **Critical Extension**. Web certificates typically need at least Digital Signature and possibly Key Encipherment or Key Agreement, while other applications may need other usages. |
+{{< /truetable >}}
 {{< /expand >}}
 
 #### Extra Constraints - Import Certificate Signing Request Type
@@ -128,12 +136,15 @@ When **Type** on **Identifier and Type** is set to **Import Certificate Signing 
 
 ![AddCSRExtraConstraintsImportCSR](/images/SCALE/22.02/AddCSRExtraConstraintsImportCSR.png "Add CSR Extra Constraints Import CSR") 
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Certificate** | Required. Paste the certificate for the certificate signing request into this field. |
 | **Private Key** | Required. Paste the private key associated with the certificate when available. Provide a key at least 1024 bits long. |
 | **Passphrase** | Enter the passphrase for the private key. |
 | **Confirm Passphrase** | Re-enter the passphrase for the private key. |
+{{< /truetable >}}
+
 {{< /expand >}}
 
 ### Confirm Options 

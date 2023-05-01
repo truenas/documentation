@@ -8,7 +8,6 @@ tags:
  - scaleservices
 ---
 
-
 {{< toc >}}
 
 The **Services > DynamicDNS** screen settings specify settings so the system can automatically associate its current IP address with a domain name and continues to provide access to TrueNAS even if the system IP address changes.
@@ -17,6 +16,7 @@ To configure Dynamic DNS, go to **System Settings > Services** and find **Dynami
 
 ![DynamicDNSServiceSettings](/images/SCALE/22.02/DynamicDNSServiceSettings.png "Dynamic DNS Service Options")
 
+{{< truetable >}}
 | Settings | Description |
 |----------|-------------|
 | **Provider** | Select the provider from the dropdown list of supported providers. If a specific provider is not listed, select **Custom Provider** and enter the information in the **Custom Server** and **Custom Path** fields below the **SSL** checkbox. |
@@ -28,12 +28,15 @@ To configure Dynamic DNS, go to **System Settings > Services** and find **Dynami
 | **SSL** | Select to use HTTPS for the connection to the server that updates the DNS record. |
 | **Domain Name** | Enter the fully qualified domain name of the host with the dynamic IP address. Separate multiple domains with a space, comma (,), or semicolon (;). For example, *myname.dyndns.org; myothername.dyndns.org*. |
 | **Update Period** | Enter the number of seconds for how often the IP is checked. |
+{{< /truetable >}}
 
 **Credentials**
 
+{{< truetable >}}
 | Settings | Description |
 |----------|-------------|
 | **Username** | Enter the user name for logging in to the provider and updating the record. |
 | **Password** | Enter the user password for logging in to the provider and updating the record. |
+{{< /truetable >}}
 
 {{< taglist tag="scaledynamicdns" limit="10" >}}

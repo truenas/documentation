@@ -55,13 +55,13 @@ The <file>AdvancedScheuler.md.part</file> is included in the [Cloud Sync Tasks](
 Clicking the *Edit this Page* link opens the article markdown file, but only these lines are visible for the included content (the `/` characters are added to prevent rendering the shortcodes):
 ```
 {{/< expand "Advanced Scheduler" "v" >}}
-{{/< include file="static/includes/CORE/AdvancedScheduler.md.part" markdown="true" >}}
+{{/< include file="content/_includes/AdvancedScheduler.md" type="page" >}}
 {{/< /expand >}}
 ```
 
 The *expand* and */expand* shortcodes handle the expansion/collapse section of the document and don't need to change.
 The include statement is within the expandable element:
-`{{/< include file="static/includes/CORE/AdvancedScheduler.md.part" markdown="true" >}}`.
+`{{/< include file="content/_includes/AdvancedScheduler.md" type="page" >}}`.
 
 The [repository](https://github.com/truenas/documentation/) file <file>static/includes/CORE/AdvancedScheduler.md.part</file> contains the documentation for this section.
 To update this section, edit the <file>.md.part</file> file.

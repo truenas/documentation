@@ -29,6 +29,7 @@ Click on the channel you wish to edit to open the configuration screen.
 
 ![IPMIConfigurationScreen](/images/SCALE/22.02/IPMIConfigurationScreen.png "IPMI Configuration")
 
+{{< truetable >}}
 | Setting | Description |                                                                                                                                   
 |---------|-------------|
 | **DHCP** | Select to use DHCP to assign IPv4 network values. Clear checkbox to manually configure a static IPv4 connection. |
@@ -39,6 +40,7 @@ Click on the channel you wish to edit to open the configuration screen.
 | **Password** | Enter a password for connecting to the IPMI interface from a web browser. The password must include at least one upper case letter, one lower case letter, one digit, and one special character (punctuation, e.g. ! # $ %, etc.). It must also be 8-16 characters long. |
 | **Identify Light** | Like the <span class="iconify" data-icon="material-symbols:highlight-rounded"></span> button on the **IPMI** widget, displays the same dialog and dropdown list of options users can select for the duration to flash the system IPMI light on the compatible connected hardware. |
 | **Manage** | Like the <span class="iconify" data-icon="ic:round-launch"></span> button on the **IPMI** widget, this opens the same IPMI manager in a new browser tab where users can communicate with the server without having direct to the hardware. |
+{{< /truetable >}}
 
 {{< taglist tag="scaleipmi" limit="10" >}}
 

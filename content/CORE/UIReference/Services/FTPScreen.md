@@ -18,6 +18,7 @@ Click **CANCEL** to exit without saving.
 
 ## General Options Settings
 
+{{< truetable >}}
 | Name | Description |
 |------|-------------|
 | **Port** | Enter the port the FTP service listens on. |
@@ -26,6 +27,7 @@ Click **CANCEL** to exit without saving.
 | **Login Attempts** | Enter the greatest number of attempts client permitted before disconnect. Increase if users are prone to misspellings or typos. |
 | **Timeout** | Enter the maximum client idle time in seconds before disconnect. Default value is **600** seconds. |
 | **Certificate** | Select from the dropdown list the SSL certificate to use for TLS FTP connections. Currently listed as **freenas_default**. To create a certificate, go to **System > Certificates**. |
+{{< /truetable >}}
 
 ## Advanced Option Settings
 
@@ -37,6 +39,7 @@ Click **Advanced Options** if you need to customize your FTP service. **Advanced
 
 **Access Settings**
 
+{{< truetable >}}
 | Name | Description |
 |------|-------------|
 | **Always Chroot** | Select to only allow users access their home directory if they are in the **wheel** group. This option increases security risk. |
@@ -46,6 +49,7 @@ Click **Advanced Options** if you need to customize your FTP service. **Advanced
 | **Require IDENT Authentication** | Select to require IDENT authentication. Selecting this option results in timeouts when ident (or in **Shell** `identd`) is not running on the client. |
 | **File Permissions** | Select to define default permissions for newly created files. |
 | **Directory Permissions** | Select to define default permissions for newly created directories. |  
+{{< /truetable >}}
 
 **TLS Settings**
 
@@ -56,6 +60,7 @@ This is effectively [FTPS](https://tools.ietf.org/html/rfc4217).
 When FTP is exposed to a WAN, enable TLS.
 {{< /hint >}}
 
+{{< truetable >}}
 | Name | Description |
 |------|-------------|
 | **Enable TLS** | Select to allow encrypted connections. Requires a certificate. To create or import a certificate go to **System > Certificates**. |
@@ -72,6 +77,7 @@ When FTP is exposed to a WAN, enable TLS.
 | **TLS Export Standard Vars** | Select to put in place several environment variables. |
 | **TLS DNS Name Required** | Select to require the client DNS name resolve to its IP address, and the cert contain the same DNS name. |
 | **TLS IP Address Required** | Select to require the client certificate IP address match the client IP address. |
+{{< /truetable >}}
 
 ### Bandwidth and Other Settings**
 
@@ -79,15 +85,18 @@ When FTP is exposed to a WAN, enable TLS.
 
 **Bandwitdth Settings**
 
+{{< truetable >}}
 | Name | Description |
 |------|-------------|
 | **Local User Upload Bandwidth: (Examples: 500 KiB, 500M, 2 TB)** | Enter a value. If measurement is not specified it defaults to KiB. This field accepts human-readable input in KiBs or greater (M, GiB, TB, etc.). The unlimited default is **0 KiB**. |
 | **Local User Download Bandwidth** | Enter a value. If measurement is not specified it defaults to KiB. This field accepts human-readable input in KiBs or greater (M, GiB, TB, etc.). The unlimited default is **0 KiB**. |
 | **Anonymous User Upload Bandwidth** | Enter a value. If measurement is not specified it defaults to KiB. This field accepts human-readable input in KiBs or greater (M, GiB, TB, etc.). The unlimited default is **0 KiB**. |
 | **Anonymous User Download Bandwidth** | Enter a value. If measurement is not specified it defaults to KiB. This field accepts human-readable input in KiBs or greater (M, GiB, TB, etc.). The unlimited default is **0 KiB**. |
+{{< /truetable >}}
 
 **Other Options Settings**
 
+{{< truetable >}}
 | Name | Description |
 |------|-------------|
 | **Minimum Passive Port** | Used by clients in PASV mode. A default of **0** means any port above 1023. |
@@ -98,5 +107,6 @@ When FTP is exposed to a WAN, enable TLS.
 | **Masquerade Address** | Public IP address or host name. Select if FTP clients cannot connect through a NAT device. |
 | **Display Login** | Specify the message displayed to local login users after authentication. This is not displayed to anonymous login users. |
 | **Auxiliary Parameters** | Select to add additional [proftpd(8](https://linux.die.net/man/8/proftpd) parameters. |
+{{< /truetable >}}
 
 {{< taglist tag="coreftp" limit="10" >}}

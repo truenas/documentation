@@ -15,7 +15,7 @@ Configure system reporting on the **System > Reporting** screen.
 
 ![SystemReporting](/images/CORE/12.0/SystemReporting.png "Reporting Options")
 
-{{< include file="static/includes/Reference/SystemReportingFields.md.part" markdown="true" >}}
+{{< include file="content/_includes/SystemReportingFields.md" type="page" >}}
 
 {{< hint type=important >}}
 Report history is cleared after changing and saving CPU reporting, graph age, or graph points.

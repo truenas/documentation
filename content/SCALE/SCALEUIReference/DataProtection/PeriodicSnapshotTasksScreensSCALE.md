@@ -69,15 +69,18 @@ The **Dataset** setting options display on both the add and edit configuration s
 
 ![AddPeriodicSnapshotTaskScreen](/images/SCALE/22.02/AddPeriodicSnapshotTaskScreen.png "Add Periodic Snapshot Task")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Dataset** | Select a pool, dataset, or zvol. |
 | **Exclude** | Exclude specific child datasets from the snapshot. Use with recursive snapshots. List paths to any child datasets to exclude. Example: `pool1/dataset1/child1`. A recursive snapshot of pool1/dataset1 includes all child datasets except child1. Separate entries by pressing <kbd>Enter</kbd>. |
 | **Recursive** | Select to take separate snapshots of the dataset and each of its child datasets. Leave checkbox clear to take a single snapshot only of the specified dataset without child datasets. |
+{{< /truetable >}}
 {{< /expand >}}
 ### Schedule Options
 These **Schedule** setting options display on both the add and edit configuration screens.
 {{< expand "Click Here for More Information" "v" >}}
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
  **Snapshot Lifetime** | Enter the length of time to retain the snapshot on this system using a numeric value and a single lowercase letter for units. Examples: *3h* is three hours, *1m* is one month, and *1y* is one year. Does not accept minute values. After the time expires, the snapshot is removed. Snapshots replicated to other systems are not affected. |
@@ -85,6 +88,8 @@ These **Schedule** setting options display on both the add and edit configuratio
 | **Schedule** | Select a presets from the dropdown list. Select *Custom* to open the advanced scheduler. |
 | **Allow Taking Empty Snapshots** | Select to Create dataset snapshots even when there are no changes to the dataset from the last snapshot. Recommended for long-term restore points, multiple snapshot tasks pointed at the same datasets, or compatibility with snapshot schedules or replications created in TrueNAS 11.2 and earlier.  For example, you can set up a monthly snapshot schedule to take monthly snapshots and still have a daily snapshot task taking  snapshots of any changes to the dataset. |
 | **Enabled** | Select to activate this periodic snapshot schedule. To disable this task without deleting it, leave the checkbox cleared. |
+{{< /truetable >}}
+
 {{< /expand >}}
 ### Schedule Options - Edit Periodic Snapshot Task 
 These **Schedule** setting options only display on the **Edit Periodic Snapshot Task** screen.
@@ -92,10 +97,12 @@ These **Schedule** setting options only display on the **Edit Periodic Snapshot 
 
 ![EditPeriodicSnapshotTaskScreen](/images/SCALE/22.02/EditPeriodicSnapshotTaskScreen.png "Edit Periodic Snapshot Task")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Begin** | Enter the hour and minute when the system can begin taking snapshots. |
 | **End** | Enter the hour and minute the system must stop creating snapshots. Snapshots already in progress continue until complete. |
+{{< /truetable >}}
 {{< /expand >}}
 
 {{< taglist tag="scalesnapshots" limit="10" >}}

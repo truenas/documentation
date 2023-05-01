@@ -22,6 +22,7 @@ Click **Add** to display the **BASIC Options** settings screen.
 
 ![SharingSMBBasicOptions](/images/CORE/13.0/SharingSMBBasicOptions.png "SMB Share Basic Options")
 
+{{< truetable >}}
 | Name | Description  |
 |---------|--------------|
 | **Path** | Use the file browser or click the **/mnt** to select the pool, dataset or directory to share. |
@@ -29,11 +30,13 @@ Click **Add** to display the **BASIC Options** settings screen.
 | **Purpose** | Select a preset purpose configuration. This locks in predetermined values for the share. This includes **Advanced Options**, as well as the **Path Suffix**. Select from the dropdown list. Options are:<br>**No presets**<br>**Default share parameters**<br>**Multi-user time machine**<br>**Multi-protocol (AFP/SMB) shares**<br>**Multi-protocol (NFSv3/SMB) shares**<br>**Private SMB Datasets and Shares**<br>**SMB WORM. Files become readonly via SMB after 5 minutes**. Note: The **SMB WORM** preset only impacts writes over the SMB protocol. Prior to deploying this option in a production environment the user needs to determine whether the feature meets his / her requirements.<br>See "What do all the presets do?" for more information on presets. |
 | **Description** | Optional. Explains the purpose of the share. |
 | **Enabled** | Select to enable this SMB share. Clear checkbox to disable the share without deleting the configuration. |
+{{< /truetable >}}
 
 {{< expand "What do all the presets do?" "v" >}}
 The following table shows the preset options for the different **Purposes** and if those options are locked.
 An [x] indicates the option is enabled, [ ] means the option is disabled, and [text] indicates a specific value:
 
+{{< truetable >}}
 | Default share parameters                        | Multi-user time machine                           | Multi-protocol (AFP/SMB) shares                 | Multi-protocol (NFSv3/SMB) shares                 | Private SMB Datasets and Shares                   | Files become readonly of SMB after 5 minutes      |
 |:-----------------------------------------------:|---------------------------------------------------|-------------------------------------------------|---------------------------------------------------|---------------------------------------------------|---------------------------------------------------|
 | [x] Enable ACL (locked)                         | [x] Enable ACL (unlocked)                         | [x] Enable ACL (locked)                         | [ ] Enable ACL (locked)                           | [ ] Enable ACL (unlocked)                         | [ ] Enable ACL (unlocked)                         |
@@ -53,6 +56,7 @@ An [x] indicates the option is enabled, [ ] means the option is disabled, and [t
 | [ ] Enable FSRVP (locked)                       | [ ] Enable FSRVP (unlocked)                       | [ ] Enable FSRVP (locked)                       | [ ] Enable FSRVP (unlocked)                       | [ ] Enable FSRVP (unlocked)                       | [ ] Enable FSRVP (unlocked)                       |
 | [ ] Path Suffix (locked)                        | [%U] Path Suffix (locked)                         | [%U] Path Suffix (unlocked)                     | [%U] Path Suffix (unlocked)                       | [%U] Path Suffix (locked)                         | [ ] Path Suffix (locked)                          |
 | [ ] Auxiliary Parameters (unlocked)             | [ ] Auxiliary Parameters (unlocked)               | [ ] Auxiliary Parameters (unlocked)             | [ ] Auxiliary Parameters (unlocked)               | [ ] Auxiliary Parameters (unlocked)               | [ ] Auxiliary Parameters (unlocked)               |
+{{< /truetable >}}
 {{< /expand >}}
 
 ## Advanced Options
@@ -62,6 +66,7 @@ An [x] indicates the option is enabled, [ ] means the option is disabled, and [t
 **Access** and **Other Options** are the two options groups.
 **Access**  settings allow systems or users to access or change the shared data.
 
+{{< truetable >}}
 | Name | Description |
 |---------|-------------|
 | **Enable ACL** | Select to add Access Control List (ACL) support to the share. Leave checkbox clear to disable ACL support and delete any existing ACL for the share. |
@@ -71,6 +76,7 @@ An [x] indicates the option is enabled, [ ] means the option is disabled, and [t
 | **Access Based Share Enumeration** | Select to restrict share visibility to users with read or write access to the share. See the [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) manual page. |
 | **Hosts Allow** | Enter a list of allowed host names or IP addresses. Separate entries by pressing <kbd>Enter</kbd>. A more detailed description with examples see [here](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html#HOSTSALLOW). |
 | **Hosts Deny** | Enter a list of denied host names or IP addresses. Separate entries by pressing <kbd>Enter</kbd>. |
+{{< /truetable >}}
 
 {{< expand "Host Allow and Hosts Deny Fields" >}}
 The **Hosts Allow** and **Hosts Deny** fields work together to produce different situations:
@@ -82,6 +88,7 @@ The **Hosts Allow** and **Hosts Deny** fields work together to produce different
 
 The **Other Options** have settings for improving Apple software compatibility. There are also ZFS snapshot features, and other advanced features.
 
+{{< truetable >}}
 | Name | Description |
 |---------|-------------|
 | **Use as Home Share** | Select to allow the share to host user home directories. Gives each user a personal home directory when connecting to the share. This personal home directory is not accessible by other users. This allows for a personal, dynamic share. It is only possible to use one share as the home share. See the configuring [Home Share article]({{< relref "/CORE/CORETutorials/Sharing/SMB/HomeShare.md" >}}) for detailed instructions. |
@@ -94,6 +101,7 @@ The **Other Options** have settings for improving Apple software compatibility. 
 | **Enable FSRVP** | Select to enable support for the File Server Remote VSS Protocol ([FSVRP](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-fsrvp/dae107ec-8198-4778-a950-faa7edad125b)). This protocol allows Remote Procedure Call (RPC) clients to manage snapshots for a specific SMB share. The share path must be a dataset mountpoint. Snapshots have the prefix `fss-` followed by a snapshot creation timestamp. A snapshot must have this prefix for an RPC user to delete it. |
 | **Path Suffix** | Appends a suffix to the share connection path. This provides unique shares on a per-user, per-computer, or per-IP address basis. Suffixes can contain a macro. See the [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) manual page for a list of supported macros. The connectpath must be preset before a client connects. |
 | **Auxiliary Parameters** | Additional [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) settings. |
+{{< /truetable >}}
 
 Click **Submit** to save setings. This creates the share and adds it to the **Sharing > Windows Shares (SMB)** list.
 

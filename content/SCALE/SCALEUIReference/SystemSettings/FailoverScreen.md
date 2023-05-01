@@ -17,6 +17,7 @@ The **System Settings > Failover** screen displays settings used on SCALE Enterp
 
 ![FailoverScreen](/images/SCALE/22.12/FailoverScreen.png "Failover Screen")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Disable Failover** | Select to turn failover off. Leave clear to enable failover. |
@@ -24,17 +25,19 @@ The **System Settings > Failover** screen displays settings used on SCALE Enterp
 | **Network Timeout Before Initiating Failover** | Enter a number in seconds to wait after a network failure before triggering a failover. Default is **0** which means failover occurs immediately, or after two seconds when the system is using a link aggregate. |
 | **Sync To Peer** | Initiates a sync operation that copies over the primary controller configuration to the standby controller. Opens the **[Sync To Peer](#sync-to-or-from-peer)** dialog to confirm the operation. |
 | **Sync From Peer** | Initiates a sync operation that copies over the standby controller configuration to the primary controller. |
+{{< /truetable >}}
 
 ## Sync To or From Peer
 **Sync To Peer** and **Sync From Peer** buttons each open a confirmation dialog before SCALE performs the operation requested.
 
 ![FailoverSyncToPeerDialog](/images/SCALE/22.12/FailoverSyncToPeerDialog.png "Failover Sync To Peer Dialog")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Reboot standby TrueNAS controller** | Select to cause the standby controller to reboot after the sync operation completes. |
 | **Confirm** | Select to confirm you want to perform the sync-to-peer operation. |
 | **Proceed** | Begins the sync operation. |
-
+{{< /truetable >}}
 
 {{< taglist tag="scaleEnterprise" limit="10" title="Related Enterprise Articles" >}}

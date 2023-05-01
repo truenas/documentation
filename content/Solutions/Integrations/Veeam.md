@@ -46,7 +46,7 @@ If deploying on a closed network (LAN) without access to the Internet, users can
 For assistance, please contact TrueNAS support.
 
 {{< expand "Contacting iXsystems Support" "v" >}}
-{{< include file="static/includes/General/iXsystemsSupportContact.html.part" html="true" >}}
+{{< include file="content/_includes/iXsystemsSupportContact.md" type="page" >}}
 {{< /expand >}}
 
 ## Sizing Considerations
@@ -91,6 +91,7 @@ This strategy provides a 5X increase to the  maximum number of VMs and reduces c
 TrueNAS systems are excellent for backup and archiving, but must be sized correctly.
 Recommended sizing:
 
+{{< truetable >}}
 | Model | Backup Only? | Number of VMs Backed Up | Network Max | Usable Capacity |
 |-------|--------------|-------------------------|-------------|-----------------|
 | TrueNAS X10 | Yes | 6800 | 10 GbE | 340 TB |
@@ -98,6 +99,7 @@ Recommended sizing:
 | TrueNAS M40 | No | 29400 | 40 GbE | 1.47 PB |
 | TrueNAS M50 | No | 151800 | 100 GbE | 7.59 PB |
 | TrueNAS M60 | No | 303600 | 100 GbE | 15.8 PB |
+{{< /truetable >}}
 
 * `Backup Only?` assumes that the storage is being used only as a backup repository.
   This can be understood as a recommendation, not a rule.
