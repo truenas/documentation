@@ -2,7 +2,7 @@
 ---
 
 The SCALE CLI includes help text for some namespaces and commands through the both the `man`, and `ls` commands. 
-To see the basic commands from any namespace, enter `help`.
+To see the basic commands from any namespace, enter <code><b>help</b></code>.
 
 Use the `man` command to show the help text for a namespace or command with options. 
 Type <code>man <i>namespacename</i></code> or <code>man <i>commandname</i></code> to display the help text for that namespace or command.

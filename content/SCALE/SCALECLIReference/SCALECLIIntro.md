@@ -3,7 +3,7 @@ title: "SCALE CLI Introduction"
 description: "This article provides information about the SCALE CLI namespace and command syntax, navigating through the CLI, and basic commands."
 weight: 50
 aliases:
-draft: true
+draft: false
 tags:
 - scalecli
 ---
@@ -46,15 +46,15 @@ To access these basic options, enter `?` or `help`, then press <kbd>Enter</kbd>.
 
 | Command | Description |
 |---------|-------------|
-| `..` | Moves up one level. For example, form a namespace like **auth**, enter `..` to return to the CLI prompt. From a child namespace like **interfaces**, use `..` to return to the **network** parent namespace. |
-| `exit` | Leave the SCALE CLI and return to the system prompt. |
-| `ls` | Lists the namespaces and commands at the CLI level where you are. For example, at the top level, `ls` displays the main namespaces in the SCALE CLI, or at a namespace level, displays the namespaces or commands for that level. |
-| `man` | When in a namespace, displays the help text for the command that follows `man`.  For example, while in the **network** namespace, enter `man create` to see the help text for the `create` command. |
-| `menu` | Displays the Console setup menu in the CLI Shell. Type `6` to exit the menu and return to the SCALE CLI prompt. |
-| `?` | Displays the list of basic commands for the SCALE CLI. |
-| `/` | Returns to the main SCALE CLI prompt from any namespace. |
-| `.mode` | Gets or sets the output mode. |
-| `.stacks` | Enables/disables printing stack traces for errors. |
+| <code><b>..</b></code> | Moves up one level. For example, form a namespace like **auth**, enter `..` to return to the CLI prompt. From a child namespace like **interfaces**, use `..` to return to the **network** parent namespace. |
+| <code><b>exit</b></code> | Leave the SCALE CLI and return to the system prompt. |
+| <code><b>ls</b></code> | Lists the namespaces and commands at the CLI level where you are. For example, at the top level, `ls` displays the main namespaces in the SCALE CLI, or at a namespace level, displays the namespaces or commands for that level. |
+| <code><b>man</b></code> | When in a namespace, displays the help text for the command that follows `man`.  For example, while in the **network** namespace, enter `man create` to see the help text for the `create` command. |
+| <code><b>menu</b></code> | Displays the Console setup menu in the CLI Shell. Type `6` to exit the menu and return to the SCALE CLI prompt. |
+| <code><b>?</b></code> | Displays the list of basic commands for the SCALE CLI. |
+| <code><b>/</b></code> | Returns to the main SCALE CLI prompt from any namespace. |
+| <code><b>.mode</b></code> | Gets or sets the output mode. |
+| <code><b>.stacks</b></code> | Enables/disables printing stack traces for errors. |
 
 ## Navigating Namespaces
 
@@ -83,7 +83,7 @@ Use the `ls` command to view the list of namespaces or commands.
 | **task** | Provides access to task child namespaces and commands including **cloud_sync**, **cron_job**, **replication**, **rsync**, **smart_test**, and **snapshot**. |
 
 ### Entering Namespaces and Commands
-{{< hint info >}}
+{{< hint type=info >}}
 CLI namespaces and commands are case sensitive. 
 Enter commands in lower case unless the CLI autofill indicates otherwise. 
 {{< /hint >}}
