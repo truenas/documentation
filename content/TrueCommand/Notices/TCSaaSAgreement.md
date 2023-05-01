@@ -7,4 +7,4 @@ aliases:
 
 ## Software as a Service Agreement
 
-{{< include file="static/includes/TrueCommand/SaaSAgreement.html.part" >}}
+{{< include file="content/_includes/TCSaaSAgreement.md" type="page" >}}

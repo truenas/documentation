@@ -109,7 +109,7 @@ Enter numeric values in the **Months** and **Backups** fields.
 This feature is only available for local installations or containerized TrueCommand deployments.
 {{< /hint >}}
 
-{{< include file="static/includes/TrueCommand/2.0/TrueCommandSSL.md.part" markdown="true" >}}
+{{< include file="content/_includes/TrueCommandSSL.md" type="page" >}}
 
 ### Alert Options
 

@@ -21,7 +21,7 @@ NFS treats each dataset as its own filesystem. When creating the NFS share on th
 If you need to create shares that include child datasets, SMB sharing is an option. Note that Windows NFS Client versions currently support only NFSv2 and NFSv3.
 {{< /hint >}}
 
-{{< include file="static/includes/General/SharingPrereqs.md.part" markdown="true" >}}
+{{< include file="content/_includes/SharingPrereqs.md" type="page" >}}
 
 ## Creating an NFS Share Tutorial Video
 

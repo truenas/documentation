@@ -15,7 +15,7 @@ The web interface allows users to deploy, start, stop, and update applications, 
 Plugins are popular for content, security, development, collaboration, and backup applications for home and business use.
 
 {{< hint type=note >}}
-{{< include file="static/includes/General/FeatureSupport.md.part" markdown="true" >}}
+{{< include file="content/_includes/COREFeatureSupport.md" type="page" >}}
 {{< /hint >}}
 
 {{< expand "Plugin Technology" "v" >}}

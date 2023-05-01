@@ -11,7 +11,7 @@ tags:
 {{< toc >}}
 
 {{< hint type=note >}}
-{{< include file="static/includes/General/FeatureSupport.md.part" markdown="true" >}}
+{{< include file="content/_includes/COREFeatureSupport.md" type="page" >}}
 {{< /hint >}}
 
 A Virtual Machine (VM) is an environment on a host computer that can be used as if it were a separate physical computer.

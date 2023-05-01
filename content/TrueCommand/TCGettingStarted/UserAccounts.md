@@ -58,7 +58,7 @@ To verify a user email address and set 2FA:
 
 ## Automatic Creation with LDAP
 
-{{< include file="static/includes/TrueCommand/2.0/TrueCommandLDAP.md.part" markdown="true" >}}
+{{< include file="content/_includes/TrueCommandLDAP.md" type="page" >}}
 
 ## Teams and Permissions
 
@@ -81,6 +81,6 @@ To remove user access to a particular system group, click **-** (minus) on the d
 
 ## Resetting a User Password at Login
 
-{{< include file="static/includes/TrueCommand/2.1/ResettingUserPassword.md.part" markdown="true" >}}
+{{< include file="content/_includes/TCResettingUserPassword.md" type="page" >}}
 
 {{< taglist tag="tcinstall" limit="10" >}}

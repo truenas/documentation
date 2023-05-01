@@ -45,11 +45,11 @@ The **Description** should contain more details about the problem.
 We recommend keeping the description less than three paragraphs and including any steps to reproduce the issue.
 
 #### Creating a Debug File
-{{< include file="static/includes/CORE/CreateDebug.md.part" markdown="true" >}}
+{{< include file="content/_includes/CreateDebugCORE.md" type="page" >}}
 
 ### Suggesting New Features
 
-{{< include file="static/includes/General/CreateJiraSuggestion.md.part" markdown="true" >}}
+{{< include file="content/_includes/CreateJiraSuggestion.md" type="page" >}}
 
 ### TrueNAS Community
 

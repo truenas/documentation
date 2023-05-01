@@ -11,7 +11,7 @@ tags:
 {{< toc >}}
 
 {{< hint type=note >}}
-{{< include file="static/includes/General/FeatureSupport.md.part" markdown="true" >}}
+{{< include file="content/_includes/COREFeatureSupport.md" type="page" >}}
 {{< /hint >}}
 
 Jails are a lightweight, operating-system-level virtualization.

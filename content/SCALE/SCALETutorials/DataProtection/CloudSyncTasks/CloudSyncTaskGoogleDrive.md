@@ -69,4 +69,4 @@ See **Using Scripting and Environment Variables** for more information on [envir
 
 ### Working with Google Created Content
 
-{{< include file="static/includes/General/GoogleDriveBadPermissions.md.part" markdown="true" >}}
+{{< include file="content/_includes/GoogleDriveBadPermissions.md" type="page" >}}
