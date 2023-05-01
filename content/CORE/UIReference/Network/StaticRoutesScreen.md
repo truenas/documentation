@@ -19,11 +19,13 @@ Use **Add** to dispay the **Static Routes Add** screen.
 
 ![StaticRouteAddScreen](/images/CORE/13.0/StaticRouteAddScreen.png "Static Route Add Screen")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Destination** | Enter the desination IP using the format *A.B.C.D/E* where *E* is the CIDR mask. |
 | **Gateway** | Enter the IP address of the gateway. |
 | **Description** | Enter any notes or identifiers describing the static route. |
+{{< /truetable >}}
 
 The **SUBMIT** button activates after entering values in the required fields. Use **CANCEL** to exit without saving and retun to the **Static Routes** screen.
 

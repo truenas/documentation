@@ -27,6 +27,7 @@ To prevent unauthorized access to the shared data, set the **HTTP Authentication
 
 ### WebDAV Configuration Settings
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Protocol** | Select the protocol option from the dropdown list. Options are **HTTP**, **HTTPS** or **HTTP+HTTPS**. For better security, select **HTTPS**. |
@@ -34,5 +35,6 @@ To prevent unauthorized access to the shared data, set the **HTTP Authentication
 | **HTTP Authentication** | Select the authentication method from the dropdown list. Select **Basic Authentication** for unencrypted or **Digest Authentication** for encrypted. **No Authentication** to not use any authentication method. |
 | **WebDAV Password** | Enter a password. **davtest** is the default password, but you should change this as it is a known password. |
 | **Confirm Password** | Reenter the password to confirm it. |
+{{< /truetable >}}
 
 {{< taglist tag="scalewebdav" limit="10" title="Related WebDAV Articles" >}}

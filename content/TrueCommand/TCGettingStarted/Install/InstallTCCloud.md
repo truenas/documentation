@@ -145,7 +145,7 @@ You can now log in to the TrueCommand web interface with the new administrator a
 
 ### Resetting a User Password on the Login Screen
 
-{{< include file="static/includes/TrueCommand/2.1/ResettingUserPassword.md.part" markdown="true" >}}
+{{< include file="content/_includes/TCResettingUserPassword.md" type="page" >}}
 {{< /expand >}}
 
 {{< taglist tag="tccloud" limit="10" >}}

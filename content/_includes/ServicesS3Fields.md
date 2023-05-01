@@ -3,6 +3,7 @@
 
 **S3 Configuration Options**
 
+{{< truetable >}}
 | Name | Description |
 |------|-------------|
 | **IP Address** | Select an IP address from the dropdown list options **0.0.0.0**, **::**, or enter the IP address that runs the S3 service. Select **0.0.0.0** to tell the server to listen on all addresses. Select the TrueNAS IP address to constrain it to a specific network. |
@@ -14,3 +15,4 @@
 | **Enable Browser** | Enables the S3 service web UI. Access the MinIO web UI by entering the IP address and port number separated by a colon in the browser address bar. Example: *192.168.1.0:9000*. |
 | **Certificate** | Select an SSL (CORE) [certificate]({{< relref "/CORE/UIReference/System/Certificates.md" >}}) or (SCALE) [certificate]({{< relref "CertificatesSCALE.md" >}}) created or imported in (CORE) **System > Certificates > Add** or (SCALE) **Credentials > Certificates** for secure S3 connections. |
 | **TLS Server Hostname / TLS Server URI**  | Displays if using an SSL certificate. Enter the MinIO server proxy-able address. |
+{{< /truetable >}}

@@ -45,11 +45,13 @@ The selection in **Type** changes setting options on this screen, the **Certific
 
 ![AddCAIdentifierAndType](/images/SCALE/22.12/AddCAIdentifierAndType.png "Add CA Identifier and Type") 
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Name** | Required. Enter a descriptive identifier for this certificate authority(CA). |
 | **Type** | Select the type of CA from the dropdown list. Options are **Internal CA**, **Intermediate CA**, and **Import CA**. **Internal CA** functions like a publicly trusted CA to sign certificates for an internal network. They are not trusted outside the private network. **Intermediate CA** lives between the root and end entity certificates and its main purpose is to define and authorize the types of certificates you can request from the root CA. **Import CA** allows you to import an existing CA onto the system. For more information see [What are Subordinate CAs and Why Would You Want Your Own?](https://www.globalsign.com/en/blog/what-is-an-intermediate-or-subordinate-certificate-authority). |
 | **Profiles** | Displays if **Internal CA** or **Intermediate CA** are set in **Type**. Select a predefined certificate extension from the dropdown list. Choose a profile that best matches your certificate usage scenario. Options are **Openvpn Root CA** and **CA**. |
+{{< /truetable >}}
 {{< /expand >}}
 
 ### Certificate Options
@@ -62,6 +64,7 @@ The **Key Type** selection changes fields displayed. **RSA** is the default sett
 
 ![AddCACertificateOptionsRSAType](/images/SCALE/22.12/AddCACertificateOptionsRSAType.png "Add CA Certificate Options RSA Type")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Key Type** | Select the key type from the dropdown list. Options are **RSA** or **EC**. **RSA** displays the **Key Length** field. **EC** displays the **EC Curve** field. See [Why is elliptic curve cryptography not widely used, compared to RSA?](https://crypto.stackexchange.com/questions/1190/why-is-elliptic-curve-cryptography-not-widely-used-compared-to-rsa) for more information about key types. |
@@ -69,6 +72,7 @@ The **Key Type** selection changes fields displayed. **RSA** is the default sett
 | **Key Length** | Required. Displays when **RSA** is selected in **Key Type**. Select the number of bits in the key used by the cryptographic algorithm from the dropdown list. Options are **1024**, **2048** or **4096**. For security reasons, a minimum key length of 2048 is recommended. |
 | **Digest Algorithm** | Select the cryptographic algorithm to use from the dropdown list.Options are **SHA1**, **SHA224**, **SHA256**, **SHA384** and **SHA512**. Only change the default **SHA256** if the organization requires a different algorithm. |
 | **Lifetime** | Enter the number of days for the lifetime of the CA. |
+{{< /truetable >}}
 {{< /expand >}}
 
 ### Certificate Subject Options
@@ -80,6 +84,7 @@ The **Certificate Subject** settings do not display if **Type** on the **Identif
 
 ![AddCACertificateSubject](/images/SCALE/22.02/AddCACertificateSubject.png "Add CA Certificate Subject") 
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Country** | Required. Select the country of the organization from the dropdown list. |
@@ -90,6 +95,7 @@ The **Certificate Subject** settings do not display if **Type** on the **Identif
 | **Email** | Required. Enter the email address of the person responsible for the CA. |
 | **Common Name** | Enter the [fully qualified host name (FQHN)](https://kb.iu.edu/d/aiuv) of the system. This name must be unique within a certificate chain. |
 | **Subject Alternate Names** | Required. Enter additional domains to secure for multi-domain support. Separate each domain by pressing <kbd>Enter</kbd>. For example, if the primary domain is *example.com*, entering *www.example.com* secures both addresses. |
+{{< /truetable >}}
 {{< /expand >}}
 
 ### Extra Constraints Options
@@ -107,6 +113,7 @@ After selecting **Basic Constraints**, **Authority Key Identifier**, **Extended 
 
 ![AddCAExtraConstraintsAllExpanded](/images/SCALE/22.02/AddCAExtraConstraintsAllExpanded.png "Add CA Internal Certificate") 
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Basic Constraints** | Select to activate this extension. |
@@ -119,6 +126,8 @@ After selecting **Basic Constraints**, **Authority Key Identifier**, **Extended 
 | **Critical Extension** | Displays after selecting **Extended Key Usage**. Select to identify this extension as critical for the certificate. The certificate-using system must recognize critical extensions or this certificate is rejected. T he certificate-using system can ignore the extensions identified as not critical and still approve the certificate. |
 | **Key Usage** | Select to activate this certificate extension. Displays the **Key Usage Config** field. |
 | **Key Usage Config** | Displays after selecting **Extended Key Usage** or **Key Usage**. Select the key usage extension from the dropdown list. Options are **Digital Signature**, **Content Commitment**, **Key Encipherment**, **Data Encipherment**, **Key Agreement**, **Key Cert Sign**, **CRL Sign**, **Encipher Only**, **Decipher Only** or **Critical Extension**. The key usage extension defines the purpose (e.g., encipherment, signature, certificate signing) of the key contained in the certificate. The usage restriction might be employed when a key that could be used for more than one operation is to be restricted. For example, when an RSA key should be used only to verify signatures on objects other than public key certificates and CRLs, the **Digital Signature** bits would be asserted. Likewise, when an RSA key should be used only for key management, the **Key Encipherment** bit would be asserted. | 
+{{< /truetable >}}
+
 See [RFC 3280, section 4.2.1.3](https://www.ietf.org/rfc/rfc3280.txt) for more information.
 {{< /expand >}}
 #### Extra Constraints - Import CA
@@ -127,12 +136,14 @@ When **Type** on **Identifier and Type** is set to **Import CA** the **Extra Con
 
 ![AddCAExtraConstraintsImportCA](/images/SCALE/22.02/AddCAExtraConstraintsImportCA.png "Add CA Extra Constraints Import CA") 
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Certificate** | Required. Paste the certificate for the CA into this field. |
 | **Private Key** | Required. Paste the private key associated with the certificate when available. Provide a key at least 1024 bits long. |
 | **Passphrase** | Enter the passphrase for the private key. |
 | **Confirm Passphrase** | Re-enter the passphrase for the private key. |
+{{< /truetable >}}
 {{< /expand >}}
 
 ### Confirm Options 

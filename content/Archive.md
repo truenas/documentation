@@ -47,7 +47,7 @@ This can be a false positive that has been fixed in TrueNAS 13.0-U1 (see [NAS-11
 Upgrading to an Enterprise-recommended release of TrueNAS CORE 13.0 resolves this alert.
 To help determine if the deployment is ready to upgrade to TrueNAS CORE 13.0, please refer to the current TrueNAS [Software Status](https://www.truenas.com/software-status/) and, when your use case matches a recommended 13.0 release, contact iXsystems Support to schedule an upgrade.
 {{< expand "iX Support (click to expand)" "v" >}}
-{{< include file="static/includes/General/iXsystemsSupportContact.html.part" >}}
+{{< include file="content/_includes/iXsystemsSupportContact.md" type="page" >}}
 {{< /expand >}}
 {{< /hint >}}
 

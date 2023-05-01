@@ -14,6 +14,7 @@ The **Support** screen displays system information. Users may also manage thier 
 
 ![UIBugReport](/images/CORE/12.0/UIBugReport.png "Writing a Bug Report")
 
+{{< truetable >}}
 | Name | Description |
 |------|------|
 | Username | Your JIRA username. |
@@ -24,6 +25,7 @@ The **Support** screen displays system information. Users may also manage thier 
 | Subject | A descriptive title for the new issue. |
 | Description | A one to three paragraph summary of the issue. |
 | Browse... | Attaches screenshots that illustrate the problem. |
+{{< /truetable >}}
 
 ## TrueNAS Enterprise
 
@@ -31,6 +33,7 @@ The **Support** screen displays system information. Users may also manage thier 
 
 ![System Support Proactive Enterprise](/images/CORE/12.0/SystemSupportProactiveEnterprise.png "Proactive Support: Enterprise") 
 
+{{< truetable >}}
 | Name | Description |
 |------|------|
 | Name | Primary/Secondary Contact name. |
@@ -38,11 +41,13 @@ The **Support** screen displays system information. Users may also manage thier 
 | CC | Primary/Secondary Contact email address. |
 | Phone Number | Primary/Secondary Contact phone number. |
 | Enable iXsystems Proactive Support | Set to enable the Enterprise Proactive Support feature. |
+{{< /truetable >}}
 
 ### Contact Support
 
 ![SystemSupportContactEnterprise](/images/CORE/12.0/SystemSupportContactEnterprise.png "Support Contact: Enterprise")
 
+{{< truetable >}}
 | Name | Description |
 |------|------|
 | Name | Contact name. |
@@ -55,5 +60,6 @@ The **Support** screen displays system information. Users may also manage thier 
 | Subject | A descriptive title for the new issue. |
 | Description | A one to three paragraph summary of the issue. |
 | Choose Files | Attaches screenshots that illustrate the problem. |
+{{< /truetable >}}
 
 {{< taglist tag="coresupport" limit="10" >}}

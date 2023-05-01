@@ -73,6 +73,7 @@ The **Add WebDAV** and **Edit WebDAV** display the same settings.
 
 ![AddWebDAVScreen](/images/SCALE/22.12/AddWebDAVScreen.png "Add WebDAV Screen") 
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Name** | Required. Enter a name for the share. |
@@ -81,5 +82,6 @@ The **Add WebDAV** and **Edit WebDAV** display the same settings.
 | **Read Only** | Select to prohibit users from writing to this share. The **Read Only** toggle on the **WebDAV** widget displays this setting status. |
 | **Change User & Group Ownership** | Select to change existing ownership of all files in the share to the **webdav** user and group. This displays a warning dialog. If left clear, you must manually set ownership of the files accessed through WebDAV to **webdav** or **www** user and group. |
 | **Enabled** | Select to enable this WebDAV share. Clear the checkbox to disable the share without deleting the configuration. |
+{{< /truetable >}}
 
 {{< taglist tag="scalewebdav" limit="10" >}}

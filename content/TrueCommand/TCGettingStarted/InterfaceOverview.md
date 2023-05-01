@@ -18,6 +18,7 @@ tags:
 
 The top toolbar has various quick links, configuration options, alerts, and menus.
 
+{{< truetable >}}
 | Icon | Description |
 |------|-------------|
 | <mat-icon role="img" fontset="mdi" aria-hidden="true" class="mat-icon mdi mdi-server-network mat-icon-no-color"></mat-icon> | Opens the [**Cluster Volume**]({{< relref "/TrueCommand/Clusters.md" >}}) page. |
@@ -29,6 +30,7 @@ The top toolbar has various quick links, configuration options, alerts, and menu
 | <mat-icon role="img" fontset="mdi" fonticon="mdi-bell" class="mat-icon mdi mdi-bell mat-icon-no-color" aria-hidden="true"></mat-icon> | Opens the [**Alert Notifications**]({{< relref "/TrueCommand/Alerts/AlertManage.md" >}}) page. |
 | <i class="material-icons" aria-hidden="true" title="Settings">settings</i> | Opens the **[Settings](#settings-menu)** menu dropdown. |
 | User avatar | Opens the user **[Profile](#user-menu)** option where you can set a custom avatar to change the default user gravtar. It also provides access to the **API Interface**, the **EULA** and the **Log Out** options. |
+{{< /truetable >}}
 
 ### TrueCommand Theme Settings 
 

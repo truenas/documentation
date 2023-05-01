@@ -62,12 +62,14 @@ The **Bulk Edits Disks** screen allows you to make changes to disk settings for 
 
 The screen lists the device names for each selected disk in the **Disks to be edited** section.
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **HDD Standby** | Select the minutes of inactivity before the drive enters standby mode from the dropdown list. Options are **Always On** or **5**, **10**, **20**, **30**, **60**, **120**, **240**, **300**, and **330**. For more information read this [forum post|(https://forums.freenas.org/index.php?threads/how-to-find-out-if-a-drive-is-spinning-down-properly.2068/) describing identifying spun down drives. Temperature monitoring is disabled for standby disk. |
 | **Advanced Power Management** | Select the power management profile from the dropdown list. Options are **Disabled**, **Level 1 - Minimum power usage with Standby (spindown)**, **Level 64 - Intermediate power usage with Standby**, **Level 127 - Maximum power usage with Standby**, **Level 128 - Minimum power usage without Standby (no spindown)**, **Level 192 - Intermediate power usage without Standby**, and **Level 254 - Maximum performance, maximum power usage**. |
 | **Enable S.M.A.R.T.**  | Select to enable and allow the system to conduct periodic [S.M.A.R.T. tests](http://10.220.0.219/ui/--docurl--/tasks.html/#s-m-a-r-t-tests). |
 | **S.M.A.R.T. Extra Options** | Ente additional [smartctl(8)](https://www.smartmontools.org/browser/trunk/smartmontools/smartctl.8.in). |
+{{< /truetable >}}
 {{< /expand >}}
 
 ### Manual S.M.A.R.T. Test Dialog
@@ -76,12 +78,14 @@ The **Manual S.M.A.R.T. Test** dialog displays the name of the selected disk(s) 
 
 ![ManualSmartTestDialog](/images/SCALE/22.12/ManualSMARTTestDialog.png "Manual SMART Test Dialog") 
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Long** | Runs SMART Extended Self Test. This scans the entire disk surface and can take many hours on large-volume disks. |
 | **Short** | Runs SMART Short Self Test (usually under ten minutes). These are basic disk tests that vary by manufacturer. |
 | **Conveyance** | Runs a SMART Conveyance Self Test. This self-test routine is intended to identify damage incurred during transporting of the device. This self-test routine requires only minutes to complete. |
 | **Offline** | Runs SMART Immediate Offline Test. The effects of this test are visible only in that it updates the SMART Attribute values, and if the test finds errors, they appear in the SMART error log. |
+{{< /truetable >}}
 
 **Start** begins the test. Depending on the test type selected, the test can take some time to complete. TrueNAS generates alerts when tests discover issues.
 
@@ -108,6 +112,7 @@ The **Select All** option displays all information on the table view and elimina
 #### SMART Test Result Information
 These options, except the ID, appear on the **Columns** dropdown list.
 
+{{< truetable >}}
 | Option | Description |
 |--------|-------------|
 | **ID** | The test identification number assigned by the system. |
@@ -116,6 +121,7 @@ These options, except the ID, appear on the **Columns** dropdown list.
 | **Remaining** | How much of the test is left to perform. If the test encounters an error, the field shows at what point in the test the error occurs. A value of **0** means the test completed and with no errors encountered. |
 | **Lifetime** | The age of the disk when the test ran. |
 | **Error** | Displays details about any error encountered during the test. Displays **N/A** if no error was encountered during the test. |
+{{< /truetable >}}
   
 {{< /expand >}}
 ### Wipe Disk Dialogs
@@ -149,35 +155,43 @@ The **Edit Disk** screen, accessed from the **[Devices]({{< relref "DevicesScree
 
 ### General Settings
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Name** | Displays the current name of the disk. To change, enter a Linux disk device name. |
 | **Serial** | Displays the serial number for the selected disk. To change, enter the disk serial number. |
 | **Description** | Enter notes about this disk. |
+{{< /truetable >}}
 
 ### Power Management Settings
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **HDD Standby** | Select a value from the dropdown list of options or leave set to the default **Always On**. This specifies the minutes of inactivity before the drive enters standby mode. This [forum post](https://www.truenas.com/community/threads/how-to-find-out-if-a-drive-is-spinning-down-properly.2068/) describes identifying spun down drives. Temperature monitoring is disabled for standby disks. |
 | **Advanced Power Management** | Select a power management profile from the dropdown list of options that include **Disabled** (the default setting), **Level 1 - Minimum power usage with Standby (spindown)**, **Level 64 - Intermediate power usage with Standby**, **Level 127 - Maximum power usage with Standby**, **Level 128 - Minimum power usage without Standby (no spindown)**, **Level 192 - Intermediate power usage without Standby**, or **Level 254 - Maximum performance, maximum power usage**. |
+{{< /truetable >}}
 
 ### Temperature Alerts Settings
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Critical** | Enter a threshold temperature in Celsius. If the drive temperature is higher than this value, it creates a LOG_CRIT level log entry and sends an email to the address entered in the [Alerts]({{< relref "/SCALE/SCALEUIReference/TopToolbar/Alerts/EmailScreens.md" >}}). Enter **0** to disable this check. |
 | **Difference** | Enter a value in degrees Celsius that triggers a report if the temperature of a drive changes by this value since the last report. Enter **0** to disable this check. |
 | **Informational** | Enter a value in degrees Celsius that triggers a report if drive temperature is at or above this temperature. Enter **0** to disable this check. |
+{{< /truetable >}}
 
 #### S.M.A.R.T./SED Settings
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Enable S.M.A.R.T.** | Select to enable the system to conduct periodic [S.M.A.R.T. tests]({{< relref "SMARTTestsSCALE.md" >}}). |
 | **S.M.A.R.T. extra options** | Enter additional [smartctl(8)](https://www.unix.com/man-page/suse/8/smartctl/) options. |
 | **SED Password** | Enter a password to set or change the password of the SED for this disk and to use instead of the global SED password. |
 | **Clear SED Password** | Select to clear the SED password for this disk. |
+{{< /truetable >}}
 {{< /expand >}}
 
 {{< taglist tag="scaledisks" limit="10" >}}

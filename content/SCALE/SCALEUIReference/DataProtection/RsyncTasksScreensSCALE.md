@@ -37,6 +37,7 @@ The **Add Rsync Task** and **Edit Rsync Task** display the same settings.
 
 ![AddRsyncTaskSourceAndRemoteSettings](/images/SCALE/22.02/AddRsyncTaskSourceAndRemoteSettings.png "Add Rsync Task Source and Remote Settings") 
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Path** | Required. Enter or use the <span class="material-icons">arrow_right</span> to the left of <span class="material-icons">folder</span>**/mnt** to browse to the path to copy. Linux file path limits apply. Other operating systems can have different limits which might affect how you can use them as sources or destinations. |
@@ -49,6 +50,7 @@ The **Add Rsync Task** and **Edit Rsync Task** display the same settings.
 | **Remote SSH Port** | Required when **Rsync Mode** is **SSH**. Enter the SSH port number of the remote system. By default, **22** is reserved in TrueNAS. |
 | **Remote Path** | Enter or use the <span class="material-icons">arrow_right</span> to the left of <span class="material-icons">folder</span>**/mnt** to browse to the existing path on the remote host to sync with, or use **Validate Remote Path** to automatically create and define the path if it does not exist. Maximum path length is 255 characters. |
 | **Validate Remote Path** | Displays if **Rsync Mode** is **Module**. Select to automatically create the defined **Remote Path** if it does not exist. |
+{{< /truetable >}}
 {{< /expand >}}
 
 ### Schedule and More Options Settings
@@ -57,6 +59,7 @@ The **Add Rsync Task** and **Edit Rsync Task** display the same settings.
 
 ![AddRsyncTaskSchedOpt](/images/SCALE/22.12/AddRsyncTaskSchedOpt.png "Add Rsync Task Schedule and Other Options Settings")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Schedule** | Select a schedule preset or select **Custom** to open the advanced scheduler. |
@@ -71,6 +74,7 @@ The **Add Rsync Task** and **Edit Rsync Task** display the same settings.
 | **Delay Updates** | Select to save a temporary file from each updated file to a holding directory until the end of the transfer. All transferred files renamed once the transfer is complete. |
 | **Auxiliary Parameters** | Enter additional [rsync(1)](https://rsync.samba.org/ftp/rsync/rsync.html) options to include. Separate entries by pressing <kbd>Enter</kbd>. Note: You must escape the <span class="material-icons">emergency</span> character with a backslash (`\`) or used inside single quotes ('*.txt'). |
 | **Enabled** | Select to enable this rsync task. Clear to disable this rsync task without deleting it. |
+{{< /truetable >}}
 
 {{< /expand >}}
 

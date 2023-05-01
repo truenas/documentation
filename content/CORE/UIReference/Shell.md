@@ -14,11 +14,14 @@ The prompt shows that the current user is *root@truenas*, the host name is *true
 
 
 The **Shell** screen includes three UI elements:
+
+{{< truetable >}}
 | UI Element | Description |
 |------------|-------------|
 | **Set font size** slider | Adjusts the size of text displayed in the shell main area. |
 | **RESTORE DEFAULT** | Resets the shell font and size. |
 | **?** | Displays the shell tooltip with helpful information about the screen. For example, <kbd>CTRL+C</kbd> kills a foreground process. It also lists built-in utilities such as: **Iperf**, **Netperf**, **IOzone**, **arcsat**, **tw_cli**, **MegaCli**, **freenas-debug**, **tmux**, and **Dmidecode**. |
+{{< /truetable >}}
 
 Shell command history is available for the current session.
 

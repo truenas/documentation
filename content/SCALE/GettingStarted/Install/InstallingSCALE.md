@@ -21,7 +21,7 @@ SCALE Enterprise customers should receive their systems already installed and re
 Enterprise customers with High Availability (HA) systems should not attempt to re-install their systems on their own. The dual controller install process is complicated and the risk of causing serious network issues is high. Contact iXsystems Support for assistance!
 
 {{< expand "Contacting Support" "v" >}}
-{{< include file="static/includes/General/iXsystemsSupportContact.html.part" html="true" >}}
+{{< include file="content/_includes/iXsystemsSupportContact.md" type="page" >}}
 {{< /expand >}}
 {{< /enterprise >}}
 
@@ -149,7 +149,7 @@ If you are doing a clean install from the SCALE <kbd>.iso</kbd> file as part of 
 Also have your SCALE system configuration file and data backups handy so you can recover your system settings and import your data into the recovered SCALE clean-install system.
 {{< /hint >}}
 After the system boots into the installer, follow these steps.
-{{< expand "TrueNAs Installer Console Setup Instructions" "v" >}}
+{{< expand "TrueNAS Installer Console Setup Instructions" "v" >}}
 {{< include file="/_includes/SCALEInstallerProcedure.md" type="page" >}}
 
 After following the steps to install, reboot the system and remove the install media.
@@ -186,7 +186,7 @@ When installing TrueNAS in a VMWare VM, double check the virtual switch and VMWa
 A misconfigured virtual switch or VMWare port group can cause network connection errors for TrueNAS systems with additional applications installed inside the TrueNAS VM.
 Enable **MAC spoofing** and **promiscuous mode** on the switch first, and then the port group the VM is using.
 
-{{< include file="static/includes/CORE/VirtualMachinesJailNetworking.md.part" markdown="true" >}}
+{{< include file="content/_includes/VirtualMachinesJailNetworking.md" type="page" >}}
 
 #### Installing on a Generic Virtual Machine
 

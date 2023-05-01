@@ -15,6 +15,7 @@ With SCALE, **eno** followed by a number.
 This table lists the default identification for each M-Series model and any add-on networking cards that have been qualified for use with an M-Series system.
 Some port identifiers are still being determined.
 
+{{< truetable >}}
 | Model | CORE/Enterprise Installed | SCALE Installed |
 |-------|---------------------------|-----------------|
 | M30   | Port 0: `ixl0` | Port 0: `eno1` |
@@ -59,3 +60,4 @@ Some port identifiers are still being determined.
 |                        | Port 1: `ixl7` | Port 1: `TBD` |
 |                        | Port 2: `ixl8` | Port 2: `TBD` |
 |                        | Port 3: `ixl9` | Port 3: `TBD` |
+{{< /truetable >}}

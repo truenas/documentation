@@ -11,6 +11,7 @@ This approach is encouraged when using services directly over the Internet or WA
 
 TCP ports and services that listen for external connections:
 
+{{< truetable >}}
 |   Inbound Port  | Protocol | Service Name |                Description of Service                | Encrypted | Defaults |
 |:---------------:|:--------:|:------------:|:----------------------------------------------------:|:---------:|:--------:|
 |      80/443     |    TCP   |  HTTP/HTTPS  |         Web interface <br> REST API <br> WebSockets API        |  Optional |   Open   |
@@ -25,6 +26,7 @@ TCP ports and services that listen for external connections:
 |       837       |    TCP   |     Rsync    |                Remote synchronization                |  Optional |  Closed  |
 |   Not defined   |    UDP   |   Wireguard  |               Point-to-point encryption              |    Yes    |  Closed  |
 |     161/162     |    TCP   |     SNMP     |               Simple Network Monitoring              |  Optional |  Closed  |
+{{< /truetable >}}
 
 ## Outbound Ports
 
@@ -32,9 +34,11 @@ Protocols that are “outbound” do not listen for or accept external connectio
 These protocols and ports are not a security risk and are usually allowed through firewalls.
 These protocols are considered "primary" and might need to be permitted through a firewall:
 
+{{< truetable >}}
 | Outbound Port | Protocol | Service Name |          Description of Service         | Encrypted | Defaults |
 |:-------------:|:--------:|:------------:|:---------------------------------------:|:---------:|:--------:|
 |     80/443    |    TCP   |  HTTP/HTTPS  | Software updates and Pro-active support |  Optional |   Open   |
 |     25/465    |    TCP   | Sendmail/TLS |          Send emails for alerts         |     No    | Outgoing |
 |      123      |    TCP   |      NTP     |       Network Time synchronization      |    Yes    | Outgoing |
 |      514      |    TCP   |    Syslog    |      Logging of alerts and changes      |     No    | Outgoing |
+{{< /truetable >}}

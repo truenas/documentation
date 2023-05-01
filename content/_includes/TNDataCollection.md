@@ -13,6 +13,7 @@ The collected data helps iXsystems identify issues, plan for new features, and d
 The non-sensitive system data collected is clearly differentiated from sensitive user data that is explicitly not collected by TrueNAS.
 This table describes the differences:
 
+{{< truetable >}}
 |               | Sensitive User Data (NOT COLLECTED) | Non-Sensitive System Data (Optionally Collected) |
 |---------------|-------------------------------------|--------------------------------------------------|
 | **Description** | Any data that includes user identity or business information | Data that only includes information about the TrueNAS system and its operation |
@@ -20,3 +21,4 @@ This table describes the differences:
 | **Examples** | Usernames, passwords, email addresses | Anonymous hardware inventory, faults, statistics, Pool configuration |
 |              | User-created System and dataset names | Software versions, firmware versions |
 |              | Directory, files names, user data | Services and features enabled, Usage and Performance statistics |
+{{< /truetable >}}

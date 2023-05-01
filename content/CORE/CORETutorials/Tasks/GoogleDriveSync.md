@@ -84,6 +84,6 @@ Once the sync reports **SUCCESS**, you can verify it by opening the folder on an
 
 ## Working with Google-Created Content
 
-{{< include file="static/includes/General/GoogleDriveBadPermissions.md.part" markdown="true" >}}
+{{< include file="content/_includes/GoogleDriveBadPermissions.md" type="page" >}}
 
 {{< taglist tag="corecloudsynctasks" limit="10" >}}

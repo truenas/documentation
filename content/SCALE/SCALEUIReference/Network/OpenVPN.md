@@ -21,6 +21,7 @@ Clicking **Client** opens the **Open VPN Client** configuration form.
 
 **Manage Certificates** opens the **[Accounts > Certificates]({{< relref "CertificatesScreensSCALE.md" >}})** screen.
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------|
 | **Client Certificate** | Choose a valid client certificate which exists on this system and hasn't been revoked. |
@@ -36,6 +37,7 @@ Clicking **Client** opens the **Open VPN Client** configuration form.
 | **TLS Crypt Auth Enabled** | Enable/disable TLS Web Client Authentication. |
 | **Additional Parameters** | Additional parameters. |
 | **TLS Crypt Auth** | Provide static key for authentication/encryption of all control channel packets when tls_crypt_auth_enabled is enabled. |
+{{< /truetable >}}
 
 ## OpenVPN Server
 
@@ -45,6 +47,7 @@ Clicking **Server** opens the **Open VPN Server** configuration form.
 
 **Manage Certificates** opens the **[Accounts > Certificates]({{< relref "CertificatesScreensSCALE.md" >}})** screen.
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------|
 | **Server Certificate** | Choose a valid server certificate which exists on this system and hasn't been revoked. |
@@ -60,6 +63,7 @@ Clicking **Server** opens the **Open VPN Server** configuration form.
 | **TLS Crypt Auth Enabled** | Enable/disable TLS Web Client Authentication. |
 | **Additional Parameters** | Additional parameters. |
 | **TLS Crypt Auth** | Provide static key for authentication/encryption of all control channel packets when tls_crypt_auth_enabled is enabled. |
+{{< /truetable >}}
 
 The <span class="iconify" data-icon="mdi:play-arrow-rounded"></span> and <span class="iconify" data-icon="mdi:round-stop"></span> buttons start and stop the OpenVPN server and client.
 

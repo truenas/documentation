@@ -13,6 +13,7 @@ Unless a specific setting is needed or configuring for a specific network enviro
 
 ## Basic Options
 
+{{< truetable >}}
 | Name | Description |
 |----------|-------------|
 | **NetBIOS Name** | Populates with the original host name of the system **truenas**. Limited to 15 characters and cannot be the same name in **Workgroup**. |
@@ -21,11 +22,13 @@ Unless a specific setting is needed or configuring for a specific network enviro
 | **Description** | Optional. Enter a server description. |
 | **Enable SMB1 support** | Select to allow legacy SMB clients to connect to the server. Note that SMB1 is being deprecated. The recommendation is to upgrade the client OS. The OS upgrade should support modern versions of the SMB protocol. |
 | **NTLMv1 Auth** | Select to allow [smbd(8)](https://www.freebsd.org/cgi/man.cgi?query=smbd) attempts to authenticate users with NTLMv1 encryption. NTLMv1 is not secure and is a vulnerability. NTLMv1 authentication is off by default. This setting allows backward compatibility with older versions of Windows. It is not recommended. Do not use on untrusted networks. |
+{{< /truetable >}}
 
 ## Advanced Options
 
 ![SMBServiceAdvanced](/images/CORE/12.0/ServicesSMBOptionsAdvanced.png "Advanced Options for the SMB Service")
 
+{{< truetable >}}
 | Name | Description |
 |----------|-------------|
 | **Unix Charset** | Select an option from the dropdown list. Default is **UTF-8** which supports all characters in all languages. |
@@ -39,5 +42,6 @@ Unless a specific setting is needed or configuring for a specific network enviro
 | **Directory Mask** | Overrides default directory creation mask of **0777**. Directory creation mask **0777** grants directory read, write and execute access for everybody. |
 | **Bind IP Addresses** | Select from the dropdown list. These are the static IP addresses which SMB listens on for connections. If not selected, defaults to listen on all active interfaces. |
 | **Auxiliary Parameters** | Enter additional smb.conf options. See the [Samba Guide](http://www.oreilly.com/openbook/samba/book/appb_02.html) for more information on these settings. To log more details when a client attempts to authenticate to the share, add *log level = 1, auth_audit:5*. |
+{{< /truetable >}}
 
 {{< taglist tag="coresmb" limit="10" >}}

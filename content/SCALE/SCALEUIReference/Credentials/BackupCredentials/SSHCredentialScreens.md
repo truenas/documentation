@@ -31,16 +31,19 @@ The settings displayed on the **SSH Connections** configuration screens are the 
 
 ![NewSSHConnectNameMethodAuto](/images/SCALE/22.12/NewSSHConnectNameMethodAuto.png "SSH Connections Name and Method Settings")
 
+{{< truetable >}}
 | Name | Description |
 |------|-------------|
 | **Name** | Required. Enter a unique name for this SSH connection. For example, use *ssh* and a server name or number like *sshsys1* or *sshtn121* where *sys1* or *tn121* are server designations. |
 | **Setup Method** | Default is set to **Semi-automatic (TrueNAS only)**. Select **Semi-automatic (TrueNAS only)** to simplify setting up an SSH connection with another TrueNAS or FreeNAS system without logging into that system to transfer SSH keys. Select **Manual** to enter all settings when setting up an SSH connection with a non-TrueNAS server. Displays other setting options required to [manually configure an SSH connection](#authentication-settings---manual-method). Requires copying a public encryption key from the local system to the remote system. A manual setup allows a secure connection without a password prompt. |
+{{< /truetable >}}
 
 #### Authentication Settings - Semi-Automatic Method
 These authentication settings display when **Setup Method** is **Semi-automatic (TrueNAS only)**.
 
 ![NewSSHConnectAuthentication](/images/SCALE/22.12/NewSSHConnectAuthentication.png "SSH Connections Authentication Settings") 
 
+{{< truetable >}}
 | Name | Description |
 |------|-------------|
 | **TrueNAS URL** | Enter the host name or IP address of the remote system. Use a valid URL scheme for the remote TrueNAS URL. IP address example of *https://10.231.3.76*. |
@@ -49,6 +52,7 @@ These authentication settings display when **Setup Method** is **Semi-automatic 
 | **One-Time Password (if necessary)** | One-Time Password if two-factor authentication is enabled. |
 | **Username** | Username on the remote system used to login via SSH. |
 | **Private Key** | Select a saved SSH keypair or you can import the private key from a previously created SSH keypair or select **Generate New** to create a new keypair to use for the connection to this remote system. |
+{{< /truetable >}}
 
 #### Authentication Settings - Manual Method
 These authentication settings display when **Setup Method** is **Manual**. You must copy a public encryption key from the local system to the remote system.
@@ -56,6 +60,7 @@ A manual setup allows a secure connection without a password prompt.
 
 ![NewSSHConnectAuthenticationManual](/images/SCALE/22.12/NewSSHConnectAuthenticationManual.png "SSH Connections Manual Authentication Settings") 
 
+{{< truetable >}}
 | Name | Description |
 |------|-------------|
 | **Host** | Enter the host name or IP address of the remote system. A valid URL scheme is required. An IP address example is *https://10.231.3.76*. |
@@ -64,15 +69,18 @@ A manual setup allows a secure connection without a password prompt.
 | **Private Key** | Select a saved SSH keypair or select **Generate New** to create a new keypair to use for the connection to this remote system. |
 | **Remote Host Key** | Enter the remote system SSH key for this system to authenticate the connection. Click **Discover Remote Host Key** after properly configuring all other fields to query the remote system and automatically populate this field. |
 | **Discover Remote Host Key** | Click to connect to the remote system and attempt to copy the key string to the related TrueNAS field. |
+{{< /truetable >}}
 
 #### More Options Settings
 
 ![NewSSHConnectMoreOptions](/images/SCALE/22.12/NewSSHConnectMoreOptions.png "SSH Connections More Options Settings") 
 
+{{< truetable >}}
 | Name | Description |
 |------|-------------|
 | **Cipher** | Select the security option from the dropdown list. Select **Standard** for the most secure option, but with the greatest impact on connection speed. Select **Fast** for a less secure option than **Standard** but it can give reasonable transfer rates for devices with limited cryptographc speed. Select **Disabled** to remove all security in favor of maximizing connection speed. Only disable security when used within a secure, trusted network. |
 | **Connect Timeout** | Enter time (in seconds) before the system stops attempting to establish a connection with the remote system. |
+{{< /truetable >}}
 
 **Save** automatically opens a connection to the remote TrueNAS and exchanges SSH keys.
 
@@ -92,12 +100,14 @@ The **SSH Keypairs** configuration screen displays the same settings for both ad
 
 ![BackupCredentialsSSHKeypairsAdd](/images/SCALE/22.12/BackupCredentialsSSHKeypairsAdd.png "SSH Keypairs Settings")
 
+{{< truetable >}}
 | Name | Description |
 |------|-------------|
 | **Name** | Required. Enter a unique name for this SSH keypair. Automatically generated keypairs are named after the object that generated the keypair with **key** appended to the name. |
 |**Generate Keypair** | Click to have TrueNAS SCALE automatically generate a new keypair and populate the **Private Key** and **Public Keys** fields with these values. |
 | **Private Key** | See **Authentication** in [SSH/Authentication](https://man7.org/linux/man-pages/man1/ssh.1.html). |
 | **Public Key** | See **Authentication** in [SSH/Authentication](https://man7.org/linux/man-pages/man1/ssh.1.html) | 
+{{< /truetable >}}
 
 **Save** adds the keypair to the widget and activates the <i class="material-icons" aria-hidden="true">more_vert</i> with options to **Download Private Key** and **Download Public key**.
 

@@ -84,6 +84,7 @@ See the OpenVPN [Reference Manual](https://openvpn.net/community-resources/refer
 
 ### Connection Settings
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------|
 | Root CA | The Certificate Authority (CA) must be the root CA you used to sign the client and server certificates. |
@@ -91,17 +92,20 @@ See the OpenVPN [Reference Manual](https://openvpn.net/community-resources/refer
 | Compression | Choose a compression algorithm for traffic. Leave empty to send data uncompressed.<br><br>**LZO** is a standard compression algorithm that is backward compatible with previous (pre-2.4) versions of OpenVPN.<br><br>**LZ4** is newer and typically faster and requires fewer system resources.|
 | Protocol | Choose between **UDP** or **TCP** OpenVPN protocols. **UDP** sends packets in a continuous stream. **TCP** sends packets sequentially.<br><br>UDP is usually faster and less strict about dropped packets than TCP.<br><br>To force the connection to be IPv4 or IPv6, choose one of the `4` or `6` UDP or TCP options. |
 | Device Type | Use a **TUN** or **TAP** virtual networking device and layer with OpenVPN. The device must be identical between the OpenVPN server and clients. |
+{{< /truetable >}}
 
 ### Security Options
 
 OpenVPN includes several security options since using a VPN involves connecting to a private network while sending data over less secure public resources.
 Security options are not required, but they help protect data users send over the private network.
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------|
 | Authentication Algorithm | Validates packets sent over the network connection. Your network environment might require a specific algorithm. If not, **SHA1 HMAC** is a reliable algorithm to use. |
 | Cipher | Encrypts data packets sent through the connection. Ciphers aren't required but can increase connection security. You might need to verify which ciphers your networking environment requires. If there are no specific cipher requirements, AES-256-GCM is a good default choice. |
 | TLS Encryption | When **TLS Crypt Auth Enabled** is selected, OpenVPN adds another layer of security by encrypting all TLS handshake messages. This setting requires sharing a static key between the OpenVPN server and clients. |
+{{< /truetable >}}
 
 ## Service Activation
 

@@ -37,9 +37,11 @@ The **Kerberos Settings** screen includes two fields used to configure auxiliary
 If you do not understand Kerberos auxiliary parameters, do not attempt to configure new settings!
 {{< /hint >}}
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Appdefaults Auxiliary Parameters** | Additional Kerberos application settings. See the  *appdefaults* section of [krb.conf(5)](https://web.mit.edu/kerberos/krb5-1.12/doc/admin/conf_files/krb5_conf.html) for available settings and usage syntax. |
 | **Libdefaults Auxiliary Parameters** | Additional Kerberos library settings. See the *libdefaults* section of [krb.conf(5)](https://web.mit.edu/kerberos/krb5-1.12/doc/admin/conf_files/krb5_conf.html) for available settings and usage syntax. |
+{{< /truetable >}}
 
 {{< taglist tag="scalekerberos" limit="10" >}}

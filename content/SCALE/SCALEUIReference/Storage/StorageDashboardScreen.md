@@ -192,11 +192,13 @@ If a share uses the pool this window displays the share type (for example, SMB s
 
 Disks in an exported pool become available to use in a new pool but remain marked as used by an exported pool. If you select a disk used by an exported pool to use in a new pool the system displays a warning message about the disk.
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Destroy data on this pool?** | Select to erase all data on the pool. After selecting this a field displays there you type the name of the pool to confirm the operation before the **Export/Disconnect** button activates. |
 | **Delete configuration of shares that use this pool** | Enabled by default to remove the share connection to this pool. Exporting or disconnecting the pool deletes the configuration of shares using this pool. You must reconfigure the shares affected by this operation. |
 | **Confirm Export/Disconnect** | Required option. Select to confirm the operation and accept the warnings displayed. Activates the **Export/Disconnect** button. |
+{{< /truetable >}}
 
 **Export/Disconnect** executes the process and begins the pool export or disconnect. A status window displays with progress. When complete, a final dialog displays stating the export/disconnect completed successfully.
 {{< /expand >}}

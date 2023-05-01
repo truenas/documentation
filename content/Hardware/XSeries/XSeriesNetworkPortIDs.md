@@ -16,6 +16,7 @@ SCALE identifies its network ports with **eno** followed by a number.
 This table lists the default identification for X-Series systems and any add-on networking cards that have been qualified for use with an X-Series system.
 Some port identifiers are still being determined.
 
+{{< truetable >}}
 | Model                   | TrueNAS CORE       | TrueNAS SCALE      |
 |-------------------------|--------------------|--------------------|
 | X10                     | Port 0: `igb0`     | Port 0: `enp5s0`   |
@@ -42,3 +43,4 @@ Some port identifiers are still being determined.
 |                         | Port 1: `isp1`     | Port 1: `TBD`      |
 | T6225-SO-CR             | Port 0: `cc0`      | Port 0: `TBD`      |
 |                         | Port 1: `cc1`      | Port 1: `TBD`      |
+{{< /truetable >}}

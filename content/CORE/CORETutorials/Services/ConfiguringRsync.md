@@ -36,6 +36,7 @@ To create a new module, click **ADD**.
 {{< expand "Rsync Services Add Module Options Defined" "v" >}}
 **General**
 
+{{< truetable >}}
 | Name | Description |
 |------|-------------|
 | **Name** | Enter the IP address or host name of the system that will store the copy. Use the format `username@remote_host` if the user name differs on the remote host. |
@@ -49,6 +50,7 @@ To create a new module, click **ADD**.
 | **Hosts Allow** | Enter a value from [rsyncd.conf(5)](https://www.samba.org/ftp/rsync/rsyncd.conf.html). A list of patterns to match with the host name and IP address of a connecting client. Connection rejected if no patterns match. Separate entries by pressing <kbd>Enter</kbd>. |
 | **Hosts Deny** | Enter a value from [rsyncd.conf(5)](https://www.samba.org/ftp/rsync/rsyncd.conf.html). A list of patterns to match with the host name and IP address of a connecting client. Connection rejected when the patterns match. Separate entries by pressing <kbd>Enter</kpd>. |
 | **Other Options: Auxiliary Parameters** | Enter any additional parameters from [rsyncd.conf(5)](https://www.samba.org/ftp/rsync/rsyncd.conf.html). |
+{{< /truetable >}}
 {{< /expand >}}
 
 {{< hint type=note >}}

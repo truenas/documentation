@@ -18,6 +18,7 @@ The **Storage Dashboard** displays information about the pools configured on you
 
 ## Pool Manager Screen
 
+{{< truetable >}}
 | Name | Description|
 |---------|------------|
 | **Name** | Enter a name for the pool of up to 50 characters in length that follows [ZFS naming conventions](https://docs.oracle.com/cd/E23824_01/html/821-1448/gbcpt.html). Pool names should be lower-case alpha characters to avoid potential problems with sharing protocols. Names can include numbers, and special characters such as underscore (_), hyphen (-), colon (:), or a period (.). |
@@ -30,6 +31,7 @@ The **Storage Dashboard** displays information about the pools configured on you
 | **VDev type** | Displays under the **Data VDevs** heading. For an existing pool, the default VDEV type is the VDEV type for that existing pool. For initial pool creation, the default type is **Stripe**. After adding disks to the **Data VDevs** a <span class="iconify" data-icon="bxs:down-arrow"></span> expand symbol displays with available options to change the default type of VDEV (for example, if two disks are moved to a Data VDEV, the **Mirror** option displays along with **Stripe**). |
 | **Estimated raw capacity:** | Displays the raw storage capacity of the disks for the Data VDEV type. |
 | **Estimated total raw capacity:** | Displays the estimated total raw capacity of the disks in the VDEV. |
+{{< /truetable >}}
 
 Use **CANCEL** to exit without saving and display the **Pools** screen.
 
@@ -46,6 +48,7 @@ This counter keeps track of the total number of available disks in the system wh
 
 ### VDEV Layout Options
 
+{{< truetable >}}
 | Settings | Description |
 |----------|-------------|
 | **Data** | Data is the standard VDEV for primary storage operations. Each storage pool requires at least one data VDEV. Data VDEV configuration typically affects how users can configure other types of VDEVs. |
@@ -54,9 +57,11 @@ This counter keeps track of the total number of available disks in the system wh
 | **Hot Spare** | A Hot Spare VDEV is a drive or drives reserved for inserting into Data VDEVs when an active drive fails. The system uses hot spares as temporary replacements for failed drives to prevent larger pool and data loss scenarios. When a user replaces a failed drive with a new one, the hot spare reverts to an inactive state and becomes available again as a hot spare. If a user detaches the failed drive from the pool without adding a new one, the system promotes the temporary hot spare to a full Data VDEV member. |
 | **Metadata** | A Metadata VDEV is a special allocation class used to create fusion pools for increased metadata and small block I/O performance. |
 | **Dedup** | A Dedup VDEV stores [ZFS de-duplication]({{< relref "/content/References/ZFSDeduplication.md" >}}). Requires allocating X GiB for every X TiB of general storage. Example: *1 GiB* of Dedup VDEV capacity for every *1 TiB* of Data VDEV availability. |
+{{< /truetable >}}
 
 ### Data VDEV Types
 
+{{< truetable >}}
 | Settings | Description |
 |----------|-------------|
 | **Stripe** | Each disk stores data. A stripe requires at least one disk and has no data redundancy. |
@@ -64,7 +69,7 @@ This counter keeps track of the total number of available disks in the system wh
 | **RAIDZ1** | Uses one disk for parity while all other disks store data. RAIDZ1 requires at least three disks. |
 | **RAIDZ2** | Uses two disks for parity while all other disks store data. RAIDZ2 requires at least four disks. |
 | **RAIDZ3** | Uses three disks for parity while all other disks store data. RAIDZ3 requires at least five disks. |
-
+{{< /truetable >}}
 
 {{< taglist tag="scalepools" limit="10" >}}
 {{< taglist tag="scalevdevs" limit="10" title="Related VDEV Articles" >}}
